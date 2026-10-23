@@ -14,11 +14,11 @@ Settings.
 The right of the page shows details of the email configuration settings and has the following
 features:
 
-- Website URL — Specify the website URL for emailed links in the following format:
-`https://fqdn:port e.g. https://sbpam1.company.com:6500`
+- **Website URL** — Specify the website URL for emailed links in the following format:
+  `https://fqdn:port e.g. https://sbpam1.company.com:6500`
 
 This field determines the link format in all emails and notifications sent by Privilege Secure.
 
-**Example Email**
+## Example Email
 
 ![Emailed link](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/emailedlink.webp)

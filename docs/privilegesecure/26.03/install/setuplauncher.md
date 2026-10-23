@@ -12,7 +12,6 @@ installed separately or through the Netwrix Setup Launcher. Also the application
 require a server reboot at the end of the installation.
 :::
 
-
 The Netwrix Setup Launcher checks for and installs missing prerequisites in addition to installing
 the database and application.
 
@@ -22,16 +21,14 @@ the database and application.
 Antivirus software should be disabled on this computer during the installation.
 :::
 
-
-Right-click the NPS_Setup.exe file and select Run as administrator. The Netwrix Setup Launcher
+Right-click the `NPS_Setup.exe` file and select **Run as administrator**. The Netwrix Setup Launcher
 opens. The launcher runs a prerequisites setup check. The green checkmark indicates the
 prerequisites are met and you are ready to install the database.
 
 :::warning
-The Advanced checkbox provides the option to switch databases to Microsoft SQLServer.
+The **Advanced** checkbox provides the option to switch databases to Microsoft SQLServer.
 This isn't a recommended configuration and requires additional support from Netwrix.
 :::
-
 
 ## Install PostgreSQL Database
 
@@ -39,55 +36,50 @@ This isn't a recommended configuration and requires additional support from Netw
 Antivirus software should be disabled on this computer during the installation.
 :::
 
-
 To install the PostgreSQL database.
 
-**Step 1 –** In the Netwrix Setup Launcher, click **Install PostgreSQL 16**. The PostgeSQL v16 Setup
-wizard opens.
+1. In the Netwrix Setup Launcher, click **Install PostgreSQL 16**. The PostgeSQL v16 Setup
+   wizard opens.
 
-:::note
-If PostgreSQL v16 is already installed, a green checkmark displays to the left of the
-Install PostgreSQL 16 button and you can install the Privilege Secure application.
-:::
+   :::note
+   If PostgreSQL v16 is already installed, a green checkmark displays to the left of the
+   Install PostgreSQL 16 button and you can install the Privilege Secure application.
+   :::
 
+   ![Stealthbits PostgreSQL v16 Setup Wizard on the Install page](/images/privilegesecure/26.03/accessmanagement/install/install.webp)
 
-![Stealthbits PostgreSQL v12 Setup Wizard on the Install page](/images/privilegesecure/26.03/accessmanagement/install/install.webp)
+2. On the Install page, click **Install**.
 
-**Step 2 –** On the Install page, click **Install**.
+   ![Stealthbits PostgreSQL v16 Setup Wizard on the License Agreement page](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement.webp)
 
-![Stealthbits PostgreSQL v12 Setup Wizard on the License Agreement page](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement.webp)
+3. On the End User License Agreement page, accept the license agreement and click **Next**.
 
-**Step 3 –** On the End User License Agreement page, accept the license agreement and click **Next**.
+   :::tip
+   Remember, it is a best practice to read the agreement before accepting it.
+   :::
 
-:::tip
-Remember, it is a best practice to read the agreement before accepting it.
-:::
+   ![Stealthbits PostgreSQL v16 Setup Wizard on the Install and Data Folder page](/images/privilegesecure/26.03/accessmanagement/install/installfolder.webp)
 
+4. The default installation location for both the **Install Folder** and the **Data Folder** is:
 
-![Stealthbits PostgreSQL v12 Setup Wizard on the Install and Data Folder page](/images/privilegesecure/26.03/accessmanagement/install/installfolder.webp)
+   `C:\Program Files\Stealthbits\Postgres16`
 
-**Step 4 –** The default installation location for both the Install Folder and the Data Folder is:
+   - To change the default location, click **Browse** and set a new location.
+   - When the location is set, click **Next**.
 
-C:\Program Files\Stealthbits\Postgres16
+   :::note
+   The installation process begins and the Setup wizard displays the its Progress. This may
+   take a few moments.
+   :::
 
-- To change the default location, click **Browse** and set a new location.
-- When the location is set, click **Next**.
+   ![Stealthbits PostgreSQL v16 Setup Wizard on the Completed Successfully page](/images/privilegesecure/26.03/accessmanagement/install/completed.webp)
 
-:::note
-The installation process begins and the Setup wizard displays the its Progress. This may
-take a few moments.
-:::
+5. When installation is complete, click **Exit**. The Stealthbits PostgeSQL v16 Setup
+   wizard closes.
 
-
-![Stealthbits PostgreSQL v12 Setup Wizard on the Completed Successfully page](/images/privilegesecure/26.03/accessmanagement/install/completed.webp)
-
-**Step 5 –** When installation is complete, click **Exit**. The Stealthbits PostgeSQL v16 Setup
-wizard closes.
-
-:::note
-A reboot is required.
-:::
-
+   :::note
+   A reboot is required.
+   :::
 
 The PostgreSQL database is successfully installed. It is time to install the application.
 
@@ -97,48 +89,44 @@ The PostgreSQL database is successfully installed. It is time to install the app
 Antivirus software should be disabled on this computer during the installation.
 :::
 
-
 To install Privilege Secure application.
 
 ![Netwrix Setup Launcher showing the PostgreSQL Setup with a green checkmark](/images/privilegesecure/26.03/accessmanagement/install/launcherstep3.webp)
 
-**Step 1 –** If you are using the Netwrix Setup Launcher, it displays a green checkmark for the
-PostgreSQL Setup. Click Netwrix Privilege Secure Setup.
+1. If you are using the Netwrix Setup Launcher, it displays a green checkmark for the
+   PostgreSQL Setup. Click **Netwrix Privilege Secure Setup**.
 
-:::note
-This window remains open in the background while the database is installed.
-:::
+   :::note
+   This window remains open in the background while the database is installed.
+   :::
 
+   ![Netwrix Privilege Secure Setup wizard on the License Agreement page](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement_1.webp)
 
-![Netwrix Privilege Secure Setup wizard on the License Agreement page](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement_1.webp)
+2. On the End User License Agreement page, accept the license terms and conditions and click **Options**.
 
-**Step 2 –** On the End User License Agreement page, accept the license terms and conditions and click **Options**.
+   :::tip
+   Remember, it is a best practice to read the agreement before accepting it.
+   :::
 
-:::tip
-Remember, it is a best practice to read the agreement before accepting it.
-:::
+   ![Netwrix Privilege Secure Setup wizard on the Setup Options page](/images/privilegesecure/26.03/accessmanagement/install/setupoptions.webp)
 
+3. The default installation location for **Install Folder** is:
 
-![Netwrix Privilege Secure Setup wizard on the Setup Options page](/images/privilegesecure/26.03/accessmanagement/install/setupoptions.webp)
+   `C:\Program Files\Stealthbits\PAM`
 
-**Step 3 –** The default installation location for Install Folder is:
+   - To change the default location, click **Browse** and set a new location.
+   - When the location is set, click **OK**.
 
-C:\Program Files\Stealthbits\PAM
+4. You returns to the End User License Agreement page. Click **Install**.
 
-- To change the default location, click **Browse** and set a new location.
-- When the location is set, click **OK**.
+   :::note
+   The installation process begins and the wizard displays the its Progress. This may take a
+   few moments.
+   :::
 
-**Step 4 –** You returns to the End User License Agreement page. Click **Install**.
+   ![Netwrix Privilege Secure Setup wizard on the Completed Successfully page](/images/privilegesecure/26.03/accessmanagement/install/completed_1.webp)
 
-:::note
-The installation process begins and the wizard displays the its Progress. This may take a
-few moments.
-:::
-
-
-![Netwrix Privilege Secure Setup wizard on the Completed Successfully page](/images/privilegesecure/26.03/accessmanagement/install/completed_1.webp)
-
-**Step 5 –** When installation is complete, click **Close**.
+5. When installation is complete, click **Close**.
 
 The installer displays a message that it is applying permissions. The application require a
 server reboot at the end of the installation.

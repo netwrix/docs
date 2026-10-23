@@ -8,19 +8,18 @@ sidebar_position: 10
 
 To add a service account to the console.
 
-**Step 1 –** Navigate to the Configuration > Service Accounts page.
+1. Navigate to the **Configuration** > **Service Accounts** page.
+2. In the Service Account list, click the **Plus** icon.
 
-**Step 2 –** In the Service Account list, click the Plus icon.
+   ![Add Service Account](/images/privilegesecure/26.03/accessmanagement/admin/configuration/add/addserviceaccount.webp)
 
-![Add Service Account](/images/privilegesecure/26.03/accessmanagement/admin/configuration/add/addserviceaccount.webp)
+3. Enter the applicable information. See the
+   [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) section for detailed descriptions of the fields.
 
-**Step 3 –** Enter the applicable information. See the
-[Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) section for detailed descriptions of the fields.
+   - For service accounts checked out through a vault connector, select a previously added vault
+     connector from the dropdown list. See the
+     [Bring Your Own Vault (BYOV) Integration](/docs/privilegesecure/26.03/admin/configuration/integrationconnector/integrationbyov/integrationbyov.md) topic for additional information.
 
-- For service accounts checked out through a vault connector, select a previously added vault
-connector from the dropdown list. See the
-[Bring Your Own Vault (BYOV) Integration](/docs/privilegesecure/26.03/admin/configuration/integrationconnector/integrationbyov/integrationbyov.md) topic for additional information.
-
-**Step 4 –** Click Save to create the new service account.
+4. Click **Save** to create the new service account.
 
 The new service account is added to the Service Accounts list.

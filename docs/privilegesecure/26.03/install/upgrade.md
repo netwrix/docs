@@ -16,27 +16,24 @@ the[ Upgrading to Privilege Secure (fomerly SbPAM) 3.6 or Higher - High Availabi
 knowledge base article before beginning an upgrade.
 :::
 
-
 ## Considerations
 
 - It isn't necessary to uninstall the previous version of Privilege Secure. The new version can be
-installed directly over the previous version.
+  installed directly over the previous version.
 - Canceling, exiting, or otherwise halting the installer during an upgrade may result in irreparable
-damage to the Privilege Secure database and loss of data.
+  damage to the Privilege Secure database and loss of data.
 - If your server has PostgreSQL 10 installed from a previous version of Privilege Secure, contact
-[Netwrix Support](https://www.netwrix.com/support.html) before proceeding with your upgrade.
+  [Netwrix Support](https://www.netwrix.com/support.html) before proceeding with your upgrade.
 - There are two installation paths to support either PostgreSQL server or Microsoft SQL server
-databases.
-
-- PostgreSQL — If you are upgrading and want to continue using PostgreSQL, follow the standard
-upgrade procedure.
-- Microsoft SQL — The Advanced checkbox provides the option to switch the database to Microsoft
-SQL Server.
+  databases.
+  - **PostgreSQL** — If you are upgrading and want to continue using PostgreSQL, follow the standard
+    upgrade procedure.
+  - **Microsoft SQL** — The **Advanced** checkbox provides the option to switch the database to Microsoft
+    SQL Server.
 
 :::warning
 This is an advanced configuration and requires additional support from Netwrix.
 :::
-
 
 ## Upgrade Procedure
 
@@ -47,7 +44,6 @@ before upgrading Privilege Secure, the installer will scan for the current versi
 PostgreSQL and prompt you to upgrade if needed.
 :::
 
-
 :::warning
 During an upgrade, the process updates both the application and the database. This
 process can take a significant amount of time, depending on the volume of data stored in the
@@ -55,19 +51,16 @@ database. Canceling, exiting, or otherwise halting the installer during this ste
 irreparable damage to the Privilege Secure database and loss of data.
 :::
 
+1. Install the new version of Privilege Secure by running the `NPS_Setup.exe` as an
+   administrator.
 
-**Step 1 –** Install the new version of Privilege Secure by running the NPS_Setup.exe as an
-administrator.
+   :::note
+   A server restart is required after the installer completes. A notification in the
+   installer displays after the upgrade procedure is complete.
+   :::
 
-:::note
-A server restart is required after the installer completes. A notification in the
-installer displays after the upgrade procedure is complete.
-:::
-
-
-**Step 2 –** Clear the browser cache after the upgrade procedure. This helps to prevent conflicts
-when logging in to the new version of Privilege Secure.
-
-**Step 3 –** Open the Privilege Secure Console and log in.
+2. Clear the browser cache after the upgrade procedure. This helps to prevent conflicts
+   when logging in to the new version of Privilege Secure.
+3. Open the Privilege Secure Console and log in.
 
 The latest version of Privilege Secure is now installed.

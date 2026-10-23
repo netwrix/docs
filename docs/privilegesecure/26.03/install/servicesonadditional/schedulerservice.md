@@ -18,35 +18,30 @@ Privilege Secure. See the [Proxy Service Install](/docs/privilegesecure/26.03/in
 instructions.
 :::
 
-
 To install the Scheduler Service.
 
-**Step 1 –** ensure that you have configured the Antivirus exclusions according to the following
-Netwrix knowledge base article:
-[Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
+1. ensure that you have configured the Antivirus exclusions according to the following
+   Netwrix knowledge base article:
+   [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
+2. Move the `NPS.SchedulerService.exe` installation package to the desktop of the remote
+   server.
+3. Open the `NPS.SchedulerService.exe` and thePrivilege Secure Scheduler Service Setup
+   wizard opens.
 
-**Step 2 –** Move the NPS.SchedulerService.exe installation package to the desktop of the remote
-server.
+   ![licenseagreement](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement_4.webp)
 
-**Step 3 –** Open the NPS.SchedulerService.exe and thePrivilege Secure Scheduler Service Setup
-wizard opens.
+4. To install the Scheduler Service in an alternate location, click **Options**.
 
-![licenseagreement](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement_4.webp)
+   ![scheduleoptions](/images/privilegesecure/26.03/accessmanagement/install/scheduleoptions.webp)
 
-**Step 4 –** To install the Scheduler Service in an alternate location, click **Options**.
+5. Enter the destination folder for installation and click **OK**.
+6. Read the End User License Agreement and accept the license terms.
+7. Click **Install** to begin the installation. The setup wizard displays the installation
+   progress.
 
-![scheduleoptions](/images/privilegesecure/26.03/accessmanagement/install/scheduleoptions.webp)
+   ![installcompleted](/images/privilegesecure/26.03/accessmanagement/install/installcompleted.webp)
 
-**Step 5 –** Enter the destination folder for installation and click OK.
-
-**Step 6 –** Read the End User License Agreement and accept the license terms.
-
-**Step 7 –** Click Install to begin the installation. The setup wizard displays the installation
-progress.
-
-![installcompleted](/images/privilegesecure/26.03/accessmanagement/install/installcompleted.webp)
-
-**Step 8 –** When the installation is complete, click Close to exit the installer.
+8. When the installation is complete, click **Close** to exit the installer.
 
 The Privilege Secure Scheduler Service is now installed on a remote server.
 
@@ -59,69 +54,61 @@ configured.
 
 To configure the key exchange.
 
-**Step 1 –** On the application server, run **cmd** as Administrator.
+1. On the application server, run **cmd** as Administrator.
+2. Enter the following commands to export the encryption keys for the secondary:
 
-**Step 2 –** Enter the following commands to export the encryption keys for the secondary:
+   Encryption Key Export
 
+   ```text
+   cd C:\Program Files\Stealthbits\PAM\KeyTools
+   .\SbPAM.RotateKey.exe export -n keys.exp
+   ```
 
-Encryption Key Export
+3. Take note of the password for the export file.
 
-```
-cd C:\Program Files\Stealthbits\PAM\KeyTools
-.\SbPAM.RotateKey.exe export -n keys.exp
-```
+   :::warning
+   This temporary password protects the Netwrix Privilege Secure for Access Management (NPS-AM) encryption keys during copying. don't save
+   it to digital media or transmit it with the encryption key package.
+   :::
 
-**Step 3 –** Take note of the password for the export file.
+4. Copy the export file to "C:\Program Files\Stealthbits\PAM\KeyTools" on the secondary
+   server.
+5. On the (Action/Scheduler/Siem) service server, run **cmd** as Administrator.
+6. Enter the following commands to import the encryption keys:
 
-:::warning
-This temporary password protects the NPS-AM encryption keys during copying. don't save
-it to digital media or transmit it with the encryption key package.
-:::
+   Encryption Key Import
 
+   ```text
+   cd C:\Program Files\Stealthbits\PAM\KeyTools
+   .\SbPAM.RotateKey.exe import -n keys.exp
+   ```
 
-**Step 4 –** Copy the export file to "C:\Program Files\Stealthbits\PAM\KeyTools" on the secondary
-server.
-
-**Step 5 –** On the (Action/Scheduler/Siem) service server, run cmd as Administrator.
-
-**Step 6 –** Enter the following commands to import the encryption keys:
-
-
-Encryption Key Import
-
-```
-cd C:\Program Files\Stealthbits\PAM\KeyTools
-.\SbPAM.RotateKey.exe import -n keys.exp
-```
-
-**Step 7 –** Enter the password when prompted.
-
-**Step 8 –** Delete the export file from both the primary and secondary servers.
+7. Enter the password when prompted.
+8. Delete the export file from both the primary and secondary servers.
 
 The key exchange is now configured.
 
 To configure the Action Service.
 
-**Step 1 –** Open a command prompt as an administrator.
+1. Open a command prompt as an administrator.
+2. Change the directory path to the location of the Privilege Secure Action Service. The
+   default path is:
 
-**Step 2 –** Change the directory path to the location of the Privilege Secure Action Service. The
-default path is:
+   `C:\Program Files\Stealthbits\PAM\NPS.SchedulerService\`
 
-C:\Program Files\Stealthbits\PAM\NPS.SchedulerService\
+3. Run the following command to automatically register the scheduler service. Enter the
+   Admin password when prompted:
 
-**Step 3 –** Run the following command to automatically register the scheduler service. Enter the
-Admin password when prompted:
+   - The `[Privilege Secure]` parameter is the Host Name, IP, FQDN, or URL
+   - The default `[Port]` parameter is 6500
 
-- The `[Privilege Secure]` parameter is the Host Name, IP, FQDN, or URL
-- The default `[Port]` parameter is 6500
+   `NPS.SchedulerService.exe –register -u admin [PrivilegeSecureServer:Port]`
 
-NPS.SchedulerService.exe –register -u admin [PrivilegeSecureServer:Port]
+   - For installations without a trusted https certificate on the Privilege Secure server, the `-I`
+     parameter must be added:
+     - `NPS.SchedulerService.exe –register -u admin -I [PrivilegeSecureServer:Port]`
+   - The command prompt shows if the configuration was successful.
 
-- For installations without a trusted https certificate on the Privilege Secure server, the `-I`
-parameter must be added:
-- `NPS.SchedulerService.exe –register -u admin -I [PrivilegeSecureServer:Port]`
-- The command prompt shows if the configuration was successful.
-
-**Step 4 –** Exit the command prompt.
+4. Exit the command prompt.
 
 The remote Scheduler Service is now registered with Privilege Secure.

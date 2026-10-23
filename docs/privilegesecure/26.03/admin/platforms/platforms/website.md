@@ -13,8 +13,8 @@ The Web Site menu displays the configuration options for Web Site platforms.
 Details for the selected platform display on the right side of the page. The following are the
 configuration options for a Website Platform.
 
-- Name — Displays the name of the policy
-- Description — Description of the policy
+- **Name** — Displays the name of the policy
+- **Description** — Description of the policy
 
-If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
+If you modify any of these settings, **Save**, and **Cancel** buttons appear. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

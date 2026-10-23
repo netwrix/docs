@@ -6,39 +6,36 @@ sidebar_position: 20
 
 # Navigation
 
-At the top of the Privilege Secure Console lists available in interfaces and provides access to the
+The menu bar at the top of the Privilege Secure Console lists the available interfaces and provides access to the
 Help link and the User Menu:
 
 ![topbar](/images/privilegesecure/25.12/accessmanagement/admin/topbar.webp)
 
 - Interfaces:
-
-- Access — Grants access to the My Activities page. Activities are be displayed as individual
-cards, organized alphabetically or by Access Policy. See the
-[Access > My Activities Page](/docs/privilegesecure/25.12/admin/myactivities/myactivities.md) topic for additional. information.
-- Dashboard — View summaries of recent activity logs and user sessions. See the
-[Dashboard Interface](/docs/privilegesecure/25.12/admin/dashboard/overview.md) topic for additional information.
-- Policy — Contains several pages to create and configure policies to enable access, to onboard
-and manage users, groups, resources, and credentials, and to create and configure activities.
-See the [ Policy Interface](/docs/privilegesecure/25.12/admin/interface/interface.md) topic for additional information.
-- Configuration — Contains several pages to configure and manage authentication, integration
-connectors, service accounts, services, and other settings. See the
-[Configuration Interface](/docs/privilegesecure/25.12/admin/configuration/interface_1.md) topic for additional information.
-- Audit & Reporting Interface — Audit user access entitlement (Access Certification) and view
-activity statistics and reports. See the
-[Audit & Reporting Interface](/docs/privilegesecure/25.12/admin/AuditReporting/interface_2.md) topic for additional information.
-
-- Help — Opens the Netwrix Privilege Secure documentation in the in another browser tab
-- User Menu — Click to open the dropdown menu:
-
-- Dark Mode — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview
-of Dark Mode.
-- Product Tour — Re-starts walk-through of Privilege Secure features. See the
-[Product Tour](/docs/privilegesecure/25.12/admin/navigation/producttour.md) topic for additional information.
-- Settings — Opens the settings page to allow the user to register services
-- Logout — Signs the user out of the current session and opens the Login screen
-- About — Shows version and license information for the console. See the
-[Import the License File](/docs/privilegesecure/25.12/admin/navigation/importlicense.md) topic for additional information.
+  - **Access** — Grants access to the My Activities page. Activities are be displayed as individual
+    cards, organized alphabetically or by Access Policy. See the
+    [Access > My Activities Page](/docs/privilegesecure/25.12/admin/myactivities/myactivities.md) topic for additional. information.
+  - **Dashboard** — View summaries of recent activity logs and user sessions. See the
+    [Dashboard Interface](/docs/privilegesecure/25.12/admin/dashboard/overview.md) topic for additional information.
+  - **Policy** — Contains several pages to create and configure policies to enable access, to onboard
+    and manage users, groups, resources, and credentials, and to create and configure activities.
+    See the [ Policy Interface](/docs/privilegesecure/25.12/admin/interface/interface.md) topic for additional information.
+  - **Configuration** — Contains several pages to configure and manage authentication, integration
+    connectors, service accounts, services, and other settings. See the
+    [Configuration Interface](/docs/privilegesecure/25.12/admin/configuration/interface_1.md) topic for additional information.
+  - **Audit & Reporting Interface** — Audit user access entitlement (Access Certification) and view
+    activity statistics and reports. See the
+    [Audit & Reporting Interface](/docs/privilegesecure/25.12/admin/AuditReporting/interface_2.md) topic for additional information.
+- **Help** — Opens the Netwrix Privilege Secure documentation in the in another browser tab
+- **User Menu** — Click to open the dropdown menu:
+  - **Dark Mode** — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview
+    of Dark Mode.
+  - **Product Tour** — Re-starts walk-through of Privilege Secure features. See the
+    [Product Tour](/docs/privilegesecure/25.12/admin/navigation/producttour.md) topic for additional information.
+  - **Settings** — Opens the settings page to allow the user to register services
+  - **Logout** — Signs the user out of the current session and opens the Login screen
+  - **About** — Shows version and license information for the console. See the
+    [Import the License File](/docs/privilegesecure/25.12/admin/navigation/importlicense.md) topic for additional information.
 
 On the left side of the console is a Navigation pane where the pages for the selected interface
 display. Use the Menu button to the left of the logo to collapse / expand the Navigation pane.

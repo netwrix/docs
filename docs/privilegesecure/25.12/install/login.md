@@ -8,20 +8,19 @@ sidebar_position: 50
 
 Once installation is complete, Privilege Secure is accessible locally on the default port:
 
-https://localhost:6500
+`https://localhost:6500`
 
 Since Privilege Secure is a browser-based application, You can access the web interface
 remotely. In most environments, enter the URL for the host on which Privilege Secure is installed
 into a supported browser address bar. For example, if Privilege Secure is installed on server
 `ExampleServer01`, then the address is:
 
-https://ExampleServer01:6500
+`https://ExampleServer01:6500`
 
 :::note
 This is the default port. If a custom port is configured, the address to the Privilege
 Secure Console is:
 :::
-
 
 `https://ExampleServer01:[PortNumber]`
 
@@ -38,39 +37,35 @@ If your license is expired, and you can still log in, you will not be able to cr
 activity sessions or new users.
 :::
 
-
 To log in to the Privilege Secure Console.
 
-**Step 1 –** Open Privilege Secure in a browser window. The Login screen shows the
-Authentication Connector set as the default.
+1. Open Privilege Secure in a browser window. The Login screen shows the
+   Authentication Connector set as the default.
 
-:::note
-Privilege Secure requires a multi-factor authentication (MFA) solution (Authenticator,
-DUO, Symantec VIP, etc.) for all user accounts unless otherwise configured in the Initial Set Up
-Wizard. If required, first time users must register with an MFA to use with their login credentials.
-:::
+   :::note
+   Privilege Secure requires a multi-factor authentication (MFA) solution (Authenticator,
+   DUO, Symantec VIP, etc.) for all user accounts unless otherwise configured in the Initial Set Up
+   Wizard. If required, first time users must register with an MFA to use with their login credentials.
+   :::
 
+   ![Default Login](/images/privilegesecure/25.12/accessmanagement/enduser/defaultloginuser.webp)
 
-![Default Login](/images/privilegesecure/25.12/accessmanagement/enduser/defaultloginuser.webp)
+2. Either click the default authentication connector button, or click **Log In with a
+   Different Account** to display all of the authentication connectors that are registered with
+   Privilege Secure.
 
-**Step 2 –** Either click the default authentication connector button, or click **Log In with a
-Different Account** to display all of the authentication connectors that are registered with
-Privilege Secure.
+   ![Alternate Login](/images/privilegesecure/25.12/accessmanagement/enduser/alternatelogin.webp)
 
-![Alternate Login](/images/privilegesecure/25.12/accessmanagement/enduser/alternatelogin.webp)
+3. log in to the Privilege Secure Console with a configured authentication connector, or
+   enter the user credentials.
+4. Click **Login** to proceed.
+5. Enter the code provided by the registered multi-factor authenticator (MFA).
 
-**Step 3 –** log in to the Privilege Secure Console with a configured authentication connector, or
-enter the user credentials.
+   ![Multi Factor Authentication Login](/images/privilegesecure/25.12/accessmanagement/enduser/mfalogin.webp)
 
-**Step 4 –** Click log in to proceed.
+6. Click **MFA Login**. The Privilege Secure Console opens on the Dashboard Interface.
 
-**Step 5 –** Enter the code provided by the registered multi-factor authenticator (MFA).
-
-![Multi Factor Authentication Login](/images/privilegesecure/25.12/accessmanagement/enduser/mfalogin.webp)
-
-**Step 6 –** Click MFA Login. The Privilege Secure Console opens on the Dashboard Interface.
-
-![Dashboard Interface](/images/privilegesecure/25.12/accessmanagement/enduser/active.png)
+   ![Dashboard Interface](/images/privilegesecure/25.12/accessmanagement/enduser/active.png)
 
 :::note
 After five incorrect login attempts, the user is locked out of the account for five
@@ -79,7 +74,6 @@ login. See the
 [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic for
 additional information on how to unlock an account.
 :::
-
 
 The Privilege Secure Console is ready to use. the option to view the recovery codes is no
 longer available after the initial login. From here, create Sessions and Access Policies, manage

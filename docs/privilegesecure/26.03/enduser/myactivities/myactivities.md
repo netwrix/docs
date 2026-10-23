@@ -6,12 +6,12 @@ sidebar_position: 30
 
 # My Activities
 
-The Access > My Activities page displays activities mapped to the user as individual cards,
+The **Access** > **My Activities** page displays activities mapped to the user as individual cards,
 organized alphabetically or by Access Policy.
 
 ![My Activiy Dashboard for End User](/images/privilegesecure/26.03/accessmanagement/enduser/access/myactivityuser.webp)
 
-To access the My Activities page, open the Access interface. If there is only a single activity card
+To access the My Activities page, open the **Access** interface. If there is only a single activity card
 present on this page that activity opens automatically.
 
 Activities may be sorted in alphabetical order (the default) or organized into groups according to

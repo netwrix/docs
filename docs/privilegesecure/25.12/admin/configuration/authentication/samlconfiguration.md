@@ -23,144 +23,134 @@ It contains four pages:
 
 To verify the SAML configuration:
 
-**Step 1 –** Navigate to the **Configuration** > **Authentication** page.
+1. Navigate to the **Configuration** > **Authentication** page.
+2. In the Connectors list, select the applicable authentication connector and click
+   **Configuration Wizard**.
+3. On the Configure Client page, enter the following information:
 
-**Step 2 –** In the Connectors list, select the applicable authentication connector and click
-**Configuration Wizard**.
+   - **Signin URI** — The SAML provider issuer URI. Out-going redirection requires the correct “Issuer” path
+     to be set. Incorrect settings will generally result in a 404 error.
+   - **Callback Address** — The SAML provider requires the Privilege Secure callback path to be authorized.
+     Generally this displays by the provider after redirection. Enter the address and port of the
+     Privilege Secure server:
 
-**Step 3 –** On the Configure Client page, enter the following information:
+     `[protocol]//[hostname]:[port]/callback`
 
-- Signin URI– The SAML provider issuer URI. Out-going redirection requires the correct “Issuer” path
-to be set. Incorrect settings will generally result in a 404 error.
-- Callback Address – The SAML provider requires the Privilege Secure callback path to be authorized.
-Generally this displays by the provider after redirection. Enter the address and port of the
-Privilege Secure server:
+   - **CORS** — The SAML provider requires the Privilege Secure callback location to be configured for
+     CORS. This will either be displayed by the provider after redirection, or a 500 error is returned.
+     If an error is returned, CORS isn't configured with the correct information. Enter the
+     address and port of the Privilege Secure server:
 
-[protocol]//[hostname]:[port]/callback
+     `[protocol]//[hostname]:[port]`
 
-- CORS – The SAML provider requires the Privilege Secure callback location to be configured for
-CORS. This will either be displayed by the provider after redirection, or a 500 error is returned.
-If an error is returned, CORS isn't configured with the correct information. Enter the
-address and port of the Privilege Secure server:
+   :::warning
+   In the next step, verify that the Sign In page displays as expected, but don't sign in
+   at this step.
+   :::
 
-[protocol]//[hostname]:[port]
+4. Click **Test Connection** to verify the connection configuration. This opens the Sign In
+   page in the browser. don't sign in.
 
-:::warning
-In the next step, verify that the Sign In page displays as expected, but don't sign in
-at this step.
-:::
+   - If the Sign In page doesn't display as expected, review the values configured for the SAML
+     connector and modify them where needed. Then, verify the Sign In page again.
 
+5. Click the browser’s back arrow to return to the Configure Client wizard page.
+6. If the Sign In page displayed as expected, click **Next**.
 
-**Step 4 –** Click Test Connection to verify the connection configuration. This opens the Sign In
-page in the browser. don't sign in.
+   ![SAML Configuration wizard, Test Login page](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigtestlogin.webp)
 
-- If the Sign In page doesn't display as expected, review the values configured for the SAML
-connector and modify them where needed. Then, verify the Sign In page again.
+   When the SAML provider authenticates a user login, it will optionally sign that authentication using
+   a certificate (available from the SAML provider). Privilege Secure can be configured to validate the
+   authentication using the certificate.
 
-**Step 5 –** Click the browser’s back arrow to return to the Configure Client wizard page.
+7. _(Optional)_ On the Test Login page, enter the following information:
 
-**Step 6 –** If the Sign In page displayed as expected, click Next.
+   - **Check Certificate** — Check to have Privilege Secure validate the authentication using the
+     certificate.
+   - **Certificate** — Enter the authentication certificate.
 
-![SAML Configuration wizard, Test Login page](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigtestlogin.webp)
+8. Click **Login**. The Sign In page opens in the browser.
+9. Enter valid credentials for the SAML provider and sign in.
+10. If the sign in was successful, the Provider User Name/Id displays. This is passed
+    to the UserTokenController so that the user information can be extracted. Click **Next**.
 
-When the SAML provider authenticates a user login, it will optionally sign that authentication using
-a certificate (available from the SAML provider). Privilege Secure can be configured to validate the
-authentication using the certificate.
+    ![SAML Configuration Wizard, Retrieved Data](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigidmapping.webp)
 
-**Step 7 –** _(Optional)_ On the Test Login page, enter the following information:
+    Privilege Secure will use the access token to retrieve user data from the SAML provider. The SAML provider
+    requires a User Id Field for sign in. specify which field in Active Directory
+    should map to that User Id Field, so that Privilege Secure can automatically fill in the required
+    credentials at login. The value used to sign in to the multi factor authenticator (MFA)
+    when a user logs in to the Privilege Secure Console.
 
-- Check Certificate – Check to have Privilege Secure validate the authentication using the
-certificate.
-- Certificate – Enter the authentication certificate.
+    to connect a user from the SAML provider to a user in the Privilege Secure copy of the AD
+    data, map a field in the provider list to a field in the Privilege Secure host
+    user table. The exact fields to map will vary between providers and according to the user’s AD
+    configuration.
 
-**Step 8 –** Click Login. The Sign In page opens in the browser.
+    The table displays the retrieved data that is useful for the host user lookup. The user must
+    select from the displayed records a field that corresponds to a value in their AD configuration. For
+    example, if the AD data contains email addresses, they can select any of the fields which contain
+    email addresses.
 
-**Step 9 –** Enter valid credentials for the SAML provider and sign in.
+    Field values will vary according to the information supplied by the provider. Example Values come
+    from the provider and will vary:
 
-**Step 10 –** If the sign in was successful, the Provider User Name/Id displays. This is passed
-to the UserTokenController so that the user information can be extracted. Click Next.
+    - **Field** — Shows the possible fields the SAML provider uses, as detected by Privilege
+      Secure.
+    - **Example Value** — Shows an example value for the field based on the login credentials provided in
+      the previous step. This is the format of the value used to sign in to the MFA
+      during log in.
 
-![SAML Configuration Wizard, Retrieved Data](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigidmapping.webp)
+    :::note
+    These are example credentials that show the format of the credentials you use during the
+    login process. The actual credentials are unique to each user
+    and each user sets them up during the MFA registration process for that user.
+    :::
 
-SpPAM will use the access token to retrieve user data from the SAML provider. The SAML provider
-requires a User Id Field for sign in. specify which field in Active Directory
-should map to that User Id Field, so that Privilege Secure can automatically fill in the required
-credentials at login. The value provided sign in to the multi factor authenticator (MFA)
-when a user logs in to the Privilege Secure Console.
+11. Select a field to use for the User Id Field and click **Select**.
 
-to connect a user from the SAML provider to a user in the Privilege Secure copy of the AD
-data, map a field in the provider list to a field in the Privilege Secure host
-user table. The exact fields to map will vary between providers and according to the user’s AD
-configuration.
+    ![SAML Configuration wizard, Map Id](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigidmapping2.webp)
 
-The table displays the retrieved data that is useful for the host user lookup. The user must
-select from the displayed records a field that corresponds to a value in their AD configuration. For
-example, if the AD data contains email addresses, they can select any of the fields which contain
-email addresses.
+12. The selected Source and User ID fields from the previous table are shown. Now map the
+    applicable AD field to the User Id Field. This is the value used to sign in to the MFA
+    during login. In the **Login Format** dropdown, select the applicable AD field to map to the User Id
+    Field.
+13. Click **Next** to proceed.
 
-Field values will vary according to the information supplied by the provider. Example Values come
-from the provider and will vary:
+    ![SAML Configuration wizard, Test Logout page](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigtestlogout.webp)
 
-- Field – Shows the possible fields used by the OpenID Connect provider detected by Privilege
-Secure.
-- Example Value – Shows an example value for the field based on the login credentials provided in
-the previous step. This represents the format of the value that sign in to the MFA
-during log in.
+14. On the Test Logout page, enter the following information:
 
-:::note
-These aren't the credentials that is used during the login process; only an
-example of the format of those credentials. The actual credentials used are unique to each user
-and are setup during the MFA registration process for that user.
-:::
+    - **Signout URI** — The Signout URI must be the simple logout address (not a SAML SLO endpoint) which
+      takes a parameter for the post logout redirection.
+      - Examples for Microsoft Entra ID:
 
+        `https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri`
 
-**Step 11 –** Select a field to use for the User Id Field and click Select.
+      - Example for Auth0:
 
-![SAML Configuration wizard, Map Id](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigidmapping2.webp)
+        `https://privilegesecure-dev.auth0.com/v2/logout?returnTo`
 
-**Step 12 –** The selected Source and User ID fields from the previous table are shown. Now map the
-applicable AD field to the User Id Field. This is the value that sign in to the MFA
-during login. In the Login Format dropdown, select the applicable AD field to map to the User Id
-Field.
+      - Example for Okta:
 
-**Step 13 –** Click **Next** to proceed.
+        `https://dev-106968.okta.com/login/signout?fromURI`
 
-![SAML Configuration wizard, Test Logout page](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigtestlogout.webp)
+    - **Signout Callback URI** — Some SAML providers require that redirection URIs be authorized, so the
+      page displays the URI details for the redirection.
 
-**Step 14 –** On the Test Logout page, enter the following information:
+15. Click **Test Log Out** to verify the connection configuration. This opens the browser page
+    and logs out of the SAML Provider.
 
-- Signout URI – The Signout URI must be the simple logout address (not a SAML SLO endpoint) which
-takes a parameter for the post logout redirection.
+    - If the Log Out page doesn't display as expected, review the values configured for the Signout URI
+      and modify them where needed. Then, verify the Log Out page again.
 
-- Examples for Microsoft Entra ID:
+16. Click the browser’s back arrow to return to the Test Logout wizard page.
+17. If the logout was successful, click **Finish**. A window displays the updated
+    configuration settings.
 
-https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri
+    ![SAML Configuration updating connector settings](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigupdateconnector.webp)
 
-- Example for Auth0:
-
-https://privilegesecure-dev.auth0.com/v2/logout?returnTo
-
-- Example for Okta:
-
-https://dev-106968.okta.com/login/signout?fromURI
-
-- Signout Callback URI – Some SAML providers require that redirection URIs be authorized, so the
-page displays the URI details for the redirection.
-
-**Step 15 –** Click Test Log Out to verify the connection configuration. This opens the browser page
-and logs out of the SAML Provider.
-
-- If the Log Out page doesn't display as expected, review the values configured for the Signout URI
-and modify them where needed. Then, verify the Log Out page again.
-
-**Step 16 –** Click the browser’s back arrow to return to the Test Logout wizard page.
-
-**Step 17 –** If the logout was successful, click Finish. A window displays the updated
-configuration settings.
-
-![SAML Configuration updating connector settings](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/samlconfigupdateconnector.webp)
-
-**Step 18 –** Click Okay to close the wizard and click **Save** on the Authentication page to accept
-the changes.
+18. Click **Okay** to close the wizard and click **Save** on the Authentication page to accept
+    the changes.
 
 The Authentication Connector is configured and added to the Connectors list.

@@ -17,5 +17,4 @@ permits it. The supported browsers for Privilege Secure are:
 :::note
 The browser compatibility mode must be turned off to access the Privilege Secure web
 service.
-
 :::

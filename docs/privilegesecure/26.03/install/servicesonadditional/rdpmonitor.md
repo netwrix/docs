@@ -18,31 +18,26 @@ monitored and recorded without this service.
 
 To install the Remote Desktop Monitor service.
 
-**Step 1 –** Copy the **NPS.TSMon.exe** file to the target host.
+1. Copy the **NPS.TSMon.exe** file to the target host.
 
-:::tip
-Remember, this file is in the Extras folder of the Privilege Secure installation download
-extracted ZIP file.
-:::
+   :::tip
+   Remember, this file is in the Extras folder of the Privilege Secure installation download
+   extracted ZIP file.
+   :::
 
+2. Run the EXE file. The Netwrix Privilege Secure Terminal Services Monitor Setup window
+   opens.
+3. Accept the license terms and conditions.
 
-**Step 2 –** Run the EXE file. The Netwrix Privilege Secure Terminal Services Monitor Setup window
-opens.
+   :::tip
+   Remember, it is a best practice to read the terms before agreeing to them.
+   :::
 
-**Step 3 –** Accept the license terms and conditions.
-
-:::tip
-Remember, it is a best practice to read the terms before agreeing to them.
-:::
-
-
-**Step 4 –** Click Install.
-
-**Step 5 –** When the installation has completed successfully, click Close. The Netwrix Privilege
-Secure Terminal Services Monitor Setup window closes.
-
-**Step 6 –** Open Services (`services.msc`) to verify the Netwrix Privilege Secure Remote Desktop
-Monitor service is installed and enabled with Automatic Startup Type and Log On As Local System.
+4. Click **Install**.
+5. When the installation has completed successfully, click **Close**. The Netwrix Privilege
+   Secure Terminal Services Monitor Setup window closes.
+6. Open **Services** (`services.msc`) to verify the Netwrix Privilege Secure Remote Desktop
+   Monitor service is installed and enabled with Automatic Startup Type and Log On As Local System.
 
 The service is now listening for terminal services connections.
 
@@ -51,5 +46,4 @@ It is necessary for the Record Proxy Sessions option to be enabled on the connec
 profile for the associated access policy. See the
 [Connection Profiles Page](/docs/privilegesecure/26.03/admin/accesspolicy/connectionprofiles/connectionprofiles.md) topic for additional
 information.
-
 :::

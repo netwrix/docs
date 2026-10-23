@@ -12,45 +12,37 @@ include:
 - Microsoft SQL
 - Oracle
 
-**Step 1 –** Navigate to the **Resources** page.
+1. Navigate to the **Resources** page.
+2. Click **Add** > **New Database**.
+3. In the **Enter Database Name** box, enter a unique name to identify the database.
 
-**Step 2 –** Click **Add** > **New Database**.
+   ![Add Database](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/adddatabase.webp)
 
-**Step 3 –** In the Enter Database Name box, enter a unique name to identify the database.
+4. Select **Microsoft SQL Server** or **Oracle** from the **Platform** dropdown list.
+5. Enter the instance name for the server.
+6. Enter the IP address for the server.
+7. Enter the port for the server. The default ports for each database platform are:
 
-![Add Database](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/adddatabase.webp)
+   - Microsoft SQL: 1433
+   - Oracle: 1521
 
-**Step 4 –** Select **Microsoft SQL Server** or **Oracle** from the Platform dropdown list.
+8. Enter the fully qualified domain name (FDQN) for the server.
 
-**Step 5 –** Enter the instance name for the server.
+   :::note
+   The domain is used as the default domain for database activities.
+   :::
 
-**Step 6 –** Enter the IP address for the server.
+9. From the dropdown menu, select a previously added service account with credentials for
+   the database.
 
-**Step 7 –** Enter the port for the server. The default ports for each database platform are:
+   - See the [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
+     information.
+   - **Visit icon** — Go to the Service Account page to view details of the selected service account.
+   - **Add New Service Account icon** — Open the Add New Service Account window. The fields are
+     identical to those on the Service Accounts page.
 
-- Microsoft SQL: 1433
-- Oracle: 1521
-
-**Step 8 –** Enter the fully qualified domain name (FDQN) for the server.
-
-:::note
-The domain is used as the default domain for database activities.
-:::
-
-
-**Step 9 –** From the dropdown menu, select a previously added service account with credentials for
-the database.
-
-- See the [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
-information.
-
-- Visit icon – Go to the Service Account page to view details of the selected service account.
-- Add New Service Account icon – Open the Add New Service Account window. The fields are
-identical to those on the Service Accounts page.
-
-**Step 10 –** Click **Save** to save the configuration options and enable the Scan Now button.
-
-**Step 11 –** Click **Scan Now** to begin scanning the database.
+10. Click **Save** to save the configuration options and enable the **Scan Now** button.
+11. Click **Scan Now** to begin scanning the database.
 
 The new database is now added. See the [Database Details Page](/docs/privilegesecure/26.03/admin/resources/detailspages/databases/databases.md) for
 additional details.

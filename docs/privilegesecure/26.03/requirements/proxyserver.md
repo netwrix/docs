@@ -17,28 +17,23 @@ On all Privilege Secure servers, Netwrix recommends excluding the following dire
 antivirus and endpoint protection software. a drive letter isn't specified in each
 path, as that can be customized during each Privilege Secure and service installation.
 
-- \Program Files\Stealthbits\PAM\ActionService
-- \Program Files\Stealthbits\PAM\ActionServiceWorker
-- \Program Files\Stealthbits\PAM\DatabaseTools\Data
-- \Program Files\Stealthbits\Postgres12\bin
-- \ProgramData\Stealthbits\Postgres12
+- `\Program Files\Stealthbits\PAM\ActionService`
+- `\Program Files\Stealthbits\PAM\ActionServiceWorker`
+- `\Program Files\Stealthbits\PAM\DatabaseTools\Data`
+- `\Program Files\Stealthbits\Postgres12\bin`
+- `\ProgramData\Stealthbits\Postgres12`
 
 Exclusions for Remote Services:
 
 - Action Service:
-
-- \Program Files\Stealthbits\PAM\ActionService
-- \Program Files\Stealthbits\PAM\ActionServiceWorker
-- \Stealthbits\PAM\ProxyService\
-
+  - `\Program Files\Stealthbits\PAM\ActionService`
+  - `\Program Files\Stealthbits\PAM\ActionServiceWorker`
+  - `\Stealthbits\PAM\ProxyService\`
 - Proxy Service:
-
-- \Stealthbits\PAM\ProxyService\
-
+  - `\Stealthbits\PAM\ProxyService\`
 - Scheduler Service:
-
-- \Stealthbits\PAM\SbPAM.SchedulerService\
-- \Stealthbits\PAM\ProxyService\
+  - `\Stealthbits\PAM\SbPAM.SchedulerService\`
+  - `\Stealthbits\PAM\ProxyService\`
 
 See the following topics for specific installation instructions for remote services:
 

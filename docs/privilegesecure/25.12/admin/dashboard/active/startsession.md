@@ -15,14 +15,14 @@ session to be automatically connected to the resource.
 Also note the icons to view and copy the password for the session as plain text, if the option is
 enabled in the access policy Connection Profiles.
 
-- Copy to Clipboard icon — Click to copy the password for the session as plain text. For
-resource–based activities for end users, this is only available if enabled in the activity's
-Access Policy. The password can always be viewed for credential–based activities.
-- View Password icon — Click to view the password for the session as plain text. For resource–based
-activities for end users, this is only available if enabled in the activity's Access Policy. The
-password can always be viewed for credential–based activities. To view a password, select the Eye
-icon. Users have 20 seconds to view the password or copy it.
-- Connection icon — Click the icon to begin the activity session.
+- **Copy to Clipboard icon** — Click to copy the password for the session as plain text. For
+  resource–based activities for end users, this is only available if enabled in the activity's
+  Access Policy. The password can always be viewed for credential–based activities.
+- **View Password icon** — Click to view the password for the session as plain text. For resource–based
+  activities for end users, this is only available if enabled in the activity's Access Policy. The
+  password can always be viewed for credential–based activities. To view a password, select the Eye
+  icon. Users have 20 seconds to view the password or copy it.
+- **Connection icon** — Click the icon to begin the activity session.
 
 Alternatively, configure any RDP / SSH Manager for remote login, including:
 
@@ -43,7 +43,6 @@ time is 5 minutes or less.
 :::note
 For NPS users with the Administrator role, session extension is always enabled.
 :::
-
 
 ![Extend Activity Session](/images/privilegesecure/25.12/accessmanagement/enduser/dashboard/extendsession.webp)
 

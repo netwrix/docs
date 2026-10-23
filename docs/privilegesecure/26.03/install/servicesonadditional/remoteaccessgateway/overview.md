@@ -14,22 +14,22 @@ access is provided via web page with browser-based sessions for RDP and SSH.
 
 The RAG is made up of two components:
 
-**RAG Portal**
+## RAG Portal
 
 A dedicated web server to be installed in the DMZ. This is the front-end of the solution for end
 users and by default the website runs on HTTPS\443. The RAG Portal communicates with the RAG gateway
 over HTTPS\443
 
-**RAG Gateway**
+## RAG Gateway
 
 The gateway runs inside the corporate network and provides a bridge between the RAG Portal and the
 Netwrix Privilege Secure installation. The RAG Gateway communicates to the Netwrix Privilege Secure
 web service on port 6500 and the Proxy on 4489 and 4422 for RDP and SSH, respectively.
 
-**User Interface**
+## User Interface
 
 The GUI of NPS-AM is browser-based, so connecting through the RAG offers the same experience as connecting directly to the App Server.
 
-**Installation Support**
+## Installation Support
 
-It is strongly recommended that a Netwrix engineer be involved in your RAG installation. contact your account manager to arrange an installation.
+Netwrix strongly recommends involving a Netwrix engineer in your RAG installation. contact your account manager to arrange an installation.

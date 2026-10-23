@@ -12,7 +12,7 @@ The Sync Errors tab displays the synchronization error log for the selected reso
 
 The table has the following columns:
 
-- Time — Date timestamp for when the event occurred
-- Message — Description of the event
+- **Time** — Date timestamp for when the event occurred
+- **Message** — Description of the event
 
 The table columns can be resized and sorted in ascending or descending order.

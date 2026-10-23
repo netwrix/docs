@@ -6,34 +6,30 @@ sidebar_position: 20
 
 # Navigation
 
-At the top of the Privilege Secure Console lists available in interfaces and provides access to the
+The menu bar at the top of the Privilege Secure Console lists the available interfaces and provides access to the
 Help link and the User Menu:
 
 ![End User Dashboard](/images/privilegesecure/26.03/accessmanagement/enduser/enduserdashboard.webp)
 
 The buttons have these functions:
 
-- Interfaces:
-
-- Access — Grants access to the My Activities page. Activities are be displayed as individual
-cards, organized alphabetically or by Access Policy. See the
-[My Activities Page](/docs/privilegesecure/26.03/enduser/myactivities/myactivities.md) topic for additional. information.
-- Dashboard — View summaries of recent activity logs and user sessions. See the
-[Dashboard Interface](/docs/privilegesecure/26.03/enduser/dashboard/overview.md) topic for additional information.
-
-- Help — Opens the Netwrix Privilege Secure Documentation in the in another browser tab
-
-- User Name — Click to open the dropdown menu:
-
-- Dark Mode — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview
-of Dark Mode.
-- Product Tour — Re-starts walk-through of Privilege Secure features. See the
-[Product Tour](/docs/privilegesecure/26.03/enduser/navigation/producttour.md) topic for additional information.
-- Logout — Signs the user out of the current session and opens the Login screen
-- About — Shows version and license information for the console
+- **Interfaces:**
+  - **Access** — Grants access to the My Activities page. Activities are be displayed as individual
+    cards, organized alphabetically or by Access Policy. See the
+    [My Activities Page](/docs/privilegesecure/26.03/enduser/myactivities/myactivities.md) topic for additional. information.
+  - **Dashboard** — View summaries of recent activity logs and user sessions. See the
+    [Dashboard Interface](/docs/privilegesecure/26.03/enduser/dashboard/overview.md) topic for additional information.
+- **Help** — Opens the Netwrix Privilege Secure Documentation in the in another browser tab
+- **User Name** — Click to open the dropdown menu:
+  - **Dark Mode** — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview
+    of Dark Mode.
+  - **Product Tour** — Re-starts walk-through of Privilege Secure features. See the
+    [Product Tour](/docs/privilegesecure/26.03/enduser/navigation/producttour.md) topic for additional information.
+  - **Logout** — Signs the user out of the current session and opens the Login screen
+  - **About** — Shows version and license information for the console
 
 For reviewers there is a Navigation pane where the pages for the selected interface display. Use the
-Menu button to the left of the logo to collapse / expand the Navigation pane.
+**Menu** button to the left of the logo to collapse / expand the Navigation pane.
 
 ## Console Icons
 

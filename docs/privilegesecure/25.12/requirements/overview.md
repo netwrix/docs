@@ -15,13 +15,13 @@ exceptions are covered.
 
 The following servers are required for installation of the product:
 
-- Netwrix Privilege Secure Application Server – This is where the Netwrix Privilege Secure (v25.12)
-application is installed.
-- Netwrix Privilege Secure Client – Privilege Secure is a web service that can be accessed locally
-or remotely through a supported browser.
-- Netwrix Privilege Secure Proxy Server – This is for the supported RDP / SSH Client.
-- Target Environment – The target environment includes platforms with privileged access to be
-managed by the application.
+- **Netwrix Privilege Secure Application Server** — This is where the Netwrix Privilege Secure (v25.12)
+  application is installed.
+- **Netwrix Privilege Secure Client** — Privilege Secure is a web service that can be accessed locally
+  or remotely through a supported browser.
+- **Netwrix Privilege Secure Proxy Server** — This is for the supported RDP / SSH Client.
+- **Target Environment** — The target environment includes platforms with privileged access to be
+  managed by the application.
 
 See the following sections for additional information:
 

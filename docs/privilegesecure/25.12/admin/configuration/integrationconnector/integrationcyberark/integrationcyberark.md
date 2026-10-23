@@ -9,8 +9,8 @@ sidebar_position: 20
 Privilege Secure contains a built-in vault for credential management, but can uniquely map to a
 CyberArk vault. CyberArk connectors is useful for the following purposes:
 
-- Service Accounts – Use to perform Active Directory synchronization
-- Activities – Use to configure the target account for the activity
+- **Service Accounts** — Use to perform Active Directory synchronization
+- **Activities** — Use to configure the target account for the activity
 
 CyberArk connectors use the Central Credential Provider. The Central Credential Provider provides a
 REST interface that allows applications to check out passwords from a CyberArk vault. The accounts
@@ -23,25 +23,24 @@ directly in the activity definition.
 
 To add the CyberArk Connector.
 
-**Step 1 –** Navigate to the Configuration > Integration Connectors page.
+1. Navigate to the **Configuration** > **Integration Connectors** page.
+2. In the Integration Connectors list, click the **Add Integration Connector** icon.
 
-**Step 2 –** In the Integration Connectors list, click the Add Integration Connector icon.
+   ![Add CyberArk Connector Integration](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addcyberark.webp)
 
-![Add CyberArk Connector Integration](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addcyberark.webp)
+3. Enter the following information:
 
-**Step 3 –** Enter the following information:
+   - **Connector Name** — Enter a name to uniquely identify the connector
+   - **Connector Description (Optional)** — Enter a brief description to identify the service account
+   - **Connector Template** — A selection of templates for connector configurations. Select **CyberArk** from
+     the dropdown list.
+   - **API Url** — The base url for the CyberArk Common Credential provider.
+     `https://cyberarkhost.example.com`
+   - **App ID** — The application identifier to use when requesting accounts from the CyberArk Common
+     Credential Provider
+   - **Client Certificate** — The base64 text from the certificate file needed to authenticate to the
+     CyberArk Common Credential Provider
 
-- Connector Name – Enter a name to uniquely identify the connector
-- Connector Description (Optional) – Enter a brief description to identify the service account
-- Connector Template – A selection of templates for connector configurations. Select CyberArk from
-the dropdown list.
-- API Url – The base url for the CyberArk Common Credential provider.
-https://cyberarkhost.example.com
-- App ID – The application identifier to use when requesting accounts from the CyberArk Common
-Credential Provider
-- Client Certificate – The base64 text from the certificate file needed to authenticate to the
-CyberArk Common Credential Provider
-
-**Step 4 –** Click the Save icon to create the new integration connector.
+4. Click the **Save** icon to create the new integration connector.
 
 The next step is to import the data from CyberArk.

@@ -8,26 +8,23 @@ sidebar_position: 10
 
 To add a schedule policy to the console.
 
-**Step 1 –** Navigate to the **Policy** > **Platforms** > **Schedule Policies** page.
+1. Navigate to the **Policy** > **Platforms** > **Schedule Policies** page.
+2. In the Schedule Polices list, click the **Plus** icon.
 
-**Step 2 –** In the Schedule Polices list, click the **Plus** icon.
+   ![Schedule Policy Editor Window](/images/privilegesecure/26.03/accessmanagement/admin/policy/edit/schedulepolicyeditor.webp)
 
-![Schedule Policy Editor Window](/images/privilegesecure/26.03/accessmanagement/admin/policy/edit/schedulepolicyeditor.webp)
+3. Enter the following information:
 
-**Step 3 –** Enter the following information:
+   :::note
+   The fields will change depending on the selected frequency.
+   :::
 
-:::note
-The fields will change depending on the selected frequency.
-:::
+   - Select the frequency you want:
+     - **Every X Hours** — Enter the number of hours between executions
+     - **Every X Days** — Enter the number of days between executions and the time of day
+     - **Weekly** — Select the day of the week from the dropdown menu and enter the time of day
+     - **Monthly** — Enter a number representing the day of the month and the time of day
 
-
-- Select the frequency you want:
-
-- Every X Hours – Enter the number of hours between executions
-- Every X Days – Enter the number of days between executions and the time of day
-- Weekly – Select the day of the week from the dropdown menu and enter the time of day
-- Monthly – Enter a number representing the day of the month and the time of day
-
-**Step 4 –** Click **Save** to create the new schedule.
+4. Click **Save** to create the new schedule.
 
 The new schedule is added to the Schedule Policy list.

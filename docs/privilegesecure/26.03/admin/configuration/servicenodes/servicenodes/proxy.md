@@ -12,5 +12,5 @@ The Proxy Service page shows the details of the selected service on the host.
 
 The Proxy Service page lists the properties for the selected proxy service:
 
-- Name – Property name
-- Value – Property value
+- **Name** — Property name
+- **Value** — Property value

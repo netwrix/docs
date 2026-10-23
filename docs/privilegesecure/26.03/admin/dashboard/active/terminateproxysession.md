@@ -11,20 +11,19 @@ event that suspicious or unauthorized activity is observed.
 
 To a lock the session.
 
-**Step 1 –** In the Live Session Viewer, click the **Terminate Session** icon.
+1. In the Live Session Viewer, click the **Terminate Session** icon.
 
-![Terminate Session window](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/window/terminatesession.webp)
+   ![Terminate Session window](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/window/terminatesession.webp)
 
-**Step 2 –** In the Terminate Proxy Session window, select from the following options:
+2. In the **Terminate Proxy Session** window, select from the following options:
 
-- Cancel Activity Session – Check to cancel the active session in Privilege Secure and prevent the
-user logging in again through the same session.
+   - **Cancel Activity Session** — Check to cancel the active session in Privilege Secure and prevent the
+     user logging in again through the same session.
 
-**Step 3 –** Click **Okay** to disconnect the session.
-
-**Step 4 –** To prevent the user from creating a new session, navigate to the **Users & Groups
-Details** page for that user and click **Lock Account**. See the
-[User, Group, & Application Details Page](/docs/privilegesecure/26.03/admin/usersgroups/usergroupapplication/usergroupapplication.md) topic
-for additional information.
+3. Click **Okay** to disconnect the session.
+4. To prevent the user from creating a new session, navigate to the **Users & Groups
+   Details** page for that user and click **Lock Account**. See the
+   [User, Group, & Application Details Page](/docs/privilegesecure/26.03/admin/usersgroups/usergroupapplication/usergroupapplication.md) topic
+   for additional information.
 
 The session is terminated.

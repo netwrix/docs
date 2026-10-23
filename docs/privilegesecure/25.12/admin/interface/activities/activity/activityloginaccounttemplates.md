@@ -8,32 +8,27 @@ sidebar_position: 10
 
 There are three options for Login Account Templates in an Activity:
 
-- Use a specific account name — For example, to always connect the Activity as a service account
-might be “democorp\svc_account_name”
+- **Use a specific account name** — For example, to always connect the Activity as a service account
+  might be “democorp\svc_account_name”
 - Use a mask to select a user’s unique admin account using variable substitution.
-
-- For Users and Groups, acceptable substitute variables that map to the users AD attributes are:
-`%domain%`, `%targetdomain%`, `%samaccountname%`, `%email%`, `%department%`, `%sessionid%`,
-`%hostname%`, `%dnshostname%`, `%fqdn%`, `%upn-username%`, `%upn-domain%`, `%email-username%`,
-`%email-domain%`, `%firstname%`, `%lastname%`, `%displayname%`, `%fullname%`
-
-- Example 1: “`%domain%\%samaccountname%-a`”, a user with an Privilege Secure login name of
-“sblab\jsmith” would result in a login account of “sblab\jsmith-a”
-- Example 2: “`%upn-username%-a@%upn-domain%`”, a user with an Privilege Secure login name
-of “jsmith@sblab.com” would result in a login account of “jsmith-a@sblab.com”
-- Example 3: “`%email-username%-a@%email-domain%`”, a user with an Privilege Secure login
-name of “jsmith@netwrix.com” would result in a login account of “jsmith-a@netwrix.com”
-- When a domain name is detected in the template field, i.e. contains a “\” character, the
-Create Local Account option has no effect
-
-- For Applications, the following masks are available:
-
-- %samaccountname%, %department%, %email%, %userprincipalname%, %displayname%
-
-- Use a mask to define an account that is created locally on the target resource — For example,
-a mask of “`%domain%_%samaccountname%`” in conjunction with the Create Local Account option set to
-yes, will result in a local account being created using name substitution so the user
-“sblab\jsmith” is connected to a local account named “sblab_jsmith”
+  - For Users and Groups, acceptable substitute variables that map to the users AD attributes are:
+    `%domain%`, `%targetdomain%`, `%samaccountname%`, `%email%`, `%department%`, `%sessionid%`,
+    `%hostname%`, `%dnshostname%`, `%fqdn%`, `%upn-username%`, `%upn-domain%`, `%email-username%`,
+    `%email-domain%`, `%firstname%`, `%lastname%`, `%displayname%`, `%fullname%`
+    - Example 1: “`%domain%\%samaccountname%-a`”, a user with an Privilege Secure login name of
+      “sblab\jsmith” would result in a login account of “sblab\jsmith-a”
+    - Example 2: “`%upn-username%-a@%upn-domain%`”, a user with an Privilege Secure login name
+      of “jsmith@sblab.com” would result in a login account of “jsmith-a@sblab.com”
+    - Example 3: “`%email-username%-a@%email-domain%`”, a user with an Privilege Secure login
+      name of “jsmith@netwrix.com” would result in a login account of “jsmith-a@netwrix.com”
+    - When a domain name is detected in the template field, i.e. contains a “\” character, the
+      Create Local Account option has no effect
+  - For Applications, the following masks are available:
+    - `%samaccountname%`, `%department%`, `%email%`, `%userprincipalname%`, `%displayname%`
+- **Use a mask to define an account that is created locally on the target resource** — For example,
+  a mask of “`%domain%_%samaccountname%`” in conjunction with the Create Local Account option set to
+  yes, will result in a local account being created using name substitution so the user
+  “sblab\jsmith” is connected to a local account named “sblab_jsmith”
 
 :::note
 The value of each mask can be customized on the
@@ -42,7 +37,6 @@ The value of each mask can be customized on the
 information.
 :::
 
-
 ## Functions for Login Account Templates
 
 ### first()
@@ -50,27 +44,27 @@ information.
 The `first()` function returns the specified number of characters starting from the beginning of the
 string.
 
-%first(string stringToManipulate, int numCharactersReturned)/first%
+`%first(string stringToManipulate, int numCharactersReturned)/first%`
 
-**Parameters**
+#### Parameters
 
-stringToManipulate (string)
+`stringToManipulate (string)`
 
 The string or Privilege Secure Login Account Template mask to be manipulated.
 
-numCharactersReturned (int)
+`numCharactersReturned (int)`
 
 The number of characters, starting from the beginning of the string, to be returned based on
 supplied `stringToManipulate` parameter.
 
-**Notes**
+#### Notes
 
 `int numCharactersReturned` must be a positive number.
 
 If `int numCharactersReturned` exceeds string `stringToManipulate` then the entire string is
 returned.
 
-**Examples**
+#### Examples
 
 `%first(jsmith,3)/first%`
 
@@ -94,23 +88,23 @@ index to the end of the supplied string. If a negative number is supplied for
 `int startIndexOrNumCharactersReturned` then the return value is that many characters from the end
 of the supplied string.
 
-**Parameters**
+#### Parameters
 
-stringToManipulate (string)
+`stringToManipulate (string)`
 
 The string or Privilege Secure Login Account Template mask to be manipulated.
 
-startIndexOrNumCharactersReturned (int)
+`startIndexOrNumCharactersReturned (int)`
 
 If non-negative, the return value is this index to the end of the supplied string. If negative, the
 return value is this many characters from the end of the supplied string.
 
-**Notes**
+#### Notes
 
 If `int startIndexOrNumCharactersReturned` is an index greater than the largest index in the
 supplied string, then an empty string is returned.
 
-**Examples**
+#### Examples
 
 `%substr(jsmith,2)/substr%`
 
@@ -136,7 +130,7 @@ of the `substr()` function is "mith"
 The `replace()` function accepts a string as input, and replaces all instances of an oldString with
 a newString.
 
-**Parameters**
+#### Parameters
 
 `stringToManipulate (string)`
 
@@ -148,9 +142,9 @@ The string to be replaced
 
 `newString (string)`
 
-The string that will replace the newString
+The string that will replace the oldString
 
-**Examples**
+#### Examples
 
 `%replace(jsmith,smith,jones)/replace%`
 
@@ -160,7 +154,7 @@ The preceding example returns "jjones"
 
 The `trim()` function removes the specified number of characters from the end of a string.
 
-**Parameters**
+#### Parameters
 
 `stringToManipulate (string)`
 
@@ -171,12 +165,12 @@ The string or Privilege Secure Login Account Template mask to be manipulated.
 A non-negative integer should be supplied. That many characters are trimmed from the end of the
 string.
 
-**Notes**
+#### Notes
 
 If `int numberOfCharacters` is an index greater than the length of the supplied string, then an
 empty string is returned.
 
-**Examples**
+#### Examples
 
 `%trim(jsmith-suffix,7)/trim%`
 

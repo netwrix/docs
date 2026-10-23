@@ -18,56 +18,44 @@ Web Service REST API for Applications Access Data Remotely topic of the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 
-**Step 1 –** In Access Analyzer, navigate to the Access Node and click the Add Access link in the
-upper-right corner of the Access view. The Access Role wizard opens.
+1. In Access Analyzer, navigate to the Access Node and click the **Add Access** link in the
+   upper-right corner of the Access view. The Access Role wizard opens.
+2. Select the **An application accessing data remotely through Web Service** radio button,
+   then click **Next**. The Application Access page opens.
+3. The Application Access page displays a list of available objects in the database.
+   Select **Tables** and click **Add** to open the Select Database Objects window.
+4. Select the following Objects:
 
-**Step 2 –** Select the An application accessing data remotely through Web Service radio button,
-then click Next. The Application Access page opens.
+   - Tables:
+     - `SA_ADInventory_Domains`
+     - `SA_SG_LocalAdmins_Details`
+   - Views:
+     - `SA_ADInventory_ComputersView`
+     - `SA_ADInventory_UsersView`
 
-**Step 3 –** The Application Access page displays a list of available objects in the database.
-Select Tables and click Add to open the Select Database Objects window.
+   :::note
+   Type in the Filter Objects by Name box to filter the list of objects by the characters
+   entered.
+   :::
 
-**Step 4 –** Select the following Objects:
+5. Click **OK** to return to the Application Access page.
+6. Review tables and views and click **Next**.
+7. On the Application Details page, define the name of the application and generate the
+   app token:
 
-- Tables:
+   - **Application name** — Enter “Privilege Secure”
+   - **Access Expiration** — Set the expiration you want for the client secret:
+     - **Access expires within** — Select a timeframe from the dropdown list. The default is 72 hours.
+     - **Access expires on specified date** — Select a date from the dropdown list
+   - **Generate** — Click this button to generate the Client ID and Client secret
+   - **Client ID** — Copy the Client ID for use in Privilege Secure
+   - **Client secret** — Copy the Client Secret for use in Privilege Secure
 
-- SA_ADInventory_Domains
-- SA_SG_LocalAdmins_Details
+8. Click **Finish** to close the wizard and click **Save** in the Access view accept the changes.
 
-- Views:
-
-- SA_ADInventory_ComputersView
-- SA ADInventory_UsersView
-
-:::note
-Type in the Filter Objects by Name box to filter the list of objects by the characters
-entered.
-:::
-
-
-**Step 5 –** Click OK to return to the Application Access page.
-
-**Step 6 –** Review tables and views and click Next.
-
-**Step 7 –** On the Application Details page, define the name of the application and generate the
-app token:
-
-- Application name – Enter “Privilege Secure”
-- Access Expiration – Set the expiration you want for the client secret:
-
-- Access expires within – Select a timeframe from the dropdown list. The default is 72 hours.
-- Access expires on specified date – Select a date from the dropdown list
-
-- Generate – Click this button to generate the Client ID and Client secret
-- Client ID – Copy the Client ID for use in Privilege Secure
-- Client secret – Copy the Client Secret for use in Privilege Secure
-
-**Step 8 –** Click Finish to close the wizard and click Save in the Access view accept the changes.
-
-:::note
-Access Analyzer must be restarted after a new access role is configured.
-:::
-
+   :::note
+   Access Analyzer must be restarted after a new access role is configured.
+   :::
 
 The next step is to use the Client ID and Client Secret to obtain an access token. This token is
 used to get data from the Access Analyzer endpoint.
@@ -77,30 +65,27 @@ used to get data from the Access Analyzer endpoint.
 To add the service accounts for the Access Analyzer integration connector. See the
 [Add Service Account](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccount.md) topic for additional information.
 
-**Step 1 –** In the Privilege Secure Console, navigate to the Configuration > Service Accounts page.
+1. In the Privilege Secure Console, navigate to the **Configuration** > **Service Accounts** page.
+2. In the Service Account list, click the **Add Service Account** icon.
+3. Enter the following information:
 
-**Step 2 –** In the Service Account list, click the Add Service Account icon.
+   - **Enter Name** — Access Analyzer API
+   - **Enter Description** — (Optional) Brief description to identify the service account
+   - **Domain** — This field isn't required
+   - **Username** — Enter the Client ID from the Access Role wizard in Access Analyzer
+   - **Password** — Enter the Client Secret from the Access Role wizard in Access Analyzer
+   - **Platform** — Select Windows from the dropdown list
 
-**Step 3 –** Enter the following information:
+4. Click the **Save** icon to create the new service account.
+5. Follow the steps again to add a service account with administrator credentials for
+   theAccess Analyzer server. Enter the following information:
 
-- Enter Name –Access Analyzer API
-- Enter Description – (Optional) Brief description to identify the service account
-- Domain – This field isn't required
-- Username – Enter the Client ID from the Access Role wizard in Access Analyzer
-- Password – Enter the Client Secret from the Access Role wizard in Access Analyzer
-- Platform – Select Windows from the dropdown list
-
-**Step 4 –** Click the Save icon to create the new service account.
-
-**Step 5 –** Follow the steps again to add a service account with administrator credentials for
-theAccess Analyzer server. Enter the following information:
-
-- Enter Name – Access Analyzer Admin
-- Enter Description – (Optional) Brief description to identify the service account
-- Domain – The domain the Access Analyzer server is on
-- Username – A local admin account for the Access Analyzer server
-- Password – The password for the local admin account
-- Platform – Select Windows from the dropdown list
+   - **Enter Name** — Access Analyzer Admin
+   - **Enter Description** — (Optional) Brief description to identify the service account
+   - **Domain** — The domain the Access Analyzer server is on
+   - **Username** — A local admin account for the Access Analyzer server
+   - **Password** — The password for the local admin account
+   - **Platform** — Select Windows from the dropdown list
 
 The next step is to configure the integration connector.
 
@@ -108,26 +93,25 @@ The next step is to configure the integration connector.
 
 To add the Access Analyzer Connector.
 
-**Step 1 –** In the Privilege Secure Console, navigate to the Configuration > Integration Connectors
-page.
+1. In the Privilege Secure Console, navigate to the **Configuration** > **Integration Connectors**
+   page.
+2. In the Integration Connector list, click the **Add Integration Connector** icon.
 
-**Step 2 –** In the Integration Connector list, click the Add Integration Connector icon.
+   ![Add Enterprise Auditor Integration Connector](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addaccessanalyzer.webp)
 
-![Add Enterprise Auditor Integration Connector](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addaccessanalyzer.webp)
+3. Enter the following information:
 
-**Step 3 –** Enter the following information:
+   - **Connector Name** — Enter a name to uniquely identify the connector
+   - **Connector Description (Optional)** — Enter a brief description to identify the service account
+   - **Connector Template** — A selection of templates for connector configurations. Select StealthAUDIT
+     from the dropdown list.
+   - **Server Hostname** — The hostname of the server that Privilege Secure needs to connect to the server
+     that Access Analyzer is installed on
+   - **Port** — The port used by the service that Privilege Secure needs to connect to
+   - **REST Credentials** — Enter the Client ID from the Access Role wizard in Access Analyzer
+   - **PowerShell Credentials** — Enter the Client Secret from the Access Role wizard in Access Analyzer
 
-- Connector Name – Enter a name to uniquely identify the connector
-- Connector Description (Optional) – Enter a brief description to identify the service account
-- Connector Template – A selection of templates for connector configurations. Select StealthAUDIT
-from the dropdown list.
-- Server Hostname – The hostname of the server that Privilege Secure needs to connect to the server
-that Access Analyzer is installed on
-- Port – The port used by the service that Privilege Secure needs to connect to
-- REST Credentials – Enter the Client ID from the Access Role wizard in Access Analyzer
-- PowerShell Credentials – Enter the Client Secret from the Access Role wizard in Access Analyzer
-
-**Step 4 –** Click the Save icon to create the new integration connector.
+4. Click the **Save** icon to create the new integration connector.
 
 The next step is to import the data from Access Analyzer.
 
@@ -136,15 +120,14 @@ The next step is to import the data from Access Analyzer.
 To import the users, groups, and resources associated with administrator accounts
 from Access Analyzer.
 
-**Step 1 –** In the Privilege Secure Console, navigate to the Configuration > Integration Connectors
-page in the menu.
+1. In the Privilege Secure Console, navigate to the **Configuration** > **Integration Connectors**
+   page in the menu.
+2. In the Integration Connector list, select the previously created Enterprise Auditor
+   Import connector.
 
-**Step 2 –** In the Integration Connector list, select the previously created Enterprise Auditor
-Import connector.
+   ![enterpriseauditorconnector](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/accessanalyzerconnector.webp)
 
-![enterpriseauditorconnector](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/accessanalyzerconnector.webp)
-
-**Step 3 –** Click **Sync** **StealthAUDIT** to begin the data collection. This may take some time.
+3. Click **Sync** **StealthAUDIT** to begin the data collection. This may take some time.
 
 To view the import progress, navigate to **Service Nodes** > Action Services. See the
 [Action Service](/docs/privilegesecure/25.12/admin/configuration/servicenodes/servicenodes/action.md) topic for additional information.

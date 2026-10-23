@@ -16,27 +16,26 @@ to use the OpenID login functionality with Privilege Secure an Okta user must ma
 in an AD domain that Privilege Secure is aware of.
 
 :::note
-The user also need to be given access to Privilege Secure by assigning them a role
+You also need to give the user access to Privilege Secure by assigning them a role
 from the Config->Role Management screen.
 :::
 
-
-To create a new user click the Directory menu item and select People from the dropdown. You should
+To create a new user click the **Directory** menu item and select **People** from the dropdown. You should
 see this screen.
 
 ![Okta Menu](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/oktamenu.webp)
 
 If your screen doesn’t look like this then you’re probably in Developer Console view. Click in the
-top left corner (where it says Developer Console) and choose Classic UI.
+top left corner (where it says Developer Console) and choose **Classic UI**.
 
-To add a new user, click the Add Person button:
+To add a new user, click the **Add Person** button:
 
 ![Add person to Okta](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/oktaaddperson.webp)
 
 Privilege Secure will use the ‘Username’ value to search the host-user table for the matching user.
 
 The OpenID Connector configuration screen gives 3 options for the host-user field that the Okta
-Username is matched against – under the Login Format dropdown:
+Username is matched against – under the **Login Format** dropdown:
 
 - sAMAccountName
 - User Principal Name
@@ -46,7 +45,6 @@ Username is matched against – under the Login Format dropdown:
 Okta doesn’t allow sAMAccountName to be used as the Username, so sAMAccountName isn’t supported
 here.
 :::
-
 
 Users in sbpam.local are all set up with both UPN and Email Address – but they’re not the same.
 
@@ -58,8 +56,8 @@ To use the first account the Privilege Secure OpenID Connector Login Format shou
 for the second UPN.
 
 To create a user, enter the appropriate Username value and other data. Set the
-Password option to ‘Set by Admin’ and setting it yourself. If the user is required to set (or reset)
-their own password then it is handled on the Okta side – which won’t give control back to
+Password option to ‘Set by Admin’ and setting it yourself. If the user must set (or reset)
+their own password then Okta handles it – which won’t give control back to
 Privilege Secure until it’s done.
 
 ### Assigning Users to Applications
@@ -67,7 +65,7 @@ Privilege Secure until it’s done.
 This example has one application with users automatically assigned – but that may not
 always be the case, so…
 
-When the user has been created click their name and you sees the User Details screen:
+After you create the user click their name and you sees the User Details screen:
 
 ![Assign Apps top users](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/oktaassignapps.webp)
 

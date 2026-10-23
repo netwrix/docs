@@ -9,8 +9,8 @@ sidebar_position: 30
 Privilege Secure contains a built-in vault for credential management, but can uniquely map to a
 HashiCorp vault. HashiCorp connectors is useful for the following purposes:
 
-- Service Accounts – Use to perform Active Directory synchronization
-- Activities – Use to configure the target account for the activity
+- **Service Accounts** — Use to perform Active Directory synchronization
+- **Activities** — Use to configure the target account for the activity
 
 HashiCorp connectors use the Active Directory Secrets Engine. The Active Directory Secrets Engine
 defines a collection of usernames and passwords in each library endpoint, so when Privilege Secure
@@ -27,21 +27,20 @@ additional information.
 
 To add a vault connector for HashiCorp.
 
-**Step 1 –** Navigate to the Configuration > Integration Connectors page.
+1. Navigate to the **Configuration** > **Integration Connectors** page.
+2. In the Integration Connector list, click the **Add Integration Connector** icon.
 
-**Step 2 –** In the Integration Connector list, click the Add Integration Connector icon.
+   ![Add HashiCorp Connector Integration](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addhashicorp.webp)
 
-![Add HashiCorp Connector Integration](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addhashicorp.webp)
+3. Enter the following information:
 
-**Step 3 –** Enter the following information:
+   - **Connector Name** — Enter a name to uniquely identify the connector
+   - **Connector Description (Optional)** — Enter a brief description to identify the service account
+   - **Connector Template** — A selection of templates for connector configurations. Select **HashiCorp** from
+     the dropdown list.
+   - **Access Token** — The access token generated in HashiCorp
+   - **Skip Certificate Check** — Select to ignore certification warnings when connecting to the server
 
-- Connector Name – Enter a name to uniquely identify the connector
-- Connector Description (Optional) – Enter a brief description to identify the service account
-- Connector Template – A selection of templates for connector configurations. Select HashiCorp from
-the dropdown list.
-- Access Token – The access token generated in HashiCorp
-- Skip Certificate Check – Select to ignore certification warnings when connecting to the server
-
-**Step 4 –** Click the Save icon to create the new integration connector.
+4. Click the **Save** icon to create the new integration connector.
 
 The connector is added.

@@ -13,7 +13,7 @@ remains open for only 20 seconds.
 
 The window has the following features:
 
-- Countdown — Indicates time remaining before the window closes automatically
-- Eye icon — Reveals the password
-- Copy to Clipboard — Copies the value to the clipboard
-- Cancel — Closes the View Password window
+- **Countdown** — Indicates time remaining before the window closes automatically
+- **Eye icon** — Reveals the password
+- **Copy to Clipboard** — Copies the value to the clipboard
+- **Cancel** — Closes the View Password window

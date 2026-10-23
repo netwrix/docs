@@ -20,46 +20,39 @@ Secure.
 
 Create an App Registration in Entra ID (Entra ID > App Registrations) as an admin in Entra ID.
 
-**Step 1 –** Click **New Registration**.
+1. Click **New Registration**.
+2. Name it, keep all default settings, and click **Register**.
+3. Expand the **Manage** menu, then click **API Permissions**.
+4. Using this menu, grant the following Microsoft Graph API permissions:
 
-**Step 2 –** Name it, keep all default settings, and click **Register**.
+   - Application Permissions:
+     - `Directory.ReadWrite.All`
+     - `Group.ReadWrite.All`
+     - `User.ReadWrite.All`
+     - `RoleManagement.ReadWrite.Directory`
+   - Delegated Permissions:
+     - `User.Read`
 
-**Step 3 –** Expand the **Manage** menu, then click **API Permissions**.
+5. Click **Grant Admin Consent**.
 
-**Step 4 –** Using this menu, grant the following Microsoft Graph API permissions:
-
-- Application Permissions:
-- Directory.ReadWrite.All
-- Group.ReadWrite.All
-- User.ReadWrite.All
-- RoleManagement.ReadWrite.Directory
-- Delegated Permissions:
-- User.Read
-
-**Step 5 –** Click **Grant Admin Consent**.
-
-Ensure the Grant Admin Consent was successful within the Configured permissions menu. A message at
-the top of the page displays the following message: Sucessfully granted admin consent for the
+Ensure the Grant Admin Consent was successful within the Configured permissions menu. The following message
+appears at the top of the page: Sucessfully granted admin consent for the
 requested permissions.
 
 ## Generate Secret
 
 Generate a secret for the App Registration
 
-**Step 1 –** In the App Registration section, click **Certificates & Secrets**.
+1. In the App Registration section, click **Certificates & Secrets**.
+2. Click **New Client Secret**.
+3. Set any expiration date (your preference), and click **Add**.
+4. Copy the Secret Value before leaving the page. The Secret Value, which is the App
+   Secret value required for adding an Entra ID Service Account to Netwrix Privilege Secure, is never
+   displayed again.
+5. Return to the App Registration Overview page to get the following values:
 
-**Step 2 –** Click **New Client Secret**.
-
-**Step 3 –** Set any expiration date (your preference), and click **Add**.
-
-**Step 4 –** Copy the Secret Value before leaving the page. The Secret Value, which is the App
-Secret value required for adding an Entra ID Service Account to Netwrix Privilege Secure, is never
-displayed again.
-
-**Step 5 –** Return to the App Registration Overview page to get the following values:
-
-- Application (client) ID, required for the Netwrix Privilege Secure Entra ID Service Account
-- Directory (tenant) ID, required to add an Entra ID tenant resource to Netwrix Privilege Secure
+   - Application (client) ID, required for the Netwrix Privilege Secure Entra ID Service Account
+   - Directory (tenant) ID, required to add an Entra ID tenant resource to Netwrix Privilege Secure
 
 ## Add App Registration to Admin Role
 
@@ -71,20 +64,14 @@ To manage the Global Administrator role, assign the Global Administrator role to
 registration instead of User Administrator.
 :::
 
-
-**Step 1 –** Navigate to **Entra ID**.
-
-**Step 2 –** Click **Roles and Administrators**.
-
-**Step 3 –** Locate and click the **User Administrator** role.
-
-**Step 4 –** Click **Add Assignments**.
-
-**Step 5 –** Search for the name of the previously created App Registration, click it, and click
-**Select**.
-
-**Step 6 –** Click **Next**, then select the **Setting** Tab and provide justification text before
-clicking **Assign**.
+1. Navigate to **Entra ID**.
+2. Click **Roles and Administrators**.
+3. Locate and click the **User Administrator** role.
+4. Click **Add Assignments**.
+5. Search for the name of the previously created App Registration, click it, and click
+   **Select**.
+6. Click **Next**, then select the **Setting** Tab and provide justification text before
+   clicking **Assign**.
 
 The service account can now be added to Privilege Secure, using the Application (Client) ID and
 Client Secret. See the [Service Accounts Page](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional

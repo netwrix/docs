@@ -12,36 +12,32 @@ observed, either from the [Active Dashboard](/docs/privilegesecure/25.12/admin/d
 
 To lock a session.
 
-**Step 1 –** Navigate to either the **Active dashboard** or the **Live Session Viewer**.
+1. Navigate to either the **Active dashboard** or the **Live Session Viewer**.
 
-- From the Active Dashboard, select the session and click **Lock Activity**.
+   - From the Active Dashboard, select the session and click **Lock Activity**.
+   - OR -
+   - From the Live Session Viewer, click the **lock** icon.
 
-- OR -
+   ![Lock User Session](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/window/locksession.webp)
 
-- From the Live Session Viewer, click the **lock** icon.
+2. In the **Lock Session** window, enter the following information:
 
-![Lock User Session](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/window/locksession.webp)
+   - **Lock Title** — The title of the message displayed to the session user
+   - **Lock Message** — The message displayed to the session user
+   - Prevent User From:
+     - **Opening New Activities on this Resource** — Prevent user from opening new activity to this
+       resource while locked.
+     - **Any Further Activity on this Resource** — Lock all sessions and prevent the user from any
+       further activity while locked. The Users & Groups Details page for the user indicate that
+       the account is locked.
 
-**Step 2 –** In the Lock Session window, enter the following information:
-
-- Lock Title – The title of the message displayed to the session user
-- Lock Message – The message displayed to the session user
-- Prevent User From:
-- Opening New Activities on this Resource – Prevent user from opening new activity to this
-resource while locked.
-- Any Further Activity on this Resource – Lock all sessions and prevent the user from any
-further activity while locked. The Users & Groups Details page for the user indicate that
-the account is locked.
-
-**Step 3 –** Click **Okay** to confirm.
+3. Click **Okay** to confirm.
 
 The session is locked and the Lock Session message displays to the session user within their RDP
 or SSH clients. To unlock an active session, either:
 
 - From the Active Dashboard, select the session and click **Unlock Activity**.
-
 - OR -
-
 - From the Live Session Viewer, click the **Unlock** icon.
 
 To unlock an account, see the

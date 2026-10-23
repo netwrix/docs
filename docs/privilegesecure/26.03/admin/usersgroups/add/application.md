@@ -16,20 +16,15 @@ combination of certificate serial number and API key.
 
 To add an Application to an Access Policy.
 
-**Step 1 –** Navigate to the **Users & Groups** page.
+1. Navigate to the **Users & Groups** page.
+2. Click **Add Application**.
+3. Enter a new Application Name in the provided field. This displays to represent
+   the application.
+4. Enter a Certificate Serial Number in the provided field. This is the serial number of
+   the client certificate used to authenticate the application. The certificate should be signed by a
+   Certificate Authority (CA). Ensure the certificate is trusted by IIS by adding the CA trusted root
+   certificate to the Trusted Root Certification Authorities on the Privilege Secure server.
+5. Enter the API Key. This is the unique key used as part of Application authentication.
+6. Click the **Save** button when finished.
 
-**Step 2 –** Click **Add Application**.
-
-**Step 3 –** Enter a new Application Name in the provided field. This displays to represent
-the application.
-
-**Step 4 –** Enter a Certificate Serial Number in the provided field. This is the serial number of
-the client certificate used to authenticate the application. The certificate should be signed by a
-Certificate Authority (CA). Ensure the certificate is trusted by IIS by adding the CA trusted root
-certificate to the Trusted Root Certification Authorities on the Privilege Secure server.
-
-**Step 5 –** Enter the API Key. This is the unique key used as part of Application authentication.
-
-**Step 6 –** Click the **Save** button when finished.
-
-The new Applicationhas been added to the Users & Groups page.
+The Users & Groups page now lists the new Application.

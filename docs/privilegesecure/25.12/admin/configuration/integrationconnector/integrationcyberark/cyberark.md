@@ -16,8 +16,8 @@ Allows the rest call to skip the certificate check for the built-in check out st
 
 ## CheckoutScriptBlock
 
-Supply a PowerShell script block to be used for checking out password from CyberArk. The script
-block is called with two arguments. Netwrix recommends using a param() block as follows:
+Supply a PowerShell script block that checks out password from CyberArk. The script
+block is called with two arguments. Netwrix recommends using a `param()` block as follows:
 
 ```powershell
 param(
@@ -33,12 +33,12 @@ $Options,
  )
 ```
 
-The scriptblock must return the updated $Credential setting the Username, Domain, and Password value
+The scriptblock must return the updated `$Credential` setting the Username, Domain, and Password value
 to the values that represent the information for the account checked out. The default implementation
 will set these values to the returned Username, Address, and Content of the response from the API
 call of the Central Credential Provider.
 
-$Options have settings from the BYOV connector and information populated by the activity
+`$Options` have settings from the BYOV connector and information populated by the activity
 session.
 
 | Variable Name | Definition | Example Value |
@@ -66,7 +66,7 @@ session.
 | $Options.TargetHost.ObjectSid | The Sid of the computer | S-1-5-21-2801403971-1535060088-5098816251143 |
 | $Options.TargetHost.Samaccountname | The Domain and Samaccountname of the computer | EXAMPLE\PRIVILEGESECURE$ |
 
-$Credential has the values for the Credential generated for lookup, on Checkout the
+`$Credential` has the values for the Credential generated for lookup, on Checkout the
 username/domain/password will most likely be a random value not related to the account to be checked
 out.
 
@@ -79,13 +79,13 @@ out.
 | $Credential.PasswordValueConnectorId | The vault connector GUID identifier for this credential. This has the same value as the $Options.Connector.Id | |
 | $Credential.PasswordVaultInfo | A JSON string that contains vault specific options for this credential | |
 
-The custom script block should return the $Credential object passed in, updated with any relevant
+The custom script block should return the `$Credential` object passed in, updated with any relevant
 information.
 
 ## CheckinScriptBlock
 
-Supply PowerShell script block to be used for checking in password from CyberArk. The script block
-is called with two arguments. you use a param() block as follows:
+Supply a PowerShell script block that checks in password from CyberArk. The script
+block is called with two arguments. Netwrix recommends using a `param()` block as follows:
 
 ` param(`
 
@@ -99,12 +99,12 @@ is called with two arguments. you use a param() block as follows:
 
 ` )`
 
-The scriptblock must return the updated $Credential setting the Username, Domain, and Password value
+The scriptblock must return the updated `$Credential` setting the Username, Domain, and Password value
 to the values that represent the checked in account information. The default implementation will set
 these values to the returned Username, Address, and Content of the response from the API call of the
 Central Credential Provider.
 
-$Options have settings from the BYOV connector and information populated by the activity
+`$Options` have settings from the BYOV connector and information populated by the activity
 session.
 
 | Variable Name | Definition | Example Value |
@@ -132,7 +132,7 @@ session.
 | $Options.TargetHost.ObjectSid | The Sid of the computer | S-1-5-21-2801403971-1535060088-509881625-1143 |
 | $Options.TargetHost.Samaccountname | The Domain and Samaccountname of the computer | EXAMPLE\PRIVILEGESECURE$ |
 
-$Credential has the values for the Credential generated for lookup, on Checkin the
+`$Credential` has the values for the Credential generated for lookup, on Checkin the
 username/domain/password will most likely be a random value not related to the account to be checked
 in.
 
@@ -146,5 +146,5 @@ in.
 | $Credential.PasswordVaultInfo | A JSON string that contains vault specific options for this credential | |
 | $Credential.PasswordVaultInfo | A JSON string that contains vault specific | `{ “safe”: “safename”, “folder”: “root”` } |
 
-Your custom script block should return the $Credential object passed in, updated with any relevant
+Your custom script block should return the `$Credential` object passed in, updated with any relevant
 information.

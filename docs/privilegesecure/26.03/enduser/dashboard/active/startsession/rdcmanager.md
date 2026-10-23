@@ -16,16 +16,15 @@ If a SAML or OIDC authentication connector is enabled for the requesting user,
 DirectConnect functionality can't be used.
 :::
 
-
 To configure the remote connection client, use a connection string with the following parameters,
 separated by “+” to the appropriate port on the proxy:
 
-- Username – The user name used to sign into Active Directory in the following format:
-domain\username, user@domain, user@domain.suffix
-- Activity – The activity to perform
-- Resource – The DNS host name of the resource to run the activity on
-- Access Policy (optional) – The Access Policy to invoke (if more than one)
-- Notes (optional) – User notes about the session
+- **Username** — The user name used to sign into Active Directory in the following format:
+  domain\username, user@domain, user@domain.suffix
+- **Activity** — The activity to perform
+- **Resource** — The DNS host name of the resource to run the activity on
+- **Access Policy (optional)** — The Access Policy to invoke (if more than one)
+- **Notes (optional)** — User notes about the session
 
 Connection String Format:
 
@@ -63,8 +62,8 @@ Host Name Example:
 
 Port:
 
-- Port – The SSH listening port on the proxy
-- Default port – 4422
+- **Port** — The SSH listening port on the proxy
+- **Default port** — 4422
 
 ## MobaXterm (SSH)
 
@@ -82,8 +81,8 @@ Resource Host Example:
 
 Port:
 
-- Port – The SSH listening port on the proxy
-- Default port – 4422
+- **Port** — The SSH listening port on the proxy
+- **Default port** — 4422
 
 Uncheck the checkboxes under Advanced SSH Settings and Bookmark Settings.
 
@@ -114,8 +113,8 @@ Example:
 
 Port:
 
-- Port – The RDP listening port on the proxy
-- Default port – 4489
+- **Port** — The RDP listening port on the proxy
+- **Default port** — 4489
 
 ![appendices_stealthbits_privileged_6](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_6.webp)
 
@@ -170,7 +169,6 @@ User Name Format:
 The user name starts with \_\_ (back slash).
 :::
 
-
 User Name Example:
 
 `\Netwrix\JonSmith+LocalAdmin+sql1`
@@ -187,20 +185,18 @@ Configure Remote Desktop Connection to Prompt for Password topic for additional 
 To configure the RDP Group Policy to always prompt for user credentials and
 password.
 
-**Step 1 –** Open the Group Policy Management Editor.
+1. Open the **Group Policy Management Editor**.
+2. Navigate to **Computer Configuration** > **Administrative Templates** > **Windows Components** >
+   **Remote Desktop Services** > **Remote Desktop Connection Client**
 
-**Step 2 –** Navigate to Computer Configuration > Administrative Templates > Windows Components >
-Remote Desktop Services > Remote Desktop Connection Client
+   ![Configure Remote Desktop Connection to Prompt for Password](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_9.webp)
 
-![Configure Remote Desktop Connection to Prompt for Password](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_9.webp)
+3. Right click **Prompt for credentials on the client computer** and select **Edit** from the
+   context menu.
 
-**Step 3 –** Right click Prompt for credentials on the client computer and select Edit from the
-context menu.
+   ![appendices_stealthbits_privileged_10](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_10.webp)
 
-![appendices_stealthbits_privileged_10](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_10.webp)
-
-**Step 4 –** In the Prompt for Credentials on the Client Computer window, select Enabled.
-
-**Step 5 –** Click OK to save changes.
+4. In the **Prompt for Credentials on the Client Computer** window, select **Enabled**.
+5. Click **OK** to save changes.
 
 The Remote Desktop Connection (RDP) Group Policy is configured to always ask for credentials.
