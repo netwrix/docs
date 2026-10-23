@@ -1,6 +1,6 @@
 ---
 title: "Add Approval Workflow"
-description: "Add Approval Workflow"
+description: "Add an approval workflow with up to three approval tiers, approvers, and escalation settings to a connection profile."
 sidebar_position: 20
 ---
 
@@ -18,7 +18,7 @@ To add an approval workflow to the console.
 2. Select the connection profile to edit
 3. Scroll down to the Approval Workflow section, select **Tiered** and click **Save**.
 
-   ![Add approval teir to workflow](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addapprovalteirtoworkflow.webp)
+   ![Add approval tier to workflow](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addapprovalteirtoworkflow.webp)
 
 4. after you create the policy, click the **Add Tier** icon (green + in a circle) to add an Approval Tier.
 
@@ -39,7 +39,7 @@ To add an approval workflow to the console.
 
 5. Click the **Edit** icon to open the Tier Escalation window.
 
-   ![tierescalation](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/tierescalation.webp)
+   ![Tier Escalation window with escalation minutes, account, and group fields](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/tierescalation.webp)
 
 6. In the **Tier Escalation** window, enter the following information:
 
@@ -73,7 +73,7 @@ To add an approval workflow to the console.
 10. To add a user or group to the Approval Tier as an Approver, click a row in the
     Available Users/Groups table and it is immediately moved to the Users & Groups to Add table.
 
-    :::info
+    :::note
     It is usually desirable to add more approvers than required to approve the
     request, to ensure that approval is granted before the escalation timeout is reached.
     :::
@@ -108,7 +108,7 @@ To add an approval workflow to the console.
 
 14. To add an additional Approval Tier, click the **Add Tier** icon and repeat from Step 4.
 
-    - Up to three Approval Tiers can be added. When the required numer of approvals is reached in a
+    - Up to three Approval Tiers can be added. When the required number of approvals is reached in a
       Tier, the Approvers in the next Tier are notified. Each Tier must approve the request in sequence.
 
     :::note
@@ -117,4 +117,4 @@ To add an approval workflow to the console.
     :::
 
 The new Approval Workflow is added to the Connection Profile. See the Approvals Dashboard topic for
-additional information on how to approve a requested sebssion.
+additional information on how to approve a requested session.

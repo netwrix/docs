@@ -1,6 +1,6 @@
 ---
 title: "Add Local User"
-description: "Add Local User"
+description: "Add a local user stored in the Privilege Secure database so it can be assigned roles and access policies."
 sidebar_position: 30
 ---
 
@@ -11,9 +11,9 @@ Privilege Secure database, and therefore aren't dependent on Active Directory au
 logging in to Privilege Secure. Local users can be assigned to roles and access policies in exactly
 the same manner as domain users.
 
-![addlocalusers](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addlocalusers.webp)
+![Add Local User form with name and password fields](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addlocalusers.webp)
 
-To add a New Local Users.
+To add a New Local User.
 
 1. Navigate to the **Policy** > **Users & Groups** page.
 2. Click the **Add** button and select **New Local User** from the dropdown list.

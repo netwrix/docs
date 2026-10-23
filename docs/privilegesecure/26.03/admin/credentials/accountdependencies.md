@@ -1,6 +1,6 @@
 ---
 title: "Account Dependencies Window"
-description: "Account Dependencies Window"
+description: "Review the services and scheduled tasks that depend on a service account and rotate its credentials."
 sidebar_position: 30
 ---
 
@@ -73,7 +73,7 @@ The window has the following columns:
 
 The table columns can be resized and sorted in ascending or descending order.
 
-## Rotate Service Account Credentials
+## Rotate service account credentials
 
 To update the service account password and then update all Windows services and
 Scheduled tasks that run as the at account with the new password.

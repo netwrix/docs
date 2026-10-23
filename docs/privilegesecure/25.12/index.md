@@ -1,6 +1,6 @@
 ---
 title: "Netwrix Privilege Secure for Access Management v25.12 Documentation"
-description: "Netwrix Privilege Secure for Access Management v25.12 Documentation"
+description: "Overview of Netwrix Privilege Secure for Access Management, which provides just-in-time, just-enough privileged access."
 sidebar_position: 1
 ---
 

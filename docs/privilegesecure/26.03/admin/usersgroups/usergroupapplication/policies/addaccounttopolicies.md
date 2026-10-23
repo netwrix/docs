@@ -1,22 +1,22 @@
 ---
 title: "Add Account to Policies Window"
-description: "Add Account to Policies Window"
+description: "Add a user, group, or application account to access policies with the Add Account to Policies window."
 sidebar_position: 10
 ---
 
 # Add Account to Policies Window
 
 The Add Account to Policies window provides a list of Policies that have been created. Policies are
-created in the [ Policy Interface](/docs/privilegesecure/26.03/admin/accesspolicy/accesspolicy.md).
+created in the [Policy Interface](/docs/privilegesecure/26.03/admin/accesspolicy/accesspolicy.md).
 
-![usersgroupsaddaccounttopoliciespage](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/usersgroups/usersgroupsaddaccounttopoliciespage.webp)
+![Add Account to Policies window with available policies and policies to add](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/usersgroups/usersgroupsaddaccounttopoliciespage.webp)
 
 The window has the following features:
 
 - **Search** — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
 - **Available Policies** — Shows all available policies
-- **Policies s to Add** — Shows selected policies
+- **Policies to Add** — Shows selected policies
 - **Arrow icons** — Use the arrows to move selection in and out of the Policies to Add section
 - **Okay button** — Closes the window
 
@@ -28,7 +28,7 @@ Both tables have the following columns:
 - **Policy Type** — Icon indicates the type of object
 - **Connection Profile** — Displays the name of the connection profile associated to the access policy
 
-## Add Policies
+## Add policies
 
 1. Navigate to the **Users & Groups** page.
 2. In the Users & Groups list, click the name of the account you want to open the User

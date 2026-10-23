@@ -1,6 +1,6 @@
 ---
 title: "Add Password Complexity Policy"
-description: "Add Password Complexity Policy"
+description: "Add a password complexity policy to the console by completing the name, length, start and end, and included character fields."
 sidebar_position: 10
 ---
 

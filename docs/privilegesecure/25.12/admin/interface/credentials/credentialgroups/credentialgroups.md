@@ -1,6 +1,6 @@
 ---
 title: "Credential Groups Page"
-description: "Credential Groups Page"
+description: "Reference for the Credential Groups page, including group details and the credentials table columns."
 sidebar_position: 60
 ---
 

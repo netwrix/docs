@@ -1,6 +1,6 @@
 ---
 title: "DB Change History"
-description: "DB Change History"
+description: "Reference for the DB Change History page, which shows database additions, updates, and deletions with filters by change type and date."
 sidebar_position: 30
 ---
 

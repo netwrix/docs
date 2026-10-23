@@ -1,6 +1,6 @@
 ---
 title: "Add Service Account"
-description: "Add Service Account"
+description: "Add a service account to the console by entering its details, including a vault connector for vault-based accounts."
 sidebar_position: 10
 ---
 

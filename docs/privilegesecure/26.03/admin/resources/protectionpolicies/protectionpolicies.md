@@ -1,6 +1,6 @@
 ---
 title: "Protection Policies"
-description: "Protection Policies"
+description: "Reference for the Protection Policies page, including policy search, the Name and Description fields, and its tabs."
 sidebar_position: 30
 ---
 
@@ -13,7 +13,7 @@ local group members that aren't listed on the
 [Allowed Members Tab for Protection Policies](/docs/privilegesecure/26.03/admin/resources/protectionpolicies/allowedmembers.md) are removed
 from the resource.
 
-It is also possible to add the action _Invoke Protection Policy_ to the Post Session group of an
+It is also possible to add the action **Invoke Protection Policy** to the Post Session group of an
 activity. This will proactively run all protection policies that apply to the target resource when
 the session completes, instead of waiting for the scheduled sync. See the
 [Activities Page](/docs/privilegesecure/26.03/admin/activities/activities.md) topic for additional information.

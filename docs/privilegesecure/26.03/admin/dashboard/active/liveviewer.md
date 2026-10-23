@@ -1,6 +1,6 @@
 ---
 title: "Live Session Viewer Window"
-description: "Live Session Viewer Window"
+description: "Watch a live RDP, SSH, or website session as an administrator, and terminate or lock it from the viewer."
 sidebar_position: 30
 ---
 
@@ -26,15 +26,15 @@ There are two types of Live Session Viewer windows:
 
 Select the recording you want and the Live Session Viewer window opens.
 
-## Live Session Viewer for RDP Sessions
+## Live Session Viewer for RDP sessions
 
 The Live Session Viewer window for RDP sessions is applicable to all resources except the Websites.
 
-![livesessionviewerrdp](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/window/livesessionviewerrdp.webp)
+![Live Session Viewer window for an RDP session](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/window/livesessionviewerrdp.webp)
 
 The Live Session Viewer for RDP Sessions window has the following features:
 
-Action options
+**Action options**
 
 - **Terminate Session icon** — Click the icon to disconnect the user and end the session. A confirmation
   window appears. See the [Terminate Proxy Session Window](/docs/privilegesecure/26.03/admin/dashboard/active/terminateproxysession.md) topic for
@@ -42,7 +42,7 @@ Action options
 - **Lock icon** — Opens the Lock Session window to prevent the user from interacting with the host but
   keeps the session active. See the [Lock Session](/docs/privilegesecure/26.03/admin/dashboard/active/locksession.md) topic for additional information.
 
-Session Details
+**Session details**
 
 - **User** — Displays the account used to log onto the resource
   - **logged on to** — Displays the name of the resource
@@ -51,10 +51,10 @@ Session Details
 - **Proxy Session Started** — Indicates when the activity started. This refers to when the activity’s
   actions were executed and not when the user was logged on to the resource.
 
-Activity Details
+**Activity details**
 
 - **Time line** — Displays activity as it occurs in real-time during the session in the pane to the left
-  of the player. By default this time line include keystroke activity.
+  of the player. By default this time line includes keystroke activity.
 
   :::note
   If RDP Session Monitoring is enabled, then it will also include Windows metadata
@@ -64,15 +64,15 @@ Activity Details
   topic for additional information.
   :::
 
-## Live Session Viewer for SSH Sessions
+## Live Session Viewer for SSH sessions
 
 The Live Session Viewer for SSH sessions is applicable to Linux and Cisco resources.
 
-![livesessionviewerssh](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/window/livesessionviewerssh.webp)
+![Live Session Viewer window for an SSH session](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/window/livesessionviewerssh.webp)
 
 The Live Session Viewer for SSH Sessions window has the following features:
 
-Action options
+**Action options**
 
 - **Terminate Session icon** — Click the icon to disconnect the user and end the session. A confirmation
   window appears. See the [Terminate Proxy Session Window](/docs/privilegesecure/26.03/admin/dashboard/active/terminateproxysession.md) topic for
@@ -80,7 +80,7 @@ Action options
 - **Lock icon** — Opens the Lock Session window to prevent the user from interacting with the host but
   keeps the session active. See the [Lock Session](/docs/privilegesecure/26.03/admin/dashboard/active/locksession.md) topic for additional information.
 
-Session Details
+**Session details**
 
 - **User** — Displays the account used to log onto the resource
   - **logged on to** — Displays the name of the resource
@@ -89,27 +89,27 @@ Session Details
 - **Proxy Session Started** — Indicates when the activity started. This refers to when the activity’s
   actions were executed and not when the user was logged on to the resource.
 
-Activity Details
+**Activity details**
 
 - **Time line** — Displays activity as it occurs in real-time during the session in the pane to the left
-  of the player. By default this time line include keystroke activity.
+  of the player. By default this time line includes keystroke activity.
 
-Other Details
+**Other details**
 
 - Keystrokes are captured via STD in/out SSH communication
 - No agent is required
 - All data is indexed and searchable
 
-## Recording Session Viewer for Website Host Sessions
+## Recording Session Viewer for website host sessions
 
 The Recording Session Viewer window for Website host sessions is applicable only to Website hosts
 and Microsoft Entra ID.
 
-![recordingsessionviewer](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/window/recordingsessionviewer.webp)
+![Recording Session Viewer window for a website host session](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/window/recordingsessionviewer.webp)
 
 The Live Session Viewer for Recording Sessions window has the following features:
 
-Action options
+**Action options**
 
 - **Terminate Session icon** — Click the icon to disconnect the user and end the session. A confirmation
   window appears. See the [Terminate Proxy Session Window](/docs/privilegesecure/26.03/admin/dashboard/active/terminateproxysession.md) topic for
@@ -117,7 +117,7 @@ Action options
 - **Lock icon** — Opens the Lock Session window to prevent the user from interacting with the host but
   keeps the session active. See the [Lock Session](/docs/privilegesecure/26.03/admin/dashboard/active/locksession.md) topic for additional information.
 
-Recording Details
+**Recording details**
 
 - **User** — Displays the account used to log onto the resource
   - **logged on to** — Displays the name of the resource

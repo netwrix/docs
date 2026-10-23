@@ -1,6 +1,6 @@
 ---
 title: "Session Logs Window"
-description: "Session Logs Window"
+description: "View the log details for a session in the Session Logs window, including the search, filter, export, and table columns."
 sidebar_position: 20
 ---
 

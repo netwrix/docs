@@ -1,6 +1,6 @@
 ---
 title: "Import the License File"
-description: "Import the License File"
+description: "Import a license file from the About page to replace the 30-day trial license, and learn how an expired license affects users."
 sidebar_position: 30
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 30
 Netwrix Privilege Secure comes with a temporary 30-day trial license. a banner at the top indicates
 the expiration date of a license about to expire.
 
-![Dashboard interface showing an expiration banner and pointint to the User Options menu with the About page](/images/privilegesecure/25.12/accessmanagement/admin/expirationbanner.webp)
+![Dashboard interface showing an expiration banner and pointing to the User Options menu with the About page](/images/privilegesecure/25.12/accessmanagement/admin/expirationbanner.webp)
 
 However, you can import your license file on the About page (User Options > About). An expired
 license doesn't necessarily prevent users from logging in. If a license is expired, and the login

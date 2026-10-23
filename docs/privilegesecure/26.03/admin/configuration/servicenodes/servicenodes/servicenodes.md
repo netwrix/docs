@@ -1,6 +1,6 @@
 ---
 title: "Service Nodes"
-description: "Service Nodes"
+description: "Configure the services running on each installed service node and check whether they are online."
 sidebar_position: 10
 ---
 

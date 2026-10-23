@@ -1,6 +1,6 @@
 ---
 title: "Dashboard Interface"
-description: "Dashboard Interface"
+description: "Learn what the Active, Scheduled, Approvals, and Historical dashboards show about activity sessions."
 sidebar_position: 40
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Cisco Platform Policy Configuration"
-description: "Cisco Platform Policy Configuration"
+description: "Configure the Cisco platform policy, including the built-in account, password complexity, scan schedule, and verification settings."
 sidebar_position: 30
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Start Activity Session"
-description: "Start Activity Session"
+description: "Start an activity session from the Active dashboard, extend a running session, and connect to legacy Cisco devices."
 sidebar_position: 20
 ---
 
@@ -10,7 +10,7 @@ On the Active Sessions dashboard, when the status Available is shown, the activi
 To begin the activity session, click the Connection icon in the Status column for the applicable
 session to be automatically connected to the resource.
 
-![Connecto to remote session](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/startsession.webp)
+![Connect to remote session](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/startsession.webp)
 
 Also note the icons to view and copy the password for the session as plain text, if the option is
 enabled in the access policy Connection Profiles.
@@ -31,7 +31,7 @@ Alternatively, configure any RDP / SSH Manager for remote login, including:
 - MS Remote Desktop Connection Manager
 - MS Terminal Services Client (Remote Desktop)
 
-## Session Extension
+## Session extension
 
 Each session will remain active for a pre-configured amount of time based on the Connection Profile
 being used with the Access Policy. Session extension options can be configured in the connection
@@ -48,18 +48,20 @@ For NPS users with the Administrator role, session extension is always enabled.
 
 For RDP, a pop-up message displays in the session window.
 
-![extendsessionssh](/images/privilegesecure/26.03/accessmanagement/enduser/dashboard/extendsessionssh.webp)
+![Session extension prompt in an SSH session](/images/privilegesecure/26.03/accessmanagement/enduser/dashboard/extendsessionssh.webp)
 
 For SSH the user can extend by typing **Ctrl+X** when prompted.
 
-## SSH for Legacy Cisco Device
+## SSH for legacy Cisco device
 
 If the Cisco device is running with insecure ciphers when the user attempts to connect to an
 SSH session, the following error message displays:
 
+```text
 ssh: handshake failed: ssh: no common algorithm for key exchange; client offered:
 [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521
 diffie-hellman-group14-sha1], server offered: [diffie-hellman-group1-sha1]
+```
 
 Ideally the Cisco device should be upgraded to support secure ciphers. If this isn't possible, it
 is necessary to add additional ciphers to machines with older (insecure) ciphers that need to be
@@ -67,7 +69,7 @@ managed with SSH. You can “opt-in” by configuring the cipher suites used by 
 
 See the [Proxy Service Install](/docs/privilegesecure/26.03/install/servicesonadditional/proxyservice.md) topic for additional information.
 
-## DirectConnect Inline Password Prompt
+## DirectConnect inline password prompt
 
 RDP DirectConnect now supports the prompting of users for password, removing the old requirement to
 modify group/local policy to force RDP password prompts.

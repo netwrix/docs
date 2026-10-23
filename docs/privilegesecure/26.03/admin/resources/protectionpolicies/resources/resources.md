@@ -1,6 +1,6 @@
 ---
 title: "Resources Tab for Protection Policies"
-description: "Resources Tab for Protection Policies"
+description: "Reference for the Resources tab of a protection policy, including adding and removing resources and table columns."
 sidebar_position: 20
 ---
 

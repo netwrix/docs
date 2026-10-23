@@ -1,6 +1,6 @@
 ---
 title: "Activities Page"
-description: "Activities Page"
+description: "Reference for the Activities page and the login account types that control how users log in to a resource during a session."
 sidebar_position: 70
 ---
 
@@ -70,7 +70,7 @@ The selected activity details display at the top of the main pane:
   session.
   :::
 
-- **Valut Connector** — Displays the name of the assigned vault connector. This option is only visible
+- **Vault Connector** — Displays the name of the assigned vault connector. This option is only visible
   when the Login Account is set to Vault. Additional fields may appear based on the selected vault.
 
   :::note
@@ -120,7 +120,7 @@ It isn't possible to edit the Action Type. Delete the existing action and then c
 new action to get a new Action Type.
 :::
 
-## Login Account Types
+## Login account types
 
 Privilege Secure supports the use of various login account types that perform different functions in
 the environment. See each account type for a description.

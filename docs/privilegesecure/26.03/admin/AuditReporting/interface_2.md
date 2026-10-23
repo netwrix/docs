@@ -1,6 +1,6 @@
 ---
 title: "Audit & Reporting Interface"
-description: "Audit & Reporting Interface"
+description: "Overview of the Audit and Reporting interface with links to its pages for access certification, logs, events, and reports."
 sidebar_position: 70
 ---
 
@@ -10,7 +10,7 @@ The Audit and Reporting interface provides auditing and reporting tools to inter
 activity data in the Privilege Secure Console. This chapter explains the interface features and how
 to use them.
 
-![interface](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/interface.webp)
+![Audit and Reporting menu expanded in the Privilege Secure Console](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/interface.webp)
 
 Click **Audit and Reporting** to expand the menu. Settings can be configured for:
 

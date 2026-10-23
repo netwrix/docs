@@ -1,6 +1,6 @@
 ---
 title: "Configure DirectConnect for Remote Desktop Connection"
-description: "Configure DirectConnect for Remote Desktop Connection"
+description: "Configure DirectConnect connection strings and client settings for PuTTY, MobaXterm, and Microsoft Remote Desktop."
 sidebar_position: 10
 ---
 
@@ -36,7 +36,7 @@ Connection String Example:
 
 `JonSmith@netwrix.com+Local_Admin+SQL1.netwrix.com`
 
-some clients require you to use the _“_”\_ (underscore) character as a replacement for a
+Some clients require you to use the `_` (underscore) character as a replacement for a
 space in Activity names that are made up of multiple words, for example:
 
 `Netwrix\JonSmith+Add_to_Local_Administrators+SQL1`
@@ -50,7 +50,7 @@ defining an access policy:
 
 Configuration parameters for PuTTY (SSH).
 
-![appendices_stealthbits_privileged](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged.webp)
+![PuTTY session settings with host name and SSH port](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged.webp)
 
 Host Name Format:
 
@@ -86,7 +86,7 @@ Port:
 
 Uncheck the checkboxes under Advanced SSH Settings and Bookmark Settings.
 
-| ![appendices_stealthbits_privileged_2](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_2.webp) | ![appendices_stealthbits_privileged_3](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_3.webp) |
+| ![MobaXterm Advanced SSH settings](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_2.webp) | ![MobaXterm Bookmark settings](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_3.webp) |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## MobaXterm (RDP)
@@ -116,7 +116,7 @@ Port:
 - **Port** — The RDP listening port on the proxy
 - **Default port** — 4489
 
-![appendices_stealthbits_privileged_6](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_6.webp)
+![MobaXterm RDP Advanced RDP Settings tab](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_6.webp)
 
 Check the Redirect Clipboard checkbox on the Advanced RDP Settings tab to enable pasting of the 2FA
 token.
@@ -125,13 +125,13 @@ token.
 
 Configuration parameters for Microsoft Remote Desktop Connection (RDP).
 
-![appendices_stealthbits_privileged_4](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_4.webp)
+![Microsoft Remote Desktop Connection settings with computer and user name](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_4.webp)
 
 Computer:
 
 `<proxyhostname>:<port>`
 
-**Example:**
+Example:
 
 `Sbpamhost:4489`
 
@@ -150,7 +150,7 @@ Configure Remote Desktop Connection to Prompt for Password topic for additional 
 
 Configure the Microsoft Remote Desktop Connection Manager (RDC Manager).
 
-| ![appendices_stealthbits_privileged_7](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_7.webp) | ![appendices_stealthbits_privileged_8](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_8.webp) |
+| ![Remote Desktop Connection Manager server settings](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_7.webp) | ![Remote Desktop Connection Manager logon settings](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_8.webp) |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 Server name:
@@ -180,7 +180,7 @@ Server Name/Port:
 If there is no password prompt when executing an RDP shortcut, change the GPO setting. See the
 Configure Remote Desktop Connection to Prompt for Password topic for additional information.
 
-## Configure Remote Desktop Connection to Prompt for Password
+## Configure Remote Desktop Connection to prompt for password
 
 To configure the RDP Group Policy to always prompt for user credentials and
 password.
@@ -194,7 +194,7 @@ password.
 3. Right click **Prompt for credentials on the client computer** and select **Edit** from the
    context menu.
 
-   ![appendices_stealthbits_privileged_10](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_10.webp)
+   ![Prompt for credentials on the client computer policy setting](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_10.webp)
 
 4. In the **Prompt for Credentials on the Client Computer** window, select **Enabled**.
 5. Click **OK** to save changes.

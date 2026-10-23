@@ -1,6 +1,6 @@
 ---
 title: "URLs Tab for Website"
-description: "URLs Tab for Website"
+description: "Reference for the URLs tab on the Website Details page, including URL actions and match types."
 sidebar_position: 10
 ---
 

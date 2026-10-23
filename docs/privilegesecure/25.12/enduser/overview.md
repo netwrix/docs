@@ -1,6 +1,6 @@
 ---
 title: "Privilege Secure End User Overview"
-description: "Privilege Secure End User Overview"
+description: "Learn what the end user role covers in Privilege Secure and how to log in, including MFA registration."
 sidebar_position: 60
 ---
 
@@ -22,7 +22,7 @@ Administrators for login requirements.
 Privilege Secure users can also install a Browser Extension. See the
 [Browser Extension App](/docs/privilegesecure/25.12/enduser/browserextension/browserextension.md) topic for additional information.
 
-## First-Time Login
+## First-time login
 
 After you install Privilege Secure, users can launch the application from the desktop icon or through
 the URL provided by a Privilege Secure Administrator, for example:

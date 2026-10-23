@@ -1,12 +1,12 @@
 ---
 title: "Add Auditor Permissions and Auditors Window"
-description: "Add Auditor Permissions and Auditors Window"
+description: "Set auditor permissions and add users to the Auditor role so they can view historical sessions for chosen users and resources."
 sidebar_position: 30
 ---
 
-# Add Auditor Permissions and Users
+# Add Auditor Permissions and Auditors Window
 
-Auditors are granted the ability to view recordings of historical sessions by users or resources. There are also custom auditor roles. One way to orgnize might be to make the built-in auditor role capabile of viewing historical sessions of all users and all resources. Then create custom auditor roles to enable viewing of only certain users and/or resources.
+Auditors are granted the ability to view recordings of historical sessions by users or resources. There are also custom auditor roles. One way to organize might be to make the built-in auditor role capable of viewing historical sessions of all users and all resources. Then create custom auditor roles to enable viewing of only certain users and/or resources.
 
 ![Add Auditors Window](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/usersgroups/addauditors.png)
 
@@ -34,7 +34,7 @@ All resources can be selected by the checkbox. If that is selected, then the res
 - **Name** — Displays the name of the resource
 - **Operating System** — Displays the operating system of the resource
 
-## Assign Auditor Role to Users
+## Assign Auditor role to users
 
 To grant users the Auditor role.
 

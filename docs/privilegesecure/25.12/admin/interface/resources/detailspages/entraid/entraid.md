@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Entra ID Details Page"
-description: "Microsoft Entra ID Details Page"
+description: "Reference for the Microsoft Entra ID Details page, including tenant settings, the Synchronize Now button, and its tabs."
 sidebar_position: 40
 ---
 

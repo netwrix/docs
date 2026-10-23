@@ -1,6 +1,6 @@
 ---
 title: "Members Tab"
-description: "Members Tab"
+description: "Reference for the Members tab, which lists the members of the selected group and their account details."
 sidebar_position: 30
 ---
 

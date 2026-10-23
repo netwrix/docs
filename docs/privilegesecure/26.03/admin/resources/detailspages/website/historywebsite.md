@@ -1,6 +1,6 @@
 ---
 title: "History Tab for Website"
-description: "History Tab for Website"
+description: "Reference for the History tab on the Website Details page, including session log access and event columns."
 sidebar_position: 50
 ---
 
@@ -8,7 +8,7 @@ sidebar_position: 50
 
 The History tab shows information about the session history of the selected resource.
 
-![websitedetailshistorytab](/images/privilegesecure/26.03/accessmanagement/admin/policy/tab/resources/websitedetailshistorytab.webp)
+![History tab on the Website Details page](/images/privilegesecure/26.03/accessmanagement/admin/policy/tab/resources/websitedetailshistorytab.webp)
 
 The History tab has the following features:
 

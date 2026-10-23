@@ -1,6 +1,6 @@
 ---
 title: "Create Activity Session"
-description: "Create Activity Session"
+description: "Create an activity session by choosing an activity and resources, adding notes, scheduling the session, and reviewing the request."
 sidebar_position: 10
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Add Action Window"
-description: "Add Action Window"
+description: "Add a pre-session, session, or post-session action to an activity in the Add Action window."
 sidebar_position: 20
 ---
 
@@ -20,13 +20,13 @@ part. Follow the instructions to add actions to the activity.
 
    These actions may be paired with a corresponding Pre-Session action.
 
-   ![addactionwindow](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/activities/addactionwindow.webp)
+   ![Add Action window with the action type fields](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/activities/addactionwindow.webp)
 
 4. Complete the following fields:
 
    - **Action Type** — Icon indicates the type of object.
    - **AD Object Type** — Select which type of object, a User or Computer, to manage in the Organizational
-     Unit..
+     Unit.
    - **AD Organizational Unit for the Action** — Enter a pre-existing
      Organizational Unit the login account have delegated permissions for.
    - **AD Rights to be Added** — Select which right to delegate to the login
@@ -52,8 +52,8 @@ part. Follow the instructions to add actions to the activity.
    existing action and then create a new action to get a new Action Type.
    :::
 
-7. If desired, You can automatically run any Protection Policies associated with
-   the resource when the session completes. add the **Invoke Protection Policies** action to the
+7. If desired, you can automatically run any Protection Policies associated with
+   the resource when the session completes. Add the **Invoke Protection Policies** action to the
    Post-Session group. See the [Protection Policies Page](/docs/privilegesecure/26.03/admin/resources/protectionpolicies/protectionpolicies.md) topic for
    additional information.
 

@@ -1,6 +1,6 @@
 ---
 title: "Policies Tab"
-description: "Policies Tab"
+description: "Reference for the Policies tab, which lists the access policies and activities associated with a user, group, or application."
 sidebar_position: 40
 ---
 

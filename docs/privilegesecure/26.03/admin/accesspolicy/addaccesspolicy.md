@@ -1,6 +1,6 @@
 ---
 title: "Add Access Policy"
-description: "Add Access Policy"
+description: "Add a resource based or credential based access policy and associate it with a connection profile."
 sidebar_position: 10
 ---
 

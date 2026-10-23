@@ -1,6 +1,6 @@
 ---
 title: "History Tab for Host"
-description: "History Tab for Host"
+description: "Reference for the History tab on the Host Details page, including session log access and event columns."
 sidebar_position: 80
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-description: "Getting Started"
+description: "Follow the post-install steps to configure MFA, the license, service accounts, users, resources, activities, and access policies."
 sidebar_position: 30
 ---
 
@@ -23,7 +23,7 @@ Directory credentials:
 - Log in to the Privilege Secure Console. See the
   [Log Into the Privilege Secure Console](/docs/privilegesecure/26.03/install/login.md) topic for additional information.
 
-## Update the License
+## Update the license
 
 Netwrix Privilege Secure includes a temporary 30-day license. Contact the organization’s Netwrix
 sales representative to purchase a license:
@@ -92,7 +92,7 @@ policies to control privileged access:
 - [Access Policy Page](/docs/privilegesecure/26.03/admin/accesspolicy/accesspolicy.md) — Create the access policies to control
   privileged access to resources
 
-### Create Sessions
+### Create sessions
 
 Privilege Secure is configured and ready to use:
 

@@ -1,6 +1,6 @@
 ---
 title: "Add Protection Policy"
-description: "Add Protection Policy"
+description: "Add a protection policy to the console by entering a name and an optional description."
 sidebar_position: 10
 ---
 

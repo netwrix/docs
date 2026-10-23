@@ -1,6 +1,6 @@
 ---
 title: "URLs Tab for Microsoft Entra ID"
-description: "URLs Tab for Microsoft Entra ID"
+description: "Reference for the URLs tab on the Microsoft Entra ID Details page, including URL actions and match types."
 sidebar_position: 10
 ---
 

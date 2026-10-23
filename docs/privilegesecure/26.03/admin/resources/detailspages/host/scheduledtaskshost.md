@@ -1,6 +1,6 @@
 ---
 title: "Scheduled Tasks Tab for Host"
-description: "Scheduled Tasks Tab for Host"
+description: "Reference for the Scheduled Tasks tab on the Host Details page, including task names, run-as accounts, and managed status."
 sidebar_position: 70
 ---
 

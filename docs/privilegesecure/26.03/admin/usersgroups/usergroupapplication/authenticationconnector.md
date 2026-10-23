@@ -1,6 +1,6 @@
 ---
 title: "Authentication Connector Tab"
-description: "Authentication Connector Tab"
+description: "Choose the multi-factor authentication method for a user or group on the Authentication Connector tab and see which method takes priority."
 sidebar_position: 70
 ---
 

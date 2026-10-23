@@ -1,6 +1,6 @@
 ---
 title: "Schedule Tab for Protection Policies"
-description: "Schedule Tab for Protection Policies"
+description: "Reference for the Schedule tab of a protection policy, including scheduled tasks, run times, and status columns."
 sidebar_position: 40
 ---
 
@@ -10,7 +10,7 @@ The Schedule tab shows the schedule tasks for the resources in the selected prot
 protection policy schedule is run based on the platform type configuration on the
 [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md).
 
-![schedule](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/policyprotection/schedule.webp)
+![Schedule tab of a protection policy showing scheduled tasks](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/policyprotection/schedule.webp)
 
 The Schedule tab has the following features:
 

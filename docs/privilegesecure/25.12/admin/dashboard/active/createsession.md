@@ -1,6 +1,6 @@
 ---
 title: "Create Activity Session"
-description: "Create Activity Session"
+description: "Create an activity session from the Active dashboard by choosing an activity, resources, notes, and a schedule."
 sidebar_position: 10
 ---
 

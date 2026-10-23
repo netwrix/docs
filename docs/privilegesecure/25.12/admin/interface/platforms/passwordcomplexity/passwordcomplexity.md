@@ -1,6 +1,6 @@
 ---
 title: "Password Complexity Page"
-description: "Password Complexity Page"
+description: "Review password complexity policies on the Password Complexity page and the settings that control passwords for managed accounts."
 sidebar_position: 30
 ---
 
@@ -10,7 +10,7 @@ The Password Complexity page is accessible from the Navigation pane under Policy
 shows configured password complexity policies that can be applied to platforms.
 
 When Privilege Secure creates a managed account on a local system or domain it also sets the user
-password. The generated password follow the complexity rules in the password
+password. The generated password follows the complexity rules in the password
 policy for that platform. Privilege Secure uses the Default policy if it
 can't determine a password policy. See the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic for additional
 information.

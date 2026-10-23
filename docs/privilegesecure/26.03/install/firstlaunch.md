@@ -1,6 +1,6 @@
 ---
 title: "First Launch"
-description: "First Launch"
+description: "Run the Setup Wizard after installation to create the primary Administrator, register MFA, sync Active Directory, and onboard a resource."
 sidebar_position: 40
 ---
 
@@ -12,7 +12,7 @@ After you install the database and application, walk through the Setup Wizard.
 
 Close the Netwrix Setup Launcher if you used it during installation.
 
-:::info
+:::note
 The first user, your primary Administrator, is set up through the wizard.
 Have a multi-factor authentication (MFA) solution (Authenticator, DUO,
 Symantec VIP, etc.) ready to set up for this account through the wizard.
@@ -33,7 +33,7 @@ You need the following information for your environment to complete the wizard:
 
 - Domain account and its password to be the primary application Administrator
 
-  :::info
+  :::note
   Use a non-privileged account and use the application to access privileged
   accounts.
   :::
@@ -145,28 +145,28 @@ the Setup Wizard created, Activity Token for Domain Admin Access, displays.
 Take a [Product Tour](/docs/privilegesecure/26.03/admin/navigation/producttour.md) of the console or onboard more users and resources.
 See the [Getting Started](/docs/privilegesecure/26.03/gettingstarted.md) topic for additional information.
 
-## Exit Wizard Early
+## Exit Wizard early
 
 You can exit the Setup Wizard from Step 3, Step 4, and Step 5 pages. If you do that, then
 the Setup Wizard doesn't create the Activity Token for Domain Admin Access activity. Complete the
 following to create your first access policy, depending on what page of the wizard
 you exited from:
 
-### Exit From Step 3 Page – Domain Service Account
+### Exit from Step 3 page – Domain service account
 
 Navigate to the domain details page and add a new service account. See the
 [Domain Details Page](/docs/privilegesecure/26.03/admin/resources/detailspages/domain/domain.md) topic for additional information.
 
 Complete the onboarding process steps missed on the Step 4 and Step 5 pages.
 
-### Exit From Step 4 Page – Active Directory Sync
+### Exit from Step 4 page – Active Directory sync
 
 Navigate to the domain details page and click **Synchronize Now**. See the
 [Domain Details Page](/docs/privilegesecure/26.03/admin/resources/detailspages/domain/domain.md) topic for additional information.
 
 Complete the onboarding process steps missed on the Step 4 and Step 5 pages.
 
-### Exit From Step 5 Page – Onboard First Resource and Create Access Policy
+### Exit from Step 5 page – Onboard first resource and create access policy
 
 Navigate to the Resources page and add a new server. See the
 [Add Resources Window](/docs/privilegesecure/26.03/admin/resources/addserver/addsourcesonboard.md) topic for additional

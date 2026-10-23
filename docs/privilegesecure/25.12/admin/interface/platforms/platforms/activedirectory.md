@@ -1,6 +1,6 @@
 ---
 title: "Active Directory Platform Policy Configuration"
-description: "Active Directory Platform Policy Configuration"
+description: "Configure the Active Directory platform policy, including the built-in account, password complexity, scheduled change, and verification settings."
 sidebar_position: 10
 ---
 

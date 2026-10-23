@@ -1,6 +1,6 @@
 ---
 title: "Lock Session"
-description: "Lock Session"
+description: "Lock a user's session from the Active dashboard or the Live Session Viewer when suspicious activity is observed."
 sidebar_position: 50
 ---
 
@@ -15,7 +15,9 @@ To lock a session.
 1. Navigate to either the **Active dashboard** or the **Live Session Viewer**.
 
    - From the Active Dashboard, select the session and click **Lock Activity**.
-   - OR -
+
+   OR
+
    - From the Live Session Viewer, click the **lock** icon.
 
    ![Lock User Session](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/window/locksession.webp)
@@ -37,7 +39,9 @@ The session is locked and the Lock Session message displays to the session user 
 or SSH clients. To unlock an active session, either:
 
 - From the Active Dashboard, select the session and click **Unlock Activity**.
-- OR -
+
+OR
+
 - From the Live Session Viewer, click the **Unlock** icon.
 
 To unlock an account, see the

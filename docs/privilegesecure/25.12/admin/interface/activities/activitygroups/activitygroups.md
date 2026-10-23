@@ -1,6 +1,6 @@
 ---
 title: "Activity Groups Page"
-description: "Activity Groups Page"
+description: "Reference for the Activity Groups page, including the group list, group details, and activities table."
 sidebar_position: 30
 ---
 
@@ -13,7 +13,7 @@ Activities are for singular activities based on a specific platform whereas Acti
 used for cross platform activities such as granting local administrator access. See the
 [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
 
-![addactivitygroup](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/addactivitygroup.webp)
+![Activity Groups page showing the group list and details](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/addactivitygroup.webp)
 
 The pane on the left side of the page displays a list of the configured activity group. This pane
 has the following features:

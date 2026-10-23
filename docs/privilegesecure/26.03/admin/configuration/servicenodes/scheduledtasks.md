@@ -1,6 +1,6 @@
 ---
 title: "Scheduled Tasks"
-description: "Scheduled Tasks"
+description: "View the tasks the console runs on a schedule, with search, sorting, run times, status, and log access."
 sidebar_position: 20
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Create Resource Import CSV File"
-description: "Create Resource Import CSV File"
+description: "Create a CSV file to import resources, including the required and optional columns, and download the import template."
 sidebar_position: 10
 ---
 
@@ -21,7 +21,7 @@ Resources can be onboarded via a CSV import process. Create a CSV file with the 
 The CSV file must contain one resource per row. Each resource must be identified by either a DNS
 Host Name or an IP Address. All other values are optional.
 
-## Download Template
+## Download the template
 
 There is a template available. To download the template.
 
@@ -33,7 +33,7 @@ There is a template available. To download the template.
 
 The `nps-resource-import-template.csv` file is downloaded to your browser's default download folder.
 
-## Example CSV File
+## Example CSV file
 
 ```csv
 DNS Host Name,Operating System,IP Address,Platform,Credential

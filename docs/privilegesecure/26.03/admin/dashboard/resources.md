@@ -1,6 +1,6 @@
 ---
 title: "Resources Dashboard"
-description: "Resources Dashboard"
+description: "Review onboarded resources on the Resources dashboard, including the toolbar actions for adding, removing, and scanning, and the table columns."
 sidebar_position: 60
 ---
 
@@ -28,8 +28,8 @@ The Resources table has the following features:
     additional information.
   - **New Secret Vault** — Opens the Secret Vault Details page for a new vault. See the
     [Add Secret Vault](/docs/privilegesecure/26.03/admin/resources/secretvault.md) topic for additional information.
-  - **New Database** — Opens the Databse Details page for a new database. See the
-    [Add New Database](/docs/privilegesecure/26.03/admin/resources/database.md)topic for additional information.
+  - **New Database** — Opens the Database Details page for a new database. See the
+    [Add New Database](/docs/privilegesecure/26.03/admin/resources/database.md) topic for additional information.
 - **Remove** — Removes the selected resource from being managed by the application. A confirmation
   window displays. See the
   [Remove Resource Window](/docs/privilegesecure/26.03/admin/resources/removeresource.md) topic for additional

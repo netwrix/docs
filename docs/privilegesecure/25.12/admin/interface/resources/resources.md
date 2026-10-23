@@ -1,6 +1,6 @@
 ---
 title: "Resources Page"
-description: "Resources Page"
+description: "Reference for the Resources page, including how to add, scan, and remove resources and the table columns."
 sidebar_position: 50
 ---
 
@@ -29,13 +29,13 @@ The Resources table has the following features:
     [Add New Microsoft Entra ID Tenant](/docs/privilegesecure/25.12/admin/interface/resources/entraidtenant.md) topic for additional information.
   - **New Secret Vault** — Opens the Secret Vault Details page for a new vault. See the
     [Add Secret Vault](/docs/privilegesecure/25.12/admin/interface/resources/secretvault.md) topic for additional information.
-  - **New Database** — Opens the Databse Details page for a new database. See the
-    [Add New Database](/docs/privilegesecure/25.12/admin/interface/resources/database.md)topic for additional information.
+  - **New Database** — Opens the Database Details page for a new database. See the
+    [Add New Database](/docs/privilegesecure/25.12/admin/interface/resources/database.md) topic for additional information.
 - **Remove** — Removes the selected resource from being managed by the application. A confirmation
   window displays. See the [Remove Resource Window](/docs/privilegesecure/25.12/admin/interface/resources/removeresource.md) topic
   for additional information.
 - **Scan Resource** — Scans a host resource for local users, groups, windows services, and scheduled
-  tasks. A confirmation window displays.. See the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic
+  tasks. A confirmation window displays. See the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic
   for additional information.
 - **Refresh** — Reload the information displayed
 

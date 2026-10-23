@@ -1,6 +1,6 @@
 ---
 title: "Email Configuration Page"
-description: "Email Configuration Page"
+description: "Set the website URL that Privilege Secure uses for links in emails and notifications on the Email Configuration page."
 sidebar_position: 30
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 30
 The Email Configuration page is accessible from the Navigation pane under Configuration > System
 Settings.
 
-![systemsettingsemailconfig](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/systemsettingsemailconfig.webp)
+![Email Configuration page showing the Website URL field](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/systemsettingsemailconfig.webp)
 
 The right of the page shows details of the email configuration settings and has the following
 features:
@@ -19,6 +19,6 @@ features:
 
 This field determines the link format in all emails and notifications sent by Privilege Secure.
 
-## Example Email
+## Example email
 
 ![Emailed link](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/emailedlink.webp)

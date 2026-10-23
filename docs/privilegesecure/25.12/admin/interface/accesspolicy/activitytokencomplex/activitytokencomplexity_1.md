@@ -1,6 +1,6 @@
 ---
 title: "Add Activity Token Complexity Policy"
-description: "Add Activity Token Complexity Policy"
+description: "Add an activity token complexity policy that sets the name, length, and character rules for activity tokens."
 sidebar_position: 10
 ---
 

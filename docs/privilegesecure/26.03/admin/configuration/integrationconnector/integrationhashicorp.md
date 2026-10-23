@@ -1,13 +1,13 @@
 ---
 title: "HashiCorp Integration"
-description: "HashiCorp Integration"
+description: "Add a HashiCorp vault connector that uses the Active Directory Secrets Engine to check out accounts."
 sidebar_position: 30
 ---
 
 # HashiCorp Integration
 
 Privilege Secure contains a built-in vault for credential management, but can uniquely map to a
-HashiCorp vault. HashiCorp connectors is useful for the following purposes:
+HashiCorp vault. HashiCorp connectors are useful for the following purposes:
 
 - **Service Accounts** — Use to perform Active Directory synchronization
 - **Activities** — Use to configure the target account for the activity
@@ -23,7 +23,7 @@ Engine must be installed in the HashiCorp Vault. See the HashiCorp
 [Active Directory Secrets Engine](https://www.vaultproject.io/docs/secrets/ad) article for
 additional information.
 
-## Add a Vault Connector for HashiCorp
+## Add a vault connector for HashiCorp
 
 To add a vault connector for HashiCorp.
 

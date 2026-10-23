@@ -1,6 +1,6 @@
 ---
 title: "Add Website URL Window"
-description: "Add Website URL Window"
+description: "Add or edit a website URL and its match type for a Microsoft Entra ID or Website resource."
 sidebar_position: 10
 ---
 
@@ -19,7 +19,7 @@ Only applicable to Microsoft Entra ID and Website resources.
 
    - To add a new URL, click **Add**.
 
-   ![addwebsiteurl](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/addwebsiteurl.webp)
+   ![Add Website URL window with URL and match type fields](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/addwebsiteurl.webp)
 
 4. Enter the following information:
 

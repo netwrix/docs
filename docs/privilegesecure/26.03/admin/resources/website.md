@@ -1,10 +1,10 @@
 ---
 title: "Add Website"
-description: "Add New Website"
+description: "Add a website resource to the Privilege Secure Console, including its logon URL, associated resource, and service account."
 sidebar_position: 30
 ---
 
-# Add New Website
+# Add Website
 
 To add a Website Resource to the Privilege Secure Console.
 
@@ -19,13 +19,13 @@ To add a Website Resource to the Privilege Secure Console.
    - **Platform** — Website (This field can't be changed.)
    - **Logon URL** — Enter the primary logon page for the website. This is only used if no URL is specified
      when defining a website Activity.
-   - **Associated Resource** — _(optional)_ If the website is hosted on a server that is also managed by
+   - **Associated Resource** — (optional) If the website is hosted on a server that is also managed by
      Privilege Secure, select the resource from the dropdown list to ensure that AD account operations
      are performed on the domain controller the website resource is bound to
-   - **Associated Domain Controller** — _(optional)_ A specific domain controller may be selected to ensure
+   - **Associated Domain Controller** — (optional) A specific domain controller may be selected to ensure
      that AD account operations are performed on a domain controller the website will reference for
      authentication
-   - **Service Account** — _(optional)_ The service account used when activity _actions_ require a
+   - **Service Account** — (optional) The service account used when activity actions require a
      provisioned account to interact with the resource, e.g. custom PowerShell. From the dropdown
      menu, select a previously added service account. See the
      [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional

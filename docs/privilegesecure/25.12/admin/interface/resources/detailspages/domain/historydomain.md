@@ -1,6 +1,6 @@
 ---
 title: "History Tab for Domain"
-description: "History Tab for Domain"
+description: "Review the synchronization history of a domain resource on the History tab, including status, event type, and service type."
 sidebar_position: 40
 ---
 

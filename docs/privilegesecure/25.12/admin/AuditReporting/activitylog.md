@@ -1,6 +1,6 @@
 ---
 title: "Activity Log Page"
-description: "Activity Log Page"
+description: "Reference for the Activity Log page, including its filters, the session summary table, and the user session tables."
 sidebar_position: 20
 ---
 
@@ -9,23 +9,22 @@ sidebar_position: 20
 The Activity Log page shows the activity logs for users and resources. From here, search, and
 investigate the records.
 
-![activitylogpage](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/page/activitylogpage.webp)
+![Activity Log page showing filters and session summary tables](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/page/activitylogpage.webp)
 
 The Activity Log page has the following features:
 
 - **Search** — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
-- Additionally, filter by table and date
-  - **Change type** — Filter by change type:
-    - All Users
-    - Top 5 Users
-    - Top 10 Users
-  - **Date range** — Filter by date range. Enter a start date and end date.
+- **Change type** — Filter by change type:
+  - All Users
+  - Top 5 Users
+  - Top 10 Users
+- **Date range** — Filter by date range. Enter a start date and end date.
 - **Refresh button** — Reload the information displayed
 
 The Summary for the Date Range table shows combined information for all the logs:
 
-- You can resize column headers and sort them in ascending or descending order::
+- You can resize column headers and sort them in ascending or descending order:
   - **Sessions** — Total number of sessions
   - **Total Duration** — Total duration of all sessions combined
   - **Average** — The average duration of a session

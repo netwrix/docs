@@ -1,6 +1,6 @@
 ---
 title: "Groups Tab for Host"
-description: "Groups Tab for Host"
+description: "Reference for the Groups tab on the Host Details page, which lists the local groups and members on the host."
 sidebar_position: 50
 ---
 

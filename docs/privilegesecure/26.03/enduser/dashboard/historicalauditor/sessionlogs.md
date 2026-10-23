@@ -1,6 +1,6 @@
 ---
 title: "Session Logs Window"
-description: "Session Logs Window"
+description: "View the log details for an activity session, with filters, CSV export, and the Action Service version."
 sidebar_position: 20
 ---
 

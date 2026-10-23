@@ -1,6 +1,6 @@
 ---
 title: "Database Details"
-description: "Database Details"
+description: "Review a database resource on the Database Details page, including its server details, scan options, and available tabs."
 sidebar_position: 60
 ---
 
@@ -41,7 +41,7 @@ The database details page has the following tabs:
 
 - **Users** — Displays database login accounts that aren't domain users or local computer users
 - **Groups** — Displays login accounts that are domain users or local computer accounts
-- **Databases** — Displays a list of discovered databases See the
+- **Databases** — Displays a list of discovered databases. See the
   [Databases Tab](/docs/privilegesecure/26.03/admin/resources/detailspages/databases/databases_1.md) topic for additional information.
 - **Roles** — Displays roles and who has those roles on the database and at the server level
 - **Sessions** — Displays previous sessions that have used this resource as a target

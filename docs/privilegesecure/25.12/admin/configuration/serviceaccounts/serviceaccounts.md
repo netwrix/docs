@@ -1,6 +1,6 @@
 ---
 title: "Service Accounts Page"
-description: "Service Accounts Page"
+description: "Reference for the Service Accounts page, including account fields, authentication options, and vault connector settings."
 sidebar_position: 10
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 10
 The Service Accounts page is accessible from the Navigation pane under Configuration. It shows the
 configured service accounts required by Privilege Secure services.
 
-![serviceaccountpage](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/serviceaccountpage.webp)
+![Service Accounts page showing account list and details](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/serviceaccountpage.webp)
 
 The pane on the left side of the page displays a list of the configured service accounts. This pane
 has the following features:
@@ -36,7 +36,7 @@ The selected service account details display at the top of the main pane:
   [Microsoft Entra ID App Registration](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/entraidappregistration.md) for
   additional information.
 - **Elevation Command** — Displays the elevation mechanism for the host, such as: sudo, pbrun, pmrun,
-  dzdo, etc.. This field only applies to Linux platforms.
+  dzdo, etc. This field only applies to Linux platforms.
 - **Vault Connector** — Displays the name of the assigned vault connector. See the
   [Bring Your Own Vault (BYOV) Integration](/docs/privilegesecure/25.12/admin/configuration/integrationconnector/integrationbyov/integrationbyov.md) topic for additional
   information.

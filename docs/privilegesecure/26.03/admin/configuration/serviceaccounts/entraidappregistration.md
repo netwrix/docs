@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Entra ID App Registration"
-description: "Microsoft Entra ID App Registration"
+description: "Create a Microsoft Entra ID app registration, secret, and role assignments for a Privilege Secure service account."
 sidebar_position: 20
 ---
 
@@ -18,7 +18,7 @@ Secure.
 
 ## Create App Registration
 
-Create an App Registration in Entra ID (Entra ID > App Registrations) as an admin in Entra ID.
+Create an App Registration in Entra ID (**Entra ID** > **App Registrations**) as an admin in Entra ID.
 
 1. Click **New Registration**.
 2. Name it, keep all default settings, and click **Register**.
@@ -36,13 +36,13 @@ Create an App Registration in Entra ID (Entra ID > App Registrations) as an admi
 
 5. Click **Grant Admin Consent**.
 
-Ensure the Grant Admin Consent was successful within the Configured permissions menu. The following
-message appears at the top of the page: Sucessfully granted admin consent for the
+Ensure that **Grant Admin Consent** was successful within the Configured permissions menu. The following
+message appears at the top of the page: Successfully granted admin consent for the
 requested permissions.
 
 ## Generate Secret
 
-Generate a secret for the App Registration
+Generate a secret for the App Registration.
 
 1. In the App Registration section, click **Certificates & Secrets**.
 2. Click **New Client Secret**.
@@ -55,7 +55,7 @@ Generate a secret for the App Registration
    - Application (client) ID, required for the Netwrix Privilege Secure Entra ID Service Account
    - Directory (tenant) ID, required to add an Entra ID tenant resource to Netwrix Privilege Secure
 
-## Add the App Registration to the User Administrator and Privileged Authentication Administrator roles.
+## Add the App Registration to the User Administrator and Privileged Authentication Administrator roles
 
 :::note
 User Administrator is the least privileged model and can't manage Global Administrator.
@@ -67,12 +67,12 @@ registration instead of User Administrator.
 2. Click **Roles and Administrators**.
 3. Locate and click the **User Administrator** role name. Don't select the checkbox next to it.
 4. Click **Add Assignments**.
-5. Under Select Members, click the **No member selected** link to open the member selector.
+5. Under **Select Members**, click the **No member selected** link to open the member selector.
 6. Search for the name of the previously created App Registration, click it, and click
    **Select**.
-7. Click **Next*** to open the Setting tab. Set Assignment type to **Active** and Duration to **Permanently assigned**, provide justification text, then click **Assign**.
+7. Click **Next** to open the **Setting** tab. Set Assignment type to **Active** and Duration to **Permanently assigned**, provide justification text, then click **Assign**.
 
-**Repeat steps 2 - 7** to add the **Privileged Authentication Administrator** role.
+Repeat steps 2 through 7 to add the **Privileged Authentication Administrator** role.
 
 :::note
 Microsoft requires the Privileged Authentication Administrator role for password rotation. Deployments before 2026 may not have needed this role.
@@ -94,5 +94,5 @@ ID, and the change syncs to the other location. If you don't enable this functio
 in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password fail.
 
 Enabling Password Writeback isn't specific to Privilege Secure. See the
-[Open Enable Entra ID password writeback](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback)
+[Enable Entra ID password writeback](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback)
 Microsoft article for additional information.

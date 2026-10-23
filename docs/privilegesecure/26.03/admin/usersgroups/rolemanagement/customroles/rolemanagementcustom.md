@@ -1,23 +1,23 @@
 ---
 title: "Custom Roles"
-description: "Custom roles management"
+description: "Create a custom access, credential, or auditor role in Role Management by entering a name, description, and target type."
 sidebar_position: 10
 ---
 
-# Add Custom Role
+# Custom Roles
 
 The Add Role window lets users add a role to Privilege Secure's Users & Groups Role Management
 module.
 
-![usersgroupsaddrolewindow](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/usersgroupsaddrolewindow.png)
+![Add Role window with role name, description, and target fields](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/usersgroupsaddrolewindow.png)
 
 The Add Role window has the following features:
 
 - **Enter Role Name** — Name that displays to represent the role.
 - **Description** — A brief summary of the purpose of the role.
 - **Target** — Select from the dropdown the type of custom role.
-  - Access polices enable a user to see and modify Access policies usually reserved for an Administrator
-  - Credentials enables a user to contorl which accounts are managed or unmanged, verify thier credentials, and rotate them. Again, this usually belongs to Admins.
+  - Access policies enable a user to see and modify Access policies usually reserved for an Administrator
+  - Credentials enables a user to control which accounts are managed or unmanaged, verify their credentials, and rotate them. Again, this usually belongs to Admins.
   - Auditors enables additional Auditor roles beyond the built-in Auditor to allow them to see historical sessions of a different set of users and/or resources.
 - **Save button** — Saves the new role to the Users & Groups module.
 - **Cancel button** — Cancels the Add Role process and closes the window.

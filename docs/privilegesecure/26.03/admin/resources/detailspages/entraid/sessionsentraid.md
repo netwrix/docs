@@ -1,6 +1,6 @@
 ---
 title: "Sessions Tab for Microsoft Entra ID"
-description: "Sessions Tab for Microsoft Entra ID"
+description: "Reference for the Sessions tab on the Microsoft Entra ID Details page, including session columns and status values."
 sidebar_position: 40
 ---
 
@@ -43,7 +43,7 @@ The table has the following columns:
     through a client. See the Start Activity Session topic for additional information.
   - **Completed** — Activity either reached the end of its scheduled end time or was canceled early by
     the requestor
-  - **Canceled** — The session is either expired or was canceled manually by the user or an Privilege
+  - **Canceled** — The session is either expired or was canceled manually by the user or a Privilege
     Secure administrator.
   - **Failed** — Pre-Session stage of the Activity has encountered an error
   - **Locked** — An Privilege Secure administrator has locked the session. See the

@@ -1,6 +1,6 @@
 ---
 title: "Action Service Settings Page"
-description: "Action Service Settings Page"
+description: "Reference for the Action Service Settings page, including the timeout override for action service timeouts."
 sidebar_position: 10
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 10
 The Action Service Settings page is accessible from the Navigation pane under Configuration > System
 Settings. It shows all action service settings to customize or override action timeout.
 
-![settingspage](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/settingspage.webp)
+![Action Service Settings page showing the timeout override options](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/settingspage.webp)
 
 The Action Service Settings page has the following features:
 

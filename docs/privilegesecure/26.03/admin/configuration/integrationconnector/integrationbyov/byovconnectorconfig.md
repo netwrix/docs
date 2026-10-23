@@ -1,6 +1,6 @@
 ---
 title: "Bring Your Own Vault (BYOV) Connector Configuration"
-description: "Bring Your Own Vault (BYOV) Connector Configuration"
+description: "Configure Privilege Secure as a BYOV integration connector, then create a user, activity, and policy that use it."
 sidebar_position: 10
 ---
 
@@ -16,7 +16,7 @@ post-session actions. In the case of a Secret Vault credential, Privilege Secure
 account when an activity uses an unmanaged account. The connector's checkout and checkin script
 blocks supply the credential instead.
 
-## Set Up an Integration Connector
+## Set up an integration connector
 
 Begin by setting up an Integration Connector for using Netwrix Privilege Secure as a BYOV Connector.
 Ensure that the account you want to use for your activity is managed by Privilege Secure or is
@@ -27,7 +27,7 @@ For managed accounts, ensure that the account has been rotated at least once sin
 managed. Otherwise, there will be no vaulted password in the Netwrix Privilege Secure database.
 :::
 
-### Configure the Activity Connector
+### Configure the activity connector
 
 To configure an Activity Connector.
 
@@ -55,7 +55,7 @@ To configure an Activity Connector.
 4. Copy and paste the following script into the "Checkout Script Block" field. (The
    "Checkin Script Block" field may be left blank.)
 
-   Checkout Script Block
+   **Checkout Script Block**
 
    ```powershell
    param (
@@ -173,9 +173,9 @@ To configure an Activity Connector.
 See the [Bring Your Own Vault (BYOV) Integration](/docs/privilegesecure/26.03/admin/configuration/integrationconnector/integrationbyov/integrationbyov.md) topic for additional
 information on configuring a BYOV connector.
 
-### Create a User
+### Create a user
 
-after the integration connector is configured, create a manually-managed user.
+After the integration connector is configured, create a manually-managed user.
 
 To create a manually-managed user.
 
@@ -198,9 +198,9 @@ To create a manually-managed user.
 See the [Credentials Dashboard](/docs/privilegesecure/26.03/admin/dashboard/credentials.md) topic for additional information on
 creating a managed account.
 
-### Set the Account Password
+### Set the account password
 
-after you manually manage the account, you must set the password for the account. The following
+After you manually manage the account, you must set the password for the account. The following
 icons should be visible: Wrench (Set Password), Clipboard (Copy Password to Clipboard), and
 Information (View Password).
 
@@ -226,9 +226,9 @@ See the
 [Manage Internal Service Accounts](/docs/privilegesecure/26.03/admin/credentials/manageinternalserviceaccount.md)
 topic for additional information on manually managing an account.
 
-### Create an Activity
+### Create an activity
 
-after the password has been set for the account, create an activity for the BYOV connector.
+After the password has been set for the account, create an activity for the BYOV connector.
 
 To create an activity.
 
@@ -264,7 +264,7 @@ To create an activity.
 See the [Add Activity](/docs/privilegesecure/26.03/admin/activities/activity/activity.md) topic for additional information on creating an
 Activity.
 
-### Configure a New Policy
+### Configure a new policy
 
 Once an Activity has been created, configure a new Policy.
 
@@ -281,7 +281,7 @@ To create a Policy.
      sufficient for most setups.
 
 3. Click **Save** to create the Access Policy.
-4. after the Access Policy is created, add the following:
+4. After the Access Policy is created, add the following:
 
    - Users to the Policy. See the
      [Users Tab for Resource Based Access Policies](/docs/privilegesecure/26.03/admin/accesspolicy/resourcebasedpolicyt/resourcebasedpolicy.md) topic for

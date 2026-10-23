@@ -1,6 +1,6 @@
 ---
 title: "Add Activities Window"
-description: "Add Activities Window"
+description: "Add activities to an activity group from the Add Activities window and review its columns."
 sidebar_position: 20
 ---
 
@@ -27,7 +27,7 @@ Both tables have the following columns:
 - **Description** — Description of the policy
 - **Created** — Date timestamp when the item was created
 
-## Add Activities
+## Add activities
 
 To add activities to an activity group.
 

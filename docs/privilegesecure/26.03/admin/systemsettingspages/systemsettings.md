@@ -1,25 +1,27 @@
 ---
 title: "System Settings"
-description: "System Settings"
+description: "Reference for the System Settings page, covering RDP, WinRM, idle timeout, user expiration, email, password, retention, and service options."
 sidebar_position: 10
 ---
+
+# System Settings
 
 In all cases, you have to hit save for the changes to take effect.
 
 - **Save button (only visible when editing)** — Saves changes
 - **Cancel button (only visible when editing)** — Discards changes
 
-## RDP Options
+## RDP options
 
-![rdpoptions](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/rdpoptions.webp)
+![RDP options with default resolution and certificate thumbprint](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/rdpoptions.webp)
 
-- **Default Resolution** — The resolution the RDP session will use when first connected. If you select "Full Screen", then RDP attempts to auto-detect the screen resoluiton and match it.
+- **Default Resolution** — The resolution the RDP session will use when first connected. If you select "Full Screen", then RDP attempts to auto-detect the screen resolution and match it.
 - **Certificate Thumbprint** — The hexadecimal certificate (or thumbprint) value. See the
   [Sign RDP Files to Prevent Publisher Warning](/docs/privilegesecure/26.03/install/troubleshooting.md) topic for additional information.
 
-## WimRM Options
+## WinRM options
 
-![winrmoptions](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/winrmoptions.webp)
+![WinRM HTTP setting options](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/winrmoptions.webp)
 
 - **WinRM HTTP Setting** — This setting governs the HTTP encryption settings that WinRM
   connections use. The following options are available:
@@ -27,69 +29,69 @@ In all cases, you have to hit save for the changes to take effect.
   - Use HTTPS if available
   - Use HTTPS only
 
-## UI Idle Timeout
+## UI idle timeout
 
-![uiidletimeout](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/uiidletimeout.webp)
+![UI idle timeout setting](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/uiidletimeout.webp)
 
 - **UI Idle Timeout Options** — Users with the Administrator role can configure the idle timeout for the
   Privilege Secure Console. The default idle timeout is 10 minutes.
 
-## User Expiration
+## User expiration
 
-![userexpiration](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/userexpiration.webp)
+![User expiration setting](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/userexpiration.webp)
 
 - **NPS User Expiration** — Users who have not logged in to NPS for a configurable number of days are automatically disabled. Disabled users don't consume a license credit. Admins and Application users are exempt from this policy. The idle timeout can be set to a specific number of days or turned off entirely. This setting is disabled by default.
 
-## Encrypted Files
+## Encrypted files
 
-![encryptedfiles](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/encryptedfiles.webp)
+![Encrypted files size and malware scan settings](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/encryptedfiles.webp)
 
 - **NPS Encrypted Files** — Set a maximum file size (MB). 10 MB is the default. There is also an option to scan the file for malware which is enabled by default.
 
-## Email Configuration
+## Email configuration
 
-![email](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/email.webp)
+![Email configuration with the website URL field](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/email.webp)
 
 - **Website URL** — Specify the website URL for emailed links in the following format:
   `https://fqdn:port e.g. https://sbpam1.company.com:6500`
 
 This field determines the link format in all emails and notifications sent by Privilege Secure.
 
-### Example Email
+### Example email
 
-![Emailed link](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/emailedlink.webp)
+![Email message containing the link to the website URL](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/emailedlink.webp)
 
-## Password History Options
+## Password history options
 
-![passwordhistory](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/passwordhistory.webp)
+![Password history options](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/passwordhistory.webp)
 
 - **Historical Password Limit** — Number of previous passwords that can't be reused (Range: 1 - 50,
   Default: 7)
 - **Days of Password Retention** — The number of days the password record is kept in the history (Range
   1 - 365, Default 30)
 
-## Local Account Password Options
+## Local account password options
 
-![localaccountpasswordoptionspage](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/localaccountpasswordoptionspage.webp)
+![Local account password options](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/localaccountpasswordoptionspage.webp)
 
 Provide the following information for the local account passwords:
 
 - Length
 - Unique Chars
-- Require Non-Alfanumeric
+- Require Non-Alphanumeric
 - Require Lowercase
 - Require Uppercase
 - Require Digit
 - **Expiration days** — The number of days the password can be used before the password expires
 
-## Data Retention
+## Data retention
 
-![dataretention](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/dataretention.webp)
+![Data retention settings](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/dataretention.webp)
 
-Set any data rentention policies your organization requires and number of days:
+Set any data retention policies your organization requires and number of days:
 
 - SIEM Retention (logs)
-- Email Rentention
+- Email Retention
 - Input/Output Logs (Session recordings)
 
 ## Services
@@ -98,7 +100,7 @@ After a website certificate is installed in IIS, update the Netwrix Privilege
 Secure web services to ensure they are calling the correct URL. If the Web Services are set to the
 wrong address, the services shows offline in the Services Node area.
 
-![services](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/services.webp)
+![Services settings with the NPS Rest URL](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/services.webp)
 
 :::note
 ensure that the web certificate is updated in IIS before setting a new value in

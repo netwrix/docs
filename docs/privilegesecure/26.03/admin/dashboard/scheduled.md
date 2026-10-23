@@ -1,6 +1,6 @@
 ---
 title: "Scheduled Dashboard"
-description: "Scheduled Dashboard"
+description: "See all scheduled sessions on the Scheduled dashboard, including the session status values, toolbar actions, and table columns."
 sidebar_position: 20
 ---
 
@@ -35,13 +35,13 @@ The table has the following columns:
   - **Logged In** — User is successfully logged in to the Resource either directly or via the Proxy.
     Direct log-in is detected by polling the Resource at regular intervals and may not update
     immediately.
-  - **Canceling** — The session expired, or the user or an Privilege
+  - **Canceling** — The session expired, or the user or a Privilege
     Secure administrator canceled it manually.
   - **Locked** — An Privilege Secure administrator has locked the session. See the
     [Lock Session](/docs/privilegesecure/26.03/admin/dashboard/active/locksession.md) topic for additional information.
 - **Requested** — Date and time of when the session was created
 - **Requested By** — User who requested the session
-- **Host** — Resource that the user run the activity on
+- **Host** — Resource that the user runs the activity on
 - **Login Account** — Displays the account used to log onto the resource
 - **Activity** — Displays the name of the activity. Click the link to view additional details. See the
   [Activities Page](/docs/privilegesecure/26.03/admin/activities/activities.md) topic for additional information.

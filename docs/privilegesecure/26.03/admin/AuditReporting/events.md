@@ -1,6 +1,6 @@
 ---
 title: "Events"
-description: "Events"
+description: "Reference for the Events page, which shows the Privilege Secure Console event log with status, user, access policy, and message."
 sidebar_position: 40
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Sessions Tab for Website"
-description: "Sessions Tab for Website"
+description: "Reference for the Sessions tab on the Website Details page, including session columns and status values."
 sidebar_position: 30
 ---
 
@@ -42,7 +42,7 @@ The table has the following columns:
     through a client. See the Start Activity Session topic for additional information.
   - **Completed** — Activity either reached the end of its scheduled end time or was canceled early by
     the requestor
-  - **Canceled** — The session expired, or the user or an Privilege
+  - **Canceled** — The session expired, or the user or a Privilege
     Secure administrator canceled it manually.
   - **Failed** — Pre-Session stage of the Activity has encountered an error
   - **Locked** — An Privilege Secure administrator locked the session. See the

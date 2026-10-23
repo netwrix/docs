@@ -1,6 +1,6 @@
 ---
 title: "Website Details Page"
-description: "Website Details Page"
+description: "Reference for the Website Details page, including logon URL and associated resource settings, and its tabs."
 sidebar_position: 30
 ---
 

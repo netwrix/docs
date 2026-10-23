@@ -1,6 +1,6 @@
 ---
 title: "Password History Options Page"
-description: "Password History Options Page"
+description: "Set how many previous passwords can't be reused and how many days Privilege Secure keeps password history records."
 sidebar_position: 60
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 60
 The Password History Options page is accessible from the Navigation pane under Configuration >
 System Settings.
 
-![passwordhistoryoptionspage](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/passwordhistoryoptionspage.webp)
+![Password History Options page showing the password limit and retention days](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/passwordhistoryoptionspage.webp)
 
 The page shows details of the password history settings and has the following features:
 

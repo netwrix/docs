@@ -1,6 +1,6 @@
 ---
 title: "Manage Internal Service Accounts"
-description: "Manage Internal Service Accounts"
+description: "Set Privilege Secure to manage an internal service account automatically or manually, and resolve a missing user match."
 sidebar_position: 20
 ---
 
@@ -8,7 +8,7 @@ sidebar_position: 20
 
 An internal service account is a type of service account that Privilege Secure uses with no
 dependencies (windows services or scheduled tasks). When you select an internal service account (Managed Type
-_Internal_) and set Privilege Secure to manage it, a pop up window displays and
+Internal) and set Privilege Secure to manage it, a pop up window displays and
 Privilege Secure searches for a matching user.
 
 ![Manage internal service account](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/credentials/manageinternalserviceaccount.webp)
@@ -33,9 +33,9 @@ Try the following possible solutions to resolve:
 - Check the spelling of the Username associated with the service account. See the
   [Service Accounts Page](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
   information.
-- ensure the user is in Active Directory in the expected domain
+- Ensure the user is in Active Directory in the expected domain
 
-## Manually Manage an Internal Service Account
+## Manually manage an internal service account
 
 If the manual option is selected, a new window opens to set the password for the credential.
 

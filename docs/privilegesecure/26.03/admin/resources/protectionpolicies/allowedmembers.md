@@ -1,6 +1,6 @@
 ---
 title: "Allowed Members Tab for Protection Policies"
-description: "Allowed Members Tab for Protection Policies"
+description: "Reference for the Allowed Members tab of a protection policy, including how to add groups and edit protected group members."
 sidebar_position: 30
 ---
 
@@ -26,7 +26,7 @@ The table has the following columns:
   protection policy runs. If a domain isn't specified in the name, the account is assumed to be
   local to the resource.
 
-## Add Groups to a Protection Policy
+## Add groups to a protection policy
 
 To add local groups to the selected protection policy.
 
@@ -54,7 +54,7 @@ The new group is added to the protection policy and is shown on the Allowed Memb
 Protection Policies. When the resource is scanned, any group members not permitted by the protection
 policy is removed from the local group on the resource.
 
-## Edit Protected Group Members
+## Edit protected group members
 
 To edit the members of a local groups within the selected protection policy.
 

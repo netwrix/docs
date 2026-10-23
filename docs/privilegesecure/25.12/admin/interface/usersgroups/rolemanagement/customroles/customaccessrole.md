@@ -1,14 +1,14 @@
 ---
 title: "Custom Access Role"
-description: "Custom Access Roles"
+description: "Reference for the custom access role, which lets users modify selected parts of Access Policies normally reserved for Administrators."
 sidebar_position: 40
 ---
 
-# Custom Access Role Details Page
+# Custom Access Role
 
 The Role Management page is accessible from the Navigation pane under Users & Groups. This page describes the custom access role. Users assigned this role are allowed to modify aspects of Access Policies that normally only Administrators are allowed to do.
 
-![Custome Role Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/details/customaccessrole.png)
+![Custom Role Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/details/customaccessrole.png)
 
 When a custom role is selected, the selected role details display at the top of the main pane with
 the following features:
@@ -28,7 +28,7 @@ the following features:
 - **Refresh** — Reload the information displayed. This button is specific to the table in the Users
   section at the bottom.
 
-## Permission Assignment
+## Permission assignment
 
 Each permission gives specific rights to users with the selected role. Permissions on the left are
 not associated with the role. Permissions on the right are assigned to the selected role.
@@ -47,7 +47,7 @@ Available permissions include:
 
 All custom roles, no matter what permissions are granted, can be scoped to specific policies.
 
-## Policy Tab
+## Policy tab
 
 The Policy tab for a custom role has the following features:
 
@@ -66,7 +66,7 @@ The Policies tab table has the following columns:
 - **Name** — Displays the name of the policy. Click the link to view additional details.
 - **Description** — Description of the policy
 
-## Role Users
+## Role users
 
 Role Users is located at the bottom of the Custom Role details page. This is the user that has
 access to the Custom Role.

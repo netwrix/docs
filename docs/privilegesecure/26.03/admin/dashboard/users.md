@@ -1,6 +1,6 @@
 ---
 title: "Users Dashboard"
-description: "Users Dashboard"
+description: "Review session information for onboarded users and groups on the Users dashboard, including its toolbar actions and table columns."
 sidebar_position: 50
 ---
 

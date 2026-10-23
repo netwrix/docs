@@ -1,6 +1,6 @@
 ---
 title: "Add Connection Profile"
-description: "Add Connection Profile"
+description: "Add a connection profile that sets the proxy, session control, credential management, website, and approval workflow settings."
 sidebar_position: 10
 ---
 

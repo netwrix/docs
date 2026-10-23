@@ -1,12 +1,14 @@
 ---
 title: "Resource Group Tabs"
-description: "Resource Group Tabs"
+description: "Reference for the Resource Group tabs: Resources, Host Scan, and Action Service."
 sidebar_position: 20
 ---
 
-# Resources Tab
+# Resource Group Tabs
 
-![addresources](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/resourcestab.png)
+## Resources Tab
+
+![Resources tab of a resource group](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/resourcestab.png)
 
 The table has the following features:
 
@@ -15,7 +17,7 @@ The table has the following features:
 - **Remove** — Removes the selected item from the group
 - **Manage** — Set the selected account to be managed by Privilege Secure. This button is only available
   when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
-  appears.. You can set password rotation to automatic or manual for managed accounts.
+  appears. You can set password rotation to automatic or manual for managed accounts.
 - **Unmanage** — Remove the account from being managed by Privilege Secure
 - **Change Platform** — Opens the Change Platform window to modify the type of platform for the selected
   host resource.
@@ -40,7 +42,7 @@ The table has the following columns:
 
 Host Scan services added to a resource group will cause the Host Scan service to be preferred for this group. If more than one Host Scan Service is added, then all of them are preferred on a next available basis. If all of them are busy, then NPS will use the next available Host Scan service outside of this group.
 
-![addresources](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/hostscantab.png)
+![Host Scan tab of a resource group](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/hostscantab.png)
 
 The table has the following features:
 
@@ -61,7 +63,7 @@ The table has the following columns:
 
 Action services added to a resource group will cause the Action service to be preferred for this group. If more than one Action Service is added, then all of them are preferred on a next available basis. If all of them are busy, then NPS will use the next available Action service outside of this group.
 
-![addresources](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/actiontab.png)
+![Action Service tab of a resource group](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/actiontab.png)
 
 The table has the following features:
 

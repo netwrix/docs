@@ -1,6 +1,6 @@
 ---
 title: "Bring Your Own Vault (BYOV) Integration"
-description: "Bring Your Own Vault (BYOV) Integration"
+description: "Add a Bring Your Own Vault (BYOV) connector to integrate Privilege Secure with a third-party vault."
 sidebar_position: 10
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 10
 Privilege Secure contains a built-in vault for credential management, but can integrate with vaults
 from other vendors using the Bring Your Own Vault® (BYOV) integration.
 
-## Add a Vault Connector for BYOV
+## Add a vault connector for BYOV
 
 To add the BYOV Connector.
 

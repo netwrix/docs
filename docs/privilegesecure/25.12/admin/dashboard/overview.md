@@ -1,6 +1,6 @@
 ---
 title: "Dashboard Interface"
-description: "Dashboard Interface"
+description: "Learn how the Dashboard interface summarizes active, scheduled, approval, historical, user, resource, and credential information."
 sidebar_position: 40
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Host Details"
-description: "Host Details"
+description: "Reference for the Host Details page, including connection settings, the Test and Scan Now buttons, and its tabs."
 sidebar_position: 10
 ---
 
@@ -22,7 +22,7 @@ The details page displays the following information:
   [Test Resource Connectivity Window](/docs/privilegesecure/26.03/admin/resources/detailspages/host/testresourceconnectivity.md) topic
   for additional information.
 - **Scan Now button** — Scans a host resource for local users, groups, windows services, and scheduled
-  tasks. A confirmation window displays.. The Cancel button, which is only visible when scanning
+  tasks. A confirmation window displays. The Cancel button, which is only visible when scanning
   lets you stop the resource scan. This scan can also be scheduled from the
   [Platforms Page](/docs/privilegesecure/26.03/admin/platforms/overview.md).
 - **WinRM Config button** — Opens the Configure Secure WinRM Connection window. See the

@@ -1,6 +1,6 @@
 ---
 title: "Groups Tab for Microsoft Entra ID"
-description: "Groups Tab for Microsoft Entra ID"
+description: "Reference for the Groups tab on the Microsoft Entra ID Details page, which lists cloud-only Entra ID groups."
 sidebar_position: 30
 ---
 

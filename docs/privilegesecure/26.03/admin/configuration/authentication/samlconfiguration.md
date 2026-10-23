@@ -1,6 +1,6 @@
 ---
 title: "SAML Configuration Wizard"
-description: "SAML Configuration Wizard"
+description: "Configure a SAML authentication connector with the Configuration Wizard, from client setup to ID mapping and logout test."
 sidebar_position: 30
 ---
 
@@ -10,7 +10,7 @@ The SAML Configuration wizard is opened with the **Configuration Wizard** button
 Configuration > [Authentication Page](/docs/privilegesecure/26.03/admin/configuration/authentication/authentication.md) for an SAML Authentication
 Connector Type.
 
-![configureclient](/images/privilegesecure/26.03/accessmanagement/admin/configuration/wizard/configureclient_1.webp)
+![Configure Client page of the SAML wizard](/images/privilegesecure/26.03/accessmanagement/admin/configuration/wizard/configureclient_1.webp)
 
 It contains four pages:
 
@@ -19,7 +19,7 @@ It contains four pages:
 - Configure Id Mapping
 - Test Logout
 
-## Configure SAML Authentication Connector
+## Configure SAML authentication connector
 
 To verify the SAML configuration:
 
@@ -49,7 +49,7 @@ To verify the SAML configuration:
    :::
 
 4. Click **Test Connection** to verify the connection configuration. This opens the Sign In
-   page in the browser. don't sign in.
+   page in the browser. Don't sign in.
 
    - If the Sign In page doesn't display as expected, review the values configured for the SAML
      connector and modify them where needed. Then, verify the Sign In page again.
@@ -63,7 +63,7 @@ To verify the SAML configuration:
    a certificate (available from the SAML provider). Privilege Secure can be configured to validate the
    authentication using the certificate.
 
-7. _(Optional)_ On the Test Login page, enter the following information:
+7. (Optional) On the Test Login page, enter the following information:
 
    - **Check Certificate** — Check to have Privilege Secure validate the authentication using the
      certificate.
@@ -77,12 +77,12 @@ To verify the SAML configuration:
     ![SAML Configuration Wizard, Retrieved Data](/images/privilegesecure/26.03/accessmanagement/admin/configuration/wizard/samlconfigidmapping.webp)
 
     Privilege Secure will use the access token to retrieve user data from the SAML provider. The SAML provider
-    requires a User Id Field for sign in. specify which field in Active Directory
+    requires a User Id Field for sign in. Specify which field in Active Directory
     should map to that User Id Field, so that Privilege Secure can automatically fill in the required
     credentials at login. The value used to sign in to the multi factor authenticator (MFA)
     when a user logs in to the Privilege Secure Console.
 
-    to connect a user from the SAML provider to a user in the Privilege Secure copy of the AD
+    To connect a user from the SAML provider to a user in the Privilege Secure copy of the AD
     data, map a field in the provider list to a field in the Privilege Secure host
     user table. The exact fields to map will vary between providers and according to the user’s AD
     configuration.

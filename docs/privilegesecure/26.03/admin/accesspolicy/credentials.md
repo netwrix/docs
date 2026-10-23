@@ -1,14 +1,16 @@
 ---
 title: "Credential Based Access Policies"
-description: "Credential Based Access Policies"
+description: "Reference for the tabs of credential based access policies, which give users access to credentials and files stored in a vault."
 sidebar_position: 30
 ---
+
+# Credential Based Access Policies
 
 This article is how to provide access to credentials of files in a vault.
 
 To add a vault, see [Adding a vault](/docs/privilegesecure/26.03/admin/resources/secretvault.md). Then to add credentials or files to the vault, see [Vault Details](/docs/privilegesecure/26.03/admin/resources/detailspages/secretvault.md)
 
-# Users Tab for Credential Based Access Policies
+## Users tab for credential based access policies
 
 The Users tab shows the users and groups associated with the selected access policy.
 
@@ -36,7 +38,7 @@ The table has the following columns:
 - **Checkbox** — Check to select one or more items
 - **Expand** — Click the expand icon to show additional information about the activities and
   resources authorized for the selected user or group
-- **Name** — Displays the name of the account. Click the link to view additional details.See the
+- **Name** — Displays the name of the account. Click the link to view additional details. See the
   [User, Group, & Application Details Page](/docs/privilegesecure/26.03/admin/usersgroups/usergroupapplication/usergroupapplication.md) topic for
   additional information.
 - **Email** — Displays the associated email address, if available
@@ -51,13 +53,13 @@ The table has the following columns:
 
 The table columns can be resized and sorted in ascending or descending order.
 
-## Activities Tab for Credential Based Access Policies
+## Activities tab for credential based access policies
 
 The Activities tab for credential-based Access Policies isn't editable. It only shows that the users can get access to credentials and/or files that are listed in the respective tabs.
 
 ![Credential based resource Activities tab](/images/privilegesecure/26.03/accessmanagement/admin/policy/tab/policycredentials/activitiestabcredentials.png)
 
-## Credentials Tab for Credential Based Access Policies
+## Credentials tab for credential based access policies
 
 The Credentials tab shows credentials associated with the selected Credential Based access policy.
 
@@ -86,7 +88,7 @@ The table has the following columns:
 
 The table columns can be resized and sorted in ascending or descending order.
 
-## Files Tab for Credential Based Access Policies
+## Files tab for credential based access policies
 
 The Files tab shows files associated with the selected Credential Based access policy.
 
@@ -109,4 +111,4 @@ The table has the following columns:
 - **File type** — text, docx, pdf, etc
 - **Size** — How large the file is
 - **Comments** — Place where notes or metadata can be added. This is done when the file is added or edited
-- **Created** — date teh file entered the vault.
+- **Created** — date the file entered the vault.

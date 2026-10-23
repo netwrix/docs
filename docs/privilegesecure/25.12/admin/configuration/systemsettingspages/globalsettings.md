@@ -1,6 +1,6 @@
 ---
 title: "Global Settings Page"
-description: "Global Settings Page"
+description: "Reference for the Global Settings page, covering RDP resolution, certificate thumbprint, WinRM, idle timeout, user expiration, and encrypted files."
 sidebar_position: 40
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 40
 The Global Settings page is accessible from the Navigation pane under **Configuration** > **System
 Settings**. It shows all global RDP session settings.
 
-![globalsettingspage](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/globalsettingspage.png)
+![Global Settings page showing the RDP file settings](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/globalsettingspage.png)
 
 The right of the page shows details of the RDP file settings and has the following features:
 

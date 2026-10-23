@@ -1,12 +1,12 @@
 ---
 title: "Add Database"
-description: "Add New Database"
+description: "Add a Microsoft SQL or Oracle database to the console by entering its name, platform, server details, and service account."
 sidebar_position: 60
 ---
 
-# Add New Database
+# Add Database
 
-To add a database to the Privilege SecureConsole. Supported database platforms
+To add a database to the Privilege Secure Console. Supported database platforms
 include:
 
 - Microsoft SQL
@@ -26,7 +26,7 @@ include:
    - Microsoft SQL: 1433
    - Oracle: 1521
 
-8. Enter the fully qualified domain name (FDQN) for the server.
+8. Enter the fully qualified domain name (FQDN) for the server.
 
    :::note
    The domain is used as the default domain for database activities.

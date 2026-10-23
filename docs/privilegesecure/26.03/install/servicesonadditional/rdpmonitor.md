@@ -1,6 +1,6 @@
 ---
 title: "Install Remote Desktop Monitor Service on Target RDP Hosts"
-description: "Install Remote Desktop Monitor Service on Target RDP Hosts"
+description: "Install the Remote Desktop Monitor service on target RDP hosts so Privilege Secure records Windows event activity during sessions."
 sidebar_position: 40
 ---
 

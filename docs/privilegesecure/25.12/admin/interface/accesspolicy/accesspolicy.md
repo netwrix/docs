@@ -1,12 +1,12 @@
 ---
 title: "Access Policy Page"
-description: "Access Policy Page"
+description: "Reference for the Access Policy page, where you view access policies and their users, activities, resources, and credentials."
 sidebar_position: 10
 ---
 
 # Access Policy Page
 
-The Access Policies page is accessible from the Navigation pane underPolicyPolicies. It shows the
+The Access Policies page is accessible from the Navigation pane under **Policy** > **Access Policy**. It shows the
 configured access policies, which control which users can complete which activities on
 which resources.
 

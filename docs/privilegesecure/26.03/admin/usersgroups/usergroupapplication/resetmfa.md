@@ -1,6 +1,6 @@
 ---
 title: "Reset User MFA"
-description: "Reset User MFA"
+description: "Reset a user's MFA from the Users & Groups page so the user must register a new authenticator at the next login."
 sidebar_position: 10
 ---
 
@@ -19,7 +19,7 @@ information.
 
 3. Click the **Reset MFA** button.
 
-   ![Reset MFA for Account Confermation Window](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/usersgroups/usersgroupsresetmfawindow.webp)
+   ![Reset MFA for Account Confirmation Window](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/usersgroups/usersgroupsresetmfawindow.webp)
 
 4. Click the **Reset MFA** button in the confirmation window.
 

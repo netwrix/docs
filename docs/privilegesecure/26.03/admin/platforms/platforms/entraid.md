@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Entra ID Platform Policy Configuration"
-description: "Microsoft Entra ID Platform Policy Configuration"
+description: "Configure the Microsoft Entra ID platform policy, including the built-in account, password complexity, scan schedule, and verification settings."
 sidebar_position: 20
 ---
 

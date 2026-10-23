@@ -1,18 +1,18 @@
 ---
 title: "SSH Configurations"
-description: "SSH Configurations"
+description: "Configure SSH session launch and the SSH encryption algorithms in the session client and proxy configuration files."
 sidebar_position: 35
 ---
 
 # SSH Configurations
 
-## SSH Session Launch
+## SSH session launch
 
-When lauching an SSH session from the browser, you must incorporate a hook on the local machine to start the SSH client. For details, see [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically) Knowledge Base Article.
+When launching an SSH session from the browser, you must incorporate a hook on the local machine to start the SSH client. For details, see [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically) Knowledge Base Article.
 
-## SSH Encryption Algorithms
+## SSH encryption algorithms
 
-SSH supports many encryption algorithms for key types, key exchange, and ciphers. As they become obsolete, some users demand that Netwrix remove them, but others need to keep them for backward compatiblity reasons. Since Netwrix can't know what every user wants to support, this became configurable starting in version 26.03.0
+SSH supports many encryption algorithms for key types, key exchange, and ciphers. As they become obsolete, some users demand that Netwrix remove them, but others need to keep them for backward compatibility reasons. Since Netwrix can't know what every user wants to support, this became configurable starting in version 26.03.0
 
 There are two places that have to be updated. The session client and proxy.
 
@@ -102,7 +102,7 @@ Here is a sample `sbpam_sshclient.json`:
 
 ### Proxy for scanning
 
-Located in ine NPS server at `C:\ProgramData\Stealthbits\PAM\ProxyService\sbpam_ssh.json`.
+Located in the NPS server at `C:\ProgramData\Stealthbits\PAM\ProxyService\sbpam_ssh.json`.
 Add, Modify, or update this file as required to match the needs of the servers/devices NPS is connecting to.
 
 Here is a sample `sbpam_ssh.json`:

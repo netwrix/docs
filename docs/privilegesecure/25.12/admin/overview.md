@@ -1,6 +1,6 @@
 ---
 title: "Administrator Role"
-description: "Administrator Role"
+description: "Learn how the Administrator role works in the NPS-AM console and how it combines with other roles such as Reviewer and Approver."
 sidebar_position: 40
 ---
 

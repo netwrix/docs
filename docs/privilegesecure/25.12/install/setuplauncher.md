@@ -1,6 +1,6 @@
 ---
 title: "Netwrix Setup Launcher"
-description: "Netwrix Setup Launcher"
+description: "Use the Netwrix Setup Launcher to install the PostgreSQL database and the Privilege Secure application, including the installation options."
 sidebar_position: 20
 ---
 
@@ -15,9 +15,9 @@ require a server reboot at the end of the installation.
 The Netwrix Setup Launcher checks for and installs missing prerequisites in addition to installing
 the database and application.
 
-![Netwrix Setup Launcher showing the Prequisites Setup with a green checkmark](/images/privilegesecure/25.12/accessmanagement/install/launcherstep2.webp)
+![Netwrix Setup Launcher showing the Prerequisites Setup with a green checkmark](/images/privilegesecure/25.12/accessmanagement/install/launcherstep2.webp)
 
-:::info
+:::note
 Antivirus software should be disabled on this computer during the installation.
 :::
 
@@ -30,15 +30,15 @@ The **Advanced** checkbox provides the option to switch databases to Microsoft S
 This isn't a recommended configuration and requires additional support from Netwrix.
 :::
 
-## Install PostgreSQL Database
+## Install the PostgreSQL database
 
-:::info
+:::note
 Antivirus software should be disabled on this computer during the installation.
 :::
 
 To install the PostgreSQL database.
 
-1. In the Netwrix Setup Launcher, click **Install PostgreSQL 16**. The PostgeSQL v16 Setup
+1. In the Netwrix Setup Launcher, click **Install PostgreSQL 16**. The PostgreSQL v16 Setup
    wizard opens.
 
    :::note
@@ -68,13 +68,13 @@ To install the PostgreSQL database.
    - When the location is set, click **Next**.
 
    :::note
-   The installation process begins and the Setup wizard displays the its Progress. This may
+   The installation process begins and the Setup wizard displays its progress. This may
    take a few moments.
    :::
 
    ![Stealthbits PostgreSQL v16 Setup Wizard on the Completed Successfully page](/images/privilegesecure/25.12/accessmanagement/install/completed.webp)
 
-5. When installation is complete, click **Exit**. The Stealthbits PostgeSQL v16 Setup
+5. When installation is complete, click **Exit**. The Stealthbits PostgreSQL v16 Setup
    wizard closes.
 
    :::note
@@ -83,9 +83,9 @@ To install the PostgreSQL database.
 
 The PostgreSQL database is successfully installed. It is time to install the application.
 
-## Install Application
+## Install the application
 
-:::info
+:::note
 Antivirus software should be disabled on this computer during the installation.
 :::
 
@@ -117,10 +117,10 @@ To install Privilege Secure application.
    - To change the default location, click **Browse** and set a new location.
    - When the location is set, click **OK**.
 
-4. You returns to the End User License Agreement page. Click **Install**.
+4. You return to the End User License Agreement page. Click **Install**.
 
    :::note
-   The installation process begins and the wizard displays the its Progress. This may take a
+   The installation process begins and the wizard displays its progress. This may take a
    few moments.
    :::
 
@@ -128,7 +128,7 @@ To install Privilege Secure application.
 
 5. When installation is complete, click **Close**.
 
-The installer displays a message that it is applying permissions. The application require a
+The installer displays a message that it is applying permissions. The application requires a
 server reboot at the end of the installation.
 
 Once installation is complete, open, and walk through the Netwrix Privilege Secure Setup Wizard. The

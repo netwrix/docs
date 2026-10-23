@@ -1,22 +1,22 @@
 ---
 title: "Add Secret Vault"
-description: "Add Secret Vault"
+description: "Add a secret vault resource that stores credentials and files and gives Privilege Secure users access to them."
 sidebar_position: 50
 ---
 
 # Add Secret Vault
 
-Secret Vaults lets you store and securly provide Privilege Secure users with access to credentials and files.
+Secret Vaults lets you store and securely provide Privilege Secure users with access to credentials and files.
 
 1. Navigate to the **Policy** > **Resources** page.
 2. Click the **+ Add** button and select **New Secret Vault** from the dropdown list.
 
-   ![Add secrete Vault Resource](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addsecretvault.png)
+   ![Add secret Vault Resource](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addsecretvault.png)
 
 3. Enter the following information:
 
    - **New Secret Vault Name** — Name of the new secret vault
-   - **Description** _(optional)_ —Description of the policy
+   - **Description** (optional) — Description of the policy
 
 4. Click **Save**.
 

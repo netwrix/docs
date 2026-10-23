@@ -1,6 +1,6 @@
 ---
 title: "Add Activities and Activity Groups Window"
-description: "Add Activities and Activity Groups Window"
+description: "Add activities and activity groups to an access policy, and reference for the Add Activities and Activity Groups window."
 sidebar_position: 10
 ---
 
@@ -28,7 +28,7 @@ Both tables have the following columns:
 - **Type** — Classification of the activity
 - **Description** — Description of the policy
 
-## Add Activities
+## Add activities
 
 To add activities to the selected access policy.
 

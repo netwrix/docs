@@ -1,6 +1,6 @@
 ---
 title: "Add Application"
-description: "Add Application"
+description: "Add an application user that calls the Privilege Secure REST API using a certificate serial number and API key."
 sidebar_position: 20
 ---
 
@@ -9,10 +9,10 @@ sidebar_position: 20
 Applications are a special type of user that allow external entities to interact with Privilege
 Secure via the REST API interface. Capabilities within the product are identical to standard users
 with the exception that Applications aren't able to log on through the product UI. Each Application
-has a unique name that identify the application calling the API; authentication is via a
+has a unique name that identifies the application calling the API; authentication is via a
 combination of certificate serial number and API key.
 
-![addapplication](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addapplication.webp)
+![Add Application form with certificate serial number and API key fields](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addapplication.webp)
 
 To add an Application to an Access Policy.
 

@@ -1,6 +1,6 @@
 ---
 title: "Access > My Activities Page"
-description: "Access > My Activities Page"
+description: "Open the Access > My Activities page to see Activities as cards, sort them by name or Access Policy, and start a session."
 sidebar_position: 30
 ---
 

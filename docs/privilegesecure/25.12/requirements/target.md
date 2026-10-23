@@ -1,6 +1,6 @@
 ---
 title: "Target Environments"
-description: "Target Environments"
+description: "Review the target environments Privilege Secure can manage and the service account permissions each one requires."
 sidebar_position: 40
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 40
 Netwrix Privilege Secure supports management of the following target environments:
 
 - Microsoft® Active Directory®
-- **Window Server 2008 R2 or later** — Requires PowerShell v5.1
+- **Windows Server 2008 R2 or later** — Requires PowerShell v5.1
 - **Windows Desktop** — Requires the `winrm` service to be running
 - Cisco IOS
 - Websites

@@ -1,24 +1,24 @@
 ---
 title: "Microsoft Entra ID App Registration"
-description: "Microsoft Entra ID App Registration"
+description: "Create a Microsoft Entra ID app registration, secret, and role assignments for a Privilege Secure service account."
 sidebar_position: 20
 ---
 
 # Microsoft Entra ID App Registration
 
-To create a Microsoft Entra ID (formerly Azure AD) service account and add an Microsoft Entra ID
+To create a Microsoft Entra ID (formerly Azure AD) service account and add a Microsoft Entra ID
 tenant to Privilege Secure, the following information is required:
 
 - App ID (For service account)
 - App Secret (For service account)
 - Tenant ID (To add resource)
 
-Log in to Microsoft Entra ID and To generate the required information for Privilege
+Log in to Microsoft Entra ID to generate the required information for Privilege
 Secure.
 
 ## Create App Registration
 
-Create an App Registration in Entra ID (Entra ID > App Registrations) as an admin in Entra ID.
+Create an App Registration in Entra ID (**Entra ID** > **App Registrations**) as an admin in Entra ID.
 
 1. Click **New Registration**.
 2. Name it, keep all default settings, and click **Register**.
@@ -35,13 +35,13 @@ Create an App Registration in Entra ID (Entra ID > App Registrations) as an admi
 
 5. Click **Grant Admin Consent**.
 
-Ensure the Grant Admin Consent was successful within the Configured permissions menu. The following message
-appears at the top of the page: Sucessfully granted admin consent for the
+Ensure that **Grant Admin Consent** was successful within the Configured permissions menu. The following message
+appears at the top of the page: Successfully granted admin consent for the
 requested permissions.
 
 ## Generate Secret
 
-Generate a secret for the App Registration
+Generate a secret for the App Registration.
 
 1. In the App Registration section, click **Certificates & Secrets**.
 2. Click **New Client Secret**.
@@ -54,7 +54,7 @@ Generate a secret for the App Registration
    - Application (client) ID, required for the Netwrix Privilege Secure Entra ID Service Account
    - Directory (tenant) ID, required to add an Entra ID tenant resource to Netwrix Privilege Secure
 
-## Add App Registration to Admin Role
+## Add the App Registration to the User Administrator role
 
 Add the App Registration to the User Administrators role.
 
@@ -70,7 +70,7 @@ registration instead of User Administrator.
 4. Click **Add Assignments**.
 5. Search for the name of the previously created App Registration, click it, and click
    **Select**.
-6. Click **Next**, then select the **Setting** Tab and provide justification text before
+6. Click **Next**, then select the **Setting** tab and provide justification text before
    clicking **Assign**.
 
 The service account can now be added to Privilege Secure, using the Application (Client) ID and
@@ -90,5 +90,5 @@ ID, and the result is synced to the other location. Without having this function
 in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password will fail.
 
 Enabling Password Writeback isn't specific to Privilege Secure. See the
-[Open Enable Entra ID password writeback](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback)
+[Enable Entra ID password writeback](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback)
 Microsoft article for additional information.

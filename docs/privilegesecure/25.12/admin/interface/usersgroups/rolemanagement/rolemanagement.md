@@ -1,6 +1,6 @@
 ---
 title: "Role Management Page"
-description: "Role Management Page"
+description: "Reference for the Role Management page, including default role permissions and how to add users to each role."
 sidebar_position: 30
 ---
 
@@ -10,7 +10,7 @@ The Role Management page is accessible from the Navigation pane under Users & Gr
 details on all available roles for Privilege Secure users. There are default roles, and custom roles
 can be created.
 
-![rolemanagementpage](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/rolemanagementpage.png)
+![Role Management page with the list of roles](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/rolemanagementpage.png)
 
 The pane on the left side of the page displays a list of the configured roles. This pane has the
 following features:
@@ -23,7 +23,7 @@ following features:
 - **Trashcan icon** — Deletes the access policy. Icon appears when policy is hovered over. A
   confirmation window displays.
 
-## Default Role Permissions
+## Default role permissions
 
 The default roles provide users with the following permissions:
 
@@ -33,9 +33,9 @@ The default roles provide users with the following permissions:
 - **Reviewer** — Grants ability to review access entitlement. See the
   [Access Certification Page](/docs/privilegesecure/25.12/admin/AuditReporting/accesscertification/accesscertification.md) topic for
   additional information.
-- **Auditor** — Grants the ability to view recordings of historical sessions by users or resources. There are also custom auditor roles. You can orgnize by letting the built-in auditor role view historical sessions of all users and all resources. Then create custom auditor roles that view only certain users and/or resources.
-- **Custom Roles:** There are three variants of customized roles: custom access policies, custom credential policies, and custom auditor policies. Custom roles enable fine-grained configuration and access controls beyond the built-in roles.
-- **Approver:** This role isn't assigned the way the other roles are assigned. Instead, when a Connection profile is created, workflows can be built that assign other users the ability to approve or deny that session. See [Add Approval Workflow](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofileapproval.md). Up to three levels of approvals can be required.
+- **Auditor** — Grants the ability to view recordings of historical sessions by users or resources. There are also custom auditor roles. You can organize by letting the built-in auditor role view historical sessions of all users and all resources. Then create custom auditor roles that view only certain users and/or resources.
+- **Custom Roles** — There are three variants of customized roles: custom access policies, custom credential policies, and custom auditor policies. Custom roles enable fine-grained configuration and access controls beyond the built-in roles.
+- **Approver** — This role isn't assigned the way the other roles are assigned. Instead, when a Connection profile is created, workflows can be built that assign other users the ability to approve or deny that session. See [Add Approval Workflow](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofileapproval.md). Up to three levels of approvals can be required.
 
 :::note
 The default Administrator, User, Reviewer, and Auditor roles can't be copied, deleted, or

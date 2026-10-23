@@ -1,6 +1,6 @@
 ---
 title: "Entitlements Tab for Access Certification"
-description: "Entitlements Tab for Access Certification"
+description: "Reference for the Entitlements tab, where the assigned reviewer reviews and accepts or denies access in an access certification task."
 sidebar_position: 20
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 20
 The Entitlements tab shows the activities associated with the users in the selected access
 certification task.
 
-![entitlementstab](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/tab/entitlementstab.webp)
+![Entitlements tab listing activities for the users in the access certification task](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/tab/entitlementstab.webp)
 
 The Entitlements table has the following features:
 

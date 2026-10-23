@@ -1,6 +1,6 @@
 ---
 title: "Test Resource Connectivity Window"
-description: "Test Resource Connectivity Window"
+description: "Test connectivity to a host resource and review the test status and messages."
 sidebar_position: 10
 ---
 

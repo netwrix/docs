@@ -1,6 +1,6 @@
 ---
 title: "History Tab for Microsoft Entra ID"
-description: "History Tab for Microsoft Entra ID"
+description: "Reference for the History tab on the Microsoft Entra ID Details page, including session log access and event columns."
 sidebar_position: 60
 ---
 

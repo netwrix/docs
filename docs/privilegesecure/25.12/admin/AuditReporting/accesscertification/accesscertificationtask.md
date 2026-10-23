@@ -1,6 +1,6 @@
 ---
 title: "Add Access Certification Task"
-description: "Add Access Certification Task"
+description: "Add an access certification task that assigns a reviewer to audit and certify user access in Privilege Secure."
 sidebar_position: 10
 ---
 
@@ -12,7 +12,7 @@ steps to add an access certification task.
 1. Navigate to the **Audit and Reporting** > **Access Certification** page.
 2. In the Access Certification Task list, click the **Add Access Cert. Task** icon.
 
-   ![addtask](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/add/addtask.webp)
+   ![Add access certification task form with name, description, and reviewer fields](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/add/addtask.webp)
 
 3. Enter the following information:
 

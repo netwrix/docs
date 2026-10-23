@@ -1,6 +1,6 @@
 ---
 title: "Domain Details Page"
-description: "Domain Details Page"
+description: "Review a domain resource on the Domain Details page, including synchronization status, frequency, and the related tabs."
 sidebar_position: 20
 ---
 

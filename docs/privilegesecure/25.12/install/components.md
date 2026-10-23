@@ -1,6 +1,6 @@
 ---
 title: "Install Components & Methods"
-description: "Install Components & Methods"
+description: "Reference for the files in the NPS.zip download and the installers in the Extras folder, with what each one installs."
 sidebar_position: 10
 ---
 
@@ -21,7 +21,7 @@ The `NPS.zip` file that can be downloaded from the Netwrix Customer portal conta
     :::
 
   - **Privilege Secure Setup** — Installs the application
-- **Pre-Reqs folder** — Contains an application executable for installed the required version of.NET Framework. By default, the Netwrix Setup Launcher runs this installer.
+- **Pre-Reqs folder** — Contains an application executable for installed the required version of .NET Framework. By default, the Netwrix Setup Launcher runs this installer.
 - **The Extras folder** — Contains additional standalone installers:
   - **Enablement Toolkit.exe** — Installs a utility that offers a GUI for common testing scenarios
     used when troubleshooting the application. See the
@@ -44,7 +44,7 @@ The `NPS.zip` file that can be downloaded from the Netwrix Customer portal conta
     :::note
     Use this installer if you aren't using the Netwrix Setup Launcher. Run the
     installer as an administrator and follow the
-    [Install Application](setuplauncher.md#install-application) instructions, starting with
+    [Install Application](setuplauncher.md#install-the-application) instructions, starting with
     Step 2.
     :::
 
@@ -90,16 +90,16 @@ The `NPS.zip` file that can be downloaded from the Netwrix Customer portal conta
     :::note
     Use this installer if you aren't using the Netwrix Setup Launcher. Run the
     installer as an administrator and follow the
-    [Install PostgreSQL Database](setuplauncher.md#install-postgresql-database) instructions,
+    [Install PostgreSQL Database](setuplauncher.md#install-the-postgresql-database) instructions,
     starting with Step 2.
     :::
 
-:::info
+:::note
 Antivirus software should be disabled during the component installation.
 :::
 
 The Netwrix Setup Launcher checks for prerequisites and installs both the database and application
-on the sames server. See the [Netwrix Setup Launcher](/docs/privilegesecure/25.12/install/setuplauncher.md) topic for instructions. If
+on the same server. See the [Netwrix Setup Launcher](/docs/privilegesecure/25.12/install/setuplauncher.md) topic for instructions. If
 the desire is to install the database on a different server, use the appropriate EXE files from the
 Extras folder.
 

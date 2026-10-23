@@ -1,6 +1,6 @@
 ---
 title: "User, Group, & Application Details"
-description: "User, Group, & Application Details"
+description: "Reference for the User, Group, & Application Details page, including the lock, unlock, and reset MFA actions and its tabs."
 sidebar_position: 20
 ---
 
@@ -29,7 +29,7 @@ The Reset MFA button will not be visible if the present user has their Authentic
 set to Not Required
 :::
 
-The content within the tabs change based on the type of object. See the following topics for
+The content within the tabs changes based on the type of object. See the following topics for
 additional information:
 
 - [Sessions Tab](/docs/privilegesecure/26.03/admin/usersgroups/usergroupapplication/sessions.md)

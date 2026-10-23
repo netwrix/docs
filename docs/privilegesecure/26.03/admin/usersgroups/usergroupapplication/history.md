@@ -1,6 +1,6 @@
 ---
 title: "History Tab"
-description: "History Tab"
+description: "Reference for the History tab, which lists the session history of a user, group, or application and its status values."
 sidebar_position: 60
 ---
 

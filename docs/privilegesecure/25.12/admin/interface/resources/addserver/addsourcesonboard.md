@@ -1,6 +1,6 @@
 ---
 title: "Add Resources Window"
-description: "Add Resources Window"
+description: "Onboard resources in the Add Resources window by importing from Active Directory, importing from a CSV file, or adding them manually."
 sidebar_position: 10
 ---
 
@@ -39,7 +39,7 @@ Both tables have the following columns:
 - **Operating System** — Displays the operating system of the resource
 - **DNS Host Name** — Displays the DNS host name for a host resource or the FQDN for a domain resource
 
-To onboard resources by importing from Active Director.
+To onboard resources by importing from Active Directory.
 
 1. Navigate to either the Resources dashboard or the Resources page.
 2. Click the **Add** button and select **New Server**. The Add Resources window opens to
@@ -68,7 +68,7 @@ When the Import from CSV option is selected, the Add Resources window provides i
 
 The window has the following features:
 
-- **Import CSV** — Opens Window Explore to select the file
+- **Import CSV** — Opens Windows Explorer to select the file
 - **Download CSV Template** — Downloads the `nps-resource-import-template.csv` file with required
   columns. See the [Create Resource Import CSV File](/docs/privilegesecure/25.12/admin/interface/resources/addserver/resourceimportcsv.md) topic for
   additional information.
@@ -110,7 +110,7 @@ Platforms and Service Accounts already known to Privilege Secure.
    :::
 
 4. Click **Import CSV**. The Open window opens.
-5. Navigate to the CSV you want file and click **Open**.
+5. Navigate to the CSV file you want and click **Open**.
 6. The data is read into the table. There is a validation process taking place. If an
    issue arises, a red icon will indicate the problem. If a problem occurs, you can either fix the CSV
    file and reimport the file, or you can select the resource with the issue and click **Remove**.
@@ -124,7 +124,7 @@ Platforms and Service Accounts already known to Privilege Secure.
 
 The new resources have been onboarded and can be added to Access Policies.
 
-## Add Manually
+## Add manually
 
 When the Add Manually option is selected, the Add Resources window provides options for entering
 resources.

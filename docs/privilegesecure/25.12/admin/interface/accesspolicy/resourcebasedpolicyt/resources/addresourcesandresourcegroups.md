@@ -1,6 +1,6 @@
 ---
 title: "Add Resources and Resource Groups Window"
-description: "Add Resources and Resource Groups Window"
+description: "Add resources and resource groups to an access policy, and reference for the Add Resources and Resource Groups window."
 sidebar_position: 10
 ---
 
@@ -28,7 +28,7 @@ Both tables have the following columns:
 - **Name** — Displays the name of the resource
 - **Operating System** — Displays the operating system of the resource
 
-## Add Resources
+## Add resources
 
 To add resources and resource groups to the selected access policy.
 

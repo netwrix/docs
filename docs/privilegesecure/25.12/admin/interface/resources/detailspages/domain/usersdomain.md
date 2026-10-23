@@ -1,6 +1,6 @@
 ---
 title: "Users Tab for Domain"
-description: "Users Tab for Domain"
+description: "Reference for the Users tab on the Domain Details page, including user actions, table columns, and verification statuses."
 sidebar_position: 10
 ---
 
@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Users tab shows information about the domain users on the selected resource.
 
-![Domian Users Tab](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/resources/usersdomain.webp)
+![Domain Users Tab](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/resources/usersdomain.webp)
 
 The Users tab has the following features:
 
@@ -20,13 +20,13 @@ The Users tab has the following features:
 - **Remove NPS Role** — Removes console access from the selected account
 - **Manage** — Set the selected account to be managed by Privilege Secure. This button is only available
   when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
-  displays.. You can set password rotation to automatic or manual for managed accounts.
+  displays. You can set password rotation to automatic or manual for managed accounts.
 - **Unmanage** — Remove the account from being managed by Privilege Secure
 - **Schedule Rotation** — Add the credential rotation task to the queue. This button is only available
   when the Method is Automatic managed.
 - **Verify** — Checks that the credentials for the selected account match the credentials set by
   Privilege Secure
-- **View History** — Opens the Password History window to displays the password history for the account
+- **View History** — Opens the Password History window to display the password history for the account
 - **Password Reset Options** — Customize password rotation options. This option is only available for
   managed accounts.
 - **Refresh** — Reload the information displayed

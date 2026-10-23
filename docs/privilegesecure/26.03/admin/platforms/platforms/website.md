@@ -1,6 +1,6 @@
 ---
 title: "Web Site Platform Policy Configuration"
-description: "Web Site Platform Policy Configuration"
+description: "Set the name and description of the Web Site platform policy and save the changes to the platform."
 sidebar_position: 80
 ---
 

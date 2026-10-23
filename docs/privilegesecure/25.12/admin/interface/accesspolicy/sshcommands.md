@@ -1,12 +1,12 @@
 ---
 title: "SSH Command Restriction"
-description: "SSH Command Restriction"
+description: "Create groups of SSH command restrictions that log, block, or terminate on matching commands, and apply them to connection profiles."
 sidebar_position: 60
 ---
 
 # SSH Command Restriction
 
-The SSH Command Restriciton page is accessible from the Navigation pane under **Policy** > **Access
+The SSH Command Restriction page is accessible from the Navigation pane under **Policy** > **Access
 Policy** > **Command Restriction**. Groups of SSH command restrictions can be created and then applied to connection profiles.
 
 ![SSH Command Restriction Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/command.png)
@@ -19,7 +19,7 @@ pane has the following features:
 - **Trashcan icon** — Deletes the SSH command restriction group. Icon appears when profile is hovered over. A
   confirmation window displays.
 
-## SSH Command Restriction Fields
+## SSH command restriction fields
 
 - **Name** — provide a name for this group of command restrictions
 - **Email Recipient** — email address to be notified if any command is observed and the email box is checked.
@@ -28,7 +28,7 @@ pane has the following features:
 - **Action to perform** — Select in the dropdown from:
   - **Log only** — the command is logged
   - **Block** — the command is blocked from being executed
-  - **Block and lock** — Privilege Secure blocks the command from being exectuted and locks the session. If you select this option, then you can craft a message that Privilege Secure sends to the locked user as well.
+  - **Block and lock** — Privilege Secure blocks the command from being executed and locks the session. If you select this option, then you can craft a message that Privilege Secure sends to the locked user as well.
   - **Terminate** — session is ended
 - **Email checkbox** — if the command is observed and this is checked, then an email is sent regardless of action
 - **Plus and minus icons** — remove or add more command restrictions

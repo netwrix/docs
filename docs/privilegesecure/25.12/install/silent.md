@@ -1,10 +1,10 @@
 ---
 title: "Silent Installer Option"
-description: "Application Silent Installer Option"
+description: "Install the Privilege Secure application from the command prompt with the silent installer, including a non-default installation directory."
 sidebar_position: 30
 ---
 
-# Application Silent Installer Option
+# Silent Installer Option
 
 To install the Privilege Secure application from the command prompt.
 
@@ -16,7 +16,7 @@ To install the Privilege Secure application from the command prompt.
    ```
 
    - To add a non-default installation directory, append the following to the command where the
-     `[Path]` parameter is the installation you want directory location:
+     `[Path]` parameter is the directory location you want for the installation:
 
      ```text
      nps.exe /quiet PRODUCTDIR="[Path]"

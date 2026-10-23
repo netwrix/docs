@@ -1,10 +1,12 @@
 ---
 title: "Audit and Reporting: Reviewer"
-description: "Audit and Reporting: Reviewer"
+description: "Review access entitlements for an access certification task, approve or deny them, and commit the changes to user access."
 sidebar_position: 50
 ---
 
-## Review Entitlements
+# Audit and Reporting: Reviewer
+
+## Review entitlements
 
 Only the **assigned reviewer** for an access certification task can modify the access entitlements.
 To review and modify access entitlements for users and groups in the selected
@@ -62,7 +64,7 @@ access certification task.
 
    :::warning
    Committed changes can't be undone. A new access certification task must be created.
-   Alternatively, You can manually reassign users to an access policy.
+   Alternatively, you can manually reassign users to an access policy.
    :::
 
 7. When all entitlements have been reviewed, the **Commit** button is enabled. Click **Commit** to

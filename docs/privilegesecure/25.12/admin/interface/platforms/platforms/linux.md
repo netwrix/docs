@@ -1,6 +1,6 @@
 ---
 title: "Linux Platform Policy Configuration"
-description: "Linux Platform Policy Configuration"
+description: "Configure the Linux platform policy, including the built-in account, password complexity, protection policy schedule, and scan settings."
 sidebar_position: 40
 ---
 

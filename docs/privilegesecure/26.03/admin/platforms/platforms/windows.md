@@ -1,6 +1,6 @@
 ---
 title: "Windows Platform Policy Configuration"
-description: "Windows Platform Policy Configuration"
+description: "Configure the Windows platform policy, including the built-in account, password complexity, protection policy schedule, and scan settings."
 sidebar_position: 90
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Add Authentication Connector"
-description: "Add Authentication Connector"
+description: "Add an MFA, OpenID Connect, or SAML authentication connector to the Privilege Secure console."
 sidebar_position: 10
 ---
 
@@ -11,7 +11,7 @@ To add an authentication connector to the console.
 1. Navigate to the **Configuration** > **Authentication** page.
 2. In the Connectors list, click the **Plus** icon.
 
-   ![addauthentication](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addauthentication.webp)
+   ![Add Authentication Connector window with connector fields](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addauthentication.webp)
 
 3. Enter the following information:
 
@@ -20,7 +20,7 @@ To add an authentication connector to the console.
    - **Connection Type** — Indicates the type of authentication
 
    :::note
-   after you select the Connection Type, additional fields become available. The available
+   After you select the Connection Type, additional fields become available. The available
    fields will change depending on the selection.
    :::
 

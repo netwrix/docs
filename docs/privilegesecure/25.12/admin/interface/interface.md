@@ -1,6 +1,6 @@
 ---
 title: "Policy Interface"
-description: "Policy Interface"
+description: "Overview of the Policy interface with links to its pages for access policies, platforms, users, resources, credentials, and activities."
 sidebar_position: 50
 ---
 

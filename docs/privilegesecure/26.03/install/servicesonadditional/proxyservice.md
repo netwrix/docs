@@ -1,6 +1,6 @@
 ---
 title: "Proxy Service Install"
-description: "Proxy Service Install"
+description: "Install the NPS Proxy Service on another server and register it with the Privilege Secure server."
 sidebar_position: 10
 ---
 
@@ -47,10 +47,10 @@ application.
    - To change the default location, click **Browse** and set a new location.
    - When the location is set, click **OK**.
 
-6. You returns to the End User License Agreement page. Click **Install**.
+6. You return to the End User License Agreement page. Click **Install**.
 
    :::note
-   The installation process begins and the wizard displays the its Progress. This may take a
+   The installation process begins and the wizard displays its progress. This may take a
    few moments.
    :::
 
@@ -96,8 +96,11 @@ All commands are executed on the NPS Application Server as administrator.
 
    ```json
    {
-    "advertise": ["[ Server FQDN]","[ Server IP Address]"],
-    "tag": []
+     "advertise": [
+       "[ Server FQDN]",
+       "[ Server IP Address]"
+     ],
+     "tag": []
    }
    ```
 
@@ -123,7 +126,7 @@ All commands are executed on the NPS Application Server as administrator.
    ```
 
 5. Copy the returned hash value and save it for later, you need this value when you
-   register your remote service..
+   register your remote service.
 
 ### Remote NPS Proxy Server
 
@@ -135,7 +138,7 @@ All commands are executed on the Remote NPS Proxy Server as an administrator.
 
 1. Create a text file and name it `sbpam_node.json` in the installation directory. The
    default location is `C:\ProgramData\Stealthbits\PAM\ProxyService`.
-2. Insert and save the `"advertise"` value of the JSON file with thw remote proxy server information:
+2. Insert and save the `"advertise"` value of the JSON file with the remote proxy server information:
 
    ```json
    {
@@ -171,7 +174,9 @@ The Privilege Secure Proxy Service is now registered with the Privilege Secure a
 If the Cisco device is running with insecure ciphers when the user attempts to connect to an
 SSH session, the following error message displays:
 
-`ssh: handshake failed: ssh: no common algorithm for key exchange; client offered: [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha1], server offered: [diffie-hellman-group1-sha1]`
+```text
+ssh: handshake failed: ssh: no common algorithm for key exchange; client offered: [curve25519-sha256@libssh.org ecdh-sha2-nistp256 ecdh-sha2-nistp384 ecdh-sha2-nistp521 diffie-hellman-group14-sha1], server offered: [diffie-hellman-group1-sha1]
+```
 
 Ideally the Cisco device should be upgraded to support secure ciphers. If this isn't possible, it
 is necessary to add additional ciphers to machines with older (insecure) ciphers that need to be
@@ -187,43 +192,43 @@ To add Cipher information to the NPS Proxy Service.
 
 3. Run the following command to automatically generate the "sbpam_ssh" file:
 
-   ` .\sbpam-proxy.exe cfg -c sbpam_ssh`
+   `.\sbpam-proxy.exe cfg -c sbpam_ssh`
 
 4. Browse to the location of the newly created file in "ProgramData". The default path is:
 
-   `C:\ProgramData\``````Stealthbits``````\PAM\ProxyService`
+   `C:\ProgramData\Stealthbits\PAM\ProxyService`
 
-5. Copy and paste the following into the "nps_ssh.json" file.
+5. Copy and paste the following into the `sbpam_ssh.json` file.
 
    ```json
    {
-    "listenaddress": "0.0.0.0:4422",
-    "ClientSettings": {
-    "Algorithms": {
-    "KeyExchanges": [
-    "curve25519-sha256@libssh.org",
-    "ecdh-sha2-nistp256",
-    "ecdh-sha2-nistp384",
-    "ecdh-sha2-nistp521",
-    "diffie-hellman-group14-sha1",
-    "diffie-hellman-group1-sha1"
-    ],
-    "Ciphers": [
-    "aes128-gcm@openssh.com",
-    "chacha20-poly1305@openssh.com",
-    "aes128-ctr",
-    "aes192-ctr",
-    "aes256-ctr",
-    "aes128-cbc",
-    "3des-cbc",
-    "aes192-cbc",
-    "aes256-cbc"
-    ]
-    }
-    }
+     "listenaddress": "0.0.0.0:4422",
+     "ClientSettings": {
+       "Algorithms": {
+         "KeyExchanges": [
+           "curve25519-sha256@libssh.org",
+           "ecdh-sha2-nistp256",
+           "ecdh-sha2-nistp384",
+           "ecdh-sha2-nistp521",
+           "diffie-hellman-group14-sha1",
+           "diffie-hellman-group1-sha1"
+         ],
+         "Ciphers": [
+           "aes128-gcm@openssh.com",
+           "chacha20-poly1305@openssh.com",
+           "aes128-ctr",
+           "aes192-ctr",
+           "aes256-ctr",
+           "aes128-cbc",
+           "3des-cbc",
+           "aes192-cbc",
+           "aes256-cbc"
+         ]
+       }
+     }
    }
    ```
 
 This will add the additional Key Exchange `diffie-hellman-group1-sha1` and the additional Ciphers
-`aes128-cbc`, `3des-cbc`, `aes192-cbc`,` aes256-cbc`, required to make old Cisco Machines work with
+`aes128-cbc`, `3des-cbc`, `aes192-cbc`, `aes256-cbc`, required to make old Cisco Machines work with
 remote login.

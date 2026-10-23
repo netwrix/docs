@@ -1,6 +1,6 @@
 ---
 title: "Sessions Tab"
-description: "Sessions Tab"
+description: "Reference for the Sessions tab, which lists the sessions of a user, group, or application and their status values."
 sidebar_position: 20
 ---
 
@@ -23,7 +23,7 @@ The table has the following columns:
 
 - **Requested** — Date and time of when the session was created
 - **User** — Displays the account used to log onto the resource
-- **Host** — Resource that the user run the activity on. The details vary based on the type of
+- **Host** — Resource that the user runs the activity on. The details vary based on the type of
   resource. See the [Resources Page](/docs/privilegesecure/26.03/admin/resources/resources.md) topic for additional information.
 - **Start** — Indicates when the activity started. This refers to when the activity’s actions were
   executed and not when the user was logged on to the resource.
@@ -43,7 +43,7 @@ The table has the following columns:
   - **Logged In** — User is successfully logged in to the Resource either directly or via the Proxy.
     Direct log-in is detected by polling the Resource at regular intervals and may not update
     immediately.
-  - **Canceling** — The session expired, or the user or an Privilege
+  - **Canceling** — The session expired, or the user or a Privilege
     Secure administrator canceled it manually.
   - **Locked** — An Privilege Secure administrator locked the session. See the
     [Lock Session](/docs/privilegesecure/26.03/admin/dashboard/active/locksession.md) topic for additional information.

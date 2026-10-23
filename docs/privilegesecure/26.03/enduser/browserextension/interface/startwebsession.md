@@ -1,6 +1,6 @@
 ---
 title: "Start Web Session"
-description: "Start Web Session"
+description: "Start a web activity session from the browser extension by selecting a resource and activity, then launching the session."
 sidebar_position: 10
 ---
 
@@ -25,4 +25,4 @@ To start a web activity session.
    ![Browser Extension Starting a Web Session](/images/privilegesecure/26.03/accessmanagement/enduser/browserextension/browserextensionstartsession.webp)
 
 A count-down timer indicates how much time is remaining for the web session. A REC icon is
-overlayed on the extension if the current page is being recorded.
+overlaid on the extension if the current page is being recorded.

@@ -1,6 +1,6 @@
 ---
 title: "Proxy Service"
-description: "Proxy Service"
+description: "View the properties of the selected Proxy Service on a service node, including property names and values."
 sidebar_position: 40
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Add Credentials Window"
-description: "Add Credentials Window"
+description: "Add onboarded credentials to a credential group or Credential Policy Override from the Add Credentials window."
 sidebar_position: 20
 ---
 
@@ -69,7 +69,7 @@ Both tables have the following columns:
 - **Last Checked** — Date timestamp of the last verification check
 - **Next Change** — Date timestamp for the next credential password rotation
 
-## Add Credentials to a Credential Group
+## Add credentials to a credential group
 
 To add credentials to a credential group.
 
@@ -85,10 +85,10 @@ To add credentials to a credential group.
 
 The new credentials are added to the applicable group.
 
-## Add Credentials to a Policy Override
+## Add credentials to a policy override
 
 To add credentials to a Credential Policy Override. In order for an account to be
-added to add credentials window, a credential must be managed with a method of **Automatic**. Only
+added in the Add Credentials window, a credential must be managed with a method of **Automatic**. Only
 one account can be added to a Credential Policy Override at a time. See the
 [Manage Internal Service Accounts](/docs/privilegesecure/26.03/admin/credentials/manageinternalserviceaccount.md) topic for additional
 information.

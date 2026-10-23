@@ -1,13 +1,13 @@
 ---
 title: "CyberArk Integration"
-description: "CyberArk Integration"
+description: "Add a CyberArk vault connector so Privilege Secure can use accounts from the Central Credential Provider."
 sidebar_position: 20
 ---
 
 # CyberArk Integration
 
 Privilege Secure contains a built-in vault for credential management, but can uniquely map to a
-CyberArk vault. CyberArk connectors is useful for the following purposes:
+CyberArk vault. CyberArk connectors are useful for the following purposes:
 
 - **Service Accounts** — Use to perform Active Directory synchronization
 - **Activities** — Use to configure the target account for the activity
@@ -19,7 +19,7 @@ safe, and folder are provided directly in the service account definition. For ac
 username and address in the LoginAccountName format. The safe and folder information is provided
 directly in the activity definition.
 
-## Add a Vault Connector for CyberArk
+## Add a vault connector for CyberArk
 
 To add the CyberArk Connector.
 

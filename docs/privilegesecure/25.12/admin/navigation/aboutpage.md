@@ -1,6 +1,6 @@
 ---
 title: "About Page"
-description: "About Page"
+description: "Find license information, customer details, and third party components on the About page, and learn how to upload a new license."
 sidebar_position: 20
 ---
 
@@ -15,7 +15,7 @@ It displays your license information and details about the third party component
 application. It also lets you upload a new license file. See the
 [Import the License File](/docs/privilegesecure/25.12/admin/navigation/importlicense.md) topic for additional information.
 
-## License Information
+## License information
 
 At the top of the About page, the following license information displays:
 
@@ -43,7 +43,7 @@ Click the arrow icon beside the Customer Info information to view additional cus
 - **Email** — Displays the Customer primary contact email address
 - **Full Name** — Displays the Customer primary contact name
 
-## Third Party Components
+## Third party components
 
 Click **About third party components** to open the About third party components window.
 

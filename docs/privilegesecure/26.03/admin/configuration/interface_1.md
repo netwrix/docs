@@ -1,6 +1,6 @@
 ---
 title: "Configuration Interface"
-description: "Configuration Interface"
+description: "Reference for the Configuration interface and the related pages in the Configuration menu of the Navigation pane."
 sidebar_position: 60
 ---
 

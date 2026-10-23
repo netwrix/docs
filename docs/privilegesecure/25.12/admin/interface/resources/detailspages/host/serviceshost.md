@@ -1,6 +1,6 @@
 ---
 title: "Services Tab for Host"
-description: "Services Tab for Host"
+description: "Reference for the Services tab on the Host Details page, including service names, startup types, and log-on accounts."
 sidebar_position: 60
 ---
 

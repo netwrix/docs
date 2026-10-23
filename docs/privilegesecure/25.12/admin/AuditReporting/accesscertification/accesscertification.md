@@ -1,6 +1,6 @@
 ---
 title: "Access Certification Page"
-description: "Access Certification Page"
+description: "Create and review access certification tasks that audit and remediate user access, and reference for the Access Certification page."
 sidebar_position: 10
 ---
 
@@ -36,7 +36,7 @@ The right of the page shows details of the selected access certification task an
 features:
 
 - **Name** — Displays the name of the task.
-- **Description** — (Optional)Description of the policy.
+- **Description** — (Optional) Description of the policy.
 - **Reviewer** — The reviewer that the access certification task is assigned to. Only users with the
   Reviewer role can be assigned as a reviewer. See the
   [Role Management Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/rolemanagement.md) topic for additional information

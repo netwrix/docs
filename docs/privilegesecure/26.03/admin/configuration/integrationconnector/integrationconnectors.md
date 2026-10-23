@@ -1,6 +1,6 @@
 ---
 title: "Integration Connectors"
-description: "Integration Connectors"
+description: "Reference for the Integration Connectors page, including connector details and the supported connector types."
 sidebar_position: 50
 ---
 

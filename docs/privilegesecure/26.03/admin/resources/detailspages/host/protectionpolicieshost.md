@@ -1,6 +1,6 @@
 ---
 title: "Protection Policies Tab for Host"
-description: "Protection Policies Tab for Host"
+description: "Reference for the Protection Policies tab on the Host Details page, which lists protection policies for the host."
 sidebar_position: 30
 ---
 

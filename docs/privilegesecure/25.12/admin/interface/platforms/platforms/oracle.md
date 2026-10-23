@@ -1,6 +1,6 @@
 ---
 title: "Oracle Platform Policy Configuration"
-description: "Oracle Platform Policy Configuration"
+description: "Configure the Oracle platform policy, including the built-in account, password complexity, scan schedule, and verification settings."
 sidebar_position: 60
 ---
 

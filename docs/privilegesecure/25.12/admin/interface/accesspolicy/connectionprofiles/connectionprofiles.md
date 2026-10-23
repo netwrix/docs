@@ -1,6 +1,6 @@
 ---
 title: "Connection Profiles Page"
-description: "Connection Profiles Page"
+description: "Manage the session settings of an access policy with connection profiles, including approval workflows that gate session logins."
 sidebar_position: 40
 ---
 
@@ -78,7 +78,7 @@ The selected profile details display in the main pane:
   - **Require Ticket Number for Sessions** — Require the user to enter a ticket number in the Ticket
     Number field when creating a session
   - **Activity Token Complexity Policy** — Establishes how complex an activity token must be. Users
-    can choose custom polices created on the
+    can choose custom policies created on the
     [Activity Token Complexity Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/activitytokencomplex/activitytokencomplexity.md). Left blank, the Console will use
     the default activity token complexity policy.
 

@@ -1,6 +1,6 @@
 ---
 title: "Users Tab for Resource Based Access Policies"
-description: "Users Tab for Resource Based Access Policies"
+description: "Reference for the Users tab, which lists the users and groups associated with a resource based access policy."
 sidebar_position: 10
 ---
 
@@ -19,7 +19,7 @@ The Users tab has the following features:
 - **Search** — Searches the table or list for matches to the search string.
 
   :::note
-  If a seach finds a match for a user (or users) that isn't already listed in the policy, an "Add User" box appears. Clicking on this box opens the Add User modal with the search results for quickly adding users.
+  If a search finds a match for a user (or users) that isn't already listed in the policy, an "Add User" box appears. Clicking on this box opens the Add User modal with the search results for quickly adding users.
   :::
 
   ![Quick Add](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/policyresource/quickadd.png)

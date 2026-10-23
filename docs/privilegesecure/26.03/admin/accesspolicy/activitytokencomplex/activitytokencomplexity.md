@@ -1,13 +1,13 @@
 ---
 title: "Activity Token Complexity"
-description: "Activity Token Complexity"
+description: "Reference for the Activity Token Complexity page, including the rules that control the complexity of activity tokens."
 sidebar_position: 50
 ---
 
 # Activity Token Complexity
 
 The Activity Token Complexity Policy page is accessible from the Navigation pane
-underPolicyPolicies>Activity Token ComplexityAccess Policies. It shows the configuration options for
+under **Policy** > **Access Policy** > **Activity Token Complexity**. It shows the configuration options for
 managing the complexity of activity tokens for connection profiles.
 
 ![Activity Token Complexity Page](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/page_1.webp)

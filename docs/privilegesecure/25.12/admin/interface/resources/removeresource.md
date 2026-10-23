@@ -1,6 +1,6 @@
 ---
 title: "Remove Resource Window"
-description: "Remove Resource Window"
+description: "Remove a selected resource and its records from the database by using the Remove Resource window."
 sidebar_position: 70
 ---
 

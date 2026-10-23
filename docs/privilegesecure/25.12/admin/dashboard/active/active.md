@@ -1,6 +1,6 @@
 ---
 title: "Active Dashboard"
-description: "Active Dashboard"
+description: "Reference for the Active Dashboard, including filters, session actions, and table columns for active sessions."
 sidebar_position: 10
 ---
 
@@ -57,16 +57,16 @@ The table has the following columns:
   - **Logged In** — User is successfully logged in to the Resource either directly or via the Proxy.
     Direct log-in is detected by polling the Resource at regular intervals and may not update
     immediately.
-  - **Canceling** — The session expired, or the user or an Privilege
+  - **Canceling** — The session expired, or the user or a Privilege
     Secure administrator canceled it manually.
-  - **Locked** — The session has been locked by an Privilege Secure administrator. See the
+  - **Locked** — The session has been locked by a Privilege Secure administrator. See the
     [Lock Session](/docs/privilegesecure/25.12/admin/dashboard/active/locksession.md) topic for additional information.
 - **Requested** — Date and time of when the session was created
 - **Requested By** — User who requested the session. Click the link to view additional details. See the
   [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic
   for additional information.
-- **Host** — Resource that the user run the activity on. Click the link to view additional
-  details.The details vary based on the type of resource. See the following topics for additional
+- **Host** — Resource that the user runs the activity on. Click the link to view additional
+  details. The details vary based on the type of resource. See the following topics for additional
   information:
   - [Host Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/host/host.md)
   - [Domain Details Page](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/domain/domain.md)

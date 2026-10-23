@@ -1,6 +1,6 @@
 ---
 title: "SIEM Service"
-description: "SIEM Service"
+description: "View SIEM events that the SIEM Service processes, with search, a status filter, and sent details."
 sidebar_position: 60
 ---
 
@@ -8,7 +8,7 @@ sidebar_position: 60
 
 The SIEM Service shows the SIEM-specific details for the selected service.
 
-![servicenodes_siemservice](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/servicenodes_siemservice.webp)
+![SIEM Service page showing processed events](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/servicenodes_siemservice.webp)
 
 The SIEM Service page has the following features:
 

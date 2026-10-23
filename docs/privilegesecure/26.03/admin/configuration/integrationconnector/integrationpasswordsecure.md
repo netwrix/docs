@@ -1,14 +1,14 @@
 ---
 title: "Password Secure Integration"
-description: "Bring your own vault® (BYOV) for Password Secure"
+description: "Integrate Privilege Secure with Netwrix Password Secure to use stored credentials in activities, from API key to policy."
 sidebar_position: 30
 ---
 
-# Bring your own vault® (BYOV) for Password Secure
+# Password Secure Integration
 
 Netwrix Privilege Secure now integrates with Netwrix Password Secure to enable centralized, secure management of privileged credentials. This allows organizations to perform actions as specific users using credentials stored and managed in Password Secure, without exposing or manually handling those credentials. The integration streamlines privileged access workflows across both platforms, enhancing security and operational efficiency.
 
-## Password Secure Configuration
+## Password Secure configuration
 
 ### Prerequisites
 
@@ -18,9 +18,9 @@ Password Secure should be installed on a separate server from NPS and properly c
 
 Follow the instructions in the official documentation to install and configure the **Password Secure server** ([installation guide](/docs/passwordsecure/9_3/installation/)) and to start the **Web Application** ([web application guide](/docs/passwordsecure/9_3/configuration/webapplication/web_application)).
 
-after the server and web application are installed and configured, continue with the following steps.
+After the server and web application are installed and configured, continue with the following steps.
 
-### Generate an API Key
+### Generate an API key
 
 This API key enables NPS to connect to the Password Secure vault.
 
@@ -46,17 +46,17 @@ This API key enables NPS to connect to the Password Secure vault.
 
 5. Click **Next** to generate the API token and copy it to a safe location (you'll use this in the NPS configuration).
 
-   :::info
-   after you create the token, you can't see it again. If you lose the token, you must generate a new one. The new token is valid without deleting the old one.
+   :::note
+   After you create the token, you can't see it again. If you lose the token, you must generate a new one. The new token is valid without deleting the old one.
    :::
 
-### Create a New Password (AD User Template)
+### Create a new password (AD User template)
 
 If you already have users created with the **AD User** template, you can skip this step.
 
 The **AD User** template is the standard/default form required for NPS ↔ Password Secure integration.
 
-:::info
+:::note
 In production environments, you will typically use existing users.
 :::
 
@@ -78,9 +78,9 @@ In production environments, you will typically use existing users.
 
 4. Save the password entry.
 
-## NPS Configuration
+## NPS configuration
 
-### Add a Service Account with the Password Secure API Key
+### Add a service account with the Password Secure API key
 
 1. Log in to the **Netwrix Privilege Secure** admin console.
 2. Go to **Configuration > Service Accounts**.
@@ -94,7 +94,7 @@ In production environments, you will typically use existing users.
 
 4. Save the Service Account.
 
-### Configure the Password Secure Vault Connector in NPS
+### Configure the Password Secure vault connector in NPS
 
 1. In the admin console, navigate to **Configuration > Integration Connectors**.
 2. Click the **Add Integration Connector** icon.
@@ -113,7 +113,7 @@ In production environments, you will typically use existing users.
 
 4. Click **Save** to create the connector.
 
-### Create an Activity
+### Create an activity
 
 1. Navigate to **Policy** tab > **Activities**.
 2. Click the blue plus icon to create a new activity using the Password Secure connector.
@@ -132,7 +132,7 @@ In production environments, you will typically use existing users.
 
 4. Click **Save** to create the Activity.
 
-### Configure a New Policy
+### Configure a new policy
 
 1. Navigate to the **Policy** tab > **Access Policy**.
 2. Click the **Plus** icon and create a new Policy. See the [Add Access Policy](/docs/privilegesecure/26_03/admin/accesspolicy/addaccesspolicy) topic for additional information.
@@ -153,7 +153,7 @@ After completing these steps, you can use the specified user accounts on the def
 
 This setup is ideal for scenarios where a single account is used across multiple resources but must be managed securely with credentials stored in Password Secure.
 
-## System Diagram: Vault Login Activity with Password Secure Integration
+## System diagram: vault login activity with Password Secure integration
 
 When a vault login-type activity is initiated and the selected vault is of type **PasswordSecure**, the following process occurs:
 
@@ -171,7 +171,7 @@ When a vault login-type activity is initiated and the selected vault is of type 
 Always verify configurations and permissions, especially when integrating with systems like AD and using specific user accounts for critical operations.
 :::
 
-## SDK Compatibility and Updates
+## SDK compatibility and updates
 
 - The integration uses Password Secure SDK DLL files and the Password Secure API for communication.
 - The DLLs shipped with NPS are compatible with Password Secure versions 9.2.0 and above

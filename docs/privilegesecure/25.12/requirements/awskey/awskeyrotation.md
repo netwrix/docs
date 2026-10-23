@@ -1,6 +1,6 @@
 ---
 title: "AWS KMS Key Rotation"
-description: "AWS KMS Key Rotation"
+description: "Rotate the AWS KMS key that protects the Privilege Secure encryption keys by using the Rotate AWS Key tool in the KeyTools folder."
 sidebar_position: 10
 ---
 
@@ -8,15 +8,15 @@ sidebar_position: 10
 
 Organizations using AWS Key Management Service (AWS KMS) can configure Netwrix Privilege Secure to
 rotate security keys. When creating an AWS KMS protection key for Privilege Secure, configuration
-must start by creating a policy in AWS. After you create a AWS policy, you can configure a connection to the AWS policy
+must start by creating a policy in AWS. After you create an AWS policy, you can configure a connection to the AWS policy
 using Privilege Secure Rotate AWS Key tool.
 
 The AWS KMS key encrypts the key that
 encrypts the secret key.
 
-## Rotate AWS Key
+## Rotate the AWS key
 
-To rotate a AWS KMS Key.
+To rotate an AWS KMS Key.
 
 1. Locate the KeyTools folder in the installation directory.
 

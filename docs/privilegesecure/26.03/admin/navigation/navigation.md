@@ -1,6 +1,6 @@
 ---
 title: "Navigation"
-description: "Navigation"
+description: "Learn how the menu bar, User Menu, Navigation pane, and console icons help you move around the Privilege Secure Console."
 sidebar_position: 20
 ---
 
@@ -9,24 +9,24 @@ sidebar_position: 20
 The menu bar at the top of the Privilege Secure Console lists the available interfaces and provides access to the
 Help link and the User Menu:
 
-![topbar](/images/privilegesecure/26.03/accessmanagement/admin/topbar.webp)
+![Top menu bar with the interface links, Help, and User Menu](/images/privilegesecure/26.03/accessmanagement/admin/topbar.webp)
 
 - Interfaces:
-  - **Access** — Grants access to the My Activities page. Activities are be displayed as individual
+  - **Access** — Grants access to the My Activities page. Activities are displayed as individual
     cards, organized alphabetically or by Access Policy. See the
-    [Access > My Activities Page](/docs/privilegesecure/26.03/admin/myactivities/myactivities.md) topic for additional. information.
+    [Access > My Activities Page](/docs/privilegesecure/26.03/admin/myactivities/myactivities.md) topic for additional information.
   - **Dashboard** — View summaries of recent activity logs and user sessions. See the
     [Dashboard Interface](/docs/privilegesecure/26.03/admin/dashboard/overview.md) topic for additional information.
   - **Policy** — Contains several pages to create and configure policies to enable access, to onboard
     and manage users, groups, resources, and credentials, and to create and configure activities.
-    See the [ Policy Interface](/docs/privilegesecure/26.03/admin/accesspolicy/accesspolicy.md) topic for additional information.
+    See the [Policy Interface](/docs/privilegesecure/26.03/admin/accesspolicy/accesspolicy.md) topic for additional information.
   - **Configuration** — Contains several pages to configure and manage authentication, integration
     connectors, service accounts, services, and other settings. See the
     [Configuration Interface](/docs/privilegesecure/26.03/admin/configuration/interface_1.md) topic for additional information.
   - **Audit & Reporting Interface** — Audit user access entitlement (Access Certification) and view
     activity statistics and reports. See the
     [Audit & Reporting Interface](/docs/privilegesecure/26.03/admin/AuditReporting/interface_2.md) topic for additional information.
-- **Help** — Opens the Netwrix Privilege Secure documentation in the in another browser tab
+- **Help** — Opens the Netwrix Privilege Secure documentation in another browser tab
 - **User Menu** — Click to open the dropdown menu:
   - **Dark Mode** — Toggle “Dark Mode” for the console. Hover over the toggle switch to see a preview
     of Dark Mode.
@@ -40,75 +40,75 @@ Help link and the User Menu:
 On the left side of the console is a Navigation pane where the pages for the selected interface
 display. Use the Menu button to the left of the logo to collapse / expand the Navigation pane.
 
-## Console Icons
+## Console icons
 
 The Privilege Secure Console makes it easy to gather detailed information at a glance. The following
 tables show the main icons:
 
-Interface Icons
+**Interface icons**
 
 | Icon | Interface |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| ![myactivities](/images/privilegesecure/26.03/accessmanagement/enduser/activities.webp) | My Activities |
-| ![dashboard](/images/privilegesecure/26.03/accessmanagement/enduser/dashboard.webp) | Dashboard |
-| ![policy](/images/privilegesecure/26.03/accessmanagement/enduser/policy.webp) | Policy |
-| ![users](/images/privilegesecure/26.03/accessmanagement/enduser/users.webp) | Users & Groups |
-| ![resources](/images/privilegesecure/26.03/accessmanagement/enduser/resources.webp) | Resources |
-| ![credentials](/images/privilegesecure/26.03/accessmanagement/enduser/credentials.webp) | Credentials |
-| ![activities](/images/privilegesecure/26.03/accessmanagement/enduser/activities.webp) | Activities |
-| ![configuration](/images/privilegesecure/26.03/accessmanagement/enduser/configuration.webp) | Configuration |
-| ![servicenodes](/images/privilegesecure/26.03/accessmanagement/enduser/servicenodes.webp) | Service Nodes |
-| ![auditreporting](/images/privilegesecure/26.03/accessmanagement/enduser/auditreporting.webp) | Audit and Reporting |
+| ![My Activities interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/activities.webp) | My Activities |
+| ![Dashboard interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/dashboard.webp) | Dashboard |
+| ![Policy interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/policy.webp) | Policy |
+| ![Users & Groups interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/users.webp) | Users & Groups |
+| ![Resources interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/resources.webp) | Resources |
+| ![Credentials interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/credentials.webp) | Credentials |
+| ![Activities interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/activities.webp) | Activities |
+| ![Configuration interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/configuration.webp) | Configuration |
+| ![Service Nodes interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/servicenodes.webp) | Service Nodes |
+| ![Audit and Reporting interface icon](/images/privilegesecure/26.03/accessmanagement/enduser/auditreporting.webp) | Audit and Reporting |
 
-Dashboard Icons
+**Dashboard icons**
 
 | Icon | Session Data |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| ![activedashboard](/images/privilegesecure/26.03/accessmanagement/enduser/activedashboard.webp) | Active Sessions |
-| ![scheduleddashboard](/images/privilegesecure/26.03/accessmanagement/enduser/scheduleddashboard.webp) | Scheduled Sessions |
-| ![approvalsdashboard](/images/privilegesecure/26.03/accessmanagement/enduser/approvalsdashboard.webp) | Approvals |
-| ![historicaldashboard](/images/privilegesecure/26.03/accessmanagement/enduser/historicaldashboard.webp) | Historical Sessions |
-| ![usersdasshboard](/images/privilegesecure/26.03/accessmanagement/enduser/usersdasshboard.webp) | User Activity |
-| ![resourcesdashboard](/images/privilegesecure/26.03/accessmanagement/enduser/resourcesdashboard.webp) | Resources |
-| ![credentialsdashboard](/images/privilegesecure/26.03/accessmanagement/enduser/credentialsdashboard.webp) | Credentials |
+| ![Active Sessions dashboard icon](/images/privilegesecure/26.03/accessmanagement/enduser/activedashboard.webp) | Active Sessions |
+| ![Scheduled Sessions dashboard icon](/images/privilegesecure/26.03/accessmanagement/enduser/scheduleddashboard.webp) | Scheduled Sessions |
+| ![Approvals dashboard icon](/images/privilegesecure/26.03/accessmanagement/enduser/approvalsdashboard.webp) | Approvals |
+| ![Historical Sessions dashboard icon](/images/privilegesecure/26.03/accessmanagement/enduser/historicaldashboard.webp) | Historical Sessions |
+| ![User Activity dashboard icon](/images/privilegesecure/26.03/accessmanagement/enduser/usersdasshboard.webp) | User Activity |
+| ![Resources dashboard icon](/images/privilegesecure/26.03/accessmanagement/enduser/resourcesdashboard.webp) | Resources |
+| ![Credentials dashboard icon](/images/privilegesecure/26.03/accessmanagement/enduser/credentialsdashboard.webp) | Credentials |
 
-Active Directory Icons
+**Active Directory icons**
 
 | Icon | Object |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| ![chapter_1_stealthbits_privileged_12](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_12.webp) | User |
-| ![chapter_1_stealthbits_privileged_13](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_13.webp) | Group |
-| ![chapter_1_stealthbits_privileged_15](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.5.webp) | Application |
-| ![Collectionsicon](/images/privilegesecure/26.03/accessmanagement/enduser/collectionsicon.webp) | Collection |
-| ![Custom Role](/images/privilegesecure/26.03/accessmanagement/enduser/customroleicon.webp) | Custom Role |
-| ![Domain icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.6.webp) | Computer / Resource |
-| ![chapter_1_stealthbits_privileged_15](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.webp) | Domain |
+| ![User object icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_12.webp) | User |
+| ![Group object icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_13.webp) | Group |
+| ![Application object icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.5.webp) | Application |
+| ![Collection object icon](/images/privilegesecure/26.03/accessmanagement/enduser/collectionsicon.webp) | Collection |
+| ![Custom Role object icon](/images/privilegesecure/26.03/accessmanagement/enduser/customroleicon.webp) | Custom Role |
+| ![Computer or resource object icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.6.webp) | Computer / Resource |
+| ![Domain object icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.webp) | Domain |
 | ![Website icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.7.webp) | Website |
 | ![AzureAD icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.8.webp) | Azure AD |
 | ![Secret Vault icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.9.webp) | Secret Vault |
 | ![Cisco icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.4.webp) | Cisco |
 | ![Windows icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_15.3.webp) | Windows |
 
-Action Icons
+**Action icons**
 
 | Icon | Action |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
-| ![chapter_1_stealthbits_privileged_16](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_16.webp) | Add |
-| ![chapter_1_stealthbits_privileged_17](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_17.webp) | Edit |
-| ![chapter_1_stealthbits_privileged_18](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_18.webp) | Delete |
-| ![chapter_1_stealthbits_privileged_19](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_19.webp) | Save |
-| ![chapter_1_stealthbits_privileged_20](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_20.webp) | Cancel |
-| ![chapter_1_stealthbits_privileged_21](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_21.webp) | Copy |
-| ![chapter_1_stealthbits_privileged_22](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_22.webp) | Search |
+| ![Add action icon](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_16.webp) | Add |
+| ![Edit action icon](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_17.webp) | Edit |
+| ![Delete action icon](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_18.webp) | Delete |
+| ![Save action icon](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_19.webp) | Save |
+| ![Cancel action icon](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_20.webp) | Cancel |
+| ![Copy action icon](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_21.webp) | Copy |
+| ![Search action icon](/images/privilegesecure/26.03/accessmanagement/admin/chapter_1_stealthbits_privileged_22.webp) | Search |
 
-Information Icons
+**Information icons**
 
 | Icon | Information |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| ![chapter_1_stealthbits_privileged_23](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_23.webp) | Complete / Information |
-| ![chapter_1_stealthbits_privileged_24](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_24.webp) | Warning |
-| ![chapter_1_stealthbits_privileged_25](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_25.webp) | Failed / Error |
-| ![chapter_1_stealthbits_privileged_26](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_26.webp) | Active Sessions |
-| ![chapter_1_stealthbits_privileged_27](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_27.webp) | Scheduled Sessions |
+| ![Complete or information status icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_23.webp) | Complete / Information |
+| ![Warning status icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_24.webp) | Warning |
+| ![Failed or error status icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_25.webp) | Failed / Error |
+| ![Active sessions status icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_26.webp) | Active Sessions |
+| ![Scheduled sessions status icon](/images/privilegesecure/26.03/accessmanagement/enduser/chapter_1_stealthbits_privileged_27.webp) | Scheduled Sessions |
 
 Hover over an icon anywhere within the console for its description.

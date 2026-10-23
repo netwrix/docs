@@ -1,6 +1,6 @@
 ---
 title: "Groups Tab for Domain"
-description: "Groups Tab for Domain"
+description: "View domain groups on the Groups tab and add them to or remove them from the NPS User role."
 sidebar_position: 20
 ---
 

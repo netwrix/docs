@@ -1,6 +1,6 @@
 ---
 title: "Log File Options Pages"
-description: "Log File Options Pages"
+description: "Set the minimum log level, retained file count limit, and file size limit for each Privilege Secure service."
 sidebar_position: 10
 ---
 
@@ -18,11 +18,11 @@ options:
 
 The right of the page shows details of the selected option.
 
-## Configure Log File Options
+## Configure log file options
 
 Configure the Log File Options for the selected service. The recommended log level is Informational.
 
-![logfileoptionspage](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/page/logfileoptionspage.webp)
+![Log File Options page showing the minimum log level for a service](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/page/logfileoptionspage.webp)
 
 The right of the page shows details of the selected service and has the following features:
 

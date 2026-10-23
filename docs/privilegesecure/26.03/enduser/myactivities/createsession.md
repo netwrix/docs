@@ -1,6 +1,6 @@
 ---
 title: "Create My Activity Session"
-description: "Create My Activity Session"
+description: "Create an activity session from the My Activities page, enter notes or a ticket number, and launch the session."
 sidebar_position: 10
 ---
 
@@ -10,7 +10,7 @@ To create an activity session.
 
 1. Select an **Activity** to expand the session ribbon.
 
-   ![myactivityuser](/images/privilegesecure/26.03/accessmanagement/enduser/access/myactivityuser.webp)
+   ![My Activities page showing activity cards and the session ribbon](/images/privilegesecure/26.03/accessmanagement/enduser/access/myactivityuser.webp)
 
 2. Click **Create Session** to start a new activity session.
 
@@ -25,7 +25,7 @@ To create an activity session.
    If your license is expired and you can still log in, you will not be able to create activity sessions.
    :::
 
-   ![configuresessionuser](/images/privilegesecure/26.03/accessmanagement/enduser/access/configuresessionuser.webp)
+   ![Configure Session window listing resources for the activity](/images/privilegesecure/26.03/accessmanagement/enduser/access/configuresessionuser.webp)
 
 3. Enter the following information:
 
@@ -38,14 +38,14 @@ To create an activity session.
      resource list.
    - Click **Start Session** to start the provisioning process.
 
-   ![startsessionuser](/images/privilegesecure/26.03/accessmanagement/enduser/access/startsessionuser.webp)
+   ![Configure Session window with the Start Session button](/images/privilegesecure/26.03/accessmanagement/enduser/access/startsessionuser.webp)
 
    :::note
    If an approval is required, the Waiting for approval message displays until it has
    been granted.
    :::
 
-   ![stopsession](/images/privilegesecure/26.03/accessmanagement/enduser/access/stopsession.webp)
+   ![Session ribbon showing a provisioning activity session](/images/privilegesecure/26.03/accessmanagement/enduser/access/stopsession.webp)
 
 4. When provisioned, an activity session displays an Available status with a green
    icon. Click **Available** to launch the session.

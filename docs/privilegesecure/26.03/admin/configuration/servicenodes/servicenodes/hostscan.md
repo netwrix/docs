@@ -1,6 +1,6 @@
 ---
 title: "Host Scan Service"
-description: "Host Scan Service"
+description: "View host scan logs and the queue of pending scans that the Host Scan Service runs."
 sidebar_position: 30
 ---
 

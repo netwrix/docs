@@ -1,6 +1,6 @@
 ---
 title: "Properties Tab"
-description: "Properties Tab"
+description: "Reference for the Properties tab, which holds the display name, department, email, and account names for an application."
 sidebar_position: 110
 ---
 

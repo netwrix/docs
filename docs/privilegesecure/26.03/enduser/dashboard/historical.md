@@ -1,6 +1,6 @@
 ---
 title: "Historical Dashboard"
-description: "Historical Dashboard"
+description: "Reference for the Historical Dashboard, including search, filters, CSV export, session actions, and table columns."
 sidebar_position: 40
 ---
 
@@ -38,13 +38,13 @@ The table has the following columns:
   - **Completed** — Activity either reached the end of its scheduled end time or was canceled early by
     the requestor
 - **Session User** — User who requested the session
-- **Host** — Resource that the user run the activity on
+- **Host** — Resource that the user runs the activity on
 - **Login Account** — Displays the account used to log onto the resource
 - **Activity** — Displays the name of the activity
 - **Start** — Indicates when the activity started. This refers to when the activity’s actions were
   executed and not when the user was logged on to the resource.
 - **Duration** — Indicates how long the Activity ran for until it either reached its scheduled end time
-  or was manually canceled by the user or an Privilege Secure administrator
+  or was manually canceled by the user or a Privilege Secure administrator
 - **Notes** — Any notes that were entered when the session was created
 - **Ticket Number** — Any ticket numbers that were entered when the session was created
 

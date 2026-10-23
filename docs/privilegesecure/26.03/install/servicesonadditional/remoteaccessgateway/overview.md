@@ -1,6 +1,6 @@
 ---
 title: "Remote Access Gateway"
-description: "Remote Access Gateway"
+description: "Learn how the Remote Access Gateway extends browser-based RDP and SSH access to external users through the RAG Portal and RAG Gateway."
 sidebar_position: 10
 ---
 
@@ -10,7 +10,7 @@ The Remote Access Gateway (RAG) may be added to any Netwrix Privilege Secure ins
 securely extend access to external users such as remote workers or third-party vendors. VPN-less
 access is provided via web page with browser-based sessions for RDP and SSH.
 
-![architecture](/images/privilegesecure/26.03/remoteaccessgateway/architecture.webp)
+![Remote Access Gateway architecture showing the RAG Portal and RAG Gateway](/images/privilegesecure/26.03/remoteaccessgateway/architecture.webp)
 
 The RAG is made up of two components:
 
@@ -26,10 +26,10 @@ The gateway runs inside the corporate network and provides a bridge between the 
 Netwrix Privilege Secure installation. The RAG Gateway communicates to the Netwrix Privilege Secure
 web service on port 6500 and the Proxy on 4489 and 4422 for RDP and SSH, respectively.
 
-## User Interface
+## User interface
 
 The GUI of NPS-AM is browser-based, so connecting through the RAG offers the same experience as connecting directly to the App Server.
 
-## Installation Support
+## Installation support
 
-Netwrix strongly recommends involving a Netwrix engineer in your RAG installation. contact your account manager to arrange an installation.
+Netwrix strongly recommends involving a Netwrix engineer in your RAG installation. Contact your account manager to arrange an installation.

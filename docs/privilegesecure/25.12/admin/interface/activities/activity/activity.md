@@ -1,6 +1,6 @@
 ---
 title: "Add Activity"
-description: "Add Activity"
+description: "Add an activity and its pre-session, session, and post-session actions in Privilege Secure."
 sidebar_position: 10
 ---
 
@@ -21,7 +21,7 @@ To add activities to the console.
 
    - **Search** — Searches the table or list for matches to the search string. When matches are found, the
      table or list is filtered to the matching results.
-   - - button - Add an activity to the list.
+   - **Green +** — Add an activity to the list.
    - **Copy icon** — Clones the activity and adds a new entry to the Activities list. Icon appears when
      activity is hovered over.
    - **Trashcan icon** — Deletes the activity. Icon appears when activity is hovered over. A confirmation

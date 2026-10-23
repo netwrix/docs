@@ -1,6 +1,6 @@
 ---
 title: "Services Page"
-description: "Services Page"
+description: "Update the NPS Rest URL and register Privilege Secure web services after installing a new website certificate in IIS."
 sidebar_position: 70
 ---
 

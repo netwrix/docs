@@ -1,6 +1,6 @@
 ---
 title: "Database"
-description: "Database"
+description: "Reference for the Database page, which shows the PostgreSQL or SQL Server database settings and service status."
 sidebar_position: 20
 ---
 
@@ -10,7 +10,7 @@ The Database page is accessible from the Navigation pane under Configuration > S
 shows all database settings for either PostgreSQL or SQL server, depending on what was initially
 configured during installation.
 
-## PostgreSQL Database Settings
+## PostgreSQL database settings
 
 ![Configuration system settings Database Page](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/databasepage.webp)
 
@@ -23,7 +23,7 @@ The Database Settings page displays the following settings for PostgreSQL:
 - **Name** — Identifier for the database setting
 - **Value** — Value of the setting
 
-## SQL Server Database Settings
+## SQL Server database settings
 
 ![SQL Server Database Settings Page](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/sqldatabasepage.webp)
 

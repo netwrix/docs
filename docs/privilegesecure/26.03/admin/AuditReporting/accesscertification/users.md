@@ -1,6 +1,6 @@
 ---
 title: "Users Tab for Access Certification"
-description: "Users Tab for Access Certification"
+description: "Add the users and groups that a reviewer certifies in an access certification task, and reference for the Users tab."
 sidebar_position: 30
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 30
 The Users tab shows the users and groups in the selected access certification task for which the
 reviewer must certify access entitlement.
 
-![userstab](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/tab/userstab.webp)
+![Users tab listing the users and groups in the access certification task](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/tab/userstab.webp)
 
 The Users table has the following features:
 
@@ -25,7 +25,7 @@ The Users table has the following features:
 - **Add button (Only visible when adding a new task)** — Opens the Add Users and Groups window. See the
   Add Users to Review topic for additional information.
 
-## Add Users to Review
+## Add users to review
 
 To add users and groups to the access certification task.
 
@@ -38,7 +38,7 @@ It isn't possible to add or remove users after they are added.
    tab
 3. Click **Add** to open the Add Users and Groups window.
 
-   ![addusers](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/tab/addusers.webp)
+   ![Add Users and Groups window with available users and groups to add](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/tab/addusers.webp)
 
    The Add Users and Groups window has the following features:
 

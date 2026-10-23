@@ -1,10 +1,12 @@
 ---
 title: "Resource Based Policy"
-description: "Resource Based Policy"
+description: "Reference for the Users, Activities, and Resources tabs of resource based access policies, and how to add activities and resources."
 sidebar_position: 20
 ---
 
-## Users Tab for Resource Based Access Policies
+# Resource Based Policy
+
+## Users tab for resource based access policies
 
 The Users tab shows the users and groups associated with the selected access policy.
 
@@ -19,7 +21,7 @@ The Users tab has the following features:
 - **Search** — Searches the table or list for matches to the search string.
 
   :::note
-  If a seach finds a match for a user (or users) that isn't already listed in the policy, an "Add User" box appears. Clicking on this box opens the Add User modal with the search results for quickly adding users.
+  If a search finds a match for a user (or users) that isn't already listed in the policy, an "Add User" box appears. Clicking on this box opens the Add User modal with the search results for quickly adding users.
   :::
 
   ![Quick Add](/images/privilegesecure/26.03/accessmanagement/admin/policy/tab/policyresource/quickadd.png)
@@ -53,7 +55,7 @@ The table has the following columns:
 
 The table columns can be resized and sorted in ascending or descending order.
 
-## Activities Tab for Resource Based Access Policies
+## Activities tab for resource based access policies
 
 The Activities tab shows the activities associated with the selected access policy.
 
@@ -83,7 +85,7 @@ The table has the following columns:
 
 The table columns can be resized and sorted in ascending or descending order.
 
-## Add Activities and Activity Groups Window
+## Add activities and activity groups window
 
 The Add Activities and Activity Groups window provides a list of Activities that have been created.
 Activities are created in the [Activities Page](/docs/privilegesecure/26.03/admin/activities/activities.md).
@@ -107,7 +109,7 @@ Both tables have the following columns:
 - **Type** — Classification of the activity
 - **Description** — Description of the policy
 
-## Add Activities
+## Add activities
 
 To add activities to the selected access policy.
 
@@ -138,7 +140,7 @@ To add activities to the selected access policy.
 The new activities and activity groups are added to the access policy and are shown in the
 [Activities Tab for Resource Based Access Policies](#activities-tab-for-resource-based-access-policies).
 
-## Resources Tab for Resource Based Access Policies
+## Resources tab for resource based access policies
 
 The Resources tab shows the resources associated with the selected access policy.
 
@@ -171,7 +173,7 @@ The table has the following columns:
 
 The table columns can be resized and sorted in ascending or descending order.
 
-## Add Resources and Resource Groups Window
+## Add resources and resource groups window
 
 The Add Resources and Resource Groups window provides a list of resources that have been onboarded.
 Resources are onboarded in the [Resources Page](/docs/privilegesecure/26.03/admin/resources/resources.md).
@@ -195,7 +197,7 @@ Both tables have the following columns:
 - **Name** — Displays the name of the resource
 - **Operating System** — Displays the operating system of the resource
 
-## Add Resources
+## Add resources
 
 To add resources and resource groups to the selected access policy.
 

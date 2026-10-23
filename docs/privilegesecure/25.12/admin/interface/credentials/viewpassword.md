@@ -1,6 +1,6 @@
 ---
 title: "View Password Window"
-description: "View Password Window"
+description: "View or copy the current password of a managed account in the View Password window, which closes after 20 seconds."
 sidebar_position: 50
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Scheduled Dashboard"
-description: "Scheduled Dashboard"
+description: "Reference for the Scheduled Dashboard, including its features, session statuses, and table columns."
 sidebar_position: 20
 ---
 
@@ -35,12 +35,12 @@ The table has the following columns:
   - **Logged In** — User is successfully logged in to the Resource either directly or via the Proxy.
     Direct log-in is detected by polling the Resource at regular intervals and may not update
     immediately.
-  - **Canceling** — The session expired, or the user or an Privilege
+  - **Canceling** — The session expired, or the user or a Privilege
     Secure administrator canceled it manually.
-  - **Locked** — The session has been locked by an Privilege Secure administrator
+  - **Locked** — The session has been locked by a Privilege Secure administrator
 - **Requested** — Date and time of when the session was created
 - **Requested By** — User who requested the session
-- **Host** — Resource that the user run the activity on
+- **Host** — Resource that the user runs the activity on
 - **Login Account** — Displays the account used to log onto the resource
 - **Activity** — Displays the name of the activity
 - **Start** — Indicates when the activity starts. This refers to when the activity’s actions are

@@ -1,6 +1,6 @@
 ---
 title: "Historical Dashboard"
-description: "Historical Dashboard"
+description: "Review past sessions on the Historical dashboard, search recordings, and export the table as CSV."
 sidebar_position: 40
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 40
 The Historical sessions dashboard shows all created sessions and their status. Only users with the
 Administrator role can view recordings of historical sessions.
 
-![historical](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/historical.webp)
+![Historical dashboard showing past sessions](/images/privilegesecure/26.03/accessmanagement/admin/dashboard/historical.webp)
 
 The dashboard has the following features:
 
@@ -52,7 +52,7 @@ The table has the following columns:
 - **Session User** — User who requested the session. Click the link to view additional details. See the
   [User, Group, & Application Details Page](/docs/privilegesecure/26.03/admin/usersgroups/usergroupapplication/usergroupapplication.md) topic
   for additional information.
-- **Host** — Resource that the user run the activity on. Click the link to view additional details.
+- **Host** — Resource that the user runs the activity on. Click the link to view additional details.
   The details vary based on the type of resource. See the following topics for additional
   information:
   - [Host Details Page](/docs/privilegesecure/26.03/admin/resources/detailspages/host/host.md)
@@ -67,7 +67,7 @@ The table has the following columns:
 - **Start** — Indicates when the activity started. This refers to when the activity’s actions were
   executed and not when the user was logged on to the resource.
 - **Duration** — Indicates how long the Activity ran for until it either reached its scheduled end time
-  or was manually canceled by the user or an Privilege Secure administrator
+  or was manually canceled by the user or a Privilege Secure administrator
 - **Notes** — Any notes that were entered when the session was created
 - **Ticket Number** — Any ticket numbers that were entered when the session was created
 

@@ -1,6 +1,6 @@
 ---
 title: "LAPS Integration"
-description: "LAPS Integration"
+description: "Install LAPS and add a LAPS vault connector so Privilege Secure can use local administrator passwords."
 sidebar_position: 40
 ---
 
@@ -12,16 +12,16 @@ passwords of domain joined computers. Passwords are stored in Active Directory. 
 connector is useful for connecting as a service account for host scans, and for activities where
 the local Administrator account is required.
 
-## Install LAPS in Your Active Directory Domain
+## Install LAPS in your Active Directory domain
 
 Install LAPS in your Active Directory domain and configure the hosts you want to connect to with
 Privilege Secure to use LAPS. LAPS limits which users have access to the password attributes that
-are contained in Active Directory. ensure to create an account with appropriate rights for Privilege Secure to use.
+are contained in Active Directory. Ensure to create an account with appropriate rights for Privilege Secure to use.
 Set the rights for a user with the `Set-AdmPwdReadPasswordPermission` cmdlet.
 This cmdlet is included in the LAPS installation package which can be downloaded from the
 [Microsoft website](https://www.microsoft.com/en-us/download/details.aspx?id=46899).
 
-## Add a Vault Connector for LAPS
+## Add a vault connector for LAPS
 
 To add a vault connector for LAPS.
 

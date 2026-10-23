@@ -1,6 +1,6 @@
 ---
 title: "Add Resources Window for Protected Policy"
-description: "Add Resources Window for Protected Policy"
+description: "Add onboarded resources to a protection policy by using the Add Resources window."
 sidebar_position: 10
 ---
 
@@ -30,7 +30,7 @@ Both tables have the following columns:
 - **DNS Host Name** — Displays the DNS host name for a host resource or the FQDN for a domain resource
 - **Operating System** — Displays the operating system of the resource
 
-## Add Resources
+## Add resources
 
 To add resources to the selected protection policy.
 

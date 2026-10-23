@@ -1,6 +1,6 @@
 ---
 title: "Host Scan Service Install"
-description: "Host Scan Service Install"
+description: "Install the NPS Host Scan Service on another server and register it with the Privilege Secure server."
 sidebar_position: 20
 ---
 
@@ -32,22 +32,22 @@ To install the NPS Host Scan Service on another server.
    wizard opens. Click **Next**.
 4. Read the End User License Agreement and accept the license terms.
 
-   ![licenseagreement](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement_scan.png)
+   ![Host Scan Service Setup wizard on the license agreement page](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement_scan.png)
 
 5. Enter the destination folder for installation and click **OK**. (Default usually easiest)
 
-   ![installlocation](/images/privilegesecure/26.03/accessmanagement/install/installlocation_scan.png)
+   ![Host Scan Service Setup wizard destination folder page](/images/privilegesecure/26.03/accessmanagement/install/installlocation_scan.png)
 
 6. Click **Install** to begin the installation. The setup wizard displays the installation
    progress.
 
-   ![installcomplete](/images/privilegesecure/26.03/accessmanagement/install/installbegin_scan.png)
+   ![Host Scan Service Setup wizard showing installation progress](/images/privilegesecure/26.03/accessmanagement/install/installbegin_scan.png)
 
 7. When the installation is complete, click **Close** to exit the installer.
 
 The Privilege Secure Host Scan Service is now installed on a remote server.
 
-## Register the Remote Host Scan Service with Privilege Secure
+## Register the remote Host Scan Service with Privilege Secure
 
 If the Host Scan Service is installed on a remote machine, it must be configured to register with the
 Privilege Secure server. This configuration is done by supplying the Privilege Secure server and
@@ -78,7 +78,7 @@ To configure the key exchange.
    .\SbPAM.RotateKey.exe import -n keys.exp
    ```
 
-7. Enter the password you got from the exporting the keys in the applicaiotn server when prompted.
+7. Enter the password you got from the exporting the keys in the application server when prompted.
 8. Delete the export file from both the primary and secondary servers.
 
    :::warning

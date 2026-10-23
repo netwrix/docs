@@ -1,6 +1,6 @@
 ---
 title: "Add Administrators Window"
-description: "Add Administrators Window"
+description: "Grant users the Administrator role with the Add Administrators window, which lists onboarded users and groups."
 sidebar_position: 10
 ---
 
@@ -15,7 +15,7 @@ The window has the following features:
 
 - **Search** — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
-- **Filter** — Provides options to filter results based on a chosen criterion:User, Group, Application,
+- **Filter** — Provides options to filter results based on a chosen criterion: User, Group, Application,
   Collection, and Local User
 - **Available Accounts** — Shows all available users, groups, applications, collections, and local users
   that have been onboarded
@@ -32,7 +32,7 @@ The tables in both sections have the following columns:
 - **Email** — Displays the associated email address, if available
 - **Last Login** — Date timestamp for the last time the user logged into the application
 
-## Select Users
+## Select users
 
 To grant users the Administrator role. See the
 [Role Management Page](/docs/privilegesecure/26.03/admin/usersgroups/rolemanagement/rolemanagement.md) section for a list of roles and their
@@ -41,7 +41,7 @@ functions.
 1. Navigate to the **Users & Groups** > **Role Management** page.
 2. In the Role list, select the **Administrators** role.
 3. Click **Add User** to open the **Add Administrators** window.
-4. Select the checkbox for the accounts you want in the **Available Accounts** table..
+4. Select the checkbox for the accounts you want in the **Available Accounts** table.
 5. Click **Add** to add the accounts to the role.
 
 The selected users are now Privilege Secure Administrators.

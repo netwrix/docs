@@ -1,6 +1,6 @@
 ---
 title: "Access Policy"
-description: "Access Policy"
+description: "Reference for the Access Policy page, where you view access policies and their users, activities, resources, and credentials."
 sidebar_position: 10
 ---
 

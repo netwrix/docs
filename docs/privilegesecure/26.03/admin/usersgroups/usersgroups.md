@@ -1,13 +1,13 @@
 ---
 title: "Users & Groups"
-description: "Users & Groups"
+description: "Reference for the Users & Groups page, which lists onboarded users and groups and lets you add users, applications, and local users."
 sidebar_position: 40
 ---
 
 # Users & Groups
 
 The Users & Groups page shows session information for onboarded users and groups. Onboarded users
-and can log into the application to manage policies or run sessions. The Users & Groups page
+can log into the application to manage policies or run sessions. The Users & Groups page
 displays the same information as the [Users Dashboard](/docs/privilegesecure/26.03/admin/dashboard/users.md).
 
 ![Users and Groups Page](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/usersgroupspage.png)

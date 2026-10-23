@@ -1,6 +1,6 @@
 ---
 title: "Password History Window"
-description: "Password History Window"
+description: "View the historical passwords of a managed account and show or hide them in the Password History window."
 sidebar_position: 40
 ---
 
@@ -8,7 +8,7 @@ sidebar_position: 40
 
 The Password History window shows all historical passwords for the selected managed account.
 
-![Passwrod History window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/credentials/passwordhistory.webp)
+![Password History window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/credentials/passwordhistory.webp)
 
 The window has the following features:
 

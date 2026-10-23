@@ -1,13 +1,13 @@
 ---
 title: "Approvals Dashboard"
-description: "Approvals Dashboard"
+description: "Approve or deny requested sessions on the Approvals Dashboard, with search and column details."
 sidebar_position: 30
 ---
 
 # Approvals Dashboard
 
 The Approvals Dashboard displays requested sessions that require approval. Users and group members
-designated as approvers sees the pending sessions queued here. The session must be approved
+designated as approvers see the pending sessions queued here. The session must be approved
 before the requestor can log in to the session. See the
 [Connection Profiles Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofiles.md) topic for additional information on
 Approval Workflows.
@@ -27,11 +27,11 @@ The table has the following columns:
 - **Checkbox** — Check to select one or more items to complete a bulk action
 - **Status** — Shows status information for the session:
   - **Waiting for Approval** — The session requires approval to begin.
-  - **Canceling** — The session expired, or the user or an Privilege
+  - **Canceling** — The session expired, or the user or a Privilege
     Secure administrator canceled it manually.
 - **Requested** — Date and time of when the session was created
 - **Requested By** — User who requested the session
-- **Host** — Resource that the user run the activity on
+- **Host** — Resource that the user runs the activity on
 - **Login Account** — Displays the account used to log onto the resource
 - **Activity** — Displays the name of the activity. Click the link to view additional details. See the
   [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.

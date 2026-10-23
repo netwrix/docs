@@ -1,6 +1,6 @@
 ---
 title: "Authentication Tab"
-description: "Authentication Tab"
+description: "Reference for the Authentication tab of an application user, including the certificate serial number and API key."
 sidebar_position: 100
 ---
 

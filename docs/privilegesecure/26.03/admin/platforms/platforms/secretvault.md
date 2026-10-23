@@ -1,12 +1,12 @@
 ---
 title: "Secret Vault Platform Policy Configuration"
-description: "Secret Vault Platform Policy Configuration"
+description: "Set the name and description of the Secret Vault platform policy and save the changes to the platform."
 sidebar_position: 70
 ---
 
 # Secret Vault Platform Policy Configuration
 
-The Secrete Vault menu displays the configuration options for secrets.
+The Secret Vault menu displays the configuration options for secrets.
 
 ![Secret Vault Platform Configuration](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/platforms/secretvault.webp)
 

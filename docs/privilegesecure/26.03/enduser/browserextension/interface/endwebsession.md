@@ -1,6 +1,6 @@
 ---
 title: "End Web Session"
-description: "End Web Session"
+description: "End a web session from the browser extension with the END MY SESSION link and learn how the Activity closes."
 sidebar_position: 20
 ---
 
@@ -16,7 +16,7 @@ To end a Web Session.
    ![Browser Extension Start Web Session](/images/privilegesecure/26.03/accessmanagement/enduser/browserextension/browserextensionstartsession.webp)
 
    A count-down timer indicates how much time is remaining for the web session. A REC icon is
-   overlayed on the extension if the current page is being recorded.
+   overlaid on the extension if the current page is being recorded.
 
 2. Click the red **END MY SESSION** link to close the web session.
 3. A notification displays to indicate that the session has ended. Click the **Close

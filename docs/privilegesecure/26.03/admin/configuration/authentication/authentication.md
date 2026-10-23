@@ -1,6 +1,6 @@
 ---
 title: "Authentication"
-description: "Authentication"
+description: "Reference for the Authentication page, including MFA, OpenID Connect, and SAML connector fields and default login options."
 sidebar_position: 40
 ---
 
@@ -22,7 +22,7 @@ This pane has the following features:
 
 - **Search** — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
-- - button — Create a new connector. See the
+- **Green +** — Create a new connector. See the
 [Add Authentication Connector](/docs/privilegesecure/26.03/admin/configuration/authentication/authenticationconnector.md) topic for additional
   information.
 - **Default icon** — Indicates if connector is set as default. Icon appears when activity is hovered
@@ -42,7 +42,7 @@ The selected connector details display at the top of the main pane:
 If you modify any of these settings, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
-## MFA Connector Type
+## MFA connector type
 
 The following fields apply to the MFA Connector Type:
 
@@ -72,7 +72,7 @@ The following fields apply to the MFA Connector Type:
   authenticator at log in. If configured to use "Email" or "UPN" (optional attributes) the
   authenticator will use that format at log in, but send the default value to the RADIUS server.
 
-## OpenID Connect Connector Type
+## OpenID Connect connector type
 
 The following fields apply to the OpenID Connect Connector Type:
 
@@ -87,7 +87,7 @@ The following fields apply to the OpenID Connect Connector Type:
 - **User Id Source** — Displays the source from which the User Id data is extracted
 - **User Id Field** — Displays the value from the extracted data to use for host-user lookup
 
-## SAML Connector Type
+## SAML connector type
 
 The following fields apply to the SAML Connector Type:
 
@@ -105,7 +105,7 @@ The following fields apply to the SAML Connector Type:
 - **Logout URI** — Displays the simple logout address (not a SAML SLO endpoint), which takes a parameter
   for the post logout redirection
 
-## Set Authentication as Default Login
+## Set authentication as default login
 
 Once a third-party authentication connector is configured, it can be set as the default form of
 authentication, or it can be set as the exclusive form of authentication. Hover over the

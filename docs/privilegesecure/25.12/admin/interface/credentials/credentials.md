@@ -1,6 +1,6 @@
 ---
 title: "Credentials Page"
-description: "Credentials Page"
+description: "Reference for the Credentials page, including filters, actions, and table columns for managed accounts."
 sidebar_position: 60
 ---
 
@@ -42,7 +42,7 @@ The page has the following features:
   information.
 - **Verify** — Checks that the credentials for the selected account match the credentials set by
   Privilege Secure
-- **View History** — Opens the Password History window to displays the password history for the account.
+- **View History** — Opens the Password History window to display the password history for the account.
   See the [Password History Window](/docs/privilegesecure/25.12/admin/interface/credentials/passwordhistory.md) topic for additional
   information.
 - **Refresh** — Reload the information displayed

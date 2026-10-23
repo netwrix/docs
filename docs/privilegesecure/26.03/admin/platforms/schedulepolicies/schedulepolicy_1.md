@@ -1,6 +1,6 @@
 ---
 title: "Edit Schedule Policy"
-description: "Edit Schedule Policy"
+description: "Edit the frequency of a scheduled task in the Schedule Policy Editor window and save the changes."
 sidebar_position: 20
 ---
 
@@ -11,7 +11,7 @@ To edit the scheduled tasks.
 1. Navigate to the **Policy** > **Platforms** > **Schedule Policies** page.
 2. Click the **Edit** icon to open the Schedule Policy Editor window.
 
-   ![schedulepolicyeditor](/images/privilegesecure/26.03/accessmanagement/admin/policy/edit/schedulepolicyeditor.webp)
+   ![Schedule Policy Editor window](/images/privilegesecure/26.03/accessmanagement/admin/policy/edit/schedulepolicyeditor.webp)
 
 3. From the **Frequency** radio buttons, set the frequency of how often the scheduled task is
    run:

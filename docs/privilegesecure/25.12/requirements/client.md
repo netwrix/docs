@@ -1,6 +1,6 @@
 ---
 title: "Client"
-description: "Client"
+description: "Check which web browsers Privilege Secure supports for accessing the web service locally or remotely."
 sidebar_position: 20
 ---
 

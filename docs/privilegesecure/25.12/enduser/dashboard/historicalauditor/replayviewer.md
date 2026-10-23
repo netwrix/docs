@@ -1,6 +1,6 @@
 ---
 title: "Replay Viewer Window"
-description: "Replay Viewer Window"
+description: "Watch recorded RDP, SSH, and Website host sessions in the Replay Viewer window, including playback controls and details."
 sidebar_position: 10
 ---
 
@@ -16,14 +16,14 @@ When recordings are available for a historical session, the expand icon is enabl
 
 ![Historical dashboard showing available recordings](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/window/recordingavailable.webp)
 
-Multiple recording can exist for a session. There are two types of Replay Viewer windows:
+Multiple recordings can exist for a session. There are two types of Replay Viewer windows:
 
 - RDP session
 - Website host
 
 Select the recording you want and the Replay Viewer window opens.
 
-## Replay Viewer for RDP Sessions
+## Replay Viewer for RDP sessions
 
 The Replay Viewer window for RDP sessions is applicable to all resources except the Websites.
 
@@ -37,7 +37,7 @@ The Replay Viewer for RDP Sessions window has the following features:
 - **Playback bar** — Click to jump to a specific place in the recording
 - **Speed slider** — Use the slider to adjust the playback speed
 
-### Recording Details
+### Recording details
 
 - **User** — Displays the account used to log onto the resource
   - **logged on to** — Displays the name of the resource
@@ -47,12 +47,12 @@ The Replay Viewer for RDP Sessions window has the following features:
   actions were executed and not when the user was logged on to the resource.
 - **Ended** — Indicates when the activity ended.
 - **Duration** — Indicates how long the Activity ran for until it either reached its scheduled end time
-  or the user or an Privilege Secure administrator manually canceled it
+  or the user or a Privilege Secure administrator manually canceled it
 
-### Activity Details
+### Activity details
 
 - **Time line** — Displays recorded activity that occurred during the session in the pane to the left of
-  the player. By default this time line include keystroke activity.
+  the player. By default this time line includes keystroke activity.
 
   :::note
   If RDP Session Monitoring is enabled, then it will also include Windows metadata
@@ -62,7 +62,7 @@ The Replay Viewer for RDP Sessions window has the following features:
   topic for additional information.
   :::
 
-## Replay Viewer for SSH Sessions
+## Replay Viewer for SSH sessions
 
 The Replay Viewer for SSH sessions is applicable to Linux and Cisco resources.
 
@@ -71,7 +71,7 @@ When a user enters input into a password prompt during an SSH session, the keyst
 be obscured in the Replay Viewer.
 :::
 
-![replayviewerssh](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/window/replayviewerssh.webp)
+![Replay Viewer window for an SSH session](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/window/replayviewerssh.webp)
 
 The Replay Viewer for SSH Sessions window has the following features:
 
@@ -81,7 +81,7 @@ The Replay Viewer for SSH Sessions window has the following features:
 - **Playback bar** — Click to jump to a specific place in the recording
 - **Speed slider** — Use the slider to adjust the playback speed
 
-### Recording Details
+### Recording details
 
 - **User** — Displays the account used to log onto the resource
   - **logged on to** — Displays the name of the resource
@@ -91,14 +91,14 @@ The Replay Viewer for SSH Sessions window has the following features:
   actions were executed and not when the user was logged on to the resource.
 - **Ended** — Indicates when the activity ended.
 - **Duration** — Indicates how long the Activity ran for until it either reached its scheduled end time
-  or the user or an Privilege Secure administrator manually canceled it
+  or the user or a Privilege Secure administrator manually canceled it
 
-### Activity Details
+### Activity details
 
 - **Time line** — Displays recorded activity that occurred during the session in the pane to the left of
-  the player. By default this time line include keystroke activity.
+  the player. By default this time line includes keystroke activity.
 
-## Replay Viewer for Website Host Sessions
+## Replay Viewer for Website host sessions
 
 The Replay Viewer window for Website host sessions is applicable only to Website hosts.
 
@@ -115,7 +115,7 @@ The Replay Viewer for Website Host Sessions window has the following features:
 - **Playback speed** — Select **Playback speed** from the **Options** menu to adjust player speed
 - **Picture in picture** — Select **Picture in picture** from the **Options** menu to enable feature
 
-### Recording Details
+### Recording details
 
 - **User** — Displays the account used to log onto the resource
   - **logged on to** — Displays the name of the resource
@@ -125,4 +125,4 @@ The Replay Viewer for Website Host Sessions window has the following features:
   actions were executed and not when the user was logged on to the resource.
 - **Ended** — Indicates when the activity ended.
 - **Duration** — Indicates how long the Activity ran for until it either reached its scheduled end time
-  or the user or an Privilege Secure administrator manually canceled it
+  or the user or a Privilege Secure administrator manually canceled it

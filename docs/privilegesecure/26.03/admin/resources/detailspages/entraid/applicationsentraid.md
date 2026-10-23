@@ -1,6 +1,6 @@
 ---
 title: "Applications Tab for Microsoft Entra ID"
-description: "Applications Tab for Microsoft Entra ID"
+description: "Reference for the Applications tab on the Microsoft Entra ID Details page, which lists applications on the resource."
 sidebar_position: 70
 ---
 

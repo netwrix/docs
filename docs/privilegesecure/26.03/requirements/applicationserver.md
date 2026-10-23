@@ -1,6 +1,6 @@
 ---
 title: "Application Server"
-description: "Application Server"
+description: "Review the operating system, software, hardware, permission, and virtualization requirements for the Privilege Secure application server."
 sidebar_position: 10
 ---
 
@@ -10,7 +10,7 @@ The requirements for the (Privilege Secure) application server are:
 
 - Windows Server 2016 through Windows Server 2025
 
-  :::info
+  :::note
   Keep the Privilege Secure server non-domain-joined for additional security.
   :::
 
@@ -18,14 +18,13 @@ The requirements for the (Privilege Secure) application server are:
 - Hardened / dedicated to Netwrix Privilege Secure (recommended)
 - Controlled administrative access (recommended)
 - 2.0 GHz or faster dual core 64-bit (x64) processor
--.NET Framework 4.7.2 installed (required for Windows Server 2012 R2 and Windows Server 2016 only)
+- .NET Framework 4.7.2 installed (required for Windows Server 2012 R2 and Windows Server 2016 only)
+  - .NET Framework 4.7.2+ is in the “Pre-Reqs” folder of the product zip file.
+    Alternatively, download it from the following link:
 
--.NET Framework 4.7.2+ is in the “Pre-Reqs” folder of the product zip file.
-Alternatively, download it from the following link:
+    [https://dotnet.microsoft.com/download/thank-you/net472](https://dotnet.microsoft.com/download/thank-you/net472)
 
-[https://dotnet.microsoft.com/download/thank-you/net472](https://dotnet.microsoft.com/download/thank-you/net472)
-
-- Windows Management Framework 5.1 installed (required for Window Server 2012 R2 only)
+- Windows Management Framework 5.1 installed (required for Windows Server 2012 R2 only)
   - Windows Management Framework is in the “Extras” folder of the product zip file.
     Alternatively, download it from the following link:
 
@@ -35,7 +34,7 @@ Alternatively, download it from the following link:
   forwards and backwards
 - Multi-Factor Authentication (MFA) token (Authenticator, DUO, Symantec VIP, etc.)
 
-RAM, CPU, and Disk Space
+## RAM, CPU, and disk space
 
 These depend on the total number of administrators using Privilege Secure.
 
@@ -48,7 +47,7 @@ These depend on the total number of administrators using Privilege Secure.
 | Application drive | 300 GB | 200 GB | 100 GB | 100 GB |
 | Recording drive | 500 GB | 300 GB | 200 GB | 150 GB |
 
-Permissions
+## Permissions
 
 To install the application, you need the following permission:
 
@@ -56,7 +55,7 @@ To install the application, you need the following permission:
 - **Active Directory Synchronization for Vault Connectors** — The account used must have Domain Admin
   privileges
 
-## Virtual Environment Recommendations
+## Virtual environment recommendations
 
 Netwrix prefers physical machines but fully supports virtual machines. This
 section contains special considerations when using virtualization.

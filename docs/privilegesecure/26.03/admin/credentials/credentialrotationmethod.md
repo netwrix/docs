@@ -1,6 +1,6 @@
 ---
 title: "Rotation Methods"
-description: "Rotation Methods"
+description: "Compare credential rotation methods for Standard, Internal, and Service accounts, including buttons and management status."
 sidebar_position: 10
 ---
 

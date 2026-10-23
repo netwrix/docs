@@ -1,6 +1,6 @@
 ---
 title: "Add Reviewers Window"
-description: "Add Reviewers Window"
+description: "Grant users the Reviewer role with the Add Reviewers window, which lists onboarded users and groups."
 sidebar_position: 20
 ---
 
@@ -15,7 +15,7 @@ The window has the following features:
 
 - **Search** — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
-- **Filter** — Provides options to filter results based on a chosen criterion:User, Group, Application,
+- **Filter** — Provides options to filter results based on a chosen criterion: User, Group, Application,
   Collection, and Local User
 - **Available Accounts** — Shows all available users, groups, applications, collections, and local users
   that have been onboarded
@@ -32,7 +32,7 @@ The tables in both sections have the following columns:
 - **Email** — Displays the associated email address, if available
 - **Last Login** — Date timestamp for the last time the user logged into the application
 
-## Select Users
+## Select users
 
 To grant users the Reviewer role. See the
 [Role Management Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/rolemanagement.md) section for a list of roles and their

@@ -1,6 +1,6 @@
 ---
 title: "Computers Tab for Domain"
-description: "Computers Tab for Domain"
+description: "View domain computer objects on the Computers tab and add or remove them as NPS managed resources."
 sidebar_position: 30
 ---
 
@@ -15,7 +15,7 @@ The Computers tab has the following features:
 - **Search** — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
 - **Type** — Provides options to filter results based on a chosen criterion: Resource and Not On-boarded
-- **Add as NPS Managed Resource** — Opens the Enroll Hosts in Management window to onboards the selected
+- **Add as NPS Managed Resource** — Opens the Enroll Hosts in Management window to onboard the selected
   resource. See
   [Enroll Hosts in Management Window](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/domain/computersdomain/enrollhostsinmanagement.md) for
   additional information.

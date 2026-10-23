@@ -1,6 +1,6 @@
 ---
 title: "Users Tab for Host"
-description: "Users Tab for Host"
+description: "Reference for the Users tab on the Host Details page, including account actions, table columns, and verification statuses."
 sidebar_position: 40
 ---
 
@@ -17,13 +17,13 @@ The Users tab has the following features:
 - **Filter** — Provides options to filter results based on a chosen criterion: Managed and Not Onboarded
 - **Manage** — Set the selected account to be managed by Privilege Secure. This button is only available
   when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
-  displays.. You can set password rotation to automatic or manual for managed accounts.
+  displays. You can set password rotation to automatic or manual for managed accounts.
 - **Unmanage** — Remove the account from being managed by Privilege Secure
 - **Schedule Rotation** — Add the credential rotation task to the queue. This button is only available
   when the Method is Automatic managed.
 - **Verify** — Checks that the credentials for the selected account match the credentials set by
   Privilege Secure
-- **View History** — Opens the Password History window to displays the password history for the account
+- **View History** — Opens the Password History window to display the password history for the account
 - **Password Reset Options** — Customize password rotation options including rotation before and/or after a session. Additionally, when a credential-based access policy releases managed account credentials, the default is to disable the managed account. However, you can keep the account enabled here. This option is only available for managed accounts.
 - **Refresh** — Reload the information displayed
 

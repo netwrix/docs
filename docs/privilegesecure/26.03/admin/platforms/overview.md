@@ -1,6 +1,6 @@
 ---
 title: "Platforms"
-description: "Platforms"
+description: "Use the Platforms page to apply default configurations to all resources of a platform type, and find the settings for each default platform."
 sidebar_position: 20
 ---
 

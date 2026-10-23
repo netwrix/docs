@@ -1,6 +1,6 @@
 ---
 title: "Schedule Policies Page"
-description: "Schedule Policies Page"
+description: "Review the configured schedule policies, see where schedules apply, and find the actions for adding, editing, and deleting them."
 sidebar_position: 40
 ---
 
@@ -18,7 +18,7 @@ Schedules can be applied:
 - **Change Policy (credential rotation)** — How often the password of a managed account is changed. See
   the [Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md) topic for additional information on
   managed accounts.
-- **Host scan** — Scan a host resources for local users, groups, windows services and scheduled tasks
+- **Host scan** — Scan a host resource for local users, groups, windows services and scheduled tasks
 - **Verification** — Check that the passwords for managed accounts match the credentials set by
   Privilege Secure
 

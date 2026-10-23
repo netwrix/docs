@@ -1,6 +1,6 @@
 ---
 title: "Login Account Templates"
-description: "Login Account Templates"
+description: "Define login account templates with masks and the first, substr, replace, and trim functions to build the account an activity uses."
 sidebar_position: 10
 ---
 
@@ -15,11 +15,11 @@ There are three options for Login Account Templates in an Activity:
     `%domain%`, `%targetdomain%`, `%samaccountname%`, `%email%`, `%department%`, `%sessionid%`,
     `%hostname%`, `%dnshostname%`, `%fqdn%`, `%upn-username%`, `%upn-domain%`, `%email-username%`,
     `%email-domain%`, `%firstname%`, `%lastname%`, `%displayname%`, `%fullname%`
-    - Example 1: “`%domain%\%samaccountname%-a`”, a user with an Privilege Secure login name of
+    - Example 1: “`%domain%\%samaccountname%-a`”, a user with a Privilege Secure login name of
       “sblab\jsmith” would result in a login account of “sblab\jsmith-a”
-    - Example 2: “`%upn-username%-a@%upn-domain%`”, a user with an Privilege Secure login name
+    - Example 2: “`%upn-username%-a@%upn-domain%`”, a user with a Privilege Secure login name
       of “jsmith@sblab.com” would result in a login account of “jsmith-a@sblab.com”
-    - Example 3: “`%email-username%-a@%email-domain%`”, a user with an Privilege Secure login
+    - Example 3: “`%email-username%-a@%email-domain%`”, a user with a Privilege Secure login
       name of “jsmith@netwrix.com” would result in a login account of “jsmith-a@netwrix.com”
     - When a domain name is detected in the template field, i.e. contains a “\” character, the
       Create Local Account option has no effect
@@ -37,7 +37,7 @@ The value of each mask can be customized on the
 information.
 :::
 
-## Functions for Login Account Templates
+## Functions for login account templates
 
 ### first()
 
@@ -178,4 +178,4 @@ The preceding example returns "jsmith"
 
 A common use case for this function is to remove known suffixes from Privilege Secure Login Account
 Template masks such as "`%samaccountname%`" to change what the Login Account Template evaluates to
-when an Privilege Secure user provisions an activity session.
+when a Privilege Secure user provisions an activity session.

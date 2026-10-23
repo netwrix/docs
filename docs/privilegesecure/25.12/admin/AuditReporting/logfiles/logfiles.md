@@ -1,6 +1,6 @@
 ---
 title: "Log Files Page"
-description: "Log Files Page"
+description: "View and search Privilege Secure log files from within the console, and find where the log files are saved."
 sidebar_position: 50
 ---
 

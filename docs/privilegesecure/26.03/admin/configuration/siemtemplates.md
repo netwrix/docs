@@ -1,6 +1,6 @@
 ---
 title: "SIEM Templates"
-description: "SIEM Templates"
+description: "Review the built-in CEF and LEEF SIEM templates and add a custom SIEM template for your SIEM solution."
 sidebar_position: 102
 ---
 
@@ -8,7 +8,7 @@ sidebar_position: 102
 
 The SIEM Templates page is accessible from the Navigation pane under Configuration > SIEM. Privilege
 Secure can output events to third-party SIEM solutions for reporting, correlation, and notification.
-The SIEM Templates page determine the format and the nature of the event data.
+The SIEM Templates page determines the format and the nature of the event data.
 
 Privilege Secure provides two built-in templates for most common use cases, Common Event Format (CEF), and Log Event Extended Format (LEEF). You can
 configure new templates according to the requirements of the target SIEM solution, and the specific event data
@@ -16,7 +16,7 @@ that must be sent. Privilege Secure supports 1.0 versions of CEF and LEEF.
 
 ![SIEM Templates Page](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/siemtemplates.webp)
 
-## Custom SIEM Templates
+## Add a custom SIEM template
 
 To add a custom SIEM template to the Privilege Secure Console.
 

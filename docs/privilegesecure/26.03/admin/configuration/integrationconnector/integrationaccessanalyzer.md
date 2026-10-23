@@ -1,17 +1,22 @@
+---
+title: "Enterprise Auditor Integration"
+description: "Integrate Netwrix Access Analyzer (formerly Enterprise Auditor) with Privilege Secure by configuring an access role, service accounts, and a connector."
+---
+
 # Enterprise Auditor Integration
 
 Netwrix Access Analyzer (formerly Enterprise Auditor) can be configured to send administrator
 information to Privilege Secure. For integration, the following Access Analyzer job groups must be
 successfully run before Privilege Secure can import the data:
 
--.Active Directory Inventory Job Group
+- Active Directory Inventory Job Group
 - Windows > Privileged Accounts > Local Administrators Job Group
 
 See the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 
-## Configure the Access Role
+## Configure the access role
 
 To configure the access role in Access Analyzer. See the Access Role section of the
 Web Service REST API for Applications Access Data Remotely topic of the
@@ -60,7 +65,7 @@ additional information.
 The next step is to use the Client ID and Client Secret to obtain an access token. This token is
 used to get data from the Access Analyzer endpoint.
 
-## Add Service Account for Enterprise Auditor Connector
+## Add a service account for Enterprise Auditor connector
 
 To add the service accounts for the Access Analyzer integration connector. See the
 [Add Service Account](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccount.md) topic for additional information.
@@ -78,7 +83,7 @@ To add the service accounts for the Access Analyzer integration connector. See t
 
 4. Click the **Save** icon to create the new service account.
 5. Follow the steps again to add a service account with administrator credentials for
-   theAccess Analyzer server. Enter the following information:
+   the Access Analyzer server. Enter the following information:
 
    - **Enter Name** — Access Analyzer Admin
    - **Enter Description** — (Optional) Brief description to identify the service account
@@ -89,7 +94,7 @@ To add the service accounts for the Access Analyzer integration connector. See t
 
 The next step is to configure the integration connector.
 
-## Add a Connector for Enterprise Auditor
+## Add a connector for Enterprise Auditor
 
 To add the Access Analyzer Connector.
 
@@ -115,7 +120,7 @@ To add the Access Analyzer Connector.
 
 The next step is to import the data from Access Analyzer.
 
-## Import Data from Enterprise Auditor
+## Import data from Enterprise Auditor
 
 To import the users, groups, and resources associated with administrator accounts
 from Access Analyzer.
@@ -125,7 +130,7 @@ from Access Analyzer.
 2. In the Integration Connector list, select the previously created Enterprise Auditor
    Import connector.
 
-   ![enterpriseauditorconnector](/images/privilegesecure/26.03/accessmanagement/admin/configuration/add/accessanalyzerconnector.webp)
+   ![Enterprise Auditor connector selected in the Integration Connectors list](/images/privilegesecure/26.03/accessmanagement/admin/configuration/add/accessanalyzerconnector.webp)
 
 3. Click **Sync** **StealthAUDIT** to begin the data collection. This may take some time.
 

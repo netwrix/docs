@@ -1,6 +1,6 @@
 ---
 title: "Email Service"
-description: "Email Service"
+description: "Configure the email service settings for notifications and review the queue of outgoing mail."
 sidebar_position: 20
 ---
 
@@ -15,11 +15,11 @@ The Email Service page shows details of the selected email service and has the f
 - Email Settings Tab
 - Email Queue Tab
 
-## Email Settings Tab
+## Email Settings tab
 
 On the Email Settings tab, view, and edit the email service settings.
 
-![emailsettingstab](/images/privilegesecure/25.12/accessmanagement/admin/configuration/servicetype/emailsettingstab.webp)
+![Email Settings tab showing the SMTP connection fields](/images/privilegesecure/25.12/accessmanagement/admin/configuration/servicetype/emailsettingstab.webp)
 
 The Email Settings tab has the following features:
 
@@ -30,7 +30,7 @@ The Email Settings tab has the following features:
 - **Use TLS** — Check the checkbox to enable TLS
 - **Test Settings** — Click to verify the connection to the email client
 
-## Email Queue Tab
+## Email Queue tab
 
 The Email Queue tab shows all outgoing mail notifications.
 

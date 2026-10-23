@@ -1,6 +1,6 @@
 ---
 title: "Add a Resource Group"
-description: "Add a Resource Group"
+description: "Add a resource group to the console, optionally map it to an OU, and set local Administrator account management."
 sidebar_position: 10
 ---
 
@@ -26,7 +26,7 @@ To add resource groups to the console.
      resources in the selected group
    - **Manage Local Administrator Accounts** — Sets whether Privilege Secure manages the local Administrator accounts
      on the resources in the selected group. Select one of the following options:
-     - **Off (do not manage accounts)** — Do not manage any Local Administrator accounts on the resources
+     - **Off (do not manage accounts)** — Don't manage any Local Administrator accounts on the resources
        in the selected group
      - **On (manage all accounts)** — Manage all Local Administrator accounts on the resources in the
        selected group

@@ -1,6 +1,6 @@
 ---
 title: "Access Policies Tab for Website"
-description: "Access Policies Tab for Website"
+description: "Reference for the Access Policies tab on the Website Details page, which lists policies tied to the website resource."
 sidebar_position: 40
 ---
 
@@ -8,7 +8,7 @@ sidebar_position: 40
 
 The Access Policies tab shows information about the policies associated with the selected resource.
 
-![websitedetailsaccesspolicytab](/images/privilegesecure/26.03/accessmanagement/admin/policy/tab/resources/websitedetailsaccesspolicytab.webp)
+![Access Policies tab on the Website Details page](/images/privilegesecure/26.03/accessmanagement/admin/policy/tab/resources/websitedetailsaccesspolicytab.webp)
 
 The Access Policies tab has the following features:
 

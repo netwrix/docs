@@ -1,6 +1,6 @@
 ---
 title: "Add Schedule Policy"
-description: "Add Schedule Policy"
+description: "Add a schedule policy to the console by choosing a frequency of hours, days, weekly, or monthly and saving the schedule."
 sidebar_position: 10
 ---
 
@@ -9,7 +9,7 @@ sidebar_position: 10
 To add a schedule policy to the console.
 
 1. Navigate to the **Policy** > **Platforms** > **Schedule Policies** page.
-2. In the Schedule Polices list, click the **Plus** icon.
+2. In the Schedule Policies list, click the **Plus** icon.
 
    ![Schedule Policy Editor Window](/images/privilegesecure/26.03/accessmanagement/admin/policy/edit/schedulepolicyeditor.webp)
 

@@ -1,6 +1,6 @@
 ---
 title: "Scheduler Service Install"
-description: "Scheduler Service Install"
+description: "Install the Scheduler Service on a remote server, then exchange encryption keys and register it with the Privilege Secure server."
 sidebar_position: 30
 ---
 
@@ -20,32 +20,32 @@ instructions.
 
 To install the Scheduler Service.
 
-1. ensure that you have configured the Antivirus exclusions according to the following
+1. Ensure that you have configured the Antivirus exclusions according to the following
    Netwrix knowledge base article:
    [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
 2. Move the `NPS.SchedulerService.exe` installation package to the desktop of the remote
    server.
-3. Open the `NPS.SchedulerService.exe` and thePrivilege Secure Scheduler Service Setup
+3. Open the `NPS.SchedulerService.exe` and the Privilege Secure Scheduler Service Setup
    wizard opens.
 
-   ![licenseagreement](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement_4.webp)
+   ![Scheduler Service Setup wizard on the license agreement page](/images/privilegesecure/26.03/accessmanagement/install/licenseagreement_4.webp)
 
 4. To install the Scheduler Service in an alternate location, click **Options**.
 
-   ![scheduleoptions](/images/privilegesecure/26.03/accessmanagement/install/scheduleoptions.webp)
+   ![Scheduler Service Setup wizard Options page for the installation folder](/images/privilegesecure/26.03/accessmanagement/install/scheduleoptions.webp)
 
 5. Enter the destination folder for installation and click **OK**.
 6. Read the End User License Agreement and accept the license terms.
 7. Click **Install** to begin the installation. The setup wizard displays the installation
    progress.
 
-   ![installcompleted](/images/privilegesecure/26.03/accessmanagement/install/installcompleted.webp)
+   ![Scheduler Service Setup wizard showing the installation progress](/images/privilegesecure/26.03/accessmanagement/install/installcompleted.webp)
 
 8. When the installation is complete, click **Close** to exit the installer.
 
 The Privilege Secure Scheduler Service is now installed on a remote server.
 
-## Register the Remote Scheduler Service with Privilege Secure
+## Register the remote Scheduler Service with Privilege Secure
 
 If the Scheduler Service is installed on a remote machine, it must be configured to register with
 the Privilege Secure server. This configuration is done by supplying the Privilege Secure server and
@@ -67,7 +67,7 @@ To configure the key exchange.
 3. Take note of the password for the export file.
 
    :::warning
-   This temporary password protects the Netwrix Privilege Secure for Access Management (NPS-AM) encryption keys during copying. don't save
+   This temporary password protects the Netwrix Privilege Secure for Access Management (NPS-AM) encryption keys during copying. Don't save
    it to digital media or transmit it with the encryption key package.
    :::
 

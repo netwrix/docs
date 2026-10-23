@@ -1,6 +1,6 @@
 ---
 title: "Configure Secure WinRM Connection Window"
-description: "Configure Secure WinRM Connection Window"
+description: "Configure a secure WinRM connection for a host by choosing a certificate source and providing a certificate thumbprint."
 sidebar_position: 20
 ---
 
@@ -12,7 +12,7 @@ To configure secure WinRM connection for the selected host:
 2. Select the resources to modify.
 3. Click the **WinRM Config** button.
 
-   ![winrmconfig](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/winrmconfig.webp)
+   ![Configure Secure WinRM Connection window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/winrmconfig.webp)
 
 4. Perform the following steps:
 

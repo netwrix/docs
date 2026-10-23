@@ -1,10 +1,10 @@
 ---
 title: "Add Microsoft Entra ID Tenant"
-description: "Add New Microsoft Entra ID Tenant"
+description: "Add a Microsoft Entra ID tenant resource by entering the tenant ID, logon URL, email domain, and service account."
 sidebar_position: 40
 ---
 
-# Add New Microsoft Entra ID Tenant
+# Add Microsoft Entra ID Tenant
 
 To add Microsoft Entra ID (formerly Azure AD) resource to the Privilege Secure
 Console.

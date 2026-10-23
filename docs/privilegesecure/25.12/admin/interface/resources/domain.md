@@ -1,17 +1,17 @@
 ---
 title: "Add Domain"
-description: "Add New Domain"
+description: "Add a domain resource to the console by entering the domain name, a service account, and the sync frequency."
 sidebar_position: 20
 ---
 
-# Add New Domain
+# Add Domain
 
 To add a domain to the console.
 
 1. Navigate to the **Policy** > **Resources** page.
 2. Click the **Plus** icon and select **Domain** from the dropdown list.
 
-   ![Add Domian Resource](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/adddomain.webp)
+   ![Add Domain Resource](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/adddomain.webp)
 
 3. Enter the following information:
 
@@ -20,8 +20,8 @@ To add a domain to the console.
      credentials for the domain. See the
      [Service Accounts Page](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
      information.
-   - **Add New Service Account** — Open the Add New Service Account window. The fields are identical to
-     those on the Service Accounts page.
+     - **Add New Service Account** — Open the Add New Service Account window. The fields are identical to
+       those on the Service Accounts page.
    - **Use TLS** — Check to enable a secure connection to the domain
    - Enter the frequency you want for the domain sync.
 

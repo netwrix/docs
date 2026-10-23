@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-description: "Installation"
+description: "Learn the Privilege Secure architecture and deployment options, including single server, remote services, and high availability."
 sidebar_position: 30
 ---
 
@@ -13,7 +13,7 @@ met. See the [Requirements](/docs/privilegesecure/25.12/requirements/overview.md
 Privilege Secure includes a temporary 30-day license. Contact the organization’s sales
 representative to purchase a license.
 
-## System Architecture
+## System architecture
 
 Netwrix Privilege Secure consists of several components that work together to manage and report
 on activity:
@@ -64,7 +64,7 @@ on activity:
   See the [Install Remote Desktop Monitor Service on Target RDP Hosts](/docs/privilegesecure/25.12/install/servicesonadditional/rdpmonitor.md) topic for
   additional information.
 
-## Single Privilege Secure Server
+## Single Privilege Secure server
 
 Install Privilege Secure for Access Management on a single Windows server. Typically, this
 architecture is only used for Proof of Concepts or testing purposes. All components install on
@@ -73,7 +73,7 @@ you complete installation and initial configuration in about 20 minutes.
 
 ![Single Server Deployment](/images/privilegesecure/25.12/accessmanagement/install/singleserverdeployment.png)
 
-## Privilege Secure Server with Remote Services
+## Privilege Secure server with remote services
 
 The Proxy and Action services consume resources according to load. Often you
 install Proxy and Action Services on additional hosts for scalability, redundancy, or network
@@ -109,7 +109,7 @@ The Service Mesh registers to the Web service on TCP 6520. All subsequent commun
 - Leaf nodes port TCP 6523
 - Cluster nodes Port TCP 6524
 
-## Active-Passive Database Deployment with PostgreSQL Database
+## Active-passive database deployment with PostgreSQL database
 
 For high-availability, the application lets you configure two identical servers so that at
 any one time, all components of all hosts are active for load-balancing and
@@ -123,7 +123,7 @@ The Active-Passive configuration, which is only available with the PostgreSQL da
 to use the embedded database. It is also the simplest option for configuring high-availability.
 However, it does require manual intervention to failover.
 
-## Active-Active Database Deployment
+## Active-active database deployment
 
 The Active-Active configuration for high-availability supports both the PostgreSQL and SQL
 Server database options. Failover requires no manual intervention. You can add many application servers
@@ -132,16 +132,16 @@ Active-Passive configuration. You also need an additional server for the databas
 
 ![Active-Active Database Deployment Diagram](/images/privilegesecure/25.12/accessmanagement/install/activeactivedatabase.png)
 
-## Cloud-Native Database Deployment
+## Cloud-native database deployment
 
-Cloud-native databases is useful for Active-Active configuration. They benefit from having
+Cloud-native databases are useful for Active-Active configuration. They benefit from having
 built-in high-availability and auto-scaling. AWS supports databases for PostgreSQL (Aurora
 PostgreSQL) and SQL Server (RDS SQL Server). Azure also supports databases for PostgreSQL and SQL
 Server.
 
-![AWS Acrive-Active Database Deployment Diagram](/images/privilegesecure/25.12/accessmanagement/install/awsdatabase.png)
+![AWS Active-Active Database Deployment Diagram](/images/privilegesecure/25.12/accessmanagement/install/awsdatabase.png)
 
-## Third-Party Vault Integration
+## Third-party vault integration
 
 Often you want to pull managed credentials from existing vaults into Privilege Secure
 activities. Benefits include:
@@ -153,7 +153,7 @@ activities. Benefits include:
 
 ![Bring Your Own Vault Integration Diagram](/images/privilegesecure/25.12/accessmanagement/install/byovdatabase.png)
 
-## LAPS Integration
+## LAPS integration
 
 Microsoft Active Directory supports changing local Administrator passwords. The LAPS
 integration lets Privilege Secure activities use those passwords. Benefits include:

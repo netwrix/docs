@@ -1,6 +1,6 @@
 ---
 title: "Create My Activity Session"
-description: "Create My Activity Session"
+description: "Create an activity session from the My Activities page by selecting an Activity, configuring the session, and starting it."
 sidebar_position: 10
 ---
 
@@ -10,7 +10,7 @@ To create an activity session.
 
 1. Select an **Activity** to expand the session ribbon.
 
-   ![myactivityuser](/images/privilegesecure/25.12/accessmanagement/enduser/access/myactivityuser.webp)
+   ![My Activities page with an Activity card and session ribbon](/images/privilegesecure/25.12/accessmanagement/enduser/access/myactivityuser.webp)
 
 2. Click **Create Session** to start a new activity session.
 
@@ -25,12 +25,12 @@ To create an activity session.
    If your license is expired and you can still log in, you will not be able to create activity sessions.
    :::
 
-   ![configuresessionuser](/images/privilegesecure/25.12/accessmanagement/enduser/access/configuresessionuser.webp)
+   ![Configure Session window for an Activity with multiple resources](/images/privilegesecure/25.12/accessmanagement/enduser/access/configuresessionuser.webp)
 
 3. Enter the following information:
 
    - If the Activity is a member of more than one Access Policy, the Access Policy field will change to
-     a dropdown selection. Based the resources assigned to the selected access policy, the list of
+     a dropdown selection. Based on the resources assigned to the selected access policy, the list of
      resources in the table will change.
    - Enter notes or a ticket number in the applicable field (Set whether notes or ticket numbers should
      be optional or mandatory for the session in the related Connection Profile)
@@ -38,14 +38,14 @@ To create an activity session.
      resource list.
    - Click **Start Session** to start the provisioning process.
 
-   ![startsessionuser](/images/privilegesecure/25.12/accessmanagement/enduser/access/startsessionuser.webp)
+   ![Configure Session window with the Start Session button](/images/privilegesecure/25.12/accessmanagement/enduser/access/startsessionuser.webp)
 
    :::note
    If an approval is required, the Waiting for approval message displays until it has
    been granted.
    :::
 
-   ![stopsession](/images/privilegesecure/25.12/accessmanagement/enduser/access/stopsession.webp)
+   ![Activity session card in the session ribbon](/images/privilegesecure/25.12/accessmanagement/enduser/access/stopsession.webp)
 
 4. When provisioned, an activity session displays an Available status with a green
    icon. Click **Available** to launch the session.

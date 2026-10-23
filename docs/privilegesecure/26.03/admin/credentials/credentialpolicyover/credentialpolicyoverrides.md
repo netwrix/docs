@@ -1,6 +1,6 @@
 ---
 title: "Credential Policy Overrides"
-description: "Credential Policy Overrides"
+description: "Reference for the Credential Policy Overrides page, including override details and the credentials table."
 sidebar_position: 70
 ---
 

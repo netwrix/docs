@@ -1,6 +1,6 @@
 ---
 title: "Browser Extension Interface"
-description: "Browser Extension Interface"
+description: "Reference for the browser extension interface, including the Activities, Current, and Settings tabs."
 sidebar_position: 90
 ---
 
@@ -18,7 +18,7 @@ The browser extension interface has three tabs:
 - Current tab
 - Settings tab
 
-## Activities Tab for the Browser Extension
+## Activities tab for the browser extension
 
 The **Activities** tab displays all website activities mapped to the user via the Privilege Secure
 access policies. See the [Access Policy Page](/docs/privilegesecure/26.03/admin/accesspolicy/accesspolicy.md) topic for
@@ -40,7 +40,7 @@ The Activities tab has the following features:
   - **Green icon** — Click to launch the web session.
   - **Red icon** — Click to end the current web session.
 
-## Current Tab for the Browser Extension
+## Current tab for the browser extension
 
 The **Current** tab displays any website activity matching the current URL in the browser.
 
@@ -54,7 +54,7 @@ activities available for that resource expanded. It has the following features:
 - **Favorite icon** — Click the favorite icon to move the activity to the top of the list.
 - **Settings icon** — Click to open the browser extension settings.
 
-## Settings Tab for the Browser Extension
+## Settings tab for the browser extension
 
 Configure basic settings for the browser extension. For additional settings, log in to the Privilege
 Secure Console.

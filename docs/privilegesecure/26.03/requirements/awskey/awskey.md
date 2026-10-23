@@ -1,6 +1,6 @@
 ---
 title: "AWS Key Management Service"
-description: "AWS Key Management Service"
+description: "Create the AWS policy, user, and managed key that let Privilege Secure protect its encryption keys with AWS Key Management Service."
 sidebar_position: 60
 ---
 
@@ -9,8 +9,8 @@ sidebar_position: 60
 AWS Key Management Service (AWS KMS) is a managed service that makes it easy for you to create and
 control the cryptographic keys that protect your data. Organizations using AWS Key
 Management Service (AWS KMS) can configure Netwrix Privilege Secure to rotate security Keys. The KMS
-key isn't used to encrypt the secret key, but encrypt the key that
-encrypt the secret key.
+key isn't used to encrypt the secret key, but encrypts the key that
+encrypts the secret key.
 
 See the
 [AWS Key Management Service](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)
@@ -19,12 +19,12 @@ article for additional information.
 When creating an AWS KMS protection key for Netwrix Privilege Secure, start by creating a policy in
 AWS. There will be multiple configuration steps needed within AWS.
 
-- [Create an AWS Policy](#create-an-aws-policy)
-- [Create a User](#create-a-user)
-- [Create a Managed Key](#create-a-managed-key)
-- [Least Privilege Policy](#least-privilege-policy)
+- [Create an AWS policy](#create-an-aws-policy)
+- [Create a user](#create-a-user)
+- [Create a managed key](#create-a-managed-key)
+- [Create a least privilege policy](#create-a-least-privilege-policy)
 
-## Create an AWS Policy
+## Create an AWS policy
 
 To create a policy in AWS.
 
@@ -60,7 +60,7 @@ To create a policy in AWS.
 
 The policy is created.
 
-## Create a User
+## Create a user
 
 To create a user in AWS.
 
@@ -79,20 +79,20 @@ To create a user in AWS.
 5. In the **Permissions policies** section, search for the NPS key policy you previously
    created and select the checkbox to the left of the policy. Click **Next**.
 
-   ![Review and Create the User Cofiguration](/images/privilegesecure/26.03/accessmanagement/requirements/reviewandcreate.webp)
+   ![Review and Create the User Configuration](/images/privilegesecure/26.03/accessmanagement/requirements/reviewandcreate.webp)
 
 6. On the **Review and create** window, review the policy configuration and click **Create
    now**.
 
    ![User Security Credentials Tab](/images/privilegesecure/26.03/accessmanagement/requirements/usersecuritycredentialstab.webp)
 
-7. after the user has been created, select the user and navigate to the **Security
+7. After the user has been created, select the user and navigate to the **Security
    credentials** tab.
 8. Select **Create access key**.
 
    ![Select Application Running Outside AWS](/images/privilegesecure/26.03/accessmanagement/requirements/selectapplicationrunningoutsideaws.webp)
 
-9. after the creation window opens, select the **Application running outside of AWS**
+9. After the creation window opens, select the **Application running outside of AWS**
    option.
 
    ![Set Tag and Create Key](/images/privilegesecure/26.03/accessmanagement/requirements/settagcreatekey.webp)
@@ -101,13 +101,13 @@ To create a user in AWS.
 
     ![Copy Access Key](/images/privilegesecure/26.03/accessmanagement/requirements/copyaccesskey.webp)
 
-11. after the Key has been created, copy, or download the **Access key** and **Secret access key**.
+11. After the Key has been created, copy, or download the **Access key** and **Secret access key**.
     Privilege Secure uses these keys to access the AWS KMS key encryption and decryption
     functionality.
 12. Click **Done** when finished.
 
     :::warning
-    don't delete the AWS user Access Key without rotating the NPS key first.
+    Don't delete the AWS user Access Key without rotating the NPS key first.
     :::
 
 The best practice for use of access keys is to rotate them regularly. Follow these steps when
@@ -117,7 +117,7 @@ rotating access keys.
 2. Rotate the NPS protect key to use the new access key.
 3. Delete old access key.
 
-## Create a Managed Key
+## Create a managed key
 
 To create a managed key in AWS.
 
@@ -153,14 +153,14 @@ To create a managed key in AWS.
    Click **Next** to continue.
 8. Review the key configuration and click **Create Key** to continue.
 
-   ![ANR Key Completed](/images/privilegesecure/26.03/accessmanagement/requirements/arnkeycomplete.webp)
+   ![ARN Key Completed](/images/privilegesecure/26.03/accessmanagement/requirements/arnkeycomplete.webp)
 
 9. Click the **Copy** button from the newly created key, and store the ARN from the
    details.
 
 The ARN is used by Privilege Secure to identify the key used for encryption.
 
-## Least Privilege Policy
+## Create a least privilege policy
 
 The IAM policy created earlier can now be edited to limit to only the required key. Follow the steps
 to create a least privilege policy.
@@ -174,7 +174,7 @@ to create a least privilege policy.
 
    ![Policy Editor Window](/images/privilegesecure/26.03/accessmanagement/requirements/policyeditorwindow.webp)
 
-4. after the policy editor window opens, switch to the **Visual** display mode and expand the
+4. After the policy editor window opens, switch to the **Visual** display mode and expand the
    KMS item dropdown.
 
    ![Expand Resources Item](/images/privilegesecure/26.03/accessmanagement/requirements/expandresourcesitem.webp)

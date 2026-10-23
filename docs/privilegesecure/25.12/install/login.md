@@ -1,6 +1,6 @@
 ---
 title: "Log Into the Privilege Secure Console"
-description: "Log Into the Privilege Secure Console"
+description: "Log in to the Privilege Secure Console in a browser, including the default port, MFA, and expired-license behavior."
 sidebar_position: 50
 ---
 
@@ -10,7 +10,7 @@ Once installation is complete, Privilege Secure is accessible locally on the def
 
 `https://localhost:6500`
 
-Since Privilege Secure is a browser-based application, You can access the web interface
+Since Privilege Secure is a browser-based application, you can access the web interface
 remotely. In most environments, enter the URL for the host on which Privilege Secure is installed
 into a supported browser address bar. For example, if Privilege Secure is installed on server
 `ExampleServer01`, then the address is:
@@ -56,7 +56,7 @@ To log in to the Privilege Secure Console.
 
    ![Alternate Login](/images/privilegesecure/25.12/accessmanagement/enduser/alternatelogin.webp)
 
-3. log in to the Privilege Secure Console with a configured authentication connector, or
+3. Log in to the Privilege Secure Console with a configured authentication connector, or
    enter the user credentials.
 4. Click **Login** to proceed.
 5. Enter the code provided by the registered multi-factor authenticator (MFA).
@@ -75,6 +75,6 @@ login. See the
 additional information on how to unlock an account.
 :::
 
-The Privilege Secure Console is ready to use. the option to view the recovery codes is no
+The Privilege Secure Console is ready to use. The option to view the recovery codes is no
 longer available after the initial login. From here, create Sessions and Access Policies, manage
 Users and Resources, and review usage data.

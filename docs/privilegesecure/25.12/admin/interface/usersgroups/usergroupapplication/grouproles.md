@@ -1,6 +1,6 @@
 ---
 title: "Group Roles Tab"
-description: "Group Roles Tab"
+description: "Reference for the Group Roles tab, which shows whether a group is assigned an application role and lets you add or remove roles."
 sidebar_position: 90
 ---
 

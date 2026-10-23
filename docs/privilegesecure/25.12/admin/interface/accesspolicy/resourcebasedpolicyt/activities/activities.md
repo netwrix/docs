@@ -1,6 +1,6 @@
 ---
 title: "Activities Tab for Resource Based Access Policies"
-description: "Activities Tab for Resource Based Access Policies"
+description: "Reference for the Activities tab, which lists the activities and activity groups associated with a resource based access policy."
 sidebar_position: 20
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "OpenID Connect Configuration Wizard"
-description: "OpenID Connect Configuration Wizard"
+description: "Configure an OpenID Connect authentication connector with the Configuration Wizard, from client setup to ID mapping."
 sidebar_position: 20
 ---
 
@@ -10,7 +10,7 @@ The OpenID Connect Configuration wizard is opened with the **Configuration Wizar
 Configuration > [Authentication Page](/docs/privilegesecure/25.12/admin/configuration/authentication/authentication.md) for an OpenID Connect
 Authentication Connector Type.
 
-![configureclient](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/configureclient.webp)
+![Configure Client page of the OpenID Connect wizard](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/configureclient.webp)
 
 It contains three pages:
 
@@ -18,7 +18,7 @@ It contains three pages:
 - Test Login
 - Configure Id Mapping
 
-## Configure OpenID Connect Authentication Connector
+## Configure OpenID Connect authentication connector
 
 To verify the OpenID Connect configuration:
 
@@ -49,7 +49,7 @@ To verify the OpenID Connect configuration:
    :::
 
 4. Click **Test Connection** to verify the connection configuration. This opens the Sign In
-   page in the browser. don't sign in.
+   page in the browser. Don't sign in.
 
    - If the Sign In page doesn't display as expected, review the values configured for the OpenID
      Connect connector and modify them where needed. Then, verify the Sign In page again.
@@ -71,15 +71,15 @@ To verify the OpenID Connect configuration:
    to the UserTokenController so that the user information can be extracted. Click **Next**.
 10. On the Configure ID Mapping page, click **Get User Data**.
 
-    ![chapter_4_configuration_interface_6](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_6.webp)
+    ![Configure ID Mapping page with the Get User Data button](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_6.webp)
 
     Privilege Secure will use the access token to retrieve user data from the OpenId Connect provider.
-    The OpenID Connect provider requires a User Id Field for sign in. specify which
+    The OpenID Connect provider requires a User Id Field for sign in. Specify which
     field in Active Directory should map to that User Id Field, so that Privilege Secure can
     automatically fill in the required credentials at login. The value used to sign in to
     the multi factor authenticator (MFA) when a user logs in to the Privilege Secure Console.
 
-    to connect a user from the OpenID Connect provider to a user in the Privilege Secure copy
+    To connect a user from the OpenID Connect provider to a user in the Privilege Secure copy
     of the AD data, map a field in the provider list to a field in the Privilege
     Secure host user table. The exact fields to map will vary between providers and according to the
     user’s AD configuration.
@@ -95,12 +95,12 @@ To verify the OpenID Connect configuration:
     - **Source** — There are three ways to extract the data, depending on the provider and the application
       configuration in the provider (unfortunately, there is no consistency in how the data is
       formatted):
-      - **Introspection Endpoint** — _(Preferred)_ Not supported by all providers. Also validates the
+      - **Introspection Endpoint** — (Preferred) Not supported by all providers. Also validates the
         token.
       - **UserInfo Endpoint** — Microsoft Entra ID has two User Info endpoints which return slightly
         different data sets (be sure to check both). Some providers require authorization for this
         endpoint. May otherwise validate the token.
-      - **Token parsing** — _(Least preferred)_ The access token contains claims which include some user
+      - **Token parsing** — (Least preferred) The access token contains claims which include some user
         information. This is the least secure method since the token is received indirectly. This
         option shouldn't be used unless all other options have failed.
     - **Field** — Shows the possible fields used by the OpenID Connect provider detected by Privilege
@@ -117,7 +117,7 @@ To verify the OpenID Connect configuration:
 
 11. Select a field to use for the User Id Field and click **Select**.
 
-    ![chapter_4_configuration_interface_7](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_7.webp)
+    ![Retrieved user data table for selecting the User Id Field](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_7.webp)
 
 12. The selected Source and User ID fields from the previous table are shown. Now map the
     applicable AD field to the User Id Field. This is the value used to sign in to the MFA
@@ -125,7 +125,7 @@ To verify the OpenID Connect configuration:
     Field.
 13. Click **Finish**. A window displays the updated configuration settings.
 
-    ![chapter_4_configuration_interface_8](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_8.webp)
+    ![Wizard summary of the updated configuration settings](/images/privilegesecure/25.12/accessmanagement/admin/configuration/wizard/chapter_4_configuration_interface_8.webp)
 
 14. Click **Okay** to close the wizard and click **Save** on the Authentication page to accept
     the changes.

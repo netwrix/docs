@@ -1,6 +1,6 @@
 ---
 title: "Access Policies Tab for Microsoft Entra ID"
-description: "Access Policies Tab for Microsoft Entra ID"
+description: "Reference for the Access Policies tab on the Microsoft Entra ID Details page, which lists policies tied to the resource."
 sidebar_position: 50
 ---
 

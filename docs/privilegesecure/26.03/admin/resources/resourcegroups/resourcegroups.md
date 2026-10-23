@@ -1,14 +1,12 @@
 ---
 title: "Resource Groups"
-description: "Resource Groups"
+description: "Reference for the Resource Groups page, including default groups, affinity groups, OU mapping, and notification settings."
 sidebar_position: 70
 ---
 
 # Resource Groups
 
 You can access the Resources Groups page from the Navigation pane under Resources. It shows all configured resource groups and their details. You can organize resources into groups to make it easier to manage common settings across them.
-
-**Affinity groups** By default, Action Services and Host Scan Services use the next available service. You can create resource groups and then assign them preferred Action or Host scan servers. They will become the first choice, but if they are in use, then Netwrix Privilege Secure (NPS) will revert to the next available. Netwrix refers to this as "Affinity groups" The most common use case would be to group by geographical area and assign the physically closest Action and Host Scan services, but there is no restriction on the groupings.
 
 ![Resource Groups Details Page](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/resourcegroupspage.webp)
 
@@ -23,7 +21,11 @@ has the following features:
 - **Trashcan icon** — Deletes the resource group. Icon appears when group is hovered over. A
   confirmation window displays.
 
-## Default Resource Groups
+## Affinity groups
+
+By default, Action Services and Host Scan Services use the next available service. You can create resource groups and then assign them preferred Action or Host scan servers. They will become the first choice, but if they are in use, then Netwrix Privilege Secure (NPS) will revert to the next available. Netwrix refers to this as "Affinity groups." The most common use case would be to group by geographical area and assign the physically closest Action and Host Scan services, but there is no restriction on the groupings.
+
+## Default resource groups
 
 The following resource groups are available by default, and resources are automatically added to
 these groups:
@@ -55,7 +57,7 @@ The following resource group details display for all groups.
   - **Per Individual Resource** — Set whether the Local Administrator accounts will be managed on a
     per resource basis
 
-## User-added Group Details
+## User-added group details
 
 The following resource group details display at the top of the main pane for groups that are user-created (not default)
 

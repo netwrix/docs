@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting"
-description: "Troubleshooting"
+description: "Use the Enablement Toolkit to test connectivity, and sign RDP files so Windows trusts the publisher of Privilege Secure RDP connections."
 sidebar_position: 80
 ---
 
@@ -84,7 +84,7 @@ following fields for all operations:
 To execute an operation.
 
 1. Select an Operation from the dropdown menu.
-2. _Optional_: Open the Help menu for the selected operation by clicking **Help** > **Help
+2. Optional: Open the Help menu for the selected operation by clicking **Help** > **Help
    (Selected Operation)** or pressing **F1**. Click **Close** to close the Help menu.
 
    ![Stealthbits Enablement Toolkit - Help Menu](/images/privilegesecure/25.12/accessmanagement/admin/sbpamenablementtoolkit_-_3_-_help_window.webp)
@@ -112,7 +112,7 @@ pressing **F1**.
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | Enumerate Active Directory Objects | Enumerates domain or domain controller specified in the Domain field for counts of users, group members, and computers. The target domain / domain controller can be specified by IP or DNS Name | <ul><li>Domain</li><li>Username</li><li>Password</li></ul> | Enable the Use TLS checkbox for LDAPS lookups instead of LDAP. |
 | Verify Domain Group Membership for Credential | Verifies that a domain group exists and that the user specified in the Domain / User field is a member of that group. The Domain / User field is the `<domain>\\<user>` to be queried for the domain group in the Group field. The Username and Password fields are used for authentication to the domain, which can be any domain user. The target domain / domain controller can be specified by either IP, DNS Name, or domain name. | <ul><li>Domain / User</li><li>Group</li><li>Username</li><li>Password</li></ul> | Enable the Use TLS checkbox for LDAPS lookups instead of LDAP. |
-| Verify Local Windows Group Membership for User Account | Verifies that a local Windows group exists and that the user specified in the User / Host field is a member of that group. The User / Host field is the `<user>@<hostname>` to be queried for the local Windows group in the Group field. This must be in the format: `<user@hostname>` The Username (ex. domain\user) and Password fields are used for authe ntication to the Windows host as a local administrator. Both Domain and local accounts is useful for authentication as long as the account is a local administrator. | <ul><li>User / Host</li><li>Group</li><li>Username</li><li>Password</li></ul> | A domain user must be used for authentication if verifying domain user group membership. |
+| Verify Local Windows Group Membership for User Account | Verifies that a local Windows group exists and that the user specified in the User / Host field is a member of that group. The User / Host field is the `<user>@<hostname>` to be queried for the local Windows group in the Group field. This must be in the format: `<user@hostname>` The Username (ex. domain\user) and Password fields are used for authe ntication to the Windows host as a local administrator. Both Domain and local accounts are useful for authentication as long as the account is a local administrator. | <ul><li>User / Host</li><li>Group</li><li>Username</li><li>Password</li></ul> | A domain user must be used for authentication if verifying domain user group membership. |
 | Verify WinRM Status for Host | Checks the following criteria related to WinRM (PSRemoting) connectivity to the Host: <ul><li>Port scan for port 5985</li><li>Verify WinRM is enabled</li><li>Verify supplied credentials can authenticate</li><li>Verify Invoke-Command runs with supplied credentials The Host field is the host to be tested. The Username and Password fields are used for authentication. If only the Host field is used, the only the port scan and WinRM are tested. If Host, Username, and Password fields are used, then all tests will run.</li></ul> | <ul><li>Host</li></ul> | Only port 5985 is used for testing WinRM (PSRemoting). Port 5986 isn't tested. |
 | Port Scan for Host | Scans the Host for will-known ports: <ul><li>SSH (Port 22)</li><li>RDP (Port 3389)</li><li>WinRM (Port 5985)</li><li>WinRM (Port 5986)</li></ul> | <ul><li>Host</li></ul> | A ping test is also performed and is reported in the output's heading. |
 | Verify SSH Connectivity for Host | Verifies SSH connectivity and authentication to the target Host. The well-known SSH port (port 22) is used by default but can be customized. The Username and Password fields authenticate the SSH session. The ability to run sudo commands, specify which sudo commands the user has access to, and whether the user's sudo commands use the "NOPASSWD" directive are also checked. | <ul><li>Host</li><li>Port</li><li>Username</li><li>Password</li></ul> | N/A |
@@ -178,7 +178,7 @@ in `certlm.msc`. Otherwise, in the PAM-WebService log the "couldn't sign RDP fil
 for RDP Session: Keyset doesn't exist" error appears and the RDP file won't be signed.
 :::
 
-## Update InsecureSkipVerify and RestURL
+## Update `InsecureSkipVerify` and `RestURL`
 
 - **Rest URL** — This setting determines the Rest API URL that send REST calls to the Netwrix
   Privilege Secure Web service.

@@ -1,6 +1,6 @@
 ---
 title: "Action Service Install"
-description: "Action Service Install"
+description: "Install the NPS Action Service on another server and register it with the Privilege Secure server."
 sidebar_position: 20
 ---
 
@@ -30,24 +30,24 @@ To install the NPS Action Service on another server.
 3. Open the `NPS.ActionService.exe` and the Netwrix Privilege Secure Action Service Setup
    wizard opens.
 
-   ![licenseagreement](/images/privilegesecure/25.12/accessmanagement/install/licenseagreement_3.webp)
+   ![Action Service Setup wizard on the license agreement page](/images/privilegesecure/25.12/accessmanagement/install/licenseagreement_3.webp)
 
 4. To install the Action Service in an alternate location, click **Options**.
 
-   ![installlocation](/images/privilegesecure/25.12/accessmanagement/install/installlocation.webp)
+   ![Action Service Setup wizard install location options](/images/privilegesecure/25.12/accessmanagement/install/installlocation.webp)
 
 5. Enter the destination folder for installation and click **OK**.
 6. Read the End User License Agreement and accept the license terms.
 7. Click **Install** to begin the installation. The setup wizard displays the installation
    progress.
 
-   ![installcomplete](/images/privilegesecure/25.12/accessmanagement/install/installcomplete.webp)
+   ![Action Service Setup wizard installation status](/images/privilegesecure/25.12/accessmanagement/install/installcomplete.webp)
 
 8. When the installation is complete, click **Close** to exit the installer.
 
 The Privilege Secure Action Service is now installed on a remote server.
 
-## Register the Remote Action Service with Privilege Secure
+## Register the remote Action Service with Privilege Secure
 
 If the Action Service is installed on a remote machine, it must be configured to register with the
 Privilege Secure server. This configuration is done by supplying the Privilege Secure server and

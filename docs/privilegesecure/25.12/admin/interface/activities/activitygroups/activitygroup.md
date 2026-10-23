@@ -1,6 +1,6 @@
 ---
 title: "Add Activity Groups"
-description: "Add Activity Groups"
+description: "Add an activity group to the Privilege Secure console and assign activities to it."
 sidebar_position: 10
 ---
 
@@ -11,7 +11,7 @@ To add activity groups to the console.
 1. Navigate to the **Activities** page.
 2. In the Activity Groups list, click the **Add Activity Group** icon.
 
-   ![addactivitygroup](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/addactivitygroup.webp)
+   ![Activities page with the Add Activity Group icon](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/addactivitygroup.webp)
 
 3. Enter the following information:
 

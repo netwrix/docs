@@ -1,6 +1,6 @@
 ---
 title: "Start Activity Session"
-description: "Start Activity Session"
+description: "Start an activity session from the Active dashboard, copy or view the session password, and extend a running session."
 sidebar_position: 20
 ---
 
@@ -10,7 +10,7 @@ On the Active Sessions dashboard, when the status Available is shown, the activi
 To begin the activity session, click the **Connection** icon in the **Status** column for the applicable
 session to be automatically connected to the resource.
 
-![Connecto to remote session](/images/privilegesecure/25.12/accessmanagement/enduser/dashboard/remotesessionlaunch.webp)
+![Connect to remote session](/images/privilegesecure/25.12/accessmanagement/enduser/dashboard/remotesessionlaunch.webp)
 
 Also note the icons to view and copy the password for the session as plain text, if the option is
 enabled in the access policy Connection Profiles.
@@ -34,7 +34,7 @@ Alternatively, configure any RDP / SSH Manager for remote login, including:
 See the [Configure DirectConnect for Remote Desktop Connection](/docs/privilegesecure/25.12/enduser/dashboard/active/startsession/rdcmanager.md) topic
 for additional information.
 
-## Session Extension
+## Session extension
 
 Each session will remain active for a pre-configured amount of time based on the Connection Profile
 being used with the Access Policy. Session extension options can be configured in the connection
@@ -51,6 +51,6 @@ For NPS users with the Administrator role, session extension is always enabled.
 
 For RDP, a pop-up message displays in the session window.
 
-![extendsessionssh](/images/privilegesecure/25.12/accessmanagement/enduser/dashboard/extendsessionssh.webp)
+![SSH session prompt to extend the session](/images/privilegesecure/25.12/accessmanagement/enduser/dashboard/extendsessionssh.webp)
 
 For SSH the user can extend by typing **Ctrl+X** when prompted.

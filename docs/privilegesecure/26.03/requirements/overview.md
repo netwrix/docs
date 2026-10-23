@@ -1,6 +1,6 @@
 ---
 title: "Requirements"
-description: "Requirements"
+description: "Review the servers required to install Privilege Secure, including the application server, client, proxy server, and target environment."
 sidebar_position: 20
 ---
 
@@ -11,7 +11,7 @@ in a production environment. Depending on the size of the organization, Netwrix 
 your environment and requirements with a support engineer before deployment to ensure all
 exceptions are covered.
 
-## Architecture Overview
+## Architecture overview
 
 The following servers are required for installation of the product:
 

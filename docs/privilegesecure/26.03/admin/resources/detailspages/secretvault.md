@@ -1,6 +1,6 @@
 ---
 title: "Secrets Vault Details"
-description: "Secret Vault Details"
+description: "Reference for the Secret Vault Details page, including how to add managed accounts and encrypted files and review sessions."
 sidebar_position: 50
 ---
 
@@ -10,7 +10,7 @@ Secret Vaults store any manually-managed resource, username, or password combina
 
 For information on allowing users access to the credentials and files in the vault, see [Access Policy](/docs/privilegesecure/26.03/admin/accesspolicy/addaccesspolicy.md) and create an Access Policy that is Credential based. Then see [Credential-based Access Policy](/docs/privilegesecure/26.03/admin/accesspolicy/credentials.md)
 
-![Secrete Vault Details Page](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/details/secretvaultdetailspage.png)
+![Secret Vault Details Page](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/details/secretvaultdetailspage.png)
 
 The details page shows the following information:
 
@@ -25,7 +25,7 @@ The Accounts tab is where managed account credentials are added to the vault and
 
 - **Search** — Searches the table or list for matches to the search string. When matches are found, the
   table or list is filtered to the matching results.
-- **Add** — Opens the Add a Managed Account window. Add the resource name, username, secret, and comments (opional).
+- **Add** — Opens the Add a Managed Account window. Add the resource name, username, secret, and comments (optional).
 
   ![Add managed account](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/details/addmanagedaccount.png)
 
@@ -49,7 +49,7 @@ The Files tab is where files are added to the vault and has the following featur
 - **Search** — Searches the table or list for matches to the search string.
 - **Add** — Opens the Add Encrypted File window. Drag and drop the file or click the designated area to browse. Add a comment (optional)
 
-  ![Add managed account](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/details/addfile.png)
+  ![Add Encrypted File window](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/details/addfile.png)
 
 - **Edit** — Opens the Update Encrypted File window.
 - **Delete** — Removes the selected item. A confirmation window appears.
@@ -98,7 +98,7 @@ The table has the following columns:
     through a client. See the Start Activity Session topic for additional information.
   - **Completed** — Activity either reached the end of its scheduled end time or was canceled early by
     the requestor
-  - **Canceled** — The session is either expired or was canceled manually by the user or an Privilege
+  - **Canceled** — The session is either expired or was canceled manually by the user or a Privilege
     Secure administrator.
   - **Failed** — Pre-Session stage of the Activity has encountered an error
   - **Locked** — An Privilege Secure administrator has locked the session. See the

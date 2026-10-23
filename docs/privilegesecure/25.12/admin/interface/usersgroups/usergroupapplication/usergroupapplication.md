@@ -1,6 +1,6 @@
 ---
 title: "User, Group, & Application Details Page"
-description: "User, Group, & Application Details Page"
+description: "Reference for the User, Group, & Application Details page, including the lock, unlock, and reset MFA actions and its tabs."
 sidebar_position: 20
 ---
 
@@ -20,8 +20,8 @@ The page has the following features:
 - **Lock Account** — Indicates if the account isn't locked. Click the button to lock the account.
   Accounts can also be locked from the Active Dashboard. An account can also become locked if there
   are five incorrect login attempts from the user.
-- **Unlock Account** — Indicates if the account is locked. When the account is locked, the user not
-  be able to create a session. Click the button to unlock the account.
+- **Unlock Account** — Indicates if the account is locked. When the account is locked, the user isn't
+  able to create a session. Click the button to unlock the account.
 - **Reset MFA** — Click the button to force the user to reset MFA for Privilege Secure login. Resetting
   the user's MFA will generate a new TOTP secret for the user to register an authenticator. See
   [Reset User MFA](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/resetmfa.md) topic for additional information.
@@ -31,7 +31,7 @@ This button will not be visible if the present user has their Authentication Con
 set to Not Required
 :::
 
-The content within the tabs change based on the type of object. See the following topics for
+The content within the tabs changes based on the type of object. See the following topics for
 additional information:
 
 - User Details:

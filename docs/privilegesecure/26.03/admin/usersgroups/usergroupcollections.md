@@ -1,6 +1,6 @@
 ---
 title: "User and Group Collections"
-description: "User and Group Collections"
+description: "Reference for the User and Group Collections page, which manages collections of users and groups that share the same rights."
 sidebar_position: 40
 ---
 

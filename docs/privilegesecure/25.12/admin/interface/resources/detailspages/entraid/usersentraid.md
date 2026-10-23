@@ -1,6 +1,6 @@
 ---
 title: "Users Tab for Microsoft Entra ID"
-description: "Users Tab for Microsoft Entra ID"
+description: "Reference for the Users tab on the Microsoft Entra ID Details page, including account actions, columns, and statuses."
 sidebar_position: 20
 ---
 
@@ -21,13 +21,13 @@ The Users tab has the following features:
 
 - **Manage** — Set the selected account to be managed by Privilege Secure. This button is only available
   when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
-  displays.. You can set password rotation to automatic or manual for managed accounts.
+  displays. You can set password rotation to automatic or manual for managed accounts.
 - **Unmanage** — Remove the account from being managed by Privilege Secure
 - **Schedule Rotation** — Add the credential rotation task to the queue. This button is only available
   when the Method is Automatic managed.
 - **Verify** — Checks that the credentials for the selected account match the credentials set by
   Privilege Secure
-- **View History** — Opens the Password History window to displays the password history for the account
+- **View History** — Opens the Password History window to display the password history for the account
 - **Password Reset Options** — Customize password rotation options. This option is only available for
   managed accounts.
 - **Search** — Searches the table or list for matches to the search string. When matches are found, the

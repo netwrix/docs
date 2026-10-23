@@ -1,14 +1,14 @@
 ---
 title: "Add Users & Groups Window"
-description: "Add Users & Groups Window"
+description: "Select and onboard users and groups with the Add Users & Groups window, and learn the fields and columns it shows."
 sidebar_position: 10
 ---
 
 # Add Users & Groups Window
 
 The Add Users & Groups window lets you select users. From the
-[Users & Groups Page](/docs/privilegesecure/26.03/admin/usersgroups/usersgroups.md), this window onboard users. From other
-interfaces, this window select onboarded users.
+[Users & Groups Page](/docs/privilegesecure/26.03/admin/usersgroups/usersgroups.md), this window onboards users. From other
+interfaces, this window selects onboarded users.
 
 ![Add Users and Groups to the console](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/usersgroups/addusersgroupstoconsole.webp)
 
@@ -40,7 +40,7 @@ The tables in both sections have the following columns:
 - **Email** — Not included for onboarding Displays the associated email address, if available
 - **Domain** — Displays the domain name for the account
 
-## Add Users and Groups
+## Add users and groups
 
 To add users and groups to the console from AD.
 

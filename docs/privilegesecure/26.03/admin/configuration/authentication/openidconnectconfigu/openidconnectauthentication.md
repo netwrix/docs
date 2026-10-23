@@ -1,6 +1,6 @@
 ---
 title: "OpenID Connect Authentication"
-description: "OpenID Connect Authentication"
+description: "Configure OpenID Connect login with an Okta account, including adding users and assigning them to applications."
 sidebar_position: 10
 ---
 
@@ -10,9 +10,9 @@ sidebar_position: 10
 
 The following sections provide configuration information to use OpenID with an Okta account.
 
-### Adding Users
+### Adding users
 
-to use the OpenID login functionality with Privilege Secure an Okta user must match a user
+To use the OpenID login functionality with Privilege Secure an Okta user must match a user
 in an AD domain that Privilege Secure is aware of.
 
 :::note
@@ -60,7 +60,7 @@ Password option to ‘Set by Admin’ and setting it yourself. If the user must 
 their own password then Okta handles it – which won’t give control back to
 Privilege Secure until it’s done.
 
-### Assigning Users to Applications
+### Assigning users to applications
 
 This example has one application with users automatically assigned – but that may not
 always be the case, so…

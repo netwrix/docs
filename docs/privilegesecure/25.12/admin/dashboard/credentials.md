@@ -1,6 +1,6 @@
 ---
 title: "Credentials Dashboard"
-description: "Credentials Dashboard"
+description: "Reference for the Credentials dashboard, including filters, actions, and table columns for managed accounts."
 sidebar_position: 70
 ---
 
@@ -41,7 +41,7 @@ The dashboard has the following features:
   [Scheduled Tasks Page](/docs/privilegesecure/25.12/admin/configuration/servicenodes/scheduledtasks.md) topic for additional information.
 - **Verify** — Checks that the credentials for the selected account match the credentials set by
   Privilege Secure
-- **View History** — Opens the Password History window to displays the password history for the account.
+- **View History** — Opens the Password History window to display the password history for the account.
   See the [Password History Window](/docs/privilegesecure/25.12/admin/interface/credentials/passwordhistory.md) topic for
   additional information.
 - **Refresh** — Reload the information displayed
@@ -51,7 +51,7 @@ The table has the following columns:
 - **Checkbox** — Check to select one or more items
 - **Account** — Name of the account. The following icons may also appear in this column:
   - **Set Password icon** — Opens the Set Password for Credential window to set a new password for the
-    selected account.See the
+    selected account. See the
     [Manage Internal Service Accounts](/docs/privilegesecure/25.12/admin/interface/credentials/manageinternalserviceaccount.md)
     topic.
   - **Clipboard icon** — Copies the password for the selected account

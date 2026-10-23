@@ -1,6 +1,6 @@
 ---
 title: "Action Service"
-description: "Action Service"
+description: "View the Action Service event logs, the action queue, and the properties of a selected action service."
 sidebar_position: 10
 ---
 
@@ -17,7 +17,7 @@ The Action Service page shows details of the selected action service and has the
 - Action Queue Tab
 - Properties Tab
 
-## Action Logs Tab
+## Action Logs tab
 
 The Action Logs tab shows the event logs for the action service.
 
@@ -37,10 +37,10 @@ The Action Logs table has the following features:
   - **Status** — Shows status information for the action:
     - **Complete** — Action completed successfully
     - **Failed** — Action failed
-  - **Start Time** — Indications when the action started
-  - **End Time** — Indications when the action completed
+  - **Start Time** — Indicates when the action started
+  - **End Time** — Indicates when the action completed
 
-## Action Queue Tab
+## Action Queue tab
 
 The Action Queue tab shows the tasks to be executed by the action service.
 
@@ -60,10 +60,10 @@ The Action Queue table has the following features:
   - **Status** — Shows status information for the action:
     - **Complete** — Action completed successfully
     - **Failed** — Action failed
-  - **Start Time** — Indications when the action started
-  - **End Time** — Indications when the action completed
+  - **Start Time** — Indicates when the action started
+  - **End Time** — Indicates when the action completed
 
-## Properties Tab
+## Properties tab
 
 The Properties tab shows additional information about the action service.
 
