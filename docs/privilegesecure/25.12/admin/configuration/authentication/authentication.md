@@ -10,8 +10,8 @@ The Authentication page is accessible from the Navigation pane under Configurati
 configured multi-factor authentication (MFA) or other third-party authentication connectors such as
 OpenID Connect and SAML.
 
-Once configured, an authentication method may be assigned to any users who will use the method for
-accessing the application. See the
+After you configure an authentication method, you can assign it to any users who use the method to
+access the application. See the
 [Authentication Connector Tab](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/authenticationconnector.md) topic for
 additional information.
 
@@ -20,16 +20,16 @@ additional information.
 The pane on the left side of the page displays a list of the configured authentication connectors.
 This pane has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
 - **Green +** — Create a new connector. See the
   [Add Authentication Connector](/docs/privilegesecure/25.12/admin/configuration/authentication/authenticationconnector.md) topic for additional
   information.
-- **Default icon** — Indicates if connector is set as default. Icon appears when activity is hovered
-  over. Click the icon to change or clear the default.
-- **Exclusive icon** — Indicates if connector is set as exclusive. Icon appears when activity is hovered
-  over. Click the icon to change or clear the default.
-- **Trashcan icon** — Deletes the connector. Icon appears when activity is hovered over. A confirmation
+- **Default icon** — Indicates if connector is set as default. Icon appears when you hover over the
+  activity. Click the icon to change or clear the default.
+- **Exclusive icon** — Indicates if connector is set as exclusive. Icon appears when you hover over the
+  activity. Click the icon to change or clear the default.
+- **Trashcan icon** — Deletes the connector. Icon appears when you hover over the activity. A confirmation
   window displays.
 
 The selected connector details display at the top of the main pane:
@@ -51,14 +51,14 @@ The following fields apply to the MFA Connector Type:
 - **Auth Type** — Security protocol used for communications between the Privilege Secure server and the
   RADIUS proxy
 - **Shared Secret** — Shared secret for the RADIUS proxy
-- **Max Retries** — Indicates how many times the Privilege Secure server will attempt to communicate
+- **Max Retries** — Indicates how many times the Privilege Secure server attempts to communicate
   with the RADIUS proxy
 - **Timeout (Seconds)** — Indicates how long before Privilege Secure determines that the communication
   with the RADIUS proxy has failed
 - **Title for MFA Auth Dialog** — Title that appears at the top of the authentication dialog
 - **Text for MFA Auth Dialog** — Text that displays to the user prompting for action
 - **Send NAS Identifier checkbox** — Indicates if the NAS identifiers are transmitted to the RADIUS
-  proxy. This is required for certain RADIUS proxy implementations that require it. The NAS IP
+  proxy. Certain RADIUS proxy implementations require this. The NAS IP
   Address value is the IP address of the Privilege Secure server; the NAS Identifier is “SbPAM”.
 - **Send Initial Text checkbox** — Indicates if the value in the Initial Auto Response Text is
   automatically sent to the RADIUS proxy without user action
@@ -66,11 +66,11 @@ The following fields apply to the MFA Connector Type:
   Initial Text option is enabled. For example, this might be “push” to immediately have the user’s
   phone app prompt for authorization.
 - **Prefix for Response Text** — Displays the value that is added to the beginning of the responses. The
-  value will vary according to server.
+  value varies according to server.
 - **Format for Username (Allows Custom Entries)** — Displays the Username value that is sent to the
   RADIUS server (default: SAMAccountname@NetBiosDomain). This format is used by the
   authenticator at log in. If configured to use "Email" or "UPN" (optional attributes) the
-  authenticator will use that format at log in, but send the default value to the RADIUS server.
+  authenticator uses that format at log in, but send the default value to the RADIUS server.
 
 ## OpenID Connect connector type
 
@@ -107,19 +107,19 @@ The following fields apply to the SAML Connector Type:
 
 ## Set authentication as default login
 
-Once a third-party authentication connector is configured, it can be set as the default form of
-authentication, or it can be set as the exclusive form of authentication. Hover over the
+After you configure a third-party authentication connector, you can set it as the default form of
+authentication or as the exclusive form of authentication. Hover over the
 authentication connector to display the configuration options.
 
 ![Authentication Connector Options](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/authenticationoptions.webp)
 
-There are two options that can be configured for the authentication connector, Set as Default and
-Set as Exclusive.
+You can configure two options for the authentication connector: Set as Default and Set as
+Exclusive.
 
 | Description | Option | Login Screen |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Set as Default — Sets the authentication connector as the default login option and includes the option to login with Active Directory credentials | ![Set authentication connector as Default](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/authenticationsetdefault.webp) | ![Set authentication connector as Default Login Screen](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/authenticationsetdefaultlogin.webp) |
 | Set as Exclusive — Sets the authentication connector as the only option to login and the option to login with Active Directory credentials is removed | ![Set authentication connector as Exclusive](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/authenticationsetexclusive.webp) | ![Set authentication connector as Exclusive Login Screen](/images/privilegesecure/25.12/accessmanagement/admin/configuration/page/authenticationsetexclusivelogin.webp) |
 
-after you set the authentication connector to Default or Exclusive, the login updates to
+After you set the authentication connector to Default or Exclusive, the login updates to
 reflect the configuration selected.

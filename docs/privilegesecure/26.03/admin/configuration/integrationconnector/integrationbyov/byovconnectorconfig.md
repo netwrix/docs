@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Bring Your Own Vault (BYOV) Connector Configuration
 
-This topic walks through the steps necessary to configure Netwrix Privilege Secure as a BYOV
-Integration Connector that lets you perform activities as a specific user account. This can be
-done with accounts managed by Privilege Secure, or with accounts stored in a Secret Vault
+This topic describes how to configure Netwrix Privilege Secure as a BYOV
+Integration Connector that lets you perform activities as a specific user account. You can do this
+with accounts managed by Privilege Secure, or with accounts stored in a Secret Vault
 within Privilege Secure.
 
 Use this workflow to bypass the default "Enable Account" and "Disable Account" pre-session and
@@ -218,7 +218,7 @@ To set an account password.
 3. Enter a password to match the AD password, then click **Save**.
 
    :::note
-   For versions before Privilege Secure 4.1, a support ticket will be needed as the Set
+   For versions before Privilege Secure 4.1, open a support ticket because the Set
    Password feature isn't available.
    :::
 
@@ -228,7 +228,7 @@ topic for additional information on manually managing an account.
 
 ### Create an activity
 
-After the password has been set for the account, create an activity for the BYOV connector.
+After you set the password for the account, create an activity for the BYOV connector.
 
 To create an activity.
 
@@ -266,7 +266,7 @@ Activity.
 
 ### Configure a new policy
 
-Once an Activity has been created, configure a new Policy.
+After you create an Activity, configure a new Policy.
 
 To create a Policy.
 
@@ -297,9 +297,8 @@ See the [Add Access Policy](/docs/privilegesecure/26.03/admin/accesspolicy/addac
 creating an Access Policy.
 
 After completing these steps, you can use the specified manually-managed user on the resources
-outlined in the policy. This setup is ideal for scenarios where a single account is used across
-multiple resources but must be managed through Privilege Secure for enhanced security and
-management.
+outlined in the policy. Use this setup when a single account is used across
+multiple resources but must be managed through Privilege Secure.
 
 ![My Activities BYOV Connector](/images/privilegesecure/26.03/accessmanagement/admin/configuration/add/byovconnectormyactivities.webp)
 

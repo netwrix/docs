@@ -7,8 +7,8 @@ sidebar_position: 30
 # Approvals Dashboard
 
 The Approvals Dashboard displays requested sessions that require approval. Users and group members
-designated as approvers see the pending sessions queued here. The session must be approved
-before the requestor can log in to the session. See the
+designated as approvers see the pending sessions queued here. An approver must approve the session
+before the requestor can log in to it. See the
 [Connection Profiles Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofiles.md) topic for additional information on
 Approval Workflows.
 
@@ -16,8 +16,8 @@ Approval Workflows.
 
 The Approvals Dashboard has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, the
+  search filters the table or list to the matching results.
 - **Approve** — Approves the selected sessions
 - **Deny** — Denies the selected sessions
 - **Refresh** — Reload the information displayed
@@ -42,4 +42,4 @@ The table has the following columns:
 - **Notes** — Any notes that were entered when the session was created
 - **Ticket Number** — Any ticket numbers that were entered when the session was created
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.

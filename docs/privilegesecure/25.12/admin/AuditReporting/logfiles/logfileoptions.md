@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Log File Options Pages
 
-The log level can be customized for each service. The left of the page lists the configurable
+You can customize the log level for each service. The left of the page lists the configurable
 options:
 
 - Action Service

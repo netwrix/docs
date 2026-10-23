@@ -12,8 +12,8 @@ The Scheduled sessions dashboard shows all scheduled sessions.
 
 The Scheduled Sessions table has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, the
+  search filters the table or list to the matching results.
 - **Create Session** — Open the Activity Request window. See the
   [Create Activity Session](/docs/privilegesecure/25.12/enduser/dashboard/active/createsession.md) topic for additional
   information.
@@ -33,11 +33,11 @@ The table has the following columns:
     through a client. See the Start Activity Session topic for additional information.
   - **Failed** — Pre-Session stage of the Activity has encountered an error
   - **Logged In** — User is successfully logged in to the Resource either directly or via the Proxy.
-    Direct log-in is detected by polling the Resource at regular intervals and may not update
-    immediately.
+    Privilege Secure detects direct log-in by polling the Resource at regular intervals, so the
+    status may not update immediately.
   - **Canceling** — The session expired, or the user or a Privilege
     Secure administrator canceled it manually.
-  - **Locked** — An Privilege Secure administrator has locked the session. See the
+  - **Locked** — A Privilege Secure administrator has locked the session. See the
     [Lock Session](/docs/privilegesecure/25.12/admin/dashboard/active/locksession.md) topic for additional information.
 - **Requested** — Date and time of when the session was created
 - **Requested By** — User who requested the session
@@ -50,4 +50,4 @@ The table has the following columns:
 - **End** — Indicates when the session is scheduled to end the activity, which is determined by the
   start time plus the maximum session duration set by the access policy Connection Profile
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.

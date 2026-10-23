@@ -9,7 +9,7 @@ sidebar_position: 40
 The Schedule Policies page is accessible from the Navigation pane under Policies > Platforms. It
 shows configured schedule policies.
 
-Schedules can be applied:
+You can apply schedules to the following:
 
 - **Platforms** — Configure schedules used by resources on a given platform type. See the
   [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic for additional information.
@@ -18,7 +18,7 @@ Schedules can be applied:
 - **Change Policy (credential rotation)** — How often the password of a managed account is changed. See
   the [Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md) topic for additional information on
   managed accounts.
-- **Host scan** — Scan a host resource for local users, groups, windows services and scheduled tasks
+- **Host scan** — Scan a host resource for local users, groups, windows services, and scheduled tasks
 - **Verification** — Check that the passwords for managed accounts match the credentials set by
   Privilege Secure
 
@@ -31,11 +31,11 @@ has the following features:
   table or list is filtered to the matching results.
 - **Green + button** — Create a new schedule policy. See the
   [Add Schedule Policy](/docs/privilegesecure/25.12/admin/interface/platforms/schedulepolicies/schedulepolicy.md) topic for additional information.
-- **Trashcan icon** — Deletes the schedule policy. Icon appears when profile is hovered over. A
+- **Trashcan icon** — Deletes the schedule policy. The icon appears when you hover over the policy. A
   confirmation window displays.
 
 :::note
-The default password policy can't be deleted.
+You can't delete the default password policy.
 :::
 
 The selected schedule policy details display in the main pane:

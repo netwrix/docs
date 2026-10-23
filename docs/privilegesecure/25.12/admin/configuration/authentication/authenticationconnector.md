@@ -21,7 +21,7 @@ To add an authentication connector to the console.
 
    :::note
    After you select the Connection Type, additional fields become available. The available
-   fields will change depending on the selection.
+   fields change depending on the selection.
    :::
 
 4. Enter the information from the applicable authentication connector provider. See the
@@ -36,4 +36,4 @@ To add an authentication connector to the console.
 
 5. Click **Save** to create the new authentication connector.
 
-The new authentication connector is added to the Connectors list.
+The new authentication connector appears in the Connectors list.

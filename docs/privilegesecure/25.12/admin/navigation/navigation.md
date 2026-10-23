@@ -12,7 +12,7 @@ Help link and the User Menu:
 ![Top menu bar with the interface links, Help, and User Menu](/images/privilegesecure/25.12/accessmanagement/admin/topbar.webp)
 
 - Interfaces:
-  - **Access** — Grants access to the My Activities page. Activities are displayed as individual
+  - **Access** — Grants access to the My Activities page. The page shows activities as individual
     cards, organized alphabetically or by Access Policy. See the
     [Access > My Activities Page](/docs/privilegesecure/25.12/admin/myactivities/myactivities.md) topic for additional information.
   - **Dashboard** — View summaries of recent activity logs and user sessions. See the
@@ -42,8 +42,8 @@ display. Use the Menu button to the left of the logo to collapse / expand the Na
 
 ## Console icons
 
-The Privilege Secure Console makes it easy to gather detailed information at a glance. The following
-tables show the main icons:
+The Privilege Secure Console uses icons to show information. The following tables show the main
+icons:
 
 **Interface icons**
 

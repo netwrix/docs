@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Add a Managed User Window
 
-You can add manually managed user accounts to the website resource. These accounts are useful for
-activities on the resource by specifying the username value in the “Login Account Template” field of
-the Activity. See the [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
+You can add manually managed user accounts to the website resource. Activities on the resource can use
+these accounts when you specify the username value in the “Login Account Template” field of the
+Activity. See the [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
 
 To add or edit a managed user account for the resource.
 
@@ -37,4 +37,4 @@ Only applicable to Website resources.
 
 5. Click **Okay** to accept changes.
 
-The managed user is added to the resource and shown on the Users tab.
+Privilege Secure adds the managed user to the resource and shows it on the Users tab.

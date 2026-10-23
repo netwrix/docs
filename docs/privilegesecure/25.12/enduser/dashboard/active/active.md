@@ -14,8 +14,8 @@ Policy.
 
 The Active Sessions table has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When the search finds
+  matches, it filters the table or list to the matching results.
 - **Create Session** — Open the Activity Request window. See the
   [Create My Activity Session](/docs/privilegesecure/25.12/enduser/myactivities/createsession.md) topic for additional information.
 - **End Session** — Cancel the selected sessions
@@ -37,8 +37,8 @@ The table has the following columns:
     information.
   - **Failed** — Pre-Session stage of the Activity has encountered an error
   - **Logged In** — User is successfully logged in to the Resource either directly or via the Proxy.
-    Direct log-in is detected by polling the Resource at regular intervals and may not update
-    immediately.
+    Privilege Secure detects direct log-in by polling the Resource at regular intervals, so this
+    status may not update immediately.
   - **Canceling** — The session expired, or the user or a Privilege
     Secure administrator canceled it manually.
   - **Locked** — The session has been locked by a Privilege Secure administrator

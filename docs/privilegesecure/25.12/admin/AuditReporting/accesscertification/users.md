@@ -13,9 +13,9 @@ reviewer must certify access entitlement.
 
 The Users table has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
-- Column headers can be resized and sorted by ascending or descending order:
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
+- You can resize column headers and sort them in ascending or descending order:
   - **Name** — Click to open the Users and Groups Details page. See the
     [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md)
     topic for additional information.
@@ -43,11 +43,11 @@ It isn't possible to add or remove users after they are added.
    The Add Users and Groups window has the following features:
 
    - Filter by users or groups
-   - **Search** — Searches the table or list for matches to the search string. When matches are found, the
-     table or list is filtered to the matching results.
+   - **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+     filters the table or list to the matching results.
    - **Available Users/Groups** — Shows all users and groups added to the console
    - **Users & Groups to Add** — Shows the users to be added to the access certification task
-   - Column headers can be sorted in ascending or descending order:
+   - You can sort column headers in ascending or descending order:
      - **Name** — Displays the name of the account
      - **User Name** — SAM Account Name for the user or group
      - **User Principal Name** — User Principal Name (UPN) of the user or group
@@ -66,8 +66,8 @@ It isn't possible to add or remove users after they are added.
 
 7. Click **Add** to add the users and groups to the access certification task.
 
-The new users and groups are added to the certification task and are shown on the Users Tab for
-Access Certification.
+The new users and groups appear in the certification task and on the Users Tab for Access
+Certification.
 
 :::note
 Only the assigned reviewer can interact with the entitlements after the access

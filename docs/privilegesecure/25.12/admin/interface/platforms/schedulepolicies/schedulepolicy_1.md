@@ -17,7 +17,7 @@ To edit the scheduled tasks.
    run:
 
    :::note
-   The fields will change depending on the selected frequency.
+   The fields change depending on the selected frequency.
    :::
 
    - **Every X Hours** — Enter the number of hours between executions
@@ -27,4 +27,4 @@ To edit the scheduled tasks.
 
 4. Click **Save** to accept the changes.
 
-The task will run at the new scheduled frequency.
+The task runs at the new scheduled frequency.

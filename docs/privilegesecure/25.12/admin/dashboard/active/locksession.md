@@ -1,13 +1,13 @@
 ---
 title: "Lock Session"
-description: "Lock a user's session from the Active dashboard or the Live Session Viewer when suspicious activity is observed."
+description: "Lock a user's session from the Active dashboard or the Live Session Viewer when you observe suspicious activity."
 sidebar_position: 50
 ---
 
 # Lock Session
 
-You can lock out the user if suspicious or unauthorized activity is
-observed, either from the [Active Dashboard](/docs/privilegesecure/25.12/admin/dashboard/active/active.md), or the
+You can lock out the user if you observe suspicious or unauthorized
+activity, either from the [Active Dashboard](/docs/privilegesecure/25.12/admin/dashboard/active/active.md), or the
 [Live Session Viewer Window](/docs/privilegesecure/25.12/admin/dashboard/active/liveviewer.md).
 
 To lock a session.
@@ -35,7 +35,7 @@ To lock a session.
 
 3. Click **Okay** to confirm.
 
-The session is locked and the Lock Session message displays to the session user within their RDP
+Privilege Secure locks the session and displays the Lock Session message to the session user within their RDP
 or SSH clients. To unlock an active session, either:
 
 - From the Active Dashboard, select the session and click **Unlock Activity**.

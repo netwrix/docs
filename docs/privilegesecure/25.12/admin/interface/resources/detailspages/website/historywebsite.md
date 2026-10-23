@@ -12,8 +12,8 @@ The History tab shows information about the session history of the selected reso
 
 The History tab has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When the search finds matches, the
+  table or list shows only the matching results.
 - **View Logs** — Opens the Session Logs window to view the action log for the selected session. See the
   [Session Logs Window](/docs/privilegesecure/25.12/admin/dashboard/historical/sessionlogs.md) topic for additional information.
 - **Refresh** — Reload the information displayed
@@ -31,4 +31,4 @@ The table has the following columns:
 - **Event Message** — Description of the event
 - **Session ID** — Unique identifier for the session
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.

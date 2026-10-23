@@ -21,9 +21,9 @@ access certification task.
 
    The Review Activity Details window has the following features:
 
-   - **Search** — Searches the table or list for matches to the search string. When matches are found, the
-     table or list is filtered to the matching results.
-   - Column headers can be sorted in ascending or descending order:
+   - **Search** — Searches the table or list for matches to the search string. When the search finds
+     matches, it filters the table or list to the matching results.
+   - You can sort the columns in ascending or descending order:
      - **Checkbox** — Check to select activities to modify
      - **Status** — Shows status information on the user’s access:
        - **Requested** — Review of access initiated
@@ -31,8 +31,8 @@ access certification task.
        - **Denied** — Access is removed for that specific user/resource/permission
 
        :::note
-       The user isn't removed from the access policy. Instead, a ‘deny flag’ is set
-       against that attribute so that it can be re-enabled in the future.
+       The user isn't removed from the access policy. Instead, Privilege Secure sets a ‘deny flag’
+       against that attribute so that you can re-enable it in the future.
        :::
 
      - **Name** — Displays the name of the account
@@ -49,27 +49,28 @@ access certification task.
 5. To remove access, select the applicable rows and click **Deny**.
 
    :::note
-   The user isn't removed from the access policy. Instead, a ‘deny flag’ is set against that
-   attribute so that it can be re-enabled in the future.
+   The user isn't removed from the access policy. Instead, Privilege Secure sets a ‘deny flag’
+   against that attribute so that you can re-enable it in the future.
    :::
 
-6. When the entitlements have been reviewed, click **Close**. Changes are saved to the
-   selected access certification task and shown on the Entitlements Tab for Access Certification.
+6. When you finish reviewing the entitlements, click **Close**. Privilege Secure saves the changes
+   to the selected access certification task and shows them on the Entitlements Tab for Access
+   Certification.
 
    :::note
-   It isn't necessary to review all entitlements at once. Changes are automatically saved to
-   the selected access certification task and can be returned to at any time (the Status shows as
-   Incomplete).
+   You don't need to review all entitlements at once. Privilege Secure saves changes to the
+   selected access certification task automatically, and you can return to it at any time (the
+   Status shows as Incomplete).
    :::
 
    :::warning
-   Committed changes can't be undone. A new access certification task must be created.
+   You can't undo committed changes. Instead, create a new access certification task.
    Alternatively, you can manually reassign users to an access policy.
    :::
 
-7. When all entitlements have been reviewed, the **Commit** button is enabled. Click **Commit** to
-   save the changes to user access.
+7. When you've reviewed all entitlements, the **Commit** button becomes available. Click
+   **Commit** to save the changes to user access.
 
-When the changes have been committed, the export button is enabled. Export the table to CSV if
-desired. The status of the access certification task will change to Complete. Now that the access
-entitlements have been reviewed, the task can't be deleted.
+After you commit the changes, the export button becomes available. You can export the table to
+CSV. The status of the access certification task changes to Complete. After you review the access
+entitlements, you can't delete the task.

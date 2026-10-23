@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Password Secure Integration
 
-Netwrix Privilege Secure now integrates with Netwrix Password Secure to enable centralized, secure management of privileged credentials. This allows organizations to perform actions as specific users using credentials stored and managed in Password Secure, without exposing or manually handling those credentials. The integration streamlines privileged access workflows across both platforms, enhancing security and operational efficiency.
+Netwrix Privilege Secure integrates with Netwrix Password Secure for centralized management of privileged credentials. With this integration, you can perform actions as specific users with credentials stored and managed in Password Secure, without exposing or manually handling those credentials.
 
 ## Password Secure configuration
 
@@ -14,7 +14,7 @@ Netwrix Privilege Secure now integrates with Netwrix Password Secure to enable c
 
 Before you begin configuring the integration, you must have a working Password Secure server and Web Application set up.
 
-Password Secure should be installed on a separate server from NPS and properly configured before integration. It also requires its own database to store credentials.
+Install Password Secure on a separate server from Netwrix Privilege Secure (NPS) and configure it before integration. It also requires its own database to store credentials.
 
 Follow the instructions in the official documentation to install and configure the **Password Secure server** ([installation guide](/docs/passwordsecure/9_3/installation/)) and to start the **Web Application** ([web application guide](/docs/passwordsecure/9_3/configuration/webapplication/web_application)).
 
@@ -151,7 +151,7 @@ In production environments, you will typically use existing users.
 
 After completing these steps, you can use the specified user accounts on the defined resources.
 
-This setup is ideal for scenarios where a single account is used across multiple resources but must be managed securely with credentials stored in Password Secure.
+Use this setup when a single account is used across multiple resources and its credentials are stored in Password Secure.
 
 ## System diagram: vault login activity with Password Secure integration
 
@@ -162,8 +162,8 @@ When a vault login-type activity is initiated and the selected vault is of type 
 3. The **VaultConnector PasswordSecure module** receives the request and calls the appropriate cmdlet (**Get-VaultCredential**).
 4. The cmdlet logs in to Password Secure using the configured **API Key**.
 5. The module searches for the specified Domain\User in Password Secure.
-6. If the user's password is found, the credential is returned to the requester.
-7. If the user's password isn't found, a null value is returned.
+6. If the module finds the user's password, it returns the credential to the requester.
+7. If the module doesn't find the user's password, it returns a null value.
 
 ![Password Secure Vault Diagram](/images/privilegesecure/26.03/accessmanagement/admin/configuration/integrationdetails/ps-vault-diagram.webp)
 

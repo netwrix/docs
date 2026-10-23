@@ -32,7 +32,7 @@ To add a new user, click the **Add Person** button:
 
 ![Add person to Okta](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/oktaaddperson.webp)
 
-Privilege Secure will use the ‘Username’ value to search the host-user table for the matching user.
+Privilege Secure uses the ‘Username’ value to search the host-user table for the matching user.
 
 The OpenID Connector configuration screen gives 3 options for the host-user field that the Okta
 Username is matched against – under the **Login Format** dropdown:
@@ -52,20 +52,20 @@ The following two Okta users both map to the same sbpam.local user
 
 ![Okta login format](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/oktaloginformat.webp)
 
-To use the first account the Privilege Secure OpenID Connector Login Format should be set to Email,
-for the second UPN.
+To use the first account, set the Privilege Secure OpenID Connector Login Format to Email. To use
+the second, set it to UPN.
 
 To create a user, enter the appropriate Username value and other data. Set the
-Password option to ‘Set by Admin’ and setting it yourself. If the user must set (or reset)
+Password option to ‘Set by Admin’ and set it yourself. If the user must set (or reset)
 their own password then Okta handles it – which won’t give control back to
 Privilege Secure until it’s done.
 
 ### Assigning users to applications
 
-This example has one application with users automatically assigned – but that may not
-always be the case, so…
+This example has one application with users automatically assigned, but that isn't always the
+case.
 
-After you create the user click their name and you sees the User Details screen:
+After you create the user, click their name to open the User Details screen:
 
 ![Assign Apps top users](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/oktaassignapps.webp)
 

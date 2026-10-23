@@ -16,8 +16,8 @@ assigned to them here.
 On the left of the page, the Access Certification Task list shows the different access certification
 tasks and has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
 - **Add Access Cert. Task icon** — Add an access certification task to the list. See the
   [Add Access Certification Task](/docs/privilegesecure/25.12/admin/AuditReporting/accesscertification/accesscertificationtask.md) topic for additional
   information.
@@ -37,8 +37,8 @@ features:
 
 - **Name** — Displays the name of the task.
 - **Description** — (Optional) Description of the policy.
-- **Reviewer** — The reviewer that the access certification task is assigned to. Only users with the
-  Reviewer role can be assigned as a reviewer. See the
+- **Reviewer** — The reviewer that the access certification task is assigned to. You can assign only
+  users with the Reviewer role as a reviewer. See the
   [Role Management Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/rolemanagement.md) topic for additional information
 - **Status** — Shows status information for the task
 - **Date Started (only visible once review is started)** — Date the reviewer begins to review the access

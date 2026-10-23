@@ -6,15 +6,15 @@ sidebar_position: 30
 
 # Website Details Page
 
-The Website Details page shows additional information for the selected website resource. This page
-is opened from any linked resource within the various interfaces.
+The Website Details page shows additional information for the selected website resource. You can open
+this page from any linked resource within the various interfaces.
 
 ![Website Resource details page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/details/websitedetails.png)
 
 The details page shows the following information:
 
 - **Name** — Displays the name of the resource
-- **Trashcan icon** — Removes the selected resource from being managed by the application. A
+- **Trashcan icon** — Stops the application from managing the selected resource. A
   confirmation window displays.
 - **Platform** — Displays the type of platform, which defines the resource
 - **Logon URL** — Displays the primary logon page. This is only used if no URL is specified when

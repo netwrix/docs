@@ -12,9 +12,9 @@ The Events page shows event logs for the Privilege Secure Console.
 
 The Events page has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
-- Column headers can be sorted in ascending or descending order:
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
+- You can sort column headers in ascending or descending order:
   - **Status** — Shows status information for the session
     - Information
     - Error

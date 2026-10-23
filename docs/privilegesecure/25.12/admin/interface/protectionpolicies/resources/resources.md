@@ -26,4 +26,4 @@ The table has the following columns:
 - **DNS Host Name** — Displays the DNS host name for a host resource or the FQDN for a domain resource
 - **Operating System** — Displays the operating system of the resource
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.

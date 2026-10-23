@@ -13,8 +13,8 @@ Active dashboard and click the **View Logs** button to open the Session Logs win
 
 The window has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, the
+  search filters the table or list to the matching results.
 - **Filter** — Provides options to filter results based on a chosen criterion:
   - **Log Level** — Filter by the message Status level: Debug, Info, Warn, or Error
   - **Requested date** — Filter by session start and/or end dates
@@ -23,7 +23,7 @@ The window has the following features:
 - **Action Service Version** — Indicates the version of the Privilege Secure action service that ran the
   activity
 - **Refresh** — Reload the information displayed
-- **Okay** — Click to close the window, which can also be closed with the X in the upper-right corner
+- **Okay** — Click to close the window. You can also close it with the X in the upper-right corner.
 
 The table has the following columns:
 
@@ -34,4 +34,4 @@ The table has the following columns:
   - **Log Level** — Indicates message log level: Debug, Info, Warn, or Error
 - **Message** — Displays the logged details of the message
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.

@@ -12,7 +12,7 @@ to use them.
 
 ![Audit and Reporting menu expanded in the Privilege Secure Console](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/interface.webp)
 
-Click **Audit and Reporting** to expand the menu. Settings can be configured for:
+Click **Audit and Reporting** to expand the menu. You can configure settings for:
 
 - [Access Certification Page](/docs/privilegesecure/25.12/admin/AuditReporting/accesscertification/accesscertification.md) — Audit and remediate user access
 - [Activity Log Page](/docs/privilegesecure/25.12/admin/AuditReporting/activitylog.md) — View activity logs for users and resources

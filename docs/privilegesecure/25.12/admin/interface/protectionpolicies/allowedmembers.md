@@ -42,7 +42,7 @@ To add local groups to the selected protection policy.
    - **Group Name** — Displays the name of the group.
 
      :::note
-     Privilege Secure can't be used to create a group. The group must already exist on the
+     You can't use Privilege Secure to create a group. The group must already exist on the
      resource.
      :::
 
@@ -50,9 +50,9 @@ To add local groups to the selected protection policy.
 
 5. Click **Save** to add the group to the protection policy.
 
-The new group is added to the protection policy and is shown on the Allowed Members Tab for
-Protection Policies. When the resource is scanned, any group members not permitted by the protection
-policy is removed from the local group on the resource.
+The new group appears on the Allowed Members Tab for Protection Policies. When Privilege Secure
+scans the resource, it removes any group members not permitted by the protection policy from the
+local group on the resource.
 
 ## Edit protected group members
 

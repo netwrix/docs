@@ -25,8 +25,8 @@ Only applicable to Microsoft Entra ID and Website resources.
 
    - **URL** — The URL or string to match
    - **Match Type** — A Match Type is required:
-     - **Domain** — A match is made on the domain name
-     - **Exact** — A match will only be made if the URL exactly matches
+     - **Domain** — Match on the domain name
+     - **Exact** — Only match if the URL exactly matches
      - **Never** — Never match the URL
      - **StartsWith** — Only match if the URL starts with this value
      - **Regex** — Match based upon valid regex string
@@ -34,4 +34,4 @@ Only applicable to Microsoft Entra ID and Website resources.
 
 5. Click **Save** to accept changes.
 
-The URL is added to the resource and shown on the URLs tab.
+Privilege Secure adds the URL to the resource and shows it on the URLs tab.

@@ -18,8 +18,8 @@ steps to add an access certification task.
 
    - **New Cert. Task** — Displays the name of the task.
    - **Description** — (Optional) Description of the policy.
-   - **Reviewer** — Select a reviewer from the dropdown menu. Only users with the Reviewer role can be
-     assigned as reviewer. See the [Role Management Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/rolemanagement.md) topic
+   - **Reviewer** — Select a reviewer from the dropdown menu. You can assign only users with the Reviewer
+     role as reviewer. See the [Role Management Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/rolemanagement.md) topic
      for additional information.
 
 4. Click **Save** to create the new access certification task.
@@ -28,4 +28,4 @@ steps to add an access certification task.
    - **Users** — Add users or groups to the access certification task. See the
      [Add Users to Review](/docs/privilegesecure/25.12/admin/AuditReporting/accesscertification/users.md#add-users-to-review) section.
 
-The new task is added to the Access Certification Task list.
+The new task appears in the Access Certification Task list.

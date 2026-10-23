@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Terminate Proxy Session Window
 
-When viewing a session with the live session viewer, You can disconnect the session in the
-event that suspicious or unauthorized activity is observed.
+When viewing a session with the live session viewer, you can disconnect the session if you
+observe suspicious or unauthorized activity.
 
 To lock the session.
 
@@ -26,4 +26,4 @@ To lock the session.
    [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic
    for additional information.
 
-The session is terminated.
+Privilege Secure terminates the session.

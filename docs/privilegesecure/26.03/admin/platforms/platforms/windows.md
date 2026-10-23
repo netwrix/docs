@@ -16,7 +16,7 @@ configuration options for a Windows Platform.
 - **Name** — Displays the name of the policy
 - **Description** — Description of the policy
 - **Built-in Account (Allows custom entries)** — The built-in administrator account for the resources on
-  the selected platform. If multiple built-in administrator accounts are required, create a copy of
+  the selected platform. If you need multiple built-in administrator accounts, create a copy of
   the platform. For Windows platforms, the built-in account is defined via the well-known SID
   (S-1-5-21\*-500). This feature informs Netwrix Privilege Secure which accounts to discover and
   onboard for a given platform during its discovery process.
@@ -26,13 +26,13 @@ configuration options for a Windows Platform.
 - **Password Length** — The number of characters required by the selected password policy
 - **Arrow icon** — Show or Hide password policy details. Click the icon to display the password
   complexity requirements of the selected password policy.
-- **Protection Policy Schedule** — How often the Protection Policy is run. See the
+- **Protection Policy Schedule** — How often the Protection Policy runs. See the
   [Protection Policies Page](/docs/privilegesecure/26.03/admin/resources/protectionpolicies/protectionpolicies.md) topic for additional information.
-- **Scheduled Change Policy** — How often the credentials for a managed account are changed (credential
+- **Scheduled Change Policy** — How often Privilege Secure changes the credentials for a managed account (credential
   rotation). See the [Credentials Dashboard](/docs/privilegesecure/26.03/admin/dashboard/credentials.md) and
   [Schedule Policies Page](/docs/privilegesecure/26.03/admin/platforms/schedulepolicies/schedulepolicies.md) topic for additional information.
 - **Scan Schedule** — How often to perform a host scan on the resources defined by the selected platform
-  (local users, groups, windows services and scheduled tasks). This scan can also be run ad-hoc from
+  (local users, groups, windows services and scheduled tasks). You can also run this scan ad-hoc from
   the [Resources Page](/docs/privilegesecure/26.03/admin/resources/resources.md).
 - **Verification Schedule** — How often to verify the credentials for managed accounts on the resources
   defined by the selected platform. See the

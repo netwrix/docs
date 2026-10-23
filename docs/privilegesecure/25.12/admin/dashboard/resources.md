@@ -30,7 +30,7 @@ The Resources table has the following features:
     [Add Secret Vault](/docs/privilegesecure/25.12/admin/interface/resources/secretvault.md) topic for additional information.
   - **New Database** — Opens the Database Details page for a new database. See the
     [Add New Database](/docs/privilegesecure/25.12/admin/interface/resources/database.md) topic for additional information.
-- **Remove** — Removes the selected resource from being managed by the application. A confirmation
+- **Remove** — Stops the application from managing the selected resource. A confirmation
   window displays. See the
   [Remove Resource Window](/docs/privilegesecure/25.12/admin/interface/resources/removeresource.md) topic for additional
   information.
@@ -40,8 +40,8 @@ The Resources table has the following features:
   associated with the selected host resource.
 - **Scan Resource** — Scans a host resource for local users, groups, windows services, and scheduled
   tasks. A confirmation window displays.
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, the
+  search filters the table or list to the matching results.
 - **Filter** — Provides options to filter results based on a chosen criterion:
   - **Type** — Filter by the type of resource: All, Host, Domain, Website, Azure AD, Secret Vault, or
     Database. The dropdown menu shows the definition for each Type icon used in the table.
@@ -75,4 +75,4 @@ The table has the following columns:
   [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic for additional information.
 - **Last Scanned** — Date timestamp for the last time the resource was scanned
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.

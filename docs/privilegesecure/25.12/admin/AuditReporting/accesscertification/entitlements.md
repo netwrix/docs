@@ -17,9 +17,9 @@ The Entitlements table has the following features:
 No entitlements are shown until a user is added in the Users tab.
 :::
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
-- Column headers can be resized and sorted by ascending or descending order:
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
+- You can resize column headers and sort them in ascending or descending order:
   - **Status** — Shows status information on the user’s access:
     - **Requested** — Review of access initiated
     - **Approved** — Existing access is approved
@@ -38,8 +38,8 @@ No entitlements are shown until a user is added in the Users tab.
 - The entitlements tab has three buttons:
   - **Review (only enabled for the reviewer)** — Opens the Review Activity Details window. See the
     Review Entitlements topic for additional information.
-  - **Commit (only enabled when all access has been reviewed)** — Commits the modified access. Once
-    the entitlements are committed, no further changes can be made and the task can't be deleted.
+  - **Commit (only enabled when all access has been reviewed)** — Commits the modified access. After
+    you commit the entitlements, you can't make further changes or delete the task.
   - **Export Entitlements as CSV (only enabled when changes have been committed)** — Export activity
     details as CSV
 

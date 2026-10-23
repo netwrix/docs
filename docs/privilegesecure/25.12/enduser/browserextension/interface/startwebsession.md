@@ -24,5 +24,5 @@ To start a web activity session.
 
    ![Browser Extension Starting a Web Session](/images/privilegesecure/25.12/accessmanagement/enduser/browserextension/browserextensionstartsession.webp)
 
-A count-down timer indicates how much time is remaining for the web session. A REC icon is
-overlaid on the extension if the current page is being recorded.
+A count-down timer indicates how much time is remaining for the web session. The extension
+shows a REC icon if Privilege Secure is recording the current page.

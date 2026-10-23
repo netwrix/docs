@@ -12,13 +12,13 @@ The Users tab shows information about the local users on the selected resource.
 
 The Users tab has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When the search finds matches, the
+  table or list shows only the matching results.
 - **Filter** — Provides options to filter results based on a chosen criterion: Managed and Not Onboarded
-- **Manage** — Set the selected account to be managed by Privilege Secure. This button is only available
+- **Manage** — Set Privilege Secure to manage the selected account. This button is only available
   when the account Managed Type is Standard or Internal. For an Internal account, a pop up window
   displays. You can set password rotation to automatic or manual for managed accounts.
-- **Unmanage** — Remove the account from being managed by Privilege Secure
+- **Unmanage** — Stop Privilege Secure from managing the account
 - **Schedule Rotation** — Add the credential rotation task to the queue. This button is only available
   when the Method is Automatic managed.
 - **Verify** — Checks that the credentials for the selected account match the credentials set by
@@ -37,13 +37,13 @@ The table has the following columns:
 - **Password Changed** — Date timestamp for the last time the password was rotated
 - **Age** — Number of days since the last credential rotation or from when the password was first
   created
-- **Managed** — Indicates if the account is managed by Privilege Secure. See the
+- **Managed** — Indicates if Privilege Secure manages the account. See the
   [Credentials Page](/docs/privilegesecure/25.12/admin/interface/credentials/credentials.md) topic for additional information.
 - **Rotate Start | End** — Indicates if the account have a password rotation on session start, end,
   both, or neither
-- **Keep Enabled** — No means if the credentials are released via a credential-based Access Policy, then the account is disabled. Yes means the account stays enabled. No is the default.
+- **Keep Enabled** — No means if a credential-based Access Policy releases the credentials, then Privilege Secure disables the account. Yes means the account stays enabled. No is the default.
 - **Dependents** — Number of scheduled tasks or Windows services using this account.
-- **Status** — Indicates if the account credentials have been verified by Privilege Secure. See the
+- **Status** — Indicates if Privilege Secure has verified the account credentials. See the
   [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic for additional information on configuring
   a verification schedule.
   - **Unspecified** — Verification check has not run

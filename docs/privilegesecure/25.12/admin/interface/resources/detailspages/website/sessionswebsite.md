@@ -12,8 +12,8 @@ The Sessions tab shows information about the sessions of the selected resource.
 
 The Sessions tab has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When the search finds matches, the
+  table or list shows only the matching results.
 - **View Logs** — Opens the Session Logs window to view the action log for the selected session. See the
   [Session Logs Window](/docs/privilegesecure/25.12/admin/dashboard/historical/sessionlogs.md) topic for additional information.
 - **Refresh** — Reload the information displayed
@@ -27,8 +27,8 @@ The table has the following columns:
 - **Login Account** — Displays the account used to log onto the resource
 - **Activity** — Displays the name of the activity. Click the link to view additional details. See the
   [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
-- **Start** — Indicates when the activity started. This refers to when the activity’s actions were
-  executed and not when the user was logged on to the resource.
+- **Start** — Indicates when the activity started. This refers to when Privilege Secure executed the activity’s
+  actions, not when the user logged on to the resource.
 - **End** — Indicates when the session is scheduled to end the activity, which is determined by the
   start time plus the maximum session duration set by the access policy Connection Profile
 - **Status** — Shows status information for the session:
@@ -48,4 +48,4 @@ The table has the following columns:
   - **Locked** — An Privilege Secure administrator locked the session. See the
     [Lock Session](/docs/privilegesecure/25.12/admin/dashboard/active/locksession.md) topic for additional information.
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.

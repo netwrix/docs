@@ -13,8 +13,8 @@ search, and investigate the records.
 
 The DB Changes page has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
 - Filter by:
   - **Change Type**:
     - Additions
@@ -26,7 +26,7 @@ The DB Changes page has the following features:
 
 The DB Changes table has the following features:
 
-- Column headers can be sorted in ascending or descending order:
+- You can sort column headers in ascending or descending order:
   - **When** — Timestamp of database entry
   - **By** — The user associated with the entry
   - **Change** — Type of database entry (Additions, Updates, Deletes)

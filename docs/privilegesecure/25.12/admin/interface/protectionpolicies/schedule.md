@@ -7,7 +7,7 @@ sidebar_position: 40
 # Schedule Tab for Protection Policies
 
 The Schedule tab shows the schedule tasks for the resources in the selected protection policy. The
-protection policy schedule is run based on the platform type configuration on the
+protection policy schedule runs based on the platform type configuration on the
 [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md).
 
 ![Schedule tab of a protection policy showing scheduled tasks](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/policyprotection/schedule.webp)
@@ -29,4 +29,4 @@ The table has the following columns:
 - **Last Status** — Shows the previous status information for the task
 - **Status** — Shows status information for the task
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.

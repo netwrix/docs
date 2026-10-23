@@ -13,8 +13,8 @@ investigate the records.
 
 The Activity Log page has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
 - **Change type** — Filter by change type:
   - All Users
   - Top 5 Users
@@ -34,7 +34,7 @@ The Summary for the Date Range table shows combined information for all the logs
 
 The Top 5 Users for the Date Range table lists the users with the most sessions:
 
-- Column headers can be resized and sorted in ascending or descending order:
+- You can resize column headers and sort them in ascending or descending order:
   - **User** — The user logged in to the session. Click to open the
     [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md).
   - **Sessions** — Number of sessions per user
@@ -45,7 +45,7 @@ The Top 5 Users for the Date Range table lists the users with the most sessions:
 
 The Sessions by All Users table lists all user sessions:
 
-- Column headers can be resized and sorted in ascending or descending order:
+- You can resize column headers and sort them in ascending or descending order:
   - **Session User** — The user logged in to the session. See the
     [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md)
     topic for additional information.

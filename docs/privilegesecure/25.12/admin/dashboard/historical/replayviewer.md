@@ -7,8 +7,8 @@ sidebar_position: 10
 # Replay Viewer Window
 
 The Replay Viewer window allows a user with the Administrator role to watch a recorded activity
-session. Activity sessions are recorded when the **Record Proxy Sessions** checkbox is selected in the
-connection profile assigned to the access policy. All SSH and RDP keystrokes and local commands are
+session. Privilege Secure records activity sessions when you select the **Record Proxy Sessions**
+checkbox in the connection profile assigned to the access policy. All SSH and RDP keystrokes and local commands are
 recorded using a granular metadata search that works across both live and recorded sessions.
 
 When recordings are available for a historical session, the expand icon is enabled on the
@@ -44,7 +44,7 @@ The Replay Viewer for RDP Sessions window has the following features:
 - **using** — Displays the name of the resource the RDP session connected from
 - **Activity** — Displays the name of the activity
 - **Proxy Session Started** — Indicates when the activity started. This refers to when the activity’s
-  actions were executed and not when the user was logged on to the resource.
+  actions ran, not when the user logged on to the resource.
 - **Ended** — Indicates when the activity ended.
 - **Duration** — Indicates how long the Activity ran for until it either reached its scheduled end time
   or the user or a Privilege Secure administrator manually canceled it
@@ -55,8 +55,8 @@ The Replay Viewer for RDP Sessions window has the following features:
   the player. By default this time line includes keystroke activity.
 
 :::note
-If RDP Session Monitoring is enabled, then it will also include Windows metadata
-activity in the time line. This monitoring requires the Netwrix Privilege Secure Remote Desktop
+If RDP Session Monitoring is enabled, the time line also includes Windows metadata
+activity. This monitoring requires the Netwrix Privilege Secure Remote Desktop
 Monitor service to be installed on the target host. See the
 [Install Remote Desktop Monitor Service on Target RDP Hosts](/docs/privilegesecure/25.12/install/servicesonadditional/rdpmonitor.md)
 topic for additional information.
@@ -67,8 +67,8 @@ topic for additional information.
 The Replay Viewer for SSH sessions is applicable to Linux and Cisco resources.
 
 :::note
-When a user enters input into a password prompt during an SSH session, the keystrokes will
-be obscured in the Replay Viewer.
+When a user enters input into a password prompt during an SSH session, the Replay Viewer
+obscures the keystrokes.
 :::
 
 ![Replay Viewer window for an SSH session](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/window/replayviewerssh.webp)
@@ -88,7 +88,7 @@ The Replay Viewer for SSH Sessions window has the following features:
 - **using** — Displays the name of the resource the SSH session connected from
 - **Activity** — Displays the name of the activity
 - **Proxy Session Started** — Indicates when the activity started. This refers to when the activity’s
-  actions were executed and not when the user was logged on to the resource.
+  actions ran, not when the user logged on to the resource.
 - **Ended** — Indicates when the activity ended.
 - **Duration** — Indicates how long the Activity ran for until it either reached its scheduled end time
   or the user or a Privilege Secure administrator manually canceled it
@@ -122,7 +122,7 @@ The Replay Viewer for Website Host Sessions window has the following features:
 - **using** — Displays the name of the resource the session connected from
 - **Activity** — Displays the name of the activity
 - **Proxy Session Started** — Indicates when the activity started. This refers to when the activity’s
-  actions were executed and not when the user was logged on to the resource.
+  actions ran, not when the user logged on to the resource.
 - **Ended** — Indicates when the activity ended.
 - **Duration** — Indicates how long the Activity ran for until it either reached its scheduled end time
   or the user or a Privilege Secure administrator manually canceled it

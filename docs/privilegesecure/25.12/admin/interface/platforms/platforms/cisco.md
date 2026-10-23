@@ -30,7 +30,7 @@ configuration options for a Cisco Platform.
   rotation). See the [Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md) and
   [Schedule Policies Page](/docs/privilegesecure/25.12/admin/interface/platforms/schedulepolicies/schedulepolicies.md) topic for additional information.
 - **Scan Schedule** — How often to perform a host scan on the resources defined by the selected platform
-  (local users, groups, windows services and scheduled tasks). This scan can also be run ad-hoc from
+  (local users, groups, windows services, and scheduled tasks). You can also run this scan ad hoc from
   the [Resources Page](/docs/privilegesecure/25.12/admin/interface/resources/resources.md).
 - **Verification Schedule** — How often to verify the credentials for managed accounts on the resources
   defined by the selected platform. See the

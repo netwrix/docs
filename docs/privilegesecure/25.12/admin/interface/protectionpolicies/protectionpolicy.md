@@ -20,7 +20,7 @@ To add a Protection policy to the console.
 
 4. Click **Save** to create the new protection policy.
 
-The new protection policy has been created. The next step is to associate Resources, Users, and
+You've created the new protection policy. The next step is to associate Resources, Users, and
 Schedule to the policy. See the following topics for additional information:
 
 - [Resources Tab for Protection Policies](/docs/privilegesecure/25.12/admin/interface/protectionpolicies/resources/resources.md)

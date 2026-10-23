@@ -13,8 +13,8 @@ Administrator role can view recordings of historical sessions.
 
 The dashboard has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results. See the Searches topic for additional
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, the
+  search filters the table or list to the matching results. See the Searches topic for additional
   information.
 - **Filter** — Provides options to filter results based on a chosen criterion:
   - **All Historical tab** — Shows all sessions for all users
@@ -44,11 +44,11 @@ The table has the following columns:
     information.
 - **Requested** — Date and time of when the session was created
 - **Status** — Shows status information for the session:
-  - **Canceled** — An Privilege Secure administrator manually canceled the Activity
+  - **Canceled** — A Privilege Secure administrator manually canceled the Activity
     before its scheduled end time
   - **Failed** — Pre-Session stage of the Activity has encountered an error
-  - **Completed** — Activity either reached the end of its scheduled end time or was canceled early by
-    the requestor
+  - **Completed** — Activity either reached the end of its scheduled end time or the requestor
+    canceled it early
 - **Session User** — User who requested the session. Click the link to view additional details. See the
   [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic
   for additional information.
@@ -64,23 +64,23 @@ The table has the following columns:
 - **Login Account** — Displays the account used to log onto the resource
 - **Activity** — Displays the name of the activity. Click the link to view additional details. See the
   [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
-- **Start** — Indicates when the activity started. This refers to when the activity’s actions were
-  executed and not when the user was logged on to the resource.
+- **Start** — Indicates when the activity started. This refers to when the activity’s actions ran,
+  not when the user logged on to the resource.
 - **Duration** — Indicates how long the Activity ran for until it either reached its scheduled end time
-  or was manually canceled by the user or a Privilege Secure administrator
+  or the user or a Privilege Secure administrator manually canceled it
 - **Notes** — Any notes that were entered when the session was created
 - **Ticket Number** — Any ticket numbers that were entered when the session was created
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.
 
 ## Searches
 
-Searches can be performed across both live and previously recorded sessions. Sessions can be
-filtered by resource name, requesting user, user type (standard, application, or local), recording
-metadata (keystrokes, screen output and executed commands in Windows session), and date range.
-Within the filtered list, any column metadata can be searched including login account (account used
-to log onto target), Activity name, user session notes and ticket number. All search and filtering
+You can search across both live and previously recorded sessions. You can filter sessions by
+resource name, requesting user, user type (standard, application, or local), recording
+metadata (keystrokes, screen output, and executed commands in Windows session), and date range.
+Within the filtered list, you can search any column metadata, including login account (account used
+to log onto target), Activity name, user session notes, and ticket number. All search and filtering
 supports partial string matching.
 
-When metadata is searched and a recorded session is opened, the playback jumps to the point of the recording
+When you search metadata and open a recorded session, the playback jumps to the point of the recording
 where the metadata first appears.
