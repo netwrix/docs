@@ -25,7 +25,7 @@ The details page shows the following information:
   - **Complete** — Synchronization completed successfully
   - **Processing** — Synchronization is actively occurring
   - **Failed** — Synchronization failed to complete
-  - **Cancelled** — Synchronization was cancelled by an Administrator
+  - **Cancelled** — Synchronization was canceled by an Administrator
 - **Synchronize Now button** — Scans the domain for users, groups, members, and computers. The Cancel
   button, which is only visible when scanning lets you stop the resource scan. This scan can
   also be scheduled from the [Platforms Page](/docs/privilegesecure/26.03/admin/platforms/overview.md).
