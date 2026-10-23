@@ -65,7 +65,7 @@ Use the Files tab to add files to the vault. It has the following features:
 
 The table has the following columns:
 
-- **Action** — Download the file or checksum by clicking on the respective icons.
+- **Action** — Click the respective icon to download the file or checksum.
 - **File type** — Format of the file
 - **Size** — File size
 - **Comment** — Notes that were added to the file metadata

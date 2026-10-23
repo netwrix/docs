@@ -48,7 +48,7 @@ The right of the page shows details of the selected service and has the followin
     for logs with this log level enabled for troubleshooting purposes
   - **Information** — Normal operation for the system
   - **Warning** — Message that indicates an unusual condition that the system can recover from
-  - **Error** — Message that indicates an unrecoverable condition has been reached and may indicate
+  - **Error** — Message that indicates the system reached an unrecoverable condition and may indicate
     data loss
   - **Fatal** — Error that has caused the service to abort
 - **Retained File Count Limit** — The number of log files to keep before deletion

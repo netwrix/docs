@@ -33,9 +33,9 @@ tasks and has the following features:
     - **Setup** — Admin is creating an access certification task. It isn't
       visible to the reviewer in this state
     - **Ready to Start** — Waiting for the reviewer to review the task
-    - **Incomplete** — Review of user access started by the reviewer
-    - **Complete** — Activity either reached the end of its scheduled end time or was canceled early
-      by the requestor.
+    - **Incomplete** — The reviewer started reviewing user access
+    - **Complete** — Activity either reached the end of its scheduled end time or the requestor
+      canceled it early.
 - **Delete icon** — Remove the selected access certification task from the console (A confirmation
   window displays)
 
@@ -44,7 +44,7 @@ features:
 
 - **Name** — Displays the name of the task.
 - **Description** — (Optional) Description of the policy.
-- **Reviewer** — The reviewer that the access certification task is assigned to. You can assign only
+- **Reviewer** — The reviewer assigned to the access certification task. You can assign only
   users with the Reviewer role as a reviewer. See the
   [Role Management Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/rolemanagement/rolemanagement.md) topic for additional information
 - **Status** — Shows status information for the task

@@ -13,7 +13,7 @@ sidebar_position: 40
 
 # Administrator Role
 
-This section guides users with the Administrator role through the NPS-AM console.
+This section guides users with the Administrator role through the Netwrix Privilege Secure for Access Management (NPS-AM) console.
 
 You can assign users multiple roles, and the permissions are cumulative. If one of the roles is Administrator, however, there is generally no reason to add Auditor roles because the Administrator can already see all session history. Administrators can hold Reviewer or Approver roles for the additional responsibilities.
 

@@ -25,7 +25,7 @@ configuration options for an Active Directory Platform.
 - **Description** — Description of the policy
 - **Built-in Account** — The built-in administrator account for the resources on the selected platform.
   If multiple built-in administrator accounts are required, create a copy of the platform. For
-  Windows platforms, the built-in account is defined via the well-known SID (S-1-5-21\*-500). This
+  Windows platforms, the well-known SID (S-1-5-21\*-500) defines the built-in account. This
   feature informs Netwrix Privilege Secure which accounts to discover and onboard for a given
   platform during its discovery process.
 - **Password Complexity Policy** — The password complexity rules for managed accounts created on the
@@ -34,7 +34,7 @@ configuration options for an Active Directory Platform.
 - **Password Length** — The number of characters required by the selected password policy
 - **Arrow icon** — Show or Hide password policy details. Click the icon to display the password
   complexity requirements of the selected password policy.
-- **Scheduled Change Policy** — How often the credentials for a managed account are changed (credential
+- **Scheduled Change Policy** — How often Privilege Secure changes the credentials for a managed account (credential
   rotation). See the [Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md) and
   [Schedule Policies Page](/docs/privilegesecure/25.12/admin/interface/platforms/schedulepolicies/schedulepolicies.md) topic for additional information.
 - **Verification Schedule** — How often to verify the credentials for managed accounts on the resources

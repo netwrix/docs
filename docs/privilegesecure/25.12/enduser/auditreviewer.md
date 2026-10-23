@@ -39,7 +39,7 @@ access certification task.
        - **Denied** — Access is removed for that specific user/resource/permission
 
        :::note
-       The user isn't removed from the access policy. Instead, Privilege Secure sets a ‘deny flag’
+       Privilege Secure doesn't remove the user from the access policy. Instead, it sets a ‘deny flag’
        against that attribute so that you can re-enable it in the future.
        :::
 
@@ -57,7 +57,7 @@ access certification task.
 5. To remove access, select the applicable rows and click **Deny**.
 
    :::note
-   The user isn't removed from the access policy. Instead, Privilege Secure sets a ‘deny flag’
+   Privilege Secure doesn't remove the user from the access policy. Instead, it sets a ‘deny flag’
    against that attribute so that you can re-enable it in the future.
    :::
 

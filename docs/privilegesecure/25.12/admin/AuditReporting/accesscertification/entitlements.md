@@ -22,7 +22,7 @@ certification task.
 The Entitlements table has the following features:
 
 :::note
-No entitlements are shown until a user is added in the Users tab.
+The tab shows no entitlements until you add a user in the Users tab.
 :::
 
 - **Search** — Searches the table or list for matches to the search string. When it finds matches, it
@@ -34,15 +34,15 @@ No entitlements are shown until a user is added in the Users tab.
     - **Denied** — Access is removed for that specific user/resource/permission
 
     :::note
-    The user isn't removed from the access policy. Instead, a ‘deny flag’ is set
-    against that attribute so that it can be re-enabled in the future.
+    The user isn't removed from the access policy. Instead, Privilege Secure sets a ‘deny flag’
+    against that attribute so that you can re-enable it in the future.
     :::
 
   - **User Name** — Displays the name of the account
   - **Resource** — Name of the resource
   - **Activity** — The name of the credential permitted to be released by the access policy
   - **Credential** — The credential the activity has permission to release by the access policy
-  - **Permissions** — The permissions granted by the access policy
+  - **Permissions** — The permissions the access policy grants
 - The entitlements tab has three buttons:
   - **Review (only enabled for the reviewer)** — Opens the Review Activity Details window. See the
     Review Entitlements topic for additional information.

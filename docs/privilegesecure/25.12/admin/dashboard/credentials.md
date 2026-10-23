@@ -17,8 +17,8 @@ sidebar_position: 70
 
 The Credentials dashboard shows all accounts discovered within your environment. It focuses on
 managing service account password rotation. A managed account is any host local account,
-domain account, or Privilege Secure application local account that has its credentials managed by
-the application. This includes managed user accounts created by activity sessions. The Credentials
+domain account, or Privilege Secure application local account whose credentials the application
+manages. This includes managed user accounts created by activity sessions. The Credentials
 dashboard displays the same information as the [Credentials Page](/docs/privilegesecure/25.12/admin/interface/credentials/credentials.md).
 
 ![Credentials Dashboard Page](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/credentials.png)
@@ -75,9 +75,8 @@ The table has the following columns:
   - **Automatic** — Privilege Secure manages credential rotation according to the change policy
     for that platform type. See the [Platforms Page](/docs/privilegesecure/25.12/admin/interface/platforms/overview.md) topic
     for additional information.
-  - **Manual** — Credential rotation must be initiated manually with the Rotate Service Account
-    button, or the credential must be manually updated on both the resource and in Privilege
-    Secure. See the [Service Accounts Page](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccounts.md) section for
+  - **Manual** — You must initiate credential rotation manually with the Rotate Service Account
+    button, or manually update the credential on both the resource and in Privilege Secure. See the [Service Accounts Page](/docs/privilegesecure/25.12/admin/configuration/serviceaccounts/serviceaccounts.md) section for
     information on updating credentials for Internal service accounts.
   - **Not Managed** — Not managed by Privilege Secure and no credentials have ever been
     stored
@@ -105,7 +104,7 @@ The table has the following columns:
   - **Verified** — Confirmed the credentials match the value stored in Privilege Secure
   - **Mismatch** — Credentials don't match the value stored in Privilege Secure. This status only
     appears when the Reset on Mismatch option isn't enabled.
-  - **Changed** — Credentials were successfully updated to match the value stored in Privilege Secure.
+  - **Changed** — Privilege Secure updated the credentials to match the value stored in Privilege Secure.
     This status only appears when the Reset on Mismatch option is enabled.
   - **Failed** — Attempt to update the credentials to match the value stored in Privilege Secure was
     unsuccessful. This status only appears when the Reset on Mismatch option is enabled.

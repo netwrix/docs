@@ -38,7 +38,7 @@ The Summary for the Date Range table shows combined information for all the logs
   - **Average** — The average duration of a session
   - **Minimum** — The minimum duration of a session
   - **Maximum** — The maximum duration of a session
-- **Export as CSV** — Allows exporting the Activity Log as a CSV file
+- **Export as CSV** — Exports the Activity Log as a CSV file
 
 The Top 5 Users for the Date Range table lists the users with the most sessions:
 

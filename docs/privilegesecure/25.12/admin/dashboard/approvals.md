@@ -42,10 +42,10 @@ The table has the following columns:
 - **Login Account** — Displays the account used to log onto the resource
 - **Activity** — Displays the name of the activity. Click the link to view additional details. See the
   [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
-- **Start** — Indicates when the activity starts. This refers to when the activity’s actions are
-  executed and not when the user logs on to the resource.
-- **End** — Indicates when the session is scheduled to end the activity, which is determined by the
-  start time plus the maximum session duration set by the access policy Connection Profile
+- **Start** — Indicates when the activity starts. This refers to when the activity’s actions run,
+  not when the user logs on to the resource.
+- **End** — Indicates when the session is scheduled to end the activity. The end time is the start
+  time plus the maximum session duration that the access policy Connection Profile sets.
 - **Notes** — Any notes that were entered when the session was created
 - **Ticket Number** — Any ticket numbers that were entered when the session was created
 

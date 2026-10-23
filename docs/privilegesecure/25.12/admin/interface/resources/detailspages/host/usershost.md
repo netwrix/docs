@@ -58,7 +58,7 @@ The table has the following columns:
   - **Verified** — Confirmed the credentials match the value stored in Privilege Secure
   - **Mismatch** — Credentials don't match the value stored in Privilege Secure. This status only
     appears when the Reset on Mismatch option isn't enabled.
-  - **Changed** — Credentials were successfully updated to match the value stored in Privilege Secure.
+  - **Changed** — Privilege Secure updated the credentials to match the value stored in Privilege Secure.
     This status only appears when the Reset on Mismatch option is enabled.
   - **Failed** — Attempt to update the credentials to match the value stored in Privilege Secure was
     unsuccessful. This status only appears when the Reset on Mismatch option is enabled.

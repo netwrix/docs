@@ -16,8 +16,8 @@ sidebar_position: 10
 
 The Replay Viewer window allows a user with the Administrator role to watch a recorded activity
 session. Privilege Secure records activity sessions when you select the **Record Proxy Sessions**
-checkbox in the connection profile assigned to the access policy. All SSH and RDP keystrokes and local commands are
-recorded using a granular metadata search that works across both live and recorded sessions.
+checkbox in the connection profile assigned to the access policy. Privilege Secure records all SSH and RDP keystrokes and
+local commands using a granular metadata search that works across both live and recorded sessions.
 
 When recordings are available for a historical session, the expand icon is enabled on the
 [Historical Dashboard](/docs/privilegesecure/25.12/admin/dashboard/historical/historical.md).
@@ -33,7 +33,7 @@ Select the recording you want and the Replay Viewer window opens.
 
 ## Replay Viewer for RDP sessions
 
-The Replay Viewer window for RDP sessions is applicable to all resources except the Websites.
+The Replay Viewer window for RDP sessions applies to all resources except the Websites.
 
 ![Replay Viewer window for an RDP session](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/window/replayviewerrdp.webp)
 

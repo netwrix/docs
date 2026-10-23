@@ -18,8 +18,8 @@ Privilege Secure administrator role through features that are relevant to their 
 ![Product tour walkthrough shown on first login](/images/privilegesecure/25.12/accessmanagement/enduser/producttour.webp)
 
 At any time, you can stop the tour by clicking the **X** icon at the top-right of the Console. By
-default, the tour will not display on next login unless the **don't display again** checkbox is
-unchecked.
+default, the tour won't display on next login unless you clear the **don't display again**
+checkbox.
 
 You can restart the product tour at any time from the user menu.
 

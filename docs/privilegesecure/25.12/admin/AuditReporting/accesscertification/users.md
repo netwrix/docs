@@ -37,7 +37,7 @@ The Users table has the following features:
 To add users and groups to the access certification task.
 
 :::note
-It isn't possible to add or remove users after they are added.
+You can't add or remove users after you add them.
 :::
 
 1. Navigate to the **Audit and Reporting** > **Access Certification** page.
@@ -53,7 +53,7 @@ It isn't possible to add or remove users after they are added.
    - **Search** — Searches the table or list for matches to the search string. When it finds matches, it
      filters the table or list to the matching results.
    - **Available Users/Groups** — Shows all users and groups added to the console
-   - **Users & Groups to Add** — Shows the users to be added to the access certification task
+   - **Users & Groups to Add** — Shows the users to add to the access certification task
    - You can sort column headers in ascending or descending order:
      - **Name** — Displays the name of the account
      - **User Name** — SAM Account Name for the user or group
@@ -62,12 +62,12 @@ It isn't possible to add or remove users after they are added.
 
 4. Filter by Users or Groups, or use the **Search** feature.
 5. To add a user or group to the access certification task, click a row in the Available
-   Users/Groups table and it is immediately moved to the Users & Groups to Add table.
+   Users/Groups table. The row moves immediately to the Users & Groups to Add table.
 6. (Optional) Click a row in the Users & Groups to Add table to move it back to the
    Available Users/Groups table.
 
    :::warning
-   It isn't possible to add or remove users after they are added to the access
+   You can't add or remove users after you add them to the access
    certification task.
    :::
 
@@ -77,8 +77,8 @@ The new users and groups appear in the certification task and on the Users Tab f
 Certification.
 
 :::note
-Only the assigned reviewer can interact with the entitlements after the access
-certification task is created.
+Only the assigned reviewer can interact with the entitlements after you create the access
+certification task.
 :::
 
 The reviewer can now log in to see the access certification tasks assigned to them and begin the

@@ -25,8 +25,8 @@ configuration options for a Windows Platform.
 - **Description** — Description of the policy
 - **Built-in Account (Allows custom entries)** — The built-in administrator account for the resources on
   the selected platform. If multiple built-in administrator accounts are required, create a copy of
-  the platform. For Windows platforms, the built-in account is defined via the well-known SID
-  (S-1-5-21\*-500). This feature informs Netwrix Privilege Secure which accounts to discover and
+  the platform. For Windows platforms, the well-known SID (S-1-5-21\*-500) defines the
+  built-in account. This feature informs Netwrix Privilege Secure which accounts to discover and
   onboard for a given platform during its discovery process.
 - **Password Complexity Policy** — The password complexity rules for managed accounts created on the
   resources defined by the selected platform. See the
