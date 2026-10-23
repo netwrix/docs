@@ -48,7 +48,7 @@ service account (gMSA) to connect to Active Directory.
 - For a gMSA – If you provide a service account with
   ‘$’ as its last character (as in MyAdminAccounts$), Directory Manager treats it as a Group
   Managed Service Account (gMSA). To use a gMSA to connect an identity store to Active Directory,
-  ensure the gMSA is configured properly and has sufficient permissions. See the
+  ensure that you configure the gMSA properly and that it has sufficient permissions. See the
   [gMSA for Active Directory](/docs/directorymanager/11.1/requirements/permissions/gmsarequirements.md) topic.
 
 Step 7 – In the **Service Account Password** box, enter the service account password.  
@@ -109,7 +109,7 @@ generated against the certificate uploaded to Microsoft Entra Admin Center while
 Directory Manager application.
 
 Step 10 – If you bind a custom domain with your Microsoft Entra ID tenant and create an identity
-store for Microsoft Entra ID using the credentials of that custom domain, then you must provide the
+store for Microsoft Entra ID using the credentials of that custom domain, you must provide the
 name of the primary domain in the **Primary Domain Name** box, to avoid affecting _write_
 operations.
 
