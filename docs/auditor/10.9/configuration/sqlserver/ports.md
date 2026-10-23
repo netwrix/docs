@@ -19,6 +19,6 @@ Server instance (target), allow inbound connections to local 1433 TCP port.
 
 | Port                 | Protocol | Source                 | Target                      | Purpose                                                                                                                                  |
 | -------------------- | -------- | ---------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| 1433                 | TCP      | Netwrix Auditor Server | Default SQL Server Instance | Connection to the default named instance server. Port 1433 is the default connections port, however, you can configure another TCP port. |
+| 1433                 | TCP      | Netwrix Auditor Server | Default SQL Server Instance | Connection to the default instance. Port 1433 is the default connections port, however, you can configure another TCP port. |
 | 1434                 | UDP      | Netwrix Auditor Server | SQL Server Browser Service  | Service which helps resolving named instance servers                                                                                     |
 | Dynamic: 1024 -65535 | TCP      | Netwrix Auditor Server | Named SQL Server Instance   | Connection to the named instance servers                                                                                                 |
