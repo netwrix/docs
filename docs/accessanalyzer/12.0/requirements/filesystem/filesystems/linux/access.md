@@ -35,7 +35,7 @@ To let the scan read the folders as root, use `no_root_squash`:
 {share-path} {scanning-host-ip}(ro,sync,no_root_squash)
 ```
 
-To keep the default `root_squash`, the server maps the scan to the `nobody` user, so give "other" read and execute permission on the folders instead:
+If you keep the default `root_squash`, the server maps the scan to the `nobody` user, so give "other" read and execute permission on the folders instead:
 
 ```bash
 sudo chmod -R o+rX {share-path}

@@ -6,7 +6,7 @@ sidebar_position: 55
 
 # Linux Target Requirements
 
-Netwrix Access Analyzer (formerly Enterprise Auditor) can execute Access Auditing (FSAA) and Sensitive Data Discovery Auditing scans on Linux servers, such as Red Hat® Enterprise Linux® (RHEL). Access Analyzer scans a Linux server over the network, through SMB/CIFS shares published by Samba or through NFSv3 exports.
+Netwrix Access Analyzer (formerly Enterprise Auditor) can execute Access Auditing (FSAA) and Sensitive Data Discovery Auditing scans on Linux servers, such as Red Hat® Enterprise Linux® (RHEL). Access Analyzer scans a Linux server over the network, through SMB/CIFS shares that Samba publishes or through NFSv3 exports.
 
 Access Analyzer doesn't support Activity Auditing (FSAC) scans for Linux servers. Review Linux file activity in Netwrix Activity Monitor.
 
