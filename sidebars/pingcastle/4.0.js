@@ -71,6 +71,7 @@ module.exports = {
           label: 'User Guide',
           items: [
             'enterpriseuser',
+            'enterpriseapiswagger',
             'enterpriseuser-dashboard',
             'enterpriseuser-infrastructure',
             'enterpriseuser-entities',
