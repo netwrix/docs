@@ -568,13 +568,12 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '2.22',
-        label: '2.22',
+        version: 'current',
+        label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/privilegesecurediscovery/2.22.js',
+        sidebarFile: './sidebars/privilegesecurediscovery.js',
       },
     ],
-    defaultVersion: '2.22',
   },
   {
     id: 'recoveryforactivedirectory',

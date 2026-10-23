@@ -22,13 +22,13 @@ Runtime Details:
 - History Retention: Not supported
 - Multi-console Support: Not supported
 - Additional Notes: The job labels files in place on the file server. Access Analyzer doesn't
-  overwrite a different label that is already on a file
+  overwrite a different label already on a file
 
 :::note
 This job applies labels by using the PurviewInformationProtection PowerShell module. The File System
 solution scans for labels separately, using the MIP File SDK. See the
 [Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)
-topic for scan prerequisites. Use the [FS_MIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_miplabels.md)
+topic for scan prerequisites. Use the [FS_AIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_aiplabels.md)
 to report on the labels after a scan.
 :::
 
@@ -43,7 +43,7 @@ Complete the following before running the job:
   on the Access Analyzer console server. It installs the PurviewInformationProtection PowerShell
   module
 - Register an application in Microsoft Entra ID for use with the `Set-Authentication` cmdlet. The
-  application created in the
+  application you created in the
   [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account)
   section already has the required permissions, and you can reuse it. See the
   [Microsoft documentation](https://learn.microsoft.com/en-us/powershell/azure/aip/setup-information-protection-client-powershell#create-and-configure-microsoft-entra-applications-for-set-authentication)
@@ -93,7 +93,7 @@ The query handles each file as follows:
 - File has no label – applies the label from `labelId`
 - File already has the label from `labelId` – takes no action and reports `Success`
 - File has a different label – doesn't change it, and reports `Failure` with the existing label
-- The label status can't be read, or the label can't be applied – reports `Failure`
+- The query can't read the label status or can't apply the label – reports `Failure`
 
 The query processes files in batches and pauses briefly after every tenth batch to limit memory use
 by the Purview client's child processes. Large file lists take proportionally longer.
@@ -117,7 +117,7 @@ values.
 
 **Step 5 –** Run the job.
 
-**Step 6 –** Review the Apply MIP Sensitive Data Label results. Run an FSAA scan with **Enable scanning of
+**Step 6 –** Review the Apply MIP Sensitive Data Label results. Run a File System Access Auditing (FSAA) scan with **Enable scanning of
 files protected by Microsoft Information Protection** selected, then run the
-[FS_MIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_miplabels.md) to
+[FS_AIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_aiplabels.md) to
 confirm that the job applied the labels.

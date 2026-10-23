@@ -4,7 +4,7 @@ description: "Single Sign On (SSO) Conﬁguration with Auth0"
 sidebar_position: 30
 ---
 
-# Single Sign On (SSO) Conﬁguration with Auth0
+# Single Sign On (SSO) Configuration with Auth0
 
 Single Sign On (SSO) is a powerful authentication process that enhances security and improves user experience by enabling access to multiple applications with a single set of login credentials. This guide covers configuring SSO using Auth0, a leading identity management service, to streamline user access and secure your system effectively.
 

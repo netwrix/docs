@@ -24,7 +24,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { extractProse, splitSentences, splitWords } from './lib/prose.mjs';
 import { buildResult, printResult, exitForResult } from './lib/report.mjs';
 
