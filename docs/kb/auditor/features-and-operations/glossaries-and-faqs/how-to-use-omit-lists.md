@@ -84,7 +84,7 @@ SharePoint Online omit lists are found under `\%Working Folder%\Netwrix Auditor 
 
 ### SQL Server Auditing
 
-SQL Server omit lists are found under `\%Netwrix Auditor installation folder%\SQL Server Auditing`. For additional information on SQL Server omit lists, refer to the following documentation article: [SQL Server Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/sqlserver/scope)
+SQL Server omit lists are found under `\%Netwrix Auditor installation folder%\SQL Server Auditing`. For additional information on SQL Server omit lists, refer to the following documentation article: [SQL Server Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_9/configuration/sqlserver/scope)
 
 ### VMWare
 
