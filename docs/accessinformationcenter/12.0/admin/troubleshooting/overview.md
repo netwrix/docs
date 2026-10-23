@@ -12,18 +12,18 @@ it will be useful to be aware of these.
 
 **Service Account Delegation**
 
-Delegation can be used to grant the Active Directory service account the minimal rights necessary to
+Use delegation to grant the Active Directory service account the minimal rights to
 allow the Access Information Center to commit changes in Active Directory. See the
 [Service Account Delegation](/docs/accessinformationcenter/12.0/admin/troubleshooting/delegation.md) topic for additional information.
 
 **Log File**
 
-By default the Access Information Center is configured to log at the Error level. When requested by
+By default, the Access Information Center logs at the Error level. When requested by
 Netwrix Support, you can enable Debug level from the Diagnostics page of the Configuration
 interface. See the [Diagnostics Page](/docs/accessinformationcenter/12.0/admin/configuration/diagnostics.md) topic for additional
 information.
 
-If a different log level is needed or desired, the `aic.log` file can be modified. See the
+If you need or want a different log level, you can modify the `aic.log` file. See the
 [Change Log Level](/docs/accessinformationcenter/12.0/admin/troubleshooting/loglevel.md) topic for additional information.
 
 **Credential Password Changes**

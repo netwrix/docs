@@ -30,9 +30,9 @@ Configure a secured option by proceeding as follows:
 
         ![SQL connection string](/images/identitymanager/securedoptions_keyvalue_v603.webp)
 
-Contrary to simple fields, multiple-key-value secured options are not restricted to a given property. They are arbitrary and can be set to anything.
+Contrary to simple fields, multiple-key-value secured options aren't restricted to a given property. They are arbitrary and can be set to anything.
 
-2. Fill the field(s) and, if needed, click on the eye icon to make the content visible.
+2. Fill the fields and, if needed, click the eye icon to make the content visible.
 
     ![Eye Icon](/images/identitymanager/iconeye_v600.svg)
 

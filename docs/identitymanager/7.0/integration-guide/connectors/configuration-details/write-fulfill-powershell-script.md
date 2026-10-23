@@ -168,7 +168,7 @@ The three methods to log in Identity Manager are:
 - **Write-Host**: writes Information in the log.
 - **Throw**: raises an exception (which stops the script), and writes the Error in the log (the
 provisioning order will be errored too).
-- **Write-Error**: writes Error in the log (the provisioning order will be errored too). It is not
+- **Write-Error**: writes Error in the log (the provisioning order will be errored too). It isn't
 recommended because the script continues its execution.
 
 Now that the function has been defined, the main code of the script can be written.

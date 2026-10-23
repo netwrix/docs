@@ -7,16 +7,16 @@ sidebar_position: 40
 # Configure Fine Grained Auditing
 
 When configuring Fine Grained Auditing, you need to create an audit policy with required parameters
-set. The section below explains how to create, disable and delete such audit policies.
+set. This section explains how to create, disable, and delete such audit policies.
 
-Fine Grained audit policies can be configured for Oracle Database Enterprise Edition only. Keep in
-mind that if you have Fine Grained policies configured, you will receive a permanent error in the
-Netwrix Auditor System Health log because Netwrix Auditor cannot detect it. Use Unified and Standard
-audit policies to keep track of data changes.
+You can configure Fine Grained audit policies for Oracle Database Enterprise Edition only. If you
+have Fine Grained policies configured, you'll receive a permanent error in the Netwrix Auditor
+System Health log because Netwrix Auditor can't detect it. Use Unified and Standard audit policies
+to keep track of data changes.
 
 To configure Fine Grained Auditing:
 
-Below is an example of Fine Grained audit policy that enables auditing of audit statements
+The following is an example of a Fine Grained audit policy that enables auditing of audit statements
 `(INSERT, UPDATE, DELETE,` and `SELECT`) on table `hr.emp` to audit any query that accesses the
 `salary` column of the employee records that belong to `sales` department.
 

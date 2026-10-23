@@ -41,7 +41,7 @@ The identifier of the connection and thus the name of the subsection must:
 
 - Not contain ```<```, ```>```, ```:```, ```"```, ```/```, ```\```, ```|```, ```?```, ```*``` and ```_```.
 
-Netwrix Identity Manager (formerly Usercube) recommends completing this guide without credential protection, and once the configuration works switch to a more secure way of storing credentials.
+Netwrix Identity Manager (formerly Usercube) recommends completing this guide without credential protection, and after the configuration works switch to a more secure way of storing credentials.
 
 See the [
 Microsoft Entra ID](../../../../integration-guide/connectors/references-connectors/microsoftentraid) topic to learn how to protect Microsoft Entra ID's credentials.
@@ -96,7 +96,7 @@ Then each connector should be configured with a menu item, which is created auto
 
 ### Displayed resources
 
-See the [Organize Resources' Datasheets](../../../../user-guide/set-up/connect-system/entity-type-creation/datasheet-organization) to learn more on how to set the display properties via the UI.
+See the [Organizing resources' datasheets](../../../../user-guide/set-up/connect-system/entity-type-creation/datasheet-organization) to set the display properties via the UI.
 
 In the XML configuration, scalar properties are automatically displayed in the datasheets of the connector's resources. But navigation properties must be declared explicitly.
 
@@ -117,7 +117,7 @@ property expression.
 
 ### Permissions
 
-In order to access the connector, a user must have the right permissions.
+To access the connector, a user must have the right permissions.
 
 Permissions within Identity Manager are configured through [Access Control Rule](../../../../integration-guide/toolkit/xml-configuration/access-control/accesscontrolrule).
 ````

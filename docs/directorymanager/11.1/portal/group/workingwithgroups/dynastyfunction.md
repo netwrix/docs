@@ -33,7 +33,6 @@ country, then for each state within a country, and finally for each city within 
 
 ## Manage Managerial Dynasty structure
 
-Follow the steps to manage structure of a Managerial Dynasty.
 
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.
 
@@ -54,7 +53,6 @@ Follow the steps to manage structure of a Managerial Dynasty.
 
 ## Set attribute inheritance
 
-Follow the steps to set attribute inheritance of a dynasty.
 
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.
 
@@ -66,7 +64,7 @@ Follow the steps to set attribute inheritance of a dynasty.
     The Dynasty's [Group Properties](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed with the
     **General** tab in view.
 
-3. On the **Dynasty Options** tab, select the required option from the **Inheritance** drop-down
+3. On the **Dynasty Options** tab, select the required option from the **Inheritance** dropdown
    list.
 
     See [Inheritance](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md).
@@ -75,7 +73,6 @@ Follow the steps to set attribute inheritance of a dynasty.
 
 ## Modify alias and display name templates
 
-Follow the steps to modify alias of an Organizational/Geographical/Custom dynasty.
 
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.
 
@@ -97,7 +94,6 @@ Follow the steps to modify alias of an Organizational/Geographical/Custom dynast
 
 4. Click **Save**.
 
-Follow the steps to modify aloas of a Managerial dynasty.
 
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.
 

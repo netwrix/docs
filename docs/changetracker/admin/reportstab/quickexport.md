@@ -6,12 +6,13 @@ sidebar_position: 10
 
 # Quick Export
 
-To export the events displayed, use the Export button – choices of PDF, Excel or csv are provided.
+To export the events displayed, use the **Export** button, which provides a choice of PDF, Excel,
+or CSV format.
 
 :::note
-The events exported will be governed by the filter settings, not simply what is visible on
-the screen nor selected using the checkboxes against events. To export a subset of displayed events,
-apply further filter controls then export.
+The filter settings govern which events are exported, not simply what's visible on the screen or
+selected using the checkboxes against events. To export a subset of displayed events, apply
+further filter controls, then export.
 :::
 
 

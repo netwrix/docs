@@ -9,24 +9,25 @@ sidebar_position: 40
 Change Tracker’s Closed-Loop Intelligent Change Control reconciles the security benefits of forensic
 change control with the detailed workload necessary to review changes.
 
-Changes are automatically assessed against expected changes to the configuration baseline,
-delivering all the benefits of zero tolerance to unplanned changes and a super-sensitive breach
-detection capability, but without the time-consuming, resource-intensive post-implementation review
-burden.
+Change Tracker automatically assesses changes against expected changes to the configuration
+baseline, delivering all the benefits of zero tolerance to unplanned changes and a highly sensitive
+breach detection capability, but without the time-consuming, resource-intensive post-implementation
+review burden.
 
 By automatically reducing the background noise of pre-approved changes such as known patching
-updates, any unplanned changes - which may be breach activity - are exposed and can be investigated.
+updates, Change Tracker exposes any unplanned changes - which may be breach activity - so you can
+investigate them.
 
-- Planned Change definitions can either be recorded from a device in planned change recording mode,
-  or built from the Events page using the Actions button – Rules comprising the Planned Change
-  definition are shown using the Show Rules button, and can be edited using the Settings > Planned
-  Changes page.
-- Click on any Planned Change title to view the Planned Change activity and the Devices enrolled.
-- Planned Change Schedules and Rulesets are modular so can be re-used and modified – click on either
+- You can either record Planned Change definitions from a device in planned change recording mode,
+  or build them from the Events page using the **Actions** button. The **Show Rules** button
+  displays the Rules that comprise the Planned Change definition, and you can edit them on the
+  **Settings** > **Planned Changes** page.
+- Click any Planned Change title to view the Planned Change activity and the Devices enrolled.
+- Planned Change Schedules and Rulesets are modular, so you can reuse and modify them. Click either
   the Schedule Name or Rule Set to see details.
 - The Planned Changes screen works in conjunction with the Groups & Device/Date & Time range filter
-  controls. An additional Planned Change filter is also provided to show just the Planned Changes of
-  interest.
+  controls. Change Tracker also provides an additional Planned Change filter to show just the
+  Planned Changes of interest.
 - Equally the Query/Report functions are the same as for the Events screen.
 
 :::note
@@ -38,5 +39,5 @@ list of devices with changes below.
 
 ![PlannedChangesTab](/images/changetracker/admin/tabs/plannedchangestab.webp)
 
-For more detail on Planned Change Schedule and Rule setup, see the
-[Planned Changes Administration](/docs/changetracker/admin/plannedchanges/plannedchangeadministration.md) topic for additional information.
+For more detail on Planned Change Schedule and Rule setup, see
+[Planned Changes Administration](/docs/changetracker/admin/plannedchanges/plannedchangeadministration.md).

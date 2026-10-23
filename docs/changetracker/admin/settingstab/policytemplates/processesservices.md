@@ -6,31 +6,32 @@ sidebar_position: 80
 
 # Policy Templates: Processes and Services
 
-The **Processes** and **Services** tab allows Processes and/or Services (Windows only) and their
-states to be defined within your **Configuration Policy** as either Whitelisted or Blacklisted.
+The **Processes** and **Services** tab lets you define Processes and/or Services (Windows only) and
+their states within your **Configuration Policy** as either Whitelisted or Blacklisted.
 
 A key indicator of breach or malware activity is the existence of new processes or services.
-Likewise, configuration hardening and vulnerability mitigation always requires unnecessary services
-and daemons to be removed or disabled. Therefore, it is important to track process lists and
-services and their states.
+Likewise, configuration hardening and vulnerability mitigation always require you to remove or
+disable unnecessary services and daemons. Therefore, tracking process lists, services, and their
+states is important.
 
-Any non-necessary Services or Services you are generally unconcerned about should be marked as
-**Ignore State**.
+Mark unnecessary Services, or Services you're generally unconcerned about, as **Ignore State**.
 
 ![PolicyTemplatesProcessesServices](/images/changetracker/admin/settings/policytemplates/policytemplatesprocessesservices2.webp)
 
-- \_**\_Uncategorized Process/Service Action\_\_** - Use this option if you want to be alerted to
-  the presence of any new, uncategorized processes or services. This is an option as in some
-  situations it may be convenient to be alerted to missing, key processes.
+- **Uncategorized Process/Service Action** – Use this option to receive alerts for any new,
+  uncategorized processes or services. In some situations, you may also want alerts for missing key
+  processes.
 
-- \_**\_Polling Frequency\_\_** - See previous Change Tracker notes.
+- **Polling Frequency** – See the **Polling Frequency** setting described in the other Policy
+  Template topics for details.
 
-- Define Process (Service) Name - Processes/Services can be defined as either Required, Blacklisted,
-  Whitelisted or Graylisted.
+- **Define Process (Service) Name** – Define Processes/Services as either Required, Blacklisted,
+  Whitelisted, or Graylisted.
 
-    - \_**\_Required\_\_** - The Process/Service must be in the state required and an alert will be
-      raised if this is not the case.
-    - Whitelisted - The Process/Service is allowed to be present, but this is not mandatory.
-    - Blacklisted - The Process/Service is never allowed to be present, and an alert will be raised
-      if this is not the case.
-    - Graylisted- The process/service has not yet been allocated to another category.
+    - **Required** – The Process/Service must be in the required state; Change Tracker raises an
+      alert if it isn't.
+    - **Whitelisted** – The Process/Service can be present, but its presence isn't mandatory.
+    - **Blacklisted** – The Process/Service must never be present; Change Tracker raises an alert if
+      it is.
+    - **Graylisted** – The default category for a Process/Service that doesn't yet belong to another
+      category.

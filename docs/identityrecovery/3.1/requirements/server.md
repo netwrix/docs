@@ -40,12 +40,12 @@ Additional Server Requirements
   to starting installation
 
     :::note
-    The latest `msoledbsql.msi` can be obtained from Microsoft's website. Netwrix does not
+    The latest `msoledbsql.msi` can be obtained from Microsoft's website. Netwrix doesn't
     redistribute this file.
     :::
 
 
-- Group Policy Management Console (required to backup and to recover GPOs)
+- Group Policy Management Console (required to backup and recover Group Policy Objects (GPOs))
 - _Optional_: SQL Server Management Studio installed on the application server
 
 Permissions for Installation
@@ -60,5 +60,5 @@ The following permission is required to install the application:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, we fully support the use of virtual machines.
-Microsoft® Hyper-V® and VMWare® ESX®/ESXi™ are supported hyper visors.
+While physical machines are always preferred, virtual machines are fully supported.
+The application supports Microsoft® Hyper-V® and VMWare® ESX®/ESXi™ hypervisors.

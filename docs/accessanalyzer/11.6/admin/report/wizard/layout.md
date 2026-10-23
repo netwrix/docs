@@ -6,18 +6,18 @@ sidebar_position: 40
 
 # Layout Page
 
-The Layout page allows you to configure the layout of the report's content.
+Use the Layout page to configure the layout of the report's content.
 
 ![layout](/images/accessanalyzer/11.6/admin/report/wizard/layout.webp)
 
-Follow the steps to select the layout:
+To select the layout:
 
-**Step 1 –** Click the **Select the number of rows** drop-down menu and select an option from: 1
+**Step 1 –** Click the **Select the number of rows** dropdown menu and select an option from: 1
 row, 2 rows, or 3 rows.
 
-**Step 2 –** Click on the layout tile you want for the report.
+**Step 2 –** Click the layout tile you want for the report.
 
-The layout for the report has been selected. Each box on the selected tile corresponds to a separate
+You've selected the layout for the report. Each box on the selected tile corresponds to a separate
 widget that you next need to configure on the
 [Widgets Page](/docs/accessanalyzer/11.6/admin/report/wizard/widgets.md)
 page of the Report Configuration wizard.
@@ -29,9 +29,10 @@ number of already configured widgets, then the Element Downgrade Editor automati
 
 ![Element Downgrade Editor](/images/accessanalyzer/11.6/admin/report/wizard/elementdowngradeeditor.webp)
 
-The maximum number of elements allowed by the correctly selected layout is specified at the top of
-the editor. Select the checkboxes next to the title of all the configured widgets you want to keep
-up to this limit, then click **OK**. Any widgets not selected will be removed from the report.
+The top of the editor specifies the maximum number of elements allowed by the correctly selected
+layout. Select the checkboxes next to the title of all the configured widgets you want to keep
+up to this limit, then click **OK**. Enterprise Auditor removes any widgets you don't select from
+the report.
 
 :::note
 You can click **Cancel** to return to the layout page to select a different layout with

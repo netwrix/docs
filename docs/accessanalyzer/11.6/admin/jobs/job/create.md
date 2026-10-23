@@ -6,11 +6,11 @@ sidebar_position: 50
 
 # Create a New Job
 
-Follow the steps to create a new job.
+To create a new job:
 
 ![Create Job from Jobs Tree context menu](/images/accessanalyzer/11.6/admin/jobs/job/createjob.webp)
 
-**Step 1 –** Select the Jobs tree or the desired job group to add the new job to. Right-click and
+**Step 1 –** Select the Jobs tree or the job group you want to add the new job to. Right-click and
 select **Create Job**.
 
 ![New Job added to Jobs Tree](/images/accessanalyzer/11.6/admin/jobs/job/newjob.webp)
@@ -19,20 +19,20 @@ select **Create Job**.
 considerations for naming conventions:
 
 :::warning
-Do not end a job name with a space.
+Don't end a job name with a space.
 :::
 
 
 - There can never be two jobs with the same name. Enterprise Auditor automatically appends a numeral
   to the end of a job name to avoid duplicates, for example `NewJob1`.
-- No special characters can be used. See the Microsoft
+- Don't use special characters. See the Microsoft
   [Naming Conventions](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
   article for limitations.
-- Jobs in a group are run alphanumerically
+- Enterprise Auditor runs jobs in a group alphanumerically
 - When possible, keep names short to avoid report path errors caused by Microsoft’s maximum path
-  length. See the Microsoft article referenced above.
+  length. See the Microsoft article referenced earlier in this topic.
 
-The new job is now ready to be configured. See the
+You can now configure the new job. See the
 [Data Collectors](/docs/accessanalyzer/11.6/admin/datacollector/overview.md),
 [Analysis Modules](/docs/accessanalyzer/11.6/admin/analysis/overview.md),
 [Action Modules](/docs/accessanalyzer/11.6/admin/action/overview.md),

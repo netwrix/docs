@@ -4,14 +4,14 @@ description: "Generates the permissions to access the manual provisioning pages 
 sidebar_position: 8
 ---
 
-Generates the rights to access the access manual provisioning pages for a given entity type and profile.
+Generates the rights to access the manual provisioning pages for a given entity type and profile.
 
 Gives access to a shortcut on the dashboard to access this page.
 
 ![Manual Provisioning](/images/identitymanager/home_manualprovisioning_v523.webp)
 
 :::warning
-The connector connected to the entity type must have the manual type as the provisioning type, otherwise the information of the entity type cannot be displayed on this screen.
+The connector connected to the entity type must have the manual type as the provisioning type, otherwise the information of the entity type can't be displayed on this screen.
 :::
 
 
@@ -35,7 +35,7 @@ The connector connected to the entity type must have the manual type as the prov
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_AssignedResourceNavigation_Custom_ProvisioningPolicy_PerformManualProvisioning_Directory_User" DisplayName_L1="Administrator - Manual Provisioning for AssignedResourceNavigation" DisplayName_L2="Administrator - Provisioning manuel de AssignedResourceNavigation" EntityType="AssignedResourceNavigation" Profile="Administrator">

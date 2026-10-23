@@ -12,11 +12,11 @@ in each structural level in the SharePoint farm.
 ## Queries for the 3-SPAC_SystemScans Job
 
 The 3-SPAC_SystemScans Job has been preconfigured to run with the default settings using the SPAA
-Data Collector category of Scan SharePoint Activity, which is not visible within the SharePoint
+Data Collector category of Scan SharePoint Activity, which isn't visible within the SharePoint
 Access Auditor Data Collector Wizard when opened from within this job.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 

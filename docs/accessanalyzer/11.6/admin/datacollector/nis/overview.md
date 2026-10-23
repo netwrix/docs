@@ -7,7 +7,7 @@ sidebar_position: 260
 # NIS Data Collector
 
 The NIS Data Collector inventories a NIS domain for user and group information, mapping to
-Windows-style SIDs. This data collector is a core component of Enterprise Auditor and has been
+Windows-style SIDs. This data collector is a core component of Enterprise Auditor and comes
 preconfigured within the .NIS Inventory Solution. Both this data collector and the solution are
 available with all Enterprise Auditor license options. See the
 [.NIS Inventory Solution](/docs/accessanalyzer/11.6/solutions/nisinventory/overview.md)
@@ -41,5 +41,5 @@ following wizard pages:
 
 ![NIS Data Collector Wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/nis/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the **Don't display this page the next time** checkbox while the
+wizard is open, then save the configuration settings.

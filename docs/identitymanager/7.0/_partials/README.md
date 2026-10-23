@@ -37,7 +37,7 @@ import ContextruleCertification from '@site/docs/identitymanager/current/_partia
 
 ## Notes
 
-- Files in `_partials` directory (prefixed with underscore) are not generated as standalone pages
+- Files in `_partials` directory (prefixed with underscore) aren't generated as standalone pages
 - Always use `.mdx` extension for partials to enable MDX features
 - The `@site` alias resolves to the Docusaurus root directory
 - Partials can include any valid MDX content: markdown, React components, admonitions, etc.

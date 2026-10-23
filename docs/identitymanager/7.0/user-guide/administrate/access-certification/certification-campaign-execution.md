@@ -10,7 +10,7 @@ How to execute access certification campaigns, i.e. review specific entitlement 
 
 ## Overview
 
-The aim of an access certification campaign is to review specific entitlement assignments for specific identities, in order to certify them and express an audit opinion that justifies their necessity.
+The aim of an access certification campaign is to review specific entitlement assignments for specific identities, to certify them and express an audit opinion that justifies their necessity.
 
 Once certification campaigns are scheduled, the assigned reviewers must decide for all relevant assignments if they ought to be deleted or not.
 
@@ -43,31 +43,31 @@ Each assignment can be commented by clicking on the corresponding icon.
 2. Choose one of the three possibilities to verify all assignments one by one:
 
 :::note
- In order to help reviewers in the decision-making process, each assignment shows a recommendation icon, indicating whether said assignment complies with the role model.
+ To help reviewers in the decision-making process, each assignment shows a recommendation icon, indicating whether said assignment complies with the role model.
 
 See the icons below this note.
 
-The **Recommended** icon indicates that the entitlement has been automatically granted according to the security policy. You can approve it because it is compliant. The Not **Recommended** icon indicates that the entitlement does not comply with the security policy. It is **Recommended** to refuse it, unless the user really needs it.
+The **Recommended** icon indicates that the entitlement has been automatically granted according to the security policy. You can approve it because it is compliant. The Not **Recommended** icon indicates that the entitlement doesn't comply with the security policy. It is **Recommended** to refuse it, unless the user really needs it.
 
-An absence of any icon indicates that the entitlement does not comply with the security policy. However, it has been manually granted or denied. Thus there is no recommendation, please review this entitlement **carefully**. 
+An absence of any icon indicates that the entitlement doesn't comply with the security policy. However, it has been manually granted or denied. Thus there is no recommendation, review this entitlement **carefully**. 
 :::
 ![Recommendation Icon](/images/identitymanager/certifcampaign_iconrecommendation_v522.svg)
 
 ![Discouragement Icon](/images/identitymanager/certifcampaign_icondiscouragement_v522.svg)
 
-- Either click on the approval icon to confirm that this entitlement **is necessary** for this identity.
+- Either click the approval icon to confirm that this entitlement **is necessary** for this identity.
 
 ![Approval Icon](/images/identitymanager/certifcampaign_iconapproval_v522.svg)
 
-- Or click on the decline icon to confirm that this entitlement **is not necessary** for this identity.
+- Or click the decline icon to confirm that this entitlement **isn't necessary** for this identity.
 
 ![Decline Icon](/images/identitymanager/certifcampaign_icondecline_v522.svg)
 
-- Or click on the three dots icon to highlight that this entitlement **is not part of your scope of responsibility **and forward it to the adequate person.
+- Or click the three dots icon to highlight that this entitlement **isn't part of your scope of responsibility **and forward it to the adequate person.
 
 ![Forward Icon](/images/identitymanager/certifcampaign_iconforward_v522.svg)
 
-3. Click on **Confirm Decisions** on the left of the page.
+3. Click **Confirm Decisions** on the left of the page.
 
 If you've made an erroneous decision, exiting the page **before** confirming offers the possibility to quit without saving and start over from the last confirm.
 

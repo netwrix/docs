@@ -14,7 +14,7 @@ within the Access Analyzer database or it will be blank.
 
 ![Sensitive Content report at the database and table level](/images/accessinformationcenter/12.0/resourceaudit/postgresql/databasetable/databasesensitivecontent.webp)
 
-This report is comprised of the following columns:
+The following columns comprise this report:
 
 - Criteria Name – Type of potentially sensitive criteria matches found
 - Criteria Type – Pattern for pattern based matches (System Criteria), and subject type based on

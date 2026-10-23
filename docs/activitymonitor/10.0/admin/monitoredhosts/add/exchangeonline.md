@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Exchange Online
 
-Prior to adding an Exchange Online host to the Activity Monitor, the prerequisites for the target
+Before adding an Exchange Online host to the Activity Monitor, the prerequisites for the target
 environment must be met. See the
 [Exchange Online Activity Auditing Configuration](/docs/activitymonitor/10.0/requirements/activityagent/exchange-activity.md)
 topic for additional information.
@@ -19,7 +19,7 @@ monitoring the target environment.
 
 ## Add Exchange Online Host
 
-Follow the steps to add an Exchange Online host to be monitored.
+To add an Exchange Online host to be monitored:
 
 **Step 1 –** In the Activity Monitor, go to the Monitored Hosts & Services tab and click Add. The Add New Host
 window opens.
@@ -99,26 +99,26 @@ Click **Next**.
 **Step 10 –** If Syslog Server is selected on the **Where To Log The Activity** page, the Syslog
 Output page can be configured. The configurable options are:
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used. The Event stream is the activity
       being monitored according to this configuration for the monitored host.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the Message framing drop-down menu. See the
+    The TCP and TLS protocols add the Message framing dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/10.0/admin/outputs/syslog/syslog.md) topic for additional information.
 
 - The Test button sends a test message to the Syslog server to check the connection. A green check
   mark or red will determine whether the test message has been sent or failed to send. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -129,7 +129,7 @@ Click **Finish**.
 ![Exchange Online in Activity Monitor](/images/activitymonitor/9.0/admin/monitoredhosts/add/exchangeonline.webp)
 
 The added Exchange Online host is displayed in the monitored hosts/service table. Once a host has been added
-for monitoring, configure the desired outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/10.0/admin/monitoredhosts/output/output.md)
+for monitoring, configure the outputs you want. See the [Output for Monitored Hosts](/docs/activitymonitor/10.0/admin/monitoredhosts/output/output.md)
 topic for additional information.
 
 ## Host Properties for Exchange Online

@@ -6,10 +6,9 @@ sidebar_position: 60
 
 # FS_Ransomware Job
 
-The FS_Ransomware job is comprised of analysis and reports which use the data collected by the
-**0.Collection** job group to provide information on periods of time in which users are responsible
-for an abnormally high number of updates. This can be indicative of ransomware. Additionally,
-activity involving files which are known as ransomware artifacts is highlighted.
+The FS_Ransomware job uses the data collected by the **0.Collection** job group to identify periods
+when users make an abnormally high number of updates, which can indicate ransomware. It also
+highlights activity involving known ransomware artifacts.
 
 ## Analysis Tasks for the FS_Ransomeware Job
 
@@ -17,7 +16,7 @@ View the analysis tasks by navigating to the **FileSystem** > **5.Activity** > *
 Activity** > **FS_Ransomware** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Server Functionality
 
-Once the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User
-Interface from the assigned IP address. For more information, please refer to the dedicated chapter [Configuring EPP Server IP](/docs/endpointprotector/admin/appliance.md#ip-conﬁguration).
+After the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User
+Interface from the assigned IP address. For more information, refer to the dedicated chapter [Configuring EPP Server IP](/docs/endpointprotector/admin/appliance.md#ip-configuration).
 
 :::note
 Always use the IP address with HTTPS (Hypertext Transfer Protocol Secure).
@@ -22,19 +22,19 @@ For detailed information on settings change or creating additional administrator
 
 ![Page for default login credentials for the root account](login.webp)
 
-## Conﬁguration Wizard
+## Configuration Wizard
 
-The Conﬁguration Wizard provides you with several steps to deﬁne basic settings. These include
+The Conﬁguration Wizard has several steps to deﬁne basic settings. These include
 setting up the Server Time Zone, importing Licenses, Server Update or uploading Oﬄine Patches,
 Global device rights, E-mail Server settings, Main Administrator details, etc. You can change these
 settings at any time.
 
-The Conﬁguration Wizard is available only if the basic settings for the Endpoint Protector have
-never been conﬁgured.
+The Conﬁguration Wizard is available only if no one has conﬁgured the basic settings for Endpoint
+Protector yet.
 
-As an additional security measure, a session timeout is implemented for 300 seconds (5 minutes) of
-inactivity. If you are not active for this amount of time, you are notiﬁed the session will expire
-and logged out unless you select to continue the session.
+As an additional security measure, Endpoint Protector ends the session after 300 seconds (5 minutes)
+of inactivity. If you aren't active for this amount of time, Endpoint Protector notiﬁes you that the
+session will expire and logs you out unless you select to continue the session.
 
 :::note
 You can customize the session timeout and timeout counter from the
@@ -49,8 +49,8 @@ You can customize the session timeout and timeout counter from the
 In this section, you can view general information as graphics and charts related to the most
 important activities logged by Endpoint Protector.
 
-You will view more speciﬁc dashboards on the Device Control, Content Aware Protection and eDiscovery
-sections.
+The Device Control, Content Aware Protection, and eDiscovery sections have more speciﬁc
+dashboards.
 
 ![View general information as graphics and charts related to the most important activities](general.webp)
 
@@ -61,7 +61,7 @@ status.
 
 ![View general information of the system’s functionality, alerts, and backup status](systemstatus.webp)
 
-From the System Functionality section, you can enable Endpoint Protector, as well as just speciﬁc
+From the System Functionality section, you can enable Endpoint Protector, as well as specific
 modules (Device Control, Content Aware Protection, or eDiscovery).
 
 ![Enable EPP , as well as just speciﬁc modules](systemfunctionality.webp)
@@ -69,8 +69,8 @@ modules (Device Control, Content Aware Protection, or eDiscovery).
 From the System Status subsection, you can enable the HDD Disk Space and Log Rotation.
 
 :::note
-If this setting is enabled, when the Server’s disk space reaches a certain percentage
-(starting from 50% up to 90%), old logs will be automatically overwritten by the new ones.
+If you enable this setting, when the Server’s disk space reaches a certain percentage
+(starting from 50% up to 90%), new logs automatically overwrite the old ones.
 :::
 
 
@@ -88,7 +88,7 @@ From the System Backup subsection, you can enable the System Backup.
 ## Server Update
 
 From this section, you can apply the latest security and Endpoint Protector Server offline
-updates. Starting with version 2509, the Live Update feature has been deprecated.
+updates. Starting with version 2509, Endpoint Protector no longer offers the Live Update feature.
 
 :::note
 This feature communicates through port 80. Whitelist the liveupdate.endpointprotector.com
@@ -131,7 +131,7 @@ AWS, Goggle, etc.) with the exception for Operating System and Kernel upgrades.
 
 
 :::note
-Updates are not tested beforehand but are pulled from the oﬃcial Linux repository.
+Netwrix doesn't test these updates beforehand; Endpoint Protector pulls them from the oﬃcial Linux repository.
 :::
 
 
@@ -166,9 +166,9 @@ server or other sub-services in the background
 
 ## Effective Rights
 
-In this section you can view currently applied Device Control or Content Aware Protection policies.
+In this section you can view applied Device Control or Content Aware Protection policies.
 Based on the options you select from the Effective Rights Criteria form, you can view information
 based on rights, users, computers, device types, speciﬁc devices, report type (PDF or XLS),
 including Outside Hours and Outside Network Policies, and more.
 
-Once the report is generated, from the Actions column, you can download or delete it.
+After Endpoint Protector generates the report, you can download or delete it from the Actions column.

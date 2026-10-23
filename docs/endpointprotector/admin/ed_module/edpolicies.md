@@ -9,7 +9,7 @@ sidebar_position: 51
 
 eDiscovery policies are sets of rules that define what sensitive content to scan for on protected endpoints. Each policy specifies the content types to detect, the thresholds for reporting, and the computers or groups the policy applies to.
 
-You can create up to 40 eDiscovery policies. A performance advisory appears when more than five policies are active simultaneously, because each additional policy increases the scanning workload on endpoints.
+You can create up to 40 eDiscovery policies. A performance advisory appears when more than five policies are active simultaneously since each additional policy increases scanning workload on endpoints.
 
 ## Policy views
 

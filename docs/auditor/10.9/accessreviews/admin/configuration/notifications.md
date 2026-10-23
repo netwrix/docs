@@ -18,8 +18,8 @@ for configuring weekly reminders for owners with outstanding reviews.
 
 ## Configure SMTP Server Settings
 
-SMTP server information is supplied and modified on the Notifications page. Follow the steps to
-configure or modify the SMTP settings.
+SMTP server information is supplied and modified on the Notifications page. To configure or
+modify the SMTP settings:
 
 ![Notifications page SMTP server settings section](/images/auditor/10.7/access/reviews/admin/configuration/notificationssmtp.webp)
 
@@ -29,21 +29,18 @@ configure or modify the SMTP settings.
 name (mail.example.com) or IP Address.
 
 **Step 3 –** If needed, modify the Port used by your SMTP server to listen for new messages.
-Historically, the default for SMTP has been port 25. However, if a secure connection is desired
-(SSL/TLS), the SMTPS port needs to be changed, traditionally 465. Alternately, environments with
+Historically, the default for SMTP has been port 25. However, if you want a secure connection (SSL/TLS), change the SMTPS port—traditionally 465. Alternately, environments with
 off-premises or outsourced email service, e.g. gmail.com, hotmail.com, etc., may have to supply a
-different submission port, traditionally port 587. Ultimately it is an organization’s
-email/messaging administrator who will know the proper value for the SMTP port.
+different submission port, traditionally port 587. Your organization’s email or messaging administrator will know the correct SMTP port value.
 
 **Step 4 –** SMTP security settings:
 
-- Use a secure connection for this server (SSL/TLS) – Allows for the use of a secure transport layer
+- Use a secure connection for this server (SSL/TLS) – Enables a secure transport layer
   for message relay requests (submissions) and authentication requests
 - Enforce certificate validation to ensure security — Forces the use of certificate validation
 - This server requires authentication – Enable if the identified SMTP server requires
-  authentication. Some SMTP servers traditionally have been configured to deny all but anonymous
-  relay requests, i.e. an attempt to authenticate results in a denial, while an anonymous request is
-  not denied. Select this checkbox, and then select one of the following radio buttons if
+  authentication. Some SMTP servers have traditionally been configured to deny all but anonymous relay requests:
+  they deny authentication attempts but allow anonymous requests. Select this checkbox, and then select one of the following radio buttons if
   authentication is required:
 
     - Use the account running this service
@@ -78,7 +75,7 @@ Notification options.
 
 ## Notification Options
 
-Once the SMTP server is configured, there are additional options. Only the Reply-To field must be
+After you configure the SMTP server, there are additional options. Only the Reply-To field must be
 populated:
 
 ![Notifications page showing Notification Options section](/images/auditor/10.7/access/reviews/admin/configuration/notificationsoptions.webp)
@@ -111,8 +108,8 @@ Reminders section.
 
 **Step 3 –** Set the date and time for when the reminder will be sent:
 
-- Day of the week – Select the day of the week from the drop-down menu
-- Time of day – Click on the field to open a clock window. Set the time of day reminders will be
+- Day of the week – Select the day of the week from the dropdown menu
+- Time of day – Click the field to open a clock window. Set the time of day reminders will be
   sent, e.g. 12:00 AM
 
 **Step 4 –** Click **Save**. Then click **OK** to confirm.

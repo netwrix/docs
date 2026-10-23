@@ -10,7 +10,7 @@ The ADInventory Data Collector gathers essential user and group inventory inform
 reference tables. Unlike other Enterprise Auditor data collectors, the ADInventory Data Collector
 writes data to these tables regardless of the job executing the query.
 
-These tables and their associated views are outlined below:
+The following table outlines these tables and their associated views:
 
 | Table                                | Details                                                                                                                                                                                                       | AD Object Reference Article                                                                                                                    |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,7 +33,7 @@ These tables and their associated views are outlined below:
 
 
 Views are the recommended way for you to obtain the information gathered by the ADInventory Data
-Collector. They contain additional information for building queries easily.
+Collector. They contain additional information for building queries.
 
 The following is an explanation of the corresponding views created for some of the tables generated
 by the ADInventory Data Collector:

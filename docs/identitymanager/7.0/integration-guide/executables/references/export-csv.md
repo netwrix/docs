@@ -20,7 +20,7 @@ The output file will be located in `C:/identitymanagerContoso/Temp/ExportOutput/
 
 Consider the file `C:/identitymanagerContoso/Sources/hr_example.csv` with `;` as separator.
 
-As `,` is considered to be the default separator, we must set it:
+As `,` is considered to be the default separator, set it:
 
 `--raw-files-path C:/identitymanagerContoso/Sources/hr_example.csv --ignore-cookies --connection-identifier HREXAMPLE --output-path C:/identitymanagerContoso/Temp/ExportOutput --separator ;`
 
@@ -38,9 +38,9 @@ You can put your regex and precise that it is one with the `--regex` argument:
 
 In a larger context, the export might be used for complete or incremental synchronization. That is why it has two paths: `--raw-files-path` for complete synchronizations, `--path-incremental` for incremental ones.
 
-In the export's scope, it only means one thing, what path must be used depends on `--ignore-cookies`: its presence meaning that we are in a complete synchronization context and we use `--raw-files-path`; its absence that we are in an incremental one and we use `--path-incremental`.
+In the export's scope, it only means one thing, what path must be used depends on `--ignore-cookies`: its presence meaning a complete synchronization context with `--raw-files-path`; its absence indicating an incremental context with `--path-incremental`.
 
-It means that if the user gives `--ignore-cookies` and not `--raw-files-path`, or if they give neither `--ignore-cookies` nor `--path-incremental`, the export will not be launched to prevent any problem (complete data for an incremental synchronization for example). The `--force-complete` argument bypasses this security: in the product, it is used for the initialization job, where we want to perform a complete synchronization, even for CSV connections with only an incremental path.
+It means that if the user gives `--ignore-cookies` and not `--raw-files-path`, or if they give neither `--ignore-cookies` nor `--path-incremental`, the export will not be launched to prevent any problem (complete data for an incremental synchronization for example). The `--force-complete` argument bypasses this security: in the product, it is used for the initialization job to perform a complete synchronization, even for CSV connections with only an incremental path.
 
 ## Arguments
 
@@ -53,5 +53,5 @@ It means that if the user gives `--ignore-cookies` and not `--raw-files-path`, o
  | --ignore-cookies optional | **Type** No Value **Description** Specifies the synchronization mode, its presence meaning complete, its absence incremental. | 
  | --- | --- | 
  | --- | --- | 
- | --regex optional | **Type** No Value **Description** The file name is a regex so we find the last generated corresponding file. | 
+ | --regex optional | **Type** No Value **Description** The file name is a regex to find the last generated corresponding file. | 
  | --separator optional | **Type** String **Description** Defines the separator if different than `,`. | 

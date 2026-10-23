@@ -30,8 +30,8 @@ To adjust audit settings automatically, do any of the following:
   [Audit Configuration Assistant](/docs/auditor/10.9/tools/auditconfigurationassistant.md) topic for additional
   information.
 
-If any conflicts are detected with your current audit settings, automatic audit configuration will
-not be performed. For a full list of audit settings required for Netwrix Auditor to collect
+If Netwrix Auditor detects any conflicts with your current audit settings, it doesn't perform
+automatic audit configuration. For a full list of audit settings required for Netwrix Auditor to collect
 comprehensive audit data and instructions on how to configure them, refer to the
 [Active Directory](/docs/auditor/10.9/configuration/activedirectory/overview.md) topic.
 

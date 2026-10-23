@@ -6,29 +6,29 @@ sidebar_position: 20
 
 # Agents and Devices
 
-Devices will be automatically assigned to a Group as determined by results of the **New Device
-Discovery** policy report. Device attributes such as Group, Type and Credentials, or Delete Devices
-can be edited below.
+Netwrix Change Tracker automatically assigns devices to a group based on the results of the
+**New Device Discovery** policy report. You can edit device attributes such as Group, Type, and
+Credentials, or delete devices, using the following options.
 
-- Devices are automatically assigned to a Device Group based on the Discovery Report results but
-  this can be overridden herel;
-- The ‘Last Poll Time’ will also filter devices on a before or after date/time;
+- Netwrix Change Tracker automatically assigns devices to a Device Group based on the Discovery
+  Report results, but you can override this here;
+- The **Last Poll Time** filter also lets you filter devices by a before or after date and time;
 - Click Edit to change Group Assignment and to enable Diagnostic Mode or to Block Events from the
   Device;
 - Diagnostic Mode generates more detailed dialogue from the Agent regarding its operation, for
   example, Baselining progress – this is disabled by default to reduce activity and events storage;
-- Event Send Block allows events to be temporarily blocked for a Device, for example, in case a
-  misconfigured template is generating too much noise.
+- Event Send Block lets you temporarily block events for a device, for example, when a
+  misconfigured template generates too much noise.
 
 :::note
-Use the **Filter Control Panel** to allow focus on just the Devices or Groups of interest.
+Use the **Filter Control Panel** to focus on specific devices or groups.
 :::
 
 
 ![Graphical user interface, application](/images/changetracker/admin/settings/page_guide_24.webp)
 
 :::note
-Click on the ‘burger’ icon alongside any column heading to get a full list of column
+Click the menu icon alongside any column heading to get a full list of column
 options.
 :::
 

@@ -10,7 +10,7 @@ How to certify existing access by reviewing a specific range of assigned permiss
 
 ## Overview
 
-The aim of an access certification campaign is to review specific entitlement assignments for specific identities, in order to certify them and express an audit opinion that justifies their necessity. So, for all relevant permissions, the idea is to specify if these assignments ought to be deleted or not.
+The aim of an access certification campaign is to review specific entitlement assignments for specific identities, to certify them and express an audit opinion that justifies their necessity. So, for all relevant permissions, the idea is to specify if these assignments ought to be deleted or not.
 
 There are several ways to arrange an access certification campaign. Among others, through filters you can choose to focus on:
 

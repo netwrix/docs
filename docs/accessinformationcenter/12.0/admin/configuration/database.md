@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # Database Page
 
-The Access Information Center must have access to the SQL Server hosting the database. It is
-configured during installation. If it is necessary to modify these setting after installation, that
-is done on the Database Page of the Configuration interface.
+The Access Information Center must have access to the SQL Server hosting the database. The system
+configures it during installation. If you need to modify these settings after installation,
+do so on the Database Page of the Configuration interface.
 
 ![Configuration interface showing the Database page](/images/accessinformationcenter/12.0/admin/configuration/database.webp)
 
@@ -54,12 +54,12 @@ Remember, click **Save** when any changes are made to this page.
 
 ## Update the Database Service Account Password
 
-Follow the steps to update the Database service account password. These steps only apply for the SQL
-Authentication option.
+To update the Database service account password, these steps only apply for the SQL
+Authentication option:
 
 **Step 1 –** On the Database page, enter the new password in the correct field.
 
-**Step 2 –** Click **Save**. Then click **OK** to confirm. After the settings are saved, a
-re-authentication is required to continue using the Access Information Center.
+**Step 2 –** Click **Save**. Then click **OK** to confirm. After the system saves the settings, you must
+re-authenticate to continue using the Access Information Center.
 
-The Database service account password has been updated.
+The system has updated the Database service account password.

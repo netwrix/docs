@@ -6,13 +6,13 @@ sidebar_position: 20
 
 # Perform Role Mining
 
-How to use role mining to suggest role assignment rules based on existing assignments, in order to push the [Automate Assignments](../../../user-guide/optimize/assignment-automation) wall further.
+How to use role mining to suggest role assignment rules based on existing assignments, to push the [Automate Assignments](../../../user-guide/optimize/assignment-automation) wall further.
 
 ## Overview
 
-After the role catalog is established, the Compute Role Model Task task is able to assign single roles to users according to their attributes which are used as assignment criteria.
+After the role catalog is established, the Compute Role Model Task task can assign single roles to users according to their attributes which are used as assignment criteria.
 
-> For example, in the AD, entitlements are given through group membership. Integrators create a > navigation rule to assign each group to the users who have the corresponding single role. Then, the  [Compute Role Model Task](../../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask) is able to assign single roles to users according to their existing group membership.
+> For example, in the AD, entitlements are given through group membership. Integrators create a > navigation rule to assign each group to the users who have the corresponding single role. Then, the  [Compute Role Model Task](../../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask) can assign single roles to users according to their existing group membership.
 >
 > In addition to group membership, the assignment of an entitlement to users could also depend on
 > users' attributes like their location, position title, etc.
@@ -21,7 +21,7 @@ Now that users received their roles, the role mining tool can analyze these assi
 
 ![Schema - Role Mining](/images/identitymanager/rolemining_schema.webp)
 
-Role mining is a Machine Learning process. It is a statistic tool used to emphasize the [Single Role Rule](../../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule) that constitute the key criteria for existing role assignments. It detects the most probable links between identities dimensions and their roles in order to suggest the appropriate entitlement assignment rules.
+Role mining is a Machine Learning process. It is a statistic tool used to emphasize the [Single Role Rule](../../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule) that constitute the key criteria for existing role assignments. It detects the most probable links between identities dimensions and their roles to suggest the appropriate entitlement assignment rules.
 
 > For example, suppose that 80% of NETWRIX workers in Marseilles have access to an application "App". Then, role mining is most likely to recognize the working site as a relevant dimension, and suggest to create a rule that gives the "App" access to users whose site is Marseilles.
 
@@ -42,7 +42,7 @@ Mining rules can be configured to generate:
 
 You can generate both automatic and **suggested rules** for the same role, with different precision levels and different approval workflows.
 
-> Consider an organization where an unknown ratio of users have a given role. Using the precision settings, we can create a mining rule to generate automatic assignment rules when the ratio is above 95% and a second mining rule to generate suggested assignment rules when the ratio is between 75% and 95%.
+> Consider an organization where an unknown ratio of users have a given role. Using the precision settings, you can create a mining rule to generate automatic assignment rules when the ratio is above 95% and a second mining rule to generate suggested assignment rules when the ratio is between 75% and 95%.
 >
 > ![Rule Types](/images/identitymanager/rolemining_ruletype.webp)
 
@@ -53,8 +53,6 @@ You can also differentiate entitlements according to their sensitivity, for exam
 The automation of entitlement assignments according to sensitivity brings greater confidence in basic entitlements assignment which won't need to be certified anymore. Thus, automation lets certification campaigns focus on more sensitive entitlements.
 
 Role mining should be performed first for **automatic rules** as they are stricter precision-wise. Thus, **automatic rules** should always have priority over **suggested rules** (via the `Priority` setting).
-
-See more details about role mining.
 
 ## Participants and Artifacts
 
@@ -70,13 +68,13 @@ See the[Create Roles in the Role Catalog](../../../user-guide/set-up/single-role
 
 Create a mining rule by proceeding as follows:
 
-1. On the home page in the **Configuration** section, click on the **Role Mining** button.
+1. On the home page in the **Configuration** section, click the **Role Mining** button.
 
     ![Home page - Connectors](/images/identitymanager/home_rolemining_v60.webp)
 
 You will see all existing mining rules.
 
-2. Click on the addition button at the top right and fill in the fields.
+2. Click the addition button at the top right and fill in the fields.
 
     ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
 
@@ -99,18 +97,18 @@ assignment that can be: `Suggested` so that the resource type is listed among su
     - `Priority`: priority order of the mining rule. Identity Manager applies mining rules one after
 the other in descending order.
     - `Minimum Precision`: minimum authorized percentage of correct role assignments, considering
-both the roles that are assigned to users who should have them, and the roles that are not assigned to users who should not have them. :::info
+both the roles that are assigned to users who should have them, and the roles that aren't assigned to users who shouldn't have them. :::info
  NETWRIX recommends around 99.5%, to be lowered when working on a sensitive application and/or a large user population, and vice versa. 
 :::
     - `Maximum Allowed False Positives`: maximum authorized percentage of false positive
-assignments, i.e. roles that are assigned to users who should not have them.
+assignments, i.e. roles that are assigned to users who shouldn't have them.
 
 :::info
  NETWRIX recommends around 1%, to be lowered when working on a sensitive application and/or a large user population, and vice versa. ::: **Enlarge the number of managed entitlements by tolerating errors:**
 
 Automation reduces the error rate by avoiding human mistakes. Errors can still occur such as "[false positives](https://en.wikipedia.org/wiki/Binary_classification)", i.e. users receiving inappropriate entitlements, and thus creating security issues. However, experience shows that a slight **error tolerance in role mining can highly benefit automation**.
-1. Click on **Create** and see a line added on the rules page.
-2. Click on **Simulate** to perfom role mining in a simulation. See the[Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
+1. Click **Create** and see a line added on the rules page.
+2. Click **Simulate** to perfom role mining in a simulation. See the[Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
 
     ![Role Mining Jobs](/images/identitymanager/rolemining_launchjob_v602.webp)
 
@@ -125,7 +123,7 @@ Netwrix Identity Manager (formerly Usercube) recommends [Removing Redundant Assi
 
 ## Verify Role Mining
 
-In order to verify the process, access the rule list from the home page.
+To verify the process, access the rule list from the home page.
 
 ![Home - Access Rules](/images/identitymanager/home_rules_v602.webp)
 

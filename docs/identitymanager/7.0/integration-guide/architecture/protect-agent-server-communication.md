@@ -12,7 +12,7 @@ This guide shows how to set up a secured authentication system between Identity 
 
 Identity Manager provides a simple way to protect the communication between agent and server, using OpenID Connect.
 
-First, make sure to understand the OpenID protocol. For example, [see Microsoft's documentation on the matter](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc).
+First, ensure to understand the OpenID protocol. For example, [see Microsoft's documentation on the matter](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc).
 
 The idea, when sending data from the agent to the server, is the following:
 
@@ -27,25 +27,25 @@ certificate configured by Identity Manager.
 
 The server must be configured, in its `appsettings.json`, with:
 
-- an encryption certificate with the private and public keys, in order to be able to send signed
+- an encryption certificate with the private and public keys, to be able to send signed
 tokens.
 
 The agent must be configured, in its `appsettings.json`, with:
 
-- an encryption certificate with at least the server's public key, in order to be able to verify the
+- an encryption certificate with at least the server's public key, to be able to verify the
 tokens sent by the server;
 - another encryption certificate meant to encrypt specific files such as logs or temporary files;
 - an SSL encryption certificate for the HTTPS connection.
 
 The SSL certificate is required when working in an on-premises environment. In a SaaS environment, Identity Manager provides it.
 
-In order to give to the agent the right permissions, the XML configuration must specify an [OpenIdClient](../../integration-guide/toolkit/xml-configuration/access-control/openidclient) linked to its hashed secret, and to a Identity Manager profile.
+To grant the agent permissions, the XML configuration must specify an [OpenIdClient](../../integration-guide/toolkit/xml-configuration/access-control/openidclient) linked to its hashed secret, and to a Identity Manager profile.
 
 ## Protect Agent/Server Communication
 
 Protect agent/server communication by proceeding as follows:
 
-1. Make sure that both the agent and server configurations specify an encryption certificate. See
+1. ensure that both the agent and server configurations specify an encryption certificate. See
 the [Application Settings](../../integration-guide/network-configuration/agent-configuration/appsettings) for additional information.
 
     > For example:
@@ -64,7 +64,7 @@ the [Application Settings](../../integration-guide/network-configuration/agent-c
 >
     > ```
 
-2. Make sure that the agent is also configured with its own encryption certificate. See the
+2. ensure that the agent is also configured with its own encryption certificate. See the
 [Application Settings](../../integration-guide/network-configuration/agent-configuration/appsettings) for additional information.
 
     > For example:

@@ -9,7 +9,7 @@ sidebar_position: 20
 Inclusions and exclusions provide a granular way of limiting collection scope to a specific set of
 documents within a content source.
 
-This functionality is currently supported for the following source types:
+The following source types support inclusions and exclusions:
 
 - Exchange
 - File System

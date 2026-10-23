@@ -7,15 +7,14 @@ sidebar_position: 10
 # Recommended Configurations for the 2.Users Job Group
 
 The **Active Directory** > **2.Users** Job Group has been configured by default to run with the
-out-of-the-box settings. It can be run directly or scheduled.
+default settings. It can be run directly or scheduled.
 
 **Dependencies**
 
-- The **.Active Directory Inventory** Job Group needs to be successfully executed prior to running
-  this job group
+- Successfully run the **.Active Directory Inventory** Job Group before running this job group.
 
-    - For the **AD_ServiceAccounts** Job, the **.Active Directory Inventory** > **1-AD_Scan** Job
-      needs to be configured to collect **servicePrincipalName** as a Custom Attribute
+    - For the **AD_ServiceAccounts** Job, configure the **.Active Directory Inventory** >
+      **1-AD_Scan** Job to collect **servicePrincipalName** as a Custom Attribute
 
 - For the **AD_WeakPassword** Job:
 
@@ -26,12 +25,12 @@ out-of-the-box settings. It can be run directly or scheduled.
       topic for additional information.
 
     :::info
-    If this job is not to be used, disable the job to prevent execution when the
-    job group is executed.
+    If you don't need this job, disable it to prevent it from running with the
+    job group.
     :::
 
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
 Only the **AD_WeakPasswords** Job requires a host list. The host list assignment has been configured
 under the **2. Users** > **AD_WeakPasswords** > **Configure** > **Hosts** node. It is set to target
@@ -53,9 +52,8 @@ additional information.
 **Schedule Frequency**
 
 The data analyzed by the **2.Users** Job Group jobs is collected by the **.Active Directory
-Inventory** Job Group. Therefore, it is recommended to schedule these jobs to run after the
-**.Active Directory Inventory** job group collection has completed. These jobs can be scheduled to
-run as desired.
+Inventory** Job Group. Therefore, schedule these jobs to run after the **.Active Directory
+Inventory** job group collection finishes. These jobs can be scheduled to run as desired.
 
 **Run at the Job Group Level**
 
@@ -63,7 +61,7 @@ Run the jobs in the **2.Users** Job Group together and in order by running the e
 instead of the individual jobs.
 
 :::tip
-Remember, if the **AD_WeakPassword** Job is not to be executed, it can be disabled.
+If you don't need to run the **AD_WeakPassword** Job, disable it.
 :::
 
 

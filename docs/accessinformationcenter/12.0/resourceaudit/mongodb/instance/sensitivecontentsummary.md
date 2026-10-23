@@ -11,7 +11,7 @@ criteria matches were found on the selected instance. This report includes a Det
 
 ![Sensitive Content Summary report at the instance level](/images/accessinformationcenter/12.0/resourceaudit/mongodb/instance/instancesensitivecontentsummary.webp)
 
-This report is comprised of the following columns:
+This report contains the following columns:
 
 - Server Name – MongoDB host name or cluster name
 - Criteria Name – Type of potentially sensitive criteria matches found

@@ -15,11 +15,11 @@ A single role is a way to represent an entitlement that is to be assigned to an 
 To be effective, **roles** must be linked to actual entitlements in the managed systems. Within Identity Manager, an entitlement assigned to an identity is in fact represented by the value of a given navigation property, in a resource owned by said identity. See the [Create an Entity Type](../../../user-guide/set-up/connect-system/entity-type-creation)topic for additional information. Thus, each role is linked to one navigation rule per entitlement. See the [Resource Type](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) topic for additional information.
 
 :::note
- For example, imagine that we want to grant unlimited Internet access to the administrator profile of an identity. This entitlement won't be assigned directly to the identity but to its AD administration account. In our Active Directory, there is a resource called `<DL-INTERNET-Restricted>` identified from among AD entries as a group. So we need to add this group membership to the properties of the identity's AD account, using `<DL-INTERNET-Restricted>` as a value of the **memberOf** property. 
+ For example, imagine granting unlimited Internet access to the administrator profile of an identity. This entitlement won't be assigned directly to the identity but to its AD administration account. In Active Directory, there is a resource called `<DL-INTERNET-Restricted>` identified from among AD entries as a group. Add this group membership to the properties of the identity's AD account, using `<DL-INTERNET-Restricted>` as a value of the **memberOf** property. 
 :::
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the **application owners** who know the application's users, entitlements and data model.
+For a given managed system, integrators may need the help of the **application owners** who know the application's users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -31,11 +31,11 @@ Create a single role by proceeding as follows:
 
 ![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 
-**Step 1 –** On the home page in the **Configuration** section, click on **Access **roles**** to access the **roles** page.
+**Step 1 –** On the home page in the **Configuration** section, click **Access **roles**** to access the **roles** page.
 
 ![createsinglerole](/images/identitymanager/createsinglerole.webp)
 
-**Step 2 –** On the **roles** page, click on the adequate category and create a role by clicking on **+New** at the top right corner.
+**Step 2 –** On the **roles** page, click the adequate category and create a role by clicking on **+New** at the top right corner.
 
 **Step 3 –** Fill in the fields.
 
@@ -44,7 +44,7 @@ Create a single role by proceeding as follows:
 - Policy: Policy in which the role exists.
 - Entity Type: Entity type targeted by the role.
 - Description: Description of the role.
-- Tags: Label(s) that can later be used to filter the target **roles** of access certification
+- Tags: Labels that can later be used to filter the target **roles** of access certification
 campaigns. See the [Schedule a Certification Campaign](../../../user-guide/administrate/access-certification/certification-campaign-scheduling) topic for additional information.
 
 :::note
@@ -60,20 +60,20 @@ It has five options:
 
     - Inherited:The policy's setting will be used.
     - Explicit, by default not context bound: By default, the assignment's end date will not be
-context bound in order to encourage the manual entry of an end date.
+context bound to encourage the manual entry of an end date.
     - Explicit, by default context bound: By default, the assignment's end date will be context
 bound and therefore locked, but a manual date can be entered.
     - Never: The assignment's end date will never be locked and needs to be specified manually.
     - Always: The assignment's end date is always locked according to the applicable context rule.
 
 - Approve Role Implicitly: Needs at least the simple approval workflow. **Implicit** mode bypasses
-the approval step(s) if the person who makes the role request is also the role officer. **Explicit** refuses said bypass. **Inherited** follows the policy decision to approve **roles** implicitly or not. See the [Create a Policy](../../../user-guide/optimize/policy-creation) topic for additional information.
+the approval steps if the person who makes the role request is also the role officer. **Explicit** refuses said bypass. **Inherited** follows the policy decision to approve **roles** implicitly or not. See the [Create a Policy](../../../user-guide/optimize/policy-creation) topic for additional information.
 - Prolongation without a new approval workflow
-- Hide in Simplified View: Hides the role from the users' **Simplified View** in **View Permissions** dialog. This setting does not apply to **roles** which are either inferred or have workflow states which require manual action.
+- Hide in Simplified View: Hides the role from the users' **Simplified View** in **View Permissions** dialog. This setting doesn't apply to **roles** which are either inferred or have workflow states which require manual action.
 - Maximum Duration: Duration (in minutes) after which the role will be automatically revoked, if no earlier end date is specified.
 
 :::note
- The maximum duration impacts only the **roles** which are **manually assigned after** the maximum duration is set. Pre-assigned **roles** are not impacted. 
+ The maximum duration impacts only the **roles** which are **manually assigned after** the maximum duration is set. Pre-assigned **roles** aren't impacted. 
 :::
     - If no duration is set on the role, the maximum duration of the associated policy is applied.
     - If the duration is set to 0 on the role, it prevents the associated policy from applying its
@@ -85,13 +85,13 @@ will be required to validate or decline the entitlement prolongation. Inferred e
 :::note
  The grace period is only applied if the loss of the entitlement is due to a change in the **rules**, i.e. rule deletion or criteria changes. 
 :::
-If the grace period is not defined, the value is inherited from the policy.
+If the grace period isn't defined, the value is inherited from the policy.
 
-**Step 4 –** Click on **Create** and see a line added on the **roles** page.
+**Step 4 –** Click **Create** and see a line added on the **roles** page.
 
 **Step 5 –** Create at least one navigation rule with the single role as a criterion.
 
-Once you have completed the steps the single role is created.
+After you complete the steps, the single role is created.
 
 ## Create a Navigation Rule
 
@@ -101,15 +101,15 @@ Create a navigation rule by proceeding as follows:
 
 ![Home Page - Access **rules**](/images/identitymanager/home_rules_v602.webp)
 
-**Step 1 –** On the home page in the **Configuration** section, click on **Access **rules**** to access the **rules** page.
+**Step 1 –** On the home page in the **Configuration** section, click **Access **rules**** to access the **rules** page.
 
 ![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
-**Step 2 –** In the drop down menu at the top left, choose the entity type to which the future navigation rule will be applied.
+**Step 2 –** In the dropdown menu at the top left, choose the entity type to which the future navigation rule will be applied.
 
 ![Addition Icon](/images/identitymanager/iconadd_v602.webp)
 
-**Step 3 –** Click on the **Navigations** tab and on the addition button at the top right corner.
+**Step 3 –** Click the **Navigations** tab and on the addition button at the top right corner.
 
 ![Create a Navigation Rule](/images/identitymanager/singlerolescatalog_createnavrule_v602.webp)
 
@@ -122,9 +122,9 @@ Create a navigation rule by proceeding as follows:
 value's start and/or end date. An offset of effective date can be useful for some attributes. For example, account activation and deactivation can be managed according to the start and/or end dates.
 - Criteria: Conditions that, if met, trigger the created navigation.
 
-**Step 5 –** Click on **Create** and see a line added on the **rules** page.
+**Step 5 –** Click **Create** and see a line added on the **rules** page.
 
-Once you have completed the steps the navigation rule is created.
+After you complete the steps, the navigation rule is created.
 
 ## Impact of Modifications
 
@@ -132,29 +132,29 @@ When deleting a single role, caution must be used when deleting the correspondin
 
 ## Verify Single Role Creation
 
-In order to verify the process, check that the role and rule are created with the right parameters.
+To verify the process, check that the role and rule are created with the right parameters.
 
 ![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 
-**Step 1 –** For **roles**, click on **Access **roles**** on the home page in the **Configuration** section.
+**Step 1 –** For **roles**, click **Access **roles**** on the home page in the **Configuration** section.
 
 ![Access Single **roles**](/images/identitymanager/namingrulecreation_testroles_v602.webp)
 
 **Step 2 –** Select single **roles** and find the role you created inside the right category and with the right parameters.
 
-Our example would look like:
+This example would look like:
 
 ![Example - Generated Role](/images/identitymanager/namingrulecreation_exampleroleresult_v602.webp)
 
 ![Home Page - Access **rules**](/images/identitymanager/home_rules_v602.webp)
 
-**Step 3 –** For **rules**, click on **Access **rules**** on the home page in the **Configuration** section.
+**Step 3 –** For **rules**, click **Access **rules**** on the home page in the **Configuration** section.
 
 ![Access Navigation **rules**](/images/identitymanager/namingrulecreation_testrules_v602.webp)
 
-**Step 4 –** Select navigation **rules** and find the rule(s) you created with the right parameters.
+**Step 4 –** Select navigation **rules** and find the rules you created with the right parameters.
 
-Our example would look like:
+This example would look like:
 
 ![Example - Generated Rule](/images/identitymanager/namingrulecreation_exampleruleresult_v523.webp)
 

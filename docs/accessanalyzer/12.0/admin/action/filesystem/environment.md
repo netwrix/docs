@@ -7,10 +7,10 @@ sidebar_position: 40
 # File System Action: Environment
 
 The Environment (Environment Variables) page is available only if the selected operation requires
-the selection of a sample host.
+selecting a sample host.
 
-Use this page to select and connect to a sample host, via which a set of remote environment
-variables for use in scoping the action are loaded. Then, on the Target page, use the environment
+Use this page to select and connect to a sample host, which loads a set of remote environment
+variables for scoping the action. Then, on the Target page, use the environment
 variables to build dynamic file path locations for the selected operation.
 
 :::note

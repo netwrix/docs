@@ -40,8 +40,8 @@ manually deploy the Agent. It has the following fields:
 
 **Step 2 –** Click **Generate** to generate an enrollment secret, which is valid for 1 hour.
 
-- When deploying the Agent from the Administration Console, a new enrollment secret is automatically
-  created, which invalidates any previous secret that has not expired. .
+- When you deploy the Agent from the Administration Console, a new enrollment secret is automatically
+  created, which invalidates any previous secret that hasn't expired.
 - Click **Copy** to copy the enrollment secret and enter it in the Certificates window of the Agent
   Setup wizard during manual Agent installation.
 

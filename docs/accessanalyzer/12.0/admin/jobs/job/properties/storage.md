@@ -14,7 +14,7 @@ group level, or to configure settings just for this job.
 
 By default, all jobs are set to inherit the storage setting, the **Use Default** option. To
 configure a different profile for the job, select the **Use This Profile** option and select the
-desired Storage Profile from the drop-down menu. Storage Profiles can only be configured at the
+desired Storage Profile from the dropdown menu. Storage Profiles can only be configured at the
 **Settings** > **Storage** node. See the [Storage](/docs/accessanalyzer/12.0/admin/settings/storage/overview.md) topic for
 additional information.
 

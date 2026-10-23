@@ -7,7 +7,7 @@ sidebar_position: 10
 # Oracle_DatabaseLinks Job
 
 The Oracle_DatabaseLinks Job contains a report that provides information on Database Links where the
-listed Oracle Server is able to execute remote commands.
+listed Oracle Server can execute remote commands.
 
 ## Analysis Tasks for the Oracle_DatabaseLinks Job
 
@@ -15,7 +15,7 @@ Navigate to the **Jobs >  Databases > Oracle > 4.Configuration > Oracle_Databas
 Job >Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -32,4 +32,4 @@ the following preconfigured report:
 
 | Report         | Description                                                                                              | Default Tags | Report Elements                                                                                                                                                                                                                                                      |
 | -------------- | -------------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Database Links | This report highlights Database Links where the listed Oracle Server is able to execute remote commands. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Provides information on top five database links by instance</li><li>Bar Chart – Provides information on database links by instance (GB)</li><li>Table – Provides details on database links</li></ul> |
+| Database Links | This report highlights Database Links where the listed Oracle Server can execute remote commands. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Provides information on top five database links by instance</li><li>Bar Chart – Provides information on database links by instance (GB)</li><li>Table – Provides details on database links</li></ul> |

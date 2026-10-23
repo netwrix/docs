@@ -49,7 +49,7 @@ server:
 - Membership in the local Administrators group
 - READ and WRITE access to the archive location for Archiving feature only
 
-It is also necessary to enable the Remote Registry Service on the Activity Agent server.
+You also need to enable the Remote Registry Service on the Activity Agent server.
 
 For integration between the Activity Monitor and Access Analyzer, the credential used by Access
 Analyzer to read the activity log files must have also have this permission.
@@ -71,9 +71,9 @@ See the [Hitachi Activity Auditing Configuration](/docs/accessanalyzer/12.0/requ
 
 **Activity Monitor Archive Location**
 
-If the activity log files are being archived, configurable within the Netwrix Activity Monitor
-Console, then the credential used by Access Analyzer to read the activity log files must also have
-READ and WRITE permissions on the archive location.
+If you configure the Netwrix Activity Monitor Console to archive activity log files, the credential
+used by Access Analyzer to read the activity log files must also have READ and WRITE permissions on
+the archive location.
 
 ## Activity Auditing Port Requirements
 
@@ -84,15 +84,15 @@ are required for communication between the Agent server and the Netwrix Activity
 | -------------------------------- | -------- | ----- | ------------------- |
 | Activity Monitor to Agent Server | TCP      | 4498  | Agent Communication |
 
-The Windows firewall rules need to be configured on the Windows server, which require certain
-inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+Configure the Windows firewall rules on the Windows server. If the scans run in applet mode, create
+the required inbound rules. These scans operate over a default port range, which you can't specify
+in an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 
 Additional Firewall Rules for Integration between Access Analyzer and Activity Monitor
 
-Firewall settings are dependent upon the type of environment being targeted. The following firewall
+Firewall settings depend on the type of environment being targeted. The following firewall
 settings are required for communication between the agent server and the Access Analyzer Console:
 
 | Communication Direction         | Protocol | Ports      | Description                    |

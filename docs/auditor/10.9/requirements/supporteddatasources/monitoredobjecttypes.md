@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Monitored Object Types, Actions, and Attributes
 
-Netwrix Auditor monitored object types, actions, attributes and components for each data source are
+Netwrix Auditor monitored object types, actions, attributes, and components for each data source are
 located in the following topics:
 
 - [Active Directory](/docs/auditor/10.9/configuration/activedirectory/overview.md)
@@ -42,7 +42,7 @@ located in the following topics:
 Review the list of actions audited and reported by Netwrix Auditor. Actions vary depending on the
 data source and the object type.
 
-| Action                                    | Active Directory | Active Directory Federation Services | Exchange Exchange Online | File Servers | Group Policy | Logon Activity | Microsoft Entra ID (formerly Azure AD) | Oracle database | SharePoint SharePoint Online | SQL Server | User Activity | VMware Servers | Windows Server |
+| Action                                    | Active Directory | Active Directory Federation Services | Exchange / Exchange Online | File Servers | Group Policy | Logon Activity | Microsoft Entra ID (formerly Azure AD) | Oracle database | SharePoint / SharePoint Online | SQL Server | User Activity | VMware Servers | Windows Server |
 | ----------------------------------------- | ---------------- | ------------------------------------ | ------------------------ | ------------ | ------------ | -------------- | -------------------------------------- | --------------- | ---------------------------- | ---------- | ------------- | -------------- | -------------- |
 | Added                                     | +                | -                                    | +\*                      | +            | +            | –              | +                                      | +               | +                            | +          | –             | +              | +              |
 | Removed                                   | +                | -                                    | +\*                      | +            | +            | –              | +                                      | +               | +                            | +          | –             | +              | +              |
@@ -67,10 +67,10 @@ data source and the object type.
 | Activated                                 | –                | –                                    | –                        | –            | –            | –              | –                                      | –               | –                            | –          | +             | –              | –              |
 | Support for state-in-time data collection | +                | –                                    | +                        | +            | +            | -              | +                                      | -               | +                            | -          | -             | +              | +              |
 
-\* —these actions are reported when auditing non-owner mailbox access for Exchange or Exchange
+\* —Auditor reports these actions when auditing non-owner mailbox access for Exchange or Exchange
 Online.
 
-\*\* — these actions are reported for SharePoint Online only.
+\*\* — Auditor reports these actions for SharePoint Online only.
 
 \*\*\* — Auditor will not collect data on _Failed Logon_ event for VMware in case of incorrect logon
 attempt through VMware vCenter Single Sign-On; also, it will not collect logons using SSH.

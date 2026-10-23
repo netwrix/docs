@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Sensitive Data > MongoDB_SensitiveData Job
 
-The Sensitive Data Job Group is designed to provide insight into where sensitive data exists and who
+The Sensitive Data Job Group provides insight into where sensitive data exists and who
 has access to it across all the targeted MongoDB databases.
 
 ![Sensitive Data Job Group](/images/accessanalyzer/12.0/solutions/databases/mongodb/sensitivedatajobgroup.webp)
@@ -22,7 +22,7 @@ Navigate to the MongoDB > **Databases** > **Sensitive Data**> MongoDB_SensitiveD
 and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

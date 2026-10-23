@@ -10,8 +10,8 @@ A Working Set of documents can be defined and used to test the accuracy of class
 against a controlled set of documents. The Working Set mode can be selected in the Core
 Configuration.
 
-If Class Level is selected then a different Working Set can be defined for every class. If Taxonomy
-Level is selected then the same Working Set will be used for all classes.
+If you select Class Level, you can define a different Working Set for each class. If you select Taxonomy
+Level, the same Working Set applies to all classes.
 
 Documents can be added to the Working Set from the Search or Browse tabs by using the Add to Working
 Set links:

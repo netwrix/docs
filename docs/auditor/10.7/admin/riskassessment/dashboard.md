@@ -38,7 +38,7 @@ button.
 Default threshold values for risk levels are set in accordance with recommendations of
 Netwrixindustry experts, as described in the [How Risk Levels Are Estimated ](/docs/auditor/10.7/admin/riskassessment/levels.md) topic. They
 can be, however, easily customized to reflect your organization's internal security policies and
-standards. Follow the steps to customize the metrics.
+standards. To customize the metrics:
 
 **Step 1 –** In the dashboard pane, select the metric you need and in the **Actions** section on the
 right click Modify thresholds.

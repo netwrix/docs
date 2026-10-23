@@ -16,7 +16,7 @@ Navigate to the **Jobs** > **Entra ID** > **2.Users** > **AAD_UserAttributeCompl
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -35,4 +35,4 @@ produces the following pre-configured report.
 
 | Report                    | Description                                                                                                                                            | Default Tags | Report Elements                                                                                                                                                                                                                                     |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| User Attribute Completion | This report identifies which attributes are present within User fields in Microsoft Entra ID, and which ones are blank for a majority of User objects. | None         | This report is comprised of three elements: <ul><li>Stacked Bar Chart – Displays completeness by attribute</li><li>Table – Provides details on users with blank attributes</li><li>Tables – Provides details om completeness by attribute</li></ul> |
+| User Attribute Completion | This report identifies which attributes are present within User fields in Microsoft Entra ID, and which ones are blank for a majority of User objects. | None         | This report is comprised of three elements: <ul><li>Stacked Bar Chart – Displays completeness by attribute</li><li>Table – Provides details on users with blank attributes</li><li>Tables – Provides details on completeness by attribute</li></ul> |

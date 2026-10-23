@@ -6,17 +6,18 @@ sidebar_position: 50
 
 # Installing Express Agent for AIX
 
-Note: In order for the Change Tracker Express Agent for AIX to identify the who made the change
-(WMTC) information for detected file changes, the AIX® Event Infrastructure must be installed and
-configured. Directions for the installation of the AIX® Event Infrastructure can be found in the
-following IBM's article:
-[Setting up the AIX Event Infrastructure](https://www.ibm.com/support/knowledgecenter/en/ssw_aix_71/com.ibm.aix.osdevice/settingupahafs.htm).
+:::note
+For the Change Tracker Express Agent for AIX to identify the Who Made The Change (WMTC) information
+for detected file changes, you must install and configure the AIX® Event Infrastructure. IBM's
+article [Setting up the AIX Event Infrastructure](https://www.ibm.com/support/knowledgecenter/en/ssw_aix_71/com.ibm.aix.osdevice/settingupahafs.htm)
+contains directions for installing the AIX® Event Infrastructure.
+:::
 
-In summary the AIX® Event Infrastructure installed and configured using the below steps.
+The following steps install and configure the AIX® Event Infrastructure.
 
 **Step 1 –** . Install the **bos.ahafs** fileset.
 
-**Step 2 –** Create the directory for the desired mount point.
+**Step 2 –** Create the directory for the mount point you want.
 
 **Step 3 –** Run the following command:
 
@@ -31,16 +32,15 @@ mount –v ahafs <mount point> <mount point>
 # mount -v ahafs /aha /aha
 ```
 
-Unlike the standard Gen 7 agent, the Express Agent does not require a .NET/Mono runtime. The Express
-Agent is provided as an rpm package, downloaded from NNT Members Area and installed using rpm
-commands.
+Unlike the standard Gen 7 agent, the Express Agent doesn't require a .NET/Mono runtime. NNT Members
+Area provides the Express Agent as an rpm package. Download it and install it using rpm commands.
 
 ```bash
 # rpm -ivh nnt-changetracker-expressagent-2.0.1.3-25.ppc.rpm
 ```
 
-Once the package is installed the **HubDetails.xml** can be created using a configuration script.
-The configure-expressagent.sh and is found within the installation directory:
+After you install the package, use the configuration script to create **HubDetails.xml**.
+The script, `configure-expressagent.sh`, is located in the installation directory:
 `/opt/nnt/expressagent`.
 
 ```bash
@@ -67,10 +67,10 @@ Agent password : `<hidden>`
 
 Config path : /var/nnt/expressagent
 
-The script will also start the agent service. If the agent server is able to communicate with Change
-Tracker over the desired HTTP/HTTPS port, the agent will register and display as a new device in the
-hub. The agent will be installed into `/opt/nnt/expressagent`. HubDetails, log and database files
-will be stored in `var/nnt/expressagent`.
+The script also starts the agent service. If the agent server can communicate with Change
+Tracker over the HTTP/HTTPS port you want, the agent registers and displays as a new device in the
+hub. The script installs the agent into `/opt/nnt/expressagent` and stores the HubDetails, log, and
+database files in `var/nnt/expressagent`.
 
 To start and stop the service manually, use the following commands:
 
@@ -79,10 +79,10 @@ To start and stop the service manually, use the following commands:
 
 ## Scripted Installation of Express Agent RPM Installer
 
-As with all other agents, the installation process can be scripted.
+As with all other agents, you can script the installation process.
 
 ```bash
 # bash /opt/nnt/expressagent/configure-expressagent.sh https://IPADDRESS-SERVERNAME:PORT/api/ agent passWord121 /var/nnt/expressagent
 ```
 
-Run the Agent UI. See the[ Agent First Run](/docs/changetracker/install/agent/firstrun.md) topic for additional information.
+Run the Agent UI. See the [Agent First Run](/docs/changetracker/install/agent/firstrun.md) topic for additional information.

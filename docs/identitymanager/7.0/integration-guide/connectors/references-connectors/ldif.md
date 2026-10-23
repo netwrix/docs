@@ -71,8 +71,8 @@ The identifier of the connection and thus the name of the subsection must:
  | Name | Details | 
  | --- | --- | 
  | LDIFFile required | **Type** String **Description** Path of the LDIF input file. | 
- | FilterAttribute required | **Type** String **Description** Property from the connector's configuration whose value is to be compared with the values from `FilterValues`, in order to filter the entries to export. | 
- | FilterValues required | **Type** String **Description** List of values to be compared with the value of `FilterAttribute`, in order to filter the entries to export. Identity Manager will export only the entries matching the filter. **Note:** multiple values must be separated by white spaces. | 
+ | FilterAttribute required | **Type** String **Description** Property from the connector's configuration whose value is to be compared with the values from `FilterValues`, to filter the entries to export. | 
+ | FilterValues required | **Type** String **Description** List of values to be compared with the value of `FilterAttribute`, to filter the entries to export. Identity Manager will export only the entries matching the filter. **Note:** multiple values must be separated by white spaces. | 
  | Attributes required | **Type** String List **Description** List of properties from the connector's configuration to be exported. | 
  | LdifEncoding default value: UTF-8 | Encoding of the file. [See the list of available encodings](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding#see-the-list-of-available-encodings). | 
 
@@ -94,7 +94,7 @@ There are no fulfill capabilities for this connector.
 
 ### Credential protection
 
-This connector has no credential attributes, and therefore does not use [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection), nor a [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection)Vault.
+This connector has no credential attributes, and therefore doesn't use [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection), nor a [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection)Vault.
 
 Still, data protection can be ensured through an [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) safe.
 

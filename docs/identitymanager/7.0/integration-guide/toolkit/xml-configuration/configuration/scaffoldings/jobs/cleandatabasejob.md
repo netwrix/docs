@@ -19,7 +19,7 @@ Creates the job to clean old tasks and jobs instances with state InProgress
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Job Identifier="CleanDatabase" DisplayName_L1="Clean Database">

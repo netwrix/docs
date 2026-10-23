@@ -14,10 +14,10 @@ Use the following fields to specify the recipient information:
 
 - Recipient column – Specify the data table columns containing intended recipient information
 
-    - For example, a column containing email addresses. The drop-down menu displays a list of
+    - For example, a column containing email addresses. The dropdown menu displays a list of
       possible column types.
 
-- Recipient type – Specify the data type of the Recipient column. The drop-down menu displays a list
+- Recipient type – Specify the data type of the Recipient column. The dropdown menu displays a list
   of recipient types, for example **SMTP email address**.
 - Carbon copy (CC) – (Optional) Specify one or more additional email addresses to receive a
   carbon-copy of the SendMail message, for example an address not included in the source table.

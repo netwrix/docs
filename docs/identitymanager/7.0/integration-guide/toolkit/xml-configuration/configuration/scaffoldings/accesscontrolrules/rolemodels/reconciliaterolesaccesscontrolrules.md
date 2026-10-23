@@ -4,7 +4,7 @@ description: "Generates the permissions to access the role reconciliation pages 
 sidebar_position: 10
 ---
 
-Generates the rights to access the access reconcile roles pages for a given entity type and profile.
+Generates the rights to access the reconcile roles pages for a given entity type and profile.
 
 Gives access to a shortcut on the dashboard to access this page.
 
@@ -31,7 +31,7 @@ Gives access to a shortcut on the dashboard to access this page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Workforce/Administration/Directory_User_ReconciliateRoles_AssignedCompositeRole_Custom_ProvisioningPolicy_ReconciliateRoles_Directory_User" DisplayName_L1="Workforce/Administration/Reconciliate Roles - Reconciliate Roles" DisplayName_L2="Administrator - Réconciliation des rôles" EntityType="AssignedCompositeRole" Profile="Administrator">

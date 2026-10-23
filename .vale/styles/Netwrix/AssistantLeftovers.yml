@@ -1,0 +1,13 @@
+extends: existence
+message: "Remove '%s'. It reads like a chat reply, not documentation."
+level: error
+ignorecase: true
+tokens:
+  - '\bI hope this helps\b'
+  - '\blet me know if\b'
+  - '\bas an AI\b(?! Information Protection)'
+  - '\bas of my (?:last|latest) (?:update|training)\b'
+  - '\bcertainly[,!]\s+here'
+  - '\bhere''s (?:a|an|the) (?:breakdown|overview|summary|rundown)\b'
+  - '\bgreat question\b'
+  - "\\byou're absolutely right\\b"

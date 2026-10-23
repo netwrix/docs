@@ -20,7 +20,7 @@ required:
 
 Afterward, include this account in the monitoring plan wizard.
 
-Please consider the following:
+consider the following:
 
 - For the data collecting account, you should use a different account than the one Auditor is using
   to access the database.
@@ -31,14 +31,12 @@ Please consider the following:
 
 This section contains instructions on how to configure an account to collect Logon Activity with
 minimum rights assignment. The instructions below apply only if you are going create a monitoring
-plan with disabled network traffic compression and do not want to adjust audit settings
+plan with disabled network traffic compression and don't want to adjust audit settings
 automatically.
 
 Before creating an account, grant the _Read_ permission on the SECURITY registry key
 `(HKEY_LOCAL_MACHINE\SECURITY)` for an admin account under which you will make changes in Group
 Policy.
-
-Follow the steps to configure non-administrative account to collect logon activity:
 
 **Step 1 –** Create a domain user with the following privileges:
 

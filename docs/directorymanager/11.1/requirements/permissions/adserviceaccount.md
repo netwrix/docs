@@ -37,7 +37,7 @@ the identity store.
 
 ## Create a New Service Account
 
-If you do not have a service account, you need to create one. Follow the three sets of instructions
+If you don't have a service account, you need to create one. Follow the three sets of instructions
 in this section to:
 
 1. Create a Service Account:
@@ -92,19 +92,19 @@ In the **Active Directory Users and Computers** console:
 
     ![select_user](/images/directorymanager/11.1/requirements/permissions/select_user.webp)
 
-    Type the name of the service account in the **Enter the object name to select** box. Click
+    Enter the name of the service account in the **Enter the object name to select** box. Click
     **OK**. The **Permissions Entry** window is displayed with all fields enabled (see step 4).
 
 6. In the **Applies to** box, select **This object and all descendant objects**.
 7. Grant permissions to create and delete users, contacts, and groups.
 
-    1. Scroll down the list of permissions in the **Permissions** box and select the check boxes for
-       the options shown below:
+    1. Scroll down the list of permissions in the **Permissions** box and select the checkboxes for
+       the following options:
 
         ![permissions_list](/images/directorymanager/11.1/requirements/permissions/permissions_list.webp)
 
     2. Click **OK**. The granted permissions appear in the **Advanced Security Settings** window as
-       shown below:
+       shown in the following:
 
         ![advsecsettingsgrantedpermissions](/images/directorymanager/11.1/requirements/permissions/advsecsettingsgrantedpermissions.webp)
 
@@ -113,23 +113,23 @@ In the **Active Directory Users and Computers** console:
     1. Click the **Add** button on the **Advanced Security Settings** window. The **Permission
        Entry** window is displayed (see step 4).
     2. Click the **Select a principal** link next to Principal. The Select User, Computer, Service
-       Account, or Group dialog box is displayed. Type the name of the service account in the
+       Account, or Group dialog box is displayed. Enter the name of the service account in the
        **Enter the object name to select** box and click **OK**. The **Permissions Entry** window is
        displayed.
     3. In the **Applies to** box, select the **Descendant Contact objects** option and select the
-       **Full control** check box in the _Permissions_ area. It is as follows:
+       **Full control** checkbox in the _Permissions_ area. It is as follows:
 
         ![fullcontrolcontact](/images/directorymanager/11.1/requirements/permissions/fullcontrolcontact.webp)
 
     4. Click **OK**. The granted permissions appear in the **Advanced Security Settings** window as
-       shown below:
+       shown in the following:
 
         ![advsecsettingsfullcontrolcontact](/images/directorymanager/11.1/requirements/permissions/advsecsettingsfullcontrolcontact.webp)
 
     5. Repeat steps a – d for **Descendant Group objects** and **Descendant User objects** on the
        Permission Entry window.
        The service account now has permissions to modify users, contacts, and groups. These
-       permissions appear in the **Advanced Security Settings** window. It is as shown below:
+       permissions appear in the **Advanced Security Settings** window as shown in the following:
 
         ![advsecsettingsreqpermissions](/images/directorymanager/11.1/requirements/permissions/advsecsettingsreqpermissions.webp)
 
@@ -144,7 +144,7 @@ Instructions for delegating permissions for each supported Exchange Server versi
 
 **For Exchange Server 2013/2016/2019:**
 
-Launch Exchange Management Shell and type the following command:
+Launch Exchange Management Shell and enter the following command:
 
 ```
 Add-RoleGroupMember "Recipient Management" -Member domain name\user

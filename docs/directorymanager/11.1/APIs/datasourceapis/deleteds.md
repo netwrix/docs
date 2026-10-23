@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Delete a Data Source
 
-This API can be used for deleting a specified data source.
+Use this API to delete a specified data source.
 
 :::note
 Deleting a data source corrupts all Synchronize jobs, membership queries, and search queries

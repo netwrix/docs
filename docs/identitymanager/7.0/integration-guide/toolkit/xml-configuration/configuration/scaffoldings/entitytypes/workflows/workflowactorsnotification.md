@@ -26,7 +26,7 @@ sidebar_position: 5
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <NotificationAspect Identifier="ActorsNotification_Directory_User_StartInternal" ExpressionBinding="Workflow_Directory_User:Directory_User" RazorFile_L1="&lt;div&gt;

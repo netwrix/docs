@@ -10,7 +10,7 @@ This section identifies hardware and software requirements for Identity Manager'
 
 ## Hardware
 
-The database disk storage requirements depend on multiple factors as the database lifespan and the number of entries, for example 100,000 users can take up appropriately **10 GB** of storage
+Database disk storage requirements depend on the database lifespan and number of entries. For example, 100,000 users typically require approximately 10 GB of storage.
 
 :::note
  The maximum SQL Express database is **10 GB**. 
@@ -23,7 +23,7 @@ The [database requirements](https://docs.microsoft.com/en-us/sql/sql-server/inst
 
 ### Recommended features
 
-The following features are also highly recommended:
+Netwrix also highly recommends the following features:
 
 - [Always On availability groups](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server):
 only available in the Enterprise edition of SQL Server 2016 or later
@@ -39,9 +39,9 @@ available in all editions of SQL Server 2016 or later
 
 - [Table Partitioning](https://docs.microsoft.com/en-us/sql/relational-databases/partitions/partitioned-tables-and-indexes?view=sql-server-ver15)
 
-The data history feature introduced in Identity Manager v5.1.0, might cause some tables to grow significantly.
+The data history feature introduced in Identity Manager v5.1.0 might cause some tables to grow significantly.
 
-Database performance is greatly improved by enabling the [Table Partitioning](https://docs.microsoft.com/en-us/sql/relational-databases/partitions/partitioned-tables-and-indexes?view=sql-server-ver15) feature for the `UR_Resource` and `UP_Assigned*` tables:
+Enabling the [Table Partitioning](https://docs.microsoft.com/en-us/sql/relational-databases/partitions/partitioned-tables-and-indexes?view=sql-server-ver15) feature for the `UR_Resource` and `UP_Assigned*` tables greatly improves database performance:
 
  | `UP_Assigned*` Tables | 
  | --- | 
@@ -58,13 +58,13 @@ This feature is available and enabled by default in SQL Server 2016 or later.
 
 ### Additional tools
 
-The installation and setup of the database require using either [SQL server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) or the [`sqlcmd` command line tool](https://docs.microsoft.com/en-us/sql/ssms/scripting/sqlcmd-use-the-utility?view=sql-server-ver15).
+Installing and setting up the database requires either [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) or the [`sqlcmd` command line tool](https://docs.microsoft.com/en-us/sql/ssms/scripting/sqlcmd-use-the-utility?view=sql-server-ver15).
 
 ## SQL Server Authentication
 
 Identity Manager can authenticate to SQL Server using either a SQL Server authentication login or a Windows authentication login.
 
-Netwrix recommends using the [Windows authentication login](https://docs.microsoft.com/en-us/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15) to avoid storing a plain text password in the technical configuration files.
+Netwrix recommends using [Windows authentication](https://docs.microsoft.com/en-us/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15) to log in to the SQL Server and avoid storing a plain text password in the technical configuration files.
 
 ## SQL Server Roles
 
@@ -75,7 +75,7 @@ The database administrator must be able to assign the following roles to the ser
 - `bulkadmin` which is a
 [server-level role](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/server-level-roles?view=sql-server-ver15). This role grants its owner the authorization to perform bulk operations on the database.
 
-Although `bulkadmin` is a server-level role, it still requires Identity Manager to have **database-level** permissions granted by the `db_owner` role. It means that bulk operations can be performed on the database only if Identity Manager has been granted the `db_owner` role.
+Although `bulkadmin` is a server-level role, it still requires Identity Manager to have **database-level** permissions granted by the `db_owner` role. Bulk operations can run on the database only if Identity Manager has the `db_owner` role.
 
 Granting `bulkadmin` role to the server's service account requires access to an account member of the `sysadmin` or `securityadmin` server-level role on the target SQL Server. See the [Install the Server](../../installation-guide/production-ready/server) topic for additional information.
 
@@ -83,9 +83,9 @@ For more information about identity and permission management in SQL Server, see
 
 ## Shared SQL Server and Dedicated Database
 
-Identity Manager's SQL Server installation can be used to host other database applications.
+Use Identity Manager's SQL Server installation to host other database applications.
 
-Identity Manager's database itself must be used exclusively for Identity Manager.
+Identity Manager's database itself must serve Identity Manager exclusively.
 
 ## Connection to the Server
 
@@ -93,9 +93,9 @@ SQL feed must be open from Identity Manager's server to SQL Server.
 
 ## Optimization
 
-The [max degree of parallelism (MAXDOP)](https://learn.microsoft.com/en-us/azure/azure-sql/database/configure-max-degree-of-parallelism?view=azuresql-db) must be set to 1 in the SQL database.
+Set the [max degree of parallelism (MAXDOP)](https://learn.microsoft.com/en-us/azure/azure-sql/database/configure-max-degree-of-parallelism?view=azuresql-db) to 1 in the SQL database.
 
-## What's Next?
+## What's Next
 
-Let's move on to the requirements for Identity Manager's server. See the [Server](../../installation-guide/requirements/server-requirements) topic for additional information.
+Next, review the requirements for Identity Manager's server. See the [Server](../../installation-guide/requirements/server-requirements) topic for additional information.
 

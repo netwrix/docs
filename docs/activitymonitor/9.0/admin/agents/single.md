@@ -8,8 +8,8 @@ sidebar_position: 10
 
 Before deploying the activity agent, ensure all
 [Activity Agent Server Requirements](/docs/activitymonitor/9.0/requirements/activityagent/activityagent.md) have been met,
-including those for NAS devices when applicable. Follow the steps to deploy the activity agent to a
-single Windows server.
+including those for NAS devices when applicable. To deploy the activity agent to a
+single Windows server, follow these steps:
 
 :::note
 These steps are specific to deploying activity agents for monitoring supported target
@@ -17,7 +17,7 @@ environments.
 :::
 
 
-**Step 1 –** On the Agents tab, click Add agent to open the Add New Agent(s) window.
+**Step 1 –** On the Agents tab, click Add agent to open the Add New Agents window.
 
 ![Install New Agent window](/images/activitymonitor/9.0/install/agent/installnew.webp)
 
@@ -29,9 +29,9 @@ a single server. Leave the field blank to deploy the agent on the local server. 
 **Step 3 –** On the Specify Port page, specify the port that should be used by the new agent. The
 default port is 4498. Click **Next**.
 
-![Credentials to Connect to the Server(s) page](/images/activitymonitor/9.0/install/agent/credentials.webp)
+![Credentials to Connect to the Servers page](/images/activitymonitor/9.0/install/agent/credentials.webp)
 
-**Step 4 –** On the Credentials To Connect To The Server(s) page, select either Windows or Linux file
+**Step 4 –** On the Credentials To Connect To The Servers page, select either Windows or Linux file
 monitoring. Then, enter the **User name** and **Password** to connect to the API Server.
 
 ![Test Account Connection](/images/activitymonitor/9.0/admin/agents/add/testaccountconnection.webp)
@@ -54,12 +54,11 @@ default path is `C:\Program Files\Netwrix\Activity Monitor\Agent`. Click **Next*
   installation. Alternatively, the Windows monitoring can be enabled later on the Monitored Hosts & Services
   tab.
 - Management Group — By default, the agent only accepts commands from members from the
-  BUILTIN\Administrators group. Less privileged accounts can be used to manage the agent with the
-  Management group setting. Keep in mind that an administrator account must be used to install,
-  upgrade or uninstall an agent. The value must be a domain or local security group entered in the
+  BUILTIN\Administrators group. With the Management group setting, less privileged accounts can manage the agent. An administrator account must be used to install,
+  upgrade, or uninstall an agent. The value must be a domain or local security group entered in the
   DOMAIN\groupname format.
 
-**Step 8 –** Click Finish. The Add New Agent(s) window closes, and the activity agent is deployed to
+**Step 8 –** Click Finish. The Add New Agents window closes, and the activity agent is deployed to
 and installed on the target host.
 
 During the installation process of the agent, the status will display Installing. If there are any

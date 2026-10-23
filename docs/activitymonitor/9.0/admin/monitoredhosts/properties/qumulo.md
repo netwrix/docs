@@ -6,8 +6,8 @@ sidebar_position: 130
 
 # Qumulo Tab
 
-The Qumulo tab allows users to modify settings after a Qumulo host has been configured. Once a
-Qumulo host is added to the monitored hosts/services table, the configuration can be edited in the host
+The Qumulo tab lets you modify settings for a Qumulo host you've configured. After you
+add a Qumulo host to the monitored hosts/services table, you can edit the configuration in the host
 Properties.
 
 ![Qumulo Host Properties](/images/activitymonitor/9.0/admin/monitoredhosts/properties/qumulohostproperties.webp)
@@ -17,7 +17,7 @@ The configurable options are:
 - Cluster name – Enter the name of the filer
 - Username – Enter the user name for the Qumulo user
 - Password – Enter the password for the user name
-- Protocol – Select one of the following protocols from the drop-down menu:
+- Protocol – Select one of the following protocols from the dropdown menu:
 
     - Auto Detect
     - HTTPS

@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # Run the Add-On with PowerShell
 
-Follow the steps to run add-on with PowerShell:
+To run the add-on with PowerShell:
 
 **Step 1 –** On computer where you want to execute the add-on, start Windows PowerShell.
 
-**Step 2 –** Type a path to the add-on. Or simply drag and drop the add-on file in the console
+**Step 2 –** Enter a path to the add-on. Or simply drag and drop the add-on file in the console
 window.
 
 **Step 3 –** Add script parameters. The console will look similar to the following:

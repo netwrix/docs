@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Query Designer
 
-The Query Designer enables you to create queries for Smart Groups, Dynasties and directory objects
+Use the Query Designer to create queries for Smart Groups, Dynasties, and directory objects
 searches. These queries provide a quick and consistent way to retrieve a common set of directory
 objects on which you want to perform specific tasks. For example, you can construct a query to
 retrieve all users having mailboxes on a particular Exchange Server or you can build a query to
@@ -38,11 +38,11 @@ of the following ways:
 
 ## The Query Designer Interface
 
-The Query Designer dialog box provides a visual interface for designing queries, so that you do not
+The Query Designer dialog box provides a visual interface for designing queries, so that you don't
 have to write the commands. Its preview feature returns the results for the query before you commit
 them to the directory server.
 
-The Query Designer dialog box groups similar query options by tabs. Settings that are not grouped in
+The Query Designer dialog box groups similar query options by tabs. Settings that aren't grouped in
 tabs are global; they apply to all tabs.
 
 ### Common Settings and Buttons
@@ -62,7 +62,7 @@ Select an option to specify the type of object to include in the membership of t
 - **Users, Contacts, and Groups** - Any user, contact, or group, whether mail-enabled or not.
 
 :::note
-The _Computers_ and _Contact_ object types are not supported in a Microsoft Entra ID identity
+The _Computers_ and _Contact_ object types aren't supported in a Microsoft Entra ID identity
 store.
 :::
 
@@ -74,9 +74,7 @@ this container and its sub-containers to determine a group’s membership.
 
 **Preview**
 
-Enables you to preview the results returned with the criteria specified on all tabs of the Query
-Designer dialog box. This is a check to ensure the accuracy of data before changes are committed to
-the directory.
+Previews the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
 
 **OK**
 
@@ -104,7 +102,7 @@ The Query Designer has the following tabs:
   (only available for Smart Groups with a password expiry condition)
 
 :::note
-The **Storage** and **Script** tabs are not available for groups in a Microsoft Entra ID
+The **Storage** and **Script** tabs aren't available for groups in a Microsoft Entra ID
 identity store.
 
 :::

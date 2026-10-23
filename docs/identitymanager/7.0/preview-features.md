@@ -9,7 +9,7 @@ sidebar_position: 40
 Preview features are available so you can explore upcoming functionality early and share feedback before general availability. See [Providing Feedback](#providing-feedback) to share your experience.
 
 :::important
-Preview features are not recommended for use in production environments. They may be incomplete, subject to change, or behave unexpectedly. Activate preview features in preproduction environments only.
+Preview features aren't recommended for use in production environments. They may be incomplete, subject to change, or behave unexpectedly. Activate preview features in preproduction environments only.
 :::
 
 ## Activating Preview Features
@@ -19,7 +19,7 @@ Preview features are not recommended for use in production environments. They ma
 The preview section is activated by default in preproduction environments. To enable a specific feature, navigate to **Settings → Preview** in the NIM UI and activate the feature you want to test.
 
 :::note
-Preview features are not activated in production.
+Preview features aren't activated in production.
 :::
 
 ### On-Premises
@@ -32,25 +32,25 @@ Preview features are not activated in production.
 }
 ```
 2. Restart the server.
-3. Navigate to **Settings → Preview** in the NIM UI and activate the feature(s) you want to enable.
+3. Navigate to **Settings → Preview** in the NIM UI and activate the features you want to enable.
 
 ---
 
-## What's currently in Preview Mode?
+## Preview Features Available
 
 ### Multi-Certifier in Certification Campaigns
 
 :::note
-This feature is currently in preview. See [Activating Preview Features](#activating-preview-features) for setup instructions and safety guidance.
+This feature is in preview. See [Activating Preview Features](#activating-preview-features) for setup instructions and safety guidance.
 :::
 
 #### Overview
 
-Multi-certifier support allows multiple reviewers to be assigned to the same item during a certification campaign. All assigned certifiers receive the review request simultaneously, and can act on it.  The last certifier to make a decision and confirm it, will be recorded as the Reviewer.  Once a decision is confirmed, the item is automatically removed from the queues of all other assigned certifiers.
+Multi-certifier support allows multiple reviewers to be assigned to the same item during a certification campaign. All assigned certifiers receive the review request simultaneously, and can act on it. The last certifier to make a decision and confirm it, will be recorded as the Reviewer. Once a decision is confirmed, the item is automatically removed from the queues of all other assigned certifiers.
 
 This behavior mirrors the existing multi-approver logic used in access requests and reconciliation tasks, bringing consistency to certification workflows.
 
-#### Why Multi-Certifier?
+#### Benefits of Multi-Certifier
 
 Previously, only a single certifier could be assigned to a permission during a campaign. When multiple application owners existed, this created ambiguity about who was responsible, often resulting in:
 
@@ -70,7 +70,7 @@ The reviewer mode is configured at the campaign level. When creating a campaign,
 - **Multiple Reviewers**: All users with permission rights to certify the item are notified and can act on it simultaneously.
 
 :::warning
-The Reviewer Mode is set at the time of campaign creation and **cannot be modified once the campaign has launched**. Make sure to select the appropriate mode before starting the campaign.
+The Reviewer Mode is set at the time of campaign creation and **can't be modified after the campaign launches**. Ensure to select the appropriate mode before starting the campaign.
 :::
 
 ##### Review Workflow
@@ -90,13 +90,13 @@ When a certifier clicks **Confirm Decisions**:
 
 - Only the decisions **that the certifier has personally made** are finalized.
 - Decisions made by other certifiers are confirmed independently when those certifiers confirm their own decisions.
-- Confirmed decisions **cannot be modified**.
+- Confirmed decisions **can't be modified**.
 
 In the **Confirm Decisions** tab, each certifier can see a summary that includes:
 
-- Items **approved by me**
+- Items **you approved**
 - Items **approved by others**
-- Items **refused by me**
+- Items **you refused**
 - Items **refused by others**
 
 ##### Campaign Reports
@@ -122,12 +122,12 @@ All certification actions are recorded in the system database, including:
 ### Right-to-Left Language Support
 
 :::note
-This feature is currently in preview. See [Activating Preview Features](#activating-preview-features) for setup instructions and safety guidance.
+This feature is in preview. See [Activating Preview Features](#activating-preview-features) for setup instructions and safety guidance.
 :::
 
 #### Overview
 
-Netwrix Identity Manager does not natively include any right-to-left (RTL) languages. However, with this preview feature activated, the NIM UI is capable of rendering in RTL layout when the appropriate translation files are provided.
+Netwrix Identity Manager doesn't natively include any right-to-left (RTL) languages. However, with this preview feature activated, the NIM UI is capable of rendering in RTL layout when the appropriate translation files are provided.
 
 This allows organizations that operate in RTL languages, such as Arabic or Hebrew, to experience a correctly oriented interface without waiting for native language support to be added to the product.
 
@@ -135,7 +135,7 @@ This allows organizations that operate in RTL languages, such as Arabic or Hebre
 
 RTL support requires:
 
-1. **Provide your own translation files** for the RTL language you want to support. NIM does not supply these files, so your team or a localization partner will need to prepare them.
+1. **Provide your own translation files** for the RTL language you want to support. NIM doesn't supply these files, so your team or a localization partner will need to prepare them.
 2. **Activate the RTL preview feature** in the Preview section of the Settings in the UI, following the steps in the [Activating Preview Features](#activating-preview-features) section above.
 
 Once activated, the UI will adapt its layout to support right-to-left reading direction based on the language defined in your translation files.
@@ -144,5 +144,5 @@ Once activated, the UI will adapt its layout to support right-to-left reading di
 
 ## Providing Feedback
 
-Features in preview are in active development. If you encounter issues or have suggestions, please share your feedback with your Netwrix Identity Manager representative or through the support portal.
+Features in preview are in active development. If you encounter issues or have suggestions, share your feedback with your Netwrix Identity Manager representative or through the support portal.
 

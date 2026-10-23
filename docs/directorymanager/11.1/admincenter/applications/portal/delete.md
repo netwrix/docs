@@ -45,7 +45,7 @@ removed:
 
     Select a tab to delete a portal instance deployed in the respective web server.
 
-4. The **Select Application Deployment** drop-down list displays the portal instances deployed on
+4. The **Select Application Deployment** dropdown list displays the portal instances deployed on
    the selected web server. Select an instance and click **Delete**.
 
 ## Delete a Portal

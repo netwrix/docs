@@ -18,11 +18,11 @@ directory
 
 There are multiple methods to create Oracle Wallet files. For example:
 
-- Using Oracle Wallet Manager. Refer to the following Oracle help article for more information:
+- Using Oracle Wallet Manager. See the Oracle help article for more information:
   [Creating a New Oracle Wallet](https://docs.oracle.com/database/121/DBIMI/walet.htm#creating-a-new-oracle-wallet).
-- Using a console. As an example, refer to the following Oracle help article for WebLogic JDBC:
+- Using a console. As an example, see the Oracle help article for WebLogic JDBC:
   [Creating and Managing Oracle Wallet](https://docs.oracle.com/middleware/1213/wls/JDBCA/oraclewallet.htm#creating-and-managing-oracle-wallet).
-- Using other Oracle products. For example, Autonomous Data Warehouse. Refer to the following Oracle
+- Using other Oracle products. For example, Autonomous Data Warehouse. See the Oracle
   help article for more information:
   [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#download-client-credentials-wallets).
 
@@ -32,7 +32,7 @@ To perform clear install of Oracle Instant Client, follow the instructions below
 Client installed, see the Update Existing Oracle Client Installation topic for additional
 information.
 
-Follow the steps to install Oracle Instant Client
+To install Oracle Instant Client
 
 **Step 1 –** Download the appropriate package from Oracle website:
 [Instant Client Packages](https://www.oracle.com/database/technologies/instant-client/downloads.html).
@@ -83,7 +83,7 @@ myOracle =
 
 )
 
-Keep in mind that the wallet alias in the configuration file must equal to Netwrix Auditor item
+Remember that the wallet alias in the configuration file must equal to Netwrix Auditor item
 name.
 
 ## Configure Oracle Instant Client for HTTP Proxy Connections

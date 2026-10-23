@@ -11,7 +11,7 @@ servers, identifying password age and settings.
 
 ![Service Accounts > SG_ServiceAccounts Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/windows/privilegedaccounts/serviceaccountsjobstree.webp)
 
-The SG_ServiceAccounts job is located in the Service Account job group.
+The SG_ServiceAccounts job is located in the Service Accounts job group.
 
 ## Queries for the SG_ServiceAccounts Job
 
@@ -38,7 +38,7 @@ Navigate to the **Jobs** > **Windows** > **Privileged Accounts** > **Service Acc
 **SG_ServiceAccounts** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -14,7 +14,7 @@ See [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search
 
 ## View object properties
 
-You can view and modify the properties of a mailbox, group, user and contact.
+You can view and modify the properties of a mailbox, group, user, and contact.
 
 1. [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the required object.
 2. Select this object on the **Search Results** page and click **Properties** on the toolbar.
@@ -53,7 +53,7 @@ required.
 You can allow or restrict a group from receiving emails from specified recipients.
 
 :::note
-This feature is not available for groups in a Microsoft Entra ID based identity store.
+This feature isn't available for groups in a Microsoft Entra ID based identity store.
 :::
 
 
@@ -72,7 +72,7 @@ This feature is not available for groups in a Microsoft Entra ID based identity 
     2. Enter a search string to locate the required object, or click **Advanced** to use the
        [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
 
-5. Select the senders that the group cannot accept emails from:
+5. Select the senders that the group can't accept emails from:
     1. Click the **Add** button in the **Reject from** area.
     2. Enter a search string to locate the required object, or click **Advanced** to use the
        [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.

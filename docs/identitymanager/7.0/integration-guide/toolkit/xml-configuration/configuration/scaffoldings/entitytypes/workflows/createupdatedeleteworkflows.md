@@ -26,7 +26,7 @@ sidebar_position: 2
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Workflow Identifier="Directory_Country_Create" DisplayName_L1="Country - New" DisplayName_L2="Pays - Créer" VariablesType="Workflow_Directory_Country">

@@ -10,7 +10,7 @@ User reports are accessed through the User Audit interface. You can access User 
 for user objects on the Home page. See the [Search Features](/docs/accessinformationcenter/12.0/resourceaudit/navigate/search.md) topic for
 additional information. The user object being reviewed is identified in the upper-left corner. The
 data within these reports is collected by the Access Analyzer solutions which provide data to the
-Resource reports. See the desired solution topic of the
+Resource reports. See the solution topic you want of the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 

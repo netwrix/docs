@@ -14,8 +14,8 @@ post-installation tasks. Review these steps to plan and deploy Netwrix Data Clas
 | Step/Section | Description | Reference |
 | ------------ | ----------- | --------- |
 | 1 | Over the network from the Netwrix evaluation server using your test account. | <ul><li>[Supported Data Sources](/docs/dataclassification/5.7/introduction/supportedsources.md)</li></ul> |
-| 2 | Make sure your evaluation server is suitable for running all the Netwrix Data Classification components including a standalone SQL Server instance for. | <ul><li>[Hardware Requirements](/docs/dataclassification/5.7/introduction/requirements/hardwarerequirements.md)</li></ul> |
-| 3 | Make sure your evaluation account meets security requirements. | <ul><li>[Accounts and Required Permissions](/docs/dataclassification/5.7/introduction/requirements/accountreqs.md)</li></ul> |
+| 2 | Ensure your evaluation server is suitable for running all the Netwrix Data Classification components including a standalone SQL Server instance for. | <ul><li>[Hardware Requirements](/docs/dataclassification/5.7/introduction/requirements/hardwarerequirements.md)</li></ul> |
+| 3 | Ensure your evaluation account meets security requirements. | <ul><li>[Accounts and Required Permissions](/docs/dataclassification/5.7/introduction/requirements/accountreqs.md)</li></ul> |
 | 4 | Deploy prerequisite Windows features and additional software. | <ul><li>[Software Requirements](/docs/dataclassification/5.7/introduction/requirements/softwarerequirements.md)</li></ul> |
 | **Deploy Netwrix Data Classification** |  |  |
 | 5 | Prepare IT infrastructure. | <ul><li>[Configure IT Infrastructure](/docs/dataclassification/5.7/introduction/introduction/introduction.md)</li></ul> |

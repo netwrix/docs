@@ -7,12 +7,11 @@ sidebar_position: 10
 # Configure NDC SQL database
 
 Netwrix Data Classification uses Microsoft SQL Server database as metadata storage. During
-installation, you have been prompted to create a dedicated NDC SQL database on your SQL Server
-instance. Upon installation completion, you need to configure it as shown below for the product to
-function properly. You can create the database manually prior to the product installation—Using SQL
-Server Management Studio or Transact-SQL. Refer to the following Microsoft article for detailed
-instructions on how to create a new database:
-[Create a Database](https://docs.microsoft.com/en-us/sql/relational-databases/databases/create-a-database).
+installation, the system prompts you to create a dedicated NDC SQL database on your SQL Server
+instance. Upon installation completion, you need to configure it according to the following steps for the product to
+function properly. You can create the database manually before the product installation—Using SQL
+Server Management Studio or Transact-SQL. See [Create a Database](https://docs.microsoft.com/en-us/sql/relational-databases/databases/create-a-database)
+for detailed instructions on how to create a new database.
 
 **NOTE:** For performance purposes, Netwrix strongly recommends to separate NDC and SQL Server
 machine.
@@ -36,7 +35,7 @@ role.
     | File Growth       | - Recommended—128 MB. - Large environment— 512 MB. |
     | Maximum File Size | Select Unlimited.                                  |
 
-6. Go to Options page and make sure that the Recovery model parameter is set to "_Simple_".
+6. Go to Options page and ensure that the Recovery model parameter is set to "_Simple_".
 
-    **NOTE:** Netwrix recommends that you do not change the recovery model to avoid log files
+    **NOTE:** Netwrix recommends that you don't change the recovery model to avoid log files
     growth.

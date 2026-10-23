@@ -10,9 +10,9 @@ sidebar_position: 160
 
 ### Import the banking sources to the BankingSystem database.
 
-The Banking demo application uses a database named `BankingSystem`. Once the database is created, the tables should be created and the sources should be imported, otherwise the Banking demo application will be empty.
+The Banking demo application uses a database named `BankingSystem`. After the database is created, the tables should be created and the sources should be imported, otherwise the Banking demo application will be empty.
 
-Consider that the database's connection string is `"data source=.;Database=BankingSystem;"`, the sources are located in the `C:/SDK/DemoApps/Sources` folder, and the `BankingSystemTables` script is located in `C:/SDK/DemoApps/Banking`. We initialize the database to create its tables, and import the sources.
+Consider that the database's connection string is `"data source=.;Database=BankingSystem;"`, the sources are located in the `C:/SDK/DemoApps/Sources` folder, and the `BankingSystemTables` script is located in `C:/SDK/DemoApps/Banking`. Initialize the database to create its tables and import the sources.
 
 `--connection-string "data source=.;Database=BankingSystem;" --sources-path C:/SDK/DemoApps/Sources --banking-sql-path C:/SDK/DemoApps/Banking`
 

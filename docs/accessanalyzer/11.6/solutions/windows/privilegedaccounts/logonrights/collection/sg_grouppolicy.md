@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # SG_GroupPolicy Job
 
-The SG_GroupPolicy job collects policy assignments from all targeted servers. The following policy
-assignments are audited:
+The SG_GroupPolicy job collects policy assignments from all targeted servers. The job audits the
+following policy assignments:
 
 - Allow log on locally
 - Log on as a batch job

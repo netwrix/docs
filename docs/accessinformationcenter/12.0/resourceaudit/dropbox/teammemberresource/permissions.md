@@ -11,7 +11,7 @@ the trustee on the selected resource.
 
 ![Permissions report at the Team Member, Resource, and Subfolder level](/images/accessinformationcenter/12.0/resourceaudit/dropbox/teammemberresource/teammemberpermissions.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Trustee Type – Type of the trustee (for example, Domain User or Domain Group)
 - Trustee Name – Owner of the trustee account

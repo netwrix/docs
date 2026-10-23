@@ -8,14 +8,13 @@ sidebar_position: 10
 
 Netwrix Data Classification uses a Microsoft SQL Server database as metadata storage. During
 installation, you are prompted to create a dedicated NDC SQL database on your SQL Server
-instance. Upon installation completion, you need to configure it as shown below for the product to
+instance. Upon installation completion, you need to configure it as described in this topic for the product to
 function properly. You can create the database manually before the product installation using SQL
 Server Management Studio or any tool that supports T-SQL (for example, sqlcmd). See the Microsoft article
 [Create a Database](https://docs.microsoft.com/en-us/sql/relational-databases/databases/create-a-database) for detailed instructions on creating a new database.
 
 :::note
-For performance purposes, Netwrix strongly recommends installing NDC and the SQL Server hosting
-the NDC database on separate servers.
+Netwrix recommends installing NDC and its database on separate servers for better performance.
 :::
 
 

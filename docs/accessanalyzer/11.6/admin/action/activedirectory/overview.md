@@ -11,9 +11,8 @@ Use the Active Directory Action Module to make bulk changes to objects in Micros
 Auditor license.
 
 :::warning
-Be careful when using this action module. Make sure that only the changes required are
-applied and only to those target systems desired. Actions perform their functions on all rows in a
-table.
+Be careful when using this action module. Apply only the changes you need, and only to the target
+systems you intend. Actions perform their functions on all rows in a table.
 :::
 
 
@@ -27,7 +26,7 @@ requirements for the type of data contained in the columns in the source table. 
 Active Directory object, group, user, or computer, the source table columns must contain values that
 uniquely identify each Active Directory object referenced. Active Directory objects correspond to
 rows in a Enterprise Auditor source table. Active Directory object attributes correspond to columns.
-Once the source table has been scoped, use the Target page to specify the field that identifies the
+After you scope the source table, use the Target page to specify the field that identifies the
 target objects along with the field type to indicate the type of data contained in the field.
 
 The Operations page lists the operations that may be performed by the Active Directory Action
@@ -39,7 +38,7 @@ Module. Each operation may have its own source table column requirements as foll
 | Computer Details                                | No specific columns required                                                                                                                                                                                                                                                                                                                           |
 | Disable/Enable Computers                        | No specific columns required                                                                                                                                                                                                                                                                                                                           |
 | Create Groups                                   | No specific columns required                                                                                                                                                                                                                                                                                                                           |
-| Create Users                                    | Column containing the user logon name <br />**_RECOMMENDED:_** It is recommended that the source table has columns containing the following information: <ul><li>First Name</li><li>Last name</li><li>Initials</li><li>Full name</li><li>Password</li><li>OU in which to create the user (This can also be created on the Create Users page)</li></ul> |
+| Create Users                                    | Column containing the user logon name <br />**_RECOMMENDED:_** The source table should have columns containing the following information: <ul><li>First Name</li><li>Last name</li><li>Initials</li><li>Full name</li><li>Password</li><li>OU in which to create the user (This can also be created on the Create Users page)</li></ul> |
 | Delete Objects (Users, Groups, Computers, etc.) | No specific columns required                                                                                                                                                                                                                                                                                                                           |
 | Disable/Enable Users                            | No specific columns required                                                                                                                                                                                                                                                                                                                           |
 | Group Details                                   | No specific columns required                                                                                                                                                                                                                                                                                                                           |
@@ -67,6 +66,8 @@ introductory and caution information about the Active Directory Action Module.
 
 ![Active Directory Action Module Wizard Welcome page](/images/accessanalyzer/11.6/admin/action/activedirectory/welcome.webp)
 
-The navigation pane contains links to the pages in the wizard. Note that the operations added on the
-Operations page will affect the list of pages in the navigation pane. Several operations have
-associated configuration pages.
+The navigation pane contains links to the pages in the wizard.
+
+:::note
+Operations added on the Operations page affect the list of pages in the navigation pane. Several operations have associated configuration pages.
+:::

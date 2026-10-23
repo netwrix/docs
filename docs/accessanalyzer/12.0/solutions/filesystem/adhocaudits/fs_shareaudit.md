@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the FileSystem > Ad Hoc Audits > FS_Sha
 node and select Analysis.
 
 :::warning
-Do not modify or deselect the last three selected analysis tasks. The analysis tasks
+Don't modify or deselect the last three selected analysis tasks. The analysis tasks
 are preconfigured for this job.
 :::
 

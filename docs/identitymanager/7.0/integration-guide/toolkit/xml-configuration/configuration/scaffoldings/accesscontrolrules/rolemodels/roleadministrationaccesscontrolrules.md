@@ -4,7 +4,7 @@ description: "Generates the permissions to access the configuration pages and cr
 sidebar_position: 15
 ---
 
-Generates the rights to access the access configuration pages and create, update, delete for:
+Generates the rights to access the configuration pages and create, update, delete for:
 
 - Policies
 - ResourceTypes
@@ -43,7 +43,7 @@ Gives access to a shortcut on the dashboard to access this page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Access_Area_ProvisioningPolicy_AutomationRule" DisplayName_L1="Administrator - Management for AutomationRule" DisplayName_L2="Administrator - Gestion des AutomationRule" EntityType="Access_Area" Profile="Administrator">

@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The AnyID_EpicClarity job collects patient information from Epic including MRNs, SSNs, Subscriber
 IDs, and Account IDs. An account with read access to the underlying Clarity Oracle database is
-required in order to run queries.
+required to run queries.
 
 ![AnyID_EpicClarity Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/anyid/epicclarityjoblocation.webp)
 
@@ -45,7 +45,7 @@ Not supported
 
 **Schedule Frequency**
 
-This job should be run based on the desired frequency of Sensitive Data Scans.
+This job should be run based on the frequency you want for Sensitive Data Scans.
 
 **Query Configuration**
 
@@ -78,13 +78,13 @@ The queries are:
 - Epic Clarity Coverage – Imports Epic Clarity subject profile information on coverage
 - Epic Clarity Identity IDs – Imports Epic Clarity subject profile information on identity IDs
 
-The above queries have configurable parameters. See the
+The preceding queries have configurable parameters. See the
 [Configure the AnyID_EpicClarity Queries](#configure-the-anyid_epicclarity-queries) topic for
 additional information.
 
 ### Configure the AnyID_EpicClarity Queries
 
-Follow the steps to configure the AnyID_EpicClarity queries.
+To configure the AnyID_EpicClarity queries:
 
 **Step 1 –** Navigate to the **AnyID Connectors** > **AnyID_EpicClarity** > **Configure** node and
 select **Queries**.
@@ -111,7 +111,7 @@ topic for additional information. Configure the following attributes as needed:
     - An attribute in the Attributes list will not be considered a match (in reporting and AIC)
       unless an attribute in the RequiredAttributes list is also found in the same file
 
-- $RequiredAttributes – The list of attributes that need to be found in the document in order to
+- $RequiredAttributes – The list of attributes that need to be found in the document to
   trigger a match. The default values are SSN, MRN, and IdentityID.
 
     - An attribute in the Attributes list will not be considered a match (in reporting and AIC)
@@ -131,7 +131,7 @@ Navigate to the **Jobs** > **AnyID Connectors** > **AnyID_EpicClarity** > **Con
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

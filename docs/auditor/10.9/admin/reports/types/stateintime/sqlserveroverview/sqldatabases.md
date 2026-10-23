@@ -32,7 +32,7 @@ For each database, the following information is reported:
   for details.
 - **Last full backup date**— local date and time for the audited SQL Server instance.
 
-In some cases, the backup time will be displayed in server ticks.
+In some cases, the report will display the backup time in server ticks.
 
 - **Data file path**— .MDF file path.
 - **Log file path**— .LDF file path.
@@ -58,7 +58,7 @@ This report has the following filters:
 
 ## Considerations and recommendations
 
-Reporting for case-sensitive SQL Servers and databases is not supported.
+The report doesn't support case-sensitive SQL Servers and databases.
 
 ## Usage example
 

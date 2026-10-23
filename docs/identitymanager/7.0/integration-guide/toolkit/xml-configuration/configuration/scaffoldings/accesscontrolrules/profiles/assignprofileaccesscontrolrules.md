@@ -1,17 +1,17 @@
 ---
 title: "AssignProfileAccessControlRules"
-description: "Gives to a given profile the rights to create, update, delete and query any assigned profile."
+description: "Gives a profile the rights to create, update, delete, and query any assigned profile."
 sidebar_position: 1
 ---
 
-Gives to a given profile the rights to create, update, delete and query any assigned profile, from the **Assigned Profiles** screen.
+Gives a profile the rights to create, update, delete, and query any assigned profile, from the **Assigned Profiles** screen.
 
 ![Assigned Profiles](/images/identitymanager/home_assignedprofiles_v602.webp)
 
 
 
 ## Examples
-The following example gives to the `Administrator` profile the rights to create, update, delete and query assigned profiles.
+The following example gives the `Administrator` profile the rights to create, update, delete, and query assigned profiles.
 
 ```xml
   <AssignProfileAccessControlRules Profile="Administrator"/>
@@ -28,7 +28,7 @@ The following example gives to the `Administrator` profile the rights to create,
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Access_Area_AccessControl_AssignedProfile" DisplayName_L1="Administrator - Management Profiles" DisplayName_L2="Administrator - Gestion des profils" EntityType="Access_Area" Profile="Administrator">

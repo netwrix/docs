@@ -96,70 +96,70 @@ Review the following considerations:
    and the estimation tool usage, see
    [Managing Access Reviews Integration Limits for File Servers](/docs/kb/auditor/configuration-and-setup/file-server-auditing/managing-access-reviews-integration-limits-for-file-servers).
 
-    ## Initial Configuration
+## Initial Configuration
 
-    Next, configure the Access Reviews for your environment:
+Next, configure the Access Reviews for your environment:
 
-    - Console Users — Grant users access to the application starting with an Administrator account.
-      There are two levels of access: Administrator and Security Team. See the
-      [Console Access Page](/docs/auditor/10.8/accessreviews/admin/configuration/consoleaccess.md) topic for
-      information.
+- Console Users — Grant users access to the application starting with an Administrator account.
+  There are two levels of access: Administrator and Security Team. See the
+  [Console Access Page](/docs/auditor/10.8/accessreviews/admin/configuration/consoleaccess.md) topic for
+  information.
 
-        - Optionally, disable the Builtin Administrator account. See the
-          [Modify the Builtin Administrator Account](/docs/auditor/10.8/accessreviews/admin/configuration/consoleaccess.md#modify-the-builtin-administrator-account)
-          topic for additional information.
-
-    - Notification — Configure the Notification settings required for the application to
-      send email. See the
-      [Notifications Page](/docs/auditor/10.8/accessreviews/admin/configuration/notifications.md) topic for
-      information.
-
-    ## Enable Console Users
-
-    Notify Access Reviews Console users granted one of the available roles.
-
-    **_RECOMMENDED:_** The notification should include:
-
-    - Why your organization is using Netwrix Auditor Access Reviews.
-    - What they will be doing in the Access Reviews Console.
-    - How to log into the Access Reviews Console, specifically what URL and credentials to use.
-
-    You should also provide links to the appropriate topics based on the user's role:
-
-    - Security Team — Need topics that align to the work the will be doing in the Access Reviews
-      Console:
-
-        - Ownership Administrator — Send the URL link for the
-          [Resource Owners Overview](/docs/auditor/10.8/accessreviews/resourceowners/overview.md) topic.
-        - Review Administrator — Send the URL link for the
-          [Reviews Overview](/docs/auditor/10.8/accessreviews/entitlementreviews/overview.md) topic.
-
-    - Administrator — Send the URL link for the
-      [Administrator Overview](/docs/auditor/10.8/accessreviews/admin/overview.md) topic.
-
-    ## Resource Ownership Configuration
-
-    You must assign ownership of resources to use the Access Reviews workflow:
-
-    - Resource Ownership — Assign ownership for resources to be managed through the application. See
-      the [Resource Owners Interface](/docs/auditor/10.8/accessreviews/resourceowners/interface/interface.md) topic for
-      additional information.
-    - Enable Owners — Send a notification to your owners about resource ownership with the
-      application. See the
-      [Notification to Owners](/docs/auditor/10.8/accessreviews/resourceowners/overview.md#notification-to-owners)
+    - Optionally, disable the Builtin Administrator account. See the
+      [Modify the Builtin Administrator Account](/docs/auditor/10.8/accessreviews/admin/configuration/consoleaccess.md#modify-the-builtin-administrator-account)
       topic for additional information.
 
-    ## Access Reviews Workflow
+- Notification — Configure the Notification settings required for the application to
+  send email. See the
+  [Notifications Page](/docs/auditor/10.8/accessreviews/admin/configuration/notifications.md) topic for
+  information.
 
-    The Access Reviews application runs attestations on resources and groups with the assigned
-    owners. The workflow consists of:
+## Enable Console Users
 
-    - Reviews — Configure reviews for resource Access or group Membership .
-    - Owner Performs Review — Owners process the review, potentially recommending changes
-    - Review Administrator Approval — Review and process owner recommended changes
+Notify Access Reviews Console users granted one of the available roles.
 
-    **_RECOMMENDED:_** Set expectations for response time from owners.
+**_RECOMMENDED:_** The notification should include:
 
-    You can run reviews multiple times, maintaining a historical record for each instance. See the
-    [Reviews Overview](/docs/auditor/10.8/accessreviews/entitlementreviews/overview.md) topic for additional
-    information.
+- Why your organization is using Netwrix Auditor Access Reviews.
+- What they will be doing in the Access Reviews Console.
+- How to log into the Access Reviews Console, specifically what URL and credentials to use.
+
+You should also provide links to the appropriate topics based on the user's role:
+
+- Security Team — Need topics that align to the work the will be doing in the Access Reviews
+  Console:
+
+    - Ownership Administrator — Send the URL link for the
+      [Resource Owners Overview](/docs/auditor/10.8/accessreviews/resourceowners/overview.md) topic.
+    - Review Administrator — Send the URL link for the
+      [Reviews Overview](/docs/auditor/10.8/accessreviews/entitlementreviews/overview.md) topic.
+
+- Administrator — Send the URL link for the
+  [Administrator Overview](/docs/auditor/10.8/accessreviews/admin/overview.md) topic.
+
+## Resource Ownership Configuration
+
+You must assign ownership of resources to use the Access Reviews workflow:
+
+- Resource Ownership — Assign ownership for resources to be managed through the application. See
+  the [Resource Owners Interface](/docs/auditor/10.8/accessreviews/resourceowners/interface/interface.md) topic for
+  additional information.
+- Enable Owners — Send a notification to your owners about resource ownership with the
+  application. See the
+  [Notification to Owners](/docs/auditor/10.8/accessreviews/resourceowners/overview.md#notification-to-owners)
+  topic for additional information.
+
+## Access Reviews Workflow
+
+The Access Reviews application runs attestations on resources and groups with the assigned
+owners. The workflow consists of:
+
+- Reviews — Configure reviews for resource Access or group Membership .
+- Owner Performs Review — Owners process the review, potentially recommending changes
+- Review Administrator Approval — Review and process owner recommended changes
+
+**_RECOMMENDED:_** Set expectations for response time from owners.
+
+You can run reviews multiple times, maintaining a historical record for each instance. See the
+[Reviews Overview](/docs/auditor/10.8/accessreviews/entitlementreviews/overview.md) topic for additional
+information.

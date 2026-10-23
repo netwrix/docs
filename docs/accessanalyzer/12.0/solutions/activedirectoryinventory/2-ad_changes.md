@@ -8,11 +8,11 @@ sidebar_position: 30
 
 The 2-AD_Changes Job tracks changes within all scanned domains. Reports in the job highlight Active
 Directory changes which have occurred since the last time the .Active Directory Inventory Job Group
-was run. It is dependent on the running of the 1-AD_Scan Job, also located in the .Active Directory
+was run. It is dependent on running the 1-AD_Scan Job, also located in the .Active Directory
 Inventory Job Group.
 
 The 1-AD_Scan Job must have the Query Option to **Track changes into Change tracking tables**
-selected in order for the Analysis Tasks in the 2-AD_Changes Job to work. See Step 4 of the
+selected for the Analysis Tasks in the 2-AD_Changes Job to work. See Step 4 of the
 [Customize the 1-AD_Scan Query](1-ad_scan.md#customize-the-1-ad_scan-query) topic for additional
 information.
 
@@ -22,7 +22,7 @@ View the analysis tasks by navigating to the **.Active Directory Inventory** > *
 **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -125,32 +125,32 @@ following pre-configured reports:
 | Group Membership Changes (A.K.A. Most Active Groups) | This report tracks group membership changes in Active Directory.                      | None         | This report is comprised of three elements: <ul><li>Bar graph – Displays Most Active Groups (Past 24 Hours)</li><li>Table – Provides details on the most active groups (Past 24 Hours)</li><li>Table – Provides details on the most active groups</li></ul>                           |
 | New Principals                                       | This report identifies when principals have been created on the targeted domains.     | None         | This report is comprised of two elements: <ul><li>Bar graph – Displays New Principals by Domain (Past 24 Hours)</li><li>Table – Provides details on the new principals by domain</li></ul>                                                                                            |
 | Object Moves                                         | This report tracks object moves in Active Directory.                                  | None         | This report is comprised of two elements: <ul><li>Table – Displays Most Active OUs (Past 24 Hours)</li><li>Table – Provides details on the most active OUs</li></ul>                                                                                                                  |
-| Org Changes (A.K.A. Organizational Changes)          | This report tracks organizational moves such as manager, title or department changes. | None         | This report is comprised of three elements: <ul><li>Bar graph – Displays Organizational Changes (Past 24 Hours)</li><li>Table – Provides details on organizational changes (Past 24 Hours)</li><li>Table – Provides details on the organizational changes</li></ul>                   |
+| Org Changes (A.K.A. Organizational Changes)          | This report tracks organizational moves such as manager, title, or department changes. | None         | This report is comprised of three elements: <ul><li>Bar graph – Displays Organizational Changes (Past 24 Hours)</li><li>Table – Provides details on organizational changes (Past 24 Hours)</li><li>Table – Provides details on the organizational changes</li></ul>                   |
 | Principal Deletions (A.K.A. Past 24 Hours)           | This report identifies when principals have been deleted from the targeted domains.   | None         | This report is comprised of three elements: <ul><li>Bar graph – Displays Deleted Principals by Domain (Past 24 Hours)</li><li>Table – Provides details on deleted principals by domain (Past 24 Hours)</li><li>Table – Provides details on the principals by domain</li></ul>         |
 | User Account Status Changes                          | This report tracks user account status changes.                                       | None         | This report is comprised of three elements: <ul><li>Bar graph – Displays User Account Control Changes (Past 24 Hours)</li><li>Table – Provides details on user account control changes (Past 24 Hours)</li><li>Table – Provides details on the user account control changes</li></ul> |
 
 
 ### Notification Analysis Tasks for the 2-AD_Changes Job
 
-In order for Access Analyzer to send email notifications, it is necessary for the **Settings** >
-**Notification** node to be properly configured. See the
+To send email notifications, properly configure the **Settings** >
+**Notification** node. See the
 [Notification](/docs/accessanalyzer/12.0/admin/settings/notification.md) topic for instructions on enabling the Access
 Analyzer Console to send email notifications. Once email notifications have been enabled, the
-individual notification analysis tasks can be configured and enabled. Follow the steps to configure
-a notification analysis task.
+individual notification analysis tasks can be configured and enabled. To configure
+a notification analysis task, complete the following steps.
 
 **Step 1 –** Navigate to the **.Active Directory Inventory** > **2-AD_Changes** > **Configure** node
 and select **Analysis**.
 
 ![Notification Analysis Tasks for the 2-AD_Changes Job](/images/accessanalyzer/12.0/solutions/activedirectoryinventory/changesanalysisnotification.webp)
 
-**Step 2 –** In the Analysis Selection view, select the desired notification analysis task and click
+**Step 2 –** In the Analysis Selection view, select the notification analysis task you want and click
 **Analysis Configuration**. The Notification Data Analysis Module opens.
 
 ![Notification Data Analysis Module SMTP properties page](/images/accessanalyzer/12.0/solutions/activedirectoryinventory/notificationanalysissmtp.webp)
 
 :::warning
-Do not make changes to the pages preceding the SMTP page.
+Don't make changes to the pages preceding the SMTP page.
 :::
 
 
@@ -169,9 +169,9 @@ provided. You can use the following options:
 
 ![Message section of SMTP properties page](/images/accessanalyzer/12.0/solutions/activedirectoryinventory/notificationanalysissmtpmessage.webp)
 
-**Step 5 –** In the Message section, edit the **Subject**. It is not recommended to remove any
-parameters. Then, customize the email content in the textbox to provide an explanation of the
-notification to the recipients.
+**Step 5 –** In the Message section, edit the **Subject**. Don't remove any parameters. Then,
+customize the email content in the textbox to provide an explanation of the notification to the
+recipients.
 
 **Step 6 –** Click **Next** to save these configuration changes and navigate to the Summary page. Do
 not make changes to any other pages. Click **Finish**. The Notification Data Analysis Module window

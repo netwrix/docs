@@ -12,9 +12,9 @@ sidebar_position: 20
 
 Actions button:
 
-To create a new Cloud Policy, use the Actions button in the top-right hand corner of the Cloud Tab.
-This will prompt for a name to be assigned to the new Cloud Policy and the Cloud Set-up Wizard
-process will kick in.
+To create a new Cloud Policy, use the Actions button in the top-right corner of the Cloud tab.
+Change Tracker prompts you for a name for the new Cloud Policy, then starts the Cloud Setup
+Wizard.
 
 Cloud Policy Sub-Tabs:
 
@@ -27,13 +27,12 @@ Switch between:
 
 Cloud Compliance Time Machine:
 
-Go back in time to see previous report results and configuration states for the selected Cloud Group
-and Policy.
+View previous report results and configuration states for the selected Cloud Group and Policy.
 
 Group Performance:
 
-Visual representation of current and previous report results for the group, click to drill down to
-the next level of details.
+Visual representation of current and previous report results for the group. Click to view the
+next level of detail.
 
 Device Scores:
 
@@ -42,5 +41,5 @@ bar represents a subset of Cloud instances for the Compliance Score range.
 
 Failures Analysis:
 
-The most commonly occurring checks failing compliance rules will be highlighted here, ordered by
+The most commonly occurring checks that fail compliance rules appear here, ordered by
 incidence count.

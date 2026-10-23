@@ -29,7 +29,7 @@ Generates the permissions to access the provisioning review pages for a given en
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 

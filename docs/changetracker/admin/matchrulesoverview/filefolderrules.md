@@ -6,20 +6,20 @@ sidebar_position: 10
 
 # File and Folder Match Filters for Inclusion and Exclusion Rules
 
-There are a range of prebuilt Match Filters provided with Netwrix Change Tracker. Enterprise which
-enable precision monitoring of only the attributes required (including prebuilt exclusion filters
-for popular AV packages that update often and create lots of 'change noise'). Often due to paths
-containing a mixture of files that are to be monitored, alongside files for which changes can be
-ignored, it is desirable to define multidimensional rules for includes and excludes.
+Netwrix Change Tracker Enterprise includes a range of prebuilt match filters for precision
+monitoring of only the required attributes, including prebuilt exclusion filters for popular
+antivirus (AV) packages that update often and create lots of 'change noise'. Paths often contain a
+mix of files to monitor and files to ignore, so you need multidimensional rules for includes and
+excludes.
 
-For example, if I wish to monitor all files within a specified path and all sub-paths, I can use the
-built-in 'All files (recursive)' match filter.
+For example, to monitor all files within a specified path and all sub-paths, use the built-in
+'All files (recursive)' match filter.
 
-However, it may be desirable to reduce 'noise' from the route path by applying an exclusion for any
-changes relating to temporary files, for example, swp, swx or ~ file variants. There is actually a
-built-in Pathmatch Definition for this provided 'Linux temp files in folder'.
+You can also reduce 'noise' from the route path by applying an exclusion for temporary file
+changes, for example, swp, swx, or ~ file variants. Change Tracker provides a built-in Pathmatch
+Definition for this, called 'Linux temp files in folder'.
 
-However, by way of example, the example **Custom Pathmatch Definition** below provides this policy:
+The following **Custom Pathmatch Definition** example provides this policy:
 
 ![CustomPathmatchDefinition](/images/changetracker/admin/matchrules/custompathmatchdefinition.webp)
 
@@ -50,4 +50,4 @@ Wildcards, Regex);
 
 - Unlimited
 - None (operate on specified folder only)
-- 'n' — recurse through 1, 2 or 3 subfolders.
+- 'n' — recurse through 1, 2, or 3 subfolders.

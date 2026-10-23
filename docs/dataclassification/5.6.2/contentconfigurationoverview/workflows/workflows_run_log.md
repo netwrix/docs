@@ -10,7 +10,7 @@ When workflow actions are performed, the corresponding operations are logged to 
 file. Click the Logs tab to view the corresponding audit trails.
 
 Here you can change the display period or the number of logs displayed, sort the list or copy its
-content, or clear the logs you do not need.
+content, or clear the logs you don't need.
 
 ![workflowlogs_thumb_0_0](/images/dataclassification/5.6.2/workflows/workflowlogs_thumb_0_0.webp)
 

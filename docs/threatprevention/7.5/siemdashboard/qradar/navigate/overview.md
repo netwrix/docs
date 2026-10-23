@@ -29,9 +29,5 @@ within the past three (3) hours. It has the following cards:
   specified timeframe, i.e., past three (3) hours
 - Threat Prevention Events – Timeline of all events sent by Threat Prevention to QRadar within the
   last three (3) hours
-- Attacks by Type – Breakdown of authentication attacks that started within the last three (3) hours
-  by type of attack. See the [Graph Card Features](/docs/threatprevention/7.5/siemdashboard/qradar/navigate/navigate.md#graph-card-features) topic for
-  additional information.
-- Active Directory Changes – Breakdown of Active Directory change events recorded in the specified
-  timeframe, i.e., last three (3) hours. See the
-  [Graph Card Features](/docs/threatprevention/7.5/siemdashboard/qradar/navigate/navigate.md#graph-card-features) topic for additional information.
+- Attacks by Type – Breakdown of authentication attacks that started within the last three hours by type of attack. See [Graph Card Features](/docs/threatprevention/7.5/siemdashboard/qradar/navigate/navigate.md#graph-card-features) for details.
+- Active Directory Changes – Breakdown of Active Directory change events recorded in the last three hours. See [Graph Card Features](/docs/threatprevention/7.5/siemdashboard/qradar/navigate/navigate.md#graph-card-features) for details.

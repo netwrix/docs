@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # DNS Data Collector
 
-The DNS Data Collector provides information regarding DNS configuration and records. It is available
+The DNS Data Collector provides information about DNS configuration and records. It is available
 with the Active Directory Solution. Both this data collector and the solution are available with a
 special Access Analyzer license.
 
@@ -25,7 +25,7 @@ special Access Analyzer license.
 
 ## DNS Query Configuration
 
-The DNS Data Collector is configured through the Domain Name System Data Collector Wizard, which
+You configure the DNS Data Collector through the Domain Name System Data Collector Wizard, which
 contains the following wizard pages:
 
 - Welcome
@@ -35,5 +35,5 @@ contains the following wizard pages:
 
 ![Domain Name System Data Collector Wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/dns/welcome.webp)
 
-The Welcome page can be hidden by selecting the Do not display this page the next time checkbox when
-the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the Don't display this page the next time checkbox while the
+wizard is open, then save the configuration settings.

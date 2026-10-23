@@ -15,7 +15,7 @@ The AppnLogSQL Query uses the SMARTLog Data Collector and has been preconfigured
 Windows Event Log Type.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 

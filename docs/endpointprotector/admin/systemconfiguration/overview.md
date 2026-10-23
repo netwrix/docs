@@ -47,7 +47,7 @@ recent updates checked or installed, and view a list of available updates.
 
 :::note
 The security update options are available only for customer-hosted instances (for example,
-AWS or Google), except for Operating System and Kernel upgrades.
+AWS, or Google), except for Operating System and Kernel upgrades.
 :::
 
 :::warning
@@ -100,12 +100,15 @@ conﬁguration ﬁle.
 Only the latest Endpoint Protector and Enforced Encryption Clients are available for download.
 :::
 
-When installing, you can click **Generate** to download a client with the configuration in the UI or
-copy the following details from this screen using the Copy button:
+When installing, click **Generate** to download a client that already contains the server configuration shown in the UI, or copy the following details from this screen using the **Copy** button:
 
 - Endpoint Protector Server IP
 - Endpoint Protector Server port
 - Department Code
+
+:::tip
+When you install a client, use the server's fully qualified domain name (FQDN) as the server address instead of the IP address. Clients configured with an FQDN keep working when the server moves to a new IP address, for example after a migration. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
 
 
 ![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.webp)
@@ -113,6 +116,13 @@ copy the following details from this screen using the Copy button:
 :::note
 Starting with release 2509.0.1.0, endpoints display Endpoint Protector Client versions in the format XXXX.X.X.X.
 :::
+
+### Generated client installers
+
+The server address that a generated installer uses depends on the operating system:
+
+- **Windows** – The generated MSI file name includes the server FQDN or IP address, in the format `EPPClientSetup.<version>_x86_64_[a=<server-address>].msi`, for example `EPPClientSetup.2608.1.1.3_x86_64_[a=domain.netwrix.com].msi`. The installer configures the server field with this address, even if you pass a different value in the installation parameters. To use a different address, rename the MSI file or enter the FQDN or IP address in the `[a=…]` part of the file name.
+- **macOS** – The generated package updates the script it contains with the server address.
 
 For more client install options, refer to the dedicated article on [Agent Installation Options](/docs/endpointprotector/admin/agent.md)
 
@@ -156,7 +166,7 @@ steps:
 ![Create New Upgrade Job](createnewupgradejob.webp)
 
 **Step 2 –** Select the groups and/or computers to perform or exclude from the upgrade and then
-click **Next**. A summary of your selection appears above the table of endpoints.
+click **Next**. A summary of your selection appears at the top of the table.
 
 :::note
 Endpoint Protector upgrades only computers that use the operating system you selected. If

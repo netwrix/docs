@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # How Risk Levels Are Estimated
 
-As mentioned, dashboard and built-in reports give you a bird's eye view of the following high-risk
+As mentioned, dashboard and built-in reports give you a comprehensive view of the following high-risk
 areas:
 
 - User and computer accounts
@@ -16,13 +16,13 @@ areas:
 
 Within each area, Netwrix Auditor industry experts identified risk categories and suggested
 guidelines for them. For example, if the number of administrative accounts in your organization is
-less than 2%, the risk should be considered insufficient. If the value is between 2% and 3%, the
-risk is moderate, while any value that exceeds 3% should be considered a high risk. These guidelines
+less than 2%, consider the risk insufficient. If the value is between 2% and 3%, the
+risk is moderate; if the value exceeds 3%, consider it a high risk. These guidelines
 are based on security best practices and analytical data.
 
 The product compares your environment configuration against these metrics and assigns a risk level
 to each category. The risk levels in each category determine the overall risk level for the area you
-review. The following risk levels are used:
+review. Netwrix Auditor uses the following risk levels:
 
 | Risk level | Color  | Comments                                                                     |
 | ---------- | ------ | ---------------------------------------------------------------------------- |
@@ -30,9 +30,9 @@ review. The following risk levels are used:
 | Medium     | Yellow | Proactively mitigate risks and adjust your workflows before a breach occurs. |
 | High       | Red    | Respond to the threat as soon as possible.                                   |
 
-Calculation formulas for each metric are provided in the table below.
+The following table provides calculation formulas for each metric.
 
-The following signs are used to define risk level intervals and threshold values:
+Netwrix Auditor uses the following signs to define risk level intervals and threshold values:
 
 - > —More than, exclusive
 - ≥ —This value or more, inclusive
@@ -67,7 +67,7 @@ The following signs are used to define risk level intervals and threshold values
 | Data                                                                    |                                                                                                                                                                                                                                                                                                                                                                                       |                                                    |
 | Files and folders accessible by Everyone                                | Files and folders shared with _Everyone_ security group /Overall number of shared folders (%)                                                                                                                                                                                                                                                                                         | - ≤ 1% — Low - (1% – 5%) — Medium - ≥ 5% — High    |
 | Sensitive data shared with Everyone                                     | Number of sensitive files shared with the security groups "Everyone" and "Authenticated" / Total number of sensitive files (%).                                                                                                                                                                                                                                                       | - 0% — Low - (1% – 2%) — Medium - ≥ 2% — High      |
-| Sensitive files shared with external users                              | Number of sensitive files shared with external users / Total number of sensitive files (%). Sharing sensitive data with external users (authenticated users who are not members of your Office 365 organization) may lead to data leaks. To reduce the risk of data leaks and non-compliance, control data sharing to external users.                                                 | - ≤ 5% — Low - (5% – 10%) — Medium - ≥ 10% — High  |
+| Sensitive files shared with external users                              | Number of sensitive files shared with external users / Total number of sensitive files (%). Sharing sensitive data with external users (authenticated users who aren't members of your Office 365 organization) may lead to data leaks. To reduce the risk of data leaks and non-compliance, control data sharing to external users.                                                 | - ≤ 5% — Low - (5% – 10%) — Medium - ≥ 10% — High  |
 | Sensitive files shared with anonymous users                             | Number of sensitive files shared with anonymous users / Total number of sensitive files (%). Files may be shared with any users outside the Office 365 organization, so that any user with the link can access the file. This may lead to your sensitive content being highly exposed. To reduce the risk of data leaks, control data sharing to anonymous users.                     | - 0% — Low - (0% – 2%) — Medium - ≥ 2% — High      |
 | Sensitive documents accessible by Everyone                              | Number of sensitive documents accessible by Everyone or similar groups / Total number of sensitive documents (%). Only designated personnel should have access to your sensitive data. Thus, only public data should be accessible by the following predefined Office 365 groups: - Everyone - Everyone Except External Users - All Authenticated Users - All Forms Users - All Users | - 0% — Low - (0% – 5%) — Medium - ≥ 5% — High      |
 | File and folder names containing sensitive data                         | Number of files and folders with names that suggest they contain sensitive data                                                                                                                                                                                                                                                                                                       | - 0 — Low - 1 — Medium - > 1 — High                |

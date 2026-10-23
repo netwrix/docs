@@ -55,7 +55,7 @@ Increase the tolerance if [testing](../testpolicy.md#by-user) shows that this ru
 Click **Add dictionary** if you want PPE to use a secondary dictionary file. This is useful if you want to keep your own words in a separate file, or if you need different settings for the second file. Clicking **Add dictionary** displays a second group of identical configuration settings for the secondary file.
 
 :::tip
-A secondary dictionary can be combined with the [passphrase](../passphrases.md) feature to enforce a password policy that allows dictionary words in passphrases, while still rejecting certain words such as the organization's name, seasons, local sporting teams, etc. Configure the passphrase feature to disable only the primary dictionary file for passphrases, and keep the secondary (smaller) dictionary file enabled for all passwords.
+You can combine a secondary dictionary with the [passphrase](../passphrases.md) feature to enforce a password policy that allows dictionary words in passphrases, while still rejecting certain words such as the organization's name, seasons, local sporting teams, etc. Configure the passphrase feature to disable only the primary dictionary file for passphrases, and keep the secondary (smaller) dictionary file enabled for all passwords.
 :::
 
 ## Dictionary file replication

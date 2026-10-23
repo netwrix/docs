@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # EasyVista Ticket
 
-Creates tickets inside an EasyVista instance. This package does not support incremental synchronization.
+Creates tickets inside an EasyVista instance. This package doesn't support incremental synchronization.
 
  | Package Characteristics | Value | 
  | --- | --- | 

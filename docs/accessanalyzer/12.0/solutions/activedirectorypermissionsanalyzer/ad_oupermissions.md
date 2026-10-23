@@ -19,7 +19,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **3.OUs** > **AD_OUP
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -34,7 +34,7 @@ The default analysis tasks are:
   downstream analysis and report generation
 - Shadow Access OU Paths – Calculates the object location and permissions for shadow access
 - OU Ownership – Lists the owners of each OU and determines if they are a non-standard owner.
-  Principals that are not administrators are considered non-standard owners of OU objects. Creates
+  Principals that aren't administrators are considered non-standard owners of OU objects. Creates
   the SA_AD_OUOwnership_Details table accessible under the job’s Results node.
 - OU Ownership Summary – Summarizes owner type by domain
 

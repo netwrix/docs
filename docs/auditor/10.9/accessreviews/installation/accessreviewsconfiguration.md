@@ -18,7 +18,7 @@ You can configure Netwrix Auditor Access Reviews in two ways:
 If you plan to use Access Reviews for multiple data sources, configure the settings to work with the
 data sources that you select.
 
-Follow the steps to configure Access Reviews in the Netwrix Auditor.
+To configure Access Reviews in Netwrix Auditor:
 
 **Step 1 –** Go to **Settings > General > Access Reviews**.
 
@@ -28,7 +28,7 @@ Follow the steps to configure Access Reviews in the Netwrix Auditor.
 
 ![manageaccessreviews](/images/auditor/10.7/manageaccessreviews.webp)
 
-**Step 3 –** Select the desired data sources to review.
+**Step 3 –** Select the data sources you want to review.
 
 **Step 4 –** Click **Save**.
 
@@ -39,13 +39,13 @@ Netwrix Auditor Access Reviews is configured and ready to use in the Netwrix Aud
 If you plan to use Access Reviews for a specific monitoring plan, configure Access Reviews in that
 monitoring plan.
 
-Follow the steps to configure Access Reviews in the Netwrix Auditor.
+To configure Access Reviews in Netwrix Auditor:
 
 **Step 1 –** Go to **Configuration > Monitoring plans**.
 
-**Step 2 –** Double click the desired monitoring plan.
+**Step 2 –** Double-click the monitoring plan you want.
 
-**Step 3 –** Click **Edit data source** button on the left.
+**Step 3 –** Click the **Edit data source** button on the left.
 
 ![enablear](/images/auditor/10.7/enablear.webp)
 

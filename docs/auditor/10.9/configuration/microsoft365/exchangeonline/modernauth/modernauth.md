@@ -6,14 +6,14 @@ sidebar_position: 30
 
 # Access Exchange Online Using Modern Authentication
 
-Support for modern authentication will allow you to audit the organizations where MFA is enabled for
-all users, including service accounts.
+With modern authentication, you can audit organizations where MFA is enabled for all users, including
+service accounts.
 
 This option is recommended for organizations that use modern authentication as the identity
 management approach, having multi-factor authentication (MFA) enabled for their user accounts. In
-this scenario, Netwrix Auditor will access the cloud-based infrastructure via Microsoft Graph and
-other modern APIs, being authenticated through a pre-configured Microsoft Entra ID application with
-appropriate access permissions.
+this scenario, Netwrix Auditor accesses the cloud-based infrastructure via Microsoft Graph and other
+modern APIs, authenticating through a pre-configured Microsoft Entra ID application with appropriate
+access permissions.
 
 If you plan to implement this scenario, you should register an Microsoft Entra ID app manually and
 provide its settings to Netwrix Auditor when configuring a monitored item.
@@ -29,7 +29,7 @@ You will need to create a dedicated app for each cloud-based data source you pla
 
 If you plan to audit all of them, you need to create 4 apps.
 
-Follow the steps to register a new Microsoft Entra ID application.
+Register a new Microsoft Entra ID application:
 
 **Step 1 –** Sign into the **Microsoft 365 Admin Center** with your _Global Administrator_,
 _Application Administrator_ or _Cloud Application Administrator_ account and go to the **Microsoft
@@ -59,7 +59,7 @@ can be assigned _Delegated_ or _Application_ permissions:
 
 - _Delegated_ permissions require a signed-in user present who consents to the permissions every
   time an API call is sent.
-- _Application_ permissions are consented by an administrator once granted.
+- An administrator grants consent for _Application_ permissions once, rather than per API call.
 
 For the newly created app, you should use the _Application_ permissions.
 
@@ -91,14 +91,14 @@ article: [ Microsoft Entra app manifest](https://learn.microsoft.com/en-us/azur
 
 #### Grant Admin Consent to a Tenant
 
-Follow the steps to grant Admin consent to a tenant.
+Grant Admin consent to a tenant:
 
 Go back to the **Microsoft Entra ID admin center** > **Applications** > **App registrations** >
 **API permissions** and click **Grant admin consent for** *`<tenant name>`*. When prompted to
 confirm, click **Yes**.
 
 **NOTE:** For Office 365 permissions, go to **Request API Permissions** > **APIs my organization
-users** and type "Office 365" in the search bar.
+uses** and type "Office 365" in the search bar.
 
 See the following Microsoft article for additional information on how to create an application and
 service principal using Microsoft Entra ID Admin portal:
@@ -106,8 +106,7 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Grant Required Roles
 
-Follow the steps to grant the required Microsoft Entra ID (formerly Azure AD) roles to the new
-application.
+Grant the required Microsoft Entra ID (formerly Azure AD) roles to the new application:
 
 **Step 1 –** In the Entra portal, click **View** under Manage Microsoft Entra ID.
 
@@ -126,7 +125,7 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Configure Client Secret
 
-Follow the steps to create a new client secret to be used by the app.
+Create a new client secret for the app:
 
 **Step 1 –** Go to **Manage** > **Certificates & secrets** and click **New client secret**.
 
@@ -142,7 +141,7 @@ See the following Microsoft article for more information on how to add a client 
 
 ## Add an Exchange Online Monitoring Plan
 
-Follow the steps to add Exchange Online monitoring plan in the Netwrix Auditor:
+Add the Exchange Online monitoring plan in Netwrix Auditor:
 
 **Step 1 –** In the Monitoring Plans, click **Add Plan** button.
 
@@ -164,7 +163,7 @@ Exchange Online monitoring plan has been added to Auditor and initial data colle
 
 ### Obtain the Tenant Name
 
-Follow the steps to obtain the tenant name.
+Obtain the tenant name:
 
 **Step 1 –** Navigate to **Microsoft Entra ID** > **Overview**.
 

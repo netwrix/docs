@@ -113,7 +113,7 @@ additional information.
 
 Auditor supports monitoring the following device versions:
 
-- Files 3.6 - 5.3
+- Files 3.6 - 5.4
 
 See the [Nutanix](/docs/auditor/10.9/configuration/fileservers/nutanix/overview.md) topic for additional
 information.
@@ -130,9 +130,7 @@ See the [Qumulo](/docs/auditor/10.9/configuration/fileservers/qumulo/overview.md
 
 Auditor supports monitoring the following device versions:
 
-- DiskStation Manager (DSM) 7.2.1
-- DSM 7.1
-- DSM 7.0
+- DSM (DiskStation Manager) 7.0 - 7.4.1
 - DSM 6.2.3
 
 See the [Synology](/docs/auditor/10.9/configuration/fileservers/synology/overview.md) topic for additional
@@ -468,7 +466,7 @@ information.
 ## Netwrix Integration API
 
 In addition to the data sources the product monitors, Auditor supports technology integrations
-that leverage its API. Download free add-ons from
+that use its API. Download free add-ons from
 [Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) to enrich your audit
 trails with activity from the following systems and applications.
 

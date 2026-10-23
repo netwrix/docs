@@ -97,7 +97,7 @@ The tasks created in the Scaffoldings are sorted by level. The levels are visibl
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Job Identifier="Job_Fast" DisplayName_L1="91: Background Sync/Provisioning Job" DisplayName_L2="91: Tâche de fond de Synchro/provisioning" Agent="Local">

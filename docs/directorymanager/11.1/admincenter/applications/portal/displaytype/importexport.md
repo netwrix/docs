@@ -34,7 +34,7 @@ wizards in the portal:
 | Export Additional Owners | This wizard is used to export the additional owners of a group to an external file. Users can launch it from the Owner tab in group properties.                                                              |
 
 :::note
-The attributes you specify apply to all four wizards. You cannot specify a different set of
+The attributes you specify apply to all four wizards. You can't specify a different set of
 attributes for a wizard.
 :::
 
@@ -52,7 +52,7 @@ attributes for a wizard.
    and _email_ are specified by default. These attributes are available in the portal for the export
    and import of group members and additional owners.
 5. To add an attribute, click **Add**. The **Import/Export Attribute** dialog box is displayed.
-6. In the **Schema Attribute** drop-down list, select a schema attribute to use for import/export.
+6. In the **Schema Attribute** dropdown list, select a schema attribute to use for import/export.
 7. In the **User-Friendly Name** box, enter an easy and meaningful name for the attribute. The
    attribute will be displayed with this name on the Import Members, Export Members, Import
    Additional Owners, and Export Additional Owners wizards in the portal.

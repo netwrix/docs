@@ -7,15 +7,15 @@ sidebar_position: 30
 # ServiceNow Action: Description
 
 The Description page provides details on the incidents entered into a field on the Incident Creation
-page. A description of the incident and related comments are included with the incident’s report to
-provide additional feedback to the system administrator, and may be saved to a template.
+page. The incident's report includes a description of the incident and related comments, providing
+additional feedback to the system administrator. You can save this information to a template.
 
 ![ServiceNow Action Module wizard Description page](/images/accessanalyzer/11.6/admin/action/servicenow/description.webp)
 
 Create a report using the following options:
 
 - Short Description – Displays entered words or phrases used to summarize the incident
-- Insert Field – Use the drop-down menu to select a field (column) from the source table
+- Insert Field – Use the dropdown menu to select a field (column) from the source table
 
     - Click the **blue down arrow** to insert the item into the Short Description section
     - Click the **blue up arrow** to insert the item in to the Comments section

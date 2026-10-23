@@ -17,20 +17,18 @@ The table displays the following information:
 - Container – The container in Azure storage
 - Storage account – The storage account for this container
 - Tenant – The tenant the storage container exists in
-- Action – Actions that can be performed on user accounts
+- Action – Actions you can perform on storage containers
 
     - Remove – Click **Remove** to remove the storage container
     - Edit - Click **Edit** to edit the storage container configuration
 
 ### Add a Storage Container
 
-Follow the steps to add a storage container that can be used to store domain controller backups.
-
 **Step 1 –** Click the **Add Storage Container** button on the Azure Storage page. The Add Storage Container wizard opens.
 
 ![Add Storage Container wizard – Storage account page](/images/identityrecovery/3.1/product/configuration/azure_storage/azure_storage_configuration_page1.png)
 
-**Step 2 –** Enter the tenant name, client ID, secret and storage account from the application registration in Entra and click **Next**.
+**Step 2 –** Enter the tenant name, client ID, secret, and storage account from the application registration in Entra and click **Next**.
 
 ![Add Storage Container wizard – Container page](/images/identityrecovery/3.1/product/configuration/azure_storage/azure_storage_configuration_page2.png)
 
@@ -46,12 +44,12 @@ The storage container is now added to the system.
 
 ### Edit a Storage Container Configuration
 
-Follow the steps to edit a storage container configuration.  Editing a storage container follows the same steps as adding a storage container configuration.
+Editing a storage container follows the same steps as adding one.
 
 **Step 1 –** On the Storage Container page, click the **Edit configuration** icon for a storage container. The Edit
 Storage Container wizard opens.
 
-**Step 2 –** Modify the desired settings for the storage container configuration
+**Step 2 –** Modify the settings you want for the storage container configuration
 
 **Step 3 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click **Done** to finish the wizard.
 

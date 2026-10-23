@@ -6,7 +6,7 @@ sidebar_position: 280
 
 # SharePoint
 
-This connector exports sites, folders, groups and permissions from a [SharePoint](https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration) instance.
+This connector exports sites, folders, groups, and permissions from a [SharePoint](https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration) instance.
 
 This page is about Storage/SharePoint.
 
@@ -14,7 +14,7 @@ This page is about Storage/SharePoint.
 
 ## Overview
 
-SharePoint is a system used by organizations to store, organize, share and access information.
+SharePoint is a system used by organizations to store, organize, share, and access information.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ Implementing this connector requires an account with the permissions to access a
 
 This process is configured through a connection in the UI and/or the XML configuration, and in the `*appsettings.agent.json* > Connections` section:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
                                   
@@ -49,7 +49,7 @@ The identifier of the connection and thus the name of the subsection must:
 
 The following example scans the example.sharepoint.com SharePoint at the more detailed level (ListItem) with the account [account.example@acme.com](mailto:account.example@usercube.com):
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -75,16 +75,16 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | Login required | String | Login of the account used to access files and read their entitlements. | 
  | Password required | String | Password of the account used to access files and read their entitlements. | 
  | Server required | String | URL of the SharePoint website to scan. | 
- | Domain optional | String | Domain, sometimes needed in addition to Login to make the connection to the SharePoint server. | 
+ | Domain optional | String | Domain, sometimes needed in addition to log in to make the connection to the SharePoint server. | 
  | TimeOut default value: 300000 | Int32 | Timeout (in milliseconds) for requests. | 
  | Scanlevel default value: ListItem | Scanlevel | Level of scan to be performed, from less to more detailed: Site; List; and ListItem. | 
- | CsvUrls optional | String | Path, column and separator (split by  ¤) of the CSV file containing the other sites to be scanned. Useful when scanning a SharePoint with a root site (https://example.sharepoint.com) **with other sites** (https://example.sharepoint.com/sites/OtherSite) which are not sub-sites (https://example.sharepoint.com/SubSite). Sub-sites don't need to be provided through a CSV file because they are found from the root site. | 
+ | CsvUrls optional | String | Path, column, and separator (split by  ¤) of the CSV file containing the other sites to be scanned. Useful when scanning a SharePoint with a root site (https://example.sharepoint.com) **with other sites** (https://example.sharepoint.com/sites/OtherSite) which aren't sub-sites (https://example.sharepoint.com/SubSite). Sub-sites don't need to be provided through a CSV file because they are found from the root site. | 
 
 ### Limitations
 
-Synchronization in incremental mode does not retrieve user account changes, because SharePoint is not able to provide this information through its API.
+Synchronization in incremental mode doesn't retrieve user account changes, because SharePoint isn't able to provide this information through its API.
 
-To avoid unnecessary scanning and to increase performance, the connector in incremental mode does not scan user accounts from the sites given through CsvUrls. However, it still retrieves the folders, groups, permissions and the links between users and these elements.
+To avoid unnecessary scanning and to increase performance, the connector in incremental mode doesn't scan user accounts from the sites given through CsvUrls. However, it still retrieves the folders, groups, permissions, and the links between users and these elements.
 
 When needing to retrieve all of user account information, then go through complete synchronization instead of incremental.
 
@@ -186,7 +186,7 @@ Same as for export, fulfill is configured through connections.
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -212,12 +212,12 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | Login required | String | Login of the account used to access files and read their entitlements. | 
  | Password required | String | Password of the account used to access files and read their entitlements. | 
  | Server required | String | URL of the SharePoint website to scan. | 
- | Domain optional | String | Domain, sometimes needed in addition to Login to make the connection to the SharePoint server. | 
+ | Domain optional | String | Domain, sometimes needed in addition to log in to make the connection to the SharePoint server. | 
  | TimeOut default value: 300000 | Int32 | Timeout (in milliseconds) for requests. | 
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 
@@ -244,7 +244,7 @@ Protected attributes are stored inside a safe in <b>cyberark</b>, into an accoun
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
                                                 

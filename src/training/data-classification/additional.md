@@ -4,6 +4,6 @@ import { NDC } from '@site/src/training/products';
 
 The following courses are available for self-enrollment through the Learning Library:
 
-* What's New in <NDC /> v5.7.10
+* What's New in <NDC /> v5.8
 * <NDC /> Dropbox Solution
 * <NDC /> Box Solution

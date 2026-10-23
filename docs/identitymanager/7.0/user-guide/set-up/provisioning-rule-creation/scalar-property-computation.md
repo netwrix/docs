@@ -12,7 +12,7 @@ How to define **scalar** rules to compute and provision the values of **scalar**
 
 Sources are usually identities, and targets are usually accounts from the managed systems.
 
-Here, we are going to compute the values of **scalar** properties for the target resources used in entitlement management, based on source resources. See the [Create an Entity Type](../../../user-guide/set-up/connect-system/entity-type-creation) topic for additional information. We are going to provision these properties, i.e. write them to the managed system. See the [Provision](../../../user-guide/administrate/provisioning)topic for additional information.
+Here, the goal is to compute the values of **scalar** properties for the target resources used in entitlement management, based on source resources. See the [Create an Entity Type](../../../user-guide/set-up/connect-system/entity-type-creation) topic for additional information. These properties are then provisioned, i.e. written to the managed system. See the [Provision](../../../user-guide/administrate/provisioning) topic for additional information.
 
 The right tools for the job are **scalar** rules.
 
@@ -26,15 +26,15 @@ return person.LastName + " " + person.FirstName;
 
 The application of a **scalar** rule can depend on the assignment of a single role. See the [Create Roles in the Role Catalog](../../../user-guide/set-up/single-roles-catalog-creation) topic for additional information.
 
-Sometimes we create in Identity Manager properties which are not directly linked to any real property in the managed system. A **scalar** rule on this kind of property will not find a property to provision in the managed system, and thus **will not produce any result**.
+Sometimes, properties created in Identity Manager aren't directly linked to any real property in the managed system. A **scalar** rule on this kind of property will not find a property to provision in the managed system, and thus **will not produce any result**.
 
-For example, we may need to create in the AD the property isUnused (to spot unused accounts) with a C# expression based on other properties from the same entity type. These properties, such as accountExpires and lastLogonTimestamp, are each linked to a property from the AD, while isUnused is for Identity Manager's use only. This **scalar** property isUnused does not exist in the AD, thus will never be provisioned to the AD, and thus will not be computed by a **scalar** rule.
+For example, you might need to create the property isUnused in AD (to spot unused accounts) with a C# expression based on other properties from the same entity type. These properties, such as accountExpires and lastLogonTimestamp, are each linked to a property from the AD, while isUnused is for Identity Manager's use only. This **scalar** property isUnused doesn't exist in the AD, thus will never be provisioned to the AD, and thus will not be computed by a **scalar** rule.
 
 Also some properties, like lastLogonTimestamp in the AD or identifiers from ServiceNow, must be changed only by their application. Identity Manager can/must not change these properties, thus no provisioning rule is appropriate for them.
 
-A **scalar** rule using a single role as criterion will **trigger the creation** of a target resource for all impacted source resources (so all users), which are not yet correlated with a resource of this resource type.
+A **scalar** rule using a single role as criterion will **trigger the creation** of a target resource for all impacted source resources (so all users), which aren't yet correlated with a resource of this resource type.
 
-Without a criterion, a **scalar** rule **does not create** resources, and only computes the **scalar** properties of existing resources.
+Without a criterion, a **scalar** rule **doesn't create** resources, and only computes the **scalar** properties of existing resources.
 
 ## Guidelines
 
@@ -52,19 +52,19 @@ A better solution is to change the identity data model by adding a field Domain 
 
 A **scalar** rule with a role as a criterion has a higher priority than a rule without a role criterion.
 
-For example, consider the situation where we want the login `<A>` for users with the single role `<RA>`, and the login `<B>` for the others. In this case, we can write two distinct **scalar** rules where the first one has the role `<RA>` as a criterion. This rule will be applied before the other.
+For example, consider a situation that requires the login `<A>` for users with the single role `<RA>`, and the login `<B>` for others. In this case, you can write two distinct **scalar** rules where the first one has the role `<RA>` as a criterion. This rule will be applied before the other.
 
-Other than that, there should not be more than one rule meant to provision a given property on a given time period.
+Other than that, there shouldn't be more than one rule meant to provision a given property on a given time period.
 
 It means that:
 
-- Several rules computing the same property with different criteria should not coexist;
+- Several rules computing the same property with different criteria shouldn't coexist;
 - The only reason to have several rules to compute a single property is when changing the property
 value over time, via time offsets.
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements and data model.
+For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -78,7 +78,7 @@ Fill an entity type with a **scalar** rule by proceeding as follows:
 
 ![Home - Access Rules](/images/identitymanager/home_rules_v602.webp)
 
-**Step 1 :** Click on **Access Rules** on the home page in the **Configuration** section.
+**Step 1 :** Click **Access Rules** on the home page in the **Configuration** section.
 
 ![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
@@ -86,7 +86,7 @@ Fill an entity type with a **scalar** rule by proceeding as follows:
 
 ![iconadd_v602](/images/identitymanager/iconadd_v602.webp)
 
-**Step 3 :** Click on the **Scalars** tab and on the addition button at the top right corner.
+**Step 3 :** Click the **Scalars** tab and on the addition button at the top right corner.
 
 ![Create **scalar** Rule](/images/identitymanager/provrules_scalarrule_v522.webp)
 
@@ -94,7 +94,7 @@ Fill an entity type with a **scalar** rule by proceeding as follows:
 
 ![**scalar** Rule Fields](/images/identitymanager/provrules_scalarrulefields_v602.webp)
 
-Once the Resource Type is provided, more fields appear.
+After you provide the Resource Type, more fields appear.
 
 - Source Object: **scalar** property (or expression of **scalar** properties) from the source entity type,
 which constitutes the input for the computation of the target object. Can be defined by a property path and/or an expression.
@@ -107,21 +107,21 @@ For example, account activation and deactivation can be managed according to the
 - Applicable: Create & Update to use this computation to both provision the managed system and
 synchronize the property back to Identity Manager; **Create Only** to use this computation to only provision the managed system and ignore this property during synchronization, this way the property can never be displayed as non-conforming.
 
-**Create Only** is usually set to adapt the configuration to the constraints of the managed system, when Identity Manager does not retrieve and/or update the property value.
+**Create Only** is usually set to adapt the configuration to the constraints of the managed system, when Identity Manager doesn't retrieve and/or update the property value.
 
-For example, consider a system, that we want to connect to Identity Manager (let's call it SYST) using a title property. Consider also that SYST needs to be provisioned with the value of title, but does not allow any other system to retrieve said value.
+For example, consider a system that connects to Identity Manager (referred to here as SYST) using a title property. Consider also that SYST needs to be provisioned with the value of title, but doesn't allow any other system to retrieve said value.
 
-In this case, we use **Create Only** so that Identity Manager sends the adequate provisioning order upon creation, and then is able to change the provisioning state to **Executed** without synchronization. If any changes impact that ****scalar** Property** value the workflow state will be modified to **PolicyApprovedWithChanges** meaning that the policy value is not equal to the external system's value and that will not be provisioned.
+In this case, use **Create Only** so that Identity Manager sends the adequate provisioning order upon creation, and then can change the provisioning state to **Executed** without synchronization. If any changes impact that ****scalar** Property** value the workflow state will be modified to **PolicyApprovedWithChanges** meaning that the policy value isn't equal to the external system's value and that will not be provisioned.
 
 - Comparison type: Comparison type between the value of the target object computed by the rule and
 its value from the managed system. Non-conforming values are displayed on the **Provisioning Review** screen.
 - Criteria: Conditions that, if met, trigger the rule application.
 
-Our example would look like:
+This example would look like:
 
 ![**scalar** Rule Example](/images/identitymanager/provrules_examplescalar_v522.webp)
 
-**Step 5 :** Click on **Create** and see a line added on the rules page.
+**Step 5 :** Click **Create** and see a line added on the rules page.
 
 ## Impact of Modifications
 
@@ -129,21 +129,21 @@ Any modification in a **scalar** rule is taken into account when launching the r
 
 ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
-This task applies the rules and computes new properties. Therefore, if a given rule's criterion is modified, then all corresponding assignments are computed again. If a resource was created automatically for an identity through a **scalar** rule (and its single role criterion), and if the user's criteria do not comply with the new version of the rule, then the corresponding resource is automatically deleted.
+This task applies the rules and computes new properties. Therefore, if a given rule's criterion is modified, then all corresponding assignments are computed again. If a resource was created automatically for an identity through a **scalar** rule (and its single role criterion), and if the user's criteria don't comply with the new version of the rule, then the corresponding resource is automatically deleted.
 
 A modification in a provisioning rule can trigger the removal of a resource **only on the Identity Manager side**. There are several barriers to cross before said resource is removed from the managed system.
 
-Simulations are available in order to anticipate the changes induced by a creation/modification/deletion in **scalar** rules. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
+Simulations are available to anticipate the changes induced by a creation/modification/deletion in **scalar** rules. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
 
 ## Verify Rule Creation
 
-In order to verify the process:
+To verify the process:
 
 ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
-**Step 1 :** On the corresponding connector's overview page, in the **Resource Types** frame click on **Jobs** > **Compute Role Model** to apply all rules.
+**Step 1 :** On the corresponding connector's overview page, in the **Resource Types** frame click **Jobs** > **Compute Role Model** to apply all rules.
 
 **Step 2 :** Review unreconciled properties on the **Resource Reconciliation** screen to help check **scalar** rules: if there are numerous properties to be reconciled following the same pattern, then there may be a rule that needs to be changed. See the [Reconcile a Property](../../../user-guide/administrate/non-conforming-assignment-review/property-reconciliation) topic for additional information.
 
-Once the steps completed the process is verified.
+After you complete the steps, the process is verified.
 

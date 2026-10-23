@@ -13,7 +13,7 @@ The Activity Monitor can be configured to monitor the following:
 - Ability to collect all or specific file activity for specific values or specific combinations of
   values
 
-It provides the ability to feed activity data to SIEM products. The following dashboards have been
+It lets you feed activity data to SIEM products. The following dashboards have been
 specifically created for Activity Monitor event data:
 
 - For IBM® QRadar®, see the
@@ -22,19 +22,19 @@ specifically created for Activity Monitor event data:
 - For Splunk®, see the [File Activity Monitor App for Splunk](/docs/activitymonitor/9.0/siem/splunk/overview.md) for
   additional information.
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Access Analyzer
 - Netwrix Threat Prevention
 - Netwrix Threat Manager
 
-Prior to adding a Nutanix files host to the Activity Monitor, the prerequisites for the target
+Before adding a Nutanix files host to the Activity Monitor, the prerequisites for the target
 environment must be met. See
 [Nutanix Files Activity Auditing Configuration](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/nutanix-activity.md) for more
 information.
 
 :::tip
-Remember, the Activity Agent must be deployed to a Windows server that acts as a proxy for
+Remember, deploy the Activity Agent to a Windows server that acts as a proxy for
 monitoring the target environment.
 :::
 
@@ -52,15 +52,13 @@ activity delivery. Nutanix Files server connects to the agent using the TCP port
 
 ## Add Nutanix Host
 
-Follow the steps to add a Nutanix files host to be monitored.
-
 **Step 1 –** In Activity Monitor, go to the Monitored Hosts & Services tab and click **Add**. The Add New Host
 window opens.
 
 ![Choose Agent](/images/activitymonitor/9.0/admin/monitoredhosts/add/addagent01.webp)
 
 **Step 2 –** On the Choose Agent page, select the Agent to monitor the file server from the
-drop-down list. Click **Next**.
+dropdown list. Click **Next**.
 
 ![Add Host](/images/activitymonitor/9.0/admin/monitoredhosts/add/addhost02.webp)
 
@@ -77,7 +75,7 @@ access.
 :::
 
 
-- Protocol – Select from the following options in the drop-down list:
+- Protocol – Select from the following options in the dropdown list:
     - Auto Detect
     - HTTPS
     - HTTPS, ignore certificate errors
@@ -150,7 +148,7 @@ Output page.
 - Add header to Log files – Adds headers to TSV files. This is used to feed data into Splunk.
 
     :::note
-    Access Analyzer does not support log files with the header.
+    Access Analyzer doesn't support log files with the header.
     :::
 
 
@@ -161,25 +159,25 @@ Click **Next**.
 **Step 9 –** If Syslog Server is selected on the Where To Log The Activity page, configure the
 Syslog Output page.
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the **Message framing** drop-down menu. See the
+    The TCP and TLS protocols add the **Message framing** dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/9.0/admin/outputs/syslog/syslog.md) topic for additional information.
 
 - The Test button sends a test message to the Syslog server to check the connection. A green check
   mark or red will determine whether the test message has been sent or failed to send. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -189,8 +187,8 @@ Click **Finish**.
 
 ![nutanixoptions_10](/images/activitymonitor/9.0/admin/monitoredhosts/add/nutanixoptions_10.webp)
 
-The added Nutanix host is displayed in the monitored hosts/service table. Once a host has been added for
-monitoring, configure the desired outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
+The added Nutanix host is displayed in the monitored hosts/service table. After a host is added for
+monitoring, configure the outputs you want. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 ## Host Properties for Nutanix

@@ -6,13 +6,10 @@ sidebar_position: 30
 
 # Password Manager
 
-Password manager can be used to automatically schedule password changes, for service accounts that
-are being used to access external systems. This is particularly useful when there are business
-policies in place to change passwords on a rolling basis.
+Use Password Manager to automatically schedule password changes for service accounts that access external systems. This is useful when your organization has rolling password policies.
 
 ![passwordmanager_thumb_0_0](/images/dataclassification/5.6.2/security/passwordmanager_thumb_0_0.webp)
 
-To amend the passwords for a username record first select Passwords from the main display. Then
-either click Edit on a particular password row, or, click Add Password to add a new password for the
-account. It is not possible to have overlapping date ranges for the defined passwords, nor is it
-possible to remove all passwords from a user record.
+To change a user's passwords, select **Passwords** from the main display. Then
+click **Edit** on a password row to edit it, or click **Add Password** to add a new password for the
+account. Don't create overlapping date ranges for passwords, and always keep at least one password per user record.

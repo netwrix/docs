@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Usercube-Agent
 
-This tool runs the Agent on a separate server instance. The Agent is able to communicate with the [Usercube-Server ](../../../integration-guide/executables/references/server).
+This tool runs the Agent on a separate server instance. The Agent can communicate with the [Usercube-Server ](../../../integration-guide/executables/references/server).
 
 ## Examples
 
@@ -27,5 +27,5 @@ When the Agent starts, the following log should be displayed (if the log level i
 
  | Argument Name | Details | 
  | --- | --- | 
- | --urls required | **Type** String **Description** URL(s) that the agent is listening to. | 
+ | --urls required | **Type** String **Description** URLs that the agent is listening to. | 
 

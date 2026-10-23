@@ -14,7 +14,7 @@ This connector writes to an external system via a [Robot Framework](https://robo
 
 ## Overview
 
-Robot Framework is an open-source automation framework which can be used for robotic process automation (RPA). This framework is easy to use thanks to its human-readable syntax. It has a modular architecture that can be extended by [libraries](https://robotframework.org/#libraries) implemented with Python or Java. These libraries provide various tools to interact with a managed system.
+Robot Framework is an open-source automation framework for robotic process automation (RPA). This framework is easy to use thanks to its human-readable syntax. It has a modular architecture that can be extended by [libraries](https://robotframework.org/#libraries) implemented with Python or Java. These libraries provide various tools to interact with a managed system.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ There are no export capabilities for this connector.
 
 ## Fulfill
 
-This connector can **create**, **update** and/or **delete** any entity linked to the managed system.
+This connector can **create**, **update**, and/or **delete** any entity linked to the managed system.
 
 ### Configuration
 

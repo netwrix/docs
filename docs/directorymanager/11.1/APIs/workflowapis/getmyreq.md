@@ -6,7 +6,7 @@ sidebar_position: 120
 
 # Get My Requests
 
-Using this API the logged in user can get information about his/her workflow request(s).
+Using this API the logged in user can get information about his/her workflow requests.
 
 ## Endpoint
 

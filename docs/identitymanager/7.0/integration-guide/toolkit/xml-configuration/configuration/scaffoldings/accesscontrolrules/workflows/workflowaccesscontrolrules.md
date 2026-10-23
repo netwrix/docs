@@ -33,7 +33,7 @@ DashBoard shortcut: ![](/images/identitymanager/home_topbar_v601.webp)
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Workforce/Self/Self_ResourcesUpdate/ReviewWorkflowDelegate_AccessControlRules_Workflow_Directory_User" DisplayName_L1="Workforce/Self/Update My Permissions (review) - WorkflowDelegate_AccessControl - Workflow for User" DisplayName_L2="Administrator - Droit_Transfert_WorkflowsWorkflow_Directory_User" EntityType="Workflow_Directory_User" Profile="Administrator">

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Install Add-On
 
-After downloading the add-on package from Netwrix add-on store, copy it to the a computer where the
+After downloading the add-on package from Netwrix add-on store, copy it to a computer where the
 Auditor Server resides. Unpack the ZIP archive to a folder of your choice.
 
 The main component of the add- on is implemented as a service named Netwrix Auditor **ITSM

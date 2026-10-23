@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Work with Collected Data
 
-To leverage data collected with the add-on, you can do the following in Auditor:
+To work with data collected with the add-on, you can do the following in Auditor:
 
 - Search for required data. For that, start Auditor client and navigate to **Search**. After
   specifying the criteria you need, click **Search**. You will get a list of activity records with

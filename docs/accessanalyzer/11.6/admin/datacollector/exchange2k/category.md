@@ -28,7 +28,7 @@ focus:
     - Recipient Update Services
     - Message Delivery – System-wide message settings
     - Instant Messaging – Instant messaging settings
-    - Exchange Mailbox Store Logons – The users currently logged on to Microsoft Exchange 2007 and
+ - Exchange Mailbox Store Logons – The users logged on to Microsoft Exchange 2007 and
       2010
 
 - Exchange 2007/2010 Hub Transport Configuration

@@ -7,8 +7,8 @@ sidebar_position: 340
 # SharePointAccess Data Collector
 
 The SharePointAccess (SPAA) Data Collector audits access, group membership, and content within a
-SharePoint on-premises and SharePoint Online environment. The SPAA Data Collector has been
-preconfigured within the SharePoint Solution. Both this data collector and the solution are
+SharePoint on-premises and SharePoint Online environment. The SharePoint Solution
+preconfigures the SPAA Data Collector. Both this data collector and the solution are
 available with a special Access Analyzer license. See the
 [SharePoint Solution](/docs/accessanalyzer/12.0/solutions/sharepoint/overview.md) topic for additional information.
 The SPAA Data Collector has the following requirements:
@@ -34,13 +34,13 @@ The SPAA Data Collector has the following requirements:
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, you must increase the minimum amount
+of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if you
+configure the job to scan 8 hosts at a time, it requires an extra 16 GB of RAM (8x2=16).
 
 ## SPAA Query Configuration
 
-The SharePointAccess Data Collector is configured through the SharePoint Access Auditor Data
+You configure the SharePointAccess Data Collector through the SharePoint Access Auditor Data
 Collector Wizard. The wizard contains the following pages, which change based up on the query
 Category selected:
 
@@ -61,5 +61,5 @@ Category selected:
 
 ![SPAA Data Collector Wizard Welcome Page](/images/accessanalyzer/12.0/admin/datacollector/spaa/welcomepage.webp)
 
-The Welcome page can be hidden by checking the **Do not display this page the next time** box when
-the wizard is open and configuration settings are saved.
+You can hide the Welcome page by checking the **Don't display this page the next time** box when
+the wizard is open and you save configuration settings.

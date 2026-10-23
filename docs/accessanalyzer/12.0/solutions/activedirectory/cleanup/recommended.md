@@ -14,7 +14,7 @@ The Cleanup job group has the following prerequisites:
 
 - The Active Directory Actions license feature is required
 - The Active Directory Actions Module must be installed
-- The .Active Directory Inventory Job Group needs to be successfully run prior to running this job
+- The .Active Directory Inventory Job Group needs to be successfully run before running this job
   group
 - The following job groups from the Activity Directory job group need to be successfully run prior
   to running this job group:

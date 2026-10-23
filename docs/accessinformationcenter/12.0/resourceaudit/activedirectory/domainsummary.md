@@ -7,11 +7,11 @@ sidebar_position: 20
 # Domain Summary Report
 
 The Domain Summary report at the **Active Directory** node provides a top-level view of domains that
-have been scanned.
+Access Analyzer has scanned.
 
 ![Domain Summary report](/images/accessinformationcenter/12.0/resourceaudit/activedirectory/domainsummary.webp)
 
-This report is comprised of the following columns:
+This report contains the following columns:
 
 - Domain Name – Name of the domain
 - NetBIOS – NetBIOS name for the domain

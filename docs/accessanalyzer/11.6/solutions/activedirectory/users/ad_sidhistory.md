@@ -17,7 +17,7 @@ Navigate to the **Active Directory** > **2.Users** > **AD_SIDHistory** > **Confi
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -36,4 +36,4 @@ produces the following pre-configured report:
 
 | Report      | Description                                                                                                                                                                                                                                                                                                                    | Default Tags | Report Elements                                                                                                                                                                                                            |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SID History | This report lists historical SIDs in the audited environment. Additionally, it highlights exceptions involving the SIDHistory attribute on AD user objects. Considered in particular are when a user has a historical SID from their current domain, or when a non-admin user has a historical SID with administrative rights. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays historical SIDs by domain</li><li>Table – Provides details on SID history</li><li>Table – Provides details on historical SIDs by domain</li></ul> |
+| SID History | This report lists historical SIDs in the audited environment. Additionally, it highlights exceptions involving the SIDHistory attribute on AD user objects. It pays particular attention to cases where a user has a historical SID from their current domain, or where a non-admin user has a historical SID with administrative rights. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays historical SIDs by domain</li><li>Table – Provides details on SID history</li><li>Table – Provides details on historical SIDs by domain</li></ul> |

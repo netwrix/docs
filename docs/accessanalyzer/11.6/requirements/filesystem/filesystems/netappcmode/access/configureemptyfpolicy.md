@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Configure Empty FPolicy
 
-The credential used to just run Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing
-scans requires access to the specified API calls as well as association to an FPolicy. Therefore, it
+The credential used to run Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing
+scans requires access to the specified API calls and association with an FPolicy. Therefore, it
 is necessary to:
 
 - [Create Security Role for FSAA Scans](#create-security-role-for-fsaa-scans)
@@ -95,14 +95,13 @@ Example:
 security login role show enterpriseauditor
 ```
 
-Relevant NetApp Documentation: To learn more about creating security login roles, please visit the
-NetApp website and read the
+Relevant NetApp Documentation: For information about creating security login roles, see the
 [security login role create](https://library.netapp.com/ecmdocs/ECMP1196817/html/security/login/role/create.html)
-article.
+article on the NetApp website.
 
 ## Create Security Login for FSAA Scans
 
-Once the access control role has been created, apply it to a domain account.
+After you create the access control role, apply it to a domain account.
 
 - The SVM used in the following command must be the same SVM used when creating the role. See the
   [Create Security Role for FSAA Scans](#create-security-role-for-fsaa-scans) topic for additional
@@ -149,10 +148,9 @@ Verify that the output is displayed as follows:
 
 ![validatesecuritylogincreation](/images/activitymonitor/7.1/config/netappcmode/validatesecuritylogincreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating security logins, please visit the NetApp
-website and read the
+Relevant NetApp Documentation: For information about creating security logins, see the
 [security login create](https://library.netapp.com/ecmdocs/ECMP12452955/html/security/login/create.html)
-article.
+article on the NetApp website.
 
 ## Create External Engine for Empty FPolicy
 
@@ -206,10 +204,9 @@ Verify that the output is displayed as follows:
 
 ![validateexternalenginecreation](/images/activitymonitor/7.1/config/netappcmode/validateexternalenginecreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating an external engine, please visit the
-NetApp website and read the
+Relevant NetApp Documentation: For information about creating an external engine, see the
 [vserver fpolicy policy external-engine create](https://library.netapp.com/ecmdocs/ECMP1366832/html/vserver/fpolicy/policy/external-engine/create.html)
-article.
+article on the NetApp website.
 
 ## Create FPolicy Event for Empty FPolicy
 
@@ -254,14 +251,13 @@ Verify that the output is displayed as follows:
 
 ![validatefpolciyeventcreation](/images/accessanalyzer/11.6/config/netappcmode/validatefpolciyeventcreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating an event, please visit the NetApp
-website and read the
+Relevant NetApp Documentation: For information about creating an event, see the
 [vserver fpolicy policy event create](https://library.netapp.com/ecmdocs/ECMP1196817/html/vserver/fpolicy/policy/event/create.html)
-article.
+article on the NetApp website.
 
 ## Create Empty FPolicy Policy
 
-The FPolicy policy associates the other three FPolicy components and allows for the designation of a
+The FPolicy policy associates the other three FPolicy components and designates a
 privileged FPolicy user, or the account granted Security Login.
 
 IMPORTANT:
@@ -308,10 +304,9 @@ fpolicy policy show ‑instance
 
 ![validatefpolicypolicycreation](/images/activitymonitor/7.1/config/netappcmode/validatefpolicypolicycreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating a policy, please visit the NetApp
-website and read the
+Relevant NetApp Documentation: For information about creating a policy, see the
 [vserver fpolicy policy create](https://library.netapp.com/ecmdocs/ECMP1366832/html/vserver/fpolicy/policy/create.html)
-article.
+article on the NetApp website.
 
 ## Create Empty FPolicy Scope
 
@@ -320,9 +315,9 @@ The FPolicy scope creates the filters necessary to perform scans on specific sha
 IMPORTANT:
 
 - The SVM used must be the SVM hosting the CIFS shares.
-- It is not necessary to specify both volumes and shares. One or the other is sufficient.
+- It isn't necessary to specify both volumes and shares. One or the other is sufficient.
 
-Use the following command to create the FPolicy scope by volume(s):
+Use the following command to create the FPolicy scope by volumes:
 
 ```
 vserver fpolicy policy scope create ‑vserver [SVM_NAME] ‑policy-name StealthAUDIT ‑volumes-to-include
@@ -334,7 +329,7 @@ Example:
 vserver fpolicy policy scope create ‑vserver testserver ‑policy-name StealthAUDIT ‑volumes-to-include
 ```
 
-Use the following command to create the FPolicy scope by share(s):
+Use the following command to create the FPolicy scope by shares:
 
 ```
 vserver fpolicy policy scope create ‑vserver [SVM_NAME] ‑policy-name StealthAUDIT ‑shares-to-include
@@ -358,14 +353,13 @@ fpolicy policy scope show ‑instance
 
 ![validatefpolicyscopecreation](/images/activitymonitor/7.1/config/netappcmode/validatefpolicyscopecreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating scope, please visit the NetApp website
-and read the
+Relevant NetApp Documentation: For information about creating scope, see the
 [vserver fpolicy policy scope create](https://library.netapp.com/ecmdocs/ECMP1196817/html/vserver/fpolicy/policy/scope/create.html)
-article.
+article on the NetApp website.
 
 ## Enable the Empty FPolicy
 
-Once the empty FPolicy has been created, it must be enabled.
+After you create the empty FPolicy, enable it.
 
 IMPORTANT:
 
@@ -395,7 +389,6 @@ vserver fpolicy show
 
 ![validatefpolicyenabled](/images/activitymonitor/7.1/config/netappcmode/validatefpolicyenabled.webp)
 
-Relevant NetApp Documentation: To learn more about enabling a policy, please visit the NetApp
-website and read the
+Relevant NetApp Documentation: For information about enabling a policy, see the
 [vserver fpolicy enable](https://library.netapp.com/ecmdocs/ECMP1196817/html/vserver/fpolicy/enable.html)
-article.
+article on the NetApp website.

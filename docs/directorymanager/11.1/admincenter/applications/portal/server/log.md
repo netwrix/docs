@@ -46,7 +46,7 @@ information messages, and warnings. It is a useful tool for troubleshooting all 
 problems.
 
 :::note
-Windows logging is not available for a portal instance deployed in Docker.
+Windows logging isn't available for a portal instance deployed in Docker.
 :::
 
 
@@ -74,10 +74,10 @@ Windows logging is not available for a portal instance deployed in Docker.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
 4. To set the file logging level for a deployment instance, first select the web server (IIS/Remote
    IIS/Docker) where the instance is deployed. Then select the instance in the **Select Application
-   Deployment** drop-down list.
+   Deployment** dropdown list.
 5. Click the **Logging** tab.
 6. In the **File Logging** area, select a logging level for the instance in the **Log Events**
-   drop-down list. File logging groups events into the following levels, based on the type of
+   dropdown list. File logging groups events into the following levels, based on the type of
    information captured:
 
     | Level     | Information Captured                                                                            |
@@ -85,7 +85,7 @@ Windows logging is not available for a portal instance deployed in Docker.
     | 1 - All   | Every event involving the portal instance; this is the highest logging level.                   |
     | 2 - Debug | Fine-grained event information that is most useful for debugging the application.               |
     | 3 - Info  | Successful operations of a functionality.                                                       |
-    | 4 - Warn  | Events that are not necessarily significant, but that could potentially cause a future problem. |
+    | 4 - Warn  | Events that aren't necessarily significant, but that could potentially cause a future problem. |
     | 5 - Error | Errors that might still allow the portal instance to continue running. Default level.           |
     | 6 - Off   | No events captured; turns off file logging.                                                     |
 
@@ -101,9 +101,9 @@ Windows logging is not available for a portal instance deployed in Docker.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
 4. To turn off file logging for a deployment instance, first select the web server (IIS/Remote
    IIS/Docker) where the instance is deployed. Then select the instance in the **Select Application
-   Deployment** drop-down list.
+   Deployment** dropdown list.
 5. Click the **Logging** tab.
-6. In the **File Logging** area, select _Off_ in the **Log Events** drop-down list.
+6. In the **File Logging** area, select _Off_ in the **Log Events** dropdown list.
 7. Click **Save**.
 
 ## Change the Windows Logging Level for a Portal Instance
@@ -116,10 +116,10 @@ Windows logging is not available for a portal instance deployed in Docker.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
 4. To set the Windows logging level for a deployment instance, first select the web server (IIS or
    Remote IIS) where the instance is deployed. Then select the instance in the **Select Application
-   Deployment** drop-down list.
+   Deployment** dropdown list.
 5. Click the **Logging** tab.
 6. In the **Windows Logging** area, select a logging level for the instance in the **Log Events**
-   drop-down list.  
+   dropdown list.  
    Windows logging groups events into different levels, based on the type of information captured.
    These levels are discussed in the table in the Change the File Logging Level for a Portal
    Instance topic.
@@ -135,7 +135,7 @@ Windows logging is not available for a portal instance deployed in Docker.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
 4. To turn off Windows logging for a deployment instance, first select the web server (IIS/Remote
    IIS/Docker) where the instance is deployed. Then select the instance in the **Select Application
-   Deployment** drop-down list.
+   Deployment** dropdown list.
 5. Click the **Logging** tab.
-6. In the **Windows Logging** area, select _Off_ in the **Log Events** drop-down list.
+6. In the **Windows Logging** area, select _Off_ in the **Log Events** dropdown list.
 7. Click **Save**.

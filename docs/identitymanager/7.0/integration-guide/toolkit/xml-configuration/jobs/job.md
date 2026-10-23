@@ -6,7 +6,7 @@ sidebar_position: 1
 
 A job is a succession of tasks, to be launched and potentially scheduled.
 
-After launching a job, its progress information will be inserted in the `UJ_JobInstances` table.
+After launching a job, Identity Manager records its progress information in the `UJ_JobInstances` table.
 
 
 ## Examples
@@ -26,14 +26,14 @@ The launch order is induced by the reading from top to bottom of all tasks in th
 ### Task override
 
 :::info
-An existing task can be called with an `Override` suffix in order to launch the task, but with slight changes in its properties. Then the override task must be configured with the identifier of the original task and the properties that differ from the original task.
+An existing task can be called with an `Override` suffix to launch the task, but with slight changes in its properties. Then the override task must be configured with the identifier of the original task and the properties that differ from the original task.
 :::
 
-Suppose that after configuring a synchronization job in complete mode, we want to configure the exact same one in incremental mode.
+Suppose that after configuring a synchronization job in complete mode, you want to configure the exact same one in incremental mode.
 
 As the incremental mode is configured via `Dirty` set to `1`, this property is the only one to change to switch from complete mode to incremental mode.
 
-The following example creates a task `UpdateClassification` to be used in the AD synchronization job in complete mode. Then, instead of creating a second task for the incremental mode, we choose to configure the incremental job as follows.
+The following example creates a task `UpdateClassification` to be used in the AD synchronization job in complete mode. Then, instead of creating a second task for the incremental mode, configure the incremental job as follows.
 
 ```xml
 <UpdateClassificationTask Identifier="UpdateClassification" DisplayName_L1="AD - Users Classification">
@@ -48,7 +48,7 @@ The following example creates a task `UpdateClassification` to be used in the AD
 
 ### Dependent tasks
 
-The following example creates a job where the task `Microsoft Entra ID - Data Collect` is launched after `Microsoft Entra ID - Extraction` only if `Microsoft Entra ID - Extraction` produces an output and does not end up blocked or in an error state.
+The following example creates a job where the task `Microsoft Entra ID - Data Collect` is launched after `Microsoft Entra ID - Extraction` only if `Microsoft Entra ID - Extraction` produces an output and doesn't end up blocked or in an error state.
 
 ```xml
 <Job Identifier="MicrosoftEntraID_Synchronization" DisplayName_L1="10: Microsoft Entra ID (formerly Azure Active Directory) - Synchronization" Agent="Local">
@@ -61,7 +61,7 @@ The following example creates a job where the task `Microsoft Entra ID - Data Co
 ```
 
 :::info
-Most synchronization tasks are dependant on one another like this. This way, an error in a synchronization task will cut short the rest of the synchronization tasks. But it does not stop the other tasks in the job, for example the synchronization of another connector, or tasks that are independent from synchronization.
+Most synchronization tasks are dependant on one another like this. This way, an error in a synchronization task will cut short the rest of the synchronization tasks. But it doesn't stop the other tasks in the job, for example the synchronization of another connector, or tasks that are independent from synchronization.
 :::
 
 ### Complete job
@@ -140,5 +140,5 @@ The [basic example](/docs/identitymanager/current/integration-guide/toolkit/xml-
 
 |Property|Details|
 |---|---|
-| Level <span class="optionalAttribute">default value: -1</span> | **Type:** Int32 **Description:** Grouping level of the tasks within the job. When executing a job, Identity Manager will launch simultaneously the tasks of a same `Level`. Level-2 tasks are not launched before all level-1 tasks are achieved. |
+| Level <span class="optionalAttribute">default value: -1</span> | **Type:** Int32 **Description:** Grouping level of the tasks within the job. When executing a job, Identity Manager will launch simultaneously the tasks of a same `Level`. Level-2 tasks aren't launched before all level-1 tasks are achieved. |
 | Task required | **Type:** Int64 **Description:** Id of the task |

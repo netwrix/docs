@@ -10,7 +10,7 @@ The AD_StaleComputers Job provides details on stale computers that may be candid
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -30,7 +30,7 @@ Navigate to the **Active Directory** > **3.Computers** > **AD_StaleComputers** >
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the **2. Summarize by Domain** analysis task. This analysis
+Don't modify or deselect the **2. Summarize by Domain** analysis task. This analysis
 task is preconfigured for this job.
 :::
 
@@ -64,7 +64,7 @@ Analysis parameters that can be customized have the following default values:
 | Analysis Task               | Customizable Parameter Name | Default Value | Value Indicates                                                                                                                                                               |
 | --------------------------- | --------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1. Identify Stale Computers | @days_since_last_logon      | 90            | A computer object that has been inactive for 90 days or more                                                                                                                  |
-| 1. Identify Stale Computers | @consider_disable           | 1             | A computer object that has been disabled: <ul><li>Value 1 = Disabled computers are included as stale</li><li>Value 0 = Disabled computers are not included as stale</li></ul> |
+| 1. Identify Stale Computers | @consider_disable           | 1             | A computer object that has been disabled: <ul><li>Value 1 = Disabled computers are included as stale</li><li>Value 0 = Disabled computers aren't included as stale</li></ul> |
 
 
 See the

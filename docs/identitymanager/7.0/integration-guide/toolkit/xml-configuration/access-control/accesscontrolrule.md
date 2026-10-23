@@ -42,7 +42,7 @@ The rule contains filters to restrict its application, and entries to grant or d
 AccessControlEntry grants or denies a permission to a user. Access Control Entries are part of an Access Control Rule that defines the users scope of responsibility in the Identity Manager UI/Workflows.
 
 :::warning
-If your configuration contains an access control entry with `Permission="/"` and `CanExecute="true"` then an **error** will occur during the configuration deployment, as a profile should not possess such a big permission.
+If your configuration contains an access control entry with `Permission="/"` and `CanExecute="true"` then an **error** will occur during the configuration deployment, as a profile shouldn't possess such a big permission.
 :::
 
 ### Properties
@@ -101,7 +101,7 @@ The following example gives to the `Manager` profile certain permissions on user
 Technically speaking, the filter here says that the rule's permissions apply only on the users' records from `Directory_UserRecord` whose `Id` of `Manager` is the identifier of the account used by the current user to authenticate to Identity Manager.
 :::
 
-#### Filter on the context(s) of the assigned profile(s) of the current user
+#### Filter on the contexts of the assigned profiles of the current user
 
 The following example gives to the `Manager` profile certain permissions on user data, but only concerning users working in the same department as the current user.
 
@@ -139,7 +139,7 @@ Technically speaking, the filter here says that the rule's permissions apply onl
 
 #### Multiple filters
 
-The following example gives to the `RoleOfficerByCategory` profile the permission to review the roles of users from `Directory_User`, but only the roles of a category assigned to the current user, and whose assignment is stated as pending the first approval out of 1, 2 or 3.
+The following example gives to the `RoleOfficerByCategory` profile the permission to review the roles of users from `Directory_User`, but only the roles of a category assigned to the current user, and whose assignment is stated as pending the first approval out of 1, 2, or 3.
 
 ```xml
 <AccessControlRule Identifier="RoleOfficerByCategory_AssignedSingleRole_ReviewRoles_Directory_User_8" DisplayName_L1="Role Officer - Review Roles" EntityType="AssignedSingleRole" Profile="RoleOfficerByCategory">
@@ -174,7 +174,7 @@ Technically speaking, the filter here says that the rule's permissions apply onl
 | Category <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to compare the value specified by the binding to the categories of the current user's [assigned profiles](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/access-control/assignedprofile). |
 | CompositeRole <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to compare the value specified by the binding to the composite roles of the current user's [assigned profiles](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/access-control/assignedprofile). |
 | CurrentUser <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to compare the value specified by the binding to the identifier of the account used by the current user to authenticate to Identity Manager. **Note:** the current user is the owner of the profile, allowed by the access control rule to perform an action and/or receive a notification. **Info:** `CurrentUser` is tightly linked to the configuration of the [`SelectUserByIdentityQueryHandlerSetting`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/settings/selectuserbyidentityqueryhandlersetting). |
-| Dimension optional | **Type:** Int64 **Description:** Identifier of the [dimension](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/dimension) whose value(s), from the user's [assigned profiles](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/access-control/assignedprofile), are to be compared to the value specified by the binding. |
+| Dimension optional | **Type:** Int64 **Description:** Identifier of the [dimension](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/dimension) whose values, from the user's [assigned profiles](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/access-control/assignedprofile), are to be compared to the value specified by the binding. |
 | Group optional | **Type:** String **Description:** Group that the filter is part of. The access control rule filters the permissions by using the union (OR) of all filter groups, and the intersection (AND) of all filters within a group. **Note:** when not specified, the filter is part of the default group. |
 | Operator <span class="optionalAttribute">default value: 0</span> | **Type:** AccessControlFilterOperator **Description:** Comparison operator. `0` - Equals. `1` - NotEquals. |
 | ResourceType <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to compare the value specified by the binding to the resource types of the current user's [assigned profiles](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/access-control/assignedprofile). |

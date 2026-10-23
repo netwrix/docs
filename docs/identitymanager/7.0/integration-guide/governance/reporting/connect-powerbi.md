@@ -10,7 +10,7 @@ This guide shows how to connect Power BI to Identity Manager.
 
 ## Overview
 
-When facing a periodic need for producing specific reports, especially when a visual presentation is required, Identity Manager offers the possibility to connect to the [Power BI](https://powerbi.microsoft.com/en-us/what-is-power-bi) application. This application will allow you to create customized reports with a vast range of display options (such as graphs, charts, matrixes, etc.) using Identity Manager's universes.
+When facing a periodic need for producing specific reports, especially when a visual presentation is required, Identity Manager offers the possibility to connect to the [Power BI](https://powerbi.microsoft.com/en-us/what-is-power-bi) application. Use this application to create customized reports with a vast range of display options (such as graphs, charts, matrixes, etc.) using Identity Manager's universes.
 
 ## Prerequisites
 
@@ -22,12 +22,12 @@ When facing a periodic need for producing specific reports, especially when a vi
 Connect Power BI to Identity Manager by proceeding as follows:
 
 1. Open Power BI Desktop.
-2. Click on **Get data** either in the welcome window or in the home menu.
+2. Click **Get data** either in the welcome window or in the home menu.
 
     ![Get Data](/images/identitymanager/powerbi_getdata.webp)
 
-3. In the opening window, search for Identity Manager, click on its plugin in the right menu, and
-click on **Connect**.
+3. In the opening window, search for Identity Manager, click its plugin in the right menu, and
+click **Connect**.
 
     ![Get Data Window](/images/identitymanager/powerbi_getdatawindow.webp)
 
@@ -41,14 +41,14 @@ click on **Connect**.
     ![Client Id / Client Secret](/images/identitymanager/powerbi_clientid.webp)
 
 6. You can now access in the left panel the
-[Universe](../../../integration-guide/toolkit/xml-configuration/business-intelligence/universe)from Identity Manager configuration. You can click on the desired universe to expand it, and view and pick the desired tables.
+[Universe](../../../integration-guide/toolkit/xml-configuration/business-intelligence/universe)from Identity Manager configuration. Click the universe you want to expand it, and view and select the tables you want.
 
     ![Universe Panel](/images/identitymanager/powerbi_universes.webp)
 
-**Power BI tip:** to view a table, click on its name. To select a table, check the box next to the table's name.
+**Power BI tip:** to view a table, click its name. To select a table, check the box next to the table's name.
 
-7. Once you've selected all the tables you need, click on **Load** to import data to the Power BI
-report. You can also click on **Transform data** to open the query editor and make other changes in your tables, rows and columns.
+7. After you've selected all the tables you need, click **Load** to import data to the Power BI
+report. You can also click **Transform data** to open the query editor and make other changes in your tables, rows, and columns.
 
 ## Clear the Cache
 
@@ -56,8 +56,8 @@ Remember to clear the cache in Power BI to ensure that all changes are considere
 
 Clear the cache by proceeding as follows:
 
-1. In Power BI, click on **File** > **Options and settings** > **Options**.
-2. In the **Data Load** tab, click on **Clear Cache**.
+1. In Power BI, click **File** > **Options and settings** > **Options**.
+2. In the **Data Load** tab, click **Clear Cache**.
 
     ![Clear Cache](/images/identitymanager/powerbi_clearcache.webp)
 

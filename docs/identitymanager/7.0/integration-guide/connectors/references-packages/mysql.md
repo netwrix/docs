@@ -21,4 +21,4 @@ Export data from a MySQL database.
 
 To use this package, `MySql.Data.dll` needs to be [downloaded from the MySQL website](https://dev.mysql.com/downloads/connector/net/) (selecting the **.NET & Mono** operating system) and copied to the `Runtime` folder.
 
-You can click on the **Archives** tab to find other versions.
+You can click the **Archives** tab to find other versions.

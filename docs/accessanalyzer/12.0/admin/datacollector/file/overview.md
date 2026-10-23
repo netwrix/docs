@@ -6,8 +6,8 @@ sidebar_position: 220
 
 # File Data Collector
 
-The File Data Collector provides file and folder enumeration, properties, and permissions. It is
-used to find files and folders on a target host. The File Data Collector finds one or more files on
+The File Data Collector provides file and folder enumeration, properties, and permissions. Use it to
+find files and folders on a target host. The File Data Collector finds one or more files on
 the target hosts. It can target any file extension. This data collector is a core component of
 Access Analyzer and is available with all Access Analyzer licenses.
 
@@ -40,7 +40,7 @@ full list of supported platforms.
 
 ## File Query Configuration
 
-The **File** Data Collector is configured through the File Search Wizard, which contains the
+You configure the **File** Data Collector through the File Search Wizard, which contains the
 following wizard pages:
 
 - Welcome
@@ -51,5 +51,5 @@ following wizard pages:
 
 ![File Search Wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/file/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+Select the **Don't display this page the next time** checkbox to hide the Welcome page when the
+wizard is open and configuration settings are saved.

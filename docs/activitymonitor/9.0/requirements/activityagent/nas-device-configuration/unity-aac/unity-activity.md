@@ -11,8 +11,8 @@ All audit data can be forwarded to the Dell Common Event Enabler (CEE). The Netw
 listens for all events coming through the Dell CEE and translates all relevant information into
 entries in the TSV files or syslog messages.
 
-If the service is turned off, a notification will be sent to the Dell CEE framework to turn off the
-associated Activity Monitor filter, but the policy will not be removed.
+If you turn off the service, the system sends a notification to the Dell CEE framework to turn off the
+associated Activity Monitor filter, but the policy remains.
 
 The Dell CEE Framework uses a "push" mechanism so a notification is sent only to the activity agent
 when a transaction occurs. Daily activity log files are created only if activity is performed. No
@@ -20,14 +20,14 @@ activity log file is created if there is no activity for the day.
 
 **Configuration Checklist**
 
-Complete the following checklist prior to configuring activity monitoring of Dell Unity devices.
+Complete the following checklist before configuring activity monitoring of Dell Unity devices.
 Instructions for each item of the checklist are detailed within the following topics.
 
 **Checklist Item 1: Plan Deployment**
 
-- Prior to beginning the deployment, gather the following:
+- Before beginning the deployment, gather the following:
 
-    - Data Mover or Virtual Data Mover hosting the share(s) to be monitored
+    - Data Mover or Virtual Data Mover hosting the shares to be monitored
     - Account with access to the CLI
     - Download the Dell CEE from:
 
@@ -35,7 +35,7 @@ Instructions for each item of the checklist are detailed within the following to
 
 **Checklist Item 2: [Install Dell CEE](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/unity-aac/installcee.md)**
 
-- Dell CEE should be installed on the Windows proxy server(s) where the Activity Monitor activity
+- Dell CEE should be installed on the Windows proxy servers where the Activity Monitor activity
   agent will be deployed
 
     :::info
@@ -46,9 +46,9 @@ Instructions for each item of the checklist are detailed within the following to
 
 - Important:
 
-    - Open MS-RPC ports between the Dell device and the Windows proxy server(s) where the Dell CEE
+    - Open MS-RPC ports between the Dell device and the Windows proxy servers where the Dell CEE
       is installed
-    - Dell CEE 8.4.2 through Dell CEE 8.6.1 are not supported for use with the VCAPS feature
+    - Dell CEE 8.4.2 through Dell CEE 8.6.1 aren't supported for use with the VCAPS feature
     - Dell CEE requires .NET Framework 3.5 to be installed on the Windows proxy server
 
 **Checklist Item 3: Dell Unity Device Configuration**
@@ -69,8 +69,8 @@ Instructions for each item of the checklist are detailed within the following to
 Checklist Item 5: Configure Dell CEE to Forward Events to the Activity Agent
 
 :::note
-When Dell CEE is installed on Windows proxy server(s) where the Activity Monitor activity
-agent will be deployed, the following steps are not needed.
+When Dell CEE is installed on Windows proxy servers where the Activity Monitor activity
+agent will be deployed, the following steps aren't needed.
 :::
 
 

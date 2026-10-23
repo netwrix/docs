@@ -8,7 +8,7 @@ sidebar_position: 10
 
 **Dependencies**
 
-The .Active Directory Inventory job group needs to be executed prior to running the Windows
+The Active Directory Inventory job group needs to be executed before running the Windows
 Solution.
 
 See individual sub-groups and jobs for the dependencies.
@@ -33,8 +33,8 @@ otherwise.
 **Additional Notes**
 
 Some jobs in the Windows Job Group use custom SQL scripts to render views on collected data. SQL
-views are used to populate report element tables and graphs. Changing or modifying the group, job,
-or tables names will result in no data displayed within the reports.
+views are used to populate report element tables and graphs. Changing the group, job,
+or table names will result in no data displayed within the reports.
 
 See the Recommended Configurations topic for each job group for additional information on frequency
 and job group settings.

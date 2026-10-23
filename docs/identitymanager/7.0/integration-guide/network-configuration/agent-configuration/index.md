@@ -33,13 +33,13 @@ It means that any sensitive setting value that the user chooses to protect this 
 
 Any Agent configuration setting value can be encrypted using Identity Manager's CyberArk integration.
 
-To put it simply, any sensitive setting value that the user chooses to protect this way won't be written to the appsettings.agent.json file but stored within a CyberArk Vault.
+When you choose to protect sensitive setting value that the user chooses to protect this way won't be written to the appsettings.agent.json file but stored within a CyberArk Vault.
 
 ### Azure Key Vault safe
 
 Any Agent configuration setting value can be encrypted using Identity Manager's Azure Key Vault integration.
 
-To put it simply, any sensitive setting value that the user chooses to protect this way won't be written to the appsettings.agent.json file but stored within an Azure Key Vault safe.
+When you choose to protect sensitive setting value that the user chooses to protect this way won't be written to the appsettings.agent.json file but stored within an Azure Key Vault safe.
 
 ## Merge Priority
 

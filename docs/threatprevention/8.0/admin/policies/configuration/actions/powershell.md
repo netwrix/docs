@@ -10,7 +10,7 @@ A PowerShell 4.0 script can be written and assigned to a policy by Threat Preven
 Netwrix Engineer via engaging Netwrix Professional Services. The script will be invoked by the
 Enterprise Manager for an enabled policy.
 
-Follow the steps to add a PowerShell 4.0 action to a policy/template.
+To add a PowerShell 4.0 action to a policy or template, complete the following steps:
 
 ![Actions tab - Actions Configurations area](/images/threatprevention/8.0/admin/policies/actions/actionsconfigurationsarea.webp)
 

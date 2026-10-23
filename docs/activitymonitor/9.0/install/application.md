@@ -6,11 +6,8 @@ sidebar_position: 10
 
 # Install Application
 
-Netwrix Activity Monitor comes with a 10-day trial license to start. If an organization's license
-key has been acquired already, which should be provided by a Netwrix Representative, the file should
-be saved in the same location where the Activity Monitor will be installed.
-
-Follow the steps to install the Netwrix Activity Monitor Console.
+Netwrix Activity Monitor comes with a 10-day trial license to start. If your organization has a license
+key from a Netwrix Representative, save it in the same location where you'll install the Activity Monitor.
 
 **Step 1 –** Run the NetwrixActivityMonitorSetup.msi executable to open the Netwrix Activity Monitor
 Setup wizard.

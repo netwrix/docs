@@ -10,7 +10,7 @@ Here are several examples of why and how you might customize the Netwrix Auditor
 
 ## View Report and Add to Favorites
 
-Follow the steps to view a report and add it to the list of Favorites.
+To view a report and add it to your favorites:
 
 **Step 1 –** On the main Auditor page, click the Reports tile in the upper left corner.
 
@@ -28,7 +28,7 @@ The report is added to the Favorite reports section on the home page and you can
 
 ## Run Search and Create Alert
 
-Follow the steps to run search and create the alert based on the search filters.
+To run a search and create an alert based on the search filters:
 
 **Step 1 –** On the main Auditor page, click the Search Activity Records tile.
 
@@ -51,7 +51,7 @@ on the home page, which opens the Alerts overview dashboard.
 
 ## Review and Pin Risks
 
-Follow the steps to review risks and pin important ones to the Home Screen.
+To review risks and pin important ones to the home screen:
 
 **Step 1 –** On the main Auditor page, click the Risk Assessment tile.
 
@@ -72,7 +72,7 @@ such as "_User Accounts with administrative permissions_". See the
 
 The selected risks group is added to the home screen.
 
-## What is Next?
+## What's Next
 
 Personalize the home page of the product depending on your business needs. Review the customization
 settings and collect only required tiles for quick access on the Auditor home page. See the

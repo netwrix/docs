@@ -1,11 +1,11 @@
 ---
 title: "JobViewAccessControlRules"
-description: "Scaffolding to generate a set of rights to view all JobInstances, TaskInstances and logs."
+description: "Scaffolding to generate a set of rights to view all JobInstances, TaskInstances, and logs."
 sidebar_position: 6
 ---
 
-Scaffolding to generate a set of rights to view all JobInstances, TaskInstances and logs.
-This Scaffolding performs a set of scaffolding rights for Jobs and Tasks.
+Scaffolding to generate a set of rights to view all JobInstances, TaskInstances, and logs.
+This scaffolding performs a set of scaffolding rights for Jobs, Tasks, and logs.
 
 The scaffolding generates the following scaffoldings:
 
@@ -20,7 +20,7 @@ Scaffolding to access the job administration page.
 Generates the access control rules which give to a profile the permissions to call the API Pending AssignedResourceTypes.
 - [Resource Changes View Access Control Rules](../accesscontrolrules/jobs/resourcechangesviewaccesscontrolrules)
 
-Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange and ResourceLinkChange.
+Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange, and ResourceLinkChange.
 
 ## Properties
 
@@ -32,7 +32,7 @@ Generates the access control rules which gives to a profile the permissions to c
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Job_JobViews_Job" DisplayName_L1="Administrator - Management for Job" DisplayName_L2="Administrator - Gestion des Job" EntityType="Job" Profile="Administrator">

@@ -7,17 +7,14 @@ sidebar_position: 40
 # Log Level Configuration Window
 
 The Log Level Configuration window displays the current log levels for the Agents, Enterprise
-Manager, and Administration Console. It also enables you to set new log levels.
+Manager, and Administration Console. You can set new log levels from this window.
 
 :::note
 Since Threat Prevention supports multiple instances of the Administration Console, each
-instance has its own settings for log levels. Changing the settings only affect the respective
-console instance. The Enterprise Manager and Agent log settings are global - the most recent changes
-made from any console instance apply.
+instance has its own settings for log levels. Changing the settings affects only the respective
+console instance. The Enterprise Manager and Agent log settings are global — the most recent changes
+from any console instance apply.
 :::
-
-
-Follow the steps to set log levels.
 
 **Step 1 –** Click **Agents** in the left pane to launch the Agents interface. Then click **Update
 Logging Levels** on the top bar to launch the Log Level Configuration window.
@@ -37,7 +34,7 @@ Logging Levels** on the top bar to launch the Log Level Configuration window.
   - Log Level – The current log level set for the Agent
 
 - Select an Agent in the data grid and choose a new log level from the New Agent Log Level dropdown
-  menu. Then click Update Log Levels to assign the log level to the Agent. Available file log levels
+  menu, then click **Update Log Levels** to assign the log level to the Agent. Available file log levels
   are:
 
   - Debug – Records everything that happens, most verbose level of logging
@@ -64,12 +61,10 @@ Logging Levels** on the top bar to launch the Log Level Configuration window.
 
 ## Access Agent Log Files
 
-Follow the steps to access the Agent log files.
-
 ![Get Agent Log icon](/images/threatprevention/7.5/admin/agents/window/getagentlog.webp)
 
 **Step 1 –** Click **Agents** in the left pane to launch the Agents interface. Select a server/Agent
-and click **Get Agent Log** .
+and click **Get Agent Log**.
 
 ![Save As window for Agent logs](/images/threatprevention/7.5/admin/agents/window/saveaswindow.webp)
 

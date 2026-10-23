@@ -23,4 +23,4 @@ found within the targeted file systems. This report is comprised of the followin
 There is one table at the bottom displaying Details for the selected exception:
 
 - Trustee Name – Owner of the trustee account
-- Path – Location of the resource where the exception existss
+- Path – Location of the resource where the exception exists

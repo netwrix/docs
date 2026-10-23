@@ -24,16 +24,16 @@ The following are requirements for the Exchange servers to be scanned:
 - Enable Remote PowerShell on one Client Access Server (CAS)
 - Enable Windows Authentication for the PowerShell Virtual Directory on the same CAS
 - .NET Framework 4.5+ installed on all Exchange servers to be targeted
-- WINRM Service installed on all Exchange servers to be targeted as a back up in the event of a
+- WINRM Service installed on all Exchange servers to be targeted as a back up if there is a
   remote PowerShell failure
 - Within the Access Analyzer Console, the global **Settings > Exchange** node must be configured
 
     :::note
-    For Exchange 2013, 2016, and 2019 – If the global Settings have been configured for
-    "MAPI over HTTP," then an actual CAS server name was supplied and will be used by the ExchangePS
-    Data Collector. If the global Settings have been configured for "MAPI over HTTPS," then the
-    global Settings will have a web address instead of an actual server. Therefore, each ExchangePS
-    query requires the CAS server to be set as the specific server on the Category page. See the
+    For Exchange 2013, 2016, and 2019 – If you configure the global Settings for "MAPI over HTTP,"
+    you supply an actual CAS server name, and the ExchangePS Data Collector uses it. If you configure
+    the global Settings for "MAPI over HTTPS," the global Settings use a web address instead of an
+    actual server. In this case, each ExchangePS query requires you to set the CAS server as the
+    specific server on the Category page. See the
     [ExchangePS Data Collector & Client Access Server](/docs/accessanalyzer/12.0/solutions/exchange/recommended.md)
     topic for a list of queries for which this would apply.
     :::
@@ -103,7 +103,7 @@ additional information.
 
 **For Exchange Mail Flow with ExchangeMetrics Data Collector**
 
-- Member of the local Administrator group on the targeted Exchange server(s)
+- Member of the local Administrator group on the targeted Exchange servers
 
 See the [Exchange Mail-Flow Permissions](/docs/accessanalyzer/12.0/requirements/exchange/support/mailflow.md) topic for additional
 information.

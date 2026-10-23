@@ -20,10 +20,10 @@ To create a partner server for Nutanix File Server via API:
 
     `https://<fileserver_ip>:9440/api/nutanix/v3/api_explorer/index.html#/`
 
-    here `<fileserver_ip>` - IP address of the Nutanix File Server to be audited.
+    here `<fileserver_ip>` - IP address of the Nutanix File Server you want to audit.
 
-If you select to launch the RestAPI Explorer from the Prism menu, the **RestAPI Explorer for Prism**
-server will be opened.
+If you launch the RestAPI Explorer from the Prism menu, the **RestAPI Explorer for Prism**
+server opens.
 
 2. In the **username** and **password** fields, enter the credentials of the
    [Create User Account to Access Nutanix REST API](/docs/auditor/10.9/configuration/fileservers/nutanix/useraccount.md) you have created.
@@ -89,8 +89,8 @@ This address must be visible from the Nutanix File Server network.
 6. Send the request, clicking **Try it out**.
 7. Get the response - `Response Code` should be _200_. In the response body, locate the `uuid` of
    the created partner server.
-8. To check that a new partner server was included in the list of existing partner servers, retrieve
-   the list of servers, sending the POST request to the following endpoint:
+8. To check that the list of existing partner servers includes the new partner server, retrieve the
+   list by sending a POST request to the following endpoint:
 
     `POST /partner_servers/list`
 

@@ -14,7 +14,7 @@ You can customize the following toolbars:
 | Toolbar                                                | Availability in the portal                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | User                                                   | The **My Profile** and user properties pages NOTE: The _Validate your profile_, _Extend_, and _Reinstate_ buttons on this toolbar are displayed in the portal when user profile validation is enabled:                                                                                                                                                       |
-| Group                                                  | The group properties page NOTE: (1) The _Update_ button is not displayed for static groups. (2) The _Expire_ button is not displayed for groups with an expiation policy set to _Never Expire_. (3) The _Attest Group_ and _Renew_ buttons are displayed when group attestation is enabled. (4) The _Upgrade To_ button is displayed for static groups only. |
+| Group                                                  | The group properties page NOTE: (1) The _Update_ button isn't displayed for static groups. (2) The _Expire_ button isn't displayed for groups with an expiation policy set to _Never Expire_. (3) The _Attest Group_ and _Renew_ buttons are displayed when group attestation is enabled. (4) The _Upgrade To_ button is displayed for static groups only. |
 | Default Search                                         | The **All** tab on the **Search Results** page for Quick Search and Advanced Search                                                                                                                                                                                                                                                                          |
 | Users Search                                           | The **Users** and **Contacts** tabs on the **Search Results** page for Quick Search and Advanced Search                                                                                                                                                                                                                                                      |
 | Groups Search                                          | The **Groups** tab on the **Search Results** page for Quick Search and Advanced Search                                                                                                                                                                                                                                                                       |
@@ -48,12 +48,12 @@ You can customize the following toolbars:
 | Direct Reports Grid                                    | The **Organization** tab in user properties                                                                                                                                                                                                                                                                                                                  |
 
 :::note
-The **Computer Members of Grid** and **Contact Member of Grid** toolbars are not available for
+The **Computer Members of Grid** and **Contact Member of Grid** toolbars aren't available for
 a Microsoft Entra ID identity store.
 :::
 
 
-The buttons available on these toolbars are predefined. You cannot add or remove a button, but you
+The buttons available on these toolbars are predefined. You can't add or remove a button, but you
 can update a few details for a button, such as its name and image.
 
 ## Update the Properties of a Toolbar Button
@@ -65,14 +65,14 @@ can update a few details for a button, such as its name and image.
    All identity stores linked with the portal are listed under **Design Setting**s. You can design a
 different portal for each of these.
 4. Click **Toolbars** in the left pane; the **Toolbars** page is displayed.
-5. In the **Select Toolbar Type** drop-down list, select the toolbar you want to update.  
+5. In the **Select Toolbar Type** dropdown list, select the toolbar you want to update.  
    The **Name** area lists all buttons on this toolbar.
 6. Click **Edit** for a toolbar button to update its properties.
 7. On the **Toolbar Button Properties** pane, update the following information as required:
 
     1. **Name** – The name of the toolbar button. It is read-only.
     2. **Text** – The text displayed on the button as its name.
-    3. **Show Text** – Select this check box to display the text on the button; else the button
+    3. **Show Text** – Select this checkbox to display the text on the button; else the button
        would be displayed without the text.
     4. **Tooltip Text** - The text to appear when a user hovers the mouse over the button.
     5. **Icon Class** – The image (icon) to be displayed for the button on the toolbar.
@@ -107,7 +107,7 @@ Image dimensions: 30 x 30 pixels
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
 different portal for each of these.
 4. Click **Toolbars** in the left pane.
-5. On the **Toolbars** page, select a toolbar in the **Select Toolbar Type** drop-down list.  
+5. On the **Toolbars** page, select a toolbar in the **Select Toolbar Type** dropdown list.  
    The **Name** area lists all buttons on this toolbar.
 6. To change the order of buttons on the toolbar, click the equal sign for a button and drag to
    change its position.

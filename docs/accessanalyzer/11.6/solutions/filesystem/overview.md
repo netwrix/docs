@@ -13,9 +13,9 @@ sensitive data discovery and classification, open access remediation, least-priv
 transformation, and file activity monitoring.
 
 File systems and NAS devices contain the vast majority of an organization’s data. Each day, more
-data is created and stored in the nooks and crannies of the environment, beyond the sight of the
-people charged with managing it and keeping it safe. The File System Solution is designed to gather
-information from file systems and shared folders in order to answer questions around data access:
+data is created and stored throughout the environment, often unnoticed by the people responsible
+for managing it and keeping it safe. The File System Solution is designed to gather
+information from file systems and shared folders to answer questions around data access:
 
 - Who has access to your data?
 - Who is accessing your data?
@@ -50,14 +50,13 @@ There is a limit of 100 file system hosts that can be scanned simultaneously.
 **Sensitive Data Discovery Considerations**
 
 The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time ,
-then an extra 16 GB of RAM are required (8x2=16).
+which enables Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of
+RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job is
+configured to scan 8 hosts at a time, then an extra 16 GB of RAM is required (8x2=16).
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
 configuration; it has been preconfigured to work with Enterprise Auditor and should never be
 customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
 environment.
@@ -65,16 +64,15 @@ environment.
 
 
 :::tip
-Remember, if employing either of the File System Proxy Mode as a Service scan mode options, it is
-also necessary for the Sensitive Data Discovery Add-on to be installed on the server where the proxy
-service is installed.
+Remember, if you use either File System Proxy Mode as a Service scan mode option, you must also
+install the Sensitive Data Discovery Add-on on the server where the proxy service runs.
 :::
 
 
 **Location**
 
 The File System Solution requires a special Enterprise Auditor license. It can be installed from the
-Instant Job Wizard. Once it has been installed into the Jobs tree, navigate to the solution:
+Instant Job Wizard. After it has been installed into the Jobs tree, navigate to the solution:
 **Jobs** > **FileSystem**.
 
 The
@@ -97,8 +95,8 @@ information.
 
 The File System Solution offers information on multiple aspects of an organization’s file system
 infrastructure. This solution is comprised of eleven job groups and an overview job which collect,
-analyze, and report on data as well as run action tasks for environmental remediation. The data
-collection is conducted by the FileSystemAccess (FSAA) Data Collector. See the
+analyze, and report on data as well as run action tasks for environmental remediation. The
+FileSystemAccess (FSAA) Data Collector collects this data. See the
 [Standard Reference Tables & Views for the FSAA Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/standardtables.md)
 section for database table information.
 
@@ -111,10 +109,10 @@ exception of the Sensitive Data Discovery Auditing component which can be run in
 data collection query options for each type are explained within the 0.Collection Job Group section.
 Additionally, the corresponding analysis and reporting job groups are listed for each auditing type.
 
-If intending to run three or all auditing types, see each auditing type section within the
-0.Collection Job Group section for information on query options and requirements. It is recommended
-to first run the 0.Collection Job Group components in the default order for the desired auditing
-types to ensure successful data collection, and then to run the desired sub-groups for reports.
+If you intend to run three or all auditing types, see each auditing type section within the
+0.Collection Job Group section for information on query options and requirements. First run the
+0.Collection Job Group components in the default order for the auditing types you want to run, to
+ensure successful data collection, and then run the sub-groups you need for reports.
 
 See the
 [Recommended Configuration for the File System Solution](/docs/accessanalyzer/11.6/solutions/filesystem/recommended.md)
@@ -164,9 +162,9 @@ of the following jobs:
 - [FS_SecurityAssessment Job](/docs/accessanalyzer/11.6/solutions/filesystem/fs_securityassessment.md)
   – Designed to provide a security assessment of all relevant information from targeted file servers
 
-When targeting Nasuni Edge Appliances, it is necessary to add a job from the Instant Job Library
+When targeting Nasuni Edge Appliances, add a job from the Instant Job Library
 (FS_Nasuni Job) which uses the PowerShell Data collector to gather system information, volume data,
-and share data from the Nasuni environment. This job should be added to the 0.Collection Job Group
-and should be renamed (0-FS_Nasuni) to run immediately after the 0-Create Schema Job. See the
+and share data from the Nasuni environment. Add this job to the 0.Collection Job Group
+and rename it (0-FS_Nasuni) to run immediately after the 0-Create Schema Job. See the
 [0-FS_Nasuni Job](/docs/accessanalyzer/11.6/solutions/filesystem/collection/0-fs_nasuni.md)
 topic for additional information.

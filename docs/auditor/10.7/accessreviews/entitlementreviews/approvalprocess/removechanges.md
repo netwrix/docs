@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Remove Changes Window
 
-Select the desired resource on a Review Details page and click **Remove Changes**. The Remove
+Select the resource on a Review Details page and click **Remove Changes**. The Remove
 changes window opens to confirm the action.
 
 ![Remove changes window](/images/accessinformationcenter/12.0/general/removechanges.webp)

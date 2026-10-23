@@ -7,7 +7,7 @@ sidebar_position: 10
 # Workflows
 - [CreateUpdateDeleteMenus](./createupdatedeletemenus)
 
-Creates creation, update and delete menus for an entity.
+Creates creation, update, and delete menus for an entity.
 - [CreateUpdateDeleteWorkflows](./createupdatedeleteworkflows)
 
  

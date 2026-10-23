@@ -13,7 +13,7 @@ Files scans.
 You can add this job from the Access Analyzer Instant Job Library. See the
 [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for additional information.
 
-Before running the FS_AzureTenantScan job, you must ensure all the below prerequisites have been
+Before running the FS_AzureTenantScan job, you must ensure all the following prerequisites are
 met, and that the required host list and connection profile have been assigned to the job.
 
 ## Prerequisites
@@ -32,12 +32,12 @@ The FS_AzureTenantScan job has the following prerequisites:
     - Storage Account
 
         :::note
-        The custom role cannot be created at the storage account level via the web UI, but
+        The custom role can't be created at the storage account level via the web UI, but
         it can be assigned here.
         :::
 
 
-Follow the steps to create the role assignment.
+To create the role assignment:
 
 **Step 1 –** Go to [Azure Portal](https://portal.azure.com/), and select **Resource Groups** from
 the navigation menu.
@@ -79,7 +79,7 @@ The Azure Tenant Scan query uses the FSAA Data Collector and has been preconfigu
 Scan and import category.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 

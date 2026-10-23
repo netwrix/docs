@@ -1,0 +1,3 @@
+message: Use 'is' or 'are' instead of 'serves as', 'functions as', 'acts as', or 'stands as'.
+level: warning
+reason: Fires when 'serves as', 'functions as', 'acts as', 'stands as', 'represents', or 'boasts' is used where a plain 'is/are/has' would say the same thing. Does not fire when the verb describes a real functional role, such as 'acts as a proxy' or 'serves as the gateway between two networks'.

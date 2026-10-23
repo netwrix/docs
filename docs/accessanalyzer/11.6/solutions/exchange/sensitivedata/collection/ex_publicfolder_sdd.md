@@ -51,7 +51,7 @@ The Exchange Sensitive Data Discovery query has been preconfigured to run with t
 Data Collector to scan for sensitive data.
 
 **Step 1 –** Navigate to the **Exchange** > **7. Sensitive Data** > **0. Collection** >
-**EX_EWSPublicFolder_SDD** > **Configure** node and select **Queries**.
+**EX_PublicFolder_SDD** > **Configure** node and select **Queries**.
 
 **Step 2 –** In the Query Selection view, select **Exchange Sensitive Data Discovery** and click
 **Query Properties**. The Query Properties window opens.
@@ -60,7 +60,7 @@ Data Collector to scan for sensitive data.
 Collector Wizard opens.
 
 :::warning
-Do not modify other wizard pages. The wizard pages are pre-configured for this job.
+Don't modify other wizard pages. The wizard pages are pre-configured for this job.
 :::
 
 
@@ -72,7 +72,7 @@ Sensitive data matches can be limited to reduce storage space. See the
 for additional information.
 
 :::note
-By default, discovered sensitive data strings are not stored in the Enterprise Auditor
+By default, discovered sensitive data strings aren't stored in the Enterprise Auditor
 database.
 :::
 
@@ -103,7 +103,7 @@ for additional information.
 ![EWS Public Folder Data Collector Wizard Results page](/images/accessanalyzer/11.6/solutions/exchange/sensitivedata/collection/publicfolderresults.webp)
 
 **Step 7 –** To select which properties are gathered based on category, navigate to the Results
-page.  See the
+page. See the
 [EWSPublicFolder: Results](/docs/accessanalyzer/11.6/admin/datacollector/ewspublicfolder/results.md) topic
 for additional information.
 
@@ -113,6 +113,6 @@ By default, all categories are selected under sensitive data.
 
 
 **Step 8 –** Navigate to the Summary page, click **Finish** to save any setting modifications or
-click **Cancel** if no changes were made. Then click **OK** to close the Query Properties window
+click **Cancel** if no changes were made. Then click **OK** to close the Query Properties window.
 
 The job applies the modification to future job executions.

@@ -8,7 +8,7 @@ sidebar_position: 20
 
 How to perform a same change in data for several identities simultaneously.
 
-This part is not about changing the data model, but data itself.
+This part isn't about changing the data model, but data itself.
 
 ## Overview
 
@@ -31,7 +31,7 @@ See the [Create the Workforce Repository](../../../user-guide/set-up/initial-ide
 
 Perform multiple updates by proceeding as follows:
 
-1. Click on **Multiple Updates**, accessible from the directory on the home page.
+1. Click **Multiple Updates**, accessible from the directory on the home page.
 
     ![Home Page - Multiple Updates](/images/identitymanager/home_multipleupdates_v523.webp)
 
@@ -46,7 +46,7 @@ If the workflow has been configured in this way, the update request may require 
 
 ## Verify Data Update
 
-In order to verify the process:
+To verify the process:
 
 - **Check manually a sample** in the `User` directory accessible from the home page. You should verify
 at least your own sheet and the sheets assigned to your hierarchy.

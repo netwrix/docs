@@ -4,9 +4,9 @@ description: "Optimizes all elements found in the given displayTable."
 sidebar_position: 1
 ---
 
-This scaffolding optimizes the given display table by replacing its tiles navigation properties by scalar (pre-computed, via expressions) properties. This ultimately improves the performances of the SQL queries used to fetch the data displayed in the corresponding table.
+This scaffolding optimizes the given display table by replacing its tiles navigation properties with scalar (pre-computed, via expressions) properties. This improves the performance of the SQL queries used to fetch the data displayed in the corresponding table.
 
-In order to optimize the display table, this scaffolding will create the following elements if they don't exist.
+To optimize the display table, this scaffolding creates the following elements if they don't exist.
 
 - An [Entity Property](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype#child-element-property) for each tile item that uses a navigation binding. This will be used to hold the computed expression.
 - An [Entity Property Expression](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitypropertyexpression) to evaluate the binding expression used by the optimizable tile item.
@@ -35,7 +35,7 @@ The following example optimized the DisplayTable `Directory_User`
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <EntityType Identifier="Directory_Organization" DisplayName_L1="Department" DisplayName_L2="Département">

@@ -15,7 +15,7 @@ Navigate to the **Databases** > SQL > 5.Permissions > SQL_PublicPermissions > C
 select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task(s). The analysis task(s) are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -29,7 +29,7 @@ The default analysis tasks are:
 - Public Permissions Summary – Creates the SA_SQLServer_PublicPermissions_DatabaseSummary table
   accessible under the job’s Results node
 - Public Permissions Summary – Highlights permissions that have been granted to the public role on
-  objects that are not-default SQL or Azure SQL server objects
+  non-default SQL or Azure SQL server objects
 - Public Permissions Instance Summary (Non-Default) – Summarizes non-default SQL and Azure SQL
   server public permissions by instance
 
@@ -38,4 +38,4 @@ produces the following pre-configured report.
 
 | Report             | Description                                                                | Default Tags | Report Elements                                                                                                                                                                                                                                                    |
 | ------------------ | -------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Public Permissions | This report determines highlights objects with public permissions applied. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays top databases by public permission count</li><li>Table – Provides details on databases by public permission count</li><li>Table – Provides details on public permission details</li></ul> |
+| Public Permissions | This report highlights objects with public permissions applied. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays top databases by public permission count</li><li>Table – Provides details on databases by public permission count</li><li>Table – Provides details on public permission details</li></ul> |

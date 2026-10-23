@@ -14,7 +14,7 @@ How to manually build rules to automate the assignment of roles to identities. S
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the **application owner** who knows the application's users, entitlements and data model.
+For a given managed system, integrators may need the help of the **application owner** who knows the application's users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -35,7 +35,7 @@ section.
 
     ![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
-3. Click on the **Composite Roles** or **Single Roles** tab and on the addition button at the top
+3. Click the **Composite Roles** or **Single Roles** tab and on the addition button at the top
 right corner.
 
     ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
@@ -56,7 +56,7 @@ The rule's type can be `Suggested` only if the related role is allowed to be req
 
 Role **assignment rules** can be based on identity dimensions. Moreover, **Single role rules** can be based on composite roles.
 
-5. Click on **Create** and see a line added on the rules page.
+5. Click **Create** and see a line added on the rules page.
 
 ## Impact of Modifications
 
@@ -65,12 +65,12 @@ Any modification in a role assignment rule is taken into account when the next [
 A modification in a role assignment rule can trigger the removal of a role only on the Identity Manager side. There are several barriers to cross before said role is removed from the managed system.
 
 > For example, consider a single role rule that assigns the single role
-> `Business role: electronic banking` to all users in the `Tours` department. Let's say that we
-> replace `Tours` with `Orleans`. Then, after the next launch of the complete job, all users in the
+> `Business role: electronic banking` to all users in the `Tours` department. If an administrator
+> replaces `Tours` with `Orleans`, then after the next launch of the complete job, all users in the
 > `Orleans` department get said role, while the users in the `Tours` department are deprived of said
 > role.
 
-[Perform a Simulation](../../../user-guide/optimize/simulation) is available in order to anticipate the changes induced by a creation/modification/deletion in role **assignment rules**.
+[Perform a Simulation](../../../user-guide/optimize/simulation) is available to anticipate the changes induced by a creation/modification/deletion in role **assignment rules**.
 
 **assignment rules** can sometimes give to users an entitlement that they had already received manually. Hence, **new** **assignment rules** can imply redundancies between the entitlements assigned manually and approved, and those calculated by a rule and assigned automatically.
 
@@ -78,7 +78,7 @@ Netwrix Identity Manager (formerly Usercube) recommends removing redundant assig
 
 ## Verify Rule Creation
 
-In order to verify the process, start by checking the rule's details on the **Access Rules** page. Then, you can:
+To verify the process, start by checking the rule's details on the **Access Rules** page. Then, you can:
 
 1. Select a test user in the directory, accessible from the home page.
 

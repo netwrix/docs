@@ -8,17 +8,16 @@ sidebar_position: 50
 
 Using PowerShell, you can obtain information on or manipulate specific policy, collection, and
 Netwrix Threat Manager integration configurations in the Threat Prevention Administration Console
-without having it open. This can be done on the same machine or from a remote server where the
-Enterprise Manager is not located. The following PowerShell APIs can be used:
+without having it open. You can run it on the same machine or from a remote server where the
+Enterprise Manager isn't located. The following PowerShell APIs are available:
 
 - Initial Configuration:
   - Connect-SIEnterpriseManager
 - Informative APIs
 
   :::note
-  These APIs do not require any additional configuration. They display Agent status from
-  the [Agents Interface](/docs/threatprevention/7.5/admin/agents/overview.md) and a list of available PowerShell APIs the
-  user can utilize.
+  These APIs don't require any additional configuration. They display Agent status from
+  the [Agents Interface](/docs/threatprevention/7.5/admin/agents/overview.md) and a list of available PowerShell APIs you can use.
   :::
 
 
@@ -75,14 +74,14 @@ The following prerequisites must be met before using the APIs:
 
 ## Not a Policy XML Expert
 
-Follow the steps to compare two XML files as exported from Threat Prevention.
+To compare two XML files as exported from Threat Prevention, follow these steps.
 
-**Step 1 –** Craft the desired policy in the Administration Console and export as a XML file.
+**Step 1 –** Create the policy you want in the Administration Console and export it as an XML file.
 
 **Step 2 –** In the Administration Console, edit the same policy settings and filters through the
 Event Type tab. Export as a second XML file with a different name.
 
 **Step 3 –** Open both XML files and compare the XML to see how policies are altered.
 
-Once you identify how Threat Prevention modifies XML files, you can apply that to the
+After you identify how Threat Prevention modifies XML files, you can apply that to the
 [Add or Modify Policies](/docs/threatprevention/7.5/api/policy.md#add-or-modify-policies) instructions.

@@ -30,14 +30,14 @@ The service account must be a member of the `Farm Read` group at the farm level.
 Access Analyzer to call the SharePoint web services to gather permissions, site hierarchy, and
 content information remotely.
 
-Follow these steps to configure farm-level permissions on SharePoint 2013 through SharePoint 2019:
+Configure farm-level permissions on SharePoint 2013 through SharePoint 2019:
 
 1. In the SharePoint **Central Administration Center**, navigate to the **Security** section.
 2. Select **Manage the farm administrators group** under **Users**.
 3. If the `Farm Read` group exists, add the service account to that group. If the group has been
    deleted, create a new group:
    - Select **More** under the **Groups** section.
-   - Select **New Group** from the **New** drop-down menu.
+   - Select **New Group** from the **New** dropdown menu.
    - Ensure the group has the `Read – Can view pages and list items and download documents`
      permission.
    - Add the service account to the new group.
@@ -50,7 +50,7 @@ The service account requires a custom policy role with `Site Collection Auditor`
 permissions at the web application level. This allows Access Analyzer to execute web service calls
 against **Central Administration**.
 
-Follow these steps to configure web application-level permissions on SharePoint 2013 through
+Configure web application-level permissions on SharePoint 2013 through
 SharePoint 2019:
 
 1. In the **Central Administration Center**, navigate to the **Application Management** section.
@@ -82,7 +82,7 @@ configuration database and all content databases. This allows Access Analyzer to
 operations directly against the SharePoint databases and gather information about web application
 and content database locations.
 
-Follow these steps to configure database server permissions:
+Configure database server permissions:
 
 1. Open the SharePoint database server user configuration in SQL Server Management Studio.
 2. Grant the service account the `SPDataAccess` database role membership on the following

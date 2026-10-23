@@ -6,34 +6,26 @@ sidebar_position: 30
 
 # Credential Profile Page
 
-The Credential Profile page within the Integrations interface lists all of the credentials used by
-the application to complete tasks. These credentials are securely stored.
+The Credential Profile page displays all credentials that the application uses to complete tasks. The application stores these credentials securely.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
 select **Integrations** to open the Integrations interface.
 
-Click **Credential Profile** in the navigation pane to view a list of the already created Credential
-Profiles, if any.
+Click **Credential Profile** in the navigation pane to view existing Credential Profiles.
 
 ![Integrations interface on the Credential Profile page](/images/threatprevention/7.5/reportingmodule/configuration/integrations/page_1.webp)
 
-The table displays the user name for each profile. To view profile details or make modifications,
-select a profile from the table or under Credential Profile in the navigation pane.
+The table displays the user name for each profile. Select a profile from the table or in the navigation pane to view or modify its details.
 
 See the [Reporting Module Server Requirements](/docs/threatprevention/7.5/requirements/reportingserver.md) topic for a
 list of permission requirements for each type of task.
 
 **Best Practice Recommendation**
 
-It is a best practice to:
-
-- Create one Credential Profile per domain for Active Directory Sync purposes
-- Create a Credential Profile with Writer permissions to the shared folder where subscription
-  exports will be stored
+- Create one Credential Profile per domain for Active Directory Sync purposes.
+- Create a Credential Profile with Writer permissions to the shared folder where subscription exports will be stored.
 
 ## Add a Credential Profile
-
-Follow the steps to add a Credential Profile.
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -43,7 +35,7 @@ Add New Integration window opens.
 
 ![Add New Integration window with Credential Profile type selected](/images/threatprevention/7.5/reportingmodule/configuration/integrations/credentialprofile.webp)
 
-**Step 3 –** In the Type drop-down menu, select Credential Profile.
+**Step 3 –** In the Type dropdown menu, select Credential Profile.
 
 **Step 4 –** Enter the following information:
 
@@ -65,42 +57,37 @@ additional Credential Profiles.
 
 ## Credential Profile Details
 
-Follow the steps to view the details of a Credential Profile.
-
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
 
 **Step 2 –** On the Integrations interface, click **Credential Profile** in the navigation pane to
-view a list of the already created Credential Profiles, if any.
+view existing Credential Profiles.
 
 **Step 3 –** Select a Credential Profile from the table or the navigation pane to view its details.
 
 ![Integrations interface displaying the details for a Credenital Profile](/images/threatprevention/7.5/reportingmodule/configuration/integrations/details_1.webp)
 
-Select the profile from the list to see modification optionsThe following information is displayed
-for a Credential Profile:
+The following information is displayed for a Credential Profile:
 
-- Name and Description – The box at the top displays the name and description of the profile
+- Name and Description — The box at the top displays the name and description of the profile.
 
-  - Edit – The edit button in the upper right corner of the box changes those fields from
+  - Edit — The edit button in the upper right corner of the box changes those fields from
     read-only to editable. See the Edit Profile topic for additional information.
-  - Delete – The delete button in the upper right corner of the box opens the Delete Profile
-    window to confirm the action
+  - Delete — The delete button in the upper right corner of the box opens the Delete Profile
+    window to confirm the action.
 
-- Credentials – This section displays the credentials
+- Credentials — This section displays the credentials.
 
-  - Edit Credential – The edit button to the right of the credentials opens the Credentials
-    Settings window, where you canupdate the Platform, User Name, or Password. See the Edit
+  - Edit Credential — The edit button to the right of the credentials opens the Credentials
+    Settings window, where you can update the Platform, User Name, or Password. See the Edit
     Credential topic for additional information.
-  - Delete Credential – The delete button to the right of the credentials opens the Delete
-    Credential window to confirm the action
-  - Add Credential – This button allows you to add additional credentials to this profile. This
-    functionality is available for a full Netwrix Threat Manager implementation, and does not
+  - Delete Credential — The delete button to the right of the credentials opens the Delete
+    Credential window to confirm the action.
+  - Add Credential — Use this button to add additional credentials to this profile. This
+    functionality is available for a full Netwrix Threat Manager implementation and doesn't
     apply to the Netwrix Threat Manager Reporting Module.
 
 ## Edit Profile
-
-Follow the steps to edit a Credential Profile name and/or description.
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -124,18 +111,15 @@ The Credential Profile name and/or description have been modified.
 
 ## Edit Credential
 
-Follow the steps to edit a credential within a Credential Profile. This may be necessary if the
-account password needs to be updated.
-
 **Step 1 –** On the Integrations interface, click **Credential Profile** in the navigation pane to
-view a list of the already created Credential Profiles, if any. Select a Credential Profile.
+view existing Credential Profiles and select one.
 
 **Step 2 –** In the Credentials box, click the edit button to the right of the credential. The
 Credential Settings window opens.
 
 ![Credential Settings window](/images/threatprevention/7.5/reportingmodule/configuration/integrations/credentialsettingswindow.webp)
 
-**Step 3 –** To edit the platform type, select either SQL or Windows from the **Platform** drop-down
+**Step 3 –** To edit the platform type, select either SQL or Windows from the **Platform** dropdown
 menu.
 
 **Step 4 –** To edit the account user name, enter the account user name in the required format of

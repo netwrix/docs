@@ -12,7 +12,7 @@ When using Identity Manager's on-premise option, follow the procedure of install
 
 ## Overview
 
-The installation of Identity Manager's production environment usually takes time, while we want to start configuring at once.
+The installation of Identity Manager's production environment usually takes time, although integrators want to start configuring right away.
 
 This is why Identity Manager offers a bootstrap version of the application, useful as a development environment.
 
@@ -26,13 +26,13 @@ Integrators must be in contact with Netwrix Identity Manager (formerly Usercube)
 
 ## Install the Development Environment
 
-The documentation is not yet available for this part and will be completed in the near future.
+The documentation isn't yet available for this part and will be completed in the near future.
 
 ## Verify Environment Installation
 
-In order to verify the process, try to authenticate to Identity Manager server, and access the configuration screens.
+To verify the process, try to authenticate to Identity Manager server, and access the configuration screens.
 
 ## Next Steps
 
-Once the development environment is ready, integrators can start to [Create the Workforce Repository](../../user-guide/set-up/initial-identities-loading).
+After the development environment is ready, integrators can start to [Create the Workforce Repository](../../user-guide/set-up/initial-identities-loading).
 

@@ -10,14 +10,14 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-Native audit settings must be configured manually to ensure comprehensive and reliable audit data
+You must configure native audit settings manually to ensure comprehensive and reliable audit data
 collection. Configure your IT Infrastructure as follows:
 
 - On the Oracle server, configure the required settings described below.
@@ -36,8 +36,8 @@ different auditing types:
 
 | Auditing type                           | Oracle version                                                                          | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | --------------------------------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unified Auditing                        | Oracle Database 12c, 18c, 19c, 21c, 23c                                                 | Consolidates all auditing into a single repository and view. This provides a two-fold simplification: audit data can now be found in a single location and all audit data is in a single format. See [Configure Oracle Database for Auditing](/docs/auditor/10.9/configuration/oracle/database.md) topic for more information.                                                                                                                                                                                                                                                                                                                           |
-| Fine Grained Auditing                   | Oracle Database 12c, 18c, 19c, 21c, 23c. Available for **Enterprise Edition** only. Used in addition to Unified Auditing, not as a replacement. | Supports auditing of actions associated with columns in application tables — along with conditions necessary for an audit record to be generated. Helps to focus on security-relevant columns and rows, ignoring areas that are less important. See [Configure Fine Grained Auditing](/docs/auditor/10.9/configuration/oracle/finegained.md) topic for more information.                                                                                                                                                                                                                                                                                 |
+| Unified Auditing                        | Oracle Database 12c, 18c, 19c, 21c, 23c                                                 | Consolidates all auditing into a single repository and view. This provides a two-fold simplification: you can find all audit data in a single location, in a single format. See [Configure Oracle Database for Auditing](/docs/auditor/10.9/configuration/oracle/database.md) topic for more information.                                                                                                                                                                                                                                                                                                                           |
+| Fine Grained Auditing                   | Oracle Database 12c, 18c, 19c, 21c, 23c. Available for **Enterprise Edition** only. Used in addition to Unified Auditing, not as a replacement. | Supports auditing of actions associated with columns in application tables — along with the conditions needed to generate an audit record. Helps to focus on security-relevant columns and rows, ignoring areas that are less important. See [Configure Fine Grained Auditing](/docs/auditor/10.9/configuration/oracle/finegained.md) topic for more information.                                                                                                                                                                                                                                                                                 |
 
 See [Software Requirements](/docs/auditor/10.9/requirements/software.md) for the full list of
 supported Oracle versions and required components.
@@ -58,16 +58,16 @@ If you are unsure of your audit settings, refer to the [Verify Your Oracle Datab
 ## Oracle Database objects
 
 Review a full list of object types Netwrix Auditor can collect on Oracle Database. If you deployed
-your Oracle Database in a cluster mode (Oracle Real Application Cluster), a host name also will be
-reported.
+your Oracle Database in a cluster mode (Oracle Real Application Cluster), Netwrix Auditor also
+reports a host name.
 
-Details marked with asterisk (\*\*) are reported for Oracle Database 12c only.
+Netwrix Auditor reports details marked with asterisk (\*\*) for Oracle Database 12c only.
 
-Oracle Object modification under Privileges and object rename under Rename are reported without
-Object type (“Not available” is displayed).
+Netwrix Auditor reports Oracle object modification under Privileges and object rename under Rename
+without Object type, and displays “Not available” instead.
 
-Oracle Database startup under System Settings is reported without Workstation (“Not available” is
-displayed).
+Netwrix Auditor reports Oracle Database startup under System Settings without Workstation, and
+displays “Not available” instead.
 
 | Object type                                                                                                                                                                                                                                                                                                                                                                                            | Actions                                                                                                                                | Details                                                                                                                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

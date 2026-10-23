@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # References: Format for the EntityPropertyMapping
 
-This page lists all available formats for entity properties, in order to help you manage said formats when exporting and fulfilling resources from/to external systems.
+This page lists all available formats for entity properties, to help you manage said formats when exporting and fulfilling resources from/to external systems.
 
 The attribute `Format` can be defined in an EntityPropertyMapping to indicate the format of the data in the external system. It will allow Identity Manager to correctly convert the data to its own format during the export and fulfillment processes.
 
@@ -35,13 +35,13 @@ The attribute `Format` can be defined in an EntityPropertyMapping to indicate th
 
 Some systems use bitmask properties, i.e. properties containing a set of boolean flags represented by individual bits.
 
-Scalar properties are provisioned by scalar rules, usually changing the whole value of the property. For bitmask properties, changing the whole value often requires an unnecessarily complex expression. Hence, a bitmask property should be modified one bit at a time (bit provisioning). In order to change only one flag without altering the others, a bitmask property must be completed by one fictitious property for each bit to be modified.
+Scalar properties are provisioned by scalar rules, usually changing the whole value of the property. For bitmask properties, changing the whole value often requires an unnecessarily complex expression. Hence, a bitmask property should be modified one bit at a time (bit provisioning). to change only one flag without altering the others, a bitmask property must be completed by one fictitious property for each bit to be modified.
 
 Then scalar rules can be created for each single-bit property individually.
 
 In a given resource type, there should be scalar rules either for the bitmask property, or for the single-bit "sub-properties", not both.
 
-> For example, we choose to create a property `bit_userAccountControl_2` to represent the second bit
+> For example, create a property `bit_userAccountControl_2` to represent the second bit
 > of `userAccountControl`.
 >
 > ![New Property for Bit Provisioning](/images/identitymanager/bitprov_property_v603.webp)
@@ -64,7 +64,7 @@ In a given resource type, there should be scalar rules either for the bitmask pr
 When creating a property of bit format:
 
 - through the UI, there is no need filling the connection column field, because it will be filled
-automatically once the format fields are filled. A manual value for connection column would be overridden.
+automatically after the format fields are filled. A manual value for connection column would be overridden.
 - through XML configuration, the connection column must be specified manually but there are no
 additional requirements.
 
@@ -72,7 +72,7 @@ additional requirements.
 
 To provision a `MultivaluedText` property, the associated scalar rule's source object must return a `string`, where the values are separated by a `\n`. Most of the time, the value of the source object is computed with an expression.
 
-The order of the values within the property is important, because Identity Manager will use the results of the synchronization and of the computation of the scalar rule's expression. Identity Manager compares both results to compute the `Verified` provisioning state if they are found equal. Regarding that fact, if the scalar rule's expression does not compute the `MultivaluedText` with the values in the same order as Identity Manager's synchronization, the property will never be `Verified`.
+The order of the values within the property is important, because Identity Manager will use the results of the synchronization and of the computation of the scalar rule's expression. Identity Manager compares both results to compute the `Verified` provisioning state if they are found equal. Regarding that fact, if the scalar rule's expression doesn't compute the `MultivaluedText` with the values in the same order as Identity Manager's synchronization, the property will never be `Verified`.
 
 Netwrix Identity Manager (formerly Usercube)  recommends, in the scalar rule's expression, ordering the elements before joining them into a `string` with `myList.OrderBy(e => e, StringComparer.OrdinalIgnoreCase)`, where `myList` is the list of values.
 
@@ -107,9 +107,9 @@ Netwrix Identity Manager (formerly Usercube)  recommends, in the scalar rule's 
 
 #### Example
 
-In this example, we will export and fulfill the start date of an employee in a ServiceNow instance.
+In this example, export and fulfill the start date of an employee in a ServiceNow instance.
 
-We define an [Entity Model](../../integration-guide/entity-model) called `u_startdate` with the **Type**`DateTime` to display it as a date in the UI.
+Define an [Entity Model](../../integration-guide/entity-model) called `u_startdate` with the **Type**`DateTime` to display it as a date in the UI.
 
 ```xml
 ServiceNow Connector.xml
@@ -117,7 +117,7 @@ ServiceNow Connector.xml
 <EntityType Identifier="ServiceNow_User" DisplayName_L1="ServiceNow User" DisplayName_L2="Utilisateur ServiceNow">   <Property Identifier="u_startdate" DisplayName_L1="Start Date" TargetColumnIndex="1" Type="DateTime"/></EntityType>...
 ```
 
-To correctly export the start date from ServiceNow, we transform the string received into a string that is readable as a date by Identity Manager. To do so, we must declare in the EntityTypeMapping that we will not receive a simple string, but a string formatted as a `DateTime`.
+To correctly export the start date from ServiceNow, transform the string received into a string that is readable as a date by Identity Manager. To do so, declare in the EntityTypeMapping that you will not receive a simple string, but a string formatted as a `DateTime`.
 
 ```xml
 ServiceNow Connector.xml

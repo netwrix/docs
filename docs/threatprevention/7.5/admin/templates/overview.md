@@ -7,7 +7,7 @@ sidebar_position: 90
 # Templates Interface
 
 The Templates interface provides a list of all the pre-created policy templates in Threat
-Prevention. Click **Temaples** in the Navigation pane to launch the Templates interface.
+Prevention. Click **Templates** in the Navigation pane to launch the Templates interface.
 
 ![Templates Interface](/images/threatprevention/7.5/admin/templates/templates.webp)
 
@@ -47,7 +47,7 @@ It contains the following options:
 
 | Right-Click Command  | Description      |
 | -------------------- | ------------------ |
-| Enable (grayed-out)  | [Does not apply to templates]      |
-| Disable (grayed-out) | [Does not apply to templates]    |
+| Enable (grayed-out)  | [Doesn't apply to templates]      |
+| Disable (grayed-out) | [Doesn't apply to templates]    |
 | Export               | Exports the selected template’s configuration to an XML file through the [Export Policies and Templates Window](/docs/threatprevention/7.5/admin/policies/exportpoliciestemplates.md) |
 | Remove               | Deletes the selected template     |

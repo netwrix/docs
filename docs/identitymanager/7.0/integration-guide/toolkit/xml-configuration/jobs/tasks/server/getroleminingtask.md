@@ -1,12 +1,12 @@
 ---
 title: "GetRoleMiningTask"
-description: "Role mining is the process of analyzing user-to-resource mapping data to determine or modify user permissions for role-based access control (RBAC) in an enterprise. In a business setting, roles are defined according to job competency, authority and responsibility."
+description: "Role mining is the process of analyzing user-to-resource mapping data to determine or modify user permissions for role-based access control (RBAC) in an enterprise. In a business setting, roles are defined according to job competency, authority, and responsibility."
 sidebar_position: 8
 ---
 
-Role mining is the process of analyzing user-to-resource mapping data to determine or modify user permissions for role-based access control (RBAC) in an enterprise. In a business setting, roles are defined according to job competency, authority and responsibility. The ultimate intent of role mining is to achieve optimal security administration based on the role each individual plays within the organization.
-This executable allows to highlight the RoleMining table as well as the different rules to be applied in the role model so that it is optimal at the time T.
-The xml file contains 2 sql requests to link roles, dimensions and Owners to extract a table containing the grouping of SingleRoles and CompositesRoles and set it up in the system.
+Role mining is the process of analyzing user-to-resource mapping data to determine or modify user permissions for role-based access control (RBAC) in an enterprise. In a business setting, roles are defined according to job competency, authority, and responsibility. The ultimate intent of role mining is to achieve optimal security administration based on the role each individual plays within the organization.
+This executable highlights the RoleMining table as well as the different rules to be applied in the role model so that it is optimal at the time T.
+The xml file contains 2 sql requests to link roles, dimensions, and Owners to extract a table containing the grouping of SingleRoles and CompositesRoles and set it up in the system.
 
 ## Examples
  ```xml

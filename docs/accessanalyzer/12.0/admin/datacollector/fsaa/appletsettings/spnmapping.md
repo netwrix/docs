@@ -40,7 +40,7 @@ Use custom SPN mapping to specify which SPN Access Analyzer should present when 
 ## Query requirements
 
 - The query must return columns named `Host` and `SPN` (you can use aliases, e.g. `SELECT ServerName AS Host, …`).
-- The `@host` parameter - supplied automatically by Access Analyzer as the proxy server - is available if you want to filter by applet host, but it's optional — if your query doesn't reference it, Access Analyzer will use every row returned.
+- The `@host` parameter — which Access Analyzer supplies automatically as the proxy server — is available if you want to filter by applet host, but it's optional — if your query doesn't reference it, Access Analyzer will use every row returned.
 - Host matching is case-insensitive.
 - Host name format must be consistent. The format you use in the table (FQDN, short name, or IP address) must exactly match the format you use for the applet host. For example, if the applet host uses a fully qualified domain name (FQDN), use the FQDN in the table as well. Don't mix formats — for example, don't store a short hostname while the applet host uses an FQDN.
 

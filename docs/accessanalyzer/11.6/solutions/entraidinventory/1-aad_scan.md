@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # 1-AAD_Scan Job
 
-The **1-AAD_Scan** Job is responsible for collecting data from Microsoft Entra ID. This job requires
-no additional customizations before being used, but can be scoped to disable collecting sign-in
-activity with the scan.
+The **1-AAD_Scan** Job collects data from Microsoft Entra ID. It requires no additional
+customization before use, but you can scope it to disable collecting sign-in activity with the
+scan.
 
 ## Queries for the 1-AAD_Scan Job
 
@@ -24,14 +24,14 @@ The 1-AAD_Scan job uses the AzureADInventory Data Collector for the following qu
 ### Configure the 1-AAD_Scan Query
 
 The 1-AAD_Scan Job is configured to run with the default settings with the category of Scan Entra
-ID. Follow the steps to customize configurations.
+ID. To customize configurations:
 
 **Step 1 –** Navigate to the **.Entra ID Inventory** > **1-AAD_Scan** > **Configure** node and
 select **Queries**.
 
 ![Query Properties button on Query Selection page](/images/accessanalyzer/11.6/solutions/entraidinventory/scanqueryselectionproperties.webp)
 
-**Step 2 –** In the Query Selection view, click on **Query Properties** to open the Query Properties
+**Step 2 –** In the Query Selection view, click **Query Properties** to open the Query Properties
 window.
 
 ![Query Properties window](/images/accessanalyzer/11.6/solutions/entraidinventory/scanqueryproperties.webp)
@@ -84,7 +84,7 @@ Navigate to the **.Entra ID Inventory** > **1-AAD_Scan** > **Configure** node an
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

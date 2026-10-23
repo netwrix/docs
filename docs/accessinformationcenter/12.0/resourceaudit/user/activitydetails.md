@@ -21,17 +21,15 @@ This report is comprised of the following columns:
 - Access Time – Date and timestamp for when the operation occurred
 - Resource – Resource type being accessed
 - Operation – Name of operation logged
-- Access – Whether the trustee was granted access to execute the operation: **Allowed** or
-  **Denied**
+- Access – The result of the operation: **Allowed** or **Denied**
 - Path – Original location where the operation occurred
-- Target Path – New location if changed by the operation. Blank if the operation does not result in
+- Target Path – New location if changed by the operation. Blank if the operation doesn't result in
   a new path.
 - Process Name – Name of the process which performed the operation
 - Originating Address – IP Address of the NAS host from where the activity event originated. Blank
   if the operation originated on a Windows host.
 
-There is one table at the bottom of the report displaying Permission Changes for the selected event.
-It contains details on the trustee whose permissions were updated, added, or removed.
+The Permission Changes table at the bottom of the report displays details on the trustee whose permissions were updated, added, or removed for the selected event.
 
 ![Permission Changes table](/images/accessinformationcenter/12.0/resourceaudit/user/activitydetailstable.webp)
 
@@ -46,7 +44,7 @@ This table is comprised of the following columns:
     - Remove – Permission removed from trustee
     - Update – Permission modified for trustee
 
-- Ace Type – Whether or not the right assigned is allowed or denied
-- Inheritance – Whether or not the Ace is inherited
+- Ace Type – Whether the right assigned is allowed or denied
+- Inheritance – Whether the Ace is inherited
 - Ace Flags – Inheritance flag description
 - Access Rights – Type of right assigned

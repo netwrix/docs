@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Cloud Tracker Reports
 
-Full overview of Reports, setup, scheduling, formatting and retention options are all covered in
-detail in the Change Tracker Admin Guide.
+The Change Tracker Admin Guide provides a full overview of reports, setup, scheduling, formatting,
+and retention options.
 
 An example of the Cloud Tracker Certified CIS Compliance Report:
 

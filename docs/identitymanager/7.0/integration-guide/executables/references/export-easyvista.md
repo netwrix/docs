@@ -14,7 +14,7 @@ The hardcoded entities named `Employees` can be fetched directly using the URL o
 
 ### Exporting entities by specifying attributes
 
-It is possible to export data by specifying the attribute names to fetch, for each exported table:
+Export data by specifying the attribute names to fetch for each exported table:
 
 ```json
 --url "https://test-fr-vp-01.easyvista-training.com" --login "usercube" --password "usercube2021" --connection-identifier "ConnectionEasyVista" --attributes "table1=[NAME_FR, LOGIN]|table2=[NAME_EN, PROFIL]|Employee=[EMPLOYEE_ID]"  --output-path "C:/EasyVistaExport" --account "{account}" --cookie-path "C:/EasyVistaExport" --log-level Verbose --fetching-urls "HTTPS://test-fr-vp-01.easyvista-training.com/api/v1/50011/internalqueries?queryguid={3226F4FE-F3FC-4301-965A-32E546707BD0}&filterguid={9F3146C5-4EE0-4D1A-A4B9-8DC87A63C4E4}&viewguid={99E2223F-C1E0-4A14-87E8-C39C14325C03}" "HTTPS://test-fr-vp-01.easyvista-training.com/api/v1/50011/internalqueries?queryguid={57667FCD-134B-48A7-A188-CE700EF02C15}&filterguid={B4B3A15D-1DE2-41B5-91A7-A8E8343784E1}&viewguid={DB9C013B-28E0-45C8-A4C2-79E7D43C5421}" --entity-names "table1" "table2"

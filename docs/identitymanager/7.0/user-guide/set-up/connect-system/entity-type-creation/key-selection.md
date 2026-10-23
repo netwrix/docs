@@ -6,13 +6,13 @@ sidebar_position: 30
 
 # Select Primary Keys
 
-How to choose its keys and an [Entity Type Mapping](../../../../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) key in order to uniquely identify the [Entity Type](../../../../integration-guide/toolkit/xml-configuration/metadata/entitytype)'s resources at different points in a resource's lifecycle.
+How to choose its keys and an [Entity Type Mapping](../../../../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) key to uniquely identify the [Entity Type](../../../../integration-guide/toolkit/xml-configuration/metadata/entitytype)'s resources at different points in a resource's lifecycle.
 
 ## Overview
 
-Here you will learn how to select keys from among the entity type's scalar properties, in order to ensure the unique identification of resources at different times.
+Here you will learn how to select keys from among the entity type's scalar properties, to ensure the unique identification of resources at different times.
 
-It is important to show caution when choosing the **mapping key** and **key properties** for a set of data. Every extracted resource must have unique keys in order to be uniquely identified in all IGA actions performed by Identity Manager.
+Show caution when choosing the **mapping key** and **key properties** for a set of data. Every extracted resource must have unique keys to be uniquely identified in all IGA actions performed by Identity Manager.
 
 ### **key properties**
 
@@ -29,10 +29,10 @@ The purpose of **key properties** is to uniquely identify a resource from the en
 > ```
 >
 > Identity Manager needs to know what column to query to find the right resource via
-> `CN=SG_APP_AG002...`. In this example we must choose `dn` as a key property because it is the `dn`
-> property we use to represent the AD resource.
+> `CN=SG_APP_AG002...`. In this example, choose `dn` as a key property because it is the `dn`
+> property used to represent the AD resource.
 
-**key properties** must be **unique and immutable**. They do not have to be immutable but they must enable resources to be uniquely identifiable at t time.
+**key properties** must be **unique and immutable**. They don't have to be immutable but they must enable resources to be uniquely identifiable at t time.
 
 > The `dn` attribute of a resource in the Active Directory usually depends on the resource's
 > position, which often changes during the resource's lifecycle. However, `dn` is unique at a given
@@ -42,10 +42,10 @@ Only one key property is required, but using several **key properties** can some
 
 > For example, the AD's unique identifier is `objectGuid`. However, integrators may prefer to use
 > `dn` because it constitutes a clearer group identification from a user's point of view. Plus,
-> `objectGuid` is environment-specific so using it can complexify a situation where we want to move
-> the configuration from an environment to another.
+> `objectGuid` is environment-specific so using it can complicate moving
+> the configuration from one environment to another.
 >
-> Since an `objectGuid` can still be an interesting identifier, we want to have both the `dn` and
+> Since an `objectGuid` can still be an interesting identifier, use both the `dn` and
 > the `objectGuid` as **key properties**. In this case, Identity Manager will be able to fetch a
 > resource in a rule using said resource's `dn` or `objectGuid`.
 
@@ -53,7 +53,7 @@ Only one key property is required, but using several **key properties** can some
 
 The **mapping key** is also chosen from among scalar properties, and serves to uniquely identify any resource during the [Synchronize Data](../../../../user-guide/set-up/synchronization). It must be **unique and immutable**, i.e. must not change during the whole lifecycle of the resource.
 
-> A **mapping key** cannot be based on properties subject to change, such as the display name of any
+> A **mapping key** can't be based on properties subject to change, such as the display name of any
 > object, or users' title which could be renamed.
 >
 > For example, resources from the AD are usually identified through the `objectGuid` attribute which
@@ -70,7 +70,7 @@ Commonly used mapping keys are:
 - `sys_id` for ServiceNow
 - `EmployeeId` for the HR
 
-Since the mapping is able to uniquely identify any resource, NETWRIX recommends that your **mapping key** is always part of your **key properties**.
+Since the mapping can uniquely identify any resource, NETWRIX recommends that your **mapping key** is always part of your **key properties**.
 
 ## Select the Entity Type's Keys
 
@@ -82,11 +82,11 @@ Create an entity type by proceeding as follows:
 
 2. In the entity type's **Properties** section, choose the **key properties**.
 3. Choose the **mapping key**.
-4. Click on **Create & Close** > **Create** to save your changes.
+4. Click **Create & Close** > **Create** to save your changes.
 
 ## Reload
 
-Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You do not need to click on the button every time. It is essential though to reload after the final changes are made.
+Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You don't need to click the button every time. It is essential though to reload after the final changes are made.
 
 ![Reload](/images/identitymanager/entitytypecreation_reload_v522.webp)
 

@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # NIS: NIS Query
 
-The NIS Query page is where the NIS query regular expressions are configured and tested. It is a
+Use the NIS Query page to configure and test NIS query regular expressions. It is a
 wizard page for the category of:
 
 - Custom NIS Scan
@@ -18,7 +18,7 @@ The Data Source configuration options are:
 - NIS Map – Specify the name of the NIS map to query
 - Load Data – Fetches the first 50 rows of data of the specified NIS map from the test host
 - Paste Data – Uses text from the clipboard as the test data source
-- Open File – Allows using a text file as test data. The test data is shown in the preview box.
+- Open File – Allows using a text file as test data. The preview box shows the test data.
 
 The Query Expressions configuration options are:
 

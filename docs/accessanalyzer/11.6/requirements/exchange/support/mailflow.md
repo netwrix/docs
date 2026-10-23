@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The ExchangeMetrics Data Collector collects Mail-Flow metrics from the Exchange Message Tracking
 Logs on the Exchange servers. Some examples of this include server volume and message size
-statistics. This data collector utilizes an applet to process and collect summarized metrics from
+statistics. This data collector uses an applet to process and collect summarized metrics from
 the Message Tracking Log.
 
 1. HUB Metrics Job Group Requirement
@@ -17,7 +17,7 @@ In addition to the permissions required by the ExchangeMetrics Data Collector, t
 Profile assigned to the 1. HUB Metrics Job Group requires the following permission and User Rights
 (based on default settings):
 
-- Member of the local Administrator group on the targeted Exchange server(s) where the Hub Transport
+- Member of the local Administrator group on the targeted Exchange servers where the Hub Transport
   service is running
 - Log on as a Service Group Policy:
 
@@ -30,7 +30,7 @@ Profile assigned to the 1. HUB Metrics Job Group requires the following permissi
 This is required because the ExchangeMetrics Data Collector is an applet-based data collector. It
 requires
 
-- Member of the local Administrator group on the targeted Exchange server(s)
+- Member of the local Administrator group on the targeted Exchange servers
 
 This grants access to the Message Tracking Logs and the ability to create the
 `SA_ExchangeMetricsData` folder, which will contain the applet files and the processed message
@@ -39,7 +39,7 @@ tracking log files stored inside a SQLite database for each day. For example:
 \\ExchangeServerName\c$\Program Files\Microsoft\Exchange
 Server\V14\TransportRoles\Logs\MessageTracking
 
-If there have been additional security or permission modifications on the server(s), the following
+If there have been additional security or permission modifications on the servers, the following
 rights and policies may need to be enabled on the targeted host:
 
 - Ensure the Administrator group has been granted Full Control over Message Tracking Log Directories

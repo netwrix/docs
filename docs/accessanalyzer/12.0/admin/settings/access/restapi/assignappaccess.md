@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Assign Application Access through the Web Service
 
-An application can be assigned to access data remotely through the Web Service. Follow the steps to
-assign roles in the Console.
+An application can be assigned to access data remotely through the Web Service. Assign roles in the
+Console:
 
 ![Add Access option on Access page](/images/accessanalyzer/12.0/admin/settings/access/rolebased/addaccess.webp)
 
@@ -50,11 +50,11 @@ name** box to filter the list of objects by the characters entered.
 app token.
 
 - Application name – The name of the application accessing that data
-- Access Expiration – The expiration for the client secret. Select an option for the desired access
-  expiration:
+- Access Expiration – The expiration for the client secret. Select the access expiration option
+  you want:
 
-    - Access expires within – Select a time frame from the drop-down list. The default is 72 hours.
-    - Access expires on specified date – Select a date from the drop-down list
+    - Access expires within – Select a time frame from the dropdown list. The default is 72 hours.
+    - Access expires on specified date – Select a date from the dropdown list
 
 - Generate – Click this button to generate the Client ID and Client secret
 - Client ID – Copy the Client ID into the application accessing data remotely through the Web

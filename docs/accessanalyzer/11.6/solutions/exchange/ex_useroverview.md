@@ -15,7 +15,7 @@ environment.
 
 **Dependencies**
 
-The following job groups need to be successfully run prior to this job:
+The following job groups need to be successfully run before this job:
 
 - **.Active Directory Inventory** Job Group
 - **.Entra ID Inventory** Job Group
@@ -27,8 +27,7 @@ The following job groups need to be successfully run prior to this job:
 
 **Schedule Frequency**
 
-It is recommended to run this job daily after running its dependencies, but it can be scheduled to
-run as desired.
+Run this job daily after running its dependencies, or schedule it to run as needed.
 
 ## Analysis Tasks for the EX_Mailflow_UserOverview Job
 
@@ -36,7 +35,7 @@ View the analysis task by navigating to the **Exchange** > **EX_UserOverview** >
 and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

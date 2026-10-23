@@ -25,14 +25,14 @@ See the [appsettings.agent](../../../integration-guide/network-configuration/age
 
 ### Configuration
 
-To configure the Okta connector it is necessary to:
+To configure the Okta connector, you must:
 
 **Step 1 –** Create a new user for Netwrix Identity Manager (formerly Usercube).
 
-In order to do so you must connect to the Okta administration console `https://myexample-admin.okta.com` and create a new Netwrix Identity Manager (formerly Usercube) user.
+To do so you must connect to the Okta administration console `https://myexample-admin.okta.com` and create a new Netwrix Identity Manager (formerly Usercube) user.
 
 :::note
- For some Okta deployments it is possible to create a service account or to Manage an Okta user account as a service account. 
+ For some Okta deployments, you can create a service account or manage an Okta user account as a service account. 
 :::
 **Step 2 –** Assign administrator role and permissions to the Netwrix Identity Manager (formerly Usercube) user.
 
@@ -48,7 +48,7 @@ This connector exports a list of users, groups, applications with their attribut
 
 This process is configured through a connection in the UI and/or the XML configuration, and in the appsettings.agent.json > Connections section.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -71,7 +71,7 @@ The identifier of the connection and thus the name of the subsection must:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -95,7 +95,7 @@ appsettings.agent.json
 
 ### Output details
 
-This connector can create, delete and update users, groups and applications, and is meant to generate the following to the ExportOutput folder :
+This connector can create, delete, and update users, groups, and applications, and is meant to generate the following to the ExportOutput folder :
 
 - A CSV file, named `<connectionIdentifier>`\_users.csv, with one column for each property either
 having a ConnectionColumn or which is used in an entity association;
@@ -110,7 +110,7 @@ either having a ConnectionColumn or which is used in an entity association;
 
 For example, with the following entity type mapping for users:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <EntityType Identifier="User" DisplayName_L1="User">
@@ -146,7 +146,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 And the following entity type mapping for groups:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
   <EntityType Identifier="Group" DisplayName_L1="Group">
@@ -173,7 +173,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 And the following entity type mapping for applications:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
  <EntityType Identifier="Application" DisplayName_L1="Application">
@@ -195,7 +195,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
   </EntityTypeMapping>
 ```
 
-Then we will have `C:/identitymanagerContoso/Sources/OktaExportFulfillment_users.csv` as follows:
+The output file `C:/identitymanagerContoso/Sources/OktaExportFulfillment_users.csv` looks like this:
 
 ```text
 id, status, created, activated, statusChanged, lastLogin, lastUpdated, passwordChanged, type.id, profile.city, profile.costCenter, profile.countryCode, profile.department, profile.displayName
@@ -215,7 +215,7 @@ id, created, lastUpdated, status, name, label
 
 ### Fulfill
 
-The Okta connector writes to Okta to create, update and delete entries, initiated manually through the UI or automatically by enforcing the policy. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
+The Okta connector writes to Okta to create, update, and delete entries, initiated manually through the UI or automatically by enforcing the policy. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
 
 ### Configuration
 
@@ -223,7 +223,7 @@ Same as for export, fulfill is configured through connections.
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -250,5 +250,5 @@ Data protection can be ensured through:
 the appsettings.encrypted.agent.json file
 - An [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection)
 - A [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection)Vault able to
-store Okta Login, Password, Account and Server.
+store Okta Login, Password, Account, and Server.
 

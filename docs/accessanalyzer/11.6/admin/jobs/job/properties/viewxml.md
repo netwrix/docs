@@ -14,7 +14,7 @@ At the bottom of the Job Properties window is the **View XML** button. To view t
 | Job Properties Window                                                                                                                                 | Job XML File                                                                                                           |
 
 This opens the job’s XML file, which contains all of the job, query, and reporting configurations.
-When the log level is directly set at job level, the job XML `<JOBLOGLEVEL>` parameter will show a
+When you directly set the log level at job level, the job XML `<JOBLOGLEVEL>` parameter shows a
 value of:
 
 - 0 for Debug
@@ -23,6 +23,6 @@ value of:
 - 3 for Error
 
 :::note
-Job analysis configurations are kept in a separate XML file.
+Enterprise Auditor keeps job analysis configurations in a separate XML file.
 
 :::

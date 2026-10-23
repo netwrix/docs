@@ -6,11 +6,11 @@ sidebar_position: 20
 
 # EX_MetricsCollection Job
 
-The EX_MetricsCollection Job is comprised of multiple queries that utilize the ExchangeMetrics Data
+The EX_MetricsCollection Job is comprised of multiple queries that use the ExchangeMetrics Data
 Collector to process and collect the message tracking logs on the Exchange servers in the
 environment. These queries collect server, domain, user, and distribution list traffic including but
-not limited to: sent, received, journal, NDRs, and transports messages. These queries are configured
-to process and collect that previous 7 days of Message Tracking Logs the first time this job is run,
+not limited to: sent, received, journal, NDRs, and transport messages. These queries are configured
+to process and collect the previous 7 days of Message Tracking Logs the first time this job is run,
 after that it only collects the previous day unless the **Enable Persistent Log State** option has
 been enabled in the query.
 
@@ -45,7 +45,7 @@ View the analysis tasks by navigating to the **Exchange** > **1. HUB Metrics** >
 **EX_MetricsCollection** > **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -56,7 +56,7 @@ The following analysis tasks are selected by default:
 
 -   **1. Delivery Times History** – Creates the SA_ExhangeMetrics_DeliveryTimes table, accessible under
        the job’s Results node
--   **2. DL History** – Creates the SA*EX* ExhangeMetrics_DistributionLists table, accessible under the
+-   **2. DL History** – Creates the SA_EX_ExhangeMetrics_DistributionLists table, accessible under the
        job’s Results node
 -   **3. Internet Traffic History** – Creates the SA_EX_ExhangeMetrics_InternetTraffic table, accessible
        under the job’s Results node
@@ -78,7 +78,7 @@ The following analysis task deletes table data from data collection and analysis
 task should remain deselected unless specifically needed:
 
 :::warning
-Do not select the **00. Deletes all Stored Data** option. This analysis task is for
+Don't select the **00. Deletes all Stored Data** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database.
 :::
 
@@ -92,8 +92,8 @@ troubleshooting and cleanup only. Data will be deleted from the database.
 
 The **08. SET HISTORY RETENTION** analysis task controls the retention period for the job’s data.
 This is why the Data Retention Period options at the global, job group, or job Properties settings
-are not supported for the job group. The number of months can be modified. If desired, the parameter
-can be set to a specified number of days. Follow these steps to modify the history retention period.
+aren't supported for the job group. The number of months can be modified. If desired, the parameter
+can be set to a specified number of days. To modify the history retention period:
 
 **Step 1 –** Navigate to the job’s **Configure** node and select **Analysis**.
 
@@ -132,17 +132,17 @@ The modified history retention period is now applied during future job execution
 
 ## Troubleshooting Data Collection
 
-There might be times when it is necessary to purge the data either through dropping the tables from
-the database or truncating the data within the tables. This option is provided through ananalysis
-task that is not selected by default. Only one analysis task within a job should be enabled when the
-desire is to purge that database.
+There might be times when you need to purge the data either by dropping the tables from
+the database or by truncating the data within the tables. This option is provided through an analysis
+task that isn't selected by default. Enable only one analysis task within a job when you want to
+purge that database.
 
 :::warning
 This analysis task deletes information collected or produced by jobs in this solution.
 :::
 
 
-Follow these steps to troubleshoot data collection:
+To troubleshoot data collection:
 
 **Step 1 –** Navigate to the job’s **Configure** node and select **Analysis**.
 
@@ -159,9 +159,9 @@ Remember, only one task should be selected.
 **Step 3 –** In the Navigation pane, right-click the **Analysis** node and select **Execute
 Analyses**.
 
-**Step 4 –** After the analysis task has been executed, return to the Analysis Selection view.
-Deselect the analysis task which was executed and reselect the default analysis tasks (if any had
-been cleared in Step 2).
+**Step 4 –** After you run the analysis task, return to the Analysis Selection view.
+Deselect the analysis task you ran and reselect the default analysis tasks (if any were
+cleared in Step 2).
 
-The selected purge of data and tables has taken place, and the analysis tasks have been reset to the
+The selected purge of data and tables is complete, and the analysis tasks are reset to the
 default state.

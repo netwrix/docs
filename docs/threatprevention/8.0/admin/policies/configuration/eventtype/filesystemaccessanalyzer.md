@@ -24,7 +24,7 @@ like an "ALL" for that filter set.
 This event type is specifically designed to capture Windows file system activity events for
 consumption by Netwrix Access Analyzer (formerly Enterprise Auditor), formerly StealthAUDIT.
 
-These events are not captured in the Threat Prevention database, but are collected in a data file
+These events aren't captured in the Threat Prevention database, but are collected in a data file
 that can be read by the File System collection. See the File System Solution topic in the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 information on this collection component.
@@ -55,10 +55,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -88,7 +88,7 @@ Agents/Domains list on the right displays Agents and domains included in the pol
   - The double arrows will move all items to the other list.
 
 :::note
-There is no impact if a selected path does not exist on the server where an Agent resides.
+There is no impact if a selected path doesn't exist on the server where an Agent resides.
 :::
 
 
@@ -115,7 +115,7 @@ the activity logs.
 - In the [Number] **Days to Retain Log** box, specify a number to indicate the number of days the
   logs remain before Threat Prevention deletes them.
 - In the Exclude Processes area, specify any processes that should be excluded from being monitored
-  by this policy. Type the process in the Exclude Processes textbox. You must enter a process name
+  by this policy. Enter the process in the Exclude Processes textbox. You must enter a process name
   exactly as is; for example, as it appears on the Details tab of Windows Task Manager. For example,
   to exclude the Windows Explorer actions like opening and closing of files, enter ‘explorer.exe’ in
   the textbox.
@@ -134,4 +134,4 @@ Use the buttons above the Exclude Perpetrators and Exclude Collections areas to 
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.

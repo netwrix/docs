@@ -32,7 +32,7 @@ steps to add an account.
 
 ![Select User, Service Account, or Group window](/images/accessanalyzer/12.0/admin/report/wizard/addreportviewer.webp)
 
-**Step 2 –** On the Select User, Service Account or Group window, select the desired account and
+**Step 2 –** On the Select User, Service Account or Group window, select the account you want and
 then click **OK**.
 
 ![Report Viewer user added in wizard](/images/accessanalyzer/12.0/admin/report/wizard/reportviewer.webp)
@@ -40,7 +40,7 @@ then click **OK**.
 The selected account is added to the list with a Role of Report Viewer.
 
 :::note
-The permission for accounts that are not Inherited can also be removed using the wizard.
+The permission for accounts that aren't Inherited can also be removed using the wizard.
 To remove an account, select it and then click **Remove**.
 
 :::

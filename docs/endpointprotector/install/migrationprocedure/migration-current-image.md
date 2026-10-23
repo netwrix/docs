@@ -4,12 +4,12 @@ description: "Netwrix Endpoint Protector — migrating a 2509–2604 image-based
 sidebar_position: 13
 ---
 
-<small><em>Document version: 1.0</em></small>
+<small><em>Document version: 1.2</em></small>
 
 ---
 
 :::note
-This article covers on-premises EPP Servers already running the current image-based platform — any version from **2509 through 2604**. If your server is still on a legacy 5.x release (5.7.0.0–5.9.4.2), see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) instead. For the full picture and how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
+This article covers on-premises Endpoint Protector (EPP) Servers already running the current image-based platform — any version from **2509 through 2604**. If your server is still on a legacy 5.x release (5.7.0.0–5.9.4.2), see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) instead. For an overview of how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
 :::
 
 ## Overview
@@ -20,14 +20,11 @@ Since you're already on the image-based platform, migrating to 2608 doesn't requ
 
 | Your Current Version | Recommendation |
 |---|---|
-| 2509, 2510, 2601, 2602 | Upgrade to **2604 first** (recommended), then migrate to 2608 — a direct restore from your current version also works |
-| **2604** | Migrate directly to 2608 — this is the best-tested path |
+| 2509, 2510, 2601, 2602, or 2604 | Migrate directly to 2608 — you don't need an intermediate version |
 
 :::tip
-2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. However, Netwrix recommends upgrading to **2604** before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs. Netwrix has tested other source versions in that range less extensively for this specific migration.
+2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. It's still good practice to upgrade to 2604 before migrating, since Netwrix labs validate the 2604 → 2608 path most thoroughly.
 :::
-
-If you're not yet on 2604, apply the 2604 cumulative patch through **Dashboard → Live Update** (or the Offline Patch Uploader for air-gapped environments) before continuing with this article.
 
 ---
 
@@ -44,16 +41,16 @@ If your current license includes the `php_els` field (used on the 2509–2604 im
 **Verified compatible hypervisors:**
 - VMware vSphere
 - VMware ESXi
-- Microsoft Hyper-V
+- Microsoft Hyper-V (Windows Server 2019 or later)
 - AWS, Azure, GCP (cloud deployments — snapshot behavior differs per provider)
 - Proxmox VE — not officially supported; see the following note
 
 :::note
-**Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after manually adjusting networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
+**Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after you manually adjust networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
 :::
 
 :::warning
-The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2509/2510/2604. Verify Ubuntu 26.04 LTS guest support with your hypervisor vendor before scheduling a migration maintenance window.
+The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS that 2509/2510/2604 use. Verify Ubuntu 26.04 LTS guest support with your hypervisor vendor before scheduling a migration maintenance window.
 :::
 
 :::tip
@@ -85,7 +82,7 @@ The 2608 image adds CrateDB, which may raise the minimum disk, RAM, and CPU base
 :::
 
 :::tip
-If disk space is below 30%, perform database shrinking via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. To export logs, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
+If disk space is below 30%, shrink the database via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. To export logs, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
 :::
 
 ### Maintenance Window Planning
@@ -100,8 +97,8 @@ Plan a maintenance window that accounts for the following:
 
 These times reflect laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
 
-**During the upgrade window, the following will be unavailable:**
-- EPP/EE client communication with the server
+**During the upgrade window, you won't have:**
+- EPP and Enforced Encryption (EE) client communication with the server
 - Email alerts and SIEM integrations
 - File Shadow and log generation
 
@@ -110,7 +107,7 @@ EPP clients continue logging events locally during server downtime. The server r
 :::
 
 :::tip
-In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, allowing the server to focus on the upgrade and ensuring no logs remain unprocessed in the queue. You can disable client communications in several ways:
+In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, so the server can complete the upgrade and no logs remain unprocessed in the queue. You can disable client communications in several ways:
 - Blocking the EPP communication port on the perimeter or host-based firewall
 - Blocking the port at the virtual machine network stack level (vSwitch port group policy, NSX rule, or equivalent)
 
@@ -119,7 +116,7 @@ Re-enable communications after you verify the upgraded server and it's ready to 
 
 ### VM Snapshot and Backup
 
-**This step is non-negotiable. Don't proceed without completing both.**
+**This step is mandatory. Don't proceed without completing both.**
 
 :::note
 VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot leaves you with no rollback path — if a failure occurs, recovery may be impossible, and Netwrix Support can't help restore the environment.
@@ -133,6 +130,14 @@ In AWS, the system queues snapshots and doesn't take them instantly. Verify the 
 
 :::tip
 Keep the VM snapshot active until you have fully validated the new 2608 environment and are ready to decommission the old server. This is your rollback path.
+:::
+
+:::warning
+Disable Two-Factor Authentication (2FA) for all administrator accounts before you create the
+System Configuration Backup in Step 2. Re-enable 2FA only after you restore the backup and confirm
+the new 2608 server works correctly — see
+[Re-Enabling Two-Factor Authentication](#re-enabling-two-factor-authentication) in Post-Migration
+Verification.
 :::
 
 **Step 2 — Create a System Configuration Backup (in the EPP Console):**
@@ -164,11 +169,15 @@ The System Configuration Backup doesn't include logs and file shadows — and Cr
 If your organization has compliance requirements for data retention (e.g., GDPR, HIPAA, SOX), never decommission the old server until you have confirmed that an alternative solution (SIEM, external export) meets log retention requirements.
 :::
 
+### Obtaining the Offline Activation Patch
+
+To activate Content Aware Protection or eDiscovery on the 2608 server, you need the Offline Activation Patch for 2608. Request it in advance from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html), before the maintenance window begins. Servers on version 2611.0.1.x and later don't need the patch.
+
 ### Pre-Migration Checklist Summary
 
 | # | Task | Status |
 |---|---|---|
-| 1 | On 2604, or accepting that 2509/2510/2601/2602 as a source is less extensively tested | ☐ |
+| 1 | Current server version confirmed as 2509, 2510, 2601, 2602, or 2604 | ☐ |
 | 2 | VM snapshot created and confirmed | ☐ |
 | 3 | System backup created and key saved | ☐ |
 | 4 | Backup file downloaded to secure location | ☐ |
@@ -178,6 +187,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 | 8 | Appliance → Server Information screenshot taken | ☐ |
 | 9 | EPP Client 2608 packages downloaded | ☐ |
 | 10 | Enforced Encryption (EE) Client 2608 packages downloaded (if applicable) | ☐ |
+| 11 | Offline Activation Patch for 2608 obtained from Netwrix Endpoint Protector Support | ☐ |
 
 ---
 
@@ -217,11 +227,11 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 | High server load | Certificate regeneration for all endpoints creates a burst load spike |
 
 :::warning
-If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
+If you use Enforced Encryption and change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
 :::
 
 :::warning
-If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, reviewing your SSO configuration after the backup is restored is mandatory. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
+If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, you must review your SSO configuration after you restore the backup. SSO response/callback URLs include the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case so Netwrix Support updates it on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
 :::
 
 ### Deploying the 2608 Base Image
@@ -235,16 +245,17 @@ If you use SSO (Single Sign-On) and choose a different IP address instead of an 
 
 4. Power on the new VM and access the console at `https://<new-ip-or-fqdn>:443`.
 
-### Temporarily Disabling Client Communications
+### Blocking Client Connectivity to the New Server
 
-Immediately after you provision the new VM and it's reachable, disable client communications before performing any further configuration. This prevents endpoints from discovering and connecting to the new server while you're still preparing it.
+Immediately after you provision the new VM and it's reachable, consider blocking client connectivity to it before performing any further configuration. This prevents endpoints from discovering and connecting to the new server while you're still preparing it.
 
-1. Log in to the new server console.
-2. Navigate to **System Configuration → System Settings**.
-3. Disable client communication.
+How you do this depends on how you host and manage your environment. Options include:
+- Disabling routing to the new server's IP address
+- Disconnecting the physical or virtual network cable until you're ready
+- Blocking the relevant EPP communication port at your perimeter or host-based firewall
 
 :::tip
-Disabling client communications prevents endpoints from registering with an incomplete server configuration. Re-enable only after the full restoration and verification is complete.
+Blocking client connectivity prevents endpoints from registering with an incomplete server configuration. Restore connectivity only after the full restoration and verification is complete.
 :::
 
 ### Activate Trial License on a Newly Deployed Image
@@ -254,6 +265,10 @@ After successful activation, you should see a green banner at the top.
 
 ![EPP License Trial activation](licensetrialactivation.webp)
 
+:::tip Apply the Offline Activation Patch first
+To activate Content Aware Protection or eDiscovery on the new server, first apply the Offline Activation Patch that matches your server version, which is 2608 for this migration. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
+:::
+
 ### Restoring Your Backup onto 2608
 
 1. Log in to the **2608 server console**.
@@ -262,7 +277,7 @@ After successful activation, you should see a green banner at the top.
 
 ![System Maintenance → System Backup v2 — Import and Restore (Migrate) button](backup_v2_import.webp)
 
-4. In the wizard, select the backup file you created from your 2604 (or 2509/2510/2601/2602) server.
+4. In the wizard, select the backup file you created from your current server (2509, 2510, 2601, 2602, or 2604).
 5. Enter the **System Backup Key** you saved during backup creation.
 6. Click **Import**.
 
@@ -299,6 +314,10 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 
 If the license doesn't show as active, or entitlements look incorrect, contact Netwrix Support or your account team before continuing.
 
+:::tip Apply the Offline Activation Patch first
+To activate Content Aware Protection or eDiscovery on the new server, first apply the Offline Activation Patch that matches your server version, which is 2608 for this migration. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
+:::
+
 ---
 
 ## Post-Migration Verification
@@ -313,13 +332,18 @@ Complete all items in this checklist after you finish the migration.
 | Server responds to browser access | `https://<server>:443` loads normally |
 | License imported successfully and active | System Configuration → System Licensing |
 
-### Re-Enabling Client Communications
+### Re-Enabling Two-Factor Authentication
+
+After you confirm the new server works correctly (responds normally, license is active, and
+endpoints check in), re-enable Two-Factor Authentication (2FA) for each administrator account you
+disabled before migration.
+
+### Restoring Client Connectivity
 
 After you verify the restore and upload the client packages (see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade)):
 
-1. Navigate to **System Configuration → System Settings**.
-2. Re-enable client communications.
-3. Monitor **Device Control → Computers** — endpoints should begin checking in within their configured communication interval.
+1. Reverse whichever method you used to block client connectivity to the new server (re-enable routing, reconnect the network cable, or remove the firewall rule).
+2. Monitor **Device Control → Computers** — endpoints should begin checking in within their configured communication interval.
 
 ### Endpoint Communication Check
 
@@ -340,16 +364,51 @@ Verify each active module:
 | Content Aware Protection | Content Aware Protection → Dashboard |
 | eDiscovery | eDiscovery → Dashboard |
 | Enforced Encryption | Check that EE-protected drives are accessible |
-| Reports & Analytics | Reports and Analytics → relevant sub-service |
+| Reports and Analysis | Reports and Analysis → relevant sub-service |
 | Alerts | Check that configured alerts are firing |
 
 :::tip
 Generate deliberate test events on a known test machine for each active module. For example: plug in a USB drive (Device Control), transfer a file with sensitive content (CAP), run an eDiscovery scan. Confirm the events appear in the console before declaring the migration complete.
 :::
 
+### eDiscovery Scan Locations Verification
+
+:::warning
+If you restore an eDiscovery policy with configured **Scan Locations** from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead, without reporting an error anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
+:::
+
+If you use eDiscovery with Scan Locations configured on any policy, this check is mandatory after restore:
+
+1. Navigate to **eDiscovery** and open each policy that defines Scan Locations.
+2. Edit and save the policy — even without changing anything — to re-apply the Scan Locations.
+3. Run a scan and confirm it targets only the configured Scan Locations, not the full disk.
+
+### CAP Policy Verification
+
+:::note
+In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, without reporting an error.
+:::
+
+If you use Content Aware Protection, Netwrix recommends this check after restore:
+
+1. Test each active CAP policy against a known-blocked transfer to confirm it still triggers.
+2. If a policy doesn't trigger, open it, edit it, and save it — even without changing anything — to redistribute it to endpoints.
+3. Re-test to confirm the policy now triggers correctly.
+
+### Denylists and Allowlists Dictionary Verification
+
+After migration, verify that Denylists and Allowlists dictionaries imported correctly and that
+policies relying on them still work as expected.
+
+1. Navigate to **Denylists and Allowlists** and review each dictionary for correct content.
+2. Test each policy that relies on a Denylist or Allowlist dictionary to confirm it still applies
+   correctly.
+3. If a dictionary doesn't display or apply correctly, export it from the old server (if still
+   available) and re-upload it to the new server, then re-test.
+
 ### DPI / CAP Functionality Verification
 
-If using Deep Packet Inspection or Content Aware Protection:
+If you use Deep Packet Inspection or Content Aware Protection:
 
 1. Verify endpoints trust the root CA certificate.
 2. Test a known-blocked transfer to confirm CAP policy is active.
@@ -360,6 +419,33 @@ If using Deep Packet Inspection or Content Aware Protection:
 1. Navigate to **System Maintenance → System Backup**.
 2. Verify that backups are configured and active.
 3. Run a test backup and confirm **"Ready to download"** status.
+
+### Log Retention Verification
+
+:::warning
+**This is a behavior change from earlier server versions.** Endpoint Protector 2608 introduces
+automatic, age-based log rotation for Device Control, Content Aware Protection, and eDiscovery
+logs. Earlier versions kept these logs indefinitely unless an administrator deleted them manually.
+After migration, Endpoint Protector enables this setting by default at three months and
+automatically deletes logs older than three months, together with their associated file shadows.
+Endpoint Protector deletes logs already older than the configured period on the first rotation
+cycle after the server starts, so export anything you want to keep before you migrate.
+:::
+
+After migration, verify:
+1. Navigate to **System Configuration → System Settings → Log Settings**.
+2. Check the value configured for **Enable Log Rotate After**.
+3. Confirm the configured retention period matches your organization's operational and compliance
+   needs. Adjust the value if three months doesn't match your retention policy. The value is in
+   months, from 1 to 360 — there's no option to disable log rotation entirely.
+
+For the full description of this setting, see [Log Settings](/docs/endpointprotector/admin/systemconfiguration/systemsettings#log-settings).
+
+:::tip
+If you need to retain log data for compliance beyond your configured retention period, export it
+regularly through **Reports and Analysis** → **Export Logs** and store the exports separately.
+Exports also keep the server's log tables smaller, which helps console and report performance.
+:::
 
 ### Third-Party Integration Reconfiguration
 
@@ -390,9 +476,9 @@ After reconfiguration, verify each integration is functioning:
 | AWS / S3 / File Shadows | Generate a file shadow; confirm it reaches the S3 bucket |
 
 :::warning
-**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after the backup is restored. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until this is corrected. You have two options:
+**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after you restore the backup. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until you correct it. You have two options:
 1. Manually recreate the SSO configuration in **System Configuration → SSO / Single Sign-On** with the updated response/callback URL, and update the corresponding redirect URI in your identity provider.
-2. Raise a Netwrix Support case to have the SSO configuration updated on the backend.
+2. Raise a Netwrix Support case so Netwrix Support updates the SSO configuration on the backend.
 :::
 
 :::warning

@@ -17,7 +17,7 @@ The profile page has the same tabs as the user properties page. Refer to the inf
 If profile validation applies to you, then you must verify and update your profile information in
 the directory using the Directory Manager portal.
 
-Profile validation is not a one-time process; rather, the administrator specifies a profile
+Profile validation isn't a one-time process; rather, the administrator specifies a profile
 validation life cycle period (for example, 90 days), which implies that you must validate your
 profile once during each 90-day cycle.
 
@@ -29,5 +29,5 @@ On your profile page, your profile validation status is displayed next to your n
     Click **Validate Your Profile** on the toolbar. The Validate Profile Properties window is
     displayed, where you can validate your profile.
 
-- The status, Expired User, indicates that a user has expired because he or she did not validate his
+- The status, Expired User, indicates that a user has expired because he or she didn't validate his
   or her profile within the required duration. An expired user is disabled in the directory.

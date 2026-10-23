@@ -16,9 +16,9 @@ permissions and manage existing users. Review the following for additional infor
 
 ## Authentication Mechanisms
 
-On first install the QS will be configured for Windows authentication. To setup the QS to use an
-ADFS server please follow the "Installation and Configuration" guide using the section "ADFS". To
-use forms based authentication please disable all other authentication methods in IIS other than:
+On first install the QS will be configured for Windows authentication. To set up the QS to use an
+ADFS server, follow the "Installation and Configuration" guide using the section "ADFS". To
+use forms based authentication, disable all other authentication methods in IIS other than:
 Anonymous and Forms:
 
 To use the authentication forms:
@@ -40,7 +40,7 @@ To use the authentication forms:
 
     ![iis_thumb_0_0](/images/dataclassification/5.6.2/security/iis_thumb_0_0.webp)
 
-3.  If you wish to allow anonymous access to the conceptQS, edit the conceptQS web.config file and
+3.  To allow anonymous access to the conceptQS, edit the conceptQS web.config file and
     delete (or comment out) three lines:
 
         <!-- The following 3 lines are required for Windows Authentication. Remove to allow anonymous access to
@@ -55,14 +55,14 @@ To use the authentication forms:
 
     If these lines are present then users will be required to login using their Windows credentials.
 
-To utilize Azure AD simply create the client application then add two new appSettings to the
+To use Azure AD, create the client application and add two new appSettings to the
 web.config found in the QS directory:
 
 - `<add key=”ida:AzureClientId” value=”NewAzureADClientID (GUID)” />`
 - `<add key=”ida:AzureAuthority” value=”AzureADAuthorityValue such as: https://login.windows.net/mytenant.onmicrosoft.com” />`
 
 The Netwrix Data Classification REST APIs also support Bearer based authentication, to enable this
-mode please add one further appSetting entry into the web.config file:
+mode, add one further appSetting entry into the web.config file:
 
 - `<key=”ida:AzureTenant” value=”Tenant Name such as: netwrix.com” />`
 
@@ -76,16 +76,15 @@ see Advanced options can enable this by:
 
 ## Adding/Removing Users
 
-More users can be added at any time from the default Users screen, as well as allowing for users to
-be removed.
+Add or remove users at any time from the default Users screen.
 
 ![adduser](/images/dataclassification/5.6.2/security/adduser.webp)
 
-Additional Windows users can be validated using Integrated Windows Authentication. Additional
-non-Windows users can only be added if the Non-Windows Authentication mode is enabled.
+Validate additional Windows users using Integrated Windows Authentication. Add additional
+non-Windows users only if you enable Non-Windows Authentication mode.
 
-If the only user defined is a Super User and that user is deleted then all security is removed and
-usage of the QS administrative functions reverts to unrestricted.
+If you delete the only defined Super User, all security is removed and
+the QS administrative functions become unrestricted.
 
 User accounts granted access to the REST APIs will still be restricted by their specific user
 permissions. A Superuser with REST API access will be able to run any API method, any normal user
@@ -94,20 +93,19 @@ be found at: /conceptQS/_api
 
 ## Permission Management
 
-In order to allocate granular permissions to a user (non-Super Users), simply select their username
+To allocate granular permissions to a user (non-Super Users), select their username
 from the main grid.
 
-Each tab contains a top level checkbox (“Allow Access”) which defines whether or not a user has
+Each tab contains a top level checkbox (“Allow Access”) which defines whether a user has
 access to each of the top level administrative areas.
 
-When an area is enabled there are typically more granular permissions that can be enabled, such as:
+When you enable an area, more granular permissions typically become available, such as:
 
-- Within the Taxonomies area it is also possible to assign permissions at a specific Term Set or
-  Term branch level. A full user permission summary (for all Term/Set level permissions) can be
-  viewed by selecting the View Taxonomy Permissions button (shown below).
-- Within the Sources area it is possible to restrict a user’s access to specific source groups, as
-  shown
-  below.![userpermissions_thumb_0_0](/images/dataclassification/5.6.2/security/userpermissions_thumb_0_0.webp)
+- Within the Taxonomies area, you can assign permissions at a specific Term Set or
+  Term branch level. View a full user permission summary (for all Term/Set level permissions) by selecting the **View Taxonomy Permissions** button.
+- Within the Sources area, you can restrict a user’s access to specific source groups in the interface.
+
+![userpermissions_thumb_0_0](/images/dataclassification/5.6.2/security/userpermissions_thumb_0_0.webp)
 
 Taxonomy Permissions Summary:
 
@@ -138,10 +136,10 @@ Non-Super Users must have their access rights specifically configured and all ri
 default. See [Permission Management](#permission-management) for details about configuring the
 access rights for non-Super Users.
 
-Regardless of the authentication mode selected the usage of the QS administrative functions will
-continue to be unrestricted until at least one user is added. The first user must be a Super User.
-If Windows or ADFS Authentication are being used then the first user will default to the currently
-logged in user, although this can be changed if required.
+Regardless of the authentication mode you select, the QS administrative functions
+remain unrestricted until you add at least one user. The first user must be a Super User.
+If you use Windows or ADFS Authentication, the first user defaults to the
+logged-in user, although you can change this if needed.
 
 If Non-Windows Authentication is enabled then additional information must be entered to define the
 non-Windows user.

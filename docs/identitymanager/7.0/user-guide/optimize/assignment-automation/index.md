@@ -10,7 +10,7 @@ How to automate entitlement assignment.
 
 ## Overview
 
-Once you are able to assign manually the right entitlements to the right identities for the right reasons, you realize how tedious and error-prone entitlement assignment is, and you want to automate it.
+When you can assign manually the right entitlements to the right identities for the right reasons, you realize how tedious and error-prone entitlement assignment is, and you want to automate it.
 
 The strategy for the automation of entitlement assignment lies in the automatic making of assignment decisions, based on several automation levels provided by Identity Manager:
 
@@ -26,7 +26,7 @@ Assignment rules can sometimes give to users an entitlement that they had alread
 
 Netwrix Identity Manager (formerly Usercube) recommends [Remove Redundant Assignments](../../../user-guide/optimize/assignment-automation/remove-redundant-assignments) after any assignment rule is created or updated.
 
-The main goal of automation is to reach the optimal cost, playing on assignment efficiency, quality and quantity.
+The main goal of automation is to reach the optimal cost, playing on assignment efficiency, quality, and quantity.
 
 ### Assessment of manual assignment
 
@@ -56,17 +56,17 @@ Automation helps integrators find basic assignment rules and face the previous r
 
 ### Automation precautions
 
-Assignments do not have to be automated all at once.
+Assignments don't have to be automated all at once.
 
 On the one hand, before being automatically assigned, entitlements can be merely suggested by Identity Manager and assigned manually.
 
 On the other hand, a distinction can be made between assignments according to their sensitivity, for example using different error rates, or using simulation, or automating the assignment of basic entitlements while suggesting sensitive entitlements, etc.
 
-This way, security can be improved for example by making certification target only the sensitive entitlements that cannot be processed by Machine Learning. There is no need anymore to certify automatic assignments.
+This way, security can be improved for example by making certification target only the sensitive entitlements that can't be processed by Machine Learning. There is no need anymore to certify automatic assignments.
 
 Plus, you can also use attributes as additional precautions, such as a grace period during which, after the application of a rule revoking a resource/entitlement, managers can decide for each user individually whether they need to keep said entitlement.
 
-In a way, maturity with Machine Learning in IGA is much like a GPS: once we traveled using only paper maps, before the first navigation tools were commercialized. Then we learned how to use these tools, while keeping a map to be able to verify the GPS instructions. We found secure methods to navigate through all GPS evolutions, until we trusted GPS enough to guide us completely.
+In a way, maturity with Machine Learning in IGA is much like a GPS: travelers once used only paper maps, before the first navigation tools became available. Then they learned how to use these tools, while keeping a map to verify the GPS instructions. They found secure methods to navigate through all GPS evolutions, until they trusted GPS enough to guide them completely.
 
 ### Automation limits
 
@@ -74,7 +74,7 @@ However, automation implies an increasing number of rules. And a high number of 
 
 ![Optimal Cost Chart - Automation Limits](/images/identitymanager/automation_optimalcost_automationlimits.webp)
 
-The automation wall represents the automation threshold that cannot be overcome. It mostly comes from the fact that with limited data, automation capabilities are also limited. Everything cannot be automated.
+The automation wall represents the automation threshold that can't be overcome. It mostly comes from the fact that with limited data, automation capabilities are also limited. Everything can't be automated.
 
 ### Automation strategy
 

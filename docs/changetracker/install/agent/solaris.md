@@ -6,17 +6,16 @@ sidebar_position: 40
 
 # Installing Express Agent for Solaris (SPARC and Intel)
 
-The Change Tracker Express Agent is a reduced feature but ultra-portable Agent provided for use on
-any platform where support for .NET (and Mono) is not provided.
+The Change Tracker Express Agent is a reduced-feature, ultra-portable Agent for use on any platform
+that doesn't support .NET (or Mono).
 
-Unlike the standard Gen 7 agent, the Express Agent does not require a .NET/Mono runtime. The Express
-Agent is provided as an pkg package, downloaded from NNT Members Area and installed using pkg
-commands.
+Unlike the standard Gen 7 agent, the Express Agent doesn't require a .NET/Mono runtime. NNT Members
+Area provides the Express Agent as a pkg package. Download it and install it using pkg commands.
 
 # pkgadd -ivh nnt-changetracker-expressagent-2.0.1.3-25.ppc.pkg
 
-Once the package is installed the **HubDetails.xml** can be created using a configuration script.
-The `configure-expressagent.sh `and is found within the installation directory -
+After you install the package, use the configuration script to create **HubDetails.xml**.
+The script, `configure-expressagent.sh`, is located in the installation directory:
 `/opt/nnt/expressagent`.
 
 # bash /opt/nnt/expressagent/configure-expressagent.sh
@@ -45,10 +44,10 @@ Config path : /var/nnt/expressagent
 
 ==================================================================
 
-The script will also start the agent service. If the agent server is able to communicate with Change
-Tracker over the desired HTTP/HTTPS port, the agent will register and display as a new device in the
-hub. The agent will be installed into `/opt/nnt/expressagent`. HubDetails, log and database files
-will be stored in `var/nnt/expressagent`.
+The script also starts the agent service. If the agent server can communicate with Change
+Tracker over the HTTP/HTTPS port you want, the agent registers and displays as a new device in the
+hub. The script installs the agent into `/opt/nnt/expressagent` and stores the HubDetails, log, and
+database files in `var/nnt/expressagent`.
 
 To start and stop the service manually, use the following commands:
 
@@ -56,12 +55,12 @@ To start and stop the service manually, use the following commands:
 
 # /etc/rc.d/rc2.d/Knntexpressagent.sh stop
 
-## Scripted Installation of Gen 7 Express Agent PKG Installer
+## Scripted installation of Gen 7 Express Agent PKG installer
 
-As with all other agents, the installation process can be scripted.
+As with all other agents, you can script the installation process.
 
 ```bash
 /opt/nnt/expressagent/configure-expressagent.sh `https://IPADDRESS-SERVERNAME:PORT/api/` agent passWord121 /var/nnt/expressagent
 ```
 
-Run the Agent UI. See the [ Agent First Run](/docs/changetracker/install/agent/firstrun.md) topic for additional information.
+Run the Agent UI. See the [Agent First Run](/docs/changetracker/install/agent/firstrun.md) topic for additional information.

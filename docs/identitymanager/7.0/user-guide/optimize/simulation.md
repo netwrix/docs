@@ -10,7 +10,7 @@ How to assess the impact of a modification on the role model, including the role
 
 ## Overview
 
-Identity Manager's simulations gather **roles** and **rules** which are to be created, modified or deleted, without being inserted in the actual role model straight away. More specifically, a simulation can involve:
+Identity Manager's simulations gather **roles** and **rules** which are to be created, modified, or deleted, without being inserted in the actual role model straight away. More specifically, a simulation can involve:
 
 - Correlation **rules** and classification Rule;
 - Scalar **rules** and navigation **rules**;
@@ -26,7 +26,7 @@ A simulation can also be created by the [Perform Role Mining](../../user-guide/o
 
 Through simulation, integrators can:
 
-1. create, modify or delete **roles** and **rules** in a given policy;
+1. create, modify, or delete **roles** and **rules** in a given policy;
 
 Only one simulation can be active per policy.
 
@@ -38,7 +38,7 @@ NETWRIX recommends using simulation whenever performing an action (creation/modi
 
 ## Participants and Artifacts
 
-Integrators are able to perform simulation if they master the new role model.
+Integrators can perform simulation if they master the new role model.
 
  | Input | Output | 
  | --- | --- | 
@@ -65,9 +65,9 @@ Launch a simulation by proceeding as follows:
 
     ![Simulation List](/images/identitymanager/simulation_new_v602.webp)
 
-4. Click on **+ Create**.
+4. Click **+ Create**.
 5. Perform changes through the ****roles** Changes** and ****rules** Changes** tabs and the following icons,
-respectively for addition, modification and deletion:
+respectively for addition, modification, and deletion:
 
     ![Edition - Approval Icon](/images/identitymanager/iconadd_v602.svg)
 
@@ -75,15 +75,15 @@ respectively for addition, modification and deletion:
 
     ![Discouragement Icon](/images/identitymanager/simulation_icondelete_v600.svg)
 
-At any time, you can click on the line of a previously made change to access its description, even click on **Cancel** to erase it.
+At any time, you can click the line of a previously made change to access its description, even click **Cancel** to erase it.
 
     ![Cancel Change](/images/identitymanager/simulation_cancel_v602.webp)
 
-6. Click on **Start** to launch the simulation.
+6. Click **Start** to launch the simulation.
 
     ![Start Simulation](/images/identitymanager/simulation_start_v602.webp)
 
-7. After a few seconds, click on **Refresh** to display the simulation results.
+7. After a few seconds, click **Refresh** to display the simulation results.
 8. Observe the results in the overview and in the Excel report available via the Download button.
 
     ![Download Icon](/images/identitymanager/icondownload_v602.svg)
@@ -100,15 +100,15 @@ Clicking on **Apply** applies the simulated changes to the role model. You need 
 
 ## Impact of Modifications
 
-Once you've applied or canceled the changes of a simulation, said simulation is no longer active. If you still need to simulate changes on the same policy, you can create a new simulation.
+After you apply or cancel the changes of a simulation, said simulation is no longer active. If you still need to simulate changes on the same policy, you can create a new simulation.
 
-Deleting a simulation doesn't impact the role model. It simply undoes the simulated changes which haven't been applied yet.
+Deleting a simulation doesn't impact the role model. It discards the simulated changes which haven't been applied yet.
 
 ## Verify Modification
 
-In order to verify the process, check that the **roles** and **rules** are created with the right parameters.
+To verify the process, check that the **roles** and **rules** are created with the right parameters.
 
-For **roles**, click on **Access **roles**** on the home page in the **Configuration** section.
+For **roles**, click **Access **roles**** on the home page in the **Configuration** section.
 
 ![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 
@@ -116,7 +116,7 @@ Select the type of role that you want to check, and find the **roles** you creat
 
 ![Select **roles**](/images/identitymanager/categorycreation_test_v602.webp)
 
-For **rules**, click on **Access **rules**** on the home page in the **Configuration** section.
+For **rules**, click **Access **rules**** on the home page in the **Configuration** section.
 
 ![Home Page - Access **rules**](/images/identitymanager/home_rules_v602.webp)
 

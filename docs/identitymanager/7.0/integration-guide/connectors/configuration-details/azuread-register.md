@@ -25,7 +25,7 @@ A new registration form is displayed:
     - Name: display name of your application for the currently created registration. It is used to
 identify this registration within Microsoft Entra ID. In the case at hand, it won't be displayed to the end-user since Identity Manager doesn't access the Microsoft Entra ID using end-user identity but [its own](https://docs.microsoft.com/en-us/graph/auth-v2-service).
 
-Netwrix Identity Manager (formerly Usercube)  recommends using a mnemonic name resembling Identity Manager Organization in order to remember it as the registration of Identity Manager within the target Microsoft Entra ID, for example Identity Manager Contoso.
+Netwrix Identity Manager (formerly Usercube)  recommends using a mnemonic name resembling Identity Manager Organization to remember it as the registration of Identity Manager within the target Microsoft Entra ID, for example Identity Manager Contoso.
 
     - [Supported account types](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-supported-account-types):
 select **Accounts in this organizational directory only (... - Single tenant)**.
@@ -40,7 +40,7 @@ This service account is stored in the organizational directory, and hence using 
 
         - The left combo box represents the type of application. It influences the authorization
 protocol exchanges. Identity Manager is of type Web.
-        - The right line edit isn't applicable to our case and should be left blank. It is used for
+        - The right line edit isn't applicable and should be left blank. It is used for
 end-user authentication, but doesn't apply to Identity Manager.
 
 6. Confirm the registration with the **Register** button at the bottom of the page.
@@ -82,7 +82,7 @@ Grant Identity Manager directory permissions by proceeding as follows:
 1. Go to **App Registrations** in the left panel.
 2. Select **Owned applications** > **Identity Manager**.
 3. Go to **API Permissions** in the left panel.
-4. Click on the **+ Add a permission** button.
+4. Click the **+ Add a permission** button.
 
     ![Azure AD Export - Add Permission](/images/identitymanager/howtos_azuread_exportpermissions.webp)
 
