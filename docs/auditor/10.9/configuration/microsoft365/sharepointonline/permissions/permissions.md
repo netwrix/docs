@@ -24,7 +24,7 @@ dedicated Microsoft Entra ID application and the API access permissions granted 
 register this application and assign the required permissions, you need a Microsoft Entra ID
 account with an administrative role:
 
-- If Modern Authentication is used:
+- If you use Modern Authentication:
     - A user with an administrative role must create the Microsoft Entra ID application manually and
       assign the required permissions. With this app, you can collect both activity and
       state-in-time data. See the
@@ -38,11 +38,11 @@ account with an administrative role:
 See the [Using Modern Authentication with SharePoint Online](/docs/auditor/10.9/configuration/microsoft365/sharepointonline/permissions/modernauth/modernauth.md) topic for additional
 information.
 
-- If Basic Authentication is used:
+- If you use Basic Authentication:
 
     - Netwrix Auditor automatically creates a Microsoft Entra ID application named **Netwrix
       Auditor for Microsoft Entra ID** when it connects to the monitored item (Office 365 tenant)
-      for the first time. Thus, you will need to prepare an Office 356 user account with an
+      for the first time. Thus, you will need to prepare an Office 365 user account with an
       administrative role in Microsoft Entra ID — to create an app and perform initial data
       collection.
     - Provide this user name and password in the monitored item properties. See the

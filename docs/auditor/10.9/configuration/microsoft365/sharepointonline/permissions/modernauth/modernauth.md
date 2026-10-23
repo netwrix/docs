@@ -25,17 +25,17 @@ section:
 
 To collect data with modern authentication, you should do the following:
 
-**Step 1 –** Create an Microsoft Entra ID app that will be used for modern authentication. See the
-Creating and registering a new app in Microsoft Entra ID topic for additional information.
+**Step 1 –** Create a Microsoft Entra ID app that will be used for modern authentication. See
+[Creating and registering a new app in Microsoft Entra ID](#creating-and-registering-a-new-app-in-microsoft-entra-id).
 
-**Step 2 –** Grant required permissions to that application using Microsoft Entra ID app manifest.
-See the Granting required permissions topic for additional information.
+**Step 2 –** Grant required permissions to that application. See
+[Granting required permissions](#granting-required-permissions).
 
-**Step 3 –** Configure client secret for that application. See the Configuring client secret topic
-for additional information.
+**Step 3 –** Configure client secret for that application. See
+[Configuring client secret](#configuring-client-secret).
 
-**Step 4 –** Obtain tenant ID – you will need it when configuring a monitored item (Office 365
-tenant) settings. See the Obtaining tenant name topic for additional information.
+**Step 4 –** Obtain the tenant name – you will need it when configuring a monitored item (Office
+365 tenant) settings. See [Obtaining tenant name](#obtaining-tenant-name).
 
 ### Creating and registering a new app in Microsoft Entra ID
 
@@ -97,13 +97,22 @@ Permission assignment will depend on the data you plan to collect:
 - Activity data only
 - Both activity and state-in-time data
 
-| To...                                   | Requirement                                                                                                                                                                                                                        | Comment                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Collect activity and State-in-Time data | Microsoft Entra ID app requires the following Application permissions: 1. Office 365 Management APIs - ActivityFeed.Read 2. Microsoft Graph - Application.ReadWrite.All - Directory.Read.All 3. SharePoint - Sites.FullControl.All | To learn how to assign required permissions, see the Configuring Microsoft Entra ID App for Auditing SharePoint Online section for additional information. Automatic certificate rotation requires Application.ReadWrite.All. Rotating certificates in the Microsoft Entra ID application reduces the risk of expired certificates, strengthens security, supports compliance requirements, and maintains operational continuity. |
+To collect activity and state-in-time data, the Microsoft Entra ID app requires the following
+_Application_ permissions:
+
+| API                       | Permission                                     |
+| ------------------------- | ---------------------------------------------- |
+| Office 365 Management APIs | ActivityFeed.Read                             |
+| Microsoft Graph           | Application.ReadWrite.All<br/>Directory.Read.All |
+| SharePoint                | Sites.FullControl.All                          |
+
+Automatic certificate rotation requires Application.ReadWrite.All. Rotating certificates in the
+Microsoft Entra ID application reduces the risk of expired certificates.
 
 **NOTE:** You can also assign application permissions by editing Microsoft Entra app manifest. See
-the Using Modern Authentication with SharePoint Online topic for additional information on how to
-assign the required permissions. Information about manifest is also described in the following
+the
+[Assigning Application Permissions Using Manifest](/docs/auditor/10.9/configuration/microsoft365/sharepointonline/permissions/modernauth/manifest.md)
+topic for additional information. Information about manifest is also described in the following
 Microsoft
 article: [ Microsoft Entra app manifest](https://learn.microsoft.com/en-us/azure/active-directory/develop/reference-app-manifest).
 
@@ -130,7 +139,7 @@ Create a new client secret for the app:
 
 **Step 3 –** Click **Add**.
 
-**Step 4 –** The new secret will be displayed in the list. Click **Copy to clipboard** icon on the
+**Step 4 –** The list displays the new secret. Click **Copy to clipboard** icon on the
 "Value" parameter on the right side of the screen.
 
 See the following Microsoft article for more information on how to add a client secret:
