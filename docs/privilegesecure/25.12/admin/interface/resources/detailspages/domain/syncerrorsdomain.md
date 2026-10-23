@@ -1,6 +1,13 @@
 ---
 title: "Sync Errors Tab for Domain"
-description: "Sync Errors Tab for Domain"
+description: "View the synchronization error log for a domain resource on the Sync Errors tab, including the time and message of each error."
+keywords:
+  - Sync Errors tab
+  - synchronization error log
+  - sync errors
+  - domain synchronization
+  - Time
+  - Message
 sidebar_position: 50
 ---
 
@@ -8,11 +15,11 @@ sidebar_position: 50
 
 The Sync Errors tab displays the synchronization error log for the selected resource.
 
-![Sync Errors Tab for Domain Recource](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/resources/syncerrorsdomain.webp)
+![Sync Errors Tab for Domain Resource](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/resources/syncerrorsdomain.webp)
 
 The table has the following columns:
 
-- Time — Date timestamp for when the event occurred
-- Message — Description of the event
+- **Time** — Date timestamp for when the event occurred
+- **Message** — Description of the event
 
 The table columns can be resized and sorted in ascending or descending order.
