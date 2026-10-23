@@ -1,0 +1,56 @@
+name: Label PRs by product path
+
+# Adds product labels to a PR based on the docs paths it changes, using the
+# same labels the issue labeler assigns. CODEOWNERS teams are notified by
+# slack-notify-pr.yml (and GitHub's own review requests), so this workflow
+# only labels.
+
+on:
+  # pull_request_target so the token can write labels on fork PRs. SAFETY:
+  # never check out or execute the PR's head content here — only read the
+  # changed-file list through the API and run scripts from the base ref.
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    branches:
+      - dev
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: label-prs-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Always the base ref — see the SAFETY note above.
+          ref: ${{ github.event.pull_request.base.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22.x'
+
+      - name: Add product labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          FILES=$(gh api --paginate "repos/${{ github.repository }}/pulls/$PR_NUMBER/files" --jq '.[].filename')
+          mapfile -t FILE_ARRAY <<< "$FILES"
+          LABELS=$(node scripts/resolve-path-labels.mjs "${FILE_ARRAY[@]}")
+
+          if [ -z "$LABELS" ]; then
+            echo "No product paths changed — no labels to add"
+            exit 0
+          fi
+
+          echo "Adding labels: $LABELS"
+          # Additive only: labels set by hand or by other workflows are kept.
+          gh pr edit "$PR_NUMBER" --repo ${{ github.repository }} --add-label "$LABELS"
