@@ -1,41 +1,31 @@
 ---
-description: "Registration via Postman may return an UnprocessableEntityError (code 1779) caused by a Unicode en dash in the sudoers file; this article explains the cause and resolution."
+title: "Unhandled Error: There Has Been an Error Processing the Registration Request: 'ascii' Codec Can't Encode Character"
+description: "Resolve the ascii codec error (code 1779) that occurs during registration when the sudoers file contains an en dash instead of a standard dash."
+sidebar_label: "Unhandled Error: There Has Been an Error Processing the Registration Request: 'ascii' Codec Can't Encode Character"
 keywords:
-- ascii
-- codec
-- sudoers
+- ascii codec can't encode character
+- error processing the registration request
+- UnprocessableEntityError
+- Code 1779
 - en dash
+- U+2013
 - Unicode
+- sudoers
 - visudo
-- Postman
-- registration
-- error 1779
+- NPS-D
+- SecureONE
+- Remediant SecureONE
 products:
-- privilege-secure-discovery
-sfdc_migration:
-  article_id: ka04u00000116Y1AAI
-  article_owner: Anna Evdokimova-Glinskaia
-  article_reviewer: null
-  article_sme: null
-  created_date: '2023-07-07'
-  knowledge_article_id: kA04u00000110p1CAA
-  last_modified_date: '2023-07-07'
-  original_categories:
-  - privilege_secure_discovery
-  visibility: public
-sidebar_label: 'Unhandled Error: there has been an Error Processin'
-tags: []
-title: 'Unhandled Error: there has been an Error Processing the Registration Request:
-  ''ascii'' Codec can''t Encode Character u'
+- privilegesecurediscovery
+tags:
+- kb
+- linux-and-ssh-integration
+knowledge_article_id: kA04u00000110p1CAA
 ---
-
-# Unhandled Error: there has been an Error Processing the Registration Request: ''ascii'' Codec can''t Encode Character u
-
-Formerly SecureONE
 
 ## Symptom
 
-Example of error when running registration via Postman:
+When you register a Linux system through the API, the registration returns the following error:
 
 ```json
 {
@@ -47,12 +37,15 @@ Example of error when running registration via Postman:
 
 ## Cause
 
-There is a unicode character in the sudoers file that Netwrix Privilege Secure Discovery has an issue with. In the above example it was a En Dash (long dash), or unicode character U+2013, in a sudo command instead of a standard dash.
+The sudoers file contains a Unicode character that the product cannot process. In the example, a sudo command contains an en dash (Unicode character U+2013) instead of a standard dash.
 
 ## Resolution
 
-The solution is to replace any En Dashes with standard dashes in the sudoers file using:
+1. Open the sudoers file:
 
-```bash
-sudo visudo
-```
+   ```bash
+   sudo visudo
+   ```
+
+2. Replace every en dash with a standard dash, and then save the file.
+3. Register the system again.
