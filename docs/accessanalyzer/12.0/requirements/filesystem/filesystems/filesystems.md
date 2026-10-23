@@ -159,3 +159,5 @@ Discovery Auditing only:
 - Red Hat® Linux® 5.2+
 - HP-UX® 11+
 - SUSE® 10+
+
+See the [Linux Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/linux/overview.md) topic for Linux target environment requirements.
