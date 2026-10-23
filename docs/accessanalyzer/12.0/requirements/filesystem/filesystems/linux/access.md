@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Linux Server Configuration
 
-Access Analyzer scans a Linux server over the network, so these settings are made on the Linux server. The commands are for Red Hat® Enterprise Linux® (RHEL) and run with `sudo`. Other distributions use equivalent commands. See the [Linux Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/linux/overview.md) topic for the permissions and ports each protocol requires.
+Access Analyzer scans a Linux server over the network, so you make these settings on the Linux server. The commands are for Red Hat® Enterprise Linux® (RHEL) and run with `sudo`. Other distributions use equivalent commands. See the [Linux Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/linux/overview.md) topic for the permissions and ports each protocol requires.
 
 ## Configure SMB/CIFS Access
 
