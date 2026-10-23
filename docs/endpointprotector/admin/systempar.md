@@ -7,7 +7,7 @@ sidebar_position: 150
 
 # System Parameters
 
-## Device Types and Notiﬁcations
+## Device Types and Notifications
 
 From this section you can view and manage device types and notiﬁcations, view and enable default
 notiﬁcations and their translations, and deﬁne custom notiﬁcations for Content Aware Protection
@@ -15,7 +15,7 @@ policies and Device Control User Remediation.
 
 ![Manage device types and notiﬁcations](devicetypesnotif.webp)
 
-### List of Device Types and Notiﬁcations
+### List of Device Types and Notifications
 
 On the List of Device Types and Notiﬁcations, you can view the Device Types available in the system
 along with their availability for each operating system and whether the Content Aware Protection
@@ -37,7 +37,7 @@ individually for computers or groups, from their speciﬁc Settings sections.
 
 ![Enable/disable a message from the list of Default Notiﬁcations or edit the custom notiﬁcations translations](listdefaultnotif.webp)
 
-### Custom Content Aware Protection Notiﬁcations
+### Custom Content Aware Protection Notifications
 
 With Endpoint Protector, you can create informative notifications that users see when a Content
 Aware Policy blocks or reports a file. These notifications provide context about the triggered
@@ -308,7 +308,7 @@ Remediation for Device Control.
 
 ![User Remediation Settings](userremediationsettings.webp)
 
-### Justiﬁcations List
+### Justifications List
 
 In this section, you can view, add, edit, export, and remove justiﬁcations. The justiﬁcation
 represents the reason the end-user selects to justify the threat or device remediation.
