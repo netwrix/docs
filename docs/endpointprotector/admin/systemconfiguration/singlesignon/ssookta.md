@@ -4,7 +4,7 @@ description: "Single Sign On (SSO) Conﬁguration with Okta"
 sidebar_position: 20
 ---
 
-# Single Sign On (SSO) Conﬁguration with Okta
+# Single Sign On (SSO) Configuration with Okta
 
 Single Sign On (SSO) is a powerful authentication process that enhances security and improves user
 experience by allowing users to access multiple applications with a single set of login credentials.
@@ -18,15 +18,15 @@ Okta’s authentication framework. Begin by activating SSO within your system’
 settings, selecting a failover user, and preparing for provider selection. This section guides you
 through the precise steps required to establish a secure and efficient SSO connection, including
 application integration in Okta, SAML settings configuration, and the necessary data synchronization
-between your server and Okta. Follow the following steps to ensure a successful setup.
+between your server and Okta.
 
 **Step 1 –** To activate Single Sign-On, navigate to **System Configuration** > **System
-Settings** > **Single Sign-On**. Once activated, select a Failover Login User from the dropdown
+Settings** > **Single Sign-On**. After you activate it, select a Failover Login User from the dropdown
 menu. The Root user is the default selection.
 
 ![Single Sign On Conﬁguration with OKTA](ssookta.webp)
 
-After completing these steps, a Single Sign-On subsection appears in the System Configuration section.
+After you complete these steps, a Single Sign-On subsection appears in the System Configuration section.
 
 **Step 2 –** Select the **Provider** to display the Single Sign On subsection.
 
@@ -50,6 +50,10 @@ Integration**.
 **Step 7 –** Go to your Endpoint Protector **Server**, **System Conﬁguration**, Single Sign On.
 
 ![Endpoint Protector Server Single Sign On coffiguration ](ssoconfiguration.webp)
+
+:::tip
+Before you copy the values in the next step, ensure you set the Service Provider to **Domain** (see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon.md)). Values based on an IP address stop working when the server address changes.
+:::
 
 **Step 8 –** Copy the information from:
 

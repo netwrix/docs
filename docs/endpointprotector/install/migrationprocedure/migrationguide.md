@@ -38,6 +38,14 @@ You can't apply 2608 as a cumulative or offline patch on top of an existing 2509
 CrateDB ships empty on a freshly deployed 2608 server. The migration doesn't move any historical log data into it — this matches today's behavior, where System Configuration Backup carries over policies, users, groups, and device rules, but never log data or file shadows. If you need historical logs for compliance or forensics, export them separately (see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup)) or retain your old server VM, exactly as described in each migration article's prerequisites.
 :::
 
+:::warning Use an FQDN Instead of an IP Address
+Always address the EPP Server by a fully qualified domain name (FQDN), and configure your EPP Clients and single sign-on (SSO) integrations to use it. When you bind clients or SSO response URLs to an IP address, any migration that changes the server address, including this one, breaks them: SSO logins fail until you correct the response URL, and clients can't reach the new server until you reconfigure them. With an FQDN, you repoint a single DNS record to the new server. Netwrix-hosted SaaS deployments receive an FQDN by default. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
+
+:::tip Apply the Offline Activation Patch first
+To activate Content Aware Protection or eDiscovery on the new server, first apply the Offline Activation Patch that matches your server version, which is 2608 for this guide. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
+:::
+
 The migration path depends on where you're starting from:
 
 ```mermaid
@@ -87,7 +95,7 @@ Both articles converge on the same two final phases, common to every migration r
 
 ### Why an Intermediate Version Is Required for Legacy 5.x Servers
 
-The 2608 base image accepts configuration backups from a fixed set of source versions only — it doesn't accept a backup from an arbitrary 5.x release. If you're on any version older than 5.9.4.2, you must reach 5.9.4.2 first. This is because:
+The 2608 base image accepts configuration backups only from a fixed set of source versions. If you're on any version older than 5.9.4.2, you must reach 5.9.4.2 first. This is because:
 
 - The internal database schema at 5.9.4.2 is the last known-compatible schema for import into the new image platform.
 - The migration process validates the backup format and version checksum before restoring.

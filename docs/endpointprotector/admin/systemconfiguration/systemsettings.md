@@ -26,19 +26,19 @@ For more information, see the System Settings topic.
 
 You can modify the following session timeout settings:
 
-- Session Timeout – set the amount of time the user is inactive until the session expires between 5
-  and 60 minutes
-- Timeout counter – set the amount of time for the session timeout countdown between 5 seconds and
+- Session Timeout – set the amount of time, between 5 and 60 minutes, that the user can remain
+  inactive before the session expires
+- Timeout counter – set the length of the session timeout countdown, between 5 seconds and
   Session Timeout minus one minute
 
-Example: If you set the Session Timeout to 5 minutes and the Timeout counter to 60 seconds, a pop-up window will notify you after 4 minutes of inactivity that Endpoint Protector will log you out in 60 seconds.
+Example: If you set the Session Timeout to 5 minutes and the Timeout counter to 60 seconds, after 4 minutes of inactivity a pop-up window notifies you that Endpoint Protector will log you out in 60 seconds.
 
 ![Session Settings](sessionsettings.webp)
 
 After you remain idle for the defined amount of time, Endpoint Protector stops responding and
 displays a message that indicates the session will expire in the predefined countdown.
 
-You can choose to log out or continue your session, resetting the session timeout interval.
+You can log out, or continue your session to reset the session timeout interval.
 
 ![Session timeout interval](sessiontimeout.webp)
 
@@ -270,8 +270,8 @@ Eg. ( E-mail AND SSN US) OR CC Visa
     - CC Visa: 6
     - IBAN: 22
 
-In this example, the policy will trigger when the policy is satisfied (Boolean logic), no matter if
-the ‘Threat Threshold’ is met or not due to the ‘AND’ operator in the policy. Depending on the data
+In this example, the policy will trigger when the policy is satisfied (Boolean logic), regardless
+of the ‘Threat Threshold’, due to the ‘AND’ operator in the policy. Depending on the data
 structure in the test file, Endpoint Protector Client may report different 10 threats to Endpoint
 Protector Server
 
@@ -324,8 +324,8 @@ threats’ under ‘Ignore Thresholds’.
     - CC Visa: 6
     - IBAN: 22
 
-In this example, the policy will trigger when the policy is satisfied (Boolean logic), no matter if
-the ‘Threat Threshold’ is met or not due to the ‘AND’ operator in the policy. Depending on the data
+In this example, the policy will trigger when the policy is satisfied (Boolean logic), regardless
+of the ‘Threat Threshold’, due to the ‘AND’ operator in the policy. Depending on the data
 structure in the test file, Endpoint Protector Client may report different 4 threats to Endpoint
 Protector Server
 
@@ -414,8 +414,8 @@ scan ﬁnds 10 threats.
 
 In this example, the policy will trigger when the policy is satisfied (Boolean logic), meaning when at
 least one identifier (eg. E-mail) reaches a ‘Threat Threshold’ of 4, but the scan engine will
-continue to scan until the total threat of 10 from setting ‘Maximum number of reported threats’
-under ‘Ignore Thresholds’ is reached. Depending on the data structure in the test file, Endpoint
+continue to scan until it reaches the total threat of 10 from setting ‘Maximum number of reported
+threats’ under ‘Ignore Thresholds’. Depending on the data structure in the test file, Endpoint
 Protector Client may report different 10 threats to Endpoint Protector Server
 
 - 2 E-mails + 2 SSN US + 6 CC Visa
@@ -434,20 +434,20 @@ the virtual desktop clone and interact accordingly with the Endpoint Protector c
 
 ![Virtual Desktop Clones](virtualdesktopclones.webp)
 
-## Deep Packet Inspection Certiﬁcate
+## Deep Packet Inspection Certificate
 
 Disable the Deep Packet Inspection certiﬁcate download to require the Endpoint Protector clients to
 use the legacy certiﬁcate. You can also download the **Client CA Certiﬁcate**.
 
 ![Deep Packet Inspection Certiﬁcate ](dpinspectioncert.webp)
 
-## Server Certiﬁcate Stack
+## Server Certificate Stack
 
 Use this section to regenerate a custom server certiﬁcate. Enable the option and then provide the
 following information:
 
 - FQDN (Fully Qualiﬁed Domain Name) – used in certiﬁcates and Regenerate Server Certiﬁcate Stack and
-  CA Certiﬁcate used for Deep Packet Inspection on macOS
+  CA Certiﬁcate used for Deep Packet Inspection on macOS. Set it to the FQDN that your EPP Clients and single sign-on (SSO) integrations use to reach the server.
 - Country name – add the ﬁrst two letters of the country
 - State or Province name – add the state or province name
 - Locality Name – add locality name
@@ -471,8 +471,8 @@ systems.
 
 
 :::warning
-Don't use this setting if no instance of macOS 12.0 (or higher) is registered on the
-Endpoint Protector server.
+Don't use this setting if the Endpoint Protector server has no registered instance of
+macOS 12.0 (or higher).
 :::
 
 
