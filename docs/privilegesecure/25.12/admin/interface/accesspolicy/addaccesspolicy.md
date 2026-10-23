@@ -18,7 +18,7 @@ sidebar_position: 10
 To add access policies to the console.
 
 :::tip
-Remember, a connection profile is required to create an access policy. You can create one ahead of
+Remember, you need a connection profile to create an access policy. You can create one ahead of
 time on the [Connection Profiles Page](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofiles.md) page or use the arrow button
 to create one during these steps.
 :::

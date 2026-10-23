@@ -14,8 +14,8 @@ sidebar_position: 20
 
 # Add Approval Workflow
 
-An approval workflow requires that the session must be approved before the requestor of the session
-can log in. Up to three Approval Tiers can be added. When the required number of approvals is
+An approval workflow requires approval of the session before the requestor of the session
+can log in. You can add up to three Approval Tiers. When the required number of approvals is
 reached in a Tier, the approvers in the next Tier are notified. Each Tier must approve the request
 in sequence. See the Approvals Dashboard topic for additional information on how to approve a
 requested session.
@@ -116,7 +116,7 @@ To add an approval workflow to the console.
 
 14. To add an additional Approval Tier, click the **Add Tier** icon and repeat from Step 4.
 
-    - Up to three Approval Tiers can be added. When the required number of approvals is reached in a
+    - You can add up to three Approval Tiers. When the required number of approvals is reached in a
       Tier, the Approvers in the next Tier are notified. Each Tier must approve the request in sequence.
 
     :::note

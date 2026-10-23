@@ -67,5 +67,5 @@ The Sessions by All Users table lists all user sessions:
   - **Start** — Start time of the session
   - **Duration** — Duration of the session
   - **End** — End time of the session
-  - **Notes** — Any notes that were entered when the session was created
-  - **Ticket Number** — Any ticket numbers that were entered when the session was created
+  - **Notes** — Any notes the user entered when creating the session
+  - **Ticket Number** — Any ticket numbers the user entered when creating the session

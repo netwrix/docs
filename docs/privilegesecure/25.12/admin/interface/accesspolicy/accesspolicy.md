@@ -23,11 +23,11 @@ which resources.
 The pane on the left side of the page displays a list of the configured access policies. This pane
 has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
 - **Blue + button** — Create a new access policy. See the [Add Access Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/addaccesspolicy.md)
   topic for additional information.
-- **Trashcan icon** — Deletes the access policy. Icon appears when policy is hovered over. A
+- **Trashcan icon** — Deletes the access policy. The icon appears when you hover over the policy. A
   confirmation window displays.
 
 The selected access policy details display at the top of the main pane:

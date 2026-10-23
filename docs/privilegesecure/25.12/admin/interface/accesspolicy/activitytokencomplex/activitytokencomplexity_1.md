@@ -37,4 +37,4 @@ See the Activity Token Complexity section for detailed descriptions of the field
 
 4. Click **Save** to create the new connection profile.
 
-The new activity token complexity policy is added to the Activity Token Complexity Policy list.
+The Activity Token Complexity Policy list shows the new activity token complexity policy.

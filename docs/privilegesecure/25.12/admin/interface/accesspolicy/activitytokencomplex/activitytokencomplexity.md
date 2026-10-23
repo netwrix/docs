@@ -23,13 +23,13 @@ managing the complexity of activity tokens for connection profiles.
 The pane on the left side of the page displays a list of the configured activity token complexity
 policies. This pane has the following features:
 
-- **Search** — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
 - **Green + button** — Create a new activity token complexity policy. See the
   [Add Activity Token Complexity Policy](/docs/privilegesecure/25.12/admin/interface/accesspolicy/activitytokencomplex/activitytokencomplexity_1.md) topic for additional
   information.
-- **Trashcan icon** — Deletes the activity token complexity policy. Icon appears when profile is hovered
-  over. A confirmation window displays.
+- **Trashcan icon** — Deletes the activity token complexity policy. The icon appears when you hover over the
+  policy. A confirmation window displays.
 
 The selected activity token complexity policy details display in the main pane:
 
@@ -45,7 +45,7 @@ The selected activity token complexity policy details display in the main pane:
 - **Max Consecutive Chars** — The maximum number of consecutively occurring characters that the activity
   token complexity policy allow
 - **Characters to Exclude** — Custom characters the activity token complexity policy will exclude.
-  Characters entered in this field are excluded in addition to the characters listed beneath the
+  The policy excludes characters entered in this field in addition to the characters listed beneath the
   Additional characters excluded section.
 - **Additional characters excluded** — Default characters the activity token complexity policy will
   exclude

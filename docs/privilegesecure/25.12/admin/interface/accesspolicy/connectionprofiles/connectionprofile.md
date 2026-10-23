@@ -29,8 +29,8 @@ fields.
    - **Name** — Provide a unique name for the connection profile
    - **Description** — Provide an optional description to indicate the purpose of connection profile
    - Configure the Proxy settings, which control what proxy server start the session.
-     When customizing to use a specific proxy RDP (port `4489`) and SSH (port `4422`) proxy server, only
-     one server can be listed.
+     When customizing to use a specific proxy RDP (port `4489`) and SSH (port `4422`) proxy server, you can
+     list only one server.
 
      :::note
      To use more than one proxy server, use a load balancer in front of the servers.
@@ -56,4 +56,4 @@ fields.
 5. The new connection profile is created. To add an Approval Workflow, see the
    [Add Approval Workflow](/docs/privilegesecure/25.12/admin/interface/accesspolicy/connectionprofiles/connectionprofileapproval.md) topic for additional information.
 
-The new connection profile is added to the Connection Profiles list.
+The Connection Profiles list shows the new connection profile.
