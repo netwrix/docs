@@ -80,7 +80,7 @@ SharePoint omit lists are found under `\%Working Folder%\Netwrix Auditor for Sha
 
 ### SharePoint Online
 
-SharePoint Online omit lists are found under `\%Working Folder%\Netwrix Auditor for SharePoint Online\Configuration\GUID`. For additional information on SharePoint Online omit lists, refer to the following article: [SharePoint Online Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/sharepointonline/scope)
+SharePoint Online omit lists are found under `\%Working Folder%\Netwrix Auditor for SharePoint Online\Configuration\GUID`. For additional information on SharePoint Online omit lists, refer to the following article: [SharePoint Online Monitoring Scope](https://docs.netwrix.com/docs/auditor/10_9/configuration/microsoft365/sharepointonline/scope)
 
 ### SQL Server Auditing
 
