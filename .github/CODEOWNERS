@@ -16,7 +16,6 @@
 /static/images/1secure/ @netwrix/1secure-docs
 
 # Access Analyzer team
-/static/files/accessanalyzer/ @netwrix/accessanalyzer-docs @netwrix/team.dspm.accessanalyzerclassic
 /docs/accessanalyzer/11.6/ @netwrix/team.dspm.accessanalyzerclassic
 /sidebars/accessanalyzer/11.6.js @netwrix/team.dspm.accessanalyzerclassic
 /static/images/accessanalyzer/11.6/ @netwrix/team.dspm.accessanalyzerclassic
