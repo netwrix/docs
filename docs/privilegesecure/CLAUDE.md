@@ -41,7 +41,7 @@ Edits to one version do **not** propagate to others. Update each version that ne
 
 ## Directory Structure (26.07)
 
-26.07 follows the zone order in `.claude/references/documentation-section-guide.md`. There is no root `index.md`: `getting-started/overview.md` has `slug: /` and is the landing page. File and folder names are kebab-case.
+26.07 follows the zone order in `.claude/references/documentation-section-guide.md`. The root `index.md` is the version landing page, as in every other product. File and folder names are kebab-case.
 
 | Folder | Position | Purpose |
 |--------|----------|---------|
