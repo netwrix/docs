@@ -66,10 +66,16 @@ The account can be a manually managed account, or an account that a secret vault
    | Field | Value |
    |---|---|
    | **Connector Template** | BYOV |
-   | **API Url**\* | `http://localhost:6500` |
+   | **API Url**\* | `https://localhost:6500` |
    | **App Id**\* | `SbPAM` |
    | **Client Certificate** | Empty |
-   | **Skip Certificate Check** | Selected |
+   | **Skip Certificate Check** | Leave as the default |
+
+   :::note
+   This script doesn't use **API Url** or **Skip Certificate Check**. The script reads the Privilege Secure address from the service's REST URL setting, and its own requests skip the certificate check. The form still requires an **API Url** value.
+   :::
+
+   {/* TODO verify: Product to confirm that BYOV ignores API Url and Skip Certificate Check (source: BYOV.psm1, SbPAM.psm1 RestApiUri, SbPAMFuncs.psm1 Invoke-SbPAMRest). */}
 
 3. In **Checkout Script Block**, paste the following script. Leave **Checkin Script Block** empty. If you leave it empty, the built-in check-in deletes the credential record that Privilege Secure created for the session.
 
