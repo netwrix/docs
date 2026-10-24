@@ -12,7 +12,7 @@ A license file sets how many users Netwrix Privilege Secure for Access Managemen
 
 A user who has provisioned access consumes a license after their first sign-in. This applies to every user, regardless of role.
 
-When the number of licensed users reaches the number of credits, a user who signs in for the first time can't sign in, because Privilege Secure can't create the user. The same happens when the trial license has expired or when the license service isn't reachable.
+When the number of licensed users reaches the number of credits, a user who signs in for the first time can't sign in, because Privilege Secure can't create the user. The same happens when the trial license has expired or when the license service isn't reachable. Users who already have a license can still sign in, but they can't start sessions.
 
 {/* TODO verify: the error text that the user sees at sign-in. */}
 
@@ -36,9 +36,9 @@ To apply a license file, see [Activate a license](/docs/privilegesecure/26_07/in
 
 ## Expired licenses
 
-{/* TODO SME: behavior after the license expires. install/overview says only the built-in Admin account can sign in. importlicense and login say sign-in continues while the user count isn't exceeded, but sessions and new users are blocked. The lab didn't settle it. Describe one behavior after the SME confirms. */}
+{/* TODO SME: whether an expired subscription (non-trial) license behaves like an expired trial. The code settles the trial case: existing users can still sign in, new users can't be created, and sessions can't start. Whether an expired subscription sets the credit count to 0 comes from the closed licensing library. */}
 
-Import a valid license file before the trial or subscription license expires.
+When the trial license has expired, Privilege Secure can't create new users, and no user can start a session. Users who already have a license can still sign in. Import a valid license file before the trial or subscription license expires. To import a file, see [Activate a license](/docs/privilegesecure/26_07/install/activate-license).
 
 ## Removing users
 

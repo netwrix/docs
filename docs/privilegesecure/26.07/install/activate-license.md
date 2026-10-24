@@ -49,9 +49,7 @@ A failed import reports a generic message, such as "License failed validation ch
 
 ## Expired licenses
 
-{/* TODO SME: the behavior after a license expires. The 26.03 pages disagree: one says only the built-in administrator can sign in, and others say sign-in continues while the user count isn't exceeded but sessions and new users are blocked. Describe one behavior after the SME confirms. */}
-
-Import a valid license file before the trial or subscription license expires.
+Import a valid license file before the trial or subscription license expires. For what happens when a license expires, see [Expired licenses](/docs/privilegesecure/26_07/requirements/licensing#expired-licenses).
 
 ## Import a license from the application server
 
