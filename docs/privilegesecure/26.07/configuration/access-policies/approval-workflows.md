@@ -1,0 +1,104 @@
+---
+title: "Configure approval workflows"
+description: "Require one or more tiers of approvers to approve a session request before the session starts, and set the escalation time for each tier."
+sidebar_position: 50
+---
+
+# Configure approval workflows
+
+An approval workflow requires approval before a requested session starts. You set the workflow on a connection profile. Every session that an access policy starts with that profile then waits for approval.
+
+A workflow is a list of tiers. Each tier has its own approvers, the number of approvals it needs, and an escalation time. If the approvers in a tier don't respond in time, the request escalates to an account or group that you name.
+
+## Prerequisites
+
+- A connection profile to edit. See [Connection profiles](connection-profiles.md).
+- The approvers exist in the console as users, local users, or groups. See [Add users and groups](../../admin/users-groups/add-users-groups.md).
+- Email is configured, so that approvers and requesters receive notifications. See [Configure email notifications](../system-settings/email.md).
+
+## Approval workflow options
+
+The **Approval Workflow** section of a connection profile has a radio button with two choices.
+
+| Option | Behavior |
+|---|---|
+| **Automatic** | No approval is needed. The session starts when the user requests it. This is the default. |
+| **Tiered** | The session waits until the tiers approve the request. |
+
+## Tier settings
+
+When you select **Tiered**, the section shows a card for each tier. The card has these items.
+
+| Item | Description |
+|---|---|
+| Edit (pencil) icon | Opens the **Tier Escalation** dialog. |
+| Delete icon | Deletes the tier after you confirm. |
+| **Escalation** | The time, in minutes, that approvers have to respond before the request escalates. |
+| **Account** | The user that the request escalates to. It shows `<not set>` until you choose one. |
+| **Group** | The group that the request escalates to. It shows `<not set>` until you choose one. |
+| **Approvers** | The users and groups that can approve the request. The green plus icon adds approvers. |
+| **Approvals Required** | The number of approvals that the tier needs. The plus and minus icons change the number. |
+
+A green plus icon to the right of the last card adds another tier.
+
+{/* TODO verify: the maximum number of tiers. The 26.03 page says up to three tiers; the lab didn't test the limit. */}
+
+## Add an approval workflow
+
+1. Select **Access Policy** > **Connection Profiles**.
+1. Select the connection profile to edit.
+1. In the **Approval Workflow** section, select **Tiered**.
+1. Click the pencil icon on the tier card to open the **Tier Escalation** dialog.
+1. Enter a value for **Escalation in (minutes)**. {/* TODO verify: the default Escalation in (minutes) value on a new tier (code model default is 1; an existing lab tier showed 10). */}
+1. (Optional) Select an **Escalation Account** or an **Escalation Group**.
+1. Click **Okay**.
+1. Click the green plus icon next to **Approvers** to open the **Add Users and Groups as Approvers** dialog.
+1. Filter by **All**, **Users**, **Local Users**, or **Groups**, or use the search box.
+1. Select each approver to move it from **Available Users And Groups** to **Users And Groups to Add**.
+1. Click **Add**.
+1. Use the plus and minus icons next to **Approvals Required** to set the number of approvals the tier needs.
+1. To add another tier, click the green plus icon to the right of the card and repeat steps 4 through 12.
+1. Click **Save**.
+
+To remove an approver, click the remove icon next to the approver and confirm. {/* TODO verify: icon label in 26.07 */}
+
+{/* TODO screenshot: the Approval Workflow section with a tier card showing Escalation, Account, Group, Approvers, and Approvals Required */}
+{/* TODO screenshot: the Tier Escalation dialog */}
+{/* TODO screenshot: the Add Users and Groups as Approvers dialog */}
+
+### Example
+
+A connection profile uses one tier with these values:
+
+- **Escalation in (minutes)**: 10
+- **Escalation Group**: a group of senior administrators
+- **Approvers**: two users
+- **Approvals Required**: 1
+
+When a user requests a session, the console notifies both approvers. If one approves, the session starts. If neither responds within 10 minutes, the request escalates to the escalation group.
+
+:::tip
+Add more approvers than the tier requires. The tier can then reach its approval count before the escalation time passes. An approver that is a group counts each member who responds. If a tier can't reach its approval count, only the escalation account or group can decide the request. {/* TODO verify */}
+:::
+
+## How tiers decide a request
+
+- A tier approves the request when it has at least the number of approvals in **Approvals Required**.
+- A single denial in a tier denies the request.
+- If an escalation account or group approves or denies the request, that decision overrides the other approvers.
+- When a tier approves the request, the console notifies the approvers in the next tier.
+- Requesters receive an email when the request is approved or denied. The denial email includes the approver's note.
+
+{/* TODO verify: whether tiers run strictly in order. The 26.03 page says each tier approves in sequence; the console has no setting for sequential or concurrent progression. */}
+
+## Approve a request
+
+Approvers see pending requests on the **Approvals** tab of the dashboard. See [Approve or deny session requests](../../user-guide/approve-requests.md).
+
+{/* TODO verify: whether a requester can approve their own session. The 26.03 page says the same user can approve; the 26.07.3 code never asks an approver to approve their own session. Ask engineering and test in the lab before publishing a statement. */}
+
+## Related topics
+
+- [Connection profiles](connection-profiles.md)
+- [Access policies](overview.md)
+- [Configure email notifications](../system-settings/email.md)

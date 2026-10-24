@@ -1,0 +1,10 @@
+{
+  "label": "Service Accounts",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "service-accounts"
+  }
+}

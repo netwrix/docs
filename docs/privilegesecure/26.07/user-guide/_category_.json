@@ -1,0 +1,10 @@
+{
+  "label": "User Guide",
+  "position": 600,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

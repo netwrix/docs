@@ -1,0 +1,112 @@
+---
+title: "Troubleshoot installation and upgrade"
+description: "Find the cause and fix for common Privilege Secure installation and upgrade failures, and the log files to check."
+sidebar_position: 120
+---
+
+# Troubleshoot installation and upgrade
+
+Use this page when an installation or upgrade of Netwrix Privilege Secure for Access Management (Privilege Secure) fails or leaves the product in an unexpected state. Each entry gives the symptom, the cause, and the fix.
+
+## Log files
+
+Installation and upgrade logs are in `C:\ProgramData\Stealthbits\PAM\Log`. Log file names follow the pattern `PAM-<Service><yyyymmdd>.log`. The files to check after a failed install or upgrade are:
+
+| Log | Use it for |
+|---|---|
+| `PAM-InstallCmd` | Installer custom actions |
+| `PAM-DbUpdater` | Database schema updates and data import during install and upgrade |
+| `NPS-PGUpgrade` | Output of the PostgreSQL 12 to 16 migration |
+| `NPS-PGUpgradeErr` | Errors from the PostgreSQL 12 to 16 migration |
+
+You can also open these files from the **Log Files** page in the Privilege Secure Console. See [Log files](/docs/privilegesecure/26_07/admin/audit-reporting/log-files).
+
+By default, the installer also writes a log to the `%TEMP%` folder of the account that ran it. To choose the log file, run `NPS.exe` with `/log <file>`. See [Install silently](/docs/privilegesecure/26_07/install/silent-install).
+
+{/* TODO verify: that the PAM-InstallCmd and PAM-DbUpdater file names match the log names on a fresh 26.07 install. The lab listing is from an upgraded install. */}
+
+## The installer stops and asks for PowerShell 7.6
+
+**Symptom:** `NPS.exe` stops with the message "PowerShell 7.6 or later is required. Please install it from https://aka.ms/powershell".
+
+**Cause:** Privilege Secure 26.07 requires PowerShell 7.6 or later on the application server. The Setup Launcher doesn't check for it, so the launcher can show PowerShell as installed when only Windows PowerShell 5.1 is present.
+
+**Fix:** Install PowerShell 7.6 or later, and run the installer again. See [Application server requirements](/docs/privilegesecure/26_07/requirements/application-server).
+
+## The launcher says it must run as Administrator
+
+**Symptom:** The message "Netwrix Setup Launcher must be run as Administrator" appears.
+
+**Fix:** Close the launcher. Right-click `NPS_Setup.exe`, and select **Run as administrator**.
+
+## The installer asks you to uninstall Stealthbits Privileged Activity Manager
+
+**Symptom:** `NPS.exe` stops with the message "Please uninstall Stealthbits Privileged Activity Manager from the Control Panel before installing."
+
+**Cause:** The server has an old Stealthbits Privileged Activity Manager installation. The Setup Launcher handles this case during an upgrade. Running `NPS.exe` directly doesn't.
+
+**Fix:** Start the installation with `NPS_Setup.exe` instead of `NPS.exe`.
+
+{/* TODO verify: the behavior of the launcher on a host that has the old Stealthbits installation. */}
+
+## The PostgreSQL migration is blocked or fails
+
+**Symptom:** The Setup Launcher blocks the PostgreSQL 12 to 16 migration, or the migration fails.
+
+Check these causes:
+
+- **Not enough free space.** The message says the drive requires at least a given amount of free space and reports how much is available. The drive needs at least as much free space as the PostgreSQL 12 data folder. Free space, and run the migration again.
+- **Unsupported locale.** The message says the locale isn't supported by the target database. Set the Windows regional format to **English (United States)**, and run the migration again.
+- **Other errors.** Open `NPS-PGUpgrade` and `NPS-PGUpgradeErr` in the log folder, and contact [Netwrix Support](https://www.netwrix.com/support.html) with the files.
+
+## Install completes, but the database looked unreachable
+
+**Symptom:** The install finishes, but the database wasn't reachable when the installer ran.
+
+**Cause:** The installer doesn't fail when it can't import the default activities. It records the failure in `ImportActivities.log` and continues.
+
+**Fix:** Open `ImportActivities.log` and read the error. Correct the database connection. If the default activities are missing afterward, contact [Netwrix Support](https://www.netwrix.com/support.html).
+
+{/* TODO verify: whether rerunning the installer or SbPAM.DbUpdater.exe imports the default activities after a failed first attempt. */}
+
+{/* TODO verify: the folder of ImportActivities.log. The code notes list it under a Logs folder, and the other installer logs are under Log. */}
+
+## The upgrade fails with a duplicate key error
+
+**Symptom:** After an upgrade to 26.07, Linux resource scans finish with errors and access to Linux resources stops. In the `PAM-DbUpdater` log, the data import fails with error `23505`, a duplicate key on `IX_activity_group_name`, and the log contains "Creating deleted Default ActivityGroup: Domain Administrator Access".
+
+**Cause:** A default activity group was deleted, and a new group with the same name was created. **Domain Administrator Access** and **Local Administrator Access** are the default groups. The upgrade re-creates a missing default group by name and then fails because the name exists.
+
+**Fix:** Upgrade to 26.07.3 or later, which fixes the problem. On earlier releases, don't delete and re-create the default activity groups before you upgrade. If the error persists after you upgrade, contact [Netwrix Support](https://www.netwrix.com/support.html).
+
+## Services return HTTP 500 or sessions stay in Provisioning
+
+**Symptom:** After you register services, every service returns HTTP 500, or sessions stay in the Provisioning status.
+
+**Cause:** The **NPS Rest URL** ends with a slash, for example `https://<nps-server>:6500/`.
+
+**Fix:** Remove the trailing slash, and register the services again. See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url). Release 26.07.3 removes the trailing slash automatically.
+
+## Single sign-on stops working after an upgrade
+
+**Symptom:** SAML sign-in fails after an upgrade.
+
+**Cause:** An upgrade from a release earlier than 26.03.2 overwrites the SAML request and sign-out templates.
+
+**Fix:** Copy your backed-up `SamlRequestTemplate.xml` and `SamlSignoutTemplate.xml` back to the `Web` folder of the installation folder. If you have no backup, recreate your customizations. See [Upgrade Privilege Secure](/docs/privilegesecure/26_07/install/upgrade#back-up-the-saml-templates).
+
+## An error mentions a null PlatformID
+
+**Symptom:** A scan or sync fails with the error "Cannot convert null to type 'System.Guid'" for the platform ID.
+
+**Cause:** Resources migrated from SQL Server to PostgreSQL can lose their platform. Release 26.07.3 fixes the problem.
+
+**Fix:** Upgrade to 26.07.3 or later. On earlier releases, assign a platform to the affected resource.
+
+{/* TODO verify: exact steps to set the platform on a resource with no PlatformID. */}
+
+## Related topics
+
+- [Upgrade Privilege Secure](/docs/privilegesecure/26_07/install/upgrade)
+- [Install the application server](/docs/privilegesecure/26_07/install/install-application-server)
+- [Troubleshooting](/docs/privilegesecure/26_07/troubleshooting/overview)
