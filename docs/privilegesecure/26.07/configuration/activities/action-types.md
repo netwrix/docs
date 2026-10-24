@@ -158,9 +158,11 @@ Both entries give the user `sqlplus` with the `SETENV` and `LOG_INPUT` tags.
 If you paste a rule from a sudoers example, Privilege Secure ignores a leading `user ALL=(RunAs)` and uses only the tags and commands that follow it.
 
 :::warning
-In 26.07.0 and 26.07.1, a rule with **Run As** set to `root` granted broader permissions than the rule specified. 26.07.3 includes a fix for sudoers rule formatting. If you use **Add Sudoers rule** with `root`, upgrade to 26.07.3 or later. See [Known issues](../../troubleshooting/known-issues.md) and [Upgrade Privilege Secure](../../install/upgrade.md).
+Before 26.07.3, a rule with **Run As** set to `root`, or left empty, let the user run the rule's commands as any account. From 26.07.3, the rule limits the user to the **Run As** account. If you use **Add Sudoers rule**, upgrade to 26.07.3 or later. See [Upgrade Privilege Secure](../../install/upgrade.md).
+
+A rule file written before the upgrade keeps the broad permissions until the session ends. End those sessions, or run the action again after you upgrade.
 :::
 
-{/* TODO verify: PSAM-1266/1337 Run As root scoping is fixed in 26.07.3 (PSAM-1337 still Awaiting Fix Verification) */}
+{/* TODO verify: the fix is confirmed in the 26.07.3 source (sudoers command plan always writes a Runas_Alias). Support or Security must confirm the wording, and the escalation for the fix is still awaiting verification. */}
 
 {/* TODO verify: confirm on a 26.07.3 Linux resource the generated rule file for tags, the warning text that the session log shows when tags conflict, and whether PASSWD or NOPASSWD entered in Commands is accepted or ignored. The code states that Prompt for password controls them. The lab proxy is numbered 26.10, so lab behavior can't confirm this. */}
