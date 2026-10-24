@@ -84,7 +84,7 @@ The root-level `InsecureSkipVerify` key controls whether the gateway validates t
 When the key is `true`, the gateway doesn't validate the Privilege Secure certificate.
 
 :::warning
-When `InsecureSkipVerify` is `true`, the gateway accepts any certificate from the server it forwards to. For production, make sure the gateway server trusts the certificate on `https://<nps-server>:6500`, for example by importing the root certificate authority (CA) certificate on the gateway server.
+When `InsecureSkipVerify` is `true`, the gateway accepts any certificate from the server it forwards to. For production, ensure that the gateway server trusts the certificate on `https://<nps-server>:6500`, for example by importing the root certificate authority (CA) certificate on the gateway server.
 :::
 
 {/* TODO verify: SME. Is the shipped appsettings.log.json value of true intended, and what is the supported way to turn validation on? */}

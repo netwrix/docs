@@ -103,7 +103,7 @@ The gateway package includes `install-docker.sh`. It installs Docker, pulls `gua
 On some Ubuntu releases, `install-docker.sh` installs a Docker engine that can't start containers, and `docker run` fails with the error `cgroups: cgroup mountpoint does not exist`. If you see this error, contact Netwrix Support.
 :::
 
-{/* TODO verify: Product to confirm a supported Docker install (PSAM-1404). Do not publish a workaround as a standard step until then. Candidate workaround from the lab notes: run `sudo apt-get remove moby-engine moby-cli moby-buildx`, run `sudo apt-get install docker.io`, remove an existing container with `sudo docker rm -f guacd`, then start guacd with `sudo docker run --name guacd --restart unless-stopped -v <config-folder>:/etc/guacamole -p 4822:4822/tcp -d guacamole/guacd:1.6.0`, where <config-folder> is the WSL path of the gateway data folder, by default /mnt/c/ProgramData/Stealthbits/PAM/RagGateway. */}
+{/* TODO verify: Product to confirm a supported Docker install (PSAM-1404). Don't publish a workaround as a standard step until then. Candidate workaround from the lab notes: run `sudo apt-get remove moby-engine moby-cli moby-buildx`, run `sudo apt-get install docker.io`, remove an existing container with `sudo docker rm -f guacd`, then start guacd with `sudo docker run --name guacd --restart unless-stopped -v <config-folder>:/etc/guacamole -p 4822:4822/tcp -d guacamole/guacd:1.6.0`, where <config-folder> is the WSL path of the gateway data folder, by default /mnt/c/ProgramData/Stealthbits/PAM/RagGateway. */}
 
 ## Configure the gateway
 
@@ -136,7 +136,7 @@ If guacd isn't reachable on port 4822, `Configure-Gateway.ps1` prints one error 
 
    The log includes the line "Communication will require SSL/TLS".
 
-Make sure the gateway server trusts the certificate on `https://<nps-server>:6500`. See [Skip certificate validation for Privilege Secure](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md#skip-certificate-validation-for-privilege-secure).
+Ensure that the gateway server trusts the certificate on `https://<nps-server>:6500`. See [Skip certificate validation for Privilege Secure](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md#skip-certificate-validation-for-privilege-secure).
 
 :::note
 The script stores `<guacd-host>` in the `Guacd.Hostname` setting. The address of a WSL instance can change after a restart.

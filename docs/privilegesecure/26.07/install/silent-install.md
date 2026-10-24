@@ -35,7 +35,7 @@ Set the `InstallFolder` variable on the command line. For example, to install to
 NPS.exe /quiet InstallFolder="D:\Stealthbits\PAM"
 ```
 
-{/* TODO verify: the exact syntax of the InstallFolder variable on the command line, that the installer uses the folder, and that PRODUCTDIR (used in the 26.03 docs) is not accepted. PRODUCTDIR does not appear in the 26.07.3 installer source. */}
+{/* TODO verify: the exact syntax of the InstallFolder variable on the command line, that the installer uses the folder, and that PRODUCTDIR (used in the 26.03 docs) isn't accepted. PRODUCTDIR doesn't appear in the 26.07.3 installer source. */}
 
 ## Write an installation log
 

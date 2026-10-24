@@ -107,7 +107,7 @@ Antivirus exclusions apply on every server. See [Additional service node and pro
 
 The Proxy Service installer creates Windows Firewall rules for 4422, 4489, and the 6520 to 6525 range.
 
-{/* TODO verify: the direction of 6520, 6523 and 6524 (code and 26.03 install/overview say remote node to application server; the 26.03 ports table says the reverse), and whether a proxy node joins on 6500 or 6520. */}
+{/* TODO verify: the direction of 6520, 6523, and 6524 (code and 26.03 install/overview say remote node to application server; the 26.03 ports table says the reverse), and whether a proxy node joins on 6500 or 6520. */}
 
 ## Remote Access Gateway
 

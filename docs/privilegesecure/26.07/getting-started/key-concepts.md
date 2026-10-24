@@ -15,7 +15,7 @@ An access policy connects users to resources and runs activities to make that co
 | Policy type | What it grants | What it contains |
 |---|---|---|
 | Resource-based | Access to remote systems such as servers, databases, and websites. | Users and groups, activities, resources, and a connection profile. |
-| Credential-based | Access to credentials and files stored in a vault. | Users and groups, credentials or files, and a connection profile. The activities are fixed. |
+| Credential-based | Access to credentials and files stored in a vault. | Users and groups, credentials, or files, and a connection profile. The activities are fixed. |
 
 {/* TODO screenshot: diagram of the parts of a resource-based access policy (users, activities, resources, connection profile) */}
 

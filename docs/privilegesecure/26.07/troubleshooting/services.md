@@ -110,4 +110,4 @@ Releases before 26.03.0 overwrote `appsettings.user.json` during service registr
 - [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md)
 - [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md)
 - [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md)
-- [Services Are Not Running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running)
+- [Services that aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running)

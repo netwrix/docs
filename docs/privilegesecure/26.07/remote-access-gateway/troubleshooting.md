@@ -55,7 +55,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 **Cause:** The connector doesn't match where the user signs in. A connector with **Use Remote Access Gateway** selected works only through the portal, and fails on the console. A connector with the checkbox cleared works only on the console, and fails through the portal.
 
-**Fix:** To offer the identity provider on the portal, create or edit a connector for the portal and select **Use Remote Access Gateway**. To offer it on both the portal and the console, create one connector for each. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
+**Fix:** To offer the identity provider on the portal, edit the connector, or create one for the portal, and select **Use Remote Access Gateway**. To offer it on both the portal and the console, create one connector for each. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## ERRCONNECT_LOGON_FAILURE after you enter the target password
 
