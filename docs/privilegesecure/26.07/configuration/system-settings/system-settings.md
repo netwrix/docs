@@ -52,11 +52,11 @@ A resource can override this setting on its own details page. See [Secure WinRM]
 
 | Field | Default | Description |
 | --- | --- | --- |
-| **Idle Timeout (minutes)** | 10 | The minutes of inactivity before the console signs the user out. The allowed range is 0 to 1000. |
+| **Idle Timeout (minutes)** | 10 | The minutes of inactivity before the console shows a **Session Timeout** warning. The allowed range is 1 to 1000. |
 
-The console shows a **Session Timeout** warning before it signs the user out. A user clicks **Stay Logged In** to continue. See [Sign in to the console](/docs/privilegesecure/26_07/user-guide/sign-in).
+If the user doesn't click **Keep Session Active** within 5 minutes of the warning, the console signs them out. With the default, an idle user is signed out after about 15 minutes. The console shows a caution when you enter a value above 60. See [Idle timeout](/docs/privilegesecure/26_07/user-guide/sign-in#idle-timeout).
 
-{/* TODO verify: the timing of the warning relative to the timeout (26.03 said 5 minutes into a 10-minute timeout), the meaning of 0, and the allowed range (code: 0 to 1000). Needs a timed lab test. */}
+{/* TODO verify: time the warning and the sign-out on 26.07.3 (the code sets the sign-out 5 minutes after the warning). Confirm whether 0 is accepted through the API, and whether the setting applies to the Remote Access Gateway portal. */}
 
 ## User Expiration
 

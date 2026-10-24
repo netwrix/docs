@@ -82,9 +82,9 @@ When the password for your account has expired, the console shows a change-passw
 
 The console signs you out when you are idle. The **Idle Timeout (minutes)** setting under **System Settings** controls how long the console waits. The default is 10 minutes. Your administrator can change it. See [System settings reference](/docs/privilegesecure/26_07/configuration/system-settings).
 
-When the idle timeout passes, a dialog displays "Your session has been idle and will expire soon." Click **Keep Session Active** to keep working, or click **Logout** to sign out. If you take no action, the console signs you out 5 minutes later.
+When the idle timeout passes, the **Session Timeout** dialog displays "Your session has been idle and will expire soon." Click **Keep Session Active** to keep working, or click **Logout** to sign out. If you take no action, the console signs you out 5 minutes later. With the default setting, you are signed out after about 15 minutes of inactivity.
 
-{/* TODO verify: the timing of the warning and the forced sign-out. The 26.03 docs say the sign-out comes at 10 minutes with a warning at 5. Time it on 26.07.3 (G-83). */}
+{/* TODO verify: time the warning and the sign-out on 26.07.3 (G-83). The code sets the sign-out 5 minutes after the warning. */}
 {/* TODO screenshot: idle timeout warning dialog */}
 
 ## Account lockout
