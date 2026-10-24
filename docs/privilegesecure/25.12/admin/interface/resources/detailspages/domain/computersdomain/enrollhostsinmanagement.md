@@ -1,6 +1,12 @@
 ---
 title: "Enroll Hosts in Management Window"
-description: "Enroll Hosts in Management Window"
+description: "Add a domain computer as an NPS managed resource by using the Enroll Hosts in Management window and a service account."
+keywords:
+  - Enroll Hosts in Management
+  - Add as NPS Managed Resource
+  - Use Service Account
+  - add computer
+  - Computers tab
 sidebar_position: 10
 ---
 
@@ -8,18 +14,14 @@ sidebar_position: 10
 
 To add a computer as NPS Managed Resource:
 
-**Step 1 –** Navigate to **Resources** page.
+1. Navigate to **Resources** page.
+2. Select **Domain** resource.
+3. Navigate to **Computers** tab and select the required computer in the list.
+4. Click the **Add as NPS Managed Resource** button.
 
-**Step 2 –** Select **Domain** resource.
+   ![Enroll Hosts in Management window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/enrollhostsinmanagement.webp)
 
-**Step 3 –** Navigate to **Computers** tab and select the required computer in the list.
-
-**Step 4 –** Click the **Add as NPS Managed Resource** button.
-
-![enrollhostsinmanagement](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/enrollhostsinmanagement.webp)
-
-**Step 5 –** Provide the Service Account in the **Use Service Account** field.
-
-**Step 6 –** Click **Okay**.
+5. Provide the Service Account in the **Use Service Account** field.
+6. Click **Okay**.
 
 Now this computer is added as NPS Managed Resource.

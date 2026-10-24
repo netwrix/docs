@@ -1,6 +1,13 @@
 ---
 title: "Reset User MFA"
-description: "Reset User MFA"
+description: "Reset a user's MFA from the Users & Groups page so the user must register a new authenticator at the next login."
+keywords:
+  - Reset MFA
+  - MFA
+  - TOTP
+  - authenticator
+  - Internal MFA
+  - Users and Groups page
 sidebar_position: 10
 ---
 
@@ -12,17 +19,16 @@ This option is only available when the Internal MFA option is enabled on the Use
 [Authentication Connector Tab](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/authenticationconnector.md) for additional
 information.
 
-**Step 1 –** Navigate to the **Policy** > **Users & Groups** page.
+1. Navigate to the **Policy** > **Users & Groups** page.
+2. Select the user you want or group account.
 
-**Step 2 –** Select the user you want or group account.
+   ![Reset MFA for Users and Groups Account](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/usersgroups/usersgroupsresetmfa.webp)
 
-![Reset MFA for Users and Groups Account](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/usersgroups/usersgroupsresetmfa.webp)
+3. Click the **Reset MFA** button.
 
-**Step 3 –** Click the **Reset MFA** button.
+   ![Reset MFA for Account Confirmation Window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/usersgroups/usersgroupsresetmfawindow.webp)
 
-![Reset MFA for Account Confermation Window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/usersgroups/usersgroupsresetmfawindow.webp)
+4. Click the **Reset MFA** button in the confirmation window.
 
-**Step 4 –** Click the **Reset MFA** button in the confirmation window.
-
-The user's MFA has been reset and they is prompted to register a new MFA the next time they log
+Privilege Secure resets the user's MFA in the Privilege Secure user store and prompts them to register a new MFA the next time they log
 in to Privilege Secure.

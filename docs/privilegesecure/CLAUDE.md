@@ -20,7 +20,7 @@ Key concepts appear throughout the documentation:
 |---------|--------|-------|
 | `26.03` | Latest (default) | YY.MM versioning scheme |
 | `25.12` | Active | YY.MM versioning scheme |
-| `4.2` | Active | Semantic versioning; includes `remoteaccessgateway/` and `revieweruser/` sections not in other versions |
+| `4.2` | Hidden | Files are kept in the repo but the version is not listed in `src/config/products.js`, so it is not built or published. `src/config/redirects/privilegesecure-4.2.js` redirects the 4_2 addresses that have a 26.03 counterpart. Semantic versioning; includes `remoteaccessgateway/` and `revieweruser/` sections not in other versions |
 | `4.1` | KB-only | Contains only KB articles; no full product docs |
 
 Edits to one version do **not** propagate to others. Update each version that needs the change explicitly.

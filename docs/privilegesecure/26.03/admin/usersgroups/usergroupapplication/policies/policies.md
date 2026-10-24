@@ -1,6 +1,13 @@
 ---
 title: "Policies Tab"
-description: "Policies Tab"
+description: "Reference for the Policies tab, which lists the access policies and activities associated with a user, group, or application."
+keywords:
+  - Policies tab
+  - access policies
+  - activities
+  - Add Account to Policies
+  - Last Session
+  - user group
 sidebar_position: 40
 ---
 
@@ -13,22 +20,22 @@ application.
 
 The Policies tab has the following features:
 
-- Search — Searches the table or list for matches to the search string. When matches are found, the
-table or list is filtered to the matching results.
-- Add — Opens the Add Account to Policies window. See
-[Add Account to Policies Window](/docs/privilegesecure/26.03/admin/usersgroups/usergroupapplication/policies/addaccounttopolicies.md) topic for
-additional information.
-- Remove — Removes the selected item from being associated with the user group, or application
-- Refresh — Reload the information displayed
+- **Search** — Searches the table or list for matches to the search string. When matches are found, the
+  table or list is filtered to the matching results.
+- **Add** — Opens the Add Account to Policies window. See
+  [Add Account to Policies Window](/docs/privilegesecure/26.03/admin/usersgroups/usergroupapplication/policies/addaccounttopolicies.md) topic for
+  additional information.
+- **Remove** — Removes the selected item from being associated with the user group, or application
+- **Refresh** — Reload the information displayed
 
 The table has the following columns:
 
-- Checkbox — Check to select one or more items
-- Name — Displays the name of the policy. Click the link to view additional details. See the
-[Access Policy Page](/docs/privilegesecure/26.03/admin/accesspolicy/accesspolicy.md) topic for additional information.
-- Activity — Displays the name of the activity. Click the link to view additional details. See the
-[Activities Page](/docs/privilegesecure/26.03/admin/activities/activities.md) topic for additional information.
-- Last Session — Date and timestamp for the last time the user used that activity and policy. This
-column is only on the User Details page.
+- **Checkbox** — Check to select one or more items
+- **Name** — Displays the name of the policy. Click the link to view additional details. See the
+  [Access Policy Page](/docs/privilegesecure/26.03/admin/accesspolicy/accesspolicy.md) topic for additional information.
+- **Activity** — Displays the name of the activity. Click the link to view additional details. See the
+  [Activities Page](/docs/privilegesecure/26.03/admin/activities/activities.md) topic for additional information.
+- **Last Session** — Date and timestamp for the last time the user used that activity and policy. This
+  column is only on the User Details page.
 
 The table columns can be resized and sorted in ascending or descending order.

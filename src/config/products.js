@@ -550,12 +550,6 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
-      {
-        version: '4.2',
-        label: '4.2',
-        isLatest: false,
-        sidebarFile: './sidebars/privilegesecure/4.2.js',
-      },
     ],
     defaultVersion: '26.03',
   },

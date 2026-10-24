@@ -1,6 +1,15 @@
 ---
 title: "SIEM Server"
-description: "SIEM Server"
+description: "Define a SIEM Server endpoint, its connection method, and template, and review events the SIEM service processes."
+keywords:
+  - SIEM Server
+  - SIEM Host
+  - Server Type
+  - Use SSL
+  - TLS
+  - TCP
+  - UDP
+  - Template
 sidebar_position: 100
 ---
 
@@ -8,41 +17,41 @@ sidebar_position: 100
 
 The SIEM Server page is accessible from the Navigation pane under Configuration > SIEM. Privilege
 Secure can output events to third-party SIEM solutions for reporting, correlation, and notification.
-The SIEM Servers page define the SIEM endpoint, the method of connection, and the SIEM template to
-be used.
+The SIEM Servers page defines the SIEM endpoint, the method of connection, and the SIEM template to
+use.
 
 SIEM Servers define where to send the event data, how the connection should be established, and the
 template to define the format/data to be sent.
 
-**Step 1 –** Navigate to the **Configuration** > **SIEM** > **SIEM Templates** page.
+1. Navigate to the **Configuration** > **SIEM** > **SIEM Servers**.
 
-![siemservers](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/siemservers.webp)
+   ![SIEM Servers page with connection fields](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/siemservers.webp)
 
-**Step 2 –** Enter the following information:
+2. Enter the following information:
 
-- SIEM Host – Enter the address of the SIEM Server
-- Server Type – Select TCP or UDP protocol for the connection
-- Port- Enter the port for the connection
-- Protocol - Select the protocol to secure the connection: TLS, TLS 1.1 or TLS 1.2
-- Template – Select the SIEM template to define the data and format
-- Use SSL - Check to enable SSL for the connection
-- Enabled – Check to enable the SIEM Server. Uncheck to disable the SIEM Server.
+   - **SIEM Host** — Enter the address of the SIEM Server
+   - **Server Type** — Select TCP or UDP protocol for the connection
+   - **Port** — Enter the port for the connection
+   - **Protocol** — Select the protocol to secure the connection: TLS, TLS 1.1 or TLS 1.2
+   - **Template** — Select the SIEM template to define the data and format
+   - **Use SSL** — Check to enable SSL for the connection
+   - **Enabled** — Check to enable the SIEM Server. Uncheck to disable the SIEM Server.
 
-### SIEM Service
+## SIEM Service
 
 Events destined for SIEM Servers are sent to a queue. The SIEM service is responsible for pulling
-events out the queue and processing them. Multiple SIEM services process high volumes
+events out of the queue and processing them. Multiple SIEM services process high volumes
 of events.
 
-![SIEM Serivce Page](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/siemservice.webp)
+![SIEM Service Page](/images/privilegesecure/26.03/accessmanagement/admin/configuration/page/siemservice.webp)
 
 Events processed may be viewed by selecting the SIEM service in the Service Node page.
 
-- Sent Time – When the event was processed
-- Sent – Successful processing of the event
-- Message – The SIEM event to be processed
-- SIEM Host – The SIEM Server the event is destined for
-- Resource – The Resource associated with the event, If appropriate
-- Account – The Account associated with the event, if appropriate
-- Activity – The Activity associated with the event, if appropriate
-- User Name – The User Name associated with the event, if appropriate
+- **Sent Time** — When the event was processed
+- **Sent** — Successful processing of the event
+- **Message** — The SIEM event to be processed
+- **SIEM Host** — The SIEM Server the event is destined for
+- **Resource** — The Resource associated with the event, If appropriate
+- **Account** — The Account associated with the event, if appropriate
+- **Activity** — The Activity associated with the event, if appropriate
+- **User Name** — The User Name associated with the event, if appropriate
