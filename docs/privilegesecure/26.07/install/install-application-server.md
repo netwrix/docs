@@ -20,7 +20,7 @@ The Netwrix Setup Launcher (`NPS_Setup.exe`) checks prerequisites, installs the 
 Install PowerShell 7.6 or later before you start the Setup Launcher. The launcher doesn't check for it. Its **Pre-requisites Setup** grid checks only for PowerShell 5.1 or later, so it can show every prerequisite as installed while the application installer still stops. Download PowerShell from [aka.ms/powershell](https://aka.ms/powershell).
 :::
 
-{/* TODO verify: on a clean server without PowerShell 7.6, the exact message and behavior of NPS.exe when the Setup Launcher starts it. */}
+{/* TODO verify: on a clean server without PowerShell 7.6, the on-screen behavior of NPS.exe when the Setup Launcher starts it. The message text is confirmed in the installer source. */}
 
 ## Install the application server with PostgreSQL
 

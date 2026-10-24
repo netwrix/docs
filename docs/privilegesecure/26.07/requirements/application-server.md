@@ -40,7 +40,10 @@ The Setup Launcher doesn't warn you if PowerShell 7.6 or later is missing. Its *
 :::
 
 If PowerShell 7.6 or later isn't installed, `NPS.exe` stops with the message "PowerShell 7.6 or later is required. Please install it from https://aka.ms/powershell".
-{/* TODO verify: confirm the exact message and behavior of NPS.exe when pwsh.exe isn't installed. The message comes from the installer source and wasn't tested in the lab. */}
+
+The check finds PowerShell through the `App Paths\pwsh.exe` registry key. An installation that doesn't register that key can fail the check even when PowerShell is present. Install PowerShell from the MSI package.
+
+{/* TODO verify: the message and the PowerShell 7.6 version floor are confirmed in the installer source for v26.07.0 through v26.07.3. The on-screen behavior when pwsh.exe is missing isn't tested; run it on a clean VM. Also confirm that the MSI package registers the App Paths key and that ZIP and MSIX installations don't. Also flag the KB article exporting-the-activity-log-as-a-csv, which says not to install PowerShell 7.2 or later; PowerShell 7.x upgrades in place, so it needs a 26.07 caveat. */}
 
 ## Software that the installer adds
 
