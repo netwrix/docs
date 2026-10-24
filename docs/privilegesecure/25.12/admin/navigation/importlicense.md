@@ -1,6 +1,14 @@
 ---
 title: "Import the License File"
-description: "Import the License File"
+description: "Import a license file from the About page to replace the 30-day trial license, and learn how an expired license affects users."
+keywords:
+  - Upload License File
+  - Import License
+  - expired license
+  - trial license
+  - license file
+  - User Options
+  - 30-day trial
 sidebar_position: 30
 ---
 
@@ -9,7 +17,7 @@ sidebar_position: 30
 Netwrix Privilege Secure comes with a temporary 30-day trial license. a banner at the top indicates
 the expiration date of a license about to expire.
 
-![Dashboard interface showing an expiration banner and pointint to the User Options menu with the About page](/images/privilegesecure/25.12/accessmanagement/admin/expirationbanner.webp)
+![Dashboard interface showing an expiration banner and pointing to the User Options menu with the About page](/images/privilegesecure/25.12/accessmanagement/admin/expirationbanner.webp)
 
 However, you can import your license file on the About page (User Options > About). An expired
 license doesn't necessarily prevent users from logging in. If a license is expired, and the login
@@ -25,23 +33,19 @@ If your license is expired, and you can still log in, you will not be able to cr
 activity sessions or add new users.
 :::
 
-
 To import the license key file.
 
-**Step 1 –** log in to the Privilege Secure console as an administrator.
+1. log in to the Privilege Secure console as an administrator.
+2. Click the **User** icon in the upper-right corner beside your login name to open the **User
+   Options** menu.
+3. Select **About**. The About page opens.
 
-**Step 2 –** Click the User icon in the upper-right corner beside your login name to open the User
-Options menu.
+   ![About page showing trial license details](/images/privilegesecure/25.12/accessmanagement/admin/triallicensedetails.webp)
 
-**Step 3 –** Select About. The About page opens.
+4. In the Upload License File section, click **Import License**.
+5. Navigate to the license file and click **Open** to import the license.
 
-![About page showing trial license details](/images/privilegesecure/25.12/accessmanagement/admin/triallicensedetails.webp)
-
-**Step 4 –** In the Upload License File section, click Import License.
-
-**Step 5 –** Navigate to the license file and click Open to import the license.
-
-![About page showing successful upload of a license](/images/privilegesecure/25.12/accessmanagement/admin/licenseimportsuccess.webp)
+   ![About page showing successful upload of a license](/images/privilegesecure/25.12/accessmanagement/admin/licenseimportsuccess.webp)
 
 A message indicates the license file uploaded successfully. The license information displays at the
 top of the page, and the expiration banner disappears from the top. See the

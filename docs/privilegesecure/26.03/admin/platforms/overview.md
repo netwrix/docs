@@ -1,6 +1,15 @@
 ---
 title: "Platforms"
-description: "Platforms"
+description: "Use the Platforms page to apply default configurations to all resources of a platform type, and find the settings for each default platform."
+keywords:
+  - platform types
+  - Copy icon
+  - Trashcan icon
+  - default platforms
+  - Microsoft Entra ID
+  - Microsoft SQL Server
+  - Oracle
+  - Cisco
 sidebar_position: 20
 ---
 
@@ -15,34 +24,34 @@ administrators to apply default configurations across all resources defined by t
 The pane on the left side of the page displays a list of the configured platforms. The pane has the
 following features:
 
-- Search — Searches the table or list for matches to the search string. When matches are found, the
-table or list is filtered to the matching results.
-- Copy icon — Create a new platform based on the current selection. Icon appears when platform is
-hovered over. This is intended to cover use cases where the built-in account differs from the
-norm.
-- Trashcan icon — Deletes the platform. Icon appears when policy is hovered over and is only
-available for duplicated platforms. A confirmation window displays.
+- **Search** — Searches the table or list for matches to the search string. When matches are found, the
+  table or list is filtered to the matching results.
+- **Copy icon** — Create a new platform based on the current selection. Icon appears when platform is
+  hovered over. This is intended to cover use cases where the built-in account differs from the
+  norm.
+- **Trashcan icon** — Deletes the platform. Icon appears when policy is hovered over and is only
+  available for duplicated platforms. A confirmation window displays.
 
 Default platforms include:
 
-- Active Directory — See the [Active Directory Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/activedirectory.md)
-topic for additional information on configuration options
-- Microsoft Entra ID (formerly Azure AD) — See the
-[Microsoft Entra ID Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/entraid.md) topic for additional information on
-configuration options
-- Cisco — See the [Cisco Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/cisco.md) topic for additional information
-on configuration options
-- Linux — See the [Linux Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/linux.md) topic for additional information
-on configuration options
-- Microsoft SQL Server — See the [Microsoft SQL Server Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/mssql.md)
-topic for additional information on configuration options
-- Oracle — See the [Oracle Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/oracle.md) topic for additional
-information on configuration options
-- Secret Vault — See the [Secret Vault Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/secretvault.md) topic for
-additional information on configuration options
-- Website — See the [Web Site Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/website.md) topic for additional
-information on configuration options
-- Windows — See the [Windows Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/windows.md) topic for additional
-information on configuration options
+- **Active Directory** — See the [Active Directory Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/activedirectory.md)
+  topic for additional information on configuration options
+- **Microsoft Entra ID (formerly Azure AD)** — See the
+  [Microsoft Entra ID Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/entraid.md) topic for additional information on
+  configuration options
+- **Cisco** — See the [Cisco Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/cisco.md) topic for additional information
+  on configuration options
+- **Linux** — See the [Linux Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/linux.md) topic for additional information
+  on configuration options
+- **Microsoft SQL Server** — See the [Microsoft SQL Server Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/mssql.md)
+  topic for additional information on configuration options
+- **Oracle** — See the [Oracle Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/oracle.md) topic for additional
+  information on configuration options
+- **Secret Vault** — See the [Secret Vault Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/secretvault.md) topic for
+  additional information on configuration options
+- **Website** — See the [Web Site Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/website.md) topic for additional
+  information on configuration options
+- **Windows** — See the [Windows Platform Policy Configuration](/docs/privilegesecure/26.03/admin/platforms/platforms/windows.md) topic for additional
+  information on configuration options
 
 See the Configure a Platform Policy topic for additional information on adding a Platform Policy.

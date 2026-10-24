@@ -1,3 +1,6 @@
-message: "Don't use passive voice. Use active voice instead."
+message: "Rewrite in active voice: as a command if it tells the reader what to do, otherwise only if the actor is already stated."
 level: warning
-reason: "This rule should trigger when the user or agent writes a sentence or clause in passive voice."
+reason: >-
+  Flag a passive sentence only if it can be rewritten in active voice without changing its meaning.
+  The reader counts as the actor when the sentence tells them what to do, so rewrite it as a command.
+  If the rewrite would need any other actor the sentence doesn't state, don't flag it.
