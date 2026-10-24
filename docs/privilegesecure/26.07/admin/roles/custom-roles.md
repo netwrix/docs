@@ -28,11 +28,11 @@ A custom role grants only the permissions you assign, and only over the entities
 3. In **Enter Role Name**, enter a name, for example `Policy editors`.
 4. (Optional) Enter a **Description**, for example `Maintains the access policies for the finance servers`.
 5. In the **Target** dropdown, select **Access Policies**, **Credentials**, or **Auditors**.
-6. Slick **Save**.
+6. Click **Save**.
 
 The new role appears in the role list. Select it to assign permissions, scope it, and add users.
 
-{/* TODO screenshot: the Add Role dialog with the Role Name, Description, and Target fields */}
+![The new role form with the Role Name, Description, and Target fields, with Target set to Access Policies.](/images/privilegesecure/26.07/admin/role-new-form.webp)
 
 The role list shows copy and delete icons beside the selected role. {/* TODO verify: that the copy and delete icons appear for custom roles, and what a copy carries over (permissions, scope, users) */}
 
@@ -116,7 +116,7 @@ The **Role Users** table at the bottom of the role page lists the accounts that 
 
 1. Select **Add Role Users**. The **Add Users and Groups** window opens.
 2. Search for or filter to the accounts you want, and select them.
-3. Slick **Add**.
+3. Click **Add**.
 
 The toolbar has **Search**, a **Type** filter, **Remove**, and **Refresh**. **Type** filters by **User**, **Group**, **Application**, **Collection**, and **Local User**. The table columns are **Type**, **Name**, **User Name**, **User Principal Name**, **Email**, and **Last Login**. You can resize and sort the columns.
 

@@ -24,7 +24,7 @@ A resource-based access policy lets users run activities on resources such as co
 6. Select a profile in the **Connection Profile** list.
 7. Click **Save**.
 
-A new policy shows `<none>` in the **Connection Profile** list. **Save** stays unavailable until you select a profile. If the profile doesn't exist yet, create it on the **Connection Profiles** page first. The round arrow next to the list opens the selected profile.
+A new policy shows `<none>` in the **Connection Profile** list. If you click **Save** without selecting a profile, the console shows "Please correct the errors" and "A value is required." under **Connection Profile**. If the profile doesn't exist yet, create it on the **Connection Profiles** page first. The round arrow next to the list opens the selected profile.
 
 For example, to give a team access to a set of web servers, enter the name `Web servers - maintenance`, select **Resource Based**, and select an existing connection profile. Then add the team's group, an activity, and a resource group on the tabs.
 

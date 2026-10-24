@@ -14,7 +14,7 @@ The **Credentials** tile on the Dashboard shows the same table. See [Dashboard](
 
 To open the page, click **Credentials** in the left navigation. The **Credentials** menu also holds **Credential Groups** and **Credential Policy Overrides**.
 
-{/* TODO screenshot: the Credentials page with a managed row selected, showing the toolbar and the filter chips */}
+![The Credentials page with a managed account selected, showing the Manage, Unmanage, Rotate, Verify, and View History toolbar and the Method, Managed type, and Privilege type filters.](/images/privilegesecure/26.07/admin/credentials-page-row-selected.webp)
 
 ## Toolbar
 

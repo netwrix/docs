@@ -37,7 +37,7 @@ The LAPS connector reads the legacy LAPS password attribute, `ms-Mcs-AdmPwd`, an
 
 An asterisk (\*) marks a required field.
 
-{/* TODO screenshot: the LAPS connector form showing Service Account and Domain Name. */}
+![The Add Integration Connector form with the LAPS template selected, showing the Service Account and Domain Name fields.](/images/privilegesecure/26.07/integrations/integration-connector-laps-form.webp)
 
 **Example:** To read passwords from the domain `example.com` with the service account `LAPS Reader`:
 

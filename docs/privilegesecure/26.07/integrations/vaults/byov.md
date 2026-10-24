@@ -36,7 +36,7 @@ An asterisk (\*) marks a required field.
 
 {/* TODO verify: whether Skip Certificate Check is cleared by default on the BYOV form. */}
 
-{/* TODO screenshot: the BYOV connector form with the Advanced section expanded. */}
+![The Add Integration Connector form with the BYOV template selected and the Advanced section expanded, showing Skip Certificate Check and the Checkout Script Block editor.](/images/privilegesecure/26.07/integrations/integration-connector-byov-advanced.webp)
 
 ### Script parameters
 

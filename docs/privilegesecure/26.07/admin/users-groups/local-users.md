@@ -18,12 +18,12 @@ You have the Administrator role.
 2. Click **Add** and select **New Local User**.
 3. In **Enter Local User Name**, enter the name for the account, for example `contractor01`.
 4. Enter a password in **Password** and again in **Confirm Password**.
-5. Leave **Change Password Next Login** selected to make the user choose a new password at the first sign-in. Clear it to keep the password you entered.
+5. To make the user choose a new password at the first sign-in, select **Change Password Next Login**. The checkbox is cleared by default, which keeps the password you entered.
 6. Click **Save**. The button stays disabled until the entries are valid.
 
 The account appears on the **Users & Groups** page with the type **Local User**. See [Users and groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md).
 
-{/* TODO screenshot: the New Local User form */}
+![The New Local User form with the user name, Password, and Confirm Password fields and the Change Password Next Login checkbox.](/images/privilegesecure/26.07/admin/new-local-user-form.webp)
 
 ## Password rules
 

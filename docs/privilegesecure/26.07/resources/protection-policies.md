@@ -46,7 +46,7 @@ The **Leave Existing Members in Group** setting on a connection profile controls
 
 A new policy shows only **Name** and **Description** until you save it. After you save, the **Resources**, **Allowed Members**, and **Schedule** tabs appear.
 
-{/* TODO screenshot: the Protection Policies page with the policy list and the three tabs */}
+![The Protection Policies page with one policy selected, showing its description and the Resources, Allowed Members, and Schedule tabs above a list of eight resources.](/images/privilegesecure/26.07/resources/protection-policies-page.webp)
 
 Use the search box above the list to find a policy. Hover over a policy to show the copy icon, which creates a new policy from the selected one, and the trash icon, which deletes the policy after you confirm.
 

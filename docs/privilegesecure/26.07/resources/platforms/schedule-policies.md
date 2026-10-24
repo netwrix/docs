@@ -61,7 +61,7 @@ The new policy appears in the list and in the schedule dropdown lists on platfor
 For example, to verify passwords every 2 hours, select **Every x Hours**, enter `2`, and select **Save**. The policy appears as `Every 2 hours`.
 
 {/* TODO verify: the capitalization of the generated policy name (Every 2 hours or Every 2 Hours) */}
-{/* TODO screenshot: Schedule Policy Editor with the four frequency options */}
+![The Schedule Policy Editor dialog with the Every x Hours, Every x Days, Weekly, and Monthly frequency options and an Hours value of 1.](/images/privilegesecure/26.07/resources/schedule-policy-editor.webp)
 
 ## Edit a schedule policy
 

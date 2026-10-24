@@ -30,7 +30,7 @@ Every user who can open the dashboard sees **Active**, **Scheduled**, **Approval
 
 Every table has a **Refresh** button at the top right that reloads the rows. A counter next to it shows the number of results.
 
-{/* TODO screenshot: Dashboard with the tile row, Active tab selected and empty, no sensitive data. */}
+![The Dashboard tile row with the Active tile selected and an empty All Active session list below the Create Session toolbar.](/images/privilegesecure/26.07/admin/dashboard-active-tile-empty.webp)
 
 ## Approvals
 

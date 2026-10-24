@@ -10,7 +10,7 @@ A credential group is a named set of managed credentials. Credential-based acces
 
 The **Credential Groups** page is under **Credentials** in the left navigation. It has two panes. The left pane lists the groups. The right pane shows the selected group.
 
-{/* TODO screenshot: the Credential Groups page with a group selected */}
+![The Credential Groups page with the Linux Servers Build Administrators group selected and its two credentials listed.](/images/privilegesecure/26.07/admin/credential-groups-page.webp)
 
 ## The left pane
 

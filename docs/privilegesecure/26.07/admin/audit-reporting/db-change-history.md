@@ -10,7 +10,7 @@ The **DB Change History** page records each addition, update, and deletion of a 
 
 To open it, select **Auditing & Reporting** > **DB Change History**.
 
-{/* TODO screenshot: DB Change History page with an expanded row */}
+![The DB Change History page with one Action Service Property row expanded to show the changed field and its old and new values.](/images/privilegesecure/26.07/admin/db-change-history-expanded-row.webp)
 
 ## Filter the history
 

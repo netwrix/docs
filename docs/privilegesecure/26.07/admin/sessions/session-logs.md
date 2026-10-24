@@ -12,7 +12,7 @@ The **Session Logs** window shows the log messages for one session. Use it to se
 
 1. Open the **Active** tile. See [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md).
 2. Select the session.
-3. Slick **View Logs**.
+3. Click **View Logs**.
 
 **View Logs** stays disabled until you select a row.
 

@@ -24,7 +24,7 @@ If the **Command Restriction** page or list doesn't appear, contact Netwrix supp
 1. To add another rule, click the plus icon at the end of the row.
 1. Click **Save**.
 
-{/* TODO screenshot: the new Command Restriction form with one rule row */}
+![The new Command Restriction form with one rule row showing Active, Match (regex), Action to Perform set to Block, and Email.](/images/privilegesecure/26.07/configuration/command-restriction-new-form.webp)
 
 ### Example
 

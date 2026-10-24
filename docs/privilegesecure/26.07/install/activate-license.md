@@ -30,7 +30,7 @@ For how licensing works, including what consumes a license, see [Licensing](/doc
 
 The page then shows the license details. {/* TODO verify: the exact success message the console shows after an import, and that the expiration banner disappears. */}
 
-{/* TODO screenshot: the About page after a successful import. Redact the customer information and license values. */}
+![The About page showing the product version 26.07.00003, the license type, and the Upload License File section with the Import License button.](/images/privilegesecure/26.07/install/about-page.webp)
 
 ## Review the license details
 

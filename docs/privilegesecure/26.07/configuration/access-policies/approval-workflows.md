@@ -49,7 +49,7 @@ A green plus icon to the right of the last card adds another tier.
 1. Select the connection profile to edit.
 1. In the **Approval Workflow** section, select **Tiered**.
 1. Click the pencil icon on the tier card to open the **Tier Escalation** dialog.
-1. Enter a value for **Escalation in (minutes)**. {/* TODO verify: the default Escalation in (minutes) value on a new tier (code model default is 1; an existing lab tier showed 10). */}
+1. Enter a value for **Escalation In (minutes)**. {/* TODO verify: the default Escalation in (minutes) value on a new tier (code model default is 1; an existing lab tier showed 10). */}
 1. (Optional) Select an **Escalation Account** or an **Escalation Group**.
 1. Click **Okay**.
 1. Click the green plus icon next to **Approvers** to open the **Add Users and Groups as Approvers** dialog.
@@ -70,7 +70,7 @@ To remove an approver, click the remove icon next to the approver and confirm. {
 
 A connection profile uses one tier with these values:
 
-- **Escalation in (minutes)**: 10
+- **Escalation In (minutes)**: 10
 - **Escalation Group**: a group of senior administrators
 - **Approvers**: two users
 - **Approvals Required**: 1

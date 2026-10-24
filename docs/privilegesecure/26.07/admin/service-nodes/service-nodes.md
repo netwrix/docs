@@ -12,7 +12,7 @@ To open it, select **Configuration** > **Service Nodes**. The page is under **Co
 
 The page is for monitoring and reading logs. The only settings you change here are the Email service settings. To run services on more servers, see [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 
-{/* TODO screenshot: Service Nodes page with the node list, service list, and an Action Service selected */}
+![The Service Nodes page with a node selected, the list of services with status icons, and the Action Service selected showing the Action Logs tab.](/images/privilegesecure/26.07/admin/service-nodes-action-service.webp)
 
 ## Read the page
 
@@ -102,7 +102,7 @@ The **Statistics** tab shows the heading "Action Statuses Last Updated" with a t
 
 {/* TODO verify: the period that the Statistics counts cover. The 26.03 docs say the past 24 hours */}
 
-{/* TODO screenshot: Scheduler Service Statistics tab with the status tiles */}
+![The Scheduler Service Statistics tab showing status tiles for Unknown, Pending, Queued, Running, Complete, Failed, Cancelled, Completed With Errors, and Completed Not Run actions.](/images/privilegesecure/26.07/admin/service-nodes-scheduler-statistics.webp)
 
 The **Action Queues** tab has **Search** and **Refresh**. The columns are **START TIME**, **END TIME**, **JOB NAME**, **AQ STATUS**, **AQ STATUS DESCRIPTION**, and **ACTIVITY STATUS**.
 

@@ -30,7 +30,7 @@ An action can be paired. A pre-session action that grants access is often paired
 6. Click **Okay**.
 7. Repeat for each action in each group.
 
-{/* TODO screenshot: the Add Action to Pre-Session Group dialog with an action type selected */}
+![The Add Action to Pre-Session Group dialog with Add Sudoers rule selected, showing Run As, Commands, Prompt for password, Username Format, Continue on Error, and Action Name.](/images/privilegesecure/26.07/configuration/add-action-dialog-sudoers.webp)
 
 The action types are available only in the **Action Type** list of this dialog. The console has no separate page for them. See [Action types reference](action-types.md) for what each type does and its fields.
 

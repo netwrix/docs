@@ -37,10 +37,10 @@ A person is a reviewer when they hold the Reviewer role directly, or through a g
 3. Enter a name in **Enter Access Certification Name**, for example `Q4 server access review`.
 4. (Optional) Enter a **Description**.
 5. In **Reviewer**, select a reviewer. The default is `<none>`.
-6. Slick **Save**.
+6. Click **Save**.
 7. Select the **Users** tab, and then select **Add**.
 8. In the **Add Users and Groups** window, filter by users or groups, or search. Select a row to move it to **Users & Groups to Add**. Select a row in that table to move it back.
-9. Slick **Add**.
+9. Click **Add**.
 
 :::warning
 You can't add or remove users after you add them to the task. To change the list, create a new task.
@@ -80,10 +80,10 @@ The assigned reviewer completes these steps. For the reviewer's view, see [Revie
 
 1. Select **Auditing & Reporting** > **Access Certification**.
 2. Select the task, and then select the **Entitlements** tab.
-3. Slick **Review**.
+3. Click **Review**.
 4. In the **Review Activity Details** window, select the rows to change. The columns include **Name**, **Resource**, **Activity**, **Credential**, **Permissions**, **Access Policy**, **Connection Profile**, and **Last Accessed**.
-5. Slick **Approve** to keep the access, or **Deny** to remove it.
-6. Slick **Close**.
+5. Click **Approve** to keep the access, or **Deny** to remove it.
+6. Click **Close**.
 7. When every entitlement is reviewed, select **Commit**.
 
 For example, the reviewer approves the `Server-Admins` entitlements on the finance servers and denies one stale entry for a former contractor, then clicks **Commit**.

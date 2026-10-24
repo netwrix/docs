@@ -65,7 +65,7 @@ While a synchronization runs, a **Cancel** button replaces **Sync** so you can s
 
 Track progress on the **History** tab. A completed run ends with an entry such as "Domain corp.example.com sync complete."
 
-{/* TODO screenshot: Domain details page with the Sync split button open to show Full Sync, and the schedule row. */}
+![The domain details page with the Sync split button open to show Full Sync, the daily 2:00 AM sync schedule, and the Users, Groups, Computers, History, and Sync Errors tabs.](/images/privilegesecure/26.07/resources/domain-details-sync-menu.webp)
 
 ## Domain details
 

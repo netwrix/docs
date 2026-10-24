@@ -80,7 +80,7 @@ An asterisk (\*) marks a required field. Both credential fields list the service
 
 {/* TODO verify: which service account goes in each credential field. The 26.03 page told the reader to enter the Client ID and Client secret directly, but the 26.07 form lists service accounts. The mapping in the table is inferred. Also confirm whether the administrator account is required. */}
 
-{/* TODO screenshot: the Add Integration Connector form with the StealthAUDIT template selected */}
+![The Add Integration Connector form with the StealthAUDIT template selected, showing Server Hostname, Port 8082, REST Credentials, and Power Shell Credentials.](/images/privilegesecure/26.07/integrations/integration-connector-stealthaudit-form.webp)
 
 ## Import the data
 

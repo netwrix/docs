@@ -27,7 +27,7 @@ Onboard an Active Directory (AD) user or group to give it access to the console.
 
 The accounts now appear on the **Users & Groups** page. For example, to give the AD group `Server-Admins` console access, search for `Server-Admins`, select its checkbox, and click **Add**.
 
-{/* TODO screenshot: the Add Users & Groups window with one account in Accounts to Add */}
+![The Add Users & Groups window with a search for NPS, three available accounts, and NPS 1. Credential in Accounts to Add.](/images/privilegesecure/26.07/admin/add-users-groups-window.webp)
 
 ## Window reference
 

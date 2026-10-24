@@ -25,7 +25,7 @@ The header contains these controls, from left to right:
 
 The **Help** link opens the documentation home page for the product, not a specific version. Select the version that matches your console on that page. The version number appears in the **User Options** menu.
 
-{/* TODO screenshot: the console header with each control visible */}
+![The Dashboard page with the console header across the top showing the menu button, breadcrumb, theme, information, help, language, and user controls.](/images/privilegesecure/26.07/user-guide/console-header.webp)
 
 ### User Options menu
 
@@ -39,7 +39,7 @@ Click your name in the header to open **User Options**. The menu contains:
 Below the entries, the menu shows the copyright line and the console version, for example "Version 26.07.00003".
 
 {/* TODO verify: that the Settings entry is hidden for domain users who aren't administrators. The code shows it for administrators and local users only. */}
-{/* TODO screenshot: the User Options menu showing the version */}
+![The User Options menu open from the user name, listing Product Tour, Settings, Logout, and About, with the copyright notice and version 26.07.00003.](/images/privilegesecure/26.07/user-guide/user-options-menu.webp)
 
 ### Change the language
 
@@ -65,7 +65,7 @@ The language selector is also on the sign-in page, so you can choose a language 
 Some text stays in English in every language. This includes the field labels and tab names on a resource's detail page, the ServiceNow end-session dialog, and the tabs of a report's detail view. The documentation is available in English only. {/* TODO verify: that the documentation is English only; the UI notes mark this as an SME confirmation. */}
 
 {/* TODO verify: whether emails, reports, SIEM messages, and event text are translated. The code note didn't check server-generated text. */}
-{/* TODO screenshot: the language menu */}
+![The language menu open from the globe icon, listing English (selected), Francais, Deutsch, Korean, Italiano, Espanol, and Traditional Chinese.](/images/privilegesecure/26.07/user-guide/language-menu.webp)
 
 ### Switch between the light and dark theme
 
@@ -101,7 +101,7 @@ The **Command Restriction** item requires a license feature. The **Users**, **Re
 
 A **Live Sessions** item appears only while you have browser sessions open through the Remote Access Gateway portal. See [Browser sessions](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
-{/* TODO verify: the menu that each role sees. The lab tested the menu with one administrator account only. Sign in as a user, a reviewer, an auditor, and a read-only user, then update the list above. */}
+{/* TODO verify: the menu that each role sees. The lab tested the menu with one administrator account only. Sign in as a user, a reviewer, an auditor, and a read-only user, then update the navigation list. */}
 {/* TODO screenshot: the expanded navigation menu */}
 
 ## Banners
@@ -117,12 +117,12 @@ The console shows a banner at the top of the page when something needs attention
 
 New users see a product tour the first time they sign in. The tour walks through the parts of the console that apply to your role.
 
-- To stop the tour, click the **X** at the top right of the console.
+- To stop the tour, click the **X** on the tour card.
 - To start the tour again, open **User Options** and click **Product Tour**.
 
 The tour doesn't show again at your next sign-in unless you clear the "don't display again" checkbox.
 
-{/* TODO screenshot: the Product Tour first step */}
+![The first step of the Product Walkthrough, highlighting the activity cards on the My Activities page with the message that available activities are displayed as cards.](/images/privilegesecure/26.07/user-guide/product-tour-first-step.webp)
 
 ## Change your password
 
@@ -142,4 +142,4 @@ The **Settings** page also has a **Register Services** tab. Administrators use i
 
 {/* TODO verify: what a non-administrator local user sees on the Settings page, including whether the Register Services tab is shown. */}
 {/* TODO verify: the success message after Save, and the password rules the console enforces. */}
-{/* TODO screenshot: the Change Password tab on the Settings page */}
+![The Settings page on the Change Password tab, with Old Password, Password, and Confirm Password fields and a Save button.](/images/privilegesecure/26.07/user-guide/settings-change-password.webp)

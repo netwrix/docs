@@ -79,4 +79,4 @@ Custom roles can delegate parts of policy management. The permissions are **[AP]
 3. Create a [resource-based policy](resource-based-policy.md) or a [credential-based policy](credential-based-policy.md).
 4. Add users, activities, and resources or credentials to the policy.
 
-{/* TODO screenshot: the Access Policy page with the policy list, a selected policy, and the Users tab. */}
+![The Access Policy page with the policy list on the left and the CentOS Linux Server Administrator policy open on its Users tab, listing the NPS Administrators and NPS Users groups.](/images/privilegesecure/26.07/configuration/access-policy-list-users-tab.webp)

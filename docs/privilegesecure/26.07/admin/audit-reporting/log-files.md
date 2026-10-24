@@ -10,7 +10,7 @@ Each Privilege Secure service writes a log file. Use the **Log Files** page to r
 
 To open it, select **Auditing & Reporting** > **Log Files**.
 
-{/* TODO screenshot: Log Files page with a log selected */}
+![The Log Files page with PAM-Web20261024.log selected and its entries listed by line, date, time, and status.](/images/privilegesecure/26.07/admin/log-files-page.webp)
 
 ## Log file location and names
 

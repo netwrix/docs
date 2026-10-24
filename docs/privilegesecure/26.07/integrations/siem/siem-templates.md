@@ -43,7 +43,7 @@ Placeholders in the built-in templates use the form `%FIELDNAME%` in upper case,
 
 {/* TODO verify: the label of the name field, and that a field button inserts %FIELDNAME% in upper case, as the seeded bodies use. */}
 
-{/* TODO screenshot: the SIEM template editor with the Format box and the field buttons */}
+![The SIEM template editor for the CEF template, showing the Format box with field placeholders and the buttons that insert fields.](/images/privilegesecure/26.07/integrations/siem-template-cef-editor.webp)
 
 Pipe characters (`|`) in the text of an event message are removed before the message is sent.
 

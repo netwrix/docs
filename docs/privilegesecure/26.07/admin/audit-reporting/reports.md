@@ -12,7 +12,7 @@ To open it, select **Auditing & Reporting** > **Reporting**.
 
 Administrators can use reports. Auditors can use them when their role includes the **Reporting** permission.
 
-{/* TODO screenshot: Reporting page with the report tree and the Filters tab */}
+![The Reporting page with the report tree on the left and the All Activity Sessions report open on the Filters tab.](/images/privilegesecure/26.07/admin/reporting-page.webp)
 
 ## Prerequisites
 
@@ -133,4 +133,4 @@ The table has these columns:
 | **SCHEDULE** | How often the report is sent. |
 | **JOB** | The scheduled job for the subscription. |
 
-{/* TODO screenshot: Subscriptions tab with the Subscribe dialog open */}
+![The Subscriptions tab of the All Activity Sessions report with the Subscribe dialog open, showing the Subscription Schedule list.](/images/privilegesecure/26.07/admin/reporting-subscribe-dialog.webp)

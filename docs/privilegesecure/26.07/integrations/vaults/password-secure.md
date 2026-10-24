@@ -80,7 +80,7 @@ An asterisk (\*) marks a required field.
 
 {/* TODO verify: the API Url default. The code seeds `https://passwordsecure/api`; the lab form showed the same value. */}
 
-{/* TODO screenshot: the Password Secure connector form with API Url, Service Account, and Advanced. */}
+![The Add Integration Connector form with the Password Secure template selected, showing API Url, Service Account, and the collapsed Advanced section.](/images/privilegesecure/26.07/integrations/integration-connector-password-secure-form.webp)
 
 ## Use the connector in an activity
 

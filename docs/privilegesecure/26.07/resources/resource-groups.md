@@ -90,7 +90,7 @@ Both tabs have **Add** and **Remove** buttons. Their columns are **Service Name*
 
 {/* TODO verify: the dialogs behind Add on the Host Scan Services and Action Services tabs weren't opened in the lab. Confirm the dialog title and selection steps. */}
 
-{/* TODO screenshot: the Host Scan Services tab of a resource group. */}
+![The Linux resource group on the Host Scan Services tab, showing an empty list with the message that all host scan services are eligible for resources in this group.](/images/privilegesecure/26.07/resources/resource-group-host-scan-services-tab.webp)
 
 ## Resource group tabs
 

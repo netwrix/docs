@@ -19,7 +19,7 @@ Each tile shows a count. Select **Refresh** on any table to reload it.
 
 The **Dashboard** also has **Users**, **Resources**, and **Credentials** tiles. The **Users** and **Resources** tiles are for administrators. The **Credentials** tile also appears for users whose custom role grants the Credentials permission. See [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
-{/* TODO screenshot: the Dashboard tile row with the Active tile selected */}
+![The Dashboard tile row with the Active tile selected and an empty All Active session list below the Create Session toolbar.](/images/privilegesecure/26.07/admin/dashboard-active-tile-empty.webp)
 
 To request a new session, select **Create Session** on the **Active** or **Scheduled** tile. See [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md).
 

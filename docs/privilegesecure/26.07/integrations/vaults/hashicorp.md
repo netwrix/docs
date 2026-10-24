@@ -43,7 +43,7 @@ An asterisk (\*) marks a required field.
 **Skip Certificate Check** is selected by default. Clear it for production use and connect to Vault over HTTPS with a certificate that the Privilege Secure server trusts. With the check skipped, Privilege Secure accepts any certificate, which exposes the access token to interception.
 :::
 
-{/* TODO screenshot: the HashiCorp connector form showing API Url, Access Token, and Skip Certificate Check. */}
+![The Add Integration Connector form with the HashiCorp template selected, showing API Url, Access Token, and Skip Certificate Check.](/images/privilegesecure/26.07/integrations/integration-connector-hashicorp-form.webp)
 
 **Example:** To connect to a Vault server at `https://vault.example.com:8200`:
 

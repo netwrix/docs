@@ -55,7 +55,7 @@ Select **Platforms** > **Password Complexity** to open the list of policies. Sel
 
 {/* TODO verify: that Max Consecutive Chars limits identical characters in a row. The 26.03 page says "consecutively occurring characters". */}
 
-{/* TODO screenshot: the Password Complexity page with the policy list and the settings of the Default policy */}
+![The Password Complexity page with the Default policy selected, showing its start and end character rules, length 21, maximum consecutive characters 2, and the included character types.](/images/privilegesecure/26.07/resources/password-complexity-default.webp)
 
 ## Create a password complexity policy
 

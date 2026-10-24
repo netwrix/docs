@@ -12,7 +12,7 @@ Use an override when some accounts need a different rotation or verification fre
 
 The **Credential Policy Overrides** page is under **Credentials** in the left navigation. Like **Credential Groups**, it has a list on the left and the selected override on the right.
 
-{/* TODO screenshot: the Credential Policy Overrides page */}
+![The Credential Policy Overrides page with an empty override list.](/images/privilegesecure/26.07/admin/credential-policy-overrides-empty.webp)
 
 ## The left pane
 
@@ -45,7 +45,7 @@ Both dropdowns have a **+** button to add a schedule. For schedule policies, see
 
 For example, create an override named `<hourly-rotation>` with the **Scheduled Change Policy** set to a policy that runs every hour.
 
-{/* TODO screenshot: the new override form */}
+![The new credential policy override form with the name, Description, Scheduled Change Policy, and Verification Schedule fields.](/images/privilegesecure/26.07/admin/credential-policy-override-new-form.webp)
 
 ## Add credentials to an override
 

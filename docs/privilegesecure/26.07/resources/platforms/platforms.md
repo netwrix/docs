@@ -10,7 +10,7 @@ A platform sets the defaults for every resource of one type, such as Windows ser
 
 Select **Platforms** in the left navigation to open the list. Each platform is one form with no tabs.
 
-{/* TODO screenshot: the Platforms page with the platform list and the Linux platform form */}
+![The Platforms page with Linux selected, showing the built-in account root, password complexity policy, and the change, scan, and verification schedules.](/images/privilegesecure/26.07/resources/platforms-linux-form.webp)
 
 ## Built-in platforms
 

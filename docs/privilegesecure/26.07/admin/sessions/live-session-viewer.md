@@ -72,7 +72,7 @@ Lock a session to stop the user from working without ending the session.
    - **Opening new sessions on this activity**
    - **Opening new activities to this resource**
    - **Any further activity with this account (Unlock via Users & Groups)**
-5. Slick **Okay**.
+5. Click **Okay**.
 
 The user sees the title and message in the RDP or SSH client. If you leave the fields empty, the title is "Netwrix Privilege Secure" and the message is "Your session has been temporarily locked, please see a Netwrix Privilege Secure administrator for more information."
 
@@ -92,12 +92,12 @@ Terminate a session to disconnect the user at once.
 
 1. In the viewer, select **Terminate Session**.
 2. In the **Terminate Proxy Session** window, confirm the prompt "Are you sure?".
-3. Slick **Cancel Activity Session** to also cancel the activity session in Privilege Secure. The user can't sign in again through the same session.
+3. Click **Cancel Activity Session** to also cancel the activity session in Privilege Secure. The user can't sign in again through the same session.
 4. Confirm the termination.
 
 {/* TODO screenshot: Terminate Proxy Session window */}
 
-For example, a user runs an unapproved script during a session. Slick **Terminate Session**, select **Cancel Activity Session**, and confirm. The user is disconnected and can't reconnect through that session.
+For example, a user runs an unapproved script during a session. Click **Terminate Session**, select **Cancel Activity Session**, and confirm. The user is disconnected and can't reconnect through that session.
 
 Terminating a session doesn't stop the user from requesting a new one. To block that, lock the user's account with **Lock Account** on the [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md) page.
 

@@ -26,14 +26,14 @@ If your license has expired and you can still sign in, you can't create sessions
 2. Click **Create Session**. The **Activity Request** dialog opens.
 3. On the **Activity Selection** step, search for and select an activity. Click **Next >**.
 4. If the **Group Selection** step appears, select the groups or roles to assign. Click **Next >**. {/* TODO verify: when the console shows or skips Group Selection. The code shows it only for activities that assign users to groups or roles. The Remote Access Gateway portal skipped it when the user had one activity. */}
-5. On the **Resource Selection** step, select one or more resources in the table. Click **View Selections** to review your choices. Click **Next >**.
+5. On the **Resource Selection** step, select one or more resources in the table. Each selected resource has its own **Activity** list, so choose the activity to run on each one. Click **View Selections** to review your choices. Click **Next >**.
 6. On the **Notes** step, enter notes and a ticket number. Complete any custom fields. Click **Next >**.
 7. On the **Scheduling** step, choose **Now** or choose a date and time. Click **Next >**.
 8. On the **Review** step, check the summary. Click **Finish** to submit the request.
 
 Use **< Previous** to go back a step. Click **Cancel** to close the dialog without a request.
 
-{/* TODO screenshot: Activity Request dialog on the Resource Selection step, with a user who belongs to an access policy. */}
+![The Activity Request dialog on the Resource Selection step, with one CentOS Stream Linux host selected and a Linux activity chosen in the Activity list.](/images/privilegesecure/26.07/user-guide/activity-request-resource-selection.webp)
 
 Example: To get local administrator rights on a server for a patch window, select the activity **Add Requester to Local Administrators**, select the server `<server-name>`, enter the notes `Monthly patching`, enter the ticket number `INC0012345`, and choose **Now**.
 

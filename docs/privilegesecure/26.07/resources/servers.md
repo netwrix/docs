@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The server details page shows the settings of one server and what Netwrix Privilege Secure for Access Management (Privilege Secure) found on it. To open the page, select **Resources** in the left navigation, then select the name of a server in the **Resource** column. The Type filter calls servers **Host**.
 
-{/* TODO screenshot: server details header showing the buttons, fields, ports, Trust on Discovery, and Action on Thumbprint Mismatch */}
+{/* TODO screenshot: server details header showing the buttons, fields, ports, Trust on Discovery, and Action on Fingerprint Mismatch */}
 
 ## Header buttons
 
@@ -51,13 +51,13 @@ These settings control how Privilege Secure trusts the certificate or host key t
 | Field | Description |
 |---|---|
 | **Trust on Discovery** | When selected, Privilege Secure trusts the certificate it finds when it first scans the server. When cleared, an administrator must trust the server manually. |
-| **Action on Thumbprint Mismatch** | Sets what happens when the thumbprint a server presents differs from the trusted thumbprint. |
+| **Action on Fingerprint Mismatch** | Sets what happens when the thumbprint a server presents differs from the trusted thumbprint. |
 
 {/* TODO verify: the default state of Trust on Discovery. The code default for accepting a thumbprint on first discovery is true, but the lab didn't record the checkbox state. */}
 
 {/* TODO verify: the scope of Trust on Discovery. The 26.03 page limits it to the WinRM HTTPS certificate. The code also has certificate types for RDP and SSH. */}
 
-The **Action on Thumbprint Mismatch** dropdown has these values:
+The **Action on Fingerprint Mismatch** dropdown has these values:
 
 | Value | Behavior |
 |---|---|

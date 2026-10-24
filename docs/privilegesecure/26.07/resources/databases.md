@@ -34,7 +34,7 @@ For example, to add a default SQL Server instance, enter the name `Finance SQL`,
 
 {/* TODO verify: the default Oracle listener port (1521 in the 26.03 docs) and the Oracle instance value to enter. The Port field is blank on the new form, so confirm what a customer enters for Oracle. */}
 
-{/* TODO screenshot: the New Database page with the Platform list, the blank Port field, and the Service Account list. */}
+![The New Database page with Microsoft SQL Server selected as the platform, an empty Port field, and the Service Account list set to Netwrix Password Secure.](/images/privilegesecure/26.07/resources/new-database-form.webp)
 
 ## Platform-specific behavior
 

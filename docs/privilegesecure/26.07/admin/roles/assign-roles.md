@@ -26,7 +26,7 @@ The accounts appear in the member list of the role.
 
 {/* TODO verify: the titles and button labels of the Add Administrators, Add Reviewers, and Add Role Users windows. The lab tour didn't open them; the steps come from the 26.03 documentation. */}
 
-{/* TODO screenshot: the add window for the Administrators role with accounts in Accounts to Add */}
+![The Add Administrators window with a search for NPS and the NPS Approvers group in Accounts to Add.](/images/privilegesecure/26.07/admin/role-add-members-window.webp)
 
 In these windows, **Filter** limits the list to users, groups, applications, collections, or local users. The columns are the account type, name, user name, email address, and last login.
 

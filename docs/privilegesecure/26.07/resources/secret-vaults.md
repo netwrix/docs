@@ -26,7 +26,7 @@ The **Platform** field shows **Secret Vault** and can't be changed.
 
 For example, enter the name `Network appliance accounts` and the description `Local accounts for devices that don't accept domain accounts`.
 
-{/* TODO screenshot: the New Secret Vault page. */}
+![The New Secret Vault page with the vault name, Platform, and Description fields and the Accounts, Files, Sessions, and History tabs.](/images/privilegesecure/26.07/resources/new-secret-vault-form.webp)
 
 ## Add an account to a vault
 
