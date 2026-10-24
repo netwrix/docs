@@ -67,7 +67,9 @@ Each connector has a **Use Remote Access Gateway** checkbox. The checkbox decide
 A connector with **Use Remote Access Gateway** selected works only for sign-ins through the Remote Access Gateway portal. A connector with the checkbox cleared works only for sign-ins to the console. A sign-in that uses the wrong connector fails, and Privilege Secure logs an error event.
 :::
 
-{/* TODO verify: whether two connectors with the same provider settings, one with the checkbox selected, are the supported way to serve both the console and the portal (an open lab test), and the error text that the user sees. */}
+To offer the same identity provider on both the console and the portal, create two connectors with the same provider settings and select **Use Remote Access Gateway** on only one of them. The sign-in pages hide a connector that doesn't match where the user signs in.
+
+{/* TODO verify: in a lab run, the text that the web app shows for the 400 response "This authentication method cannot be used via Remote Access Gateway". The longer message with the connector name goes only to the log and the event. The two-connector setup is confirmed in the code (UserTokenController.cs, IsInvalidConnector) but not run in the lab. */}
 
 ## Sign in after an OpenID Connect error
 

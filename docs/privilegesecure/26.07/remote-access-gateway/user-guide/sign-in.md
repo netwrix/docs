@@ -68,6 +68,6 @@ The portal signs you out after a period of inactivity.
 |---|---|
 | "The license has expired or the license service is offline" | Tell your administrator. They must fix the Privilege Secure license. |
 | "Cannot use this login method" | The portal doesn't allow that method. Use SSO, or ask your administrator to change the allowed methods. |
-| "The authentication method: '\<name\>' cannot be used via Remote Access Gateway" | The identity provider connector isn't enabled for the portal. Ask your administrator. |
+| The sign-in option for your identity provider isn't listed, or the sign-in fails with "This authentication method cannot be used via Remote Access Gateway" | The identity provider connector isn't enabled for the portal. Ask your administrator. |
 
 For details and fixes, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting).

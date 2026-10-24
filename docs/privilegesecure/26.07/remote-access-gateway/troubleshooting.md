@@ -51,11 +51,11 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 ## A connector can't be used through the gateway
 
-**Symptom:** The sign-in fails with "The authentication method: '\<name\>' cannot be used via Remote Access Gateway".
+**Symptom:** The identity provider sign-in option isn't listed on the portal sign-in page. If a user reaches the sign-in through a direct link or a callback from the identity provider, the sign-in fails with "This authentication method cannot be used via Remote Access Gateway". The Privilege Secure log and event show the longer message "The authentication method: '\<name\>' cannot be used via Remote Access Gateway", with the name of the connector.
 
-**Cause:** The connector isn't enabled for the portal. A connector with **Use Remote Access Gateway** selected works only through the portal. A connector without it works only on the console.
+**Cause:** The connector doesn't match where the user signs in. A connector with **Use Remote Access Gateway** selected works only through the portal, and fails on the console. A connector with the checkbox cleared works only on the console, and fails through the portal.
 
-**Fix:** Create or edit a connector for the portal, and select **Use Remote Access Gateway**. See [Configure sign-in for the portal](/docs/privilegesecure/26_07/remote-access-gateway/configuration/authentication).
+**Fix:** To offer the identity provider on the portal, create or edit a connector for the portal and select **Use Remote Access Gateway**. To offer it on both the portal and the console, create one connector for each. See [Configure sign-in for the portal](/docs/privilegesecure/26_07/remote-access-gateway/configuration/authentication).
 
 ## ERRCONNECT_LOGON_FAILURE after you enter the target password
 
