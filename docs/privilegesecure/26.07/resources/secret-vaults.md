@@ -63,13 +63,13 @@ Use **Edit** to change the file details and **Delete** to remove the file. In th
 
 The table has these columns: **Action**, **File type**, **Size**, **Comment**, and **Created**.
 
-Administrators set the maximum size and the malware scan under **System Settings** > **Encrypted Files**. See [System settings](/docs/privilegesecure/26_07/configuration/system-settings).
+Administrators set the maximum size and the malware scan under **System Settings** > **Encrypted Files**. See [System settings](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md).
 
 {/* TODO verify: what message a customer sees when the scan blocks a file. */}
 
 ## Give users access to a vault
 
-To give users access, create an access policy of type **Credential Based**. The policy lists the vault accounts and files that its users can check out. See [Create a credential-based access policy](/docs/privilegesecure/26_07/configuration/access-policies/credential-based-policy) and [Release files with File Release](/docs/privilegesecure/26_07/configuration/access-policies/credential-based-policy#release-files-with-file-release).
+To give users access, create an access policy of type **Credential Based**. The policy lists the vault accounts and files that its users can check out. See [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md) and [Release files with File Release](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md#release-files-with-file-release).
 
 Update a stored secret by hand when the password changes on the device. By default, credentials in a secret vault don't change their password when a user checks them out or releases them.
 
@@ -86,8 +86,8 @@ Update a stored secret by hand when the password changes on the device. By defau
 | **Sessions** | Earlier sessions that used the vault. Select a row and select **View Logs** to open the session log. |
 | **History** | Events for the vault, with a **Status**, **Time**, **User**, **Access Policy**, **Event Message**, and **Session ID** for each. |
 
-For session logs, see [Session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs).
+For session logs, see [Session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md).
 
 ## Remove a vault
 
-See [Remove resources](/docs/privilegesecure/26_07/resources/remove-resources).
+See [Remove resources](/docs/privilegesecure/26.07/resources/remove-resources.md).

@@ -16,13 +16,13 @@ The Remote Access Gateway portal is a web page that lets you request and open Ne
   https://<portal-server>
   ```
 
-- Use a supported browser. See [Client requirements](/docs/privilegesecure/26_07/requirements/client).
+- Use a supported browser. See [Client requirements](/docs/privilegesecure/26.07/requirements/client.md).
 - If your browser warns that the connection isn't private, the portal might use a self-signed certificate that your administrator hasn't replaced yet. Confirm the address with your administrator before you continue.
-- Ask your administrator to add you to at least one access policy. Without a policy, you can sign in but you can't request a session. See [Connect to a session in the browser](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/browser-sessions#request-a-session).
+- Ask your administrator to add you to at least one access policy. Without a policy, you can sign in but you can't request a session. See [Connect to a session in the browser](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md#request-a-session).
 
 ## Choose a sign-in method
 
-The sign-in page shows the methods that your administrator allows. By default, the portal allows SSO only. An administrator can also allow local Privilege Secure users, or local and domain users. See [Configure sign-in for the portal](/docs/privilegesecure/26_07/remote-access-gateway/configuration/authentication).
+The sign-in page shows the methods that your administrator allows. By default, the portal allows SSO only. An administrator can also allow local Privilege Secure users, or local and domain users. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 | What the page shows | Method |
 |---|---|
@@ -50,7 +50,7 @@ When you sign in with SSO, the portal doesn't ask for a username or password.
 4. Click **Login**.
 5. If the portal asks for a verification code, enter the code from your authenticator application.
 
-After you sign in, the portal opens the dashboard with the **Active**, **Scheduled**, **Approvals**, and **Historical** tiles. To start a session, see [Connect to a session in the browser](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/browser-sessions).
+After you sign in, the portal opens the dashboard with the **Active**, **Scheduled**, **Approvals**, and **Historical** tiles. To start a session, see [Connect to a session in the browser](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
 {/* TODO screenshot: portal sign-in page with Username, Password, and Domain fields, no text selected, no licence banner */}
 
@@ -70,4 +70,4 @@ The portal signs you out after a period of inactivity.
 | "Cannot use this login method" | The portal doesn't allow that method. Use SSO, or ask your administrator to change the allowed methods. |
 | The sign-in option for your identity provider isn't listed, or the sign-in fails with "This authentication method cannot be used via Remote Access Gateway" | The identity provider connector isn't enabled for the portal. Ask your administrator. |
 
-For details and fixes, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting).
+For details and fixes, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md).

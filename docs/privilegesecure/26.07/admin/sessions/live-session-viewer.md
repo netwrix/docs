@@ -10,18 +10,18 @@ The **Live Session Viewer** shows an active session as it happens. From the view
 
 ## Before you begin
 
-A session appears in the viewer only when the [connection profile](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles) on its access policy has **Record Proxy Session** selected. You can watch only a user's current session live.
+A session appears in the viewer only when the [connection profile](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md) on its access policy has **Record Proxy Session** selected. You can watch only a user's current session live.
 
 These people can use the viewer:
 
 - Administrators.
 - Users whose role includes the **Live Session Viewer** permission. This permission is available in the Auditors permission list. An Auditors role limits which sessions the user can watch with its **Users** and **Resources** scope tabs.
 
-The **Terminate Session** and **Lock Session** permissions stay disabled until **Live Session Viewer** is turned on. See [Roles and permissions](/docs/privilegesecure/26_07/admin/roles) and [Create a custom role](/docs/privilegesecure/26_07/admin/roles/custom-roles).
+The **Terminate Session** and **Lock Session** permissions stay disabled until **Live Session Viewer** is turned on. See [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md) and [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
 
 ## Open the Live Session Viewer
 
-1. Open the **Active** tile. See [Manage active and scheduled sessions](/docs/privilegesecure/26_07/admin/sessions/active-sessions).
+1. Open the **Active** tile. See [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md).
 2. Expand the session you want to watch.
 3. Select the recording to open the viewer.
 
@@ -58,7 +58,7 @@ All three viewers show these details in the header:
 The RDP and SSH viewers also show a timeline of the session as it happens, in the pane to the left of the player. The timeline includes keystrokes. When the **Record Keystrokes and Metadata** setting of the connection profile is cleared, the session video is still recorded.
 
 :::note
-The RDP timeline also lists Windows events when the Remote Desktop Monitor service is installed on the target host. See [Install the Remote Desktop Monitor](/docs/privilegesecure/26_07/install/rdp-monitor).
+The RDP timeline also lists Windows events when the Remote Desktop Monitor service is installed on the target host. See [Install the Remote Desktop Monitor](/docs/privilegesecure/26.07/install/rdp-monitor.md).
 :::
 
 ## Lock a session
@@ -82,7 +82,7 @@ The user sees the title and message in the RDP or SSH client. If you leave the f
 
 To unlock the session, select **Unlock** in the viewer. You can also select the session on the **Active** tile and select **Unlock Activity**.
 
-If you selected **Any further activity with this account**, the account stays locked after you unlock the session. Unlock the account from its details page. See [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details).
+If you selected **Any further activity with this account**, the account stays locked after you unlock the session. Unlock the account from its details page. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 {/* TODO verify: the control that unlocks an account on the user details page. The lab didn't show an unlock state. */}
 
@@ -99,14 +99,14 @@ Terminate a session to disconnect the user at once.
 
 For example, a user runs an unapproved script during a session. Slick **Terminate Session**, select **Cancel Activity Session**, and confirm. The user is disconnected and can't reconnect through that session.
 
-Terminating a session doesn't stop the user from requesting a new one. To block that, lock the user's account with **Lock Account** on the [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details) page.
+Terminating a session doesn't stop the user from requesting a new one. To block that, lock the user's account with **Lock Account** on the [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md) page.
 
 :::tip
-A command restriction can also lock or end a session on its own. The **Block And Lock** and **Terminate** actions do this when a user runs a restricted command. See [Restrict SSH commands](/docs/privilegesecure/26_07/configuration/access-policies/command-restrictions).
+A command restriction can also lock or end a session on its own. The **Block And Lock** and **Terminate** actions do this when a user runs a restricted command. See [Restrict SSH commands](/docs/privilegesecure/26.07/configuration/access-policies/command-restrictions.md).
 :::
 
 ## Related topics
 
-- [Replay a recorded session](/docs/privilegesecure/26_07/admin/sessions/replay-viewer)
-- [Session recording](/docs/privilegesecure/26_07/admin/sessions/session-recording)
-- [View session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs)
+- [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md)
+- [Session recording](/docs/privilegesecure/26.07/admin/sessions/session-recording.md)
+- [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md)

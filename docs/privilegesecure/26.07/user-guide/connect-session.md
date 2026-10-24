@@ -31,7 +31,7 @@ Click the **connect** icon. What happens next depends on the session type:
 
 A locked session can't be launched. If an administrator locked your session, contact them.
 
-If you prefer to use PuTTY, MobaXterm, or Remote Desktop yourself, see [Connect with your own RDP or SSH client](/docs/privilegesecure/26_07/user-guide/connect-own-client). To open a session in a browser from outside the network, see [Connect to a session in the browser](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/browser-sessions).
+If you prefer to use PuTTY, MobaXterm, or Remote Desktop yourself, see [Connect with your own RDP or SSH client](/docs/privilegesecure/26.07/user-guide/connect-own-client.md). To open a session in a browser from outside the network, see [Connect to a session in the browser](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
 {/* TODO screenshot: an Available row on the Active tile showing the password and connect icons. */}
 
@@ -85,10 +85,10 @@ End a session when you finish, so the permissions that Privilege Secure granted 
 
 **End Session** ends the selected sessions at once, with no confirmation. On **My Activities**, use the **...** menu on the session card and choose the stop option.
 
-If the session has a ServiceNow ticket, the console asks how to update the ticket first. See [Use ServiceNow tickets with sessions](/docs/privilegesecure/26_07/user-guide/servicenow-tickets).
+If the session has a ServiceNow ticket, the console asks how to update the ticket first. See [Use ServiceNow tickets with sessions](/docs/privilegesecure/26.07/user-guide/servicenow-tickets.md).
 
-If you hold the Auditors role, you need the **Terminate Session** permission to end sessions. Otherwise the console shows "You need 'Terminate Session' permission to end sessions". After the session ends, it moves to the **Historical** tile. See [Track your sessions](/docs/privilegesecure/26_07/user-guide/my-sessions).
+If you hold the Auditors role, you need the **Terminate Session** permission to end sessions. Otherwise the console shows "You need 'Terminate Session' permission to end sessions". After the session ends, it moves to the **Historical** tile. See [Track your sessions](/docs/privilegesecure/26.07/user-guide/my-sessions.md).
 
 ## Troubleshoot SSH key exchange errors
 
-When you connect to an older network device, such as a legacy Cisco device, the session can fail with the message "ssh: handshake failed: ssh: no common algorithm for key exchange". The device offers only algorithms that aren't in the proxy's configured list. Ask your administrator to review the algorithms. See [Configure SSH algorithms](/docs/privilegesecure/26_07/configuration/ssh-algorithms).
+When you connect to an older network device, such as a legacy Cisco device, the session can fail with the message "ssh: handshake failed: ssh: no common algorithm for key exchange". The device offers only algorithms that aren't in the proxy's configured list. Ask your administrator to review the algorithms. See [Configure SSH algorithms](/docs/privilegesecure/26.07/configuration/ssh-algorithms.md).

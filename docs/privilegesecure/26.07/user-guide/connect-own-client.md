@@ -10,7 +10,7 @@ You can connect to a resource with a client you already use instead of the **con
 
 ## Before you begin
 
-- You need membership in an access policy that includes the activity and the resource. See [Request a session](/docs/privilegesecure/26_07/user-guide/request-session).
+- You need membership in an access policy that includes the activity and the resource. See [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md).
 - Get the name of the proxy host from your administrator. In the examples, `<nps-server>` stands for the server that runs the Proxy Service.
 - Get the proxy ports. The defaults are 4489 for RDP and 4422 for SSH. Your administrator can change them.
 
@@ -127,4 +127,4 @@ In the command, use `{{user}}` for the user name, `{{host}}` for the host and po
 - [Register and use the sbpam-url SSH protocol handler](/docs/kb/privilegesecure/client-tools-and-integrations/registering-and-using-the-sbpam-url-ssh-protocol-handler)
 - [Enable the session extension countdown tab for SSH sessions in MobaXterm](/docs/kb/privilegesecure/client-tools-and-integrations/enable-session-extension-countdown-tab-display-for-sbpam-ssh-sessions-in-mobaxterm)
 
-For the access flow in a browser, see [Connect to a session](/docs/privilegesecure/26_07/user-guide/connect-session).
+For the access flow in a browser, see [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md).

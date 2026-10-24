@@ -8,7 +8,7 @@ sidebar_position: 60
 
 A collection is a named set of users and groups that you manage as one unit. Add a collection where you would add a single user or group, such as an access policy, and every member gets the same rights. Use a collection when many accounts need the same access, so you change one list instead of many.
 
-Only accounts that are already onboarded on the **Users & Groups** page can join a collection. To onboard accounts first, see [Add domain users and groups](/docs/privilegesecure/26_07/admin/users-groups/add-users-groups).
+Only accounts that are already onboarded on the **Users & Groups** page can join a collection. To onboard accounts first, see [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
 
 Open the page from the left navigation: click **Users & Groups**, then **User and Group Collections**.
 
@@ -34,7 +34,7 @@ The member list has these controls:
 | **Remove** | Takes the selected members out of the collection. |
 | **Refresh** | Reloads the list. |
 
-The list shows each member's type, name, user name, user principal name (UPN), email address, and the number of active sessions, scheduled sessions, and access policies. Click a name to open its [details page](/docs/privilegesecure/26_07/admin/users-groups/user-details).
+The list shows each member's type, name, user name, user principal name (UPN), email address, and the number of active sessions, scheduled sessions, and access policies. Click a name to open its [details page](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ## Create a collection
 
@@ -84,7 +84,7 @@ The members leave the collection. Their accounts stay on the **Users & Groups** 
 
 Add a collection wherever you add users and groups:
 
-- In an access policy, to give every member the policy's activities on its resources. See [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview).
-- In a role, to give every member the role. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26_07/admin/roles/assign-roles).
+- In an access policy, to give every member the policy's activities on its resources. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
+- In a role, to give every member the role. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 
 {/* TODO verify: that a collection can be added to an access policy and to each built-in role. The 26.03 pages say collections are valid in policies and in the role windows. */}

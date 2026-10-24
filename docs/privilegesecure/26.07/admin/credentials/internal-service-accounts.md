@@ -16,7 +16,7 @@ Internal accounts rotate on the primary domain controller (PDC) of the domain.
 
 ## Prerequisites
 
-- Add the service account on the **Service Accounts** page. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts).
+- Add the service account on the **Service Accounts** page. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 - Ensure the user exists in Active Directory in the expected domain.
 
 ## Manage an internal service account
@@ -42,9 +42,9 @@ For example, select an internal account named `<internal-account>` and click **M
 
 If the dialog shows the message "No matching user found", Privilege Secure can't find a matching user in Active Directory. Try these fixes:
 
-- Run an Active Directory sync to collect the latest data from the domain. See [Active Directory domains](/docs/privilegesecure/26_07/resources/domains#run-a-synchronization).
-- Check that the user is added to the console. See [Users and groups](/docs/privilegesecure/26_07/admin/users-groups/add-users-groups).
-- Check the spelling of the user name on the service account. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts).
+- Run an Active Directory sync to collect the latest data from the domain. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md#run-a-synchronization).
+- Check that the user is added to the console. See [Users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
+- Check the spelling of the user name on the service account. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 - Check that the user is in Active Directory in the expected domain.
 
 ## Set the password manually
@@ -61,11 +61,11 @@ For example, enter the password that `<internal-account>` already has in Active 
 After you save, the account shows these icons next to its name:
 
 - **Copy Password to Clipboard**: Copies the current password.
-- **View Password**: Opens a dialog to view and copy the password. See [View passwords and password history](/docs/privilegesecure/26_07/admin/credentials/password-history).
+- **View Password**: Opens a dialog to view and copy the password. See [View passwords and password history](/docs/privilegesecure/26.07/admin/credentials/password-history.md).
 
 {/* TODO verify: whether a Set Password icon appears on the account row after manual management, as the 26.03 page describes. The lab found no Set Password button on the toolbar. */}
 
 ## Related topics
 
-- [Manage, rotate, and verify credentials](/docs/privilegesecure/26_07/admin/credentials/manage-credentials)
-- [Rotation methods](/docs/privilegesecure/26_07/admin/credentials/rotation-methods)
+- [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md)
+- [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md)

@@ -19,7 +19,7 @@ Use this page when users can't sign in to the portal, the portal doesn't load, o
 
 The gateway log is empty until the gateway receives its first request. The portal log also holds the nginx error output.
 
-To find the guacd container name, run `docker ps` inside WSL. For the logs of the other Privilege Secure services, see [Log files](/docs/privilegesecure/26_07/admin/audit-reporting/log-files).
+To find the guacd container name, run `docker ps` inside WSL. For the logs of the other Privilege Secure services, see [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md).
 
 ## The sign-in page says the license has expired
 
@@ -29,7 +29,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 **Cause:** The Privilege Secure license is expired, isn't valid, or the license service isn't running. The portal reads the license state from Privilege Secure.
 
-**Fix:** Correct the license in the Privilege Secure console. See [Activate a license](/docs/privilegesecure/26_07/install/activate-license).
+**Fix:** Correct the license in the Privilege Secure console. See [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).
 
 ## A user belongs to no access policy
 
@@ -39,7 +39,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 **Cause:** The user isn't a member of any access policy.
 
-**Fix:** Add the user to an access policy that includes the activity and the resource. See [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview).
+**Fix:** Add the user to an access policy that includes the activity and the resource. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
 ## The sign-in page rejects the login method
 
@@ -47,7 +47,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 **Cause:** The `AllowedLoginMethods` setting doesn't allow the method. The default value, `0`, allows single sign-on (SSO) only. With value `1`, the portal also rejects a username that contains `\` or `@`.
 
-**Fix:** Ask the user to use an allowed method, or change the setting. See [Configure sign-in for the portal](/docs/privilegesecure/26_07/remote-access-gateway/configuration/authentication).
+**Fix:** Ask the user to use an allowed method, or change the setting. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## A connector can't be used through the gateway
 
@@ -55,7 +55,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 **Cause:** The connector doesn't match where the user signs in. A connector with **Use Remote Access Gateway** selected works only through the portal, and fails on the console. A connector with the checkbox cleared works only on the console, and fails through the portal.
 
-**Fix:** To offer the identity provider on the portal, create or edit a connector for the portal and select **Use Remote Access Gateway**. To offer it on both the portal and the console, create one connector for each. See [Configure sign-in for the portal](/docs/privilegesecure/26_07/remote-access-gateway/configuration/authentication).
+**Fix:** To offer the identity provider on the portal, create or edit a connector for the portal and select **Use Remote Access Gateway**. To offer it on both the portal and the console, create one connector for each. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## ERRCONNECT_LOGON_FAILURE after you enter the target password
 
@@ -82,7 +82,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
 ```
 
-**Fix:** Install the portal on a dedicated server with ports 80 and 443 free. See [Remote Access Gateway requirements](/docs/privilegesecure/26_07/remote-access-gateway/requirements).
+**Fix:** Install the portal on a dedicated server with ports 80 and 443 free. See [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md).
 
 ## The portal returns a 502 error or a blank page
 
@@ -94,15 +94,15 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 - A firewall blocks port 6550 between the portal server and the gateway server.
 - The nginx upstream still holds the placeholder `nps-gatewayhost` because `Configure-Nginx.ps1` didn't run.
 
-**Fix:** Start the IIS site, open port 6550, or run `Configure-Nginx.ps1 <gateway-server>` on the portal server. See [Install the portal](/docs/privilegesecure/26_07/remote-access-gateway/install/install-portal).
+**Fix:** Start the IIS site, open port 6550, or run `Configure-Nginx.ps1 <gateway-server>` on the portal server. See [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md).
 
 ## The gateway runs with default settings
 
-**Symptom:** Sessions fail. `appsettings.json` doesn't exist in `C:\ProgramData\Stealthbits\PAM\RagGateway`, or `NPS.Uri` points to `localhost` and `Guacd.ServerThumbprint` holds "Guacd:ServerThumbprint not set!". For the file location, see [Gateway settings reference](/docs/privilegesecure/26_07/remote-access-gateway/configuration/gateway-settings).
+**Symptom:** Sessions fail. `appsettings.json` doesn't exist in `C:\ProgramData\Stealthbits\PAM\RagGateway`, or `NPS.Uri` points to `localhost` and `Guacd.ServerThumbprint` holds "Guacd:ServerThumbprint not set!". For the file location, see [Gateway settings reference](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md).
 
 **Cause:** `Configure-Gateway.ps1` didn't finish. The script exits without writing `appsettings.json` when it can't reach guacd on port 4822, so the file might not exist.
 
-**Fix:** Start guacd, and confirm that it listens on port 4822. Then run `Configure-Gateway.ps1` again. See [Install the gateway and guacd](/docs/privilegesecure/26_07/remote-access-gateway/install/install-gateway#configure-the-gateway).
+**Fix:** Start guacd, and confirm that it listens on port 4822. Then run `Configure-Gateway.ps1` again. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#configure-the-gateway).
 
 ## A session closes or stays blank as soon as it opens
 
@@ -123,7 +123,7 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 
 **Cause:** The guacd certificate changed after the gateway stored its thumbprint.
 
-**Fix:** Run `Configure-Gateway.ps1` again so that it stores the new thumbprint. See [Portal and gateway certificates](/docs/privilegesecure/26_07/remote-access-gateway/configuration/certificates#regenerate-the-guacd-certificate).
+**Fix:** Run `Configure-Gateway.ps1` again so that it stores the new thumbprint. See [Portal and gateway certificates](/docs/privilegesecure/26.07/remote-access-gateway/configuration/certificates.md#regenerate-the-guacd-certificate).
 
 ## Sessions fail after the server restarts
 
@@ -138,7 +138,7 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 
 If the address of the WSL instance changed, run `Configure-Gateway.ps1` again with the new `-NPSGuacdHost` value.
 
-If WSL doesn't start by itself, see [Start WSL automatically](/docs/privilegesecure/26_07/remote-access-gateway/install/install-gateway#start-wsl-automatically).
+If WSL doesn't start by itself, see [Start WSL automatically](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#start-wsl-automatically).
 
 {/* TODO verify: the supported way to keep WSL running after a restart. SME review is pending. */}
 {/* TODO verify: that the WSL address can change after a restart. The lab address stayed the same after one restart. */}
@@ -149,7 +149,7 @@ If WSL doesn't start by itself, see [Start WSL automatically](/docs/privilegesec
 
 **Cause:** A guacd version that doesn't match the portal can cause this. Release 26.07.3 requires guacd 1.6.0.
 
-**Fix:** In WSL, run `docker ps` and confirm that the guacd image is exactly `guacamole/guacd:1.6.0`. If it isn't, upgrade guacd. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/install/upgrade#match-the-guacd-version).
+**Fix:** In WSL, run `docker ps` and confirm that the guacd image is exactly `guacamole/guacd:1.6.0`. If it isn't, upgrade guacd. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/install/upgrade.md#match-the-guacd-version).
 
 {/* TODO verify: PSAM-1442. Colors looked correct in the lab on 26.07.3 with guacd 1.6.0, but the fix is awaiting verification. Don't call it fixed until the SME confirms. */}
 {/* TODO verify: keyboard known issues (numeric keypad, AltGr, special characters) after SME review. */}

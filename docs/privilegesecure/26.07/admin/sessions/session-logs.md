@@ -10,7 +10,7 @@ The **Session Logs** window shows the log messages for one session. Use it to se
 
 ## Open the log
 
-1. Open the **Active** tile. See [Manage active and scheduled sessions](/docs/privilegesecure/26_07/admin/sessions/active-sessions).
+1. Open the **Active** tile. See [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md).
 2. Select the session.
 3. Slick **View Logs**.
 
@@ -55,6 +55,6 @@ Resize a column by dragging its edge. Select a column heading to sort it in asce
 
 ## Related topics
 
-- [Manage active and scheduled sessions](/docs/privilegesecure/26_07/admin/sessions/active-sessions)
-- [Review historical sessions](/docs/privilegesecure/26_07/admin/sessions/historical-sessions)
-- [Watch, lock, or terminate a live session](/docs/privilegesecure/26_07/admin/sessions/live-session-viewer)
+- [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md)
+- [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md)
+- [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md)

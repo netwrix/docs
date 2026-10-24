@@ -66,12 +66,12 @@ The application needs a server restart to finish. Restart the server before you 
 
 {/* TODO verify: whether a silent installation restarts the server on its own, and the exit codes for success and for a pending restart. */}
 
-Open `https://localhost:6500` on the server, and then [run the setup wizard](/docs/privilegesecure/26_07/install/first-launch).
+Open `https://localhost:6500` on the server, and then [run the setup wizard](/docs/privilegesecure/26.07/install/first-launch.md).
 
 If the database wasn't reachable during the installation, the installer still completes. Check `ImportActivities.log` in the Privilege Secure log folder under `C:\ProgramData\Stealthbits\PAM`.
 
 ## Install other components silently
 
-The standalone installers for the Action, Scheduler, Email, and SIEM services accept the same switches, including `InstallFolder`. See [Install services on additional servers](/docs/privilegesecure/26_07/install/additional-services).
+The standalone installers for the Action, Scheduler, Email, and SIEM services accept the same switches, including `InstallFolder`. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 
 {/* TODO verify: the switches for the Host Scan installer, which components.md lists as an `.exe` file but the installer source builds as a bundle, and the switches and parameters that each standalone service installer accepts for the console URL and the encryption key. */}

@@ -19,9 +19,9 @@ Installation and upgrade logs are in `C:\ProgramData\Stealthbits\PAM\Log`. Log f
 | `NPS-PGUpgrade` | Output of the PostgreSQL 12 to 16 migration |
 | `NPS-PGUpgradeErr` | Errors from the PostgreSQL 12 to 16 migration |
 
-You can also open these files from the **Log Files** page in the Privilege Secure Console. See [Log files](/docs/privilegesecure/26_07/admin/audit-reporting/log-files).
+You can also open these files from the **Log Files** page in the Privilege Secure Console. See [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md).
 
-By default, the installer also writes a log to the `%TEMP%` folder of the account that ran it. To choose the log file, run `NPS.exe` with `/log <file>`. See [Install silently](/docs/privilegesecure/26_07/install/silent-install).
+By default, the installer also writes a log to the `%TEMP%` folder of the account that ran it. To choose the log file, run `NPS.exe` with `/log <file>`. See [Install silently](/docs/privilegesecure/26.07/install/silent-install.md).
 
 {/* TODO verify: that the PAM-InstallCmd and PAM-DbUpdater file names match the log names on a fresh 26.07 install. The lab listing is from an upgraded install. */}
 
@@ -31,7 +31,7 @@ By default, the installer also writes a log to the `%TEMP%` folder of the accoun
 
 **Cause:** Privilege Secure 26.07 requires PowerShell 7.6 or later on the application server. The Setup Launcher doesn't check for it, so the launcher can show PowerShell as installed when only Windows PowerShell 5.1 is present.
 
-**Fix:** Install PowerShell 7.6 or later, and run the installer again. See [Application server requirements](/docs/privilegesecure/26_07/requirements/application-server).
+**Fix:** Install PowerShell 7.6 or later, and run the installer again. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md).
 
 ## The launcher says it must run as Administrator
 
@@ -85,7 +85,7 @@ Check these causes:
 
 **Cause:** The **NPS Rest URL** ends with a slash, for example `https://<nps-server>:6500/`.
 
-**Fix:** Remove the trailing slash, and register the services again. See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url). Release 26.07.3 removes the trailing slash automatically.
+**Fix:** Remove the trailing slash, and register the services again. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md). Release 26.07.3 removes the trailing slash automatically.
 
 ## Single sign-on stops working after an upgrade
 
@@ -93,7 +93,7 @@ Check these causes:
 
 **Cause:** An upgrade from a release earlier than 26.03.2 overwrites the SAML request and sign-out templates.
 
-**Fix:** Copy your backed-up `SamlRequestTemplate.xml` and `SamlSignoutTemplate.xml` back to the `Web` folder of the installation folder. If you have no backup, recreate your customizations. See [Upgrade Privilege Secure](/docs/privilegesecure/26_07/install/upgrade#back-up-the-saml-templates).
+**Fix:** Copy your backed-up `SamlRequestTemplate.xml` and `SamlSignoutTemplate.xml` back to the `Web` folder of the installation folder. If you have no backup, recreate your customizations. See [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md#back-up-the-saml-templates).
 
 ## An error mentions a null PlatformID
 
@@ -107,6 +107,6 @@ Check these causes:
 
 ## Related topics
 
-- [Upgrade Privilege Secure](/docs/privilegesecure/26_07/install/upgrade)
-- [Install the application server](/docs/privilegesecure/26_07/install/install-application-server)
-- [Troubleshooting](/docs/privilegesecure/26_07/troubleshooting/overview)
+- [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md)
+- [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md)
+- [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md)

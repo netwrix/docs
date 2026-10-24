@@ -38,9 +38,9 @@ Install the gateway and portal from the package for your Privilege Secure releas
 - The .NET 10 Hosting Bundle. The gateway installer includes it.
 - Windows Subsystem for Linux 2 (WSL 2) with a Ubuntu distribution. The gateway doesn't support WSL 1. Run Windows Update before you install WSL.
 - Docker running inside WSL. guacd runs as a Docker container, and the install script installs Docker.
-- Systemd enabled in WSL. See [Install the gateway and guacd](/docs/privilegesecure/26_07/remote-access-gateway/install/install-gateway).
+- Systemd enabled in WSL. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md).
 - Outbound access from WSL to download packages and the `guacamole/guacd:1.6.0` image.
-- guacd version 1.6.0. The 26.07.3 portal requires this version. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/install/upgrade).
+- guacd version 1.6.0. The 26.07.3 portal requires this version. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/install/upgrade.md).
 
 {/* TODO verify: whether guacd on a native Ubuntu host with Docker, instead of WSL on the gateway server, is a supported deployment, and the minimum Ubuntu version. Community guidance from 2025 named Ubuntu 22.04 or later; confirm it still applies to guacd 1.6.0. */}
 
@@ -80,7 +80,7 @@ The gateway connects to the Privilege Secure web service at `https://<nps-server
 | 4489 | guacd to the proxy | RDP sessions |
 | 4422 | guacd to the proxy | SSH sessions |
 
-Allow only these connections between the DMZ and the internal network. The portal doesn't connect to port 6500. For the full list of Privilege Secure ports, see [Ports](/docs/privilegesecure/26_07/requirements/ports).
+Allow only these connections between the DMZ and the internal network. The portal doesn't connect to port 6500. For the full list of Privilege Secure ports, see [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
 The gateway installer creates the Windows Firewall rule "NPS Gateway Web Service Port (6550)", open to any address. Limit it to the portal server's address. The installers create no rules for ports 443, 80, and 4822.
 
@@ -92,8 +92,8 @@ The gateway installer creates the Windows Firewall rule "NPS Gateway Web Service
 - **Gateway:** The gateway installer creates a self-signed certificate for port 6550. The portal doesn't verify it.
 - **guacd:** The configuration script creates a self-signed certificate for the connection between the gateway and guacd. The gateway pins the certificate by thumbprint.
 
-See [Portal and gateway certificates](/docs/privilegesecure/26_07/remote-access-gateway/configuration/certificates).
+See [Portal and gateway certificates](/docs/privilegesecure/26.07/remote-access-gateway/configuration/certificates.md).
 
 ## Licensing
 
-The portal sign-in page requires a valid Privilege Secure license. See [Activate a license](/docs/privilegesecure/26_07/install/activate-license).
+The portal sign-in page requires a valid Privilege Secure license. See [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).

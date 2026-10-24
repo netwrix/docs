@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Remote Access Gateway extends Netwrix Privilege Secure for Access Management (Privilege Secure) to external users, such as remote workers and third-party vendors. Users sign in to a web portal and open Remote Desktop Protocol (RDP) and Secure Shell (SSH) sessions in the browser. They don't need a VPN or a Privilege Secure client. Release notes and download pages also call the feature Session Remote Access or Secure Remote Access (SRA). File names and installers use the abbreviation RAG, for example `NPS.RagGateway.exe`.
 
-The browser experience matches the Privilege Secure console for the actions an external user needs: request an activity, wait for approval, and connect to the session. See [Connect to a session in the browser](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/browser-sessions).
+The browser experience matches the Privilege Secure console for the actions an external user needs: request an activity, wait for approval, and connect to the session. See [Connect to a session in the browser](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
 {/* TODO verify: the current support position for production installs. The 26.03 page said a Netwrix engineer should be involved in the installation. Confirm whether to repeat that guidance. */}
 
@@ -41,13 +41,13 @@ The gateway exposes only what an external user needs: sign-in, the activities th
 
 ## Sign-in methods
 
-A new gateway allows single sign-on (SSO) only. You can also allow local Privilege Secure users, or local and domain users. See [Configure sign-in for the portal](/docs/privilegesecure/26_07/remote-access-gateway/configuration/authentication).
+A new gateway allows single sign-on (SSO) only. You can also allow local Privilege Secure users, or local and domain users. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## Plan the deployment
 
-1. Review the hosts, software, ports, and certificates in [Remote Access Gateway requirements](/docs/privilegesecure/26_07/remote-access-gateway/requirements).
-2. Install the gateway and guacd. See [Install the gateway and guacd](/docs/privilegesecure/26_07/remote-access-gateway/install/install-gateway).
-3. Install the portal. See [Install the portal](/docs/privilegesecure/26_07/remote-access-gateway/install/install-portal).
-4. Configure sign-in. See [Configure sign-in for the portal](/docs/privilegesecure/26_07/remote-access-gateway/configuration/authentication).
+1. Review the hosts, software, ports, and certificates in [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md).
+2. Install the gateway and guacd. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md).
+3. Install the portal. See [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md).
+4. Configure sign-in. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
-For the ports that each connection uses, see [Ports](/docs/privilegesecure/26_07/requirements/ports). For the Privilege Secure architecture, see [Architecture](/docs/privilegesecure/26_07/getting-started/architecture).
+For the ports that each connection uses, see [Ports](/docs/privilegesecure/26.07/requirements/ports.md). For the Privilege Secure architecture, see [Architecture](/docs/privilegesecure/26.07/getting-started/architecture.md).

@@ -34,7 +34,7 @@ Click your name in the header to open **User Options**. The menu contains:
 - **Product Tour**: starts the guided tour of the console.
 - **Settings**: opens the **Settings** page. See [Change your password](#change-your-password).
 - **Logout**: signs you out and returns to the sign-in page.
-- **About**: opens the About page, which shows the license type, expiry date, customer information, and licensed user count (credits). Administrators upload a license file on this page. See [Activate a license](/docs/privilegesecure/26_07/install/activate-license).
+- **About**: opens the About page, which shows the license type, expiry date, customer information, and licensed user count (credits). Administrators upload a license file on this page. See [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).
 
 Below the entries, the menu shows the copyright line and the console version, for example "Version 26.07.00003".
 
@@ -77,8 +77,8 @@ The navigation menu lists the areas of the console that you can use. {/* TODO ve
 
 | Item | Sub-pages | Purpose |
 |---|---|---|
-| **My Activities** | None | Request access with an activity. See [My Activities](/docs/privilegesecure/26_07/user-guide/my-activities). |
-| **Dashboard** | None | Track and manage sessions. See [Track your sessions](/docs/privilegesecure/26_07/user-guide/my-sessions). |
+| **My Activities** | None | Request access with an activity. See [My Activities](/docs/privilegesecure/26.07/user-guide/my-activities.md). |
+| **Dashboard** | None | Track and manage sessions. See [Track your sessions](/docs/privilegesecure/26.07/user-guide/my-sessions.md). |
 | **Access Policy** | **Connection Profiles**, **Activity Token Complexity**, **Command Restriction** | Define who can run which activities on which resources. |
 | **Users & Groups** | **Role Management**, **User and Group Collections** | Manage users, groups, and roles. |
 | **Resources** | **Resource Groups**, **Protection Policies** | Manage the systems that users access. |
@@ -93,13 +93,13 @@ The **Dashboard** page has the tiles **Active**, **Scheduled**, **Approvals**, *
 
 Most users see only part of this menu. Everyone sees **My Activities** and **Dashboard**. Administrators see all items. Other users see additional items based on their role:
 
-- Reviewers see **Auditing & Reporting > Access Certification**. See [Review an access certification](/docs/privilegesecure/26_07/user-guide/review-access).
-- Auditors see **Activity Log**, **DB Change History**, **Events**, **Log Files**, and **Reporting** under **Auditing & Reporting**. See [Review sessions as an auditor](/docs/privilegesecure/26_07/user-guide/audit-sessions).
+- Reviewers see **Auditing & Reporting > Access Certification**. See [Review an access certification](/docs/privilegesecure/26.07/user-guide/review-access.md).
+- Auditors see **Activity Log**, **DB Change History**, **Events**, **Log Files**, and **Reporting** under **Auditing & Reporting**. See [Review sessions as an auditor](/docs/privilegesecure/26.07/user-guide/audit-sessions.md).
 - Users with a custom role that targets Access Policies or Credentials see **Access Policy** or the **Credentials** tile.
 
 The **Command Restriction** item requires a license feature. The **Users**, **Resources**, and **Credentials** tiles on the Dashboard repeat the pages of the same names for administrators.
 
-A **Live Sessions** item appears only while you have browser sessions open through the Remote Access Gateway portal. See [Browser sessions](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/browser-sessions).
+A **Live Sessions** item appears only while you have browser sessions open through the Remote Access Gateway portal. See [Browser sessions](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
 {/* TODO verify: the menu that each role sees. The lab tested the menu with one administrator account only. Sign in as a user, a reviewer, an auditor, and a read-only user, then update the list above. */}
 {/* TODO screenshot: the expanded navigation menu */}

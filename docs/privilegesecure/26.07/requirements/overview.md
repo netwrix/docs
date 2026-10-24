@@ -22,18 +22,18 @@ A deployment uses the following systems:
 
 | Page | What it covers |
 | ---- | -------------- |
-| [Application server requirements](/docs/privilegesecure/26_07/requirements/application-server) | Operating system, software that must be installed first, and sizing |
-| [Database requirements](/docs/privilegesecure/26_07/requirements/database) | PostgreSQL and SQL Server options |
-| [Additional service node and proxy server requirements](/docs/privilegesecure/26_07/requirements/service-nodes) | Hosts for remote services, proxy sizing, and antivirus exclusions |
-| [Client requirements](/docs/privilegesecure/26_07/requirements/client) | Supported browsers and the browser extension |
-| [Target environment requirements](/docs/privilegesecure/26_07/requirements/target-environments) | Platforms that Privilege Secure manages, and the permissions and settings they need |
-| [Ports](/docs/privilegesecure/26_07/requirements/ports) | Ports and firewall rules for every component |
-| [Licensing](/docs/privilegesecure/26_07/requirements/licensing) | License credits, the trial, and user counts |
+| [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md) | Operating system, software that must be installed first, and sizing |
+| [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) | PostgreSQL and SQL Server options |
+| [Additional service node and proxy server requirements](/docs/privilegesecure/26.07/requirements/service-nodes.md) | Hosts for remote services, proxy sizing, and antivirus exclusions |
+| [Client requirements](/docs/privilegesecure/26.07/requirements/client.md) | Supported browsers and the browser extension |
+| [Target environment requirements](/docs/privilegesecure/26.07/requirements/target-environments.md) | Platforms that Privilege Secure manages, and the permissions and settings they need |
+| [Ports](/docs/privilegesecure/26.07/requirements/ports.md) | Ports and firewall rules for every component |
+| [Licensing](/docs/privilegesecure/26.07/requirements/licensing.md) | License credits, the trial, and user counts |
 
 ## Remote Access Gateway
 
-The Remote Access Gateway lets users start sessions from a browser. It is a separate download and installer with its own hosts, software, and ports. See [Remote Access Gateway requirements](/docs/privilegesecure/26_07/remote-access-gateway/requirements) for what the Portal and Gateway servers need.
+The Remote Access Gateway lets users start sessions from a browser. It is a separate download and installer with its own hosts, software, and ports. See [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md) for what the Portal and Gateway servers need.
 
 ## Next steps
 
-After you meet the requirements, see [Install the application server](/docs/privilegesecure/26_07/install/install-application-server).
+After you meet the requirements, see [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md).

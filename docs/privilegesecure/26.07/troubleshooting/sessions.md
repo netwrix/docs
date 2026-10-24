@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Use this page when a session doesn't start, stays in a transitional status, or doesn't end cleanly. Each entry gives the symptom, the cause, and the fix.
 
-Session actions run through the Action Service. Check the Action Service log first. See [Log files](/docs/privilegesecure/26_07/admin/audit-reporting/log-files) and [Start with the logs](/docs/privilegesecure/26_07/troubleshooting/overview#start-with-the-logs).
+Session actions run through the Action Service. Check the Action Service log first. See [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md) and [Start with the logs](/docs/privilegesecure/26.07/troubleshooting/overview.md#start-with-the-logs).
 
 ## A session stays in Provisioning
 
@@ -18,11 +18,11 @@ Session actions run through the Action Service. Check the Action Service log fir
 
 **Fix:**
 
-1. Select **Configuration** > **Service Nodes**, and confirm the Action and Scheduler services are online. See [Services not running or not registered](/docs/privilegesecure/26_07/troubleshooting/services).
-1. Select **System Settings** > **Services**, and remove any trailing slash from **NPS Rest URL**. Click **Save** and **Register Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url).
+1. Select **Configuration** > **Service Nodes**, and confirm the Action and Scheduler services are online. See [Services not running or not registered](/docs/privilegesecure/26.07/troubleshooting/services.md).
+1. Select **System Settings** > **Services**, and remove any trailing slash from **NPS Rest URL**. Click **Save** and **Register Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 1. Read the Action Service log for errors at the time of the request.
 
-If the session stays in **Provisioning** after an upgrade, also see [Troubleshoot installation and upgrade](/docs/privilegesecure/26_07/install/troubleshoot-installation).
+If the session stays in **Provisioning** after an upgrade, also see [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md).
 
 If provisioning finishes but takes more than 30 seconds, see [Long Provisioning Times in Privilege Secure](/docs/kb/privilegesecure/troubleshooting-and-errors/long-provisioning-times-in-privilege-secure).
 
@@ -56,7 +56,7 @@ A bulk deprovision of many accounts can log a misleading error about removing a 
 
 **Fix:**
 
-1. Open the access policy that should grant the access. See [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview).
+1. Open the access policy that should grant the access. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 1. Confirm that it includes the activity named in the message.
 1. Confirm that the user, or a group or collection the user belongs to, is in the policy.
 1. Confirm that the resource, or a collection or credential that includes it, is in the policy.
@@ -65,7 +65,7 @@ A bulk deprovision of many accounts can log a misleading error about removing a 
 
 ## An error mentions a null PlatformID
 
-If a scan or session fails with a null platform ID error, see [Troubleshoot installation and upgrade](/docs/privilegesecure/26_07/install/troubleshoot-installation).
+If a scan or session fails with a null platform ID error, see [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md).
 
 ## Multifactor authentication rejects the code on the first attempts
 
@@ -77,5 +77,5 @@ If a scan or session fails with a null platform ID error, see [Troubleshoot inst
 
 ## Related topics
 
-- [Troubleshooting](/docs/privilegesecure/26_07/troubleshooting/overview)
-- [Known issues in 26.07](/docs/privilegesecure/26_07/troubleshooting/known-issues)
+- [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md)
+- [Known issues in 26.07](/docs/privilegesecure/26.07/troubleshooting/known-issues.md)

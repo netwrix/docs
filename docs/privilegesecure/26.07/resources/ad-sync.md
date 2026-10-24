@@ -8,7 +8,7 @@ sidebar_position: 60
 
 Synchronization copies users, groups, group memberships, and computers from an Active Directory domain into Netwrix Privilege Secure for Access Management (Privilege Secure). Privilege Secure uses the copied data to find who can sign in, which groups grant roles, and which computers you can onboard as resources.
 
-You add a domain and set its synchronization schedule on the domain's details page. See [Active Directory domains](/docs/privilegesecure/26_07/resources/domains).
+You add a domain and set its synchronization schedule on the domain's details page. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md).
 
 ## What synchronization reads
 
@@ -70,8 +70,8 @@ Privilege Secure supports groups that share a pre-Windows 2000 name (sAMAccountN
 | Run a synchronization now | **Sync** on the domain's details page |
 | See the results of each run | The domain's **History** tab |
 | See errors from a run | The domain's **Sync Errors** tab |
-| See the scheduled task | **Configuration** > **Scheduled Tasks**. See [Scheduled tasks](/docs/privilegesecure/26_07/admin/service-nodes/scheduled-tasks). |
+| See the scheduled task | **Configuration** > **Scheduled Tasks**. See [Scheduled tasks](/docs/privilegesecure/26.07/admin/service-nodes/scheduled-tasks.md). |
 
-If a synchronization is slow or fails, see [Active Directory sync and scan problems](/docs/privilegesecure/26_07/troubleshooting/ad-sync-and-scans).
+If a synchronization is slow or fails, see [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md).
 
 {/* TODO: add an example of a synchronization schedule, for example a daily run at 02:00. */}

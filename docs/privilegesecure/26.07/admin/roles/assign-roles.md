@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Assign a built-in role to give a user or group the matching access to the console. You can start from the role, or from the account. The result is the same.
 
-Only accounts that are already on the **Users & Groups** page can receive a role. To add accounts first, see [Add domain users and groups](/docs/privilegesecure/26_07/admin/users-groups/add-users-groups). For what each role grants, see [Roles and permissions](/docs/privilegesecure/26_07/admin/roles).
+Only accounts that are already on the **Users & Groups** page can receive a role. To add accounts first, see [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md). For what each role grants, see [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md).
 
 When you assign a role to a group or a collection, every member of the group or collection receives it.
 
@@ -42,7 +42,7 @@ To make the members of `<platform-admins-group>` administrators:
 Every member of the group now has the Administrator role, and the group appears in the **Administrators** list.
 
 :::note
-For an Auditors role, the members see only the sessions in the role's scope. Set the scope before you add members. See [Roles and permissions](/docs/privilegesecure/26_07/admin/roles#scope-of-an-auditors-role).
+For an Auditors role, the members see only the sessions in the role's scope. Set the scope before you add members. See [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md#scope-of-an-auditors-role).
 :::
 
 ## Assign a role from an account
@@ -62,7 +62,7 @@ The **Add Roles** window offers only those three roles. The **Users** role isn't
 
 ### Example
 
-To make a user a reviewer, open the user's details page, click the **User Roles** tab, click **Add**, select **Reviewer**, and confirm. The user can then review access in an [Run an access certification](/docs/privilegesecure/26_07/admin/audit-reporting/access-certification).
+To make a user a reviewer, open the user's details page, click the **User Roles** tab, click **Add**, select **Reviewer**, and confirm. The user can then review access in an [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md).
 
 ## Remove a role
 
@@ -78,4 +78,4 @@ The accounts leave the role.
 
 ## Custom roles
 
-Custom roles aren't on the **Add Roles** list. Create a custom role and add its members from **Role Management**. See [Create a custom role](/docs/privilegesecure/26_07/admin/roles/custom-roles).
+Custom roles aren't on the **Add Roles** list. Create a custom role and add its members from **Role Management**. See [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).

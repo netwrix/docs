@@ -12,7 +12,7 @@ Passwords stay hidden until you reveal them. Reveal a password only when you nee
 
 ## Prerequisites
 
-You're an Administrator, or you hold a custom role with the **[C] View Password** permission. See [Create a custom role](/docs/privilegesecure/26_07/admin/roles/custom-roles).
+You're an Administrator, or you hold a custom role with the **[C] View Password** permission. See [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
 
 ## View the current password
 
@@ -70,10 +70,10 @@ For example, an account whose password rotated three times shows one row for eac
 
 ## History limits
 
-By default, Privilege Secure keeps up to 7 passwords for each account and keeps each one for 30 days. To change these limits, edit **Historical Password Limit** (1 to 50) and **Days Of Password Retention** (1 to 365) in **System Settings**. See [System settings reference](/docs/privilegesecure/26_07/configuration/system-settings#password-history).
+By default, Privilege Secure keeps up to 7 passwords for each account and keeps each one for 30 days. To change these limits, edit **Historical Password Limit** (1 to 50) and **Days Of Password Retention** (1 to 365) in **System Settings**. See [System settings reference](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md#password-history).
 
 {/* TODO verify: which limit applies first when both apply */}
 
 ## Related topics
 
-- [Manage, rotate, and verify credentials](/docs/privilegesecure/26_07/admin/credentials/manage-credentials)
+- [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md)

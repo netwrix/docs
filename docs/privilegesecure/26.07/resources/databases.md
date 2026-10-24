@@ -12,9 +12,9 @@ A database resource lets Netwrix Privilege Secure for Access Management (Privile
 
 ## Prerequisites
 
-- A service account that can sign in to the database and manage its logins. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts).
+- A service account that can sign in to the database and manage its logins. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 - The instance name, the address of the server, and the port the database listens on.
-- (Optional) A domain resource, if the database authenticates Active Directory users. See [Active Directory domains](/docs/privilegesecure/26_07/resources/domains).
+- (Optional) A domain resource, if the database authenticates Active Directory users. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md).
 
 ## Add a database
 
@@ -76,8 +76,8 @@ The **Users** tab has the buttons **Manage**, **Unmanage**, **Rotate**, **Verify
 
 The **Databases** tab has a **Search** box and these columns: **Database Name**, **Members**, and **Status**. {/* TODO verify: the Databases tab columns, which come from the 26.03 docs. */}
 
-For session details, see [Session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs).
+For session details, see [Session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md).
 
 ## Remove a database
 
-See [Remove resources](/docs/privilegesecure/26_07/resources/remove-resources).
+See [Remove resources](/docs/privilegesecure/26.07/resources/remove-resources.md).

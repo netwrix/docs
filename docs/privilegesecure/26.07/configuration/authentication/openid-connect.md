@@ -8,7 +8,7 @@ sidebar_position: 30
 
 An **OpenID Connect** connector lets users sign in to the console with an OpenID Connect identity provider. Privilege Secure reads a user ID from the provider and matches it to an Active Directory (AD) user.
 
-For the other connector types and how a user's connector is chosen, see [Authentication methods](/docs/privilegesecure/26_07/configuration/authentication/overview).
+For the other connector types and how a user's connector is chosen, see [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md).
 
 ## Prerequisites
 
@@ -116,9 +116,9 @@ This example uses placeholders for the values from your provider.
 1. Select the **Authentication Connector** tab.
 1. Select the connector.
 
-If a user isn't assigned to the connector, Privilege Secure refuses the sign-in. See [Authentication methods](/docs/privilegesecure/26_07/configuration/authentication/overview#assignment-is-required).
+If a user isn't assigned to the connector, Privilege Secure refuses the sign-in. See [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md#assignment-is-required).
 
-If the connector must work through the Remote Access Gateway, read [Use Remote Access Gateway](/docs/privilegesecure/26_07/configuration/authentication/overview#use-remote-access-gateway) before you select the checkbox.
+If the connector must work through the Remote Access Gateway, read [Use Remote Access Gateway](/docs/privilegesecure/26.07/configuration/authentication/overview.md#use-remote-access-gateway) before you select the checkbox.
 
 ## Sign out after an error
 

@@ -31,7 +31,7 @@ When no override exists, the left pane shows `<no matches>` and the right pane s
 | **Scheduled Change Policy** | The schedule policy that controls how often the credentials rotate. Select a policy you created earlier. The default is `<none>`. |
 | **Verification Schedule** | How often Privilege Secure verifies the credentials. The default is `<none>`. |
 
-Both dropdowns have a **+** button to add a schedule. For schedule policies, see [Schedule policies](/docs/privilegesecure/26_07/resources/platforms/schedule-policies).
+Both dropdowns have a **+** button to add a schedule. For schedule policies, see [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md).
 
 ## Create an override
 
@@ -67,5 +67,5 @@ The override table has **Search**, **Add Credentials**, **Remove**, and **Refres
 
 ## Related topics
 
-- [Credential groups](/docs/privilegesecure/26_07/admin/credentials/credential-groups)
-- [Rotation methods](/docs/privilegesecure/26_07/admin/credentials/rotation-methods)
+- [Credential groups](/docs/privilegesecure/26.07/admin/credentials/credential-groups.md)
+- [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md)

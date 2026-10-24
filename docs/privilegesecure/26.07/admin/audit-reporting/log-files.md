@@ -108,4 +108,4 @@ The Options page lists the Action, Email, Proxy, Scheduler, SIEM, and Web servic
 
 {/* TODO verify: the services listed in the Options dialog, including Host Scan (the lab didn't open the Options dialog) */}
 
-For help with a specific problem, see [Troubleshooting](/docs/privilegesecure/26_07/troubleshooting/overview).
+For help with a specific problem, see [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md).

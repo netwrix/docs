@@ -25,7 +25,7 @@ The Remote Access Gateway installs from its own package, separate from the Netwr
 
 1. On the gateway server, run `NPS.RagGateway.exe` from the new package.
 2. Follow the installer pages and wait for "Installation Successfully Completed."
-3. Confirm that `appsettings.json` still holds your settings. See [Gateway settings reference](/docs/privilegesecure/26_07/remote-access-gateway/configuration/gateway-settings).
+3. Confirm that `appsettings.json` still holds your settings. See [Gateway settings reference](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md).
 
 {/* TODO verify: whether the gateway installer keeps appsettings.json and the guacd certificate files, and whether Configure-Gateway.ps1 must be run again. */}
 
@@ -91,6 +91,6 @@ After you create the container, start a session from the portal and confirm that
 
 ## Related topics
 
-- [Install the gateway and guacd](/docs/privilegesecure/26_07/remote-access-gateway/install/install-gateway)
-- [Install the portal](/docs/privilegesecure/26_07/remote-access-gateway/install/install-portal)
-- [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting)
+- [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md)
+- [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md)
+- [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md)

@@ -70,5 +70,5 @@ Windows computers that receive the policy then trust the RDP file.
 
 ## Related topics
 
-- [System settings reference](/docs/privilegesecure/26_07/configuration/system-settings)
-- [Replace the web console certificate](/docs/privilegesecure/26_07/configuration/certificates)
+- [System settings reference](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md)
+- [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md)

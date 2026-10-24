@@ -12,7 +12,7 @@ Complete the steps in order. Run `Configure-Gateway.ps1` only after guacd is run
 
 ## Before you begin
 
-- Check the server against [Remote Access Gateway requirements](/docs/privilegesecure/26_07/remote-access-gateway/requirements), including nested virtualization if the server is a virtual machine.
+- Check the server against [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md), including nested virtualization if the server is a virtual machine.
 - Get the Remote Access Gateway package. It is a separate download from the main Privilege Secure package and contains `NPS.RagGateway.exe` and `NPS.RagPortal.exe`.
 
 {/* TODO verify: where customers download the 26.07.3 Remote Access Gateway package. The 26.07.1 release notes name privilegesecure-accessmanagement-rag-26.07.1.zip; the 26.07.3 notes have no link. */}
@@ -136,7 +136,7 @@ If guacd isn't reachable on port 4822, `Configure-Gateway.ps1` prints one error 
 
    The log includes the line "Communication will require SSL/TLS".
 
-Make sure the gateway server trusts the certificate on `https://<nps-server>:6500`. See [Skip certificate validation for Privilege Secure](/docs/privilegesecure/26_07/remote-access-gateway/configuration/gateway-settings#skip-certificate-validation-for-privilege-secure).
+Make sure the gateway server trusts the certificate on `https://<nps-server>:6500`. See [Skip certificate validation for Privilege Secure](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md#skip-certificate-validation-for-privilege-secure).
 
 :::note
 The script stores `<guacd-host>` in the `Guacd.Hostname` setting. The address of a WSL instance can change after a restart.
@@ -163,4 +163,4 @@ guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway 
 
 The gateway writes `PAM-RagGateway*.log` to `C:\ProgramData\Stealthbits\PAM\Log`. The file stays empty until the gateway receives its first request.
 
-Install the portal next. See [Install the portal](/docs/privilegesecure/26_07/remote-access-gateway/install/install-portal). To fix problems, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting).
+Install the portal next. See [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md). To fix problems, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md).

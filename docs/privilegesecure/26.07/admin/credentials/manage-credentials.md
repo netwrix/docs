@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Manage, rotate, and verify credentials
 
-Use the **Credentials** page to bring an account under Privilege Secure management, rotate its password, and verify that the stored password still works. For the columns and filters, see [Credentials](/docs/privilegesecure/26_07/admin/credentials/overview).
+Use the **Credentials** page to bring an account under Privilege Secure management, rotate its password, and verify that the stored password still works. For the columns and filters, see [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
 
 ## Toolbar buttons and row states
 
@@ -20,12 +20,12 @@ The toolbar buttons stay disabled until you select a row. The selected row decid
 
 {/* TODO verify: the enabled buttons for these rows, which the lab didn't select: Managed with method Manual, Managed with managed type Service, and Internal accounts */}
 
-**View History** works on one managed row at a time. See [View passwords and password history](/docs/privilegesecure/26_07/admin/credentials/password-history).
+**View History** works on one managed row at a time. See [View passwords and password history](/docs/privilegesecure/26.07/admin/credentials/password-history.md).
 
 ## Prerequisites
 
 - The account appears on the **Credentials** page.
-- You're an Administrator, or you hold a custom role with the **Credentials** target and the permission for the action: **[C] Manage**, **[C] Unmanage**, **[C] Schedule Rotation** (Rotate), or **[C] Verify**. See [Create a custom role](/docs/privilegesecure/26_07/admin/roles/custom-roles).
+- You're an Administrator, or you hold a custom role with the **Credentials** target and the permission for the action: **[C] Manage**, **[C] Unmanage**, **[C] Schedule Rotation** (Rotate), or **[C] Verify**. See [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
 
 ## Manage an account
 
@@ -36,7 +36,7 @@ The toolbar buttons stay disabled until you select a row. The selected row decid
 
 The row's **Method** changes to **Automatic** or **Manual**. {/* TODO verify: that a Standard account can be managed as Manual from this dialog */}
 
-For an Internal account, a dialog searches for a matching user. See [Manage internal service accounts](/docs/privilegesecure/26_07/admin/credentials/internal-service-accounts).
+For an Internal account, a dialog searches for a matching user. See [Manage internal service accounts](/docs/privilegesecure/26.07/admin/credentials/internal-service-accounts.md).
 
 {/* TODO screenshot: the Manage dialog for a Standard account */}
 
@@ -57,7 +57,7 @@ Privilege Secure changes the password on the resource and stores the new value. 
 
 For example, rotate `<local-admin>` on `<server-name>` after a person who knew the password leaves the team.
 
-Automatic accounts also rotate on the schedule of their platform or [credential policy override](/docs/privilegesecure/26_07/admin/credentials/policy-overrides).
+Automatic accounts also rotate on the schedule of their platform or [credential policy override](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md).
 
 :::note
 You can't rotate an account manually while a session on the account is active. Wait until the session ends, then click **Rotate** again.
@@ -65,14 +65,14 @@ You can't rotate an account manually while a session on the account is active. W
 
 {/* TODO verify: whether scheduled rotation is also blocked during an active session, and the message the console shows when manual rotation is blocked */}
 
-To rotate a service account that services or scheduled tasks use, see [Rotate service accounts and their dependencies](/docs/privilegesecure/26_07/admin/credentials/service-account-dependencies). Internal accounts rotate on the primary domain controller (PDC). See [Rotation methods](/docs/privilegesecure/26_07/admin/credentials/rotation-methods).
+To rotate a service account that services or scheduled tasks use, see [Rotate service accounts and their dependencies](/docs/privilegesecure/26.07/admin/credentials/service-account-dependencies.md). Internal accounts rotate on the primary domain controller (PDC). See [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
 
 ## Verify an account
 
 1. Select the row of a managed account.
 2. Click **Verify**.
 
-Privilege Secure checks that the password on the resource matches the stored password. The **Status** and **Last Checked** columns update. For the status values, see [Credentials](/docs/privilegesecure/26_07/admin/credentials/overview).
+Privilege Secure checks that the password on the resource matches the stored password. The **Status** and **Last Checked** columns update. For the status values, see [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
 
 For example, verify `<local-admin>` after someone reports a failed sign-in. **Status** shows **Verified** when the passwords match.
 
@@ -104,4 +104,4 @@ These options belong to the account on the resource. You can't set them for each
 
 {/* TODO verify: how Keep Enabled maps to the account state after release (disable, enable, or return to the previous state) and whether Keep Enabled has any effect on resource-based sessions */}
 
-For how policy types treat the account, see [Key concepts](/docs/privilegesecure/26_07/getting-started/key-concepts) and [Create a credential-based access policy](/docs/privilegesecure/26_07/configuration/access-policies/credential-based-policy).
+For how policy types treat the account, see [Key concepts](/docs/privilegesecure/26.07/getting-started/key-concepts.md) and [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md).

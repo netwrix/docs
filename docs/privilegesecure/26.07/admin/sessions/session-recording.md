@@ -6,11 +6,11 @@ sidebar_position: 70
 
 # Session recording
 
-Privilege Secure can record the sessions that users start through an access policy. Administrators and auditors watch the recordings live or replay them later. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26_07/admin/sessions/live-session-viewer) and [Replay a recorded session](/docs/privilegesecure/26_07/admin/sessions/replay-viewer).
+Privilege Secure can record the sessions that users start through an access policy. Administrators and auditors watch the recordings live or replay them later. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md) and [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
 
 ## Recording settings
 
-The connection profile on the access policy controls recording. These settings are in the **Proxy** section of the profile, and the website audio setting is in the **Website** section. See [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles).
+The connection profile on the access policy controls recording. These settings are in the **Proxy** section of the profile, and the website audio setting is in the **Website** section. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 | Setting | Effect |
 |---|---|
@@ -32,7 +32,7 @@ For SSH, the proxy can also record commands that run without an interactive shel
 
 When a user types at a password prompt in an SSH session, the recording hides the keystrokes.
 
-To capture Windows events in RDP recordings, install the Remote Desktop Monitor on the target hosts. See [Install the Remote Desktop Monitor](/docs/privilegesecure/26_07/install/rdp-monitor).
+To capture Windows events in RDP recordings, install the Remote Desktop Monitor on the target hosts. See [Install the Remote Desktop Monitor](/docs/privilegesecure/26.07/install/rdp-monitor.md).
 
 ## Where recordings are stored
 
@@ -52,7 +52,7 @@ Recordings stay on disk until you delete them or turn on log retention for recor
 
 {/* TODO verify: that the retention setting deletes recordings on each proxy node. The console stores the setting, and the proxy service reads it to delete recordings. */}
 
-For all retention settings, see [Configure data retention](/docs/privilegesecure/26_07/configuration/system-settings/data-retention).
+For all retention settings, see [Configure data retention](/docs/privilegesecure/26.07/configuration/system-settings/data-retention.md).
 
 To stop keystroke and metadata logging for all sessions, or to delete existing recordings for a time window, see the Knowledge Base article [Disable Keystroke Logging](/docs/kb/privilegesecure/session-management-and-recording/disable-keystroke-logging). The article states the change doesn't affect existing recordings.
 
@@ -62,5 +62,5 @@ Users of the Remote Access Gateway portal start sessions in the browser. Recordi
 
 ## Related topics
 
-- [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles)
-- [View session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs)
+- [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)
+- [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md)

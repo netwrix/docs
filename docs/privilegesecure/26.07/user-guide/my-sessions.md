@@ -12,16 +12,16 @@ To open it, select **Dashboard** in the left navigation, and then select a tile:
 
 - **Active** lists sessions that are being prepared, waiting, or in use.
 - **Scheduled** lists sessions that start later.
-- **Approvals** lists requests that wait for your decision, if an approval workflow names you as an approver. Your own requests that wait for approval stay on the **Active** tile with the status **Waiting for approval**. See [Approve or deny session requests](/docs/privilegesecure/26_07/user-guide/approve-requests).
+- **Approvals** lists requests that wait for your decision, if an approval workflow names you as an approver. Your own requests that wait for approval stay on the **Active** tile with the status **Waiting for approval**. See [Approve or deny session requests](/docs/privilegesecure/26.07/user-guide/approve-requests.md).
 - **Historical** lists sessions that have ended.
 
 Each tile shows a count. Select **Refresh** on any table to reload it.
 
-The **Dashboard** also has **Users**, **Resources**, and **Credentials** tiles. The **Users** and **Resources** tiles are for administrators. The **Credentials** tile also appears for users whose custom role grants the Credentials permission. See [Dashboard](/docs/privilegesecure/26_07/admin/sessions/dashboard).
+The **Dashboard** also has **Users**, **Resources**, and **Credentials** tiles. The **Users** and **Resources** tiles are for administrators. The **Credentials** tile also appears for users whose custom role grants the Credentials permission. See [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
 {/* TODO screenshot: the Dashboard tile row with the Active tile selected */}
 
-To request a new session, select **Create Session** on the **Active** or **Scheduled** tile. See [Request a session](/docs/privilegesecure/26_07/user-guide/request-session).
+To request a new session, select **Create Session** on the **Active** or **Scheduled** tile. See [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md).
 
 ## Check the status of an active or scheduled session
 
@@ -53,7 +53,7 @@ Use **Search** to filter the table. On the **Active** tile, you can also filter 
 | **Waiting for approval** | An approver must approve the request before the session can begin. |
 | **Approval denied** | An approver denied the request. |
 | **Approval failed** | The approval workflow couldn't complete. |
-| **Available** | The session is ready. Connect to it. See [Connect to a session](/docs/privilegesecure/26_07/user-guide/connect-session). |
+| **Available** | The session is ready. Connect to it. See [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md). |
 | **Failed** | The provisioning stage hit an error. |
 | **Logged In** | You are signed in to the resource, either directly or through the proxy. Privilege Secure detects a direct sign-in by polling the resource at regular intervals, so the status can lag. |
 | **Cancelling** | The session expired, or you or an administrator canceled it. {/* TODO verify: the exact label in the Active grid; the status enum is Cancelling. */} |
@@ -62,14 +62,14 @@ Use **Search** to filter the table. On the **Active** tile, you can also filter 
 
 ## End a session
 
-To end one or more sessions, select them on the **Active** or **Scheduled** tile and select **End Session**. See [Connect to a session](/docs/privilegesecure/26_07/user-guide/connect-session#end-a-session) for the full procedure and the permission that auditors need.
+To end one or more sessions, select them on the **Active** or **Scheduled** tile and select **End Session**. See [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md#end-a-session) for the full procedure and the permission that auditors need.
 
 ## Open the logs of an active session
 
 1. On the **Active** tile, select the checkbox for a session.
 2. Select **View Logs**.
 
-The **Session Logs** window shows the action log for the session. See [View session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs).
+The **Session Logs** window shows the action log for the session. See [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md).
 
 ## Review past sessions
 
@@ -103,7 +103,7 @@ A historical session has one of these statuses:
 | **Cancelled** | An administrator canceled the activity before its scheduled end. |
 | **Failed** | The provisioning stage hit an error. |
 
-For the full list of Historical filters and recordings, see [Review historical sessions](/docs/privilegesecure/26_07/admin/sessions/historical-sessions).
+For the full list of Historical filters and recordings, see [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md).
 
 ### Row actions
 

@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The **Users & Groups** page lists every account that has access to the console. An account is onboarded when you add it to this page. Onboarded users sign in to manage policies or run sessions. Onboarded groups give their members the same access.
 
-To open the page, select **Users & Groups** in the left navigation. The same list also appears as the **Users** tile on the dashboard. See [Dashboard](/docs/privilegesecure/26_07/admin/sessions/dashboard).
+To open the page, select **Users & Groups** in the left navigation. The same list also appears as the **Users** tile on the dashboard. See [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
 {/* TODO screenshot: the Users & Groups list with the Licenses counter, the filters, and the LOCKED column */}
 
@@ -18,12 +18,12 @@ The list shows four types of account.
 
 | Type | What it is | Add it with |
 |---|---|---|
-| User | An Active Directory (AD) user | [Add domain users and groups](/docs/privilegesecure/26_07/admin/users-groups/add-users-groups) |
-| Group | An AD group. Members sign in with their own accounts. | [Add domain users and groups](/docs/privilegesecure/26_07/admin/users-groups/add-users-groups) |
-| Application | An account for an automation tool that calls the REST API. It can't sign in to the console. | [Add application users](/docs/privilegesecure/26_07/admin/users-groups/application-users) |
-| Local User | An account stored in the Privilege Secure database. It doesn't depend on AD. | [Add and manage local users](/docs/privilegesecure/26_07/admin/users-groups/local-users) |
+| User | An Active Directory (AD) user | [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md) |
+| Group | An AD group. Members sign in with their own accounts. | [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md) |
+| Application | An account for an automation tool that calls the REST API. It can't sign in to the console. | [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md) |
+| Local User | An account stored in the Privilege Secure database. It doesn't depend on AD. | [Add and manage local users](/docs/privilegesecure/26.07/admin/users-groups/local-users.md) |
 
-You can also group accounts into collections to grant the same rights to a set. See [User and group collections](/docs/privilegesecure/26_07/admin/users-groups/collections).
+You can also group accounts into collections to grant the same rights to a set. See [User and group collections](/docs/privilegesecure/26.07/admin/users-groups/collections.md).
 
 ## Toolbar
 
@@ -44,16 +44,16 @@ The **Licenses** counter at the top right of the page shows the licenses in use 
 | Column | Shows |
 |---|---|
 | **TYPE** | An icon for the account type. |
-| **NAME** | The account name. Select the name to open the account's details page. See [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details). An account with no display name shows `<null>`. |
+| **NAME** | The account name. Select the name to open the account's details page. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md). An account with no display name shows `<null>`. |
 | **USER NAME** | The `sAMAccountName` value. Groups leave this blank. |
 | **USER PRINCIPAL NAME** | The user principal name (UPN). Groups leave this blank. |
 | **LICENSED** | Whether the account uses a license. For a group, a badge such as x2 shows how many members are licensed. Hover over it to see the count, for example "2 users licensed". |
 | **EMAIL** | The email address, if the account has one. |
 | **LAST LOGIN** | The date and time of the last sign-in. A group shows **N/A** until a member signs in. |
-| **LOCKED** | Whether the account is locked. See [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details).{/* TODO verify: whether a failed-sign-in lockout also shows in this column (only administrator locks were documented in 26.03; no locked account was seen in the lab) */} |
+| **LOCKED** | Whether the account is locked. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).{/* TODO verify: whether a failed-sign-in lockout also shows in this column (only administrator locks were documented in 26.03; no locked account was seen in the lab) */} |
 | **ACTIVE SESSIONS** | The number of sessions in progress. |
 | **SCHEDULED SESSIONS** | The number of sessions scheduled for a later time. |
-| **ACCESS POLICIES** | The number of access policies that include the account. See [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview). |
+| **ACCESS POLICIES** | The number of access policies that include the account. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md). |
 
 You can resize the columns and sort each one in ascending or descending order.
 
@@ -76,4 +76,4 @@ For example, to remove a contractor who has left, export the user's history from
 
 {/* TODO verify: whether removing a user frees its license, whether recordings remain after removal, and why the Licenses counter can show more used than total (a community thread reports 19 / 10). */}
 
-For how licenses are counted, see [Licensing](/docs/privilegesecure/26_07/requirements/licensing).
+For how licenses are counted, see [Licensing](/docs/privilegesecure/26.07/requirements/licensing.md).

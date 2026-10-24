@@ -20,7 +20,7 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) manages resour
 | Microsoft SQL Server | A database instance. |
 | Oracle | A container database instance. |
 
-Privilege Secure also manages websites and secret vaults. For their settings, see [Platforms](/docs/privilegesecure/26_07/resources/platforms).
+Privilege Secure also manages websites and secret vaults. For their settings, see [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
 {/* TODO verify: Windows Server 2008 R2 and PowerShell 5.1 still apply to 26.07 targets. These values come from the 26.03 page. */}
 {/* TODO verify: SSH and API requirements for BSD and PAN-OS targets. */}
@@ -29,7 +29,7 @@ Privilege Secure also supports any device that accepts an SSH connection, and an
 
 {/* TODO SME: support statement for Arista. The 26.07.3 lab shows 11 platforms and no Custom, Arista, or "Cisco (Custom)" platform. */}
 
-For the full platform list and settings, see [Platforms](/docs/privilegesecure/26_07/resources/platforms).
+For the full platform list and settings, see [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
 ## Service account permissions
 
@@ -43,7 +43,7 @@ For the full platform list and settings, see [Platforms](/docs/privilegesecure/2
 | Oracle | `SYSDBA` privileges. |
 | Microsoft SQL Server | `sysadmin` privileges. |
 
-For the Entra ID app registration, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26_07/configuration/service-accounts/entra-id-app-registration).
+For the Entra ID app registration, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md).
 
 {/* TODO verify: service account permissions for BSD and PAN-OS targets. */}
 
@@ -51,7 +51,7 @@ For the Entra ID app registration, see [Register an app in Microsoft Entra ID](/
 
 ### WinRM
 
-Privilege Secure manages Windows hosts through PowerShell remoting over WinRM. Open TCP port 5985 (HTTP) or 5986 (HTTPS) from the application server to each Windows host. See [Ports](/docs/privilegesecure/26_07/requirements/ports).
+Privilege Secure manages Windows hosts through PowerShell remoting over WinRM. Open TCP port 5985 (HTTP) or 5986 (HTTPS) from the application server to each Windows host. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
 ### Kerberos delegation
 

@@ -25,7 +25,7 @@ The Action, Host Scan, Scheduler, Email, and SIEM installers add the .NET 10 Hos
 
 {/* TODO verify: the operating system, hardware, and software for remote service hosts. The remote Action, Email, Scheduler, and SIEM bundles don't check for PowerShell 7.6, and it is unknown whether the services need it at runtime. */}
 
-For installation steps, see [Install services on additional servers](/docs/privilegesecure/26_07/install/additional-services).
+For installation steps, see [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 
 ## Proxy server sizing
 
@@ -45,4 +45,4 @@ During installation, the Setup Launcher recommends that you disable antivirus so
 
 ## Ports
 
-The proxy and remote services need specific ports open to the application server and to users. See [Ports](/docs/privilegesecure/26_07/requirements/ports).
+The proxy and remote services need specific ports open to the application server and to users. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md).

@@ -8,7 +8,7 @@ sidebar_position: 30
 
 Privilege Secure has a central web service, a database, and a set of services that run actions, record sessions, and send notifications. You can install every component on one server or spread them across several. The Remote Access Gateway is an optional add-on for external users.
 
-For the complete port list, see [Ports](/docs/privilegesecure/26_07/requirements/ports). The ports on this page summarize the connections that the diagrams show.
+For the complete port list, see [Ports](/docs/privilegesecure/26.07/requirements/ports.md). The ports on this page summarize the connections that the diagrams show.
 
 ## Components
 
@@ -25,12 +25,12 @@ For the complete port list, see [Ports](/docs/privilegesecure/26_07/requirements
 | Proxy service | Connects users to resources over RDP and SSH and stores session recordings. You can run several proxies for load balancing and redundancy. | TCP 4489 (RDP in) and TCP 4422 (SSH in) |
 | Service mesh | Connects remote services to the central web service. Each remote node joins the mesh so that traffic takes the most efficient route to the web service. | TCP 6520 to register, TCP 6523 for leaf nodes, and TCP 6524 for cluster nodes |
 | Remote Desktop Monitor service | Runs on target Windows hosts and sends the window and menu activity of an RDP session to the recording. | Not applicable |
-| Database | Stores configuration, sessions, and credentials. PostgreSQL 16 or Microsoft SQL Server. | See [Database requirements](/docs/privilegesecure/26_07/requirements/database) |
+| Database | Stores configuration, sessions, and credentials. PostgreSQL 16 or Microsoft SQL Server. | See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) |
 
 The Proxy service connects to resources on TCP 3389 (RDP) and TCP 22 (SSH). The Action service uses PowerShell remoting over Windows Remote Management (WinRM) on TCP 5985 or 5986, or SSH on TCP 22. It also connects to Active Directory on several ports. {/* TODO verify: Host Scan service ports and connection broker port 6522 */}
 
 :::note
-Open the console at `https://<nps-server>:6500`. See [Ports](/docs/privilegesecure/26_07/requirements/ports) for where this port is set.
+Open the console at `https://<nps-server>:6500`. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md) for where this port is set.
 :::
 
 ## Data flow
@@ -61,7 +61,7 @@ A browser session follows this path:
 
 {/* TODO screenshot: diagram of the Remote Access Gateway data path from browser to Portal (443), Gateway (6550), web service (6500), guacd (4822), proxy (4489 and 4422), and target */}
 
-See [Remote Access Gateway overview](/docs/privilegesecure/26_07/remote-access-gateway/overview).
+See [Remote Access Gateway overview](/docs/privilegesecure/26.07/remote-access-gateway/overview.md).
 
 ## Deployment topologies
 
@@ -77,11 +77,11 @@ The Proxy and Action services use resources in proportion to load. Install them 
 
 {/* TODO screenshot: diagram of the distributed architecture with remote Proxy and Action services */}
 
-See [Install services on additional servers](/docs/privilegesecure/26_07/install/additional-services) and [Install a proxy service on another server](/docs/privilegesecure/26_07/install/remote-proxy). {/* TODO verify: supported host operating systems for a remote Proxy service */}
+See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md) and [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md). {/* TODO verify: supported host operating systems for a remote Proxy service */}
 
 ### Active-passive database
 
-Two identical servers run all components. The databases replicate from the primary to the standby. When the primary is unavailable, an administrator starts the failover manually. See [High availability options](/docs/privilegesecure/26_07/install/high-availability). This topology requires PostgreSQL and works with the bundled database. It is the simplest high-availability option.
+Two identical servers run all components. The databases replicate from the primary to the standby. When the primary is unavailable, an administrator starts the failover manually. See [High availability options](/docs/privilegesecure/26.07/install/high-availability.md). This topology requires PostgreSQL and works with the bundled database. It is the simplest high-availability option.
 
 {/* TODO screenshot: diagram of the active-passive database deployment */}
 
@@ -93,12 +93,12 @@ Several application servers share one database. Failover needs no manual step. T
 
 ### Cloud database
 
-A cloud database provides built-in high availability and automatic scaling, which suits an active-active deployment. Examples are Amazon Aurora PostgreSQL, Amazon RDS for SQL Server, and the Azure database services for PostgreSQL and SQL Server. See [Database requirements](/docs/privilegesecure/26_07/requirements/database) for supported versions. {/* TODO verify: supported cloud database services and versions */}
+A cloud database provides built-in high availability and automatic scaling, which suits an active-active deployment. Examples are Amazon Aurora PostgreSQL, Amazon RDS for SQL Server, and the Azure database services for PostgreSQL and SQL Server. See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) for supported versions. {/* TODO verify: supported cloud database services and versions */}
 
 {/* TODO screenshot: diagram of the cloud database deployment */}
 
-For setup details, see [High availability options](/docs/privilegesecure/26_07/install/high-availability).
+For setup details, see [High availability options](/docs/privilegesecure/26.07/install/high-availability.md).
 
 ### Vault integrations
 
-Activities can use credentials from other vaults and from Microsoft Local Administrator Password Solution (LAPS). The diagrams and setup are in [Vault connectors](/docs/privilegesecure/26_07/integrations/vaults/vault-connectors).
+Activities can use credentials from other vaults and from Microsoft Local Administrator Password Solution (LAPS). The diagrams and setup are in [Vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md).

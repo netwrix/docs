@@ -21,7 +21,7 @@ You have the Administrator role.
 5. Leave **Change Password Next Login** selected to make the user choose a new password at the first sign-in. Clear it to keep the password you entered.
 6. Click **Save**. The button stays disabled until the entries are valid.
 
-The account appears on the **Users & Groups** page with the type **Local User**. See [Users and groups](/docs/privilegesecure/26_07/admin/users-groups).
+The account appears on the **Users & Groups** page with the type **Local User**. See [Users and groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md).
 
 {/* TODO screenshot: the New Local User form */}
 
@@ -46,7 +46,7 @@ The header has these buttons:
 
 {/* TODO verify: what Reset MFA and Lock Account do and how a locked account is unlocked (no Unlock state was seen in the lab) */}
 
-The **Properties** tab holds **Display Name**, **SamAccountName**, **Department**, **User Principal Name**, and **Email**. For details on each tab and on lockout, see [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details).
+The **Properties** tab holds **Display Name**, **SamAccountName**, **Department**, **User Principal Name**, and **Email**. For details on each tab and on lockout, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ## Change your own password
 

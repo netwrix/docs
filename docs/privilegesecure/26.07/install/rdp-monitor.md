@@ -8,7 +8,7 @@ sidebar_position: 90
 
 The Netwrix Privilege Secure for Access Management (Privilege Secure) Remote Desktop Monitor service runs on a Windows target host. It captures the Windows event activity of a Remote Desktop Protocol (RDP) session, such as windows that open and menus that users select.
 
-Without the service, Privilege Secure still records the session video and keystrokes. With the service, you can also search that Windows event activity in the [Live Session Viewer](/docs/privilegesecure/26_07/admin/sessions/live-session-viewer) and the [Replay Viewer](/docs/privilegesecure/26_07/admin/sessions/replay-viewer).
+Without the service, Privilege Secure still records the session video and keystrokes. With the service, you can also search that Windows event activity in the [Live Session Viewer](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md) and the [Replay Viewer](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
 
 Install the service on each Windows host that users reach through an RDP session. You don't install it on the Privilege Secure application server unless that server is also a target.
 
@@ -16,7 +16,7 @@ Install the service on each Windows host that users reach through an RDP session
 
 - The product download zip file, extracted. `NPS.TSMon.exe` is in the `Extras` folder.
 - Local administrator rights on the target host.
-- The **Record Proxy Session** option turned on in the connection profile of the access policy that grants the RDP session. See [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles).
+- The **Record Proxy Session** option turned on in the connection profile of the access policy that grants the RDP session. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ## Install the Remote Desktop Monitor
 
@@ -54,5 +54,5 @@ If the timeline shows keystrokes but no Windows events, confirm that the service
 
 ## Related topics
 
-- [Installation package contents](/docs/privilegesecure/26_07/install/components)
-- [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles)
+- [Installation package contents](/docs/privilegesecure/26.07/install/components.md)
+- [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)

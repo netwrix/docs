@@ -8,13 +8,13 @@ sidebar_position: 30
 
 Privilege Secure runs several services next to the web service: Action, Email, Host Scan, Proxy, Scheduler, and Security Information and Event Management (SIEM). Use this page when a service shows as offline or partial, or when the console shows the banner "Action Service is not running or registered."
 
-Start by checking the status of each service on the **Configuration** > **Service Nodes** page. See [Service nodes](/docs/privilegesecure/26_07/admin/service-nodes).
+Start by checking the status of each service on the **Configuration** > **Service Nodes** page. See [Service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).
 
 ## Where the logs are
 
-Service logs are in `C:\ProgramData\Stealthbits\PAM\Log` on the server that runs the service. See [Start with the logs](/docs/privilegesecure/26_07/troubleshooting/overview#start-with-the-logs).
+Service logs are in `C:\ProgramData\Stealthbits\PAM\Log` on the server that runs the service. See [Start with the logs](/docs/privilegesecure/26.07/troubleshooting/overview.md#start-with-the-logs).
 
-Open the log for the failing service, such as `PAM-HostScanService<yyyymmdd>.log`. You can also read the logs in the console. See [Log files](/docs/privilegesecure/26_07/admin/audit-reporting/log-files). For Remote Access Gateway logs, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting).
+Open the log for the failing service, such as `PAM-HostScanService<yyyymmdd>.log`. You can also read the logs in the console. See [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md). For Remote Access Gateway logs, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md).
 
 ## The banner says the Action Service isn't running or registered
 
@@ -26,7 +26,7 @@ Open the log for the failing service, such as `PAM-HostScanService<yyyymmdd>.log
 1. Select **System Settings** > **Services**, and confirm that **NPS Rest URL** has the form `https://<nps-server>:6500`, with no trailing slash.
 1. Click **Save**, and then click **Register Services**.
 
-See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url) for the fields and the second **Register Services** button under **User Options** > **Settings**.
+See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md) for the fields and the second **Register Services** button under **User Options** > **Settings**.
 
 ## Services return HTTP 500, or sessions stay in Provisioning
 
@@ -34,7 +34,7 @@ See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/con
 
 **Cause:** The **NPS Rest URL** ends with a slash, for example `https://<nps-server>:6500/`.
 
-**Fix:** Remove the trailing slash, click **Save**, and click **Register Services** again. Check this setting after an upgrade if sessions stick in Provisioning. Release 26.07.3 removes the trailing slash automatically. See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url).
+**Fix:** Remove the trailing slash, click **Save**, and click **Register Services** again. Check this setting after an upgrade if sessions stick in Provisioning. Release 26.07.3 removes the trailing slash automatically. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 ## A high availability secondary server shows no nodes
 
@@ -47,7 +47,7 @@ See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/con
 1. In **NPS Rest URL**, enter the fully qualified domain name (FQDN) URL of the secondary server, such as `https://<secondary-server>:6500`.
 1. Click **Save**, and then click **Register Services**.
 
-The secondary node then appears in the primary console. If high availability doesn't work after the upgrade, reconfigure it. See [High availability](/docs/privilegesecure/26_07/install/high-availability).
+The secondary node then appears in the primary console. If high availability doesn't work after the upgrade, reconfigure it. See [High availability](/docs/privilegesecure/26.07/install/high-availability.md).
 
 {/* TODO verify: the secondary-server steps and the need to reconfigure high availability after an upgrade. The source is a support resolution, not a lab test. */}
 
@@ -69,7 +69,7 @@ The log rarely records the inner exception. To find it, search all `PAM-HostScan
 
 If the log shows `RemoteCertificateNameMismatch`, reissue the certificate bound to the console website on port 6500 so that it lists every name the services use. Include the FQDN of the Privilege Secure server, the short name, and the FQDN of each service node. Bind the new certificate and restart the services.
 
-1. Request a certificate that lists each name in the Subject Alternative Name (SAN) field. See [Replace the web console certificate](/docs/privilegesecure/26_07/configuration/certificates).
+1. Request a certificate that lists each name in the Subject Alternative Name (SAN) field. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 1. Bind the certificate to the **SbPAM Web Service** website in Internet Information Services (IIS), and run `iisreset`.
 1. In **System Settings** > **Services**, confirm **NPS Rest URL** uses a name on the certificate, and click **Register Services**.
 1. Restart the `SbPAMHostScan` service from Windows Services on each node that runs Host Scan.
@@ -89,7 +89,7 @@ If the Host Scan service connects to the web service by a name you can't predict
 
 ### Accept untrusted certificates only as a last resort
 
-If the service can't trust the certificate because the certificate authority (CA) isn't trusted, fix the trust first. Install the CA certificate in the Trusted Root store on each service node. See [Replace the web console certificate](/docs/privilegesecure/26_07/configuration/certificates).
+If the service can't trust the certificate because the certificate authority (CA) isn't trusted, fix the trust first. Install the CA certificate in the Trusted Root store on each service node. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 
 Only when you can't fix the trust, the services can skip certificate validation. Check **Ignore HTTPS Certificate Errors** in **System Settings** > **Services**, and click **Register Services**. This sets `RestService.InsecureSkipVerify` to `true` in the `appsettings.user.json` file of each service that uses the **NPS Rest URL**: Action, Email, Host Scan, Proxy, Scheduler, and SIEM. Skipping validation exposes the connection to impersonation. Don't use it for a name mismatch, which a reissued certificate fixes.
 
@@ -107,7 +107,7 @@ Releases before 26.03.0 overwrote `appsettings.user.json` during service registr
 
 ## Related topics
 
-- [Troubleshooting](/docs/privilegesecure/26_07/troubleshooting/overview)
-- [Troubleshoot installation and upgrade](/docs/privilegesecure/26_07/install/troubleshoot-installation)
-- [Active Directory sync and scan problems](/docs/privilegesecure/26_07/troubleshooting/ad-sync-and-scans)
+- [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md)
+- [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md)
+- [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md)
 - [Services Are Not Running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running)

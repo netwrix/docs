@@ -22,7 +22,7 @@ Firefox isn't supported.
 Turn off browser compatibility mode. The console doesn't work in compatibility mode.
 :::
 
-The browser must be able to reach the console at `https://<nps-server>:6500`. See [Ports](/docs/privilegesecure/26_07/requirements/ports).
+The browser must be able to reach the console at `https://<nps-server>:6500`. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
 ## Multi-factor authentication
 

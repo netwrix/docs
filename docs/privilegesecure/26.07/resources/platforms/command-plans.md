@@ -17,13 +17,13 @@ A command plan is a named, ordered set of steps that Netwrix Privilege Secure fo
 | **Cisco** | Runs commands over SSH. |
 | **Palo Alto PanOS** | Calls the PAN-OS application programming interface (API). |
 
-The service account that you assign to the resource runs the commands. For Linux, the account needs permission to run them. See [Target environments](/docs/privilegesecure/26_07/requirements/target-environments).
+The service account that you assign to the resource runs the commands. For Linux, the account needs permission to run them. See [Target environments](/docs/privilegesecure/26.07/requirements/target-environments.md).
 
 Privilege Secure ships the plans for each of these platforms.
 
 ## Command plans in the console
 
-A default installation doesn't show the **Command Plans** tab on a platform. A platform shows one form with no tabs, as described in [Platforms](/docs/privilegesecure/26_07/resources/platforms).
+A default installation doesn't show the **Command Plans** tab on a platform. A platform shows one form with no tabs, as described in [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
 {/* TODO verify: with the SME, the conditions under which the Command Plans tab appears, and whether to name the setting that turns it on. The lab console showed no Command Plans tab. The code gates the tab on custom_platform_connector, which no migration seeds. */}
 
@@ -39,5 +39,5 @@ Starting in 26.07.3, each update restores the built-in command plans.
 
 ## Related topics
 
-- [Platforms](/docs/privilegesecure/26_07/resources/platforms)
-- [Target environments](/docs/privilegesecure/26_07/requirements/target-environments)
+- [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md)
+- [Target environments](/docs/privilegesecure/26.07/requirements/target-environments.md)

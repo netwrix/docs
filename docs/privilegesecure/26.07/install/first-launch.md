@@ -27,7 +27,7 @@ Use either method:
 
 If you run the wizard from another computer, service registration can fail. See [Handle certificate errors](#handle-certificate-errors).
 
-For the supported browsers, see [Client requirements](/docs/privilegesecure/26_07/requirements/client).
+For the supported browsers, see [Client requirements](/docs/privilegesecure/26.07/requirements/client.md).
 
 ## Complete the wizard
 
@@ -81,7 +81,7 @@ Each wizard page shows its position, for example "Step 2 out of 5".
 
 {/* TODO verify: the page the console opens when the wizard closes, and the name of the activity it creates (26.03 showed My Activities with "Activity Token for Domain Admin Access"). */}
 
-To continue, see [Configuration overview](/docs/privilegesecure/26_07/configuration/overview) and [Quick start](/docs/privilegesecure/26_07/getting-started/quick-start).
+To continue, see [Configuration overview](/docs/privilegesecure/26.07/configuration/overview.md) and [Quick start](/docs/privilegesecure/26.07/getting-started/quick-start.md).
 
 ## Handle certificate errors
 
@@ -95,7 +95,7 @@ If a step fails, the wizard shows "An Error Has Occurred" with three options:
 - **View Logs** – Opens the logs.
 - **Skip** – Skips the step.
 
-For log locations, see [Troubleshoot installation and upgrade](/docs/privilegesecure/26_07/install/troubleshoot-installation).
+For log locations, see [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md).
 
 ## Exit the wizard early
 
@@ -103,6 +103,6 @@ You can exit the wizard from the service account, synchronization, and resource 
 
 | Exited from | Complete setup |
 | --- | --- |
-| Add an Active Directory Service Account | Add a service account on the domain details page, then synchronize the domain and add a resource. See [Active Directory domains](/docs/privilegesecure/26_07/resources/domains). |
+| Add an Active Directory Service Account | Add a service account on the domain details page, then synchronize the domain and add a resource. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md). |
 | Synchronize the Active Directory Domain | Click **Sync** on the domain details page, then add a resource. |
-| Add a Resource | Add a server on the Resources page, then create an access policy. See [Add servers](/docs/privilegesecure/26_07/resources/add-resources) and [Access policies overview](/docs/privilegesecure/26_07/configuration/access-policies/overview). |
+| Add a Resource | Add a server on the Resources page, then create an access policy. See [Add servers](/docs/privilegesecure/26.07/resources/add-resources.md) and [Access policies overview](/docs/privilegesecure/26.07/configuration/access-policies/overview.md). |

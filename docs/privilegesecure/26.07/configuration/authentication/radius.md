@@ -8,7 +8,7 @@ sidebar_position: 20
 
 An **MFA** connector sends a second-factor request to a Remote Authentication Dial-In User Service (RADIUS) server when a user signs in. Use it with a RADIUS server, such as a Duo RADIUS proxy.
 
-For the other connector types and how a user's connector is chosen, see [Authentication methods](/docs/privilegesecure/26_07/configuration/authentication/overview).
+For the other connector types and how a user's connector is chosen, see [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md).
 
 ## Prerequisites
 
@@ -91,7 +91,7 @@ Privilege Secure includes a **Duo** connector in the connector list. It appears 
 1. Select the **Authentication Connector** tab.
 1. Select the connector.
 
-For the tab and the rules for users in several groups, see [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details#authentication-connector) and [Connector precedence](/docs/privilegesecure/26_07/configuration/authentication/overview#connector-precedence).
+For the tab and the rules for users in several groups, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector) and [Connector precedence](/docs/privilegesecure/26.07/configuration/authentication/overview.md#connector-precedence).
 
 If users aren't assigned to the connector, Privilege Secure refuses their sign-in through it. For a connector that must accept unassigned users, see [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector).
 

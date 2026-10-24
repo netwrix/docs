@@ -8,11 +8,11 @@ sidebar_position: 80
 
 When your access policy uses a ServiceNow connector, Privilege Secure checks the ticket you enter against ServiceNow and posts updates to the ticket as your session progresses. When you end the session, you choose the state the ticket moves to.
 
-An administrator sets up the connector and attaches it to the connection profile. For that setup, see [ServiceNow integration](/docs/privilegesecure/26_07/integrations/itsm/servicenow).
+An administrator sets up the connector and attaches it to the connection profile. For that setup, see [ServiceNow integration](/docs/privilegesecure/26.07/integrations/itsm/servicenow.md).
 
 ## Enter a ticket number
 
-1. Start a session request. See [Request a session](/docs/privilegesecure/26_07/user-guide/request-session).
+1. Start a session request. See [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md).
 2. On the **Notes** step, enter the ticket number in the ticket box. The box uses the label that your administrator set for the connector.
 3. Click **Next >** and finish the request.
 
@@ -58,7 +58,7 @@ When you end a session that has a ServiceNow ticket, the console shows a dialog 
 
 The text in this dialog appears in English in every console language.
 
-For the general procedure, see [Connect to a session](/docs/privilegesecure/26_07/user-guide/connect-session#end-a-session).
+For the general procedure, see [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md#end-a-session).
 
 ### Resolved can fail
 
@@ -70,6 +70,6 @@ If this happens, end the session with **Keep In Progress** or **On Hold**, and t
 
 ## Related topics
 
-- [Request a session](/docs/privilegesecure/26_07/user-guide/request-session)
-- [Manage active and scheduled sessions](/docs/privilegesecure/26_07/admin/sessions/active-sessions)
-- [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles)
+- [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md)
+- [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md)
+- [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)

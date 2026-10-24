@@ -39,7 +39,7 @@ Search and filters cover live and recorded sessions. They match partial strings.
 
 When you search recording data and open the matching recording, playback jumps to the first point where the text appears.
 
-For the Remote Desktop Monitor, see [Install the Remote Desktop Monitor on target hosts](/docs/privilegesecure/26_07/install/rdp-monitor).
+For the Remote Desktop Monitor, see [Install the Remote Desktop Monitor on target hosts](/docs/privilegesecure/26.07/install/rdp-monitor.md).
 
 ## Columns
 
@@ -69,15 +69,15 @@ You can resize the columns and sort them in ascending or descending order.
 
 ### Row actions
 
-- **Expand icon:** Shows a one-line summary of a completed session, for example `RDP Session completed at <time>.` When a recording exists, the expanded row also has the replay viewer. If the user signed in more than once, the row lists one recording for each sign-in. See [Replay a recorded session](/docs/privilegesecure/26_07/admin/sessions/replay-viewer). A failed session has no summary.
-- **Logs icon:** Opens the session logs. See [View session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs).
+- **Expand icon:** Shows a one-line summary of a completed session, for example `RDP Session completed at <time>.` When a recording exists, the expanded row also has the replay viewer. If the user signed in more than once, the row lists one recording for each sign-in. See [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md). A failed session has no summary.
+- **Logs icon:** Opens the session logs. See [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md).
 - **Quick launch icon:** Starts the same activity again on the same resource. It appears only on your own sessions, and not for Credential Release or File Release activities. Hover over it to see the activity and resource. If you no longer have access to the activity, the console shows an error.
 
 {/* TODO verify: the quick launch icon position in the Actions column */}
 
 ## Who can view recordings
 
-Administrators can view recordings of historical sessions. Auditors can view recordings through the View Recordings permission, within the users and resources their role covers. See [Roles and permissions](/docs/privilegesecure/26_07/admin/roles).
+Administrators can view recordings of historical sessions. Auditors can view recordings through the View Recordings permission, within the users and resources their role covers. See [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md).
 
 {/* TODO verify: View Recordings scope for auditors and whether other roles can open recordings. */}
 

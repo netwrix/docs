@@ -17,7 +17,7 @@ To open the page, select **Auditing & Reporting** > **Access Certification**.
 - **Administrators** create, change, and delete tasks. They also add the users to review and export the results.
 - **Reviewers** see only the tasks assigned to them and are the only people who can review the entitlements of a task.
 
-A person is a reviewer when they hold the Reviewer role directly, or through a group or user and group collection that holds it. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26_07/admin/roles/assign-roles). Only a user with the Reviewer role can be chosen as the reviewer of a task.
+A person is a reviewer when they hold the Reviewer role directly, or through a group or user and group collection that holds it. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md). Only a user with the Reviewer role can be chosen as the reviewer of a task.
 
 ## Task statuses
 
@@ -52,7 +52,7 @@ The task list on the left has a **Search** box, a status for each task, and a de
 
 ### The Users tab
 
-The **Users** tab lists the users and groups under review. The columns are **Name**, **User Name**, **Email**, and **Type** (user or group). Select a name to open the details page of that account. See [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details).
+The **Users** tab lists the users and groups under review. The columns are **Name**, **User Name**, **Email**, and **Type** (user or group). Select a name to open the details page of that account. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ### The Entitlements tab
 
@@ -76,7 +76,7 @@ The tab has three buttons:
 
 ## Review the entitlements
 
-The assigned reviewer completes these steps. For the reviewer's view, see [Review access](/docs/privilegesecure/26_07/user-guide/review-access).
+The assigned reviewer completes these steps. For the reviewer's view, see [Review access](/docs/privilegesecure/26.07/user-guide/review-access.md).
 
 1. Select **Auditing & Reporting** > **Access Certification**.
 2. Select the task, and then select the **Entitlements** tab.
@@ -100,7 +100,7 @@ A denial sets a deny flag on that user, activity, and resource or credential. Th
 
 To restore the access, an Administrator deletes the denial. {/* TODO verify: where in the console an Administrator deletes a denial. The code shows denials listed per user and per access policy. */}
 
-For how certification affects a policy, see [Resource-based policies](/docs/privilegesecure/26_07/configuration/access-policies/resource-based-policy).
+For how certification affects a policy, see [Resource-based policies](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md).
 
 ## Delete a task
 

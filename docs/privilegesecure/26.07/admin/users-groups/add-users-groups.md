@@ -13,7 +13,7 @@ Onboard an Active Directory (AD) user or group to give it access to the console.
 ## Prerequisites
 
 - You have the Administrator role.
-- The AD domain is onboarded as a resource, and its accounts have synced. See [Resources](/docs/privilegesecure/26_07/resources/overview).
+- The AD domain is onboarded as a resource, and its accounts have synced. See [Resources](/docs/privilegesecure/26.07/resources/overview.md).
 
 {/* TODO verify: the exact resource page name and path for the prerequisite link, and whether an AD sync must run before accounts appear in the list */}
 
@@ -46,6 +46,6 @@ The same window also opens from other pages, such as role and access policy page
 
 ## Next steps
 
-- Assign a role. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26_07/admin/roles/assign-roles).
-- Review the account. See [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details).
-- Grant session access. See [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview).
+- Assign a role. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
+- Review the account. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
+- Grant session access. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).

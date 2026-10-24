@@ -14,7 +14,7 @@ You need membership in at least one access policy that includes the activity and
 
 "You do not appear to belong to any access policies, please contact your Netwrix Privilege Secure administrator for assistance"
 
-Ask your administrator to add you to an access policy. For the administrator steps, see [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview).
+Ask your administrator to add you to an access policy. For the administrator steps, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
 :::note
 If your license has expired and you can still sign in, you can't create sessions. {/* TODO verify: that session creation is blocked and sign-in is allowed under an expired license; the 26.03 docs and the install docs disagree. */}
@@ -37,7 +37,7 @@ Use **< Previous** to go back a step. Click **Cancel** to close the dialog witho
 
 Example: To get local administrator rights on a server for a patch window, select the activity **Add Requester to Local Administrators**, select the server `<server-name>`, enter the notes `Monthly patching`, enter the ticket number `INC0012345`, and choose **Now**.
 
-You can also start a session from **My Activities**. See [My Activities](/docs/privilegesecure/26_07/user-guide/my-activities).
+You can also start a session from **My Activities**. See [My Activities](/docs/privilegesecure/26.07/user-guide/my-activities.md).
 
 ## Notes and ticket number
 
@@ -46,7 +46,7 @@ The connection profile of your access policy decides what the **Notes** step ask
 - **Notes** and **Ticket Number** are required or optional. When a required field is empty, the step shows "Note required" or "Ticket required".
 - **Custom fields** appear with the label that the administrator set. A custom field can be required, and it holds an integer, a string, or a choice from a list. {/* TODO verify: which step shows custom fields. */}
 
-If the profile uses a ServiceNow connector, the ticket number box takes the connector's label, and Privilege Secure checks the ticket before it accepts the request. See [Use ServiceNow tickets with sessions](/docs/privilegesecure/26_07/user-guide/servicenow-tickets).
+If the profile uses a ServiceNow connector, the ticket number box takes the connector's label, and Privilege Secure checks the ticket before it accepts the request. See [Use ServiceNow tickets with sessions](/docs/privilegesecure/26.07/user-guide/servicenow-tickets.md).
 
 ## Scheduling
 
@@ -58,13 +58,13 @@ A session with a future start time appears on the **Scheduled** tile with the st
 
 The new session appears in the grid of the tile you started from. Follow its **Status** column:
 
-1. **Waiting for approval** appears when the connection profile requires approval. You can't connect until an approver approves the request. For how approvers handle requests, see [Approve or deny session requests](/docs/privilegesecure/26_07/user-guide/approve-requests).
+1. **Waiting for approval** appears when the connection profile requires approval. You can't connect until an approver approves the request. For how approvers handle requests, see [Approve or deny session requests](/docs/privilegesecure/26.07/user-guide/approve-requests.md).
 2. **Provisioning** appears while Privilege Secure assigns permissions to the login account.
-3. **Available** appears when the session is ready. See [Connect to a session](/docs/privilegesecure/26_07/user-guide/connect-session).
+3. **Available** appears when the session is ready. See [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md).
 
 If an approver denies the request, the status changes to **Approval denied**.
 
-For all status values, see [Manage active and scheduled sessions](/docs/privilegesecure/26_07/admin/sessions/active-sessions). To follow your own sessions, see [Track your sessions](/docs/privilegesecure/26_07/user-guide/my-sessions).
+For all status values, see [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md). To follow your own sessions, see [Track your sessions](/docs/privilegesecure/26.07/user-guide/my-sessions.md).
 
 ## Request errors
 
@@ -77,4 +77,4 @@ For all status values, see [Manage active and scheduled sessions](/docs/privileg
 
 ## Request a session from outside the network
 
-If your organization runs the Remote Access Gateway, you can request and open browser sessions from outside the network. See [Connect to a session in the browser](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/browser-sessions).
+If your organization runs the Remote Access Gateway, you can request and open browser sessions from outside the network. See [Connect to a session in the browser](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).

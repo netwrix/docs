@@ -12,15 +12,15 @@ Open the list from **Configuration** > **Service Accounts** in the left navigati
 
 ## Service account requirements by platform
 
-Each platform needs different permissions. The permissions are the minimum the service account must hold on the target. For the full list, see [Target environments](/docs/privilegesecure/26_07/requirements/target-environments).
+Each platform needs different permissions. The permissions are the minimum the service account must hold on the target. For the full list, see [Target environments](/docs/privilegesecure/26.07/requirements/target-environments.md).
 
 | Platform | Account the service account represents | Notes |
 | --- | --- | --- |
 | Active Directory | A domain account in the Domain Administrators group of the target domains. | Set **Domain** and **Username**. |
-| Windows | A domain account, or a local account in the local Administrators group on each server or desktop. | A server outside a domain can reject remote PowerShell. See [Target environments](/docs/privilegesecure/26_07/requirements/target-environments). |
+| Windows | A domain account, or a local account in the local Administrators group on each server or desktop. | A server outside a domain can reject remote PowerShell. See [Target environments](/docs/privilegesecure/26.07/requirements/target-environments.md). |
 | Linux | A local account on each server, or a central domain account for hosts bridged to Active Directory. The account is root, or has delegated sudo permissions. | Authenticate with a password, an SSH certificate, or both. For a least-privilege account, see [Creating a least privilege service account for Linux resources](/docs/kb/privilegesecure/user-and-service-accounts/creating-a-least-privilege-service-account-for-linux-resources). |
 | Cisco | An account with Level 15 Privileged EXEC access, or a lower-level account with an **Enable Password** that raises it to Privileged EXEC mode. | The **Enable Password** field applies to Cisco accounts. |
-| Microsoft Entra ID | An app registration with Microsoft Graph application permissions and Entra roles. | Enter the application ID and secret. See [Register an app in Microsoft Entra ID](/docs/privilegesecure/26_07/configuration/service-accounts/entra-id-app-registration). |
+| Microsoft Entra ID | An app registration with Microsoft Graph application permissions and Entra roles. | Enter the application ID and secret. See [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md). |
 | Microsoft SQL Server | An account with `sysadmin` privileges. | See the note on Windows logins that follows. |
 | Oracle | An account with `SYSDBA` privileges. | |
 | BSD | | |
@@ -66,7 +66,7 @@ The account appears in the list. Select a name in the list to see and edit the d
 | **Domain** | All except Entra ID | The domain of the account. |
 | **Username** | All except Entra ID | The account name. |
 | **Password** | All except Entra ID | The account password. |
-| **Vault Connector** | All | The integration connector that supplies the credential. See [Vault connectors](/docs/privilegesecure/26_07/integrations/vaults/vault-connectors). |
+| **Vault Connector** | All | The integration connector that supplies the credential. See [Vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md). |
 | **App ID** | Entra ID | The application (client) ID of the app registration. |
 | **App Secret** | Entra ID | The client secret of the app registration. |
 | **Elevation Command** | Linux | The command that raises the account's privileges on the host, such as `sudo`, `pbrun`, `pmrun`, or `dzdo`. |
@@ -84,6 +84,6 @@ Check which resources use the account first. Use **Change Service Account** on t
 
 ## Managed service accounts
 
-Privilege Secure can also manage a service account. A chip on the account shows **Service Account is Managed by Netwrix Privilege Secure**. See [Credentials](/docs/privilegesecure/26_07/admin/credentials/overview).
+Privilege Secure can also manage a service account. A chip on the account shows **Service Account is Managed by Netwrix Privilege Secure**. See [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
 
 {/* TODO verify: the Netwrix Password Secure internal account that the lab shows in the list, and what it is for. */}

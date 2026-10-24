@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Encryption key management
 
-Netwrix Privilege Secure for Access Management (Privilege Secure) encrypts the secrets that it stores, such as account passwords. The encryption key is a file on the application server. By default, the Windows machine key of that server protects the key. You can protect it with an Amazon Web Services (AWS) Key Management Service (AWS KMS) key instead. See [Protect the encryption key with AWS KMS](/docs/privilegesecure/26_07/configuration/encryption-keys/aws-kms).
+Netwrix Privilege Secure for Access Management (Privilege Secure) encrypts the secrets that it stores, such as account passwords. The encryption key is a file on the application server. By default, the Windows machine key of that server protects the key. You can protect it with an Amazon Web Services (AWS) Key Management Service (AWS KMS) key instead. See [Protect the encryption key with AWS KMS](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms.md).
 
-The key files are in `C:\ProgramData\Stealthbits\PAM\Protect`. Include this folder in your backups, and keep each copy with the database backup that it matches. Without the key, the secrets in a database backup can't be decrypted. See [Back up and recover](/docs/privilegesecure/26_07/install/high-availability#back-up-and-recover).
+The key files are in `C:\ProgramData\Stealthbits\PAM\Protect`. Include this folder in your backups, and keep each copy with the database backup that it matches. Without the key, the secrets in a database backup can't be decrypted. See [Back up and recover](/docs/privilegesecure/26.07/install/high-availability.md#back-up-and-recover).
 
 :::warning
 Windows machine protection ties the key files to the server. Don't copy the folder to another server. To move the key, export it and import it as described in [Export and import the key](#export-and-import-the-key).
@@ -97,7 +97,7 @@ Rotate the key to replace it with a new one. The tool re-encrypts the stored sec
 
 1. Enter `Y` to confirm.
 
-If the key is protected with AWS KMS, don't run `rotate` without the AWS options. Without `-k`, the tool creates a key protected by the Windows machine key. To rotate an AWS KMS-protected key, see [Rotate the AWS KMS key](/docs/privilegesecure/26_07/configuration/encryption-keys/aws-kms-rotation).
+If the key is protected with AWS KMS, don't run `rotate` without the AWS options. Without `-k`, the tool creates a key protected by the Windows machine key. To rotate an AWS KMS-protected key, see [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md).
 
 The output includes "Key rotation complete." when the key rotation succeeds. The tool sets exit code 2 when it doesn't generate a key and exit code 3 after an unexpected error. It can exit with code 0 after it reports an error for a missing option, so check the output.
 
@@ -109,7 +109,7 @@ After you rotate the key on one server, export it again and import it on every o
 
 ## Related topics
 
-- [Protect the encryption key with AWS KMS](/docs/privilegesecure/26_07/configuration/encryption-keys/aws-kms)
-- [Rotate the AWS KMS key](/docs/privilegesecure/26_07/configuration/encryption-keys/aws-kms-rotation)
-- [Install services on additional servers](/docs/privilegesecure/26_07/install/additional-services)
-- [Security hardening checklist](/docs/privilegesecure/26_07/configuration/security-hardening)
+- [Protect the encryption key with AWS KMS](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms.md)
+- [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md)
+- [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md)
+- [Security hardening checklist](/docs/privilegesecure/26.07/configuration/security-hardening.md)

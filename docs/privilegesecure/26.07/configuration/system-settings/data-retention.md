@@ -48,5 +48,5 @@ Session recording (input and output log) retention deletes session recordings fr
 
 ## Related topics
 
-- [Session recording](/docs/privilegesecure/26_07/admin/sessions/session-recording)
-- [System settings reference](/docs/privilegesecure/26_07/configuration/system-settings)
+- [Session recording](/docs/privilegesecure/26.07/admin/sessions/session-recording.md)
+- [System settings reference](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md)

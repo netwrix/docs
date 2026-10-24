@@ -10,7 +10,7 @@ When a connection profile uses a tiered approval workflow, a session request wai
 
 ## Who sees requests
 
-Privilege Secure has no Approver role. You see a request when an approval workflow tier names you, or a group you belong to, as an approver. An administrator sets this up in the connection profile. See [Configure approval workflows](/docs/privilegesecure/26_07/configuration/access-policies/approval-workflows).
+Privilege Secure has no Approver role. You see a request when an approval workflow tier names you, or a group you belong to, as an approver. An administrator sets this up in the connection profile. See [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
 
 When a request needs approval, the approvers also receive an email. The email shows the requester, activity, resource, notes, and ticket number.
 
@@ -58,9 +58,9 @@ Privilege Secure emails the requester when you approve or deny the request. The 
 - A single denial in a tier denies the request.
 - When a tier is approved, the next tier's approvers are notified, unless the tiers run concurrently.
 - An approval from the escalation account or group, or a denial from it, overrides the other approvers.
-- The requester can connect only after the request is approved. See [Connect to a session](/docs/privilegesecure/26_07/user-guide/connect-session).
+- The requester can connect only after the request is approved. See [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md).
 
-For how tiers and escalation work, see [Configure approval workflows](/docs/privilegesecure/26_07/configuration/access-policies/approval-workflows).
+For how tiers and escalation work, see [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
 
 {/* TODO verify: whether you can approve your own request. Make no statement until engineering confirms it and the lab tests it. */}
 

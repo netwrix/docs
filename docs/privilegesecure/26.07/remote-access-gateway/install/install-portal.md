@@ -10,8 +10,8 @@ The portal is the web front end that external users open. Install it on a dedica
 
 ## Before you begin
 
-- Install the gateway first. See [Install the gateway and guacd](/docs/privilegesecure/26_07/remote-access-gateway/install/install-gateway).
-- Check the server against [Remote Access Gateway requirements](/docs/privilegesecure/26_07/remote-access-gateway/requirements).
+- Install the gateway first. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md).
+- Check the server against [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md).
 - Use a dedicated server. Ports 80 and 443 must be free. Internet Information Services (IIS) binds port 80 for its Default Web Site, so don't install the portal on a server that runs it.
 - Allow the portal server to reach the gateway server on port 6550.
 - Create a Domain Name System (DNS) name for the portal that users can resolve.
@@ -88,7 +88,7 @@ Create a similar rule for port 80 if users need the redirect to HTTPS.
    Get-NetTCPConnection -State Listen -LocalPort 80,443
    ```
 
-   A running service doesn't prove that nginx started. If another service holds port 80, nginx fails and the service still shows **Running**. See [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting).
+   A running service doesn't prove that nginx started. If another service holds port 80, nginx fails and the service still shows **Running**. See [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md).
 
 3. In a browser on another computer, go to `https://<portal-server>`. Use the portal's DNS name, not `localhost`.
 
@@ -98,13 +98,13 @@ Create a similar rule for port 80 if users need the redirect to HTTPS.
 
    {/* TODO screenshot: retake the certificate warning with the portal DNS name */}
 
-   To remove the warning, install a certificate from your certification authority. See [Portal and gateway certificates](/docs/privilegesecure/26_07/remote-access-gateway/configuration/certificates).
+   To remove the warning, install a certificate from your certification authority. See [Portal and gateway certificates](/docs/privilegesecure/26.07/remote-access-gateway/configuration/certificates.md).
 
-The portal sign-in page opens. By default it offers single sign-on (SSO) only. If it shows "The license has expired or the license service is offline", fix the Privilege Secure license. See [Activate a license](/docs/privilegesecure/26_07/install/activate-license).
+The portal sign-in page opens. By default it offers single sign-on (SSO) only. If it shows "The license has expired or the license service is offline", fix the Privilege Secure license. See [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).
 
 {/* TODO screenshot: the portal sign-in page, retaken without selected text. The portal-login-form-working image needs a retake before use. */}
 
-To choose which sign-in methods users see, see [Configure sign-in for the portal](/docs/privilegesecure/26_07/remote-access-gateway/configuration/authentication).
+To choose which sign-in methods users see, see [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## Place the portal behind a web application firewall
 

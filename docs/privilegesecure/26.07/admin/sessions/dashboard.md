@@ -16,13 +16,13 @@ Each tile shows a count. Hover over a tile to see what the count measures, for e
 
 | Tile | Shows | Details |
 |---|---|---|
-| **Active** | Sessions that are provisioning, available, or in progress | [Manage active and scheduled sessions](/docs/privilegesecure/26_07/admin/sessions/active-sessions) |
-| **Scheduled** | Sessions set to start at a later time | [Manage active and scheduled sessions](/docs/privilegesecure/26_07/admin/sessions/active-sessions) |
+| **Active** | Sessions that are provisioning, available, or in progress | [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md) |
+| **Scheduled** | Sessions set to start at a later time | [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md) |
 | **Approvals** | Session requests waiting for an approver | See [Approvals](#approvals) |
-| **Historical** | Completed, canceled, and failed sessions | [Review historical sessions](/docs/privilegesecure/26_07/admin/sessions/historical-sessions) |
-| **Users** | Users and groups that can sign in to the console | [Users and groups](/docs/privilegesecure/26_07/admin/users-groups) |
-| **Resources** | Resources that Privilege Secure manages | [Resources](/docs/privilegesecure/26_07/resources/overview) |
-| **Credentials** | Managed accounts and their rotation status | [Credentials](/docs/privilegesecure/26_07/admin/credentials/overview) |
+| **Historical** | Completed, canceled, and failed sessions | [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md) |
+| **Users** | Users and groups that can sign in to the console | [Users and groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md) |
+| **Resources** | Resources that Privilege Secure manages | [Resources](/docs/privilegesecure/26.07/resources/overview.md) |
+| **Credentials** | Managed accounts and their rotation status | [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md) |
 
 Every user who can open the dashboard sees **Active**, **Scheduled**, **Approvals**, and **Historical**. **Users** and **Resources** appear only for administrators. **Credentials** appears for administrators and for users whose role includes a Credentials permission. The tile counts refresh every 60 seconds.
 
@@ -34,14 +34,14 @@ Every table has a **Refresh** button at the top right that reloads the rows. A c
 
 ## Approvals
 
-The **Approvals** tile lists session requests that need approval before they start. Approvers are the users and groups named in an approval tier of the connection profile. See [Approval workflows](/docs/privilegesecure/26_07/configuration/access-policies/approval-workflows).
+The **Approvals** tile lists session requests that need approval before they start. Approvers are the users and groups named in an approval tier of the connection profile. See [Approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
 
 The toolbar has two buttons, which stay disabled until you select a row:
 
 - **Approve** approves the selected sessions.
 - **Deny** opens the **Deny Activity Session** dialog, where you can enter a reason for the denial.
 
-For the approver procedure, see [Approve or deny session requests](/docs/privilegesecure/26_07/user-guide/approve-requests).
+For the approver procedure, see [Approve or deny session requests](/docs/privilegesecure/26.07/user-guide/approve-requests.md).
 
 ## Requester and session user columns
 
@@ -56,6 +56,6 @@ Both columns show the same person. Click a name to open that user's details.
 
 These three tiles show the same tables as the main pages, so this page doesn't repeat them.
 
-- **Users:** see [Users and groups](/docs/privilegesecure/26_07/admin/users-groups).
-- **Resources:** see [Resources](/docs/privilegesecure/26_07/resources/overview).
-- **Credentials:** see [Credentials](/docs/privilegesecure/26_07/admin/credentials/overview).
+- **Users:** see [Users and groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md).
+- **Resources:** see [Resources](/docs/privilegesecure/26.07/resources/overview.md).
+- **Credentials:** see [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).

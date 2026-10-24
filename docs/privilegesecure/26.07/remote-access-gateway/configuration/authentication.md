@@ -10,7 +10,7 @@ The Remote Access Gateway portal offers the sign-in methods that you allow in tw
 
 ## Choose the allowed sign-in methods
 
-The `AllowedLoginMethods` setting is in `appsettings.json` on the gateway server. For the file location, see [Gateway settings reference](/docs/privilegesecure/26_07/remote-access-gateway/configuration/gateway-settings).
+The `AllowedLoginMethods` setting is in `appsettings.json` on the gateway server. For the file location, see [Gateway settings reference](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md).
 
 | Value | Name | Sign-in methods the portal accepts |
 |---|---|---|
@@ -49,7 +49,7 @@ Password sign-in through the portal uses the same sign-in and multi-factor authe
 
 ## Enable a connector for the portal
 
-Each authentication connector has a **Use Remote Access Gateway** checkbox. A connector with the checkbox selected works only for sign-ins through the portal. A connector with the checkbox cleared works only for sign-ins to the console. For the steps and the effect on each connector, see [Use Remote Access Gateway](/docs/privilegesecure/26_07/configuration/authentication/overview#use-remote-access-gateway).
+Each authentication connector has a **Use Remote Access Gateway** checkbox. A connector with the checkbox selected works only for sign-ins through the portal. A connector with the checkbox cleared works only for sign-ins to the console. For the steps and the effect on each connector, see [Use Remote Access Gateway](/docs/privilegesecure/26.07/configuration/authentication/overview.md#use-remote-access-gateway).
 
 To offer SSO on the portal, enable a connector for it:
 
@@ -66,6 +66,6 @@ If a user signs in with a connector that doesn't match, the sign-in fails with a
 
 ## Related topics
 
-- [Authentication methods](/docs/privilegesecure/26_07/configuration/authentication/overview)
-- [Sign in to the portal](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/sign-in)
-- [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting)
+- [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md)
+- [Sign in to the portal](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/sign-in.md)
+- [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md)

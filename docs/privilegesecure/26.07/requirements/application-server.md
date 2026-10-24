@@ -70,7 +70,7 @@ The RAM, CPU, and disk space you need depend on the number of administrators who
 | Application drive | 300 GB | 200 GB | 100 GB | 100 GB |
 | Recording drive | 500 GB | 300 GB | 200 GB | 150 GB |
 
-For proxy server sizing, see [Additional service node and proxy server requirements](/docs/privilegesecure/26_07/requirements/service-nodes).
+For proxy server sizing, see [Additional service node and proxy server requirements](/docs/privilegesecure/26.07/requirements/service-nodes.md).
 
 ## Permissions
 
@@ -85,6 +85,6 @@ Netwrix prefers physical machines but supports virtual machines. For VMware, ins
 
 ## Next steps
 
-- Check the [database requirements](/docs/privilegesecure/26_07/requirements/database).
-- Open the [ports](/docs/privilegesecure/26_07/requirements/ports) that the application server needs.
-- Run the installer. See [Install the application server](/docs/privilegesecure/26_07/install/install-application-server).
+- Check the [database requirements](/docs/privilegesecure/26.07/requirements/database.md).
+- Open the [ports](/docs/privilegesecure/26.07/requirements/ports.md) that the application server needs.
+- Run the installer. See [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md).

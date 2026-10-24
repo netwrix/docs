@@ -17,7 +17,7 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) stores its dat
 
 ## PostgreSQL
 
-The product zip file includes a PostgreSQL 16 installer. Run it from the Setup Launcher before you install Privilege Secure. See [Install the application server](/docs/privilegesecure/26_07/install/install-application-server).
+The product zip file includes a PostgreSQL 16 installer. Run it from the Setup Launcher before you install Privilege Secure. See [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md).
 
 Follow these guidelines for PostgreSQL versions:
 
@@ -40,9 +40,9 @@ A SQL Server deployment is an advanced configuration that requires additional su
 - An active-active configuration supports both PostgreSQL and SQL Server. It needs an additional server for the database and requires no manual failover.
 - Cloud-native databases suit an active-active configuration. AWS offers Aurora PostgreSQL and RDS for SQL Server. Azure offers its own PostgreSQL and SQL Server services.
 
-For setup, see [High availability options](/docs/privilegesecure/26_07/install/high-availability).
+For setup, see [High availability options](/docs/privilegesecure/26.07/install/high-availability.md).
 
 ## Next steps
 
-- See [Ports](/docs/privilegesecure/26_07/requirements/ports) for the database ports to open between servers.
-- See [Application server requirements](/docs/privilegesecure/26_07/requirements/application-server).
+- See [Ports](/docs/privilegesecure/26.07/requirements/ports.md) for the database ports to open between servers.
+- See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md).

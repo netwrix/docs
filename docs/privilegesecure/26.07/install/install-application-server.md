@@ -10,7 +10,7 @@ The Netwrix Setup Launcher (`NPS_Setup.exe`) checks prerequisites, installs the 
 
 ## Before you begin
 
-- Review the [application server requirements](/docs/privilegesecure/26_07/requirements/application-server) and the [database requirements](/docs/privilegesecure/26_07/requirements/database).
+- Review the [application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md) and the [database requirements](/docs/privilegesecure/26.07/requirements/database.md).
 - Sign in to the server with an account that has local administrator rights. The Setup Launcher stops with the message "Netwrix Setup Launcher must be run as Administrator" otherwise.
 - Disable antivirus software on the server during the installation. The launcher recommends this.
 - Extract the downloaded `privilegesecure-accessmanagement-<version>.zip` file. Keep `NPS_Setup.exe` with the `Extras` folder.
@@ -73,23 +73,23 @@ Install the database before you install the application.
 
 The installer creates the "SbPAM Web Service" site in IIS on HTTPS port 6500 and a Windows Firewall exception for that port. It also adds a desktop shortcut named **Netwrix Privilege Secure** that opens `https://localhost:6500`.
 
-To continue, see [Run the setup wizard](/docs/privilegesecure/26_07/install/first-launch).
+To continue, see [Run the setup wizard](/docs/privilegesecure/26.07/install/first-launch.md).
 
 ## Install the application without the launcher
 
 Run `NPS.exe` from the `Extras` folder as an administrator and follow the steps in [Install the application](#install-the-application), starting at step 2. Install PostgreSQL first with `NetwrixPostgreSQL16.exe` from the same folder, or point Privilege Secure at an existing database with the Database Configuration Tool.
 
-To install without the wizard, see [Install silently](/docs/privilegesecure/26_07/install/silent-install).
+To install without the wizard, see [Install silently](/docs/privilegesecure/26.07/install/silent-install.md).
 
 ## Upgrade an existing installation
 
-When the launcher detects an existing installation, the application button reads **Netwrix Privilege Secure Upgrade**. When the installed version matches the installer, it reads **Uninstall/Repair Netwrix Privilege Secure**. Before you upgrade, read [Upgrade Privilege Secure](/docs/privilegesecure/26_07/install/upgrade).
+When the launcher detects an existing installation, the application button reads **Netwrix Privilege Secure Upgrade**. When the installed version matches the installer, it reads **Uninstall/Repair Netwrix Privilege Secure**. Before you upgrade, read [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md).
 
 If the launcher finds an existing installation, it asks you to click **OK** to apply an upgrade. It then stops the Privilege Secure services and IIS, uninstalls the old version, and installs the new one. You don't uninstall the previous version first.
 
 ## Migrate PostgreSQL 12 to PostgreSQL 16
 
-If the server runs PostgreSQL 12, the launcher shows two database steps. See [Upgrade PostgreSQL from 12 to 16](/docs/privilegesecure/26_07/install/upgrade#upgrade-postgresql-from-12-to-16).
+If the server runs PostgreSQL 12, the launcher shows two database steps. See [Upgrade PostgreSQL from 12 to 16](/docs/privilegesecure/26.07/install/upgrade.md#upgrade-postgresql-from-12-to-16).
 
 ## Switch to SQL Server
 

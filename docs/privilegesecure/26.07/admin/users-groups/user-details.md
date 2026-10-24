@@ -8,7 +8,7 @@ sidebar_position: 50
 
 The details page for a user or group shows its sessions, access policies, roles, and sign-in settings in one place. Use it to review what an account can do, lock the account, reset multi-factor authentication (MFA), and assign roles.
 
-To open the page, click a name on the **Users & Groups** page, on a role's member list, or in another list that links to the account. See [Users and groups](/docs/privilegesecure/26_07/admin/users-groups).
+To open the page, click a name on the **Users & Groups** page, on a role's member list, or in another list that links to the account. See [Users and groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md).
 
 {/* TODO screenshot: the details page for a domain user, showing the header and the tab row */}
 
@@ -33,7 +33,7 @@ The tabs depend on the type of account.
 | Domain user | **Sessions**, **Policies**, **Local Rights**, **History**, **Authentication Connector**, **User Roles** |
 | Local user | **Sessions**, **Policies**, **History**, **Authentication Connector**, **Properties**, **User Roles** |
 | Group | **Sessions**, **Members**, **Policies**, **History**, **Authentication Connector**, **Group Roles** |
-| Application user | See [Add application users](/docs/privilegesecure/26_07/admin/users-groups/application-users). |
+| Application user | See [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md). |
 
 {/* TODO verify: the tabs on an application user's details page. The lab had no application user, so only the creation form was seen. */}
 
@@ -53,7 +53,7 @@ The **Sessions** tab lists the sessions of the account. Group sessions include a
 | **STATUS** | The state of the session, such as Failed or Completed. |
 | **ACTIVITY** | The activity. Click the link to open it. |
 
-Select a session and click **End Session** to cancel it, or **View Logs** to open its log. **View Logs** stays disabled until you select a row. For the session states and the log viewer, see [Manage active and scheduled sessions](/docs/privilegesecure/26_07/admin/sessions/active-sessions) and [View session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs).
+Select a session and click **End Session** to cancel it, or **View Logs** to open its log. **View Logs** stays disabled until you select a row. For the session states and the log viewer, see [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md) and [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md).
 
 ### Policies
 
@@ -63,7 +63,7 @@ Click **Add** to open a window that lists the existing access policies. Move one
 
 {/* TODO verify: the exact button label and title of the Add Account to Policies window in 26.07. The lab tour cancelled the dialog without recording its title. */}
 
-To create or change policies, see [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview).
+To create or change policies, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
 ### Local Rights
 
@@ -95,7 +95,7 @@ The **Authentication Connector** tab sets how the account proves its identity at
 
 {/* TODO verify: whether SAML, OpenID Connect, and RADIUS connectors that an administrator adds appear in this list next to Duo. The lab had only the Duo connector configured. */}
 
-When a user belongs to groups that use different connectors, a precedence order decides which connector applies. See [Authentication](/docs/privilegesecure/26_07/configuration/authentication/overview).
+When a user belongs to groups that use different connectors, a precedence order decides which connector applies. See [Authentication](/docs/privilegesecure/26.07/configuration/authentication/overview.md).
 
 ### Properties
 
@@ -105,7 +105,7 @@ The **Properties** tab appears for local users. It holds **Display Name**, **Sam
 
 The **User Roles** and **Group Roles** tabs list the roles assigned to the account. The columns are **ROLE**, **DESCRIPTION**, and **CREATED**. The tab shows **None** when the account has no role.
 
-Click **Add** to open the **Add Roles** window, or select a role and click **Remove** to take it away. To assign roles, see [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26_07/admin/roles/assign-roles).
+Click **Add** to open the **Add Roles** window, or select a role and click **Remove** to take it away. To assign roles, see [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 
 ## Reset a user's MFA
 
@@ -163,10 +163,10 @@ A user mistypes a password five times. The **LOCKED** column shows the account a
 
 ### Keep a second administrator
 
-If the only administrator is locked out, no one can unlock the account from the console. Keep at least two accounts in the Administrator role, and keep one of them as a local account that uses a different sign-in path from your domain. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26_07/admin/roles/assign-roles).
+If the only administrator is locked out, no one can unlock the account from the console. Keep at least two accounts in the Administrator role, and keep one of them as a local account that uses a different sign-in path from your domain. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 
 {/* TODO verify: that a local administrator account stays usable while domain sign-in is unavailable, and the supported recovery steps when every administrator is locked out. */}
 
 ### Locked accounts in Active Directory
 
-The lockout described here applies to signing in to the Netwrix Privilege Secure console. It is separate from Active Directory (AD) account lockout on managed accounts. See [Active Directory sync and scan problems](/docs/privilegesecure/26_07/troubleshooting/ad-sync-and-scans).
+The lockout described here applies to signing in to the Netwrix Privilege Secure console. It is separate from Active Directory (AD) account lockout on managed accounts. See [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md).

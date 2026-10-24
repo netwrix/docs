@@ -28,7 +28,7 @@ Several application servers share one database. Failover needs no manual step, a
 
 ### Cloud-native database
 
-A cloud database service has built-in high availability and automatic scaling, which suits an active-active deployment. See [Database requirements](/docs/privilegesecure/26_07/requirements/database) for the supported database options.
+A cloud database service has built-in high availability and automatic scaling, which suits an active-active deployment. See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) for the supported database options.
 
 {/* TODO verify: the supported cloud database list and versions. Source: the 26.03 overview only. */}
 
@@ -43,12 +43,12 @@ For the full setup and upgrade procedures, use these Knowledge Base articles:
 - [How to Create a Service Mesh Between App Servers](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-create-a-service-mesh-between-app-servers)
 - [How to Configure a Multi-Server NPS Environment with a Shared Database Server](/docs/kb/privilegesecure/database-and-backend/how-to-configure-a-multi-server-nps-environment-with-a-shared-database-server)
 
-The servers in a pair must reach each other on the console port, 6500 by default, and on the PostgreSQL port. See [Ports](/docs/privilegesecure/26_07/requirements/ports).
+The servers in a pair must reach each other on the console port, 6500 by default, and on the PostgreSQL port. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
 {/* TODO verify: the PostgreSQL port that the HA manager uses. The tool defaults to 5432, and the bundled PostgreSQL port isn't confirmed (5432 or 5437). Don't state a mismatch as fact until the SME confirms the port. */}
 
 :::note
-To upgrade a high availability pair, fail over and upgrade the secondary server, upgrade the primary server, and then re-establish replication. The Knowledge Base article gives the full order, including copying the configuration and encryption keys to the secondary. Follow it before you start. See also [Upgrade Privilege Secure](/docs/privilegesecure/26_07/install/upgrade).
+To upgrade a high availability pair, fail over and upgrade the secondary server, upgrade the primary server, and then re-establish replication. The Knowledge Base article gives the full order, including copying the configuration and encryption keys to the secondary. Follow it before you start. See also [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md).
 :::
 
 ## Back up and recover
@@ -86,14 +86,14 @@ These Knowledge Base articles cover recovery tasks. Review each one against your
 - [Netwrix Privilege Secure: Performing an In-Place Postgres Upgrade](/docs/kb/privilegesecure/database-and-backend/netwrix-privilege-secure-performing-an-in-place-postgres-upgrade)
 - [Index Was Outside the Bounds of the Array Error](/docs/kb/privilegesecure/high-availability-and-clustering/index-was-outside-the-bounds-of-array-error)
 
-For how encryption keys protect stored secrets, and how to rotate them, see [Encryption keys](/docs/privilegesecure/26_07/configuration/encryption-keys).
+For how encryption keys protect stored secrets, and how to rotate them, see [Encryption keys](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md).
 
 ## Register the secondary node after an upgrade
 
 After an upgrade, the primary Privilege Secure Console can show no nodes for the secondary server. To register the secondary server's services:
 
 1. Sign in to the Privilege Secure Console on the secondary server.
-2. Open the page that holds the **NPS Rest URL** setting. See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url).
+2. Open the page that holds the **NPS Rest URL** setting. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 3. Enter the fully qualified domain name (FQDN) URL of the secondary server, for example `https://<secondary-server-fqdn>:6500`. Don't add a trailing slash.
 4. Click **Register Services**.
 
@@ -105,5 +105,5 @@ Configuring the secondary node can fail intermittently when the link between the
 
 ## Related topics
 
-- [Service Nodes](/docs/privilegesecure/26_07/admin/service-nodes)
-- [Architecture](/docs/privilegesecure/26_07/getting-started/architecture)
+- [Service Nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md)
+- [Architecture](/docs/privilegesecure/26.07/getting-started/architecture.md)

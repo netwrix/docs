@@ -68,4 +68,4 @@ The page is read-only. A task takes its schedule from the item that created it. 
 
 The log shows the steps the task completed. If the log has no error text, check the related page for the cause, for example the **Sync Errors** tab of a domain for an Active Directory sync.
 
-To check whether the services that run tasks are healthy, see [Monitor service nodes](/docs/privilegesecure/26_07/admin/service-nodes).
+To check whether the services that run tasks are healthy, see [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).

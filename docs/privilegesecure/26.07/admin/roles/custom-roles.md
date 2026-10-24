@@ -14,12 +14,12 @@ A custom role delegates part of administration to people who aren't Administrato
 | **Credentials** | Managing, verifying, and rotating selected credentials | A team that owns a set of service accounts |
 | **Auditors** | Viewing recordings and live sessions for selected users and resources, and running reports | An audit team that reviews one business unit |
 
-A custom role grants only the permissions you assign, and only over the entities you add to it. For the built-in roles and how to assign them, see [Roles and permissions](/docs/privilegesecure/26_07/admin/roles) and [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26_07/admin/roles/assign-roles).
+A custom role grants only the permissions you assign, and only over the entities you add to it. For the built-in roles and how to assign them, see [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md) and [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 
 ## Prerequisites
 
 - You're signed in as an Administrator.
-- The users or groups that will receive the role are already on the **Users & Groups** page. See [Add domain users and groups](/docs/privilegesecure/26_07/admin/users-groups/add-users-groups).
+- The users or groups that will receive the role are already on the **Users & Groups** page. See [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
 
 ## Create a custom role
 
@@ -57,7 +57,7 @@ Each permission lets a role member change one part of a policy.
 | **[AP] Modify Users** | Change the users and groups in the policy. Turns on the **Users** tab. |
 | **[AP] Modify Resources** | Change the resources in the policy. Turns on the **Resources** tab. |
 
-For how these permissions work in a policy, see [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview).
+For how these permissions work in a policy, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
 ### Credentials permissions
 
@@ -72,7 +72,7 @@ For how these permissions work in a policy, see [Access policies](/docs/privileg
 
 {/* TODO verify: whether [C] Rotate Services also gates the plain Rotate button */}
 
-For the credential tasks themselves, see [Credentials](/docs/privilegesecure/26_07/admin/credentials/overview).
+For the credential tasks themselves, see [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
 
 ### Auditors permissions
 
@@ -85,7 +85,7 @@ For the credential tasks themselves, see [Credentials](/docs/privilegesecure/26_
 | **Reporting** | Create, change, delete, and run reports | |
 | **Admin View Read Only** | See every administration page without changing anything | **Reporting** (added automatically) |
 
-**Terminate Session** and **Lock Session** stay disabled until **Live Session Viewer** is assigned. For the viewer, see [Watch, lock, or terminate a live session](/docs/privilegesecure/26_07/admin/sessions/live-session-viewer). For **Admin View Read Only**, see [Give auditors read-only console access](/docs/privilegesecure/26_07/admin/roles/admin-view-read-only).
+**Terminate Session** and **Lock Session** stay disabled until **Live Session Viewer** is assigned. For the viewer, see [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md). For **Admin View Read Only**, see [Give auditors read-only console access](/docs/privilegesecure/26.07/admin/roles/admin-view-read-only.md).
 
 ## Scope the role
 
@@ -122,7 +122,7 @@ The toolbar has **Search**, a **Type** filter, **Remove**, and **Refresh**. **Ty
 
 To remove a person from the role, select the row and select **Remove**.
 
-You can also assign a custom role from a user's details page. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26_07/admin/roles/assign-roles). {/* TODO verify: that custom roles appear in the Add Roles dialog on a user's page. The lab showed only Administrator, Auditors, and Reviewer with no custom roles defined. */}
+You can also assign a custom role from a user's details page. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md). {/* TODO verify: that custom roles appear in the Add Roles dialog on a user's page. The lab showed only Administrator, Auditors, and Reviewer with no custom roles defined. */}
 
 ## Example: an audit team for one business unit
 

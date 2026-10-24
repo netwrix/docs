@@ -18,7 +18,7 @@ Administrators can use reports. Auditors can use them when their role includes t
 
 To subscribe to a report, you need:
 
-- The Email service configured. See [Configure email notifications](/docs/privilegesecure/26_07/configuration/system-settings/email).
+- The Email service configured. See [Configure email notifications](/docs/privilegesecure/26.07/configuration/system-settings/email.md).
 - An email address on your user account. Check it on the **Users & Groups** page.
 
 ## Find a report

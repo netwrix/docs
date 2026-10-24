@@ -65,5 +65,5 @@ The **Email Queue** tab on the Email Service page lists outgoing notifications. 
 
 ## Related topics
 
-- [Configure approval workflows](/docs/privilegesecure/26_07/configuration/access-policies/approval-workflows)
-- [Restrict SSH commands](/docs/privilegesecure/26_07/configuration/access-policies/command-restrictions)
+- [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md)
+- [Restrict SSH commands](/docs/privilegesecure/26.07/configuration/access-policies/command-restrictions.md)

@@ -8,7 +8,7 @@ sidebar_position: 40
 
 A SAML connector lets users sign in to the Privilege Secure console through a Security Assertion Markup Language (SAML) identity provider (IdP), such as Active Directory Federation Services (AD FS) or Microsoft Entra ID. The console shows an **Or login using** button for each SAML connector.
 
-This page covers the connector fields, the values to register at the IdP, and the template files to protect during an upgrade. For the other connector types, see [Authentication methods](/docs/privilegesecure/26_07/configuration/authentication/overview).
+This page covers the connector fields, the values to register at the IdP, and the template files to protect during an upgrade. For the other connector types, see [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md).
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ This page covers the connector fields, the values to register at the IdP, and th
 {/* TODO verify: the role that can open Configuration > Authentication */}
 
 - You can create an application (a relying party) at the SAML IdP.
-- The console is reachable at `https://<nps-server>:6500`, and its web certificate is trusted by the browsers that sign in. See [Certificates](/docs/privilegesecure/26_07/configuration/certificates) and [Ports](/docs/privilegesecure/26_07/requirements/ports).
+- The console is reachable at `https://<nps-server>:6500`, and its web certificate is trusted by the browsers that sign in. See [Certificates](/docs/privilegesecure/26.07/configuration/certificates.md) and [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
 ## Add a SAML connector
 
@@ -115,7 +115,7 @@ Privilege Secure builds SAML requests from two template files in the `Web` folde
 If you customized either file, back up both before you upgrade. Upgrades from 26.03.2 or later keep modified copies. Upgrades from earlier releases overwrote them, and single sign-on failed until the files were restored.
 
 {/* TODO verify: whether the upgrade from 26.03.2 itself keeps modified copies, or only upgrades after it */}
- See [Upgrade Privilege Secure](/docs/privilegesecure/26_07/install/upgrade).
+ See [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md).
 
 ## Troubleshoot a SAML sign-in
 

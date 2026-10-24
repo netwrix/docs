@@ -36,7 +36,7 @@ These options apply to the Remote Desktop Protocol (RDP) files that Privilege Se
 | **Default Resolution** | 1440x900 | The resolution of a new RDP session. The list runs from 640x480 to 2560x1440. Select **Full Screen** to have RDP detect the screen resolution and match it. |
 | **Multi Monitor** | Cleared | Select to turn on multiple-monitor support. |
 | **Smart Sizing** | Selected | Select to scale the remote desktop to the size of the session window. |
-| **Certificate Thumbprint** | Empty | The hexadecimal thumbprint of the certificate that signs the RDP files. See [Configure and sign RDP files](/docs/privilegesecure/26_07/configuration/system-settings/rdp-files). |
+| **Certificate Thumbprint** | Empty | The hexadecimal thumbprint of the certificate that signs the RDP files. See [Configure and sign RDP files](/docs/privilegesecure/26.07/configuration/system-settings/rdp-files.md). |
 
 {/* TODO verify: what Multi Monitor and Smart Sizing change in the generated RDP file. */}
 
@@ -46,7 +46,7 @@ These options apply to the Remote Desktop Protocol (RDP) files that Privilege Se
 | --- | --- | --- |
 | **WinRM HTTP Setting** | **Use Http** | The transport for Windows Remote Management (WinRM) connections: **Use Http**, **Use Https If Available**, or **Use Https Only**. |
 
-A resource can override this setting on its own details page. See [Secure WinRM](/docs/privilegesecure/26_07/resources/secure-winrm).
+A resource can override this setting on its own details page. See [Secure WinRM](/docs/privilegesecure/26.07/resources/secure-winrm.md).
 
 ## UI Idle Timeout
 
@@ -54,7 +54,7 @@ A resource can override this setting on its own details page. See [Secure WinRM]
 | --- | --- | --- |
 | **Idle Timeout (minutes)** | 10 | The minutes of inactivity before the console shows a **Session Timeout** warning. The allowed range is 1 to 1000. |
 
-If the user doesn't click **Keep Session Active** within 5 minutes of the warning, the console signs them out. With the default, an idle user is signed out after about 15 minutes. The console shows a caution when you enter a value above 60. See [Idle timeout](/docs/privilegesecure/26_07/user-guide/sign-in#idle-timeout).
+If the user doesn't click **Keep Session Active** within 5 minutes of the warning, the console signs them out. With the default, an idle user is signed out after about 15 minutes. The console shows a caution when you enter a value above 60. See [Idle timeout](/docs/privilegesecure/26.07/user-guide/sign-in.md#idle-timeout).
 
 {/* TODO verify: time the warning and the sign-out on 26.07.3 (the code sets the sign-out 5 minutes after the warning). Confirm whether 0 is accepted through the API, and whether the setting applies to the Remote Access Gateway portal. */}
 
@@ -87,7 +87,7 @@ These settings apply to files that users store in a secret vault for File Releas
 | --- | --- | --- |
 | **Website URL** | Empty | The base address that Privilege Secure uses for links in emails and notifications. Enter a valid URL, for example `https://<nps-server>:6500`. |
 
-This panel holds only the **Website URL**. The mail server settings (Simple Mail Transfer Protocol, SMTP) are on the Email Service of a service node. See [Configure email notifications](/docs/privilegesecure/26_07/configuration/system-settings/email).
+This panel holds only the **Website URL**. The mail server settings (Simple Mail Transfer Protocol, SMTP) are on the Email Service of a service node. See [Configure email notifications](/docs/privilegesecure/26.07/configuration/system-settings/email.md).
 
 ## Password History
 
@@ -110,7 +110,7 @@ These rules apply to the passwords of local users.
 | **Require Digit** | Selected | The password needs a digit. |
 | **Expiration (Days)** | 90 | The days a password stays valid before it expires. The allowed range is 10 to 365. |
 
-See [Add and manage local users](/docs/privilegesecure/26_07/admin/users-groups/local-users).
+See [Add and manage local users](/docs/privilegesecure/26.07/admin/users-groups/local-users.md).
 
 ## Data Retention
 
@@ -122,7 +122,7 @@ Data retention deletes old records. It doesn't archive them. All three types are
 | **Enable Email Retention** and **Email Retention Days** | Cleared, 90 | Deletes email records older than the number of days. |
 | **Enable I/O Log Retention** and **I/O Log Retention Days** | Cleared, 90 | Deletes session recordings (input and output logs) older than the number of days. |
 
-Each retention period accepts 1 to 3650 days. See [Configure data retention](/docs/privilegesecure/26_07/configuration/system-settings/data-retention).
+Each retention period accepts 1 to 3650 days. See [Configure data retention](/docs/privilegesecure/26.07/configuration/system-settings/data-retention.md).
 
 ## Services
 
@@ -132,7 +132,7 @@ Each retention period accepts 1 to 3650 days. See [Configure data retention](/do
 | **Ignore HTTPS Certificate Errors** | Cleared | Skips certificate validation for connections to the web service. Leave it cleared. |
 | **Register Services** | Not applicable | Applies the **NPS Rest URL** to the services and registers them again. |
 
-See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url).
+See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 ## Action Service Settings
 
@@ -142,6 +142,6 @@ Each entry has a read-only **Description** and a **Timeout Override** checkbox. 
 
 ## Database
 
-**System Settings** > **Database** shows the database that Privilege Secure uses, as read-only fields: **Host**, **Port**, **Database**, and **Service Status**. For PostgreSQL, a table of server parameters follows, with a **Name** and a **Value** for each. For the supported databases, see [Database requirements](/docs/privilegesecure/26_07/requirements/database).
+**System Settings** > **Database** shows the database that Privilege Secure uses, as read-only fields: **Host**, **Port**, **Database**, and **Service Status**. For PostgreSQL, a table of server parameters follows, with a **Name** and a **Value** for each. For the supported databases, see [Database requirements](/docs/privilegesecure/26.07/requirements/database.md).
 
 {/* TODO verify: whether the Database page still supports Microsoft SQL Server in 26.07.3 (the lab showed PostgreSQL only), and the default PostgreSQL port on a new install. */}

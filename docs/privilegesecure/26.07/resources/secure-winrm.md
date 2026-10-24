@@ -10,9 +10,9 @@ Windows Remote Management (WinRM) is one way Netwrix Privilege Secure for Access
 
 ## Prerequisites
 
-- A Windows server that you onboarded as a resource. See [Add servers](/docs/privilegesecure/26_07/resources/add-resources). The **WinRM Config** button appears only on Windows servers.
-- A service account that can reach the server. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts).
-- For **Push NPS certificate to host**, a certificate on the Privilege Secure server. See [Replace the web console certificate](/docs/privilegesecure/26_07/configuration/certificates).
+- A Windows server that you onboarded as a resource. See [Add servers](/docs/privilegesecure/26.07/resources/add-resources.md). The **WinRM Config** button appears only on Windows servers.
+- A service account that can reach the server. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
+- For **Push NPS certificate to host**, a certificate on the Privilege Secure server. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 
 {/* TODO verify: which NPS certificate the Push NPS certificate to host option pushes, and whether the web console certificate page is the right prerequisite link. */}
 
@@ -46,7 +46,7 @@ The server now has a certificate for WinRM over HTTPS.
 
 ## Choose HTTP or HTTPS
 
-Privilege Secure uses HTTPS only when **WinRM HTTP Setting** is **Use Https If Available** or **Use Https Only**. The default is **Use Http**, so a certificate alone doesn't switch the connection to HTTPS. Set the option under **System Settings** > **WinRM Options**. See [System settings](/docs/privilegesecure/26_07/configuration/system-settings).
+Privilege Secure uses HTTPS only when **WinRM HTTP Setting** is **Use Https If Available** or **Use Https Only**. The default is **Use Http**, so a certificate alone doesn't switch the connection to HTTPS. Set the option under **System Settings** > **WinRM Options**. See [System settings](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md).
 
 | Option | Result |
 |---|---|
@@ -56,9 +56,9 @@ Privilege Secure uses HTTPS only when **WinRM HTTP Setting** is **Use Https If A
 
 {/* TODO verify: the per-resource override of WinRM HTTP Setting (ManagedResource.WinRmHttpSetting): where it appears on the server details page */}
 
-The **WinRM Disabled** checkbox on the server details page stops Privilege Secure from using WinRM for that server. See [Server details](/docs/privilegesecure/26_07/resources/servers).
+The **WinRM Disabled** checkbox on the server details page stops Privilege Secure from using WinRM for that server. See [Server details](/docs/privilegesecure/26.07/resources/servers.md).
 
 ## Related topics
 
-- [Server details](/docs/privilegesecure/26_07/resources/servers)
-- [Ports](/docs/privilegesecure/26_07/requirements/ports)
+- [Server details](/docs/privilegesecure/26.07/resources/servers.md)
+- [Ports](/docs/privilegesecure/26.07/requirements/ports.md)

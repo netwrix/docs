@@ -34,7 +34,7 @@ An upgrade keeps a customer-changed binding that has a certificate.
 
 ## Register services with the new DNS name
 
-Set **NPS Rest URL** to the FQDN on the certificate and register the services. See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url).
+Set **NPS Rest URL** to the FQDN on the certificate and register the services. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 ## Renew the JWT signing certificate
 
@@ -44,4 +44,4 @@ The console signs sign-in tokens with a separate JSON Web Token (JWT) signing ce
 
 - [Installing an IIS Certificate](/docs/kb/privilegesecure/certificates-and-security/installing-an-iis-certificate)
 - [Speeding Up CRL Checks on SbPAM Servers Without Internet Connectivity](/docs/kb/privilegesecure/certificates-and-security/speeding-up-crl-checks-on-sbpam-servers-without-internet-connectivity)
-- [Security hardening checklist](/docs/privilegesecure/26_07/configuration/security-hardening)
+- [Security hardening checklist](/docs/privilegesecure/26.07/configuration/security-hardening.md)

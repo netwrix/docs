@@ -10,7 +10,7 @@ The **Credentials** page lists the accounts that Privilege Secure discovers in y
 
 A managed account is an account whose password Privilege Secure stores and rotates. Use the page to bring an account under management, rotate its password, verify its password, and see how old the password is.
 
-The **Credentials** tile on the Dashboard shows the same table. See [Dashboard](/docs/privilegesecure/26_07/admin/sessions/dashboard).
+The **Credentials** tile on the Dashboard shows the same table. See [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
 To open the page, click **Credentials** in the left navigation. The **Credentials** menu also holds **Credential Groups** and **Credential Policy Overrides**.
 
@@ -18,7 +18,7 @@ To open the page, click **Credentials** in the left navigation. The **Credential
 
 ## Toolbar
 
-The toolbar buttons are **Manage**, **Unmanage**, **Service Account Details**, **Rotate**, **Verify**, and **View History**. Each button stays disabled until you select a row. Which buttons are enabled depends on the selected row. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26_07/admin/credentials/manage-credentials).
+The toolbar buttons are **Manage**, **Unmanage**, **Service Account Details**, **Rotate**, **Verify**, and **View History**. Each button stays disabled until you select a row. Which buttons are enabled depends on the selected row. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
 
 ## Filters
 
@@ -60,7 +60,7 @@ You can sort and resize every column.
 
 | Value | Meaning |
 |---|---|
-| **Automatic** | Privilege Secure rotates the password on the schedule of the platform, or of a [credential policy override](/docs/privilegesecure/26_07/admin/credentials/policy-overrides). |
+| **Automatic** | Privilege Secure rotates the password on the schedule of the platform, or of a [credential policy override](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md). |
 | **Manual** | You rotate the password yourself, or you update it on both the resource and in Privilege Secure. |
 | **Not Managed** | Privilege Secure doesn't manage the account and has never stored a password for it. |
 
@@ -68,13 +68,13 @@ The **Managed** filter value matches both **Automatic** and **Manual** accounts.
 
 ## Managed type
 
-The managed type decides how an account rotates. See [Rotation methods](/docs/privilegesecure/26_07/admin/credentials/rotation-methods).
+The managed type decides how an account rotates. See [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
 
 | Value | Meaning |
 |---|---|
 | **Standard** | A local or domain user account, including managed users that activity sessions create. |
-| **Internal** | An account that Privilege Secure itself uses, with no dependencies. See [Manage internal service accounts](/docs/privilegesecure/26_07/admin/credentials/internal-service-accounts). |
-| **Service** | An account that one or more Windows services or scheduled tasks use. This includes Internal accounts that have dependencies. See [Rotate service accounts and their dependencies](/docs/privilegesecure/26_07/admin/credentials/service-account-dependencies). |
+| **Internal** | An account that Privilege Secure itself uses, with no dependencies. See [Manage internal service accounts](/docs/privilegesecure/26.07/admin/credentials/internal-service-accounts.md). |
+| **Service** | An account that one or more Windows services or scheduled tasks use. This includes Internal accounts that have dependencies. See [Rotate service accounts and their dependencies](/docs/privilegesecure/26.07/admin/credentials/service-account-dependencies.md). |
 
 ## Status
 
@@ -88,4 +88,4 @@ The managed type decides how an account rotates. See [Rotation methods](/docs/pr
 
 {/* TODO verify: Mismatch wasn't seen in the lab. It comes from the 26.03 page. */}
 
-Platform settings control **Reset On Mismatch**, the rotation schedule, and the verification schedule. See [Platforms](/docs/privilegesecure/26_07/resources/platforms#platform-settings).
+Platform settings control **Reset On Mismatch**, the rotation schedule, and the verification schedule. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md#platform-settings).

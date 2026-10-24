@@ -10,8 +10,8 @@ In the Remote Access Gateway portal, you request a session for an activity and c
 
 ## Before you begin
 
-- Sign in to the portal. See [Sign in to the portal](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/sign-in).
-- Belong to at least one access policy that includes the activity and the resource. If you belong to none, the **Activity Request** wizard shows an error. See [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting#a-user-belongs-to-no-access-policy).
+- Sign in to the portal. See [Sign in to the portal](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/sign-in.md).
+- Belong to at least one access policy that includes the activity and the resource. If you belong to none, the **Activity Request** wizard shows an error. See [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md#a-user-belongs-to-no-access-policy).
 - If the target asks for a password when the session opens, know the password of the account that the activity uses on the target.
 
 ## Dashboard
@@ -61,7 +61,7 @@ The wizard has five steps when the portal skips **Group Selection**, and six whe
 
 The new session appears in the session table. If the access policy requires approval, the **Status** column shows **Waiting for approval** until an approver decides. When the session is ready, the status changes to **Available**.
 
-For the fields on each step, see [Request a session](/docs/privilegesecure/26_07/user-guide/request-session).
+For the fields on each step, see [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md).
 
 ## Open the session
 
@@ -72,7 +72,7 @@ For the fields on each step, see [Request a session](/docs/privilegesecure/26_07
 
 3. At the prompt from the target system, enter the password of the target account.
 
-The prompt asks for a password only. The account name comes from the activity's login account. If the target rejects the sign-in, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting#errconnect_logon_failure-after-you-enter-the-target-password).
+The prompt asks for a password only. The account name comes from the activity's login account. If the target rejects the sign-in, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md#errconnect_logon_failure-after-you-enter-the-target-password).
 
 {/* TODO verify: that the password prompt appears only when Proxy Auto-connect is off on the access policy, and what the user sees when it is on. */}
 
@@ -111,5 +111,5 @@ While a browser session is open, the left navigation shows **Live Sessions**. Wh
 
 ## Related topics
 
-- [Sign in to the portal](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/sign-in)
-- [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting)
+- [Sign in to the portal](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/sign-in.md)
+- [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md)

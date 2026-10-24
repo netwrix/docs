@@ -11,8 +11,8 @@ A service account is an account that Windows services or scheduled tasks run as.
 ## Prerequisites
 
 - The account appears on the **Credentials** page with managed type **Service**. {/* TODO verify: how dependents are discovered (resource scan) */}
-- You're an Administrator, or you hold a custom role with the **[C] Rotate Services** permission. See [Create a custom role](/docs/privilegesecure/26_07/admin/roles/custom-roles).
-- No session is active on the account. Manual rotation is blocked while a session is active. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26_07/admin/credentials/manage-credentials).
+- You're an Administrator, or you hold a custom role with the **[C] Rotate Services** permission. See [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
+- No session is active on the account. Manual rotation is blocked while a session is active. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
 
 ## Open the Account Dependencies dialog
 
@@ -35,7 +35,7 @@ The top of the dialog shows these fields:
 | **Last Changed** | When the password last changed. |
 | **Last Checked** | When Privilege Secure last verified the password. |
 | **Age** | The number of days since the password changed. |
-| **Credential Status** | The verification status. See [Credentials](/docs/privilegesecure/26_07/admin/credentials/overview). |
+| **Credential Status** | The verification status. See [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md). |
 
 The buttons are **Rotate**, **Rollback**, and **Cancel**. **Cancel** stops a service rotation that's in progress. It isn't a close button. **Rollback** returns the account and its dependents to the previous password. {/* TODO verify: when Rollback and Cancel become enabled (both were disabled in the lab before any rotation) */}
 
@@ -62,10 +62,10 @@ For example, `<domain>\svc-example` can show one **Service** dependent on `<serv
 
 Privilege Secure changes the password and updates the dependents. {/* TODO verify: the order of the steps, the result message, and how a failed dependent is shown */}
 
-The **Dependents** count on the **Credentials** page leaves out dependents on resources that were retired or deleted. If a retired dependent still appears, rescan the domain. See [Active Directory domains](/docs/privilegesecure/26_07/resources/domains#run-a-synchronization). {/* TODO verify: the count after retiring a resource in 26.07.3 (PSAM-1315 open) */}
+The **Dependents** count on the **Credentials** page leaves out dependents on resources that were retired or deleted. If a retired dependent still appears, rescan the domain. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md#run-a-synchronization). {/* TODO verify: the count after retiring a resource in 26.07.3 (PSAM-1315 open) */}
 
 ## Roll back a rotation
 
 Click **Rollback** to return the account to its previous password. {/* TODO verify: whether Rollback also updates each dependent */}
 
-For how the account types differ, see [Rotation methods](/docs/privilegesecure/26_07/admin/credentials/rotation-methods).
+For how the account types differ, see [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).

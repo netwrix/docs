@@ -8,7 +8,7 @@ sidebar_position: 60
 
 This page lists issues in Netwrix Privilege Secure 26.07 that are open or have no complete fix. Netwrix Support confirms each issue before it's listed on this page. If you hit a problem that isn't covered in this section, contact [Netwrix Support](https://www.netwrix.com/support.html).
 
-Fixes that have shipped are in the release notes. See [What's new](/docs/privilegesecure/26_07/release-notes/whats-new). For problems that have a documented fix, see [Troubleshooting](/docs/privilegesecure/26_07/troubleshooting/overview).
+Fixes that have shipped are in the release notes. See [What's new](/docs/privilegesecure/26.07/release-notes/whats-new.md). For problems that have a documented fix, see [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md).
 
 ## Open issues
 
@@ -16,4 +16,4 @@ Fixes that have shipped are in the release notes. See [What's new](/docs/privile
 
 ## Report an issue
 
-If you hit a problem that isn't listed, collect the logs and contact [Netwrix Support](https://www.netwrix.com/support.html). For the log locations, see [Log files](/docs/privilegesecure/26_07/admin/audit-reporting/log-files).
+If you hit a problem that isn't listed, collect the logs and contact [Netwrix Support](https://www.netwrix.com/support.html). For the log locations, see [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md).

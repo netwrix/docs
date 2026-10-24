@@ -20,7 +20,7 @@ With the extension, you can:
 - Watch the time remaining in the session. A **REC** icon shows on the extension when the page is being recorded.
 - Extend or end a session from the extension.
 
-To open an RDP or SSH resource from outside your network, use the Remote Access Gateway instead. See [Remote Access Gateway browser sessions](/docs/privilegesecure/26_07/remote-access-gateway/user-guide/browser-sessions).
+To open an RDP or SSH resource from outside your network, use the Remote Access Gateway instead. See [Remote Access Gateway browser sessions](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
 ## Browser requirements
 
@@ -29,7 +29,7 @@ The extension works in these browsers:
 - Google Chrome 116 or later
 - Microsoft Edge 116 or later
 
-Firefox isn't supported. For all client requirements, see [Client requirements](/docs/privilegesecure/26_07/requirements/client).
+Firefox isn't supported. For all client requirements, see [Client requirements](/docs/privilegesecure/26.07/requirements/client.md).
 
 ## Install the extension
 
@@ -43,4 +43,4 @@ The extension asks to read and change data on the sites you visit. It needs this
 
 {/* TODO verify: the permission prompt wording that Chrome and Edge show on install (store 25.8.26). */}
 
-After you install the extension, sign in and start a session. See [Use the browser extension](/docs/privilegesecure/26_07/user-guide/browser-extension/use-browser-extension).
+After you install the extension, sign in and start a session. See [Use the browser extension](/docs/privilegesecure/26.07/user-guide/browser-extension/use-browser-extension.md).

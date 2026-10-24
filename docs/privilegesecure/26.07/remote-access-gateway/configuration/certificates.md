@@ -18,7 +18,7 @@ The portal doesn't verify the gateway certificate, so you don't need to replace 
 
 {/* TODO verify: whether the gateway IIS certificate on port 6550 can be replaced, and the supported steps. */}
 
-For the certificate on the Netwrix Privilege Secure for Access Management (Privilege Secure) web console on port 6500, see [Replace the web console certificate](/docs/privilegesecure/26_07/configuration/certificates). The gateway must trust that certificate to forward requests to the console.
+For the certificate on the Netwrix Privilege Secure for Access Management (Privilege Secure) web console on port 6500, see [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md). The gateway must trust that certificate to forward requests to the console.
 
 ## Replace the portal certificate
 
@@ -79,6 +79,6 @@ If you regenerate the certificate files without updating `Guacd.ServerThumbprint
 
 ## Related topics
 
-- [Gateway settings reference](/docs/privilegesecure/26_07/remote-access-gateway/configuration/gateway-settings)
-- [Install the portal](/docs/privilegesecure/26_07/remote-access-gateway/install/install-portal)
-- [Install the gateway and guacd](/docs/privilegesecure/26_07/remote-access-gateway/install/install-gateway)
+- [Gateway settings reference](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md)
+- [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md)
+- [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md)

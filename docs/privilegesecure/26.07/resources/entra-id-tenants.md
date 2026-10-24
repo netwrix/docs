@@ -10,8 +10,8 @@ A Microsoft Entra ID tenant resource connects Netwrix Privilege Secure for Acces
 
 ## Prerequisites
 
-- An app registration in Microsoft Entra ID, with the permissions and roles Privilege Secure needs. See [Register an app in Microsoft Entra ID](/docs/privilegesecure/26_07/configuration/service-accounts/entra-id-app-registration).
-- A service account with the **Entra ID** platform that holds the application ID and secret. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts).
+- An app registration in Microsoft Entra ID, with the permissions and roles Privilege Secure needs. See [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md).
+- A service account with the **Entra ID** platform that holds the application ID and secret. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 - The tenant ID, found in the Microsoft Entra admin center.
 
 ## Add a tenant
@@ -41,7 +41,7 @@ The **Platform** field shows **Entra ID** and can't be changed.
 
 ## Synchronize the tenant
 
-Select **Synchronize Now** on the tenant's details page to read the tenant's users and groups. You can also schedule the scan on the Entra ID platform. See [Platforms](/docs/privilegesecure/26_07/resources/platforms).
+Select **Synchronize Now** on the tenant's details page to read the tenant's users and groups. You can also schedule the scan on the Entra ID platform. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
 When **Process Group Memberships** is selected, synchronization also collects group membership information.
 
@@ -55,7 +55,7 @@ The tenant has seven tabs.
 
 | Tab | What it shows |
 | --- | --- |
-| **URLs** | The sign-in URLs the browser extension accepts for the tenant. Select **Add**, **Edit**, or **Remove** to change them. If a site isn't listed, an activity sign-in can fail. The **Match Type** values are the same as for websites. See [Websites](/docs/privilegesecure/26_07/resources/websites). |
+| **URLs** | The sign-in URLs the browser extension accepts for the tenant. Select **Add**, **Edit**, or **Remove** to change them. If a site isn't listed, an activity sign-in can fail. The **Match Type** values are the same as for websites. See [Websites](/docs/privilegesecure/26.07/resources/websites.md). |
 | **Users** | Cloud-only users in the tenant. Use **Manage**, **Unmanage**, **Rotate**, **Verify**, **View History**, and **Password Reset Options** to manage their credentials. |
 | **Groups** | Cloud-only groups in the tenant. |
 | **Sessions** | Sessions on the tenant. |
@@ -72,4 +72,4 @@ Release 26.03.2 added support for nested groups and inherited directory roles wh
 {/* TODO verify: every tab description on this page, and that a trash can icon on the details page removes the tenant after confirmation. They come from 26.03. The lab had no tenant, so only the empty-form tab strip was confirmed. */}
 {/* TODO verify: columns on the Users, Groups, and Applications tabs in 26.07.3. */}
 
-For the roles and API permissions that rotation and provisioning need, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26_07/configuration/service-accounts/entra-id-app-registration).
+For the roles and API permissions that rotation and provisioning need, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md).

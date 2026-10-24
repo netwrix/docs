@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The **Active** tile lists sessions that are provisioning, ready, or in progress. The **Scheduled** tile lists sessions set to start later. From these tables you can create, end, lock, unlock, and inspect sessions.
 
-To open them, click **Dashboard** in the left navigation, then click the **Active** or **Scheduled** tile. For an overview of all tiles, see [Dashboard](/docs/privilegesecure/26_07/admin/sessions/dashboard).
+To open them, click **Dashboard** in the left navigation, then click the **Active** or **Scheduled** tile. For an overview of all tiles, see [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
 ## Active tab
 
@@ -19,15 +19,15 @@ The **Active** tile has two tabs:
 - **All Active** (the default) shows sessions for all users.
 - **Mine** shows sessions for the signed-in user.
 
-The filters are **Search**, **Resource name**, **User name**, and **Recording data**. The **Mine** tab has no **User name** filter. The **Recording data** filter works on keystroke data and, when the Remote Desktop Monitor is installed on the target hosts, on Windows event activity from RDP sessions. See [Install the Remote Desktop Monitor on target hosts](/docs/privilegesecure/26_07/install/rdp-monitor).
+The filters are **Search**, **Resource name**, **User name**, and **Recording data**. The **Mine** tab has no **User name** filter. The **Recording data** filter works on keystroke data and, when the Remote Desktop Monitor is installed on the target hosts, on Windows event activity from RDP sessions. See [Install the Remote Desktop Monitor on target hosts](/docs/privilegesecure/26.07/install/rdp-monitor.md).
 
 ### Toolbar
 
 | Button | What it does |
 |---|---|
-| **Create Session** | Opens the **Activity Request** dialog. See [Request a session](/docs/privilegesecure/26_07/user-guide/request-session). |
+| **Create Session** | Opens the **Activity Request** dialog. See [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md). |
 | **End Session** | Cancels the selected sessions. You need the Terminate Session permission. |
-| **View Logs** | Opens the session logs for the selected session. See [View session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs). |
+| **View Logs** | Opens the session logs for the selected session. See [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md). |
 | **Lock Activity** | Opens the lock dialog for the selected session. You need the Lock Session permission. |
 | **Unlock Activity** | Unlocks the selected session. You need the Lock Session permission. |
 
@@ -49,7 +49,7 @@ All buttons except **Create Session** stay disabled until you select a row. **Re
 | **NOTES** | Notes the requester entered. |
 | **TICKET NUMBER** | The ticket number the requester entered. |
 
-Click the expand icon on a row to show more about the session. The expanded row has the live session viewer for a session in progress, and a replay viewer when a recording is available. If the user signed in more than once, the row lists one recording for each sign-in. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26_07/admin/sessions/live-session-viewer) and [Replay a recorded session](/docs/privilegesecure/26_07/admin/sessions/replay-viewer).
+Click the expand icon on a row to show more about the session. The expanded row has the live session viewer for a session in progress, and a replay viewer when a recording is available. If the user signed in more than once, the row lists one recording for each sign-in. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md) and [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
 
 ## Scheduled tab
 
@@ -85,7 +85,7 @@ For example, to stop a contractor's session that is still running after the chan
 If you don't have the Terminate Session permission, the console shows "You need 'Terminate Session' permission to end sessions".
 
 :::note
-If the session has a ServiceNow ticket, the console asks "End Session - How should the ServiceNow ticket be updated?" Choose **Keep In Progress**, **On Hold**, or **Resolved**. The prompt links to the ticket. For setup, see [Use ServiceNow tickets with sessions](/docs/privilegesecure/26_07/user-guide/servicenow-tickets).
+If the session has a ServiceNow ticket, the console asks "End Session - How should the ServiceNow ticket be updated?" Choose **Keep In Progress**, **On Hold**, or **Resolved**. The prompt links to the ticket. For setup, see [Use ServiceNow tickets with sessions](/docs/privilegesecure/26.07/user-guide/servicenow-tickets.md).
 :::
 
 ## Lock a session
@@ -98,11 +98,11 @@ Lock a session when you see suspicious or unauthorized activity. A locked sessio
 4. Enter a lock title and message. The user sees them in their RDP or SSH client.
 5. Choose what to prevent the user from doing, and click **Okay**.
 
-The status of the session changes to **Locked**. For the dialog options, see [Watch, lock, or terminate a live session](/docs/privilegesecure/26_07/admin/sessions/live-session-viewer).
+The status of the session changes to **Locked**. For the dialog options, see [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md).
 
 To unlock a session, select it and click **Unlock Activity**.
 
-If you selected **Any further activity with this account (Unlock via Users & Groups)**, the account stays locked after you unlock the session. Unlock it on the user's details page. See [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details).
+If you selected **Any further activity with this account (Unlock via Users & Groups)**, the account stays locked after you unlock the session. Unlock it on the user's details page. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 {/* TODO verify: the status after Unlock Activity; the lab had no active sessions to test. */}
 

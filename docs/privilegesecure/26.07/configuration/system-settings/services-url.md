@@ -13,7 +13,7 @@ Change the address when you install a certificate for the console website, or wh
 ## Prerequisites
 
 - The Administrator role.
-- The certificate for the console website is installed and bound in Internet Information Services (IIS). See [Replace the web console certificate](/docs/privilegesecure/26_07/configuration/certificates).
+- The certificate for the console website is installed and bound in Internet Information Services (IIS). See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 - The IIS binding host name, the certificate subject, and the host name in the new URL match.
 
 ## Set the NPS REST URL
@@ -58,6 +58,6 @@ After you register the services, select **Configuration** > **Service Nodes** an
 
 ## Related topics
 
-- [Replace the web console certificate](/docs/privilegesecure/26_07/configuration/certificates)
+- [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md)
 - [Installing an IIS Certificate](/docs/kb/privilegesecure/certificates-and-security/installing-an-iis-certificate)
 - [Services aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running)

@@ -22,9 +22,9 @@ A protection policy has three parts.
 | Allowed members | The groups to protect, and the members each group may contain. |
 | Schedule | The tasks that run the policy on each resource. |
 
-The policy runs on the **Protection Policy Schedule** of the platform that each resource uses. To change how often it runs, change that schedule on the platform. See [Platforms](/docs/privilegesecure/26_07/resources/platforms) and [Schedule policies](/docs/privilegesecure/26_07/resources/platforms/schedule-policies).
+The policy runs on the **Protection Policy Schedule** of the platform that each resource uses. To change how often it runs, change that schedule on the platform. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md) and [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md).
 
-To run the policies that apply to a resource when a session ends, instead of waiting for the schedule, add the **Invoke Protection Policy** action to the Post-Session group of an activity. See [Action types](/docs/privilegesecure/26_07/configuration/activities/action-types).
+To run the policies that apply to a resource when a session ends, instead of waiting for the schedule, add the **Invoke Protection Policy** action to the Post-Session group of an activity. See [Action types](/docs/privilegesecure/26.07/configuration/activities/action-types.md).
 
 {/* TODO verify: what the 60-minute group monitor interval (GroupMonitorInterval) governs, and whether it changes how often a policy runs. The 26.03 pages say only that policies run on the platform schedule. */}
 
@@ -34,7 +34,7 @@ To run the policies that apply to a resource when a session ends, instead of wai
 
 An activity can add a user to a group for the length of a session. A protection policy doesn't remove those users while the session runs.
 
-The **Leave Existing Members in Group** setting on a connection profile controls what happens to a user who was already in the group before the session. When the setting is on, that user stays in the group. See [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles).
+The **Leave Existing Members in Group** setting on a connection profile controls what happens to a user who was already in the group before the session. When the setting is on, that user stays in the group. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ## Create a protection policy
 
@@ -107,6 +107,6 @@ To read the log of a task, select the task and select **View Logs**.
 
 ## Related topics
 
-- [Platforms](/docs/privilegesecure/26_07/resources/platforms)
-- [Schedule policies](/docs/privilegesecure/26_07/resources/platforms/schedule-policies)
-- [Server details](/docs/privilegesecure/26_07/resources/servers)
+- [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md)
+- [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md)
+- [Server details](/docs/privilegesecure/26.07/resources/servers.md)

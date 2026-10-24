@@ -44,15 +44,15 @@ The settings that appear depend on the platform.
 | **Description** | The purpose of the platform. |
 | **Built-in Account** | The built-in administrator account on resources of this platform. It tells Privilege Secure which accounts to discover and onboard. |
 | **Operating Systems** | The operating system names that belong to this platform. Separate names with commas. Press comma or Enter to add a name. |
-| **Password Complexity Policy** | The policy that sets the rules for generated passwords. See [Password complexity policies](/docs/privilegesecure/26_07/resources/platforms/password-complexity). |
+| **Password Complexity Policy** | The policy that sets the rules for generated passwords. See [Password complexity policies](/docs/privilegesecure/26.07/resources/platforms/password-complexity.md). |
 | **Password Length** | The number of characters that the selected policy requires. Select the arrow next to it to show the rules of the policy. |
-| **Protection Policy Schedule** | How often protection policies run on resources of this platform. See [Protection policies](/docs/privilegesecure/26_07/resources/protection-policies). |
+| **Protection Policy Schedule** | How often protection policies run on resources of this platform. See [Protection policies](/docs/privilegesecure/26.07/resources/protection-policies.md). |
 | **Scheduled Change Policy** | How often Privilege Secure rotates the passwords of managed accounts. |
 | **Scan Schedule** | How often Privilege Secure scans resources of this platform for users, groups, services, and scheduled tasks. |
 | **Verification Schedule** | How often Privilege Secure checks that the stored password of each managed account still works. |
 | **Reset On Mismatch** | When selected, Privilege Secure rotates the password if verification finds that the stored password doesn't match the account. |
 
-Each schedule setting is a list of schedule policies with a green plus (**+**) button to create one. A read-only **Schedule** box shows the selected schedule. See [Schedule policies](/docs/privilegesecure/26_07/resources/platforms/schedule-policies).
+Each schedule setting is a list of schedule policies with a green plus (**+**) button to create one. A read-only **Schedule** box shows the selected schedule. See [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md).
 
 {/* TODO verify: that Operating Systems is the list used to match a detected operating system to a platform. */}
 
@@ -100,7 +100,7 @@ The platform form shows the new values, and resources of the platform use them. 
 
 ## Related topics
 
-- [Password complexity policies](/docs/privilegesecure/26_07/resources/platforms/password-complexity)
-- [Schedule policies](/docs/privilegesecure/26_07/resources/platforms/schedule-policies)
-- [Command plans](/docs/privilegesecure/26_07/resources/platforms/command-plans)
-- [Protection policies](/docs/privilegesecure/26_07/resources/protection-policies)
+- [Password complexity policies](/docs/privilegesecure/26.07/resources/platforms/password-complexity.md)
+- [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md)
+- [Command plans](/docs/privilegesecure/26.07/resources/platforms/command-plans.md)
+- [Protection policies](/docs/privilegesecure/26.07/resources/protection-policies.md)

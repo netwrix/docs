@@ -28,7 +28,7 @@ Default groups include **Cisco**, **Linux**, **Website**, and **Windows**.
    - **Per individual resource** lets you set the option on each resource.
 1. Select **Save**.
 
-The managed account corresponds to the **Built-in Account** field on the resource's platform. See [Platforms](/docs/privilegesecure/26_07/resources/platforms).
+The managed account corresponds to the **Built-in Account** field on the resource's platform. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
 For example, enter the name `Branch servers`, enter `ops@example.com` as the notification email, and leave **Manage Local Administrator Accounts** set to **Off (do not manage accounts)**.
 
@@ -42,8 +42,8 @@ Mapping adds the computers in an Active Directory OU or CN to the group.
 
 ### Prerequisites
 
-- An Active Directory domain resource. See [Active Directory domains](/docs/privilegesecure/26_07/resources/domains).
-- (For auto-onboarding) A least-privilege Active Directory service account that can scan the computers. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts).
+- An Active Directory domain resource. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md).
+- (For auto-onboarding) A least-privilege Active Directory service account that can scan the computers. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 
 ### Steps
 
@@ -86,7 +86,7 @@ When you add more than one service, all of them are preferred on a next-availabl
 
 For example, add the Host Scan service on the `<east-service-node>` node to the `East region` group. Scans of the group's resources go to that node first.
 
-Both tabs have **Add** and **Remove** buttons. Their columns are **Service Name**, **Status**, **Description**, **Version**, and **Added**. See [Service nodes](/docs/privilegesecure/26_07/admin/service-nodes).
+Both tabs have **Add** and **Remove** buttons. Their columns are **Service Name**, **Status**, **Description**, **Version**, and **Added**. See [Service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).
 
 {/* TODO verify: the dialogs behind Add on the Host Scan Services and Action Services tabs weren't opened in the lab. Confirm the dialog title and selection steps. */}
 

@@ -10,9 +10,9 @@ The `SbPAM.RotateAwsKey` tool applies an Amazon Web Services (AWS) Key Managemen
 
 ## Before you begin
 
-- Create the Identity and Access Management (IAM) policy, IAM user, and KMS key. See [Protect the encryption key with AWS KMS](/docs/privilegesecure/26_07/configuration/encryption-keys/aws-kms).
+- Create the Identity and Access Management (IAM) policy, IAM user, and KMS key. See [Protect the encryption key with AWS KMS](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms.md).
 - Have the access key, the secret access key, the KMS key Amazon Resource Name (ARN), and the AWS Region of the key.
-- Back up the database and the encryption key files. See [Encryption key management](/docs/privilegesecure/26_07/configuration/encryption-keys).
+- Back up the database and the encryption key files. See [Encryption key management](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md).
 - Sign in to the application server as an administrator.
 
 ## Apply or rotate the KMS key
@@ -29,7 +29,7 @@ The log window shows the progress and the result. The tool takes a few minutes, 
 
 {/* TODO screenshot: the AWS Connection Settings window with the fields filled in with placeholder values, with the Access Key and Secret Key masked. */}
 
-Other servers that share the database need the new key. See [Export and import the key](/docs/privilegesecure/26_07/configuration/encryption-keys#export-and-import-the-key).
+Other servers that share the database need the new key. See [Export and import the key](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md#export-and-import-the-key).
 
 {/* TODO verify: the import step protects the key files on the other server with that server's Windows machine key, not with AWS KMS. Confirm the supported way to give additional servers an AWS KMS-protected key. */}
 
@@ -64,5 +64,5 @@ Don't delete the old AWS access key before you update Privilege Secure. If you d
 
 ## Related topics
 
-- [Encryption key management](/docs/privilegesecure/26_07/configuration/encryption-keys)
-- [Protect the encryption key with AWS KMS](/docs/privilegesecure/26_07/configuration/encryption-keys/aws-kms)
+- [Encryption key management](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md)
+- [Protect the encryption key with AWS KMS](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms.md)

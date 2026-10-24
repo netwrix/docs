@@ -32,16 +32,16 @@ To see the license, select **User Options** > **About**. The About page shows **
 
 {/* TODO verify: whether License Expires shows for a trial or subscription license in 26.07. */}
 
-To apply a license file, see [Activate a license](/docs/privilegesecure/26_07/install/activate-license).
+To apply a license file, see [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).
 
 ## Expired licenses
 
 {/* TODO SME: whether an expired subscription (non-trial) license behaves like an expired trial. The code settles the trial case: existing users can still sign in, new users can't be created, and sessions can't start. Whether an expired subscription sets the credit count to 0 comes from the closed licensing library. */}
 
-When the trial license has expired, Privilege Secure can't create new users, and no user can start a session. Users who already have a license can still sign in. Import a valid license file before the trial or subscription license expires. To import a file, see [Activate a license](/docs/privilegesecure/26_07/install/activate-license).
+When the trial license has expired, Privilege Secure can't create new users, and no user can start a session. Users who already have a license can still sign in. Import a valid license file before the trial or subscription license expires. To import a file, see [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).
 
 ## Removing users
 
 {/* TODO SME: whether removing a user frees a license, and how the count treats removed and disabled users. A community thread reports a Users page count that doesn't match the Licenses column. */}
 
-Removing a user also removes the user's history. See [Users and groups](/docs/privilegesecure/26_07/admin/users-groups).
+Removing a user also removes the user's history. See [Users and groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md).

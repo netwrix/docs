@@ -60,7 +60,7 @@ To change or delete a URL, select it and select **Edit** or **Remove**.
 
 The **Users** tab lists the accounts that activities use to sign in to the website. Privilege Secure doesn't discover these accounts. You add them by hand.
 
-The **Username** must match the format in the **Login Account Template** field of the activity, for example `corp\jsmith` or `jsmith@example.com`. See [Login account templates](/docs/privilegesecure/26_07/configuration/activities/login-account-templates).
+The **Username** must match the format in the **Login Account Template** field of the activity, for example `corp\jsmith` or `jsmith@example.com`. See [Login account templates](/docs/privilegesecure/26.07/configuration/activities/login-account-templates.md).
 
 ### Add a managed user
 
@@ -79,7 +79,7 @@ The table shows **Name**, **Username**, **Comment**, and **Created**.
 
 ## Sessions, Access Policies, and History tabs
 
-- **Sessions** lists sessions on the website. The table shows **Requested**, **Requested By**, **Login Account**, **Activity**, **Start**, **End**, and **Status**. Select a session and select **View Logs** to open its log. See [Session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs).
+- **Sessions** lists sessions on the website. The table shows **Requested**, **Requested By**, **Login Account**, **Activity**, **Start**, **End**, and **Status**. Select a session and select **View Logs** to open its log. See [Session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md).
 - **Access Policies** lists the access policies that include the website, with **Name** and **Description**.
 - **History** lists events for the website, with a **View Logs** button for the selected session.
 

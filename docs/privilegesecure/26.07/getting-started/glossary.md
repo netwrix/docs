@@ -43,7 +43,7 @@ The Remote Access Gateway (RAG) lets external users start browser-based sessions
 - Secure Remote Access (SRA) appears in the download and in Community posts.
 - Session Remote Access (SRA) appears in the 26.07.3 release notes.
 
-The documentation uses Remote Access Gateway. See [Remote Access Gateway overview](/docs/privilegesecure/26_07/remote-access-gateway/overview).
+The documentation uses Remote Access Gateway. See [Remote Access Gateway overview](/docs/privilegesecure/26.07/remote-access-gateway/overview.md).
 
 ## Product and legacy names
 
@@ -102,4 +102,4 @@ An administrator sees these items in the left navigation of the 26.07.3 console,
 | Auditing & Reporting | View access certifications, the activity log, database change history, events, log files, and reports. |
 | System Settings | Manage system-wide options such as RDP, WinRM, email, and data retention. |
 
-See [Navigate the console](/docs/privilegesecure/26_07/user-guide/navigate-console).
+See [Navigate the console](/docs/privilegesecure/26.07/user-guide/navigate-console.md).

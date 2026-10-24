@@ -21,9 +21,9 @@ An administrator gives you the Auditors role and sets what it covers. The role c
 | **Reporting** | Create, change, delete, and run reports. |
 | **Admin View Read Only** | See every administration page without changing anything. |
 
-**Admin View Read Only** is a permission in the Auditors role, not a separate role. See [Give auditors read-only console access](/docs/privilegesecure/26_07/admin/roles/admin-view-read-only).
+**Admin View Read Only** is a permission in the Auditors role, not a separate role. See [Give auditors read-only console access](/docs/privilegesecure/26.07/admin/roles/admin-view-read-only.md).
 
-The **Users** and **Resources** tabs of the role limit the sessions you can view. For how an administrator sets this, see [Create a custom role](/docs/privilegesecure/26_07/admin/roles/custom-roles).
+The **Users** and **Resources** tabs of the role limit the sessions you can view. For how an administrator sets this, see [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
 
 {/* TODO verify: whether the All Historical tab lists only the sessions in your Users and Resources scope, or every session with recordings limited to your scope. The lab tour used an administrator account. */}
 
@@ -48,7 +48,7 @@ The **Users** and **Resources** tabs of the role limit the sessions you can view
 
 You can also search the **Login Account**, **Activity**, **Notes**, and **Ticket Number** columns. **Export as CSV** downloads the table to your browser's default download folder.
 
-For the columns and statuses, see [Review historical sessions](/docs/privilegesecure/26_07/admin/sessions/historical-sessions).
+For the columns and statuses, see [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md).
 
 {/* TODO screenshot: the Historical tile on the All Historical tab with the filters visible */}
 
@@ -58,7 +58,7 @@ Search and filters cover live and recorded sessions. When you search recorded da
 
 For example, enter a command name in **Search**, and then open a recording from the results to see where the user ran it.
 
-The recording data includes keystrokes. In SSH sessions, keystrokes typed at a password prompt are hidden in the viewer. See [Session recording](/docs/privilegesecure/26_07/admin/sessions/session-recording).
+The recording data includes keystrokes. In SSH sessions, keystrokes typed at a password prompt are hidden in the viewer. See [Session recording](/docs/privilegesecure/26.07/admin/sessions/session-recording.md).
 
 ## Replay a recording
 
@@ -69,16 +69,16 @@ A session has a recording only when the connection profile on its access policy 
 
 {/* TODO verify: how to open a recording from a Historical row. Expanding a Completed row shows a one-line summary in the lab, and Failed rows have a grey chevron. The Track your sessions page describes the same row actions. */}
 
-The Replay Viewer opens. See [Replay a recorded session](/docs/privilegesecure/26_07/admin/sessions/replay-viewer) for the controls, the timeline, and the viewer for each resource type.
+The Replay Viewer opens. See [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md) for the controls, the timeline, and the viewer for each resource type.
 
 ## Watch a live session
 
-If your role includes **Live Session Viewer**, you can watch an active session as it happens. You can also lock or terminate the session if your role includes **Lock Session** or **Terminate Session**. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26_07/admin/sessions/live-session-viewer).
+If your role includes **Live Session Viewer**, you can watch an active session as it happens. You can also lock or terminate the session if your role includes **Lock Session** or **Terminate Session**. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md).
 
 {/* TODO verify: how an auditor finds active sessions to watch. The Active tile lists sessions, but the lab had no active sessions and no auditor account. */}
 
 ## Related topics
 
-- [Review historical sessions](/docs/privilegesecure/26_07/admin/sessions/historical-sessions)
-- [View session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs)
-- [Reports and subscriptions](/docs/privilegesecure/26_07/admin/audit-reporting/reports)
+- [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md)
+- [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md)
+- [Reports and subscriptions](/docs/privilegesecure/26.07/admin/audit-reporting/reports.md)

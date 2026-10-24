@@ -28,7 +28,7 @@ The gateway loads the following settings files in this order. A later file overr
 
 {/* TODO verify: the purpose of appsettings.user.json and appsettings.svc.json, and which of the files you may edit. */}
 
-`Configure-Gateway.ps1` sets `NPS.Uri`, `Guacd.Hostname`, `Guacd.ServerThumbprint`, and `Guacd.InsecureSkipVerify` for you. Until the script writes the file, the gateway runs on the defaults, and `Guacd.ServerThumbprint` reads "Guacd:ServerThumbprint not set!". For the install order, see [Install the gateway and guacd](/docs/privilegesecure/26_07/remote-access-gateway/install/install-gateway).
+`Configure-Gateway.ps1` sets `NPS.Uri`, `Guacd.Hostname`, `Guacd.ServerThumbprint`, and `Guacd.InsecureSkipVerify` for you. Until the script writes the file, the gateway runs on the defaults, and `Guacd.ServerThumbprint` reads "Guacd:ServerThumbprint not set!". For the install order, see [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md).
 
 :::note
 Keep a copy of `appsettings.json` before you change it.
@@ -49,7 +49,7 @@ Keep a copy of `appsettings.json` before you change it.
 | `Guacd.InsecureSkipVerify` | `false` | When `true`, the gateway connects to guacd without TLS. Keep it `false`. |
 | `Client.DefaultArguments` | Per protocol | The default connection arguments the gateway passes to guacd for each protocol, such as the default port and the display size. |
 | `Client.UnencryptedArguments` | See the shipped file | The arguments the browser may pass outside the encrypted token, such as `width`, `height`, and `dpi`. |
-| `AllowedLoginMethods` | `0` | The sign-in methods the portal offers. See [Configure sign-in for the portal](/docs/privilegesecure/26_07/remote-access-gateway/configuration/authentication). |
+| `AllowedLoginMethods` | `0` | The sign-in methods the portal offers. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md). |
 
 In the table, `Section.Key` means a nested JSON key. For example, `NPS.Uri` is `"NPS": { "Uri": ... }`.
 
@@ -69,7 +69,7 @@ Don't change `Uri`. The installer binds the **NPS Gateway Web Service** site to 
 
 ### Connection to guacd
 
-The gateway connects to guacd on `Guacd.Hostname` and `Guacd.Port` over TLS. The gateway trusts the guacd certificate only when its thumbprint equals `Guacd.ServerThumbprint`. If you regenerate the guacd certificate, run `Configure-Gateway.ps1` again so the thumbprint matches. See [Portal and gateway certificates](/docs/privilegesecure/26_07/remote-access-gateway/configuration/certificates).
+The gateway connects to guacd on `Guacd.Hostname` and `Guacd.Port` over TLS. The gateway trusts the guacd certificate only when its thumbprint equals `Guacd.ServerThumbprint`. If you regenerate the guacd certificate, run `Configure-Gateway.ps1` again so the thumbprint matches. See [Portal and gateway certificates](/docs/privilegesecure/26.07/remote-access-gateway/configuration/certificates.md).
 
 :::warning
 Keep `Guacd.InsecureSkipVerify` set to `false`. When it is `true`, the gateway sends session traffic to guacd without TLS, and it logs a warning.
@@ -103,4 +103,4 @@ The gateway reads the `LOG_LEVEL` environment variable. The default is `Informat
 
 ## Find the gateway log
 
-The gateway writes to `PAM-RagGateway*.log` in `C:\ProgramData\Stealthbits\PAM\Log`. The file stays empty until the gateway handles its first request. For more log locations, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/troubleshooting).
+The gateway writes to `PAM-RagGateway*.log` in `C:\ProgramData\Stealthbits\PAM\Log`. The file stays empty until the gateway handles its first request. For more log locations, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md).

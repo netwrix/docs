@@ -6,20 +6,20 @@ sidebar_position: 20
 
 # Use the browser extension
 
-Use the browser extension to start web sessions from the toolbar without opening the console. Install the extension first. See [Browser extension](/docs/privilegesecure/26_07/user-guide/browser-extension).
+Use the browser extension to start web sessions from the toolbar without opening the console. Install the extension first. See [Browser extension](/docs/privilegesecure/26.07/user-guide/browser-extension/browser-extension.md).
 
 This page describes the Chrome Web Store build 25.8.26. {/* TODO verify: the tab names and layout below come from the 26.03 documentation. Confirm them against build 25.8.26. */}
 
 ## Before you begin
 
-- An access policy that gives you at least one website activity. See [My activities](/docs/privilegesecure/26_07/user-guide/my-activities).
+- An access policy that gives you at least one website activity. See [My activities](/docs/privilegesecure/26.07/user-guide/my-activities.md).
 - The address of your Privilege Secure server, in the form `https://<nps-server>:6500`.
 
 ## Sign in to the extension
 
 1. Click the Netwrix Privilege Secure icon on the browser toolbar.
 2. Enter the server address, `https://<nps-server>:6500`, when the extension asks for it.
-3. Sign in with your credentials, MFA, or an OpenID Connect provider, the same way you sign in to the console. See [Sign in to the console](/docs/privilegesecure/26_07/user-guide/sign-in).
+3. Sign in with your credentials, MFA, or an OpenID Connect provider, the same way you sign in to the console. See [Sign in to the console](/docs/privilegesecure/26.07/user-guide/sign-in.md).
 
 The extension shows the activity list after you sign in.
 
@@ -72,7 +72,7 @@ The extension then shows a countdown timer with the time left in the session. A 
 
 ### Configure Session dialog
 
-The **Configure Session** dialog has a **Note** field and a **Ticket Number** field. Each field is required when the connection profile for the activity requires it. For the profile settings, see [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles).
+The **Configure Session** dialog has a **Note** field and a **Ticket Number** field. Each field is required when the connection profile for the activity requires it. For the profile settings, see [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ### Start a session in the current tab
 
@@ -100,7 +100,7 @@ In build 25.8.26:
 - Administrators can extend a session even when the connection profile doesn't allow session extension. They see every duration option.
 - All other users can extend only up to the maximum that the connection profile sets.
 
-For the extension limits that a profile sets, see [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles).
+For the extension limits that a profile sets, see [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 {/* TODO verify: whether the server accepts an administrator's extension when the connection profile has session extension turned off. The server side checks the profile. */}
 

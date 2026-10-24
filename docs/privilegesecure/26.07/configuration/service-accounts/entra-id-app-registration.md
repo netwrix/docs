@@ -80,8 +80,8 @@ The 26.03.0 to 26.03.2 release notes list a known issue: Entra ID password rotat
 
 1. In Privilege Secure, select **Configuration** > **Service Accounts**, and click **+**.
 1. Set **Platform** to **Entra ID**.
-1. Enter the **App ID** (the application client ID) and the **App Secret** (the client secret value), and click **Save**. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts).
-1. Add the tenant as a resource with the **Tenant ID** and this service account. See [Microsoft Entra ID tenants](/docs/privilegesecure/26_07/resources/entra-id-tenants).
+1. Enter the **App ID** (the application client ID) and the **App Secret** (the client secret value), and click **Save**. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
+1. Add the tenant as a resource with the **Tenant ID** and this service account. See [Microsoft Entra ID tenants](/docs/privilegesecure/26.07/resources/entra-id-tenants.md).
 
 ## Rotate passwords in a hybrid tenant
 

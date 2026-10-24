@@ -16,7 +16,7 @@ The server details page shows the settings of one server and what Netwrix Privil
 |---|---|
 | **Test** | Tests whether Privilege Secure can connect to the server. A window shows the status and any messages. |
 | **Scan Now** | Scans the server for local users, groups, services, scheduled tasks, and databases. |
-| **WinRM Config** | Opens the **Configure Secure WinRM Connection** window. The button appears only for Windows servers. See [Configure a secure WinRM connection](/docs/privilegesecure/26_07/resources/secure-winrm). |
+| **WinRM Config** | Opens the **Configure Secure WinRM Connection** window. The button appears only for Windows servers. See [Configure a secure WinRM connection](/docs/privilegesecure/26.07/resources/secure-winrm.md). |
 
 {/* TODO verify: whether Scan Now also collects installed software. 26.03 lists users, groups, services, and scheduled tasks; BE 7.6 adds Windows features and databases. */}
 
@@ -33,8 +33,8 @@ Change a setting and select **Save**, or select **Cancel** to discard the change
 | **Last Scanned** | The date and time of the last scan. |
 | **Active** | The number of active sessions on the server. Read-only. |
 | **Scheduled** | The number of sessions scheduled for the server. Read-only. |
-| **Platform** | The platform that defines how Privilege Secure manages the server. See [Platforms](/docs/privilegesecure/26_07/resources/platforms). |
-| **Service Account** | The service account that Privilege Secure uses to reach the server. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts). |
+| **Platform** | The platform that defines how Privilege Secure manages the server. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md). |
+| **Service Account** | The service account that Privilege Secure uses to reach the server. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md). |
 | **IP Address** | The IP address of the server. |
 | **SSH Port** | The SSH port. The default is 22. |
 | **RDP Port** | The Remote Desktop Protocol (RDP) port. The default is 3389. |
@@ -42,7 +42,7 @@ Change a setting and select **Save**, or select **Cancel** to discard the change
 | **WinRM HTTPS Port** | The WinRM HTTPS port. The default is 5986. |
 | **WinRM Disabled** | When selected, Privilege Secure doesn't connect to the server through WinRM. The first scan sets this value, and later scans don't change it. |
 
-If a server uses other ports, change the port fields on its details page. Open the ports between the Privilege Secure service nodes and the server. See [Ports](/docs/privilegesecure/26_07/requirements/ports).
+If a server uses other ports, change the port fields on its details page. Open the ports between the Privilege Secure service nodes and the server. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
 ### Certificate trust
 
@@ -65,7 +65,7 @@ The **Action on Thumbprint Mismatch** dropdown has these values:
 | **Log event and allow** | Allows the connection and records an event. This value is the default. |
 | **Log event and block** | Blocks the connection and records an event. |
 
-When you choose a value that records an event, Privilege Secure writes it to the Events table. If you configured a Security Information and Event Management (SIEM) connection, Privilege Secure also sends the event to the SIEM. See [Events](/docs/privilegesecure/26_07/admin/audit-reporting/events).
+When you choose a value that records an event, Privilege Secure writes it to the Events table. If you configured a Security Information and Event Management (SIEM) connection, Privilege Secure also sends the event to the SIEM. See [Events](/docs/privilegesecure/26.07/admin/audit-reporting/events.md).
 
 ## Tabs
 
@@ -75,7 +75,7 @@ A Windows server has 10 tabs; other platforms can show fewer. Each tab shows a c
 |---|---|
 | **Sessions** | Sessions on the server. Columns: **Requested**, **Requested By**, **Login Account**, **Activity**, **Start**, **End**, **Status**. Select a row and select **View Logs** to open the session logs. |
 | **Access Policies** | The access policies that include the server. Columns: **Name**, **Description**. |
-| **Protection Policies** | The protection policies that include the server. Columns: **Name**, **Description**. See [Protection policies](/docs/privilegesecure/26_07/resources/protection-policies). |
+| **Protection Policies** | The protection policies that include the server. Columns: **Name**, **Description**. See [Protection policies](/docs/privilegesecure/26.07/resources/protection-policies.md). |
 | **Users** | The local users on the server, with buttons to manage them. See [Users tab](#users-tab). |
 | **Groups** | The local groups on the server. Columns: **Group Name**, **Members**. |
 | **Services** | The services on the server. Columns: **Service Name**, **Display Name**, **Description**, **Startup Type**, **Log On As**. Filter by **Type**. |
@@ -115,7 +115,7 @@ The **Status** column shows the result of the last verification:
 | Changed | Privilege Secure reset the password to match. This status appears only when Reset On Mismatch is on. |
 | Failed | The reset didn't succeed. This status appears only when Reset On Mismatch is on. |
 
-For rotation methods, password history, and verification schedules, see [Manage, rotate, and verify credentials](/docs/privilegesecure/26_07/admin/credentials/manage-credentials).
+For rotation methods, password history, and verification schedules, see [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
 
 ## Test connectivity to a server
 
@@ -131,4 +131,4 @@ For rotation methods, password history, and verification schedules, see [Manage,
 1. Select **Scan Now**. A confirmation window opens.
 1. Confirm the scan. While the scan runs, a **Cancel** button stops it.
 
-Platform scan schedules are set on the platform. See [Schedule policies](/docs/privilegesecure/26_07/resources/platforms/schedule-policies).
+Platform scan schedules are set on the platform. See [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md).

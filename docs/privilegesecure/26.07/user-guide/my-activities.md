@@ -29,9 +29,9 @@ For example, if the access policies `<policy-a>` and `<policy-b>` both grant the
 
 ## Start a session from an activity
 
-Expand a card to see your sessions for that activity and to create a new one. Use the **+** button on the card to request a session. The console then asks for the details of the request. See [Request a session](/docs/privilegesecure/26_07/user-guide/request-session).
+Expand a card to see your sessions for that activity and to create a new one. Use the **+** button on the card to request a session. The console then asks for the details of the request. See [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md).
 
-When a session is ready, you launch it from the card or from the Dashboard. See [Connect to a session](/docs/privilegesecure/26_07/user-guide/connect-session). What you can do after you connect, such as viewing a password, depends on the connection profile in your access policy. See [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles).
+When a session is ready, you launch it from the card or from the Dashboard. See [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md). What you can do after you connect, such as viewing a password, depends on the connection profile in your access policy. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 {/* TODO verify: the contents of an activity card and its expanded session list, including the menu on each session. The lab user belonged to no access policy, so the cards weren't visible. */}
 {/* TODO verify: the title of the dialog that the + button opens, and how it differs from the Activity Request dialog opened from Create Session on the Dashboard. */}

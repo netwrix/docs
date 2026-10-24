@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Protect the encryption key with AWS KMS
 
-You can protect the Netwrix Privilege Secure for Access Management (Privilege Secure) encryption key with Amazon Web Services (AWS) Key Management Service (AWS KMS). The KMS key doesn't encrypt the stored secrets directly. It encrypts the key that encrypts them. For background on the encryption key, see [Encryption key management](/docs/privilegesecure/26_07/configuration/encryption-keys). For AWS KMS concepts, see the [AWS Key Management Service documentation](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html). For the AWS console steps, see the AWS documentation for [IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html), [IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html), and [KMS keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html).
+You can protect the Netwrix Privilege Secure for Access Management (Privilege Secure) encryption key with Amazon Web Services (AWS) Key Management Service (AWS KMS). The KMS key doesn't encrypt the stored secrets directly. It encrypts the key that encrypts them. For background on the encryption key, see [Encryption key management](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md). For AWS KMS concepts, see the [AWS Key Management Service documentation](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html). For the AWS console steps, see the AWS documentation for [IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html), [IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html), and [KMS keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html).
 
-This page covers the setup in AWS. After you finish, apply the key in Privilege Secure with the steps in [Rotate the AWS KMS key](/docs/privilegesecure/26_07/configuration/encryption-keys/aws-kms-rotation).
+This page covers the setup in AWS. After you finish, apply the key in Privilege Secure with the steps in [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md).
 
 ## Before you begin
 
@@ -49,7 +49,7 @@ The following AWS steps use a user with an access key. If the application server
 Store the access key and the secret access key securely. You enter them in Privilege Secure when you apply the key.
 
 :::warning
-Don't delete the access key of the AWS user before you update Privilege Secure to use a new key. See [Rotate the AWS KMS key](/docs/privilegesecure/26_07/configuration/encryption-keys/aws-kms-rotation#replace-the-aws-access-key).
+Don't delete the access key of the AWS user before you update Privilege Secure to use a new key. See [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md#replace-the-aws-access-key).
 :::
 
 {/* TODO verify: the AWS console labels in these steps come from the 26.03 page. Confirm them in the current AWS console. */}
@@ -90,4 +90,4 @@ When the application server runs on an Amazon EC2 instance, the key tool can use
 
 ## Next step
 
-Apply the key in Privilege Secure. See [Rotate the AWS KMS key](/docs/privilegesecure/26_07/configuration/encryption-keys/aws-kms-rotation).
+Apply the key in Privilege Secure. See [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md).

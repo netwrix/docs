@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Credential groups
 
-A credential group is a named set of managed credentials. Credential-based access policies use groups to decide which accounts users can check out. See [Create a credential-based access policy](/docs/privilegesecure/26_07/configuration/access-policies/credential-based-policy).
+A credential group is a named set of managed credentials. Credential-based access policies use groups to decide which accounts users can check out. See [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md).
 
 The **Credential Groups** page is under **Credentials** in the left navigation. It has two panes. The left pane lists the groups. The right pane shows the selected group.
 
@@ -30,7 +30,7 @@ The member table has these controls:
 - **Remove**: Removes the selected members from the group. It is disabled until you select a row.
 - **Refresh**: Reloads the table.
 
-The table has the columns **Account**, **Resource**, **Platform**, **Method**, **Managed Type**, **Dependents**, **Password Changed**, **Age**, **Status**, **Last Checked**, and **Next Change**. Managed accounts show the **Copy Password to Clipboard** and **View Password** icons. For the meaning of the columns and status values, see [Credentials](/docs/privilegesecure/26_07/admin/credentials/overview).
+The table has the columns **Account**, **Resource**, **Platform**, **Method**, **Managed Type**, **Dependents**, **Password Changed**, **Age**, **Status**, **Last Checked**, and **Next Change**. Managed accounts show the **Copy Password to Clipboard** and **View Password** icons. For the meaning of the columns and status values, see [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
 
 ## Create a credential group
 
@@ -63,5 +63,5 @@ For example, name a group `<build-admin-accounts>` with the description `<Local 
 
 ## Related topics
 
-- [Credential policy overrides](/docs/privilegesecure/26_07/admin/credentials/policy-overrides)
-- [Rotation methods](/docs/privilegesecure/26_07/admin/credentials/rotation-methods)
+- [Credential policy overrides](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md)
+- [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md)

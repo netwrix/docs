@@ -8,11 +8,11 @@ sidebar_position: 50
 
 A domain resource connects Netwrix Privilege Secure for Access Management (Privilege Secure) to an Active Directory domain. After you add a domain, Privilege Secure synchronizes its users, groups, and computers. You can then give domain users and groups access to Privilege Secure, manage domain accounts, and onboard domain computers as resources.
 
-For how synchronization reads the directory, see [How Active Directory synchronization works](/docs/privilegesecure/26_07/resources/ad-sync).
+For how synchronization reads the directory, see [How Active Directory synchronization works](/docs/privilegesecure/26.07/resources/ad-sync.md).
 
 ## Prerequisites
 
-- A service account for the domain with the Active Directory platform. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts) for the permissions it needs.
+- A service account for the domain with the Active Directory platform. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md) for the permissions it needs.
 - Network access from the application server to a domain controller.
 
 ## Add a domain
@@ -98,9 +98,9 @@ The **Users** tab lists the domain's user accounts. Use **Search** and the **Typ
 
 {/* TODO verify: the Type filter values on the domain Users tab (26.03 listed Users, Admin, Managed, and Not Onboarded), and whether Manage applies only to Standard and Internal accounts. */}
 
-The table includes these columns, among others: **Name**, **User Name**, **Privilege**, **Last Login**, **Password Changed**, **Age**, **NPS Role**, **Managed**, **Rotate Start | End**, **Keep Enabled**, **Dependents**, and **Status**. **Status** shows the result of the last credential verification. For managed accounts, see [Credentials](/docs/privilegesecure/26_07/admin/credentials/overview).
+The table includes these columns, among others: **Name**, **User Name**, **Privilege**, **Last Login**, **Password Changed**, **Age**, **NPS Role**, **Managed**, **Rotate Start | End**, **Keep Enabled**, **Dependents**, and **Status**. **Status** shows the result of the last credential verification. For managed accounts, see [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
 
-To give a domain user console access without leaving this page, select the user and select **Add to NPS User Role**. You can also add users from the Users & Groups page. See [Add users and groups](/docs/privilegesecure/26_07/admin/users-groups/add-users-groups).
+To give a domain user console access without leaving this page, select the user and select **Add to NPS User Role**. You can also add users from the Users & Groups page. See [Add users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
 
 ### Groups tab
 
@@ -141,4 +141,4 @@ The **Sync Errors** tab lists the errors from synchronization. The table shows *
 
 ## Troubleshoot a synchronization that shows Failed
 
-If the **Sync AD** scheduled task shows **Failed** while the domain still synchronizes, see [Active Directory sync and scan problems](/docs/privilegesecure/26_07/troubleshooting/ad-sync-and-scans).
+If the **Sync AD** scheduled task shows **Failed** while the domain still synchronizes, see [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md).

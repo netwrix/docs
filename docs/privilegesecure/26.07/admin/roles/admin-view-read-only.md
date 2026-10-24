@@ -24,8 +24,8 @@ Don't give **Admin View Read Only** to an Administrator who needs to make change
 A few actions stay available because auditors need them:
 
 - Register for multi-factor authentication (MFA).
-- Lock or terminate a live session, and replay a recorded session, within the scope of the role. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26_07/admin/sessions/live-session-viewer) and [Replay a recorded session](/docs/privilegesecure/26_07/admin/sessions/replay-viewer).
-- Create, save, delete, run, favorite, and subscribe to reports. See [Reports and subscriptions](/docs/privilegesecure/26_07/admin/audit-reporting/reports).
+- Lock or terminate a live session, and replay a recorded session, within the scope of the role. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md) and [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
+- Create, save, delete, run, favorite, and subscribe to reports. See [Reports and subscriptions](/docs/privilegesecure/26.07/admin/audit-reporting/reports.md).
 - Download reports and exports.
 
 {/* TODO verify: the list of actions that stay available, from the product code. Confirm each one on a read-only test user. */}
@@ -33,7 +33,7 @@ A few actions stay available because auditors need them:
 ## Prerequisites
 
 - You're signed in as an Administrator.
-- The auditors are on the **Users & Groups** page. See [Add domain users and groups](/docs/privilegesecure/26_07/admin/users-groups/add-users-groups).
+- The auditors are on the **Users & Groups** page. See [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
 
 ## Assign the permission
 
@@ -69,5 +69,5 @@ When a team member signs in, the read-only banner appears at the top of the cons
 
 ## Related topics
 
-- [Create a custom role](/docs/privilegesecure/26_07/admin/roles/custom-roles)
-- [Auditing and reporting overview](/docs/privilegesecure/26_07/admin/audit-reporting)
+- [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md)
+- [Auditing and reporting overview](/docs/privilegesecure/26.07/admin/audit-reporting/audit-reporting.md)

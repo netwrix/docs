@@ -53,4 +53,4 @@ Sign-in ("Active Login") and session end ("Session Cancelled", "Session Complete
 
 {/* TODO verify: exact event names in 26.07.3 */}
 
-To forward events to a SIEM, see [Forward events to a SIEM](/docs/privilegesecure/26_07/integrations/siem/siem-servers).
+To forward events to a SIEM, see [Forward events to a SIEM](/docs/privilegesecure/26.07/integrations/siem/siem-servers.md).

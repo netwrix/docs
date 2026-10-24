@@ -22,8 +22,8 @@ Don't cancel, close, or stop the installer during an upgrade. The upgrade update
 
 Complete these checks on the application server before you start.
 
-1. Back up the database. Also back up your encryption keys. See [Back up and recover](/docs/privilegesecure/26_07/install/high-availability#back-up-and-recover).
-2. Install PowerShell 7.6 or later. The `NPS.exe` installer stops without it, and the Setup Launcher doesn't warn you. See [Application server requirements](/docs/privilegesecure/26_07/requirements/application-server).
+1. Back up the database. Also back up your encryption keys. See [Back up and recover](/docs/privilegesecure/26.07/install/high-availability.md#back-up-and-recover).
+2. Install PowerShell 7.6 or later. The `NPS.exe` installer stops without it, and the Setup Launcher doesn't warn you. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md).
 3. Back up the SAML templates. See [Back up the SAML templates](#back-up-the-saml-templates).
 4. Record any changes you made to permanent command plans. The upgrade overwrites them. See [Permanent command plans](#permanent-command-plans).
 5. Check the **NPS Rest URL** for a trailing slash. See [Check the NPS Rest URL](#check-the-nps-rest-url).
@@ -38,19 +38,19 @@ The files `SamlRequestTemplate.xml` and `SamlSignoutTemplate.xml` are in the `We
 
 An upgrade keeps these files only when you upgrade from 26.03.2 or later. When you upgrade from a release earlier than 26.03.2, the upgrade overwrites them, and single sign-on can stop working. Copy both files to a safe location before you upgrade, and copy them back afterward if the upgrade replaced them.
 
-For more about SAML settings, see [SAML authentication](/docs/privilegesecure/26_07/configuration/authentication/saml).
+For more about SAML settings, see [SAML authentication](/docs/privilegesecure/26.07/configuration/authentication/saml.md).
 
 ### Permanent command plans
 
-Each upgrade imports the built-in permanent command plans again. The import overwrites any edits you made to them. Before you upgrade, record your edits, and reapply them afterward. See [Command plans](/docs/privilegesecure/26_07/resources/platforms/command-plans).
+Each upgrade imports the built-in permanent command plans again. The import overwrites any edits you made to them. Before you upgrade, record your edits, and reapply them afterward. See [Command plans](/docs/privilegesecure/26.07/resources/platforms/command-plans.md).
 
 ### Check the NPS Rest URL
 
-A trailing slash in the **NPS Rest URL** can cause HTTP 500 errors or sessions that stay in the Provisioning status. Open the **Services** page in **System Settings**, check the URL, and remove a trailing slash if there is one. For example, enter `https://<nps-server>:6500` and not `https://<nps-server>:6500/`. See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url).
+A trailing slash in the **NPS Rest URL** can cause HTTP 500 errors or sessions that stay in the Provisioning status. Open the **Services** page in **System Settings**, check the URL, and remove a trailing slash if there is one. For example, enter `https://<nps-server>:6500` and not `https://<nps-server>:6500/`. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 ### Default activity groups
 
-Privilege Secure creates two default activity groups: **Domain Administrator Access** and **Local Administrator Access**. If you upgrade from a release earlier than 26.07.3, don't delete these groups and then create new groups with the same names. The upgrade then fails with a duplicate key error. Release 26.07.3 fixes the problem. See [Troubleshoot installation and upgrade](/docs/privilegesecure/26_07/install/troubleshoot-installation).
+Privilege Secure creates two default activity groups: **Domain Administrator Access** and **Local Administrator Access**. If you upgrade from a release earlier than 26.07.3, don't delete these groups and then create new groups with the same names. The upgrade then fails with a duplicate key error. Release 26.07.3 fixes the problem. See [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md).
 
 ## Upgrade the application server
 
@@ -62,7 +62,7 @@ Privilege Secure creates two default activity groups: **Domain Administrator Acc
 6. When the installer finishes, click **OK** to restart the server.
 7. Clear the browser cache on the computers that use the Privilege Secure Console.
 8. Open the console and sign in. The URL is `https://<nps-server>:6500`.
-9. Check the **Service Nodes** page. If a node is offline, run **Register Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url).
+9. Check the **Service Nodes** page. If a node is offline, run **Register Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 {/* TODO screenshot: the Setup Launcher in its upgrade state, with the Netwrix Privilege Secure Upgrade button visible. */}
 
@@ -93,7 +93,7 @@ Keep these points in mind:
 - The launcher shows the **Estimated Required Space**, which equals the size of the PostgreSQL 12 data folder. If the drive for the new data has less free space than that, the launcher shows "requires at least `<size>` free. Found `<size>` available. Migration blocked." and stops.
 - Set the Windows regional format to **English (United States)** before you start. Otherwise the migration fails with the message "Locale is not supported by the target database".
 - The migration disables the PostgreSQL 12 service but doesn't uninstall PostgreSQL 12 or remove its data.
-- Migration logs are in `C:\ProgramData\Stealthbits\PAM\Log`. See [Troubleshoot installation and upgrade](/docs/privilegesecure/26_07/install/troubleshoot-installation).
+- Migration logs are in `C:\ProgramData\Stealthbits\PAM\Log`. See [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md).
 
 {/* TODO verify: the exact button labels and the Yes/OK prompt wording on a PostgreSQL 12 host. The labels come from the Setup Launcher resources in the code. */}
 
@@ -115,7 +115,7 @@ A scheduled Active Directory (AD) sync can show a **Failed** status after an upg
 2. Change the sync schedule time, and click **Save**.
 3. Change the schedule back to the original time, and click **Save**.
 
-See [Active Directory domains](/docs/privilegesecure/26_07/resources/domains).
+See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md).
 
 {/* TODO verify: the status label after the reset and whether a manual Sync is needed. */}
 
@@ -127,10 +127,10 @@ The uninstall during an upgrade or removal can leave the Host Scan and Scheduler
 
 ## Upgrade the Remote Access Gateway separately
 
-The Remote Access Gateway uses its own installer, so the application server upgrade doesn't upgrade it. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26_07/remote-access-gateway/install/upgrade).
+The Remote Access Gateway uses its own installer, so the application server upgrade doesn't upgrade it. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/install/upgrade.md).
 
 ## Related topics
 
-- [Install the application server](/docs/privilegesecure/26_07/install/install-application-server)
-- [Troubleshoot installation and upgrade](/docs/privilegesecure/26_07/install/troubleshoot-installation)
-- [High availability options](/docs/privilegesecure/26_07/install/high-availability)
+- [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md)
+- [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md)
+- [High availability options](/docs/privilegesecure/26.07/install/high-availability.md)

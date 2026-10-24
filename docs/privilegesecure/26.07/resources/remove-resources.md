@@ -38,9 +38,9 @@ A confirmation window opens. Confirm to remove the resource.
 
 ## Remove a resource from a resource group
 
-Removing a resource from a resource group doesn't remove it from Privilege Secure. See [Resource groups](/docs/privilegesecure/26_07/resources/resource-groups).
+Removing a resource from a resource group doesn't remove it from Privilege Secure. See [Resource groups](/docs/privilegesecure/26.07/resources/resource-groups.md).
 
 ## Related topics
 
-- [Resources](/docs/privilegesecure/26_07/resources/overview)
-- [Add servers](/docs/privilegesecure/26_07/resources/add-resources)
+- [Resources](/docs/privilegesecure/26.07/resources/overview.md)
+- [Add servers](/docs/privilegesecure/26.07/resources/add-resources.md)

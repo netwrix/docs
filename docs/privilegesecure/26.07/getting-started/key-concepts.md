@@ -23,7 +23,7 @@ An access policy connects users to resources and runs activities to make that co
 
 A user must belong to an access policy to create a session. When a request names a policy, Privilege Secure uses that policy. Otherwise, it uses the first matching policy in alphabetical order by name.
 
-See [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview).
+See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
 ## Activities
 
@@ -43,7 +43,7 @@ The **Activity Type** field offers three values:
 
 Credential Release and File Release are the activities that give users a credential or a file from a vault. They belong to credential-based policies and secret vaults, and the console doesn't offer them in the **Activity Type** list. {/* TODO verify: Credential Release / File Release surface */}
 
-See [Activities](/docs/privilegesecure/26_07/configuration/activities).
+See [Activities](/docs/privilegesecure/26.07/configuration/activities/activities.md).
 
 ## Login accounts
 
@@ -57,7 +57,7 @@ The user who signs in to Privilege Secure isn't always the account that signs in
 | Resource | The resource's own account. The console shows this option disabled. |
 | Vault | A managed account from a vault connector, such as CyberArk, HashiCorp, LAPS, Password Secure, or the Bring Your Own Vault (BYOV) connector. |
 
-An activity token is the basis of just-in-time access. When the activity has **Create Account** and **Delete After Use** selected, the account is created for the session and removed when it ends, so no standing privileged account remains between sessions. See [Vault connectors](/docs/privilegesecure/26_07/integrations/vaults/vault-connectors) for BYOV.
+An activity token is the basis of just-in-time access. When the activity has **Create Account** and **Delete After Use** selected, the account is created for the session and removed when it ends, so no standing privileged account remains between sessions. See [Vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md) for BYOV.
 
 ## Resources
 
@@ -70,11 +70,11 @@ A resource is a system that users reach through Privilege Secure. Resource types
 - Secret vault
 - Database
 
-Each resource has a platform that sets its password complexity and schedules. Privilege Secure connects to a resource with a service account. You can add resources by hand or import them from Active Directory or a CSV file. See [Resources](/docs/privilegesecure/26_07/resources/overview).
+Each resource has a platform that sets its password complexity and schedules. Privilege Secure connects to a resource with a service account. You can add resources by hand or import them from Active Directory or a CSV file. See [Resources](/docs/privilegesecure/26.07/resources/overview.md).
 
 ## Connection profiles
 
-A connection profile sets how users connect. It controls the session length, whether users can extend a session, command restrictions, how Privilege Secure handles credentials, and the approval workflow. Each access policy uses one connection profile. See [Connection profiles](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles).
+A connection profile sets how users connect. It controls the session length, whether users can extend a session, command restrictions, how Privilege Secure handles credentials, and the approval workflow. Each access policy uses one connection profile. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ## Sessions
 
@@ -93,7 +93,7 @@ A session is a time-limited grant of access. It is the unit of work for users. A
 
 {/* TODO verify: console labels for session statuses */}
 
-The **Dashboard** page shows sessions as Active, Scheduled, Approvals, and Historical. See [Dashboard](/docs/privilegesecure/26_07/admin/sessions/dashboard).
+The **Dashboard** page shows sessions as Active, Scheduled, Approvals, and Historical. See [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
 ## Resource-based and credential-release sessions
 
@@ -105,7 +105,7 @@ The two session types treat the login account differently.
 
 {/* TODO verify: autofill and recording limits of a credential-release session that uses a connection profile with Show Password enabled */}
 
-See [Manage credentials](/docs/privilegesecure/26_07/admin/credentials/manage-credentials).
+See [Manage credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
 
 ## Roles
 
@@ -118,11 +118,11 @@ Privilege Secure has four built-in roles:
 | Reviewers | Review access in access certifications. |
 | Auditors | View historical sessions of other users. Permissions add live session viewing, session termination and locking, reporting, and read-only access to the admin pages. |
 
-You can also create custom roles. A custom role has a target of Access Policies, Credentials, or Auditors, and it applies only to the entities you assign. See [Roles](/docs/privilegesecure/26_07/admin/roles).
+You can also create custom roles. A custom role has a target of Access Policies, Credentials, or Auditors, and it applies only to the entities you assign. See [Roles](/docs/privilegesecure/26.07/admin/roles/roles.md).
 
-Approver isn't a role. The approvers for a session are the users and groups that a tier of the approval workflow names. See [Configure approval workflows](/docs/privilegesecure/26_07/configuration/access-policies/approval-workflows).
+Approver isn't a role. The approvers for a session are the users and groups that a tier of the approval workflow names. See [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
 
 ## Next steps
 
-- [Architecture and components](/docs/privilegesecure/26_07/getting-started/architecture)
-- [Quick start](/docs/privilegesecure/26_07/getting-started/quick-start)
+- [Architecture and components](/docs/privilegesecure/26.07/getting-started/architecture.md)
+- [Quick start](/docs/privilegesecure/26.07/getting-started/quick-start.md)

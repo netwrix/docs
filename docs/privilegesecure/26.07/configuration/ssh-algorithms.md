@@ -29,7 +29,7 @@ The default file locations are:
 
 {/* TODO verify: confirm both file locations on a 26.07.3 install. The paths come from the 26.03 page and the 26.07.3 installer sources. */}
 
-Edit each copy of each file on every server that runs the component. That includes remote servers that run an Action Service, a Host Scan Service, or a Proxy Service. See [Install services on additional servers](/docs/privilegesecure/26_07/install/additional-services) and [Install a proxy service on another server](/docs/privilegesecure/26_07/install/remote-proxy).
+Edit each copy of each file on every server that runs the component. That includes remote servers that run an Action Service, a Host Scan Service, or a Proxy Service. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md) and [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
 
 From 26.07.3, the PowerShell SSH actions use the native Privilege Secure SSH client, so they also read `sbpam_sshclient.json`.
 
@@ -126,5 +126,5 @@ If a session or action fails with the error "no common algorithm for key exchang
 
 ## Related topics
 
-- [Security hardening checklist](/docs/privilegesecure/26_07/configuration/security-hardening)
+- [Security hardening checklist](/docs/privilegesecure/26.07/configuration/security-hardening.md)
 - [Invoke a desktop SSH client automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically)

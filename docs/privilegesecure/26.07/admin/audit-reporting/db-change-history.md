@@ -24,7 +24,7 @@ To open it, select **Auditing & Reporting** > **DB Change History**.
 
 The toolbar also shows the number of matching changes, abbreviated for large counts (for example, 4.3k).
 
-The default range here is 7 days. The [Activity log](/docs/privilegesecure/26_07/admin/audit-reporting/activity-log) defaults to 30 days.
+The default range here is 7 days. The [Activity log](/docs/privilegesecure/26.07/admin/audit-reporting/activity-log.md) defaults to 30 days.
 
 ## Read the table
 

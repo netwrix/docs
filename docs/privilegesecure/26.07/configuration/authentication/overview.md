@@ -14,9 +14,9 @@ An authentication connector connects Privilege Secure to an external service tha
 
 | Connector Type | Use it to | Configure it |
 |---|---|---|
-| **MFA** | Send a second-factor request to a Remote Authentication Dial-In User Service (RADIUS) server, such as a Duo RADIUS proxy. | [Configure a RADIUS MFA connector](/docs/privilegesecure/26_07/configuration/authentication/radius) |
-| **OpenID Connect** | Sign users in with an OpenID Connect identity provider. | [Configure an OpenID Connect connector](/docs/privilegesecure/26_07/configuration/authentication/openid-connect) |
-| **SAML** | Sign users in with a SAML identity provider. | [Configure a SAML connector](/docs/privilegesecure/26_07/configuration/authentication/saml) |
+| **MFA** | Send a second-factor request to a Remote Authentication Dial-In User Service (RADIUS) server, such as a Duo RADIUS proxy. | [Configure a RADIUS MFA connector](/docs/privilegesecure/26.07/configuration/authentication/radius.md) |
+| **OpenID Connect** | Sign users in with an OpenID Connect identity provider. | [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md) |
+| **SAML** | Sign users in with a SAML identity provider. | [Configure a SAML connector](/docs/privilegesecure/26.07/configuration/authentication/saml.md) |
 
 ## Add an authentication connector
 
@@ -35,7 +35,7 @@ The connector appears in the connector list. To remove a connector, hover over i
 
 ## Assign a connector to users
 
-A connector does nothing until you assign it to users or groups. Select the method on the **Authentication Connector** tab of the user or group. The tab lists **Internal MFA**, which is built in, the seeded **Duo** and **Not Required** connectors, and any connectors that you add. For the choices and the warning about **Not Required**, see [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details#authentication-connector).
+A connector does nothing until you assign it to users or groups. Select the method on the **Authentication Connector** tab of the user or group. The tab lists **Internal MFA**, which is built in, the seeded **Duo** and **Not Required** connectors, and any connectors that you add. For the choices and the warning about **Not Required**, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector).
 
 {/* TODO verify: whether the SAML, OpenID Connect, and MFA connectors that an administrator adds appear as choices on the user's Authentication Connector tab. The lab had only the Duo connector configured. */}
 
@@ -73,4 +73,4 @@ To offer the same identity provider on both the console and the portal, create t
 
 ## Sign in after an OpenID Connect error
 
-In 26.07.3 and later, an OpenID Connect sign-in error no longer signs the user out automatically. The user selects **Sign Out** to leave the error page. See [Configure an OpenID Connect connector](/docs/privilegesecure/26_07/configuration/authentication/openid-connect#sign-out-after-an-error).
+In 26.07.3 and later, an OpenID Connect sign-in error no longer signs the user out automatically. The user selects **Sign Out** to leave the error page. See [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md#sign-out-after-an-error).

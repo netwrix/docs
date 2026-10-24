@@ -8,7 +8,7 @@ sidebar_position: 60
 
 A new Netwrix Privilege Secure for Access Management (Privilege Secure) installation includes a trial license. To move to your purchased license, import the license file on the **About** page of the Privilege Secure Console.
 
-For how licensing works, including what consumes a license, see [Licensing](/docs/privilegesecure/26_07/requirements/licensing).
+For how licensing works, including what consumes a license, see [Licensing](/docs/privilegesecure/26.07/requirements/licensing.md).
 
 ## Before you begin
 
@@ -49,7 +49,7 @@ A failed import reports a generic message, such as "License failed validation ch
 
 ## Expired licenses
 
-Import a valid license file before the trial or subscription license expires. For what happens when a license expires, see [Expired licenses](/docs/privilegesecure/26_07/requirements/licensing#expired-licenses).
+Import a valid license file before the trial or subscription license expires. For what happens when a license expires, see [Expired licenses](/docs/privilegesecure/26.07/requirements/licensing.md#expired-licenses).
 
 ## Import a license from the application server
 

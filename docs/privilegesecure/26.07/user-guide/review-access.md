@@ -12,11 +12,11 @@ An entitlement is the access that an access policy gives a user: a resource or c
 
 ## Before you begin
 
-- You must hold the Reviewer role. A group that holds the role also qualifies. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26_07/admin/roles/assign-roles).
+- You must hold the Reviewer role. A group that holds the role also qualifies. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 - The task must name you as its reviewer. You see only the tasks assigned to you, and only you can review the entitlements of your task.
 - The task must be in the **Ready to Start** or **Incomplete** status. You can't review a task in the **Setup** or **Complete** status.
 
-For how an Administrator creates a task, see [Run an access certification](/docs/privilegesecure/26_07/admin/audit-reporting/access-certification).
+For how an Administrator creates a task, see [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md).
 
 ## Review the entitlements
 
@@ -48,7 +48,7 @@ The **Access Policy** column shows which policy grants each entitlement. This is
 {/* TODO screenshot: the Review Activity Details window showing the Access Policy column. The lab had no access certification with data. */}
 
 :::note
-A denial doesn't remove the user from the access policy. Privilege Secure sets a deny flag on that user, activity, and resource or credential. After you commit the review, a session request for that combination fails with an access denied message. An Administrator can restore the access. See [Run an access certification](/docs/privilegesecure/26_07/admin/audit-reporting/access-certification#what-denial-does).
+A denial doesn't remove the user from the access policy. Privilege Secure sets a deny flag on that user, activity, and resource or credential. After you commit the review, a session request for that combination fails with an access denied message. An Administrator can restore the access. See [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md#what-denial-does).
 :::
 
 ## Save your progress

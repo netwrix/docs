@@ -14,14 +14,14 @@ Onboard a server so that Netwrix Privilege Secure for Access Management (Privile
 | **Import from CSV** | You have a comma-separated values (CSV) list of servers to onboard in one pass. |
 | **Add Manually** | You have a few servers, or servers that aren't in Active Directory. |
 
-Each method has a **Service Account** dropdown in the window footer. Privilege Secure uses that account to scan the servers. Select an account that has the rights it needs on the servers. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts).
+Each method has a **Service Account** dropdown in the window footer. Privilege Secure uses that account to scan the servers. Select an account that has the rights it needs on the servers. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 
 {/* TODO verify: COM 4 reports that a manually added server didn't appear in an access policy until a service account and a platform were set, and that a placeholder service account worked. The root cause is unconfirmed, and it is unclear whether a scan must fail first. Confirm in the lab, then state the requirement here. */}
 
 ## Prerequisites
 
-- A service account that has credentials for the servers. See [Service accounts](/docs/privilegesecure/26_07/configuration/service-accounts).
-- For **Import from AD**, a domain that Privilege Secure has synchronized. See [Active Directory domains](/docs/privilegesecure/26_07/resources/domains).
+- A service account that has credentials for the servers. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
+- For **Import from AD**, a domain that Privilege Secure has synchronized. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md).
 
 ## Import servers from Active Directory
 
@@ -109,9 +109,9 @@ The validation reports these messages for a row:
 
 ## Other ways to add servers
 
-- On the **Computers** tab of a domain, select computers and select **Add as NPS Managed Resource**. See [Active Directory domains](/docs/privilegesecure/26_07/resources/domains).
-- On a resource group that maps to an organizational unit (OU), select **Auto-Onboard** to onboard the computers in the OU. See [Resource groups](/docs/privilegesecure/26_07/resources/resource-groups).
+- On the **Computers** tab of a domain, select computers and select **Add as NPS Managed Resource**. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md).
+- On a resource group that maps to an organizational unit (OU), select **Auto-Onboard** to onboard the computers in the OU. See [Resource groups](/docs/privilegesecure/26.07/resources/resource-groups.md).
 
 ## Next steps
 
-After you onboard a server, open it to check that **Platform** and **Service Account** are set, and to check its ports and certificate trust settings. See [Server details](/docs/privilegesecure/26_07/resources/servers). Add the server to an access policy so users can request sessions on it. See [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview).
+After you onboard a server, open it to check that **Platform** and **Service Account** are set, and to check its ports and certificate trust settings. See [Server details](/docs/privilegesecure/26.07/resources/servers.md). Add the server to an access policy so users can request sessions on it. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).

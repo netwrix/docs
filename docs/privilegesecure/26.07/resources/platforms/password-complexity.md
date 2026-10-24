@@ -85,9 +85,9 @@ A new policy has no effect until a platform uses it.
 
 {/* TODO verify: the Save and Cancel buttons on a platform. The 26.03 pages say they appear when you change a setting. The 26.07 lab showed no Save button on existing platforms. */}
 
-Select the arrow next to **Password Length** to show the rules of the selected policy. See [Platforms](/docs/privilegesecure/26_07/resources/platforms).
+Select the arrow next to **Password Length** to show the rules of the selected policy. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
 ## Related topics
 
-- [Platforms](/docs/privilegesecure/26_07/resources/platforms)
-- [Schedule policies](/docs/privilegesecure/26_07/resources/platforms/schedule-policies)
+- [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md)
+- [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md)

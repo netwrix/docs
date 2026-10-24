@@ -10,7 +10,7 @@ The **Replay Viewer** plays back a recorded session. Use it to review what a use
 
 ## Before you begin
 
-A session has a recording only when the [connection profile](/docs/privilegesecure/26_07/configuration/access-policies/connection-profiles) on its access policy has **Record Proxy Session** selected. See [Session recording](/docs/privilegesecure/26_07/admin/sessions/session-recording) for what is recorded and for how long recordings are kept.
+A session has a recording only when the [connection profile](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md) on its access policy has **Record Proxy Session** selected. See [Session recording](/docs/privilegesecure/26.07/admin/sessions/session-recording.md) for what is recorded and for how long recordings are kept.
 
 These people can replay sessions:
 
@@ -21,7 +21,7 @@ Users of the Remote Access Gateway portal can't replay recordings. View recordin
 
 ## Open a replay
 
-1. Open the **Historical** tile. See [Review historical sessions](/docs/privilegesecure/26_07/admin/sessions/historical-sessions).
+1. Open the **Historical** tile. See [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md).
 2. Find the session. Use the **Recording data** filter to narrow the list.
 3. Select the recording to open the Replay Viewer.
 
@@ -77,7 +77,7 @@ For example, to review what an administrator typed on `<server-name>` yesterday,
 | **Ended** | When the activity ended |
 | **Duration** | How long the activity ran, until it reached its scheduled end or a user or administrator canceled it |
 
-RDP and SSH replays also show a timeline of recorded events in the pane to the left of the player. The timeline starts with "Recording started." and includes keystrokes. When the Remote Desktop Monitor service runs on the target host, the RDP timeline also lists Windows events. See [Install the Remote Desktop Monitor](/docs/privilegesecure/26_07/install/rdp-monitor).
+RDP and SSH replays also show a timeline of recorded events in the pane to the left of the player. The timeline starts with "Recording started." and includes keystrokes. When the Remote Desktop Monitor service runs on the target host, the RDP timeline also lists Windows events. See [Install the Remote Desktop Monitor](/docs/privilegesecure/26.07/install/rdp-monitor.md).
 
 :::note
 When a user types at a password prompt during an SSH session, the replay hides the keystrokes.
@@ -85,6 +85,6 @@ When a user types at a password prompt during an SSH session, the replay hides t
 
 ## Related topics
 
-- [Watch, lock, or terminate a live session](/docs/privilegesecure/26_07/admin/sessions/live-session-viewer)
-- [Session recording](/docs/privilegesecure/26_07/admin/sessions/session-recording)
-- [View session logs](/docs/privilegesecure/26_07/admin/sessions/session-logs)
+- [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md)
+- [Session recording](/docs/privilegesecure/26.07/admin/sessions/session-recording.md)
+- [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md)

@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Install services on additional servers
 
-The application server runs the Action, Host Scan, Scheduler, Email, and SIEM services. You can also install each one on another server to run work from different locations in your organization. Each remote server is a service node. For host requirements, see [Additional service node and proxy server requirements](/docs/privilegesecure/26_07/requirements/service-nodes).
+The application server runs the Action, Host Scan, Scheduler, Email, and SIEM services. You can also install each one on another server to run work from different locations in your organization. Each remote server is a service node. For host requirements, see [Additional service node and proxy server requirements](/docs/privilegesecure/26.07/requirements/service-nodes.md).
 
 The procedure is the same for every service:
 
@@ -16,10 +16,10 @@ The procedure is the same for every service:
 
 ## Before you begin
 
-- Install and register the Proxy Service on the remote server first. See [Install a proxy service on another server](/docs/privilegesecure/26_07/install/remote-proxy).
+- Install and register the Proxy Service on the remote server first. See [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
 - To install the Host Scan Service, install the Action Service on the same server first. The Host Scan Service depends on the Action Service worker.
 - Set the antivirus exclusions on the remote server. See [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software).
-- Find the installer in the **Extras** folder of the product zip file. See [Installation package contents](/docs/privilegesecure/26_07/install/components).
+- Find the installer in the **Extras** folder of the product zip file. See [Installation package contents](/docs/privilegesecure/26.07/install/components.md).
 
 {/* TODO verify: whether the Action Service installer also installs the Proxy Service. The 26.03 page said it did, but the 26.07 bundle for the Action Service chains only the .NET Hosting Bundle and the Action Service package. */}
 
@@ -73,7 +73,7 @@ The remote service must use the same encryption keys as the application server.
 
 {/* TODO verify: that the KeyTools folder and SbPAM.RotateKey.exe exist on a remote service host. The code ships RotateKey only in the main NPS.exe bundle. */}
 
-For more about key management, see [Encryption key management](/docs/privilegesecure/26_07/configuration/encryption-keys).
+For more about key management, see [Encryption key management](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md).
 
 ## Register the service
 
@@ -108,4 +108,4 @@ The command prompt shows whether registration succeeded.
 
 ## Verify the service
 
-Open the Service Nodes page in the console and confirm the service node is online. See [Monitor service nodes](/docs/privilegesecure/26_07/admin/service-nodes).
+Open the Service Nodes page in the console and confirm the service node is online. See [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).

@@ -10,10 +10,10 @@ A schedule policy in Netwrix Privilege Secure for Access Management (Privilege S
 
 Select a schedule policy in these places:
 
-- **Platforms**: Each platform has schedules for its resources, such as the scheduled change policy (password rotation), the scan schedule, and the verification schedule. See [Platforms](/docs/privilegesecure/26_07/resources/platforms).
-- **Protection policies**: A protection policy runs on the **Protection Policy Schedule** of each resource's platform. See [Protection policies](/docs/privilegesecure/26_07/resources/protection-policies).
-- **Credential policy overrides**: An override sets scan, protect, rotate, and verify schedules for specific credentials or resources. See [Credential policy overrides](/docs/privilegesecure/26_07/admin/credentials/policy-overrides).
-- **Report subscriptions**: A subscription emails a report on a schedule. See [Reports](/docs/privilegesecure/26_07/admin/audit-reporting/reports).
+- **Platforms**: Each platform has schedules for its resources, such as the scheduled change policy (password rotation), the scan schedule, and the verification schedule. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
+- **Protection policies**: A protection policy runs on the **Protection Policy Schedule** of each resource's platform. See [Protection policies](/docs/privilegesecure/26.07/resources/protection-policies.md).
+- **Credential policy overrides**: An override sets scan, protect, rotate, and verify schedules for specific credentials or resources. See [Credential policy overrides](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md).
+- **Report subscriptions**: A subscription emails a report on a schedule. See [Reports](/docs/privilegesecure/26.07/admin/audit-reporting/reports.md).
 
 {/* TODO verify: that a schedule policy you create appears in the Subscription Schedule list of a report subscription. admin/audit-reporting/reports.md marks the same claim as unverified. */}
 
@@ -84,5 +84,5 @@ Tasks that use the policy run on the new schedule.
 
 ## Related topics
 
-- [Platforms](/docs/privilegesecure/26_07/resources/platforms)
-- [Scheduled tasks](/docs/privilegesecure/26_07/admin/service-nodes/scheduled-tasks)
+- [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md)
+- [Scheduled tasks](/docs/privilegesecure/26.07/admin/service-nodes/scheduled-tasks.md)

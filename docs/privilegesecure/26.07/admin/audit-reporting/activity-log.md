@@ -45,7 +45,7 @@ The **Summary for the date range** table combines all sessions in the range.
 
 ## Top 5 users for the date range
 
-The **Top 5 users for the date range** table lists the users with the most sessions. It has the **USER**, **SESSIONS**, **TOTAL DURATION**, **AVERAGE**, **MINIMUM**, and **MAXIMUM** columns, calculated per user. Click a user to open the user's details. See [User and group details](/docs/privilegesecure/26_07/admin/users-groups/user-details).
+The **Top 5 users for the date range** table lists the users with the most sessions. It has the **USER**, **SESSIONS**, **TOTAL DURATION**, **AVERAGE**, **MINIMUM**, and **MAXIMUM** columns, calculated per user. Click a user to open the user's details. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ## Sessions by all users
 
@@ -56,8 +56,8 @@ The sessions table is titled with the number of sessions, for example "12 sessio
 | **SESSION USER** | The user who ran the session. |
 | **HOST** | The resource the session used. |
 | **LOGIN ACCOUNT** | The account the user signed in with on the resource. |
-| **POLICY** | The access policy that granted the session. See [Access policies](/docs/privilegesecure/26_07/configuration/access-policies/overview). |
-| **ACTIVITY** | The activity the session ran. See [Activities](/docs/privilegesecure/26_07/configuration/activities). |
+| **POLICY** | The access policy that granted the session. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md). |
+| **ACTIVITY** | The activity the session ran. See [Activities](/docs/privilegesecure/26.07/configuration/activities/activities.md). |
 | **START** | When the session started. |
 | **DURATION** | How long the session ran. |
 | **END** | When the session ended. |

@@ -20,13 +20,13 @@ Several components store the console URL. Each one must match the address that u
 
 | Component | Where the URL is stored |
 | --- | --- |
-| Action, Email, Proxy, Scheduler, SIEM, and Host Scan services | **NPS Rest URL** in **System Settings** > **Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26_07/configuration/system-settings/services-url). |
-| Approval and report emails | **Website URL** in **System Settings** > **Email**. See [Configure email notifications](/docs/privilegesecure/26_07/configuration/system-settings/email). |
-| OpenID Connect and SAML sign-in | The callback (redirect) URI registered with the identity provider. See [Configure a SAML connector](/docs/privilegesecure/26_07/configuration/authentication/saml) and [Configure an OpenID Connect connector](/docs/privilegesecure/26_07/configuration/authentication/openid-connect). |
-| Remote Access Gateway | The `NPS:Uri` setting in the gateway configuration. See [Remote Access Gateway requirements](/docs/privilegesecure/26_07/remote-access-gateway/requirements). |
-| High availability manager | The console port that the manager uses to reach each server node. See [High availability options](/docs/privilegesecure/26_07/install/high-availability). |
+| Action, Email, Proxy, Scheduler, SIEM, and Host Scan services | **NPS Rest URL** in **System Settings** > **Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md). |
+| Approval and report emails | **Website URL** in **System Settings** > **Email**. See [Configure email notifications](/docs/privilegesecure/26.07/configuration/system-settings/email.md). |
+| OpenID Connect and SAML sign-in | The callback (redirect) URI registered with the identity provider. See [Configure a SAML connector](/docs/privilegesecure/26.07/configuration/authentication/saml.md) and [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md). |
+| Remote Access Gateway | The `NPS:Uri` setting in the gateway configuration. See [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md). |
+| High availability manager | The console port that the manager uses to reach each server node. See [High availability options](/docs/privilegesecure/26.07/install/high-availability.md). |
 | Desktop shortcut | The shortcut that the installer creates opens the console URL on port 6500. |
-| Service nodes on other servers | The URL that you enter when you register a remote service. See [Install services on additional servers](/docs/privilegesecure/26_07/install/additional-services). |
+| Service nodes on other servers | The URL that you enter when you register a remote service. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md). |
 | Browser extension | The server URL that each user enters when signing in to the extension. |
 
 ## Application server
@@ -94,7 +94,7 @@ Allow the port only between the application server and the database host when th
 
 ## Service nodes and proxy servers
 
-Antivirus exclusions apply on every server. See [Additional service node and proxy server requirements](/docs/privilegesecure/26_07/requirements/service-nodes).
+Antivirus exclusions apply on every server. See [Additional service node and proxy server requirements](/docs/privilegesecure/26.07/requirements/service-nodes.md).
 
 | Port | Protocol | Direction | Purpose |
 | --- | --- | --- | --- |
@@ -127,4 +127,4 @@ The gateway installer creates a Windows Firewall rule named "NPS Gateway Web Ser
 
 {/* TODO verify: whether customers open 443, 80, and 4822 manually, or rely on existing firewall policy. */}
 
-For the hosts, software, and certificates that the gateway needs, see [Remote Access Gateway requirements](/docs/privilegesecure/26_07/remote-access-gateway/requirements).
+For the hosts, software, and certificates that the gateway needs, see [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md).

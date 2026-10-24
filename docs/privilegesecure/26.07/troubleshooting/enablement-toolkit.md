@@ -10,7 +10,7 @@ The Enablement Toolkit is a Windows application with a graphical interface for c
 
 ## Prerequisites
 
-- The Privilege Secure installer package. The toolkit is in the `Extras` folder. See [Installation components and methods](/docs/privilegesecure/26_07/install/components).
+- The Privilege Secure installer package. The toolkit is in the `Extras` folder. See [Installation components and methods](/docs/privilegesecure/26.07/install/components.md).
 - A local administrator account on the server where you run the toolkit.
 
 {/* TODO verify: the exact Enablement Toolkit .exe file name in the 26.07.3 Extras folder */}
@@ -84,5 +84,5 @@ The export includes logs and configuration files. Send it only to [Netwrix Suppo
 
 ## Related topics
 
-- [Troubleshooting](/docs/privilegesecure/26_07/troubleshooting/overview)
-- [Log files](/docs/privilegesecure/26_07/admin/audit-reporting/log-files)
+- [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md)
+- [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md)
