@@ -27,7 +27,9 @@ To change the user name format that a Requester activity uses, set **Requester L
 :::
 
 :::warning
-A **Custom** requester login format that uses a trim-based template can fail for Linux and AIX resources with the error "Unable to find custom format user" (PSAM-1325). No fix ships in 26.07.3. Use one of the standard requester login formats on those platforms.
+If a **Custom** requester login format with a trim-based template fails on Linux or AIX resources with the error "Unable to find custom format user," use a standard requester login format and contact Netwrix Support.
+
+{/* TODO verify: Support to confirm this as a known issue and give the supported workaround before it is listed on the Known issues page. */}
 :::
 
 ## Variables

@@ -44,9 +44,7 @@ Back up `nginx.conf` before you upgrade the portal. Before 26.07.3, the portal i
    Get-NetTCPConnection -State Listen -LocalPort 80,443
    ```
 
-In 26.07.0 and later, the portal service no longer fails to start after an upgrade (447423).
-
-{/* TODO verify: the wording and scope of the 447423 portal start-up fix. */}
+{/* TODO verify: whether to document the portal start-up fix in 26.07.0 and later. It is a start-up registration fix that is not specific to upgrades, and the version it first shipped in is disputed. If confirmed, it belongs in the release notes, not in an upgrade step. */}
 
 {/* TODO verify: the 26.07.3 installer keeps nginx.conf, and whether the service needs a restart after you restore it. */}
 

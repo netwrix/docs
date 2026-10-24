@@ -65,7 +65,7 @@ An activity targets one platform. An activity group collects activities so that 
 Privilege Secure includes two activity groups, **Domain Administrator Access** and **Local Administrator Access**.
 
 :::warning
-Before you upgrade from a release earlier than 26.07.3, don't delete and re-create the **Domain Administrator Access** or **Local Administrator Access** activity group (PSAM-653). See [Upgrade Privilege Secure](../../install/upgrade.md).
+Before you upgrade from a release earlier than 26.07.3, don't delete and re-create the **Domain Administrator Access** or **Local Administrator Access** activity group. See [Upgrade Privilege Secure](../../install/upgrade.md).
 :::
 
 ## Related topics
