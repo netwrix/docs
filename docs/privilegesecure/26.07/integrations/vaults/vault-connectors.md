@@ -24,7 +24,7 @@ The Action Service on the Privilege Secure service node calls the vault during t
 
 {/* TODO verify: the network path and ports between the service node and each vault, and whether any connector runs from another component. */}
 
-{/* TODO screenshot: redraw the 26.03 BYOV and LAPS topology diagrams (install/byovdatabase.png, byovlapsdatabase.png) for 26.07 */}
+![Vault connector flow. The Action service on the Privilege Secure service node uses a vault connector to check out a credential from the vault at session start and check it back in at session end. The vault can be CyberArk, HashiCorp, LAPS, Password Secure, or a BYOV script source.](/images/privilegesecure/26.07/integrations/vault-connector-check-out-check-in.webp)
 
 ## Available connectors
 

@@ -22,7 +22,7 @@ A session follows these stages:
 
 The account that the user signs in with on the target system can be the user's own account, an account Privilege Secure manages, or an ephemeral account that Privilege Secure creates for one session. See [Key concepts](/docs/privilegesecure/26.07/getting-started/key-concepts.md) for the login account types.
 
-{/* TODO screenshot: diagram of the session flow from request through approval, pre-session actions, session, and post-session actions */}
+![Session flow in five steps. The user requests an activity on a resource, approvers approve or deny if the connection profile requires it, pre-session actions run, the user works in a session that can be recorded, and post-session actions run.](/images/privilegesecure/26.07/getting-started/session-flow.webp)
 
 ## What you can do with Privilege Secure
 

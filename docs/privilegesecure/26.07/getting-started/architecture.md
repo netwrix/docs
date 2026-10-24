@@ -35,7 +35,7 @@ Open the console at `https://<nps-server>:6500`. See [Ports](/docs/privilegesecu
 
 ## Data flow
 
-{/* TODO screenshot: network and data-flow diagram showing the browser, web service (6500), proxy (4489 and 4422), Action service (5985, 5986, 22), service mesh (6520, 6523, 6524), and the Remote Access Gateway */}
+![Network diagram. A user browser reaches the web service on port 6500. The Remote Access Gateway reaches the web service on 6500. An RDP or SSH client reaches the proxy on 4489 or 4422. Remote services join the web service through the service mesh on 6520, 6523, and 6524. The action service reaches targets on 5985, 5986, and 22, and the proxy reaches them on 3389 and 22.](/images/privilegesecure/26.07/getting-started/architecture-network-data-flow.webp)
 
 1. A user opens the console on the web service at TCP 6500.
 2. The user starts a session. The Action service runs the pre-session actions on the resource.
@@ -59,7 +59,7 @@ A browser session follows this path:
 3. The Gateway calls the web service on TCP 6500 and opens a tunnel to guacd on TCP 4822.
 4. guacd connects to the Proxy service on TCP 4489 (RDP) or TCP 4422 (SSH). The proxy connects to the resource, so recording and command restrictions still apply.
 
-{/* TODO screenshot: diagram of the Remote Access Gateway data path from browser to Portal (443), Gateway (6550), web service (6500), guacd (4822), proxy (4489 and 4422), and target */}
+![Remote Access Gateway data path. A user browser connects to the Portal in the DMZ on port 443. The Portal passes requests to the Gateway on 6550. The Gateway calls the web service on 6500 and connects to guacd on 4822. guacd connects to the proxy service on 4489 for RDP or 4422 for SSH, and the proxy connects to the target on 3389 or 22.](/images/privilegesecure/26.07/getting-started/remote-access-gateway-data-path.webp)
 
 See [Remote Access Gateway overview](/docs/privilegesecure/26.07/remote-access-gateway/overview.md).
 
@@ -69,13 +69,13 @@ See [Remote Access Gateway overview](/docs/privilegesecure/26.07/remote-access-g
 
 All components install on one Windows server. This topology suits a proof of concept or a test.
 
-{/* TODO screenshot: diagram of the single-server deployment */}
+![Single-server deployment. All components run on one Windows server: web service, database, license service, message bus, Host Scan, Scheduler, Action, Email, SIEM, and Proxy services. A user browser reaches the web service on port 6500, and the Action and Proxy services reach targets on 5985, 5986, 22, 3389, and 22.](/images/privilegesecure/26.07/getting-started/single-server-deployment.webp)
 
 ### Server with remote services
 
 The Proxy and Action services use resources in proportion to load. Install them on additional hosts for scalability, redundancy, or network segmentation. You can then disable the services on the application server. Remote services reach the web service through the service mesh.
 
-{/* TODO screenshot: diagram of the distributed architecture with remote Proxy and Action services */}
+![Distributed deployment. The application server holds the web service, service mesh, and database. A remote server runs the Proxy and Action services and joins the service mesh on ports 6520, 6523, and 6524. The remote services reach targets on 3389, 22, 5985, 5986, and 22.](/images/privilegesecure/26.07/getting-started/distributed-deployment-remote-services.webp)
 
 See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md) and [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md). {/* TODO verify: supported host operating systems for a remote Proxy service */}
 
@@ -83,19 +83,19 @@ See [Install services on additional servers](/docs/privilegesecure/26.07/install
 
 Two identical servers run all components. The databases replicate from the primary to the standby. When the primary is unavailable, an administrator starts the failover manually. See [High availability options](/docs/privilegesecure/26.07/install/high-availability.md). This topology requires PostgreSQL and works with the bundled database. It is the simplest high-availability option.
 
-{/* TODO screenshot: diagram of the active-passive database deployment */}
+![Active-passive database deployment. A primary server and an identical standby server each run all components and a PostgreSQL database. The primary database replicates to the standby, and an administrator starts the failover manually when the primary is unavailable.](/images/privilegesecure/26.07/getting-started/active-passive-database-deployment.webp)
 
 ### Active-active database
 
 Several application servers share one database. Failover needs no manual step. This topology works with PostgreSQL and SQL Server. Setup is more complex, and you need an additional server for the database.
 
-{/* TODO screenshot: diagram of the active-active database deployment */}
+![Active-active database deployment. A user browser reaches either of two application servers on port 6500, and both application servers share one database on a separate database server, which runs PostgreSQL or SQL Server. Failover needs no manual step.](/images/privilegesecure/26.07/getting-started/active-active-database-deployment.webp)
 
 ### Cloud database
 
 A cloud database provides built-in high availability and automatic scaling, which suits an active-active deployment. Examples are Amazon Aurora PostgreSQL, Amazon RDS for SQL Server, and the Azure database services for PostgreSQL and SQL Server. See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) for supported versions. {/* TODO verify: supported cloud database services and versions */}
 
-{/* TODO screenshot: diagram of the cloud database deployment */}
+![Cloud database deployment. Two application servers share a cloud database that provides built-in high availability and automatic scaling.](/images/privilegesecure/26.07/getting-started/cloud-database-deployment.webp)
 
 For setup details, see [High availability options](/docs/privilegesecure/26.07/install/high-availability.md).
 

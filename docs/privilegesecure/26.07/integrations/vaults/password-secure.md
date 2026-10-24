@@ -8,7 +8,7 @@ sidebar_position: 60
 
 The Password Secure connector lets Netwrix Privilege Secure check out passwords that are stored in Netwrix Password Secure. Activities sign in with accounts whose passwords Password Secure holds, so the passwords don't have to be copied into Privilege Secure. For how vault connectors work in general, see [Third-party vault connectors](vault-connectors.md).
 
-{/* TODO screenshot: redraw the 26.03 Password Secure vault diagram (ps-vault-diagram.webp) for 26.07 */}
+![Password Secure vault flow. The Password Secure connector on the Privilege Secure server uses an API key to check out passwords through the Password Secure Web Application on a separate server, where AD User entries hold the passwords.](/images/privilegesecure/26.07/integrations/password-secure-vault-connector.webp)
 
 The **Password Secure** connector template is controlled by the `password_secure` feature flag. The flag is on by default, so the template appears in the **Connector Template** list.
 
