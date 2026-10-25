@@ -8,7 +8,9 @@ sidebar_position: 20
 
 Onboard an Active Directory (AD) user or group to give it access to the console. The **Add Users & Groups** window lists the accounts that the AD sync found. Members of an onboarded group sign in with their own accounts.
 
-{/* TODO verify: whether members of an onboarded group appear in the group's Members tab and Users & Groups list automatically */}
+The **Members** tab of an onboarded group lists the members of the group. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#members).
+
+{/* TODO verify: whether a member who has never signed in appears in the **Users & Groups** list without being onboarded separately. The lab group members already appear in the list. */}
 
 ## Prerequisites
 

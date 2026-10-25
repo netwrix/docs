@@ -83,9 +83,11 @@ The **Activity Sessions** source has no **Access Policy** attribute.
 
 The **Timeframe** list offers **Last Hour**, **Last 4 Hours**, **Last 8 Hours**, **Last 24 Hours**, **Last 5 Days**, **Last 7 Days**, **Last 14 Days**, **Last 30 Days**, and **Custom**. **Custom** shows a **Start date** and an **End date** picker.
 
-A new report defaults to **Last 7 Days**. A predefined report defaults to **Last 30 Days**.
+A new report defaults to **Last 7 Days**. The predefined **Account Password Age**, **All Activity Sessions**, and **Password Rotations** reports default to **Last 30 Days**. The reports in the **Platform Based** folder default to **Last 7 Days**.
 
-{/* TODO verify: the website resource name in the Target column of report output (added in 25.12.3). Run a Website report and confirm the column name */}
+The session reports, including **All Website Sessions**, have a **Target** column.
+
+{/* TODO verify: that the Target column shows the website resource name for a website session (added in 25.12.3). The lab has no website sessions in the last 30 days. */}
 
 ## Customize a report
 

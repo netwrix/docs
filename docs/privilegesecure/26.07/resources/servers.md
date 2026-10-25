@@ -80,7 +80,7 @@ A Windows server has 10 tabs. A Linux server has 7: **Sessions**, **Access Polic
 
 Every tab has a search box, and most have a **Refresh** button. You can sort and resize the columns.
 
-The **Type** filter on the **Services** and **Scheduled Tasks** tabs offers **All**, **Unmanaged**, and **Managed**. On the **Databases** tab, the **Type** filter lists **All** and the database types: PostgreSQL, SQL Server, SQLite, Oracle, and MySQL. {/* TODO verify: whether the filter also lists Unknown (the source enum has Unknown = -1 and the filter doesn't hide negative values). Confirm in the console. */}
+The **Type** filter on the **Services** and **Scheduled Tasks** tabs offers **All**, **Unmanaged**, and **Managed**. On the **Databases** tab, the **Type** filter lists **All**, **Unknown**, **PostgreSQL**, **SQL Server**, **SQLite**, **Oracle**, and **MySQL**.
 
 ### Users tab
 
