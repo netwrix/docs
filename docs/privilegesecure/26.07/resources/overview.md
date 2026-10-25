@@ -49,7 +49,7 @@ The toolbar above the list has these buttons. **Remove**, **Change Platform**, *
 | **Change Service Account** | Sets the service account of the selected resources. |
 | **Scan Resource** | Scans the selected resources. |
 
-{/* TODO verify: what Scan Resource does, which resource types it applies to, and whether it asks for confirmation. The lab didn't run it. The 26.03 page says it scans a host for local users, groups, Windows services, and scheduled tasks and shows a confirmation window. */}
+**Scan Resource** opens the **Scan Resources** window, which lists the first four selected resources, then a count of the rest, and asks "Scan the following resource(s)?". Select **Okay** to start the scans. A scan applies to servers only. Privilege Secure skips the other resource types in the selection. A scan reads the server's local users and groups. On Windows servers, it also reads Windows services and scheduled tasks. If a resource has no platform set, the scan also identifies the platform. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
 ## Columns
 

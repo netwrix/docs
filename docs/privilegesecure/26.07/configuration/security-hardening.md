@@ -18,5 +18,3 @@ After you install Netwrix Privilege Secure, review the settings that control how
 | Leave the API explorer off in production | [Swagger](/docs/privilegesecure/26.07/integrations/api/api-overview.md#swagger) |
 | Keep the Privilege Secure server off the managed domain | [Security Considerations: Non-Domain-Joined Netwrix Privilege Secure Server](/docs/kb/privilegesecure/certificates-and-security/security-considerations-non-domain-joined-netwrix-privilege-secure-server) |
 | Give the SQL Server backend only the permissions it needs | [Least Privilege Model for SQL Server Backend](/docs/kb/privilegesecure/database-and-backend/least-privilege-model-for-sql-server-backend) |
-
-{/* TODO verify: SME sign-off before adding rows for these settings: Jwt:IgnoreIpAddress (defaults to true; false breaks users behind NAT or a load balancer, and the client address comes from an unchecked header), the shipped InsecureSkipVerify defaults, and the Swagger setting name and supported use in production. Account lockout runs at framework defaults and the proxy minimum TLS is fixed, so neither is a row. */}

@@ -20,7 +20,7 @@ How an account rotates depends on its **Managed Type** and its **Method**. The *
 | **Service** | One or more | **Manual** | Rotation starts from **Service Account Details**, because services and scheduled tasks must receive the new password. |
 | **Service** | One or more | **Not Managed** | Privilege Secure has never stored a password. Rotate from **Service Account Details**. |
 
-{/* TODO verify: that a Not Managed Service account becomes Managed with method Manual after its first rotation (26.03 behavior). The lab didn't rotate. */}
+After you rotate a Not Managed Service account from **Service Account Details**, the account is managed. Its method is **Manual**, because any account with dependents shows the method **Manual**.
 
 ## Standard accounts
 
@@ -28,7 +28,9 @@ A Standard account is a local or domain user account, including the managed user
 
 ## Internal accounts
 
-An Internal account is an account that Privilege Secure itself uses, with no dependencies. Internal accounts rotate on the primary domain controller (PDC) of the domain. {/* TODO verify: the 26.07.3 behavior for Internal accounts on the PDC, and what happens when the PDC is unreachable. */}
+An Internal account is an account that Privilege Secure itself uses, with no dependencies. Internal accounts rotate on the primary domain controller (PDC) of the domain. Privilege Secure finds the PDC through the DNS SRV record `_ldap._tcp.pdc._msdcs.<domain>`. If that lookup fails, Privilege Secure records a warning in the rotation job's action log (open it with **View Logs** on the **Events** page) and uses the domain name as the target instead.
+
+{/* TODO verify: what happens when the DNS lookup finds the PDC but the PDC can't be reached. The scripts show no handling specific to that case, and the outcome depends on the environment. */}
 
 To manage an Internal account, see [Manage internal service accounts](/docs/privilegesecure/26.07/admin/credentials/internal-service-accounts.md).
 

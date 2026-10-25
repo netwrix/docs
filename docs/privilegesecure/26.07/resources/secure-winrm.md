@@ -12,9 +12,7 @@ Windows Remote Management (WinRM) is one way Netwrix Privilege Secure for Access
 
 - A Windows server that you onboarded as a resource. See [Add servers](/docs/privilegesecure/26.07/resources/add-resources.md). The **WinRM Config** button appears only on Windows servers.
 - A service account that can reach the server. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
-- For **Push NPS certificate to host**, a certificate on the Privilege Secure server. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
-
-{/* TODO verify: which NPS certificate the Push NPS certificate to host option pushes, and whether the web console certificate page is the right prerequisite link. */}
+- For **Push NPS certificate to host**, a certificate in the Local Computer Personal certificate store of the Privilege Secure server. The certificate must be valid and not expired, and it must allow server authentication. It can be the web console certificate or another certificate. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 
 ## Certificate sources
 
@@ -32,13 +30,14 @@ The **Configure Secure WinRM Connection** window offers three certificate source
 1. Select the name of a Windows server to open its details page.
 1. Select **WinRM Config**. The **Configure Secure WinRM Connection** window opens.
 1. Under **1. Choose certificate source**, select one of the three options.
-1. Under **2. Select a certificate**, enter the thumbprint of the certificate in **Host certificate thumbprint**. This field applies to **Import certificate from host** and **Push NPS certificate to host**.
+1. Under **2. Select a certificate**, the window shows a different control for each source:
+   - For **Import certificate from host**, enter the thumbprint of the certificate on the server in **Host certificate thumbprint**. The thumbprint is required.
+   - For **Push NPS certificate to host**, select a certificate in **NPS certificate thumbprint**. The list shows the valid server-authentication certificates in the Personal store of the Privilege Secure server. A selection is required.
+   - For **Generate a new self-signed certificate**, there is nothing to enter. The window states that the host generates a self-signed certificate and Privilege Secure imports it.
 1. Select **Submit**.
 1. In **System Settings** > **WinRM Options**, set **WinRM HTTP Setting** to **Use Https If Available** or **Use Https Only**. See [Choose HTTP or HTTPS](#choose-http-or-https).
 
-{/* TODO verify: whether Host certificate thumbprint is required for each option, and whether the field is ignored for Generate a new self-signed certificate. */}
-
-{/* TODO: add an example thumbprint value. The sources contain no real thumbprint, and none is invented here. */}
+A certificate thumbprint is 40 hexadecimal characters, for example `0123456789ABCDEF0123456789ABCDEF01234567`. Replace the example with the thumbprint of your certificate.
 
 {/* TODO screenshot: Configure Secure WinRM Connection window with the three certificate sources and the thumbprint box */}
 
@@ -54,7 +53,7 @@ Privilege Secure uses HTTPS only when **WinRM HTTP Setting** is **Use Https If A
 | **Use Https If Available** | Uses HTTPS. |
 | **Use Https Only** | Uses HTTPS. |
 
-{/* TODO verify: the per-resource override of WinRM HTTP Setting (ManagedResource.WinRmHttpSetting): where it appears on the server details page */}
+The server details page has no setting for this. **WinRM HTTP Setting** applies to every server.
 
 The **WinRM Disabled** checkbox on the server details page stops Privilege Secure from using WinRM for that server. See [Server details](/docs/privilegesecure/26.07/resources/servers.md).
 

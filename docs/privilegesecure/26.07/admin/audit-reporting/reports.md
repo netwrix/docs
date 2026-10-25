@@ -49,10 +49,9 @@ The results appear under the filters.
 
 1. Open the report and click **Run Query**.
 1. Click **Download Report**.
+1. In the **Download Report** window, click **Download PDF** or **Download CSV**.
 
-The downloaded file name includes the report name and the time of the download.
-
-{/* TODO verify: how you choose between PDF and CSV when you download (a format prompt, or two buttons). The 26.03 docs say a report downloads as PDF or CSV, but the Download Report button wasn't clicked in the 26.07 lab */}
+Both buttons are unavailable while you have unsaved changes to the filters. The downloaded file name includes the report name and the time of the download.
 
 ## Create a report
 
@@ -72,11 +71,11 @@ For example, to report on Windows sessions only, select the source **Activity Se
 | Source | Reports on |
 |---|---|
 | **Activity Sessions** | Sessions that users ran. Filter attributes are **Domain**, **Platform**, **Activity**, **Target User**, **Target Host**, and **User**. |
-| **Resource Sync** | Resources that synced. |
-| **Password Rotation** | Password rotation events. |
-| **Password Age** | The age of account passwords. |
+| **Resource Sync** | Resources that synced. Filter attributes are **Name**, **Operating System**, **Version**, **IP Address**, and **DnsHostName**. |
+| **Password Rotation** | Password rotation events. Filter attributes are **User**, **Target Resource**, **Change Reason**, and **Results**. |
+| **Password Age** | The age of account passwords. Filter attributes are **Name**, **Password Age**, **Account Name**, **Privilege**, and **Computer**. |
 
-{/* TODO verify: the filter attributes and operator labels for Resource Sync, Password Rotation, and Password Age, and the operator labels for all sources. The 26.03 docs list Version, Name, IP Address, and Operating System for Resource Sync; Target Rotation, Results, Change Reason, and User for Password Rotation; and Account Name, Computer, Password Age, Name, and Privilege for Password Age. The 26.07 lab confirmed only the Activity Sessions attributes */}
+The operators are **Equals**, **Not Equals**, **Contains**, **Not Contains**, **Starts With**, **Ends With**, **Less Than**, and **Greater Than**. Each attribute offers only the operators that fit it. For example, **Domain** and **Platform** offer only **Equals** and **Not Equals**, and **Password Age** offers **Equals**, **Not Equals**, **Less Than**, and **Greater Than**.
 
 The **Activity Sessions** source has no **Access Policy** attribute.
 
@@ -112,9 +111,9 @@ The **Okay** button stays disabled until you select a schedule. Privilege Secure
 
 For example, to receive the `Windows sessions last 7 days` report once a day, select **Every 24 hours**.
 
-{/* TODO verify: that a schedule policy you create under Platforms > Schedule Policies appears in the Subscription Schedule list, as the 26.03 docs state */}
+The **Subscription Schedule** list shows every schedule policy, sorted by name, including any you create under **Platforms** > **Schedule Policies**.
 
-{/* TODO verify: whether the subscription email contains a PDF, a CSV, or both, and whether you can choose. The 26.03 docs describe CSV and PDF checkboxes, but the 26.07 Subscribe dialog shows only the schedule */}
+After you subscribe, the **Subscriptions** tab shows **CSV** and **PDF** check boxes and the current schedule. **Subscribe** becomes **Unsubscribe**. Both check boxes are selected by default, and the email attaches each selected format. Keep at least one selected. The email has the subject `Netwrix Privilege Secure Report`.
 
 The **Subscriptions** tab has these controls:
 

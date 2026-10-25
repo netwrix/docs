@@ -19,7 +19,7 @@ Each run reads these objects from the domain:
 - Group memberships
 - Computers
 
-Privilege Secure doesn't write to your directory during synchronization. {/* TODO verify: that synchronization is read-only against the directory. */}
+Privilege Secure doesn't write to your directory during synchronization.
 
 ## Full and delta synchronization
 
@@ -27,14 +27,10 @@ The first synchronization for a domain is a full synchronization. It reads every
 
 Later synchronizations are delta synchronizations. They read only the objects that changed since the last successful run, so they finish faster on large domains.
 
-- Delta synchronization is part of release 26.07.3.
+- Delta synchronization is part of release 26.07.3. Earlier 26.07 releases, including 26.07.1, read every object on each run.
 - A run that finishes with errors doesn't move the starting point forward. The next run starts again from the last successful point, so no change is skipped.
 
-{/* TODO verify: what customers on 26.07.1 received for delta synchronization. The 26.07.1 release notes announced it, but the implementation was reverted before that release. */}
-
-The **Sync** button on the domain's details page runs a normal synchronization. The button's menu holds **Full Sync**.
-
-{/* TODO verify: what Full Sync does in 26.07.3, and whether delta synchronization can be bypassed from the console. */}
+The **Sync** button on the domain's details page runs a normal synchronization. The button's menu holds **Full Sync**. **Full Sync** clears the stored starting point for the domain, so the run reads every object again instead of only the changes.
 
 ## Which domain controller Privilege Secure reads from
 
@@ -74,4 +70,4 @@ Privilege Secure supports groups that share a pre-Windows 2000 name (sAMAccountN
 
 If a synchronization is slow or fails, see [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md).
 
-{/* TODO: add an example of a synchronization schedule, for example a daily run at 02:00. */}
+For example, to synchronize a domain every night, set **Frequency** to **Daily** and **At** to 2:00 AM, and then select **Save**.

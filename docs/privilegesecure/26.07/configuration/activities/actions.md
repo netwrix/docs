@@ -14,9 +14,7 @@ Actions are the steps that Privilege Secure runs for an activity. Each activity 
 | **Session (Connect)** | During the session. |
 | **Post-Session (Remove)** | After the session completes. Use it to remove the access that the pre-session actions granted. |
 
-Actions in a group run in the order listed. An empty group shows "(no actions)". To change the order, drag an action in the group.
-
-{/* TODO verify: which action groups show the drag handle; the lab showed it on Post-Session rows. */}
+Actions in a group run in the order listed. An empty group shows "(no actions)". To change the order, drag the handle of an action to another position in the same group. All three groups have the handle. It is unavailable while a group holds only one action. The steps that Privilege Secure adds itself, such as creating the login account, have no handle and always keep their place.
 
 An action can be paired. A pre-session action that grants access is often paired with a post-session action that removes it. A blue linked chain icon marks an action that is paired with a remove action. A grey chain icon marks an unpaired action. Deleting one action of a pair also deletes the other.
 

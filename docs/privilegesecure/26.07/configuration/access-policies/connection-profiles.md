@@ -51,13 +51,11 @@ The console has two sets of defaults. The seeded **Default** profile has one set
 | **Allow User to Access Password** | On | On |
 | **Enable credential auto-fill in browser extension** | On | On |
 | **Enable 'Show Password' option in user interface and browser extension** | Off | Off |
-| **View Password Timeout (seconds)** | Empty | 20 |
+| **View Password Timeout (seconds)** | Empty (the effective timeout is 20) | 20 |
 | **Clear Website Data Before Start** | Off | On |
 | **Clear Website Data After Stop** | Off | On |
 | **Record Session Audio** | Off | On |
 | **Approval Workflow** | Automatic | Automatic |
-
-{/* TODO verify: the seeded Default profile values come from the product code (session, proxy, recording, password, and approval settings) and from an upgraded lab install (Require Notes, Require Ticket Number, View Password Timeout, and the website settings). Confirm all seeded values on a fresh install. */}
 
 ## Proxy
 
@@ -74,15 +72,13 @@ The **Proxy** section controls which proxy servers start sessions and what the p
 
 Each proxy field takes one server. To use more than one proxy server, put a load balancer in front of the servers.
 
-{/* TODO verify: the 26.03 page names ports 4489 (RDP) and 4422 (SSH) as the proxy ports. Confirm they are the default ports in 26.07. */}
-
 ## Session Control
 
 The **Session Control** section sets the session length, extensions, and the information users must provide.
 
 | Setting | Description |
 |---|---|
-| **Max Duration (minutes)** | The session length for a new activity request. The default is 120. Sessions for activities without a resource also respect this value. {/* TODO verify: 451760 scope */} |
+| **Max Duration (minutes)** | The session length for a new activity request. The default is 120. Sessions for activities without a resource also respect this value. |
 | **Session End Notification (minutes)** | How long before the session ends the requester is notified in the RDP or SSH client. It works for direct connections and for connections through the proxy. The default is 5. |
 | **Enable Session Extension** | Lets users extend the current session. The default is off. |
 | **Extend By (minutes)** | The number of minutes added by each extension. The default is 30. |
@@ -102,11 +98,9 @@ The **Session Control** section sets the session length, extensions, and the inf
 Select **Validate Users for SSH Sessions** when users have authentication problems with direct-connect SSH sessions. It increases the time to create sessions for Linux activities that use managed domain users or activity token domain users.
 :::
 
-To validate tickets against ServiceNow, create the connector first. See [ServiceNow integration](../../integrations/itsm/servicenow.md). When the profile has a connector, the console checks the ticket number that a user enters. {/* TODO verify: what a user can enter when Require Ticket Number for Sessions is selected and the ServiceNow Connector is <none>. */}
+To validate tickets against ServiceNow, create the connector first. See [ServiceNow integration](../../integrations/itsm/servicenow.md). When the profile has a connector, the console checks the ticket number that a user enters. When the connector is `<none>`, the console only requires that the ticket number isn't empty. It accepts any text.
 
 To define custom complexity rules for activity token accounts, see [Activity token complexity](activity-token-complexity.md).
-
-{/* TODO verify: the 26.03 page lists an LSA Lookup Cache setting (three options for the SID lookup cache). It wasn't present in the 26.07.3 lab. Confirm whether it exists in 26.07. */}
 
 ## Credential Management
 
@@ -142,8 +136,10 @@ Custom fields add data entries that users complete when they create a session. C
 | **Description** | A description of the field. |
 | **Required** | When selected, users must complete the field. |
 | **Data Type** | The type of entry: **Integer** (the default), **String**, or **Options**. |
+| **Length** | Appears for **String**. The maximum number of characters, from 1 to 32. |
+| **Options** | Appears for **Options**. Click **Edit Options** to add or remove the values that users choose from. The list doesn't accept duplicate values. |
 
-{/* TODO verify: the maximum length of a String field (26.03 states 12 characters), how an Options list is defined, and how users see custom fields in the session request. */}
+A profile holds up to three custom fields. A variable name must be unique within the profile, can't contain spaces, can't start with a number, and uses letters and numbers only. Users complete the fields on the **Notes** step of the session request. The console rejects a non-numeric **Integer** value, a **String** value longer than **Length**, and an empty value in a **Required** field.
 
 ## Approval Workflow
 

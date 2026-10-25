@@ -13,10 +13,8 @@ Complete the steps in order. Run `Configure-Gateway.ps1` only after guacd is run
 ## Before you begin
 
 - Check the server against [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md), including nested virtualization if the server is a virtual machine.
-- Get the Remote Access Gateway package. It is a separate download from the main Privilege Secure package and contains `NPS.RagGateway.exe` and `NPS.RagPortal.exe`.
-
-{/* TODO verify: where customers download the 26.07.3 Remote Access Gateway package. The 26.07.1 release notes name privilegesecure-accessmanagement-rag-26.07.1.zip; the 26.07.3 notes have no link. */}
-
+- Get the Remote Access Gateway package from the Netwrix Customer Portal. It is a separate download from the main Privilege Secure package, and contains `NPS.RagGateway.exe` and `NPS.RagPortal.exe`.
+  {/* TODO verify: the exact file name of the 26.07.3 Remote Access Gateway package and its folder on the Customer Portal. */}
 - Sign in to the gateway server as a local administrator and run PowerShell as an administrator.
 
 The examples use these placeholders. Replace them with your values.
@@ -31,8 +29,6 @@ The examples use these placeholders. Replace them with your values.
 1. Copy `NPS.RagGateway.exe` to the gateway server.
 2. Right-click the installer and select **Run as administrator**. The setup wizard opens.
 3. Select **I agree to the license terms and conditions** and click **Install**.
-
-   {/* TODO verify: that the gateway installer wizard uses the same license label as the portal installer. */}
 4. When the page shows "Installation Successfully Completed", click **Close**.
 
 {/* TODO screenshot: the gateway installer license page and the completion page. */}
@@ -73,7 +69,7 @@ The gateway package includes `install-docker.sh`. It installs Docker, pulls `gua
    sudo bash "/mnt/c/Program Files/Stealthbits/PAM/NPS.RagGateway/guacd/install-docker.sh"
    ```
 
-   {/* TODO verify: whether the script needs a line-ending conversion (dos2unix) before it runs. The lab converted it first. */}
+   {/* TODO verify: whether the packaged install-docker.sh has Windows (CRLF) line endings that stop bash from running it. Answerable by downloading the published privilegesecure-accessmanagement-rag zip and running `file` on install-docker.sh. The release source stores LF, but the packaged endings depend on the build agent's checkout. */}
 
 2. List the running containers:
 
@@ -103,7 +99,7 @@ The gateway package includes `install-docker.sh`. It installs Docker, pulls `gua
 On some Ubuntu releases, `install-docker.sh` installs a Docker engine that can't start containers, and `docker run` fails with the error `cgroups: cgroup mountpoint does not exist`. If you see this error, contact Netwrix Support.
 :::
 
-{/* TODO verify: Product to confirm a supported Docker install (PSAM-1404). Don't publish a workaround as a standard step until then. Candidate workaround from the lab notes: run `sudo apt-get remove moby-engine moby-cli moby-buildx`, run `sudo apt-get install docker.io`, remove an existing container with `sudo docker rm -f guacd`, then start guacd with `sudo docker run --name guacd --restart unless-stopped -v <config-folder>:/etc/guacamole -p 4822:4822/tcp -d guacamole/guacd:1.6.0`, where <config-folder> is the WSL path of the gateway data folder, by default /mnt/c/ProgramData/Stealthbits/PAM/RagGateway. */}
+{/* TODO verify: which replacement engine (docker.io or docker-ce) Netwrix supports for hosts where the cgroup error occurs. The script installs moby-engine from the packages.microsoft.com Debian stretch repository, whose newest 3.0.x predates cgroup v2 support (added in Docker 20.10), so the failure likely affects hosts running cgroup v2 (Ubuntu 21.10 and later, current WSL). Only the supported alternative needs an SME answer. */}
 
 ## Configure the gateway
 
@@ -136,17 +132,17 @@ If guacd isn't reachable on port 4822, `Configure-Gateway.ps1` prints one error 
 
    The log includes the line "Communication will require SSL/TLS".
 
-Ensure that the gateway server trusts the certificate on `https://<nps-server>:6500`. See [Skip certificate validation for Privilege Secure](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md#skip-certificate-validation-for-privilege-secure).
+In 26.07.3 the gateway installs with validation of the certificate on `https://<nps-server>:6500` turned off, so it connects even when it doesn't trust the certificate. For production, turn validation on and ensure the gateway server trusts the certificate. See [Skip certificate validation for Privilege Secure](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md#skip-certificate-validation-for-privilege-secure).
 
 :::note
-The script stores `<guacd-host>` in the `Guacd.Hostname` setting. The address of a WSL instance can change after a restart.
-:::
+The script stores `<guacd-host>` in the `Guacd.Hostname` setting. In the default NAT networking mode, WSL 2 gives the distribution its own virtual network address, and Microsoft doesn't document that this address stays the same after WSL or the server restarts. After a restart, run `wsl hostname -I` again. If the address differs from `Guacd.Hostname`, run `Configure-Gateway.ps1` again with the new address. The script reuses the existing guacd certificate.
 
-{/* TODO verify: whether the WSL address in Guacd.Hostname changes after a restart, and what to do if it does. */}
+{/* TODO verify: whether Guacd.Hostname=localhost (WSL localhost forwarding in NAT mode, or mirrored networking mode) is a supported, restart-stable alternative. */}
+:::
 
 ## Start WSL automatically
 
-guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway package includes `Setup-WslTask.ps1` to register a scheduled task that starts WSL when the server starts. The script registers the scheduled task "Start Gaucd on WSL".
+guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway package includes `Setup-WslTask.ps1` to register a scheduled task that starts WSL when the server starts. The script registers the scheduled task "Start Gaucd on WSL". The task runs `wsl.exe` 60 seconds after startup with the highest privileges, as the account that you enter, and has no time limit.
 
 1. Sign in as the Windows user who installed WSL. Each user has a separate WSL environment.
 2. Run the script from the gateway installation folder:
@@ -157,7 +153,7 @@ guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway 
 
 3. When the credential dialog opens, enter the credentials of the account that runs the task. The script has no unattended mode.
 
-{/* TODO verify: the supported way to keep WSL running after a restart. SME review is pending, so confirm that Setup-WslTask.ps1 keeps WSL and guacd running after a reboot before publishing this section as final. */}
+{/* TODO verify: that the task keeps the WSL distribution, and therefore guacd, running after a restart. The script only runs wsl.exe with no arguments, and whether that keeps the distribution running after a reboot is runtime behavior on the host that the code and Microsoft's documentation don't show. */}
 
 ## Verify the installation
 

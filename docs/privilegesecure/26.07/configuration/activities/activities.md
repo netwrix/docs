@@ -56,8 +56,6 @@ The login account decides which account the user connects with on the resource.
 The Requester login account always uses the signed-in user's own account name. A local Privilege Secure user can't log on to a domain-joined Windows resource with a Requester activity unless an account with the same name exists on the resource. There is no option to enter a different user name when the user connects. To change how the name is formatted, see [Login account templates](login-account-templates.md).
 :::
 
-{/* TODO verify: the Requester limit for local users was seen in the Remote Access Gateway portal; confirm it applies to console sessions. */}
-
 ## Activities and activity groups
 
 An activity targets one platform. An activity group collects activities so that one access policy entry covers several platforms, such as granting local administrator access on both Windows and Linux. See [Activity groups](activity-groups.md).

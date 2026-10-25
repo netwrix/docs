@@ -56,7 +56,13 @@ When you search for a user who isn't in the policy, an **Add User** box appears.
 
 For more on user types, see [Add domain users and groups](../../admin/users-groups/add-users-groups.md) and [User and group collections](../../admin/users-groups/collections.md).
 
-{/* TODO verify: the CERTIFIED column and the denial badges. 26.03 lists Approved, Denied, and Incomplete. The 26.07 code lists Certified, Not certified, Access approved, and Access denied badges, plus a restore option labeled Enable. Confirm the labels and what the restore option does. */}
+The **CERTIFIED** column shows an icon for each user, application, and local user:
+
+- A thumbs-up means an access certification approved access.
+- A thumbs-down means an access certification denied access.
+- A question mark means no access certification has reviewed the access yet.
+
+Expand a row to see the details under the headings **Access Approved**, **Access Denied**, and **Not Certified**. Each list shows the activity, the resource or credential, and, for reviewed items, the access certification that made the decision. Under **Access Denied**, the **Enable** column has an unlock icon for each row. Click the icon and confirm the prompt to remove that denial. Only administrators can do this.
 
 For how access certification affects a policy, see [Run an access certification](../../admin/audit-reporting/access-certification.md).
 
@@ -95,12 +101,6 @@ The table has these columns:
 | **ACTIVE SESSION COUNT** | The number of active sessions on the resource. |
 
 To remove an item, select its checkbox and click **Remove**.
-
-:::note
-A resource that was added manually might not appear in the **Add Resources and Resource Groups** window until it has a platform and a service account.
-:::
-
-{/* TODO verify: the note about manually added resources needing a platform and a service account comes from a Community thread. Confirm in the lab. */}
 
 ## Related topics
 

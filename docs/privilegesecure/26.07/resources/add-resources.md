@@ -53,7 +53,7 @@ Each row describes one server. Identify each server by a DNS host name, an IP ad
 
 To get a template, select **Import from CSV** in the **Add Resources** window, then select **Download CSV Template**. The browser saves `nps-resource-import-template.csv` to the default download folder.
 
-{/* TODO verify: the header row of the 26.07 template. The 26.03 template uses DNS Host Name, Operating System, IP Address, Platform, Credential. The server validation also reads an SSH port. Confirm the 26.07 columns against the downloaded template. */}
+The template contains only the header row, with the five columns in the table.
 
 The following example has seven servers. The first row sets every column. The last row sets only a DNS host name.
 
@@ -94,7 +94,7 @@ The validation reports these messages for a row:
 
 "Invalid Credential" and "Invalid Platform" mean that the value doesn't exactly match a service account or platform name.
 
-{/* TODO verify: the condition that triggers "DNS Host Name required", given that a row can use an IP address instead. The code falls back to the IP address when the host name is empty. */}
+A row shows "DNS Host Name required" when **DNS Host Name** is empty and **IP Address** is empty or invalid. When **DNS Host Name** is empty and **IP Address** is valid, Privilege Secure uses the IP address as the name of the server.
 
 ## Add servers manually
 

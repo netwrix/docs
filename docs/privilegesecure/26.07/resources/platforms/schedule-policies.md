@@ -13,9 +13,7 @@ Select a schedule policy in these places:
 - **Platforms**: Each platform has schedules for its resources, such as the scheduled change policy (password rotation), the scan schedule, and the verification schedule. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 - **Protection policies**: A protection policy runs on the **Protection Policy Schedule** of each resource's platform. See [Protection policies](/docs/privilegesecure/26.07/resources/protection-policies.md).
 - **Credential policy overrides**: An override sets scan, protect, rotate, and verify schedules for specific credentials or resources. See [Credential policy overrides](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md).
-- **Report subscriptions**: A subscription emails a report on a schedule. See [Reports](/docs/privilegesecure/26.07/admin/audit-reporting/reports.md).
-
-{/* TODO verify: that a schedule policy you create appears in the Subscription Schedule list of a report subscription. admin/audit-reporting/reports.md marks the same claim as unverified. */}
+- **Report subscriptions**: A subscription emails a report on a schedule. The **Subscription Schedule** list of a report subscription shows every schedule policy, including the ones you create. See [Reports](/docs/privilegesecure/26.07/admin/audit-reporting/reports.md).
 
 The schedules mean the following:
 
@@ -38,15 +36,14 @@ The **Schedule Policy Editor** offers four frequencies under **Select Frequency*
 
 | Frequency | Fields |
 |---|---|
-| **Every x Hours** | The number of hours between runs. The default is 1. |
-| **Every x Days** | The number of days between runs and the time of day. |
-| **Weekly** | The day of the week and the time of day. |
-| **Monthly** | The day of the month and the time of day. |
+| **Every x Hours** | The number of hours between runs, from 1 to 24. The default is 1. |
+| **Every x Days** | The number of days between runs, from 1 to 512, and the time of day. |
+| **Weekly** | The **Day of Week** and the time of day. The list offers one day, Monday through Sunday. |
+| **Monthly** | The **Day of Month** and the time of day. The list offers the 1st through the 28th, and **Last** for the last day of the month. |
 
-{/* TODO verify: Weekly selects one day in the 26.03 docs, but the code stores a set of weekdays. Confirm whether the editor allows several days. */}
-{/* TODO verify: the code accepts a Monthly day from 1 to 28 and a "last day" value (99). Confirm the editor range and how the last day is selected. */}
+To run a task on several days of the week, create one weekly policy for each day.
 
-Times use the time zone of the Privilege Secure server. {/* TODO verify: confirm the time zone shown in the editor */}
+The time of day is in the time zone of the Privilege Secure server. The editor shows a **Server Time** label next to the **Time** field.
 
 ## Create a schedule policy
 
@@ -60,7 +57,6 @@ The new policy appears in the list and in the schedule dropdown lists on platfor
 
 For example, to verify passwords every 2 hours, select **Every x Hours**, enter `2`, and select **Save**. The policy appears as `Every 2 hours`.
 
-{/* TODO verify: the capitalization of the generated policy name (Every 2 hours or Every 2 Hours) */}
 ![The Schedule Policy Editor dialog with the Every x Hours, Every x Days, Weekly, and Monthly frequency options and an Hours value of 1.](/images/privilegesecure/26.07/resources/schedule-policy-editor.webp)
 
 ## Edit a schedule policy
@@ -79,8 +75,7 @@ Tasks that use the policy run on the new schedule.
 1. Hover over the policy in the list.
 1. Select the trash can icon, and then confirm the deletion.
 
-{/* TODO verify: what happens to platforms, protection policies, and overrides that still use a deleted policy, and whether the console blocks deleting a policy that is in use */}
-{/* TODO verify: the 26.03 page says the default policy can't be deleted. Confirm which policy this refers to in 26.07. */}
+A policy that a platform uses as its rotation, protection, or verification schedule, or that a credential policy override uses, can't be deleted. The deletion fails and the console shows an **Unable to delete** message with the error. Select a different policy in those places first, and then delete the policy. A policy that a platform uses only as its scan schedule, or that a single resource or account uses as a verification override, can be deleted. Privilege Secure clears the schedule in those places.
 
 ## Related topics
 

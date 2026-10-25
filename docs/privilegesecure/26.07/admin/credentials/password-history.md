@@ -29,11 +29,9 @@ To view the current password:
 2. Find the managed account and click the **View Password** icon.
 3. Reveal the password with the eye icon, or copy it with **Copy to Clipboard**.
 
-The dialog closes automatically after a countdown. Click **Cancel** to close it sooner.
+The dialog closes automatically after a 20-second countdown. The countdown restarts when you reveal the password. Click **Cancel** to close it sooner.
 
 For example, view the password of `<local-admin>` to sign in to `<server-name>` during an outage.
-
-{/* TODO verify: the 26.03 page says the View Password dialog stays open for 20 seconds. The lab didn't open it because it reveals a secret. */}
 
 {/* TODO screenshot: the View Password dialog with the password hidden */}
 
@@ -49,30 +47,28 @@ The dialog has these controls:
 
 | Control | Description |
 |---|---|
-| **Show Password(s)** | Reveals the passwords in the table. |
-| **Hide Password(s)** | Hides them again. It is disabled until you select an entry. |
+| **Show Password(s)** | Reveals the password of the selected row. It is unavailable until you select a row. |
+| **Hide Password(s)** | Hides the password of the selected row again. It is unavailable until you select a row whose password is shown. |
 | **Refresh** | Reloads the list. |
 
-{/* TODO verify: whether the Show Password button reveals all rows or only the selected rows */}
+You can select one row at a time, so **Show Password(s)** reveals one password at a time.
 
 The table has these columns:
 
 | Column | Description |
 |---|---|
 | **Creation Date** | When the password was created. |
-| **Password (click to view)** | The password, shown as `<hidden>`. Click a value to reveal that password. |
+| **Password (click to view)** | The password, shown as `<hidden>` until you reveal it with **Show Password(s)**. Click a revealed password to select its text. |
 
-You can resize and sort the columns.
+You can resize and sort the columns. Until you sort, the newest entry is first.
 
 For example, an account whose password rotated three times shows one row for each stored password, each with its own creation date.
-
-{/* TODO verify: the default sort order of the history table. */}
 
 ## History limits
 
 By default, Privilege Secure keeps up to 7 passwords for each account and keeps each one for 30 days. To change these limits, edit **Historical Password Limit** (1 to 50) and **Days Of Password Retention** (1 to 365) in **System Settings**. See [System settings reference](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md#password-history).
 
-{/* TODO verify: which limit applies first when both apply */}
+The two limits work independently. When Privilege Secure stores a new password for an account that is at the count limit, it deletes the oldest entry. A separate cleanup deletes every entry that is older than the retention period.
 
 ## Related topics
 

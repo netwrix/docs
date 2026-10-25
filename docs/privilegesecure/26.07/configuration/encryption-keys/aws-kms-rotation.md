@@ -31,7 +31,9 @@ The log window shows the progress and the result. The tool takes a few minutes, 
 
 Other servers that share the database need the new key. See [Export and import the key](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md#export-and-import-the-key).
 
-{/* TODO verify: the import step protects the key files on the other server with that server's Windows machine key, not with AWS KMS. Confirm the supported way to give additional servers an AWS KMS-protected key. */}
+The export reads the key through AWS KMS, so run it on a server that has working AWS access. The import writes the key on the other server protected by that server's Windows machine key, not by AWS KMS, and the other server needs no AWS access to use it.
+
+{/* TODO verify: whether Netwrix supports protecting the key on an additional server with AWS KMS. The tools in the release have no command that re-protects an imported key with AWS KMS, and public sources don't state a supported procedure. */}
 
 ### Choose the action
 
@@ -39,9 +41,9 @@ Other servers that share the database need the new key. See [Export and import t
 |---|---|
 | **Create Key** | Generates a key that AWS KMS protects. It doesn't make the key current, and it doesn't re-encrypt the stored secrets. |
 | **Rotate Key** | Generates a key that AWS KMS protects, makes it the current key, and re-encrypts the stored secrets with it. |
-| **Update Key** | Updates the stored AWS access key and secret key of the current key. **KMS Key** and **Region** aren't available. |
+| **Update Key** | Replaces the access key and secret key that are stored with the current key. The stored KMS key and Region stay the same, and the stored secrets aren't re-encrypted. **KMS Key** and **Region** aren't available. |
 
-{/* TODO verify: confirm how customers should use Create Key and Update Key. The descriptions come from the code, not from a lab test. */}
+**Use EC2 Instance Profile** fills both key boxes with `<EC2>`. Privilege Secure then uses the credentials of the instance profile and stores no access key.
 
 ## Rotate the KMS key in AWS
 
@@ -52,15 +54,15 @@ If you rotate the KMS key itself in AWS, you don't need to rotate the Privilege 
 Rotate the access key of the AWS user regularly. Rotating the access key in AWS doesn't update the key that Privilege Secure stores, so update Privilege Secure before you delete the old access key.
 
 1. In AWS, create a new access key for the IAM user.
-1. In the `SbPAM.RotateAwsKey` tool, enter the new **Access Key** and **Secret Key**, and run **Rotate Key** with the KMS key ARN and Region. To change only the stored access key, select **Update Key** instead.
+1. In the `SbPAM.RotateAwsKey` tool, enter the new **Access Key** and **Secret Key**, and run **Rotate Key** with the KMS key ARN and Region. To change only the stored access key, select **Update Key** instead. **Update Key** doesn't call AWS.
 1. Confirm that the log shows success.
 1. In AWS, delete the old access key.
 
 :::warning
-Don't delete the old AWS access key before you update Privilege Secure. If you delete it first, Privilege Secure can no longer use the KMS key to decrypt its encryption key.
+Don't delete the old AWS access key before you update Privilege Secure. If you delete it first, Privilege Secure can no longer use the KMS key to decrypt its encryption key. Run **Update Key** with the new access key to restore access. **Update Key** changes only the current key file. Older AWS KMS-protected key files from earlier rotations, and keys made with **Create Key**, keep the old access key. Update each one with `SbPAM.RotateKey.exe refreshaws -k <keyId> -a <file>`, or rotate before you delete the old access key.
 :::
 
-{/* TODO verify: confirm whether Update Key is the intended way to apply a new access key, and the effect of deleting the access key first. The 26.03 page says to rotate the key. */}
+The access key is stored in the key file on each server, protected by the Windows machine key of that server. After you replace the access key, repeat the update on any other server that has an AWS KMS-protected key file. A server that uses an imported key has a key file protected by DPAPI, which has no AWS access key to update.
 
 ## Related topics
 

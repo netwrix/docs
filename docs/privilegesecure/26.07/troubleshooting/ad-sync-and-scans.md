@@ -30,11 +30,9 @@ For the task list, see [Scheduled tasks](/docs/privilegesecure/26.07/admin/servi
 
 **Symptom:** The **Sync Errors** tab or the logs show a message such as "problem inserting group membership" with a duplicate key violation on `IX_active_directory_group_host_user_group_id_member_id`.
 
-**Cause:** On a SQL Server database, two sync runs can write the same group membership at the same time, and the second insert fails.
+**Cause:** On a SQL Server database, a sync that can't get its database lock within 3 seconds continues without it. Two sync runs can then write the same group membership at the same time, and the second insert fails. PostgreSQL waits for the lock, so it doesn't have this problem.
 
-**Fix:** Upgrade to 26.07.3 or later, which corrects the SQL Server lock that lets two syncs overlap. If the error continues after the upgrade, contact [Netwrix Support](https://www.netwrix.com/support.html) with the **Sync Errors** text.
-
-{/* TODO verify: that the duplicate key fix is in 26.07.3 and whether SQL Server and PostgreSQL back ends are both affected. Sources: PSAM-619, PSAM-1313, PSAM-1359. */}
+**Fix:** Upgrade to 26.07.3 or later. From 26.07.3, a sync on SQL Server waits for the lock, and a domain that is already syncing skips a second run. If the error continues after the upgrade, contact [Netwrix Support](https://www.netwrix.com/support.html) with the **Sync Errors** text.
 
 ## A full sync stops at "Processing group members"
 
@@ -42,17 +40,15 @@ For the task list, see [Scheduled tasks](/docs/privilegesecure/26.07/admin/servi
 
 **Cause:** The sync doesn't read every group in the domain. It starts from the seed groups, which are Domain Admins, Enterprise Admins, and the groups that hold a role in Privilege Secure. It then follows nested groups. A very large group with deep nesting makes this step slow.
 
-**Fix:** Wait, and check the **History** tab for progress entries such as "Synchronized N group members for domain". If no entries appear for an extended period, upgrade to 26.07.3 or later. For how the sync finds group members, see [How Active Directory synchronization works](/docs/privilegesecure/26.07/resources/ad-sync.md#how-group-members-are-found).
+**Fix:** Wait, and check the **History** tab for progress entries such as "Synchronized N group member relationships for domain". If no entries appear for an extended period, upgrade to 26.07.3 or later. Release 26.07.3 looks up nested groups in batches of up to 200 groups per directory query, instead of one query for each group. For how the sync finds group members, see [How Active Directory synchronization works](/docs/privilegesecure/26.07/resources/ad-sync.md#how-group-members-are-found).
 
-{/* TODO verify: the first release that fixes the hang at "Processing group members", and how long a large sync should take before the reader contacts Support. Source: PSAM-1264. */}
+{/* TODO verify: how long a large sync should take before you contact Support. Release code and public sources set no time limit; it depends on domain size. */}
 
 ## A host scan fails with a null platform ID error
 
 **Symptom:** A scan or sync fails with the error "Cannot convert null to type 'System.Guid'" for the platform ID. A Windows resource added from Active Directory can also keep a blank operating system and IP address after its first scan.
 
-**Fix:** Upgrade to 26.07.3 or later. On an earlier release, set the platform on the resource, and then scan the resource again. See [An error mentions a null PlatformID](/docs/privilegesecure/26.07/install/troubleshoot-installation.md#an-error-mentions-a-null-platformid).
-
-{/* TODO verify: the UI path to set a resource platform */}
+**Fix:** Upgrade to 26.07.3 or later. On an earlier release, set the platform on the resource: select **Resources**, select the checkbox of the resource, select **Change Platform**, choose the platform, and select **Okay**. Then scan the resource again. See [Change the platform of resources](/docs/privilegesecure/26.07/resources/overview.md#change-the-platform-of-resources) and [An error mentions a null PlatformID](/docs/privilegesecure/26.07/install/troubleshoot-installation.md#an-error-mentions-a-null-platformid).
 
 ## Host scans cause Active Directory account lockouts
 
@@ -60,9 +56,9 @@ For the task list, see [Scheduled tasks](/docs/privilegesecure/26.07/admin/servi
 
 **Cause:** The host scan connects to the resource with PowerShell remoting, and the resource then has to contact a domain controller. This second network hop is a double hop. It fails when Kerberos delegation between the resource and the domain controller isn't possible, so the scan doesn't record the operating system. Without an operating system, the logoff and monitor steps fail with "Unsupported OS". Password rotation still runs while a user's session uses the old password, and the old password then locks the account.
 
-**Fix:** Configure Kerberos delegation, such as resource-based constrained delegation, between the resource and the domain controllers. See [Kerberos delegation](/docs/privilegesecure/26.07/requirements/target-environments.md#kerberos-delegation). Then scan the resource again and check that the operating system appears.
+**Fix:** Configure Kerberos delegation between the resource and the domain controllers. With resource-based constrained delegation, you configure each domain controller to accept delegated credentials from the resource's computer account. Microsoft documents this method for Windows Server 2012 and later in [Making the second hop in PowerShell Remoting](https://learn.microsoft.com/en-us/powershell/scripting/security/remoting/ps-remoting-second-hop). Accounts that have **Account is sensitive and cannot be delegated** selected can't be delegated. See [Kerberos delegation](/docs/privilegesecure/26.07/requirements/target-environments.md#kerberos-delegation). Then scan the resource again and check that the operating system appears.
 
-{/* TODO verify: the delegation configuration Netwrix supports (resource-based constrained delegation per PSAM-1331). */}
+{/* TODO verify: that Netwrix supports resource-based constrained delegation specifically for the host scan second hop. Release code doesn't state a supported delegation type; the method above comes from Microsoft's PowerShell remoting documentation. */}
 
 :::note
 These lockouts are on accounts in Active Directory. They are separate from the lockout that blocks a user from signing in to the Privilege Secure console. For the console lockout, see [Sign-in lockout and unlocking](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#sign-in-lockout-and-unlocking).
@@ -74,11 +70,15 @@ These lockouts are on accounts in Active Directory. They are separate from the l
 
 **Cause:** One reported cause is a sudoers file on the Linux resource that doesn't allow every command the scan runs for the service account. The scan fails when sudo refuses one of them.
 
-**Fix:** Check the sudoers file for the service account against the commands that Privilege Secure needs. Allow only those commands. Don't grant the account unrestricted sudo access. For the account setup and the command list, see [Linux targets](/docs/privilegesecure/26.07/requirements/target-environments.md#linux-targets) and [Creating a Least Privilege Service Account for Linux Resources](/docs/kb/privilegesecure/user-and-service-accounts/creating-a-least-privilege-service-account-for-linux-resources).
+**Fix:** Check the sudoers file for the service account against the commands that Privilege Secure needs. Allow only those commands. Don't grant the account unrestricted sudo access. For the account setup, see [Linux targets](/docs/privilegesecure/26.07/requirements/target-environments.md#linux-targets) and [Creating a Least Privilege Service Account for Linux Resources](/docs/kb/privilegesecure/user-and-service-accounts/creating-a-least-privilege-service-account-for-linux-resources).
 
 If the scan still fails after the account has every listed command, contact [Netwrix Support](https://www.netwrix.com/support.html). See also [Known issues](/docs/privilegesecure/26.07/troubleshooting/known-issues.md).
 
-{/* TODO verify: the minimum sudoers command list for the 26.07.3 Linux plans, and whether 26.07.3 fixes the Linux scan failure. Source: PSAM-1367. */}
+In 26.07.3, the Linux command plans run these commands through `sudo`: `getent`, `id`, `useradd`, `usermod`, `userdel`, `groupadd`, `gpasswd`, `chpasswd`, `pkill`, `who`, `w`, `last`, `write`, `find`, `test`, `md5sum`, `/bin/rm`, `/usr/sbin/adcli`, `/bin/sh`, and `/bin/bash`. The plan that adds a sudoers file also runs `visudo`, `tee`, `/bin/mv`, `/bin/chmod`, `/bin/grep`, `/bin/sed`, and `stat`. The plans call the commands shown with a full path by that exact path, and sudoers rules match on the command path, so write those rules with the full path. The plans resolve the other commands through the target's PATH.
+
+The account scan runs `/bin/bash` through `sudo`, and the SSH key certificate operations run `/bin/sh` through `sudo`. Allowing a shell through `sudo` is effectively full root access. Grant these only on resources where you use those operations, and accept that the service account then has unrestricted root. On other resources, ensure the sudoers file allows each command that the operations on that resource need.
+
+{/* TODO verify: whether 26.07.3 fixes the Linux scan failure after an upgrade to 26.07.1. Release code shows the plans above but doesn't identify which command the scan was refused. */}
 
 ## Related topics
 

@@ -18,16 +18,12 @@ The toolbar has these controls:
 
 | Control | Description |
 |---|---|
-| **Search** | Filters the tables to rows that match the text you enter. |
-| **Change type** | Limits the tables to selected users. The default value is `<all users>`. The label doesn't match what the filter does. |
+| **Search** | Filters the sessions table to rows that match the text you enter. |
+| **Change type** | `<all users>` (the default) shows the top 5 users and every session. **Top 5 Users** or **Top 10 Users** lists that many users and limits the sessions table to their sessions. |
 | **Date range** | Sets the start and end dates. The default range is the last 30 days. |
 | **Refresh** | Reloads the data. |
 
-{/* TODO verify: the on-screen label of the user filter (the lab showed "Change type") and the values it offers. The 26.03 docs list All Users, Top 5 Users, and Top 10 Users, but the lab showed only the default <all users> */}
-
-Matching on a user name is exact. A leading or trailing space in the name returns no match.
-
-{/* TODO verify: whether the exact-match behavior applies to Search or to the user filter (PSAM-1409) */}
+**Search** applies to the sessions table. It finds the text anywhere in the **Session User**, **Login Account**, **Policy**, **Activity**, **Notes**, **Ticket Number**, or **Host** value and ignores case. A space at the start or end counts as part of the text, so a full name typed with a trailing space doesn't match that name. **Change type** doesn't match on text.
 
 When a table has no rows for the range, it shows **None**. Widen the date range if you expect results.
 
@@ -72,4 +68,4 @@ Click **Export as CSV** above the sessions table to save the log as a CSV file.
 
 To export the log with a script instead, see [Exporting the Activity Log as a CSV](/docs/kb/privilegesecure/workflows-and-automation/exporting-the-activity-log-as-a-csv).
 
-{/* TODO verify: whether Export as CSV exports the filtered rows or the whole range, and the file name and columns */}
+The export follows the current **Search**, **Change type**, and **Date range** settings and includes every matching session, not only the rows on screen. The file is named `activity_logs.csv`. Its header row uses the field names of the session data rather than the on-screen column titles.

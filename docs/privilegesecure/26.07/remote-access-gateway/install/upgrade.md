@@ -8,18 +8,19 @@ sidebar_position: 30
 
 The Remote Access Gateway installs from its own package, separate from the Netwrix Privilege Secure for Access Management (Privilege Secure) installer. Upgrading the Privilege Secure application server doesn't upgrade the gateway or the portal. Upgrade each component of the Remote Access Gateway on its own server.
 
-{/* TODO verify: the full upgrade procedure. The lab didn't run an upgrade of an existing gateway or portal. Confirm each step, the outage time, and what the installers keep. */}
+Both installers upgrade an existing installation in place and refuse to install over a newer version.
 
-{/* TODO verify: where customers download the Remote Access Gateway package for 26.07.3. The release notes for 26.07.1 link a package named privilegesecure-accessmanagement-rag-26.07.1.zip, and the 26.07.3 release notes have no link. */}
+{/* TODO verify: how long the gateway and the portal are unavailable during an upgrade. This is runtime behavior that the installer code doesn't show. */}
 
 ## Before you upgrade
 
-- Get the Remote Access Gateway package for the release that you are upgrading to.
+- Get the Remote Access Gateway package for the release that you are upgrading to from the Netwrix Customer Portal.
+  {/* TODO verify: the exact file name of the 26.07.3 package and its folder on the Customer Portal. */}
 - Plan to upgrade the gateway, the portal, and guacd together. The 26.07.3 portal expects guacd 1.6.0. If guacd runs a different version, remote desktop colors can display incorrectly. See [Match the guacd version](#match-the-guacd-version).
 - Back up `C:\ProgramData\Stealthbits\PAM\RagGateway\appsettings.json` on the gateway server.
 - Back up `nginx.conf` on the portal server. See [Upgrade the portal](#upgrade-the-portal).
 
-{/* TODO verify: whether the gateway, the portal, and Privilege Secure must all be on the same 26.07 release, and the supported range. */}
+{/* TODO verify: the supported combinations of gateway, portal, and Privilege Secure releases when they aren't all the same 26.07 release. */}
 
 ## Upgrade the gateway
 
@@ -27,7 +28,7 @@ The Remote Access Gateway installs from its own package, separate from the Netwr
 2. Follow the installer pages and wait for "Installation Successfully Completed."
 3. Confirm that `appsettings.json` still holds your settings. See [Gateway settings reference](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md).
 
-{/* TODO verify: whether the gateway installer keeps appsettings.json and the guacd certificate files, and whether Configure-Gateway.ps1 must be run again. */}
+The gateway installer doesn't contain `appsettings.json`, `guacd.conf`, or the guacd certificate files, so it leaves them in `C:\ProgramData\Stealthbits\PAM\RagGateway`. It replaces `appsettings.default.json` and keeps an existing `appsettings.log.json`. You don't need to run `Configure-Gateway.ps1` again unless the guacd address changes.
 
 ## Upgrade the portal
 
@@ -36,17 +37,17 @@ Back up `nginx.conf` before you upgrade the portal. Before 26.07.3, the portal i
 1. On the portal server, copy `C:\Program Files\Stealthbits\PAM\NPS.RagPortal\nginx\conf\nginx.conf` to a safe location.
 2. Run `NPS.RagPortal.exe` from the new package.
 3. Follow the installer pages and wait for "Installation Successfully Completed."
-4. Compare `nginx.conf` with your backup. If the upstream address or certificate paths are missing, restore them from the backup.
+4. Compare `nginx.conf` with your backup. The 26.07.3 installer replaces `nginx.exe` and leaves `nginx.conf` in place. If the upstream address or certificate paths are missing, restore them from the backup, then restart the service so nginx reads the file:
+
+   ```powershell
+   Restart-Service SbPAMRagPortal
+   ```
 5. Confirm that the **NPS Rag Portal** service is running, that nginx listens on ports 80 and 443, and that the portal opens in a browser:
 
    ```powershell
    Get-Service SbPAMRagPortal
    Get-NetTCPConnection -State Listen -LocalPort 80,443
    ```
-
-{/* TODO verify: whether to document the portal start-up fix in 26.07.0 and later. It is a start-up registration fix that isn't specific to upgrades, and the version it first shipped in is disputed. If confirmed, it belongs in the release notes, not in an upgrade step. */}
-
-{/* TODO verify: the 26.07.3 installer keeps nginx.conf, and whether the service needs a restart after you restore it. */}
 
 ## Match the guacd version
 
@@ -58,7 +59,7 @@ The 26.07.3 portal expects guacd 1.6.0. guacd must run the image `guacamole/guac
    sudo docker ps
    ```
 
-2. Find the `guacd` container and check the **IMAGE** column. It must read `guacamole/guacd:1.6.0`.
+2. Find the `guacd` container and check the **IMAGE** column, which shows the image that the container was created from. It must read `guacamole/guacd:1.6.0`.
 3. If the image is a different version, stop the container, remove it, and create it again with the same command that `install-docker.sh` uses:
 
    ```bash
@@ -70,7 +71,7 @@ The 26.07.3 portal expects guacd 1.6.0. guacd must run the image `guacamole/guac
      -p 4822:4822/tcp -d guacamole/guacd:1.6.0
    ```
 
-   The volume maps the gateway folder, which holds `guacd.conf`, `guacd.crt`, and `guacd.key`, to `/etc/guacamole` in the container.
+   The volume maps the gateway folder, which holds `guacd.conf`, `guacd.crt`, and `guacd.key`, to `/etc/guacamole` in the container. The files stay in the Windows folder, so the new container uses the same certificate and you don't run `Configure-Gateway.ps1` again.
 4. In PowerShell, confirm that guacd listens on port 4822, and check the guacd log:
 
    ```powershell
@@ -82,10 +83,6 @@ The 26.07.3 portal expects guacd 1.6.0. guacd must run the image `guacamole/guac
    ```
 
    The log includes the line "Communication will require SSL/TLS".
-
-{/* TODO verify: the supported way to upgrade guacd on an existing WSL host, and that stop, remove, and run keeps the certificates. The lab didn't run this upgrade. */}
-
-{/* TODO verify: that docker inspect or docker ps is the supported check of the running guacd version. */}
 
 After you create the container, start a session from the portal and confirm that the colors in the remote desktop look correct.
 

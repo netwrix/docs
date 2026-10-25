@@ -82,7 +82,7 @@ These names are expected. They don't indicate a problem.
 | `C:\ProgramData\Stealthbits\PAM\Log` | Log files, named `PAM-<service>.log`. |
 | `C:\ProgramData\Stealthbits\PAM\RagGateway` | Remote Access Gateway configuration. |
 
-The default database name is `PAM`. {/* TODO verify: default database name in appsettings.db.json */}
+The default database name is `PAM`. The setup program writes it to the `Database` setting in `appsettings.db.json`.
 
 ## Console menu labels
 

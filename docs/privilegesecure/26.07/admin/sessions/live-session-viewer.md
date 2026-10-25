@@ -22,10 +22,8 @@ The **Terminate Session** and **Lock Session** permissions stay disabled until *
 ## Open the Live Session Viewer
 
 1. Open the **Active** tile. See [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md).
-2. Expand the session you want to watch.
-3. Select the recording to open the viewer.
-
-{/* TODO verify: the way to open the viewer from an active session (the expand control on the row). The lab had no active sessions when this was written. */}
+2. Click the expand icon on the session's row. The row lists one entry for each sign-in, for example `RDP Session is live now.`
+3. Click the entry with the eye icon to open the viewer. If the entry has no icon, the session isn't being recorded or you don't have permission to watch it.
 
 {/* TODO screenshot: Active tile with a session row expanded to show the recording */}
 
@@ -33,19 +31,20 @@ If the user signed in to the session more than once, the row lists several recor
 
 ## Viewer types
 
-The viewer depends on the type of resource.
+The viewer depends on the protocol of the session.
 
-| Viewer | Resources |
+| Viewer | Sessions |
 |---|---|
-| RDP | Windows resources and Active Directory domains |
-| SSH | Linux and Cisco resources |
-| Recording Session Viewer | Websites and Microsoft Entra ID |
+| RDP | Remote Desktop sessions. The viewer shows the screen of the session. |
+| SSH | SSH sessions. The viewer shows the terminal of the session. |
 
-{/* TODO verify: resource types per viewer */}
+A website session has no live viewer. You can replay a website session after it ends. See [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
+
+{/* TODO verify: which resource types start RDP, SSH, and website sessions, for example whether Active Directory domain and Microsoft Entra ID resources use RDP or website sessions. The console decides the viewer from the session protocol, not from the resource type. */}
 
 {/* TODO screenshot: Live Session Viewer for an RDP session */}
 
-All three viewers show these details in the header:
+Both viewers show these details in the header:
 
 | Detail | Meaning |
 |---|---|
@@ -66,25 +65,23 @@ The RDP timeline also lists Windows events when the Remote Desktop Monitor servi
 Lock a session to stop the user from working without ending the session.
 
 1. In the viewer, select **Lock**. You can also select the session on the **Active** tile and select **Lock Activity**.
-2. In the **Lock Session** window, enter a **Lock Title**. For example, `Security review`.
-3. Enter a **Lock Message**. For example, `Your session is locked while the security team reviews it. Contact the help desk.`
+2. In the **Lock Session** window, keep the **Lock Title** or replace it. For example, `Security review`.
+3. Keep or replace the **Lock Message**. For example, `Your session is locked while the security team reviews it. Contact the help desk.`
 4. Under **Prevent User From:**, select what to block:
    - **Opening new sessions on this activity**
    - **Opening new activities to this resource**
    - **Any further activity with this account (Unlock via Users & Groups)**
 5. Click **Okay**.
 
-The user sees the title and message in the RDP or SSH client. If you leave the fields empty, the title is "Netwrix Privilege Secure" and the message is "Your session has been temporarily locked, please see a Netwrix Privilege Secure administrator for more information."
+The window opens with the title "Netwrix Privilege Secure" and the message "Your session has been temporarily locked, please see a Netwrix Privilege Secure administrator for more information." already filled in. Replace them with your own text. The user sees the title and message in the RDP or SSH client.
 
-{/* TODO verify: the label on the Okay button in the Lock Session window. */}
+The first two options are selected when the window opens. The options build on each other. Selecting **Opening new activities to this resource** also selects **Opening new sessions on this activity**, and selecting **Any further activity with this account** selects both. When you lock from the **Active** tile, the window doesn't offer **Opening new sessions on this activity**.
 
 {/* TODO screenshot: Lock Session window with a title, a message, and the Prevent User From options */}
 
 To unlock the session, select **Unlock** in the viewer. You can also select the session on the **Active** tile and select **Unlock Activity**.
 
-If you selected **Any further activity with this account**, the account stays locked after you unlock the session. Unlock the account from its details page. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
-
-{/* TODO verify: the control that unlocks an account on the user details page. The lab didn't show an unlock state. */}
+If you selected **Any further activity with this account**, the account stays locked after you unlock the session. Unlock the account from its details page: click **Unlock Account**, which replaces **Lock Account** while the account is locked. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ## Terminate a session
 

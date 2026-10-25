@@ -29,7 +29,7 @@ The filters are **Search**, **Resource name**, **User name**, and **Recording da
 | **End Session** | Cancels the selected sessions. You need the Terminate Session permission. |
 | **View Logs** | Opens the session logs for the selected session. See [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md). |
 | **Lock Activity** | Opens the lock dialog for the selected session. You need the Lock Session permission. |
-| **Unlock Activity** | Unlocks the selected session. You need the Lock Session permission. |
+| **Unlock Activity** | Unlocks the selected session. Administrators can unlock any session. Auditors and read-only users need the Lock Session permission. |
 
 All buttons except **Create Session** stay disabled until you select a row. **Refresh** reloads the table.
 
@@ -100,11 +100,9 @@ Lock a session when you see suspicious or unauthorized activity. A locked sessio
 
 The status of the session changes to **Locked**. For the dialog options, see [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md).
 
-To unlock a session, select it and click **Unlock Activity**.
+To unlock a session, select it and click **Unlock Activity**. Administrators can unlock any session. Auditors and read-only users need the **Lock Session** permission. The console shows "Session successfully unlocked.", the lock icon leaves the status column, and the row shows its normal status again, for example **Active**.
 
 If you selected **Any further activity with this account (Unlock via Users & Groups)**, the account stays locked after you unlock the session. Unlock it on the user's details page. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
-
-{/* TODO verify: the status after Unlock Activity; the lab had no active sessions to test. */}
 
 ## Inspect a session
 

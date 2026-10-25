@@ -28,7 +28,9 @@ For how licensing works, including what consumes a license, see [Licensing](/doc
 4. In the **Upload License File** section, click **Import License**.
 5. Select the license file and click **Open**.
 
-The page then shows the license details. {/* TODO verify: the exact success message the console shows after an import, and that the expiration banner disappears. */}
+The **Upload License File** section shows "Installed license successfully." and the page shows the new license details. If the import fails, the section shows "Error prevented license installation." with the reason. If the license is already active, the section shows "This license is already active".
+
+After a successful import, the license banner at the top of the console no longer appears, unless the new license is a trial, has no credits left, or expires within 10 days.
 
 ![The About page showing the product version 26.07.00003, the license type, and the Upload License File section with the Import License button.](/images/privilegesecure/26.07/install/about-page.webp)
 
@@ -37,11 +39,12 @@ The page then shows the license details. {/* TODO verify: the exact success mess
 The **About** page shows:
 
 - **Version** – The installed Privilege Secure version.
-- **License Type** – The type of license, such as a trial or a full license.
+- **License Type** – **Trial** or **Full**.
+- **License Expires** – The expiration date. It appears only for a trial license.
 - **Active Licenses** – The number of licenses the file provides.
 - **Customer Info** – The name of the licensed customer. Expand it to see the customer's contact details.
 
-{/* TODO verify: the fields the About page shows for a trial or subscription license, such as License Expires and Licenses Applied. The lab had a full license only. */}
+For a license with term-based activations, the page also lists each activation's **Expiration Date** and **Licenses Applied**.
 
 ## If the import fails
 

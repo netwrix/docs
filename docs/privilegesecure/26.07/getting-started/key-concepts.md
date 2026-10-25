@@ -80,18 +80,17 @@ A connection profile sets how users connect. It controls the session length, whe
 
 A session is a time-limited grant of access. It is the unit of work for users. A session moves through these stages:
 
-| Stage | Meaning of the session state |
-|---|---|
-| Approval required | The connection profile requires approval, and no approver has answered. |
-| Pending | The session is scheduled and has not started. |
-| Active | The pre-session actions finished and the user can connect. |
-| Completed | The session ended and the post-session actions ran. |
-| Failed or cancelled | The session didn't complete. |
-| Approval denied or approval failed | An approver denied the request, or the approval couldn't finish. |
-| Locked | An auditor or a command restriction locked the session. |
-| Cancelling | The session is ending and the post-session actions are running. |
-
-{/* TODO verify: console labels for session statuses */}
+| Stage | Console label | Meaning of the session state |
+|---|---|---|
+| Approval required | **Waiting for approval** | The connection profile requires approval, and no approver has answered. |
+| Pending | **Pending**, or **Provisioning** in the active sessions list | The session is scheduled and has not started. |
+| Active | **Available** or **Logged In** | The pre-session actions finished and the user can connect. **Logged In** appears when the user's sign-in falls within the session window. Otherwise the session shows **Available**. |
+| Completed | **Completed** | The session ended and the post-session actions ran. |
+| Failed | **Failed** | The session ended with errors. |
+| Cancelled | **Cancelled** | The session was cancelled. |
+| Approval denied or approval failed | **Approval denied**, **Approval failed** | An approver denied the request, or the approval couldn't finish. |
+| Locked | **Locked** | An auditor or a command restriction locked the session. |
+| Cancelling | **Deprovisioning** | The session is ending and the post-session actions are running. |
 
 The **Dashboard** page shows sessions as Active, Scheduled, Approvals, and Historical. See [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 

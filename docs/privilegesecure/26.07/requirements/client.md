@@ -32,7 +32,7 @@ Each user needs a multi-factor authentication (MFA) app or token, such as Micros
 
 The Netwrix Privilege Secure browser extension runs on Google Chrome and Microsoft Edge, version 116 or later. Users install it from the Chrome Web Store or the Microsoft Edge Add-ons store. The extension doesn't support Firefox.
 
-{/* TODO verify: the store build that pairs with 26.07.x. The latest store listing seen in discovery is 25.8.26. */}
+{/* TODO verify: the store build that pairs with 26.07.x. The browser extension repository has no 26.07 release branch, so the release code can't show which store build pairs with it. */}
 
 ## Remote desktop and SSH clients
 

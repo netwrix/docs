@@ -68,10 +68,8 @@ The task status changes to **Complete**. You can't delete a completed task.
 A commit can't be undone. To review the access again, an Administrator must create a new access certification task.
 :::
 
-{/* TODO verify: the exact prompt shown on Commit, and whether the Commit button is blocked while any entitlement is unreviewed (the code blocks it). The lab had no access certification with data. */}
+**Commit** is disabled until you approve or deny every entitlement. Pointing at the disabled button shows "Not all entitlements have been reviewed. Please approve or deny all entitlements before committing." The console doesn't ask you to confirm. When you select **Commit**, the console commits the review right away and shows the message "Committed '`<task name>`'".
 
-{/* TODO verify: who can export the entitlements to CSV after the commit. The 26.03 page implies the reviewer; the code limits the download to Administrators. */}
+After the commit, the **Export as CSV** button on the **Entitlements** tab is enabled. It is disabled before the commit, and its hover text says it is available when the task is Complete. Both the assigned reviewer and an Administrator see the button.
 
-If you open a task that isn't assigned to you, the console shows "This user is not authorized to review this Access Certification Task".
-
-{/* TODO verify: where the console shows the not-authorized message, and whether a non-assigned reviewer sees the task at all. */}
+A user who has only the Reviewer role sees just the tasks assigned to them in the task list. For a task that isn't assigned to you, **Review** and **Commit** stay disabled with the hover text "You are not the reviewer for this task". If a review is still submitted for a task that isn't yours, the server rejects it with "This user is not authorized to review this Access Certification Task".

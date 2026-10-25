@@ -21,20 +21,16 @@ For an overview of vault connectors, see [Third-party vault connectors](vault-co
 
 | Field | Description |
 |---|---|
-| **API Url**\* | The base address of the API of the vault. |
+| **API Url**\* | The base address of the API of the vault. The default is `http://localhost/PasswordVault`. |
 | **App Id**\* | The application ID for the vault. The default is `SbPAM`. |
 | **Client Certificate** | A value that Privilege Secure passes to your scripts as `$Options.Connector.Options.ClientCertificate`. Privilege Secure doesn't use it itself. |
-| **Skip Certificate Check** | Under **Advanced**. When selected, Privilege Secure doesn't validate the certificate of the vault. |
+| **Skip Certificate Check** | Under **Advanced**. When selected, Privilege Secure doesn't validate the certificate of the vault. It's cleared by default. |
 | **Checkout Script Block** | Under **Advanced**. Required for a BYOV connector. A PowerShell script that returns the credential. Without it, the connector supplies no credential. |
-| **Checkin Script Block** | Under **Advanced**. A PowerShell script that runs when the session ends. If you leave it empty, the built-in check-in deletes the credential record that Privilege Secure created for the session. |
+| **Checkin Script Block** | Under **Advanced**. A PowerShell script that runs when the session ends. If you leave it empty, the built-in check-in deletes the credential record that is linked to the connector, when the last session that uses it ends. |
 
 An asterisk (\*) marks a required field.
 
-{/* TODO verify: which credential record the built-in BYOV check-in deletes (DELETE api/v1/Credential/<Id> in BYOV.psm1). Confirm it is the temporary session credential and never the stored account, before readers are told to leave Checkin Script Block empty. */}
-
-{/* TODO verify: the default of API Url on a fresh BYOV form. The lab form showed http://localhost/PasswordVault, which is the CyberArk value, and may be stale. */}
-
-{/* TODO verify: whether Skip Certificate Check is cleared by default on the BYOV form. */}
+{/* TODO verify: that the credential record the built-in check-in deletes is a temporary record and never the stored account. The check-in deletes the credential record that it receives, and the code doesn't show whether the activity creates that record for each session. */}
 
 ![The Add Integration Connector form with the BYOV template selected and the Advanced section expanded, showing Skip Certificate Check and the Checkout Script Block editor.](/images/privilegesecure/26.07/integrations/integration-connector-byov-advanced.webp)
 
@@ -42,10 +38,17 @@ An asterisk (\*) marks a required field.
 
 Both scripts receive the following parameters:
 
-- `$Options` holds the session details. In the sample script, `$Options.RestApiToken` and `$Options.RestApiUri` hold a token and the address of the Privilege Secure API. `$Options.ActivitySession.LoginAccountName` holds the login account of the activity.
-- `$Credential` holds the credential to fill. The check-out script sets `Username`, `Domain`, and `Password`, and returns the object.
+- `$Options` holds the connector settings and the session details:
+  - `Connector` holds the `Name`, the `Id`, and an `Options` table with the connector settings by name, for example `$Options.Connector.Options.AppId`. The script blocks aren't included.
+  - `RestApiUri` and `RestApiToken` hold the address of the Privilege Secure API and a token for it.
+  - `ActivitySession` holds the details of the session, including `SessionId`, `LoginAccountName`, `LoginAccountNameFormat`, `UserId`, `TargetUserId`, and `TargetId`.
+  - `TargetHost` holds the host object of the session target, when the session has one. `TargetDomain`, `TargetWebSite`, and `TargetAzureADTenant` are always empty in 26.07.
+  - In the check-in script, `Username` and `Domain` hold the user name and domain of the credential.
+- `$Credential` holds the credential to fill. The check-out script sets `Username`, `Domain`, and `Password`, and returns the object. Privilege Secure also passes the domain credential as a third argument, which a script can read with a third `param` entry, `$DomainCredentials`.
 
-{/* TODO verify: the full list of properties of $Options and the helper commands available to the scripts, such as Invoke-SbPAMRest and Add-SbPAMActionLog. The 26.03 page shows these two commands only in a sample. */}
+The scripts run in the Action Service session, so they can use its Privilege Secure commands, such as `Invoke-SbPAMRest` to call the API and `Add-SbPAMActionLog` to write to the action log.
+
+{/* TODO verify: the complete list of Privilege Secure commands that are supported for use in BYOV scripts. The code loads many commands, and none is documented as supported for customer scripts. */}
 
 ## Use Privilege Secure as the vault
 
@@ -72,12 +75,10 @@ The account can be a manually managed account, or an account that a secret vault
    | **Skip Certificate Check** | Leave as the default |
 
    :::note
-   This script doesn't use **API Url** or **Skip Certificate Check**. The script reads the Privilege Secure address from the service's REST URL setting, and its own requests skip the certificate check. The form still requires an **API Url** value.
+   This script doesn't use **API Url** or **Skip Certificate Check**. It sends its requests to the Privilege Secure address that the Action Service uses, and those requests follow the certificate setting of the Action Service, not the connector. The form still requires an **API Url** value.
    :::
 
-   {/* TODO verify: Product to confirm that BYOV ignores API Url and Skip Certificate Check (source: BYOV.psm1, SbPAM.psm1 RestApiUri, SbPAMFuncs.psm1 Invoke-SbPAMRest). */}
-
-3. In **Checkout Script Block**, paste the following script. Leave **Checkin Script Block** empty. If you leave it empty, the built-in check-in deletes the credential record that Privilege Secure created for the session.
+3. In **Checkout Script Block**, paste the following script. Leave **Checkin Script Block** empty. If you leave it empty, the built-in check-in deletes the credential record that is linked to the connector, when the last session that uses it ends.
 
    ```powershell
    param (
@@ -185,18 +186,16 @@ The account can be a manually managed account, or an account that a secret vault
 
 4. Click **Save**.
 
-{/* TODO verify: that this script, carried over from the 26.03 documentation, works unchanged on 26.07.3, and ask Engineering whether the `-match ".*\\.*"` branch (which matches every name and is then overwritten) should be removed. */}
+The `if ($result.Username -match ".*\.*")` block in the script has no effect on the result. The pattern matches every name, and the three assignments after the block overwrite the values that the block sets.
+
+{/* TODO verify: that this script, carried over from the 26.03 documentation, runs unchanged in a session on 26.07.3. It depends on the records in your vault and on a live session. */}
 
 ### Manage the account manually
 
 1. Select **Dashboard** in the left navigation, then select the **Credentials** tab.
 2. Find the account and select its checkbox. Ensure the account isn't already managed.
 3. Click **Manage** above the list, then select **Manual**.
-4. Set the password of the account so that it matches the password on the resource.
-
-For the steps and the current location of **Set Password**, see [Manage credentials](../../admin/credentials/manage-credentials.md).
-
-{/* TODO verify: the location of Set Password for a manually managed account in 26.07.3 and the exact steps. The 26.03 page used a wrench icon on the account row. */}
+4. In the **Set Password for Credential** window, enter the account's password in **Password**, then click **Save**. Enter the password that the account already has on the resource, because Privilege Secure doesn't change the password on the resource for a manually managed account. To set the password again later, select the **Set Password** icon beside the account name. See [Passwords of manually managed accounts](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md#passwords-of-manually-managed-accounts).
 
 ### Create the activity
 
@@ -224,11 +223,11 @@ Some appliances accept SSH only with a local account, for example the `root` acc
 This procedure is a workaround that Netwrix staff have shared on the Community, not a built-in feature. The account password isn't rotated automatically. Change it manually, or write rotation logic in the **Checkin Script Block**.
 :::
 
-1. Add the device as a Linux resource by its IP address. Don't configure service account management for it. {/* TODO verify: the steps to add the resource. */}
+1. Add the device as a Linux resource by its IP address. See [Add servers manually](/docs/privilegesecure/26.07/resources/add-resources.md#add-servers-manually). Select a service account in the **Service Account** dropdown, but don't configure service account management for the resource.
 2. Store the local account in a secret vault. See [Secret vaults](../../resources/secret-vaults.md).
 3. Create a BYOV connector that points to Privilege Secure, as described in [Use Privilege Secure as the vault](#use-privilege-secure-as-the-vault).
 4. Create an activity with **Login Account** set to **Vault** and the BYOV connector selected.
-5. Add a pre-session script that removes the domain or resource prefix from the user name. {/* TODO verify: the script and the action type for the prefix removal. */}
+5. Add a pre-session script that removes the domain or resource prefix from the user name. {/* TODO verify: the script and the action type for the prefix removal. The release code has no built-in step that rewrites a user name, so the step must be authored and tested in a session. */}
 6. Create an access policy that grants the activity and records the session.
 
 If the resource doesn't appear in the access policy, check the following:
@@ -236,6 +235,6 @@ If the resource doesn't appear in the access policy, check the following:
 - The resource has a service account. A dummy service account is enough.
 - The resource has a platform selected.
 
-{/* TODO verify: the end-to-end procedure in the lab, including whether the resource needs a service account and why. The Community report says the resource appeared in the policy only after a dummy service account was added. */}
+{/* TODO verify: the end-to-end procedure, including whether the resource needs a service account and why. The code doesn't show a service account requirement, and the check needs a Linux device and a recorded session. */}
 
-{/* TODO add an example: a user name before and after the prefix removal. */}
+For example, the check-out script can return the stored user name with the resource prefix, such as `ESXI01\root`. The prefix removal is meant to make the session sign in as `root`. {/* TODO verify: that the session signs in as `root` after the prefix removal. The step isn't written or tested yet (see the TODO in the procedure). */}

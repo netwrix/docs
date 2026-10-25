@@ -12,9 +12,6 @@ The installer creates a self-signed certificate for the console and binds it to 
 
 - A certificate for client and server authentication, issued by a trusted CA.
 - The certificate and its private key are in the Local Computer Personal store on the Netwrix Privilege Secure server, and the issuing CA's root certificate is trusted on every client that opens the console.
-
-{/* TODO verify: store locations; the KB says the Trusted Root store */}
-
 - For a high availability deployment, a certificate that lists the fully qualified domain name (FQDN) of each server in the Common Name (CN) or Subject Alternative Name (SAN) field.
 
 ## Bind the certificate to the website
@@ -26,11 +23,7 @@ The installer creates a self-signed certificate for the console and binds it to 
 1. Select **OK**, then **Close**.
 1. Open Command Prompt as an administrator and run `iisreset`.
 
-{/* TODO verify: the IIS site is named "SbPAM Web Service" in code and the KB calls it "Netwrix Privilege Secure Web Service". Confirm the name shown in IIS Manager on a 26.07 install. */}
-
-An upgrade keeps a customer-changed binding that has a certificate.
-
-{/* TODO verify: upgrade preserves custom certificate bindings (code: ConfigureSSL.ps1; not lab-verified). */}
+The installer saves the bindings of the website during an install or upgrade and applies them again. It restores each binding that has a certificate, as long as the certificate is still in a Local Computer certificate store. It skips a binding whose certificate is no longer there. An upgrade doesn't recreate or reconfigure the website, so custom bindings are kept.
 
 ## Register services with the new DNS name
 

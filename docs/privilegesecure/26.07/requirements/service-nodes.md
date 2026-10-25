@@ -15,15 +15,16 @@ These services run on remote hosts:
 - Action
 - Host Scan
 - Scheduler
-- Email
 - SIEM
 - Proxy
 
-The Action, Host Scan, Scheduler, Email, and SIEM installers add the .NET 10 Hosting Bundle if the host doesn't already have it. The Host Scan installer also adds the Visual C++ runtime.
+The product zip file has no standalone Email service installer, so the Email service runs only on the application server. The Action, Scheduler, and SIEM installers add the .NET 10 Hosting Bundle and the Visual C++ runtime if the host doesn't already have them. The Host Scan installer is an `.msi` file and relies on the Action Service, which must be installed first.
 
-{/* TODO verify: that the 26.07.3 zip includes a remote Email Service installer. */}
+The Action and Host Scan services include the PowerShell 7.6 engine, so those hosts need no separate PowerShell installation.
 
-{/* TODO verify: the operating system, hardware, and software for remote service hosts. The remote Action, Email, Scheduler, and SIEM bundles don't check for PowerShell 7.6, and it is unknown whether the services need it at runtime. */}
+Remote service hosts run Windows Server 2016 through Windows Server 2025.
+
+{/* TODO verify: the minimum hardware for remote service hosts. Release code states no hardware requirement. */}
 
 For installation steps, see [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 
@@ -35,7 +36,7 @@ For installation steps, see [Install services on additional servers](/docs/privi
 | 900 | 300 | 32 GB | 8 | 42 GB per day |
 | 1800 | 600 | 64 GB | 16 | 84 GB per day |
 
-{/* TODO verify: the 26.03 table was titled "Windows/Linux/Docker". Confirm that a Linux or Docker proxy is supported in 26.07 before you state it. */}
+{/* TODO verify: whether the Proxy Service is supported on Linux or in Docker in 26.07. */}
 
 ## Antivirus exclusions
 

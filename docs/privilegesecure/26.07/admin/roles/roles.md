@@ -27,7 +27,7 @@ The **Users** role isn't offered in the **Add Roles** window. The console assign
 
 An account can have more than one role. To see who holds a role, select the role in the list.
 
-{/* TODO verify: whether the built-in roles can be copied, deleted, or modified. The 26.03 page says they can't, but the Auditors role has an editable Permission Assignment list in 26.07. */}
+You can't copy, delete, or rename the built-in roles (**Administrators**, **Users**, **Reviewers**, and **Auditors**) or change their descriptions. The copy and delete icons are disabled for them, and the server refuses to copy a built-in role. The one exception is the **Auditors** role, whose **Permission Assignment** list you can edit.
 
 ### Approvers
 
@@ -35,7 +35,7 @@ There is no Approver role. Approvers are the users and groups that you name in a
 
 ## Role list
 
-The role list on the left has a **Search Roles...** box and a **+** button (**Add Role**) that creates a custom role. The copy and delete icons appear beside the selected role. The copy icon clones the role, and the trash can icon deletes it after you confirm. To create custom roles, see [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
+The role list on the left has a **Search Roles...** box and a **+** button (**Add Role**) that creates a custom role. The copy and delete icons appear beside each role. They're enabled only for custom roles. The copy icon clones the role with its permissions, scope, and members, and the trash can icon deletes it after you confirm. To create custom roles, see [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
 
 For the **Administrators** and **Reviewers** roles, the member list has these controls:
 
@@ -61,17 +61,13 @@ Custom roles and the **Auditors** role are built from permissions. A role has on
 | Auditors | **Lock Session** | Lock a live session. Requires **Live Session Viewer**. |
 | Auditors | **Reporting** | Create, change, and delete reports. |
 | Auditors | **Admin View Read Only** | Open every administration page without the ability to change settings. See [Give auditors read-only console access](/docs/privilegesecure/26.07/admin/roles/admin-view-read-only.md). |
-| Access Policies | `[AP] Modify Name`, `[AP] Modify Description`, `[AP] Modify Connection Profile`, `[AP] Modify Activities`, `[AP] Modify Users`, `[AP] Modify Resources` | Change the named part of an access policy. |
-| Credentials | `[C] Manage`, `[C] Unmanage`, `[C] Schedule Rotation`, `[C] Verify`, `[C] View Password`, `[C] Rotate Services` | Perform the named action on credentials. |
-
-{/* TODO verify: the labels of the Access Policies and Credentials permissions in the console. The names come from the product's built-in permission list; the lab tour opened only the Auditors permission list. */}
+| Access Policies | **Modify Name**, **Modify Description**, **Modify Connection Profile**, **Modify Activities**, **Modify Users**, **Modify Resources** | Change the named part of an access policy. |
+| Credentials | **Manage**, **Unmanage**, **Schedule Rotation**, **Verify**, **View Password**, **Rotate Services** | Perform the named action on credentials. |
 
 Two rules apply when you edit the **Permission Assignment** list for an Auditors role:
 
 - **Terminate Session** and **Lock Session** stay disabled until **Live Session Viewer** is on the role.
 - Adding **Admin View Read Only** also adds **Reporting**. Removing **Reporting** also removes **Admin View Read Only**.
-
-{/* TODO verify: Reporting removal cascades to Admin View Read Only in the 26.07.3 console */}
 
 ### Scope of an Auditors role
 
@@ -83,4 +79,4 @@ To use scope in practice, give the built-in **Auditors** role access to all user
 
 The **Admin View Read Only** permission lets an auditor open the administration pages without changing anything. It is a permission. Add it to a role with the Auditors target. See [Give auditors read-only console access](/docs/privilegesecure/26.07/admin/roles/admin-view-read-only.md).
 
-{/* TODO verify: the read-only banner text and which actions stay allowed for a read-only user. */}
+A read-only user sees the banner "You are in read-only mode. Changes are not permitted." Only a few actions stay available, such as running reports, replaying recordings, and locking or terminating live sessions.

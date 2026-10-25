@@ -26,9 +26,7 @@ The connection profile on the access policy controls recording. These settings a
 | SSH | The input and output of the session. Keystrokes are included when **Record Keystrokes and Metadata** is on. |
 | Website | A video of the browser session, captured by the browser extension. Audio is included when **Record Session Audio** is on. |
 
-For SSH, the proxy can also record commands that run without an interactive shell and SFTP file operations.
-
-{/* TODO verify: whether recording of SSH commands run without a shell and of SFTP operations is on or off by default, and where a customer turns it on. */}
+For SSH, the proxy can also record commands that run without an interactive shell and SFTP file operations. Both are off by default. To turn them on, set `RecordExec` (commands without a shell) and `RecordSFTP` (SFTP operations) to `true` in `sbpam_ssh.json` on the proxy server. The file is in `C:\ProgramData\Stealthbits\PAM\ProxyService`. An upgrade keeps your copy of this file. The proxy service picks up changes to `sbpam_ssh.json` without a restart. The new settings apply to SSH sessions that start after you save the file.
 
 When a user types at a password prompt in an SSH session, the recording hides the keystrokes.
 
@@ -42,15 +40,13 @@ The proxy service stores recordings on the proxy server, in the `iolog` folder u
 C:\ProgramData\Stealthbits\PAM\ProxyService\iolog
 ```
 
-Each proxy node stores the recordings of the sessions it handled. Protect this folder and include it in your backups. To move it, for example when the drive runs low on space, see the Knowledge Base article [Changing the Path Where Session Recordings Are Stored](/docs/kb/privilegesecure/session-management-and-recording/how-to-change-the-path-where-session-recordings-are-stored).
-
-{/* TODO verify: that each proxy node keeps its own recordings in a multi-node deployment, and the backup and high availability behavior for recordings. */}
+A proxy node first writes the recording of each session it handles to this folder. About once an hour, the node copies finished recordings to an application server. Once a recording is copied, a node that doesn't store recordings deletes its own copy. Every Privilege Secure application server stores recordings, including each application server in a cluster. A remote proxy node doesn't. After replication, a remote proxy's recording is kept on an application server, in that server's `iolog` folder. Protect this folder on every application server and include it in your backups. To move it, for example when the drive runs low on space, see the Knowledge Base article [Changing the Path Where Session Recordings Are Stored](/docs/kb/privilegesecure/session-management-and-recording/how-to-change-the-path-where-session-recordings-are-stored).
 
 ## Recording retention
 
 Recordings stay on disk until you delete them or turn on log retention for recordings. In **System Settings**, the **Data Retention** panel has **Enable I/O Log Retention** and **I/O Log Retention Days**. The option is off by default and the default is 90 days. When you turn it on, Privilege Secure deletes recordings older than the number of days you set. Deletion removes the recordings and doesn't archive them.
 
-{/* TODO verify: that the retention setting deletes recordings on each proxy node. The console stores the setting, and the proxy service reads it to delete recordings. */}
+Each proxy node reads the setting from the console and applies it to the recordings in its own recordings folder, so the cleanup runs on every node that holds recordings. Retention deletes RDP and SSH recordings (`.iolog` files) on each node during the hourly cycle and when a session's recording is handled. Website recordings aren't removed by this setting. The proxy service copies each website recording into its recordings folder, then deletes the temporary file it received from the browser extension. Website recordings kept on an application server stay on disk until you delete them.
 
 For all retention settings, see [Configure data retention](/docs/privilegesecure/26.07/configuration/system-settings/data-retention.md).
 

@@ -12,7 +12,7 @@ A password complexity policy sets the rules for the passwords that Netwrix Privi
 The target resource enforces its own password rules too. If a domain or local password policy conflicts with the policy in Privilege Secure, Privilege Secure can't create the managed account and the session fails. Confirm that the policy meets the password rules of your targets.
 :::
 
-{/* TODO verify: whether a policy also applies to passwords that Privilege Secure rotates, or only to accounts that it creates. The 26.03 page says the policy applies only to managed accounts created by Privilege Secure. */}
+Privilege Secure uses the platform's policy whenever it generates a password for a managed account, including the replacement password when it rotates an account.
 
 ## Built-in policies
 
@@ -26,15 +26,14 @@ The console includes five policies. The **Default** policy can't be deleted.
 | **Default Linux** | 16 | **Lowercase** | **Symbol** | 2 | **Lowercase**, **Uppercase**, **Symbols**, **Numbers** |
 | **Default PanOS** | 16 | **Lowercase** | **Symbol** | 2 | **Lowercase**, **Uppercase**, **Symbols**, **Numbers** |
 
-The **Default** policy excludes no characters. The other four policies describe themselves as "Exclude unsafe special characters and spaces" for their platform. The **Default Linux**, **Default Cisco**, and **Default PanOS** policies exclude these characters from the password:
+The **Default** policy excludes no characters. The other four policies describe themselves as "Exclude unsafe special characters and spaces" for their platform. The **Default BSD**, **Default Linux**, **Default Cisco**, and **Default PanOS** policies exclude these characters from the password:
 
 - **Default Linux**: `` ' " \ $ ` ! & | ; < > ( ) { } [ ] / @ : # ``
+- **Default BSD**: `` ' " \ $ ` ! & | ; < > ( ) { } [ ] / @ : # ``
 - **Default Cisco**: `` ' " \ $ ` | ; < > & ! @ ? / : # * ``
 - **Default PanOS**: `` < > & " ' \ ` $ | ; ! ( ) { } [ ] # : / @ ? , . + = ``
 
-The BSD, Cisco, Linux, and PanOS platforms each use the policy with their name.
-
-{/* TODO verify: the lengths and exclude lists of Default BSD, Default Linux, and Default PanOS on a fresh 26.07.3 install. The lab (upgraded) shows 16; code migrations show an initial 21 for Linux and PanOS; the Default BSD exclude list wasn't read from code, and the lab says each policy has its own list. */}
+The BSD, Cisco, Linux, and PanOS platforms each use the policy with their name. The other platforms use the **Default** policy.
 
 ## Password complexity settings
 
@@ -51,9 +50,7 @@ Select **Platforms** > **Password Complexity** to open the list of policies. Sel
 | **Characters to Exclude** | Characters that never appear in the password. |
 | **Include Characters** | The kinds of characters that the password uses: **Lowercase**, **Uppercase**, **Symbols**, **Spaces**, and **Numbers**. |
 
-{/* TODO verify: the values in the Must Start With and Must End With lists. The built-in policies use Symbol, Uppercase, and Lowercase. The 26.03 page lists None, Lowercase, Uppercase, and Numeric. */}
-
-{/* TODO verify: that Max Consecutive Chars limits identical characters in a row. The 26.03 page says "consecutively occurring characters". */}
+The **Must Start With** and **Must End With** lists offer **None**, **Lowercase**, **Uppercase**, **Numeric**, **Symbol**, and **Space**. **None** sets no rule for that position.
 
 ![The Password Complexity page with the Default policy selected, showing its start and end character rules, length 21, maximum consecutive characters 2, and the included character types.](/images/privilegesecure/26.07/resources/password-complexity-default.webp)
 
@@ -83,7 +80,7 @@ A new policy has no effect until a platform uses it.
 1. Check that **Password Length** shows `24`.
 1. Save the change.
 
-{/* TODO verify: the Save and Cancel buttons on a platform. The 26.03 pages say they appear when you change a setting. The 26.07 lab showed no Save button on existing platforms. */}
+**Save** and **Cancel** appear after you change a setting. Select **Save** to keep the change.
 
 Select the arrow next to **Password Length** to show the rules of the selected policy. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 

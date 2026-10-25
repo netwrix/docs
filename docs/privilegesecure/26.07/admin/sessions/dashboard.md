@@ -24,9 +24,7 @@ Each tile shows a count. Hover over a tile to see what the count measures, for e
 | **Resources** | Resources that Privilege Secure manages | [Resources](/docs/privilegesecure/26.07/resources/overview.md) |
 | **Credentials** | Managed accounts and their rotation status | [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md) |
 
-Every user who can open the dashboard sees **Active**, **Scheduled**, **Approvals**, and **Historical**. **Users** and **Resources** appear only for administrators. **Credentials** appears for administrators and for users whose role includes a Credentials permission. The tile counts refresh every 60 seconds.
-
-{/* TODO verify: per-role tiles and the 60-second refresh in the lab */}
+Every user who can open the dashboard sees **Active**, **Scheduled**, **Approvals**, and **Historical**. **Users** and **Resources** appear only for administrators. **Credentials** appears for administrators and for users whose role includes a Credentials permission. The session tile counts update as sessions change. For administrators, the **Users**, **Resources**, and **Credentials** counts also refresh every 60 seconds.
 
 Every table has a **Refresh** button at the top right that reloads the rows. A counter next to it shows the number of results.
 

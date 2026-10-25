@@ -24,14 +24,14 @@ Select **Activities** in the left navigation pane, and then select **Activity Gr
 
 The top of the main pane shows the **Name**, **Description**, and **Created By** of the selected group. When you change the name or description, **Save** and **Cancel** appear. Click **Save** to keep the change, or **Cancel** to discard it.
 
-The activities table lists the activities in the group. Its columns are **Name** and **Created**. The **Created** column shows the date the activity was created. Resize or sort the columns as needed. The table has these controls:
+The activities table lists the activities in the group. The first column shows the name of each activity, which links to the activity. The second column shows the date and time the activity was created. Resize or sort the columns as needed. The table has these controls:
+
+{/* TODO verify: the exact labels of the two column headers in the activities table. In 26.07.3 the headers render as raw localization keys, so the page doesn't name them. Confirm the labels after the product fixes the headers. */}
 
 - **Search**: filter the table.
 - **Add**: open the **Add Activities** dialog.
 - **Remove**: remove the selected activities from the group after you confirm. This doesn't delete the activities.
 - **Refresh**: reload the table.
-
-{/* TODO verify: the column headers of the activities table render as raw localization keys in the 26.07.3 lab console. This page describes them as Name and Created. Confirm the labels after the product fixes the headers. */}
 
 {/* TODO screenshot: the Activity Groups page with a group selected and its activities listed */}
 
@@ -50,13 +50,11 @@ For example, create a group named `Local Administrator Access for All Platforms`
 
 1. On the **Activity Groups** page, select the group.
 2. In the activities table controls, click **Add**.
-3. In the **Add Activities** dialog, use the search box to find activities. The dialog has two panes: **Available** activities and the activities to add.
+3. In the **Add Activities** dialog, use the search box to find activities. The dialog has two panes: **Available Activities** and **Activities to Add**. Both list the columns **Name**, **Description**, and **Created**.
 4. Click a row to move it to the list of activities to add. Click a row in that list to move it back.
 5. Click **Add**.
 
 The activities appear in the table.
-
-{/* TODO verify: confirm the exact pane titles and column labels in the Add Activities dialog on 26.07.3. The code names the dialog "Add Activities" and the 26.03 pages describe "Available Activities" and "Activities to Add". */}
 
 ## Use an activity group in an access policy
 

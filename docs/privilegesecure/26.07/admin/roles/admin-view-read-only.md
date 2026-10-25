@@ -11,24 +11,22 @@ sidebar_position: 40
 ## How it behaves
 
 - The user sees the same administration pages as an Administrator, including **Users & Groups**, **Resources**, **System Settings**, and **Auditing & Reporting**.
-- The console shows the banner "You are in read-only mode. Changes are not permitted." Controls that change data are disabled and show a tooltip. {/* TODO verify: the exact banner text, which controls are disabled, and what a blocked save returns. Not tested in the lab because no read-only user was available. */}
+- The console shows the banner "You are in read-only mode. Changes are not permitted." Buttons that change data are disabled, and their tooltip reads "Not available in read-only mode". If a change reaches the server anyway, the server refuses it with the error "This account has read-only access and cannot perform write operations." (HTTP 403).
 - The permission takes precedence over the Administrator role. A person who holds both the Administrator role and **Admin View Read Only** gets read-only access.
 - The **Log Files** page doesn't show the **Options** (gear) icon.
 
 :::warning
-Don't give **Admin View Read Only** to an Administrator who needs to make changes. The permission overrides the Administrator role. {/* TODO verify: precedence on a test user who is both an Administrator and holds this permission. The code and the 26.07.3 release note say read-only wins. A Jira retest comment says the user keeps Administrator rights. */}
+Don't give **Admin View Read Only** to an Administrator who needs to make changes. The permission overrides the Administrator role.
 :::
 
 ### What a read-only user can still do
 
-A few actions stay available because auditors need them:
+Privilege Secure blocks every change request (create, update, and delete) from a read-only user, except for these actions, which auditors need. Requests that only read data stay open.
 
 - Register for multi-factor authentication (MFA).
 - Lock or terminate a live session, and replay a recorded session, within the scope of the role. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md) and [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
-- Create, save, delete, run, favorite, and subscribe to reports. See [Reports and subscriptions](/docs/privilegesecure/26.07/admin/audit-reporting/reports.md).
+- Create, save, delete, run, favorite, and subscribe to reports, and send a report to a subscriber. See [Reports and subscriptions](/docs/privilegesecure/26.07/admin/audit-reporting/reports.md).
 - Download reports and exports.
-
-{/* TODO verify: the list of actions that stay available, from the product code. Confirm each one on a read-only test user. */}
 
 ## Prerequisites
 
@@ -54,7 +52,12 @@ Read-only users still need session scope. Without **All Users** and **All Resour
 
 If you later remove **Reporting**, Privilege Secure also removes **Admin View Read Only**.
 
-{/* TODO verify: tooltip text on Admin View Read Only */}
+Hover over **Admin View Read Only** to see this tooltip: *"Admin View Read Only" may overrule permissions granted by other custom roles assigned to the same user.*
+
+Privilege Secure locks a permission in two cases and explains why in its tooltip. The tooltips still use the former permission name, "Auditing and Reporting", for **Reporting**:
+
+- When you select **Reporting** for removal, **Admin View Read Only** is locked with this tooltip: *"Admin View Read Only" will be removed automatically because it requires "Auditing and Reporting".*
+- While **Admin View Read Only** is selected to be added, **Reporting** is locked with this tooltip: *"Auditing and Reporting" is required by "Admin View Read Only".*
 
 ## Example: read-only access for the compliance team
 

@@ -16,9 +16,7 @@ You create one connector for each ticket type. A connector handles incidents or 
 
 A connection profile uses one ServiceNow connector. Every access policy that uses the profile then validates tickets against that connector.
 
-Privilege Secure supports the ServiceNow Xanadu and Yokohama releases.
-
-{/* TODO verify: supported ServiceNow releases with Product (Xanadu and Yokohama targeted; Zurich not claimed). */}
+The connector uses the ServiceNow Table REST API and works with ServiceNow releases that provide it.
 
 The connector connects to ServiceNow with HTTP basic authentication over HTTPS. The account that you select in **System Credentials** signs in to the ServiceNow REST API.
 
@@ -32,7 +30,7 @@ Prepare the ServiceNow instance first.
 - The ServiceNow host name, reachable over HTTPS from the Privilege Secure server.
 - A service account in Privilege Secure that holds the integration account's user name and password, to select in **System Credentials**. See [Service accounts](../../configuration/service-accounts/service-accounts.md).
 
-{/* TODO verify: the other ServiceNow roles that the integration account needs, such as read access to the incident and change request tables and permission to write work notes. Only snc_basic_auth_api_access is confirmed. */}
+The Table API applies the access controls of your instance to the integration account. The account needs access to read the ticket table that the connector uses (`incident` or `change_request`). When **Add Comments To Ticket** is selected, it also needs access to write the **Work notes** and **State** fields of those tickets. In a default instance, the `itil` role grants read and write access to incident and change request records and their work notes. Custom access controls can change this, so check the controls on your instance. See the ServiceNow documentation on incident and change management roles.
 
 ## Create the connector
 
@@ -51,13 +49,11 @@ Prepare the ServiceNow instance first.
 | **Ticket Number Regex** | A regular expression that the ticket number must match. The default is `^INC[\d]{7}$`. Leave it empty to skip the format check. |
 | **Validation Error Message** | The message that users see when the number doesn't match the regular expression. |
 | **Domain Name**\* | The host name of the ServiceNow instance, without `https://`. |
-| **Allowed Statuses** | The ticket statuses that Privilege Secure accepts, separated by commas. The default is `New,In Progress`. Privilege Secure rejects a ticket in any other status. |
+| **Allowed Statuses** | The ticket statuses that Privilege Secure accepts, separated by commas. The default is `New,In Progress`. Privilege Secure compares each entry with the status label that ServiceNow displays for the ticket, for example `In Progress`, and ignores case. It rejects a ticket in any other status. |
 | **System Credentials**\* | The credential of the integration account. |
 | **Add Comments To Ticket** | When selected, Privilege Secure adds work notes to the ticket. It's selected by default. |
 
 An asterisk (\*) marks a required field.
-
-{/* TODO verify: whether Allowed Statuses matches the status label (New) or the stored value, and whether matching ignores case. */}
 
 {/* TODO screenshot: the ServiceNow connector form. The lab has no ServiceNow instance. */}
 
@@ -70,12 +66,17 @@ This example creates one connector for each ticket type.
 | **Ticket Number Label** | `INC#` | `CHG#` |
 | **Ticket Type**\* | Incidents | Change Requests |
 | **Ticket Number Regex** | `^INC[\d]{7}$` | `^CHG[\d]{7}$` |
+| **View Ticket Url Template**\* | `https://<instance-name>.service-now.com/nav_to.do?uri=incident.do?number={ticket}` | `https://<instance-name>.service-now.com/nav_to.do?uri=change_request.do?number={ticket}` |
 | **Domain Name**\* | `<instance-name>.service-now.com` | `<instance-name>.service-now.com` |
-| **Allowed Statuses** | `New,In Progress` | `New,In Progress` |
+| **Allowed Statuses** | `New,In Progress` | `New,Assess,Authorize,Scheduled,Implement` |
+
+{/* TODO verify: the change request form of the view ticket URL. It follows the incident form from the field help with change_request.do, and it needs a ServiceNow dev instance. */}
 
 The default regular expression matches incident numbers only. For change requests, replace the `INC` prefix with `CHG`.
 
-{/* TODO verify: that your instance numbers change requests as CHG followed by 7 digits, and the allowed statuses that change requests use. Add a sample View Ticket Url Template value. */}
+By default, ServiceNow numbers change requests as `CHG` followed by 7 digits. The change request example uses state labels from the default ServiceNow change model (New, Assess, Authorize, Scheduled, Implement, Review, Closed, and Canceled). Instances can customize both the number format and the labels.
+
+{/* TODO verify: whether the connector's update to In Progress at session start works for change requests, which have no In Progress state in the default change model. This needs a ServiceNow dev instance. */}
 
 ## Attach the connector to a connection profile
 
@@ -116,12 +117,10 @@ When a user ends a session that has a ServiceNow ticket, Privilege Secure asks h
 
 **Resolved status can fail with a 403 error.**
 
-If your ServiceNow data policy requires a resolution code and close notes, ServiceNow rejects the update to Resolved. The Privilege Secure log shows only "Forbidden". Privilege Secure sends only a work note and the status, so the ticket isn't resolved. The cause is the data policy, not the permissions of the integration account.
+If your ServiceNow data policy requires a resolution code and close notes, ServiceNow rejects the update to Resolved. The Privilege Secure log records a warning that the update returned "Forbidden", and the console doesn't show an error. Privilege Secure sends only a work note and the status, so the ticket isn't resolved. A data policy that requires these fields can cause this.
 
-{/* TODO verify: what the user sees in the console when the Resolved update fails, and the supported workaround. Relaxing the data policy for the integration account isn't confirmed. */}
+{/* TODO verify: a supported workaround for the Resolved update. It depends on the data policy of the ServiceNow instance. */}
 
 ## Other ticketing tools
 
-Privilege Secure has a built-in connector for ServiceNow only.
-
-{/* TODO verify: the name of the variable that gives a PowerShell step the ticket number, and write a supported example. Until then, don't document this as a supported method. If Product supports a PowerShell step for other ticketing tools, document it here with the variable name and an example. */}
+Privilege Secure has a built-in connector for ServiceNow only. It validates ticket numbers only against ServiceNow, and it doesn't pass the ticket number to PowerShell steps as a parameter.

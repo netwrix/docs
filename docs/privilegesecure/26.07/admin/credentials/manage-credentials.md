@@ -14,11 +14,14 @@ The toolbar buttons stay disabled until you select a row. The selected row decid
 
 | Selected row | Enabled buttons |
 |---|---|
-| **Not Managed**, managed type **Standard** | **Manage** |
-| **Managed**, method **Automatic** | **Unmanage**, **Rotate**, **Verify**, **View History** |
+| **Not Managed**, managed type **Standard** or **Internal** | **Manage** |
+| **Managed**, managed type **Standard**, method **Automatic** | **Unmanage**, **Rotate**, **Verify**, **View History** |
+| **Managed**, managed type **Standard**, method **Manual** | **Unmanage**, **Verify**, **View History** |
+| **Managed**, managed type **Internal**, method **Automatic** or **Manual** | **Unmanage**, **Rotate**, **Verify** |
 | **Not Managed**, managed type **Service** | **Service Account Details** |
+| **Managed**, managed type **Service** | **Unmanage**, **Service Account Details**, **Verify**, **View History** |
 
-{/* TODO verify: the enabled buttons for these rows, which the lab didn't select: Managed with method Manual, Managed with managed type Service, and Internal accounts */}
+A button also needs the role permission for its action. **View History** isn't available for Internal accounts.
 
 **View History** works on one managed row at a time. See [View passwords and password history](/docs/privilegesecure/26.07/admin/credentials/password-history.md).
 
@@ -32,9 +35,9 @@ The toolbar buttons stay disabled until you select a row. The selected row decid
 1. In the left navigation, click **Credentials**.
 2. Select the row of a **Not Managed** account. For example, select the `<local-admin>` account on `<server-name>`.
 3. Click **Manage**.
-4. Complete the dialog. {/* TODO verify: the fields of the Manage dialog, including the Automatic and Manual choice for Standard accounts. The dialog wasn't opened in the lab. */}
+4. In the **Manage Account** window, wait for Privilege Secure to search for a matching user. When it lists the account under **Found matching user:** or **Credentials:**, select **Automatic** or **Manual**. Select **Cancel** to close the window without changes. If no match exists, the window shows **No matching user found.**
 
-The row's **Method** changes to **Automatic** or **Manual**. {/* TODO verify: that a Standard account can be managed as Manual from this dialog */}
+The row's **Method** changes to **Automatic** or **Manual**. Both choices are available for Standard and Internal accounts.
 
 For an Internal account, a dialog searches for a matching user. See [Manage internal service accounts](/docs/privilegesecure/26.07/admin/credentials/internal-service-accounts.md).
 
@@ -46,24 +49,22 @@ To stop managing an account, select its row and click **Unmanage**.
 
 For a manually managed account, the **Set Password** dialog records the account's password in Privilege Secure. It doesn't change the password on the resource, so change it there first. Administrators and users who hold the **[C] Manage** permission can set the password.
 
-{/* TODO verify: where Set Password opens in 26.07 (the toolbar and the host Users tab have no Set Password button; 26.03 showed an icon beside the account name on Manual rows) */}
+When you manage an account as **Manual**, the **Set Password for Credential** window opens for it. To set the password again later, select the **Set Password** icon (a wrench) beside the account name. It appears in the **Account** column on the **Credentials** page and in the **User Name** column on the **Users** tab of a resource. It appears only for Standard accounts with method **Manual**. The toolbar has no Set Password button.
 
 ## Rotate an account
 
-1. Select the row of a **Managed** account with method **Automatic**.
+1. Select the row of a **Managed** account with method **Automatic**, or an **Internal** account with method **Manual**.
 2. Click **Rotate**.
 
-Privilege Secure changes the password on the resource and stores the new value. **Password Changed**, **Age**, and **Next Change** update. {/* TODO verify: the result message the console shows after Rotate, and the delay before the row updates */}
+Privilege Secure schedules a rotation job that runs right away. The console shows a message such as **1 credential rotation scheduled.** If it schedules only some of the selected accounts, the message reads, for example, **1/2 rotations scheduled.** When the job changes the password on the resource, Privilege Secure stores the new value, and **Password Changed**, **Age**, and **Next Change** update. The list refreshes every 5 seconds, so the row updates after the job finishes. How long the job takes depends on the resource.
 
 For example, rotate `<local-admin>` on `<server-name>` after a person who knew the password leaves the team.
 
 Automatic accounts also rotate on the schedule of their platform or [credential policy override](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md).
 
 :::note
-You can't rotate an account manually while a session on the account is active. Wait until the session ends, then click **Rotate** again.
+A rotation doesn't run while a session on the account is active. This applies to manual and scheduled rotation. The console doesn't block the **Rotate** button. The rotation job stops, marks the rotation as failed, and logs that it aborted because the account has active sessions. Wait until the session ends, then click **Rotate** again.
 :::
-
-{/* TODO verify: whether scheduled rotation is also blocked during an active session, and the message the console shows when manual rotation is blocked */}
 
 To rotate a service account that services or scheduled tasks use, see [Rotate service accounts and their dependencies](/docs/privilegesecure/26.07/admin/credentials/service-account-dependencies.md). Internal accounts rotate on the primary domain controller (PDC). See [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
 
@@ -94,7 +95,7 @@ To keep the account enabled after a credential release, set **Keep Enabled** on 
 
 The **Users** tab then shows the settings in the **Rotate Start | End** and **Keep Enabled** columns. For example, an account with both rotate options selected and **Keep Enabled** cleared shows **Yes | Yes** and **No**.
 
-{/* TODO verify: the default Password Reset Options for a newly managed account */}
+A newly managed account has **Rotate on Session Start** and **Rotate on Session End** selected and **Keep Enabled** cleared.
 
 {/* TODO screenshot: the Password Reset Options dialog */}
 
@@ -102,6 +103,6 @@ The **Users** tab then shows the settings in the **Rotate Start | End** and **Ke
 These options belong to the account on the resource. You can't set them for each requesting user.
 :::
 
-{/* TODO verify: how Keep Enabled maps to the account state after release (disable, enable, or return to the previous state) and whether Keep Enabled has any effect on resource-based sessions */}
+When the last credential-release session that uses the account ends, Privilege Secure disables the account. It doesn't disable a platform's built-in administrator account or a vaulted account. With **Keep Enabled** selected, it leaves the account enabled instead. **Keep Enabled** is cleared by default, so the account is disabled after the release. Privilege Secure reads the setting only for credential-release sessions, so it has no effect on resource-based sessions.
 
 For how policy types treat the account, see [Key concepts](/docs/privilegesecure/26.07/getting-started/key-concepts.md) and [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md).

@@ -16,7 +16,7 @@ To open it, select **Configuration** > **Scheduled Tasks**.
 
 Version 26.07.3 fixes task schedules that shifted by an hour after a daylight saving time change.
 
-{/* TODO verify: whether existing tasks correct themselves after upgrade or need their schedule saved again */}
+If a task still starts an hour off after you upgrade, open the schedule that drives the task and save it again. Saving recalculates the next start time.
 
 The toolbar has these controls:
 
@@ -37,9 +37,7 @@ The toolbar shows the number of tasks. You can sort the columns.
 | **LAST STATUS** | The result of the last run. |
 | **STATUS** | The state of the task. |
 
-**LAST STATUS** shows Complete, Completed with errors, Failed, or Unknown. **STATUS** shows Scheduled, Failed, or Unknown.
-
-{/* TODO verify: the full list of LAST STATUS and STATUS values. The lab showed only the values listed here */}
+**LAST STATUS** and **STATUS** use the same set of labels: Scheduled, Pending, Queued, Running, Complete, Completed with errors, Failed, Cancelled, and Unknown. A task in any other internal state, such as paused, shows as Unknown.
 
 ## Task names
 
@@ -56,9 +54,16 @@ For example, `Rotate password for <account>` can repeat every 24 hours or every 
 
 ## Change when a task runs
 
-The page is read-only. A task takes its schedule from the item that created it. To change when a task runs, change the schedule on that item, for example on the domain, the platform, or the protection policy. Schedule policies define the recurrence for several of them.
+The page is read-only. A task takes its schedule from the item that created it. To change when a task runs, change the schedule on that item:
 
-{/* TODO verify: the list of settings that control each task type, and add a link to the Schedule Policies page when it exists */}
+| Task | Where to change the schedule |
+|---|---|
+| `Scan host <host-name>` | **Scan Schedule** on the platform of the resource. |
+| `Rotate password for <account>` | **Scheduled Change Policy** on the platform, or a credential policy override. |
+| `Verify password for <account>` | **Verification Schedule** on the platform, or a credential policy override. |
+| `Sync AD <domain>` | The schedule row on the details page of the domain. |
+
+The platform schedules are schedule policies. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md), [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md), [Credential policy overrides](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md), and [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md#schedule-synchronization). Protection policies run on the **Protection Policy Schedule** of the platform.
 
 ## Troubleshoot a failed task
 

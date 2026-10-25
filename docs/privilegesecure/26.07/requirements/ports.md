@@ -48,7 +48,7 @@ The application server also uses these ports internally. Don't expose the loopba
 | 6521 | TCP | Proxy message service client (local host only) |
 | 6522 | TCP | Proxy connection broker |
 
-{/* TODO verify: whether 6522 (connection broker) must be reachable from other proxy nodes */}
+Each node advertises the address of its connection broker, on port 6522 by default, to the other nodes. The nodes that relay a session connect to that address, so allow 6522 between the application server and the proxy servers.
 
 ### Outbound to Active Directory
 
@@ -87,7 +87,7 @@ Resource settings can override the default RDP, SSH, and WinRM ports for a host.
 
 | Port | Protocol | Database | Notes |
 | --- | --- | --- | --- |
-| 5432 | TCP | PostgreSQL (bundled installer) | {/* TODO verify: bundled PostgreSQL port. The Setup Launcher configuration and System Settings > Database in the upgraded lab show 5432, but the backend documents 5437 for production. Confirm the port a fresh 26.07.3 install uses. */} |
+| 5432 | TCP | PostgreSQL (bundled installer) | Default port that the Setup Launcher records and the database settings use. To see the port your installation uses, check **System Settings** > **Database**. {/* TODO verify: the port on a fresh 26.07.3 install (HKLM PostgreSQL16 Port value) and after a PostgreSQL 12-to-16 upgrade; the upgrade script defaults the target port to 5437. */} |
 | 1433 | TCP | Microsoft SQL Server | You provide SQL Server. |
 
 Allow the port only between the application server and the database host when the database is remote.
@@ -100,14 +100,14 @@ Antivirus exclusions apply on every server. See [Additional service node and pro
 | --- | --- | --- | --- |
 | 6500 | TCP | Service node to application server | Register an Action Service or another remote service. |
 | 6520 | TCP | Proxy server to application server | Register the Proxy Service and proxy REST. |
-| 6523 | TCP | Proxy server to application server | Leaf nodes |
-| 6524 | TCP | Proxy server to application server | Cluster nodes |
+| 6523 | TCP | Proxy server to cluster member (the application server) | Leaf node connection. The Proxy Service on the application server is the cluster member. A proxy server on another server joins as a leaf node and opens this connection to the application server. |
+| 6524 | TCP | Between cluster members | Cluster routes. Cluster members connect to each other. |
 | 4489 | TCP | RDP clients to proxy server | RDP proxy |
 | 4422 | TCP | SSH clients to proxy server | SSH proxy |
 
 The Proxy Service installer creates Windows Firewall rules for 4422, 4489, and the 6520 to 6525 range.
 
-{/* TODO verify: the direction of 6520, 6523, and 6524 (code and 26.03 install/overview say remote node to application server; the 26.03 ports table says the reverse), and whether a proxy node joins on 6500 or 6520. */}
+A proxy server joins the node mesh through the join address, which uses port 6520 unless the address names another port.
 
 ## Remote Access Gateway
 
@@ -125,6 +125,6 @@ The Remote Access Gateway has three components. The portal sits in the perimeter
 
 The gateway installer creates a Windows Firewall rule named "NPS Gateway Web Service Port (6550)". The gateway and portal installers create no rules for 443, 80, or 4822.
 
-{/* TODO verify: whether customers open 443, 80, and 4822 manually, or rely on existing firewall policy. */}
+Because the installers create no rules for these ports, allow 443, 80, and 4822 in your own firewall policy.
 
 For the hosts, software, and certificates that the gateway needs, see [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md).

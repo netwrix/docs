@@ -38,7 +38,7 @@ These options apply to the Remote Desktop Protocol (RDP) files that Privilege Se
 | **Smart Sizing** | Selected | Select to scale the remote desktop to the size of the session window. |
 | **Certificate Thumbprint** | Empty | The hexadecimal thumbprint of the certificate that signs the RDP files. See [Configure and sign RDP files](/docs/privilegesecure/26.07/configuration/system-settings/rdp-files.md). |
 
-{/* TODO verify: what Multi Monitor and Smart Sizing change in the generated RDP file. */}
+When you select **Multi Monitor**, Privilege Secure sets `use multimon` to 1 in each RDP file that it generates. When you select **Smart Sizing**, it sets `smart sizing` to 1. When you clear an option, the RDP file keeps the value from the file template. The **Default Resolution** sets the desktop width and height in the file, or the screen mode for **Full Screen**.
 
 ## WinRM Options
 
@@ -56,7 +56,9 @@ A resource can override this setting on its own details page. See [Secure WinRM]
 
 If the user doesn't click **Keep Session Active** within 5 minutes of the warning, the console signs them out. With the default, an idle user is signed out after about 15 minutes. The console shows a caution when you enter a value above 60. See [Idle timeout](/docs/privilegesecure/26.07/user-guide/sign-in.md#idle-timeout).
 
-{/* TODO verify: time the warning and the sign-out on 26.07.3 (the code sets the sign-out 5 minutes after the warning). Confirm whether 0 is accepted through the API, and whether the setting applies to the Remote Access Gateway portal. */}
+The setting applies to the Privilege Secure console. The web service rejects a value above 1000 and a negative value.
+
+{/* TODO verify: that the Remote Access Gateway portal applies this setting in practice. The shared web UI renders IdleTimeout through PageLayout and the portal serves that build, but this hasn't been tested on a portal server. See [Session timeout](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/sign-in.md#session-timeout). */}
 
 ## User Expiration
 
@@ -65,12 +67,10 @@ If the user doesn't click **Keep Session Active** within 5 minutes of the warnin
 | **Idle Limit to Disable Users (days)** | 0, with **Disabled** selected | The number of days without a sign-in after which Privilege Secure acts on an idle user. The field is unavailable while **Disabled** is selected. The allowed values are 0 (off) or 90 to 365. |
 
 :::warning
-The label says users are disabled, but this setting may remove the idle users from Privilege Secure instead. Don't turn it on in a production system until you have confirmed the result on a test system or a copy of the database.
+Despite the label, this setting removes idle users from Privilege Secure. It doesn't disable them. An hourly check deletes the account of each user whose last sign-in is older than the number of days you set, and removes the user's sign-in record. Don't turn it on in a production system until you have confirmed the result on a test system.
 :::
 
-Administrators and application users are exempt.
-
-{/* TODO verify: whether the setting disables or deletes idle users. The panel label and the July 2025 announcement say disable and say disabled users free a license. The code removes the managed accounts. Test on a disposable VM or after a snapshot, then replace the warning with the confirmed behavior. Also confirm the 90 to 365 range and the exemptions. */}
+Users who have the Administrator role assigned directly, application users, and users who have never signed in are exempt. Users who get the Administrator role only through a group aren't exempt.
 
 ## Encrypted Files
 
@@ -142,6 +142,6 @@ Each entry has a read-only **Description** and a **Timeout Override** checkbox. 
 
 ## Database
 
-**System Settings** > **Database** shows the database that Privilege Secure uses, as read-only fields: **Host**, **Port**, **Database**, and **Service Status**. For PostgreSQL, a table of server parameters follows, with a **Name** and a **Value** for each. For the supported databases, see [Database requirements](/docs/privilegesecure/26.07/requirements/database.md).
+**System Settings** > **Database** shows the database that Privilege Secure uses, as read-only fields: **Host**, **Port**, **Database**, and **Service Status**. For PostgreSQL, a table of server parameters follows, with a **Name** and a **Value** for each. For SQL Server, only the connection fields appear. For the supported databases, see [Database requirements](/docs/privilegesecure/26.07/requirements/database.md).
 
-{/* TODO verify: whether the Database page still supports Microsoft SQL Server in 26.07.3 (the lab showed PostgreSQL only), and the default PostgreSQL port on a new install. */}
+On a new installation with the bundled PostgreSQL database, the setup program uses port 5432.

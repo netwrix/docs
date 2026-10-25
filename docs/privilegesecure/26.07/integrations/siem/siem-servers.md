@@ -32,7 +32,7 @@ Privilege Secure can send its events to a security information and event managem
 
 An asterisk (\*) marks a required field.
 
-{/* TODO verify: what plain "TLS" negotiates, and how Protocol interacts with Server Type UDP and with Use SSL. Ask the SME before stating that TLS works over UDP, or that Use SSL and Protocol must agree. */}
+Encryption applies to **TCP** only. Privilege Secure encrypts the connection only when **Protocol** is set to a TLS version and **Use SSL** is selected. If either is missing, the connection is unencrypted. **UDP** always sends unencrypted messages, and ignores both settings. **TLS** selects TLS 1.0. For a secure connection, select **TLS12**, the highest version that the list offers. The SIEM server certificate must be valid for the name in **SIEM Host**.
 
 ### Example
 
@@ -52,9 +52,7 @@ This example sends events in CEF format to a SIEM server over TCP port 514, with
 
 ## Which events are sent
 
-A SIEM server receives only the events that occur after you enable it. Privilege Secure doesn't send earlier events.
-
-{/* TODO verify: whether events created while the server was disabled are sent when you enable it again. The code counts events from the time of enabling. */}
+A SIEM server receives only the events that occur after you enable it. Privilege Secure doesn't send earlier events. Events that occur while a server is disabled are never sent to it, even after you enable it again.
 
 Pipe characters (`|`) in the text of an event message are removed before the message is sent.
 

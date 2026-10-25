@@ -25,7 +25,9 @@ Privilege Secure ships the plans for each of these platforms.
 
 A default installation doesn't show the **Command Plans** tab on a platform. A platform shows one form with no tabs, as described in [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
-{/* TODO verify: with the SME, the conditions under which the Command Plans tab appears, and whether to name the setting that turns it on. The lab console showed no Command Plans tab. The code gates the tab on custom_platform_connector, which no migration seeds. */}
+The tab appears only on a copy of a platform that ships command plans, and only when the custom platform connector feature is turned on for your installation.
+
+{/* TODO verify: with product management, whether the custom platform connector feature is part of the standard license and whether to document the Command Plans tab for customers. The code gates the tab on that feature, and no code or public source says which licenses include it. */}
 
 ## Updates restore the built-in plans
 
@@ -35,7 +37,7 @@ When you update Privilege Secure, the update restores the built-in command plans
 
 Starting in 26.07.3, each update restores the built-in command plans.
 
-{/* TODO verify: that plans created by a customer survive an update. The code re-imports only the plans flagged as built in. */}
+The update removes only the plans flagged as built in and imports them again from the files that ship with the release. It doesn't change plans that you created.
 
 ## Related topics
 

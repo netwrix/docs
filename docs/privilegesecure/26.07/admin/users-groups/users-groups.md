@@ -50,7 +50,7 @@ The **Licenses** counter at the top right of the page shows the licenses in use 
 | **LICENSED** | Whether the account uses a license. For a group, a badge such as x2 shows how many members are licensed. Hover over it to see the count, for example "2 users licensed". |
 | **EMAIL** | The email address, if the account has one. |
 | **LAST LOGIN** | The date and time of the last sign-in. A group shows **N/A** until a member signs in. |
-| **LOCKED** | Whether the account is locked. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).{/* TODO verify: whether a failed-sign-in lockout also shows in this column (only administrator locks were documented in 26.03; no locked account was seen in the lab) */} |
+| **LOCKED** | Whether the account is locked. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md). The column marks the account as locked for an administrator lock and also while a failed-sign-in lockout is in effect. |
 | **ACTIVE SESSIONS** | The number of sessions in progress. |
 | **SCHEDULED SESSIONS** | The number of sessions scheduled for a later time. |
 | **ACCESS POLICIES** | The number of access policies that include the account. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md). |
@@ -62,7 +62,7 @@ You can resize the columns and sort each one in ascending or descending order.
 Removing an account takes away its console access.
 
 :::warning
-Removing a user permanently deletes that user's history and events from Privilege Secure. Export any records you need before you remove the user.
+Export any records you need from the Activity Log before you remove the user.
 :::
 
 To remove an account:
@@ -74,6 +74,8 @@ To remove an account:
 
 For example, to remove a contractor who has left, export the user's history from the Activity Log, select the row, click **Remove**, and confirm.
 
-{/* TODO verify: whether removing a user frees its license, whether recordings remain after removal, and why the Licenses counter can show more used than total (a community thread reports 19 / 10). */}
+Removing a user deletes the user's sign-in record, which frees the license that the user used. The **Licenses** counter counts every user record, including local and application users. Privilege Secure checks the licensed total only when it creates a new user, so the counter can show more licenses used than the total.
+
+{/* TODO verify: whether recordings and session history remain visible after a user is removed. The removal marks the account as deleted and doesn't delete recording files or session rows. The history views don't filter out deleted accounts in the code, but this isn't confirmed on a running instance. */}
 
 For how licenses are counted, see [Licensing](/docs/privilegesecure/26.07/requirements/licensing.md).

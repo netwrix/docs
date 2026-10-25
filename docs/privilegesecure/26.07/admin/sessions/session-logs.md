@@ -22,10 +22,8 @@ For example, a session shows **Failed**. Select it, click **View Logs**, and fil
 
 You can also open the log from other pages.
 
-- On the **Historical** tile, select the log icon in the **ACTIONS** column of the row.
-- On the Events and Activity Log pages, select **View Logs**.
-
-{/* TODO verify: the Historical log icon, and the View Logs buttons on Events and Activity Log, in a 26.07 console. The Active toolbar button is confirmed from code only. */}
+- On the **Historical** tile, select the logs icon in the **ACTIONS** column of the row.
+- On the **Events** page, select an event that belongs to a session or an action, then click **View Logs**.
 
 The Remote Access Gateway portal doesn't show the **Logs** button.
 
@@ -40,7 +38,7 @@ The Remote Access Gateway portal doesn't show the **Logs** button.
 | **Action Service Version** | The version of the Privilege Secure action service that ran the activity |
 | **Okay** | Close the window. The X in the upper-right corner also closes it. |
 
-{/* TODO verify: the Log Level values in this window. The 26.03 documentation lists Debug, Info, Warn, and Error. */}
+The **Log Level** filter lists **Debug**, **Info**, **Warn**, and **Error**. It starts on **Debug**. The table shows messages at the selected level and above, so **Debug** shows every message and **Error** shows only errors.
 
 ## Columns
 

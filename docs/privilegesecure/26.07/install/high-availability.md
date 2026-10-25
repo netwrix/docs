@@ -14,7 +14,7 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) supports deplo
 |---|---|---|---|
 | Active-passive | PostgreSQL only. Uses the database that the installer provides. | Manual | Lowest. Two identical servers. |
 | Active-active | PostgreSQL or SQL Server | No manual step | Higher. Needs an extra server for the database. |
-| Cloud-native database | Amazon Aurora PostgreSQL, Amazon RDS for SQL Server, or the PostgreSQL and SQL Server database services in Azure | Provided by the database service | Depends on the cloud service |
+| Cloud-native database | A PostgreSQL or SQL Server database that you provide and manage | Your responsibility | Depends on your database setup |
 
 ### Active-passive
 
@@ -28,9 +28,7 @@ Several application servers share one database. Failover needs no manual step, a
 
 ### Cloud-native database
 
-A cloud database service has built-in high availability and automatic scaling, which suits an active-active deployment. See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) for the supported database options.
-
-{/* TODO verify: the supported cloud database list and versions. Source: the 26.03 overview only. */}
+In this option, the database is a PostgreSQL or SQL Server server that you provide and manage. Its high availability and scaling are your responsibility, and it suits an active-active deployment. See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) for the supported database options.
 
 ## Set up high availability
 
@@ -45,7 +43,7 @@ For the full setup and upgrade procedures, use these Knowledge Base articles:
 
 The servers in a pair must reach each other on the console port, 6500 by default, and on the PostgreSQL port. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
-{/* TODO verify: the PostgreSQL port that the HA manager uses. The tool defaults to 5432, and the bundled PostgreSQL port isn't confirmed (5432 or 5437). Don't state a mismatch as fact until the SME confirms the port. */}
+The HA manager takes the PostgreSQL port from the database settings of the Privilege Secure configuration, which default to 5432. If none is set, it uses 5432. If your PostgreSQL instance listens on a different port, enter that port in the HA manager.
 
 :::note
 To upgrade a high availability pair, fail over and upgrade the secondary server, upgrade the primary server, and then re-establish replication. The Knowledge Base article gives the full order, including copying the configuration and encryption keys to the secondary. Follow it before you start. See also [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md).
@@ -64,18 +62,23 @@ Plan backups around four items:
 
 High availability replicates the database only. Back up recordings, configuration files, and encryption keys separately, and keep the encryption keys with your other secrets. Keep a copy of the keys that matches each database backup.
 
-{/* TODO verify: the supported backup procedure for recordings and configuration files, and a restore test of a backup with its keys. */}
+{/* TODO verify: the Netwrix-supported backup and restore procedure for recordings and configuration files. The product code defines no backup feature for these items, so a Netwrix support statement is needed. */}
 
 ### Fail over to the secondary server
 
 Failover is manual.
 
-1. Start the failover on the secondary server with the HA manager tool, or run `failover.ps1` on the secondary server.
-2. Point the Action Service at the new primary server. Run `ActionService.exe -register` and supply an administrator account when prompted.
-3. Point the web service's database setting at the new primary server.
-4. Confirm that you can sign in to the Privilege Secure Console on the new primary server.
+1. On the secondary server, open the HA manager tool and click **Failover**. Confirm the prompt. The prompt names the server that becomes the primary.
 
-{/* TODO verify: where failover.ps1 is installed and how a customer starts it, the exact Action Service re-point command and arguments (-register vs -Config, as in the additional services page), and where the web Database setting lives (appsettings.db.json or the Database Configuration Tool). The standby script that the repository README mentions wasn't found in the source. */}
+   The HA manager starts PostgreSQL if it is stopped, promotes the replica to primary, and writes the local host and PostgreSQL port into the database settings file, `appsettings.db.json`, in the `Database` folder under `C:\ProgramData\Stealthbits\PAM`. It then restarts the `SbPAMProxy` service. {/* TODO verify: whether the web service (IIS) must be restarted to pick up the new database settings after a failover. The HA manager restarts only the SbPAMProxy service, so a host test or an SME statement settles it. */}
+2. If the Action Service runs on another server, point it at the new primary server. Run the following command on that server, and enter the password when prompted:
+
+   ```
+   ActionService.exe -register -u <domain>\<nps-admin> -url https://<new-primary-server>:6500
+   ```
+
+   See [Additional services](/docs/privilegesecure/26.07/install/additional-services.md) for the `-register` options.
+3. Confirm that you can sign in to the Privilege Secure Console on the new primary server.
 
 ### Related procedures
 
@@ -93,15 +96,13 @@ For how encryption keys protect stored secrets, and how to rotate them, see [Enc
 After an upgrade, the primary Privilege Secure Console can show no nodes for the secondary server. To register the secondary server's services:
 
 1. Sign in to the Privilege Secure Console on the secondary server.
-2. Open the page that holds the **NPS Rest URL** setting. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+2. Select **System Settings** > **Services** to open the page that holds the **NPS Rest URL** setting. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 3. Enter the fully qualified domain name (FQDN) URL of the secondary server, for example `https://<secondary-server-fqdn>:6500`. Don't add a trailing slash.
 4. Click **Register Services**.
 
-The secondary node then appears in the primary console. {/* TODO verify: the exact menu path to the Services page in 26.07. */}
+The secondary node then appears in the primary console.
 
-## Known issue
-
-Configuring the secondary node can fail intermittently when the link between the nodes is slow. In one reported case, latency of 300 to 400 milliseconds between nodes contributed to the problem. Treat that value as an example, not a supported limit. {/* TODO verify: status and workaround, and the supported latency. */}
+{/* TODO verify: Support confirmation of a known issue where configuring the secondary node fails intermittently on a slow link between the nodes, its workaround, and the supported latency. Unconfirmed, so it isn't published. */}
 
 ## Related topics
 

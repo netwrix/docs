@@ -34,7 +34,7 @@ This task needs three values from Entra ID:
    - `GroupMember.ReadWrite.All`
    - `RoleManagement.ReadWrite.Directory`
    - `User-PasswordProfile.ReadWrite.All`
-   - `UserEnableDisableAccount.All`
+   - `User.EnableDisableAccount.All`
    - `User.ReadWrite.All`
    - `UserAuthenticationMethod.ReadWrite.All`
 
@@ -42,7 +42,7 @@ This task needs three values from Entra ID:
 
 After consent succeeds, the **Configured permissions** page shows the message "Successfully granted admin consent for the requested permissions".
 
-{/* TODO verify: the exact permission names, especially UserEnableDisableAccount.All (the Microsoft Graph name may be User.EnableDisableAccount.All), and why the requirements table lists a shorter set plus the delegated permission User.Read. Reconcile this list with requirements/target-environments.md. */}
+{/* TODO verify: the requirements table in requirements/target-environments.md lists a shorter set of Graph permissions plus the delegated permission User.Read. Release code calls the Graph user, group, directory role and password endpoints but doesn't name the permissions it needs. Each Graph endpoint reference page lists its least-privileged permission, but an SME hasn't reconciled the table with this list against a tenant. */}
 
 ## Create a client secret
 
@@ -68,13 +68,11 @@ Assign the app registration to two Entra roles. Repeat these steps for each role
 **User Administrator** is the least privileged option and can't manage Global Administrator accounts. To manage the Global Administrator role, assign the **Global Administrator** role to the app registration instead of **User Administrator**.
 :::
 
-Microsoft requires the **Privileged Authentication Administrator** role for password rotation. Deployments set up before 2026 may not have needed it, so add it to older registrations.
+To rotate passwords of accounts that hold administrator roles, the app registration needs **Privileged Authentication Administrator** (or **Global Administrator**). **User Administrator** covers accounts that hold no administrator role. Deployments set up before 2026 may not have needed it, so add it to older registrations.
 
 :::note
-The 26.03.0 to 26.03.2 release notes list a known issue: Entra ID password rotation requires the Password Administrator role. If rotation fails with a permissions error, check the roles assigned to the app registration.
+Microsoft allows **User Administrator** to reset passwords for users who have no administrator role and for a small set of low-privilege roles. Resetting the password of a Global Administrator or most other administrator roles needs **Privileged Authentication Administrator** or **Global Administrator**. **Password Administrator** can reset a subset of what **User Administrator** can reset, so it adds nothing to either role. If rotation fails with a permissions error, check the roles assigned to the app registration against the target account's roles. See [Microsoft Entra roles](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions#who-can-reset-passwords).
 :::
-
-{/* TODO verify: Entra ID password rotation was a known issue in 26.03.0 to 26.03.2 that named the Password Administrator role. Confirm with the SME which roles password rotation needs in 26.07.3 and whether Password Administrator is also required. */}
 
 ## Add the service account and the tenant
 

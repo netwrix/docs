@@ -39,9 +39,7 @@ When you select **Tiered**, the section shows a card for each tier. The card has
 | **Approvers** | The users and groups that can approve the request. The green plus icon adds approvers. |
 | **Approvals Required** | The number of approvals that the tier needs. The plus and minus icons change the number. |
 
-A green plus icon to the right of the last card adds another tier.
-
-{/* TODO verify: the maximum number of tiers. The 26.03 page says up to three tiers; the lab didn't test the limit. */}
+A green plus icon to the right of the last card adds another tier. A workflow has up to three tiers, and the plus icon disappears when the workflow has three.
 
 ## Add an approval workflow
 
@@ -49,7 +47,7 @@ A green plus icon to the right of the last card adds another tier.
 1. Select the connection profile to edit.
 1. In the **Approval Workflow** section, select **Tiered**.
 1. Click the pencil icon on the tier card to open the **Tier Escalation** dialog.
-1. Enter a value for **Escalation In (minutes)**. {/* TODO verify: the default Escalation in (minutes) value on a new tier (code model default is 1; an existing lab tier showed 10). */}
+1. Enter a value for **Escalation In (minutes)**. A new tier starts with 10 minutes.
 1. (Optional) Select an **Escalation Account** or an **Escalation Group**.
 1. Click **Okay**.
 1. Click the green plus icon next to **Approvers** to open the **Add Users and Groups as Approvers** dialog.
@@ -60,7 +58,7 @@ A green plus icon to the right of the last card adds another tier.
 1. To add another tier, click the green plus icon to the right of the card and repeat steps 4 through 12.
 1. Click **Save**.
 
-To remove an approver, click the remove icon next to the approver and confirm. {/* TODO verify: icon label in 26.07 */}
+To remove an approver, hover over the approver, click the **Remove Approver** icon, and confirm.
 
 {/* TODO screenshot: the Approval Workflow section with a tier card showing Escalation, Account, Group, Approvers, and Approvals Required */}
 {/* TODO screenshot: the Tier Escalation dialog */}
@@ -78,7 +76,7 @@ A connection profile uses one tier with these values:
 When a user requests a session, the console notifies both approvers. If one approves, the session starts. If neither responds within 10 minutes, the request escalates to the escalation group.
 
 :::tip
-Add more approvers than the tier requires. The tier can then reach its approval count before the escalation time passes. An approver that is a group counts each member who responds. If a tier can't reach its approval count, only the escalation account or group can decide the request. {/* TODO verify */}
+Add more approvers than the tier requires. The tier can then reach its approval count before the escalation time passes. An approver that is a group counts each member who responds. A requester who is also an approver isn't asked to approve their own session, so that person doesn't count toward the tier. If a tier can't reach its approval count, only the escalation account or group can decide the request. Without an escalation account or group, the request stays pending until the session's scheduled end passes, and then fails.
 :::
 
 ## How tiers decide a request
@@ -89,13 +87,13 @@ Add more approvers than the tier requires. The tier can then reach its approval 
 - When a tier approves the request, the console notifies the approvers in the next tier.
 - Requesters receive an email when the request is approved or denied. The denial email includes the approver's note.
 
-{/* TODO verify: whether tiers run strictly in order. The 26.03 page says each tier approves in sequence; the console has no setting for sequential or concurrent progression. */}
+Tiers run in order. The next tier starts only after the previous tier approves, and the request is approved only when every tier has approved. A tier that is still waiting, or that denied the request, stops the evaluation of the tiers after it.
 
 ## Approve a request
 
 Approvers see pending requests on the **Approvals** tab of the dashboard. See [Approve or deny session requests](../../user-guide/approve-requests.md).
 
-{/* TODO verify: whether a requester can approve their own session. The 26.03 page says the same user can approve; the 26.07.3 code never asks an approver to approve their own session. Ask engineering and test in the lab before publishing a statement. */}
+A requester who is also listed as an approver, whether directly or through a group, isn't notified and isn't asked to approve their own session. Another approver must approve it.
 
 ## Related topics
 

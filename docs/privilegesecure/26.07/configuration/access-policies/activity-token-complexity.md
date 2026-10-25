@@ -8,7 +8,7 @@ sidebar_position: 70
 
 An activity token complexity policy controls the format of the temporary account that an activity creates for a session. You apply a policy to a connection profile. A connection profile that doesn't select a policy uses the built-in `<default>` policy.
 
-{/* TODO verify: the exact meaning of Max Consecutive Chars (identical characters in a row, or any characters of the same kind) and whether Length applies to the account name, the password, or both. */}
+The policy applies to the account name, not to a password. **Length** is the number of characters in the generated name. **Max Consecutive Chars** is the most times the same character can repeat in a row.
 
 ## Default values
 
@@ -22,9 +22,7 @@ A new policy form starts with these values.
 | **Max Consecutive Chars** | 2 |
 | **Include Characters** | **Lowercase** and **Numbers** selected; **Uppercase** cleared |
 
-The maximum account name length is 19 characters.
-
-{/* TODO verify: whether Length accepts a value above 19. The 26.03 page says the maximum account name length is 19; the lab didn't test a higher value. */}
+The form accepts a **Length** from 5 to 19 characters. The maximum account name length is 19 characters.
 
 ## Create an activity token complexity policy
 
@@ -40,7 +38,20 @@ The maximum account name length is 19 characters.
 
 {/* TODO screenshot: the Activity Token Complexity form with default values */}
 
-{/* TODO: add an example of a custom policy with values for Length, Max Consecutive Chars, and Characters to Exclude */}
+### Example
+
+A policy named `short-names` uses these values:
+
+| Field | Value |
+|---|---|
+| **Must Start With** | **Lowercase** |
+| **Must End With** | **None** |
+| **Length** | 12 |
+| **Max Consecutive Chars** | 1 |
+| **Characters to Exclude** | `0O1lI` |
+| **Include Characters** | **Lowercase** and **Numbers** |
+
+When the name includes no text from the user's name, each generated name has 12 characters and starts with a lowercase letter, and no character appears twice in a row. Otherwise, the start rule and the repeat rule apply only to the generated characters. The characters `0`, `O`, `1`, `l`, and `I` never appear, in addition to the characters that the console always excludes.
 
 ## Fields
 
@@ -50,7 +61,7 @@ The maximum account name length is 19 characters.
 | **Description** | The purpose of the policy. |
 | **Must Start With** | The kind of character the name starts with: **None**, **Lowercase**, **Uppercase**, or **Numeric**. |
 | **Must End With** | The kind of character the name ends with: **None**, **Lowercase**, **Uppercase**, or **Numeric**. |
-| **Length** | The maximum number of characters that the policy allows. |
+| **Length** | The number of characters in the generated account name. The value must be from 5 to 19. When the name includes text taken from the user's name, Privilege Secure keeps at most **Length** minus 5 characters of that text and fills the rest with generated characters. |
 | **Max Consecutive Chars** | The most times the same character can appear in a row. |
 | **Characters to Exclude** | Characters you want to leave out. The console excludes these in addition to the characters shown under **Additional characters excluded**. |
 | **Additional characters excluded** | A read-only list of the characters that the console always excludes. |

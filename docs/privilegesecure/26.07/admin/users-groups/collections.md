@@ -16,25 +16,21 @@ Open the page from the left navigation: click **Users & Groups**, then **User an
 
 ## Page layout
 
-The left pane lists the collections. It has a **Search Collections...** box and a **+** button that starts a new collection. Hover over a collection to show the trash can icon, which deletes the collection after you confirm. Deleting a collection doesn't delete its members.
-
-{/* TODO verify: that deleting a collection leaves its member accounts in place on the Users & Groups page. */}
+The left pane lists the collections. It has a **Search Collections...** box and a **+** button that starts a new collection. Hover over a collection to show the trash can icon, which deletes the collection after you confirm. Deleting a collection doesn't delete its members. Their accounts stay on the **Users & Groups** page.
 
 Select a collection to show its name, its description, and its members in the main pane.
-
-{/* TODO verify: the member list toolbar and columns on a populated collection. The lab collection list was empty, so the layout in this section comes from the 26.03 documentation. */}
 
 The member list has these controls:
 
 | Control | What it does |
 |---|---|
 | **Search** | Filters the members by the text you enter. |
-| **Filter** | Shows only users, groups, or applications. |
+| **Type** | Shows only users, groups, applications, or local users. |
 | **Add Users and Groups** | Opens a window to add members. |
-| **Remove** | Takes the selected members out of the collection. |
+| **Remove** | Takes the selected members out of the collection. It's available after you select a member. |
 | **Refresh** | Reloads the list. |
 
-The list shows each member's type, name, user name, user principal name (UPN), email address, and the number of active sessions, scheduled sessions, and access policies. Click a name to open its [details page](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
+The list shows each member's type, name, user name, user principal name (UPN), email address, last sign-in, and the number of active sessions, scheduled sessions, and access policies. Click a name to open its [details page](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ## Create a collection
 
@@ -58,13 +54,12 @@ This example creates a collection for the help desk.
 ## Add members to a collection
 
 1. Select the collection in the list.
-2. Click **Add Users and Groups**.
-3. In the window, move the accounts you want from **Available Accounts** to **Accounts to Add**.
-4. Click **Add**.
+2. Click **Add Users and Groups**. The **Add Users and Groups** window opens.
+3. Optionally, select a type in the type list or enter text in **Search Users and Groups...** to narrow **Available Users and Groups**.
+4. Select each account to add. The selected accounts move to **Users and Groups to Add**.
+5. Click **Add**. The button stays unavailable until you select an account.
 
 The accounts appear in the member list.
-
-{/* TODO verify: the steps and button labels of the Add Users and Groups window for a collection. The lab tour didn't open it, and the 26.03 page links to the add window for domain users, which is a different window. */}
 
 ### Example
 
@@ -74,17 +69,13 @@ To give the help desk the same access, select the `Help desk` collection, click 
 
 1. Select the collection in the list.
 2. Select the checkbox for each member to remove.
-3. Click **Remove**.
+3. Click **Remove**, then click **Remove** again to confirm.
 
 The members leave the collection. Their accounts stay on the **Users & Groups** page.
 
-{/* TODO verify: that Remove takes the account out of the collection only, and shows or skips a confirmation. */}
-
 ## Use a collection
 
-Add a collection wherever you add users and groups:
+Add a collection wherever the add window offers **Collection** in its type list:
 
 - In an access policy, to give every member the policy's activities on its resources. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
-- In a role, to give every member the role. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
-
-{/* TODO verify: that a collection can be added to an access policy and to each built-in role. The 26.03 pages say collections are valid in policies and in the role windows. */}
+- In the Administrators, Reviewers, or role members window, to give every member the role. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).

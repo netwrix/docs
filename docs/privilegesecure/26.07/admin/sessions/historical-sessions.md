@@ -29,11 +29,9 @@ The toolbar has two buttons:
 | **Search** | Any column value. Partial matches count. | Both |
 | **Resource name** | The value in the **Host** column. | Both |
 | **User name** | The value in the **Session User** column. | **All Historical** |
-| **User type** | The type of user: All, User, Application, or Local User. | **All Historical** |
-| **Recording data** | Keystroke data and, when the Remote Desktop Monitor is installed, Windows event activity from RDP sessions. | Both |
+| **User type** | The type of user: **All**, **User**, **Application**, or **Local User**. | **All Historical** |
+| **Recording data** | Text in the session recordings, such as keystroke data and, when the Remote Desktop Monitor is installed, Windows event activity from RDP sessions. Enter the text to search for. Available to administrators and auditors. | Both |
 | **Start date** | A start date, an end date, or both. | Both |
-
-{/* TODO verify: User type values and Recording data values; the lab hasn't opened these lists. */}
 
 Search and filters cover live and recorded sessions. They match partial strings. Within the filtered list, you can search any column, including **Login Account**, **Activity**, **Notes**, and **Ticket Number**.
 
@@ -70,15 +68,13 @@ You can resize the columns and sort them in ascending or descending order.
 ### Row actions
 
 - **Expand icon:** Shows a one-line summary of a completed session, for example `RDP Session completed at <time>.` When a recording exists, the expanded row also has the replay viewer. If the user signed in more than once, the row lists one recording for each sign-in. See [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md). A failed session has no summary.
+- **Quick launch icon:** The first icon in the **ACTIONS** column, to the left of the logs icon. Starts the same activity again on the same resource. It appears only on your own sessions, and not for Credential Release or File Release activities. Hover over it to see the activity and resource. If you no longer have access to the activity, the console shows an error.
 - **Logs icon:** Opens the session logs. See [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md).
-- **Quick launch icon:** Starts the same activity again on the same resource. It appears only on your own sessions, and not for Credential Release or File Release activities. Hover over it to see the activity and resource. If you no longer have access to the activity, the console shows an error.
-
-{/* TODO verify: the quick launch icon position in the Actions column */}
 
 ## Who can view recordings
 
-Administrators can view recordings of historical sessions. Auditors can view recordings through the View Recordings permission, within the users and resources their role covers. See [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md).
+Administrators can view recordings of historical sessions. Auditors can view recordings through the **View Recordings** permission. A recording opens only when both the user of the session and its resource are in the scope of the Auditors role, either added on the **Users** and **Resources** tabs or covered by **All Users** and **All Resources**. Auditors can also open recordings of their own sessions. When an auditor holds more than one role, the scopes add together.
 
-{/* TODO verify: View Recordings scope for auditors and whether other roles can open recordings. */}
+A user who holds **Admin View Read Only** doesn't open recordings as an Administrator. Give that user the **View Recordings** permission as well. Other roles, such as **Users** and **Reviewers**, can't open recordings. See [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md).
 
 {/* TODO screenshot: Historical tab toolbar and filters, with host names redacted. */}

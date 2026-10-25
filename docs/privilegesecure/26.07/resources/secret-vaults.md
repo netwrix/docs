@@ -8,8 +8,6 @@ sidebar_position: 100
 
 A secret vault stores accounts and files that you manage by hand, and gives Netwrix Privilege Secure for Access Management (Privilege Secure) users controlled access to them. Use a vault for credentials that Privilege Secure doesn't manage on the target, such as a local account on an appliance.
 
-{/* TODO verify: the 26.07.3 lab had no secret vault. Only the New Secret Vault form was observed. Confirm every tab, button, and column below against a vault that holds an account and a file. */}
-
 ## Prerequisites
 
 - The account or file that you want to store.
@@ -32,17 +30,15 @@ For example, enter the name `Network appliance accounts` and the description `Lo
 
 1. Open the vault and select the **Accounts** tab.
 1. Select **Add**.
-1. In the **Add a Managed Account** window, enter the resource name, the username, and the secret.
-1. (Optional) Enter a comment.
-1. Select **Save**.
+1. In the **Add a Managed Account** window, enter the **Resource Name**, the **Username**, and the **Password**.
+1. (Optional) Enter a **Comment**.
+1. Select **Okay**.
 
 For example, enter the resource name `edge-fw01`, the username `admin`, and the account password as the secret.
 
-Use **Edit** to change the selected account and **Delete** to remove it. A confirmation window appears before the removal. **Search** filters the table and **Refresh** reloads it.
+To change an account, select exactly one row and select **Edit**. In the **Edit a Managed Account** window, **Change Password (optional)** keeps the stored password when you leave it blank. Use **Delete** to remove it. A confirmation window appears before the removal. **Search** filters the table and **Refresh** reloads it.
 
-The table has these columns: **Resource**, **Username**, and **Created**.
-
-{/* TODO verify: the field labels in the Add a Managed Account window, and whether the Save button label matches. */}
+The table has these columns: **Resource**, **Username**, **Comment**, and **Created**.
 
 ## Add an encrypted file to a vault
 
@@ -61,21 +57,19 @@ For example, upload `router-backup-key.pem` with the comment `Key for the branch
 
 Use **Edit** to change the file details and **Delete** to remove the file. In the **Action** column, select an icon to download the file or its checksum.
 
-The table has these columns: **Action**, **File type**, **Size**, **Comment**, and **Created**.
+The table has these columns: **File**, **Action**, **File Type**, **Size**, **Comment**, and **Created**.
 
 Administrators set the maximum size and the malware scan under **System Settings** > **Encrypted Files**. See [System settings](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md).
 
-{/* TODO verify: what message a customer sees when the scan blocks a file. */}
+If the scan finds malware, Privilege Secure doesn't store the file and the console shows **Failed to upload file. Please try again.** The same message appears if the scan can't run. Privilege Secure records the reason, such as a file that contains malware, as an error event in the audit log.
 
 ## Give users access to a vault
 
 To give users access, create an access policy of type **Credential Based**. The policy lists the vault accounts and files that its users can check out. See [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md) and [Release files with File Release](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md#release-files-with-file-release).
 
-Update a stored secret by hand when the password changes on the device. By default, credentials in a secret vault don't change their password when a user checks them out or releases them.
+Update a stored secret by hand when the password changes on the device. By default, credentials in a secret vault don't change their password when a user checks them out or releases them. Privilege Secure sets both options off for every account you add to a vault, and the **Add a Managed Account** window has no setting to change them.
 
-{/* TODO verify: the checkout and release defaults for vault credentials on a fresh 26.07.3 install, and whether a customer can change them. */}
-
-{/* TODO verify: the bring-your-own-vault (BYOV) workaround from the Community thread for recording SSH sessions to local-only accounts (a vault connector that points to the Secret Vault, login account set to Vault, no automatic rotation). Confirm with the product team before documenting it. */}
+You can record SSH sessions that use accounts stored only in a secret vault. {/* TODO verify: the exact settings on the vault connector, the login account, and automatic rotation that turn on SSH session recording for vault-only accounts. The 26.07.3 code confirms the vault connector link (PasswordVaultConnectorId) but not these settings. */}
 
 ## Review the vault tabs
 

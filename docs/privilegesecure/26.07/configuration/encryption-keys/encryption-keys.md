@@ -6,15 +6,13 @@ sidebar_position: 10
 
 # Encryption key management
 
-Netwrix Privilege Secure for Access Management (Privilege Secure) encrypts the secrets that it stores, such as account passwords. The encryption key is a file on the application server. By default, the Windows machine key of that server protects the key. You can protect it with an Amazon Web Services (AWS) Key Management Service (AWS KMS) key instead. See [Protect the encryption key with AWS KMS](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms.md).
+Netwrix Privilege Secure for Access Management (Privilege Secure) encrypts the secrets that it stores, such as account passwords. The encryption key is a file on the application server. By default, the Windows Data Protection API (DPAPI) protects the key with the machine key of that server. You can protect it with an Amazon Web Services (AWS) Key Management Service (AWS KMS) key instead. See [Protect the encryption key with AWS KMS](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms.md).
 
 The key files are in `C:\ProgramData\Stealthbits\PAM\Protect`. Include this folder in your backups, and keep each copy with the database backup that it matches. Without the key, the secrets in a database backup can't be decrypted. See [Back up and recover](/docs/privilegesecure/26.07/install/high-availability.md#back-up-and-recover).
 
 :::warning
 Windows machine protection ties the key files to the server. Don't copy the folder to another server. To move the key, export it and import it as described in [Export and import the key](#export-and-import-the-key).
 :::
-
-{/* TODO verify: confirm that the default key protection is bound to the machine (Windows DPAPI, machine scope). */}
 
 ## The SbPAM.RotateKey.exe tool
 
@@ -34,7 +32,7 @@ Windows machine protection ties the key files to the server. Don't copy the fold
 | Command | Option | Description |
 |---|---|---|
 | `rotate` | `-f`, `--force` | Rotates without asking for confirmation. |
-| `rotate` | `-k`, `--keymodule` | The key module type. The default is `LocalMachine`. Use `AwsKms` for AWS KMS protection. |
+| `rotate` | `-k`, `--keymodule` | The key module type. The default is `LocalMachine`. For AWS KMS protection, use `AwsKms` or its number, `6`. The name is case-sensitive. |
 | `rotate` | `-a`, `--awsfilename` | A file that holds the AWS KMS settings. Required with `-k AwsKms`. |
 | `rotate` | `-i`, `--initialize` | Rotates only if no current key exists. |
 | `create` | `-k`, `--keymodule` | The key module type. Required. |
@@ -50,7 +48,7 @@ Windows machine protection ties the key files to the server. Don't copy the fold
 
 The `-k` option sets the key module for `rotate` and `create`, and the key ID for `refreshaws`. Without `-f`, `rotate` and `import` ask for a `Y` or `N` answer. The default is no.
 
-{/* TODO verify: confirm whether the -k option accepts the name AwsKms or only the number 6, and whether the AWS KMS settings file is documented for customers. */}
+The AWS KMS settings file is a JSON file with the properties `AwsAccessKey`, `AwsSecretKey`, `AwsRegionName`, and `KmsKeyId`. The `SbPAM.RotateAwsKey` tool creates the file for you, passes it to `SbPAM.RotateKey.exe`, and deletes it afterward. See [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md). Use the tool instead of writing the file by hand, because the file holds the AWS secret key in plain text.
 
 ## Export and import the key
 
@@ -78,7 +76,7 @@ Export and import the key to install an additional server that shares the databa
 
 The import protects the key files on the other server with that server's Windows machine key.
 
-{/* TODO verify: confirm how export and import handle a key that AWS KMS protects, and whether the other server needs its own AWS access. */}
+If AWS KMS protects the key, the export reads the key through AWS KMS, so the exporting server needs working AWS access. The other server doesn't need AWS access. The import protects the key there with the Windows machine key, so the key on that server isn't protected by AWS KMS.
 
 For the full high availability procedure, see [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments).
 
@@ -103,9 +101,11 @@ The output includes "Key rotation complete." when the key rotation succeeds. The
 
 After you rotate the key on one server, export it again and import it on every other server that shares the database. A server that has only the old key can't decrypt secrets that the new key protects.
 
-{/* TODO verify: confirm that the other servers need the new key after a rotation, and whether any service must restart after a manual rotation. */}
+Privilege Secure encrypts each secret with the key that was current at that time and records the key ID with the secret. A server can decrypt a secret only when it has the key file with that ID.
 
-{/* TODO verify: the upgrade page says that an upgrade rotates the key automatically. The installer runs rotate with -f -i, and -i rotates only when no current key exists. Confirm what an upgrade does to an existing key. */}
+The tool doesn't restart any services, and you don't need to restart them. Running services read the current key from disk for each operation. Export the new key and import it on the other servers.
+
+The installer runs `rotate -f -i` when it installs the key tool. The `-i` option rotates only when no current key exists, so an installation or upgrade on a server that already has a key keeps that key.
 
 ## Related topics
 

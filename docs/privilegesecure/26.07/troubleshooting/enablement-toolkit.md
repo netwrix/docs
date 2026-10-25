@@ -10,10 +10,8 @@ The Enablement Toolkit is a Windows application with a graphical interface for c
 
 ## Prerequisites
 
-- The Privilege Secure installer package. The toolkit is in the `Extras` folder. See [Installation components and methods](/docs/privilegesecure/26.07/install/components.md).
+- The Privilege Secure installer package. The toolkit is in the `Extras` folder. It is the `.exe` file with "Enablement" in its name. See [Installation components and methods](/docs/privilegesecure/26.07/install/components.md).
 - A local administrator account on the server where you run the toolkit.
-
-{/* TODO verify: the exact Enablement Toolkit .exe file name in the 26.07.3 Extras folder */}
 
 ## Start the toolkit
 
@@ -68,7 +66,7 @@ The results list whether ports 22 (SSH), 3389 (Remote Desktop Protocol, RDP), 59
 | **Set Privilege Secure AppSettingUser Config Files** | Sets the host name in each Privilege Secure `appsettings.user.json` file. | **Host** | Enter the full URL, such as `https://<nps-server>:6500`. The host name must match the common name (CN) of the certificate bound in IIS to the Privilege Secure web application. Run it on each Privilege Secure server that has an IIS-bound certificate. |
 | **Export Privilege Secure Diagnostics** | Exports logs, configuration files, and version information into a zip file. | **Date Range** | Select a date range to shorten the run. The toolkit prompts for a save location. It exports diagnostics only for the server that runs the toolkit. |
 
-{/* TODO verify: whether the Set Privilege Secure AppSettingUser Config Files operation is still current in 26.07, and which services' config files it changes. */}
+{/* TODO verify: whether the Set Privilege Secure AppSettingUser Config Files operation is current in 26.07 and which services' config files it changes. The toolkit source isn't in the product repositories; only running the 26.07.3 toolkit settles it. */}
 
 ## Export diagnostics for support
 
@@ -80,7 +78,7 @@ The results list whether ports 22 (SSH), 3389 (Remote Desktop Protocol, RDP), 59
 
 The export includes logs and configuration files. Send it only to [Netwrix Support](https://www.netwrix.com/support.html). Run the export on each server that runs a Privilege Secure service, because it covers only the local server.
 
-{/* TODO verify: that the diagnostics export removes secrets from the configuration files it collects. */}
+{/* TODO verify: whether the diagnostics export removes secrets from the configuration files it collects. The toolkit source isn't in the product repositories; only inspecting an export from the 26.07.3 toolkit settles it. */}
 
 ## Related topics
 

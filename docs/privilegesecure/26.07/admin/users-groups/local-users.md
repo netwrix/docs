@@ -27,12 +27,13 @@ The account appears on the **Users & Groups** page with the type **Local User**.
 
 ## Password rules
 
-The password you enter must meet the local user password policy. Administrators can change the policy in the local user password settings. The default policy requires:
+The password you enter must meet the local user password policy. Administrators change the policy in **System Settings** > **Local User Password**. The default policy requires:
 
-- At least 8 characters.
-- At least one lowercase letter, one uppercase letter, one digit, and one non-alphanumeric character.
+- At least 8 characters. The length can be set from 8 to 1024.
+- At least 1 unique character. This can be set from 1 to 12.
+- At least one lowercase letter, one uppercase letter, one digit, and one non-alphanumeric character. Each requirement has its own setting.
 
-{/* TODO verify: the menu path of the local user password settings (System Settings), its ranges (length 8-1024, unique characters 1-12, expiry 10-365 days), default password policy (PasswordOptions: length 8, unique characters 1, all four character classes; the product also seeds a 90-day expiry) and the 90-day password expiry behavior. Taken from code, not confirmed in the lab. */}
+Local user passwords also expire. The default is 90 days, and **Expiration (Days)** accepts 10 to 365. A user whose password has expired can't continue after signing in until the user sets a new password on the sign-in page. A password that you create with **Change Password Next Login** selected expires immediately, so the user sets a new password at the first sign-in. See [System settings reference](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md#local-user-password).
 
 ## Manage a local user
 
@@ -41,15 +42,12 @@ Select the user's name on the **Users & Groups** page to open the details page. 
 The header has these buttons:
 
 - **Reset Password:** Sets a new password for the user. This button appears on local users only.
-- **Lock Account:** Locks the account so the user can't sign in.
-- **Reset MFA:** Resets the user's multi-factor authentication (MFA) registration.
-
-{/* TODO verify: what Reset MFA and Lock Account do and how a locked account is unlocked (no Unlock state was seen in the lab) */}
+- **Lock Account:** Locks the account so the user can't sign in. It also locks the user's active, scheduled, and awaiting-approval sessions. When the account is locked, the button changes to **Unlock Account**.
+- **Unlock Account:** Unlocks the account and the sessions that the lock affected. It also clears a sign-in lockout that came from repeated failed sign-ins.
+- **Reset MFA:** Resets the user's multi-factor authentication (MFA) registration. A confirmation window titled **Reset MFA for user?** opens. When you confirm, Privilege Secure generates a new TOTP secret, and the user registers an authenticator again. The button appears only when no external MFA connector is set for the user.
 
 The **Properties** tab holds **Display Name**, **SamAccountName**, **Department**, **User Principal Name**, and **Email**. For details on each tab and on lockout, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ## Change your own password
 
-Local users change their own passwords from **User Options** > **Settings** > **Change Password**. Enter **Old Password**, **Password**, and **Confirm Password**, then click **Save**. After a successful change, the console signs the user out.
-
-{/* TODO verify: the sign-out after a change (from code, not seen in the lab) */}
+Local users change their own passwords from **User Options** > **Settings** > **Change Password**. Enter **Old Password**, **Password**, and **Confirm Password**, then click **Save**. After a successful change, the console signs the user out and shows the sign-in page.

@@ -25,9 +25,9 @@ An administrator gives you the Auditors role and sets what it covers. The role c
 
 The **Users** and **Resources** tabs of the role limit the sessions you can view. For how an administrator sets this, see [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
 
-{/* TODO verify: whether the All Historical tab lists only the sessions in your Users and Resources scope, or every session with recordings limited to your scope. The lab tour used an administrator account. */}
+The sessions you can list are the ones in your **Users** and **Resources** scope, plus your own sessions. Any other session outside that scope doesn't appear.
 
-{/* TODO verify: the left navigation items an auditor sees. The lab tour used one administrator account. */}
+In the left navigation, an auditor sees at least **Dashboard** and **My Activities**. Other permission groups in the role add their own items. If the role includes reporting access, the **Auditing & Reporting** section also shows **Activity Log**, **DB Change History**, **Events**, **Log Files**, and **Reporting**. **Access Certification** appears only for reviewers.
 
 ## Find a session
 
@@ -35,7 +35,7 @@ The **Users** and **Resources** tabs of the role limit the sessions you can view
 2. Select the **Historical** tile.
 3. Narrow the list with the filters.
 
-{/* TODO verify: how an auditor without the Administrator role lists other users' historical sessions; in 26.07.3 the All Historical tab renders only for the Admin role (HistoricalSessionsTable.tsx). */}
+The **All Historical** and **Mine** tabs appear only for administrators. An auditor sees one list on the **Historical** tile, showing the sessions in the role's **Users** and **Resources** scope plus the auditor's own sessions.
 
 | Filter | Narrows the list by |
 |---|---|
@@ -65,9 +65,10 @@ The recording data includes keystrokes. In SSH sessions, keystrokes typed at a p
 A session has a recording only when the connection profile on its access policy has **Record Proxy Session** selected.
 
 1. On the **Historical** tile, find the session.
-2. Open its recording. A session can have several recordings, one for each sign-in.
+2. Expand the row. Each recording appears as an entry such as `<type> Session completed at <date>.` A session can have several recordings, one for each sign-in.
+3. Click the entry. If your role doesn't include **View Recordings**, the entry is disabled.
 
-{/* TODO verify: how to open a recording from a Historical row. Expanding a Completed row shows a one-line summary in the lab, and Failed rows have a grey chevron. The Track your sessions page describes the same row actions. */}
+A row without a recording has nothing to expand.
 
 The Replay Viewer opens. See [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md) for the controls, the timeline, and the viewer for each resource type.
 
@@ -75,7 +76,7 @@ The Replay Viewer opens. See [Replay a recorded session](/docs/privilegesecure/2
 
 If your role includes **Live Session Viewer**, you can watch an active session as it happens. You can also lock or terminate the session if your role includes **Lock Session** or **Terminate Session**. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md).
 
-{/* TODO verify: how an auditor finds active sessions to watch. The Active tile lists sessions, but the lab had no active sessions and no auditor account. */}
+To find a session to watch, select **Dashboard** in the left navigation, and then select the **Active** tile. With **Live Session Viewer**, the tile lists active sessions for the users and resources in your scope. Without it, the tile lists only your own sessions. Expand a row, and click the `<type> Session is live now.` entry to watch.
 
 ## Related topics
 

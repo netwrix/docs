@@ -23,28 +23,24 @@ The following AWS steps use a user with an access key. If the application server
 
 1. Sign in to the AWS Management Console.
 1. Open **IAM**, and then select **Policies**.
-1. Select **Create Policy**.
-1. In **Select a service**, search for and select **KMS**.
-1. Under **Write**, select the **Decrypt** and **Encrypt** permissions.
-1. Under **Resources**, select **Any in this account**. You restrict this to one key after you create the key.
-1. Enter a policy name, such as `NPS_KMS_Policy`. A description is optional.
-1. Save the policy.
+1. Select **Create policy**.
+1. Choose the KMS service.
+1. In **Actions allowed**, select the `Encrypt` and `Decrypt` actions. These are the only KMS permissions that Privilege Secure needs.
+1. For resources, allow all KMS keys in the account. You restrict this to one key after you create the key.
+1. Enter a **Policy name**, such as `NPS_KMS_Policy`. A description is optional.
+1. Select **Create policy**.
 
-{/* TODO verify: the 26.03 page grants only the Decrypt permission. The code calls the KMS Encrypt operation when it creates or rotates the key and the Decrypt operation when it reads the key. Confirm the minimum permissions. */}
+Privilege Secure calls the KMS `Encrypt` operation when it creates or rotates the key, and the `Decrypt` operation each time it reads the key. AWS requires the `kms:Encrypt` and `kms:Decrypt` permissions for these operations, and the key policy of the KMS key must also allow them. Adding the user as a key user, as described in [Create the KMS key](#create-the-kms-key), does that. See the AWS documentation for [KMS permissions](https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html).
 
 ## Create the IAM user
 
-1. In **IAM**, select **Users**, and then select **Create User**.
-1. Enter a user name. Providing console access is optional.
-1. Select **Attach policies directly**.
-1. Search for the policy that you created, and select it.
-1. Select **Next**, review the settings, and select **Create now**.
+1. In **IAM**, select **Users** and create a user. Console access is optional.
+1. Give the user the policy that you created by attaching the policy directly to the user.
 1. Open the user, and select the **Security credentials** tab.
-1. Select **Create access key**.
-1. Select **Application running outside of AWS**.
-1. Enter an optional description tag, and select **Create access key**.
-1. Copy or download the **Access key** and the **Secret access key**.
-1. Select **Done**.
+1. In the **Access keys** section, select **Create access key**.
+1. On the best practices page, select **Other**, and then select **Next**.
+1. Optional: Enter a description tag, and select **Create access key**.
+1. Copy the access key ID and the secret access key, or select **Download .csv file**. AWS shows the secret access key only once.
 
 Store the access key and the secret access key securely. You enter them in Privilege Secure when you apply the key.
 
@@ -52,17 +48,17 @@ Store the access key and the secret access key securely. You enter them in Privi
 Don't delete the access key of the AWS user before you update Privilege Secure to use a new key. See [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md#replace-the-aws-access-key).
 :::
 
-{/* TODO verify: the AWS console labels in these steps come from the 26.03 page. Confirm them in the current AWS console. */}
+The AWS console changes over time. If a label differs from the labels in these steps, follow the AWS documentation for [creating an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) and [managing access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
 ## Create the KMS key
 
 1. In the AWS Management Console, open **Key Management Service**.
-1. Select **Customer managed keys**, and then select **Create key**.
+1. In the navigation pane, select **Customer managed keys**, and then select **Create key**.
 1. For **Key type**, select **Symmetric**. For **Key usage**, select **Encrypt and decrypt**. Select **Next**.
 1. Enter an alias for the key. The description and tags are optional. Select **Next**.
 1. Add a key administrator if your organization requires one. The IAM user that you created doesn't need administrative permissions on the key.
-1. Under **Key users**, select the IAM user that you created, and select **Next**.
-1. Review the key configuration, and select **Create Key**.
+1. On the page where you choose the users and roles that can use the key, select the IAM user that you created, and select **Next**.
+1. Review the key policy and the key settings, and select **Finish**.
 1. Open the new key, and copy its Amazon Resource Name (ARN).
 
 The ARN has this form. Privilege Secure uses it to identify the key.
@@ -78,15 +74,15 @@ Restrict the IAM policy so that the user can use only the Privilege Secure key.
 1. In **IAM**, select **Policies**, and select the policy that you created.
 1. Select the **Permissions** tab, and then select **Edit**.
 1. Switch to the visual display mode, and expand the **KMS** item.
-1. Expand **Resources**, and clear **Any in this account**.
+1. Under resources, replace the all-keys setting with the ARN of the KMS key.
 1. Select **Add Arn**, paste the key ARN, and select **Add ARNs**.
 1. Review the policy, and select **Save changes**.
 
 ## Use an EC2 instance profile
 
-When the application server runs on an Amazon EC2 instance, the key tool can use the instance profile instead of an access key. Attach the IAM policy to the role of the instance profile, and select **Use EC2 Instance Profile** in the key tool. You then skip the IAM user and access key steps. Add the role, instead of the user, as a key user of the KMS key.
+When the application server runs on an Amazon EC2 instance, the key tool can use the instance profile instead of an access key. Attach the IAM policy to the IAM role that the instance profile contains, and select **Use EC2 Instance Profile** in the key tool. You then skip the IAM user and access key steps. Add the role, instead of the user, as a key user of the KMS key.
 
-{/* TODO verify: confirm that the EC2 instance profile option is supported for customers and that the policy attaches to the instance role. */}
+With this option, Privilege Secure doesn't store an access key. It asks the AWS SDK for credentials, and the SDK finds them through its default credential sources, which include the instance profile. See the AWS documentation for [instance profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html).
 
 ## Next step
 

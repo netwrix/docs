@@ -56,21 +56,19 @@ When a user requests a session, the console picks one access policy:
 1. If the request names an access policy, the console uses that policy.
 2. Otherwise, the console uses the first matching policy when the matching policies are sorted by name in alphabetical order. A policy matches when it includes the requested activity and applies to the user and to the resource or credential.
 
-{/* TODO verify: the policy Priority value is stored but the 26.07.3 code doesn't use it to choose a policy. Confirm with engineering that Priority has no effect, and that no priority field appears in the console. */}
+A policy has no priority setting. The console has no priority field, and the policy name decides which matching policy wins.
 
 Because the first match by name wins, two policies that both match the same request can give different connection profiles. Give overlapping policies names that sort in the order you want them applied, or avoid overlap.
 
-{/* TODO: add an example of two overlapping policies and the policy the console selects */}
+For example, the policies `Server admins` and `Server admins - Ticketed` both include the same activity, and both apply to the same group and resource. `Server admins` sorts first, so a request that doesn't name a policy uses it and its connection profile. To make the ticketed policy apply, rename it so that it sorts before the other policy, or remove the overlap.
 
-If no policy matches, the console shows this message: `Unable to find policy for activity: <activity>, with resource: <resource>. Contact the NPS Administrator to request access.` {/* TODO verify: confirm the exact message text in the 26.07 console. */}
+If no policy matches, Privilege Secure rejects the request with this message: `Unable to find policy for activity: <activity>, with resource: <resource>. Contact the NPS Administrator to request access.` For a credential request, the message reads `with credential: <credential>` instead.
 
-{/* TODO verify: a policy named "Default" is seeded with the Default connection profile and the default activities. Confirm on a fresh install. */}
+Privilege Secure includes a policy named `Default` that uses the `Default` connection profile. It contains four activities: Activity Token for Local Admin Access, Add Requester to Local Administrators, Activity Token for wheel Group, and Activity Token for Domain Admin Access.
 
 ## Delegated policy management
 
-Custom roles can delegate parts of policy management. The permissions are **[AP] Modify Name**, **[AP] Modify Description**, **[AP] Modify Connection Profile**, **[AP] Modify Activities**, **[AP] Modify Users**, and **[AP] Modify Resources**. Each permission lets a role member change only that part of a policy. See [Create a custom role](../../admin/roles/custom-roles.md).
-
-{/* TODO verify: confirm the exact permission labels in the custom role editor, and whether the console shows the user icon on a policy that a custom role manages (26.03 behavior). */}
+Custom roles can delegate parts of policy management. The permissions are **Modify Name**, **Modify Description**, **Modify Connection Profile**, **Modify Activities**, **Modify Users**, and **Modify Resources**. Each permission lets a role member change only that part of a policy. See [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
 
 ## Set up access policies
 

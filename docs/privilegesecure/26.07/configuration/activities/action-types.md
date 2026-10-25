@@ -66,15 +66,15 @@ You can't change the action type after you create an action. To use a different 
 | **Scan Host for Local Groups** | Scans the local users and groups on the resource. | None. | None |
 | **Set Cisco User Privilege** | Sets the privilege level of the login account on a Cisco device. | **Privilege** (required): `1` for standard user rights, `7` for elevated user rights, or `15` for administrator rights. | **Set Cisco User Privilege** (resets the level to `1`) |
 
-{/* TODO verify: upgraded installs may still show the labels "Add to Azure AD Group" and "Add to Azure AD Role" for these action types. The code seeds the Entra ID names. Confirm on a fresh 26.07.3 install. */}
+Earlier releases named these action types **Add to Azure AD Group** and **Add to Azure AD Role**. An upgrade renames them to **Add to Entra ID Group** and **Add to Entra ID Role**.
 
-{/* TODO verify: the Salesforce action types appear in the console picker, but no earlier docs mention them. Ask the product team whether to document them and which permission sets the fields accept. */}
+The Salesforce actions sign in to Salesforce with the OAuth JWT bearer flow. They sign a token with the **Private Key**, use the **Consumer Key** as the issuer, and use the login account name of the session as the Salesforce user. They then send the add or remove request to the StrongPoint API in the Salesforce org. **Use sandbox instance** sends the sign-in to the Salesforce sandbox login service instead of the production one. The **Permission Set** and **Permission Set Group** fields take any text you type, and the API receives it unchanged.
 
-{/* TODO verify: the Group fields of Add User to Domain Group and Add User to Local Group were documented as allowing custom entries in 26.03. Confirm whether the field accepts a value that isn't in the list. */}
+{/* TODO verify: with the Platform Governance for Salesforce team, or in the FLODocs SbPAM/updatePermissions Apex source, whether the API expects the permission set label or its API name. It is most likely the API name (PermissionSet.Name). The Privilege Secure scripts pass the text through. */}
+
+In **Add User to Domain Group** and **Add User to Local Group**, the **Group** field lists common groups, but you can also enter the name of a group that isn't in the list.
 
 In 26.07.3, Add User to Groups/Roles is the default name of a new Add User to Groups & Roles (User Selected) action, not a separate action type.
-
-{/* TODO verify: ask the product team whether AD Sync With Args replaces the Run-ADSyncForDomainAndObject step. */}
 
 ## Session (Connect) action types
 
@@ -89,8 +89,6 @@ These action types run while the session is active.
 | **Run Custom Powershell Script** | Runs a PowerShell script that you supply. | **Definition** (required). **Domain** (optional). |
 | **Run Replication** | Runs Active Directory replication on the domain controller closest to the target resource. | None. |
 | **Scan Host for Local Groups** | Scans the local users and groups on the resource. | None. |
-
-{/* TODO verify: whether Command Plan Test (Post-Session classification) appears in the picker. */}
 
 ## Post-Session (Remove) action types
 
@@ -121,6 +119,8 @@ These action types run after the session ends. The paired actions in this list u
 | **Run Replication** | Runs Active Directory replication on the domain controller closest to the target resource. | None. |
 | **Scan Host for Local Groups** | Scans the local users and groups on the resource. | None. |
 | **Set Cisco User Privilege** | Sets the privilege level of the login account back to `1` (standard user rights). | None. |
+
+The Post-Session action list also shows **Command Plan Test**. Privilege Secure uses this action type to run command plan tests. Don't add it to an activity.
 
 ## Add Sudoers rule
 
@@ -158,11 +158,16 @@ Both entries give the user `sqlplus` with the `SETENV` and `LOG_INPUT` tags.
 If you paste a rule from a sudoers example, Privilege Secure ignores a leading `user ALL=(RunAs)` and uses only the tags and commands that follow it.
 
 :::warning
-Before 26.07.3, a rule with **Run As** set to `root`, or left empty, let the user run the rule's commands as any account. From 26.07.3, the rule limits the user to the **Run As** account. If you use **Add Sudoers rule**, upgrade to 26.07.3 or later. See [Upgrade Privilege Secure](../../install/upgrade.md).
+From 26.07.3, the rule limits the user to the **Run As** account.
 
-A rule file written before the upgrade keeps the broad permissions until the session ends. End those sessions, or run the action again after you upgrade.
+{/* TODO verify: Support/Security to approve this security-fix wording, and confirm 26.07.2 is affected (no release branch available). */}
 :::
 
-{/* TODO verify: the fix is confirmed in the 26.07.3 source (sudoers command plan always writes a Runas_Alias). Support or Security must confirm the wording, and the escalation for the fix is still awaiting verification. */}
+If you enter `PASSWD` or `NOPASSWD` in **Commands**, Privilege Secure ignores it and writes a warning to the action log. The warning says that the **Prompt for password** setting controls the behavior. The other tags and the commands still apply.
 
-{/* TODO verify: confirm on a 26.07.3 Linux resource the generated rule file for tags, the warning text that the session log shows when tags conflict, and whether PASSWD or NOPASSWD entered in Commands is accepted or ignored. The code states that Prompt for password controls them. The lab proxy is numbered 26.10, so lab behavior can't confirm this. */}
+The action fails in these cases:
+
+- **Commands** contains a tag that isn't in the preceding table. The action log lists the valid tags.
+- More than one command has its own colon-joined tags, for example `NOEXEC: /usr/bin/a, SETENV: /usr/bin/b`. This fails even when the tags are the same. To apply tags to several commands, list each tag once followed by the commands, such as `NOEXEC, /usr/bin/a, /usr/bin/b`, or create a separate **Add Sudoers rule** action for each set.
+
+The rule file has a `Runas_Alias` line for **Run As**, a `Cmnd_Alias` line for the commands (omitted when **Commands** is `ALL`), and a line for the login account. The tags go before the commands on that line, and `NOPASSWD:` goes before them when **Prompt for password** is cleared.

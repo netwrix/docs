@@ -56,8 +56,7 @@ Use **Search** to filter the table. On the **Active** tile, you can also filter 
 | **Available** | The session is ready. Connect to it. See [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md). |
 | **Failed** | The provisioning stage hit an error. |
 | **Logged In** | You are signed in to the resource, either directly or through the proxy. Privilege Secure detects a direct sign-in by polling the resource at regular intervals, so the status can lag. |
-| **Cancelling** | The session expired, or you or an administrator canceled it. {/* TODO verify: the exact label in the Active grid; the status enum is Cancelling. */} |
-| **Deprovisioning** | Privilege Secure is removing the permissions after the session ends. |
+| **Deprovisioning** | Privilege Secure is removing the permissions after the session ends, expires, or is canceled by you or an administrator. |
 | **Locked** | An administrator locked the session. |
 
 ## End a session

@@ -49,7 +49,7 @@ See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/con
 
 The secondary node then appears in the primary console. If high availability doesn't work after the upgrade, reconfigure it. See [High availability](/docs/privilegesecure/26.07/install/high-availability.md).
 
-{/* TODO verify: the secondary-server steps and the need to reconfigure high availability after an upgrade. The source is a support resolution, not a lab test. */}
+{/* TODO verify: that registering from the secondary server's own console restores its nodes after an upgrade, and when high availability must be reconfigured. Needs a second server in a high availability pair; release code and public sources don't describe this case. */}
 
 ## Host Scan service shows offline but the Windows service is running
 
@@ -67,35 +67,27 @@ The log rarely records the inner exception. To find it, search all `PAM-HostScan
 
 ### Reissue the certificate with every name
 
-If the log shows `RemoteCertificateNameMismatch`, reissue the certificate bound to the console website on port 6500 so that it lists every name the services use. Include the FQDN of the Privilege Secure server, the short name, and the FQDN of each service node. Bind the new certificate and restart the services.
+If the log shows `RemoteCertificateNameMismatch`, reissue the certificate bound to the console website on port 6500 so that its Subject Alternative Name (SAN) field includes the host name in **NPS Rest URL**. The Host Scan heartbeat connects to the `actionhub` endpoint at that URL, so the name in the URL must match a name on the certificate. Bind the new certificate and restart the services.
 
-1. Request a certificate that lists each name in the Subject Alternative Name (SAN) field. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
+1. Request a certificate that lists the name from **NPS Rest URL** in the SAN field. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 1. Bind the certificate to the **SbPAM Web Service** website in Internet Information Services (IIS), and run `iisreset`.
 1. In **System Settings** > **Services**, confirm **NPS Rest URL** uses a name on the certificate, and click **Register Services**.
 1. Restart the `SbPAMHostScan` service from Windows Services on each node that runs Host Scan.
 1. On the **Service Nodes** page, confirm that the Host Scan service shows **Online**.
 
-{/* TODO verify: certificate reissue fixes heartbeat */}
-
-If the Host Scan service connects to the web service by a name you can't predict, such as an IP address or `localhost`, include that name in the SAN field too.
-
-{/* TODO verify: which names the Host Scan heartbeat uses to connect, and whether IP addresses are needed in the SAN field. The lab saw a name mismatch for the node FQDN and localhost on 6500. */}
+If **NPS Rest URL** uses an IP address or `localhost`, the certificate must list that exact value. A better fix is to change **NPS Rest URL** to a fully qualified domain name (FQDN) that the certificate already lists, and then click **Save** and **Register Services**.
 
 ### Restart the service from Windows Services
 
-**Register Services** may not restart the Host Scan service. After you register services, restart `SbPAMHostScan` from Windows Services on the server, and check the **Service Nodes** page again.
-
-{/* TODO verify: whether Register Services restarts the Host Scan service when it is running. Seen once, with Host Scan already offline. */}
+**Register Services** stops each service on the server and starts it again. If a service doesn't stop or start within 60 seconds, the console doesn't report an error, because the failure is written only to the debug log. After you register services, confirm that `SbPAMHostScan` is running in Windows Services, restart it if it isn't, and check the **Service Nodes** page again.
 
 ### Accept untrusted certificates only as a last resort
 
 If the service can't trust the certificate because the certificate authority (CA) isn't trusted, fix the trust first. Install the CA certificate in the Trusted Root store on each service node. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 
-Only when you can't fix the trust, the services can skip certificate validation. Check **Ignore HTTPS Certificate Errors** in **System Settings** > **Services**, and click **Register Services**. This sets `RestService.InsecureSkipVerify` to `true` in the `appsettings.user.json` file of each service that uses the **NPS Rest URL**: Action, Email, Host Scan, Proxy, Scheduler, and SIEM. Skipping validation exposes the connection to impersonation. Don't use it for a name mismatch, which a reissued certificate fixes.
+Only when you can't fix the trust, the services can skip certificate validation. Check **Ignore HTTPS Certificate Errors** in **System Settings** > **Services**, and click **Save**. Saving sets `RestService.InsecureSkipVerify` to `true` in the `appsettings.user.json` file of each service that uses the **NPS Rest URL**: Action, Email, Host Scan, Proxy, Scheduler, and SIEM. Click **Register Services** afterward to restart the services. The console asks you to save first, and registration keeps the saved setting. Skipping validation exposes the connection to impersonation. Don't use it for a name mismatch, which a reissued certificate fixes.
 
 Releases before 26.03.0 overwrote `appsettings.user.json` during service registration, so a manual `InsecureSkipVerify` setting was lost after an upgrade. From 26.03.0, the file is preserved.
-
-{/* TODO verify: that Register Services is needed after the checkbox changes. */}
 
 ## Connection refused on port 6500 during a restart
 

@@ -20,16 +20,17 @@ After you sign in, the portal opens the dashboard. It shows four tiles:
 
 | Tile | Shows |
 |---|---|
-| **Active** | Sessions that you requested to start now |
-| **Scheduled** | Sessions with a later start time |
-| **Approvals** | Requests that wait for an approver to decide. Approvers use this tile. |
-| **Historical** | Sessions that have ended |
+| **Active** | Your sessions that are provisioning, available, or in progress |
+| **Scheduled** | Your sessions with a later start time |
+| **Approvals** | Your session requests that wait for an approver to decide |
+| **Historical** | Your sessions that have completed, been canceled, or failed, and requests that were denied |
 
-{/* TODO verify: the contents of each tile on the portal, and which users see the Approvals tile. The descriptions follow the console dashboard pages. The Historical description is unconfirmed. */}
+Every user who signs in sees all four tiles. Each tile shows a count of your own sessions. The portal doesn't have the **Approve** and **Deny** buttons. Approvers decide requests in the console. See [Approve or deny session requests](/docs/privilegesecure/26.07/user-guide/approve-requests.md).
 
-The dashboard also has the **Create Session**, **End Session**, **Lock Activity**, and **Unlock Activity** buttons, and a table of sessions. You can't connect to a locked session.
+The **Active** tile also has the **Create Session**, **End Session**, **Lock Activity**, and **Unlock Activity** buttons, and a table of sessions. You can't connect to a locked session.
 
-{/* TODO verify: what End Session, Lock Activity, and Unlock Activity do on the portal. */}
+- **End Session** ends the selected sessions. It stays unavailable until you select a row.
+- **Lock Activity** and **Unlock Activity** require the **Lock Session** permission from the Auditors permission group, or the **Admin View Read Only** role with **Lock Session**. Without it, the buttons are unavailable and a tooltip names the missing permission.
 
 ![Portal dashboard with the Active, Scheduled, Approvals, and Historical tiles and an empty session table](/images/privilegesecure/26.07/remote-access-gateway/portal-dashboard-signed-in.webp)
 
@@ -42,7 +43,7 @@ The dashboard also has the **Create Session**, **End Session**, **Lock Activity*
 
 3. If the **Group Selection** step appears, select the groups or roles. Click **Next >**.
 
-   {/* TODO verify: when the portal shows or skips Group Selection. The lab skipped it when the user had one activity. The console request page has the same open question. */}
+   The portal shows this step only when the selected activity assigns users to groups or roles. For other activities, the wizard skips it.
 
 4. On the **Resource Selection** step, select one or more resources. Click **Next >**.
 5. On the **Notes** step, enter notes and a ticket number. Click **Next >**.
@@ -53,7 +54,7 @@ The dashboard also has the **Create Session**, **End Session**, **Lock Activity*
 
    ![Scheduling step with the Now and Choose a time options](/images/privilegesecure/26.07/remote-access-gateway/portal-wizard-scheduling.webp)
 
-   {/* TODO verify: the default session length. The lab screen showed that the session expires 120 minutes after the start. Confirm whether that is a default or a setting of the activity. */}
+   The wizard shows that the session expires after the **Max Duration (minutes)** of the connection profile in the access policy. The default is 120. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 7. On the **Review** step, check the summary. Click **Finish** to submit the request.
 
@@ -68,15 +69,15 @@ For the fields on each step, see [Request a session](/docs/privilegesecure/26.07
 1. In the session table, find the row with the **Available** status.
 2. Click the monitor icon. The **Live Sessions** page opens.
 
-   The row also has a connection-file icon. {/* TODO verify: what the connection-file icon does when you use the portal from outside the network, and whether users should use it. */}
+   The row also has icons to copy the account name and, when the connection profile lets users see passwords, to copy or view the password.
 
 3. At the prompt from the target system, enter the password of the target account.
 
 The prompt asks for a password only. The account name comes from the activity's login account. If the target rejects the sign-in, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md#errconnect_logon_failure-after-you-enter-the-target-password).
 
-{/* TODO verify: that the password prompt appears only when Proxy Auto-connect is off on the access policy, and what the user sees when it is on. */}
+{/* TODO verify: whether the target password prompt appears in the portal when Allow Proxy Auto-connect is on. The backend sets prompt for credentials to 0 in the RDP settings when it is on and 1 when it is off, but the portal's getRdpConnection builds the guacd connection without that value and sets the password to not_used only for managed or activity-identity login accounts, so the login account type may decide whether the target asks for a password. This needs an RDP test. */}
 
-{/* TODO verify: SSH sessions in the portal. Code opens a terminal in the browser for SSH targets. The lab tested only RDP. */}
+For an SSH target, the monitor icon opens a terminal in the browser on the **Live Sessions** page.
 
 ## Use the Live Sessions page
 
@@ -88,7 +89,7 @@ The page shows the target desktop. A toolbar at the top has these controls:
 | **Ctrl+Alt+Delete** | Sends the Ctrl+Alt+Delete key combination to the target. |
 | **Close** | Closes the session window. |
 
-{/* TODO verify: whether Close also ends the activity session, and whether Ctrl+Alt+Delete appears for SSH sessions. Code sends it for RDP only. */}
+**Close** disconnects your browser from the target. It doesn't end the activity session. To end the session, use **End Session** on the dashboard. The **Ctrl+Alt+Delete** button appears only for RDP sessions, not for SSH sessions.
 
 The page also shows:
 
@@ -97,17 +98,17 @@ The page also shows:
 
 ![Live Sessions toolbar with the Resolution list open and the REC indicator](/images/privilegesecure/26.07/remote-access-gateway/portal-resolution-menu.webp)
 
-Large mouse pointers on Windows 11 and Windows Server 2025 targets display correctly.
+{/* TODO verify: large mouse pointers on Windows 11 and Windows Server 2025 targets. The pointer is drawn by guacd, and the release code has no pointer handling that settles how large pointers display. */}
 
-{/* TODO verify: the large mouse pointer behavior on 26.07.3 targets. */}
+### Clipboard
 
-{/* TODO verify: clipboard and audio in the browser session. Code copies text between the browser and the target after the browser grants clipboard permission, and supports audio. */}
+The session copies plain text between the target and your browser. Text that you copy on the target goes to your browser clipboard. To send text from your browser clipboard to the target, click the session display. Your browser might ask for permission to read the clipboard. If it doesn't support clipboard reading, the toolbar shows "This browser does not support reading from the clipboard."
+
+{/* TODO verify: audio playback from the target in the browser session. The browser page requests the audio formats it supports, but whether a target plays sound depends on the target and guacd settings that the release code doesn't show. */}
 
 ## Switch between sessions
 
-While a browser session is open, the left navigation shows **Live Sessions**. When more than one session is open, select the session name at the top of the page and choose another session from the list. A second session to the same resource shows a number, such as (2).
-
-{/* TODO verify: the Live Sessions label, the session name list, and the duplicate-session count on 26.07.3. */}
+While a browser session is open, the left navigation shows **Live Sessions**. When more than one session is open, select the session name at the top of the page and choose another session from the list. Each entry has the form `<account>@<resource>`. A second session to the same resource, even with a different account, shows a number after the name, such as (1).
 
 ## Related topics
 

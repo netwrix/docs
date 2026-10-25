@@ -12,7 +12,7 @@ The Password Secure connector lets Netwrix Privilege Secure check out passwords 
 
 The **Password Secure** connector template is controlled by the `password_secure` feature flag. The flag is on by default, so the template appears in the **Connector Template** list.
 
-{/* TODO verify: how a customer turns the password_secure flag on if the Password Secure template is missing from the Connector Template list. Don't document the feature utility until Product confirms it is supported for customers. */}
+{/* TODO verify: how a customer turns the password_secure flag on if the template is missing from the Connector Template list. The release ships a feature-flag utility, but no source states that customers may run it. */}
 
 ## Prerequisites
 
@@ -78,7 +78,7 @@ See [Service accounts](../../configuration/service-accounts/service-accounts.md)
 
 An asterisk (\*) marks a required field.
 
-{/* TODO verify: the API Url default. The code seeds `https://passwordsecure/api`; the lab form showed the same value. */}
+When you select the **Password Secure** template, the form fills **API Url** with `https://passwordsecure/api`. Replace it with the address of your Password Secure Web Application.
 
 ![The Add Integration Connector form with the Password Secure template selected, showing API Url, Service Account, and the collapsed Advanced section.](/images/privilegesecure/26.07/integrations/integration-connector-password-secure-form.webp)
 
@@ -98,17 +98,15 @@ Then add the activity to a resource-based access policy, with the users and reso
 For each session, Privilege Secure looks up the account in Password Secure by its domain and user name.
 
 - The user name comes from the activity's login account name. If the name has no domain, Privilege Secure uses the NetBIOS name of the target host as the domain.
-- Both values must match a Password Secure entry exactly.
+- Both values must match a Password Secure entry exactly. Password Secure's search can return partial matches, so Privilege Secure keeps only the entries whose user name equals the requested user name.
 - The check-out fails if Password Secure has no matching entry, or has more than one.
 
 The check-out error messages begin with "NPWS Integration >>", such as "NPWS Integration >> No password was found for the given parameters" and "NPWS Integration >> More than one password was found for the given parameters".
 
-Release 26.07.3 fixes an error in the username match during lookup. If check-out fails to find an account that exists in Password Secure, upgrade to 26.07.3.
-
-{/* TODO verify: customer wording for the 26.07.3 fix (447232, Get-NpwsPassword null reference in username matching) and the earlier 26.07.2 fix (PSAM-1307, PSAM-1434). */}
+Release 26.07.3 identifies the user name field of a Password Secure entry by its type instead of its label. Earlier releases could fail the check-out when the label wasn't `Username`, for example in a localized template or after someone renamed the field. If check-out fails to find an account that exists in Password Secure, upgrade to 26.07.3.
 
 ## Update the Password Secure SDK files
 
-Privilege Secure includes the Password Secure SDK files that it uses to communicate with Password Secure. The included files work with Password Secure 9.2.0 and later. To use a newer Password Secure release, replace the files in the `PsrApi` folder of the Action Service Worker installation with the files from the newer SDK. Download the SDK from the Password Secure Customer Information System.
+Privilege Secure includes the Password Secure SDK files that it uses to communicate with Password Secure. The included files work with Password Secure 9.2.0 and later. To use a newer Password Secure release, replace the files in the `psrapi` folder of the Action Service Worker installation, by default `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\psrapi`, with the files from the newer SDK. Download the SDK from the Password Secure Customer Information System.
 
-{/* TODO verify: the SDK file path (`C:\Program Files\Stealthbits\PAM\ActionServiceWorker\PsrApi`) and the 9.2.0 minimum for 26.07. The 26.03 page gives both; the code loads the DLL from a `psrapi` folder one level above the module. */}
+{/* TODO verify: the 9.2.0 minimum Password Secure version for the included SDK files. The release code doesn't state a minimum version, and the Password Secure documentation would need to confirm it. */}

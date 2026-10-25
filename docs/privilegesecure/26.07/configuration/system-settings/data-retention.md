@@ -35,16 +35,13 @@ Deleted data can't be recovered. Privilege Secure deletes records older than the
 
 ## When the cleanup runs
 
-The cleanup runs once a day. Each run deletes a limited number of records, so a large backlog takes several days to clear. The run deletes SIEM and email records in batches, up to 500,000 rows for each table. From Privilege Secure 26.07.3, deletion runs faster than in earlier releases.
+The cleanup runs when the web service starts and then every 24 hours. Each run deletes a limited number of records, so a large backlog takes several days to clear. The run deletes SIEM and email records in batches, up to 500,000 rows for each table. From Privilege Secure 26.07.3, deletion runs faster than in earlier releases.
 
-{/* TODO verify: a Community answer for 26.03 says 10,000 rows per run, which differs from the 500,000 per table that the code allows (2000 rows per batch, 250 batches) */}
-{/* TODO verify: whether the cleanup interval is configurable for customers; the DataRetentionCleanupTimerMinutes setting in appsettings isn't confirmed as supported */}
+{/* TODO verify: Support to confirm whether changing the data-retention cleanup interval is a supported customer setting. */}
 
 ## Session recording retention
 
-Session recording (input and output log) retention deletes session recordings from disk when they are older than the number of days you set. The session proxy reads this setting.
-
-{/* TODO verify: session recording retention in 26.07.3; the web service job handles only SIEM and email, and the proxy source reads the setting and deletes recordings older than the cutoff */}
+Session recording (input and output log) retention deletes session recordings from disk when they are older than the number of days you set. The session proxy reads this setting from the web service, checks for expired recordings about once an hour by default, and deletes the input and output log files that are older than the cutoff. The web service cleanup job doesn't handle session recordings. Each proxy deletes only the recordings stored on its own server.
 
 ## Related topics
 

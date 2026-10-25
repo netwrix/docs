@@ -12,10 +12,10 @@ For the other connector types and how a user's connector is chosen, see [Authent
 
 ## Prerequisites
 
+- You have the Administrator role. Only administrators can open **Configuration** > **Authentication**.
 - A RADIUS server that is reachable from the application server.
 - The RADIUS server's address, port, authentication type, and shared secret.
-
-{/* TODO verify: the role that can open Configuration > Authentication, and what the RADIUS server needs to register the application server as a client (the 26.03 documentation says the NAS IP Address is the IP address of the Privilege Secure server). */}
+- The application server registered as a RADIUS client on the RADIUS server, with the same shared secret. A RADIUS server picks the shared secret for a request from the source IP address of the request (RFC 2865, section 3), so register the address that the application server's requests come from.
 
 ## Add the connector
 
@@ -47,9 +47,9 @@ For the other connector types and how a user's connector is chosen, see [Authent
 
 {/* TODO screenshot: MFA connector fields, shared secret masked */}
 
-{/* TODO verify: the value Privilege Secure sends as the NAS Identifier. The 26.03 documentation says "SbPAM", and the 26.07 console doesn't show the value. */}
+{/* TODO verify: the value Privilege Secure sends as the NAS Identifier when Send NAS Identifier is selected. The RADIUS client library that sends it (Stealthbits.Radius 1.0.6) isn't in the release source. Next step: get the package from the Azure DevOps SbPAM feed and read how it sets NAS-Identifier when SendNasIdentifier is true. A packet capture on a Windows host is the fallback. */}
 
-{/* TODO verify: the pre-filled values for a new MFA connector. The values in this table for Remote Port, Max Retries, and Timeout (Seconds) come from the seeded Duo connector. */}
+A new MFA connector starts with these values: **Remote Port** 1812, **Auth. Type** **MSCHAPv2**, **Max Retries** 0, **Timeout (Seconds)** 60, **Send NAS Identifier** cleared, and **Format for username** empty.
 
 The **Format for username** list offers these presets. You can also enter your own format.
 
@@ -60,7 +60,18 @@ The **Format for username** list offers these presets. You can also enter your o
 - `%samaccountname%@%fqdn%`
 - `%domain%\%samaccountname%`
 
-{/* TODO verify: the default preset, and which value Privilege Secure sends to the RADIUS server for each preset. The 26.03 documentation says that with an email or UPN format, the sign-in page uses that format but Privilege Secure sends the default value (sAMAccountName@NetBIOS domain) to the RADIUS server. */}
+Privilege Secure replaces these placeholders with the user's values from Active Directory before it sends the user name to the RADIUS server:
+
+| Placeholder | Replaced with |
+|---|---|
+| `%samaccountname%` | The sAMAccountName without the domain. |
+| `%domain%` | The NetBIOS domain name. |
+| `%fqdn%` | The DNS name of the user's domain. |
+| `%upn%` | The user principal name. |
+| `%email%` | The email address. |
+| `%sid%` | The security identifier (SID). |
+
+When **Format for username** is empty, Privilege Secure sends the sAMAccountName of an Active Directory user in the form `DOMAIN\user`. A local user sends the Privilege Secure user name. If the format produces an empty value, it sends that same value.
 
 ## Example
 
@@ -84,8 +95,6 @@ With these values, Privilege Secure sends `push` to the proxy automatically, so 
 :::warning
 Privilege Secure includes a **Duo** connector in the connector list. It appears as a choice on every user's **Authentication Connector** tab. Its server is `localhost` until you change it. Set **Server FQDN / IP** and **Shared Secret** on the **Duo** connector before you assign it to a user. If you assign it first, the user's sign-in fails.
 :::
-
-{/* TODO verify: whether the seeded Duo connector is enabled. The code seeds it as disabled, and the lab console showed no enable toggle. Also verify that the sign-in fails when Duo is assigned before it is configured. */}
 
 1. Select **Users & Groups**, then select the user or group.
 1. Select the **Authentication Connector** tab.

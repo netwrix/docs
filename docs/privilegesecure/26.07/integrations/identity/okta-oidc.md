@@ -18,7 +18,7 @@ This page covers the Okta-specific settings. For the connector steps, see [Confi
 
 ## Register Privilege Secure in Okta
 
-Create an application for Privilege Secure in Okta, and set these values. The callback and CORS addresses are the ones in the prerequisites of [Configure an OpenID Connect connector](../../configuration/authentication/openid-connect.md#prerequisites).
+In the Okta Admin Console, go to **Applications** > **Applications**, click **Create App Integration**, and select **OIDC - OpenID Connect** as the sign-in method. Set these values. The callback and CORS addresses are the ones in the prerequisites of [Configure an OpenID Connect connector](../../configuration/authentication/openid-connect.md#prerequisites).
 
 | Okta setting | Value |
 |---|---|
@@ -28,9 +28,9 @@ Create an application for Privilege Secure in Okta, and set these values. The ca
 | Grant type | **Implicit (hybrid)** |
 | Sub-settings | **Allow ID Token with implicit grant type** and **Allow Access Token with implicit grant type**, both selected |
 
-Copy the **Client ID** of the Okta application and the issuer address of your Okta authorization server.
+Okta treats sign-out redirect addresses as optional. The Privilege Secure Console sends its sign-out address when a user signs out, so register it to return the user to the console.
 
-{/* TODO verify: the Okta admin console path to create the application, the format of the Okta issuer address, and whether Okta requires the sign-out redirect address. */}
+Copy the **Client ID** of the Okta application and the issuer address of your Okta authorization server. The issuer address of the Okta org authorization server is `https://<your-okta-domain>`. The issuer address of a custom authorization server is `https://<your-okta-domain>/oauth2/<authorization-server-id>`, and the default custom server uses `default` as its ID.
 
 ## Match Okta users to AD users
 
@@ -47,9 +47,7 @@ For example, an AD user has the user principal name `jsmith@example.com` and the
 
 If you create the Okta user with a password that the user must change, the user sets it in Okta. Privilege Secure regains control when the user finishes.
 
-Ensure Okta assigns the Privilege Secure application to each user who signs in.
-
-{/* TODO verify: that the application assignment is required in your Okta configuration (it can be automatic by group), and the Okta menu path to assign it. */}
+Ensure Okta assigns the Privilege Secure application to each user who signs in. When you create the application, Okta lets you assign it to everyone in the org or to selected groups. To change the assignment later, open the application in **Applications** > **Applications**, select the **Assignments** tab, and use **Assign** to add people or groups.
 
 ## Add the connector in Privilege Secure
 

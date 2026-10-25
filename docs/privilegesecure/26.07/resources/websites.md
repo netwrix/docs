@@ -19,13 +19,10 @@ A website resource lets Netwrix Privilege Secure for Access Management (Privileg
 1. Select **Save**.
 
 {/* TODO screenshot: New Website page with the fields filled in. */}
-{/* TODO verify: whether the New Website page offers Associated Domain Controller and Service Account fields. The 26.03 page listed them, but the 26.07 lab form showed only the name, Platform, Logon URL, and Associated Resource. */}
 
 ## Website details
 
-The details page shows the name, **Platform**, **Logon URL**, and **Associated Resource**. The arrow next to **Associated Resource** opens the associated resource. When you change a setting, **Save** and **Cancel** appear. The trash can icon removes the website from Privilege Secure after you confirm.
-
-{/* TODO verify: Save and Cancel appear after an edit on a saved website; the lab saw no Save button before editing. */}
+The details page shows the name, **Platform**, **Logon URL**, and **Associated Resource**. The arrow next to **Associated Resource** opens the associated resource. When you change a setting, a bar with **Save** and **Cancel** appears at the bottom of the page. Select **Save** to keep the change or **Cancel** to discard it. The trash can icon removes the website from Privilege Secure after you confirm.
 
 The page has five tabs: **URLs**, **Users**, **Sessions**, **Access Policies**, and **History**.
 
@@ -41,7 +38,7 @@ For example, `https://company.lightning.force.com` and `https://salesforce.com` 
 1. Select **Add**.
 1. Enter the **URL** or string to match, for example `https://login.example.com`.
 1. Select a **Match Type**. The default is **Domain**.
-1. Select **Save**.
+1. Select **Save**. **Save** stays unavailable until you enter a value. To close the **Add Website URL** window without saving, select the close icon (**X**) in its title bar.
 
 To change or delete a URL, select it and select **Edit** or **Remove**.
 
@@ -54,8 +51,6 @@ To change or delete a URL, select it and select **Edit** or **Remove**.
 | **Regex** | The URL matches the regular expression. |
 | **Host** | The host name (FQDN) matches. |
 
-{/* TODO verify: that the Add Website URL window has no Cancel button, only Save and a close icon, and the exact label of the Starts With value in the window. */}
-
 ## Manage website users
 
 The **Users** tab lists the accounts that activities use to sign in to the website. Privilege Secure doesn't discover these accounts. You add them by hand.
@@ -65,17 +60,18 @@ The **Username** must match the format in the **Login Account Template** field o
 ### Add a managed user
 
 1. Open the website from **Resources**, then select the **Users** tab.
-1. Select **Add**.
+1. Select **Add**. The **Add a Managed User** window opens.
 1. Enter a **Display Name**, for example `Marketing admin`.
 1. Enter the **Username** in the format the activity expects.
 1. Enter the **Password**. Select the eye icon to show what you typed.
+1. Optionally, enter a **Comment** of up to 1,000 characters.
 1. Select **Okay**.
+
+When you edit an account, the password field is named **Change Password (optional)**. Leave it empty to keep the current password.
 
 To change an account, select it and select **Edit**. To remove it, select it and select **Delete**, then confirm.
 
 The table shows **Name**, **Username**, **Comment**, and **Created**.
-
-{/* TODO verify: the field labels in the Add a Managed User window, including whether it has a Comment field. They come from 26.03, and the lab didn't open the window. */}
 
 ## Sessions, Access Policies, and History tabs
 

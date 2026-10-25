@@ -26,9 +26,7 @@ The policy runs on the **Protection Policy Schedule** of the platform that each 
 
 To run the policies that apply to a resource when a session ends, instead of waiting for the schedule, add the **Invoke Protection Policy** action to the Post-Session group of an activity. See [Action types](/docs/privilegesecure/26.07/configuration/activities/action-types.md).
 
-{/* TODO verify: what the 60-minute group monitor interval (GroupMonitorInterval) governs, and whether it changes how often a policy runs. The 26.03 pages say only that policies run on the platform schedule. */}
-
-{/* TODO verify: which resource types a protection policy supports. The Protection Policy Schedule field appears on the BSD, Linux, Palo Alto PanOS, and Windows platforms in the console. */}
+The scheduled run of a protection policy happens only on resources whose platform has a **Protection Policy Schedule**. The **Invoke Protection Policy** post-session action doesn't depend on that schedule. It applies the policy at the end of a session on any resource whose platform is based on Windows. On other platforms, the action records an error in the action log and doesn't change group membership. The console doesn't show the field for the Website, Secret Vault, Entra ID, Active Directory, Cisco, Microsoft SQL Server, and Oracle platforms, or for custom platforms based on Website, Secret Vault, Entra ID, or Active Directory. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
 ### Sessions and protected groups
 
@@ -56,22 +54,20 @@ A protected group must already exist on the resource. Privilege Secure can't cre
 
 1. Select **Resources** > **Protection Policies**, then select the policy.
 1. Select the **Allowed Members** tab.
-1. Select **Add Group**.
+1. Select **Add Group**. The **Add Protected Group and Member** window opens.
 1. In **Group Name**, enter the name of the local group, for example `Administrators`.
 1. In **Group Member**, enter the account that may stay in the group, for example `<domain>\<account>`.
 1. Select **Save**.
 
 The group appears in the **Group Name** column, and the member appears in the **Allowed Member(s)** column. Privilege Secure treats a member name without a domain as an account that is local to the resource.
 
-{/* TODO verify: the window titles "Add Protected Group and Member" and "Edit Protected Group Members". They come from the 26.03 pages and weren't opened in the 26.07 console. */}
-
 ## Edit the allowed members of a group
 
 1. Select **Resources** > **Protection Policies**, then select the policy.
 1. Select the **Allowed Members** tab.
-1. Select **Edit Members**.
+1. Select **Edit Members**. The **Edit Protected Group Members** window opens and lists the allowed members under **Group Members**.
 1. To remove a member from the allowed list, select the trash icon next to the member and confirm.
-1. To allow another member, enter the account in the **Group Member** field and select **Add**.
+1. To allow another member, enter the account in **New Group Member** and select **Add**.
 
 Removing a member from the allowed list doesn't remove the account from the group right away. The policy removes it the next time it runs.
 
@@ -85,7 +81,7 @@ Removing a member from the allowed list doesn't remove the account from the grou
 
 The **Resources** tab lists each resource with its **Name**, **DNS Host Name**, and **Operating System**. To remove a resource from the policy, select it and select **Remove**.
 
-{/* TODO verify: whether resource groups can be added to a protection policy. The 26.03 Add Resources window is titled "Resources And Groups to Add". */}
+The **Add Resources** window lists individual resources only. The console doesn't offer resource groups here.
 
 ## View the schedule of a protection policy
 

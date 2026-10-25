@@ -10,7 +10,7 @@ The Netwrix Privilege Secure for Access Management (Privilege Secure) download i
 
 {/* TODO screenshot: contents of the downloaded zip file */}
 
-{/* TODO verify: the full file list of the 26.07.3 zip. The tables below come from the 26.03 documentation and the installer source, and the zip listing wasn't checked against them. */}
+{/* TODO verify: the files in the zip root other than NPS_Setup.exe, which come from the Setup Launcher build. The Extras and Pre-Reqs lists below follow the 26.07.3 release pipeline. The pipeline also puts ADSyncDiagnostic.exe, three Netwrix Endpoint Policy Manager MSI files, and the launch-website and NPS.LaunchApp folders in Extras. Decide whether to document them. */}
 
 ## Main files
 
@@ -34,9 +34,8 @@ The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it 
 | `NetwrixPostgreSQL16.exe` | Installs the bundled PostgreSQL 16 database. The Setup Launcher runs it by default. It installs the PostgreSQL 16 service, directory, and database. |
 | `NPS.DbCfg.msi` | Installs the Netwrix Privilege Secure Database Configuration Tool, which points Privilege Secure at a local or remote PostgreSQL or SQL Server database. |
 | `NPS.ActionService.exe` | Installs an Action service on another server. |
-| `NPS.HostScanService.exe` | Installs a Host Scan service on another server. |
+| `NPS.HostScanService.msi` | Installs a Host Scan service on another server. |
 | `NPS.SchedulerService.exe` | Installs a Scheduler service on another server. |
-| `NPS.EmailService.exe` | Installs an Email service on another server. |
 | `NPS.SiemService.exe` | Installs a SIEM service on another server. |
 | `NPS.ProxyService` | Installs a Proxy service on another server. It is available as an `.exe` and an `.msi` file. Use the `.msi` file with a software deployment tool. |
 | `NPS.TSMon.exe` | Installs the Remote Desktop Monitor on target Windows hosts. |
@@ -45,13 +44,11 @@ The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it 
 | `sbpam-url.exe` | Installs the `sbpam-url` URL handler, which starts SSH sessions from the browser in your preferred SSH client. |
 | Enablement Toolkit | Installs a graphical utility for common troubleshooting tests. |
 
-{/* TODO verify: the file name and type of the Host Scan installer. The 26.03 list shows `NPS.HostScanService.msi`, but the installer source builds Host Scan as a bundle. */}
+The package has no standalone Email service installer.
 
-{/* TODO verify: the Email service installer file name, which the 26.03 list omitted. The installer source has a separate Email service bundle. */}
+{/* TODO verify: the exact file name of the Enablement Toolkit, which the release pipeline picks up by the pattern `*Enablement*.exe`. */}
 
-{/* TODO verify: the Enablement Toolkit installer file name and whether it is still in the Extras folder. The 26.03 page lists "Enablement Toolkit.exe". */}
-
-{/* TODO verify: whether PowerShell 7.6 or later is required to install the PowerShell modules. The 26.03 page says PowerShell 7.1. */}
+{/* TODO verify: the PowerShell version that `SbPAMPowershellModules.msi` requires. The 26.03 page says PowerShell 7.1. The modules installer is built outside the repositories that hold the release code. */}
 
 ## What NPS.exe installs
 
@@ -68,7 +65,7 @@ The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it 
 
 It also installs the .NET 10 Hosting Bundle, the Microsoft Visual C++ runtime, and the IIS features that it needs, if the server doesn't already have them.
 
-You can install the Action, Host Scan, Scheduler, Email, SIEM, and Proxy services on other servers with the standalone installers. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
+You can install the Action, Host Scan, Scheduler, SIEM, and Proxy services on other servers with the standalone installers. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 
 ## Installer options
 

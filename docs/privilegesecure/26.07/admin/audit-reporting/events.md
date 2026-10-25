@@ -18,7 +18,7 @@ The toolbar has these controls:
 
 | Control | Description |
 |---|---|
-| **View Logs** | The button is disabled until you select a row that has a session. {/* TODO verify: what View Logs opens */} |
+| **View Logs** | Opens the log for the selected event. The button is unavailable until you select one row that has a session or an action log. For an event with an action log, it opens the **Event Logs** window. Otherwise it opens the **Session Logs** window for the event's session. See [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md). |
 | **Search** | Filters the list to events that match the text you enter. |
 | **Refresh** | Reloads the list. |
 
@@ -47,10 +47,8 @@ The list includes events such as these:
 - Service started, for the Scheduler, security information and event management (SIEM), Action, and Email services.
 - Changes to activities.
 
-{/* TODO verify: the full list of event types shown to customers. The code defines the types Status, ServiceStart, PasswordRotation, HostScan, ADSync, ActivitySession, Manage, Unmanage, Verify, RotateServices, and CommandRestrictionAction, but the console doesn't show a type column */}
+The list has no column for the event type. SIEM templates can include the event type and the service that logged the event. See [SIEM templates and event fields](/docs/privilegesecure/26.07/integrations/siem/siem-templates.md).
 
-Sign-in ("Active Login") and session end ("Session Cancelled", "Session Completed") events are also forwarded to SIEM servers.
-
-{/* TODO verify: exact event names in 26.07.3 */}
+When a SIEM server is enabled, Privilege Secure forwards each event that appears in this list to it. Events from the Remote Access Gateway service are written only to that service's log file, so they don't appear in the list or reach a SIEM.
 
 To forward events to a SIEM, see [Forward events to a SIEM](/docs/privilegesecure/26.07/integrations/siem/siem-servers.md).

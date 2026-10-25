@@ -12,7 +12,7 @@ Microsoft Local Administrator Password Solution (LAPS) manages the password of t
 The LAPS connector reads the legacy LAPS password attribute, `ms-Mcs-AdmPwd`, and resets its expiration time, `ms-Mcs-AdmPwdExpirationTime`, at check-in. It doesn't read the encrypted passwords that Windows LAPS stores in the `msLAPS-` attributes.
 :::
 
-{/* TODO verify: with Product, the supported LAPS scope: legacy LAPS only, or Windows LAPS as well (including Windows LAPS in legacy emulation mode). Update the note above once confirmed. */}
+{/* TODO verify: whether Netwrix supports Windows LAPS in legacy Microsoft LAPS emulation mode. Microsoft documents that emulation mode stores the password in the legacy clear-text attribute, which the connector reads, but the release code and public sources don't state a support position. */}
 
 ## Prerequisites
 
@@ -71,8 +71,7 @@ If the computer has no LAPS password, the check-out fails with the following mes
 
 Confirm that the computer has LAPS enabled and that the connector's service account can read its password attribute.
 
-{/* TODO verify: whether the LAPS connector can supply the service account for host scans, as the 26.03 page states. The check-out code depends on an activity session. */}
+## Limits
 
-{/* TODO verify: whether the Action Service node needs the Active Directory PowerShell module (the connector calls Get-ADComputer and Set-ADComputer). */}
-
-{/* TODO verify: the exact Login Account Template behavior for a LAPS activity in 26.07. The code takes the user name from the activity's login account format. */}
+- The LAPS connector works only in an activity. The **Vault Connector** list on a service account doesn't offer it, so it can't supply a service account, such as the account for a host scan.
+- The connector reads and resets passwords with the `Get-ADComputer` and `Set-ADComputer` cmdlets from the Active Directory PowerShell module. The Action Service loads that module on the service node, so install it there.

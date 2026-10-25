@@ -16,9 +16,7 @@ A template can be:
 - **A mask.** A mask uses variables to build a name for each user, such as `%domain%\%samaccountname%-a`.
 - **A mask for a local account.** A mask such as `%domain%_%samaccountname%` with **Create Account** selected creates a local account on the resource. For the user `example\jsmith`, the account is `example_jsmith`.
 
-When the template contains a domain name, which means it contains a backslash (`\`), the **Create Account** option doesn't create a local account.
-
-{/* TODO verify: the 26.03 docs describe this as the Create Local Account option having no effect when the template contains a backslash. Confirm the behavior of Create Account in 26.07. */}
+When the template contains a domain name, which means it contains a backslash (`\`) or an `@`, Privilege Secure treats the account as a domain account. **Create Account** then doesn't create a local account on the resource.
 
 For an Activity Token activity, you can leave the template empty. See [Name length and Activity Token names](#name-length-and-activity-token-names).
 
@@ -27,9 +25,9 @@ To change the user name format that a Requester activity uses, set **Requester L
 :::
 
 :::warning
-If a **Custom** requester login format with a trim-based template fails on Linux or AIX resources with the error "Unable to find custom format user," use a standard requester login format and contact Netwrix Support.
+If a **Custom** requester login format with a trim-based template produces a name that doesn't match an existing domain user or a discovered local account on the resource, the session fails with the error "Unable to find custom format user." To avoid it, use a standard requester login format and contact Netwrix Support.
 
-{/* TODO verify: Support to confirm this as a known issue and give the supported workaround before it is listed on the Known issues page. */}
+{/* TODO verify: which workaround Support approves for this error. */}
 :::
 
 ## Variables
@@ -58,7 +56,7 @@ Privilege Secure replaces each variable with a value for the user and the resour
 
 When the resource isn't joined to a domain, `%targetdomain%` isn't replaced.
 
-{/* TODO verify: the value of %domain% when the requester is a local user. */}
+When the requester is a local Privilege Secure user, the user has no domain. In a template with a backslash or `@`, such as `%domain%\%samaccountname%`, Privilege Secure drops `%domain%` and the separator, and uses only the user name. In other templates, such as `%domain%_%samaccountname%`, `%domain%` isn't replaced and stays in the name as typed.
 
 ### Examples
 
@@ -69,7 +67,7 @@ When the resource isn't joined to a domain, `%targetdomain%` isn't replaced.
 | `%email-username%-a@%email-domain%` | `jsmith@example.com` | `jsmith-a@example.com` |
 | `%targetdomain%\%samaccountname%` | `jsmith` on a resource in the `EXAMPLE` domain | `EXAMPLE\jsmith` |
 
-{/* TODO verify: the 26.03 docs say users and groups and applications each have their own set of masks, and the values of the masks can be customized on the Properties tab of the user, group, or application details page. Confirm in 26.07 and add a link to the users and groups page. */}
+Privilege Secure takes the value of each variable from the requester's account. For a local user or an application user, you can change these values (**Display Name**, **SamAccountName**, **Department**, **User Principal Name**, and **Email**) on the **Properties** tab of the user's details page. See [Local users](/docs/privilegesecure/26.07/admin/users-groups/local-users.md) and [Application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md). Active Directory users take the values from Active Directory.
 
 ## Functions
 

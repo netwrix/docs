@@ -29,8 +29,9 @@ Complete these checks on the application server before you start.
 5. Check the **NPS Rest URL** for a trailing slash. See [Check the NPS Rest URL](#check-the-nps-rest-url).
 6. If you upgrade from a release earlier than 26.07.3, don't delete and re-create the default activity groups. See [Default activity groups](#default-activity-groups).
 7. If you run a high availability pair or remote service nodes, read the [high availability upgrade article](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations) before you begin.
+8. If you upgrade from 26.03, check the resources list for resources with a null DNS name or duplicates. Remove the affected resources before you upgrade, and onboard and scan them again afterward. Otherwise they can appear as duplicates with the same IP address.
 
-{/* TODO verify: delete resources that have null host or platform values before you upgrade from 26.03. The 26.07.0 and 26.07.1 release notes reference this step, and the notes weren't in the source set. */}
+{/* TODO verify: with the SME, the wording of the 26.07.1 announcement about null DNS or duplicate resources, and whether it also covers resources with a null host or platform. */}
 
 ### Back up the SAML templates
 
@@ -58,7 +59,7 @@ Privilege Secure creates two default activity groups: **Domain Administrator Acc
 2. Run `NPS_Setup.exe` as an administrator. The Setup Launcher shows the installed version and the version you are installing.
 3. If the launcher offers a PostgreSQL upgrade, complete [Upgrade PostgreSQL from 12 to 16](#upgrade-postgresql-from-12-to-16) first.
 4. Click **Netwrix Privilege Secure Upgrade**.
-5. When the launcher reports an existing installation, click **OK**. The launcher stops the services, uninstalls the old version, and installs the new version.
+5. When the launcher reports an existing installation, click **OK**. The launcher stops the services, uninstalls an old Stealthbits Privileged Activity Manager installation if one exists, and starts the installer, which replaces the earlier version.
 6. When the installer finishes, click **OK** to restart the server.
 7. Clear the browser cache on the computers that use the Privilege Secure Console.
 8. Open the console and sign in. The URL is `https://<nps-server>:6500`.
@@ -66,26 +67,22 @@ Privilege Secure creates two default activity groups: **Domain Administrator Acc
 
 {/* TODO screenshot: the Setup Launcher in its upgrade state, with the Netwrix Privilege Secure Upgrade button visible. */}
 
-The upgrade rotates the encryption key automatically.
+The upgrade keeps the existing encryption key and creates one only when none exists. See [Encryption key management](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md).
 
 Upgrade each remote service node with its own installer. See the [high availability upgrade article](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations).
-
-{/* TODO verify: upgrade steps on a clean 26.03 to 26.07 upgrade. The lab is an upgraded install, so no step is lab-verified. */}
 
 ### What the upgrade keeps
 
 - The SAML templates, when you upgrade from 26.03.2 or later.
-- The IIS site bindings for the console, including a custom certificate binding.
-- The database connection settings and the JSON Web Token (JWT) settings.
-
-{/* TODO verify: that a custom certificate binding and a non-default database host survive an upgrade. The code suggests they do, and it isn't lab-verified. */}
+- The IIS site bindings for the console. The upgrade doesn't remove the console's IIS site, so its bindings stay. After the new files are installed, the installer re-applies each binding that has a certificate. If a binding's certificate is no longer in the server's certificate stores, the installer skips it, so check that binding after the upgrade.
+- The database connection settings and the JSON Web Token (JWT) settings. The installer doesn't overwrite these files, so a non-default database host stays.
 
 ### Upgrade PostgreSQL from 12 to 16
 
-When the Setup Launcher detects PostgreSQL 12, it shows two steps instead of one. This migration can take from several minutes to many hours, depending on the size of the database. Plan downtime.
+When the Setup Launcher detects PostgreSQL 12, it asks for two database steps before the application upgrade. The launcher hides the upgrade button until both steps finish. This migration can take from several minutes to many hours, depending on the size of the database. Plan downtime.
 
 1. Click **Step 1 - Upgrade PostgreSQL to V16**.
-2. Click **Step 2 - Migrate PostgreSQL Data to V16**. Read the warning, and click **Yes** to continue.
+2. When the button changes, click **Step 2 - Migrate PostgreSQL Data to V16**. Read the **Migrate Database?** warning, and click **Yes** to continue.
 3. When the migration finishes, click **Netwrix Privilege Secure Upgrade**.
 
 Keep these points in mind:
@@ -95,17 +92,13 @@ Keep these points in mind:
 - The migration disables the PostgreSQL 12 service but doesn't uninstall PostgreSQL 12 or remove its data.
 - Migration logs are in `C:\ProgramData\Stealthbits\PAM\Log`. See [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md).
 
-{/* TODO verify: the exact button labels and the Yes/OK prompt wording on a PostgreSQL 12 host. The labels come from the Setup Launcher resources in the code. */}
-
 To move to Microsoft SQL Server during an upgrade, contact Netwrix Support before you click **Switch to SQL Server**.
 
 ## Known issues
 
 ### The database schema is broken after the PostgreSQL upgrade
 
-After a PostgreSQL 12 to 16 migration, the database schema can be incomplete. To repair it, run `SbPAM.DbUpdater.exe` on the application server as an administrator.
-
-{/* TODO verify: the folder that holds SbPAM.DbUpdater.exe, any arguments, and how to confirm the repair worked. */}
+After a PostgreSQL 12 to 16 migration, the database schema can be incomplete. To repair it, run `SbPAM.DbUpdater.exe` with no arguments on the application server as an administrator. The file is in the `DatabaseTools` folder of the installation folder, which is `C:\Program Files\Stealthbits\PAM\DatabaseTools` by default. The tool briefly stops the IIS web service (W3SVC) while it applies the pending schema updates, and starts it again afterward. A failed migration returns a nonzero exit code, but some errors still exit with 0, so don't rely on the exit code. To confirm the repair, check that the `PAM-DbUpdater` log in `C:\ProgramData\Stealthbits\PAM\Log` ends with "Migrations completed." and has no errors.
 
 ### The scheduled Active Directory sync fails after the upgrade
 
@@ -119,11 +112,7 @@ See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md)
 
 {/* TODO verify: the status label after the reset and whether a manual Sync is needed. */}
 
-### Host Scan and Scheduler services remain after uninstall
-
-The uninstall during an upgrade or removal can leave the Host Scan and Scheduler services on the server.
-
-{/* TODO verify: the workaround for the Host Scan and Scheduler services that an uninstall doesn't remove. */}
+{/* TODO verify: whether the uninstall during an upgrade or removal leaves the Host Scan and Scheduler services (SbPAMHostScan, SbPAMScheduler) on the server, why, and the supported cleanup. The installers are written to remove them and Support hasn't confirmed the issue, so don't publish it as a known issue until Support or a host reproduces it. */}
 
 ## Upgrade the Remote Access Gateway separately
 

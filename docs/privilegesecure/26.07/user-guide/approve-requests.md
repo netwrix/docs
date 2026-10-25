@@ -12,9 +12,7 @@ When a connection profile uses a tiered approval workflow, a session request wai
 
 Privilege Secure has no Approver role. You see a request when an approval workflow tier names you, or a group you belong to, as an approver. An administrator sets this up in the connection profile. See [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
 
-When a request needs approval, the approvers also receive an email. The email shows the requester, activity, resource, notes, and ticket number.
-
-{/* TODO verify: that approver emails contain links that open the Approvals tile, and which port the links use when the Website URL system setting is empty. See the email settings page. */}
+When a request needs approval, the approvers also receive an email. The email shows the requester, activity, resource, notes, and ticket number, and, in the default template, an approval link that opens the **Approvals** tile (`<website URL>/dashboard/approval`). The link starts with the **Website URL** system setting. When that setting is empty, the link uses `http://<server name>:5000`, so set **Website URL** to the address that users open in a browser. See [Email settings](/docs/privilegesecure/26.07/configuration/system-settings/email.md).
 
 ## Review the queue
 
@@ -44,9 +42,7 @@ Use **Search** to filter the table. Select **Refresh** to reload it. You can res
 
 1. On the **Approvals** tile, select the checkbox for each request you want to decide. Select several rows to decide them together.
 2. Select **Approve** or **Deny**.
-3. If you select **Deny**, enter the reason for the denial.
-
-{/* TODO verify: the label and wording of the denial reason field in the Deny window, and whether the reason is required. The code shows a denial note text box, and the requester's email includes it. */}
+3. If you select **Deny**, the **Deny Activity Session** window asks you to note your reasons. Enter them in the text box that says "Reason for denial? Other notes?" The reason is optional, and the denial goes through if you leave the box empty.
 
 **Approve** and **Deny** stay disabled until you select a row.
 
@@ -62,6 +58,6 @@ Privilege Secure emails the requester when you approve or deny the request. The 
 
 For how tiers and escalation work, see [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
 
-{/* TODO verify: whether you can approve your own request. Make no statement until engineering confirms it and the lab tests it. */}
+You can't approve your own request. When a requester is also named as an approver, Privilege Secure doesn't create an approval for that person and doesn't send them the approval email.
 
-{/* TODO verify: what a user without an administrator role sees on the Dashboard, and whether the Approvals tile appears only for named approvers. The lab tour used one administrator account. */}
+The **Approvals** tile appears on the Dashboard for every user who can request sessions, not only for named approvers. A user without an administrator role sees the **Active**, **Scheduled**, **Approvals**, and **Historical** tiles. The **Users** and **Resources** tiles are for administrators. If your custom role includes the Credentials permission, a **Credentials** tile also appears.

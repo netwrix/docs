@@ -34,7 +34,7 @@ The examples use these placeholders. Replace them with your values.
 5. Click **Install**.
 6. When the installation completes, click **Close**.
 
-{/* TODO verify: the default install folder. The 26.03 page gave C:\Program Files\Netwrix\Netwrix Privilege Secure Proxy Service, but ran sbpam-proxy.exe from C:\Program Files\Stealthbits\PAM\ProxyService. Code notes show the bundle default as C:\Program Files\Stealthbits\PAM. */}
+The installer places the Proxy Service in the `ProxyService` folder under `C:\Program Files\Stealthbits\PAM`, so `sbpam-proxy.exe` is in `C:\Program Files\Stealthbits\PAM\ProxyService`. The installer adds Windows Firewall rules for ports 4422, 4489, and 6520 to 6525.
 
 {/* TODO screenshot: Proxy Service setup wizard Options page. */}
 
@@ -102,13 +102,13 @@ Run these commands as administrator on the remote proxy server.
    - `-u` is a Privilege Secure administrator in `domain\user` format.
    - `-H` is the hash from the application server.
 
+   If the `-s` address has no port, the command connects on port 6520.
+
 {/* TODO screenshot: the proxy registration output. Use placeholders for the server, account, and hash. */}
 
 The Proxy Service is now registered. Confirm it appears on the Service Nodes page of the console.
 
-{/* TODO verify: whether the token-based join is supported for customers, and the executable name (sbpam or sbpam-proxy). The proxy code supports a single-use join token, but the 26.03 page documents only the hash registration above. */}
-
-{/* TODO verify: the join port. The code defaults to 6520 for node join, and the proxy's own join guide uses 6500. Don't publish either until an SME confirms. */}
+{/* TODO verify: whether Netwrix supports the token-based join for customers. The executable is `sbpam-proxy`, and the proxy code accepts a join token through the `--token` option of `node join` and the `--join-token` option of `register`, but only a Netwrix support statement settles whether to document it. */}
 
 ## Allow legacy SSH algorithms
 

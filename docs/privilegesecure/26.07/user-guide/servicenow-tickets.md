@@ -20,7 +20,7 @@ Example: If the label is **INC#**, enter `INC0012345`.
 
 {/* TODO screenshot: the Notes step with a ServiceNow ticket label. The lab has no ServiceNow connector. */}
 
-If the connection profile requires a ticket, you can't continue without one. {/* TODO verify: the connector is selectable in the connection profile only when Require Ticket Number for Sessions is on, so confirm whether a ServiceNow-backed profile can accept an empty ticket box. */}
+If the connection profile requires a ticket number, you can't continue without one.
 
 ### Ticket checks
 
@@ -51,10 +51,9 @@ When you end a session that has a ServiceNow ticket, the console shows a dialog 
 
 1. Click **Dashboard** in the left navigation, then click the **Active** tile.
 2. Select the session and click **End Session**.
-3. Click the state to set: **Keep In Progress** (leaves the ticket state unchanged), **On Hold**, or **Resolved**. The session ends. Click **Cancel** to keep the session running.
+3. Click the state to set: **Keep In Progress** (leaves the ticket state unchanged), **On Hold**, or **Resolved**. If the connector has **Add Comments to Ticket** on, **On Hold** and **Resolved** set the ticket to the ServiceNow state with that name. Otherwise the ticket state doesn't change. The session ends. Click **Cancel** to keep the session running.
 
 {/* TODO screenshot: the End Session dialog with Keep In Progress, On Hold, and Resolved. The lab has no ServiceNow connector. */}
-{/* TODO verify: the exact ServiceNow state that On Hold and Resolved set. */}
 
 The text in this dialog appears in English in every console language.
 
@@ -62,11 +61,13 @@ For the general procedure, see [Connect to a session](/docs/privilegesecure/26.0
 
 ### Resolved can fail
 
-{/* TODO verify: SME approval to publish PSAM-1402 and its workaround. */}
+Choosing **Resolved** can fail when your ServiceNow instance requires a resolution code and close notes to resolve a ticket. Privilege Secure sends only a work note and the new state, so the instance can reject the update. The session still ends, and the console doesn't show an error.
 
-Choosing **Resolved** can fail with a 403 "Forbidden" error when your ServiceNow instance requires a resolution code and close notes to resolve a ticket. Privilege Secure sends only a work note and the new state, so the instance rejects the update.
+After you end a session with **Resolved**, check the ticket in ServiceNow and resolve it there if its state didn't change. To avoid this, end the session with **Keep In Progress** or **On Hold**, and then resolve the ticket in ServiceNow.
 
-If this happens, end the session with **Keep In Progress** or **On Hold**, and then resolve the ticket in ServiceNow. {/* TODO verify: what the console shows to the user when the Resolved update fails, and whether the session still ends. */}
+{/* TODO verify: SME approval to publish the Resolved-failure known issue and its workaround. */}
+
+{/* TODO verify: that a default ServiceNow instance rejects a state-only update to Resolved. Only community posts describe the required resolution fields, and no real instance was available. */}
 
 ## Related topics
 

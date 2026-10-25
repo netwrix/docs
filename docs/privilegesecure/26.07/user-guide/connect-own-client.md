@@ -29,7 +29,7 @@ The connection string joins these values with a plus sign (`+`):
 | `<resource>` | Yes | The fully qualified domain name (FQDN) of the resource. |
 | `<access-policy>` | No | The access policy to use, when more than one policy applies. |
 | `<notes>` | No | Notes for the session. |
-| `<ticket>` | No | A ticket number for the session. {/* TODO verify: that the ticket field works for RDP as well as SSH. The product change describes SSH clients that use password authentication, such as SFTP. */} |
+| `<ticket>` | No | A ticket number for the session. RDP and SSH connections both read it. If the connection profile requires a ticket and the string leaves it out, the proxy asks for it: the proxy shows a ticket prompt in the RDP session, and an SSH client shows a keyboard-interactive prompt. Add the ticket to the string when your client can't show that prompt. |
 
 The format is:
 
@@ -47,7 +47,7 @@ This example sets notes and a ticket number:
 
 `CONTOSO\jsmith+Add_Requester_to_Local_Administrators+sql01.contoso.com++Server Maintenance+INC0012345`
 
-{/* TODO verify: the proxy treats both + and @ as separators (DirectConnectSeparator "+@"); confirm whether the user@domain username form works in a connection string. */}
+The `user@domain` form of the user name works in a connection string. The proxy splits the string on whichever of `+` or `@` occurs more often, and a string with an activity and a resource has more plus signs than the one `@` in the user name.
 
 ## Connect with PuTTY (SSH)
 
@@ -118,8 +118,21 @@ Privilege Secure can open a local SSH client when you click an `ssh://` link. On
 
 In the command, use `{{user}}` for the user name, `{{host}}` for the host and port, `{{hostname}}` for the host name, and `{{port}}` for the port. To remove the registration for a protocol, run `sbpam-url handle -U -p ssh`.
 
-{/* TODO verify: where users get sbpam-url.exe, whether it ships with the product for end users, and a tested example command for PuTTY. */}
-{/* TODO: add an example of an sbpam-url command for a named SSH client. */}
+`sbpam-url.exe` is in the `Extras` folder of the product package. See [Installation package contents](/docs/privilegesecure/26.07/install/components.md). Copy it to a permanent folder on the computer, because the registration points to that location.
+
+The command takes the command line of your SSH client. Here are two examples, written for PowerShell. In a `cmd.exe` prompt, wrap the replacement strings in double quotes instead of single quotes. Change the path to match where the client is installed.
+
+PuTTY:
+
+`sbpam-url handle -p ssh -- "C:\Program Files\PuTTY\putty.exe" -ssh -P '{{port}}' '{{user}}@{{hostname}}'`
+
+MobaXterm:
+
+`sbpam-url handle -p ssh -- "C:\Program Files (x86)\Mobatek\MobaXterm\MobaXterm.exe" -newtab 'ssh -o PasswordAuthentication=no -l {{user_esc}} -p {{port}} {{hostname}}'`
+
+`{{user_esc}}` is the user name with special characters escaped. Change the MobaXterm path to match where you installed it.
+
+{/* TODO verify: run each example against a current PuTTY and MobaXterm build. The examples come from the sbpam-url documentation in the proxy source, not from a test run. The `-newtab` option is a MobaXterm option that isn't confirmed against Mobatek's documentation. */}
 
 ## More client guidance
 

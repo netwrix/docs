@@ -36,7 +36,7 @@ The **Connector Template** list has 7 values:
 **StealthAUDIT** is the default template for a new connector. It keeps that name in the console and maps to Netwrix Access Analyzer. If you create a connector for another system, change **Connector Template** before you fill in the other fields.
 :::
 
-{/* TODO verify: whether the Password Secure template appears in every installation. A feature flag named password_secure controls it and is on by default. */}
+The **Password Secure** template is available by default. The console hides it when the `password_secure` feature flag is turned off.
 
 ## Integrations by kind
 

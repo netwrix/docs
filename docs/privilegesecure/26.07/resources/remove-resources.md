@@ -12,16 +12,16 @@ Removing a resource stops Netwrix Privilege Secure for Access Management (Privil
 Removal doesn't prevent the resource from being synced or added again. A later domain sync, import, or manual add can bring the resource back.
 :::
 
-{/* TODO verify: whether OU auto-onboarding on a resource group adds a removed computer again at the next sync. */}
+If a resource group maps to an organizational unit (OU) with **Auto-Onboard** selected, Privilege Secure adds a removed computer again after the next Active Directory sync. Removing a resource keeps the computer's directory record, so the OU mapping that runs at the end of each sync manages it again. To keep a computer from coming back, move it out of the mapped OU or clear **Auto-Onboard** on the group. See [Resource groups](/docs/privilegesecure/26.07/resources/resource-groups.md).
 
 ## Remove resources from the Resources list
 
 1. Select **Resources** in the left navigation.
 1. Select the checkbox of each resource to remove. **Remove** stays disabled until you select a checkbox.
 1. Select **Remove**.
-1. Confirm the removal in the window that opens.
+1. In the **Remove Resource** window, select **Remove** to confirm. When you select more than one resource, the window is titled **Remove Resources**.
 
-{/* TODO verify: the label of the confirmation button in the Remove Resource window. The 26.03 docs say Remove. The window wasn't opened in the 26.07.3 lab. */}
+The **Remove** button on the Resources list removes hosts only. If your selection includes a domain, website, database, secret vault, or Entra ID tenant, Privilege Secure shows an error and names that resource. Remove it from its details page instead.
 
 For example, to remove two retired servers, select the checkboxes for `app05.example.com` and `app06.example.com`, select **Remove**, and confirm.
 
@@ -30,11 +30,11 @@ For example, to remove two retired servers, select the checkboxes for `app05.exa
 Some resource types have a delete control on their details page:
 
 - **Domains:** select the red **Delete** button.
-- **Websites, databases, and secret vaults:** select the trash icon next to the name.
+- **Websites, databases, secret vaults, and Entra ID tenants:** select the trash icon next to the name.
 
-A confirmation window opens. Confirm to remove the resource.
+In the confirmation window, select **Delete**.
 
-{/* TODO verify: the host details page showed no delete control in the 26.07.3 lab. Use the Resources list to remove a host. Also confirm the delete control and confirmation on an Entra ID tenant and a secret vault, which had no data in the lab. */}
+The details page of a host has no delete control. To remove a host, use the Resources list.
 
 ## Remove a resource from a resource group
 

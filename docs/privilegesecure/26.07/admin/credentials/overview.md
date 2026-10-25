@@ -28,9 +28,7 @@ Select a filter chip to open its "Filter by" popup. An active filter stays on th
 |---|---|
 | **Method** | All, Not Managed, Managed, Automatic, Manual |
 | **Managed type** | All, Internal, Standard, Service |
-| **Privilege type** | Not Set, Administrator, Power User, Guest, User, Superuser, Linux User, Cisco Privilege 0, Cisco Privilege 1, and further values lower in the list |
-
-{/* TODO verify: the full Privilege type list. The lab list scrolled and only the first ten values were seen. 26.03 also listed Cisco Privilege 15 */}
+| **Privilege type** | Not Set, Administrator, Power User, Guest, User, Superuser, Linux User, Cisco Privilege 0, Cisco Privilege 1, Cisco Privilege 15 |
 
 For example, to find every service account that has dependencies, set **Managed type** to **Service**.
 
@@ -82,10 +80,8 @@ The managed type decides how an account rotates. See [Rotation methods](/docs/pr
 |---|---|
 | **Unspecified** | No verification has run. |
 | **Verified** | The password on the resource matches the password that Privilege Secure stores. |
-| **Mismatch** | The passwords don't match. This status appears only when **Reset On Mismatch** is off for the platform. |
+| **Mismatch** | The verification found that the password on the resource doesn't match the stored password. |
 | **Changed** | Privilege Secure reset the password on the resource to match its stored value. This status appears only when **Reset On Mismatch** is on. |
 | **Failed** | The reset to the stored value failed. This status appears only when **Reset On Mismatch** is on. |
-
-{/* TODO verify: Mismatch wasn't seen in the lab. It comes from the 26.03 page. */}
 
 Platform settings control **Reset On Mismatch**, the rotation schedule, and the verification schedule. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md#platform-settings).

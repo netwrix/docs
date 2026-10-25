@@ -35,9 +35,7 @@ The connector appears in the connector list. To remove a connector, hover over i
 
 ## Assign a connector to users
 
-A connector does nothing until you assign it to users or groups. Select the method on the **Authentication Connector** tab of the user or group. The tab lists **Internal MFA**, which is built in, the seeded **Duo** and **Not Required** connectors, and any connectors that you add. For the choices and the warning about **Not Required**, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector).
-
-{/* TODO verify: whether the SAML, OpenID Connect, and MFA connectors that an administrator adds appear as choices on the user's Authentication Connector tab. The lab had only the Duo connector configured. */}
+A connector does nothing until you assign it to users or groups. Select the method on the **Authentication Connector** tab of the user or group. The tab lists **Internal MFA**, which is built in, the seeded **Duo** and **Not Required** connectors, and every connector that you add, whatever its type. For the choices and the warning about **Not Required**, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector).
 
 To remove the second factor for a user or group, see the knowledge base article [Disable MFA for users or groups](/docs/kb/privilegesecure/authentication-and-mfa/disable-mfa-for-users-or-groups).
 
@@ -45,13 +43,29 @@ To remove the second factor for a user or group, see the knowledge base article 
 
 A user can have a connector of their own and also belong to groups that have connectors. These rules decide which connector applies.
 
-- If the user belongs to an Active Directory group that has a different RADIUS profile, the group assignment takes precedence over **Internal MFA** on the user.
-- If the user's setting is a RADIUS profile, the user's assignment takes precedence over any group RADIUS profile.
-- If the user belongs to several Active Directory groups that have different RADIUS profiles, the alphabetical order of the RADIUS profile names decides.
+- If the user belongs to an Active Directory group that has a different connector, the group assignment takes precedence over **Internal MFA** on the user.
+- If the user's setting is a connector, the user's assignment takes precedence over any group connector.
+- If the user belongs to several Active Directory groups that have different connectors, the alphabetical order of the group names decides. Privilege Secure uses the connector of the first group in that order that has one and writes a warning to the log.
 
-{/* TODO verify: the precedence rules above come from the 26.03 documentation. Confirm them for 26.07 and for OpenID Connect and SAML connectors. */}
+These rules apply to every connector type, including OpenID Connect and SAML connectors.
 
-{/* TODO verify: Default and Exclusive connector controls, and the ?adlogin=1 recovery parameter. The console web strings include "Set as Default", "Clear Default", "Set as Exclusive", "Clear Exclusive", and a "Set Exclusive Login Method" confirmation dialog, and the sign-in page code hides the user name and password form for an exclusive connector. The lab tour found no such controls on the Authentication page. Locate them in the 26.07 console before documenting. */}
+## Default and exclusive connectors
+
+An OpenID Connect or SAML connector can be the default connector or the exclusive connector for the sign-in page. MFA connectors can be neither. Only one connector at a time can be the default or the exclusive connector, To change it, clear the current default or exclusive connector first.
+
+To set one, hover over the connector in the list on **Configuration** > **Authentication** and select an icon:
+
+- **Set as Default** makes the connector the default. The sign-in page shows a single button for it, plus **Login with a different account**, which brings back the other sign-in choices. A **Default Connector** icon marks the connector in the list.
+- **Set as Exclusive** makes the connector the only way to sign in. Select **Set Exclusive** in the **Set Exclusive Login Method** dialog to confirm. The sign-in page hides the user name, password, and domain fields and shows only a button for the connector. Privilege Secure also rejects sign-ins that use another method. An **Exclusive Connector** icon marks the connector in the list.
+- **Clear Default** and **Clear Exclusive** remove the setting. The icons you can select depend on the current state: the set icons are hidden while a default or exclusive connector exists.
+
+With a default connector, add `?adlogin=1` to the address of the sign-in page to show the user name, password, and domain fields and sign in with a password.
+
+:::warning
+While a connector is exclusive, nobody can sign in with a user name and password, including administrators. Test the connector with an administrator account before you set it as exclusive.
+:::
+
+{/* TODO verify: how an administrator gives a user the Active Directory sign-in exception (the allow_ad_login user flag, AllowAdLogin in the database, which lets a user sign in with a password while a connector is exclusive). The release console and the code reviewed have no control that sets it, so the supported way to recover from an exclusive connector that stops working isn't settled by code or public sources. */}
 
 ## Assignment is required
 
@@ -69,7 +83,7 @@ A connector with **Use Remote Access Gateway** selected works only for sign-ins 
 
 To offer the same identity provider on both the console and the portal, create two connectors with the same provider settings and select **Use Remote Access Gateway** on only one of them. The sign-in pages hide a connector that doesn't match where the user signs in.
 
-{/* TODO verify: in a lab run, the text that the web app shows for the 400 response "This authentication method cannot be used via Remote Access Gateway". The longer message with the connector name goes only to the log and the event. The two-connector setup is confirmed in the code (UserTokenController.cs, IsInvalidConnector) but not run in the lab. */}
+When the connector doesn't match, the service answers the request with the message "This authentication method cannot be used via Remote Access Gateway". The log and the error event carry a longer message that names the connector.
 
 ## Sign in after an OpenID Connect error
 

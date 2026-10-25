@@ -10,9 +10,9 @@ The Remote Access Gateway uses two Windows servers. The portal runs on its own s
 
 ## Privilege Secure version
 
-Install the gateway and portal from the package for your Privilege Secure release, and use the same release on the application server. This page covers 26.07.3.
+Install the gateway and portal from the package for your Privilege Secure release, This page covers 26.07.3.
 
-{/* TODO verify: whether the gateway, portal, and application server must be the same release, and whether a 26.07.3 gateway works with an earlier 26.07 application server. */}
+{/* TODO verify: whether a 26.07.3 gateway works with an earlier 26.07 application server. The gateway and portal code has no version check against the application server, and no public source states a supported range. */}
 
 ## Recommended server sizing
 
@@ -21,9 +21,7 @@ Install the gateway and portal from the package for your Privilege Secure releas
 | Portal | Windows Server 2022 or later | 4 | 8 GB |
 | Gateway and guacd | Windows Server 2022 or later | 8 | 16 GB |
 
-{/* TODO verify: that Windows Server 2022 is the minimum supported version, and whether later versions are supported. */}
-
-{/* TODO verify: minimum sizing; the lab ran both roles on 4 cores */}
+{/* TODO verify: the minimum supported Windows Server version and the minimum sizing. Microsoft documents `wsl --install` on Windows Server 2022 and 2025, but Netwrix publishes no tested-versions list or minimum sizing. */}
 
 ## Portal server requirements
 
@@ -42,7 +40,7 @@ Install the gateway and portal from the package for your Privilege Secure releas
 - Outbound access from WSL to download packages and the `guacamole/guacd:1.6.0` image.
 - guacd version 1.6.0. The 26.07.3 portal requires this version. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/install/upgrade.md).
 
-{/* TODO verify: whether guacd on a native Ubuntu host with Docker, instead of WSL on the gateway server, is a supported deployment, and the minimum Ubuntu version. Community guidance from 2025 named Ubuntu 22.04 or later; confirm it still applies to guacd 1.6.0. */}
+{/* TODO verify: whether running guacd on a separate Linux host instead of WSL 2 on the gateway server is supported. */}
 
 ### Nested virtualization
 
@@ -60,13 +58,11 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 
-The first command reports whether the firmware exposes virtualization. {/* TODO verify: the expected result of the first command on a virtual machine with nested virtualization enabled. */}
+The first command reports whether the firmware exposes virtualization. {/* TODO verify: the value that the first command returns inside a virtual machine with nested virtualization enabled. It depends on the hypervisor and the host, and Microsoft's documentation doesn't state it for a guest. */}
 
 ## Application server requirements
 
-The gateway connects to the Privilege Secure web service at `https://<nps-server>:6500`. The gateway server must trust the certificate that the web service presents.
-
-{/* TODO verify: SME. In 26.07.3 the installed appsettings.log.json sets root InsecureSkipVerify to true and loads after appsettings.json, so the gateway skips validation of the 6500 certificate. Is this intended, and what is the supported way to turn validation on? */}
+The gateway connects to the Privilege Secure web service at `https://<nps-server>:6500`. In 26.07.3 the gateway installs with certificate validation for this connection turned off, so it accepts any certificate that the web service presents. For production, set `InsecureSkipVerify` to `false` in `appsettings.log.json` and ensure the gateway server trusts the certificate that the web service presents. See [Skip certificate validation for Privilege Secure](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md#skip-certificate-validation-for-privilege-secure).
 
 ## Ports
 
@@ -83,8 +79,6 @@ The gateway connects to the Privilege Secure web service at `https://<nps-server
 Allow only these connections between the DMZ and the internal network. The portal doesn't connect to port 6500. For the full list of Privilege Secure ports, see [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
 The gateway installer creates the Windows Firewall rule "NPS Gateway Web Service Port (6550)", open to any address. Limit it to the portal server's address. The installers create no rules for ports 443, 80, and 4822.
-
-{/* TODO verify: whether customers open 443, 80, and 4822 manually. */}
 
 ## Certificates
 

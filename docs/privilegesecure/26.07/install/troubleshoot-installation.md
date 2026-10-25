@@ -10,20 +10,19 @@ Use this page when an installation or upgrade of Netwrix Privilege Secure for Ac
 
 ## Log files
 
-Installation and upgrade logs are in `C:\ProgramData\Stealthbits\PAM\Log`. Log file names follow the pattern `PAM-<Service><yyyymmdd>.log`. The files to check after a failed install or upgrade are:
+Installation and upgrade logs are in `C:\ProgramData\Stealthbits\PAM\Log`. The `PAM-` log file names follow the pattern `PAM-<Service><yyyymmdd>.log`. The PostgreSQL migration writes text files instead. The files to check after a failed install or upgrade are:
 
 | Log | Use it for |
 |---|---|
 | `PAM-InstallCmd` | Installer custom actions |
 | `PAM-DbUpdater` | Database schema updates and data import during install and upgrade |
-| `NPS-PGUpgrade` | Output of the PostgreSQL 12 to 16 migration |
-| `NPS-PGUpgradeErr` | Errors from the PostgreSQL 12 to 16 migration |
+| `PGUpgrade_out<yyyymmdd>.txt` | Progress log of the PostgreSQL 12 to 16 migration |
+| `PGUpgrade_out<yyyymmdd>_<n>.txt` | Output of `pg_upgrade` for attempt `<n>` |
+| `PGUpgrade_err<yyyymmdd>_<n>.txt` | Errors from `pg_upgrade` for attempt `<n>` |
 
 You can also open these files from the **Log Files** page in the Privilege Secure Console. See [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md).
 
 By default, the installer also writes a log to the `%TEMP%` folder of the account that ran it. To choose the log file, run `NPS.exe` with `/log <file>`. See [Install silently](/docs/privilegesecure/26.07/install/silent-install.md).
-
-{/* TODO verify: that the PAM-InstallCmd and PAM-DbUpdater file names match the log names on a fresh 26.07 install. The lab listing is from an upgraded install. */}
 
 ## The installer stops and asks for PowerShell 7.6
 
@@ -43,11 +42,9 @@ By default, the installer also writes a log to the `%TEMP%` folder of the accoun
 
 **Symptom:** `NPS.exe` stops with the message "Please uninstall Stealthbits Privileged Activity Manager from the Control Panel before installing."
 
-**Cause:** The server has an old Stealthbits Privileged Activity Manager installation. The Setup Launcher handles this case during an upgrade. Running `NPS.exe` directly doesn't.
+**Cause:** The server has an old Stealthbits Privileged Activity Manager installation. During an upgrade, the Setup Launcher stops the services and uninstalls the old installation before it starts `NPS.exe`. Running `NPS.exe` directly doesn't do this.
 
 **Fix:** Start the installation with `NPS_Setup.exe` instead of `NPS.exe`.
-
-{/* TODO verify: the behavior of the launcher on a host that has the old Stealthbits installation. */}
 
 ## The PostgreSQL migration is blocked or fails
 
@@ -63,13 +60,16 @@ Check these causes:
 
 **Symptom:** The install finishes, but the database wasn't reachable when the installer ran.
 
-**Cause:** The installer doesn't fail when it can't import the default activities. It records the failure in `ImportActivities.log` and continues.
+**Cause:** The installer doesn't fail when it can't import the default activities. It records the failure in `ImportActivities.log` in `C:\ProgramData\Stealthbits\PAM\Logs` and continues. This folder is named `Logs`, not `Log`.
 
-**Fix:** Open `ImportActivities.log` and read the error. Correct the database connection. If the default activities are missing afterward, contact [Netwrix Support](https://www.netwrix.com/support.html).
+**Fix:** Open `ImportActivities.log` and read the error. Correct the database connection. Then, in an elevated PowerShell window, go to the `DatabaseTools` folder of the installation folder, which is `C:\Program Files\Stealthbits\PAM\DatabaseTools` by default, and run these commands in order. The first applies pending schema updates. The second imports the default activities and other default data.
 
-{/* TODO verify: whether rerunning the installer or SbPAM.DbUpdater.exe imports the default activities after a failed first attempt. */}
+```powershell
+.\SbPAM.DbUpdater.exe
+.\SbPAM.DbUpdater.exe import Data
+```
 
-{/* TODO verify: the folder of ImportActivities.log. The code notes list it under a Logs folder, and the other installer logs are under Log. */}
+The installer runs the import only on a new installation or an upgrade, so running the installer again on a server that already has this version doesn't repeat it. If the default activities are missing afterward, contact [Netwrix Support](https://www.netwrix.com/support.html).
 
 ## The upgrade fails with a duplicate key error
 
@@ -101,9 +101,7 @@ Check these causes:
 
 **Cause:** Resources migrated from SQL Server to PostgreSQL can lose their platform. Release 26.07.3 fixes the problem.
 
-**Fix:** Upgrade to 26.07.3 or later. On earlier releases, assign a platform to the affected resource.
-
-{/* TODO verify: exact steps to set the platform on a resource with no PlatformID. */}
+**Fix:** Upgrade to 26.07.3 or later. On earlier releases, assign a platform to the affected resource. See [Change the platform of resources](/docs/privilegesecure/26.07/resources/overview.md#change-the-platform-of-resources).
 
 ## Related topics
 

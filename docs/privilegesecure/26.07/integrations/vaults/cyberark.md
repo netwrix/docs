@@ -41,7 +41,7 @@ The connector calls the CyberArk Central Credential Provider (CCP). The CCP is a
 **Client Certificate** takes a certificate thumbprint, not the base64 text of the certificate. If Privilege Secure can't find a certificate with that thumbprint in `Cert:\LocalMachine\My`, the check-out fails.
 :::
 
-{/* TODO verify: the default values of API Url and App Id on a fresh CyberArk form. The code seeds `http://localhost/PasswordVault` for API Url and `SbPAM` for App Id, but the 26.07.3 lab form showed the Bring Your Own Vault defaults after a template switch, possibly stale form state. Retest on a fresh form. */}
+When you select the **CyberArk** template, the form fills **API Url** with `http://localhost/PasswordVault` and **App Id** with `SbPAM`. Replace both with the values for your CCP.
 
 {/* TODO screenshot: the CyberArk connector form with the fields in the preceding table. */}
 
@@ -71,8 +71,6 @@ If CyberArk reports that a password change is in progress, Privilege Secure wait
 
 The built-in check-in does nothing. Privilege Secure doesn't return the password to CyberArk when the session ends.
 
-{/* TODO verify: whether the built-in check-in not returning the account to CyberArk is the intended 26.07 behavior. */}
-
 ## Use the connector
 
 ### In a service account
@@ -88,12 +86,10 @@ The built-in check-in does nothing. Privilege Secure doesn't return the password
 1. Create or edit an activity. See [Create an activity](../../configuration/activities/create-activity.md).
 2. For **Login Account**, select **Vault**.
 3. For **Vault Connector**, select the CyberArk connector.
-4. Enter the safe that holds the account.
+4. Enter the **Safe** that holds the account. The form also shows **Folder**, which the built-in check-out doesn't use.
 5. Click **Save**.
 
 Privilege Secure builds the user name from the activity's login account template. The default for a Vault activity is `%targetdomain%\%samaccountname%`, so the CyberArk account for `EXAMPLE\jsmith` on the host `SERVER01` is stored under the address `EXAMPLE` and the user name `jsmith`.
-
-{/* TODO verify: the exact field labels for the safe on a Vault activity, and whether the activity form shows Address and Folder in 26.07. */}
 
 ## Customize check-out and check-in
 
@@ -129,8 +125,8 @@ The check-in block receives the existing known password and must return `$Creden
 |---|---|---|
 | `$Options.Connector.Name` | The connector name. | `CyberArk` |
 | `$Options.Connector.Id` | The connector GUID. | `00000000-0000-0000-0000-000000000001` |
-| `$Options.Connector.Options.ApiURL` | The CCP base URL from the connector. The built-in script appends `/AIMWebService/api/Accounts`. | `https://ccp.example.com` |
-| `$Options.Connector.Options.Appid` | The App ID from the connector. | `PrivilegeSecure` |
+| `$Options.Connector.Options.APIUrl` | The CCP base URL from the connector. The built-in script appends `/AIMWebService/api/Accounts`. | `https://ccp.example.com` |
+| `$Options.Connector.Options.AppId` | The App ID from the connector. | `PrivilegeSecure` |
 | `$Options.Connector.Options.ClientCertificate` | The client certificate thumbprint from the connector. | `64D25855C84CCDC581799B49362BA13DB66BD795` |
 | `$Options.Connector.Options.SkipCertificateCheck` | Whether the connector skips the certificate check. | `True` or `False` |
 | `$Options.ActivitySession.LoginAccountNameFormat` | The template that the activity uses to generate the login account name. | `%targetdomain%\%samaccountname%-a` |
@@ -147,8 +143,6 @@ The check-in block receives the existing known password and must return `$Creden
 | `$Options.TargetHost.ObjectSid` | The security identifier (SID) of the computer. | `S-1-5-21-1111111111-2222222222-3333333333-1143` |
 | `$Options.TargetHost.Samaccountname` | The domain and SAM account name of the computer. | `EXAMPLE\SERVER01$` |
 
-{/* TODO verify: the property names `ApiURL` and `Appid` against a live 26.07.3 script block. The 26.03 page spells them this way, and the built-in module reads `APIUrl` and `AppId`. */}
-
 ### The $Credential object
 
 | Variable | Description | Example |
@@ -159,5 +153,3 @@ The check-in block receives the existing known password and must return `$Creden
 | `$Credential.SudoCommand` | The command that raises privileges on a Linux or Unix host. Set a value to replace the default, `sudo`. | `sudo` |
 | `$Credential.PasswordValueConnectorId` | The GUID of the vault connector for this credential. It matches `$Options.Connector.Id`. | |
 | `$Credential.PasswordVaultInfo` | A JSON string with the vault-specific options of this credential. For CyberArk it holds the safe and folder. | `{ "safe": "SafeName", "folder": "Root" }` |
-
-{/* TODO verify: that `PasswordVaultInfo` for a CyberArk credential holds `safe` and `folder` keys. The built-in module reads a `Safe` property from this JSON. */}

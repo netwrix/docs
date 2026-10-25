@@ -28,7 +28,7 @@ A person is a reviewer when they hold the Reviewer role directly, or through a g
 | **Incomplete** | The reviewer started the review and hasn't committed it. |
 | **Complete** | The reviewer committed the review. |
 
-{/* TODO verify: how a task moves from Setup to Ready to Start, including whether the Administrator selects a button or sets a start time */}
+A new task starts in **Setup**. It moves to **Ready to Start** when the Administrator opens the task's **Users** tab, selects **Add**, chooses the accounts to review in the **Add Users** window, and selects **Save**. Privilege Secure then lists the entitlements of those accounts on the **Entitlements** tab, and **Add** is no longer available for the task. You don't set a start time.
 
 ## Create a task
 
@@ -98,7 +98,14 @@ You can't undo a commit or delete the task afterward. To review again, create a 
 
 A denial sets a deny flag on that user, activity, and resource or credential. The user stays in the access policy. After the commit, a session request for that combination fails with an access denied message that names the user, the activity, and the resource or credential.
 
-To restore the access, an Administrator deletes the denial. {/* TODO verify: where in the console an Administrator deletes a denial. The code shows denials listed per user and per access policy. */}
+To restore the access, an Administrator removes the denial from the access policy:
+
+1. Open the access policy and select the **Users** tab.
+2. Expand the user's row. The **Access Denied** table lists each denied activity, resource, and credential with the access certification task that denied it.
+3. In the **Enable** column, select the unlock icon for the denial.
+4. In the **Enable Activity** window, select **Enable**.
+
+This deletes the denial.
 
 For how certification affects a policy, see [Resource-based policies](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md).
 

@@ -14,13 +14,11 @@ The `AllowedLoginMethods` setting is in `appsettings.json` on the gateway server
 
 | Value | Name | Sign-in methods the portal accepts |
 |---|---|---|
-| `0` (default) | Single sign-on only | Single sign-on (SSO) through an OpenID Connect or SAML connector. |
-| `1` | SSO plus local | SSO and Netwrix Privilege Secure for Access Management (Privilege Secure) local users. The portal rejects a username that contains `\` or `@`, so domain users can't sign in with a password. |
+| `0` (default) | Single sign-on only | Single sign-on (SSO) through an OpenID Connect or SAML connector. The sign-in form shows only the SSO buttons, and the gateway rejects a password sign-in. |
+| `1` | SSO plus local | SSO and Netwrix Privilege Secure for Access Management (Privilege Secure) local users. The sign-in form shows **Username** and **Password**, and no **Domain** field. The gateway rejects a username that contains `\` or `@` with "Cannot use this login method", so domain users can't sign in with a password. |
 | `2` | SSO plus local plus domain | SSO, local users, and domain users. The sign-in form shows **Username**, **Password**, and **Domain** fields. |
 
 A new installation uses `0`, so users sign in only through SSO. Keep `0` unless users must sign in with a password.
-
-{/* TODO verify: the sign-in form and behavior with AllowedLoginMethods set to 1. The lab verified only value 2. */}
 
 ### Set the allowed sign-in methods
 
@@ -38,7 +36,7 @@ A new installation uses `0`, so users sign in only through SSO. Keep `0` unless 
    Restart-WebAppPool -Name NPSGatewayAppPool
    ```
 
-   {/* TODO verify: whether the gateway picks up the change without a recycle, since the code reloads appsettings.json on change. */}
+   The gateway reads `AllowedLoginMethods` again on each sign-in request, so a saved change applies to new sign-ins without the recycle. The recycle also applies any other setting that you changed in the same file.
 5. Browse to the portal by its DNS name. With value `2`, the sign-in form shows **Username**, **Password**, and **Domain**.
 
 If a user tries a method that the value doesn't allow, the portal rejects the sign-in with "Cannot use this login method".
@@ -60,9 +58,11 @@ To offer SSO on the portal, enable a connector for it:
 
 If a user signs in with a connector that doesn't match, the sign-in fails with an error that reads "The authentication method: '\<name\>' cannot be used via Remote Access Gateway", where `<name>` is the connector name.
 
-{/* TODO verify: the menu path and button names for editing a connector, and whether the same identity provider needs a second connector, with its own redirect address, for the portal. See the matching TODO on the authentication methods page. */}
+The portal lists only the connectors that have **Use Remote Access Gateway** selected, and the console lists only the others. To offer the same identity provider on both, create a second connector for the portal, as [Use Remote Access Gateway](/docs/privilegesecure/26.07/configuration/authentication/overview.md#use-remote-access-gateway) describes.
 
-{/* TODO verify: whether the Set as Default and Set as Exclusive options on a connector apply to the portal, and whether the connector must also have Use Remote Access Gateway selected. */}
+For an OpenID Connect connector, the sign-in sends the user back to the address of the page that started the sign-in, followed by `/callback`. For the portal, that address is `https://<portal DNS name>/callback`. Register it with the identity provider as a callback address, and register the sign-out address, `https://<portal DNS name>/logoutCallback`, as well.
+
+The **Set as Default** and **Set as Exclusive** options work on the portal sign-in page as they do on the console page, but only for a connector that has **Use Remote Access Gateway** selected, because the portal doesn't list any other connector. For what the two options do, see [Default and exclusive connectors](/docs/privilegesecure/26.07/configuration/authentication/overview.md#default-and-exclusive-connectors).
 
 ## Related topics
 

@@ -70,9 +70,7 @@ Allow inbound connections on the portal ports. For example, to allow HTTPS:
 New-NetFirewallRule -DisplayName "RAG Portal HTTPS" -Direction Inbound -Protocol TCP -LocalPort 443 -Action Allow
 ```
 
-Create a similar rule for port 80 if users need the redirect to HTTPS.
-
-{/* TODO verify: that the installers create no Windows Firewall rules for ports 443 and 80, and the rule names and scope to recommend. */}
+Create a similar rule for port 80 if users need the redirect to HTTPS. The portal installer creates no Windows Firewall rules.
 
 ## Verify the portal
 
@@ -122,4 +120,3 @@ If a web application firewall (WAF) or load balancer sits in front of the portal
 | `/samlSigninCallback` | SAML sign-in callback |
 | `/` and its static assets | The portal interface |
 
-{/* TODO verify: this allow-list against the 26.07.3 gateway, including whether /api/v1/token/connect needs its own WebSocket rule. */}

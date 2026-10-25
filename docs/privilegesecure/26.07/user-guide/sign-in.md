@@ -50,7 +50,6 @@ If your administrator makes a connector exclusive, the sign-in page shows only t
 
 To sign in with a different account than the one the console offers, click **Login with a different account** to show the other sign-in options.
 
-{/* TODO verify: exact capitalization of "Login with a different account" on the 26.07.3 sign-in page. */}
 {/* TODO screenshot: sign-in page with single sign-on buttons */}
 
 ## Register multi-factor authentication
@@ -66,9 +65,8 @@ If your connector uses the built-in MFA, you register an authenticator applicati
 
 The console shows the recovery codes once, after registration. Copy them to a secure location before you close the dialog. The **Recovery Codes** button in the page header appears only at that time, and the codes aren't available to view again.
 
-After registration, each sign-in asks for a code from your authenticator application. The console opens on the Dashboard after you enter a valid code.
+After registration, each sign-in asks for a code from your authenticator application. The console opens on the Dashboard after you enter a valid code. If your authenticator application is unavailable, enter one of your recovery codes in the same code box instead of the authenticator code.
 
-{/* TODO verify: where a recovery code is entered at sign-in when the authenticator is unavailable. */}
 {/* TODO screenshot: MFA registration page with the QR code (blur the code) */}
 {/* TODO screenshot: recovery codes dialog */}
 
@@ -76,7 +74,7 @@ After registration, each sign-in asks for a code from your authenticator applica
 
 When the password for your account has expired, the console shows a change-password page after you enter your credentials. The page lists the password complexity rules. Enter a new password that meets them, and confirm it.
 
-{/* TODO verify: whether the expired-password flow applies to domain users or only to local console users. */}
+This page appears only for local console users. If you sign in with a domain account whose Active Directory password has expired, the sign-in fails. Change your domain password the way your organization changes Windows passwords, and then sign in again.
 
 ## Idle timeout
 
@@ -84,14 +82,13 @@ The console signs you out when you are idle. The **Idle Timeout (minutes)** sett
 
 When the idle timeout passes, the **Session Timeout** dialog displays "Your session has been idle and will expire soon." Click **Keep Session Active** to keep working, or click **Logout** to sign out. If you take no action, the console signs you out 5 minutes later. With the default setting, you are signed out after about 15 minutes of inactivity.
 
-{/* TODO verify: time the warning and the sign-out on 26.07.3 (G-83). The code sets the sign-out 5 minutes after the warning. */}
 {/* TODO screenshot: idle timeout warning dialog */}
 
 ## Account lockout
 
 Repeated failed sign-in attempts lock the account. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md) for how an administrator unlocks it.
 
-You also can't sign in while an administrator has locked your account in Privilege Secure. {/* TODO verify: the message text the console shows for a locked managed account. */}
+You also can't sign in while an administrator has locked your account in Privilege Secure. The console shows "Invalid Username or Password", the same message as for a wrong password.
 
 ## Next steps
 

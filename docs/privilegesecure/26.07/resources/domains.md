@@ -23,10 +23,10 @@ For how synchronization reads the directory, see [How Active Directory synchroni
 1. In **Service Account**, select the Active Directory service account for the domain.
 
    :::warning
-   **Service Account** defaults to the internal **Netwrix Password Secure** account. Replace it with your Active Directory service account before you test or save. The internal account can't connect to the domain.
+   **Service Account** defaults to the internal **Netwrix Password Secure** account. Replace it with your Active Directory service account before you test or save.
    :::
 
-   {/* TODO verify: whether the internal Netwrix Password Secure account fails the connection test or only lacks directory permissions. */}
+   {/* TODO verify: how the connection test reports the internal Netwrix Password Secure account. The test code sends whichever account is selected to the domain and returns the domain's answer, so the result depends on a live domain and isn't stated in code or public sources. */}
 
 1. Select **Use TLS** to connect to the domain over a Transport Layer Security (TLS) connection.
 1. Select **Test** to check the connection.
@@ -45,12 +45,10 @@ Set how often Privilege Secure synchronizes the domain in the schedule row on th
 | Setting | Description |
 | --- | --- |
 | **Frequency** | **Never**, **Hourly**, **Daily**, or **Weekly**. The choice adds more fields. |
-| **Every** | For **Hourly**, how many hours between synchronizations. |
+| **Every** | For **Hourly**, the interval between synchronizations, from 1 hour to 24 hours. |
 | **At** | For **Daily** and **Weekly**, the start time. |
-| **On** | For **Weekly**, the day of the week. |
-| **Last Synchronized** | The date and time of the last synchronization. This value is read-only. |
-
-{/* TODO verify: the field labels and layout that each Frequency option adds (Every, At, On). They come from the 26.03 page, and the 26.07 lab showed only Frequency and At. */}
+| **On** | For **Weekly**, the day of the week, from Sunday to Saturday. |
+| **Last Synchronized** | The date and time of the last synchronization, or **Never**. This value is read-only. |
 
 Select **Save** after you change a setting. Select **Cancel** to discard the change.
 
@@ -59,9 +57,9 @@ Select **Save** after you change a setting. Select **Cancel** to discard the cha
 The **Sync** button is a split button. Select the main part of the button to start a normal synchronization. Open the menu on the button to see **Full Sync**.
 
 - Use **Sync** for routine updates. After the first synchronization, it reads only the objects that changed.
-- **Full Sync** is in the button menu. {/* TODO verify: what Full Sync does in 26.07.3. The 26.07 code removed the full-scan option from the synchronization input, but the console still shows Full Sync in the Sync menu. */}
+- **Full Sync** is in the button menu. It starts a synchronization that reads every object again instead of only the objects that changed.
 
-While a synchronization runs, a **Cancel** button replaces **Sync** so you can stop it. {/* TODO verify: whether the Cancel button and the Status values (Complete, Processing, Failed, Cancelled) from 26.03 still appear in 26.07.3. The lab didn't show them. */}
+While a synchronization runs, the **Sync** button shows that it's busy, and a **Cancel** button appears next to it so you can stop the run. A progress message shows the current step, for example "Processing users (imported 1,200)..." or "Waiting for action service...". The message appears only while the run is in progress.
 
 Track progress on the **History** tab. A completed run ends with an entry such as "Domain corp.example.com sync complete."
 
@@ -79,7 +77,7 @@ The details page header shows the domain name, the **Service Account** list, the
 
 A domain has five tabs: **Users**, **Groups**, **Computers**, **History**, and **Sync Errors**. A domain has no **Sessions** or **Access Policies** tab.
 
-{/* TODO verify: that Delete removes only the Privilege Secure resource and doesn't change the domain. */}
+**Delete** removes the domain from Privilege Secure only. It deletes the domain resource, the computer resources onboarded from the domain, the domain's managed account credentials, and the recurring synchronization job. It makes no change in Active Directory. Delete is blocked while resource groups still depend on the domain.
 
 ### Users tab
 
@@ -96,7 +94,17 @@ The **Users** tab lists the domain's user accounts. Use **Search** and the **Typ
 | **View History** | Opens the password history for the account. |
 | **Password Reset Options** | Sets when the password rotates, such as **Rotate on Session Start** and **Rotate on Session End**. |
 
-{/* TODO verify: the Type filter values on the domain Users tab (26.03 listed Users, Admin, Managed, and Not Onboarded), and whether Manage applies only to Standard and Internal accounts. */}
+The **Type** filter has these values:
+
+| Value | Shows |
+| --- | --- |
+| **All** | Every account. |
+| **User** | Accounts that have the User role in Privilege Secure. |
+| **Admin** | Accounts that have the Admin role. |
+| **Managed** | Accounts that Privilege Secure manages automatically. |
+| **Not Onboarded** | Accounts that have no role and aren't managed. |
+
+**Manage** is available when at least one selected account has no Privilege Secure role, isn't already managed, and has no dependents.
 
 The table includes these columns, among others: **Name**, **User Name**, **Privilege**, **Last Login**, **Password Changed**, **Age**, **NPS Role**, **Managed**, **Rotate Start | End**, **Keep Enabled**, **Dependents**, and **Status**. **Status** shows the result of the last credential verification. For managed accounts, see [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
 
@@ -111,7 +119,7 @@ The **Groups** tab lists the domain's groups. The **Type** filter narrows the li
 
 The table shows **Name**, **NPS Role** (**Not Enrolled** until you add the group), **Group Name (Pre-Windows 2000)**, and **Description**.
 
-{/* TODO verify: the Type filter values on the Groups tab (26.03 listed Not Enrolled, Can Log In, and Admin). */}
+The **Type** filter has these values: **All**, **Not Enrolled**, **Can Log In**, and **Admin**.
 
 ### Computers tab
 
@@ -122,13 +130,12 @@ To onboard computers as resources:
 1. Open the **Computers** tab.
 1. Select one or more computers.
 1. Select **Add as NPS Managed Resource**.
-1. In the window that opens, select the service account Privilege Secure uses to connect to the computers.
+1. In the **Enroll Hosts in Management** window, check the list of selected computers. In **Use Service Account**, select the service account Privilege Secure uses to connect to the computers. **Okay** stays unavailable until a service account is available to select.
 1. Select **Okay**.
 
 The computers appear on the Resources page as hosts. To stop managing a computer, select it and select **Remove as NPS Managed Resource**.
 
-{/* TODO verify: the title and field labels of the window that Add as NPS Managed Resource opens. The 26.03 page called the field Use Service Account. */}
-{/* TODO verify: the customer-facing behavior of the 26.07.3 fix that reports the real error when adding domain computers. */}
+If Privilege Secure can't add the selected computers, the console shows the error message that the server returns.
 {/* TODO screenshot: the window that opens from Add as NPS Managed Resource. */}
 
 ### History tab

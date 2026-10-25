@@ -41,13 +41,13 @@ The access role gives Privilege Secure a Client ID and a Client secret that it u
 1. Set **Access Expiration**. Select **Access expires within** (the default is 72 hours) or **Access expires on specified date**.
 1. Select **Generate**, and copy the **Client ID** and the **Client secret**.
 1. Click **Finish**, and then click **Save** on the **Access** view.
-1. Restart Access Analyzer.
+{/* TODO verify: whether Access Analyzer must be restarted after you create the access role. The 26.03 page says to restart it. The Access Analyzer 12.0 pages (assign application access, obtain token) don't require a restart. Confirm on a 12.x server. */}
 
 :::warning
 The client secret stops working when the access expiration passes. Set an expiration that suits how long you want the integration to run, and create a new access role before the old one expires.
 :::
 
-{/* TODO verify: the object names, and whether Access Analyzer must be restarted after a new access role (the 26.03 page says so; the Access Analyzer 12.0 page doesn't). Confirm which Access Analyzer versions the StealthAUDIT connector supports (12.x classic vs 26.1). */}
+{/* TODO verify: which Access Analyzer versions the StealthAUDIT connector supports. The Privilege Secure code doesn't restrict the version, and the Access Analyzer REST steps are documented only in older Privilege Secure pages. */}
 
 ## Add the service accounts in Privilege Secure
 
@@ -74,11 +74,9 @@ For the administrator account, set **Domain** to the domain that the Access Anal
 | **Server Hostname**\* | The host name of the server that Access Analyzer is installed on. The default is `localhost`. |
 | **Port**\* | The port of the Access Analyzer web service. The default is `8082`. |
 | **REST Credentials**\* | The service account that holds the Client ID and Client secret. Select `Access Analyzer API` from the example. |
-| **Power Shell Credentials** | The service account for the Access Analyzer server administrator. Select `Access Analyzer Admin` from the example. |
+| **Power Shell Credentials** | Optional. The service account for the Access Analyzer server administrator. Select `Access Analyzer Admin` from the example. |
 
 An asterisk (\*) marks a required field. Both credential fields list the service accounts that you added.
-
-{/* TODO verify: which service account goes in each credential field. The 26.03 page told the reader to enter the Client ID and Client secret directly, but the 26.07 form lists service accounts. The mapping in the table is inferred. Also confirm whether the administrator account is required. */}
 
 ![The Add Integration Connector form with the StealthAUDIT template selected, showing Server Hostname, Port 8082, REST Credentials, and Power Shell Credentials.](/images/privilegesecure/26.07/integrations/integration-connector-stealthaudit-form.webp)
 
@@ -86,11 +84,9 @@ An asterisk (\*) marks a required field. Both credential fields list the service
 
 1. Select **Configuration** > **Integration Connectors**.
 1. Select the connector that you created.
-1. Click **Sync StealthAUDIT**. The import can take some time.
+1. Click **Sync StealthAUDIT** below the connector settings. The button is unavailable while an import runs, and the log of the last run appears under it. The import can take some time.
 
 To follow the progress, open the Action Service on the **Service Nodes** page. See [Monitor service nodes](../../admin/service-nodes/service-nodes.md).
-
-{/* TODO verify: the Sync StealthAUDIT button label and where it appears. It is in the console code but wasn't visible in the lab, which had no StealthAUDIT connector. */}
 
 ## Related topics
 

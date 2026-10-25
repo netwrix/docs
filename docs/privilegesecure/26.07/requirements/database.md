@@ -13,8 +13,6 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) stores its dat
 | PostgreSQL 16 (bundled installer) | Netwrix | 5432 |
 | Microsoft SQL Server | You | 1433 |
 
-{/* TODO verify: the bundled PostgreSQL port. The Setup Launcher configuration and System Settings > Database in an upgraded lab show 5432, but the backend code uses 5437 for production. Confirm the port on a fresh install. */}
-
 ## PostgreSQL
 
 The product zip file includes a PostgreSQL 16 installer. Run it from the Setup Launcher before you install Privilege Secure. See [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md).
@@ -32,13 +30,13 @@ You provide SQL Server. The Setup Launcher doesn't install it. SQL Server uses p
 A SQL Server deployment is an advanced configuration that requires additional support from Netwrix. Contact Netwrix Support before you choose SQL Server.
 :::
 
-{/* TODO verify: the supported SQL Server versions and editions. */}
+{/* TODO verify: the SQL Server versions and editions that Netwrix supports. The release code uses Entity Framework Core 10 for SQL Server and doesn't define a version range, and Microsoft's documentation doesn't state Netwrix's support. */}
 
-## High availability and cloud databases
+## High availability
 
 - An active-passive configuration is available only with PostgreSQL. It uses the embedded database and needs manual failover.
 - An active-active configuration supports both PostgreSQL and SQL Server. It needs an additional server for the database and requires no manual failover.
-- Cloud-native databases suit an active-active configuration. AWS offers Aurora PostgreSQL and RDS for SQL Server. Azure offers its own PostgreSQL and SQL Server services.
+- A customer-provided PostgreSQL or SQL Server database suits an active-active configuration.
 
 For setup, see [High availability options](/docs/privilegesecure/26.07/install/high-availability.md).
 

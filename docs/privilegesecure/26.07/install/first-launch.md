@@ -14,7 +14,7 @@ Gather the following:
 
 - A domain account and its password for the primary application administrator. Use a standard, non-privileged account. Privilege Secure grants the account full administrative rights in the product, and you use the product to reach privileged accounts.
 - An MFA authenticator app, such as Microsoft Authenticator or Google Authenticator, on your phone. You can skip MFA registration and add it later, but skipping isn't recommended.
-- An AD service account and its password. The wizard intends this account to hold domain administrator rights for the domain of the primary administrator. Privilege Secure uses it to scan resources and to provision and deprovision accounts that have temporary access to privileged systems.
+- An AD service account and its password. The account must be a member of Domain Admins for the domain of the primary administrator. Privilege Secure uses it to scan resources and to provision and deprovision accounts that have temporary access to privileged systems.
 
 ## Open the setup wizard
 
@@ -23,7 +23,7 @@ Use either method:
 - On the application server, double-click the **Netwrix Privilege Secure** desktop icon. The default browser opens the console.
 - Open a supported browser and go to `https://localhost:6500` on the application server, or to `https://<nps-server>:6500` from another computer.
 
-{/* TODO verify: that opening the console for the first time always redirects to the wizard, and that the desktop icon is created on the server. */}
+Until you create the administrator account, the sign-in page redirects to the wizard. After that, sign in with the administrator account you created, and the console returns you to the step you reached.
 
 If you run the wizard from another computer, service registration can fail. See [Handle certificate errors](#handle-certificate-errors).
 
@@ -51,7 +51,7 @@ Each wizard page shows its position, for example "Step 2 out of 5".
    2. Enter the code that the app shows in **Verification Code**.
    3. Click **Next** while the code is still valid.
 
-   To register MFA later, click **Setup Later**. The wizard then skips the recovery codes. {/* TODO verify: the MFA setting the first account has after Setup Later (26.03 said Not Required) and where to register MFA later. */}
+   To register MFA later, click **Setup Later**. The wizard then skips the recovery codes. The account then uses the built-in **Not Required** authentication connector, so it signs in without a verification code. To register MFA later, an administrator assigns the **Internal MFA** connector to the account on the **Authentication Connector** tab, as described in [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector). The account registers its authenticator at the next sign-in. See [Register multi-factor authentication](/docs/privilegesecure/26.07/user-guide/sign-in.md#register-multi-factor-authentication).
 
    {/* TODO screenshot: Register Authenticator page. Blur the QR code and the key. */}
 
@@ -61,13 +61,13 @@ Each wizard page shows its position, for example "Step 2 out of 5".
 
 5. On **Add an Active Directory Service Account**, enter the **Service Account Username** and the password, and then click **Next**. The domain comes from the first page.
 
-   {/* TODO verify: that the service account must be a member of Domain Admins (26.03 said so; the wizard text says "intended to be configured with domain admin privileges"). */}
+   The account must be a member of the Domain Admins group of the domain. If it isn't, the wizard rejects the account and reports that the user isn't a member of Domain Admins.
 
    {/* TODO screenshot: Add an Active Directory Service Account page. Use a placeholder account. */}
 
 6. On **Synchronize the Active Directory Domain to Netwrix Privilege Secure**, click **Sync**. The page shows progress while it processes computers, groups, group members, service accounts, and users. The wizard also registers and health-checks the Privilege Secure services during this step. When synchronization completes, the next page opens.
 
-   Privilege Secure then synchronizes the domain automatically every 24 hours. {/* TODO verify: where to change this schedule after the wizard closes. */}
+   Privilege Secure then synchronizes the domain automatically every 24 hours. To change the schedule later, see [Schedule synchronization](/docs/privilegesecure/26.07/resources/domains.md#schedule-synchronization).
 
    {/* TODO screenshot: domain synchronization in progress. */}
 
@@ -79,7 +79,7 @@ Each wizard page shows its position, for example "Step 2 out of 5".
 
    {/* TODO screenshot: Check Resource window with test results. */}
 
-{/* TODO verify: the page the console opens when the wizard closes, and the name of the activity it creates (26.03 showed My Activities with "Activity Token for Domain Admin Access"). */}
+When the wizard closes, the console opens **My Activities**. Adding the resource also creates an access policy named `New Policy <domain>`, where `<domain>` is your domain. The policy gives the first administrator the **Activity Token for Domain Admin Access** activity on that resource.
 
 To continue, see [Configuration overview](/docs/privilegesecure/26.07/configuration/overview.md) and [Quick start](/docs/privilegesecure/26.07/getting-started/quick-start.md).
 

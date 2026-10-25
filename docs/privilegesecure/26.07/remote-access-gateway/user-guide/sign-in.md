@@ -27,9 +27,10 @@ The sign-in page shows the methods that your administrator allows. By default, t
 | What the page shows | Method |
 |---|---|
 | One button for each identity provider | SSO |
-| **Username**, **Password**, and **Domain** fields | Username and password |
+| **Username** and **Password** fields, with no **Domain** field | Local Privilege Secure users, when the administrator allows SSO and local users |
+| **Username**, **Password**, and **Domain** fields | Local and domain users, when the administrator allows SSO, local users, and domain users |
 
-{/* TODO verify: the sign-in page when AllowedLoginMethods is 1 (SSO plus local). The lab verified only value 2, so confirm whether the Domain field is hidden and how the page rejects a username that contains a backslash or an at sign. */}
+When the portal allows only SSO, the sign-in page doesn't show the **Username**, **Password**, or **Domain** fields.
 
 ## Sign in with single sign-on
 
@@ -40,13 +41,16 @@ The sign-in page shows the methods that your administrator allows. By default, t
 
 When you sign in with SSO, the portal doesn't ask for a username or password.
 
-{/* TODO verify: how the Default and Exclusive connector settings change the sign-in page on the portal, and whether the "Login with a different account" option appears on the portal. */}
+The sign-in page changes when your administrator sets a default or exclusive connector. See [Default and exclusive connectors](/docs/privilegesecure/26.07/configuration/authentication/overview.md#default-and-exclusive-connectors).
+
+- With an exclusive connector, the page shows only a button with the connector's name, under **Login using:**.
+- With a default connector, the page shows the button for that connector and a **Login with a different account** button. Click it to show the other sign-in options that the portal allows.
 
 ## Sign in with a username and password
 
 1. Open the portal address in your browser.
 2. Enter your **Username** and **Password**.
-3. Select your **Domain**. Select `<none>` if you use a local Privilege Secure account.
+3. Select your **Domain**. Select `<none>` if you use a local Privilege Secure account. If you enter `<domain>\<user>` or `<user>@<domain>` in **Username**, the portal fills in **Domain** from your entry and locks the field.
 4. Click **Login**.
 5. If the portal asks for a verification code, enter the code from your authenticator application.
 
@@ -54,13 +58,11 @@ After you sign in, the portal opens the dashboard with the **Active**, **Schedul
 
 {/* TODO screenshot: portal sign-in page with Username, Password, and Domain fields, no text selected, no licence banner */}
 
-{/* TODO verify: multi-factor authentication on the portal. Code shows the same sign-in and verification-code flow as the console, but the lab didn't test it. If confirmed, link to the console steps at /docs/privilegesecure/26_07/user-guide/sign-in.md#register-multi-factor-authentication. */}
+The portal uses the same sign-in and verification-code pages as the console. To register an authenticator application, see [Register multi-factor authentication](/docs/privilegesecure/26.07/user-guide/sign-in.md#register-multi-factor-authentication).
 
 ## Session timeout
 
-The portal signs you out after a period of inactivity.
-
-{/* TODO verify: the portal inactivity timeout and warning. The 26.03 pages state a 20-minute timeout with a warning after 15 minutes, and the code sets the sign-in token to 15 minutes by default. Confirm the values and the Stay Logged In prompt for 26.07.3 before stating them. */}
+The portal signs you out after a period of inactivity. It uses the same **Idle Timeout (minutes)** setting as the console, which is 10 minutes by default. When the idle time passes, the **Session Timeout** dialog appears. Click **Keep Session Active** to keep working, or click **Logout** to sign out. If you take no action, the portal signs you out 5 minutes later. See [Idle timeout](/docs/privilegesecure/26.07/user-guide/sign-in.md#idle-timeout).
 
 ## Fix a sign-in error
 

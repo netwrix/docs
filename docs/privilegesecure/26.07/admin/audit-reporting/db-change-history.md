@@ -38,6 +38,6 @@ The default range here is 7 days. The [Activity log](/docs/privilegesecure/26.07
 
 Click the expander at the start of a row to view its details.
 
-{/* TODO verify: what the expanded row shows (for example, the old values and the new values) */}
+The expanded row lists each field that changed. For an update, it shows the old value and the new value, for example `Name: old-value → new-value`. For an addition or a deletion, it shows the value only. An empty value shows as `<null>`.
 
 You can sort the columns.

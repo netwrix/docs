@@ -31,10 +31,8 @@ Install the service on each Windows host that users reach through an RDP session
 ## Verify the service
 
 1. On the target host, open **Services** (`services.msc`).
-2. Find the Remote Desktop Monitor service.
+2. Find the **SbPAM Remote Desktop Monitor** service. Its service name is `SbPAMRDMon`.
 3. Confirm that **Status** is **Running**, **Startup Type** is **Automatic**, and **Log On As** is **Local System**.
-
-{/* TODO verify: the service display name in Services on a 26.07 target host. The code names the service SbPAMRDMon with the display name "SbPAM Remote Desktop Monitor". The 26.03 page said "Netwrix Privilege Secure Remote Desktop Monitor". */}
 
 The service is now ready for the next RDP session to the host.
 
@@ -42,7 +40,7 @@ The service is now ready for the next RDP session to the host.
 Start a new RDP session after you install the service. A session that was already open doesn't report Windows event activity.
 :::
 
-{/* TODO verify: that an RDP session open before the install reports no Windows event activity, and whether the host needs a restart. */}
+{/* TODO verify: that an RDP session open before the install reports no Windows event activity, and whether the host needs a restart. The monitor executable's source has no release branch. The release installer registers a scheduled task that starts the monitor at logon and at remote connect, which suggests an already-open session isn't monitored, but a test on a host settles it. */}
 
 ## Check the result
 

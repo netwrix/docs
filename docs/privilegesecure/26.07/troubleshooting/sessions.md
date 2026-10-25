@@ -32,7 +32,7 @@ If provisioning finishes but takes more than 30 seconds, see [Long Provisioning 
 
 **Fix:** Check the Action Service log for the failed step. On Linux, see [Linux deprovisioning fails because the account is still in use](#linux-deprovisioning-fails-because-the-account-is-still-in-use). For other targets, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
 
-{/* TODO: Stuck deprovisioning (PSAM-1406) is open with no workaround in Jira. Ask the SME whether it is specific to SQL Server or PostgreSQL, then add the cause and workaround. */}
+{/* TODO verify: the cause of a session that stays in Deprovisioning on non-Linux targets, whether it depends on the database back end (SQL Server or PostgreSQL), and a workaround. Release code doesn't identify a cause, and no public source covers it. */}
 
 ## Linux deprovisioning fails because the account is still in use
 
@@ -40,17 +40,17 @@ If provisioning finishes but takes more than 30 seconds, see [Long Provisioning 
 
 **Cause:** Deprovisioning ran before the user's processes finished ending. The command works a few seconds later.
 
-**Fix:** Upgrade to 26.07.3 or later. On an earlier release, wait a few seconds after the session ends and then retry the deprovisioning.
+**Fix:** Upgrade to 26.07.3 or later. From 26.07.3, the Linux remove-user step runs `userdel -r` up to 10 times, 3 seconds apart, until the account is gone. On an earlier release, the step runs `userdel` once. Wait a few seconds after the session ends and then retry the deprovisioning.
 
-{/* TODO verify: the control that retries deprovisioning, and that the userdel race fix (PSAM-639, PSAM-1338) shipped in 26.07.3 */}
+{/* TODO verify: which console control retries deprovisioning on an earlier release. Release code shows the retry logic in 26.07.3 but not a retry control in the web console. */}
 
 A bulk deprovision of many accounts can log a misleading error about removing a user from a group, even though the user is removed. Check the target before you deprovision again.
 
-{/* TODO verify: the exact wording of the bulk deprovision log message and the first 26.07 release that corrects it (PSAM-1460, 26.07.3). */}
+{/* TODO verify: the exact wording of the bulk deprovision log message and the first 26.07 release that corrects it. Not found in release code. */}
 
 ## The session request returns "Unable to find policy"
 
-**Symptom:** A user requests a session and gets the message "Unable to find policy for activity: `<activity>`, with resource: `<resource>`. Contact the NPS Administrator to request access."
+**Symptom:** A user requests a session and gets the message "Unable to find policy for activity: `<activity>`, with resource: `<resource>`. Contact the NPS Administrator to request access." For a session on a credential, the message says "with credential: `<credential>`" instead of the resource.
 
 **Cause:** No access policy includes the activity and applies to both the user and the resource. If more than one policy matches, Privilege Secure uses the first in alphabetical order by name.
 
@@ -59,9 +59,8 @@ A bulk deprovision of many accounts can log a misleading error about removing a 
 1. Open the access policy that should grant the access. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 1. Confirm that it includes the activity named in the message.
 1. Confirm that the user, or a group or collection the user belongs to, is in the policy.
-1. Confirm that the resource, or a collection or credential that includes it, is in the policy.
-
-{/* TODO verify: the scope of resource matching (collections and credentials). */}
+1. Confirm that the resource is in the policy, either directly or through a resource collection. A collection that is tied to the resource's platform also matches. For a session on a credential, confirm that the credential is in the policy.
+1. Confirm that the policy is enabled. Disabled and deleted policies never match.
 
 ## An error mentions a null PlatformID
 
@@ -73,7 +72,7 @@ If a scan or session fails with a null platform ID error, see [Troubleshoot inst
 
 **Fix:** Ask the user to try again. Confirm that the Privilege Secure server and the user's device have synchronized clocks, for example with a network time protocol (NTP) source. The problem can occur without any clock drift.
 
-{/* TODO verify: status of the intermittent MFA code rejection when connecting through RDP files (PSAM-1319, marked for 26.07.1, awaiting verification). Don't call it fixed until the SME confirms. */}
+{/* TODO verify: whether the intermittent MFA code rejection when connecting through RDP files is fixed in 26.07.3. Release code gives no confirmation; don't call it fixed until Support confirms. */}
 
 ## Related topics
 

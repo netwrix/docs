@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Use the browser extension to start web sessions from the toolbar without opening the console. Install the extension first. See [Browser extension](/docs/privilegesecure/26.07/user-guide/browser-extension/browser-extension.md).
 
-This page describes the Chrome Web Store build 25.8.26. {/* TODO verify: the tab names and layout below come from the 26.03 documentation. Confirm them against build 25.8.26. */}
+This page describes the Chrome Web Store build 25.8.26.
 
 ## Before you begin
 
@@ -32,7 +32,7 @@ The extension has three tabs.
 | Tab | What it shows |
 |---|---|
 | **Activities** | All website activities that your access policies give you, grouped by resource |
-| **Current** | The activities for the resource that matches the address of the page in the current tab |
+| **Current Tab** | The activities for the resource that matches the address of the page in the current tab |
 | **Settings** | The extension settings |
 
 ### Activities tab
@@ -41,9 +41,9 @@ Click a resource to expand it and show its activities. Use the plus and minus bu
 
 Click the favorite icon next to an activity to move it to the top of the list.
 
-### Current tab
+### Current Tab
 
-The **Current** tab shows the resource that matches the current page, with its activities expanded. Click an activity to start a session.
+The **Current Tab** tab shows the resource that matches the current page, with its activities expanded. Click an activity to start a session.
 
 ### Settings tab
 
@@ -57,7 +57,7 @@ Logout is blocked while a session is active. The extension shows the message "Al
 
 ## Start a web session
 
-1. Open the extension and select the **Activities** or **Current** tab.
+1. Open the extension and select the **Activities** or **Current Tab** tab.
 2. Click a resource to expand it.
 3. Click an activity to start an activity session.
 4. If the **Configure Session** dialog opens, complete it and confirm. See [Configure Session dialog](#configure-session-dialog).
@@ -68,7 +68,7 @@ The extension then shows a countdown timer with the time left in the session. A 
 
 {/* TODO screenshot: extension showing the countdown timer and REC icon during a web session (store 25.8.26) */}
 
-{/* TODO verify: how the extension shows a session that is waiting for approval. */}
+If the access policy requires approval, the status dot next to the activity shows an orange dot. Pointing at it shows "pending approval. Please return once approved." Come back to the extension after the approver approves the session.
 
 ### Configure Session dialog
 
@@ -76,7 +76,7 @@ The **Configure Session** dialog has a **Note** field and a **Ticket Number** fi
 
 ### Start a session in the current tab
 
-To start the session in a tab that is already open, right-click the page and select **Activate session in this tab**. The extension also has a keyboard shortcut for this action, Alt+Shift+S. {/* TODO verify: the shortcut in store build 25.8.26 and in Edge. */}
+To start the session in a tab that is already open, right-click the page and select **Activate session in this tab**. The extension also has a keyboard shortcut for this action, Alt+Shift+S. You can change the shortcut on the extension shortcuts page of your browser.
 
 ### Use the privileged session banner
 
@@ -89,20 +89,23 @@ While you run a privileged session, the extension shows a banner that says the s
 | **End session** | Ends the session |
 | **Extend session** | Adds time to the session |
 
-{/* TODO verify: whether Autofill credentials and Copy credentials depend on the profile settings Enable credential auto-fill and Allow User to Access Password. */}
+Which actions are available depends on the connection profile for the activity:
+
+- For sessions that use a vaulted or user credential, **Autofill credentials** is available only when the profile has both **Enable credential auto-fill in browser extension** and **Allow User to Access Password** selected. It is also available for credential release activities and for sessions that have no vaulted or user credential, whatever the profile says.
+- **Copy credentials** always offers **Copy username**. It offers **Copy Password** only when the profile has both **Allow User to Access Password** and **Enable 'Show Password' option in user interface and browser extension** selected.
 
 ## Extend a session
 
 Click **Extend session** in the banner, or use the extend action in the session notification, then pick a duration.
 
-In build 25.8.26:
+The extension and the server limit extensions as follows:
 
-- Administrators can extend a session even when the connection profile doesn't allow session extension. They see every duration option.
-- All other users can extend only up to the maximum that the connection profile sets.
+- In build 25.8.26, the extension offers **Extend session** and every duration option to administrators, even when the connection profile doesn't allow extension. Other users see **Extend session** only while extensions remain, and only up to the maximum that the profile sets.
+- The server enforces the profile limits for everyone: whether extension is allowed, the number of extensions, and the maximum (**Extend By (minutes)**).
 
 For the extension limits that a profile sets, see [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
-{/* TODO verify: whether the server accepts an administrator's extension when the connection profile has session extension turned off. The server side checks the profile. */}
+The server rejects an extension request when the connection profile doesn't allow session extension, when no extensions remain, or when the request is longer than the profile maximum. This applies to administrators too. In this build, the extension doesn't show an error when the server rejects a request.
 
 ## End a web session
 

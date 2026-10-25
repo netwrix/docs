@@ -29,8 +29,6 @@ The value must be a well-formed URL. The field is empty by default.
 If **Website URL** is empty, links in approval and command restriction emails start with `http://<host>:5000`, where `<host>` is the server's host name. That address is wrong for a standard installation. Set **Website URL** to the console address.
 :::
 
-{/* TODO verify: the http://<host>:5000 fallback in an email test; it comes from code and has not been seen in a sent email */}
-
 ## Configure the SMTP server
 
 The Email Service sends mail through your SMTP server. Configure it on each service node that runs the Email Service.
@@ -39,9 +37,7 @@ The Email Service sends mail through your SMTP server. Configure it on each serv
 1. Select the node, then select **Email Service**.
 1. On the **Email Settings** tab, complete the fields in the table.
 1. Click **Test Settings** to check the connection to the SMTP server.
-1. Click **Save**.
-
-{/* TODO verify: the Save button label on the Email Settings tab */}
+1. Click **Save**. The **Save** and **Cancel** buttons appear at the bottom of the page after you change a field.
 
 | Field | Description |
 |---|---|
@@ -56,8 +52,9 @@ For example, to send through an unauthenticated relay on port 25, enter the rela
 
 **Test Settings** is available after you complete the required fields.
 
-{/* TODO verify: SMTP end-to-end email test (Test Settings, a delivered message, and the Website URL link); not run in the lab */}
-{/* TODO verify: default SMTP port, because the code has both 25 and 465 as defaults; the console pre-fills 25 */}
+The default port is 25, with **Use TLS** and **Use Auth** cleared.
+
+{/* TODO verify: an end-to-end test with a real SMTP server: that Test Settings reports success, that the message arrives, and that the link in it opens the console. Release code can't show how a given SMTP server responds. */}
 
 ## View queued email
 

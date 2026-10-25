@@ -11,10 +11,8 @@ A SIEM template sets the content and layout of each message that Privilege Secur
 Privilege Secure includes two templates, **CEF** and **LEEF**. You can also create custom templates.
 
 :::note
-The **CEF** and **LEEF** templates contain the same message body. Don't assume that either template produces a message that follows the CEF or LEEF specification from the SIEM vendor. Test the output in your SIEM before you rely on it.
+The **CEF** and **LEEF** templates contain the same message body. Both messages start with the date and the host name, then the template name and version, the company, the product, the product version, and the event status. They start with `%SYSLOG_DATE%|%HOST%`, not with a `CEF:` or `LEEF:` header. Test the output in your SIEM before you rely on it, and create a custom template if your SIEM needs a different layout.
 :::
-
-{/* TODO: SME to confirm the format of the CEF and LEEF message bodies, and whether they follow the vendor specifications. Make no format claims until then. */}
 
 ## Create a custom template
 
@@ -35,13 +33,11 @@ An asterisk (\*) marks a required field.
 
 To insert a field, place the cursor in **Format** and select the plus icon next to the field name.
 
-Placeholders in the built-in templates use the form `%FIELDNAME%` in upper case, for example `%EVENTTYPE%`. The following sample **Format** value uses placeholders:
+The field buttons insert the placeholder in the form `|FieldName=%FIELDNAME%`, with the placeholder in upper case. Placeholders in the built-in templates use the form `%FIELDNAME%` in upper case, for example `%EVENTTYPE%`. The following sample **Format** value uses placeholders:
 
 ```text
 %SYSLOG_DATE%|%HOST%|EventType=%EVENTTYPE%|EventStatus=%EVENTSTATUS%|EventMessage=%EVENTMESSAGE%
 ```
-
-{/* TODO verify: the label of the name field, and that a field button inserts %FIELDNAME% in upper case, as the seeded bodies use. */}
 
 ![The SIEM template editor for the CEF template, showing the Format box with field placeholders and the buttons that insert fields.](/images/privilegesecure/26.07/integrations/siem-template-cef-editor.webp)
 
@@ -71,17 +67,24 @@ A message can start with a header made of the following placeholders.
 
 | Placeholder | Description |
 |---|---|
-| `%SYSLOG_DATE%` | The event date in sortable universal format. |
+| `%SYSLOG_DATE%` | The time that Privilege Secure sends the message, in sortable universal format. For the time of the event, use `%EVENTTIMEUTC%`. |
 | `%HOST%` | The host name of the computer that runs the SIEM service. |
-| `%TEMPLATENAME%` | {/* TODO verify */} |
-| `%TEMPLATEVERSION%` | {/* TODO verify */} |
-| `%COMPANY%` | {/* TODO verify */} |
-| `%PRODUCT%` | {/* TODO verify */} |
-| `%PRODUCT_VERSION%` | {/* TODO verify */} |
-| `%LOGLEVELSTATUS%` | {/* TODO verify */} |
-| `%LOGLEVEL%` | {/* TODO verify */} |
+| `%TEMPLATENAME%` | The name of the template. |
+| `%TEMPLATEVERSION%` | The version of the template. If the template has no version, the value is `1.0`. |
+| `%COMPANY%` | The company name from the version information of the SIEM service. |
+| `%PRODUCT%` | The product name from the version information of the SIEM service. |
+| `%PRODUCT_VERSION%` | The product version from the version information of the SIEM service. |
+| `%LOGLEVELSTATUS%` | The status of the event as text: `Information`, `Warning`, or `Error`. |
+| `%LOGLEVEL%` | The status of the event as a number: `0` for `Information`, `1` for `Warning`, or `2` for `Error`. |
 
-{/* TODO verify: that session, account, and resource fields are empty for events with no session, and the meaning and value format of each field. */}
+The enumerated fields hold the name of the value:
+
+| Field | Values |
+|---|---|
+| `EventServiceType` | `Unspecified`, `WebUi`, `ActionService`, `ProxyService`, `SchedulerService`, `EmailService`, `ADSyncService`, `RagGateway`, `RagPortal` |
+| `EventType` | `Unspecified`, `Status`, `ServiceStart`, `PasswordRotation`, `HostScan`, `ADSync`, `ActivitySession`, `Manage`, `Unmanage`, `Verify`, `RotateServices`, `CommandRestrictionAction` |
+
+The names of the event fields describe their content. `EventServiceType` is the Privilege Secure service that raised the event, and `EventType` is the kind of event.
 
 ## Related topics
 

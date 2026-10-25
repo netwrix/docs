@@ -20,7 +20,7 @@ The Netwrix Setup Launcher (`NPS_Setup.exe`) checks prerequisites, installs the 
 Install PowerShell 7.6 or later before you start the Setup Launcher. The launcher doesn't check for it. Its **Pre-requisites Setup** grid checks only for PowerShell 5.1 or later, so it can show every prerequisite as installed while the application installer still stops. Download PowerShell from [aka.ms/powershell](https://aka.ms/powershell).
 :::
 
-{/* TODO verify: on a clean server without PowerShell 7.6, the on-screen behavior of NPS.exe when the Setup Launcher starts it. The message text is confirmed in the installer source. */}
+If PowerShell 7.6 or later isn't installed when the launcher starts `NPS.exe`, the installer stops and shows the message "PowerShell 7.6 or later is required. Please install it from https://aka.ms/powershell". Install PowerShell, and then run the installer again.
 
 ## Install the application server with PostgreSQL
 
@@ -49,7 +49,7 @@ The launcher shows the steps for your situation on screen. For a first installat
 4. Review the install folder and the data folder. To change a location, click **Browse**. Click **Next**.
 5. When the installation finishes, click **Exit**.
 
-{/* TODO verify: the default install and data folders of the Netwrix PostgreSQL v16 installer. The 26.03 pages show C:\Program Files\Stealthbits\Postgres16. */}
+{/* TODO verify: the default install and data folders of the Netwrix PostgreSQL 16 installer. The installer is a prebuilt package whose folder defaults aren't in the product source, and Privilege Secure reads the folders from the registry after the install. */}
 {/* TODO screenshot: the PostgreSQL setup wizard install and folder pages */}
 
 If PostgreSQL 16 is already on the server, the launcher shows a green checkmark next to the database button. If you start a new PostgreSQL installation anyway, the launcher warns you that PostgreSQL is already installed at a given location and asks you to confirm.
@@ -99,27 +99,30 @@ The launcher can switch Privilege Secure from PostgreSQL to a Microsoft SQL Serv
 SQL Server is an advanced configuration that requires additional support from Netwrix. Contact Netwrix Support before you switch.
 :::
 
-1. In the launcher, click **Switch to SQL Server**.
-2. Read the message "Switching the database will switch your active database configuration. Are you sure you wish to continue?" Confirm the prompt to continue.
+1. In the launcher, select the **Advanced** checkbox, and then click **Switch to SQL Server**.
+2. In the **Switch Database** dialog, read the message "Switching the database will switch your active database configuration. Are you sure you wish to continue?" Click **Yes**.
 3. If you need SQL Server software, click **Download SQL Server (if needed)**. This opens the Microsoft download page.
 4. Install SQL Server, install Privilege Secure, and then point it at the SQL Server database with the Database Configuration Tool, which can also create the database.
 
-For a first installation with SQL Server, the launcher steps are: install any missing prerequisites, install Netwrix Privilege Secure, and run the setup wizard. To go back, click **Switch to PostgreSQL**.
+The **Advanced** checkbox appears only when the launcher detects an installed Privilege Secure version 4.1 or later. It's hidden on a server without Privilege Secure, and when the installed version matches the installer, so the switch applies to an existing installation. To go back, click **Switch to PostgreSQL**.
 
-{/* TODO verify: the button labels and dialog buttons when you switch databases. The 26.03 pages say an Advanced checkbox offers the switch. */}
+{/* TODO verify: how a first installation on a server without Privilege Secure chooses SQL Server, because the Advanced checkbox is hidden there. */}
 
 To point an installed Privilege Secure at a local or remote database, use the Netwrix Privilege Secure Database Configuration Tool. The `NPS.DbCfg.msi` file in the `Extras` folder installs it. The tool lets you choose the active database and enter the type, host, port, name, user, and password. It also lets you test the connection and save.
 
 By default, the database settings point to the local server: PostgreSQL on port 5432 or SQL Server on port 1433, with the database name `PAM`.
 
-{/* TODO verify: the bundled PostgreSQL port on a fresh install. The code uses 5432 in the launcher settings and 5437 elsewhere. */}
+{/* TODO verify: the port that the bundled PostgreSQL 16 installer configures on a fresh install. The launcher writes 5432 when no port is recorded, and the PostgreSQL 12 to 16 upgrade script defaults the new instance to 5437, but the installer's own default isn't in the product source. */}
 
 ## If the installer can't reach the database
 
-When the installer can't reach the database, for example a remote database, it still completes. It writes the error to `ImportActivities.log` in the Privilege Secure log folder under `C:\ProgramData\Stealthbits\PAM`.
+When the installer can't reach the database, for example a remote database, it still completes. It writes the error to `ImportActivities.log` in the `Logs` folder under `C:\ProgramData\Stealthbits\PAM`.
 
-{/* TODO verify: the folder name for ImportActivities.log (Log or Logs). */}
+If the database wasn't reachable during installation, check the log and fix the connection. The installer doesn't import the activities again when you re-run or repair the same version, so run the database updater yourself after the connection works. Open an elevated command prompt in the `DatabaseTools` folder of the install folder, which is `C:\Program Files\Stealthbits\PAM` by default, and run these commands in order:
 
-If the database wasn't reachable during installation, check the log and fix the connection. Contact Netwrix Support if the default activities are missing after you do.
+```
+SbPAM.DbUpdater.exe
+SbPAM.DbUpdater.exe import Data
+```
 
-{/* TODO verify: that running the installer again, or running SbPAM.DbUpdater.exe, imports the default activities after a failed first attempt. */}
+The first command applies the database migrations. The second imports the default activities and other seed data. Contact Netwrix Support if the default activities are still missing.

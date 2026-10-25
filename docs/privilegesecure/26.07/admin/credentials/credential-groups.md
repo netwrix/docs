@@ -53,7 +53,7 @@ For example, name a group `<build-admin-accounts>` with the description `<Local 
 
 {/* TODO screenshot: the Add Credentials dialog */}
 
-{/* TODO verify: whether the Available Credentials list includes only managed accounts for groups. The 26.03 text says it lists credentials that were onboarded and aren't already in the group. */}
+**Available Credentials** lists the credentials that aren't already in the group. It leaves out deleted credentials and application credentials. The search box matches the account name, and the type dropdown limits the list to one account type.
 
 ## Remove credentials from a group
 

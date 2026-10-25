@@ -15,7 +15,7 @@ You can install the Netwrix Privilege Secure for Access Management (Privilege Se
 - Copy `NPS.exe` from the `Extras` folder to the application server.
 - Open a command prompt as an administrator.
 
-{/* TODO verify: the supported way to install the bundled PostgreSQL silently. */}
+{/* TODO verify: the Netwrix-supported way to install the bundled PostgreSQL silently. `NetwrixPostgreSQL16.exe` is a prebuilt package, the Setup Launcher starts it without arguments, and its command-line switches aren't in the product source. */}
 
 ## Install with the default options
 
@@ -29,13 +29,13 @@ The application installs in the background to `C:\Program Files\Stealthbits\PAM`
 
 ## Install to a different folder
 
-Set the `InstallFolder` variable on the command line. For example, to install to `D:\Stealthbits\PAM`, run:
+Set the `InstallFolder` variable on the command line. The installer passes the folder to every component that `NPS.exe` installs. For example, to install to `D:\Stealthbits\PAM`, run:
 
 ```
 NPS.exe /quiet InstallFolder="D:\Stealthbits\PAM"
 ```
 
-{/* TODO verify: the exact syntax of the InstallFolder variable on the command line, that the installer uses the folder, and that PRODUCTDIR (used in the 26.03 docs) isn't accepted. PRODUCTDIR doesn't appear in the 26.07.3 installer source. */}
+The `PRODUCTDIR` property that earlier versions used isn't accepted.
 
 ## Write an installation log
 
@@ -62,16 +62,14 @@ Without `/log`, the installer writes its log to the `%TEMP%` folder.
 
 ## After the installation
 
-The application needs a server restart to finish. Restart the server before you open the console.
-
-{/* TODO verify: whether a silent installation restarts the server on its own, and the exit codes for success and for a pending restart. */}
+{/* TODO verify: whether the application needs a server restart to finish and whether a silent installation restarts the server on its own, and the exit codes for success and for a pending restart. The installer source schedules no restart itself, and the bootstrapper's restart and exit-code behavior depends on the Windows installer at run time, so a silent install test on a host settles it. */}
 
 Open `https://localhost:6500` on the server, and then [run the setup wizard](/docs/privilegesecure/26.07/install/first-launch.md).
 
-If the database wasn't reachable during the installation, the installer still completes. Check `ImportActivities.log` in the Privilege Secure log folder under `C:\ProgramData\Stealthbits\PAM`.
+If the database wasn't reachable during the installation, the installer still completes. Check `ImportActivities.log` in the `Logs` folder under `C:\ProgramData\Stealthbits\PAM`.
 
 ## Install other components silently
 
-The standalone installers for the Action, Scheduler, Email, and SIEM services accept the same switches, including `InstallFolder`. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
+The standalone installers for the Action, Host Scan, Scheduler, and SIEM services are bootstrapper executables that accept the same switches, except that they don't accept an `InstallFolder` value and install to `C:\Program Files\Stealthbits\PAM` or to the folder of an earlier installation. The Host Scan Service ships as both a bootstrapper, `NPS.HostScanService.exe`, and an `.msi` file. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 
-{/* TODO verify: the switches for the Host Scan installer, which components.md lists as an `.exe` file but the installer source builds as a bundle, and the switches and parameters that each standalone service installer accepts for the console URL and the encryption key. */}
+The standalone installers take no console URL or encryption key. Register each service with the application server after the installation.

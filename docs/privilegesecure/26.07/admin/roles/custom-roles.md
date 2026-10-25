@@ -34,15 +34,13 @@ The new role appears in the role list. Select it to assign permissions, scope it
 
 ![The new role form with the Role Name, Description, and Target fields, with Target set to Access Policies.](/images/privilegesecure/26.07/admin/role-new-form.webp)
 
-The role list shows copy and delete icons beside the selected role. {/* TODO verify: that the copy and delete icons appear for custom roles, and what a copy carries over (permissions, scope, users) */}
+The role list shows copy and delete icons beside each role. They're enabled only for custom roles. The copy icon clones the role with its permissions, scope, and members.
 
 ## Assign permissions
 
 The **Permission Assignment** section is a two-column list. Permissions on the left aren't assigned to the role. Permissions on the right are. Select a permission and use the arrows to move it between the columns.
 
-{/* TODO verify: whether permission changes save when you move them or need a Save button */}
-
-{/* TODO verify: whether the permission names display with a prefix such as [AP] and [C] for every target, including Auditors (the Auditors names were seen without a prefix in the lab) */}
+Changes save as soon as you move a permission. There is no **Save** button.
 
 ### Access Policies permissions
 
@@ -50,12 +48,12 @@ Each permission lets a role member change one part of a policy.
 
 | Permission | Lets the member |
 |---|---|
-| **[AP] Modify Name** | Change the policy name |
-| **[AP] Modify Description** | Change the policy description |
-| **[AP] Modify Connection Profile** | Change the connection profile of the policy |
-| **[AP] Modify Activities** | Change the activities in the policy. Turns on the **Activities** tab. |
-| **[AP] Modify Users** | Change the users and groups in the policy. Turns on the **Users** tab. |
-| **[AP] Modify Resources** | Change the resources in the policy. Turns on the **Resources** tab. |
+| **Modify Name** | Change the policy name |
+| **Modify Description** | Change the policy description |
+| **Modify Connection Profile** | Change the connection profile of the policy |
+| **Modify Activities** | Change the activities in the policy. Turns on the **Activities** tab. |
+| **Modify Users** | Change the users and groups in the policy. Turns on the **Users** tab. |
+| **Modify Resources** | Change the resources in the policy. Turns on the **Resources** tab. |
 
 For how these permissions work in a policy, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
@@ -63,14 +61,14 @@ For how these permissions work in a policy, see [Access policies](/docs/privileg
 
 | Permission | Lets the member |
 |---|---|
-| **[C] Manage** | Put an account and its credentials under Privilege Secure control |
-| **[C] Unmanage** | Remove an account and its credentials from Privilege Secure control |
-| **[C] View Password** | See the credential |
-| **[C] Schedule Rotation** | Set when the credential rotates |
-| **[C] Verify** | Check that the stored credential still works |
-| **[C] Rotate Services** | Rotate the credential and update the Windows services and scheduled tasks that run as the account |
+| **Manage** | Put an account and its credentials under Privilege Secure control |
+| **Unmanage** | Remove an account and its credentials from Privilege Secure control |
+| **View Password** | See the credential |
+| **Schedule Rotation** | Rotate the credential from the **Credentials** page with **Rotate** |
+| **Verify** | Check that the stored credential still works |
+| **Rotate Services** | Open the **Account Dependencies** dialog of a service account, and rotate, roll back, or cancel a rotation there so the Windows services and scheduled tasks that run as the account receive the new password |
 
-{/* TODO verify: whether [C] Rotate Services also gates the plain Rotate button */}
+**Rotate Services** doesn't control the **Rotate** button on the **Credentials** page. That button needs **Schedule Rotation**.
 
 For the credential tasks themselves, see [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
 
@@ -95,7 +93,9 @@ A role member can use a permission only on the entities you add to the role.
 
 Select the **Policies** tab, then select **Add Policies** and choose the policies the role can change. The tab has **Search**, **Remove**, and **Refresh** buttons. The table shows **Name** and **Description**. Select a name to open the policy.
 
-The **Activities**, **Users**, and **Resources** tabs appear when you assign **[AP] Modify Activities**, **[AP] Modify Users**, or **[AP] Modify Resources**. Use them to limit which activities, users, and resources the member can change in those policies. {/* TODO verify: the exact add buttons and the All checkboxes on the Activities, Users, and Resources tabs of an Access Policies role */}
+The **Activities**, **Users**, and **Resources** tabs appear when you assign **Modify Activities**, **Modify Users**, or **Modify Resources**. Use them to limit which activities, users, and resources the member can change in those policies.
+
+On each tab, select **Add Users**, **Add Activities**, or **Add Resources** to open the **Add Users And Groups**, **Add Activities And Groups**, or **Add Resources And Groups** window. Or select **All Users**, **All Activities**, or **All Resources** to cover every entity of that type. While that checkbox is selected, the add and **Remove** buttons are disabled.
 
 ### Credentials role
 
@@ -108,7 +108,7 @@ An Auditors role has two scope tabs, **Users** and **Resources**. The tab descri
 - On **Users**, select **Add Users** to choose the users whose sessions the auditor can see, or select the **All Users** checkbox.
 - On **Resources**, select **Add Resources** to choose the resources, or groups of resources, whose sessions the auditor can see, or select the **All Resources** checkbox. The table shows **Type**, **Name**, and **Operating System**.
 
-{/* TODO verify: how the Users and Resources tabs combine, for example whether a session must match both */}
+A session is in scope only when both its user and its resource are covered, either by an entry you added or by the **All Users** or **All Resources** checkbox. For example, a role with one user added and **All Resources** selected covers every session of that user, on any resource. When a member holds more than one Auditors role, the scopes add together. Members always see their own sessions.
 
 ## Add users to the role
 
@@ -122,7 +122,7 @@ The toolbar has **Search**, a **Type** filter, **Remove**, and **Refresh**. **Ty
 
 To remove a person from the role, select the row and select **Remove**.
 
-You can also assign a custom role from a user's details page. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md). {/* TODO verify: that custom roles appear in the Add Roles dialog on a user's page. The lab showed only Administrator, Auditors, and Reviewer with no custom roles defined. */}
+You can also assign a custom role from a user's details page. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 
 ## Example: an audit team for one business unit
 

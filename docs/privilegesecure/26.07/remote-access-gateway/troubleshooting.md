@@ -70,7 +70,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 **Fix:** Enter the correct password, or fix the login account. The prompt takes only a password, so you can't enter a different username at connect time.
 
-{/* TODO verify: the supported guidance for a Requester login account with a local Privilege Secure user. The lab confirmed the error but not which cause applied. */}
+{/* TODO verify: whether Privilege Secure supports a Requester login account for a local Privilege Secure user on a domain-joined target. */}
 
 ## The portal refuses to connect while the service is running
 
@@ -110,12 +110,10 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 
 **Cause:** One of these causes applies:
 
-- The **RDP Proxy Host** or **SSH Proxy Host** on the connection profile of the access policy can't be reached from guacd, or is set to `localhost`. From inside the guacd container, `localhost` is the container, not the Privilege Secure server.
+- The **RDP Proxy (host:port)** or **SSH Proxy (host:port)** value on the connection profile of the access policy can't be reached from guacd, or is set to `localhost`. From inside the guacd container, `localhost` is the container, not the Privilege Secure server.
 - The one-time token for the session expired or was revoked.
 
 **Fix:** Set the proxy host to an address that guacd can reach, and then start the session again from the dashboard.
-
-{/* TODO verify: the connection profile field names and the cause and fix on 26.07.3. */}
 
 ## The gateway reports a certificate thumbprint mismatch
 
@@ -136,21 +134,17 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 1. On the gateway server, run `wsl -l -v`. If the distribution shows **Stopped**, start it.
 2. Run `Test-NetConnection <guacd-host> -Port 4822` and confirm that `TcpTestSucceeded` is `True`.
 
-If the address of the WSL instance changed, run `Configure-Gateway.ps1` again with the new `-NPSGuacdHost` value.
+If the address of the WSL instance changed, run `wsl hostname -I` to get the current address. Then run `Configure-Gateway.ps1` again with that address as the `-NPSGuacdHost` value.
 
 If WSL doesn't start by itself, see [Start WSL automatically](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#start-wsl-automatically).
 
-{/* TODO verify: the supported way to keep WSL running after a restart. SME review is pending. */}
-{/* TODO verify: that the WSL address can change after a restart. The lab address stayed the same after one restart. */}
 
 ## Colors look wrong in an RDP session
 
 **Symptom:** Colors in an RDP session look wrong, such as red and blue swapped.
 
-**Cause:** A guacd version that doesn't match the portal can cause this. Release 26.07.3 requires guacd 1.6.0.
+**Cause:** A guacd version that doesn't match the portal can cause this. Release 26.07.3 requires guacd 1.6.0. For RDP sessions, the portal swaps the red and blue channels in the browser to match how guacd 1.6.0 draws them.
 
 **Fix:** In WSL, run `docker ps` and confirm that the guacd image is exactly `guacamole/guacd:1.6.0`. If it isn't, upgrade guacd. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/install/upgrade.md#match-the-guacd-version).
 
-{/* TODO verify: PSAM-1442. Colors looked correct in the lab on 26.07.3 with guacd 1.6.0, but the fix is awaiting verification. Don't call it fixed until the SME confirms. */}
-{/* TODO verify: keyboard known issues (numeric keypad, AltGr, special characters) after SME review. */}
-{/* TODO verify: whether the pointer artifacts on guacd 1.6.0 remain in 26.07.3. */}
+{/* TODO verify: keyboard behavior (numeric keypad, AltGr, special characters) and mouse pointer artifacts with guacd 1.6.0. The portal uses the standard Guacamole keyboard and mouse handlers, so the behavior depends on guacd and the browser and needs a test session. */}

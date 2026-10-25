@@ -34,9 +34,9 @@ The page lists logs for these services:
 | Installer and maintenance | `PAM-InstallCmd`, `PAM-RotateKey`, `PAM-DbUpdater` |
 | PostgreSQL upgrade | `NPS-PGUpgrade`, `NPS-PGUpgradeErr` |
 
-Services keep a limited number of files. By default, a service starts a new file each day and keeps 10 files of up to 100 MB each.
+Services keep a limited number of files. By default, the Web, Action, Host Scan, Email, Scheduler, SIEM, and Proxy services start a new file each day, keep 10 files, and start another file when one reaches 100 MB. The **Options** window shows and changes the file count and size limit that a service uses. The Proxy service also deletes log files older than 30 days.
 
-{/* TODO verify: the daily rolling, 10-file, and 100 MB defaults for every service, and whether the Options page shows the same values */}
+The SSH client service starts a new file when one reaches 100 MB, keeps 10 files, and deletes files older than 30 days. It doesn't start a new file each day. The License service follows the same default as the first group: a new file each day, 10 files, and 100 MB per file.
 
 ### Remote Access Gateway hosts
 
@@ -46,7 +46,7 @@ The Remote Access Gateway and Portal write to the same folder on their own hosts
 - `PAM-RagPortal<yyyymmdd>.log` on the portal server.
 - `nginx-access.log` on the portal server.
 
-{/* TODO verify: whether the console lists logs from the RAG hosts */}
+The **Log Files** page lists only the logs on the Privilege Secure server that serves the console. To read the Remote Access Gateway and portal logs, open them on those hosts.
 
 ## Read a log
 
@@ -54,16 +54,14 @@ The Remote Access Gateway and Portal write to the same folder on their own hosts
 2. Enter text in **Search Log Files...** to filter the list on the left.
 3. Select a log file.
 
-For example, to find failed password updates, select the Action Service log and set **Log Level** to a warning or error level.
-
-{/* TODO verify: the Log Level filter values and that failed password updates are written to the Action Service log */}
+For example, to find problems in a service, select its log and set **Log Level** to **Warn** or **Error**.
 
 The right pane shows the log lines in four columns: **LINE**, **DATETIME**, **STATUS**, and **MESSAGE**. It has these controls:
 
 | Control | Description |
 |---|---|
 | **Search** | Searches the log. |
-| **Log Level** | Filters lines by level. |
+| **Log Level** | Filters lines by level. The values are **Debug**, **Info**, **Warn**, and **Error**. The default is **Debug**. |
 | **Requested date** | Filters lines by date. |
 | **Export as CSV** | Saves the displayed log as a CSV file. |
 | **Refresh** | Reloads the log. |
@@ -74,23 +72,27 @@ The pane also shows the number of lines.
 
 Click **Download Logs** above the log list to download the logs, for example to send them to support.
 
-{/* TODO verify: what Download Logs downloads (all logs or the selected log, and the file format) */}
+1. In the **Download Logs** window, set **Start Date** and **End Date**. The start date can't be in the future or after the end date.
+2. Click **Download**.
+
+The download is a ZIP file named `nps-logs.zip`. It contains every log file in the log folder of the server that runs the console whose dates fall in the range, not only the selected log.
 
 ## Change the log level
 
-The log level controls how much detail a service writes. Set a more detailed level, such as Debug, only when support asks. {/* TODO verify: whether detailed levels expose sensitive data in every service log (the source states this for the Remote Access Gateway) */}
+The log level controls how much detail a service writes. Set a more detailed level, such as Debug, only when support asks.
 
-1. Click **Options** (the gear icon) above the log list.
-2. Select a service.
+{/* TODO verify: whether Verbose and Debug write sensitive data to the logs of services other than the Remote Access Gateway. The release source states this only for the gateway, and no code or public source settles the others. */}
+
+1. Select a log file.
+2. Click **Options** (the gear icon) above the log list. The **\<Service\> Options** window opens for the service that wrote that log.
 3. Click a field to edit it.
-4. Set **Minimum Log Level**, **Retained File Count Limit**, or **File Size Limit Bytes**.
+4. Set **Minimum Log Level**, **Retained File Count Limit** (1 to 40), or **File Size Limit Bytes** (1 to 250,000,000).
 5. Click **Save**. Click **Cancel** to discard your changes.
 
 For example, when support asks for detailed logs, select the Action Service and set **Minimum Log Level** to **Debug**. After you collect the logs, set it back to **Information**.
 
 | Setting | Description |
 |---|---|
-| **Name** | The short name of the service. |
 | **Minimum Log Level** | The lowest level the service logs. See the following levels. |
 | **Retained File Count Limit** | The number of log files to keep before the oldest are deleted. |
 | **File Size Limit Bytes** | The maximum size of one log file, in bytes. |
@@ -104,8 +106,8 @@ The levels, from most to least detailed, are:
 - **Error**: An unrecoverable condition that may indicate data loss.
 - **Fatal**: An error that caused the service to stop.
 
-The Options page lists the Action, Email, Proxy, Scheduler, SIEM, and Web services, and the Host Scan service.
+The Proxy service offers **Debug**, **Information**, **Warning**, **Error**, **Panic**, and **Fatal**. It has no **Verbose** level.
 
-{/* TODO verify: the services listed in the Options dialog, including Host Scan (the lab didn't open the Options dialog) */}
+**Options** is available when the selected log belongs to the Action, Email, Proxy, Scheduler, SIEM, Web, or Host Scan service. It isn't shown for License service logs, for logs that match none of these services, or to users who aren't Administrators, including Admin View Read Only users.
 
 For help with a specific problem, see [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md).

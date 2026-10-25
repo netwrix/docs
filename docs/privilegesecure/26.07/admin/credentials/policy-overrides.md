@@ -57,13 +57,11 @@ For example, create an override named `<hourly-rotation>` with the **Scheduled C
 
 For example, add `<domain>\<privileged-account>` to the `<hourly-rotation>` override.
 
-Only credentials with the method **Automatic** appear in the list. {/* TODO verify: the 26.03 text says only one account can be added at a time. Confirm this in 26.07. */}
+Only credentials with the method **Automatic** appear in the list. You can select several accounts and add them in one step.
 
-The override table has **Search**, **Add Credentials**, **Remove**, and **Refresh**. Select a row and click **Remove** to take a credential out of the override. It then uses the schedules from its platform again.
+The override table has **Search**, **Add Credentials**, **Remove**, and **Refresh**. Select a row and click **Remove** to take a credential out of the override. It then uses the rotation and verification schedules from its platform again. If the platform has no schedule for rotation or verification, that job is disabled for the account.
 
-{/* TODO verify: that Remove returns the credential to its platform schedules. */}
-
-{/* TODO verify: the override detail tabs and table columns. The lab had no overrides, so the table wasn't seen. The 26.03 page lists Account, Resource, Password Changed, Age, Status, Last Checked, and Next Change. */}
+The override table shows **Account**, **Resource**, **Password Changed**, **Age**, **Status**, **Last Checked**, and **Next Change** for each credential.
 
 ## Related topics
 

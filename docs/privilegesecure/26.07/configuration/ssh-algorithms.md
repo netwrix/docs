@@ -21,23 +21,16 @@ The default file locations are:
 
 | File | Default location |
 |---|---|
-| `sbpam_sshclient.json` (Action Service) | `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\sbpam_sshclient.json` |
-| `sbpam_sshclient.json` (Host Scan Service) | `C:\Program Files\Stealthbits\PAM\HostScanService\sbpam_sshclient.json` |
+| `sbpam_sshclient.json` (Action Service and Host Scan Service) | `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\sbpam_sshclient.json` |
 | `sbpam_ssh.json` | `C:\ProgramData\Stealthbits\PAM\ProxyService\sbpam_ssh.json` |
 
-{/* TODO verify: the Host Scan Service copy of sbpam_sshclient.json and its path */}
-
-{/* TODO verify: confirm both file locations on a 26.07.3 install. The paths come from the 26.03 page and the 26.07.3 installer sources. */}
+Host scans run the shared `ActionServiceWorker`, so they read the same file as the Action Service. Editing a copy in the `HostScanService` folder has no effect.
 
 Edit each copy of each file on every server that runs the component. That includes remote servers that run an Action Service, a Host Scan Service, or a Proxy Service. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md) and [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
 
 From 26.07.3, the PowerShell SSH actions use the native Privilege Secure SSH client, so they also read `sbpam_sshclient.json`.
 
-{/* TODO verify: the native SSH client for PowerShell SSH cmdlets (26.07.3) and that it reads sbpam_sshclient.json */}
-
-The proxy requires TLS 1.2 or later and prefers TLS 1.3.
-
-{/* TODO verify: where the proxy minimum TLS version is set, and the restricted SSH MACs added in 26.03.0 */}
+The proxy requires TLS 1.2 or later and prefers TLS 1.3. `sbpam_ssh.json` doesn't set the TLS versions.
 
 ## Default algorithms
 
@@ -52,17 +45,15 @@ The following defaults come from the 26.07.3 files. The settings for connections
 
 For connections from users' SSH clients to the proxy, `ServerSettings` in `sbpam_ssh.json` sets `MACs` to the same list as above. Its `KeyExchanges` and `Ciphers` lists are empty by default.
 
-{/* TODO verify: confirm what an empty ServerSettings KeyExchanges or Ciphers list offers to users' SSH clients. */}
+An empty list makes the proxy use the default set of the SSH library that it is built with, so users' SSH clients can negotiate any algorithm in that set. To limit what users' clients can use, enter an explicit list.
 
 The defaults include algorithms that are obsolete, such as `ssh-dss`, `3des-cbc`, `hmac-sha1`, and the SHA-1 Diffie-Hellman groups. They remain enabled because older devices need them. Remove the ones that your devices don't need.
 
 :::note
 An upgrade doesn't replace an existing `sbpam_ssh.json`. A server upgraded from an earlier release keeps the algorithm lists that were in its file before the upgrade, and these can differ from the defaults above. Compare the file on the server with the defaults before you edit it.
 
-An upgrade can replace `sbpam_sshclient.json`. Keep a copy of your edits and compare the file after each upgrade. If you edit only one of the two files, the connections that use the other file keep the old lists.
+An upgrade replaces `sbpam_sshclient.json`. Keep a copy of your edits and compare the file after each upgrade. If you edit only one of the two files, the connections that use the other file keep the old lists.
 :::
-
-{/* TODO verify: confirm that an upgrade replaces sbpam_sshclient.json. The installer marks sbpam_ssh.json as never overwritten, but doesn't mark sbpam_sshclient.json. */}
 
 ## Change the algorithms
 
@@ -81,7 +72,7 @@ The `sbpam_ssh.json` file that the installer creates lists `KeyExchanges`, `Ciph
 
 If `sbpam_sshclient.json` is missing or can't be read, the SSH client uses its built-in defaults. Check the file syntax if your changes have no effect.
 
-{/* TODO verify: confirm whether the Action Service, Host Scan Service, and Proxy Service must restart for a change to take effect. */}
+The Action Service and Host Scan Service start a new SSH client process for each command plan, and each process reads `sbpam_sshclient.json` when it starts, so a change to that file needs no service restart. The Proxy Service reloads `sbpam_ssh.json` when the file changes. New sessions use the saved algorithms without a service restart. Sessions that are already open keep the algorithms they negotiated.
 
 ### Example: remove the legacy ciphers
 
@@ -114,8 +105,6 @@ In `sbpam_ssh.json`, the same list goes inside an `Algorithms` object under `Cli
   }
 }
 ```
-
-{/* TODO verify: a decoding test with the proxy's configuration library ignored the flat lists and read the nested Algorithms object. Confirm on a 26.07.3 server that a change under Algorithms takes effect. */}
 
 ## Connect to older devices
 

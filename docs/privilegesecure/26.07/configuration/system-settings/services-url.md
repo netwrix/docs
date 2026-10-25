@@ -24,15 +24,13 @@ Change the address when you install a certificate for the console website, or wh
 1. Click **Save**.
 1. Click **Register Services**.
 
-The page shows a "Services registered" message when the settings are applied.
+When registration finishes, a short "Services registered" notification appears. If a service can't be registered, the notification reads "Failed to register".
 
 {/* TODO screenshot: System Settings Services panel with the URL redacted */}
 
 :::warning
 Don't end the URL with a slash. Before Privilege Secure 26.07.3, a URL such as `https://<nps-server-fqdn>:6500/` made **Register Services** report success while every service then returned HTTP 500. From 26.07.3, the product removes the trailing slash. Enter the URL without one in every version.
 :::
-
-{/* TODO verify: the "Services registered" message in 26.07.3; the lab run of Register Services showed no visible message */}
 
 ## Fields
 
@@ -48,13 +46,11 @@ Register Services writes the URL to the Action, Email, Proxy, Scheduler, SIEM, a
 
 A second **Register Services** button is under **User Options** > **Settings**. It shows the text "Re-register services that are running on the Netwrix Privilege Secure Web Service server. Doing this will regenerate the settings and restart the services." Use it when the services are running but the console still warns that a service isn't registered.
 
-{/* TODO verify: User Options > Settings is shown for domain administrators (the console code shows the Settings item for local users) */}
+The **Settings** item is shown to users who have the Administrator role in Privilege Secure and to local users. Other users don't see it.
 
 ## Check that the services are running
 
-After you register the services, select **Configuration** > **Service Nodes** and confirm each service shows as online. Register Services might not restart the Host Scan service. If Host Scan stays offline, restart the Host Scan service in Windows Services on the server.
-
-{/* TODO verify: whether Register Services restarts the Host Scan service when it is running; seen once with Host Scan already offline */}
+After you register the services, select **Configuration** > **Service Nodes** and confirm each service shows as online. Register Services stops and starts each service that runs on the web service server, including the Host Scan service, and waits up to 60 seconds for each change. If a service doesn't stop or start in that time, the console doesn't show an error. If Host Scan stays offline, restart the Host Scan service in Windows Services on the server.
 
 ## Related topics
 

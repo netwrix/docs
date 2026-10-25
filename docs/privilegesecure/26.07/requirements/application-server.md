@@ -11,7 +11,6 @@ The application server is the Windows server where you install Netwrix Privilege
 ## Server requirements
 
 - Windows Server 2016 through Windows Server 2025
-  {/* TODO verify: confirm the supported Windows Server range for 26.07 now that the product uses .NET 10 and PowerShell 7.6. The installer only checks for the Universal C Runtime or an OS newer than Windows Server 2012 R2. */}
 - American English language installation
 - 2.0 GHz or faster dual-core 64-bit (x64) processor
 - Domain-integrated DNS that resolves all managed components forward and in reverse
@@ -31,8 +30,6 @@ Install the following software on the application server before you run `NPS.exe
 | PowerShell | PowerShell 7.6 or later. The `NPS.exe` installer enforces this requirement from 26.07.0. |
 | .NET Framework | 4.7.2. The `Pre-Reqs` folder of the product zip file includes the installer. |
 
-{/* TODO verify: that the 26.07.3 zip has a Pre-Reqs folder with the .NET Framework 4.7.2 installer. */}
-
 Download PowerShell from [aka.ms/powershell](https://aka.ms/powershell).
 
 :::warning
@@ -41,9 +38,9 @@ The Setup Launcher doesn't warn you if PowerShell 7.6 or later is missing. Its *
 
 If PowerShell 7.6 or later isn't installed, `NPS.exe` stops with the message "PowerShell 7.6 or later is required. Please install it from https://aka.ms/powershell".
 
-The check finds PowerShell through the `App Paths\pwsh.exe` registry key. An installation that doesn't register that key can fail the check even when PowerShell is present. Install PowerShell from the MSI package.
+The check finds PowerShell through the `App Paths\pwsh.exe` registry key. An installation that doesn't register that key can fail the check even when PowerShell is present. Install PowerShell from the MSI package. The PowerShell 7.6 MSI registers `App Paths\pwsh.exe`, and the ZIP package has no installer to register it.
 
-{/* TODO verify: the message and the PowerShell 7.6 version floor are confirmed in the installer source for v26.07.0 through v26.07.3. The on-screen behavior when pwsh.exe is missing isn't tested; run it on a clean VM. Also confirm that the MSI package registers the App Paths key and that ZIP and MSIX installations don't. Also flag the KB article exporting-the-activity-log-as-a-csv, which says not to install PowerShell 7.2 or later; PowerShell 7.x upgrades in place, so it needs a 26.07 caveat. */}
+{/* TODO verify: whether an MSIX installation registers the App Paths key. Also flag the KB article exporting-the-activity-log-as-a-csv, which conflicts with the PowerShell 7.6 floor and needs a 26.07 caveat. */}
 
 ## Software that the installer adds
 
@@ -52,10 +49,8 @@ The check finds PowerShell through the `App Paths\pwsh.exe` registry key. An ins
 | Software | Version |
 | -------- | ------- |
 | .NET 10 Hosting Bundle | Included in the installer (10.0.10) |
-| Microsoft Visual C++ runtime | 14.5 |
+| Microsoft Visual C++ runtime | 14.51 (14.51.36247.0) |
 | Internet Information Services (IIS) | Features that the installer's IIS package (`NPS.IIS.msi`) enables |
-
-{/* TODO verify: confirm the exact Visual C++ runtime version that the 26.07 installer ships. The release notes say 14.5, which may mean 14.50. */}
 
 ## Sizing
 
@@ -81,7 +76,7 @@ To synchronize Active Directory for vault connectors, use an account with Domain
 ## Virtual environments
 
 Netwrix prefers physical machines but supports virtual machines. For VMware, install all virtual machines in the same datacenter or rack. When the server requirements specify separate disks, configure separate data stores on the VM host.
-{/* TODO verify: the 26.03 page listed ESX 4.0 / ESXi 4.1 and virtual hardware 7 as the minimum. Replace with the current supported VMware versions. */}
+{/* TODO verify: the VMware versions that Netwrix supports. The release code doesn't define a VMware support range, and the 26.03 page listed ESX 4.0 and ESXi 4.1, which VMware no longer supports. */}
 
 ## Next steps
 

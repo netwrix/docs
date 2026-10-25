@@ -8,7 +8,7 @@ sidebar_position: 60
 
 A command restriction is a named set of rules. When a user enters a command that matches a rule, the console takes the action that you chose for that rule. You apply a command restriction to a connection profile.
 
-{/* TODO verify: protocol scope. The 26.07.3 design describes command restrictions for SSH sessions. Confirm whether RDP or other sessions are affected. */}
+Command restrictions apply to SSH sessions that go through the Privilege Secure proxy. They don't apply to RDP or website sessions.
 
 :::note
 If the **Command Restriction** page or list doesn't appear, contact Netwrix support.
@@ -34,7 +34,9 @@ This restriction blocks a command and sends an email:
 - **Email Recipient**: the address of a security mailbox
 - Rule: **Active** selected, **Match (regex)** set to `shutdown`, **Action to Perform** set to **Block**, and **Email** selected
 
-{/* TODO verify: how Match (regex) compares a command to the value. The console labels the field Match (regex), but the 26.07.3 code stores a keyword match type. Confirm with an SSH test before describing wildcards or regular-expression syntax. */}
+**Match (regex)** takes a regular expression in Go (RE2) syntax. The proxy tests the command line that the user typed when the user presses Enter. The expression matches if it matches any part of the line, so `shutdown` matches `sudo shutdown -h now`. To match the whole line, anchor the expression with `^` and `$`. If more than one rule matches, only the first match that the proxy finds applies, and that isn't necessarily the first matching rule in the console list. Avoid rules whose expressions overlap.
+
+The proxy skips a rule whose expression isn't valid.
 
 ## Command restriction fields
 
@@ -57,7 +59,7 @@ This restriction blocks a command and sends an email:
 | **Block And Lock** | The console doesn't run the command and locks the session. The user sees the custom lock message. |
 | **Terminate** | The console ends the session. |
 
-{/* TODO verify: the default text of Custom Lock Message. The UI notes list "Locked by NPS Command Restrictions Rule" as a default; the lab form didn't show whether the field is prefilled. */}
+The **Custom Lock Message** field is empty and shows `Locked by NPS Command Restrictions Rule` as placeholder text. If you leave it empty, the user sees that text.
 
 ## Apply a command restriction
 

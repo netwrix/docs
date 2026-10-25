@@ -18,11 +18,11 @@ The header shows the display name, the sign-in name in `DOMAIN\sam` form, and th
 
 | Button | What it does | Shown for |
 |---|---|---|
-| **Lock Account** | Blocks the account from signing in and creating sessions. See [Sign-in lockout and unlocking](#sign-in-lockout-and-unlocking). | Users |
-| **Reset MFA** | Forces the user to register a new authenticator at the next sign-in. See [Reset a user's MFA](#reset-a-users-mfa). | Users |
+| **Lock Account** | Blocks the account from signing in and creating sessions. See [Sign-in lockout and unlocking](#sign-in-lockout-and-unlocking). | Domain, local, and application users |
+| **Reset MFA** | Forces the user to register a new authenticator at the next sign-in. See [Reset a user's MFA](#reset-a-users-mfa). | Domain and local users that use Internal MFA |
 | **Reset Password** | Sets a new password for the account. | Local users only |
 
-{/* TODO verify: the Reset MFA and Lock Account buttons on a group's details page; the lab tour recorded the buttons for a domain user and a local user only. */}
+A group's details page doesn't show **Lock Account** or **Reset MFA**.
 
 ## Tabs
 
@@ -33,9 +33,7 @@ The tabs depend on the type of account.
 | Domain user | **Sessions**, **Policies**, **Local Rights**, **History**, **Authentication Connector**, **User Roles** |
 | Local user | **Sessions**, **Policies**, **History**, **Authentication Connector**, **Properties**, **User Roles** |
 | Group | **Sessions**, **Members**, **Policies**, **History**, **Authentication Connector**, **Group Roles** |
-| Application user | See [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md). |
-
-{/* TODO verify: the tabs on an application user's details page. The lab had no application user, so only the creation form was seen. */}
+| Application user | **Sessions**, **Policies**, **History**, **Authentication**, **Properties** |
 
 Every list on the tabs has a search box and can be resized and sorted by column.
 
@@ -59,9 +57,7 @@ Select a session and click **End Session** to cancel it, or **View Logs** to ope
 
 The **Policies** tab lists the access policies that include the account. The columns are **NAME**, **ACTIVITY**, and **LAST SESSION**. **LAST SESSION** shows `<never>` when the account hasn't used the policy and activity.
 
-Click **Add** to open a window that lists the existing access policies. Move one or more policies from **Available Policies** to **Policies to Add**, then confirm. Select a policy and click **Remove** to take the account out of it.
-
-{/* TODO verify: the exact button label and title of the Add Account to Policies window in 26.07. The lab tour cancelled the dialog without recording its title. */}
+Click **Add** to open the **Add Account to Policies** window. Move one or more policies from **Available Policies** to **Policies to Add**, then click **Okay**. Select a policy and click **Remove** to take the account out of it.
 
 To create or change policies, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
@@ -81,19 +77,17 @@ Check this tab first when a user reports that they can't sign in.
 
 ### Authentication Connector
 
-The **Authentication Connector** tab sets how the account proves its identity at sign-in. It lists three choices, with a check mark on the active one.
+The **Authentication Connector** tab sets how the account proves its identity at sign-in. It lists **Internal MFA**, then the built-in **Not Required** option and every connector in alphabetical order, with a check mark on the active one. The built-in Duo entry and any RADIUS, OpenID Connect, or SAML connectors that an administrator adds also appear.
 
 | Choice | Behavior |
 |---|---|
 | **Internal MFA** | The user registers an authenticator app and enters a one-time code at sign-in. |
-| **Duo** | The user signs in through the Duo connector. |
+| A connector you added | The user signs in through that connector, for example Duo. |
 | **Not Required** | The user signs in with a user name and password only. |
 
 :::warning
 **Not Required** removes the second factor for the account. Use it only for users who already pass MFA before they reach the console, such as users on a protected VPN.
 :::
-
-{/* TODO verify: whether SAML, OpenID Connect, and RADIUS connectors that an administrator adds appear in this list next to Duo. The lab had only the Duo connector configured. */}
 
 When a user belongs to groups that use different connectors, a precedence order decides which connector applies. See [Authentication](/docs/privilegesecure/26.07/configuration/authentication/overview.md).
 
@@ -109,9 +103,7 @@ Click **Add** to open the **Add Roles** window, or select a role and click **Rem
 
 ## Reset a user's MFA
 
-Reset MFA when a user loses their authenticator device. The button is hidden when the user's connector is **Not Required**.
-
-{/* TODO verify: Reset MFA visibility for Duo */}
+Reset MFA when a user loses their authenticator device. The **Reset MFA** button appears only when the account uses **Internal MFA**. It is hidden when the account uses any other connector, such as Duo, or **Not Required**.
 
 1. In the left navigation, click **Users & Groups**.
 2. Click the name of the user to open the details page.
@@ -124,7 +116,7 @@ The user registers a new authenticator the next time they sign in.
 
 A user replaces their phone and can't produce a one-time code. An administrator opens the user's details page, clicks **Reset MFA**, and confirms. At the next sign-in, the user scans the new QR code with the authenticator app on the new phone.
 
-{/* TODO verify: the sign-in prompt the user sees after a reset (QR code registration, recovery codes). */}
+After the user enters the password, the **Register Authenticator** page shows the QR code and the shared key. The user adds the key to the authenticator app, enters the code it shows in **Verification Code**, and continues. The page then shows recovery codes.
 
 ## Sign-in lockout and unlocking
 
@@ -141,19 +133,19 @@ From version 26.07.3, Privilege Secure refuses sign-in for a locked account. A l
 
 ### Failed-sign-in lockout rules
 
-After 5 failed sign-in attempts in a row, the account is locked out for 5 minutes. The lockout time is the same each time. A successful sign-in resets the count of failed attempts. You can't change the number of attempts or the lockout time.
+After 5 failed sign-in attempts in a row, the account is locked out for 5 minutes. The lockout time is the same each time. A successful sign-in resets the count of failed attempts. While the lockout lasts, the sign-in is refused even with the correct password. You can't change the number of attempts or the lockout time.
 
-{/* TODO verify: 5 attempts and a flat 5-minute lockout. These values come from the default behavior of the sign-in framework, because the product sets no lockout option, and they aren't lab-confirmed. Fail five sign-ins, time the lockout, repeat to check that the second lockout isn't longer, and check that a correct password during the lockout is still refused. */}
+Privilege Secure counts the failed attempts itself, so the lockout applies to domain users and to local users alike.
 
-{/* TODO verify: whether the lockout applies to domain users or only to local users, and to the built-in administrator account. */}
+The lockout applies to every account, including the administrator created during setup.
 
 ### Unlock an account
 
 1. In the left navigation, click **Users & Groups**.
 2. Click the name of the locked user to open the details page.
-3. Click the unlock button in the header. It replaces **Lock Account** while the account is locked.
+3. Click **Unlock Account** in the header. It replaces **Lock Account** while the account is locked.
 
-{/* TODO verify: the label of the unlock button and the way the lock state shows on the details page. No locked account was available in the lab tour. */}
+**Unlock Account** clears both blocks: an administrator lock and a failed-sign-in lockout.
 
 To clear a failed-sign-in lockout without an administrator, the user waits for the lockout time to pass.
 
@@ -165,7 +157,9 @@ A user mistypes a password five times. The **LOCKED** column shows the account a
 
 If the only administrator is locked out, no one can unlock the account from the console. Keep at least two accounts in the Administrator role, and keep one of them as a local account that uses a different sign-in path from your domain. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 
-{/* TODO verify: that a local administrator account stays usable while domain sign-in is unavailable, and the supported recovery steps when every administrator is locked out. */}
+Local users and the built-in administrator account check their passwords in Privilege Secure, so they stay usable when domain sign-in is unavailable. Domain users are checked against the domain.
+
+{/* TODO verify: the supported recovery steps when every administrator is locked out. The console has no path for it, and the code and public sources don't describe a supported procedure. */}
 
 ### Locked accounts in Active Directory
 

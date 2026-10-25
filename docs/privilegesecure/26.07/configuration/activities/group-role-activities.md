@@ -40,7 +40,13 @@ After you add this action, the **Platform** field is disabled because group and 
 
 The new action is named Add User to Groups/Roles by default. This is the default action name, not a separate action type.
 
-{/* TODO verify: which service account Privilege Secure uses to change membership on each platform. */}
+Privilege Secure changes the membership with a service account that depends on the platform:
+
+| Platform | Account that changes the membership |
+|---|---|
+| Active Directory | The service account of the domain that holds the group. |
+| Microsoft Entra ID | The service account of the Entra ID tenant that holds the group. |
+| SQL Server and Oracle | The service account of the database server that holds the role. |
 
 {/* TODO screenshot: the Add Groups/Roles dialog with the Platform list open and several groups and roles selected */}
 
@@ -63,4 +69,4 @@ The session length follows the **Max Duration** setting of the connection profil
 
 An activity runs only when an access policy includes it. Add the activity, or an activity group that contains it, to the **Activities** tab of an access policy that includes the users. See [Create a resource-based access policy](../access-policies/resource-based-policy.md).
 
-{/* TODO verify: confirm whether a resource-based policy needs a resource entry for an activity that doesn't use one, and whether a credential-based policy can include these activities. */}
+A resource-based policy doesn't need a resource for these activities. The request skips the resource requirement, and the dashboard card reads "No resources required". Add these activities to a resource-based policy. The console doesn't offer **Add** on the **Activities** tab of a credential-based policy.

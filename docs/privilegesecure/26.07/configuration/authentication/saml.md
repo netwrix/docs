@@ -12,9 +12,7 @@ This page covers the connector fields, the values to register at the IdP, and th
 
 ## Prerequisites
 
-- You have the Administrator role.
-
-{/* TODO verify: the role that can open Configuration > Authentication */}
+- You have the Administrator role. Only administrators can manage authentication connectors.
 
 - You can create an application (a relying party) at the SAML IdP.
 - The console is reachable at `https://<nps-server>:6500`, and its web certificate is trusted by the browsers that sign in. See [Certificates](/docs/privilegesecure/26.07/configuration/certificates.md) and [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
@@ -38,7 +36,7 @@ Click **Manually Enter Data** to show the fields. The button changes to **Hide D
 | Field | Description |
 | --- | --- |
 | **Login URI**\* | The sign-in address of the SAML IdP. An incorrect value generally returns a 404 error. |
-| **Name ID Policy**\* | The name identifier format that Privilege Secure requests: **Transient Identifier** or **Unspecified**. The list has no default. |
+| **Name ID Policy**\* | The name identifier format that Privilege Secure requests: **Transient Identifier** or **Unspecified**. If you leave it empty, Privilege Secure requests **Transient Identifier**. |
 | **Login Format**\* | The Active Directory attribute that identifies the user: **sAMAccountName** (default), **User Principal Name**, **Email Address**, or **SID**. |
 | **User Claim**\* | The claim in the IdP response that identifies the user. |
 | **Check Certificate** | Select to have Privilege Secure validate the signature on the IdP response. |
@@ -48,9 +46,7 @@ Click **Manually Enter Data** to show the fields. The button changes to **Hide D
 
 An asterisk marks a required field.
 
-{/* TODO verify: how User Claim and Login Format work together. */}
-
-{/* TODO verify: Name ID Policy has no default in the 26.07.3 lab form, but SamlHelper.cs falls back to Transient Identifier when the value is empty. Confirm the fallback with the SME before stating it. */}
+**User Claim** and **Login Format** work together to find the user. Privilege Secure reads the value from the IdP response and looks for a user whose **Login Format** attribute equals that value, ignoring case. For **User Claim**, enter `Subject:NameID` to use the subject name identifier of the response. Enter any other name to use the claim with that name. If the response has no such claim, the sign-in fails.
 
 For **Logout URI**, use the simple sign-out address of the IdP that accepts a post-logout redirect parameter. Don't use a SAML single logout (SLO) endpoint. For Microsoft Entra ID, the address has this form:
 
@@ -64,16 +60,14 @@ For other IdPs, use the equivalent address from the IdP documentation, for examp
 
 Click **Configuration Wizard** to enter and test the settings step by step.
 
-{/* TODO verify: the 26.07.3 SAML Configuration Wizard wasn't opened in the lab. The pages below come from the 26.03 documentation and the web UI code. Walk the wizard (Configure Client, Test Login, Configure Id Mapping, Test Logout) and confirm the labels, the step order, and the Finish behavior before publishing. */}
+The wizard has four pages. **Next >** is enabled after the step is complete.
 
-The wizard has four pages:
+1. **Configure Client**. Enter the **Signin URI** of the IdP. The page also shows the **Callback Address** and **CORS** (Cross-Origin Resource Sharing) values to register at the IdP. Click **Test Connection** to open the IdP sign-in page. Don't sign in at this step.
+1. **Test Login**. Select the **Name ID Policy**. Optionally select **Check Certificate** and enter the **Certificate**. Click **Login**, and sign in with a valid IdP account.
+1. **Configure Id Mapping**. The wizard lists each **Field** that the IdP returned, with an **Example Value**. Select the row of the field that holds the user identifier, and click **Select**. Then select the **Login Format** that matches it in Active Directory.
+1. **Test Logout**. Enter the **Signout URI**, and click **Test Log Out**. When the sign-out returns to the wizard, click **Finish**.
 
-1. **Configure Client**. Enter the IdP sign-in address. The page also shows the **Callback Address** and **CORS** (Cross-Origin Resource Sharing) values to register at the IdP. Click **Test Connection** to open the IdP sign-in page, and don't sign in at this step.
-1. **Test Login**. Optionally select **Check Certificate** and enter the **Certificate**. Click **Login**, and sign in with a valid IdP account.
-1. **Configure Id Mapping**. The wizard shows the fields that the IdP returned and an example value for each. Select the field that holds the user identifier, then select the **Login Format** that matches it in Active Directory.
-1. **Test Logout**. Enter the **Signout URI**, and click **Test Log Out**. Click **Finish**.
-
-Click **Okay** to close the wizard, and click **Save** on the **Authentication** page.
+The wizard shows a summary of the SAML settings. Click **Okay** to close the wizard, and click **Save** on the **Authentication** page.
 
 ## Register Privilege Secure at the IdP
 
@@ -95,9 +89,9 @@ For step-by-step IdP recipes, see:
 
 Open a user on the **Users & Groups** page, select the **Authentication Connector** tab, and choose the SAML connector. Privilege Secure refuses an external sign-in when the user isn't assigned to the connector.
 
-{/* TODO verify: StrictExternalAuth (default true, config only) refuses external sign-in for unassigned users. Confirm the behavior and the user-facing message in the lab. */}
+The `StrictExternalAuth` setting controls this check. Its default is `true`, and Privilege Secure reads it from the web service configuration. The user is matched to the connector through the user's own assignment, or when the user has none, through the first group that has a connector. When the check fails, Privilege Secure refuses the sign-in.
 
-{/* TODO verify: the 26.07.3 Authentication page shows no Default or Exclusive controls. The code has IsDefault and IsExclusive flags and a ?adlogin=1 recovery parameter on the sign-in page. Find where an administrator sets them and how to recover from an exclusive connector, then document the steps. */}
+To make the SAML connector the default or the only sign-in method, or to show the password fields again with `?adlogin=1`, see [Default and exclusive connectors](/docs/privilegesecure/26.07/configuration/authentication/overview.md#default-and-exclusive-connectors).
 
 ## Use a connector with the Remote Access Gateway
 
@@ -110,12 +104,7 @@ Privilege Secure builds SAML requests from two template files in the `Web` folde
 - `SamlRequestTemplate.xml`
 - `SamlSignoutTemplate.xml`
 
-{/* TODO verify: install path of the SAML templates */}
-
-If you customized either file, back up both before you upgrade. Upgrades from 26.03.2 or later keep modified copies. Upgrades from earlier releases overwrote them, and single sign-on failed until the files were restored.
-
-{/* TODO verify: whether the upgrade from 26.03.2 itself keeps modified copies, or only upgrades after it */}
- See [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md).
+If you customized either file, back up both before you upgrade. Installations of 26.03.2 and later mark both files so that an upgrade keeps modified copies. Upgrades from earlier releases overwrote them, and single sign-on failed until the files were restored. See [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md).
 
 ## Troubleshoot a SAML sign-in
 

@@ -22,9 +22,7 @@ The page has three panes:
 1. The service list for the selected node, with **Search Services...**.
 1. The details of the selected service.
 
-On the main server, the node lists six services: Action, Email, Host Scan, Proxy, Scheduler, and security information and event management (SIEM). A node that runs only some services lists only those.
-
-{/* TODO verify: services listed for a proxy-only or additional-services node */}
+On the main server, the node lists six services: Action, Email, Host Scan, Proxy, Scheduler, and security information and event management (SIEM). A node lists only the services registered on that server. For example, a server that runs only the Proxy Service lists Proxy, and a server where you installed the Action Service lists Action and Proxy.
 
 ## Understand the status icons
 
@@ -36,7 +34,7 @@ Each node and each service has a status icon. Hover over an icon to see its stat
 | Amber | Partial | A node status. Some of the node's services are offline. |
 | Red | Offline | The service is offline. |
 
-{/* TODO verify: what the console checks for each status, and the tooltip text on a node with every service online */}
+The status of a node comes from the services registered under its name. The node is **Online** when every one of those services is online, **Offline** when none is, and **Partial** when some are online and some aren't. A service is online while it keeps its connection to the console open. The tooltip on the icon shows the status name: Online, Partial, or Offline. The console refreshes the statuses every 15 seconds.
 
 ### Fix a Host Scan service that shows Offline
 
@@ -45,13 +43,13 @@ A red Host Scan service reflects the service's heartbeat to the web service. It 
 1. On the service node, open the Host Scan log from the **Log Files** page. See [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md). The file is `PAM-HostScanService<yyyymmdd>.log`.
 1. Look for repeated lines that start with "Heartbeat unable to connect". They show that the heartbeat fails.
 1. Search all `PAM-HostScanService*.log` files for `RemoteCertificate`. The repeated warning hides the inner exception, which is logged only occasionally. A certificate name mismatch on the console port means the certificate doesn't cover the name the heartbeat uses.
-1. On the service node, open **Services**, and restart the `SbPAMHostScan` Windows service.
+1. Fix the cause, and then, on the service node, open **Services** and restart the `SbPAMHostScan` Windows service.
 
 The **Register Services** action might not restart the Host Scan service, so restart `SbPAMHostScan` yourself.
 
-{/* TODO verify: that reissuing the console certificate and restarting SbPAMHostScan clears Offline and Partial (lab fix untested) */}
+"Heartbeat unable to connect" means that the service's web request to the console failed. The text after the colon is the underlying error. The service tries again every 5 seconds, and the status returns to online when a request succeeds. To fix it, ensure the console address that the service uses is correct and reachable from the node, and that the certificate on that address covers the name in the address. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
-{/* TODO verify: the cause of "Heartbeat unable to connect" and its fix for customers. */}
+To reissue the certificate, see [Certificates](/docs/privilegesecure/26.07/configuration/certificates.md). After you bind the certificate and register the services with the new DNS name, the node returns to online when the heartbeat succeeds.
 
 ### Show a secondary node in a high availability deployment
 
@@ -100,7 +98,7 @@ The Scheduler Service starts the scheduled jobs. It has these tabs:
 
 The **Statistics** tab shows the heading "Action Statuses Last Updated" with a time, and one tile for each status: Unknown, Pending, Queued, Running, Complete, Failed, Cancelled, Completed With Errors, and Completed Not Run.
 
-{/* TODO verify: the period that the Statistics counts cover. The 26.03 docs say the past 24 hours */}
+The counts cover the actions that changed in the past 24 hours.
 
 ![The Scheduler Service Statistics tab showing status tiles for Unknown, Pending, Queued, Running, Complete, Failed, Cancelled, Completed With Errors, and Completed Not Run actions.](/images/privilegesecure/26.07/admin/service-nodes-scheduler-statistics.webp)
 

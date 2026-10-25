@@ -28,8 +28,6 @@ Internal accounts rotate on the primary domain controller (PDC) of the domain.
 
    {/* TODO screenshot: the Manage dialog for an internal service account */}
 
-   {/* TODO verify: the Manage dialog wasn't opened in the lab. Confirm the dialog title, the search for a matching user, and the options. */}
-
 5. If Privilege Secure finds a matching user, choose one of these options:
 
    - **Automatic**: Privilege Secure manages the account and its password.
@@ -51,19 +49,14 @@ If the dialog shows the message "No matching user found", Privilege Secure can't
 
 If you choose **Manual**, a dialog opens to set the password for the credential.
 
-1. Enter the password.
-2. Click **Save**.
+1. In the **Set Password for Credential** window, enter the password in **Password**. Use the eye icon to show or hide what you type.
+2. Click **Save**. **Save** stays unavailable until you enter a password.
 
-{/* TODO verify: field names and the dialog title of the password dialog. The 26.03 page names it "Set Password for Credential". */}
+The window reminds you that the password must match the account password on the platform. For a manually managed account, Privilege Secure doesn't change the password on the target.
 
 For example, enter the password that `<internal-account>` already has in Active Directory.
 
-After you save, the account shows these icons next to its name:
-
-- **Copy Password to Clipboard**: Copies the current password.
-- **View Password**: Opens a dialog to view and copy the password. See [View passwords and password history](/docs/privilegesecure/26.07/admin/credentials/password-history.md).
-
-{/* TODO verify: whether a Set Password icon appears on the account row after manual management, as the 26.03 page describes. The lab found no Set Password button on the toolbar. */}
+The **Credentials** page doesn't show the **Set Password**, **Copy Password to Clipboard**, or **View Password** icons for Internal accounts, and **View History** isn't available for them. The **Set Password** icon appears only for Standard accounts.
 
 ## Related topics
 

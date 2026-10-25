@@ -16,7 +16,7 @@ A Remote Access Gateway deployment uses three certificates. The installers and c
 
 The portal doesn't verify the gateway certificate, so you don't need to replace it for the portal to work.
 
-{/* TODO verify: whether the gateway IIS certificate on port 6550 can be replaced, and the supported steps. */}
+The installer binds a self-signed certificate to the **NPS Gateway Web Service** site. To replace it, import your certificate into the Personal store (Local Computer\Personal) of the gateway server, and then change the binding in Internet Information Services (IIS) Manager: select the **NPS Gateway Web Service** site, select **Bindings** in the **Actions** pane, select the `https` binding on port 6550, select **Edit**, and select your certificate in **SSL certificate**.
 
 For the certificate on the Netwrix Privilege Secure for Access Management (Privilege Secure) web console on port 6500, see [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md). The gateway must trust that certificate to forward requests to the console.
 
@@ -33,8 +33,6 @@ Replace the self-signed portal certificate with a certificate from your CA so th
 
 ### Replace the files
 
-{/* TODO verify: this procedure comes from internal installation guidance and has not been run on 26.07.3. Confirm the steps, the path case, and the service restart in the lab. */}
-
 1. Sign in to the portal server as an administrator.
 2. Back up `C:\Program Files\Stealthbits\PAM\NPS.RagPortal\nginx\conf\nginx.conf`.
 3. Copy your certificate and private key to `C:\ProgramData\Stealthbits\PAM\RagPortal`. For example, `portal.crt` and `portal.key`.
@@ -47,7 +45,7 @@ Replace the self-signed portal certificate with a certificate from your CA so th
    ```
 
 6. Save the file.
-7. Restart the **NPS Rag Portal** service.
+7. Restart the **NPS Rag Portal** service, whose service name is `SbPAMRagPortal`.
 8. Browse to the portal by its DNS name and confirm that the browser shows no certificate warning.
 
 The private key file has no encryption. Limit read access to the file to administrators and to `NT SERVICE\SbPAMRagPortal`, the account that runs the **NPS Rag Portal** service.
@@ -55,8 +53,6 @@ The private key file has no encryption. Limit read access to the file to adminis
 :::warning
 `Configure-Nginx.ps1` generates a new `nginx.crt` and `nginx.key` each time it runs, and it renders `nginx.conf` again. If you run it after you replace the certificate, you lose your certificate settings. Run it again only when you must change the gateway address. Back up `nginx.conf` and your certificate files first, and repeat the steps in this section afterward.
 :::
-
-{/* TODO verify: that rerunning Configure-Nginx.ps1 rewrites nginx.conf from its template and so resets ssl_certificate and ssl_certificate_key. */}
 
 ## Regenerate the guacd certificate
 

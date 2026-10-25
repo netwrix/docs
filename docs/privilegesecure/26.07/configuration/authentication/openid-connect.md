@@ -24,11 +24,11 @@ Register Privilege Secure as an application in the identity provider first. The 
 
 Privilege Secure builds the callback addresses from the address in the browser. Register them with the same host name and port that users use to open the console, which is 6500 by default. Open the console at `https://<nps-server>:6500` before you run the wizard.
 
+An OpenID Connect provider compares the callback address in each sign-in request with the addresses registered for the application, character for character. A callback address with a different host name or port doesn't match and the provider rejects the request. Register the sign-out callback address as well. When a user signs out, the console asks the provider to return the user to that address, and a provider only redirects to an address that is registered.
+
 Copy the **Issuer** address and the application's **Client Id** from the provider. You enter both in Privilege Secure.
 
 The users who sign in must exist in Privilege Secure, and you must assign the connector to them. See [Assign the connector to users](#assign-the-connector-to-users).
-
-{/* TODO verify: the callback, sign-out callback, flow, and scope values come from the console web code. Confirm that the provider needs the sign-out callback, and that a callback with another port is rejected by the provider. */}
 
 ## Add the connector
 
@@ -45,8 +45,6 @@ Both methods set the same fields. See [Connector fields](#connector-fields).
 
 The wizard has three pages: **Configure Client**, **Test Login**, and **Configure Id Mapping**. Select **Next >** and **< Previous** to move between them.
 
-{/* TODO verify: the wizard steps, labels, and behavior. The wizard wasn't opened in the 26.07 lab. The steps below come from the console web strings and the 26.03 documentation. */}
-
 ### Configure the client
 
 {/* TODO screenshot: Configure Client page, client values redacted */}
@@ -54,7 +52,7 @@ The wizard has three pages: **Configure Client**, **Test Login**, and **Configur
 1. On the **Configure Client** page, enter the **Issuer**. This is the address of the identity provider. A wrong value usually causes a 404 error when Privilege Secure redirects to the provider.
 1. Enter the **Client Id** from the provider.
 1. Copy the **Callback Address** and the **CORS** value into the provider's application settings if you haven't already. These two fields are read-only in the wizard.
-1. Select **Test Connection**. The provider's sign-in page opens in the browser.
+1. Select **Test Connection**. The browser leaves the wizard and opens the provider's sign-in page.
 1. Check that the sign-in page appears as you expect. Don't sign in.
 1. Return to the wizard with the browser's back button. If the page didn't appear, correct the values and test again.
 1. Select **Next >**.
@@ -108,7 +106,9 @@ This example uses placeholders for the values from your provider.
 | **User Id Source** | **Introspection Endpoint** |
 | **User Id Field** | `<field-that-holds-the-user-principal-name>` |
 
-{/* TODO verify: that the provider's data can hold the user principal name, and the exact form of the Issuer address for common providers. */}
+Use this example only if **Get User Data** shows a field that holds the user principal name. If it doesn't, choose the field that matches another AD property and set **Login Format** to match.
+
+The **Issuer** is the address of the provider's issuer identifier, an `https` address with no query or fragment. The provider publishes its configuration at that address followed by `/.well-known/openid-configuration`. Copy the value from the provider's settings or from that configuration document, and don't add or remove a trailing slash.
 
 ## Assign the connector to users
 

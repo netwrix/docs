@@ -8,14 +8,12 @@ sidebar_position: 20
 
 Onboard an Active Directory (AD) user or group to give it access to the console. The **Add Users & Groups** window lists the accounts that the AD sync found. Members of an onboarded group sign in with their own accounts.
 
-{/* TODO verify: whether members of an onboarded group appear in the group's Members tab and Users & Groups list automatically (PSAM-625, group members discovered) */}
+{/* TODO verify: whether members of an onboarded group appear in the group's Members tab and Users & Groups list automatically */}
 
 ## Prerequisites
 
 - You have the Administrator role.
-- The AD domain is onboarded as a resource, and its accounts have synced. See [Resources](/docs/privilegesecure/26.07/resources/overview.md).
-
-{/* TODO verify: the exact resource page name and path for the prerequisite link, and whether an AD sync must run before accounts appear in the list */}
+- The Active Directory domain is onboarded, and an AD sync has completed. The **Add Users & Groups** window lists only accounts that the sync found. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md) and [How Active Directory synchronization works](/docs/privilegesecure/26.07/resources/ad-sync.md).
 
 ## Add users and groups
 
@@ -40,9 +38,7 @@ The window has two tables. **Available Accounts** lists the accounts that the AD
 | **USER PRINCIPAL NAME** | The user principal name. |
 | **DOMAIN** | The domain that holds the account. |
 
-The same window also opens from other pages, such as role and access policy pages, where you pick accounts that are already onboarded. In those places, the type list also offers **Application**, **Collection**, and **Local User**.
-
-{/* TODO verify: the type list values and columns in the picker when it opens from other pages (the 26.03 page lists User, Group, Application, Collection, and Local User). Only the onboarding view was seen in the lab. */}
+Other pages, such as access policies and roles, open their own add window with the same two-table layout. There, you pick accounts that are already onboarded. Their type list offers **All**, **User**, **Group**, **Application**, **Collection**, and **Local User**. The window for adding members to a collection offers the same values except **Collection**. The columns depend on the page.
 
 ## Next steps
 

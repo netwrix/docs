@@ -23,20 +23,16 @@ Each platform needs different permissions. The permissions are the minimum the s
 | Microsoft Entra ID | An app registration with Microsoft Graph application permissions and Entra roles. | Enter the application ID and secret. See [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md). |
 | Microsoft SQL Server | An account with `sysadmin` privileges. | See the note on Windows logins that follows. |
 | Oracle | An account with `SYSDBA` privileges. | |
-| BSD | | |
-| Palo Alto PAN-OS | | The platform needs SSH access and the PAN-OS API. |
-
-{/* TODO verify: service account requirements for BSD and PAN-OS targets. */}
-
-{/* TODO verify: which value to enter in Enable Password when a Cisco device has both an enable secret and an enable password (447467) */}
-
-{/* TODO verify: that a Cisco account at privilege level 1 to 15 works with an Enable Password */}
+| BSD | A local account on each host with `sudo` rights to run the user, group, and sudoers management commands, such as `pw`. This is effectively root access through `sudo`. | The Add form doesn't offer **Elevation Command** for BSD, so Privilege Secure runs the commands with `sudo`. |
+| Palo Alto PAN-OS | A PAN-OS administrator account whose admin role profile enables the XML API for configuration, operational requests, and commit. | Privilege Secure reads and changes administrator accounts through the PAN-OS XML API over HTTPS, using the username and password of this account. |
 
 :::note
-Release 26.07.3 fixes SQL Server actions that created local SQL logins instead of Active Directory (Windows authentication) logins for domain users.
+If a Cisco device has both an enable secret and an enable password, enter the enable secret in **Enable Password**. Cisco IOS ignores the enable password when an enable secret is set. Privilege Secure sends `enable` and answers the password prompt with this value, and skips that step when the device goes straight to the privileged prompt.
 :::
 
-{/* TODO verify: customer-facing wording for the SQL Server Windows-login fix (447790), and the service account setup for SQL Server Windows authentication. */}
+:::note
+Before 26.07.3, SQL Server actions for a domain user created a local SQL login. From 26.07.3, they create a Windows authentication login named `DOMAIN\username`, and the disable and role-change actions look the login up by that name. The service account setup doesn't change: it still needs `sysadmin` privileges.
+:::
 
 ## Add a service account
 
@@ -54,8 +50,6 @@ The account appears in the list. Select a name in the list to see and edit the d
 
 {/* TODO screenshot: the Add Service account form with the Platform list open */}
 
-{/* TODO verify: the add form was captured in the 26.07.3 lab with the base fields only. The 26.03 page and the web UI code show more fields that appear for some platforms (listed below). Confirm each one on a 26.07.3 form. */}
-
 ## Service account fields
 
 | Field | Applies to | Description |
@@ -70,9 +64,9 @@ The account appears in the list. Select a name in the list to see and edit the d
 | **App ID** | Entra ID | The application (client) ID of the app registration. |
 | **App Secret** | Entra ID | The client secret of the app registration. |
 | **Elevation Command** | Linux | The command that raises the account's privileges on the host, such as `sudo`, `pbrun`, `pmrun`, or `dzdo`. |
-| **Authentication Method** | Linux | **Password**, **SSH Certificate**, or **SSH Certificate and Password**. |
-| **Private Key** and **SSH Passphrase** | Linux with an SSH certificate method | The key and passphrase for certificate authentication. |
-| **Enable Password** | Cisco | Raises the account to `Privileged EXEC` mode. The account can be any Cisco user at privilege level 1 to 15. Release 26.07.1 and later support Cisco devices that are configured with both an enable secret and an enable password. |
+| **Authentication Method** | Linux and Cisco | **Password**, **SSH Certificate**, or **SSH Certificate and Password**. |
+| **Private Key** and **SSH Passphrase** | Linux and Cisco with an SSH certificate method | The key and passphrase for certificate authentication. |
+| **Enable Password** | Cisco, required | Raises the account to `Privileged EXEC` mode. The account can be any Cisco user at privilege level 1 to 15. Release 26.07.1 and later support Cisco devices that are configured with both an enable secret and an enable password. |
 | **Address**, **Safe**, and **Folder** | CyberArk vault connector | The CyberArk address, and the safe and folder that hold the login account. |
 | **Library** | HashiCorp vault connector | The library that holds the login account. |
 

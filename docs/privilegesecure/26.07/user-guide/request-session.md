@@ -17,7 +17,7 @@ You need membership in at least one access policy that includes the activity and
 Ask your administrator to add you to an access policy. For the administrator steps, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
 :::note
-If your license has expired and you can still sign in, you can't create sessions. {/* TODO verify: that session creation is blocked and sign-in is allowed under an expired license; the 26.03 docs and the install docs disagree. */}
+If your license has expired, or Privilege Secure can't reach the license service, you can't create sessions, even if you can still sign in.
 :::
 
 ## Request a session
@@ -25,7 +25,7 @@ If your license has expired and you can still sign in, you can't create sessions
 1. Click **Dashboard** in the left navigation, then click the **Active** or **Scheduled** tile.
 2. Click **Create Session**. The **Activity Request** dialog opens.
 3. On the **Activity Selection** step, search for and select an activity. Click **Next >**.
-4. If the **Group Selection** step appears, select the groups or roles to assign. Click **Next >**. {/* TODO verify: when the console shows or skips Group Selection. The code shows it only for activities that assign users to groups or roles. The Remote Access Gateway portal skipped it when the user had one activity. */}
+4. If the **Group Selection** step appears, select the groups or roles to assign. Click **Next >**. The step appears only for an activity that assigns users to groups or roles. For any other activity, the dialog skips it.
 5. On the **Resource Selection** step, select one or more resources in the table. Each selected resource has its own **Activity** list, so choose the activity to run on each one. Click **View Selections** to review your choices. Click **Next >**.
 6. On the **Notes** step, enter notes and a ticket number. Complete any custom fields. Click **Next >**.
 7. On the **Scheduling** step, choose **Now** or choose a date and time. Click **Next >**.
@@ -44,7 +44,7 @@ You can also start a session from **My Activities**. See [My Activities](/docs/p
 The connection profile of your access policy decides what the **Notes** step asks for:
 
 - **Notes** and **Ticket Number** are required or optional. When a required field is empty, the step shows "Note required" or "Ticket required".
-- **Custom fields** appear with the label that the administrator set. A custom field can be required, and it holds an integer, a string, or a choice from a list. {/* TODO verify: which step shows custom fields. */}
+- **Custom fields** appear with the label that the administrator set. A custom field can be required, and it holds an integer, a string, or a choice from a list. The **Notes** step shows the custom fields.
 
 If the profile uses a ServiceNow connector, the ticket number box takes the connector's label, and Privilege Secure checks the ticket before it accepts the request. See [Use ServiceNow tickets with sessions](/docs/privilegesecure/26.07/user-guide/servicenow-tickets.md).
 

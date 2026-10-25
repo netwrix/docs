@@ -27,7 +27,7 @@ Click the **connect** icon. What happens next depends on the session type:
 | Web | Opens the website in a new browser tab. |
 | File | Downloads the encrypted file. |
 
-{/* TODO verify: the SSH link needs an SSH client registered for the ssh:// protocol on the user's computer. */}
+The console hands the `ssh://` link to your operating system, so an SSH client must be registered for the `ssh://` protocol on your computer. To register one, see [Launch a local SSH client from the console](/docs/privilegesecure/26.07/user-guide/connect-own-client.md#launch-a-local-ssh-client-from-the-console).
 
 A locked session can't be launched. If an administrator locked your session, contact them.
 
@@ -49,7 +49,7 @@ Other activities use an account that Privilege Secure manages. For these, you ca
 
 ## View or copy the password
 
-When the connection profile has **Allow User to Access Password** selected, the session row shows a copy icon. The eye icon, which shows the password as plain text, also needs **Enable 'Show Password' option in user interface and browser extension** to be selected in the profile. The password is valid only while the session is active. To view it, click the eye icon. The password shows for the time set in **View Password Timeout (seconds)** in the connection profile. {/* TODO verify: the 26.03 docs state 20 seconds; the seeded Default profile leaves View Password Timeout empty. */}
+When the connection profile has **Allow User to Access Password** selected, the session row shows a copy icon. The eye icon, which shows the password as plain text, also needs **Enable 'Show Password' option in user interface and browser extension** to be selected in the profile. The password is valid only while the session is active. To view it, click the eye icon. The password shows for the time set in **View Password Timeout (seconds)** in the connection profile. If that field is empty or 0, the password shows for 20 seconds.
 
 If the icons are missing, ask your administrator to turn on **Allow User to Access Password** and **Enable 'Show Password' option in user interface and browser extension** in the connection profile. For credential-based activities, you can always view the password.
 
@@ -73,7 +73,7 @@ When you can't extend, the console shows one of these messages:
 - "This session does not allow the user to extend"
 - "No more extensions remaining for this user"
 
-{/* TODO verify: whether users with the Administrator role can always extend, as the 26.03 docs state. The code allows an extension only when the connection profile allows it. */}
+These limits apply to every user, including users with the Administrator role. The server rejects an extension when the profile doesn't allow it, when no extensions remain, or when the request is longer than **Extend By (minutes)**.
 
 ## End a session
 

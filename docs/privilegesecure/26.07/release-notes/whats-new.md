@@ -20,6 +20,4 @@ This documentation set is cumulative. It covers these releases:
 
 For details, see the [26.07.1 release announcement](https://community.netwrix.com/t/netwrix-privilege-secure-q2-2026-release-26-07-1/136803) and the [26.07.3 release announcement](https://community.netwrix.com/t/patch-version-26-07-3-released-privilege-secure-for-access-management/161358).
 
-{/* TODO verify: SME to confirm how to name the Q4 2025 build. Git tag v25.12.0 was announced on the Community as "25.12.1" (F3 section 1, open question 1). */}
-
 No 26.07.2 release shipped. Its fixes are in 26.07.3.

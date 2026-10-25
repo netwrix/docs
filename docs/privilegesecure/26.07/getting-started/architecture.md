@@ -27,7 +27,7 @@ For the complete port list, see [Ports](/docs/privilegesecure/26.07/requirements
 | Remote Desktop Monitor service | Runs on target Windows hosts and sends the window and menu activity of an RDP session to the recording. | Not applicable |
 | Database | Stores configuration, sessions, and credentials. PostgreSQL 16 or Microsoft SQL Server. | See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) |
 
-The Proxy service connects to resources on TCP 3389 (RDP) and TCP 22 (SSH). The Action service uses PowerShell remoting over Windows Remote Management (WinRM) on TCP 5985 or 5986, or SSH on TCP 22. It also connects to Active Directory on several ports. {/* TODO verify: Host Scan service ports and connection broker port 6522 */}
+The Proxy service connects to resources on TCP 3389 (RDP) and TCP 22 (SSH). The Action service uses PowerShell remoting over Windows Remote Management (WinRM) on TCP 5985 or 5986, or SSH on TCP 22. It also connects to Active Directory on several ports. The connection broker in the Proxy service listens on TCP 6522 on all network interfaces by default. It carries TLS-encrypted calls between Proxy service instances.
 
 :::note
 Open the console at `https://<nps-server>:6500`. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md) for where this port is set.
@@ -50,7 +50,7 @@ The Remote Access Gateway lets external users start browser-based RDP and SSH se
 |---|---|---|
 | Portal | In the DMZ. It runs on nginx as the `SbPAMRagPortal` Windows service and is the entry point for external users. | TCP 443, with TCP 80 redirecting to HTTPS |
 | Gateway | Inside the network. It is an IIS site that passes a fixed set of requests from the Portal to the console. | TCP 6550 |
-| guacd | On the Gateway host under Windows Subsystem for Linux 2 (WSL 2), or on a separate Linux host. It is the Apache Guacamole 1.6.0 daemon and runs in Docker. {/* TODO verify: separate Linux host still supported with guacd 1.6.0 */} | TCP 4822 |
+| guacd | On the Gateway host under Windows Subsystem for Linux 2 (WSL 2). It is the Apache Guacamole 1.6.0 daemon and runs in Docker. {/* TODO verify: whether Netwrix supports guacd on a separate Linux host. */} | TCP 4822 |
 
 A browser session follows this path:
 
@@ -77,7 +77,7 @@ The Proxy and Action services use resources in proportion to load. Install them 
 
 ![Distributed deployment. The application server holds the web service, service mesh, and database. A remote server runs the Proxy and Action services and joins the service mesh on ports 6520, 6523, and 6524. The remote services reach targets on 3389, 22, 5985, 5986, and 22.](/images/privilegesecure/26.07/getting-started/distributed-deployment-remote-services.webp)
 
-See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md) and [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md). {/* TODO verify: supported host operating systems for a remote Proxy service */}
+See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md) and [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md). A remote Proxy service installs from a Windows installer and supports Windows Server 2016 through 2025, the same versions as the application server.
 
 ### Active-passive database
 
@@ -93,7 +93,7 @@ Several application servers share one database. Failover needs no manual step. T
 
 ### Cloud database
 
-A cloud database provides built-in high availability and automatic scaling, which suits an active-active deployment. Examples are Amazon Aurora PostgreSQL, Amazon RDS for SQL Server, and the Azure database services for PostgreSQL and SQL Server. See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) for supported versions. {/* TODO verify: supported cloud database services and versions */}
+A customer-provided cloud database provides built-in high availability and automatic scaling, which suits an active-active deployment. Privilege Secure connects to your PostgreSQL or SQL Server database with standard connection strings. See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) for the engines and versions.
 
 ![Cloud database deployment. Two application servers share a cloud database that provides built-in high availability and automatic scaling.](/images/privilegesecure/26.07/getting-started/cloud-database-deployment.webp)
 

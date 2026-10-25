@@ -10,8 +10,6 @@ The Remote Access Gateway extends Netwrix Privilege Secure for Access Management
 
 The browser experience matches the Privilege Secure console for the actions an external user needs: request an activity, wait for approval, and connect to the session. See [Connect to a session in the browser](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
-{/* TODO verify: the current support position for production installs. The 26.03 page said a Netwrix engineer should be involved in the installation. Confirm whether to repeat that guidance. */}
-
 ## Components
 
 The Remote Access Gateway has three components. Install the portal in the demilitarized zone (DMZ). Install the gateway and the Apache Guacamole daemon (guacd) inside your network.

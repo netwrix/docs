@@ -28,10 +28,11 @@ For a session-by-session view of live and past sessions, see the [Dashboard](/do
 | Role | Pages |
 |---|---|
 | Administrators | All pages |
+| Users with **Admin View Read Only** | All pages, read-only |
 | Reviewers | **Access Certification**, limited to the tasks assigned to them |
-| Auditors | **Activity Log**, **DB Change History**, **Events**, **Log Files**, and **Reporting** |
+| Auditors with the **Reporting** permission | **Activity Log**, **DB Change History**, **Events**, **Log Files**, and **Reporting** |
 
-{/* TODO verify: the pages each role sees. The navigation gates come from the console code. No Reviewer or Auditor user signed in during the lab. Auditors who hold only the Reporting permission may see fewer pages. */}
+An auditor whose role doesn't include the **Reporting** permission doesn't see the **Auditing & Reporting** menu.
 
 Auditors work within the users and resources assigned to their role. For auditor permissions, see [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md). To give auditors a read-only view of every administration page, see [Give auditors read-only console access](/docs/privilegesecure/26.07/admin/roles/admin-view-read-only.md).
 

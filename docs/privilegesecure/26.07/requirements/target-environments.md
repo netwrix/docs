@@ -22,12 +22,13 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) manages resour
 
 Privilege Secure also manages websites and secret vaults. For their settings, see [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
-{/* TODO verify: Windows Server 2008 R2 and PowerShell 5.1 still apply to 26.07 targets. These values come from the 26.03 page. */}
-{/* TODO verify: SSH and API requirements for BSD and PAN-OS targets. */}
+{/* TODO verify: whether Windows Server 2008 R2 and PowerShell 5.1 are still the supported minimums for 26.07 targets. The release code still handles Windows Server 2008 R2, but code doesn't state a support policy. */}
+
+For BSD targets, the service account signs in over SSH and runs commands with `sudo`. The command plans use the FreeBSD `pw` utility. For PAN-OS targets, Privilege Secure manages administrator accounts through the PAN-OS XML API over HTTPS at the device's address.
 
 Privilege Secure also supports any device that accepts an SSH connection, and any device or website that uses Active Directory or Microsoft Entra ID authentication. These devices have no local account management and no preconfigured activity steps.
 
-{/* TODO SME: support statement for Arista. The 26.07.3 lab shows 11 platforms and no Custom, Arista, or "Cisco (Custom)" platform. */}
+Privilege Secure has no Arista-specific platform in 26.07.
 
 For the full platform list and settings, see [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
@@ -45,7 +46,7 @@ For the full platform list and settings, see [Platforms](/docs/privilegesecure/2
 
 For the Entra ID app registration, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md).
 
-{/* TODO verify: service account permissions for BSD and PAN-OS targets. */}
+For BSD targets, use root or an account that can run the needed commands through `sudo`. For PAN-OS targets, use an administrator whose role enables the XML API and allows configuration changes and commits. See [Configure an admin role profile](https://docs.paloaltonetworks.com/ngfw/administration/firewall-administration/manage-firewall-administrators/configure-an-admin-role-profile) in the Palo Alto Networks documentation.
 
 ## Windows targets
 
@@ -57,9 +58,9 @@ Privilege Secure manages Windows hosts through PowerShell remoting over WinRM. O
 
 When a Windows resource must reach a domain controller during a host scan, the request makes a second network hop from the resource to the domain controller. This second hop needs Kerberos delegation between the resource and the domain controller. Without it, the host scan fails, the operating system stays blank, and password rotation can proceed while a session still holds the old password. The result can be recurring Active Directory account lockouts.
 
-Configure Kerberos delegation, such as resource-based constrained delegation, between the resource and the domain controllers.
+ensure the resource can authenticate to the domain controllers on the second hop.
 
-{/* TODO verify: the delegation configuration and steps that Netwrix supports (PSAM-1331). */}
+{/* TODO verify: which protocol the resource-to-domain-controller hop uses (for example LDAP/ADSI or WinRM) and the delegation configuration Netwrix supports for it. Microsoft notes that constrained and resource-based constrained delegation don't support a WinRM second hop. */}
 
 ### Non-domain-joined hosts
 
@@ -82,4 +83,4 @@ Use a dedicated service account with least privilege instead of root. Create a s
 
 The account name that you add as a service account in Privilege Secure must match the account name in the sudoers file. For the account setup and the command list, see [Creating a Least Privilege Service Account for Linux Resources](/docs/kb/privilegesecure/user-and-service-accounts/creating-a-least-privilege-service-account-for-linux-resources).
 
-{/* TODO verify: the KB command list against the 26.07 Linux command plans. The plans changed in 26.07 and may need more commands. */}
+The 26.07 Linux command plans also run `getent`, `pkill`, `groupadd`, `stat`, `sed`, and `adcli` through `sudo`, and start some commands with `/bin/bash` or `/bin/sh`. The article's command list doesn't yet include these commands. Add them to your sudoers file. If a host scan or activity fails with a `sudo` error, check for a missing command. {/* TODO verify: update the KB article to include these commands. */}

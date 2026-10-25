@@ -14,7 +14,7 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) includes defau
 
 Default groups include **Cisco**, **Linux**, **Website**, and **Windows**.
 
-{/* TODO verify: the complete list of default groups on a fresh 26.07.3 install. The code seeds Unspecified, Active Directory, Website, Cisco, Linux, and Windows platform groups. The lab list mixes default and user-created groups. */}
+A fresh install has four default groups. Creating a platform, or saving changes to a built-in platform, adds a group for it. You can't delete a default group or a group that a platform created.
 
 ## Create a resource group
 
@@ -32,7 +32,7 @@ The managed account corresponds to the **Built-in Account** field on the resourc
 
 For example, enter the name `Branch servers`, enter `ops@example.com` as the notification email, and leave **Manage Local Administrator Accounts** set to **Off (do not manage accounts)**.
 
-{/* TODO verify: the default of Manage Local Administrator Accounts for the default groups and for groups created before 26.07. */}
+The four default groups start with **Manage Local Administrator Accounts** set to **Off (do not manage accounts)**.
 
 {/* TODO screenshot: the New Resource Group form with Map to OU or CN selected. */}
 
@@ -57,9 +57,9 @@ Mapping adds the computers in an Active Directory OU or CN to the group.
 
 For example, enter `OU=Servers,DC=example,DC=com` as the **Distinguished Name** and select **Include Child OUs**.
 
-{/* TODO verify: how often the OU mapping runs after the first Sync Now, and where an administrator sets that schedule. The code has an OU mapping schedule, but the UI showed none in the lab. */}
+The mapping runs again after every manual or scheduled domain sync, for all groups of that domain, so it follows the schedule you set on the domain. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md). **Sync Now** starts a domain sync and then maps every OU-mapped group of that domain. When it runs, members that are no longer in the OU are removed from the group.
 
-{/* TODO verify: the lab had no group mapped to an OU, so the mapped-group form with a Distinguished Name wasn't observed. Confirm the field behavior and whether Sync Now asks for confirmation. */}
+**Sync Now** is unavailable until you save the group, and while you edit it. When you select it, the **Confirm Resource Group - OU sync** window explains that a domain sync runs first, followed by an OU sync for all domain resource groups. Select **Sync Now** in that window to continue.
 
 ### Auto-onboard computers
 
@@ -69,7 +69,7 @@ When you select **Auto-Onboard**, two more fields appear.
 1. Select a **Default Service Account**. The default is **(None)**. Choose a least-privilege Active Directory service account so that Privilege Secure can scan the computers it onboards.
 1. Select **Save**.
 
-{/* TODO verify: what Auto-Onboard does when Default Service Account is (None), and which platforms Auto-detect can identify. */}
+**Auto-Onboard** manages every computer in the OU that Privilege Secure doesn't already manage. It then schedules a host scan for each new resource with the service account of the domain. When **Default Service Account** is **(None)**, Privilege Secure assigns no service account to the new resources. With **(Auto-detect)**, Privilege Secure picks the platform from the operating system name of the computer. It recognizes Windows, Linux (including Red Hat, CentOS, and Ubuntu), and Cisco. A computer with any other or no operating system name gets the **Unspecified** platform until a scan identifies it.
 
 ## Prefer service nodes for a group
 
@@ -77,24 +77,20 @@ By default, Host Scan and Action services take the next available job. A resourc
 
 1. Open the resource group.
 1. Select the **Host Scan Services** or **Action Services** tab.
-1. Select **Add**.
-1. Select the service nodes to prefer, and confirm.
+1. Select **Add**. The **Add Host Scan Services** or **Add Action Services** window opens.
+1. Select the services to prefer, and confirm.
 
-When you add more than one service, all of them are preferred on a next-available basis. If the preferred services are busy, Privilege Secure uses the next available service.
+When you add more than one service, any of them can take a job for the group on a next-available basis. Jobs for the group's resources run only on the services you add. If none of them is available, the jobs wait in the queue; Privilege Secure doesn't hand them to another service. Add each service type separately: a group with preferred Host Scan services but no preferred Action services still uses any Action service.
 
-{/* TODO verify: fallback behavior. BE 7.5 says affinity jobs run only on the assigned nodes; 26.03 and the Community say they fall back. */}
-
-For example, add the Host Scan service on the `<east-service-node>` node to the `East region` group. Scans of the group's resources go to that node first.
+For example, add the Host Scan service on the `<east-service-node>` node to the `East region` group. Scans of the group's resources run only on that node.
 
 Both tabs have **Add** and **Remove** buttons. Their columns are **Service Name**, **Status**, **Description**, **Version**, and **Added**. See [Service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).
-
-{/* TODO verify: the dialogs behind Add on the Host Scan Services and Action Services tabs weren't opened in the lab. Confirm the dialog title and selection steps. */}
 
 ![The Linux resource group on the Host Scan Services tab, showing an empty list with the message that all host scan services are eligible for resources in this group.](/images/privilegesecure/26.07/resources/resource-group-host-scan-services-tab.webp)
 
 ## Resource group tabs
 
-A saved group has these tabs.
+A saved group has these tabs. The **Host Scan Services** and **Action Services** tabs appear only when your license includes the resource group affinity feature.
 
 | Tab | Shows |
 |---|---|
@@ -110,10 +106,8 @@ The toolbar has **Manage**, **Unmanage**, **Add**, **Remove**, **Change Platform
 
 - **Add** adds resources to the group.
 - **Remove** takes the selected resources out of the group. It doesn't remove them from Privilege Secure.
-- **Manage** and **Unmanage** set whether Privilege Secure manages the local Administrator account on the selected resources (the **Managed** column). They apply when **Manage Local Administrator Accounts** is **Per individual resource**.
+- **Manage** and **Unmanage** set whether Privilege Secure manages the local Administrator account on the selected resources (the **Managed** column). They are available only when **Manage Local Administrator Accounts** is **Per individual resource**.
 - **Change Platform** and **Change Service Account** update the selected hosts.
-
-{/* TODO verify: that Manage and Unmanage apply only when Manage Local Administrator Accounts is Per individual resource. */}
 
 The table has these columns: **Managed**, **Local Admin**, **Resource**, **Operating System**, **Platform**, **DNS Host Name**, **IP Address**, **Service Account**, and **Last Scanned**.
 
@@ -121,4 +115,4 @@ The table has these columns: **Managed**, **Local Admin**, **Resource**, **Opera
 
 Point to a group in the list to show the copy and delete icons. The copy icon duplicates the group. The trash icon deletes it after you confirm.
 
-{/* TODO verify: what happens to a deleted group's resources, whether an Entra ID group is a default group, and whether the default groups can be deleted. */}
+Deleting a group doesn't delete its resources. They stay in Privilege Secure and leave the group. If **Manage Local Administrator Accounts** is **On (manage all accounts)**, Privilege Secure stops managing the local Administrator accounts on the group's resources before it deletes the group. The trash can icon is unavailable for the default groups and for groups that a platform created.

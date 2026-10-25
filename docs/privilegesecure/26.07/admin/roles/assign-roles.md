@@ -17,14 +17,13 @@ When you assign a role to a group or a collection, every member of the group or 
 1. In the left navigation, click **Users & Groups**, then **Role Management**.
 2. In the role list, select **Administrators**, **Reviewers**, or **Auditors**.
 3. Add the accounts.
-   - For **Administrators** and **Reviewers**, click **Add User**.
-   - For **Auditors**, click **Add Role Users** at the bottom of the page.
-4. In **Available Accounts**, select the checkbox for each account.
+   - For **Administrators**, click **Add User** to open the **Add Administrators** window.
+   - For **Reviewers**, click **Add User** to open the **Add Reviewers** window.
+   - For **Auditors**, click **Add Role Users** at the bottom of the page to open the **Add Role Users** window.
+4. Select each account in the left list (**Available Accounts**, or **Available Role Users** for Auditors) to move it to the right list.
 5. Click **Add**.
 
 The accounts appear in the member list of the role.
-
-{/* TODO verify: the titles and button labels of the Add Administrators, Add Reviewers, and Add Role Users windows. The lab tour didn't open them; the steps come from the 26.03 documentation. */}
 
 ![The Add Administrators window with a search for NPS and the NPS Approvers group in Accounts to Add.](/images/privilegesecure/26.07/admin/role-add-members-window.webp)
 
@@ -51,18 +50,16 @@ For an Auditors role, the members see only the sessions in the role's scope. Set
 2. Click the name of the user or group to open its details page.
 3. Click the **User Roles** tab for a user, or the **Group Roles** tab for a group.
 4. Click **Add** to open the **Add Roles** window.
-5. Select **Administrator**, **Auditors**, or **Reviewer**.
-6. Confirm the selection.
+5. Select one or more roles. The list shows **Administrator**, **Reviewer**, and every custom role, including **Auditors**, that the account doesn't already hold.
+6. Click **Add**.
 
 The role appears on the tab with its **ROLE**, **DESCRIPTION**, and **CREATED** values.
 
-{/* TODO verify: the confirmation button of the Add Roles window; the lab tour cancelled it. */}
-
-The **Add Roles** window offers only those three roles. The **Users** role isn't assignable here.
+The **Users** role isn't assignable here.
 
 ### Example
 
-To make a user a reviewer, open the user's details page, click the **User Roles** tab, click **Add**, select **Reviewer**, and confirm. The user can then review access in an [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md).
+To make a user a reviewer, open the user's details page, click the **User Roles** tab, click **Add**, select **Reviewer**, and click **Add**. The user can then review access in an [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md).
 
 ## Remove a role
 
@@ -70,12 +67,12 @@ To make a user a reviewer, open the user's details page, click the **User Roles*
 2. Select the accounts or roles to remove.
 3. Click **Remove**.
 
-The accounts leave the role.
+A confirmation window lists the roles or accounts you selected. Confirm to remove them. The accounts leave the role.
 
-{/* TODO verify: whether a removed role takes effect immediately or at the next sign-in, and whether a confirmation window appears. */}
+Removing an account from the Administrators or Reviewers role takes effect at the user's next sign-in or token renewal, not at the moment you click **Remove**. Auditors and custom-role permissions are checked on each request, so removing those roles takes effect at once.
 
-{/* TODO verify: whether the console blocks you from removing your own role. It does so for removal on the Users & Groups page. */}
+The console doesn't let you remove yourself from the **Administrators** role. **Remove** is disabled when your own account, or a group that you belong to, is selected for that role, and its tooltip reads "Admins can't remove themselves from the admin role." or "Admins can't remove groups they're in from the admin role." This applies to the **Administrators** role only.
 
 ## Custom roles
 
-Custom roles aren't on the **Add Roles** list. Create a custom role and add its members from **Role Management**. See [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
+Create a custom role and add its members from **Role Management**. See [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).

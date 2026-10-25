@@ -32,7 +32,7 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) includes 11 pl
 
 To move a resource to another platform, select the resource on the **Resources** page and select **Change Platform**. The dialog lists these 11 platforms.
 
-{/* TODO verify: whether a resource's platform is identified during Scan Resource or Scan Now (on-demand platform identification, 26.07.3). The server page shows no control for it. */}
+When a resource has no platform set, **Scan Resource** identifies it. The scan tries to connect over Windows Remote Management (WinRM) first, then over SSH, and records the platform that it finds. The server page has no separate control for identification.
 
 ## Platform settings
 
@@ -54,7 +54,7 @@ The settings that appear depend on the platform.
 
 Each schedule setting is a list of schedule policies with a green plus (**+**) button to create one. A read-only **Schedule** box shows the selected schedule. See [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md).
 
-{/* TODO verify: that Operating Systems is the list used to match a detected operating system to a platform. */}
+When Privilege Secure identifies an SSH device, it compares the device's version output with the names in **Operating Systems** on each platform. A platform whose name appears in the output becomes the resource's platform.
 
 ### Settings by platform
 
@@ -67,11 +67,13 @@ Each schedule setting is a list of schedule policies with a green plus (**+**) b
 
 On the **Windows** platform, **Built-in Account** is a list with **Administrator** and **Well-known SID**. A well-known security identifier (SID) identifies the built-in administrator by the pattern `S-1-5-21*-500`. You can type another account name in the list.
 
-On a new installation, **Reset On Mismatch** is selected on the built-in platforms. An upgraded installation can keep earlier values.
+On a new installation, **Reset On Mismatch** is selected on Windows, Linux, Active Directory, and Entra ID, and cleared on BSD, Palo Alto PanOS, Microsoft SQL Server, and Oracle. An upgraded installation can keep earlier values.
 
-{/* TODO verify: the seeded default values of Reset On Mismatch. The code sets it on for the built-in platforms. The lab showed it off on BSD, Cisco, Palo Alto PanOS, Microsoft SQL Server, and Oracle, but the lab was an upgraded install. Confirm on a fresh install. */}
+{/* TODO verify: the new-installation value of Reset On Mismatch on the Cisco platform. The PostgreSQL and SQL Server installation code disagree, and the console on an upgraded installation shows it cleared. Confirm on a new installation. */}
 
-{/* TODO verify: the seeded default schedules and the default password complexity policy of each platform on a fresh install. This page publishes no default schedules. */}
+On a new installation, the **Default** password complexity policy applies to every platform except BSD, Cisco, Linux, and Palo Alto PanOS, which use the policy with their name.
+
+{/* TODO verify: the default schedules of each platform on a new installation. The installation code sets no schedule on any platform, and the setup wizard might set them. */}
 
 ## Create a platform from an existing platform
 
@@ -79,14 +81,16 @@ Create a copy of a platform when some resources need a different built-in accoun
 
 1. Select **Platforms**.
 1. Select the platform to copy, then select the copy icon.
-1. Enter a name, for example `Windows - alternate administrator`.
+1. In **Name**, replace the name that Privilege Secure gave the copy, for example `Windows - alternate administrator`.
 1. In **Built-in Account**, enter the account name that the resources use.
 1. Change other settings if needed.
 1. Save the change.
 
 You can delete only a copied platform. Hover over it, select the trash icon, and confirm.
 
-{/* TODO verify: the copy procedure and what the plus (+) Add Platform button creates. The 26.07 console shows a plus button above the list; its form has a blank Password Complexity Policy list. */}
+The copy is created at once. Privilege Secure names it after the source platform with `Copy` added, for example `Windows Copy`, and then `Windows Copy (2)`. The copy keeps the source platform's password complexity policy and schedules. You can copy every platform except Active Directory and the unspecified platform.
+
+The plus (**+**) button above the list opens a blank platform form. Enter the settings and select **Save** to create the platform.
 
 ## Change platform settings
 
@@ -96,7 +100,7 @@ You can delete only a copied platform. Hover over it, select the trash icon, and
 
 The platform form shows the new values, and resources of the platform use them. For example, after you select a different **Password Complexity Policy**, **Password Length** shows that policy's length.
 
-{/* TODO verify: the Save and Cancel buttons. The 26.03 pages say they appear after you change a setting. The 26.07 lab showed no Save button on existing platforms. */}
+**Save** and **Cancel** appear after you change a setting. A new platform shows them as well.
 
 ## Related topics
 

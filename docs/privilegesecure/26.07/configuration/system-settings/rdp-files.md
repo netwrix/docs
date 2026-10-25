@@ -21,17 +21,13 @@ Select **System Settings** > **RDP Options** to open the panel.
 | **Smart Sizing** | Select to scale the remote desktop to fit the client window. | Selected |
 | **Certificate Thumbprint** | The thumbprint of the certificate that signs RDP files. | Empty |
 
-**Default Resolution** offers these values: 640x480, 800x600, 1024x768, 1280x800, 1280x1024, 1366x768, 1440x900, 1440x1050, 1680x1050, 1920x1080, 1920x1200, 2560x1440, and **Full Screen**. With **Full Screen**, RDP tries to detect the client screen resolution and match it.
+**Default Resolution** offers these values: 640x480, 800x600, 1024x768, 1280x800, 1280x1024, 1366x768, 1440x900, 1440x1050, 1680x1050, 1920x1080, 1920x1200, 1920x2058, 2560x1440, and **Full Screen**. With **Full Screen**, RDP tries to detect the client screen resolution and match it.
 
 To change an option, edit it and click **Save**.
 
-{/* TODO verify: the Default Resolution list in a fresh 26.07.3 install; the code seed lists fewer values than the console shows, and the console list has an entry that looks like a typo, reported to the product team */}
+Privilege Secure writes the selected resolution into every RDP file that it generates, whether **Certificate Thumbprint** has a value or not. The signing step runs after the resolution is set.
 
-:::note
-In 26.07, the **Default Resolution** setting doesn't take effect unless **Certificate Thumbprint** has a value.
-:::
-
-{/* TODO verify: PSAM-1463, the resolution setting requires a thumbprint; SME to confirm the symptom, the affected builds, and the workaround text before the page states a workaround */}
+{/* TODO verify: an internal report says that in 26.07 the Default Resolution setting has no effect on the client until Certificate Thumbprint has a value. The 26.07.3 web service code writes the resolution into the file before it signs, so the page doesn't state that limit. Test an unsigned RDP file in the Windows Remote Desktop client to see how it treats desktopwidth and desktopheight. */}
 
 ## Sign RDP files
 
@@ -65,8 +61,6 @@ The client computers need the SHA1 thumbprint in Group Policy, or the warning co
 1. Click **Apply**, then **OK**.
 
 Windows computers that receive the policy then trust the RDP file.
-
-{/* TODO verify: the menu steps and Group Policy path on a current Windows client; copied from the 26.03 procedure */}
 
 ## Related topics
 

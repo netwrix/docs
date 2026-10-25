@@ -13,7 +13,7 @@ The HashiCorp connector lets Netwrix Privilege Secure check out account credenti
 
 The connector uses the HashiCorp Vault Active Directory secrets engine. The engine groups usernames and passwords into libraries. When Privilege Secure checks out an account from a library, the engine chooses which account in the library it returns, so the account can differ from one check-out to the next. For how vault connectors work in general, see [Third-party vault connectors](vault-connectors.md).
 
-{/* TODO verify: whether secrets engines other than the Active Directory secrets engine that support library check-out work with this connector. */}
+{/* TODO verify: whether the LDAP secrets engine works with this connector. HashiCorp documents library check-out and check-in endpoints with the same request and response fields for that engine, but the connector splits the returned account name at `@`. HashiCorp's public LDAP API documentation shows library service accounts named in `user@domain` form, so the engine likely works when the library's accounts are named that way. Confirm on a dev Vault, and confirm that API Url plus library resolves to the engine's mount path. */}
 
 ## Prerequisites
 
@@ -64,7 +64,7 @@ Enter the library in the following places:
 
 {/* TODO verify: the exact label and position of the library field on the Vault activity form in 26.07. */}
 
-{/* TODO verify: check-in. The check-in code builds the account name from `$Options.username` and `$Options.domain`, which aren't documented members of the options object. Confirm that check-in returns the account to the library. Raise with Engineering if it sends an empty name. */}
+When the last session that uses the credential ends, Privilege Secure checks the account back in. It sends the user name and domain of the checked-out account, joined as `<user>@<domain>`, to `<API Url><library>/check-in`, for example `<API Url>/ad/library/my-set/check-in`.
 
 ## Use the connector
 
