@@ -18,7 +18,11 @@ An administrator sets up the connector and attaches it to the connection profile
 
 Example: If the label is **INC#**, enter `INC0012345`.
 
-{/* TODO screenshot: the Notes step with a ServiceNow ticket label. The lab has no ServiceNow connector. */}
+When you start a session from a card on **My Activities**, the **Configure session** dialog has the same **Ticket Number** box. The box starts with the label, for example `INC#`. Replace that text with the ticket number. If the number doesn't match the format that your administrator set, a message appears under the box while you type. The default message is "The ticket number entered is invalid. Please enter a valid ServiceNow ticket number."
+
+When you click **Start Session**, Privilege Secure checks the ticket in ServiceNow before it creates the session. If the check fails, a message appears at the top of the page and the dialog stays open, for example "Ticket 'INC0009004' has status 'Closed' which is not allowed." or "Ticket 'INC0999999' not found in ServiceNow." For all messages, see [ServiceNow integration](/docs/privilegesecure/26.07/integrations/itsm/servicenow.md#what-privilege-secure-does-with-a-ticket).
+
+{/* TODO screenshot: the Ticket Number box with the label and the validation message. Retake with a demo resource name, because the lab host name shows in the dialog. */}
 
 If the connection profile requires a ticket number, you can't continue without one.
 
