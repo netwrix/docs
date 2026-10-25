@@ -99,13 +99,13 @@ The API can publish a Swagger page that lists its endpoints. Swagger is off by d
 
 To turn it on, add `"SwaggerEnable": true` to `C:\ProgramData\Stealthbits\PAM\WebService\appsettings.json`, and restart the web application. The server reads the setting at startup. If the file doesn't exist, create it with this setting inside a JSON object.
 
-{/* TODO verify: whether the Swagger page and specification load with SwaggerEnable set to true, and their URLs. Release code (SbPAM.Web.UI Startup.cs, 26.07.3, lines 622-629) maps /swagger/v1/swagger.json to a 404 "Swagger is disabled" response when the setting is on, so a dev instance must confirm before the URLs are documented. */}
+When Swagger is off, the `/swagger` addresses don't return an error. The server answers with the console page, status 200 and content type `text/html`, so a request for `/swagger/v1/swagger.json` returns HTML and not a specification.
+
+{/* TODO verify: that the Swagger page and specification load at `/swagger/index.html` and `/swagger/v1/swagger.json` when `SwaggerEnable` is `true`. The release code maps `/swagger/v1/swagger.json` to a 404 "Swagger is disabled" response when the setting is on, so confirm on a server where you set it. */}
 
 ## Calling the API from a script
 
-Use PowerShell 7 or `curl`. `Invoke-RestMethod` in Windows PowerShell 5.1 can fail to open the TLS connection to the Privilege Secure server, with the error "The underlying connection was closed".
-
-{/* TODO verify: the cause of the Windows PowerShell 5.1 failure and whether setting [Net.ServicePointManager]::SecurityProtocol fixes it. Microsoft documents how .NET Framework picks TLS versions, but no public source ties this error to the Privilege Secure server, and it needs a 5.1 client to reproduce. */}
+Use PowerShell 7 or `curl`. If the server certificate isn't trusted for the address you use, for example when you connect to `localhost` and the certificate names the server, Windows PowerShell 5.1 reports "The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel." Connect with the host name in the certificate. The server answers a request that addresses it as `localhost` with HTTP 400.
 
 Trust the certificate authority (CA) that issued the server certificate instead of turning certificate checks off. With `curl`, point the client at the CA certificate file with `--cacert <ca-certificate-file>`.
 
