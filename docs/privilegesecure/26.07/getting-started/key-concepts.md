@@ -41,7 +41,7 @@ The **Activity Type** field offers three values:
 | Interactive App Launch | The user launches an application on the resource. |
 | Task Automation | Privilege Secure runs the actions without an interactive connection. |
 
-Credential Release and File Release are the activities that give users a credential or a file from a vault. They belong to credential-based policies and secret vaults, and the console doesn't offer them in the **Activity Type** list. {/* TODO verify: Credential Release / File Release surface */}
+Credential Release and File Release are the activities that give users a credential or a file from a vault. They belong to credential-based policies and secret vaults, and the console doesn't offer them in the **Activity Type** list.
 
 See [Activities](/docs/privilegesecure/26.07/configuration/activities/activities.md).
 

@@ -54,7 +54,9 @@ For example, to send through an unauthenticated relay on port 25, enter the rela
 
 The default port is 25, with **Use TLS** and **Use Auth** cleared.
 
-{/* TODO verify: an end-to-end test with a real SMTP server: that Test Settings reports success, that the message arrives, and that the link in it opens the console. Release code can't show how a given SMTP server responds. */}
+When you click **Test Settings**, enter a recipient address and click **Send Email**. The dialog shows "Test email sent. It should arrive shortly." The message has the subject "Test from Netwrix Privilege Secure", comes from your **From Address**, and carries the text in the dialog as its body. The message also appears on the **Email Queue** tab.
+
+{/* TODO verify: that the link in an approval email opens the console. The test email has no link. */}
 
 ## View queued email
 

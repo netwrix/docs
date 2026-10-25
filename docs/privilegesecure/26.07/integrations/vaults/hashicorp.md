@@ -62,7 +62,9 @@ Enter the library in the following places:
 - In a service account, in the **Library** field that appears when you select the HashiCorp connector. See [Service accounts](../../configuration/service-accounts/service-accounts.md).
 - In an activity that uses the **Vault** login account and the HashiCorp connector. See [Create an activity](../../configuration/activities/create-activity.md).
 
-{/* TODO verify: the exact label and position of the library field on the Vault activity form in 26.07. */}
+On the activity form, the **Vault Connector** list sits under **Login Account Template**, after you select **Vault** as the **Login Account**.
+
+{/* TODO verify: the label and position of the library field after you select a HashiCorp connector on the activity form. The lab has no HashiCorp connector, so the field didn't appear. */}
 
 When the last session that uses the credential ends, Privilege Secure checks the account back in. It sends the user name and domain of the checked-out account, joined as `<user>@<domain>`, to `<API Url><library>/check-in`, for example `<API Url>/ad/library/my-set/check-in`.
 

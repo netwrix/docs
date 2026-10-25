@@ -33,7 +33,9 @@ Expand a card to see your sessions for that activity and to create a new one. Se
 
 When a session is ready, you launch it from the card or from the Dashboard. See [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md). What you can do after you connect, such as viewing a password, depends on the connection profile in your access policy. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
-{/* TODO verify: the contents of an activity card and its expanded session list, including the menu on each session. The lab user belonged to no access policy, so the cards weren't visible. */}
+Each card shows the activity name and, below it, the name of the resource. Select a card to expand a panel under it. When you have no session for the activity, the panel shows "Create your first session!", the note "The session will be recorded and created with temporary credentials", and a **Create session** button.
+
+{/* TODO verify: the session list in the expanded panel, including the menu on each session. It needs an existing session, and the lab has none. */}
 {/* TODO screenshot: an expanded activity card with a session */}
 
 ## When the page is empty
