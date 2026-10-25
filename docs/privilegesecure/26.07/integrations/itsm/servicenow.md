@@ -70,8 +70,6 @@ This example creates one connector for each ticket type.
 | **Domain Name**\* | `<instance-name>.service-now.com` | `<instance-name>.service-now.com` |
 | **Allowed Statuses** | `New,In Progress` | `New,Assess,Authorize,Scheduled,Implement` |
 
-{/* TODO verify: the change request form of the view ticket URL. It follows the incident form from the field help with change_request.do, and it needs a ServiceNow dev instance. */}
-
 The default regular expression matches incident numbers only. For change requests, replace the `INC` prefix with `CHG`.
 
 By default, ServiceNow numbers change requests as `CHG` followed by 7 digits. The change request example uses state labels from the default ServiceNow change model (New, Assess, Authorize, Scheduled, Implement, Review, Closed, and Canceled). Instances can customize both the number format and the labels.
