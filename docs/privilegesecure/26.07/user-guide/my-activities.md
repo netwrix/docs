@@ -35,7 +35,9 @@ When a session is ready, you launch it from the card or from the Dashboard. See 
 
 Each card shows the activity name and, below it, the name of the resource. Select a card to expand a panel under it. When you have no session for the activity, the panel shows "Create your first session!", the note "The session will be recorded and created with temporary credentials", and a **Create session** button.
 
-{/* TODO verify: the session list in the expanded panel, including the menu on each session. It needs an existing session, and the lab has none. */}
+When you have sessions for the activity, the panel shows a tile for each session, with a **+** (**Create a session**) button beside the tiles. A card that has a session also shows a green dot. Each tile shows the resource name, the login account, when the session started and when it ends, and its status, such as "Waiting for approval". The **...** menu on a tile that waits for approval has **Copy username** and **Stop session**.
+
+{/* TODO verify: the menu on a tile for a running session, and the tile for a session that has started. The lab sessions are still waiting for approval. */}
 {/* TODO screenshot: an expanded activity card with a session */}
 
 ## When the page is empty

@@ -56,7 +56,21 @@ The default port is 25, with **Use TLS** and **Use Auth** cleared.
 
 When you click **Test Settings**, enter a recipient address and click **Send Email**. The dialog shows "Test email sent. It should arrive shortly." The message has the subject "Test from Netwrix Privilege Secure", comes from your **From Address**, and carries the text in the dialog as its body. The message also appears on the **Email Queue** tab.
 
-{/* TODO verify: that the link in an approval email opens the console. The test email has no link. */}
+## Approval emails
+
+When a session needs approval, Privilege Secure sends one email to each approver who has an email address. The subject is "Netwrix Privilege Secure Activity Session needs approval for: `<requester>`". The body lists:
+
+- **Session Requested by**
+- **Activity**
+- **Resource**
+- **Start** and **End**
+- **Approval link**
+- **Notes**
+- **Ticket**
+
+The approval link is the **Website URL** followed by `/dashboard/approval`. For the **Website URL** `https://<nps-server-fqdn>:6500`, the link is `https://<nps-server-fqdn>:6500/dashboard/approval`.
+
+The Email Service sends queued messages in cycles, so an email can arrive a minute or more after the request. Until then, the message shows **\<never\>** in the **Sent** column of the **Email Queue** tab.
 
 ## View queued email
 
