@@ -25,7 +25,7 @@ The connector connects to ServiceNow with HTTP basic authentication over HTTPS. 
 Prepare the ServiceNow instance first.
 
 - An integration account in ServiceNow that can read and update the tickets of the type that the connector handles.
-- The `snc_basic_auth_api_access` role on that account. Instances that restrict basic authentication reject the account with a generic 401 error without this role, even when the credentials are correct.
+- The `snc_basic_auth_api_access` role on that account. ServiceNow describes the role as granting basic authentication API access when the instance enforces the basic authentication restriction. Instances that restrict basic authentication reject the account with a generic 401 error without this role, even when the credentials are correct. A developer instance's sample `itil` user has the `itil` role but not this role.
 - A password that you set with the **Set Password** UI action in ServiceNow. Don't set the password by editing the field.
 - The ServiceNow host name, reachable over HTTPS from the Privilege Secure server.
 - A service account in Privilege Secure that holds the integration account's user name and password, to select in **System Credentials**. See [Service accounts](../../configuration/service-accounts/service-accounts.md).
