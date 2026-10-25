@@ -66,7 +66,7 @@ This example creates one connector for each ticket type.
 | **Ticket Number Label** | `INC#` | `CHG#` |
 | **Ticket Type**\* | Incidents | Change Requests |
 | **Ticket Number Regex** | `^INC[\d]{7}$` | `^CHG[\d]{7}$` |
-| **View Ticket Url Template**\* | `https://<instance-name>.service-now.com/nav_to.do?uri=incident.do?number={ticket}` | `https://<instance-name>.service-now.com/nav_to.do?uri=change_request.do?number={ticket}` |
+| **View Ticket Url Template**\* | `https://<instance-name>.service-now.com/incident.do?sysparm_query=number={ticket}` | `https://<instance-name>.service-now.com/change_request.do?sysparm_query=number={ticket}` |
 | **Domain Name**\* | `<instance-name>.service-now.com` | `<instance-name>.service-now.com` |
 | **Allowed Statuses** | `New,In Progress` | `New,Assess,Authorize,Scheduled,Implement` |
 
@@ -99,8 +99,10 @@ If a check fails, the request shows one of these messages:
 |---|---|
 | "Ticket 'X' not found in ServiceNow." | ServiceNow has no ticket with that number. |
 | "Ticket 'X' has status 'S' which is not allowed." | The ticket status isn't in **Allowed Statuses**. |
-| "Unable to reach ServiceNow. Please try again." | Privilege Secure couldn't connect to ServiceNow. |
+| "Unable to reach ServiceNow. Please try again." | The lookup failed. The cause can be a network or certificate problem, a wrong host name, or ServiceNow refusing the integration account, for example a wrong password. |
 | "ServiceNow connector not configured." | The profile requires a ticket, but the profile has no usable connector. |
+
+To find the cause of "Unable to reach ServiceNow", open the `PAM-Web` log in `C:\ProgramData\Stealthbits\PAM\Log` on the Privilege Secure server and search for "ServiceNow ticket lookup failed". The next line names the error. For example, "ServiceNow returned 401 for ticket lookup" means that ServiceNow refused the integration account. Check the account's password in the service account, that the account doesn't need a password reset, and that the account has the `snc_basic_auth_api_access` role. See [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md).
 
 When **Add Comments To Ticket** is selected, Privilege Secure adds a work note to the ticket when:
 
