@@ -41,6 +41,4 @@ After you install the extension, its icon appears in the browser toolbar. In Edg
 
 The extension asks to read and change data on the sites you visit. It needs this permission to fill credentials into sign-in forms and to lock and record the session page.
 
-{/* TODO verify: the exact permission prompt wording that Chrome and Edge show for build 25.8.26. The browser generates the wording, and the extension source has no release branch for that build. */}
-
 After you install the extension, sign in and start a session. See [Use the browser extension](/docs/privilegesecure/26.07/user-guide/browser-extension/use-browser-extension.md).

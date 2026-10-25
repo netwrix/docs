@@ -10,8 +10,6 @@ The Netwrix Privilege Secure for Access Management (Privilege Secure) download i
 
 {/* TODO screenshot: contents of the downloaded zip file */}
 
-{/* TODO verify: the files in the zip root other than NPS_Setup.exe, which come from the Setup Launcher build. The Extras and Pre-Reqs lists below follow the 26.07.3 release pipeline. The pipeline also puts ADSyncDiagnostic.exe, three Netwrix Endpoint Policy Manager MSI files, and the launch-website and NPS.LaunchApp folders in Extras. Decide whether to document them. */}
-
 ## Main files
 
 | File | Description |
@@ -42,11 +40,16 @@ The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it 
 | `NPS.HaMgr.exe` | The high availability manager tool. Copy it to the server and run it. See [High availability](/docs/privilegesecure/26.07/install/high-availability.md). |
 | `SbPAMPowershellModules.msi` | Installs the Privilege Secure PowerShell modules, which run custom PowerShell scripts against the application API. |
 | `sbpam-url.exe` | Installs the `sbpam-url` URL handler, which starts SSH sessions from the browser in your preferred SSH client. |
-| Enablement Toolkit | Installs a graphical utility for common troubleshooting tests. |
+| `Enablement Toolkit.exe` | Installs a graphical utility for common troubleshooting tests. |
+| `ADSyncDiagnostic.exe` | A diagnostic tool for Active Directory synchronization. |
+| `launch-website` folder | Contains `launch-website.exe`, which starts a web application session on a Remote Desktop Services host. See [Configuring the Netwrix Privilege Secure RDS Web App Launcher](/docs/kb/privilegesecure/remote-desktop-and-rds/configuring-the-netwrix-privilege-secure-rds-web-app-launcher). |
+| `NPS.LaunchApp` folder | Contains the application launcher for Remote Desktop Services hosts. |
+| `Netwrix Endpoint Policy Manager Client-Side Extension x64.msi` and `Netwrix Endpoint Policy Manager Client-Side Extension ARM64.msi` | The Netwrix Endpoint Policy Manager client-side extension for x64 and ARM64 Windows. |
+| `NPS Endpoint Group Policy Snap-In x64.msi` | The Group Policy snap-in for Privilege Secure. |
 
 The package has no standalone Email service installer.
 
-{/* TODO verify: the exact file name of the Enablement Toolkit, which the release pipeline picks up by the pattern `*Enablement*.exe`. */}
+{/* TODO verify: what the Netwrix Endpoint Policy Manager extension, the Group Policy snap-in, and the NPS.LaunchApp folder do in a Privilege Secure deployment. The package names them but the release code doesn't describe their use. */}
 
 {/* TODO verify: the PowerShell version that `SbPAMPowershellModules.msi` requires. The 26.03 page says PowerShell 7.1. The modules installer is built outside the repositories that hold the release code. */}
 

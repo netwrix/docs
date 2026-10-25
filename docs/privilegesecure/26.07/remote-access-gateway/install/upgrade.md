@@ -15,7 +15,8 @@ Both installers upgrade an existing installation in place and refuse to install 
 ## Before you upgrade
 
 - Get the Remote Access Gateway package for the release that you are upgrading to from the Netwrix Customer Portal.
-  {/* TODO verify: the exact file name of the 26.07.3 package and its folder on the Customer Portal. */}
+  The file is named `privilegesecure-accessmanagement-rag-<version>.zip`.
+  {/* TODO verify: the folder of the package on the Customer Portal. */}
 - Plan to upgrade the gateway, the portal, and guacd together. The 26.07.3 portal expects guacd 1.6.0. If guacd runs a different version, remote desktop colors can display incorrectly. See [Match the guacd version](#match-the-guacd-version).
 - Back up `C:\ProgramData\Stealthbits\PAM\RagGateway\appsettings.json` on the gateway server.
 - Back up `nginx.conf` on the portal server. See [Upgrade the portal](#upgrade-the-portal).

@@ -49,7 +49,9 @@ The launcher shows the steps for your situation on screen. For a first installat
 4. Review the install folder and the data folder. To change a location, click **Browse**. Click **Next**.
 5. When the installation finishes, click **Exit**.
 
-{/* TODO verify: the default install and data folders of the Netwrix PostgreSQL 16 installer. The installer is a prebuilt package whose folder defaults aren't in the product source, and Privilege Secure reads the folders from the registry after the install. */}
+The installer puts PostgreSQL 16 in `C:\Program Files\Stealthbits\PostgreSQL16` and the data in `C:\ProgramData\Stealthbits\PostgreSQL16`. The Windows service is named `postgresql-x64-16` and is listed as **PostgreSQL Server 16**.
+
+{/* TODO verify: that these are the defaults on a fresh installation. They were read on a server where the Netwrix installer upgraded PostgreSQL 12 to 16. */}
 {/* TODO screenshot: the PostgreSQL setup wizard install and folder pages */}
 
 If PostgreSQL 16 is already on the server, the launcher shows a green checkmark next to the database button. If you start a new PostgreSQL installation anyway, the launcher warns you that PostgreSQL is already installed at a given location and asks you to confirm.
@@ -112,7 +114,9 @@ To point an installed Privilege Secure at a local or remote database, use the Ne
 
 By default, the database settings point to the local server: PostgreSQL on port 5432 or SQL Server on port 1433, with the database name `PAM`.
 
-{/* TODO verify: the port that the bundled PostgreSQL 16 installer configures on a fresh install. The launcher writes 5432 when no port is recorded, and the PostgreSQL 12 to 16 upgrade script defaults the new instance to 5437, but the installer's own default isn't in the product source. */}
+On a server that was upgraded from PostgreSQL 12 to 16, PostgreSQL 16 listens on port 5437. The installer records the port in the `Port` value under `HKEY_LOCAL_MACHINE\SOFTWARE\Stealthbits Technologies\PostgreSQL16`.
+
+{/* TODO verify: the port that the bundled PostgreSQL 16 installer configures on a fresh installation. */}
 
 ## If the installer can't reach the database
 

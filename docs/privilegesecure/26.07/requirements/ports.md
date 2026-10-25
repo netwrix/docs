@@ -87,7 +87,7 @@ Resource settings can override the default RDP, SSH, and WinRM ports for a host.
 
 | Port | Protocol | Database | Notes |
 | --- | --- | --- | --- |
-| 5432 | TCP | PostgreSQL (bundled installer) | Default port that the Setup Launcher records and the database settings use. To see the port your installation uses, check **System Settings** > **Database**. {/* TODO verify: the port on a fresh 26.07.3 install (HKLM PostgreSQL16 Port value) and after a PostgreSQL 12-to-16 upgrade; the upgrade script defaults the target port to 5437. */} |
+| 5432 | TCP | PostgreSQL (bundled installer) | Default port that the Setup Launcher records and the database settings use. To see the port your installation uses, check **System Settings** > **Database**. After an upgrade from PostgreSQL 12, PostgreSQL 16 uses port 5437. {/* TODO verify: the port on a fresh 26.07.3 installation. */} |
 | 1433 | TCP | Microsoft SQL Server | You provide SQL Server. |
 
 Allow the port only between the application server and the database host when the database is remote.

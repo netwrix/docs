@@ -13,8 +13,8 @@ Complete the steps in order. Run `Configure-Gateway.ps1` only after guacd is run
 ## Before you begin
 
 - Check the server against [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md), including nested virtualization if the server is a virtual machine.
-- Get the Remote Access Gateway package from the Netwrix Customer Portal. It is a separate download from the main Privilege Secure package, and contains `NPS.RagGateway.exe` and `NPS.RagPortal.exe`.
-  {/* TODO verify: the exact file name of the 26.07.3 Remote Access Gateway package and its folder on the Customer Portal. */}
+- Get the Remote Access Gateway package from the Netwrix Customer Portal. It is a separate download from the main Privilege Secure package. The zip file is named `privilegesecure-accessmanagement-rag-<version>.zip`, for example `privilegesecure-accessmanagement-rag-26.07.3.zip`. It contains `NPS.RagGateway.exe` and `NPS.RagPortal.exe`.
+  {/* TODO verify: the folder of the Remote Access Gateway package on the Customer Portal. */}
 - Sign in to the gateway server as a local administrator and run PowerShell as an administrator.
 
 The examples use these placeholders. Replace them with your values.
@@ -68,8 +68,6 @@ The gateway package includes `install-docker.sh`. It installs Docker, pulls `gua
    ```bash
    sudo bash "/mnt/c/Program Files/Stealthbits/PAM/NPS.RagGateway/guacd/install-docker.sh"
    ```
-
-   {/* TODO verify: whether the packaged install-docker.sh has Windows (CRLF) line endings that stop bash from running it. Answerable by downloading the published privilegesecure-accessmanagement-rag zip and running `file` on install-docker.sh. The release source stores LF, but the packaged endings depend on the build agent's checkout. */}
 
 2. List the running containers:
 

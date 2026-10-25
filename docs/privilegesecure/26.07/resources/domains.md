@@ -36,8 +36,6 @@ For how synchronization reads the directory, see [How Active Directory synchroni
 
 The new domain opens on its details page. The page is empty until the first synchronization finishes. To start it right away, select **Sync**.
 
-{/* TODO verify: the label of the domain name field on the New Domain page. The console shows a raw placeholder label; describe the field by its purpose only. */}
-
 ## Schedule synchronization
 
 Set how often Privilege Secure synchronizes the domain in the schedule row on the domain's details page.

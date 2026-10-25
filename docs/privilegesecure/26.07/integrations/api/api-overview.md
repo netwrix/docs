@@ -101,8 +101,6 @@ To turn it on, add `"SwaggerEnable": true` to `C:\ProgramData\Stealthbits\PAM\We
 
 {/* TODO verify: whether the Swagger page and specification load with SwaggerEnable set to true, and their URLs. Release code (SbPAM.Web.UI Startup.cs, 26.07.3, lines 622-629) maps /swagger/v1/swagger.json to a 404 "Swagger is disabled" response when the setting is on, so a dev instance must confirm before the URLs are documented. */}
 
-{/* TODO: a generated API reference is planned as its own top-level section when Engineering supplies a specification built from 26.07.3. Link to it here when it exists. */}
-
 ## Calling the API from a script
 
 Use PowerShell 7 or `curl`. `Invoke-RestMethod` in Windows PowerShell 5.1 can fail to open the TLS connection to the Privilege Secure server, with the error "The underlying connection was closed".

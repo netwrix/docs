@@ -42,8 +42,6 @@ For the task list, see [Scheduled tasks](/docs/privilegesecure/26.07/admin/servi
 
 **Fix:** Wait, and check the **History** tab for progress entries such as "Synchronized N group member relationships for domain". If no entries appear for an extended period, upgrade to 26.07.3 or later. Release 26.07.3 looks up nested groups in batches of up to 200 groups per directory query, instead of one query for each group. For how the sync finds group members, see [How Active Directory synchronization works](/docs/privilegesecure/26.07/resources/ad-sync.md#how-group-members-are-found).
 
-{/* TODO verify: how long a large sync should take before you contact Support. Release code and public sources set no time limit; it depends on domain size. */}
-
 ## A host scan fails with a null platform ID error
 
 **Symptom:** A scan or sync fails with the error "Cannot convert null to type 'System.Guid'" for the platform ID. A Windows resource added from Active Directory can also keep a blank operating system and IP address after its first scan.
