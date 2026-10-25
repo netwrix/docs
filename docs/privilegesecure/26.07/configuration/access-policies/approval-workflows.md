@@ -13,7 +13,7 @@ A workflow is a list of tiers. Each tier has its own approvers, the number of ap
 ## Prerequisites
 
 - A connection profile to edit. See [Connection profiles](connection-profiles.md).
-- The approvers exist in the console as users, local users, or groups. See [Add users and groups](../../admin/users-groups/add-users-groups.md).
+- The approvers exist in the console as domain users or groups of domain users, and Privilege Secure manages each domain user. See [Add users and groups](../../admin/users-groups/add-users-groups.md).
 - Email is configured, so that approvers and requesters receive notifications. See [Configure email notifications](../system-settings/email.md).
 
 ## Approval workflow options
@@ -54,6 +54,11 @@ A green plus icon to the right of the last card adds another tier. A workflow ha
 1. Filter by **All**, **Users**, **Local Users**, or **Groups**, or use the search box.
 1. Select each approver to move it from **Available Users And Groups** to **Users And Groups to Add**.
 1. Click **Add**.
+
+   :::warning
+   The dialog lists local Privilege Secure users, but a local user never receives an approval request. The **Approvals** tile of a local user stays empty. Name domain users, or groups that contain them, as approvers.
+   :::
+
 1. Use the plus and minus icons next to **Approvals Required** to set the number of approvals the tier needs.
 1. To add another tier, click the green plus icon to the right of the card and repeat steps 4 through 12.
 1. Click **Save**.
