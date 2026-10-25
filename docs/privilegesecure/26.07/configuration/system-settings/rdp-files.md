@@ -10,7 +10,7 @@ When a user starts a Remote Desktop Protocol (RDP) session from Privilege Secure
 
 Select **System Settings** > **RDP Options** to open the panel.
 
-{/* TODO screenshot: System Settings RDP Options panel */}
+![The RDP Options panel with the default resolution, multi monitor, and smart sizing options and the certificate thumbprint field.](/images/privilegesecure/26.07/configuration/system-settings-rdp-options.webp)
 
 ## RDP options
 

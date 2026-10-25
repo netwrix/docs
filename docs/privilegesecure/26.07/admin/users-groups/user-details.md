@@ -10,7 +10,7 @@ The details page for a user or group shows its sessions, access policies, roles,
 
 To open the page, click a name on the **Users & Groups** page, on a role's member list, or in another list that links to the account. See [Users and groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md).
 
-{/* TODO screenshot: the details page for a domain user, showing the header and the tab row */}
+![The details page of a domain user, with the header, the session counts, the Lock Account and Reset MFA buttons, and the tab row.](/images/privilegesecure/26.07/admin/user-details-domain-user.webp)
 
 ## Header
 

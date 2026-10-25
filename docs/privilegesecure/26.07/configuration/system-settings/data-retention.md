@@ -27,7 +27,7 @@ The days field is available after you select its checkbox. Privilege Secure read
 1. Enter the number of days to keep in the matching days field. For example, enter `365` in **Email Retention Days** to keep one year of email.
 1. Click **Save**.
 
-{/* TODO screenshot: Data Retention panel with all three options visible */}
+![The Data Retention panel with its three options and their days fields.](/images/privilegesecure/26.07/configuration/system-settings-data-retention.webp)
 
 :::warning
 Deleted data can't be recovered. Privilege Secure deletes records older than the number of days you enter at the next cleanup run. Lowering the number of days can delete a large amount of data at once.

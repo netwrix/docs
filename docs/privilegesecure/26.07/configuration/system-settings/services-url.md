@@ -26,7 +26,7 @@ Change the address when you install a certificate for the console website, or wh
 
 When registration finishes, a short "Services registered" notification appears. If a service can't be registered, the notification reads "Failed to register".
 
-{/* TODO screenshot: System Settings Services panel with the URL redacted */}
+![The Services panel in System Settings with the NPS Rest URL field and the Register Services button.](/images/privilegesecure/26.07/configuration/system-settings-services.webp)
 
 :::warning
 Don't end the URL with a slash. Before Privilege Secure 26.07.3, a URL such as `https://<nps-server-fqdn>:6500/` made **Register Services** report success while every service then returned HTTP 500. From 26.07.3, the product removes the trailing slash. Enter the URL without one in every version.

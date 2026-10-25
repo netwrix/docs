@@ -41,7 +41,7 @@ For example, to review what an administrator typed on `<server-name>` yesterday,
 
 {/* TODO verify: which resource types start RDP, SSH, and website sessions, for example whether Active Directory domain and Microsoft Entra ID resources use RDP or website sessions. The console decides the viewer from the session protocol, not from the resource type. */}
 
-{/* TODO screenshot: Replay Viewer for an RDP session */}
+![The Replay Viewer playing an RDP session, with the event timeline, the playback controls, and the user, target, and activity details.](/images/privilegesecure/26.07/admin/replay-viewer-rdp.webp)
 
 ### Controls for RDP and SSH replays
 

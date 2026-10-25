@@ -21,7 +21,7 @@ Links in emails, such as the link an approver clicks to review a request, start 
 1. In **Website URL**, enter the console address in the form `https://<nps-server>:<port>`. For example: `https://<nps-server-fqdn>:6500`.
 1. Click **Save**.
 
-{/* TODO screenshot: System Settings Email panel */}
+![The Email panel in System Settings with the Website URL field.](/images/privilegesecure/26.07/configuration/system-settings-email.webp)
 
 The value must be a well-formed URL. The field is empty by default.
 

@@ -23,7 +23,7 @@ This page describes the Chrome Web Store build 25.8.26.
 
 The extension shows the activity list after you sign in.
 
-{/* TODO screenshot: extension popup signed in, showing the Activities tab (store 25.8.26, not the beta channel) */}
+![The browser extension popup on the Activities tab, with the All and Favorites lists and the Activities, Current Tab, and Settings tabs.](/images/privilegesecure/26.07/user-guide/browser-extension-activities-tab.webp)
 
 ## Extension tabs
 
@@ -117,7 +117,7 @@ End the session before the timer runs out when you finish your work.
 
 A notification confirms that the session ended.
 
-{/* TODO screenshot: the session-ended message with the Close Tab button (store 25.8.26) */}
+![The browser extension page that says the session has ended, with the Close Tab button.](/images/privilegesecure/26.07/user-guide/browser-extension-session-ended.webp)
 
 What happens to the activity depends on the **End web sessions automatically** setting:
 

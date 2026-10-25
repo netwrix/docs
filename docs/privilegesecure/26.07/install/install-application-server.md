@@ -52,7 +52,9 @@ The launcher shows the steps for your situation on screen. For a first installat
 The installer puts PostgreSQL 16 in `C:\Program Files\Stealthbits\PostgreSQL16` and the data in `C:\ProgramData\Stealthbits\PostgreSQL16`. The Windows service is named `postgresql-x64-16` and is listed as **PostgreSQL Server 16**.
 
 {/* TODO verify: that these are the defaults on a fresh installation. They were read on a server where the Netwrix installer upgraded PostgreSQL 12 to 16. */}
-{/* TODO screenshot: the PostgreSQL setup wizard install and folder pages */}
+![The Netwrix PostgreSQL 16 setup wizard install page.](/images/privilegesecure/26.07/install/postgresql-wizard-install.webp)
+
+![The Netwrix PostgreSQL 16 setup wizard page with the install and data folders.](/images/privilegesecure/26.07/install/postgresql-wizard-folders.webp)
 
 If PostgreSQL 16 is already on the server, the launcher shows a green checkmark next to the database button. If you start a new PostgreSQL installation anyway, the launcher warns you that PostgreSQL is already installed at a given location and asks you to confirm.
 
