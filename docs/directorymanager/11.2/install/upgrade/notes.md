@@ -42,7 +42,7 @@ The source version file system is required for the following:
     File Path on the Directory Manager 11 server:
     ``C:\Program Files\Imanami\GroupID `<source version>`\Replication\IdentityStoresReplicationAttributes\``
 
-- To upgrade schedules, Synchronize jobs, and generated reports on a different box, the relevant
+- To upgrade schedules and Synchronize jobs on a different box, the relevant
   files must be available on the Directory Manager 11 server.
 - If you have uploaded a CSV file containing a list of disallowed passwords for an identity store,
   that file should also be available on the Directory Manager 11 server for the Upgrade wizard to
@@ -148,3 +148,18 @@ be auto created for identity stores that have Entitlement settings defined.
 
 Step 19 – You can't run the Configuration Tool and the Upgrade wizard more than once using the same
 database (for upgrade to Directory Manager version 11.0.23315.04).
+
+Step 20 – In an upgrade from GroupID 10, Smart Groups that use a plain Oracle data source must not
+use a Transparent Network Substrate (TNS) alias. Do one of the following:
+
+- Before the upgrade, reconfigure these Smart Groups in GroupID 10 so that they don't use a TNS alias.
+- After the upgrade, reconfigure the Oracle data sources that the Upgrade wizard created in
+  Directory Manager 11.2.
+
+Step 21 – Schedules that you upgrade from GroupID 10 to Directory Manager 11.2 require you to
+reconfigure their authentication. See the
+[Schedules](/docs/directorymanager/11.2/admincenter/schedule/overview.md) topic.
+
+Step 22 – The upgrade doesn't upgrade reports from GroupID 10 to Directory Manager 11.2, and it
+doesn't attach them to an identity store. After the upgrade, reconfigure the reports manually in
+Directory Manager 11.2.
