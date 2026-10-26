@@ -24,3 +24,5 @@ You also need someone who can issue a TLS certificate for the server's hostname 
 ## Scripting or Troubleshooting an Installation
 
 The [Installer reference](installer-reference.md) lists the flags, environment variables, exit codes, and preflight checks, for when you script an installation or need to find out why one stopped.
+
+To read a service's logs on the server, or to collect a support bundle for Netwrix Support, see [View and export logs](view-and-export-logs.md).

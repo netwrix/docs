@@ -1,6 +1,14 @@
 ---
 title: "Service Nodes Page"
-description: "Service Nodes Page"
+description: "Configure the services running on each installed service node and check whether they are online."
+keywords:
+  - Service Nodes
+  - Search Service Nodes
+  - Search Services
+  - Status icon
+  - Action Service
+  - Email Service
+  - Scheduler Service
 sidebar_position: 10
 ---
 
@@ -12,16 +20,14 @@ On the Service Nodes page, configure the services for each installed service nod
 
 The left of the page lists the Service Nodes and the services running on them:
 
-- Search Service Nodes – Enter the name of a service node to filter the list
-- Search Services – Enter the name of a service to filter the list
-- Status icon – Shows the status of the services on the node. Hover over the icon for its
-description:
-
-- Online – All services are online
-- Partial – Some services are offline
-- Offline – All services are offline
-
-- Services list – Select a service from the list to view and edit settings
+- **Search Service Nodes** — Enter the name of a service node to filter the list
+- **Search Services** — Enter the name of a service to filter the list
+- **Status icon** — Shows the status of the services on the node. Hover over the icon for its
+  description:
+  - **Online** — All services are online
+  - **Partial** — Some services are offline
+  - **Offline** — All services are offline
+- **Services list** — Select a service from the list to view and edit settings
 
 The right of the page shows details of the selected service:
 

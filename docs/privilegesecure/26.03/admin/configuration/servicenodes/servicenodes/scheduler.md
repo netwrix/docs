@@ -1,6 +1,14 @@
 ---
 title: "Scheduler Service"
-description: "Scheduler Service"
+description: "View Scheduler Service action statistics for the past 24 hours and the queue of scheduled services."
+keywords:
+  - Statistics
+  - Action Queues
+  - scheduled services
+  - Job Name
+  - AQ Status
+  - Activity Status
+  - Completed With Errors
 sidebar_position: 50
 ---
 
@@ -15,11 +23,11 @@ The Scheduler Service page shows details of the selected service and has the fol
 - Statistics Tab
 - Action Queues Tab
 
-## Statistics Tab
+## Statistics tab
 
 The Statistics tab shows an overview of the actions for the past 24 hours.
 
-![statisticstab](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/statisticstab.webp)
+![Statistics tab showing action totals by status](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/statisticstab.webp)
 
 The Statistics tab shows the total number of actions for each of the following statuses:
 
@@ -33,25 +41,23 @@ The Statistics tab shows the total number of actions for each of the following s
 - Completed With Errors
 - Completed Not Run
 
-## Action Queues Tab
+## Action Queues tab
 
 The Action Queues tab shows all scheduled services.
 
-![actionqueuestab](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/actionqueuestab.webp)
+![Action Queues tab showing scheduled service jobs](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/actionqueuestab.webp)
 
 The Action Queues table has the following features:
 
-- Search – Searches the columns to match the search string. When matches are found, the table is
-filtered to the matching results.
-- Refresh button – Reload the information displayed
+- **Search** — Searches the columns to match the search string. When matches are found, the table is
+  filtered to the matching results.
+- **Refresh button** — Reload the information displayed
 - Column headers can be sorted by ascending or descending order:
-
-- Start Time – Indications when the action started
-- End Time – Indications when the action completed
-- Job Name – Name of the scheduled action
-- AQ Status – Status of the service
-- AQ Status Description – Describes the status type
-- Activity Status – Shows status information for the action:
-
-- Complete – Action completed successfully
-- Failed – Action failed
+  - **Start Time** — Indicates when the action started
+  - **End Time** — Indicates when the action completed
+  - **Job Name** — Name of the scheduled action
+  - **AQ Status** — Status of the service
+  - **AQ Status Description** — Describes the status type
+  - **Activity Status** — Shows status information for the action:
+    - **Complete** — Action completed successfully
+    - **Failed** — Action failed

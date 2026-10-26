@@ -12,7 +12,7 @@ A rollback changes your database schema. The database setup job (`db-seeds`) run
 
 ## Before You Roll Back
 
-1. **Confirm the last upgrade finished cleanly.** If an earlier upgrade failed partway through its database migrations, it left the schema marked dirty, and `db-seeds` refuses to roll back. Fix that failure first, or contact Netwrix Support.
+1. **Confirm the last upgrade finished cleanly.** If an earlier upgrade failed partway through its database migrations, `db-seeds` treats the schema as dirty and refuses to roll back. Fix that failure first, or contact Netwrix Support.
 2. **Take a database backup.** Trigger an on-demand Postgres backup and wait for it to finish:
 
    ```bash
@@ -89,6 +89,10 @@ Run these commands on the install host. `dspmctl` needs `sudo` because only root
    :::warning
    Don't skip this step. Without it, the root application never syncs again, and later upgrades, including an air-gapped `dspm-installer upgrade`, stop working.
    :::
+
+   To confirm, run `sudo dspmctl auto-status`. Every application should show **Yes** in all three columns:
+
+   ![dspmctl auto-status listing every application with auto-sync, self-heal, and auto-prune turned on](/images/accessanalyzer/26.1/install/auto-status.webp)
 
 5. Wait for every application to become healthy:
 

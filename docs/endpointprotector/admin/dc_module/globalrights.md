@@ -139,7 +139,7 @@ drive vs USB Webcam) by Device name/VID/PID.
 
 ![Manage USB access through the virtual environment.](vmusb.webp)
 
-## Speciﬁc Devices (Standard)
+## Specific Devices (Standard)
 
 From this section, you can manage access rights for a speciﬁc device.
 

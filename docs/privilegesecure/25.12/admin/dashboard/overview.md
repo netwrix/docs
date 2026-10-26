@@ -1,6 +1,14 @@
 ---
 title: "Dashboard Interface"
-description: "Dashboard Interface"
+description: "Learn how the Dashboard interface summarizes active, scheduled, approval, historical, user, resource, and credential information."
+keywords:
+  - Active Dashboard
+  - Scheduled Dashboard
+  - Approvals Dashboard
+  - Historical Dashboard
+  - Users Dashboard
+  - Resources Dashboard
+  - Credentials Dashboard
 sidebar_position: 40
 ---
 
@@ -13,17 +21,17 @@ information.
 
 The overview section shows information for the following:
 
-- Active Dashboard – Shows all active sessions. See the Active Dashboard topic for
-additional information.
-- Scheduled Dashboard – Shows all scheduled sessions. See the Scheduled Dashboard topic for
-additional information.
-- Approvals Dashboard – Shows sessions waiting for approval. See the Approvals Dashboard topic for
-additional information.
-- Historical Dashboard – Shows previous sessions. See the [Historical Dashboard](/docs/privilegesecure/25.12/admin/dashboard/historical/historical.md)
-topic for additional information.
-- Users Dashboard – Shows the users added to Privilege Secure. See the [Users Dashboard](/docs/privilegesecure/25.12/admin/dashboard/users.md)
-topic for additional information.
-- Resources Dashboard – Shows resources added to Privilege Secure. See the
-[Resources Dashboard](/docs/privilegesecure/25.12/admin/dashboard/resources.md) topic for additional information.
-- Credentials Dashboard – Shows access activity by resource. See the
-[Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md) topic for additional information.
+- **Active Dashboard** — Shows all active sessions. See the Active Dashboard topic for
+  additional information.
+- **Scheduled Dashboard** — Shows all scheduled sessions. See the Scheduled Dashboard topic for
+  additional information.
+- **Approvals Dashboard** — Shows sessions waiting for approval. See the Approvals Dashboard topic for
+  additional information.
+- **Historical Dashboard** — Shows previous sessions. See the [Historical Dashboard](/docs/privilegesecure/25.12/admin/dashboard/historical/historical.md)
+  topic for additional information.
+- **Users Dashboard** — Shows the users added to Privilege Secure. See the [Users Dashboard](/docs/privilegesecure/25.12/admin/dashboard/users.md)
+  topic for additional information.
+- **Resources Dashboard** — Shows resources added to Privilege Secure. See the
+  [Resources Dashboard](/docs/privilegesecure/25.12/admin/dashboard/resources.md) topic for additional information.
+- **Credentials Dashboard** — Shows access activity by resource. See the
+  [Credentials Dashboard](/docs/privilegesecure/25.12/admin/dashboard/credentials.md) topic for additional information.

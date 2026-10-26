@@ -147,6 +147,10 @@ Leave out `--ca-bundle` for a publicly trusted or self-signed certificate. Look 
 
 Always pass `--hostname`. Without it the installer skips the SAN comparison and the check still passes, with the message `; hostname not checked, pass --hostname to verify the SANs`.
 
+When the certificate doesn't cover the hostname, the TLS line fails and names the hostnames the certificate does cover. In this example, the certificate is for `dspm.corp.example.com`, so a check against `dspm.example.com` fails:
+
+![dspm-installer --preflight failing the tls check because the certificate is valid for dspm.corp.example.com, not dspm.example.com](/images/accessanalyzer/26.1/install/preflight-tls.webp)
+
 ### With OpenSSL
 
 You can run these checks on any machine with OpenSSL, before the files reach the host.
