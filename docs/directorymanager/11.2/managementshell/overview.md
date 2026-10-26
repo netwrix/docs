@@ -91,7 +91,7 @@ Windows Remote Management (WinRM) service that implements WS-Management in Windo
 
 Also ensure the following is available at the remote machine:
 
-- Windows Powershell 7.4.6
+- Windows PowerShell 7.6.3
 - Windows Remote Management 2.0
 
 To enable remoting on a Directory Manager machine.
@@ -133,7 +133,7 @@ the session. The output should look as shown in the following snapshot:
 Log on to the machine through which you want to remotely access the Directory Manager Management
 Shell and perform the following steps:
 
-Step 1 – Right-click **Start > PowerShell 7.4.6** using the **Run as Administrator** command to open
+Step 1 – Right-click **Start > PowerShell 7.6.3** using the **Run as Administrator** command to open
 it with Administrator privileges.
 
 Step 2 – At the prompt, enter the following script. It will display the new session created for the
@@ -164,4 +164,4 @@ desired identity store exists:
     ![groupiddatabase](/images/directorymanager/11.2/managementshell/directorymanagerdatabase.webp)
 
 After the script has run, a remote session will be created. You can now run all Directory Manager
-cmdlets through PowerShell 7.4.6 without the need of signing into the Directory Manager server.
+cmdlets through PowerShell 7.6.3 without the need of signing into the Directory Manager server.

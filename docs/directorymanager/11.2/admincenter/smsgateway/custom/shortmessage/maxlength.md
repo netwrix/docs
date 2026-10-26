@@ -20,7 +20,7 @@ public int MaxLength = 160
 
 **Return Value**
 
-Type: [System.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32?view=net-8.0)
+Type: [System.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32?view=net-10.0)
 
 The maximum length.
 

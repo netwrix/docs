@@ -19,11 +19,11 @@ you must set up the following prerequisites:
 Before you can deploy Directory Manager portals and services in remote IIS, ensure the following
 prerequisite software is installed on the remote IIS machine. Install them in the following order:
 
-1. ASP.NET Core Runtime 6.0.30 (Hosting Bundle)
-   Click [here](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-6.0.30-windows-hosting-bundle-installer)
+1. ASP.NET Core Runtime 10.0.10 (Hosting Bundle)
+   Click [here](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-10.0.10-windows-hosting-bundle-installer)
    to download.
-2. .NET Desktop Runtime 6.0.30
-   Click [here](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.30-windows-x64-installer)
+2. .NET Desktop Runtime 10.0.10
+   Click [here](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-10.0.10-windows-x64-installer)
    to download.
 3. ASP.NET Core Runtime 2.1.25 (Hosting Bundle)
    Click [here](https://dotnet.microsoft.com/download/dotnet/2.1) to download.
