@@ -138,7 +138,7 @@ C#:resource:logger.LogDebug("Name={0}", resource.Name); return resource.Name;
 
 ### White list
 
-The following .NET libraries from the white list can be used in C# expressions and [Razor notification templates](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate).
+The following .NET libraries from the white list can be used in C# expressions and [Razor notification templates](../xml-configuration/notifications/notificationtemplate).
 
 **Authorized Namespaces**
 
@@ -188,6 +188,15 @@ Beyond the authorized classes, the following methods can be used:
 - `System.DateTime.GetDateTimeFormats`
 - `System.DateTime.ToUniversalTime`
 - `System.DateTime.ToString`
+- `System.DateOnly.AddDays`
+- `System.DateOnly.AddMonths`
+- `System.DateOnly.AddYears`
+- `System.DateOnly.CompareTo`
+- `System.DateOnly.FromDateTime`
+- `System.DateOnly.FromDayNumber`
+- `System.DateOnly.Parse`
+- `System.DateOnly.ParseExact`
+- `System.DateOnly.ToString`
 
 Trying to use code from outside this white list would yield the following error during computation:
 
@@ -247,7 +256,7 @@ However, here is a whitelist of methods that can be called with these kinds of a
 
 ### Razor template white list
 
-[Razor notification templates](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate) share the same white list as C# expressions, with the following additions:
+[Razor notification templates](../xml-configuration/notifications/notificationtemplate) share the same white list as C# expressions, with the following additions:
 
 **Additional authorized classes:**
 

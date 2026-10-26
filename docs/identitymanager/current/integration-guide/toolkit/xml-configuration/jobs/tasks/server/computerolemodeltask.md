@@ -4,7 +4,7 @@ description: "The Compute Role Model will calculate the role model of all whose 
 sidebar_position: 4
 ---
 
-This task applies all rules in the role model of all [resource types](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/resourcetype) whose source entity types are specified as child elements of the task.
+This task applies all rules in the role model of all [resource types](../../../provisioning/resourcetype) whose source entity types are specified as child elements of the task.
 
 ## Behavior Details
 
@@ -45,7 +45,7 @@ The following example applies all rules in the role model concerning the entity 
 
 <IgnoreHistorizationIntro />
 
-The following example is similar to the previous one, except that the values prior to the changes on assigned single roles, composite roles, resource types, scalar or navigation properties, or binaries, will not be stored in the database.
+The following example is similar to the previous one, except that the values prior to the changes on assigned single roles, bundles, resource types, scalar or navigation properties, or binaries, will not be stored in the database.
 
 ```xml
 <ComputeRoleModelTask Identifier="First_ComputeRoleModel" DisplayName_L1="First Compute Role Model" IgnoreHistorization="true">

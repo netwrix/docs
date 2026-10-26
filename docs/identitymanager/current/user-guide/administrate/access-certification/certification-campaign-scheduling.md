@@ -114,6 +114,8 @@ When delegation is enabled, reviewers see a tab on the **Access Certification** 
 
 A **Delegate** action is available on any undelegated item in **My Items** (items with an active delegation or a recorded decision don't show this action). Clicking **Delegate** opens a side panel to select a recipient and add an optional comment; the item then moves to **Delegated to Others**.
 
+An item is in **Delegated to Others** while it has a delegatee and the reviewer hasn't recorded a decision on it. Once the reviewer decides, the item moves back to **My Items**. The delegatee and their recommendation are kept and appear in the Certification Report. Bulk actions use the same rule: **Revoke Delegation** applies only to items currently in **Delegated to Others**.
+
 To revoke a delegation, use **Revoke Delegation** on an item in **Delegated to Others**. This returns the item to **My Items**, removes it from the delegatee's view, and clears the delegatee's comment and decision.
 
 ###### Delegatee Experience
@@ -132,7 +134,7 @@ When a reviewer clicks **Confirm Decisions** and delegated items have recorded r
 - **Confirm All Decisions**
 - **Cancel**, to review **Delegated to Others** first.
 
-If the reviewer overrides a delegatee's recommendation, the reviewer's decision is the one that's used. Delegated items with no recorded recommendation are treated as undecided.
+If the reviewer overrides a delegatee's recommendation, the reviewer's decision is the one that's used. In the campaign summary, the **Unconfirmed** section counts a delegated item once: under **By me** when the reviewer has decided it, and under **Delegated to others** (by the delegatee's recommendation) while the reviewer hasn't. Delegated items with no recorded recommendation are treated as undecided.
 
 ###### Audit Trail
 

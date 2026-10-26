@@ -70,15 +70,15 @@ The identifier of the connection and thus the name of the subsection must:
 
 #### Setting attributes
 
- | Name | Details | 
- | --- | --- | 
- | Server required | **Type** String **Description** URL of the data system. | 
- | Login optional | **Type** String **Description** Login to connect to the system. | 
- | Password optional | **Type** String **Description** Password to connect to the system. | 
- | BearerToken optional | **Type** String **Description** Token to authenticate to the system. | 
- | ClientId optional | **Type** String **Description** Id to connect to the system via OpenId. | 
- | ClientSecret optional | **Type** String **Description** Password to connect to the system via OpenId. | 
- | AuthenticationUrl optional | **Type** String **Description** URL to request the authentication via OpenId. | 
+ | Name | Details |
+ | --- | --- |
+ | Server required | **Type** String **Description** URL of the data system. |
+ | Login optional | **Type** String **Description** Login to connect to the system. |
+ | Password optional | **Type** String **Description** Password to connect to the system. |
+ | BearerToken optional | **Type** String **Description** Token to authenticate to the system. |
+ | ClientId optional | **Type** String **Description** Id to connect to the system via OpenID. |
+ | ClientSecret optional | **Type** String **Description** Password to connect to the system via OpenID. |
+ | AuthenticationUrl optional | **Type** String **Description** URL to request the authentication via OpenID. |
 
 #### XML configuration requirements
 

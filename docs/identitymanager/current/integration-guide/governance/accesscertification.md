@@ -142,6 +142,32 @@ The example below allows the **Manager** profile to be selected as a delegated r
 <AccessControlRule Identifier="Manager_AccessCertificationItem_Custom_AccessCertification_DelegationAssigned_Directory_User" DisplayName_L1="User - Access certification delegated reviewer" EntityType="AccessCertificationItem" Profile="Manager">        <Entry CanExecute="true" Permission="/Custom/AccessCertification/DelegationAssigned/Directory_User" />    </AccessControlRule>
 ```
 
+Filters set on the rule are not evaluated for a delegation, single or bulk: the **Manager** profile can
+be delegated any certification item of the Directory_User entity type, regardless of its scope of
+responsibility. Eligibility is checked again when the delegation is submitted.
+
+#### Filter evaluation per action
+
+| Action | Rule filters |
+|---|---|
+| Forward, single item | Applied |
+| Forward, bulk | Ignored |
+| Delegation, single item or bulk | Ignored |
+
+A bulk action targets a set of items, against which a filter bearing on a single item has no unique
+answer. A filter restricting single-item forwarding therefore does not restrict bulk forwarding:
+restrict bulk recipients through the profile granted the permission instead.
+
+#### Permissions and review actions
+
+Each of the three permissions governs both the reception of a certification item and the right to act
+on it, for the owner entity type of the campaign:
+
+- `AutoAssigned` or `ManualAssigned` is required to review the items received, and to forward or
+  delegate one of them.
+- `DelegationAssigned` is required to review the items delegated by another reviewer and to record a
+  recommendation on them.
+
 ### Certification policy
 
 Scopes of responsibility can also be defined in terms of access certification campaign policy. See the [AccessCertificationCampaignPolicy](../../integration-guide/toolkit/xml-configuration/access-certification/accesscertificationcampaignpolicy) topic for additional information.

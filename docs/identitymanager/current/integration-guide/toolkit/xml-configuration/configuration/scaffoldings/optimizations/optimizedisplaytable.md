@@ -8,8 +8,8 @@ This scaffolding optimizes the given display table by replacing its tiles naviga
 
 In order to optimize the display table, this scaffolding will create the following elements if they don't exist.
 
-- An [Entity Property](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype#child-element-property) for each tile item that uses a navigation binding. This will be used to hold the computed expression.
-- An [Entity Property Expression](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitypropertyexpression) to evaluate the binding expression used by the optimizable tile item.
+- An [Entity Property](../../../metadata/entitytype#child-element-property) for each tile item that uses a navigation binding. This will be used to hold the computed expression.
+- An [Entity Property Expression](../../../metadata/entitypropertyexpression) to evaluate the binding expression used by the optimizable tile item.
 
 Then, the scaffolding will link the display table tile elements to the newly created scalar properties.
 

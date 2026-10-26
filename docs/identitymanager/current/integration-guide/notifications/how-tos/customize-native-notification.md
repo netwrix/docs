@@ -38,3 +38,43 @@ associated to the notification that need to be overridden.
 >
     > ```
 
+## Migration from `RazorTemplate` on typed notifications
+
+The `RazorTemplate`, `CssTemplate` and `TitleExpression` properties on typed notifications (`AccessCertificationNotification`, `ManualProvisioningNotification`, `RoleReviewNotification`, `ProvisioningReviewNotification`, `RolePolicyNotification`) are not used and are silently ignored at runtime. Any customization must go through `<NotificationTemplate>` with the identifier matching the typed model.
+
+Identifier mapping:
+
+| Typed notification element | `<NotificationTemplate Identifier=...>` |
+|---|---|
+| `<AccessCertificationNotification>` | `PendingAccessCertificationModel` |
+| `<RoleReviewNotification>` | `WorkflowReviewRolesSummary` |
+| `<ProvisioningReviewNotification>` | `WorkflowReviewProvisioningSummary` |
+| `<ManualProvisioningNotification>` | `PerformManualProvisioningSummary` |
+| `<RolePolicyNotification>` | `RolePolicySummary` |
+
+Before:
+
+```xml
+<AccessCertificationNotification
+    Identifier="AccessCertification_Directory_User_Reminder"
+    OwnerEntityType="Directory_User"
+    RazorTemplate="./Templates/AccessCertification/Reminder.cshtml"
+    CssTemplate="./Templates/AccessCertification/Reminder.css"
+    TitleExpression="C#:user:return &quot;Reminder...&quot;;" />
+```
+
+After:
+
+```xml
+<AccessCertificationNotification
+    Identifier="AccessCertification_Directory_User"
+    OwnerEntityType="Directory_User"
+    ReminderInterval="2880" />
+
+<NotificationTemplate Identifier="PendingAccessCertificationModel"
+    BodyTemplate_L1="./Templates/AccessCertification/Reminder.cshtml"
+    SubjectTemplate_L1="./Templates/AccessCertification/Reminder_Subject.cshtml" />
+```
+
+The body template is rendered against the business model (`PendingAccessCertificationModel`), which exposes `@Model.Count`, `@Model.Campaign.DisplayName`, `@Model.Campaign.EndDate` and `@Model.ApplicationUrl` — data that the raw entity row (e.g. `Directory_User`) does not provide.
+

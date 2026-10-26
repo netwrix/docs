@@ -188,12 +188,12 @@ Each line of the CSV file corresponds to a `MicrosoftExchange_Mailbox`. The prop
 
 The following table can be extracted from the CSV file:
 
- | Guid | Name | 
- | --- | --- | 
- | 4ecbdba7-e984-409a-a9ac-6027ac81fa42 | Mailbox Database 1882404652 | 
- | 1d3e67a2-7d44-46f1-a300-afa73ae120f4 | DB1 | 
- | aab57e15-847b-4e16-96f1-82ebc54c01e2 | DB1 | 
- | ea513604-3758-463f-9b72-6c42ea949260 | DB2 | 
+ | Guid | Name |
+ | --- | --- |
+ | 4ecbdba7-e984-409a-a9ac-6027ac81fa42 | Mailbox Database 1882404652 |
+ | 1d3e67a2-7d44-46f1-a300-afa73ae120f4 | DB1 |
+ | aab57e15-847b-4e16-96f1-82ebc54c01e2 | DB1 |
+ | ea513604-3758-463f-9b72-6c42ea949260 | DB2 |
 
 It means that the MicrosoftExchange_Mailbox with Guid ? 4ecbdba7-e984-409a-a9ac-6027ac81fa42 is contained in the MicrosoftExchange_Database with Name ? Mailbox Database 1882404652. This association is created for every line in the CSV file, and therefore also for every line in the table above.
 
@@ -444,7 +444,7 @@ The execution of a Job entails the execution of Tasks, reading/writing to the Da
 
 A [Profile](../../../integration-guide/toolkit/xml-configuration/access-control/profile) is required and must have the proper permissions for the associated Job or Task to perform.
 
-Here, jobs use the default `OpenId`.
+Here, jobs use the default `OpenID`.
 
 ### Job Launch
 

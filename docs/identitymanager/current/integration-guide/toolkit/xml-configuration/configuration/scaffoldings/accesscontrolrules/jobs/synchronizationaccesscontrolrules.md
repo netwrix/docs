@@ -1,7 +1,7 @@
 ---
 title: "SynchronizationAccessControlRules"
 description: "Generates rights to launch synchronization task."
-sidebar_position: 12
+sidebar_position: 13
 ---
 
 Generates the execution rights for Prepare-Synchronization and synchronization tasks for a given profile.

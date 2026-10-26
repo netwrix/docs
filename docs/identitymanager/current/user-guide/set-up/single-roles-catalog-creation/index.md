@@ -44,7 +44,7 @@ Identity Manager's roles are all built the same way. Technically speaking:
 
 NETWRIX recommends creating one category per application, as this method often fulfills both requirements.
 
-Then single roles can be grouped together through [Composite Roles](../../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) for applicative purposes, allowing users to be assigned several entitlements simultaneously. Leave composite roles for later, when the system runs as is and would benefit from an additional layer in the role model.
+Then single roles can be grouped together through [Bundles](../../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) for applicative purposes, allowing users to be assigned several entitlements simultaneously. Leave bundles for later, when the system runs as is and would benefit from an additional layer in the role model.
 
     > This role is part of the previously created `Internet` category.
 
@@ -155,7 +155,7 @@ Create the single role catalog by proceeding as follows:
 
 1. Create as many single roles as possible (with their navigation rules and categories) via the [Create Roles in Bulk](../../../user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation) naming rules.
 2. Complete the role catalog if needed by creating manually additional [Create a Category](../../../user-guide/set-up/single-roles-catalog-creation/category-creation) and single roles with their navigation rules.
-3. Add [Create a Composite Role](../../../user-guide/optimize/composite-role-creation) to the single role catalog only if the project is mature enough. Composite roles are more complex than single roles
+3. Add [Create a Bundle](../../../user-guide/optimize/bundle-creation) to the single role catalog only if the project is mature enough. Bundles are more complex than single roles
 and they are not mandatory.
 
 ## Impact of Modifications

@@ -19,7 +19,7 @@ This configuration is to use the fill for the LDAP and configure the Reset Passw
                       BeneficiaryFullNameBinding="AssignedResourceType:Owner.Directory_User:MainRecord.InternalDisplayName"
                       NotifiedEmailBinding="AssignedResourceType:Owner.Directory_User:MainRecord.Organization.Manager.MainRecord.Mail"
                       NotifiedFullNameBinding="AssignedResourceType:Owner.Directory_User:MainRecord.Organization.Manager.MainRecord.InternalDisplayName"
-                      Mode="1" DefaultPassword="Usercube@2019" MustChange="true"
+                      Mode="1" DefaultPassword="<password>" MustChange="true"
                       AutoGenerate="false" DisableNotifications="false" GeneratedLength="12" />  <LDAPResourceTypeMapping Identifier="AD_Entry_NominativeUser" Connection="ADExportFulfillment" PasswordResetSetting="default" DefaultObjectClass="user" RDNAttributeIdentifier="CN" UsePermissiveModify="true" UseTreeDelete="false">    <Property Property="dn" IsDNProperty="true" />    <Property Property="parentdn" IsParentProperty="true" />    <Property Property="cn" IsRDNProperty="true" />    <Property Property="userAccountControl" IsUserAccountControlProperty="true" />    <Property Property="memberOf" DataSourceBacklinkColumnName="member" />  </LDAPResourceTypeMapping>
 ```
 

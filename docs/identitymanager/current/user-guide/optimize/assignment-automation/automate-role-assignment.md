@@ -10,7 +10,7 @@ How to manually build rules to automate the assignment of roles to identities. S
 
 ## Overview
 
-**Single role rules** and **composite role rules** are **assignment rules**. **assignment rules** are designed to automatically assign respectively single roles and composite roles (based on specific criteria) to identities. One rule must be created for every role to assign. See the[Create Roles in the Role Catalog](../../../user-guide/set-up/single-roles-catalog-creation) topic for additional information.
+**Single role rules** and **bundle rules** are **assignment rules**. **assignment rules** are designed to automatically assign respectively single roles and bundles (based on specific criteria) to identities. One rule must be created for every role to assign. See the[Create Roles in the Role Catalog](../../../user-guide/set-up/single-roles-catalog-creation) topic for additional information.
 
 ## Participants and Artifacts
 
@@ -35,7 +35,7 @@ section.
 
     ![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
-3. Click on the **Composite Roles** or **Single Roles** tab and on the addition button at the top
+3. Click on the **Bundles or **Single Roles** tab and on the addition button at the top
 right corner.
 
     ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
@@ -45,7 +45,7 @@ right corner.
     ![Create an Assignment Rule](/images/identitymanager/assignmentrules_newsrolerule_v602.webp)
 
     - `Single Role`: single role to be automatically assigned in a single role rule.
-`Composite Role` for a composite role rule.
+`Bundle` for a bundle rule.
     - `Type`: assignment type that can be: `Suggested` so that the role is listed among suggested
 permissions in the permission basket of users matching the criteria during an entitlement request, suggested assignments must be selected manually to be requested; or `Automatic` so that the role is automatically assigned to users matching the criteria; or `Automatic but with validation` so that the role is listed in the permission basket of **new** workers, these assignments can still be modified.
 
@@ -54,7 +54,7 @@ The rule's type can be `Suggested` only if the related role is allowed to be req
     - `Single role denied`: option that forbids the assignment instead of applying it.
     - **Criteria**: conditions that, if met, trigger the single role automatic assignment.
 
-Role **assignment rules** can be based on identity dimensions. Moreover, **Single role rules** can be based on composite roles.
+Role **assignment rules** can be based on identity dimensions. Moreover, **Single role rules** can be based on bundles.
 
 5. Click on **Create** and see a line added on the rules page.
 

@@ -12,7 +12,7 @@ Profiles are listed on the **Profiles** screen, from **Settings** in the **Confi
 
 ![Profiles](/images/identitymanager/AccessControl_Profiles_V603.webp)
 
-[See more details on profiles' APIs](/docs/identitymanager/current/integration-guide/api/server/accesscontrol).
+[See more details on profiles' APIs](../../../../../../api/server/accesscontrol).
 
 
 

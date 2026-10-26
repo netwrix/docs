@@ -29,7 +29,7 @@ Returns all the resources according to the provided query.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The assigned composite role list. | List of UntypedResource |
+| 200 | The list of resources. | List of UntypedResource |
 
 #### Post
 ##### Summary:

@@ -62,8 +62,8 @@ The `SendRoleModelNotificationsTask` should been replaced by `SendNotificationsT
 
 If possible, the following scaffoldings now automatically generate `SendNotificationsTask` instead of `SendRoleModelNotificationsTask`:
 
-- **CreateAgentSynchroComplete**: Complete synchronization job for all connectors in an agent.  See [CreateAgentSynchroComplete](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/jobs/createagentsynchrocomplete).
-- **CreateConnectorSynchroComplete**: Complete synchronization job for a specific connector. See [CreateConnectorSynchroComplete](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/jobs/createconnectorsynchrocomplete).
+- **CreateAgentSynchroComplete**: Complete synchronization job for all connectors in an agent.  See [CreateAgentSynchroComplete](../../../configuration/scaffoldings/jobs/createagentsynchrocomplete).
+- **CreateConnectorSynchroComplete**: Complete synchronization job for a specific connector. See [CreateConnectorSynchroComplete](../../../configuration/scaffoldings/jobs/createconnectorsynchrocomplete).
 
 ### Scaffolding Behavior
 
@@ -140,7 +140,7 @@ Add `RolePolicyNotification` and/or `RoleReviewNotification` elements to your co
   ReminderInterval="2880" />
 
 ```
-See the [RoleReviewNotification](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notifications/rolereviewnotification) and [RolePolicyNotification](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notifications/rolepolicynotification) documentation for complete property details.
+See the [RoleReviewNotification](../../../notifications/notifications/rolereviewnotification) and [RolePolicyNotification](../../../notifications/notifications/rolepolicynotification) documentation for complete property details.
 
 ### Step 2: Replace Task in Manually Defined Job Definitions
 
@@ -182,12 +182,12 @@ Deploy your configuration. After deployment:
 
 ## Additional Resources
 
-- [SendNotificationsTask](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/jobs/tasks/server/sendnotificationstask) - Documentation for the replacement task
-- [RolePolicyNotification](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notifications/rolepolicynotification) - Configuration element for role policy notifications
-- [RoleReviewNotification](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notifications/rolereviewnotification) - Configuration element for role review notifications
-- [Notification](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notification) - General notification configuration
-- [CreateAgentSynchroComplete](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/jobs/createagentsynchrocomplete) - Scaffolding documentation
-- [CreateConnectorSynchroComplete](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/jobs/createconnectorsynchrocomplete) - Scaffolding documentation
+- [SendNotificationsTask](sendnotificationstask) - Documentation for the replacement task
+- [RolePolicyNotification](../../../notifications/notifications/rolepolicynotification) - Configuration element for role policy notifications
+- [RoleReviewNotification](../../../notifications/notifications/rolereviewnotification) - Configuration element for role review notifications
+- [Notification](../../../notifications/notification) - General notification configuration
+- [CreateAgentSynchroComplete](../../../configuration/scaffoldings/jobs/createagentsynchrocomplete) - Scaffolding documentation
+- [CreateConnectorSynchroComplete](../../../configuration/scaffoldings/jobs/createconnectorsynchrocomplete) - Scaffolding documentation
 
 Task that sends a notification to all users who have pending roles to review, only for roles with a simple approval workflow, i.e. pending the validation 1 out of 1.
 
