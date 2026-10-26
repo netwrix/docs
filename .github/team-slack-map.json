@@ -2,6 +2,7 @@
   "_comment": "Maps each CODEOWNERS/label-codeowners team to the Slack member IDs to @-mention in #docs-gh. Find a member ID via their Slack profile -> \"...\" menu -> Copy member ID. Empty arrays post without an @-mention until filled in.",
   "@netwrix/1secure-docs": [],
   "@netwrix/accessanalyzer-docs": [],
+  "@netwrix/team.dspm.accessanalyzerclassic": [],
   "@netwrix/accessinformationcenter-docs": [],
   "@netwrix/activitymonitor-docs": [],
   "@netwrix/auditor-docs": [],

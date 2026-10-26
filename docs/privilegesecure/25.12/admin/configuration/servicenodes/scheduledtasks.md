@@ -1,6 +1,13 @@
 ---
 title: "Scheduled Tasks Page"
-description: "Scheduled Tasks Page"
+description: "View the tasks the console runs on a schedule, with search, sorting, run times, status, and log access."
+keywords:
+  - Task Name
+  - Last Run Time
+  - Next Run Time
+  - Last Status
+  - View Logs
+  - Recurrence
 sidebar_position: 20
 ---
 
@@ -12,15 +19,13 @@ On the Scheduled Tasks page, view scheduled tasks run by the console.
 
 The Scheduled Tasks page has the following features:
 
-- Search — Searches the Task Name column to match the search string. When matches are found, the
-table is filtered to the matching results.
+- **Search** — Searches the Task Name column to match the search string. When matches are found, the
+  table is filtered to the matching results.
 - Column headers can be sorted by ascending or descending order:
-
-- Task Name — Name of the scheduled task
-- Last Run Time — Last run timestamp
-- Next Run Time — Indicates the next time the task is scheduled to run
-- Recurrence — Scheduled recurrence
-- Last Status — Status of scheduled task
-
-- View Logs button — Click to view logs for the selected task
-- Refresh – Reload the information displayed
+  - **Task Name** — Name of the scheduled task
+  - **Last Run Time** — Last run timestamp
+  - **Next Run Time** — Indicates the next time the task is scheduled to run
+  - **Recurrence** — Scheduled recurrence
+  - **Last Status** — Status of scheduled task
+- **View Logs button** — Click to view logs for the selected task
+- **Refresh** — Reload the information displayed

@@ -65,6 +65,10 @@ Always use active voice rather than passive voice.
 - Do: "The Data Collection Account retrieves the audit logs."
 - Don't: "The audit logs are retrieved by the Data Collection Account."
 
+Exception: keep the passive when it reports a past or completed action, or the state it left, and the actor is unknown or irrelevant. Do not add "you" or "someone" to make it active.
+- Do: "This profile was pre-created in the Credential Profiles page."
+- Don't: "You pre-created this profile in the Credential Profiles page."
+
 **Present tense**
 Use present tense instead of future or past tense.
 - Do: "The monitoring plan collects data from Active Directory."

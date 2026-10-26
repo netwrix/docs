@@ -9,7 +9,7 @@ sidebar_position: 20
 Netwrix Enterprise Auditor audits Microsoft® Windows® file servers, Network Attached Storage (NAS)
 devices, and Unix platforms.
 
-Enterprise Auditor employs the File System Solution to execute Access Auditing (FSAA), Activity
+Enterprise Auditor uses the File System Solution to execute Access Auditing (FSAA), Activity
 Monitoring (FSAC), and Sensitive Data Discovery Auditing scans. The Activity Monitoring (FSAC) scans
 also require an additional application, either Netwrix Activity Monitor or Netwrix Threat
 Prevention, to monitor the target environment.
@@ -23,14 +23,14 @@ Ports and permissions vary based on the selected scan mode option and the target
 
 **Data Collectors**
 
-This solution employs the following data collector to scan the target environment:
+This solution uses the following data collector to scan the target environment:
 
 - [ADInventory Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/adinventory/overview.md)
 - [FileSystemAccess Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/overview.md)
 
 **Permissions and Ports for ADInventory Data Collector Prerequisite**
 
-The following permissions are needed:
+The ADInventory Data Collector requires the following permissions:
 
 - Read access to directory tree
 - List Contents & Read Property on the Deleted Objects Container
@@ -44,7 +44,7 @@ The following permissions are needed:
     :::
 
 
-The following firewall ports are needed:
+The ADInventory Data Collector requires the following firewall ports:
 
 - TCP 389
 - TCP 135-139
@@ -67,6 +67,10 @@ The following are supported Microsoft® Windows® operating systems:
 See the
 [Windows File Server Target Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/windowsfile/overview.md)
 topic for target environment requirements.
+
+:::info
+Netwrix doesn't recommend workstations for scanning and doesn't support them as a scan source.
+:::
 
 **Windows File System Clusters**
 
@@ -160,3 +164,5 @@ Discovery Auditing only:
 - Red Hat® Linux® 5.2+
 - HP-UX® 11+
 - SUSE® 10+
+
+See the [Linux Target Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/linux/overview.md) topic for Linux target environment requirements.

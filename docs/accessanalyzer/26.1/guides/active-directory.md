@@ -4,7 +4,7 @@ description: Add a domain as an Active Directory source, run an Identity sync, a
 sidebar_position: 2
 ---
 
-Add one Active Directory domain as a source and run an Identity sync, which reads the domain's users, groups, organizational units, and memberships. The results feed the Active Directory dashboard and the AD Users report, and they let file server permission reports show account and group names instead of security identifiers (SIDs).
+Add one Active Directory domain as a source and run an Identity sync, which reads the domain's users, groups, and direct group memberships, along with the organizational unit path of each user and group. The results feed the Active Directory dashboard and the AD Users report, and they let file server permission reports show account and group names instead of security identifiers (SIDs).
 
 One source covers one domain. If you have several domains, repeat the guide for each.
 
@@ -20,10 +20,14 @@ The Access Analyzer server, or the agent that runs the scan, needs one Lightweig
 
 | Port | Protocol | Notes |
 |------|----------|-------|
-| 389 | LDAP with DIGEST-MD5 authentication and StartTLS | Enter the domain controller's fully qualified domain name (FQDN) in **Host**; DIGEST-MD5 authentication requires an FQDN and doesn't work with an IP address. Works with domain controllers that require LDAP signing. |
-| 636 | LDAP over TLS (LDAPS) | The server or agent that runs the scan must trust the domain controller's certificate unless you turn on **Ignore SSL errors**. |
+| 389 | LDAP with StartTLS or DIGEST-MD5 authentication | Enter the domain controller's fully qualified domain name (FQDN) in **Host**; DIGEST-MD5 authentication requires an FQDN and doesn't work with an IP address. Works with domain controllers that require LDAP signing. |
+| 636 | LDAP over TLS (LDAPS) | Access Analyzer checks the domain controller's certificate only when you turn on **Enforce strict SSL validation**. With it on, the server or agent that runs the scan must trust the certificate. |
 
-When a connection uses TLS, it uses TLS 1.2. On port 389, Access Analyzer first tries DIGEST-MD5 with encryption over StartTLS; if that attempt fails, it retries with DIGEST-MD5 signing without TLS, and then with a simple bind. Access Analyzer doesn't use Kerberos or the Global Catalog ports (3268 and 3269).
+When a connection uses TLS, it uses TLS 1.2 or later. On port 389, Access Analyzer first tries StartTLS with a simple bind; if that attempt fails, it retries with DIGEST-MD5 signing. Access Analyzer doesn't use Kerberos. See [Active Directory](../sources/active-directory.md#network) for the details.
+
+:::warning
+On port 389, if StartTLS and DIGEST-MD5 both fail, Access Analyzer falls back to a simple bind without encryption, which sends the password in cleartext. To rule out the fallback, use port 636.
+:::
 
 :::note
 
@@ -53,7 +57,7 @@ If you already created a **Username/password** account for a file server in the 
 3. Under **Details**, enter a **Name** for the source, such as the domain name.
 4. Under **Connection**, in **Host**, enter a domain controller, for example `dc01.example.com`. Use the FQDN if you connect on port 389.
 5. In **Port**, leave 389 or enter 636 for LDAPS.
-6. Leave **Ignore SSL errors** clear. Turn it on only for a lab domain controller with a self-signed certificate on port 636.
+6. Turn on **Enforce strict SSL validation** when the domain controller's certificate chains to a certificate authority the agent trusts. Leave it off for a lab domain controller with a self-signed certificate.
 7. In **Domain**, enter the DNS name of the domain, for example `corp.example.com`.
 8. Under **Access**, in **Service account**, select the service account you created earlier.
 9. Click **Test connection**. Access Analyzer binds to the domain controller and reads its root directory entry. Success shows the **Connection successful** message; failure shows a **Connection failed** alert with the reason, including a hint when the port and protocol don't match.
@@ -73,7 +77,7 @@ Click **Next** to move from one step to the next.
    ![Create scan Type step with the Access, Sensitive data, and Identity sync cards](/images/accessanalyzer/26.1/scans/create-scan-1-type.webp)
 
 3. On the **Target** step, keep **Specific sources** and select the domain's checkbox. The list shows only sources that support Identity sync.
-4. On the **Configure** step, leave **Use default configuration** selected. The default turns on **Enable differential scan**: the first run reads the whole domain; later runs read only the objects that changed since the previous run.
+4. On the **Configure** step, leave **Use default configuration** selected. The default turns on **Differential Scan**: the first run reads the whole domain; later runs read only the objects that changed since the previous run.
 5. On the **Schedule** step, select **On a schedule**.
 6. Keep the default **Daily** at 02:00 so group memberships stay current for the reports that depend on them.
 7. Leave the agent set to **System agent**.

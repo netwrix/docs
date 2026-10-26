@@ -550,12 +550,6 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
-      {
-        version: '4.2',
-        label: '4.2',
-        isLatest: false,
-        sidebarFile: './sidebars/privilegesecure/4.2.js',
-      },
     ],
     defaultVersion: '26.03',
   },
@@ -568,13 +562,12 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '2.22',
-        label: '2.22',
+        version: 'current',
+        label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/privilegesecurediscovery/2.22.js',
+        sidebarFile: './sidebars/privilegesecurediscovery.js',
       },
     ],
-    defaultVersion: '2.22',
   },
   {
     id: 'recoveryforactivedirectory',

@@ -1,6 +1,11 @@
 ---
 title: "Test Resource Connectivity Window"
-description: "Test Resource Connectivity Window"
+description: "Test connectivity to a host resource and review the test status and messages."
+keywords:
+  - Test Resource Connectivity
+  - test connectivity
+  - host resource connectivity
+  - Test button
 sidebar_position: 10
 ---
 
@@ -8,14 +13,12 @@ sidebar_position: 10
 
 To test the host resource connectivity:
 
-**Step 1 –** Navigate to the Resources page.
+1. Navigate to the Resources page.
+2. Select the resources to modify.
+3. Click the **Test** button.
 
-**Step 2 –** Select the resources to modify.
+   ![Test Resource Connectivity Window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/testresourceconnectivity.webp)
 
-**Step 3 –** Click the **Test** button.
+4. Review the test status and messages (if any).
 
-![Test Resource Connectivity Window](/images/privilegesecure/25.12/accessmanagement/admin/policy/window/resources/testresourceconnectivity.webp)
-
-**Step 4 –** Review the test status and messages (if any).
-
-The selected resources connectivity has been tested.
+Privilege Secure tested the selected resources connectivity.

@@ -15,14 +15,14 @@ Four source types are available. The first column shows the name you select in t
 
 | Source type | System | What its scans collect | Scan types | Service account type |
 |---|---|---|---|---|
-| **File Server** | SMB file servers | Shares, folders, and files with their owners and attributes; share and folder permissions, plus file permissions when the scan's file-level permission option is on; file contents matched against sensitive data patterns | Access scan, Sensitive data scan | Username/password |
-| **Active Directory** | One Active Directory domain | Users, groups, group memberships, and organizational units | Identity sync | Username/password |
-| **Entra ID** | One Microsoft Entra ID tenant | Users, groups, directory roles, and memberships | Identity sync | Client ID/secret |
-| **SharePoint Online** | One SharePoint Online tenant | Site collections, lists, libraries, documents, OneDrive personal sites (when the scan's Collect OneDrive option is on, the default), sharing settings, permissions, and SharePoint groups; document contents matched against sensitive data patterns | Access scan, Sensitive data scan | Client ID/certificate |
+| **File Server** | SMB file servers | Shares, folders, and files with their attributes; owners and permissions of shares and folders, plus file owners and permissions when the scan's file-level permission option is on; file contents matched against sensitive data patterns | Access scan, Sensitive data scan | Username/password |
+| **Active Directory** | One Active Directory domain | Users, groups, and direct group memberships, with the organizational unit path of each user and group | Identity sync | Username/password |
+| **Entra ID** | One Microsoft Entra ID tenant | Users, groups, directory roles, group memberships and owners, and role assignments | Identity sync | Client ID/secret |
+| **SharePoint Online** | One SharePoint Online tenant | Site collections, subsites, lists, libraries, folders, documents, OneDrive personal sites (when the scan's Collect OneDrive option is on, the default), sharing settings, sharing links, permissions, and SharePoint groups; document contents matched against sensitive data patterns | Access scan, Sensitive data scan | Client ID/certificate |
 
-Each type has its own page with prerequisites, the fields to fill in, and what the scans return: [SMB file servers](smb-file-servers.md), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [Microsoft 365](microsoft-365.md).
+Each type has its own page with prerequisites, the fields to fill in, the sync or scan options, and a reference list of every attribute it collects: [SMB file servers](smb-file-servers.md), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [Microsoft 365](microsoft-365.md).
 
-Identity sources do more than feed the identity reports. File Server scans record who has access as security identifiers (SIDs); an Active Directory source for the same domain is what turns those SIDs into account and group names in the reports.
+Identity sources do more than feed the identity reports. File Server scans record who has access as security identifiers (SIDs); an Active Directory source for the same domain turns those SIDs into account and group names in the reports.
 
 ## Add a Source
 
@@ -70,12 +70,25 @@ Access Analyzer refuses to delete a source in two cases:
 
 ## Work With Several Sources at Once
 
-Select rows with the checkboxes to open the bulk action bar. It shows the number of selected rows, a **Clear selection** link, and two actions. The selection survives paging but clears when you change the search, filters, or sort order.
+Select rows with the checkboxes to open the bulk action bar. It shows the number of selected rows, a **Clear selection** link, and three actions. The selection survives paging but clears when you change the search, filters, or sort order.
 
 ![Sources list with a selected row](/images/accessanalyzer/26.1/sources/list-row-selected.webp)
 
-- **Edit labels** adds labels to, or removes labels from, every selected source in one step. See [Labels](labels.md).
+- **Attach service account** assigns one service account to the selected sources in one step. See [Attach a service account to several sources](#attach-a-service-account-to-several-sources).
+- **Update labels** adds labels to, or removes labels from, every selected source in one step. See [Labels](labels.md#update-labels-on-several-sources).
 - **Delete** removes the selected sources. The dialog lists each source. After you confirm, a **Deletion results** view shows **Deleted** for each removed source, or the reason it stayed: **Scan in progress**, **Has scan history**, or **Source not found**. Sources that stayed remain selected so you can retry, for example after a running scan finishes.
+
+### Attach a Service Account to Several Sources
+
+1. On the Sources page, select the sources with the row checkboxes.
+2. In the bulk action bar, click **Attach service account**. The dialog title shows how many sources you selected.
+3. In **Service account**, select the account. The account replaces whatever service account each source uses.
+4. Check the list of selected sources. A source whose type needs a different kind of service account shows **Incompatible**, and the dialog leaves it unchanged.
+5. Click **Attach to N sources**, where N is the number of compatible sources.
+
+A service account fits a source when it holds the credentials the source's type uses; see [Source types](#source-types). The button stays disabled until at least one selected source can use the account. **Attach service account** is unavailable, with the tooltip **No service account fits the selected sources**, when none of your service accounts fits any selected source.
+
+When every attempt succeeds, a notification confirms how many sources got the account and how many it skipped because they need a different account type. Otherwise, the dialog switches to **Service account results** and lists each source as **Attached**, or with the reason it wasn't, such as **Incompatible account type**.
 
 ## The Sources Page
 
@@ -85,7 +98,7 @@ The list shows one row per source.
 |---|---|
 | **Name** | The name you gave the source. Sortable; the default sort. |
 | **Type** | The source type. Sortable. |
-| **Connection** | The system the source points at: the host (and port, if not the default) for a file server, the domain controller for Active Directory, the tenant ID for Entra ID, or the SharePoint domain for SharePoint Online. |
+| **Connection** | The system the source points at: the host and port for a file server, such as `fs01.example.com:445`; the domain controller followed by the domain in parentheses for Active Directory, such as `dc01.example.com (example.com)`; the tenant ID for Entra ID; or the SharePoint domain for SharePoint Online. |
 | **Service account** | The service account the source signs in with, or a dash when the source has none. |
 | **Labels** | The source's labels as `key=value` chips. |
 | **Updated** | When the source last changed. Sortable. |
@@ -95,9 +108,10 @@ At the end of each row, the **Edit source** and **Delete source** buttons open t
 The toolbar filters the list:
 
 - **Search sources…** matches the source name and the connection target. Searching for `example.com` finds every source whose host or SharePoint domain contains that text.
-- **Type** narrows the list to one source type. The default is **All types**.
-- **Filter by labels (all must match)** shows only sources that carry every label you pick. Selecting `env=production` and `team=finance` shows the sources that have both.
-- **Clear filters** resets the search and both filters.
+- **Type** narrows the list to the source types you select; a source of any selected type appears. The default is **All types**.
+- **Service account** narrows the list to the sources that use any of the service accounts you select. Select **No service account** to find sources that have none. The default is **All service accounts**.
+- **Filter by labels…** shows only sources that carry every label you pick. Selecting `env=production` and `team=finance` shows the sources that have both.
+- **Clear filters** resets the search and every filter.
 
 The list shows 25 rows per page by default; you can switch to 10, 50, or 100.
 

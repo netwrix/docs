@@ -1,6 +1,14 @@
 ---
 title: "Configure DirectConnect for Remote Desktop Connection"
-description: "Configure DirectConnect for Remote Desktop Connection"
+description: "Configure DirectConnect connection strings and client settings for PuTTY, MobaXterm, and Microsoft Remote Desktop."
+keywords:
+  - DirectConnect
+  - PuTTY
+  - MobaXterm
+  - Remote Desktop Connection Manager
+  - RDP
+  - SSH
+  - connection string
 sidebar_position: 10
 ---
 
@@ -16,16 +24,15 @@ If a SAML or OIDC authentication connector is enabled for the requesting user,
 DirectConnect functionality can't be used.
 :::
 
-
 To configure the remote connection client, use a connection string with the following parameters,
 separated by “+” to the appropriate port on the proxy:
 
-- Username – The user name used to sign into Active Directory in the following format:
-domain\username, user@domain, user@domain.suffix
-- Activity – The activity to perform
-- Resource – The DNS host name of the resource to run the activity on
-- Access Policy (optional) – The Access Policy to invoke (if more than one)
-- Notes (optional) – User notes about the session
+- **Username** — The user name used to sign into Active Directory in the following format:
+  domain\username, user@domain, user@domain.suffix
+- **Activity** — The activity to perform
+- **Resource** — The DNS host name of the resource to run the activity on
+- **Access Policy (optional)** — The Access Policy to invoke (if more than one)
+- **Notes (optional)** — User notes about the session
 
 Connection String Format:
 
@@ -37,7 +44,7 @@ Connection String Example:
 
 `JonSmith@netwrix.com+Local_Admin+SQL1.netwrix.com`
 
-some clients require you to use the _“_”\_ (underscore) character as a replacement for a
+Some clients require you to use the `_` (underscore) character as a replacement for a
 space in Activity names that are made up of multiple words, for example:
 
 `Netwrix\JonSmith+Add_to_Local_Administrators+SQL1`
@@ -51,7 +58,7 @@ defining an access policy:
 
 Configuration parameters for PuTTY (SSH).
 
-![appendices_stealthbits_privileged](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged.webp)
+![PuTTY session settings with host name and SSH port](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged.webp)
 
 Host Name Format:
 
@@ -63,8 +70,8 @@ Host Name Example:
 
 Port:
 
-- Port – The SSH listening port on the proxy
-- Default port – 4422
+- **Port** — The SSH listening port on the proxy
+- **Default port** — 4422
 
 ## MobaXterm (SSH)
 
@@ -82,12 +89,12 @@ Resource Host Example:
 
 Port:
 
-- Port – The SSH listening port on the proxy
-- Default port – 4422
+- **Port** — The SSH listening port on the proxy
+- **Default port** — 4422
 
 Uncheck the checkboxes under Advanced SSH Settings and Bookmark Settings.
 
-| ![appendices_stealthbits_privileged_2](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_2.webp) | ![appendices_stealthbits_privileged_3](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_3.webp) |
+| ![MobaXterm Advanced SSH settings](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_2.webp) | ![MobaXterm Bookmark settings](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_3.webp) |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## MobaXterm (RDP)
@@ -114,10 +121,10 @@ Example:
 
 Port:
 
-- Port – The RDP listening port on the proxy
-- Default port – 4489
+- **Port** — The RDP listening port on the proxy
+- **Default port** — 4489
 
-![appendices_stealthbits_privileged_6](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_6.webp)
+![MobaXterm RDP Advanced RDP Settings tab](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_6.webp)
 
 Check the Redirect Clipboard checkbox on the Advanced RDP Settings tab to enable pasting of the 2FA
 token.
@@ -126,13 +133,13 @@ token.
 
 Configuration parameters for Microsoft Remote Desktop Connection (RDP).
 
-![appendices_stealthbits_privileged_4](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_4.webp)
+![Microsoft Remote Desktop Connection settings with computer and user name](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_4.webp)
 
 Computer:
 
 `<proxyhostname>:<port>`
 
-**Example:**
+Example:
 
 `Sbpamhost:4489`
 
@@ -151,7 +158,7 @@ Configure Remote Desktop Connection to Prompt for Password topic for additional 
 
 Configure the Microsoft Remote Desktop Connection Manager (RDC Manager).
 
-| ![appendices_stealthbits_privileged_7](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_7.webp) | ![appendices_stealthbits_privileged_8](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_8.webp) |
+| ![Remote Desktop Connection Manager server settings](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_7.webp) | ![Remote Desktop Connection Manager logon settings](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_8.webp) |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 Server name:
@@ -170,7 +177,6 @@ User Name Format:
 The user name starts with \_\_ (back slash).
 :::
 
-
 User Name Example:
 
 `\Netwrix\JonSmith+LocalAdmin+sql1`
@@ -182,25 +188,23 @@ Server Name/Port:
 If there is no password prompt when executing an RDP shortcut, change the GPO setting. See the
 Configure Remote Desktop Connection to Prompt for Password topic for additional information.
 
-## Configure Remote Desktop Connection to Prompt for Password
+## Configure Remote Desktop Connection to prompt for password
 
 To configure the RDP Group Policy to always prompt for user credentials and
 password.
 
-**Step 1 –** Open the Group Policy Management Editor.
+1. Open the **Group Policy Management Editor**.
+2. Navigate to **Computer Configuration** > **Administrative Templates** > **Windows Components** >
+   **Remote Desktop Services** > **Remote Desktop Connection Client**
 
-**Step 2 –** Navigate to Computer Configuration > Administrative Templates > Windows Components >
-Remote Desktop Services > Remote Desktop Connection Client
+   ![Configure Remote Desktop Connection to Prompt for Password](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_9.webp)
 
-![Configure Remote Desktop Connection to Prompt for Password](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_9.webp)
+3. Right click **Prompt for credentials on the client computer** and select **Edit** from the
+   context menu.
 
-**Step 3 –** Right click Prompt for credentials on the client computer and select Edit from the
-context menu.
+   ![Prompt for credentials on the client computer policy setting](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_10.webp)
 
-![appendices_stealthbits_privileged_10](/images/privilegesecure/26.03/accessmanagement/enduser/configure/appendices_stealthbits_privileged_10.webp)
-
-**Step 4 –** In the Prompt for Credentials on the Client Computer window, select Enabled.
-
-**Step 5 –** Click OK to save changes.
+4. In the **Prompt for Credentials on the Client Computer** window, select **Enabled**.
+5. Click **OK** to save changes.
 
 The Remote Desktop Connection (RDP) Group Policy is configured to always ask for credentials.

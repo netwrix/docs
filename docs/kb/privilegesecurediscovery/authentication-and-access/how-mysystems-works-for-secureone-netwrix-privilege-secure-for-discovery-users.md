@@ -1,48 +1,39 @@
 ---
-description: 'Explains how the MySystems cache controls which systems you can see in Netwrix Privilege Secure for Discovery, including JITA and Persistent access rules and the related API endpoint.'
+title: "How MySystems Works"
+description: "How the MySystems cache limits the systems that users with the User role can see to the systems where they have JITA or persistent access."
+sidebar_label: "How MySystems Works"
 keywords:
 - MySystems
+- MySystems cache
+- NPS-D
+- SecureONE
+- Remediant SecureONE
 - JITA
 - Persistent access
-- Netwrix Privilege Secure for Discovery
-- cache
 - Grant Access
 - Systems Management
-- API
-- 2.16
-- 2.17.2
+- Administrators Inventory
+- User role
+- createcache
 products:
-- privilege-secure-discovery
-sfdc_migration:
-  article_id: ka04u00000116aSAAQ
-  article_owner: Anna Evdokimova-Glinskaia
-  article_reviewer: null
-  article_sme: null
-  created_date: '2023-07-11'
-  knowledge_article_id: kA04u00000110pkCAA
-  last_modified_date: '2023-07-11'
-  original_categories:
-  - privilege_secure_discovery
-  visibility: public
-sidebar_label: How MySystems Works for Netwrix Privilege Secure for Discovery
-tags: []
-title: "How MySystems Works for Netwrix Privilege Secure for Discovery (formerly SecureONE) Users"
+- privilegesecurediscovery
+tags:
+- kb
+- authentication-and-access
 knowledge_article_id: kA04u00000110pkCAA
 ---
 
-# How MySystems Works for Netwrix Privilege Secure for Discovery (formerly SecureONE) Users
-
-Formerly SecureONE
-
 ## Question
-For Netwrix Privilege Secure for Discovery (formerly SecureONE) users, how does MySystems work?
+
+How does MySystems work, and why do users see only some systems?
 
 ## Answer
 
-> **IMPORTANT:** This relates to the 2.16 change* where user accounts can only see the systems they have proper access to
+Netwrix Privilege Secure for Discovery builds a cache named **MySystems** for each user. Users with the User role can see only the systems on which they have just-in-time access (JITA) or persistent access.
 
-### Main Document
-When you sign in, you will have access to:
+### Navigation Menu
+
+After you sign in, you have access to the following menu items:
 
 - **Overview**
 - **Grant Access**
@@ -50,37 +41,32 @@ When you sign in, you will have access to:
 - **Systems**
 - **Monitor**
 
-> **NOTE:** Insights may or may not be available depending on how the environment is configured. This can be an Admin only feature
+> **NOTE:** **Insight** might not be available, depending on how the environment is configured. It can be an administrator-only feature.
 
-The change from 2.16 implemented a cache called **MySystems** which is created upon login*.
+### JITA and Persistent Access
 
-![main_document.png](../0-images/ka04u00000116aS_0EM4u000008LUrh.png)
+If you have the User role, searches for computers in **Grant Access**, **Insight**, or **Systems Management**, and queries through the API, return only the systems on which you have JITA access or persistent access.
 
-### JITA / Persistent Access
-If you have a **User role**, searches for computers in **Grant Access**, **Insights** or **Systems Management**, or queries via the API, will be restricted to systems where you have JITA access or where you are Persistent.
+You have JITA access to a system when your Active Directory (AD) user account is in the Administrators Inventory for that system. Your account can be in the inventory in any of the following ways:
 
-JITA access is provided when an AD user account is in the Administrators Inventory for a system. The user can be in the Administrators Inventory for a system in three ways:
+- Directly in the Administrators Inventory.
+- As a member of an AD group that is in the Administrators Inventory.
+- As a member of an AD group that is nested in an AD group in the Administrators Inventory.
 
-- Directly in the Administrators Inventory
-- Being a member of an AD group that is in the Administrators Inventory
-- Being a member of an AD group that is nested in an AD group in the Administrators Inventory
+You have persistent access to a system when any of the following is true:
 
-You are considered Persistent on a system when:
+- Your user account is directly in the Administrators Inventory and set to persistent.
+- You are a member of an AD group in the Administrators Inventory that is set to persistent.
+- You are a member of an AD group that is nested in a persistent AD group in the Administrators Inventory.
 
-- Your user account is directly in the Administrators Inventory and set to persistent
-- You are a member of an AD group in the Administrators Inventory that is set to persistent
-- You are a member of an AD group that is nested in a persistent AD group in the Administrators Inventory
+### Cache Creation
 
-### Appendix
-The API endpoint associated to creating the cache for MySystems is:
+The product generates the MySystems cache after you sign in, when you use the **Grant Access** search or open **Management** > **Systems**. While the cache is being generated, a toast notification indicates that it is not yet complete.
 
-```
+![Please wait message stating that the product is computing the current user's access](../0-images/ka04u00000116aS_0EM4u000008LUrm.png)
+
+The API endpoint that creates the MySystems cache is:
+
+```text
 /api/v1/mysystems/createcache
 ```
-
-### User Role only sees My Systems
-When a User role searches for computers in **Grant Access**, **Insights** or **Systems Management**, or via API, the results will be restricted to computers on which you have Persistent or JITA access. Prior to this change (2.16) when a user attempted to JITA or interact to an endpoint where they lacked access they would receive `403 Forbidden`.
-
-> * This has changed in versions 2.17.2 and onward, where it's generated after login when a user interacts with the Grant Access search or the Management > Systems. There is a toast notification that pops up when the mySystems cache is being generated indicating it's not yet complete.
-
-![please_wait.png](../0-images/ka04u00000116aS_0EM4u000008LUrm.png)
