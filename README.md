@@ -70,8 +70,6 @@ mise x -- hk check --pr
 │   ├── skills/                  # Skills (invoked with /skill-name)
 │   │   ├── dale/                # AI linter for docs
 │   │   │   └── rules/           # Dale rule definitions (YAML)
-│   │   ├── doc-pr/              # Automated PR review
-│   │   ├── doc-pr-fix/          # Autonomous PR fixer (@claude)
 │   │   └── doc-help/            # Interactive writing assistant
 │   └── agents/                  # Autonomous worker agents
 ├── .config/                       # mise.toml pins Vale and hk; hk.pkl defines the git hooks

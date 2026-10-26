@@ -78,7 +78,6 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 | `md-extension-autofix.yml` | PRs to dev | Adds missing `.md` extensions and frontmatter, and commits the fix |
 | `claude-code-review.yml` | PRs to dev that change non-doc files | Code review comment |
 | `claude-code-followup.yml` | `@claude` comment on a code PR (owners, members, collaborators) | Answers or applies a fix |
-| `claude-doc-pr.yml` | PRs to dev with `docs/` changes; `@claude` comments | Editorial review (`doc-review` job) and `@claude` follow-up (`doc-followup` job) |
 | `claude-issue-labeler.yml` | Issues opened/edited, comments | Security screening, CoC check, auto-labeling, content fix automation |
 | `auto-create-pr-tracking-issues.yml` | Review requested on a PR | Creates the admin or KB tracking issue |
 | `slack-notify-pr.yml` | PR opened, review requested, PR comment | Posts to #docs-gh and @-mentions the CODEOWNERS teams for the changed files |
@@ -101,9 +100,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
 | `/doc-draft` | Skill | Drafts new pages from a PR, a work item (GitHub issue, Jira ticket, Azure DevOps item), specs, notes, or a detailed prompt, and structures new docs directories |
-| `/doc-pr` | Skill | Automated PR editorial review |
 | `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
-| `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
 | `/derek` | Skill | KB article quality reviewer (frontmatter, structure, title format, product names, callouts, bolding/path formatting, image alt-text/external-refs, keywords) |
 | `/kb-writer` | Skill | Interactive KB article content coach — depth, structure, clarity before linting |
 | `/kb-pr-open` | Skill | Last-mile KB submission helper for TSEs — lints and opens a PR to `dev` |

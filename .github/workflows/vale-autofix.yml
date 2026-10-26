@@ -447,7 +447,6 @@ jobs:
               echo ""
             fi
 
-            echo 'Ask `@claude` on this PR if you'\''d like an explanation of any fix.'
           } > /tmp/vale-summary.md
 
           # Delete previous Vale Auto-Fix comments
