@@ -49,37 +49,34 @@ Step 2 – Click **Next**.
 
 ![database_settings](/images/directorymanager/11.2/install/configure/databasesettings.webp)
 
-Step 3 – In the SQL Server list, select the SQL Server to use with this new Directory Manager
-Server. The SQL Server must be the same used with the master node of Directory Manager.
+Step 3 – In the **SQL Server** box, enter the name of the SQL Server to use with this new Directory
+Manager server. The SQL Server must be the same used with the master node of Directory Manager.
 
-If the required server doesn't appear in the list, ensure that the SQL Server Browser service is
-running on the SQL Server machine and then click the **Refresh** button.
+Step 4 – Under **Account Credentials**, set the credentials that the **Config Tool** and
+**Services** accounts use to connect to SQL Server. Each account can use SQL Server or Windows
+authentication independently. For each account, select the authentication mode in the **Auth**
+list. Modes are:
 
-Step 4 – In the Authentication list, select an authentication mode to be used when connecting to the
-SQL Server database. Modes are:
-
-- SQL Server Authentication - To set SQL Server to work with Directory Manager using an SQL Server
-  account. See the [Authentication Modes](/docs/directorymanager/11.2/install/configure/setupauthentication.md) topic for
+- SQL Server - To connect using an SQL Server account. See the
+  [Authentication Modes](/docs/directorymanager/11.2/install/configure/setupauthentication.md) topic for
   additional information.
-- Windows Authentication - To set SQL Server to work with Directory Manager using a Windows user
-  account. See the [Authentication Modes](/docs/directorymanager/11.2/install/configure/setupauthentication.md) topic for
+- Windows - To connect using a Windows user account. See the
+  [Authentication Modes](/docs/directorymanager/11.2/install/configure/setupauthentication.md) topic for
   additional details.
 
 Step 5 – Depending on the authentication mode selected, do the following:
 
-- For SQL Server Authentication: enter the user name and password of the selected SQL Server in the
-  **SQL Username** and **SQL Password** boxes.
-- For Windows Authentication: User name and password fields will be disabled with Windows
-  Authentication. The logged-in user credentials will be populated here.
+- For SQL Server: enter the user name and password of the SQL Server account in the **Username** and
+  **Password** boxes.
+- For Windows: enter the user name and password of a domain account or a Windows local account that
+  the account will use to connect with SQL Server, or click the ellipsis button next to
+  **Username** to select the account.
 
-Step 6 – In the SQL Database box, specify name of the SQL database being used by the master
-Directory Manager node. This new Directory Manager instance will use the same database.
-
-:::note
-While configuring a new Directory Manager machine with an existing database option, the Copy
-Database button has no relevance here.
-:::
-
+Step 6 – In the **SQL Database** box, specify the name of the SQL database being used by the master
+Directory Manager node. This new Directory Manager instance will use the same database. The
+**Trust Server Certificate** check box is selected by default. See the
+[SQL Certificate for Windows Authentication](/docs/directorymanager/11.2/requirements/sqlcertificate.md)
+topic for details on the SQL certificate.
 
 Step 7 – Click **Next**.
 
@@ -91,7 +88,7 @@ check your entries for errors.
 
 Step 9 – Click **Next**.
 
-![GroupID Service Configurations](/images/directorymanager/11.2/install/configure/servicesconfiguration.webp)
+![Services Configuration page](/images/directorymanager/11.2/install/configure/servicesconfiguration.webp)
 
 Step 10 – Directory Manager requires two services:
 
@@ -106,7 +103,7 @@ Step 10 – Directory Manager requires two services:
       database.
 
     To deploy these services, the Configuration Tool creates and configures a new website in IIS
-    with the name _GroupIDSite11_. By default, it binds this site to any of the available ports.
+    with the name _GroupIDSite11_. By default, it uses port 4443 if available, or a random port.
     However, if you have a different preference, you can change the port.
 
     Click **Advanced Options** and enter the port in the Port Number box.
@@ -128,7 +125,7 @@ Step 11 – Click **Next**.
 Step 12 – Directory Manager provides the following two options for Elasticsearch configuration.
 Select the relevant option:
 
-- Let Directory Managerinstall and manage Elasticsearch: If you select this option, Directory
+- **Let Directory Manager install and manage Elasticsearch**: If you select this option, Directory
   Manager Configuration Tool will install Elasticsearch. It presents you default configuration of
   Elasticsearch cluster it will create:
 
@@ -146,16 +143,16 @@ Select the relevant option:
         :::
 
 
-    Install and manage Elasticsearch myself — If you select this option, the following page is
+    **I will install and manage Elasticsearch myself**: If you select this option, the following page is
     displayed:
 
     ![Elasticsearch settings page](/images/directorymanager/11.2/install/configure/elasticsearchsettings-2.webp)
 
     Provide configurations of Elasticsearch you want to use with Directory Manager:
 
-    - Elasticsearch URL: URL for accessing the Elasticsearch.
-    - Elasticsearch Username: service account for Elasticsearch.
-    - Elasticsearch Password: password of the Elasticsearch service account.
+    - **Elasticsearch Url**: URL for accessing the Elasticsearch.
+    - **Elasticsearch Username**: service account for Elasticsearch.
+    - **Elasticsearch Password**: password of the Elasticsearch service account.
 
 Step 13 – Click **Next**.
 
@@ -234,7 +231,7 @@ Account) in the Password box.
 
 Step 17 – Click **Configure**.
 
-![Configuring GroupID ](/images/directorymanager/11.2/install/configure/configuring.webp)
+![Configuring Directory Manager page](/images/directorymanager/11.2/install/configure/configuring.webp)
 
 Step 18 – If the Configuration Tool displays the Import Signing Key page, click **Browse** next to
 the Select file box, select the signing key file that you exported from the primary server, enter its
@@ -247,9 +244,9 @@ status and update it according to your Directory Manager environment. See the
 Directory Manager's Signing Key.
 
 Step 19 – This completes the configuration of Directory Manager as a slave node on your machine.
-Click **Launch GroupID** to start using Directory Manager. The Sign In pa ge opens:
+Click **Launch Directory Manager** to start using Directory Manager. The Sign In page opens:
 
-![GroupID Sign In page](/images/directorymanager/11.2/install/configure/launchgid.webp)
+![Directory Manager Sign In page](/images/directorymanager/11.2/install/configure/launchgid.webp)
 
 To login in to Directory Manager Admin Center for the first time, provide Directory Manager
 Administrator user name and password.
