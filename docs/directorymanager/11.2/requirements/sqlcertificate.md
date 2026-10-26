@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # SQL Certificate for Windows Authentication
 
-Directory Manager now uses .NetCore 8 and it requires a SQL certificate to access SQL database using
+Directory Manager now uses .NET 10 and it requires a SQL certificate to access SQL database using
 Windows Authentication. Therefore, if you want to access the Directory Manager database using
 Windows Authentication, then a SQL certificate must be added to the Trusted Root Certification
 Authorities certificate store on connecting clients or servers such as Directory Manager.

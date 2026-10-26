@@ -58,12 +58,12 @@ If you have an earlier version of Directory Manager 11 installed on a machine, t
 the preparation tool ensure no version other than the following prerequisite versions is installed.
 Otherwise, uninstall them manually:
 
-- Microsoft .NET Desktop Runtime 8.0.8
-- Microsoft ASP.NET Core Hosting Bundle 8.0.8
+- Microsoft .NET Desktop Runtime 10.0.10
+- Microsoft ASP.NET Core Hosting Bundle 10.0.10
 - Microsoft Access Database Engine 2016
 - Microsoft Access Database Engine version later to 2016
-- PowerShell 7.4.6
-- Exchange Online Management versions from 3.2.0 to 3.4.0
+- PowerShell 7.6.3
+- Exchange Online Management 3.10.1
 
     If a higher version is installed, uninstall that using the following cmdlet:
 
