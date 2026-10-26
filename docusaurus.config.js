@@ -148,7 +148,10 @@ const config = {
     activeVersionsByProduct,
     unversionedDocsBasePaths,
   },
-  clientModules: ['./src/clientModules/scrollBehavior.js'],
+  clientModules: [
+    './src/clientModules/scrollBehavior.js',
+    './src/clientModules/announcementBarExpiry.js',
+  ],
   presets: [
     [
       'classic',
