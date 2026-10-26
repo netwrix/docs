@@ -12,7 +12,7 @@ The task reads files from the source directory, usually the [temp folder > Expor
 
 The following actions are performed on the *CSV source files*:
 
-1. Remove columns that are not used in [`<EntityTypeMapping>`](../../../connectors/entitytypemapping) or [`<EntityAssociationMapping>`](../../../connectors/entityassociationmapping).
+1. Remove columns that aren't used in [`<EntityTypeMapping>`](../../../connectors/entitytypemapping) or [`<EntityAssociationMapping>`](../../../connectors/entityassociationmapping).
 2. Remove entries that have a null primary key.
 3. Remove duplicates.
 4. Sort entries according to the primary key.

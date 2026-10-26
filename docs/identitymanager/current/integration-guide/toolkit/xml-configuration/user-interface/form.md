@@ -34,7 +34,7 @@ The following example shows a form called `Directory_UserRecord_View` that invol
 
 #### Hide the "Access Permissions" tab
 
-When `HideRoles` is set to `true`, then the **Access Permissions** tab is not accessible.
+When `HideRoles` is set to `true`, then the **Access Permissions** tab isn't accessible.
 
 ![Access Permissions](/images/identitymanager/Form_hideRoles_V603.webp)
 
@@ -82,7 +82,7 @@ When `WorkflowRequestType` is set to `Helpdesk`, then the finalization step look
 | WorkflowRequestType <span class="optionalAttribute">default value: 0</span> | **Type:** WorkflowRequestType **Description:** Type of the request of the related workflow. `0` - None. `1` - Self. `2` - Helpdesk. `3` - Administration. |
 
 ## Child Element: Control
-A form control is an input field to be filled by a user. Controls can be inserted in other controls in order to display the form fields in a structured way.
+A form control is an input field to be filled by a user. Controls can be inserted in other controls to display the form fields in a structured way.
 
 
 ### Examples
@@ -114,10 +114,10 @@ In this example is a tree control which defines the relationships between a work
 
 |Property|Details|
 |---|---|
-| AddedMinutes optional | **Type:** Int32 **Description:** Add minutes to the date field with this property. If the value is not defined, the default value is the one defined for the associated display entity property. |
+| AddedMinutes optional | **Type:** Int32 **Description:** Add minutes to the date field with this property. If the value isn't defined, the default value is the one defined for the associated display entity property. |
 | Binding optional | **Type:** Int64 **Description:** Identifier of the binding property. **Note:** when displaying an organization chart, this binding is meant to represent the first manager level (N+1). In this case, it must be a mono-valued navigation. |
-| Binding2 optional | **Type:** Int64 **Description:** Identifier of the binding property used to represent the second manager level (N+2) in the organization chart. It must be a mono-valued navigation. Cannot be used when `Binding` is not defined. |
-| Binding3 optional | **Type:** Int64 **Description:** Identifier of the binding property used to represent the third manager level (N+3) in the organization chart. It must be a mono-valued navigation. Cannot be used when `Binding2` is not defined. |
+| Binding2 optional | **Type:** Int64 **Description:** Identifier of the binding property used to represent the second manager level (N+2) in the organization chart. It must be a mono-valued navigation. Can't be used when `Binding` isn't defined. |
+| Binding3 optional | **Type:** Int64 **Description:** Identifier of the binding property used to represent the third manager level (N+3) in the organization chart. It must be a mono-valued navigation. Can't be used when `Binding2` isn't defined. |
 | ColumnSize optional | **Type:** Int32 **Description:** Defines the control column size. |
 | DefaultValueBinding optional | **Type:** Int64 **Description:** Automatically sets the value in the control depending on this binding and the selected value in another corresponding picker. It's only available for controls with picker. _For example: `` After a selection of an organization in another picker in the form, the field location will be automatically set by the main location of the manager of the selected organization._ |
 | DisplayName_L1 optional | **Type:** String **Description:** Display name of the control in language 1 (up to 16). |
@@ -133,7 +133,7 @@ In this example is a tree control which defines the relationships between a work
 | IsRequired optional | **Type:** Boolean **Description:** Is a required form control. |
 | LinkedBinding1 optional | **Type:** Int64 **Description:** Coupled with FilterBinding1, it allows filtering on a list of items. LinkedBinding1 defines the binding on which the search will be carried out. Linked filters are only available for controls with the `Picker` InputType. |
 | LinkedBinding2 optional | **Type:** Int64 **Description:** Coupled with FilterBinding2, it allows filtering a list of items. LinkedBinding2 defines the binding on which the search will be carried out. Linked filters are only available for controls with the `Picker` InputType. |
-| Name optional | **Type:** String **Description:** Identifies the control inside the Form. This is used for translation files when a control cannot be identified by its binding such as for FieldSet. |
+| Name optional | **Type:** String **Description:** Identifies the control inside the Form. This is used for translation files when a control can't be identified by its binding such as for FieldSet. |
 | NavigationBinding optional | **Type:** Int64 **Description:** Defines the binding of the resource on which the user will be redirected when he clicks on an element of a BasicCollection. If not defined, the one defined in DisplayEntityProperty is used. |
 | OutputType <span class="optionalAttribute">default value: Inherited</span> | **Type:** Enumeration **Description:** Output type of the control. |
 | ParentControl optional | **Type:** Int64 **Description:** Defines the parent form control. |

@@ -81,9 +81,9 @@ Contoso Corporation employs project managers in their Aircraft Design department
 
 Aerodynamics engineers need to access remote high-performance computation servers specifically designed to solve aerodynamics equations. The sensitive nature of the data sent to those servers, plus the availability constraints, require restricting access to engineers that absolutely need it to perform their daily tasks. That's another responsibility, that can be translated to a single role `Aerodynamics Computation Server` for example, that grants access to those servers.
 
-Structure engineers, on the other hand, do not perform such heavy computations and do not need access to the aerodynamics computation server. They can work locally, performing computations on their own workstation. They're not assigned the `Aerodynamics Computation Server` role.
+Structure engineers, on the other hand, don't perform such heavy computations and don't need access to the aerodynamics computation server. They can work locally, performing computations on their own workstation. They're not assigned the `Aerodynamics Computation Server` role.
 
-Quality control agents need access to sensitive information such as accident reports, on the internal data server named `data0`. Those highly sensitive privileges are not assigned to **Everyone**. They can be translated to the `Data Server data0` role.
+Quality control agents need access to sensitive information such as accident reports, on the internal data server named `data0`. Those highly sensitive privileges aren't assigned to **Everyone**. They can be translated to the `Data Server data0` role.
 
 The project manager needs access to the `data0` and `data1` servers with client contracts. The `Data Server data0` and `Data Server data1` roles translate those responsibilities.
 
@@ -112,7 +112,7 @@ Let's consider the `Internet Access` defined at step 1.
 
 In practice, Contoso Corporation authorizes or block a user Internet access by setting per-user outbound policies on their network firewall. The firewall integrates with Active Directory which make it possible to use Active Directory groups membership to enable or disable policies for a user.
 
-A security officer, to grant Internet access to an employee, would in practice assign a `Internet Access` group membership to their Active Directory account. That is a **fine-grained entitlement** entailed by the assignment of the `Internet Access` single role. That means that, to be able to grant or restrict Internet access, the link between an identity and their Active Directory account, used to login to work, must be known.
+A security officer, to grant Internet access to an employee, would in practice assign a `Internet Access` group membership to their Active Directory account. That is a **fine-grained entitlement** entailed by the assignment of the `Internet Access` single role. That means that, to be able to grant or restrict Internet access, the link between an identity and their Active Directory account, used to log in to work, must be known.
 
 To modelize that need within the role model, every identity with `Internet Access` single role is associated with an Active Directory account. We can find the Active Directory for an identity by comparing the identity email with the Active Directory entry e-mail. That's an example of [Resource Correlation Rule](../../integration-guide/toolkit/xml-configuration/provisioning/resourcecorrelationrule) that define the ownership of an Active Directory entry resource by an identity resource.
 

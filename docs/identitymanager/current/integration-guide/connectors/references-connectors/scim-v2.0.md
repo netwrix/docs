@@ -24,7 +24,7 @@ RFC 7643/7644 define the SCIM 2.0 baseline, but implementations vary widely. Bef
 
 - **Capability flags**: `filter.supported`, `patch.supported`, and `changePassword.supported` from `GET /ServiceProviderConfig` are sometimes misreported or the endpoint itself is unavailable. See Limitations and Password reset sections below.
 - **Filter expressions**: partial support for SCIM filter operators (eq, sw, compound and/or) is common; some servers reject valid expressions or silently ignore filters entirely.
-- **Attribute/schema handling**: extension schema URNs, sub-attribute naming, and multi-valued attribute replacement semantics (RFC 7644 §3.5.2) are not always implemented as specified — e.g., some servers merge on update instead of replacing.
+- **Attribute/schema handling**: extension schema URNs, sub-attribute naming, and multi-valued attribute replacement semantics (RFC 7644 §3.5.2) aren't always implemented as specified — e.g., some servers merge on update instead of replacing.
 - **Error responses**: RFC 7644 §3.12 defines a standard SCIM error body; some servers return vendor-specific JSON, which affects how failures surface in NIM logs.
 
 The first diagnostic step for unexpected behavior is to inspect the target's `GET /ServiceProviderConfig` response and compare it against NIM's assumptions.
@@ -105,7 +105,7 @@ See [Entity Type Mapping](../../../integration-guide/toolkit/xml-configuration/c
 - Incremental export uses `meta.lastModified ge "<cookie>"` filtering when the server can filter. Otherwise NIM lists every resource and classifies each one from its `meta.created` and `meta.lastModified` timestamps, so the export stays incremental at the cost of transferring every page. A warning is logged per resource type when this happens.
 - The `Filter` setting passes expressions verbatim — compound logical expressions are supported only if the target server supports them. If the server declares filtering unsupported and a `Filter` is configured for that resource type, export fails rather than silently exporting an unfiltered set — remove the `Filter` or force `Capabilities.Filter=Supported` if the self-description is wrong.
 - Filter capability is determined from the server's behavior, not only from its self-description. NIM reads `filter.supported` from `GET /ServiceProviderConfig` once per export run (or from the `Capabilities` override, see above).
-- A successful filtered request does not prove the server applied the filter. Servers that silently ignore an unsupported expression return the full collection with a success status, and no probe can detect that. When a `Filter` expression is configured, compare the exported counts against the source.
+- A successful filtered request doesn't prove the server applied the filter. Servers that silently ignore an unsupported expression return the full collection with a success status, and no probe can detect that. When a `Filter` expression is configured, compare the exported counts against the source.
 
 ## Fulfill
 
@@ -211,7 +211,7 @@ A schema *extension* is a third, separate mechanism: it doesn't touch object cla
 
 - **Create**: NIM sends `POST /<ResourceType>` with all mapped attributes, except `id`, `schemas`, and any `meta`/`meta:*` column (these are protocol/server-assigned attributes a client MUST NOT set). Null attributes are omitted from the body rather than sent as `null`. The `schemas` array includes the primary schema URN (from `EntityTypeMapping.C0`) plus any extension schema URNs derived from column names. An absent `id` in a 2xx response is treated as a silent failure and reported as an error. If the account is created but linking group membership fails, the order is still reported as executed (with a logged error) — the next synchronization reconciles the membership.
 - **Update**: NIM reads `patch.supported` from `GET /ServiceProviderConfig` once per fulfill run (or the `Capabilities` override). When `true`, NIM sends `PATCH` operations for changed attributes only — one scoped `replace`/`remove` per leaf attribute, so changing one sub-attribute (e.g. `name:givenName`) never clears its siblings. Clearing a value (null/empty) sends a `remove` operation, not a `replace` with `null`. When `false`, NIM fetches the full current resource, merges the changed attributes (dropping cleared ones), and sends a full `PUT`.
-- **Delete**: NIM sends `DELETE`. Some systems do not remove the resource; they interpret `DELETE` as deactivation and return a success status.
+- **Delete**: NIM sends `DELETE`. Some systems don't remove the resource; they interpret `DELETE` as deactivation and return a success status.
 - **Group membership**: add and remove members via `PATCH /Groups/{id}` with `members` `add`/`remove` operations.
 - **Multi-valued attributes**: NIM replaces the full multi-valued attribute on update.
 - **Extension schema attributes**: column names using the `urn:<schema>¤<attribute>` notation are serialized under the correct extension schema URN in all create and update payloads.
@@ -226,8 +226,8 @@ At least one authentication method must be configured: a pre-acquired `OAuthToke
 NIM sends a `PATCH` on `<Endpoint>/{id}` (`Endpoint` defaults to `Users`, or follows the resource type's `EntityTypeMapping.DefaultObjectClass` for a custom resource type) setting the `password` attribute. Before dispatching it, NIM checks `changePassword.supported` from `GET /ServiceProviderConfig`. When `false`, the reset request is skipped and a warning is logged instead.
 
 Limitations:
-- ChangePassword (requires the current password) is not supported.
-- UnlockAccount is not supported.
+- ChangePassword (requires the current password) isn't supported.
+- UnlockAccount isn't supported.
 
 ### Credential protection
 

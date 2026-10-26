@@ -61,7 +61,7 @@ Click the **+** button in the top right, then fill in the campaign details.
 **Reviewer Mode**
 
 - **Single** — each item is reviewed by exactly one reviewer.
-- **Multiple** — several reviewers can act on the same item. Any of them can approve or refuse it, and decisions stay editable until confirmed. "Delegation", "Forward" and "Not for me" actions are not available in this mode.
+- **Multiple** — several reviewers can act on the same item. Any of them can approve or refuse it, and decisions stay editable until confirmed. "Delegation", "Forward" and "Not for me" actions aren't available in this mode.
 
 #### Multiple Reviewer Mode
 
@@ -81,7 +81,7 @@ When a reviewer clicks **Confirm Decisions**:
 
 - Only the decisions that the reviewer has personally made are finalized.
 - Decisions made by other reviewers are confirmed independently when those reviewers confirm their own decisions.
-- Confirmed decisions cannot be modified.
+- Confirmed decisions can't be modified.
 
 In the **Confirm Decisions** tab, each reviewer can see a summary that includes:
 
@@ -92,14 +92,14 @@ In the **Confirm Decisions** tab, each reviewer can see a summary that includes:
 
 #### Allowed Actions
 
-This section groups optional behaviors that can be enabled for a campaign. Currently, this includes **Delegation**.
+This section groups optional behaviors that can be enabled for a campaign. this includes **Delegation**.
 
 ##### Delegation
 
 For campaigns using `Single` reviewer mode, the **Delegation** checkbox is available under **Allowed Actions** during campaign creation. This lets reviewers hand off individual items to another reviewer. Note that:
 
-- This setting cannot be changed once the campaign is created.
-- It is not available for `Multiple` reviewer mode campaigns.
+- This setting can't be changed once the campaign is created.
+- It isn't available for `Multiple` reviewer mode campaigns.
 - To make this checkbox available, the **Delegation** feature must first be activated in the **Features** section of the settings.
 
 ###### Reviewer Experience
@@ -114,7 +114,7 @@ When delegation is enabled, reviewers see a tab on the **Access Certification** 
 
 A **Delegate** action is available on any undelegated item in **My Items** (items with an active delegation or a recorded decision don't show this action). Clicking **Delegate** opens a side panel to select a recipient and add an optional comment; the item then moves to **Delegated to Others**.
 
-An item is in **Delegated to Others** while it has a delegatee and the reviewer hasn't recorded a decision on it. Once the reviewer decides, the item moves back to **My Items**. The delegatee and their recommendation are kept and appear in the Certification Report. Bulk actions use the same rule: **Revoke Delegation** applies only to items currently in **Delegated to Others**.
+An item is in **Delegated to Others** while it has a delegatee and the reviewer hasn't recorded a decision on it. Once the reviewer decides, the item moves back to **My Items**. The delegatee and their recommendation are kept and appear in the Certification Report. Bulk actions use the same rule: **Revoke Delegation** applies only to items in **Delegated to Others**.
 
 To revoke a delegation, use **Revoke Delegation** on an item in **Delegated to Others**. This returns the item to **My Items**, removes it from the delegatee's view, and clears the delegatee's comment and decision.
 
@@ -125,7 +125,7 @@ The delegatee gets an immediate email notification with the campaign name and de
 - **Approve** or **Refuse** — a recommendation visible to the reviewer in **Delegated to Others**.
 - **Not For Me** — sends the item back to the reviewer's **My Items** tab with an activity indicator; the delegatee's comment is preserved in the audit trail.
 
-Delegatees cannot delegate or transfer items further.
+Delegatees can't delegate or transfer items further.
 
 ###### Confirming Delegated Decisions
 

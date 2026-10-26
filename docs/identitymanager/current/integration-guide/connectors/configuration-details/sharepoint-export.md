@@ -19,7 +19,7 @@ AD).
 - Go the SharePoint sites which need to be scanned.
 - Log in using the organization credentials.
 - Go to the **Members List** in the right corner.
-- Click on the **Add members** button.
+- Click the **Add members** button.
 - Enter the name of the Identity Manager service account or its email address.
 
 ![SharePoint Export Add Member](/images/identitymanager/sharepoint_export_add_member.webp)
@@ -27,14 +27,14 @@ AD).
 The service account is now a member of the site. However, to scan the site, the service account needs to be owner of the site.
 
 - Go to the **Members List** in the right corner.
-- Under the name of the Identity Manager service account, click on the arrow.
+- Under the name of the Identity Manager service account, click the arrow.
 - Choose **Owner**.
 
 ![SharePoint Export Role Owner](/images/identitymanager/sharepoint_export_role_owner.webp)
 
 ### Configuration
 
-This step sets up the Identity Manager Agent in order to use the SharePoint connector and access the SharePoint data.
+This step sets up the Identity Manager Agent to use the SharePoint connector and access the SharePoint data.
 
 This guide focuses on the [Architecture](../../../integration-guide/architecture) method. Remember that settings can also be input through architecture.
 
@@ -104,7 +104,7 @@ Different kinds of SharePoint sites exist. We will describe here the different c
 
 A root site has a URL like ```https://contoso.sharepoint.com``` and can have subsites. For example, the subsite ```Finance``` has a URL like ```https://contoso.sharepoint.com/Finance```. Subsites can also have subsites.
 To scan the root site and the subsite tree, the root site must be specified in the __Server__ attribute.
-Retrieved users can be assigned to/removed from all groups found, but cannot be created. To create a user account, you need to create it in the associated Microsoft Entra ID: it will automatically create a SharePoint user account.
+Retrieved users can be assigned to/removed from all groups found, but can't be created. To create a user account, you need to create it in the associated Microsoft Entra ID: it will automatically create a SharePoint user account.
 
 #### Multiple sites
 

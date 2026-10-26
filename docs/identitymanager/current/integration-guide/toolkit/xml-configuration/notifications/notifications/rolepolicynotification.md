@@ -9,7 +9,7 @@ Reminder notification concerning role model tasks.
 
 ## Examples
 :::note
-The `TitleExpression`, `RazorTemplate` and `CssTemplate` properties on typed notifications are not used. To customize the notification subject and body, declare a [`NotificationTemplate`](../notificationtemplate) element with `Identifier="RolePolicySummary"`.
+The `TitleExpression`, `RazorTemplate` and `CssTemplate` properties on typed notifications aren't used. To customize the notification subject and body, declare a [`NotificationTemplate`](../notificationtemplate) element with `Identifier="RolePolicySummary"`.
 :::
 
 

@@ -39,6 +39,6 @@ Child element that provisions memberships of a Microsoft Entra ID object, such a
 |Property|Details|
 |---|---|
 | Property required | **Type:** String **Description:** Identifier of the entity property that holds the linked resources. |
-| AzureADProperty required | **Type:** String **Description:** Microsoft Graph collection that contains the linked object, such as `groups` or `directoryRoles`.**Note:** the value is not validated when the configuration is saved. |
+| AzureADProperty required | **Type:** String **Description:** Microsoft Graph collection that contains the linked object, such as `groups` or `directoryRoles`.**Note:** the value isn't validated when the configuration is saved. |
 
 A `Property` with `DataSourceBacklinkColumnName` also provisions memberships, but the property identifier itself is then used as the Microsoft Graph collection. Use `NavigationProperty` when the property identifier differs from the collection name.
