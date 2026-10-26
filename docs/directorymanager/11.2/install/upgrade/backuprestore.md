@@ -7,7 +7,7 @@ sidebar_position: 30
 # Back Up and Restore Directory Manager Data
 
 This topic provides instructions for backing up and restoring the data from previous versions of
-GroupID when upgrading to Directory Manager 11.1.
+GroupID when upgrading to Directory Manager 11.2.
 
 - Database on SQL Server
 - Elasticsearch Data
@@ -18,15 +18,15 @@ GroupID when upgrading to Directory Manager 11.1.
 
 ## Database on SQL Server
 
-Take a backup of the GroupID database that you will use to upgrade to Directory Manager 11.0.
+Take a backup of the GroupID database that you will use to upgrade to Directory Manager 11.2.
 
 Follow Microsoft standards to back up this SQL Server database.
 
-Whenever this database is restored, any changes you made using Directory Manager 11.1 would be lost.
+Whenever this database is restored, any changes you made using Directory Manager 11.2 would be lost.
 
 ## Elasticsearch Data
 
-Before you upgrade from GroupID 10 to Directory Manager 11.1, take a backup of the Elasticsearch
+Before you upgrade from GroupID 10 to Directory Manager 11.2, take a backup of the Elasticsearch
 data folder. The default folder location is:
 
 `C:/ProgramData/Imanami/GroupID 10.0/Replication/data/`

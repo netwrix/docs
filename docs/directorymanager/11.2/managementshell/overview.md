@@ -21,7 +21,7 @@ and PowerShell Core.
 
 ## Identity Store-based Model
 
-Directory Manager 11.1 has extensible identity store based model. It supports the following data
+Directory Manager 11.2 has extensible identity store based model. It supports the following data
 stores for creating an identity store:
 
 - Active Directory
@@ -41,8 +41,8 @@ Before using Directory Manager Management Shell, you must connect it to an iden
 
 To access Management Shell.
 
-Step 1 – On the Windows Start menu, search for **Directory Manager Management Shell 11.1**. Click it
-to launch Directory Manager Management Shell 11.1.
+Step 1 – On the Windows Start menu, search for **Directory Manager Management Shell 11.2**. Click it
+to launch Directory Manager Management Shell 11.2.
 
 Step 2 – On the Netwrix Directory Manager Authenticate page, select an identity store to
 connect to.
@@ -66,7 +66,7 @@ Click the **Edit** icon if you want to select another identity store to connect 
 
 The Management Shell window appears as follows:
 
-![GroupID Management Shell 11.0](/images/directorymanager/11.2/managementshell/shell.webp)
+![GroupID Management Shell 11.2](/images/directorymanager/11.2/managementshell/shell.webp)
 
 It displays information about the connected identity store.
 

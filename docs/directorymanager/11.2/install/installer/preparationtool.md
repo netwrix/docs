@@ -13,7 +13,7 @@ Manager.
 
 To run the Directory Manager preparation tool:
 
-Step 1 – Open Directory Manager 11.1 Prerequisites Tool folder from the Directory Manager
+Step 1 – Open Directory Manager 11.2 Prerequisites Tool folder from the Directory Manager
 Installation package.
 
 Step 2 – Run directorymanagerPrereqTool.exe file. It launches the Preparation Tool.
@@ -54,7 +54,7 @@ displayed. Click **OK** to restart.
 
 ## Run the Preparation Tool on a Directory Manager server
 
-If you have an earlier version of Directory Manager 11.0 installed on a machine, then before running
+If you have an earlier version of Directory Manager 11 installed on a machine, then before running
 the preparation tool ensure no version other than the following prerequisite versions is installed.
 Otherwise, uninstall them manually:
 
