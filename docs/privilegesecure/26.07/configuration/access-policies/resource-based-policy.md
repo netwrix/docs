@@ -108,6 +108,6 @@ To remove an item, select its checkbox and click **Remove**.
 - [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)
 - [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md)
 
-{/* TODO screenshot: the Users tab of a resource-based policy, showing the Type and Connection Profile fields and the three tabs. */}
+![The Users tab of a resource-based access policy with the Type and Connection Profile fields and the Users, Activities, and Resources tabs.](/images/privilegesecure/26.07/configuration/access-policy-users-tab.webp)
 {/* TODO screenshot: the Add Activities and Activity Groups window with the two panes. */}
 {/* TODO screenshot: a new policy form with the required Connection Profile error before Save. */}

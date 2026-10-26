@@ -10,7 +10,7 @@ A role controls what a user can see and do in the console. Netwrix Privilege Sec
 
 Open the page from the left navigation: click **Users & Groups**, then **Role Management**.
 
-{/* TODO screenshot: the Role Management page with the role list on the left and the Administrators members on the right */}
+![The Role Management page with the role list on the left and the members of the Administrators role on the right.](/images/privilegesecure/26.07/admin/roles-role-management.webp)
 
 ## Built-in roles
 

@@ -24,7 +24,7 @@ Create an activity to define the login account, the session type, and the action
 7. Complete the fields that appear for your selections. See [Activity fields](#activity-fields).
 8. Click **Save**.
 
-{/* TODO screenshot: the new activity form with Login Account set to Activity Token, showing Login Account Template, Create Account, and Delete After Use */}
+![An activity with Login Account set to Activity Token, showing Login Account Template, Create Account, and Delete After Use.](/images/privilegesecure/26.07/configuration/activities-page.webp)
 
 When you change any field on an existing activity, the **Save** and **Cancel** buttons appear. Click **Save** to keep the change or **Cancel** to discard it.
 

@@ -32,7 +32,7 @@ For how synchronization reads the directory, see [How Active Directory synchroni
 1. Select **Test** to check the connection.
 1. Select **Save**. The **Save** button is available after the test succeeds.
 
-{/* TODO screenshot: New Domain page with the domain name entered, the Active Directory service account selected, and Use TLS selected. */}
+![The New Domain page with a domain name entered, a service account selected, and Use TLS selected.](/images/privilegesecure/26.07/resources/new-domain.webp)
 
 The new domain opens on its details page. The page is empty until the first synchronization finishes. To start it right away, select **Sync**.
 

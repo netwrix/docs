@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The server details page shows the settings of one server and what Netwrix Privilege Secure for Access Management (Privilege Secure) found on it. To open the page, select **Resources** in the left navigation, then select the name of a server in the **Resource** column. The Type filter calls servers **Host**.
 
-{/* TODO screenshot: server details header showing the buttons, fields, ports, Trust on Discovery, and Action on Fingerprint Mismatch */}
+![The header of a server details page with the buttons, fields, ports, Trust on Discovery, and Action on Fingerprint Mismatch.](/images/privilegesecure/26.07/resources/server-details.webp)
 
 ## Header buttons
 

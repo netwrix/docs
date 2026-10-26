@@ -10,7 +10,7 @@ A resource is a system that Netwrix Privilege Secure for Access Management (Priv
 
 The **Resources** tile on the Dashboard shows the same list. See [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
-{/* TODO screenshot: Resources list with the Add menu open, showing the six entries and the filter bar */}
+![The Resources list with the Add menu open, showing New Server, New Domain, New Website, New Entra ID Tenant, New Secret Vault, and New Database.](/images/privilegesecure/26.07/resources/resources-add-menu.webp)
 
 ## Resource types
 

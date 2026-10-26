@@ -48,7 +48,7 @@ You can add **Admin View Read Only** to the built-in Auditors role or to a custo
 
 Read-only users still need session scope. Without **All Users** and **All Resources**, they see only the sessions of the users and resources you add on the **Users** and **Resources** tabs.
 
-{/* TODO screenshot: the Permission Assignment list of an Auditors custom role with Admin View Read Only and Reporting assigned */}
+![The Permission Assignment list of the Auditors role, which includes Admin View Read Only and Reporting.](/images/privilegesecure/26.07/admin/admin-view-read-only-permissions.webp)
 
 If you later remove **Reporting**, Privilege Secure also removes **Admin View Read Only**.
 

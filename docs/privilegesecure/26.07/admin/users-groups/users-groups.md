@@ -10,7 +10,7 @@ The **Users & Groups** page lists every account that has access to the console. 
 
 To open the page, select **Users & Groups** in the left navigation. The same list also appears as the **Users** tile on the dashboard. See [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
-{/* TODO screenshot: the Users & Groups list with the Licenses counter, the filters, and the LOCKED column */}
+![The Users & Groups list with the Licenses counter, the Type, License, and Last Login filters, and the Locked column.](/images/privilegesecure/26.07/admin/users-groups-list.webp)
 
 ## Account types
 

@@ -35,7 +35,7 @@ Each method has a **Service Account** dropdown in the window footer. Privilege S
 
 Both tables show the **Type**, **Name**, **Operating System**, and **DNS Host Name** columns.
 
-{/* TODO screenshot: Add Resources window with Import from AD selected and two servers in Resources to Add */}
+![The Add Resources window with Import from AD selected and a server in Resources to Add.](/images/privilegesecure/26.07/resources/add-resources-import-from-ad.webp)
 
 ## Import servers from a CSV file
 

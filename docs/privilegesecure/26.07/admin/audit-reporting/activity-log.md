@@ -10,7 +10,7 @@ The **Activity Log** page lists the sessions that ran in a date range. Use it to
 
 To open it, select **Auditing & Reporting** > **Activity Log** in the Privilege Secure Console.
 
-{/* TODO screenshot: Activity Log page showing the summary, top 5 users, and sessions tables with the Export as CSV button */}
+![The Activity Log page with the summary, top 5 users, and sessions tables and the Export as CSV button.](/images/privilegesecure/26.07/admin/activity-log.webp)
 
 ## Filter the log
 

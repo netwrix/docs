@@ -41,7 +41,7 @@ The row's **Method** changes to **Automatic** or **Manual**. Both choices are av
 
 For an Internal account, a dialog searches for a matching user. See [Manage internal service accounts](/docs/privilegesecure/26.07/admin/credentials/internal-service-accounts.md).
 
-{/* TODO screenshot: the Manage dialog for a Standard account */}
+![The Manage Account dialog for a Standard account, with the Automatic, Manual, and Cancel buttons.](/images/privilegesecure/26.07/admin/manage-account-dialog.webp)
 
 To stop managing an account, select its row, and then select **Unmanage**.
 

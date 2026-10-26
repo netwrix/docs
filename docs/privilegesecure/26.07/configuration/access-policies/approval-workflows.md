@@ -65,7 +65,7 @@ A green plus icon to the right of the last card adds another tier. A workflow ha
 
 To remove an approver, hover over the approver, click the **Remove Approver** icon, and confirm.
 
-{/* TODO screenshot: the Approval Workflow section with a tier card showing Escalation, Account, Group, Approvers, and Approvals Required */}
+![The Approval Workflow section of a connection profile with a tier card that shows Escalation, Account, Group, Approvers, and Approvals Required.](/images/privilegesecure/26.07/configuration/approval-workflow-tier.webp)
 {/* TODO screenshot: the Tier Escalation dialog */}
 {/* TODO screenshot: the Add Users and Groups as Approvers dialog */}
 

@@ -12,7 +12,7 @@ Open the **Activities** page from the left navigation pane. The page lists every
 
 Netwrix Privilege Secure installs with 11 activities and 2 activity groups. Your list can contain more, because administrators add their own. To build one, see [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
 
-{/* TODO screenshot: the Activities page with the activity list on the left and the activity details on the right */}
+![The Activities page with the activity list on the left and the details of the selected activity on the right.](/images/privilegesecure/26.07/configuration/activities-page.webp)
 
 ## Activity settings
 
