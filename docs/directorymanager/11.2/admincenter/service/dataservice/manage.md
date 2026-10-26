@@ -35,7 +35,7 @@ Step 3 – The card for a Data service displays the following information:
 | --- | --- |
 | Name  | The name given to the service. |
 | Deployment Instances | Displays the deployment name of the service and the web server where it is deployed. |
-| Status | A service has one of the following statuses: <br /><ul><li>Running – Indicates that the service is running.</li><li>Stopped – Indicates that Directory Manager is unable to communicate with the service. To troubleshoot, go to the web server where the service is deployed (IIS, remote IIS, or Docker) and ensure the service is running.</li><li>Error – Any issue other than _stopped_ is categorized as _error_. Contact your system administrator to resolve it.</li></ul> |
+| Status | A service has one of the following statuses: <br /><ul><li>Running – Indicates that the service is running.</li><li>Stopped – Indicates that Directory Manager is unable to communicate with the service. To troubleshoot, go to the web server where the service is deployed (IIS or Docker) and ensure the service is running.</li><li>Error – Any issue other than _stopped_ is categorized as _error_. Contact your system administrator to resolve it.</li></ul> |
 | Launch Application | Click it to launch the service page. <br /><ul><li>For a Data service, Replication service, Email service, and Scheduler service, a page is displayed that shows the status of the service as _running_, _stopped_, or _error_.</li><li>For a Security service, the **GroupID Applications** page is displayed. The respective Security service performs any action on this page. See [Access your Applications](/docs/directorymanager/11.2/admincenter/general/accessapplications.md). </li><li>For Admin Center, this launches the Admin Center application.</li></ul> |
 | Ellipsis | Click it to launch a shortcut menu with the following options: <br /><ul><li>Settings – launches the service settings page, where you can manage deployment settings and log settings.</li><li>Delete – deletes the service. This option isn't available for the default services.</li></ul> |
 
@@ -59,11 +59,10 @@ Step 5 – Click **Save**.
 
 ## Start or Stop a Service
 
-You can start and stop a service deployed in native IIS, remote IIS, and Docker. When you stop a
+You can start and stop a service deployed in native IIS and Docker. When you stop a
 service, the following happens:
 
 - For a native IIS deployment, Directory Manager stops the service’s application pool.
-- For a remote IIS deployment, Directory Manager stops the site that hosts the service.
 - For a Docker deployment, Directory Manager stops the container where the service is deployed.
 
 start or stop a service.
@@ -76,7 +75,7 @@ Step 2 – On the Applications page, click the tab for the service you want. For
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
-The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
+The Deployment Settings page displays the web server (IIS or Docker) where the service
 is deployed.
 
 Step 5 – The Select Application Deployment dropdown list displays the deployment name of the
@@ -97,7 +96,7 @@ Step 2 – On the Applications page, click the tab for the service you want. For
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
-The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
+The Deployment Settings page displays the web server (IIS or Docker) where the service
 is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
@@ -117,17 +116,13 @@ Step 2 – On the Applications page, click the tab for the service you want. For
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
-The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
+The Deployment Settings page displays the web server (IIS or Docker) where the service
 is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
 Step 5 – On the Deployment Configurations tab:
 
 - For a native IIS deployment, you can view the name of the service application in IIS, the site
-  where it is hosted, the URL to launch the service page, and any other services that this service
-  uses.
-- For a remote IIS deployment, you can view the Microsoft IIS Administration API URL, access token,
-  and credentials. You can also view the name of the service application in remote IIS, the site
   where it is hosted, the URL to launch the service page, and any other services that this service
   uses.
 - For a Docker deployment, you can view the port and service URL used to communicate with Docker
@@ -161,7 +156,7 @@ Step 2 – On the Applications page, click the tab for the service you want. For
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
-The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
+The Deployment Settings page displays the web server (IIS or Docker) where the service
 is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
@@ -188,7 +183,7 @@ Step 2 – On the Applications page, click the tab for the service you want. For
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
-The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
+The Deployment Settings page displays the web server (IIS or Docker) where the service
 is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
@@ -210,7 +205,7 @@ Step 2 – On the Applications page, click the tab for the service you want. For
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
-The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
+The Deployment Settings page displays the web server (IIS or Docker) where the service
 is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
@@ -237,7 +232,7 @@ Step 2 – On the Applications page, click the tab for the service you want. For
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
-The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
+The Deployment Settings page displays the web server (IIS or Docker) where the service
 is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
@@ -257,11 +252,6 @@ Deleting a Data service removes the following:
       X:\Program Files\Imanami\GroupID 11.0\GroupIDDataService\Inetpub\  
       (X represents the Directory Manager installation drive)
     - The Data service directory from the website in IIS
-
-- For a remote IIS deployment:
-
-    - The service's directory in the remote IIS site
-    - The service's physical directory under the folder mapped to the remote IIS site
 
 - For a Docker deployment:
 

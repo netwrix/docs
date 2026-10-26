@@ -17,6 +17,7 @@ Use the NDM11-ADV-2025-014 utility to:
 
 - [Download NDM11-ADV-2025-014-Utility](https://releases.netwrix.com/products/groupid/11.1/NDM11-ADV-2025-014-Utility.zip)
 - [Download GroupIDPasswordTransferUtility](https://releases.netwrix.com/products/groupid/11.1/GroupIDPasswordTransferUtility.zip)
+- [Download the Passphrase Utility](https://releases.netwrix.com/resources/directory-manager/directory-manager-passphrase-utility-1.0.zip)
 
 ## Restrict IP Addresses
 
@@ -102,13 +103,20 @@ If you have multiple Directory Manager servers or distributed portals, you must 
 GroupIDPasswordTransfer utility to securely transport the password to distributed Directory Manager
 systems. When done, you must restart IIS on those systems.
 
+:::note
+You also use the GroupIDPasswordTransfer utility to copy the GroupID password to a new server when
+you set up a multi-instance deployment. In that case, you don't generate a new password. Skip the
+Generate a Secure Password steps, which apply only to upgrades from GroupID 10 or earlier Directory
+Manager 11 versions, and start with the following steps on the primary server.
+:::
+
 To export the generated password from the primary Directory Manager server to a
 secondary server/instance, complete these steps:
 
-Step 1 – On the Directory Manager server, run the “directorymanagerPasswordTransferUtility.exe” utility from
+Step 1 – On the Directory Manager server, run the “GroupIDPasswordTransferUtility.exe” utility from
 the command line as an administrator.
 
-Step 2 – Run the `directorymanagerPasswordTransferUtility.exe export -o "directory\filename"` cmdlet to
+Step 2 – Run the `GroupIDPasswordTransferUtility.exe export -o "directory\filename"` cmdlet to
 export the encrypted password from the primary server.
 
 Step 3 – Copy the encrypted password displayed on cmd in response to this command.
@@ -119,7 +127,7 @@ another instance of Directory Manager.
 Step 5 – Run the following cmdlet on the instance where you placed the file to import the encrypted
 password.
 
-directorymanagerPasswordTransferUtility.exe import -i "path to the file" -p "password copied from above"
+GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "password copied from above"
 
 Step 6 – Restart IIS on this server.
 
@@ -132,3 +140,9 @@ You must delete the GroupIDSSUser account from each Directory Manager server. Go
 Management console to delete the account.
 
 ![Computer Management console](/images/directorymanager/11.2/install/computermanagement.webp)
+
+## Export/Import the Passphrase
+
+If you have multiple Directory Manager servers, all of them must use the same passphrase. To export
+the passphrase from the primary server and import it on the secondary servers, see the
+[Passphrase Utility](/docs/directorymanager/11.2/install/passphraseutility.md) topic.

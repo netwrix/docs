@@ -33,3 +33,12 @@ Security services, you can enable communication between them. As a result of the
 logged in session-related information persists across multiple Directory Manager clients. See the
 [Manage Advanced Settings](manage.md#manage-advanced-settings) section of the
 [Manage Security Service Settings](/docs/directorymanager/11.2/admincenter/service/securityservice/manage.md) topics for additional information.
+
+To set up multiple Directory Manager servers behind a load balancer, see the
+[Set Up Directory Manager Behind a Load Balancer](/docs/directorymanager/11.2/install/loadbalancer.md)
+topic.
+
+If clients access Directory Manager through a load balancer or a reverse proxy, also add their URLs
+to the allowed base URLs of every Security service. See the
+[Allow Return URLs for Load Balancers and Reverse Proxies](/docs/directorymanager/11.2/admincenter/service/securityservice/allowedurls.md)
+topic.

@@ -13,6 +13,32 @@ Elasticsearch instances.
 This option also configures the Directory Manager Elasticsearch Service as a slave node to the
 master node for the Elasticsearch Service cluster configured on the Directory Manager server.
 
+## Before You Begin
+
+All Directory Manager servers in a multi-instance deployment share the same GroupID password,
+passphrase, and signing key. Before you configure the new server, export all three from the primary
+server. Import the GroupID password and passphrase on the new server before you run the
+Configuration Tool. Import the signing key while you run the Configuration Tool.
+
+Step 1 – On the primary server, export the GroupID password with the GroupIDPasswordTransfer
+utility. You don't need to generate a new password first. See the
+[Export/Import the New Password](/docs/directorymanager/11.2/install/securityutility.md#exportimport-the-new-password)
+section of the [Security Utility](/docs/directorymanager/11.2/install/securityutility.md) topic.
+
+Step 2 – On the primary server, export the passphrase. See the
+[Passphrase Utility](/docs/directorymanager/11.2/install/passphraseutility.md) topic.
+
+Step 3 – On the primary server, export the signing key. See the
+[Export a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#export-a-signing-key)
+section of the [Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md)
+topic.
+
+Step 4 – Copy the exported files to the new server.
+
+Step 5 – On the new server, import the GroupID password and the passphrase.
+
+## Configure the Server
+
 To configure a Directory Manager server with existing database:
 
 Step 1 – On the Select to create new server or use existing server page of the Configuration Tool,
@@ -210,7 +236,11 @@ Step 17 – Click **Configure**.
 
 ![Configuring GroupID ](/images/directorymanager/11.2/install/configure/configuring.webp)
 
-Step 18 – The next page displays the progress while a Directory Manager server is configured on the
+Step 18 – If the Configuration Tool displays the Import Signing Key page, click **Browse** next to
+the Select file box, select the signing key file that you exported from the primary server, enter its
+password in the **Password** box, and click **Next**.
+
+The next page displays the progress while a Directory Manager server is configured on the
 machine. While configuring the machine, the Configuration Tool checks the application’s signing key
 status and update it according to your Directory Manager environment. See the
 [Update Signing Key](/docs/directorymanager/11.2/install/configure/signingkeyinfo.md) topic for information how Configuration Tool will update
@@ -227,3 +257,20 @@ Administrator user name and password.
 **or**
 
 click **Next** to launch the Upgrade wizard for upgrading Directory Manager.
+
+## Resolve Elasticsearch Replication Issues
+
+If the nodes use a Directory Manager-managed Elasticsearch cluster, replication can fail because the
+Elasticsearch state on the nodes has drifted apart. To resolve this, complete the following steps on
+each node:
+
+Step 1 – Edit `elasticsearch.yml`:
+
+- `cluster.name` – Must match the value on the primary node.
+- `discovery.seed_hosts` – Must include the primary node and list it first.
+- `cluster.initial_master_nodes` – Must include the primary node and list it first, or you can
+  omit the setting.
+
+Step 2 – Delete the contents of the existing Elasticsearch data directory.
+
+Step 3 – Restart the Elasticsearch service.

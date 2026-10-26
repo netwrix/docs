@@ -33,7 +33,18 @@ To view the default services, see the
 For load balancing and high availability, use Directory Manager to create and maintain
 multiple Data services. While creating a Directory Manager portal, you can choose a Data service to
 bind to it. In this way, different portals can use different Data services for improved response
-times and load balancing.
+times and load balancing. To set up multiple Directory Manager servers behind a load balancer, see
+the [Set Up Directory Manager Behind a Load Balancer](/docs/directorymanager/11.2/install/loadbalancer.md)
+topic.
 
-With Directory Manager, you can create and deploy a Data service in any of these web servers:
-native IIS, remote IIS, and Docker.
+With Directory Manager, you can create and deploy a Data service in native IIS or Docker. Remote IIS
+isn't supported for Data services.
+
+:::important
+By default, IIS restricts each Data service to accept requests only from the local IP addresses of
+the machine it runs on. If a portal or another service on a different machine uses a Data service,
+add that machine's IP address to the IIS IP allow list of the Data service. Do this for every Data
+service you create. See
+[Add a Machine to the Data Service IP Allow List](/docs/directorymanager/11.2/admincenter/applications/portal/create.md#add-a-machine-to-the-data-service-ip-allow-list)
+for the steps.
+:::
