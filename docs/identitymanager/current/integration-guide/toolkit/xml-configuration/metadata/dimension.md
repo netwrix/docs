@@ -4,7 +4,7 @@ description: ""
 sidebar_position: 3
 ---
 
-A dimension is an [Entity Type](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype) used to define an organizational filter for the Identity Manager role model.
+A dimension is an [Entity Type](entitytype) used to define an organizational filter for the Identity Manager role model.
 
 
 ## Examples

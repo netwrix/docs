@@ -61,7 +61,7 @@ Assign manually a profile to a user by proceeding as follows:
 - **Start Date** **and** **End Date**: Particularly useful for profile delegation.
 
 :::note
- If filters are defined in the Access Rules, **and** are assigned to the profile, a **Criteria** section will appear containing them. Filters are conditions that, if met, trigger the Access Control Rule Application. The only filters which can be displayed in this section are filters related to dimensions or hard coded criteria (Single Role, Composite Role, Resource Type **and** Category). The filters are defined in the XML configuration on the access control rules. The criteria displayed are a fusion of the filters of all the rules associated with the profile. See the [Access Control Rule](../../integration-guide/toolkit/xml-configuration/access-control/accesscontrolrule) topic for additional information. 
+ If filters are defined in the Access Rules, **and** are assigned to the profile, a **Criteria** section will appear containing them. Filters are conditions that, if met, trigger the Access Control Rule Application. The only filters which can be displayed in this section are filters related to dimensions or hard coded criteria (Single Role, Bundle, Resource Type **and** Category). The filters are defined in the XML configuration on the access control rules. The criteria displayed are a fusion of the filters of all the rules associated with the profile. See the [Access Control Rule](../../integration-guide/toolkit/xml-configuration/access-control/accesscontrolrule) topic for additional information. 
 :::
 **Automatic assignment**
 

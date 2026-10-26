@@ -52,10 +52,12 @@ The following example disables the counters that are usually visible on the dash
 | FaviconFile optional | **Type:** String **Description:** Path of the favicon to be displayed in the application's tabs. |
 | FaviconMimeType optional | **Type:** String **Description:** Mime type of the favicon. |
 | FullNameSeparator <span class="optionalAttribute">default value: ¤</span> | **Type:** String **Description:** Separator of the full name. |
+| HomonymyCheckedAtReview <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to check homonymy at review step even if no changes have been made. |
 | Identifier <span class="optionalAttribute">default value: AppDisplay</span> | **Type:** String **Description:** Unique identifier of the setting. |
 | LogoFile optional | **Type:** String **Description:** Path of the logo to be displayed in the top left corner. |
 | LogoMimeType optional | **Type:** String **Description:** Mime type of the logo. |
 | Preview optional | **Type:** String **Description:** Documentation unavailable. |
 | PrimaryColor optional | **Type:** String **Description:** HEX code of the color for the highlighted buttons. |
 | SecondaryColor optional | **Type:** String **Description:** HEX code of the color for the background of the authentication screen. |
+| UseLegacyFont <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to use legacy font. |
 

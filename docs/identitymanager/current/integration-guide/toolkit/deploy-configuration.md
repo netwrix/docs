@@ -96,3 +96,6 @@ You can deploy the configuration by launching only the `Deploy-Configuration` ex
 
 The token served by Identity Manager's IDP expires after one hour.
 
+:::info
+At the end of a remote deployment, the tenant reloads and the command may log a `Server returned 503; retrying` message. It is expected and harmless. See the [Usercube-Deploy Configuration](../../integration-guide/executables/references/deploy-configuration.md#messages-during-a-remote-deployment) topic for details.
+:::

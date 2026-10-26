@@ -10,7 +10,7 @@ More precisely, an indicator displays the appropriate banner whenever the *Bindi
 
 The banner is displayed wherever the associated resource appears.  
 
-For example, if we create an indicator pointing out the risk score of a user, the banner will show on the left-side of the user [tile](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/user-interface/tile) and the user [form](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/user-interface/form). If we create an indicator pointing out whether an AD account is unused or disabled, the banner will show on the left-side of the AD Entries tile and form.  
+For example, if we create an indicator pointing out the risk score of a user, the banner will show on the left-side of the user [tile](tile) and the user [form](form). If we create an indicator pointing out whether an AD account is unused or disabled, the banner will show on the left-side of the AD Entries tile and form.  
 
 One entity can show several banners, one for several different properties. They appear one above the other if there are four banners or less, one next to the other if there are more.  
 

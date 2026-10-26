@@ -1,7 +1,7 @@
 ---
 title: "RunJobAdministrationAccessControlRules"
 description: "Generates the permissions to launch jobs from UI for a given profile."
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 Generates the rights to launch from UI jobs that are in state blocked after a Provisioning or a synchronization for a given profile.

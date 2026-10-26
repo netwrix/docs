@@ -4,7 +4,7 @@ description: ""
 sidebar_position: 2
 ---
 
-A connection represents a link between a [connector](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/connector) and a connection package.
+A connection represents a link between a [connector](connector) and a connection package.
 
 
 ## Examples
@@ -40,7 +40,7 @@ appsettings.agent.json
 }
 ```
 
-Details about these settings can be found in Identity Manager's [connector references](/docs/identitymanager/current/integration-guide/connectors/references-connectors).
+Details about these settings can be found in Identity Manager's [connector references](../../../connectors/references-connectors).
 
 
 ## Properties
@@ -54,7 +54,7 @@ Details about these settings can be found in Identity Manager's [connector refer
 | Package required | **Type:** Enumeration **Description:** Identifier of the linked connection package which defines the connection's capabilities and technologies to export and/or fulfill data. |
 
 ## Child Element: Transformation
-A connection transformation is optional, but can be needed to adjust the Excel files, output of [export tasks](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/jobs/tasks/agent/exporttask) from Excel export connections, before [prepare-synchronization tasks](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/jobs/tasks/agent/preparesynchronizationtask). The following operations are possible:
+A connection transformation is optional, but can be needed to adjust the Excel files, output of [export tasks](../jobs/tasks/agent/exporttask) from Excel export connections, before [prepare-synchronization tasks](../jobs/tasks/agent/preparesynchronizationtask). The following operations are possible:
 * filtering out given rows;
 * adding/removing days from specific date properties;
 * merging columns together.

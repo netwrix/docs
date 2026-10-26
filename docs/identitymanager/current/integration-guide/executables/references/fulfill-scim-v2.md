@@ -43,4 +43,5 @@ When specifying `--resource-types`, there is no need to specify `--connector`:
  | --password optional | **Type** String **Description** Password for password-flow OAuth2 or HTTP Basic auth. |
  | --scope optional | **Type** String **Description** Space-separated OAuth2 scopes to request. |
  | --resource optional | **Type** String **Description** RFC 8707 resource indicator. |
- | --account-deletion-behavior default: `Delete` | **Type** String **Description** Controls how deletion orders are sent. `Delete` (default): HTTP DELETE. `Deactivate`: PATCH `active=false`. |
+ | --headers optional | **Type** String **Description** Custom HTTP headers added to every request, JSON-encoded as a flat object (e.g. `{"User-Agent":"MyOrg/1.0"}`). |
+ | --capabilities optional | **Type** String **Description** Forces server capabilities instead of relying on `GET /ServiceProviderConfig` auto-detection. Comma-separated `Key=Supported\|Unsupported` pairs (e.g. `Patch=Supported,Filter=Unsupported`). Keys: `Patch`, `Filter`, `ChangePassword`. Omitted keys are auto-detected from the server. Omit the argument entirely for full auto-detect. |

@@ -31,8 +31,23 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 ```
 
 :::info
- To be able to deploy a SaaS configuration, you must first provide your Identity Manager administrator with identity information. See the [Deploy the Configuration](../../../integration-guide/toolkit/deploy-configuration) topic for additional information. 
+ To be able to deploy a SaaS configuration, you must first provide your Identity Manager administrator with identity information. See the [Deploy the Configuration](../../../integration-guide/toolkit/deploy-configuration) topic for additional information.
 :::
+
+## Messages during a remote deployment
+
+At the end of a remote deployment, Netwrix Identity Manager reloads the tenant to apply the new configuration. The reload takes several seconds, during which the server cannot process requests.
+
+The command follows the deployment progress by regularly querying the server. A query sent during the reload is answered with `503 Service Unavailable` and a `Retry-After` header, and the command automatically sends it again. The following line is logged once per deployment, at `Information` level:
+
+```
+[15:45:12 INF] Server returned 503; retrying https://my-instance.example.com/api/Deployment/PendingWork?api-version=1.0&PendingWorkId=<Id>
+```
+
+This message is expected and harmless: no action is required, and the deployment completes successfully. Further retries during the same reload are only logged at `Debug` level.
+
+The command stops retrying and logs `Retry wait budget of 00:01:00 exhausted` as a warning if the server is still unavailable after a cumulative 60 seconds of waiting. In that case, check that the tenant has restarted properly before running the deployment again.
+
 ## Arguments
 
 The table below displays the arguments for the Identity Manager configuration deployment.

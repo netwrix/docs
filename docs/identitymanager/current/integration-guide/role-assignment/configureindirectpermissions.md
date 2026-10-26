@@ -49,15 +49,15 @@ Then we create one Single Role for each group in the Active Directory. We will n
 
 ![Single Role Configuration Example](/images/identitymanager/srconf_5.2.1.webp)
 
-We will also create a test Composite Role to showcase indirect Composite Roles. We will name it ```TestCRoleAB```:
+We will also create a test Bundle to showcase indirect Bundles. We will name it ```TestCRoleAB```:
 
-![Composite Role Configuration](/images/identitymanager/crconf_5.2.1.webp)
+![Bundle Configuration](/images/identitymanager/crconf_5.2.1.webp)
 
 Then we will also need to add some rules. We first need to add one Navigation Rule for each group to link them with their respective Single Role:
 
 ![Navigation Rule Example](/images/identitymanager/navrule_5.2.1.webp)
 
-And finally, we need to add Single Role Rules to link our two previously created Single Roles to the new Composite Role:
+And finally, we need to add Single Role Rules to link our two previously created Single Roles to the new Bundle:
 
 ![Single Role Rule Example](/images/identitymanager/srrule_5.2.1.webp)
 
@@ -69,7 +69,7 @@ After running a [Compute Role Model Task](../../integration-guide/toolkit/xml-co
 
 The next screenshots were taken after adding the direct assignment directly inside the Active Directory. As such, the direct permission is also flagged as ```Non-conforming```.
 
-If you first go on the ```View permissions``` tab of your test user, the only new role that appears in the ```Simplified view``` is the indirect Composite Role ```TestCRoleAB```:
+If you first go on the ```View permissions``` tab of your test user, the only new role that appears in the ```Simplified view``` is the indirect Bundle ```TestCRoleAB```:
 
 ![View Permissions Simplified](/images/identitymanager/viewpermissionssimplified_5.2.1.webp)
 

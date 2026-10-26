@@ -12,10 +12,10 @@ When running an Access Certification Campaign, this object defines the scope of 
 |---|---|
 | Campaign required | **Type:** Int64 **Description:** The associated campaign. |
 | Category optional | **Type:** Int64 **Description:** Specifies the category targeted by the filter. |
-| IncludeCompositeRoles <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to include the composite roles in the certification. |
+| IncludeCompositeRoles <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to include the bundles in the certification. |
 | IncludeDeniedPermissions <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** Filters items with denied permissions from Access Certification Campaign. |
 | IncludeDoubleValidation <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** `true` to include the assignments of entitlements with two validations in the certification. |
-| IncludeManualAssignmentNotAllowed <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** `true` to include in the certification the resources that cannot be requested manually, i.e. those from [resource types](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/resourcetype#properties) with `ApprovalWorkflowType` set to `ManualAssignmentNotAllowed`. |
+| IncludeManualAssignmentNotAllowed <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** `true` to include in the certification the resources that cannot be requested manually, i.e. those from [resource types](../provisioning/resourcetype#properties) with `ApprovalWorkflowType` set to `ManualAssignmentNotAllowed`. |
 | IncludeNestedCategories <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** When a category is used as filter, all its nested categories are also included in the campaign. |
 | IncludeNoValidation <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** `true` to include the assignments of entitlements without validation in the certification. |
 | IncludeResourceNavigations <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to include the resource navigations in the certification. |

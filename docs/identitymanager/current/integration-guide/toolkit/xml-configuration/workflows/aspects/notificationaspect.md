@@ -8,9 +8,9 @@ Sends a notification email to one or several users.
 
 ## Authorized code in templates
 
-Razor templates referenced by `RazorFile_L*` are compiled with the same security restrictions as [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#white-list). Only methods, classes, and namespaces from the white list can be used in template code.
+Razor templates referenced by `RazorFile_L*` are compiled with the same security restrictions as [C# expressions](../../../expressions#white-list). Only methods, classes, and namespaces from the white list can be used in template code.
 
-See [Razor template white list](/docs/identitymanager/current/integration-guide/toolkit/expressions#razor-template-white-list) for the template-specific additions.
+See [Razor template white list](../../../expressions#razor-template-white-list) for the template-specific additions.
 
 
 ## Examples
@@ -44,7 +44,7 @@ The notification will be sent to all email addresses defined by `Directory_Guest
 
 
 ## Child Element: PointCut
-A pointcut is a mechanism telling Identity Manager when to execute the linked [aspect](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/workflows/aspects).
+A pointcut is a mechanism telling Identity Manager when to execute the linked [aspect](.).
 
 The position of the pointcut is specified by an activity state and a mode (before or after).
 
@@ -124,6 +124,6 @@ Knowing that we also have:
 |ActivityState<br/>optional|<p>**Type**<br />Enumeration<br /><br />**Description**<br />Identifier of the activity state whose last performers are to be notified, when `Type` is set to `Performer`.<br/><br/>**Note:** must be set together with `Activity`.</p>|
 |Binding<br/>optional|<p>**Type**<br />Int64<br /><br />**Description**<br />Binding of the property that represents the notification's recipients, when `Type` is set to `Binding`.</p>|
 |EmailAddresses<br/>optional|<p>**Type**<br />String<br /><br />**Description**<br />Email addresses of the notification's recipients, when `Type` is set to `Hardcoded`.</p>|
-|Expression<br/>optional|<p>**Type**<br />String<br /><br />**Description**<br />C# expression that returns the email addresses of the notification's recipients, as strings or IEnumerable\<string>, when `Type` is set to `Expression`. The expression's variable type is defined in `ExpressionBinding` in the associated `NotificationAspect`. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions).</p>|
+|Expression<br/>optional|<p>**Type**<br />String<br /><br />**Description**<br />C# expression that returns the email addresses of the notification's recipients, as strings or IEnumerable\<string>, when `Type` is set to `Expression`. The expression's variable type is defined in `ExpressionBinding` in the associated `NotificationAspect`. [See more details on C# expressions](../../../expressions#c-expressions).</p>|
 |IsCC<br/><span class="optionalAttribute">default value: false</span>|<p>**Type**<br />Boolean<br /><br />**Description**<br />`true` to send the notification email to the recipient(s) as a carbon copy (CC).</p>|
 |Type<br/>required|<p>**Type**<br />RecipientType<br /><br />**Description**<br />Type of recipients for the email notification.<br/><br/>**Actor**: the identities with the permissions to act on the next step of the workflow specified in the pointcut.<br/>**Performer**: the actors of a past workflow step specified in `Activity` and `ActivityState`.<br/>**Binding**: the identities whose email addresses are designated by the property specified in `Binding`.<br/>**Hardcoded**: the identities whose email addresses are specified explicitly in `EmailAddresses`.<br/>**Expression**: the identities whose email addresses match the C# expression specified in `Expression`.<br/>**Profile**: the identities with the permission `/Custom/WorkflowsNotifications/{workflow_identifier}/`<br/>`{activity_identifier}/{activityTemplateState_shortIdentifier}`.</p>|

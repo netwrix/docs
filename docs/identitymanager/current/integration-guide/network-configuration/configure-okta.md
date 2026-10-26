@@ -29,7 +29,7 @@ On the Okta dashboard:
 **Step 5 –** In the **Configure OpenID Connect** section, enter the connection redirection URL in the part: **Login redirect URLs**. To find out this URL, just take the URL of the Identity Manager application and add `/signin-oidc`. The Identity Manager disconnection redirection URL is also necessary. To construct it, take Identity Manager's URL again and, at the end, add `/signout-callback-oidc`.
 
 :::note
- The **Logout redirect URLs** section is marked as optional but it is mandatory for Identity Manager. 
+ The **Logout redirect URLs** section is marked as optional but it is mandatory for Identity Manager.
 :::
 ![Save Application](/images/identitymanager/okta_saveapplication.webp)
 
@@ -47,7 +47,7 @@ In the **Application** section, check the box **Implicit (Hybrid)** so that the 
 
 ## Configure the appsettings.json
 
-To successfully configure the OpenId protocol, you can refer to the dedicated section in the detailed guide. See the [ End-User Authentication](../../integration-guide/network-configuration/server-configuration/end-users-authentication) for additional information.
+To successfully configure the OpenID protocol, you can refer to the dedicated section in the detailed guide. See the [ End-User Authentication](../../integration-guide/network-configuration/server-configuration/end-users-authentication) for additional information.
 
 Below is an illustrative example of how to set up your `appsettings.json` file.
 
@@ -57,7 +57,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 appsettings.json
 {
   ...
-  "OpenId": {
+  "OpenID": {
     "Enabled": true,
     "Okta": {
       "AuthenticationScheme": "Okta Authentication",

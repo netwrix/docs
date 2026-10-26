@@ -6,7 +6,7 @@ sidebar_position: 4
 
 A table displays a collections of entity type data grouped into rows.
 
-[Read more about how to customize display tables](/docs/identitymanager/current/integration-guide/ui/how-tos/custom-display-table).
+[Read more about how to customize display tables](../../../ui/how-tos/custom-display-table).
 
 
 ## Examples

@@ -38,9 +38,9 @@ Entitlements from the managed systems are modeled by **roles**. For each entitle
 
 ![Single **roles**](/images/identitymanager/singlerolescatalog_schemarole.webp)
 
-Each individual entitlement should usually be modeled by a **single role**, and single **roles** can be grouped together into composite **roles** to be closer to real job positions.
+Each individual entitlement should usually be modeled by a **single role**, and single **roles** can be grouped together into **bundles** to be closer to real job positions.
 
-![Composite **roles**](/images/identitymanager/entitlements_compositeroles.webp)
+![Bundles](/images/identitymanager/entitlements_compositeroles.webp)
 
 ## A Rule Set
 
@@ -83,7 +83,7 @@ Once all assignment **rules** are created, Identity Manager is able to spot exis
 
 Identity Manager's assignment **rules** are:
 
-- **single role** **rules** and composite role **rules** to assign single and composite **roles**;
+- **single role** **rules** and bundle **rules** to assign single and **bundles;
 - resource type **rules** to assign accounts.
 
 ### Categorization **rules**
@@ -146,7 +146,7 @@ Learn more on the [Role Model](../../integration-guide/role-model).
 
 Learn how to [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation).
 
-Learn more on how to [Create a Composite Role](../../user-guide/optimize/composite-role-creation).
+Learn more on how to [Create a Bundle](../../user-guide/optimize/bundle-creation).
 
 Learn more on [Role Assignment](../../integration-guide/role-assignment).
 

@@ -205,7 +205,7 @@ The same steps have to be performed on the runtime, the data collection **and** 
 
 Every agent is assigned a name. This name will be used in the UI to differentiate agents for the end-user, **and** in the XML configuration to assign connectors to specific agents.
 
-In the *appsettings.agent.json* file, the **OpenId** > **AgentIdentifier** can be set to **any string** except for Local which is **Already** taken by Identity Manager's inner workings. Then the agent set in the XML configuration must have the same string as identifier.
+In the *appsettings.agent.json* file, the **OpenID** > **AgentIdentifier** can be set to **any string** except for Local which is **Already** taken by Identity Manager's inner workings. Then the agent set in the XML configuration must have the same string as identifier.
 
 For example:
 
@@ -213,7 +213,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 ```json
 *appsettings.agent.json*
-"<OpenId">: {
+"<OpenID">: {
   "AgentIdentifier": "<MyAgent>"
   }
 ```
@@ -221,7 +221,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 With the following configuration:
 
 ```xml
-<Agent Identifier="<MyAgent>" DisplayName_L1="<My Agent>" 
+<Agent Identifier="<MyAgent>" DisplayName_L1="<My Agent>"
 URI="<https://contoso.com>" />
 ```
 
@@ -357,7 +357,7 @@ the server; See the [appsettings.agent](../../integration-guide/network-configur
 
 Their content should be provided by the integration team, in relation to the OpenIdClient tag in the applicative configuration. See the[OpenIdClient](../../integration-guide/toolkit/xml-configuration/access-control/openidclient) topic for additional information.
 
-The following example shows an *appsettings.agent.json* file that sets an agent to connect to Identity Manager's server (`https://identitymanagerserver.contoso.com`) with the OpenId client identifier `<Job>` **and** the password `<secret>`, stored in the OpenIdClients list which also contains the "admin/secret" login/password pair.
+The following example shows an *appsettings.agent.json* file that sets an agent to connect to Identity Manager's server (`https://identitymanagerserver.contoso.com`) with the OpenID client identifier `<Job>` **and** the password `<secret>`, stored in the OpenIdClients list which also contains the "admin/secret" login/password pair.
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -412,7 +412,7 @@ You need to:
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```xml
-<applicationInitialization doAppInitAfterRestart="<true>">  
+<applicationInitialization doAppInitAfterRestart="<true>">
 <add initializationPage="</>">
 </applicationInitialization>
 ```

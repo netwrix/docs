@@ -11,6 +11,9 @@ Generates the permissions to read task and job instances logs in UI for a given 
 - [JobAdministrationAccessControlRules](./jobadministrationaccesscontrolrules)
 
 Scaffolding to access the job administration page.
+- [JobOpenIdAccessControlRules](./jobopenidaccesscontrolrules)
+
+Generates the minimal access control rules required to launch jobs for a profile linked to an OpenID client, except for rights on FulfillInternalWorkflows and custom API calls (to be added separately as needed).
 - [JobTaskAdministrationAccessControlRules](./jobtaskadministrationaccesscontrolrules)
 
 Generates all permissions for JobStep entity.

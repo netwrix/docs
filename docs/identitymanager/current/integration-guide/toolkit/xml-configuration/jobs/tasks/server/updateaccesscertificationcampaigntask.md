@@ -4,7 +4,7 @@ description: "Starts or stops the access certification campaigns according to th
 sidebar_position: 23
 ---
 
-Starts or stops the access certification campaigns according to their `StartDate` and `EndDate`. The task also computes the Access Certification Items to certify (applying [Access Certification Data Filter](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/access-certification/accesscertificationdatafilter) and [Access Certification Owner Filter](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/access-certification/accesscertificationownerfilter)), and fill the database with them.
+Starts or stops the access certification campaigns according to their `StartDate` and `EndDate`. The task also computes the Access Certification Items to certify (applying [Access Certification Data Filter](../../../access-certification/accesscertificationdatafilter) and [Access Certification Owner Filter](../../../access-certification/accesscertificationownerfilter)), and fill the database with them.
 
 
 ## Examples

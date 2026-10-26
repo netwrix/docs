@@ -8,6 +8,13 @@ sidebar_position: 100
 
 This guide shows how to write a PowerShell script used by the [PowerShellProv](../../../integration-guide/connectors/references-connectors/powershellprov) connector.
 
+## PowerShell Edition Compatibility
+
+The connection's `Edition` setting determines which PowerShell executable runs the script:
+`Desktop` (default) uses `powershell.exe` (Windows Powershell 5.1); `Core` uses `pwsh` (PowerShell 7). Write and test the script against the executable that will actually run it.
+
+For a script intended to run under `Edition: "Core"`, add `#Requires -Version 7` as the first line of the script so that an incompatible PowerShell version fails fast with a clear error instead of an unexpected runtime failure.
+
 ## Structure of a PowerShell Script
 
 The goal of the script is to append, for each provisioning order, a line in a CSV file.

@@ -191,7 +191,7 @@ It is strongly recommended that the applicative configuration be stored the
     - **Agent** is the identifier of the Agent that will run this connector's export task. The
       Agent's identifier can be found in the agent's
       [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) >
-      OpenId > AgentIdentifier.
+      OpenID > AgentIdentifier.
 
 - Don't forget the `<?xml>` and `<ConfigurationFile>` elements (see example below).
 
@@ -376,13 +376,13 @@ An [Entity Association Mapping](../../../integration-guide/toolkit/xml-configura
 
 The following example describes the actual user/group associations between ```CyberArk_User``` and ```CyberArk_Group```. These associations are exported from the CyberArk system into the ```C:/identitymanagerDemo/Temp/ExportOutput/CyberArk_members_Groups.csv``` file. Each line of the file associates a value (property ```CyberArk_id``` from ```CyberArk_Group```) and a MemberId (property ```CyberArk_id``` from ```CyberArk_User```).
 
- | value | MemberId | 
- | --- | --- | 
- | 1 | 100 | 
- | 1 | 101 | 
- | 2 | 102 | 
- | 2 | 103 | 
- | 3 | 104 | 
+ | value | MemberId |
+ | --- | --- |
+ | 1 | 100 |
+ | 1 | 101 |
+ | 2 | 102 |
+ | 2 | 103 |
+ | 3 | 104 |
 
 The following [Entity Association Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping) describes the mapping for the ```CyberArk_Group_Members``` EntityAssociation:
 ```
@@ -724,7 +724,7 @@ The Job itself uses the `DefaultOpenIdClient` value.
 >
 >                             appsettings.agent.json
 >
-> { ... "OpenId":{ "OpenIdClients": { "Job": "secret" }, "DefaultOpenIdClient": "Job" } }
+> { ... "OpenID":{ "OpenIdClients": { "Job": "secret" }, "DefaultOpenIdClient": "Job" } }
 >
 > ```
 >

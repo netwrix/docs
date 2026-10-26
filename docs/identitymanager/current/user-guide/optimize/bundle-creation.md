@@ -1,44 +1,44 @@
 ---
-title: "Create a Composite Role"
-description: "Create a Composite Role"
+title: "Create a Bundle"
+description: "Create a Bundle"
 sidebar_position: 70
 ---
 
-# Create a Composite Role
+# Create a Bundle
 
-How to define composite **roles** in order to create sets of single **roles** easy to assign. See the [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) and [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation)topics for additional information.
+How to define **bundles** in order to create sets of single **roles** easy to assign. See the [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) and [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation)topics for additional information.
 
 ## Overview
 
-A composite role is a set of single **roles** that are usually assigned together, because they revolve around the same application, or the same job, etc. Composite **roles** are aggregates of single **roles**, they can help organize the role catalog. See the [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) topic for additional information.
+A bundle is a set of single **roles** that are usually assigned together, because they revolve around the same application, or the same job, etc. **Bundles** are aggregates of single **roles**, they can help organize the role catalog. See the [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) topic for additional information.
 
 ![Schema](/images/identitymanager/compositeroles_applicativeroles.webp)
 
-A composite role is a business role comprehensible by managers. It provides an additional layer of abstraction above existing entitlements and single **roles**. We can say that if a single role allows a user to perform a task, a composite role allows them to perform a job.
+A bundle is a business role comprehensible by managers. It provides an additional layer of abstraction above existing entitlements and single **roles**. We can say that if a single role allows a user to perform a task, a bundle allows them to perform a job.
 
-### Composite **roles** and Role Mining
+### **Bundles** and Role Mining
 
-Composite **roles** can also be created based on the **rules** provided by Role Mining. **rules** link **roles** to dimensions. See the [Perform Role Mining](../../user-guide/optimize/assignment-automation/role-mining) topic for additional information.
+**Bundles** can also be created based on the **rules** provided by Role Mining. **rules** link **roles** to dimensions. See the [Perform Role Mining](../../user-guide/optimize/assignment-automation/role-mining) topic for additional information.
 
-The following example shows single **roles** from A to F. Role Mining suggested the **rules** on the schema, linking these single **roles** to the organizations R&D and Project as well as to the functions developer, writer, contractor and project manager. The idea is to use these **rules** to create composite **roles**. Here, we clearly have one role for R&D-developer, one for R&D-writer, Project-contractor and Project-project manager. Thus, it is clear here that composite **roles** add an abstraction layer.
+The following example shows single **roles** from A to F. Role Mining suggested the **rules** on the schema, linking these single **roles** to the organizations R&D and Project as well as to the functions developer, writer, contractor and project manager. The idea is to use these **rules** to create **bundles**. Here, we clearly have one role for R&D-developer, one for R&D-writer, Project-contractor and Project-project manager. Thus, it is clear here that **bundles** add an abstraction layer.
 
 ![Example](/images/identitymanager/compositeroles_schema.webp)
 
-Single role **rules** link composite **roles** to single **roles**: a single role rule states that specific single **roles** are assigned according to specific criteria, particularly composite **roles**. See the [Single Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule) and [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation)topics for additional information. Thus, a composite role assignment can imply specific single role assignments.
+Single role **rules** link **bundles** to single **roles**: a single role rule states that specific single **roles** are assigned according to specific criteria, particularly **bundles**. See the [Single Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule) and [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation)topics for additional information. Thus, a bundle assignment can imply specific single role assignments.
 
 ## Participants and Artifacts
 
 For a given managed system, integrators may need the help of the **application owners** who know the application's users, entitlements and data model.
 
- | Input | Output | 
- | --- | --- | 
- | Role catalog (required) | Composite **roles** | 
+ | Input | Output |
+ | --- | --- |
+ | Role catalog (required) | Bundles |
 
 See the [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation) topic for additional information.
 
-## Create a Composite Role
+## Create a Bundle
 
-Create a composite role by proceeding as follows:
+Create a bundle by proceeding as follows:
 
 **Step 1 :** On the home page in the **Configuration** section, click on **Access **roles**** to access the **roles** page.
 
@@ -75,15 +75,15 @@ no earlier end date is specified. It impacts only the **roles** which are manual
 
 **Step 4 :** Click on **Create** and see a line added on the **roles** page.
 
-**Step 5 :** Create at least one single role rule with the composite role as a criterion.
+**Step 5 :** Create at least one single role rule with the bundle as a criterion.
 
 ## Impact of Modifications
 
-When deleting a composite role, caution must be used when deleting the corresponding single role **rules**. Indeed, these **rules** thus lose their criteria and may be applied to far too many people after that.
+When deleting a bundle, caution must be used when deleting the corresponding single role **rules**. Indeed, these **rules** thus lose their criteria and may be applied to far too many people after that.
 
 Simulations are available in order to anticipate the changes induced by a creation/modification/deletion in **roles** and single role **rules**. See the [Perform a Simulation](../../user-guide/optimize/simulation)topic for additional information.
 
-## Verify Composite Role Creation
+## Verify Bundle Creation
 
 In order to verify the process, check that the role and rule are created with the right parameters.
 
@@ -91,9 +91,9 @@ For **roles**, click on **Access **roles**** on the home page in the **Configura
 
 ![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 
-Select composite **roles** and find the role you created inside the right category and with the right parameters.
+Select **bundles** and find the role you created inside the right category and with the right parameters.
 
-![Access Composite **roles**](/images/identitymanager/compositeroles_testroles_v602.webp)
+![Access **Bundles**](/images/identitymanager/compositeroles_testroles_v602.webp)
 
 For **rules**, follow the instructions about assignment **rules**. See the [Automate Role Assignments](../../user-guide/optimize/assignment-automation/automate-role-assignment)
 

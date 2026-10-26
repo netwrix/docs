@@ -130,7 +130,7 @@ The connector exports:
 - **Profile Metadata**: Profile definitions (from `UA_Profiles` table)
 - **Assignment Context**: Profile context values (from `UA_ProfileContexts` table)
 - **User Associations**: Links between profiles and users (from `UA_AssignedProfiles` table)
-- **Dimension Values**: Parameter values for parameterized profiles. For assigned profiles, dimensions include the [dimensions](../../toolkit/xml-configuration/metadata/dimension/) defined in the configuration but also single roles, composite roles, resource types as well as categories.
+- **Dimension Values**: Parameter values for parameterized profiles. For assigned profiles, dimensions include the [dimensions](../../toolkit/xml-configuration/metadata/dimension/) defined in the configuration but also single roles, bundles, resource types as well as categories.
 
 ### Configuration
 
@@ -181,7 +181,7 @@ As well as a file named `<connectionIdentifier>_Profile.csv`, with columns for:
 - **Identifier**: Reference of the profile
 - **DisplayName_L1**: Name of the profile
 
-Additional CSV files are generated for profile context values (dimensions as well as categories, single roles, composite roles and resource types).
+Additional CSV files are generated for profile context values (dimensions as well as categories, single roles, bundles and resource types).
 
 ## Fulfill
 

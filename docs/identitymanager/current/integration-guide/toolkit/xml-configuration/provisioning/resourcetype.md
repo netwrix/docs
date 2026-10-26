@@ -5,7 +5,7 @@ sidebar_position: 13
 ---
 
 In Identity Manager, a resource type is a conceptual model used to categorize resources. It groups together, with a meaningful name, resources sharing the same intent and the same authorization system. Resource types are assigned directly to a resource rather than mapped to a role.
-A resource type can be assigned manually, or configured to be assigned automatically via a [resource type rule](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/resourcetype#child-element-typerule).
+A resource type can be assigned manually, or configured to be assigned automatically via a [resource type rule](resourcetype#child-element-typerule).
 
 
 ## Examples
@@ -98,7 +98,7 @@ In this scenario for Cedric Blanc, these behaviors can be summed up like the fol
 | AllowAdd <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** Enables Identity Manager to automatically create new resources in the managed system when their owners are given the right entitlements. Otherwise, resource managers must create resources manually directly in the managed system. |
 | AllowRemove <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** Enables Identity Manager to automatically deprovision resources in the managed system when their owners are deprived of the right entitlements. Otherwise, Identity Manager is able to delete resources in the managed system only with a manual approval on the **Resource Reconciliation** screen. |
 | ApprovalWorkflowType <span class="optionalAttribute">default value: 0</span> | **Type:** ProvisioningPolicyApprovalWorkflow **Description:** Indicates the number of validation to give to a role given manually (from `None` to `Three`). The value `ManualAssignmentNotAllowed` is used when a manual assignment cannot be performed. **Note:** NETWRIX recommends using `ManualAssignmentNotAllowed` for all resource types. |
-| ArgumentsExpression optional | **Type:** String **Description:** C# expression used to compute the arguments of provisioning orders, for example a workflow identifier, in a situation where it is not obvious. The aim is to enable an `InternalWorkflow` connector to fulfill correctly a virtual managed system by launching the right workflows based on a given provisioning order. This expression must return a dictionary of string. **Note:** `ArgumentsExpression` is useful only when provisioning via the following packages: [Active Directory](/docs/identitymanager/current/integration-guide/connectors/references-packages/Active Directory); [Apache Directory](/docs/identitymanager/current/integration-guide/connectors/references-packages/Apache Directory); [Generic LDAP](/docs/identitymanager/current/integration-guide/connectors/references-packages/Generic LDAP); [Open LDAP](/docs/identitymanager/current/integration-guide/connectors/references-packages/Open LDAP); [Oracle LDAP](/docs/identitymanager/current/integration-guide/connectors/references-packages/Oracle LDAP); [Red Hat Directory Server](/docs/identitymanager/current/integration-guide/connectors/references-packages/Red Hat Directory Server); [Workflow](/docs/identitymanager/current/integration-guide/connectors/references-packages/workflow). |
+| ArgumentsExpression optional | **Type:** String **Description:** C# expression used to compute the arguments of provisioning orders, for example a workflow identifier, in a situation where it is not obvious. The aim is to enable an `InternalWorkflow` connector to fulfill correctly a virtual managed system by launching the right workflows based on a given provisioning order. This expression must return a dictionary of string. **Note:** `ArgumentsExpression` is useful only when provisioning via the following packages: [Active Directory](../../../connectors/references-packages/Active Directory); [Apache Directory](../../../connectors/references-packages/Apache Directory); [Generic LDAP](../../../connectors/references-packages/Generic LDAP); [Open LDAP](../../../connectors/references-packages/Open LDAP); [Oracle LDAP](../../../connectors/references-packages/Oracle LDAP); [Red Hat Directory Server](../../../connectors/references-packages/Red Hat Directory Server); [Workflow](../../../connectors/references-packages/workflow). |
 | BlockProvisioning <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** `true` to block the provisioning policy orders. |
 | Category optional | **Type:** Int64 **Description:** Resource type category. |
 | CorrelateMultipleResources <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to extend the QueryRule/CorrelationRule to match as many target resources as possible (no blocking like this is normally the case). |
@@ -118,10 +118,10 @@ In this scenario for Cedric Blanc, these behaviors can be summed up like the fol
 | MaximumInsertPercent <span class="optionalAttribute">default value: 30</span> | **Type:** Int32 **Description:** Inserted lines threshold in percent. |
 | MaximumUpdate <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Updated lines threshold. Sets the maximum number of resources that can be modified within the resource type when running the provisioning job. |
 | MaximumUpdatePercent <span class="optionalAttribute">default value: 30</span> | **Type:** Int32 **Description:** Updated lines threshold in percent. |
-| P0 <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to indicate that the resource type is parameterized, i.e. there is at least one type rule configured to assign the resource type based on the dimension 0 (up to 3V following the [base32hex convention](/docs/identitymanager/current/integration-guide/toolkit/parameter-names)). |
+| P0 <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to indicate that the resource type is parameterized, i.e. there is at least one type rule configured to assign the resource type based on the dimension 0 (up to 3V following the [base32hex convention](../../parameter-names)). |
 | Policy required | **Type:** Int64 **Description:** Identifier of the policy that the resource type is part of. |
 | ProlongationWithoutApproval <span class="optionalAttribute">default value: 0</span> | **Type:** ProlongationWithoutApproval **Description:** Indicates whether the resource type can be extended without any validation. `0` - Inherited: gets the value from the policy. `1` - Enabled. `2` - Disabled. |
-| R0 <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to set the dimension 0 (up to 3V following the [base32hex convention](/docs/identitymanager/current/integration-guide/toolkit/parameter-names)) as a required parameter when assigning the resource type. |
+| R0 <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to set the dimension 0 (up to 3V following the [base32hex convention](../../parameter-names)) as a required parameter when assigning the resource type. |
 | RemoveOrphans <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to authorize the deprovisioning of this resource when it does not have an owner. Can only be `true` when AllowRemove property is also true. |
 | SourceEntityType required | **Type:** Int64 **Description:** Identifier of the source entity type. |
 | SuggestAllCorrelations <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Suggest all correlations, whatever the confidence rate of the correlation rule. |
@@ -142,7 +142,7 @@ A *ResourceBinaryRule* allows to specify the file that must be set to an assigne
 
 #### TimeOffset
 
-[See more information about time offsets](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/resourcetype#timeoffset-3).
+[See more information about time offsets](resourcetype#timeoffset-3).
 
 
 ### Properties
@@ -152,13 +152,13 @@ A *ResourceBinaryRule* allows to specify the file that must be set to an assigne
 | Binding optional | **Type:** Int64 **Description:** Defines the binding expression to get the file property. |
 | Policy required | **Type:** Int64 **Description:** Identifier of the policy that the rule is part of. |
 | Property required | **Type:** Int64 **Description:** Identifier of the property used to represent the file on the target EntityType. |
-| SingleRole optional | **Type:** Int64 **Description:** Identifier of the [single role](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/singlerole). The single role must be assigned to the owner so that the file can be provisioned on the resource. |
+| SingleRole optional | **Type:** Int64 **Description:** Identifier of the [single role](singlerole). The single role must be assigned to the owner so that the file can be provisioned on the resource. |
 | TimeOffsetAfterReference <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Defines the offset after reference (in minutes). |
 | TimeOffsetBeforeReference <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Defines the offset before reference (in minutes). |
 | TimeOffsetReference <span class="optionalAttribute">default value: 0</span> | **Type:** TimeOffsetReference **Description:** Offset mode defining which dates to use as references, in order to apply the time offset. The time period for which the rule is applied is adjusted accordingly. `0` - **Default**: the offset inherited from the type rule. `1` - **Around**: the offset before reference is applied from the start date of the resource, and the offset after reference is applied from the end date. `2` - **Before**: the offset before and after reference are both applied from the start date of the resource. `3` - **After**: the offset before and after reference are both applied from the end date of the resource. **Note:** in a situation with several binary rules, the order of application is: `After`, then `Before`, then `Around`, then `Default`. Each rule is able to overwrite those previously applied in case they overlap. **Warning**: two offsets of the same mode should never overlap. Resources' start and end dates can be configured through record sections and/or context rules. |
 
 ## Child Element: NavigationRule
-A navigation rule computes the value of a given navigation property for target resources, based on the properties of their owners (source resources and entitlements). These properties are to be provisioned, i.e. written to the managed system. Contrary to [query rules](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/resourcetype#child-element-queryrule), navigation rules assign resources regardless of the attributes of source resources.
+A navigation rule computes the value of a given navigation property for target resources, based on the properties of their owners (source resources and entitlements). These properties are to be provisioned, i.e. written to the managed system. Contrary to [query rules](resourcetype#child-element-queryrule), navigation rules assign resources regardless of the attributes of source resources.
 
 A navigation rule is defined by the child element `<NavigationRule>` of the `<ResourceType>` element.
 
@@ -166,7 +166,7 @@ A navigation rule is defined by the child element `<NavigationRule>` of the `<Re
 Both navigation and query rules compute navigation properties. The value of one navigation property should be computed by either navigation or query rules, not both.
 :::
 
-[See more information about navigation rules' configuration guidelines](/docs/identitymanager/current/user-guide/set-up/provisioning-rule-creation/navigation-property-computation#guidelines).
+[See more information about navigation rules' configuration guidelines](../../../../user-guide/set-up/provisioning-rule-creation/navigation-property-computation#guidelines).
 
 
 ### Examples
@@ -215,7 +215,7 @@ The `ResourceFromDimension` rule above behaves as if you had created individual 
 
 #### TimeOffset
 
-[See more information about time offsets](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/resourcetype#timeoffset-3).
+[See more information about time offsets](resourcetype#timeoffset-3).
 
 #### Parameterized roles
 
@@ -238,7 +238,7 @@ The `ResourceFromDimension` rule above behaves as if you had created individual 
 | TimeOffsetReference <span class="optionalAttribute">default value: 0</span> | **Type:** TimeOffsetReference **Description:** Offset mode defining which dates to use as references, in order to apply the time offset. The time period for which the rule is applied is adjusted accordingly. `0` - **Default**: the offset inherited from the type rule. `1` - **Around**: the offset before reference is applied from the start date of the resource, and the offset after reference is applied from the end date. `2` - **Before**: the offset before and after reference are both applied from the start date of the resource. `3` - **After**: the offset before and after reference are both applied from the end date of the resource. In a situation with several navigation rules, the order of application is descending (`After`-`Before`-`Around`-`Default`). Thus each time offset is able to overwrite those previously applied in case they overlap, for mono-valued properties. **Warning**: two offsets of the same mode should never overlap for mono-valued properties. Overlapping rules on a multi-valued property do not conflict with each other, Identity Manager stores all computed values. Resources' start and end dates can be configured through record sections and/or context rules. |
 
 ## Child Element: QueryRule
-A query rule computes the value of a given navigation property for target resources, based on the properties of their owners (source resources and entitlements). These properties are to be provisioned, i.e. written to the managed system. Contrary to [navigation rules](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/resourcetype#child-element-navigationrule), query rules assign resources to target resources according to a query via a C# [expression](/docs/identitymanager/current/integration-guide/toolkit/expressions) with conditions, based on the attributes of the source resources.
+A query rule computes the value of a given navigation property for target resources, based on the properties of their owners (source resources and entitlements). These properties are to be provisioned, i.e. written to the managed system. Contrary to [navigation rules](resourcetype#child-element-navigationrule), query rules assign resources to target resources according to a query via a C# [expression](../../expressions) with conditions, based on the attributes of the source resources.
 
 A query rule is defined by the child element `<QueryRule>` of the `<ResourceType>` element.
 
@@ -246,7 +246,7 @@ A query rule is defined by the child element `<QueryRule>` of the `<ResourceType
 Both navigation and query rules compute navigation properties. The value of one navigation property should be computed by either navigation or query rules, not both.
 :::
 
-[See more information about query rules' configuration guidelines](/docs/identitymanager/current/user-guide/set-up/provisioning-rule-creation/navigation-property-computation#guidelines).
+[See more information about query rules' configuration guidelines](../../../../user-guide/set-up/provisioning-rule-creation/navigation-property-computation#guidelines).
 
 
 ### Examples
@@ -263,7 +263,7 @@ The following example declares a new rule to compute the parent distinguished na
 
 #### TimeOffset
 
-[See more information about time offsets](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/resourcetype#timeoffset-3).
+[See more information about time offsets](resourcetype#timeoffset-3).
 
 
 ### Properties
@@ -273,9 +273,9 @@ The following example declares a new rule to compute the parent distinguished na
 | Policy required | **Type:** Int64 **Description:** Identifier of the policy that the rule is part of. |
 | Property required | **Type:** Int64 **Description:** Identifier of the navigation property to be computed. |
 | SourceBinding optional | **Type:** Int64 **Description:** Binding of the property from the source entity type to be compared with the target binding/expression, in order to find a matching resource to be the value of `Property`. |
-| SourceExpression optional | **Type:** String **Description:** C# expression to compare with the target binding/expression in order to compute the value of `Property` with the matching resource. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| SourceExpression optional | **Type:** String **Description:** C# expression to compare with the target binding/expression in order to compute the value of `Property` with the matching resource. [See more details on C# expressions](../../expressions#c-expressions). |
 | TargetBinding optional | **Type:** Int64 **Description:** Binding of the property from the entity type pointed by `Property`, which will be the value of `Property` if it matches the source binding/expression. |
-| TargetExpression optional | **Type:** String **Description:** C# expression to compare with the source binding/expression in order to compute the value of `Property` with the matching resource. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). **Warning**: it must contain at least one target property, it cannot be a literal expression. |
+| TargetExpression optional | **Type:** String **Description:** C# expression to compare with the source binding/expression in order to compute the value of `Property` with the matching resource. [See more details on C# expressions](../../expressions#c-expressions). **Warning**: it must contain at least one target property, it cannot be a literal expression. |
 | TargetMatchedConfidenceLevel <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Percentage rate expressing the confidence in the rule according to data quality and sensitivity. Identity Manager considers the rules in descending order of confidence rate, the first matching rule is applied. `0` to `99`: imposes that a resource manager reviews the property computation on the **Resource Reconciliation** page. `100` to `150`: computes the property automatically. |
 | TimeOffsetAfterReference <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Time period (in minutes) after the reference end date, which shifts the end of the rule's application. A negative value for the time offset means that the time period is before the reference date. |
 | TimeOffsetBeforeReference <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Time period (in minutes) after the reference start date, which shifts the start of the rule's application. A negative value for the time offset means that the time period is before the reference date. |
@@ -286,7 +286,7 @@ A scalar rule computes the value of a given scalar property for target resources
 
 A scalar rule is defined by the child element `<ScalarRule>` of the `<ResourceType>` element.
 
-[See more information about scalar rules' configuration guidelines](/docs/identitymanager/current/user-guide/set-up/provisioning-rule-creation/scalar-property-computation#guidelines).
+[See more information about scalar rules' configuration guidelines](../../../../user-guide/set-up/provisioning-rule-creation/scalar-property-computation#guidelines).
 
 ### Examples
 #### Computation based on other properties
@@ -312,7 +312,7 @@ The next example computes the `firstName` property of a `App1_Account` from the 
 
 #### Computation via a literal expression
 
-The following example translates to "the `userAccountControl` property of a `App1_Account` of resource type `App1_Standard_Account` must be equal to 66048. It uses a [literal](/docs/identitymanager/current/integration-guide/toolkit/expressions/#literal-expression) expression.
+The following example translates to "the `userAccountControl` property of a `App1_Account` of resource type `App1_Standard_Account` must be equal to 66048. It uses a [literal](../../expressions#literal-expression) expression.
 
 ```xml
 <ResourceType Policy="Default" Identifier="App1_Standard_Account" TargetEntityType="App1_Account" SourceEntityType="Bot">
@@ -323,7 +323,7 @@ The following example translates to "the `userAccountControl` property of a `App
 
 #### Binding
 
-The `Binding` attribute complies with the [binding expression syntax](/docs/identitymanager/current/integration-guide/toolkit/bindings) or the [calculation expression syntax](/docs/identitymanager/current/integration-guide/toolkit/expressions). So, it can use the C# language to specify a more complex binding.
+The `Binding` attribute complies with the [binding expression syntax](../../bindings) or the [calculation expression syntax](../../expressions). So, it can use the C# language to specify a more complex binding.
 
 ```xml
 <ScalarRule Property="email" Binding="C#:user:user.firstName+&quot;.&quot;+user.lastName+&quot;@acme.com&quot;" />
@@ -334,7 +334,7 @@ The `Binding` attribute complies with the [binding expression syntax](/docs/iden
 :::info
 Consider a system that we want to connect to Identity Manager (let's call it `SYST`) using a `title` property. Consider also that `SYST` needs to be provisioned with the value of `title`, but does not allow any other system to retrieve said value.
 
-In this case, we set `IsMapped` to false so that Identity Manager sends the adequate provisioning order when needed, and then is able to change the [provisioning state](/docs/identitymanager/current/user-guide/administrate/provisioning#provisioning-states) to `Verified` without [synchronization](/docs/identitymanager/current/user-guide/set-up/synchronization).
+In this case, we set `IsMapped` to false so that Identity Manager sends the adequate provisioning order when needed, and then is able to change the [provisioning state](../../../../user-guide/administrate/provisioning#provisioning-states) to `Verified` without [synchronization](../../../../user-guide/set-up/synchronization).
 :::
 
 The following example computes users' title in a given managed system, based on Identity Manager's `PersonalTitle` property without ever retrieving the value:
@@ -346,7 +346,7 @@ The following example computes users' title in a given managed system, based on 
 #### TimeOffset
 
 :::info
-A scalar rule is applied according to reference start and end dates (configured through [record sections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection) and [context rules](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/contextrule)), usually users' arrival and departure days. It means that, for a user matching the rule's criteria, a property is to be computed, by default, from the user's arrival day until their departure day.
+A scalar rule is applied according to reference start and end dates (configured through [record sections](recordsection) and [context rules](contextrule)), usually users' arrival and departure days. It means that, for a user matching the rule's criteria, a property is to be computed, by default, from the user's arrival day until their departure day.
 
 A time offset adjusts the period for which the rule applies and computes a property's value.
 :::
@@ -384,7 +384,7 @@ Note that the rules are applied in a specific order according to their offset re
 |---|---|
 | Binding optional | **Type:** Int64 **Description:** Defines the binding expression. |
 | ComparisonType <span class="optionalAttribute">default value: 0</span> | **Type:** ComparisonType **Description:** Defines the comparison type for the computed value, when Identity Manager retrieves it from the managed system during synchronization, and compares it to the value stored in Identity Manager's database. `0` - **CaseSensitive**: compares words exactly as they are. `1` - **IgnoreCase**: ignores the difference between upper and lower case. `2` - **IgnoreDiacritics**: considers all letters with diacritics (é, à, ç...) to be equivalent to their base letters (e, a, c...). `3` - **Simplified**: ignores diacritics, case and characters which are not letters. `4` - **Approximate**: does the same as `Simplified` but also ignores some spelling mistakes. Some letters are considered equivalent (Z and S, Y and I, W and V, K and C, SS and C). All H can be missing. A T, D or S can be missing at the very end. Finally, it ignores all duplicate letters (other than SS). `5` - **Trim**: does the same as `CaseSensitive` but ignores all leading and trailing white-space characters. There is no comparison for unmapped properties (`IsMapped` set to `false`). |
-| Expression optional | **Type:** String **Description:** Expression used to compute the target property specified in `Property`. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). **Note:** for C# expressions, Identity Manager provides an implicit variable called "assignment" that contains basic information about the linked assigned resource type, i.e. StartDate, EndDate and ParametersValues. |
+| Expression optional | **Type:** String **Description:** Expression used to compute the target property specified in `Property`. [See more details on C# expressions](../../expressions#c-expressions). **Note:** for C# expressions, Identity Manager provides an implicit variable called "assignment" that contains basic information about the linked assigned resource type, i.e. StartDate, EndDate and ParametersValues. |
 | IsMapped <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** `true` to use the scalar rule's computation to both provision the managed system and synchronize the property back to Identity Manager, thus both create and update. Otherwise, the scalar rule's computation is used only to provision the managed system and the property will be ignored during synchronization, thus create only. This way the property can never be displayed as non-conforming. `IsMapped` is usually set to false in order to adapt the configuration to the constraints of the managed system, when Identity Manager does not retrieve and/or update the property value. |
 | Policy required | **Type:** Int64 **Description:** Identifier of the policy that the rule is part of. |
 | Property required | **Type:** Int64 **Description:** Identifier of the scalar property to be computed. |
@@ -443,7 +443,7 @@ The following example declares a new rule to give the resource type "AD_Entry_No
 
 ##### TimeOffset
 
-[See more information about time offsets](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/resourcetype#timeoffset-3).
+[See more information about time offsets](resourcetype#timeoffset-3).
 
 
 ### Properties

@@ -14,7 +14,7 @@ The following example declares a password reset settings.
         BeneficiaryFullNameBinding="AssignedResourceType:Owner.Directory_User:MainRecord.InternalDisplayName"
         NotifiedEmailBinding="AssignedResourceType:Owner.Directory_User:MainRecord.Organization.Manager.MainRecord.Mail"
         NotifiedFullNameBinding="AssignedResourceType:Owner.Directory_User:MainRecord.Organization.Manager.MainRecord.InternalDisplayName"
-        Mode="1" DefaultPassword="Usercube@2019" MustChange="true"
+        Mode="1" DefaultPassword="<password>" MustChange="true"
         AutoGenerate="false" DisableNotifications="false" GeneratedLength="12" />
 ```
 
@@ -67,4 +67,4 @@ The generated password's strength can also be checked via a regular expression (
 | NotificationCC optional | **Type:** String **Description:** Email address to set as CC recipient of all password reset notifications. |
 | NotifiedEmailBinding optional | **Type:** Int64 **Description:** Binding to the email address property of the person to be notified. |
 | NotifiedFullNameBinding optional | **Type:** Int64 **Description:** Binding to the full name property of the person to be notified. |
-| StrengthCheck optional | **Type:** String **Description:** Regular expression (regex) that generated passwords must match, when `AutoGenerate` is set to `true`. **Note:** the strength of passwords set manually by users can be configured via [`PasswordTestsSetting`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/settings/passwordtestssetting). |
+| StrengthCheck optional | **Type:** String **Description:** Regular expression (regex) that generated passwords must match, when `AutoGenerate` is set to `true`. **Note:** the strength of passwords set manually by users can be configured via [`PasswordTestsSetting`](../metadata/settings/passwordtestssetting). |

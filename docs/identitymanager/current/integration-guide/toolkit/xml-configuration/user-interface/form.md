@@ -4,7 +4,7 @@ description: ""
 sidebar_position: 5
 ---
 
-A form contains a set of input fields (called [controls](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/user-interface/form)) to be filled by a user, in a structured way. A form must have a form type to be displayed and used in the UI. A form without a type can be called in another form.
+A form contains a set of input fields (called [controls](form)) to be filled by a user, in a structured way. A form must have a form type to be displayed and used in the UI. A form without a type can be called in another form.
 
 
 ## Examples

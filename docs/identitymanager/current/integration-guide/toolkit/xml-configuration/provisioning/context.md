@@ -8,7 +8,7 @@ A context is the result of the combination of all identity-related entities, for
 
 Contexts define the resources' scopes of responsibility. They are used during provisioning to simplify the application of the role model's rules based on dimensions.
 
-[See more information about context generation](/docs/identitymanager/current/integration-guide/identity-management/joiners-movers-leavers/position-change#contexts).
+[See more information about context generation](../../../identity-management/joiners-movers-leavers/position-change#contexts).
 
 ## Properties
 

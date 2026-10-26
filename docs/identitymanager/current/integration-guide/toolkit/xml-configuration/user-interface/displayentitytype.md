@@ -103,7 +103,7 @@ When a property uses the `DateOnly` type, any `AddedMinutes` configuration will 
 |---|---|
 | AutocompleteBinding optional | **Type:** Int64 **Description:** Defines the binding of the property used for search in the auto complete picker (this activates the auto complete picker). |
 | Color optional | **Type:** String **Description:** Defines the color used when displaying this entity type (it must be a 6 digit hexadecimal value, preceded by a '#'). |
-| D0IsActive <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is dimension0 active for this entity type (D0IsActive to D3VIsActive following the [base32hex convention](/docs/identitymanager/current/integration-guide/toolkit/parameter-names). |
+| D0IsActive <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is dimension0 active for this entity type (D0IsActive to D3VIsActive following the [base32hex convention](../../parameter-names). |
 | HideRoles <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to skip the **Access Permissions** step (the one containing the roles) in the default forms for this entity type. |
 | IconCode optional | **Type:** String **Description:** Code of one of [Font Awesome's icons](https://fontawesome.com/v7/search?s=regular) to be displayed for the entity type. |
 | IsHierarchical <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is hierarchical entity type. |

@@ -16,9 +16,9 @@ Identity Manager's simulations gather **roles** and **rules** which are to be cr
 - Scalar **rules** and navigation **rules**;
 - Resource Type **rules**;
 - [Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole)
-and [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole);
+and [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole);
 - [Single Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule)
-and [Composite Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule).
+and [Bundle Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule).
 
 See the [Correlate Resources](../../user-guide/set-up/categorization/correlation) [Resource Classification Rule](../../integration-guide/toolkit/xml-configuration/provisioning/resourceclassificationrule), and [Resource Type](../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) topics for additional information.
 

@@ -4,30 +4,30 @@ description: ""
 sidebar_position: 4
 ---
 
-Connectors provide the means by which Identity Manager communicates with managed platforms, applications and systems. They describe how the data from these systems are mapped to the [entity model](/docs/identitymanager/current/integration-guide/entity-model).
+Connectors provide the means by which Identity Manager communicates with managed platforms, applications and systems. They describe how the data from these systems are mapped to the [entity model](../../../entity-model).
 
 A connector in most case represents an application model. It is composed of entities and associations.
 
 > For example we can define an HR connector, with the following entities: Person, Department, Function, Location, etc. and with the following associations: Person-Department, Person-Site, Person-Manager(Person), etc.
 
 A connector is used to synchronize each of its entities and associations in Identity Manager's physical model. A connector is defined with:
-* [entity types](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype);
-* [entity associations](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entityassociation);
-* [entity type mappings](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) and [entity association mappings](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping) to link the entity types and associations to the corresponding files and columns containing the exported data from the managed system.
+* [entity types](../metadata/entitytype);
+* [entity associations](../metadata/entityassociation);
+* [entity type mappings](entitytypemapping) and [entity association mappings](entityassociationmapping) to link the entity types and associations to the corresponding files and columns containing the exported data from the managed system.
 
 
 ## Examples
-The following example creates a `HR` connector on the agent called `Local` previously declared by [an `<Agent>` element](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/agent).
+The following example creates a `HR` connector on the agent called `Local` previously declared by [an `<Agent>` element](agent).
 
-We create the right [connections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/connection) to use the connector as a [CSV connector](/docs/identitymanager/current/integration-guide/connectors/references-connectors/csv) aiming to export HR CSV files into new CSV files in Identity Manager's format.
+We create the right [connections](connection) to use the connector as a [CSV connector](../../../connectors/references-connectors/csv) aiming to export HR CSV files into new CSV files in Identity Manager's format.
 
-The [entity types](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype) model the resources as `HR_Person` or `HR_Organization`, defining properties.
+The [entity types](../metadata/entitytype) model the resources as `HR_Person` or `HR_Organization`, defining properties.
 
-The [entity type mappings](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) link the entity types to the source files.
+The [entity type mappings](entitytypemapping) link the entity types to the source files.
 
-The [entity association](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entityassociation) creates a link between the two entity types.
+The [entity association](../metadata/entityassociation) creates a link between the two entity types.
 
-The [entity association mapping](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping) links the association to the source files.
+The [entity association mapping](entityassociationmapping) links the association to the source files.
 
 ```xml
   <Connector Identifier="HR" DisplayName_L1="HR" Agent="Local" />

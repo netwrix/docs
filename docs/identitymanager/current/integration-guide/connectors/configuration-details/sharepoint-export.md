@@ -162,7 +162,7 @@ declare the connector with the following attributes:
 [Toolkit for XML Configuration](../../../integration-guide/toolkit) topic for additional information. It is strongly recommended to use a meaningful name such as `SharePoint`. If several connections to several SharePoint targets are possible, only one SharePoint Connector per Agent is used.
     - **DisplayName_Li, i ? [1..16]** are used in the UI.
     - **Agent** is the identifier of the Agent that runs this connector's export task. The Agent's
-identifier can be found in the agent's [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) configuration set > OpenId > AgentIdentifier setting attribute.
+identifier can be found in the agent's [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) configuration set > OpenID > AgentIdentifier setting attribute.
 
 - Don't forget the `<?xml>` and `<ConfigurationFile>` elements (see example below).
 
@@ -538,7 +538,7 @@ The ```ClientId/Secret``` pair hence created must be associated with the profile
 
 ##### __Example__
 
-The following example creates a ```ClientId/Secret``` pair to be used by the Agent to authenticate to the Server and complete Jobs. The secret is hashed with the[Usercube-New-OpenIDSecret](../../../integration-guide/executables/references/new-openidsecret) tool.
+The following example creates a ```ClientId/Secret``` pair to be used by the Agent to authenticate to the Server and complete Jobs. The secret is hashed with the [Usercube-New-OpenIDSecret](../../../integration-guide/executables/references/new-openidsecret) tool.
 
                     ```
 
@@ -572,7 +572,7 @@ The Job itself uses the ```DefaultOpenIdClient``` value.
 >                             appsettings.agent.json
 >  {
 >     ...
->     "OpenId":{
+>     "OpenID":{
 >         "OpenIdClients": {
 >             "Job": "secret"
 >          },
