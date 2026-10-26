@@ -1,0 +1,10 @@
+{
+  "label": "Applications",
+  "position": 120,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "applications"
+  }
+}
