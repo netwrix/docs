@@ -8,11 +8,6 @@ sidebar_position: 20
 
 Directory Manager supports the following Microsoft Windows Servers:
 
-**Microsoft Windows Server 2016 Family**
-
-- Windows Server 2016 Standard
-- Windows Server 2016 Datacenter
-
 **Microsoft Windows Server 2019 Family**
 
 - Windows Server 2019 Standard
