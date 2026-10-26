@@ -14,9 +14,7 @@ The console has no separate Action Types page. Action types appear only in the *
 2. In the action group you want, click the green **+** button. The dialog title shows the group, for example **Add Action to Pre-Session Group**.
 3. Open the **Action Type** list.
 
-The list depends on the action group you choose. For the steps to add actions, see [Add actions to an activity](actions.md).
-
-The list depends only on the action group, not on the activity's platform. Choose an action type that fits the platform.
+The list depends only on the action group, not on the activity's platform, so choose an action type that fits the platform. For the steps to add actions, see [Add actions to an activity](/docs/privilegesecure/26.07/configuration/activities/actions.md).
 
 ## How action types and actions differ
 
@@ -52,7 +50,7 @@ You can't change the action type after you create an action. To use a different 
 | **Add User to Database Role** | Adds the login account to a role on a database server. | **Database** (optional): the role applies to this database. When blank, the role applies to the database instance. **Role** (required): **sysadmin**, **dbcreator**, **securityadmin**, **DBA**, or **PDB_DBA**. | **Remove User from Database Role** |
 | **Add User to Database Server** | Adds the login account to the database server. | None. | **Remove User from Database Server** |
 | **Add User to Domain Group** | Adds the login account to a domain group. | **Domain** (required). **Group** (required): **DnsAdmins**, **Domain Admins**, **Enterprise Admins**, **Exchange Organization Administrators**, **Group Policy Creator Owners**, **Organization Management**, or **Schema Admins**. | **Remove User from Domain Group** |
-| **Add User to Groups & Roles (User Selected)** | Adds the user to groups or roles that the administrator lists and the user chooses from. A connection to a resource is optional. See [Grant group or role membership without a resource](group-role-activities.md). | Groups and roles, chosen with the **Select Groups/Roles** button. | **Remove User from Groups & Roles (User Selected)** |
+| **Add User to Groups & Roles (User Selected)** | Adds the user to groups or roles that the administrator lists and the user chooses from. A connection to a resource is optional. See [Grant group or role membership without a resource](/docs/privilegesecure/26.07/configuration/activities/group-role-activities.md). | Groups and roles, chosen with the **Select Groups/Roles** button. | **Remove User from Groups & Roles (User Selected)** |
 | **Add User to Local Group** | Adds the login account to a local group on the resource. | **Group** (required): **Administrators**, **Backup Operators**, **Event Log Readers**, **Hyper-V Administrators**, **Network Configuration Operators**, or **Remote Desktop Users**. **Domain** (optional). | **Remove User from Local Group** |
 | **Create Windows File Share** | Creates a temporary, encrypted SMB share on the Windows resource of the activity. The share is removed after the session ends. | **Windows File Share Name** (required). **Windows File Share Map Path** (required): Privilege Secure creates a folder at this local path as the map for the share. | **Remove Windows File Share** |
 | **Enable RDP on Host** | Enables Remote Desktop Protocol (RDP) on the resource. | None. | **Disable RDP on Host** |
@@ -82,7 +80,7 @@ These action types run while the session is active.
 
 | Action type | What it does | Fields |
 |---|---|---|
-| **AD Sync With Args** | Replicates the target user object and the groups it belongs to from the primary domain controller (PDC) of the domain to each listed domain controller, so that a group change takes effect without waiting for normal replication. The action runs on the Action Service with the domain's service account and doesn't use Windows Remote Management (WinRM). It fails only if replication fails to every destination. | **Destinations**: comma-separated list of domain controllers to replicate to (required). **Domain**: the domain of the PDC that is the replication source (required). |
+| **AD Sync With Args** | Replicates the target user object and its groups to the listed domain controllers, as the pre-session action does. | **Destinations** and **Domain** (both required). |
 | **Monitor for User Login** | Watches the resource for a login by the user. | None. |
 | **Purge Kerberos Tickets for Host** | Purges all Kerberos tickets on the resource. | None. |
 | **Purge Kerberos Tickets for User** | Purges the Kerberos tickets of the login account. | None. |
@@ -96,7 +94,7 @@ These action types run after the session ends. The paired actions in this list u
 
 | Action type | What it does | Fields |
 |---|---|---|
-| **AD Sync With Args** | Replicates the target user object and the groups it belongs to from the primary domain controller (PDC) of the domain to each listed domain controller, so that a group change takes effect without waiting for normal replication. The action runs on the Action Service with the domain's service account and doesn't use Windows Remote Management (WinRM). It fails only if replication fails to every destination. | **Destinations**: comma-separated list of domain controllers to replicate to (required). **Domain**: the domain of the PDC that is the replication source (required). |
+| **AD Sync With Args** | Replicates the target user object and its groups to the listed domain controllers, as the pre-session action does. | **Destinations** and **Domain** (both required). |
 | **Disable RDP on Host** | Disables RDP on the resource. | None. |
 | **Invoke Protection Policy** | Runs the protection policies that apply to the session host. The action checks the membership of protected groups and removes unauthorized accounts. You don't select a policy. | None. |
 | **Logoff User** | Logs the user off when the session closes. | None. |

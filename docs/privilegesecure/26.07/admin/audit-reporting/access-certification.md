@@ -36,11 +36,11 @@ A new task starts in **Setup**. It moves to **Ready to Start** when the Administ
 2. Above the task list, select **+** (add task).
 3. Enter a name in **Enter Access Certification Name**, for example `Q4 server access review`.
 4. (Optional) Enter a **Description**.
-5. In **Reviewer**, select a reviewer. The default is `<none>`.
-6. Click **Save**.
+5. In **Reviewer**, select a reviewer. The default is `<none>`, and you must choose a reviewer.
+6. Select **Save**.
 7. Select the **Users** tab, and then select **Add**.
-8. In the **Add Users and Groups** window, filter by users or groups, or search. Select a row to move it to **Users & Groups to Add**. Select a row in that table to move it back.
-9. Click **Add**.
+8. In the **Add Users** window, search the **Available Accounts** table and select the accounts to review.
+9. Select **Save**.
 
 :::warning
 You can't add or remove users after you add them to the task. To change the list, create a new task.
@@ -52,7 +52,7 @@ The task list on the left has a **Search** box, a status for each task, and a de
 
 ### The Users tab
 
-The **Users** tab lists the users and groups under review. The columns are **Name**, **User Name**, **Email**, and **Type** (user or group). Select a name to open the details page of that account. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
+The **Users** tab lists the accounts under review. The columns are **Name**, **User Name**, and **Email**. Select a name to open the details page of that account. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ### The Entitlements tab
 
@@ -64,15 +64,15 @@ The **Entitlements** tab lists the access of the users in the task. It stays emp
 - **Activity:** The activity.
 - **Credential:** The credential the policy lets the activity release.
 - **Permissions:** The permissions the policy grants.
-- **Access Policy:** The policy that grants the access.
+- **Access Policies:** The policies that grant the access.
 
-{/* TODO screenshot: the Entitlements tab with the Access Policy column */}
+{/* TODO screenshot: the Entitlements tab with the Access Policies column */}
 
 The tab has three buttons:
 
-- **Review:** Opens the **Review Activity Details** window. Only the assigned reviewer can use it.
-- **Commit:** Applies the review. Enabled when every entitlement is reviewed.
-- **Export Entitlements as CSV:** Exports the table. Enabled after the review is committed.
+- **Review:** Opens the **Review Entitlements** window. Only the assigned reviewer can use it.
+- **Commit:** Applies the review. Only the assigned reviewer can use it, and only after every entitlement is approved or denied.
+- **Export as CSV:** Exports the task and its entitlements to `task_and_entitlements_spreadsheet.csv`. Available after the review is committed.
 
 ## Review the entitlements
 
@@ -80,13 +80,13 @@ The assigned reviewer completes these steps. For the reviewer's view, see [Revie
 
 1. Select **Auditing & Reporting** > **Access Certification**.
 2. Select the task, and then select the **Entitlements** tab.
-3. Click **Review**.
-4. In the **Review Activity Details** window, select the rows to change. The columns include **Name**, **Resource**, **Activity**, **Credential**, **Permissions**, **Access Policy**, **Connection Profile**, and **Last Accessed**.
-5. Click **Approve** to keep the access, or **Deny** to remove it.
-6. Click **Close**.
+3. Select **Review**.
+4. In the **Review Entitlements** window, select the rows to change. The columns include **Name**, **Resource**, **Activity**, **Credential**, **Permissions**, **Access Policies**, **Connection Profile**, and **Last Accessed**.
+5. Select **Approve** to keep the access, or **Deny** to remove it.
+6. Select **Close**.
 7. When every entitlement is reviewed, select **Commit**.
 
-For example, the reviewer approves the `Server-Admins` entitlements on the finance servers and denies one stale entry for a former contractor, then clicks **Commit**.
+For example, the reviewer approves the `Server-Admins` entitlements on the finance servers and denies one stale entry for a former contractor, then selects **Commit**.
 
 The reviewer doesn't have to finish in one visit. The review saves as the reviewer works, and the task status is **Incomplete** until the commit.
 

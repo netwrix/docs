@@ -6,12 +6,12 @@ sidebar_position: 70
 
 # Activity groups
 
-An activity group collects activities so that one entry in an access policy covers all of them. An activity targets one platform, so a group is useful for work that spans platforms, such as granting local administrator access on both Windows and Linux. For the difference between activities and groups, see [Activities](activities.md).
+An activity group collects activities so that one entry in an access policy covers all of them. An activity targets one platform, so a group is useful for work that spans platforms, such as granting local administrator access on both Windows and Linux. For the difference between activities and groups, see [Activities](/docs/privilegesecure/26.07/configuration/activities/activities.md).
 
 Privilege Secure includes two activity groups: **Domain Administrator Access** and **Local Administrator Access**.
 
 :::warning
-Before you upgrade from a release earlier than 26.07.3, don't delete a default activity group and then create a group with the same name. The upgrade can fail on the duplicate name, and Linux access can be lost. Upgrade to 26.07.3 or later. See [Upgrade Privilege Secure](../../install/upgrade.md).
+Before you upgrade from a release earlier than 26.07.3, don't delete a default activity group and then create a group with the same name. The upgrade can fail on the duplicate name, and Linux access can be lost. Upgrade to 26.07.3 or later. See [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md).
 :::
 
 ## Open the Activity Groups page
@@ -58,4 +58,4 @@ The activities appear in the table.
 
 ## Use an activity group in an access policy
 
-Add the group to the **Activities** tab of an access policy. The **Add Activities and Activity Groups** dialog lists both activities and groups, and its **Type** filter separates them. Users who match the policy can then run every activity in the group on the resources of the policy. See [Create a resource-based access policy](../access-policies/resource-based-policy.md).
+Add the group to the **Activities** tab of an access policy. The **Add Activities and Activity Groups** dialog lists both activities and groups, and its **Type** filter separates them. Users who match the policy can then run every activity in the group on the resources of the policy. See [Create a resource-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md).

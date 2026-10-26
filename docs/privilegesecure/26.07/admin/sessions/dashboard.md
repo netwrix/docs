@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The **Dashboard** is the console's page for managing sessions. A row of tiles at the top shows live counts, and each tile opens a table of the matching items. Use the session tiles to follow requests from approval to completion, and use the **Users**, **Resources**, and **Credentials** tiles as shortcuts to pages you can also reach from the left navigation.
 
-To open the dashboard, click **Dashboard** in the left navigation. The console opens the tile you used last.
+To open the dashboard, select **Dashboard** in the left navigation. The console opens the tile you used last.
 
 ## Tiles
 
@@ -48,7 +48,7 @@ The session tables name the person who started a session in two different ways:
 - The **Active**, **Scheduled**, and **Approvals** tables use the column **REQUESTED BY**.
 - The **Historical** table uses the column **SESSION USER**.
 
-Both columns show the same person. Click a name to open that user's details.
+Both columns show the same person. Select a name to open that user's details.
 
 ## Users, Resources, and Credentials tiles
 

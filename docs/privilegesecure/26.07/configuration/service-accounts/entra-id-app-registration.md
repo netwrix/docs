@@ -42,7 +42,7 @@ This task needs three values from Entra ID:
 
 After consent succeeds, the **Configured permissions** page shows the message "Successfully granted admin consent for the requested permissions".
 
-{/* TODO verify: the requirements table in requirements/target-environments.md lists a shorter set of Graph permissions plus the delegated permission User.Read. Release code calls the Graph user, group, directory role and password endpoints but doesn't name the permissions it needs. Each Graph endpoint reference page lists its least-privileged permission, but an SME hasn't reconciled the table with this list against a tenant. */}
+{/* TODO verify: the minimum permission and role set. An earlier version of the requirements table in requirements/target-environments.md listed only four application permissions (Directory.ReadWrite.All, Group.ReadWrite.All, User.ReadWrite.All, RoleManagement.ReadWrite.Directory), the delegated permission User.Read (possibly only the portal default for a new registration), and the User Administrator role. That table now links here, so this list is the one to confirm. Release code calls the Graph user, group, directory role and password endpoints but doesn't name the permissions it needs. Each Graph endpoint reference page lists its least-privileged permission, but an SME hasn't confirmed this list against a tenant. */}
 
 ## Create a client secret
 

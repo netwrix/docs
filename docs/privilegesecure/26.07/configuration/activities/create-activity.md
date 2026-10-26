@@ -10,7 +10,7 @@ Create an activity to define the login account, the session type, and the action
 
 ## Before you begin
 
-- For the **Vault** login account, create a vault connector first. See [Third-party vault connectors](../../integrations/vaults/vault-connectors.md).
+- For the **Vault** login account, create a vault connector first. See [Third-party vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md).
 - For an **Interactive App Launch** activity on Active Directory, Microsoft SQL Server, or Oracle, add the Remote Desktop Services (RDS) host as a host resource.
 
 ## Create the activity
@@ -28,7 +28,7 @@ Create an activity to define the login account, the session type, and the action
 
 When you change any field on an existing activity, the **Save** and **Cancel** buttons appear. Click **Save** to keep the change or **Cancel** to discard it.
 
-After you save, add actions to the **Pre-Session (Grant)**, **Session (Connect)**, and **Post-Session (Remove)** groups. See [Add actions to an activity](actions.md).
+After you save, add actions to the **Pre-Session (Grant)**, **Session (Connect)**, and **Post-Session (Remove)** groups. See [Add actions to an activity](/docs/privilegesecure/26.07/configuration/activities/actions.md).
 
 ### Example
 
@@ -44,7 +44,7 @@ This example creates an activity that gives a user a temporary account on a Linu
 | **Create Account** | Selected |
 | **Delete After Use** | Selected |
 
-For a user whose account name is `jsmith`, the template evaluates to `at.jsmith.appadmin`. For an Activity Token, Privilege Secure keeps the first 15 characters (`at.jsmith.appad`) and adds random characters until the name is 20 characters long. When the connection profile sets an activity token complexity policy, Privilege Secure keeps the policy **Length** minus 5 characters and fills up to the policy **Length**. See [Activity token complexity](../access-policies/activity-token-complexity.md).
+For a user whose account name is `jsmith`, the template evaluates to `at.jsmith.appadmin`. For an Activity Token, Privilege Secure keeps the first 15 characters (`at.jsmith.appad`) and adds random characters until the name is 20 characters long. When the connection profile sets an activity token complexity policy, Privilege Secure keeps the policy **Length** minus 5 characters and fills up to the policy **Length**. See [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md).
 
 ## Activity fields
 
@@ -55,13 +55,13 @@ The fields in the first table always appear. The fields in the second table appe
 | **Name** | The name that appears in the activity list and in access policies. |
 | **Description** | A description of the activity. |
 | **Platform** | The type of resource that the activity runs on. The platforms defined in Privilege Secure, in alphabetical order after None Specified, for example Active Directory, Linux, Website, and Windows. |
-| **Login Account** | Required. Requester, Managed, Activity Token, Resource, or Vault. Resource is available only when **Platform** is Website. See [Login account types](activities.md#login-account-types). |
-| **Activity Type** | Required. Interactive, Interactive App Launch, or Task Automation. See [Activity types](activities.md#activity-types). |
+| **Login Account** | Required. Requester, Managed, Activity Token, Resource, or Vault. Resource is available only when **Platform** is Website. See [Login account types](/docs/privilegesecure/26.07/configuration/activities/activities.md#login-account-types). |
+| **Activity Type** | Required. Interactive, Interactive App Launch, or Task Automation. See [Activity types](/docs/privilegesecure/26.07/configuration/activities/activities.md#activity-types). |
 
 | Field | Appears when | Description |
 |---|---|---|
-| **Requester Login Format** | **Login Account** is Requester | Required. The format that prefills the **Username** field when the user logs on to the resource. It must exactly match the user name on the resource. Options: **Domain\SamAccountName** (default), **SamAccountName**, **UPN (User Principal Name)**, **Email**, and **Custom**. A local Privilege Secure user can't use this login account on a domain-joined Windows resource. See [Login account types](activities.md#login-account-types). |
-| **Login Account Template** | **Login Account** is Managed, Activity Token, or Vault, or **Requester Login Format** is Custom | The format of the account name that the session uses. See [Login account templates](login-account-templates.md). The form fills in a default: Managed `%targetdomain%\%samaccountname%-NPS` (Linux `%samaccountname%-NPS@%upn-domain%`); Activity Token `%targetdomain%\%samaccountname%` (Linux `%samaccountname%@%upn-domain%`, Cisco `%samaccountname%`); Vault `%targetdomain%\%samaccountname%`. |
+| **Requester Login Format** | **Login Account** is Requester | Required. The format that prefills the **Username** field when the user logs on to the resource. It must exactly match the user name on the resource. Options: **Domain\SamAccountName** (default), **SamAccountName**, **UPN (User Principal Name)**, **Email**, and **Custom**. A local Privilege Secure user can't use this login account on a domain-joined Windows resource. See [Login account types](/docs/privilegesecure/26.07/configuration/activities/activities.md#login-account-types). |
+| **Login Account Template** | **Login Account** is Managed, Activity Token, or Vault, or **Requester Login Format** is Custom | The format of the account name that the session uses. See [Login account templates](/docs/privilegesecure/26.07/configuration/activities/login-account-templates.md). The form fills in a default: Managed `%targetdomain%\%samaccountname%-NPS` (Linux `%samaccountname%-NPS@%upn-domain%`); Activity Token `%targetdomain%\%samaccountname%` (Linux `%samaccountname%@%upn-domain%`, Cisco `%samaccountname%`); Vault `%targetdomain%\%samaccountname%`. |
 | **Create Account** | **Login Account** is Activity Token or Managed | Creates the account when the activity starts, if it doesn't exist. If it exists, the user connects to it. Always selected and locked for Activity Token. |
 | **Delete After Use** | **Login Account** is Activity Token or Managed | Deletes the account when the activity ends. When cleared, Privilege Secure disables the account instead. Always selected and locked for Activity Token. For Managed, you can select it only when **Create Account** is selected. A built-in administrator account can't be deleted or disabled at the end of a session. |
 | **Vault Connector** | **Login Account** is Vault | Required. The vault connector that supplies the account. Additional fields can appear depending on the connector you select. |
@@ -84,7 +84,7 @@ You can use these variables in **Application to Launch**:
 
 When you select Vault, Privilege Secure fills the **Pre-Session (Grant)** group with **Check-out Credential** and the **Post-Session (Remove)** group with **Check-in Credential**. The add buttons for those groups are disabled.
 
-To let the user see the password that the vault supplies, select **Allow User to Access Password** in the connection profile of the access policy that grants the activity. See [Connection profiles](../access-policies/connection-profiles.md).
+To let the user see the password that the vault supplies, select **Allow User to Access Password** in the connection profile of the access policy that grants the activity. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ## Copy or delete an activity
 

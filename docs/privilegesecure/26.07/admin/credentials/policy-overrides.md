@@ -35,13 +35,13 @@ Both dropdowns have a **+** button to add a schedule. For schedule policies, see
 
 ## Create an override
 
-1. In the left navigation, click **Credentials** > **Credential Policy Overrides**.
-2. Click **+**.
+1. In the left navigation, select **Credentials** > **Credential Policy Overrides**.
+2. Select **+**.
 3. Enter a name in **Enter Credential Policy Override Name**.
 4. Enter a **Description**.
 5. Select a **Scheduled Change Policy**.
 6. Select a **Verification Schedule**.
-7. Click **Save**.
+7. Select **Save**.
 
 For example, create an override named `<hourly-rotation>` with the **Scheduled Change Policy** set to a policy that runs every hour.
 
@@ -50,16 +50,16 @@ For example, create an override named `<hourly-rotation>` with the **Scheduled C
 ## Add credentials to an override
 
 1. Select the override.
-2. Click **Add Credentials**.
+2. Select **Add Credentials**.
 3. Select the checkbox for the account in **Available Credentials**.
 4. Optional: Clear the checkbox in **Credentials to Add** to move the account back.
-5. Click **Add**.
+5. Select **Add**.
 
 For example, add `<domain>\<privileged-account>` to the `<hourly-rotation>` override.
 
 Only credentials with the method **Automatic** appear in the list. You can select several accounts and add them in one step.
 
-The override table has **Search**, **Add Credentials**, **Remove**, and **Refresh**. Select a row and click **Remove** to take a credential out of the override. It then uses the rotation and verification schedules from its platform again. If the platform has no schedule for rotation or verification, that job is disabled for the account.
+The override table has **Search**, **Add Credentials**, **Remove**, and **Refresh**. Select a row, and then select **Remove** to take a credential out of the override. It then uses the rotation and verification schedules from its platform again. If the platform has no schedule for rotation or verification, that job is disabled for the account.
 
 The override table shows **Account**, **Resource**, **Password Changed**, **Age**, **Status**, **Last Checked**, and **Next Change** for each credential.
 

@@ -41,7 +41,7 @@ The **Summary for the date range** table combines all sessions in the range.
 
 ## Top 5 users for the date range
 
-The **Top 5 users for the date range** table lists the users with the most sessions. It has the **USER**, **SESSIONS**, **TOTAL DURATION**, **AVERAGE**, **MINIMUM**, and **MAXIMUM** columns, calculated per user. Click a user to open the user's details. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
+The **Top 5 users for the date range** table lists the users with the most sessions. It has the **USER**, **SESSIONS**, **TOTAL DURATION**, **AVERAGE**, **MINIMUM**, and **MAXIMUM** columns, calculated per user. Select a user to open the user's details. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ## Sessions by all users
 
@@ -64,7 +64,7 @@ You can resize and sort the columns.
 
 ## Export the log as a CSV file
 
-Click **Export as CSV** above the sessions table to save the log as a CSV file.
+Select **Export as CSV** above the sessions table to save the log as a CSV file.
 
 To export the log with a script instead, see [Exporting the Activity Log as a CSV](/docs/kb/privilegesecure/workflows-and-automation/exporting-the-activity-log-as-a-csv).
 

@@ -70,6 +70,6 @@ If the database wasn't reachable during the installation, the installer still co
 
 ## Install other components silently
 
-The standalone installers for the Action, Host Scan, Scheduler, and SIEM services are bootstrapper executables that accept the same switches, except that they don't accept an `InstallFolder` value and install to `C:\Program Files\Stealthbits\PAM` or to the folder of an earlier installation. The Host Scan Service ships as both a bootstrapper, `NPS.HostScanService.exe`, and an `.msi` file. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
+The standalone installers for the Action, Scheduler, and SIEM services are bootstrapper executables that accept the same switches, except that they don't accept an `InstallFolder` value and install to `C:\Program Files\Stealthbits\PAM` or to the folder of an earlier installation. The Host Scan Service ships as an `.msi` file only. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 
 The standalone installers take no console URL or encryption key. Register each service with the application server after the installation.

@@ -25,11 +25,11 @@ The same icons appear in credential groups and policy overrides.
 
 To view the current password:
 
-1. In the left navigation, click **Credentials**.
-2. Find the managed account and click the **View Password** icon.
+1. In the left navigation, select **Credentials**.
+2. Find the managed account and select the **View Password** icon.
 3. Reveal the password with the eye icon, or copy it with **Copy to Clipboard**.
 
-The dialog closes automatically after a 20-second countdown. The countdown restarts when you reveal the password. Click **Cancel** to close it sooner.
+The dialog closes automatically after a 20-second countdown. The countdown restarts when you reveal the password. Select **Cancel** to close it sooner.
 
 For example, view the password of `<local-admin>` to sign in to `<server-name>` during an outage.
 
@@ -37,9 +37,9 @@ For example, view the password of `<local-admin>` to sign in to `<server-name>` 
 
 ## View password history
 
-1. In the left navigation, click **Credentials**.
+1. In the left navigation, select **Credentials**.
 2. Select the checkbox for a managed account.
-3. Click **View History**.
+3. Select **View History**.
 
 The **Password History** dialog opens. {/* TODO screenshot: the Password History dialog with values hidden */}
 
@@ -58,7 +58,7 @@ The table has these columns:
 | Column | Description |
 |---|---|
 | **Creation Date** | When the password was created. |
-| **Password (click to view)** | The password, shown as `<hidden>` until you reveal it with **Show Password(s)**. Click a revealed password to select its text. |
+| **Password (click to view)** | The password, shown as `<hidden>` until you reveal it with **Show Password(s)**. Select a revealed password to highlight its text. |
 
 You can resize and sort the columns. Until you sort, the newest entry is first.
 

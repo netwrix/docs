@@ -13,6 +13,8 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) stores its dat
 | PostgreSQL 16 (bundled installer) | Netwrix | 5432 |
 | Microsoft SQL Server | You | 1433 |
 
+A server upgraded from PostgreSQL 12 uses a different port. See [Database ports](/docs/privilegesecure/26.07/requirements/ports.md#database).
+
 ## PostgreSQL
 
 The product zip file includes a PostgreSQL 16 installer. Run it from the Setup Launcher before you install Privilege Secure. See [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md).

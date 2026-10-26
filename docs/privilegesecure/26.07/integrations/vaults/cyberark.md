@@ -11,7 +11,7 @@ The CyberArk connector lets Netwrix Privilege Secure check out account passwords
 - **Service accounts**, such as the account that synchronizes Active Directory.
 - **Activities** that use the **Vault** login account to sign in to a resource.
 
-The connector calls the CyberArk Central Credential Provider (CCP). The CCP is a REST web service that applications use to check out passwords from a CyberArk vault. For how vault connectors work in general, see [Third-party vault connectors](vault-connectors.md).
+The connector calls the CyberArk Central Credential Provider (CCP). The CCP is a REST web service that applications use to check out passwords from a CyberArk vault. For how vault connectors work in general, see [Third-party vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md).
 
 ## Prerequisites
 
@@ -76,14 +76,14 @@ The built-in check-in does nothing. Privilege Secure doesn't return the password
 ### In a service account
 
 1. Select **Configuration** > **Service Accounts**.
-2. Create or select a service account. For the full procedure, see [Service accounts](../../configuration/service-accounts/service-accounts.md).
+2. Create or select a service account. For the full procedure, see [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 3. For **Vault Connector**, select the CyberArk connector.
 4. Enter the **Address**, **Safe**, and **Folder** that hold the account.
 5. Click **Save**.
 
 ### In an activity
 
-1. Create or edit an activity. See [Create an activity](../../configuration/activities/create-activity.md).
+1. Create or edit an activity. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
 2. For **Login Account**, select **Vault**.
 3. For **Vault Connector**, select the CyberArk connector.
 4. Enter the **Safe** that holds the account. The form also shows **Folder**, which the built-in check-out doesn't use.

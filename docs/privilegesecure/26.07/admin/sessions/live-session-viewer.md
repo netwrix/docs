@@ -22,8 +22,8 @@ The **Terminate Session** and **Lock Session** permissions stay disabled until *
 ## Open the Live Session Viewer
 
 1. Open the **Active** tile. See [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md).
-2. Click the expand icon on the session's row. The row lists one entry for each sign-in, for example `RDP Session is live now.`
-3. Click the entry with the eye icon to open the viewer. If the entry has no icon, the session isn't being recorded or you don't have permission to watch it.
+2. Select the expand icon on the session's row. The row lists one entry for each sign-in, for example `RDP Session is live now.`
+3. Select the entry with the eye icon to open the viewer. If the entry has no icon, the session isn't being recorded or you don't have permission to watch it.
 
 {/* TODO screenshot: Active tile with a session row expanded to show the recording */}
 
@@ -40,7 +40,7 @@ The viewer depends on the protocol of the session.
 
 A website session has no live viewer. You can replay a website session after it ends. See [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
 
-{/* TODO verify: which resource types start RDP, SSH, and website sessions, for example whether Active Directory domain and Microsoft Entra ID resources use RDP or website sessions. The console decides the viewer from the session protocol, not from the resource type. */}
+{/* TODO verify: whether Active Directory domain and Microsoft Entra ID resources start RDP sessions or website sessions. The console picks the viewer from the session protocol. The release code gives Website resources their own session path but doesn't settle the other resource types. */}
 
 {/* TODO screenshot: Live Session Viewer for an RDP session */}
 
@@ -71,7 +71,7 @@ Lock a session to stop the user from working without ending the session.
    - **Opening new sessions on this activity**
    - **Opening new activities to this resource**
    - **Any further activity with this account (Unlock via Users & Groups)**
-5. Click **Okay**.
+5. Select **Okay**.
 
 The window opens with the title "Netwrix Privilege Secure" and the message "Your session has been temporarily locked, please see a Netwrix Privilege Secure administrator for more information." already filled in. Replace them with your own text. The user sees the title and message in the RDP or SSH client.
 
@@ -81,7 +81,7 @@ The first two options are selected when the window opens. The options build on e
 
 To unlock the session, select **Unlock** in the viewer. You can also select the session on the **Active** tile and select **Unlock Activity**.
 
-If you selected **Any further activity with this account**, the account stays locked after you unlock the session. Unlock the account from its details page: click **Unlock Account**, which replaces **Lock Account** while the account is locked. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
+If you selected **Any further activity with this account**, the account stays locked after you unlock the session. Unlock the account from its details page: select **Unlock Account**, which replaces **Lock Account** while the account is locked. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ## Terminate a session
 
@@ -89,12 +89,12 @@ Terminate a session to disconnect the user at once.
 
 1. In the viewer, select **Terminate Session**.
 2. In the **Terminate Proxy Session** window, confirm the prompt "Are you sure?".
-3. Click **Cancel Activity Session** to also cancel the activity session in Privilege Secure. The user can't sign in again through the same session.
+3. (Optional) Select **Cancel Activity Session** to also cancel the activity session in Privilege Secure. The user can't sign in again through the same session.
 4. Confirm the termination.
 
 {/* TODO screenshot: Terminate Proxy Session window */}
 
-For example, a user runs an unapproved script during a session. Click **Terminate Session**, select **Cancel Activity Session**, and confirm. The user is disconnected and can't reconnect through that session.
+For example, a user runs an unapproved script during a session. Select **Terminate Session**, select **Cancel Activity Session**, and confirm. The user is disconnected and can't reconnect through that session.
 
 Terminating a session doesn't stop the user from requesting a new one. To block that, lock the user's account with **Lock Account** on the [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md) page.
 

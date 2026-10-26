@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Manage active and scheduled sessions
 
-The **Active** tile lists sessions that are provisioning, ready, or in progress. The **Scheduled** tile lists sessions set to start later. From these tables you can create, end, lock, unlock, and inspect sessions.
+The **Active** tile lists sessions that are provisioning, available, or in progress. The **Scheduled** tile lists sessions set to start later. From these tables you can create, end, lock, unlock, and inspect sessions.
 
-To open them, click **Dashboard** in the left navigation, then click the **Active** or **Scheduled** tile. For an overview of all tiles, see [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
+To open them, select **Dashboard** in the left navigation, then select the **Active** or **Scheduled** tile. For an overview of all tiles, see [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
 ## Active tab
 
@@ -40,16 +40,16 @@ All buttons except **Create Session** stay disabled until you select a row. **Re
 | Checkbox | Selects the row. |
 | **STATUS** | The state of the session. See [Session statuses](#session-statuses). |
 | **REQUESTED** | When the session was created. |
-| **REQUESTED BY** | The user who requested the session. Click the name to open the user's details. |
-| **HOST** | The resource the activity runs on. Click the name to open the resource's details. |
+| **REQUESTED BY** | The user who requested the session. Select the name to open the user's details. |
+| **HOST** | The resource the activity runs on. Select the name to open the resource's details. |
 | **LOGIN ACCOUNT** | The account used to sign in to the resource. |
-| **ACTIVITY** | The name of the activity. Click the name to see its details. |
+| **ACTIVITY** | The name of the activity. Select the name to see its details. |
 | **START** | When the activity's actions began running. This isn't the time the user signed in to the resource. |
 | **END** | When the session is scheduled to end: the start time plus the maximum session duration set in the access policy's connection profile. |
 | **NOTES** | Notes the requester entered. |
 | **TICKET NUMBER** | The ticket number the requester entered. |
 
-Click the expand icon on a row to show more about the session. The expanded row has the live session viewer for a session in progress, and a replay viewer when a recording is available. If the user signed in more than once, the row lists one recording for each sign-in. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md) and [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
+Select the expand icon on a row to show more about the session. The expanded row has the live session viewer for a session in progress, and a replay viewer when a recording is available. If the user signed in more than once, the row lists one recording for each sign-in. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md) and [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
 
 ## Scheduled tab
 
@@ -76,11 +76,11 @@ End a session to cancel it before its scheduled end time.
 
 1. Open the **Active** or **Scheduled** tile.
 2. Select the checkbox for each session to end.
-3. Click **End Session**.
+3. Select **End Session**.
 
 The status of each selected session changes to **Canceling**. When the session ends, it moves to the **Historical** tile.
 
-For example, to stop a contractor's session that is still running after the change window, select its row on the **Active** tile and click **End Session**. The status changes to **Canceling**.
+For example, to stop a contractor's session that is still running after the change window, select its row on the **Active** tile and select **End Session**. The status changes to **Canceling**.
 
 If you don't have the Terminate Session permission, the console shows "You need 'Terminate Session' permission to end sessions".
 
@@ -94,19 +94,19 @@ Lock a session when you see suspicious or unauthorized activity. A locked sessio
 
 1. Open the **Active** tile.
 2. Select the session.
-3. Click **Lock Activity**.
+3. Select **Lock Activity**.
 4. Enter a lock title and message. The user sees them in their RDP or SSH client.
-5. Choose what to prevent the user from doing, and click **Okay**.
+5. Choose what to prevent the user from doing, and select **Okay**.
 
 The status of the session changes to **Locked**. For the dialog options, see [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md).
 
-To unlock a session, select it and click **Unlock Activity**. Administrators can unlock any session. Auditors and read-only users need the **Lock Session** permission. The console shows "Session successfully unlocked.", the lock icon leaves the status column, and the row shows its normal status again, for example **Active**.
+To unlock a session, select it, and then select **Unlock Activity**. Administrators can unlock any session. Auditors and read-only users need the **Lock Session** permission. The console shows "Session successfully unlocked.", the lock icon leaves the status column, and the row shows its normal status again, for example **Logged In**.
 
 If you selected **Any further activity with this account (Unlock via Users & Groups)**, the account stays locked after you unlock the session. Unlock it on the user's details page. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
 ## Inspect a session
 
-1. Select a session and click **View Logs** to see what happened while the session was provisioned.
-2. Click the expand icon on the row to watch the session live.
+1. Select a session, and then select **View Logs** to see what happened while the session was provisioned.
+2. Select the expand icon on the row to watch the session live.
 
 {/* TODO screenshot: Active tab with a session selected and the toolbar enabled. */}

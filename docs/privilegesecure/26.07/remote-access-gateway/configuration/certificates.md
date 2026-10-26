@@ -18,7 +18,7 @@ The portal doesn't verify the gateway certificate, so you don't need to replace 
 
 The installer binds a self-signed certificate to the **NPS Gateway Web Service** site. To replace it, import your certificate into the Personal store (Local Computer\Personal) of the gateway server, and then change the binding in Internet Information Services (IIS) Manager: select the **NPS Gateway Web Service** site, select **Bindings** in the **Actions** pane, select the `https` binding on port 6550, select **Edit**, and select your certificate in **SSL certificate**.
 
-For the certificate on the Netwrix Privilege Secure for Access Management (Privilege Secure) web console on port 6500, see [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md). The gateway must trust that certificate to forward requests to the console.
+For the certificate on the Netwrix Privilege Secure for Access Management (Privilege Secure) web console on port 6500, see [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md). For production, the gateway server should trust that certificate. See [Skip certificate validation for Privilege Secure](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md#skip-certificate-validation-for-privilege-secure).
 
 ## Replace the portal certificate
 

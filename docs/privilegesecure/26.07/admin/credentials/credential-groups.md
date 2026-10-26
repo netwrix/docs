@@ -20,7 +20,7 @@ The **Credential Groups** page is under **Credentials** in the left navigation. 
 
 ## The group details
 
-The details pane shows the **Name** and **Description** of the group. If you change either, **Save** and **Cancel** appear. Click **Save** to keep the change or **Cancel** to discard it.
+The details pane shows the **Name** and **Description** of the group. If you change either, **Save** and **Cancel** appear. Select **Save** to keep the change or **Cancel** to discard it.
 
 The member table has these controls:
 
@@ -34,22 +34,22 @@ The table has the columns **Account**, **Resource**, **Platform**, **Method**, *
 
 ## Create a credential group
 
-1. In the left navigation, click **Credentials** > **Credential Groups**.
-2. Click **+**.
+1. In the left navigation, select **Credentials** > **Credential Groups**.
+2. Select **+**.
 3. Enter a name in **Enter Credential Group Name**.
 4. Enter a **Description**.
-5. Click **Save**.
+5. Select **Save**.
 
 For example, name a group `<build-admin-accounts>` with the description `<Local build administrator accounts>`.
 
 ## Add credentials to a group
 
 1. On the **Credential Groups** page, select the group.
-2. Click **Add Credentials**.
+2. Select **Add Credentials**.
 3. Use the search box and the type dropdown (All, Internal, Standard, Service) to find accounts.
 4. Select the checkbox for each account in **Available Credentials**. The account moves to **Credentials to Add**.
 5. Optional: Clear a checkbox in **Credentials to Add** to move the account back.
-6. Click **Add**.
+6. Select **Add**.
 
 {/* TODO screenshot: the Add Credentials dialog */}
 
@@ -59,7 +59,7 @@ For example, name a group `<build-admin-accounts>` with the description `<Local 
 
 1. Select the group.
 2. Select the checkbox for each account to remove.
-3. Click **Remove**.
+3. Select **Remove**.
 
 ## Related topics
 

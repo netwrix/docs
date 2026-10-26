@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The **Historical** tile lists every session that has ended, with its final status. Use it to find a past session, open its logs or recording, or export the list.
 
-To open it, click **Dashboard** in the left navigation, then click the **Historical** tile.
+To open it, select **Dashboard** in the left navigation, then select the **Historical** tile.
 
 ## Tabs and toolbar
 
@@ -46,10 +46,10 @@ For the Remote Desktop Monitor, see [Install the Remote Desktop Monitor on targe
 | **ACTIONS** | The expand icon, the logs icon, and, on your own sessions, the quick launch icon. See [Row actions](#row-actions). |
 | **REQUESTED** | When the session was created. |
 | **STATUS** | The final state of the session. See [Statuses](#statuses). |
-| **SESSION USER** | The user who requested the session. Click the name to open the user's details. |
-| **HOST** | The resource the activity ran on. Click the name to open the resource's details. |
+| **SESSION USER** | The user who requested the session. Select the name to open the user's details. |
+| **HOST** | The resource the activity ran on. Select the name to open the resource's details. |
 | **LOGIN ACCOUNT** | The account used to sign in to the resource. |
-| **ACTIVITY** | The name of the activity. Click the name to see its details. |
+| **ACTIVITY** | The name of the activity. Select the name to see its details. |
 | **START** | When the activity's actions began running. This isn't the time the user signed in to the resource. |
 | **DURATION** | How long the activity ran, until it reached its scheduled end or someone canceled it. |
 | **NOTES** | Notes entered when the session was created. |

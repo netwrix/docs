@@ -41,26 +41,26 @@ Each report has a **Filters** tab and a **Subscriptions** tab.
 1. Select **Auditing & Reporting** > **Reporting**.
 1. Select a report in the tree.
 1. On the **Filters** tab, change the **Timeframe** if needed. Predefined reports default to **Last 30 Days**.
-1. Click **Run Query**.
+1. Select **Run Query**.
 
 The results appear under the filters.
 
 ## Download a report
 
-1. Open the report and click **Run Query**.
-1. Click **Download Report**.
-1. In the **Download Report** window, click **Download PDF** or **Download CSV**.
+1. Open the report and select **Run Query**.
+1. Select **Download Report**.
+1. In the **Download Report** window, select **Download PDF** or **Download CSV**.
 
 Both buttons are unavailable while you have unsaved changes to the filters. The downloaded file name includes the report name and the time of the download.
 
 ## Create a report
 
-1. Click **+** (**Add Report**) beside **Search Reports...**.
+1. Select **+** (**Add Report**) beside **Search Reports...**.
 1. In **Enter Report Name**, enter a name, for example `Windows sessions last 7 days`.
 1. In **Source**, select the data to report on.
 1. Leave **Timeframe** at **Last 7 Days**, or select another value.
 1. Add filters. For each one, select an **Attribute**, an operator, and a value.
-1. Click **Save**.
+1. Select **Save**.
 
 The report appears in **My Reports**. The **Subscriptions** tab stays disabled until you save the report.
 
@@ -105,9 +105,9 @@ Predefined, platform-based, and custom reports work the same way. The **Filters*
 A subscription emails the report to you on a schedule.
 
 1. Open a report you saved, and select the **Subscriptions** tab.
-1. Click **Subscribe**.
+1. Select **Subscribe**.
 1. In **Subscription Schedule**, select **Every 1 hours**, **Every 4 hours**, **Every 8 hours**, or **Every 24 hours**.
-1. Click **Okay**.
+1. Select **Okay**.
 
 The **Okay** button stays disabled until you select a schedule. Privilege Secure sends the report to the email address on your user account.
 

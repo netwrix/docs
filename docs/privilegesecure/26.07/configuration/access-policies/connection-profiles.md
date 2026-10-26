@@ -8,7 +8,7 @@ sidebar_position: 40
 
 A connection profile defines how sessions run for the access policies that use it. It sets the proxy, the session length and extensions, the notes and ticket requirements, how users view passwords, website cleanup, custom fields, and whether a session needs approval.
 
-Every access policy uses one connection profile. Several policies can share a profile. For how policies use profiles, see [Access policies](overview.md).
+Every access policy uses one connection profile. Several policies can share a profile. For how policies use profiles, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
 To open the page, select **Access Policy** > **Connection Profiles** in the left navigation. The list on the left has **Search Profiles...** and a plus (**+**) button with the tooltip "Add Connection Profile". Point to a profile to show its trash icon, which deletes it. **Save** and **Cancel** appear only after you change a field.
 
@@ -21,7 +21,7 @@ To open the page, select **Access Policy** > **Connection Profiles** in the left
 5. Review each section in this order: **Proxy**, **Session Control**, **Credential Management**, **Website**, **Custom Fields**, and **Approval Workflow**.
 6. Click **Save**.
 
-The new profile appears in the list. Select it in the **Connection Profile** list of an [access policy](resource-based-policy.md#create-the-policy) to use it.
+The new profile appears in the list. Select it in the **Connection Profile** list of an [access policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md#create-the-policy) to use it.
 
 For example, to create a profile for short sessions that need a ticket, enter the name `Short sessions`, set **Max Duration (minutes)** to `30`, and leave **Require Ticket Number for Sessions** selected. The new-profile form selects it by default, along with **Require Notes for Sessions**.
 
@@ -68,7 +68,7 @@ The **Proxy** section controls which proxy servers start sessions and what the p
 | **Allow Proxy Auto-connect** | When you clear it, the requester must give secondary authentication (password and multifactor authentication) to start a proxy connection from the dashboard. |
 | **Record Proxy Session** | Records the session so that an administrator can watch it live or review it later. |
 | **Record Keystrokes and Metadata** | Records keystrokes and metadata for sessions. Clear it to stop keystroke recording. The session video is still recorded. |
-| **Command Restriction** | The command restriction to apply to SSH sessions. The default is `<none>`. The list shows the restrictions you create on the **Command Restriction** page. See [Restrict SSH commands](command-restrictions.md). |
+| **Command Restriction** | The command restriction to apply to SSH sessions. The default is `<none>`. The list shows the restrictions you create on the **Command Restriction** page. See [Restrict SSH commands](/docs/privilegesecure/26.07/configuration/access-policies/command-restrictions.md). |
 
 Each proxy field takes one server. To use more than one proxy server, put a load balancer in front of the servers.
 
@@ -98,9 +98,9 @@ The **Session Control** section sets the session length, extensions, and the inf
 Select **Validate Users for SSH Sessions** when users have authentication problems with direct-connect SSH sessions. It increases the time to create sessions for Linux activities that use managed domain users or activity token domain users.
 :::
 
-To validate tickets against ServiceNow, create the connector first. See [ServiceNow integration](../../integrations/itsm/servicenow.md). When the profile has a connector, the console checks the ticket number that a user enters. When the connector is `<none>`, the console only requires that the ticket number isn't empty. It accepts any text.
+To validate tickets against ServiceNow, create the connector first. See [ServiceNow integration](/docs/privilegesecure/26.07/integrations/itsm/servicenow.md). When the profile has a connector, the console checks the ticket number that a user enters. When the connector is `<none>`, the console only requires that the ticket number isn't empty. It accepts any text.
 
-To define custom complexity rules for activity token accounts, see [Activity token complexity](activity-token-complexity.md).
+To define custom complexity rules for activity token accounts, see [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md).
 
 ## Credential Management
 
@@ -150,14 +150,14 @@ The **Approval Workflow** radio buttons set whether a session needs approval.
 | **Automatic** | No approval is required. This is the default. |
 | **Tiered** | One or more approver tiers must approve the session before the requester can sign in. |
 
-See [Configure approval workflows](approval-workflows.md).
+See [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
 
 ## Related topics
 
-- [Access policies](overview.md)
-- [Configure approval workflows](approval-workflows.md)
-- [Restrict SSH commands](command-restrictions.md)
-- [Activity token complexity](activity-token-complexity.md)
+- [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md)
+- [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md)
+- [Restrict SSH commands](/docs/privilegesecure/26.07/configuration/access-policies/command-restrictions.md)
+- [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md)
 
 {/* TODO screenshot: the Proxy and Session Control sections of a connection profile. */}
 {/* TODO screenshot: the Credential Management and Website sections of a connection profile. */}

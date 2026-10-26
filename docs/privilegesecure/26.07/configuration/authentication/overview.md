@@ -51,7 +51,7 @@ These rules apply to every connector type, including OpenID Connect and SAML con
 
 ## Default and exclusive connectors
 
-An OpenID Connect or SAML connector can be the default connector or the exclusive connector for the sign-in page. MFA connectors can be neither. Only one connector at a time can be the default or the exclusive connector, To change it, clear the current default or exclusive connector first.
+An OpenID Connect or SAML connector can be the default connector or the exclusive connector for the sign-in page. MFA connectors can be neither. Only one connector at a time can be the default or the exclusive connector. To change it, clear the current default or exclusive connector first.
 
 To set one, hover over the connector in the list on **Configuration** > **Authentication** and select an icon:
 
@@ -65,7 +65,7 @@ With a default connector, add `?adlogin=1` to the address of the sign-in page to
 While a connector is exclusive, nobody can sign in with a user name and password, including administrators. Test the connector with an administrator account before you set it as exclusive.
 :::
 
-{/* TODO verify: how an administrator gives a user the Active Directory sign-in exception (the allow_ad_login user flag, AllowAdLogin in the database, which lets a user sign in with a password while a connector is exclusive). The release console and the code reviewed have no control that sets it, so the supported way to recover from an exclusive connector that stops working isn't settled by code or public sources. */}
+{/* TODO verify: how an administrator gives a user the Active Directory sign-in exception (the AllowAdLogin user flag, which lets a user sign in with a password while a connector is exclusive). In 26.07.3 the only code that reads it is the exclusive-connector sign-in check; no console page, API call, or setup script sets it. The supported way to recover from an exclusive connector that stops working isn't settled by code or public sources. Ask Support for the supported recovery procedure. */}
 
 ## Assignment is required
 
@@ -85,6 +85,8 @@ To offer the same identity provider on both the console and the portal, create t
 
 When the connector doesn't match, the service answers the request with the message "This authentication method cannot be used via Remote Access Gateway". The log and the error event carry a longer message that names the connector.
 
-## Sign in after an OpenID Connect error
+## Related topics
 
-In 26.07.3 and later, an OpenID Connect sign-in error no longer signs the user out automatically. The user selects **Sign Out** to leave the error page. See [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md#sign-out-after-an-error).
+- [Configure a RADIUS MFA connector](/docs/privilegesecure/26.07/configuration/authentication/radius.md)
+- [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md), including [what happens after a sign-in error](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md#sign-out-after-an-error)
+- [Configure a SAML connector](/docs/privilegesecure/26.07/configuration/authentication/saml.md)

@@ -144,4 +144,4 @@ Each entry has a read-only **Description** and a **Timeout Override** checkbox. 
 
 **System Settings** > **Database** shows the database that Privilege Secure uses, as read-only fields: **Host**, **Port**, **Database**, and **Service Status**. For PostgreSQL, a table of server parameters follows, with a **Name** and a **Value** for each. For SQL Server, only the connection fields appear. For the supported databases, see [Database requirements](/docs/privilegesecure/26.07/requirements/database.md).
 
-On a new installation with the bundled PostgreSQL database, the setup program uses port 5432.
+With the bundled PostgreSQL database, 5432 is the default port that the Setup Launcher records. After an upgrade from PostgreSQL 12, PostgreSQL 16 uses port 5437. **Port** shows the port your installation uses.

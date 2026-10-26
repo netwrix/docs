@@ -104,7 +104,7 @@ On some Ubuntu releases, `install-docker.sh` installs a Docker engine that can't
 Run the configuration script after guacd is reachable. The script generates the guacd certificate if one doesn't exist, writes the gateway settings, and writes `guacd.conf`, which turns on TLS in guacd.
 
 :::warning
-If guacd isn't reachable on port 4822, `Configure-Gateway.ps1` prints one error and exits without writing `appsettings.json` or `guacd.conf`. The gateway then runs on its default settings and sessions fail. Confirm the `Test-NetConnection` check passes before you run the script.
+If guacd isn't reachable on port 4822, `Configure-Gateway.ps1` prints one error and exits before it applies your values to `appsettings.json` or writes `guacd.conf`. The gateway then runs on its default settings and sessions fail. Confirm the `Test-NetConnection` check passes before you run the script.
 :::
 
 1. In PowerShell, go to the gateway installation folder:

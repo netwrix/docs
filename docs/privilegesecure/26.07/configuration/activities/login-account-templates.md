@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Login account templates
 
-A login account template sets the name of the account that an activity session uses. It is the **Login Account Template** field on the activity, not a separate page. See [Create an activity](create-activity.md).
+A login account template sets the name of the account that an activity session uses. It is the **Login Account Template** field on the activity, not a separate page. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
 
 The field applies to the Managed, Activity Token, and Vault login accounts. It also applies to the Requester login account when **Requester Login Format** is **Custom**.
 
@@ -147,5 +147,5 @@ Privilege Secure rejects a template that breaks any of these rules:
 Privilege Secure applies these rules to the name that a template produces:
 
 - **Managed and Custom Requester templates.** Privilege Secure truncates the user-name part of the result to 20 characters. Vault and Resource names aren't truncated.
-- **Activity Token.** Privilege Secure keeps the first 15 characters of the result, or the activity token complexity **Length** minus 5 when a policy sets it. It then appends random characters to reach 20 characters, or the policy **Length**. See [Activity token complexity](../access-policies/activity-token-complexity.md).
+- **Activity Token.** Privilege Secure keeps the first 15 characters of the result, or the activity token complexity **Length** minus 5 when a policy sets it. It then appends random characters to reach 20 characters, or the policy **Length**. See [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md).
 - **Empty template.** Only Activity Token allows an empty template, which produces a fully random name. For the other login accounts, the activity fails with the message "No Login Account Template specified on Activity".

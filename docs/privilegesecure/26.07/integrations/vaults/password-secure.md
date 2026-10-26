@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Netwrix Password Secure integration
 
-The Password Secure connector lets Netwrix Privilege Secure check out passwords that are stored in Netwrix Password Secure. Activities sign in with accounts whose passwords Password Secure holds, so the passwords don't have to be copied into Privilege Secure. For how vault connectors work in general, see [Third-party vault connectors](vault-connectors.md).
+The Password Secure connector lets Netwrix Privilege Secure check out passwords that are stored in Netwrix Password Secure. Activities sign in with accounts whose passwords Password Secure holds, so the passwords don't have to be copied into Privilege Secure. For how vault connectors work in general, see [Third-party vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md).
 
 ![Password Secure vault flow. The Password Secure connector on the Privilege Secure server uses an API key to check out passwords through the Password Secure Web Application on a separate server, where AD User entries hold the passwords.](/images/privilegesecure/26.07/integrations/password-secure-vault-connector.webp)
 
@@ -59,7 +59,7 @@ Skip this step if the account already exists as an **AD User** entry. In product
 5. For **Password**, paste the Password Secure API key.
 6. Click **Save**.
 
-See [Service accounts](../../configuration/service-accounts/service-accounts.md) for the other fields.
+See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md) for the other fields.
 
 ## Add the Password Secure connector
 
@@ -84,14 +84,14 @@ When you select the **Password Secure** template, the form fills **API Url** wit
 
 ## Use the connector in an activity
 
-1. Create an activity. See [Create an activity](../../configuration/activities/create-activity.md).
+1. Create an activity. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
 2. Enter a **Name** and **Description**, and select the **Platform**.
 3. For **Login Account**, select **Vault**.
 4. For **Activity Type**, select **Interactive**.
 5. For **Vault Connector**, select the Password Secure connector.
 6. Click **Save**.
 
-Then add the activity to a resource-based access policy, with the users and resources that can use it. See [Create a resource-based access policy](../../configuration/access-policies/resource-based-policy.md).
+Then add the activity to a resource-based access policy, with the users and resources that can use it. See [Create a resource-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md).
 
 ## How Privilege Secure finds the password
 

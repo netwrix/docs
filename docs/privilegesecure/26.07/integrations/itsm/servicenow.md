@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The ServiceNow integration checks the ticket number that a user enters when they request a session. When the check passes, Privilege Secure adds work notes to the ticket as the session is approved, starts, and ends. This page shows how to prepare ServiceNow, create the connector, and attach it to a connection profile.
 
-For the user side, see [Use ServiceNow tickets with sessions](../../user-guide/servicenow-tickets.md).
+For the user side, see [Use ServiceNow tickets with sessions](/docs/privilegesecure/26.07/user-guide/servicenow-tickets.md).
 
 ## How the integration works
 
@@ -28,7 +28,7 @@ Prepare the ServiceNow instance first.
 - The `snc_basic_auth_api_access` role on that account. ServiceNow describes the role as granting basic authentication API access when the instance enforces the basic authentication restriction. Instances that restrict basic authentication reject the account with a generic 401 error without this role, even when the credentials are correct. A developer instance's sample `itil` user has the `itil` role but not this role. When an instance enforces the restriction and the account lacks the role, ServiceNow logs "denied basic-auth API call for interactive-login user" in its system log, and Privilege Secure reports "Unable to reach ServiceNow". To check, open **System Logs** > **System Log** > **All** in ServiceNow and look for "Basic authentication failed for user".
 - A password that you set with the **Set Password** UI action in ServiceNow. Don't set the password by editing the field.
 - The ServiceNow host name, reachable over HTTPS from the Privilege Secure server.
-- A service account in Privilege Secure that holds the integration account's user name and password, to select in **System Credentials**. See [Service accounts](../../configuration/service-accounts/service-accounts.md).
+- A service account in Privilege Secure that holds the integration account's user name and password, to select in **System Credentials**. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 
 The Table API applies the access controls of your instance to the integration account. The account needs access to read the ticket table that the connector uses (`incident` or `change_request`). When **Add Comments To Ticket** is selected, it also needs access to write the **Work notes** and **State** fields of those tickets. In a default instance, the `itil` role grants read and write access to incident and change request records and their work notes. Custom access controls can change this, so check the controls on your instance. See the ServiceNow documentation on incident and change management roles.
 
@@ -49,7 +49,7 @@ The Table API applies the access controls of your instance to the integration ac
 | **Ticket Number Regex** | A regular expression that the ticket number must match. The default is `^INC[\d]{7}$`. Leave it empty to skip the format check. |
 | **Validation Error Message** | The message that users see when the number doesn't match the regular expression. |
 | **Domain Name**\* | The host name of the ServiceNow instance, without `https://`. |
-| **Allowed Statuses** | The ticket statuses that Privilege Secure accepts, separated by commas. The default is `New,In Progress`. Privilege Secure compares each entry with the status label that ServiceNow displays for the ticket, for example `In Progress`, and ignores case. It rejects a ticket in any other status. |
+| **Allowed Statuses** | The ticket statuses that Privilege Secure accepts, separated by commas. The default is `New,In Progress`. Privilege Secure compares each entry with the status label that ServiceNow displays for the ticket, for example `In Progress`, and ignores case. It rejects a ticket in any other status. Leave it empty to skip the status check. |
 | **System Credentials**\* | The credential of the integration account. |
 | **Add Comments To Ticket** | When selected, Privilege Secure adds work notes to the ticket. It's selected by default. |
 
@@ -78,7 +78,7 @@ By default, ServiceNow numbers change requests as `CHG` followed by 7 digits. Th
 
 ## Attach the connector to a connection profile
 
-1. Open the connection profile that your access policies use. See [Connection profiles](../../configuration/access-policies/connection-profiles.md).
+1. Open the connection profile that your access policies use. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 2. Select **Require Ticket Number for Sessions**. The **ServiceNow Connector** list appears.
 3. In **ServiceNow Connector**, select the connector.
 4. Save the profile.
@@ -111,7 +111,7 @@ When **Add Comments To Ticket** is selected, Privilege Secure adds a work note t
 
 If Privilege Secure can't add a work note, the session continues.
 
-When a user ends a session that has a ServiceNow ticket, Privilege Secure asks how to update the ticket: **Keep In Progress**, **On Hold**, or **Resolved**. Privilege Secure applies that status to the ticket. For the user steps, see [Use ServiceNow tickets with sessions](../../user-guide/servicenow-tickets.md).
+When a user ends a session that has a ServiceNow ticket, Privilege Secure asks how to update the ticket: **Keep In Progress**, **On Hold**, or **Resolved**. Privilege Secure applies that status to the ticket. For the user steps, see [Use ServiceNow tickets with sessions](/docs/privilegesecure/26.07/user-guide/servicenow-tickets.md).
 
 ## Known limitation
 

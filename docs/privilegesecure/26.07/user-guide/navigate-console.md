@@ -115,7 +115,6 @@ The console shows a banner at the top of the page when something needs attention
 - "Action Service is not running or registered." appears when the Action Service is down. Tell your administrator.
 - A read-only banner appears when you are in read-only mode and says "You are in read-only mode. Changes are not permitted."
 
-
 ## Take the Product Tour
 
 New users see a product tour the first time they sign in. The tour walks through the parts of the console that apply to your role.

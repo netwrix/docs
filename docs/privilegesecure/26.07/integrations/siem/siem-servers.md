@@ -11,7 +11,7 @@ Privilege Secure can send its events to a security information and event managem
 ## Prerequisites
 
 - A SIEM system that listens for messages on a TCP or UDP port that the Privilege Secure service node can reach.
-- A SIEM template. Privilege Secure includes **CEF** and **LEEF**. See [SIEM templates and event fields](siem-templates.md).
+- A SIEM template. Privilege Secure includes **CEF** and **LEEF**. See [SIEM templates and event fields](/docs/privilegesecure/26.07/integrations/siem/siem-templates.md).
 
 ## Add a SIEM server
 
@@ -58,12 +58,12 @@ Pipe characters (`|`) in the text of an event message are removed before the mes
 
 ## Check what was sent
 
-The SIEM Service page on the **Service Nodes** page lists each event, whether it was sent, and the SIEM server it went to. See [Monitor service nodes](../../admin/service-nodes/service-nodes.md#siem-service).
+The SIEM Service page on the **Service Nodes** page lists each event, whether it was sent, and the SIEM server it went to. See [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md#siem-service).
 
-Privilege Secure can delete sent SIEM records after a number of days. See [Configure data retention](../../configuration/system-settings/data-retention.md).
+Privilege Secure can delete sent SIEM records after a number of days. See [Configure data retention](/docs/privilegesecure/26.07/configuration/system-settings/data-retention.md).
 
 ## Related topics
 
-- [SIEM templates and event fields](siem-templates.md)
-- [Monitor service nodes](../../admin/service-nodes/service-nodes.md#siem-service)
-- [Configure data retention](../../configuration/system-settings/data-retention.md)
+- [SIEM templates and event fields](/docs/privilegesecure/26.07/integrations/siem/siem-templates.md)
+- [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md#siem-service)
+- [Configure data retention](/docs/privilegesecure/26.07/configuration/system-settings/data-retention.md)

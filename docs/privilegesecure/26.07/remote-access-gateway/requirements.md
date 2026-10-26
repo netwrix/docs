@@ -10,7 +10,7 @@ The Remote Access Gateway uses two Windows servers. The portal runs on its own s
 
 ## Privilege Secure version
 
-Install the gateway and portal from the package for your Privilege Secure release, This page covers 26.07.3.
+Install the gateway and portal from the package for your Privilege Secure release. This page covers 26.07.3.
 
 {/* TODO verify: whether a 26.07.3 gateway works with an earlier 26.07 application server. The gateway and portal code has no version check against the application server, and no public source states a supported range. */}
 

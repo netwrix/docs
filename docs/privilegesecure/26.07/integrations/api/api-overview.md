@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Netwrix Privilege Secure has a REST API. Every operation that the console performs goes through this API, so a script or an external tool can do the same work that an administrator does in the console.
 
-The API returns JSON and uses standard HTTP methods. This page describes the conventions that apply to every endpoint. To get a token, see [Authenticate to the API](api-authentication.md).
+The API returns JSON and uses standard HTTP methods. This page describes the conventions that apply to every endpoint. To get a token, see [Authenticate to the API](/docs/privilegesecure/26.07/integrations/api/api-authentication.md).
 
 ## Base URL
 
@@ -18,7 +18,7 @@ The API listens on the same server and port as the console.
 https://<nps-server>:6500/api/v1/
 ```
 
-Each resource group is a controller name appended to the base URL, for example `https://<nps-server>:6500/api/v1/ActivitySession`. A few sign-in endpoints sit at the root of the site instead, such as `https://<nps-server>:6500/signinBody`. See [Authenticate to the API](api-authentication.md).
+Each resource group is a controller name appended to the base URL, for example `https://<nps-server>:6500/api/v1/ActivitySession`. A few sign-in endpoints sit at the root of the site instead, such as `https://<nps-server>:6500/signinBody`. See [Authenticate to the API](/docs/privilegesecure/26.07/integrations/api/api-authentication.md).
 
 :::note
 Use port 6500, the default console port, for API calls. {/* TODO verify: whether changing the web port is supported. The installer binds the site to port 6500, and code and public sources don't state a support position. */}
@@ -46,7 +46,7 @@ A token is valid for 15 minutes by default. The token lifetime is a server setti
 | User | Interactive scripts that run as a person. | User name and password, plus a second factor if the user's authentication connector requires one. |
 | Application user | Unattended automation. | Client certificate serial number and API key. |
 
-For the steps, see [Authenticate to the API](api-authentication.md). To create an application user, see [Add application users](../../admin/users-groups/application-users.md).
+For the steps, see [Authenticate to the API](/docs/privilegesecure/26.07/integrations/api/api-authentication.md). To create an application user, see [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md).
 
 ## Roles and permissions
 
@@ -110,12 +110,12 @@ Use PowerShell 7 or `curl`. If the server certificate isn't trusted for the addr
 Trust the certificate authority (CA) that issued the server certificate instead of turning certificate checks off. With `curl`, point the client at the CA certificate file with `--cacert <ca-certificate-file>`.
 
 :::note
-The `SbPAMPowerShellModules` installer in the installer `Extras` folder installs the `SbPAMAPI` PowerShell module, which wraps these calls with cmdlets such as `Get-SbPAMToken` and `Invoke-SbPAMRest`. The Knowledge Base articles that use it call for PowerShell 7. This guide doesn't document the full cmdlet list.
+The `SbPAMPowershellModules.msi` installer in the `Extras` folder installs the `SbPAMAPI` PowerShell module, which wraps these calls with cmdlets such as `Get-SbPAMToken` and `Invoke-SbPAMRest`. The Knowledge Base articles that use it call for PowerShell 7. This guide doesn't document the full cmdlet list.
 :::
 
 {/* TODO verify: the full cmdlet list for the SbPAMAPI module and its supported PowerShell versions for 26.07. The Knowledge Base articles name PowerShell 7.1 and warn against 7.2 and later, so the shipped installer package must settle it. */}
 
 ## Next steps
 
-- [Authenticate to the API](api-authentication.md)
-- [Add application users](../../admin/users-groups/application-users.md)
+- [Authenticate to the API](/docs/privilegesecure/26.07/integrations/api/api-authentication.md)
+- [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md)

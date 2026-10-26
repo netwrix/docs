@@ -14,7 +14,7 @@ The server details page shows the settings of one server and what Netwrix Privil
 
 | Button | What it does |
 |---|---|
-| **Test** | Tests whether Privilege Secure can connect to the server. A window shows the status and any messages. |
+| **Test** | Tests whether Privilege Secure can connect to the server. A window shows the status and any messages. The button appears only for Windows and Hyper-V servers. |
 | **Scan Now** | Scans the server for local users, groups, services, scheduled tasks, and databases. On a Windows server, the scan also collects the installed Windows features. |
 | **WinRM Config** | Opens the **Configure Secure WinRM Connection** window. The button appears only for Windows servers. See [Configure a secure WinRM connection](/docs/privilegesecure/26.07/resources/secure-winrm.md). |
 

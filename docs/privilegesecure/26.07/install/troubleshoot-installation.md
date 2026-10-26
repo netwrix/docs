@@ -54,7 +54,7 @@ Check these causes:
 
 - **Not enough free space.** The message says the drive requires at least a given amount of free space and reports how much is available. The drive needs at least as much free space as the PostgreSQL 12 data folder. Free space, and run the migration again.
 - **Unsupported locale.** The message says the locale isn't supported by the target database. Set the Windows regional format to **English (United States)**, and run the migration again.
-- **Other errors.** Open `NPS-PGUpgrade` and `NPS-PGUpgradeErr` in the log folder, and contact [Netwrix Support](https://www.netwrix.com/support.html) with the files.
+- **Other errors.** Open the `PGUpgrade_out` and `PGUpgrade_err` files in the log folder, and contact [Netwrix Support](https://www.netwrix.com/support.html) with the files.
 
 ## Install completes, but the database looked unreachable
 
@@ -85,7 +85,7 @@ The installer runs the import only on a new installation or an upgrade, so runni
 
 **Cause:** The **NPS Rest URL** ends with a slash, for example `https://<nps-server>:6500/`.
 
-**Fix:** Remove the trailing slash, and register the services again. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md). Release 26.07.3 removes the trailing slash automatically.
+**Fix:** Remove the trailing slash, and register the services again. For the steps, see [Services return HTTP 500, or sessions stay in Provisioning](/docs/privilegesecure/26.07/troubleshooting/services.md#services-return-http-500-or-sessions-stay-in-provisioning).
 
 ## Single sign-on stops working after an upgrade
 

@@ -22,7 +22,7 @@ A new policy form starts with these values.
 | **Max Consecutive Chars** | 2 |
 | **Include Characters** | **Lowercase** and **Numbers** selected; **Uppercase** cleared |
 
-The form accepts a **Length** from 5 to 19 characters. The maximum account name length is 19 characters.
+The form accepts a **Length** from 5 to 19 characters. When a connection profile uses the built-in `<default>` policy, Privilege Secure generates names of 20 characters.
 
 ## Create an activity token complexity policy
 
@@ -76,7 +76,7 @@ The characters that the console always excludes are `/`, `\`, `"`, `[`, `]`, `:`
 1. In the **Session Control** section, select the policy in **Activity Token Complexity Policy**.
 1. Click **Save**.
 
-See [Connection profiles](connection-profiles.md).
+See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ## Delete a policy
 
@@ -84,5 +84,5 @@ Point to a policy in the list, click the trash icon, and confirm.
 
 ## Related topics
 
-- [Connection profiles](connection-profiles.md)
-- [Activities](../activities/activities.md)
+- [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)
+- [Activities](/docs/privilegesecure/26.07/configuration/activities/activities.md)

@@ -12,11 +12,11 @@ Privilege Secure has a built-in vault for credential management. Many organizati
 
 A vault connector is an integration connector. You create it under **Configuration** > **Integration Connectors**. An activity then uses the connector as follows:
 
-1. You create an activity with **Login Account** set to **Vault** and select the connector in **Vault Connector**. See [Create an activity](../../configuration/activities/create-activity.md).
+1. You create an activity with **Login Account** set to **Vault** and select the connector in **Vault Connector**. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
 2. Privilege Secure fills the **Pre-Session (Grant)** group with **Check-out Credential** and the **Post-Session (Remove)** group with **Check-in Credential**.
 3. When a session starts, the connector checks out the credential from the vault. When the session ends, the connector checks the credential back in.
 
-To let the user see the password that the vault supplies, select **Allow User to Access Password** in the connection profile. See [Connection profiles](../../configuration/access-policies/connection-profiles.md).
+To let the user see the password that the vault supplies, select **Allow User to Access Password** in the connection profile. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ## Where the connector runs
 
@@ -30,17 +30,17 @@ Each built-in connector connects to the address in its own settings. CyberArk, H
 
 | Connector template | Source of the credentials | Page |
 |---|---|---|
-| **BYOV** | Any vault, through PowerShell scripts that you provide. Also Privilege Secure itself. | [Bring Your Own Vault connector](byov.md) |
-| **CyberArk** | CyberArk | [CyberArk integration](cyberark.md) |
-| **HashiCorp** | HashiCorp Vault | [HashiCorp Vault integration](hashicorp.md) |
-| **LAPS** | Local administrator passwords in Active Directory | [LAPS integration](laps.md) |
-| **Password Secure** | Netwrix Password Secure | [Netwrix Password Secure integration](password-secure.md) |
+| **BYOV** | Any vault, through PowerShell scripts that you provide. Also Privilege Secure itself. | [Bring Your Own Vault connector](/docs/privilegesecure/26.07/integrations/vaults/byov.md) |
+| **CyberArk** | CyberArk | [CyberArk integration](/docs/privilegesecure/26.07/integrations/vaults/cyberark.md) |
+| **HashiCorp** | HashiCorp Vault | [HashiCorp Vault integration](/docs/privilegesecure/26.07/integrations/vaults/hashicorp.md) |
+| **LAPS** | Local administrator passwords in Active Directory | [LAPS integration](/docs/privilegesecure/26.07/integrations/vaults/laps.md) |
+| **Password Secure** | Netwrix Password Secure | [Netwrix Password Secure integration](/docs/privilegesecure/26.07/integrations/vaults/password-secure.md) |
 
 ### Choose a connector
 
 - Use the connector that matches your vault, when one exists.
 - Use **BYOV** when your vault has no dedicated connector. You write the check-out and check-in scripts.
-- Use **BYOV** with Privilege Secure as the vault to use accounts that you store in a secret vault, or manual accounts, in an activity. See [Secret vaults](../../resources/secret-vaults.md).
+- Use **BYOV** with Privilege Secure as the vault to use accounts that you store in a secret vault, or manual accounts, in an activity. See [Secret vaults](/docs/privilegesecure/26.07/resources/secret-vaults.md).
 - Use **LAPS** when Active Directory manages the local administrator passwords.
 
 ## Check-in

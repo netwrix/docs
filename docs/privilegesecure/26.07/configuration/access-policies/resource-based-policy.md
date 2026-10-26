@@ -6,12 +6,12 @@ sidebar_position: 20
 
 # Create a resource-based access policy
 
-A resource-based access policy lets users run activities on resources such as computers, databases, and network equipment. For an overview of policies, see [Access policies](overview.md).
+A resource-based access policy lets users run activities on resources such as computers, databases, and network equipment. For an overview of policies, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
 ## Prerequisites
 
-- A [connection profile](connection-profiles.md). The **Connection Profile** field is required on every policy.
-- The [activities](../activities/activities.md) that you want users to run.
+- A [connection profile](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md). The **Connection Profile** field is required on every policy.
+- The [activities](/docs/privilegesecure/26.07/configuration/activities/activities.md) that you want users to run.
 - The users, groups, and resources that you want to include. The resources must already be onboarded.
 
 ## Create the policy
@@ -54,7 +54,7 @@ The table has these columns:
 
 When you search for a user who isn't in the policy, an **Add User** box appears. Click it to open the add window with the search results.
 
-For more on user types, see [Add domain users and groups](../../admin/users-groups/add-users-groups.md) and [User and group collections](../../admin/users-groups/collections.md).
+For more on user types, see [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md) and [User and group collections](/docs/privilegesecure/26.07/admin/users-groups/collections.md).
 
 The **CERTIFIED** column shows an icon for each user, application, and local user:
 
@@ -64,7 +64,7 @@ The **CERTIFIED** column shows an icon for each user, application, and local use
 
 Expand a row to see the details under the headings **Access Approved**, **Access Denied**, and **Not Certified**. Each list shows the activity, the resource or credential, and, for reviewed items, the access certification that made the decision. Under **Access Denied**, the **Enable** column has an unlock icon for each row. Click the icon and confirm the prompt to remove that denial. Only administrators can do this.
 
-For how access certification affects a policy, see [Run an access certification](../../admin/audit-reporting/access-certification.md).
+For how access certification affects a policy, see [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md).
 
 ## Add activities and activity groups
 
@@ -78,7 +78,7 @@ On the **Activities** tab, you choose what users can do.
 
 The table has the columns **NAME**, **TYPE**, and **DESCRIPTION**. The type icon shows whether a row is an activity or an activity group. To remove an item, select its checkbox and click **Remove**.
 
-To create activities and groups, see [Activities](../activities/activities.md) and [Activity groups](../activities/activity-groups.md).
+To create activities and groups, see [Activities](/docs/privilegesecure/26.07/configuration/activities/activities.md) and [Activity groups](/docs/privilegesecure/26.07/configuration/activities/activity-groups.md).
 
 ## Add resources and resource groups
 
@@ -104,9 +104,9 @@ To remove an item, select its checkbox and click **Remove**.
 
 ## Related topics
 
-- [Access policies](overview.md)
-- [Connection profiles](connection-profiles.md)
-- [Create a credential-based access policy](credential-based-policy.md)
+- [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md)
+- [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)
+- [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md)
 
 {/* TODO screenshot: the Users tab of a resource-based policy, showing the Type and Connection Profile fields and the three tabs. */}
 {/* TODO screenshot: the Add Activities and Activity Groups window with the two panes. */}

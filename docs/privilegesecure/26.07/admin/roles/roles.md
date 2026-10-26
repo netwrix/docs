@@ -59,7 +59,7 @@ Custom roles and the **Auditors** role are built from permissions. A role has on
 | Auditors | **Live Session Viewer** | Watch sessions in progress. |
 | Auditors | **Terminate Session** | End a live session. Requires **Live Session Viewer**. |
 | Auditors | **Lock Session** | Lock a live session. Requires **Live Session Viewer**. |
-| Auditors | **Reporting** | Create, change, and delete reports. |
+| Auditors | **Reporting** | Create, change, delete, and run reports. |
 | Auditors | **Admin View Read Only** | Open every administration page without the ability to change settings. See [Give auditors read-only console access](/docs/privilegesecure/26.07/admin/roles/admin-view-read-only.md). |
 | Access Policies | **Modify Name**, **Modify Description**, **Modify Connection Profile**, **Modify Activities**, **Modify Users**, **Modify Resources** | Change the named part of an access policy. |
 | Credentials | **Manage**, **Unmanage**, **Schedule Rotation**, **Verify**, **View Password**, **Rotate Services** | Perform the named action on credentials. |

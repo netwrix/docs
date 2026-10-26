@@ -70,10 +70,10 @@ The pane also shows the number of lines.
 
 ## Download logs
 
-Click **Download Logs** above the log list to download the logs, for example to send them to support.
+Select **Download Logs** above the log list to download the logs, for example to send them to support.
 
 1. In the **Download Logs** window, set **Start Date** and **End Date**. The start date can't be in the future or after the end date.
-2. Click **Download**.
+2. Select **Download**.
 
 The download is a ZIP file named `nps-logs.zip`. It contains every log file in the log folder of the server that runs the console whose dates fall in the range, not only the selected log.
 
@@ -84,10 +84,10 @@ The log level controls how much detail a service writes. Set a more detailed lev
 {/* TODO verify: whether Verbose and Debug write sensitive data to the logs of services other than the Remote Access Gateway. The release source states this only for the gateway, and no code or public source settles the others. */}
 
 1. Select a log file.
-2. Click **Options** (the gear icon) above the log list. The **\<Service\> Options** window opens for the service that wrote that log.
-3. Click a field to edit it.
+2. Select **Options** (the gear icon) above the log list. The **\<Service\> Options** window opens for the service that wrote that log.
+3. Select a field to edit it.
 4. Set **Minimum Log Level**, **Retained File Count Limit** (1 to 40), or **File Size Limit Bytes** (1 to 250,000,000).
-5. Click **Save**. Click **Cancel** to discard your changes.
+5. Select **Save**. Select **Cancel** to discard your changes.
 
 For example, when support asks for detailed logs, select the Action Service and set **Minimum Log Level** to **Debug**. After you collect the logs, set it back to **Information**.
 

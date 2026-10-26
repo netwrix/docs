@@ -21,10 +21,10 @@ Internal accounts rotate on the primary domain controller (PDC) of the domain.
 
 ## Manage an internal service account
 
-1. In the left navigation, click **Credentials**.
+1. In the left navigation, select **Credentials**.
 2. Open the **Managed type** filter and select **Internal**.
 3. Select the checkbox for the account.
-4. Click **Manage**.
+4. Select **Manage**.
 
    {/* TODO screenshot: the Manage dialog for an internal service account */}
 
@@ -34,7 +34,7 @@ Internal accounts rotate on the primary domain controller (PDC) of the domain.
    - **Manual**: You manage the account and its password. A dialog opens so you can set the password.
    - **Cancel**: Closes the dialog without changes.
 
-For example, select an internal account named `<internal-account>` and click **Manage**. Choose **Automatic** to let Privilege Secure rotate the password on the schedule that applies to the account.
+For example, select an internal account named `<internal-account>`, and then select **Manage**. Choose **Automatic** to let Privilege Secure rotate the password on the schedule that applies to the account.
 
 ## Resolve "No matching user found"
 
@@ -50,7 +50,7 @@ If the dialog shows the message "No matching user found", Privilege Secure can't
 If you choose **Manual**, a dialog opens to set the password for the credential.
 
 1. In the **Set Password for Credential** window, enter the password in **Password**. Use the eye icon to show or hide what you type.
-2. Click **Save**. **Save** stays unavailable until you enter a password.
+2. Select **Save**. **Save** stays unavailable until you enter a password.
 
 The window reminds you that the password must match the account password on the platform. For a manually managed account, Privilege Secure doesn't change the password on the target.
 

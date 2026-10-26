@@ -20,7 +20,7 @@ A connection to a resource is optional. The session request doesn't require reso
 ## Create the activity
 
 1. Click **Activities** in the left navigation pane, and then click the green **+** button.
-2. Enter a name, select a **Login Account** (not Vault or Resource), and select an **Activity Type**. See [Create an activity](create-activity.md) for the other fields.
+2. Enter a name, select a **Login Account** (not Vault or Resource), and select an **Activity Type**. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md) for the other fields.
 3. Click **Save**. The action groups are disabled until you save the activity.
 4. In the **Pre-Session (Grant)** group, click the green **+** button.
 5. In **Add Action to Pre-Session Group**, open **Action Type** and select **Add User to Groups & Roles (User Selected)**.
@@ -32,7 +32,7 @@ A connection to a resource is optional. The session request doesn't require reso
 8. Confirm the selection. The button changes to **Change Groups/Roles** and the action lists the selected items. Select at least one group or role. The console shows "Please select at least one group or role" if you select none.
 9. Click **Okay**.
 
-Privilege Secure creates the paired action **Remove User from Groups & Roles (User Selected)** in the **Post-Session (Remove)** group. This action removes the user from the groups and roles when the session ends. See [Action types reference](action-types.md) for both action types.
+Privilege Secure creates the paired action **Remove User from Groups & Roles (User Selected)** in the **Post-Session (Remove)** group. This action removes the user from the groups and roles when the session ends. See [Action types reference](/docs/privilegesecure/26.07/configuration/activities/action-types.md) for both action types.
 
 For example, to let users request temporary membership in the **Domain Admins** group, add that Active Directory group in step 7.
 
@@ -59,14 +59,14 @@ When a user requests a session for one of these activities, the request dialog i
 3. Select the groups and roles to join during the session. The list shows only the groups and roles that the administrator added to the activity.
 4. Continue through the remaining steps and finish the request.
 
-The step shows the message "Resource selection is not required for this activity." For the other steps of a request, see [Request a session](../../user-guide/request-session.md).
+The step shows the message "Resource selection is not required for this activity." For the other steps of a request, see [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md).
 
 ## Session length
 
-The session length follows the **Max Duration** setting of the connection profile in the access policy. See [Connection profiles](../access-policies/connection-profiles.md).
+The session length follows the **Max Duration** setting of the connection profile in the access policy. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ## Give users access to the activity
 
-An activity runs only when an access policy includes it. Add the activity, or an activity group that contains it, to the **Activities** tab of an access policy that includes the users. See [Create a resource-based access policy](../access-policies/resource-based-policy.md).
+An activity runs only when an access policy includes it. Add the activity, or an activity group that contains it, to the **Activities** tab of an access policy that includes the users. See [Create a resource-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md).
 
 A resource-based policy doesn't need a resource for these activities. The request skips the resource requirement, and the dashboard card reads "No resources required". Add these activities to a resource-based policy. The console doesn't offer **Add** on the **Activities** tab of a credential-based policy.

@@ -11,9 +11,9 @@ An access policy grants users just-in-time access. It defines who can run which 
 Each access policy combines four things:
 
 - **Who:** users, groups, collections, application users, and local users.
-- **What:** activities and activity groups. See [Activities](../activities/activities.md).
+- **What:** activities and activity groups. See [Activities](/docs/privilegesecure/26.07/configuration/activities/activities.md).
 - **Where:** resources and resource groups for a resource-based policy, or credentials and files for a credential-based policy.
-- **How:** one connection profile, which sets the session rules. See [Connection profiles](connection-profiles.md).
+- **How:** one connection profile, which sets the session rules. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ## Policy types
 
@@ -21,16 +21,16 @@ Every access policy has one of two types.
 
 | Type | Use it to | Page |
 |---|---|---|
-| **Resource Based** | Let users run activities on remote devices such as computers, databases, and network equipment. | [Create a resource-based access policy](resource-based-policy.md) |
-| **Credential Based** | Let users check out managed credentials, and credentials and files that are stored in a secret vault. | [Create a credential-based access policy](credential-based-policy.md) |
+| **Resource Based** | Let users run activities on remote devices such as computers, databases, and network equipment. | [Create a resource-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md) |
+| **Credential Based** | Let users check out managed credentials, and credentials and files that are stored in a secret vault. | [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md) |
 
 ## Access Policy menu
 
 In the console, the left navigation has an **Access Policy** item. It expands to these pages:
 
-- **Connection Profiles**. See [Connection profiles](connection-profiles.md).
-- **Activity Token Complexity**. See [Activity token complexity](activity-token-complexity.md).
-- **Command Restriction**. See [Restrict SSH commands](command-restrictions.md).
+- **Connection Profiles**. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
+- **Activity Token Complexity**. See [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md).
+- **Command Restriction**. See [Restrict SSH commands](/docs/privilegesecure/26.07/configuration/access-policies/command-restrictions.md).
 
 Select **Access Policy** to open the policy list.
 
@@ -72,9 +72,9 @@ Custom roles can delegate parts of policy management. The permissions are **Modi
 
 ## Set up access policies
 
-1. Create or review the [connection profile](connection-profiles.md) that the policy uses.
-2. Create the [activities](../activities/activities.md) that users need, and optionally [activity groups](../activities/activity-groups.md).
-3. Create a [resource-based policy](resource-based-policy.md) or a [credential-based policy](credential-based-policy.md).
+1. Create or review the [connection profile](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md) that the policy uses.
+2. Create the [activities](/docs/privilegesecure/26.07/configuration/activities/activities.md) that users need, and optionally [activity groups](/docs/privilegesecure/26.07/configuration/activities/activity-groups.md).
+3. Create a [resource-based policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md) or a [credential-based policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md).
 4. Add users, activities, and resources or credentials to the policy.
 
 ![The Access Policy page with the policy list on the left and the CentOS Linux Server Administrator policy open on its Users tab, listing the NPS Administrators and NPS Users groups.](/images/privilegesecure/26.07/configuration/access-policy-list-users-tab.webp)

@@ -16,12 +16,11 @@ The procedure is the same for every service:
 
 ## Before you begin
 
-- Register the Proxy Service on the remote server before you register these services. The Action, Scheduler, and SIEM installers add the Proxy Service if it is missing. For Host Scan, install the Proxy Service separately or install the Action Service first. See [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
-- To install the Host Scan Service, install the Action Service on the same server first. The Host Scan Service depends on the Action Service worker.
+- Register the Proxy Service on the remote server before you register these services. The Action, Scheduler, and SIEM installers add the Proxy Service if it is missing. The Host Scan installer doesn't, so install the Proxy Service on that server first. See [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
 - Set the antivirus exclusions on the remote server. See [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software).
 - Find the installer in the **Extras** folder of the product zip file. See [Installation package contents](/docs/privilegesecure/26.07/install/components.md).
 
-The Action, Scheduler, and SIEM installers also add the Proxy Service if it is missing, along with the Microsoft Visual C++ runtime and the key tools. The Host Scan installer is an `.msi` file and installs only the Host Scan Service.
+The Action, Scheduler, and SIEM installers also add the Proxy Service if it is missing, along with the Microsoft Visual C++ runtime and the key tools. The Host Scan installer is an `.msi` file. It installs the Host Scan Service and the Action Service worker files that the Host Scan Service uses, but not the Proxy Service.
 
 | Service | Installer |
 | --- | --- |

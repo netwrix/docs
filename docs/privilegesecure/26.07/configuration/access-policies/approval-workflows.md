@@ -12,9 +12,9 @@ A workflow is a list of tiers. Each tier has its own approvers, the number of ap
 
 ## Prerequisites
 
-- A connection profile to edit. See [Connection profiles](connection-profiles.md).
-- The approvers exist in the console as domain users or groups of domain users, and Privilege Secure manages each domain user. See [Add users and groups](../../admin/users-groups/add-users-groups.md).
-- Email is configured, so that approvers and requesters receive notifications. See [Configure email notifications](../system-settings/email.md).
+- A connection profile to edit. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
+- The approvers exist in the console as domain users or groups of domain users, and Privilege Secure manages each domain user. See [Add users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
+- Email is configured, so that approvers and requesters receive notifications. See [Configure email notifications](/docs/privilegesecure/26.07/configuration/system-settings/email.md).
 
 ## Approval workflow options
 
@@ -96,12 +96,12 @@ Tiers run in order. The next tier starts only after the previous tier approves, 
 
 ## Approve a request
 
-Approvers see pending requests on the **Approvals** tab of the dashboard. See [Approve or deny session requests](../../user-guide/approve-requests.md).
+Approvers see pending requests on the **Approvals** tab of the dashboard. See [Approve or deny session requests](/docs/privilegesecure/26.07/user-guide/approve-requests.md).
 
 A requester who is also listed as an approver, whether directly or through a group, isn't notified and isn't asked to approve their own session. Another approver must approve it.
 
 ## Related topics
 
-- [Connection profiles](connection-profiles.md)
-- [Access policies](overview.md)
-- [Configure email notifications](../system-settings/email.md)
+- [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)
+- [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md)
+- [Configure email notifications](/docs/privilegesecure/26.07/configuration/system-settings/email.md)

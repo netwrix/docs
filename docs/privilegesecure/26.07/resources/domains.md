@@ -134,6 +134,7 @@ To onboard computers as resources:
 The computers appear on the Resources page as hosts. To stop managing a computer, select it and select **Remove as NPS Managed Resource**.
 
 If Privilege Secure can't add the selected computers, the console shows the error message that the server returns.
+
 {/* TODO screenshot: the window that opens from Add as NPS Managed Resource. */}
 
 ### History tab

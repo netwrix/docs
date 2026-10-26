@@ -8,14 +8,14 @@ sidebar_position: 20
 
 Every call to the Privilege Secure REST API, except the sign-in calls, needs a bearer token. This page shows how to get a token as a user and as an application user, how to renew it, and how to use it.
 
-A token is valid for 15 minutes by default. For the other conventions of the API, see [REST API overview](api-overview.md).
+A token is valid for 15 minutes by default. For the other conventions of the API, see [REST API overview](/docs/privilegesecure/26.07/integrations/api/api-overview.md).
 
 ## Prerequisites
 
 - Network access to `https://<nps-server>:6500`.
 - Your client trusts the certificate authority (CA) that issued the server certificate. For PowerShell, add the CA certificate to the operating system trust store. For `curl`, the examples use `<ca-certificate-file>`, the CA certificate file.
-- For a user token: a console user, and the second-factor code if the user's authentication connector requires one. See [Authentication methods](../../configuration/authentication/overview.md) and [User and group details](../../admin/users-groups/user-details.md).
-- For an application user token: an application user and a client certificate whose serial number is saved on that user. See [Add application users](../../admin/users-groups/application-users.md).
+- For a user token: a console user, and the second-factor code if the user's authentication connector requires one. See [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md) and [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
+- For an application user token: an application user and a client certificate whose serial number is saved on that user. See [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md).
 - PowerShell 7 or `curl`. `Invoke-RestMethod` in Windows PowerShell 5.1 can fail to open the TLS connection to the Privilege Secure server, with the error "The underlying connection was closed".
 
 ## Get a token as a user
@@ -142,5 +142,5 @@ The server revokes the token in the `Authorization` header. It ignores the `<use
 
 ## Next steps
 
-- [REST API overview](api-overview.md)
-- [Add application users](../../admin/users-groups/application-users.md)
+- [REST API overview](/docs/privilegesecure/26.07/integrations/api/api-overview.md)
+- [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md)

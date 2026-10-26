@@ -23,7 +23,7 @@ Users of the Remote Access Gateway portal can't replay recordings. View recordin
 
 1. Open the **Historical** tile. See [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md).
 2. Find the session. To find text that was typed in a session, enter it in the **Recording data** search box. Matching rows expand on their own and list each match.
-3. Click the expand icon on the row, then click the entry with the play icon, for example `RDP Session completed at <time>.` Click a search match to start playback at that point. If the entry has no play icon, the session wasn't recorded or you don't have permission to view the recording.
+3. Select the expand icon on the row, then select the entry with the play icon, for example `RDP Session completed at <time>.` Select a search match to start playback at that point. If the entry has no play icon, the session wasn't recorded or you don't have permission to view the recording.
 
 {/* TODO screenshot: Historical sessions dashboard showing a session that has a recording */}
 
@@ -39,7 +39,7 @@ For example, to review what an administrator typed on `<server-name>` yesterday,
 | SSH | SSH sessions |
 | Website | Website sessions |
 
-{/* TODO verify: which resource types start RDP, SSH, and website sessions, for example whether Active Directory domain and Microsoft Entra ID resources use RDP or website sessions. The console decides the viewer from the session protocol, not from the resource type. */}
+{/* TODO verify: whether Active Directory domain and Microsoft Entra ID resources start RDP sessions or website sessions. The console picks the viewer from the session protocol. The release code gives Website resources their own session path but doesn't settle the other resource types. */}
 
 ![The Replay Viewer playing an RDP session, with the event timeline, the playback controls, and the user, target, and activity details.](/images/privilegesecure/26.07/admin/replay-viewer-rdp.webp)
 

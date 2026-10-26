@@ -15,6 +15,16 @@ The `SbPAM.RotateAwsKey` tool applies an Amazon Web Services (AWS) Key Managemen
 - Back up the database and the encryption key files. See [Encryption key management](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md).
 - Sign in to the application server as an administrator.
 
+## Tool actions
+
+| Option | Effect |
+|---|---|
+| **Create Key** | Generates a key that AWS KMS protects. It doesn't make the key current, and it doesn't re-encrypt the stored secrets. |
+| **Rotate Key** | Generates a key that AWS KMS protects, makes it the current key, and re-encrypts the stored secrets with it. |
+| **Update Key** | Replaces the access key and secret key that are stored with the current key. The stored KMS key and Region stay the same, and the stored secrets aren't re-encrypted. **KMS Key** and **Region** aren't available. |
+
+**Use EC2 Instance Profile** fills both key boxes with `<EC2>`. Privilege Secure then uses the credentials of the instance profile and stores no access key.
+
 ## Apply or rotate the KMS key
 
 1. Open the `KeyTools` folder in the installation directory. The default is `C:\Program Files\Stealthbits\PAM\KeyTools`.
@@ -22,7 +32,7 @@ The `SbPAM.RotateAwsKey` tool applies an Amazon Web Services (AWS) Key Managemen
 1. Enter the **Access Key** and the **Secret Key** of the AWS user. If the server runs on Amazon Elastic Compute Cloud (EC2) and uses an instance profile, select **Use EC2 Instance Profile** instead.
 1. In **KMS Key**, enter the ARN of the KMS key.
 1. In **Region**, select the AWS Region of the key.
-1. Select **Rotate Key**.
+1. Select the action. To apply a key or rotate it, select **Rotate Key**. See [Tool actions](#tool-actions).
 1. Select **Run Action**.
 
 The log window shows the progress and the result. The tool takes a few minutes, especially on a large system, because it re-encrypts all stored secrets. When it finishes, the log shows "Protect key Rotate successful".
@@ -34,16 +44,6 @@ Other servers that share the database need the new key. See [Export and import t
 The export reads the key through AWS KMS, so run it on a server that has working AWS access. The import writes the key on the other server protected by that server's Windows machine key, not by AWS KMS, and the other server needs no AWS access to use it.
 
 {/* TODO verify: whether Netwrix supports protecting the key on an additional server with AWS KMS. The tools in the release have no command that re-protects an imported key with AWS KMS, and public sources don't state a supported procedure. */}
-
-### Choose the action
-
-| Option | Effect |
-|---|---|
-| **Create Key** | Generates a key that AWS KMS protects. It doesn't make the key current, and it doesn't re-encrypt the stored secrets. |
-| **Rotate Key** | Generates a key that AWS KMS protects, makes it the current key, and re-encrypts the stored secrets with it. |
-| **Update Key** | Replaces the access key and secret key that are stored with the current key. The stored KMS key and Region stay the same, and the stored secrets aren't re-encrypted. **KMS Key** and **Region** aren't available. |
-
-**Use EC2 Instance Profile** fills both key boxes with `<EC2>`. Privilege Secure then uses the credentials of the instance profile and stores no access key.
 
 ## Rotate the KMS key in AWS
 

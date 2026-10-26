@@ -50,7 +50,7 @@ The Remote Access Gateway lets external users start browser-based RDP and SSH se
 |---|---|---|
 | Portal | In the DMZ. It runs on nginx as the `SbPAMRagPortal` Windows service and is the entry point for external users. | TCP 443, with TCP 80 redirecting to HTTPS |
 | Gateway | Inside the network. It is an IIS site that passes a fixed set of requests from the Portal to the console. | TCP 6550 |
-| guacd | On the Gateway host under Windows Subsystem for Linux 2 (WSL 2). It is the Apache Guacamole 1.6.0 daemon and runs in Docker. {/* TODO verify: whether Netwrix supports guacd on a separate Linux host. */} | TCP 4822 |
+| guacd | On the Gateway host under Windows Subsystem for Linux 2 (WSL 2). It is the Apache Guacamole 1.6.0 daemon and runs in Docker. {/* TODO verify: the gateway setup script accepts any guacd host name (-NPSGuacdHost), but whether Netwrix supports guacd on a separate Linux host instead of WSL 2 is a product decision. */} | TCP 4822 |
 
 A browser session follows this path:
 

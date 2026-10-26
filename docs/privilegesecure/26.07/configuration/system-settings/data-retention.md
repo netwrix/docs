@@ -35,9 +35,9 @@ Deleted data can't be recovered. Privilege Secure deletes records older than the
 
 ## When the cleanup runs
 
-The cleanup runs when the web service starts and then every 24 hours. Each run deletes a limited number of records, so a large backlog takes several days to clear. The run deletes SIEM and email records in batches, up to 500,000 rows for each table. From Privilege Secure 26.07.3, deletion runs faster than in earlier releases.
+By default, the cleanup runs when the web service starts and then every 24 hours. Each run deletes a limited number of records, so a large backlog takes several days to clear. The run deletes SIEM and email records in batches, up to 500,000 rows for each table. From Privilege Secure 26.07.3, deletion runs faster than in earlier releases.
 
-{/* TODO verify: Support to confirm whether changing the data-retention cleanup interval is a supported customer setting. */}
+{/* TODO verify: Support to confirm whether changing the data-retention cleanup interval is a supported customer setting. The 26.07.3 web service reads the interval from the JobSettings:DataRetentionCleanupTimerMinutes setting. The default is 1440 minutes, and the code clamps any value to the range 60 to 1440. Don't document the setting until Support approves it. */}
 
 ## Session recording retention
 

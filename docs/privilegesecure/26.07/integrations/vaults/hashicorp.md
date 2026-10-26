@@ -11,7 +11,7 @@ The HashiCorp connector lets Netwrix Privilege Secure check out account credenti
 - **Service accounts**, such as the account that synchronizes Active Directory.
 - **Activities** that use the **Vault** login account to sign in to a resource.
 
-The connector uses the HashiCorp Vault Active Directory secrets engine. The engine groups usernames and passwords into libraries. When Privilege Secure checks out an account from a library, the engine chooses which account in the library it returns, so the account can differ from one check-out to the next. For how vault connectors work in general, see [Third-party vault connectors](vault-connectors.md).
+The connector uses the HashiCorp Vault Active Directory secrets engine. The engine groups usernames and passwords into libraries. When Privilege Secure checks out an account from a library, the engine chooses which account in the library it returns, so the account can differ from one check-out to the next. For how vault connectors work in general, see [Third-party vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md).
 
 {/* TODO verify: whether the LDAP secrets engine works with this connector. HashiCorp documents library check-out and check-in endpoints with the same request and response fields for that engine, but the connector splits the returned account name at `@`. HashiCorp's public LDAP API documentation shows library service accounts named in `user@domain` form, so the engine likely works when the library's accounts are named that way. Confirm on a dev Vault, and confirm that API Url plus library resolves to the engine's mount path. */}
 
@@ -59,8 +59,8 @@ Privilege Secure builds the check-out request by joining the **API Url** and the
 
 Enter the library in the following places:
 
-- In a service account, in the **Library** field that appears when you select the HashiCorp connector. See [Service accounts](../../configuration/service-accounts/service-accounts.md).
-- In an activity that uses the **Vault** login account and the HashiCorp connector. See [Create an activity](../../configuration/activities/create-activity.md).
+- In a service account, in the **Library** field that appears when you select the HashiCorp connector. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
+- In an activity that uses the **Vault** login account and the HashiCorp connector. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
 
 On the activity form, the **Vault Connector** list sits under **Login Account Template**, after you select **Vault** as the **Login Account**.
 

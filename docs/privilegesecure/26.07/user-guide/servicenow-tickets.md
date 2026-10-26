@@ -55,7 +55,9 @@ When you end a session that has a ServiceNow ticket, the console shows a dialog 
 
 1. Click **Dashboard** in the left navigation, then click the **Active** tile.
 2. Select the session and click **End Session**.
-3. Click the state to set: **Keep In Progress** (leaves the ticket state unchanged), **On Hold**, or **Resolved**. If the connector has **Add Comments to Ticket** on, **On Hold** and **Resolved** set the ticket to the ServiceNow state with that name. Otherwise the ticket state doesn't change. The session ends. Click **Cancel** to keep the session running.
+3. Click the state to set: **Keep In Progress** (leaves the ticket state unchanged), **On Hold**, or **Resolved**. If the connector has **Add Comments to Ticket** on, **On Hold** and **Resolved** set the ticket to the ServiceNow state with that name. Otherwise the ticket state doesn't change.
+
+   The session ends. To keep the session running, click **Cancel** instead.
 
 {/* TODO screenshot: the End Session dialog with Keep In Progress, On Hold, and Resolved. The lab has no ServiceNow connector. */}
 

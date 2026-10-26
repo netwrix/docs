@@ -20,8 +20,6 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) manages resour
 | Microsoft SQL Server | A database instance. |
 | Oracle | A container database instance. |
 
-Privilege Secure also manages websites and secret vaults. For their settings, see [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
-
 {/* TODO verify: whether Windows Server 2008 R2 and PowerShell 5.1 are still the supported minimums for 26.07 targets. The release code still handles Windows Server 2008 R2, but code doesn't state a support policy. */}
 
 For BSD targets, the service account signs in over SSH and runs commands with `sudo`. The command plans use the FreeBSD `pw` utility. For PAN-OS targets, Privilege Secure manages administrator accounts through the PAN-OS XML API over HTTPS at the device's address.
@@ -30,7 +28,7 @@ Privilege Secure also supports any device that accepts an SSH connection, and an
 
 Privilege Secure has no Arista-specific platform in 26.07.
 
-For the full platform list and settings, see [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
+Websites and secret vaults are platforms too. For the full platform list and their settings, see [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
 
 ## Service account permissions
 
@@ -40,7 +38,7 @@ For the full platform list and settings, see [Platforms](/docs/privilegesecure/2
 | Standalone Windows servers and desktops | Membership in the local Administrators group on each server or desktop. |
 | Linux | A service account on each server, or a central domain account for hosts bridged to Active Directory. The account is root, or has permissions delegated through sudo or another least-privilege solution. |
 | Cisco | Level 15 Privileged EXEC, which gives full access for configuration and management. |
-| Microsoft Entra ID | Microsoft Graph application permissions `Directory.ReadWrite.All`, `Group.ReadWrite.All`, `User.ReadWrite.All`, and `RoleManagement.ReadWrite.Directory`. Delegated permission `User.Read`. The app registration is a member of the User Administrators directory role. |
+| Microsoft Entra ID | An app registration with Microsoft Graph application permissions and Entra directory role assignments. For the permission and role list, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md). |
 | Oracle | `SYSDBA` privileges. |
 | Microsoft SQL Server | `sysadmin` privileges. |
 
@@ -58,7 +56,7 @@ Privilege Secure manages Windows hosts through PowerShell remoting over WinRM. O
 
 When a Windows resource must reach a domain controller during a host scan, the request makes a second network hop from the resource to the domain controller. This second hop needs Kerberos delegation between the resource and the domain controller. Without it, the host scan fails, the operating system stays blank, and password rotation can proceed while a session still holds the old password. The result can be recurring Active Directory account lockouts.
 
-ensure the resource can authenticate to the domain controllers on the second hop.
+Configure delegation so the resource can authenticate to the domain controllers on the second hop.
 
 {/* TODO verify: which protocol the resource-to-domain-controller hop uses (for example LDAP/ADSI or WinRM) and the delegation configuration Netwrix supports for it. Microsoft notes that constrained and resource-based constrained delegation don't support a WinRM second hop. */}
 

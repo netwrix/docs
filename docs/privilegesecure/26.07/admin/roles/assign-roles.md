@@ -59,7 +59,7 @@ The **Users** role isn't assignable here.
 
 ### Example
 
-To make a user a reviewer, open the user's details page, click the **User Roles** tab, click **Add**, select **Reviewer**, and click **Add**. The user can then review access in an [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md).
+To make a user a reviewer, open the user's details page, click the **User Roles** tab, click **Add**, select **Reviewer**, and click **Add**. The user can then review access. See [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md).
 
 ## Remove a role
 

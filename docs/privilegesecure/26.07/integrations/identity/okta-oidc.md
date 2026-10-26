@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Users can sign in to the Privilege Secure Console with Okta. Okta authenticates the user. Privilege Secure then matches the Okta user to a user in the Active Directory (AD) data that it holds.
 
-This page covers the Okta-specific settings. For the connector steps, see [Configure an OpenID Connect connector](../../configuration/authentication/openid-connect.md).
+This page covers the Okta-specific settings. For the connector steps, see [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md).
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ This page covers the Okta-specific settings. For the connector steps, see [Confi
 
 ## Register Privilege Secure in Okta
 
-In the Okta Admin Console, go to **Applications** > **Applications**, click **Create App Integration**, and select **OIDC - OpenID Connect** as the sign-in method. Set these values. The callback and CORS addresses are the ones in the prerequisites of [Configure an OpenID Connect connector](../../configuration/authentication/openid-connect.md#prerequisites).
+In the Okta Admin Console, go to **Applications** > **Applications**, click **Create App Integration**, and select **OIDC - OpenID Connect** as the sign-in method. Set these values. The callback and CORS addresses are the ones in the prerequisites of [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md#prerequisites).
 
 | Okta setting | Value |
 |---|---|
@@ -51,17 +51,17 @@ Ensure Okta assigns the Privilege Secure application to each user who signs in. 
 
 ## Add the connector in Privilege Secure
 
-1. Follow [Configure an OpenID Connect connector](../../configuration/authentication/openid-connect.md#add-the-connector). Enter the Okta issuer address and the Okta **Client ID**.
+1. Follow [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md#add-the-connector). Enter the Okta issuer address and the Okta **Client ID**.
 1. In **Login Format**, select **Email Address** or **User Principal Name**.
-1. Assign the connector to the users. See [Assign the connector to users](../../configuration/authentication/openid-connect.md#assign-the-connector-to-users).
+1. Assign the connector to the users. See [Assign the connector to users](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md#assign-the-connector-to-users).
 
 ## Give users access
 
-A user who signs in with Okta needs a role in Privilege Secure. Assign roles on **Users & Groups** > **Role Management**. See [Assign administrators, reviewers, and auditors](../../admin/roles/assign-roles.md).
+A user who signs in with Okta needs a role in Privilege Secure. Assign roles on **Users & Groups** > **Role Management**. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 
 ## Related topics
 
-- [Configure an OpenID Connect connector](../../configuration/authentication/openid-connect.md)
-- [Authentication methods](../../configuration/authentication/overview.md)
+- [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md)
+- [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md)
 - [Add Microsoft Entra ID as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-openid-connect)
 - [Add Active Directory Federation Services (AD FS) as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-openid-connect)

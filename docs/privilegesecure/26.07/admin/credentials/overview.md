@@ -12,7 +12,7 @@ A managed account is an account whose password Privilege Secure stores and rotat
 
 The **Credentials** tile on the Dashboard shows the same table. See [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
-To open the page, click **Credentials** in the left navigation. The **Credentials** menu also holds **Credential Groups** and **Credential Policy Overrides**.
+To open the page, select **Credentials** in the left navigation. The **Credentials** menu also holds **Credential Groups** and **Credential Policy Overrides**.
 
 ![The Credentials page with a managed account selected, showing the Manage, Unmanage, Rotate, Verify, and View History toolbar and the Method, Managed type, and Privilege type filters.](/images/privilegesecure/26.07/admin/credentials-page-row-selected.webp)
 

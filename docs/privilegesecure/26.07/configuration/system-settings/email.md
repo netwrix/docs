@@ -36,23 +36,19 @@ The Email Service sends mail through your SMTP server. Configure it on each serv
 1. Select **Configuration** > **Service Nodes**.
 1. Select the node, then select **Email Service**.
 1. On the **Email Settings** tab, complete the fields in the table.
-1. Click **Test Settings** to check the connection to the SMTP server.
+1. Click **Test Settings** to check the connection to the SMTP server. The button is available after you complete the required fields.
 1. Click **Save**. The **Save** and **Cancel** buttons appear at the bottom of the page after you change a field.
 
 | Field | Description |
 |---|---|
 | **From Address** | The address shown in the **From** field of each email. |
 | **Hostname (FQDN or IP)** | The SMTP server. |
-| **Port** | The SMTP port. The field is pre-filled with 25. |
-| **Use TLS** | Select to encrypt the connection to the SMTP server. |
-| **Use Auth** | Select if the SMTP server requires authentication. |
+| **Port** | The SMTP port. The default is 25. |
+| **Use TLS** | Select to encrypt the connection to the SMTP server. Cleared by default. |
+| **Use Auth** | Select if the SMTP server requires authentication. Cleared by default. |
 | **Credentials for Connection** | The service account that signs in to the SMTP server. |
 
 For example, to send through an unauthenticated relay on port 25, enter the relay's name in **Hostname (FQDN or IP)**, enter `privilege-secure@example.com` in **From Address**, leave **Use TLS** and **Use Auth** cleared, and click **Test Settings**.
-
-**Test Settings** is available after you complete the required fields.
-
-The default port is 25, with **Use TLS** and **Use Auth** cleared.
 
 When you click **Test Settings**, enter a recipient address and click **Send Email**. The dialog shows "Test email sent. It should arrive shortly." The message has the subject "Test from Netwrix Privilege Secure", comes from your **From Address**, and carries the text in the dialog as its body. The message also appears on the **Email Queue** tab.
 

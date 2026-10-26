@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # SIEM templates and event fields
 
-A SIEM template sets the content and layout of each message that Privilege Secure sends to a SIEM server. You select a template when you [add a SIEM server](siem-servers.md).
+A SIEM template sets the content and layout of each message that Privilege Secure sends to a SIEM server. You select a template when you [add a SIEM server](/docs/privilegesecure/26.07/integrations/siem/siem-servers.md).
 
 Privilege Secure includes two templates, **CEF** and **LEEF**. You can also create custom templates.
 
@@ -23,7 +23,7 @@ The **CEF** and **LEEF** templates contain the same message body. Both messages 
 
 | Field | Description |
 |---|---|
-| Name | The name of the template. |
+| **Name** | The name of the template. |
 | **Description** | A description of the template. |
 | **Characters To Escape** | The characters in event text that need an escape character. |
 | **Escape Character** | The character that you put before each escaped character. |
@@ -56,7 +56,6 @@ The editor offers 25 fields. Each field belongs to the event, the session behind
 
 Fields about a session, account, or resource are empty for events that don't involve one.
 
-
 :::note
 The built-in **CEF** and **LEEF** templates write each field as `key=value`. Some keys differ from the field names in the editor, for example `ActivitySessionSattus`, `ManagedAccounttype`, `ManagedSourceHostName`, `ActivitySessionCreateFromAddress`, `EventTimeUtc`, `ManagedResourceHostDNSHostName`, and `ManagedResourceHostNetBIOSName`. Match these keys exactly in your SIEM parser, or create a custom template with the keys that you want.
 :::
@@ -88,4 +87,4 @@ The names of the event fields describe their content. `EventServiceType` is the 
 
 ## Related topics
 
-- [Forward events to a SIEM](siem-servers.md)
+- [Forward events to a SIEM](/docs/privilegesecure/26.07/integrations/siem/siem-servers.md)

@@ -51,7 +51,7 @@ The client secret stops working when the access expiration passes. Set an expira
 
 ## Add the service accounts in Privilege Secure
 
-The connector uses two service accounts. For the add form and its fields, see [Service accounts](../../configuration/service-accounts/service-accounts.md).
+The connector uses two service accounts. For the add form and its fields, see [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 
 | Service account | Name (example) | Username | Password | Platform |
 |---|---|---|---|---|
@@ -86,9 +86,9 @@ An asterisk (\*) marks a required field. Both credential fields list the service
 1. Select the connector that you created.
 1. Click **Sync StealthAUDIT** below the connector settings. The button is unavailable while an import runs, and the log of the last run appears under it. The import can take some time.
 
-To follow the progress, open the Action Service on the **Service Nodes** page. See [Monitor service nodes](../../admin/service-nodes/service-nodes.md).
+To follow the progress, open the Action Service on the **Service Nodes** page. See [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).
 
 ## Related topics
 
-- [Service accounts](../../configuration/service-accounts/service-accounts.md)
-- [Monitor service nodes](../../admin/service-nodes/service-nodes.md)
+- [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md)
+- [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md)

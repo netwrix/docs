@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Configure SSH algorithms
 
-SSH negotiates encryption algorithms for host keys, key exchange, ciphers, and message authentication codes (MACs). Some organizations remove algorithms that are obsolete. Others keep them so that older devices, such as legacy Cisco network devices, still connect. Privilege Secure keeps its algorithm lists in configuration files, and each server can hold more than one copy of `sbpam_sshclient.json`. You edit the lists to match your devices.
+SSH negotiates encryption algorithms for host keys, key exchange, ciphers, and message authentication codes (MACs). Some organizations remove algorithms that are obsolete. Others keep them so that older devices, such as legacy Cisco network devices, still connect. Privilege Secure keeps its algorithm lists in two configuration files, and each component reads its own file. You edit the lists to match your devices.
 
 Change both files together. If the lists differ, a device can accept sessions or actions through one component and fail through the other.
 
@@ -26,7 +26,7 @@ The default file locations are:
 
 Host scans run the shared `ActionServiceWorker`, so they read the same file as the Action Service. Editing a copy in the `HostScanService` folder has no effect.
 
-Edit each copy of each file on every server that runs the component. That includes remote servers that run an Action Service, a Host Scan Service, or a Proxy Service. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md) and [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
+Edit the file at its default location on every server that runs the component. That includes remote servers that run an Action Service, a Host Scan Service, or a Proxy Service. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md) and [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
 
 From 26.07.3, the PowerShell SSH actions use the native Privilege Secure SSH client, so they also read `sbpam_sshclient.json`.
 

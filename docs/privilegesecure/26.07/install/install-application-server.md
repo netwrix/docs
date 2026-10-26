@@ -118,7 +118,7 @@ By default, the database settings point to the local server: PostgreSQL on port 
 
 On a server that was upgraded from PostgreSQL 12 to 16, PostgreSQL 16 listens on port 5437. The installer records the port in the `Port` value under `HKEY_LOCAL_MACHINE\SOFTWARE\Stealthbits Technologies\PostgreSQL16`.
 
-{/* TODO verify: the port that the bundled PostgreSQL 16 installer configures on a fresh installation. */}
+{/* TODO verify: the port that the bundled PostgreSQL 16 installer configures on a fresh installation. The Setup Launcher assumes 5432 when the registry has no `Port` value, but the prebuilt installer isn't in the product source. */}
 
 ## If the installer can't reach the database
 

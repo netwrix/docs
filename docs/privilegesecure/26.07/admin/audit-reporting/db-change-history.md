@@ -36,7 +36,7 @@ The default range here is 7 days. The [Activity log](/docs/privilegesecure/26.07
 | **RECORD TYPE** | The type of record that changed. |
 | **WHICH RECORD** | The record that changed. Some records, such as managed users, show `<unknown>`. |
 
-Click the expander at the start of a row to view its details.
+Select the expander at the start of a row to view its details.
 
 The expanded row lists each field that changed. For an update, it shows the old value and the new value, for example `Name: old-value → new-value`. For an addition or a deletion, it shows the value only. An empty value shows as `<null>`.
 

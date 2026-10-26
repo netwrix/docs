@@ -52,4 +52,4 @@ Set a more detailed log level only when support asks you to, and set it back to 
 
 ## Knowledge Base
 
-The Netwrix Knowledge Base has articles on specific Privilege Secure problems in its Troubleshooting and errors category, such as [Logs Location](/docs/kb/privilegesecure/troubleshooting-and-errors/logs-location) and [services that aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running). See the [Privilege Secure Knowledge Base](../kb/index.md).
+The Netwrix Knowledge Base has articles on specific Privilege Secure problems in its Troubleshooting and errors category, such as [Logs Location](/docs/kb/privilegesecure/troubleshooting-and-errors/logs-location) and [services that aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running). See the [Privilege Secure Knowledge Base](/docs/kb/privilegesecure).

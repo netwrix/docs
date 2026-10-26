@@ -100,9 +100,9 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 
 **Symptom:** Sessions fail. `appsettings.json` doesn't exist in `C:\ProgramData\Stealthbits\PAM\RagGateway`, or `NPS.Uri` points to `localhost` and `Guacd.ServerThumbprint` holds "Guacd:ServerThumbprint not set!". For the file location, see [Gateway settings reference](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md).
 
-**Cause:** `Configure-Gateway.ps1` didn't finish. The script exits without writing `appsettings.json` when it can't reach guacd on port 4822, so the file might not exist.
+**Cause:** `Configure-Gateway.ps1` didn't finish. The script exits without applying your values when it can't reach Privilege Secure or guacd on port 4822. If it can't reach Privilege Secure, `appsettings.json` might not exist. If it can't reach guacd, the file holds only the defaults.
 
-**Fix:** Start guacd, and confirm that it listens on port 4822. Then run `Configure-Gateway.ps1` again. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#configure-the-gateway).
+**Fix:** Confirm that the gateway server can reach the Privilege Secure URL. Start guacd, and confirm that it listens on port 4822. Then run `Configure-Gateway.ps1` again. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#configure-the-gateway).
 
 ## A session closes or stays blank as soon as it opens
 
@@ -137,7 +137,6 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 If the address of the WSL instance changed, run `wsl hostname -I` to get the current address. Then run `Configure-Gateway.ps1` again with that address as the `-NPSGuacdHost` value.
 
 If WSL doesn't start by itself, see [Start WSL automatically](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#start-wsl-automatically).
-
 
 ## Colors look wrong in an RDP session
 

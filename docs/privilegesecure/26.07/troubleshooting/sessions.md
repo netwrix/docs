@@ -40,9 +40,9 @@ If provisioning finishes but takes more than 30 seconds, see [Long Provisioning 
 
 **Cause:** Deprovisioning ran before the user's processes finished ending. The command works a few seconds later.
 
-**Fix:** Upgrade to 26.07.3 or later. From 26.07.3, the Linux remove-user step runs `userdel -r` up to 10 times, 3 seconds apart, until the account is gone. On an earlier release, the step runs `userdel` once. Wait a few seconds after the session ends and then retry the deprovisioning.
+**Fix:** Upgrade to 26.07.3 or later. From 26.07.3, the Linux remove-user step runs `userdel -r` up to 10 times, 3 seconds apart, until the account is gone. On an earlier release, the step runs `userdel` once. If the temporary account remains after the session ends, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
 
-{/* TODO verify: which console control retries deprovisioning on an earlier release. Release code shows the retry logic in 26.07.3 but not a retry control in the web console. */}
+{/* TODO verify: whether the web console has a control that retries deprovisioning on an earlier release. Release code shows no such control, so the page doesn't name one. */}
 
 A bulk deprovision of many accounts can log a misleading error about removing a user from a group, even though the user is removed. Check the target before you deprovision again.
 

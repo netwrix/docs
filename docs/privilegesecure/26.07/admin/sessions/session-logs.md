@@ -12,18 +12,18 @@ The **Session Logs** window shows the log messages for one session. Use it to se
 
 1. Open the **Active** tile. See [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md).
 2. Select the session.
-3. Click **View Logs**.
+3. Select **View Logs**.
 
 **View Logs** stays disabled until you select a row.
 
-For example, a session shows **Failed**. Select it, click **View Logs**, and filter **Log Level** to errors to see which provisioning step failed.
+For example, a session shows **Failed**. Select it, select **View Logs**, and filter **Log Level** to errors to see which provisioning step failed.
 
 {/* TODO screenshot: Active tile toolbar with a session selected and View Logs enabled */}
 
 You can also open the log from other pages.
 
 - On the **Historical** tile, select the logs icon in the **ACTIONS** column of the row.
-- On the **Events** page, select an event that belongs to a session or an action, then click **View Logs**.
+- On the **Events** page, select an event that belongs to a session or an action, then select **View Logs**.
 
 The Remote Access Gateway portal doesn't show the **Logs** button.
 

@@ -12,14 +12,14 @@ A service account is an account that Windows services or scheduled tasks run as.
 
 - The account appears on the **Credentials** page with managed type **Service**. Privilege Secure finds the dependents when it scans a resource: the host scan reads the Windows services and scheduled tasks on the resource and records the account each one runs as. Scan the resource before you rotate so the **Dependencies** tab is current. See [Scan resources for dependents](#scan-resources-for-dependents).
 - You're an Administrator, or you hold a custom role with the **Rotate Services** permission. See [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
-- No session is active on the account. Manual rotation is blocked while a session is active. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
+- No session is active on the account. A rotation doesn't run while a session is active. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
 
 ## Open the Account Dependencies dialog
 
-1. In the left navigation, click **Credentials**.
+1. In the left navigation, select **Credentials**.
 2. Set the **Managed type** filter to **Service**.
 3. Select the row of the account. For example, select `<domain>\svc-example`.
-4. Click **Service Account Details**.
+4. Select **Service Account Details**.
 
 The **Account Dependencies** dialog opens.
 
@@ -58,7 +58,7 @@ The **Resources** tab lists the resources to scan for dependents. Its columns ar
 
 ### Scan resources for dependents
 
-Select one or more rows on the **Resources** tab and click **Scan**. **Scan** is enabled only when at least one row is selected and you're an Administrator. Privilege Secure schedules a host scan for each selected resource. When the scan finishes, the **Last Scan** column on the **Dependencies** tab updates, and any new or removed services and scheduled tasks appear in the list.
+Select one or more rows on the **Resources** tab and select **Scan**. **Scan** is enabled only when at least one row is selected and you're an Administrator. Privilege Secure schedules a host scan for each selected resource. When the scan finishes, the **Last Scan** column on the **Dependencies** tab updates, and any new or removed services and scheduled tasks appear in the list.
 
 For example, `<domain>\svc-example` can show one **Service** dependent on `<server-name>` and one **ScheduledTask** dependent on `<server-name>`.
 
@@ -66,9 +66,9 @@ For example, `<domain>\svc-example` can show one **Service** dependent on `<serv
 
 1. Open the **Account Dependencies** dialog. See [Open the Account Dependencies dialog](#open-the-account-dependencies-dialog).
 2. Check the **Dependencies** tab for the services and tasks that run as the account.
-3. Click **Rotate**.
+3. Select **Rotate**.
 
-Privilege Secure changes the account password first. When that succeeds, it schedules an update for each dependent in the list. The console shows the message "N service rotate(s) scheduled", where N is the number of dependents. {/* TODO verify: what the console shows and whether the password changes when the account has no dependents. The release code suggests a "Failed to rotate services" error and no password change. */} If the password change itself fails or is cancelled, Privilege Secure doesn't update any dependent. The **Rotation Status** field and the **Status** column on the **Dependencies** tab show the progress. For each dependent, the **Status** column shows the state of its last update, such as Queued, Running, Complete, or Failed. Failed, Completed With Errors, and Completed Not Run show in red.
+Privilege Secure changes the account password first. When that succeeds, it schedules an update for each dependent in the list. The console shows the message "N service rotate(s) scheduled", where N is the number of dependents. If the account has no dependents, the console shows the warning "No services rotated". {/* TODO verify: whether the account password still changes when the account has no dependents. The release code schedules the rotation job and returns a count of 0, and no code read here shows whether the job changes the password. */} If the password change itself fails or is cancelled, Privilege Secure doesn't update any dependent. The **Rotation Status** field and the **Status** column on the **Dependencies** tab show the progress. For each dependent, the **Status** column shows the state of its last update, such as Queued, Running, Complete, or Failed. Failed, Completed With Errors, and Completed Not Run show in red.
 
 The **Rotate** button on the **Credentials** page doesn't rotate an account that has dependents. Rotate a service account from this dialog so that its dependents are updated.
 
@@ -76,6 +76,6 @@ The **Dependents** count on the **Credentials** page leaves out services and sch
 
 ## Roll back a rotation
 
-Click **Rollback** to return the account to its previous password. Privilege Secure restores the most recent previous password first, then schedules an update for each dependent so that they use it again, the same way as a rotation. Click **Cancel** to stop a rollback that's in progress.
+Select **Rollback** to return the account to its previous password. Privilege Secure restores the most recent previous password first, then schedules an update for each dependent so that they use it again, the same way as a rotation. Select **Cancel** to stop a rollback that's in progress.
 
 For how the account types differ, see [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).

@@ -68,7 +68,7 @@ The **Custom Lock Message** field is empty and shows `Locked by NPS Command Rest
 1. In the **Proxy** section, select the restriction in the **Command Restriction** list. The default is `<none>`.
 1. Click **Save**.
 
-See [Connection profiles](connection-profiles.md).
+See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 ## Delete a command restriction
 
@@ -76,5 +76,5 @@ Point to a restriction in the list, click the trash icon, and confirm.
 
 ## Related topics
 
-- [Connection profiles](connection-profiles.md)
-- [Access policies](overview.md)
+- [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)
+- [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md)

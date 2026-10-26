@@ -12,10 +12,10 @@ How an account rotates depends on its **Managed Type** and its **Method**. The *
 
 | Managed type | Dependencies | Method | How the password rotates |
 |---|---|---|---|
-| **Standard** | None | **Automatic** | Privilege Secure rotates the password on the platform's schedule. Click **Rotate** to rotate it now. |
+| **Standard** | None | **Automatic** | Privilege Secure rotates the password on the platform's schedule. Select **Rotate** to rotate it now. |
 | **Standard** | None | **Manual** | You update the password on the resource and in Privilege Secure. |
-| **Standard** | None | **Not Managed** | Privilege Secure has never stored a password. Click **Manage** first. |
-| **Internal** | None | **Automatic** | Privilege Secure rotates the password on the platform's schedule. Click **Rotate** to rotate it now. |
+| **Standard** | None | **Not Managed** | Privilege Secure has never stored a password. Select **Manage** first. |
+| **Internal** | None | **Automatic** | Privilege Secure rotates the password on the platform's schedule. Select **Rotate** to rotate it now. |
 | **Internal** | None | **Manual** | You update the password on the resource and in Privilege Secure. |
 | **Service** | One or more | **Manual** | Rotation starts from **Service Account Details**, because services and scheduled tasks must receive the new password. |
 | **Service** | One or more | **Not Managed** | Privilege Secure has never stored a password. Rotate from **Service Account Details**. |
@@ -40,6 +40,6 @@ A Service account is a local or domain account that one or more Windows services
 
 ## Rotation rules
 
-- Manual rotation is blocked while a session on the account is active. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
+- A rotation doesn't run while a session on the account is active. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
 - **Rotate on Session Start** and **Rotate on Session End** rotate an account around its sessions. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md#control-the-account-state-after-a-session).
 - Privilege Secure keeps a limited password history for each managed account. See [View passwords and password history](/docs/privilegesecure/26.07/admin/credentials/password-history.md).

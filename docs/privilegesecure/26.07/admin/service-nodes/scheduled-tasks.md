@@ -14,10 +14,6 @@ To open it, select **Configuration** > **Scheduled Tasks**.
 
 ## Read the list
 
-Version 26.07.3 fixes task schedules that shifted by an hour after a daylight saving time change.
-
-If a task still starts an hour off after you upgrade, open the schedule that drives the task and save it again. Saving recalculates the next start time.
-
 The toolbar has these controls:
 
 | Control | Description |
@@ -64,6 +60,12 @@ The page is read-only. A task takes its schedule from the item that created it. 
 | `Sync AD <domain>` | The schedule row on the details page of the domain. |
 
 The platform schedules are schedule policies. See [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md), [Schedule policies](/docs/privilegesecure/26.07/resources/platforms/schedule-policies.md), [Credential policy overrides](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md), and [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md#schedule-synchronization). Protection policies run on the **Protection Policy Schedule** of the platform.
+
+## Check task times after a daylight saving time change
+
+Version 26.07.3 fixes task schedules that shifted by an hour after a daylight saving time change.
+
+If a task still starts an hour off after you upgrade, open the schedule that drives the task and save it again. Saving recalculates the next start time.
 
 ## Troubleshoot a failed task
 

@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The Bring Your Own Vault (BYOV) connector lets activities use credentials from any vault. You provide PowerShell scripts that check credentials out and in. You can also point the connector at Privilege Secure itself, to use manually managed accounts or accounts in a secret vault in an activity.
 
-For an overview of vault connectors, see [Third-party vault connectors](vault-connectors.md).
+For an overview of vault connectors, see [Third-party vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md).
 
 ## Create a BYOV connector
 
@@ -58,7 +58,7 @@ The account can be a manually managed account, or an account that a secret vault
 
 ### Prerequisites
 
-- The account is managed by Privilege Secure, or it's in a secret vault in Privilege Secure. See [Secret vaults](../../resources/secret-vaults.md).
+- The account is managed by Privilege Secure, or it's in a secret vault in Privilege Secure. See [Secret vaults](/docs/privilegesecure/26.07/resources/secret-vaults.md).
 - For a managed account, rotate the password at least once after you start managing the account. Until then, Privilege Secure has no stored password for the account.
 
 ### Create the connector
@@ -199,7 +199,7 @@ The `if ($result.Username -match ".*\.*")` block in the script has no effect on 
 
 ### Create the activity
 
-1. Create an activity. See [Create an activity](../../configuration/activities/create-activity.md).
+1. Create an activity. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
 2. Set **Login Account** to **Vault**.
 3. Set **Activity Type** to **Interactive**.
 4. In **Vault Connector**, select the BYOV connector that you created.
@@ -208,7 +208,7 @@ The `if ($result.Username -match ".*\.*")` block in the script has no effect on 
 
 ### Create the access policy
 
-1. Create an access policy of type **Resource Based**. See [Create a resource-based access policy](../../configuration/access-policies/resource-based-policy.md).
+1. Create an access policy of type **Resource Based**. See [Create a resource-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md).
 2. Select a connection profile. **Default** is enough for most setups.
 3. Add the users, the activity, and the resources.
 4. Click **Save**.
@@ -224,7 +224,7 @@ This procedure is a workaround that Netwrix staff have shared on the Community, 
 :::
 
 1. Add the device as a Linux resource by its IP address. See [Add servers manually](/docs/privilegesecure/26.07/resources/add-resources.md#add-servers-manually). Select a service account in the **Service Account** dropdown, but don't configure service account management for the resource.
-2. Store the local account in a secret vault. See [Secret vaults](../../resources/secret-vaults.md).
+2. Store the local account in a secret vault. See [Secret vaults](/docs/privilegesecure/26.07/resources/secret-vaults.md).
 3. Create a BYOV connector that points to Privilege Secure, as described in [Use Privilege Secure as the vault](#use-privilege-secure-as-the-vault).
 4. Create an activity with **Login Account** set to **Vault** and the BYOV connector selected.
 5. Add a pre-session script that removes the domain or resource prefix from the user name. {/* TODO verify: the script and the action type for the prefix removal. The release code has no built-in step that rewrites a user name, so the step must be authored and tested in a session. */}

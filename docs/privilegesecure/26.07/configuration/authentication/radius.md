@@ -47,7 +47,7 @@ For the other connector types and how a user's connector is chosen, see [Authent
 
 {/* TODO screenshot: MFA connector fields, shared secret masked */}
 
-{/* TODO verify: the value Privilege Secure sends as the NAS Identifier when Send NAS Identifier is selected. The RADIUS client library that sends it (Stealthbits.Radius 1.0.6) isn't in the release source. Next step: get the package from the Azure DevOps SbPAM feed and read how it sets NAS-Identifier when SendNasIdentifier is true. A packet capture on a Windows host is the fallback. */}
+{/* TODO verify: the value Privilege Secure sends as the NAS Identifier when Send NAS Identifier is selected. The RADIUS client library that sends it (Stealthbits.Radius 1.0.6) isn't in the release source. Next step: read how the library sets NAS-Identifier when SendNasIdentifier is true, or capture a request on the application server. */}
 
 A new MFA connector starts with these values: **Remote Port** 1812, **Auth. Type** **MSCHAPv2**, **Max Retries** 0, **Timeout (Seconds)** 60, **Send NAS Identifier** cleared, and **Format for username** empty.
 
@@ -104,7 +104,7 @@ For the tab and the rules for users in several groups, see [User and group detai
 
 If users aren't assigned to the connector, Privilege Secure refuses their sign-in through it. For a connector that must accept unassigned users, see [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector).
 
-## Related articles
+## Related topics
 
 - [How to Configure a Duo RADIUS Proxy for Multi-Factor Authentication](/docs/kb/privilegesecure/authentication-and-mfa/how-to-configure-a-duo-radius-proxy-for-multi-factor-authentication)
 - [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector)

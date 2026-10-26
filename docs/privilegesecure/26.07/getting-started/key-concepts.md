@@ -98,7 +98,7 @@ The **Dashboard** page shows sessions as Active, Scheduled, Approvals, and Histo
 
 The two session types treat the login account differently.
 
-**Resource-based sessions** that use a managed login account enable the account when the session starts and disable it when the session ends. No setting changes this behavior. {/* TODO verify: enable/disable behavior for Requester and Activity Token login accounts */}
+**Resource-based sessions** that use a managed login account enable the account when the session starts and disable it when the session ends. If other sessions still use the same account, it stays enabled until the last of them ends. No setting changes this behavior. {/* TODO verify: enable/disable behavior for Requester login accounts (in database sessions the code disables or deletes the database login but leaves the Requester's domain account alone; other resource types not confirmed). Activity Token accounts are disabled or deleted at session end, per Delete After Use. */}
 
 **Credential-release sessions** give the user a credential from a vault or a managed account. The password rotates when the user checks it out, when the user releases it, or both. Whether the account stays enabled after release is set for each account by **Keep Enabled (Credential Release only)** in **Password Reset Options** on the resource's **Users** tab. The setting belongs to the account on the resource. There is no option to set it for each user.
 

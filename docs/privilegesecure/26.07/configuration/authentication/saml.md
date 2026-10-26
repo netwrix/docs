@@ -13,15 +13,14 @@ This page covers the connector fields, the values to register at the IdP, and th
 ## Prerequisites
 
 - You have the Administrator role. Only administrators can manage authentication connectors.
-
-- You can create an application (a relying party) at the SAML IdP.
-- The console is reachable at `https://<nps-server>:6500`, and its web certificate is trusted by the browsers that sign in. See [Certificates](/docs/privilegesecure/26.07/configuration/certificates.md) and [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
+- You can create an application (a relying party) at the SAML IdP. Register the values in [Register Privilege Secure at the IdP](#register-privilege-secure-at-the-idp) before you test the connector in the wizard.
+- The console is reachable at `https://<nps-server>:6500`, and its web certificate is trusted by the browsers that sign in. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md) and [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
 ## Add a SAML connector
 
 1. Select **Configuration** > **Authentication** in the left navigation.
 1. Click the **+** button above the connector list.
-1. Enter a name in **Enter Authentication Connector Name**, for example `corporate-saml`. The **Connector Type** list stays disabled until you enter a name.
+1. Enter a name in **Enter Authentication Connector Name**, for example `corporate-saml`. The **Connector Type** list stays unavailable until you enter a name.
 1. Optional: Enter a **Description**.
 1. In **Connector Type**, select **SAML**.
 1. Enter the connector settings, using the wizard or manual entry. See the next two sections.

@@ -48,7 +48,7 @@ For a license with term-based activations, the page also lists each activation's
 
 ## If the import fails
 
-A failed import reports a generic message, such as "License failed validation check" or "Error prevented license installation". The message doesn't give the cause. Contact Netwrix Support and provide the message.
+A failed import shows the message "Error prevented license installation." or "Error installing license." with a short reason that doesn't always give the cause. Contact Netwrix Support and provide the message.
 
 ## Expired licenses
 

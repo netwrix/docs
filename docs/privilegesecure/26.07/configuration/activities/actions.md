@@ -30,7 +30,7 @@ An action can be paired. A pre-session action that grants access is often paired
 
 ![The Add Action to Pre-Session Group dialog with Add Sudoers rule selected, showing Run As, Commands, Prompt for password, Username Format, Continue on Error, and Action Name.](/images/privilegesecure/26.07/configuration/add-action-dialog-sudoers.webp)
 
-The action types are available only in the **Action Type** list of this dialog. The console has no separate page for them. See [Action types reference](action-types.md) for what each type does and its fields.
+The action types are available only in the **Action Type** list of this dialog. The console has no separate page for them. See [Action types reference](/docs/privilegesecure/26.07/configuration/activities/action-types.md) for what each type does and its fields.
 
 Fields that most action types share:
 
@@ -69,6 +69,6 @@ To run the protection policies that apply to the resource when the session compl
 
 ## Related topics
 
-- [Activities](activities.md)
-- [Action types reference](action-types.md)
-- [Grant group or role membership without a resource](group-role-activities.md)
+- [Activities](/docs/privilegesecure/26.07/configuration/activities/activities.md)
+- [Action types reference](/docs/privilegesecure/26.07/configuration/activities/action-types.md)
+- [Grant group or role membership without a resource](/docs/privilegesecure/26.07/configuration/activities/group-role-activities.md)
