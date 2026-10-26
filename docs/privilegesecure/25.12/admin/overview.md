@@ -1,14 +1,20 @@
 ---
 title: "Administrator Role"
-description: "Administrator Role"
+description: "Learn how the Administrator role works in the NPS-AM console and how it combines with other roles such as Reviewer and Approver."
+keywords:
+  - Administrator role
+  - NPS-AM console
+  - Reviewer role
+  - Approver role
+  - Auditor role
+  - roles
 sidebar_position: 40
 ---
 
 # Administrator Role
 
-This section guides users with the Administrator role through the NPS-AM console.
+This section guides users with the Administrator role through the Netwrix Privilege Secure for Access Management (NPS-AM) console.
 
 You can assign users multiple roles, and the permissions are cumulative. If one of the roles is Administrator, however, there is generally no reason to add Auditor roles because the Administrator can already see all session history. Administrators can hold Reviewer or Approver roles for the additional responsibilities.
 
 This section assumes the Administrator has logged in for the first time. See [Log Into the Privilege Secure Console](/docs/privilegesecure/25.12/install/login.md).
-

@@ -1,6 +1,13 @@
 ---
 title: "Edit Schedule Policy"
-description: "Edit Schedule Policy"
+description: "Edit the frequency of a scheduled task in the Schedule Policy Editor window and save the changes."
+keywords:
+  - edit schedule policy
+  - Schedule Policy Editor
+  - Frequency
+  - Every X Hours
+  - Every X Days
+  - scheduled task
 sidebar_position: 20
 ---
 
@@ -8,25 +15,23 @@ sidebar_position: 20
 
 To edit the scheduled tasks.
 
-**Step 1 –** Navigate to the **Policy** > **Platforms** > **Schedule Policies** page.
+1. Navigate to the **Policy** > **Platforms** > **Schedule Policies** page.
+2. Click the **Edit** icon to open the Schedule Policy Editor window.
 
-**Step 2 –** Click the **Edit** icon to open the Schedule Policy Editor window.
+   ![Schedule Policy Editor window](/images/privilegesecure/26.03/accessmanagement/admin/policy/edit/schedulepolicyeditor.webp)
 
-![schedulepolicyeditor](/images/privilegesecure/26.03/accessmanagement/admin/policy/edit/schedulepolicyeditor.webp)
+3. From the **Frequency** radio buttons, set the frequency of how often the scheduled task is
+   run:
 
-**Step 3 –** From the Frequency radio buttons, set the frequency of how often the scheduled task is
-run:
+   :::note
+   The fields will change depending on the selected frequency.
+   :::
 
-:::note
-The fields will change depending on the selected frequency.
-:::
+   - **Every X Hours** — Enter the number of hours between executions
+   - **Every X Days** — Enter the time of day
+   - **Weekly** — Select the day of the week from the dropdown menu and enter the time of day
+   - **Monthly** — Enter a number representing the day of the month and then enter the time of day
 
-
-- Every X Hours — Enter the number of hours between executions
-- Every X Days— Enter the time of day
-- Weekly — Select the day of the week from the dropdown menu and enter the time of day
-- Monthly — Enter a number representing the day of the month and then enter the time of day
-
-**Step 4 –** Click **Save** to accept the changes.
+4. Click **Save** to accept the changes.
 
 The task will run at the new scheduled frequency.

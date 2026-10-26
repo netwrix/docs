@@ -1,6 +1,13 @@
 ---
 title: "Properties Tab"
-description: "Properties Tab"
+description: "Reference for the Properties tab, which holds the display name, department, email, and account names for an application."
+keywords:
+  - Properties tab
+  - application user
+  - Display Name
+  - Department
+  - SamAccountName
+  - User Principal Name
 sidebar_position: 110
 ---
 
@@ -13,8 +20,8 @@ application according to the use case.
 
 The Properties tab has the following fields:
 
-- Display Name — Displays the name of the application
-- Department — Displays the associated department, if available
-- Email — Displays the associated email address, if available
-- SamAccountName — Displays the sAMAccountName for the account
-- User Principal Name — Displays the UPN value for the account
+- **Display Name** — Displays the name of the application
+- **Department** — Displays the associated department, if available
+- **Email** — Displays the associated email address, if available
+- **SamAccountName** — Displays the sAMAccountName for the account
+- **User Principal Name** — Displays the UPN value for the account

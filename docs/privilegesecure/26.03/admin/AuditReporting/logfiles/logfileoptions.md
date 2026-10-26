@@ -1,6 +1,14 @@
 ---
 title: "Log File Options"
-description: "Log File Options"
+description: "Set the minimum log level, retained file count limit, and file size limit for each Privilege Secure service."
+keywords:
+  - log level
+  - Minimum Log Level
+  - Verbose
+  - Debug
+  - Retained File Count Limit
+  - File Size Limit Bytes
+  - Action Service
 sidebar_position: 10
 ---
 
@@ -18,37 +26,34 @@ options:
 
 The right of the page shows details of the selected option.
 
-## Configure Log File Options
+## Configure log file options
 
 Configure the Log File Options for the selected service. The recommended log level is Informational.
 
-![logfileoptionspage](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/page/logfileoptionspage.webp)
+![Log File Options page showing the minimum log level for a service](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/page/logfileoptionspage.webp)
 
 The right of the page shows details of the selected service and has the following features:
 
-- Edit – Click any field to edit the selected service
-- Name – Displays the short name of the service
-- Minimum Log Level:
+- **Edit** — Click any field to edit the selected service
+- **Name** — Displays the short name of the service
+- **Minimum Log Level**:
+  - **Verbose** — Extremely detailed logging
 
-- Verbose – Extremely detailed logging
+    :::note
+    There aren't many Verbose log messages in Privilege Secure so the difference
+    between Verbose and Debug is minimal.
+    :::
 
-:::note
-There aren't many Verbose log messages in Privilege Secure so the difference
-between Verbose and Debug is minimal.
-:::
-
-
-- Debug – More information for detailed analysis of system behavior. Customer support may ask
-for logs with this log level enabled for troubleshooting purposes
-- Information – Normal operation for the system
-- Warning – Message that indicates an unusual condition that the system can recover from
-- Error – Message that indicates an unrecoverable condition has been reached and may indicate
-data loss
-- Fatal – Error that has caused the service to abort
-
-- Retained File Count Limit - The number of log files to keep before deletion
-- File Size Limit Bytes - Maximum size of individual log file
-- Save button (only visible when editing) – Saves changes
-- Cancel button (only visible when editing) – Discards changes
+  - **Debug** — More information for detailed analysis of system behavior. Customer support may ask
+    for logs with this log level enabled for troubleshooting purposes
+  - **Information** — Normal operation for the system
+  - **Warning** — Message that indicates an unusual condition that the system can recover from
+  - **Error** — Message that indicates an unrecoverable condition has been reached and may indicate
+    data loss
+  - **Fatal** — Error that has caused the service to abort
+- **Retained File Count Limit** — The number of log files to keep before deletion
+- **File Size Limit Bytes** — Maximum size of individual log file
+- **Save button (only visible when editing)** — Saves changes
+- **Cancel button (only visible when editing)** — Discards changes
 
 See the [Log Files Page](/docs/privilegesecure/26.03/admin/AuditReporting/logfiles/logfiles.md) topic for additional information.

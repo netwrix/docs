@@ -70,7 +70,7 @@ This guide describes the steps to set up Netwrix Privilege Secure for Access Man
 > **NOTE:** Both credential-based and resource-based integrations require a connection profile. The steps to set up a connection profile are the same for both types of integration.
 
 1. In Netwrix Privilege Secure for Access Management, select the **Policy** tab and go to **Access Policy** > **Connection Profiles** in the left pane.
-2. Click the plus icon to add a new connection profile. For the generic workflow, refer to the following article: [Connection Profiles Page](https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/accesspolicy/connectionprofiles/).
+2. Click the plus icon to add a new connection profile. For the generic workflow, refer to the following article: [Connection Profiles Page](https://docs.netwrix.com/docs/privilegesecure/26_03/admin/accesspolicy/connectionprofiles).
 3. Name the connection profile to distinguish it from other non-integration-related connection profiles.
 4. Refer to the required connection profile settings:
    - Allow Proxy Auto-connect = True
@@ -141,7 +141,7 @@ Refer to the following subsections for information on required steps.
 #### Create a Resource-based Access Policy
 
 1. In Netwrix Privilege Secure for Access Management, select the **Policy** tab and go to **Access Policy** in the left pane.
-2. Click the plus icon to add a new access policy. For the generic workflow, refer to the following article: [Access Policy Page](https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/accesspolicy/).
+2. Click the plus icon to add a new access policy. For the generic workflow, refer to the following article: [Access Policy Page](https://docs.netwrix.com/docs/privilegesecure/26_03/admin/accesspolicy).
 3. Introduce a policy name.
 4. Verify the **Type** value is **Resource Based**. Select the dedicated connection profile and click **Save**.
 5. Select the **Users** tab and click **Add** to add a user. Select the application user (**NetwrixAuditor** by default) and click **Add**.
@@ -152,7 +152,7 @@ Refer to the following subsections for information on required steps.
 
 1. Specify the account for Netwrix Privilege Secure for Access Management to control—in the **Dashboard** tab, select the **Credentials** section and locate the target domain account.
 2. Select the corresponding checkbox and click **Manage**. Click **Automatic**.
-3. In the **Policy** tab, select the **Access Policy** menu in the left pane. Click the plus icon to add a new access policy. For the generic workflow, refer to the following article: [Access Policy Page](https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/accesspolicy/).
+3. In the **Policy** tab, select the **Access Policy** menu in the left pane. Click the plus icon to add a new access policy. For the generic workflow, refer to the following article: [Access Policy Page](https://docs.netwrix.com/docs/privilegesecure/26_03/admin/accesspolicy).
 4. Introduce a policy name.
 5. Verify the **Type** value is **Credential Based**. Select the appropriate dedicated connection profile and click **Save**.
 6. Select the **Users** tab and click **Add** to add a user. Select the application user (**NetwrixAuditor** by default) and click **Add**.
@@ -173,5 +173,5 @@ Refer to the following subsections for information on required steps.
 ## Related Links
 
 - [My Activities Page](https://docs.netwrix.com/docs/privilegesecure/4_2/revieweruser/myactivities/)
-- [Connection Profiles Page](https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/accesspolicy/connectionprofiles/)
-- [Access Policy Page](https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/accesspolicy/)
+- [Connection Profiles Page](https://docs.netwrix.com/docs/privilegesecure/26_03/admin/accesspolicy/connectionprofiles)
+- [Access Policy Page](https://docs.netwrix.com/docs/privilegesecure/26_03/admin/accesspolicy)
