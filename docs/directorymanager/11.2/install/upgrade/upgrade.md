@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Upgrade to Directory Manager 11
 
-The topic guides you to upgrade to Directory Manager 11.1 from Directory Manager 10.
+The topic guides you to upgrade to Directory Manager 11.2 from Directory Manager 10.
 
 Step 1 – To launch the Upgrade wizard, click **Next** on the GroupID Successfully Configured page of
 the Configuration Tool.
@@ -81,7 +81,7 @@ can choose to upgrade all or selective data of the previous version. Options are
     :::note
     If you later want to upgrade specific groups and their history via the Upgrade-Group
     commandlet, then you must upgrade the Configuration and History in the first upgrade run. This
-    will upgrade the history in the database as per Directory Manager 11.1 format and replicates it
+    will upgrade the history in the database as per Directory Manager 11.2 format and replicates it
     to Elasticsearch. Later, when you upgrade specific groups and their history using the
     Upgrade-Group commandlet, that will be done successfully. See the
     [Upgrade-Group](/docs/directorymanager/11.2/managementshell/smartgroup/upgradegroup.md) commandlet for additional
@@ -132,7 +132,7 @@ connect to different child domains in a forest with different service accounts a
 messaging providers.
 
 - If an identity store already exists in Directory Manager 10 for the destination domains that the
-  jobs connect to, the Upgrade wizard moves the jobs to the respective identity stores in Directory Manager 11.1.
+  jobs connect to, the Upgrade wizard moves the jobs to the respective identity stores in Directory Manager 11.2.
 - When there is no identity store in Directory Manager 10 for the destination domain that the jobs
   connect to, the Upgrade wizard reads the FQDN of the destination domains used in the jobs and
   tries to create a forest structure. On identifying one, it proceeds to create an identity store
@@ -179,7 +179,7 @@ for that domain exists.
 - If an identity store for that domain doesn't exist, then you have to create an identity store for
   it. It must essentially be an Active Directory identity store. The wizard will bind the reports
   generated in Directory Manager 10 to the identity store, so you will be able to view them in
-  Directory Manager 11.1.
+  Directory Manager 11.2.
   ![reports_upgrade](/images/directorymanager/11.2/install/upgrade/reports_upgrade.webp)
 
 :::note
@@ -241,5 +241,5 @@ The Upgrade Completed page displays the status of features selected for upgrade.
 Step 17 – You can click:
 
 - View Details: to view log file generated during the Upgrade process.
-- Launch GroupID: to start using Directory Manager 11.1.
+- Launch GroupID: to start using Directory Manager 11.2.
 - Close: to close the Upgrade wizard.

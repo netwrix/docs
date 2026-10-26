@@ -7,7 +7,7 @@ sidebar_position: 20
 # Requirements
 
 This page lists the hardware, operating system, MS Exchange, and database required to run Directory
-Manager 11.1. The prerequisites may vary depending on your environment.
+Manager 11.2. The prerequisites may vary depending on your environment.
 
 - [Hardware Requirements](/docs/directorymanager/11.2/requirements/hardware.md)
 - [Microsoft Windows Servers Requirements ](/docs/directorymanager/11.2/requirements/windowsserver.md)

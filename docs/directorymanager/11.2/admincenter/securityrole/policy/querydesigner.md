@@ -38,7 +38,7 @@ settings will be override by the schema attribute settings specified here.
 ## Apply the Policy to Groups
 
 You can specify whether the defined role-based access policy for the Query Designer is to be applied
-on the newly created groups (Smart Groups and dynaasties) in Directory Manager  11.1 only or to all
+on the newly created groups (Smart Groups and dynasties) in Directory Manager 11.2 only or to all
 existing groups as well.
 
 **To apply the policy on groups:**
@@ -54,7 +54,7 @@ existing groups as well.
 7. On the **Query Designer** tab:
 
     - enable the **Apply policy only to newly created groups** toggle button to apply the policy on
-      the new groups created in Directory Manager 11.1.
+      the new groups created in Directory Manager 11.2.
 
         Let's say the following policy is defined for a user role:
 
