@@ -34,7 +34,7 @@ the installation progress while prerequisites are installed.
 
 ![Ready to install](/images/directorymanager/11.2/install/installer/readytoinstall.webp)
 
-The You are ready to install GroupID! page displays the status of each prerequisite software and
+The You are ready to install Directory Manager! page displays the status of each prerequisite software and
 Windows feature as Passed or Failed.
 
 Expand the node for a perquisite to view its details.
