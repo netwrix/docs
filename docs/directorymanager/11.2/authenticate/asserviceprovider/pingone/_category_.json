@@ -1,0 +1,10 @@
+{
+  "label": "PingOne",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

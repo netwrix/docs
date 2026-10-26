@@ -1,0 +1,10 @@
+{
+  "label": "Recycle Bin",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}
