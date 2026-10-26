@@ -105,9 +105,8 @@ provider. Use it as destination in a Synchronize job to export data from a sourc
 worksheet. Synchronize automatically builds the schema of the new Excel worksheet from the fields
 that you select from the source to map to the destination.
 
-The Directory Manager Installer installs the required components for the MS Excel provider while
-installing Directory Manager. However, if you experience any issue, install the following on
-the Directory Manager server:
+The Directory Manager Installer installs the required components for the MS Excel provider.
+However, if you experience any issue, install the following on the Directory Manager server:
 
 - Microsoft Office 2007 or later
 - Data connectivity components found at
