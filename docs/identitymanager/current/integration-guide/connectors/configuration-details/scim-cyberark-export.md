@@ -14,13 +14,13 @@ This guide shows how to set up a [SCIM](../../../integration-guide/connectors/re
 
 Usually CyberArk provides the environment to use AAM (_Application Access Manager_) and SCIM (_System for Cross-domain Identity Management_). For example, PrivateArk Server, PrivateArk and other tools can be found on a VM-based environment.
 
-It is strongly recommended that you follow the official **CyberArk SCIM Server Implementation Guide** (the CyberArk team can provide this document) in order to set up the environment. When you've completed the installation or if CyberArk has already installed it, you can verify the installation:
+It is strongly recommended that you follow the official **CyberArk SCIM Server Implementation Guide** (the CyberArk team can provide this document) to set up the environment. When you've completed the installation or if CyberArk has already installed it, you can verify the installation:
 
 1. Log into **PrivateArk Client**, locate and open the **SCIM Config** safe.
 2. Check the presence of the following objects:
 
     - `Encryption-key`: The SCIM Server uses a local cache to store objects retrieved from the
-Vault. Although no credentials (other than the ones in the SCIM Config safe, which are not stored on the cache) are retrieved, we encrypt the cache with this encryption key. The key is randomly generated, and not exposed by the installer, but can be changed if desired.
+Vault. Although no credentials (other than the ones in the SCIM Config safe, which aren't stored on the cache) are retrieved, we encrypt the cache with this encryption key. The key is randomly generated, and not exposed by the installer, but can be changed if desired.
     - `GlobalConfig.yml`: This is the configuration file for the overall SCIM server settings. It is
 responsible for the setting of performance parameters and additional added features.
     - `Usercube-account`: This is a privileged account to allow Identity Manager to authenticate its

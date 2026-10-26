@@ -107,7 +107,7 @@ An element `<EntityPropertyExpression>` can be used to calculate a scalar proper
 
 #### Display name
 
-Every declared **EntityType** automatically has the `InternalDisplayName` property even if it is not explicitly declared in the applicative configuration.
+Every declared **EntityType** automatically has the `InternalDisplayName` property even if it isn't explicitly declared in the applicative configuration.
 
 It represents a user-friendly name for **EntityType** that is used in the UI if needed.
 
@@ -158,7 +158,7 @@ We need to transform the input data, from the export, into something readable by
 
 The format used in the external system can be provided through the [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) using the [References: Format for the EntityPropertyMapping](../integration-guide/connectors/entitypropertymapping-format) attribute to help Identity Manager to convert data appropriately.
 
-If the field in the external system is not forced to a specific value type, but is free-form (example: a string field in which date values are stored but which can sometimes hold other values), we strongly recommend not using the `Format` attribute to prevent inconsistent user input in the external system.
+If the field in the external system isn't forced to a specific value type, but is free-form (example: a string field in which date values are stored but which can sometimes hold other values), we strongly recommend not using the `Format` attribute to prevent inconsistent user input in the external system.
 
 #### Primary key
 
@@ -166,13 +166,13 @@ When writing an [Entity Type Mapping](../integration-guide/toolkit/xml-configura
 
 ### SQL views
 
-The `UR_Resource` table contains resources from all the connectors, for all the Entity Types. Columns names are not semantically meaningful because they have generic I\*/C\* names. For this reason, Identity Manager provides SQL views to help the user explore the resource repository from the database. The views are useful to understand how Identity Manager works or to debug a faulty configuration.
+The `UR_Resource` table contains resources from all the connectors, for all the Entity Types. Columns names aren't semantically meaningful because they have generic I\*/C\* names. For this reason, Identity Manager provides SQL views to help the user explore the resource repository from the database. The views are useful to understand how Identity Manager works or to debug a faulty configuration.
 
 SQL Views are built by the [Create Database Views Task](../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/createdatabaseviewstask).
 
 SQL Views created by this tool are identified in the database by a `zz_` prefix.
 
-Created views are not used by the Identity Manager engine directly. Identity Manager's engine always creates, reads, updates and deletes from the `UR_*` tables.
+Created views aren't used by the Identity Manager engine directly. Identity Manager's engine always creates, reads, updates and deletes from the `UR_*` tables.
 
 ## Records
 

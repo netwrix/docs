@@ -7,7 +7,7 @@ sidebar_position: 3
 Generates the right to apply a report for a profile on a given entity.
 
 :::warning
-The existence of a report for this entity must exist in order to use this scaffolding.
+The existence of a report for this entity must exist to use this scaffolding.
 A scaffolding allows to generate a default report for an entity: [Entity reports](../../entitytypes/entitytypes/targetresourcereportmenus)
 :::
 

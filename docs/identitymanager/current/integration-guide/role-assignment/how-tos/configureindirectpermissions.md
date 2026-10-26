@@ -12,7 +12,7 @@ Configuring an Indirect Resource Rule in the Identity Manager Configuration is t
 will choose `AD User (nominative)`. Another rule can be written if you want to handle Indirect Permissions for `AD User (administration)`.
 - Which permissions can be obtained transitively in the Active Directory? Users get permissions by
 being members of a group. The property is `memberOf`.
-- Do we want to look for correspondences in another system? Here, we do not want to. This also means
+- Do we want to look for correspondences in another system? Here, we don't want to. This also means
 that `Correspondence`, `CorrespondenceMembershipProperty`, and `Entitlement` will remain blank.
 
 Finally, if we compile all this information and using the naming of the standard Identity Manager Demo, we get the following Indirect Resource Rule:
@@ -22,7 +22,7 @@ Finally, if we compile all this information and using the naming of the standard
 ````
 
 
-After adding this rule to the Configuration, do not forget to deploy the configuration.
+After adding this rule to the Configuration, don't forget to deploy the configuration.
 
 ### Set up a test user
 
@@ -55,7 +55,7 @@ And finally, we need to add Single Role Rules to link our two previously created
 
 ![Single Role Rule Example](/images/identitymanager/srrule_5.2.1.webp)
 
-Even if two rules of a kind are needed, only one is pictured. Do not forget the other one.
+Even if two rules of a kind are needed, only one is pictured. Don't forget the other one.
 
 #### Indirect permission display
 

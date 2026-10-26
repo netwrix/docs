@@ -36,7 +36,7 @@ How to manually build rules to automate the assignment of roles to identities.
 
 - [Perform Role Mining](../../user-guide/optimize/assignment-automation/role-mining)
 
-How to use role mining to suggest role assignment rules based on existing assignments, in order to push the automation wall further.
+How to use role mining to suggest role assignment rules based on existing assignments, to push the automation wall further.
 
 - [Remove Redundant Assignments](../../user-guide/optimize/assignment-automation/remove-redundant-assignments)
 
@@ -44,7 +44,7 @@ How to remove redundant assignments, i.e. manual assignments of roles and resour
 
 - [Create a Bundle](../../user-guide/optimize/bundle-creation)
 
-How to define bundles in order to create sets of single roles easy to assign.
+How to define bundles to create sets of single roles easy to assign.
 
 - [Configure a Parametrized Role](../../user-guide/optimize/parameterized-role)
 

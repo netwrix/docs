@@ -62,7 +62,7 @@ Generates the execution rights for Provisioning and Fulfillment tasks for a give
 
 - [Resource Changes View Access Control Rules](accesscontrolrules/jobs/resourcechangesviewaccesscontrolrules)
 
-Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange and ResourceLinkChange.
+Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange, and ResourceLinkChange.
 
 - [Resource Type Mapping Control Rules](accesscontrolrules/jobs/resourcetypemappingcontrolrules)
 
@@ -110,7 +110,7 @@ Generates the access control rule which gives to a profile the permission to que
 
 - [Assign Profile Access Control Rules](accesscontrolrules/profiles/assignprofileaccesscontrolrules)
 
-Gives to a given profile the rights to create, update, delete and query any assigned profile.
+Gives to a given profile the rights to create, update, delete, and query any assigned profile.
 
 - [Open Id Client Administration Access Control Rules](accesscontrolrules/profiles/openidclientadministrationaccesscontrolrules)
 

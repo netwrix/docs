@@ -63,7 +63,7 @@ To improve execution time, two optimizations are used:
 resources updated during the last incremental synchronization, and resources that depend on them. They are identified by the dirty flag, set during incremental synchronization. See the [Upward Data Synchronization](../../integration-guide/synchronization/upward-data-sync) topic for additional information.
 
 :::note
- For very few edge cases, dependencies between resource values can be difficult to identify within Identity Manager. An example involves entity property expressions using [LINQ](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/) syntax. See the [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype)topic for additional information. A second- or third-order binding used in such an expression actually defines a dependency. But Identity Manager does not account for it, because of performance-reliability trade-offs. That means a resource `R1`, using such an expression to compute one of its properties values from another resource `R2` property value, might not be updated even if `R2` has been updated by incremental synchronization. This too can be fixed by using complete synchronization once a day. 
+ For very few edge cases, dependencies between resource values can be difficult to identify within Identity Manager. An example involves entity property expressions using [LINQ](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/) syntax. See the [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype)topic for additional information. A second- or third-order binding used in such an expression actually defines a dependency. But Identity Manager doesn't account for it, because of performance-reliability trade-offs. That means a resource `R1`, using such an expression to compute one of its properties values from another resource `R2` property value, might not be updated even if `R2` has been updated by incremental synchronization. This too can be fixed by using complete synchronization once a day. 
 :::
 **Step 2 –** **Compute **expected assignments****
 
@@ -83,7 +83,7 @@ To build the list, the algorithm first goes through **bundle** rules, single **r
 
 Then, manual assignments and derogations are added to the **expected assignments** list. They are extracted from the database, where they were saved after being added from the UI or validated through the UI, and are considered part of the **role** model. Manual assignments are identified by the Approved workflow state. Derogations are identified by the Found and Historic workflow states.
 
-**role** assignments as derogations are displayed to the end-user for confirmation in the **role** Reconciliation screen. As long as they are not denied, they are considered a part of the **role** model and will not be considered as a non-conforming difference to be fixed by provisioning. They are deduced from actual resources and resource values found in the managed system, that do not comply with the assignment rules, and are displayed in the Resource Reconciliation screen.
+**role** assignments as derogations are displayed to the end-user for confirmation in the **role** Reconciliation screen. As long as they aren't denied, they are considered a part of the **role** model and will not be considered as a non-conforming difference to be fixed by provisioning. They are deduced from actual resources and resource values found in the managed system, that don't comply with the assignment rules, and are displayed in the Resource Reconciliation screen.
 
 Let's detail the rule enforcement mechanisms.
 
@@ -121,7 +121,7 @@ Then automation rules are enforced on assigned bundles. See the [Automation Rule
 :::
 **Enforcing single **role** rules**
 
-Then, single **role** rules are enforced. That means **assigning** a specific single **role** to the input resource based on its context and existing assigned bundles, i.e. the bundles currently assigned to the resource. Both assigned bundles freshly created by enforcing **bundle** rules and those already in the database are taken into account. In the former case, single roles created are said to be **inferred**.
+Then, single **role** rules are enforced. That means **assigning** a specific single **role** to the input resource based on its context and existing assigned bundles, i.e. the bundles assigned to the resource. Both assigned bundles freshly created by enforcing **bundle** rules and those already in the database are taken into account. In the former case, single roles created are said to be **inferred**.
 
 This is materialized into a new object called an assigned single **role**, stored in the UP_AssignedSingleRoles table. The resource becomes the **owner** of the assigned single **role**.
 
@@ -213,7 +213,7 @@ For every assigned resource type, assigned resource scalar and assigned resource
 
 For **expected assignments** that have a matching existing counterpart, the correlated target resource values are analyzed. If they match the expected resource values, that means that the last provisioning order has been indeed well executed. The provisioning state of the associated assignment is switched to Applied. Same goes for the **role** assignments from which those scalar and navigation assignments originated.
 
-For **expected assignments** that do not have a matching existing counterpart, they receive their Pending or Blocked provisioning state.
+For **expected assignments** that don't have a matching existing counterpart, they receive their Pending or Blocked provisioning state.
 
 Blocked assignments are submitted for validation in the provisioning review screen. Blocked assigned resource types are associated with a **confidence level** that describes the level of confidence of the correlation between source and target. The **confidence level** is a configuration of the resource correlation rules.
 
@@ -222,11 +222,11 @@ The workflow state is also analyzed; assignments with Approved (or Cancellation)
  | Workflow state | Description | 
  | --- | --- | 
  | 0—None | Used for Identity Manager's internal computation | 
- | 1—Non-conforming | The assignment is not supported by a rule. ![Workflow State: Non-conforming](/images/identitymanager/1_nonconforming_v603.webp) | 
- | 2—Requested - Missing Parameters | The assignment has been requested via a workflow, but does not specify at least one required parameter for the **role**. | 
- | 3—Pre-existing | The assignment is not supported by a rule, and it existed before the production launch. ![Workflow State: Pre-existing](/images/identitymanager/3_preexisting_v603.webp) | 
+ | 1—Non-conforming | The assignment isn't supported by a rule. ![Workflow State: Non-conforming](/images/identitymanager/1_nonconforming_v603.webp) | 
+ | 2—Requested - Missing Parameters | The assignment has been requested via a workflow, but doesn't specify at least one required parameter for the **role**. | 
+ | 3—Pre-existing | The assignment isn't supported by a rule, and it existed before the production launch. ![Workflow State: Pre-existing](/images/identitymanager/3_preexisting_v603.webp) | 
  | 4—Requested | The assignment is requested via a workflow, but not yet added. **NOTE:** Usually displayed in workflows' summaries. ![Workflow State: Pending Approval - Requested](/images/identitymanager/4_requested_v603.webp) | 
- | 5—Calculated - Missing Parameters | The assignment was done by a rule which does not specify at least one required parameter for the **role**. ![Workflow State: Calculated - Missing Parameters](/images/identitymanager/5_calculatedmissingparameters_v603.webp) | 
+ | 5—Calculated - Missing Parameters | The assignment was done by a rule which doesn't specify at least one required parameter for the **role**. ![Workflow State: Calculated - Missing Parameters](/images/identitymanager/5_calculatedmissingparameters_v603.webp) | 
  | 8—Pending Approval | The assignment must be reviewed manually by a knowledgeable user. ![Workflow State: Pending Approval](/images/identitymanager/8_pendingapproval_v603.webp) | 
  | 9—Pending Approval 1 of 2 | The assignment is pending the first approval on a two-step workflow. | 
  | 10—Pending Approval 2 of 2 | The assignment is pending the second approval on a two-step workflow. | 
@@ -247,7 +247,7 @@ That list will eventually become provisioning orders that will be sent to the ag
 
 Expected resource and their values not matching the existing resource and their value, for an existing assignment with an `Applied` or `Executed` provisioning state.
 
-If the existing assignment is not yet `Applied` the agent might still be preparing the provisioning. A resource value that does not comply with the **role** model, but is in the fixing process (meaning an assignment with a provisioning state of `Pending` or `Sent`) will not come up in the UI.
+If the existing assignment isn't yet `Applied` the agent might still be preparing the provisioning. A resource value that doesn't comply with the **role** model, but is in the fixing process (meaning an assignment with a provisioning state of `Pending` or `Sent`) will not come up in the UI.
 
 **Step 8 –** **Saving the result**
 
@@ -263,7 +263,7 @@ Expected assigned are written to the database, they will be the **basis** for t
 
 To enhance the writing performances, it's not actual assigned\* that are written, but updates from the existing ones, using the delta computed at step 7.
 
-For fine-grained assignments such as assigned resource scalars and assigned resource navigations, Identity Manager stores the **policy value** i.e. the value computed by Evaluate Policy (not yet fulfilled) and the **current value** i.e. the value currently held by the target resource in the managed systems.
+For fine-grained assignments such as assigned resource scalars and assigned resource navigations, Identity Manager stores the **policy value** i.e. the value computed by Evaluate Policy (not yet fulfilled) and the **current value** i.e. the value held by the target resource in the managed systems.
 
 From there, it is possible to retrieve the **Differences** between existing and **expected assignments** for that resource, at any time.
 
@@ -295,7 +295,7 @@ The workflow state of an assignment helps identify the nature of a difference be
 - **Provisioning Review** displays `Blocked` (non `Found`, non `Historic`) assigned resource types,
 assigned resource navigations and assigned resource scalars. They must be reviewed by a knowledgeable technical end-user. They are assignments mirroring legit provisioning orders recently computed by the Evaluate Policy.
 - **Resource Reconciliation** displays `Found` and `Historic` assigned resource types, assigned
-resource navigations and assigned resource scalars. This is where non-conforming resource values or non-authorized accounts (i.e. a resource that should not exist at all) in the form of provisioning assignments are displayed. These assignments mirror, at the **resource value level**, derogations still not explicitly refused by a knowledgeable end-user. This is where an end-user can find provisioning assignments that would render legit the non-confirming values and non-authorized accounts found in the managed systems.
+resource navigations and assigned resource scalars. This is where non-conforming resource values or non-authorized accounts (i.e. a resource that shouldn't exist at all) in the form of provisioning assignments are displayed. These assignments mirror, at the **resource value level**, derogations still not explicitly refused by a knowledgeable end-user. This is where an end-user can find provisioning assignments that would render legit the non-confirming values and non-authorized accounts found in the managed systems.
 - ****role** Reconciliation** displays `Found` and `Historic` assigned single roles and assigned
 bundles. They are **role** assignments that mirror derogations, at the **role** level, still not explicitly refused by a knowledgeable end-user. This is where an end-user can find roles assignments that would render legit the non-confirming values and non-authorized accounts found in the managed systems.
 - **Redundant Assignments** displays `Approved` assigned roles and assigned resource types tagged as
@@ -312,7 +312,7 @@ This could be caused by a change in the target value directly from within the ma
 
 The corresponding assigned\* would be awarded a workflow state Historic or Found given the difference is about a change in the target made outside/before Identity Manager and found by synchronization.
 
-As Identity Manager does not overwrite managed systems values without confirmation from a knowledgeable user, the found non-conforming value will be displayed in the **Resource Reconciliation** screen, with the suggestion for update. The non-conforming value can either be kept, and become an exception and overwritten with the rules-issued value.
+As Identity Manager doesn't overwrite managed systems values without confirmation from a knowledgeable user, the found non-conforming value will be displayed in the **Resource Reconciliation** screen, with the suggestion for update. The non-conforming value can either be kept, and become an exception and overwritten with the rules-issued value.
 
 This could also be caused by a change in the source resource, by a previous fulfillment of Identity Manager, or directly from within the managed system. For example, the HR system has updated the Name of an employee. Synchronization has detected the change in value, and reapplied rules. And now, the target Active Directory account name has to be updated.
 
@@ -342,9 +342,9 @@ Those cases yield a provisioning order, that could be blocked, and hence display
 
 An extra target resource has been found by synchronization, it's been correlated with our source resource, but no navigation rules applied to the source resource yielded the need for its existence.
 
-This could be caused by an extra resource created directly from within a managed system, or the change of a rule that makes some existing resources moot. For example, an administration Active Directory account has been created directly from the managed system and granted to an identity who, according to the rules, is not entitled to it.
+This could be caused by an extra resource created directly from within a managed system, or the change of a rule that makes some existing resources moot. For example, an administration Active Directory account has been created directly from the managed system and granted to an identity who, according to the rules, isn't entitled to it.
 
-As Identity Manager does not overwrite managed systems values without confirmation from a knowledgeable user, the found non-authorized account will be displayed in the **Resource Reconciliation** screen, with the suggestion for deletion. The non-authorized account can either be kept, and become an exception and or be deleted to comply with the rules.
+As Identity Manager doesn't overwrite managed systems values without confirmation from a knowledgeable user, the found non-authorized account will be displayed in the **Resource Reconciliation** screen, with the suggestion for deletion. The non-authorized account can either be kept, and become an exception and or be deleted to comply with the rules.
 
 The corresponding assigned\* would be awarded a workflow state `Historic` or `Found` given the difference is about an extra target added outside/before Identity Manager and found by synchronization.
 

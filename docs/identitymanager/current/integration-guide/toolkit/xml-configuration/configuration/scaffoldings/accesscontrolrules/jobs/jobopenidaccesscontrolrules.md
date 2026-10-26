@@ -4,7 +4,7 @@ description: "Generates the minimal access control rules required to launch jobs
 sidebar_position: 3
 ---
 
-Generates the minimal access control rules required to launch jobs for a profile linked to an OpenID client, except for rights on FulfillInternalWorkflows and custom API calls (to be added separately as needed). No rule is generated if the profile is not linked to an OpenID client.
+Generates the minimal access control rules required to launch jobs for a profile linked to an OpenID client, except for rights on FulfillInternalWorkflows and custom API calls (to be added separately as needed). No rule is generated if the profile isn't linked to an OpenID client.
 
 
 The scaffolding generates the following scaffoldings:

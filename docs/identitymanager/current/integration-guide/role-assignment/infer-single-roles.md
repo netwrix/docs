@@ -30,7 +30,7 @@ A CompositeRole is created in the same way as a SingleRole.
 
 ## Assign the Bundle Based on the Dimension
 
-This step is optional for our simple purpose of inferring single roles with a bundle. The bundle can be linked to a dimension, but it does not have to.
+This step is optional for our simple purpose of inferring single roles with a bundle. The bundle can be linked to a dimension, but it doesn't have to.
 
 The CompositeRoleRule can be limited with the use of dimensions.
 

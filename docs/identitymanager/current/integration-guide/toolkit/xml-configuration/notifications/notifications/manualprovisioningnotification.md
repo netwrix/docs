@@ -15,7 +15,7 @@ The following example sends after 2 days a reminder notification to users who we
 ```
 
 :::note
-The `TitleExpression`, `RazorTemplate` and `CssTemplate` properties on typed notifications are not used. To customize the notification subject and body, declare a [`NotificationTemplate`](../notificationtemplate) element with `Identifier="PerformManualProvisioningSummary"`.
+The `TitleExpression`, `RazorTemplate` and `CssTemplate` properties on typed notifications aren't used. To customize the notification subject and body, declare a [`NotificationTemplate`](../notificationtemplate) element with `Identifier="PerformManualProvisioningSummary"`.
 :::
 
 

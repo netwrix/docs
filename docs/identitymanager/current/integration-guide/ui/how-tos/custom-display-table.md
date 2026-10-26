@@ -43,7 +43,7 @@ Here is the visualization of this resource table on the interface:
 
 .
 
-Instead of creating a table, it is possible to create tiles to give another rendering of the user interface. It is therefore necessary to create the different tiles first. After creating the tiles, they must be imported into the display table with `DisplayTableDesignElement` set to `list`. Display tables with other values of `DisplayTableDesignElement` cannot display tiles.
+Instead of creating a table, it is possible to create tiles to give another rendering of the user interface. It is therefore necessary to create the different tiles first. After creating the tiles, they must be imported into the display table with `DisplayTableDesignElement` set to `list`. Display tables with other values of `DisplayTableDesignElement` can't display tiles.
 
 See the[Tile](../../../integration-guide/toolkit/xml-configuration/user-interface/tile) topic for additional information.
 
