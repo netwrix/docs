@@ -170,23 +170,10 @@ Provide the following information:
 
 Step 11 – Click **Next**.
 
-Step 12 – In Directory Manager 10 and earlier versions, Directory Manager generated reports for the domain that
-the Directory Manager server was joined to. During upgrade, the wizard checks whether an identity store
-for that domain exists.
-
-- If an identity store for that domain exists or if the upgrade process is creating one for a Synchronize job in this
-  upgrade, Directory Manager will bind the reports to it.
-- If an identity store for that domain doesn't exist, then you have to create an identity store for
-  it. It must essentially be an Active Directory identity store. The wizard will bind the reports
-  generated in Directory Manager 10 to the identity store, so you will be able to view them in
-  Directory Manager 11.2.
-  ![reports_upgrade](/images/directorymanager/11.2/install/upgrade/reports_upgrade.webp)
-
-:::note
-If no report has been generated in Directory Manager 10, the page related to reports upgrade
-will not be displayed.
-:::
-
+Step 12 – The Upgrade wizard doesn't upgrade reports. In Directory Manager 10 and earlier versions,
+Directory Manager generated reports for the domain that the Directory Manager server was joined to.
+Directory Manager 11.2 doesn't attach these reports to an identity store. After the upgrade,
+reconfigure the reports manually in Directory Manager 11.2.
 
 Step 13 – During upgrade, the Upgrade wizard also moves Synchronize schedules to identity stores.
 The Upgrade wizard will check the jobs added to a schedule. If the destination in a job is a

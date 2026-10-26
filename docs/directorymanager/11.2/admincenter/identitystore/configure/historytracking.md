@@ -158,6 +158,10 @@ this data by moving it from the database to CSV files. See the
 
 5. Click **Save**.
 
+When you enable history tracking, a newly created identity store retains history for 1 year by
+default. You can change this period
+on the **History** page. An existing identity store keeps its current retention setting.
+
 ## Disable History Tracking
 
 On disabling history tracking for an identity store, Directory Manager doesn't log the history for
