@@ -77,7 +77,7 @@ You can now run Directory Manager Management Shell commandlets.
 To enable remoting on a Directory Manager machine, the remote machine must have one of the following
 Operating Systems:
 
-- Windows Server 2016 or 2019 or 2022
+- Windows Server 2019, 2022, or 2025
 - Windows Server Nano (1809 or higher)
 - Windows 11
 - Windows 10 1607+
@@ -106,11 +106,6 @@ enable-psremoting
 ```
 
 ![powershellwindow](/images/directorymanager/11.2/managementshell/powershellwindow.webp)
-
-:::note
-By default, on Windows Server 2016, Windows PowerShell remoting is enabled. Use this command
-to re-enable remoting on Windows Server 2016 if it becomes disabled.
-:::
 
 
 You have to run this command only one time on each computer that will receive commands. You don't
