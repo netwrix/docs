@@ -26,6 +26,8 @@ When you find what looks like a typo, a wrong word, or an obvious wording error,
 
 ## Steps for each page
 
+Keep the writer oriented. Report one line after each of these: the page's structure decision (step 3), the integrity check result (step 5), and the lint result (step 7). For a batch, prefix each line with the page count, for example "Page 12 of 40, `install/signingkey.md`: integrity passes, linting." When a batch takes more than a few minutes, report every 10 pages, or about every 10 minutes, with the counts of pages done, pages waiting on a writer's decision (a typo to confirm, a proposed split or merge), and pages that failed a check. Say when you stop for the writer's decision and what you need. Don't make the writer ask where you are.
+
 1. Read the page, `docs/<product>/CLAUDE.md` if it exists, and one or two neighboring pages for structure and frontmatter.
 2. List the page's facts as a coverage list: each requirement, condition, default, limit, warning, and step outcome. Keep it for step 5.
 3. Decide the target structure: page type (task, concept, reference, or troubleshooting), zone, and order (overview → prerequisites → procedures). Headings use sentence case, with an infinitive for tasks and a gerund for concepts.
