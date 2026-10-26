@@ -1,6 +1,12 @@
 ---
 title: "Users Tab for Website"
-description: "Users Tab for Website"
+description: "Reference for the Users tab on the Website Details page, including managed user actions and table columns."
+keywords:
+  - website users
+  - managed user
+  - Login Account Template
+  - Add a Managed User
+  - User Name
 sidebar_position: 20
 ---
 
@@ -8,8 +14,8 @@ sidebar_position: 20
 
 The Users tab shows information about the users on the selected resource.
 
-Manually managed user accounts can be added to the website resource. These accounts are used for
-activities on the resource. The format in the Username field must be identical to the username
+You can add manually managed user accounts to the website resource. Activities on the resource use
+these accounts. The format in the Username field must be identical to the username
 format specified in the “Login Account Template” field of the activity. See the
 [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
 
@@ -17,22 +23,22 @@ format specified in the “Login Account Template” field of the activity. See 
 
 The Users tab has the following features:
 
-- Search — Searches the table or list for matches to the search string. When matches are found, the
-table or list is filtered to the matching results.
-- Add — Opens the Add a Managed User window. See the
-[Add a Managed User Window](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/website/userswebsite/addamanageduser.md) topic for additional
-information.
-- Edit — Opens the Edit a Managed User window. See Edit a Managed User for additional information.
-- Delete — Removes the selected item from the resource. A confirmation window displays.
-- Refresh — Reload the information displayed
+- **Search** — Searches the table or list for matches to the search string. When the search finds matches, the
+  table or list shows only the matching results.
+- **Add** — Opens the Add a Managed User window. See the
+  [Add a Managed User Window](/docs/privilegesecure/25.12/admin/interface/resources/detailspages/website/userswebsite/addamanageduser.md) topic for additional
+  information.
+- **Edit** — Opens the Edit a Managed User window. See Edit a Managed User for additional information.
+- **Delete** — Removes the selected item from the resource. A confirmation window displays.
+- **Refresh** — Reload the information displayed
 
 The table has the following columns:
 
-- Checkbox — Check to select one or more items
-- Name — Displays the name of the account
-- User Name — Displays the account name in the exact format specified in the “Login Account
-Template” field of the Activity, e.g. `domain\user` or `user@domain.com`. See the
-[Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
-- Created — Date timestamp when the account was created
+- **Checkbox** — Check to select one or more items
+- **Name** — Displays the name of the account
+- **User Name** — Displays the account name in the exact format specified in the “Login Account
+  Template” field of the Activity, e.g. `domain\user` or `user@domain.com`. See the
+  [Activities Page](/docs/privilegesecure/25.12/admin/interface/activities/activities.md) topic for additional information.
+- **Created** — Date timestamp when the account was created
 
-The table columns can be resized and sorted in ascending or descending order.
+You can resize the table columns and sort them in ascending or descending order.
