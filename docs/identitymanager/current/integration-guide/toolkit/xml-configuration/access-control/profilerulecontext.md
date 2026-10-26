@@ -19,7 +19,7 @@ Defines the context in which the rule will be evaluated.
 
 |Property|Details|
 |---|---|
-| EntityType optional | **Type:** Int64 **Description:** When `ResourceType` is not used, identifier of the entity type from which the expressions are evaluated. |
+| EntityType optional | **Type:** Int64 **Description:** When `ResourceType` isn't used, identifier of the entity type from which the expressions are evaluated. |
 | IsAppliedToRoot <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** Are the dimensions queried from user informations? |
 | ResourceType optional | **Type:** Int64 **Description:** The resourceType of the assignedResourcetypes on which the rule is going to be applied on. |
 | RootBinding optional | **Type:** Int64 **Description:** Binding to apply on the user resource before excuting the root expression(cf Profile Rule). |

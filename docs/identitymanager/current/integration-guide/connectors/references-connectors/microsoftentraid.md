@@ -23,9 +23,9 @@ developed by your own organization.
 
 ## Prerequisites
 
-Implementing this connector requires giving Identity Manager [application permissions](https://docs.microsoft.com/en-us/graph/auth/auth-concepts#application-permissions), because Identity Manager does not access the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/graph/auth-v2-service), and delegated permissions are not enough. These application permissions require the consent of an administrator of the target Microsoft Entra ID tenant.
+Implementing this connector requires giving Identity Manager [application permissions](https://docs.microsoft.com/en-us/graph/auth/auth-concepts#application-permissions), because Identity Manager doesn't access the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/graph/auth-v2-service), and delegated permissions aren't enough. These application permissions require the consent of an administrator of the target Microsoft Entra ID tenant.
 
-See the [Register for Microsoft Entra ID](../../../integration-guide/connectors/configuration-details/azuread-register) topic on how to register Identity Manager as an application with the Microsoft Identity Platform in order to grant Identity Manager a service account which authenticates with the target Microsoft Entra ID.
+See the [Register for Microsoft Entra ID](../../../integration-guide/connectors/configuration-details/azuread-register) topic on how to register Identity Manager as an application with the Microsoft Identity Platform to grant Identity Manager a service account which authenticates with the target Microsoft Entra ID.
 
 ## Export
 

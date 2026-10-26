@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Create a Bundle
 
-How to define **bundles** in order to create sets of single **roles** easy to assign. See the [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) and [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation)topics for additional information.
+How to define **bundles** to create sets of single **roles** easy to assign. See the [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) and [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation)topics for additional information.
 
 ## Overview
 
@@ -40,11 +40,11 @@ See the [Create **roles** in the Role Catalog](../../user-guide/set-up/single-ro
 
 Create a bundle by proceeding as follows:
 
-**Step 1 :** On the home page in the **Configuration** section, click on **Access **roles**** to access the **roles** page.
+**Step 1 :** On the home page in the **Configuration** section, click **Access **roles**** to access the **roles** page.
 
 ![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 
-**Step 2 :** On the **roles** page, click on the adequate category and create a role by clicking on **+ New** at the top right corner.
+**Step 2 :** On the **roles** page, click the adequate category and create a role by clicking on **+ New** at the top right corner.
 
 **Step 3 :** Fill in the fields.
 
@@ -66,14 +66,14 @@ to the applicable context rule.
     - **Always**: the end date is always locked according to the applicable context rule.
 
 - **Approve Role Implicitly**: needs at least a simple approval workflow. **Implicit** mode bypasses
-the approval step(s) if the person who issues the role request is also the role officer. **Explicit** refuses said bypass. **Inherited** follows the policy decision to approve **roles** implicitly or not.
+the approval steps if the person who issues the role request is also the role officer. **Explicit** refuses said bypass. **Inherited** follows the policy decision to approve **roles** implicitly or not.
 - **Hide in Simplified View**: hides the role from the users' **Simplified View** in **View
 Permissions** dialog. This setting does not apply to **roles** which are either inferred or have workflow states which require manual action.
 - **Comment Management on Permission Review**: to change if different from the role policy.
 - **Maximum Duration**: duration (in minutes) after which the role will be automatically revoked, if
-no earlier end date is specified. It impacts only the **roles** which are manually assigned after the maximum duration is set. Pre-assigned **roles** are not impacted. If no duration is set on the role, the **MaxDuration** of the associated policy is applied. If the **MaxDuration** is set to 0 on the role, it prevents the associated policy from applying its **MaxDuration** to it.
+no earlier end date is specified. It impacts only the **roles** which are manually assigned after the maximum duration is set. Pre-assigned **roles** aren't impacted. If no duration is set on the role, the **MaxDuration** of the associated policy is applied. If the **MaxDuration** is set to 0 on the role, it prevents the associated policy from applying its **MaxDuration** to it.
 
-**Step 4 :** Click on **Create** and see a line added on the **roles** page.
+**Step 4 :** Click **Create** and see a line added on the **roles** page.
 
 **Step 5 :** Create at least one single role rule with the bundle as a criterion.
 
@@ -81,13 +81,13 @@ no earlier end date is specified. It impacts only the **roles** which are manual
 
 When deleting a bundle, caution must be used when deleting the corresponding single role **rules**. Indeed, these **rules** thus lose their criteria and may be applied to far too many people after that.
 
-Simulations are available in order to anticipate the changes induced by a creation/modification/deletion in **roles** and single role **rules**. See the [Perform a Simulation](../../user-guide/optimize/simulation)topic for additional information.
+Simulations are available to anticipate the changes induced by a creation/modification/deletion in **roles** and single role **rules**. See the [Perform a Simulation](../../user-guide/optimize/simulation)topic for additional information.
 
 ## Verify Bundle Creation
 
-In order to verify the process, check that the role and rule are created with the right parameters.
+to verify the process, check that the role and rule are created with the right parameters.
 
-For **roles**, click on **Access **roles**** on the home page in the **Configuration** section.
+For **roles**, click **Access **roles**** on the home page in the **Configuration** section.
 
 ![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 

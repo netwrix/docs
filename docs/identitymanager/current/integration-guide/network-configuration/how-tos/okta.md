@@ -8,15 +8,15 @@ On the Okta dashboard:
 
 ![Add Application](/images/identitymanager/okta_addapplication.webp)
 
-**Step 1 –** Select the **Applications** section and click on the **Add Application** button.
+**Step 1 –** Select the **Applications** section and click the **Add Application** button.
 
 ![Create New App](/images/identitymanager/okta_createnewapp.webp)
 
-**Step 2 –** Then click on the **Create New App** button.
+**Step 2 –** Then click the **Create New App** button.
 
 ![Create Native App](/images/identitymanager/okta_createnativeapp.webp)
 
-**Step 3 –** Select the platform **Native app**. The only sign-on method is the OpenID Connect. Click on **Create**.
+**Step 3 –** Select the platform **Native app**. The only sign-on method is the OpenID Connect. Click **Create**.
 
 **Step 4 –** In **General Settings**, name your Application. You can also add a logo.
 
@@ -29,7 +29,7 @@ On the Okta dashboard:
 
 ## Configure the Client Credentials
 
-The client secret in Identity Manager is required for the OIDC connection. You must therefore configure this OIDC connection option in the application. In the Application Dashboard, click on **Edit** in the **Client Credentials** section. Select the option **Use Client Authentication** and save the changes.
+The client secret in Identity Manager is required for the OIDC connection. You must therefore configure this OIDC connection option in the application. In the Application Dashboard, click **Edit** in the **Client Credentials** section. Select the option **Use Client Authentication** and save the changes.
 
 ![Client Credentials](/images/identitymanager/okta_clientcredentials.webp)
 

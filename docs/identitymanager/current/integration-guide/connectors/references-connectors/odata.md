@@ -73,7 +73,7 @@ The identifier of the connection and thus the name of the subsection must:
  | Name | Details |
  | --- | --- |
  | Server required | **Type** String **Description** URL of the data system. |
- | Login optional | **Type** String **Description** Login to connect to the system. |
+ | Login optional | **Type** String **Description** log in to connect to the system. |
  | Password optional | **Type** String **Description** Password to connect to the system. |
  | BearerToken optional | **Type** String **Description** Token to authenticate to the system. |
  | ClientId optional | **Type** String **Description** Id to connect to the system via OpenID. |
@@ -100,7 +100,7 @@ related property in the association;
 property in the association;
     - related to a connection table named `<Connection>_<ODataEntitySet>_<NavigationProperty>`.
 
-The information contained in the entity types and entity associations does not impact the export.
+The information contained in the entity types and entity associations doesn't impact the export.
 
 ### Output details
 
@@ -108,7 +108,7 @@ This connector is meant to generate to the [Application Settings](../../../integ
 
 The files' column headers come from the entity type mapping's `ConnectionColumn` properties.
 
-If the connection column describes a sub-property, then the name should have the following pattern: `{property}:{sub-property}`. The character `":"` should not be used in other situations.
+If the connection column describes a sub-property, then the name should have the following pattern: `{property}:{sub-property}`. The character `":"` shouldn't be used in other situations.
 
 > For example:
 >

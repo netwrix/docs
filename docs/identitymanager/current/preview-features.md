@@ -9,7 +9,7 @@ sidebar_position: 40
 Preview features are available so you can explore upcoming functionality early and share feedback before general availability. See [Providing Feedback](#providing-feedback) to share your experience.
 
 :::important
-Preview features are not recommended for use in production environments. They may be incomplete, subject to change, or behave unexpectedly. Activate preview features in preproduction environments only.
+Preview features aren't recommended for use in production environments. They may be incomplete, subject to change, or behave unexpectedly. Activate preview features in preproduction environments only.
 :::
 
 ## Activating Preview Features
@@ -19,7 +19,7 @@ Preview features are not recommended for use in production environments. They ma
 The preview section is activated by default in preproduction environments. To enable a specific feature, navigate to **Settings → Preview** in the NIM UI and activate the feature you want to test.
 
 :::note
-Preview features are not activated in production.
+Preview features aren't activated in production.
 :::
 
 ### On-Premises
@@ -32,7 +32,7 @@ Preview features are not activated in production.
 }
 ```
 2. Restart the server.
-3. Navigate to **Settings → Preview** in the NIM UI and activate the feature(s) you want to enable.
+3. Navigate to **Settings → Preview** in the NIM UI and activate the features you want to enable.
 
 ---
 
@@ -69,7 +69,7 @@ To return to the legacy homepage, individual users can select **Legacy** in the 
 
 #### Overview
 
-Netwrix Identity Manager does not natively include any right-to-left (RTL) languages. However, with this preview feature activated, the NIM UI is capable of rendering in RTL layout when the appropriate translation files are provided.
+Netwrix Identity Manager doesn't natively include any right-to-left (RTL) languages. However, with this preview feature activated, the NIM UI is capable of rendering in RTL layout when the appropriate translation files are provided.
 
 This allows organizations that operate in RTL languages, such as Arabic or Hebrew, to experience a correctly oriented interface without waiting for native language support to be added to the product.
 
@@ -77,7 +77,7 @@ This allows organizations that operate in RTL languages, such as Arabic or Hebre
 
 RTL support requires:
 
-1. **Provide your own translation files** for the RTL language you want to support. NIM does not supply these files, so your team or a localization partner will need to prepare them.
+1. **Provide your own translation files** for the RTL language you want to support. NIM doesn't supply these files, so your team or a localization partner will need to prepare them.
 2. **Activate the RTL preview feature** in the Preview section of the Settings in the UI, following the steps in the [Activating Preview Features](#activating-preview-features) section above.
 
 Once activated, the UI will adapt its layout to support right-to-left reading direction based on the language defined in your translation files.
@@ -98,5 +98,5 @@ The role filter is applied against the entire role catalogue, not just the roles
 
 ## Providing Feedback
 
-Features in preview are in active development. If you encounter issues or have suggestions, please share your feedback with your Netwrix Identity Manager representative or through the support portal.
+Features in preview are in active development. If you encounter issues or have suggestions, share your feedback with your Netwrix Identity Manager representative or through the support portal.
 

@@ -44,7 +44,7 @@ Each individual entitlement should usually be modeled by a **single role**, and 
 
 ## A Rule Set
 
-**roles** alone are not enough to give identities the systems' technical entitlements. We need **rules** to have Identity Manager write users' entitlements in the managed systems. **rules** are further used to automatically assign **roles** to users, or to categorize users and accounts, etc.
+**roles** alone aren't enough to give identities the systems' technical entitlements. We need **rules** to have Identity Manager write users' entitlements in the managed systems. **rules** are further used to automatically assign **roles** to users, or to categorize users and accounts, etc.
 
 ### Provisioning **rules**
 
@@ -79,7 +79,7 @@ While the role catalog and provisioning **rules** are together enough to manuall
 
 ![Assignment **rules**](/images/identitymanager/entitlements_assignmentrules.webp)
 
-Once all assignment **rules** are created, Identity Manager is able to spot existing assignments that are not supported by any rule, marking them as non-conforming.
+Once all assignment **rules** are created, Identity Manager can spot existing assignments that aren't supported by any rule, marking them as non-conforming.
 
 Identity Manager's assignment **rules** are:
 
@@ -105,7 +105,7 @@ Identity Manager's categorization **rules** are:
 
 ### More **rules**
 
-Identity Manager provides more kinds of **rules** for optimization purposes, for example **role naming conventions** to help build the role catalog by generating **roles** and navigation **rules** based on the entitlements' names, or automation **rules** to help with governance by automating the review of the assignments that do not comply with the configured **rules**.
+Identity Manager provides more kinds of **rules** for optimization purposes, for example **role naming conventions** to help build the role catalog by generating **roles** and navigation **rules** based on the entitlements' names, or automation **rules** to help with governance by automating the review of the assignments that don't comply with the configured **rules**.
 
 ### **dimensions**
 
