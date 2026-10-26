@@ -25,6 +25,10 @@ You may want to change the default base/Issuer URL for any reason, for example, 
 sub-domain URL or a load balancer URL.  
 Replace or update the URL in the Base URL box and click **Save**.
 
+If you use a load balancer URL, also add it to the Security service's allowed base URLs. See the
+[Allow Return URLs for Load Balancers and Reverse Proxies](/docs/directorymanager/11.2/admincenter/service/securityservice/allowedurls.md)
+topic.
+
 ## Update the Default Signing Certificate
 
 To update the default signing certificate.

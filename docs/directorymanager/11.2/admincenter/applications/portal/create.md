@@ -278,6 +278,62 @@ the[Prerequisites for Deployments in Remote IIS](/docs/directorymanager/11.2/adm
     Mode**, **Select Identity Stores**, and **Advanced Settings** areas and create the portal,
     follow the steps in the Create a Portal in Native IIS topic, starting at step 9.
 
+:::important
+After you deploy a portal in remote IIS, add the IP address of the remote IIS server to the IIS IP
+allow list of the Data service that the portal uses. See
+[Add a Machine to the Data Service IP Allow List](#add-a-machine-to-the-data-service-ip-allow-list).
+
+When you upgrade Directory Manager to a newer version, redeploy any existing portals that are
+deployed in remote IIS.
+:::
+
+### Add a Machine to the Data Service IP Allow List
+
+By default, IIS restricts the Data service to accept requests only from the Directory Manager
+server's local IP addresses. A portal or service on another machine, such as a portal deployed in
+remote IIS, can't communicate with the Data service until you add that machine's IP address to the
+Data service's IP allow list. Do this on the Directory Manager server that hosts the Data service.
+
+Use either of the following methods. In both, replace `SITE` and `APP` with the names of the Data
+service's IIS site and application, which you can find in IIS Manager.
+
+**Option 1: Use appcmd**
+
+Step 1 – Open an elevated command prompt on the Directory Manager server.
+
+Step 2 – Run the following command. Replace `10.1.2.3` with the IP address of the machine to allow.
+
+```
+%windir%\system32\inetsrv\appcmd.exe set config "SITE/APP" -section:system.webServer/security/ipSecurity /+"[ipAddress='10.1.2.3',allowed='True']" /commit:apphost
+```
+
+To allow a subnet, add the `subnetMask` attribute:
+
+```
+%windir%\system32\inetsrv\appcmd.exe set config "SITE/APP" -section:system.webServer/security/ipSecurity /+"[ipAddress='10.1.2.0',subnetMask='255.255.255.0',allowed='True']" /commit:apphost
+```
+
+The `/commit:apphost` parameter writes the rule to `applicationHost.config`, the same way the
+installer does, so you don't need to change the application's `web.config` file.
+
+**Option 2: Use IIS Manager**
+
+Step 1 – In IIS Manager, select the Data service application and open **IP Address and Domain
+Restrictions**.
+
+Step 2 – Click **Add Allow Entry** and enter the IP address or range of the machine to allow.
+
+Keep the existing entries (the local IP addresses, `127.0.0.1`, and `::1`), because Directory Manager
+services call each other locally.
+
+:::warning
+Running the Configuration Tool again removes this setting and restores the default IIS restrictions.
+After you re-run the tool, add the IP address again.
+:::
+
+For more on restricting access to Directory Manager services, see the
+[Security Utility](/docs/directorymanager/11.2/install/securityutility.md) topic.
+
 ## Create a Self-Service Password Reset Portal
 
 A Directory Manager portal can be created as a Self-Service Password Reset portal (SSPR) in native

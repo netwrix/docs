@@ -6,13 +6,17 @@ sidebar_position: 30
 
 # Prerequisites for Deployments in Remote IIS
 
-To deploy Directory Manager portals and services (Data service and Security service) in remote IIS,
-you must set up the following prerequisites:
+To deploy Directory Manager portals and the Security service in remote IIS, you must set up the
+following prerequisites:
 
 - Install the required software
 - Create a site in remote IIS for deploying the Directory Manager portal and services, and assign
   permissions
 - Generate an access key for the Microsoft IIS Administration API
+
+:::note
+Deploying the Data service, Replication service, or Email service in remote IIS isn't supported.
+:::
 
 ## Prerequisite Software
 

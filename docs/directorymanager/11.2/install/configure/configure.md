@@ -43,6 +43,9 @@ option.
 
     This option also configures the Directory Manager Elasticsearch Service as a slave node to the
     master node for the Elasticsearch Service cluster configured on the Directory Manager server.
+
+    Before you configure the server, export the GroupID password, passphrase, and signing key from
+    the primary server. See the **Before You Begin** section of the topic that follows.
     See the
     [Configure a new Directory Manager server to add it to an existing Directory Manager 11 cluster with an existing database](/docs/directorymanager/11.2/install/configure/database.md)
     topic for additional information.

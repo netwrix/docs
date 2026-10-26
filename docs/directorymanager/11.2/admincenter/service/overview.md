@@ -31,10 +31,12 @@ the default computer account. See the Accounts to Run the Servicestopic for deta
 
 ### Services Hosting
 
-Directory Manager services are hosted on a web server, that could be native IIS or remote IIS.
+Directory Manager services are hosted on a web server, that could be native IIS or remote IIS. Only
+the Security service can be deployed in remote IIS. Deploying the Data service, Replication service,
+or Email service in remote IIS isn't supported.
 
 You can create multiple Data services and Security services while hosting them on different web
-servers. For example, you can host one Data service in native IIS and another in remote IIS.
+servers. For example, you can host one Security service in native IIS and another in remote IIS.
 
 - To launch IIS on a machine, see
   [Opening IIS Manager](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525920(v=vs.90)).
