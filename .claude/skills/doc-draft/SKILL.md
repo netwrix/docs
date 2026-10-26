@@ -32,6 +32,8 @@ Document what a customer sees and does: UI labels, settings and their values, be
 
 ### Draft new documentation
 
+Keep the writer oriented. Say what you are doing in one line at each of these points, and say nothing between them: after step 2 (the source you read and the pages you plan to write), when a draft is written (step 8), and when the lint is clean (step 11). For several pages, prefix each line with the page count, for example "Page 2 of 5, `install/signingkey.md`: drafted, linting." If a step takes more than a few minutes (cloning a repo, reading a large diff, a slow lint), say which one you are waiting on. Don't make the writer ask where you are.
+
 1. Read `docs/CLAUDE.md` for conventions, and `.claude/references/lint-rules.md`, the list of rules the style check enforces, so your first draft avoids them
 2. Read the specification or source material provided
 3. Read 1–2 similar existing documents in the same product for structural reference. Decide which zone the page belongs in from `.claude/references/documentation-section-guide.md`, by the reader's question the page answers. Then read `.claude/references/page-structure-guide.md` to decide the page's type (task, concept, reference, or troubleshooting), whether it is a new page, a section, or an edit, and how to title and order it
@@ -103,3 +105,4 @@ When the source needs several pages (for example a feature with a concept page, 
 1. Plan the page list first: file path, page type, and the facts each page covers
 2. Create one todo per page
 3. Draft pages one at a time — complete all steps for each file before moving to the next
+4. After each page, report one line: `Page N of M, <path>: done, lint clean` (or the findings you are still fixing). When the last page finishes, say how many pages are done and how many need the writer's decision.
