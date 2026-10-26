@@ -8,7 +8,7 @@ sidebar_position: 9
 #### Get
 ##### Summary:
 
-Returns all the single roles according to the provided query.
+Returns all the report queries according to the provided query.
 
 ##### Parameters:
 
@@ -33,7 +33,7 @@ Returns all the single roles according to the provided query.
 #### Post
 ##### Summary:
 
-Creates a single role.
+Creates a report query.
 
 ##### Parameters:
 
@@ -45,20 +45,20 @@ Creates a single role.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the single role creation. | ReportQueryCreatedResult |
+| 200 | The result of the report query creation. | ReportQueryCreatedResult |
 
 ### /api/Report/ReportQuery/\{id\}
 
 #### Get
 ##### Summary:
 
-Returns a single role corresponding to the provided identifier and its information according to the provided query.
+Returns a report query corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the single role. | True |  |  |
+| id | Identifier of the report query. | True |  |  |
 | squery | Query compliant to the API query grammar. | False |  |  |
 | Path | Represents the permission path. | False |  |  |
 | QueryRootEntityType | Defines the query root entity type. | False |  |  |
@@ -71,41 +71,41 @@ Returns a single role corresponding to the provided identifier and its informati
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The single role. | ReportQuery |
+| 200 | The report query. | ReportQuery |
 
 #### Put
 ##### Summary:
 
-Updates a single role.
+Updates a report query.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the single role to update. | True |  |  |
+| id | Identifier of the report query to update. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the single role update. | ReportQueryUpdatedResult |
+| 200 | The result of the report query update. | ReportQueryUpdatedResult |
 
 #### Delete
 ##### Summary:
 
-Deletes a single role.
+Deletes a report query.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the single role to delete. | True |  |  |
+| id | Identifier of the report query to delete. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the single role delete. | ReportQueryDeletedResult |
+| 200 | The result of the report query delete. | ReportQueryDeletedResult |
 

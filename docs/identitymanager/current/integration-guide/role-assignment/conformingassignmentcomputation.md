@@ -60,7 +60,7 @@ Just as roles, dimensions are a fundamental piece of the puzzle. Choosing dimens
 
 Roles and dimensions are the basis for a language that enables users to formalize, in a very explicit way, the assignment policy: who should get what entitlement. Dimensions are criteria for decisions and roles are the result of a decision. We are now only missing the rules that map criteria to roles.
 
-Those are the assignment rules: single role rules and composite role rules.
+Those are the assignment rules: single role rules and bundle rules.
 
 Writing the assignment policy actually becomes very easy. Once dimensions and roles are identified, assignment rules become obvious.
 

@@ -123,7 +123,7 @@ A job can be configured with as many steps as needed.
 
 
 ### Examples
-The [basic example](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/jobs/job#examples) of a job is equivalent to the following:
+The [basic example](job#examples) of a job is equivalent to the following:
 
 ```xml
 <BuildRoleModelTask Identifier="AD_ApplyRoleMappings" Connector="AD" DisplayName_L1="AD - Generate Roles/Rules" />

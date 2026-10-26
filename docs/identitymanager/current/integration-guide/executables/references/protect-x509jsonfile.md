@@ -27,7 +27,7 @@ For example it takes this :
   "TaskAgentConfiguration": {
     "HttpClientTimeoutSupplement": 0
   },
-  "OpenId": {
+  "OpenID": {
     "OpenIdClients": {
       "Job": "secret"
     },
@@ -55,7 +55,7 @@ And it returns this :
   "TaskAgentConfiguration": {
     "HttpClientTimeoutSupplement": "kxABAEh6CpUOAOMBNPNLKazx9I0vqummv24acN292gonFiK4ov81bjqE2ic+n+HqastXU2aTQcl3IefhEXn9KA2dhnIbDTXB4GhOn9lL9AzUfwKXBr5EBmVy7ggruG2ewpWGK1c3LBJ35km9XvCnzSHLfolZwHNPwM/8b/C6XqSzieoFcO5H92IGJ1lFRboacvp0rO+SkkUv63Ewsk+1MrVLa63oBgWfY6PhMeJvNpWGqCD+I614hB6jE2Li/recwQIPd10XEgFM1OEkZ5ZiO+URxX7MCBe1o20rTaczKR7e7lLQGa/e3Y3i1sFnCm+yRm/lzw0qtDvOtCXlPT13EsHsUunxnR3uH4R6lRBXT30OKobaX7MTQjGkLRChss/GVGCK5w=="
   },
-  "OpenId": {
+  "OpenID": {
     "OpenIdClients": {
       "Job": "kxABAOkh0BF2GdMedpzmKZZWVWc8IYaiZO2dofmt7lLBP3vMYgLLZYNDyR3x7Ah7tA1r6oSL5gBT3mSFyXB63NJk+QmZqNW1LWdzh+3U+DvNdQw4OfDfFlC5F+nH3/L5iqWc+h1jMlaQBpkqf42Vr8HwFKtqMXLJVXEIyeHSPgHRp1iOjGkNSRNrRQGJ4pVyo0xKmcWsz3qGYf0SnJIzRJ++PcYh/dJgxHAZFsDnV55X3zg72J8teoIEG82GdNjmCV/W4S4edNCYa1gL3KpgDGQq1GEed71Ht1tVYlHlJ4hckE++otQqTgRA2p4nFvo3LmlMag6k4EQRzEk6TOHUlGjUtYgpzMuPqei8/3CRXy5o8YW5R0wVFJJ/jSfYrvR3M9SwJw=="
     },
@@ -108,8 +108,8 @@ This command writes encrypted values from `*appsettings.agent.json*` to `C:/iden
 
 ## Arguments
 
- | Name | Details | 
- | --- | --- | 
- | --input-json-file-path required | **Type** String **Description** Path of the input to-be-encrypted json file. | 
- | --output-json-file-path required | **Type** String **Description** Path of the output encrypted json file. | 
+ | Name | Details |
+ | --- | --- |
+ | --input-json-file-path required | **Type** String **Description** Path of the input to-be-encrypted json file. |
+ | --output-json-file-path required | **Type** String **Description** Path of the output encrypted json file. |
 

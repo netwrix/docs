@@ -1,7 +1,7 @@
 ---
 title: "TaskAdministrationAccessControlRules"
 description: "Generates all rights to have the access to job administration page."
-sidebar_position: 13
+sidebar_position: 14
 ---
 
 Generates all rights to have the access to job administration page.

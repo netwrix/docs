@@ -38,11 +38,34 @@ Preview features are not activated in production.
 
 ## What's currently in Preview Mode?
 
-### Right-to-Left Language Support
+### New Homepage Dashboard
+
+#### Overview
+
+The new homepage dashboard replaces the legacy homepage. It is built from widgets that show the tasks assigned to you and let you act on them directly:
+
+- **My tasks**: your most recent pending workflow requests and approvals.
+- **Review roles and risks**: approve or deny access requests, including risk-flagged ones, without leaving the dashboard.
+- **Reconcile non-conforming roles**: keep or delete access detected outside policy.
+- **Access certification**: open campaigns with pending items, with links straight into each campaign.
+
+Widgets are displayed only for the features the user has access to.
+
+#### How It Works
+
+Activating the preview pages in **Settings → Preview** adds a **Preview / Legacy** switch at the top of the homepage. The new dashboard is displayed by default for all users with access to the dashboard widgets.
+
+To return to the legacy homepage, individual users can select **Legacy** in the switch. Select **Preview** to go back to the new dashboard.
 
 :::note
-This feature is currently in preview. See [Activating Preview Features](#activating-preview-features) for setup instructions and safety guidance.
+- The switch is displayed only on the homepage, and only to users who have access to at least one of the dashboard widgets. Other users see the legacy homepage.
+- The selection is stored in the user's browser and applies to that user only.
+- Deactivating the preview pages restores the legacy homepage for all users.
 :::
+
+---
+
+### Right-to-Left Language Support
 
 #### Overview
 
@@ -62,10 +85,6 @@ Once activated, the UI will adapt its layout to support right-to-left reading di
 ---
 
 ### Filter Role in Access Certification Reviews
-
-:::note
-This feature is currently in preview. See [Activating Preview Features](#activating-preview-features) for setup instructions and safety guidance.
-:::
 
 #### Overview
 

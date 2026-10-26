@@ -26,7 +26,7 @@ In order to reduce the number of roles, we can configure **roles with parameters
 
 In the previous example, with a parameter on the subsidiary, the number of roles would be divided by three.
 
-By extension, a composite role that assigns a parametrized single role is parametrized too.
+By extension, a bundle that assigns a parametrized single role is parametrized too.
 
 This way, when assigning a parametrized role, a pop-up window is displayed where the parameter must be specified.
 
@@ -60,7 +60,7 @@ Here we have three navigation rules, one for each distinct time slot (dimension 
  Make sure that the corresponding dimension is specified in the right `DisplayEntityType` in XML to be displayed in the UI. 
 :::
 :::note
- It is important to note that for manually assigned roles, if a new dimension is added to the definition of the role, the assignment's dimension will not be re-calculated, and will therefore not be propagated to calculate automatic assignments. Example Scenario — Role A was created as a composite role with no parameters a long time ago. Role A was later updated to depend on the optional parameter X and a single role rule was created to assign a single role B if a user had Role A and parameter X set to value Y. If a user already manually had the role A, even if its dimension X (for example its department, which could be calculated) was equal to value Y, got its permissions recalculated, that person would not get the role B. Since the modification occurred after the assignment, it is understood as if the role was assigned voluntarily with dimension X unset. However, if a user got role A assigned after the modification, and its dimension X was equal to value Y, then that user would get the role B. 
+ It is important to note that for manually assigned roles, if a new dimension is added to the definition of the role, the assignment's dimension will not be re-calculated, and will therefore not be propagated to calculate automatic assignments. Example Scenario — Role A was created as a bundle with no parameters a long time ago. Role A was later updated to depend on the optional parameter X and a single role rule was created to assign a single role B if a user had Role A and parameter X set to value Y. If a user already manually had the role A, even if its dimension X (for example its department, which could be calculated) was equal to value Y, got its permissions recalculated, that person would not get the role B. Since the modification occurred after the assignment, it is understood as if the role was assigned voluntarily with dimension X unset. However, if a user got role A assigned after the modification, and its dimension X was equal to value Y, then that user would get the role B. 
 :::
 ![Example - Role Parameter Required](/images/identitymanager/parameterizedrole_exampleroleparameter_v603.webp)
 

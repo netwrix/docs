@@ -16,7 +16,7 @@ Roles represent entitlements from the managed systems, but expressed in a langua
 
 A single role is meant to represent one entitlement from a managed system, by acting as a label, thus allowing better organization and readability.
 
-A composite role is meant to group several single roles into a meaningful, business-themed entitlement package.
+A bundle is meant to group several single roles into a meaningful, business-themed entitlement package.
 
 In this way, the role model can be seen as a [Role-Based Access Control](https://en.wikipedia.org/wiki/Role-based_access_control) (RBAC).
 
@@ -25,7 +25,7 @@ In this way, the role model can be seen as a [Role-Based Access Control](https:/
 An [Automate Role Assignments](../../user-guide/optimize/assignment-automation/automate-role-assignment) gives an entitlement to a user, usually based on (at least) one criterion from the user's data. Assignment rules are:
 
 - single role rules which assign single roles;
-- composite role rules which assign composite roles;
+- bundle rules which assign bundles;
 - resource type rules which assign resources, usually accounts, of specific types.
 
 The identity criteria that trigger the rules are named dimensions.

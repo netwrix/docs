@@ -7,7 +7,7 @@ sidebar_position: 30
 # Install the Server
 
 :::note
- If you are a SaaS client this topic does not apply. You can skip directly to end user authentication. See the Set up End-User Authentication topic for additional information. 
+ If you are a SaaS client this topic does not apply. You can skip directly to end user authentication. See the Set up End-User Authentication topic for additional information.
 :::
 Identity Manager Server can be installed on the same workstation as the database **or** on a separate workstation. If Identity Manager is installed on a separate workstation, it requires the SQL PowerShell components to function properly.
 
@@ -81,7 +81,7 @@ To create a service account you need to perform the following steps:
 **Step 1 –** Log on to a Windows server in the target domain environment. You should use an account with the necessary permissions to create new domain accounts.
 
 :::note
- The target domain is the domain where SQL Server is installed. 
+ The target domain is the domain where SQL Server is installed.
 :::
 **Step 2 –** Access the _Active Directory User **and** Computers_ tool with the command `dsa.mc`.
 
@@ -90,14 +90,14 @@ To create a service account you need to perform the following steps:
 **Step 4 –** Choose a mnemonic _First Name_ for the Identity Manager Server, as for **Example** `<b>UsercubeContoso</b>Server`, **and** click **Next**.
 
 :::tip
- Remember, the down-level log on name in the format `DOMAIN/userName`,.as for **Example** `CONTOSO/identitymanagerContosoServer`. 
+ Remember, the down-level log on name in the format `DOMAIN/userName`,.as for **Example** `CONTOSO/identitymanagerContosoServer`.
 :::
 **Step 5 –** Set a password **and** remember it for later, check the boxes **User cannot change password** **and** **Password never expires**.
 
 This newly created service account is a domain account **and** will be used as an IIS identity.
 
 :::note
- You can go further **and** use Managed Service Account to avoid dealing with the service account password update yourself **and** let Windows worry about it. This feature requires installing Identity Manager on Windows Server 2016 **or** later, **and** using an Active Directory with a forest level set to Windows Server 2016 **or** later. 
+ You can go further **and** use Managed Service Account to avoid dealing with the service account password update yourself **and** let Windows worry about it. This feature requires installing Identity Manager on Windows Server 2016 **or** later, **and** using an Active Directory with a forest level set to Windows Server 2016 **or** later.
 :::
 ### Set an IIS identity
 
@@ -223,7 +223,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 ```text
 1.
 openssl req -x509 -newkey rsa:2048 -keyout <b>UsercubeContoso</b>.key -out <b>UsercubeContoso</b>.cert -days 18250
-2. 
+2.
 openssl pkcs12 -export -out <b>UsercubeContoso</b>.pfx -inkey <b>UsercubeContoso</b>.key -in <b>UsercubeContoso</b>.cert
 ```
 
@@ -336,7 +336,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 ```
 
 :::info
- SQL Server authentication stores plain text credentials in the configuration file. This is **strongly discouraged**. To avoid storing plain text credentials, you should always strive to use Windows authentication **or** encrypt sensitive setting values such as the connection string. 
+ SQL Server authentication stores plain text credentials in the configuration file. This is **strongly discouraged**. To avoid storing plain text credentials, you should always strive to use Windows authentication **or** encrypt sensitive setting values such as the connection string.
 :::
 ## SSL Certificate
 
@@ -386,7 +386,7 @@ If this is not correctly configured, any restart of your IIS **or** application 
 
 The next step consists in setting up one **or** more authentication methods for end-users. You may choose one **or** several external authentication providers among the following:
 
-- [OpenId Connect](https://openid.net/connect/)
+- [OpenID Connect](https://openid.net/connect/)
 - [WS-Federation](http://docs.oasis-open.org/wsfed/federation/v1.2/ws-federation.html)
 - [OAuth](https://tools.ietf.org/html/rfc6749)
 - [SAML2](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)

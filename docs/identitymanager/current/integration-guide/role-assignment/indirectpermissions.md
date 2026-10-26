@@ -52,11 +52,11 @@ The [Compute Role Model Task](../../integration-guide/toolkit/xml-configuration/
 
 If a [Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole) is associated with one of these Resource Navigation Rules, then an indirect Single Role will also be recovered.
 
-Finally, if at least one indirect Single Role is used to recover a [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole), then the Composite Role will also be indirect.
+Finally, if at least one indirect Single Role is used to recover a [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole), then the Bundle will also be indirect.
 
 ## What Can Be Done with Indirect Permissions?
 
-Currently, Indirect Permissions are only displayed and found in the users' `View Permissions` tab in the `Advanced View`: Indirect Permissions (except Composite Roles) are hidden in the `Simplified View`.
+Currently, Indirect Permissions are only displayed and found in the users' `View Permissions` tab in the `Advanced View`: Indirect Permissions (except Bundles) are hidden in the `Simplified View`.
 
 Although Indirect Permissions are marked as `Non-conforming`, they can be neither approved nor deleted. They also won't appear in Access certification campaigns.
 

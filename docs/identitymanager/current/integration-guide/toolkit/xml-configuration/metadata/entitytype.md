@@ -4,20 +4,20 @@ description: ""
 sidebar_position: 6
 ---
 
-Represents a conceptual model of a business object, such as a person entity or an organization entity.  See [Connector](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/connector) on how to configure define an EntityType.
+Represents a conceptual model of a business object, such as a person entity or an organization entity.  See [Connector](../connectors/connector) on how to configure define an EntityType.
 
 ## Properties
 
 |Property|Details|
 |---|---|
 | DisplayName_L1 optional | **Type:** String **Description:** Display name of the entity type in language 1 (up to 16). |
-| Identifier required | **Type:** String **Description:** Unique identifier of the entity type. It must is be unique to the *entity model* scope. Cannot be a [reserved identifier](/docs/identitymanager/current/integration-guide/toolkit/reservedidentifiers). |
+| Identifier required | **Type:** String **Description:** Unique identifier of the entity type. It must is be unique to the *entity model* scope. Cannot be a [reserved identifier](../../reservedidentifiers). |
 | LicenseTag optional | **Type:** String **Description:** Value of the `Tag` parameter of the license key (in `appsettings.json`) linked to the entity type. All the features allowed by the license key are enabled for this entity type, otherwise only default features are available. |
 | TableName optional | **Type:** String **Description:** Represents the table name of hard coded entity types. Exclusively reserved to Identity Manager connector for Power BI. |
 
 ## Child Element: Property
-An entity property represents a property of an [Entity Type](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype).
-See [Connector](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/connector) on how to configure/define an EntityProperty.
+An entity property represents a property of an [Entity Type](entitytype).
+See [Connector](../connectors/connector) on how to configure/define an EntityProperty.
 
 
 ### Examples
@@ -83,7 +83,7 @@ To solve this problem, references to this property must be manually cleaned up w
 | FlexibleComparisonExpression optional | **Type:** String **Description:** Expression used to transform the query input value for comparison using a flexible operator. |
 | GroupByProperty optional | **Type:** Int64 **Description:** Property used to regroup navigation resources (resources used in navigation rules) by value. When defined, the Evaluate policy will enforce that one and only one item of a group can be assigned to an identity on a given date range. **Warning:** whenever the value of this property changes for a resource used in the defined navigation rules, the server needs to be restarted in order for the changes to be taken into account. |
 | HistoryPrecision <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Defines the number of minutes to wait, after a property change, before triggering the record history mechanism. |
-| Identifier required | **Type:** String **Description:** Unique identifier of the property. It must be unique to the parent entity type scope. Cannot be a [reserved identifier](/docs/identitymanager/current/integration-guide/toolkit/reservedidentifiers) and can only contain numbers (except the first character) and letters without accents. **Note:** cannot be "Id". |
+| Identifier required | **Type:** String **Description:** Unique identifier of the property. It must be unique to the parent entity type scope. Cannot be a [reserved identifier](../../reservedidentifiers) and can only contain numbers (except the first character) and letters without accents. **Note:** cannot be "Id". |
 | IsKey <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` if the property is designated to be one of the keys that uniquely identify any resource from the entity type in the configuration. Each entity type must have at least one key. **Note:** AD synchronization requires the `dn` property to have either `IsKey` or `EntityTypeMapping` > `Property` > `IsUniqueKey` set to `true` (key property in the UI). |
 | Language optional | **Type:** Int64 **Description:** Language associated to the property if it is localized (optional). |
 | NeutralProperty optional | **Type:** Int64 **Description:** Neutral property associated to the property if it is localized (optional). |

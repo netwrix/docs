@@ -8,7 +8,7 @@ Generates the right to apply a report for a profile on a given entity.
 
 :::warning
 The existence of a report for this entity must exist in order to use this scaffolding.
-A scaffolding allows to generate a default report for an entity: [Entity reports](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/entitytypes/entitytypes/targetresourcereportmenus)
+A scaffolding allows to generate a default report for an entity: [Entity reports](../../entitytypes/entitytypes/targetresourcereportmenus)
 :::
 
 

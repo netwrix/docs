@@ -79,7 +79,7 @@ The list contains:
 - Assignments updated by an automation rule. See the
 [Automation Rule](../../integration-guide/toolkit/xml-configuration/provisioning/automationrule) topic for additional information.
 
-To build the list, the algorithm first goes through composite **role** rules, single **role** rules, resource type rules, navigation rules, and applies them in that order. See the [Composite **role** Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule), [Single **role** Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule), and [Resource Type](../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) topics for additional information. This takes care of **automatic** assignments. Every step influences the following one: single roles can be **inferred** from composite roles that have just been assigned by a reviewer or an automation rule for example.
+To build the list, the algorithm first goes through **bundle** rules, single **role** rules, resource type rules, navigation rules, and applies them in that order. See the [Bundle Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule), [Single **role** Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule), and [Resource Type](../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) topics for additional information. This takes care of **automatic** assignments. Every step influences the following one: single roles can be **inferred** from bundles that have just been assigned by a reviewer or an automation rule for example.
 
 Then, manual assignments and derogations are added to the **expected assignments** list. They are extracted from the database, where they were saved after being added from the UI or validated through the UI, and are considered part of the **role** model. Manual assignments are identified by the Approved workflow state. Derogations are identified by the Found and Historic workflow states.
 
@@ -102,26 +102,26 @@ Before starting, a context rule is applied, giving for the input resource:
 
 **role** assignments, on the other hand, are the **outcome** of the assignment process. See the [Entitlement Management](../../introduction-guide/overview/entitlement-management) topic for additional information.
 
-**role** assignments are the output of composite **role** rules and single **role** rules enforcement. The **outcome** of those rules, as assigned composite roles and assigned single roles, is conditioned by the input resource's context. They are the image of the status of trust and privilege granted to a resource-identity.
+**role** assignments are the output of **bundle** rules and single **role** rules enforcement. The **outcome** of those rules, as assigned bundles and assigned single roles, is conditioned by the input resource's context. They are the image of the status of trust and privilege granted to a resource-identity.
 
 ![Computing Expected **role** Assignments](/images/identitymanager/compute-expected-1.webp)
 
-**Enforcing composite **role** rules**
+**Enforcing **bundle** rules**
 
-The first rules that are enforced are the composite **role** rules. See the [Composite **role** Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule)topic for additional information.
+The first rules that are enforced are the **bundle** rules. See the [Bundle Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule)topic for additional information.
 
-For every selected resource, this step enforces composite **role** rules. That means **assigning** a specific composite **role** to the input resource, based on its **context's dimension values**. This new assignment is materialized into a new object called an assigned composite **role**, stored in the `UP_AssignedCompositeRoles` table. The resource becomes the **owner** of the assigned composite **role**.
+For every selected resource, this step enforces **bundle** rules. That means **assigning** a specific **bundle** to the input resource, based on its **context's dimension values**. This new assignment is materialized into a new object called an assigned **bundle**, stored in the `UP_AssignedCompositeRoles` table. The resource becomes the **owner** of the assigned **bundle**.
 
-Manual and derogatory assignments of composite roles found in the database are also added to the **expected assignments** list.
+Manual and derogatory assignments of bundles found in the database are also added to the **expected assignments** list.
 
-Then automation rules are enforced on assigned composite roles. See the [Automation Rule](../../integration-guide/toolkit/xml-configuration/provisioning/automationrule) topic for additional information.
+Then automation rules are enforced on assigned bundles. See the [Automation Rule](../../integration-guide/toolkit/xml-configuration/provisioning/automationrule) topic for additional information.
 
 :::note
  **Enforcing automation rules on an assignment** means to find, for each assignment, the matching automation rule, looking at the last review or the creation date, comparing it to the time defined in the rule and, if needed, apply the rule decision that may approve or decline the assignment. 
 :::
 **Enforcing single **role** rules**
 
-Then, single **role** rules are enforced. That means **assigning** a specific single **role** to the input resource based on its context and existing assigned composite roles, i.e. the composite roles currently assigned to the resource. Both assigned composite roles freshly created by enforcing composite **role** rules and those already in the database are taken into account. In the former case, single roles created are said to be **inferred**.
+Then, single **role** rules are enforced. That means **assigning** a specific single **role** to the input resource based on its context and existing assigned bundles, i.e. the bundles currently assigned to the resource. Both assigned bundles freshly created by enforcing **bundle** rules and those already in the database are taken into account. In the former case, single roles created are said to be **inferred**.
 
 This is materialized into a new object called an assigned single **role**, stored in the UP_AssignedSingleRoles table. The resource becomes the **owner** of the assigned single **role**.
 
@@ -175,7 +175,7 @@ Found manual assignments and derogation of resource types with their associated 
 
 The **expected assignments** list is now built.
 
-For every expected/computed assigned resource type, assigned single **role** and assigned composite **role**, the algorithm finds the matching existing assignment, from the list of assignments.
+For every expected/computed assigned resource type, assigned single **role** and assigned **bundle**, the algorithm finds the matching existing assignment, from the list of assignments.
 
 The existing list of assignments in the current database is composed of:
 
@@ -255,7 +255,7 @@ At this point, Evaluate Policy has computed **expected assignments** for the res
 
 **expected assignments** are:
 
-- Assigned composite roles and assigned single roles, representing roles assigned to the resource
+- Assigned bundles and assigned single roles, representing roles assigned to the resource
 - Assigned resource scalars and assigned resource navigations, representing scalar and navigation
 properties to fulfill to a target resource from that source resource, the ownership relationship between source and target being materialized by an assigned resource type.
 
@@ -272,7 +272,7 @@ Remember, the goal of building a set of assignments is twofold:
 - Building a catalog of **existing assignments** as assigned roles for non-technical users to consult.
 - Fulfill target values from source resources so as the managed systems comply with the **role** model.
 
-The catalog of **existing assignments** is now available: they are assigned\* with an Applied provisioning state. Non technical-users can read assigned single roles and assigned composite roles. Technical users will be more interested in assigned resource scalars and assigned resource navigations.
+The catalog of **existing assignments** is now available: they are assigned\* with an Applied provisioning state. Non technical-users can read assigned single roles and assigned bundles. Technical users will be more interested in assigned resource scalars and assigned resource navigations.
 
 Fulfilling target values from source resources is going to take the form of provisioning orders, computed from assigned resource scalars and navigations in the Pending or Blocked state.
 
@@ -297,7 +297,7 @@ assigned resource navigations and assigned resource scalars. They must be review
 - **Resource Reconciliation** displays `Found` and `Historic` assigned resource types, assigned
 resource navigations and assigned resource scalars. This is where non-conforming resource values or non-authorized accounts (i.e. a resource that should not exist at all) in the form of provisioning assignments are displayed. These assignments mirror, at the **resource value level**, derogations still not explicitly refused by a knowledgeable end-user. This is where an end-user can find provisioning assignments that would render legit the non-confirming values and non-authorized accounts found in the managed systems.
 - ****role** Reconciliation** displays `Found` and `Historic` assigned single roles and assigned
-composite roles. They are **role** assignments that mirror derogations, at the **role** level, still not explicitly refused by a knowledgeable end-user. This is where an end-user can find roles assignments that would render legit the non-confirming values and non-authorized accounts found in the managed systems.
+bundles. They are **role** assignments that mirror derogations, at the **role** level, still not explicitly refused by a knowledgeable end-user. This is where an end-user can find roles assignments that would render legit the non-confirming values and non-authorized accounts found in the managed systems.
 - **Redundant Assignments** displays `Approved` assigned roles and assigned resource types tagged as
 eligible to be turned into `Calculated`.
 
