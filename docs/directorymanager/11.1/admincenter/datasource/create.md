@@ -391,7 +391,7 @@ password of a service account to connect to the Oracle server.
 When you use this data source in a Synchronize job, you can select the databases that these
 credentials can access.
 
-Step 7 – In the Protocol box, specify the protocol to use for connecting to the databases on the
+Step 7 – In the Protocol box, specify the protocol for connecting to the databases on the
 Oracle server. For example, TCP, or TCP/IP.
 
 Step 8 – In the HostName box, enter the name of the machine that hosts the Oracle server.
@@ -464,7 +464,7 @@ to the ODBC data source. Note the following:
 - For a system DSN, provide the name of the DSN.
 - For a file DSN, provide the file path with file name and extension.
 
-Step 6 – Select the **System DSN** or **File DSN** option button to specify the DSN type to use for
+Step 6 – Select the **System DSN** or **File DSN** option button to specify the DSN type for
 connecting to the data source.
 
 Step 7 – If the data source is password protected, provide a username and password in the
