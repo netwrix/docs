@@ -23,9 +23,9 @@ developed by your own organization.
 
 ## Prerequisites
 
-Implementing this connector requires giving Identity Manager [application permissions](https://docs.microsoft.com/en-us/graph/auth/auth-concepts#application-permissions), because Identity Manager does not access the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/graph/auth-v2-service), and delegated permissions are not enough. These application permissions require the consent of an administrator of the target Microsoft Entra ID tenant.
+Implementing this connector requires giving Identity Manager [application permissions](https://docs.microsoft.com/en-us/graph/auth/auth-concepts#application-permissions), because Identity Manager doesn't access the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/graph/auth-v2-service), and delegated permissions aren't enough. These application permissions require the consent of an administrator of the target Microsoft Entra ID tenant.
 
-See the [Register for Microsoft Entra ID](../../../integration-guide/connectors/configuration-details/azuread-register) topic on how to register Identity Manager as an application with the Microsoft Identity Platform in order to grant Identity Manager a service account which authenticates with the target Microsoft Entra ID.
+See the [Register for Microsoft Entra ID](../../../integration-guide/connectors/configuration-details/azuread-register) topic on how to register Identity Manager as an application with the Microsoft Identity Platform to grant Identity Manager a service account which authenticates with the target Microsoft Entra ID.
 
 ## Export
 
@@ -53,7 +53,7 @@ appsettings.agent.json
 ```
 
 :::note
- The identifier of the connection and thus the name of the subsection must: 
+ The identifier of the connection and thus the name of the subsection must:
 :::
 - be unique
 - not begin with a digit
@@ -84,15 +84,15 @@ appsettings.agent.json
 
 The table below summarizes the setting attributes of Microsoft Entra ID connector.
 
- | Name | Type | Description | 
- | --- | --- | --- | 
- | ApplicationId (required) | String | GUID that uniquely identifies the application registration in the Azure tenant. **NOTE:** The value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (client) ID** | 
- | ApplicationKey (required) | String | Secret associated with the `ApplicationId` **NOTE:** The value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Certificate & secrets** > **Client secrets** > **Client Secret** | 
- | TenantId (required) | String | GUID that uniquely identifies the Azure tenant. **NOTE:** The value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (tenant) ID** | 
- | ResponseUri (default value: `http://localhost`) | String | URI used by Azure to contact back the application with the tokens. This response Uri needs to be registered in the [app registration](https://aka.ms/msal-net-register-app). | 
- | MicrosoftAuthorityPath (optional) | String | Pattern for Microsoft Authority Path. | 
- | MicrosoftGraphPath (default value: https://graph.microsoft.com/.default) | String | Scope requested to access a protected API. **NOTE:** For this flow (client credentials), the scope should be of the form `{ResourceIdUri/.default}`. [See Microsoft's documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow#see-microsofts-documentation) for additional information. | 
- | MicrosoftGraphPathApi (default value: `https://graph.microsoft.com/v1.0/`) | String | Microsoft Graph Uri API. | 
+ | Name | Type | Description |
+ | --- | --- | --- |
+ | ApplicationId (required) | String | GUID that uniquely identifies the application registration in the Azure tenant. **NOTE:** The value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (client) ID** |
+ | ApplicationKey (required) | String | Secret associated with the `ApplicationId` **NOTE:** The value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Certificate & secrets** > **Client secrets** > **Client Secret** |
+ | TenantId (required) | String | GUID that uniquely identifies the Azure tenant. **NOTE:** The value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (tenant) ID** |
+ | ResponseUri (default value: `http://localhost`) | String | URI used by Azure to contact back the application with the tokens. This response Uri needs to be registered in the [app registration](https://aka.ms/msal-net-register-app). |
+ | MicrosoftAuthorityPath (optional) | String | Pattern for Microsoft Authority Path. |
+ | MicrosoftGraphPath (default value: https://graph.microsoft.com/.default) | String | Scope requested to access a protected API. **NOTE:** For this flow (client credentials), the scope should be of the form `{ResourceIdUri/.default}`. [See Microsoft's documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow#see-microsofts-documentation) for additional information. |
+ | MicrosoftGraphPathApi (default value: `https://graph.microsoft.com/v1.0/`) | String | Microsoft Graph Uri API. |
 
 ### Output details
 
@@ -102,7 +102,7 @@ This connector is meant to generate the following files:
 mapping associated with the connection.
 
 :::note
- The values are exported from the entities listed in the attribute `C0` of the `EntityTypeMapping`. 
+ The values are exported from the entities listed in the attribute `C0` of the `EntityTypeMapping`.
 :::
 For example, with the following configuration:
 
@@ -116,7 +116,7 @@ Four entities are exported (`user`; `group`; `directoryRole`; `servicePrincipal`
 
 ``` MicrosoftEntraIDExport_directoryobjects.csv Command,@odata.type,accountEnabled,id,mail ... ```
 :::tip
- Remember, attributes described as "Supported only on the Get `<entity_name>` API" in the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) documentation cannot be retrieved through this connector. The export task will raise an error if these attributes are used in your EntityTypeMapping. 
+ Remember, attributes described as "Supported only on the Get `<entity_name>` API" in the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) documentation cannot be retrieved through this connector. The export task will raise an error if these attributes are used in your EntityTypeMapping.
 :::
 This connector supports [Microsoft Entra ID Schema Extensions](https://docs.microsoft.com/en-us/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions) but does not support [Microsoft Graph Schema Extensions](https://docs.microsoft.com/en-us/graph/extensibility-schema-groups).
 
@@ -129,7 +129,7 @@ For example `AzureADExport_members_group.csv` would look like:
 Where command can be `insert`, `update` or `delete`; groupId is the id of the group; id is the id of the group member (in this context).
 
 :::note
- Only the navigation properties `members` and `owners` are exported. These navigation properties are automatically detected according to the data exported. 
+ Only the navigation properties `members` and `owners` are exported. These navigation properties are automatically detected according to the data exported.
 :::
 - one file `<connectionIdentifier>_cookie_<entity>.bin` per entity, containing an URL with a
 `delta token` useful for incremental export.
@@ -137,7 +137,7 @@ Where command can be `insert`, `update` or `delete`; groupId is the id of the gr
     > For example `MicrosoftEntraIDExport_cookie_user.bin`
 
 :::tip
- Remember, most exports can be run in complete mode, where the CSV files will contain all entries, or in incremental mode, where CSV files will contain only the entries which have been modified since the last synchronization. 
+ Remember, most exports can be run in complete mode, where the CSV files will contain all entries, or in incremental mode, where CSV files will contain only the entries which have been modified since the last synchronization.
 :::
 A task can use the IgnoreCookieFile boolean property, and a command line (with an executable) can use the option --ignore-cookies.
 
@@ -178,17 +178,62 @@ appsettings.agent.json
 
 The table below summarizes the setting attributes.
 
- | Name | Type | Description | 
- | --- | --- | --- | 
- | ApplicationId required | String | GUID that uniquely identifies the application registration in the Azure tenant. **NOTE:** value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (client) ID** | 
- | ApplicationKey required | String | Secret associated with the `ApplicationId`. **NOTE:** value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Certificate & secrets** > **Client secrets** > **Client Secret** | 
- | TenantId required | String | **NOTE:** GUID that uniquely identifies the Azure tenant. value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (tenant) ID** | 
- | ResponseUri default value: `http://localhost` | String | URI used by Azure to contact back the application with the tokens. This response Uri needs to be registered in the [app registration](https://aka.ms/msal-net-register-app). | 
- | MicrosoftGraphPathApi default value: https://graph.microsoft.com/v1.0/ | String | Microsoft Graph Uri API. | 
+ | Name | Type | Description |
+ | --- | --- | --- |
+ | ApplicationId required | String | GUID that uniquely identifies the application registration in the Azure tenant. **NOTE:** value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (client) ID** |
+ | ApplicationKey required | String | Secret associated with the `ApplicationId`. **NOTE:** value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Certificate & secrets** > **Client secrets** > **Client Secret** |
+ | TenantId required | String | **NOTE:** GUID that uniquely identifies the Azure tenant. value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (tenant) ID** |
+ | ResponseUri default value: `http://localhost` | String | URI used by Azure to contact back the application with the tokens. This response Uri needs to be registered in the [app registration](https://aka.ms/msal-net-register-app). |
+ | MicrosoftGraphPathApi default value: https://graph.microsoft.com/v1.0/ | String | Microsoft Graph Uri API. |
 
 ### Output details
 
 This connector can create a new resource, update and delete any Microsoft Entra ID objects and groups' memberships via the UI.
+
+### Group and role memberships
+
+Netwrix Identity Manager can add or remove a user from Microsoft Entra ID groups and directory roles when it provisions.
+
+**Configuration**
+
+In the resource type mapping, add one `NavigationProperty` for each kind of membership:
+
+```xml
+<NavigationProperty Property="groups" AzureADProperty="groups" />
+<NavigationProperty Property="assignedRoles" AzureADProperty="directoryRoles" />
+```
+
+- `Property`: the property in Netwrix Identity Manager that holds the memberships.
+- `AzureADProperty`: the type of Microsoft Entra ID object, such as `groups` or `directoryRoles`.
+
+See the [AzureADResourceTypeMapping](../../../integration-guide/toolkit/xml-configuration/connectors/resourcetypemappings/azureadresourcetypemapping) topic for additional information.
+
+**Constraints**
+
+- **Linked object identifier:** the entity type of the linked object (group, directory role) must have a property with the same identifier as the property flagged `IsDNProperty` in the resource type mapping, filled with the Microsoft Entra ID object id.
+- **Graph collection:** for a `Property` with `DataSourceBacklinkColumnName`, the property identifier is used as the Microsoft Graph collection, so it must be `groups` or `directoryRoles`. For any other identifier, use a `NavigationProperty`.
+
+**Recommended entity model**
+
+Use one entity type for both users and groups, as in the Demo configuration (one `directoryobjects` table, one `objectid` key). The linked object identifier constraint is then met by design. This is a recommendation, not a requirement.
+
+With separate entity types, for example `EntraID_Person` (key `ObjectId`) and `EntraID_Group` (key `GroupId`), do one of the following:
+
+- Use the same identifier for both keys.
+- Declare on the group entity type a property named like the DN property, and map it to the same connection column as the group key, without `IsPrimaryKey`. The key stays on the original property.
+
+```xml
+<EntityTypeMapping Identifier="EntraID_Group" Connector="EntraID" ConnectionTable="EntraID_directoryobjects">
+  <Property Identifier="GroupId" ConnectionColumn="id" IsPrimaryKey="true" />
+  <Property Identifier="ObjectId" ConnectionColumn="id" />
+</EntityTypeMapping>
+```
+
+**Limitations**
+
+- **Configuration deployment:** The `AzureADProperty` value isn't checked when the configuration is deployed. A wrong value only shows up as an error when provisioning runs.
+- **Provisioning:** only objects that have members can be targeted, such as groups and directory roles. Other kinds of links aren't supported, such as group owners. The manager is handled separately.
+- **Export:** only the `members` and `owners` links are exported from Microsoft Entra ID. A provisioned link that isn't exported, such as a directory role, isn't confirmed by synchronization.
 
 ## Authentication
 

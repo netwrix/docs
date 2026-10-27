@@ -22,7 +22,7 @@ The rest of Mr. James' personal information, such as his birth date, etc., can b
 
 ### Entitlement management
 
-As Mr. James is not the first mechanical engineer in Contoso, Identity Manager already contains a **composite role** named "R&D Mechanical Engineer". This role is meant to give its owners access to the company's sensitive data useful for mechanical engineers. Assigning this role will trigger the assignment of several **single roles**, each one giving one access right.
+As Mr. James isn't the first mechanical engineer in Contoso, Identity Manager already contains a **bundle** named "R&D Mechanical Engineer". This role is meant to give its owners access to the company's sensitive data useful for mechanical engineers. Assigning this role will trigger the assignment of several **single roles**, each one giving one access right.
 
 Technically speaking, each access right is granted via a membership to a specific Active Directory group. Thus Identity Manager also contains a **navigation rule** that gives this group membership to any user owning this single role.
 
@@ -41,7 +41,7 @@ Once the requests for the role and the account are approved, Identity Manager ca
 
 ### Governance
 
-Once the role model is well underway, Identity Manager can compare **existing** access rights to **expected** access rights. Thus, Identity Manager makes sure that Mr. James always has all the entitlements he needs in order to work, but not more to prevent security breaches.
+Once the role model is well underway, Identity Manager can compare **existing** access rights to **expected** access rights. Thus, Identity Manager makes sure that Mr. James always has all the entitlements he needs to work, but not more to prevent security breaches.
 
 ## Next Steps
 

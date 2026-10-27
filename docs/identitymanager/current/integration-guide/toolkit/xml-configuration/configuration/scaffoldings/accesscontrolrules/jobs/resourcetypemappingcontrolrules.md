@@ -1,7 +1,7 @@
 ---
 title: "ResourceTypeMappingControlRules"
 description: "Generate rights to launch agent fulfillment."
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 Scaffolding to create the right for a profile to start the Fulfillment to an external system (LDAP, MicrosoftEntraID...). This right corresponds to the permission to use ResourceTypeMapping elements (`/Connectors/FulfillLDAP`).

@@ -25,7 +25,8 @@
     "quality:check": "node scripts/quality/check.mjs --table",
     "quality:readability": "node scripts/quality/readability.mjs",
     "quality:fix": "node scripts/quality/fix-loop.mjs",
-    "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh && node --test scripts/test-set-blob-metadata.mjs && node scripts/test-set-blob-metadata-integration.mjs && node --test scripts/claude/test-log-summary.mjs && node --test scripts/test-vale-local.mjs && node --test scripts/test-resolve-path-labels.mjs && node scripts/quality/gen-lint-digest.mjs --check",
+    "slack:sync": "node scripts/sync-team-slack-map.mjs",
+    "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh && node --test scripts/test-set-blob-metadata.mjs && node scripts/test-set-blob-metadata-integration.mjs && node --test scripts/claude/test-log-summary.mjs && node --test scripts/test-vale-local.mjs && node --test scripts/test-resolve-path-labels.mjs && node --test scripts/test-sync-team-slack-map.mjs && node --test scripts/test-preserve-content.mjs && node scripts/quality/gen-lint-digest.mjs --check",
     "prepare": "node scripts/hooks/install.mjs"
   },
   "dependencies": {

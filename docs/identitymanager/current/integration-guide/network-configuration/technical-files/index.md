@@ -9,4 +9,5 @@ sidebar_position: 40
 This section gathers information relative to the technical files that Identity Manager could use or generate in its lifecycle.
 
 - [appsettings.connection](../../../integration-guide/network-configuration/technical-files/appsettings.connection)
+- [appsettings.environment](../../../integration-guide/network-configuration/technical-files/appsettings.environment)
 

@@ -1,7 +1,7 @@
 ---
 title: "RunJobRepairAdministrationAccessControlRules"
 description: "Generates the permissions to launch from UI jobs that are in state blocked after a Provisioning or a synchronization for a given profile."
-sidebar_position: 10
+sidebar_position: 11
 ---
 
 Generates the rights to read task and job instances logs in UI for a given profile.

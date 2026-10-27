@@ -20,7 +20,7 @@ The following example declares a new rule to give the single role to all the "FC
 
 |Property|Details|
 |---|---|
-| CompositeRole optional | **Type:** Int64 **Description:** Identifier of a [composite role](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/compositerole) that users must have to trigger the rule. |
+| CompositeRole optional | **Type:** Int64 **Description:** Identifier of a [bundle](compositerole) that users must have to trigger the rule. |
 | D0 optional | **Type:** Int64 **Description:** Value to match for the dimension `D0` (up to `D127`) to trigger the rule. For example, considering that `D0` corresponds to users' countries, then set `D0` to `France` to assign the single role to users whose country is `France`. |
 | IsDenied <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to forbid the assignment instead of applying it. |
 | L0 <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to activate inheritance for `D0` (up to 127). |

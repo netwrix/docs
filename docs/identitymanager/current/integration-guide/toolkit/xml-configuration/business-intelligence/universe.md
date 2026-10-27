@@ -25,7 +25,7 @@ The following example builds a universe called `Universe1`:
 
 ![Universe - Basic Example](/images/identitymanager/bi_universeexampledisplaynames.webp)
 
-When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
+When [getting Identity Manager data in Power BI](../../../governance/reporting/how-tos/connect-powerbi), we see the following:
 ![Universe (Display Names)](/images/identitymanager/universe_columnnamedisplayname.webp)
 
 ##### Basic universe with identifiers instead of display names
@@ -45,7 +45,7 @@ The following example builds a universe called `Universe1` with identifiers as l
 
 ![Universe - Basic Example](/images/identitymanager/bi_universeexample.webp)
 
-When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
+When [getting Identity Manager data in Power BI](../../../governance/reporting/how-tos/connect-powerbi), we see the following:
 ![Universe (Identifiers)](/images/identitymanager/universe_columnnameidentifier.webp)
 
 
@@ -58,7 +58,7 @@ When [getting Identity Manager data in Power BI](/docs/identitymanager/current/i
 | Identifier required | **Type:** String **Description:** Identifier of the universe. |
 
 ## Child Element: AssociationInstance
-An association instance represents, within a [universe](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/business-intelligence/universe), the occurrence in the model of an [entity association](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entityassociation).
+An association instance represents, within a [universe](universe), the occurrence in the model of an [entity association](../metadata/entityassociation).
 
 ### Properties
 
@@ -70,7 +70,7 @@ An association instance represents, within a [universe](/docs/identitymanager/cu
 | Instance2 required | **Type:** Int64 **Description:** Identifier of the entity instance number two. |
 
 ## Child Element: EntityInstance
-An entity instance represents, within a [universe](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/business-intelligence/universe), the occurrence in the model of an [entity type](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype).
+An entity instance represents, within a [universe](universe), the occurrence in the model of an [entity type](../metadata/entitytype).
 
 ### Properties
 

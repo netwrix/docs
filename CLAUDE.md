@@ -81,8 +81,8 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 | `claude-doc-pr.yml` | PRs to dev with `docs/` changes; `@claude` comments | Editorial review (`doc-review` job) and `@claude` follow-up (`doc-followup` job) |
 | `claude-issue-labeler.yml` | Issues opened/edited, comments | Security screening, CoC check, auto-labeling, content fix automation |
 | `auto-create-pr-tracking-issues.yml` | Review requested on a PR | Creates the admin or KB tracking issue |
-| `slack-notify-pr.yml` | PR opened, review requested, PR comment | Posts to #docs-gh and @-mentions the CODEOWNERS teams for the changed files |
-| `slack-notify-issue.yml` | Issue opened or commented | Posts to #docs-gh and @-mentions the relevant CODEOWNERS members |
+| `slack-notify-pr.yml` | PR opened, review requested or re-requested, PR comment | Posts to #docs-gh and @-mentions the CODEOWNERS teams for the changed files; skips GitHub's automatic CODEOWNERS review requests at open |
+| `slack-notify-issue.yml` | Issue reopened or commented | Posts to #docs-gh and @-mentions the relevant CODEOWNERS members. New issues are announced by `claude-issue-labeler.yml` after labeling. After team membership changes, run `npm run slack:sync` to refresh `.github/team-slack-map.json` |
 | `update-project-board-on-pr-merge.yml` | PR closed | Sets the linked tracking issue's status on the project board |
 | `sync-dev-to-main.yml` | Daily 8 AM PST (16:00 UTC), manual | Auto-merge dev to main if the build passes |
 
@@ -93,6 +93,7 @@ Skills (`.claude/skills/`) are invoked with `/skill-name`. Agents (`.claude/agen
 When a user asks for help with documentation, always use the appropriate tool:
 - **`/doc-help` skill** — Interactive tasks: reviewing content, suggesting improvements, discussing structure or flow, brainstorming, explaining style rules, incorporating external documents (e.g., `.docx` files) into existing markdown files, or any back-and-forth conversation about writing.
 - **`/doc-draft` skill** — Drafts documentation from source material, in your session: a PR to document ("look at PR X in repo Y"), a GitHub issue, Jira ticket, or Azure DevOps item to document ("look at PLAT-1234"), specs for a feature, notes to turn into a document, or a prompt detailed enough to draft from. Product context for PR drafting lives in `.claude/references/products/<product>.md`; add a brief there for any product you want it to understand. It does not edit existing docs; use `/doc-help`, `/dale`, or Vale for that.
+- **`/doc-restyle` skill** — Rewrites existing pages, one or a batch, into `/doc-draft`'s style and structure without changing their content. The original page is the source of truth: it reads no code or PRs. It runs the style check and a content-integrity check (`scripts/doc-restyle/integrity.mjs`).
 
 | Component | Type | Purpose |
 |---|---|---|
@@ -101,6 +102,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
 | `/doc-draft` | Skill | Drafts new pages from a PR, a work item (GitHub issue, Jira ticket, Azure DevOps item), specs, notes, or a detailed prompt, and structures new docs directories |
+| `/doc-restyle` | Skill | Rewrites existing pages into the style and structure `/doc-draft` produces, keeping their content as the source of truth |
 | `/doc-pr` | Skill | Automated PR editorial review |
 | `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
