@@ -1,0 +1,10 @@
+{
+  "label": "My Groups",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "mygroups"
+  }
+}

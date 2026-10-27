@@ -1,0 +1,24 @@
+---
+title: "Microsoft Windows Servers Requirements"
+description: "Microsoft Windows Servers Requirements"
+sidebar_position: 20
+---
+
+# Microsoft Windows Servers Requirements
+
+Directory Manager supports the following Microsoft Windows Servers:
+
+**Microsoft Windows Server 2019 Family**
+
+- Windows Server 2019 Standard
+- Windows Server 2019 Datacenter
+
+**Microsoft Windows Server 2022 Family**
+
+- Windows Server 2022 Standard
+- Windows Server 2022 Datacenter
+
+**Microsoft Windows Server 2025 Family**
+
+- Windows Server 2025 Standard
+- Windows Server 2025 Datacenter
