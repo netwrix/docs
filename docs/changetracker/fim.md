@@ -6,9 +6,9 @@ sidebar_position: 70
 
 # File Integrity Monitoring
 
-File Integrity Monitoring (FIM) is an essential security control that monitors and reports any
-change to the integrity of system and configuration files. Maintaining integrity is key because
-changes to files could represent a malware infection. See PCI-DSS Requirement 11.5.
+File Integrity Monitoring (FIM) is a security control that monitors and reports any
+change to the integrity of system and configuration files. Maintaining integrity matters because
+changes to files could indicate a malware infection. See PCI-DSS Requirement 11.5.
 
 Policy templates configure which files Change Tracker monitors for changes.
 
@@ -18,7 +18,7 @@ implementation for monitoring Windows or Linux is preferable — Netwrix Change 
 operate using Agentless FIM.
 
 You can view file change events from the [Events Tab](/docs/changetracker/admin/events/events.md). See the
-[Dashboard Tab](/docs/changetracker/admin/dashboardoverview.md) topic for additional information on how to view FIM
+[Dashboard Tab](/docs/changetracker/admin/dashboardoverview.md) topic to learn how to view FIM
 change events.
 
 :::note
@@ -28,4 +28,4 @@ you selected the right device and that your filters in the left panel aren't mas
 
 :::
 
-{/* Slack notification test. Do not merge. */}
+{/* Slack notification test. Don't merge. */}
