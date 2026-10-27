@@ -11,6 +11,8 @@
  * org team membership; GITHUB_TOKEN in Actions cannot. Re-run whenever a
  * docs team's membership changes or a person's Slack ID is added to
  * .github/github-slack-users.json (GitHub login -> Slack member ID).
+ * .github/team-slack-excludes.json lists members to leave out of a team's
+ * mentions.
  *
  * Teams come from the handles in .github/CODEOWNERS and
  * .github/label-codeowners.json.
@@ -26,6 +28,7 @@ const GITHUB_DIR = path.resolve(__dirname, '..', '.github');
 const CODEOWNERS_PATH = path.join(GITHUB_DIR, 'CODEOWNERS');
 const LABEL_MAP_PATH = path.join(GITHUB_DIR, 'label-codeowners.json');
 const USERS_PATH = path.join(GITHUB_DIR, 'github-slack-users.json');
+const EXCLUDES_PATH = path.join(GITHUB_DIR, 'team-slack-excludes.json');
 const TEAM_MAP_PATH = path.join(GITHUB_DIR, 'team-slack-map.json');
 
 // Not a GitHub team: the admins @-mentioned for sync results and PRs that
@@ -83,6 +86,7 @@ function main() {
 
   const labelMap = JSON.parse(fs.readFileSync(LABEL_MAP_PATH, 'utf8'));
   const users = JSON.parse(fs.readFileSync(USERS_PATH, 'utf8'));
+  const excludes = JSON.parse(fs.readFileSync(EXCLUDES_PATH, 'utf8'));
   const existing = JSON.parse(fs.readFileSync(TEAM_MAP_PATH, 'utf8'));
   const teams = extractTeams(fs.readFileSync(CODEOWNERS_PATH, 'utf8'), labelMap);
 
@@ -99,7 +103,11 @@ function main() {
       continue;
     }
 
-    const { ids, missing } = mapLoginsToSlackIds(logins, users);
+    const excluded = excludes[team] ?? [];
+    const { ids, missing } = mapLoginsToSlackIds(
+      logins.filter(login => !excluded.includes(login)),
+      users
+    );
     missing.forEach(login => unmapped.add(login));
     next[team] = ids;
   }
