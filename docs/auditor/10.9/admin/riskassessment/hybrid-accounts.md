@@ -11,7 +11,9 @@ Two risk metrics in the **Users and computers** category track inactive user acc
 - **Inactive user accounts (hybrid + on-premises)** — covers on-premises AD accounts and hybrid accounts, using the most recent logon across AD and Entra ID.
 - **Inactive user accounts (hybrid + cloud)** — covers cloud-only Entra ID accounts and hybrid accounts, using the most recent logon across Entra ID and AD.
 
-For both metrics, Netwrix Auditor counts a hybrid account (an AD account synchronized to Entra ID via Microsoft Entra Connect) as inactive only when there has been no sign-in activity in **either** directory for 35 or more days. This prevents false positives for users who log in through one directory but not the other.
+For both metrics, Netwrix Auditor counts a hybrid account (an AD account synchronized to Entra ID via Microsoft Entra Connect) as inactive only when there has been no sign-in activity in **either** directory for the length of the inactivity threshold or longer. The default threshold is 35 days. This prevents false positives for users who log in through one directory but not the other.
+
+To change the threshold, use the **Customize risk indicators** command. For the metrics that support this command, see [Customizing Metrics for Your Organization](/docs/auditor/10.9/admin/riskassessment/dashboard.md#customizing-metrics-for-your-organization).
 
 ## What You Need to Configure
 
@@ -42,7 +44,7 @@ For a hybrid account, Netwrix Auditor records three timestamps:
 | Last logon (AD) | AD `lastLogonTimestamp` attribute |
 | Last logon (Entra ID) | Most recent of `lastSuccessfulSignInDateTime` and `lastNonInteractiveSignInDateTime` from Microsoft Graph |
 
-Netwrix Auditor considers the account inactive only when **all available timestamps** are older than 35 days. The detailed report shows each timestamp separately so you can see where activity last occurred.
+Netwrix Auditor considers the account inactive only when **all available timestamps** are older than the inactivity threshold. The detailed report shows each timestamp separately so you can see where activity last occurred.
 
 Netwrix Auditor identifies an account as hybrid when Microsoft Entra ID reports it as synchronized from on-premises (`onPremisesSyncEnabled = true`) and includes an on-premises domain name.
 
