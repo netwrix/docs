@@ -89,6 +89,7 @@ jobs:
           ISSUE_URL: ${{ github.event.issue.html_url }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           COMMENT_URL: ${{ github.event.comment.html_url }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
           if [ "${{ github.event_name }}" = "issues" ]; then
             MESSAGE="Issue reopened: $ISSUE_URL"
@@ -96,4 +97,4 @@ jobs:
             MESSAGE="Comment on Issue #$ISSUE_NUMBER: $COMMENT_URL"
           fi
 
-          node scripts/notify-slack.mjs --message "$MESSAGE" --teams "$NOTIFY_TEAMS" || echo "Failed to send Slack notification"
+          node scripts/notify-slack.mjs --message "$MESSAGE" --teams "$NOTIFY_TEAMS" --scan-env COMMENT_BODY || echo "Failed to send Slack notification"

@@ -198,8 +198,9 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           NOTIFY_TEAMS: ${{ steps.notify-codeowners.outputs.slack_teams }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
-          node scripts/notify-slack.mjs --message "Issue created: $ISSUE_URL" --teams "$NOTIFY_TEAMS" || echo "Failed to send Slack notification"
+          node scripts/notify-slack.mjs --message "Issue created: $ISSUE_URL" --teams "$NOTIFY_TEAMS" --scan-env ISSUE_BODY || echo "Failed to send Slack notification"
 
   content-fix:
     needs: process-issue

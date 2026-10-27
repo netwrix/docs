@@ -130,7 +130,11 @@ jobs:
           NOTIFY_MESSAGE: ${{ steps.build-message.outputs.message }}
           NOTIFY_TEAMS: ${{ steps.resolve-teams.outputs.teams }}
           NOTIFY_ADMINS: ${{ steps.resolve-teams.outputs.admins }}
+          # @-tagged people in the PR description (on open) or comment get
+          # mentioned too. Not on review_requested, which would re-ping the
+          # description's tags.
+          SCAN_TEXT: ${{ github.event.action != 'review_requested' && (github.event.comment.body || github.event.pull_request.body) || '' }}
         run: |
           # @site-admins is a Slack-only handle, so it is added here rather than
           # to the teams list the fork-PR comment tags on GitHub.
-          node scripts/notify-slack.mjs --message "$NOTIFY_MESSAGE" --teams "${NOTIFY_TEAMS}${NOTIFY_ADMINS:+,$NOTIFY_ADMINS}" || echo "Failed to send Slack notification"
+          node scripts/notify-slack.mjs --message "$NOTIFY_MESSAGE" --teams "${NOTIFY_TEAMS}${NOTIFY_ADMINS:+,$NOTIFY_ADMINS}" --scan-env SCAN_TEXT || echo "Failed to send Slack notification"
