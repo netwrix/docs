@@ -7,7 +7,7 @@ sidebar_position: 20
 Will execute the profile rules of the different resource types given in parameters to create, modify or delete profiles in automatic mode.
 
 :::warning
-It is necessary to set up [ProfileRuleContext](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/access-control/profilecontext) as well as [profileRules](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/access-control/profilerulecontext) to be able to use this job.
+It is necessary to set up [ProfileRuleContext](../../../access-control/profilecontext) as well as [profileRules](../../../access-control/profilerulecontext) to be able to use this job.
 :::
 
 

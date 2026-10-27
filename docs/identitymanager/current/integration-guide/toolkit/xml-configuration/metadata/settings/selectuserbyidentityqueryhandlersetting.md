@@ -23,7 +23,7 @@ After modifying the authentication mode via `SelectUserByIdentityQueryHandlerSet
 ## Examples
 The following example links the authentication credentials of an end-user to its matching resource of EntityType **Directory_User**.
 
-In this example, authentication has been set up using [Integrated Windows Authentication](/docs/identitymanager/current/integration-guide/network-configuration/server-configuration/end-users-authentication#set-up-integrated-windows-authentication-iwa). In that case, the login used by the end-user is in the form `DOMAIN/userName`.
+In this example, authentication has been set up using [Integrated Windows Authentication](../../../../network-configuration/server-configuration/end-users-authentication#set-up-integrated-windows-authentication-iwa). In that case, the login used by the end-user is in the form `DOMAIN/userName`.
 
 The **AfterToken** attribute parses the `DOMAIN/userName` string into `userName`.
 

@@ -19,7 +19,7 @@ AD).
 - Go the SharePoint sites which need to be scanned.
 - Log in using the organization credentials.
 - Go to the **Members List** in the right corner.
-- Click on the **Add members** button.
+- Click the **Add members** button.
 - Enter the name of the Identity Manager service account or its email address.
 
 ![SharePoint Export Add Member](/images/identitymanager/sharepoint_export_add_member.webp)
@@ -27,14 +27,14 @@ AD).
 The service account is now a member of the site. However, to scan the site, the service account needs to be owner of the site.
 
 - Go to the **Members List** in the right corner.
-- Under the name of the Identity Manager service account, click on the arrow.
+- Under the name of the Identity Manager service account, click the arrow.
 - Choose **Owner**.
 
 ![SharePoint Export Role Owner](/images/identitymanager/sharepoint_export_role_owner.webp)
 
 ### Configuration
 
-This step sets up the Identity Manager Agent in order to use the SharePoint connector and access the SharePoint data.
+This step sets up the Identity Manager Agent to use the SharePoint connector and access the SharePoint data.
 
 This guide focuses on the [Architecture](../../../integration-guide/architecture) method. Remember that settings can also be input through architecture.
 
@@ -104,7 +104,7 @@ Different kinds of SharePoint sites exist. We will describe here the different c
 
 A root site has a URL like ```https://contoso.sharepoint.com``` and can have subsites. For example, the subsite ```Finance``` has a URL like ```https://contoso.sharepoint.com/Finance```. Subsites can also have subsites.
 To scan the root site and the subsite tree, the root site must be specified in the __Server__ attribute.
-Retrieved users can be assigned to/removed from all groups found, but cannot be created. To create a user account, you need to create it in the associated Microsoft Entra ID: it will automatically create a SharePoint user account.
+Retrieved users can be assigned to/removed from all groups found, but can't be created. To create a user account, you need to create it in the associated Microsoft Entra ID: it will automatically create a SharePoint user account.
 
 #### Multiple sites
 
@@ -162,7 +162,7 @@ declare the connector with the following attributes:
 [Toolkit for XML Configuration](../../../integration-guide/toolkit) topic for additional information. It is strongly recommended to use a meaningful name such as `SharePoint`. If several connections to several SharePoint targets are possible, only one SharePoint Connector per Agent is used.
     - **DisplayName_Li, i ? [1..16]** are used in the UI.
     - **Agent** is the identifier of the Agent that runs this connector's export task. The Agent's
-identifier can be found in the agent's [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) configuration set > OpenId > AgentIdentifier setting attribute.
+identifier can be found in the agent's [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) configuration set > OpenID > AgentIdentifier setting attribute.
 
 - Don't forget the `<?xml>` and `<ConfigurationFile>` elements (see example below).
 
@@ -538,7 +538,7 @@ The ```ClientId/Secret``` pair hence created must be associated with the profile
 
 ##### __Example__
 
-The following example creates a ```ClientId/Secret``` pair to be used by the Agent to authenticate to the Server and complete Jobs. The secret is hashed with the[Usercube-New-OpenIDSecret](../../../integration-guide/executables/references/new-openidsecret) tool.
+The following example creates a ```ClientId/Secret``` pair to be used by the Agent to authenticate to the Server and complete Jobs. The secret is hashed with the [Usercube-New-OpenIDSecret](../../../integration-guide/executables/references/new-openidsecret) tool.
 
                     ```
 
@@ -572,7 +572,7 @@ The Job itself uses the ```DefaultOpenIdClient``` value.
 >                             appsettings.agent.json
 >  {
 >     ...
->     "OpenId":{
+>     "OpenID":{
 >         "OpenIdClients": {
 >             "Job": "secret"
 >          },

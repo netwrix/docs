@@ -8,6 +8,13 @@ sidebar_position: 100
 
 This guide shows how to write a PowerShell script used by the [PowerShellProv](../../../integration-guide/connectors/references-connectors/powershellprov) connector.
 
+## PowerShell Edition Compatibility
+
+The connection's `Edition` setting determines which PowerShell executable runs the script:
+`Desktop` (default) uses `powershell.exe` (Windows Powershell 5.1); `Core` uses `pwsh` (PowerShell 7). Write and test the script against the executable that will actually run it.
+
+For a script intended to run under `Edition: "Core"`, add `#Requires -Version 7` as the first line of the script so that an incompatible PowerShell version fails fast with a clear error instead of an unexpected runtime failure.
+
 ## Structure of a PowerShell Script
 
 The goal of the script is to append, for each provisioning order, a line in a CSV file.
@@ -168,7 +175,7 @@ The three methods to log in Identity Manager are:
 - **Write-Host**: writes Information in the log.
 - **Throw**: raises an exception (which stops the script), and writes the Error in the log (the
 provisioning order will be errored too).
-- **Write-Error**: writes Error in the log (the provisioning order will be errored too). It is not
+- **Write-Error**: writes Error in the log (the provisioning order will be errored too). It isn't
 recommended because the script continues its execution.
 
 Now that the function has been defined, the main code of the script can be written.

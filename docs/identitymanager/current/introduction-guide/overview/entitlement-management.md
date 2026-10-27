@@ -38,13 +38,13 @@ Entitlements from the managed systems are modeled by **roles**. For each entitle
 
 ![Single **roles**](/images/identitymanager/singlerolescatalog_schemarole.webp)
 
-Each individual entitlement should usually be modeled by a **single role**, and single **roles** can be grouped together into composite **roles** to be closer to real job positions.
+Each individual entitlement should usually be modeled by a **single role**, and single **roles** can be grouped together into **bundles** to be closer to real job positions.
 
-![Composite **roles**](/images/identitymanager/entitlements_compositeroles.webp)
+![Bundles](/images/identitymanager/entitlements_compositeroles.webp)
 
 ## A Rule Set
 
-**roles** alone are not enough to give identities the systems' technical entitlements. We need **rules** to have Identity Manager write users' entitlements in the managed systems. **rules** are further used to automatically assign **roles** to users, or to categorize users and accounts, etc.
+**roles** alone aren't enough to give identities the systems' technical entitlements. We need **rules** to have Identity Manager write users' entitlements in the managed systems. **rules** are further used to automatically assign **roles** to users, or to categorize users and accounts, etc.
 
 ### Provisioning **rules**
 
@@ -79,11 +79,11 @@ While the role catalog and provisioning **rules** are together enough to manuall
 
 ![Assignment **rules**](/images/identitymanager/entitlements_assignmentrules.webp)
 
-Once all assignment **rules** are created, Identity Manager is able to spot existing assignments that are not supported by any rule, marking them as non-conforming.
+Once all assignment **rules** are created, Identity Manager can spot existing assignments that aren't supported by any rule, marking them as non-conforming.
 
 Identity Manager's assignment **rules** are:
 
-- **single role** **rules** and composite role **rules** to assign single and composite **roles**;
+- **single role** **rules** and bundle **rules** to assign single and **bundles;
 - resource type **rules** to assign accounts.
 
 ### Categorization **rules**
@@ -105,7 +105,7 @@ Identity Manager's categorization **rules** are:
 
 ### More **rules**
 
-Identity Manager provides more kinds of **rules** for optimization purposes, for example **role naming conventions** to help build the role catalog by generating **roles** and navigation **rules** based on the entitlements' names, or automation **rules** to help with governance by automating the review of the assignments that do not comply with the configured **rules**.
+Identity Manager provides more kinds of **rules** for optimization purposes, for example **role naming conventions** to help build the role catalog by generating **roles** and navigation **rules** based on the entitlements' names, or automation **rules** to help with governance by automating the review of the assignments that don't comply with the configured **rules**.
 
 ### **dimensions**
 
@@ -146,7 +146,7 @@ Learn more on the [Role Model](../../integration-guide/role-model).
 
 Learn how to [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation).
 
-Learn more on how to [Create a Composite Role](../../user-guide/optimize/composite-role-creation).
+Learn more on how to [Create a Bundle](../../user-guide/optimize/bundle-creation).
 
 Learn more on [Role Assignment](../../integration-guide/role-assignment).
 

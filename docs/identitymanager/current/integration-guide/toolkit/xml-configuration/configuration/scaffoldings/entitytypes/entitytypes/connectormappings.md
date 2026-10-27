@@ -45,10 +45,10 @@ If you are using a CSV connector with files in incremental mode, you must specif
 
 
 :::info
-A scaffolding does not use filters, but a part of the entity model can be excluded with the `ExcludedProperty` argument.
+A scaffolding doesn't use filters, but a part of the entity model can be excluded with the `ExcludedProperty` argument.
 :::
 
-The following example generates a universe `U8_Users` based on the entity type `Directory_User`, like our U1 but without the `Guests` property:
+The following example generates a universe `U8_Users` based on the entity type `Directory_User`, like the U1 universe but without the `Guests` property:
 
 ```xml
 <Universe Identifier="U8_Users" DisplayName_L1="U8 - Users" ColumnNamesMode="Identifier" />
@@ -57,7 +57,7 @@ The following example generates a universe `U8_Users` based on the entity type `
 </UniverseDataModel>
 ```
 
-When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
+When [getting Identity Manager data in Power BI](../../../../../../governance/reporting/how-tos/connect-powerbi), you see the following:
 ![Universe (ExcludedProperty)](/images/identitymanager/universe_excluded.webp)
 
 ### MappingPath
@@ -72,7 +72,7 @@ When [getting Identity Manager data in Power BI](/docs/identitymanager/current/i
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Connection Identifier="Directory" DisplayName_L1="Directory" Connector="Directory" Package="Usercube.Excel@0000001" />

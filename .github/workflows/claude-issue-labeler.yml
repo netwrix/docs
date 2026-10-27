@@ -21,8 +21,14 @@ jobs:
           sparse-checkout: |
             .github
             .claude
+            scripts
             CODE_OF_CONDUCT.md
           sparse-checkout-cone-mode: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22.x'
 
       - name: Step 1 — Security vulnerability screening
         id: security-screen
@@ -105,6 +111,7 @@ jobs:
           claude_args: '--allowedTools "Bash(gh:*),Read,Grep,Glob,Skill(assign-label)"'
 
       - name: Step 4 — Notify codeowners
+        id: notify-codeowners
         if: steps.check-state.outputs.issue_state == 'OPEN' && github.event_name == 'issues'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -134,12 +141,14 @@ jobs:
           # Skip codeowner notification for KB Operations tracking issues (any kb/ label)
           if echo "$LABELS" | grep -q "^kb/"; then
             echo "Issue has kb/ label — skipping codeowner notification"
+            echo "skip_slack=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           # Skip codeowner notification for Admin Support PR review tracking issues
           if echo "$ISSUE_TITLE" | grep -q "^Admin: PR review"; then
             echo "Admin Support tracking issue — skipping codeowner notification"
+            echo "skip_slack=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -164,6 +173,8 @@ jobs:
           fi
 
           echo "Notifying teams: $TEAMS"
+          # Slack takes a comma-joined list (see scripts/notify-slack.mjs)
+          echo "slack_teams=${TEAMS// /,}" >> "$GITHUB_OUTPUT"
 
           # Post a single comment tagging all matched teams
           COMMENT="Notifying codeowners: ${TEAMS}"
@@ -172,6 +183,23 @@ jobs:
           gh issue comment ${{ github.event.issue.number }} \
             --repo ${{ github.repository }} \
             --body "$COMMENT"
+
+      - name: Step 5 — Notify codeowners in Slack
+        # Runs here, not in slack-notify-issue.yml, so the product label from
+        # Step 3 exists before teams are resolved. Posts even when no product
+        # label matched (without mentions), but not for KB/Admin tracking issues.
+        if: >-
+          always() &&
+          steps.check-state.outputs.issue_state == 'OPEN' &&
+          github.event_name == 'issues' &&
+          github.event.action == 'opened' &&
+          steps.notify-codeowners.outputs.skip_slack != 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          NOTIFY_TEAMS: ${{ steps.notify-codeowners.outputs.slack_teams }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          node scripts/notify-slack.mjs --message "Issue created: $ISSUE_URL" --teams "$NOTIFY_TEAMS" || echo "Failed to send Slack notification"
 
   content-fix:
     needs: process-issue
