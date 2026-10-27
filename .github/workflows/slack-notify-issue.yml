@@ -1,11 +1,13 @@
 name: Slack Notify Issue
 
-# Posts a Slack message to #docs-gh whenever an Issue is created or commented on,
-# @-mentioning the relevant CODEOWNERS team members.
+# Posts a Slack message to #docs-gh whenever an Issue is reopened or commented on,
+# @-mentioning the relevant CODEOWNERS team members. New issues are announced by
+# claude-issue-labeler.yml instead, after labeling has assigned the product label
+# this workflow maps to a team.
 
 on:
   issues:
-    types: [opened]
+    types: [reopened]
   issue_comment:
     types: [created]
 
@@ -89,7 +91,7 @@ jobs:
           COMMENT_URL: ${{ github.event.comment.html_url }}
         run: |
           if [ "${{ github.event_name }}" = "issues" ]; then
-            MESSAGE="Issue created: $ISSUE_URL"
+            MESSAGE="Issue reopened: $ISSUE_URL"
           else
             MESSAGE="Comment on Issue #$ISSUE_NUMBER: $COMMENT_URL"
           fi
