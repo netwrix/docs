@@ -81,8 +81,8 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 | `claude-doc-pr.yml` | PRs to dev with `docs/` changes; `@claude` comments | Editorial review (`doc-review` job) and `@claude` follow-up (`doc-followup` job) |
 | `claude-issue-labeler.yml` | Issues opened/edited, comments | Security screening, CoC check, auto-labeling, content fix automation |
 | `auto-create-pr-tracking-issues.yml` | Review requested on a PR | Creates the admin or KB tracking issue |
-| `slack-notify-pr.yml` | PR opened, review requested, PR comment | Posts to #docs-gh and @-mentions the CODEOWNERS teams for the changed files |
-| `slack-notify-issue.yml` | Issue opened or commented | Posts to #docs-gh and @-mentions the relevant CODEOWNERS members |
+| `slack-notify-pr.yml` | PR opened, review requested or re-requested, PR comment | Posts to #docs-gh and @-mentions the CODEOWNERS teams for the changed files; skips GitHub's automatic CODEOWNERS review requests at open |
+| `slack-notify-issue.yml` | Issue reopened or commented | Posts to #docs-gh and @-mentions the relevant CODEOWNERS members. New issues are announced by `claude-issue-labeler.yml` after labeling. After team membership changes, run `npm run slack:sync` to refresh `.github/team-slack-map.json` |
 | `update-project-board-on-pr-merge.yml` | PR closed | Sets the linked tracking issue's status on the project board |
 | `sync-dev-to-main.yml` | Daily 8 AM PST (16:00 UTC), manual | Auto-merge dev to main if the build passes |
 
