@@ -265,12 +265,12 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
     <tr><td>NNT CIS Microsoft Windows Server 2016 STIG Benchmark - Level 3 - STIG Member Server</td><td>1.0.0</td></tr>
     <tr><td>NNT CIS Microsoft Windows Server 2016 STIG Benchmark - NxGen Security - Domain Controller</td><td>1.0.0</td></tr>
     <tr><td>NNT CIS Microsoft Windows Server 2016 STIG Benchmark - NxGen Security - Member Server</td><td>1.0.0</td></tr>
-    <tr><td rowspan="6">Windows Server 2019</td><td>NNT CIS Microsoft Windows Server 2019 Benchmark - Level 1 Domain Controller</td><td>3.0.1</td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - Level 1 Member Server</td><td>3.0.1</td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - Level 2 Domain Controller</td><td>3.0.1</td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - Level 2 Member Server</td><td>3.0.1</td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - NxGen Security - Domain Controller</td><td>3.0.1</td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - NxGen Security - Member Server</td><td>3.0.1</td></tr>
+    <tr><td rowspan="6">Windows Server 2019</td><td>NNT CIS Microsoft Windows Server 2019 Benchmark - Level 1 Domain Controller</td><td>5.0.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - Level 1 Member Server</td><td>5.0.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - Level 2 Domain Controller</td><td>5.0.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - Level 2 Member Server</td><td>5.0.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - NxGen Security - Domain Controller</td><td>5.0.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2019 Benchmark - NxGen Security - Member Server</td><td>5.0.0</td></tr>
     <tr><td rowspan="6">Windows Server 2025</td><td>NNT CIS Microsoft Windows Server 2025 Benchmark - Level 1 Domain Controller</td><td>1.0.0</td></tr>
     <tr><td>NNT CIS Microsoft Windows Server 2025 Benchmark - Level 1 Member Server</td><td>1.0.0</td></tr>
     <tr><td>NNT CIS Microsoft Windows Server 2025 Benchmark - Level 2 Domain Controller</td><td>1.0.0</td></tr>
