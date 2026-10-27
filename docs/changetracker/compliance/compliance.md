@@ -6,15 +6,14 @@ sidebar_position: 80
 
 # Compliance
 
-The **Compliance** tab provides an overview of compliance scores for all devices within any selected
-group.
+The **Compliance** tab shows compliance scores for all devices in any selected group.
 
 The screen shows the previous seven compliance report results to track any drift against your
 selected hardened build standard and whether scores are improving or worsening.
 
 Use this tab to confirm that devices maintain compliance and to track progress over time when you
 implement a new hardened build standard. To view estate or device compliance, select a different
-compliance standard from the Compliance Report selector, then drill into report results by
+compliance standard from the Compliance Report selector, then open report results by
 clicking the report score for any device.
 
 You can view any individual report by clicking its result score. To export reports, select them
