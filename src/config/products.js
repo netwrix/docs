@@ -543,6 +543,7 @@ export const PRODUCTS = [
         label: '26.07',
         isLatest: true,
         sidebarFile: './sidebars/privilegesecure/26.07.js',
+        apiSidebarPath: './docs/privilegesecure/26.07/integrations/api/reference/sidebar.ts',
       },
       {
         version: '26.03',
@@ -951,7 +952,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
         ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
-            .filter(item => !(item.type === 'doc' && item.id?.endsWith('/changetracker-hub')))
+            .filter(item => !(item.type === 'doc' && (item.id?.endsWith('/changetracker-hub') || item.id?.endsWith('/privilegesecure-api'))))
         : [];
 
       // Build plugin configuration

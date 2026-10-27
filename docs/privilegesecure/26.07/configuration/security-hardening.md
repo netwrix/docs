@@ -15,6 +15,5 @@ After you install Netwrix Privilege Secure, review the settings that control how
 | Restrict the SSH algorithms that Privilege Secure offers | [Configure SSH algorithms](/docs/privilegesecure/26.07/configuration/ssh-algorithms.md) |
 | Protect the encryption key in AWS Key Management Service | [Protect the encryption key with AWS KMS](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms.md) |
 | Require strong passwords for local console users | [Local User Password](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md#local-user-password) |
-| Leave the API explorer off in production | [Swagger](/docs/privilegesecure/26.07/integrations/api/api-overview.md#swagger) |
 | Keep the Privilege Secure server off the managed domain | [Security Considerations: Non-Domain-Joined Netwrix Privilege Secure Server](/docs/kb/privilegesecure/certificates-and-security/security-considerations-non-domain-joined-netwrix-privilege-secure-server) |
 | Give the SQL Server backend only the permissions it needs | [Least Privilege Model for SQL Server Backend](/docs/kb/privilegesecure/database-and-backend/least-privilege-model-for-sql-server-backend) |

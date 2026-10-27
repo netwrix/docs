@@ -271,6 +271,28 @@ const config = {
     ],
   ],
 
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi-privilegesecure',
+        docsPluginId: 'privilegesecure26_07',
+        config: {
+          'privilegesecure-api': {
+            specPath: '.generated/privilegesecure-26.07.json',
+            outputDir: 'docs/privilegesecure/26.07/integrations/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/privilegesecure-26.07.json',
+            version: '26.07',
+            label: 'Privilege Secure API',
+            baseUrl: '/docs/privilegesecure/26.07/integrations/api/reference/',
+          },
+        },
+      },
+    ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

@@ -1,6 +1,6 @@
 ---
 title: "REST API overview"
-description: "Learn how the Privilege Secure REST API is addressed, authenticated, paged, and secured, and where Swagger fits, before you automate the product."
+description: "Learn how the Privilege Secure REST API is addressed, authenticated, paged, and secured, before you automate the product."
 sidebar_position: 10
 ---
 
@@ -92,16 +92,6 @@ The API groups its endpoints by the areas of the console.
 ## Errors
 
 The API reports most errors as an HTTP status code with a JSON body in the standard problem details format. Some sign-in failures return a plain text message instead, for example "Invalid Username or Password". The message for a failed application user sign-in is intentionally vague.
-
-## Swagger
-
-The API can publish a Swagger page that lists its endpoints. Swagger is off by default.
-
-To turn it on, add `"SwaggerEnable": true` to `C:\ProgramData\Stealthbits\PAM\WebService\appsettings.json`, and restart the web application. The server reads the setting at startup. If the file doesn't exist, create it with this setting inside a JSON object.
-
-When Swagger is off, the `/swagger` addresses don't return an error. The server answers with the console page, status 200 and content type `text/html`, so a request for `/swagger/v1/swagger.json` returns HTML and not a specification.
-
-{/* TODO verify: that the Swagger page and specification load at `/swagger/index.html` and `/swagger/v1/swagger.json` when `SwaggerEnable` is `true`. The release code maps `/swagger/v1/swagger.json` to a 404 "Swagger is disabled" response when the setting is on, so confirm on a server where you set it. */}
 
 ## Calling the API from a script
 
