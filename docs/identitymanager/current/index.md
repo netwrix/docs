@@ -1,6 +1,6 @@
 ---
-title: "Netwrix Identity Manager 7.1"
-description: "Netwrix Identity Manager 7.1"
+title: "Netwrix Identity Manager 7.2"
+description: "Netwrix Identity Manager 7.2"
 sidebar_position: 10
 ---
 

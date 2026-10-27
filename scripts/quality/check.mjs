@@ -2,7 +2,7 @@
 /**
  * check.mjs - the pre-PR check for documentation a change adds or edits: AI-isms, Vale, and Dale.
  *
- *   node scripts/quality/check.mjs [--staged | --base origin/dev] [--files list.txt]
+ *   node scripts/quality/check.mjs [--staged | --base origin/dev] [--files list.txt] [--progress]
  *                                  [--file <path> ...] [--no-model | --require-model]
  *                                  [--no-lint] [--vale-optional] [--only list.txt] [--table]
  *
@@ -98,7 +98,8 @@ async function main() {
   let done = 0;
   const results = await mapPool(files, config.scope.concurrency ?? 3, async ({ file: f, ranges }) => {
     const r = await checkPage(f, { ranges, model: !flag('--no-model'), requireModel: flag('--require-model'), lint: !flag('--no-lint'), valeOptional: flag('--vale-optional'), ...(staged ? { markdown: stagedText(f) } : {}) });
-    if (files.length > 3 && process.stderr.isTTY) console.error(`quality: checked ${++done}/${files.length}  ${f}`);
+    // --progress prints a line per page even when stderr is not a terminal (a detached run writes its results only at the end).
+    if (files.length > 3 && (process.stderr.isTTY || flag('--progress'))) console.error(`quality: checked ${++done}/${files.length}  ${r.pass ? 'PASS' : 'FAIL'}  ${f}`);
     return r;
   });
   const pass = results.every(r => r.pass);

@@ -1,7 +1,7 @@
 ---
 title: "PendingAssignedResourceTypesAccessControlRules"
 description: "Generates the access control rules which give to a profile the permissions to call the API Pending AssignedResourceTypes."
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 Generates the access control rules which give to a profile the permissions to call the API Pending AssignedResourceTypes.

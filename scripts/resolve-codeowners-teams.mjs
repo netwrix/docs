@@ -5,10 +5,14 @@
  *
  * Usage:
  *   node scripts/resolve-codeowners-teams.mjs <file1> <file2> ...
+ *   node scripts/resolve-codeowners-teams.mjs --unowned <handle> <file1> ...
  *
  * Prints a comma-joined, deduped list of matching team handles to stdout
  * (no trailing newline handling required by caller). Prints nothing if
  * no files match any pattern.
+ *
+ * With --unowned <handle>, prints <handle> instead if any file matches no
+ * pattern — i.e. it is site code rather than a product's docs.
  */
 
 import fs from 'fs';
@@ -55,9 +59,18 @@ function matchFile(rules, filePath) {
 }
 
 function main() {
-  const files = process.argv.slice(2);
+  const argv = process.argv.slice(2);
+  const unownedFlag = argv.indexOf('--unowned');
+  const unownedHandle = unownedFlag === -1 ? null : argv.splice(unownedFlag, 2)[1];
+  const files = argv;
   const content = fs.readFileSync(CODEOWNERS_PATH, 'utf8');
   const rules = parseCodeowners(content);
+
+  if (unownedHandle) {
+    const anyUnowned = files.some(file => !matchFile(rules, file));
+    process.stdout.write(anyUnowned ? unownedHandle : '');
+    return;
+  }
 
   const teams = [];
   for (const file of files) {
