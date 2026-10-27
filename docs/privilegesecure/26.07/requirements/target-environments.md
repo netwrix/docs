@@ -44,7 +44,7 @@ Websites and secret vaults are platforms too. For the full platform list and the
 
 For the Entra ID app registration, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md).
 
-For BSD targets, use root or an account that can run the needed commands through `sudo`. For PAN-OS targets, use an administrator whose role enables the XML API and allows configuration changes and commits. See [Configure an admin role profile](https://docs.paloaltonetworks.com/ngfw/administration/firewall-administration/manage-firewall-administrators/configure-an-admin-role-profile) in the Palo Alto Networks documentation.
+For BSD targets, use root or an account that can run the needed commands through `sudo`. See [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md). For PAN-OS targets, use an administrator whose role enables the XML API and allows configuration changes and commits. See [Configure an admin role profile](https://docs.paloaltonetworks.com/ngfw/administration/firewall-administration/manage-firewall-administrators/configure-an-admin-role-profile) in the Palo Alto Networks documentation.
 
 ## Windows targets
 
@@ -79,6 +79,4 @@ The command sets the `LocalAccountTokenFilterPolicy` registry value to 1, which 
 
 Use a dedicated service account with least privilege instead of root. Create a sudoers file for the account that allows only the commands Privilege Secure needs, and don't grant blanket sudo access.
 
-The account name that you add as a service account in Privilege Secure must match the account name in the sudoers file. For the account setup and the command list, see [Creating a Least Privilege Service Account for Linux Resources](/docs/kb/privilegesecure/user-and-service-accounts/creating-a-least-privilege-service-account-for-linux-resources).
-
-The 26.07 Linux command plans also run `getent`, `pkill`, `groupadd`, `stat`, `sed`, and `adcli` through `sudo`, and start some commands with `/bin/bash` or `/bin/sh`. The article's command list doesn't yet include these commands. Add them to your sudoers file. If a host scan or activity fails with a `sudo` error, check for a missing command.
+The account name that you add as a service account in Privilege Secure must match the account name in the sudoers file. For the policy, the command list, and how to check it, see [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md).

@@ -68,7 +68,7 @@ These lockouts are on accounts in Active Directory. They are separate from the l
 
 **Cause:** One reported cause is a sudoers file on the Linux resource that doesn't allow every command the scan runs for the service account. The scan fails when sudo refuses one of them.
 
-**Fix:** Check the sudoers file for the service account against the commands that Privilege Secure needs. Allow only those commands. Don't grant the account unrestricted sudo access. For the account setup, see [Linux targets](/docs/privilegesecure/26.07/requirements/target-environments.md#linux-targets) and [Creating a Least Privilege Service Account for Linux Resources](/docs/kb/privilegesecure/user-and-service-accounts/creating-a-least-privilege-service-account-for-linux-resources).
+**Fix:** Check the sudoers file for the service account against the commands that Privilege Secure needs. Allow only those commands. Don't grant the account unrestricted sudo access. For the policy, see [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md).
 
 If the scan still fails after the account has every listed command, contact [Netwrix Support](https://www.netwrix.com/support.html). See also [Known issues](/docs/privilegesecure/26.07/troubleshooting/known-issues.md).
 
