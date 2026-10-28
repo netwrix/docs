@@ -1,7 +1,7 @@
 ---
 title: "RSAT Extension"
 description: "RSAT Extension"
-sidebar_position: 50
+sidebar_position: 60
 ---
 
 # RSAT Extension

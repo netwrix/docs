@@ -1,7 +1,7 @@
 ---
 title: "Configuration Interface"
 description: "Configuration Interface"
-sidebar_position: 60
+sidebar_position: 40
 ---
 
 # Configuration Interface

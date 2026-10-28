@@ -1,6 +1,7 @@
 ---
 title: "Okta Page"
 description: "Okta Page"
+sidebar_label: "Connect Okta"
 sidebar_position: 12
 ---
 

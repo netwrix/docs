@@ -1,6 +1,7 @@
 ---
 title: "Entra ID Page"
 description: "Entra ID Page"
+sidebar_label: "Connect Entra ID"
 sidebar_position: 12
 ---
 
