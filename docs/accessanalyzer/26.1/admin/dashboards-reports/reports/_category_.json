@@ -6,6 +6,6 @@
   "link": {
     "type": "generated-index",
     "description": "The Data, Identity, and Compliance report pages, with the filters and cards of every report.",
-    "slug": "/dashboards-reports/reports"
+    "slug": "/admin/dashboards-reports/reports"
   }
 }

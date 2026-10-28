@@ -1,7 +1,7 @@
 ---
 title: Users and Roles
 description: Understand the Admin, User admin, and Viewer roles, manage accounts on the Users tab, and secure your own account with a password and an authenticator app.
-sidebar_position: 3
+sidebar_position: 30
 ---
 
 ## Roles

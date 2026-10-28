@@ -2,6 +2,7 @@
 title: Access Analyzer
 description: What Netwrix Access Analyzer does, how its parts fit together, and where to begin.
 sidebar_position: 1
+slug: /
 ---
 
 ## What Access Analyzer Is
