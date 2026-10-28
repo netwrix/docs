@@ -50,7 +50,7 @@ AWS, or Google), except for Operating System and Kernel upgrades.
 :::
 
 :::warning
-Netwrix doesn't allow on-premise (self-hosted) customers to perform backend security updates by any method other than the web UI. Any violation of this rule is outside of Netwrix support and may cause EPP Server malfunction.
+Netwrix doesn't allow on-premise (self-hosted) customers to perform backend security updates by any method other than the web UI. Any violation of this rule is outside Netwrix support and may cause EPP Server malfunction.
 :::
 
 :::note
@@ -151,7 +151,7 @@ For more client install options, see [Agent Installation Options](/docs/endpoint
 ## Client Software Upgrade
 
 From this section, you can upload the latest clients you downloaded from the **Client Software** section to upgrade
-the Endpoint Protector and Enforced Encryption Client and manage the upgrade jobs. The Client Software Upgrade feature is only available
+the Endpoint Protector and Enforced Encryption Client and manage the upgrade jobs. The Client Software Upgrade feature is available only
 for Windows and macOS Clients. To upgrade your Linux Clients, submit a request using the [online form](https://www.endpointprotector.com/linux).
 
 :::note
@@ -220,7 +220,7 @@ To continue upgrading canceled Client Upgrade jobs, use the **Retry** option fro
 column.
 
 :::note
-If you deleted or archived a Client Upgrade job, then the endpoints become available for
+If you deleted or archived a Client Upgrade job, the endpoints become available for
 selection in other jobs.
 :::
 
