@@ -53,8 +53,8 @@ recovery process.
     the entire sub-tree option enables the User Options page.
     :::
 
-- Naming Conflict – A naming conflict can occur if an object was created post-deletion that has
-  identical values to the original object. From the dropdown menu, select an option to implement if
+- Naming Conflict – A naming conflict can occur if an object with values identical to the original
+  object was created after the deletion. From the dropdown menu, select an option to implement if
   a naming conflict occurs:
 
     - Skip the object – If there is a conflict with naming, don't restore and skip the object

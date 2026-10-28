@@ -38,13 +38,13 @@ providing Domain Admin privileges. In those situations, contact your Netwrix ser
 representative to work with you to develop a tailored Least Privilege Access model based on your
 environment.
 
-The privileges necessary to facilitate normal backup and recovery operations of an Active Directory
+The privileges required for normal backup and recovery operations of an Active Directory
 environment, which are normally available to the Domain Administrators security group, include the
 following permissions:
 
-- Membership in the Schema Admins group is necessary to facilitate backups of objects within the
+- Membership in the Schema Admins group is required for backups of objects within the
   domain's Schema Container
-- The following permissions on the domain's default naming context are necessary to facilitate
+- The following permissions on the domain's default naming context are required for
   backups and rollbacks of its Active Directory objects:
 
     - ALLOW – Write Property right (SelfAndChildren)
@@ -53,19 +53,19 @@ following permissions:
     - ALLOW – Reanimate Tombstones extended right (SelfAndChildren)
 
 - The following permissions on the domain's DomainDnsZones and ForestDnsZones partitions are
-  necessary to facilitate backups and rollbacks of Active Directory DNS objects:
+  required for backups and rollbacks of Active Directory DNS objects:
     - ALLOW – Write Property right (SelfAndChildren)
     - ALLOW – Create Child right (SelfAndChildren)
     - ALLOW – Replicating Directory Changes extended right (SelfAndChildren)
     - ALLOW – Reanimate Tombstones extended right (SelfAndChildren)
-- The following permissions on the domain's Sites container are necessary to facilitate backups and
+- The following permissions on the domain's Sites container are required for backups and
   rollbacks of Active Directory Sites and Services objects:
     - ALLOW – Generic Read right (SelfAndChildren)
     - ALLOW – Generic Write right (SelfAndChildren)
     - ALLOW – Create Child right (SelfAndChildren)
     - ALLOW – Replicating Directory Changes extended right (SelfAndChildren)
     - ALLOW – Reanimate Tombstones extended right (SelfAndChildren)
-- The following Group Policy access rights are necessary to facilitate backups and rollbacks of
+- The following Group Policy access rights are required for backups and rollbacks of
   Group Policy Objects:
     - READ
     - WRITE

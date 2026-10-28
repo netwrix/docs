@@ -143,8 +143,8 @@ start a backup on demand from the Recovery Console.
 ## Backup Files
 
 The backup of a domain controller is stored on a network share in the environment and includes all
-essential data from the domain controller. With this data, you can restore the entire forest in the
-event of a disaster. The backup includes:
+essential data from the domain controller. With this data, you can restore the entire forest after a
+disaster. The backup includes:
 
 - The Active Directory database (ntds.dit)
 - Log files
@@ -164,7 +164,7 @@ adjacent pane displays the domain controllers in that domain.
 When you disable the backup for a domain controller, the system discards all previously saved backup configurations.
 However, any older backups remain.
 
-To re-enable the backup for a domain controller, you have to perform all steps of the Server Backup
+To re-enable the backup for a domain controller, complete all steps of the Server Backup
 Configuration wizard again.
 
 ## Domain Controller Backup History

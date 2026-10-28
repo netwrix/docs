@@ -18,7 +18,7 @@ Configuration page to open the Data Retention Policy page.
 to enable policy settings.
 
 **Step 2 –** Select the **Delete object backup data older than X days** checkbox to delete backup
-data that is older than X number of days from the database. You can specify any number of days;
+data older than X days from the database. You can specify any number of days;
 default is 60 days.
 
 **Step 3 –** Select the **Delete backup data for objects Active Directory purges from the deleted
