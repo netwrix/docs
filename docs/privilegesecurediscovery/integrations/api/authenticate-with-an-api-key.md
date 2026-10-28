@@ -6,7 +6,7 @@ sidebar_position: 40
 
 To call the Netwrix Privilege Secure for Discovery API, you exchange an API key for an access token, and then you send the token with each request. This page shows the exchange with `curl`. The API base path is `/api/v1`, and every request uses HTTPS.
 
-The product doesn't publish an OpenAPI or Swagger document for this API. The pages in this section describe the endpoints that customers use most.
+For every endpoint, see the [API Reference](/docs/privilegesecurediscovery/integrations/api/reference/index.md).
 
 ## Prerequisites
 

@@ -271,11 +271,41 @@ const config = {
         },
       },
     ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi-privilegesecurediscovery',
+        docsPluginId: 'privilegesecurediscovery',
+        config: {
+          'privilegesecurediscovery-api': {
+            specPath: 'static/openapi/privilegesecurediscovery-26.09.1.yaml',
+            outputDir: 'docs/privilegesecurediscovery/integrations/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/privilegesecurediscovery-26.09.1.yaml',
+            version: 'current',
+            label: 'Netwrix Privilege Secure for Discovery API',
+            baseUrl: '/docs/privilegesecurediscovery/integrations/api/reference/',
+          },
+        },
+      },
+    ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Code-sample tabs on API reference pages (docusaurus-theme-openapi-docs). The first entry is the default.
+      languageTabs: [
+        { highlight: 'bash', language: 'curl', logoClass: 'curl' },
+        { highlight: 'powershell', language: 'powershell', logoClass: 'powershell' },
+        { highlight: 'python', language: 'python', logoClass: 'python', variant: 'requests' },
+        { highlight: 'javascript', language: 'nodejs', logoClass: 'nodejs', variant: 'axios' },
+        { highlight: 'csharp', language: 'csharp', logoClass: 'csharp', variant: 'httpclient' },
+      ],
       // Shown only on scoped paths — see src/theme/AnnouncementBar
       announcementBar: {
         id: 'endpointprotector-announcement',

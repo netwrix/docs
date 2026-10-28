@@ -5,14 +5,14 @@
   "main": "docusaurus.config.js",
   "scripts": {
     "docusaurus": "npx docusaurus",
-    "prestart": "node scripts/cleanup-legacy-dirs.mjs && node scripts/copy-kb-to-versions.mjs && node -e \"if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='changetracker'){require('child_process').execSync('npx docusaurus gen-api-docs changetracker-hub --plugin-id openapi-changetracker',{stdio:'inherit'})}\"",
+    "prestart": "node scripts/cleanup-legacy-dirs.mjs && node scripts/copy-kb-to-versions.mjs && node -e \"if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='changetracker'){require('child_process').execSync('npx docusaurus gen-api-docs changetracker-hub --plugin-id openapi-changetracker',{stdio:'inherit'})}\" && node -e \"if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='privilegesecurediscovery'){require('child_process').execSync('npx docusaurus gen-api-docs privilegesecurediscovery-api --plugin-id openapi-privilegesecurediscovery',{stdio:'inherit'})}\"",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=false npx docusaurus start --port=4500 --no-open",
     "start-chok": "cross-env NODE_OPTIONS=--max-old-space-size=16384 CHOKIDAR_USEPOLLING=true npx docusaurus start --port=4500 --no-open",
-    "prebuild": "node scripts/cleanup-legacy-dirs.mjs && node scripts/copy-kb-to-versions.mjs && node -e \"if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='changetracker'){require('child_process').execSync('npx docusaurus gen-api-docs changetracker-hub --plugin-id openapi-changetracker',{stdio:'inherit'})}\"",
+    "prebuild": "node scripts/cleanup-legacy-dirs.mjs && node scripts/copy-kb-to-versions.mjs && node -e \"if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='changetracker'){require('child_process').execSync('npx docusaurus gen-api-docs changetracker-hub --plugin-id openapi-changetracker',{stdio:'inherit'})}\" && node -e \"if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='privilegesecurediscovery'){require('child_process').execSync('npx docusaurus gen-api-docs privilegesecurediscovery-api --plugin-id openapi-privilegesecurediscovery',{stdio:'inherit'})}\"",
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=16384 npx docusaurus build",
-    "preci": "node scripts/cleanup-legacy-dirs.mjs && node scripts/copy-kb-to-versions.mjs && node -e \"if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='changetracker'){require('child_process').execSync('npx docusaurus gen-api-docs changetracker-hub --plugin-id openapi-changetracker',{stdio:'inherit'})}\"",
+    "preci": "node scripts/cleanup-legacy-dirs.mjs && node scripts/copy-kb-to-versions.mjs && node -e \"if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='changetracker'){require('child_process').execSync('npx docusaurus gen-api-docs changetracker-hub --plugin-id openapi-changetracker',{stdio:'inherit'})}\" && node -e \"if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='privilegesecurediscovery'){require('child_process').execSync('npx docusaurus gen-api-docs privilegesecurediscovery-api --plugin-id openapi-privilegesecurediscovery',{stdio:'inherit'})}\"",
     "ci": "npx docusaurus build",
-    "openapi:sync": "npx docusaurus clean-api-docs changetracker-hub --plugin-id openapi-changetracker && npx docusaurus gen-api-docs changetracker-hub --plugin-id openapi-changetracker && git checkout -- docs/changetracker/api/reference/_category_.json",
+    "openapi:sync": "npx docusaurus clean-api-docs changetracker-hub --plugin-id openapi-changetracker && npx docusaurus gen-api-docs changetracker-hub --plugin-id openapi-changetracker && npx docusaurus clean-api-docs privilegesecurediscovery-api --plugin-id openapi-privilegesecurediscovery && npx docusaurus gen-api-docs privilegesecurediscovery-api --plugin-id openapi-privilegesecurediscovery && git checkout -- docs/changetracker/api/reference/_category_.json docs/privilegesecurediscovery/integrations/api/reference/_category_.json",
     "swizzle": "npx docusaurus swizzle",
     "clear": "npx docusaurus clear",
     "serve": "npx docusaurus serve --port 8080 --no-open",
@@ -27,7 +27,9 @@
     "quality:fix": "node scripts/quality/fix-loop.mjs",
     "slack:sync": "node scripts/sync-team-slack-map.mjs",
     "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh && node --test scripts/test-set-blob-metadata.mjs && node scripts/test-set-blob-metadata-integration.mjs && node --test scripts/claude/test-log-summary.mjs && node --test scripts/test-vale-local.mjs && node --test scripts/test-resolve-path-labels.mjs && node --test scripts/test-sync-team-slack-map.mjs && node --test scripts/test-preserve-content.mjs && node scripts/quality/gen-lint-digest.mjs --check",
-    "prepare": "node scripts/hooks/install.mjs"
+    "prepare": "node scripts/hooks/install.mjs",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
   },
   "dependencies": {
     "@azure/storage-blob": "^12.34.0",
@@ -60,7 +62,8 @@
     "table": "^6.9.0",
     "to-vfile": "^8.0.0",
     "vfile-reporter": "^8.1.1",
-    "watchman": "^1.0.0"
+    "watchman": "^1.0.0",
+    "wrangler": "^4.154.0"
   },
   "engines": {
     "node": ">=22.0"
