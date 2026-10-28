@@ -7,7 +7,7 @@ sidebar_position: 30
 # Entra ID Page
 
 On the Entra ID page, you can access all the Entra tenants that you have configured through the
-[Entra ID Page](/docs/identityrecovery/3.1/configuration/entraid.md).
+[Connect Entra ID](/docs/identityrecovery/3.1/configuration/entraid.md).
 
 Click **Entra ID** in the left pane to open the Entra ID page.
 

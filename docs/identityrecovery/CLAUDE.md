@@ -21,8 +21,8 @@ The version folder follows the standard documentation zones (see `.claude/refere
 | 1 | `index.md` | Landing | Version landing page (`/docs/identityrecovery/3_1`). Keep it at the root. |
 | 10 | `gettingstarted/` | Getting Started | `gettingstarted.md` (zone index, jumping-off page), `usecases.md` |
 | 20 | `requirements/` | Requirements | Application server, SQL Server, RSAT extension, target domains and servers, forest backup firewall rules |
-| 30 | `install/` | Install and Update | Application, configuration utility, first launch, login, RSAT extension install, upgrade, licensing |
-| 40 | `configuration/` | Configuration | Console Configuration tabs: domains, forest, Entra ID, Okta, Azure storage, users and roles, notifications, Netwrix integrations, data retention; MFA setup |
+| 30 | `install/` | Install and Update | Application, configuration utility, first launch, login, RSAT extension install, upgrade |
+| 40 | `configuration/` | Configuration | Console Configuration tabs: domains, forest, Entra ID, Okta, Azure storage, users and roles, notifications, Netwrix integrations, data retention, licensing; MFA setup |
 | 50 | `admin/` | Administration | Navigation, recovery and rollback pages (`activedirectory/`, `entraid/`, `okta/`, `forest/`), audit logs |
 | 60 | `rsatextension/` | Administration (band sibling) | Rollback and restore from the RSAT extension |
 | 80 | `troubleshooting/` | Troubleshooting | Troubleshooting, updating account passwords |

@@ -36,7 +36,7 @@ Before installing, ensure that you meet all prerequisites, as described in the
 Identity Recovery comes with a temporary 14-day license. contact the Netwrix sales
 representative for a license.
 
-See the [Licensing Page](/docs/identityrecovery/3.1/install/licensing.md) topic to license the product.
+See the [Licensing Page](/docs/identityrecovery/3.1/configuration/licensing.md) topic to license the product.
 
 ## Software Download
 
