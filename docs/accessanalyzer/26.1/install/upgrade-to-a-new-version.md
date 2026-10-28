@@ -19,7 +19,7 @@ How you upgrade Access Analyzer depends on how you installed it.
 | **Air-gapped** | You download the new media on a connected machine, copy it to the server, and run `dspm-installer upgrade --bundle-dir`. |
 | **Registry** (a connected install made before media installs, or with `DSPM_MEDIA_INSTALL=false`) | ArgoCD pulls new releases from the Netwrix registry. You tell it which version to run with `dspmctl`. [Convert a registry install](convert-or-connect-an-install.md) to downloaded media to upgrade the same way as any connected install. |
 
-Pick the tab that matches your install.
+Pick the tab that matches your install. You upgrade only the server: deployed agents run the new release's connectors from their next scan. See [Agents and upgrades](../agents/index.md#agents-and-upgrades).
 
 The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell wrapper that runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace. The `dspmctl` program in that pod changes the ArgoCD applications through the Kubernetes API, with its own service account. It doesn't sign in to ArgoCD, and you don't need the `argocd` command-line interface (CLI) on the host.
 
