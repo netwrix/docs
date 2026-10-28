@@ -12,7 +12,7 @@ The Forest page allows administrators to:
 - Carry out a forest recovery
 
 >
-> You must add a forest first. See the [Add a Forest](/docs/identityrecovery/3.1/configuration/forest.md) topic for additional
+> You must add a forest first. See the [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) topic for additional
 > information.
 
 You can view the domain controllers in the forest and verify whether backups are

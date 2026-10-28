@@ -34,7 +34,7 @@ Several Identity Recovery components require configuration after the first launc
 
 - Configure Domain Backup – Configure a domain and backup settings. Netwrix recommends starting a backup of the domain after
   configuring it. See the [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) topic for additional information on configuring a domain to backup.
-- Configure Forest Backup – Configure a forest and then configure backup settings for domain
+- Configure Forest Backup – Add a forest (see the [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) topic), and then configure backup settings for domain
   controllers in the forest. Netwrix recommends starting a backup of the domain controllers after
   configuring backup settings. See the [Forest Page](/docs/identityrecovery/3.1/admin/forest/forest.md) topic for additional information on configuring a domain controller backup.
 - _(Optional)_ Install RSAT Extension on Additional Servers – The `RSAT Extension.msi` is

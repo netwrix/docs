@@ -6,9 +6,8 @@ sidebar_position: 50
 
 # Connect a Forest
 
-The Forest page allows administrators to:
-
-- Add forests
+Use the Forest tab of the Configuration interface to add an Active Directory forest so that Identity
+Recovery can back it up and recover it.
 
 ## Add a Forest
 

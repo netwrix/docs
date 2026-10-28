@@ -6,7 +6,7 @@ sidebar_position: 12
 
 # Connect Okta
 
-The Okta page provides a list of the Okta tenants backed up by Identity Recovery. It
+The Okta tab of the Configuration interface lists the Okta tenants that Identity Recovery backs up. It
 displays the backup schedule settings for each added Okta tenant. You can also add and configure new Okta tenants.
 
 Click **Configuration** in the left pane. Then click the **Okta** tab on the Configuration page
