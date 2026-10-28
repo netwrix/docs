@@ -17,7 +17,7 @@ How you upgrade Access Analyzer depends on how you installed it.
 
 Pick the tab that matches your install.
 
-The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell wrapper that runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace. That pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
+The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell wrapper that runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace. The `dspmctl` program in that pod changes the ArgoCD applications through the Kubernetes API, with its own service account. It doesn't sign in to ArgoCD, and you don't need the `argocd` command-line interface (CLI) on the host.
 
 Run `dspmctl` and `dspm-installer` with `sudo`. Only root can read the default kubeconfig at `/etc/rancher/k3s/k3s.yaml`, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
@@ -215,42 +215,53 @@ A host that later gains internet access can [connect the air-gapped install](con
 </TabItem>
 <TabItem value="registry" label="Registry upgrade">
 
-A registry install pulls releases from the Netwrix registry. To upgrade it with downloaded media instead, [convert it](convert-or-connect-an-install.md#convert-a-registry-install). Otherwise, follow these steps.
+A registry install pulls releases from the Netwrix registry. Upgrading it to a newer release converts it to downloaded media first, so later upgrades work like any connected install. The conversion downloads about 3.5 GB of media, takes about 15 to 20 minutes, and makes the app briefly unavailable. You can't undo it. See [Convert a registry install](convert-or-connect-an-install.md#convert-a-registry-install) for what the conversion does.
 
-If the installed version doesn't match the latest release, check how you installed the app. The installer's default `--target-revision` is `1.*`, a wildcard. If nobody pinned a specific version at install time, ArgoCD already tracks the newest stable 1.x tag and picks up new releases on its next sync. You don't need any `dspmctl` steps.
+Any of these starts the upgrade and its conversion:
 
-If you pinned a specific version at install time, or want to pin one now, follow these steps.
+- The **Settings** page: select the new version, then select **Update**.
+- The automatic updater: when a newer release that matches the install's version constraint appears, it starts the upgrade on its next run. It checks every 12 hours.
+- `dspmctl` on the host, with the following steps.
+- `dspm-installer upgrade --download --migrate`, as [Convert a registry install](convert-or-connect-an-install.md#convert-a-registry-install) shows.
 
-1. Point the umbrella app at the new version.
+To upgrade with `dspmctl`:
 
-   ```bash
-   sudo dspmctl set-revision netwrix 1.1.2
-   ```
-
-   For the `netwrix` app, this command does three things. It turns off automated sync and self-heal, sets `targetRevision` to `1.1.2`, and sets the Helm parameter `config.spec.source.targetRevision=1.1.2` so every child application (webapp, core-api, and so on) gets the same version.
-
-2. Trigger the sync. `set-revision` disables auto-sync, so nothing deploys until you run this command.
+1. Check that automated sync is on for the `netwrix` application. The upgrade refuses to start while it's off.
 
    ```bash
-   sudo dspmctl sync netwrix
+   sudo dspmctl auto-status
    ```
 
-   :::note
-   If you're upgrading from a version earlier than 1.1.7, the Apache Tika resources from the older release remain in the cluster after the sync and can keep the app showing as not healthy. Preview what the sync removes, confirm that the output lists only the Tika resources, and then run the sync with `--prune`:
-
-   ```bash
-   sudo dspmctl sync netwrix --prune --dry-run
-   sudo dspmctl sync netwrix --prune
-   ```
-   :::
-
-3. Turn auto-sync back on so later releases in the pinned range deploy without manual steps.
+   If it's off, turn it on:
 
    ```bash
    sudo dspmctl enable-auto netwrix
    ```
 
-   `enable-auto` changes only the sync policy. It doesn't force a reconcile, and the ArgoCD controller polls roughly every 3 minutes. If you ran only `enable-auto` and nothing changed yet, run `sync`.
+2. Start the upgrade and follow it until it finishes:
+
+   ```bash
+   sudo dspmctl set-revision netwrix 1.1.2 --wait
+   ```
+
+   The command explains the conversion, starts the upgrade job, and prints its progress. It exits with the job's exit code. The job pauses automated sync while it deploys and turns it back on when it finishes, so you don't run `sync` or `enable-auto` yourself.
+
+   If your session drops while the upgrade runs, the job keeps going. Check on it again with:
+
+   ```bash
+   sudo dspmctl upgrade-status --wait
+   ```
+
+:::note
+If you're upgrading from a version earlier than 1.1.7, the Apache Tika resources from the older release can remain in the cluster after the upgrade and keep the app showing as not healthy. Preview what a pruning sync removes, confirm that the output lists only the Tika resources, and then run the sync with `--prune`:
+
+```bash
+sudo dspmctl sync netwrix --prune --dry-run
+sudo dspmctl sync netwrix --prune
+```
+:::
+
+To roll a registry install back to an older release, see [Rolling back to a previous version](roll-back-to-a-previous-version.md). A rollback re-pins the install in the registry, and its next upgrade converts it.
 
 </TabItem>
 </Tabs>
@@ -261,7 +272,7 @@ On a connected install, when an upgrade fails after it starts applying the new v
 
 From the host, a rollback is a re-pin. The previous chart tag and images stay in the cluster, so you don't need the old media. The in-cluster registry keeps only the previous release's images, so a rollback works one release back. To roll back further, you need that release's media again.
 
-For the precautions to take first and the full procedure, see [Rolling back to a previous version](roll-back-to-a-previous-version.md). In short, read the previous version from the annotation, then run all three `dspmctl` commands. `set-revision` turns off automated sync so self-heal doesn't immediately re-sync the new version, `sync` applies it, and `enable-auto` turns automated sync back on. If you skip `enable-auto`, the `netwrix` app never syncs again, and the next `dspm-installer upgrade` refuses to run.
+For the precautions to take first and the full procedure, see [Rolling back to a previous version](roll-back-to-a-previous-version.md). Read the previous version from the annotation, then run all three `dspmctl` commands. `set-revision` turns off automated sync so self-heal doesn't immediately re-sync the new version, `sync` applies it, and `enable-auto` turns automated sync back on. If you skip `enable-auto`, the `netwrix` app never syncs again, and the next `dspm-installer upgrade` refuses to run.
 
 ```bash
 sudo kubectl -n argocd get application netwrix \
@@ -292,7 +303,7 @@ A re-pin doesn't roll back database schema changes the new release made.
 
 ## Troubleshooting an Upgrade
 
-**Automated sync is still off after a failed upgrade.** Run the same upgrade command to finish it, or turn sync back on with `sudo dspmctl enable-auto netwrix`.
+**Automated sync is still off after a failed upgrade.** Run the same upgrade command to finish it, or turn sync back on with `sudo dspmctl enable-auto netwrix`. On the `netwrix` app, `enable-auto` also clears the pause an unfinished upgrade leaves.
 
 **An upgrade exits with code `70`, and running it again says the cluster is already on that version.** The new version is in place but wasn't healthy in time. Run `sudo dspm-installer wait-for-apps`.
 
@@ -310,58 +321,28 @@ sudo dspmctl version
 
 The output should show the version you set. Pod restarts take longer on a busy server, so if the version hasn't changed after five minutes, wait another two or three minutes and run the command again.
 
-For a detailed view of the sync, ask ArgoCD directly:
+For a detailed view of the sync, read the `netwrix` application's status:
 
 ```bash
-sudo kubectl exec -n argocd -ti deploy/dspmctl -- argocd app get argocd/netwrix
+sudo kubectl get application netwrix -n argocd \
+  -o custom-columns='REVISION:.spec.source.targetRevision,SYNC:.status.sync.status,HEALTH:.status.health.status'
 ```
 
-Check `TARGET REVISION` and `Sync Status`. The `netwrix` app only manages the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
+Check that `REVISION` shows the version you set and `SYNC` shows `Synced`. The `netwrix` app only manages the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
 
 ```bash
 sudo dspmctl sync netwrix.webapp
 ```
 
 <details>
-<summary>Troubleshooting: dspmctl hangs after a cancelled command</summary>
+<summary>Troubleshooting: dspmctl says an operation is already in progress</summary>
 
-If you press Ctrl-C part-way through a `dspmctl` command (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. Even `argocd version --client`, which needs no network at all, hangs, so the cause is local to the pod. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod unresponsive.
+If a `dspmctl` command fails with `an operation on <app> is already in progress`, ArgoCD is still running an earlier sync of that application. A sync keeps running in ArgoCD even if you press Ctrl-C while `dspmctl sync` waits for it. Wait for the sync to finish, then run the command again.
 
-Restart that pod and re-run the upgrade:
-
-```bash
-sudo kubectl rollout restart deploy/dspmctl -n argocd
-sudo kubectl rollout status deploy/dspmctl -n argocd
-sudo kubectl exec -n argocd deploy/dspmctl -- argocd version --client   # should print instantly now
-sudo dspmctl set-revision netwrix 1.1.2
-sudo dspmctl sync netwrix
-```
-
-If `argocd version --client` still hangs after the restart, `dspmctl` isn't usable in that environment. Everything `dspmctl` does is an edit to the `netwrix` ArgoCD `Application` object, so make the same changes directly with `kubectl` from the host.
-
-Pin the umbrella chart:
+If the operation makes no progress after the ArgoCD application controller restarted, the request is stale. Clear it, then run the command again:
 
 ```bash
-sudo kubectl patch application netwrix -n argocd --type merge \
-  -p '{"spec":{"source":{"targetRevision":"1.1.2"}}}'
-```
-
-Set the Helm parameter that propagates the version to the child apps. List the parameters, find the 0-based position of `config.spec.source.targetRevision`, and use it as `N`:
-
-```bash
-sudo kubectl get application netwrix -n argocd \
-  -o jsonpath='{range .spec.source.helm.parameters[*]}{.name}{"\n"}{end}'
-sudo kubectl patch application netwrix -n argocd --type json \
-  -p '[{"op":"replace","path":"/spec/source/helm/parameters/N/value","value":"1.1.2"}]'
-```
-
-Turn auto-sync back on and force an immediate refresh:
-
-```bash
-sudo kubectl patch application netwrix -n argocd --type merge \
-  -p '{"spec":{"syncPolicy":{"automated":{"selfHeal":true,"prune":true}}}}'
-sudo kubectl annotate application netwrix -n argocd argocd.argoproj.io/refresh=hard --overwrite
-sudo kubectl get applications -n argocd -w
+sudo kubectl -n argocd patch application <app> --type=json -p '[{"op":"remove","path":"/operation"}]'
 ```
 
 </details>
