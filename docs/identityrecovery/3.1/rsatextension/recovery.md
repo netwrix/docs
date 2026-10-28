@@ -115,7 +115,7 @@ domain tree area where the object resides. On the Alternate Credentials page:
   privileges, then click **Next**.
 
 For a Least Privilege Access Model to provision an Active Directory security group with the
-permissions that are necessary to perform backups, rollbacks, and recovery, see the
+permissions necessary to perform backups, rollbacks, and recovery, see the
 [Least Privilege Access Model](/docs/identityrecovery/3.1/requirements/targetdomain.md#least-privilege-access-model) topic.
 
 ![Object Recovery Wizard - Confirm page](/images/identityrecovery/3.1/rsatextension/confirm_1.webp)

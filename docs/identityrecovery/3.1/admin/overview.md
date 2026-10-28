@@ -30,7 +30,7 @@ Identity Recovery enables administrators to manage Active Directory in the follo
 
 ## DNS Records
 
-DNS records must be stored in Active Directory to backup, restore, and view DNS objects in
-Identity Recovery. See the Microsoft
+To back up, restore, and view DNS objects in Identity Recovery, store DNS records in Active
+Directory. See the Microsoft
 [Change the Zone Type](https://technet.microsoft.com/en-us/library/cc771150(v=ws.11).aspx) article
 for additional information.

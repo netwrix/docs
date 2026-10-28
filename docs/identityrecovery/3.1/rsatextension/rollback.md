@@ -44,7 +44,7 @@ attributes to rollback. This page consists of two sections:
     - Backup Date – Select the date timestamp you want to identify the backup for rollback. Multiple
       backups may be available for a single day depending on the configured schedule.
     - Attribute List – Select the attributes to rollback. The table displays the current value and
-      backup value. Attributes where these two values are different are highlighted in blue.
+      backup value, and highlights attributes where these two values are different in blue.
     - Only show attributes that have changed – Select this option to display only blue highlighted
       attributes that were changed when the selected backup was performed
 
@@ -79,7 +79,7 @@ domain tree area where the object resides. On the Alternate Credentials page:
   privileges, then click **Next**.
 
 For a Least Privilege Access Model to provision an Active Directory security group with the
-permissions that are necessary to perform backups, rollbacks, and recovery, see the
+permissions necessary to perform backups, rollbacks, and recovery, see the
 [Least Privilege Access Model](/docs/identityrecovery/3.1/requirements/targetdomain.md#least-privilege-access-model) topic.
 
 ![Object Rollback wizard - Confirm Page](/images/identityrecovery/3.1/rsatextension/confirm.webp)

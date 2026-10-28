@@ -31,7 +31,7 @@ backup times.
 Expand a forest to view the domains under it. When you select a domain, the adjacent pane displays
 the domain controllers in that domain.
 
-The following information is displayed for a domain controller:
+The adjacent pane displays the following information for a domain controller:
 
 - Name – Name of the domain controller
 - Operating System – Operating system for the domain controller, for example, Windows Server 2019
