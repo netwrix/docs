@@ -1,7 +1,7 @@
 ---
 title: "Entra ID Page"
 description: "Entra ID Page"
-sidebar_position: 41
+sidebar_position: 30
 ---
 
 # Entra ID Page

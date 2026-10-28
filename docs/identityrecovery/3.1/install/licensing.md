@@ -1,7 +1,7 @@
 ---
 title: "Licensing Page"
 description: "Licensing Page"
-sidebar_position: 60
+sidebar_position: 70
 ---
 
 # Licensing Page

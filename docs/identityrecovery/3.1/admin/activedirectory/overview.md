@@ -1,7 +1,7 @@
 ---
 title: "Active Directory Page"
 description: "Active Directory Page"
-sidebar_position: 40
+sidebar_position: 20
 ---
 
 # Active Directory Page

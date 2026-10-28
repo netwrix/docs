@@ -1,7 +1,7 @@
 ---
 title: "Okta Page"
 description: "Okta Page"
-sidebar_position: 41
+sidebar_position: 40
 ---
 
 # Okta Page

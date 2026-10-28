@@ -1,6 +1,7 @@
 ---
 title: "Forest Page"
 description: "Forest Page"
+sidebar_label: "Forest Backup Settings"
 sidebar_position: 50
 ---
 

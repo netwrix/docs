@@ -1,7 +1,7 @@
 ---
 title: "Configure Multi-Factor Authentication"
 description: "Configure Multi-Factor Authentication"
-sidebar_position: 20
+sidebar_position: 25
 ---
 
 # Configure Multi-Factor Authentication
