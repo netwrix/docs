@@ -26,7 +26,7 @@ The page displays the following information:
   user, etc.
 - Backup Time – The date and time of the last the backup
 
-You can perform the rollback and recover operations for objects.
+You can roll back and recover objects.
 
 ## Search for an Object
 

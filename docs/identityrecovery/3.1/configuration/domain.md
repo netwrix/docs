@@ -25,9 +25,9 @@ The table displays the following information:
 - Actions – Displays the icons used to collect, edit, and delete the respective domain
 
     - Run backup – Click the **Play** icon to start a new collection (backup) on the respective
-      domain if you need a collection outside of the configured schedule
-    - Edit configuration – Edit the settings of the domain. Click the **Edit** icon for a domain to
-      open the Edit Domain Configuration wizard and edit the domain's settings. See the Edit Domain
+      domain if you need a collection outside the configured schedule
+    - Edit configuration – Click the **Edit** icon for a domain to open the Edit Domain
+      Configuration wizard and edit the domain's settings. See the Edit Domain
       Configuration topic for additional information.
     - Delete configuration – Click the Delete icon for a domain to delete it
 
