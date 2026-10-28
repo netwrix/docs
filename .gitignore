@@ -67,9 +67,3 @@ touch_files.py
 
 # local caches (quality-check verdicts, pilot runs)
 .cache/
-
-# wrangler files
-.wrangler
-.dev.vars*
-!.dev.vars.example
-!.env.example
