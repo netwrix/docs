@@ -1,7 +1,7 @@
 ---
 title: "Upgrade PostgreSQL 14 to 18"
 description: "Upgrade PostgreSQL 14 to 18"
-sidebar_position: 40
+sidebar_position: 35
 ---
 
 # Upgrade PostgreSQL 14 to 18

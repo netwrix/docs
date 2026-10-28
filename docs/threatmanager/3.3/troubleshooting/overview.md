@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting"
 description: "Troubleshooting"
-sidebar_position: 70
+sidebar_position: 90
 ---
 
 # Troubleshooting

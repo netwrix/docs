@@ -1,7 +1,7 @@
 ---
 title: "Integration with Other Netwrix Products"
 description: "Integration with Other Netwrix Products"
-sidebar_position: 60
+sidebar_position: 10
 ---
 
 # Integration with Other Netwrix Products

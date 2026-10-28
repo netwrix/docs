@@ -1,7 +1,7 @@
 ---
 title: "Configuration Menu"
 description: "Configuration Menu"
-sidebar_position: 20
+sidebar_position: 40
 ---
 
 # Configuration Menu

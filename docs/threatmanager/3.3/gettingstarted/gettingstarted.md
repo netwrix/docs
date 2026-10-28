@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with Threat Manager"
 description: "Getting Started with Threat Manager"
-sidebar_position: 2
+sidebar_position: 10
 ---
 
 # Getting Started with Threat Manager
