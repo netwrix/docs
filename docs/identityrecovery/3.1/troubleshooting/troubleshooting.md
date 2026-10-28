@@ -33,12 +33,12 @@ In the Recovery Configuration Utility, you use the RSAT Extension Register/Unreg
 activate the new right-click menu options in ADUC. You do this once per domain. The registration
 status appears as either Registered or Unregistered.
 
-To validate the registration status of the RSAT Extension by finding the presence of a specific GUID in ADSI Edit:
+To validate the registration status of the RSAT Extension by finding the presence of a specific GUID in Active Directory Service Interfaces Editor (ADSI Edit):
 
 **Step 1 –** On the domain joined machine or domain controller, ensure the user is logged in as a
 Domain Administrator.
 
-**Step 2 –** Open ADSI (Active Directory Services Interfaces Editor) by navigating to
+**Step 2 –** Open ADSI Edit by navigating to
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools. The ADSI Edit window
 opens.
 

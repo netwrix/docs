@@ -32,7 +32,7 @@ a new account for the Recovery application and displays a verification code unde
 name.
 
 **Step 4 –** Enter this code in the Verification Code field on the Configure authenticator app page
-and click **Verify**. A confirmation message is displayed on success.
+and click **Verify**. The page displays a confirmation message on success.
 
 The authenticator app generates a new code every 30 seconds, with each code expiring after 30
 seconds.
