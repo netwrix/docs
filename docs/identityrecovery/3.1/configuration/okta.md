@@ -69,7 +69,7 @@ time.
 
 **Step 8 –** To set notifications, select the Send email notifications checkbox and enter the
 email address of one or more users and/or groups to receive the job start and end notifications. Use
-a semicolon (;) to separate multiple recipients. See the [Notifications Page](/docs/identityrecovery/3.1/admin/configuration/notifications.md)
+a semicolon (;) to separate multiple recipients. See the [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md)
 topic for additional information.
 
 If notifications aren't desired, skip this step.

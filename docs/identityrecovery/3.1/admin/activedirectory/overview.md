@@ -7,7 +7,7 @@ sidebar_position: 20
 # Active Directory Page
 
 On the Active Directory page, you can access all the domains that you have configured through the
-[Domains Page](/docs/identityrecovery/3.1/admin/configuration/domain.md).
+[Domains Page](/docs/identityrecovery/3.1/configuration/domain.md).
 
 Click **Active Directory** in the left pane to open the Active Directory page.
 
@@ -63,7 +63,7 @@ are met:
 
 - Threat Prevention data is tied with Identity Recovery data
 - The user is logged in with an account that is specified in the Account section of the
-  [Netwrix Integrations Page](/docs/identityrecovery/3.1/admin/configuration/integration.md)
+  [Netwrix Integrations Page](/docs/identityrecovery/3.1/configuration/integration.md)
 
 These options display data from Threat Prevention.
 

@@ -34,7 +34,7 @@ See the following topics for server requirements:
 Target Domain Considerations
 
 The target domains include the Active Directory domains that can be added through the
-[Domains Page](/docs/identityrecovery/3.1/admin/configuration/domain.md). See the following topic for target domain considerations:
+[Domains Page](/docs/identityrecovery/3.1/configuration/domain.md). See the following topic for target domain considerations:
 
 - [Target Domains](/docs/identityrecovery/3.1/requirements/targetdomain.md)
 
