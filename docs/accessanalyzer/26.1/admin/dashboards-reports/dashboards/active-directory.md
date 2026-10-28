@@ -12,7 +12,7 @@ Open it from **Dashboards > Active Directory**. Users with the Admin or Viewer r
 
 ## Where the Data Comes From
 
-Every card reads from an Identity sync on an Active Directory source. The dashboard needs no Access scan or Sensitive data scan, and no card depends on Netwrix Activity Monitor. Until the first Identity sync completes, the tiles show zero and the charts show **No results!**. [Scan types](../../scans/scan-types.md) explains how to run one; [Active Directory](../../sources/active-directory.md) explains the source itself.
+Every card reads from an Identity sync on an Active Directory source. The dashboard needs no Access scan or Sensitive data scan, and no card depends on Netwrix Activity Monitor. Until the first Identity sync completes, the tiles show zero and the charts show **No results!**. [Scan types](../../scans/scan-types.md) explains how to run one; [Active Directory](../../../configuration/sources/active-directory.md) explains the source itself.
 
 ## Filter
 

@@ -9,7 +9,7 @@ A pattern group collects related patterns under a name you'd recognize from a co
 
 Access Analyzer ships 139 built-in patterns in 11 built-in groups. You can add your own patterns and groups alongside them, and put custom patterns into built-in groups.
 
-To manage patterns and groups, go to **Configuration > Sensitive data patterns**. The page is available to the Admin role; see [Users and roles](../settings/users.md).
+To manage patterns and groups, go to **Configuration > Sensitive data patterns**. The page is available to the Admin role; see [Users and roles](../../admin/users.md).
 
 ## The Sensitive Data Patterns Page
 
@@ -68,7 +68,7 @@ Two settings decide which groups a Sensitive data scan classifies:
 
 An empty set doesn't turn classification off. If no group is scanned by default and the scan inherits, or if the scan overrides without selecting any group, the scan classifies against all groups, built-in and custom. When the set contains at least one group, the scan records only findings from those groups.
 
-[Pattern groups](pattern-groups.md) has the details and a diagram of how a scan picks its groups. For the scan side, see [Scan types](../scans/scan-types.md).
+[Pattern groups](pattern-groups.md) has the details and a diagram of how a scan picks its groups. For the scan side, see [Scan types](../../admin/scans/scan-types.md).
 
 ## Test Patterns
 
@@ -101,4 +101,4 @@ At scan time, a custom pattern records at most 10 matches per file. Built-in pat
 
 For each file, a scan stores the group name, the pattern name, and the number of matches. It never stores the matched text itself, so reports show which files contain which kinds of sensitive data, not the values.
 
-The **Sensitive Data Overview** report under **File system** lists shares, hosts, and files with sensitive data and lets you filter by **Pattern Group** and **Pattern**. The SharePoint report of the same name summarizes sensitive data found across SharePoint sites: files with sensitive data, the types of sensitive data found, and links with sensitive data. See [Dashboards and reports](../dashboards-reports/index.md).
+The **Sensitive Data Overview** report under **File system** lists shares, hosts, and files with sensitive data and lets you filter by **Pattern Group** and **Pattern**. The SharePoint report of the same name summarizes sensitive data found across SharePoint sites: files with sensitive data, the types of sensitive data found, and links with sensitive data. See [Dashboards and reports](../../admin/dashboards-reports/index.md).

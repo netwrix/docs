@@ -18,7 +18,7 @@ Use a dashboard when you want totals and trends for a whole area. Use a report w
 
 ## Role Access
 
-Users with the Admin or Viewer role see the **Dashboards** section and can open any report. Users with the User admin role don't see **Dashboards**, and although they can open the **Reports** pages, report content doesn't load for their account. [Users and roles](../settings/users.md) explains the three roles.
+Users with the Admin or Viewer role see the **Dashboards** section and can open any report. Users with the User admin role don't see **Dashboards**, and although they can open the **Reports** pages, report content doesn't load for their account. [Users and roles](../users.md) explains the three roles.
 
 ## The Viewer
 
@@ -36,7 +36,7 @@ Nothing on these pages updates on its own, and Access Analyzer caches dashboard 
 
 ## What Each Dashboard and Report Needs
 
-Every dashboard and report appears in the interface from the first sign-in, even when there's no data behind it. Until the right scan has run, tiles show zero or **No results!**, and charts and tables show **No results!**. The table shows which scan, or which event feed, populates each dashboard and group of reports. [Scan types](../scans/scan-types.md) explains the Access scan, Sensitive data scan, and Identity sync; [Sources](../sources/index.md) explains which source types each applies to.
+Every dashboard and report appears in the interface from the first sign-in, even when there's no data behind it. Until the right scan has run, tiles show zero or **No results!**, and charts and tables show **No results!**. The table shows which scan, or which event feed, populates each dashboard and group of reports. [Scan types](../scans/scan-types.md) explains the Access scan, Sensitive data scan, and Identity sync; [Sources](../../configuration/sources/index.md) explains which source types each applies to.
 
 | To populate | You need |
 |---|---|
@@ -53,4 +53,4 @@ Every dashboard and report appears in the interface from the first sign-in, even
 
 For the file system permission reports, an Identity sync on the matching Active Directory source turns identifiers into names and expands group membership. The Share Audit **Overview** tab also draws on two other feeds: its Matches card needs a Sensitive data scan, and its Probable Owner card needs Netwrix Activity Monitor events. On the Share Audit **Sensitive Data** tab, the Users by Activity on Sensitive Files card also needs Netwrix Activity Monitor events.
 
-Activity data doesn't come from a scan. It arrives from Netwrix Activity Monitor, which watches file servers, SharePoint Online, and Microsoft 365 Copilot and streams events to Access Analyzer. [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md) covers the connection.
+Activity data doesn't come from a scan. It arrives from Netwrix Activity Monitor, which watches file servers, SharePoint Online, and Microsoft 365 Copilot and streams events to Access Analyzer. [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md) covers the connection.

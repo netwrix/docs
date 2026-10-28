@@ -76,7 +76,7 @@ If you chose **Generate**, the **Password generated** dialog appears. It reads "
 
 Generated passwords are at least 20 characters long. If you close the dialog without copying, use **Reset password** on the row to issue a new one.
 
-A federated user doesn't get a password. They sign in through Active Directory or Entra ID, and Access Analyzer matches them to this row by email. See [How federated users sign in](single-sign-on.md#how-federated-users-sign-in).
+A federated user doesn't get a password. They sign in through Active Directory or Entra ID, and Access Analyzer matches them to this row by email. See [How federated users sign in](../configuration/settings/single-sign-on.md#how-federated-users-sign-in).
 
 ### Validation Messages
 

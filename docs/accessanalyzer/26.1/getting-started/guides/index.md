@@ -3,9 +3,9 @@ title: Guides
 description: One guide per platform, taking a new administrator from an empty install to the first populated dashboard or report.
 ---
 
-Each guide covers one platform from start to finish: the service account, the source, the scans, the first run, and where the results appear. Follow a guide once, right after [installing Access Analyzer](../install/index.md). After that, the reference sections for [Sources](../sources/index.md), [Scans](../scans/index.md), and [Dashboards and reports](../dashboards-reports/index.md) cover the day-to-day detail.
+Each guide covers one platform from start to finish: the service account, the source, the scans, the first run, and where the results appear. Follow a guide once, right after [installing Access Analyzer](../../install/index.md). After that, the reference sections for [Sources](../../configuration/sources/index.md), [Scans](../../admin/scans/index.md), and [Dashboards and reports](../../admin/dashboards-reports/index.md) cover the day-to-day detail.
 
-Before you start, ensure you can sign in to Access Analyzer with the [Admin role](../settings/users.md).
+Before you start, ensure you can sign in to Access Analyzer with the [Admin role](../../admin/users.md).
 
 | Guide | Source type label | Service account type | Scans you create | Where results appear |
 |-------|-------------------|----------------------|------------------|----------------------|

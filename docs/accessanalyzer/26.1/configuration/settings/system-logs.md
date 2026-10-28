@@ -35,7 +35,7 @@ The view doesn't refresh on its own; reload the page or change a filter to pick 
 
 :::tip
 
-When troubleshooting Netwrix Activity Monitor, select only `nam-listener` (the Activity Monitor listener) under **Component** to see its messages alone. See [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md).
+When troubleshooting Netwrix Activity Monitor, select only `nam-listener` (the Activity Monitor listener) under **Component** to see its messages alone. See [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md).
 
 :::
 

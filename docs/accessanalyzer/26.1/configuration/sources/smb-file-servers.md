@@ -8,7 +8,7 @@ A **File Server** source points Access Analyzer at one SMB file server: a Window
 
 Add one source per server, using the server's own hostname or IP address. Access Analyzer doesn't follow Distributed File System (DFS) namespaces; when a DFS link points at a share it can't reach, the scan records an error on that object and continues.
 
-For an end-to-end walkthrough from source to first report, see [Scan SMB file servers](../guides/smb-file-servers.md).
+For an end-to-end walkthrough from source to first report, see [Scan SMB file servers](../../getting-started/guides/smb-file-servers.md).
 
 ## Prerequisites
 
@@ -111,7 +111,7 @@ Access scans list the server's shares, then walk each share's folders down to th
 
 Access scans always skip the `IPC$` share and shares that expose no file system, such as printer shares. By default they also skip system shares: `ADMIN$`, `PRINT$`, `FAX$`, `SYSVOL`, `NETLOGON`, and drive-letter shares such as `C$`. Other shares whose names end in `$`, such as `Finance$`, are hidden shares, which Access scans include unless you turn on **Exclude hidden shares**. **Exclude shares** matches share names exactly, including case, and doesn't support wildcards.
 
-When **Include shares** lists shares, the scan doesn't list the server's shares. It scans only the shares you name and ignores **Exclude shares**, **Exclude system shares**, and **Exclude hidden shares**. The scan records an error for a named share that doesn't exist. To scan a system share, either clear **Exclude system shares** or list the share under **Include shares**. See [Scan types](../scans/scan-types.md) for every File Server scan option.
+When **Include shares** lists shares, the scan doesn't list the server's shares. It scans only the shares you name and ignores **Exclude shares**, **Exclude system shares**, and **Exclude hidden shares**. The scan records an error for a named share that doesn't exist. To scan a system share, either clear **Exclude system shares** or list the share under **Include shares**. See [Scan types](../../admin/scans/scan-types.md) for every File Server scan option.
 
 **Maximum scan depth** counts folder levels below the share root. At the default of 50, the scan records objects up to 50 levels down; at 1, it records the folders and files directly in each share but doesn't open those folders.
 
@@ -123,7 +123,7 @@ Access scans record each trustee (the account or group named in a permission ent
 
 Sensitive data scans read the contents of the files a completed Access scan inventoried and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). Run an Access scan on the source first. The scan skips empty files, and the **File server scanning** card in [Application settings](../settings/application.md#file-server-scanning-and-sharepoint-scanning) decides which other files it reads. It skips files larger than **Maximum file size (MB)** (10 MB by default). While **Use include list** is on, the default, it reads only files whose extension is on **Include list**; with the switch off, or with an empty include list, it skips files whose extension is on **Exclude list**. Sensitive data scans match **Include shares** and **Exclude shares** without regard to case. With **Differential scan** turned on, the scan reads only files that are new, or whose last-modified time changed, since the same scan last classified them.
 
-The collected data drives the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) and the file system [Data reports](../dashboards-reports/reports/data.md).
+The collected data drives the [Data security dashboard](../../admin/dashboards-reports/dashboards/data-security.md) and the file system [Data reports](../../admin/dashboards-reports/reports/data.md).
 
 ## Collected Attributes
 

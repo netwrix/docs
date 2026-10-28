@@ -12,7 +12,7 @@ Open it from **Dashboards > Data security**. Users with the Admin or Viewer role
 
 ## Data Prerequisites
 
-An Access scan on your File Server and SharePoint Online sources fills the **Scan Overview** tab. Until a Sensitive data scan has run on those sources as well, **Sensitive Data Findings** shows 0, **Sensitive Data by Source** stays empty, and the **Sensitive Files** and **Sensitive Findings** columns of **Data Source Inventory** have nothing to report. The **Activity** tab holds no scan data at all: it shows events from Netwrix Activity Monitor and stays empty until that connection is in place. [Scan types](../../scans/scan-types.md) covers the scans; [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md) covers the feed.
+An Access scan on your File Server and SharePoint Online sources fills the **Scan Overview** tab. Until a Sensitive data scan has run on those sources as well, **Sensitive Data Findings** shows 0, **Sensitive Data by Source** stays empty, and the **Sensitive Files** and **Sensitive Findings** columns of **Data Source Inventory** have nothing to report. The **Activity** tab holds no scan data at all: it shows events from Netwrix Activity Monitor and stays empty until that connection is in place. [Scan types](../../scans/scan-types.md) covers the scans; [Netwrix Activity Monitor](../../../integrations/netwrix-activity-monitor.md) covers the feed.
 
 ## Tabs and Filters
 
@@ -37,7 +37,7 @@ The table lists the cards in the order they appear, top to bottom and left to ri
 | Card | What it shows | How to read it |
 |---|---|---|
 | **Total Data Repositories** | The number of file shares plus SharePoint Online site collections your scans have covered | The breadth of coverage; if you expect 40 shares and see 12, you haven't scanned some sources yet |
-| **Total Objects Scanned** | The number of shares, folders, and files on file servers, plus site collections, sites, document libraries, folders, and files in SharePoint Online, in the latest inventory | Counts each object once, however many runs read it; see [Objects and identities](../../key-concepts.md#objects-and-identities). Rises with each newly scanned source |
+| **Total Objects Scanned** | The number of shares, folders, and files on file servers, plus site collections, sites, document libraries, folders, and files in SharePoint Online, in the latest inventory | Counts each object once, however many runs read it; see [Objects and identities](../../../getting-started/key-concepts.md#objects-and-identities). Rises with each newly scanned source |
 | **Sensitive Data Findings** | The total number of pattern matches across both source types | Zero until a Sensitive data scan has run; a single file can contribute several matches |
 | **Permissions Analyzed** | The number of permission entries collected | A rough measure of how much data the permission reports draw on |
 | **Objects by Data Source** | A bar chart comparing object counts for File Servers and SharePoint Online | Shows where the bulk of your data sits |

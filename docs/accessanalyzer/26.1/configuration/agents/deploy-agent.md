@@ -39,7 +39,7 @@ The agent host needs a Linux server of its own. You can't run `install-agent` on
 | CPU | 2 cores. |
 | Memory | 4 GB. |
 | Disk | 5 GB free. A server that runs from offline media also needs room for the media and its unpacked copy, about 7 GB. The panel says about 8 GB of free disk, and preflight warns below 8 GB. |
-| Installer | The `dspm-installer` binary for the host's architecture. See [Download the installer](../install/run-the-installer.md#download-the-installer). |
+| Installer | The `dspm-installer` binary for the host's architecture. See [Download the installer](../../install/run-the-installer.md#download-the-installer). |
 | Not the server | The host can't be the Access Analyzer server. `install-agent` refuses to run where `/etc/rancher/k3s/k3s.yaml` exists. |
 
 For example, an arm64 host can't join a server that runs from offline media on an x86 machine. Use an x86 host, or build the server on matching hardware.
@@ -56,7 +56,7 @@ Every port in this table is open on the agent host or between the agent host and
 
 On a server that runs from offline media, connector images reach the agent over the pod network. If UDP 8472 is blocked, the agent's scan pods stay in `ImagePullBackOff`.
 
-When firewalld or ufw is active on the agent host, `install-agent` adds what is missing before it joins: the pod and service networks (`10.42.0.0/16` and `10.43.0.0/16`) and the ports `10250/tcp`, `8472/udp`, and `51820/udp`. It exits with code `80` if it can't. The [firewalld steps for the server](../install/installer-reference.md#firewalld) don't apply to the agent host.
+When firewalld or ufw is active on the agent host, `install-agent` adds what is missing before it joins: the pod and service networks (`10.42.0.0/16` and `10.43.0.0/16`) and the ports `10250/tcp`, `8472/udp`, and `51820/udp`. It exits with code `80` if it can't. The [firewalld steps for the server](../../install/installer-reference.md#firewalld) don't apply to the agent host.
 
 ### Outbound Access
 
@@ -65,7 +65,7 @@ Preflight tests the hosts the agent needs on TCP 443 and fails if it can't reach
 <Tabs groupId="install-mode">
 <TabItem value="connected" label="Connected install">
 
-The host needs TCP 443 to the same two hosts that [Requirements](../install/requirements.md#outbound) lists for the media download: `api.keygen.sh` and the media download host. It needs nothing else, including `get.k3s.io`, GitHub, and Docker Hub. If you pass `--bundle-dir`, nothing downloads, and preflight tests only the connection to the server.
+The host needs TCP 443 to the same two hosts that [Requirements](../../requirements/index.md#outbound) lists for the media download: `api.keygen.sh` and the media download host. It needs nothing else, including `get.k3s.io`, GitHub, and Docker Hub. If you pass `--bundle-dir`, nothing downloads, and preflight tests only the connection to the server.
 
 </TabItem>
 <TabItem value="airgap" label="Air-gapped install">
@@ -154,7 +154,7 @@ The installer doesn't write the license key to the host in this case. It deletes
 
 An air-gapped server has no license key, so its bundles carry none and the host can't download anything. Copy the release's offline media to the host first.
 
-1. On a connected machine, download the offline media for the **agent host's** architecture and the release that the server runs. The panel shows the release in parentheses after "copy this release's offline media". The download commands are in [Download the installer](../install/run-the-installer.md#download-the-installer) on the **Air-gapped install** tab. Keep the archive name as downloaded: the installer reads the version and architecture from it.
+1. On a connected machine, download the offline media for the **agent host's** architecture and the release that the server runs. The panel shows the release in parentheses after "copy this release's offline media". The download commands are in [Download the installer](../../install/run-the-installer.md#download-the-installer) on the **Air-gapped install** tab. Keep the archive name as downloaded: the installer reads the version and architecture from it.
 2. Copy `dspm-installer` and the media archive to the agent host with `scp` or removable media.
 3. In the command from the panel, add `--bundle-dir` with the path to the archive or to the extracted directory.
 
@@ -274,7 +274,7 @@ A server installed before the installer added the hostname to the server's certi
 
 ### Media Migrations With Mixed Architectures
 
-[Converting a registry install](../install/convert-or-connect-an-install.md) to downloaded media refuses while any agent runs on a different CPU architecture from the server. Remove those agents, convert, then add them again from media for their architecture.
+[Converting a registry install](../../install/convert-or-connect-an-install.md) to downloaded media refuses while any agent runs on a different CPU architecture from the server. Remove those agents, convert, then add them again from media for their architecture.
 
 ## Edit an Agent
 
@@ -297,7 +297,7 @@ A notification reads `Agent "<name>" deleted`, and the agent leaves the list.
 
 Removal takes the agent out of Access Analyzer. The server doesn't connect to the host again, and the agent software stays installed there until you remove it yourself.
 
-You can't remove an agent while a scan is running on it; the attempt fails with **Failed to delete agent**. Wait for the execution to finish, or stop it from [Scan executions](../scans/scan-executions.md), then try again.
+You can't remove an agent while a scan is running on it; the attempt fails with **Failed to delete agent**. Wait for the execution to finish, or stop it from [Scan executions](../../admin/scans/scan-executions.md), then try again.
 
 Scans whose agent label pointed at the removed agent keep that label. Their next execution waits until another agent with matching labels is available, as [Agent labels and scan routing](agent-labels.md#when-no-agent-matches) describes. Edit those scans, or deploy a replacement agent with the same labels, before their next scheduled run.
 

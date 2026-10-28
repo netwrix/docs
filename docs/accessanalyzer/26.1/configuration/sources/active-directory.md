@@ -4,13 +4,13 @@ description: Add an Active Directory source to sync the users, groups, and membe
 sidebar_position: 2
 ---
 
-An **Active Directory** source points Access Analyzer at one Active Directory domain. Identity syncs read the domain's users, groups, and direct group memberships over the Lightweight Directory Access Protocol (LDAP), along with the organizational unit each object sits in, and store them for the [Identity reports](../dashboards-reports/reports/identity.md) and the [Active Directory dashboard](../dashboards-reports/dashboards/active-directory.md).
+An **Active Directory** source points Access Analyzer at one Active Directory domain. Identity syncs read the domain's users, groups, and direct group memberships over the Lightweight Directory Access Protocol (LDAP), along with the organizational unit each object sits in, and store them for the [Identity reports](../../admin/dashboards-reports/reports/identity.md) and the [Active Directory dashboard](../../admin/dashboards-reports/dashboards/active-directory.md).
 
 An Active Directory source also completes your file server data. Access scans of File Server sources record who has access as security identifiers (SIDs); syncing the domain those accounts belong to turns the SIDs into names in the reports. See [SMB file servers](smb-file-servers.md).
 
 One source covers one domain. Access Analyzer reads the domain partition of the domain controller you point it at; it doesn't follow trusts or query the Global Catalog. For a forest with several domains, add one source per domain.
 
-For an end-to-end walkthrough, see [Scan Active Directory](../guides/active-directory.md).
+For an end-to-end walkthrough, see [Scan Active Directory](../../getting-started/guides/active-directory.md).
 
 ## Prerequisites
 
@@ -93,7 +93,7 @@ Success shows the message **Connection successful**. Failure shows **Connection 
 | **Differential Scan** | On | Reads only the users, groups, and organizational units that changed since the previous sync. Turn it off to read the whole domain on every run. |
 | **Workers** | 16 | The number of concurrent workers, from 1 to 16. Each worker opens its own LDAP connection to the domain controller. Lower the value to reduce the load on the domain controller. |
 
-See [Scan types](../scans/scan-types.md) for how these options appear when you create a scan.
+See [Scan types](../../admin/scans/scan-types.md) for how these options appear when you create a scan.
 
 ### Differential and Full Syncs
 

@@ -8,7 +8,7 @@ A **SharePoint Online** source points Access Analyzer at the SharePoint Online s
 
 Authentication uses an app registration with a certificate rather than a client secret, so the setup has one extra step: you upload the service account's public certificate to the app registration in the Microsoft Entra admin center.
 
-For an end-to-end walkthrough, see [Scan SharePoint Online](../guides/sharepoint-online.md).
+For an end-to-end walkthrough, see [Scan SharePoint Online](../../getting-started/guides/sharepoint-online.md).
 
 ## Prerequisites
 
@@ -162,7 +162,7 @@ More workers finish sooner but use up the app's SharePoint request budget faster
 
 Service prioritization in SharePoint is a Microsoft 365 pay-as-you-go service that raises an app's SharePoint resource limits to between 2 and 10 times the regular limits, so SharePoint throttles the app after every other app in the tenant. A SharePoint Administrator or Global Administrator enables it for the app registration's **Application (client) ID**, in the Microsoft 365 admin center or with SharePoint Online PowerShell, after connecting a billing policy backed by an Azure subscription. Microsoft bills the app's requests above the regular limits. Access Analyzer doesn't detect whether an app is prioritized, so set **Workers** yourself. See [Service prioritization in SharePoint](https://learn.microsoft.com/en-us/sharepoint/sharepoint-prioritization) for the prerequisites, pricing, and setup steps.
 
-See [Scan types](../scans/scan-types.md) for how these options appear when you create a scan.
+See [Scan types](../../admin/scans/scan-types.md) for how these options appear when you create a scan.
 
 ## Sensitive Data Scans
 
@@ -177,7 +177,7 @@ Sensitive data scans read the contents of the documents an Access scan found and
 
 The scan skips empty documents, and the **SharePoint scanning** card in [Application settings](../settings/application.md#file-server-scanning-and-sharepoint-scanning) decides which other documents it reads. It skips documents larger than **Maximum file size (MB)** (10 MB by default). While **Use include list** is on, the default, it reads only documents whose extension is on **Include list**; with the switch off, or with an empty include list, it skips documents whose extension is on **Exclude list**. When the tenant throttles requests, the scan backs off and retries.
 
-The collected data drives the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) and the SharePoint [Data reports](../dashboards-reports/reports/data.md).
+The collected data drives the [Data security dashboard](../../admin/dashboards-reports/dashboards/data-security.md) and the SharePoint [Data reports](../../admin/dashboards-reports/reports/data.md).
 
 ## Collected Attributes
 

@@ -8,7 +8,7 @@ sidebar_position: 5
 
 A backup is a compressed copy of the Access Analyzer configuration database, including settings and user accounts. It doesn't include scan results, the analytics store behind dashboards and reports, or the server's own configuration. A backup lets you recover a working configuration.
 
-Backups are off until an Admin turns them on. Only [Admins](./users.md) see the **Backups** card on **Settings > System**.
+Backups are off until an Admin turns them on. Only [Admins](../../admin/users.md) see the **Backups** card on **Settings > System**.
 
 ![System settings with Backups and Single sign-on](/images/accessanalyzer/26.1/settings/system.webp)
 

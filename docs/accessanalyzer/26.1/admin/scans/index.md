@@ -69,11 +69,11 @@ After **Run**, a notification reports the outcome: **Scan started** with the num
 
 ## Before You Begin
 
-You need at least one source whose type supports the scan type you want. File Server and SharePoint Online sources support Access and Sensitive data scans; Active Directory and Entra ID sources support Identity sync. [Sources](../sources/index.md) covers adding them.
+You need at least one source whose type supports the scan type you want. File Server and SharePoint Online sources support Access and Sensitive data scans; Active Directory and Entra ID sources support Identity sync. [Sources](../../configuration/sources/index.md) covers adding them.
 
 For a File Server source, a Sensitive data scan needs a completed Access scan first, because it picks its files from the inventory that the Access scan built. Run the Access scan to completion before you run the Sensitive data scan.
 
-If you want to target sources by label, put the labels on the sources first. [Labels](../sources/labels.md) explains source labels.
+If you want to target sources by label, put the labels on the sources first. [Labels](../../configuration/sources/labels.md) explains source labels.
 
 ## Create a Scan
 
@@ -148,7 +148,7 @@ If a source type has no settings for this scan type, the section says so and the
 
 1. Under **When should this scan run?**, keep **Manual — run on demand** or select **On a schedule**.
 2. If you selected **On a schedule**, select a **Frequency** and its time options. [Schedules](schedules.md) describes each option and the time zone rule.
-3. In **Agent**, keep **System agent** or select an agent label. [Agent labels and scan routing](../agents/agent-labels.md) explains how Access Analyzer applies the choice.
+3. In **Agent**, keep **System agent** or select an agent label. [Agent labels and scan routing](../../configuration/agents/agent-labels.md) explains how Access Analyzer applies the choice.
 4. Click **Next**.
 
 ![Create scan step 4 with a daily schedule](/images/accessanalyzer/26.1/scans/create-scan-4-schedule-daily.webp)

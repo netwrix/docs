@@ -139,7 +139,7 @@ These defaults apply to every Sensitive data scan.
 | **Runs that keep their file list** | 3 | 1–20 | How many of each scan's most recent runs keep their file list and findings on the **Files** tab. Older runs keep only their totals. A scan's newest completed run keeps its list for 90 days. |
 | **Days to keep file lists** | 90 | 7–90 | Runs that finished more than this many days ago lose their file list and findings, even if they're among the most recent runs. A scan's newest completed run keeps its list until it's 90 days old. Changes to this setting apply within a day. |
 
-A Sensitive data scan on a File Server source has its own **Workers** field (1–20), which shows 3 by default. If you leave it at 3, the scan uses **Classification workers**. If you change it, the scan saves your value and uses it instead of the global default. Sensitive data scans on SharePoint Online sources have no **Workers** field and always use **Classification workers**. See [Scan types](../scans/scan-types.md).
+A Sensitive data scan on a File Server source has its own **Workers** field (1–20), which shows 3 by default. If you leave it at 3, the scan uses **Classification workers**. If you change it, the scan saves your value and uses it instead of the global default. Sensitive data scans on SharePoint Online sources have no **Workers** field and always use **Classification workers**. See [Scan types](../../admin/scans/scan-types.md).
 
 ## Audit Log
 
@@ -153,7 +153,7 @@ If Access Analyzer saves the new retention but can't reach the storage to remove
 
 ## Netwrix Activity Monitor Settings
 
-These settings tune the listener that Netwrix Activity Monitor agents connect to. They're on the **Activity Monitor** tab, which only Admins see: click **Settings** at the top of the tab to open the **Activity Monitor settings** dialog, edit the values, and click **Save**. For the integration itself, see [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md).
+These settings tune the listener that Netwrix Activity Monitor agents connect to. They're on the **Activity Monitor** tab, which only Admins see: click **Settings** at the top of the tab to open the **Activity Monitor settings** dialog, edit the values, and click **Save**. For the integration itself, see [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md).
 
 | Setting | Default | Range | What it affects |
 |---|---|---|---|
@@ -168,7 +168,7 @@ The **Enrollment token** panel is at the top of the **Activity Monitor** tab. Cl
 
 After the first token, the button reads **Generate new enrollment token**. Each new token invalidates the one before it, so give the current token to the person enrolling the agent before you generate another.
 
-If the button is disabled and the panel shows **NAM listener certificate is not configured on this server.**, the Netwrix Activity Monitor (NAM) listener has no TLS certificate yet. [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md) covers that setup and how the agent uses the token.
+If the button is disabled and the panel shows **NAM listener certificate is not configured on this server.**, the Netwrix Activity Monitor (NAM) listener has no TLS certificate yet. [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md) covers that setup and how the agent uses the token.
 
 ## When Changes Take Effect
 

@@ -14,7 +14,7 @@ This source collects directory data for reports. It's unrelated to signing in to
 
 :::
 
-For an end-to-end walkthrough, see [Scan Entra ID](../guides/entra-id.md).
+For an end-to-end walkthrough, see [Scan Entra ID](../../getting-started/guides/entra-id.md).
 
 ## Prerequisites
 
@@ -111,7 +111,7 @@ The sync reads users whose user type is **Member** or **Guest** and skips any ot
 
 The sync doesn't collect multi-factor authentication (MFA) status, account lock state, or the principal types you can assign a directory role to, so report columns for them stay empty.
 
-After each sync, a follow-up step refreshes the report tables. The synced data drives the [Identity reports](../dashboards-reports/reports/identity.md).
+After each sync, a follow-up step refreshes the report tables. The synced data drives the [Identity reports](../../admin/dashboards-reports/reports/identity.md).
 
 The following tables are a reference list of what an Identity sync reads from the tenant and stores. The **Attribute** column shows the name Access Analyzer stores the value under, and **Source** shows the Microsoft Graph property it comes from. An attribute is empty when the tenant has no value for it.
 

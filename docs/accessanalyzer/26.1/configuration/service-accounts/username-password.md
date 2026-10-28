@@ -35,7 +35,7 @@ In Active Directory, a regular domain user with the default read access to the d
 
 ![Add service account dialog with Username/password selected](/images/accessanalyzer/26.1/service-accounts/add-username-password.webp)
 
-The account appears in the list with **Account Type** set to Username/password. To use it, select it in the source's **Service account** field and click **Test connection** on the source to confirm that the credentials work. [SMB file servers](../sources/smb-file-servers.md) and [Active Directory](../sources/active-directory.md) cover the source settings. For the whole path from account to first scan, follow [Scan SMB file servers](../guides/smb-file-servers.md) or [Scan Active Directory](../guides/active-directory.md).
+The account appears in the list with **Account Type** set to Username/password. To use it, select it in the source's **Service account** field and click **Test connection** on the source to confirm that the credentials work. [SMB file servers](../sources/smb-file-servers.md) and [Active Directory](../sources/active-directory.md) cover the source settings. For the whole path from account to first scan, follow [Scan SMB file servers](../../getting-started/guides/smb-file-servers.md) or [Scan Active Directory](../../getting-started/guides/active-directory.md).
 
 ## Change the Password
 
