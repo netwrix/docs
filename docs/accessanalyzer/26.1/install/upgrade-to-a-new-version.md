@@ -7,6 +7,10 @@ sidebar_position: 4
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::warning
+To upgrade to 1.2.0 from an earlier release, you must run `dspm-installer upgrade` on the server, whatever your install type. The **Settings** page, automatic updates, and `dspmctl` can't make this upgrade. See [Upgrade to 1.2.0](#upgrade-to-120).
+:::
+
 How you upgrade Access Analyzer depends on how you installed it.
 
 | Install | How it upgrades |
@@ -22,18 +26,65 @@ The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell
 Run `dspmctl` and `dspm-installer` with `sudo`. Only root can read the default kubeconfig at `/etc/rancher/k3s/k3s.yaml`, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
 :::note
-On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` and `dspmctl` can fail with `command not found`. Run them by their full paths instead, for example `sudo /usr/local/bin/dspm-installer` or `sudo /usr/local/bin/dspmctl`.
+On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` and `dspmctl` can fail with `command not found`. Run them by their full paths instead, for example `sudo /usr/local/bin/dspm-installer` or `sudo /usr/local/bin/dspmctl`.
 :::
+
+## Download the Latest Installer
+
+Before every upgrade, whatever your install type, download the latest `dspm-installer` and run the upgrade with it. The `upgrade` command exists only in newer installers, and an installer from an older release can reject newer media.
+
+1. Read your license key into an environment variable.
+
+   ```bash
+   read -rs LICENSE_KEY && export LICENSE_KEY
+   ```
+
+2. Download the installer and replace the copy in `/usr/local/bin`.
+
+   ```bash
+   ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+   TMP_FILE=$(mktemp)
+   curl -Lf -o "$TMP_FILE" \
+     "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
+   sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+   rm -f "$TMP_FILE"
+   ```
+
+   Keep the `channel=stable` parameter. Without it, the registry can return a pre-release build.
+
+3. Confirm the version.
+
+   ```bash
+   dspm-installer --version
+   ```
+
+If the server has no network access, run these commands on a connected machine with the same architecture, then copy `/usr/local/bin/dspm-installer` to the same path on the server with `scp` or removable media.
 
 ## Check Which Version Is Running
 
-Start by checking which version is running:
+Check which version is running:
 
 ```bash
 sudo dspmctl version
 ```
 
 Compare the output with the latest release Netwrix has announced. If they match, Access Analyzer is already up to date.
+
+## Upgrade to 1.2.0
+
+An install on a release earlier than 1.2.0 can upgrade to 1.2.0, or to any later release, only with `dspm-installer upgrade` on the server. This applies to every install type. The **Settings** page, automatic updates, and `dspmctl` can't make this upgrade.
+
+[Download the latest installer](#download-the-latest-installer) first, then run the command for your install type:
+
+| Install | Run |
+|---|---|
+| **Connected** | `sudo dspm-installer upgrade --download` |
+| **Air-gapped** | `sudo dspm-installer upgrade --bundle-dir <path-to-archive>`, after you [download the new release](#download-the-new-release) |
+| **Registry** | `sudo dspm-installer upgrade --download --migrate`, which also [converts the install](convert-or-connect-an-install.md#convert-a-registry-install) to downloaded media |
+
+These commands upgrade to the newest stable release. To upgrade to a specific release, add `--target-revision <version>` to the connected or registry command.
+
+After the install runs 1.2.0 or later, every upgrade method on this page works.
 
 ## Choose an Upgrade Command
 
@@ -72,6 +123,8 @@ All three ways to upgrade a connected install run the same upgrade. Only one upg
 
 You need the **Administrator** role.
 
+An install on a release earlier than 1.2.0 can't upgrade to 1.2.0 from this page. [Upgrade it with the installer](#upgrade-to-120) instead.
+
 1. Go to **Settings** > **System**.
 2. Select the version and click **Update**. The confirmation says the app downloads the release media and is briefly unavailable.
 3. Watch the progress through these phases: **Checking prerequisites**, **Downloading media**, **Deploying**, and **Waiting for services**.
@@ -92,6 +145,8 @@ If another upgrade is already running, the page says so.
 ### Upgrade automatically
 
 The version poller checks for new releases every 12 hours. When a newer release matches the install's version constraint and Netwrix has published its media, the poller starts the same upgrade the **Settings** page starts.
+
+Automatic updates can't upgrade an install on a release earlier than 1.2.0 to 1.2.0. [Upgrade it with the installer](#upgrade-to-120) instead.
 
 If an upgrade fails partway through deploying, the poller doesn't retry it. Fix the cause, then run `sudo dspm-installer upgrade --download` on the host.
 
@@ -149,36 +204,25 @@ Before it changes anything, the command checks that the server runs from offline
 
 ### Download the new release
 
-Download the new installer and the new media the same way you did for the install, with the new release's version number.
+[Download the latest installer](#download-the-latest-installer) first. Then download the new media the same way you did for the install, with the new release's version number.
 
-:::warning
-Download the latest `dspm-installer` binary along with the media, and run the upgrade with that binary. The `upgrade` command exists only in newer installers, and an installer from an older release can reject newer media. Confirm the version with `dspm-installer --version` after the download.
-:::
-
-1. Read your license key into an environment variable.
+1. Read your license key into an environment variable, if it isn't already set.
 
    ```bash
    read -rs LICENSE_KEY && export LICENSE_KEY
    ```
 
-2. Download the installer and the offline media archive for the new release.
+2. Download the offline media archive for the new release.
 
    ```bash
    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
    VERSION='<release-version>'  # the release you're upgrading to, for example 1.6.0
-   TMP_FILE=$(mktemp)
-   curl -Lf -o "$TMP_FILE" \
-     "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
-   sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
-   rm -f "$TMP_FILE"
-   dspm-installer --version
-
    sudo mkdir -p /etc/dspm/media
    sudo curl -Lf -o "/etc/dspm/media/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz" \
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable"
    ```
 
-   Don't extract the archive, and keep its name as downloaded. If the server has no network access, run these commands on a connected machine with the same architecture, then copy `/usr/local/bin/dspm-installer` and the archive to the server with `scp` or removable media. Keep the `channel=stable` parameter on every download. Without it, the registry can return a pre-release build.
+   Don't extract the archive, and keep its name as downloaded. If the server has no network access, run these commands on a connected machine with the same architecture, then copy the archive to the server with `scp` or removable media, along with the installer. Keep the `channel=stable` parameter. Without it, the registry can return a pre-release build.
 
 3. Confirm the archive downloaded completely.
 
