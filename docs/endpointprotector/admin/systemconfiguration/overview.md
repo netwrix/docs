@@ -5,10 +5,9 @@ sidebar_position: 140
 ---
 # System Configuration
 
-This section includes essential elements such as Endpoint Protector Clients, Licensing, and
-advanced configurations. These settings maintain the system's performance, stability, and
-compliance, and they directly influence the operational efficiency and reliability of Endpoint
-Protector.
+This section includes settings such as Endpoint Protector Clients, Licensing, and
+advanced configurations. These settings affect the performance, stability, compliance, and
+reliability of Endpoint Protector.
 
 ## Server Update
 
@@ -147,7 +146,7 @@ The server address that a generated installer uses depends on the operating syst
 - **Windows** – The generated MSI file name includes the server FQDN or IP address, in the format `EPPClientSetup.<version>_x86_64_[a=<server-address>].msi`, for example `EPPClientSetup.2608.1.1.3_x86_64_[a=domain.netwrix.com].msi`. The installer configures the server field with this address, even if you pass a different value in the installation parameters. To use a different address, rename the MSI file or enter the FQDN or IP address in the `[a=…]` part of the file name.
 - **macOS** – The generated package updates the script it contains with the server address.
 
-For more client install options, refer to the dedicated article on [Agent Installation Options](/docs/endpointprotector/admin/agent.md)
+For more client install options, see [Agent Installation Options](/docs/endpointprotector/admin/agent.md)
 
 ## Client Software Upgrade
 
@@ -181,8 +180,7 @@ Starting with release 2509.0.1.0, endpoints display Endpoint Protector Client ve
 
 ### Create New Upgrade Job
 
-To upgrade your Endpoint Protector Client, create a new upgrade job by following these
-steps:
+To upgrade your Endpoint Protector Client, create a new upgrade job:
 
 **Step 1 –** Select the OS version from the dropdown list and then click **Next**.
 
