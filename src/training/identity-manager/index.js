@@ -12,5 +12,7 @@ export { default as NIMRoleModel } from './3725.md';
 export { default as NIMAccessCert } from './3726.md';
 export { default as NIMRisks } from './3727.md';
 export { default as NIMRoleMining } from './3728.md';
+export { default as NIMServerInstall } from './3729.md';
+export { default as NIMAgentInstall } from './3730.md';
 export { default as NIMDemo } from './5720.md';
 export { default as NIMAdditional } from './additional.md';

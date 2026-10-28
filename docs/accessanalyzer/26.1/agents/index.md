@@ -5,7 +5,7 @@ description: Agents are the Linux machines that run scans; the System agent is b
 
 An agent is a Linux machine that runs scans. Every installation has one from the moment setup finishes: the System agent, which runs on the Access Analyzer server itself. Unless you route a scan, or one of its sources, to other agents with a label, every scan runs there.
 
-You can deploy more agents on other Linux hosts. You generate an install command in Access Analyzer and run it on the host. The host then installs the agent software and registers itself in the list. From then on you steer scans to it with labels. [Deploy an agent](deploy-agent.md) covers the host requirements and the procedure; [Agent labels and scan routing](agent-labels.md) explains how a scan chooses where to run.
+You can deploy more agents on other Linux hosts. You generate an install command in Access Analyzer and run it on the host. The host then installs the agent software and registers itself in the list. From then on, you route scans to it with labels. [Deploy an agent](deploy-agent.md) covers the host requirements and the procedure; [Agent labels and scan routing](agent-labels.md) explains how a scan chooses where to run.
 
 ## The System Agent
 
@@ -27,6 +27,12 @@ The System agent is enough for many installations. Add an agent when:
 - You want scan traffic to stay local. An agent in the same site or region as the data keeps large reads off slow or expensive links.
 - Scans compete with the server. A dedicated agent takes only scan work, so long-running scans no longer slow the server.
 
+## Agents and Upgrades
+
+Deployed agents don't have an upgrade of their own, and you don't run anything on the agent hosts. When you [upgrade Access Analyzer](../install/upgrade-to-a-new-version.md), the server starts every later scan with the new release's connectors, whichever agent the scan runs on. The server picks the connector version each time it starts a scan, and the agent downloads that version the first time a scan needs it.
+
+An upgrade doesn't change the k3s version on the server, so the agents, which run the server's k3s version, still match it afterwards.
+
 ## Who Can Manage Agents
 
 Deploying, editing, and deleting agents requires the Admin role. Viewers can open the Agents page and see every agent but can't change anything. Assign roles on the [Users and roles](../settings/users.md) page.
@@ -44,9 +50,9 @@ Go to **Configuration > Agents**.
 | **Last Updated** | When the agent's record last changed |
 | **Actions** | **Edit** for every agent; **Delete** for deployed agents only |
 
-The list sorts by **Last Updated**, newest first, and you can sort by **Name** and **Health Status** as well. It shows 25 agents per page (you can pick 10, 25, or 50) and refreshes every 60 seconds on its own, pausing while the **Deploy agent** or **Edit agent** panel is open.
+The list sorts by **Last Updated**, newest first, and you can sort by **Name** and **Health Status** as well. It shows 25 agents per page (you can pick 10, 25, or 50) and refreshes every 60 seconds on its own, pausing while the **Add agent** or **Edit agent** panel is open.
 
-The **Search agents…** field matches an agent's name, a label key, a label value, or a `key:value` pair, so `region:us-east` finds every agent carrying that label. **Clear filters** resets the search. **Deploy agent** starts the deployment flow.
+The **Search agents…** field matches an agent's name, a label key, a label value, or a `key:value` pair, so `region:us-east` finds every agent carrying that label. **Clear filters** resets the search. **Add agent** opens the panel that generates an install command.
 
 ### Health Status
 
