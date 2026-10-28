@@ -1,7 +1,7 @@
 ---
 title: Unlock a User Without Admin Access
 description: Unlock a locked-out account directly through Zitadel when no Admin or User admin can sign in to clear it from the Users tab.
-sidebar_position: 3.5
+sidebar_position: 35
 ---
 
 If an Admin or User admin can still sign in, clear the lock from **Settings > Users** instead; see [Unlock a user](users.md#unlock-a-user). Use the steps on this page only when every Admin and User admin account has a lockout, or no one has those credentials, so nobody can reach the **Users** tab at all.
