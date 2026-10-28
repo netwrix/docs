@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 The installer is a single Linux binary, `dspm-installer`. Run it as root on the server, and it checks the hardware, asks for anything you haven't supplied, sets up every service, and prints the address and credentials for the first sign-in.
 
-Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, the email address and name of the first administrator, and about 16 GB of free disk for the install media.
+Before you start, work through [Requirements](../requirements/index.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, the email address and name of the first administrator, and about 16 GB of free disk for the install media.
 
 ## Download the Installer
 
@@ -52,12 +52,12 @@ On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` u
    dspm-installer --version
    ```
 
-   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach `raw.pkg.keygen.sh`, as [Outbound](requirements.md#outbound) describes.
+   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach `raw.pkg.keygen.sh`, as [Outbound](../requirements/index.md#outbound) describes.
 
 </TabItem>
 <TabItem value="airgap" label="Air-gapped install">
 
-2. Confirm the server has at least 25 GB free on the volume that holds the media directory (see [Requirements](requirements.md#server)), then download the installer and the offline install media for the server's architecture.
+2. Confirm the server has at least 25 GB free on the volume that holds the media directory (see [Requirements](../requirements/index.md#server)), then download the installer and the offline install media for the server's architecture.
 
    ```bash
    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
@@ -206,7 +206,7 @@ In air-gapped mode, the installer reads the software it needs from `--bundle-dir
 sudo dspm-installer --airgap --bundle-dir /etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz --size <size>
 ```
 
-`--bundle-dir` takes the downloaded archive directly. You don't need to extract it first. The installer reads the version and architecture from the file name, unpacks the archive into the [media directory](requirements.md#install-media), and removes the unpacked copy when the install finishes. It leaves your archive where it is. Keep the archive outside the media directory, because the installer cleans that directory.
+`--bundle-dir` takes the downloaded archive directly. You don't need to extract it first. The installer reads the version and architecture from the file name, unpacks the archive into the [media directory](../requirements/index.md#install-media), and removes the unpacked copy when the install finishes. It leaves your archive where it is. Keep the archive outside the media directory, because the installer cleans that directory.
 
 An extracted directory still works as `--bundle-dir`, and the installer never deletes it.
 
@@ -215,7 +215,7 @@ An extracted directory still works as `--bundle-dir`, and the installer never de
 </TabItem>
 </Tabs>
 
-Replace `<size>` with `small`, `medium`, `large`, or `enterprise`. See [Size](requirements.md#size) to pick the one that matches your CPU, RAM, and expected data volume; the installer defaults to `medium` if you omit the flag.
+Replace `<size>` with `small`, `medium`, `large`, or `enterprise`. See [Size](../requirements/index.md#size) to pick the one that matches your CPU, RAM, and expected data volume; the installer defaults to `medium` if you omit the flag.
 
 The installer runs its preflight checks first, then collects any value it doesn't have yet. You can let it ask, or supply everything in advance.
 

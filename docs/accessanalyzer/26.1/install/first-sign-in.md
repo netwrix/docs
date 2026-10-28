@@ -52,7 +52,7 @@ Click **Set up identity provider** to connect your directory right away. The set
    ![Identity provider selection step with Active Directory and Entra ID](/images/accessanalyzer/26.1/integrations/identity-provider-choose.webp)
 
 2. Click **Continue**.
-3. On **Connect**, enter the connection details for the provider you chose. Active Directory needs a domain controller, a service account (Netwrix recommends a read-only account), and the certificate authority (CA) that issued the domain controller's certificate for Lightweight Directory Access Protocol over TLS (LDAPS). Entra ID needs an app registration and a one-time administrator consent. [Single sign-on](../settings/single-sign-on.md) describes every field and what to prepare on the directory side.
+3. On **Connect**, enter the connection details for the provider you chose. Active Directory needs a domain controller, a service account (Netwrix recommends a read-only account), and the certificate authority (CA) that issued the domain controller's certificate for Lightweight Directory Access Protocol over TLS (LDAPS). Entra ID needs an app registration and a one-time administrator consent. [Single sign-on](../configuration/settings/single-sign-on.md) describes every field and what to prepare on the directory side.
 4. Click **Test connection and continue** for Active Directory, or **Sign in with Microsoft and continue** for Entra ID.
 5. On **Admins**, add the people who should hold the Admin role, or leave the list empty.
 6. Click **Finish setup**. If you added nobody, the button reads **Continue without admins** instead.
@@ -78,4 +78,4 @@ The command prints the password.
 
 ## The Home Page
 
-After you sign in, the **Home** page greets you by name and offers to connect your first source. The [Guides](../guides/index.md) walk through connecting a source and scanning it.
+After you sign in, the **Home** page greets you by name and offers to connect your first source. The [Guides](../getting-started/guides/index.md) walk through connecting a source and scanning it.
