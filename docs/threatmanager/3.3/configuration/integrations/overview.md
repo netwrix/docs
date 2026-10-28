@@ -16,16 +16,16 @@ select **Integrations** to open the Integrations interface.
 
 It contains the following integration pages:
 
-- [Active Directory Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/activedirectorysync.md)
-- [Entra ID Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/entraidsync.md)
-- [App Tokens Page](/docs/threatmanager/3.3/administration/configuration/integrations/apptoken.md)
-- [Authentication Provider Page](/docs/threatmanager/3.3/administration/configuration/integrations/page/page.md)
-- [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md)
-- [Email Page](/docs/threatmanager/3.3/administration/configuration/integrations/email.md)
-- [Folder Settings Page](/docs/threatmanager/3.3/administration/configuration/integrations/foldersettings.md)
-- [SIEM Page](/docs/threatmanager/3.3/administration/configuration/integrations/siem.md)
-- [Netwrix Integrations Page](/docs/threatmanager/3.3/administration/configuration/integrations/netwrixintegrations.md)
-- [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md)
+- [Active Directory Sync Page](/docs/threatmanager/3.3/configuration/integrations/activedirectorysync.md)
+- [Entra ID Sync Page](/docs/threatmanager/3.3/configuration/integrations/entraidsync.md)
+- [App Tokens Page](/docs/threatmanager/3.3/configuration/integrations/apptoken.md)
+- [Authentication Provider Page](/docs/threatmanager/3.3/configuration/integrations/page/page.md)
+- [Credential Profile Page](/docs/threatmanager/3.3/configuration/integrations/credentialprofile.md)
+- [Email Page](/docs/threatmanager/3.3/configuration/integrations/email.md)
+- [Folder Settings Page](/docs/threatmanager/3.3/configuration/integrations/foldersettings.md)
+- [SIEM Page](/docs/threatmanager/3.3/integrations/siem.md)
+- [Netwrix Integrations Page](/docs/threatmanager/3.3/integrations/netwrixintegrations.md)
+- [Tag Management Page](/docs/threatmanager/3.3/configuration/integrations/tagmanagement.md)
 
 The Overview page displays a high-level view of all configured integrations. You can return to the
 Overview page by selecting the **Integrations** header in the navigation pane.

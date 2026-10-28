@@ -46,7 +46,7 @@ The table below describes each setting.
 | BypassProxyOnLocal | `Proxy:BypassProxyOnLocal` | bool | Whether to skip the proxy for local and intranet addresses. |
 | UseDefaultCredentials | `Proxy:UseDefaultCredentials` | bool | Whether to authenticate to the proxy using the Windows identity of the service account. Suitable for NTLM/Kerberos-authenticated proxies. |
 | PreAuthenticate | `Proxy:PreAuthenticate` | bool | Whether to send proxy credentials on the first request rather than waiting for a 407 challenge. Can improve performance on authenticated proxies. |
-| CredentialProfileId | `Proxy:CredentialProfileId` | long | ID of a credential profile to use for proxy authentication. Used instead of `UseDefaultCredentials` when the proxy requires an explicit username and password. See the [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md) topic for information on creating credential profiles. |
+| CredentialProfileId | `Proxy:CredentialProfileId` | long | ID of a credential profile to use for proxy authentication. Used instead of `UseDefaultCredentials` when the proxy requires an explicit username and password. See the [Credential Profile Page](/docs/threatmanager/3.3/configuration/integrations/credentialprofile.md) topic for information on creating credential profiles. |
 
 :::note
 If `Enabled` is set to `true` and `Address` is left `null`, the service loads the OS-level proxy
@@ -71,7 +71,7 @@ settings and ignores all other settings in this section.
   authenticates to the proxy using the Windows identity of the account running the Azure Service.
 - **Explicit credentials** — Set `CredentialProfileId` to the ID of a credential profile stored in
   Threat Manager. See the
-  [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md)
+  [Credential Profile Page](/docs/threatmanager/3.3/configuration/integrations/credentialprofile.md)
   topic for information on creating credential profiles.
 - **No authentication** — Leave both `UseDefaultCredentials` and `CredentialProfileId` as `null`
   for unauthenticated proxies.

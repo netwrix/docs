@@ -62,7 +62,7 @@ Investigation exports will now be saved to the designated local folder on the ap
 
 :::note
 Before adding a shared folder, you must first configure a Credential Profile with Write
-access to the shared folder. See the [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md) topic for
+access to the shared folder. See the [Credential Profile Page](/docs/threatmanager/3.3/configuration/integrations/credentialprofile.md) topic for
 additional information on creating a profile.
 :::
 

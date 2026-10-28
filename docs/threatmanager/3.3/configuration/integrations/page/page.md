@@ -50,6 +50,6 @@ node in the navigation pane or from the table to configure, view, or modify its 
 The following authentication provider types are supported; you can configure an authentication
 provider for any of these:
 
-- RADIUS – See the [RADIUS Authentication Provider](/docs/threatmanager/3.3/administration/configuration/integrations/page/radius.md) topic for additional information.
-- OpenID – See the [OpenID Authentication Provider](/docs/threatmanager/3.3/administration/configuration/integrations/page/openid/openid.md) topic for additional information.
-- SAML – See the [SAML Authentication Provider](/docs/threatmanager/3.3/administration/configuration/integrations/page/saml.md) topic for additional information.
+- RADIUS – See the [RADIUS Authentication Provider](/docs/threatmanager/3.3/configuration/integrations/page/radius.md) topic for additional information.
+- OpenID – See the [OpenID Authentication Provider](/docs/threatmanager/3.3/configuration/integrations/page/openid/openid.md) topic for additional information.
+- SAML – See the [SAML Authentication Provider](/docs/threatmanager/3.3/configuration/integrations/page/saml.md) topic for additional information.

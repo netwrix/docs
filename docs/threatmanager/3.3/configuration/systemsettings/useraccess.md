@@ -138,14 +138,14 @@ The following authentication types can be assigned to users and groups:
   Remote Authentication Dial-In User Service (RADIUS), OpenID, and SAML integrations. Authentication methods vary based on the
   third-party authentication provider. Configure this in the Authentication Provider page of the Integrations interface before assigning it to users.
 
-See the [Authentication Provider Page](/docs/threatmanager/3.3/administration/configuration/integrations/page/page.md) topic for
+See the [Authentication Provider Page](/docs/threatmanager/3.3/configuration/integrations/page/page.md) topic for
 additional information.
 
 ### Add Console Access
 
 :::note
 Verify that an Active Directory Sync has completed to ensure that user and group
-information is updated. See the [Active Directory Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/activedirectorysync.md)
+information is updated. See the [Active Directory Sync Page](/docs/threatmanager/3.3/configuration/integrations/activedirectorysync.md)
 for additional information.
 :::
 

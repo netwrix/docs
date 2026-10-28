@@ -69,7 +69,7 @@ The Configuration tab contains the following configuration options:
 - Token Domain – The domain to be used for the deployed Honeytoken. This can be selected from
   existing, known domains or a custom domain can be specified.
 - Select Credential Profile – Lists Credential Profiles added on the
-  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). Select a Credential Profile from the
+  [Integrations Interface](/docs/threatmanager/3.3/configuration/integrations/overview.md). Select a Credential Profile from the
   dropdown list.
 - Select Preferrred Action Service – Select the Action Service to be used for Honeytoken deployment.
 - Token Time to Reset Password – All Honeytokens for a policy will share common password. This value

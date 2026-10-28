@@ -15,11 +15,11 @@ disabled threats.
 
 The Threats list divides the threats into the following sections:
 
-- [Active Directory Threats](/docs/threatmanager/3.3/threats/activedirectory.md)
-- [Entra ID Threats](/docs/threatmanager/3.3/threats/entraid.md)
-- [File System Threats](/docs/threatmanager/3.3/threats/filesystem.md)
-- [General Threats](/docs/threatmanager/3.3/threats/general.md)
-- [Custom Threats](/docs/threatmanager/3.3/threats/custom.md)
+- [Active Directory Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/activedirectory.md)
+- [Entra ID Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/entraid.md)
+- [File System Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/filesystem.md)
+- [General Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/general.md)
+- [Custom Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/custom.md)
 
 Select a threat from the list to display the threat's configuration options to the right of the
 Threats box.

@@ -41,7 +41,7 @@ The Custom Threat page opens.
 ![Create Threat Dialog Box](/images/threatmanager/3.0/threats/createthreatdialogbox.webp)
 
 **Step 6 –** Severity – The relative severity level, or risk level, of the threat. See the
-[Fine Tune a Threat](/docs/threatmanager/3.3/administration/configuration/threatdetection/threatconfiguration.md) topic for additional
+[Fine Tune a Threat](/docs/threatmanager/3.3/configuration/threatdetection/threatconfiguration.md) topic for additional
 information.
 
 **Step 7 –** Description – Description of the threat.
