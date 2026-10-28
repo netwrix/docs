@@ -7,7 +7,7 @@ sidebar_position: 40
 # Okta Page
 
 On the Okta page, you can access all the Okta tenants that you have configured through the
-[Okta Page](/docs/identityrecovery/3.1/admin/configuration/okta.md).
+[Okta Page](/docs/identityrecovery/3.1/configuration/okta.md).
 
 Click **Okta** in the left pane to open the Okta page.
 

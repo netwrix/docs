@@ -18,7 +18,7 @@ The following prerequisites must be met before you can rollback or recover an ob
   [Register/Unregister the RSAT Extension](/docs/identityrecovery/3.1/install/configurationutility.md#registerunregister-the-rsat-extension)
   topic for additional information.
 - At least one backup of the domain must be available in the Identity Recovery Console.
-  See the [Domains Page](/docs/identityrecovery/3.1/admin/configuration/domain.md) topic for additional information.
+  See the [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) topic for additional information.
 
 ## Rollback an Object Using ADUC
 

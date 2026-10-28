@@ -24,6 +24,6 @@ the Identity Recovery Configuration Utility. See the
 
 The Recovery service account runs the Recovery Console service and performs the domain
 backups. You can update it on the Domains page in the Recovery Console. See the
-[Edit Domain Configuration](/docs/identityrecovery/3.1/admin/configuration/domain.md#edit-domain-configuration) topic for additional information.
+[Edit Domain Configuration](/docs/identityrecovery/3.1/configuration/domain.md#edit-domain-configuration) topic for additional information.
 
 

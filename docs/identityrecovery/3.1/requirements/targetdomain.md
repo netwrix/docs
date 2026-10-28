@@ -7,7 +7,7 @@ sidebar_position: 40
 # Target Domains
 
 Target domains include the Active Directory domains that can be added through the
-[Domains Page](/docs/identityrecovery/3.1/admin/configuration/domain.md). You can rollback and recover objects in these
+[Domains Page](/docs/identityrecovery/3.1/configuration/domain.md). You can rollback and recover objects in these
 domains through the [Active Directory Page](/docs/identityrecovery/3.1/admin/activedirectory/overview.md).
 
 Identity Recovery can backup domains on servers with the Active Directory role on the
