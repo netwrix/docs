@@ -223,7 +223,7 @@ To add a service account rule:
 **Step 3 –** For Operator, select **Equals**, **Not Equal To**, **Contains**, **Doesn't
 Contain**, **Starts With**, or **Ends With**.
 
-**Step 4 –** For Value, enter or select the value to match.
+**Step 4 –** Enter or select the value to match in the Value field.
 
 - If Attribute is set to Organizational Unit, start typing to see autocomplete suggestions of OUs
   that exist in the domain. Select **Add OU** to enter an OU that isn't in the list.
