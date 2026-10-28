@@ -83,8 +83,7 @@ Identity Recovery can backup domain controllers to prevent data loss. The
 controllers in the sequence you want. Some examples of when a server may need to be backed up or
 restored are:
 
-- Create a duplicate of a domain controller, for example, create a duplicate in a lab
-  environment for testing purposes
+- Create a duplicate of a domain controller, for example in a lab environment for testing
 - Restore a domain controller to a specific state-in-time image
 - Restore lost or deleted data
 

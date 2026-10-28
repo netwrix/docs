@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Target Domains
 
-Target domains include the Active Directory domains that can be added through the
+Target domains are the Active Directory domains you add on the
 [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md). You can rollback and recover objects in these
 domains through the [Active Directory Page](/docs/identityrecovery/3.1/admin/activedirectory/overview.md).
 
@@ -22,25 +22,23 @@ following operating system versions:
 
 ## Service Account Permissions
 
-The service account used to run backups, and perform rollback and recovery tasks for a domain is
-specified on the Domain page of the Add Domain Configuration wizard. This account must be:
+You specify the service account that runs backups and performs rollback and recovery tasks for a
+domain on the Domain page of the Add Domain Configuration wizard. This account must be:
 
 - A member of the Domain Administrators group in the target domain
 
-A Least Privilege Access Model lets you provision an Active Directory security group with the
-permissions necessary to perform backups, rollbacks, and recovery.
+If your security policies don't allow Domain Admin privileges, contact your Netwrix representative to
+develop a Least Privilege Access Model for your environment. See the
+[Least Privilege Access Model](#least-privilege-access-model) section for the baseline permissions.
 
 ### Least Privilege Access Model
 
-Netwrix strongly recommends providing the Identity Recovery service account with Domain
-Admin privileges; however, there are situations where security policies prevent an organization from
-providing Domain Admin privileges. In those situations, contact your Netwrix service
-representative to work with you to develop a tailored Least Privilege Access model based on your
-environment.
+Netwrix strongly recommends giving the Identity Recovery service account Domain Admin privileges.
+If your security policies don't allow this, contact your Netwrix service representative to develop a
+Least Privilege Access model tailored to your environment.
 
-The privileges required for normal backup and recovery operations of an Active Directory
-environment, which are normally available to the Domain Administrators security group, include the
-following permissions:
+Normal backup and recovery operations in Active Directory require the following permissions, which
+the Domain Administrators security group usually has:
 
 - Membership in the Schema Admins group is required for backups of objects within the
   domain's Schema Container

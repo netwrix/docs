@@ -6,9 +6,8 @@ sidebar_position: 10
 
 # Getting Started
 
-This topic provides information on installing and configuring Netwrix Identity Recovery,
-which enables organizations to quickly roll back and recover unintended directory
-changes.
+This topic explains how to install and configure Netwrix Identity Recovery. Identity Recovery
+rolls back and recovers unintended directory changes.
 
 ## Installation Requirements
 
@@ -44,8 +43,8 @@ Several Identity Recovery components require configuration after the first launc
 - Configure Additional Users – The user or group configured during installation of the product has
   administrator access to the Recovery Console. You can add other users and groups and
   assign them roles. See the [Users and Roles Page](/docs/identityrecovery/3.1/configuration/roles.md) topic for additional information.
-- _(Optional)_ Configure Notifications – Configure email notifications before you
-  enable them. See the [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) topic for additional information on configuring email notifications.
+- _(Optional)_ Configure Notifications – Configure the email settings on the Notifications page
+  before you turn on notifications for a domain or tenant backup job. See the [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) topic for additional information on configuring email notifications.
 
 ## Rollback and Restore Operations
 

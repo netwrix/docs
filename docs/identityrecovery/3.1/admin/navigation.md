@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Navigate the Console
 
-In the Recovery Console, navigation options are displayed in the:
+The Recovery Console displays navigation options in the:
 
 - Application header
 - Left navigation pane
@@ -44,16 +44,16 @@ The navigation pane contains the following links:
     Only users with Administrator rights have access to the Configuration interface.
     :::
 
-    - [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains page provides a list of the domains backed up by Identity Recovery. It displays the backup schedule settings for each
+    - [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains tab provides a list of the domains backed up by Identity Recovery. It displays the backup schedule settings for each
       added domain. You can also add and configure new domains.
-    - [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) – Add a forest so that Identity Recovery can back it up and recover it.
-    - [Azure Storage Page](/docs/identityrecovery/3.1/configuration/azurestorage.md) – The Azure Storage page lists the storage containers in Azure Storage.
-    - [Connect Entra ID](/docs/identityrecovery/3.1/configuration/entraid.md) – Add Entra tenants for Identity Recovery to back up, view their backup schedule settings, and configure new tenants.
-    - [Connect Okta](/docs/identityrecovery/3.1/configuration/okta.md) – Add Okta tenants for Identity Recovery to back up, view their backup schedule settings, and configure new tenants.
-    - [Users and Roles Page](/docs/identityrecovery/3.1/configuration/roles.md) – The Users and Roles page displays the accounts with access to Identity Recovery.
-    - [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) – The Notifications page lets you configure notifications, which are required to send an email when a collection (backup) job completes.
-    - [Netwrix Integrations Page](/docs/identityrecovery/3.1/configuration/integration.md) – The Netwrix Integrations page lets you configure access to the data in other Netwrix products. Identity Recovery supports only Netwrix Threat Prevention.
-    - [Data Retention Policy Page](/docs/identityrecovery/3.1/configuration/dataretention.md) – The Data Retention Policy page provides settings for deleting backup data for domains and domain controllers older than X days, and for deleting backup data for tombstone objects that have been purged.
-    - [Licensing Page](/docs/identityrecovery/3.1/configuration/licensing.md) – The Licensing page provides an overview of the organization's license status and the ability to import a license file.
+    - [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) – The Forest tab lets you add a forest so that Identity Recovery can back it up and recover it.
+    - [Azure Storage Page](/docs/identityrecovery/3.1/configuration/azurestorage.md) – The Azure Storage tab lists the storage containers in Azure Storage.
+    - [Connect Entra ID](/docs/identityrecovery/3.1/configuration/entraid.md) – The Entra ID tab lets you add Entra tenants for Identity Recovery to back up and view their backup schedules.
+    - [Connect Okta](/docs/identityrecovery/3.1/configuration/okta.md) – The Okta tab lets you add Okta tenants for Identity Recovery to back up and view their backup schedules.
+    - [Users and Roles Page](/docs/identityrecovery/3.1/configuration/roles.md) – The Users and Roles tab displays the accounts with access to Identity Recovery.
+    - [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) – The Notifications tab lets you configure notifications, which are required to send an email when a collection (backup) job completes.
+    - [Netwrix Integrations Page](/docs/identityrecovery/3.1/configuration/integration.md) – The Netwrix Integrations tab lets you configure access to the data in other Netwrix products. Identity Recovery supports only Netwrix Threat Prevention.
+    - [Data Retention Policy Page](/docs/identityrecovery/3.1/configuration/dataretention.md) – The Data Retention Policy tab provides settings for deleting backup data for domains and domain controllers older than X days, and for deleting backup data for tombstone objects that have been purged.
+    - [Licensing Page](/docs/identityrecovery/3.1/configuration/licensing.md) – The Licensing tab provides an overview of the organization's license status and the ability to import a license file.
 
 - [Utilities Page](/docs/identityrecovery/3.1/admin/utilities.md) – The Utilities page lets you download the Netwrix RSAT Extension, the Recovery Server Backup Installer, and the Netwrix Forest Recovery standalone application.
