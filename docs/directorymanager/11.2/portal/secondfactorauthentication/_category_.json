@@ -1,0 +1,10 @@
+{
+  "label": "Second Factor Authentication",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "secondfactorauthentication"
+  }
+}
