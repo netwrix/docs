@@ -61,12 +61,12 @@ Multi-valued String Editor listing known GUIDs. In the list, the RSAT Extension 
 `{50fb3a3c-5700-4232-ae3b-c6d49a6a97ab}`
 
 :::note
-The adminContextMenu attribute of every object in the active locale (i.e. CN=409 for English (United States)), should have the GUID above.
+The adminContextMenu attribute of every object in the active locale (i.e. CN=409 for English (United States)), should have the RSAT Extension GUID.
 :::
 
 **Step 7 –** Verify the GUID.
 
-If the GUID matches the number above, the RSAT Extension has been successfully registered.
+If the GUID matches the RSAT Extension GUID in Step 6, the RSAT Extension has been successfully registered.
 
 ## Recovery Application Server
 

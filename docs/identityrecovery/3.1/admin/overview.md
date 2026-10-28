@@ -14,8 +14,7 @@ Identity Recovery enables administrators to manage Active Directory in the follo
     - Rollback Objects – Quickly revert entire AD objects or just a single attribute to a known good
       state from a backup
     - Recover Objects – Restore tombstone objects to active state using the backup data. Recover
-      object attributes, group membership, DNS entries, Group Policy objects (GPOs) and more, thus
-      overcoming key limitations of the Recycle Bin.
+      object attributes, group membership, DNS entries, Group Policy objects (GPOs), and more.
 
 - Perform Forest Backup and Recovery
 

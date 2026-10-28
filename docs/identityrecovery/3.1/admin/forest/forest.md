@@ -38,7 +38,7 @@ The following information is displayed for a domain controller:
   Standard
 - Agent Version – Version of the operating system
 - Backup – Use the toggle button to enable or disable the backup for the domain controller. By
-  default, it is disabled. When you enable it, the Server backup Configuration wizard is displayed.
+  default, it is disabled. When you enable it, the Server backup Configuration wizard opens.
   See the
   [Add Backup Configurations for a Domain Controller](#add-backup-configurations-for-a-domain-controller)
   topic to configure backup settings for the domain controller.
@@ -119,8 +119,8 @@ backup. Doing so will prevent the system from restoring the domain using the pla
 
 ![Server Backup Configuration wizard - Options page](/images/identityrecovery/3.1/product/forest/backup/forest_backup_page4.png)
 
-**Step 11 –** The file can be encrypted by selecting the **Encrypt the generated backup data**
-checkbox and entering a password.
+**Step 11 –** To encrypt the file, select the **Encrypt the generated backup data** checkbox and
+enter a password.
 
 **Step 12 –** By default, backups are compressed. Clear the Compress the generated backup data
 checkbox to uncompress the generated backup file.
@@ -137,13 +137,13 @@ to finish the wizard.
 
 **Step 15 –** The system has saved the Server backup configuration. Click **OK**.
 
-The domain controller will now be backed up according to the configured schedule. A backup can also
-be initiated on demand from the Recovery Console.
+The domain controller will now be backed up according to the configured schedule. You can also
+start a backup on demand from the Recovery Console.
 
 ## Backup Files
 
 The backup of a domain controller is stored on a network share in the environment and includes all
-essential data from the domain controller, ensuring that the entire forest can be restored in the
+essential data from the domain controller. With this data, you can restore the entire forest in the
 event of a disaster. The backup includes:
 
 - The Active Directory database (ntds.dit)

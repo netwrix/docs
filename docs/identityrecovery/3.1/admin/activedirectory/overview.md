@@ -14,7 +14,7 @@ Click **Active Directory** in the left pane to open the Active Directory page.
 ![Active Directory page](/images/identityrecovery/3.1/product/active_directory/active_directory.png)
 
 Select a domain from the dropdown menu and expand it to view the domain tree and container
-structure, which is exactly the same as you get in Active Directory Users and Computers. Objects in
+structure, which matches Active Directory Users and Computers. Objects in
 the domain are also available in the same hierarchical structure.
 
 The page displays the following information:
@@ -46,15 +46,15 @@ additional information.
 
 ## Recover Deleted Objects
 
-On expanding a domain in the left pane, you will notice that Recycle Bin is in blue, indicating that
-this is a virtual container specific to Identity Recovery. Use the Recycle Bin to
+When you expand a domain in the left pane, the Recycle Bin appears in blue. It's a virtual container
+specific to Identity Recovery. Use the Recycle Bin to
 recover deleted objects in Active Directory. See the [Recover Objects](/docs/identityrecovery/3.1/admin/activedirectory/recover.md) topic for
 additional information.
 
 ## Integration with Threat Prevention
 
-When you right-click an object in a domain on the Active Directory page, the right-click menu is
-displayed as:
+When you right-click an object in a domain on the Active Directory page, the following menu
+appears:
 
 ![Right-click menu on the Active Directory page](/images/identityrecovery/3.1/admin/activedirectory/rightclickmenu.webp)
 

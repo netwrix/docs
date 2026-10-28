@@ -10,7 +10,7 @@ You can configure multi-factor authentication (MFA) for your Identity Recovery a
 to add an additional layer of security when signing into the application.
 
 :::note
-At present, only authenticator apps are supported for MFA. As a prerequisite to enabling MFA, install
+MFA supports only authenticator apps. As a prerequisite to enabling MFA, install
 an authenticator app—such as Google Authenticator or Microsoft Authenticator—on your phone.
 :::
 
@@ -22,8 +22,8 @@ an authenticator app—such as Google Authenticator or Microsoft Authenticator�
 **Step 1 –** In the Recovery Console, click your profile icon in the top right corner of the page
 and select **Manage**. The MFA page opens.
 
-**Step 2 –** Click the **Add authenticator app** button. The Configure authenticator app page is
-displayed, showing the instructions for setting up the app.
+**Step 2 –** Click the **Add authenticator app** button. The Configure authenticator app page
+opens and shows the instructions for setting up the app.
 
 ![Configure authenticator app page](/images/identityrecovery/3.1/product/mfa_authenticator.png)
 

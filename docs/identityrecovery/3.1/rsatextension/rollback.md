@@ -11,7 +11,7 @@ an Active Directory object to a previous state of a Identity Recovery backup.
 
 ## Prerequisites
 
-The following prerequisites must be met before you can rollback or recover an object using ADUC:
+Before you can rollback or recover an object using ADUC, you must meet the following prerequisites:
 
 - You must register the RSAT Extension on the Recovery Application Server to add the Rollback and
   Restore options to the ADUC console. See the
@@ -49,7 +49,7 @@ attributes to rollback. This page consists of two sections:
       attributes that were changed when the selected backup was performed
 
 You can click different backup dates to see attribute values for each of those points in time.
-However, only one backup date can be selected to select attributes for rollback.
+However, you can select attributes for rollback from only one backup date.
 
 Click **Next**.
 

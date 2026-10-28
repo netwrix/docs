@@ -32,7 +32,7 @@ permissions that are necessary to perform backups, rollbacks, and recovery.
 
 ### Least Privilege Access Model
 
-It is strongly suggested that the Identity Recovery service account be provided Domain
+Netwrix strongly recommends providing the Identity Recovery service account with Domain
 Admin privileges; however, there are situations where security policies prevent an organization from
 providing Domain Admin privileges. In those situations, contact your Netwrix service
 representative to work with you to develop a tailored Least Privilege Access model based on your

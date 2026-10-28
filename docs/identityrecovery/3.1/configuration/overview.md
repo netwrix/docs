@@ -25,6 +25,6 @@ The Configuration interface contains the following pages:
 - [Okta Page](/docs/identityrecovery/3.1/configuration/okta.md) – The Okta page lists the Okta tenants backed up by Identity Recovery, displays the backup schedule settings for each added Okta tenant, and lets you add and configure new Okta tenants.
 - [Users and Roles Page](/docs/identityrecovery/3.1/configuration/roles.md) – The Users and Roles page displays the accounts with access to Identity Recovery.
 - [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) – The Notifications page lets you configure notifications to send emails when a collection (backup) job completes.
-- [Netwrix Integrations Page](/docs/identityrecovery/3.1/configuration/integration.md) – The Netwrix Integrations page lets you configure access to data in other Netwrix products. At present, only Netwrix Threat Prevention is supported.
+- [Netwrix Integrations Page](/docs/identityrecovery/3.1/configuration/integration.md) – The Netwrix Integrations page lets you configure access to data in other Netwrix products. Identity Recovery supports only Netwrix Threat Prevention.
 - [Data Retention Policy Page](/docs/identityrecovery/3.1/configuration/dataretention.md) – The Data Retention Policy page lets you delete backup data for domains and domain controllers older than X days, and delete backup data for purged tombstone objects.
 - [Licensing Page](/docs/identityrecovery/3.1/install/licensing.md) – The Licensing page shows your organization's license status and lets you import a license file.
