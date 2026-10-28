@@ -7,7 +7,7 @@ sidebar_position: 25
 # Configure Multi-Factor Authentication
 
 You can configure multi-factor authentication (MFA) for your Identity Recovery account
-to add an additional layer of security when signing into the application.
+to add another layer of security when signing into the application.
 
 :::note
 MFA supports only authenticator apps. As a prerequisite to enabling MFA, install

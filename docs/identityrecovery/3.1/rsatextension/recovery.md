@@ -69,8 +69,7 @@ Click **Next**.
 object is included as a child object being restored. Consider the
 following configurations in ADUC before choosing the options for deleted user objects:
 
-- Passwords aren't persisted – User account is disabled and will have no password, and be disabled
-  after restoration
+- Passwords aren't persisted – User account has no password and is disabled after restoration
 - Passwords are persisted – User password is restored and ADUC automatically sets the _User must
   change password at next logon_ flag
 

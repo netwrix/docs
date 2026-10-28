@@ -12,8 +12,7 @@ The Forest page allows administrators to:
 
 ## Add a Forest
 
-You must add a forest in the system to perform backup and recovery operations for it. Follow the
-steps to add a forest.
+You must add a forest before you can back it up or recover it.
 
 ![ Forest configurations ](/images/identityrecovery/3.1/product/configuration/forest/forest_configuration.png)
 
