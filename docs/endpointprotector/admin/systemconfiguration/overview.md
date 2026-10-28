@@ -94,7 +94,7 @@ Select one of the available security update types and then click **Check Updates
   packages, and the MySQL database
 - All Updates – downloads and applies Informational and Optional/Unclassiﬁed updates
 
-If there are updates available, click **Apply Updates**.
+If updates are available, click **Apply Updates**.
 
 ![Applying Backend Security Updates](backendsecurityupdates.webp)
 
