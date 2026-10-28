@@ -23,13 +23,13 @@ require authentication, you can leave the Account name and Account password fiel
 - Account Name – Name of the account to use for accessing the mail server
 - Account Password – Password for the account
 
-**Step 3 –** Select an encryption protocol to encode the email notifications from the Encryption
-method dropdown menu.
+**Step 3 –** From the Encryption method dropdown menu, select an encryption protocol to encode the
+email notifications.
 
 **Step 4 –** In the Send Email As section, configure the email address and display name to use for
 sending email notifications.
 
-- Email address – Create an email address to be used, for example: noreply@companyname.com
+- Email address – The email address that sends the notifications, for example: noreply@companyname.com
 - Display name – Name that appears on the email notifications
 
 **Step 5 –** Click the **Test** button to verify that the system has configured your notifications correctly.

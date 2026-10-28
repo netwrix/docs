@@ -6,16 +6,15 @@ sidebar_position: 30
 
 # Entra ID Page
 
-On the Entra ID page, you can access all the Entra tenants that you have configured through the
-[Connect Entra ID](/docs/identityrecovery/3.1/configuration/entraid.md).
+On the Entra ID page, you can access all the Entra tenants that you configured on the Entra ID tab of
+the Configuration interface. See the [Connect Entra ID](/docs/identityrecovery/3.1/configuration/entraid.md)
+topic for additional information.
 
 Click **Entra ID** in the left pane to open the Entra ID page.
 
 ![Entra ID page](/images/identityrecovery/3.1/product/entra_id/entra_id.png)
 
-Select a tenant from the dropdown menu and expand it to view the domain tree and container
-structure, which matches Active Directory Users and Computers. Objects in
-the domain are also available in the same hierarchical structure.
+Select a tenant from the dropdown menu and expand it to view the supported object types.
 
 The page displays the following information:
 
@@ -23,7 +22,7 @@ The page displays the following information:
 - Description – A description of the object
 - Backup Time – The date and time of the last backup
 
-You can perform the rollback and recover operations for objects.
+You can roll back and recover objects.
 
 Search for an Object
 

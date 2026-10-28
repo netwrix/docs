@@ -33,10 +33,9 @@ In the Recovery Configuration Utility, you use the RSAT Extension Register/Unreg
 activate the new right-click menu options in ADUC. You do this once per domain. The registration
 status appears as either Registered or Unregistered.
 
-To validate the registration status of the RSAT Extension by finding the presence of a specific GUID in Active Directory Service Interfaces Editor (ADSI Edit):
+To check whether the RSAT Extension is registered, look for its GUID in Active Directory Service Interfaces Editor (ADSI Edit):
 
-**Step 1 –** On the domain joined machine or domain controller, ensure the user is logged in as a
-Domain Administrator.
+**Step 1 –** Log in to the domain joined machine or domain controller as a Domain Administrator.
 
 **Step 2 –** Open ADSI Edit by navigating to
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools. The ADSI Edit window
@@ -49,8 +48,8 @@ opens.
 known Naming Context radio button. Click **OK**. The Connection Settings window closes and the AD
 Configuration Partition (also called naming context) opens on the left hand pane.
 
-**Step 5 –** Navigate from the AD Configuration Partition folder until **CN=DisplaySpecifiers** is
-selected. In this folder, select either **CN=409** which is the code for English (United States) or another code
+**Step 5 –** Navigate from the AD Configuration Partition folder and select
+**CN=DisplaySpecifiers**. In this folder, select either **CN=409** which is the code for English (United States) or another code
 for the active locale of the operating system if not using English (United States).
 
 **Step 6 –** Double-click the proper locale (such as CN=409). A list appears in the middle

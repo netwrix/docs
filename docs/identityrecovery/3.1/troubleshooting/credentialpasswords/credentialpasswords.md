@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Update Account Passwords
 
-Account passwords occasionally need to be updated for reasons such as security policies
-that require passwords to be reset on a regular basis. The following types of credentials may be
-impacted by password changes or security policies:
+You may need to update account passwords occasionally, for example when security policies require
+regular password resets. Password changes or security policies can affect the following types of
+credentials:
 
 - SQL Server Service Account
 - Recovry Service Account

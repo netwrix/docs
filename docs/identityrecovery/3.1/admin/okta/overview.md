@@ -6,8 +6,9 @@ sidebar_position: 40
 
 # Okta Page
 
-On the Okta page, you can access all the Okta tenants that you have configured through the
-[Connect Okta](/docs/identityrecovery/3.1/configuration/okta.md).
+On the Okta page, you can access all the Okta tenants that you configured on the Okta tab of the
+Configuration interface. See the [Connect Okta](/docs/identityrecovery/3.1/configuration/okta.md) topic
+for additional information.
 
 Click **Okta** in the left pane to open the Okta page.
 
@@ -21,7 +22,7 @@ The page displays the following information:
 - Description – A description of the object
 - Backup Time – The date and time of the most recent backup
 
-You can perform the rollback operations for objects.
+You can roll back objects.
 
 Search for an Object
 

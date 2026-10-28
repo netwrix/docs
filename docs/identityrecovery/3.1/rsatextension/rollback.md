@@ -41,10 +41,10 @@ attributes to rollback. This page consists of two sections:
 - Objects – Lists the objects selected for rollback
 - Backups – Lists the backups with their respective details
 
-    - Backup Date – Select the date timestamp you want to identify the backup for rollback. Multiple
+    - Backup Date – Select the timestamp of the backup to use for the rollback. Multiple
       backups may be available for a single day depending on the configured schedule.
-    - Attribute List – Select the attributes to rollback. The table displays the current value and
-      backup value, and highlights attributes where these two values are different in blue.
+    - Attribute List – Select the attributes to roll back. The table shows the current value and
+      backup value, and highlights in blue any attribute where the two values differ.
     - Only show attributes that have changed – Select this option to display only blue highlighted
       attributes that were changed when the selected backup was performed
 

@@ -16,8 +16,8 @@ The Forest page allows administrators to:
 > information.
 
 You can view the domain controllers in the forest and verify whether backups are
-enabled for the domain controllers. You can also view the forest tree,
-which represents the structure of the forest and its domains.
+enabled for the domain controllers. You can also view the forest tree, which
+shows the structure of the forest and its domains.
 
 Click **Forest** in the left pane to open the Forest page.
 
@@ -84,8 +84,8 @@ Configuration agent there, and perform server backups. This account must have re
 to a shared network location for storing the backups. (You will specify this network share location
 on the Options page of this wizard.)
 
-- In the Account field, enter the username of an account to write the backup data of the domain
-  controller to the network share of the destination server in the following format: domain\account.
+- In the Account field, enter the account that writes the domain controller backup data to the
+  destination server's network share, in the format domain\account.
 - Enter the password for the account in the Password field.
 
 :::note
@@ -137,8 +137,8 @@ to finish the wizard.
 
 **Step 15 –** The system has saved the Server backup configuration. Click **OK**.
 
-The domain controller will now be backed up according to the configured schedule. You can also
-start a backup on demand from the Recovery Console.
+The domain controller will now be backed up according to the configured schedule. To start a
+backup on demand, use the **Start Backup** command for the domain controller.
 
 ## Backup Files
 

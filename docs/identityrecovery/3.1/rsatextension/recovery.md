@@ -31,8 +31,7 @@ the menu. The Object Recovery wizard opens.
 
 ![Object Recovery Wizard - Object Backups page](/images/identityrecovery/3.1/rsatextension/objectbackups_1.webp)
 
-**Step 3 –** On the Object Backups page, select the date timestamp you want to identify the backup
-for recovery. Multiple backups may be available for a single day depending on the configured
+**Step 3 –** On the Object Backups page, select the timestamp of the backup to use for recovery. Multiple backups may be available for a single day depending on the configured
 schedule. Click **Next** to continue.
 
 ![Object Recovery Wizard - Recovery Options page](/images/identityrecovery/3.1/rsatextension/recoveryoptions.webp)

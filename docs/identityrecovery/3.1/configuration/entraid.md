@@ -1,15 +1,14 @@
 ---
 title: "Connect Entra ID"
 description: "Add and configure the Microsoft Entra ID tenants that Identity Recovery backs up."
-sidebar_position: 12
+sidebar_position: 13
 ---
 
 # Connect Entra ID
 
 The Entra ID tab of the Configuration interface lists the Entra tenants that Identity Recovery backs up. It displays the backup schedule settings for each added Entra tenant. You can also add and configure a new Entra tenant.
 
-Click **Configuration** in the left pane. Then click the **Entra ID** tab on the Configuration page
-to open the Entra tenants page.
+Click **Configuration** in the left pane, then click the **Entra ID** tab.
 
 ![Tenant Page](/images/identityrecovery/3.1/product/configuration/entra_id/entra_id_configuration.png)
 
@@ -24,8 +23,8 @@ The table displays the following information:
 
     - Run backup – Click the **Play** icon to start a new collection (backup) on the respective
       tenant if you need a collection outside the configured schedule
-    - Edit configuration – Edit the settings of the tenant. Click the **Edit** icon for a tenant to
-      open the Edit Tenant Configuration wizard and edit the tenant's settings. See the Edit Tenant
+    - Edit configuration – Click the **Edit** icon for a tenant to open the Edit Tenant Configuration
+      wizard and change the tenant's settings. See the Edit Tenant
       Configuration topic for additional information.
     - Delete configuration – Click the Delete icon for a tenant to delete it
 
@@ -36,7 +35,7 @@ additional information.
 
 To add a tenant, provide tenant details and configure the backup schedule.
 
-**Step 1 –** Click the **Add tenant configuration** button on the Entra Id page to launch the Add
+**Step 1 –** Click the **Add tenant configuration** button on the Entra ID tab to launch the Add
 Tenant Configuration wizard.
 
 ![Add Tenant Configuration wizard - Entra Id page](/images/identityrecovery/3.1/product/configuration/entra_id/entra_id_configuration_page1.png)
@@ -130,7 +129,7 @@ If you don't want notifications, skip this step.
 the Back button to return to a previous page and change any setting. Click **Done** to finish the
 wizard.
 
-The new tenant appears on the Entra Id page.
+The new tenant appears on the Entra ID tab.
 
 Backups begin as scheduled. On the first scheduled instance, Identity Recovery performs a complete
 backup of the tenant. Subsequent backups only include the incremental changes that occurred since
@@ -138,7 +137,7 @@ the previous backup.
 
 ### Edit Tenant Configuration
 
-**Step 1 –** On the Entra Id page, click the **Edit configuration** icon for a tenant. The Edit
+**Step 1 –** On the Entra ID tab, click the **Edit configuration** icon for a tenant. The Edit
 Tenant Configuration wizard opens.
 
 **Step 2 –** Modify the settings you want to change for the tenant configuration.

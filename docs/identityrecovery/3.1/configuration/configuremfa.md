@@ -34,8 +34,7 @@ name.
 **Step 4 –** Enter this code in the Verification Code field on the Configure authenticator app page
 and click **Verify**. The page displays a confirmation message on success.
 
-The authenticator app generates a new code every 30 seconds, with each code expiring after 30
-seconds.
+The authenticator app generates a new code every 30 seconds. Each code expires after 30 seconds.
 
 **Step 5 –** Click **Close**.
 
