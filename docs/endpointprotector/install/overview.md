@@ -137,3 +137,42 @@ Starting with version 2509, Netwrix standardizes EPP product versioning. The ver
 
 
 This versioning system provides a transparent and easily navigable structure, improving your workflow.
+
+## Downloading and verifying installation files
+
+Download Endpoint Protector installation files, such as server appliance images and client packages, from the Netwrix My Products portal. Each download has an associated SHA512 file that you use to confirm the download is authentic and uncorrupted.
+
+**Step 1 –** Sign in to the [Netwrix My Products portal](https://customer.netwrix.com/sign_in.html?rf=my_products.html) with your netwrix.com account. The account must have a valid license assigned. If you can't sign in or can't see your products, contact the Netwrix Support portal or your distributor.
+
+**Step 2 –** Choose the component to download. The portal groups products by release version and by server or client component.
+
+![Netwrix My Products portal showing the Endpoint Protector downloads for version 2608 Server](myproductsportal.webp)
+
+Click the download icon to download the file.
+
+![Download icon highlighted next to an Endpoint Protector server image](myproductsdownload.webp)
+
+Then download the associated SHA512 file by clicking the shield icon. In some browsers, you can also right-click the icon and select a save-link option.
+
+![Shield icon highlighted next to an Endpoint Protector server image](myproductsshield.webp)
+
+**Step 3 –** After both files download, calculate the SHA512 hash of the installation file. The following commands are examples for each operating system, and you can use any preferred tool or method. Replace the placeholder with the path or name of your file, for example `endpointprotector-server-v2608011-ovf.tar.gz`.
+
+- **Windows (PowerShell):** open PowerShell and run `Get-FileHash -Path "<path-to-file>" -Algorithm SHA512`
+- **Linux:** open a terminal in the folder that contains the file and run `sha512sum <file-name>`
+- **macOS:** open a terminal in the folder that contains the file and run `shasum -a 512 <file-name>`
+
+**Step 4 –** Open the downloaded SHA512 text file and compare the hash it lists with the hash you calculated. Ignore letter case, because PowerShell prints uppercase letters. If the hashes match, the file is the genuine Netwrix Endpoint Protector file and it isn't corrupted, so you can use it safely.
+
+![SHA512 text file with the hash line highlighted](sha512file.webp)
+
+:::note
+The SHA512 file is a PGP-signed message, so it starts with the following header:
+
+```text
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+```
+
+This header only describes the digest algorithm of the PGP signature. The file hash listed below it is a SHA512 hash (128 characters).
+:::
