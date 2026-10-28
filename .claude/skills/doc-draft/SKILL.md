@@ -1,6 +1,6 @@
 ---
 name: doc-draft
-description: "Draft new Netwrix documentation from source material and write it into the docs tree. Use whenever the user supplies material to document, even if they never say 'draft': (1) a pull request or commit ('look at PR 123 in netwrix/repo and document the feature'); (2) specs, requirements, or a design doc; (3) rough notes, a transcript, or a brain dump; (4) a prompt detailed enough to draft from ('write a page on X covering A, B, C'); (4a) a request to structure or organize a new docs directory for a product or version; (5) a work item to document: a GitHub issue, a Jira ticket, or an Azure DevOps item, as a URL, a key or number, or pasted text. For editing or reviewing existing docs, style or Vale questions, brainstorming, or merging a .docx into a page, use doc-help instead."
+description: "Draft new Netwrix documentation from source material and write it into the docs tree. Use whenever the user supplies material to document, even if they never say 'draft': (1) a pull request or commit ('look at PR 123 in netwrix/repo and document the feature'); (2) specs, requirements, or a design doc; (3) rough notes, a transcript, or a brain dump; (4) a prompt detailed enough to draft from ('write a page on X covering A, B, C'); (4a) a request to structure or organize a new docs directory for a product or version; (5) a work item to document: a GitHub issue, a Jira ticket, or an Azure DevOps item, as a URL, a key or number, or pasted text. For editing or reviewing existing docs, style or Vale questions, brainstorming, or merging a .docx into a page, use doc-help instead. To restyle whole existing pages into this skill's style without changing their content, use doc-restyle."
 argument-hint: "[PR number and repo, work item key or URL, spec or notes, or what to document]"
 ---
 
@@ -32,11 +32,13 @@ Document what a customer sees and does: UI labels, settings and their values, be
 
 ### Draft new documentation
 
+Keep the writer oriented. Say what you are doing in one line at each of these points, and say nothing between them: after step 2 (the source you read and the pages you plan to write), when a draft is written (step 8), and when the lint is clean (step 11). For several pages, prefix each line with the page count, for example "Page 2 of 5, `install/signingkey.md`: drafted, linting." If a step takes more than a few minutes (cloning a repo, reading a large diff, a slow lint), say which one you are waiting on. Don't make the writer ask where you are.
+
 1. Read `docs/CLAUDE.md` for conventions, and `.claude/references/lint-rules.md`, the list of rules the style check enforces, so your first draft avoids them
 2. Read the specification or source material provided
 3. Read 1–2 similar existing documents in the same product for structural reference. Decide which zone the page belongs in from `.claude/references/documentation-section-guide.md`, by the reader's question the page answers. Then read `.claude/references/page-structure-guide.md` to decide the page's type (task, concept, reference, or troubleshooting), whether it is a new page, a section, or an edit, and how to title and order it
 4. Draft the content following Netwrix structure: overview → prerequisites → procedures
-   Every page you write starts with frontmatter that includes a `description`. The description is one sentence, under 160 characters, that says what the reader can do or learn on the page; write it from what the page contains, not from the title. Match the neighboring pages for the other keys (`title`, `sidebar_position`, `sidebar_label`).
+   Every page you write starts with frontmatter that includes a `description`. The description is one sentence that says what the reader can do or learn on the page; write it from what the page contains, not from the title. Aim for about 120 characters and never go over 160, because search results and link previews cut longer ones off. Match the neighboring pages for the other keys (`title`, `sidebar_position`, `sidebar_label`).
 5. Give every procedure an example: sample values, a command with real arguments, or the result the reader should see. Do not add an example to a concept just because it is introduced. If a concept would be clearer with an example and the source does not support a real one, write `{/* TODO: add an example of <concept> */}` where it belongs and list it in your report. Never invent an example to fill the space.
 6. Anticipate reader questions and answer them inline
 7. Reread the drafted file. Confirm the frontmatter has a `description` on every page you wrote, and that every internal link points to a file that exists. Fix any passive voice, hedging, future tense describing software behavior, wordiness, or idioms.
@@ -59,7 +61,7 @@ When given a PR (a number and repo, or a URL):
    Never check out in the user's working tree. Fetch the PR into a separate worktree in your scratchpad directory (`git -C <clone> fetch origin pull/<n>/head` then `git -C <clone> worktree add <scratchpad>/pr-<n> FETCH_HEAD`) and remove the worktree when you finish. In it, read the changed files in full, then their callers, config defaults, UI strings or resources, and their tests, which show exact behavior and edge cases.
 4. **Find what the docs already say.** Search `docs/<product>/` (latest version) with Grep for the feature's UI labels, setting names, and CLI switches. Search for existing requirements, sizing, and install pages on the same topic too. Decide: new page, new section in an existing page, or a change to existing text. Prefer adding a row, a value, or a section to an existing requirements or sizing page over writing a parallel page. Say which in your report, with paths.
 5. Work out what a user can now see or do: new UI, settings, defaults, permissions, limits, and behavior changes. Document only what the code and description support. Where they are silent, write a `{/* TODO: ... */}` marker and list it in your report. Do not infer behavior.
-6. Decide the version and target folder from the PR and `src/config/products.js`. If you can't tell, ask one question.
+6. Decide the version and target folder from the PR and `src/config/products.js`. If you can't tell, ask one question. Write for that version only. Do not add a `{/* TODO */}` marker or a report item asking whether other versions need the same text; the writer decides that. A TODO to confirm the fix or feature ships in the target version is fine.
 7. Continue with "Draft new documentation" from step 3.
 
 ### Draft from a work item (GitHub issue, Jira ticket, Azure DevOps item)
@@ -103,3 +105,4 @@ When the source needs several pages (for example a feature with a concept page, 
 1. Plan the page list first: file path, page type, and the facts each page covers
 2. Create one todo per page
 3. Draft pages one at a time — complete all steps for each file before moving to the next
+4. After each page, report one line: `Page N of M, <path>: done, lint clean` (or the findings you are still fixing). When the last page finishes, say how many pages are done and how many need the writer's decision.

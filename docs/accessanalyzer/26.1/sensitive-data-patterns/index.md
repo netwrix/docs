@@ -55,7 +55,7 @@ Use the same reasoning when you set the confidence of a [custom pattern](custom-
 
 ## Built-in and Custom Patterns
 
-Built-in patterns and groups carry a **Built-in** badge. You can't edit or delete them, and you can't add a built-in pattern to a group or remove it from one. There is no switch to turn off an individual built-in pattern; the way to narrow a scan is to choose which groups it classifies. The full list is in [Built-in patterns](built-in-patterns.md).
+Built-in patterns and groups carry a **Built-in** badge. You can't edit or delete them, and you can't add a built-in pattern to a group or remove it from one. There is no switch to turn off an individual built-in pattern; to narrow a scan, choose which groups it classifies. The full list is in [Built-in patterns](built-in-patterns.md).
 
 Custom patterns are yours to create, test, edit, and delete. A custom pattern can belong to any number of groups, including built-in ones. For example, an internal employee ID pattern can sit in the built-in **PII** (personally identifiable information) group so that any scan that classifies PII also runs it. Changes to custom patterns and their group memberships reach scans within about a minute. See [Custom patterns](custom-patterns.md).
 
@@ -93,7 +93,7 @@ A test accepts up to 64 KB of sample text and up to 200 lines in **Line by line*
 
 A Sensitive data scan extracts text from Excel workbooks, Word documents, Portable Document Format (PDF) files, and plain text files. It doesn't extract text from images, and it can't read encrypted Office documents.
 
-The scan skips files above the size limit. The default limit is 10 MB for both File Server and SharePoint Online sources, adjustable between 1 and 100 MB. Each source type also has a list of excluded file extensions covering media, binaries, fonts, and archives. Both settings live in the **Classification** card of [Application settings](../settings/application.md).
+The scan skips files above the size limit. The default limit is 10 MB for both File Server and SharePoint Online sources, adjustable between 1 and 100 MB. Each source type also has an include list of file types to classify, used by default, and an exclude list of media, binaries, fonts, and similar files, used when the include list is off or empty. These settings are on the **File server scanning** and **SharePoint scanning** cards of [Application settings](../settings/application.md#file-server-scanning-and-sharepoint-scanning).
 
 At scan time, a custom pattern records at most 10 matches per file. Built-in patterns run under a per-pattern time budget of 250 ms per file, controlled by the `enable_pattern_execution_budget` flag in [Feature flags](../settings/feature-flags.md). The flag is on by default. When a pattern overruns its budget, the scan logs the overrun and keeps the matches the pattern found.
 

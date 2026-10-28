@@ -25,6 +25,7 @@ Without these indexes, workflow pages can become slow on large databases because
 - Indexes are created automatically — no manual configuration is required
 - The set of indexes adapts to your workflow configuration
 - Running the tool multiple times is safe — indexes that already exist are skipped, and indexes whose definition no longer matches the configuration are dropped and recreated
+- On SQL Server editions that support it (Enterprise, Developer, Azure SQL), indexes are created `ONLINE` to avoid blocking concurrent access to `UR_Resources` during creation. On other editions (e.g. Standard), indexes are created offline, which may briefly block concurrent access; a warning is logged in this case.
 
 **Expected storage impact:** approximately 0.1 MB per 1,000 rows in `UR_Resources`.
 

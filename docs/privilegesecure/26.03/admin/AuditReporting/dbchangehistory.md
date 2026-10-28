@@ -1,6 +1,15 @@
 ---
 title: "DB Change History"
-description: "DB Change History"
+description: "Reference for the DB Change History page, which shows database additions, updates, and deletions with filters by change type and date."
+keywords:
+  - DB Change History
+  - database changes
+  - Change Type
+  - Data Table
+  - Date Range
+  - Additions
+  - Updates
+  - Deletes
 sidebar_position: 30
 ---
 
@@ -13,27 +22,22 @@ search, and investigate the records.
 
 The DB Changes page has the following features:
 
-- Search – Searches the table or list for matches to the search string. When matches are found, the
-table or list is filtered to the matching results.
+- **Search** — Searches the table or list for matches to the search string. When matches are found, the
+  table or list is filtered to the matching results.
 - Filter by:
-
-- Change Type:
-
-- Additions
-- Updates
-- Deletes
-
-- Data Table – Specify a database table
-- Date Range – Set a date and time range to filter history
-
-- Refresh button – Reload the information displayed.
+  - **Change Type**:
+    - Additions
+    - Updates
+    - Deletes
+  - **Data Table** — Specify a database table
+  - **Date Range** — Set a date and time range to filter history
+- **Refresh button** — Reload the information displayed.
 
 The DB Changes table has the following features:
 
 - Column headers can be sorted in ascending or descending order:
-
-- When – Timestamp of database entry
-- By – The user associated with the entry
-- Change – Type of database entry (Additions, Updates, Deletes)
-- Record Type – Type of record modified
-- Which Record – Record ID
+  - **When** — Timestamp of database entry
+  - **By** — The user associated with the entry
+  - **Change** — Type of database entry (Additions, Updates, Deletes)
+  - **Record Type** — Type of record modified
+  - **Which Record** — Record ID

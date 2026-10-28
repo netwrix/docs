@@ -20,16 +20,16 @@ PowerShell is a cross-platform task automation and configuration management fram
 
 Implementing this connector requires:
 
-- making sure that the command `powershell.exe`, inside the command prompt (`cmd.exe`), does execute
-a PowerShell terminal;
-- knowledge of scripting in PowerShell 5.1 or later,
-[see here PowerShell's requirements](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/windows-powershell-system-requirements);
+- making sure that the appropriate PowerShell executable is installed on the device hosting the agent: by default (`Edition` set to `Desktop`), the connector runs `powershell.exe` (Windows Powershell 5.1); when `Edition` is set to `Core`, the connector runs `pwsh` (PowerShell 7);
+- knowledge of scripting in PowerShell 5.1 (Windows PowerShell, [see here requirements](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/windows-powershell-system-requirements)) or PowerShell 7 (PowerShell Core, [see support lifecycle here](https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-support-lifecycle)) depending on the selected `Edition`;
 - making sure that the device hosting the agent has its execution policy properly configured to
 execute the given PowerShell script;
 - checking the targeted system's requirements (environment, libraries, etc.), as this connector is
 meant to connect Identity Manager to a PowerShell-compatible system;
 - writing and testing a PowerShell script (`.ps1`) according to Netwrix Identity Manager (formerly
 Usercube)' guidelines below.
+
+Windows PowerShell 5.1 is in maintenance mode. Netwrix recommends using `Edition: "Core"` (`pwsh`) for new connections where possible.
 
 ## Export
 
@@ -87,10 +87,11 @@ The identifier of the connection and thus the name of the subsection must:
 
 #### Setting attributes
 
- | Name | Details | 
- | --- | --- | 
- | PowerShellScriptPath required | **Type** String **Description** Path of the executed PowerShell script (.ps1). | 
- | Options optional | **Type** String Pair List **Description** List of key-value pairs for all the variables required by the PowerShell script. **Example** `   "Options": {    "Login": "admin",    "Password": "secret"   }` In order for the script to access these options, the following two lines of code must be included in the script: `$options = [System.Console]::ReadLine()   $options = ConvertFrom-Json $options` Afterwards, any one of these variables can be easily accessed: `$options.Login$options.Password   # -> admin and secret` | 
+ | Name | Details |
+ | --- | --- |
+ | PowerShellScriptPath required | **Type** String **Description** Path of the executed PowerShell script (.ps1). |
+ | Edition optional | **Type** String **Description** Selects which PowerShell executable runs the script: `Desktop` (default) uses `powershell.exe` (Windows Powershell 5.1), `Core` uses `pwsh` (PowerShell 7). **Example** `"Edition": "Core"` |
+ | Options optional | **Type** String Pair List **Description** List of key-value pairs for all the variables required by the PowerShell script. **Example** `   "Options": {    "Login": "admin",    "Password": "secret"   }` In order for the script to access these options, the following two lines of code must be included in the script: `$options = [System.Console]::ReadLine()   $options = ConvertFrom-Json $options` Afterwards, any one of these variables can be easily accessed: `$options.Login$options.Password   # -> admin and secret` |
 
 ### Write a script
 
@@ -110,11 +111,11 @@ Data protection can be ensured through:
 the `appsettings.encrypted.agent.json` file;
 - An [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) safe;
 
- | Attribute | Naming Convention for the Key in Azure Key Vault | 
- | --- | --- | 
- | Login (optional) | `Connections--<identifier>--Options--Login` | 
- | Password (optional) | `Connections--<identifier>--Options--Password` | 
- | PowerShellScriptPath | `Connections--<identifier>--PowerShellScriptPath` | 
+ | Attribute | Naming Convention for the Key in Azure Key Vault |
+ | --- | --- |
+ | Login (optional) | `Connections--<identifier>--Options--Login` |
+ | Password (optional) | `Connections--<identifier>--Options--Password` |
+ | PowerShellScriptPath | `Connections--<identifier>--PowerShellScriptPath` |
 
 - A [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) able to store
 the attributes from the `Options` section that are compatible with <b>cyberark</b>.

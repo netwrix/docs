@@ -1,7 +1,7 @@
 ---
 title: "ResourceChangesViewAccessControlRules"
 description: "Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange and ResourceLinkChange."
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 Generates the access control rules which gives to a profile the permissions to call the API `ResourceChange`, `ResourceFileChange` and `ResourceLinkChange`.

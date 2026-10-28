@@ -1,19 +1,19 @@
 ---
-title: "Netwrix Identity Manager 7.1"
-description: "Netwrix Identity Manager 7.1"
+title: "Netwrix Identity Manager 7.2"
+description: "Netwrix Identity Manager 7.2"
 sidebar_position: 10
 ---
 
-# A software solution to match your IGA needs
+# Netwrix Identity Manager
 
-To learn about Netwrix Identity Manager (formerly Usercube) and build the solution you need, explore our guides.
+To learn about Netwrix Identity Manager (formerly Usercube) and build the solution you need, explore the following guides.
 
-The present documentation mentions the Netwrix Identity Manager (formerly Usercube) application as simply Identity Manager.
+This documentation refers to the Netwrix Identity Manager (formerly Usercube) application as Identity Manager.
 
 Identity Manager's guides include:
 
 - An [Introduction Guide](introduction-guide) if you are new to Identity Manager.
-- A [User Guide](user-guide) to configure Identity Manager from scratch via the UI.
+- A [User Guide](user-guide) to configure Identity Manager from an empty configuration via the UI.
 - An [Integration Guide](integration-guide) to complete Identity Manager's configuration in
 XML according to your needs.
 - An [Installation Guide](installation-guide) to install Identity Manager in a production

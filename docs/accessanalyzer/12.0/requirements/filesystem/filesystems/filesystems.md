@@ -9,7 +9,7 @@ sidebar_position: 20
 Netwrix Access Analyzer (formerly Enterprise Auditor) audits Microsoft® Windows® file servers,
 Azure Files storage accounts, Network Attached Storage (NAS) devices, and Unix platforms.
 
-Access Analyzer employs the File System Solution to execute Access Auditing (FSAA), Activity
+Access Analyzer uses the File System Solution to execute Access Auditing (FSAA), Activity
 Monitoring (FSAC), and Sensitive Data Discovery Auditing scans. The Activity Monitoring (FSAC) scans
 also require an additional application, either Netwrix Activity Monitor or Netwrix Threat
 Prevention, to monitor the target environment.
@@ -23,14 +23,14 @@ Ports and permissions vary based on the selected scan mode option and the target
 
 **Data Collectors**
 
-This solution employs the following data collector to scan the target environment:
+This solution uses the following data collector to scan the target environment:
 
 - [ADInventory Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/adinventory/overview.md)
 - [FileSystemAccess Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/overview.md)
 
 **Permissions and Ports for ADInventory Data Collector Prerequisite**
 
-The following permissions are needed:
+The ADInventory Data Collector requires the following permissions:
 
 - Read access to directory tree
 - List Contents & Read Property on the Deleted Objects Container
@@ -44,7 +44,7 @@ The following permissions are needed:
     :::
 
 
-The following firewall ports are needed:
+The ADInventory Data Collector requires the following firewall ports:
 
 - TCP 389
 - TCP 135-139
@@ -67,6 +67,10 @@ The following are supported Microsoft® Windows® operating systems:
 See the [Windows File Server Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/windowsfile/overview.md) topic for
 target environment requirements.
 
+:::note
+Access Auditing and Sensitive Data Discovery Auditing support CIFS and NFSv3.
+:::
+
 **Windows File System Clusters**
 
 See the topic for target environment requirements.
@@ -77,8 +81,8 @@ See the topic for target environment requirements.
 
 ## Azure Files Support
 
-Azure Files is a fully managed, cloud-based file sharing service from Microsoft. With Azure Files,
-users can access file shares from anywhere as a virtual network drive. Access Analyzer supports Access
+Azure Files is a fully managed, cloud-based file sharing service from Microsoft. Users can access
+Azure Files shares from anywhere as a virtual network drive. Access Analyzer supports Access
 Auditing (FSAA) and Sensitive Data Discovery Auditing scans of Azure Files.
 
 See the [Azure Files Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/azurefiles.md) topic for additional information.
@@ -155,3 +159,5 @@ Discovery Auditing only:
 - Red Hat® Linux® 5.2+
 - HP-UX® 11+
 - SUSE® 10+
+
+See the [Linux Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/linux/overview.md) topic for Linux target environment requirements.

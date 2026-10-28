@@ -1,8 +1,8 @@
-# Infer Single Roles with a Composite Role
+# Infer Single Roles with a Bundle
 
-This guide shows how to assign several single roles via the assignment of one composite role.
+This guide shows how to assign several single roles via the assignment of one bundle.
 
-It is possible to infer SingleRoles with [Composite Role](../../../integration-guide/toolkit/xml-configuration/provisioning/compositerole). The SingleRole can only be inferred by the CompositeRole if both the CompositeRole and SingleRole rules are verified.
+It is possible to infer SingleRoles with [Bundle](../../../integration-guide/toolkit/xml-configuration/provisioning/compositerole). The SingleRole can only be inferred by the CompositeRole if both the CompositeRole and SingleRole rules are verified.
 
 ## Create a Dimension
 
@@ -14,7 +14,7 @@ For the different examples of restrictions, the filters will be based on the Ent
   <Dimension Identifier="Organization0" DisplayName_L1="Department" DisplayName_L2="Departement" EntityType="Directory_Organization" ColumnMapping="0" IsHierarchical="true" ParentProperty="Parent" />  <Dimension Identifier="Title0" DisplayName_L1="Title" DisplayName_L2="Fonction" EntityType="Directory_Title" ColumnMapping="1" />
 ```
 
-## Create a Composite Role
+## Create a Bundle
 
 A CompositeRole is created in the same way as a SingleRole.
 
@@ -22,9 +22,9 @@ A CompositeRole is created in the same way as a SingleRole.
 **<CompositeRole Identifier="FCT0711" DisplayName_L1="Developer" DisplayName_L2="Developpeur" ApprovalWorkflowType="Two" EntityType="Directory_User" Policy="Default" />**
 ```
 
-## Assign the Composite Role Based on the Dimension
+## Assign the Bundle Based on the Dimension
 
-This step is optional for our simple purpose of inferring single roles with a composite role. The composite role can be linked to a dimension, but it does not have to.
+This step is optional for our simple purpose of inferring single roles with a bundle. The bundle can be linked to a dimension, but it doesn't have to.
 
 The CompositeRoleRule can be limited with the use of dimensions.
 
@@ -32,7 +32,7 @@ The CompositeRoleRule can be limited with the use of dimensions.
 **<CompositeRoleRule Role="FCT0720" D1="FCT0720" Policy="Default" />**
 ```
 
-## Assign Single Roles Based on the Composite Role
+## Assign Single Roles Based on the Bundle
 
 The link between a SingleRole and a CompositeRole is made in the SingleRoleRule.
 

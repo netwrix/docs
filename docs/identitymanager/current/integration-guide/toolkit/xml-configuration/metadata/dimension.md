@@ -4,7 +4,7 @@ description: ""
 sidebar_position: 3
 ---
 
-A dimension is an [Entity Type](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype) used to define an organizational filter for the Identity Manager role model.
+A dimension is an [Entity Type](entitytype) used to define an organizational filter for the Identity Manager role model.
 
 
 ## Examples
@@ -38,6 +38,6 @@ The attribute `ParentProperty` specifies the navigational property defining the 
 | DisplayName_L1 optional | **Type:** String **Description:** Display name of the dimension in language 1 (up to 16). |
 | EntityType required | **Type:** Int64 **Description:** References the linked entity type. |
 | Identifier required | **Type:** String **Description:** Unique identifier of the dimension. |
-| IsExcludedFromRoleMining <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to exclude the dimension from role mining. It means that the dimension is not used as a criteria in the generated rules. |
-| IsHierarchical <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to define a hierarchical dimension. **Note:** Cannot be used without `ParentProperty`. |
+| IsExcludedFromRoleMining <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to exclude the dimension from role mining. It means that the dimension isn't used as a criteria in the generated rules. |
+| IsHierarchical <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to define a hierarchical dimension. **Note:** Can't be used without `ParentProperty`. |
 | ParentProperty optional | **Type:** Int64 **Description:** Specifies the navigational property defining the hierarchy. |

@@ -12,18 +12,18 @@ The creation of the role catalog is a time-consuming part, with an important wor
 
 ## Overview
 
-The aim here is to establish and create the exhaustive list of [Role Models](../../../integration-guide/role-model) needed by the organization. Roles are a way to represent entitlements which are assigned to identities, so that said identities are able to work with the managed systems.
+The aim here is to establish and create the exhaustive list of [Role Models](../../../integration-guide/role-model) needed by the organization. Roles are a way to represent entitlements which are assigned to identities, so that said identities can work with the managed systems.
 
 ![Schema - Single Role](/images/identitymanager/singlerolescatalog_schemarole.webp)
 
-In other words, establishing the role catalog aims to list exhaustively and explicitly all the roles in the organization, hiding the technical complexity of entitlements behind the business vision of user-friendly names and categories, in order to:
+In other words, establishing the role catalog aims to list exhaustively and explicitly all the roles in the organization, hiding the technical complexity of entitlements behind the business vision of user-friendly names and categories, to:
 
 - assign roles to users, by requesting them manually, or using rules that assign roles automatically
 based on users' attributes;
 - simplify the implementation of Segregation of Duties (SoD);
 - simplify the implementation and execution of access certification campaigns.
 
-Roles are not chosen at random as they must correspond to the way entitlements were modeled during connector modeling.
+Roles aren't chosen at random as they must correspond to the way entitlements were modeled during connector modeling.
 
 ### Technical Principles
 
@@ -39,12 +39,12 @@ Identity Manager's roles are all built the same way. Technically speaking:
 
 - roles need to be structured so categories are created to:
 
-    - represent groups of roles that follow the same validation process with the same validator(s);
+    - represent groups of roles that follow the same validation process with the same validators;
     - help users find intuitively the entitlement that they are looking for.
 
 NETWRIX recommends creating one category per application, as this method often fulfills both requirements.
 
-Then single roles can be grouped together through [Composite Roles](../../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) for applicative purposes, allowing users to be assigned several entitlements simultaneously. Leave composite roles for later, when the system runs as is and would benefit from an additional layer in the role model.
+Then single roles can be grouped together through [Bundles](../../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) for applicative purposes, allowing users to be assigned several entitlements simultaneously. Leave bundles for later, when the system runs as is and would benefit from an additional layer in the role model.
 
     > This role is part of the previously created `Internet` category.
 
@@ -125,7 +125,7 @@ Then, the solution is to add information inside the managed system, creating a s
 
 Thus, the needed information is added to the managed system. After the execution of synchronization, said data is accessible inside Identity Manager database and can be used as a naming convention.
 
-In some cases, integrators are not allowed to create/modify fields in the external systems. Then, the information can be added on Identity Manager side only. As the new field doesn't exist in the external systems, it can't be overwritten.
+In some cases, integrators aren't allowed to create/modify fields in the external systems. Then, the information can be added on Identity Manager side only. As the new field doesn't exist in the external systems, it can't be overwritten.
 
 ### Automation of role creation
 
@@ -133,7 +133,7 @@ The UI provides tools to create single roles manually, working top-down from abs
 
 ![Schema - Role Creation Top-Down](/images/identitymanager/singlerolescatalog_schematopdown.webp)
 
-Roles can also be created bottom-up via role naming rules. Instead of the previous process, you can use the name of said entitlement in your managed system to create automatically the corresponding single role and rule (and category if it does not already exist). In other words, Identity Manager's naming rules are to be based on your existing naming conventions for entitlements. See the [Create Roles in Bulk](../../../user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation) topic for additional information.
+Roles can also be created bottom-up via role naming rules. Instead of the previous process, you can use the name of said entitlement in your managed system to create automatically the corresponding single role and rule (and category if it doesn't already exist). In other words, Identity Manager's naming rules are to be based on your existing naming conventions for entitlements. See the [Create Roles in Bulk](../../../user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation) topic for additional information.
 
 ![Schema - Role Creation Top-Down](/images/identitymanager/singlerolescatalog_schemabottomup.webp)
 
@@ -155,12 +155,12 @@ Create the single role catalog by proceeding as follows:
 
 1. Create as many single roles as possible (with their navigation rules and categories) via the [Create Roles in Bulk](../../../user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation) naming rules.
 2. Complete the role catalog if needed by creating manually additional [Create a Category](../../../user-guide/set-up/single-roles-catalog-creation/category-creation) and single roles with their navigation rules.
-3. Add [Create a Composite Role](../../../user-guide/optimize/composite-role-creation) to the single role catalog only if the project is mature enough. Composite roles are more complex than single roles
-and they are not mandatory.
+3. Add [Create a Bundle](../../../user-guide/optimize/bundle-creation) to the single role catalog only if the project is mature enough. Bundles are more complex than single roles
+and they aren't mandatory.
 
 ## Impact of Modifications
 
-[Perform a Simulation](../../../user-guide/optimize/simulation) are available in order to anticipate the changes induced by a creation/modification/deletion in roles and navigation rules.
+[Perform a Simulation](../../../user-guide/optimize/simulation) are available to anticipate the changes induced by a creation/modification/deletion in roles and navigation rules.
 
 ## Next Steps
 

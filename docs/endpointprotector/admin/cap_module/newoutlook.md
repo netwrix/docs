@@ -73,7 +73,7 @@ Set up a standard Endpoint Protector (EPP) Content Aware Protection (CAP) policy
 Turn off the setting under Content Aware Protection → Deep Packet Inspection called "Block Unsupported Protocols in New Outlook". The EPP add-in makes this setting unnecessary.
 
 :::note
-On macOS, an EPP certificate ensures secure communication between the add-in and the EppClient. Refer to the existing User Manual chapter for [detailed instructions](./deeppacket#dpi-certiﬁcate-on-macos). If you have configured the DPI certificate on macOS, you can ignore this note.
+On macOS, an EPP certificate ensures secure communication between the add-in and the EppClient. Refer to the existing User Manual chapter for [detailed instructions](./deeppacket#dpi-certificate-on-macos). If you have configured the DPI certificate on macOS, you can ignore this note.
 :::
 
 ## Pre-configuring add-in (manifest.xml)

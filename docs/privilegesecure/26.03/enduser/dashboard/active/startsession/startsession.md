@@ -1,28 +1,37 @@
 ---
 title: "Start Activity Session"
-description: "Start Activity Session"
+description: "Start an activity session from the Active dashboard, copy or view the session password, and extend a running session."
+keywords:
+  - Active Sessions dashboard
+  - Connection icon
+  - View Password
+  - Copy to Clipboard
+  - session extension
+  - RDP
+  - SSH
+  - DirectConnect
 sidebar_position: 20
 ---
 
 # Start Activity Session
 
 On the Active Sessions dashboard, when the status Available is shown, the activity session is ready.
-To begin the activity session, click the Connection icon in the Status column for the applicable
+To begin the activity session, click the **Connection** icon in the **Status** column for the applicable
 session to be automatically connected to the resource.
 
-![Connecto to remote session](/images/privilegesecure/26.03/accessmanagement/enduser/dashboard/remotesessionlaunch.webp)
+![Connect to remote session](/images/privilegesecure/26.03/accessmanagement/enduser/dashboard/remotesessionlaunch.webp)
 
 Also note the icons to view and copy the password for the session as plain text, if the option is
 enabled in the access policy Connection Profiles.
 
-- Copy to Clipboard icon — Click to copy the password for the session as plain text. For
-resource–based activities for end users, this is only available if enabled in the activity's
-Access Policy. The password can always be viewed for credential–based activities.
-- View Password icon — Click to view the password for the session as plain text. For resource–based
-activities for end users, this is only available if enabled in the activity's Access Policy. The
-password can always be viewed for credential–based activities. To view a password, select the Eye
-icon. Users have 20 seconds to view the password or copy it.
-- Connection icon — Click the icon to begin the activity session.
+- **Copy to Clipboard icon** — Click to copy the password for the session as plain text. For
+  resource–based activities for end users, this is only available if enabled in the activity's
+  Access Policy. The password can always be viewed for credential–based activities.
+- **View Password icon** — Click to view the password for the session as plain text. For resource–based
+  activities for end users, this is only available if enabled in the activity's Access Policy. The
+  password can always be viewed for credential–based activities. To view a password, select the **Eye**
+  icon. Users have 20 seconds to view the password or copy it.
+- **Connection icon** — Click the icon to begin the activity session.
 
 Alternatively, configure any RDP / SSH Manager for remote login, including:
 
@@ -34,7 +43,7 @@ Alternatively, configure any RDP / SSH Manager for remote login, including:
 See the [Configure DirectConnect for Remote Desktop Connection](/docs/privilegesecure/26.03/enduser/dashboard/active/startsession/rdcmanager.md) topic
 for additional information.
 
-## Session Extension
+## Session extension
 
 Each session will remain active for a pre-configured amount of time based on the Connection Profile
 being used with the Access Policy. Session extension options can be configured in the connection
@@ -47,11 +56,10 @@ time is 5 minutes or less.
 For NPS users with the Administrator role, session extension is always enabled.
 :::
 
-
 ![Extend Activity Session](/images/privilegesecure/26.03/accessmanagement/enduser/dashboard/extendsession.webp)
 
 For RDP, a pop-up message displays in the session window.
 
-![extendsessionssh](/images/privilegesecure/26.03/accessmanagement/enduser/dashboard/extendsessionssh.webp)
+![SSH session prompt to extend the session](/images/privilegesecure/26.03/accessmanagement/enduser/dashboard/extendsessionssh.webp)
 
 For SSH the user can extend by typing **Ctrl+X** when prompted.

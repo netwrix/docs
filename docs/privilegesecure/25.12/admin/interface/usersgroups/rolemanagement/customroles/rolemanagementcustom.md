@@ -1,37 +1,39 @@
 ---
 title: "Custom Roles"
-description: "Custom roles management"
+description: "Create a custom access, credential, or auditor role in Role Management by entering a name, description, and target type."
+keywords:
+  - Add Role
+  - custom role
+  - Role Management
+  - Access policies
+  - Credentials
+  - Auditors
 sidebar_position: 10
 ---
 
-# Add Custom Role
+# Custom Roles
 
 The Add Role window lets users add a role to Privilege Secure's Users & Groups Role Management
 module.
 
-![usersgroupsaddrolewindow](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/usersgroupsaddrolewindow.png)
+![Add Role window with role name, description, and target fields](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/usersgroupsaddrolewindow.png)
 
 The Add Role window has the following features:
 
-- Enter Role Name — Name that displays to represent the role.
-- Description — A brief summary of the purpose of the role.
-- Target - Select from the dropdown the type of custom role. 
-- Access polices enable a user to see and modify Access policies usually reserved for an Administrator
-- Credentials enables a user to contorl which accounts are managed or unmanged, verify thier credentials, and rotate them. Again, usually this is reverved for Admins. 
-- Auditors enables additional Auditor roles beyond the built-in Auditor to allow them to see historical sessions of a different set of users and/or resources.
-- Save button — Saves the new role to the Users & Groups module.
-- Cancel button — Cancels the Add Role process and closes the window.
+- **Enter Role Name** — Name that displays to represent the role.
+- **Description** — A brief summary of the purpose of the role.
+- **Target** — Select from the dropdown the type of custom role.
+  - Access policies enable a user to see and modify Access policies usually reserved for an Administrator
+  - Credentials enables a user to control which accounts are managed or unmanaged, verify their credentials, and rotate them. Again, this usually belongs to Admins.
+  - Auditors enables additional Auditor roles beyond the built-in Auditor to allow them to see historical sessions of a different set of users and/or resources.
+- **Save button** — Saves the new role to the Users & Groups module.
+- **Cancel button** — Cancels the Add Role process and closes the window.
 
-**Step 1 –** Navigate to the **Users & Groups** > **Role Management** page.
+1. Navigate to the **Users & Groups** > **Role Management** page.
+2. Click the **Add Role** button.
+3. Enter a Role Name.
+4. (Optional) Add a description.
+5. Select the custom role type from the dropdown list.
+6. Click the **Save** button.
 
-**Step 2 –** Click the **Add Role** button.
-
-**Step 3 –** Enter a Role Name.
-
-**Step 4 –** (Optional) Add a description.
-
-**Step 5 –** Select the custom role type from the dropdown list. 
-
-**Step 5 –** Click the **Save** button.
-
-Once saved, the next step is to assign permissions and users to this role. 
+Once saved, the next step is to assign permissions and users to this role.

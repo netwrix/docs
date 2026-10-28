@@ -1,10 +1,12 @@
 name: Slack notify PR activity
 
 # Posts a Slack message to #docs-gh whenever a PR is created, has a review
-# requested, or is commented on — @-mentioning the CODEOWNERS team(s) that
-# own the changed files. Fork PRs also get a PR comment tagging codeowners,
-# since they otherwise have no other reviewer visibility into who owns the
-# changed area.
+# requested or re-requested, or is commented on — @-mentioning the CODEOWNERS
+# team(s) that own the changed files. Review requests made in the first
+# minutes after the PR opens are GitHub's automatic CODEOWNERS requests and
+# are skipped, since the "PR created" message already notifies those teams.
+# Fork PRs also get a PR comment tagging codeowners, since they otherwise
+# have no other reviewer visibility into who owns the changed area.
 
 on:
   # pull_request_target (not pull_request) so this job has repo secrets and
@@ -58,8 +60,26 @@ jobs:
             echo "number=${{ github.event.issue.number }}" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Skip automatic CODEOWNERS review requests
+        id: auto-request
+        if: github.event_name == 'pull_request_target' && github.event.action == 'review_requested'
+        env:
+          PR_CREATED_AT: ${{ github.event.pull_request.created_at }}
+        run: |
+          # GitHub requests the CODEOWNERS teams as reviewers the moment the
+          # PR opens, firing review_requested alongside opened. Anything later
+          # is a manual request or re-request and should notify.
+          AGE=$(( $(date +%s) - $(date -d "$PR_CREATED_AT" +%s) ))
+          if [ "$AGE" -lt 120 ]; then
+            echo "Review requested ${AGE}s after PR creation — automatic CODEOWNERS request, skipping"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Resolve CODEOWNERS teams for changed files
         id: resolve-teams
+        if: steps.auto-request.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -67,15 +87,21 @@ jobs:
           mapfile -t FILE_ARRAY <<< "$FILES"
           TEAMS=$(node scripts/resolve-codeowners-teams.mjs "${FILE_ARRAY[@]}")
           echo "teams=$TEAMS" >> "$GITHUB_OUTPUT"
+          # Files no CODEOWNERS rule covers are site code, not product docs
+          ADMINS=$(node scripts/resolve-codeowners-teams.mjs --unowned @site-admins "${FILE_ARRAY[@]}")
+          echo "admins=$ADMINS" >> "$GITHUB_OUTPUT"
 
       - name: Build message
         id: build-message
+        if: steps.auto-request.outputs.skip != 'true'
+        env:
+          REVIEWER: ${{ github.event.requested_reviewer.login || github.event.requested_team.name }}
         run: |
           # Build the notification text based on which event/action fired.
           if [ "${{ github.event_name }}" = "pull_request_target" ] && [ "${{ github.event.action }}" = "opened" ]; then
             MESSAGE="PR created: ${{ github.event.pull_request.html_url }}"
           elif [ "${{ github.event_name }}" = "pull_request_target" ] && [ "${{ github.event.action }}" = "review_requested" ]; then
-            MESSAGE="Review requested on PR #${{ steps.pr-info.outputs.number }}: ${{ github.event.pull_request.html_url }}"
+            MESSAGE="Review requested${REVIEWER:+ from $REVIEWER} on PR #${{ steps.pr-info.outputs.number }}: ${{ github.event.pull_request.html_url }}"
           else
             MESSAGE="Comment on PR #${{ steps.pr-info.outputs.number }}: ${{ github.event.comment.html_url }}"
           fi
@@ -98,9 +124,13 @@ jobs:
           gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} --body "Thanks for the contribution! Tagging codeowners for review: $MENTIONS"
 
       - name: Send Slack notification
+        if: steps.auto-request.outputs.skip != 'true'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           NOTIFY_MESSAGE: ${{ steps.build-message.outputs.message }}
           NOTIFY_TEAMS: ${{ steps.resolve-teams.outputs.teams }}
+          NOTIFY_ADMINS: ${{ steps.resolve-teams.outputs.admins }}
         run: |
-          node scripts/notify-slack.mjs --message "$NOTIFY_MESSAGE" --teams "$NOTIFY_TEAMS" || echo "Failed to send Slack notification"
+          # @site-admins is a Slack-only handle, so it is added here rather than
+          # to the teams list the fork-PR comment tags on GitHub.
+          node scripts/notify-slack.mjs --message "$NOTIFY_MESSAGE" --teams "${NOTIFY_TEAMS}${NOTIFY_ADMINS:+,$NOTIFY_ADMINS}" || echo "Failed to send Slack notification"

@@ -9,6 +9,9 @@ import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
+import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects } from './src/config/redirects/privilegesecurediscovery.js';
+import { directoryManager110Redirects } from './src/config/redirects/directorymanager-11.0.js';
+import { privilegeSecure42Redirects } from './src/config/redirects/privilegesecure-4.2.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -93,12 +96,16 @@ const config = {
   // own plugin instance regardless of filtering, so those stay strict to catch
   // real mistakes during single-product iteration.
   onBrokenLinks: targetProduct ? 'warn' : 'throw',
-  onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
 
   // Set Mermaid
   markdown: {
     mermaid: true,
+    // Moved here from the deprecated top-level onBrokenMarkdownLinks option
+    // (removed in Docusaurus v4).
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
     // Strip trailing periods from title/sidebar_label in generated API operation pages.
     // The OpenAPI summaries often end with a period; Docusaurus uses title as the
     // prev/next pagination label, so this cleans up navigation text site-wide.
@@ -191,6 +198,9 @@ const config = {
       {
         redirects: [
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...(activeProductIds.includes('privilegesecurediscovery') ? privilegeSecureDiscoveryRedirects : []),
+          ...(activeProductIds.includes('directorymanager') ? directoryManager110Redirects : []),
+          ...(activeProductIds.includes('privilegesecure') ? privilegeSecure42Redirects : []),
           ...(activeProductIds.includes('changetracker')
             ? [{ from: '/docs/changetracker/componentreleases', to: '/docs/changetracker' }]
             : []),
@@ -214,6 +224,9 @@ const config = {
           }),
         ],
         createRedirects(existingPath) {
+          // Privilege Secure for Discovery dropped its version folder; keep the old 2_22 addresses working.
+          const legacyPaths = privilegeSecureDiscoveryLegacyPaths(existingPath);
+          if (legacyPaths) return legacyPaths;
           for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
             const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
             if (existingPath.startsWith(versionedPrefix)) {

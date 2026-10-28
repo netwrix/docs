@@ -434,14 +434,14 @@ the virtual desktop clone and interact accordingly with the Endpoint Protector c
 
 ![Virtual Desktop Clones](virtualdesktopclones.webp)
 
-## Deep Packet Inspection Certiﬁcate
+## Deep Packet Inspection Certificate
 
 Disable the Deep Packet Inspection certiﬁcate download to require the Endpoint Protector clients to
 use the legacy certiﬁcate. You can also download the **Client CA Certiﬁcate**.
 
 ![Deep Packet Inspection Certiﬁcate ](dpinspectioncert.webp)
 
-## Server Certiﬁcate Stack
+## Server Certificate Stack
 
 Use this section to regenerate a custom server certiﬁcate. Enable the option and then provide the
 following information:
