@@ -38,7 +38,7 @@ The following information is displayed for a domain controller:
   Standard
 - Agent Version – Version of the operating system
 - Backup – Use the toggle button to enable or disable the backup for the domain controller. By
-  default, it is disabled. When you enable it, the Server backup Configuration wizard opens.
+  default, it is disabled. When you enable it, the Server Backup Configuration wizard opens.
   See the
   [Add Backup Configurations for a Domain Controller](#add-backup-configurations-for-a-domain-controller)
   topic to configure backup settings for the domain controller.

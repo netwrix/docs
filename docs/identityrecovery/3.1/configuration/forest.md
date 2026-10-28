@@ -1,11 +1,10 @@
 ---
-title: "Forest Page"
-description: "Forest Page"
-sidebar_label: "Forest Backup Settings"
+title: "Connect a Forest"
+description: "Add an Active Directory forest so that Identity Recovery can back it up and recover it."
 sidebar_position: 50
 ---
 
-# Forest Page
+# Connect a Forest
 
 The Forest page allows administrators to:
 
