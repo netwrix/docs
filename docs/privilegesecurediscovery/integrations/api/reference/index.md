@@ -4,7 +4,7 @@ description: "Browse every documented Netwrix Privilege Secure for Discovery RES
 sidebar_position: 1
 ---
 
-The Netwrix Privilege Secure for Discovery API Reference documents the REST API endpoints that customers use to automate the product. The reference comes from the product's OpenAPI 3.0 specification for release 26.09.1.
+The Netwrix Privilege Secure for Discovery API Reference documents the REST API endpoints that customers use to automate the product. The reference comes from the product's OpenAPI 3.0 specification.
 
 Use this reference to:
 
@@ -35,8 +35,19 @@ Each endpoint states the role that it requires: `superadmin`, `admin`, or `user`
 
 Many list endpoints accept paging, sorting, and the `advanced` query. See [Advanced API reference](/docs/privilegesecurediscovery/integrations/api/advanced-api-reference.md) for the query syntax.
 
+## Use the reference with scripts and coding assistants
+
+The OpenAPI specification is the complete, machine-readable form of this reference. Give it to a coding assistant or a code generator so that the code you generate uses the real endpoints, parameters, and schemas.
+
+- **Specification:** `/openapi/privilegesecurediscovery.yaml` on this site. It's OpenAPI 3.0.3 in YAML.
+- **Server URL:** `https://<server-fqdn>/api/v1`, where `<server-fqdn>` is the fully qualified domain name of your Netwrix Privilege Secure for Discovery server.
+- **Authentication:** send `Authorization: Bearer <access-token>` on every request except the health checks.
+- **Operation IDs:** each operation has a unique `operationId`, such as `listComputers`, that you can use as a function name.
+- **Roles:** each operation description states the required role.
+- **Responses:** each operation lists its error responses. Error bodies come in four shapes, so check the status code before you parse the body.
+
 ## Download the OpenAPI specification
 
 You can download the OpenAPI 3.0 specification (YAML) and import it into API clients, code generators, or testing tools.
 
-[Download the OpenAPI specification](/openapi/privilegesecurediscovery-26.09.1.yaml)
+[Download the OpenAPI specification](/openapi/privilegesecurediscovery.yaml)

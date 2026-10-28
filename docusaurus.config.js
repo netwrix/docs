@@ -278,14 +278,14 @@ const config = {
         docsPluginId: 'privilegesecurediscovery',
         config: {
           'privilegesecurediscovery-api': {
-            specPath: 'static/openapi/privilegesecurediscovery-26.09.1.yaml',
+            specPath: 'static/openapi/privilegesecurediscovery.yaml',
             outputDir: 'docs/privilegesecurediscovery/integrations/api/reference',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
               sidebarCollapsed: true,
             },
-            downloadUrl: '/openapi/privilegesecurediscovery-26.09.1.yaml',
+            downloadUrl: '/openapi/privilegesecurediscovery.yaml',
             version: 'current',
             label: 'Netwrix Privilege Secure for Discovery API',
             baseUrl: '/docs/privilegesecurediscovery/integrations/api/reference/',
