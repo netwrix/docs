@@ -26,4 +26,19 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | InvitationMessageLanguage optional | String | Language of the invitation's message. When not specified, the message is in English. Only used when InvitationMode is set to MicrosoftInvitation. | 
  | InvitationMode default value: None | InvitationMode | Mode of the invitation email sent during the creation of a guest Microsoft Entra ID account. None : nothing is sent. MicrosoftInvitation : an invitation email is sent to another person to initiate the external user's guest account in Microsoft Entra ID according to the related password reset setting (one-way, two-way, etc.). | 
  | InvitationRedirectUrl optional | String | URL that will be displayed in the invitation email. Required when InvitationMode is set to MicrosoftInvitation. | 
- | PasswordResetSetting optional | String | Identifier of the corresponding password reset setting. Required when InvitationMode is set to None and DefaultObjectClass set to users. | 
+ | PasswordResetSetting optional | String | Identifier of the corresponding password reset setting. Required when InvitationMode is set to None and DefaultObjectClass set to users. |
+
+## NavigationProperty
+
+Child element that provisions memberships of a Microsoft Entra ID object, such as groups or directory roles. Valid only in this resource type mapping.
+
+```xml
+<NavigationProperty Property="assignedRoles" AzureADProperty="directoryRoles" />
+```
+
+|Property|Details|
+|---|---|
+| Property required | **Type:** String **Description:** Identifier of the entity property that holds the linked resources. |
+| AzureADProperty required | **Type:** String **Description:** Microsoft Graph collection that contains the linked object, such as `groups` or `directoryRoles`.**Note:** the value isn't validated when the configuration is saved. |
+
+A `Property` with `DataSourceBacklinkColumnName` also provisions memberships, but the property identifier itself is then used as the Microsoft Graph collection. Use `NavigationProperty` when the property identifier differs from the collection name.

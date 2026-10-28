@@ -64,6 +64,10 @@ The entity model should match as closely as possible the structure of the releva
 
 For example, Microsoft Entra ID's Users and Groups can be described by entity types, and group memberships by entity associations.
 
+:::tip
+Describing users and groups with a single entity type, as in the Demo configuration, is recommended but optional. With separate entity types, the group entity type needs a property named like the DN property of the resource type mapping. See the [Microsoft Entra ID](../../../../integration-guide/connectors/references-connectors/microsoftentraid) topic for the constraints on group and role memberships.
+:::
+
 The following example defines an entity type named MicrosoftEntraID_DirectoryObject to match the attributes selected for extraction from the Microsoft Entra ID instance:
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
@@ -303,7 +307,7 @@ Conf/MicrosoftEntraID/MicrosoftEntraID UI.xml
 
 **Permissions**
 
-In order to access the connector, any user must have the right permissions.
+to access the connector, any user must have the right permissions.
 
 The following example sets the permissions to access the Microsoft Entra ID connector and resources for the Administrator profile.
 

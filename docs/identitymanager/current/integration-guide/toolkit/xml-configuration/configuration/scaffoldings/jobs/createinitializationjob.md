@@ -33,7 +33,7 @@ Creates the Initialization Job for the given agent.
 * [NoConnectorProvisioning](#noconnectorprovisioning) (optional) Avoid provisioning for a connector
 * [NoConnectorSynchronization](#noconnectorsynchronization) (optional) Avoid collect for a connector
 * [NotUsed](#notused) (optional) Avoid collect and provisioning for a connector
-* [OpenIdIdentifier](#openididentifier) (optional) Add a Open Id to the job and the tasks
+* [OpenIdIdentifier](#openididentifier) (optional) Add a OpenID to the job and the tasks
 * [PrincipalDataConnector](#principaldataconnector) (optional) Specifies the connector that contains the data for the fulfillment of external systems.
 
 ### AddTask
@@ -91,7 +91,7 @@ Creates the Initialization Job for the given agent.
 
 |Property|Details|
 |---|---|
-| Identifier required | **Type:** String **Description:** Identifier of the OpenId |
+| Identifier required | **Type:** String **Description:** Identifier of the OpenID |
 
 
 

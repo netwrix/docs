@@ -4,13 +4,13 @@ description: ""
 sidebar_position: 6
 ---
 
-An entity type mapping links a given [entity type](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype)'s properties with the source columns of the corresponding managed system. The entity type mapping specifies the related [connector](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/connector) and the path to the CSV source file which contains, or will contain, the data exported from the managed system. Each of its [properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entitytypemapping#child-element-property) will define the corresponding source column and specific options.
+An entity type mapping links a given [entity type](../metadata/entitytype)'s properties with the source columns of the corresponding managed system. The entity type mapping specifies the related [connector](connector) and the path to the CSV source file which contains, or will contain, the data exported from the managed system. Each of its [properties](entitytypemapping#child-element-property) will define the corresponding source column and specific options.
 
 :::info
 An entity type mapping shares the same identifier as its related entity type.
 :::
 
-[See the example of a whole connector containing an entity type mapping](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/connector).
+[See the example of a whole connector containing an entity type mapping](connector).
 
 ## Properties
 
@@ -27,7 +27,7 @@ An entity type mapping shares the same identifier as its related entity type.
 | MaximumUpdatedLines <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Updated lines threshold. Sets the maximum number of resources that can be modified within the entity type when running the synchronization job. |
 
 ## Child Element: Property
-Contains all the [entity properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype#child-element-property) of an [entity type](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype) that can be synchronized into Identity Manager physical model. Each mapping share the same id as its corresponding property in the entity type.
+Contains all the [entity properties](../metadata/entitytype#child-element-property) of an [entity type](../metadata/entitytype) that can be synchronized into Identity Manager physical model. Each mapping share the same id as its corresponding property in the entity type.
 
 ### Properties
 

@@ -1,16 +1,19 @@
 ---
-title: "Authorization Groups Feature"
-description: "Overview of the Authorization Groups feature in Privilege Secure Discovery (NPS-D), including how to enable it, configure it, and understand its behavior and limitations."
-sidebar_label: "Authorization Groups Feature"
+title: "Configuring the Authorization Groups Feature"
+description: "Enable and configure the Authorization Groups feature to protect service accounts, and understand its resulting behavior and limitations."
+sidebar_label: "Configuring the Authorization Groups Feature"
 keywords:
 - Authorization Groups
+- Authorization Group(s)
 - NPS-D
-- Privilege Secure Discovery
+- SecureONE
+- Remediant SecureONE
 - service_account_group_strategy
 - release toggles
+- Group Account
+- service account protection
 - Protect Mode
-- SecureONE
-- migration
+- Domain Configuration
 products:
 - privilegesecurediscovery
 tags:
@@ -18,30 +21,31 @@ tags:
 - authentication-and-access
 ---
 
-# Authorization Groups Feature
-
 ## Overview
 
-The **Authorization Group(s)** feature is available in the UI and was introduced in version **2.20.5**.
+The **Authorization Group(s)** feature protects service accounts by granting persistent access to the members of the groups you specify. The feature is available in the UI. It depends on a database migration named `service_account_group_strategy` (Service Account Authorization Strategy). After the migration is applied during an upgrade, a database toggle must be enabled before you can use the feature.
 
-It is associated with migration **47**:
-- **Name:** `service_account_group_strategy`
-- **Description:** Service Account Authorization Strategy
-
-This feature requires a database toggle to be enabled after the migration is applied during an upgrade.
-
-![Authorization Groups feature in the UI](../0-images/authorization-groups-overview.png)
+> **IMPORTANT:** This feature grants full access to all members of the groups you add. It is designed for service account protection scenarios only. Misuse can unintentionally grant broad access, so validate the group list before you save it.
 
 ## Instructions
 
 ### Enable the Feature
 
-1. Verify migration status:
+> **IMPORTANT:** This procedure changes data in the database. Back up the database before you continue.
+
+1. Verify the migration status:
+
    ```bash
    s1 migrate status
    ```
 
-2. If migration 47 is present but the feature is not enabled, connect to the database via CLI and run:
+2. If the `service_account_group_strategy` migration is present but the feature is not enabled, open the database shell:
+
+   ```bash
+   s1 db
+   ```
+
+3. Run the following command:
 
    ```javascript
    db.release_toggles.updateOne(
@@ -53,67 +57,23 @@ This feature requires a database toggle to be enabled after the migration is app
 
 ### Configure the Feature
 
-1. Set **Authorization Strategy** to `Group Account`.
-2. Add groups to the **Authorization Group(s)** field.
-3. Click **Save** under Domain Configuration.
+1. Log in to the UI with an Active Directory (AD) account.
+2. Go to **Configure** > **Server**.
+3. Expand **Domain Configuration**.
+4. Set **Authorization Strategy** to `Group Account`.
+5. Add the groups to the **Authorization Group(s)** field. To add several groups at once, paste a list with one group per line in the format `DOMAIN\GroupName`.
+6. Scroll down and click **Save**.
 
 ## Resulting Behavior
 
-After systems are refreshed or rescanned:
+After the systems are refreshed or rescanned:
 
-* Groups are set to:
-  * `onSystem = True`
-  * `Persistent = True`
-* In the UI:
-  * The **Action** button is removed.
-  * No modifications can be made by users or admins.
-* Account type is set to **SecureONE** (service account).
-
-> **WARNING:** This effectively grants **full access to all members of the group**. This feature is designed for service account protection scenarios only — misuse can unintentionally grant broad access. Use with caution and proper validation.
+- The groups are marked as persistent on the system.
+- In the UI, the **Action** button is removed, and users and administrators cannot modify the groups.
+- The account type is set to the service account type.
 
 ## Known Limitations
 
-This feature is being used beyond its original design, so the full extent of limitations remains unknown. Current unknowns:
-
-* Maximum number of groups supported
-* Behavior may vary depending on system refresh or rescan
-* Locks configuration, preventing further UI changes
-
-### Verify the Configuration
-
-#### Group and Account Update Steps
-
-1. Log in to the UI using an AD account.
-2. Navigate to:
-
-   ```
-   Configure → Server
-   ```
-3. Expand **Domain Configuration**.
-4. Ensure:
-
-   ```
-   Authorization Strategy = Group Account
-   ```
-
-#### Bulk Group Testing
-
-Groups can be added in batches using the format:
-
-```
-DOMAIN\GroupName
-```
-
-Tested batch sizes:
-
-* 30 groups
-* 60 groups
-* 90 groups
-* 200 groups
-
-To add a batch:
-
-1. Copy the group list from a text editor.
-2. Paste into the **Authorization Group(s)** field.
-3. Scroll down.
-4. Click **Save**.
+- The maximum number of groups that the feature supports is not defined.
+- The behavior can vary depending on system refresh or rescan.
+- The feature locks the configuration, which prevents further changes in the UI.

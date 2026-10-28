@@ -17,7 +17,7 @@ The Introduction Guide introduced the role model and how it influences assigning
 3. Identity Manager uses a [role-based](https://en.wikipedia.org/wiki/Role-based_access_control)
 assignment policy to grant entitlements to identities, i.e. granting a role entails granting entitlements.
 4. The role model is first a catalog of available roles
-([Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole) and [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole)), identified by meaningful names aimed at non-technical end-users. These roles represent status of trust and privileges, to be assigned to identities, manually or automatically.
+([Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole) and [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole)), identified by meaningful names aimed at non-technical end-users. These roles represent status of trust and privileges, to be assigned to identities, manually or automatically.
 5. The role model is also a set of rules aiming at assign automatically roles to identities, based
 on relevant criteria, namely [Dimension](../../integration-guide/toolkit/xml-configuration/metadata/dimension).
 6. The role model classifies resources by security concerns thanks to resource types.
@@ -26,13 +26,13 @@ identity.
 8. The role model contains provisioning rules describing if and how target resources and their
 values should be computed from source resource values.
 
-Resource types, single roles and composite roles can be grouped into [Category](../../integration-guide/toolkit/xml-configuration/provisioning/category). They are used in the UI to organize the Roles catalog display. Categories are organized in a hierarchical tree structure.
+Resource types, single roles and bundles can be grouped into [Category](../../integration-guide/toolkit/xml-configuration/provisioning/category). They are used in the UI to organize the Roles catalog display. Categories are organized in a hierarchical tree structure.
 
 ### Policy
 
 A [Policy](../../integration-guide/toolkit/xml-configuration/provisioning/policy) is a set of assignment rules. At least one policy must be declared.
 
-All resource types, single roles and composite roles and categories belong to a policy.
+All resource types, single roles and bundles and categories belong to a policy.
 
 ## Dimensions And Contexts
 
@@ -87,9 +87,9 @@ Everyone in the team needs to access the Internet to do research and send e-mail
 
 Aerodynamics engineers need to access remote high-performance computation servers specifically designed to solve aerodynamics equations. The sensitive nature of the data sent to those servers, plus the availability constraints, require restricting access to engineers that absolutely need it to perform their daily tasks. That's another responsibility, that can be translated to a single role `Aerodynamics Computation Server` for example, that grants access to those servers.
 
-Structure engineers, on the other hand, do not perform such heavy computations and do not need access to the aerodynamics computation server. They can work locally, performing computations on their own workstation. They're not assigned the `Aerodynamics Computation Server` role.
+Structure engineers, on the other hand, don't perform such heavy computations and don't need access to the aerodynamics computation server. They can work locally, performing computations on their own workstation. They're not assigned the `Aerodynamics Computation Server` role.
 
-Quality control agents need access to sensitive information such as accident reports, on the internal data server named `data0`. Those highly sensitive privileges are not assigned to everyone. They can be translated to the `Data Server data0` role.
+Quality control agents need access to sensitive information such as accident reports, on the internal data server named `data0`. Those highly sensitive privileges aren't assigned to everyone. They can be translated to the `Data Server data0` role.
 
 The project manager needs access to the `data0` and `data1` servers with client contracts. The `Data Server data0` and `Data Server data1` roles translate those responsibilities.
 
@@ -118,13 +118,13 @@ Let's consider the `Internet Access` defined at step 1.
 
 In practice, Contoso Corporation authorizes or block a user Internet access by setting per-user outbound policies on their network firewall. The firewall integrates with Active Directory which make it possible to use Active Directory groups membership to enable or disable policies for a user.
 
-A security officer, to grant Internet access to an employee, would in practice assign a `Internet Access` group membership to their Active Directory account. That is a fine-grained entitlement entailed by the assignment of the `Internet Access` single role. That means that, to be able to grant or restrict Internet access, the link between an identity and their Active Directory account, used to login to work, must be known.
+A security officer, to grant Internet access to an employee, would in practice assign a `Internet Access` group membership to their Active Directory account. That is a fine-grained entitlement entailed by the assignment of the `Internet Access` single role. That means that, to be able to grant or restrict Internet access, the link between an identity and their Active Directory account, used to log in to work, must be known.
 
 To modelize that need within the role model, every identity with `Internet Access` single role is associated with an Active Directory account. We can find the Active Directory for an identity by comparing the identity email with the Active Directory entry e-mail. That's an example of [Resource Correlation Rule](../../integration-guide/toolkit/xml-configuration/provisioning/resourcecorrelationrule) that define the ownership of an Active Directory entry resource by an identity resource.
 
 ### 3. Write assignment rules
 
-[Single Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule) describe criteria for which a [Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole) is assigned to a resource. The main criterion is a dimension value. For a given resource, the single role is assigned if the resource's context matches the given dimension value. The second criterion is the assignment of a specific [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) (see further).
+[Single Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule) describe criteria for which a [Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole) is assigned to a resource. The main criterion is a dimension value. For a given resource, the single role is assigned if the resource's context matches the given dimension value. The second criterion is the assignment of a specific [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) (see further).
 
 A navigation rule describes a fine-grained entitlement in the form of resource association such as a group membership. Its enforcement is also conditioned by a single role assignment to the relevant source resource, which in turn materializes the link between a single role and a resource type.
 
@@ -136,11 +136,11 @@ The need for aerodynamics engineers to access the remote computation server is t
 
 The need for assignment of the `Internet Access` group to the Active Directory account, if the identity is assigned the `Internet Access` single role is modeled by a navigation rule that stipulates that if that identity is assigned that role, then the `memberOf` property of the owned Active Directory entry resource should be set to the AD group named `Internet Access`.
 
-### 4. Use Composite Roles To Organize Single Roles (optional)
+### 4. Use Bundles To Organize Single Roles (optional)
 
-[Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole) can be packaged into [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole). Assigning a composite role to an identity immediately assigns the packaged single role to that identity. Single roles assigned this way are said to be inferred.
+[Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole) can be packaged into [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole). Assigning a bundle to an identity immediately assigns the packaged single role to that identity. Single roles assigned this way are said to be inferred.
 
-The [Composite Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule) (see composite role rules describe criteria for which a composite role is assigned to an identity. Then, the composite role can be used as a condition in a [Single Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule). This is how packages are built.
+The [Bundle Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule) (see bundle rules describe criteria for which a bundle is assigned to an identity. Then, the bundle can be used as a condition in a [Single Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule). This is how packages are built.
 
 ### Summary - A mental model to help build a role model
 

@@ -36,8 +36,8 @@ The Activity Monitor output sends three kinds of events: File System, SharePoint
 
 Activity data shows up in three places. Only the dashboard includes SharePoint Online and Copilot events; the two reports cover file server activity.
 
-- The [Data security dashboard](../dashboards-reports/dashboards/data-security.md) has an **Activity** tab with the tiles **Total Events**, **Failed Events**, **Active Users**, and **Data Sources with Activity**; the charts **Events by Type**, **Activity Over Time**, **Events by Data Source**, and **Top Users by Activity**; and an **Activity Detail** table. Filter it by **Start Date**, **End Date**, **Event Type**, **Activity Source**, **User**, and **Event Status**.
-- The **Activity Investigation** report under [Data reports](../dashboards-reports/reports/data.md). Every framework under [Compliance reports](../dashboards-reports/reports/compliance.md) includes it too.
+- The [Data security dashboard](../admin/dashboards-reports/dashboards/data-security.md) has an **Activity** tab with the tiles **Total Events**, **Failed Events**, **Active Users**, and **Data Sources with Activity**; the charts **Events by Type**, **Activity Over Time**, **Events by Data Source**, and **Top Users by Activity**; and an **Activity Detail** table. Filter it by **Start Date**, **End Date**, **Event Type**, **Activity Source**, **User**, and **Event Status**.
+- The **Activity Investigation** report under [Data reports](../admin/dashboards-reports/reports/data.md). Every framework under [Compliance reports](../admin/dashboards-reports/reports/compliance.md) includes it too.
 - The **Share Audit** report, also under Data reports, draws on file server activity in its **Activity** tab, in the **Probable Owner** card on the **Overview** tab, and in the **Users by Activity on Sensitive Files** chart on the **Sensitive Data** tab.
 
 Until an enrolled agent sends events, every card on the **Activity** tab reads **No results!**.
@@ -49,27 +49,24 @@ Until an enrolled agent sends events, every card on the **Activity** tab reads *
 - **Activity Monitor version.** Netwrix Activity Monitor 10.0 with an output of type **Access Analyzer 26**. The [Activity Monitor documentation](/docs/activitymonitor/10_0/admin/outputs/accessanalyzer26) covers adding and editing that output.
 - **Network path.** The host running the Activity Monitor agent must reach the Access Analyzer server on TCP port 4504. Open that port inbound on the server's firewall and on anything between the two hosts.
 - **TLS certificate.** The Access Analyzer listener on port 4504 presents the same TLS certificate as the web interface, the one you supplied when you [installed Access Analyzer](../install/run-the-installer.md). The connection uses TLS 1.3. If the certificate has expired, the listener doesn't start and agents can't connect.
-- **Admin role.** Only an Admin sees the **Enrollment token** panel, generates tokens, and changes the connection settings. A Viewer can see the connection settings but not change them. See [Users and roles](../settings/users.md).
+- **Admin role.** Only an Admin sees the **Activity Monitor** tab in Settings, where you generate tokens and change the connection settings. See [Users and roles](../admin/users.md).
 
 ## Generate an Enrollment Token
 
 1. Sign in to Access Analyzer as an Admin.
-2. Go to **Settings > Application**.
-3. Scroll to the **Netwrix Activity Monitor** card. The **Enrollment token** panel is at the bottom of the card, below the four connection settings.
-4. Click **Generate token**. If a token already exists, the button reads **Generate new token** instead.
-5. Click the **Copy** icon next to the token. The message **Token copied to clipboard** confirms it.
-
-![Application settings tab showing the Classification and Netwrix Activity Monitor cards and the Enrollment token panel](/images/accessanalyzer/26.1/settings/application-full.webp)
+2. Go to **Settings > Activity Monitor**. The **Enrollment token** panel is at the top of the tab.
+3. Click **Generate enrollment token**. If a token already exists, the button reads **Generate new enrollment token** instead.
+4. Click the **Copy** icon next to the token. The message **Token copied to clipboard** confirms it.
 
 The panel shows the token in a read-only field with an **Expires** line under it. Three things about the token matter when you plan an enrollment session:
 
 - It's valid for one hour, so generate it right before you start enrolling. After an hour Access Analyzer rejects it and you generate a new one.
-- Generating a new token invalidates any earlier token. Only the newest token works. Don't click **Generate new token** while a colleague is still enrolling with the previous one.
+- Generating a new token invalidates any earlier token. Only the newest token works. Don't click **Generate new enrollment token** while a colleague is still enrolling with the previous one.
 - One token can enroll several agents. The first enrollment doesn't consume it. If you have five Activity Monitor agents to connect, generate one token and use it for all five within the hour.
 
 For example, a token generated at 09:00 expires at 10:00. Between those times you can enroll as many agents as you like with it. At 09:30, if you generate another token, the 09:00 token stops working immediately, even though it hasn't reached its expiry time.
 
-If the panel is disabled, the port 4504 listener has no TLS certificate and Access Analyzer can't issue a token. The panel shows **NAM listener certificate isn't configured on this server.** NAM is short for Netwrix Activity Monitor. The listener uses the certificate you supplied at installation; see [Troubleshooting](#troubleshooting).
+If the panel is disabled, the port 4504 listener has no TLS certificate and Access Analyzer can't issue a token. The panel shows **NAM listener certificate is not configured on this server.** NAM is short for Netwrix Activity Monitor. The listener uses the certificate you supplied at installation; see [Troubleshooting](#troubleshooting).
 
 ## Enroll the Activity Monitor Agent
 
@@ -95,16 +92,16 @@ Access Analyzer treats an agent that connects with an unrecognized certificate a
 
 ## Connection Settings
 
-The four settings in the **Netwrix Activity Monitor** card on **Settings > Application** tune how the listener treats agent connections. The defaults suit most environments. Each row shows its setting key, with the allowed range under the field. To change a value, edit it and click **Save changes** in the bar that appears at the bottom of the page. Changes apply to new connections without a restart. [Application settings](../settings/application.md) describes how the settings page itself behaves, including the **Overridden** badge and the reset-to-default control.
+Four settings tune how the listener treats agent connections. The defaults suit most environments. To change a value, go to **Settings > Activity Monitor**, click **Settings** at the top of the tab to open the **Activity Monitor settings** dialog, edit the value, and click **Save**. Changes apply to new connections without a restart. The dialog lays out each setting the same way as the Application tab, including the **Overridden** badge and the reset-to-default control; see [Application settings](../configuration/settings/application.md).
 
 | Setting | Default | Range | What it controls |
 |---|---|---|---|
-| `activitymonitor_connection_timeout` | 900 | 5–3600 | Seconds of inactivity before Access Analyzer drops an idle Activity Monitor agent. |
-| `activitymonitor_enrollment_ban_duration_seconds` | 10 | 5–300 | Seconds to ban a source IP after it presents an invalid enrollment code (the code is the part of the token the agent sends). |
-| `activitymonitor_enrollment_first_message_timeout_seconds` | 10 | 5–60 | Seconds to wait for the first message from a newly connected Activity Monitor agent. |
-| `activitymonitor_max_message_size` | 16777216 | 65536–67108864 | Maximum size in bytes of a single Activity Monitor message (default 16 MB). |
+| **Connection timeout (seconds)** | 900 | 5–3600 | Seconds of inactivity before Access Analyzer drops an idle Activity Monitor agent. |
+| **Enrollment ban duration (seconds)** | 10 | 5–300 | Seconds to ban a source IP after it presents an invalid enrollment code (the code is the part of the token the agent sends). |
+| **Enrollment first-message timeout (seconds)** | 10 | 5–60 | Seconds to wait for the first message from a newly connected Activity Monitor agent. |
+| **Maximum message size (bytes)** | 16777216 | 65536–67108864 | Maximum size in bytes of a single Activity Monitor message (default 16 MB). |
 
-For example, with the default `activitymonitor_connection_timeout` of 900, Access Analyzer disconnects an agent that sends nothing for 15 minutes. Raise it to 3600 to keep a quiet agent connected for up to an hour.
+For example, with the default **Connection timeout (seconds)** of 900, Access Analyzer disconnects an agent that sends nothing for 15 minutes. Raise it to 3600 to keep a quiet agent connected for up to an hour.
 
 ## Troubleshooting
 
@@ -114,7 +111,7 @@ The listener writes to the application logs.
 2. In **Component**, select `nam-listener`.
 3. Set **From** and **To** to the window in which you tried to enroll.
 
-The [System logs](../settings/system-logs.md) page explains the filters and the **Log details** drawer.
+The [System logs](../configuration/settings/system-logs.md) page explains the filters and the **Log details** drawer.
 
 The listener logs these messages:
 
@@ -130,7 +127,7 @@ Match the symptom to its likely cause:
 | Symptom | Likely cause | What to do |
 |---|---|---|
 | **Enroll** fails and nothing appears in the logs for that time | TCP port 4504 is blocked between the agent host and the Access Analyzer server. | Open the port on the server's firewall and any firewall in between. Confirm the agent host can resolve the server name you entered. |
-| **Enroll** fails even though the agent reaches the server | The token is more than an hour old, or someone clicked **Generate new token** after you copied it. | Generate a new token and enroll again. After a rejected token, Access Analyzer ignores connections from that agent's IP address for `activitymonitor_enrollment_ban_duration_seconds` (10 seconds by default), so wait before retrying. |
+| **Enroll** fails even though the agent reaches the server | The token is more than an hour old, or someone clicked **Generate new enrollment token** after you copied it. | Generate a new token and enroll again. After a rejected token, Access Analyzer ignores connections from that agent's IP address for **Enrollment ban duration (seconds)** (10 seconds by default), so wait before retrying. |
 | Every agent stopped sending data at the same time | The listener is no longer running because the Access Analyzer TLS certificate has expired, or someone replaced the certificate with one that uses a different key pair, so enrolled agents no longer recognize the server. | Check **Settings > System logs** for `nam listener: bound` after the last restart. If the certificate has expired, renew it; see [Install Access Analyzer](../install/run-the-installer.md). If someone replaced it with a different key pair, generate a new token and enroll each agent again. |
 | One agent stopped sending data after a change on its host | The agent's certificate changed. | Enroll that agent again. |
-| The **Enrollment token** panel is disabled with **NAM listener certificate isn't configured on this server.** | The listener has no TLS certificate to present, so Access Analyzer can't issue tokens. | The listener uses the certificate supplied during installation. Confirm the installation completed with a valid certificate and key; see [Install Access Analyzer](../install/run-the-installer.md). |
+| The **Enrollment token** panel is disabled with **NAM listener certificate is not configured on this server.** | The listener has no TLS certificate to present, so Access Analyzer can't issue tokens. | The listener uses the certificate supplied during installation. Confirm the installation completed with a valid certificate and key; see [Install Access Analyzer](../install/run-the-installer.md). |

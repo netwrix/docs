@@ -4,7 +4,7 @@ description: "Applies the role naming rules, i.e. generates single roles and nav
 sidebar_position: 1
 ---
 
-Applies the [role mappings](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/rolemapping), also named [role naming rules](/docs/identitymanager/current/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation), i.e. generates single roles and navigation rules based on resources matching a given pattern.
+Applies the [role mappings](../../../provisioning/rolemapping), also named [role naming rules](../../../../../../user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation), i.e. generates single roles and navigation rules based on resources matching a given pattern.
 
 > For example, this task can transform AD groups with a special naming convention into roles.
 

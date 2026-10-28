@@ -12,7 +12,7 @@ A rollback changes your database schema. The database setup job (`db-seeds`) run
 
 ## Before You Roll Back
 
-1. **Confirm the last upgrade finished cleanly.** If an earlier upgrade failed partway through its database migrations, the schema is marked dirty and `db-seeds` refuses to roll back. Fix that failure first, or contact Netwrix Support.
+1. **Confirm the last upgrade finished cleanly.** If an earlier upgrade failed partway through its database migrations, `db-seeds` treats the schema as dirty and refuses to roll back. Fix that failure first, or contact Netwrix Support.
 2. **Take a database backup.** Trigger an on-demand Postgres backup and wait for it to finish:
 
    ```bash
@@ -90,6 +90,10 @@ Run these commands on the install host. `dspmctl` needs `sudo` because only root
    Don't skip this step. Without it, the root application never syncs again, and later upgrades, including an air-gapped `dspm-installer upgrade`, stop working.
    :::
 
+   To confirm, run `sudo dspmctl auto-status`. Every application should show **Yes** in all three columns:
+
+   ![dspmctl auto-status listing every application with auto-sync, self-heal, and auto-prune turned on](/images/accessanalyzer/26.1/install/auto-status.webp)
+
 5. Wait for every application to become healthy:
 
    ```bash
@@ -111,13 +115,13 @@ Online upgrades don't record this. Check the release notes or your change record
 
 ## Resume Automatic Updates
 
-Connected installs only. After a rollback, the install stays on the version you chose. To return to automatic updates, set the revision to a version constraint again:
+Connected installs only. After a rollback, the install stays on the version you chose. To return to automatic updates, give the root application a version constraint for the updater to follow again, such as `1.*` for every 1.x release:
 
 ```bash
-sudo dspmctl set-revision netwrix '1.*'
+sudo kubectl annotate application netwrix -n argocd dspm.netwrix.com/target-revision-managed-by='1.*' --overwrite
 ```
 
-The updater adopts the constraint and restores its annotation itself. You don't add it back by hand.
+The updater checks every 12 hours. On its next run it starts an upgrade to the newest release that matches the constraint, if one is newer than the installed version. It upgrades a registry install by converting it to downloaded media, as [Upgrade to a new version](upgrade-to-a-new-version.md) describes.
 
 ## Air-Gapped: Redeploy Older Offline Media
 
@@ -139,12 +143,7 @@ Without `--allow-downgrade`, `upgrade` refuses media that's the same as or older
 
 ## Troubleshooting
 
-**`dspmctl` hangs at "Logging in to Argo CD ..."** A canceled `dspmctl` command can leave its pod stuck. Restart it and run the rollback again:
-
-```bash
-sudo kubectl rollout restart deploy/dspmctl -n argocd
-sudo kubectl rollout status deploy/dspmctl -n argocd
-```
+**`dspmctl` says an operation on `netwrix` is already in progress.** ArgoCD is still running an earlier sync, for example one that a canceled `dspmctl sync` started. Wait for it to finish, then run the step again.
 
 **`db-seeds` fails with "database schema is ahead of this release's newest migration."** The stored down migrations are missing or the chain between the current schema and the older release is broken, so `db-seeds` can't roll back safely. Contact Netwrix Support. Don't edit the schema by hand: the stored down migrations are the source of truth for the rollback, and manual changes break the chain `db-seeds` validates.
 

@@ -151,7 +151,7 @@ Creates a connection.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the connector creation. | ConnectionCreatedResult |
+| 200 | The result of the connection creation. | ConnectionCreatedResult |
 
 ### /api/Connectors/Connection/\{id\}
 
@@ -182,38 +182,38 @@ Returns a connection package corresponding to the provided identifier and its in
 #### Put
 ##### Summary:
 
-Updates a connector.
+Updates a connection.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the connector to update. | True |  |  |
+| id | Identifier of the connection to update. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the connector update. | ConnectionUpdatedResult |
+| 200 | The result of the connection update. | ConnectionUpdatedResult |
 
 #### Delete
 ##### Summary:
 
-Deletes a connector.
+Deletes a connection.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the connector to delete. | True |  |  |
+| id | Identifier of the connection to delete. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the connector delete. | ConnectionDeletedResult |
+| 200 | The result of the connection delete. | ConnectionDeletedResult |
 
 ### /api/Connectors/ConnectionColumn
 

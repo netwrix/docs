@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Usercube-Deploy Configuration
 
-Retrieves all XML configuration files from a given folder, in order to calculate the configuration items to insert, update or delete in the application.
+Retrieves all XML configuration files from a given folder, to calculate the configuration items to insert, update or delete in the application.
 
 ## Examples
 
@@ -31,8 +31,23 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 ```
 
 :::info
- To be able to deploy a SaaS configuration, you must first provide your Identity Manager administrator with identity information. See the [Deploy the Configuration](../../../integration-guide/toolkit/deploy-configuration) topic for additional information. 
+ To be able to deploy a SaaS configuration, you must first provide your Identity Manager administrator with identity information. See the [Deploy the Configuration](../../../integration-guide/toolkit/deploy-configuration) topic for additional information.
 :::
+
+## Messages during a remote deployment
+
+At the end of a remote deployment, Netwrix Identity Manager reloads the tenant to apply the new configuration. The reload takes several seconds, during which the server can't process requests.
+
+The command follows the deployment progress by regularly querying the server. A query sent during the reload is answered with `503 Service Unavailable` and a `Retry-After` header, and the command automatically sends it again. The following line is logged once per deployment, at `Information` level:
+
+```
+[15:45:12 INF] Server returned 503; retrying https://my-instance.example.com/api/Deployment/PendingWork?api-version=1.0&PendingWorkId=<Id>
+```
+
+This message is expected and harmless: no action is required, and the deployment completes successfully. Further retries during the same reload are only logged at `Debug` level.
+
+The command stops retrying and logs `Retry wait budget of 00:01:00 exhausted` as a warning if the server is still unavailable after a cumulative 60 seconds of waiting. In that case, check that the tenant has restarted properly before running the deployment again.
+
 ## Arguments
 
 The table below displays the arguments for the Identity Manager configuration deployment.
@@ -43,7 +58,7 @@ The table below displays the arguments for the Identity Manager configuration d
  | --continuous-deployment (-a) optional | No Value | Local only | Enables automatic deployment when saving an XML file. |
  | --deployment-slot optional | DeploymentSlot | Remote only | Type of the targeted server among the slot names provided by Netwrix' SaaS team. For example: Development, Staging, Production. it is required when working in a SaaS production environment. |
  | --dump-changes-directory optional | String | Local only | Path to a directory that will receive the logs of all modifications made to the database. _Remember,_ it can be used with --simulate-only for an additional security before deploying to production. |
- | --enable-saas-checks optional | No Value | Local only | Enables the checks necessary to deploy in a SaaS environment. _Remember,_ it is enabled automatically when working in SaaS. This argument can be used when deploying locally in order to anticipate a future SaaS deployment. |
+ | --enable-saas-checks optional | No Value | Local only | Enables the checks necessary to deploy in a SaaS environment. _Remember,_ it is enabled automatically when working in SaaS. This argument can be used when deploying locally to anticipate a future SaaS deployment. |
  | --force-bindings (-bi) optional | No Value | Both | Forces the recomputation of binding paths in the database. |
  | --force-cascade-delete optional | No Value | Both | Enables the deletion or archiving of XML configuration items that require extra care and/or approval, usually for dependency issues. _Remember,_ Netwrix recommends using this option only when prompted by the deployment tool. |
  | --force-categories (-c) optional | No Value | Both | Forces the recomputation of the counters for role categories in the database. |
@@ -56,8 +71,8 @@ The table below displays the arguments for the Identity Manager configuration d
  | --simulate-only optional | No Value | Local only | Computes and previews on the screen all the changes to be made, but without editing the database. |
  | --api-client-id optional | String | Remote only | Login of the account authorized by Netwrix for configuration export/deployment in a SaaS environment. **NOTE:** It will be deprecated soon, rather contact the support team. |
  | --api-secret optional | String | Remote only | Password of the account authorized by Netwrix for configuration export/deployment in a SaaS environment. **NOTE:** It will be deprecated soon, rather contact the support team. |
- | --api-url optional | String | Remote only | URL of the server to export/deploy the configuration to, for remote changes. _Remember,_ it is required when --database-connection-string is not specified. |
- | --database-connection-string optional | String | Local only | Connection string of the database. _Remember,_ it is required when --api-url is not specified. |
+ | --api-url optional | String | Remote only | URL of the server to export/deploy the configuration to, for remote changes. _Remember,_ it is required when --database-connection-string isn't specified. |
+ | --database-connection-string optional | String | Local only | Connection string of the database. _Remember,_ it is required when --api-url isn't specified. |
  | --product-translation optional | No Value | Both | Path of the JSON file that contains the application's translations. See the [Import Product Translations into Identity Manager](../../../integration-guide/ui/producttranslations) topic for more details on how to import the product's translations. |
  | --log-level optional | LogLevel | Both | Level of log information among: Verbose; Debug; Information; Warning; Error; Fatal. |
 

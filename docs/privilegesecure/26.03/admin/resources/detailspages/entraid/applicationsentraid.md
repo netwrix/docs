@@ -1,6 +1,11 @@
 ---
 title: "Applications Tab for Microsoft Entra ID"
-description: "Applications Tab for Microsoft Entra ID"
+description: "Reference for the Applications tab on the Microsoft Entra ID Details page, which lists applications on the resource."
+keywords:
+  - Entra ID applications
+  - Azure AD
+  - Microsoft Entra ID
+  - Application Name
 sidebar_position: 70
 ---
 
@@ -13,13 +18,13 @@ applications installed on the selected resource.
 
 The Applications tab has the following features:
 
-- Search — Searches the table or list for matches to the search string. When matches are found, the
-table or list is filtered to the matching results.
-- Refresh — Reload the information displayed
+- **Search** — Searches the table or list for matches to the search string. When matches are found, the
+  table or list is filtered to the matching results.
+- **Refresh** — Reload the information displayed
 
 The table has the following columns:
 
-- Application Name — Displays the name of the application
-- Description — Description of the policy
+- **Application Name** — Displays the name of the application
+- **Description** — Description of the policy
 
 The table columns can be resized and sorted in ascending or descending order.

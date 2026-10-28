@@ -10,12 +10,21 @@ The FS_MIPLabels job reports on resources classified by Microsoft Information Pr
 sensitivity labels from targeted file servers.
 
 :::note
-The FSAA Data Collector collects label data by using the Microsoft Information Protection (MIP)
+The File System Access Auditing (FSAA) Data Collector collects label data by using the MIP
 File SDK. See the
 [Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)
-topic for the prerequisites required to scan for labels. To apply sensitivity labels to files that
+topic for the prerequisites to scan for labels. To apply sensitivity labels to files that
 contain sensitive data, see the
 [FS_MIPLabeling Job](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/fs_miplabeling.md) topic.
+:::
+
+:::note
+This job replaces the FS_AIPLabels job. When you upgrade Access Analyzer, the FS_MIPLabels job
+doesn't appear in an existing FileSystem solution unless you select **Full Upgrade** for the
+solution in the Upgrade Wizard. If you use another upgrade option, copy the FS_MIPLabels job from
+the `InstantSolutions` directory to the **FileSystem** > **4.Content** > **Tags** job group. See the
+[Upgrade Wizard](/docs/accessanalyzer/12.0/install/application/upgrade/wizard.md) topic for
+additional information on the upgrade options.
 :::
 
 ## Analysis Tasks for the FS_MIPLabels Job
@@ -24,8 +33,8 @@ To view the analysis tasks, navigate to the **FileSystem** > **4.Content** > **T
 **FS_MIPLabels** > **Configure** node and select **Analysis**.
 
 :::warning
-Don't modify or deselect the selected analysis tasks. The analysis tasks are
-preconfigured for this job.
+Don't modify or deselect the selected analysis tasks. Netwrix preconfigures the
+analysis tasks for this job.
 :::
 
 

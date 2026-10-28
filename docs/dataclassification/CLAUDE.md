@@ -44,7 +44,14 @@ Pages are mostly concept and reference pages with a few procedures. There are no
 | Dynamic Source | A source that discovers sub-sources, such as a mailbox per Exchange user |
 | MIP | Microsoft Information Protection sensitivity labels |
 
-Don't document PostgreSQL or Oracle as supported Data Classification databases without confirming with the product team. The `postgresqlserver.md` page covers a PostgreSQL data source to scan, which is a different thing.
+PostgreSQL 16 or later is a supported Data Classification database as of 5.8; the install pages already cover it, so extend them. Don't document Oracle as a supported database without confirming with the product team. The `postgresqlserver.md` page covers a PostgreSQL data source to scan, which is a different thing.
+
+## What not to document
+
+Data Classification docs describe the web console and the settings a customer uses. Don't describe how the product works behind the interface (services, schema, queries, installer or maintenance internals, differences between database engines).
+
+- **Requirements:** state the supported minimum ("PostgreSQL 16 or later"). Don't say what Netwrix tested or in what environment.
+- **Sizing:** follow the tiers in `introduction/requirements/hardwarerequirements.md`, which run from a single NDC server to a 4-server DQS cluster. Don't add tiers, extrapolate, or raise the limits stated there. Don't publish performance-test results.
 
 ## KB Articles
 
