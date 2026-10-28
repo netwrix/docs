@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Netwrix Privilege Secure for Discovery API
   version: 26.09.1
-  description: 'REST API for Netwrix Privilege Secure for Discovery, release 26.09.1.
+  description: 'REST API for Netwrix Privilege Secure for Discovery.
 
 
     **Base path.** All endpoints are under `/api/v1` on your server.
@@ -263,18 +263,14 @@ paths:
       tags:
       - API keys
       summary: List API keys
-      description: 'Returns the registered API keys, including revoked ones (check `isRevoked`). The key
-        value itself
+      description: 'Returns the registered API keys, including revoked ones (check `isRevoked`).
 
-        (the JWT) is never returned after creation.
 
-        The list is paged and supports `sort` and `inlinePageInfo`. You can also filter by any field of
-        the record with an
-
-        equality query parameter, for example `?appName=reporting-integration` or `?isRevoked=true`. An
-        unknown field name returns
-
-        400 `InvalidQuery`. `advanced` is ignored here, and `select` is rejected with 400 `InvalidQuery`.
+        The key value itself (the JWT) is never returned after creation. The list is paged and supports
+        `sort` and `inlinePageInfo`. You can also filter by any field of the record with an equality query
+        parameter, for example `?appName=reporting-integration` or `?isRevoked=true`. An unknown field
+        name returns 400 `InvalidQuery`. `advanced` is ignored here, and `select` is rejected with 400
+        `InvalidQuery`.
 
 
         **Required role:** `superadmin` or `admin`.
@@ -404,12 +400,11 @@ paths:
       - API keys
       summary: Exchange an API key for an access token
       description: 'Send the API key as the bearer token (`Authorization: Bearer <api-key>`) together
-        with the `userId` of
+        with the `userId` of one of the key''s linked users.
 
-        one of the key''s linked users. The response is an access token with that user''s role, valid
-        for the
 
-        configured token lifetime (see `expires`).
+        The response is an access token with that user''s role, valid for the configured token lifetime
+        (see `expires`).
 
 
         If the key was created with `scopes`, the access token is restricted: every route that is not
@@ -502,13 +497,11 @@ paths:
       tags:
       - API keys
       summary: Revoke an API key
-      description: 'Revokes the key identified by `appId`. Access tokens already issued from the key stay
-        valid until they
+      description: 'Revokes the key identified by `appId`.
 
-        expire; no new tokens can be issued. A revoked key cannot be restored and the record remains in
-        the
 
-        list with `isRevoked` set to true.
+        Access tokens already issued from the key stay valid until they expire; no new tokens can be issued.
+        A revoked key cannot be restored and the record remains in the list with `isRevoked` set to true.
 
 
         **Required role:** `superadmin` or `admin`.
@@ -555,8 +548,11 @@ paths:
       tags:
       - Health
       summary: Check that the API is reachable
-      description: 'Returns `pong` and the server time. Needs no token. `POST /ping` behaves the same.
-        Other methods return 405 with an empty body when a valid token is sent, and 401 without one.
+      description: 'Returns `pong` and the server time.
+
+
+        Needs no token. `POST /ping` behaves the same. Other methods return 405 with an empty body when
+        a valid token is sent, and 401 without one.
 
 
         If a token is supplied anyway (an `Authorization` or `x-access-token` header, or a `token` field
@@ -819,8 +815,8 @@ paths:
 
         The restored computer keeps its original id. Without `preservecopy=true` the archived record is
         deleted after the 200 is sent. Restoring an id whose archived copy is still present while an active
-        computer already has that id returns 409 with the message `Computer <id> is already active.`; an id with
-        no archived copy returns 409 with the message `No stale computer with ID: <id>`.'
+        computer already has that id returns 409 with the message `Computer <id> is already active.`;
+        an id with no archived copy returns 409 with the message `No stale computer with ID: <id>`.'
       parameters:
       - name: targetComputerId
         in: path
@@ -891,9 +887,12 @@ paths:
       tags:
       - Computers
       summary: Look up computer ids from names
-      description: 'Resolves computer name and domain pairs to computer ids. `cn` and `domain_fqdn` are
-        matched exactly (case-sensitive). Pairs with no match, including pairs whose `cn` is not a string,
-        are returned in `notFound`. A pair sent twice is returned twice in `found`.
+      description: 'Resolves computer name and domain pairs to computer ids.
+
+
+        `cn` and `domain_fqdn` are matched exactly (case-sensitive). Pairs with no match, including pairs
+        whose `cn` is not a string, are returned in `notFound`. A pair sent twice is returned twice in
+        `found`.
 
 
         **Required role:** `superadmin`, `admin` or `user`.
@@ -952,8 +951,11 @@ paths:
       - Computers
       summary: Register a computer
       description: 'Registers a Windows, Linux or macOS computer, or re-registers one that is already
-        in inventory. For Windows and Linux the call queues a registration scan and **waits up to 90 seconds**
-        for it to finish, then applies the requested policy and persistent administrators.
+        in inventory.
+
+
+        For Windows and Linux the call queues a registration scan and **waits up to 90 seconds** for it
+        to finish, then applies the requested policy and persistent administrators.
 
 
         **Required role:**
@@ -1093,6 +1095,8 @@ paths:
       - Computers
       summary: Unregister a computer
       description: 'Removes the service account from the inventory record of a registered Windows computer.
+
+
         The call queues a job that checks the supplied credentials, **waits up to 90 seconds**, and on
         success removes the service account from the computer''s inventory record (the service account
         is dropped from its administrator list).
@@ -1169,10 +1173,13 @@ paths:
       - Computers
       summary: Get a computer
       description: 'Returns one computer, including its administrators (`admins.current`), policy and
-        configuration. Secrets (service account passwords, key material, password values) are never returned.
-        Password history is returned as metadata only: each `admins.managed_sids[].password_history` entry
-        carries `_id` and `timestamp`, and `current_password_id` names the active entry; the encrypted
-        values are removed. `service_acct` is returned as `{username}` when a service account is set.
+        configuration.
+
+
+        Secrets (service account passwords, key material, password values) are never returned. Password
+        history is returned as metadata only: each `admins.managed_sids[].password_history` entry carries
+        `_id` and `timestamp`, and `current_password_id` names the active entry; the encrypted values
+        are removed. `service_acct` is returned as `{username}` when a service account is set.
 
 
         **Required role:** `superadmin`, `admin`, or a `user` who is a local administrator of this computer
@@ -1329,8 +1336,10 @@ paths:
       - Computers
       summary: List flattened accounts for a computer
       description: 'Returns the directory accounts that have administrator rights on the computer, both
-        directly and through nested group membership. Direct entries have `isDirect: true`. Service accounts
-        are excluded. The response is not paged.
+        directly and through nested group membership.
+
+
+        Direct entries have `isDirect: true`. Service accounts are excluded. The response is not paged.
 
 
         **Required role:** `superadmin` or `admin`.
@@ -1575,9 +1584,10 @@ paths:
       - Computers - Access
       summary: End an active access session immediately
       description: 'Expires the active JITA session of the caller (or, for an admin, of the user named
-        by `userId`) on the
+        by `userId`) on the computer.
 
-        computer. The session expiry is moved to now and a worker removes the account from the local administrators
+
+        The session expiry is moved to now and a worker removes the account from the local administrators
         group shortly after.
 
 
@@ -1769,15 +1779,12 @@ paths:
       - Computers - Admins
       summary: Add an administrator to a computer's inventory
       description: 'Adds a directory user, group, or computer account to the inventory of accounts that
-        may request
+        may request administrator access to this computer.
 
-        administrator access to this computer. The `id` is looked up as a user, then a group, then a computer,
-        and
 
-        the matched object must have a SID. `persistent` defaults to false; a value that is not a boolean
-        or the strings `true` or `false`
-
-        (for example `"yes"`) is stored as false.
+        The `id` is looked up as a user, then a group, then a computer, and the matched object must have
+        a SID. `persistent` defaults to false; a value that is not a boolean or the strings `true` or
+        `false` (for example `"yes"`) is stored as false.
 
 
         On Linux computers the matching sudoers entries are added too. `sudo_permissions` is the privilege
@@ -1856,18 +1863,14 @@ paths:
       - Computers - Admins
       summary: Set the persistent flag of an inventory administrator
       description: 'Marks an inventory administrator as persistent (always a local administrator, never
-        removed after a
+        removed after a session) or not.
 
-        session) or not. Identify the account with `sid`, or with `id` (user, group, or computer object
-        id).
 
-        When both are sent, `sid` wins. `persistent` is required and must be a boolean (or the string
-        `true` or
-
+        Identify the account with `sid`, or with `id` (user, group, or computer object id). When both
+        are sent, `sid` wins. `persistent` is required and must be a boolean (or the string `true` or
         `false` when urlencoded); any other value, a missing `persistent`, or neither `sid` nor `id`,
-        is 422 `Missing required parameters`.
-
-        A malformed `id` is 422 `Invalid User ID: "<value>"`; an unknown one 422 `Invalid Admin ID`.
+        is 422 `Missing required parameters`. A malformed `id` is 422 `Invalid User ID: "<value>"`; an
+        unknown one 422 `Invalid Admin ID`.
 
 
         Returns 409 `Administrator not in inventory` if the account is not in the inventory, and 422 if
@@ -1915,17 +1918,14 @@ paths:
       tags:
       - Computers - Admins
       summary: Remove an administrator from a computer's inventory
-      description: 'Removes an account from the inventory. The account is identified in the request body
-        (not the query string)
+      description: 'Removes an account from the inventory.
 
-        by `sid`, or by `id` (user, group, or computer object id); `sid` wins when both are sent. A DELETE
-        with no body, or with
 
-        the id only in the query string, is 422 `Missing required parameters`. On Linux computers the
-        account''s sudoers entries are removed as well.
-
-        There is no protection for the built-in administrator: removing the default admin account succeeds
-        with 200.
+        The account is identified in the request body (not the query string) by `sid`, or by `id` (user,
+        group, or computer object id); `sid` wins when both are sent. A DELETE with no body, or with the
+        id only in the query string, is 422 `Missing required parameters`. On Linux computers the account''s
+        sudoers entries are removed as well. There is no protection for the built-in administrator: removing
+        the default admin account succeeds with 200.
 
 
         Returns 409 `Administrator not in inventory` when the account is not in the inventory.
@@ -1988,7 +1988,10 @@ paths:
       - Computers - Passwords
       summary: Flag a managed local account for password rotation
       description: 'Marks the account so its password is rotated at the next scan of the computer (sets
-        `force_expiry` on the managed SID, visible in the computer details). No request body.
+        `force_expiry` on the managed SID, visible in the computer details).
+
+
+        No request body.
 
 
         Checks run in this order: domain controller (422 `PasswordManagementNotSupportedError`); Offline
@@ -2065,8 +2068,8 @@ paths:
       - Computers - Passwords
       summary: Retrieve a managed local-account password from history
       description: "Returns the decrypted password recorded under `passwordHistoryId` for a local account\
-        \ that is, or was,\nmanaged by Netwrix Privilege Secure for Discovery. The body is a JSON string,\
-        \ for example `\"s3cret\"`.\nEach retrieval is written to the audit log with the optional `comment`.\n\
+        \ that is, or was, managed by Netwrix Privilege Secure for Discovery.\n\nThe body is a JSON string,\
+        \ for example `\"s3cret\"`. Each retrieval is written to the audit log with the optional `comment`.\n\
         \n**Who can call it**\n- `superadmin` and `admin` tokens that belong to a directory user always.\n\
         - `user` only if the computer's Offline Access Management policy has\n  `jita_or_persistent_users_can_access_passwords`\
         \ set to true (403 otherwise) and the user is a system\n  administrator of the computer (403 otherwise).\n\
@@ -2224,18 +2227,14 @@ paths:
       - Computers - Sudoers
       summary: Get the last-scanned and staged sudoers for a Linux computer
       description: 'Returns the sudoers last seen by a scan (`lastScanSudoers`) and the sudoers staged
-        as the desired state for
+        as the desired state for Protect mode (`stagedSudoers`).
 
-        Protect mode (`stagedSudoers`). Either is `null` when absent. When a staged document exists it
-        is the one
 
-        enforced once Protect is enabled; otherwise the last scanned document is used. Include files are
-        flattened
-
-        into one document. Timestamps are HTTP-date strings (`Tue, 27 Oct 2026 22:03:28 GMT`), not ISO
-        8601, and the blob has no trailing newline.
-
-        `createdById` is `null` for a scan document and `createdByName` is absent then.
+        Either is `null` when absent. When a staged document exists it is the one enforced once Protect
+        is enabled; otherwise the last scanned document is used. Include files are flattened into one
+        document. Timestamps are HTTP-date strings (`Tue, 27 Oct 2026 22:03:28 GMT`), not ISO 8601, and
+        the blob has no trailing newline. `createdById` is `null` for a scan document and `createdByName`
+        is absent then.
 
 
         Returns 400 `Can only request sudoers content for Linux systems` for a non-Linux computer. Errors
@@ -2276,18 +2275,14 @@ paths:
       tags:
       - Computers - Sudoers
       summary: Stage a desired-state sudoers file for a Linux computer
-      description: 'Stores the supplied full sudoers text as the staged (desired-state) sudoers. It replaces
-        any earlier staged
+      description: 'Stores the supplied full sudoers text as the staged (desired-state) sudoers.
 
-        document; individual lines cannot be patched. Nothing is written to the computer until Protect
-        is enabled
 
-        (or, if Protect is already on, until the next sync). Accounts named in the sudoers are reflected
-        in the
-
-        admin inventory, and inventory changes are reflected in the staged sudoers (inventory entries
-        not named in the new text are dropped). The text is parsed with a trailing newline removed; the
-        hash identifies the content.
+        It replaces any earlier staged document; individual lines cannot be patched. Nothing is written
+        to the computer until Protect is enabled (or, if Protect is already on, until the next sync).
+        Accounts named in the sudoers are reflected in the admin inventory, and inventory changes are
+        reflected in the staged sudoers (inventory entries not named in the new text are dropped). The
+        text is parsed with a trailing newline removed; the hash identifies the content.
 
 
         Returns 400 if `sudoers_blob` is missing or empty, or the computer is not Linux. A non-string
@@ -2344,9 +2339,10 @@ paths:
       - Computers - Sudoers
       summary: Discard the staged sudoers for a Linux computer
       description: 'Deletes the staged sudoers so the computer falls back to the last scanned sudoers,
-        and refreshes the admin
+        and refreshes the admin inventory from it.
 
-        inventory from it. `sudoersHash` must equal the hash of the currently staged document.
+
+        `sudoersHash` must equal the hash of the currently staged document.
 
 
         Checks run in this order: non-Linux (400 `Can only unstage sudoers content for Linux systems`);
@@ -2457,13 +2453,11 @@ paths:
       operationId: checkSystemAuthorized
       summary: Check whether a user is authorized on a system
       description: 'Evaluates whether the named user has administrative access to the named system and
-        returns
+        returns a boolean.
 
-        a boolean. Identify the user with `user[...]` parameters and the system with
 
-        `computer[...]` parameters (nested query syntax). Both are required. Keys are
-
-        case-insensitive.
+        Identify the user with `user[...]` parameters and the system with `computer[...]` parameters (nested
+        query syntax). Both are required. Keys are case-insensitive.
 
 
         User keys: `id`, `sid`, `dn` (aliases for `_id`, `objectSid`, `distinguishedName`),
@@ -2575,11 +2569,10 @@ paths:
       description: 'Moves a retired (archived) system back to the active systems list under its original
         id.
 
-        `targetComputerId` is the original id of the system (the `old_id` of the retired record).
 
-        By default the retired copy is deleted after a successful restore. The same operation is
-
-        available at `POST /computers/archived/{targetComputerId}/restore`. The request has no body.
+        `targetComputerId` is the original id of the system (the `old_id` of the retired record). By default
+        the retired copy is deleted after a successful restore. The same operation is available at `POST
+        /computers/archived/{targetComputerId}/restore`. The request has no body.
 
 
         **Required role:** `admin` or `superadmin`.
@@ -2660,11 +2653,10 @@ paths:
       summary: List users
       description: 'Returns directory users known to the server (synchronized from the configured domains).
 
-        Each user carries an `access.role` only on the single-user endpoint; the list returns the
 
-        default field set (`distinguishedName`, `displayName`, `cn`, `sn`, `sAMAccountName`,
-
-        `objectSid`, `domain_fqdn`, `domain_netbios`) plus the object `id`.
+        Each user carries an `access.role` only on the single-user endpoint; the list returns the default
+        field set (`distinguishedName`, `displayName`, `cn`, `sn`, `sAMAccountName`, `objectSid`, `domain_fqdn`,
+        `domain_netbios`) plus the object `id`.
 
 
         Any other user field can be used as an equality filter in the query string. Unknown or
@@ -2747,8 +2739,10 @@ paths:
       operationId: getUser
       summary: Get a user
       description: 'Returns one user, including the fields that the list omits (`access`, `linux_config`,
+        `isEntraId`, `isHybrid`, timestamps).
 
-        `isEntraId`, `isHybrid`, timestamps). The Google Authenticator secret is never returned.
+
+        The Google Authenticator secret is never returned.
 
 
         **Required role:** any authenticated user.
@@ -2891,13 +2885,12 @@ paths:
       - Groups
       operationId: listGroups
       summary: List groups
-      description: 'Returns directory groups. The list returns the default field set (`distinguishedName`,
+      description: 'Returns directory groups.
 
-        `displayName`, `cn`, `sAMAccountName`, `objectSid`, `domain_fqdn`, `domain_netbios`,
 
-        `access`, `isEntraId`, `isHybrid`) plus the object `id`. Query-string filtering, `advanced`,
-
-        `select`, sorting and paging work as for `GET /users`.
+        The list returns the default field set (`distinguishedName`, `displayName`, `cn`, `sAMAccountName`,
+        `objectSid`, `domain_fqdn`, `domain_netbios`, `access`, `isEntraId`, `isHybrid`) plus the object
+        `id`. Query-string filtering, `advanced`, `select`, sorting and paging work as for `GET /users`.
 
 
         **Required role:** any authenticated user.
@@ -2995,10 +2988,10 @@ paths:
       operationId: getPendingQueueItemForSystem
       summary: Get the caller's open request for a system
       description: 'Returns the calling user''s queue item for the system whose status is `pending` or
+        `expiring`, if one exists.
 
-        `expiring`, if one exists. Returns 204 with no body when there is none. Always scoped to the
 
-        caller, including for admins.
+        Returns 204 with no body when there is none. Always scoped to the caller, including for admins.
 
 
         **Required role:** any authenticated user.
@@ -3048,15 +3041,13 @@ paths:
       - Queue
       operationId: dismissQueueItem
       summary: Dismiss a failed expiring queue item
-      description: 'Dismisses an overdue queue item so it stops being reported. Only one change is supported:
+      description: 'Dismisses an overdue queue item so it stops being reported.
 
-        set `request.status` to `dismissed`. The item must be `expiring`, past its expiry time, and
 
-        its latest activity entry must be an error (nonzero code). The body may be JSON or
-
-        form-encoded; the key is the literal string `request.status` (a flat key, not a nested
-
-        object).
+        Only one change is supported: set `request.status` to `dismissed`. The item must be `expiring`,
+        past its expiry time, and its latest activity entry must be an error (nonzero code). The body
+        may be JSON or form-encoded; the key is the literal string `request.status` (a flat key, not a
+        nested object).
 
 
         **Required role:** `admin` or `superadmin`.
@@ -3104,18 +3095,16 @@ paths:
       - Configuration
       operationId: listEntraidConfigs
       summary: List Microsoft Entra ID domain configurations
-      description: 'Returns the configured Entra ID tenants, paged. The client secret is never returned.
-        Paging, filtering and `inlinePageInfo` behave as in `GET /config/ldaps`.
+      description: 'Returns the configured Entra ID tenants, paged.
 
-        **Required role:** any authenticated user (`user`, `admin`, `superadmin`).
 
-        Note: `X-Pagination-Total` and `X-Pagination-Pages` (and the `total`/`pages` of an `inlinePageInfo`
+        The client secret is never returned. Paging, filtering and `inlinePageInfo` behave as in `GET
+        /config/ldaps`. **Required role:** any authenticated user (`user`, `admin`, `superadmin`). Note:
+        `X-Pagination-Total` and `X-Pagination-Pages` (and the `total`/`pages` of an `inlinePageInfo`
         body) count every document in the shared configuration collection, not only Entra ID tenants.  With
         no tenants configured the list can be `[]` while `X-Pagination-Total` is greater than 0. Do not
         use the total to detect the last page; stop at an empty page. Unknown filter fields return 400
-        `InvalidQuery`.
-
-        '
+        `InvalidQuery`.'
       security:
       - bearerAuth: []
       parameters:
@@ -3167,16 +3156,13 @@ paths:
       - Configuration
       operationId: createEntraidConfig
       summary: Add a Microsoft Entra ID domain
-      description: 'Creates an Entra ID tenant configuration. The stored document requires `name`, `client_id`,
-        `tenant_id`, `client_secret` and the `domain`, `user` and `pass` of both `scan_config.read_acct`
-        and `scan_config.write_acct`. The client secret is stored encrypted. Returns HTTP 200 with a plain-text
-        confirmation.
+      description: 'Creates an Entra ID tenant configuration.
 
-        Accepts JSON or `application/x-www-form-urlencoded` bodies.
 
-        **Required role:** `admin` or `superadmin`.
-
-        '
+        The stored document requires `name`, `client_id`, `tenant_id`, `client_secret` and the `domain`,
+        `user` and `pass` of both `scan_config.read_acct` and `scan_config.write_acct`. The client secret
+        is stored encrypted. Returns HTTP 200 with a plain-text confirmation. Accepts JSON or `application/x-www-form-urlencoded`
+        bodies. **Required role:** `admin` or `superadmin`.'
       security:
       - bearerAuth: []
       requestBody:
@@ -3212,20 +3198,16 @@ paths:
       - Configuration
       operationId: validateEntraidConfig
       summary: Test Entra ID credentials without saving
-      description: 'Checks the supplied tenant and app credentials against Microsoft Entra ID. `client_id`,
-        `tenant_id` and `client_secret` are all needed for a valid result. A failed test still returns
-        HTTP 200, with `valid: false` and an `error` object (`code` and `msg`).
+      description: 'Checks the supplied tenant and app credentials against Microsoft Entra ID.
 
-        Accepts JSON or `application/x-www-form-urlencoded` bodies.
 
-        **Required role:** `admin` or `superadmin`.
-
+        `client_id`, `tenant_id` and `client_secret` are all needed for a valid result. A failed test
+        still returns HTTP 200, with `valid: false` and an `error` object (`code` and `msg`). Accepts
+        JSON or `application/x-www-form-urlencoded` bodies. **Required role:** `admin` or `superadmin`.
         Missing credentials are not rejected with 400: the response is HTTP 200 `{valid: false, error:
         {code: "MissingCredentials", msg: "All of client_id, tenant_id and client_secret must be specified"}}`.
         Credentials that Entra ID does not accept (or that cannot be checked) give `FailedEntraIDValidate`
-        (msg `Failed to check Entra ID credentials`).
-
-        '
+        (msg `Failed to check Entra ID credentials`).'
       security:
       - bearerAuth: []
       requestBody:
@@ -3296,13 +3278,12 @@ paths:
       summary: List Active Directory domain configurations
       description: '**Required role:** any authenticated user (`user`, `admin`, `superadmin`).
 
+
         Unknown filter fields, and keys that start with `$`, are rejected with 400 `InvalidQuery`. Paging
         edge cases: `limit` above 1000 is clamped to 1000; `limit=0` or a non-numeric `limit` returns
         an empty page (not 400); `page` below 1 is treated as 1; a page past the end returns an empty
         array; an unknown `sort` field is ignored. `inlinePageInfo` wraps the body whatever its value
-        (even `false`). Duplicate `name` values are allowed, so a `name` filter can return several records.
-
-        '
+        (even `false`). Duplicate `name` values are allowed, so a `name` filter can return several records.'
       security:
       - bearerAuth: []
       parameters:
@@ -3357,24 +3338,19 @@ paths:
       - Configuration
       operationId: createLdapConfig
       summary: Add an Active Directory domain
-      description: 'Creates a domain configuration. The stored document requires `name`, `server`, `port`,
-        `bind_dn`, `bind_pass`, `search_base` and the `domain`, `user` and `pass` of both `scan_config.read_acct`
-        and `scan_config.write_acct`; a missing required field fails with 400. Passwords are stored encrypted.
-        The optional `extra` object creates or updates the macOS domain service account in the same call.
+      description: 'Creates a domain configuration.
 
-        Returns HTTP 200 with a plain-text confirmation, not the created object. Read it back with `GET
-        /config/ldaps`.
 
-        Accepts JSON or `application/x-www-form-urlencoded` bodies.
-
-        **Required role:** `admin` or `superadmin`.
-
+        The stored document requires `name`, `server`, `port`, `bind_dn`, `bind_pass`, `search_base` and
+        the `domain`, `user` and `pass` of both `scan_config.read_acct` and `scan_config.write_acct`;
+        a missing required field fails with 400. Passwords are stored encrypted. The optional `extra`
+        object creates or updates the macOS domain service account in the same call. Returns HTTP 200
+        with a plain-text confirmation, not the created object. Read it back with `GET /config/ldaps`.
+        Accepts JSON or `application/x-www-form-urlencoded` bodies. **Required role:** `admin` or `superadmin`.
         Domain names are not unique: posting the same `name` twice creates two records. The created record
         has empty `domain_fqdn` and `domain_netbios` until the first synchronization. A macOS account
         created through `extra` before that point is not returned by `GET /config/macos/domain` until
-        the domain has synchronized. The confirmation body is `Successfully Added Domain` (text/html).
-
-        '
+        the domain has synchronized. The confirmation body is `Successfully Added Domain` (text/html).'
       security:
       - bearerAuth: []
       requestBody:
@@ -3411,21 +3387,16 @@ paths:
       operationId: discoverLdapServers
       summary: Discover domain controllers for a domain name
       description: 'Looks up the DNS SRV records `_ldap._tcp.dc._msdcs.<domain>` and returns the domain
-        controllers sorted by priority, then weight, then name. `search_base` is derived from the domain
-        name (`example.com` becomes `dc=example,dc=com`). `ssl` is true when the port is 636.
+        controllers sorted by priority, then weight, then name.
 
-        A lookup failure still returns HTTP 200, with an `error` object instead of an array.
 
-        Accepts JSON or `application/x-www-form-urlencoded` bodies.
-
-        **Required role:** `admin` or `superadmin`.
-
-        Any lookup problem, including a missing `domain`, returns HTTP 200 with `{error: {code, msg}}`.
-        `code` is the DNS error name: `ENOTFOUND` (msg `Unable to connect to the host.`), otherwise the
-        DNS error code such as `ENODATA` or `EBADNAME` with msg `Unable to discover details about your
-        domain. (<code>)`; `DiscoverFail` is the fallback.
-
-        '
+        `search_base` is derived from the domain name (`example.com` becomes `dc=example,dc=com`). `ssl`
+        is true when the port is 636. A lookup failure still returns HTTP 200, with an `error` object
+        instead of an array. Accepts JSON or `application/x-www-form-urlencoded` bodies. **Required role:**
+        `admin` or `superadmin`. Any lookup problem, including a missing `domain`, returns HTTP 200 with
+        `{error: {code, msg}}`. `code` is the DNS error name: `ENOTFOUND` (msg `Unable to connect to the
+        host.`), otherwise the DNS error code such as `ENODATA` or `EBADNAME` with msg `Unable to discover
+        details about your domain. (<code>)`; `DiscoverFail` is the fallback.'
       security:
       - bearerAuth: []
       requestBody:
@@ -3470,23 +3441,17 @@ paths:
       - Configuration
       operationId: validateLdapConfig
       summary: Test a bind to a domain controller without saving
-      description: 'Tries to bind to the given server with the supplied credentials and search base. If
-        `bind_pass` is not a string and `ldap_config_id` is given, the stored bind password of that domain
-        is used. A failed test still returns HTTP 200, with `valid: false` and an `error` object (`code`
-        and `msg`).
+      description: 'Tries to bind to the given server with the supplied credentials and search base.
 
-        Note this endpoint uses `host`, whereas saved configurations use `server`.
 
-        Accepts JSON or `application/x-www-form-urlencoded` bodies.
-
-        **Required role:** `admin` or `superadmin`.
-
+        If `bind_pass` is not a string and `ldap_config_id` is given, the stored bind password of that
+        domain is used. A failed test still returns HTTP 200, with `valid: false` and an `error` object
+        (`code` and `msg`). Note this endpoint uses `host`, whereas saved configurations use `server`.
+        Accepts JSON or `application/x-www-form-urlencoded` bodies. **Required role:** `admin` or `superadmin`.
         No field is rejected with 400. A missing `search_base` gives `NoSearchBase`; a missing `bind_dn`
         or password gives `MissingCredentials`; an unknown `ldap_config_id` gives `NoLdapConfig`; a malformed
         `ldap_config_id` gives an error whose `msg` starts with `Your configuration is not valid.`. All
-        return HTTP 200 with `valid: false`. A successful bind returns `valid: true`.
-
-        '
+        return HTTP 200 with `valid: false`. A successful bind returns `valid: true`.'
       security:
       - bearerAuth: []
       requestBody:
@@ -3524,13 +3489,11 @@ paths:
       - Configuration
       operationId: getLdapConfig
       summary: Get one Active Directory domain configuration
-      description: 'Returns the domain configuration. Bind and scan account passwords are omitted.
+      description: 'Returns the domain configuration.
 
-        **Required role:** `admin` or `superadmin`.
 
-        The body carries `id` only (no `_id`).
-
-        '
+        Bind and scan account passwords are omitted. **Required role:** `admin` or `superadmin`. The body
+        carries `id` only (no `_id`).'
       security:
       - bearerAuth: []
       responses:
@@ -3551,19 +3514,15 @@ paths:
       - Configuration
       operationId: updateLdapConfig
       summary: Update an Active Directory domain configuration
-      description: 'Deep-merges the body into the stored configuration (partial updates are fine). If
-        `scan_config.write_acct.auth_strategy_accounts` is sent, the stored list is replaced rather than
-        merged. Password fields are re-encrypted when sent. The optional `extra` object creates, updates
-        or (when `svcUser` is empty) deletes the macOS domain service account.
+      description: 'Deep-merges the body into the stored configuration (partial updates are fine).
 
-        Accepts JSON or `application/x-www-form-urlencoded` bodies.
 
-        **Required role:** `admin` or `superadmin`.
-
-        The response carries `id` but not `_id`, and never includes `bind_pass` or the scan account passwords.
-        An empty body `{}` is accepted and returns the unchanged record.
-
-        '
+        If `scan_config.write_acct.auth_strategy_accounts` is sent, the stored list is replaced rather
+        than merged. Password fields are re-encrypted when sent. The optional `extra` object creates,
+        updates or (when `svcUser` is empty) deletes the macOS domain service account. Accepts JSON or
+        `application/x-www-form-urlencoded` bodies. **Required role:** `admin` or `superadmin`. The response
+        carries `id` but not `_id`, and never includes `bind_pass` or the scan account passwords. An empty
+        body `{}` is accepted and returns the unchanged record.'
       security:
       - bearerAuth: []
       requestBody:
@@ -3612,11 +3571,9 @@ paths:
       operationId: deleteLdapConfig
       summary: Delete an Active Directory domain configuration
       description: 'Deletes the domain configuration and its macOS domain service-account configuration.
-        Returns the deleted configuration.
 
-        **Required role:** `admin` or `superadmin`.
 
-        '
+        Returns the deleted configuration. **Required role:** `admin` or `superadmin`.'
       security:
       - bearerAuth: []
       responses:
@@ -3638,12 +3595,10 @@ paths:
       - Configuration
       operationId: listMacosDomainConfigs
       summary: List domain-assigned macOS configurations
-      description: 'Returns every macOS service-account configuration that is tied to a domain. The list
-        is not paged.
+      description: 'Returns every macOS service-account configuration that is tied to a domain.
 
-        **Required role:** any authenticated user (`user`, `admin`, `superadmin`).
 
-        '
+        The list is not paged. **Required role:** any authenticated user (`user`, `admin`, `superadmin`).'
       security:
       - bearerAuth: []
       responses:
@@ -3662,16 +3617,14 @@ paths:
       - Configuration
       operationId: createMacosDomainConfig
       summary: Create a domain-assigned macOS configuration
-      description: 'Creates the macOS service account used for a domain. `domain_fqdn` is required and
-        must match a configured domain; only one configuration per domain is allowed. `service_acct.svcUser`
-        and `service_acct.svcPass` are required. macOS accounts do not support key authentication. `system_defaults`
-        must not be sent. Returns HTTP 200 with a plain-text confirmation.
+      description: 'Creates the macOS service account used for a domain.
 
-        Accepts JSON or `application/x-www-form-urlencoded` bodies.
 
-        **Required role:** `admin` or `superadmin`.
-
-        '
+        `domain_fqdn` is required and must match a configured domain; only one configuration per domain
+        is allowed. `service_acct.svcUser` and `service_acct.svcPass` are required. macOS accounts do
+        not support key authentication. `system_defaults` must not be sent. Returns HTTP 200 with a plain-text
+        confirmation. Accepts JSON or `application/x-www-form-urlencoded` bodies. **Required role:** `admin`
+        or `superadmin`.'
       security:
       - bearerAuth: []
       requestBody:
@@ -3767,13 +3720,12 @@ paths:
       - Configuration
       operationId: getManagedSidsConfig
       summary: Get the Local Account Password Management setting
-      description: 'Returns the global switch for the Local Account Password Management capability. When
-        enabled it supersedes the individual managed-system configurations. If the setting was never saved,
-        a default document with `enabled: false` is returned.
+      description: 'Returns the global switch for the Local Account Password Management capability.
 
-        **Required role:** any authenticated user (`user`, `admin`, `superadmin`).
 
-        '
+        When enabled it supersedes the individual managed-system configurations. If the setting was never
+        saved, a default document with `enabled: false` is returned. **Required role:** any authenticated
+        user (`user`, `admin`, `superadmin`).'
       security:
       - bearerAuth: []
       responses:
@@ -3790,15 +3742,12 @@ paths:
       - Configuration
       operationId: updateManagedSidsConfig
       summary: Enable or disable Local Account Password Management
-      description: 'Merges the request body into the stored setting and saves it. Only `enabled` is meaningful.
-        The change is written to the audit log (capability enablement) with the acting user. The body
-        is not schema-validated.
+      description: 'Merges the request body into the stored setting and saves it.
 
-        Accepts JSON or `application/x-www-form-urlencoded` bodies.
 
-        **Required role:** `admin` or `superadmin`.
-
-        '
+        Only `enabled` is meaningful. The change is written to the audit log (capability enablement) with
+        the acting user. The body is not schema-validated. Accepts JSON or `application/x-www-form-urlencoded`
+        bodies. **Required role:** `admin` or `superadmin`.'
       security:
       - bearerAuth: []
       requestBody:
@@ -3837,16 +3786,12 @@ paths:
       - Configuration
       operationId: getProxyConfig
       summary: Get the outbound proxy configuration
-      description: 'Returns the outbound proxy settings the server uses for internet access. Returns an
-        empty object `{}` when no proxy host is configured. The proxy password is never returned.
+      description: 'Returns the outbound proxy settings the server uses for internet access.
 
-        `verify_ssl` is returned only when `protocol` is `https`.
 
-        **Required role:** `admin` or `superadmin`.
-
-        GET never returns `createdAt` or `updatedAt`.
-
-        '
+        Returns an empty object `{}` when no proxy host is configured. The proxy password is never returned.
+        `verify_ssl` is returned only when `protocol` is `https`. **Required role:** `admin` or `superadmin`.
+        GET never returns `createdAt` or `updatedAt`.'
       security:
       - bearerAuth: []
       responses:
@@ -3865,27 +3810,22 @@ paths:
       - Configuration
       operationId: updateProxyConfig
       summary: Create or update the outbound proxy configuration
-      description: 'Merges the supplied fields into the stored proxy configuration and saves it. Only
-        `protocol`, `host`, `port`, `verify_ssl`, `auth.username` and `auth.password` are read; other
+      description: 'Merges the supplied fields into the stored proxy configuration and saves it.
+
+
+        Only `protocol`, `host`, `port`, `verify_ssl`, `auth.username` and `auth.password` are read; other
         fields are ignored. After the merge the resulting configuration must have a valid `protocol`,
         `host` and `port`. A leading `http://` or `https://` on `host` is stripped. Any update that includes
         `protocol`, `host` or `port` but omits `auth` (or sends an empty `auth`) removes the stored credentials.
         Resend `auth.username` and `auth.password` with every such change. A body containing only `verify_ssl`
         keeps them. If `auth` is present, both `username` and `password` must be non-empty. Credentials
-        are stored encrypted.
-
-        Accepts JSON or `application/x-www-form-urlencoded` bodies.
-
-        **Required role:** `admin` or `superadmin`.
-
-        `port` is any non-empty string or number (a number is cast to a string); it is not range-checked,
-        so `"0"` and `"abc"` are accepted and `Invalid Port` is returned only when the merged port is
-        empty or missing. `verify_ssl` alone fails with 422 `Invalid Protocol` when no proxy is stored
-        yet. The response includes `updatedAt`, and `createdAt` and `__v` only on the call that creates
-        the document. A flat form key such as `auth.username=x` (instead of `auth[username]=x`) returns
-        500 after the other fields are saved; use JSON or bracketed keys.
-
-        '
+        are stored encrypted. Accepts JSON or `application/x-www-form-urlencoded` bodies. **Required role:**
+        `admin` or `superadmin`. `port` is any non-empty string or number (a number is cast to a string);
+        it is not range-checked, so `"0"` and `"abc"` are accepted and `Invalid Port` is returned only
+        when the merged port is empty or missing. `verify_ssl` alone fails with 422 `Invalid Protocol`
+        when no proxy is stored yet. The response includes `updatedAt`, and `createdAt` and `__v` only
+        on the call that creates the document. A flat form key such as `auth.username=x` (instead of `auth[username]=x`)
+        returns 500 after the other fields are saved; use JSON or bracketed keys.'
       security:
       - bearerAuth: []
       requestBody:
@@ -3976,15 +3916,13 @@ paths:
       - Configuration
       operationId: getRadiusConfig
       summary: Get the RADIUS second-factor configuration
-      description: 'Returns the RADIUS server settings. The shared secret is never returned.
+      description: 'Returns the RADIUS server settings.
 
-        **Required role:** `admin` or `superadmin`.
 
-        On an installed system the document exists in its default state: `{id, server: "", port: null,
-        enabled: false, timeout: 30000}`, without `createdAt` or `updatedAt`. The body is JSON `null`
-        only if the document has been removed.
-
-        '
+        The shared secret is never returned. **Required role:** `admin` or `superadmin`. On an installed
+        system the document exists in its default state: `{id, server: "", port: null, enabled: false,
+        timeout: 30000}`, without `createdAt` or `updatedAt`. The body is JSON `null` only if the document
+        has been removed.'
       security:
       - bearerAuth: []
       responses:
@@ -4008,15 +3946,13 @@ paths:
       operationId: getServerCertificate
       summary: Get metadata of the server TLS certificate
       description: 'WARNING: This endpoint manages the TLS certificate of the Netwrix Privilege Secure
-        for Discovery server itself. Changing it can interrupt access to the console and API.
+        for Discovery server itself.
 
-        Returns metadata about the current (and previous, if any) server TLS certificate. The private
-        key and the certificate PEM are never returned. HTTP 404 with an empty body means no certificate
-        has been uploaded.
 
-        **Required role:** `admin` or `superadmin`.
-
-        '
+        Changing it can interrupt access to the console and API. Returns metadata about the current (and
+        previous, if any) server TLS certificate. The private key and the certificate PEM are never returned.
+        HTTP 404 with an empty body means no certificate has been uploaded. **Required role:** `admin`
+        or `superadmin`.'
       security:
       - bearerAuth: []
       responses:
@@ -4039,15 +3975,12 @@ paths:
       - Configuration
       operationId: getSsoConfig
       summary: Get the SAML single sign-on configuration
-      description: 'Returns the SAML SSO settings. If none exist yet, a default (disabled) document is
-        created and returned.
+      description: 'Returns the SAML SSO settings.
 
-        **Required role:** `admin` or `superadmin`.
 
-        The response to the call that creates the default document includes `type: "saml_config"` and
-        `__v`; later reads omit `type`.
-
-        '
+        If none exist yet, a default (disabled) document is created and returned. **Required role:** `admin`
+        or `superadmin`. The response to the call that creates the default document includes `type: "saml_config"`
+        and `__v`; later reads omit `type`.'
       security:
       - bearerAuth: []
       responses:
@@ -4067,29 +4000,17 @@ paths:
       - Configuration - EDR integrations
       operationId: listEdrBulkScans
       summary: List bulk scans
-      description: 'Returns bulk scan summaries, newest first by `start_time`. This endpoint has its own
-        paging and always wraps the
+      description: 'Returns bulk scan summaries, newest first by `start_time`.
 
-        result as `{docs, page, pages, total, limit}`; no `X-Pagination-*` headers. Paging uses `page`
-        and `limit`.
 
-        When `limit` is omitted it is 100 (the maximum). A `limit` above 100 is clamped to 100, and a
-        `limit` that is 0,
-
-        negative or not a number falls back to 25. A `page` below 1 or not a number is treated as 1, and
-        a page past the
-
+        This endpoint has its own paging and always wraps the result as `{docs, page, pages, total, limit}`;
+        no `X-Pagination-*` headers. Paging uses `page` and `limit`. When `limit` is omitted it is 100
+        (the maximum). A `limit` above 100 is clamped to 100, and a `limit` that is 0, negative or not
+        a number falls back to 25. A `page` below 1 or not a number is treated as 1, and a page past the
         end returns an empty `docs` array. `status` is upper-cased by the server; an unrecognised value
-        is not rejected and
-
-        matches nothing (200 with an empty `docs` array). An unparsable `startDate` or `endDate` is ignored
-        rather than
-
-        rejected. `end_time` and `duration_seconds` are omitted from a
-
-        summary that has not recorded them.
-
-        **Required role:** `superadmin` or `admin`.'
+        is not rejected and matches nothing (200 with an empty `docs` array). An unparsable `startDate`
+        or `endDate` is ignored rather than rejected. `end_time` and `duration_seconds` are omitted from
+        a summary that has not recorded them. **Required role:** `superadmin` or `admin`.'
       security:
       - bearerAuth: []
       parameters:
@@ -4269,13 +4190,10 @@ paths:
       description: 'Returns every active EDR configuration as a plain JSON array (not paged, no pagination
         headers).
 
+
         Soft-deleted configurations are omitted. Configurations with provider `tanium_cloud` are returned
-
-        only when the `tanium_cloud` release toggle is enabled. Secrets are never returned.
-
-        **Required role:** `superadmin` or `admin`.
-
-        '
+        only when the `tanium_cloud` release toggle is enabled. Secrets are never returned. **Required
+        role:** `superadmin` or `admin`.'
       security:
       - bearerAuth: []
       responses:
@@ -4371,21 +4289,14 @@ paths:
       - Configuration - EDR integrations
       operationId: validateEdrConfiguration
       summary: Test an EDR connection
-      description: 'Tests the integration settings against the provider ("Test Connection"). The body
-        has the same
+      description: 'Tests the integration settings against the provider ("Test Connection").
 
-        shape as create, and `provider` is always required (a missing or unknown `provider` returns 422,
-        even with `_id`).
 
-        Include `_id` of an existing configuration, together with its `provider`, to reuse its stored
-        secrets for values
-
-        the body omits; omit `_id` to test an unsaved configuration. A malformed `_id` returns 422. Only
-        `config.integration`
-
-        is tested. If the body has no `config.integration`, the response is 200 with an empty body. The
-        body is not
-
+        The body has the same shape as create, and `provider` is always required (a missing or unknown
+        `provider` returns 422, even with `_id`). Include `_id` of an existing configuration, together
+        with its `provider`, to reuse its stored secrets for values the body omits; omit `_id` to test
+        an unsaved configuration. A malformed `_id` returns 422. Only `config.integration` is tested.
+        If the body has no `config.integration`, the response is 200 with an empty body. The body is not
         schema-validated (no 400 for wrong types).
 
 
@@ -4469,22 +4380,16 @@ paths:
       operationId: updateEdrConfiguration
       summary: Update an EDR configuration
       description: 'Merges the supplied `config.integration` and `config.investigation` values into the
-        stored
+        stored configuration.
 
-        configuration. The provider cannot be changed; the stored provider is used and any `provider`
-        in the body is ignored
 
-        (it may be omitted). Omitted secrets keep their stored values. Send the body as JSON. An empty
-        body, or a body without `config`, succeeds and changes nothing
-
-        except `name` when supplied. A `config.integration` object that carries no recognised settings
-        (after zero-valued Tanium options are dropped) returns 422. Array settings (`domain_fallback_list`,
-        `bulk_single_device_retry_statuses`) are merged
-
-        element by element with the stored array, so a shorter array cannot shrink the stored one and
-        an empty array changes
-
-        nothing.
+        The provider cannot be changed; the stored provider is used and any `provider` in the body is
+        ignored (it may be omitted). Omitted secrets keep their stored values. Send the body as JSON.
+        An empty body, or a body without `config`, succeeds and changes nothing except `name` when supplied.
+        A `config.integration` object that carries no recognised settings (after zero-valued Tanium options
+        are dropped) returns 422. Array settings (`domain_fallback_list`, `bulk_single_device_retry_statuses`)
+        are merged element by element with the stored array, so a shorter array cannot shrink the stored
+        one and an empty array changes nothing.
 
 
         For `tanium_cloud` the body may also carry `tokenExpiresAt` (ISO 8601 date-time or null). For
@@ -4532,16 +4437,12 @@ paths:
       operationId: deleteEdrConfiguration
       summary: Delete an EDR configuration
       description: 'Soft-deletes the configuration: `active` becomes false and the name is renamed to
+        `<name>_deleted_<unix-ms>` so the name can be reused.
 
-        `<name>_deleted_<unix-ms>` so the name can be reused. Deleting an already deleted configuration
 
-        succeeds with no further change. Returns 409 when a domain (LDAP or Microsoft Entra ID) or a
-
-        system still uses the configuration.
-
-        **Required role:** `superadmin` or `admin`.
-
-        '
+        Deleting an already deleted configuration succeeds with no further change. Returns 409 when a
+        domain (LDAP or Microsoft Entra ID) or a system still uses the configuration. **Required role:**
+        `superadmin` or `admin`.'
       security:
       - bearerAuth: []
       responses:
