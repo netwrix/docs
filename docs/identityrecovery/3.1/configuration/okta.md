@@ -23,7 +23,7 @@ The table displays the following information:
 - Actions – Displays the icons used to collect, edit, and delete the respective domain
 
     - Run backup – Click the **Play** icon to start a new collection (backup) on the respective
-      tenant if you need a collection outside of the configured schedule
+      tenant if you need a collection outside the configured schedule
     - Edit configuration – Click the **Edit** icon for a tenant to open the Edit Tenant Configuration
       wizard and change the tenant's settings. See the Edit Tenant
       Configuration topic for additional information.
