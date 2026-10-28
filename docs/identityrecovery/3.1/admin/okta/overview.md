@@ -25,7 +25,7 @@ You can perform the rollback operations for objects.
 
 Search for an Object
 
-There are several ways to find an object:
+You can find an object in two ways:
 
 - Column Filters – Click a column header to sort the table alphabetically.
   An arrow appears by the column name. Use it to arrange the entries by ascending or descending

@@ -11,7 +11,7 @@ Identity Recovery enables administrators to manage Active Directory in the follo
 - Perform Object-level Rollback and Recovery
 
     - Add Domains – Add an Active Directory domain and configure a backup schedule for it
-    - Rollback Objects – Quickly revert entire AD objects or just a single attribute to a known good
+    - Rollback Objects – Revert entire AD objects or a single attribute to a known good
       state from a backup
     - Recover Objects – Restore tombstone objects to active state using the backup data. Recover
       object attributes, group membership, DNS entries, Group Policy objects (GPOs), and more.

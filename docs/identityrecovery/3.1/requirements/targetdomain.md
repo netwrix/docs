@@ -27,8 +27,8 @@ specified on the Domain page of the Add Domain Configuration wizard. This accoun
 
 - A member of the Domain Administrators group in the target domain
 
-There is a Least Privilege Access Model to provision an Active Directory security group with the
-permissions that are necessary to perform backups, rollbacks, and recovery.
+A Least Privilege Access Model lets you provision an Active Directory security group with the
+permissions necessary to perform backups, rollbacks, and recovery.
 
 ### Least Privilege Access Model
 

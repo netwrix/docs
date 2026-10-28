@@ -22,8 +22,8 @@ The table displays the following information:
     - Administrator – This role allows full control of Identity Recovery, including
       adding domains, configuring notifications, and adding and removing users. It has access to the
       Configuration node in the left navigation pane of the application.
-    - Operator – This role allows access to the Active Directory and Forest nodes, and can perform
-      rollback and recovery tasks for domains and forests through the Recovery Console.
+    - Operator – This role allows access to the Active Directory and Forest nodes, and lets the
+      account perform rollback and recovery tasks for domains and forests through the Recovery Console.
 
 - Action – Actions you can perform on user accounts
 
@@ -54,8 +54,8 @@ menu.
 - Administrator – This role allows full control of Identity Recovery, including adding
   domains, configuring notifications, and adding and removing users. It has access to the
   Configuration node in the left navigation pane of the application.
-- Operator – This role allows access to the Active Directory and Forest nodes, and can perform
-  rollback and recovery tasks for domains and forests through the Recovery Console.
+- Operator – This role allows access to the Active Directory and Forest nodes, and lets the
+  account perform rollback and recovery tasks for domains and forests through the Recovery Console.
 
 **Step 5 –** Click **Next**.
 
