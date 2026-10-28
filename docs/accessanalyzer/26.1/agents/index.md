@@ -27,6 +27,12 @@ The System agent is enough for many installations. Add an agent when:
 - You want scan traffic to stay local. An agent in the same site or region as the data keeps large reads off slow or expensive links.
 - Scans compete with the server. A dedicated agent takes only scan work, so long-running scans no longer slow the server.
 
+## Agents and Upgrades
+
+Deployed agents don't have an upgrade of their own, and you don't run anything on the agent hosts. When you [upgrade Access Analyzer](../install/upgrade-to-a-new-version.md), the server starts every later scan with the new release's connectors, whichever agent the scan runs on. The server picks the connector version each time it starts a scan, and the agent downloads that version the first time a scan needs it.
+
+An upgrade doesn't change the k3s version on the server, so the agents, which run the server's k3s version, still match it afterwards.
+
 ## Who Can Manage Agents
 
 Deploying, editing, and deleting agents requires the Admin role. Viewers can open the Agents page and see every agent but can't change anything. Assign roles on the [Users and roles](../settings/users.md) page.
