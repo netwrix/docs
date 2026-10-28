@@ -6,10 +6,9 @@ sidebar_position: 30
 
 # Deployments
 
-This documentation provides comprehensive guidance on deploying Endpoint Protector across various
-environments. Whether you are managing physical hardware, virtual appliances, cloud-based
-infrastructure, or integrating with existing management systems, this resource offers essential
-information and procedures.
+This documentation describes how to deploy Endpoint Protector on physical hardware, virtual
+appliances, and cloud-based infrastructure, and how to integrate it with existing management
+systems.
 
 This section covers a range of deployment methods, including:
 
@@ -17,8 +16,8 @@ This section covers a range of deployment methods, including:
   management.
 - Cloud Platforms: Deployment strategies for AWS, GCP, and Azure, assuming existing cloud accounts
   and basic platform knowledge.
-- Active Directory Integration: Leveraging Group Policy Objects for efficient client deployment.
-- Third-party Management Tools: using JAMF and Microsoft Intune for streamlined deployment.
+- Active Directory Integration: Using Group Policy Objects to deploy clients.
+- Third-party Management Tools: Using JAMF and Microsoft Intune to deploy clients.
 
 :::warning Important
 This section of the documentation provides best-effort guidance on deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, refer to the official resources from the product vendor.
@@ -27,8 +26,8 @@ This section of the documentation provides best-effort guidance on deployment. I
 ## Staging the Server
 
 To start using Endpoint Protector, you need to deploy a server instance. The server hosts all endpoint controls and behavior configuration and delivers the
-Endpoint Protector agent to endpoint systems. There are two principal options for server management;
-Customer-Managed or Provider- Managed. If you choose Customer-Managed, you can install the server On-Premise or in a Hosted-Cloud Environment.
+Endpoint Protector agent to endpoint systems. Server management has two options:
+Customer-Managed or Provider-Managed. If you choose Customer-Managed, you can install the server On-Premise or in a Hosted-Cloud Environment.
 
 With the On-Premise option for a Customer-Managed instance, you can set up a virtualized image in your LAN. Virtualization options include, but aren’t limited to: VMware and
 Hyper-V. The Hosted-Cloud deployment method uses a customer’s Amazon Web Services
@@ -60,7 +59,7 @@ Netwrix assigns an FQDN to every SaaS deployment by default. Bind your clients a
 
 Your Endpoint Protector Server can communicate with Netwrix servers only when you connect it to the internet.
 
-When the server has an internet connection, Netwrix may access the following metadata information:
+When the server has an internet connection, Netwrix may access the following metadata:
 
 - **Server metrics:**  
   - RAM  
@@ -135,9 +134,6 @@ Starting with version 2509, Netwrix standardizes EPP product versioning. The ver
 | RHEL client, May 2026, custom #3 | 2605.4.3.0 |
 | Server, April 2026, internal build #7 | 2604.0.0.7 |
 
-
-This versioning system provides a transparent and easily navigable structure, improving your workflow.
-
 ## Downloading and verifying installation files
 
 Download Endpoint Protector installation files, such as server appliance images and client packages, from the Netwrix My Products portal. Each download has an associated SHA512 file that you use to confirm the download is authentic and uncorrupted.
@@ -174,5 +170,5 @@ The SHA512 file is a PGP-signed message, so it starts with the following header:
 Hash: SHA256
 ```
 
-This header only describes the digest algorithm of the PGP signature. The file hash listed below it is a SHA512 hash (128 characters).
+This header only describes the digest algorithm of the PGP signature. The file hash that follows the header is a SHA512 hash (128 characters).
 :::
