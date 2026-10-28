@@ -17,12 +17,12 @@ deployment to ensure all exceptions are covered.
 
 ## Architecture Overview
 
-The following servers are required for installation of the application:
+Installing the application requires the following servers:
 
 Core Component
 
 - Netwrix Identity Recovery Application Server – This is where the application is installed
-- SQL Server for Identity Recovery Database – As a data-intensive application, a well-provisioned, dedicated SQL Server is recommended
+- SQL Server for Identity Recovery Database – Identity Recovery is a data-intensive application, so Netwrix recommends a well-provisioned, dedicated SQL Server
 - RSAT Extension – Active Directory Users and Computers extension enabling Identity Recovery features from within Microsoft management utilities
 
 See the following topics for server requirements:

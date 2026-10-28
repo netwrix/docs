@@ -20,7 +20,7 @@ The application header contains the following icons in the top right corner:
 - Help Center – Click the **?** icon to open the
   [](https://helpcenter.netwrix.com/)[Netwrix Technical Knowledge Center](https://helpcenter.netwrix.com/)
   for the Identity Recovery documentation
-- User Profile – On clicking the profile icon, the following options are displayed:
+- User Profile – Click the profile icon to display the following options:
 
     - Manage – Click it to open the MFA page, where you can set up multi-factor authentication for
       your Identity Recovery account. See the
@@ -51,6 +51,6 @@ The navigation pane contains the following links:
       added Entra tenant. You can also add and configure new Entra tenant.
     - [Users and Roles Page](/docs/identityrecovery/3.1/configuration/roles.md) – The Users and Roles page displays the accounts with access to Identity Recovery.
     - [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) – The Notifications page allows the configuration of notifications, which is required for sending an email when a collection (backup) job is completed.
-    - [Netwrix Integrations Page](/docs/identityrecovery/3.1/configuration/integration.md) – The Netwrix Integrations page lets you configure access to the data in other Netwrix products. At present, only Netwrix Threat Prevention is supported.
+    - [Netwrix Integrations Page](/docs/identityrecovery/3.1/configuration/integration.md) – The Netwrix Integrations page lets you configure access to the data in other Netwrix products. Identity Recovery supports only Netwrix Threat Prevention.
     - [Data Retention Policy Page](/docs/identityrecovery/3.1/configuration/dataretention.md) – The Data Retention Policy page provides settings for deleting backup data for domains and domain controllers that has aged by X number of days, and for deleting backup data for tombstone objects that have been purged.
     - [Licensing Page](/docs/identityrecovery/3.1/install/licensing.md) – The Licensing page provides an overview of the organization's license status and the ability to import a license file.

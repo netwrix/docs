@@ -14,7 +14,7 @@ Click **Entra ID** in the left pane to open the Entra ID page.
 ![Entra ID page](/images/identityrecovery/3.1/product/entra_id/entra_id.png)
 
 Select a tenant from the dropdown menu and expand it to view the domain tree and container
-structure, which is exactly the same as you get in Active Directory Users and Computers. Objects in
+structure, which matches Active Directory Users and Computers. Objects in
 the domain are also available in the same hierarchical structure.
 
 The page displays the following information:

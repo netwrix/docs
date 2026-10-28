@@ -11,7 +11,7 @@ Bin in Active Directory Users and Computers (ADUC).
 
 ## Prerequisites
 
-The following prerequisites must be met before you can rollback or recover an object using ADUC:
+Before you can rollback or recover an object using ADUC, you must meet the following prerequisites:
 
 - You must register the RSAT Extension on the Recovery Application Server to add the Rollback and
   Restore options to the ADUC console. See the
@@ -26,7 +26,7 @@ The following prerequisites must be met before you can rollback or recover an ob
 
 ![ADUC with the Restore option selected](/images/identityrecovery/3.1/rsatextension/aducrestore.webp)
 
-**Step 2 –** In the Recycle Bin, right-click the object to be restored and select **Restore** on
+**Step 2 –** In the Recycle Bin, right-click the object to restore and select **Restore** on
 the menu. The Object Recovery wizard opens.
 
 ![Object Recovery Wizard - Object Backups page](/images/identityrecovery/3.1/rsatextension/objectbackups_1.webp)
@@ -83,8 +83,8 @@ Select the checkboxes you want relating to the state of a user password upon res
 - Set new password – Implement a new password upon recovery. Enter the new password in the text box.
 
     :::tip
-        Remember, when a new password is created, the user needs it to login the first time. The
-    password should be copied and given to the restored user.
+    When you create a new password, the user needs it to login the first time. Copy the
+    password and give it to the restored user.
     :::
 
 

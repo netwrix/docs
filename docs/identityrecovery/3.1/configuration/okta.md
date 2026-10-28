@@ -21,11 +21,11 @@ The table displays the following information:
 - Last Collection Time – The most recent time the collection (backup) occurred
 - Duration – The time the collection took to complete
 - Status – Collection state as idle, waiting, error, or success
-- Details – Information about any errors that occurred when the last backup was performed
+- Details – Information about any errors that occurred during the last backup
 - Actions – Displays the icons used to collect, edit, and delete the respective domain
 
     - Run backup – Click the **Play** icon to start a new collection (backup) on the respective
-      tenant if collection is needed outside of the configured schedule
+      tenant if you need a collection outside of the configured schedule
     - Edit configuration – Edit the settings of the tenant. Click the **Edit** icon for a tenant to
       open the Edit Tenant Configuration wizard and edit the tenant's settings. See the Edit Tenant
       Configuration topic for additional information.
@@ -60,8 +60,8 @@ default time is 12:00 AM.
 Click **Next**.
 
 :::note
-If the start time is changed from the default and a frequency is selected (in minutes),
-the backups will run at the frequency you want but will skip from midnight until the selected start
+If you change the start time from the default and select a frequency (in minutes),
+the backups run at the frequency you want but skip from midnight until the selected start
 time.
 :::
 
@@ -72,7 +72,7 @@ email address of one or more users and/or groups to receive the job start and en
 a semicolon (;) to separate multiple recipients. See the [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md)
 topic for additional information.
 
-If notifications aren't desired, skip this step.
+If you don't want notifications, skip this step.
 
 **Step 9 –** Click **Next**.
 

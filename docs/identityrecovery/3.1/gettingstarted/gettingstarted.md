@@ -32,20 +32,20 @@ account that was configured during installation. See the [First Launch](/docs/id
 
 Several Identity Recovery components require configuration after the first launch of the product.
 
-- Configure Domain Backup – Configure a domain and backup settings. It is recommended to start a backup of the domain after
+- Configure Domain Backup – Configure a domain and backup settings. Netwrix recommends starting a backup of the domain after
   configuring it. See the [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) topic for additional information on configuring a domain to backup.
 - Configure Forest Backup – Configure a forest and then configure backup settings for domain
-  controllers in the forest. It is recommended a start a backup of the domain controllers after
+  controllers in the forest. Netwrix recommends starting a backup of the domain controllers after
   configuring backup settings. See the [Forest Page](/docs/identityrecovery/3.1/admin/forest/forest.md) topic for additional information on configuring a domain controller backup.
 - _(Optional)_ Install RSAT Extension on Additional Servers – The `RSAT Extension.msi` is
   automatically installed with the Identity Recovery application on the application
-  server. The extension can also be installed on other servers where ADUC is installed. See the
+  server. You can also install the extension on other servers where Active Directory Users and Computers (ADUC) is installed. See the
   [Install the RSAT Extension](/docs/identityrecovery/3.1/install/installation.md) topic for additional information.
 - Configure Additional Users – The user or group configured during installation of the product has
-  administrator access to the Recovery Console. Additional users and groups can be added and
-  assigned roles. See the [Users and Roles Page](/docs/identityrecovery/3.1/configuration/roles.md) topic for additional information.
-- _(Optional)_ Configure Notifications – Email notifications require configuration before they can
-  be enabled. See the [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) topic for additional information on configuring email notifications.
+  administrator access to the Recovery Console. You can add other users and groups and
+  assign them roles. See the [Users and Roles Page](/docs/identityrecovery/3.1/configuration/roles.md) topic for additional information.
+- _(Optional)_ Configure Notifications – Configure email notifications before you
+  enable them. See the [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) topic for additional information on configuring email notifications.
 
 ## Rollback and Restore Operations
 

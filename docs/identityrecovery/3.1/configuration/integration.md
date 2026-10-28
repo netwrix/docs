@@ -7,7 +7,7 @@ sidebar_position: 40
 # Netwrix Integrations Page
 
 The Netwrix Integrations page lets you configure access to the data in other Netwrix
-products. At present, only Netwrix Threat Prevention is supported. This enables Identity Recovery to
+products. Identity Recovery supports only Netwrix Threat Prevention. This enables Identity Recovery to
 pull object data from the integrated product and tie it with that same object's data in
 Identity Recovery. Users can then view the audit history and activity data coming from
 Threat Prevention for objects on the [Active Directory Page](/docs/identityrecovery/3.1/admin/activedirectory/overview.md).

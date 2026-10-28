@@ -28,7 +28,7 @@ To install the application, see the following topics:
 - [Configuration Utility](/docs/identityrecovery/3.1/install/configurationutility.md)
 - [Install the RSAT Extension](/docs/identityrecovery/3.1/install/installation.md)
 
-Before installing, ensure that all prerequisites have been met, as described in the
+Before installing, ensure that you meet all prerequisites, as described in the
 [Requirements ](/docs/identityrecovery/3.1/requirements/overview.md)topic.
 
 ## Licensing
