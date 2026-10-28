@@ -372,7 +372,7 @@ The output shows the state (`running`, `succeeded`, or `failed`), the phase, the
 
 ## The `install-agent` Command
 
-`install-agent` joins the host you run it on to an existing installation as an agent node. You don't write the command by hand: the **Deploy agent** panel generates it with a registration bundle, as [Deploy an agent](../agents/deploy-agent.md) describes. Run it as root on a separate Linux host, not on the Access Analyzer server.
+`install-agent` joins the host you run it on to an existing installation as an agent node. You don't write the command by hand: the **Add agent** panel generates it with a registration bundle, as [Deploy an agent](../agents/deploy-agent.md) describes. Run it as root on a separate Linux host, not on the Access Analyzer server.
 
 ```bash
 sudo dspm-installer install-agent \
@@ -387,7 +387,7 @@ The bundle expires 30 minutes after the panel generates it, and `install-agent` 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
 | `--server` | none | none | Required. The Kubernetes API server URL that the host joins, such as `https://aa.corp.example.com:6443`. It overrides the address in the bundle. It isn't the URL of the web application. |
-| `--token` | none | none | Required. The registration bundle from the **Deploy agent** panel. |
+| `--token` | none | none | Required. The registration bundle from the **Add agent** panel. |
 | `--name` | none | none | Required. The agent's display name. |
 | `--label` | none | none | An agent label as `key=value`. Repeat the flag for more labels. |
 | `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. Refused for a server that pulls from the registry. Without it, an agent for a connected media install downloads the media. |

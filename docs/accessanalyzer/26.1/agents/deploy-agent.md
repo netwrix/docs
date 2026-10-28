@@ -1,13 +1,13 @@
 ---
 title: Deploy an Agent
-description: Prepare a Linux host, generate an install command in the Deploy agent panel, run it on the host, and edit or remove the agent later.
+description: Prepare a Linux host, generate an install command in the Add agent panel, run it on the host, and edit or remove the agent later.
 sidebar_position: 1
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-You deploy an agent by running one command on the Linux host that becomes the agent. The **Deploy agent** panel generates the command. When you run it, the host joins the installation and registers itself under the name and labels you chose. The Access Analyzer server never connects to the host, so you don't give Access Analyzer a username, password, or SSH key for it.
+You deploy an agent by running one command on the Linux host that becomes the agent. The **Add agent** panel generates the command. When you run it, the host joins the installation and registers itself under the name and labels you chose. The Access Analyzer server never connects to the host, so you don't give Access Analyzer a username, password, or SSH key for it.
 
 You need the Admin role for everything on this page. Viewers can see the Agents page but can't deploy, edit, or remove agents.
 
@@ -93,10 +93,10 @@ The host needs TCP 443 to these hosts:
 ## Generate the Command
 
 1. Go to **Configuration > Agents**.
-2. Click **Deploy agent**.
+2. Click **Add agent**.
 3. In **Name**, enter a name for the agent, such as `Production Agent`.
 4. Under **Labels**, add at least one label, such as `env=production` or `region=us-east`. Labels are how scans find this agent; see [Agent labels and scan routing](agent-labels.md).
-5. Click **Deploy**. The panel reads **Generating install command…** and then shows the command under **Install command**.
+5. Click **Generate command**. The panel reads **Generating install command…** and then shows the command under **Install command**.
 6. Click the **Copy install command** icon. A notification reads `Command copied to clipboard`.
 
 The panel stays open. Leave it open until you have pasted the command into a terminal on the host, because **Regenerate command** is the only way to get the command again.
@@ -141,7 +141,7 @@ On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`,
 
 2. Paste the command from the panel and press Enter.
 
-   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes if it's interrupted, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command right away.
+   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes after an interruption, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command right away.
 
    To use media that's already on the host, add `--bundle-dir=<path>` to the command. The path is the archive, such as `/etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz`, or the extracted directory.
 
@@ -191,7 +191,7 @@ If the command stops at a preflight warning, it asks whether to continue. Add `-
 
 1. Checks the bundle, the name, and the labels.
 2. Stops if the host is the Access Analyzer server, if the command isn't running as root, or if the `--bundle-dir` setting doesn't match the server.
-3. Runs the agent preflight: the sizing, operating system, disk, and network checks that the previous sections list.
+3. Runs the agent preflight: the sizing, operating system, disk, and network checks that [Prepare the host](#prepare-the-host) lists.
 4. Checks that the server's certificate covers the address that the host joins. See [The certificate doesn't cover the join address](#the-certificate-doesnt-cover-the-join-address).
 5. On a server that runs from offline media, either downloads or unpacks the media, and stops if the media's k3s is newer than the server's.
 6. Opens the host firewall if firewalld or ufw is active.
@@ -299,6 +299,6 @@ Removal takes the agent out of Access Analyzer. The server doesn't connect to th
 
 You can't remove an agent while a scan is running on it; the attempt fails with **Failed to delete agent**. Wait for the execution to finish, or stop it from [Scan executions](../scans/scan-executions.md), then try again.
 
-Scans whose agent label pointed at the removed agent keep that label. Their next execution waits until another agent with matching labels is available, as described in [Agent labels and scan routing](agent-labels.md#when-no-agent-matches). Edit those scans, or deploy a replacement agent with the same labels, before their next scheduled run.
+Scans whose agent label pointed at the removed agent keep that label. Their next execution waits until another agent with matching labels is available, as [Agent labels and scan routing](agent-labels.md#when-no-agent-matches) describes. Edit those scans, or deploy a replacement agent with the same labels, before their next scheduled run.
 
 The System agent has no **Delete** action.
