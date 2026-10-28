@@ -2,5 +2,11 @@
   "_comment": "GitHub logins to leave out of a team's Slack @-mentions even though they are GitHub team members. Keyed by team handle; applied by `npm run slack:sync`.",
   "@netwrix/changetracker-docs": [
     "JBogalecki-Netwrix"
+  ],
+  "@netwrix/kb-docs": [
+    "jake-mahon-netwrix",
+    "tay-caliguiri",
+    "zoeycastillo",
+    "nzimmer09"
   ]
 }
