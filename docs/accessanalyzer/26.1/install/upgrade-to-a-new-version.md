@@ -33,13 +33,11 @@ On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` u
 
 Before every upgrade, whatever your install type, download the latest `dspm-installer` and run the upgrade with it. The `upgrade` command exists only in newer installers, and an installer from an older release can reject newer media.
 
-1. Read your license key into an environment variable. Run this step even if you set the variable when you installed: it lasts only until you close that terminal.
+1. Read your license key into an environment variable.
 
    ```bash
    read -rs LICENSE_KEY && export LICENSE_KEY
    ```
-
-   Run the command as shown, without editing it. It waits for input and shows nothing: paste your license key and press **Enter**. The key doesn't appear on screen, and it stays out of your shell history.
 
 2. Download the installer and replace the copy in `/usr/local/bin`.
 
