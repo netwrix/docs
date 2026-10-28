@@ -32,7 +32,7 @@ The inventory is also what a Sensitive data scan works from, so run an Access sc
 | **Maximum scan depth** | 50 | How many folder levels below the share root to record, 1 or more. This guards against endless recursion. At 1, the scan records the folders and files directly in each share but doesn't open those folders. |
 | **Enable File-Level Permission Scanning** | Off | Collects the owner and permissions of individual files as well as folders. |
 
-Enter a share name and press Enter, or enter a comma, to add it to a share list. You can also paste several names separated by commas or line breaks. A list skips a name it already holds, ignoring case. The share settings take share names only; there is no setting for individual folder paths. See [SMB file servers](../sources/smb-file-servers.md#access-scans) for how Access scans treat each kind of share.
+Enter a share name and press Enter, or enter a comma, to add it to a share list. You can also paste several names separated by commas or line breaks. A list skips a name it already holds, ignoring case. The share settings take share names only; there is no setting for individual folder paths. See [SMB file servers](../../configuration/sources/smb-file-servers.md#access-scans) for how Access scans treat each kind of share.
 
 ### SharePoint Online Settings
 
@@ -44,7 +44,7 @@ Enter a share name and press Enter, or enter a comma, to add it to a share list.
 | **Exclude URLs** | Empty | URL patterns for subsites, lists, libraries, folders, documents, and list items to skip inside the scanned site collections. Supports the `*` wildcard. |
 | **Collect OneDrive** | On | Includes users' OneDrive personal sites when **Include site collections** is set to **Scan all URLs**. When you list specific site collections, the scan covers exactly those, and this setting has no effect. |
 
-Exclude rules always take precedence over include rules. A pattern in **Exclude URLs** matches the whole URL, ignoring case, so a pattern without a wildcard matches only the object at exactly that URL. To exclude a library, folder, or site and everything in it, end the pattern with `/*`, as in `*.sharepoint.com/sites/archive/*`. See [Microsoft 365](../sources/microsoft-365.md#access-scans) for the content Access scans always skip.
+Exclude rules always take precedence over include rules. A pattern in **Exclude URLs** matches the whole URL, ignoring case, so a pattern without a wildcard matches only the object at exactly that URL. To exclude a library, folder, or site and everything in it, end the pattern with `/*`, as in `*.sharepoint.com/sites/archive/*`. See [Microsoft 365](../../configuration/sources/microsoft-365.md#access-scans) for the content Access scans always skip.
 
 ### Reports Fed by Access Scans
 
@@ -52,13 +52,13 @@ Access scans feed the reports in the **Permissions** category on **Reports > Dat
 
 ## Sensitive Data Scan
 
-A Sensitive data scan opens files, reads their content, and matches it against [sensitive data patterns](../sensitive-data-patterns/index.md). For each file it records which pattern groups and patterns matched and how many times; it doesn't store the matched text itself.
+A Sensitive data scan opens files, reads their content, and matches it against [sensitive data patterns](../../configuration/sensitive-data-patterns/index.md). For each file it records which pattern groups and patterns matched and how many times; it doesn't store the matched text itself.
 
 ### Prerequisites
 
 The scan needs a completed Access scan on the same source, because it picks its files from the inventory that scan built. A Sensitive data scan on a source that has never had an Access scan finds nothing to classify.
 
-The scan doesn't read every inventoried file. The **File server scanning** and **SharePoint scanning** cards on **Settings > Application**, described in [Application settings](../settings/application.md#file-server-scanning-and-sharepoint-scanning), decide which files qualify. Each card has the same four settings:
+The scan doesn't read every inventoried file. The **File server scanning** and **SharePoint scanning** cards on **Settings > Application**, described in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning), decide which files qualify. Each card has the same four settings:
 
 | Setting | Default | Meaning |
 |---|---|---|
@@ -99,7 +99,7 @@ SharePoint Online Sensitive data scans have no **Workers** setting; they use **C
 
 Under **Sensitive data classification**, the **Configuration source** card holds the **Inherit from global configuration** switch, which is on by default. While it's on, the scan classifies against the pattern groups marked **Scanned by default** on the Sensitive data patterns page, and the card reports how many groups that is. Changing the global set later changes what this scan looks for on its next run.
 
-Turn the switch off to select groups for this scan alone. **Sensitive Data Pattern Groups to Classify** lists the pattern groups and marks built-in ones with a **Built-in** badge. Type in **Search pattern groups** to filter the list, or click **Select All** to choose every group. [Pattern groups](../sensitive-data-patterns/pattern-groups.md) describes the groups themselves.
+Turn the switch off to select groups for this scan alone. **Sensitive Data Pattern Groups to Classify** lists the pattern groups and marks built-in ones with a **Built-in** badge. Type in **Search pattern groups** to filter the list, or click **Select All** to choose every group. [Pattern groups](../../configuration/sensitive-data-patterns/pattern-groups.md) describes the groups themselves.
 
 ![Sensitive data scan settings with selectable pattern groups](/images/accessanalyzer/26.1/scans/create-scan-sensitive-3-configure-custom-groups.webp)
 
@@ -115,13 +115,13 @@ Sensitive data scans feed both **Sensitive Data Overview** reports, one for file
 
 ## Identity Sync
 
-An Identity sync collects the accounts and groups of a directory. From Active Directory it collects users, groups, direct group memberships, and custom user attributes. From Entra ID it collects users, groups, directory roles, group memberships and owners, and role assignments. Each source type's page lists every attribute it stores: [Active Directory](../sources/active-directory.md#collected-attributes) and [Entra ID](../sources/entra-id.md#collected-attributes).
+An Identity sync collects the accounts and groups of a directory. From Active Directory it collects users, groups, direct group memberships, and custom user attributes. From Entra ID it collects users, groups, directory roles, group memberships and owners, and role assignments. Each source type's page lists every attribute it stores: [Active Directory](../../configuration/sources/active-directory.md#collected-attributes) and [Entra ID](../../configuration/sources/entra-id.md#collected-attributes).
 
 ### Active Directory Settings
 
 | Setting | Default | Meaning |
 |---|---|---|
-| **Differential Scan** | On | Collects only objects that changed since the last sync, based on the domain controller's update sequence number (USN). The sync reads the whole domain anyway when it has no saved state or a different domain controller answers. Ended memberships, and deletions the sync can't see, clear only on a full sync, so turn it off to force a full collection. See [Differential and full syncs](../sources/active-directory.md#differential-and-full-syncs). |
+| **Differential Scan** | On | Collects only objects that changed since the last sync, based on the domain controller's update sequence number (USN). The sync reads the whole domain anyway when it has no saved state or a different domain controller answers. Ended memberships, and deletions the sync can't see, clear only on a full sync, so turn it off to force a full collection. See [Differential and full syncs](../../configuration/sources/active-directory.md#differential-and-full-syncs). |
 | **Workers** | 16 | Concurrent workers, from 1 to 16. Each worker opens its own LDAP connection to the domain controller. Lower the value to reduce the load on the domain controller. |
 
 ### Entra ID Settings

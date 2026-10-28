@@ -5,7 +5,7 @@ description: A source is a file system or identity system that Access Analyzer s
 
 A source is one system that Access Analyzer connects to and scans: a file server, an Active Directory domain, an Entra ID tenant, or a SharePoint Online tenant. Every source has a type and a connection (where the system is), and usually a service account (how Access Analyzer signs in to it). Scans then run against one or more sources and store what they collect for the dashboards and reports.
 
-Manage sources at **Configuration > Sources**. Users with the Viewer role see a read-only list without the add, import, edit, or delete controls; see [Users and roles](../settings/users.md).
+Manage sources at **Configuration > Sources**. Users with the Viewer role see a read-only list without the add, import, edit, or delete controls; see [Users and roles](../../admin/users.md).
 
 ![Sources list showing three File Server sources with service accounts and labels](/images/accessanalyzer/26.1/sources/list.webp)
 
@@ -65,7 +65,7 @@ Changing the field that identifies the system, such as **Host**, **Domain** (Act
 
 Access Analyzer refuses to delete a source in two cases:
 
-- A scan execution is running or pending on the source. The dialog says a scan is running; stop it from [Scan executions](../scans/scan-executions.md) or wait for it to finish, then try again.
+- A scan execution is running or pending on the source. The dialog says a scan is running; stop it from [Scan executions](../../admin/scans/scan-executions.md) or wait for it to finish, then try again.
 - The source has scan history. A source that scans have run against, or that a scan references, stays in place.
 
 ## Work With Several Sources at Once

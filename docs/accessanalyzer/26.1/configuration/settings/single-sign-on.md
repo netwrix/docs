@@ -15,7 +15,7 @@ Access Analyzer supports three kinds of sign-in. Local sign-in always stays avai
 - **Active Directory (AD)** lets people sign in with their domain username and password. Access Analyzer checks them against a domain controller over Lightweight Directory Access Protocol (LDAP) secured with TLS, known as LDAPS.
 - **Entra ID** lets people sign in with their Microsoft work account through a **Sign in with Microsoft** button.
 
-Connecting a directory is what the product calls single sign-on (SSO), and users who sign in that way are **Federated (SSO)** accounts in [Users and roles](users.md). You connect one provider, once, through the setup flow. After that, **Settings > System > Single sign-on** is where you rotate the AD service account password.
+Connecting a directory is what the product calls single sign-on (SSO), and users who sign in that way are **Federated (SSO)** accounts in [Users and roles](../../admin/users.md). You connect one provider, once, through the setup flow. After that, **Settings > System > Single sign-on** is where you rotate the AD service account password.
 
 ## Before You Begin
 
@@ -36,7 +36,7 @@ For **Entra ID**, gather:
 
 ## Open the Setup Flow
 
-The setup flow opens automatically for an Admin who signs in before anyone connects an identity provider, until someone completes it or clicks **Set up later**; see [Sign in for the first time](../install/first-sign-in.md). To reach it from Settings:
+The setup flow opens automatically for an Admin who signs in before anyone connects an identity provider, until someone completes it or clicks **Set up later**; see [Sign in for the first time](../../install/first-sign-in.md). To reach it from Settings:
 
 1. Go to **Settings > System**.
 2. On the **Single sign-on** card, click **Go to set up**. Before you connect a provider, the card reads "No external authentication providers are connected. Connect a service first."
@@ -148,7 +148,7 @@ The user's role is the one on the row, Viewer by default. Access Analyzer doesn'
 
 A directory user with no matching row sees **Access denied** and "Your account isn't authorized to access this application. contact your administrator." A user whose row is Inactive sees "Your account is inactive. contact your administrator."
 
-Disabling someone in your directory stops them from signing in to Access Analyzer; their Access Analyzer row stays until you deactivate or delete it. Deleting a federated user in Access Analyzer removes only the Access Analyzer account. The password length rule in [Users and roles](users.md#password-policy-and-lockout) applies to local accounts only; the directory governs its own passwords.
+Disabling someone in your directory stops them from signing in to Access Analyzer; their Access Analyzer row stays until you deactivate or delete it. Deleting a federated user in Access Analyzer removes only the Access Analyzer account. The password length rule in [Users and roles](../../admin/users.md#password-policy-and-lockout) applies to local accounts only; the directory governs its own passwords.
 
 ## Rotate the Directory Service Account Password
 

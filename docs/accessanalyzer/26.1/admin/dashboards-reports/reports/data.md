@@ -194,13 +194,13 @@ This is the report to open when you need to know what happened to a particular p
 | **Top Shares** | Shares ranked by event count |
 | **File System Activity** | The event-level list, one row per event |
 
-Needs Netwrix Activity Monitor sending file server events to Access Analyzer. [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md) explains the connection.
+Needs Netwrix Activity Monitor sending file server events to Access Analyzer. [Netwrix Activity Monitor](../../../integrations/netwrix-activity-monitor.md) explains the connection.
 
 ### Sensitive Data Overview
 
 "Summary of sensitive data findings across all scanned file system locations."
 
-The file server counterpart of the sensitive data tiles on the Data security dashboard, with filters that let you narrow the findings to a host, a share, a pattern group, or a single pattern. [Sensitive data patterns](../../sensitive-data-patterns/index.md) explains what patterns and pattern groups are.
+The file server counterpart of the sensitive data tiles on the Data security dashboard, with filters that let you narrow the findings to a host, a share, a pattern group, or a single pattern. [Sensitive data patterns](../../../configuration/sensitive-data-patterns/index.md) explains what patterns and pattern groups are.
 
 ![Sensitive Data Overview report](/images/accessanalyzer/26.1/dashboards-reports/report-sensitive-data-overview.webp)
 

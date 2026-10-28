@@ -37,7 +37,7 @@ SharePoint Online sources use a **Client ID/certificate** service account. Unlik
 
 ![Add service account drawer with the Client ID/certificate type selected](/images/accessanalyzer/26.1/service-accounts/add-client-id-certificate.webp)
 
-If your organization issues its own certificates, select **Upload my own** instead and provide a `.pem` file, up to 1 MB, that contains both the certificate and its unencrypted private key. Access Analyzer rejects expired certificates and PFX files. The [Client ID and certificate](../service-accounts/client-id-certificate.md) page covers both options and what to do when the certificate is due to expire.
+If your organization issues its own certificates, select **Upload my own** instead and provide a `.pem` file, up to 1 MB, that contains both the certificate and its unencrypted private key. Access Analyzer rejects expired certificates and PFX files. The [Client ID and certificate](../../configuration/service-accounts/client-id-certificate.md) page covers both options and what to do when the certificate is due to expire.
 
 ## 2. Upload the Certificate to the App Registration
 
@@ -66,7 +66,7 @@ The generated certificate expires one year after you create the account, and sca
 
 ![Add source drawer for a SharePoint Online source](/images/accessanalyzer/26.1/sources/add-sharepoint-online.webp)
 
-Field details are on the [SharePoint Online source](../sources/microsoft-365.md) page.
+Field details are on the [SharePoint Online source](../../configuration/sources/microsoft-365.md) page.
 
 ## 4. Create the Access Scan
 
@@ -85,7 +85,7 @@ Run the Access scan first. The Sensitive data scan in step 6 classifies document
 
 ![Create scan Review step with the scan named and the summary shown](/images/accessanalyzer/26.1/scans/create-scan-5-review-named.webp)
 
-When you're ready to narrow the scan, edit it and select **Customize this source** on the **Configure** step. **Include site collections** limits the scan to the site collections you list and takes no wildcards; **Exclude site collections** and **Exclude URLs** accept the `*` wildcard. Keep **Workers** at 3 for an app registration with the regular SharePoint Online request limits, or set it to 24 when the app registration has service prioritization in SharePoint enabled. Beyond those values, raise it only while scans run without throttling; when SharePoint throttles requests, every worker pauses. Every Access scan is a full crawl of the sites in scope; there is no differential option. [Scan types](../scans/scan-types.md) describes each setting.
+When you're ready to narrow the scan, edit it and select **Customize this source** on the **Configure** step. **Include site collections** limits the scan to the site collections you list and takes no wildcards; **Exclude site collections** and **Exclude URLs** accept the `*` wildcard. Keep **Workers** at 3 for an app registration with the regular SharePoint Online request limits, or set it to 24 when the app registration has service prioritization in SharePoint enabled. Beyond those values, raise it only while scans run without throttling; when SharePoint throttles requests, every worker pauses. Every Access scan is a full crawl of the sites in scope; there is no differential option. [Scan types](../../admin/scans/scan-types.md) describes each setting.
 
 ## 5. Watch the Execution
 
@@ -93,11 +93,11 @@ Go to **Configuration > Scan executions**. The list refreshes on its own, and th
 
 ![Scan executions list](/images/accessanalyzer/26.1/scans/executions-list.webp)
 
-If the status is **Failed**, open the row's actions menu, click **View logs**, and check the **Detailed logs** tab. A sign-in error points at the certificate or the app registration. [Scan executions](../scans/scan-executions.md) lists every status.
+If the status is **Failed**, open the row's actions menu, click **View logs**, and check the **Detailed logs** tab. A sign-in error points at the certificate or the app registration. [Scan executions](../../admin/scans/scan-executions.md) lists every status.
 
 ## 6. Create the Sensitive Data Scan
 
-After the Access scan shows **Completed**, create the second scan. It downloads documents from the Access scan's inventory and classifies them against sensitive data patterns. By default the scan classifies only the file types on **Include list** and skips documents larger than 10 MB; both settings are on the **SharePoint scanning** card in [Application settings](../settings/application.md#file-server-scanning-and-sharepoint-scanning).
+After the Access scan shows **Completed**, create the second scan. It downloads documents from the Access scan's inventory and classifies them against sensitive data patterns. By default the scan classifies only the file types on **Include list** and skips documents larger than 10 MB; both settings are on the **SharePoint scanning** card in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
 
 1. Go to **Configuration > Scans** and click **Create scan**.
 2. On the **Type** step, select **Sensitive data** and click **Next**.
@@ -116,7 +116,7 @@ On a fresh install, no pattern group carries **Scanned by default**, and a scan 
 
 :::
 
-[Sensitive data patterns](../sensitive-data-patterns/index.md) describes the built-in groups and confidence levels.
+[Sensitive data patterns](../../configuration/sensitive-data-patterns/index.md) describes the built-in groups and confidence levels.
 
 ## 7. Check the Dashboards and Reports
 
@@ -135,4 +135,4 @@ Dashboards and reports don't refresh on their own. Open one and click **Refresh*
 | **Open Access** | Access scan | Content that all authenticated users can reach without restriction |
 | **Sensitive Data Overview** | Sensitive data scan | Sensitive data classifications across SharePoint sites |
 
-**Shared Links** also appears under **Reports > Compliance** for each framework. The other three SharePoint reports appear only on the **Data** page. [Data reports](../dashboards-reports/reports/data.md) describes every report and its filters, and the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) page covers each card.
+**Shared Links** also appears under **Reports > Compliance** for each framework. The other three SharePoint reports appear only on the **Data** page. [Data reports](../../admin/dashboards-reports/reports/data.md) describes every report and its filters, and the [Data security dashboard](../../admin/dashboards-reports/dashboards/data-security.md) page covers each card.

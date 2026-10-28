@@ -118,7 +118,7 @@ Two things follow from this:
 - An empty set means everything, not nothing. If no group is scanned by default and a scan inherits, or a scan overrides with no groups selected, the scan classifies against all groups, built-in and custom.
 - The scan matches groups by name. When the set isn't empty, it keeps findings only for patterns in groups with those names, so a scan that names a deleted group records nothing for it.
 
-For the other **Configure** settings and their defaults, see [Scan types](../scans/scan-types.md); for creating, editing, and running a scan, see [Scans](../scans/index.md).
+For the other **Configure** settings and their defaults, see [Scan types](../../admin/scans/scan-types.md); for creating, editing, and running a scan, see [Scans](../../admin/scans/index.md).
 
 ## Delete a Pattern Group
 

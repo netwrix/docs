@@ -13,9 +13,9 @@ Settings holds what applies to the whole installation rather than to one source 
 |---|---|---|
 | [**Application**](application.md) | Deployment-wide defaults for the Home page, Sensitive data scans, classification, and the audit log | Admin, Viewer |
 | [**Feature flags**](feature-flags.md) | Experimental toggles for optional scan features | Admin, Viewer |
-| [**Users**](users.md) | User accounts, their roles, and whether each account is active | Admin, User admin |
+| [**Users**](../../admin/users.md) | User accounts, their roles, and whether each account is active | Admin, User admin |
 | **System** | [Backups](backups.md) and [single sign-on](single-sign-on.md) | Admin, User admin |
-| [**Activity Monitor**](../integrations/netwrix-activity-monitor.md) | The enrollment token for Netwrix Activity Monitor agents, the enrolled agents, and the **Settings** dialog with the Activity Monitor connection settings | Admin |
+| [**Activity Monitor**](../../integrations/netwrix-activity-monitor.md) | The enrollment token for Netwrix Activity Monitor agents, the enrolled agents, and the **Settings** dialog with the Activity Monitor connection settings | Admin |
 | [**System logs**](system-logs.md) | Application logs from every component, with search, filter, and download | Admin |
 
 ## Permissions by Role
@@ -26,7 +26,7 @@ Settings holds what applies to the whole installation rather than to one source 
 
 **Viewer** gets the Application and Feature flags tabs but can't save changes on either. The controls look editable, but every save fails with the message **Some settings were not saved**.
 
-[Users and roles](users.md#roles) describes each role and what it can do across the rest of the product.
+[Users and roles](../../admin/users.md#roles) describes each role and what it can do across the rest of the product.
 
 ## Timing of Saved Changes
 

@@ -28,7 +28,7 @@ Switching tabs clears the selected chip. Click a row to open the report; **Back 
 | [Entra Users](#entra-users) | Entra ID | Users |
 | [Entra Groups](#entra-groups) | Entra ID | Groups |
 
-An Identity sync populates all three: one on an Active Directory source for AD Users, one on an Entra ID source for the other two. [Scan types](../../scans/scan-types.md) explains the Identity sync; [Active Directory](../../sources/active-directory.md) and [Entra ID](../../sources/entra-id.md) explain the sources.
+An Identity sync populates all three: one on an Active Directory source for AD Users, one on an Entra ID source for the other two. [Scan types](../../scans/scan-types.md) explains the Identity sync; [Active Directory](../../../configuration/sources/active-directory.md) and [Entra ID](../../../configuration/sources/entra-id.md) explain the sources.
 
 ## AD Users
 

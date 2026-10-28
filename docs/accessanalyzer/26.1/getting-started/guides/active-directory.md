@@ -23,7 +23,7 @@ The Access Analyzer server, or the agent that runs the scan, needs one Lightweig
 | 389 | LDAP with StartTLS or DIGEST-MD5 authentication | Enter the domain controller's fully qualified domain name (FQDN) in **Host**; DIGEST-MD5 authentication requires an FQDN and doesn't work with an IP address. Works with domain controllers that require LDAP signing. |
 | 636 | LDAP over TLS (LDAPS) | Access Analyzer checks the domain controller's certificate only when you turn on **Enforce strict SSL validation**. With it on, the server or agent that runs the scan must trust the certificate. |
 
-When a connection uses TLS, it uses TLS 1.2 or later. On port 389, Access Analyzer first tries StartTLS with a simple bind; if that attempt fails, it retries with DIGEST-MD5 signing. Access Analyzer doesn't use Kerberos. See [Active Directory](../sources/active-directory.md#network) for the details.
+When a connection uses TLS, it uses TLS 1.2 or later. On port 389, Access Analyzer first tries StartTLS with a simple bind; if that attempt fails, it retries with DIGEST-MD5 signing. Access Analyzer doesn't use Kerberos. See [Active Directory](../../configuration/sources/active-directory.md#network) for the details.
 
 :::warning
 On port 389, if StartTLS and DIGEST-MD5 both fail, Access Analyzer falls back to a simple bind without encryption, which sends the password in cleartext. To rule out the fallback, use port 636.
@@ -31,7 +31,7 @@ On port 389, if StartTLS and DIGEST-MD5 both fail, Access Analyzer falls back to
 
 :::note
 
-Adding a domain as a source has nothing to do with how people sign in to Access Analyzer. Sign-in with Active Directory credentials is a separate setup task; see [Single sign-on](../settings/single-sign-on.md).
+Adding a domain as a source has nothing to do with how people sign in to Access Analyzer. Sign-in with Active Directory credentials is a separate setup task; see [Single sign-on](../../configuration/settings/single-sign-on.md).
 
 :::
 
@@ -48,7 +48,7 @@ Active Directory sources use a **Username/password** service account.
 
 ![Add service account drawer with the Username/password type selected](/images/accessanalyzer/26.1/service-accounts/add-username-password.webp)
 
-If you already created a **Username/password** account for a file server in the same domain and its **Username** is a plain user name with no domain prefix, you can reuse it here; the [Username and password](../service-accounts/username-password.md) page covers the details.
+If you already created a **Username/password** account for a file server in the same domain and its **Username** is a plain user name with no domain prefix, you can reuse it here; the [Username and password](../../configuration/service-accounts/username-password.md) page covers the details.
 
 ## 2. Add the Source
 
@@ -65,7 +65,7 @@ If you already created a **Username/password** account for a file server in the 
 
 ![Add source drawer for an Active Directory source](/images/accessanalyzer/26.1/sources/add-active-directory.webp)
 
-The [Active Directory](../sources/active-directory.md) source page describes each field and the connection checks in more depth.
+The [Active Directory](../../configuration/sources/active-directory.md) source page describes each field and the connection checks in more depth.
 
 ## 3. Create the Identity Sync
 
@@ -87,7 +87,7 @@ Click **Next** to move from one step to the next.
 8. On the **Review** step, enter a **Name** such as `corp.example.com - identity sync`.
 9. Click **Create & run now**.
 
-[Schedules](../scans/schedules.md) explains the frequency options and what the **Schedule Status** column shows.
+[Schedules](../../admin/scans/schedules.md) explains the frequency options and what the **Schedule Status** column shows.
 
 ## 4. Watch the Execution
 
@@ -101,11 +101,11 @@ If the status is **Failed**, open the row's **Actions** menu and click **View lo
 
 ## 5. Check the Dashboard and Reports
 
-Go to **Dashboards > Active Directory** and click **Refresh**. In the **Domain** filter, select the domain you synced. The dashboard opens with counts for **Domains**, **Users**, **Enabled Users**, **Groups**, and **Direct Memberships**, followed by **Users**, **Groups**, and **All Risks** sections that end in the **Active Directory Risks** table. The [Active Directory dashboard](../dashboards-reports/dashboards/active-directory.md) page describes each card.
+Go to **Dashboards > Active Directory** and click **Refresh**. In the **Domain** filter, select the domain you synced. The dashboard opens with counts for **Domains**, **Users**, **Enabled Users**, **Groups**, and **Direct Memberships**, followed by **Users**, **Groups**, and **All Risks** sections that end in the **Active Directory Risks** table. The [Active Directory dashboard](../../admin/dashboards-reports/dashboards/active-directory.md) page describes each card.
 
 ![Active Directory dashboard with Domains, Users, Groups, and risk tiles](/images/accessanalyzer/26.1/dashboards-reports/active-directory-dashboard.webp)
 
-Under **Reports > Identity**, the **Active Directory** tab has the **AD Users** report: every user account with its status, password age, and last logon. The [Identity reports](../dashboards-reports/reports/identity.md) page describes each column.
+Under **Reports > Identity**, the **Active Directory** tab has the **AD Users** report: every user account with its status, password age, and last logon. The [Identity reports](../../admin/dashboards-reports/reports/identity.md) page describes each column.
 
 ![AD Users report](/images/accessanalyzer/26.1/dashboards-reports/report-ad-users.webp)
 

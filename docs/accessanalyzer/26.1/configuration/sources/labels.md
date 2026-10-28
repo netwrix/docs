@@ -79,4 +79,4 @@ A scan can match nothing yet. The step shows **No sources match these labels yet
 
 Each run resolves the labels again. A source you add or relabel into the set joins the next run; a source you delete or relabel out of it drops out. When a source drops out, Access Analyzer removes its executions for that scan as well. If a matching source is of a type that the scan can't handle, such as an Active Directory source matched by an Access scan, the step warns you, and the run skips that source without failing.
 
-See [Scans](../scans/index.md) for the rest of the scan settings.
+See [Scans](../../admin/scans/index.md) for the rest of the scan settings.

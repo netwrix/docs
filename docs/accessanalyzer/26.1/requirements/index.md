@@ -12,10 +12,10 @@ Access Analyzer installs on a single physical or virtual Linux server.
 
 | Requirement | Details |
 |---|---|
-| Operating system | Ubuntu or Red Hat Enterprise Linux (RHEL). Any Debian-based or RPM-based distribution should work. The installer doesn't check the release version. RHEL and CentOS need some [additional preparation](installer-reference.md#rhel-and-centos-preparation). |
+| Operating system | Ubuntu or Red Hat Enterprise Linux (RHEL). Any Debian-based or RPM-based distribution should work. The installer doesn't check the release version. RHEL and CentOS need some [additional preparation](../install/installer-reference.md#rhel-and-centos-preparation). |
 | Architecture | 64-bit x86 or Arm. |
 | Access | Root, either directly or through `sudo`. |
-| Free disk on the storage volume | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib` by default. To put it on a different mount, pass `--storage-dir` at install time. See [Storage Location](installer-reference.md#storage-location). Keep about 10 GB free on `/var/lib` either way, because the platform keeps pod-local storage there. |
+| Free disk on the storage volume | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib` by default. To put it on a different mount, pass `--storage-dir` at install time. See [Storage Location](../install/installer-reference.md#storage-location). Keep about 10 GB free on `/var/lib` either way, because the platform keeps pod-local storage there. |
 | Free disk for the install media | About 16 GB free on the volume that holds the media. See [Install media](#install-media). |
 | Free disk for an air-gapped install | 25 GB free on the volume that holds the media directory (`/var/lib/dspm/media` by default), where the installer expands the media. Pass `--tmp-dir` to move it. See [Install media](#install-media). |
 
@@ -38,9 +38,9 @@ Disk is a recommendation. A server with less free space than the size recommends
 
 For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on the storage volume (`/var/lib` by default) installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
 
-To move an installed server to a larger size later, see [Change the deployment size](change-the-deployment-size.md). Access Analyzer doesn't support moving to a smaller size.
+To move an installed server to a larger size later, see [Change the deployment size](../install/change-the-deployment-size.md). Access Analyzer doesn't support moving to a smaller size.
 
-If you want the data on a different volume, the installer accepts custom data directories. They must be absolute paths to existing, writable directories, and can't be `/` or sit under a reserved system path such as `/etc`, `/usr`, or `/var/log`. See [Installer reference](installer-reference.md) for the flags.
+If you want the data on a different volume, the installer accepts custom data directories. They must be absolute paths to existing, writable directories, and can't be `/` or sit under a reserved system path such as `/etc`, `/usr`, or `/var/log`. See [Installer reference](../install/installer-reference.md) for the flags.
 
 ## Install Media
 
@@ -93,7 +93,7 @@ See [TLS certificate requirements](tls-certificate-requirements.md) to prepare a
 
 You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download and the media download, and the installer validates it online during the install, so the server must reach the licensing endpoint that [Outbound](#outbound) lists. An expired, suspended, or unknown key stops the install. An air-gapped install needs no license key on the server.
 
-Keep the key off the command line. The installer reads it from the `LICENSE_KEY` environment variable, as [Install Access Analyzer](run-the-installer.md) shows.
+Keep the key off the command line. The installer reads it from the `LICENSE_KEY` environment variable, as [Install Access Analyzer](../install/run-the-installer.md) shows.
 
 ## First Administrator
 
@@ -110,7 +110,7 @@ Open these ports on the server's firewall.
 | 443 | TCP | Users' browsers and agent hosts | The Access Analyzer web application. |
 | 80 | TCP | Users' browsers | Redirects HTTP requests to HTTPS. |
 | 4504 | TCP | Netwrix Activity Monitor | Receives activity data. Open it only if you use [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md). |
-| 6443 | TCP | Agent hosts | Lets [agents](../agents/index.md) join and connect back to the server. Open it only to the hosts you deploy agents on. [Deploy an agent](../agents/deploy-agent.md#prepare-the-host) lists the other ports an agent host needs. |
+| 6443 | TCP | Agent hosts | Lets [agents](../configuration/agents/index.md) join and connect back to the server. Open it only to the hosts you deploy agents on. [Deploy an agent](../configuration/agents/deploy-agent.md#prepare-the-host) lists the other ports an agent host needs. |
 
 ### Outbound
 
@@ -142,4 +142,4 @@ Some features add outbound connections of their own after you configure them.
 
 Any modern browser should work. Netwrix doesn't support or recommend Internet Explorer.
 
-Once everything on this page is in place, continue to [Install Access Analyzer](run-the-installer.md).
+Once everything on this page is in place, continue to [Install Access Analyzer](../install/run-the-installer.md).

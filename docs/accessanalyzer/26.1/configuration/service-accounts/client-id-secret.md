@@ -37,7 +37,7 @@ You don't enter the tenant ID on this account. It belongs to the Entra ID source
 
 ![Add service account dialog with Client ID/secret selected](/images/accessanalyzer/26.1/service-accounts/add-client-id-secret.webp)
 
-Next, select this account in **Service account** on the Entra ID source and click **Test connection**. [Scan Entra ID](../guides/entra-id.md) walks through the whole setup, from app registration to first scan.
+Next, select this account in **Service account** on the Entra ID source and click **Test connection**. [Scan Entra ID](../../getting-started/guides/entra-id.md) walks through the whole setup, from app registration to first scan.
 
 ## Rotate the Client Secret
 

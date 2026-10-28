@@ -85,7 +85,7 @@ If any scan or Identity sync uses the account, the **Confirm service account upd
 - It reconfigures the scans and syncs with the new credentials.
 - It restarts the stopped executions. A scheduled execution restarts right away and then continues on its normal schedule. A manually started execution restarts once; after that, you run it manually as before.
 
-Click **Yes, update service account** to continue, or **Cancel** to leave the account as it was. To follow the restarted executions, see [Scan executions](../scans/scan-executions.md).
+Click **Yes, update service account** to continue, or **Cancel** to leave the account as it was. To follow the restarted executions, see [Scan executions](../../admin/scans/scan-executions.md).
 
 ## Delete a Service Account
 

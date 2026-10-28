@@ -18,7 +18,7 @@ Access Analyzer signs in to the tenant as an application, not as a user, so the 
 
 :::note
 
-Registering this application doesn't let people sign in to Access Analyzer with their Microsoft accounts. Set that up separately under [Single sign-on](../settings/single-sign-on.md).
+Registering this application doesn't let people sign in to Access Analyzer with their Microsoft accounts. Set that up separately under [Single sign-on](../../configuration/settings/single-sign-on.md).
 
 :::
 
@@ -46,7 +46,7 @@ Entra ID sources use a **Client ID/secret** service account. The tenant isn't pa
 
 ![Add service account drawer with the Client ID/secret type selected](/images/accessanalyzer/26.1/service-accounts/add-client-id-secret.webp)
 
-The [Client ID and secret](../service-accounts/client-id-secret.md) page covers editing the account when you rotate the secret.
+The [Client ID and secret](../../configuration/service-accounts/client-id-secret.md) page covers editing the account when you rotate the secret.
 
 ## 3. Add the Source
 
@@ -61,7 +61,7 @@ The [Client ID and secret](../service-accounts/client-id-secret.md) page covers 
 
 ![Add source drawer for an Entra ID source](/images/accessanalyzer/26.1/sources/add-entra-id.webp)
 
-Field details are on the [Entra ID](../sources/entra-id.md) source page.
+Field details are on the [Entra ID](../../configuration/sources/entra-id.md) source page.
 
 ## 4. Create the Identity Sync
 
@@ -86,7 +86,7 @@ Go to **Configuration > Scan executions** and find the new scan in the list. The
 
 ![Scan executions list](/images/accessanalyzer/26.1/scans/executions-list.webp)
 
-If the status is **Failed**, open the row's actions menu and click **View logs**, then check the **Detailed logs** tab. A sign-in error points at the client ID, secret, or tenant ID; a permission error means the app registration is missing a Graph permission or its admin consent. [Scan executions](../scans/scan-executions.md) lists every status.
+If the status is **Failed**, open the row's actions menu and click **View logs**, then check the **Detailed logs** tab. A sign-in error points at the client ID, secret, or tenant ID; a permission error means the app registration is missing a Graph permission or its admin consent. [Scan executions](../../admin/scans/scan-executions.md) lists every status.
 
 ## 6. Check the Reports
 
@@ -101,4 +101,4 @@ Go to **Reports > Identity** and open the **Entra ID** tab.
 
 Neither report has filters; open one and click **Refresh** to load the latest sync. Entra ID data has no dashboard of its own, and the Active Directory dashboard covers on-premises domains only.
 
-If you plan to scan SharePoint Online, do it after this sync has completed at least once. The [Scan SharePoint Online](./sharepoint-online.md) guide explains how the two fit together. [Identity reports](../dashboards-reports/reports/identity.md) describes each report's columns.
+If you plan to scan SharePoint Online, do it after this sync has completed at least once. The [Scan SharePoint Online](./sharepoint-online.md) guide explains how the two fit together. [Identity reports](../../admin/dashboards-reports/reports/identity.md) describes each report's columns.

@@ -73,7 +73,7 @@ If an execution shows **Running** but makes no progress:
 2. Check for a **Healthy** agent whose **Labels** include the scan's label.
 3. If there isn't one, deploy an agent with that label, bring the offline agent back online, or edit the scan and select a label that an online agent carries.
 
-Editing the scan fixes its next execution only; the execution that's already waiting still needs a matching agent to come online. The Home page's **Needs attention** panel lists offline agents with a **Check agents** link, the quickest way to spot an agent that has gone offline. [Scan executions](../scans/scan-executions.md) lists every execution and its status.
+Editing the scan fixes its next execution only; the execution that's already waiting still needs a matching agent to come online. The Home page's **Needs attention** panel lists offline agents with a **Check agents** link, the quickest way to spot an agent that has gone offline. [Scan executions](../../admin/scans/scan-executions.md) lists every execution and its status.
 
 ## Example
 

@@ -19,7 +19,7 @@ You need three things: an account that can read the shares, a network path to th
 - Membership in the local **Access Control Assistance Operators** group (Windows Server only), so the scan can list the server's shares and read their share-level permissions.
 - For a domain account, membership in the local **Backup Operators** group, so Access scans can open folders whose permissions have no entry for the account. Without it, the scan records those folders without their owner or permissions, logs a warning, and skips their contents.
 
-[SMB file servers](../sources/smb-file-servers.md#required-rights) explains each right and gives a PowerShell example that grants all four.
+[SMB file servers](../../configuration/sources/smb-file-servers.md#required-rights) explains each right and gives a PowerShell example that grants all four.
 
 **The network** - The Access Analyzer server, or the agent that runs the scan, needs TCP 445 to the file server. The connection uses SMB 2 or 3 with signing; Access Analyzer doesn't support SMB 1. Authentication uses NT LAN Manager version 2 (NTLMv2), not Kerberos.
 
@@ -50,7 +50,7 @@ The field accepts `username@domain` too, but Sensitive data scans read only the 
 
 :::
 
-The [Username and password](../service-accounts/username-password.md) page has the full field reference.
+The [Username and password](../../configuration/service-accounts/username-password.md) page has the full field reference.
 
 ## 2. Add the Source
 
@@ -67,7 +67,7 @@ The [Username and password](../service-accounts/username-password.md) page has t
 
 ![Add source drawer with File Server selected, showing the Details, Connection, and Access sections](/images/accessanalyzer/26.1/sources/add-file-server.webp)
 
-To add many servers at once, [import sources from a CSV file](../sources/import-sources.md) instead. Field details and the connection checks are on the [SMB file servers](../sources/smb-file-servers.md) source page.
+To add many servers at once, [import sources from a CSV file](../../configuration/sources/import-sources.md) instead. Field details and the connection checks are on the [SMB file servers](../../configuration/sources/smb-file-servers.md) source page.
 
 ## 3. Create the Access Scan
 
@@ -82,8 +82,8 @@ Run the Access scan first. The Sensitive data scan you create in [Create the Sen
 
    ![Create scan Target step with one File Server source selected](/images/accessanalyzer/26.1/scans/create-scan-2-target-selected.webp)
 
-4. On the **Configure** step, leave **Use default configuration** selected. The defaults are **Workers** 32, **Exclude system shares** on (the scan skips administrative and system shares such as `C$`, `ADMIN$`, and `SYSVOL`), **Exclude hidden shares** off, **Maximum scan depth** 50, and **Enable File-Level Permission Scanning** off, which means the scan collects permissions for shares and folders but not for individual files. Change these later, after you've seen a first run; [Scan types](../scans/scan-types.md) explains each setting.
-5. On the **Schedule** step, leave **Manual — run on demand** for the first run. When the first run looks right, edit the scan and switch to **On a schedule**; the default is **Daily** at 02:00. Leave the agent set to **System agent** unless you have deployed an [agent](../agents/index.md) closer to the file server.
+4. On the **Configure** step, leave **Use default configuration** selected. The defaults are **Workers** 32, **Exclude system shares** on (the scan skips administrative and system shares such as `C$`, `ADMIN$`, and `SYSVOL`), **Exclude hidden shares** off, **Maximum scan depth** 50, and **Enable File-Level Permission Scanning** off, which means the scan collects permissions for shares and folders but not for individual files. Change these later, after you've seen a first run; [Scan types](../../admin/scans/scan-types.md) explains each setting.
+5. On the **Schedule** step, leave **Manual — run on demand** for the first run. When the first run looks right, edit the scan and switch to **On a schedule**; the default is **Daily** at 02:00. Leave the agent set to **System agent** unless you have deployed an [agent](../../configuration/agents/index.md) closer to the file server.
 6. On the **Review** step, enter a **Name** such as `Finance file server - access` and check the summary.
 7. Click **Create & run now**.
 
@@ -103,11 +103,11 @@ The status moves from **Pending** to **Running** and ends at **Completed**, **Co
 
 **Completed with errors** means the scan couldn't read some objects, most often folders the account has no rights to. Access Analyzer keeps the data the scan did collect, and the next run uploads the rest. Check **Detailed logs** for the paths, fix the permissions or add the account to **Backup Operators**, and run the scan again from **Configuration > Scans**.
 
-[Scan executions](../scans/scan-executions.md) lists every status and the pause, resume, and stop controls.
+[Scan executions](../../admin/scans/scan-executions.md) lists every status and the pause, resume, and stop controls.
 
 ## 5. Create the Sensitive Data Scan
 
-After the Access scan shows **Completed**, create the second scan. It classifies files from the Access scan's inventory against sensitive data patterns. By default the scan classifies only the file types on **Include list** and skips files larger than 10 MB; both settings are on the **File server scanning** card in [Application settings](../settings/application.md#file-server-scanning-and-sharepoint-scanning).
+After the Access scan shows **Completed**, create the second scan. It classifies files from the Access scan's inventory against sensitive data patterns. By default the scan classifies only the file types on **Include list** and skips files larger than 10 MB; both settings are on the **File server scanning** card in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
 
 1. Go to **Configuration > Scans** and click **Create scan**.
 2. On the **Type** step, select **Sensitive data** and click **Next**.
@@ -127,7 +127,7 @@ On a fresh install no pattern group carries **Scanned by default**. A scan that 
 
 :::
 
-Follow the run in **Configuration > Scan executions**, as described in [Watch the execution](#4-watch-the-execution). [Sensitive data patterns](../sensitive-data-patterns/index.md) describes the built-in groups and how to add your own patterns.
+Follow the run in **Configuration > Scan executions**, as described in [Watch the execution](#4-watch-the-execution). [Sensitive data patterns](../../configuration/sensitive-data-patterns/index.md) describes the built-in groups and how to add your own patterns.
 
 ## 6. Check the Dashboards and Reports
 
@@ -147,6 +147,6 @@ Dashboards and reports don't refresh on their own. Open one and click **Refresh*
 | **Share Audit** | Access scan | Effective permissions on one share; select a **Share** in the filters first |
 | **Sensitive Data Overview** | Sensitive data scan | Findings across the scanned locations, filtered by host, share, pattern group, or pattern |
 
-**Activity Investigation** appears in the same tab but stays empty until you connect [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md). **Reports > Compliance** arranges the same reports by framework, so the **GDPR** or **PCI DSS** tabs populate from these two scans as well.
+**Activity Investigation** appears in the same tab but stays empty until you connect [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md). **Reports > Compliance** arranges the same reports by framework, so the **GDPR** or **PCI DSS** tabs populate from these two scans as well.
 
-If the permission reports show SIDs instead of names, follow [Scan Active Directory](./active-directory.md) and run an Identity sync for the domain. [Data reports](../dashboards-reports/reports/data.md) describes every report and its filters.
+If the permission reports show SIDs instead of names, follow [Scan Active Directory](./active-directory.md) and run an Identity sync for the domain. [Data reports](../../admin/dashboards-reports/reports/data.md) describes every report and its filters.
