@@ -25,7 +25,7 @@ Every endpoint except the health checks needs an access token. Get a token by ca
 Authorization: Bearer <access-token>
 ```
 
-See [Authenticate with an API key](/docs/privilegesecurediscovery/integrations/api/authenticate-with-an-api-key.md) for a worked example. The token lifetime is set by the administrator, and the API has no refresh endpoint, so sign in again when the token expires.
+See [Authenticate with an API key](/docs/privilegesecurediscovery/integrations/api/authenticate-with-an-api-key.md) for a worked example. The administrator sets the token lifetime, and the API has no refresh endpoint, so sign in again when the token expires.
 
 ## Understand roles
 
