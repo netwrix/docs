@@ -6,7 +6,7 @@ sidebar_position: 12
 
 # Connect Entra ID
 
-The Entra ID page lists the Entra tenants that Identity Recovery backs up. It displays the backup schedule settings for each added Entra tenant. You can also add and configure a new Entra tenant.
+The Entra ID tab of the Configuration interface lists the Entra tenants that Identity Recovery backs up. It displays the backup schedule settings for each added Entra tenant. You can also add and configure a new Entra tenant.
 
 Click **Configuration** in the left pane. Then click the **Entra ID** tab on the Configuration page
 to open the Entra tenants page.
