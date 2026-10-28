@@ -1,6 +1,12 @@
 ---
 title: "Host Scan Service"
-description: "Host Scan Service"
+description: "View host scan logs and the queue of pending scans that the Host Scan Service runs."
+keywords:
+  - Scan Logs
+  - Scan Queue
+  - View Logs
+  - host scanning
+  - Activity service
 sidebar_position: 30
 ---
 
@@ -12,10 +18,10 @@ The Host Scan Service pulls information from resources
 The host scanning function used to be part of the Activity service, but was separated out for better system reliability and performance
 :::
 
-The Host Scan Logs tab shows all pending scans to be run. Click any event and the View Logs button activates. Click the. box to see the detailed logs of the highlighted event.
+The **Scan Logs** tab shows scans that have already run. Click any event and the **View Logs** button activates. Click **View Logs** to see the detailed logs of the highlighted event.
 
-![Host Scan Logs tab](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/hostscanlogs.png)
+![Scan Logs tab](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/hostscanlogs.png)
 
-The Host Scan Queue tab shows all pending scans to be run.
+The **Scan Queue** tab lists all pending scans.
 
-![Host Scan Queue tab](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/hostscanqueue.png)
+![Scan Queue tab](/images/privilegesecure/26.03/accessmanagement/admin/configuration/servicetype/hostscanqueue.png)

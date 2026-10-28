@@ -1,6 +1,13 @@
 ---
 title: "Action Service Install"
-description: "Action Service Install"
+description: "Install the NPS Action Service on another server and register it with the Privilege Secure server."
+keywords:
+  - NPS Action Service
+  - NPS.ActionService.exe
+  - key exchange
+  - encryption keys
+  - register action service
+  - remote server
 sidebar_position: 20
 ---
 
@@ -21,38 +28,33 @@ The Proxy Service is installed as part of the Action Service installation packag
 [Proxy Service Install](/docs/privilegesecure/25.12/install/servicesonadditional/proxyservice.md) topic for installation instructions.
 :::
 
-
 To install the NPS Action Service on another server.
 
-**Step 1 –** ensure that you have configured the Antivirus exclusions according to the following
-Netwrix knowledge base article: [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
+1. ensure that you have configured the Antivirus exclusions according to the following
+   Netwrix knowledge base article: [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
+2. Move the `NPS.ActionService.exe` installation package to the desktop of the remote
+   server.
+3. Open the `NPS.ActionService.exe` and the Netwrix Privilege Secure Action Service Setup
+   wizard opens.
 
-**Step 2 –** Move the NPS.ActionService.exe installation package to the desktop of the remote
-server.
+   ![Action Service Setup wizard on the license agreement page](/images/privilegesecure/25.12/accessmanagement/install/licenseagreement_3.webp)
 
-**Step 3 –** Open the NPS.ActionService.exe and the Netwrix Privilege Secure Action Service Setup
-wizard opens.
+4. To install the Action Service in an alternate location, click **Options**.
 
-![licenseagreement](/images/privilegesecure/25.12/accessmanagement/install/licenseagreement_3.webp)
+   ![Action Service Setup wizard install location options](/images/privilegesecure/25.12/accessmanagement/install/installlocation.webp)
 
-**Step 4 –** To install the Action Service in an alternate location, click **Options**.
+5. Enter the destination folder for installation and click **OK**.
+6. Read the End User License Agreement and accept the license terms.
+7. Click **Install** to begin the installation. The setup wizard displays the installation
+   progress.
 
-![installlocation](/images/privilegesecure/25.12/accessmanagement/install/installlocation.webp)
+   ![Action Service Setup wizard installation status](/images/privilegesecure/25.12/accessmanagement/install/installcomplete.webp)
 
-**Step 5 –** Enter the destination folder for installation and click OK.
-
-**Step 6 –** Read the End User License Agreement and accept the license terms.
-
-**Step 7 –** Click Install to begin the installation. The setup wizard displays the installation
-progress.
-
-![installcomplete](/images/privilegesecure/25.12/accessmanagement/install/installcomplete.webp)
-
-**Step 8 –** When the installation is complete, click Close to exit the installer.
+8. When the installation is complete, click **Close** to exit the installer.
 
 The Privilege Secure Action Service is now installed on a remote server.
 
-## Register the Remote Action Service with Privilege Secure
+## Register the remote Action Service with Privilege Secure
 
 If the Action Service is installed on a remote machine, it must be configured to register with the
 Privilege Secure server. This configuration is done by supplying the Privilege Secure server and
@@ -60,72 +62,64 @@ credentials in a command line utility.
 
 To configure the key exchange.
 
-**Step 1 –** On the application server, run **cmd** as Administrator.
+1. On the application server, run **cmd** as Administrator.
+2. Enter the following commands to export the encryption keys for the secondary:
 
-**Step 2 –** Enter the following commands to export the encryption keys for the secondary:
+   Encryption Key Export
 
+   ```powershell
+   cd C:\Program Files\Stealthbits\PAM\KeyTools
+   .\SbPAM.RotateKey.exe export -n keys.exp
+   ```
 
-Encryption Key Export
+3. Take note of the password for the export file.
 
-```
-cd C:\Program Files\Stealthbits\PAM\KeyTools
-.\SbPAM.RotateKey.exe export -n keys.exp
-```
+   :::warning
+   This temporary password protects the Netwrix Privilege Secure for Access Management (NPS-AM) encryption keys during copying. don't save
+   it to digital media or transmit it with the encryption key package.
+   :::
 
-**Step 3 –** Take note of the password for the export file.
+4. Copy the export file to "`C:\Program Files\Stealthbits\PAM\KeyTools`" on the secondary
+   server.
+5. On the (Action/Scheduler/Siem) service server, run **cmd** as Administrator.
+6. Enter the following commands to import the encryption keys:
 
-:::warning
-This temporary password protects the NPS-AM encryption keys during copying. don't save
-it to digital media or transmit it with the encryption key package.
-:::
+   Encryption Key Import
 
+   ```powershell
+   cd C:\Program Files\Stealthbits\PAM\KeyTools
+   .\SbPAM.RotateKey.exe import -n keys.exp
+   ```
 
-**Step 4 –** Copy the export file to "C:\Program Files\Stealthbits\PAM\KeyTools" on the secondary
-server.
-
-**Step 5 –** On the (Action/Scheduler/Siem) service server, run cmd as Administrator.
-
-**Step 6 –** Enter the following commands to import the encryption keys:
-
-
-Encryption Key Import
-
-```
-cd C:\Program Files\Stealthbits\PAM\KeyTools
-.\SbPAM.RotateKey.exe import -n keys.exp
-```
-
-**Step 7 –** Enter the password when prompted.
-
-**Step 8 –** Delete the export file from both the primary and secondary servers.
+7. Enter the password when prompted.
+8. Delete the export file from both the primary and secondary servers.
 
 The key exchange is now configured.
 
 To configure the Action Service.
 
-**Step 1 –** Open a command prompt as an administrator.
+1. Open a command prompt as an administrator.
+2. Change the directory path to the location of the Privilege Secure Action Service. The
+   default path is:
 
-**Step 2 –** Change the directory path to the location of the Privilege Secure Action Service. The
-default path is:
+   `C:\Program Files\Stealthbits\PAM\ActionService\`
 
-C:\Program Files\Stealthbits\PAM\ActionService\
+3. Run the following command to automatically register the action service. Enter the Admin
+   password when prompted:
 
-**Step 3 –** Run the following command to automatically register the action service. Enter the Admin
-password when prompted:
+   - The `[PrivilegeSecureServer]` parameter is the Host Name, IP, FQDN, or URL
+   - The default `[Port]` parameter is 6500
+   - The [admin] should be an NPS administrator in "DOMAIN\username" format
 
-- The `[PrivilegeSecureServer]` parameter is the Host Name, IP, FQDN, or URL
-- The default `[Port]` parameter is 6500
-- The [admin] should be an NPS administrator in "DOMAIN\username" format
+   `ActionService.exe –register -u admin [PrivilegeSecureServer:Port]`
 
-ActionService.exe –register -u admin [PrivilegeSecureServer:Port]
+   - For installations without a trusted https certificate on the Privilege Secure server, the `-I`
+     parameter must be added:
 
-- For installations without a trusted https certificate on the Privilege Secure server, the `-I`
-parameter must be added:
+     `ActionService.exe –register -u admin -I [PrivilegeSecureServer:Port]`
 
-`ActionService.exe –register -u admin -I [PrivilegeSecureServer:Port]`
+   - The command prompt shows if the configuration was successful.
 
-- The command prompt shows if the configuration was successful.
-
-**Step 4 –** Exit the command prompt.
+4. Exit the command prompt.
 
 The remote Action Service is now registered with Privilege Secure.

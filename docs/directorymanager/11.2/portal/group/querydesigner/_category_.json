@@ -1,0 +1,10 @@
+{
+  "label": "Query Designer",
+  "position": 70,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -34,7 +34,7 @@ When you change from one IP version to another, always press the Apply button to
 :::
 
 
-## Manual Conﬁguration
+## Manual Configuration
 
 Starting with version 2509, only the manual configuration option is available. For older versions, use manual configuration for precise control to set the IP address and default gateway, ensuring the appliance is correctly set up and accessible.
 

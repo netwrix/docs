@@ -1,6 +1,13 @@
 ---
 title: "Domain Details"
-description: "Domain Details"
+description: "Review a domain resource on the Domain Details page, including synchronization status, frequency, and the related tabs."
+keywords:
+  - Synchronize Now
+  - Use TLS
+  - Last Synchronized
+  - synchronization frequency
+  - domain synchronization
+  - Test button
 sidebar_position: 20
 ---
 
@@ -13,38 +20,34 @@ opened from any linked resource within the various interfaces.
 
 The details page shows the following information:
 
-- Name — Displays the name of the resource
-- Trashcan icon — Removes the selected resource from being managed by the application. A
-confirmation window displays.
-- Users — Number of user objects in the domain
-- Groups — Number of group objects in the domain
-- Members — Number of users that are members of groups
-- Computers — Number of computer objects in the domain
-- Last Synchronized — Date timestamp for the last time the domain was synchronized
-- Status — Shows status information for the synchronization:
+- **Name** — Displays the name of the resource
+- **Trashcan icon** — Removes the selected resource from being managed by the application. A
+  confirmation window displays.
+- **Users** — Number of user objects in the domain
+- **Groups** — Number of group objects in the domain
+- **Members** — Number of users that are members of groups
+- **Computers** — Number of computer objects in the domain
+- **Last Synchronized** — Date timestamp for the last time the domain was synchronized
+- **Status** — Shows status information for the synchronization:
+  - **Complete** — Synchronization completed successfully
+  - **Processing** — Synchronization is actively occurring
+  - **Failed** — Synchronization failed to complete
+  - **Cancelled** — Synchronization was canceled by an Administrator
+- **Synchronize Now button** — Scans the domain for users, groups, members, and computers. The Cancel
+  button, which is only visible when scanning lets you stop the resource scan. This scan can
+  also be scheduled from the [Platforms Page](/docs/privilegesecure/26.03/admin/platforms/overview.md).
+- **Platform** — Displays the type of platform, which defines the resource
+- **Service Account** — Displays the service account associated with the resource
+- **Use TLS checkbox** — Enables a secure connection to the domain
+- **Frequency** — Indicates how often the synchronization task will run: Never, Hourly, Daily, or
+  Weekly. Options open additional fields:
+  - **Hourly** — Opens the Every field for selecting specific hour ranges
+  - **Daily** — Opens the At field for indicating the start time of the daily synchronization
+  - **Weekly** — Opens the On and At fields for indicating the day of the week and start time of the
+    weekly synchronization
+- **Test button** — Tests the settings by attempting to connect
 
-- Complete — Synchronization completed successfully
-- Processing — Synchronization is actively occurring
-- Failed — Synchronization failed to complete
-- Cancelled — Synchronization was cancelled by an Administrator
-
-- Synchronize Now button — Scans the domain for users, groups, members, and computers. The Cancel
-button, which is only visible when scanning lets you stop the resource scan. This scan can
-also be scheduled from the [Platforms Page](/docs/privilegesecure/26.03/admin/platforms/overview.md).
-- Platform — Displays the type of platform, which defines the resource
-- Service Account — Displays the service account associated with the resource
-- Use TLS checkbox — Enables a secure connection to the domain
-- Frequency — Indicates how often the synchronization task will run: Never, Hourly, Daily, or
-Weekly. Options open additional fields:
-
-- Hourly — Opens the Every field for selecting specific hour ranges
-- Daily— Opens the At field for indicating the start time of the daily synchronization
-- Weekly— Opens the On and At fields for indicating the day of the week and start time of the
-weekly synchronization
-
-- Test button — Tests the settings by attempting to connect
-
-If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
+If you modify any of these settings, **Save**, and **Cancel** buttons appear. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
 The details page has the following tabs:

@@ -36,7 +36,7 @@ The tasks created in the Scaffoldings are sorted by level. The levels are visibl
 * [LinkDependTask](#linkdependtask) (optional) Link a child Task with a parent to not launch the child if the parent has finish with state warning
 * [NoProvisioning](#noprovisioning) (optional) Avoid provisioning
 * [NoSynchronization](#nosynchronization) (optional) Avoid collect
-* [OpenIdIdentifier](#openididentifier) (optional) Add a Open Id to the job and the tasks
+* [OpenIdIdentifier](#openididentifier) (optional) Add a OpenID to the job and the tasks
 
 ### AddTask
 
@@ -98,7 +98,7 @@ The tasks created in the Scaffoldings are sorted by level. The levels are visibl
 
 |Property|Details|
 |---|---|
-| Identifier required | **Type:** String **Description:** Identifier of the OpenId |
+| Identifier required | **Type:** String **Description:** Identifier of the OpenID |
 
 
 

@@ -101,4 +101,4 @@ Go to **Reports > Identity** and open the **Entra ID** tab.
 
 Neither report has filters; open one and click **Refresh** to load the latest sync. Entra ID data has no dashboard of its own, and the Active Directory dashboard covers on-premises domains only.
 
-If you plan to scan SharePoint Online, do it after this sync has completed at least once. The [Scan Microsoft 365](./microsoft-365.md) guide explains how the two fit together. [Identity reports](../dashboards-reports/reports/identity.md) describes each report's columns.
+If you plan to scan SharePoint Online, do it after this sync has completed at least once. The [Scan SharePoint Online](./sharepoint-online.md) guide explains how the two fit together. [Identity reports](../dashboards-reports/reports/identity.md) describes each report's columns.

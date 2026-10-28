@@ -9,7 +9,7 @@ sidebar_position: 40
 Most on-premises installations use an agent **integrated** with Identity Manager's server. If this is your case, **and** the server is **Already** installed, no need to go further. If, on the other hand, you need **separate** agents, or if you are installing Identity Manager's agents within Identity Manager's **SaaS** offering, this is the way to go.
 
 :::note
-Please make sure that Identity Manager's agent requirements are met before going further. See the [Agent](../../installation-guide/requirements/agent-requirements) topic for additional information.
+ensure that Identity Manager's agent requirements are met before going further. See the [Agent](../../installation-guide/requirements/agent-requirements) topic for additional information.
 :::
 
 
@@ -113,13 +113,13 @@ Before going further, you should check the following points:
 
 **Step 2 –** Check the permissions on the working directory. Right-click the working directory **and** select Security. The group section should contain one of the `IIS APPPOOL/<apppool_name>` groups, namely Users. **and**,
 
-**Step 3 –** If the built-in application pool identity has been created but does not have the right permissions, you can follow the steps outlined in Install the Agents section to fix it. Go back to the section to make sure that the built-in application pool identity is effectively used by Identity Manager's server IIS Website.
+**Step 3 –** If the built-in application pool identity has been created but doesn't have the right permissions, you can follow the steps outlined in Install the Agents section to fix it. Go back to the section to ensure that the built-in application pool identity is effectively used by Identity Manager's server IIS Website.
 
 **Step 4 –** If you would rather use a custom service account instead of the built-in application pool identity, start with Install the Agents.
 
 **Step 5 –** If you're not sure what to do, follow the procedure below, starting with Install the Agents.
 
-Once the steps indicated above are completed you can carry on with setting an IIS Identity.
+After the steps indicated above are completed, you can carry on with setting an IIS Identity.
 
 ### Set an IIS Identity
 
@@ -129,7 +129,11 @@ If you would rather use a custom service account created for Identity Manager's 
 
 The following implies that a [custom service account](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/service-accounts) has **Already** been created for Identity Manager's agent. See the[Install the Server](../../installation-guide/production-ready/server) topic for additional information.
 
-Follow the steps below to set an IIS identity **and** note that these are the same for the server:
+:::note
+These steps are the same for the server.
+:::
+
+Follow the steps below to set an IIS identity:
 
 **Step 1 –** Open the IIS Manager (`INETMGR.MSC`).
 
@@ -139,9 +143,9 @@ Follow the steps below to set an IIS identity **and** note that these are the sa
 
 **Step 4 –** Right-click **and** select **Advanced Settings**.
 
-**Step 5 –** In the **Process Model** section, on the **Identity** list item, click on the three dots to open the **Application Pool Identity** dialog.
+**Step 5 –** In the **Process Model** section, on the **Identity** list item, click the three dots to open the **Application Pool Identity** dialog.
 
-**Step 6 –** Select the **Custom Account** radio button **and** click on **Set**.
+**Step 6 –** Select the **Custom Account** radio button **and** click **Set**.
 
 **Step 7 –** Enter the Service Account credentials.
 
@@ -181,13 +185,13 @@ required
 
 To fix the **missing** permissions follow the steps:
 
-**Step 1 –** Click on **Edit**.
+**Step 1 –** Click **Edit**.
 
-**Step 2 –** Click on **Add**.
+**Step 2 –** Click **Add**.
 
 **Step 3 –** In the **Enter the object names to select** textbox, enter the service account name in the down-level logon format. For example, if you chose the built-in application pool identity, this would be `IIS APPPOOL/UsercubeAgent<Organization>`.
 
-**Step 4 –** Click on **OK**.
+**Step 4 –** Click **OK**.
 
 **Step 5 –** Select the newly added user name in the Group or user names panel at the top of the window.
 
@@ -205,7 +209,7 @@ The same steps have to be performed on the runtime, the data collection **and** 
 
 Every agent is assigned a name. This name will be used in the UI to differentiate agents for the end-user, **and** in the XML configuration to assign connectors to specific agents.
 
-In the *appsettings.agent.json* file, the **OpenId** > **AgentIdentifier** can be set to **any string** except for Local which is **Already** taken by Identity Manager's inner workings. Then the agent set in the XML configuration must have the same string as identifier.
+In the *appsettings.agent.json* file, the **OpenID** > **AgentIdentifier** can be set to **any string** except for Local which is **Already** taken by Identity Manager's inner workings. Then the agent set in the XML configuration must have the same string as identifier.
 
 For example:
 
@@ -213,7 +217,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 ```json
 *appsettings.agent.json*
-"<OpenId">: {
+"<OpenID">: {
   "AgentIdentifier": "<MyAgent>"
   }
 ```
@@ -221,7 +225,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 With the following configuration:
 
 ```xml
-<Agent Identifier="<MyAgent>" DisplayName_L1="<My Agent>" 
+<Agent Identifier="<MyAgent>" DisplayName_L1="<My Agent>"
 URI="<https://contoso.com>" />
 ```
 
@@ -357,7 +361,7 @@ the server; See the [appsettings.agent](../../integration-guide/network-configur
 
 Their content should be provided by the integration team, in relation to the OpenIdClient tag in the applicative configuration. See the[OpenIdClient](../../integration-guide/toolkit/xml-configuration/access-control/openidclient) topic for additional information.
 
-The following example shows an *appsettings.agent.json* file that sets an agent to connect to Identity Manager's server (`https://identitymanagerserver.contoso.com`) with the OpenId client identifier `<Job>` **and** the password `<secret>`, stored in the OpenIdClients list which also contains the "admin/secret" login/password pair.
+The following example shows an *appsettings.agent.json* file that sets an agent to connect to Identity Manager's server (`https://identitymanagerserver.contoso.com`) with the OpenID client identifier `<Job>` **and** the password `<secret>`, stored in the OpenIdClients list which also contains the "admin/secret" login/password pair.
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -391,13 +395,13 @@ sc.exe create Identity Manager binpath= "<Usercube-Agent.exe --service>" display
 ```
 
 :::tip
-Remember, make sure to include a space between each parameter's equal sign (=) **and** the parameter value.
+Remember, ensure to include a space between each parameter's equal sign (=) **and** the parameter value.
 :::
 
 
 ## Configure the Starting Mode in IIS (optional)
 
-This step is important if the scheduler is enabled. IIS starts Identity Manager's agent only if an incoming http request is made on the server **and** the scheduler is not launched until Identity Manager's agent is started. Because of that, you need to carefully set up the starting mode of IIS to force the starting of Identity Manager's agent.
+This step is important if the scheduler is enabled. IIS starts Identity Manager's agent only if an incoming http request is made on the server **and** the scheduler isn't launched until Identity Manager's agent is started. Because of that, you need to carefully set up the starting mode of IIS to force the starting of Identity Manager's agent.
 
 Identity Manager's agent warm up is done using the `<applicationInitialization>` element in the web.config file, the configuration is described [here.](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization)
 
@@ -412,14 +416,14 @@ You need to:
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```xml
-<applicationInitialization doAppInitAfterRestart="<true>">  
+<applicationInitialization doAppInitAfterRestart="<true>">
 <add initializationPage="</>">
 </applicationInitialization>
 ```
 
 Once done, you need to check that the configured jobs are launched via the Identity Manager's scheduler without having to manually issue a request on Identity Manager's agent.
 
-If this is not correctly configured, any restart of your IIS or application pool could prevent jobs from being launched.
+If this isn't correctly configured, any restart of your IIS or application pool could prevent jobs from being launched.
 
 ## What's Next?
 

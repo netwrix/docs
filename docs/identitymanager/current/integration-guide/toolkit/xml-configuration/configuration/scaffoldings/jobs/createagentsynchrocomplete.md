@@ -34,7 +34,7 @@ The tasks created in the Scaffoldings are sorted by level. The levels are visibl
 * [DoNotCreateJob](#donotcreatejob) (optional) Create only the tasks without the job
 * [FulfillInternalWorkflowsPath](#fulfillinternalworkflowspath) (optional) Add the path of the json configuration for a connector with IsWorkflowProvisioning set to true
 * [LinkDependTask](#linkdependtask) (optional) Link a child Task with a parent to not launch the child if the parent has finish with state warning
-* [OpenIdIdentifier](#openididentifier) (optional) Add a Open Id to the job and the tasks
+* [OpenIdIdentifier](#openididentifier) (optional) Add a OpenID to the job and the tasks
 
 ### AddTask
 
@@ -90,7 +90,7 @@ The tasks created in the Scaffoldings are sorted by level. The levels are visibl
 
 |Property|Details|
 |---|---|
-| Identifier required | **Type:** String **Description:** Identifier of the OpenId |
+| Identifier required | **Type:** String **Description:** Identifier of the OpenID |
 
 
 

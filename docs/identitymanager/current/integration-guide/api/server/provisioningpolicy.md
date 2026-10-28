@@ -8,7 +8,7 @@ sidebar_position: 8
 #### Get
 ##### Summary:
 
-Returns all the assigned composite roles according to the provided query.
+Returns all the assigned bundles according to the provided query.
 
 ##### Parameters:
 
@@ -29,12 +29,12 @@ Returns all the assigned composite roles according to the provided query.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The assigned composite role list. | List of AssignedCompositeRole |
+| 200 | The assigned bundle list. | List of AssignedCompositeRole |
 
 #### Post
 ##### Summary:
 
-Creates an assigned composite role.
+Creates an assigned bundle.
 
 ##### Parameters:
 
@@ -46,20 +46,20 @@ Creates an assigned composite role.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the assigned composite role creation. | AssignedCompositeRoleCreatedResult |
+| 200 | The result of the assigned bundle creation. | AssignedCompositeRoleCreatedResult |
 
 ### /api/ProvisioningPolicy/AssignedCompositeRole/\{id\}
 
 #### Get
 ##### Summary:
 
-Returns an assigned composite role corresponding to the provided identifier and its information according to the provided query.
+Returns an assigned bundle corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the assigned composite role. | True |  |  |
+| id | Identifier of the assigned bundle. | True |  |  |
 | squery | Query compliant to the API query grammar. | False |  |  |
 | Path | Represents the permission path. | False |  |  |
 | QueryRootEntityType | Defines the query root entity type. | False |  |  |
@@ -72,43 +72,43 @@ Returns an assigned composite role corresponding to the provided identifier and 
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The assigned composite role. | AssignedCompositeRole |
+| 200 | The assigned bundle. | AssignedCompositeRole |
 
 #### Put
 ##### Summary:
 
-Updates an assigned composite role.
+Updates an assigned bundle.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the assigned composite role to update. | True |  |  |
+| id | Identifier of the assigned bundle to update. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the assigned composite role update. | AssignedCompositeRoleUpdatedResult |
+| 200 | The result of the assigned bundle update. | AssignedCompositeRoleUpdatedResult |
 
 #### Delete
 ##### Summary:
 
-Deletes an assigned composite role.
+Deletes an assigned bundle.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the assigned composite role to delete. | True |  |  |
+| id | Identifier of the assigned bundle to delete. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the assigned composite role delete. | AssignedCompositeRoleDeletedResult |
+| 200 | The result of the assigned bundle delete. | AssignedCompositeRoleDeletedResult |
 
 ### /api/ProvisioningPolicy/AssignedResourceBinary
 
@@ -861,7 +861,7 @@ Deletes a category.
 #### Get
 ##### Summary:
 
-Returns all the composite roles according to the provided query.
+Returns all the bundles according to the provided query.
 
 ##### Parameters:
 
@@ -881,12 +881,12 @@ Returns all the composite roles according to the provided query.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The composite role list. | List of CompositeRole |
+| 200 | The bundle list. | List of CompositeRole |
 
 #### Post
 ##### Summary:
 
-Creates a composite role.
+Creates a bundle.
 
 ##### Parameters:
 
@@ -898,20 +898,20 @@ Creates a composite role.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the composite role creation. | CompositeRoleCreatedResult |
+| 200 | The result of the bundle creation. | CompositeRoleCreatedResult |
 
 ### /api/ProvisioningPolicy/CompositeRole/\{id\}
 
 #### Get
 ##### Summary:
 
-Returns a composite role corresponding to the provided identifier and its information according to the provided query.
+Returns a bundle corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the composite role. | True |  |  |
+| id | Identifier of the bundle. | True |  |  |
 | squery | Query compliant to the API query grammar. | False |  |  |
 | Path | Represents the permission path. | False |  |  |
 | QueryRootEntityType | Defines the query root entity type. | False |  |  |
@@ -924,50 +924,50 @@ Returns a composite role corresponding to the provided identifier and its inform
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The composite role. | CompositeRole |
+| 200 | The bundle. | CompositeRole |
 
 #### Put
 ##### Summary:
 
-Updates a composite role.
+Updates a bundle.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the composite role to update. | True |  |  |
+| id | Identifier of the bundle to update. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the composite role update. | CompositeRoleUpdatedResult |
+| 200 | The result of the bundle update. | CompositeRoleUpdatedResult |
 
 #### Delete
 ##### Summary:
 
-Deletes a composite role.
+Deletes a bundle.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the composite role to delete. | True |  |  |
+| id | Identifier of the bundle to delete. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the composite role delete. | CompositeRoleDeletedResult |
+| 200 | The result of the bundle delete. | CompositeRoleDeletedResult |
 
 ### /api/ProvisioningPolicy/CompositeRoleRule
 
 #### Get
 ##### Summary:
 
-Returns all the composite role rules according to the provided query.
+Returns all the bundle rules according to the provided query.
 
 ##### Parameters:
 
@@ -987,12 +987,12 @@ Returns all the composite role rules according to the provided query.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The composite role rule list. | List of CompositeRoleRule |
+| 200 | The bundle rule list. | List of CompositeRoleRule |
 
 #### Post
 ##### Summary:
 
-Creates a composite role rule.
+Creates a bundle rule.
 
 ##### Parameters:
 
@@ -1004,20 +1004,20 @@ Creates a composite role rule.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the composite role rule creation. | CompositeRoleRuleCreatedResult |
+| 200 | The result of the bundle rule creation. | CompositeRoleRuleCreatedResult |
 
 ### /api/ProvisioningPolicy/CompositeRoleRule/\{id\}
 
 #### Get
 ##### Summary:
 
-Returns a composite role rule corresponding to the provided identifier and its information according to the provided query.
+Returns a bundle rule corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the composite role rule. | True |  |  |
+| id | Identifier of the bundle rule. | True |  |  |
 | squery | Query compliant to the API query grammar. | False |  |  |
 | Path | Represents the permission path. | False |  |  |
 | QueryRootEntityType | Defines the query root entity type. | False |  |  |
@@ -1030,43 +1030,43 @@ Returns a composite role rule corresponding to the provided identifier and its i
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The composite role rule. | CompositeRoleRule |
+| 200 | The bundle rule. | CompositeRoleRule |
 
 #### Put
 ##### Summary:
 
-Updates a composite role rule.
+Updates a bundle rule.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the composite role rule to update. | True |  |  |
+| id | Identifier of the bundle rule to update. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the composite role rule update. | CompositeRoleRuleUpdatedResult |
+| 200 | The result of the bundle rule update. | CompositeRoleRuleUpdatedResult |
 
 #### Delete
 ##### Summary:
 
-Deletes a composite role rule.
+Deletes a bundle rule.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the composite role rule to delete. | True |  |  |
+| id | Identifier of the bundle rule to delete. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the composite role rule delete. | CompositeRoleRuleDeletedResult |
+| 200 | The result of the bundle rule delete. | CompositeRoleRuleDeletedResult |
 
 ### /api/ProvisioningPolicy/ContextRule
 

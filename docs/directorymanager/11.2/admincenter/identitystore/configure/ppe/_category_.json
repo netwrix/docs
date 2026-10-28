@@ -1,0 +1,10 @@
+{
+  "label": "Netwrix Password Policy Enforcer Policies",
+  "position": 170,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

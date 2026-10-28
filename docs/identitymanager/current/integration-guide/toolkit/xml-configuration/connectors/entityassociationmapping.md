@@ -4,9 +4,9 @@ description: ""
 sidebar_position: 5
 ---
 
-Contains all the [Entity Association](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entityassociation) that can be materialized in the Identity Manager physical model.
+Contains all the [Entity Association](../metadata/entityassociation) that can be materialized in the Identity Manager physical model.
 An association mapping can be established between two properties of the same entity type mapping or between two properties of different entity type mappings having the same connector.
-See [Connector](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/connector) to see how to configure an EntityAssociationMapping.
+See [Connector](connector) to see how to configure an EntityAssociationMapping.
 
 ## Properties
 

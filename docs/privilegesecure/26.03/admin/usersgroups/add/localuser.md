@@ -1,6 +1,13 @@
 ---
 title: "Add Local User"
-description: "Add Local User"
+description: "Add a local user stored in the Privilege Secure database so it can be assigned roles and access policies."
+keywords:
+  - Local User
+  - New Local User
+  - Change Password Next Login
+  - password
+  - Active Directory
+  - roles
 sidebar_position: 30
 ---
 
@@ -11,22 +18,17 @@ Privilege Secure database, and therefore aren't dependent on Active Directory au
 logging in to Privilege Secure. Local users can be assigned to roles and access policies in exactly
 the same manner as domain users.
 
-![addlocalusers](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addlocalusers.webp)
+![Add Local User form with name and password fields](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addlocalusers.webp)
 
-To add a New Local Users.
+To add a New Local User.
 
-**Step 1 –** Navigate to the **Policy** > **Users & Groups** page.
-
-**Step 2 –** Click the **Add** button and select New Local User from the dropdown list.
-
-**Step 3 –** In the New Local User textbox, enter the name to assign to the local user
-account.
-
-**Step 4 –** Enter a password in the Password and Confirm Password fields.
-
-**Step 5 –** The Change Password Next Login option is selected by default. Optionally uncheck it to
-maintain the password entered in step 4.
-
-**Step 6 –** Click the **Save** button when finished.
+1. Navigate to the **Policy** > **Users & Groups** page.
+2. Click the **Add** button and select **New Local User** from the dropdown list.
+3. In the **New Local User** textbox, enter the name to assign to the local user
+   account.
+4. Enter a password in the **Password** and **Confirm Password** fields.
+5. The **Change Password Next Login** option is selected by default. Optionally uncheck it to
+   maintain the password entered in step 4.
+6. Click the **Save** button when finished.
 
 Once saved, users can view the new Local User on the [Users & Groups Page](/docs/privilegesecure/26.03/admin/usersgroups/usersgroups.md).
