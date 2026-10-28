@@ -170,5 +170,5 @@ The SHA512 file is a PGP-signed message, so it starts with the following header:
 Hash: SHA256
 ```
 
-This header only describes the digest algorithm of the PGP signature. The file hash that follows the header is a SHA512 hash (128 characters).
+This header describes only the digest algorithm of the PGP signature. The file hash that follows the header is a SHA512 hash (128 characters).
 :::
