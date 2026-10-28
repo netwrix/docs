@@ -30,7 +30,7 @@ method dropdown menu.
 sending email notifications.
 
 - Email address – Create an email address to be used, for example: noreply@companyname.com
-- Display name – Name to be displayed on the email notifications
+- Display name – Name that appears on the email notifications
 
 **Step 5 –** Click the **Test** button to verify that the system has configured your notifications correctly.
 

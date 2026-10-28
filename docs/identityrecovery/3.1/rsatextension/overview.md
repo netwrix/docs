@@ -8,7 +8,7 @@ sidebar_position: 60
 
 The RSAT Extension is a Microsoft Management Console (MMC) snap-in that you can install on domain joined machines. It extends the
 Active Directory Users and Computers (ADUC) console with Identity Recovery specific
-right-click options for object rollback and recovery. Included in this extension is a Recycle Bin
+right-click options for object rollback and recovery. This extension includes a Recycle Bin
 for restoring deleted objects. Consider the following:
 
 - The Identity Recovery installation package automatically installs the RSAT Extension on the Recovery Application Server. You must register the local Extension on the server

@@ -27,9 +27,9 @@ opens and shows the instructions for setting up the app.
 
 ![Configure authenticator app page](/images/identityrecovery/3.1/product/mfa_authenticator.png)
 
-**Step 3 –** Open the authenticator app on your phone and scan the QR code with it. A new account is
-created in the app for the Recovery application and a verification code is displayed under the
-account name.
+**Step 3 –** Open the authenticator app on your phone and scan the QR code with it. The app creates
+a new account for the Recovery application and displays a verification code under the account
+name.
 
 **Step 4 –** Enter this code in the Verification Code field on the Configure authenticator app page
 and click **Verify**. A confirmation message is displayed on success.

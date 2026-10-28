@@ -25,7 +25,7 @@ steps to add a forest.
 **Step 2 –** In the Domain field, enter the name of the root domain in the forest
 [example.domain.com].
 
-**Step 3 –** Enter the account username [DOMAIN\USERNAME] to be used to connect to the forest in the
+**Step 3 –** Enter the account username [DOMAIN\USERNAME] for connecting to the forest in the
 Account field. Ensure that the account has privileges to access the domain.
 
 **Step 4 –** Enter the password for the account in the Password field.
