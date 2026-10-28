@@ -48,7 +48,7 @@ The `<JobGroupName>` in the error message identifies which job group contains th
 
 ## Root Cause
 
-Access Analyzer maps each scheduled job to a Windows Task Scheduler task using a unique Job ID embedded in the task name (format: `SAJOB~<JobGroupName>~<GUID>`). When two physical job folders on disk share the same Job ID, Access Analyzer finds more than one match for a single task. At the code level, a Language-Integrated Query (LINQ) `.Single()` call found 2+ results instead of exactly 1, which produces the `Sequence contains more than one matching element` error.
+Access Analyzer maps each scheduled job to a Windows Task Scheduler task using a unique Job ID embedded in the task name (format: `SAJOB~<JobGroupName>~<GUID>`). When two physical job folders on disk share the same Job ID, Access Analyzer finds more than one match for a single task, which produces the `Sequence contains more than one matching element` error.
 
 This duplication happens in one of two ways:
 
