@@ -23,7 +23,7 @@ const MOVED_PAGES = {
   'admin/configuration/notifications': 'configuration/notifications',
   'admin/configuration/roles':         'configuration/roles',
   'admin/configuration/integration':   'configuration/integration',
-  'admin/configuration/licensing':     'install/licensing',
+  'admin/configuration/licensing':     'configuration/licensing',
 };
 
 export const identityRecovery31Redirects = Object.entries(MOVED_PAGES).flatMap(([oldPath, newPath]) => {
