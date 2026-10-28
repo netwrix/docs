@@ -1,11 +1,10 @@
 ---
-title: "Okta Page"
-description: "Okta Page"
-sidebar_label: "Connect Okta"
+title: "Connect Okta"
+description: "Add and configure the Okta tenants that Identity Recovery backs up."
 sidebar_position: 12
 ---
 
-# Okta Page
+# Connect Okta
 
 The Okta page provides a list of the Okta tenants backed up by Identity Recovery. It
 displays the backup schedule settings for each added Okta tenant. You can also add and configure new Okta tenants.

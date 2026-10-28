@@ -1,11 +1,10 @@
 ---
-title: "Entra ID Page"
-description: "Entra ID Page"
-sidebar_label: "Connect Entra ID"
+title: "Connect Entra ID"
+description: "Add and configure the Microsoft Entra ID tenants that Identity Recovery backs up."
 sidebar_position: 12
 ---
 
-# Entra ID Page
+# Connect Entra ID
 
 The Entra ID page lists the Entra tenants that Identity Recovery backs up. It displays the backup schedule settings for each added Entra tenant. You can also add and configure a new Entra tenant.
 

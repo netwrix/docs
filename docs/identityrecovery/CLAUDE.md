@@ -30,7 +30,7 @@ The version folder follows the standard documentation zones (see `.claude/refere
 
 ### Configuration vs Administration
 
-Entra ID, Okta, and Forest each appear twice: `configuration/<name>.md` connects the product to the directory or sets up forest backups, and `admin/<name>/` is where you recover and roll back objects. The Configuration pages carry a `sidebar_label` ("Connect Entra ID", "Connect Okta", "Forest Backup Settings") so the two read differently in the sidebar. Keep that distinction when adding pages.
+Entra ID, Okta, and Forest each appear twice: `configuration/<name>.md` connects the product to the directory or adds the forest, and `admin/<name>/` is where you configure backups and recover and roll back objects. The Configuration pages are titled "Connect Entra ID", "Connect Okta", and "Connect a Forest" so the two read differently in the sidebar, search results, and breadcrumbs. Keep that distinction when adding pages.
 
 ### Redirects
 

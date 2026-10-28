@@ -45,9 +45,9 @@ The navigation pane contains the following links:
 
     - [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains page provides a list of the domains backed up by Identity Recovery. It displays the backup schedule settings for each
       added domain. You can also add and configure new domains.
-    - [Forest Page](/docs/identityrecovery/3.1/admin/activedirectory/overview.md) – The Forest page lists the domain controllers in the forest, whether backups are enabled for the domain controllers, and the last backup time.
-    - [Azure Storage Page](/docs/identityrecovery/3.1/admin/activedirectory/overview.md) – The Azure Storage page lists the storage containers in Azure Storage.
-    - [Entra ID Page](/docs/identityrecovery/3.1/configuration/entraid.md) – The Entra page provides a list of the Entra tenants backed up by Identity Recovery. It displays the backup schedule settings for each
+    - [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) – The Forest page lets you add a forest so that Identity Recovery can back it up and recover it.
+    - [Azure Storage Page](/docs/identityrecovery/3.1/configuration/azurestorage.md) – The Azure Storage page lists the storage containers in Azure Storage.
+    - [Connect Entra ID](/docs/identityrecovery/3.1/configuration/entraid.md) – The Entra page provides a list of the Entra tenants backed up by Identity Recovery. It displays the backup schedule settings for each
       added Entra tenant. You can also add and configure new Entra tenant.
     - [Users and Roles Page](/docs/identityrecovery/3.1/configuration/roles.md) – The Users and Roles page displays the accounts with access to Identity Recovery.
     - [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) – The Notifications page lets you configure notifications, which are required to send an email when a collection (backup) job completes.

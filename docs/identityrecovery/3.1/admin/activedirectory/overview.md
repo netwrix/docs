@@ -46,7 +46,7 @@ additional information.
 
 ## Recover Deleted Objects
 
-When you expand a domain in the left pane, the Recycle Bin appears in blue. It's a virtual container
+When you expand a domain in the left pane, the Recycle Bin appears in blue to show that it's a virtual container
 specific to Identity Recovery. Use the Recycle Bin to
 recover deleted objects in Active Directory. See the [Recover Objects](/docs/identityrecovery/3.1/admin/activedirectory/recover.md) topic for
 additional information.

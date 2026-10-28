@@ -83,7 +83,7 @@ Select the checkboxes you want relating to the state of a user password upon res
 - Set new password – Implement a new password upon recovery. Enter the new password in the text box.
 
     :::tip
-    When you create a new password, the user needs it to login the first time. Copy the
+    When you create a new password, the user needs it to log in the first time. Copy the
     password and give it to the restored user.
     :::
 
