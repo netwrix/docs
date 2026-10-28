@@ -44,7 +44,7 @@ Error: Sequence contains more than one matching element.
 
 The `<JobGroupName>` in the error message identifies which job group contains the duplicated entry (e.g., `SG_LocalAdmins`).
 
-> **NOTE:** The same error text also appears when a job generates a report. For that cause, see [Error: Sequence Contains More Than One Matching Element](./error-sequence-contains-more-than-one-matching-element.md).
+> **NOTE:** The same error text also appears when a job generates a report. For that cause, see [Report Generation Error: Sequence Contains More Than One Matching Element](./error-sequence-contains-more-than-one-matching-element.md).
 
 ## Root Cause
 
@@ -113,4 +113,4 @@ Open the Access Analyzer console and then the **Schedules** tab. The error shoul
 - [Enterprise Auditor Core Upgrade Instructions (v11.6)](/docs/accessanalyzer/11_6/install/application/upgrade/wizard)
 - [Netwrix Access Analyzer v12.0 Documentation](/docs/accessanalyzer/12_0)
 - [Instantiating Jobs into the Jobs Tree](/docs/accessanalyzer/12_0/admin/jobs/instantiate)
-- [Error: Sequence Contains More Than One Matching Element](./error-sequence-contains-more-than-one-matching-element.md)
+- [Report Generation Error: Sequence Contains More Than One Matching Element](./error-sequence-contains-more-than-one-matching-element.md)
