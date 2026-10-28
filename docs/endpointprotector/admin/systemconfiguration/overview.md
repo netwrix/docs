@@ -58,6 +58,29 @@ Netwrix doesn't allow on-premise (self-hosted) customers to perform backend secu
 Netwrix doesn't test updates beforehand. Endpoint Protector pulls them from the official Linux repository.
 :::
 
+#### Required network access
+
+Backend security updates for Ubuntu, MySQL, and other backend system components come from official repositories. To receive them, allow the EPP Server outbound access to the repositories for your server version.
+
+Allow ports 80 and 443. The initial connection uses HTTP on port 80 and can switch to HTTPS on port 443.
+
+For EPP Server 2608 (Ubuntu 26.04), allow these URLs:
+
+- `http://ro.archive.ubuntu.com/ubuntu/`
+- `http://security.ubuntu.com/ubuntu/`
+- `https://cdn.crate.io/downloads/debian/stable/`
+
+For EPP Servers 2509 through 2604 (Ubuntu 22.04), allow these URLs:
+
+- `http://ro.archive.ubuntu.com/ubuntu/`
+- `http://security.ubuntu.com/ubuntu/`
+- `https://repo.alt.tuxcare.com/alt-common/deb/ubuntu/22.04/stable`
+- `http://repo.percona.com/pxb-24/apt`
+
+:::tip
+Netwrix recommends applying security updates regularly to keep Ubuntu, MySQL, the PHP runtime, and other backend system components patched against known vulnerabilities, including those listed in [ADV-2026-021 – PHP Runtime Vulnerabilities in Netwrix Endpoint Protector](https://community.netwrix.com/t/adv-2026-021-php-runtime-vulnerabilities-in-netwrix-endpoint-protector/161687).
+:::
+
 
 To ensure the updates don't harm the system, take these steps:
 
