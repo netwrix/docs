@@ -8,7 +8,7 @@ sidebar_position: 80
 
 Use these topics to connect Threat Prevention to other systems:
 
-- The PowerShell API manages policies, collections, EPE settings, and Netwrix Threat Manager settings.
+- The PowerShell API manages policies, collections, Enterprise Password Enforcer (EPE) settings, and Netwrix Threat Manager settings.
 - The EPE Rest Site lets third-party applications check passwords against EPE rules.
 - The SIEM dashboards bring Threat Prevention data into IBM QRadar and Splunk.
 
