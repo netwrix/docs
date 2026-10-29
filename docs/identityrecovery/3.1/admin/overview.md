@@ -21,8 +21,8 @@ Identity Recovery enables administrators to manage Active Directory in the follo
     - Add Forests – Add a forest and then configure a backup schedule for each of the domain
       controllers in it
     - Recover a Forest – After a disaster (ransomware, complete hardware failure,
-      etc.), use the backups with the automation capabilities in the product to restore the
-      forest to its fully functional state before the disaster
+      etc.), use the backups and the product's automation to restore the forest to its fully
+      functional state before the disaster
 
 - View Audit Log – Track the actions performed by users in Identity Recovery
 - Integrate with Netwrix products – Fetch specific data from other Netwrix products, such as Threat
