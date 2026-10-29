@@ -26,7 +26,7 @@ Each form does one job.
 |---|---|---|
 | `dspm-installer` | Runs the preflight checks, collects the settings it still needs, sets up the Kubernetes platform, and deploys the services. | Install on a new server. See [Run the installer](run-the-installer.md). |
 | `wait-for-apps` | Waits until every service is Synced and Healthy. It changes nothing. | Resume the wait after an install or upgrade stops on a timeout. See [The `wait-for-apps` command](#the-wait-for-apps-command). |
-| `upgrade --bundle-dir <path>` | Upgrades from offline media you downloaded. | Upgrade an air-gapped install, or any install from media you copied to the server. |
+| `upgrade --bundle-dir <path>` | Upgrades from offline media you downloaded. | Upgrade an air-gapped or connected media install from media you copied to the server. A registry install converts first with `upgrade --download`. |
 | `upgrade --download` | Downloads the release's media from Netwrix, then upgrades from it. On a registry install, it also moves the install onto the media. | Upgrade a connected install, or convert a registry install. |
 | `upgrade --download --migrate` | Does what `upgrade --download` does on a registry install: downloads the media and moves the install onto it, so later upgrades work like any connected install. You can't undo it. | Ask for the conversion explicitly. See [Convert or connect an install](convert-or-connect-an-install.md#convert-a-registry-install). |
 | `upgrade --connect` | Stores the license key and switches an air-gapped install to download its upgrades. It deploys nothing and keeps the installed release. You can't undo it. | Connect an air-gapped install that now has internet access. See [Convert or connect an install](convert-or-connect-an-install.md#connect-an-air-gapped-install). |
@@ -418,10 +418,10 @@ The recording runs the command on a second host. The installer warns that the ho
 | `--token` | none | none | Required. The registration bundle from the **Add agent** panel. |
 | `--name` | none | none | Required. The agent's display name. |
 | `--label` | none | none | An agent label as `key=value`. Repeat the flag for more labels. |
-| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. Refused for a server that pulls from the registry. Without it, an agent for a connected media install downloads the media. |
+| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. Refused for a server that pulls from the registry. Without it, an agent of a cluster running from media downloads k3s from the Access Analyzer server, or the release's media when the server has none. |
 | `--accept-warnings` | none | `false` | Continue past preflight warnings without the prompt. |
 
-Before it changes the host, `install-agent` stops if the host runs the Access Analyzer server, if you don't run it as root, if the host's CPU architecture differs from the server's on a media install, or if the server's certificate doesn't cover the address in `--server`. It then runs the agent preflight, opens the firewall ports on a host that runs firewalld or ufw, and joins the host. On a media install, it downloads or unpacks the release's media first, keeps it in `/var/lib/dspm/media`, and deletes the media it unpacked or downloaded after the agent joins.
+Before it changes the host, `install-agent` stops if the host runs the Access Analyzer server, if you don't run it as root, if the host's CPU architecture differs from the server's on a media install, or if the server's certificate doesn't cover the address in `--server`. It then runs the agent preflight, opens the firewall ports on a host that runs firewalld or ufw, and joins the host. On a media install, it takes k3s from the server's agent kit. If the server has none, it downloads or unpacks the release's media first, keeps it in `/var/lib/dspm/media`, and deletes the media it unpacked or downloaded after the agent joins.
 
 | Check | Minimum |
 |---|---|
