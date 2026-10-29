@@ -31,9 +31,9 @@ The application header contains the following icons in the top right corner:
 
 The navigation pane contains the following links:
 
-- [Active Directory Page](/docs/identityrecovery/3.1/admin/activedirectory/overview.md) – The Active Directory page lists the domains configured in Identity Recovery. You can perform object rollback and recovery  operations on this page.
-- [Entra ID Page](/docs/identityrecovery/3.1/admin/entraid/overview.md) – The Entra ID page lists the Entra tenants configured in Identity Recovery. You can perform object rollback and recovery operations on this page.
-- [Okta Page](/docs/identityrecovery/3.1/admin/okta/overview.md) – The Okta page lists the Okta tenants configured in Identity Recovery. You can perform object rollback operations on this page.
+- [Active Directory Page](/docs/identityrecovery/3.1/admin/activedirectory/overview.md) – The Active Directory page lists the domains configured in Identity Recovery. You can roll back and recover objects on this page.
+- [Entra ID Page](/docs/identityrecovery/3.1/admin/entraid/overview.md) – The Entra ID page lists the Entra tenants configured in Identity Recovery. You can roll back and recover objects on this page.
+- [Okta Page](/docs/identityrecovery/3.1/admin/okta/overview.md) – The Okta page lists the Okta tenants configured in Identity Recovery. You can roll back objects on this page.
 - [Forest Page](/docs/identityrecovery/3.1/admin/forest/forest.md) – The Forest page displays your Active Directory forest with its domains and domain controllers. Administrators can set up backup configurations for domain
   controllers as well as recover the forest from those backups.
 - [Audit Logs Page](/docs/identityrecovery/3.1/admin/audit.md) – The Audit Logs page provides an audit trail of the actions performed by users in Identity Recovery.
@@ -45,7 +45,7 @@ The navigation pane contains the following links:
     Only users with Administrator rights have access to the Configuration interface.
     :::
 
-    - [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains tab provides a list of the domains backed up by Identity Recovery. It displays the backup schedule settings for each
+    - [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains tab lists the domains backed up by Identity Recovery. It displays the backup schedule settings for each
       added domain. You can also add and configure new domains.
     - [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) – The Forest tab lets you add a forest so that Identity Recovery can back it up and recover it.
     - [Azure Storage Page](/docs/identityrecovery/3.1/configuration/azurestorage.md) – The Azure Storage tab lists the storage containers in Azure Storage.
