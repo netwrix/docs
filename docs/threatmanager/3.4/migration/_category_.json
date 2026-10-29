@@ -1,10 +1,10 @@
 {
-  "label": "Type of Threats",
-  "position": 4,
+  "label": "Migration",
+  "position": 35,
   "collapsed": true,
   "collapsible": true,
   "link": {
     "type": "doc",
-    "id": "overview"
+    "id": "migration"
   }
 }

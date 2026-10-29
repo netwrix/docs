@@ -1,7 +1,7 @@
 ---
 title: "Configure a Proxy for Azure and Entra ID Connections"
 description: "Configure a Proxy for Azure and Entra ID Connections"
-sidebar_position: 50
+sidebar_position: 48
 ---
 
 # Configure a Proxy for Azure and Entra ID Connections

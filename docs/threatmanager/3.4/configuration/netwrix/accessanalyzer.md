@@ -1,3 +1,9 @@
+---
+title: "Netwrix Access Analyzer (formerly Enterprise Auditor) Integration"
+description: "Netwrix Access Analyzer (formerly Enterprise Auditor) Integration"
+sidebar_position: 15
+---
+
 # Netwrix Access Analyzer (formerly Enterprise Auditor) Integration
 
 Access Analyzer can be configured to send Sensitive Data to Threat Manager. In Access Analyzer, the
