@@ -14,7 +14,7 @@ This section covers a range of deployment methods, including:
 
 - Physical and Virtual Appliances: Detailed instructions for configuration, deployment, and
   management.
-- Cloud Platforms: Deployment strategies for AWS, GCP, and Azure, assuming existing cloud accounts
+- Cloud Platforms: Deployment strategies for Amazon Web Services (AWS), Google Cloud Platform (GCP), and Azure, assuming existing cloud accounts
   and basic platform knowledge.
 - Active Directory Integration: Using Group Policy Objects to deploy clients.
 - Third-party Management Tools: Using JAMF and Microsoft Intune to deploy clients.
@@ -30,8 +30,7 @@ Endpoint Protector agent to endpoint systems. Server management has two options:
 Customer-Managed or Provider-Managed. If you choose Customer-Managed, you can install the server On-Premise or in a Hosted-Cloud Environment.
 
 With the On-Premise option for a Customer-Managed instance, you can set up a virtualized image in your LAN. Virtualization options include, but aren’t limited to: VMware and
-Hyper-V. The Hosted-Cloud deployment method uses a customer’s Amazon Web Services
-(AWS), Azure, or Google Cloud Platform (GCP) instance. See [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) for supported VM formats including VMware and Hyper-V, and [Cloud Services](/docs/endpointprotector/install/configuration/overview.md) for AWS, Azure, and GCP deployment details.
+Hyper-V. The Hosted-Cloud deployment method uses a customer’s AWS, Azure, or GCP instance. See [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) for supported VM formats including VMware and Hyper-V, and [Cloud Services](/docs/endpointprotector/install/configuration/overview.md) for AWS, Azure, and GCP deployment details.
 
 Alternatively, if you require a Provider-Managed setup, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
 

@@ -46,7 +46,7 @@ recent updates checked or installed, and view a list of available updates.
 
 :::note
 The security update options are available only for customer-hosted instances (for example,
-AWS, or Google), except for Operating System and Kernel upgrades.
+Amazon Web Services (AWS), or Google), except for Operating System and Kernel upgrades.
 :::
 
 :::warning
