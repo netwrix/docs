@@ -103,7 +103,7 @@ specific operations:
 
 **I/O Type area**
 
-In the I/O Type area, check the **All** box at the top to include all types or select specific
+In the **I/O Type** area, check the **All** box at the top to include all types or select specific
 types:
 
 - Native File System – For scoping to NTFS and NAS native activity
