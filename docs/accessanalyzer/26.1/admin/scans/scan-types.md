@@ -44,7 +44,7 @@ Enter a share name and press Enter, or enter a comma, to add it to a share list.
 | **Exclude URLs** | Empty | URL patterns for subsites, lists, libraries, folders, documents, and list items to skip inside the scanned site collections. Supports the `*` wildcard. |
 | **Collect OneDrive** | On | Includes users' OneDrive personal sites when **Include site collections** is set to **Scan all URLs**. When you list specific site collections, the scan covers exactly those, and this setting has no effect. |
 
-Exclude rules always take precedence over include rules. A pattern in **Exclude URLs** matches the whole URL, ignoring case, so a pattern without a wildcard matches only the object at exactly that URL. To exclude a library, folder, or site and everything in it, end the pattern with `/*`, as in `*.sharepoint.com/sites/archive/*`. See [Microsoft 365](../../configuration/sources/microsoft-365.md#access-scans) for the content Access scans always skip.
+Exclude rules always take precedence over include rules. A pattern in **Exclude URLs** matches the whole URL, ignoring case, so a pattern without a wildcard matches only the object at exactly that URL. To exclude a library, folder, or site and everything in it, end the pattern with `/*`, as in `*.sharepoint.com/sites/archive/*`. See [SharePoint Online](../../configuration/sources/microsoft-365.md#access-scans) for the content Access scans always skip.
 
 ### Reports Fed by Access Scans
 

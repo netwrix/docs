@@ -22,7 +22,7 @@ The upgrade process from Threat Manager 3.2 to 3.3 involves the following steps:
 - (Optional) Upgrade PostgreSQL 14 to PostgreSQL 18
 
 For instructions on migrating the Threat Manager database from PostgreSQL 14 to PostgreSQL 18,
-see the [Upgrade PostgreSQL 14 to 18](/docs/threatmanager/3.3/install/upgrade/upgrade_pg14_to_pg18.md) topic.
+see the [Upgrade PostgreSQL 14 to 18](/docs/threatmanager/3.3/migration/upgrade_pg14_to_pg18.md) topic.
 
 ## Upgrade PostgreSQL
 
@@ -128,5 +128,5 @@ browser cache for better performance and user experience.
 
 PostgreSQL 14 reaches end-of-life on November 12, 2026. After upgrading to Threat Manager 3.3, you
 may optionally migrate your database to PostgreSQL 18. See the
-[Upgrade PostgreSQL 14 to 18](/docs/threatmanager/3.3/install/upgrade/upgrade_pg14_to_pg18.md) topic for
+[Upgrade PostgreSQL 14 to 18](/docs/threatmanager/3.3/migration/upgrade_pg14_to_pg18.md) topic for
 full instructions.
