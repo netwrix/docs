@@ -41,6 +41,8 @@ Without the CA bundle, the install can finish, but the application never becomes
 
 Skip the CA bundle only if the certificate comes from a publicly trusted CA or is self-signed.
 
+`dspm-installer update-cert` is stricter. It requires `--ca-bundle` for any certificate that isn't self-signed, including one from a publicly trusted CA. Pass that CA's root certificate in PEM format. A PFX passed with `--tls-pfx` that includes the CA certificates supplies the bundle itself.
+
 ## Recommended Certificate Fields
 
 A certificate for Access Analyzer should have the following fields. Most CA "Web Server" templates produce them already.

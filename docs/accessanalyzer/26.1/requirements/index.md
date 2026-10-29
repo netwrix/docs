@@ -34,7 +34,7 @@ You pick a size when you install. The size sets the CPU and RAM the installer re
 
 CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine provisioned at exactly the stated figure passes even though the guest sees slightly less.
 
-Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size is designed to hold. The 40 GB floor is different: below that, the preflight check fails.
+Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size supports. The 40 GB floor is different: below that, the preflight check fails.
 
 For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on the storage volume (`/var/lib` by default) installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
 
@@ -44,7 +44,7 @@ If you want the data on a different volume, the installer accepts custom data di
 
 ## Install Media
 
-A connected install works the way an air-gapped install does. The installer downloads the release's offline media from Netwrix, verifies it, and installs from it. The cluster stays connected to the internet, but it doesn't pull charts and images from the Netwrix registry. They come from a registry and a git server inside the cluster.
+A connected install works the way an air-gapped install does. The installer downloads the release's offline media from Netwrix, verifies it, and installs from it. The cluster stays connected to the internet, but it pulls charts and images from a registry and a git server inside the cluster instead of the Netwrix registry.
 
 The media needs disk space while the installer works with it. Allow about **16 GB free** on the volume that holds the media. The preflight check warns (`media-disk`) when there is less. Before it downloads, the installer also checks for room for four times the media archive's size, less any part of the archive already downloaded, and stops with exit code `16` if there isn't enough. Because a partial download counts toward that total, running the command again after an interrupted download needs less free space than the first attempt.
 
@@ -77,13 +77,13 @@ Create the DNS record before you install. The TLS certificate's Subject Alternat
 
 ## TLS Certificate
 
-Access Analyzer serves the web application **only** over HTTPS, and the installer never generates a certificate. You supply one.
+Access Analyzer serves the web application **only** over HTTPS. Supply a certificate from your certificate authority (CA). For a lab or demo install, the installer can generate a self-signed certificate instead with `--generate-self-signed-cert`.
 
 | Item | Requirement |
 |---|---|
 | Certificate | PEM format, full chain, leaf certificate first. Its Subject Alternative Names must include the hostname; the Common Name alone isn't enough. It must not be expired. |
 | Private key | PEM format, unencrypted, and the key that matches the certificate. |
-| CA bundle | Optional. PEM format. Needed only when a private certificate authority (CA) issued the certificate, so that the certificate chains to it. |
+| CA bundle | Optional. PEM format. Needed only when a private CA issued the certificate, so that the certificate chains to it. |
 
 The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/etc/dspm/tls.key` unless you point it elsewhere. A self-signed certificate works, and the installer uses it as its own CA bundle, but browsers warn users about it.
 
