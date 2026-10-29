@@ -13,7 +13,10 @@ import { threatManager33Redirects } from './src/config/redirects/threatmanager-3
 import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects } from './src/config/redirects/privilegesecurediscovery.js';
 import { directoryManager110Redirects } from './src/config/redirects/directorymanager-11.0.js';
 import { privilegeSecure42Redirects } from './src/config/redirects/privilegesecure-4.2.js';
+import { isIndexableSite } from './src/config/indexing.js';
 import { identityRecovery31Redirects } from './src/config/redirects/identityrecovery-3.1.js';
+import robotsTxtPlugin from './src/plugins/robotsTxt.js';
+
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -77,6 +80,8 @@ const unversionedDocsBasePaths = redirectProducts
   })
   .filter(Boolean);
 
+const siteUrl = process.env.APP_EXTERNAL_URL || 'http://localhost:4500';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Netwrix Product Documentation',
@@ -86,7 +91,10 @@ const config = {
   // Set the production url of your site here
   // Use environment variable for dynamic URL configuration
   projectName: 'docs',
-  url: process.env.APP_EXTERNAL_URL || 'http://localhost:4500',
+  url: siteUrl,
+  // Pages on any host other than the production one carry a noindex meta tag
+  // (and Docusaurus skips the sitemap), so docs-dev stays out of search results.
+  noIndex: !isIndexableSite(siteUrl),
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
@@ -185,6 +193,9 @@ const config = {
           },
         };
       },
+
+      // Writes build/robots.txt: crawlable on docs.netwrix.com only
+      robotsTxtPlugin,
 
       // Google Analytics
       [
