@@ -1,5 +1,5 @@
 ---
-title: Microsoft 365
+title: SharePoint Online
 description: Add a SharePoint Online source to scan the sites, documents, sharing settings, and permissions of a Microsoft 365 tenant, including OneDrive.
 sidebar_position: 4
 ---

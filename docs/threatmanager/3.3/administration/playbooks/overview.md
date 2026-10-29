@@ -7,10 +7,10 @@ sidebar_position: 60
 # Playbooks
 
 The first step in designating steps to run in response to a threat is to add a playbook. A playbook
-is used to tie a threat or "trigger type" to the steps you want to take in response to that threat.
-A threat response can be assigned to a playbook on the
-[Threat Detection Page](/docs/threatmanager/3.3/administration/configuration/threatdetection/threatdetection.md). After a playbook has been created,
-steps that specify the action you want for the threat response are then added.
+ties a threat or "trigger type" to the steps you want to take in response to that threat.
+You can assign a threat response to a playbook on the
+[Threat Detection Page](/docs/threatmanager/3.3/configuration/threatdetection/threatdetection.md). After you create a playbook,
+add steps that specify the action you want for the threat response.
 
 :::info
 Execute playbooks in a test environment and review the results before executing
@@ -42,7 +42,7 @@ Description field.
 
 **Step 4 –** Click the Save button.
 
-The new playbook now has the name you want, and steps can be added to the playbook. See the Actions
+The new playbook now has the name you want, and you can add steps to the playbook. See the Actions
 Tab topic for additional information.
 
 ## Configure a Playbook
@@ -60,8 +60,8 @@ The Threat Response page contains the following configuration tabs:
 
 ### General Tab
 
-The General Tab contains the Allowed Threats box which allows customization of which threats are
-applicable for the selected playbook.
+The General Tab contains the Allowed Threats box, where you choose the threats that apply to the
+selected playbook.
 
 ![generaltab](/images/threatmanager/3.0/administration/playbooks/generaltab.webp)
 
@@ -78,9 +78,9 @@ The General tab has the following configuration options:
 
 ### Actions Tab
 
-Once a playbook is created or imported, add steps to the playbook using the Actions tab. Steps are
+After you create or import a playbook, add steps to the playbook using the Actions tab. Steps are
 actions that are taken in response to a threat. See the
-[Preconfigured Actions](/docs/threatmanager/3.3/administration/configuration/threatresponse.md#preconfigured-actions) topic for
+[Preconfigured Actions](/docs/threatmanager/3.3/configuration/threatresponse.md#preconfigured-actions) topic for
 additional information.
 
 Follow the instructions to add steps to a Playbook.
@@ -110,7 +110,7 @@ The step is added to the playbook.
 
 ### Follow-Up Tab
 
-Follow-Up Playbooks can be configured on the Follow-Up tab. Follow-Up playbooks allow additional
+Configure follow-up playbooks on the Follow-Up tab. Follow-Up playbooks allow additional
 playbooks to run after the playbook has completed. This allows a Threat Manager administrator to 
 sequence a series of playbooks together as part of a threat response.
 
