@@ -49,7 +49,7 @@ Authenticator app every time you sign into Identity Recovery. See the
 **Step 1 –** In the Recovery Console, click your profile icon in the top right corner of the page
 and select **Manage**. The MFA page opens.
 
-**Step 2 –** Click **Disable 2FA**. A confirmation message is displayed. Click **Disable 2FA** to
+**Step 2 –** Click **Disable 2FA**. A confirmation message appears. Click **Disable 2FA** to
 disable multi-factor authentication or **Cancel** to leave it enabled.
 
 When you disable MFA, the page displays a confirmation message with an option to enable it
