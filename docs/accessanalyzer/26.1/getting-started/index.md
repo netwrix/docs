@@ -15,7 +15,7 @@ Netwrix Access Analyzer is a self-hosted web application that you install on a L
 
 ### Sources
 
-Access Analyzer collects permissions and inventory from SMB file servers (the **File Server** source type), Active Directory, Entra ID, and Microsoft 365 (the **SharePoint Online** source type). Each connected system is a source, and most will connect with a [service account](../configuration/service-accounts/index.md). This doc on [Sources](../configuration/sources/index.md) covers each type.
+Access Analyzer collects permissions and inventory from SMB file servers (the **File Server** source type), Active Directory, Entra ID, and SharePoint Online. Each connected system is a source, and most will connect with a [service account](../configuration/service-accounts/index.md). This doc on [Sources](../configuration/sources/index.md) covers each type.
 
 ### Scans and Agents
 
