@@ -1,6 +1,6 @@
 ---
 title: "Integrations & API"
-description: "Connect Threat Prevention to other systems with the PowerShell API, the EPE Rest Site for third-party password checks, and SIEM dashboards for IBM QRadar and Splunk."
+description: "Connect Threat Prevention to other systems with the PowerShell API, the EPE Rest Site, and SIEM dashboards for IBM QRadar and Splunk."
 sidebar_position: 80
 ---
 
