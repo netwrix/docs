@@ -37,13 +37,13 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--tls-cert` | `TLS_CERT_FILE` | `/etc/dspm/tls.crt` | PEM TLS certificate file, full chain with the leaf certificate first. Requires `--tls-key`. |
 | `--tls-key` | `TLS_KEY_FILE` | `/etc/dspm/tls.key` | PEM TLS private key file. Requires `--tls-cert`. |
 | `--ca-bundle` | `TLS_CA_BUNDLE_FILE` | none | PEM certificate authority (CA) bundle. Needed when a private CA issued the certificate. |
-| `--generate-self-signed-cert` (alias `--self-signed`) | `DSPM_GENERATE_SELF_SIGNED_CERT` | `false` | Generate a one-time self-signed certificate and key pair at the resolved TLS paths instead of requiring one on disk. Requires `--hostname`. The installer only generates a certificate when none already exists at those paths — it never overwrites an existing one — and skips this under `--dry-run`. |
+| `--generate-self-signed-cert` (alias `--self-signed`) | `DSPM_GENERATE_SELF_SIGNED_CERT` | `false` | Generate a self-signed certificate and key pair at the resolved TLS paths instead of requiring one on disk. Requires `--hostname` and absolute `--tls-cert` and `--tls-key` paths. You can't combine it with `--tls-pfx` or with a CA bundle, whether the bundle comes from `--ca-bundle`, `TLS_CA_BUNDLE_FILE`, or a `ca-bundle` line in `/etc/dspm/installer.yaml`; delete that line before you run the installer again with this flag. The installer generates a new pair on every run. It renames an existing certificate or key at those paths to a `.bak` file (`.bak.2`, `.bak.3`, and so on if that name is taken) rather than reusing it. It skips generation under `--dry-run`. |
 | `--tls-cert-validity-days` (alias `--cert-days`) | `DSPM_TLS_CERT_VALIDITY_DAYS` | `365` | Validity period, in days, for a certificate `--generate-self-signed-cert` generates. Maximum `36500`. |
-| `--cert-manager-issuer-mode` (alias `--issuer-mode`) | `CERT_MANAGER_ISSUER_MODE` | `none` | Hand issuance and renewal of the `dspm-tls` certificate to cert-manager instead of managing it yourself: `none`, `selfsigned`, `adcs`, or `acme`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the `acme` mode. The installer doesn't save this to `/etc/dspm/installer.yaml` — see [Configuration File](#configuration-file). |
-| `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](requirements.md#size) for the CPU, RAM, and disk each size requires. A re-run on an existing install never shrinks it. Without `--size`, `SIZE`, or a `size:` key in `/etc/dspm/installer.yaml`, the re-run keeps the installed size, and a smaller size exits with code `1`. To grow an install, pass a larger `--size`, or run `dspmctl resize`, which also grows the volume claims. See [Change the deployment size](change-the-deployment-size.md). |
+| `--cert-manager-issuer-mode` (alias `--issuer-mode`) | `CERT_MANAGER_ISSUER_MODE` | `none` | Hand issuance and renewal of the `dspm-tls` certificate to cert-manager instead of managing it yourself: `none`, `selfsigned`, `adcs`, or `acme`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the `acme` mode. The installer saves this to `/etc/dspm/installer.yaml`, so later runs keep the mode — see [Configuration File](#configuration-file). |
+| `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](../requirements/index.md#size) for the CPU, RAM, and disk each size requires. A re-run on an existing install never shrinks it. Without `--size`, `SIZE`, or a `size:` key in `/etc/dspm/installer.yaml`, the re-run keeps the installed size, and a smaller size exits with code `1`. To grow an install, pass a larger `--size`, or run `dspmctl resize`, which also grows the volume claims. See [Change the deployment size](change-the-deployment-size.md). |
 | `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. The installer refuses a release older than itself and exits with code `16`. Also appears as **Target Revision** under **Show advanced settings?**. |
 | `--progress` | `DSPM_PROGRESS` | `auto` | Download progress style: `auto`, `bar`, `ascii`, or `lines`. Also applies to `upgrade`. See [Download progress](run-the-installer.md#download-progress). |
-| `--storage-dir` | `DSPM_STORAGE_DIR` | `/var/lib` | Directory holding everything the Kubernetes platform writes: container image layers, the server datastore, and every persistent volume. Set it at install time only. It also moves the install media to `<dir>/dspm/media`. Also appears as **Storage Directory** under **Show advanced settings?**. See [Install media](requirements.md#install-media). |
+| `--storage-dir` | `DSPM_STORAGE_DIR` | `/var/lib` | Directory holding everything the Kubernetes platform writes: container image layers, the server datastore, and every persistent volume. Set it at install time only. It also moves the install media to `<dir>/dspm/media`. Also appears as **Storage Directory** under **Show advanced settings?**. See [Install media](../requirements/index.md#install-media). |
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
 | `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen that appears when the configuration file already supplies every required value. |
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
@@ -109,7 +109,7 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 | `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
 | `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all Access Analyzer data. Prompts for confirmation unless you pass `--force`. |
 | `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
-| `--tmp-dir` | `DSPM_TMP_DIR` | none | `--help` doesn't list this flag. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](requirements.md#install-media). |
+| `--tmp-dir` | `DSPM_TMP_DIR` | none | `--help` doesn't list this flag. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](../requirements/index.md#install-media). |
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 
@@ -156,7 +156,7 @@ The installer rejects bad values before it changes anything on the server.
 
 The installer keeps its answers in `/etc/dspm/installer.yaml`. It writes the file itself: after every confirmed prompt in an interactive run, or once after license validation in a flag-driven run. On the first save it prints `Progress saved to /etc/dspm/installer.yaml — future runs will pre-fill these values.` A later run reads the file and asks only for what's still missing, so a canceled install resumes where it stopped.
 
-Keys are the flag names. The installer writes `license-key`, `hostname`, `first-admin-email`, `first-admin-name`, `tls-cert`, `tls-key`, and `ca-bundle`, plus `target-revision` when you pin a version other than `1.*` and `storage-dir` when you set one other than `/var/lib`. It keeps any keys you add, and never saves operational flags such as `--accept-warnings`, `--assume-yes`, `--dry-run`, `--skip-preflight`, `--preflight`, and `--cert-manager-issuer-mode`. You can also write the file by hand before the first run.
+Keys are the flag names. The installer writes `license-key`, `hostname`, `first-admin-email`, `first-admin-name`, `tls-cert`, `tls-key`, `ca-bundle`, and `cert-manager-issuer-mode`, plus `target-revision` when you pin a version other than `1.*` and `storage-dir` when you set one other than `/var/lib`. It keeps any keys you add, and never saves operational flags such as `--accept-warnings`, `--assume-yes`, `--dry-run`, `--skip-preflight`, and `--preflight`. You can also write the file by hand before the first run.
 
 ```yaml title="/etc/dspm/installer.yaml"
 license-key: XXXX-XXXX-XXXX-XXXX-XXXX-V3
@@ -205,7 +205,7 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 | `disk` | Free space on the storage volume (`--storage-dir`, or `/var/lib` by default) against the 40 GB floor. The installer measures the nearest existing parent, since it creates the directory itself during install. | FAIL | `<n> GB free on <path>; at least 40 GB is needed to install` |
 | `disk` | Free space on the storage volume against the size's recommended disk. | WARN | `<n> GB free on <path>; the <size> size is designed to hold <n> GB, so it will run out as data accumulates` |
 | `kubelet-disk` | Runs only with `--storage-dir`. Free space on `/var/lib` against 10 GB, because the platform keeps pod-local storage there wherever the storage directory points. | WARN | `<n> GB free on /var/lib; kubelet keeps pod-local storage there whatever --storage-dir is set to…` |
-| `media-disk` | Connected installs only. Free space for the install media, about 16 GB, on the volume that holds the [media directory](requirements.md#install-media). | WARN | `<n> GB free on <path>; the install media is downloaded and expanded there and wants about 16 GB, checked exactly before the download — point --tmp-dir or --storage-dir at a larger volume` |
+| `media-disk` | Connected installs only. Free space for the install media, about 16 GB, on the volume that holds the [media directory](../requirements/index.md#install-media). | WARN | `<n> GB free on <path>; the install media is downloaded and expanded there and wants about 16 GB, checked exactly before the download — point --tmp-dir or --storage-dir at a larger volume` |
 | `cgroups` | The kernel exposes cgroups at `/sys/fs/cgroup`. | FAIL | `cgroups not available at /sys/fs/cgroup` |
 | `kernel-modules` | The kernel has the `br_netfilter` and `overlay` modules loaded or built in. The install loads missing modules itself, so this check warns only when it can't inspect a module, or during a dry run when a module isn't loaded. | WARN | `kernel module issues: <module>: could not check module: <error>` or `kernel module issues: <module>: not loaded (dry run; will not be modprobed)` |
 | `os` | The Linux distribution belongs to a recognized family. | WARN | `unrecognised Linux distribution; installation may not be supported` |
@@ -217,7 +217,7 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 
 When the `antivirus` check finds a product, add these paths to that product's exclusion list: `<storage-dir>/rancher/k3s/agent/containerd`, `<storage-dir>/rancher/k3s/data`, and `/run/k3s/containerd`. `<storage-dir>` is `/var/lib` unless you set `--storage-dir`. See [Storage Location](#storage-location). The hint in the message names the product's own command or console for adding exclusions.
 
-The [Requirements](requirements.md) page lists the hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
+The [Requirements](../requirements/index.md) page lists the hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
 
 ### Preflight-only mode
 
@@ -274,7 +274,7 @@ firewall-cmd --permanent --zone=trusted --add-source=10.43.0.0/16
 firewall-cmd --reload
 ```
 
-These open the platform's internal API port and trust its pod and service networks. Also open the ports that [Requirements](requirements.md#inbound) lists for Access Analyzer itself.
+These open the platform's internal API port and trust its pod and service networks. Also open the ports that [Requirements](../requirements/index.md#inbound) lists for Access Analyzer itself.
 
 ### Older RHEL and CentOS Releases
 
@@ -372,7 +372,7 @@ The output shows the state (`running`, `succeeded`, or `failed`), the phase, the
 
 ## The `install-agent` Command
 
-`install-agent` joins the host you run it on to an existing installation as an agent node. You don't write the command by hand: the **Add agent** panel generates it with a registration bundle, as [Deploy an agent](../agents/deploy-agent.md) describes. Run it as root on a separate Linux host, not on the Access Analyzer server.
+`install-agent` joins the host you run it on to an existing installation as an agent node. You don't write the command by hand: the **Add agent** panel generates it with a registration bundle, as [Deploy an agent](../configuration/agents/deploy-agent.md) describes. Run it as root on a separate Linux host, not on the Access Analyzer server.
 
 ```bash
 sudo dspm-installer install-agent \
@@ -390,7 +390,7 @@ The bundle expires 30 minutes after the panel generates it, and `install-agent` 
 | `--token` | none | none | Required. The registration bundle from the **Add agent** panel. |
 | `--name` | none | none | Required. The agent's display name. |
 | `--label` | none | none | An agent label as `key=value`. Repeat the flag for more labels. |
-| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. Refused for a server that pulls from the registry. Without it, an agent for a connected media install downloads the media. |
+| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. `install-agent` refuses it for a server that pulls from the registry. Without it, an agent for a connected media install downloads the media. |
 | `--accept-warnings` | none | `false` | Continue past preflight warnings without the prompt. |
 
 Before it changes the host, `install-agent` stops if the host runs the Access Analyzer server, if you don't run it as root, if the host's CPU architecture differs from the server's on a media install, or if the server's certificate doesn't cover the address in `--server`. It then runs the agent preflight, opens the firewall ports on a host that runs firewalld or ufw, and joins the host. On a media install, it downloads or unpacks the release's media first, keeps it in `/var/lib/dspm/media`, and deletes the media it unpacked or downloaded after the agent joins.
@@ -404,7 +404,7 @@ Before it changes the host, `install-agent` stops if the host runs the Access An
 | Code | Meaning |
 |---|---|
 | 0 | The agent joined and registered under its name. |
-| 1 | General failure, such as an invalid flag or bundle, an expired bundle, or a refusal listed in [Deploy an agent](../agents/deploy-agent.md#the-command-refuses-to-run). |
+| 1 | General failure, such as an invalid flag or bundle, an expired bundle, or a refusal listed in [Deploy an agent](../configuration/agents/deploy-agent.md#the-command-refuses-to-run). |
 | 10 | License key error while downloading the media. |
 | 16 | A precondition failed and nothing changed: too little free space for the media, or the media's k3s is newer than the server's. |
 | 17 | The installer couldn't download, verify, or unpack the media. Run the command again to resume. |
