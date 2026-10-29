@@ -90,7 +90,7 @@ In the Permissions area, select the following option to block changes to the ACL
 
 **I/O Type area**
 
-In the I/O Type area, check the **All** box at the top to include all types or select specific
+In the **I/O Type** area, check the **All** box at the top to include all types or select specific
 types:
 
 - Native File System – For scoping to NTFS and NAS native activity
@@ -110,13 +110,13 @@ the Paths and Path Collections areas to edit the lists.
 - The Path **Add** (+) button opens the
   [Select File System Objects Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectfilesystemobjects.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -175,13 +175,13 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Perpetrators area – The Add (+) button opens the
   [Select Active Directory Perpetrators Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/perpetrators.md).
 - Collections of Perpetrators area - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 

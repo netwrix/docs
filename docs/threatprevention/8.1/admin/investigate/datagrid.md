@@ -25,7 +25,7 @@ respective database.
 
 The archive database is part of the Threat Prevention Database Maintenance feature, and you can only
 query it from the Administration Console. See the
-[Archive Data](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/archive.md) topic for additional information.
+[Archive Data](/docs/threatprevention/8.1/configuration/databasemaintenance/archive.md) topic for additional information.
 
 **Step 4 –** Use the **Get Top [number] Events** box to specify the number of events to
 display.

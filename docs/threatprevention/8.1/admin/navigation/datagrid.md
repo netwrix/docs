@@ -165,6 +165,6 @@ Locally and/or Email to and populate the required fields.
 :::note
 The Email to action requires configured SMTP host information. Only a Threat Prevention
 administrator can configure this through the
-[Email Tab](/docs/threatprevention/8.1/admin/configuration/systemalerting/email.md) of the System Alerting window.
+[Email Tab](/docs/threatprevention/8.1/configuration/systemalerting/email.md) of the System Alerting window.
 
 :::

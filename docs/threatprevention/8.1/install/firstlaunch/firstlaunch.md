@@ -53,4 +53,4 @@ manage the Agent.
 - Click **No** if you don't want to install the Agents now. To install Agents later, see the
   [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) topic.
 
-See the [Getting Started ](/docs/threatprevention/8.1/gettingstarted.md)topic for the next steps.
+See the [Getting Started](/docs/threatprevention/8.1/gettingstarted/gettingstarted.md) topic for the next steps.

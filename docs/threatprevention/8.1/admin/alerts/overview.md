@@ -10,7 +10,7 @@ Use the Alerts interface to view recent Security events, Operations events, and
 Configuration events for Threat Prevention - all of which are known as alerts. These events are
 system-generated and don't require any prior configuration.
 
-You can choose to view alerts related to analytics configuration and monitoring status on the Alerts
+You can view alerts related to analytics configuration and monitoring status on the Alerts
 interface. See the [Alerts Cleanup Window](/docs/threatprevention/8.1/admin/alerts/alertscleanup.md) topic for options to display
 this data.
 
@@ -64,7 +64,7 @@ The data grid displays the following information for each event:
   - Threat Prevention Configuration events
 
   For a list of the events that fall under each component, see the
-  [System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md)
+  [System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md)
 
 - Machine – Name of the originating host
 - Alert – Name of the event that triggered the alert

@@ -16,7 +16,7 @@ necessary Windows firewall rules. If you use a third party firewall, you must se
 
 :::note
 You configure SIEM ports when you enable SIEM alerting in Threat Prevention. See the
-[System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md) topic for additional
+[System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md) topic for additional
 information.
 :::
 
