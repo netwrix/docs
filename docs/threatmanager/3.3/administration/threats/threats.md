@@ -127,8 +127,8 @@ The Status section may contain the following filters:
 
 The Assignee section lets you filter by user. Select one or more users.
 
-- Unassigned – Threat doesn't have a user assigned
-- Assigned to me – Threat is assigned to the user who is logged in
+- **Unassigned** – Threat doesn't have a user assigned
+- **Assigned to me** – Threat is assigned to the user who is logged in
 
 ## Edit Threats
 

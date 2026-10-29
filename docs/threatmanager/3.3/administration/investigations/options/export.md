@@ -7,8 +7,8 @@ sidebar_position: 40
 # Export Report
 
 An export puts the report results for an investigation into a desired format. The Export option
-provides choices for how you can export the report results for an investigation. The report can be
-exported in a specified format and can be downloaded, emailed, or scheduled as desired.
+provides choices for how you can export the report results for an investigation. You can export the
+report in a specified format and download, email, or schedule it.
 
 ![Export option in the Investigation interface](/images/threatmanager/3.0/administration/investigations/options/export.webp)
 
@@ -64,7 +64,7 @@ sections, click the **Export** menu and select **Send as Email**. The Send as Em
 Available email addresses read from Active Directory that match the text string will populate in the
 dropdown menu. Select a recipient.
 
-**Step 4 –** Repeat Step 3 to add additional recipients.
+**Step 4 –** Repeat Step 3 to add more recipients.
 
 **Step 5 –** Modify the subject line as desired in the Email Subject box. The default subject
 is: Export of Report '[NAME OF INVESTIGATION]'.

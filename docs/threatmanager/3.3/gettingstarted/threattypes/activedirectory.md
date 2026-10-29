@@ -43,7 +43,7 @@ This threat aligns to best practices for securing Active Directory. If an organi
 
 ## Golden Ticket
 
-By obtaining the password hash for the most powerful service account in Active Directory, the KRBTGT account, an attacker can compromise every account within Active Directory, giving them unlimited and virtually undetectable access to any system connected to Active Directory. 
+By obtaining the password hash for the most privileged service account in Active Directory, the KRBTGT account, an attacker can compromise every account within Active Directory, giving them unlimited and virtually undetectable access to any system connected to Active Directory. 
 
 ## Forged Ticket
 

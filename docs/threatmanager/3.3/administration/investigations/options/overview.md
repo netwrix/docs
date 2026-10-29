@@ -17,7 +17,7 @@ Every investigation has the following options at the top of the page:
   be saved as a new Threat in the Investigation Settings page. See the
   [Edit or Duplicate an Investigation](/docs/threatmanager/3.3/administration/investigations/options/edit.md) topic for additional information.
 - Create threat – In addition to preconfigured threats, a user can create a custom threat when
-  certain events are considered to be dangerous in the environment, for example, when one of the
+  certain events are considered dangerous in the environment, for example, when one of the
   privileged users makes file changes. See the [Custom Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/custom.md)topic for
   additional information.
 - Subscriptions – Click the Subscriptions link to open the Subscription to window. You can specify
