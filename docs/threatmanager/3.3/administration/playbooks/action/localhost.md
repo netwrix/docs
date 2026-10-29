@@ -45,7 +45,7 @@ The Stop Process action stops a process running locally on the host associated w
 
 - Credential – Select a credential profile that contains valid Active Directory credentials.
   Credential profiles are configured on the
-  [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md). If not
+  [Credential Profile Page](/docs/threatmanager/3.3/configuration/integrations/credentialprofile.md). If not
   specified, the action will be run as the credentials of the Action Service.
 
 ## End User Session
@@ -72,5 +72,5 @@ target client.
 - Credential – The domain credential used to run the action. Domain credentials are populated by
   credential profiles that are created on the Integrations page. If not specified, the action will
   be run under the credentials of the action. Select the credentials from the dropdown list. See
-  the [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md) topic for
+  the [Credential Profile Page](/docs/threatmanager/3.3/configuration/integrations/credentialprofile.md) topic for
   additional information.
