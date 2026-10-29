@@ -27,9 +27,8 @@ domain on the Domain page of the Add Domain Configuration wizard. This account m
 
 - A member of the Domain Administrators group in the target domain
 
-If your security policies don't allow Domain Admin privileges, contact your Netwrix representative to
-develop a Least Privilege Access Model for your environment. See the
-[Least Privilege Access Model](#least-privilege-access-model) section for the baseline permissions.
+If your security policies don't allow Domain Admin privileges, see the
+[Least Privilege Access Model](#least-privilege-access-model) section.
 
 ### Least Privilege Access Model
 

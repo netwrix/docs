@@ -39,6 +39,7 @@ The navigation pane contains the following links:
 - [Audit Logs Page](/docs/identityrecovery/3.1/admin/audit.md) – The Audit Logs page provides an audit trail of the actions performed by users in Identity Recovery.
 - [Configuration Interface](/docs/identityrecovery/3.1/configuration/overview.md) – The Configuration interface lets you configure domains, forests, Entra ID and Okta tenants, Azure Storage,
   user access, notifications, integrations, data retention policy, and licensing for Identity Recovery.
+  Each tab is documented in its own topic.
 
     :::note
     Only users with Administrator rights have access to the Configuration interface.
