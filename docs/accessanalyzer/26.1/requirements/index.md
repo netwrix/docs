@@ -140,7 +140,7 @@ Some features add outbound connections of their own after you configure them.
 
 ## Antivirus Exclusions
 
-Real-time scanning by antivirus or endpoint protection software can interfere with the container runtime that Access Analyzer runs on. Exclude these directories from real-time scanning on the Access Analyzer server and on every [agent](../agents/index.md) host:
+Real-time scanning by antivirus or endpoint protection software can interfere with the container runtime that Access Analyzer runs on. Exclude these directories from real-time scanning on the Access Analyzer server and on every [agent](../configuration/agents/index.md) host:
 
 - `/var/lib/rancher/k3s/agent/containerd`
 - `/var/lib/rancher/k3s/data`
@@ -148,7 +148,7 @@ Real-time scanning by antivirus or endpoint protection software can interfere wi
 
 If you install the server with `--storage-dir`, the first two directories move under it. For example, `--storage-dir /data` puts them at `/data/rancher/k3s/agent/containerd` and `/data/rancher/k3s/data`. Agent hosts always use the default directories.
 
-The preflight check warns when it detects a known antivirus product and names the product's command or console for adding the exclusions. See [Preflight Checks](installer-reference.md#preflight-checks).
+The preflight check warns when it detects a known antivirus product and names the product's command or console for adding the exclusions. See [Preflight Checks](../install/installer-reference.md#preflight-checks).
 
 ## Browser
 
