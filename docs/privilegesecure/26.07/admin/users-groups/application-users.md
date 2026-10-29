@@ -39,7 +39,7 @@ Open the application user and select the **Authentication** tab. The **API Key**
 
 ## Request an API token
 
-To get a token for the tool, see [Get a token as an application user](/docs/privilegesecure/26.07/integrations/api/api-authentication.md#get-a-token-as-an-application-user).
+To get a token for the tool, see [Get a token as an application user](/docs/privilegesecure/26.07/api/authentication.md#get-a-token-as-an-application-user).
 
 ## Next steps
 

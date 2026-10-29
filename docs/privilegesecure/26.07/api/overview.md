@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Netwrix Privilege Secure has a REST API. Every operation that the console performs goes through this API, so a script or an external tool can do the same work that an administrator does in the console.
 
-The API returns JSON and uses standard HTTP methods. This page describes the conventions that apply to every endpoint. To get a token, see [Authenticate to the API](/docs/privilegesecure/26.07/integrations/api/api-authentication.md).
+The API returns JSON and uses standard HTTP methods. This page describes the conventions that apply to every endpoint. To get a token, see [Authenticate to the API](/docs/privilegesecure/26.07/api/authentication.md).
 
 ## Base URL
 
@@ -18,7 +18,7 @@ The API listens on the same server and port as the console.
 https://<nps-server>:6500/api/v1/
 ```
 
-Each resource group is a controller name appended to the base URL, for example `https://<nps-server>:6500/api/v1/ActivitySession`. A few sign-in endpoints sit at the root of the site instead, such as `https://<nps-server>:6500/signinBody`. See [Authenticate to the API](/docs/privilegesecure/26.07/integrations/api/api-authentication.md).
+Each resource group is a controller name appended to the base URL, for example `https://<nps-server>:6500/api/v1/ActivitySession`. A few sign-in endpoints sit at the root of the site instead, such as `https://<nps-server>:6500/signinBody`. See [Authenticate to the API](/docs/privilegesecure/26.07/api/authentication.md).
 
 :::note
 Use port 6500, the default console port, for API calls. {/* TODO verify: whether changing the web port is supported. The installer binds the site to port 6500, and code and public sources don't state a support position. */}
@@ -46,7 +46,7 @@ A token is valid for 15 minutes by default. The token lifetime is a server setti
 | User | Interactive scripts that run as a person. | User name and password, plus a second factor if the user's authentication connector requires one. |
 | Application user | Unattended automation. | Client certificate serial number and API key. |
 
-For the steps, see [Authenticate to the API](/docs/privilegesecure/26.07/integrations/api/api-authentication.md). To create an application user, see [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md).
+For the steps, see [Authenticate to the API](/docs/privilegesecure/26.07/api/authentication.md). To create an application user, see [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md).
 
 ## Roles and permissions
 
@@ -107,5 +107,5 @@ The `SbPAMPowershellModules.msi` installer in the `Extras` folder installs the `
 
 ## Next steps
 
-- [Authenticate to the API](/docs/privilegesecure/26.07/integrations/api/api-authentication.md)
+- [Authenticate to the API](/docs/privilegesecure/26.07/api/authentication.md)
 - [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md)

@@ -543,7 +543,7 @@ export const PRODUCTS = [
         label: '26.07',
         isLatest: true,
         sidebarFile: './sidebars/privilegesecure/26.07.js',
-        apiSidebarPath: './docs/privilegesecure/26.07/integrations/api/reference/sidebar.ts',
+        apiSidebarPath: './docs/privilegesecure/26.07/api/reference/sidebar.ts',
       },
       {
         version: '26.03',

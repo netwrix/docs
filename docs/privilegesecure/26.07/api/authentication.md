@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Every call to the Privilege Secure REST API, except the sign-in calls, needs a bearer token. This page shows how to get a token as a user and as an application user, how to renew it, and how to use it.
 
-A token is valid for 15 minutes by default. For the other conventions of the API, see [REST API overview](/docs/privilegesecure/26.07/integrations/api/api-overview.md).
+A token is valid for 15 minutes by default. For the other conventions of the API, see [REST API overview](/docs/privilegesecure/26.07/api/overview.md).
 
 ## Prerequisites
 
@@ -142,5 +142,5 @@ The server revokes the token in the `Authorization` header. It ignores the `<use
 
 ## Next steps
 
-- [REST API overview](/docs/privilegesecure/26.07/integrations/api/api-overview.md)
+- [REST API overview](/docs/privilegesecure/26.07/api/overview.md)
 - [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md)

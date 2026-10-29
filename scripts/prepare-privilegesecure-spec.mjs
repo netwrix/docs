@@ -62,7 +62,9 @@ for (const [path, item] of Object.entries(spec.paths)) {
       if (response.content) response.content = oneMediaType(response.content);
     }
     const tag = op.tags?.[0] ?? 'General';
-    let id = `${tag}_${op.operationId ?? method}`;
+    // The generated operationId already starts with the controller name (Controller_Action); do not repeat it.
+    const given = op.operationId ?? method;
+    let id = given.startsWith(`${tag}_`) ? given : `${tag}_${given}`;
     if (used.has(id)) id = `${id}_${method}_${path.replace(/[^A-Za-z0-9]+/g, '_')}`;
     used.add(id);
     op.operationId = id;
@@ -71,16 +73,28 @@ for (const [path, item] of Object.entries(spec.paths)) {
 }
 
 // The descriptions come from .NET XML comments and can hold tags such as <param name="id"></param>,
-// which break MDX. Strip the tags and tidy the whitespace.
+// which break MDX. Strip the tags and tidy spaces and tabs. Line breaks stay, so Markdown lists and code
+// fences keep their shape. Example payloads are left alone: a "description" key inside an example is data.
+function tidy(text) {
+  return text
+    .replace(/<\/?[A-Za-z][^>]*>/g, ' ')
+    .replace(/&gt;|&lt;/g, '')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/ ?\n ?/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
 function clean(n) {
   if (Array.isArray(n)) return n.map(clean);
   if (!n || typeof n !== 'object') return n;
   return Object.fromEntries(
     Object.entries(n).map(([k, v]) => [
       k,
-      (k === 'description' || k === 'summary') && typeof v === 'string'
-        ? v.replace(/<\/?[A-Za-z][^>]*>/g, ' ').replace(/&gt;|&lt;/g, '').replace(/\s+/g, ' ').trim()
-        : clean(v),
+      k === 'example' || k === 'examples'
+        ? v
+        : (k === 'description' || k === 'summary') && typeof v === 'string'
+          ? tidy(v)
+          : clean(v),
     ]),
   );
 }

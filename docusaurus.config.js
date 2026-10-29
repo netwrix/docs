@@ -183,7 +183,8 @@ const config = {
         };
       },
 
-      // Google Analytics
+      // Google Analytics (set DOCS_DISABLE_ANALYTICS=true to turn it off, e.g. in the preview container)
+      ...(process.env.DOCS_DISABLE_ANALYTICS === 'true' ? [] : [
       [
         '@docusaurus/plugin-google-gtag',
       {
@@ -191,6 +192,7 @@ const config = {
         anonymizeIP: true,
       },
     ],
+      ]),
     // Client-side redirects - redirect base product URLs to latest version
     [
       '@docusaurus/plugin-client-redirects',
@@ -269,8 +271,6 @@ const config = {
         },
       },
     ],
-  ],
-
     [
       'docusaurus-plugin-openapi-docs',
       {
@@ -279,7 +279,7 @@ const config = {
         config: {
           'privilegesecure-api': {
             specPath: '.generated/privilegesecure-26.07.json',
-            outputDir: 'docs/privilegesecure/26.07/integrations/api/reference',
+            outputDir: 'docs/privilegesecure/26.07/api/reference',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
@@ -288,11 +288,13 @@ const config = {
             downloadUrl: '/openapi/privilegesecure-26.07.json',
             version: '26.07',
             label: 'Privilege Secure API',
-            baseUrl: '/docs/privilegesecure/26.07/integrations/api/reference/',
+            baseUrl: '/docs/privilegesecure/26.07/api/reference/',
           },
         },
       },
     ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

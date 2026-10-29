@@ -75,5 +75,5 @@ Identity provider settings are under **Configuration** > **Authentication**, not
 
 The REST API lets scripts and other products call Privilege Secure.
 
-- [REST API overview](/docs/privilegesecure/26.07/integrations/api/api-overview.md)
-- [Authenticate to the API](/docs/privilegesecure/26.07/integrations/api/api-authentication.md)
+- [REST API overview](/docs/privilegesecure/26.07/api/overview.md)
+- [Authenticate to the API](/docs/privilegesecure/26.07/api/authentication.md)
