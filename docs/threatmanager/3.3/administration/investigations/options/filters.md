@@ -17,7 +17,7 @@ The section has the following options for configuring a filter statement:
 
 - Source – This menu provides a list of all integrations with the application. If there is only one
   data source configured, the Source menudisplays that only. See the
-  [Netwrix Integrations Page](/docs/threatmanager/3.3/administration/configuration/integrations/netwrixintegrations.md) topic for
+  [Netwrix Integrations Page](/docs/threatmanager/3.3/integrations/netwrixintegrations.md) topic for
   additional information.
 - Timeframe – This menu provides several timeframe options as well as a clock and a calendar for
   setting a custom range. You must set the timeframe for the data to be returned in the report. If
@@ -154,8 +154,7 @@ attribute:
       non-interactive event, like an API call
     - Location – The geographical location where the event originated, which can help identify
       unusual sign-ins
-    - Logged By Service – The specific Microsoft Entra service that recorded the event, providing
-      context on which service was involved in the activity
+    - Logged By Service – The specific Microsoft Entra service that recorded the event
     - Risk Detail – Detailed information about the type of risk detected during the event, such as
       leaked credentials or suspicious sign-in patterns. This detail helps administrators understand
       the nature of the threat
@@ -182,7 +181,7 @@ attribute:
 
     - Policy – The set of rules or configurations applied within the integration., which may require
       Netwrix Threat Preventiondatabase access to be configured on the NetwrixIntegrations page. See
-      the [Netwrix Integrations Page](/docs/threatmanager/3.3/administration/configuration/integrations/netwrixintegrations.md) page
+      the [Netwrix Integrations Page](/docs/threatmanager/3.3/integrations/netwrixintegrations.md) page
       for additional information
 
 ## Filter Operator Menu
@@ -222,7 +221,7 @@ value you type isn't available in the dropdown menu, use the Add button to add i
 box.
 
 :::note
-Adding additional values in the same Filter box will add an OR statement for the
+Adding more values in the same Filter box will add an OR statement for the
 attribute. For example:
 :::
 
@@ -254,6 +253,6 @@ Click the X at the end of a row to remove it from the statement.
 
 After the filter is set, you can generate the report ad hoc by clicking **Run Query**. This lets you
 test if your filter statement is working as expected. Save the investigation for reuse. You can
-also add subscriptions or export the report data using the options above the Filters section.
+also add subscriptions or export the report data using the options at the top of the investigation.
 
 See the [Investigation Reports](/docs/threatmanager/3.3/administration/investigations/reports.md) topic for additional information.

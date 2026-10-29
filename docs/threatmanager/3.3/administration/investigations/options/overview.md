@@ -17,8 +17,8 @@ Every investigation has the following options at the top of the page:
   be saved as a new Threat in the Investigation Settings page. See the
   [Edit or Duplicate an Investigation](/docs/threatmanager/3.3/administration/investigations/options/edit.md) topic for additional information.
 - Create threat – In addition to preconfigured threats, a user can create a custom threat when
-  certain events are considered to be dangerous in the environment, for example, when one of the
-  privileged users makes file changes. See the [Custom Threats](/docs/threatmanager/3.3/threats/custom.md)topic for
+  certain events are considered dangerous in the environment, for example, when one of the
+  privileged users makes file changes. See the [Custom Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/custom.md)topic for
   additional information.
 - Subscriptions – Click the Subscriptions link to open the Subscription to window. You can specify
   recipients to receive this report as an email attachment in a specified format. See the
@@ -46,7 +46,7 @@ Every investigation has the following options at the top of the page:
 For an investigations to return information on user display names, groups, or email
 addresses, the Active Directory Service must be running to collect Active Directory data before
 running an investigation. See the
-[Active Directory Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/activedirectorysync.md) topic for
+[Active Directory Sync Page](/docs/threatmanager/3.3/configuration/integrations/activedirectorysync.md) topic for
 additional information.
 :::
 
@@ -54,7 +54,7 @@ additional information.
 :::note
 For an investigation to return information on Entra ID users, groups, roles, and
 applications, the Entra ID Service must be running to collect Entra ID data before running an
-investigation. See the [Entra ID Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/entraidsync.md) topic
+investigation. See the [Entra ID Sync Page](/docs/threatmanager/3.3/configuration/integrations/entraidsync.md) topic
 for additional information.
 
 :::
