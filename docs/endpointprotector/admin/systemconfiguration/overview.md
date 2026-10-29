@@ -5,10 +5,9 @@ sidebar_position: 140
 ---
 # System Configuration
 
-This section includes essential elements such as Endpoint Protector Clients, Licensing, and
-advanced configurations. These settings maintain the system's performance, stability, and
-compliance, and they directly influence the operational efficiency and reliability of Endpoint
-Protector.
+This section includes settings such as Endpoint Protector Clients, Licensing, and
+advanced configurations. These settings affect the performance, stability, compliance, and
+reliability of Endpoint Protector.
 
 ## Server Update
 
@@ -47,15 +46,38 @@ recent updates checked or installed, and view a list of available updates.
 
 :::note
 The security update options are available only for customer-hosted instances (for example,
-AWS, or Google), except for Operating System and Kernel upgrades.
+Amazon Web Services (AWS), or Google), except for Operating System and Kernel upgrades.
 :::
 
 :::warning
-Netwrix doesn't allow on-premise (self-hosted) customers to perform backend security updates by any method other than the web UI. Any violation of this rule is outside of Netwrix support and may cause EPP Server malfunction.
+Netwrix doesn't allow on-premise (self-hosted) customers to perform backend security updates by any method other than the web UI. Any violation of this rule is outside Netwrix support and may cause EPP Server malfunction.
 :::
 
 :::note
 Netwrix doesn't test updates beforehand. Endpoint Protector pulls them from the official Linux repository.
+:::
+
+#### Required network access
+
+Backend security updates for Ubuntu, MySQL, and other backend system components come from official repositories. To receive them, allow the EPP Server outbound access to the repositories for your server version.
+
+Allow ports 80 and 443. The initial connection uses HTTP on port 80 and can switch to HTTPS on port 443.
+
+For EPP Server 2608 (Ubuntu 26.04), allow these URLs:
+
+- `http://archive.ubuntu.com/ubuntu/`
+- `http://security.ubuntu.com/ubuntu/`
+- `https://cdn.crate.io/downloads/debian/stable/`
+
+For EPP Servers 2509 through 2604 (Ubuntu 22.04), allow these URLs:
+
+- `http://archive.ubuntu.com/ubuntu/`
+- `http://security.ubuntu.com/ubuntu/`
+- `https://repo.alt.tuxcare.com/alt-common/deb/ubuntu/22.04/stable`
+- `http://repo.percona.com/pxb-24/apt`
+
+:::tip
+Netwrix recommends applying security updates regularly to keep Ubuntu, MySQL, the PHP runtime, and other backend system components patched against known vulnerabilities, including those listed in [ADV-2026-021 – PHP Runtime Vulnerabilities in Netwrix Endpoint Protector](https://community.netwrix.com/t/adv-2026-021-php-runtime-vulnerabilities-in-netwrix-endpoint-protector/161687).
 :::
 
 
@@ -72,7 +94,7 @@ Select one of the available security update types and then click **Check Updates
   packages, and the MySQL database
 - All Updates – downloads and applies Informational and Optional/Unclassiﬁed updates
 
-If there are updates available, click **Apply Updates**.
+If updates are available, click **Apply Updates**.
 
 ![Applying Backend Security Updates](backendsecurityupdates.webp)
 
@@ -124,12 +146,12 @@ The server address that a generated installer uses depends on the operating syst
 - **Windows** – The generated MSI file name includes the server FQDN or IP address, in the format `EPPClientSetup.<version>_x86_64_[a=<server-address>].msi`, for example `EPPClientSetup.2608.1.1.3_x86_64_[a=domain.netwrix.com].msi`. The installer configures the server field with this address, even if you pass a different value in the installation parameters. To use a different address, rename the MSI file or enter the FQDN or IP address in the `[a=…]` part of the file name.
 - **macOS** – The generated package updates the script it contains with the server address.
 
-For more client install options, refer to the dedicated article on [Agent Installation Options](/docs/endpointprotector/admin/agent.md)
+For more client install options, see [Agent Installation Options](/docs/endpointprotector/admin/agent.md)
 
 ## Client Software Upgrade
 
 From this section, you can upload the latest clients you downloaded from the **Client Software** section to upgrade
-the Endpoint Protector and Enforced Encryption Client and manage the upgrade jobs. The Client Software Upgrade feature is only available
+the Endpoint Protector and Enforced Encryption Client and manage the upgrade jobs. The Client Software Upgrade feature is available only
 for Windows and macOS Clients. To upgrade your Linux Clients, submit a request using the [online form](https://www.endpointprotector.com/linux).
 
 :::note
@@ -158,8 +180,7 @@ Starting with release 2509.0.1.0, endpoints display Endpoint Protector Client ve
 
 ### Create New Upgrade Job
 
-To upgrade your Endpoint Protector Client, create a new upgrade job by following these
-steps:
+To upgrade your Endpoint Protector Client, create a new upgrade job:
 
 **Step 1 –** Select the OS version from the dropdown list and then click **Next**.
 
@@ -199,7 +220,7 @@ To continue upgrading canceled Client Upgrade jobs, use the **Retry** option fro
 column.
 
 :::note
-If you deleted or archived a Client Upgrade job, then the endpoints become available for
+If you deleted or archived a Client Upgrade job, the endpoints become available for
 selection in other jobs.
 :::
 
