@@ -23,8 +23,8 @@ The table displays the following information:
       adding domains, configuring notifications, and adding and removing users. It has access to the
       Configuration node in the left navigation pane of the application.
     - Operator – This role allows access to the Active Directory, Entra ID, Okta, Forest, and Utilities nodes. The
-      account can roll back and recover objects in domains, Entra ID tenants, and forests, and roll back objects in
-      Okta tenants, through the Recovery Console.
+      account can roll back and recover objects in domains, Entra ID tenants, and Okta tenants, and recover
+      forests through the Recovery Console.
 
 - Action – Actions you can perform on user accounts
 
@@ -56,8 +56,8 @@ menu.
   domains, configuring notifications, and adding and removing users. It has access to the
   Configuration node in the left navigation pane of the application.
 - Operator – This role allows access to the Active Directory, Entra ID, Okta, Forest, and Utilities nodes. The
-  account can roll back and recover objects in domains, Entra ID tenants, and forests, and roll back objects in
-  Okta tenants, through the Recovery Console.
+  account can roll back and recover objects in domains, Entra ID tenants, and Okta tenants, and recover
+  forests through the Recovery Console.
 
 **Step 5 –** Click **Next**.
 
