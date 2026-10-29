@@ -37,7 +37,7 @@ Before adding a Microsoft Entra ID Sync policy, you must first configure a Cred
 Profile with a credential properly provisioned for running Microsoft Entra ID Sync within the
 Microsoft Entra ID tenant. See the
 [Application Server Requirements](/docs/threatmanager/3.4/requirements/server.md) topic for the permissions. See
-the [Credential Profile Page](/docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md) topic for additional information on creating a
+the [Credential Profile Page](/docs/threatmanager/3.4/configuration/integrations/credentialprofile.md) topic for additional information on creating a
 profile.
 :::
 

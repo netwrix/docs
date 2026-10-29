@@ -16,8 +16,8 @@ select **System Settings** to open the System Settings interface.
 
 It contains the following pages:
 
-- [Auditing Page](/docs/threatmanager/3.4/administration/configuration/systemsettings/auditing.md)
-- [User Access Page](/docs/threatmanager/3.4/administration/configuration/systemsettings/useraccess.md)
-- [Licensing Page](/docs/threatmanager/3.4/administration/configuration/systemsettings/licensing.md)
-- [System Jobs Page](/docs/threatmanager/3.4/administration/configuration/systemsettings/systemjobs.md)
-- [About Threat Manager Page](/docs/threatmanager/3.4/administration/configuration/systemsettings/about.md)
+- [Auditing Page](/docs/threatmanager/3.4/configuration/systemsettings/auditing.md)
+- [User Access Page](/docs/threatmanager/3.4/configuration/systemsettings/useraccess.md)
+- [Licensing Page](/docs/threatmanager/3.4/configuration/systemsettings/licensing.md)
+- [System Jobs Page](/docs/threatmanager/3.4/configuration/systemsettings/systemjobs.md)
+- [About Threat Manager Page](/docs/threatmanager/3.4/configuration/systemsettings/about.md)

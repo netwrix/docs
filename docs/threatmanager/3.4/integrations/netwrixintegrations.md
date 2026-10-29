@@ -31,7 +31,7 @@ Netwrix Integrations in the navigation pane.
 :::note
 Before adding a Netwrix Integration, you must first configure a Credential Profile with
 credentials properly provisioned for connecting to the database. See the
-[Credential Profile Page](/docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md) topic for additional information on creating a
+[Credential Profile Page](/docs/threatmanager/3.4/configuration/integrations/credentialprofile.md) topic for additional information on creating a
 profile.
 :::
 

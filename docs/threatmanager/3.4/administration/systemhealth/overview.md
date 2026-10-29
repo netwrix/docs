@@ -19,7 +19,7 @@ not displayed.
 
 The System Health interface contains the following pages:
 
-- [Backlog](/docs/threatmanager/3.4/administration/configuration/systemhealth/backlog.md)
-- [Action Queue](/docs/threatmanager/3.4/administration/configuration/systemhealth/actionqueue.md)
-- [Agents](/docs/threatmanager/3.4/administration/configuration/systemhealth/agents.md)
-- [Services Page](/docs/threatmanager/3.4/administration/configuration/systemhealth/services.md)
+- [Backlog](/docs/threatmanager/3.4/administration/systemhealth/backlog.md)
+- [Action Queue](/docs/threatmanager/3.4/administration/systemhealth/actionqueue.md)
+- [Agents](/docs/threatmanager/3.4/administration/systemhealth/agents.md)
+- [Services Page](/docs/threatmanager/3.4/administration/systemhealth/services.md)

@@ -36,14 +36,14 @@ Reports will be downloaded to the Downloads folder on your local machine, accord
 settings. You can configure a folder on the application server to place copies of all exported
 reports.
 
-See the [Folder Settings Page](/docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md) topic for
+See the [Folder Settings Page](/docs/threatmanager/3.4/configuration/integrations/foldersettings.md) topic for
 additional information.
 
 ## Send as Email
 
 :::note
 This option requires an email server to be configured. If this requirement isn't met, a
-message will appear in the window. See the[Email Page](/docs/threatmanager/3.4/administration/configuration/integrations/email.md)
+message will appear in the window. See the [Email Page](/docs/threatmanager/3.4/configuration/integrations/email.md)
 section for additional information.
 :::
 
@@ -80,7 +80,7 @@ The recipients will receive the report as an attachment to an email.
 :::note
 This option requires a shared folder to be configured.If this requirement isn't met, a
 message will appear in the window. See the
-[Folder Settings Page](/docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md) section for additional
+[Folder Settings Page](/docs/threatmanager/3.4/configuration/integrations/foldersettings.md) section for additional
 information.
 :::
 

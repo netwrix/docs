@@ -56,15 +56,15 @@ The Type section displays the threat types which can be selected for filtering. 
 to filter by is dynamic, depending upon the type of threats detected. See the following topics for
 additional information:
 
-- [Active Directory Threats](/docs/threatmanager/3.4/threats/activedirectory.md)
-- [Entra ID Threats](/docs/threatmanager/3.4/threats/entraid.md)
-- [File System Threats](/docs/threatmanager/3.4/threats/filesystem.md)
-- [General Threats](/docs/threatmanager/3.4/threats/general.md)
+- [Active Directory Threats](/docs/threatmanager/3.4/gettingstarted/threattypes/activedirectory.md)
+- [Entra ID Threats](/docs/threatmanager/3.4/gettingstarted/threattypes/entraid.md)
+- [File System Threats](/docs/threatmanager/3.4/gettingstarted/threattypes/filesystem.md)
+- [General Threats](/docs/threatmanager/3.4/gettingstarted/threattypes/general.md)
 
 ### Level
 
 The Level section displays the threat types which can be selected for filtering. Levels are assigned
-or configured on the [Threat Detection Page](/docs/threatmanager/3.4/administration/configuration/threatdetection/threatdetection.md).
+or configured on the [Threat Detection Page](/docs/threatmanager/3.4/configuration/threatdetection/threatdetection.md).
 
 ### Tags
 
@@ -77,7 +77,7 @@ Sensitive Data tags are displayed in threats containing sensitive data when Acce
 Sensitive Data Discovery Add-on are installed in addition to Threat Manager. When installed with the
 Sensitive Data Discovery Add-on, Access Analyzer scans for sensitive data using File System
 Sensitive Data Discovery Auditing. See the
-[Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.4/install/integration/accessanalyzer.md)
+[Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.4/configuration/netwrix/accessanalyzer.md)
 topic for additional information. See the File System Solution topic in the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information on Access Analyzer Sensitive Data Discovery capabilities.

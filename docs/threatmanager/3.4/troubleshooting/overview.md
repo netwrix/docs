@@ -9,5 +9,5 @@ sidebar_position: 90
 In case you are experiencing issues with the Netwrix Threat Manager, see the following topics for
 additional information:
 
-- [Log Files](/docs/threatmanager/3.4/administration/troubleshooting/log.md)
-- [Updating Passwords](/docs/threatmanager/3.4/administration/troubleshooting/updatepasswords.md)
+- [Log Files](/docs/threatmanager/3.4/troubleshooting/log.md)
+- [Updating Passwords](/docs/threatmanager/3.4/troubleshooting/updatepasswords.md)
