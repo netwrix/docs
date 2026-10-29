@@ -1044,6 +1044,151 @@ def public_info():
         ('version', '26.07.3')])
 
 
+# Display names and one-sentence descriptions for operation tags. Key = controller name used internally.
+TAGS = collections.OrderedDict([
+    ('AccessCertificationDenial', ('Access Certification Denial', 'Review and manage denied access certification requests.')),
+    ('AccessCertificationTask', ('Access Certification Task', 'Manage the tasks that ask reviewers to certify access.')),
+    ('AccessControlPolicy', ('Access Control Policy', 'Manage the policies that control who can access which resources.')),
+    ('ActionGroup', ('Action Group', 'Manage groups of actions.')),
+    ('ActionJob', ('Action Job', 'View and manage action jobs and their results.')),
+    ('ActionQueue', ('Action Queue', 'View and manage the queue of pending actions.')),
+    ('ActionQueueAction', ('Action Queue Action', 'Manage individual actions in the action queue.')),
+    ('ActionService', ('Action Service', 'Manage the service that runs actions.')),
+    ('ActionTemplate', ('Action Template', 'Manage the templates that define actions.')),
+    ('ActiveDirectory', ('Active Directory', 'Manage Active Directory domains and their settings.')),
+    ('Activity', ('Activity', 'Manage activities that users can run on resources.')),
+    ('ActivityGroup', ('Activity Group', 'Manage groups of activities.')),
+    ('ActivitySession', ('Activity Session', 'View and manage activity sessions.')),
+    ('AdConfiguration', ('AD Configuration', 'Manage Active Directory configuration settings.')),
+    ('AppContext', ('Application Context', 'Read the application context for the console.')),
+    ('AppToken', ('Application Token', 'Manage application tokens.')),
+    ('AppUserToken', ('Application User Token', 'Manage tokens issued to application users.')),
+    ('ApprovalWorkflow', ('Approval Workflow', 'Manage the workflows that approve access requests.')),
+    ('AuditChangeRow', ('Audit Change', 'Read the audit trail of configuration changes.')),
+    ('AzureAdTenant', ('Azure AD', 'Manage Azure AD tenants.')),
+    ('CommandPlan', ('Command Plan', 'Manage command plans.')),
+    ('CommandPlanRun', ('Command Plan Run', 'View and manage command plan runs.')),
+    ('CommandRestriction', ('Command Restriction', 'Manage the restrictions that limit which commands can run.')),
+    ('Config', ('Configuration', 'Read and change server configuration.')),
+    ('ConnectionProfile', ('Connection Profile', 'Manage the profiles that define how to connect to resources.')),
+    ('ConnectorConfiguration', ('Connector Configuration', 'Manage the configuration of connectors.')),
+    ('ConsoleAccess', ('Console Access', 'Manage who can sign in to the console.')),
+    ('Credential', ('Credential', 'Manage stored credentials.')),
+    ('CredentialGroup', ('Credential Group', 'Manage groups of credentials.')),
+    ('CredentialPasswordHistory', ('Credential Password History', 'View the password history of credentials.')),
+    ('DomainSync', ('Domain Sync', 'Manage domain synchronization.')),
+    ('Email', ('Email', 'Manage email settings and notifications.')),
+    ('EncryptedFile', ('Encrypted File', 'Manage encrypted files.')),
+    ('EventMessage', ('Event Message', 'Read event messages.')),
+    ('FeatureFlag', ('Feature Flag', 'Read and change feature flags.')),
+    ('Group', ('Group', 'Manage groups.')),
+    ('GroupRole', ('Group Role', 'Manage the roles assigned to groups.')),
+    ('Host', ('Host', 'Manage hosts.')),
+    ('HostDatabase', ('Host Database', 'View the databases found on hosts.')),
+    ('HostFeature', ('Host Feature', 'View the features found on hosts.')),
+    ('HostGroup', ('Host Group', 'Manage groups of hosts.')),
+    ('HostScanJob', ('Host Scan Job', 'Manage jobs that scan hosts.')),
+    ('HostScanService', ('Host Scan Service', 'Manage the service that scans hosts.')),
+    ('HostScheduledTask', ('Host Scheduled Task', 'View the scheduled tasks found on hosts.')),
+    ('HostService', ('Host Service', 'View the services found on hosts.')),
+    ('HostUser', ('Host User', 'View the local users found on hosts.')),
+    ('IPAddressRule', ('IP Address Rule', 'Manage the IP address rules that allow or block connections.')),
+    ('ImportExport', ('Import and Export', 'Import and export configuration data.')),
+    ('IntegrationConnector', ('Integration Connector', 'Manage connectors to other products.')),
+    ('IntegrationConnectorTemplate', ('Integration Connector Template', 'Manage the templates for integration connectors.')),
+    ('LicenseInfo', ('License', 'Read license information.')),
+    ('Log', ('Log', 'Read server logs.')),
+    ('Login', ('Login', 'Sign in and manage sign-in sessions.')),
+    ('ManagedAccount', ('Managed Account', 'Manage accounts that the product controls.')),
+    ('ManagedAccountGroup', ('Managed Account Group', 'Manage groups of managed accounts.')),
+    ('ManagedDatabase', ('Managed Database', 'Manage databases that the product controls.')),
+    ('ManagedResource', ('Managed Resource', 'Manage resources that the product controls.')),
+    ('ManagedResourceGroup', ('Managed Resource Group', 'Manage groups of managed resources.')),
+    ('ManagedUser', ('Managed User', 'Manage users that the product controls.')),
+    ('MfaConnector', ('MFA Connector', 'Manage connectors to multi-factor authentication providers.')),
+    ('MfaSeed', ('MFA Seed', 'Manage multi-factor authentication seeds.')),
+    ('NodeStatus', ('Node Status', 'Read the status of server nodes.')),
+    ('OverridePolicy', ('Override Policy', 'Manage policies that override default behavior.')),
+    ('PasswordComplexity', ('Password Complexity', 'Manage password complexity rules.')),
+    ('PasswordOptions', ('Password Options', 'Manage password options.')),
+    ('Platform', ('Platform', 'Manage platforms and their settings.')),
+    ('PlatformMacro', ('Platform Macro', 'Manage the macros that platforms use.')),
+    ('Postgres', ('PostgreSQL', 'Manage the PostgreSQL database connection.')),
+    ('ProtectedGroup', ('Protected Group', 'Manage protected groups.')),
+    ('ProtectionPolicy', ('Protection Policy', 'Manage the policies that protect resources.')),
+    ('ProxySession', ('Proxy Session', 'View and manage proxy sessions.')),
+    ('RagGatewayRequest', ('RAG Gateway Request', 'Manage retrieval-augmented generation gateway requests.')),
+    ('ReferenceCount', ('Reference Count', 'Count the places where an item is used.')),
+    ('RegisteredService', ('Registered Service', 'Manage registered services.')),
+    ('ReplaySession', ('Replay Session', 'View and replay recorded sessions.')),
+    ('Report', ('Report', 'Manage and run reports.')),
+    ('ReportAttributeTemplate', ('Report Attribute Template', 'Manage the attribute templates that reports use.')),
+    ('ReportSource', ('Report Source', 'Manage the data sources that reports use.')),
+    ('RolesPermission', ('Permissions', 'Manage permissions.')),
+    ('RolesRole', ('Roles', 'Manage roles.')),
+    ('ScanPolicy', ('Scan Policy', 'Manage scan policies.')),
+    ('ScheduledChangePolicy', ('Scheduled Change Policy', 'Manage policies that schedule changes.')),
+    ('SecretVault', ('Secret Vault', 'Manage secret vaults.')),
+    ('ServiceRegistration', ('Service Registration', 'Manage service registrations.')),
+    ('ServiceRotationJob', ('Service Rotation Job', 'Manage jobs that rotate service credentials.')),
+    ('SetupWizard', ('Setup Wizard', 'Run the first-time setup wizard.')),
+    ('Siem', ('SIEM', 'Manage the SIEM integration.')),
+    ('SiemSent', ('SIEM Sent', 'View the events sent to SIEM servers.')),
+    ('SiemServer', ('SIEM Server', 'Manage SIEM servers.')),
+    ('SiemSettings', ('SIEM Settings', 'Manage SIEM settings.')),
+    ('SiemTemplate', ('SIEM Template', 'Manage the message templates for SIEM servers.')),
+    ('SqlServer', ('SQL Server', 'Manage the SQL Server database connection.')),
+    ('SystemSettings', ('System Settings', 'Read and change system settings.')),
+    ('Token', ('Token', 'Manage tokens.')),
+    ('User', ('User', 'Manage users.')),
+    ('UserAndGroupCollection', ('User and Group Collection', 'Manage collections of users and groups.')),
+    ('UserRole', ('User Role', 'Manage the roles assigned to users.')),
+    ('UserToken', ('User Token', 'Manage tokens issued to users.')),
+    ('Version', ('Version', 'Read the product version.')),
+    ('Website', ('Website', 'Manage websites that users can reach.')),
+    ('WebsiteRecordings', ('Website Recordings', 'View recordings of website sessions.')),
+    ('WebsiteUri', ('Website URL', 'Manage the URLs that belong to websites.')),
+    ('WizardState', ('Wizard State', 'Read and save the progress of setup wizards.')),
+])
+TAG_PASCAL_OK = {'PostgreSQL'}
+TAG_CODE_NAME_RE = re.compile(r'SbPAM|Stealthbits|Nats|Gennix', re.I)
+
+
+def retag(spec):
+    """Give every operation tag its display name and write the top-level tags array (sorted, one entry per tag in use)."""
+    used = set()
+    for item in spec['paths'].values():
+        for o in item.values():
+            if isinstance(o, dict) and o.get('tags'):
+                o['tags'] = [TAGS[t][0] if t in TAGS else t for t in o['tags']]  # idempotent: ops are shared between the specs
+                used.update(o['tags'])
+    desc = {v[0]: v[1] for v in TAGS.values()}
+    spec['tags'] = [collections.OrderedDict([('name', n), ('description', desc[n])]) for n in sorted(used, key=str.lower)]
+
+
+def check_tags(spec, label):
+    fails = []
+    names = [t['name'] for t in spec.get('tags', [])]
+    if len(names) != len(set(names)):
+        fails.append('%s: duplicate tag names' % label)
+    for t in spec.get('tags', []):
+        if not t.get('description'):
+            fails.append('%s: tag without description %s' % (label, t['name']))
+    listed = set(names)
+    for p, item in spec['paths'].items():
+        for m, o in item.items():
+            if isinstance(o, dict) and 'tags' in o:
+                for t in o['tags']:
+                    if t not in listed:
+                        fails.append('%s: operation tag not in tags array: %s %s %s' % (label, t, m, p))
+    for n in names:
+        if re.search(r'\b[A-Z][a-z]+[A-Z]', n) and n not in TAG_PASCAL_OK:
+            fails.append('%s: PascalCase tag name %s' % (label, n))
+        if TAG_CODE_NAME_RE.search(n):
+            fails.append('%s: code name in tag %s' % (label, n))
+    return fails
+
+
 def dump_spec(spec):
     return json.dumps(spec, indent=2, ensure_ascii=False) + '\n'
 
@@ -1078,7 +1223,7 @@ def filter_public(full):
             todo.append(a)
     spec['components']['schemas'] = collections.OrderedDict((k, v) for k, v in schemas.items() if k in reach)
     used = {o['tags'][0] for item in paths.values() for o in item.values() if o.get('tags')}
-    spec['tags'] = [{'name': t} for t in sorted(used, key=str.lower)]
+    spec['tags'] = [t for t in full['tags'] if t['name'] in used]
     spec['paths'] = paths
     spec['info'] = public_info()
     return spec
@@ -2670,6 +2815,8 @@ def main():
         for x in notes[nm]:
             fails.append('%s: %s' % (nm, x))
 
+    retag(spec)
+    fails += check_tags(spec, 'public')
     text = json.dumps(spec, indent=2, ensure_ascii=False) + '\n'
     for h in codename_hits(spec)[:20]:
         fails.append('internal code name in the public spec outside a path key: ' + h)
@@ -3022,13 +3169,15 @@ def main():
     full_spec['info']['x-internal-note'] = INTERNAL_NOTE
     full_spec['servers'] = copy.deepcopy(spec['servers'])
     full_spec['security'] = copy.deepcopy(spec['security'])
-    full_spec['tags'] = [{'name': t} for t in ftags]
+    full_spec['tags'] = []   # filled by retag(); set here to keep the key order
     full_spec['paths'] = fpaths
+    retag(full_spec)
     full_spec['components'] = collections.OrderedDict([
         ('securitySchemes', copy.deepcopy(spec['components']['securitySchemes'])), ('schemas', fschemas)])
     route_keys = {(x['method'].upper(), tkey(x['route'])) for x in code_routes}
     public_keys = {(split_id(i)[0], tkey(split_id(i)[1])) for i in ids}
     fails += check_full(full_spec, route_keys, public_keys, len(ids))
+    fails += check_tags(full_spec, 'full')
     full_text = dump_spec(full_spec)
     pub_text = dump_spec(filter_public(full_spec))
     if pub_text != text:
