@@ -33,8 +33,8 @@ To add a static collection:
 
 **Step 2 –** Select an option:
 
-- The _I will provide a list_ option button enables the default setting for a static collection.
-- The _I want a list to come from the database table_ option button enables a dynamic collection.
+- The **I will provide a list** option button enables the default setting for a static collection.
+- The **I want a list to come from the database table** option button enables a dynamic collection.
   Enter the table name in the textbox that appears or select it from the dropdown menu. See the
   [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic for additional information.
 

@@ -33,8 +33,8 @@ applications that have to use the REST API.
 
 ![Threat Prevention Server Setup wizard - End-User License Agreement page](/images/threatprevention/8.1/install/licenseagreement.webp)
 
-**Step 3 –** On the End-User License Agreement page, select the **I accept the terms in the License
-Agreement** checkbox and click **Next**.
+**Step 3 –** On the End-User License Agreement page, select the
+**I accept the terms in the License Agreement** checkbox and click **Next**.
 
 ![Threat Prevention Server Setup wizard - Custom Setup page](/images/threatprevention/8.1/install/customsetup.webp)
 

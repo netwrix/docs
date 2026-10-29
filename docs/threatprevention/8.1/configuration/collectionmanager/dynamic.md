@@ -19,10 +19,10 @@ following collection categories:
 
 ![Options on the Add New Collection window](/images/threatprevention/8.1/admin/configuration/collectionmanager/addcollectionoptions.webp)
 
-- The _I will provide a list_ option button enables the default setting for a static collection. See
+- The **I will provide a list** option button enables the default setting for a static collection. See
   the [Add New Collection Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md#add-new-collection-window) topic to manually
   add a new collection.
-- The _I want a list to come from the database table_ option button enables a dynamic collection.
+- The **I want a list to come from the database table** option button enables a dynamic collection.
   Enter the table name in the textbox that appears or select it from the dropdown menu.
 
 You can populate the dynamic collection tables manually or with a third-party product, as long as
