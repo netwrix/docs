@@ -32,7 +32,7 @@ You can roll back and recover objects.
 
 You can find an object in two ways:
 
-- Column Filters – Click a column header to organize the table alphabetically by the column header.
+- Column Filters – Click a column header to sort the table alphabetically by that column.
   An arrow appears by the column name. Use it to arrange the entries by ascending or descending
   order.
 - Search box – Enter a text string in the search box to filter the table for results that contain
