@@ -7,7 +7,7 @@ slug: /
 
 ## What Access Analyzer Is
 
-Netwrix Access Analyzer is a self-hosted web application that you install on a Linux server you own. It scans your file servers and cloud storage platforms, and builds a picture of where sensitive data lives and who can reach it. It belongs to the data security posture management (DSPM) category of products. [Key concepts](key-concepts.md) defines the terms used throughout.
+Netwrix Access Analyzer is a self-hosted web application that you install on a Linux server you own. It scans your file servers and cloud storage platforms, and shows where sensitive data is stored and who can reach it. It belongs to the data security posture management (DSPM) category of products. [Key concepts](key-concepts.md) defines the terms used throughout.
 
 ![Access Analyzer Home page with the navigation sidebar and getting-started content](/images/accessanalyzer/26.1/overview/home.webp)
 
