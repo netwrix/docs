@@ -54,14 +54,14 @@ sudo --preserve-env=LICENSE_KEY,DSPM_ADCS_PASSWORD dspm-installer \
 ```
 
 - `--cert-manager-issuer-mode adcs` turns on AD CS issuance.
-- `--adcs-url`, `--adcs-username`, and `--adcs-password` (here set through `DSPM_ADCS_PASSWORD`) are required.
+- This mode requires `--adcs-url`, `--adcs-username`, and `--adcs-password` (here set through `DSPM_ADCS_PASSWORD`).
 - Setting the password through the environment variable instead of `--adcs-password` keeps it out of shell history and process listings.
 - `--generate-self-signed-cert` provides the bootstrap certificate.
 
 The install proceeds exactly as [Install Access Analyzer](run-the-installer.md) describes. When the services are up, the cluster requests the certificate from your AD CS server; issuance typically completes within a minute or two. Browsers connecting during that window see the self-signed bootstrap certificate and show a trust warning — the warning stops when the AD CS certificate is in place.
 
 :::note
-The installer doesn't save the issuance mode to `/etc/dspm/installer.yaml`. Every installer run uses exactly the `--cert-manager-issuer-mode` you pass it; omitting the flag means manual certificates. Upgrading never changes the mode.
+The installer saves the issuance mode to `/etc/dspm/installer.yaml`. A later run that omits `--cert-manager-issuer-mode` uses the saved mode. Upgrading never changes the mode.
 :::
 
 ## Confirm the certificate

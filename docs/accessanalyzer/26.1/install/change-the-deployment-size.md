@@ -4,7 +4,7 @@ description: Move an installed Access Analyzer server to a larger size with dspm
 sidebar_position: 4.3
 ---
 
-You pick a [size](requirements.md#size) when you install Access Analyzer. When the server outgrows that size, add CPU cores and RAM to the server, then move the install to a larger size with `dspmctl resize`. The new size sets the CPU, RAM, and replica counts every service runs with, and grows the persistent volumes where the storage supports it.
+You pick a [size](../requirements/index.md#size) when you install Access Analyzer. When the server outgrows that size, add CPU cores and RAM to the server, then move the install to a larger size with `dspmctl resize`. The new size sets the CPU, RAM, and replica counts every service runs with, and grows the persistent volumes where the storage supports it.
 
 A resize only grows an install. `dspmctl resize` refuses a size smaller than the installed one, whatever flags you pass, because a smaller size can lose data. Access Analyzer doesn't support moving to a smaller size. An install that doesn't record a size counts as **medium**.
 
@@ -12,8 +12,8 @@ Run the commands on this page on the Access Analyzer server, with `sudo`. See [U
 
 ## Before You Start
 
-1. **Check the server against the new size.** Compare the server's CPU cores, RAM, and free disk on the storage volume with the figures for the new size in [Size](requirements.md#size). `dspmctl resize` checks CPU and RAM itself, but it doesn't check disk. The storage volume is the one that holds `/var/lib`, or the directory you passed to `--storage-dir` at install time.
-2. **Stop running scans.** The resize restarts the ClickHouse database, the message queue, and the worker services with their new resources. A scan that runs across that restart fails, and you have to run it again. See [Stop an execution](../scans/scan-executions.md#stop-an-execution).
+1. **Check the server against the new size.** Compare the server's CPU cores, RAM, and free disk on the storage volume with the figures for the new size in [Size](../requirements/index.md#size). `dspmctl resize` checks CPU and RAM itself, but it doesn't check disk. The storage volume is the one that holds `/var/lib`, or the directory you passed to `--storage-dir` at install time.
+2. **Stop running scans.** The resize restarts the ClickHouse database, the message queue, and the worker services with their new resources. A scan that runs across that restart fails, and you have to run it again. See [Stop an execution](../admin/scans/scan-executions.md#stop-an-execution).
 3. **Wait for any upgrade to finish.** `dspmctl resize` refuses to run while an upgrade is in progress.
 
 ## Resize the Deployment
@@ -54,7 +54,7 @@ Exit code `0` means every application runs the new size. Restart the scans you s
 
 ### What the Resize Does
 
-1. Checks the server's CPU cores and RAM against the new size. It counts only server nodes that are Ready, not cordoned, and carry no `NoSchedule` or `NoExecute` taint. [Agent](../agents/index.md) nodes don't count. If the server lacks either, the command names the shortfall and stops without changing anything.
+1. Checks the server's CPU cores and RAM against the new size. It counts only server nodes that are Ready, not cordoned, and carry no `NoSchedule` or `NoExecute` taint. [Agent](../configuration/agents/index.md) nodes don't count. If the server lacks either, the command names the shortfall and stops without changing anything.
 2. Checks every volume claim and grows the ones the storage can grow. See [What Happens to the Volumes](#what-happens-to-the-volumes).
 3. Turns off automated sync on the `netwrix` application and records the new size on it.
 4. Syncs `netwrix`, then waits until every application is Synced and Healthy. Each wait lasts up to 10 minutes.

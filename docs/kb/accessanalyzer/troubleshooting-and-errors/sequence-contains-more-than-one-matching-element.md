@@ -1,36 +1,40 @@
 ---
 description: >-
-  This article explains how to fix Sequence contains more than one matching element error.
+  Opening the Schedules tab in Netwrix Access Analyzer 12.x fails with "Sequence contains more than one matching element" after an upgrade from 11.6. Remove the duplicated job folder from the Jobs directory to resolve it.
 keywords:
-  - schedules
+  - Sequence contains more than one matching element
+  - Schedules tab
+  - SAJOB
+  - duplicate job
   - upgrade
-  - LOGLEVEL
   - Netwrix Access Analyzer
-  - error
-  - console
+  - Jobs folder
   - '%sainstalldir%'
-  - debug mode
+  - upgrade backup ZIP
   - troubleshooting
 products:
-  - access-analyzer
-sidebar_label: Sequence contains more than one matching element post upgrade to 12.x
+  - accessanalyzer
+sidebar_label: 'Schedules Tab Error: Sequence Contains More Than One Matching Element'
 tags:
+  - kb
   - troubleshooting-and-errors
-title: "Sequence contains more than one matching element post upgrade to 12.x"
+title: "Sequence Contains More Than One Matching Element Error on Schedules Tab After Upgrading to 12.x"
 ---
 
-# "Sequence contains more than one matching element" Error on Schedules Tab After Upgrading to Netwrix Access Analyzer 12.x
+# Sequence Contains More Than One Matching Element Error on Schedules Tab After Upgrading to 12.x
 
 ## Applies To
 
-- **Product:** Netwrix Access Analyzer (formerly StealthAUDIT / Enterprise Auditor)
-- **Versions affected:** Upgrade from 11.6 to 12.x
+- **Product:** Netwrix Access Analyzer (formerly Enterprise Auditor)
+- **Versions affected:** Upgrade from 11.6 to 12.x. For product documentation, see [Netwrix Access Analyzer 12.0](/docs/accessanalyzer/12_0).
+
+> **NOTE:** [Cause 2](#cause-2--job-or-job-group-folder-manually-copy-pasted-inside-the-jobs-folder) does not depend on an upgrade. The error can also occur on 12.0 without an upgrade from 11.6 if a job folder is copied into the Jobs directory.
 
 ---
 
 ## Symptom
 
-After upgrading Netwrix Access Analyzer (NAA) from version 11.6 to 12.x, opening the **Schedules** tab in the NAA console fails with an error similar to:
+After upgrading Netwrix Access Analyzer from version 11.6 to 12.x, opening the **Schedules** tab in the Access Analyzer console fails with an error similar to:
 
 ```
 Failed to get tasks…
@@ -40,45 +44,37 @@ Error: Sequence contains more than one matching element.
 
 The `<JobGroupName>` in the error message identifies which job group contains the duplicated entry (e.g., `SG_LocalAdmins`).
 
----
+> **NOTE:** The same error text also appears when a job generates a report. For that cause, see [Report Generation Error: Sequence Contains More Than One Matching Element](./error-sequence-contains-more-than-one-matching-element.md).
 
 ## Root Cause
 
-NAA maps each scheduled job to a Windows Task Scheduler task using a unique Job ID embedded in the task name (format: `SAJOB~<JobGroupName>~<GUID>`). When two physical job folders on disk share the same Job ID, NAA finds more than one match for a single task — which is what "Sequence contains more than one element" means at the code level: a LINQ `.Single()` call found 2+ results instead of exactly 1.
+Access Analyzer maps each scheduled job to a Windows Task Scheduler task using a unique Job ID embedded in the task name (format: `SAJOB~<JobGroupName>~<GUID>`). When two physical job folders on disk share the same Job ID, Access Analyzer finds more than one match for a single task, which produces the `Sequence contains more than one matching element` error.
 
 This duplication happens in one of two ways:
 
-### Cause 1 — Upgrade backup ZIP extracted into the Jobs folder
+### Cause 1 — Upgrade Backup ZIP Extracted into the Jobs Folder
 
-During an upgrade, the NAA Upgrade Wizard automatically backs up the existing Jobs directory by creating a timestamped ZIP archive directly inside the Jobs folder:
+During an upgrade, the [Upgrade Wizard](/docs/accessanalyzer/11_6/install/application/upgrade/wizard) automatically backs up the existing Jobs directory by creating a timestamped ZIP archive directly inside the Jobs folder:
 
 ```
 ...\STEALTHbits\StealthAUDIT\Jobs\<YYYYMMDDHHMMSS>.zip
 ```
 
-If an administrator later extracts the contents of that ZIP back into the `Jobs` folder (e.g., to recover a job), the original job folders and their IDs are restored alongside the already-upgraded copies — creating duplicates.
+If an administrator later extracts the contents of that ZIP back into the `Jobs` folder (e.g., to recover a job), the original job folders and their IDs are restored alongside the already-upgraded copies, which creates duplicates.
 
-### Cause 2 — Job or job group folder manually copy-pasted inside the Jobs folder
+### Cause 2 — Job or Job Group Folder Manually Copy-Pasted inside the Jobs Folder
 
-An administrator backed up a job group by copying its folder and pasting the copy somewhere inside `...\STEALTHbits\StealthAUDIT\Jobs` instead of moving it to an external location or archiving it. The copied folder retains the same job definition file with the same Job ID, producing a duplicate.
-
----
+An administrator backed up a job group by copying its folder and pasting the copy somewhere inside `...\STEALTHbits\StealthAUDIT\Jobs` instead of moving it to an external location or archiving it. Copying a job within the Jobs directory is not supported (see [Instantiating Jobs into the Jobs Tree](/docs/accessanalyzer/12_0/admin/jobs/instantiate)). The copied folder retains the same job definition file with the same Job ID, producing a duplicate.
 
 ## Resolution
 
-### Step 1 — Identify the duplicated job
+### Step 1 — Identify the Duplicated Job
 
-Read the error message on the Schedules tab. The second segment of the task name tells you which job group to look at:
+Find the task name in the error message on the **Schedules** tab. The second segment is the job group folder name and is located between the `~~` characters. For example, in `SAJOB~SG_LocalAdmins~<GUID>`, the job group folder is `SG_LocalAdmins`.
 
-```
-SAJOB~SG_LocalAdmins~{GUID}
-       ^^^^^^^^^^^^^^
-       This is the job group folder name
-```
+### Step 2 — Locate the Duplicate in the Jobs Folder
 
-### Step 2 — Locate the duplicate in the Jobs folder
-
-Navigate to the Jobs directory on the NAA server:
+Navigate to the Jobs directory on the Access Analyzer server:
 
 ```
 %SAInstallDir%\Jobs\
@@ -95,27 +91,26 @@ Look inside the job group folder identified in Step 1 (e.g., `SG_LocalAdmins`). 
 - A second subfolder or a copy of the job group folder (e.g., `SG_LocalAdmins - Copy`, `SG_LocalAdmins_backup`)
 - An extracted ZIP from the upgrade backup — recognizable by the timestamp folder name (e.g., `20230604180542`) sitting inside `Jobs\` and containing duplicate job group subfolders
 
-### Step 3 — Remove the duplicate
+### Step 3 — Remove the Duplicate
 
-1. Move the duplicate folder (the backup copy) **out** of the `Jobs` directory — compress it to a ZIP and store it outside `%SAInstallDir%\Jobs\`, or delete it if the backup is no longer needed.
-2. Do **not** leave any copy of a job group folder inside `Jobs\` unless it is the live, intended version.
+1. Close the Access Analyzer console.
+2. Move the duplicate folder (the backup copy) **out** of the `Jobs` directory by doing one of the following:
 
-> **If the issue came from an extracted upgrade ZIP:** Move the entire extracted timestamp folder (e.g., `20230604180542\`) out of `Jobs\`. The upgrade ZIP itself (`.zip` file) can remain; only extracted folder copies cause the conflict.
+   - Compress it to a ZIP and store it outside `%SAInstallDir%\Jobs\`.
+   - Delete it if the backup is no longer needed.
+
+   If the duplicate came from an extracted upgrade ZIP, move the entire extracted timestamp folder (e.g., `20230604180542\`). The upgrade ZIP file itself can remain, because only extracted folder copies cause the conflict. Renaming the `GROUP_` or `JOB_` prefix on the duplicate only hides it from the Jobs tree and does not resolve the error.
+3. Do not leave any copy of a job group folder inside `Jobs\` unless it is the live, intended version.
+
+> **IMPORTANT:** To prevent the error from recurring, do not extract the upgrade backup ZIP into `%SAInstallDir%\Jobs\`. To recover a job, extract the ZIP outside the install directory and copy only the job file you need. To back up a job group, store the copy outside the `Jobs` directory.
 
 ### Step 4 — Verify
 
-Restart the NAA console and open the **Schedules** tab. The error should no longer appear and all scheduled tasks should load correctly.
+Open the Access Analyzer console and then the **Schedules** tab. The error should no longer appear and all scheduled tasks should load correctly.
 
----
+## Related Links
 
-## Prevention
-
-- **Never extract the upgrade backup ZIP into the `Jobs` folder.** If you need to recover an old job definition, extract the ZIP to a temporary folder outside the NAA install directory, then manually copy only the specific job file you need.
-- **Never copy-paste a job or job group folder inside `%SAInstallDir%\Jobs\` as a backup.** Instead, copy the folder to a location outside the `Jobs` directory, or compress it to an archive stored elsewhere.
-
----
-
-## References
-
-- [Enterprise Auditor Core Upgrade Instructions (v11.6) — Netwrix Docs](https://docs.netwrix.com/docs/accessanalyzer/11_6/install/application/upgrade/wizard)
-- [Netwrix Access Analyzer v12.0 Documentation](https://docs.netwrix.com/docs/accessanalyzer/12_0)
+- [Enterprise Auditor Core Upgrade Instructions (v11.6)](/docs/accessanalyzer/11_6/install/application/upgrade/wizard)
+- [Netwrix Access Analyzer v12.0 Documentation](/docs/accessanalyzer/12_0)
+- [Instantiating Jobs into the Jobs Tree](/docs/accessanalyzer/12_0/admin/jobs/instantiate)
+- [Report Generation Error: Sequence Contains More Than One Matching Element](./error-sequence-contains-more-than-one-matching-element.md)

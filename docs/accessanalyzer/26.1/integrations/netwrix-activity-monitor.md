@@ -36,8 +36,8 @@ The Activity Monitor output sends three kinds of events: File System, SharePoint
 
 Activity data shows up in three places. Only the dashboard includes SharePoint Online and Copilot events; the two reports cover file server activity.
 
-- The [Data security dashboard](../dashboards-reports/dashboards/data-security.md) has an **Activity** tab with the tiles **Total Events**, **Failed Events**, **Active Users**, and **Data Sources with Activity**; the charts **Events by Type**, **Activity Over Time**, **Events by Data Source**, and **Top Users by Activity**; and an **Activity Detail** table. Filter it by **Start Date**, **End Date**, **Event Type**, **Activity Source**, **User**, and **Event Status**.
-- The **Activity Investigation** report under [Data reports](../dashboards-reports/reports/data.md). Every framework under [Compliance reports](../dashboards-reports/reports/compliance.md) includes it too.
+- The [Data security dashboard](../admin/dashboards-reports/dashboards/data-security.md) has an **Activity** tab with the tiles **Total Events**, **Failed Events**, **Active Users**, and **Data Sources with Activity**; the charts **Events by Type**, **Activity Over Time**, **Events by Data Source**, and **Top Users by Activity**; and an **Activity Detail** table. Filter it by **Start Date**, **End Date**, **Event Type**, **Activity Source**, **User**, and **Event Status**.
+- The **Activity Investigation** report under [Data reports](../admin/dashboards-reports/reports/data.md). Every framework under [Compliance reports](../admin/dashboards-reports/reports/compliance.md) includes it too.
 - The **Share Audit** report, also under Data reports, draws on file server activity in its **Activity** tab, in the **Probable Owner** card on the **Overview** tab, and in the **Users by Activity on Sensitive Files** chart on the **Sensitive Data** tab.
 
 Until an enrolled agent sends events, every card on the **Activity** tab reads **No results!**.
@@ -49,7 +49,7 @@ Until an enrolled agent sends events, every card on the **Activity** tab reads *
 - **Activity Monitor version.** Netwrix Activity Monitor 10.0 with an output of type **Access Analyzer 26**. The [Activity Monitor documentation](/docs/activitymonitor/10_0/admin/outputs/accessanalyzer26) covers adding and editing that output.
 - **Network path.** The host running the Activity Monitor agent must reach the Access Analyzer server on TCP port 4504. Open that port inbound on the server's firewall and on anything between the two hosts.
 - **TLS certificate.** The Access Analyzer listener on port 4504 presents the same TLS certificate as the web interface, the one you supplied when you [installed Access Analyzer](../install/run-the-installer.md). The connection uses TLS 1.3. If the certificate has expired, the listener doesn't start and agents can't connect.
-- **Admin role.** Only an Admin sees the **Activity Monitor** tab in Settings, where you generate tokens and change the connection settings. See [Users and roles](../settings/users.md).
+- **Admin role.** Only an Admin sees the **Activity Monitor** tab in Settings, where you generate tokens and change the connection settings. See [Users and roles](../admin/users.md).
 
 ## Generate an Enrollment Token
 
@@ -92,7 +92,7 @@ Access Analyzer treats an agent that connects with an unrecognized certificate a
 
 ## Connection Settings
 
-Four settings tune how the listener treats agent connections. The defaults suit most environments. To change a value, go to **Settings > Activity Monitor**, click **Settings** at the top of the tab to open the **Activity Monitor settings** dialog, edit the value, and click **Save**. Changes apply to new connections without a restart. The dialog lays out each setting the same way as the Application tab, including the **Overridden** badge and the reset-to-default control; see [Application settings](../settings/application.md).
+Four settings tune how the listener treats agent connections. The defaults suit most environments. To change a value, go to **Settings > Activity Monitor**, click **Settings** at the top of the tab to open the **Activity Monitor settings** dialog, edit the value, and click **Save**. Changes apply to new connections without a restart. The dialog lays out each setting the same way as the Application tab, including the **Overridden** badge and the reset-to-default control; see [Application settings](../configuration/settings/application.md).
 
 | Setting | Default | Range | What it controls |
 |---|---|---|---|
@@ -111,7 +111,7 @@ The listener writes to the application logs.
 2. In **Component**, select `nam-listener`.
 3. Set **From** and **To** to the window in which you tried to enroll.
 
-The [System logs](../settings/system-logs.md) page explains the filters and the **Log details** drawer.
+The [System logs](../configuration/settings/system-logs.md) page explains the filters and the **Log details** drawer.
 
 The listener logs these messages:
 

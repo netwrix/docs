@@ -13,21 +13,24 @@ keywords:
   - report error
   - remove duplicate report
 products:
-  - access-analyzer
-sidebar_label: 'Error: Sequence Contains More Than One Matching El'
+  - accessanalyzer
+sidebar_label: 'Report Generation Error: Sequence Contains More Than One Matching Element'
 tags:
+  - kb
   - troubleshooting-and-errors
-title: 'Error: Sequence Contains More Than One Matching Element'
+title: 'Report Generation Error: Sequence Contains More Than One Matching Element'
 knowledge_article_id: kA0Qk0000001o7dKAA
 ---
 
-# Error: Sequence Contains More Than One Matching Element
+# Report Generation Error: Sequence Contains More Than One Matching Element
 
 ## Symptom
 
 When running a job in Netwrix Access Analyzer that generates a report, the report generation fails with the error:
 
 `Sequence contains more than one matching element.`
+
+> **NOTE:** The same error text also appears on the **Schedules** tab when duplicate job folders exist in the Jobs directory. For that cause, see [Sequence Contains More Than One Matching Element Error on Schedules Tab After Upgrading to 12.x](./sequence-contains-more-than-one-matching-element.md).
 
 ## Cause
 
@@ -66,8 +69,8 @@ To resolve this issue, follow these steps:
 
 1. Open the ` %sainstalldir%\Reports\report.xml` file in a text editor.
 2. Locate and remove all duplicate entries for the job causing the error.
-   I. Copy the line that begins and ends with ` <Id>` and `</Id>`. Search the file for this line.  
-   II. Remove any duplicates of the corresponding ` <Report></Report>` section.
+   - Copy the line that begins and ends with ` <Id>` and `</Id>`. Search the file for this line.
+   - Remove any duplicates of the corresponding ` <Report></Report>` section.
 3. Save the file.
 4. Run the job again to generate the report.
 
