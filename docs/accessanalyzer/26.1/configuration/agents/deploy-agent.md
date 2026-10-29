@@ -60,7 +60,7 @@ When firewalld or ufw is active on the agent host, `install-agent` adds what is 
 
 ### Outbound Access
 
-Preflight tests the hosts the agent needs on TCP 443 and fails if it can't reach the Access Analyzer server on its join address. An agent host on an **SELinux-enforcing** system also needs `rpm.rancher.io`, which is required, and `api.github.com`, which is advisory.
+The tabs list what the host needs to install the agent. Preflight tests the hosts the agent needs on TCP 443 and fails if it can't reach the Access Analyzer server on its join address. An agent host on an **SELinux-enforcing** system also needs `rpm.rancher.io`, which is required, and `api.github.com`, which is advisory.
 
 <Tabs groupId="install-mode">
 <TabItem value="connected" label="Connected install">
@@ -89,6 +89,8 @@ The host needs TCP 443 to these hosts:
 
 </TabItem>
 </Tabs>
+
+Scans add outbound connections of their own, in every install mode. A scan that runs on the agent connects from the agent host to the systems it scans, so the host needs the same access to them that the server does. For example, an agent that scans SharePoint Online needs TCP 443 to `login.microsoftonline.com`, `graph.microsoft.com`, and `*.sharepoint.com`. [Requirements](../../requirements/index.md#outbound) lists the hosts and ports for each source type. **Test connection** always runs on the server, so a passing test doesn't show that the agent host can reach the source.
 
 ## Generate the Command
 
