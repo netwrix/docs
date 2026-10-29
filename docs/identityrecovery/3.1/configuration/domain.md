@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Domains Page
 
-The Domains page provides a list of the domains backed up by Identity Recovery. It
+The Domains page lists the domains that Identity Recovery backs up. It
 displays the backup schedule settings for each added domain. You can also add and configure new
 domains.
 
@@ -25,9 +25,9 @@ The table displays the following information:
 - Actions – Displays the icons used to collect, edit, and delete the respective domain
 
     - Run backup – Click the **Play** icon to start a new collection (backup) on the respective
-      domain if you need a collection outside of the configured schedule
-    - Edit configuration – Edit the settings of the domain. Click the **Edit** icon for a domain to
-      open the Edit Domain Configuration wizard and edit the domain's settings. See the Edit Domain
+      domain if you need a collection outside the configured schedule
+    - Edit configuration – Click the **Edit** icon for a domain to open the Edit Domain
+      Configuration wizard and edit the domain's settings. See the Edit Domain
       Configuration topic for additional information.
     - Delete configuration – Click the Delete icon for a domain to delete it
 
@@ -52,8 +52,8 @@ recoveries in the Account field.
 **Step 4 –** Enter the password for the account in the Password field.
 
 :::note
-The account must have Domain Admin privileged access to read and write object data in
-order to back up, rollback, and restore objects in Active Directory. If the account has read-only rights,
+The account must have Domain Admin privileged access to read and write object data
+to back up, rollback, and restore objects in Active Directory. If the account has read-only rights,
 it can back up the domain but can't rollback or restore objects. In this
 case, you must provide alternate credentials with read and write access to objects on the
 Credentials page of the Object Rollback and Object Restore wizards. See the
@@ -62,7 +62,7 @@ Credentials page of the Object Rollback and Object Restore wizards. See the
 :::
 
 For a Least Privilege Access Model to provision an Active Directory security group with the
-permissions that are necessary to perform backups, rollbacks, and recovery, see the
+permissions necessary to perform backups, rollbacks, and recovery, see the
 [Least Privilege Access Model](/docs/identityrecovery/3.1/requirements/targetdomain.md#least-privilege-access-model)
 topic.
 
@@ -87,7 +87,7 @@ will run at your desired frequency but skip from midnight until the selected sta
 ![Add Domain Configuration wizard - Options page](/images/identityrecovery/3.1/product/configuration/active_directory/active_directory_configuration_page3.png)
 
 **Step 9 –** (_Optional_) Select the **Collect GPOs** checkbox to enable GPO rollback and recovery.
-This setting requires Group Policy Management Console (GPMC). If GPO collection isn't desired, skip
+This setting requires Group Policy Management Console (GPMC). If you don't want to collect GPOs, skip
 to Step 10.
 
 **Step 10 –** If you select the Collect GPOs checkbox, you can now specify the save location for the GPO backup in the Store the Group Policy Object backups in the following location field.
@@ -103,10 +103,10 @@ backup.
 
 **Step 12 –** To set notifications, select the Send email notifications checkbox and enter the
 email address of one or more users and/or groups to receive the job start and end notifications. Use
-a semicolon (;) to separate multiple recipients. See the [Notifications Page](/docs/identityrecovery/3.1/admin/configuration/notifications.md)
+a semicolon (;) to separate multiple recipients. See the [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md)
 topic for additional information.
 
-If notifications aren't desired, skip this step.
+If you don't want notifications, skip this step.
 
 **Step 13 –** Click **Next**.
 
