@@ -10,13 +10,9 @@ The product was formerly named **StealthDEFEND** (the legacy install path is `C:
 
 ## Versions
 
-Documented versions: **3.0** (hidden), **3.1**, **3.2**, **3.3**, and **3.4** (latest). The structures are nearly identical. Edits to one version do **not** propagate to the others. Update each version the change applies to.
+Documented versions: **3.0** (hidden), **3.1**, **3.2**, **3.3**, and **3.4** (latest). Edits to one version do **not** propagate to the others. Update each version the change applies to.
 
-<<<<<<< HEAD
-**3.3 + 3.4 uses the standard documentation zones** (see `.claude/references/documentation-section-guide.md`), so its folders differ from 3.0-3.2. When you carry a change between versions, map the path; don't assume it's the same. Pages moved in the 3.3 reorganization are redirected in `src/config/redirects/threatmanager-3.3.js`. If you move or rename a 3.3 page, add its old path there.
-=======
 **3.3 and 3.4 use the standard documentation zones** (see `.claude/references/documentation-section-guide.md`), so their folders differ from 3.0-3.2. When you carry a change between 3.0-3.2 and 3.3 or 3.4, map the path; don't assume it's the same. Pages moved in the reorganization are redirected in `src/config/redirects/threatmanager-3.3.js` (versioned `/3_3/` addresses only) and `src/config/redirects/threatmanager-3.4.js` (versioned `/3_4/` and unversioned addresses, because 3.4 is the default). If you move or rename a page, add its old path to the file for that version, and keep unversioned redirects only in the default version's file.
->>>>>>> c04928597 (Update Threat Manager CLAUDE.md and product brief for the 3.4 zones)
 
 3.1 added:
 
