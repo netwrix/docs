@@ -1,7 +1,7 @@
 ---
 title: "Type of Threats"
 description: "Type of Threats"
-sidebar_position: 30
+sidebar_position: 20
 ---
 
 # Type of Threats

@@ -1,7 +1,7 @@
 ---
 title: "Migrate Threat Manager to a New Host"
 description: "Move Threat Manager and its database to a new server, such as when you replace a Windows Server instead of upgrading it in place."
-sidebar_position: 50
+sidebar_position: 20
 ---
 
 # Migrate Threat Manager to a New Host
