@@ -1,7 +1,7 @@
 ---
 title: "Best Practices and Troubleshooting"
 description: "Best Practices and Troubleshooting"
-sidebar_position: 60
+sidebar_position: 90
 ---
 
 # Best Practices and Troubleshooting

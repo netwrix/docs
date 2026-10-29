@@ -1,7 +1,7 @@
 ---
 title: "Trusted Domains Blacklist Window"
 description: "Exclude unreachable trusted domains from the LDAP queries the Agent uses to resolve accounts"
-sidebar_position: 100
+sidebar_position: 95
 ---
 
 # Trusted Domains Blacklist Window
