@@ -1,6 +1,12 @@
 ---
 title: "Groups Tab for Microsoft Entra ID"
-description: "Groups Tab for Microsoft Entra ID"
+description: "Reference for the Groups tab on the Microsoft Entra ID Details page, which lists cloud-only Entra ID groups."
+keywords:
+  - Entra ID groups
+  - cloud-only groups
+  - Group Name
+  - hybrid environments
+  - Azure AD
 sidebar_position: 30
 ---
 
@@ -15,11 +21,10 @@ domain resource (if the on-premises domain has been synced by Privilege Secure).
 cloud-only EntraID groups.
 :::
 
-
 ![Groups Tab Entra ID](/images/privilegesecure/25.12/accessmanagement/admin/policy/tab/resources/groupsazuread.webp)
 
 The table has the following columns:
 
-- Group Name — Displays the name of the group
+- **Group Name** — Displays the name of the group
 
 The table columns can be resized and sorted in ascending or descending order.

@@ -25,7 +25,14 @@ The property DisplayTableDesignElement set to resourcetable allows you to create
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```xml
-<DisplayTable Identifier="AD_Entry" EntityType="AD_Entry" DisplayTableDesignElement="resourcetable" IsEntityTypeDefault="true">    <Column DefaultSortPriority="1" DisplayBinding="dn" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="4" />    <Column DisplayBinding="userPrincipalName" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="2" />    <Column DisplayBinding="userAccountControl" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="1" />    <Column DisplayBinding="rdn" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="2" />    <Column DisplayBinding="displayName" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="2" />    <Column DisplayBinding="objectCategory" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="2" />  </DisplayTable>
+    <DisplayTable Identifier="AD_Entry" EntityType="AD_Entry" DisplayTableDesignElement="resourcetable" IsEntityTypeDefault="true">    
+        <Column DefaultSortPriority="1" DisplayBinding="dn" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="4" />    
+        <Column DisplayBinding="userPrincipalName" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="2" />    
+        <Column DisplayBinding="userAccountControl" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="1" />    
+        <Column DisplayBinding="rdn" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="2" />    
+        <Column DisplayBinding="displayName" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="2" />    
+        <Column DisplayBinding="objectCategory" IsDisplayInSummaryView="true" IsResizable="true" IsSortable="true" CanBeFiltered="true" ColumnSize="2" />  
+    </DisplayTable>
 ```
 
 Here is the visualization of this resource table on the interface:
@@ -36,22 +43,49 @@ Here is the visualization of this resource table on the interface:
 
 .
 
-Instead of creating a table, it is possible to create tiles to give another rendering of the user interface. It is therefore necessary to create the different tiles first. After creating the tiles, they must be imported into the display table with `DisplayTableDesignElement` set to `list`. Display tables with other values of `DisplayTableDesignElement` cannot display tiles.
+Instead of creating a table, it is possible to create tiles to give another rendering of the user interface. It is therefore necessary to create the different tiles first. After creating the tiles, they must be imported into the display table with `DisplayTableDesignElement` set to `list`. Display tables with other values of `DisplayTableDesignElement` can't display tiles.
 
 See the[Tile](../../../integration-guide/toolkit/xml-configuration/user-interface/tile) topic for additional information.
 
 :::tip
- Remember, if the display table uses tiles, then you can't use bindings. 
+ Remember, if the display table uses tiles, then you can't use bindings.
 :::
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```xml
-<Tile Identifier="Directory_User_Tile1" DisplayName_L1="User: first/last name" DisplayName_L2="Collaborateur : nom, prenom" EntityType="Directory_User" TileDesignElement="picture-text">    <Item Binding="MainRecord.FirstName" LineDisplayOrderIndicator="1" LineNumber="2" />    <Item Binding="MainRecord.LastName" LineDisplayOrderIndicator="2" LineNumber="2" />    <Item Binding="MainRecord.Title.DisplayName" LineNumber="3" />    <Item Binding="Id" LineNumber="5" />    <Item Binding="PhotoTag" LineNumber="6" />  </Tile>  <Tile Identifier="Directory_User_Tile2" DisplayName_L1="User: dep/loc" DisplayName_L2="Collaborateur : orga/site" EntityType="Directory_User" TileDesignElement="inline data-icon">    <Item Binding="MainRecord.Organization.DisplayName" LineNumber="1" />    <Item Binding="MainRecord.Location.DisplayName" LineNumber="2" />  </Tile>  <Tile Identifier="Directory_User_Tile3" DisplayName_L1="User: contact" DisplayName_L2="Collaborateur : contact" EntityType="Directory_User" TileDesignElement="inline data-icon">    <Item Binding="MainRecord.PhoneNumber" LineNumber="1" />    <Item Binding="MainRecord.MobileNumber" LineNumber="2" />  </Tile>  <DisplayTable Identifier="Directory_User" EntityType="Directory_User" DisplayTableDesignElement="list" IsEntityTypeDefault="true">    <Column DefaultSortPriority="1" ColumnSize="6" IsDisplayInSummaryView="true" SortBinding="MainRecord.LastName" Tile="Directory_User_Tile1" />    <Column ColumnSize="3" IsDisplayInSummaryView="true" Tile="Directory_User_Tile2" />    <Column ColumnSize="3" Tile="Directory_User_Tile3" />  </DisplayTable>
+    <Tile Identifier="Directory_User_Tile1" DisplayName_L1="User: first/last name" DisplayName_L2="Collaborateur : nom, prenom" EntityType="Directory_User" TileDesignElement="picture-text">    
+        <Item Binding="MainRecord.FirstName" LineDisplayOrderIndicator="1" LineNumber="2" />    
+        <Item Binding="MainRecord.LastName" LineDisplayOrderIndicator="2" LineNumber="2" />    
+        <Item Binding="MainRecord.Title.DisplayName" LineNumber="3" />    
+        <Item Binding="MainRecord.PhoneNumber" LineNumber="3" />    
+        <Item Binding="Id" LineNumber="5" />    
+        <Item Binding="PhotoTag" LineNumber="6" />  
+    </Tile>
+
+    <Tile Identifier="Directory_User_Tile2" DisplayName_L1="User: dep/loc" DisplayName_L2="Collaborateur : orga/site" EntityType="Directory_User" TileDesignElement="inline data-icon">    
+        <Item Binding="MainRecord.Organization.DisplayName" LineNumber="1" />    
+        <Item Binding="MainRecord.Location.DisplayName" LineNumber="2" />  
+    </Tile>  
+
+    <Tile Identifier="Directory_User_Tile3" DisplayName_L1="User: contact" DisplayName_L2="Collaborateur : contact" EntityType="Directory_User" TileDesignElement="inline data-icon">    
+        <Item Binding="MainRecord.Email" LineNumber="1" />    
+        <Item Binding="MainRecord.MobileNumber" LineNumber="2" />  
+    </Tile>  
+
+    <DisplayTable Identifier="Directory_User" EntityType="Directory_User" DisplayTableDesignElement="list" IsEntityTypeDefault="true">    
+        <Column DefaultSortPriority="1" ColumnSize="6" IsDisplayInSummaryView="true" SortBinding="MainRecord.LastName" Tile="Directory_User_Tile1" />    
+        <Column ColumnSize="3" Tile="Directory_User_Tile2" />    
+        <Column ColumnSize="3" Tile="Directory_User_Tile3" />  
+    </DisplayTable>
 ```
 
 Here is the visualization of this display table on the interface:
 
 ![DisplayTable with Tiles](/images/identitymanager/displaytablestiles.webp)
+
+:::tip
+For easier readability and to avoid information not fitting in columns of the product, set `IsDisplayInSummaryView="true"` on only one `Column` (the one carrying the resource's main information, as in the example above).
+:::
 
 See the [Display Table](../../../integration-guide/toolkit/xml-configuration/user-interface/displaytable) topic for additional information.
 

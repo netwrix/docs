@@ -1,6 +1,12 @@
 ---
 title: "Add Credential Policy Override"
-description: "Add Credential Policy Override"
+description: "Create a Credential Policy Override with a change schedule and verification schedule, then add credentials to it."
+keywords:
+  - Add Credential Policy Override
+  - Scheduled Change Policy
+  - Verification Schedule
+  - Credential Policy Overrides
+  - Add Credentials
 sidebar_position: 10
 ---
 
@@ -8,45 +14,43 @@ sidebar_position: 10
 
 To add Credential Policy Override to the Privilege Secure Console.
 
-**Step 1 –** Navigate to the **Policy** > **Credentials** > **Credential Policy Overrides** page.
+1. Navigate to the **Policy** > **Credentials** > **Credential Policy Overrides** page.
+2. In the Credential Policy Overrides list, click the **Plus** icon.
 
-**Step 2 –** In the Credential Policy Overrides list, click the **Plus** icon.
+   ![Adding a credential policy override](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addcredentialpolicyoverride.webp)
 
-![Adding a credential policy override](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addcredentialpolicyoverride.webp)
+3. Enter or select the following information:
 
-**Step 3 –** Enter or select the following information:
+   - **Name** — Displays the name of the credential
+   - **Description** — Description of the policy
+   - **Scheduled Change Policy** — Select a previously added schedule policy from the dropdown list. How
+     often the credentials for a managed account are changed (credential rotation). See the
+     [Credentials Dashboard](/docs/privilegesecure/26.03/admin/dashboard/credentials.md) and
+     [Schedule Policies Page](/docs/privilegesecure/26.03/admin/platforms/schedulepolicies/schedulepolicies.md) topic for additional information.
+   - **Verification Schedule** — How often to verify the credentials for managed accounts on the resources
+     defined by the selected platform. See the [Credentials Dashboard](/docs/privilegesecure/26.03/admin/dashboard/credentials.md)
+     topic for additional information on managed accounts.
 
-- Name — Displays the name of the credential
-- Description — Description of the policy
-- Scheduled Change Policy — Select a previously added schedule policy from the dropdown list. How
-often the credentials for a managed account are changed (credential rotation). See the
-[Credentials Dashboard](/docs/privilegesecure/26.03/admin/dashboard/credentials.md) and
-[Schedule Policies Page](/docs/privilegesecure/26.03/admin/platforms/schedulepolicies/schedulepolicies.md) topic for additional information.
-- Verification Schedule — How often to verify the credentials for managed accounts on the resources
-defined by the selected platform. See the [Credentials Dashboard](/docs/privilegesecure/26.03/admin/dashboard/credentials.md)
-topic for additional information on managed accounts.
+4. Click **Save** to create the new credential policy override.
 
-**Step 4 –** Click **Save** to create the new credential policy override.
+   ![Credential Policy Override page with Add Credentials button](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/cpopageaddcredentials.webp)
 
-![cpopageaddcredentials](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/cpopageaddcredentials.webp)
+5. With the new Credential Policy Override selected, click the **Add Credentials** button
+   to open the **Add Credentials** window. See the
+   [Add Credentials to a Policy Override](/docs/privilegesecure/26.03/admin/credentials/credentialgroups/addcredentials.md#add-credentials-to-a-policy-override)
+   topic for additional information.
 
-**Step 5 –** With the new Credential Policy Override selected, click the **Add Credentials** button
-to open the Add Credentials window. See the
-[Add Credentials to a Policy Override](/docs/privilegesecure/26.03/admin/credentials/credentialgroups/addcredentials.md#add-credentials-to-a-policy-override)
-topic for additional information.
+   ![Add credential to Credential Policy Override Window](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addcredentialtocpowindow.webp)
 
-![Add credential to Credential Policy Override Window](/images/privilegesecure/26.03/accessmanagement/admin/policy/add/addcredentialtocpowindow.webp)
+6. Select the checkbox for the credential and click **Add** to save the credential to the
+   Credential Policy Override.
 
-**Step 6 –** Select the checkbox for the credential and click **Add** to save the credential to the
-Credential Policy Override.
-
-:::note
-In order for an account to be added to add credentials window, a credential must be
-managed with a method of **Automatic**. Only one account can be added to a Credential Policy
-Override at a time. See the
-[Manage Internal Service Accounts](/docs/privilegesecure/26.03/admin/credentials/manageinternalserviceaccount.md) topic for
-additional information.
-:::
-
+   :::note
+   To add an account in the Add Credentials window, you must manage a credential
+   with a method of **Automatic**. You can add only one account to a Credential Policy
+   Override at a time. See the
+   [Manage Internal Service Accounts](/docs/privilegesecure/26.03/admin/credentials/manageinternalserviceaccount.md) topic for
+   additional information.
+   :::
 
 The account is added to the console and is shown in the Credential Policy Overrides list.

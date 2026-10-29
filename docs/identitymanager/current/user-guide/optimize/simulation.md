@@ -16,9 +16,9 @@ Identity Manager's simulations gather **roles** and **rules** which are to be cr
 - Scalar **rules** and navigation **rules**;
 - Resource Type **rules**;
 - [Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole)
-and [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole);
+and [Bundle](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole);
 - [Single Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule)
-and [Composite Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule).
+and [Bundle Rule](../../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule).
 
 See the [Correlate Resources](../../user-guide/set-up/categorization/correlation) [Resource Classification Rule](../../integration-guide/toolkit/xml-configuration/provisioning/resourceclassificationrule), and [Resource Type](../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) topics for additional information.
 
@@ -38,7 +38,7 @@ NETWRIX recommends using simulation whenever performing an action (creation/modi
 
 ## Participants and Artifacts
 
-Integrators are able to perform simulation if they master the new role model.
+Integrators can perform simulation if they master the new role model.
 
  | Input | Output | 
  | --- | --- | 
@@ -65,7 +65,7 @@ Launch a simulation by proceeding as follows:
 
     ![Simulation List](/images/identitymanager/simulation_new_v602.webp)
 
-4. Click on **+ Create**.
+4. Click **+ Create**.
 5. Perform changes through the ****roles** Changes** and ****rules** Changes** tabs and the following icons,
 respectively for addition, modification and deletion:
 
@@ -75,15 +75,15 @@ respectively for addition, modification and deletion:
 
     ![Discouragement Icon](/images/identitymanager/simulation_icondelete_v600.svg)
 
-At any time, you can click on the line of a previously made change to access its description, even click on **Cancel** to erase it.
+At any time, you can click the line of a previously made change to access its description, even click **Cancel** to erase it.
 
     ![Cancel Change](/images/identitymanager/simulation_cancel_v602.webp)
 
-6. Click on **Start** to launch the simulation.
+6. Click **Start** to launch the simulation.
 
     ![Start Simulation](/images/identitymanager/simulation_start_v602.webp)
 
-7. After a few seconds, click on **Refresh** to display the simulation results.
+7. After a few seconds, click **Refresh** to display the simulation results.
 8. Observe the results in the overview and in the Excel report available via the Download button.
 
     ![Download Icon](/images/identitymanager/icondownload_v602.svg)
@@ -106,9 +106,9 @@ Deleting a simulation doesn't impact the role model. It simply undoes the simula
 
 ## Verify Modification
 
-In order to verify the process, check that the **roles** and **rules** are created with the right parameters.
+to verify the process, check that the **roles** and **rules** are created with the right parameters.
 
-For **roles**, click on **Access **roles**** on the home page in the **Configuration** section.
+For **roles**, click **Access **roles**** on the home page in the **Configuration** section.
 
 ![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 
@@ -116,7 +116,7 @@ Select the type of role that you want to check, and find the **roles** you creat
 
 ![Select **roles**](/images/identitymanager/categorycreation_test_v602.webp)
 
-For **rules**, click on **Access **rules**** on the home page in the **Configuration** section.
+For **rules**, click **Access **rules**** on the home page in the **Configuration** section.
 
 ![Home Page - Access **rules**](/images/identitymanager/home_rules_v602.webp)
 

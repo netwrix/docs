@@ -1,30 +1,35 @@
 ---
 title: "Terminate Proxy Session Window"
-description: "Terminate Proxy Session Window"
+description: "Disconnect a user from a live session in the Live Session Viewer and optionally cancel the activity session."
+keywords:
+  - Terminate Session
+  - Cancel Activity Session
+  - Lock Account
+  - Live Session Viewer
+  - proxy session
 sidebar_position: 40
 ---
 
 # Terminate Proxy Session Window
 
-When viewing a session with the live session viewer, You can disconnect the session in the
-event that suspicious or unauthorized activity is observed.
+When viewing a session with the live session viewer, you can disconnect the session if you
+observe suspicious or unauthorized activity.
 
-To a lock the session.
+To lock the session.
 
-**Step 1 –** In the Live Session Viewer, click the **Terminate Session** icon.
+1. In the Live Session Viewer, click the **Terminate Session** icon.
 
-![Terminate Session window](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/window/terminatesession.webp)
+   ![Terminate Session window](/images/privilegesecure/25.12/accessmanagement/admin/dashboard/window/terminatesession.webp)
 
-**Step 2 –** In the Terminate Proxy Session window, select from the following options:
+2. In the **Terminate Proxy Session** window, select from the following options:
 
-- Cancel Activity Session – Check to cancel the active session in Privilege Secure and prevent the
-user logging in again through the same session.
+   - **Cancel Activity Session** — Check to cancel the active session in Privilege Secure and prevent the
+     user logging in again through the same session.
 
-**Step 3 –** Click **Okay** to disconnect the session.
+3. Click **Okay** to disconnect the session.
+4. To prevent the user from creating a new session, navigate to the **Users & Groups
+   Details** page for that user and click **Lock Account**. See the
+   [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic
+   for additional information.
 
-**Step 4 –** To prevent the user from creating a new session, navigate to the **Users & Groups
-Details** page for that user and click **Lock Account**. See the
-[User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md) topic
-for additional information.
-
-The session is terminated.
+Privilege Secure terminates the session.

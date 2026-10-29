@@ -17,9 +17,9 @@ and [Resource Classification Rule](../integration-guide/toolkit/xml-configuratio
 - Scalar rules and navigation rules;
 - [Resource Type](../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) rules;
 - [Single Role](../integration-guide/toolkit/xml-configuration/provisioning/singlerole) and
-[Composite Role](../integration-guide/toolkit/xml-configuration/provisioning/compositerole);
+[Bundle](../integration-guide/toolkit/xml-configuration/provisioning/compositerole);
 - [Single Role Rule](../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule)and
-[Composite Role Rule](../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule).
+[Bundle Rule](../integration-guide/toolkit/xml-configuration/provisioning/compositerolerule).
 
 A simulation can also be created by the role mining tool for the automation of role assignments. See the [Perform Role Mining](../user-guide/optimize/assignment-automation/role-mining) topic for additional information.
 

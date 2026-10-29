@@ -1,6 +1,13 @@
 ---
 title: "Authentication Tab"
-description: "Authentication Tab"
+description: "Reference for the Authentication tab of an application user, including the certificate serial number and API key."
+keywords:
+  - Authentication tab
+  - application user
+  - Certificate Serial Number
+  - API Key
+  - Regenerate
+  - certificate
 sidebar_position: 100
 ---
 
@@ -12,16 +19,15 @@ The Authentication tab for applications shows authentication information about t
 
 The tab displays the following information:
 
-- Certificate Serial Number — The serial number of the client certificate used to authenticate the
-application. The certificate should be signed by a Certificate Authority (CA). Ensure the
-certificate is trusted by IIS by adding the CA trusted root certificate to the Trusted Root
-Certification Authorities on the Privilege Secure server.
-- API Key — The unique key used as part of Application authentication. The API key has the following
-icons:
+- **Certificate Serial Number** — The serial number of the client certificate used to authenticate the
+  application. The certificate should be signed by a Certificate Authority (CA). Ensure the
+  certificate is trusted by IIS by adding the CA trusted root certificate to the Trusted Root
+  Certification Authorities on the Privilege Secure server.
+- **API Key** — The unique key used as part of Application authentication. The API key has the following
+  icons:
+  - **Copy** — Copies the value to the clipboard. Only available when the API Key is visible.
+  - **Reveal / Hide** — Shows or hides value
+  - **Regenerate** — Generates a new API key. Only the current API key is valid.
 
-- Copy — Copies the value to the clipboard. Only available when the API Key is visible.
-- Reveal / Hide — Shows or hides value
-- Regenerate — Generates a new API key. Only the current API key is valid.
-
-If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
+If you modify any of these settings, **Save**, and **Cancel** buttons appear. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.

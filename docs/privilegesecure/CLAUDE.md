@@ -20,9 +20,10 @@ Key concepts appear throughout the documentation:
 | Version | Status | Notes |
 |---------|--------|-------|
 | `26.07` | Latest (default) | YY.MM versioning scheme. One cumulative section that covers 25.12.0, 26.03.x, and 26.07.0 through 26.07.3. Section Guide layout (see below). |
-| `26.03` | Active | Legacy layout |
-| `25.12` | Active | Legacy layout |
-| `4.2` | Active | Semantic versioning. Legacy layout, plus `remoteaccessgateway/` and `revieweruser/` sections |
+| `26.03` | Active | YY.MM versioning scheme. Legacy layout |
+| `25.12` | Active | YY.MM versioning scheme. Legacy layout |
+| `4.2` | Hidden | Files are kept in the repo but the version is not listed in `src/config/products.js`, so it is not built or published. `src/config/redirects/privilegesecure-4.2.js` redirects the 4_2 addresses that have a 26.03 counterpart. Semantic versioning; includes `remoteaccessgateway/` and `revieweruser/` sections not in other versions |
+| `4.1` | KB-only | Contains only KB articles; no full product docs |
 
 `src/config/products.js` is the source of truth for versions and the default.
 

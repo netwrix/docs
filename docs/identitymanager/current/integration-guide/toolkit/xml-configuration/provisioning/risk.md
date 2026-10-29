@@ -4,7 +4,7 @@ description: ""
 sidebar_position: 14
 ---
 
-A risk defines a security threat triggered by the assignment of one or more entitlements to an identity. A risk is linked to [risk rules](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/risk#child-element-rule), each of which can trigger the risk.
+A risk defines a security threat triggered by the assignment of one or more entitlements to an identity. A risk is linked to [risk rules](risk#child-element-rule), each of which can trigger the risk.
 
 ## Properties
 
@@ -21,10 +21,10 @@ A risk defines a security threat triggered by the assignment of one or more enti
 | RiskType <span class="optionalAttribute">default value: SoD</span> | **Type:** RiskType **Description:** Nature of the situation described by the risk. `0` - Segregation of Duties: threat due to the conjunction of two or more entitlements for an identity. A risk rule must contain at least two rule items. `1` - High Privileges: threat due to the assignment of one or more highly sensitive entitlements. A risk rule must contain at least one rule item. |
 
 ## Child Element: Rule
-A risk rule is a set of [risk rule items](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/risk#child-element-item). The intersection of all rule items triggers the assignment of a [risk](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/risk) to an identity, depending on the identity's entitlements.
+A risk rule is a set of [risk rule items](risk#child-element-item). The intersection of all rule items triggers the assignment of a [risk](risk) to an identity, depending on the identity's entitlements.
 
 ## Child Element: Item
-A risk rule item is a filter that identify risk-triggering resources. The intersection of all rule items in a [risk rule](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/risk#child-element-rule) triggers the associated [risk](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/risk).
+A risk rule item is a filter that identify risk-triggering resources. The intersection of all rule items in a [risk rule](risk#child-element-rule) triggers the associated [risk](risk).
 
 ### Properties
 

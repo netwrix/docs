@@ -1,20 +1,25 @@
 ---
 title: "Browser Extension App"
-description: "Browser Extension App"
+description: "Find the Privilege Secure browser extension for Chrome and Edge, which launches web sessions directly from the browser."
+keywords:
+  - Chrome
+  - Edge
+  - browser extension
+  - web sessions
+  - Chrome web store
+  - Microsoft Edge Add-ons
 sidebar_position: 60
 ---
 
 # Browser Extension App
 
-The browser extension lets users use Privilege Secure to login and launch web sessions directly
+The browser extension lets users use Privilege Secure to log in and launch web sessions directly
 through the browser.
 
 Supported on both Chrome and Edge browsers (version 116 or higher), the Privilege Secure browser
 extension is available from the respective stores:
 
-- Chrome web store –
-[https://chrome.google.com/webstore/detail/stealthbits-privileged-ac/ihnkofmplfbejdomofnhlhhaaaoamadj](https://chrome.google.com/webstore/detail/stealthbits-privileged-ac/ihnkofmplfbejdomofnhlhhaaaoamadj)
-- Microsoft Edge Add-ons store –
-[Netwrix Privilege Secure (formerly SbPAM) - Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/stealthbits-privileged-ac/flpcdjheolnofamggbinbnhcmomenhac?msclkid=a17a982bbc0411ecb49e42544afdb67a)
+- **Chrome web store** — [https://chrome.google.com/webstore/detail/stealthbits-privileged-ac/ihnkofmplfbejdomofnhlhhaaaoamadj](https://chrome.google.com/webstore/detail/stealthbits-privileged-ac/ihnkofmplfbejdomofnhlhhaaaoamadj)
+- **Microsoft Edge Add-ons store** — [Netwrix Privilege Secure (formerly SbPAM) - Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/stealthbits-privileged-ac/flpcdjheolnofamggbinbnhcmomenhac?msclkid=a17a982bbc0411ecb49e42544afdb67a)
 
 See the Log in Using the Browser Extension topic for additional information.
