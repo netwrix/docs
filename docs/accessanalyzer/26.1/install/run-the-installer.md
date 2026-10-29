@@ -340,7 +340,7 @@ Open `http://<server-address>:8080`, sign in as `admin` with the password you re
 
 ## Troubleshooting the Media Download
 
-**The install stops with exit code `15` and says the cluster was installed from the registry.** This host already has a registry install. Convert it with `sudo dspm-installer upgrade --download --migrate` instead. See [Convert or connect an install](convert-or-connect-an-install.md).
+**The install stops with exit code `15` and says the cluster was installed from the registry.** This host already has a registry install. Convert it with `sudo dspm-installer upgrade --download` instead. See [Convert or connect an install](convert-or-connect-an-install.md).
 
 **The install stops with exit code `16` and mentions free space.** Free space on the media volume, or point the media elsewhere with `--tmp-dir`. The check counts media from other releases as free, because the installer would delete them, but it deletes nothing unless the check passes.
 
