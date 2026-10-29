@@ -65,13 +65,13 @@ Allow ports 80 and 443. The initial connection uses HTTP on port 80 and can swit
 
 For EPP Server 2608 (Ubuntu 26.04), allow these URLs:
 
-- `http://ro.archive.ubuntu.com/ubuntu/`
+- `http://archive.ubuntu.com/ubuntu/`
 - `http://security.ubuntu.com/ubuntu/`
 - `https://cdn.crate.io/downloads/debian/stable/`
 
 For EPP Servers 2509 through 2604 (Ubuntu 22.04), allow these URLs:
 
-- `http://ro.archive.ubuntu.com/ubuntu/`
+- `http://archive.ubuntu.com/ubuntu/`
 - `http://security.ubuntu.com/ubuntu/`
 - `https://repo.alt.tuxcare.com/alt-common/deb/ubuntu/22.04/stable`
 - `http://repo.percona.com/pxb-24/apt`
