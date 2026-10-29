@@ -22,7 +22,7 @@ See the Database Maintenance Permission details in the
 :::
 
 
-See the [Stored Procedures](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/storedprocedures.md) topic for additional information on stored
+See the [Stored Procedures](/docs/threatprevention/8.1/configuration/databasemaintenance/storedprocedures.md) topic for additional information on stored
 procedures Threat Prevention uses on its SQL Server databases.
 
 To configure database maintenance:
@@ -67,14 +67,14 @@ The top of the window displays the following information:
 The Refresh button in the upper-right corner refreshes this database and job information.
 
 **Step 2 –** On the Event Type, Analytics, and/or Policy tabs, enable maintenance for all or some of
-the options. See the [Enable Database Maintenance](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/enable.md) topic for additional information.
+the options. See the [Enable Database Maintenance](/docs/threatprevention/8.1/configuration/databasemaintenance/enable.md) topic for additional information.
 
 **Step 3 –** On the Schedule tab, set the frequency and time when the database maintenance job runs.
-See the [Schedule Database Maintenance](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/schedule.md) topic for additional information.
+See the [Schedule Database Maintenance](/docs/threatprevention/8.1/configuration/databasemaintenance/schedule.md) topic for additional information.
 
 **Step 4 –** To use the Move operation, you must specify a database on the Archive DB tab. You can
 also define settings to delete data aged beyond a specified threshold from the archive database. See
-the [Archive Data](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/archive.md) topic for additional information.
+the [Archive Data](/docs/threatprevention/8.1/configuration/databasemaintenance/archive.md) topic for additional information.
 
 **Step 5 –** Click **Save** to save the changes.
 

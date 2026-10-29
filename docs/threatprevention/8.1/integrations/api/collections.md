@@ -22,7 +22,7 @@ You can use APIs to perform the following functions:
 ## Get Collection
 
 Use the `Get-SICollection` command to return a Threat Prevention collection. You manage collections
-on the [Collection Manager Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/overview.md) and
+on the [Collection Manager Window](/docs/threatprevention/8.1/configuration/collectionmanager/overview.md) and
 use them in specific policy filters, where different filters support different types of collections.
 
 ## Remove a Collection
@@ -40,7 +40,7 @@ Example of a remove collection command:
 
 Use the `Export-SICollection` and `Import-SICollection` commands to export and edit the XML
 file of an existing collection, and then import (add or replace) the edited collection. See the
-[Not a Policy XML Expert](/docs/threatprevention/8.1/api/overview.md#not-a-policy-xml-expert) topic for additional information on
+[Not a Policy XML Expert](/docs/threatprevention/8.1/integrations/api/overview.md#not-a-policy-xml-expert) topic for additional information on
 and how to make changes to the XML.
 
 ### Export Collections to an XML File

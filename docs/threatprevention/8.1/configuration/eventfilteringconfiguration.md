@@ -187,4 +187,4 @@ textbox, to set the latency threshold in minutes for the time when the Agent det
 the Enterprise Manager receives it. When events exceed the timeframe, alerts display in the
 [Alerts Interface](/docs/threatprevention/8.1/admin/alerts/overview.md). To generate Email or SIEM alerts, select the
 Agent Latency checkbox in the Operations tab of the
-[System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md).
+[System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md).

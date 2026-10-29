@@ -12,7 +12,7 @@ creation of weak passwords in your environment.
 :::note
 See the [Prevent Weak Passwords Use Case](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/preventweakpasswords.md) topic for instructions
 on creating a policy to block weak passwords, which requires the Threat Prevention
-for[ Enterprise Password Enforcer](/docs/threatprevention/8.1/solutions/epe.md) solution.
+for[ Enterprise Password Enforcer](/docs/threatprevention/8.1/gettingstarted/solutions/epe.md) solution.
 :::
 
 
@@ -25,14 +25,14 @@ environment.
 
 - Click **Configuration** > **EPE Settings** on the menu to open the EPE Settings window.
 - Download the latest copy of the HaveIBeenPwned dictionary file. See the
-  [Download and Configure the Have I Been Pwned Hash List](/docs/threatprevention/8_1/admin/configuration/epesettings#download-and-configure-the-have-i-been-pwned-hash-list)
+  [Download and Configure the Have I Been Pwned Hash List](/docs/threatprevention/8_1/configuration/epesettings#download-and-configure-the-have-i-been-pwned-hash-list)
   topic for additional information.
 - Determine whether you want to deploy the dictionary to each domain controller or keep it locally
   on the Enterprise Manager server. See the
-  [Considerations When Deploying the HIBP Database](/docs/threatprevention/8.1/admin/configuration/epesettings.md#considerations-when-deploying-the-hibp-database)
+  [Considerations When Deploying the HIBP Database](/docs/threatprevention/8.1/configuration/epesettings.md#considerations-when-deploying-the-hibp-database)
   topic for additional information.
 - Modify the global password rules to customize the password dictionary, word list dictionary and
-  character substitution map. See the [Rules](/docs/threatprevention/8.1/admin/configuration/epesettings.md#rules) topic for
+  character substitution map. See the [Rules](/docs/threatprevention/8.1/configuration/epesettings.md#rules) topic for
   additional information.
 
 **Step 2 –** Create a new policy with the Password Enforcement Event Type.

@@ -10,7 +10,7 @@ Use the List of Collections window to add new items to a collection as well as e
 existing items.
 
 Click **Configuration** > **Collections** on the menu to launch the
-[Collection Manager Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/overview.md). Then either double-click a Collection or select a
+[Collection Manager Window](/docs/threatprevention/8.1/configuration/collectionmanager/overview.md). Then either double-click a Collection or select a
 Collection and click the Manage button to open the List of Collections window.
 
 ![List of Collections window](/images/threatprevention/8.1/admin/configuration/collectionmanager/listofcollections.webp)
@@ -36,7 +36,7 @@ To add a static collection:
 - The _I will provide a list_ option button enables the default setting for a static collection.
 - The _I want a list to come from the database table_ option button enables a dynamic collection.
   Enter the table name in the textbox that appears or select it from the dropdown menu. See the
-  [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic for additional information.
+  [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic for additional information.
 
 **Step 3 –** Provide a unique, descriptive name for the collection in the name box.
 
@@ -57,7 +57,7 @@ additional information.
 Use the **Remove** (x) button to remove Items from the list on the Add New Collection window.
 
 You can configure some collections as dynamic collections. See the
-[Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic for additional information. The Perpetrators and Lockdown
+[Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic for additional information. The Perpetrators and Lockdown
 Perpetrators collections also have the option to expand group membership. See the Expand Groups
 Option for Perpetrators & Objects Collection topic for additional information.
 

@@ -59,7 +59,7 @@ You must meet the following prerequisites before using the APIs:
 
 - The PowerShell service account must be an Active Directory account with the Threat Prevention
   administrator role assigned to it. You assign the role through the
-  [Users and Roles Window](/docs/threatprevention/8.1/admin/configuration/userroles/overview.md).
+  [Users and Roles Window](/docs/threatprevention/8.1/configuration/userroles/overview.md).
 - You must load the Threat Prevention PowerShell module (SI.SIMonitor.PowerShell.dll) into
   PowerShell. Threat Prevention stores this module in the installation directory within the
   Enterprise Manager folder:
@@ -85,4 +85,4 @@ Event Type tab. Export as a second XML file with a different name.
 **Step 3 –** Open both XML files and compare the XML to see how Threat Prevention alters policies.
 
 After you identify how Threat Prevention modifies XML files, you can apply that to the
-[Add or Modify Policies](/docs/threatprevention/8.1/api/policy.md#add-or-modify-policies) instructions.
+[Add or Modify Policies](/docs/threatprevention/8.1/integrations/api/policy.md#add-or-modify-policies) instructions.

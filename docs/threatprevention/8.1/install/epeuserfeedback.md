@@ -31,7 +31,7 @@ server or workstation are:
 To deploy the EPE User Feedback module:
 
 **Step 1 –** Ensure the **Enable EPE User Feedback Module** checkbox is selected on the
-[EPE Settings Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md).
+[EPE Settings Window](/docs/threatprevention/8.1/configuration/epesettings.md).
 
 **Step 2 –** Run “Netwrix Threat Prevention Credential Provider GPO x64.msi” on one domain
 controller per domain. This creates a GPO named _Enterprise Password Enforcer_, which provides

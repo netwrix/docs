@@ -30,7 +30,7 @@ blocking:
 
 **Best Practice #2 – Database Maintenance? Use It!**
 
-The [Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md) enables
+The [Database Maintenance Window](/docs/threatprevention/8.1/configuration/databasemaintenance/overview.md) enables
 you to set options that automatically groom the database to optimize performance.  
 Whether choosing to archive or delete data, this is always a good feature to enable.
 
@@ -104,7 +104,7 @@ in a loss of Authentication event data. However, this doesn't impact Active Dire
 **FAQ: How can you prevent flooding the memory with authentication traffic?**
 
 The options in the
-[Event Filtering Configuration Window](/docs/threatprevention/8.1/admin/configuration/eventfilteringconfiguration.md)
+[Event Filtering Configuration Window](/docs/threatprevention/8.1/configuration/eventfilteringconfiguration.md)
 provide administrators with a method of filtering out authentication event data from selected hosts
 and/or accounts. You can configure these options to ignore authentication traffic from sources known
 to be safe. This affects what Threat Prevention sends to the Agent, and it has a direct impact on
@@ -121,7 +121,7 @@ than the Agent drains it.
 Enable debug logging for account resolution on the Agent and look for directory searches that take
 tens of seconds against one domain, or that fail reporting that the server isn't operational. Then
 add that domain to the Trusted Domains Blacklist so the Agent skips it. See the
-[Trusted Domains Blacklist Window](/docs/threatprevention/8.1/admin/configuration/trusteddomainsblacklist.md)
+[Trusted Domains Blacklist Window](/docs/threatprevention/8.1/configuration/trusteddomainsblacklist.md)
 topic for additional information.
 
 **FAQ: Where are the Threat Prevention log files, and how do you change what they record?**

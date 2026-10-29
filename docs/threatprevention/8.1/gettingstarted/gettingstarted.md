@@ -18,12 +18,12 @@ initial settings to start monitoring the organization's environment:
 From installation to first launch, a single Threat Prevention administrator is the only user who can
 access the Administration Console. This user must create additional users and assign them roles that
 control what they have access to. See the
-[Users and Roles Window](/docs/threatprevention/8.1/admin/configuration/userroles/overview.md) topic to configure users.
+[Users and Roles Window](/docs/threatprevention/8.1/configuration/userroles/overview.md) topic to configure users.
 
 ## Configure Alerts
 
 The administrator must configure email and SIEM alerts before they can be enabled. See the
-[System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md) topic to enable alerts and
+[System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md) topic to enable alerts and
 to select your desired events for sending notifications.
 
 ## Configure Collections
@@ -31,7 +31,7 @@ to select your desired events for sending notifications.
 Collections are reusable lists of policy filter settings. To create new policies using policy
 templates, you must configure Collections. Several templates use Collections as a
 policy filter. See the
-[Collection Manager Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/overview.md) topic to configure
+[Collection Manager Window](/docs/threatprevention/8.1/configuration/collectionmanager/overview.md) topic to configure
 Collections.
 
 ## Create, Configure, and Enable Policies
@@ -79,7 +79,7 @@ You can view event data using any of the following:
   [Recent Events Tab](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/overview.md) and
   [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) topics for details. You can also view
   event data configured for syslog (SIEM) on the
-  [SIEM Output Viewer](/docs/threatprevention/8.1/admin/configuration/siemoutputviewer.md) window.
+  [SIEM Output Viewer](/docs/threatprevention/8.1/configuration/siemoutputviewer.md) window.
 - Netwrix Threat Manager Reporting Module – Use this application to run investigations and generate
   reports. See the Set Up the Threat Manager Reporting Module topic to install and launch the
   application.
@@ -88,7 +88,7 @@ You can view event data using any of the following:
 
 Database maintenance is essential to manage the size of the event database. Base the size
 on your data retention needs for various types of event data. See the
-[Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md) topic for
+[Database Maintenance Window](/docs/threatprevention/8.1/configuration/databasemaintenance/overview.md) topic for
 additional information.
 
 ## Set Up the Threat Manager Reporting Module

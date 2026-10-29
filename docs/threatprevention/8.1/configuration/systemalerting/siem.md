@@ -72,7 +72,7 @@ notification.
 
 Threat Prevention now sends SIEM notifications for the selected events/incidents/policies to the
 SIEM product configured in the assigned SIEM profile. The
-[SIEM Output Viewer](/docs/threatprevention/8.1/admin/configuration/siemoutputviewer.md) window also displays all notifications sent to SIEM.
+[SIEM Output Viewer](/docs/threatprevention/8.1/configuration/siemoutputviewer.md) window also displays all notifications sent to SIEM.
 
 ## Configure a SIEM Server
 
@@ -139,7 +139,7 @@ the [Actions Tab](/docs/threatprevention/8.1/admin/policies/configuration/action
 **IBM QRadar Integration**
 
 Netwrix has created a custom app for integration between Threat Prevention and QRadar. See the
-[Active Directory App for QRadar](/docs/threatprevention/8.1/siemdashboard/qradar/overview.md) topic for additional
+[Active Directory App for QRadar](/docs/threatprevention/8.1/integrations/siemdashboard/qradar/overview.md) topic for additional
 information. There is also a custom app for File Activity, that can receive data from either Threat
 Prevention or Netwrix Activity Monitor. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
@@ -148,8 +148,8 @@ for additional information.
 **Splunk Integration**
 
 Netwrix has created custom apps for integration between Threat Prevention and Splunk. See the
-[Active Directory App for Splunk](/docs/threatprevention/8.1/siemdashboard/activedirectory/overview.md) topic
-and the [Threat Hunting App for Splunk](/docs/threatprevention/8.1/siemdashboard/threathunting/overview.md)
+[Active Directory App for Splunk](/docs/threatprevention/8.1/integrations/siemdashboard/activedirectory/overview.md) topic
+and the [Threat Hunting App for Splunk](/docs/threatprevention/8.1/integrations/siemdashboard/threathunting/overview.md)
 topic for additional information. There is also a custom app for File Activity, that can receive
 data from either Threat Prevention or Netwrix Activity Monitor. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)

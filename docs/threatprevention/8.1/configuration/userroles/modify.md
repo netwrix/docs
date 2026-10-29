@@ -19,7 +19,7 @@ To modify a user’s assigned rights:
 - If the user is a Console Operator, select the Administrator checkbox to assign a higher
   role to it.
 - To manage some permissions for the Administrator role, see the
-  [Administrator Permissions](/docs/threatprevention/8.1/admin/configuration/userroles/overview.md#administrator-permissions) topic.
+  [Administrator Permissions](/docs/threatprevention/8.1/configuration/userroles/overview.md#administrator-permissions) topic.
 
 **Step 3 –** _(Optional)_ Repeat this action for as many roles as required before clicking OK.
 

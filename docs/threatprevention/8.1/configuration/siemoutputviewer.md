@@ -16,7 +16,7 @@ syslog (SIEM) in real time.
   Data to SIEM' option for that analytic on the Actions tab. See the
   [Send to SIEM](/docs/threatprevention/8.1/admin/policies/configuration/actions/overview.md#send-to-siem) topic for additional information.
 - Threat Prevention sends event data generated for an event/incident/policy to SIEM if you assign a
-  SIEM profile to it on the [SIEM Tab](/docs/threatprevention/8.1/admin/configuration/systemalerting/siem.md) of the System Alerting Window.
+  SIEM profile to it on the [SIEM Tab](/docs/threatprevention/8.1/configuration/systemalerting/siem.md) of the System Alerting Window.
 
 While you can also use third-party tools like
 [Kiwi Syslog Server](https://www.solarwinds.com/free-tools/kiwi-free-syslog-server) to view the
@@ -59,7 +59,7 @@ application like Notepad to examine it in detail.
 :::note
 The host, port, protocol, and SSL columns display the settings configured for the SIEM
 server where the respective message is sent. See the
-[Configure a SIEM Server ](/docs/threatprevention/8.1/admin/configuration/systemalerting/siem.md#configure-a-siem-server) topic for additional
+[Configure a SIEM Server ](/docs/threatprevention/8.1/configuration/systemalerting/siem.md#configure-a-siem-server) topic for additional
 information.
 :::
 

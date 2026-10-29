@@ -56,15 +56,15 @@ file for an alert. Reporting uses the events database.
 To add this action, select the SIEM profile you want to receive the SIEM
 notifications from the dropdown menu. Only SIEM profiles you previously created are available for
 selection. You can also assign this action on the
-[SIEM Tab](/docs/threatprevention/8.1/admin/configuration/systemalerting/siem.md) of the System Alerting Window.
+[SIEM Tab](/docs/threatprevention/8.1/configuration/systemalerting/siem.md) of the System Alerting Window.
 
-The [SIEM Output Viewer](/docs/threatprevention/8.1/admin/configuration/siemoutputviewer.md) window
+The [SIEM Output Viewer](/docs/threatprevention/8.1/configuration/siemoutputviewer.md) window
 also displays all notifications sent to SIEM.
 
 :::note
 To enable this feature, a Threat Prevention administrator must first establish a
 connection with the SIEM server and configure the mapping file through the
-[System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md).
+[System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md).
 :::
 
 
@@ -78,7 +78,7 @@ purposes.
 :::note
 To enable this feature, a Threat Prevention administrator must create and configure the
 Web Request Action Module (Netwrix Threat Manager URI) through the
-[Event Sink Tab](/docs/threatprevention/8.1/admin/configuration/threatmanagerconfiguration.md#event-sink-tab) on the Netwrix
+[Event Sink Tab](/docs/threatprevention/8.1/configuration/threatmanagerconfiguration.md#event-sink-tab) on the Netwrix
 Threat Manager Configuration window.
 :::
 
@@ -94,7 +94,7 @@ feature for policies where you need immediate notification of an event.
 To enable email notifications, select the message profile you want to receive the email
 notifications from the dropdown menu. Only message profiles you previously created are available
 for selection. You can also assign this action on the
-[System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md).
+[System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md).
 
 ![Actions tab - Email Notifications section](/images/threatprevention/8.1/admin/policies/actions/emailnotificationssetup.webp)
 
@@ -131,7 +131,7 @@ Prevention doesn't generate email notifications for them.
 :::note
 To enable email notifications, an administrator must first configure the SMTP gateway and create
 message profiles. Only a Threat Prevention  administrator can do this, through the
-[System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md).
+[System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md).
 :::
 
 

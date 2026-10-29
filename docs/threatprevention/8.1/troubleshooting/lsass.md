@@ -58,7 +58,7 @@ specific to this event.
 
 :::info
 Enable the _LSASS process terminated_ alert under Operations on the
-[System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md).
+[System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md).
 :::
 
 
@@ -74,26 +74,26 @@ Operations:
 :::note
 These steps require the Threat Prevention administrator user role. They also assume that
 you have configured the SMTP host information and enabled email alerts. See the
-[Configure SMTP Host Information](/docs/threatprevention/8.1/admin/configuration/systemalerting/email.md#configure-smtp-host-information)
+[Configure SMTP Host Information](/docs/threatprevention/8.1/configuration/systemalerting/email.md#configure-smtp-host-information)
 topic for additional information
 :::
 
 
 **Step 1 –** Click **Configuration** > **Alerts** on the menu to open the
-[System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md).
+[System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md).
 
 **Step 2 –** On the Email tab, click **Configure**.
 
 **Step 3 –** Create a Message Profile for the LSASS notification with the recipients you want to
 notify when the LSASS process terminates. See the
-[Create Message Profiles](/docs/threatprevention/8.1/admin/configuration/systemalerting/email.md#create-message-profiles)
+[Create Message Profiles](/docs/threatprevention/8.1/configuration/systemalerting/email.md#create-message-profiles)
 topic for additional information.
 
 ![System Alerting window - LSASS Process Terminated alert](/images/threatprevention/8.1/troubleshooting/lsassprocessterminated.webp)
 
 **Step 4 –** On the Email tab, click **Events**, and then click **Operations** in the left pane.
 Check the **LSASS process terminated** event alert and select the Message Profile you created in
-Step 3 from the dropdown menu. See the [Email Tab](/docs/threatprevention/8.1/admin/configuration/systemalerting/email.md) topic
+Step 3 from the dropdown menu. See the [Email Tab](/docs/threatprevention/8.1/configuration/systemalerting/email.md) topic
 for additional information.
 
 **Step 5 –** Ensure that the email alerts are enabled, as indicated by the Enabled toggle button,

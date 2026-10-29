@@ -19,17 +19,17 @@ The Administrator Auditing dashboard contains the following cards:
   been recorded in the specified timeframe
 - Events – Breakdown of changes that have been recorded in the specified timeframe by
   successful/failed/blocked status. See the
-  [Graph Card Features](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/navigate.md#graph-card-features) topic for additional information.
+  [Graph Card Features](/docs/threatprevention/8.1/integrations/siemdashboard/qradar/navigate/navigate.md#graph-card-features) topic for additional information.
 - Most Active Administrators – Displays up to the top five (5) usernames related to change events
   that have been recorded in the specified timeframe
 - All Administrator Activity – Tabular format of all events that have been recorded in the specified
-  timeframe. See the [Table Card Features](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/navigate.md#table-card-features) topic for additional
+  timeframe. See the [Table Card Features](/docs/threatprevention/8.1/integrations/siemdashboard/qradar/navigate/navigate.md#table-card-features) topic for additional
   information.
 - Administrator Offenses – Tabular format of all offenses related to Administrators. See the
-  [Table Card Features](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/navigate.md#table-card-features) topic for additional information.
+  [Table Card Features](/docs/threatprevention/8.1/integrations/siemdashboard/qradar/navigate/navigate.md#table-card-features) topic for additional information.
 - Administrator Group Changes – Tabular format of all group changes to the Domain, Schema, and
   Enterprise Admin groups that have been recorded in the specified timeframe. See the
-  [Table Card Features](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/navigate.md#table-card-features) topic for additional information.
+  [Table Card Features](/docs/threatprevention/8.1/integrations/siemdashboard/qradar/navigate/navigate.md#table-card-features) topic for additional information.
 
 The time interval is identified in the upper-right corner with the _Start_ and _End_ boxes. This
 defaults to the past three (3) hours. To search within a different interval, either manually

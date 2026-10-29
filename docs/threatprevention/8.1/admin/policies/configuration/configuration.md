@@ -23,4 +23,4 @@ policy recently monitored or blocked. These events are also available on the
 
 Through a PowerShell API integration, you can create, edit, delete, and enable policies
 without opening the Administration Console. See the
-[PowerShell API Integration](/docs/threatprevention/8.1/api/overview.md) topic for additional information.
+[PowerShell API Integration](/docs/threatprevention/8.1/integrations/api/overview.md) topic for additional information.

@@ -15,5 +15,5 @@ Threat Prevention and three specific dashboards.
 - Splunk Integration - Threat Hunting
 
 Additionally, you can also go to the
-[SIEM Output Viewer](/docs/threatprevention/8.1/admin/configuration/siemoutputviewer.md) window to view the data Threat
+[SIEM Output Viewer](/docs/threatprevention/8.1/configuration/siemoutputviewer.md) window to view the data Threat
 Prevention sends to syslog (SIEM).

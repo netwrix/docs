@@ -45,7 +45,7 @@ Collections are organized into the following categories for Microsoft Collection
 - File Paths – List of file paths for Windows file systems, for use with multiple agents
 
 Select a collection category and click **Manage…** i to open the
-[List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md).
+[List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md).
 
 ## Preconfigured Collections
 

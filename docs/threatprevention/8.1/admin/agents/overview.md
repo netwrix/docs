@@ -53,7 +53,7 @@ information for an Agent:
 
     :::note
     When the **Send Latency Alerts** option is enabled in the
-    [Event Filtering Configuration Window](/docs/threatprevention/8.1/admin/configuration/eventfilteringconfiguration.md), a
+    [Event Filtering Configuration Window](/docs/threatprevention/8.1/configuration/eventfilteringconfiguration.md), a
     warning symbol appears to indicate excessive latency. This warning symbol also appears when
     the Agent fails to load the instrumentation DLL, SI.ActiveDirectoryMonitor.dll (commonly
     known as ADMonitor DLL), into the LSASS process or when it fails to load the instrumentation

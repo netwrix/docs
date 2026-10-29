@@ -7,7 +7,7 @@ sidebar_position: 40
 # Stored Procedures
 
 The table contains a list of the stored procedures Threat Prevention uses on its SQL Server
-databases. See the [Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md) topic for additional information.
+databases. See the [Database Maintenance Window](/docs/threatprevention/8.1/configuration/databasemaintenance/overview.md) topic for additional information.
 
 | Name                     | When Threat Prevention Uses the Procedure                                                                                     | What the Stored Procedure Does                                                                                                                                                                                                                                                                                                                                                                               |
 | ------------------ | ---------------------- | ---------------- |

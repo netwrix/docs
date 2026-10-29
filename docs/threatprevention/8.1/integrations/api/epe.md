@@ -8,7 +8,7 @@ sidebar_position: 40
 
 You can use APIs to perform functions related to Threat Prevention's Enterprise Password Enforcer
 (EPE) solution. These functions pertain to the
-[EPE Settings Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md) and the
+[EPE Settings Window](/docs/threatprevention/8.1/configuration/epesettings.md) and the
 [Password Rules Filter](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md#password-rules-filter) of
 the Password Enforcement event type.
 
@@ -25,7 +25,7 @@ the Password Enforcement event type.
 
 The `Test-ValidatePassword` command checks if a user supplied password passes the Enterprise Manager
 Enforcer (EPE) rules configured in the Password Rules event filter and the global settings in the
-[EPE Settings Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md).
+[EPE Settings Window](/docs/threatprevention/8.1/configuration/epesettings.md).
 
 The following parameters are required:
 
@@ -45,7 +45,7 @@ Example of a password validation command:
 
 The `Import-SICharacterSubstitution` command imports the EPE Character Substitution Dictionary to
 the Enterprise Manager. The
-[Substitutions Editor Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#substitutions-editor-window),
+[Substitutions Editor Window](/docs/threatprevention/8.1/configuration/epesettings.md#substitutions-editor-window),
 accessed through the EPE Settings window, displays the imported file content.
 
 The following parameter is required:
@@ -60,7 +60,7 @@ Example of adding an import xml file:
 
 The `Export-SICharacterSubstitution` command exports the character substitution data the
 Enterprise Manager uses. The exported content matches what the
-[Substitutions Editor Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#substitutions-editor-window) displays.
+[Substitutions Editor Window](/docs/threatprevention/8.1/configuration/epesettings.md#substitutions-editor-window) displays.
 
 Example:
 
@@ -70,7 +70,7 @@ Example:
 
 The `Import-SICharacterSubstitutionWords` command imports the EPE words subject to character
 substitution to the Enterprise Manager. Threat Prevention adds the imported file content to the
-[Words List Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#words-list-dictionary-window),
+[Words List Dictionary Window](/docs/threatprevention/8.1/configuration/epesettings.md#words-list-dictionary-window),
 accessed through the EPE Settings window.
 
 The following parameter is required:
@@ -85,7 +85,7 @@ Example of adding an import xml file:
 
 The `Export-SICharacterSubstitutionWords` command exports the EPE Words subject to character
 substitution that the Enterprise Manager uses. The exported content matches what the
-[Words List Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#words-list-dictionary-window) displays.
+[Words List Dictionary Window](/docs/threatprevention/8.1/configuration/epesettings.md#words-list-dictionary-window) displays.
 
 Example:
 
@@ -95,7 +95,7 @@ Example:
 
 The `Import-SIPasswordsDictionary` command imports the EPE Password Dictionary to the Enterprise
 Manager from the specified file. The
-[Password Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#password-dictionary-window),
+[Password Dictionary Window](/docs/threatprevention/8.1/configuration/epesettings.md#password-dictionary-window),
 accessed through the EPE Settings window, displays the imported file content.
 
 The following parameter is required:
@@ -106,7 +106,7 @@ The following parameter is required:
 
 The `Export-SIPasswordsDictionary` command exports the EPE Password Dictionary that
 the Enterprise Manager uses. The exported content matches what the
-[Password Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#password-dictionary-window) displays.
+[Password Dictionary Window](/docs/threatprevention/8.1/configuration/epesettings.md#password-dictionary-window) displays.
 
 Example:
 

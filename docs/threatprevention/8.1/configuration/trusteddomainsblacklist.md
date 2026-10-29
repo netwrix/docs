@@ -82,5 +82,5 @@ After you blacklist the domain, the Agent records each skipped domain in its log
 level.
 
 See the
-[Event Filtering Configuration Window](/docs/threatprevention/8.1/admin/configuration/eventfilteringconfiguration.md)
+[Event Filtering Configuration Window](/docs/threatprevention/8.1/configuration/eventfilteringconfiguration.md)
 topic for additional information on reducing the volume of events an Agent processes.

@@ -56,7 +56,7 @@ Example of a delete policy command:
 
 Use the `Export-SIPolicy` and` Import-SIPolicy` commands to export and edit the XML file of
 an existing policy, and then import (add or replace) the edited policy. See the
-[Not a Policy XML Expert](/docs/threatprevention/8.1/api/overview.md#not-a-policy-xml-expert) topic for additional information on
+[Not a Policy XML Expert](/docs/threatprevention/8.1/integrations/api/overview.md#not-a-policy-xml-expert) topic for additional information on
 policy layout and how to make changes to the XML.
 
 ### Export Policies to an XML File

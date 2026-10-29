@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Archive Data
 
-To use the Move operation on the [Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md), you must specify a
+To use the Move operation on the [Database Maintenance Window](/docs/threatprevention/8.1/configuration/databasemaintenance/overview.md), you must specify a
 database where Threat Prevention archives data. You can also define settings to delete data aged
 beyond a specified threshold from the archive database.
 
@@ -95,15 +95,15 @@ Agent that runs the maintenance job.
   NVMonitorData database.
 
 **Step 4 –** On the Event Type, Analytics, and/or Policy tabs, enable maintenance for all or some of
-the options. See the [Enable Database Maintenance](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/enable.md) topic for additional information.
+the options. See the [Enable Database Maintenance](/docs/threatprevention/8.1/configuration/databasemaintenance/enable.md) topic for additional information.
 
-The [Event Type Tab](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md#event-type-tab), [Analytics Tab](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md#analytics-tab), and
-[Policy Tab](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md#policy-tab) on the Archive DB Maintenance window are the same as on the
+The [Event Type Tab](/docs/threatprevention/8.1/configuration/databasemaintenance/overview.md#event-type-tab), [Analytics Tab](/docs/threatprevention/8.1/configuration/databasemaintenance/overview.md#analytics-tab), and
+[Policy Tab](/docs/threatprevention/8.1/configuration/databasemaintenance/overview.md#policy-tab) on the Archive DB Maintenance window are the same as on the
 Database Maintenance window, except that only the 'Delete' operation is available for the archive
 database.
 
 **Step 5 –** On the Schedule tab, set the frequency and time when the database maintenance job runs.
-See the [Schedule Database Maintenance](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/schedule.md) topic for additional information.
+See the [Schedule Database Maintenance](/docs/threatprevention/8.1/configuration/databasemaintenance/schedule.md) topic for additional information.
 
 **Step 6 –** Click **OK** on the Archive DB Maintenance window.
 
