@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # Export Report
 
-An export puts the report results for an investigation into a desired format. The Export option
-provides choices for how you can export the report results for an investigation. You can export the
+The Export option exports the report results for an investigation. You can export the
 report in a specified format and download, email, or schedule it.
 
 ![Export option in the Investigation interface](/images/threatmanager/3.0/administration/investigations/options/export.webp)
@@ -32,7 +31,7 @@ dropdown menu:
     :::
 
 
-Reports will be downloaded to the Downloads folder on your local machine, according to your browser
+Your browser downloads reports to the Downloads folder on your local machine, according to its
 settings. You can configure a folder on the application server to place copies of all exported
 reports.
 
@@ -43,7 +42,7 @@ additional information.
 
 :::note
 This option requires an email server to be configured. If this requirement isn't met, a
-message will appear in the window. See the[Email Page](/docs/threatmanager/3.3/configuration/integrations/email.md)
+message will appear in the window. See the [Email Page](/docs/threatmanager/3.3/configuration/integrations/email.md)
 section for additional information.
 :::
 
