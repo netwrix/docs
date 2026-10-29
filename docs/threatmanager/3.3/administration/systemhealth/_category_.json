@@ -1,0 +1,10 @@
+{
+  "label": "System Health Interface",
+  "position": 55,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}
