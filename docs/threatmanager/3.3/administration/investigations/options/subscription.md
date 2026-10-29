@@ -14,7 +14,7 @@ recipients to receive this report as an email attachment in a specified format.
 
 :::note
 This option requires an email server to be configured.If this requirement isn't met, a
-message will appear in the window. See the[Email Page](/docs/threatmanager/3.3/configuration/integrations/email.md)
+message will appear in the window. See the [Email Page](/docs/threatmanager/3.3/configuration/integrations/email.md)
 section for additional information.
 :::
 
