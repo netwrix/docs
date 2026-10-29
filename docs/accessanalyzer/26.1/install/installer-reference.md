@@ -195,7 +195,7 @@ When the file supplies every required value and the installer runs in a terminal
 | 0 | Success. |
 | 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or you canceled the prompts with Esc or Ctrl-C (`installation cancelled`). |
 | 10 | License key error. The key is expired, suspended, unknown, or invalid. |
-| 15 | The installer rejected the air-gapped flags, or couldn't load the media: `--airgap` without `--bundle-dir`, `--bundle-dir` without `--airgap`, or media with no valid `manifest.json`. Also, this host already has a registry install. Use `sudo dspm-installer upgrade --download --migrate` instead. |
+| 15 | The installer rejected the air-gapped flags, or couldn't load the media: `--airgap` without `--bundle-dir`, `--bundle-dir` without `--airgap`, or media with no valid `manifest.json`. Also, this host already has a registry install. Use `sudo dspm-installer upgrade --download` instead. |
 | 16 | A precondition failed and nothing changed, such as too little free space for the media, or a release older than the installer. |
 | 17 | Connected installs only. The installer couldn't download, verify, or unpack the media. Run the command again to resume. |
 | 20 | Connected installs only. The release version you requested with `--target-revision` isn't available for this license key, or the release has no media for this architecture. |
@@ -376,7 +376,7 @@ Before it changes anything, it checks that the kubeconfig reaches a cluster with
 | 0 | The cluster runs the new release and every application is Synced and Healthy, or the cluster already runs the newest release. |
 | 1 | Unexpected error. |
 | 10 | Netwrix rejected the license key. |
-| 15 | The command couldn't load or deploy the media, and the cluster is still on the previous release. With `--migrate`, the command also exits with this code when an agent node runs on a different CPU architecture from the server. Run the command again after you fix the cause. |
+| 15 | The command couldn't load or deploy the media, and the cluster is still on the previous release. When it converts a registry install, the command also exits with this code when an agent node runs on a different CPU architecture from the server. Run the command again after you fix the cause. |
 | 16 | A precondition failed. Nothing changed. |
 | 17 | The command couldn't download, verify, or unpack the media. Nothing changed. Run the command again to resume. |
 | 20 | No release matches `--target-revision`, or the release has no media for this architecture. |
