@@ -10,7 +10,7 @@ Use the Alerts interface to view recent Security events, Operations events, and
 Configuration events for Threat Prevention - all of which are known as alerts. These events are
 system-generated and don't require any prior configuration.
 
-You can choose to view alerts related to analytics configuration and monitoring status on the Alerts
+You can view alerts related to analytics configuration and monitoring status on the Alerts
 interface. See the [Alerts Cleanup Window](/docs/threatprevention/8.1/admin/alerts/alertscleanup.md) topic for options to display
 this data.
 

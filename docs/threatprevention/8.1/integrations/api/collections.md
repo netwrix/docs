@@ -101,7 +101,7 @@ Example of adding an import XML file:
 
 The API returns as output the CollectionID, GUID, and Collection Name of the collection it updated
 or created. If it created a new collection, you must capture the Collection ID and Collection GUID
-that Threat Prevention assigned in order to access that collection later.
+that Threat Prevention assigned to access that collection later.
 
 :::tip
 The Collection ID and Collection GUID aren't the same as those in the source XML file.

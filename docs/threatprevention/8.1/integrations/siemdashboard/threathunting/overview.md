@@ -7,7 +7,7 @@ sidebar_position: 30
 # Threat Hunting App for Splunk
 
 The Netwrix Threat Hunting solution enables organizations to target and hunt active cyber threats.
-Using the preconfigured Netwrix Threat Hunting App for Splunk, analysts have a powerful incident
+Using the preconfigured Netwrix Threat Hunting App for Splunk, analysts have an incident
 response tool that lets them compile forensic evidence efficiently to investigate
 the scope, impact, and root cause of an incident. The Netwrix Threat Hunting App for Splunk focuses
 in on the actions of specific users, including the files they accessed and changes they made to

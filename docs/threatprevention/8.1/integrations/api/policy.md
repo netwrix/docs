@@ -124,7 +124,7 @@ Example of adding an import XML file:
 
 The API returns as output the PolicyID, GUID, and Policy Name of the policy it updated or
 created. If it created a new policy, you must capture the Policy ID and Policy GUID that Threat
-Prevention assigned in order to access that policy later.
+Prevention assigned to access that policy later.
 
 :::tip
 The Policy ID and Policy GUID aren't the same as those in the source XML file. Use the

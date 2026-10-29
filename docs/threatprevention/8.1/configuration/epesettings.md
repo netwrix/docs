@@ -177,8 +177,8 @@ The optional EPE User Feedback module (also known as the Credential Provider) pr
 end users by listing the reasons the Enterprise Password Enforcement (EPE) event type has rejected a
 candidate password.
 
-EPE offers multi-language support, ensuring users receive clear and consistent password rejection
-messages. Supported languages are:
+EPE offers multi-language support, so users receive password rejection messages in their own
+language. Supported languages are:
 
 - Chinese Simplified
 - Chinese Traditional
