@@ -6,7 +6,7 @@ sidebar_position: 3
 
 An **Entra ID** source points Access Analyzer at one Microsoft Entra ID tenant. Identity syncs sign in to the tenant as an app registration and read its users, groups, group owners, directory roles, role assignments, and memberships through Microsoft Graph. The sync is read-only.
 
-Besides feeding the identity reports, an Entra ID source completes your SharePoint Online data. After a SharePoint Online scan, Access Analyzer expands Entra ID group memberships using the most recent completed Entra ID sync of the same tenant. Without one, the reports can't show names for Entra ID users and groups or expand Entra ID group membership. See [Microsoft 365](microsoft-365.md).
+Besides feeding the identity reports, an Entra ID source completes your SharePoint Online data. After a SharePoint Online scan, Access Analyzer expands Entra ID group memberships using the most recent completed Entra ID sync of the same tenant. Without one, the reports can't show names for Entra ID users and groups or expand Entra ID group membership. See [SharePoint Online](microsoft-365.md).
 
 :::note
 
