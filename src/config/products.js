@@ -405,7 +405,7 @@ export const PRODUCTS = [
       {
         version: '3.3',
         label: '3.3',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/passwordreset/3.3.js',
       },
       {
@@ -633,9 +633,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '3.4',
+        label: '3.4',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.4.js',
+      },
+      {
         version: '3.3',
         label: '3.3',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.3.js',
       },
       {
@@ -654,10 +660,11 @@ export const PRODUCTS = [
         version: '3.0',
         label: '3.0',
         isLatest: false,
+        hidden: true,
         sidebarFile: './sidebars/threatmanager/3.0.js',
       },
     ],
-    defaultVersion: '3.3',
+    defaultVersion: '3.4',
   },
   {
     id: 'threatprevention',
