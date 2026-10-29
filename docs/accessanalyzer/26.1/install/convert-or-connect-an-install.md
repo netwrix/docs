@@ -21,6 +21,10 @@ A cluster installed from the registry can move onto downloaded media without a r
 sudo dspm-installer upgrade --download --migrate
 ```
 
+The recording runs `--migrate --dry-run` to print the plan, then converts a registry install. The command downloads the media, switches the cluster to it, waits for every application to become healthy, and prints `Migrated`. The installed release and the target are the same here, so the release stays at v1.2.0.
+
+![dspm-installer upgrade --download --migrate with --dry-run, then downloading the media, deploying it, switching the cluster to offline media, and reporting the migration](/images/accessanalyzer/26.1/install/upgrade-migrate.webp)
+
 To convert and upgrade to a specific release in the same run, add `--target-revision`:
 
 ```bash
@@ -78,6 +82,10 @@ sudo --preserve-env=LICENSE_KEY dspm-installer upgrade --connect
 `--connect` checks the license key first. It exits with code `16` if the host can't reach `api.keygen.sh`, and with code `10` if Netwrix rejects the key. It then stores the key, turns on the version poller, and clears the air-gapped setting. Nothing redeploys. The cluster keeps running the release it has.
 
 `--connect` takes only the license key, `--dry-run`, `--kubeconfig`, and `--timeout`. Add `--dry-run` to run the checks without changing anything.
+
+The recording runs `--connect --dry-run`, then the real `--connect`. Afterwards `upgrade --download` reports that the cluster is already on the newest release and changes nothing.
+
+![dspm-installer upgrade --connect with --dry-run, then connecting the cluster to the release service, then upgrade --download finding nothing newer](/images/accessanalyzer/26.1/install/upgrade-connect.webp)
 
 Afterwards, upgrade from the **Settings** page, automatically, or with `upgrade --download`. See [Upgrade to a new version](upgrade-to-a-new-version.md).
 

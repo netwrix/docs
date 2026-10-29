@@ -20,6 +20,22 @@ dspm-installer --help
 dspm-installer --version
 ```
 
+Each form does one job.
+
+| Command | What it does | Use it to |
+|---|---|---|
+| `dspm-installer` | Runs the preflight checks, collects the settings it still needs, sets up the Kubernetes platform, and deploys the services. | Install on a new server. See [Run the installer](run-the-installer.md). |
+| `wait-for-apps` | Waits until every service is Synced and Healthy. It changes nothing. | Resume the wait after an install or upgrade stops on a timeout. See [The `wait-for-apps` command](#the-wait-for-apps-command). |
+| `upgrade --bundle-dir <path>` | Upgrades from offline media you downloaded. | Upgrade an air-gapped install, or any install from media you copied to the server. |
+| `upgrade --download` | Downloads the release's media from Netwrix, then upgrades from it. | Upgrade a connected install. |
+| `upgrade --download --migrate` | Downloads the media and moves a registry install onto it, so later upgrades work like any connected install. You can't undo it. | Convert a registry install. See [Convert or connect an install](convert-or-connect-an-install.md#convert-a-registry-install). |
+| `upgrade --connect` | Stores the license key and switches an air-gapped install to download its upgrades. It deploys nothing and keeps the installed release. You can't undo it. | Connect an air-gapped install that now has internet access. See [Convert or connect an install](convert-or-connect-an-install.md#connect-an-air-gapped-install). |
+| `install-agent` | Joins this host to an existing install as an agent node, using the registration bundle from the **Add agent** panel. | Add an agent on a separate Linux host. See [The `install-agent` command](#the-install-agent-command). |
+| `update-cert` | Saves a snapshot of the current certificate, installs a new one, restarts the workloads that trust it, and verifies the result. | Replace a certificate that's expiring or that pods don't trust. See [The `update-cert` command](#the-update-cert-command). |
+| `rollback-cert` | Restores the certificate from a snapshot that `update-cert` saved. | Undo a certificate rotation. See [The `rollback-cert` command](#the-rollback-cert-command). |
+| `--help` | Prints the flags and exits. | Look up a flag. |
+| `--version` | Prints the installer version and exits. | Check which release of the installer you have. |
+
 There are no single-letter flags.
 
 ## Flags
@@ -323,6 +339,14 @@ sudo dspm-installer upgrade --download
 sudo dspm-installer upgrade --bundle-dir /etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz
 ```
 
+Add `--dry-run` to preview an upgrade. The recording prints the planned steps and changes nothing.
+
+![dspm-installer upgrade --bundle-dir with --dry-run listing the planned steps](/images/accessanalyzer/26.1/install/upgrade-dry-run.webp)
+
+Each form works on only some installs. On an air-gapped cluster, `--download` refuses and exits with code `16`, and `--bundle-dir` refuses a bundle that isn't newer than the installed release:
+
+![dspm-installer upgrade --download refused on an air-gapped cluster, and upgrade --bundle-dir refused for a bundle that carries no newer version](/images/accessanalyzer/26.1/install/upgrade-wrong-form.webp)
+
 Run it with the `dspm-installer` binary from the release you're upgrading to. It doesn't run the prompts, preflight checks, or platform setup. It upgrades the Access Analyzer services and ArgoCD but not the k3s platform or the offline package manager. If the media targets a different version of either, it prints a warning that names both versions and continues with the installed ones.
 
 Before it changes anything, it checks that the kubeconfig reaches a cluster with a `netwrix` application installed from offline media, that automated sync is on for that application, and that the release is newer than the installed one. A registry install needs `--migrate` first, or `dspmctl` as [Upgrade to a New Version](upgrade-to-a-new-version.md) describes.
@@ -384,6 +408,10 @@ sudo dspm-installer install-agent \
 
 The bundle expires 30 minutes after the panel generates it, and `install-agent` refuses a bundle with less than 10 minutes left. The `--token` value is visible in the process list while the command runs, and a bundle for a server that isn't air-gapped contains the license key. Treat the command as a credential.
 
+The recording runs the command on a second host. The installer warns that the host has no time-sync service, takes k3s from the Access Analyzer server, joins the cluster, and registers the agent under the name you gave. The token sits in a shell variable, so it stays off the screen.
+
+![dspm-installer install-agent joining a host to the cluster, taking k3s from the server, and registering the agent as Edge agent](/images/accessanalyzer/26.1/install/install-agent.webp)
+
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
 | `--server` | none | none | Required. The Kubernetes API server URL that the host joins, such as `https://aa.corp.example.com:6443`. It overrides the address in the bundle. It isn't the URL of the web application. |
@@ -424,6 +452,10 @@ sudo dspm-installer update-cert \
 
 `update-cert` validates the certificate and key pair, confirms the certificate's Subject Alternative Names cover the installed hostname, snapshots the certificate the cluster serves, applies the new certificate and CA bundle, restarts every workload that mounts the CA bundle, and verifies the result before it exits. See [Rotate the TLS certificate](rotate-the-tls-certificate.md) for the full procedure, including how to roll back with `rollback-cert`.
 
+The recording runs `update-cert --dry-run` to print the plan, then the real rotation, which saves a snapshot, applies the certificate, and exits with code 0.
+
+![dspm-installer update-cert with --dry-run printing the planned rotation, then rotating the certificate, saving a snapshot, and exiting with code 0](/images/accessanalyzer/26.1/install/update-cert.webp)
+
 | Flag | Default | Description |
 |---|---|---|
 | `--tls-cert` | (required) | PEM certificate file, full chain with the leaf certificate first. |
@@ -455,6 +487,10 @@ If verification fails, `update-cert` restores the previous certificate from its 
 ```bash
 sudo dspm-installer rollback-cert --latest
 ```
+
+The recording lists the snapshots, then restores the most recent one.
+
+![dspm-installer rollback-cert --list showing one snapshot, then rollback-cert --latest restoring it and exiting with code 0](/images/accessanalyzer/26.1/install/rollback-cert.webp)
 
 | Flag | Default | Description |
 |---|---|---|
