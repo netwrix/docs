@@ -69,7 +69,7 @@ These options display data from Threat Prevention.
 
 ### View the Audit History for an Object
 
-You can view the changes made to an object by other users.
+You can view the changes other users made to an object.
 
 On the Active Directory page, expand a domain in the left pane and locate the object you
 want to view the audit history for. Right-click this object and select **Show audit history** on the
