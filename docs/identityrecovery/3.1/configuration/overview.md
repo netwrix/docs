@@ -16,7 +16,7 @@ Only users with Administrator rights have access to the Configuration interface.
 
 ![Configuration interface](/images/identityrecovery/3.1/IdentityImages_LatestDocs/Configuration/config.png)
 
-The Configuration interface contains the following tabs:
+The Configuration interface contains the following tabs, each documented in its own topic:
 
 - [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains tab lists the domains backed up by Identity Recovery and their backup schedules. You can also add and configure new domains.
 - [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) – The Forest tab lets you add a forest so that Identity Recovery can back it up and recover it.
@@ -29,4 +29,4 @@ The Configuration interface contains the following tabs:
 - [Data Retention Policy Page](/docs/identityrecovery/3.1/configuration/dataretention.md) – The Data Retention Policy tab lets you delete backup data for domains and domain controllers older than X days, and delete backup data for purged tombstone objects.
 - [Licensing Page](/docs/identityrecovery/3.1/configuration/licensing.md) – The Licensing tab shows your organization's license status and lets you import a license file.
 
-Any user can set up multi-factor authentication for their own account from the profile menu, without access to the Configuration interface. See [Configure Multi-Factor Authentication](/docs/identityrecovery/3.1/configuration/configuremfa.md).
+Any user can set up multi-factor authentication for their own account from the profile menu. This doesn't require access to the Configuration interface. See the [Configure Multi-Factor Authentication](/docs/identityrecovery/3.1/configuration/configuremfa.md) topic for additional information.

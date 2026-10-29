@@ -138,7 +138,7 @@ to finish the wizard.
 **Step 15 –** The system has saved the Server backup configuration. Click **OK**.
 
 The domain controller will now be backed up according to the configured schedule. To start a
-backup on demand, use the **Start Backup** command for the domain controller.
+backup on demand, click the **Start Backup** icon in the Actions column for the domain controller.
 
 ## Backup Files
 
