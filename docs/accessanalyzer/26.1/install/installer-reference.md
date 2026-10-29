@@ -27,8 +27,8 @@ Each form does one job.
 | `dspm-installer` | Runs the preflight checks, collects the settings it still needs, sets up the Kubernetes platform, and deploys the services. | Install on a new server. See [Run the installer](run-the-installer.md). |
 | `wait-for-apps` | Waits until every service is Synced and Healthy. It changes nothing. | Resume the wait after an install or upgrade stops on a timeout. See [The `wait-for-apps` command](#the-wait-for-apps-command). |
 | `upgrade --bundle-dir <path>` | Upgrades from offline media you downloaded. | Upgrade an air-gapped install, or any install from media you copied to the server. |
-| `upgrade --download` | Downloads the release's media from Netwrix, then upgrades from it. | Upgrade a connected install. |
-| `upgrade --download --migrate` | Downloads the media and moves a registry install onto it, so later upgrades work like any connected install. You can't undo it. | Convert a registry install. See [Convert or connect an install](convert-or-connect-an-install.md#convert-a-registry-install). |
+| `upgrade --download` | Downloads the release's media from Netwrix, then upgrades from it. On a registry install, it also moves the install onto the media. | Upgrade a connected install, or convert a registry install. |
+| `upgrade --download --migrate` | Does what `upgrade --download` does on a registry install: downloads the media and moves the install onto it, so later upgrades work like any connected install. You can't undo it. | Ask for the conversion explicitly. See [Convert or connect an install](convert-or-connect-an-install.md#convert-a-registry-install). |
 | `upgrade --connect` | Stores the license key and switches an air-gapped install to download its upgrades. It deploys nothing and keeps the installed release. You can't undo it. | Connect an air-gapped install that now has internet access. See [Convert or connect an install](convert-or-connect-an-install.md#connect-an-air-gapped-install). |
 | `install-agent` | Joins this host to an existing install as an agent node, using the registration bundle from the **Add agent** panel. | Add an agent on a separate Linux host. See [The `install-agent` command](#the-install-agent-command). |
 | `update-cert` | Saves a snapshot of the current certificate, installs a new one, restarts the workloads that trust it, and verifies the result. | Replace a certificate that's expiring or that pods don't trust. See [The `update-cert` command](#the-update-cert-command). |
@@ -325,9 +325,9 @@ Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a 
 
 | Form | Use it to |
 |---|---|
-| `upgrade --download` | Download the release's media from Netwrix and upgrade a connected install. |
+| `upgrade --download` | Download the release's media from Netwrix and upgrade a connected install. On a registry install, it also converts the install onto the media. |
 | `upgrade --bundle-dir <path>` | Upgrade from media you downloaded, such as on an air-gapped install. |
-| `upgrade --download --migrate` | Convert a registry install onto downloaded media. |
+| `upgrade --download --migrate` | Convert a registry install onto downloaded media. `upgrade --download` does the same on a registry install. |
 | `upgrade --connect` | Connect an air-gapped install so it can download upgrades. |
 
 Pass exactly one of `--bundle-dir` or `--download`, except for `--connect`. A bare `upgrade` exits with code `16`.
@@ -349,7 +349,7 @@ Each form works on only some installs. On an air-gapped cluster, `--download` re
 
 Run it with the `dspm-installer` binary from the release you're upgrading to. It doesn't run the prompts, preflight checks, or platform setup. It upgrades the Access Analyzer services and ArgoCD but not the k3s platform or the offline package manager. If the media targets a different version of either, it prints a warning that names both versions and continues with the installed ones.
 
-Before it changes anything, it checks that the kubeconfig reaches a cluster with a `netwrix` application installed from offline media, that automated sync is on for that application, and that the release is newer than the installed one. A registry install needs `--migrate` first, or `dspmctl` as [Upgrade to a New Version](upgrade-to-a-new-version.md) describes.
+Before it changes anything, it checks that the kubeconfig reaches a cluster with a `netwrix` application installed from offline media, that automated sync is on for that application, and that the release is newer than the installed one. On a registry install, `--download` converts the install onto the media as part of the upgrade, and `--migrate` isn't needed. You can also upgrade with `dspmctl`, as [Upgrade to a New Version](upgrade-to-a-new-version.md) describes.
 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
@@ -357,7 +357,7 @@ Before it changes anything, it checks that the kubeconfig reaches a cluster with
 | `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the offline media of the release to upgrade to: the `.tar.gz` archive or an extracted directory. |
 | `--target-revision` | `TARGET_REVISION`* | newest stable | Release to upgrade to. Needs `--download`. |
 | `--license-key` | `LICENSE_KEY` | the saved key | License key. Needs `--download`. |
-| `--migrate` | `DSPM_UPGRADE_MODE=migrate` | `false` | Convert a registry install onto downloaded media. Needs `--download`. |
+| `--migrate` | `DSPM_UPGRADE_MODE=migrate` | `false` | Convert a registry install onto downloaded media. Needs `--download`. `--download` already implies it on a registry install. |
 | `--connect` | none | `false` | Connect an air-gapped install. Takes only the license key, `--dry-run`, `--kubeconfig`, and `--timeout`. |
 | `--in-cluster` | `DSPM_IN_CLUSTER` | `false` | Run as the in-cluster upgrade Job. The app uses this flag. Don't run it on the host. |
 | `--tmp-dir` | `DSPM_TMP_DIR`* | none | Where to keep the media. |
