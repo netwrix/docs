@@ -32,7 +32,7 @@ You pick a size when you install. The size sets the CPU and RAM the installer re
 | large | 24 | 96 GB | 3,000 GB | Up to about 800 million objects and 25,000 to 100,000 identities. |
 | enterprise | 32 | 128 GB | 8,000 GB | Up to about 3 billion objects and more than 100,000 identities. |
 
-CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine provisioned at exactly the stated figure passes even though the guest sees slightly less.
+CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine you provision at exactly the stated figure passes even though the guest sees slightly less.
 
 Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size supports. The 40 GB floor is different: below that, the preflight check fails.
 
@@ -111,6 +111,7 @@ Open these ports on the server's firewall.
 | 80 | TCP | Users' browsers | Redirects HTTP requests to HTTPS. |
 | 4504 | TCP | Netwrix Activity Monitor | Receives activity data. Open it only if you use [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md). |
 | 6443 | TCP | Agent hosts | Lets [agents](../configuration/agents/index.md) join and connect back to the server. Open it only to the hosts you deploy agents on. [Deploy an agent](../configuration/agents/deploy-agent.md#prepare-the-host) lists the other ports an agent host needs. |
+| 30000–32767 | TCP | External query tools | Direct access to the analytics store through two ports in this range, which you choose or Kubernetes assigns when you [open the analytics store's ports](../integrations/external-clickhouse-access.md). Needed only if you use this feature. The server's firewall can't restrict these ports, so restrict them with a network firewall or security group. |
 
 ### Outbound
 
