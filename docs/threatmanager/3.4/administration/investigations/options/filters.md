@@ -17,7 +17,7 @@ The section has the following options for configuring a filter statement:
 
 - Source – This menu provides a list of all integrations with the application. If there is only one
   data source configured, the Source menudisplays that only. See the
-  [Netwrix Integrations Page](/docs/threatmanager/3.4/administration/configuration/integrations/netwrixintegrations.md) topic for
+  [Netwrix Integrations Page](/docs/threatmanager/3.4/integrations/netwrixintegrations.md) topic for
   additional information.
 - Timeframe – This menu provides several timeframe options as well as a clock and a calendar for
   setting a custom range. You must set the timeframe for the data to be returned in the report. If
@@ -182,7 +182,7 @@ attribute:
 
     - Policy – The set of rules or configurations applied within the integration., which may require
       Netwrix Threat Preventiondatabase access to be configured on the NetwrixIntegrations page. See
-      the [Netwrix Integrations Page](/docs/threatmanager/3.4/administration/configuration/integrations/netwrixintegrations.md) page
+      the [Netwrix Integrations Page](/docs/threatmanager/3.4/integrations/netwrixintegrations.md) page
       for additional information
 
 ## Filter Operator Menu

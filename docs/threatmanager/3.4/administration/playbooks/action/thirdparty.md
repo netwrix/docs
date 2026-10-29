@@ -78,7 +78,7 @@ This action uses RADIUS profiles to authenticate user activity.
 ## Send Syslog
 
 This action sends a Syslog message to a server. This action uses the current SIEM settings,
-specified on the [Integrations Interface](/docs/threatmanager/3.4/administration/configuration/integrations/overview.md), to send the
+specified on the [Integrations Interface](/docs/threatmanager/3.4/configuration/integrations/overview.md), to send the
 threat information via Syslog.
 
 ![sendsyslog](/images/threatmanager/3.0/administration/playbooks/action/sendsyslog.webp)

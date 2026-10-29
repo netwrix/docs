@@ -27,7 +27,7 @@ Manages an Entra ID group's membership by adding or removing an object from a gr
     - Remove – Remove the user from the specified group
 - Credential – Select a credential profile that contains valid Entra ID credentials. Credential
   profiles are configured on the
-  [Integrations Interface](/docs/threatmanager/3.4/administration/configuration/integrations/overview.md). If not specified, the
+  [Integrations Interface](/docs/threatmanager/3.4/configuration/integrations/overview.md). If not specified, the
   action will be run as the credentials of the Action Service.
 
 ## Flag Entra ID User as Confirmed Compromised
@@ -46,7 +46,7 @@ Flag a user as confirmed compromised within your Entra ID tenant.
 
 - Credential – Select a credential profile that will mark the user as confirmed compromised.
   Credential profiles are configured on the
-  [Integrations Interface](/docs/threatmanager/3.4/administration/configuration/integrations/overview.md). If not specified, the
+  [Integrations Interface](/docs/threatmanager/3.4/configuration/integrations/overview.md). If not specified, the
   action will be run as the credentials of the Action Service.
 
 ## Disable Entra ID User
@@ -63,7 +63,7 @@ This actions disables a user in your Entra ID tenant.
       affected by the threat
 
 - Credential – Select a credential profile that will execute this action. Credential profiles are
-  configured on the [Integrations Interface](/docs/threatmanager/3.4/administration/configuration/integrations/overview.md). If not
+  configured on the [Integrations Interface](/docs/threatmanager/3.4/configuration/integrations/overview.md). If not
   specified, the action will be run as the credentials of the Action Service.
 
 ## Reset Entra ID Password
@@ -84,5 +84,5 @@ user's password to a random group of letters, numbers, and special characters.
       affected by the threat
 
 - Credential – Select a credential profile that will execute this action. Credential profiles are
-  configured on the [Integrations Interface](/docs/threatmanager/3.4/administration/configuration/integrations/overview.md). If not
+  configured on the [Integrations Interface](/docs/threatmanager/3.4/configuration/integrations/overview.md). If not
   specified, the action will be run as the credentials of the Action Service.
