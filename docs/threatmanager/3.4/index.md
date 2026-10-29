@@ -1,10 +1,10 @@
 ---
-title: "Netwrix Threat Manager v3.3 Documentation"
-description: "Netwrix Threat Manager v3.3"
+title: "Netwrix Threat Manager v3.4 Documentation"
+description: "Netwrix Threat Manager v3.4"
 sidebar_position: 1
 ---
 
-# Netwrix Threat Manager v3.3 Documentation
+# Netwrix Threat Manager v3.4 Documentation
 
 Threat Manager detects and responds to abnormal behavior and advanced attacks against Active
 Directory and File Systems with unprecedented accuracy and speed. Threat Manager provides
