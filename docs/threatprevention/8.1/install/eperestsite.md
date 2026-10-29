@@ -9,7 +9,7 @@ sidebar_position: 70
 The EPE Rest Site is an optional web server that third parties can use to integrate with the Threat
 Prevention Enterprise Password Enforcer (EPE) solution. It allows third-party applications to submit
 a candidate password to check whether it complies with the current EPE rules defined on the
-[EPE Settings Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md).
+[EPE Settings Window](/docs/threatprevention/8.1/configuration/epesettings.md).
 
 :::note
 This interface doesn't change the password; it only validates it against the EPE rules.
@@ -33,8 +33,8 @@ applications that have to use the REST API.
 
 ![Threat Prevention Server Setup wizard - End-User License Agreement page](/images/threatprevention/8.1/install/licenseagreement.webp)
 
-**Step 3 –** On the End-User License Agreement page, select the **I accept the terms in the License
-Agreement** checkbox and click **Next**.
+**Step 3 –** On the End-User License Agreement page, select the
+**I accept the terms in the License Agreement** checkbox and click **Next**.
 
 ![Threat Prevention Server Setup wizard - Custom Setup page](/images/threatprevention/8.1/install/customsetup.webp)
 
@@ -158,4 +158,4 @@ EPE Rest Site components have been installed. You will notice that:
   physical machine
 - It has created the "EPE_REST" site in IIS
 
-See the [EPE Rest Site](/docs/threatprevention/8.1/eperestsite/overview.md) topic for additional information.
+See the [EPE Rest Site](/docs/threatprevention/8.1/integrations/eperestsite/overview.md) topic for additional information.

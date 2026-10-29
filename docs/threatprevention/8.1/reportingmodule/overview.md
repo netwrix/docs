@@ -17,7 +17,7 @@ Threat Manager Reporting Module, configure the integration, and grant access to 
 following topics:
 
 - [Reporting Module Server Requirements](/docs/threatprevention/8.1/requirements/reportingserver.md)
-- [Set Up the Threat Manager Reporting Module](/docs/threatprevention/8.1/gettingstarted.md#set-up-the-threat-manager-reporting-module)
+- [Set Up the Threat Manager Reporting Module](/docs/threatprevention/8.1/gettingstarted/gettingstarted.md#set-up-the-threat-manager-reporting-module)
 - [Reporting Module Installation](/docs/threatprevention/8.1/install/reportingmodule/overview.md)
 - [Configuration Menu ](/docs/threatprevention/8.1/reportingmodule/configuration/overview.md)
 - [Investigations Interface](/docs/threatprevention/8.1/reportingmodule/investigations/overview.md)

@@ -11,6 +11,7 @@ import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionTo
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
 import { threatManager33Redirects } from './src/config/redirects/threatmanager-3.3.js';
 import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects } from './src/config/redirects/privilegesecurediscovery.js';
+import { threatPrevention81Redirects } from './src/config/redirects/threatprevention-8.1.js';
 import { directoryManager110Redirects } from './src/config/redirects/directorymanager-11.0.js';
 import { privilegeSecure42Redirects } from './src/config/redirects/privilegesecure-4.2.js';
 import { isIndexableSite } from './src/config/indexing.js';
@@ -213,6 +214,7 @@ const config = {
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
           ...(activeProductIds.includes('threatmanager') ? threatManager33Redirects : []),
           ...(activeProductIds.includes('privilegesecurediscovery') ? privilegeSecureDiscoveryRedirects : []),
+          ...(activeProductIds.includes('threatprevention') ? threatPrevention81Redirects : []),
           ...(activeProductIds.includes('directorymanager') ? directoryManager110Redirects : []),
           ...(activeProductIds.includes('privilegesecure') ? privilegeSecure42Redirects : []),
           ...(activeProductIds.includes('identityrecovery') ? identityRecovery31Redirects : []),
