@@ -139,7 +139,7 @@ Some features add outbound connections of their own after you configure them.
 | Domain controllers | TCP 389 | You scan an Active Directory source. The connection uses LDAP (default port). |
 | File servers | TCP 445 | You scan an SMB file server source (default port). |
 
-The rows for sources apply to every host that runs the scan: the server, and any agent that the scan or a source override routes it to with a label. [Agent labels and scan routing](../agents/agent-labels.md) explains how a scan picks its agent. **Test connection** always runs on the server, so the server needs these hosts too. A passing test shows only that the server can reach the source.
+The rows for sources apply to every host that runs the scan: the server, and any agent that the scan or a source override routes it to with a label. [Agent labels and scan routing](../configuration/agents/agent-labels.md) explains how a scan picks its agent. **Test connection** always runs on the server, so the server needs these hosts too. A passing test shows only that the server can reach the source.
 
 The `login.microsoftonline.com`, `graph.microsoft.com`, and `*.sharepoint.com` hosts are for the commercial Microsoft 365 cloud. Azure Government (GCC) tenants use the same hosts. Each Entra ID and SharePoint Online source picks its hosts from its **Azure cloud** setting. If you set **Azure cloud** to another cloud, allow that cloud's hosts on TCP 443 instead:
 

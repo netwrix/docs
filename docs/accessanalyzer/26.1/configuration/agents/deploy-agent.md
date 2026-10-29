@@ -90,7 +90,7 @@ The host needs TCP 443 to these hosts:
 </TabItem>
 </Tabs>
 
-Scans add outbound connections of their own, in every install mode. A scan that runs on the agent connects from the agent host to the systems it scans, so the host needs the same access to them that the server does. For example, an agent that scans SharePoint Online needs TCP 443 to `login.microsoftonline.com`, `graph.microsoft.com`, and `*.sharepoint.com`. [Requirements](../install/requirements.md#outbound) lists the hosts and ports for each source type. **Test connection** always runs on the server, so a passing test doesn't show that the agent host can reach the source.
+Scans add outbound connections of their own, in every install mode. A scan that runs on the agent connects from the agent host to the systems it scans, so the host needs the same access to them that the server does. For example, an agent that scans SharePoint Online needs TCP 443 to `login.microsoftonline.com`, `graph.microsoft.com`, and `*.sharepoint.com`. [Requirements](../../requirements/index.md#outbound) lists the hosts and ports for each source type. **Test connection** always runs on the server, so a passing test doesn't show that the agent host can reach the source.
 
 ## Generate the Command
 
