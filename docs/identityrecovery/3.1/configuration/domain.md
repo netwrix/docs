@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Domains Page
 
-The Domains page provides a list of the domains backed up by Identity Recovery. It
+The Domains page lists the domains backed up by Identity Recovery. It
 displays the backup schedule settings for each added domain. You can also add and configure new
 domains.
 
