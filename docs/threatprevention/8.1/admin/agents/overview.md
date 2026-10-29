@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Agents Interface
 
-Use the Agents interface to view, deploy, and manage Agents from a centralized
-location to the targeted domain controllers in a domain. You must deploy the Agent on all domain
+Use the Agents interface to deploy Agents to the targeted domain controllers in a domain, and to
+view and manage them from a centralized location. You must deploy the Agent on all domain
 controllers that you want to receive event data for. After you deploy one or more Agents to a
 domain, it becomes known as a targeted domain.
 
