@@ -1,7 +1,7 @@
 ---
 title: "Use Cases"
 description: "Use Cases"
-sidebar_position: 3
+sidebar_position: 20
 ---
 
 # Use Cases
@@ -64,7 +64,7 @@ Identity Recovery Console:
 Group Policy Objects (GPOs) control many aspects of operations, security, and software deployment.
 Identity Recovery can rollback GPOs to any state captured within a backup. For this,
 you must install Group Policy Management Console on the Identity Recovery server. See
-Steps 9 and 10 in the [Add a Domain](/docs/identityrecovery/3.1/admin/configuration/domain.md#add-a-domain) topic for
+Steps 9 and 10 in the [Add a Domain](/docs/identityrecovery/3.1/configuration/domain.md#add-a-domain) topic for
 additional information. An example of when a GPO change may need to be rolled back is:
 
 - A GPO change caused users to lose access to a server or application
@@ -83,8 +83,7 @@ Identity Recovery can backup domain controllers to prevent data loss. The
 controllers in the sequence you want. Some examples of when a server may need to be backed up or
 restored are:
 
-- Create a duplicate of a domain controller, for example, create a duplicate in a lab
-  environment for testing purposes
+- Create a duplicate of a domain controller, for example in a lab environment for testing
 - Restore a domain controller to a specific state-in-time image
 - Restore lost or deleted data
 

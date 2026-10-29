@@ -12,12 +12,12 @@ The Forest page allows administrators to:
 - Carry out a forest recovery
 
 >
-> You must add a forest first. See the [Add a Forest](/docs/identityrecovery/3.1/admin/configuration/forest.md) topic for additional
+> You must add a forest first. See the [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) topic for additional
 > information.
 
 You can view the domain controllers in the forest and verify whether backups are
-enabled for the domain controllers. You can also view the forest tree,
-which represents the structure of the forest and its domains.
+enabled for the domain controllers. You can also view the forest tree, which
+shows the structure of the forest and its domains.
 
 Click **Forest** in the left pane to open the Forest page.
 
@@ -31,14 +31,14 @@ backup times.
 Expand a forest to view the domains under it. When you select a domain, the adjacent pane displays
 the domain controllers in that domain.
 
-The following information is displayed for a domain controller:
+The adjacent pane displays the following information for a domain controller:
 
 - Name – Name of the domain controller
 - Operating System – Operating system for the domain controller, for example, Windows Server 2019
   Standard
 - Agent Version – Version of the operating system
 - Backup – Use the toggle button to enable or disable the backup for the domain controller. By
-  default, it is disabled. When you enable it, the Server backup Configuration wizard is displayed.
+  default, it is disabled. When you enable it, the Server Backup Configuration wizard opens.
   See the
   [Add Backup Configurations for a Domain Controller](#add-backup-configurations-for-a-domain-controller)
   topic to configure backup settings for the domain controller.
@@ -76,16 +76,16 @@ Configuration wizard.
 
 ![Server Backup Configuration wizard - Server page](/images/identityrecovery/3.1/product/forest/backup/forest_backup_page1.png)
 
-**Step 2 –** In the Server field, the domain controller to be backed up is displayed as read-only in
-the following format: server.domain.com.
+**Step 2 –** The read-only Server field displays the domain controller to back up, in the
+following format: server.domain.com.
 
 **Step 3 –** Specify an account to validate the server, install the Netwrix Server Backup
 Configuration agent there, and perform server backups. This account must have read and write access
 to a shared network location for storing the backups. (You will specify this network share location
 on the Options page of this wizard.)
 
-- In the Account field, enter the username of an account to write the backup data of the domain
-  controller to the network share of the destination server in the following format: domain\account.
+- In the Account field, enter the account that writes the domain controller backup data to the
+  destination server's network share, in the format domain\account.
 - Enter the password for the account in the Password field.
 
 :::note
@@ -119,8 +119,8 @@ backup. Doing so will prevent the system from restoring the domain using the pla
 
 ![Server Backup Configuration wizard - Options page](/images/identityrecovery/3.1/product/forest/backup/forest_backup_page4.png)
 
-**Step 11 –** The file can be encrypted by selecting the **Encrypt the generated backup data**
-checkbox and entering a password.
+**Step 11 –** To encrypt the file, select the **Encrypt the generated backup data** checkbox and
+enter a password.
 
 **Step 12 –** By default, backups are compressed. Clear the Compress the generated backup data
 checkbox to uncompress the generated backup file.
@@ -137,14 +137,14 @@ to finish the wizard.
 
 **Step 15 –** The system has saved the Server backup configuration. Click **OK**.
 
-The domain controller will now be backed up according to the configured schedule. A backup can also
-be initiated on demand from the Recovery Console.
+The domain controller will now be backed up according to the configured schedule. To start a
+backup on demand, click the **Start Backup** icon in the Actions column for the domain controller.
 
 ## Backup Files
 
 The backup of a domain controller is stored on a network share in the environment and includes all
-essential data from the domain controller, ensuring that the entire forest can be restored in the
-event of a disaster. The backup includes:
+essential data from the domain controller. With this data, you can restore the entire forest after a
+disaster. The backup includes:
 
 - The Active Directory database (ntds.dit)
 - Log files
@@ -164,7 +164,7 @@ adjacent pane displays the domain controllers in that domain.
 When you disable the backup for a domain controller, the system discards all previously saved backup configurations.
 However, any older backups remain.
 
-To re-enable the backup for a domain controller, you have to perform all steps of the Server Backup
+To re-enable the backup for a domain controller, complete all steps of the Server Backup
 Configuration wizard again.
 
 ## Domain Controller Backup History

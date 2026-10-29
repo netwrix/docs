@@ -1,14 +1,13 @@
 ---
 title: "Getting Started"
 description: "Getting Started"
-sidebar_position: 4
+sidebar_position: 10
 ---
 
 # Getting Started
 
-This topic provides information on installing and configuring Netwrix Identity Recovery,
-which enables organizations to quickly roll back and recover unintended directory
-changes.
+This topic explains how to install and configure Netwrix Identity Recovery. Identity Recovery
+rolls back and recovers unintended directory changes.
 
 ## Installation Requirements
 
@@ -32,20 +31,20 @@ account that was configured during installation. See the [First Launch](/docs/id
 
 Several Identity Recovery components require configuration after the first launch of the product.
 
-- Configure Domain Backup – Configure a domain and backup settings. It is recommended to start a backup of the domain after
-  configuring it. See the [Domains Page](/docs/identityrecovery/3.1/admin/configuration/domain.md) topic for additional information on configuring a domain to backup.
-- Configure Forest Backup – Configure a forest and then configure backup settings for domain
-  controllers in the forest. It is recommended a start a backup of the domain controllers after
+- Configure Domain Backup – Configure a domain and backup settings. Netwrix recommends starting a backup of the domain after
+  configuring it. See the [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) topic for additional information on configuring a domain to backup.
+- Configure Forest Backup – Add a forest (see the [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) topic), and then configure backup settings for domain
+  controllers in the forest. Netwrix recommends starting a backup of the domain controllers after
   configuring backup settings. See the [Forest Page](/docs/identityrecovery/3.1/admin/forest/forest.md) topic for additional information on configuring a domain controller backup.
 - _(Optional)_ Install RSAT Extension on Additional Servers – The `RSAT Extension.msi` is
   automatically installed with the Identity Recovery application on the application
-  server. The extension can also be installed on other servers where ADUC is installed. See the
+  server. You can also install the extension on other servers where Active Directory Users and Computers (ADUC) is installed. See the
   [Install the RSAT Extension](/docs/identityrecovery/3.1/install/installation.md) topic for additional information.
 - Configure Additional Users – The user or group configured during installation of the product has
-  administrator access to the Recovery Console. Additional users and groups can be added and
-  assigned roles. See the [Users and Roles Page](/docs/identityrecovery/3.1/admin/configuration/roles.md) topic for additional information.
-- _(Optional)_ Configure Notifications – Email notifications require configuration before they can
-  be enabled. See the [Notifications Page](/docs/identityrecovery/3.1/admin/configuration/notifications.md) topic for additional information on configuring email notifications.
+  administrator access to the Recovery Console. You can add other users and groups and
+  assign them roles. See the [Users and Roles Page](/docs/identityrecovery/3.1/configuration/roles.md) topic for additional information.
+- _(Optional)_ Configure Notifications – Configure the email settings on the Notifications page
+  before you turn on notifications for a domain or tenant backup job. See the [Notifications Page](/docs/identityrecovery/3.1/configuration/notifications.md) topic for additional information on configuring email notifications.
 
 ## Rollback and Restore Operations
 

@@ -22,10 +22,11 @@ The table displays the following information:
     - Administrator – This role allows full control of Identity Recovery, including
       adding domains, configuring notifications, and adding and removing users. It has access to the
       Configuration node in the left navigation pane of the application.
-    - Operator – This role allows access to the Active Directory and Forest nodes, and can perform
-      rollback and recovery tasks for domains and forests through the Recovery Console.
+    - Operator – This role allows access to the Active Directory, Entra ID, Okta, Forest, and Utilities nodes. The
+      account can roll back and recover objects in domains, Entra ID tenants, and Okta tenants, and recover
+      forests through the Recovery Console.
 
-- Action – Actions that can be performed on user accounts
+- Action – Actions you can perform on user accounts
 
     - Remove – Click **Remove** to remove the respective user or group from console access. See the
       Remove a User or Group topic for additional information.
@@ -54,8 +55,9 @@ menu.
 - Administrator – This role allows full control of Identity Recovery, including adding
   domains, configuring notifications, and adding and removing users. It has access to the
   Configuration node in the left navigation pane of the application.
-- Operator – This role allows access to the Active Directory and Forest nodes, and can perform
-  rollback and recovery tasks for domains and forests through the Recovery Console.
+- Operator – This role allows access to the Active Directory, Entra ID, Okta, Forest, and Utilities nodes. The
+  account can roll back and recover objects in domains, Entra ID tenants, and Okta tenants, and recover
+  forests through the Recovery Console.
 
 **Step 5 –** Click **Next**.
 

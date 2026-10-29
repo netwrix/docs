@@ -6,7 +6,7 @@ sidebar_position: 12
 
 # Azure Storage Page
 
-The Azure Storage page displays the Azure storage containers configured for domain controller backup usage with Identity Recovery.
+The Azure Storage page displays the Azure storage containers configured for domain controller backups with Identity Recovery.
 
 Click **Configuration** in the left pane. Then click the **Azure Storage tab** on the Configuration page to open the Azure Storage page.
 

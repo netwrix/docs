@@ -11,14 +11,14 @@ Bin in Active Directory Users and Computers (ADUC).
 
 ## Prerequisites
 
-The following prerequisites must be met before you can rollback or recover an object using ADUC:
+Before you can rollback or recover an object using ADUC, you must meet the following prerequisites:
 
 - You must register the RSAT Extension on the Recovery Application Server to add the Rollback and
   Restore options to the ADUC console. See the
   [Register/Unregister the RSAT Extension](/docs/identityrecovery/3.1/install/configurationutility.md#registerunregister-the-rsat-extension)
   topic for additional information.
 - At least one backup of the domain must be available in the Identity Recovery Console.
-  See the [Domains Page](/docs/identityrecovery/3.1/admin/configuration/domain.md) topic for additional information.
+  See the [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) topic for additional information.
 
 ## Restore an Object Using ADUC
 
@@ -26,13 +26,12 @@ The following prerequisites must be met before you can rollback or recover an ob
 
 ![ADUC with the Restore option selected](/images/identityrecovery/3.1/rsatextension/aducrestore.webp)
 
-**Step 2 –** In the Recycle Bin, right-click the object to be restored and select **Restore** on
+**Step 2 –** In the Recycle Bin, right-click the object to restore and select **Restore** on
 the menu. The Object Recovery wizard opens.
 
 ![Object Recovery Wizard - Object Backups page](/images/identityrecovery/3.1/rsatextension/objectbackups_1.webp)
 
-**Step 3 –** On the Object Backups page, select the date timestamp you want to identify the backup
-for recovery. Multiple backups may be available for a single day depending on the configured
+**Step 3 –** On the Object Backups page, select the timestamp of the backup to use for recovery. Multiple backups may be available for a single day depending on the configured
 schedule. Click **Next** to continue.
 
 ![Object Recovery Wizard - Recovery Options page](/images/identityrecovery/3.1/rsatextension/recoveryoptions.webp)
@@ -53,8 +52,8 @@ recovery process.
     the entire sub-tree option enables the User Options page.
     :::
 
-- Naming Conflict – A naming conflict can occur if an object was created post-deletion that has
-  identical values to the original object. From the dropdown menu, select an option to implement if
+- Naming Conflict – A naming conflict can occur if an object with values identical to the original
+  object was created after the deletion. From the dropdown menu, select an option to implement if
   a naming conflict occurs:
 
     - Skip the object – If there is a conflict with naming, don't restore and skip the object
@@ -69,8 +68,7 @@ Click **Next**.
 object is included as a child object being restored. Consider the
 following configurations in ADUC before choosing the options for deleted user objects:
 
-- Passwords aren't persisted – User account is disabled and will have no password, and be disabled
-  after restoration
+- Passwords aren't persisted – User account has no password and is disabled after restoration
 - Passwords are persisted – User password is restored and ADUC automatically sets the _User must
   change password at next logon_ flag
 
@@ -83,8 +81,8 @@ Select the checkboxes you want relating to the state of a user password upon res
 - Set new password – Implement a new password upon recovery. Enter the new password in the text box.
 
     :::tip
-        Remember, when a new password is created, the user needs it to login the first time. The
-    password should be copied and given to the restored user.
+    When you create a new password, the user needs it to log in the first time. Copy the
+    password and give it to the restored user.
     :::
 
 
@@ -116,7 +114,7 @@ domain tree area where the object resides. On the Alternate Credentials page:
   privileges, then click **Next**.
 
 For a Least Privilege Access Model to provision an Active Directory security group with the
-permissions that are necessary to perform backups, rollbacks, and recovery, see the
+permissions necessary to perform backups, rollbacks, and recovery, see the
 [Least Privilege Access Model](/docs/identityrecovery/3.1/requirements/targetdomain.md#least-privilege-access-model) topic.
 
 ![Object Recovery Wizard - Confirm page](/images/identityrecovery/3.1/rsatextension/confirm_1.webp)
