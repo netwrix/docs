@@ -11,12 +11,12 @@ import TabItem from '@theme/TabItem';
 
 The import validates every row before it creates anything, imports the rows that pass, and hands you a report of the rows it skipped so you can fix them and import the report.
 
-The import also accepts a host list exported from Access Analyzer 11 or 12 and works out each host's source type for you; see [Import an Access Analyzer 11 or 12 host list](#import-an-access-analyzer-11-or-12-host-list).
+The import also accepts a host list exported from Access Analyzer 11 or 12 and determines each host's source type; see [Import an Access Analyzer 11 or 12 host list](#import-an-access-analyzer-11-or-12-host-list).
 
 ## Before You Start
 
 - Create the [service accounts](../service-accounts/index.md) the sources need. The import skips any row that names a service account that doesn't exist.
-- Check the connection requirements for each type on its page: [SMB file servers](smb-file-servers.md) (the **File Server** source type), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [Microsoft 365](microsoft-365.md) (the **SharePoint Online** source type). The import doesn't test connections; it only creates the sources.
+- Check the connection requirements for each type on its page: [SMB file servers](smb-file-servers.md) (the **File Server** source type), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [SharePoint Online](microsoft-365.md). The import doesn't test connections; it only creates the sources.
 - Keep the file to 5 MB and 5,000 data rows at most. Split larger inventories into several files.
 
 Users with the Viewer role don't see the **Import CSV** button.
@@ -129,7 +129,7 @@ Contoso SharePoint,sharepoint,,spo-app,env=production,contoso.sharepoint.com,,,,
 
 ## Import an Access Analyzer 11 or 12 Host List
 
-**Import CSV** also accepts a host list exported from Access Analyzer 11 or 12, so you can bring an existing host inventory across without rewriting it as a template. Both versions use the same layout. The host list has no `type` column, so the import works out each host's source type from the data, and the preview lets you correct the type, host, and domain of each row before you import.
+**Import CSV** also accepts a host list exported from Access Analyzer 11 or 12, so you can reuse an existing host inventory without rewriting it as a template. Both versions use the same layout. The host list has no `type` column, so the import determines each host's source type from the data, and the preview lets you correct the type, host, and domain of each row before you import.
 
 ### How the Import Reads a Host List
 

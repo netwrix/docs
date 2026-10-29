@@ -86,7 +86,7 @@ the proper permissions required to complete successfully.
 :::note
 If an Action Step has been configured to use a specific Credential Profile, the Action
 Step will use those credentials in the Action Step Script. See the
-[Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md) topic
+[Credential Profile Page](/docs/threatmanager/3.3/configuration/integrations/credentialprofile.md) topic
 for additional information.
 :::
 

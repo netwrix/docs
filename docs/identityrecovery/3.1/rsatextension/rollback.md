@@ -11,14 +11,14 @@ an Active Directory object to a previous state of a Identity Recovery backup.
 
 ## Prerequisites
 
-The following prerequisites must be met before you can rollback or recover an object using ADUC:
+Before you can rollback or recover an object using ADUC, you must meet the following prerequisites:
 
 - You must register the RSAT Extension on the Recovery Application Server to add the Rollback and
   Restore options to the ADUC console. See the
   [Register/Unregister the RSAT Extension](/docs/identityrecovery/3.1/install/configurationutility.md#registerunregister-the-rsat-extension)
   topic for additional information.
 - At least one backup of the domain must be available in the Identity Recovery Console.
-  See the [Domains Page](/docs/identityrecovery/3.1/admin/configuration/domain.md) topic for additional information.
+  See the [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) topic for additional information.
 
 ## Rollback an Object Using ADUC
 
@@ -41,15 +41,15 @@ attributes to rollback. This page consists of two sections:
 - Objects – Lists the objects selected for rollback
 - Backups – Lists the backups with their respective details
 
-    - Backup Date – Select the date timestamp you want to identify the backup for rollback. Multiple
+    - Backup Date – Select the timestamp of the backup to use for the rollback. Multiple
       backups may be available for a single day depending on the configured schedule.
-    - Attribute List – Select the attributes to rollback. The table displays the current value and
-      backup value. Attributes where these two values are different are highlighted in blue.
+    - Attribute List – Select the attributes to roll back. The table shows the current value and
+      backup value, and highlights in blue any attribute where the two values differ.
     - Only show attributes that have changed – Select this option to display only blue highlighted
       attributes that were changed when the selected backup was performed
 
 You can click different backup dates to see attribute values for each of those points in time.
-However, only one backup date can be selected to select attributes for rollback.
+However, you can select attributes for rollback from only one backup date.
 
 Click **Next**.
 
@@ -79,7 +79,7 @@ domain tree area where the object resides. On the Alternate Credentials page:
   privileges, then click **Next**.
 
 For a Least Privilege Access Model to provision an Active Directory security group with the
-permissions that are necessary to perform backups, rollbacks, and recovery, see the
+permissions necessary to perform backups, rollbacks, and recovery, see the
 [Least Privilege Access Model](/docs/identityrecovery/3.1/requirements/targetdomain.md#least-privilege-access-model) topic.
 
 ![Object Rollback wizard - Confirm Page](/images/identityrecovery/3.1/rsatextension/confirm.webp)

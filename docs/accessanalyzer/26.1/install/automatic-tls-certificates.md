@@ -10,7 +10,7 @@ Three automatic modes are available:
 
 | Mode | Certificate comes from | Best for |
 |---|---|---|
-| `acme` | Let's Encrypt (default) or any ACME-compatible certificate authority | Servers reachable from the internet, or organizations running a private ACME CA |
+| `acme` | Let's Encrypt (default) or any certificate authority that supports Automatic Certificate Management Environment (ACME) | Servers reachable from the internet, or organizations running a private ACME CA |
 | `adcs` | Your Active Directory Certificate Services CA | Enterprises with an existing Microsoft public key infrastructure (PKI) |
 | `selfsigned` | An internal CA the cluster creates and manages itself | Demos, labs, and isolated environments |
 
@@ -22,7 +22,7 @@ This page covers the `acme` mode. For `adcs`, see [AD CS TLS Certificates](adcs-
 
 The nonprofit Internet Security Research Group operates [Let's Encrypt](https://letsencrypt.org), a free, publicly trusted certificate authority (CA). There are no fees and no account to create ahead of time — you only provide an email address for expiry and incident notices. All mainstream browsers and operating systems trust its certificates, so users see no certificate warnings.
 
-Let's Encrypt issues certificates over Automatic Certificate Management Environment (ACME), an open protocol in which the certificate authority verifies that you control the domain before issuing. Access Analyzer uses the HTTP-01 challenge: the certificate authority connects to `http://<hostname>/.well-known/acme-challenge/<token>` on port 80 and checks for a response only your server could produce. The cluster answers this challenge automatically — you never handle the token.
+Let's Encrypt issues certificates over ACME, an open protocol in which the certificate authority verifies that you control the domain before issuing. Access Analyzer uses the HTTP-01 challenge: the certificate authority connects to `http://<hostname>/.well-known/acme-challenge/<token>` on port 80 and checks for a response only your server could produce. The cluster answers this challenge automatically — you never handle the token.
 
 Certificates are valid for 90 days and Access Analyzer renews them automatically 30 days before expiry, using the same challenge. As long as your DNS record and firewall rules stay in place, no one has to update the certificate again.
 
@@ -66,7 +66,7 @@ Each flag also has an environment variable (`CERT_MANAGER_ISSUER_MODE`, `ACME_EM
 The install proceeds exactly as [Install Access Analyzer](run-the-installer.md) describes. When the services are up, the cluster requests the certificate from Let's Encrypt; issuance typically completes within a minute or two. Browsers connecting during that window see the self-signed bootstrap certificate and show a trust warning — the warning stops when the Let's Encrypt certificate is in place.
 
 :::note
-The installer doesn't save the issuance mode to `/etc/dspm/installer.yaml`. Every installer run uses exactly the `--cert-manager-issuer-mode` you pass it; omitting the flag means manual certificates. Upgrading never changes the mode.
+The installer saves the issuance mode to `/etc/dspm/installer.yaml`. A later run that omits `--cert-manager-issuer-mode` uses the saved mode. Upgrading never changes the mode.
 :::
 
 ## Confirm the certificate
@@ -99,7 +99,9 @@ Fix the cause and the cluster retries automatically — no reinstall needed.
 
 ## Use a private ACME certificate authority
 
-If your organization runs its own ACME-compatible certificate authority (for example smallstep `step-ca`), point `--acme-server` at its directory URL and supply that CA's root chain with `--ca-bundle` so Access Analyzer's own services trust the certificates it issues:
+If your organization runs its own ACME-compatible certificate authority (for example smallstep `step-ca`), point `--acme-server` at its directory URL and supply that CA's root chain with `--ca-bundle` so Access Analyzer's own services trust the certificates it issues.
+
+The bootstrap certificate must also chain to that bundle, so get one for the hostname from the same CA and pass it with `--tls-cert` and `--tls-key`. `--generate-self-signed-cert` doesn't work here: the installer rejects it whenever you supply a CA bundle.
 
 ```bash
 sudo --preserve-env=LICENSE_KEY dspm-installer \
@@ -108,7 +110,8 @@ sudo --preserve-env=LICENSE_KEY dspm-installer \
   --acme-server https://ca.corp.example.com/acme/acme/directory \
   --acme-email pki-admins@corp.example.com \
   --ca-bundle /etc/dspm/corp-root-ca.pem \
-  --generate-self-signed-cert
+  --tls-cert /etc/dspm/tls.crt \
+  --tls-key /etc/dspm/tls.key
 ```
 
 With a private CA the public-DNS requirement relaxes to: the hostname must resolve, and ports 80 and 443 must be reachable, **from the CA's network** rather than from the internet.
@@ -121,4 +124,4 @@ Let's Encrypt's **staging** environment (`https://acme-staging-v02.api.letsencry
 
 **From manual certificates to ACME** — re-run the installer with the `acme` flags. The new certificate replaces the existing one automatically at first issuance; you don't need any manual cleanup, and the web server loads it without a restart. If the previous setup used `--ca-bundle` and you're moving to public Let's Encrypt, also delete the `ca-bundle` line from `/etc/dspm/installer.yaml` so the installer doesn't reapply the old trust anchor.
 
-**From ACME back to manual certificates** — re-run the installer without `--cert-manager-issuer-mode` (or with `none`), supplying `--tls-cert`/`--tls-key` as usual, plus `--ca-bundle` if a private CA issued the certificate. From then on you rotate it yourself with [`update-cert`](rotate-the-tls-certificate.md).
+**From ACME back to manual certificates** — delete the `cert-manager-issuer-mode` line from `/etc/dspm/installer.yaml`, then re-run the installer without `--cert-manager-issuer-mode`, supplying `--tls-cert`/`--tls-key` as usual, plus `--ca-bundle` if a private CA issued the certificate. From then on you rotate it yourself with [`update-cert`](rotate-the-tls-certificate.md).
