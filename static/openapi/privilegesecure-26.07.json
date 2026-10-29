@@ -69,6 +69,9 @@
       "name": "AzureAdTenant"
     },
     {
+      "name": "CommandPlan"
+    },
+    {
       "name": "CommandRestriction"
     },
     {
@@ -97,9 +100,6 @@
     },
     {
       "name": "EventMessage"
-    },
-    {
-      "name": "GennixCommandPlan"
     },
     {
       "name": "Group"
@@ -14927,16 +14927,16 @@
     "/api/v1/GennixCommandPlan": {
       "post": {
         "tags": [
-          "GennixCommandPlan"
+          "CommandPlan"
         ],
         "summary": "Create a command plan",
         "description": "Creates a command plan, with its command sets, commands and result actions, on a platform. The platform must be a custom platform created from a base platform.\n\nPermission required: Administrator role or application role. The session must have completed multifactor authentication.\n\nCaution: The new plan and the commands in it are saved immediately, and the commands can later run against the systems that use the platform.",
-        "operationId": "GennixCommandPlan_Post",
+        "operationId": "CommandPlan_Post",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GennixCommandPlanCreateRequest"
+                "$ref": "#/components/schemas/CommandPlanCreateRequest"
               }
             }
           },
@@ -14949,7 +14949,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GennixCommandPlan"
+                  "$ref": "#/components/schemas/CommandPlan"
                 }
               }
             }
@@ -14971,11 +14971,11 @@
     "/api/v1/GennixCommandPlan/ByNameAndPlatformId/{name}/{platformId}": {
       "get": {
         "tags": [
-          "GennixCommandPlan"
+          "CommandPlan"
         ],
         "summary": "Get a command plan by name and platform",
         "description": "Returns the command plan with the given name on the given platform, including its command sets, commands and result actions. The name match ignores letter case.\n\nPermission required: Administrator role or application role. The session must have completed multifactor authentication.\n\nCaution: The response contains the full text of every command and script in the plan, which can include sensitive content.",
-        "operationId": "GennixCommandPlan_RequestCommandPlanByNameAndPlatformId",
+        "operationId": "CommandPlan_RequestCommandPlanByNameAndPlatformId",
         "parameters": [
           {
             "name": "name",
@@ -15005,7 +15005,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GennixCommandPlan"
+                  "$ref": "#/components/schemas/CommandPlan"
                 },
                 "example": {
                   "id": "00000000-0000-0000-0000-000000000000",
@@ -15036,11 +15036,11 @@
     "/api/v1/GennixCommandPlan/ByPlatformId": {
       "get": {
         "tags": [
-          "GennixCommandPlan"
+          "CommandPlan"
         ],
         "summary": "List all command plans for a platform",
         "description": "Returns every command plan on the platform, each with its command sets, commands and result actions. Use NamesAndIds instead when you only need plan names and IDs.\n\nPermission required: Administrator role or application role. The session must have completed multifactor authentication.\n\nCaution: The response contains the full text of every command and script in every plan on the platform, which can include sensitive content.",
-        "operationId": "GennixCommandPlan_GetByPlatformId",
+        "operationId": "CommandPlan_GetByPlatformId",
         "parameters": [
           {
             "name": "platformId",
@@ -15062,7 +15062,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/GennixCommandPlan"
+                    "$ref": "#/components/schemas/CommandPlan"
                   }
                 },
                 "example": [
@@ -15090,11 +15090,11 @@
     "/api/v1/GennixCommandPlan/NamesAndIds": {
       "get": {
         "tags": [
-          "GennixCommandPlan"
+          "CommandPlan"
         ],
         "summary": "List command plan names and IDs for a platform",
         "description": "Returns the name and ID of each command plan on the platform. Use it to populate a picker or to find a plan ID before calling Get.\n\nPermission required: Administrator role or application role. The session must have completed multifactor authentication.",
-        "operationId": "GennixCommandPlan_GetNames",
+        "operationId": "CommandPlan_GetNames",
         "parameters": [
           {
             "name": "platformId",
@@ -15142,11 +15142,11 @@
     "/api/v1/GennixCommandPlan/{commandPlanId}": {
       "delete": {
         "tags": [
-          "GennixCommandPlan"
+          "CommandPlan"
         ],
         "summary": "Delete a command plan and its contents",
         "description": "Deletes the command plan together with its command sets, commands and result actions. Use it to remove a plan you no longer need.\n\nPermission required: Administrator role or application role. The session must have completed multifactor authentication.\n\nCaution: The deletion takes effect immediately, cannot be undone, and also removes every command set, command and result action in the plan.",
-        "operationId": "GennixCommandPlan_Delete",
+        "operationId": "CommandPlan_Delete",
         "parameters": [
           {
             "name": "commandPlanId",
@@ -15179,11 +15179,11 @@
       },
       "get": {
         "tags": [
-          "GennixCommandPlan"
+          "CommandPlan"
         ],
         "summary": "Get a command plan by ID",
         "description": "Returns the command plan with its command sets, commands and result actions in execution order.\n\nPermission required: Administrator role or application role. The session must have completed multifactor authentication.",
-        "operationId": "GennixCommandPlan_RequestCommandPlanById",
+        "operationId": "CommandPlan_RequestCommandPlanById",
         "parameters": [
           {
             "name": "commandPlanId",
@@ -15203,7 +15203,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GennixCommandPlan"
+                  "$ref": "#/components/schemas/CommandPlan"
                 }
               }
             }
@@ -15223,11 +15223,11 @@
       },
       "put": {
         "tags": [
-          "GennixCommandPlan"
+          "CommandPlan"
         ],
         "summary": "Update a command plan",
         "description": "Updates the command plan and its command sets, commands and result actions to match the body. The plan's platform must be a custom platform created from a base platform.\n\nPermission required: Administrator role or application role. The session must have completed multifactor authentication.\n\nCaution: Command sets, commands and result actions that are in the saved plan but missing from the body are deleted.",
-        "operationId": "GennixCommandPlan_Update",
+        "operationId": "CommandPlan_Update",
         "parameters": [
           {
             "name": "commandPlanId",
@@ -15245,7 +15245,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GennixCommandPlanUpdateRequest"
+                "$ref": "#/components/schemas/CommandPlanUpdateRequest"
               }
             }
           },
@@ -15258,7 +15258,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GennixCommandPlan"
+                  "$ref": "#/components/schemas/CommandPlan"
                 }
               }
             }
@@ -42712,6 +42712,202 @@
         ],
         "description": "Integer values: 0 = None, 1 = Lowercase, 2 = Uppercase, 4 = Numeric, 8 = Symbol, 16 = Space."
       },
+      "Command": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "commandSetId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "commandToSend": {
+            "type": "string",
+            "nullable": true
+          },
+          "executionOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nodeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resultActions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommandResultAction"
+            },
+            "nullable": true
+          },
+          "commandScript": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CommandPlan": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "platformId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "permanent": {
+            "type": "boolean"
+          },
+          "nodeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "commandSets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommandSet"
+            },
+            "nullable": true
+          },
+          "connectionType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CommandPlanCreateRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "platformId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "permanent": {
+            "type": "boolean"
+          },
+          "nodeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "commandSets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommandSet"
+            },
+            "nullable": true
+          },
+          "connectionType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "platformId"
+        ]
+      },
+      "CommandPlanUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "platformId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "permanent": {
+            "type": "boolean"
+          },
+          "nodeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "commandSets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommandSet"
+            },
+            "nullable": true
+          },
+          "connectionType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "platformId"
+        ]
+      },
       "CommandRestriction": {
         "type": "object",
         "properties": {
@@ -42905,6 +43101,116 @@
           "id"
         ],
         "description": "A named set of rules that restrict the commands typed in a session."
+      },
+      "CommandResultAction": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "commandId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "expectedResult": {
+            "type": "string",
+            "nullable": true
+          },
+          "expectedResultIsSuffix": {
+            "type": "boolean"
+          },
+          "expectedResultIsPrefix": {
+            "type": "boolean"
+          },
+          "isRegex": {
+            "type": "boolean"
+          },
+          "isTermBreak": {
+            "type": "boolean"
+          },
+          "isForceTermBreak": {
+            "type": "boolean"
+          },
+          "isError": {
+            "type": "boolean"
+          },
+          "continueOnError": {
+            "type": "boolean"
+          },
+          "executionOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jumpToCommandId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "jumpToCommandSetId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "nodeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CommandSet": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "commandPlanId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "executionOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nodeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDateTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "commands": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Command"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "ConnectionProfileInfo": {
         "type": "object",
@@ -46620,312 +46926,6 @@
         },
         "additionalProperties": false,
         "description": "Result of a file upload to a secret vault."
-      },
-      "GennixCommand": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "commandSetId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "commandToSend": {
-            "type": "string",
-            "nullable": true
-          },
-          "executionOrder": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "nodeId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "resultActions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GennixCommandResultAction"
-            },
-            "nullable": true
-          },
-          "commandScript": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "GennixCommandPlan": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "platformId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "permanent": {
-            "type": "boolean"
-          },
-          "nodeId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "commandSets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GennixCommandSet"
-            },
-            "nullable": true
-          },
-          "connectionType": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "GennixCommandPlanCreateRequest": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "platformId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "permanent": {
-            "type": "boolean"
-          },
-          "nodeId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "commandSets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GennixCommandSet"
-            },
-            "nullable": true
-          },
-          "connectionType": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "platformId"
-        ]
-      },
-      "GennixCommandPlanUpdateRequest": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "platformId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "permanent": {
-            "type": "boolean"
-          },
-          "nodeId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "commandSets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GennixCommandSet"
-            },
-            "nullable": true
-          },
-          "connectionType": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "id",
-          "platformId"
-        ]
-      },
-      "GennixCommandResultAction": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "commandId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "expectedResult": {
-            "type": "string",
-            "nullable": true
-          },
-          "expectedResultIsSuffix": {
-            "type": "boolean"
-          },
-          "expectedResultIsPrefix": {
-            "type": "boolean"
-          },
-          "isRegex": {
-            "type": "boolean"
-          },
-          "isTermBreak": {
-            "type": "boolean"
-          },
-          "isForceTermBreak": {
-            "type": "boolean"
-          },
-          "isError": {
-            "type": "boolean"
-          },
-          "continueOnError": {
-            "type": "boolean"
-          },
-          "executionOrder": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "jumpToCommandId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "jumpToCommandSetId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "nodeId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "GennixCommandSet": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "commandPlanId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "executionOrder": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "nodeId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedDateTimeUtc": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "commands": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GennixCommand"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "GroupActivityCard": {
         "type": "object",

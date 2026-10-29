@@ -709,6 +709,11 @@ FINAL_RENAME.update({
     'ManagedResourceManageAccountEnum': 'ManagedResourceManageAccount', 'ManagedTypeEnum': 'ManagedStatus',
     'PasswordComplexityTypeEnum': 'PasswordComplexityType', 'PlatformTypeEnum': 'PlatformType',
     'ReportOperatorEnum': 'ReportOperator', 'UserRoleEnums': 'UserRoleLevel'})
+# the internal code name is not used in public names ("Command" would clash with nothing: checked by the collision assert)
+FINAL_RENAME.update({
+    'GennixCommandPlan': 'CommandPlan', 'GennixCommandPlanCreateRequest': 'CommandPlanCreateRequest',
+    'GennixCommandPlanUpdateRequest': 'CommandPlanUpdateRequest', 'GennixCommandSet': 'CommandSet',
+    'GennixCommand': 'Command', 'GennixCommandResultAction': 'CommandResultAction'})
 # Revision 5: "This model represents ..." descriptions. Generic rule: drop the prefix and keep the sentence; the
 # explicit entries (keyed by the sentence the generic rule produces) fix broken grammar and developer wording.
 MODEL_PREFIX_RE = re.compile(r'^This model represents (?:(an?|the) )?(.+)$', re.S)
@@ -1130,6 +1135,72 @@ FULL_SECRET_PATS = collections.OrderedDict([
     ('private key', r'-----BEGIN [A-Z ]*PRIVATE KEY-----'), ('stack', r'\\r|\\n\s*at\s')])
 
 
+# The internal code name "Gennix" must not appear in any public-facing name in either spec. Only URL paths keep it:
+# /api/v1/GennixCommandPlan/... is the real contract. FINAL_RENAME (above) renames the schemas; controllers (tags and
+# the operationId prefix) are renamed when the route lists load; every other string goes through codename_text().
+CODENAME = 'Gennix'
+CODENAME_RE = re.compile(r'gennix', re.I)
+CODENAME_URL_RE = re.compile(r'(/api/[A-Za-z0-9_/{}:.-]*)')
+# wire names of JSON properties are part of the contract and are not renamed; the full spec check allows exactly these
+CODENAME_WIRE_PROPS = {'gennixCommandPlanId'}
+
+
+def codename_text(s):
+    """Reword the code name in a string. URL paths (/api/...) inside the string are left alone."""
+    if not CODENAME_RE.search(s):
+        return s
+    out = []
+    for i, part in enumerate(CODENAME_URL_RE.split(s)):
+        if i % 2 == 0:
+            part = part.replace('Gennix command plan', 'command plan').replace('Gennix Command Plan', 'Command Plan')
+            part = re.sub(r'Gennix(?=[A-Z])', '', part)
+            part = re.sub(r'Gennix ', '', part)
+            part = part.replace('Gennix', '')
+        out.append(part)
+    return ''.join(out)
+
+
+def scrub_codename(o):
+    """In place: apply codename_text to every string value (not to dict keys, which are paths, schema names that
+    FINAL_RENAME already handled, and wire property names)."""
+    if isinstance(o, dict):
+        for k, v in o.items():
+            if isinstance(v, str):
+                o[k] = codename_text(v)
+            else:
+                scrub_codename(v)
+    elif isinstance(o, list):
+        for i, v in enumerate(o):
+            if isinstance(v, str):
+                o[i] = codename_text(v)
+            else:
+                scrub_codename(v)
+
+
+def codename_hits(spec, allow_urls_in_text=False, allow_wire_props=False):
+    """Places where the code name still appears: anywhere except a key of 'paths'."""
+    hits = []
+
+    def walk(o, path):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if path == '/paths':
+                    walk(v, path + '/' + k)
+                    continue
+                if CODENAME_RE.search(k) and not (allow_wire_props and k in CODENAME_WIRE_PROPS):
+                    hits.append('key %s/%s' % (path, k))
+                walk(v, path + '/' + k)
+        elif isinstance(o, list):
+            for i, v in enumerate(o):
+                walk(v, path + '/%d' % i)
+        elif isinstance(o, str):
+            t = CODENAME_URL_RE.sub('', o) if allow_urls_in_text else o
+            if CODENAME_RE.search(t):
+                hits.append('value %s: %s' % (path, o[:80]))
+    walk(spec, '')
+    return hits
+
+
 def check_full(full, route_keys, public_keys, public_ids_count):
     """Structural checks of the full spec. route_keys: set of (METHOD, template key) that must all be present;
     public_keys: the subset that is public."""
@@ -1214,6 +1285,8 @@ def check_full(full, route_keys, public_keys, public_ids_count):
         for sm in SID_RE.finditer(s):
             if (sm.group(1), sm.group(2), sm.group(3)) not in ALLOWED_SID_PARTS:
                 hits.append(('sid', path, sm.group(0)))
+    for h in codename_hits(full, allow_urls_in_text=True, allow_wire_props=True)[:20]:
+        fails.append('internal code name in the full spec outside a path key (or /api/ URL text, or a wire property name): ' + h)
     for h in hits[:40]:
         print('FULL-LEAK', h)
     if hits:
@@ -1258,6 +1331,9 @@ def main():
 
     # ------------------------------------------------------------ route universe
     routes = rlist['routes']
+    for r_ in list(routes) + list(code_routes):
+        if isinstance(r_.get('controller'), str):
+            r_['controller'] = codename_text(r_['controller'])
     dropped = set(rlist.get('droppedForCaution', []))
     ids = [r['id'] for r in routes]
     assert len(ids) == len(set(ids)), 'duplicate route ids'
@@ -2376,6 +2452,8 @@ def main():
         walk_refs(o, fn)
     to_public(out_schemas)
     to_public(paths)
+    scrub_codename(paths)
+    scrub_codename(out_schemas)
     out_schemas = {public_map[k]: out_schemas[k] for k in sorted(out_schemas, key=lambda x: public_map[x])}
     FINAL_RENAME_R5 = {k: v for k, v in FINAL_RENAME.items() if k != 'TupleOfInt32AndInt32'}
     pair = out_schemas.get('IntPair')
@@ -2593,6 +2671,8 @@ def main():
             fails.append('%s: %s' % (nm, x))
 
     text = json.dumps(spec, indent=2, ensure_ascii=False) + '\n'
+    for h in codename_hits(spec)[:20]:
+        fails.append('internal code name in the public spec outside a path key: ' + h)
     leak_pats = collections.OrderedDict([
         ('PSAM id', r'PSAM-\d+'), ('AB id', r'AB#\d+'), ('user path', r'/Users/[a-z]'), ('windows path', r'[A-Za-z]:\\\\'),
         ('source file', r'\.(cs|ts|tsx|py|csproj|sln)\b'), ('api-docs', r'api-docs'), ('Controllers/', r'Controllers/'),
@@ -2932,6 +3012,8 @@ def main():
     fschemas = dict(out_schemas)
     fschemas.update(new_schemas)
     fschemas = collections.OrderedDict((k, fschemas[k]) for k in sorted(fschemas))
+    scrub_codename(fpaths)
+    scrub_codename(fschemas)
     ftags = sorted({o['tags'][0] for item in fpaths.values() for o in item.values()}, key=str.lower)
     full_spec = collections.OrderedDict()
     full_spec['openapi'] = '3.0.3'
