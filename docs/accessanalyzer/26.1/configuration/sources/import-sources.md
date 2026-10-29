@@ -16,7 +16,7 @@ The import also accepts a host list exported from Access Analyzer 11 or 12 and w
 ## Before You Start
 
 - Create the [service accounts](../service-accounts/index.md) the sources need. The import skips any row that names a service account that doesn't exist.
-- Check the connection requirements for each type on its page: [SMB file servers](smb-file-servers.md) (the **File Server** source type), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [Microsoft 365](microsoft-365.md) (the **SharePoint Online** source type). The import doesn't test connections; it only creates the sources.
+- Check the connection requirements for each type on its page: [SMB file servers](smb-file-servers.md) (the **File Server** source type), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [SharePoint Online](microsoft-365.md). The import doesn't test connections; it only creates the sources.
 - Keep the file to 5 MB and 5,000 data rows at most. Split larger inventories into several files.
 
 Users with the Viewer role don't see the **Import CSV** button.
