@@ -115,7 +115,7 @@ errors.
 
 Netwrix doesn't recommend this configuration. The preferred method is to specify a credential
 profile on each Action Step. See the
-[Credential Profile Page](/docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md)
+[Credential Profile Page](/docs/threatmanager/3.4/configuration/integrations/credentialprofile.md)
 topic for additional information.
 
 You can configure the Action Service to run as a service account. That account then runs every

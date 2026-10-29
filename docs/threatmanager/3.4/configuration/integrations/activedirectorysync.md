@@ -43,7 +43,7 @@ Directory Sync in the navigation pane.
 Before adding an Active Directory Sync policy, you must first configure a Credential
 Profile with credentials properly provisioned for running the sync operation for the domain. See the
 [Application Server Requirements](/docs/threatmanager/3.4/requirements/server.md) topic for the permissions. See
-the [Credential Profile Page](/docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md) topic for additional information on creating a
+the [Credential Profile Page](/docs/threatmanager/3.4/configuration/integrations/credentialprofile.md) topic for additional information on creating a
 profile.
 :::
 
@@ -242,7 +242,7 @@ an existing rule to expand, edit, or delete it.
 :::note
 Removing a rule or a condition doesn't untag accounts that are already tagged as service accounts.
 To remove the Service Account tag from an account manually, use the
-[Tag Management](/docs/threatmanager/3.4/administration/configuration/integrations/tagmanagement.md)
+[Tag Management](/docs/threatmanager/3.4/configuration/integrations/tagmanagement.md)
 page.
 :::
 

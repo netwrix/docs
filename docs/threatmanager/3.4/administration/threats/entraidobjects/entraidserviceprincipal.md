@@ -37,7 +37,7 @@ for the service principal's Agent Identity Blueprint.
 To distinguish the two, check the tag. Threat Manager tags Agent Identity service principals with
 the built-in Agent Identity tag. It tags Agent Identity Blueprint Principals with the Agent
 Blueprint tag — the same tag it applies to the parent Agent Identity Blueprint application.
-See the [Tag Management Page](/docs/threatmanager/3.4/administration/configuration/integrations/tagmanagement.md)
+See the [Tag Management Page](/docs/threatmanager/3.4/configuration/integrations/tagmanagement.md)
 to view or manage all built-in and custom tags.
 :::
 

@@ -24,7 +24,7 @@ The header bar contains the following links on the top right side of the page:
 ![This screenshot displays the right header bar.](/images/threatmanager/3.0/administration/headerbarright.webp)
 
 - Search – Enter a user, computer, or group and click the Search icon
-- [Configuration Menu](/docs/threatmanager/3.4/administration/configuration/overview.md) – Displays a menu with the configuration pages
+- [Configuration Menu](/docs/threatmanager/3.4/configuration/overview.md) – Displays a menu with the configuration pages
 - Help – Accesses help
 - Logout – Click the person icon and select Logout from the dropdown list to log out of the Threat
   Manager Console. The dropdown list also displays the user logged in.

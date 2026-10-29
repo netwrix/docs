@@ -76,4 +76,4 @@ The table displays the following information:
       login. This option is only available if an MFA authentication type is applied to the user or
       group.
 
-See the [User Access Page](/docs/threatmanager/3.4/administration/configuration/systemsettings/useraccess.md) topic for additional information.
+See the [User Access Page](/docs/threatmanager/3.4/configuration/systemsettings/useraccess.md) topic for additional information.

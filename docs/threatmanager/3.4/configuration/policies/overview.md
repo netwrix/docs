@@ -30,7 +30,7 @@ The Deployment History table displays the following information:
 - Policy – The policy name. Click the policy link to go to the Configuration tab for that policy.
 
 The Policies page also lets you click a policy and view information and
-configuration options for that policy. See [Policy Configuration](/docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md) for
+configuration options for that policy. See [Policy Configuration](/docs/threatmanager/3.4/configuration/policies/policiesconfiguration.md) for
 additional information.
 
 ## Add a Policy for a Honeytoken
@@ -42,7 +42,7 @@ account. Policies for Honeytokens are added on the Policies page.
 :::note
 When a Honeytoken name is specified and the policy is enabled, this policy becomes
 immediately valid for Honeytoken threat detection. refer to
-[Configure Honeytoken Threats](/docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md) for Honeytoken naming best practices.
+[Configure Honeytoken Threats](/docs/threatmanager/3.4/configuration/policies/honeytoken.md) for Honeytoken naming best practices.
 :::
 
 
@@ -59,7 +59,7 @@ To add a policy:
 - Name – The name for the policy
 
     :::note
-    See [Configure Honeytoken Threats](/docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md) for best practices for naming a
+    See [Configure Honeytoken Threats](/docs/threatmanager/3.4/configuration/policies/honeytoken.md) for best practices for naming a
     Honeytoken.
     :::
 

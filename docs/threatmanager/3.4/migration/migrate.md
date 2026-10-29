@@ -176,5 +176,5 @@ password.
 
 **Step 4 –** Repeat for every credential in every profile.
 
-See the [Credential Profile Page](/docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md)
+See the [Credential Profile Page](/docs/threatmanager/3.4/configuration/integrations/credentialprofile.md)
 topic for additional information.

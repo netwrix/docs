@@ -26,7 +26,7 @@ details for each component in the following sections.
 
 **NetwrixPostgreSQL14.exe**
 
-This executable is for installing the PostgreSQL 14 database. PostgreSQL 14 will become End-of-Life on November, 2026. Netwrix recommends that you perform the [migration procedure](/docs/threatmanager/3.4/install/upgrade/upgrade_pg14_to_pg18.md) before this date.
+This executable is for installing the PostgreSQL 14 database. PostgreSQL 14 will become End-of-Life on November, 2026. Netwrix recommends that you perform the [migration procedure](/docs/threatmanager/3.4/migration/upgrade_pg14_to_pg18.md) before this date.
 
 **NetwrixPostgreSQL18.exe**
 
@@ -117,11 +117,11 @@ for additional information.
 **Step 4 –** Configure integration with one or more Netwrix products to feed the type of
 data you want into Threat Manager:
 
-- [Netwrix Activity Monitor Integration](/docs/threatmanager/3.4/install/integration/activitymonitor.md) – Configure Netwrix
+- [Netwrix Activity Monitor Integration](/docs/threatmanager/3.4/configuration/netwrix/activitymonitor.md) – Configure Netwrix
   Activity Monitor to send file system data and/or Active Directory data and/or Microsoft Entra ID
   data to Threat Manager
-- [Netwrix Threat Prevention Integration](/docs/threatmanager/3.4/install/integration/threatprevention/threatprevention.md) – Configure Netwrix
+- [Netwrix Threat Prevention Integration](/docs/threatmanager/3.4/configuration/netwrix/threatprevention/threatprevention.md) – Configure Netwrix
   Threat Prevention to send Active Directory data to Threat Manager
-- [Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.4/install/integration/accessanalyzer.md)
+- [Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.4/configuration/netwrix/accessanalyzer.md)
   – Configure Netwrix Access Analyzer (formerly Enterprise Auditor) to send Sensitive Data to Threat
   Manager

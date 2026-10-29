@@ -26,7 +26,7 @@ Threat Manager monitors the following threats for Active Directory. Each section
 
 :::note
 Configure the domain monitoring policy to exclude domain controllers. See the
-[Integration with Other Netwrix Products](/docs/threatmanager/3.4/install/integration/overview.md) topic for additional
+[Integration with Other Netwrix Products](/docs/threatmanager/3.4/configuration/netwrix/overview.md) topic for additional
 information.
 :::
 
