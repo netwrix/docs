@@ -41,6 +41,7 @@ The agent host needs a Linux server of its own. You can't run `install-agent` on
 | Disk | 5 GB free. A server that runs from offline media also needs room for the media and its unpacked copy, about 7 GB. The panel says about 8 GB of free disk, and preflight warns below 8 GB. |
 | Installer | The `dspm-installer` binary for the host's architecture. See [Download the installer](../../install/run-the-installer.md#download-the-installer). |
 | Not the server | The host can't be the Access Analyzer server. `install-agent` refuses to run where `/etc/rancher/k3s/k3s.yaml` exists. |
+| Antivirus | The same real-time scanning exclusions as the server. See [Antivirus Exclusions](../../requirements/index.md#antivirus-exclusions). |
 
 For example, an arm64 host can't join a server that runs from offline media on an x86 machine. Use an x86 host, or build the server on matching hardware.
 
@@ -114,7 +115,7 @@ The panel quotes the name for the shell and adds one `--label` for each label. R
 | Field | What to enter | Rules |
 |---|---|---|
 | **Name** | A display name, for example `Production Agent` | Required; up to 255 characters |
-| **Labels** | One or more `key=value` pairs | At least one required; Access Analyzer lowercases keys and values and replaces spaces with hyphens. The keys `name` and `default` are reserved. |
+| **Labels** | One or more `key=value` pairs | At least one required; Access Analyzer lowercases keys and values and replaces spaces with hyphens. Access Analyzer reserves the keys `name` and `default`. |
 
 If you close the panel with unsaved changes, Access Analyzer asks you to confirm. After you generate the command, closing the panel needs no confirmation.
 
@@ -193,7 +194,7 @@ If the command stops at a preflight warning, it asks whether to continue. Add `-
 
 1. Checks the bundle, the name, and the labels.
 2. Stops if the host is the Access Analyzer server, if the command isn't running as root, or if the `--bundle-dir` setting doesn't match the server.
-3. Runs the agent preflight: the sizing, operating system, disk, and network checks that [Prepare the host](#prepare-the-host) lists.
+3. Runs the agent preflight: the same checks as the server's [Preflight Checks](../../install/installer-reference.md#preflight-checks), including the antivirus check, with the agent's sizing minimums and network targets. [Prepare the host](#prepare-the-host) lists the requirements.
 4. Checks that the server's certificate covers the address that the host joins. See [The certificate doesn't cover the join address](#the-certificate-doesnt-cover-the-join-address).
 5. On a server that runs from offline media, either downloads or unpacks the media, and stops if the media's k3s is newer than the server's.
 6. Opens the host firewall if firewalld or ufw is active.

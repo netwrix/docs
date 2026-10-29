@@ -1,6 +1,6 @@
 ---
 title: Requirements
-description: Server sizing, install media disk space, hostname, network ports, TLS certificate, license key, first administrator, and browser requirements for installing Access Analyzer.
+description: Server sizing, install media disk space, hostname, network ports, TLS certificate, license key, first administrator, antivirus exclusions, and browser requirements for installing Access Analyzer.
 sidebar_position: 1
 ---
 
@@ -19,7 +19,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Free disk for the install media | About 16 GB free on the volume that holds the media. See [Install media](#install-media). |
 | Free disk for an air-gapped install | 25 GB free on the volume that holds the media directory (`/var/lib/dspm/media` by default), where the installer expands the media. Pass `--tmp-dir` to move it. See [Install media](#install-media). |
 
-On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
+On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can continue at your own risk.
 
 ## Size
 
@@ -151,6 +151,18 @@ The `login.microsoftonline.com`, `graph.microsoft.com`, and `*.sharepoint.com` h
 | Azure China (21Vianet) | `login.chinacloudapi.cn`, `microsoftgraph.chinacloudapi.cn` | `*.sharepoint.cn` |
 
 An Entra ID source needs only the login and Graph hosts. Entra ID as the identity provider always uses the commercial hosts, so it supports only commercial and GCC tenants.
+
+## Antivirus Exclusions
+
+Real-time scanning by antivirus or endpoint protection software can interfere with the container runtime that Access Analyzer runs on. Exclude these directories from real-time scanning on the Access Analyzer server and on every [agent](../configuration/agents/index.md) host:
+
+- `/var/lib/rancher/k3s/agent/containerd`
+- `/var/lib/rancher/k3s/data`
+- `/run/k3s/containerd`
+
+If you install the server with `--storage-dir`, the first two directories move under it. For example, `--storage-dir /data` puts them at `/data/rancher/k3s/agent/containerd` and `/data/rancher/k3s/data`. Agent hosts always use the default directories.
+
+The preflight check warns when it detects a known antivirus product and names the product's command or console for adding the exclusions. See [Preflight Checks](../install/installer-reference.md#preflight-checks).
 
 ## Browser
 
