@@ -20,7 +20,7 @@ You can integrate Netwrix’ products with the Netwrix Active Directory App for 
 
 - Install the Active Directory App for Splunk.
 - Ensure that you have configured Threat Prevention to send events to Splunk. See the
-  [SIEM Tab](/docs/threatprevention/8.1/configuration/systemalerting/siem.md)topic for additional information.
+  [SIEM Tab](/docs/threatprevention/8.1/configuration/systemalerting/siem.md) topic for additional information.
 
 ## App Installation in Splunk
 
