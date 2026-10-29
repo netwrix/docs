@@ -1,20 +1,20 @@
 ---
 title: "Active Directory Page"
 description: "Active Directory Page"
-sidebar_position: 40
+sidebar_position: 20
 ---
 
 # Active Directory Page
 
 On the Active Directory page, you can access all the domains that you have configured through the
-[Domains Page](/docs/identityrecovery/3.1/admin/configuration/domain.md).
+[Domains Page](/docs/identityrecovery/3.1/configuration/domain.md).
 
 Click **Active Directory** in the left pane to open the Active Directory page.
 
 ![Active Directory page](/images/identityrecovery/3.1/product/active_directory/active_directory.png)
 
 Select a domain from the dropdown menu and expand it to view the domain tree and container
-structure, which is exactly the same as you get in Active Directory Users and Computers. Objects in
+structure, which matches Active Directory Users and Computers. Objects in
 the domain are also available in the same hierarchical structure.
 
 The page displays the following information:
@@ -26,13 +26,13 @@ The page displays the following information:
   user, etc.
 - Backup Time – The date and time of the last the backup
 
-You can perform the rollback and recover operations for objects.
+You can roll back and recover objects.
 
 ## Search for an Object
 
-There are several ways to find an object:
+You can find an object in two ways:
 
-- Column Filters – Click a column header to organize the table alphabetically by the column header.
+- Column Filters – Click a column header to sort the table alphabetically by that column.
   An arrow appears by the column name. Use it to arrange the entries by ascending or descending
   order.
 - Search box – Enter a text string in the search box to filter the table for results that contain
@@ -46,15 +46,15 @@ additional information.
 
 ## Recover Deleted Objects
 
-On expanding a domain in the left pane, you will notice that Recycle Bin is in blue, indicating that
-this is a virtual container specific to Identity Recovery. Use the Recycle Bin to
+When you expand a domain in the left pane, the Recycle Bin appears in blue to show that it's a virtual container
+specific to Identity Recovery. Use the Recycle Bin to
 recover deleted objects in Active Directory. See the [Recover Objects](/docs/identityrecovery/3.1/admin/activedirectory/recover.md) topic for
 additional information.
 
 ## Integration with Threat Prevention
 
-When you right-click an object in a domain on the Active Directory page, the right-click menu is
-displayed as:
+When you right-click an object in a domain on the Active Directory page, the following menu
+appears:
 
 ![Right-click menu on the Active Directory page](/images/identityrecovery/3.1/admin/activedirectory/rightclickmenu.webp)
 
@@ -63,13 +63,13 @@ are met:
 
 - Threat Prevention data is tied with Identity Recovery data
 - The user is logged in with an account that is specified in the Account section of the
-  [Netwrix Integrations Page](/docs/identityrecovery/3.1/admin/configuration/integration.md)
+  [Netwrix Integrations Page](/docs/identityrecovery/3.1/configuration/integration.md)
 
 These options display data from Threat Prevention.
 
 ### View the Audit History for an Object
 
-You can view the changes made to an object by other users.
+You can view the changes other users made to an object.
 
 On the Active Directory page, expand a domain in the left pane and locate the object you
 want to view the audit history for. Right-click this object and select **Show audit history** on the

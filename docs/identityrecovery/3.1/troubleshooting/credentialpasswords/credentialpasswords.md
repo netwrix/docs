@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Update Account Passwords
 
-Account passwords occasionally need to be updated due to various reasons, such as security policies
-that require passwords to be reset on a regular basis. The following types of credentials may be
-impacted by password changes or security policies:
+You may need to update account passwords occasionally, for example when security policies require
+regular password resets. Password changes or security policies can affect the following types of
+credentials:
 
 - SQL Server Service Account
 - Recovry Service Account
@@ -24,6 +24,6 @@ the Identity Recovery Configuration Utility. See the
 
 The Recovery service account runs the Recovery Console service and performs the domain
 backups. You can update it on the Domains page in the Recovery Console. See the
-[Edit Domain Configuration](/docs/identityrecovery/3.1/admin/configuration/domain.md#edit-domain-configuration) topic for additional information.
+[Edit Domain Configuration](/docs/identityrecovery/3.1/configuration/domain.md#edit-domain-configuration) topic for additional information.
 
 

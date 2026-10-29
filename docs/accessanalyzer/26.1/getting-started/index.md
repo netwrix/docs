@@ -7,7 +7,7 @@ slug: /
 
 ## What Access Analyzer Is
 
-Netwrix Access Analyzer is a self-hosted web application that you install on a Linux server you own. It scans your file servers and cloud storage platforms, and builds a picture of where sensitive data lives and who can reach it. It belongs to the data security posture management (DSPM) category of products. [Key concepts](key-concepts.md) defines the terms used throughout.
+Netwrix Access Analyzer is a self-hosted web application that you install on a Linux server you own. It scans your file servers and cloud storage platforms, and shows where sensitive data is stored and who can reach it. It belongs to the data security posture management (DSPM) category of products. [Key concepts](key-concepts.md) defines the terms used throughout.
 
 ![Access Analyzer Home page with the navigation sidebar and getting-started content](/images/accessanalyzer/26.1/overview/home.webp)
 
@@ -15,7 +15,7 @@ Netwrix Access Analyzer is a self-hosted web application that you install on a L
 
 ### Sources
 
-Access Analyzer collects permissions and inventory from SMB file servers (the **File Server** source type), Active Directory, Entra ID, and Microsoft 365 (the **SharePoint Online** source type). Each connected system is a source, and most will connect with a [service account](../configuration/service-accounts/index.md). This doc on [Sources](../configuration/sources/index.md) covers each type.
+Access Analyzer collects permissions and inventory from SMB file servers (the **File Server** source type), Active Directory, Entra ID, and SharePoint Online. Each connected system is a source, and most will connect with a [service account](../configuration/service-accounts/index.md). This doc on [Sources](../configuration/sources/index.md) covers each type.
 
 ### Scans and Agents
 
