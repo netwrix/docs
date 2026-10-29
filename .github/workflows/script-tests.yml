@@ -12,6 +12,7 @@ on:
       - dev
     paths:
       - 'scripts/**'
+      - 'src/plugins/**'
       - 'package.json'
       - '.vale/styles/**'
       - '.claude/skills/dale/rules/**'

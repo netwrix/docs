@@ -12,6 +12,7 @@ import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyze
 import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects } from './src/config/redirects/privilegesecurediscovery.js';
 import { directoryManager110Redirects } from './src/config/redirects/directorymanager-11.0.js';
 import { privilegeSecure42Redirects } from './src/config/redirects/privilegesecure-4.2.js';
+import robotsTxtPlugin from './src/plugins/robotsTxt.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -183,6 +184,9 @@ const config = {
           },
         };
       },
+
+      // Writes build/robots.txt: crawlable on docs.netwrix.com only
+      robotsTxtPlugin,
 
       // Google Analytics
       [
