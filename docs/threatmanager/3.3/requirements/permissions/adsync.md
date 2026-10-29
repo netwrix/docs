@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The following permissions are required for the credential used by Threat Manager for Active
 Directory Sync. See the
-[Entra ID Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/entraidsync.md) topic for
+[Entra ID Sync Page](/docs/threatmanager/3.3/configuration/integrations/entraidsync.md) topic for
 additional information about syncing the configured Active Directory domains in Threat Manager.
 
 | Object Type | Function                                                                                                | Access Requirements                                                      |

@@ -1,6 +1,6 @@
 ---
 title: Requirements
-description: Server sizing, install media disk space, hostname, network ports, TLS certificate, license key, first administrator, and browser requirements for installing Access Analyzer.
+description: Server sizing, install media disk space, hostname, network ports, TLS certificate, license key, first administrator, antivirus exclusions, and browser requirements for installing Access Analyzer.
 sidebar_position: 1
 ---
 
@@ -19,7 +19,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Free disk for the install media | About 16 GB free on the volume that holds the media. See [Install media](#install-media). |
 | Free disk for an air-gapped install | 25 GB free on the volume that holds the media directory (`/var/lib/dspm/media` by default), where the installer expands the media. Pass `--tmp-dir` to move it. See [Install media](#install-media). |
 
-On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
+On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can continue at your own risk.
 
 ## Size
 
@@ -32,9 +32,9 @@ You pick a size when you install. The size sets the CPU and RAM the installer re
 | large | 24 | 96 GB | 3,000 GB | Up to about 800 million objects and 25,000 to 100,000 identities. |
 | enterprise | 32 | 128 GB | 8,000 GB | Up to about 3 billion objects and more than 100,000 identities. |
 
-CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine provisioned at exactly the stated figure passes even though the guest sees slightly less.
+CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine you provision at exactly the stated figure passes even though the guest sees slightly less.
 
-Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size is designed to hold. The 40 GB floor is different: below that, the preflight check fails.
+Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size supports. The 40 GB floor is different: below that, the preflight check fails.
 
 For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on the storage volume (`/var/lib` by default) installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
 
@@ -44,7 +44,7 @@ If you want the data on a different volume, the installer accepts custom data di
 
 ## Install Media
 
-A connected install works the way an air-gapped install does. The installer downloads the release's offline media from Netwrix, verifies it, and installs from it. The cluster stays connected to the internet, but it doesn't pull charts and images from the Netwrix registry. They come from a registry and a git server inside the cluster.
+A connected install works the way an air-gapped install does. The installer downloads the release's offline media from Netwrix, verifies it, and installs from it. The cluster stays connected to the internet, but it pulls charts and images from a registry and a git server inside the cluster instead of the Netwrix registry.
 
 The media needs disk space while the installer works with it. Allow about **16 GB free** on the volume that holds the media. The preflight check warns (`media-disk`) when there is less. Before it downloads, the installer also checks for room for four times the media archive's size, less any part of the archive already downloaded, and stops with exit code `16` if there isn't enough. Because a partial download counts toward that total, running the command again after an interrupted download needs less free space than the first attempt.
 
@@ -77,13 +77,13 @@ Create the DNS record before you install. The TLS certificate's Subject Alternat
 
 ## TLS Certificate
 
-Access Analyzer serves the web application **only** over HTTPS, and the installer never generates a certificate. You supply one.
+Access Analyzer serves the web application **only** over HTTPS. Supply a certificate from your certificate authority (CA). For a lab or demo install, the installer can generate a self-signed certificate instead with `--generate-self-signed-cert`.
 
 | Item | Requirement |
 |---|---|
 | Certificate | PEM format, full chain, leaf certificate first. Its Subject Alternative Names must include the hostname; the Common Name alone isn't enough. It must not be expired. |
 | Private key | PEM format, unencrypted, and the key that matches the certificate. |
-| CA bundle | Optional. PEM format. Needed only when a private certificate authority (CA) issued the certificate, so that the certificate chains to it. |
+| CA bundle | Optional. PEM format. Needed only when a private CA issued the certificate, so that the certificate chains to it. |
 
 The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/etc/dspm/tls.key` unless you point it elsewhere. A self-signed certificate works, and the installer uses it as its own CA bundle, but browsers warn users about it.
 
@@ -111,6 +111,7 @@ Open these ports on the server's firewall.
 | 80 | TCP | Users' browsers | Redirects HTTP requests to HTTPS. |
 | 4504 | TCP | Netwrix Activity Monitor | Receives activity data. Open it only if you use [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md). |
 | 6443 | TCP | Agent hosts | Lets [agents](../configuration/agents/index.md) join and connect back to the server. Open it only to the hosts you deploy agents on. [Deploy an agent](../configuration/agents/deploy-agent.md#prepare-the-host) lists the other ports an agent host needs. |
+| 30000–32767 | TCP | External query tools | Direct access to the analytics store through two ports in this range, which you choose or Kubernetes assigns when you [open the analytics store's ports](../integrations/external-clickhouse-access.md). Needed only if you use this feature. The server's firewall can't restrict these ports, so restrict them with a network firewall or security group. |
 
 ### Outbound
 
@@ -133,10 +134,35 @@ Some features add outbound connections of their own after you configure them.
 | Host | Port | When you need it |
 |---|---|---|
 | `login.microsoftonline.com`, `sts.windows.net` | TCP 443 | You use Entra ID as the identity provider. |
-| `graph.microsoft.com` | TCP 443 | You add an Entra ID or SharePoint Online source. |
+| `login.microsoftonline.com`, `graph.microsoft.com` | TCP 443 | You add an Entra ID or SharePoint Online source. |
+| `*.sharepoint.com` | TCP 443 | You add a SharePoint Online source. The scan connects to your tenant's SharePoint and OneDrive hosts, such as `contoso.sharepoint.com` and `contoso-my.sharepoint.com`. |
 | Domain controllers | TCP 636 | You use Active Directory as the identity provider. The connection uses Lightweight Directory Access Protocol (LDAP) over TLS (LDAPS). |
 | Domain controllers | TCP 389 | You scan an Active Directory source. The connection uses LDAP (default port). |
 | File servers | TCP 445 | You scan an SMB file server source (default port). |
+
+The rows for sources apply to every host that runs the scan: the server, and any agent that the scan or a source override routes it to with a label. [Agent labels and scan routing](../configuration/agents/agent-labels.md) explains how a scan picks its agent. **Test connection** always runs on the server, so the server needs these hosts too. A passing test shows only that the server can reach the source.
+
+The `login.microsoftonline.com`, `graph.microsoft.com`, and `*.sharepoint.com` hosts are for the commercial Microsoft 365 cloud. Azure Government (GCC) tenants use the same hosts. Each Entra ID and SharePoint Online source picks its hosts from its **Azure cloud** setting. If you set **Azure cloud** to another cloud, allow that cloud's hosts on TCP 443 instead:
+
+| Azure cloud | Login and Graph hosts | SharePoint Online hosts |
+|---|---|---|
+| Azure Government (GCC High) | `login.microsoftonline.us`, `graph.microsoft.us` | `*.sharepoint.us` |
+| Azure Government (DoD) | `login.microsoftonline.us`, `dod-graph.microsoft.us` | `*.sharepoint-mil.us` |
+| Azure China (21Vianet) | `login.chinacloudapi.cn`, `microsoftgraph.chinacloudapi.cn` | `*.sharepoint.cn` |
+
+An Entra ID source needs only the login and Graph hosts. Entra ID as the identity provider always uses the commercial hosts, so it supports only commercial and GCC tenants.
+
+## Antivirus Exclusions
+
+Real-time scanning by antivirus or endpoint protection software can interfere with the container runtime that Access Analyzer runs on. Exclude these directories from real-time scanning on the Access Analyzer server and on every [agent](../configuration/agents/index.md) host:
+
+- `/var/lib/rancher/k3s/agent/containerd`
+- `/var/lib/rancher/k3s/data`
+- `/run/k3s/containerd`
+
+If you install the server with `--storage-dir`, the first two directories move under it. For example, `--storage-dir /data` puts them at `/data/rancher/k3s/agent/containerd` and `/data/rancher/k3s/data`. Agent hosts always use the default directories.
+
+The preflight check warns when it detects a known antivirus product and names the product's command or console for adding the exclusions. See [Preflight Checks](../install/installer-reference.md#preflight-checks).
 
 ## Browser
 

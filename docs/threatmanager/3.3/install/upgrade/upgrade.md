@@ -58,5 +58,5 @@ server where Netwrix Threat Manageris installed.
 
 You can:
 
-- [Upgrade PostgreSQL from 14 To 18](/docs/threatmanager/3.3/install/upgrade/upgrade_pg14_to_pg18.md)
+- [Upgrade PostgreSQL from 14 To 18](/docs/threatmanager/3.3/migration/upgrade_pg14_to_pg18.md)
 - [Upgrade Threat Manager from 3.2 to 3.3](/docs/threatmanager/3.3/install/upgrade/upgrade3.3.md)
