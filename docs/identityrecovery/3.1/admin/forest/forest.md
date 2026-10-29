@@ -76,7 +76,7 @@ Configuration wizard.
 
 ![Server Backup Configuration wizard - Server page](/images/identityrecovery/3.1/product/forest/backup/forest_backup_page1.png)
 
-**Step 2 –** The Server field displays the domain controller to back up as read-only, in the
+**Step 2 –** The read-only Server field displays the domain controller to back up, in the
 following format: server.domain.com.
 
 **Step 3 –** Specify an account to validate the server, install the Netwrix Server Backup
