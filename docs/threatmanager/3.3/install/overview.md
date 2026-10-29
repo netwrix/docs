@@ -117,11 +117,11 @@ for additional information.
 **Step 4 –** Configure integration with one or more Netwrix products to feed the type of
 data you want into Threat Manager:
 
-- [Netwrix Activity Monitor Integration](/docs/threatmanager/3.3/integrations/netwrix/activitymonitor.md) – Configure Netwrix
+- [Netwrix Activity Monitor Integration](/docs/threatmanager/3.3/configuration/netwrix/activitymonitor.md) – Configure Netwrix
   Activity Monitor to send file system data and/or Active Directory data and/or Microsoft Entra ID
   data to Threat Manager
-- [Netwrix Threat Prevention Integration](/docs/threatmanager/3.3/integrations/netwrix/threatprevention/threatprevention.md) – Configure Netwrix
+- [Netwrix Threat Prevention Integration](/docs/threatmanager/3.3/configuration/netwrix/threatprevention/threatprevention.md) – Configure Netwrix
   Threat Prevention to send Active Directory data to Threat Manager
-- [Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.3/integrations/netwrix/accessanalyzer.md)
+- [Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.3/configuration/netwrix/accessanalyzer.md)
   – Configure Netwrix Access Analyzer (formerly Enterprise Auditor) to send Sensitive Data to Threat
   Manager

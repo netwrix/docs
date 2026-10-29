@@ -77,11 +77,11 @@ Under `docs/threatmanager/<version>/`, versions 3.0 to 3.3, latest is 3.3. Edits
 | Requirements | `requirements/` (server, database, client, action service, ports, permissions) |
 | Install and upgrade | `install/` (application, database, action service, proxy, secure, appsettings, first launch, `upgrade/`) |
 | Migration | `migration/upgrade_pg14_to_pg18.md` |
-| Configuration | `configuration/` (`threatdetection/`, `threatresponse.md`, `policies/`, `systemsettings/`, `integrations/` for AD and Entra ID sync, app tokens, credential profiles, email, folder settings, tags, authentication providers) |
+| Configuration | `configuration/` (`threatdetection/`, `threatresponse.md`, `policies/`, `systemsettings/`, `integrations/` for AD and Entra ID sync, app tokens, credential profiles, email, folder settings, tags, authentication providers; `netwrix/` for Activity Monitor, Threat Prevention, Access Analyzer sending data) |
 | Threats dashboard, service accounts, system health | `administration/threats/` (Active Directory objects, Entra ID objects, threat details), `administration/serviceaccounts.md`, `administration/home.md`, `administration/systemhealth/` |
 | Investigations | `administration/investigations/` (new, predefined, favorites, reports, subscriptions and exports, options) |
 | Playbooks | `administration/playbooks/` (trigger, steps, import, export, `action/` by target type) |
-| Integrations | `integrations/` (SIEM, Netwrix integrations, `netwrix/` for Activity Monitor, Threat Prevention, Access Analyzer) |
+| Integrations | `integrations/` (SIEM, Netwrix integrations) |
 | Troubleshooting | `troubleshooting/` |
 | Knowledge Base | `kb/`, copied at build time from `docs/kb/threatmanager/` (six category folders) |
 

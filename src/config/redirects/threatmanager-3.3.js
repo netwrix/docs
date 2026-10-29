@@ -50,11 +50,11 @@ const MOVED_PAGES = {
   'administration/troubleshooting/log': 'troubleshooting/log',
   'administration/troubleshooting/overview': 'troubleshooting/overview',
   'administration/troubleshooting/updatepasswords': 'troubleshooting/updatepasswords',
-  'install/integration/accessanalyzer': 'integrations/netwrix/accessanalyzer',
-  'install/integration/activitymonitor': 'integrations/netwrix/activitymonitor',
-  'install/integration/overview': 'integrations/netwrix/overview',
-  'install/integration/threatprevention': 'integrations/netwrix/threatprevention',
-  'install/integration/threatprevention/threatmanagerconfiguration': 'integrations/netwrix/threatprevention/threatmanagerconfiguration',
+  'install/integration/accessanalyzer': 'configuration/netwrix/accessanalyzer',
+  'install/integration/activitymonitor': 'configuration/netwrix/activitymonitor',
+  'install/integration/overview': 'configuration/netwrix/overview',
+  'install/integration/threatprevention': 'configuration/netwrix/threatprevention',
+  'install/integration/threatprevention/threatmanagerconfiguration': 'configuration/netwrix/threatprevention/threatmanagerconfiguration',
   'install/upgrade/upgrade_pg14_to_pg18': 'migration/upgrade_pg14_to_pg18',
   'threats/activedirectory': 'gettingstarted/threattypes/activedirectory',
   'threats/certificateservices': 'gettingstarted/threattypes/certificateservices',
@@ -72,7 +72,7 @@ const SECTION_INDEXES = new Set([
   'configuration/integrations/page',
   'configuration/integrations/page/openid',
   'configuration/threatdetection',
-  'integrations/netwrix/threatprevention',
+  'configuration/netwrix/threatprevention',
 ]);
 
 export const threatManager33Redirects = Object.entries(MOVED_PAGES).flatMap(([oldPath, newPath]) => {
