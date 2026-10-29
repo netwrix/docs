@@ -18,7 +18,7 @@ Only users with Administrator rights have access to the Configuration interface.
 
 The Configuration interface contains the following tabs, each documented in its own topic:
 
-- [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains tab lists the domains backed up by Identity Recovery and their backup schedules. You can also add and configure new domains.
+- [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains tab lists the domains that Identity Recovery backs up and their backup schedules. You can also add and configure new domains.
 - [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) – The Forest tab lets you add a forest so that Identity Recovery can back it up and recover it.
 - [Azure Storage Page](/docs/identityrecovery/3.1/configuration/azurestorage.md) – The Azure Storage tab lists the storage containers in Azure Storage.
 - [Connect Entra ID](/docs/identityrecovery/3.1/configuration/entraid.md) – The Entra ID tab lets you add Entra tenants for Identity Recovery to back up and view their backup schedules.

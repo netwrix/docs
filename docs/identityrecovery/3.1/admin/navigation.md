@@ -45,7 +45,7 @@ The navigation pane contains the following links:
     Only users with Administrator rights have access to the Configuration interface.
     :::
 
-    - [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains tab lists the domains backed up by Identity Recovery. It displays the backup schedule settings for each
+    - [Domains Page](/docs/identityrecovery/3.1/configuration/domain.md) – The Domains tab lists the domains that Identity Recovery backs up. It displays the backup schedule settings for each
       added domain. You can also add and configure new domains.
     - [Connect a Forest](/docs/identityrecovery/3.1/configuration/forest.md) – The Forest tab lets you add a forest so that Identity Recovery can back it up and recover it.
     - [Azure Storage Page](/docs/identityrecovery/3.1/configuration/azurestorage.md) – The Azure Storage tab lists the storage containers in Azure Storage.
