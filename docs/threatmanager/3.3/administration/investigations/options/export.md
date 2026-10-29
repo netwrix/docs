@@ -43,7 +43,7 @@ additional information.
 
 :::note
 This option requires an email server to be configured. If this requirement isn't met, a
-message will appear in the window. See the[Email Page](/docs/threatmanager/3.3/configuration/integrations/email.md)
+message will appear in the window. See the [Email Page](/docs/threatmanager/3.3/configuration/integrations/email.md)
 section for additional information.
 :::
 
