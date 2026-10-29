@@ -8,7 +8,7 @@ Two commands change how an existing install gets its upgrades. Both run on the s
 
 | You have | You want | Use |
 |---|---|---|
-| A registry install (made before media installs, or with `DSPM_MEDIA_INSTALL=false`) | Upgrades from downloaded media, like any connected install | [`--migrate`](#convert-a-registry-install) |
+| A registry install (made before media installs, or with `DSPM_MEDIA_INSTALL=false`) | Upgrades from downloaded media, like any connected install | [`upgrade --download`](#convert-a-registry-install) |
 | An air-gapped install on a host that now has internet access | Upgrades from the **Settings** page, automatically, or with `upgrade --download` | [`--connect`](#connect-an-air-gapped-install) |
 
 Both commands need the `dspm-installer` binary from the release you're moving to. See [Download the installer](run-the-installer.md#download-the-installer).
@@ -18,26 +18,28 @@ Both commands need the `dspm-installer` binary from the release you're moving to
 A cluster installed from the registry can move onto downloaded media without a reinstall. Later upgrades then work as on any connected media install. The cluster stays online throughout.
 
 ```bash
-sudo dspm-installer upgrade --download --migrate
+sudo dspm-installer upgrade --download
 ```
 
-The recording runs `--migrate --dry-run` to print the plan, then converts a registry install. The command downloads the media, switches the cluster to it, waits for every application to become healthy, and prints `Migrated`. The installed release and the target are the same here, so the release stays at v1.2.0.
+On a registry install, `--download` converts the install on its own. You don't need `--migrate`. Adding it does the same thing.
+
+The recording passes `--migrate` explicitly. It runs `--dry-run` first to print the plan, then converts a registry install. The command downloads the media, switches the cluster to it, waits for every application to become healthy, and prints `Migrated`. The installed release and the target are the same here, so the release stays at v1.2.0.
 
 ![dspm-installer upgrade --download --migrate with --dry-run, then downloading the media, deploying it, switching the cluster to offline media, and reporting the migration](/images/accessanalyzer/26.1/install/upgrade-migrate.webp)
 
 To convert and upgrade to a specific release in the same run, add `--target-revision`:
 
 ```bash
-sudo dspm-installer upgrade --download --migrate --target-revision <version>
+sudo dspm-installer upgrade --download --target-revision <version>
 ```
 
 To convert without changing release, pass the installed release. Run `sudo dspmctl version` to find it.
 
 ```bash
-sudo dspm-installer upgrade --download --migrate --target-revision <installed-version>
+sudo dspm-installer upgrade --download --target-revision <installed-version>
 ```
 
-`--migrate` requires `--download`, so a registry install can't convert straight to air-gapped media. Convert it while it's online.
+The conversion needs `--download`, so a registry install can't convert straight to air-gapped media. Convert it while it's online.
 
 `--download` reads the license key from `/etc/dspm/installer.yaml`. If the host has no saved key, pass the key through the environment, as [Upgrade from the host](upgrade-to-a-new-version.md#upgrade-from-the-host) shows.
 
@@ -98,7 +100,7 @@ sudo dspm-installer upgrade --download --target-revision <version>
 
 Run `upgrade --connect` first. On an air-gapped install, `upgrade --download` refuses and exits with code `16`.
 
-`--connect` refuses a cluster that's already connected, and a cluster installed from the registry, because that cluster needs [`--migrate`](#convert-a-registry-install).
+`--connect` refuses a cluster that's already connected, and a cluster installed from the registry, because that cluster converts with [`upgrade --download`](#convert-a-registry-install).
 
 :::warning
 Only a reinstall can return a connected install to air-gapped.
