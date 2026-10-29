@@ -1,18 +1,15 @@
 import { writeFileSync } from 'fs';
 import { join } from 'path';
-
-// Only this host is crawlable. docs-dev.netwrix.com is built from the same
-// sources on its own deploy (dev branch, development environment), so it gets
-// a different robots.txt, and any host not listed here, including local
-// builds, is closed to crawlers by default.
-const CRAWLABLE_HOSTNAMES = ['docs.netwrix.com'];
+import { isIndexableSite } from '../config/indexing.js';
 
 export function buildRobotsTxt(siteUrl) {
-  const { hostname, origin } = new URL(siteUrl);
-  if (!CRAWLABLE_HOSTNAMES.includes(hostname)) {
-    return 'User-agent: *\nDisallow: /\n';
+  if (!isIndexableSite(siteUrl)) {
+    // Crawling stays allowed on purpose: the site's noIndex meta tag only
+    // removes pages from search once a crawler can fetch them and see it.
+    // Switch this to 'Disallow: /' once docs-dev has dropped out of the index.
+    return 'User-agent: *\nAllow: /\n';
   }
-  return `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`;
+  return `User-agent: *\nAllow: /\n\nSitemap: ${new URL(siteUrl).origin}/sitemap.xml\n`;
 }
 
 /** Writes build/robots.txt for the host this build is deployed to. */
