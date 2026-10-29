@@ -14,7 +14,7 @@ recipients to receive this report as an email attachment in a specified format.
 
 :::note
 This option requires an email server to be configured.If this requirement isn't met, a
-message will appear in the window. See the[Email Page](/docs/threatmanager/3.3/configuration/integrations/email.md)
+message will appear in the window. See the [Email Page](/docs/threatmanager/3.3/configuration/integrations/email.md)
 section for additional information.
 :::
 
@@ -48,7 +48,7 @@ Recipients box.
 Monthly. Ensure the frequency doesn't exceed the "Time to Retain" settings for the System Jobs
 configured in the System Settings interface.
 
-**Step 7 –** There are two additional settings in the Advanced Options section. Click the arrow to
+**Step 7 –** The Advanced Options section has two additional settings. Click the arrow to
 expand this section.
 
 **Step 8 –** Modify the email subject line in the Email subject field as desired. The default name
