@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { accessAnalyzer261Installers, accessAnalyzer261Releases } from './releases/accessanalyzer-26.1.js';
 import {
   docVariablesPreprocessor,
-  installerTable,
+  releaseTable,
   releaseVariables,
   replaceDocVariables,
   variablesForDoc,
@@ -15,11 +15,15 @@ import {
 const siteDir = fileURLToPath(new URL('../..', import.meta.url));
 const aa261Dir = join(siteDir, 'docs/accessanalyzer/26.1');
 
-const release120 = { version: '1.2.0', date: '2026-10-28', installer: '1.0.21', k3s: 'v1.33.4+k3s1', argocd: '3.2.0' };
-const release130 = { version: '1.3.0', date: '2026-12-01', installer: '1.0.30', k3s: 'v1.34.1+k3s1', argocd: '3.3.0' };
+const release120 = { version: '1.2.0', date: '2026-10-28', installer: '1.0.21' };
+const release130 = { version: '1.3.0', date: '2026-12-01', installer: '1.0.30' };
+const installers = [
+  { version: '1.0.30', k3s: 'v1.34.1+k3s1', argocd: '3.3.0' },
+  { version: '1.0.21', k3s: 'v1.33.4+k3s1', argocd: '3.2.0' },
+];
 
 test('the first release supplies the latest versions', () => {
-  const variables = releaseVariables([release130, release120], '1.1.10', []);
+  const variables = releaseVariables([release130, release120], '1.1.10', installers);
   assert.equal(variables.appVersion, '1.3.0');
   assert.equal(variables.installerVersion, '1.0.30');
   assert.equal(variables.k3sVersion, 'v1.34.1+k3s1');
@@ -27,32 +31,30 @@ test('the first release supplies the latest versions', () => {
 });
 
 test('the previous version is the second release, or the release before the list', () => {
-  assert.equal(releaseVariables([release130, release120], '1.1.10', []).previousAppVersion, '1.2.0');
-  assert.equal(releaseVariables([release120], '1.1.10', []).previousAppVersion, '1.1.10');
+  assert.equal(releaseVariables([release130, release120], '1.1.10', installers).previousAppVersion, '1.2.0');
+  assert.equal(releaseVariables([release120], '1.1.10', installers).previousAppVersion, '1.1.10');
 });
 
-test('the installer table has one row per installer, newest first, with the latest release on or before its date', () => {
-  const installers = [
-    { version: '1.0.21', date: '2026-10-28', k3s: 'v1.33.4+k3s1', argocd: '3.2.0' },
-    { version: '1.0.20', date: '2026-10-08', k3s: 'v1.33.4+k3s1', argocd: '3.2.0' },
-    { version: '1.0.10', date: '2026-08-21', k3s: 'v1.33.4+k3s1', argocd: '3.2.0' },
-  ];
-  const releases = [release120, { version: '1.1.9', date: '2026-09-29' }, { version: '1.1.8', date: '2026-09-29' }];
+test('the release table has one row per release, newest first, with its installer and a spelled-out date', () => {
   assert.equal(
-    installerTable(installers, releases),
+    releaseTable([release130, release120], installers),
     [
-      '| Installer | Released | k3s | ArgoCD | Latest release at the time |',
-      '|---|---|---|---|---|',
-      '| 1.0.21 | October 28, 2026 | v1.33.4+k3s1 | 3.2.0 | 1.2.0 |',
-      '| 1.0.20 | October 8, 2026 | v1.33.4+k3s1 | 3.2.0 | 1.1.9 |',
-      '| 1.0.10 | August 21, 2026 | v1.33.4+k3s1 | 3.2.0 | - |',
+      '| Release | Released | Installer |',
+      '|---|---|---|',
+      '| 1.3.0 | December 1, 2026 | 1.0.30 |',
+      '| 1.2.0 | October 28, 2026 | 1.0.21 |',
     ].join('\n'),
   );
 });
 
-test('the latest release pins an installer that is in the installer list', () => {
-  const [latest] = accessAnalyzer261Releases;
-  assert.ok(accessAnalyzer261Installers.some((i) => i.version === latest.installer));
+test('a release that names an installer missing from the list fails', () => {
+  assert.throws(() => releaseTable([{ version: '1.4.0', date: '2027-01-01', installer: '9.9.9' }], installers), /1\.4\.0.*9\.9\.9/);
+});
+
+test('every Access Analyzer 26.1 release names an installer in the list', () => {
+  for (const release of accessAnalyzer261Releases) {
+    assert.ok(accessAnalyzer261Installers.some((i) => i.version === release.installer), release.version);
+  }
 });
 
 test('tokens are replaced in prose, inline code, and code blocks', () => {

@@ -18,26 +18,33 @@ function formatDate(isoDate) {
   });
 }
 
-export function installerTable(installers, releases) {
+function installerFor(release, installers) {
+  const installer = installers.find((i) => i.version === release.installer);
+  if (!installer) throw new Error(`release ${release.version} names installer ${release.installer}, which is not in the installer list`);
+  return installer;
+}
+
+export function releaseTable(releases, installers) {
   return [
-    '| Installer | Released | k3s | ArgoCD | Latest release at the time |',
-    '|---|---|---|---|---|',
-    ...installers.map((i) => {
-      const release = releases.find((r) => r.date <= i.date)?.version ?? '-';
-      return `| ${i.version} | ${formatDate(i.date)} | ${i.k3s} | ${i.argocd} | ${release} |`;
+    '| Release | Released | Installer |',
+    '|---|---|---|',
+    ...releases.map((r) => {
+      const { version } = installerFor(r, installers);
+      return `| ${r.version} | ${formatDate(r.date)} | ${version} |`;
     }),
   ].join('\n');
 }
 
 export function releaseVariables(releases, releaseBefore, installers) {
   const [latest, previous] = releases;
+  const installer = installerFor(latest, installers);
   return {
     appVersion: latest.version,
-    installerVersion: latest.installer,
-    k3sVersion: latest.k3s,
-    argocdVersion: latest.argocd,
+    installerVersion: installer.version,
+    k3sVersion: installer.k3s,
+    argocdVersion: installer.argocd,
     previousAppVersion: previous?.version ?? releaseBefore,
-    installerTable: installerTable(installers, releases),
+    releaseTable: releaseTable(releases, installers),
   };
 }
 
