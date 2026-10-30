@@ -53,13 +53,13 @@ areas to edit the lists.
 - The Path **Add** (+) button opens the
   [Select File System Objects Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectfilesystemobjects.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -132,6 +132,6 @@ Use the buttons above the Exclude Perpetrators and Exclude Collections areas to 
 - The Perpetrators Add (+) button opens the
   [Select Active Directory Perpetrators Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/perpetrators.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.

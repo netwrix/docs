@@ -52,7 +52,7 @@ being monitored.
 Saving all TGT and/or TGS authentication data bloats the Threat
 Prevention database. Configure policy filters and use Database Maintenance while monitoring
 these protocols to retain data for the necessary timeframe. See the
-[Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md) topic for
+[Database Maintenance Window](/docs/threatprevention/8.1/configuration/databasemaintenance/overview.md) topic for
 additional information.
 :::
 > >
@@ -89,13 +89,13 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 
 - The Add (+) buttons open the [Select Domains and Servers Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectdomainsservers.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -128,13 +128,13 @@ Collections areas to edit the lists.
 - The Perpetrators Add (+) button opens the
   [Select Active Directory Perpetrators Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/perpetrators.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -158,13 +158,13 @@ Collections areas to edit the lists.
 
 - The IP Addresses Add (+) button opens the [Add IP Address Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/addipaddress.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -181,13 +181,13 @@ Collections areas to edit the lists.
 
 - The IP Addresses Add (+) button opens the [Add IP Address Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/addipaddress.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -204,13 +204,13 @@ areas to edit the lists.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectcomputers.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -227,13 +227,13 @@ areas to edit the lists.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectcomputers.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 
 :::

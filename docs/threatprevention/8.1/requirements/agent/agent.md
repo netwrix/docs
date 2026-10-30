@@ -47,7 +47,7 @@ requires:
 
 You can also deploy the HIBP database on some Agent servers while other Agent servers work
 with the copy installed on the Enterprise Manager server. See the
-[EPE Settings Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md) topic for additional information.
+[EPE Settings Window](/docs/threatprevention/8.1/configuration/epesettings.md) topic for additional information.
 
 **Additional Server Requirements**
 

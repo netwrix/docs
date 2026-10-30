@@ -21,7 +21,7 @@ A rollback changes your database schema. The database setup job (`db-seeds`) run
    ```
 
    This backs up Postgres only. It doesn't include ClickHouse (scan results and reporting data), and a rollback can change the ClickHouse schema too.
-3. **Note the version you're rolling back to**, for example `1.1.2`.
+3. **Note the version you're rolling back to**, for example `{{previousAppVersion}}`.
 
 ## Choose a Method
 
@@ -59,8 +59,8 @@ Run these commands on the install host. `dspmctl` needs `sudo` because only root
 
    | Install type | Format | Example |
    |---|---|---|
-   | Connected | no `v` prefix | `1.1.2` |
-   | Air-gapped | `v` prefix | `v1.1.2` |
+   | Connected | no `v` prefix | `{{previousAppVersion}}` |
+   | Air-gapped | `v` prefix | `v{{previousAppVersion}}` |
 
    `set-revision` also turns off automated sync, so ArgoCD doesn't undo the change.
 
