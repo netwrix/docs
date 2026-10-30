@@ -17,6 +17,7 @@ import { privilegeSecure42Redirects } from './src/config/redirects/privilegesecu
 import { isIndexableSite } from './src/config/indexing.js';
 import { identityRecovery31Redirects } from './src/config/redirects/identityrecovery-3.1.js';
 import robotsTxtPlugin from './src/plugins/robotsTxt.js';
+import { docVariablesPreprocessor } from './src/config/docVariables.js';
 
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
@@ -117,6 +118,8 @@ const config = {
     hooks: {
       onBrokenMarkdownLinks: 'throw',
     },
+    // Fills {{appVersion}} and the other release tokens; see src/config/docVariables.js.
+    preprocessor: docVariablesPreprocessor,
     // Strip trailing periods from title/sidebar_label in generated API operation pages.
     // The OpenAPI summaries often end with a period; Docusaurus uses title as the
     // prev/next pagination label, so this cleans up navigation text site-wide.

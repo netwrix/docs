@@ -52,7 +52,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--tls-cert-validity-days` (alias `--cert-days`) | `DSPM_TLS_CERT_VALIDITY_DAYS` | `365` | Validity period, in days, for a certificate `--generate-self-signed-cert` generates. Maximum `36500`. |
 | `--cert-manager-issuer-mode` (alias `--issuer-mode`) | `CERT_MANAGER_ISSUER_MODE` | `none` | Hand issuance and renewal of the `dspm-tls` certificate to cert-manager instead of managing it yourself: `none`, `selfsigned`, `adcs`, or `acme`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the `acme` mode. The installer saves this to `/etc/dspm/installer.yaml`, so later runs keep the mode — see [Configuration File](#configuration-file). |
 | `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](../requirements/index.md#size) for the CPU, RAM, and disk each size requires. A re-run on an existing install never shrinks it. Without `--size`, `SIZE`, or a `size:` key in `/etc/dspm/installer.yaml`, the re-run keeps the installed size, and a smaller size exits with code `1`. To grow an install, pass a larger `--size`, or run `dspmctl resize`, which also grows the volume claims. See [Change the deployment size](change-the-deployment-size.md). |
-| `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. The installer refuses a release older than itself and exits with code `16`. Also appears as **Target Revision** under **Show advanced settings?**. |
+| `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `{{appVersion}}`. The default installs the latest 1.x release. The installer refuses a release older than itself and exits with code `16`. Also appears as **Target Revision** under **Show advanced settings?**. |
 | `--progress` | `DSPM_PROGRESS` | `auto` | Download progress style: `auto`, `bar`, `ascii`, or `lines`. Also applies to `upgrade`. See [Download progress](run-the-installer.md#download-progress). |
 | `--storage-dir` | `DSPM_STORAGE_DIR` | `/var/lib` | Directory holding everything the Kubernetes platform writes: container image layers, the server datastore, and every persistent volume. Set it at install time only. It also moves the install media to `<dir>/dspm/media`. Also appears as **Storage Directory** under **Show advanced settings?**. See [Install media](../requirements/index.md#install-media). |
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
@@ -74,7 +74,7 @@ The defaults for `--tls-cert` and `--tls-key` apply only when you omit both flag
 
 ### Storage Location
 
-By default, everything the Kubernetes platform writes lands under `/var/lib/rancher/k3s`: extracted container image layers and every container's writable layer, the server datastore, and, under `storage/`, every persistent volume in the cluster (PostgreSQL, ClickHouse, NATS, Redis, Prometheus, Metabase, log exports, and PostgreSQL backups). The image layers alone take about 13 GB, and the volumes then grow toward the disk figure for the chosen `--size`.
+By default, everything the Kubernetes platform writes goes under `/var/lib/rancher/k3s`: extracted container image layers and every container's writable layer, the server datastore, and, under `storage/`, every persistent volume in the cluster (PostgreSQL, ClickHouse, NATS, Redis, Prometheus, Metabase, log exports, and PostgreSQL backups). The image layers alone take about 13 GB, and the volumes then grow toward the disk figure for the chosen `--size`.
 
 `--storage-dir` replaces `/var/lib`, so the whole tree moves to a mount you choose and you don't have to add space to `/var/lib`:
 
@@ -102,10 +102,10 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
-| `--k3s-version` | none | `v1.33.4+k3s1` | K3s version to install. |
+| `--k3s-version` | none | `{{k3sVersion}}` | K3s version to install. |
 | `--k3s-name` | none | `dspm` | K3s service and instance name. |
 | `--kubeconfig` | `KUBECONFIG` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
-| `--argocd-version` | none | `3.2.0` | ArgoCD image tag. |
+| `--argocd-version` | none | `{{argocdVersion}}` | ArgoCD image tag. |
 | `--argocd-namespace` | none | `argocd` | Kubernetes namespace for ArgoCD. A media install doesn't support a non-default value. |
 | `--argocd-reconciliation-timeout` | none | `1h` | How often ArgoCD self-heals configuration drift. The version-poller CronJob detects new releases separately. |
 | `--disable-dex` | none | `true` | Disable the Dex identity provider. |
@@ -120,7 +120,7 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 | `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
 | `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all Access Analyzer data. Prompts for confirmation unless you pass `--force`. |
 | `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
-| `--tmp-dir` | `DSPM_TMP_DIR` | none | `--help` doesn't list this flag. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](../requirements/index.md#install-media). |
+| `--tmp-dir` | `DSPM_TMP_DIR` | none | `--help` doesn't list this flag. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with enough free RAM can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](../requirements/index.md#install-media). |
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 

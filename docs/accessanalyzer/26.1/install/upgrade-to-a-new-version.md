@@ -58,6 +58,8 @@ Before every upgrade, whatever your install type, download the latest `dspm-inst
    dspm-installer --version
    ```
 
+   The output should show `dspm-installer version {{installerVersion}}` or later. [Release and installer versions](../release-notes/versions.md) lists the installer for each release.
+
 If the server has no network access, run these commands on a connected machine with the same architecture, then copy `/usr/local/bin/dspm-installer` to the same path on the server with `scp` or removable media.
 
 ## Check Which Version Is Running
@@ -68,7 +70,7 @@ Check which version is running:
 sudo dspmctl version
 ```
 
-Compare the output with the latest release Netwrix has announced. If they match, Access Analyzer is already up to date.
+Compare the output with the latest release, {{appVersion}}. If they match, Access Analyzer is already up to date. [Release and installer versions](../release-notes/versions.md) lists every release.
 
 ## Upgrade to 1.2.0
 
@@ -161,7 +163,7 @@ sudo dspm-installer upgrade --download
 Upgrade to a specific release:
 
 ```bash
-sudo dspm-installer upgrade --download --target-revision 1.5.0
+sudo dspm-installer upgrade --download --target-revision {{appVersion}}
 ```
 
 `--download` reads the license key from `/etc/dspm/installer.yaml`. On a host without a saved key, pass the key through the environment, as the install does:
@@ -216,7 +218,7 @@ Before it changes anything, the command checks that the server runs from offline
 
    ```bash
    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
-   VERSION='<release-version>'  # the release you're upgrading to, for example 1.6.0
+   VERSION='{{appVersion}}'  # the latest release; change it to upgrade to another one
    sudo mkdir -p /etc/dspm/media
    sudo curl -Lf -o "/etc/dspm/media/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz" \
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable"
@@ -285,7 +287,7 @@ To upgrade with `dspmctl`:
 2. Start the upgrade and follow it until it finishes:
 
    ```bash
-   sudo dspmctl set-revision netwrix 1.1.2 --wait
+   sudo dspmctl set-revision netwrix <version> --wait
    ```
 
    The command explains the conversion, starts the upgrade job, and prints its progress. It exits with the job's exit code. The job pauses automated sync while it deploys and turns it back on when it finishes, so you don't run `sync` or `enable-auto` yourself.

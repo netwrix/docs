@@ -52,7 +52,7 @@ On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` u
    dspm-installer --version
    ```
 
-   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach `raw.pkg.keygen.sh`, as [Outbound](../requirements/index.md#outbound) describes.
+   Output such as `dspm-installer version {{installerVersion}}` means the binary is ready. An error means the download failed: check the license key and confirm the server can reach `raw.pkg.keygen.sh`, as [Outbound](../requirements/index.md#outbound) describes.
 
    The recording runs these three steps. `curl` downloads the installer, `install` places it in `/usr/local/bin`, and `dspm-installer --version` prints the version.
 
@@ -65,7 +65,7 @@ On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` u
 
    ```bash
    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
-   VERSION='<release-version>'  # the release you're installing, for example 1.5.0
+   VERSION='{{appVersion}}'  # the latest release; change it to install an earlier one
    TMP_FILE=$(mktemp)
    curl -Lf -o "$TMP_FILE" \
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
@@ -87,7 +87,7 @@ On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` u
    dspm-installer --version
    ```
 
-   A version number means the binary is ready. An error means the download failed: check the license key and confirm the machine can reach the Netwrix package registry.
+   Output such as `dspm-installer version {{installerVersion}}` means the binary is ready. An error means the download failed: check the license key and confirm the machine can reach the Netwrix package registry.
 
 4. Confirm the archive downloaded completely.
 
