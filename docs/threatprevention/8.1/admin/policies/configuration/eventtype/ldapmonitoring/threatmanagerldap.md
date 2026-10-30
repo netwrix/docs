@@ -50,6 +50,6 @@ Threat Manager.
 
 :::tip
 You must configure the Honeytoken tab of the
-[Netwrix Threat Manager Configuration Window](/docs/threatprevention/8.1/admin/configuration/threatmanagerconfiguration.md)
+[Netwrix Threat Manager Configuration Window](/docs/threatprevention/8.1/configuration/threatmanagerconfiguration.md)
 to successfully send LDAP monitoring data to Threat Manager.
 :::

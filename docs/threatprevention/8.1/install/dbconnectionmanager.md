@@ -13,10 +13,10 @@ initial install of the Enterprise Manager package. See the
 
 :::tip
 Remember, the
-[Events Database Configuration Window](/docs/threatprevention/8.1/admin/configuration/eventsdatabaseconfiguration.md)
+[Events Database Configuration Window](/docs/threatprevention/8.1/configuration/eventsdatabaseconfiguration.md)
 displays the host, port, and user for the NVMonitorConfig and NVMonitorData databases. The
 current Archive Database settings are located on the Archive DB tab of the Database Maintenance
-window. See the [Archive Data](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/archive.md) topic for
+window. See the [Archive Data](/docs/threatprevention/8.1/configuration/databasemaintenance/archive.md) topic for
 additional information.
 :::
 

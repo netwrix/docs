@@ -46,7 +46,7 @@ documentation for additional information:
 Threat Manager monitors the following threats. See each section for information on monitored threat
 types.
 
-- [Active Directory Threats](/docs/threatmanager/3.3/threats/activedirectory.md)
-- [Entra ID Threats](/docs/threatmanager/3.3/threats/entraid.md)
-- [File System Threats](/docs/threatmanager/3.3/threats/filesystem.md)
-- [General Threats](/docs/threatmanager/3.3/threats/general.md)
+- [Active Directory Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/activedirectory.md)
+- [Entra ID Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/entraid.md)
+- [File System Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/filesystem.md)
+- [General Threats](/docs/threatmanager/3.3/gettingstarted/threattypes/general.md)
