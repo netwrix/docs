@@ -27,6 +27,9 @@ docs/*/*/kb/**
 docs/changetracker/api/reference/*
 !docs/changetracker/api/reference/_category_.json
 !docs/changetracker/api/reference/index.md
+docs/privilegesecurediscovery/integrations/api/reference/*
+!docs/privilegesecurediscovery/integrations/api/reference/_category_.json
+!docs/privilegesecurediscovery/integrations/api/reference/index.md
 
 # KB copy script lockfile
 .kb-copy.lock
