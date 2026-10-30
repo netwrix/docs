@@ -1,6 +1,10 @@
 import { relative, sep } from 'path';
 import { fileURLToPath } from 'url';
-import { accessAnalyzer261ReleaseBefore, accessAnalyzer261Releases } from './releases/accessanalyzer-26.1.js';
+import {
+  accessAnalyzer261Installers,
+  accessAnalyzer261ReleaseBefore,
+  accessAnalyzer261Releases,
+} from './releases/accessanalyzer-26.1.js';
 
 const siteDir = fileURLToPath(new URL('../..', import.meta.url));
 const TOKEN = /\{\{([A-Za-z][A-Za-z0-9]*)\}\}/g;
@@ -14,15 +18,18 @@ function formatDate(isoDate) {
   });
 }
 
-export function releaseTable(releases) {
+export function installerTable(installers, releases) {
   return [
-    '| Release | Released | Installer | k3s | ArgoCD |',
+    '| Installer | Released | k3s | ArgoCD | Latest release at the time |',
     '|---|---|---|---|---|',
-    ...releases.map((r) => `| ${r.version} | ${formatDate(r.date)} | ${r.installer} | ${r.k3s} | ${r.argocd} |`),
+    ...installers.map((i) => {
+      const release = releases.find((r) => r.date <= i.date)?.version ?? '-';
+      return `| ${i.version} | ${formatDate(i.date)} | ${i.k3s} | ${i.argocd} | ${release} |`;
+    }),
   ].join('\n');
 }
 
-export function releaseVariables(releases, releaseBefore) {
+export function releaseVariables(releases, releaseBefore, installers) {
   const [latest, previous] = releases;
   return {
     appVersion: latest.version,
@@ -30,12 +37,12 @@ export function releaseVariables(releases, releaseBefore) {
     k3sVersion: latest.k3s,
     argocdVersion: latest.argocd,
     previousAppVersion: previous?.version ?? releaseBefore,
-    releaseTable: releaseTable(releases),
+    installerTable: installerTable(installers, releases),
   };
 }
 
 const VARIABLES_BY_DIR = [
-  ['docs/accessanalyzer/26.1/', releaseVariables(accessAnalyzer261Releases, accessAnalyzer261ReleaseBefore)],
+  ['docs/accessanalyzer/26.1/', releaseVariables(accessAnalyzer261Releases, accessAnalyzer261ReleaseBefore, accessAnalyzer261Installers)],
 ];
 
 export function variablesForDoc(filePath) {
