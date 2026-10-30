@@ -126,7 +126,7 @@ A custom data directory must be an absolute path to an existing, writable direct
 
 ### Certificate Manager Flags
 
-The installer only reads the following flags when `--cert-manager-issuer-mode` selects the matching mode: the Automatic Certificate Management Environment (ACME) flags apply to `acme`, and the Active Directory Certificate Services (AD CS) flags apply to `adcs`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for `acme` and `selfsigned`, and [AD CS TLS Certificates](adcs-tls-certificates.md) for `adcs`.
+The installer reads the following flags only when `--cert-manager-issuer-mode` selects the matching mode: the Automatic Certificate Management Environment (ACME) flags apply to `acme`, and the Active Directory Certificate Services (AD CS) flags apply to `adcs`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for `acme` and `selfsigned`, and [AD CS TLS Certificates](adcs-tls-certificates.md) for `adcs`.
 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|

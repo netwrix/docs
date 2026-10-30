@@ -372,7 +372,7 @@ sudo kubectl get application netwrix -n argocd \
   -o custom-columns='REVISION:.spec.source.targetRevision,SYNC:.status.sync.status,HEALTH:.status.health.status'
 ```
 
-Check that `REVISION` shows the version you set and `SYNC` shows `Synced`. The `netwrix` app only manages the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
+Check that `REVISION` shows the version you set and `SYNC` shows `Synced`. The `netwrix` app manages only the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
 
 ```bash
 sudo dspmctl sync netwrix.webapp

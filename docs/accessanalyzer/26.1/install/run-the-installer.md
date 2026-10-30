@@ -272,7 +272,7 @@ Every flag also has an environment variable, listed in the [Installer reference]
 </TabItem>
 <TabItem value="yaml" label="installer.yaml">
 
-Whether you answer prompts or pass flags, the installer saves the following values to `/etc/dspm/installer.yaml`. A later run reads this file first and only asks for (or requires) values that are still missing.
+Whether you answer prompts or pass flags, the installer saves the following values to `/etc/dspm/installer.yaml`. A later run reads this file first and asks for (or requires) only the values that are still missing.
 
 ```yaml
 first-admin-email: admin@example.com
@@ -284,7 +284,7 @@ tls-key: /etc/dspm/tls.key
 ca-bundle: /etc/dspm/ca-bundle.pem
 ```
 
-`ca-bundle` only appears if you gave a CA bundle path. The installer stores the license key in plain text in this file, so restrict access to it the same way you restrict `/etc/dspm/tls.key`.
+`ca-bundle` appears only if you gave a CA bundle path. The installer stores the license key in plain text in this file, so restrict access to it the same way you restrict `/etc/dspm/tls.key`.
 
 </TabItem>
 </Tabs>
@@ -320,7 +320,7 @@ If the platform or the services don't become ready inside those limits, the inst
 <details>
 <summary>Troubleshooting: check per-service status in ArgoCD</summary>
 
-The installer's progress line only reports how many services are running, not which ones are degraded. If phase 2 is taking longer than expected and you need a visual, service-by-service view, open the ArgoCD UI.
+The installer's progress line reports only how many services are running, not which ones are degraded. If phase 2 is taking longer than expected and you need a visual, service-by-service view, open the ArgoCD UI.
 
 Retrieve the initial admin password:
 
