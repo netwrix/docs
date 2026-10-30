@@ -54,6 +54,10 @@ On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` u
 
    A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach `raw.pkg.keygen.sh`, as [Outbound](../requirements/index.md#outbound) describes.
 
+   The recording runs these three steps. `curl` downloads the installer, `install` places it in `/usr/local/bin`, and `dspm-installer --version` prints the version.
+
+   ![Downloading the dspm-installer binary with curl, installing it to /usr/local/bin, and checking its version](/images/accessanalyzer/26.1/install/install-download.webp)
+
 </TabItem>
 <TabItem value="airgap" label="Air-gapped install">
 
@@ -227,10 +231,17 @@ When you run the installer with no flags in a terminal, it asks for each value i
 1. **License Key** - paste your Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The installer validates it online before moving on. An air-gapped install skips this prompt.
 2. **Hostname** - enter the fully qualified domain name users open in their browsers, for example `dspm.corp.example.com`. If the server's own name is a valid choice, the installer offers it as a suggestion.
 3. **First Admin Email** and **First Admin Name** - enter the email address of the first administrator, and optionally their full name. The address becomes their username.
-4. **TLS Certificate File**, **TLS Private Key File**, and **CA Bundle File (optional)** - press Enter to accept `/etc/dspm/tls.crt` and `/etc/dspm/tls.key`, or enter other paths. Fill in the CA bundle only if a private certificate authority issued the certificate. The installer checks that the certificate and key match, that the certificate hasn't expired, and that it covers the hostname you entered.
-5. **Show advanced settings?** - select **No**.
-6. Check the review screen. It lists the hostname, the certificate path (and the CA bundle path if you gave one), the first administrator, and a masked license key.
-7. Answer **Yes** to **Everything look good?**
+4. **Generate a self-signed certificate?** - the installer asks this unless you set the certificate and key with `--tls-cert` and `--tls-key` or in `installer.yaml`, even if files already exist at the default paths. Answer **Yes** and it writes a self-signed certificate and key for your hostname to `/etc/dspm/tls.crt` and `/etc/dspm/tls.key`, valid for 365 days, and moves any existing pair to `.bak` files. Answer **No** if you placed your own certificate there, and you'll confirm its path in the next step. Browsers warn about a self-signed certificate, so use one for evaluation and replace it before production.
+5. **TLS Certificate File**, **TLS Private Key File**, and **CA Bundle File (optional)** - these appear only if you answered **No** to the previous prompt. Press Enter to accept `/etc/dspm/tls.crt` and `/etc/dspm/tls.key`, or enter other paths. Fill in the CA bundle only if a private certificate authority issued the certificate. The installer checks that the certificate and key match, that the certificate hasn't expired, and that it covers the hostname you entered.
+6. **Show advanced settings?** - select **No**.
+7. Check the review screen. It lists the hostname, the certificate path (and the CA bundle path if you gave one), the first administrator, and a masked license key.
+8. Answer **Yes** to **Everything look good?**
+
+Yes/No prompts submit as soon as you press `y` or `n`, so you don't need to press Enter afterwards.
+
+The recording walks through the prompts for a self-signed certificate.
+
+![The dspm-installer wizard asking for the hostname, first administrator, and self-signed certificate, then showing the review screen](/images/accessanalyzer/26.1/install/install-wizard.webp)
 
 The installer saves each answer to `/etc/dspm/installer.yaml` as soon as you confirm it. On the first save it prints `Progress saved to /etc/dspm/installer.yaml — future runs will pre-fill these values.` If you cancel with Esc or Ctrl-C, the installer exits with `installation cancelled`, and your answers stay in that file for the next run.
 
@@ -261,7 +272,7 @@ Every flag also has an environment variable, listed in the [Installer reference]
 </TabItem>
 <TabItem value="yaml" label="installer.yaml">
 
-Whether you answer prompts or pass flags, the installer saves the following values to `/etc/dspm/installer.yaml`. A later run reads this file first and only asks for (or requires) values that are still missing.
+Whether you answer prompts or pass flags, the installer saves the following values to `/etc/dspm/installer.yaml`. A later run reads this file first and asks for (or requires) only the values that are still missing.
 
 ```yaml
 first-admin-email: admin@example.com
@@ -273,7 +284,7 @@ tls-key: /etc/dspm/tls.key
 ca-bundle: /etc/dspm/ca-bundle.pem
 ```
 
-`ca-bundle` only appears if you gave a CA bundle path. The installer stores the license key in plain text in this file, so restrict access to it the same way you restrict `/etc/dspm/tls.key`.
+`ca-bundle` appears only if you gave a CA bundle path. The installer stores the license key in plain text in this file, so restrict access to it the same way you restrict `/etc/dspm/tls.key`.
 
 </TabItem>
 </Tabs>
@@ -295,7 +306,9 @@ The full list of checks, thresholds, and messages is in the [Installer reference
 
 ## Install Phases
 
-After the checks and prompts, the installer validates the certificate and hostname, confirms the license key online, and saves your answers. Then it works through these phases, printing a progress line for each:
+After the checks and prompts, the installer validates the certificate and hostname, confirms the license key online, and saves your answers. Then it works through these phases, printing a progress line for each. The recording shows a full connected install from the media download to the install summary, sped up:
+
+![dspm-installer downloading the media, setting up the platform, starting every application, creating the first administrator, and printing the install summary](/images/accessanalyzer/26.1/install/install-phases.webp)
 
 1. Downloads and verifies the install media on a connected install, as [Run the Installer](#run-the-installer) describes. An air-gapped install unpacks the archive you supplied instead.
 2. Sets up the platform Access Analyzer runs on, including the in-cluster registry and git server. The installer waits up to 5 minutes for the platform to become ready.
@@ -307,7 +320,7 @@ If the platform or the services don't become ready inside those limits, the inst
 <details>
 <summary>Troubleshooting: check per-service status in ArgoCD</summary>
 
-The installer's progress line only reports how many services are running, not which ones are degraded. If phase 2 is taking longer than expected and you need a visual, service-by-service view, open the ArgoCD UI.
+The installer's progress line reports only how many services are running, not which ones are degraded. If phase 2 is taking longer than expected and you need a visual, service-by-service view, open the ArgoCD UI.
 
 Retrieve the initial admin password:
 
@@ -327,7 +340,7 @@ Open `http://<server-address>:8080`, sign in as `admin` with the password you re
 
 ## Troubleshooting the Media Download
 
-**The install stops with exit code `15` and says the cluster was installed from the registry.** This host already has a registry install. Convert it with `sudo dspm-installer upgrade --download --migrate` instead. See [Convert or connect an install](convert-or-connect-an-install.md).
+**The install stops with exit code `15` and says the cluster was installed from the registry.** This host already has a registry install. Convert it with `sudo dspm-installer upgrade --download` instead. See [Convert or connect an install](convert-or-connect-an-install.md).
 
 **The install stops with exit code `16` and mentions free space.** Free space on the media volume, or point the media elsewhere with `--tmp-dir`. The check counts media from other releases as free, because the installer would delete them, but it deletes nothing unless the check passes.
 

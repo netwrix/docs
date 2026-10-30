@@ -80,7 +80,7 @@ An install on a release earlier than 1.2.0 can upgrade to 1.2.0, or to any later
 |---|---|
 | **Connected** | `sudo dspm-installer upgrade --download` |
 | **Air-gapped** | `sudo dspm-installer upgrade --bundle-dir <path-to-archive>`, after you [download the new release](#download-the-new-release) |
-| **Registry** | `sudo dspm-installer upgrade --download --migrate`, which also [converts the install](convert-or-connect-an-install.md#convert-a-registry-install) to downloaded media |
+| **Registry** | `sudo dspm-installer upgrade --download`, which also [converts the install](convert-or-connect-an-install.md#convert-a-registry-install) to downloaded media |
 
 These commands upgrade to the newest stable release. To upgrade to a specific release, add `--target-revision <version>` to the connected or registry command.
 
@@ -96,8 +96,8 @@ Find your situation in the table and run its command on the server. Every comman
 | Upgrade a connected install to a specific release | `sudo dspm-installer upgrade --download --target-revision <version>` |
 | Upgrade a connected install from media you copied to the server | `sudo dspm-installer upgrade --bundle-dir <path-to-archive>` |
 | Upgrade an air-gapped install | `sudo dspm-installer upgrade --bundle-dir <path-to-archive>` |
-| Convert a registry install to downloaded media and upgrade it | `sudo dspm-installer upgrade --download --migrate --target-revision <version>` |
-| Convert a registry install to downloaded media on the same release | `sudo dspm-installer upgrade --download --migrate --target-revision <installed-version>` |
+| Convert a registry install to downloaded media and upgrade it | `sudo dspm-installer upgrade --download --target-revision <version>` |
+| Convert a registry install to downloaded media on the same release | `sudo dspm-installer upgrade --download --target-revision <installed-version>` |
 | Connect an air-gapped install | `sudo --preserve-env=LICENSE_KEY dspm-installer upgrade --connect` |
 | Connect an air-gapped install and upgrade it | Run `upgrade --connect`, then `upgrade --download --target-revision <version>` as a second command |
 | Redeploy the installed release, or downgrade | Add `--allow-downgrade` to the upgrade command |
@@ -109,7 +109,7 @@ These changes have no command:
 
 - **Connected to air-gapped.** `--connect` works in one direction only, so returning to air-gapped takes a reinstall. `upgrade --bundle-dir` works on a connected install, but the install stays connected: the version poller stays on and the license key stays saved.
 - **Connect and upgrade in one run.** `--connect` doesn't redeploy or change the release, so the upgrade is a second command.
-- **Registry install straight to air-gapped media.** `--migrate` requires `--download`, so convert the registry install while it's online first.
+- **Registry install straight to air-gapped media.** Converting needs `--download`, so convert the registry install while it's online first.
 - **`upgrade --download` on an air-gapped install.** The command refuses and exits with code `16`. Run `upgrade --connect` first.
 
 ## Upgrade
@@ -266,7 +266,7 @@ Any of these starts the upgrade and its conversion:
 - The **Settings** page: select the new version, then select **Update**.
 - The automatic updater: when a newer release that matches the install's version constraint appears, it starts the upgrade on its next run. It checks every 12 hours.
 - `dspmctl` on the host, with the following steps.
-- `dspm-installer upgrade --download --migrate`, as [Convert a registry install](convert-or-connect-an-install.md#convert-a-registry-install) shows.
+- `dspm-installer upgrade --download`, as [Convert a registry install](convert-or-connect-an-install.md#convert-a-registry-install) shows.
 
 To upgrade with `dspmctl`:
 
@@ -337,7 +337,7 @@ A re-pin doesn't roll back database schema changes the new release made.
 |---|---|---|
 | `0` | The cluster runs the new release and every application is Synced and Healthy, or the cluster already runs the newest release. | Nothing. |
 | `10` | Netwrix rejected the license key. | Check the key, then run the command again. |
-| `15` | The command couldn't load or deploy the media, and the cluster is still on the previous release. With `--migrate`, the command also exits with this code when an agent node runs on a different CPU architecture from the server. | Fix the cause and run the command again. The deploy is idempotent. |
+| `15` | The command couldn't load or deploy the media, and the cluster is still on the previous release. When it converts a registry install, the command also exits with this code when an agent node runs on a different CPU architecture from the server. | Fix the cause and run the command again. The deploy is idempotent. |
 | `16` | A precondition failed, such as no cluster or root application, the install type doesn't match the command, the release isn't newer, automated sync is off, or the media volume lacks free space. Nothing changed. | Read the message. For automated sync, run `sudo dspmctl enable-auto netwrix` first. For a same-version redeploy, add `--allow-downgrade`. For free space, free space on the media volume or use `--tmp-dir`. |
 | `17` | The command couldn't download, verify, or unpack the media. Nothing changed. | Run the command again. It resumes the download. |
 | `20` | No release matches `--target-revision`, or the release has no media for this architecture. | Check the release number. |
@@ -372,7 +372,7 @@ sudo kubectl get application netwrix -n argocd \
   -o custom-columns='REVISION:.spec.source.targetRevision,SYNC:.status.sync.status,HEALTH:.status.health.status'
 ```
 
-Check that `REVISION` shows the version you set and `SYNC` shows `Synced`. The `netwrix` app only manages the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
+Check that `REVISION` shows the version you set and `SYNC` shows `Synced`. The `netwrix` app manages only the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
 
 ```bash
 sudo dspmctl sync netwrix.webapp
