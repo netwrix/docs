@@ -6,7 +6,7 @@ sidebar_position: 40
 
 To call the Netwrix Privilege Secure for Discovery API, you exchange an API key for an access token, and then you send the token with each request. This page shows the exchange with `curl`. The API base path is `/api/v1`, and every request uses HTTPS.
 
-The product doesn't publish an OpenAPI or Swagger document for this API. The pages in this section describe the endpoints that customers use most.
+For every endpoint, see the [API Reference](/docs/privilegesecurediscovery/integrations/api/reference/index.md).
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ The response contains the access token, its expiration time in UTC, and the scop
 }
 ```
 
-By default, an access token is valid for 8 hours, and the `expires` value shows the exact time. An administrator can change the lifetime with the **Token Expiration Seconds** setting under **Configure** > **Services**, from 300 seconds (5 minutes) to 604800 seconds (1 week). After it expires, repeat the request to get a new token. Each successful request also updates the **Last Accessed** value of the key.
+By default, an access token is valid for 8 hours, and the `expires` value shows the exact time. An administrator can change the lifetime with the **Token Expiration Seconds** setting under **Configure** > **Services**, from 300 seconds (5 minutes) to 604800 seconds (1 week). After the token expires, repeat the request to get a new token. Each successful request also updates the **Last Accessed** value of the key.
 
 ## Send an authenticated request
 
