@@ -63,7 +63,7 @@ The defaults for `--tls-cert` and `--tls-key` apply only when you omit both flag
 
 ### Storage Location
 
-By default, everything the Kubernetes platform writes lands under `/var/lib/rancher/k3s`: extracted container image layers and every container's writable layer, the server datastore, and, under `storage/`, every persistent volume in the cluster (PostgreSQL, ClickHouse, NATS, Redis, Prometheus, Metabase, log exports, and PostgreSQL backups). The image layers alone take about 13 GB, and the volumes then grow toward the disk figure for the chosen `--size`.
+By default, everything the Kubernetes platform writes goes under `/var/lib/rancher/k3s`: extracted container image layers and every container's writable layer, the server datastore, and, under `storage/`, every persistent volume in the cluster (PostgreSQL, ClickHouse, NATS, Redis, Prometheus, Metabase, log exports, and PostgreSQL backups). The image layers alone take about 13 GB, and the volumes then grow toward the disk figure for the chosen `--size`.
 
 `--storage-dir` replaces `/var/lib`, so the whole tree moves to a mount you choose and you don't have to add space to `/var/lib`:
 
