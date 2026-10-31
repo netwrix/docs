@@ -11,7 +11,7 @@ keywords:
   - About page
   - trial license
 products:
-  - privilege-secure-access-management
+  - privilegesecure
 visibility: public
 sidebar_label: Apply a New License
 tags: []
@@ -21,7 +21,7 @@ knowledge_article_id: kA04u000000PdKZCA0
 
 # Apply a New License
 
-## Summary
+## Overview
 
 This article outlines how to apply a new license to the Netwrix Privilege Secure Access Management server.
 
@@ -31,20 +31,20 @@ Netwrix Privilege Secure Access Management comes with a 30-day trial license. On
 
 1. Log in to the Netwrix Privilege Secure Access Management web application as an account with the Administrator role.  
    - In Netwrix Privilege Secure Access Management 3.5 or earlier, the built-in Admin account may be used.  
+   
+       > **IMPORTANT:** The `Domain` field must be set to `<none>` in order to log in with the built-in Admin account.
+       
    - In Netwrix Privilege Secure Access Management 3.7 or later, a local user with the Administrator role may be used.  
-   - **IMPORTANT:** The `Domain` field must be set to `<none>` in order to log in with the built-in Admin account.
+       
+2. Click your account name in the upper-right corner of the page, and then click **About SbPAM** to open the page to update the product's license. 
 
-2. In the upper-right of the page, click your account name, and then click **About Netwrix Privilege Secure Access Management**.  
+    > **IMPORTANT:** If a new license key file is needed, then please contact your Netwrix Account Manager.
 
    ![The user settings dropdown menu in Netwrix Privilege Secure Access Management.](./../0-images/ka0Qk000000DgJB_0EM4u000004biJb.png)
 
-   The **About Netwrix Privilege Secure Access Management** page is displayed, including an **Import License** button that you can use to update the product's license.
-
-   **_IMPORTANT:_** _If a new license key file is needed, please contact your Netwrix or Netwrix Account Manager._
-
-   ![The About page in Netwrix Privilege Secure Access Management's web application interface.](./../0-images/ka0Qk000000DgJB_0EM4u000004biJg.png)
-
 3. Click **Import License**. A Windows file dialog opens. Navigate to the location of the new license key file, select it, and click **Open**. The license is imported, and the displayed license information is updated.
+
+    ![The About page in Netwrix Privilege Secure Access Management's web application interface.](./../0-images/ka0Qk000000DgJB_0EM4u000004biJg.png)
 
 ### Alternate Instructions (PowerShell)
 
