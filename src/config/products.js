@@ -572,6 +572,7 @@ export const PRODUCTS = [
         label: 'Current',
         isLatest: true,
         sidebarFile: './sidebars/privilegesecurediscovery.js',
+        apiSidebarPath: './docs/privilegesecurediscovery/integrations/api/reference/sidebar.ts',
       },
     ],
   },
@@ -910,7 +911,7 @@ function transformApiSidebarLabels(items) {
     if (item.type === 'category') {
       return {
         ...item,
-        label: camelToTitleCase(item.label),
+        label: /\s/.test(item.label) ? item.label : camelToTitleCase(item.label),
         items: item.items ? transformApiSidebarLabels(item.items) : item.items,
       };
     }
@@ -944,7 +945,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
         ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
-            .filter(item => !(item.type === 'doc' && item.id?.endsWith('/changetracker-hub')))
+            .filter(item => !(item.type === 'doc' && (item.id?.endsWith('/changetracker-hub') || item.id?.endsWith('/netwrix-privilege-secure-for-discovery-api'))))
         : [];
 
       // Build plugin configuration
