@@ -115,7 +115,7 @@ Sensitive data scans feed both **Sensitive Data Overview** reports, one for file
 
 ## Identity Sync
 
-An Identity sync collects the accounts and groups of a directory. From Active Directory it collects users, groups, direct group memberships, and custom user attributes. From Entra ID it collects users, groups, directory roles, group memberships and owners, and role assignments. Each source type's page lists every attribute it stores: [Active Directory](../../configuration/sources/active-directory.md#collected-attributes) and [Entra ID](../../configuration/sources/entra-id.md#collected-attributes).
+An Identity sync collects the accounts and groups of a directory. From Active Directory it collects users, groups, computers, managed service accounts, direct group memberships, and custom user attributes. From Entra ID it collects users, groups, directory roles, group memberships and owners, and role assignments. Each source type's page lists every attribute it stores: [Active Directory](../../configuration/sources/active-directory.md#collected-attributes) and [Entra ID](../../configuration/sources/entra-id.md#collected-attributes).
 
 ### Active Directory Settings
 
