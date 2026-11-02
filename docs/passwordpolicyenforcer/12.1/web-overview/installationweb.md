@@ -39,6 +39,7 @@ needed.
 
 :::note
 Install Password Policy Enforcer Web in its own virtual directory.
+If no existing IIS websites (such as Default Web Site) appear in the dropdown, close the Setup Wizard and relaunch the installer from an elevated Command Prompt (Run as Administrator).
 :::
 
 
