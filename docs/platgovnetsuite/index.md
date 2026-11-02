@@ -55,7 +55,7 @@ can fix to improve your account. With the Critical Script Analysis methodology y
 Strongpoint for NetSuite is the only application for NetSuite that enables end to end change
 management and compliance. This process can be achieved effectively in only 5 weeks after install.
 
-Strongpoint for NetSuite enables you to:
+With Strongpoint for NetSuite, you can:
 
 - Track all changes to custom objects in NetSuite.
 - Automatically be alerted to non-compliant changes.
