@@ -29,7 +29,7 @@ The inventory is also what a Sensitive data scan works from, so run an Access sc
 | **Exclude hidden shares** | Off | Skips hidden shares: shares whose names end in `$` but that aren't system shares, such as `Finance$`. |
 | **Include shares** | Empty | Share names to scan. When the list has entries, the scan skips share discovery, scans only the shares you name, and ignores **Exclude shares**, **Exclude system shares**, and **Exclude hidden shares**. Leave it empty to scan every share the account can reach. |
 | **Exclude shares** | Empty | Share names to skip, matched exactly, including case. The list doesn't accept wildcards. The scan ignores this list when **Include shares** lists shares. |
-| **Maximum scan depth** | 50 | How many folder levels below the share root to record, 1 or more. This guards against endless recursion. At 1, the scan records the folders and files directly in each share but doesn't open those folders. |
+| **Maximum scan depth** | 50 | How many folder levels below the share root to record. The minimum is 1. This guards against endless recursion. At 1, the scan records the folders and files directly in each share but doesn't open those folders. |
 | **Enable File-Level Permission Scanning** | Off | Collects the owner and permissions of individual files as well as folders. |
 
 Enter a share name and press Enter, or enter a comma, to add it to a share list. You can also paste several names separated by commas or line breaks. A list skips a name it already holds, ignoring case. The share settings take share names only; there is no setting for individual folder paths. See [SMB file servers](../../configuration/sources/smb-file-servers.md#access-scans) for how Access scans treat each kind of share.
