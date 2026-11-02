@@ -1,10 +1,10 @@
 ---
 title: Active Directory
-description: Add an Active Directory source to sync the users, groups, and memberships of a domain over LDAP or LDAPS.
+description: Add an Active Directory source to sync a domain's users, groups, computers, managed service accounts, and memberships over LDAP or LDAPS.
 sidebar_position: 2
 ---
 
-An **Active Directory** source points Access Analyzer at one Active Directory domain. Identity syncs read the domain's users, groups, and direct group memberships over the Lightweight Directory Access Protocol (LDAP), along with the organizational unit each object sits in, and store them for the [Identity reports](../../admin/dashboards-reports/reports/identity.md) and the [Active Directory dashboard](../../admin/dashboards-reports/dashboards/active-directory.md).
+An **Active Directory** source points Access Analyzer at one Active Directory domain. Identity syncs read the domain's users, groups, computers, managed service accounts, and direct group memberships over the Lightweight Directory Access Protocol (LDAP), along with the organizational unit each object sits in, and store them for the [Identity reports](../../admin/dashboards-reports/reports/identity.md) and the [Active Directory dashboard](../../admin/dashboards-reports/dashboards/active-directory.md).
 
 An Active Directory source also completes your file server data. Access scans of File Server sources record who has access as security identifiers (SIDs); syncing the domain those accounts belong to turns the SIDs into names in the reports. See [SMB file servers](smb-file-servers.md).
 
@@ -20,14 +20,53 @@ Active Directory sources use a [Username and password](../service-accounts/usern
 
 | Right | Why |
 |---|---|
-| **Read** access to the directory tree (the default access Active Directory grants Authenticated Users) | Identity syncs walk the domain's organizational units and containers and read user and group objects and their attributes over LDAP. |
-| **List Contents** and **Read Property** on the Deleted Objects container | Differential syncs read the Deleted Objects container to find users and groups deleted since the previous sync. Without these rights, a differential sync logs a warning and doesn't detect deletions; the next full sync still removes deleted objects from the data. Syncs with **Differential Scan** turned off don't need these rights. |
+| **Read** access to the directory tree (the default access Active Directory grants Authenticated Users) | Identity syncs walk the domain's organizational units and containers and read user, group, computer, group Managed Service Account (gMSA), and standalone Managed Service Account (sMSA) objects and their attributes over LDAP. |
+| **Read** on delegated Managed Service Account (dMSA) objects, granted at the domain root for descendant objects of the `msDS-DelegatedManagedServiceAccount` class | Unlike other objects, dMSAs grant Authenticated Users no access by default, so the sync can't see them without this grant. dMSAs need a domain controller running Windows Server 2025; in a domain without them, skip this grant. See [Grant read access to dMSAs](#grant-read-access-to-dmsas). |
+| **List Contents** and **Read Property** on the Deleted Objects container | Differential syncs read the Deleted Objects container to find objects deleted since the previous sync, including deleted dMSAs. Without these rights, a differential sync logs a warning and doesn't detect deletions; the next full sync still removes deleted objects from the data. Syncs with **Differential Scan** turned off don't need these rights. See [Grant read access to the Deleted Objects container](#grant-read-access-to-the-deleted-objects-container). |
 
-The sync only reads, so a regular domain user needs no additional delegation. Don't add the account to Domain Admins or another privileged group.
+The sync only reads. Apart from the rights in the table, a regular domain user needs no delegation. Don't add the account to Domain Admins or another privileged group.
 
-:::note
-Active Directory hides the Deleted Objects container and denies read access to it by default. A domain administrator grants the two rights with `dsacls`, for example `dsacls "CN=Deleted Objects,DC=corp,DC=example,DC=com" /G CORP\svc-access-analyzer:LCRP`. See the Microsoft [Searching for Deleted Objects](https://technet.microsoft.com/en-us/library/cc978013.aspx) article and [Dsacls](https://technet.microsoft.com/en-us/library/cc771151(v=ws.11).aspx) reference for the full procedure.
-:::
+#### Grant Read Access to dMSAs
+
+A domain administrator grants the right once, at the root of the domain, so that it covers every dMSA in every organizational unit, including dMSAs created later. Run the following in PowerShell with the Active Directory module, replacing `svc-access-analyzer` with the service account's username:
+
+```powershell
+Import-Module ActiveDirectory
+$domainDn = (Get-ADDomain).DistinguishedName
+$classGuid = [guid](Get-ADObject -SearchBase (Get-ADRootDSE).schemaNamingContext `
+    -Filter "lDAPDisplayName -eq 'msDS-DelegatedManagedServiceAccount'" -Properties schemaIDGUID).schemaIDGUID
+$sid = (Get-ADUser -Identity 'svc-access-analyzer').SID
+$acl = Get-Acl -Path "AD:\$domainDn"
+$rule = New-Object System.DirectoryServices.ActiveDirectoryAccessRule($sid,
+    [System.DirectoryServices.ActiveDirectoryRights]::GenericRead,
+    [System.Security.AccessControl.AccessControlType]::Allow,
+    [System.DirectoryServices.ActiveDirectorySecurityInheritance]::Descendents, $classGuid)
+$acl.AddAccessRule($rule)
+Set-Acl -Path "AD:\$domainDn" -AclObject $acl
+```
+
+The equivalent `dsacls` command, for a domain `corp.example.com` with NetBIOS name `CORP`, is:
+
+{/* TODO: verify this dsacls form on the AD lab; only the PowerShell example was tested */}
+
+```
+dsacls "DC=corp,DC=example,DC=com" /I:S /G "CORP\svc-access-analyzer:GR;;msDS-DelegatedManagedServiceAccount"
+```
+
+Without the grant, dMSAs are missing from the data. Group memberships that include a dMSA point to an account the sync didn't store, and the account a dMSA replaced shows only the dMSA's identifier in `supersededById`. gMSAs and sMSAs aren't affected.
+
+The grant lets the account read dMSA objects, not their passwords. The dMSA class denies everyone read access to the managed password, and Access Analyzer never requests it.
+
+#### Grant Read Access to the Deleted Objects Container
+
+Active Directory hides the Deleted Objects container and denies read access to it by default. Even a domain administrator can't read or change the container's permissions without first taking ownership of it, so the grant takes two `dsacls` commands, run as a domain administrator. For example, for a domain `corp.example.com`:
+
+```
+dsacls "CN=Deleted Objects,DC=corp,DC=example,DC=com" /takeownership
+dsacls "CN=Deleted Objects,DC=corp,DC=example,DC=com" /G CORP\svc-access-analyzer:LCRP
+```
+
+Until the administrator takes ownership, `dsacls` can't read the container's permissions and fails with **Insufficient access rights to perform the operation**. See the Microsoft [Searching for Deleted Objects](https://technet.microsoft.com/en-us/library/cc978013.aspx) article and [Dsacls](https://technet.microsoft.com/en-us/library/cc771151(v=ws.11).aspx) reference for the full procedure.
 
 When you create the service account, enter the plain username without a domain prefix, for example `svc-access-analyzer`. The domain goes in the source's **Domain** field; Access Analyzer combines the two in the form the domain controller expects for the sign-in method it uses. If the username includes a domain, as in `CORP\svc-access-analyzer` or `svc-access-analyzer@corp.example.com`, Access Analyzer uses that domain instead of the source's **Domain** field when it signs in.
 
@@ -78,7 +117,7 @@ Changing **Host** or **Domain** on an existing source shows the warning **Existi
 
 ## What Test Connection Checks
 
-**Test connection** connects to the domain controller on the selected port and binds with the service account's credentials, using the same sequence of sign-in methods as a real sync. It doesn't read any users or groups, so a successful test doesn't confirm the account's read access or its rights on the Deleted Objects container. The button becomes available after you've entered **Host**, **Port**, and **Domain** and selected a service account.
+**Test connection** connects to the domain controller on the selected port and binds with the service account's credentials, using the same sequence of sign-in methods as a real sync. It doesn't read any objects, so a successful test doesn't confirm the account's read access, its read access to dMSAs, or its rights on the Deleted Objects container. The button becomes available after you've entered **Host**, **Port**, and **Domain** and selected a service account.
 
 Success shows the message **Connection successful**. Failure shows **Connection failed** with the reason. These failures are common:
 
@@ -90,14 +129,14 @@ Success shows the message **Connection successful**. Failure shows **Connection 
 
 | Option | Default | Effect |
 |---|---|---|
-| **Differential Scan** | On | Reads only the users, groups, and organizational units that changed since the previous sync. Turn it off to read the whole domain on every run. |
+| **Differential Scan** | On | Reads only the users, groups, computers, managed service accounts, and organizational units that changed since the previous sync. Turn it off to read the whole domain on every run. |
 | **Workers** | 16 | The number of concurrent workers, from 1 to 16. Each worker opens its own LDAP connection to the domain controller. Lower the value to reduce the load on the domain controller. |
 
 See [Scan types](../../admin/scans/scan-types.md) for how these options appear when you create a scan.
 
 ### Differential and Full Syncs
 
-With **Differential Scan** turned on, the first sync reads the whole domain and saves the domain controller's highest committed update sequence number (USN). Each later sync reads only the users, groups, and organizational units whose USN changed since the previous sync. When an organizational unit changes, for example because someone renamed or moved it, the sync reads every user and group under it again so that their paths stay current.
+With **Differential Scan** turned on, the first sync reads the whole domain and saves the domain controller's highest committed update sequence number (USN). Each later sync reads only the users, groups, computers, managed service accounts, and organizational units whose USN changed since the previous sync. When an organizational unit changes, for example because someone renamed or moved it, the sync reads every object under it again so that their paths stay current.
 
 A sync reads the whole domain even with **Differential Scan** turned on in these cases:
 
@@ -108,28 +147,37 @@ A sync reads the whole domain even with **Differential Scan** turned on in these
 
 When a sync finishes with errors, Access Analyzer keeps the previous USN, so the next differential sync reads the same changes again.
 
-A differential sync marks users and groups as deleted when it can read the Deleted Objects container; see [Service account](#service-account). It doesn't remove memberships that ended since the previous sync. Ended memberships, and objects whose deletion a differential sync couldn't see, stay in the data until the next full sync that completes without errors. To run a full sync, turn off **Differential Scan** on the scan.
+A differential sync marks users, groups, computers, and managed service accounts as deleted when it can read the Deleted Objects container; see [Service account](#service-account). It doesn't remove memberships that ended since the previous sync. Ended memberships, and objects whose deletion a differential sync couldn't see, stay in the data until the next full sync that completes without errors. To run a full sync, turn off **Differential Scan** on the scan.
 
 ## Collected Attributes
 
-The sync finds users and groups by walking the domain's organizational units and containers. It doesn't store organizational units as separate objects; instead, each user and group records the path of the organizational unit or container that holds it. The sync reads user accounts, meaning objects of the `user` class in the `person` category. It doesn't read computers, managed service accounts, contacts, Group Policy objects, or password hashes.
+The sync finds objects by walking the domain's organizational units and containers. It doesn't store organizational units as separate objects; instead, each object records the path of the organizational unit or container that holds it. The sync reads these objects:
 
-Each sync records direct group memberships only, read from each group's `member` attribute, including groups with more members than one LDAP response returns. Membership in a user's primary group, usually Domain Users, isn't part of that attribute, so the sync records it only as the user's `primaryGroupId`. After each sync, a **Refresh CDM report tables** step rebuilds the report tables and expands nested groups into effective memberships. CDM stands for common data model, the shared format Access Analyzer stores every source's data in.
+- **Users:** objects of the `user` class in the `person` category.
+- **Groups:** objects of the `group` class.
+- **Computers:** objects in the `computer` category, including domain controllers.
+- **Managed service accounts:** objects of the `msDS-GroupManagedServiceAccount` (gMSA), `msDS-ManagedServiceAccount` (sMSA), and `msDS-DelegatedManagedServiceAccount` (dMSA) classes. The sync reads dMSAs only when the service account has read access to them; see [Grant read access to dMSAs](#grant-read-access-to-dmsas).
+
+It doesn't read contacts, Group Policy objects, or password hashes. It never requests the managed password attributes of service accounts (`msDS-ManagedPassword`, `msDS-ManagedPasswordId`, and `msDS-ManagedPasswordPreviousId`) or the list of accounts allowed to retrieve a gMSA's password (`msDS-GroupMSAMembership`).
+
+Each sync records direct group memberships only, read from each group's `member` attribute, including groups with more members than one LDAP response returns. Membership in an account's primary group, usually Domain Users for a user and Domain Computers for a computer, isn't part of that attribute, so the sync records it only as the account's `primaryGroupId`. After each sync, a **Refresh CDM report tables** step rebuilds the report tables and expands nested groups into effective memberships. CDM stands for common data model, the shared format Access Analyzer stores every source's data in.
 
 The following tables are a reference list of what an Identity sync reads from Active Directory and stores. The **Attribute** column shows the name Access Analyzer stores the value under, and **Source** shows the LDAP attribute it comes from. Access Analyzer stores times in Coordinated Universal Time (UTC) and leaves an attribute empty when Active Directory has no value for it. Access Analyzer stores some values as JavaScript Object Notation (JSON) list text, for example `["HTTP/web01", "HTTP/web01.corp.example.com"]`; their descriptions say JSON list.
 
 Each record also carries identifiers and timestamps that Access Analyzer uses to track which source and sync wrote it and whether the object was deleted; they aren't listed.
 
-### Users and Groups
+### All Objects
+
+Users, groups, computers, and managed service accounts all carry these attributes, except where a description says otherwise.
 
 | Attribute | Source | Description |
 |---|---|---|
-| `name` | `displayName` for users, `name` for groups, falling back to `sAMAccountName` | The name reports show for the account or group. |
+| `name` | `displayName` for users and `name` for groups, falling back to `sAMAccountName`. For computers and managed service accounts, `sAMAccountName` without its trailing `$`, falling back to the common name | The name reports show for the object, for example `Jane Roe` for a user or `WS01` for a computer. |
 | `sourceSystemId` | `objectSid` | The security identifier (SID), for example `S-1-5-21-1004336348-1177238915-682003330-1104`. File Server scans record permissions by SID, and reports match the two to show names. When an object has no readable SID, Access Analyzer stores its distinguished name instead. |
 | `objectGuid` | `objectGUID` | The object's GUID, which stays the same when someone renames or moves the object. |
-| `adSamAccountName` | `sAMAccountName` | The pre-Windows 2000 logon name, for example `jane.roe`. For a user without one, Access Analyzer stores the common name. |
+| `adSamAccountName` | `sAMAccountName` | The pre-Windows 2000 logon name, for example `jane.roe` for a user or `WS01$` for a computer. For a user without one, Access Analyzer stores the common name. |
 | `description` | `description` | The object's description. |
-| `emailAddress` | `mail` | The email address, in lowercase. |
+| `emailAddress` | `mail` | The email address, in lowercase. Users and groups only. |
 | `adDistinguishedName` | `distinguishedName` | The distinguished name (DN), for example `CN=Jane Roe,OU=Staff,DC=corp,DC=example,DC=com`. |
 | `cn` | Derived from the distinguished name | The common name: the first `CN=` component of the distinguished name, for example `Jane Roe`. |
 | `adCanonicalName` | `canonicalName` | The canonical name, for example `corp.example.com/Staff/Jane Roe`. |
@@ -139,7 +187,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `createdDate` | `whenCreated` | When the object was created. |
 | `modifiedDate` | `whenChanged` | When the object last changed. |
 | `adminCount` | `adminCount` | `1` when the object is, or once was, a member of a protected administrative group such as Domain Admins. Active Directory doesn't reset it when the object leaves the group. |
-| `primaryGroupId` | `primaryGroupID` | The relative identifier (RID) of the object's primary group, for example `513` for Domain Users. Active Directory usually sets it only on users. |
+| `primaryGroupId` | `primaryGroupID` | The relative identifier (RID) of the object's primary group, for example `513` for Domain Users or `515` for Domain Computers. Groups don't have one. |
 
 ### Users
 
@@ -197,9 +245,65 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `isMailEnabled` | Derived from `mail` | `true` when the group has an email address. |
 | `memberCount` | Derived from `member` | The number of direct members. |
 
+### Computers
+
+| Attribute | Source | Description |
+|---|---|---|
+| `displayName` | `sAMAccountName` without its trailing `$`, falling back to the common name | The computer's name, for example `WS01`. |
+| `dnsHostName` | `dNSHostName` | The fully qualified DNS name, in lowercase, for example `ws01.corp.example.com`. |
+| `operatingSystem` | `operatingSystem` | The operating system name, for example `Windows Server 2025 Datacenter`. |
+| `operatingSystemVersion` | `operatingSystemVersion` | The operating system version, for example `10.0 (26100)`. |
+| `userAccountControl` | `userAccountControl` | The account control flags as a number, for example `4096` for a workstation or member server and `532480` for a domain controller. The next three attributes decode individual flags. |
+| `disabled` | Derived from `userAccountControl` | `true` when the computer account is disabled (flag `0x2`). |
+| `passwordRequired` | Derived from `userAccountControl` | `false` when the account doesn't require a password (flag `0x20`). |
+| `accountCannotBeDelegated` | Derived from `userAccountControl` | `true` when **Account is sensitive and cannot be delegated** is set (flag `0x100000`). |
+| `passwordLastChanged` | `pwdLastSet` | When the computer account's password last changed. Domain members change it automatically, every 30 days by default, so an old value suggests a computer that no longer connects to the domain. |
+| `lastActive` | `lastLogonTimestamp` | The computer's last sign-in to the domain. As for users, it can trail the most recent logon by up to 14 days. |
+| `servicePrincipalName` | `servicePrincipalName` | The SPNs registered on the computer account, as a JSON list. |
+| `msDsAllowedToDelegateTo` | `msDS-AllowedToDelegateTo` | The services the computer can act on behalf of other users to, for Kerberos constrained delegation, as a JSON list of SPNs. |
+| `msDsAllowedToActOnBehalfOf` | `msDS-AllowedToActOnBehalfOfOtherIdentity` | The accounts allowed to act on behalf of other users to this computer, for resource-based constrained delegation. Access Analyzer stores it without decoding, as a JSON list that holds the raw security descriptor bytes. |
+| `hostServiceAccountDns` | `msDS-HostServiceAccount` | The distinguished names of the managed service accounts associated with the computer, as a JSON list. |
+| `hostServiceAccountIds` | Derived from `msDS-HostServiceAccount` | The Access Analyzer identifiers of the same managed service accounts, as a JSON list, so reports can link a computer to the service accounts it hosts. |
+
+### Managed Service Accounts
+
+Managed service accounts are accounts that Active Directory manages the password for. Access Analyzer stores the three types as one kind of object and records the type in `serviceAccountType`.
+
+| Attribute | Source | Description |
+|---|---|---|
+| `serviceAccountType` | The object's class | `gMSA` for a group Managed Service Account, `sMSA` for a standalone Managed Service Account, or `dMSA` for a delegated Managed Service Account. |
+| `displayName` | `sAMAccountName` without its trailing `$`, falling back to the common name | The account's name, for example `svc-web`. |
+| `dnsHostName` | `dNSHostName` | The account's DNS name, in lowercase. gMSAs and dMSAs have one; sMSAs usually don't. |
+| `managedPasswordInterval` | `msDS-ManagedPasswordInterval` | How often Active Directory changes the account's password, in days, for example `30`. |
+| `userAccountControl` | `userAccountControl` | The account control flags as a number. The next four attributes decode individual flags. |
+| `disabled` | Derived from `userAccountControl` | `true` when the account is disabled (flag `0x2`). |
+| `accountCannotBeDelegated` | Derived from `userAccountControl` | `true` when **Account is sensitive and cannot be delegated** is set (flag `0x100000`). |
+| `trustedForDelegation` | Derived from `userAccountControl` | `true` when the account is trusted for unconstrained Kerberos delegation (flag `0x80000`). |
+| `trustedToAuthForDelegation` | Derived from `userAccountControl` | `true` when the account can use constrained delegation with any authentication protocol, also called protocol transition (flag `0x1000000`). |
+| `passwordLastChanged` | `pwdLastSet` | When Active Directory last changed the account's password. |
+| `lastActive` | `lastLogonTimestamp` | The account's last sign-in. As for users, it can trail the most recent logon by up to 14 days. |
+| `servicePrincipalName` | `servicePrincipalName` | The SPNs registered on the account, as a JSON list. |
+| `msDsAllowedToDelegateTo` | `msDS-AllowedToDelegateTo` | The services the account can act on behalf of other users to, for Kerberos constrained delegation, as a JSON list of SPNs. |
+| `msDsSupportedEncryptionTypes` | `msDS-SupportedEncryptionTypes` | The Kerberos encryption types the account supports, as a number, for example `16` for AES256 only. |
+
+### dMSA Migration Links
+
+On Windows Server 2025, an administrator can migrate an existing user or computer service account to a dMSA. Active Directory then links the two accounts, and the sync stores both sides of the link: on the dMSA, which account it replaced, and on the replaced account, which dMSA replaced it.
+
+| Attribute | Stored on | Source | Description |
+|---|---|---|---|
+| `delegatedMsaState` | dMSAs | `msDS-DelegatedMSAState` | The dMSA's migration state: `1` while a migration is in progress, `2` when it's complete, or `3` for a dMSA created without a migration. |
+| `precededByDn` | dMSAs | `msDS-ManagedAccountPrecededByLink` | The distinguished name of the account the dMSA replaced. |
+| `precededById` | dMSAs | Derived from `msDS-ManagedAccountPrecededByLink` | The Access Analyzer identifier of the account the dMSA replaced. |
+| `supersededByDn` | Users and computers | `msDS-SupersededManagedAccountLink` | The distinguished name of the dMSA that replaced the account. |
+| `supersededById` | Users and computers | Derived from `msDS-SupersededManagedAccountLink` | The Access Analyzer identifier of the dMSA that replaced the account. |
+| `supersededServiceAccountState` | Users and computers | `msDS-SupersededServiceAccountState` | The migration state on the replaced account: `1` while the migration is in progress, or `2` when it's complete. |
+
+For example, after an administrator migrates the user `svc-legacy-app` to the dMSA `svc-app`, the dMSA's `precededByDn` holds the distinguished name of `svc-legacy-app`, and the user's `supersededByDn` holds the distinguished name of `svc-app`. Both state attributes are `2`.
+
 ### Group Memberships
 
-Each membership record links one group to one of its direct members.
+Each membership record links one group to one of its direct members: a user, group, computer, or managed service account.
 
 | Attribute | Source | Description |
 |---|---|---|
