@@ -269,7 +269,7 @@ export function buildPackage({ title, meta, entries, reportArgs }) {
 <meta name="claude:viewport-fit-sides" content="cover">
 ${FONT_LINK}
 <style>${css}</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js" integrity="sha512-xeUh+KxNyTufZOje++oQHstlMQ8/rpyzPuM+gjMFYK3z5ILJGE7l2NvYL+XfliKURMpBIKKp1XoPN/qswlSMFA==" crossorigin="anonymous"></script>
 <div class="app">
 <aside class="side" id="side" aria-label="Pages">
 <div class="side-head">

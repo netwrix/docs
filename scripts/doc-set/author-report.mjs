@@ -68,7 +68,7 @@ export function groupPages({ manifest, rows, diffs }) {
   const groups = { NEW: [], REWRITE: [], UPDATE: [], RESTYLED: [], UNCHANGED: [] };
   for (const p of manifest.pages) {
     if (p.action === 'RETIRE') continue;
-    if (p.action === 'KEEP') {
+    if (p.action === 'KEEP' || p.action === 'RESTYLE') {
       const d = diffs[p.path] || { add: 0, del: 0 };
       (d.add + d.del > 0 ? groups.RESTYLED : groups.UNCHANGED).push({ path: p.path, ...d });
     } else if (groups[p.action]) groups[p.action].push({ ...(byPath.get(p.path) || { path: p.path }), ...(diffs[p.path] || {}) });

@@ -136,7 +136,7 @@ export function comparisonBody(entries, opts = {}) {
   const rb = !!opts.reviewBars;
   const summaryRows = (list) => list.map(e => `<tr><td><a href="#${e.id}">${esc(e.short)}</a></td><td><span class="tag ${e.action}">${e.action}</span></td><td class="num">${e.oldLines ?? 'new'}</td><td class="num">${e.newLines}</td><td class="num">+${e.add} / &minus;${e.del}</td><td class="num">${e.action === 'RESTYLED' ? '' : `${e.covered}/${e.assigned}`}</td>${rb ? `<td><span class="rvbadge" data-slug="${e.id}">Not reviewed</span></td>` : ''}</tr>`).join('');
   const reviewBar = e => `<div class="rv" data-slug="${e.id}"><span class="rv-state">Not reviewed</span><span class="rv-who"></span><span class="rv-btns"><button type="button" data-act="approved">Approve</button><button type="button" data-act="changes">Request changes</button><button type="button" data-act="clear">Clear my review</button><button type="button" data-act="comment">Comment on this page</button></span></div>`;
-  const sectionOf = e => `<section id="${e.id}" data-slug="${e.id}" data-group="${e.action}" data-state="none"><h3>${esc(e.short)} <span class="tag ${e.action}">${GROUPS.find(g => g.key === e.action).title.replace(/ pages$/, '')}</span></h3><p class="meta">${e.renamed ? `Renamed from <code>${esc(e.renamed)}</code>. ` : ''}${e.action === 'RESTYLED' ? `Wording and typo fixes only. ` : `${e.assigned} assigned facts, ${e.covered} stated. `}${e.add} lines added, ${e.del} removed.</p>${rb ? reviewBar(e) : ''}<div class="sbs"><div class="grid"><div class="head"><div>${e.oldLabel}</div><div>New (3.4)</div></div>${e.rows.map(rowHtml).join('')}</div></div></section>`;
+  const sectionOf = e => `<section id="${e.id}" data-slug="${e.id}" data-group="${e.action}" data-state="none"><h3>${esc(e.short)} <span class="tag ${e.action}">${GROUPS.find(g => g.key === e.action).title.replace(/ pages$/, '')}</span></h3><p class="meta">${e.renamed ? `Renamed from <code>${esc(e.renamed)}</code>. ` : ''}${e.action === 'RESTYLED' ? `Wording and typo fixes only. ` : `${e.assigned} assigned facts, ${e.covered} stated. `}${e.add} lines added, ${e.del} removed.</p>${rb ? reviewBar(e) : ''}<div class="sbs"><div class="grid"><div class="head"><div>${e.oldLabel}</div><div>${esc(e.newLabel || 'New')}</div></div>${e.rows.map(rowHtml).join('')}</div></div></section>`;
   const sections = GROUPS.map(g => { const list = entries.filter(e => e.action === g.key); return list.length ? `<h2 id="group-${g.key}">${g.title} (${list.length})</h2><p>${g.blurb}</p>${list.map(sectionOf).join('')}` : ''; }).join('');
   const summary = GROUPS.map(g => { const list = entries.filter(e => e.action === g.key); return list.length ? `<tr class="grp"><td colspan="${rb ? 7 : 6}"><a href="#group-${g.key}">${g.title} (${list.length})</a>: ${g.blurb}</td></tr>${summaryRows(list)}` : ''; }).join('');
   return { summary, sections, pages: entries.map(e => ({ id: e.id, html: sectionOf(e) })) };
@@ -147,7 +147,7 @@ export function metaText(e) {
   return `${e.renamed ? `Renamed from ${e.renamed}. ` : ''}${e.action === 'RESTYLED' ? 'Wording and typo fixes only. ' : `${e.assigned} assigned facts, ${e.covered} stated. `}${e.add} lines added, ${e.del} removed.`;
 }
 
-export function buildPage({ title, entries }) {
+export function buildPage({ title, entries, meta = {} }) {
   const css = BASE_CSS + CMP_CSS;
   const { summary, sections } = comparisonBody(entries);
   return `<title>${esc(title)}</title>
@@ -156,7 +156,7 @@ ${FONT_LINK}
 <style>${css}</style>
 <main>
 <h1>${esc(title)}</h1>
-<p class="meta">Each page shows the 3.3 text on the left and the drafted 3.4 text on the right, as Markdown source. Changed lines are shaded and the changed words are marked. Long unchanged runs are collapsed to three lines of context. Links in the old text are rewritten to 3.4 so that only real edits show.</p>
+<p class="meta">Each page shows the ${esc(meta.from || 'previous')} text on the left and the drafted ${esc(meta.version || 'new')} text on the right, as Markdown source. Changed lines are shaded and the changed words are marked. Long unchanged runs are collapsed to three lines of context. Links in the old text are rewritten to ${esc(meta.version || 'the new version')} so that only real edits show.</p>
 <div class="tablewrap"><table><thead><tr><th>Page</th><th>Action</th><th class="num">Old lines</th><th class="num">New lines</th><th class="num">Change</th><th class="num">Facts stated</th></tr></thead><tbody>${summary}</tbody></table></div>
 ${sections}
 </main>
@@ -172,6 +172,7 @@ export function loadEntries(dir) {
   const entries = [];
   for (const p of manifest.pages) {
     if (p.action === 'RETIRE') continue;
+    const restyled = p.action === 'KEEP' || p.action === 'RESTYLE';
     if (p.action !== 'KEEP' && !done.has(p.path)) continue;
     const newText = fs.readFileSync(path.join(meta.docsWorktree, p.path), 'utf8');
     const oldRel = (p.renamedFrom || p.path).replace(`/${meta.version}/`, `/${meta.from}/`);
@@ -181,13 +182,14 @@ export function loadEntries(dir) {
     const st = stats(rows);
     const short = p.path.replace(`docs/${meta.product}/${meta.version}/`, '');
     const res = done.get(p.path) || {};
-    if (p.action === 'KEEP' && st.add + st.del === 0) continue;
+    if (restyled && st.add + st.del === 0) continue;
     entries.push({
-      id: short.replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, ''), short, oldText, newText, title: (newText.match(/^---\n(?:[\s\S]*?\n)?title:\s*"?(.*?)"?\s*\n/) || [])[1] || '', hash: crypto.createHash('sha256').update(newText).digest('hex').slice(0, 12), action: p.action === 'KEEP' ? 'RESTYLED' : p.action,
+      id: short.replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, ''), short, oldText, newText, title: (newText.match(/^---\n(?:[\s\S]*?\n)?title:\s*"?(.*?)"?\s*\n/) || [])[1] || '', hash: crypto.createHash('sha256').update(newText).digest('hex').slice(0, 12), action: restyled ? 'RESTYLED' : p.action,
       renamed: p.renamedFrom ? p.renamedFrom.replace(`docs/${meta.product}/${meta.version}/`, '') : null,
       oldLines: oldText === null ? null : oldText.split('\n').length, newLines: newText.split('\n').length,
-      add: st.add, del: st.del, assigned: p.action === 'KEEP' ? 0 : (p.facts || []).length, covered: (res.factsCovered || []).length,
-      oldLabel: oldText === null ? 'Old (no 3.3 page)' : `Old (3.3)${p.renamedFrom ? ' ' + esc(path.basename(p.renamedFrom)) : ''}`,
+      add: st.add, del: st.del, assigned: restyled ? 0 : (p.facts || []).length, covered: (res.factsCovered || []).length,
+      newLabel: `New (${meta.version})`,
+      oldLabel: oldText === null ? `Old (no ${meta.from} page)` : `Old (${meta.from})${p.renamedFrom ? ' ' + esc(path.basename(p.renamedFrom)) : ''}`,
       rows: oldText === null ? rows : collapse(rows),
     });
   }
@@ -211,7 +213,7 @@ export function run(argv) {
     return 2;
   }
   const { meta, entries } = loadEntries(dir);
-  fs.writeFileSync(out, buildPage({ title: title || `${meta.product} ${meta.version} side by side`, entries }));
+  fs.writeFileSync(out, buildPage({ title: title || `${meta.product} ${meta.version} side by side`, entries, meta }));
   console.log(`Wrote ${entries.length} page comparisons to ${out}`);
   return 0;
 }

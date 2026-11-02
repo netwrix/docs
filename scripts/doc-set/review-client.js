@@ -23,7 +23,14 @@ if (typeof document !== 'undefined') (function () {
   var PREFS_KEY = 'doc-set-review-prefs';
   var prefs = { mode: 'change', view: 'rendered', all: false, old: false, open: { 'g:NEW': true }, last: '', q: '', st: 'all' };
 
-  try { var saved = JSON.parse(localStorage.getItem(PREFS_KEY) || '{}'); Object.keys(saved).forEach(function (k) { if (k !== 'q' && k !== 'st') prefs[k] = saved[k]; }); } catch (e) { /* storage unavailable: defaults */ }
+  // Stored prefs are untrusted input: copy only known keys, and only values of the right type.
+  var PREF_TYPES = { mode: 'string', view: 'string', all: 'boolean', old: 'boolean', open: 'object', last: 'string' };
+  try {
+    var saved = JSON.parse(localStorage.getItem(PREFS_KEY) || '{}');
+    Object.keys(PREF_TYPES).forEach(function (k) {
+      if (Object.prototype.hasOwnProperty.call(saved, k) && typeof saved[k] === PREF_TYPES[k] && saved[k] !== null) prefs[k] = saved[k];
+    });
+  } catch (e) { /* storage unavailable: defaults */ }
   function savePrefs() { try { localStorage.setItem(PREFS_KEY, JSON.stringify({ mode: prefs.mode, view: prefs.view, all: prefs.all, open: prefs.open, last: prefs.last })); } catch (e) { /* ignore */ } }
 
   function $(s, r) { return (r || document).querySelector(s); }
@@ -491,8 +498,17 @@ if (typeof document !== 'undefined') (function () {
     return row;
   }
 
-  function rvBarHtml(slug) {
-    return '<div class="rv" data-slug="' + slug + '"><span class="rv-state">Not reviewed</span><span class="rv-who"></span><span class="rv-btns"><button type="button" data-act="approved">Approve</button><button type="button" data-act="changes">Request changes</button><button type="button" data-act="clear">Clear my review</button><button type="button" data-act="comment">Comment on this page</button></span></div>';
+  function rvBar(slug) {
+    var bar = el('div', 'rv');
+    bar.setAttribute('data-slug', slug);
+    bar.appendChild(el('span', 'rv-state', 'Not reviewed'));
+    bar.appendChild(el('span', 'rv-who'));
+    var btns = el('span', 'rv-btns');
+    [['approved', 'Approve'], ['changes', 'Request changes'], ['clear', 'Clear my review'], ['comment', 'Comment on this page']].forEach(function (x) {
+      var b = el('button', null, x[1]); b.type = 'button'; b.setAttribute('data-act', x[0]); btns.appendChild(b);
+    });
+    bar.appendChild(btns);
+    return bar;
   }
 
   function renderedView(d) {
@@ -500,9 +516,7 @@ if (typeof document !== 'undefined') (function () {
     sec.id = d.slug;
     sec.setAttribute('data-slug', d.slug);
     sec.appendChild(el('p', 'meta', d.meta || ''));
-    var bar = document.createElement('div');
-    bar.innerHTML = rvBarHtml(d.slug);
-    sec.appendChild(bar.firstChild);
+    sec.appendChild(rvBar(d.slug));
     var A = d.old == null ? [] : splitBlocks(d.old), B = splitBlocks(d.new);
     var items = alignBlocks(A, B);
     // A rewritten page opens with the old text collapsed: the new text reads on its own, and removed blocks drop out.
