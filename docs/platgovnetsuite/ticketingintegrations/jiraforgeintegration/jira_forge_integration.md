@@ -18,7 +18,7 @@ Strongpoint for NetSuite's Change Management capabilities are integrated with Ji
 
 With Strongpoint for NetSuite's integration of NetSuite and Jira (Cloud), you can use the Jira tool while Strongpoint for NetSuite automatically adds and tracks the associated changes in your NetSuite account. The integration eliminates the need for double entry in the two systems.
 
-Jira Integration uses the latest Atlassian Forge implementation which provides enhanced security, ensuring data doesn't leave the ecosystem and adheres to strict security standards (SOC2, ISO/IEC 27001).
+Jira Integration uses the latest Atlassian Forge implementation, which provides enhanced security: data doesn't leave the ecosystem, and the integration adheres to strict security standards (SOC2, ISO/IEC 27001).
 
 The Jira Forge integration automatically syncs Jira tickets with a NetSuite change request:
 

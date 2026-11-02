@@ -82,7 +82,7 @@ Accesses change management features:
   **Cases**).
   The following example uses a **Formula** for the **Case to Change Request Field Mapping**:
   ![Example of a Formula in the Case to Change Request Field Mapping](/images/platgovnetsuite/installing_strongpoint/casetocrformula.webp)
-- **Do Not ReSpider Automatically**: sets the default condition for the **Do Not ReSpider
+- **Don't ReSpider Automatically**: sets the default condition for the **Don't ReSpider
   Automatically** setting on the
   [ITGC Change Request](/docs/platgovnetsuite/changemanagement/creating_change_request.md). The default is
   unchecked.
