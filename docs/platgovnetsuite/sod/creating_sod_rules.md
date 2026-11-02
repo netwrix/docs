@@ -43,7 +43,7 @@ The following are general definitions of access levels for permissions in NetSui
 
     ![sod_rule_new](/images/platgovnetsuite/sod/sod_rule_new.webp)
 
-2. **External ID** is assigned by Platform Governance for NetSuite. Custom rules are numbered 1000
+2. **External ID** is assigned by Strongpoint for NetSuite. Custom rules are numbered 1000
    or above. External IDs for custom rules can be edited. SoD Library rule External IDs are 1
    through 999 and can't be edited.
 3. Add a Rule **Name** and **Description** and optional **Memo**.

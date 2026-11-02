@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Archive Fields
 
-When cleaning up your account with Platform Governance for NetSuite clean up tools, you may find fields that are no longer in use and need to be deleted. Create a Change Request and add the fields you want to delete.
+When cleaning up your account with Strongpoint for NetSuite clean up tools, you may find fields that are no longer in use and need to be deleted. Create a Change Request and add the fields you want to delete.
 
 ## Create a Change Request to Archive Fields
 

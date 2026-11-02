@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Clean Up Unused Customizations
 
-Platform Governance for NetSuite has tools to analyze, organize, and delete unused customizations safely.
+Strongpoint for NetSuite has tools to analyze, organize, and delete unused customizations safely.
 
 Cleaning up fields directly affects system performance. Larger records load slower than smaller ones. When a record loads in NetSuite, the system formulates the SQL request, retrieves the data from the database, assembles the interface, and retrieves any related list data or builds the corresponding interface element (in edit mode), among other steps. Although these are all highly optimized, records with large field sizes load slower. Alerts and other searches applied on demand when data is saved can also affect system performance, especially when custom SQL formulas are involved. The impact depends on the extent of the change and other sources of performance lag.
 
