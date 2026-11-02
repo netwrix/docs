@@ -101,7 +101,7 @@ The status moves to **Pausing**, then to **Paused** when the run has saved its p
 1. Open the **Actions** menu of a **Paused** execution.
 2. Click **Resume**.
 
-The status passes through **Pending** or **Resuming** and returns to **Running** when the agent picks the work back up. Clicking **Run** on the scan resumes its paused executions too.
+The status passes through **Pending** or **Resuming** and returns to **Running** when the agent resumes the work. Clicking **Run** on the scan resumes its paused executions too.
 
 ### Stop an Execution
 
