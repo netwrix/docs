@@ -22,7 +22,7 @@ Clean up involves some or all of the following steps:
 
 ### Clean Up Tools
 
-Platform Governance for NetSuite has a series of built in Clean Up Tools to enable Administrators to
+Strongpoint for NetSuite has a series of built in Clean Up Tools to enable Administrators to
 clean up their NetSuite account in an organized and efficient manner. The tools can be accessed from
 **Strongpoint**> **Clean Up** or from **Strongpoint** > **Strongpoint Overview**.
 

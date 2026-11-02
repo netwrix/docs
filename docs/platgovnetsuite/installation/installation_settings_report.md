@@ -44,7 +44,7 @@ workflows. Status is shown on the **Spider** Status tab: **Spider - All Standard
 
 Displays statistics on customizations to be investigated and cleaned up. Cleaning up customizations
 provides significant performance gains and makes your system easier to understand and maintain.
-Platform Governance for NetSuite identifies different types of clean up activities. Each of these
+Strongpoint for NetSuite identifies different types of clean up activities. Each of these
 fields corresponds to one or more views under **Strongpoint** > **Clean Up**.
 
 ### Script Management
@@ -145,12 +145,12 @@ the page dropdown icon to create a new User Note.
 
 ### Jira Integration
 
-Specifies the Jira credentials to use when Jira and Platform Governance for NetSuite are integrated.
+Specifies the Jira credentials to use when Jira and Strongpoint for NetSuite are integrated.
 See [Jira Integration](/docs/platgovnetsuite/ticketingintegrations/jiraintegration/jira_integration.md) for setup instructions.
 
 ### ServiceNow Integration
 
-Specifies the ServiceNow credentials to use when ServiceNow and Platform Governance for NetSuite are
+Specifies the ServiceNow credentials to use when ServiceNow and Strongpoint for NetSuite are
 integrated. See [ServiceNow Integration](/docs/platgovnetsuite/ticketingintegrations/servicenowintegration/servicenow_integration.md) for setup instructions.
 
 ### Menu Management

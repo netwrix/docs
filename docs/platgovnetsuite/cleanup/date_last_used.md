@@ -48,7 +48,7 @@ Used field.
   month ago and updates the date with an approximate date based on the date last modified of the
   last record with that field used.
 - DLU for fields shouldn't be blank, so a blank DLU indicates that some scripts may not have run or
-  Platform Governance for NetSuite was unable to retrieve the missing data. Contact Netwrix
+  Strongpoint for NetSuite was unable to retrieve the missing data. Contact Netwrix
   Support.
 
 **Searches**:
@@ -65,7 +65,7 @@ Used field.
   server execution log. To get accurate data while maximizing performance, Netwrix
   recommends setting all deployments to AUDIT logging status and setting at least one Audit tag. See
   [Script Management](/docs/platgovnetsuite/scriptmgmt/script_mgmt_overview.md) for details.
-- Blank DLU for scripts indicates that it has not been used since Platform Governance for NetSuite
+- Blank DLU for scripts indicates that it has not been used since Strongpoint for NetSuite
   was installed OR it is set in error mode and has not thrown an error.
 
 **Workflows**:

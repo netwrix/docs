@@ -18,7 +18,7 @@ Development/Testing accounts. The design is based on:
   audits.
 
 :::note
-Platform Governance for NetSuite must be deployed on the target environment. You need to have a
+Strongpoint for NetSuite must be deployed on the target environment. You need to have a
 least the Strongpoint Developer Role to perform a Change Request Push.
 :::
 

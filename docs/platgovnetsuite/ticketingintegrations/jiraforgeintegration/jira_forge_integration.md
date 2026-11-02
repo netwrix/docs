@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Jira Forge
 
-Platform Governance for NetSuite's Change Management capabilities are integrated with Jira, one of the most popular issue ticketing and development project management systems. Customers can look for and include NetSuite Customizations, assess impacts for requested changes, and push Jira change tickets into a Change Request. This enables easy management of changes, seamless tracking of compliant changes, and automating the reconciliation of change logs during an audit.
+Strongpoint for NetSuite's Change Management capabilities are integrated with Jira, one of the most popular issue ticketing and development project management systems. Customers can look for and include NetSuite Customizations, assess impacts for requested changes, and push Jira change tickets into a Change Request. This enables easy management of changes, seamless tracking of compliant changes, and automating the reconciliation of change logs during an audit.
 
 ## Integration Overview
 
@@ -16,7 +16,7 @@ Platform Governance for NetSuite's Change Management capabilities are integrated
 
 ### Features and Benefits
 
-With Platform Governance for NetSuite's integration of NetSuite and Jira (Cloud), you can use the Jira tool while Platform Governance for NetSuite automatically adds and tracks the associated changes in your NetSuite account. The integration eliminates the need for double entry in the two systems.
+With Strongpoint for NetSuite's integration of NetSuite and Jira (Cloud), you can use the Jira tool while Strongpoint for NetSuite automatically adds and tracks the associated changes in your NetSuite account. The integration eliminates the need for double entry in the two systems.
 
 Jira Integration uses the latest Atlassian Forge implementation which provides enhanced security, ensuring data doesn't leave the ecosystem and adheres to strict security standards (SOC2, ISO/IEC 27001).
 
@@ -39,7 +39,7 @@ Change Managers and System Administrators quickly realize the integration benefi
 
 Review these considerations before deploying the Jira integration:
 
-1. Platform Governance for NetSuite integration is implemented as a Forge app. It can be enabled or disabled based on configuration and runs independently of other scripts, ensuring it doesn't interfere with existing processes.
+1. Strongpoint for NetSuite integration is implemented as a Forge app. It can be enabled or disabled based on configuration and runs independently of other scripts, ensuring it doesn't interfere with existing processes.
 2. All functions are self-executing, complying with Atlassian Jira Forge's best practices.
 3. No DOM manipulation or global scripts are deployed.
 4. No external libraries are needed. It is plain JavaScript.

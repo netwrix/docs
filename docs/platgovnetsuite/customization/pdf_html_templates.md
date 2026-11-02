@@ -7,7 +7,7 @@ sidebar_position: 60
 # Advanced PDF / HTML Templates
 
 These templates customize print and email transactions, improving the NetSuite standard templates.
-Platform Governance for NetSuite documents the custom templates you create. Custom templates are
+Strongpoint for NetSuite documents the custom templates you create. Custom templates are
 identified with a ScriptID prefix of **custtmpl**. The template and relationships are documented in
 the Customization record.
 

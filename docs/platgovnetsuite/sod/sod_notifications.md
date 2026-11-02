@@ -21,7 +21,7 @@ information to approvers for SoD violations.
 3. Add the reason for the approval request. Click **OK**.
 4. A confirmation appears when the change request is created. You can click the link to view
    the request.
-5. After a change request is generated, Platform Governance for NetSuite sends email to the approvers.
+5. After a change request is generated, Strongpoint for NetSuite sends email to the approvers.
    The email shows the requested change, the SoD violations, and links to the change request.
 
     ![sod_email_msg](/images/platgovnetsuite/sod/sod_email_msg.webp)
