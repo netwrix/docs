@@ -1,0 +1,6 @@
+{"batch":"administration-overview","pages":[
+{"path":"docs/threatmanager/3.4/administration/overview.md","status":"done","factsCovered":["F403"],"todos":[],"untraced":[],"preexistingFindings":0,"checks":{"quality":"pass","integrity":"n/a"}},
+{"path":"docs/threatmanager/3.4/administration/serviceaccounts.md","status":"done","factsCovered":["F039","F200","F201","F368","F369","F370"],"todos":[],"untraced":[],"preexistingFindings":3,"checks":{"quality":"pass","integrity":"n/a"}},
+{"path":"docs/threatmanager/3.4/administration/troubleshooting/log.md","status":"done","factsCovered":["F020","F021"],"todos":[],"untraced":[],"preexistingFindings":0,"checks":{"quality":"pass","integrity":"n/a"}},
+{"path":"docs/threatmanager/3.4/administration/playbooks/action/entraid.md","status":"done","factsCovered":["F189","F036"],"todos":[],"untraced":[],"preexistingFindings":3,"checks":{"quality":"pass","integrity":"n/a"}}
+]}

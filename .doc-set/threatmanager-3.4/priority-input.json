@@ -1,0 +1,286 @@
+{
+  "pages": {
+    "install/silentinstall.md": {
+      "scope": "feature",
+      "consequence": "high",
+      "rationale": "Silent install variables; install can break",
+      "hash": "c0ce457e7960"
+    },
+    "install/actionservice.md": {
+      "scope": "feature",
+      "consequence": "high",
+      "rationale": "Remote service install; credentials and install",
+      "hash": "ad6d31621698"
+    },
+    "install/exportsigningkeys.md": {
+      "scope": "edge",
+      "consequence": "high",
+      "rationale": "Exports signing key; key exposure risk",
+      "hash": "26a792c14e55"
+    },
+    "install/integration/syslogevents.md": {
+      "scope": "edge",
+      "consequence": "low",
+      "rationale": "Field precedence; wrong names recoverable",
+      "hash": "76f0ecc0fa4b"
+    },
+    "install/signingkey.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Signing key handling weakens security",
+      "hash": "f571b42405ea"
+    },
+    "install/secure.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "HTTPS and certificate setup; security hardening",
+      "hash": "82ff20b673de"
+    },
+    "install/upgrade/upgrade3.4.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Post-upgrade steps can break services",
+      "hash": "808b7ab79ae1"
+    },
+    "threats/entraid.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "Threat descriptions; reader confusion only",
+      "hash": "f3e42b668607"
+    },
+    "administration/configuration/threatdetection/threatconfiguration.md": {
+      "scope": "feature",
+      "consequence": "medium",
+      "rationale": "Threat settings misconfigured stop detection",
+      "hash": "a66090a5f509"
+    },
+    "administration/configuration/integrations/entraidsync.md": {
+      "scope": "feature",
+      "consequence": "medium",
+      "rationale": "Sync misconfig stops Entra ID collection",
+      "hash": "2769d22f72c2"
+    },
+    "install/application.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Application install steps; install can break",
+      "hash": "b1e84973b3fa"
+    },
+    "administration/configuration/integrations/apptoken.md": {
+      "scope": "sub-feature",
+      "consequence": "high",
+      "rationale": "Token handling exposes credentials",
+      "hash": "56267ca1940f"
+    },
+    "requirements/server.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Wrong requirements break installation",
+      "hash": "0348742df7ad"
+    },
+    "administration/configuration/policies/policiesconfiguration.md": {
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "rationale": "Honeytoken policy settings misconfigured",
+      "hash": "f678f7a25d54"
+    },
+    "index.md": {
+      "scope": "product",
+      "consequence": "low",
+      "rationale": "Landing page; reader can navigate",
+      "hash": "82a6d4805aae"
+    },
+    "requirements/database.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Wrong requirements break installation",
+      "hash": "05c9cd139628"
+    },
+    "requirements/actionservice.md": {
+      "scope": "feature",
+      "consequence": "high",
+      "rationale": "Wrong requirements break remote install",
+      "hash": "7ab25e23678d"
+    },
+    "administration/threats/threatdetails/overview.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "UI reference; reader confusion",
+      "hash": "8038071a0cbe"
+    },
+    "install/database.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Database install steps; install can break",
+      "hash": "6de04dd2d5f0"
+    },
+    "requirements/overview.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Wrong architecture breaks installation",
+      "hash": "eb22dfa3abfb"
+    },
+    "install/firstlaunch/firstlaunch.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Built-in admin setup; security and access",
+      "hash": "f1b766564e03"
+    },
+    "install/overview.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Install order errors break installation",
+      "hash": "187f524ae6bb"
+    },
+    "install/upgrade/upgrade.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Wrong upgrade steps can break",
+      "hash": "13aa44c18bb2"
+    },
+    "install/firstlaunch/login.md": {
+      "scope": "product",
+      "consequence": "low",
+      "rationale": "Wrong URL; reader recovers",
+      "hash": "c72413d35829"
+    },
+    "requirements/ports.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "Firewall ports; connectivity and security",
+      "hash": "c750c95c52bb"
+    },
+    "install/appsettings.md": {
+      "scope": "sub-feature",
+      "consequence": "high",
+      "rationale": "Bad config overrides stop services",
+      "hash": "04e1c9e79109"
+    },
+    "administration/overview.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "Console navigation reference; reader confusion",
+      "hash": "634a8bb13df3"
+    },
+    "administration/playbooks/action/entraid.md": {
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "rationale": "Action misconfiguration fails Entra ID actions",
+      "hash": "fe48bef9120a"
+    },
+    "administration/investigations/newinvestigation.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "Query page reference; reader recovers",
+      "hash": "54d3563c9a6e"
+    },
+    "administration/investigations/reports.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "Report sections description; reader confusion",
+      "hash": "add7f9241312"
+    },
+    "administration/configuration/systemsettings/licensing.md": {
+      "scope": "product",
+      "consequence": "high",
+      "rationale": "License import; license breach risk",
+      "hash": "3a54f14a5821"
+    },
+    "administration/playbooks/action/tag.md": {
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "rationale": "Tag action misconfigured; tags wrong",
+      "hash": "c9f984024e38"
+    },
+    "administration/investigations/options/export.md": {
+      "scope": "sub-feature",
+      "consequence": "low",
+      "rationale": "Export formats; reader recovers",
+      "hash": "dace8c94c031"
+    },
+    "administration/playbooks/action/localhost.md": {
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "rationale": "Local action misconfigured; actions fail",
+      "hash": "3556a02ccada"
+    },
+    "threats/custom.md": {
+      "scope": "feature",
+      "consequence": "medium",
+      "rationale": "Custom threat misconfigured; detection fails",
+      "hash": "a6a2447892a0"
+    },
+    "administration/investigations/options/subscription.md": {
+      "scope": "sub-feature",
+      "consequence": "low",
+      "rationale": "Subscription setup; reader recovers",
+      "hash": "4c257291f020"
+    },
+    "administration/threats/entraidobjects/entraiduser.md": {
+      "scope": "sub-feature",
+      "consequence": "low",
+      "rationale": "Details page reference; reader confusion",
+      "hash": "7bfa6a012452"
+    },
+    "administration/troubleshooting/log.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "Log locations; troubleshooting lookup",
+      "hash": "1c37916f0d97"
+    },
+    "administration/threats/entraidobjects/entraidapplication.md": {
+      "scope": "sub-feature",
+      "consequence": "low",
+      "rationale": "Details page reference; reader confusion",
+      "hash": "f6d1db600bc4"
+    },
+    "administration/threats/threats.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "Threats list reference; reader confusion",
+      "hash": "9a77bc533c83"
+    },
+    "administration/threats/activedirectoryobjects/activedirectoryobjects.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "Object pages overview; reader confusion",
+      "hash": "52c79479cf41"
+    },
+    "administration/configuration/systemsettings/useraccess.md": {
+      "scope": "feature",
+      "consequence": "high",
+      "rationale": "Role permissions and admin credentials",
+      "hash": "07d416fa501c"
+    },
+    "administration/serviceaccounts.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "Dashboard reference; reader confusion",
+      "hash": "29a86ac010aa"
+    },
+    "administration/threats/entraidobjects/entraidobjects.md": {
+      "scope": "feature",
+      "consequence": "low",
+      "rationale": "Object pages overview; reader confusion",
+      "hash": "50db48b9d8f7"
+    },
+    "administration/investigations/options/filters.md": {
+      "scope": "sub-feature",
+      "consequence": "low",
+      "rationale": "Filter options; wrong results recoverable",
+      "hash": "ce600f104406"
+    },
+    "administration/threats/activedirectoryobjects/user.md": {
+      "scope": "sub-feature",
+      "consequence": "low",
+      "rationale": "Details page reference; reader confusion",
+      "hash": "1a7ac2402a93"
+    },
+    "administration/configuration/integrations/siem.md": {
+      "scope": "edge",
+      "consequence": "medium",
+      "rationale": "SIEM forwarding misconfigured; events don't forward",
+      "hash": "9c64b7116743"
+    }
+  }
+}

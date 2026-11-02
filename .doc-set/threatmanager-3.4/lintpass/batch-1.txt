@@ -1,0 +1,15 @@
+docs/threatmanager/3.4/administration/configuration/integrations/activedirectorysync.md
+docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md
+docs/threatmanager/3.4/administration/configuration/integrations/email.md
+docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md
+docs/threatmanager/3.4/administration/configuration/integrations/netwrixintegrations.md
+docs/threatmanager/3.4/administration/configuration/integrations/overview.md
+docs/threatmanager/3.4/administration/configuration/integrations/page/openid/entraidopenid.md
+docs/threatmanager/3.4/administration/configuration/integrations/page/openid/openid.md
+docs/threatmanager/3.4/administration/configuration/integrations/page/page.md
+docs/threatmanager/3.4/administration/configuration/integrations/page/radius.md
+docs/threatmanager/3.4/administration/configuration/integrations/page/saml.md
+docs/threatmanager/3.4/administration/configuration/integrations/tagmanagement.md
+docs/threatmanager/3.4/administration/configuration/overview.md
+docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md
+docs/threatmanager/3.4/administration/configuration/policies/overview.md

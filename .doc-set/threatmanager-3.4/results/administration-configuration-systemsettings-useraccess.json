@@ -1,0 +1,5 @@
+{"batch":"administration-configuration-systemsettings-useraccess","pages":[
+{"path":"docs/threatmanager/3.4/administration/configuration/systemsettings/useraccess.md","status":"done","factsCovered":["F001","F004","F005","F006","F008","F240","F241","F242","F243","F244"],"todos":[],"untraced":[],"preexistingFindings":0,"checks":{"quality":"pass","integrity":"n/a"}},
+{"path":"docs/threatmanager/3.4/administration/configuration/systemsettings/licensing.md","status":"done","factsCovered":["F028","F029","F030","F226","F227","F228","F229","F230","F231","F232","F233","F234","F405","F235"],"todos":["Confirm the trial license length in code (15-day claim not found in code)"],"untraced":[],"preexistingFindings":0,"checks":{"quality":"pass","integrity":"n/a"}},
+{"path":"docs/threatmanager/3.4/administration/configuration/threatdetection/threatconfiguration.md","status":"done","factsCovered":["F284","F285","F287","F312","F313","F314","F047","F046","F316","F356","F357","F358"],"todos":[],"untraced":[],"preexistingFindings":10,"checks":{"quality":"pass","integrity":"n/a"}}
+]}

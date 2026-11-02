@@ -1,0 +1,836 @@
+{
+  "area": "web-ui",
+  "facts": [
+    {
+      "statement": "The Activity Summary tab of an object's details page has a new section named \"Activity by Location\" (for objects that open on the user details page). It lists each location with the columns Location, First access, Last access, and Number of events, sorted by number of events, highest first.",
+      "cite": "web/src/app/components/defend/details/ActivityByLocationTable.tsx:127",
+      "area": "object-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1503",
+        "TMR-1455"
+      ]
+    },
+    {
+      "statement": "The Activity by Location section has a \"Show On Map\" button in the table toolbar. It opens a full-screen dialog titled \"Activity by Location\" with a close button, and plots every listed location on a world map (all rows, not only the current page).",
+      "cite": "web/src/app/components/defend/details/ActivityByLocationTable.tsx:145",
+      "area": "object-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1503",
+        "TMR-1458"
+      ]
+    },
+    {
+      "statement": "The Activity by Location section can be exported (the grid export file is named \"Activity by Location\").",
+      "cite": "web/src/app/components/defend/details/ActivityByLocationTable.tsx:136",
+      "area": "object-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "statement": "The Activity by Location section is hidden when the object has no location data (for example an Active Directory-only user). If loading fails, it shows the error \"Failed to load location data. Please try again.\"",
+      "cite": "web/src/app/components/defend/details/ActivityByLocationTable.tsx:120",
+      "area": "object-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "statement": "Location data comes only from Azure (Entra ID) sign-ins, so the section only has rows for Entra ID objects.",
+      "cite": "web/src/app/components/defend/details/ActivityByLocationTable.tsx:49",
+      "area": "object-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "statement": "On the Activity Summary tab the table previously titled \"Activity by Host\" is now titled \"Activity by Target\" (also the export file name).",
+      "cite": "web/src/app/components/defend/details/ActivitySummaryTabContent.tsx:28",
+      "area": "object-details",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "statement": "The legacy Activity summary widget heading \"Activity by Host\" is also renamed \"Activity by Target\".",
+      "cite": "web/src/app/components/defend/activitySummary/ActivityByHost.tsx:12",
+      "area": "object-details",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "statement": "The Activity by Target table export file is named \"Activity by Target\".",
+      "cite": "web/src/app/components/defend/details/ActivityByHostTable.tsx:80",
+      "area": "object-details",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "statement": "For AI agent objects (Agent Blueprints, Agent Blueprint Principals, and Agent Identities) the Group Membership and Roles tabs are hidden, because these objects cannot be assigned to groups or roles. Agent Users keep both tabs.",
+      "cite": "web/src/app/pages/userDetails/UserDetailsTabs.tsx:262",
+      "area": "object-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-451235"
+      ]
+    },
+    {
+      "statement": "In a Report Only deployment, the Group Membership tab is hidden for those AI agent objects too.",
+      "cite": "web/src/app/pages/userDetails/UserDetailsTabs.tsx:266",
+      "area": "object-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-451235"
+      ]
+    },
+    {
+      "statement": "Tag assignment sends the object's unique name when a tag is added to an object (fixes tags not saving the unique name).",
+      "cite": "web/src/app/services/tags.service.js:141",
+      "area": "tags",
+      "status": "changed",
+      "internal": true,
+      "tickets": [
+        "452973"
+      ]
+    },
+    {
+      "statement": "The Description field on the tag details page now wraps text (multiline, up to 3 rows) instead of a single clipped line.",
+      "cite": "web/src/app/components/defend/configuration/integrations/TagManagement/TagSettings.tsx:1205",
+      "area": "tags",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "451737"
+      ]
+    },
+    {
+      "statement": "When the tag object picker is truncated it still shows the notice \"Filter the query further to view more specific results\"; the object lists are now virtualized checkbox lists.",
+      "cite": "web/src/app/components/defend/configuration/integrations/TagManagement/TagSettings.tsx:1117",
+      "area": "tags",
+      "status": "unchanged",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "The custom time range you saved with an investigation is shown on the Timeframe button when you reopen the investigation.",
+      "cite": "web/src/app/components/mui/DateRangePicker/DateRangePicker.tsx:124",
+      "area": "investigations",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-96",
+        "TMR-1472"
+      ]
+    },
+    {
+      "statement": "Custom time ranges show AM or PM. The Timeframe button and the StartDate/EndDate attribute display now use the format \"MMM dd, hh:mm a\" (for example Jan 05, 09:30 PM).",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/TimeFramePicker/DateRangeButtonField.tsx:10",
+      "area": "investigations",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-96",
+        "TMR-1473"
+      ]
+    },
+    {
+      "statement": "The StartDate/EndDate query attribute display uses the same AM/PM format.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/attributeEditors/TimeFrameFromTo.tsx:12",
+      "area": "investigations",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1473"
+      ]
+    },
+    {
+      "statement": "The query builder panel has a collapse chevron aligned to the right end of the header, next to the \"Run Query\" button.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/QueryBuilder.tsx:211",
+      "area": "investigations",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "452254"
+      ]
+    },
+    {
+      "statement": "New query attribute \"Originating Agent\" in the Event group of the investigation query builder. It is a multi-select with search (object search results with object-type icons), accepts typed custom values, shows up to 4 tags then \"+N\", and supports the default operators.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/AttributeMaps.ts:199",
+      "area": "investigations",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1497"
+      ]
+    },
+    {
+      "statement": "The attribute label shown in the UI for the originating agent field is \"Originating Agent\" (the Jira ticket calls it \"Event Agent\").",
+      "cite": "web/src/app/typefiles/InvestigationTypes.ts:126",
+      "area": "investigations",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1497"
+      ]
+    },
+    {
+      "statement": "Threat exclusion (Create Threat / exclusion editor) filters gain two new types for Security Policy Weakening: a policy filter and a target setting filter, each a fixed list with the \"is\"/\"is not\" style exclusion operators.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/AttributeMaps.ts:652",
+      "area": "investigations",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-141",
+        "TMR-1540"
+      ]
+    },
+    {
+      "statement": "The weakened policy filter offers these policies: Guest Invite Policy, User Consent for Apps, Security Defaults, App Creation.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/attributeEditors/WeakenedPolicyFilter.tsx:7",
+      "area": "investigations",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-141",
+        "TMR-1540"
+      ]
+    },
+    {
+      "statement": "The weakened target setting filter lists settings grouped by policy: Guest Invite Policy (Anyone in the organization; Members and admin roles; Admin roles only), User Consent for Apps (Allow user consent for apps from verified publishers, for selected permissions; Let Microsoft manage your consent settings), Security Defaults (Disabled), App Creation (Enabled). The most restrictive setting of each policy is not listed because a change is only reported when a setting becomes less restrictive.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/attributeEditors/WeakenedTargetSettingFilter.tsx:19",
+      "area": "investigations",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-141",
+        "TMR-1540"
+      ]
+    },
+    {
+      "statement": "The investigation Run Query screen is read-only for users who lack the Show Search permission (previously for users with the ReportReviewer role). Investigation folder visibility and the empty state follow the same rule.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/QueryBuilder.tsx:227",
+      "area": "investigations",
+      "status": "changed",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "Events table: the \"Rows per page\" selector offers 5, 10, 50, 100, and 1000, and 1000 rows per page works again (it failed after the data grid migration). Paging is server-side.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/EventTable/EventTable.tsx:122",
+      "area": "events-table",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1446"
+      ]
+    },
+    {
+      "statement": "Events table pager text reads \"from-to of total\" with a trailing + when more events exist than the count shown, next to the \"Rows per page:\" selector.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/EventTable/EventTable.tsx:169",
+      "area": "events-table",
+      "status": "unchanged",
+      "internal": false,
+      "tickets": [
+        "TMR-1446"
+      ]
+    },
+    {
+      "statement": "The empty Events table shows \"Run a query to see results\" before the first query in Investigations, and \"No rows\" otherwise. Threat details never shows the \"Run a query\" hint, only \"No rows\".",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/EventTable/EventTable.tsx:214",
+      "area": "events-table",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "452778"
+      ]
+    },
+    {
+      "statement": "If expanding an event row fails to load details, an error notification shows the server message or \"Failed to load event details.\" and the row collapses.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/EventTable/EventTable.tsx:528",
+      "area": "events-table",
+      "status": "new",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "Threat details Event Details and Related Activity tabs show a loading spinner and a working \"Cancel Request\" link when you change Rows per page, page, or sort. Cancelling restores the previously shown events instead of leaving the table blank, and each tab loads independently.",
+      "cite": "web/src/app/components/defend/threatdetails/DetailTabs.tsx:459",
+      "area": "threat-details",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "452778"
+      ]
+    },
+    {
+      "statement": "The \"Cancel Request\" link label in the loading overlay.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/LoadingOverlay.tsx:84",
+      "area": "threat-details",
+      "status": "unchanged",
+      "internal": false,
+      "tickets": [
+        "452778"
+      ]
+    },
+    {
+      "statement": "The Top Perpetrators and Top Targets tables on a threat's Top Resources view are drawn as cards with a visible border and fill the available height.",
+      "cite": "web/src/app/components/defend/investigations/TopUserHost.tsx:113",
+      "area": "top-resources",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1448"
+      ]
+    },
+    {
+      "statement": "Top Perpetrators and Top Targets cards are enabled in Investigation with showBorder and fullHeight.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/Investigation.tsx:581",
+      "area": "top-resources",
+      "status": "changed",
+      "internal": true,
+      "tickets": [
+        "TMR-1448"
+      ]
+    },
+    {
+      "statement": "Service Accounts page search matches the Display name as well as the NT account name, and a search with several words (separated by any whitespace) must match all words.",
+      "cite": "web/src/app/pages/serviceAccounts/ServiceAccounts.tsx:205",
+      "area": "service-accounts",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "451096"
+      ]
+    },
+    {
+      "statement": "The quick-search words on the Service Accounts page are split on any whitespace, not only single spaces.",
+      "cite": "web/src/app/pages/serviceAccounts/ServiceAccounts.tsx:41",
+      "area": "service-accounts",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "451096"
+      ]
+    },
+    {
+      "statement": "The Service Accounts Type column shows User, sMSA, gMSA, or dMSA. Managed service accounts (gMSA, dMSA, sMSA) are now recognized by their specific class and no longer classified as computers, so they are auto-tagged as Service Accounts (backend fix; a full sync migration ships with it).",
+      "cite": "web/src/app/services/serviceAccounts.service.ts:31",
+      "area": "service-accounts",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "452096"
+      ]
+    },
+    {
+      "statement": "Service Accounts grid columns: Display name, Domain, Type, Status, Vulnerable, Password Age (days), Tags, Auth Protocols, Encryption Types, SPNs, Targets, Clients, Created.",
+      "cite": "web/src/app/pages/serviceAccounts/ServiceAccounts.tsx:198",
+      "area": "service-accounts",
+      "status": "unchanged",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "Monthly subscription or export warning depends on the investigation's data source. For a Threat Manager source it reads: \"For a monthly subscription (or export), the Time to Retain Events must be set to at least one month. Go to settings\" with a link to System Settings.",
+      "cite": "web/src/app/pages/investigations/subscriptions/subscription/Subscription.tsx:595",
+      "area": "subscriptions",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "453229"
+      ]
+    },
+    {
+      "statement": "For a Netwrix Threat Prevention source the monthly warning reads: \"For a monthly subscription (or export), make sure event retention in Netwrix Threat Prevention is set to at least one month.\" with no link.",
+      "cite": "web/src/app/pages/investigations/subscriptions/subscription/Subscription.tsx:607",
+      "area": "subscriptions",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "453229"
+      ]
+    },
+    {
+      "statement": "Editing an email subscription no longer picks up a Shared Folder ID from a previously opened folder-export subscription. The subscription form resets to defaults when the dialog closes.",
+      "cite": "web/src/app/pages/investigations/subscriptions/subscription/Subscription.tsx:775",
+      "area": "subscriptions",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "452302",
+        "TMR-253"
+      ]
+    },
+    {
+      "statement": "The Subscriptions grid uses server-style pagination with row count tied to loaded subscriptions; subscription form fields were migrated to MUI 7 slotProps.",
+      "cite": "web/src/app/pages/investigations/subscriptions/Subscriptions.tsx:1",
+      "area": "subscriptions",
+      "status": "changed",
+      "internal": true,
+      "tickets": []
+    },
+    {
+      "statement": "A First Time Location threat details page shows a Threat Activity widget containing a world map of locations instead of an attack path.",
+      "cite": "web/src/app/routes/threatdetails/containers/ThreatDetail.tsx:371",
+      "area": "threat-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1458",
+        "TMR-1455"
+      ]
+    },
+    {
+      "statement": "First Time Location map shows pins for new locations and known locations, with a legend: \"New location\" and \"Known location (7 days prior to detection)\". Clicking a legend entry hides or shows that category.",
+      "cite": "web/src/app/components/defend/threatdetails/firstTimeLocation/LocationPinsMap.tsx:319",
+      "area": "threat-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1458"
+      ]
+    },
+    {
+      "statement": "Hovering a First Time Location pin shows a tooltip with \"New location\" and \"Known location\" sections listing the places at that point.",
+      "cite": "web/src/app/components/defend/threatdetails/firstTimeLocation/LocationPinsMap.tsx:112",
+      "area": "threat-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1458"
+      ]
+    },
+    {
+      "statement": "The location map has two icon buttons: one toggles marker grouping (tooltip \"Separate markers\" / \"Group markers\"), the other toggles zoom (\"Zoom to locations\" / \"Zoom out to world\").",
+      "cite": "web/src/app/components/defend/threatdetails/firstTimeLocation/LocationPinsMap.tsx:250",
+      "area": "threat-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1458"
+      ]
+    },
+    {
+      "statement": "If the locations for a First Time Location threat fail to load, the widget shows the error \"Failed to load location data. Please try again.\"",
+      "cite": "web/src/app/components/defend/threatdetails/firstTimeLocation/FirstTimeLocationThreatActivity.tsx:41",
+      "area": "threat-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1458"
+      ]
+    },
+    {
+      "statement": "Impossible Travel map now fits the Threat Activity widget so the page no longer scrolls for evidence, and the duplicated Evidence block was removed from the Impossible Travel view.",
+      "cite": "web/src/app/components/defend/threatdetails/impossibleTravel/MapChart.tsx:183",
+      "area": "threat-details",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1460"
+      ]
+    },
+    {
+      "statement": "Impossible Travel routes are drawn as curved great-circle arcs with a numbered itinerary. A place visited more than once shares one pill-shaped marker labelled with every visit number. A pair travelled both ways shows one arc with an arrowhead at each end. Hovering a marker highlights every leg it touches.",
+      "cite": "web/src/app/components/defend/threatdetails/impossibleTravel/MapChart.tsx:124",
+      "area": "threat-details",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1460"
+      ]
+    },
+    {
+      "statement": "The Impossible Travel map zooms to the region the route covers, with a button to switch between \"Zoom to route\" and \"Zoom out to world\".",
+      "cite": "web/src/app/components/defend/threatdetails/impossibleTravel/MapChart.tsx:183",
+      "area": "threat-details",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1460"
+      ]
+    },
+    {
+      "statement": "A stray raw description fragment (text after a pseudo new line) is no longer shown under the threat title on threat details (seen on First Time Host Access for Azure Storage AD-integrated objects).",
+      "cite": "web/src/app/routes/threatdetails/containers/ThreatDetail.tsx:229",
+      "area": "threat-details",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "452117"
+      ]
+    },
+    {
+      "statement": "Threat descriptions render the product's \"/n\" pseudo new line as a line break without breaking URLs whose host starts with n (for example https://netwrix...).",
+      "cite": "web/src/app/helpers/pseudoNewLines.ts:7",
+      "area": "threat-details",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "439684"
+      ]
+    },
+    {
+      "statement": "The threat definitions list groups three new threat types (ids 74, 75, 76) under the Azure group, and threat evidence uses new icons for location, authentication method, and security policy threat activities.",
+      "cite": "web/src/app/components/defend/configuration/JobsList.jsx:52",
+      "area": "threat-definitions-ui",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1455",
+        "TMR-135",
+        "TMR-141"
+      ]
+    },
+    {
+      "statement": "Threat activity icons: Location, AuthenticationMethod, SecurityPolicy activity types map to a location-dot, unlock, and shield icons.",
+      "cite": "web/src/app/components/defend/threatdetails/threatActivities/ThreatActivities.jsx:149",
+      "area": "threat-details",
+      "status": "new",
+      "internal": true,
+      "tickets": []
+    },
+    {
+      "statement": "Azure sync history lists separate service types \"Risky Users\", \"Risky Service Principals\", and \"Risky Agents\"; the earlier \"Risky Objects\" label remains only for historical rows.",
+      "cite": "web/src/app/typefiles/AzureConfiguration.ts:100",
+      "area": "integrations",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "452054"
+      ]
+    },
+    {
+      "statement": "A new Netwrix Threat Prevention integration type appears in the Add Integration list under Configuration > Integrations, and a Netwrix Threat Prevention node in the integrations tree. Both are visible only to users with the Manage NTP permission (or Full Control).",
+      "cite": "web/src/app/components/defend/configuration/integrations/AddIntegration.tsx:357",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451117",
+        "451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "The integrations tree node \"ntp\" is shown only when the user has the ManageNtp permission.",
+      "cite": "web/src/app/components/defend/configuration/integrations/index.jsx:168",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "New role permission ManageNtp (value 12) controls who can manage Netwrix Threat Prevention gRPC integration configuration and trigger NTP actions. FullControl (value 0) grants every permission.",
+      "cite": "web/src/app/typefiles/Role.ts:16",
+      "area": "roles",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "The web UI now checks permissions from the role's permission list, and the FullControl permission grants access to everything.",
+      "cite": "web/src/app/components/defend/Helper.ts:451",
+      "area": "roles",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "The Netwrix Threat Prevention list page has the columns Name, Host, Port, and Profile, and a banner stating it is a beta UI for testing connectivity only and not ready for release.",
+      "cite": "web/src/app/components/defend/configuration/integrations/Summaries/ConfigNtp.tsx:36",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "A Netwrix Threat Prevention configuration page has three tabs: Connection, License Data, and Configuration. The page and its tabs carry a warning \"This is a beta UI for testing only. It is not the final design and not meant for release.\" Confirm with the product team before documenting.",
+      "cite": "web/src/app/components/defend/configuration/integrations/NTP/NtpPolicy.tsx:125",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Connection tab fields: Integration Service (options shown as \"Integration Service Running on <name>\"), Name, Host, Port, Credential Profile. Buttons: Test Connection (shows \"Testing Connection...\"), then Add or Save once the test passes. The Add/Save button stays disabled until the current values pass a connection test.",
+      "cite": "web/src/app/components/defend/configuration/integrations/NTP/NtpGrpcConfiguration.tsx:222",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Connection test messages: \"Successfully connected to Netwrix Threat Prevention.\" on success, otherwise the server error or \"Failed to reach Netwrix Threat Prevention. Please check the host, port, and credentials.\"; saving shows \"Configuration saved.\"",
+      "cite": "web/src/app/components/defend/configuration/integrations/NTP/NtpGrpcConfiguration.tsx:164",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "The Connection tab explains that it determines how Netwrix Threat Prevention (NTP) agents connect to Netwrix Threat Manager.",
+      "cite": "web/src/app/components/defend/configuration/integrations/NTP/NtpGrpcConfiguration.tsx:211",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "License Data tab shows the NTP license fields Is Expired, Machine Id, Trial Expiration Date, Modules Licensed, Modules Bit Mask, Is Trial, and Customer Info.",
+      "cite": "web/src/app/components/defend/configuration/integrations/NTP/NtpLicenseData.tsx:62",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Configuration tab has a \"Retrieve Current Settings\" button and the fields Uri, App Token (placeholder \"Hidden\"), Use SSL, and Ignore Cert Errors, with a Save button that is disabled until an App Token is chosen. Saving shows \"Defend settings saved.\"",
+      "cite": "web/src/app/components/defend/configuration/integrations/NTP/NtpDefendSettings.tsx:113",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Deleting an NTP configuration asks for confirmation with the title \"Delete Netwrix Threat Prevention Configuration\" and says the action is permanent.",
+      "cite": "web/src/app/components/defend/configuration/integrations/NTP/NtpPolicy.tsx:65",
+      "area": "integrations-ntp",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "The App Token detail page now hides the token value: the field shows \"[Hidden Value]\" until you click \"View Token\" (the button then reads \"Hide Token\"). Copy still copies the real token and shows \"App token copied to clipboard.\"",
+      "cite": "web/src/app/components/defend/configuration/integrations/AppTokens/AppTokenPolicy.jsx:188",
+      "area": "app-tokens",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "An app token that is no longer valid shows an error alert on its page. For a policy token: \"This policy token is no longer valid. All referencing policies will need to be re-deployed. Referenced by policy/policies <links>.\", or, if replaced: \"This policy token is no longer valid, but it has been replaced with a new token. Re-deploy the affected policies so they use the new token. Once done, this token is safe to delete.\" Other tokens: \"This app token is no longer valid. Please create a new token and update all usages.\"",
+      "cite": "web/src/app/components/defend/configuration/integrations/AppTokens/AppTokenPolicy.jsx:161",
+      "area": "app-tokens",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "A red banner at the top of every page tells users with the Show Configuration permission: \"App tokens are no longer valid and must be refreshed. (<names>)\". It lists up to three token names then \"and N more\", and links to the App Tokens integration page.",
+      "cite": "web/src/app/components/defend/BrokenAppTokenHeader.jsx:50",
+      "area": "app-tokens",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "A token flagged as broken is marked in the integrations tree (the App Tokens node label changes for broken tokens, as it does for broken credentials).",
+      "cite": "web/src/app/components/defend/configuration/integrations/index.jsx:194",
+      "area": "app-tokens",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "Licensing page: when installing a license fails, the page shows the server's error message (or \"Error installing license\") and no longer shows \"Installed license.\"; an expired key is no longer reported as installed.",
+      "cite": "web/src/app/store/license/reducer.js:59",
+      "area": "licensing",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "After an upgrade, a browser tab built against the old version recovers automatically (it clears the cached session and reloads from the root, once per minute at most) instead of showing the error screen at login.",
+      "cite": "web/src/app/helpers/staleBuildRecovery.ts:17",
+      "area": "login",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "451965"
+      ]
+    },
+    {
+      "statement": "Login, MFA login, and MFA register pages show error messages in red again.",
+      "cite": "web/src/app/routes/Login/containers/Login.tsx:57",
+      "area": "login",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "452253"
+      ]
+    },
+    {
+      "statement": "New Windows configuration dialog \"Netwrix Threat Manager Configuration\" (opened with --config-ui, or the \"Configure Action Service\" / \"Configure Integration Service\" start shortcut) connects a remote Action Service or Integration Service to Threat Manager. Header: \"Netwrix Threat Manager <service> Configuration\"; text: \"Connect this remote <service> to an installation of Netwrix Threat Manager using administrator credentials.\"",
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:55",
+      "area": "remote-service-config-ui",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Dialog fields: Host (with https/http selector, ://, and a port that defaults to 8080 with up/down buttons), User Name, Password, and an \"Ignore certificate errors\" check box. Buttons: Test and Save. Pasting a full URL or host:port into Host fills the scheme and port automatically.",
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml:82",
+      "area": "remote-service-config-ui",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Dialog validation and status messages: \"Threat Manager hostname is required.\", \"User name and password are required.\", \"Connecting...\", \"Connection successful.\", \"Connection failed.\" (or the error), \"Failed to save the configuration.\", \"Restarting service...\", \"Failed to restart the service. Click Save to try again.\"",
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:285",
+      "area": "remote-service-config-ui",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Saving over a working configuration asks \"This service already has a working configuration. Saving will overwrite it. Continue?\" (title \"Overwrite Existing Configuration\"). Success reads \"<service> configured and restarted successfully.\" or, when the service is not restarted by the dialog, \"<service> configured successfully. Restart the service to apply the changes.\"",
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:354",
+      "area": "remote-service-config-ui",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Choosing http shows a warning that credentials are sent unencrypted and to configure HTTPS first; checking \"Ignore certificate errors\" shows a warning that it disables verification of the server identity.",
+      "cite": "StealthDefendCore/StealthBits.Win32.ServiceUtils/ServiceSecurityWarnings.cs:10",
+      "area": "remote-service-config-ui",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1482",
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "When the remote service uses a self-signed certificate, the dialog shows a notice and a \"Download...\" button that saves the public certificate as a .cer file. The admin must import it into the Trusted Root Certification Authorities store on the Threat Manager server.",
+      "cite": "StealthDefendCore/StealthBits.Win32.ServiceUtils/ServiceSecurityWarnings.cs:24",
+      "area": "remote-service-config-ui",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1482",
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "The web UI moved to MUI 7 and the Netwrix theme: data grid (free edition), tree views, autocompletes, text fields, icons, the System Settings tree indentation and the Investigations tree/favorites styling were migrated with visual-only changes (Font Awesome SVG icons, new custom DateRangePicker replacing the MUI X Pro one, removal of old theme files).",
+      "cite": "web/src/app/components/defend/configuration/SystemConfigurations.tsx:149",
+      "area": "ui-platform",
+      "status": "changed",
+      "internal": true,
+      "tickets": [
+        "TMR-546",
+        "TMR-1456",
+        "TMR-1475",
+        "TMR-1512",
+        "TMR-1489"
+      ]
+    },
+    {
+      "statement": "System Settings tree items (Auditing, User Access, Licensing, System Jobs with Abnormal Time Evidence, Automated Account Detection, Database Maintenance, Report Maintenance, and About Threat Manager) are unchanged.",
+      "cite": "web/src/app/components/defend/configuration/SystemConfigurations.tsx:149",
+      "area": "system-settings",
+      "status": "unchanged",
+      "internal": false,
+      "tickets": [
+        "TMR-1456"
+      ]
+    },
+    {
+      "statement": "Object details pages: the table columns no longer collapse after switching tabs, because tab content mounts only when its tab is first shown.",
+      "cite": "web/src/app/pages/userDetails/UserDetailsTabs.tsx:182",
+      "area": "object-details",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1489"
+      ]
+    }
+  ],
+  "notFound": [
+    "TMR-1513: 500 error when changing ADMIN password on login screen. No web change; the fix is in the backend PasswordHistoryValidator, so no UI label or message changed in web/.",
+    "452285: cannot set password again or log in after reset for an admin created on 2.7. Backend only (no web diff).",
+    "TMR-260: expiration date of new application credentials not aligned to local time. Fix is in backend LocalizedDateFilter, not the web UI.",
+    "TMR-253: clear shared_folder_id on email subscriptions. Fix is a SQL migration (v3.2.25.sql); the visible UI fix is 452302 in Subscription.tsx.",
+    "Audit log filters: AuditHistory.jsx changed only for MUI slotProps; no new filters, labels, or fields found in web code.",
+    "Login page / admin password change: only the red error color changed in web code; no new labels or messages.",
+    "Subscriptions shared folder id and monthly text: covered; no other subscription UI changes found.",
+    "TMR-1482 ServiceConfigUI: dialog text read from XAML and code-behind; the start shortcut names live in the installer (Product.wxs), left to the installer agent.",
+    "TMR-1497: Jira says \"Event Agent\", the UI label in code is \"Originating Agent\".",
+    "TMR-1483 (AI Agent Tag for Threats) and 452150 (Trigger on Non-Human Identities setting): no web code changes found; they are backend/threat definition changes.",
+    "Query builder: no code found for a 'saved query builder' change beyond the collapse button and read-only rule (452254)."
+  ]
+}

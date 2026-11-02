@@ -1,0 +1,574 @@
+{
+  "slice": "ops",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/administration/home.md",
+      "title": "Home Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns the Home page.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/overview.md",
+      "title": "Administration",
+      "action": "UPDATE",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [
+        "F403"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "A magenta alert banner will display below the navigation header if one of the following scenarios occurs:",
+          "factId": "F403",
+          "why": "3.4 adds a red banner for users with Show Configuration: 'App tokens are no longer valid and must be refreshed.' The list of banner triggers and the color description omit it."
+        }
+      ],
+      "reason": "The banner list needs the new broken-app-token banner.",
+      "note": "Data grids section lists Results Per Page as 10, 50, 100, 1000; F360 says the Events table now offers 5, 10, 50, 100, 1000 (assigned to investigations/reports.md). Confirm whether the generic data grid also gained 5 before changing this page."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/serviceaccounts.md",
+      "title": "Service Accounts",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [
+        "F039",
+        "F200",
+        "F201",
+        "F368",
+        "F369",
+        "F370"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "dMSA, gMSA, and sMSA — Group / Delegated / Standalone Managed Service Account",
+          "factId": "F370",
+          "why": "Managed service accounts are now recognized by their specific class and tagged as service accounts instead of being classed as computers; the page does not state this, and its dMSA expansion differs from the Type section ('Domain Managed Service Account'), so one is wrong."
+        }
+      ],
+      "reason": "New facts: search matches Display name and all words, managed accounts no longer classified as computers, full AD scan on upgrade.",
+      "note": "F371 (grid columns, unchanged) already matches the page. Search behavior (F368, F369) has no section yet; add under the table description. Code does not name dMSA; verify expansion with the Jira or product owner."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/troubleshooting/overview.md",
+      "title": "Troubleshooting",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Index page; nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/troubleshooting/log.md",
+      "title": "Log Files",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F020",
+        "F021"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Log export behavior changed for remote PostgreSQL installs and the export zip name and error text are new.",
+      "note": "Page documents the log files only, with no mention of exporting logs. Add a short section on the export zip (Logs_<version>_<yyyy-MM-dd_HH-mm-ss>.zip, DatabaseLogs_PathNotFound.txt, DatabaseLogs_NoFilesFound.txt). The export UI entry point is probably on another page (System Health or similar); confirm where and cross-link."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/troubleshooting/updatepasswords.md",
+      "title": "Updating Passwords",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Credential Profile password steps are unaffected.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/editstep.md",
+      "title": "Edit or Delete a Playbook Step",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/export.md",
+      "title": "Export a Playbook",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/import.md",
+      "title": "Import a Playbook",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/importsteps.md",
+      "title": "Import Action Steps for Playbooks",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/overview.md",
+      "title": "Playbooks",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns playbook creation, tabs, or logs.",
+      "note": "Mixes concept, task, and reference sections but is accurate; leave to the central style linter."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/save.md",
+      "title": "Save a Playbook Step to My Steps",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/trigger.md",
+      "title": "Trigger a Playbook Manually",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/overview.md",
+      "title": "Action Configuration for Playbook Steps",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Action list is unchanged in 3.4.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/activedirectory.md",
+      "title": "Active Directory Target Actions",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns AD actions.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/entraid.md",
+      "title": "Entra ID Target Actions",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F189",
+        "F036"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Flag a user as confirmed compromised within your Entra ID tenant.",
+          "factId": "F189",
+          "why": "The action now reads application and service principal IDs from the event details, so a service principal or application perpetrator is flagged; the page describes users only."
+        }
+      ],
+      "reason": "Flag as Confirmed Compromised now handles enterprise applications and service principals.",
+      "note": "F036 and F189 describe the same fix from two code paths; state once."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/localhost.md",
+      "title": "Local Host Target Actions",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F182",
+        "F183",
+        "F323",
+        "F185",
+        "F187",
+        "F034"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "By default, the PowerShell script includes a comment section which includes Threat Manager threat variables that can be used in PowerShell script action steps.",
+          "factId": "F183",
+          "why": "Default script text now includes 'Primary Event Originating Agent: $PrimaryEventOriginatingAgent'; the variable is new in 3.4 (F182, F323)."
+        },
+        {
+          "quote": "Body – The body of the email. HTML is supported.",
+          "factId": "F185",
+          "why": "The /n line-break conversion now keeps URLs intact, including hosts that start with n."
+        }
+      ],
+      "reason": "PowerShell variable $PrimaryEventOriginatingAgent and Send Email URL fix belong here.",
+      "note": "The full threat variable list probably lives in configuration/threatresponse.md (other slice); the variable is also available in SIEM templates (F182). F186 (threat email summaries) is in unplaced."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/tag.md",
+      "title": "Tag Threat Actions",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [
+        "F022",
+        "F188"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Tag Object now sends each tagged object's unique name and drops duplicate IDs.",
+      "note": "Manage Blocking Policy's Users bullet says 'to have their RDP Session ended', a copy error from End User Session; fix while editing (not code-verified here)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/thirdparty.md",
+      "title": "Third-Party Applications Target Actions",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns third-party actions.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/windowsfileserver.md",
+      "title": "Windows File System Target Actions",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns these actions.",
+      "note": "Revert Permission Change here says 'Active Directory Object' on a file system page (3.3 text, left as is)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/windowsserver.md",
+      "title": "Windows Server Target Actions",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns these actions.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/overview.md",
+      "title": "Investigations Interface",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Page list and descriptions still hold.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/newinvestigation.md",
+      "title": "New Investigation Page",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F004",
+        "F005",
+        "F359"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "This option is available only to users with the Administrator or the Response Managers roles.",
+          "factId": "F005",
+          "why": "Access to investigations is now decided by permission, not role name. In the web app Save and Edit are gated on the AlterInvestigations permission, and Run Query is read-only for users without Show Search (F359)."
+        }
+      ],
+      "reason": "Save access is described by role names that 3.4 replaced with permissions.",
+      "note": "Owner and Access role steps are unchanged, but F004 (ViewAllInvestigations shows every saved investigation regardless of owner or access) should be stated on this page or in My Investigations; the roles reference is in the configuration slice (F240, F241, F006)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/favorites.md",
+      "title": "Favorites Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/auditcompliance.md",
+      "title": "Audit and Compliance Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No fact concerns the default Audit and Compliance investigations.",
+      "note": "Pre-existing typo in the table: 'Domain Admin>s'."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/predefinedinvestigations.md",
+      "title": "Predefined Investigations Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No fact concerns the default predefined investigations.",
+      "note": "3.3 table errors carried over: 'Applications Deleted' appears three times (the second and third rows are added and updated), 'Remove Memeber from Role', 'iNetOrgPeson'. Names are not in the code (seeded data), so not verified."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/myinvestigations.md",
+      "title": "My Investigations Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/reports.md",
+      "title": "Investigation Reports",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F360",
+        "F361",
+        "F362",
+        "F363",
+        "F366",
+        "F041"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Events table paging, empty state, and error behavior are new, plus the Top Resources card layout.",
+      "note": "Page has no mention of Rows per page (5, 10, 50, 100, 1000), the 'from-to of total' pager with trailing +, or the 'Run a query to see results' / 'No rows' empty states. F041 is a bug fix (Entra ID authentication events with no target objects no longer return 500); fold it into the Event Details section only if worth stating."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/subscriptionsexports.md",
+      "title": "Subscriptions and Exports Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 80,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Table columns and actions menu still hold.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/edit.md",
+      "title": "Edit or Duplicate an Investigation",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Edit and duplicate steps are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/export.md",
+      "title": "Export Report",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [
+        "F372"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Ensure the frequency doesn't exceed the \"Time to Retain\" settings for the System Jobs configured in the System Settings interface.",
+          "factId": "F372",
+          "why": "The monthly-frequency warning now depends on the data source: for a Threat Manager source Time to Retain Events must be at least one month, with a link to System Settings (F193 covers the Threat Prevention message)."
+        }
+      ],
+      "reason": "Monthly export retention guidance is source-specific in 3.4.",
+      "note": "F193 (Threat Prevention source message) is assigned to options/subscription.md; both messages apply to both pages and to Schedule Export step 6."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/filters.md",
+      "title": "Filters Section",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F320",
+        "F354",
+        "F355",
+        "F184",
+        "F321",
+        "F350",
+        "F351",
+        "F352",
+        "F353"
+      ],
+      "claims": [
+        "C024",
+        "C025"
+      ],
+      "stale": [
+        {
+          "quote": "- Event ( group header in the menu):",
+          "factId": "F320",
+          "why": "The Event group gains the 'Originating Agent' attribute, a multi-select with search that matches the name of the Netwrix agent that sent the event (F354, F184)."
+        },
+        {
+          "quote": "Preset timeframes: / Custom timeframe",
+          "factId": "F350",
+          "why": "A saved custom time range now shows on the Timeframe button when the investigation is reopened, with AM/PM in the 'MMM dd, hh:mm a' format (F351, F352)."
+        }
+      ],
+      "reason": "Originating Agent filter attribute and timeframe display changes belong on the Filters page.",
+      "note": "F320 text: values are free text or suggestions from an object search. The page's attribute list has no Location or other new attributes in the facts. F353 (collapse chevron in the query builder header next to Run Query) is minor UI. F321 notes the label is also used in saved investigations and custom threats, so the custom threats page (threats slice) should mention it."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/overview.md",
+      "title": "Investigation Options",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Options list still holds.",
+      "note": "Query builder header gained a collapse chevron (F353, assigned to filters.md); not worth a change here."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/subscription.md",
+      "title": "Add Subscription",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F193",
+        "F374",
+        "F031",
+        "F192"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Ensure the frequency doesn't exceed the \"Time to Retain\" settings for the System Jobs configured in the System Settings interface.",
+          "factId": "F193",
+          "why": "For a monthly subscription the page now shows a source-specific message: for Netwrix Threat Prevention, event retention must be at least one month; other sources keep the Time to Retain Events message with a link to settings (F372)."
+        }
+      ],
+      "reason": "Monthly subscription warning varies by data source; form resets on close; upgrade clears stray shared folder IDs.",
+      "note": "F031 and F192 are the upgrade cleanup of shared_folder_id on email subscriptions; mention only if customers need to know. F372 (Threat Manager source message) is assigned to options/export.md; both apply here too."
+    }
+  ],
+  "unplaced": [
+    "F037",
+    "F038",
+    "F180",
+    "F181",
+    "F322",
+    "F186",
+    "F190",
+    "F033",
+    "F356",
+    "F357",
+    "F358"
+  ]
+}

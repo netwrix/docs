@@ -1,0 +1,4 @@
+{"batch":"administration-investigations-options-export","pages":[
+{"path":"docs/threatmanager/3.4/administration/investigations/options/export.md","status":"done","factsCovered":["F372","F193"],"todos":[],"untraced":[],"preexistingFindings":0,"checks":{"quality":"pass","integrity":"n/a"}},
+{"path":"docs/threatmanager/3.4/administration/investigations/options/filters.md","status":"done","factsCovered":["F320","F354","F355","F184","F321","F350","F351","F352","F353","F322"],"todos":[],"untraced":[],"preexistingFindings":5,"checks":{"quality":"pass","integrity":"n/a"}},
+{"path":"docs/threatmanager/3.4/administration/investigations/options/subscription.md","status":"done","factsCovered":["F193","F372","F374","F031","F192"],"todos":[],"untraced":[],"preexistingFindings":0,"checks":{"quality":"pass","integrity":"n/a"}}]}

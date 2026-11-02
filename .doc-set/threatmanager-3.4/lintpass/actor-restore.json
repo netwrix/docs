@@ -1,0 +1,326 @@
+{
+  "restored": [
+    {
+      "page": "administration/configuration/integrations/activedirectorysync.md",
+      "line": 268,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "line": 104,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "line": 170,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/configuration/integrations/apptoken.md",
+      "line": 60,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/configuration/integrations/credentialprofile.md",
+      "line": 116,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/credentialprofile.md",
+      "line": 140,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/foldersettings.md",
+      "line": 96,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "line": 20,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "line": 24,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "line": 84,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "line": 177,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "line": 216,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/page/radius.md",
+      "line": 93,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/page/radius.md",
+      "line": 84,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/page/saml.md",
+      "line": 52,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/page/openid/openid.md",
+      "line": 46,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/page/openid/entraidopenid.md",
+      "line": 15,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/integrations/page/openid/entraidopenid.md",
+      "line": 137,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/configuration/policies/honeytoken.md",
+      "line": 99,
+      "action": "KEEP"
+    },
+    {
+      "page": "install/application.md",
+      "line": 87,
+      "action": "UPDATE"
+    },
+    {
+      "page": "install/application.md",
+      "line": 134,
+      "action": "UPDATE"
+    },
+    {
+      "page": "install/actionservice.md",
+      "line": 160,
+      "action": "REWRITE"
+    },
+    {
+      "page": "install/appsettings.md",
+      "line": 9,
+      "action": "UPDATE"
+    },
+    {
+      "page": "install/proxy.md",
+      "line": 15,
+      "action": "KEEP"
+    },
+    {
+      "page": "install/firstlaunch/firstlaunch.md",
+      "line": 55,
+      "action": "UPDATE"
+    },
+    {
+      "page": "install/firstlaunch/firstlaunch.md",
+      "line": 71,
+      "action": "UPDATE"
+    },
+    {
+      "page": "install/integration/threatprevention/threatmanagerconfiguration.md",
+      "line": 16,
+      "action": "KEEP"
+    },
+    {
+      "page": "install/integration/threatprevention/threatmanagerconfiguration.md",
+      "line": 63,
+      "action": "KEEP"
+    },
+    {
+      "page": "install/upgrade/upgrade_pg14_to_pg18.md",
+      "line": 257,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "line": 11,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "line": 74,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "line": 100,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "line": 24,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "line": 37,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "line": 48,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "line": 62,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "line": 75,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "line": 86,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/windowsfileserver.md",
+      "line": 18,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/windowsfileserver.md",
+      "line": 29,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/windowsfileserver.md",
+      "line": 41,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/windowsserver.md",
+      "line": 18,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/windowsserver.md",
+      "line": 46,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/playbooks/action/windowsserver.md",
+      "line": 57,
+      "action": "KEEP"
+    },
+    {
+      "page": "administration/investigations/options/overview.md",
+      "line": 38,
+      "action": "KEEP"
+    },
+    {
+      "page": "threats/certificateservices.md",
+      "line": 20,
+      "action": "KEEP"
+    },
+    {
+      "page": "threats/certificateservices.md",
+      "line": 42,
+      "action": "KEEP"
+    },
+    {
+      "page": "threats/certificateservices.md",
+      "line": 53,
+      "action": "KEEP"
+    },
+    {
+      "page": "threats/filesystem.md",
+      "line": 20,
+      "action": "KEEP"
+    },
+    {
+      "page": "threats/filesystem.md",
+      "line": 35,
+      "action": "KEEP"
+    },
+    {
+      "page": "threats/filesystem.md",
+      "line": 45,
+      "action": "KEEP"
+    },
+    {
+      "page": "threats/general.md",
+      "line": 26,
+      "action": "KEEP"
+    }
+  ],
+  "skipped": [
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "line": 187,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.27)",
+      "now": "Threat Manager saves the changes to the Tenant Configuration."
+    },
+    {
+      "page": "administration/configuration/threatdetection/threatconfiguration.md",
+      "line": 75,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.53)",
+      "now": "If you enable rollup, Threat Manager associates multiple events from the same perpetrator with a single"
+    },
+    {
+      "page": "install/application.md",
+      "line": 136,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.58)",
+      "now": "You have now installed the Threat Manager application and the installer has created the database. There are several"
+    },
+    {
+      "page": "administration/overview.md",
+      "line": 79,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.54)",
+      "now": "that you excluded it. Click the threat again to add it to the chart."
+    },
+    {
+      "page": "administration/playbooks/action/localhost.md",
+      "line": 54,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.43)",
+      "now": "  You configure credential profiles on the"
+    },
+    {
+      "page": "administration/investigations/reports.md",
+      "line": 38,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.40)",
+      "now": "An investigation is in the folder where you saved it."
+    },
+    {
+      "page": "administration/investigations/options/export.md",
+      "line": 56,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.40)",
+      "now": "investigation is in the folder where you saved it."
+    },
+    {
+      "page": "administration/investigations/options/export.md",
+      "line": 92,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.40)",
+      "now": "investigation is in the folder where you saved it."
+    },
+    {
+      "page": "threats/entraid.md",
+      "line": 21,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.50)",
+      "now": "| Trigger                       | Threat Manager creates a threat when an administrator grants admin consent to an appli"
+    },
+    {
+      "page": "threats/custom.md",
+      "line": 73,
+      "why": "UPDATE page, wording differs too much to be a pure restyle (similarity 0.21)",
+      "now": "    - Count – The threshold count. Threat Manager totals the event count, and one event can stand"
+    }
+  ]
+}

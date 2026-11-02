@@ -1,0 +1,169 @@
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/activedirectorysync.md  (vale: pass, dale: fail)
+   244  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/configuration/integrations/apptoken.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md  (vale: pass, dale: fail)
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/email.md  (vale: pass, dale: fail)
+   20  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   54  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   78  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md  (vale: pass, dale: fail)
+   107  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   -  dale:wordiness  This sentence is wordy. A more concise, direct alternative is possible.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md  (vale: pass, dale: fail)
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/configuration/integrations/netwrixintegrations.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/configuration/integrations/overview.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/page/openid/entraidopenid.md  (vale: pass, dale: fail)
+   121  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   15  dale:undefined-acronyms  Acronym used without being defined on first use. Spell it out: 'Full Name (ACRONYM)'.
+   31  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   120  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/configuration/integrations/page/openid/openid.md  (vale: pass, dale: pass)
+PASS  docs/threatmanager/3.4/administration/configuration/integrations/page/page.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/page/radius.md  (vale: pass, dale: fail)
+   36  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   81  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/page/saml.md  (vale: pass, dale: fail)
+   41  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/configuration/integrations/siem.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/configuration/integrations/tagmanagement.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/configuration/overview.md  (vale: pass, dale: pass)
+PASS  docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md  (vale: pass, dale: pass)
+FAIL  docs/threatmanager/3.4/administration/configuration/policies/overview.md  (vale: pass, dale: fail)
+   19  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   25  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   43  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md  (vale: pass, dale: pass)
+PASS  docs/threatmanager/3.4/administration/configuration/systemhealth/actionqueue.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/configuration/systemhealth/agents.md  (vale: pass, dale: pass)
+PASS  docs/threatmanager/3.4/administration/configuration/systemhealth/backlog.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/configuration/systemhealth/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/configuration/systemhealth/services.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/configuration/systemsettings/about.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/administration/configuration/systemsettings/auditing.md  (vale: pass, dale: fail)
+   27  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   29  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/configuration/systemsettings/licensing.md  (vale: pass, dale: pass; rechecked after the full run)
+PASS  docs/threatmanager/3.4/administration/configuration/systemsettings/overview.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/administration/configuration/systemsettings/systemjobs.md  (vale: pass, dale: fail)
+   34  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/configuration/systemsettings/useraccess.md  (vale: pass, dale: pass; rechecked after the full run)
+PASS  docs/threatmanager/3.4/administration/configuration/threatdetection/threatconfiguration.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/administration/configuration/threatdetection/threatdetection.md  (vale: pass, dale: fail)
+   20  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   45  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   50  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/configuration/threatresponse.md  (vale: pass, dale: pass)
+PASS  docs/threatmanager/3.4/administration/home.md  (vale: pass, dale: pass)
+FAIL  docs/threatmanager/3.4/administration/investigations/auditcompliance.md  (vale: pass, dale: fail)
+   9  dale:wordiness  This sentence is wordy. A more concise, direct alternative is possible.
+PASS  docs/threatmanager/3.4/administration/investigations/favorites.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/myinvestigations.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/newinvestigation.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/options/edit.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/options/export.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/options/filters.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/options/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/options/subscription.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/predefinedinvestigations.md  (vale: pass, dale: pass)
+PASS  docs/threatmanager/3.4/administration/investigations/reports.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/investigations/subscriptionsexports.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/action/activedirectory.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/action/entraid.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/action/localhost.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/action/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/action/tag.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/action/thirdparty.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/administration/playbooks/action/windowsfileserver.md  (vale: pass, dale: fail)
+   29  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/playbooks/action/windowsserver.md  (vale: pass, dale: pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/editstep.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/export.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/import.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/importsteps.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/administration/playbooks/overview.md  (vale: pass, dale: fail)
+   68  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/playbooks/save.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/playbooks/trigger.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/serviceaccounts.md  (vale: pass, dale: pass; rechecked after the full run)
+PASS  docs/threatmanager/3.4/administration/threats/activedirectoryobjects/activedirectoryobjects.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/threats/activedirectoryobjects/group.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/threats/activedirectoryobjects/host.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/threats/activedirectoryobjects/user.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/threats/entraidobjects/entraidapplication.md  (vale: pass, dale: pass; rechecked after the full run)
+PASS  docs/threatmanager/3.4/administration/threats/entraidobjects/entraidgroup.md  (vale: pass, dale: pass)
+PASS  docs/threatmanager/3.4/administration/threats/entraidobjects/entraidobjects.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/administration/threats/entraidobjects/entraidrole.md  (vale: pass, dale: fail)
+   -  dale:wordiness  This sentence is wordy. A more concise, direct alternative is possible.
+PASS  docs/threatmanager/3.4/administration/threats/entraidobjects/entraidserviceprincipal.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/threats/entraidobjects/entraiduser.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/threats/threatdetails/abnormalbehavior.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/threats/threatdetails/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/threats/threats.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/troubleshooting/log.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/troubleshooting/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/troubleshooting/updatepasswords.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/gettingstarted.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/index.md  (vale: pass, dale: pass; rechecked after the full run)
+PASS  docs/threatmanager/3.4/install/actionservice.md  (vale: pass, dale: pass; rechecked after the full run)
+PASS  docs/threatmanager/3.4/install/application.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/appsettings.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/database.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/exportsigningkeys.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/firstlaunch/firstlaunch.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/firstlaunch/login.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/install/integration/accessanalyzer.md  (vale: pass, dale: fail)
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   21  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   72  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   83  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/install/integration/activitymonitor.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/integration/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/integration/syslogevents.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/install/integration/threatprevention/threatmanagerconfiguration.md  (vale: pass, dale: fail)
+   69  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/install/integration/threatprevention/threatprevention.md  (vale: pass, dale: fail)
+   16  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/install/overview.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/install/proxy.md  (vale: pass, dale: fail)
+   52  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/install/secure.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/signingkey.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/silentinstall.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/upgrade/upgrade.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/upgrade/upgrade3.4.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/install/upgrade/upgrade_pg14_to_pg18.md  (vale: pass, dale: fail)
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   192  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   120  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/requirements/actionservice.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/requirements/client.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/requirements/database.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/requirements/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/requirements/permissions/adsync.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/requirements/permissions/entraidsync.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/requirements/permissions/overview.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/requirements/ports.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/requirements/server.md  (vale: pass, dale: cached-pass)
+FAIL  docs/threatmanager/3.4/threats/activedirectory.md  (vale: pass, dale: fail)
+   112  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   36  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   17  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/threats/certificateservices.md  (vale: pass, dale: fail)
+   20  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   18  dale:undefined-acronyms  Acronym used without being defined on first use. Spell it out: 'Full Name (ACRONYM)'.
+   51  dale:undefined-acronyms  Acronym used without being defined on first use. Spell it out: 'Full Name (ACRONYM)'.
+PASS  docs/threatmanager/3.4/threats/custom.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/threats/entraid.md  (vale: pass, dale: pass; rechecked after the full run)
+FAIL  docs/threatmanager/3.4/threats/filesystem.md  (vale: pass, dale: fail)
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/threats/general.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/threats/overview.md  (vale: pass, dale: cached-pass)
+exit=1

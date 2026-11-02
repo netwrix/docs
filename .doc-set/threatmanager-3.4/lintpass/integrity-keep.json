@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "violations": [],
+  "notes": [
+    "docs/threatmanager/3.4/administration/configuration/integrations/overview.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/administration/configuration/systemhealth/backlog.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/administration/configuration/systemhealth/actionqueue.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/administration/configuration/systemsettings/overview.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/requirements/client.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/requirements/permissions/overview.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/requirements/permissions/entraidsync.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/administration/troubleshooting/overview.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/administration/playbooks/save.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/administration/playbooks/trigger.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original.",
+    "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidserviceprincipal.md is identical to e110e3ca9555f47964c4763f57b026992460e6ce, so there is nothing to compare. Use --base <ref> for the commit that holds the original."
+  ]
+}

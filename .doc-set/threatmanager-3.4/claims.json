@@ -1,0 +1,474 @@
+{
+  "claims": [
+    {
+      "id": "C001",
+      "key": "TMR-141",
+      "summary": "Security Policy Weakening",
+      "epic": null,
+      "status": "confirmed",
+      "facts": [
+        "F294",
+        "F295",
+        "F296",
+        "F298",
+        "F299",
+        "F300",
+        "F301",
+        "F302",
+        "F303",
+        "F304",
+        "F305",
+        "F306",
+        "F307",
+        "F309",
+        "F310",
+        "F311",
+        "F356",
+        "F357",
+        "F358",
+        "F386"
+      ],
+      "note": "Shipped as threat id 76 (High, enabled by default, 24-hour rollup). The spec's four controls, direction rules, title, line 2 wording, attack path and fa-shield icon match the code. Two spec details are superseded by later children: the single 'Weakened Control' exclusion is now 'Weakened Policy' plus 'Target Setting' (TMR-1540), and the unquoted from/to values are now single-quoted (TMR-1539). The spec's Pattern 3 and 4 wording is kept in code.",
+      "differences": [
+        "The spec's single \"Weakened Control\" exclusion is now \"Weakened Policy\" plus \"Target Setting\" (TMR-1540)",
+        "From and to values are now quoted in evidence and description (TMR-1539)"
+      ]
+    },
+    {
+      "id": "C002",
+      "key": "TMR-524",
+      "summary": "Security Policy Weakening: Threat implementation",
+      "epic": "TMR-141",
+      "status": "confirmed",
+      "facts": [
+        "F294",
+        "F295",
+        "F296",
+        "F298",
+        "F299",
+        "F300",
+        "F301",
+        "F302",
+        "F303",
+        "F306",
+        "F310",
+        "F311"
+      ],
+      "note": "Implementation of the TMR-141 spec; code in SecurityPolicyWeakeningV2.cs is new in the 3.4 delta."
+    },
+    {
+      "id": "C003",
+      "key": "TMR-579",
+      "summary": "Security Policy Weakening: Lab setup and sample events collected",
+      "epic": "TMR-141",
+      "status": "internal",
+      "facts": [],
+      "note": "Lab setup and event collection for engineering; nothing customer-visible."
+    },
+    {
+      "id": "C004",
+      "key": "TMR-1539",
+      "summary": "Security Policy Weakening: quote the from/to values in evidence and description",
+      "epic": "TMR-141",
+      "status": "confirmed",
+      "facts": [
+        "F304",
+        "F305"
+      ],
+      "note": "Code wraps old and new values in single quotes in the description line 2 and the evidence bullets. Backport (3.3 CU and 3.4 GA)."
+    },
+    {
+      "id": "C005",
+      "key": "TMR-1540",
+      "summary": "Security Policy Weakening: autocomplete exclusions for weakened policy and target setting",
+      "epic": "TMR-141",
+      "status": "confirmed",
+      "facts": [
+        "F307",
+        "F309",
+        "F311",
+        "F356",
+        "F357",
+        "F358"
+      ],
+      "note": "Weakened Policy (Custom1) and Target Setting (Custom2) are fixed-list autocompletes; target settings are grouped by policy; the most restrictive setting of each policy is not offered. Backport (3.3 CU and 3.4 GA)."
+    },
+    {
+      "id": "C006",
+      "key": "TMR-1541",
+      "summary": "Validate: Security Policy Weakening threat (TMR-524)",
+      "epic": "TMR-141",
+      "status": "confirmed",
+      "facts": [
+        "F296",
+        "F298",
+        "F299",
+        "F300",
+        "F301",
+        "F302",
+        "F304",
+        "F305",
+        "F306",
+        "F307",
+        "F309",
+        "F310"
+      ],
+      "note": "QA checklist for TMR-524. The behaviors it asserts (direction rules, quoted values, High level, fa-shield, 24-hour rollup, exclusions, disabled File/Process/File Tag/Affected Object DN) all match code. Ticket status is In Testing."
+    },
+    {
+      "id": "C007",
+      "key": "TMR-1545",
+      "summary": "Documentation for Security Policy Weakening (TMR-141)",
+      "epic": "TMR-141",
+      "status": "internal",
+      "facts": [],
+      "note": "Documentation ticket (status Done). Description holds only 'Write documentation for the Security Policy Weakening threat' and a link to TMR-141; no written content, no attachments or links to compare. It asserts no claims."
+    },
+    {
+      "id": "C008",
+      "key": "TMR-1454",
+      "summary": "First Time Location",
+      "epic": null,
+      "status": "confirmed",
+      "facts": [
+        "F257",
+        "F258",
+        "F259",
+        "F260",
+        "F261",
+        "F262",
+        "F263",
+        "F266",
+        "F267",
+        "F268",
+        "F269",
+        "F270",
+        "F272",
+        "F386"
+      ],
+      "note": "Shipped as threat id 74 under Azure threats. The code differs from the spec in these details (the code wins): threat level is Low (spec: Informational); icon is fa-location-dot (spec: fa-globe); title is 'First Time Location by {user} detected' (spec: 'First Time Location detected by {user}'); the 30-day learning period is hardcoded, there is no 'Learning Period Days' setting; there are no custom exclusions (spec: Application and Source IP), the code instead enables the Location exclusion and keeps Perpetrator, Target, Client and the tag exclusions (spec: only User and Client/App); the detail page shows a world map instead of an attack path (TMR-1458); the evidence is one 'First Time Location' entry, not the spec's five items; only successful sign-ins count (TMR-1495). Spec says threat reproduction was unverified.",
+      "differences": [
+        "Threat level is Low in the code; the spec says Informational",
+        "Icon is fa-location-dot in the code; the spec says fa-globe",
+        "Title reads \"First Time Location by {user} detected\"; the spec word order differs",
+        "Learning period is fixed at 30 days; there is no \"Learning Period Days\" setting",
+        "No custom exclusions: the Location exclusion is on, and Perpetrator, Target, Client and tag exclusions remain",
+        "The detail page shows a world map instead of the attack path",
+        "Evidence is one entry; the spec lists five items"
+      ]
+    },
+    {
+      "id": "C009",
+      "key": "TMR-1455",
+      "summary": "Implement First Time Location",
+      "epic": "TMR-1454",
+      "status": "confirmed",
+      "facts": [
+        "F257",
+        "F259",
+        "F260",
+        "F261",
+        "F262",
+        "F266",
+        "F267",
+        "F268",
+        "F269",
+        "F277",
+        "F278",
+        "F386"
+      ],
+      "note": "Third sub-threat of the user/client/host summary job, id 74, listed under Azure, 30-day learning period, 24-hour rollup, exclusions as in the code. The ticket's wording that it uses 'Icon/Description/Threat Level values agreed in TMR-1454' hides that the shipped level (Low) and icon differ from the TMR-1454 spec."
+    },
+    {
+      "id": "C010",
+      "key": "TMR-1458",
+      "summary": "On First Time Location threat, show the map of locations instead of attack path",
+      "epic": "TMR-1454",
+      "status": "confirmed",
+      "facts": [
+        "F270",
+        "F272",
+        "F273",
+        "F274",
+        "F275",
+        "F276",
+        "F377",
+        "F378",
+        "F379",
+        "F380"
+      ],
+      "note": "Threat details page shows a world map of new locations and the user's known locations (the 7 days before detection) instead of the attack path. Linked work item TMR-1460 is the Impossible Travel map redesign, not in scope."
+    },
+    {
+      "id": "C011",
+      "key": "TMR-1476",
+      "summary": "Validate: First Time Location threat (TMR-1455)",
+      "epic": "TMR-1454",
+      "status": "confirmed",
+      "facts": [
+        "F257",
+        "F263",
+        "F266",
+        "F268",
+        "F269",
+        "F386"
+      ],
+      "note": "QA checklist for TMR-1455. New location fires, repeat does not, accounts under 30 days are suppressed, exclusions suppress, 24-hour rollup, listed under Azure all match code."
+    },
+    {
+      "id": "C012",
+      "key": "TMR-1494",
+      "summary": "[UI] Object details: Too small font size is using on the \"Activity by Location\" map",
+      "epic": "TMR-1454",
+      "status": "cancelled",
+      "facts": [],
+      "note": "Ticket status Cancelled (Won't Do). fixVersion 3.3 CU. No fact depends on it."
+    },
+    {
+      "id": "C013",
+      "key": "TMR-1495",
+      "summary": "Ignore failed auth for first time location",
+      "epic": "TMR-1454",
+      "status": "confirmed",
+      "facts": [
+        "F045",
+        "F258",
+        "F263",
+        "F264",
+        "F265"
+      ],
+      "note": "Only successful sign-ins are learned and alerted on. On upgrade, locations without a successful sign-in or older than event retention are deleted and the threat is suspended for 30 days while locations are relearned."
+    },
+    {
+      "id": "C014",
+      "key": "TMR-1503",
+      "summary": "[UI] Add Locations list for any Entra ID object",
+      "epic": "TMR-1454",
+      "status": "confirmed",
+      "facts": [
+        "F024",
+        "F025",
+        "F026",
+        "F337",
+        "F338",
+        "F339",
+        "F340",
+        "F341",
+        "F342",
+        "F343",
+        "F344"
+      ],
+      "note": "The Activity by Location section on the Activity Summary tab now resolves locations through the object's linked ids, so it works for any Entra ID object that opens on the object details page, and hides itself when there is no data (AD-only objects). The same change renames 'Activity by Host' to 'Activity by Target', which the ticket does not mention. Jira status is Ready for Testing and fixVersion 3.3 CU, but the code is in the 3.4 delta."
+    },
+    {
+      "id": "C015",
+      "key": "TMR-1543",
+      "summary": "Documentation for First Time Location (TMR-1454)",
+      "epic": "TMR-1454",
+      "status": "internal",
+      "facts": [],
+      "note": "Documentation ticket (status Done). Description holds only 'Write documentation for the First Time Location threat' and a link to TMR-1454; no written content to compare. It asserts no claims."
+    },
+    {
+      "id": "C016",
+      "key": "TMR-99",
+      "summary": "Privileged Role Escalation",
+      "epic": null,
+      "status": "not-shipped",
+      "facts": [],
+      "note": "Spec only (Ready for Development). No PrivilegedRoleEscalation code exists in the repo at the pinned SHA. Parent TMR-1505, not part of the 3.4 delta."
+    },
+    {
+      "id": "C017",
+      "key": "TMR-1528",
+      "summary": "Privileged Role Escalation: Lab setup and sample events collected",
+      "epic": "TMR-99",
+      "status": "internal",
+      "facts": [],
+      "note": "Lab setup and sample events for engineering; nothing customer-visible and the threat itself did not ship."
+    },
+    {
+      "id": "C018",
+      "key": "TMR-1529",
+      "summary": "Privileged Role Escalation: Threat implementation",
+      "epic": "TMR-99",
+      "status": "not-shipped",
+      "facts": [],
+      "note": "Jira status In Development with fixVersion 3.4 GA, but no threat code, SQL or UI for it is in the 3.4 delta."
+    },
+    {
+      "id": "C019",
+      "key": "TMR-96",
+      "summary": "Migrate to MUI 7",
+      "epic": null,
+      "status": "internal",
+      "facts": [
+        "F414"
+      ],
+      "note": "UI library migration (MUI 5 to 7). The visible effects are listed in F414 and the child fixes (TMR-1472, TMR-1473, TMR-1489). Jira status In Testing."
+    },
+    {
+      "id": "C020",
+      "key": "TMR-519",
+      "summary": "Migrate autocomplete to MUI 7",
+      "epic": "TMR-96",
+      "status": "internal",
+      "facts": [
+        "F414"
+      ],
+      "note": "Component migration with no customer-visible change beyond F414."
+    },
+    {
+      "id": "C021",
+      "key": "TMR-536",
+      "summary": "Migrate deprecated InputProps and FormHelperTextProps to slotProps (MUI 7)",
+      "epic": "TMR-96",
+      "status": "internal",
+      "facts": [
+        "F414"
+      ],
+      "note": "Code-level prop migration; nothing customer-visible."
+    },
+    {
+      "id": "C022",
+      "key": "TMR-542",
+      "summary": "Fix small UI issues",
+      "epic": "TMR-96",
+      "status": "not-shipped",
+      "facts": [],
+      "note": "Ticket status NEW with an empty description; no identifiable work or code evidence."
+    },
+    {
+      "id": "C023",
+      "key": "TMR-544",
+      "summary": "Create DateTime range picker for free MUI 7",
+      "epic": "TMR-96",
+      "status": "internal",
+      "facts": [
+        "F414",
+        "F350",
+        "F351"
+      ],
+      "note": "Custom DateRangePicker replaces the paid MUI component. The user-visible fixes it led to are covered by TMR-1472 and TMR-1473."
+    },
+    {
+      "id": "C024",
+      "key": "TMR-1472",
+      "summary": "[UI] Investigations: Custom time range is not showing at opening investigation",
+      "epic": "TMR-96",
+      "status": "confirmed",
+      "facts": [
+        "F350"
+      ],
+      "note": "The saved custom time range now shows on the Timeframe button when the investigation is reopened. Ticket has only a screenshot; fixVersion 3.4 GA."
+    },
+    {
+      "id": "C025",
+      "key": "TMR-1473",
+      "summary": "[UI] Investigations: am and pm are missing for the custom time range",
+      "epic": "TMR-96",
+      "status": "confirmed",
+      "facts": [
+        "F351",
+        "F352"
+      ],
+      "note": "Custom time ranges use the 'MMM dd, hh:mm a' format (for example Jan 05, 09:30 PM). Ticket has only a screenshot; fixVersion 3.4 GA."
+    },
+    {
+      "id": "C026",
+      "key": "TMR-1475",
+      "summary": "[UI] Investigations: Wrong size is using for icons and some of them are missing",
+      "epic": "TMR-96",
+      "status": "internal",
+      "facts": [
+        "F414"
+      ],
+      "note": "Icon sizing fix as part of the MUI 7 and Font Awesome SVG icon migration; no behavior change a procedure would describe. Ticket has only a screenshot."
+    },
+    {
+      "id": "C027",
+      "key": "TMR-1489",
+      "summary": "[UI] Object details: Wrong width is setting for the table column names at switching between tabs",
+      "epic": "TMR-96",
+      "status": "confirmed",
+      "facts": [
+        "F416"
+      ],
+      "note": "Table columns no longer collapse after switching tabs because tab content mounts when first shown. Ticket has only a screenshot. Minor UI fix; the writer may drop it."
+    }
+  ],
+  "factsWithoutClaims": [
+    {
+      "id": "F273",
+      "reason": "FTL map hover tooltip detail; TMR-1458 asks only for a map"
+    },
+    {
+      "id": "F274",
+      "reason": "FTL map controls (group markers, zoom); not in any ticket text"
+    },
+    {
+      "id": "F275",
+      "reason": "Locations without coordinates are not drawn; not in any ticket"
+    },
+    {
+      "id": "F276",
+      "reason": "FTL map error message; not in any ticket"
+    },
+    {
+      "id": "F377",
+      "reason": "FTL map legend and toggling; not in any ticket text"
+    },
+    {
+      "id": "F378",
+      "reason": "FTL pin tooltip; not in any ticket text"
+    },
+    {
+      "id": "F379",
+      "reason": "FTL map icon buttons; not in any ticket text"
+    },
+    {
+      "id": "F380",
+      "reason": "FTL map load error; not in any ticket text"
+    },
+    {
+      "id": "F338",
+      "reason": "Show On Map button and full-screen dialog on Activity by Location; ticket 1503 only asks for a list"
+    },
+    {
+      "id": "F339",
+      "reason": "Activity by Location export; not in TMR-1503 text"
+    },
+    {
+      "id": "F340",
+      "reason": "Section hidden with no data and its error message; not in TMR-1503 text"
+    },
+    {
+      "id": "F342",
+      "reason": "Rename Activity by Host to Activity by Target; not in TMR-1503 text"
+    },
+    {
+      "id": "F343",
+      "reason": "Legacy widget rename to Activity by Target; not in TMR-1503 text"
+    },
+    {
+      "id": "F344",
+      "reason": "Activity by Target export file name; not in TMR-1503 text"
+    },
+    {
+      "id": "F317",
+      "reason": "Impossible Travel map redesign, TMR-1460 (linked from TMR-1458 but not an in-scope ticket)"
+    },
+    {
+      "id": "F381",
+      "reason": "Impossible Travel map, TMR-1460, not in scope"
+    },
+    {
+      "id": "F382",
+      "reason": "Impossible Travel routes, TMR-1460, not in scope"
+    },
+    {
+      "id": "F383",
+      "reason": "Impossible Travel map zoom, TMR-1460, not in scope"
+    }
+  ]
+}

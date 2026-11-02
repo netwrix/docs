@@ -1,0 +1,325 @@
+
+> netwrix-docs@0.1 prebuild
+> node scripts/cleanup-legacy-dirs.mjs && node scripts/copy-kb-to-versions.mjs && node -e "if(!process.env.DOCS_PRODUCT||process.env.DOCS_PRODUCT==='changetracker'){require('child_process').execSync('npx docusaurus gen-api-docs changetracker-hub --plugin-id openapi-changetracker',{stdio:'inherit'})}"
+
+(node:484097) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/jameshaytko/docs-threatmanager-3.4/src/config/products.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /home/jameshaytko/docs-threatmanager-3.4/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+============================================================
+KB Copy Script - Solution 2 (Approach C)
+============================================================
+📦 Filtering products: threatmanager
+📌 Filtering versions: 3.4
+
+
+📚 Product: threatmanager
+------------------------------------------------------------
+
+  📖 Version: 3.4
+     Source: docs/kb/threatmanager
+     Dest:   docs/threatmanager/3.4/kb
+     ✅ Copied 50 files, 0 categories
+
+============================================================
+✅ Generated: /home/jameshaytko/docs-threatmanager-3.4/kb_allowlist.json
+============================================================
+
+============================================================
+✅ Copy complete
+Total: 1 successful, 0 skipped (no KB content), 0 file errors, 0 version errors
+============================================================
+
+> netwrix-docs@0.1 build
+> cross-env NODE_OPTIONS=--max-old-space-size=16384 npx docusaurus build
+
+[WARNING] The `siteConfig.onBrokenMarkdownLinks` config option is deprecated and will be removed in Docusaurus v4.
+Please migrate and move this option to `siteConfig.markdown.hooks.onBrokenMarkdownLinks` instead.
+[INFO] [en] Creating an optimized production build...
+[WARNING] The `siteConfig.onBrokenMarkdownLinks` config option is deprecated and will be removed in Docusaurus v4.
+Please migrate and move this option to `siteConfig.markdown.hooks.onBrokenMarkdownLinks` instead.
+[WARNING] Docusaurus found broken links!
+
+Please check the pages of your site in the list below, and make sure you don't reference any path that does not exist.
+Note: it's possible to ignore broken links with the 'onBrokenLinks' Docusaurus configuration, and let the build pass.
+
+It looks like some of the broken links we found appear in many pages of your site.
+Maybe those broken links appear on all pages through your site layout?
+We recommend that you check your theme configuration for such links (particularly, theme navbar and footer).
+Frequent broken links are linking to:
+- /docs/endpointprotector/admin/cap_module/deeppacket
+- /docs/endpointprotector/admin/dc_module/globalsettings#debug-logging
+- /docs/endpointprotector/install/migrationprocedure/migrationguide
+
+Exhaustive list of all broken links found:
+- Broken link on source page path = /docs/kb/auditor/troubleshooting-and-errors/data-collection-errors/netapp-clustered-data-ontap-error-resolution-guide:
+   -> linking to /docs/auditor/10_8/configuration/fileservers/netappcmode/permissions#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access
+   -> linking to /docs/auditor/10_8/configuration/fileservers/netappcmode/eventcategories
+   -> linking to /docs/auditor/10_8/configuration/fileservers/netappcmode/cifs
+   -> linking to /docs/auditor/10_8/configuration/fileservers/netappcmode/overview
+   -> linking to /docs/auditor/10_8/configuration/fileservers/netappcmode/permissions
+- Broken link on source page path = /docs/kb/changetracker/audit-and-logging/corrupt-errorevent-in-event-reports:
+   -> linking to /docs/changetracker/install/agent/rollinglogfile
+- Broken link on source page path = /docs/kb/changetracker/changetracker:
+   -> linking to /docs/changetracker/
+- Broken link on source page path = /docs/kb/changetracker/configuration-and-setup/network-ports-for-change-tracker:
+   -> linking to /docs/changetracker/requirements/agentdeviceports
+   -> linking to /docs/changetracker/requirements/gen7agentwindows
+   -> linking to /docs/changetracker/requirements/gen7agentlinux
+- Broken link on source page path = /docs/kb/changetracker/configuration-and-setup/updating-agents-from-the-console:
+   -> linking to /docs/changetracker/admin/settingstab/agentsanddevices/agentupdates
+   -> linking to /docs/changetracker/admin/settingstab/devicegroups
+   -> linking to /docs/changetracker/requirements/agentdeviceports
+- Broken link on source page path = /docs/kb/changetracker/database-and-diagnostics/disk_space_occupied_by_core._files_in_gen_7_agent_servers:
+   -> linking to /docs/changetracker/install/agent/linuxos
+- Broken link on source page path = /docs/kb/changetracker/troubleshooting-and-errors/certificate-thumbprint-mismatch:
+   -> linking to /docs/changetracker/install/agent/rollinglogfile
+- Broken link on source page path = /docs/kb/changetracker/troubleshooting-and-errors/hub-offline-connection-retries-exhausted:
+   -> linking to /docs/changetracker/requirements/agentdeviceports
+- Broken link on source page path = /docs/kb/changetracker/troubleshooting-and-errors/hubdetails-crypto-error:
+   -> linking to /docs/changetracker/install/agent/hubdetailsfile
+- Broken link on source page path = /docs/kb/changetracker/troubleshooting-and-errors/ip-address-blocked:
+   -> linking to /docs/changetracker/install/agent/rollinglogfile
+- Broken link on source page path = /docs/kb/endpointprotector/administration-security-and-monitoring/how_to_set_up_e-mail_alerts:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/mailsettings
+- Broken link on source page path = /docs/kb/endpointprotector/administration-security-and-monitoring/how_to_set_up_external_storage:
+   -> linking to /docs/endpointprotector/admin/systemmaintenance/shadowrepository
+- Broken link on source page path = /docs/kb/endpointprotector/administration-security-and-monitoring/how_to_set_up_smtp_with_gmail:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/mailsettings
+- Broken link on source page path = /docs/kb/endpointprotector/administration-security-and-monitoring/how-to-update-endpoint-protector-or-unify-server:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/systemdashboard#software-update
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/systemdashboard#server-update
+- Broken link on source page path = /docs/kb/endpointprotector/administration-security-and-monitoring/managing-system-administrators-and-administrator-groups:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/adminandaccess#administrators-groups
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/adminandaccess#user-role-matrix
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/adminandaccess#system-administrators
+- Broken link on source page path = /docs/kb/endpointprotector/administration-security-and-monitoring/resetting-an-administrator-password:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/adminandaccess
+- Broken link on source page path = /docs/kb/endpointprotector/administration-security-and-monitoring/review_administrator_activity_in_the_console:
+   -> linking to /docs/endpointprotector/admin/reports#admin-actions
+- Broken link on source page path = /docs/kb/endpointprotector/administration-security-and-monitoring/set_password_validity_or_remove_password_expiration_for_administrators:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/systemsecurity#advanced-user-password-settings
+- Broken link on source page path = /docs/kb/endpointprotector/administration-security-and-monitoring/set_up_a_siem_integration:
+   -> linking to /docs/endpointprotector/admin/appliance#siem-integration
+   -> linking to /docs/endpointprotector/admin/appliance#siem-export-log-formats
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/allowing-chatgpt-access-via-deep-packet-inspection-allowlist:
+   -> linking to /docs/endpointprotector/admin/cap_module/capai
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/can-optical-character-recognition-be-enabled-for-file-inspection:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#client-settings
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/configure_content_aware_policy_priorities:
+   -> linking to /docs/endpointprotector/admin/cap_module/cappolicies
+   -> linking to /docs/endpointprotector/admin/cap_module/cappolicies#policy-processing-order
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/content-aware-policy-configuration:
+   -> linking to /docs/endpointprotector/admin/cap_module/capmodule
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/create_exceptions_for_specific_file_extensions:
+   -> linking to /docs/endpointprotector/admin/cap_module/cappolicies
+   -> linking to /docs/endpointprotector/admin/cap_module/contentdetection#policy-allowlists
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/does_the_uninstall_attempt_event_confirm_agent_removal_from_the_client_machine:
+   -> linking to /docs/endpointprotector/admin/agent#client-termination-event-types
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/systemsecurity#security-password-for-uninstall-protection
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/dpi-certificate-not-available-in-the-browser:
+   -> linking to /docs/endpointprotector/admin/cap_module/deeppacket
+   -> linking to /docs/endpointprotector/admin/agent#agent-installation
+   -> linking to /docs/endpointprotector/admin/cap_module/deeppacket#deep-packet-inspection-certi%EF%AC%81cate
+   -> linking to /docs/endpointprotector/admin/cap_module/cappolicies
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/enable-deep-packet-inspection-for-instant-messaging-applications:
+   -> linking to /docs/endpointprotector/admin/cap_module/deeppacket
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/enabling-advanced-printer-and-mtp-scanning:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#file-tracing-and-shadowing
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/enabling-deep-packet-inspection-and-intercepting-vpn-traffic-on-macos-clients:
+   -> linking to /docs/endpointprotector/admin/cap_module/deeppacket
+   -> linking to /docs/endpointprotector/admin/agent#agent-installation
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/enabling-user-remediation-in-content-aware-protection-policies:
+   -> linking to /docs/endpointprotector/admin/cap_module/contentdetection#block-and-remediate-policies
+   -> linking to /docs/endpointprotector/admin/systempar#user-remediation
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/how_to_add_a_new_entry_to_the_justification_list:
+   -> linking to /docs/endpointprotector/admin/systempar#justi%EF%AC%81cations-list
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/how-to-block-whatsapp-application-from-launching:
+   -> linking to /docs/endpointprotector/admin/denylistsallowlists/denylists#applications
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/how-to-collect-extended-deep-packet-inspection-logs-for-mac-os:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#debug-logging
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/how-to-collect-extended-deep-packet-inspection-logs-for-windows:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#debug-logging
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/how-to-monitor-webmail-for-gmail-outlook-and-yahoo:
+   -> linking to /docs/endpointprotector/admin/cap_module/deeppacket#monitor-webmail-json-format-parser-usage
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/printing_jobs_not_being_blocked_or_reported:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#client-settings
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/reduce-the-number-of-false-positives:
+   -> linking to /docs/endpointprotector/admin/systempar#contextual-detection
+   -> linking to /docs/endpointprotector/admin/systempar
+   -> linking to /docs/endpointprotector/admin/cap_module/contentdetection#content-detection-summary
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#client-settings
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/set_up_a_report_only_content_aware_protection_policy:
+   -> linking to /docs/endpointprotector/admin/cap_module/cappolicies
+   -> linking to /docs/endpointprotector/admin/cap_module/cappolicies#policy-processing-order
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/set-up-url-allowlists-and-denylists:
+   -> linking to /docs/endpointprotector/admin/denylistsallowlists/overview
+   -> linking to /docs/endpointprotector/admin/denylistsallowlists/denylists#domain-and-url
+   -> linking to /docs/endpointprotector/admin/denylistsallowlists/allowlists#deep-packet-inspection
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/utilize-the-monitor-webmail-setting-for-subject-and-body-scanning:
+   -> linking to /docs/endpointprotector/admin/cap_module/deeppacket#monitor-webmail-json-format-parser-usage
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/whitelisting-authentication-servers-for-deep-packet-inspection:
+   -> linking to /docs/endpointprotector/admin/cap_module/deeppacket
+   -> linking to /docs/endpointprotector/admin/denylistsallowlists/allowlists#deep-packet-inspection
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/why_dpi_does_not_inspect_content_when_vpn_add-ons_are_installed_on_browsers:
+   -> linking to /docs/endpointprotector/admin/cap_module/deeppacket
+   -> linking to /docs/endpointprotector/admin/cap_module/deeppacket#stealthy-dpi-vs-regular-dpi
+- Broken link on source page path = /docs/kb/endpointprotector/content-aware-protection-and-dpi/will-content-aware-protection-block-sensitive-content-in-files-from-the-allowed-file-allowlist:
+   -> linking to /docs/endpointprotector/admin/denylistsallowlists/overview
+   -> linking to /docs/endpointprotector/admin/denylistsallowlists/allowlists#allowed-files
+   -> linking to /docs/endpointprotector/admin/denylistsallowlists/allowlists#mime-type
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/check_the_client_version_installed_on_your_computer:
+   -> linking to /docs/endpointprotector/install/overview#unified-epp-clients-and-server-versioning
+   -> linking to /docs/endpointprotector/install/migrationprocedure/clientupgrade#is-a-bridge-client-required-for-2608
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/create_a_system_backup_v2:
+   -> linking to /docs/endpointprotector/admin/systemmaintenance/backup
+   -> linking to /docs/endpointprotector/admin/systemmaintenance/backup#migration-readiness-checklist-preflight-validation
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/deploy_clients_via_group_policy:
+   -> linking to /docs/endpointprotector/install/activedirectory/overview
+   -> linking to /docs/endpointprotector/install/activedirectory/creatingfilters
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/deploy-the-client-on-macos-through-intune-with-full-disk-access:
+   -> linking to /docs/endpointprotector/install/intune/overview
+   -> linking to /docs/endpointprotector/install/intune/macosdeployment
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/deploying-endpoint-protector-agents:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/overview#client-software
+   -> linking to /docs/endpointprotector/install/migrationprocedure/clientupgrade#certificate-bridge--historical-context
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/how_to_apply_an_offline_patch_or_upgrade:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/overview#server-update
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migrationguide
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/how_to_apply_security_backend_updates:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/overview#security-updates
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/how_to_change_root_password:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/systemsecurity#backend-console-setup-password
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/how_to_deploy_the_client_using_sccm_or_msiexec:
+   -> linking to /docs/endpointprotector
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/how_to_perform_a_backup_restore:
+   -> linking to /docs/endpointprotector/admin/systemmaintenance/backup
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/how-to-deploy-the-windows-endpoint-protector-agent:
+   -> linking to /docs/endpointprotector/admin/agent#agent-installation
+   -> linking to /docs/endpointprotector/admin/agent#agent-install-parameters
+   -> linking to /docs/endpointprotector/install/migrationprocedure/clientupgrade#upload-procedure
+   -> linking to /docs/endpointprotector/install/activedirectory/overview
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/how-to-install-client-without-user-interaction:
+   -> linking to /docs/endpointprotector/admin/agent#agent-installation
+   -> linking to /docs/endpointprotector/admin/agent#agent-install-parameters
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/install_client_on_macos_with_deep_packet_inspection_and_vpn_traffic_intercept:
+   -> linking to /docs/endpointprotector/admin/agent#installation-on-macos-with-deep-packet-inspection-and-vpn-traffic-intercept-active
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/install_the_linux_client:
+   -> linking to /docs/endpointprotector/admin/agent#linux
+   -> linking to /docs/endpointprotector/admin/agent#redhat-based-distributions
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/install-globalsign-and-digicert-root-certificates-on-windows:
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#policies-update-fails-on-windows-11-epp-client-code-signature-verification-error
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/reinstalling-the-endpoint-protector-client-via-linux-terminal:
+   -> linking to /docs/endpointprotector/admin/agent#linux
+   -> linking to /docs/endpointprotector/admin/agent#redhat-based-distributions
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/troubleshooting-common-issues-after-epp-server-migration:
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#high-cpu-usage-after-mass-client-reconnect
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#backup-restore-fails-or-is-rejected-by-the-server
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#network-settings-wont-save-on-2510
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#backup-file-exceeds-200-mb-import-limit
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#predefined-hipaa-dictionaries-stop-working-after-migration
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#sso-login-fails-after-migration-when-the-server-uses-an-ip-address-instead-of-an-fqdn
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#cap-policies-not-triggering-after-migration
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#cant-log-in-after-migration-due-to-two-factor-authentication
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#denylists-and-allowlists-not-working-after-migration
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#ee-clients-cant-connect-after-migration
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#endpoints-not-checking-in-after-migration
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#endpoints-not-upgrading-via-epp-server-client-upgrade-tool
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#policies-update-fails-on-windows-11-epp-client-code-signature-verification-error
+   -> linking to /docs/endpointprotector/install/migrationprocedure/faq
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migrationguide
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/upgrade_linux_clients_without_uninstalling_and_reinstalling:
+   -> linking to /docs/endpointprotector/admin/agent#linux
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/overview#client-software-upgrade
+   -> linking to /docs/endpointprotector/admin/agent#redhat-based-distributions
+- Broken link on source page path = /docs/kb/endpointprotector/deployment-and-installation/using-the-live-update-feature-on-5x-legacy-appliances:
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migrationguide
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migration-legacy-5x
+   -> linking to /docs/endpointprotector/supportability/server-supportability
+- Broken link on source page path = /docs/kb/endpointprotector/device-control-and-access-management/how-to-configure-user-remediation-for-device-control:
+   -> linking to /docs/endpointprotector/admin/systempar#user-remediation
+- Broken link on source page path = /docs/kb/endpointprotector/device-control-and-access-management/understanding-the-rights-hierarchy-for-devices:
+   -> linking to /docs/endpointprotector/admin/dc_module/devicesandcomputers#priority-order
+   -> linking to /docs/endpointprotector/admin/directoryserv
+- Broken link on source page path = /docs/kb/endpointprotector/enforced-encryption-easylock/can-the-easylock-app-be-opened-without-the-endpoint-protector-agent-installed:
+   -> linking to /docs/endpointprotector/admin/ee_module/eemodule
+   -> linking to /docs/endpointprotector/admin/ee_module/eemodule#enforced-encryption-in-read-only-mode
+- Broken link on source page path = /docs/kb/endpointprotector/enforced-encryption-easylock/enable_easylock_updates_and_file_shadowing_for_removable_drives:
+   -> linking to /docs/endpointprotector/admin/ee_module/eemodule#enforced-encryption-settings
+- Broken link on source page path = /docs/kb/endpointprotector/enforced-encryption-easylock/how-to-use-easylock-without-endpoint-protector-software:
+   -> linking to /docs/endpointprotector/admin/ee_module/eemodule
+   -> linking to /docs/endpointprotector/admin/ee_module/eemodule#enforced-encryption-140-3-fips-validated-engine
+- Broken link on source page path = /docs/kb/endpointprotector/enforced-encryption-easylock/managing-enforced-encryption-and-file-tracing-settings:
+   -> linking to /docs/endpointprotector/admin/ee_module/eemodule
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#file-tracing-and-shadowing
+- Broken link on source page path = /docs/kb/endpointprotector/features-and-operations/client_integrity_fail_events:
+   -> linking to /docs/endpointprotector/admin/agent#client-integrity-check-overview
+   -> linking to /docs/endpointprotector/install/migrationprocedure/troubleshooting#policies-update-fails-on-windows-11-epp-client-code-signature-verification-error
+- Broken link on source page path = /docs/kb/endpointprotector/features-and-operations/client-modes-overview:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#client-mode
+- Broken link on source page path = /docs/kb/endpointprotector/features-and-operations/protect-the-client-from-unauthorized-uninstallation:
+   -> linking to /docs/endpointprotector/admin/systemconfiguration/systemsecurity#security-password-for-uninstall-protection
+   -> linking to /docs/endpointprotector/admin/agent#tamper-mode
+- Broken link on source page path = /docs/kb/endpointprotector/features-and-operations/recommendations_for_endpoint_protector_interaction_with_security_vendors,_proxies,_casbs,_and_browse:
+   -> linking to /docs/endpointprotector/requirements/client#security-exclusions
+- Broken link on source page path = /docs/kb/endpointprotector/features-and-operations/supported_platforms_for_endpoint_protector_server_installation:
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migration-legacy-5x#hypervisor-compatibility-check
+   -> linking to /docs/endpointprotector/supportability/server-supportability
+   -> linking to /docs/endpointprotector/supportability/client-supportability
+- Broken link on source page path = /docs/kb/endpointprotector/features-and-operations/system-backup-v2-not-showing-in-the-endpoint-protector-console:
+   -> linking to /docs/endpointprotector/admin/systemmaintenance/backup
+   -> linking to /docs/endpointprotector/supportability/server-supportability#deployment-models-saas-vs-self-hosted-update-cadence
+- Broken link on source page path = /docs/kb/endpointprotector/features-and-operations/using-smart-groups-for-automatic-computer-and-user-assignment:
+   -> linking to /docs/endpointprotector/admin/dc_module/usersandgroups#groups
+- Broken link on source page path = /docs/kb/endpointprotector/features-and-operations/whitelist_or_exclude_endpoint_protector_processes_in_crowdstrike:
+   -> linking to /docs/endpointprotector/requirements/client#security-exclusions
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/cleaning-up-and-recreating-an-audit-configuration:
+   -> linking to /docs/endpointprotector/supportability/server-supportability
+   -> linking to /docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migrationguide
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/error_server_user_interface_only_accessible_with_safari_on_vm-hosted_servers:
+   -> linking to /docs/endpointprotector/install/virtualappliance/setupwizard
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/how_to_handle_the_111.33.33.111_ip_address_on_the_server:
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migrationguide
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#debug-logging
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#debug-logging
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/how_to_remotely_activate_and_collect_client_logs_from_the_server_interface:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#debug-logging
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/how-to-collect-debug-logs-locally-on-an-endpoint-using-the-diagnostic-script:
+   -> linking to /docs/endpointprotector/admin/dc_module/globalsettings#debug-logging
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/ldap-connection-failures-to-active-directory-domain-controllers:
+   -> linking to /docs/endpointprotector/admin/directoryserv
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/microsoft-entra-id-synchronization-failures:
+   -> linking to /docs/endpointprotector/admin/directoryserv#microsoft-entra-id
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/recurring-http-500-errors-resolved-only-by-a-full-reboot:
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migrationguide
+   -> linking to /docs/endpointprotector/requirements/server
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/siem-integration-not-receiving-events:
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migrationguide
+   -> linking to /docs/endpointprotector/admin/appliance#siem-integration
+- Broken link on source page path = /docs/kb/endpointprotector/troubleshooting-and-errors/user_interface_performance_issues:
+   -> linking to /docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup
+   -> linking to /docs/endpointprotector/admin/systemmaintenance/shadowrepository
+   -> linking to /docs/endpointprotector/admin/appliance#siem-integration
+   -> linking to /docs/endpointprotector/admin/appliance#appliance-operations
+   -> linking to /docs/endpointprotector/admin/appliance#server-information
+   -> linking to /docs/endpointprotector/requirements/server
+   -> linking to /docs/endpointprotector/install/migrationprocedure/bestpractices
+   -> linking to /docs/endpointprotector/supportability/server-supportability
+   -> linking to /docs/endpointprotector/supportability/client-supportability
+   -> linking to /docs/endpointprotector/install/migrationprocedure/migrationguide
+   -> linking to /docs/endpointprotector/requirements/client#security-exclusions
+- Broken link on source page path = /docs/kb/passwordpolicyenforcer/policy-rules-and-configuration/dictionary-validation-and-testing:
+   -> linking to /docs/passwordpolicyenforcer/12_0/admin/manage-policies/rules/dictionary_rule
+   -> linking to /docs/passwordpolicyenforcer/12_0/admin/manage-policies/rules/dictionary_rule#dictionary-file-replication
+   -> linking to /docs/passwordpolicyenforcer/12_0/admin/manage-policies/testpolicy
+- Broken link on source page path = /:
+   -> linking to /docs/customer
+   -> linking to /docs/partner
+
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.
+exit=0

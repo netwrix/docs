@@ -1,0 +1,778 @@
+{
+  "area": "integrations",
+  "facts": [
+    {
+      "statement": "The Action Service and the Integration Service each have a configuration window titled \"Netwrix Threat Manager Configuration\". The window header reads \"Netwrix Threat Manager Action Service Configuration\" or \"Netwrix Threat Manager Integration Service Configuration\". It replaces the console prompts for registering a remote service.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml:4",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The window opens when the service executable runs with the --config-ui switch. The Action Service also accepts -config-ui.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/Program.cs:58",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Helper text in the window reads \"Connect this remote <service name> to an installation of Netwrix Threat Manager using administrator credentials.\"",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:56",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The Host row has a scheme drop-down with the values https and http (https is first and selected by default), a host name box, and a port box.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml:97",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The Host name box is pre-filled with the fully qualified name of the machine running the service. If the service was configured before, the window instead pre-fills the saved scheme, host, port, and the Ignore certificate errors setting.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:160",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The port box defaults to 8080 and accepts digits only.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml:114",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The up and down port steps limit the port to the range 1 to 65535.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": true,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:17",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Pasting a full URL or host:port into the host name box fills the scheme, host, and port fields, and drops any path or query.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:193",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The window has the fields User Name and Password for a Threat Manager administrator account. The user name and password are not saved on the service.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml:120",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The checkbox \"Ignore certificate errors\" shows only when the scheme is https. It is cleared by default.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml:141",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The Test button checks the host, user name, and password. The Save button stays disabled until a test succeeds, and it is disabled again after any field changes.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml:44",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Validation messages: \"Threat Manager hostname is required.\" when the host is empty, and \"User name and password are required.\" when either is empty.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:285",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Status line messages are \"Connecting...\", \"Connection successful.\", \"Connection failed.\" (or the specific error), \"Saving...\", \"Failed to save the configuration.\", and \"Restarting service...\". The line is shortened to 70 characters, and clicking it opens a \"Connection Status\" dialog with the full text or error details.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:310",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "If the service already has a working configuration, Save asks \"This service already has a working configuration. Saving will overwrite it. Continue?\" in a dialog titled \"Overwrite Existing Configuration\" with OK and Cancel.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:354",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "After a successful save, a dialog says \"<service name> configured and restarted successfully.\" when the installer started the window, or \"<service name> configured successfully. Restart the service to apply the changes.\" otherwise.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:415",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "If the service cannot restart after a save, the window shows \"Failed to restart the service. Click Save to try again.\"",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:400",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Choosing http shows a warning that the connection is not encrypted, that the administrator credentials can be intercepted, and that HTTPS should be configured on Threat Manager first. Selecting Ignore certificate errors shows a warning that the Threat Manager server identity is not verified and credentials could be stolen. The warnings do not block saving.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/StealthBits.Win32.ServiceUtils/ServiceSecurityWarnings.cs:10",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "After a successful test, if the service serves HTTPS with a self-signed certificate, the window shows a notice and a Download... button. The button saves the public certificate as a .cer file (default file name \"<machine name> <service name> Certificate.cer\") to import into the Trusted Root Certification Authorities store on the Threat Manager server.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigWindow.xaml.cs:82",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Saving registers the service with Threat Manager: the Action Service creates an application token named \"<machine name> Action Service\", and the Integration Service registers its own address and token.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ActionManager/Configuration/ServiceConfigurator.cs:37",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The Test button authenticates with the administrator credentials only; an incorrect password shows \"Bad user name or password\" for the Integration Service.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/IntegrationServiceConfigurator.cs:233",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The console configuration (--config) now shows the same http and ignore-certificate-errors warnings. Command-line registration (-url, -username, -password) prints the warning and continues.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/StealthBits.Win32.ServiceUtils/ServiceRegistrationHelper.cs:40",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The console prompt \"Ignore certificate errors (press enter to use false)\" appears only for https URLs and asks \"Proceed with ignoring certificate errors? (y/n)\" when true. The default URL is https://<machine FQDN>:8080 and the default user name is admin.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/StealthBits.Win32.ServiceUtils/ServiceRegistrationHelper.cs:66",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "A localhost or 127.0.0.1 host in the URL is replaced with the machine's fully qualified name so Threat Manager can reach it.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/StealthBits.Win32.ServiceUtils/ServiceRegistrationHelper.cs:143",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The service exits with 0 on success, 1 when the chosen operation did not complete (for example the window closed without saving), and 2 on an unexpected error.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/Program.cs:106",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The remote services use a shared configuration dialog class and a service-name check for restarts.",
+      "area": "remote-services-config",
+      "status": "new",
+      "internal": true,
+      "cite": "StealthDefendCore/ServiceConfigUI/ServiceConfigDialog.cs:24",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Running the service with --check-status runs without a window and exits 0 (configured and working), 1 (not configured), or 2 (configured but the connection fails). On failure it prints one line starting with \"check-status-error: \" followed by the reason.",
+      "area": "remote-services-status",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/StealthBits.Win32.ServiceUtils/CheckStatusReporter.cs:15",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The Action Service status check tests the saved token. Failure message: \"The stored token was rejected or the server could not be reached.\"",
+      "area": "remote-services-status",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ActionManager/Configuration/ServiceConfigurator.cs:106",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Not-configured message: \"This service has not been configured.\"",
+      "area": "remote-services-status",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/ActionManager/Configuration/ServiceConfigurator.cs:100",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The Integration Service status check asks Threat Manager to call back to the service, so it passes only when the service reaches Threat Manager and Threat Manager reaches the service. Failure messages: \"No service status token is stored. Register this service again.\", \"Threat Manager rejected the service status token. Register this service again.\", \"Threat Manager does not have this service registered (HTTP 404).\", and \"Could not reach Threat Manager at <url>: <reason>\".",
+      "area": "remote-services-status",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/IntegrationServiceConfigurator.cs:127",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Threat Manager reports a failed call-back with \"Threat Manager could not connect to the Integration Service at <url>: <reason>\" or \"Threat Manager has no address or token registered for the Integration Service on '<name>'.\"",
+      "area": "remote-services-status",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/Actor/SIActor.cs:138",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "TLS certificate failures show \"A secure (TLS) connection could not be established: <detail> The certificate presented by the remote host is probably not trusted by <Threat Manager | this machine>. Import it into the Trusted Root Certification Authorities store (Local Computer) there.\"",
+      "area": "remote-services-status",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/Common/ConnectionErrorDescriber.cs:43",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "A service registered before 3.4 has no status token, so its connection cannot be verified until it is registered again.",
+      "area": "remote-services-status",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/IntegrationServiceConfigurator.cs:127",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Registering an Integration Service now returns a status token that can only run the connection status check. The token is not stored by Threat Manager.",
+      "area": "remote-services-status",
+      "status": "new",
+      "internal": true,
+      "cite": "StealthDefendCore/WebApi/Controllers/ServiceController.cs:253",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The Integration Service saves its Threat Manager URL, the Ignore certificate errors choice, and the encrypted status token in C:\\ProgramData\\STEALTHbits\\StealthDEFEND\\IntegrationService\\appsettings.user.json. The Action Service saves its settings in the ActionService folder of the same parent folder.",
+      "area": "remote-services-status",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/IntegrationServiceConfigWriter.cs:115",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "The Integration Service listens on port 55558 by default (\"urls\": \"http://*:55558\" and WebService:Port 55558). When WebService:Certificate is set, it serves HTTPS on WebService:Port and registers an https address. Otherwise it registers an http address on the port in \"urls\".",
+      "area": "integration-service",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/ConfiguredUrl.cs:23",
+      "tickets": [
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "The address registered for the Integration Service uses the first host in AllowedHosts, or the machine's fully qualified name when AllowedHosts is * or contains a wildcard.",
+      "area": "integration-service",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/ConfiguredUrl.cs:57"
+    },
+    {
+      "statement": "The Integration Service has an authenticated test endpoint, api/v1/TestConnection/Authorized, that returns OK only for a valid token.",
+      "area": "integration-service",
+      "status": "new",
+      "internal": true,
+      "cite": "StealthDefendCore/IntegrationService/Controllers/TestConnectionController.cs:40"
+    },
+    {
+      "statement": "The Integration Service Originating Agent filter for event queries is supported.",
+      "area": "integration-service",
+      "status": "new",
+      "internal": true,
+      "cite": "StealthDefendCore/IntegrationService/SIActor.cs:724",
+      "tickets": [
+        "TMR-1497"
+      ]
+    },
+    {
+      "statement": "Threat Manager relays Netwrix Threat Prevention (NTP) requests through a chosen Integration Service over gRPC: get license data, get Defend settings, set Defend settings, and fetch the NTP certificate. The Integration Service logs in to NTP with the profile credentials and the Kerberos SPN set on the NTP configuration.",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/Controllers/NtpGrpcController.cs:39",
+      "tickets": [
+        "ADO 451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "An NTP configuration has Name, Host, Port, a credential profile, a Kerberos SPN, a trusted certificate, and an assigned Integration Service.",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/Common/DTO/NtpGrpcConfig.cs:5",
+      "tickets": [
+        "ADO 451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Creating or renaming an NTP configuration to a name that already exists (case-insensitive) fails with \"A configuration with this name already exists.\"",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/WebApi/Controllers/NtpGrpcConfigController.cs:56",
+      "tickets": [
+        "ADO 451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Setting the NTP certificate with data that is not PEM fails with \"The provided certificate is not valid PEM data.\"",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/WebApi/Controllers/NtpGrpcConfigController.cs:118",
+      "tickets": [
+        "ADO 451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Testing or fetching the certificate without an Integration Service fails with \"An Integration Service must be selected before fetching the certificate.\" or \"An Integration Service must be selected before testing the connection.\"",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/WebApi/Controllers/NtpConnectionTestController.cs:46",
+      "tickets": [
+        "ADO 451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "A connection failure returns \"Could not connect to '<host>:<port>': <reason>\". A failed NTP login reports \"NTP login failed for host '<host>': <error>\", and a host that sends no certificate reports \"'<host>:<port>' did not present a certificate.\"",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/IntegrationService/Controllers/NtpGrpcController.cs:53",
+      "tickets": [
+        "ADO 451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "A configuration that has no Integration Service assigned fails with \"Configuration '<name>' has no assigned Integration Service\". A missing configuration fails with \"Could not find Netwrix Threat Prevention configuration with ID <id>\".",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/Actor/NtpGrpcConfigActor.cs:68",
+      "tickets": [
+        "ADO 451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Netwrix Threat Prevention is offered in the Add Integration list only for a user whose role has the Manage NTP permission.",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "web/src/app/components/defend/configuration/integrations/AddIntegration.tsx:360",
+      "tickets": [
+        "ADO 451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "A new role permission, ManageNtp (value 12), grants access to manage NTP configuration. The NTP configuration, NTP management, and NTP connection test APIs require it. A user with Full Control also passes.",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:148",
+      "tickets": [
+        "ADO 451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Calls to the NTP management and connection test endpoints are written to the audit log under the Integrations category with the NtpManagement sub-category. Configuration changes use the Integrations sub-category.",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/WebApi/Controllers/NtpManagementController.cs:35",
+      "tickets": [
+        "TMR-530"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Threat Manager passes the signed-in user's account name to NTP as the user on whose behalf the call is made, for NTP's audit log.",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": true,
+      "cite": "StealthDefendCore/Common/DTO/IntegrationService/NtpConnectionOptionsDto.cs:18",
+      "tickets": [
+        "TMR-530"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "The NTP gRPC client waits 30 seconds for the initial connection and login, renews sessions automatically, and drops idle connections after 5 minutes.",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": true,
+      "cite": "StealthDefendCore/Grpc.Ntp.Client/Models/NtpGrpcClientOptions.cs:18",
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Integration Service to Threat Manager calls ignore certificate errors only when IntegrationService:IgnoreCertErrors is true (default false).",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/Actor/NtpManagementActor.cs:35",
+      "tickets": [
+        "ADO 451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "NTP shared protocol buffer contracts (ntp-shared-contracts) were added as a git subtree under SharedResources.",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": true,
+      "cite": "SharedResources/ntp-shared-contracts/README.md:1",
+      "tickets": [
+        "TMR-1509"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Grpc.Ntp.Client, Grpc.Negotiate, and Grpc.NTP.Generators projects implement the Kerberos/SSPI negotiate login and typed client wrappers for NTP.",
+      "area": "ntp-actions",
+      "status": "new",
+      "internal": true,
+      "cite": "StealthDefendCore/Grpc.Negotiate/GrpcNegotiateHandshake.cs:25",
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Syslog input recognizes the new fields upn= and ntname=. The perpetrator name is taken from ntname first, then upn, then username, then usrname. An empty ntname or upn is skipped.",
+      "area": "syslog-siem",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/Common/SyslogMessageParser.cs:381",
+      "tickets": [
+        "ADO 452063",
+        "ADO 452775"
+      ]
+    },
+    {
+      "statement": "A storage account perpetrator with the reserved storage key GUID now always shows the reserved storage key name, instead of being prefixed with the domain.",
+      "area": "syslog-siem",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/Common/SyslogMessageParser.cs:612",
+      "tickets": [
+        "ADO 452063"
+      ]
+    },
+    {
+      "statement": "The variable $PrimaryEventOriginatingAgent (description \"The agent that originated the primary event.\") is available in actions and SIEM templates. It shows \"Primary Event Originating Agent Not Available\" when empty.",
+      "area": "syslog-siem",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/Common/EventExtData/ThreatVariableExtractor.cs:306",
+      "tickets": [
+        "TMR-1497"
+      ]
+    },
+    {
+      "statement": "The default PowerShell script text of the action templates now includes the line \"Primary Event Originating Agent: $PrimaryEventOriginatingAgent\" after the Primary Event Host line.",
+      "area": "syslog-siem",
+      "status": "new",
+      "internal": false,
+      "cite": "installerFiles/sql13/v3.2.31.sql:6",
+      "tickets": [
+        "TMR-1497"
+      ]
+    },
+    {
+      "statement": "Investigation queries can filter on an Originating Agent attribute in the Event group. The filter is case-insensitive and uses the agent name.",
+      "area": "syslog-siem",
+      "status": "new",
+      "internal": false,
+      "cite": "web/src/app/typefiles/InvestigationTypes.ts:126",
+      "tickets": [
+        "TMR-1497"
+      ]
+    },
+    {
+      "statement": "The Send Email action keeps URLs intact when converting the /n line break to HTML, so $threaturl and other links no longer break when the Threat Manager host name starts with n.",
+      "area": "send-email-action",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/ActionManager.PS/PowerShell/SendEmail.ps1:8",
+      "tickets": [
+        "ADO 439684",
+        "TMR-243"
+      ]
+    },
+    {
+      "statement": "Threat email summaries use the same URL-safe /n conversion.",
+      "area": "send-email-action",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/EmailManager/EmailMessage.cs:71",
+      "tickets": [
+        "ADO 439684",
+        "TMR-243"
+      ]
+    },
+    {
+      "statement": "A /n directly attached to a URL with no separator stays part of the URL.",
+      "area": "send-email-action",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/Core/PseudoNewLineConverter.cs:14",
+      "tickets": [
+        "ADO 439684"
+      ]
+    },
+    {
+      "statement": "Tag Object action: when the perpetrator, host, client, or affected objects are tagged, each tagged object now sends its unique name with its ID, and duplicate IDs are removed.",
+      "area": "send-email-action",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/ActionManager.PS/PowerShell/TagObject.ps1:3",
+      "tickets": [
+        "ADO 452973"
+      ]
+    },
+    {
+      "statement": "Flag Compromised User action for Entra ID reads the application and service principal IDs from the event details, so a service principal or application perpetrator is flagged.",
+      "area": "send-email-action",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/ActionManager.PS/PowerShell/Azure/FlagCompromisedUser.ps1:14",
+      "tickets": [
+        "ADO 451064"
+      ]
+    },
+    {
+      "statement": "Action messages say Netwrix Threat Manager instead of StealthDEFEND: \"Failed to communicate with the Netwrix Threat Manager REST API.\"",
+      "area": "send-email-action",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/ActionManager/DefendRestClient.cs:110",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Action service stored token and password parameters are now encrypted with the common data protection layer, in a form the remote Action Service can read.",
+      "area": "send-email-action",
+      "status": "new",
+      "internal": true,
+      "cite": "StealthDefendCore/Actor/ActionActor.cs:1",
+      "tickets": [
+        "TMR-1523"
+      ]
+    },
+    {
+      "statement": "On upgrade, email subscriptions that had a shared folder ID set by mistake have it cleared.",
+      "area": "email-subscriptions",
+      "status": "new",
+      "internal": false,
+      "cite": "installerFiles/sql13/v3.2.25.sql:5",
+      "tickets": [
+        "TMR-253"
+      ]
+    },
+    {
+      "statement": "On the subscription page, a monthly subscription or export using a Netwrix Threat Prevention source shows \"For a monthly subscription, make sure event retention in Netwrix Threat Prevention is set to at least one month.\" Other sources keep the Time to Retain Events message with a link to settings.",
+      "area": "email-subscriptions",
+      "status": "changed",
+      "internal": false,
+      "cite": "web/src/app/pages/investigations/subscriptions/subscription/Subscription.tsx:592",
+      "tickets": [
+        "ADO 453229"
+      ]
+    },
+    {
+      "statement": "The Risky Objects sync is split into three syncs listed in sync history as \"Risky Users\", \"Risky Service Principals\", and \"Risky Agents\". Each has a minimum wait of 00:01:00 (one minute). \"Risky Objects\" remains only for older history rows.",
+      "area": "entra-id-sync",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/AzureService/appsettings.default.json:130",
+      "tickets": [
+        "ADO 452054"
+      ]
+    },
+    {
+      "statement": "Risky Agents are read from the Microsoft Graph beta endpoint because the risky agent endpoint has no v1.0 release.",
+      "area": "entra-id-sync",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/Azure.Sync/SyncTasks/AzureRiskyAgentSync.cs:40",
+      "tickets": [
+        "ADO 452054"
+      ]
+    },
+    {
+      "statement": "A blueprint is tagged with the highest risk of its agent identities. Confirmed Compromised replaces At Risk tags, and a not-risky object has both tags removed.",
+      "area": "entra-id-sync",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/Azure.Sync/SyncTasks/AzureRiskySyncTaskBase.cs:50",
+      "tickets": [
+        "ADO 452054"
+      ]
+    },
+    {
+      "statement": "Display names of already-linked Entra ID users, clients, and hosts in event data are updated when the object's display name changes in sync. The upgrade schedules a full replication sync to correct existing names.",
+      "area": "entra-id-sync",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/Azure.Sync/SyncTasks/AzureReplicationSync.cs:95",
+      "tickets": [
+        "ADO 451958"
+      ]
+    },
+    {
+      "statement": "The Entra ID service principal sync no longer overwrites the Agent Identity, Agent Blueprint Principal, and blueprint link values set by other syncs.",
+      "area": "entra-id-sync",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/Azure.BulkInsert/AzureServicePrincipalInserter.cs:55",
+      "tickets": [
+        "ADO 452147"
+      ]
+    },
+    {
+      "statement": "Marking service principals as agent identity or blueprint principal now updates the service principal rows even when the object rows already had the type.",
+      "area": "entra-id-sync",
+      "status": "changed",
+      "internal": true,
+      "cite": "StealthDefendCore/Azure.Actor/AzureServicePrincipalActor.cs:83",
+      "tickets": [
+        "ADO 452147"
+      ]
+    },
+    {
+      "statement": "gMSA, dMSA, and sMSA accounts are classified as User objects, not Computer objects, so they are tagged as service accounts. An object is a Computer only when its last object class is computer.",
+      "area": "service-accounts",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/AD.DTO/Views/ADUserView.cs:80",
+      "tickets": [
+        "ADO 452096"
+      ]
+    },
+    {
+      "statement": "Upgrading triggers a full Active Directory scan so existing service account tags are corrected.",
+      "area": "service-accounts",
+      "status": "changed",
+      "internal": false,
+      "cite": "StealthDefendCore/AD.EFCore/Migrations/20260810163759_FullSyncToFixServiceAccountTags.cs:17",
+      "tickets": [
+        "ADO 452096"
+      ]
+    },
+    {
+      "statement": "A background check marks application tokens as broken when they are expired or no longer signed with the current signing key (Integration and Agent tokens are skipped). Audit log entries read \"App token '<name>' is no longer signed with the current signing key.\" and \"App token '<name>' issue has been resolved.\"",
+      "area": "app-tokens",
+      "status": "new",
+      "internal": false,
+      "cite": "StealthDefendCore/WebApi/Resources.resx:382",
+      "tickets": [
+        "TMR-1519"
+      ]
+    }
+  ],
+  "notFound": [
+    "TMR-530: separate audit log entry text for every NTP action. Code audits NtpManagement endpoints through SDAuditedEndpoint with sub-category NtpManagement, but no entry text or UI label for the sub-category was found.",
+    "TMR-1535: Entra ID sync robustness change. No commit with this key in 3.3..3.4; only the risky-sync split (ADO 452054) and display-name updates were found.",
+    "TMR-1537: Entra ID sync robustness change. No commit with this key found.",
+    "ADO 451120: role name or label shown for the ManageNtp permission in the role editor. Only the enum value and the API and Add Integration checks were found.",
+    "TMR-1518: HTTPS by default for remote Integration Service installs. The service default stays http://*:55558; the HTTPS default is set by the installer, outside this area."
+  ]
+}

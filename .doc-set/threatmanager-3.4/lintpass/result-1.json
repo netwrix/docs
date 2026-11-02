@@ -1,0 +1,40 @@
+{
+  "batch": 1,
+  "pages": [
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/activedirectorysync.md","before":5,"after":1,"integrity":"pass","suppressions":["Netwrix.Contractions on Step 3 in the Add Rule procedure: bold label **Does Not Contain** wraps across two lines, which Vale reads as 'Does Not'; wrapped in <!-- vale Netwrix.Contractions = NO/YES -->"],"unfixed":["~145: 'This value is required to accurately evaluate the Golden Ticket threat.' is inside a :::note admonition, which must stay unchanged (Dale passive-voice)"]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md","before":8,"after":0,"integrity":"pass","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/email.md","before":2,"after":3,"integrity":"pass","suppressions":[],"unfixed":["50: 'Toggle the button to ON if you want to enable TLS protocol is in use for email notifications' is garbled; not reworded (see typos)","64: 'By default, this is set to http://localhost:8080/' (Dale passive-voice, round limit reached)","78: 'Email notifications are now configured.' (Dale passive-voice, round limit reached)","Dale results varied between runs; after-count is from the last run"]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md","before":6,"after":2,"integrity":"pass","suppressions":[],"unfixed":["90-91: 'Only users granted application access through the System Settings > User Access page will be available in the dropdown.' (Dale passive-voice; actor not stated, left as is)"]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/netwrixintegrations.md","before":8,"after":0,"integrity":"pass","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/overview.md","before":0,"after":0,"integrity":"n/a","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/page/openid/entraidopenid.md","before":6,"after":2,"integrity":"pass","suppressions":[],"unfixed":["15: 'RO 3.0.90+' acronym RO (Dale undefined-acronyms); expansion is not stated on the page, so not invented","17: 'MSAL.js' flagged as undefined acronym; product/library name, left as is"]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/page/openid/openid.md","before":3,"after":0,"integrity":"pass","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/page/page.md","before":2,"after":0,"integrity":"pass","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/page/radius.md","before":5,"after":2,"integrity":"pass","suppressions":[],"unfixed":["two Dale passive-voice findings with no line number remain after round limit; likely the 'Active Directory attribute ... supplied in the Custom Name Format field' and 'when prompted for MFA' sentences"]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/page/saml.md","before":4,"after":1,"integrity":"pass","suppressions":[],"unfixed":["41: 'User Claim – A user claim is an assertion made by the identity provider about a user...' (Dale wordiness; this is a definition label line, left as is after round limit)"]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/integrations/tagmanagement.md","before":3,"after":0,"integrity":"pass","suppressions":[],"unfixed":["~35: 'Any users with the Watchlist tag will be displayed on the Threat Manager Home Page Watchlist.' is inside a :::note admonition, left unchanged (passive)"]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/overview.md","before":1,"after":0,"integrity":"pass","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md","before":5,"after":2,"integrity":"pass","suppressions":[],"unfixed":["78-80: 'LDAP Monitoring isn't enabled, it must be enabled in the Monitored Domains tab.' inside :::note admonition, unchanged (see typos)","one more passive-voice finding without a line number, not located after round limit"]},
+    {"path":"docs/threatmanager/3.4/administration/configuration/policies/overview.md","before":3,"after":3,"integrity":"pass","suppressions":[],"unfixed":["43: 'When a Honeytoken name is specified and the policy is enabled...' inside :::note admonition, unchanged","25, 38: Dale passive-voice on 'When the policy was applied to a host' / 'fake credentials stored in memory'; left after round limit, Dale results varied between runs"]}
+  ],
+  "typos": [
+    "docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md:156: 'theThreat Prevention' missing space; fix: 'the Threat Prevention'",
+    "docs/threatmanager/3.4/administration/configuration/integrations/email.md:60: 'seperator'; fix: 'separator'",
+    "docs/threatmanager/3.4/administration/configuration/integrations/email.md:50: 'if you want to enable TLS protocol is in use for email notifications' is garbled; fix: 'if you want to enable the TLS protocol for email notifications'",
+    "docs/threatmanager/3.4/administration/configuration/integrations/email.md:52: 'Ignore Certificate Errors –Toggle' missing space after dash",
+    "docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md:19: 'at bottom of the page'; fix: 'at the bottom of the page'",
+    "docs/threatmanager/3.4/administration/configuration/integrations/page/openid/entraidopenid.md:12: sentence starts lowercase 'ensure the following requirements...'; fix: capitalize 'Ensure' (the sentence now reads 'ensure you fulfill the following requirements')",
+    "docs/threatmanager/3.4/administration/configuration/integrations/page/openid/entraidopenid.md:170: 'example,` https://jwt.io/`.' stray backtick spacing",
+    "docs/threatmanager/3.4/administration/configuration/integrations/page/openid/openid.md:16 and :27: image alt text 'authneication'; fix: 'authentication'",
+    "docs/threatmanager/3.4/administration/configuration/integrations/page/radius.md:25: image alt text 'authneication'; fix: 'authentication'",
+    "docs/threatmanager/3.4/administration/configuration/integrations/page/saml.md:15, :30, :57: image alt text 'authneication'; fix: 'authentication'",
+    "docs/threatmanager/3.4/administration/configuration/integrations/page/page.md:22: 'Credential Profile dropdown in the navigation pane' looks like a copy error from the Credential Profile page; likely 'Authentication Provider'",
+    "docs/threatmanager/3.4/administration/configuration/overview.md:17: 'Threat Response – lets you' lowercase 'lets'; fix: 'Lets'",
+    "docs/threatmanager/3.4/administration/configuration/policies/overview.md:10 and :14: 'polices'; fix: 'policies'",
+    "docs/threatmanager/3.4/administration/configuration/policies/overview.md:44: 'refer to' starts a sentence in lowercase (inside admonition); fix: 'Refer to'",
+    "docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md:13: 'to reduce noise' starts a list item in lowercase; fix: 'To reduce noise'",
+    "docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md:79: 'LDAP Monitoring isn't enabled, it must be enabled' comma splice; fix: 'If LDAP Monitoring isn't enabled, you must enable it'",
+    "docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md:51: 'Threat PreventionAdministration Console ,' missing space and stray space before comma",
+    "docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md:49: 'To configure LDAP monitoring for Threat Manager.' ends with a period but introduces a procedure; fix: colon"
+  ]
+}

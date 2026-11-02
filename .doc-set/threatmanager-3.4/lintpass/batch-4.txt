@@ -1,0 +1,15 @@
+docs/threatmanager/3.4/administration/playbooks/save.md
+docs/threatmanager/3.4/administration/playbooks/trigger.md
+docs/threatmanager/3.4/administration/threats/activedirectoryobjects/group.md
+docs/threatmanager/3.4/administration/threats/activedirectoryobjects/host.md
+docs/threatmanager/3.4/administration/threats/entraidobjects/entraidgroup.md
+docs/threatmanager/3.4/administration/threats/entraidobjects/entraidrole.md
+docs/threatmanager/3.4/administration/threats/entraidobjects/entraidserviceprincipal.md
+docs/threatmanager/3.4/administration/threats/threatdetails/abnormalbehavior.md
+docs/threatmanager/3.4/administration/troubleshooting/overview.md
+docs/threatmanager/3.4/administration/troubleshooting/updatepasswords.md
+docs/threatmanager/3.4/gettingstarted.md
+docs/threatmanager/3.4/install/integration/accessanalyzer.md
+docs/threatmanager/3.4/install/integration/activitymonitor.md
+docs/threatmanager/3.4/install/integration/overview.md
+docs/threatmanager/3.4/install/integration/threatprevention/threatmanagerconfiguration.md

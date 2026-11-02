@@ -1,0 +1,531 @@
+{
+  "slice": "threats",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/threats/entraid.md",
+      "title": "Entra ID Threats",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 20,
+      "facts": [
+        "F257",
+        "F258",
+        "F259",
+        "F260",
+        "F261",
+        "F263",
+        "F266",
+        "F267",
+        "F386",
+        "F279",
+        "F280",
+        "F281",
+        "F282",
+        "F284",
+        "F285",
+        "F286",
+        "F294",
+        "F295",
+        "F296",
+        "F297",
+        "F312",
+        "F313",
+        "F314",
+        "F315",
+        "F316",
+        "F046",
+        "F047"
+      ],
+      "claims": [
+        "C001",
+        "C002",
+        "C006",
+        "C008",
+        "C009",
+        "C011",
+        "C013"
+      ],
+      "stale": [
+        {
+          "quote": "| Trigger           | A threat is triggered when a user logs in from two distant locations within a short period of time.",
+          "factId": "F314",
+          "why": "In 3.4 Impossible Travel evaluates only user sign-ins by default; application and service principal sign-ins count only when Trigger on Non-Human Identities (F312) is on."
+        },
+        {
+          "quote": "The following threats are monitored for Microsoft Entra ID.",
+          "factId": "F257",
+          "why": "Does not list First Time Location, Authentication Methods Policy Weakening, or Security Policy Weakening, which 3.4 adds (F279, F294)."
+        }
+      ],
+      "reason": "Three new Entra ID threats (First Time Location, Authentication Methods Policy Weakening, Security Policy Weakening) and the Impossible Travel change belong in this catalog.",
+      "note": "Pattern here: H2 = threat name; one-sentence lead; two-column table with rows Definition, Example, Trigger (no severity, evidence, or exclusions rows in 3.3). The in-product group is labelled \"Azure\"; the page title says Entra ID. Catalog-level facts (name, description, default severity, trigger) are assigned here; settings, evidence text, rollup, exclusions, map, and upgrade behavior are in `unplaced` for the later NEW per-threat pages. Impossible Travel File Tag/Process exclusion removal (F316/F046) is not stated on this page; add only if an exclusions line is added. Best page for the threat pattern is this one, extended per threat with severity (default), evidence entry title, and exclusions as F258-F269, F281-F291, F296-F307 supply."
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/custom.md",
+      "title": "Custom Threats",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "threats",
+      "sidebar_position": 50,
+      "facts": [
+        "F042",
+        "F043",
+        "F325",
+        "F326",
+        "F327",
+        "F328",
+        "F329",
+        "F330",
+        "F331"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Count –The number of times that an event must occur before a threat is generated",
+          "factId": "F328",
+          "why": "Threshold totals the event count (one event can stand for several occurrences) and triggers when the total reaches or exceeds the count."
+        },
+        {
+          "quote": "Group By Perpetrator – When checked, the threat criteria is evaluated on a per-user basis.",
+          "factId": "F329",
+          "why": "One threat is created per perpetrator whose total in the window reaches the threshold; events with no perpetrator are ignored in this mode."
+        },
+        {
+          "quote": "**Step 10 –** Click **Save**. The investigation is now saved as a custom threat.",
+          "factId": "F327",
+          "why": "A new custom threat, or one whose filters were edited, starts from the current moment and does not evaluate earlier events; editing filters starts a new rollup (F042)."
+        }
+      ],
+      "reason": "Custom threat evaluation changed (incremental polling, no schedules, rollup per alert query, catch-up limit).",
+      "note": "Polling/job-service settings (F331, F043, F330) are admin settings and may fit better on a config or troubleshooting page; the Originating Agent filter (F321) is listed as unplaced."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/threats.md",
+      "title": "Threats Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F318",
+        "F319"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "### Tags\n\nThe Tags section contains any tags associated with threats that are in the filtered time\nrange.",
+          "factId": "F318",
+          "why": "The AI Agent tag and filter now apply when an AI agent is the perpetrator, target, or an affected object (before 3.4 only the perpetrator)."
+        },
+        {
+          "quote": "The list displays threats that have a threat level of Low, Medium, High, or Audit",
+          "factId": "F319",
+          "why": "The threat list now shows an AI Agent label on threats where an AI agent is involved; page does not mention it."
+        }
+      ],
+      "reason": "AI Agent tag and label facts belong on the threat list and Tags filter.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/threatdetails/overview.md",
+      "title": "Threat Details Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F270",
+        "F272",
+        "F273",
+        "F274",
+        "F275",
+        "F276",
+        "F377",
+        "F378",
+        "F379",
+        "F380",
+        "F317",
+        "F381",
+        "F382",
+        "F383",
+        "F364",
+        "F362",
+        "F384",
+        "F385"
+      ],
+      "claims": [
+        "C010"
+      ],
+      "stale": [
+        {
+          "quote": "The Threat Activity diagram contains a diagram that displays the flow of the threat activity.",
+          "factId": "F270",
+          "why": "For First Time Location the Threat Activity panel shows a world map of new and known locations instead of the attack path; Impossible Travel shows a route map (F317, F382)."
+        },
+        {
+          "quote": "The top of the page displays a Threat Overview box, Threat Activity diagram, and an Evidence box.",
+          "factId": "F381",
+          "why": "The duplicated Evidence block was removed from the Impossible Travel view and the map fits the panel."
+        },
+        {
+          "quote": "Use the Search icon to search for data in the table. Click the + icon in the table to view\nadditional details about a threat.",
+          "factId": "F364",
+          "why": "Event Details and Related Activity tabs now show a loading spinner and a working Cancel Request link when rows per page, page, or sort change."
+        }
+      ],
+      "reason": "Map widgets for First Time Location and Impossible Travel and the tab loading behavior are new on the threat details page.",
+      "note": "F363 (event row expand error) and F360 (Rows per page 5/10/50/100/1000) concern the shared Events table; assigned to the investigations slice, but also apply to the Event Details tab here. Top Resources cards (F366) not placed here."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraiduser.md",
+      "title": "User Details Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F337",
+        "F338",
+        "F339",
+        "F340",
+        "F341",
+        "F342",
+        "F343",
+        "F344",
+        "F416"
+      ],
+      "claims": [
+        "C014",
+        "C027"
+      ],
+      "stale": [
+        {
+          "quote": "The Activity by Host and Activity by Client tables are displayed below the charts.",
+          "factId": "F342",
+          "why": "The Activity by Host table is now titled Activity by Target (and its export file); an Activity by Location table was added."
+        },
+        {
+          "quote": "**Activity by Host Table**\n\nThe Activity by Host table displays the user's activity by host.",
+          "factId": "F342",
+          "why": "Renamed to Activity by Target; the export file is named Activity by Target (F344)."
+        }
+      ],
+      "reason": "New Activity by Location section with Show On Map, and the Activity by Host to Activity by Target rename.",
+      "note": "Same F342-F344 rename applies to activedirectoryobjects/user.md and both overview pages. Activity by Location appears only for objects with Entra ID sign-in data (F340). Agent Users keep Group Membership and Roles tabs (F345 is on entraidapplication.md)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidobjects.md",
+      "title": "Entra ID Object Details Pages",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F337",
+        "F342",
+        "F345"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "    - Activity by Host Table",
+          "factId": "F342",
+          "why": "Now Activity by Target; Activity by Location table added (F337)."
+        },
+        {
+          "quote": "- Group Membership Tab – For a:",
+          "factId": "F345",
+          "why": "Group Membership and Roles tabs are hidden for Agent Blueprints, Agent Blueprint Principals, and Agent Identities."
+        }
+      ],
+      "reason": "Common-elements list names the renamed table and omits Activity by Location and the hidden agent tabs.",
+      "note": "Facts F337 and F342 are primary on entraiduser.md; listed here too for the overview bullets."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidapplication.md",
+      "title": "Application Details Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [
+        "F345",
+        "F346"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "- Group Membership Tab\n- Roles Tab",
+          "factId": "F345",
+          "why": "Agent Blueprint applications do not show Group Membership or Roles tabs; in Report Only the Group Membership tab is hidden for them too (F346)."
+        }
+      ],
+      "reason": "Tab list is wrong for AI agent blueprint objects.",
+      "note": "Same fact covers Agent Identity and Blueprint Principal objects; entraidserviceprincipal.md already omits those tabs."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/activedirectoryobjects/user.md",
+      "title": "User Details Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F342",
+        "F344"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "The Activity by Host, Activity by Client, and Activity Details tables are displayed below the\ncharts.",
+          "factId": "F342",
+          "why": "The Activity by Host table is now Activity by Target (same component serves AD users)."
+        },
+        {
+          "quote": "**Activity by Host Table**",
+          "factId": "F342",
+          "why": "Renamed Activity by Target; export file named Activity by Target (F344)."
+        }
+      ],
+      "reason": "Table rename applies to AD user details.",
+      "note": "Activity by Location is hidden for AD-only users (F340), so no new section."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/activedirectoryobjects/activedirectoryobjects.md",
+      "title": "Active Directory Object Details Pages",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F342"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "    - Activity by Host Table",
+          "factId": "F342",
+          "why": "Now Activity by Target (user pages)."
+        }
+      ],
+      "reason": "Overview bullet names the old table title.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/overview.md",
+      "title": "Type of Threats",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "threats",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Lists the threat sections; no new section was added in 3.4.",
+      "note": "Section list omits Certificate Services (pre-existing, not a 3.4 change). Version links point to 3.3 (mechanical)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/activedirectory.md",
+      "title": "Active Directory Threats",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns Active Directory threats.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/certificateservices.md",
+      "title": "Certificate Services Threats",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 15,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns Certificate Services threats.",
+      "note": "Not linked from threats/overview.md or index.md (pre-existing)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/filesystem.md",
+      "title": "File System Threats",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns file system threats.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/general.md",
+      "title": "General Threats",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "First Time Location is an Entra ID threat, not general; no other fact concerns this page.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/threatdetails/abnormalbehavior.md",
+      "title": "Abnormal Behavior Threat Details",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns abnormal behavior details.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidgroup.md",
+      "title": "Group Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns Entra ID group details.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidrole.md",
+      "title": "Role Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns Entra ID role details.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidserviceprincipal.md",
+      "title": "Service Principal Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Tab list already matches the 3.4 hidden-tab behavior for agent objects.",
+      "note": "F345 checked: page already omits Group Membership and Roles tabs."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/activedirectoryobjects/group.md",
+      "title": "Group Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns AD group details.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/activedirectoryobjects/host.md",
+      "title": "Host Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Host Activity Summary has no host/client tables, so the rename does not apply.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/gettingstarted.md",
+      "title": "Getting Started with Threat Manager",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "root",
+      "sidebar_position": 2,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact changes the getting-started integration and console steps.",
+      "note": "Links point to /3.3/ (mechanical version rewrite)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/index.md",
+      "title": "Netwrix Threat Manager v3.3 Documentation",
+      "action": "UPDATE",
+      "type": "concept",
+      "zone": "root",
+      "sidebar_position": 1,
+      "facts": [],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "title: \"Netwrix Threat Manager v3.3 Documentation\"",
+          "factId": "",
+          "why": "Title, description, H1, and links name or point to 3.3; no fact id, mechanical version bump."
+        }
+      ],
+      "reason": "Version label and links still say 3.3; threat category list is otherwise unchanged.",
+      "note": "No in-scope fact belongs here; manifest validation may need a fact or an exception. Intro says only Active Directory and File Systems (Entra ID omitted), not a 3.4 fact."
+    }
+  ],
+  "unplaced": [
+    "F024",
+    "F025",
+    "F026",
+    "F045",
+    "F182",
+    "F184",
+    "F262",
+    "F264",
+    "F265",
+    "F268",
+    "F269",
+    "F283",
+    "F287",
+    "F288",
+    "F289",
+    "F290",
+    "F291",
+    "F292",
+    "F293",
+    "F298",
+    "F299",
+    "F300",
+    "F301",
+    "F302",
+    "F303",
+    "F304",
+    "F305",
+    "F306",
+    "F307",
+    "F309",
+    "F310",
+    "F320",
+    "F321",
+    "F322",
+    "F323",
+    "F356",
+    "F357",
+    "F358"
+  ]
+}

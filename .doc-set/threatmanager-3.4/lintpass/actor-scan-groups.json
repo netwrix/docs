@@ -1,0 +1,1254 @@
+{
+  "invented": [
+    {
+      "page": "administration/configuration/integrations/activedirectorysync.md",
+      "action": "KEEP",
+      "line": 268,
+      "old": "dropdown menu. This was pre-created in the Credential Profiles page.",
+      "now": "dropdown menu. You pre-created this in the Credential Profiles page."
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "action": "UPDATE",
+      "line": 104,
+      "old": "- Select the Credential Profile by name from the dropdown menu. This was pre-created in the",
+      "now": "- Select the Credential Profile by name from the dropdown menu. You created this in the Credential Profiles page."
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "action": "UPDATE",
+      "line": 170,
+      "old": "dropdown menu. This was pre-created in the Credential Profiles page.",
+      "now": "dropdown menu. You created this in the Credential Profiles page."
+    },
+    {
+      "page": "administration/configuration/integrations/apptoken.md",
+      "action": "UPDATE",
+      "line": 60,
+      "old": "Ensure that the app token is enabled for sending data to Threat Manager. In the General box, verify",
+      "now": "Ensure that you enable the app token for sending data to Threat Manager. In the General box, verify"
+    },
+    {
+      "page": "administration/configuration/integrations/credentialprofile.md",
+      "action": "KEEP",
+      "line": 116,
+      "old": "The Credential Profile name and/or description have been modified.",
+      "now": "You have modified the Credential Profile name and/or description."
+    },
+    {
+      "page": "administration/configuration/integrations/credentialprofile.md",
+      "action": "KEEP",
+      "line": 140,
+      "old": "The credential within the Credential Profile has been modified.",
+      "now": "You have modified the credential within the Credential Profile."
+    },
+    {
+      "page": "administration/configuration/integrations/foldersettings.md",
+      "action": "KEEP",
+      "line": 96,
+      "old": "The specified shared folder has been configured for subscription exports.",
+      "now": "You have configured the specified shared folder for subscription exports."
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "action": "KEEP",
+      "line": 20,
+      "old": "- Name – The name of the integration, as supplied when it was added",
+      "now": "- Name – The name of the integration, as you supplied when you added it"
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "action": "KEEP",
+      "line": 24,
+      "old": "- Description – Integration description, as supplied when it was added",
+      "now": "- Description – Integration description, as you supplied when you added it"
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "action": "KEEP",
+      "line": 84,
+      "old": "database and the archive database, if one has been configured.",
+      "now": "database and the archive database, if you configured one."
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "action": "KEEP",
+      "line": 177,
+      "old": "The Netwrix Integration name and/or description have been modified.",
+      "now": "You have modified the Netwrix Integration name and/or description."
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "action": "KEEP",
+      "line": 216,
+      "old": "The changes to the Configuration have been committed.",
+      "now": "You have committed the changes to the Configuration."
+    },
+    {
+      "page": "administration/configuration/integrations/page/radius.md",
+      "action": "KEEP",
+      "line": 93,
+      "old": "The Users/Groups tab displays users and groups that are assigned to this authentication",
+      "now": "The Users/Groups tab displays users and groups that you assigned to this authentication"
+    },
+    {
+      "page": "administration/configuration/integrations/page/saml.md",
+      "action": "KEEP",
+      "line": 52,
+      "old": "The Users/Groups tab displays users and groups that are assigned to this authentication",
+      "now": "The Users/Groups tab displays users and groups that you assigned to this authentication"
+    },
+    {
+      "page": "administration/configuration/integrations/page/openid/openid.md",
+      "action": "KEEP",
+      "line": 46,
+      "old": "The Users/Groups tab displays users and groups that are assigned to this authentication",
+      "now": "The Users/Groups tab displays users and groups that you assigned to this authentication"
+    },
+    {
+      "page": "administration/configuration/integrations/page/openid/entraidopenid.md",
+      "action": "KEEP",
+      "line": 15,
+      "old": "- Full Netwrix Threat Manager version 3.0.473+ or RO 3.0.90+ is installed",
+      "now": "- You have full Netwrix Threat Manager version 3.0.473+ or RO 3.0.90+ installed"
+    },
+    {
+      "page": "administration/configuration/integrations/page/openid/entraidopenid.md",
+      "action": "KEEP",
+      "line": 137,
+      "old": "The Users/Groups tab displays users and groups that are assigned to this authentication",
+      "now": "The Users/Groups tab displays users and groups that you assigned to this authentication"
+    },
+    {
+      "page": "administration/configuration/policies/honeytoken.md",
+      "action": "KEEP",
+      "line": 99,
+      "old": "LDAP monitoring has been configured for Threat Manager.",
+      "now": "You have configured LDAP monitoring for Threat Manager."
+    },
+    {
+      "page": "administration/configuration/threatdetection/threatconfiguration.md",
+      "action": "UPDATE",
+      "line": 75,
+      "old": "If rollup is enabled, multiple events from the same perpetrator will be associated with a single",
+      "now": "If you enable rollup, Threat Manager associates multiple events from the same perpetrator with a single"
+    },
+    {
+      "page": "install/application.md",
+      "action": "UPDATE",
+      "line": 87,
+      "old": "same server where the PostgreSQL database application was installed, this information will be",
+      "now": "same server where you installed the PostgreSQL database application, this information is"
+    },
+    {
+      "page": "install/application.md",
+      "action": "UPDATE",
+      "line": 134,
+      "old": "**Step 10 –** Now that both components have been installed, close the Netwrix Setup Launcher.",
+      "now": "**Step 12 –** Now that you have installed both components, close the Netwrix Setup Launcher."
+    },
+    {
+      "page": "install/application.md",
+      "action": "UPDATE",
+      "line": 136,
+      "old": "The Threat Manager application is now installed and the database has been created. There are several",
+      "now": "You have now installed the Threat Manager application and the installer has created the database. There are several"
+    },
+    {
+      "page": "install/actionservice.md",
+      "action": "REWRITE",
+      "line": 160,
+      "old": "If an Action Step has been configured to use a specific Credential Profile, the Action",
+      "now": "If you configured an Action Step to use a specific Credential Profile, the Action"
+    },
+    {
+      "page": "install/appsettings.md",
+      "action": "UPDATE",
+      "line": 9,
+      "old": "Threat Manager services are configured through JSON configuration files. Each service reads its",
+      "now": "You configure Threat Manager services through JSON configuration files. Each service reads its"
+    },
+    {
+      "page": "install/proxy.md",
+      "action": "KEEP",
+      "line": 15,
+      "old": "The proxy is configured in the Azure Service `appsettings.json` file on the Threat Manager server:",
+      "now": "You configure the proxy in the Azure Service `appsettings.json` file on the Threat Manager server:"
+    },
+    {
+      "page": "install/firstlaunch/firstlaunch.md",
+      "action": "UPDATE",
+      "line": 55,
+      "old": "If MFA was enabled for the buildtin Administrator account during first launch, configure MFA for the account:",
+      "now": "If you enabled MFA for the buildtin Administrator account during first launch, configure MFA for the account:"
+    },
+    {
+      "page": "install/firstlaunch/firstlaunch.md",
+      "action": "UPDATE",
+      "line": 71,
+      "old": "Once MFA is configured for this account, the Threat Manager Console opens. See the",
+      "now": "After you configure MFA for this account, the Threat Manager Console opens. See the"
+    },
+    {
+      "page": "install/integration/threatprevention/threatmanagerconfiguration.md",
+      "action": "KEEP",
+      "line": 16,
+      "old": "This token is generated in Threat Manager:",
+      "now": "You generate this token in Threat Manager:"
+    },
+    {
+      "page": "install/integration/threatprevention/threatmanagerconfiguration.md",
+      "action": "KEEP",
+      "line": 63,
+      "old": "**Step 6 –** The Policies area lists all the policies that have been created in Threat Prevention.",
+      "now": "**Step 6 –** The Policies area lists all the policies that you created in Threat Prevention."
+    },
+    {
+      "page": "install/upgrade/upgrade_pg14_to_pg18.md",
+      "action": "KEEP",
+      "line": 257,
+      "old": "If the Threat Manager installer was pointed at port 5439 during the update step, it will have",
+      "now": "If you pointed the Threat Manager installer at port 5439 during the update step, it will have"
+    },
+    {
+      "page": "administration/overview.md",
+      "action": "UPDATE",
+      "line": 79,
+      "old": "that it has been excluded. Click the threat again to add it to the chart.",
+      "now": "that you excluded it. Click the threat again to add it to the chart."
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "action": "KEEP",
+      "line": 11,
+      "old": "[Threat Detection Page](/docs/threatmanager/3.4/administration/configuration/threatdetection/threatdetection.md). After a playbook has been created,",
+      "now": "[Threat Detection Page](/docs/threatmanager/3.4/administration/configuration/threatdetection/threatdetection.md). After you create a playbook, you add steps that specify "
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "action": "KEEP",
+      "line": 74,
+      "old": "Once a playbook is created or imported, add steps to the playbook using the Actions tab. Steps are",
+      "now": "After you create or import a playbook, add steps to the playbook using the Actions tab. Steps are actions you take in response to a threat. See the"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "action": "KEEP",
+      "line": 24,
+      "old": "Credential profiles are configured on the",
+      "now": "You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "action": "KEEP",
+      "line": 37,
+      "old": "Credential profiles are configured on the",
+      "now": "You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "action": "KEEP",
+      "line": 48,
+      "old": "credentials. Credential profiles are configured on the",
+      "now": "credentials. You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "action": "KEEP",
+      "line": 62,
+      "old": "credentials. Credential profiles are configured on the",
+      "now": "credentials. You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "action": "KEEP",
+      "line": 75,
+      "old": "Credential profiles are configured on the",
+      "now": "You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/activedirectory.md",
+      "action": "KEEP",
+      "line": 86,
+      "old": "Credential profiles are configured on the Integrations Interface. If not specified, the action",
+      "now": "You configure credential profiles on the Integrations Interface. If not specified, the action runs as the credentials of the Action Service."
+    },
+    {
+      "page": "administration/playbooks/action/localhost.md",
+      "action": "UPDATE",
+      "line": 54,
+      "old": "Credential profiles are configured on the",
+      "now": "You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/windowsfileserver.md",
+      "action": "KEEP",
+      "line": 18,
+      "old": "Credential profiles are configured on the",
+      "now": "You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/windowsfileserver.md",
+      "action": "KEEP",
+      "line": 29,
+      "old": "Credential profiles are configured on the Integrations Interface. If not specified, the action",
+      "now": "You configure credential profiles on the Integrations Interface. If not specified, the action runs as the credentials of the Action Service."
+    },
+    {
+      "page": "administration/playbooks/action/windowsfileserver.md",
+      "action": "KEEP",
+      "line": 41,
+      "old": "Credential profiles are configured on the",
+      "now": "You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/windowsserver.md",
+      "action": "KEEP",
+      "line": 18,
+      "old": "Credential profiles are configured on the",
+      "now": "You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/windowsserver.md",
+      "action": "KEEP",
+      "line": 46,
+      "old": "Credential profiles are configured on the",
+      "now": "You configure credential profiles on the"
+    },
+    {
+      "page": "administration/playbooks/action/windowsserver.md",
+      "action": "KEEP",
+      "line": 57,
+      "old": "Credential profiles are configured on the",
+      "now": "You configure credential profiles on the"
+    },
+    {
+      "page": "administration/investigations/reports.md",
+      "action": "UPDATE",
+      "line": 38,
+      "old": "An investigation is located in the folder where it was saved.",
+      "now": "An investigation is in the folder where you saved it."
+    },
+    {
+      "page": "administration/investigations/options/export.md",
+      "action": "UPDATE",
+      "line": 56,
+      "old": "investigation is located in the folder where it was saved.",
+      "now": "investigation is in the folder where you saved it."
+    },
+    {
+      "page": "administration/investigations/options/export.md",
+      "action": "UPDATE",
+      "line": 92,
+      "old": "investigation is located in the folder where it was saved.",
+      "now": "investigation is in the folder where you saved it."
+    },
+    {
+      "page": "administration/investigations/options/overview.md",
+      "action": "KEEP",
+      "line": 38,
+      "old": "If multiple data sources have been configured, there is also a Source dropdown menu. See the",
+      "now": "If you have configured multiple data sources, there is also a Source dropdown menu. See the"
+    }
+  ],
+  "stateShift": [
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "action": "UPDATE",
+      "line": 187,
+      "old": "The changes to the Tenant Configuration have been saved.",
+      "now": "Threat Manager saves the changes to the Tenant Configuration."
+    },
+    {
+      "page": "administration/configuration/integrations/page/radius.md",
+      "action": "KEEP",
+      "line": 84,
+      "old": "- Prefix for Response Text – This value is added to the start of the responses. The value will vary",
+      "now": "- Prefix for Response Text – The application adds this value to the start of the responses. The value will vary"
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "action": "KEEP",
+      "line": 100,
+      "old": "The step is added to the playbook.",
+      "now": "Threat Manager adds the step to the playbook."
+    },
+    {
+      "page": "threats/entraid.md",
+      "action": "UPDATE",
+      "line": 21,
+      "old": "| Trigger                       | A threat is created when an application is granted admin consent to a permission.                                                       ",
+      "now": "| Trigger                       | Threat Manager creates a threat when an administrator grants admin consent to an application for a permission.                          "
+    },
+    {
+      "page": "threats/custom.md",
+      "action": "UPDATE",
+      "line": 73,
+      "old": "- Count –The number of times that an event must occur before a threat is generated",
+      "now": "- Count – The threshold count. Threat Manager totals the event count, and one event can stand"
+    },
+    {
+      "page": "threats/certificateservices.md",
+      "action": "KEEP",
+      "line": 20,
+      "old": "| Trigger                    | A threat is created when a certificate request contains a value in the SAN.UPN field.                                                      ",
+      "now": "| Trigger                    | Threat Manager creates a threat when a certificate request contains a value in the SAN.UPN field.                                          "
+    },
+    {
+      "page": "threats/certificateservices.md",
+      "action": "KEEP",
+      "line": 42,
+      "old": "| Trigger                                | A threat is created when any of the following AD attributes is modified on a `pKICertificateTemplate` object: `msPKI-Certificat",
+      "now": "| Trigger                                | Threat Manager creates a threat when any of the following AD attributes changes on a `pKICertificateTemplate` object: `msPKI-Ce"
+    },
+    {
+      "page": "threats/certificateservices.md",
+      "action": "KEEP",
+      "line": 53,
+      "old": "| Trigger                                 | A threat is created when the `nTSecurityDescriptor` attribute is modified on a `pKIEnrollmentService` object.                 ",
+      "now": "| Trigger                                 | Threat Manager creates a threat when the `nTSecurityDescriptor` attribute changes on a `pKIEnrollmentService` object.         "
+    },
+    {
+      "page": "threats/filesystem.md",
+      "action": "KEEP",
+      "line": 20,
+      "old": "| Trigger               | A threat is created when a user adds a high risk trustee (see Definition) to a folder or file, which increases the amount of open access. This t",
+      "now": "| Trigger               | Threat Manager creates a threat when a user adds a high risk trustee (see Definition) to a folder or file, which increases the amount of open ac"
+    },
+    {
+      "page": "threats/filesystem.md",
+      "action": "KEEP",
+      "line": 35,
+      "old": "resembles common ransom notes, a threat is created for each rename action.",
+      "now": "resembles common ransom notes, Threat Manager creates a threat for each rename action."
+    },
+    {
+      "page": "threats/filesystem.md",
+      "action": "KEEP",
+      "line": 45,
+      "old": "If a user runs a process on a monitored server for the first time, a threat is created.",
+      "now": "If a user runs a process on a monitored server for the first time, Threat Manager creates a threat."
+    },
+    {
+      "page": "threats/general.md",
+      "action": "KEEP",
+      "line": 26,
+      "old": "If a user accesses a share using a new client, a threat is created.",
+      "now": "If a user accesses a share using a new client, Threat Manager creates a threat."
+    }
+  ],
+  "benign": [
+    {
+      "page": "administration/configuration/integrations/activedirectorysync.md",
+      "action": "KEEP",
+      "line": 103,
+      "old": "represented by the domain for which it is created.",
+      "now": "policy represents that policy."
+    },
+    {
+      "page": "administration/configuration/integrations/activedirectorysync.md",
+      "action": "KEEP",
+      "line": 256,
+      "old": "represented by the domain for which it is created.",
+      "now": "policy represents that policy."
+    },
+    {
+      "page": "administration/configuration/integrations/activedirectorysync.md",
+      "action": "KEEP",
+      "line": 289,
+      "old": "**Step 9 –** The Save button is enabled when any settings are modified. Click it to commit the",
+      "now": "**Step 9 –** The Save button becomes enabled when you modify any settings. Click it to commit the"
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "action": "UPDATE",
+      "line": 10,
+      "old": "the application is configured to sync.See the",
+      "now": "the application to sync. See the"
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "action": "UPDATE",
+      "line": 60,
+      "old": "- Enabled / Disabled – Toggle indicates if the policy is enabled to run the sync service. By default",
+      "now": "default."
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "action": "UPDATE",
+      "line": 114,
+      "old": "The Save button is enabled when any settings are modified. Click it to commit the changes before",
+      "now": "The Save button enables when you modify any settings. Click it to commit the changes before"
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "action": "UPDATE",
+      "line": 132,
+      "old": "- Objects Deleted – The total number of objects that were deleted since the last sync",
+      "now": "- Objects Deleted – The total number of objects deleted since the last sync"
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "action": "UPDATE",
+      "line": 133,
+      "old": "- Objects Filtered – The total number of objects that were filtered",
+      "now": "- Objects Filtered – The total number of objects filtered"
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "action": "UPDATE",
+      "line": 184,
+      "old": "**Step 6 –** The Save button is enabled when any settings are modified. Click it to commit the",
+      "now": "**Step 6 –** The Save button enables when you modify any settings. Click it to commit the"
+    },
+    {
+      "page": "administration/configuration/integrations/apptoken.md",
+      "action": "UPDATE",
+      "line": 50,
+      "old": "The app token is added to the App Tokens list in the Integrations box.",
+      "now": "The app token now appears in the App Tokens list in the Integrations box."
+    },
+    {
+      "page": "administration/configuration/integrations/email.md",
+      "action": "KEEP",
+      "line": 74,
+      "old": "address(es). Validate the email was sent by checking that the recipient received the email.",
+      "now": "address(es). Validate that the application sent the email by checking that the recipient received it."
+    },
+    {
+      "page": "administration/configuration/integrations/foldersettings.md",
+      "action": "KEEP",
+      "line": 19,
+      "old": "When shared folders are added, they are displayed in a table at bottom of the page.",
+      "now": "When you add shared folders, the page displays them in a table at the bottom of the page."
+    },
+    {
+      "page": "administration/configuration/integrations/foldersettings.md",
+      "action": "KEEP",
+      "line": 29,
+      "old": "- Last Time tested – Date timestamp when the shared folder was tested to ensure it is configured",
+      "now": "- Last Time tested – Date timestamp when the application tested the shared folder to ensure it is configured"
+    },
+    {
+      "page": "administration/configuration/integrations/foldersettings.md",
+      "action": "KEEP",
+      "line": 56,
+      "old": "**Step 4 –** The Save button is enabled when any settings are modified. Click it to commit the",
+      "now": "**Step 4 –** The Save button becomes enabled when you modify any settings. Click it to commit the"
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "action": "KEEP",
+      "line": 10,
+      "old": "application is configured to connect.",
+      "now": "application has a configured connection."
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "action": "KEEP",
+      "line": 136,
+      "old": "The Save button is enabled when any settings are modified. Click it to commit the changes before",
+      "now": "The Save button becomes enabled when you modify any settings. Click it to commit the changes before"
+    },
+    {
+      "page": "administration/configuration/integrations/netwrixintegrations.md",
+      "action": "KEEP",
+      "line": 213,
+      "old": "**Step 8 –** The Save button is enabled when any settings are modified. Click it to commit the",
+      "now": "**Step 8 –** The Save button becomes enabled when you modify any settings. Click it to commit the"
+    },
+    {
+      "page": "administration/configuration/integrations/page/radius.md",
+      "action": "KEEP",
+      "line": 27,
+      "old": "- Default – The default profile applied when a user is assigned multiple authentication profiles.",
+      "now": "- Default – The default profile that applies when a user has multiple authentication profiles assigned."
+    },
+    {
+      "page": "administration/configuration/integrations/page/saml.md",
+      "action": "KEEP",
+      "line": 32,
+      "old": "- Default – The default profile applied when a user is assigned multiple authentication profiles.",
+      "now": "- Default – The default profile that applies when a user has multiple authentication profiles assigned."
+    },
+    {
+      "page": "administration/configuration/integrations/page/openid/openid.md",
+      "action": "KEEP",
+      "line": 29,
+      "old": "- Default – The default profile applied when a user is assigned multiple authentication profiles.",
+      "now": "- Default – The default profile that applies when a user has multiple authentication profiles assigned."
+    },
+    {
+      "page": "administration/configuration/policies/overview.md",
+      "action": "KEEP",
+      "line": 40,
+      "old": "account. Policies for Honeytokens are added on the Policies page.",
+      "now": "account. You add policies for Honeytokens on the Policies page."
+    },
+    {
+      "page": "administration/configuration/policies/policiesconfiguration.md",
+      "action": "UPDATE",
+      "line": 124,
+      "old": "- Host – The host where the policy was deployed to create Honeytokens",
+      "now": "- Host – The host where the policy deployed to create Honeytokens"
+    },
+    {
+      "page": "administration/configuration/policies/policiesconfiguration.md",
+      "action": "UPDATE",
+      "line": 127,
+      "old": "- Active – The token is deployed to the host and has an active process",
+      "now": "- Active – The token is on the host and has an active process"
+    },
+    {
+      "page": "administration/configuration/systemhealth/overview.md",
+      "action": "KEEP",
+      "line": 15,
+      "old": "The System Health page only displays threats that are enabled. Jobs that are disabled are",
+      "now": "The System Health page displays only enabled threats. It hides disabled jobs."
+    },
+    {
+      "page": "administration/configuration/systemhealth/services.md",
+      "action": "KEEP",
+      "line": 30,
+      "old": "- Created – Date timestamp when the service was installed",
+      "now": "- Created – Date timestamp of the service installation"
+    },
+    {
+      "page": "administration/configuration/systemsettings/useraccess.md",
+      "action": "UPDATE",
+      "line": 26,
+      "old": "If a user is assigned a role directly, it takes priority over any group membership roles.",
+      "now": "If you assign a role directly to a user, it takes priority over any group membership roles."
+    },
+    {
+      "page": "administration/configuration/systemsettings/useraccess.md",
+      "action": "UPDATE",
+      "line": 128,
+      "old": "- Can only see and run saved investigations that have been assigned to them",
+      "now": "- Can only see and run saved investigations that you assign to them"
+    },
+    {
+      "page": "administration/configuration/systemsettings/useraccess.md",
+      "action": "UPDATE",
+      "line": 161,
+      "old": "(OTP) that is configured on the first login by a user via a multi-factor authentication (MFA)",
+      "now": "(OTP) that the user configures on the first login via a multi-factor authentication (MFA)"
+    },
+    {
+      "page": "administration/configuration/systemsettings/useraccess.md",
+      "action": "UPDATE",
+      "line": 204,
+      "old": "The user or group is added to the table with the assigned role.",
+      "now": "The table now lists the user or group with the assigned role."
+    },
+    {
+      "page": "administration/configuration/systemsettings/licensing.md",
+      "action": "UPDATE",
+      "line": 44,
+      "old": "**Step 3 –** Refresh the page to confirm that the license has been uploaded properly.",
+      "now": "Threat Manager now imports the License Key. The License Info section at the top of"
+    },
+    {
+      "page": "administration/configuration/systemsettings/systemjobs.md",
+      "action": "KEEP",
+      "line": 98,
+      "old": "- Last Heartbeat – Date timestamp for the last time the agent connection was checked",
+      "now": "- Last Heartbeat – Date timestamp of the last agent connection check"
+    },
+    {
+      "page": "administration/configuration/threatdetection/threatdetection.md",
+      "action": "KEEP",
+      "line": 54,
+      "old": "- Playbook – A green check mark indicates that a Playbook is assigned to the threat. This means that",
+      "now": "- Playbook – A green check mark indicates that the threat has a Playbook assigned. This means that"
+    },
+    {
+      "page": "administration/configuration/threatdetection/threatconfiguration.md",
+      "action": "UPDATE",
+      "line": 148,
+      "old": "The exclusion is added to the Exclusions list and the specified activity will immediately be",
+      "now": "The Exclusions list now includes the exclusion, and Threat Manager immediately excludes the specified activity from threat detection for the threat type."
+    },
+    {
+      "page": "administration/configuration/threatdetection/threatconfiguration.md",
+      "action": "UPDATE",
+      "line": 187,
+      "old": "was added to the forged ticket is tagged as sensitive.",
+      "now": ""
+    },
+    {
+      "page": "administration/configuration/threatdetection/threatconfiguration.md",
+      "action": "UPDATE",
+      "line": 194,
+      "old": "- Specific groups – Only detect threats if the specified groups have been injected into a user's",
+      "now": "- Specific groups – Only detect threats if someone injected the specified groups into a user's"
+    },
+    {
+      "page": "install/overview.md",
+      "action": "UPDATE",
+      "line": 94,
+      "old": "The PostgreSQL 14 button is only displayed if PostgreSQL 14 is already installed on the host. PostgreSQL 18 is the recommended version for new installs.",
+      "now": "The PostgreSQL 14 button appears only if the host already has PostgreSQL 14. PostgreSQL 18 is the recommended version for new installs."
+    },
+    {
+      "page": "install/database.md",
+      "action": "UPDATE",
+      "line": 10,
+      "old": "different server. If it is installed on a different server, the location of the database server must",
+      "now": "different server. If you install it on a different server, provide the location of the database"
+    },
+    {
+      "page": "install/application.md",
+      "action": "UPDATE",
+      "line": 103,
+      "old": "Next button is enabled. Click **Next**.",
+      "now": "Next button becomes active. Click **Next**."
+    },
+    {
+      "page": "install/application.md",
+      "action": "UPDATE",
+      "line": 106,
+      "old": "If PostgreSQL is installed on a different host, then the connection details should be",
+      "now": "If PostgreSQL is on a different host, then update the connection details"
+    },
+    {
+      "page": "install/actionservice.md",
+      "action": "REWRITE",
+      "line": 9,
+      "old": "The Action Service is installed with Threat Manager and is configured in the Threat Manager Console.",
+      "now": "The Action Service and the Integration Service can run on servers other than the Threat Manager server. You install both from the main installer, `NetwrixThreatManager.ex"
+    },
+    {
+      "page": "install/actionservice.md",
+      "action": "REWRITE",
+      "line": 29,
+      "old": "If an Action Service is installed on a remote machine, it must register with the Threat Manager",
+      "now": "**Step 6 –** Wait for the installation to finish."
+    },
+    {
+      "page": "install/actionservice.md",
+      "action": "REWRITE",
+      "line": 154,
+      "old": "The Action Service that is installed with Threat Manager can be configured to execute as a service",
+      "now": "You can configure the Action Service that Threat Manager installs to execute as a service"
+    },
+    {
+      "page": "install/firstlaunch/firstlaunch.md",
+      "action": "UPDATE",
+      "line": 31,
+      "old": "**Step 3 –** By default, MFA is enabled. Toggle this option off or on as desired. If the Enable MFA",
+      "now": "**Step 3 –** By default, MFA is on. Toggle this option off or on as desired. If you set the Enable MFA"
+    },
+    {
+      "page": "install/firstlaunch/login.md",
+      "action": "UPDATE",
+      "line": 9,
+      "old": "Once Threat Manager is installed, users granted access can log into the console using either of the",
+      "now": "After you install Threat Manager, users with access can log into the console using either of the"
+    },
+    {
+      "page": "install/upgrade/upgrade3.4.md",
+      "action": "REWRITE",
+      "line": 13,
+      "old": "**Step 11 –** Now that both components have been installed, close the Netwrix Threat Manager Setup",
+      "now": "### Register remote services again"
+    },
+    {
+      "page": "install/upgrade/upgrade3.4.md",
+      "action": "REWRITE",
+      "line": 15,
+      "old": "Threat Manager 3.3 is now installed, and the database has been upgraded.",
+      "now": "A service registered before 3.4 has no status token, so Threat Manager can't verify its connection until you register the service again. Register each remote service that"
+    },
+    {
+      "page": "install/upgrade/upgrade_pg14_to_pg18.md",
+      "action": "KEEP",
+      "line": 153,
+      "old": "The database has been moved to PostgreSQL 18.",
+      "now": "The migration moved the database to PostgreSQL 18."
+    },
+    {
+      "page": "install/upgrade/upgrade_pg14_to_pg18.md",
+      "action": "KEEP",
+      "line": 262,
+      "old": "that was created.",
+      "now": "that the installer created."
+    },
+    {
+      "page": "requirements/overview.md",
+      "action": "UPDATE",
+      "line": 22,
+      "old": "- Threat Manager Application Server – This is where the v3.3 application is installed.",
+      "now": "- Threat Manager Application Server – This is where you install the v3.4 application."
+    },
+    {
+      "page": "requirements/overview.md",
+      "action": "UPDATE",
+      "line": 26,
+      "old": "security applications and processes together. The Action Service is installed with Threat Manager",
+      "now": "security applications and processes together. The Action Service is an optional feature of the"
+    },
+    {
+      "page": "requirements/actionservice.md",
+      "action": "UPDATE",
+      "line": 13,
+      "old": "Remember, the Action Service is installed on the Threat Manager Console server.",
+      "now": "On the Threat Manager server, select the Action Service feature during installation."
+    },
+    {
+      "page": "requirements/ports.md",
+      "action": "UPDATE",
+      "line": 29,
+      "old": "the database server, when it is installed on a separate server:",
+      "now": "communicate, when the database is on a separate server:"
+    },
+    {
+      "page": "administration/troubleshooting/updatepasswords.md",
+      "action": "KEEP",
+      "line": 10,
+      "old": "Manager are configured within Credential Profiles.",
+      "now": "Manager within Credential Profiles."
+    },
+    {
+      "page": "administration/troubleshooting/updatepasswords.md",
+      "action": "KEEP",
+      "line": 36,
+      "old": "A new password has been updated for the Credential Profile.",
+      "now": "The Credential Profile now has the new password."
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "action": "KEEP",
+      "line": 131,
+      "old": "- Threat Detected – The time that the threat was detected",
+      "now": "- Threat Detected – The time Threat Manager detected the threat"
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "action": "KEEP",
+      "line": 132,
+      "old": "- Time Started – The time that the playbook was executed",
+      "now": "- Time Started – The time the playbook executed"
+    },
+    {
+      "page": "administration/playbooks/action/entraid.md",
+      "action": "UPDATE",
+      "line": 29,
+      "old": "profiles are configured on the",
+      "now": "profiles are on the"
+    },
+    {
+      "page": "administration/playbooks/action/entraid.md",
+      "action": "UPDATE",
+      "line": 48,
+      "old": "Credential profiles are configured on the",
+      "now": "Credential profiles are on the"
+    },
+    {
+      "page": "administration/investigations/favorites.md",
+      "action": "KEEP",
+      "line": 20,
+      "old": "- Threat – The check mark indicates that a Threat has been configured for this investigation",
+      "now": "- Threat – The check mark indicates that this investigation has a Threat configured"
+    },
+    {
+      "page": "administration/investigations/favorites.md",
+      "action": "KEEP",
+      "line": 21,
+      "old": "- Favorite – The check mark indicates that the investigation has been tagged as a favorite for the",
+      "now": "- Favorite – The check mark indicates that the logged in user has tagged the investigation as a"
+    },
+    {
+      "page": "administration/investigations/auditcompliance.md",
+      "action": "KEEP",
+      "line": 17,
+      "old": "- Threat – The check mark indicates that a Threat has been configured for this investigation",
+      "now": "- Threat – The check mark indicates that this investigation has a Threat configured"
+    },
+    {
+      "page": "administration/investigations/auditcompliance.md",
+      "action": "KEEP",
+      "line": 18,
+      "old": "- Favorite – The check mark indicates that the investigation has been tagged as a favorite for the",
+      "now": "- Favorite – The check mark indicates that the logged in user has tagged the investigation as a"
+    },
+    {
+      "page": "administration/investigations/predefinedinvestigations.md",
+      "action": "KEEP",
+      "line": 18,
+      "old": "- Threat – The check mark indicates that a Threat has been configured for this investigation",
+      "now": "- Threat – The check mark indicates that this investigation has a Threat configured"
+    },
+    {
+      "page": "administration/investigations/predefinedinvestigations.md",
+      "action": "KEEP",
+      "line": 39,
+      "old": "| Applications Deleted | Occurs when an a Entra ID Application is added | One filter statement set: <br /><ul><li>Attribute  = Event Sub-Operation</li><li>Operator  = Equ",
+      "now": "| Applications Deleted | Occurs when an Entra ID Application is deleted | One filter statement set: <br /><ul><li>Attribute  = Event Sub-Operation</li><li>Operator  = Equ"
+    },
+    {
+      "page": "administration/investigations/myinvestigations.md",
+      "action": "KEEP",
+      "line": 19,
+      "old": "- Threat – The check mark indicates that a Threat has been configured for this investigation",
+      "now": "- Threat – The check mark indicates that this investigation has a Threat configured"
+    },
+    {
+      "page": "administration/investigations/myinvestigations.md",
+      "action": "KEEP",
+      "line": 20,
+      "old": "- Favorite – The check mark indicates that the investigation has been tagged as a favorite for the",
+      "now": "- Favorite – The check mark indicates that the logged in user has tagged the investigation as a"
+    },
+    {
+      "page": "administration/investigations/reports.md",
+      "action": "UPDATE",
+      "line": 64,
+      "old": "- Blocked – Indicates whether the operation was prevented by a security measure, such as a Netwrix",
+      "now": "- Blocked – Indicates whether a security measure prevented the operation, such as a Netwrix"
+    },
+    {
+      "page": "administration/investigations/options/export.md",
+      "action": "UPDATE",
+      "line": 101,
+      "old": "**Step 3 –** By default the schedule is enabled. You can disable it with the toggle button by the",
+      "now": "**Step 3 –** The schedule starts enabled. You can disable it with the toggle button by the"
+    },
+    {
+      "page": "administration/investigations/options/filters.md",
+      "action": "UPDATE",
+      "line": 106,
+      "old": "- Affected Object – The name of the object in Active Directory that was affected by the",
+      "now": "- Affected Object – The name of the object in Active Directory that the"
+    },
+    {
+      "page": "administration/investigations/options/filters.md",
+      "action": "UPDATE",
+      "line": 108,
+      "old": "- Attribute – The specific property or field of the object that was changed or accessed",
+      "now": "- Attribute – The specific property or field of the object that the event changed or accessed"
+    },
+    {
+      "page": "administration/investigations/options/filters.md",
+      "action": "UPDATE",
+      "line": 138,
+      "old": "that was affected by the event",
+      "now": "that the event affected"
+    },
+    {
+      "page": "administration/investigations/options/subscription.md",
+      "action": "UPDATE",
+      "line": 31,
+      "old": "**Step 2 –** By default the subscription is enabled. You can disable it with the toggle button by",
+      "now": "**Step 2 –** The subscription starts enabled. You can disable it with the toggle button by"
+    },
+    {
+      "page": "threats/entraid.md",
+      "action": "UPDATE",
+      "line": 30,
+      "old": "| Definition                | The Compromised User activity threat involves detecting any activity from a user that was marked as \"Confirmed Compromised\" by Microsoft Ent",
+      "now": "| Definition                | The Compromised User activity threat involves detecting any activity from a user that Microsoft Entra ID marked as \"Confirmed Compromised\". "
+    },
+    {
+      "page": "threats/entraid.md",
+      "action": "UPDATE",
+      "line": 50,
+      "old": "alarm as to why these credentials are added.",
+      "now": "alarm as to why someone added these credentials."
+    },
+    {
+      "page": "threats/entraid.md",
+      "action": "UPDATE",
+      "line": 55,
+      "old": "| Example                     | A new client secret was generated for an existing application and used for a cybersecurity product.                                       ",
+      "now": "| Example                     | Someone generated a new client secret for an existing application and used it for a cybersecurity product.                                "
+    },
+    {
+      "page": "threats/entraid.md",
+      "action": "UPDATE",
+      "line": 56,
+      "old": "| Trigger                     | A client secret is added to an application.                                                                                               ",
+      "now": "| Trigger                     | Someone adds a client secret to an application.                                                                                           "
+    },
+    {
+      "page": "threats/entraid.md",
+      "action": "UPDATE",
+      "line": 65,
+      "old": "| Definition             | The sensitive role changes threat detects when a privileged role is assigned to an Microsoft Entra ID object. The privilege roles have a high l",
+      "now": "| Definition             | The sensitive role changes threat detects when someone assigns a privileged role to an Microsoft Entra ID object. The privilege roles have a hi"
+    },
+    {
+      "page": "administration/threats/threats.md",
+      "action": "UPDATE",
+      "line": 65,
+      "old": "The Level section displays the threat types which can be selected for filtering. Levels are assigned",
+      "now": "The Level section displays the threat types you can select for filtering. You assign"
+    },
+    {
+      "page": "administration/threats/threats.md",
+      "action": "UPDATE",
+      "line": 79,
+      "old": "Sensitive Data Discovery Add-on are installed in addition to Threat Manager. When installed with the",
+      "now": "Sensitive Data Discovery Add-on installed, Access Analyzer scans for sensitive data using File System"
+    },
+    {
+      "page": "administration/threats/threats.md",
+      "action": "UPDATE",
+      "line": 116,
+      "old": "- Closed - Resolved – Legitimate threats that have been contained or dealt with",
+      "now": "- Closed - Resolved – Legitimate threats that administrators have contained or dealt with"
+    },
+    {
+      "page": "administration/threats/threats.md",
+      "action": "UPDATE",
+      "line": 132,
+      "old": "- Assigned to me – Threat is assigned to the user who is logged in",
+      "now": "- `Assigned to me` – Threat has the logged-in user as its assignee"
+    },
+    {
+      "page": "administration/threats/threats.md",
+      "action": "UPDATE",
+      "line": 155,
+      "old": "- Closed - Resolved – Legitimate threats that have been contained or dealt with",
+      "now": "- Closed - Resolved – Legitimate threats that administrators have contained or dealt with"
+    },
+    {
+      "page": "administration/threats/threatdetails/overview.md",
+      "action": "UPDATE",
+      "line": 71,
+      "old": "- Unassigned – If the threat has not been assigned to an owner, the button will display as",
+      "now": "- Unassigned – If the threat has no owner, the button displays Unassigned. If a user is the owner, the button displays the username. Click it to open the Workflow Window "
+    },
+    {
+      "page": "administration/threats/threatdetails/overview.md",
+      "action": "UPDATE",
+      "line": 72,
+      "old": "Unassigned. If a user has been assigned to an owner, the button will display the username. Click",
+      "now": "- Set Status – If the threat has no status, the button displays _Set Status_. If the threat has a status, this button displays it. Click it to open the Workflow Window, w"
+    },
+    {
+      "page": "administration/threats/threatdetails/overview.md",
+      "action": "UPDATE",
+      "line": 99,
+      "old": "- Closed - Resolved – Legitimate threats that have been contained or dealt with",
+      "now": "- Closed - Resolved – Legitimate threats that administrators have contained or dealt with"
+    },
+    {
+      "page": "administration/threats/threatdetails/overview.md",
+      "action": "UPDATE",
+      "line": 125,
+      "old": "- Description – Description of the playbook that has been selected",
+      "now": "- Description – Description of the selected playbook"
+    },
+    {
+      "page": "administration/threats/threatdetails/overview.md",
+      "action": "UPDATE",
+      "line": 147,
+      "old": "- Blocked – Indicates whether the operation was prevented by a security measure, such as a Netwrix",
+      "now": "- Blocked – Indicates whether a security measure, such as a Netwrix agent, prevented the operation True if a Netwrix agent blocked the operation. False if nothing blocked"
+    },
+    {
+      "page": "administration/threats/threatdetails/overview.md",
+      "action": "UPDATE",
+      "line": 169,
+      "old": "- Time Stamp – Time that the threat was detected",
+      "now": "- Time Stamp – Time when Threat Manager detected the threat"
+    },
+    {
+      "page": "administration/threats/threatdetails/overview.md",
+      "action": "UPDATE",
+      "line": 188,
+      "old": "- Blocked – Indicates whether the operation was prevented by a security measure, such as a Netwrix",
+      "now": "- Blocked – Indicates whether a security measure, such as a Netwrix agent, prevented the operation True if a Netwrix agent blocked the operation. False if nothing blocked"
+    },
+    {
+      "page": "administration/threats/threatdetails/overview.md",
+      "action": "UPDATE",
+      "line": 208,
+      "old": "- Time Stamp – Exact date and time when the status was updated.",
+      "now": "- Time Stamp – Exact date and time of the status update."
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraiduser.md",
+      "action": "UPDATE",
+      "line": 123,
+      "old": "- Membership Type - How the group membership was assigned",
+      "now": "- Membership Type - The assignment method for the group membership"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraiduser.md",
+      "action": "UPDATE",
+      "line": 125,
+      "old": "- Security Enabled - Shows whether the \"Security Enabled\" flag is enabled within Microsoft",
+      "now": "- Security Enabled - Shows whether the \"Security Enabled\" flag is on within Microsoft"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraiduser.md",
+      "action": "UPDATE",
+      "line": 135,
+      "old": "The role assignments tab displays a table that lists the roles that have been assigned to the",
+      "now": "The role assignments tab displays a table that lists the roles assigned to the"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraiduser.md",
+      "action": "UPDATE",
+      "line": 154,
+      "old": "- Inherited from - How the eligible assignment was inherited",
+      "now": "- Inherited from - Source the eligible assignment inherits from"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraiduser.md",
+      "action": "UPDATE",
+      "line": 164,
+      "old": "- Inherited from - How the eligible assignment was inherited",
+      "now": "- Inherited from - Source the eligible assignment inherits from"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidobjects.md",
+      "action": "UPDATE",
+      "line": 91,
+      "old": "The selected tag is added to the user, group, application, or role. See the",
+      "now": "The page adds the selected tag to the object. See the"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidapplication.md",
+      "action": "UPDATE",
+      "line": 64,
+      "old": "- Membership Type - How the group membership was assigned",
+      "now": "- Membership Type - How the group membership came about"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidapplication.md",
+      "action": "UPDATE",
+      "line": 66,
+      "old": "- Security Enabled - Shows whether the \"Security Enabled\" flag is enabled within Microsoft",
+      "now": "- Security Enabled - Shows whether the \"Security Enabled\" flag is on in Microsoft"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidapplication.md",
+      "action": "UPDATE",
+      "line": 77,
+      "old": "The role assignments tab displays a table that lists the roles that have been assigned to the Entra",
+      "now": "The role assignments tab displays a table that lists the Entra"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidapplication.md",
+      "action": "UPDATE",
+      "line": 96,
+      "old": "- Inherited from - How the eligible assignment was inherited",
+      "now": "- Inherited from - How the eligible assignment came to the member"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidapplication.md",
+      "action": "UPDATE",
+      "line": 106,
+      "old": "- Inherited from - How the eligible assignment was inherited",
+      "now": "- Inherited from - How the eligible assignment came to the member"
+    },
+    {
+      "page": "administration/threats/activedirectoryobjects/activedirectoryobjects.md",
+      "action": "UPDATE",
+      "line": 48,
+      "old": "1. Non-Synced object icon : This icon appears when an object wasn't found in a sync but was created",
+      "now": "1. Non-Synced object icon : This icon appears when a sync didn't find an object but an event"
+    },
+    {
+      "page": "administration/threats/activedirectoryobjects/activedirectoryobjects.md",
+      "action": "UPDATE",
+      "line": 88,
+      "old": "The selected tag is added to the user, group, or computer. See the",
+      "now": "The page adds the selected tag to the user, group, or computer. See the"
+    },
+    {
+      "page": "threats/activedirectory.md",
+      "action": "KEEP",
+      "line": 68,
+      "old": "Honeytokens are fake credentials stored in memory. When an attack scans memory they may try to authenticate or query the domain for information about the account. A Honey",
+      "now": "Honeytokens are fake credentials in memory. When an attacker scans memory, they may try to authenticate or query the domain for information about the account. Threat Mana"
+    },
+    {
+      "page": "threats/activedirectory.md",
+      "action": "KEEP",
+      "line": 108,
+      "old": "Sensitive Group Changes indicate that the membership of a group containing extremely sensitive permissions has been modified. This includes any Active Directory group wit",
+      "now": "Sensitive Group Changes indicate that the membership of a group containing extremely sensitive permissions has changed. This includes any Active Directory group with the "
+    },
+    {
+      "page": "threats/activedirectory.md",
+      "action": "KEEP",
+      "line": 112,
+      "old": "Indicates that a service account was used to log into a machine that isn't listed in their service principal names attribute.",
+      "now": "Indicates that a service account logged into a machine that isn't listed in their service principal names attribute."
+    },
+    {
+      "page": "threats/certificateservices.md",
+      "action": "KEEP",
+      "line": 18,
+      "old": "| Definition                 | A certificate was requested with a user-supplied UPN, which can indicate ESC1 abuse. If the certificate is issued, it can be exported as a ",
+      "now": "| Definition                 | A certificate request used a user-supplied UPN, which can indicate ESC1 abuse. If the Certification Authority issues the certificate, the r"
+    },
+    {
+      "page": "threats/certificateservices.md",
+      "action": "KEEP",
+      "line": 29,
+      "old": "| Definition                 | A certificate was requested using enrollment agent capabilities, which can indicate ESC3 abuse. If the certificate is issued, it can be exp",
+      "now": "| Definition                 | A certificate request used enrollment agent capabilities, which can indicate ESC3 abuse. If the Certification Authority issues the certific"
+    },
+    {
+      "page": "threats/filesystem.md",
+      "action": "KEEP",
+      "line": 50,
+      "old": "| Example           | A user launches a \"python.exe\" process that has never been launched by anyone else in the environment.                                              ",
+      "now": "| Example           | A user launches a \"python.exe\" process that no one else in the environment has ever launched.                                                       "
+    },
+    {
+      "page": "threats/filesystem.md",
+      "action": "KEEP",
+      "line": 51,
+      "old": "| Trigger           | Threat Manager records the name of the processes associated with file access activities. Over a learning period (e.g. 30 days), Threat Manager profi",
+      "now": "| Trigger           | Threat Manager records the name of the processes associated with file access activities. Over a learning period (e.g. 30 days), Threat Manager profi"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidgroup.md",
+      "action": "KEEP",
+      "line": 79,
+      "old": "- Membership Type - How the group membership was assigned",
+      "now": "- Membership Type - How the member received the group membership"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidgroup.md",
+      "action": "KEEP",
+      "line": 80,
+      "old": "- Security Enabled - Shows whether the \"Security Enabled\" flag is enabled within Microsoft",
+      "now": "- Security Enabled - Shows whether the \"Security Enabled\" flag is on within Microsoft"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidgroup.md",
+      "action": "KEEP",
+      "line": 117,
+      "old": "- Inherited from - How the eligible assignment was inherited",
+      "now": "- Inherited from - How the member inherited the eligible assignment"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidgroup.md",
+      "action": "KEEP",
+      "line": 129,
+      "old": "- Inherited from - How the eligible assignment was inherited",
+      "now": "- Inherited from - How the member inherited the eligible assignment"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidrole.md",
+      "action": "KEEP",
+      "line": 40,
+      "old": "- Inherited from – How the eligible assignment was inherited",
+      "now": "- Inherited from – How the member inherited the eligible assignment"
+    },
+    {
+      "page": "gettingstarted.md",
+      "action": "KEEP",
+      "line": 9,
+      "old": "After Threat Manager is installed, complete the following configuration so users can begin",
+      "now": "After you install Threat Manager, complete the following configuration so users can begin"
+    }
+  ]
+}

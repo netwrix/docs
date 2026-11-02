@@ -1,0 +1,83 @@
+{
+  "batch": "administration-playbooks-action-localhost",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/localhost.md",
+      "status": "done",
+      "factsCovered": [
+        "F182",
+        "F183",
+        "F323",
+        "F185",
+        "F187",
+        "F034",
+        "F033",
+        "F186"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 8,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      }
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/tag.md",
+      "status": "done",
+      "factsCovered": [
+        "F022",
+        "F188"
+      ],
+      "todos": [
+        "Manage Blocking Policy Users description is the 3.3 text (copied from End User Session); no fact covers it, left as 3.3 wording with a TODO marker"
+      ],
+      "untraced": [],
+      "preexistingFindings": 6,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "The Manage Blocking Policy Users line is 3.3 wording (copied from End User Session in the original page). The drafter only reworded it to active voice and left a TODO marker for the author to confirm it against the code."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/newinvestigation.md",
+      "status": "done",
+      "factsCovered": [
+        "F004",
+        "F005",
+        "F359"
+      ],
+      "todos": [
+        "Permission that allows saving an investigation is not stated by any assigned fact; TODO marker on page"
+      ],
+      "untraced": [],
+      "preexistingFindings": 2,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Writer-assistant fix: the sentence about access now matches F005 (\"Access to investigations is now decided by permission, not role name\"). The TODO asking which permission allows saving an investigation stays on the page."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/reports.md",
+      "status": "done",
+      "factsCovered": [
+        "F360",
+        "F361",
+        "F362",
+        "F363",
+        "F366"
+      ],
+      "todos": [
+        "F041 (Entra ID events without targets no longer return 500) not stated; bug fix left off the page"
+      ],
+      "untraced": [],
+      "preexistingFindings": 4,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      }
+    }
+  ]
+}

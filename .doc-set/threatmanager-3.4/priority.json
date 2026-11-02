@@ -1,0 +1,1730 @@
+{
+  "thresholds": {
+    "P1": 55,
+    "P2": 35
+  },
+  "counts": {
+    "P1": 5,
+    "P2": 16,
+    "P3": 26,
+    "P4": 61
+  },
+  "pages": {
+    "install/silentinstall.md": {
+      "score": 79.7,
+      "band": "P1",
+      "scope": "feature",
+      "consequence": "high",
+      "C": 1,
+      "R": 0.7,
+      "Q": 1,
+      "U": 0.6666666666666666,
+      "reasons": [
+        "feature",
+        "high consequence",
+        "new, 56+/0- lines",
+        "2 code-only facts",
+        "Silent install variables; install can break"
+      ]
+    },
+    "install/signingkey.md": {
+      "score": 75,
+      "band": "P1",
+      "scope": "product",
+      "consequence": "high",
+      "C": 1,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "new, 32+/0- lines",
+        "Signing key handling weakens security"
+      ]
+    },
+    "install/secure.md": {
+      "score": 67.5,
+      "band": "P1",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.9,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "rewrite, 24+/157- lines",
+        "HTTPS and certificate setup; security hardening"
+      ]
+    },
+    "install/upgrade/upgrade3.4.md": {
+      "score": 67.5,
+      "band": "P1",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.9,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "rewrite, 11+/120- lines",
+        "Post-upgrade steps can break services"
+      ]
+    },
+    "install/actionservice.md": {
+      "score": 64.2,
+      "band": "P1",
+      "scope": "feature",
+      "consequence": "high",
+      "C": 0.9,
+      "R": 0.7,
+      "Q": 1,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "high consequence",
+        "rewrite, 127+/50- lines",
+        "1 code-only fact",
+        "Remote service install; credentials and install"
+      ]
+    },
+    "install/application.md": {
+      "score": 50.5,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.6062068965517241,
+      "R": 1,
+      "Q": 1,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 63+/14- lines",
+        "1 code-only fact",
+        "Application install steps; install can break"
+      ]
+    },
+    "threats/entraid.md": {
+      "score": 49.7,
+      "band": "P2",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0.672027972027972,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 1,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "update, 101+/22- lines",
+        "4 code-only facts",
+        "2 removed",
+        "risky wording or code",
+        "Threat descriptions; reader confusion only"
+      ]
+    },
+    "requirements/server.md": {
+      "score": 48.9,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.5869565217391304,
+      "R": 1,
+      "Q": 1,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 27+/23- lines",
+        "1 code-only fact",
+        "Wrong requirements break installation"
+      ]
+    },
+    "administration/configuration/systemsettings/licensing.md": {
+      "score": 46.3,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.6171428571428572,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 35+/6- lines",
+        "License import; license breach risk"
+      ]
+    },
+    "install/exportsigningkeys.md": {
+      "score": 45,
+      "band": "P2",
+      "scope": "edge",
+      "consequence": "high",
+      "C": 1,
+      "R": 0.25,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "edge",
+        "high consequence",
+        "new, 48+/0- lines",
+        "Exports signing key; key exposure risk"
+      ]
+    },
+    "administration/configuration/threatdetection/threatconfiguration.md": {
+      "score": 45,
+      "band": "P2",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0.6075471698113207,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 1,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "update, 77+/37- lines",
+        "3 code-only facts",
+        "2 removed",
+        "Threat settings misconfigured stop detection"
+      ]
+    },
+    "requirements/database.md": {
+      "score": 44.3,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.5909090909090909,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 5+/15- lines",
+        "Wrong requirements break installation"
+      ]
+    },
+    "administration/configuration/integrations/apptoken.md": {
+      "score": 43.5,
+      "band": "P2",
+      "scope": "sub-feature",
+      "consequence": "high",
+      "C": 0.5571428571428572,
+      "R": 0.45,
+      "Q": 1,
+      "U": 1,
+      "reasons": [
+        "sub-feature",
+        "high consequence",
+        "update, 21+/3- lines",
+        "4 code-only facts",
+        "Token handling exposes credentials"
+      ]
+    },
+    "install/database.md": {
+      "score": 42.8,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.5702127659574469,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 17+/16- lines",
+        "Database install steps; install can break"
+      ]
+    },
+    "requirements/overview.md": {
+      "score": 42.2,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.5631578947368421,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 10+/8- lines",
+        "Wrong architecture breaks installation"
+      ]
+    },
+    "install/overview.md": {
+      "score": 42.1,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.5609375,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 19+/20- lines",
+        "Install order errors break installation"
+      ]
+    },
+    "administration/configuration/integrations/entraidsync.md": {
+      "score": 42,
+      "band": "P2",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0.5670212765957446,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 1,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "update, 37+/26- lines",
+        "3 code-only facts",
+        "1 held back",
+        "Sync misconfig stops Entra ID collection"
+      ]
+    },
+    "install/firstlaunch/firstlaunch.md": {
+      "score": 42,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.5602739726027397,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 14+/8- lines",
+        "Built-in admin setup; security and access"
+      ]
+    },
+    "install/upgrade/upgrade.md": {
+      "score": 42,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.5602739726027397,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 16+/6- lines",
+        "Wrong upgrade steps can break"
+      ]
+    },
+    "requirements/ports.md": {
+      "score": 41.4,
+      "band": "P2",
+      "scope": "product",
+      "consequence": "high",
+      "C": 0.5521739130434783,
+      "R": 1,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "product",
+        "high consequence",
+        "update, 19+/5- lines",
+        "Firewall ports; connectivity and security"
+      ]
+    },
+    "requirements/actionservice.md": {
+      "score": 37.1,
+      "band": "P2",
+      "scope": "feature",
+      "consequence": "high",
+      "C": 0.5888888888888889,
+      "R": 0.7,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "high consequence",
+        "update, 11+/9- lines",
+        "Wrong requirements break remote install"
+      ]
+    },
+    "administration/configuration/systemsettings/useraccess.md": {
+      "score": 34.3,
+      "band": "P3",
+      "scope": "feature",
+      "consequence": "high",
+      "C": 0.5444444444444444,
+      "R": 0.7,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "high consequence",
+        "update, 43+/17- lines",
+        "Role permissions and admin credentials"
+      ]
+    },
+    "administration/configuration/policies/policiesconfiguration.md": {
+      "score": 32.5,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "C": 0.584,
+      "R": 0.45,
+      "Q": 0.6,
+      "U": 0.6666666666666666,
+      "reasons": [
+        "sub-feature",
+        "medium consequence",
+        "update, 42+/42- lines",
+        "1 code-only fact",
+        "1 held back",
+        "Honeytoken policy settings misconfigured"
+      ]
+    },
+    "administration/overview.md": {
+      "score": 32.2,
+      "band": "P3",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0.5283464566929134,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "update, 11+/7- lines",
+        "hub (44 links in)",
+        "risky wording or code",
+        "Console navigation reference; reader confusion"
+      ]
+    },
+    "administration/investigations/newinvestigation.md": {
+      "score": 31.8,
+      "band": "P3",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0.5550724637681159,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "update, 9+/10- lines",
+        "1 code-only fact",
+        "risky wording or code",
+        "Query page reference; reader recovers"
+      ]
+    },
+    "install/integration/syslogevents.md": {
+      "score": 31,
+      "band": "P3",
+      "scope": "edge",
+      "consequence": "medium",
+      "C": 1,
+      "R": 0.25,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "edge",
+        "medium consequence",
+        "new, 25+/0- lines",
+        "risky wording or code",
+        "Field precedence; wrong names recoverable"
+      ]
+    },
+    "index.md": {
+      "score": 30,
+      "band": "P3",
+      "scope": "product",
+      "consequence": "low",
+      "C": 0.5943396226415094,
+      "R": 1,
+      "Q": 0.3,
+      "U": 0,
+      "reasons": [
+        "product",
+        "low consequence",
+        "update, 11+/14- lines",
+        "Landing page; reader can navigate"
+      ]
+    },
+    "administration/threats/threatdetails/overview.md": {
+      "score": 29.3,
+      "band": "P3",
+      "scope": "product",
+      "consequence": "low",
+      "C": 0.580568720379147,
+      "R": 1,
+      "Q": 0.3,
+      "U": 0,
+      "reasons": [
+        "product",
+        "low consequence",
+        "update, 59+/26- lines",
+        "hub (44 links in)",
+        "UI reference; reader confusion"
+      ]
+    },
+    "install/appsettings.md": {
+      "score": 28.4,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "high",
+      "C": 0.5363636363636364,
+      "R": 0.45,
+      "Q": 1,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "high consequence",
+        "update, 9+/5- lines",
+        "Bad config overrides stop services"
+      ]
+    },
+    "install/firstlaunch/login.md": {
+      "score": 28.1,
+      "band": "P3",
+      "scope": "product",
+      "consequence": "low",
+      "C": 0.5571428571428572,
+      "R": 1,
+      "Q": 0.3,
+      "U": 0,
+      "reasons": [
+        "product",
+        "low consequence",
+        "update, 7+/1- lines",
+        "Wrong URL; reader recovers"
+      ]
+    },
+    "threats/custom.md": {
+      "score": 27.9,
+      "band": "P3",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0.5692913385826772,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "update, 37+/7- lines",
+        "Custom threat misconfigured; detection fails"
+      ]
+    },
+    "administration/serviceaccounts.md": {
+      "score": 25.9,
+      "band": "P3",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0.5290909090909091,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "update, 10+/6- lines",
+        "risky wording or code",
+        "Dashboard reference; reader confusion"
+      ]
+    },
+    "administration/playbooks/action/entraid.md": {
+      "score": 25.5,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "C": 0.6528089887640449,
+      "R": 0.45,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "medium consequence",
+        "update, 32+/36- lines",
+        "Action misconfiguration fails Entra ID actions"
+      ]
+    },
+    "administration/investigations/reports.md": {
+      "score": 25.4,
+      "band": "P3",
+      "scope": "feature",
+      "consequence": "low",
+      "C": 0.5426470588235294,
+      "R": 0.7,
+      "Q": 0.3,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "low consequence",
+        "update, 18+/11- lines",
+        "1 code-only fact",
+        "Report sections description; reader confusion"
+      ]
+    },
+    "administration/playbooks/action/tag.md": {
+      "score": 23.1,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "C": 0.5914285714285714,
+      "R": 0.45,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "medium consequence",
+        "update, 7+/9- lines",
+        "Tag action misconfigured; tags wrong"
+      ]
+    },
+    "administration/playbooks/action/localhost.md": {
+      "score": 22.2,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "C": 0.5691358024691358,
+      "R": 0.45,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "medium consequence",
+        "update, 16+/12- lines",
+        "Local action misconfigured; actions fail"
+      ]
+    },
+    "administration/threats/entraidobjects/entraiduser.md": {
+      "score": 21.8,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "C": 0.5588235294117647,
+      "R": 0.45,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "medium consequence",
+        "update, 35+/15- lines",
+        "risky wording or code",
+        "Details page reference; reader confusion"
+      ]
+    },
+    "administration/threats/entraidobjects/entraidapplication.md": {
+      "score": 21.6,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "C": 0.5535714285714286,
+      "R": 0.45,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "medium consequence",
+        "update, 17+/13- lines",
+        "risky wording or code",
+        "Details page reference; reader confusion"
+      ]
+    },
+    "administration/troubleshooting/log.md": {
+      "score": 21.6,
+      "band": "P3",
+      "scope": "feature",
+      "consequence": "low",
+      "C": 0.56,
+      "R": 0.7,
+      "Q": 0.3,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "low consequence",
+        "update, 12+/3- lines",
+        "Log locations; troubleshooting lookup"
+      ]
+    },
+    "administration/threats/threats.md": {
+      "score": 21.3,
+      "band": "P3",
+      "scope": "feature",
+      "consequence": "low",
+      "C": 0.5538011695906433,
+      "R": 0.7,
+      "Q": 0.3,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "low consequence",
+        "update, 23+/23- lines",
+        "Threats list reference; reader confusion"
+      ]
+    },
+    "administration/threats/activedirectoryobjects/activedirectoryobjects.md": {
+      "score": 21.1,
+      "band": "P3",
+      "scope": "feature",
+      "consequence": "low",
+      "C": 0.5483516483516484,
+      "R": 0.7,
+      "Q": 0.3,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "low consequence",
+        "update, 11+/11- lines",
+        "Object pages overview; reader confusion"
+      ]
+    },
+    "administration/investigations/options/filters.md": {
+      "score": 20.5,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "C": 0.5253731343283582,
+      "R": 0.45,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "medium consequence",
+        "update, 21+/13- lines",
+        "risky wording or code",
+        "Filter options; wrong results recoverable"
+      ]
+    },
+    "administration/threats/activedirectoryobjects/user.md": {
+      "score": 20.4,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "medium",
+      "C": 0.524,
+      "R": 0.45,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "medium consequence",
+        "update, 6+/6- lines",
+        "risky wording or code",
+        "Details page reference; reader confusion"
+      ]
+    },
+    "administration/threats/entraidobjects/entraidobjects.md": {
+      "score": 20.3,
+      "band": "P3",
+      "scope": "feature",
+      "consequence": "low",
+      "C": 0.5276595744680851,
+      "R": 0.7,
+      "Q": 0.3,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "low consequence",
+        "update, 9+/4- lines",
+        "Object pages overview; reader confusion"
+      ]
+    },
+    "administration/investigations/options/export.md": {
+      "score": 16.7,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "low",
+      "C": 0.5861313868613138,
+      "R": 0.45,
+      "Q": 0.3,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "low consequence",
+        "update, 29+/30- lines",
+        "Export formats; reader recovers"
+      ]
+    },
+    "administration/investigations/options/subscription.md": {
+      "score": 16.2,
+      "band": "P3",
+      "scope": "sub-feature",
+      "consequence": "low",
+      "C": 0.5666666666666667,
+      "R": 0.45,
+      "Q": 0.3,
+      "U": 0,
+      "reasons": [
+        "sub-feature",
+        "low consequence",
+        "update, 16+/10- lines",
+        "Subscription setup; reader recovers"
+      ]
+    },
+    "administration/configuration/integrations/siem.md": {
+      "score": 16.1,
+      "band": "P3",
+      "scope": "edge",
+      "consequence": "medium",
+      "C": 0.5202247191011236,
+      "R": 0.25,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "edge",
+        "medium consequence",
+        "update, 9+/9- lines",
+        "SIEM forwarding misconfigured; events don't forward"
+      ]
+    },
+    "administration/configuration/integrations/activedirectorysync.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/integrations/credentialprofile.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/integrations/email.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/integrations/foldersettings.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/integrations/netwrixintegrations.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/configuration/integrations/page/openid/entraidopenid.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/integrations/page/openid/openid.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/integrations/page/page.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/configuration/integrations/page/radius.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/integrations/page/saml.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/integrations/tagmanagement.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/configuration/overview.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/policies/honeytoken.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/policies/overview.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/systemhealth/agents.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/systemhealth/overview.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/configuration/systemhealth/services.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/configuration/systemsettings/about.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/configuration/systemsettings/auditing.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/configuration/systemsettings/systemjobs.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/configuration/threatdetection/threatdetection.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/configuration/threatresponse.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/home.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/investigations/auditcompliance.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/investigations/favorites.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/investigations/myinvestigations.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/investigations/options/edit.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/investigations/options/overview.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/investigations/overview.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/investigations/predefinedinvestigations.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/investigations/subscriptionsexports.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/playbooks/action/activedirectory.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/playbooks/action/overview.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/playbooks/action/thirdparty.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/playbooks/action/windowsfileserver.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/playbooks/action/windowsserver.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/playbooks/editstep.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/playbooks/export.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/playbooks/import.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/playbooks/importsteps.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/playbooks/overview.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/threats/activedirectoryobjects/group.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/threats/activedirectoryobjects/host.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/threats/entraidobjects/entraidgroup.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "administration/threats/entraidobjects/entraidrole.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/threats/threatdetails/abnormalbehavior.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "administration/troubleshooting/updatepasswords.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "gettingstarted.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "install/integration/accessanalyzer.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "install/integration/activitymonitor.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "install/integration/overview.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "install/integration/threatprevention/threatmanagerconfiguration.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "install/integration/threatprevention/threatprevention.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "install/proxy.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "install/upgrade/upgrade_pg14_to_pg18.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "requirements/permissions/adsync.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "threats/activedirectory.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0.3333333333333333,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only",
+        "1 held back"
+      ]
+    },
+    "threats/certificateservices.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "threats/filesystem.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "threats/general.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "feature",
+      "consequence": "medium",
+      "C": 0,
+      "R": 0.7,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "feature",
+        "medium consequence",
+        "restyled only"
+      ]
+    },
+    "threats/overview.md": {
+      "score": 0,
+      "band": "P4",
+      "scope": "product",
+      "consequence": "medium",
+      "C": 0,
+      "R": 1,
+      "Q": 0.6,
+      "U": 0,
+      "reasons": [
+        "product",
+        "medium consequence",
+        "restyled only"
+      ]
+    }
+  }
+}

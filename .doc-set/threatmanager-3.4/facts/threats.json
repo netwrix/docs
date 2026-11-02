@@ -1,0 +1,797 @@
+{
+ "area": "threats",
+ "facts": [
+  {
+   "statement": "Netwrix Threat Manager 3.4 adds a threat named First Time Location. It is listed under the Azure threats in the threat configuration list.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "installerFiles/sql13/v3.2.24.sql:22"
+  },
+  {
+   "statement": "First Time Location description: 'Detects when a user successfully signs in from a country or region they have never used before.'",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455",
+    "TMR-1495"
+   ],
+   "cite": "installerFiles/sql13/v3.2.29.sql:26"
+  },
+  {
+   "statement": "The threat is enabled by default and has severity Low.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "installerFiles/sql13/v3.2.24.sql:27"
+  },
+  {
+   "statement": "Threat title: 'First Time Location by {user} detected'.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "installerFiles/sql13/v3.2.24.sql:23"
+  },
+  {
+   "statement": "Threat description text: '{user} signed in from {location} for the first time.' When one new location is found it names that location. When several are found it reads '{user} signed in from {N} new locations including {names} for the first time.'",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "installerFiles/sql13/v3.2.24.sql:26"
+  },
+  {
+   "statement": "Evidence entry titled 'First Time Location': '{user} signed in from {location or N new locations including names}, a location not previously seen for this user.'",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "installerFiles/sql13/v3.2.24.sql:47"
+  },
+  {
+   "statement": "Only successful sign-ins are used to learn a user's locations and to raise the threat. Failed sign-ins are ignored.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1495"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/UserClientHostSummaryV2.cs:371"
+  },
+  {
+   "statement": "Failed sign-in locations learned earlier are removed on upgrade. Locations with no successful sign-in, and locations not used within the event retention period, are deleted.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1495"
+   ],
+   "cite": "installerFiles/sql13/v3.2.29.sql:8"
+  },
+  {
+   "statement": "After upgrade, First Time Location alerting is suspended for 30 days while locations are learned again from successful sign-ins only.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1495"
+   ],
+   "cite": "installerFiles/sql13/v3.2.29.sql:33"
+  },
+  {
+   "statement": "A user added to Threat Manager less than 30 days before the sign-in does not trigger First Time Location, because the learning period is 30 days.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/UserClientHostSummaryV2.cs:405"
+  },
+  {
+   "statement": "First Time Location only applies to events that carry location data (Entra ID sign-ins).",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "web/src/app/components/defend/details/ActivityByLocationTable.tsx:49"
+  },
+  {
+   "statement": "Rollup is on by default with a 24-hour window (1440 minutes) and can be configured. New locations from further sign-ins in the window are merged into the same threat.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "installerFiles/sql13/v3.2.24.sql:30"
+  },
+  {
+   "statement": "Exclusions available for First Time Location: Perpetrator, Target, Client, Perpetrator Tag, Target Tag, and Location (to exclude specific countries or cities). File, Process, File Tag, and Affected Object DN exclusions are disabled for this threat.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "installerFiles/sql13/v3.2.24.sql:34"
+  },
+  {
+   "statement": "The threat details page shows a world map in the 'Threat Activity' panel instead of the attack path. The map plots the new locations and the user's known locations.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1458"
+   ],
+   "cite": "web/src/app/routes/threatdetails/containers/ThreatDetail.tsx:371"
+  },
+  {
+   "statement": "Map legend entries: 'New location' and 'Known location (7 days prior to detection)'. Clicking a legend entry hides or shows that category.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1458"
+   ],
+   "cite": "web/src/app/components/defend/threatdetails/firstTimeLocation/LocationPinsMap.tsx:319"
+  },
+  {
+   "statement": "Known locations on the map are the user's other locations from the 7 days before detection. The list is captured when the threat is detected.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1458"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatEnrichmentActors/FirstTimeLocationEnrichmentActor.cs:16"
+  },
+  {
+   "statement": "Map hover tooltips list each marker group under 'New location' and 'Known location' headings.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1458"
+   ],
+   "cite": "web/src/app/components/defend/threatdetails/firstTimeLocation/LocationPinsMap.tsx:112"
+  },
+  {
+   "statement": "Map controls: a button toggling 'Group markers' / 'Separate markers' (nearby locations are grouped by default) and a zoom button toggling 'Zoom to locations' / 'Zoom out to world'.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1458"
+   ],
+   "cite": "web/src/app/components/defend/threatdetails/firstTimeLocation/LocationPinsMap.tsx:249"
+  },
+  {
+   "statement": "Locations without map coordinates are not drawn on the map.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1458"
+   ],
+   "cite": "web/src/app/components/defend/threatdetails/firstTimeLocation/FirstTimeLocationThreatActivity.tsx:70"
+  },
+  {
+   "statement": "If location data cannot be loaded the map area shows the error 'Failed to load location data. Please try again.'",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1458"
+   ],
+   "cite": "web/src/app/components/defend/threatdetails/firstTimeLocation/FirstTimeLocationThreatActivity.tsx:41"
+  },
+  {
+   "statement": "First Time Location is one of three sub-threats raised by the same user, client and host summary job, with First Time Client Use and First Time Host Access.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": true,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/UserClientHostSummaryV2.cs:96"
+  },
+  {
+   "statement": "Threat ID 74; the location history is stored in a user_location_count table and the user_location_summary view.",
+   "area": "first-time-location",
+   "status": "new",
+   "internal": true,
+   "tickets": [
+    "TMR-1455"
+   ],
+   "cite": "installerFiles/sql13/v3.2.24.sql:2"
+  },
+  {
+   "statement": "Netwrix Threat Manager 3.4 adds a threat named Authentication Methods Policy Weakening. It is listed under the Azure threats.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:26"
+  },
+  {
+   "statement": "Description: 'Detects an attacker weakening the tenant-wide Authentication Methods Policy by enabling a phishable method, disabling a phishing-resistant method, or broadening a method's assignment to all users', described as a quiet, high-leverage precursor to account takeover.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:29"
+  },
+  {
+   "statement": "The threat is enabled by default with severity High. Threat title: 'Authentication methods policy weakened by {user} detected'.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:31"
+  },
+  {
+   "statement": "The threat is raised from the Entra ID audit event 'Authentication Methods Policy Update' in three cases: a tracked weak method is changed to Enabled, a tracked strong method is changed to Disabled, or a tracked method's include targets gain the all_users group.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/AuthMethodsPolicyWeakeningV2.cs:20"
+  },
+  {
+   "statement": "A target broadening is reported only when the previous include targets did not already contain all_users.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/AuthMethodsPolicyWeakeningV2.cs:144"
+  },
+  {
+   "statement": "Setting 'Tracked Weak Methods' (multi-value list). Default: Sms, Voice. Enabling one of these methods raises the threat. Explanation: method ids whose transition to enabled is treated as a weak, phishable authentication method being enabled.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:32"
+  },
+  {
+   "statement": "Setting 'Tracked Strong Methods' (multi-value list). Default: Fido2, MicrosoftAuthenticator. Disabling one of these methods raises the threat. Explanation: method ids whose transition to disabled is treated as a strong, phishing-resistant authentication method being disabled.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:32"
+  },
+  {
+   "statement": "Method names use the Entra authentication method ids (for example Sms, Voice, Fido2, MicrosoftAuthenticator). Broadening to all users applies to any method in either list.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/AuthMethodsPolicyWeakeningV2.cs:139"
+  },
+  {
+   "statement": "If both tracked lists are empty the threat cannot fire (the service logs a warning).",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/AuthMethodsPolicyWeakeningV2.cs:42"
+  },
+  {
+   "statement": "Threat description text: 'The authentication method {method} was enabled / disabled / broadened to all users.' With several changes it lists the first 3 and then 'and N more'.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:30"
+  },
+  {
+   "statement": "Evidence entry titled 'Weakened Authentication Methods' lists up to 5 changes ('{method} was enabled', 'was disabled', or 'was broadened to all users') and then 'and N more'.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:44"
+  },
+  {
+   "statement": "Rollup is on by default with a 24-hour window (1440 minutes). In a rollup, repeated changes to the same method and change type keep only the latest.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:36"
+  },
+  {
+   "statement": "Exclusion fields for this threat: 'Authentication Method' and 'Change Type', plus the Perpetrator exclusion. File, Process, File Tag, and Affected Object DN exclusions are disabled. The Change Type values are WeakMethodEnabled, StrongMethodDisabled, and TargetBroadened.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:39"
+  },
+  {
+   "statement": "The attack path shows the perpetrator followed by the affected method names (up to 3, then 'and N more').",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:33"
+  },
+  {
+   "statement": "The current configuration state of the policy is not shown as evidence in this release.",
+   "area": "auth-methods-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-135"
+   ],
+   "cite": "installerFiles/sql13/v3.2.27.sql:8"
+  },
+  {
+   "statement": "Netwrix Threat Manager 3.4 adds a threat named Security Policy Weakening. It is listed under the Azure threats.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "installerFiles/sql13/v3.2.30.sql:22"
+  },
+  {
+   "statement": "Description: Entra ID tenant-wide guardrails (who may invite guests, whether users may consent to third-party apps, whether Security Defaults are on, whether users may register applications) protect all accounts at once; the threat fires when one is loosened, a stealthy precursor to illicit-consent phishing, unmanaged external access, MFA-free sign-in, or app-registration persistence.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "installerFiles/sql13/v3.2.30.sql:27"
+  },
+  {
+   "statement": "The threat is enabled by default with severity High. Threat title: 'Security policy weakened by {user} detected'.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "installerFiles/sql13/v3.2.30.sql:29"
+  },
+  {
+   "statement": "Four controls are monitored, shown as: Guest Invite Policy, User Consent for Apps, Security Defaults, App Creation.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "StealthDefendCore/Common/ThreatPropertyModel/SecurityPolicyWeakeningData.cs:54"
+  },
+  {
+   "statement": "Guest Invite Policy is reported when the guest invite restriction becomes less restrictive. The levels, from least to most restrictive, are 'Anyone in the organization', 'Members and admin roles', 'Admin roles only', 'No one'. Tightening the policy is not reported.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "StealthDefendCore/Common/ThreatPropertyModel/SecurityPolicyWeakeningData.cs:67"
+  },
+  {
+   "statement": "User Consent for Apps is reported when the setting moves to a less restrictive option. From most to least restrictive: 'Do not allow user consent', 'Allow user consent for apps from verified publishers, for selected permissions', 'Let Microsoft manage your consent settings'.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:53"
+  },
+  {
+   "statement": "A move to a custom (non-portal) user consent policy is reported as weakening when a self-service consent policy was added. A move to a portal option from a custom policy is not reported.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:221"
+  },
+  {
+   "statement": "Security Defaults is reported only when it changes from enabled to disabled. Re-enabling it is not reported.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:284"
+  },
+  {
+   "statement": "App Creation is reported when the tenant policy that lets users register applications changes from disabled to enabled.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:314"
+  },
+  {
+   "statement": "Source audit events: 'Update authorization policy' and 'Update company settings' (category AuthorizationPolicy), and 'Update security defaults' (category Policy).",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:380"
+  },
+  {
+   "statement": "Threat description with one change: 'The {policy} tenant policy was loosened from '{old}' to '{new}'.' (values in single quotes since TMR-1539); Security Defaults reads 'was disabled' and App Creation reads 'was enabled'. With 2 or 3 changes it lists the policy names; with more it lists 3 and 'and N more'.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141",
+    "TMR-1539"
+   ],
+   "cite": "installerFiles/sql13/v3.2.33.sql:7"
+  },
+  {
+   "statement": "Evidence entry titled 'Weakened Security Policies' lists up to 5 changes, for example 'Guest invite policy weakened from 'X' to 'Y'', 'User consent for apps weakened from 'X' to 'Y'', 'Security defaults disabled', 'User app registration enabled', then 'and N more'.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141",
+    "TMR-1539"
+   ],
+   "cite": "installerFiles/sql13/v3.2.33.sql:15"
+  },
+  {
+   "statement": "Rollup is on by default with a 24-hour window (1440 minutes). When one control is weakened in several steps within the rollup, the threat shows one change from the original setting to the final setting.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatRollupActors/SecurityPolicyWeakeningRollup.cs:31"
+  },
+  {
+   "statement": "Exclusion fields: 'Weakened Policy' and 'Target Setting', plus Perpetrator. Both offer a fixed autocomplete list. File, Process, File Tag, and Affected Object DN exclusions are disabled.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1540"
+   ],
+   "cite": "installerFiles/sql13/v3.2.33.sql:8"
+  },
+  {
+   "statement": "The 'Weakened Policy' autocomplete lists: Guest Invite Policy, User Consent for Apps, Security Defaults, App Creation.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1540"
+   ],
+   "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/attributeEditors/WeakenedPolicyFilter.tsx:8"
+  },
+  {
+   "statement": "The 'Target Setting' autocomplete is grouped by policy and lists the setting a policy was loosened to: Anyone in the organization, Members and admin roles, Admin roles only, the two lower user consent options, 'Disabled' (Security Defaults), 'Enabled' (App Creation). The most restrictive settings are not listed because they can never be a target.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1540"
+   ],
+   "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/attributeEditors/WeakenedTargetSettingFilter.tsx:33"
+  },
+  {
+   "statement": "The attack path shows the perpetrator, a 'Weakened' key, and the weakened policy names.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-141"
+   ],
+   "cite": "installerFiles/sql13/v3.2.30.sql:31"
+  },
+  {
+   "statement": "Threat ID 76; exclusion types 26 and 27; the 'Weakened Policy' values are GuestInvitePolicy, UserConsent, SecurityDefaults, AppCreation.",
+   "area": "security-policy-weakening",
+   "status": "new",
+   "internal": true,
+   "tickets": [
+    "TMR-1540"
+   ],
+   "cite": "installerFiles/sql13/v3.2.33.sql:4"
+  },
+  {
+   "statement": "Impossible Travel now has the setting 'Trigger on Non-Human Identities'. Default: off (false).",
+   "area": "impossible-travel",
+   "status": "new",
+   "internal": false,
+   "tickets": [],
+   "cite": "installerFiles/sql13/v3.2.21.sql:5"
+  },
+  {
+   "statement": "Setting explanation: 'When enabled, sign-ins from applications and service principals are also evaluated for impossible travel. When disabled, only user sign-ins are evaluated.'",
+   "area": "impossible-travel",
+   "status": "new",
+   "internal": false,
+   "tickets": [],
+   "cite": "installerFiles/sql13/v3.2.21.sql:5"
+  },
+  {
+   "statement": "Behavior change: in 3.4 Impossible Travel evaluates only user sign-ins by default. Application and service principal sign-ins were evaluated before and are now skipped unless the setting is on.",
+   "area": "impossible-travel",
+   "status": "changed",
+   "internal": false,
+   "tickets": [],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/ImpossibleTravelV2.cs:65"
+  },
+  {
+   "statement": "With the setting on, a service principal sign-in is tracked by its service principal id (or app id).",
+   "area": "impossible-travel",
+   "status": "new",
+   "internal": false,
+   "tickets": [],
+   "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/ImpossibleTravelV2.cs:72"
+  },
+  {
+   "statement": "The File Tag and Process exclusion attributes are removed from Impossible Travel because location data is only sent for authentication events, so they could never match.",
+   "area": "impossible-travel",
+   "status": "removed",
+   "internal": false,
+   "tickets": [],
+   "cite": "installerFiles/sql13/v3.2.19.sql:2"
+  },
+  {
+   "statement": "The Impossible Travel map is redrawn to fit its panel without scrolling the evidence, shows route and marker tooltips, and has a zoom button toggling 'Zoom to route' / 'Zoom out to world'.",
+   "area": "impossible-travel",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1460"
+   ],
+   "cite": "web/src/app/components/defend/threatdetails/impossibleTravel/MapChart.tsx:183"
+  },
+  {
+   "statement": "The 'AI Agent' tag and the 'AI Agent' filter on the threat list now apply when an AI agent is the perpetrator, the target, or one of the affected objects of a threat. Before 3.4 only the perpetrator was checked.",
+   "area": "ai-agent-tag",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1483"
+   ],
+   "cite": "StealthDefendCore/Actor/ThreatActor.cs:1067"
+  },
+  {
+   "statement": "The threat list shows an 'AI Agent' label on threats where an AI agent is involved. AI agents are objects tagged as agent blueprint, agent user, or agent identity.",
+   "area": "ai-agent-tag",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1483"
+   ],
+   "cite": "web/src/app/components/defend/TimelineHomeListItem.jsx:335"
+  },
+  {
+   "statement": "Investigations have a new filter attribute 'Originating Agent' in the 'Event' group. It matches the name of the Netwrix agent that sent the event; values are free text or suggestions from an object search.",
+   "area": "originating-agent",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1497"
+   ],
+   "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/AttributeMaps.ts:199"
+  },
+  {
+   "statement": "The 'Originating Agent' filter label is used in saved investigations and custom threats.",
+   "area": "originating-agent",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1497"
+   ],
+   "cite": "web/src/app/typefiles/InvestigationTypes.ts:125"
+  },
+  {
+   "statement": "The same 'Originating Agent' filter is applied in integration (SIEM) event queries, matching the event's originating server.",
+   "area": "originating-agent",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1497"
+   ],
+   "cite": "StealthDefendCore/IntegrationService/SIActor.cs:724"
+  },
+  {
+   "statement": "Action PowerShell scripts and email actions can use the variable $PrimaryEventOriginatingAgent, described as 'The agent that originated the primary event.'",
+   "area": "originating-agent",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1497"
+   ],
+   "cite": "StealthDefendCore/Common/EventExtData/ThreatVariableExtractor.cs:306"
+  },
+  {
+   "statement": "The default PowerShell Script action template now includes the line 'Primary Event Originating Agent: $PrimaryEventOriginatingAgent' after 'Primary Event Host'.",
+   "area": "originating-agent",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1497"
+   ],
+   "cite": "installerFiles/sql13/v3.2.31.sql:6"
+  },
+  {
+   "statement": "Custom threats are evaluated incrementally. Each polling pass reads only events added since the previous pass, so thresholds with long time windows no longer rescan the whole window.",
+   "area": "custom-threats",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1464"
+   ],
+   "cite": "StealthDefendCore/JobManager/AlertHostedServiceV3.cs:28"
+  },
+  {
+   "statement": "Job schedules are ignored for custom threats. Every enabled custom threat runs on every polling pass.",
+   "area": "custom-threats",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1464"
+   ],
+   "cite": "StealthDefendCore/JobManager/AlertHostedServiceV3.cs:34"
+  },
+  {
+   "statement": "A new custom threat, or one whose filters were edited, starts from the current moment. It does not evaluate earlier events.",
+   "area": "custom-threats",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1464"
+   ],
+   "cite": "StealthDefendCore/JobManager/AlertHostedServiceV3.cs:285"
+  },
+  {
+   "statement": "Threshold custom threats total the event count (an event can stand for several occurrences) and trigger when the total reaches or exceeds the threshold count.",
+   "area": "custom-threats",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1464"
+   ],
+   "cite": "StealthDefendCore/JobManager/AlertHostedServiceV3.cs:439"
+  },
+  {
+   "statement": "Threshold grouped by perpetrator: one threat is created for each perpetrator whose total in the window reaches the threshold. Events with no perpetrator are ignored in this mode.",
+   "area": "custom-threats",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1464"
+   ],
+   "cite": "StealthDefendCore/JobManager/AlertHostedServiceV3.cs:476"
+  },
+  {
+   "statement": "If a running custom threat falls more than 6 hours behind, the backlog is skipped and the skipped range is logged. Setting Job:AlertCatchUpLimitHours (default 6) controls the limit.",
+   "area": "custom-threats",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1464"
+   ],
+   "cite": "StealthDefendCore/JobManager/AlertHostedServiceV3.cs:368"
+  },
+  {
+   "statement": "Polling settings in the JobService configuration: Job:AlertPeriodInSeconds default 60, Job:MaxConcurrentAlertQueries default 3, Job:AlertCatchUpLimitHours default 6, Job:InsertOverflow default true.",
+   "area": "custom-threats",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1464"
+   ],
+   "cite": "StealthDefendCore/JobService/appsettings.default.json:40"
+  },
+  {
+   "statement": "Matching events are kept in a daily-partitioned alert_query_event table aged out by event retention; each parameter set has a cursor in event_cursor.",
+   "area": "custom-threats",
+   "status": "new",
+   "internal": true,
+   "tickets": [
+    "TMR-1464"
+   ],
+   "cite": "installerFiles/sql13/v3.2.32.sql:12"
+  },
+  {
+   "statement": "Risky users, risky service principals, and risky agents are now synced by three separate Azure sync services, shown in sync history as 'Risky Users', 'Risky Service Principals', and 'Risky Agents'. The single 'Risky Objects' sync is retired and only appears in older history.",
+   "area": "risky-agents",
+   "status": "changed",
+   "internal": false,
+   "tickets": [],
+   "cite": "web/src/app/typefiles/AzureConfiguration.ts:100"
+  },
+  {
+   "statement": "Each risky sync waits at least 1 minute between runs (MinimumWaitTime 00:01:00).",
+   "area": "risky-agents",
+   "status": "changed",
+   "internal": false,
+   "tickets": [],
+   "cite": "StealthDefendCore/AzureService/appsettings.default.json:131"
+  },
+  {
+   "statement": "Risky agent data is read from the Microsoft Graph beta endpoint identityProtection/riskyAgents with the IdentityRiskyAgent.Read.All permission. Agents get the 'Confirmed Compromised' or 'At Risk' tag by severity; a blueprint takes the highest severity of its agent identities.",
+   "area": "risky-agents",
+   "status": "changed",
+   "internal": false,
+   "tickets": [],
+   "cite": "StealthDefendCore/Azure.Sync/SyncTasks/AzureRiskyAgentSync.cs:41"
+  },
+  {
+   "statement": "The old combined risky sync (AzureRiskyObjectSync) was split into AzureRiskyUserSync, AzureRiskyServicePrincipalSync, and AzureRiskyAgentSync.",
+   "area": "risky-agents",
+   "status": "changed",
+   "internal": true,
+   "tickets": [],
+   "cite": "StealthDefendCore/AzureService/Startup.cs:187"
+  }
+ ],
+ "notFound": [
+  "TMR-1497: 'Event Agent' wording; code labels it 'Originating Agent'. No separate field added to SIEM output formats (only a filter in SIActor and the PowerShell variable) was found.",
+  "MSFT license level for Risky Agents (ADO 452054): the code shows only the sync split; no license name or tier appears in code.",
+  "TMR-1483: no new tag name, only the broader AI Agent matching (perpetrator, target, affected objects).",
+  "TMR-524: no commit with this key in baseline..ref in the threats area.",
+  "Impossible Travel changes beyond TMR-1460, the Non-Human Identities setting, and the exclusion removal: none found in the three-dot diff."
+ ]
+}

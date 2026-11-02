@@ -1,0 +1,15 @@
+{
+  "product": "threatmanager",
+  "version": "3.4",
+  "from": "3.3",
+  "repo": "/home/jameshaytko/itdr-threatmanager",
+  "worktree": "/home/jameshaytko/itdr-threatmanager-3.4",
+  "ref": "origin/master",
+  "refSha": "05e12b936c82ff91a1e8b7adb7fb7d23803e0bd0",
+  "baseline": "origin/release/3.3",
+  "baselineSha": "fccad2d26a94aef0c9c4cdac07b2b7265dd6b978",
+  "diff": "git -C ~/itdr-threatmanager diff fccad2d26a94aef0c9c4cdac07b2b7265dd6b978...05e12b936c82ff91a1e8b7adb7fb7d23803e0bd0",
+  "docsWorktree": "/home/jameshaytko/docs-threatmanager-3.4",
+  "docsDir": "docs/threatmanager/3.4",
+  "seedBaseline": "e110e3ca9555f47964c4763f57b026992460e6ce"
+}

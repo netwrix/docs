@@ -1,0 +1,90 @@
+{
+  "batch": "administration-threats-threats",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/threats.md",
+      "status": "done",
+      "factsCovered": [
+        "F318",
+        "F319"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 12,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Writer-assistant style fixes on old 3.3 sentences only. One location hint was dropped to clear a positional-reference finding: the filters pane sentence no longer says \"under Historical Events\"."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/threatdetails/overview.md",
+      "status": "done",
+      "factsCovered": [
+        "F270",
+        "F272",
+        "F273",
+        "F274",
+        "F275",
+        "F276",
+        "F377",
+        "F378",
+        "F379",
+        "F380",
+        "F317",
+        "F381",
+        "F382",
+        "F383",
+        "F364",
+        "F362",
+        "F384",
+        "F385"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 21,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Writer-assistant style fixes on old 3.3 sentences only (Set Status, Blocked, Related Activity)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraiduser.md",
+      "status": "done",
+      "factsCovered": [
+        "F337",
+        "F338",
+        "F339",
+        "F340",
+        "F341",
+        "F342",
+        "F344",
+        "F416"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 6,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      }
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidobjects.md",
+      "status": "done",
+      "factsCovered": [
+        "F337",
+        "F342",
+        "F345"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      }
+    }
+  ]
+}

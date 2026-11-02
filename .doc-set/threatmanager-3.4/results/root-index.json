@@ -1,0 +1,18 @@
+{
+  "batch": "root-index",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/index.md",
+      "status": "done",
+      "factsCovered": [],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 4,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Version label bump (title, description, H1). Writer decision: the two unsupported marketing claims were dropped (\"with unprecedented accuracy and speed\" and the \"Organizations of virtually any size find it to be impossible...\" framing). Three other old sentences were reworded for style and \"you own\" was corrected to \"your own\"."
+    }
+  ]
+}

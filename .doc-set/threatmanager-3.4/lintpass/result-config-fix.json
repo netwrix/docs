@@ -1,0 +1,13 @@
+{ "pages": [
+ { "path": "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md", "before": 1, "after": 0, "unfixed": [], "suppressions": [] },
+ { "path": "docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md", "before": 6, "after": 0, "unfixed": [], "suppressions": [] }
+ ],
+ "typos": [
+  "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:10: missing space in \"sync.See\"; fix: \"sync. See\"",
+  "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:11: missing space in \"entraidsync.md)topic\"; fix: \") topic\"",
+  "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:64: missing space in \"connection.If\"; fix: \"connection. If\"",
+  "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:83: \"opensthe\"; fix: \"opens the\"",
+  "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:187: \"Threat Manager saved the changes\" is past tense; fix: \"Threat Manager saves the changes\"",
+  "docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md:73: \"Preferrred\"; fix: \"Preferred\"",
+  "docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md:82: missing space in \"Test Policy Button–\"; fix: \"Test Policy Button –\" (same for \"Copy LDAP Filter Button–\" and \"Deploy Now Button–\")"
+ ] }

@@ -1,0 +1,55 @@
+# Suspected typos for confirmation
+
+Found during the lint passes. None are fixed. Each line is path:line, what looks wrong, and the suggested fix.
+
+- docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md:156: 'theThreat Prevention' missing space; fix: 'the Threat Prevention'
+- docs/threatmanager/3.4/administration/configuration/integrations/email.md:60: 'seperator'; fix: 'separator'
+- docs/threatmanager/3.4/administration/configuration/integrations/email.md:50: 'if you want to enable TLS protocol is in use for email notifications' is garbled; fix: 'if you want to enable the TLS protocol for email notifications'
+- docs/threatmanager/3.4/administration/configuration/integrations/email.md:52: 'Ignore Certificate Errors –Toggle' missing space after dash
+- docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md:19: 'at bottom of the page'; fix: 'at the bottom of the page'
+- docs/threatmanager/3.4/administration/configuration/integrations/page/openid/entraidopenid.md:12: sentence starts lowercase 'ensure the following requirements...'; fix: capitalize 'Ensure' (the sentence now reads 'ensure you fulfill the following requirements')
+- docs/threatmanager/3.4/administration/configuration/integrations/page/openid/openid.md:16 and :27: image alt text 'authneication'; fix: 'authentication'
+- docs/threatmanager/3.4/administration/configuration/integrations/page/radius.md:25: image alt text 'authneication'; fix: 'authentication'
+- docs/threatmanager/3.4/administration/configuration/integrations/page/saml.md:15, :30, :57: image alt text 'authneication'; fix: 'authentication'
+- docs/threatmanager/3.4/administration/configuration/integrations/page/page.md:22: 'Credential Profile dropdown in the navigation pane' looks like a copy error from the Credential Profile page; likely 'Authentication Provider'
+- docs/threatmanager/3.4/administration/configuration/overview.md:17: 'Threat Response – lets you' lowercase 'lets'; fix: 'Lets'
+- docs/threatmanager/3.4/administration/configuration/policies/overview.md:10 and :14: 'polices'; fix: 'policies'
+- docs/threatmanager/3.4/administration/configuration/policies/overview.md:44: 'refer to' starts a sentence in lowercase (inside admonition); fix: 'Refer to'
+- docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md:13: 'to reduce noise' starts a list item in lowercase; fix: 'To reduce noise'
+- docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md:79: 'LDAP Monitoring isn't enabled, it must be enabled' comma splice; fix: 'If LDAP Monitoring isn't enabled, you must enable it'
+- docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md:51: 'Threat PreventionAdministration Console ,' missing space and stray space before comma
+- docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md:49: 'To configure LDAP monitoring for Threat Manager.' ends with a period but introduces a procedure; fix: colon
+- docs/threatmanager/3.4/administration/home.md:14: 'bar graphs ... contains' should be 'contain'
+- docs/threatmanager/3.4/administration/home.md:18: Active Hosts bullet says 'number of active users'; probably 'active hosts'
+- docs/threatmanager/3.4/administration/home.md:21: 'over the past 24 in 1-hour increments' is missing 'hours'
+- docs/threatmanager/3.4/administration/home.md:44: 'go the User Details page' should be 'go to the User Details page'
+- docs/threatmanager/3.4/administration/investigations/auditcompliance.md:57: 'in the Investigations interface list of saved built-in investigations' is missing a verb; probably 'lists saved built-in investigations'
+- docs/threatmanager/3.4/administration/investigations/auditcompliance.md:81: 'Domain Admin>s' should be 'Domain Admins'
+- docs/threatmanager/3.4/administration/investigations/auditcompliance.md:84,89: 'is being active' should be 'is active'
+- docs/threatmanager/3.4/administration/investigations/auditcompliance.md:84,89: 'Filter 1' in a single-filter row; likely 'Filter'
+- docs/threatmanager/3.4/administration/configuration/threatdetection/threatdetection.md:32: 'Threat Detection Page' listed in the Threats list sections; likely a leftover or missing link
+- docs/threatmanager/3.4/administration/configuration/threatresponse.md:70: 'add steps which contain actions' should be 'that contain'
+- docs/threatmanager/3.4/administration/configuration/systemsettings/auditing.md:46: 'when the changed occurred' should be 'when the change occurred'
+- docs/threatmanager/3.4/administration/configuration/systemsettings/auditing.md:44: 'Log into the console' should be 'Log in to the console'
+- docs/threatmanager/3.4/administration/configuration/systemsettings/systemjobs.md:121: 'Threats with the "False Positive" status' under Time to Retain Events (events); likely 'Events'
+- docs/threatmanager/3.4/administration/configuration/threatresponse.md:145,157: bullets start lowercase ('closes', 'uses') unlike siblings
+- docs/threatmanager/3.4/administration/configuration/threatresponse.md:113: 'Terminate all active sessions' should be 'Terminates'
+- docs/threatmanager/3.4/administration/configuration/systemhealth/agents.md:10: 'Threat Prevention7.5' missing space
+- docs/threatmanager/3.4/administration/investigations/predefinedinvestigations.md:38: "an a Entra ID Application" -> "an Entra ID Application"
+- docs/threatmanager/3.4/administration/investigations/predefinedinvestigations.md:39: Applications Deleted row says "Occurs when ... Application is added" -> "is deleted" (filter is Delete application); also "an a" -> "an"
+- docs/threatmanager/3.4/administration/playbooks/action/windowsserver.md:61: "those user who triggered the threat" -> "the user who triggered the threat" (kept as is; now reads "Threat Manager uses those user who triggered the threat")
+- docs/threatmanager/3.4/administration/threats/entraidobjects/entraidgroup.md:9: "it's members" => "its members"
+- docs/threatmanager/3.4/install/integration/threatprevention/threatmanagerconfiguration.md:111: image alt "Honey Tokem tab" => "Honey Token tab"
+- docs/threatmanager/3.4/install/integration/accessanalyzer.md:83: "Remember, , the Threat Manager App Token" => "Remember, the Threat Manager App Token"
+- docs/threatmanager/3.4/administration/threats/entraidobjects/entraidgroup.md:130 (also entraidapplication.md:103, entraiduser.md:145): "How was the active role assignment assigned" is a question form; entraidrole.md was reworded to "How the member received the active role assignment"
+- docs/threatmanager/3.4/requirements/permissions/adsync.md:10: link text 'Entra ID Sync Page' sits in the Active Directory Sync page and points to entraidsync.md; probably should be the Active Directory Sync page
+- docs/threatmanager/3.4/threats/activedirectory.md:~52: 'the user's actual group member' should be 'group membership'; 'the users Active Directory group membership' needs an apostrophe (user's)
+- docs/threatmanager/3.4/threats/activedirectory.md:~68: 'When an attack scans memory they may' should be 'When an attacker scans memory, they may'
+- docs/threatmanager/3.4/install/upgrade/upgrade_pg14_to_pg18.md:68: 'You will see this warning, it is safe to Install Again.' is a comma splice; suggest 'You will see this warning. It is safe to select Install Again.'
+- docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:10: missing space in "sync.See"; fix: "sync. See"
+- docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:11: missing space in "entraidsync.md)topic"; fix: ") topic"
+- docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:64: missing space in "connection.If"; fix: "connection. If"
+- docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:83: "opensthe"; fix: "opens the"
+- docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md:187: "Threat Manager saved the changes" is past tense; fix: "Threat Manager saves the changes"
+- docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md:73: "Preferrred"; fix: "Preferred"
+- docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md:82: missing space in "Test Policy Button–"; fix: "Test Policy Button –" (same for "Copy LDAP Filter Button–" and "Deploy Now Button–")

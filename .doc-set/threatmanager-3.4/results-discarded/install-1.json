@@ -1,0 +1,224 @@
+{
+ "batch": "install-1",
+ "pages": [
+  {
+   "path": "docs/threatmanager/3.4/install/overview.md",
+   "status": "failed",
+   "factsCovered": [
+    "F060",
+    "F075",
+    "F095",
+    "F100",
+    "F112",
+    "F118",
+    "F119"
+   ],
+   "todos": [],
+   "untraced": [
+    "The Action Service is an optional feature of `NetwrixThreatManager.exe`. To install the Action Service or the Integration Service alone... (F060 covers only the Integration Service; F095 is assigned to actionservice.md)",
+    "Install the PostgreSQL database before... exception is a Remote Services Only install... skips the database pages (F100 assigned to application.md)",
+    "The following prerequisites... Microsoft Visual C++ 2017-2026 x64 14.50 Redistributable (F112 assigned to requirements/server.md)",
+    "It offers only the Active Directory, Email, License, Web, and Integration services (F118 assigned to requirements/server.md)"
+   ],
+   "preexistingFindings": 2,
+   "checks": {
+    "quality": "pass",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/database.md",
+   "status": "done",
+   "factsCovered": [
+    "F121"
+   ],
+   "todos": [
+    "Default PostgreSQL 18 Install Folder and Data Folder paths not found in the code worktree (installer source for the PostgreSQL package is not there)"
+   ],
+   "untraced": [],
+   "preexistingFindings": 3,
+   "checks": {
+    "quality": "pass",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/application.md",
+   "status": "failed",
+   "factsCovered": [
+    "F061",
+    "F063",
+    "F064",
+    "F065",
+    "F066",
+    "F067",
+    "F068",
+    "F069",
+    "F070",
+    "F088",
+    "F097",
+    "F099",
+    "F100",
+    "F101",
+    "F103",
+    "F104",
+    "F113",
+    "F117",
+    "F122"
+   ],
+   "todos": [],
+   "untraced": [
+    "The Install AD PowerShell Modules and Install Entra PowerShell Modules options appear only when the Action Service is installed (F101 not assigned)",
+    "The installer creates rules only for the services you install (F103 not assigned)",
+    "On a first install, the Securing Threat Manager page appears when a service has no appsettings.json (F088 not assigned)",
+    "When the product is installed and a signing key exists, the Welcome page also has an Export Signing Keys button (F104 not assigned)"
+   ],
+   "preexistingFindings": 6,
+   "checks": {
+    "quality": "pass",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/actionservice.md",
+   "status": "failed",
+   "factsCovered": [
+    "F060",
+    "F061",
+    "F063",
+    "F064",
+    "F065",
+    "F087",
+    "F091",
+    "F092",
+    "F093",
+    "F094",
+    "F095",
+    "F096",
+    "F098",
+    "F100",
+    "F127",
+    "F128",
+    "F129",
+    "F130",
+    "F131",
+    "F132",
+    "F134",
+    "F135",
+    "F136",
+    "F137",
+    "F138",
+    "F139",
+    "F140",
+    "F141",
+    "F142",
+    "F143",
+    "F144",
+    "F145",
+    "F146",
+    "F147",
+    "F148",
+    "F149",
+    "F150",
+    "F152",
+    "F153",
+    "F154",
+    "F155",
+    "F156",
+    "F160",
+    "F162",
+    "F208",
+    "F250",
+    "F255",
+    "F408",
+    "F409",
+    "F410",
+    "F411",
+    "F412"
+   ],
+   "todos": [],
+   "untraced": [
+    "The Integration Service starts automatically; table row SBTSDINT / Netwrix Threat Manager Integration Service (F098 not assigned)",
+    "A Remote install always shows the Advanced Settings page; no services checked message; installer skips the database pages (F061/F063/F064/F065/F100 not assigned)",
+    "The Securing Threat Manager page applies to the Integration Service in a Remote install. HTTPS is enabled by default for remote Integration Service installs (F087/F250 not assigned)",
+    "The Action Service saves its settings in C:\\ProgramData\\...\\ActionService; Integration Service appsettings.user.json (F160 not assigned)"
+   ],
+   "preexistingFindings": 2,
+   "checks": {
+    "quality": "pass",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/secure.md",
+   "status": "done",
+   "factsCovered": [
+    "F080",
+    "F081",
+    "F082",
+    "F083",
+    "F085",
+    "F086",
+    "F087",
+    "F088",
+    "F089",
+    "F250",
+    "F251",
+    "F252"
+   ],
+   "todos": [],
+   "untraced": [],
+   "preexistingFindings": 0,
+   "checks": {
+    "quality": "pass",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/appsettings.md",
+   "status": "done",
+   "factsCovered": [
+    "F160",
+    "F250"
+   ],
+   "todos": [],
+   "untraced": [],
+   "preexistingFindings": 3,
+   "checks": {
+    "quality": "pass",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/firstlaunch/firstlaunch.md",
+   "status": "done",
+   "factsCovered": [
+    "F055",
+    "F247"
+   ],
+   "todos": [],
+   "untraced": [],
+   "preexistingFindings": 6,
+   "checks": {
+    "quality": "pass",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/firstlaunch/login.md",
+   "status": "done",
+   "factsCovered": [
+    "F090",
+    "F249",
+    "F407"
+   ],
+   "todos": [],
+   "untraced": [],
+   "preexistingFindings": 2,
+   "checks": {
+    "quality": "pass",
+    "integrity": "n/a"
+   }
+  }
+ ]
+}

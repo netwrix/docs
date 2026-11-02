@@ -1,0 +1,81 @@
+{
+  "batch": "install-2",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/install/secure.md",
+      "status": "done",
+      "factsCovered": [
+        "F080",
+        "F081",
+        "F082",
+        "F083",
+        "F085",
+        "F086",
+        "F087",
+        "F088",
+        "F089",
+        "F250",
+        "F251",
+        "F252"
+      ],
+      "todos": [
+        "Confirm the Windows Firewall rule opens the HTTPS port of the Web Service"
+      ],
+      "untraced": [],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Verifier flag overridden: \"Click Next\" is correct. The Securing page leads to the Plan page, whose predecessor button text is Wizard_NextButtonText = \"Next\" (PageViewModel.cs:24, WizardViewModel.cs:680, Localization.resx:240)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/appsettings.md",
+      "status": "done",
+      "factsCovered": [
+        "F160"
+      ],
+      "todos": [],
+      "untraced": [
+        "To override settings for a service, create an `appsettings.json` file in the same directory."
+      ],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      }
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/firstlaunch/firstlaunch.md",
+      "status": "done",
+      "factsCovered": [
+        "F055",
+        "F247",
+        "F248"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      }
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/firstlaunch/login.md",
+      "status": "done",
+      "factsCovered": [
+        "F090",
+        "F249",
+        "F407"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      }
+    }
+  ]
+}

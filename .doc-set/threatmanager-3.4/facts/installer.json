@@ -1,0 +1,662 @@
+{
+ "area": "installer",
+ "facts": [
+  {
+   "statement": "The standalone Integration Service installer is not a separate executable. The main installer (NetwrixThreatManager.exe) can install the Integration Service alone, by selecting Remote Services Only on the Advanced Settings page.",
+   "area": "integration-service-installer",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Common/InstalledFeatureHelper.cs:65"
+  },
+  {
+   "statement": "The installer has an Advanced Settings page titled \"What would you like to install?\". It offers the radio buttons All Services and Remote Services Only.",
+   "area": "advanced-settings-page",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/AdvancedSettingsPage/AdvancedSettingsPageView.xaml:15"
+  },
+  {
+   "statement": "With Remote Services Only selected, the page lists a check box for each remote-capable service: Action Service and Integration Service.",
+   "area": "advanced-settings-page",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Common/InstalledFeatureHelper.cs:65"
+  },
+  {
+   "statement": "If Remote Services Only is selected and no service is checked, the page shows \"Select at least one remote service to install.\" and the wizard cannot continue.",
+   "area": "advanced-settings-page",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:414"
+  },
+  {
+   "statement": "On the Welcome page, an Advanced Installation check box shows the Advanced Settings page on a first install. The check box is hidden when the machine is already locked to an install mode, or when the command line sets ProductInstallSettings_PreferFullInstall=True.",
+   "area": "advanced-settings-page",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532",
+    "TMR-1506"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/WelcomePage/WelcomePageViewModel.cs:119"
+  },
+  {
+   "statement": "A Remote install always shows the Advanced Settings page, so the selected services are visible before installation.",
+   "area": "advanced-settings-page",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/WizardViewModel.cs:145"
+  },
+  {
+   "statement": "The Advanced Settings page is skipped when you select Modify and the machine is locked to All Services. When the machine is locked to Remote Services Only, the page is shown with its controls disabled.",
+   "area": "service-selection-lock",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532",
+    "TMR-1506"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/WizardViewModel.cs:139"
+  },
+  {
+   "statement": "When the installer is locked, the Advanced Settings page shows \"Install mode is locked. Fully uninstall and reinstall to alter this value.\"",
+   "area": "service-selection-lock",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1506"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:411"
+  },
+  {
+   "statement": "After a successful first install, the install mode and service selection cannot be changed with Modify or an upgrade. Changing them requires a full uninstall and reinstall.",
+   "area": "service-selection-lock",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532",
+    "TMR-1506"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Common/ProductInstallSettings.cs:79"
+  },
+  {
+   "statement": "A full uninstall releases the lock, so a reinstall can choose services again. The previous install mode and service selection are pre-filled in the wizard.",
+   "area": "service-selection-lock",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1506"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer/Product.wxs:98"
+  },
+  {
+   "statement": "If the command line passes ProductInstallSettings_InstallMode with a value that conflicts with the locked mode, the installer stops. It shows the dialog \"Install Mode Conflict\" with the message \"This machine is already installed with Install Mode '<locked>', but the command line requested '<requested>'. Fully uninstall the existing product before changing install modes.\" A silent run only writes the message to the log and exits with code 1.",
+   "area": "service-selection-lock",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1506"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/WixBootstrapper.cs:183"
+  },
+  {
+   "statement": "The command-line variable ProductInstallSettings_InstallMode accepts AllServices or Remote. Default AllServices. It is ignored once the machine is locked.",
+   "area": "command-line",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND/Bundle.wxs:35"
+  },
+  {
+   "statement": "The command-line variable ProductInstallSettings_EnableAdvancedInstall accepts True or False. Default False. It shows the Advanced Settings page on a first install.",
+   "area": "command-line",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND/Bundle.wxs:36"
+  },
+  {
+   "statement": "The command-line variable ProductInstallSettings_RemoteServicesSelected is a number that sums the service bits for a Remote install: Action Service 128 and Integration Service 256. For example, 384 installs both. Other bits are ignored. Default is empty.",
+   "area": "command-line",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/COMMAND_LINE.md:39"
+  },
+  {
+   "statement": "The command-line variable ProductInstallSettings_PreferFullInstall=True forces an All Services install and hides the Advanced Settings page on a first install. If the machine is already locked to Remote, the run continues and shows the locked Advanced Settings page. Default False.",
+   "area": "command-line",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532",
+    "TMR-1506"
+   ],
+   "cite": "STEALTHbits.Installer/COMMAND_LINE.md:40"
+  },
+  {
+   "statement": "The SbSetup launcher starts the Threat Manager installers with ProductInstallSettings_PreferFullInstall=True, so SbSetup always installs every service.",
+   "area": "command-line",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/SDSB_Setup/MainForm.cs:240"
+  },
+  {
+   "statement": "The command-line variable WebServiceCertificate sets the HTTPS choice for a silent install. Empty leaves settings unchanged, Unsecured selects HTTP, and any other value is the thumbprint of a certificate in the Local Computer Personal store. Default is empty. On a fresh silent install with no value, the services use HTTP.",
+   "area": "command-line",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND/Bundle.wxs:55"
+  },
+  {
+   "statement": "Silent installs accept InstallFolder (default [ProgramFiles64Folder]STEALTHbits\\StealthDEFEND) and DataFolder (default [CommonAppDataFolder]STEALTHbits\\StealthDEFEND) as Name=Value arguments.",
+   "area": "command-line",
+   "status": "unchanged",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/StealthDEFEND/Bundle.wxs:33"
+  },
+  {
+   "statement": "Silent installs accept Host, Port, and Database as Name=Value arguments for the database connection. Host defaults to localhost.",
+   "area": "command-line",
+   "status": "new",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/COMMAND_LINE.md:92"
+  },
+  {
+   "statement": "Silent installs accept UpdateFirewallSettings=True to create inbound Windows Firewall rules. InstallADModules=False and InstallEntraModules=False skip the AD and Entra PowerShell module installs (relevant only when Action Service is installed).",
+   "area": "command-line",
+   "status": "new",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/COMMAND_LINE.md:155"
+  },
+  {
+   "statement": "The installer has a page titled \"Securing Threat Manager\" that sets whether the web console and services use HTTPS.",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:417"
+  },
+  {
+   "statement": "The Securing Threat Manager page offers three choices: Leave settings unchanged, Installed Certificate (recommended), and Unsecured.",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/SecureWebConsolePage/SecureWebConsolePageView.xaml:24"
+  },
+  {
+   "statement": "Leave settings unchanged appears only when every service already has an appsettings.json file. When it is missing, Installed Certificate (recommended) is preselected.",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/SecureWebConsolePage/SecureWebConsolePageViewModel.cs:111"
+  },
+  {
+   "statement": "Installed Certificate (recommended) shows a list of certificates from the Local Computer certificate store with a Refresh button. You must select a certificate before you can continue.",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/SecureWebConsolePage/SecureWebConsolePageViewModel.cs:215"
+  },
+  {
+   "statement": "The certificate list ends with the entry <Generate a Self-Signed Certificate>. Selecting it prompts: Generate a self-signed certificate named \"Netwrix Threat Manager Self-Signed For <computer name>\" now and add it to the Local Computer certificate store?",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:435"
+  },
+  {
+   "statement": "The generated self-signed certificate uses the host name as its subject, is valid for 20 years, and is named \"Netwrix Threat Manager Self-Signed For <computer name>\". If generation fails, the installer shows \"The self-signed certificate could not be generated: {0}\".",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Common/WebCertificateStore.cs:44"
+  },
+  {
+   "statement": "Choosing Unsecured shows the warning: \"Traffic to the web console and services will be sent over an unencrypted connection, including administrator credentials, and is vulnerable to man in the middle attacks (i.e interception, monitoring, alteration and substitution). Installing a certificate to secure these connections is strongly recommended.\"",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:441"
+  },
+  {
+   "statement": "The Securing Threat Manager page applies to the Web Service in every install mode, and to the Integration Service only in a Remote install.",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Common/InstalledFeatureHelper.cs:117"
+  },
+  {
+   "statement": "On Install, the Securing Threat Manager page appears when a service has no appsettings.json yet, or when Advanced Installation is selected. On Modify it always appears. On Repair and Uninstall it does not appear.",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/WizardViewModel.cs:153"
+  },
+  {
+   "statement": "If you select a certificate, the installer stops with \"Failed to configure the web service certificate\" when the thumbprint is not in the Local Computer Personal certificate store.",
+   "area": "https-setup",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Common/WebServiceCertificateSettings.cs:104"
+  },
+  {
+   "statement": "When HTTPS is selected, the Dashboard shortcuts and the post-install launch open https://<fully qualified host name>:<port>. The port is the WebService:Port value, 5000 by default. Otherwise they open http://localhost:8080.",
+   "area": "https-setup",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1518"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Common/WebServiceCertificateSettings.cs:154"
+  },
+  {
+   "statement": "After a Remote install, the Finish page lists each installed remote service under \"Remote services require additional configuration.  Please complete the following:\" with Service Name and Status columns.",
+   "area": "remote-service-config",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532",
+    "TMR-1482"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/FinishPage/FinishPageView.xaml:131"
+  },
+  {
+   "statement": "Each remote service status shows Checking..., Configure Now, Configured, or Connection Broken. The status refreshes every 10 seconds. Configure Now and Connection Broken open that service's configuration window.",
+   "area": "remote-service-config",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532",
+    "TMR-1482"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/FinishPage/FinishPageView.xaml:169"
+  },
+  {
+   "statement": "Selecting Exit or Reboot now while a remote service is not configured asks: \"One or more remote services are not yet configured. Are you sure you want to exit?\" The dialog is titled \"Warning\" and has OK and Cancel buttons.",
+   "area": "remote-service-config",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532",
+    "TMR-1482"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/FinishPage/FinishPageViewModel.cs:216"
+  },
+  {
+   "statement": "The installer adds Start Menu shortcuts \"Configure Action Service\" and \"Configure Integration Service\". Each runs the service with --config-ui to connect it to Netwrix Threat Manager.",
+   "area": "remote-service-config",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532",
+    "TMR-1482"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer/Product.wxs:304"
+  },
+  {
+   "statement": "Action Service is now an optional feature of the main installer (service SBTSDACTION, display name \"Netwrix Threat Manager Action Service\"). The separate Netwrix Threat Manager Action Service installer is removed.",
+   "area": "action-service-installer",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer/Product.wxs:263"
+  },
+  {
+   "statement": "Installing or upgrading with the main installer removes a machine's old standalone Action Service installation, so no orphaned SBTSDACTION service remains.",
+   "area": "action-service-installer",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND/Bundle.wxs:26"
+  },
+  {
+   "statement": "The installer starts Action Service together with the other services at the end of install.",
+   "area": "action-service-installer",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/StartServices.cs:30"
+  },
+  {
+   "statement": "The Integration Service is installed as service SBTSDINT, display name \"Netwrix Threat Manager Integration Service\", set to start automatically.",
+   "area": "integration-service-installer",
+   "status": "unchanged",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer/Product.wxs:306"
+  },
+  {
+   "statement": "The Move Database button on the Welcome page is hidden unless the installed services need the PostgreSQL database. For example, it is hidden for an Integration Service-only install.",
+   "area": "remote-install",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/WelcomePage/WelcomePageViewModel.cs:126"
+  },
+  {
+   "statement": "The database pages and database steps are skipped when no installed service uses the database (Remote install of Action Service, Integration Service, or both).",
+   "area": "remote-install",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/CreatePgDatabase.cs:18"
+  },
+  {
+   "statement": "The \"Install AD PowerShell Modules\" and \"Install Entra PowerShell Modules\" options appear on the firewall page only when Action Service is installed.",
+   "area": "remote-install",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/ConfigureFirewallPage/ConfigureFirewallPageViewModel.cs:14"
+  },
+  {
+   "statement": "With \"Create Inbound Windows Firewall Rules\" selected, the installer opens TCP port 55558 for the Integration Service (rule \"Threat Manager Integration Service\").",
+   "area": "firewall-rules",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/CreateInboundFirewallRules.cs:50"
+  },
+  {
+   "statement": "Firewall rules are created only for the services you install. The Event Service rules open TCP 10001 and UDP 10000. The Web Service rule opens TCP 8080.",
+   "area": "firewall-rules",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/CreateInboundFirewallRules.cs:21"
+  },
+  {
+   "statement": "The Welcome page has an Export Signing Keys button, shown only when the product is installed and a JWT signing key exists. It has no silent equivalent.",
+   "area": "signing-key-export",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1519"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/WelcomePage/WelcomePageViewModel.cs:158"
+  },
+  {
+   "statement": "The Export page (\"Export\") asks where to save the export file (\"Save the export file as:\", Browse...). The default is NTM-SigningKeys-<computer name>.exe on the desktop. The name must end with .exe and the folder must exist.",
+   "area": "signing-key-export",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1519"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/ExportSigningKeysPage/ExportSigningKeysPageViewModel.cs:14"
+  },
+  {
+   "statement": "The Export page warns: \"The export file and the one-time code are secrets. The code is shown once, after the file has been created. The file is not code signed, so Windows or security software may warn about it.\"",
+   "area": "signing-key-export",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1519"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:459"
+  },
+  {
+   "statement": "After export, the Finish page shows a one-time code with Copy code and Open folder buttons: \"Save this code now. It is not stored anywhere and cannot be shown again. Send it to the person importing the keys over a different channel than the file.\"",
+   "area": "signing-key-export",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1519"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:477"
+  },
+  {
+   "statement": "The exported exe runs on another machine, asks for the one-time code, and writes the JWT signing key to that machine's registry. It requires Administrator rights and .NET Framework 4.7.2 or later.",
+   "area": "signing-key-export",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1519"
+   ],
+   "cite": "STEALTHbits.Installer/RegistryValueTransfer/README.md:13"
+  },
+  {
+   "statement": "The export tool is installed under <install folder>\\Tools\\RegistryValueTransfer\\RegistryValueTransfer.exe. If it is missing the installer shows \"The export tool was not found at '{0}'.\"",
+   "area": "signing-key-export",
+   "status": "new",
+   "internal": false,
+   "tickets": [
+    "TMR-1519"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:468"
+  },
+  {
+   "statement": "The installer stores the JWT signing key in the registry (HKLM\\SOFTWARE\\STEALTHbits Technologies\\StealthDEFEND\\Security, value JwtSigningKey), protected with DPAPI Local Machine. Only SYSTEM and Administrators can read it. Service accounts must be granted read access manually.",
+   "area": "jwt-signing-key",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1519"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Utilities/RegUtils.cs:181"
+  },
+  {
+   "statement": "On upgrade from a version that used <DataFolder>\\WebService\\jwtsign.pfx, the installer reuses the pfx private key so issued tokens stay valid, then deletes the pfx. A fresh install generates a new 2048-bit RSA key. An existing registry key is never replaced.",
+   "area": "jwt-signing-key",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "TMR-1519"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/ConfigureJwtCertificate.cs:18"
+  },
+  {
+   "statement": "The installer installs the Microsoft Visual C++ 2017-2026 x64 14.50 Redistributable as a prerequisite. It replaces the 2015-2019 14.24 package.",
+   "area": "prerequisites",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "451611",
+    "451597"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND/Bundle.wxs:70"
+  },
+  {
+   "statement": "The Visual C++ redistributable runs with /norestart. If it needs a restart (exit code 3010), the restart is scheduled and the Finish page shows \"To complete the installation, the computer must be rebooted.\" with a \"Reboot now\" button. The system no longer restarts without notice.",
+   "area": "prerequisites",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "451597"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND/Bundle.wxs:72"
+  },
+  {
+   "statement": "The installer requires the .NET Desktop Runtime 10.0.10 and ASP.NET Core Runtime 10.0.10 (x64) and installs them when missing.",
+   "area": "prerequisites",
+   "status": "unchanged",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/DotNetCore.Package.wxs:4"
+  },
+  {
+   "statement": "The installer requires administrator rights (\"You must be an administrator to run this installer.\"). Windows 7, 8, and 8.1 are not supported. It requires Server 2008 R2 SP1 or later, and .NET Framework 4.7.2.",
+   "area": "prerequisites",
+   "status": "unchanged",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/PrereqCheck/PrereqCheck.wxs:24"
+  },
+  {
+   "statement": "The bundle runs only on 64-bit Windows (VersionNT64 6.1 or later).",
+   "area": "prerequisites",
+   "status": "unchanged",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/StealthDEFEND/Bundle.wxs:10"
+  },
+  {
+   "statement": "The Welcome page buttons now have keyboard access keys: _Install, _Change, _Repair, Remo_ve, and _Move Database. The finish page buttons Exit and \"Reboot now\" are unchanged.",
+   "area": "installer-ui",
+   "status": "changed",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/WelcomePage/WelcomePageViewModel.cs:80"
+  },
+  {
+   "statement": "The Report Only installer is built from the same installer source. It is named \"Netwrix Threat Manager Reporting\" (NetwrixThreatManagerReporting.exe). It offers only Active Directory, Email, License, Web, and Integration services.",
+   "area": "report-only-installer",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "451611"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Common/InstalledFeatureHelper.cs:74"
+  },
+  {
+   "statement": "The Report Only installer runs the License Service with the -ro argument so it never activates or reports a license.",
+   "area": "report-only-installer",
+   "status": "unchanged",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer/Product.wxs:7"
+  },
+  {
+   "statement": "The Full and Report Only installers share one bundle UpgradeCode, so only one of them can be installed on a machine at a time.",
+   "area": "report-only-installer",
+   "status": "changed",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/StealthDEFEND/Bundle.wxs:10"
+  },
+  {
+   "statement": "The database port list in the installer offers \"PostgreSQL 18 (5439)\" and \"PostgreSQL 14 (5435)\". The SbSetup launcher offers the newest PostgreSQL installer and shows a PostgreSQL upgrade documentation link when an older PostgreSQL is installed.",
+   "area": "postgresql",
+   "status": "unchanged",
+   "internal": false,
+   "tickets": [],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/ConfigureDatabasePage/ConfigureDatabasePageViewModel.cs:33"
+  },
+  {
+   "statement": "The installer waits up to 2 minutes for each service to start or stop and logs progress every 5 seconds. This fixes an install that appeared to hang at the PostgreSQL start step.",
+   "area": "postgresql",
+   "status": "changed",
+   "internal": false,
+   "tickets": [
+    "451466"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/StartServices.cs:56"
+  },
+  {
+   "statement": "Installer code moved into a shared InstallerBA.Framework project; the old Installer.CustomActions project and UpdateAppSettings.ps1 are removed.",
+   "area": "build",
+   "status": "changed",
+   "internal": true,
+   "tickets": [
+    "TMR-532"
+   ],
+   "cite": "STEALTHbits.Installer/InstallerBA.Framework/InstallerBA.Framework.csproj:1"
+  },
+  {
+   "statement": "Installer MSI uses feature selection (CoreFeature, DatabaseSchemaFeature, one feature per service); the Locked registry value is non-permanent.",
+   "area": "build",
+   "status": "changed",
+   "internal": true,
+   "tickets": [
+    "TMR-1506"
+   ],
+   "cite": "STEALTHbits.Installer/StealthDEFEND.Installer/Product.wxs:83"
+  },
+  {
+   "statement": "Database schema patches sql13 v3.2.19 to v3.2.34 are added to the installer payload.",
+   "area": "database-patches",
+   "status": "new",
+   "internal": true,
+   "tickets": []
+  },
+  {
+   "statement": "Build scripts build-installer.ps1 and build-installer-report-only.ps1 were reworked to build one edition at a time.",
+   "area": "build",
+   "status": "changed",
+   "internal": true,
+   "tickets": []
+  }
+ ],
+ "notFound": [
+  "TMR-1518: HTTPS is chosen by default only on the interactive page (Installed Certificate is preselected). A silent install with no WebServiceCertificate value falls back to HTTP, so no code enables HTTPS silently.",
+  "TMR-532: no separate Integration Service installer executable exists in code. The behavior is the Remote Services Only option of the main installer.",
+  "PG18 install steps: no change to PostgreSQL install steps or a minimum supported PostgreSQL version appears in the delta. Only the PostgreSQL start wait was changed.",
+  "Upgrade path or migration rules from specific earlier versions (for example a minimum version to upgrade from): not found in the installer code."
+ ]
+}

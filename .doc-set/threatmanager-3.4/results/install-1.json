@@ -1,0 +1,128 @@
+{
+  "batch": "install-1",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/install/overview.md",
+      "status": "done",
+      "factsCovered": [
+        "F060",
+        "F075",
+        "F098",
+        "F119"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      }
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/database.md",
+      "status": "done",
+      "factsCovered": [
+        "F121"
+      ],
+      "todos": [
+        "Confirm the PostgreSQL 18 default install and data folders (not found in the code worktree)"
+      ],
+      "untraced": [],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      }
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/application.md",
+      "status": "done",
+      "factsCovered": [
+        "F061",
+        "F063",
+        "F064",
+        "F065",
+        "F066",
+        "F067",
+        "F068",
+        "F069",
+        "F070",
+        "F088",
+        "F097",
+        "F099",
+        "F100",
+        "F104",
+        "F113",
+        "F117",
+        "F122"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Writer-assistant fix: the verifier flagged the Securing page step and the export link as untraced; F087, F088, F104 and F251 were reassigned to this page in the manifest."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/actionservice.md",
+      "status": "done",
+      "factsCovered": [
+        "F092",
+        "F093",
+        "F094",
+        "F095",
+        "F096",
+        "F162",
+        "F208",
+        "F255",
+        "F127",
+        "F128",
+        "F129",
+        "F130",
+        "F131",
+        "F132",
+        "F134",
+        "F135",
+        "F136",
+        "F137",
+        "F138",
+        "F139",
+        "F141",
+        "F142",
+        "F143",
+        "F144",
+        "F145",
+        "F146",
+        "F147",
+        "F148",
+        "F149",
+        "F150",
+        "F152",
+        "F153",
+        "F154",
+        "F155",
+        "F156",
+        "F408",
+        "F409",
+        "F410",
+        "F411",
+        "F412",
+        "F091",
+        "F018",
+        "F019"
+      ],
+      "todos": [
+        "Confirm which port to enter when the Web Service uses HTTPS"
+      ],
+      "untraced": [],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Writer-assistant fix: the self-signed certificate notice now names the remote service (F144), as the verifier required."
+    }
+  ]
+}

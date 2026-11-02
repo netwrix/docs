@@ -1,0 +1,558 @@
+{
+  "area": "security",
+  "facts": [
+    {
+      "statement": "The services sign login tokens with an RSA private key stored in the registry value JwtSigningKey under HKLM\\SOFTWARE\\STEALTHbits Technologies\\StealthDEFEND\\Security. The key is protected with DPAPI using the Local Machine scope.",
+      "cite": "StealthDefendCore/StealthDefend.Registry/StealthDefend.cs:121",
+      "area": "jwt-signing-key",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "The installer generates the JWT signing key on a fresh install. If a signing key already exists in the registry, the installer leaves it unchanged.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/ConfigureJwtCertificate.cs:49",
+      "area": "jwt-signing-key",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "On upgrade, the installer reuses the private key from the old jwtsign.pfx (%ProgramData%\\STEALTHbits\\StealthDEFEND\\WebService\\jwtsign.pfx) so tokens already issued stay valid, then deletes the file. The customer does not re-enter the certificate password.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/ConfigureJwtCertificate.cs:58",
+      "area": "jwt-signing-key",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "If the installer cannot read the old jwtsign.pfx (for example no appsettings.json references it, so its password is unknown), it logs a warning, leaves the file in place, and generates a new key. Tokens signed with the old key then stop validating.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/ConfigureJwtCertificate.cs:108",
+      "area": "jwt-signing-key",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "The installer step is named \"Configure JWT Signing Key\" and fails with \"Failed to configure the JWT signing key: {reason}\" if it cannot store the key.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/ConfigureJwtCertificate.cs:75",
+      "area": "jwt-signing-key",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "The Security registry key is readable only by SYSTEM and Administrators. A service that runs as another account needs read access granted manually. Otherwise it fails to start and logs: \"Unable to load the JWT signing key from the registry: {reason} The service account needs read access to HKLM\\SOFTWARE\\STEALTHbits Technologies\\StealthDEFEND\\Security.\"",
+      "cite": "StealthDefendCore/Stealthbits.AspNet.Core.Middleware/JwtUtilities.cs:141",
+      "area": "jwt-signing-key",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "When the registry key does not exist, a service uses the certificate named by the Jwt:CertificateThumbprint setting, looked up in the LocalMachine\\My store. If that certificate cannot be loaded, the service fails to start with \"Unable to load the JWT certificate with thumbprint '{thumbprint}': {reason}\".",
+      "cite": "StealthDefendCore/Stealthbits.AspNet.Core.Middleware/JwtUtilities.cs:158",
+      "area": "jwt-signing-key",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "The Jwt:CertificateFile, Jwt:CertificateEncryptedPassword, and Jwt:CertificatePassword settings are no longer read. A service that still has any of them and no registry signing key fails to start with \"Legacy JWT signing key configured. Re-run the installer to update it\". Re-run the installer to migrate.",
+      "cite": "StealthDefendCore/Stealthbits.AspNet.Core.Middleware/JwtUtilities.cs:166",
+      "area": "jwt-signing-key",
+      "status": "removed",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "With no registry key, no thumbprint, and no legacy settings, a service falls back to an insecure built-in symmetric key and prints \"WARNING: Use of symmetric key is insecure. Re-run the installer to generate a secure JWT signing key\".",
+      "cite": "StealthDefendCore/Stealthbits.AspNet.Core.Middleware/JwtUtilities.cs:169",
+      "area": "jwt-signing-key",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "The installer script installerFiles/scripts/UpdateAppSettings.ps1, which generated the JWT certificate and updated each service's appsettings, was removed from the product.",
+      "cite": "README.md:138",
+      "area": "jwt-signing-key",
+      "status": "removed",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "The installer's Welcome page has a Modify action named \"Export Signing Keys\" (button text \"_Export Signing Keys\"). It creates a single-file .exe that carries the signing key encrypted with a one-time code. It is interactive only and has no command-line variant.",
+      "cite": "STEALTHbits.Installer/COMMAND_LINE.md:142",
+      "area": "jwt-signing-key",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "The export page says: \"Choose where to save the export file. A one-time code is generated when the file is created.\" and warns: \"The export file and the one-time code are secrets. The code is shown once, after the file has been created. The file is not code signed, so Windows or security software may warn about it.\"",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:450",
+      "area": "jwt-signing-key",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "Export failure messages: \"The export tool was not found at '{0}'.\" and \"Exporting the signing keys failed: {0}\".",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:468",
+      "area": "jwt-signing-key",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "To move the signing key to another host, run the exported .exe as an Administrator on the new host and enter the one-time code. The key is re-protected with that host's DPAPI and written to the registry with the same restricted access. Restart the services afterward.",
+      "cite": "README.md:144",
+      "area": "jwt-signing-key",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "The signing key is bound to the machine through DPAPI Local Machine, so copying the registry value to another host does not work.",
+      "cite": "README.md:144",
+      "area": "jwt-signing-key",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "Threat Manager checks application tokens at service start. A token is flagged broken when it has expired or is no longer signed with the current signing key (for example after the signing key changes). Integration and Agent tokens are skipped.",
+      "cite": "StealthDefendCore/WebApi/AppTokenHealthCheckHostedService.cs:95",
+      "area": "app-tokens",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519",
+        "TMR-1552"
+      ]
+    },
+    {
+      "statement": "A banner at the top of the console reads \"App tokens are no longer valid and must be refreshed. ({names})\" and links to the App Tokens integration page. It lists up to three names, then \"and N more\".",
+      "cite": "web/src/app/components/defend/BrokenAppTokenHeader.jsx:50",
+      "area": "app-tokens",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1552"
+      ]
+    },
+    {
+      "statement": "Audit log entries record when an app token breaks and when it is resolved: \"App token '{appToken}' is no longer signed with the current signing key.\" and \"App token '{appToken}' issue has been resolved.\"",
+      "cite": "StealthDefendCore/WebApi/Resources.resx:381",
+      "area": "app-tokens",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1552"
+      ]
+    },
+    {
+      "statement": "Viewing or copying an application token value is audited: \"Application token '{name}' value viewed or copied.\"",
+      "cite": "StealthDefendCore/WebApi/Resources.resx:252",
+      "area": "app-tokens",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "The BrokenTokens endpoint (GET api/v1/Apptoken/BrokenTokens) returns the names of broken application tokens and requires the ShowConfiguration permission.",
+      "cite": "StealthDefendCore/WebApi/Controllers/ApptokenController.cs:126",
+      "area": "app-tokens",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1552"
+      ]
+    },
+    {
+      "statement": "Encrypted values written to appsettings (service tokens, passwords) now go through an IDataProtectorFactory abstraction with three encryption levels (LocalHostOnly, HostTransferrable, RemoteCompatible). By default, HostTransferrable and RemoteCompatible still use the legacy static-key AES module, and LocalHostOnly uses DPAPI Current User. Optional Encryption:{level} settings can override the module.",
+      "cite": "StealthDefendCore/SbPAM.Cryptography/DataProtectorFactory.cs:100",
+      "area": "encryption-abstraction",
+      "status": "new",
+      "internal": true,
+      "tickets": [
+        "TMR-1523"
+      ]
+    },
+    {
+      "statement": "Existing values encrypted with the old AES format still decrypt: a value that is not in the new token format is read as legacy.",
+      "cite": "StealthDefendCore/SbPAM.Cryptography/DataProtectorFactory.cs:224",
+      "area": "encryption-abstraction",
+      "status": "unchanged",
+      "internal": true,
+      "tickets": [
+        "TMR-1523"
+      ]
+    },
+    {
+      "statement": "The _FIPS_Compliant (or FIPS-Compliant) setting defaults to True.",
+      "cite": "StealthDefendCore/SbPAM.Cryptography/DataProtectorFactory.cs:197",
+      "area": "encryption-abstraction",
+      "status": "new",
+      "internal": true,
+      "tickets": [
+        "TMR-1523"
+      ]
+    },
+    {
+      "statement": "A rejected license activation no longer shows \"Installed license.\" on the Licensing page. The page keeps the current license and shows the error in red.",
+      "cite": "web/src/app/store/license/reducer.js:59",
+      "area": "licensing",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "Uploading an expired license key shows \"The license key has expired. Contact Netwrix to get a new license key.\"",
+      "cite": "StealthDefendCore/LicenseService/LicenseErrorMessages.cs:19",
+      "area": "licensing",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "Uploading an invalid key shows \"The license key is invalid. Make sure you selected the correct license key file.\"",
+      "cite": "StealthDefendCore/LicenseService/LicenseErrorMessages.cs:21",
+      "area": "licensing",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "When activation fails with \"License activation error 2\", the page shows \"The license could not be installed because the existing license file is corrupted. Contact Netwrix support for assistance.\"",
+      "cite": "StealthDefendCore/LicenseService/LicenseErrorMessages.cs:24",
+      "area": "licensing",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "Any other activation error shows \"The license could not be installed. {original message}\". If no message is available it shows \"The license could not be installed. See the License Service log for details.\" The original message is written to the License Service log.",
+      "cite": "StealthDefendCore/LicenseService/LicenseErrorMessages.cs:38",
+      "area": "licensing",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "The License API now returns HTTP 400 with the license information when activation is rejected, and logs a warning \"License activation rejected\". Uploading requires the ShowConfiguration permission and is audited as LicenseUpdated.",
+      "cite": "StealthDefendCore/WebApi/Controllers/LicenseController.cs:131",
+      "area": "licensing",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "A rejected activation is not cached, so reloading the page does not keep showing the error and the installed license is unchanged.",
+      "cite": "StealthDefendCore/LicenseService/Controllers/LicenseController.cs:62",
+      "area": "licensing",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "Installing a license key no longer removes existing license aliases before activation, so a failed or repeated activation no longer leaves license information removed.",
+      "cite": "StealthDefendCore/LicenseService/LicenseActor.cs:125",
+      "area": "licensing",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-199"
+      ]
+    },
+    {
+      "statement": "The bundled trial key file ({ProductName}_Trial.key) is deleted only after it activates successfully. If activation fails, the file stays in place.",
+      "cite": "StealthDefendCore/LicenseService/LicenseActor.cs:69",
+      "area": "licensing",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-199"
+      ]
+    },
+    {
+      "statement": "A ReportOnly install does not activate or consume the bundled trial key, so a later upgrade to Full still gets a trial period.",
+      "cite": "StealthDefendCore/LicenseService/LicenseActor.cs:47",
+      "area": "licensing",
+      "status": "unchanged",
+      "internal": false,
+      "tickets": [
+        "TMR-199"
+      ]
+    },
+    {
+      "statement": "New role permission ManageNtp: grants access to the Netwrix Threat Prevention (NTP) integration configuration and to NTP management actions. It is permission number 12.",
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:148",
+      "area": "roles",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "ADO 451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "The NTP gRPC configuration API (NtpGrpcConfig) and NTP management API (NtpManagement: GetProductLicenseData, GetDefendSettings, SetDefendSettings) require the ManageNtp permission. Calls are audited under the new NtpManagement audit subcategory, attributed to the signed-in user.",
+      "cite": "StealthDefendCore/WebApi/Controllers/NtpManagementController.cs:16",
+      "area": "roles",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "ADO 451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Users without ManageNtp do not see the \"Netwrix Threat Prevention\" integration in the Add Integration list or the integrations tree.",
+      "cite": "web/src/app/components/defend/configuration/integrations/AddIntegration.tsx:360",
+      "area": "roles",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "ADO 451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "The upgrade grants ManageNtp to the built-in Administrators role only. Other roles, including custom ones, do not get it and must be granted it.",
+      "cite": "installerFiles/sql13/v3.2.23.sql:36",
+      "area": "roles",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "ADO 451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "New role permission ViewAllInvestigations: shows every saved investigation regardless of owner, public flag, or explicit access grants. The upgrade grants it to the built-in Administrators and Report Administrator roles.",
+      "cite": "installerFiles/sql13/v3.2.23.sql:36",
+      "area": "roles",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "ADO 451120"
+      ]
+    },
+    {
+      "statement": "Report Administrator no longer sees all investigations through a role-name check. It sees them through the ViewAllInvestigations permission, which the upgrade grants to that role.",
+      "cite": "StealthDefendCore/Actor/AlertQueryActor.cs:195",
+      "area": "roles",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "ADO 451120"
+      ]
+    },
+    {
+      "statement": "Built-in roles (Administrators, Report Administrator, Report Reviewer, Responders, Response Managers, Reviewers) are all marked built-in. Updating or deleting one fails with \"Role '{name}' is built-in and cannot be updated.\" or \"Role '{name}' is built-in and cannot be deleted.\"",
+      "cite": "StealthDefendCore/Actor/RoleActor.cs:75",
+      "area": "roles",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "ADO 451120"
+      ]
+    },
+    {
+      "statement": "Permission list in the Role API: FullControl (0), ShowConfiguration (1), ExecuteActions (2), AlterActions (3), AlterInvestigations (4), ShowAuditLogs (5), ShowSearch (6), ShowThreat (7), CreateThreat (8), ShowHome (9), ShowSubscription (10), ShowServiceAccounts (11), ManageNtp (12), ViewAllInvestigations (13). Roles now return a Permissions list instead of one boolean per permission.",
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:135",
+      "area": "roles",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "ADO 451120"
+      ]
+    },
+    {
+      "statement": "FullControl bypasses every permission check and is assigned to the Administrators role.",
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:135",
+      "area": "roles",
+      "status": "unchanged",
+      "internal": false,
+      "tickets": [
+        "ADO 451120"
+      ]
+    },
+    {
+      "statement": "A new Agent token type (AppTokenType Agent) is used by NTP/NAM agents to send event data. It grants no console or API access and cannot be assigned through role management.",
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:111",
+      "area": "roles",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "statement": "Changing the ADMIN password on the login screen no longer returns a 500 error when the password history contains a malformed entry. The malformed entry is skipped and logged, and the change goes through.",
+      "cite": "StealthDefendCore/Stealthbits.Identity/Validator/PasswordHistoryValidator.cs:55",
+      "area": "login",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1513"
+      ]
+    },
+    {
+      "statement": "An ADMIN account created on version 2.7 and later reset can now set a password and sign in. If the ADMIN record exists without a password, the setup check treats ADMIN as not set up and the login screen offers the create-password step again.",
+      "cite": "StealthDefendCore/WebApi/Controllers/SetupWizardController.cs:70",
+      "area": "login",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "ADO 452285"
+      ]
+    },
+    {
+      "statement": "Setting the ADMIN password on an existing passwordless ADMIN record repairs its links to the user account and adds the password, instead of failing.",
+      "cite": "StealthDefendCore/WebApi/Controllers/UserTokenController.cs:182",
+      "area": "login",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "ADO 452285"
+      ]
+    },
+    {
+      "statement": "The error message on the login, MFA login, and MFA registration pages is now shown in red.",
+      "cite": "web/src/app/routes/Login/containers/Login.tsx:619",
+      "area": "login",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "ADO 452253"
+      ]
+    },
+    {
+      "statement": "The installer's \"Securing Threat Manager\" page lets you choose \"Leave settings unchanged\", \"Installed Certificate (recommended)\", or \"Unsecured\". It sets WebService:Certificate (a LocalMachine\\My thumbprint, empty for HTTP) for each service that supports HTTPS. HTTPS is enabled by default for remote Integration Service installs.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:417",
+      "area": "https",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "The page appears on Install when a service has no appsettings.json yet or advanced install is on, and always on Modify. \"Leave settings unchanged\" is the default when every appsettings.json exists; otherwise \"Installed Certificate (recommended)\" is the default.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/SecureWebConsolePage/SecureWebConsolePageViewModel.cs:111",
+      "area": "https",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "The certificate list ends with \"<Generate a Self-Signed Certificate>\". Choosing it asks: \"Generate a self-signed certificate named \"{0}\" now and add it to the Local Computer certificate store?\" The name is \"Netwrix Threat Manager Self-Signed For {computer name}\". Failure shows \"The self-signed certificate could not be generated: {0}\".",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:432",
+      "area": "https",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "Choosing \"Unsecured\" shows: \"Traffic to the web console and services will be sent over an unencrypted connection, including administrator credentials, and is vulnerable to man in the middle attacks (i.e interception, monitoring, alteration and substitution). Installing a certificate to secure these connections is strongly recommended.\"",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:442",
+      "area": "https",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "The Integration Service uses HTTPS on WebService:Port (default 55558) when WebService:Certificate is set. Otherwise it uses plain HTTP on the port in the urls setting (default 55558).",
+      "cite": "StealthDefendCore/IntegrationService/ConfiguredUrl.cs:23",
+      "area": "https",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "When a TLS connection to the remote host fails, the message reads: \"A secure (TLS) connection could not be established: {detail} The certificate presented by the remote host is probably not trusted by {machine}. Import it into the Trusted Root Certification Authorities store (Local Computer) there.\"",
+      "cite": "StealthDefendCore/Common/ConnectionErrorDescriber.cs:43",
+      "area": "https",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "Integration Service connection check messages: \"No service status token is stored. Register this service again.\", \"Threat Manager rejected the service status token. Register this service again.\", \"Threat Manager does not have this service registered (HTTP 404).\", \"Could not reach Threat Manager at {url}: {reason}\", \"Threat Manager could not connect back to this service.\"",
+      "cite": "StealthDefendCore/IntegrationService/IntegrationServiceConfigurator.cs:127",
+      "area": "https",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1518"
+      ]
+    }
+  ],
+  "notFound": [
+    "TMR-1519: DPAPI Local Machine encryption of the general encrypted appsettings fields. Code uses DPAPI Local Machine only for the JWT signing key in the registry. Other encrypted values (service tokens) still default to the legacy static-key AES module; no code sets Encryption:* defaults to LocalMachine.",
+    "TMR-1519: a customer-facing prompt to re-enter the JWT certificate password. The installer migrates it automatically from the old appsettings and pfx; none found.",
+    "TMR-1523: customer-visible change. Found only an internal abstraction.",
+    "TMR-199: a license-activation message specific to this fix. Found only the removal of the alias cleanup and conditional trial-key deletion.",
+    "ADO 451120: UI label for the ManageNtp permission in role management. No role-editing UI with permission labels in web/src; only enum names appear in code.",
+    "ADO 451120: a role named for NTP actions. No new role added; ManageNtp is granted to Administrators only."
+  ]
+}

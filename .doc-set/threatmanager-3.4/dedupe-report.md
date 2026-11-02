@@ -1,0 +1,154 @@
+# Fact merge: threatmanager 3.4
+
+416 facts from 6 areas (124 changed, 273 new, 4 removed, 15 unchanged); 36 internal.
+
+37 facts are marked `outOfScope` by a writer decision and drop out of assignment and coverage; the coverage report lists them.
+
+24 facts at similarity 0.5 or above are marked `duplicateOf` a canonical fact (the longest statement) and drop out of assignment and coverage. Pairs below 0.5 stay separate.
+
+## Suspected duplicates (48)
+
+- F086 [installer] vs F253 [security] sim 0.97
+  - Choosing Unsecured shows the warning: "Traffic to the web console and services will be sent over an unencrypted connection, including administrator credentials, and is vulnerable to man in the middle attacks (i.e interception, monitoring, alteration and substitution). Installing a certificate to secure these connections is strongly recommended."
+  - Choosing "Unsecured" shows: "Traffic to the web console and services will be sent over an unencrypted connection, including administrator credentials, and is vulnerable to man in the middle attacks (i.e interception, monitoring, alteration and substitution). Installing a certificate to secure these connections is strongly recommended."
+- F050 [api-data] vs F255 [security] sim 0.79 same cite
+  - A failed TLS connection to a remote service reports: "A secure (TLS) connection could not be established: <detail> The certificate presented by the remote host is probably not trusted by <machine>. Import it into the Trusted Root Certification Authorities store (Local Computer) there."
+  - When a TLS connection to the remote host fails, the message reads: "A secure (TLS) connection could not be established: {detail} The certificate presented by the remote host is probably not trusted by {machine}. Import it into the Trusted Root Certification Authorities store (Local Computer) there."
+- F106 [installer] vs F214 [security] sim 0.79
+  - The Export page warns: "The export file and the one-time code are secrets. The code is shown once, after the file has been created. The file is not code signed, so Windows or security software may warn about it."
+  - The export page says: "Choose where to save the export file. A one-time code is generated when the file is created." and warns: "The export file and the one-time code are secrets. The code is shown once, after the file has been created. The file is not code signed, so Windows or security software may warn about it."
+- F050 [api-data] vs F157 [integrations] sim 0.76 same cite
+  - A failed TLS connection to a remote service reports: "A secure (TLS) connection could not be established: <detail> The certificate presented by the remote host is probably not trusted by <machine>. Import it into the Trusted Root Certification Authorities store (Local Computer) there."
+  - TLS certificate failures show "A secure (TLS) connection could not be established: <detail> The certificate presented by the remote host is probably not trusted by <Threat Manager | this machine>. Import it into the Trusted Root Certification Authorities store (Local Computer) there."
+- F157 [integrations] vs F255 [security] sim 0.76 same cite
+  - TLS certificate failures show "A secure (TLS) connection could not be established: <detail> The certificate presented by the remote host is probably not trusted by <Threat Manager | this machine>. Import it into the Trusted Root Certification Authorities store (Local Computer) there."
+  - When a TLS connection to the remote host fails, the message reads: "A secure (TLS) connection could not be established: {detail} The certificate presented by the remote host is probably not trusted by {machine}. Import it into the Trusted Root Certification Authorities store (Local Computer) there."
+- F183 [integrations] vs F324 [threats] sim 0.76 same cite
+  - The default PowerShell script text of the action templates now includes the line "Primary Event Originating Agent: $PrimaryEventOriginatingAgent" after the Primary Event Host line.
+  - The default PowerShell Script action template now includes the line 'Primary Event Originating Agent: $PrimaryEventOriginatingAgent' after 'Primary Event Host'.
+- F155 [integrations] vs F256 [security] sim 0.74 same cite
+  - The Integration Service status check asks Threat Manager to call back to the service, so it passes only when the service reaches Threat Manager and Threat Manager reaches the service. Failure messages: "No service status token is stored. Register this service again.", "Threat Manager rejected the service status token. Register this service again.", "Threat Manager does not have this service registered (HTTP 404).", and "Could not reach Threat Manager at <url>: <reason>".
+  - Integration Service connection check messages: "No service status token is stored. Register this service again.", "Threat Manager rejected the service status token. Register this service again.", "Threat Manager does not have this service registered (HTTP 404).", "Could not reach Threat Manager at {url}: {reason}", "Threat Manager could not connect back to this service."
+- F271 [threats] vs F377 [web-ui] sim 0.72 same cite
+  - Map legend entries: 'New location' and 'Known location (7 days prior to detection)'. Clicking a legend entry hides or shows that category.
+  - First Time Location map shows pins for new locations and known locations, with a legend: "New location" and "Known location (7 days prior to detection)". Clicking a legend entry hides or shows that category.
+- F003 [api-data] vs F391 [web-ui] sim 0.69
+  - New role permission ManageNtp (12) controls who can manage the Netwrix Threat Prevention (NTP) gRPC integration configuration and trigger NTP actions. Every NTP management endpoint requires it.
+  - New role permission ManageNtp (value 12) controls who can manage Netwrix Threat Prevention gRPC integration configuration and trigger NTP actions. FullControl (value 0) grants every permission.
+- F014 [api-data] vs F202 [integrations] sim 0.65
+  - A background check marks app tokens as broken or resolved and writes audit entries: "App token '<name>' is no longer signed with the current signing key." and "App token '<name>' issue has been resolved."
+  - A background check marks application tokens as broken when they are expired or no longer signed with the current signing key (Integration and Agent tokens are skipped). Audit log entries read "App token '<name>' is no longer signed with the current signing key." and "App token '<name>' issue has been resolved."
+- F308 [threats] vs F357 [web-ui] sim 0.65
+  - The 'Weakened Policy' autocomplete lists: Guest Invite Policy, User Consent for Apps, Security Defaults, App Creation.
+  - The weakened policy filter offers these policies: Guest Invite Policy, User Consent for Apps, Security Defaults, App Creation.
+- F035 [api-data] vs F324 [threats] sim 0.63 same cite
+  - Default PowerShell action script now lists Primary Event Originating Agent: $PrimaryEventOriginatingAgent after Primary Event Host.
+  - The default PowerShell Script action template now includes the line 'Primary Event Originating Agent: $PrimaryEventOriginatingAgent' after 'Primary Event Host'.
+- F219 [security] vs F403 [web-ui] sim 0.63 same cite
+  - A banner at the top of the console reads "App tokens are no longer valid and must be refreshed. ({names})" and links to the App Tokens integration page. It lists up to three names, then "and N more".
+  - A red banner at the top of every page tells users with the Show Configuration permission: "App tokens are no longer valid and must be refreshed. (<names>)". It lists up to three token names then "and N more", and links to the App Tokens integration page.
+- F084 [installer] vs F252 [security] sim 0.61
+  - The certificate list ends with the entry <Generate a Self-Signed Certificate>. Selecting it prompts: Generate a self-signed certificate named "Netwrix Threat Manager Self-Signed For <computer name>" now and add it to the Local Computer certificate store?
+  - The certificate list ends with "<Generate a Self-Signed Certificate>". Choosing it asks: "Generate a self-signed certificate named "{0}" now and add it to the Local Computer certificate store?" The name is "Netwrix Threat Manager Self-Signed For {computer name}". Failure shows "The self-signed certificate could not be generated: {0}".
+- F056 [api-data] vs F246 [security] sim 0.59 same cite
+  - Changing the ADMIN password no longer returns 500 when the password history holds a malformed entry. The entry is skipped and an error is logged.
+  - Changing the ADMIN password on the login screen no longer returns a 500 error when the password history contains a malformed entry. The malformed entry is skipped and logged, and the change goes through.
+- F002 [api-data] vs F243 [security] sim 0.58 same cite
+  - Numeric role permission values: FullControl=0, ShowConfiguration=1, ExecuteActions=2, AlterActions=3, AlterInvestigations=4, ShowAuditLogs=5, ShowSearch=6, ShowThreat=7, CreateThreat=8, ShowHome=9, ShowSubscription=10, ShowServiceAccounts=11, ManageNtp=12, ViewAllInvestigations=13.
+  - Permission list in the Role API: FullControl (0), ShowConfiguration (1), ExecuteActions (2), AlterActions (3), AlterInvestigations (4), ShowAuditLogs (5), ShowSearch (6), ShowThreat (7), CreateThreat (8), ShowHome (9), ShowSubscription (10), ShowServiceAccounts (11), ManageNtp (12), ViewAllInvestigations (13). Roles now return a Permissions list instead of one boolean per permission.
+- F014 [api-data] vs F220 [security] sim 0.58 same cite
+  - A background check marks app tokens as broken or resolved and writes audit entries: "App token '<name>' is no longer signed with the current signing key." and "App token '<name>' issue has been resolved."
+  - Audit log entries record when an app token breaks and when it is resolved: "App token '{appToken}' is no longer signed with the current signing key." and "App token '{appToken}' issue has been resolved."
+- F035 [api-data] vs F183 [integrations] sim 0.56 same cite
+  - Default PowerShell action script now lists Primary Event Originating Agent: $PrimaryEventOriginatingAgent after Primary Event Host.
+  - The default PowerShell script text of the action templates now includes the line "Primary Event Originating Agent: $PrimaryEventOriginatingAgent" after the Primary Event Host line.
+- F011 [api-data] vs F221 [security] sim 0.54 same cite
+  - The audit log message for viewing a token reads: Application token '<name>' value viewed or copied.
+  - Viewing or copying an application token value is audited: "Application token '{name}' value viewed or copied."
+- F144 [integrations] vs F413 [web-ui] sim 0.53
+  - After a successful test, if the service serves HTTPS with a self-signed certificate, the window shows a notice and a Download... button. The button saves the public certificate as a .cer file (default file name "<machine name> <service name> Certificate.cer") to import into the Trusted Root Certification Authorities store on the Threat Manager server.
+  - When the remote service uses a self-signed certificate, the dialog shows a notice and a "Download..." button that saves the public certificate as a .cer file. The admin must import it into the Trusted Root Certification Authorities store on the Threat Manager server.
+- F297 [threats] vs F357 [web-ui] sim 0.53
+  - Four controls are monitored, shown as: Guest Invite Policy, User Consent for Apps, Security Defaults, App Creation.
+  - The weakened policy filter offers these policies: Guest Invite Policy, User Consent for Apps, Security Defaults, App Creation.
+- F161 [integrations] vs F254 [security] sim 0.52 same cite
+  - The Integration Service listens on port 55558 by default ("urls": "http://*:55558" and WebService:Port 55558). When WebService:Certificate is set, it serves HTTPS on WebService:Port and registers an https address. Otherwise it registers an http address on the port in "urls".
+  - The Integration Service uses HTTPS on WebService:Port (default 55558) when WebService:Certificate is set. Otherwise it uses plain HTTP on the port in the urls setting (default 55558).
+- F007 [api-data] vs F242 [security] sim 0.5 same cite
+  - Built-in roles (those that exist before upgrade, such as Administrators and Report Administrator) are marked IsBuiltIn. Updating or deleting a built-in role fails with "Role '<name>' is built-in and cannot be updated." or "Role '<name>' is built-in and cannot be deleted."
+  - Built-in roles (Administrators, Report Administrator, Report Reviewer, Responders, Response Managers, Reviewers) are all marked built-in. Updating or deleting one fails with "Role '{name}' is built-in and cannot be updated." or "Role '{name}' is built-in and cannot be deleted."
+- F140 [integrations] vs F411 [web-ui] sim 0.5 same cite
+  - If the service already has a working configuration, Save asks "This service already has a working configuration. Saving will overwrite it. Continue?" in a dialog titled "Overwrite Existing Configuration" with OK and Cancel.
+  - Saving over a working configuration asks "This service already has a working configuration. Saving will overwrite it. Continue?" (title "Overwrite Existing Configuration"). Success reads "<service> configured and restarted successfully." or, when the service is not restarted by the dialog, "<service> configured successfully. Restart the service to apply the changes."
+- F193 [integrations] vs F373 [web-ui] sim 0.5
+  - On the subscription page, a monthly subscription or export using a Netwrix Threat Prevention source shows "For a monthly subscription, make sure event retention in Netwrix Threat Prevention is set to at least one month." Other sources keep the Time to Retain Events message with a link to settings.
+  - For a Netwrix Threat Prevention source the monthly warning reads: "For a monthly subscription (or export), make sure event retention in Netwrix Threat Prevention is set to at least one month." with no link.
+- F270 [threats] vs F376 [web-ui] sim 0.5 same cite
+  - The threat details page shows a world map in the 'Threat Activity' panel instead of the attack path. The map plots the new locations and the user's known locations.
+  - A First Time Location threat details page shows a Threat Activity widget containing a world map of locations instead of an attack path.
+- F003 [api-data] vs F236 [security] sim 0.46 same cite
+  - New role permission ManageNtp (12) controls who can manage the Netwrix Threat Prevention (NTP) gRPC integration configuration and trigger NTP actions. Every NTP management endpoint requires it.
+  - New role permission ManageNtp: grants access to the Netwrix Threat Prevention (NTP) integration configuration and to NTP management actions. It is permission number 12.
+- F164 [integrations] vs F322 [threats] sim 0.46 same cite
+  - The Integration Service Originating Agent filter for event queries is supported.
+  - The same 'Originating Agent' filter is applied in integration (SIEM) event queries, matching the event's originating server.
+- F276 [threats] vs F380 [web-ui] sim 0.45 same cite
+  - If location data cannot be loaded the map area shows the error 'Failed to load location data. Please try again.'
+  - If the locations for a First Time Location threat fail to load, the widget shows the error "Failed to load location data. Please try again."
+- F082 [installer] vs F251 [security] sim 0.41 same cite
+  - Leave settings unchanged appears only when every service already has an appsettings.json file. When it is missing, Installed Certificate (recommended) is preselected.
+  - The page appears on Install when a service has no appsettings.json yet or advanced install is on, and always on Modify. "Leave settings unchanged" is the default when every appsettings.json exists; otherwise "Installed Certificate (recommended)" is the default.
+- F333 [threats] vs F388 [web-ui] sim 0.41 same cite
+  - Risky users, risky service principals, and risky agents are now synced by three separate Azure sync services, shown in sync history as 'Risky Users', 'Risky Service Principals', and 'Risky Agents'. The single 'Risky Objects' sync is retired and only appears in older history.
+  - Azure sync history lists separate service types "Risky Users", "Risky Service Principals", and "Risky Agents"; the earlier "Risky Objects" label remains only for historical rows.
+- F036 [api-data] vs F189 [integrations] sim 0.4 same cite
+  - The Flag as Confirmed Compromised action for an enterprise application now reads the service principal id and app id from AzureEventDetails.App, so it finds the application instead of skipping it.
+  - Flag Compromised User action for Entra ID reads the application and service principal IDs from the event details, so a service principal or application perpetrator is flagged.
+- F226 [security] vs F405 [web-ui] sim 0.39 same cite
+  - A rejected license activation no longer shows "Installed license." on the Licensing page. The page keeps the current license and shows the error in red.
+  - Licensing page: when installing a license fails, the page shows the server's error message (or "Error installing license") and no longer shows "Installed license."; an expired key is no longer reported as installed.
+- F045 [api-data] vs F265 [threats] sim 0.35 same cite
+  - First Time Location now ignores failed sign-ins. On upgrade, learned user locations older than event retention or without a successful sign-in are deleted, and the threat is suspended for 30 days (disabled_until) while locations are learned again.
+  - After upgrade, First Time Location alerting is suspended for 30 days while locations are learned again from successful sign-ins only.
+- F047 [api-data] vs F312 [threats] sim 0.33 same cite
+  - Impossible Travel has a new setting 'Trigger on Non-Human Identities' (name trigger-on-non-human-identities) so sign-ins from applications and service principals can also trigger it.
+  - Impossible Travel now has the setting 'Trigger on Non-Human Identities'. Default: off (false).
+- F182 [integrations] vs F323 [threats] sim 0.33 same cite
+  - The variable $PrimaryEventOriginatingAgent (description "The agent that originated the primary event.") is available in actions and SIEM templates. It shows "Primary Event Originating Agent Not Available" when empty.
+  - Action PowerShell scripts and email actions can use the variable $PrimaryEventOriginatingAgent, described as 'The agent that originated the primary event.'
+- F317 [threats] vs F383 [web-ui] sim 0.33 same cite
+  - The Impossible Travel map is redrawn to fit its panel without scrolling the evidence, shows route and marker tooltips, and has a zoom button toggling 'Zoom to route' / 'Zoom out to world'.
+  - The Impossible Travel map zooms to the region the route covers, with a button to switch between "Zoom to route" and "Zoom out to world".
+- F267 [threats] vs F341 [web-ui] sim 0.32 same cite
+  - First Time Location only applies to events that carry location data (Entra ID sign-ins).
+  - Location data comes only from Azure (Entra ID) sign-ins, so the section only has rows for Entra ID objects.
+- F047 [api-data] vs F313 [threats] sim 0.31 same cite
+  - Impossible Travel has a new setting 'Trigger on Non-Human Identities' (name trigger-on-non-human-identities) so sign-ins from applications and service principals can also trigger it.
+  - Setting explanation: 'When enabled, sign-ins from applications and service principals are also evaluated for impossible travel. When disabled, only user sign-ins are evaluated.'
+- F053 [api-data] vs F169 [integrations] sim 0.31 same cite
+  - POST api/v1/NtpManagement/GetCertificate and POST api/v1/NtpManagement/Test take an unsaved configuration. Without a selected Integration Service they return 400 "An Integration Service must be selected before fetching the certificate." or "... before testing the connection." Connection failures return 400 "Could not connect to '<host>:<port>': <detail>".
+  - Testing or fetching the certificate without an Integration Service fails with "An Integration Service must be selected before fetching the certificate." or "An Integration Service must be selected before testing the connection."
+- F051 [api-data] vs F167 [integrations] sim 0.3 same cite
+  - Creating or updating a Netwrix Threat Prevention configuration whose name already exists returns 409 "A configuration with this name already exists." Configuration names must be unique.
+  - Creating or renaming an NTP configuration to a name that already exists (case-insensitive) fails with "A configuration with this name already exists."
+- F138 [integrations] vs F410 [web-ui] sim 0.3 same cite
+  - Validation messages: "Threat Manager hostname is required." when the host is empty, and "User name and password are required." when either is empty.
+  - Dialog validation and status messages: "Threat Manager hostname is required.", "User name and password are required.", "Connecting...", "Connection successful.", "Connection failed." (or the error), "Failed to save the configuration.", "Restarting service...", "Failed to restart the service. Click Save to try again."
+- F173 [integrations] vs F236 [security] sim 0.3 same cite
+  - A new role permission, ManageNtp (value 12), grants access to manage NTP configuration. The NTP configuration, NTP management, and NTP connection test APIs require it. A user with Full Control also passes.
+  - New role permission ManageNtp: grants access to the Netwrix Threat Prevention (NTP) integration configuration and to NTP management actions. It is permission number 12.
+- F003 [api-data] vs F173 [integrations] sim 0.29 same cite
+  - New role permission ManageNtp (12) controls who can manage the Netwrix Threat Prevention (NTP) gRPC integration configuration and trigger NTP actions. Every NTP management endpoint requires it.
+  - A new role permission, ManageNtp (value 12), grants access to manage NTP configuration. The NTP configuration, NTP management, and NTP connection test APIs require it. A user with Full Control also passes.
+- F039 [api-data] vs F200 [integrations] sim 0.29 same cite
+  - gMSA, dMSA and sMSA accounts are no longer classified as computers, because only the last objectClass value is compared with computer. They appear as service accounts with the correct tags. On upgrade, the next Active Directory sync is a full scan.
+  - gMSA, dMSA, and sMSA accounts are classified as User objects, not Computer objects, so they are tagged as service accounts. An object is a Computer only when its last object class is computer.
+- F030 [api-data] vs F234 [security] sim 0.28 same cite
+  - A trial license key file is deleted only after the key activates successfully, so a failed activation no longer loses the trial key. Existing license information is no longer removed before the next activation.
+  - The bundled trial key file ({ProductName}_Trial.key) is deleted only after it activates successfully. If activation fails, the file stays in place.
+- F143 [integrations] vs F412 [web-ui] sim 0.28 same cite
+  - Choosing http shows a warning that the connection is not encrypted, that the administrator credentials can be intercepted, and that HTTPS should be configured on Threat Manager first. Selecting Ignore certificate errors shows a warning that the Threat Manager server identity is not verified and credentials could be stolen. The warnings do not block saving.
+  - Choosing http shows a warning that credentials are sent unencrypted and to configure HTTPS first; checking "Ignore certificate errors" shows a warning that it disables verification of the server identity.
+- F172 [integrations] vs F238 [security] sim 0.27 same cite
+  - Netwrix Threat Prevention is offered in the Add Integration list only for a user whose role has the Manage NTP permission.
+  - Users without ManageNtp do not see the "Netwrix Threat Prevention" integration in the Add Integration list or the integrations tree.

@@ -1,0 +1,2498 @@
+{
+  "product": "threatmanager",
+  "version": "3.4",
+  "from": "3.3",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/overview.md",
+      "title": "Configuration Menu",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Menu entries and descriptions still hold; NTP integration is out of scope.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/threatresponse.md",
+      "title": "Threat Response Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Action list is unchanged; the Send Email, Tag Object, and Flag Compromised fixes change no statement here.",
+      "note": "F034, F185, F188, F189, F182, F183 belong to the playbook action pages."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/overview.md",
+      "title": "Integrations Interface",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Lists the same integration pages; Netwrix Threat Prevention (NTP) page is out of scope.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/activedirectorysync.md",
+      "title": "Active Directory Sync Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Statements still hold; the gMSA/dMSA/sMSA classification fixes (F039, F200, F201) are already consistent with the Service Accounts tab text.",
+      "note": "F200 and F201 (full AD scan on upgrade) best fit the Service Accounts page, not this one."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md",
+      "title": "Entra ID Sync Page",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F194",
+        "F195",
+        "F196",
+        "F197",
+        "F198",
+        "F333",
+        "F335",
+        "F388",
+        "F049",
+        "F334",
+        "F038"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Type \u2013 The object class that was being synced",
+          "factId": "F194",
+          "why": "Sync history Type now shows Risky Users, Risky Service Principals, and Risky Agents; Risky Objects remains only for older rows."
+        },
+        {
+          "quote": "This includes general information about user, group, and computer objects within the Entra ID tenant.",
+          "factId": "F388",
+          "why": "History also lists the three risky sync types and agent identities."
+        }
+      ],
+      "reason": "Sync History now lists separate Risky Users, Risky Service Principals, and Risky Agents sync types, and agent tagging and display-name sync changed.",
+      "note": "F335 also names the IdentityRiskyAgent.Read.All permission; the Entra ID sync permissions page in requirements/ needs it too."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/apptoken.md",
+      "title": "App Tokens Page",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F010",
+        "F012",
+        "F013",
+        "F015",
+        "F202",
+        "F218",
+        "F221",
+        "F222",
+        "F245",
+        "F401",
+        "F402",
+        "F403",
+        "F404"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Step 3 \u2013 Enter a Name for the token in the Name field, and a Description for the token in the Description field.",
+          "factId": "F015",
+          "why": "The add dialog also has \"How will this token be used\": \"Send event data to Threat Manager from an Agent\" or \"Grant access to the Threat Manager console\" (AppTokenConfiguration.jsx, Application and Agent types only). No fact states the UI labels; read the code when drafting."
+        },
+        {
+          "quote": "Step 1 \u2013 In the App Token box, click Copy Token.The app token is copied to the clipboard.",
+          "factId": "F401",
+          "why": "The value shows \"[Hidden Value]\" until you click View Token (then Hide Token); Copy still copies the real token."
+        },
+        {
+          "quote": "Ensure that the app token is enabled for sending data to Threat Manager.",
+          "factId": "F402",
+          "why": "An invalid token also shows an error alert on its page and needs replacing (F202, F218, F403, F404)."
+        }
+      ],
+      "reason": "Token value is now hidden until View Token, the add dialog asks how the token is used (Agent or console), and broken tokens raise alerts.",
+      "note": "F010, F012, F013, F222 are API facts; place on API pages if the product has them. F245 describes the Agent type used by NTP/NAM agents."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md",
+      "title": "Credential Profile Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Credential profile behavior is unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/email.md",
+      "title": "Email Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Email settings and defaults still hold; URL-safe /n handling (F034, F185, F186) concerns playbook actions.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md",
+      "title": "Folder Settings Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Folder and shared folder settings are unchanged.",
+      "note": "F031, F192, F374 (stale shared folder id on email subscriptions) belong with subscriptions."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/siem.md",
+      "title": "SIEM Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 80,
+      "facts": [
+        "F182"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "**Primary Event**  \nThe primary event is the event that initially triggered the threat.",
+          "factId": "F182",
+          "why": "Add the PrimaryEventOriginatingAgent variable (\"The agent that originated the primary event.\", shows \"Primary Event Originating Agent Not Available\" when empty). Confirm the %...% name and SIEM exposure in the code."
+        }
+      ],
+      "reason": "The SIEM template variable list lacks the new primary event originating agent variable.",
+      "note": "Reference table is embedded in a setup task page; step 3 says Send Test Message sends \"a test email\" (pre-3.4, verify). F180 (inbound syslog fields) does not belong here. F183 belongs to the playbook PowerShell action templates."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/netwrixintegrations.md",
+      "title": "Netwrix Integrations Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 90,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Netwrix integration settings still hold; the NTP integration is out of scope.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/tagmanagement.md",
+      "title": "Tag Management Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 100,
+      "facts": [
+        "F348"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Built-in tags and procedures still hold; F348 (description field wraps up to 3 rows) is cosmetic.",
+      "note": "F348 changes no statement; drop it if the writer prefers. F319 AI Agent label belongs on the threats list page."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/page.md",
+      "title": "Authentication Provider Page",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Provider types and steps are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/radius.md",
+      "title": "RADIUS Authentication Provider",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "RADIUS settings are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/saml.md",
+      "title": "SAML Authentication Provider",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "SAML settings are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/openid/openid.md",
+      "title": "OpenID Authentication Provider",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "OpenID settings are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/openid/entraidopenid.md",
+      "title": "Microsoft Entra ID Configuration",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Entra ID OpenID registration steps are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/policies/overview.md",
+      "title": "Policies Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Policy table, deployment history, and add steps are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md",
+      "title": "Configure Honeytoken Threats",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "LDAP monitoring setup is unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md",
+      "title": "Policy Configuration",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F017"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "The History tab displays audit history for changes to this policy.",
+          "factId": "F017",
+          "why": "History now also records \"App token replaced. Honey Tokens must be re-deployed.\" when the policy token is broken or deleted; the old token stays active until deleted."
+        }
+      ],
+      "reason": "Honeytoken policies now replace a broken or deleted app token automatically and log it in history.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/overview.md",
+      "title": "System Health Interface",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Lists the same pages.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/backlog.md",
+      "title": "Backlog",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No change.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/actionqueue.md",
+      "title": "Action Queue",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No change.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/agents.md",
+      "title": "Agents",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No change.",
+      "note": "F245 (Agent token type) is on the App Tokens page."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/services.md",
+      "title": "Services Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Services table and details are unchanged in the UI.",
+      "note": "Remote service status (F152 to F160, F018, F019) is install/configure-remote-service content."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/overview.md",
+      "title": "System Settings Interface",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Lists the same pages.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/auditing.md",
+      "title": "Auditing Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Audit table is unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/useraccess.md",
+      "title": "User Access Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F001",
+        "F004",
+        "F005",
+        "F006",
+        "F008",
+        "F240",
+        "F241",
+        "F242",
+        "F243",
+        "F244"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Administrator \u2013 This role provides unrestricted access to all functionality",
+          "factId": "F008",
+          "why": "Built-in role is named \"Administrators\"; unrestricted access comes from the FullControl permission (also granted to the built-in admin account)."
+        },
+        {
+          "quote": "Report Administrator \u2013 This role can configure/use anything on the investigations page",
+          "factId": "F241",
+          "why": "Sees all investigations through the ViewAllInvestigations permission, not a role-name check; upgrade grants it to Administrators and Report Administrator."
+        },
+        {
+          "quote": "Can only see and run saved investigations that have been assigned to them",
+          "factId": "F005",
+          "why": "Access is by permission; a user without ShowSearch gets no access through role-based sharing."
+        }
+      ],
+      "reason": "Role descriptions predate the permission-based model: ViewAllInvestigations, FullControl, and built-in role names changed.",
+      "note": "F001, F006, F243 are role API facts; F242 (built-in roles cannot be edited or deleted) also applies. Login facts F246 to F248 are in unplaced."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/licensing.md",
+      "title": "Licensing Page",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F028",
+        "F029",
+        "F030",
+        "F226",
+        "F227",
+        "F228",
+        "F229",
+        "F230",
+        "F231",
+        "F232",
+        "F233",
+        "F234",
+        "F405",
+        "F235"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Step 3 \u2013 Refresh the page to confirm that the license has been uploaded properly.",
+          "factId": "F405",
+          "why": "A failed import shows the server error (or \"Error installing license\") in red and keeps the current license; reloading does not show a false \"Installed license.\" (F226, F232)."
+        },
+        {
+          "quote": "Threat Manager comes with a temporary 15-day license.",
+          "factId": "F234",
+          "why": "Trial key file is deleted only after it activates; confirm the 15-day length in code when drafting."
+        }
+      ],
+      "reason": "Rejected license activation now shows specific errors and keeps the current license; trial key handling changed.",
+      "note": "Add a troubleshooting section for the messages in F029 and F227 to F230. F028 and F231 describe the License API response."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/systemjobs.md",
+      "title": "System Jobs Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Retention settings and defaults still hold.",
+      "note": "System Settings tree also shows Abnormal Time Evidence and Automated Account Detection under System Jobs (unchanged since 3.3)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/about.md",
+      "title": "About Threat Manager Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No change.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/threatdetection/threatdetection.md",
+      "title": "Threat Detection Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F386"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Page statements hold; new threats appear under the existing Entra ID group (the UI label; facts say Azure).",
+      "note": "F257 and F386 are placed on the threat catalog pages."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/threatdetection/threatconfiguration.md",
+      "title": "Fine Tune a Threat",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F284",
+        "F285",
+        "F287",
+        "F312",
+        "F313",
+        "F314",
+        "F047",
+        "F046",
+        "F316",
+        "F356",
+        "F357",
+        "F358"
+      ],
+      "claims": [
+        "C005"
+      ],
+      "stale": [
+        {
+          "quote": "This tab shows the settings that are required for the Forged Ticket threat.",
+          "factId": "F312",
+          "why": "Settings tab also carries Trigger on Non-Human Identities for Impossible Travel (default off, F313, F314) and Tracked Weak Methods and Tracked Strong Methods for Authentication Methods Policy Weakening (F284, F285, F287)."
+        },
+        {
+          "quote": "Select an Attribute from the Attribute dropdown list:\n- User\n- Host\n- Client\n- File",
+          "factId": "F356",
+          "why": "Exclusion editor gains Weakened Policy and Target Setting filters (F357, F358); Impossible Travel drops File Tag and Process (F046, F316)."
+        }
+      ],
+      "reason": "Settings tab and exclusion attribute lists omit the new Impossible Travel and Authentication Methods Policy Weakening settings and the Security Policy Weakening exclusion filters.",
+      "note": "F269, F291, F307 (per-threat exclusion fields) belong on the threat catalog pages."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/overview.md",
+      "title": "Installation",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 30,
+      "facts": [
+        "F060",
+        "F075",
+        "F098",
+        "F119"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "The Threat Manager installer is packaged with four executable files.",
+          "factId": "F095",
+          "why": "NetwrixThreatManager.ActionService.exe is removed; Action Service is an optional feature of NetwrixThreatManager.exe."
+        },
+        {
+          "quote": "**NetwrixThreatManager.ActionService.exe** This executable is for installing the Netwrix Threat Manager Action Service on additional servers.",
+          "factId": "F095",
+          "why": "The separate Action Service installer no longer exists. Remote install uses Remote Services Only on the Advanced Settings page (F060, F062)."
+        },
+        {
+          "quote": "VC++ redist v14.28.29914",
+          "factId": "F112",
+          "why": "Prerequisite is now Microsoft Visual C++ 2017-2026 x64 14.50 Redistributable."
+        },
+        {
+          "quote": "The PostgreSQL database must be installed before installing Threat Manager.",
+          "factId": "F100",
+          "why": "Not true for a Remote install of Action Service and/or Integration Service: the database pages are skipped."
+        },
+        {
+          "quote": "Optional: Install the Action Service on additional servers. ... Configure a remote Action Service to register with Threat Manager.",
+          "factId": "F060",
+          "why": "Remote services (Action Service, Integration Service) are installed from the main installer and configured with the --config-ui window."
+        }
+      ],
+      "reason": "Executable list, prerequisites, and post-install steps changed with the single-installer model and the new VC++ prerequisite.",
+      "note": "Also add the Report Only installer name (F118) and SbSetup behavior (F075). Link retargets to the rewritten remote services page. Requirement minimums (.NET 10, VC++) live on requirements/server.md; keep consistent."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/database.md",
+      "title": "Install the PostgreSQL Database Application",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 10,
+      "facts": [
+        "F121"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "right-click `NetwrixPostgreSQL14.exe` and select Run as administrator",
+          "factId": "F121",
+          "why": "The launcher offers the newest PostgreSQL installer (PostgreSQL 18, port 5439); PostgreSQL 14 is shown only when installed."
+        },
+        {
+          "quote": "Install Folder \u2013 C:\\Program Files\\Stealthbits\\PostgresSQL14",
+          "factId": "F121",
+          "why": "Steps describe only PostgreSQL 14; the default install is now PostgreSQL 18 (port 5439)."
+        }
+      ],
+      "reason": "Steps and default paths describe PostgreSQL 14 only while the installer now installs PostgreSQL 18 by default.",
+      "note": "Confirm PostgreSQL 18 default folders and screenshots in the code (not in the fact pack). F122 (service start wait) is a small note for the troubleshooting-type content."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/application.md",
+      "title": "Install the Threat Manager Application",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 20,
+      "facts": [
+        "F061",
+        "F063",
+        "F064",
+        "F065",
+        "F066",
+        "F067",
+        "F068",
+        "F069",
+        "F070",
+        "F097",
+        "F099",
+        "F100",
+        "F113",
+        "F117",
+        "F122",
+        "F087",
+        "F088",
+        "F104",
+        "F251"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "**Step 2 \u2013** Click **Install**. ... **Step 4 \u2013** By default, the installation directory is set to:",
+          "factId": "F061",
+          "why": "New Advanced Settings page (All Services or Remote Services Only) and Advanced Installation check box on the Welcome page change the wizard flow."
+        },
+        {
+          "quote": "**Step 5 \u2013** On the Database page, ensure the host and port are set correctly.",
+          "factId": "F100",
+          "why": "The database pages are skipped when no installed service uses the database (Remote install)."
+        },
+        {
+          "quote": "**Step 8 \u2013** By default, the **Create Inbound Windows Firewall Rules** checkbox is selected",
+          "factId": "F101",
+          "why": "Firewall page also offers Install AD/Entra PowerShell Modules, only when Action Service is installed; rules are created only for installed services (F103)."
+        },
+        {
+          "quote": "There is no Securing Threat Manager step.",
+          "factId": "F088",
+          "why": "The Securing Threat Manager page (HTTPS choice) appears on Install when a service has no appsettings.json or Advanced Installation is selected, and always on Modify; see secure.md."
+        },
+        {
+          "quote": "Step 9\u201310: Click Exit when the installation completes",
+          "factId": "F113",
+          "why": "Finish page can require a reboot (Reboot now) after the Visual C++ prerequisite, and lists remote services needing configuration (F091)."
+        }
+      ],
+      "reason": "New Advanced Settings and Securing Threat Manager pages, install-mode lock, Action Service as optional feature, and silent-install variables are missing.",
+      "note": "Silent-install variables (F071-F074, F076-F079) fit a separate reference section or page; the later step may split. F102/F103 firewall rules go on requirements/ports.md; F087/F088 go on install/secure.md. Add a one-line link to Export Signing Keys (unplaced F104-F109) on the Welcome page step. Silent-install variables moved to silentinstall.md; link to it from the silent install step. Also states the Securing Threat Manager page (F087, F088, F251) and links to the export page (F104); those facts are shared with secure.md and exportsigningkeys.md."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/actionservice.md",
+      "title": "Optionally Install the Action Service on Additional Servers",
+      "action": "REWRITE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 30,
+      "facts": [
+        "F092",
+        "F093",
+        "F094",
+        "F095",
+        "F096",
+        "F162",
+        "F208",
+        "F255",
+        "F127",
+        "F128",
+        "F129",
+        "F130",
+        "F131",
+        "F132",
+        "F134",
+        "F135",
+        "F136",
+        "F137",
+        "F138",
+        "F139",
+        "F141",
+        "F142",
+        "F143",
+        "F144",
+        "F145",
+        "F146",
+        "F147",
+        "F148",
+        "F149",
+        "F150",
+        "F152",
+        "F153",
+        "F154",
+        "F155",
+        "F156",
+        "F408",
+        "F409",
+        "F410",
+        "F411",
+        "F412",
+        "F091",
+        "F018",
+        "F019"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Run the StealthDEFEND.ActionService MSI installation package and the Threat Manager Action Service Setup wizard will open.",
+          "factId": "F095",
+          "why": "The standalone Action Service installer is removed; use NetwrixThreatManager.exe, Advanced Settings, Remote Services Only."
+        },
+        {
+          "quote": "The Action Service installer is in the zip file with the Threat Manager Console installer. However, it can be downloaded from within the Threat Manager Console.",
+          "factId": "F095",
+          "why": "No separate installer exists to download."
+        },
+        {
+          "quote": "<StealthDEFENDDirectory>\\ActionService\\ActionService.exe --config",
+          "factId": "F128",
+          "why": "Primary configuration is now the Netwrix Threat Manager Configuration window (--config-ui, Start Menu shortcut Configure Action Service). The console --config prompt remains (F147, F148)."
+        },
+        {
+          "quote": "Include http:// or https:// if configured ... Ignore certificate errors \u2013 Netwrix recommends that you set this to True",
+          "factId": "F143",
+          "why": "Window and console now warn that http sends credentials unencrypted and Ignore certificate errors disables identity verification; configuring HTTPS first is advised."
+        },
+        {
+          "quote": "stores locally in the Action Service C:\\ProgramData\\Stealthbits directory",
+          "factId": "F160",
+          "why": "Settings saved to C:\\ProgramData\\STEALTHbits\\StealthDEFEND\\ActionService (and IntegrationService\\appsettings.user.json)."
+        }
+      ],
+      "reason": "Install method, configuration method, and scope (now also Integration Service) all changed; only the service-account section survives.",
+      "note": "Rewrite as remote services page covering both Action Service and Integration Service; rename title (and possibly path) needs the writer's yes. The configuration window (F127-F150, F408-F412) and status check (F152-F160) could be split into their own reference/task pages. Keep the Configure a Service Account to Run Actions section; add F208 (registry read access for non-default accounts). Ports for the Integration Service are on requirements/ports.md."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/secure.md",
+      "title": "Secure the Threat Manager Console",
+      "action": "REWRITE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 40,
+      "facts": [
+        "F080",
+        "F081",
+        "F082",
+        "F083",
+        "F085",
+        "F086",
+        "F087",
+        "F088",
+        "F089",
+        "F250",
+        "F251",
+        "F252"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Configure the Netwrix Threat Manager Web Service and the Netwrix Threat Manager Active Directory Service with a certificate thumbprint and a new port value",
+          "factId": "F250",
+          "why": "The installer's Securing Threat Manager page sets WebService:Certificate; manual editing is no longer the primary method."
+        },
+        {
+          "quote": "\"CertificateFile\": \"C:\\\\ProgramData\\\\Stealthbits\\\\StealthDEFEND\\\\WebService\\\\jwtsign.pfx\", \"CertificatePassword\": ...",
+          "factId": "F210",
+          "why": "Jwt:CertificateFile, CertificateEncryptedPassword, and CertificatePassword are removed and no longer read; the signing key is in the registry (F203)."
+        },
+        {
+          "quote": "Don't modify the Jwt section of the appsettings.json file.",
+          "factId": "F210",
+          "why": "The Jwt section with certificate file settings is gone; legacy settings make a service fail to start."
+        },
+        {
+          "quote": "<StealthDEFENDDirectory>\\ActionService\\ActionService.exe --config",
+          "factId": "F147",
+          "why": "Re-registration now uses the configuration window or --config with the new warnings; links to the remote services page."
+        },
+        {
+          "quote": "Create or obtain an SSL Server certificate ... import it",
+          "factId": "F252",
+          "why": "The installer can also generate a self-signed certificate (valid 20 years) from the certificate list (F085)."
+        }
+      ],
+      "reason": "HTTPS is now configured in the installer (Securing Threat Manager page); the manual JWT and appsettings procedure is stale.",
+      "note": "Retitle to match the installer page (Securing Threat Manager) with the writer's yes. Keep a manual section for changing the certificate after install if the code still reads WebService:Certificate (it does, F250). Unplaced F104-F109 and F203-F217 (signing key) link from here. F090 (HTTPS dashboard URL) is on login.md."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/appsettings.md",
+      "title": "Modify Service Configuration Settings",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 45,
+      "facts": [
+        "F160"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "This file isn't created by the installer \u2014 you must create it yourself.",
+          "factId": "F082",
+          "why": "The installer now writes appsettings.json (WebService:Certificate) when you pick HTTPS on the Securing Threat Manager page, and Integration Service/Action Service configuration is saved to appsettings.user.json (F160)."
+        },
+        {
+          "quote": "| Action Service | `C:\\Program Files\\STEALTHbits\\StealthDEFEND\\ActionService\\` |",
+          "factId": "F160",
+          "why": "Remote service settings are written under C:\\ProgramData\\STEALTHbits\\StealthDEFEND\\<Service>\\appsettings.user.json."
+        }
+      ],
+      "reason": "One statement about who creates appsettings.json is false and the user-settings file is missing.",
+      "note": "F212 (UpdateAppSettings.ps1 removed) and F210 (legacy Jwt settings removed) are removed facts: do not mention. The page also lists RestServer as the Web Service folder while secure.md uses WebService; verify the folder name in the installer."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/proxy.md",
+      "title": "Configure a Proxy for Azure and Entra ID Connections",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Azure Service proxy settings are untouched by in-scope facts.",
+      "note": "Link to appsettings.md stays valid."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/firstlaunch/firstlaunch.md",
+      "title": "First Launch",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 50,
+      "facts": [
+        "F055",
+        "F247",
+        "F248"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "A new fact covers setting the ADMIN password for an ADMIN account created on 2.7 that has no password.",
+      "note": "Add a short note; no existing sentence is false. Desktop icon opens the HTTPS URL when HTTPS is selected (F090, on login.md)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/firstlaunch/login.md",
+      "title": "User Login After First Launch",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 10,
+      "facts": [
+        "F090",
+        "F249",
+        "F407"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "http://localhost:8080",
+          "factId": "F090",
+          "why": "With HTTPS selected, the shortcuts open https://<fully qualified host name>:<port> (WebService:Port, 5000 by default); only HTTP opens http://localhost:8080."
+        },
+        {
+          "quote": "http://[MACHINENAME.DOMAIN.COM]:8080",
+          "factId": "F090",
+          "why": "Port and scheme depend on the Securing Threat Manager choice."
+        }
+      ],
+      "reason": "Login URLs assume HTTP on 8080; login errors now display in red.",
+      "note": "Note F090 says the HTTPS default port is 5000 while ports.md and secure.md use 8080; verify with the code before drafting."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/overview.md",
+      "title": "Integration with Other Netwrix Products",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "install",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns integration with Activity Monitor, Threat Prevention, or Access Analyzer.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/activitymonitor.md",
+      "title": "Netwrix Activity Monitor Integration",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "install",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns this page.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/accessanalyzer.md",
+      "title": "Netwrix Access Analyzer (formerly Enterprise Auditor) Integration",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "install",
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns this page.",
+      "note": "The page has no frontmatter (no title, description, or sidebar_position); the md-extension autofix or the assemble step must add it. Title shown is the H1."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/threatprevention/threatprevention.md",
+      "title": "Netwrix Threat Prevention Integration",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "install",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns this page.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/threatprevention/threatmanagerconfiguration.md",
+      "title": "Netwrix Threat Manager Configuration Window",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "install",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Describes the Threat Prevention window, not the new Threat Manager service configuration window.",
+      "note": "Easy to confuse with the new Netwrix Threat Manager Configuration window for Action/Integration Service (F127); both share the title, so the new page needs a distinct title."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/upgrade/upgrade.md",
+      "title": "Upgrade Procedure",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 70,
+      "facts": [
+        "F057",
+        "F111",
+        "F205",
+        "F206",
+        "F406"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Compatibility with Threat Manager v3.3",
+          "factId": "F112",
+          "why": "Table header names v3.3; set to 3.4 (compatibility itself is not changed by any fact)."
+        },
+        {
+          "quote": "| [Upgrade Threat Manager from 3.2 to 3.3] link under Upgrade Cases",
+          "factId": "F068",
+          "why": "Upgrade Cases must point to the 3.4 upgrade page."
+        },
+        {
+          "quote": "Stop all Threat Manager services ... (list)",
+          "factId": "F096",
+          "why": "Upgrade now removes an old standalone Action Service installation; the service list is otherwise still valid."
+        }
+      ],
+      "reason": "Upgrade behavior changed (signing key moves to the registry, old Action Service removed, browser cache recovery).",
+      "note": "Add: jwtsign.pfx reused then deleted (F111, F205), unreadable pfx generates a new key and invalidates tokens (F206), clearing cache (F406, F057). F158 (services registered before 3.4 need re-registering) is on upgrade3.3.md. Update the link to upgrade3.3.md so it points to upgrade3.4.md."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/upgrade/upgrade3.4.md",
+      "title": "Upgrade from 3.3 to 3.4",
+      "action": "REWRITE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 40,
+      "facts": [
+        "F158",
+        "F045",
+        "F264",
+        "F265",
+        "F038"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Upgrade Threat Manager from 3.2 to 3.3",
+          "factId": "F095",
+          "why": "The upgrade guide for this release is 3.3 to 3.4; the 3.2 to 3.3 steps do not apply."
+        },
+        {
+          "quote": "**Step 8 \u2013** By default, the installer will Create Inbound Windows Firewall Rules ... will also by default install AD and Entra PowerShell modules.",
+          "factId": "F101",
+          "why": "AD/Entra module options appear only when Action Service is installed; Advanced Settings and Securing pages are new."
+        },
+        {
+          "quote": "Threat Manager 3.3 requires new Microsoft Entra ID application permissions.",
+          "factId": "F335",
+          "why": "3.3-only note; no new permission in the 3.4 facts (IdentityRiskyAgent.Read.All is already listed)."
+        }
+      ],
+      "reason": "The page is the 3.2 to 3.3 upgrade and its steps and screenshots no longer match the 3.4 installer.",
+      "note": "Rewrite as the 3.3 to 3.4 upgrade (rename to upgrade3.4.md and add a redirect; needs the writer's yes). Prior versions replaced the previous upgrade page the same way. Screenshots under images/threatmanager/3.3/intsall/ are stale. Remote services must be re-registered because pre-3.4 services have no status token (F158). Writer decision: rename upgrade3.3.md to upgrade3.4.md and rewrite as the 3.3 to 3.4 upgrade; delete the old file from the 3.4 folder.",
+      "renamedFrom": "docs/threatmanager/3.4/install/upgrade/upgrade3.3.md"
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/upgrade/upgrade_pg14_to_pg18.md",
+      "title": "Upgrade PostgreSQL 14 to 18",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "PostgreSQL 14 to 18 migration steps are untouched by in-scope facts.",
+      "note": "F121 and F099 (Move Database button shown when installed services need the database) are consistent with the page. Screenshots come from the 3.3 installer; the installer UI gained the Advanced Settings page only on first install."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/overview.md",
+      "title": "Requirements",
+      "action": "UPDATE",
+      "type": "concept",
+      "zone": "requirements",
+      "sidebar_position": 20,
+      "facts": [
+        "F062"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Threat Manager Application Server \u2013 This is where the v3.3 application is installed.",
+          "factId": "F112",
+          "why": "Version number is 3.3; set to 3.4."
+        },
+        {
+          "quote": "Threat Manager Action Service Server \u2013 ... it can be installed on additional servers.",
+          "factId": "F095",
+          "why": "Action Service and Integration Service are remote services selected with Remote Services Only in the main installer."
+        }
+      ],
+      "reason": "Version number and remote-service description are stale.",
+      "note": "Links point at /3.3/ paths; the seeding or assemble step must retarget them (applies to every page in this slice)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/server.md",
+      "title": "Application Server Requirements",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 10,
+      "facts": [
+        "F112",
+        "F115",
+        "F116",
+        "F118",
+        "F120"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": ".NET 8.0.11 / .NET Desktop Runtime 8.0.11 / ASP.NET Core 8.0.11",
+          "factId": "F114",
+          "why": "The installer requires .NET Desktop Runtime 10.0.10 and ASP.NET Core Runtime 10.0.10 (x64)."
+        },
+        {
+          "quote": "VC++ redist v14.28.29914",
+          "factId": "F112",
+          "why": "Prerequisite is Microsoft Visual C++ 2017-2026 x64 14.50 Redistributable."
+        },
+        {
+          "quote": "Netwrix Threat Manager can't be installed on the same server as Netwrix Threat Manager Reporting Module.",
+          "factId": "F120",
+          "why": "Full and Report Only installers share one UpgradeCode; only one can be installed; the Report Only installer is named Netwrix Threat Manager Reporting (F118)."
+        },
+        {
+          "quote": "PostgreSQL v14 database",
+          "factId": "F121",
+          "why": "PostgreSQL 18 is the default; antivirus guidance should cover both versions."
+        }
+      ],
+      "reason": ".NET and Visual C++ minimums are stale, and the Report Only conflict wording changed.",
+      "note": "F115: installer needs Server 2008 R2 SP1 or later and .NET Framework 4.7.2 (does not contradict the supported Windows Server 2016-2022 list). F116: 64-bit only. F113: VC++ install can require a reboot. Python v3.10.8x64 has no fact; verify in code (not in fact pack)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/database.md",
+      "title": "Database Server Requirements",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 20,
+      "facts": [
+        "F114"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": ".NET 8.0.11 / .NET Desktop Runtime 8.0.11 / ASP.NET Core 8.0.11",
+          "factId": "F114",
+          "why": "Installer prerequisite is .NET 10.0.10; confirm whether a separate database server needs the runtime at all."
+        },
+        {
+          "quote": "VC++ redist v14.28.29914",
+          "factId": "F112",
+          "why": "Prerequisite is Visual C++ 2017-2026 x64 14.50."
+        },
+        {
+          "quote": "When running antivirus scans against the PostgreSQL v14 database",
+          "factId": "F121",
+          "why": "PostgreSQL 18 (port 5439) is the default and recommended version."
+        }
+      ],
+      "reason": "Runtime and Visual C++ minimums are stale and the text names only PostgreSQL 14.",
+      "note": "No fact states what a standalone PostgreSQL server needs; check with the writer."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/actionservice.md",
+      "title": "Action Service Requirements",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 40,
+      "facts": [
+        "F101"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": ".NET 8.0.11 / .NET Desktop Runtime 8.0.11 / ASP.NET Core 8.0.11",
+          "factId": "F114",
+          "why": "Installer requires .NET Desktop Runtime 10.0.10 and ASP.NET Core Runtime 10.0.10."
+        },
+        {
+          "quote": "The Action Service can be installed on additional servers. ... Remember, the Action Service is installed on the Threat Manager Console server.",
+          "factId": "F095",
+          "why": "Action Service is an optional feature of the main installer; remote hosts run NetwrixThreatManager.exe with Remote Services Only."
+        },
+        {
+          "quote": "PowerShell 5.1+ installed",
+          "factId": "F101",
+          "why": "AD and Entra PowerShell modules are installed by the installer, only when Action Service is installed (option on the firewall page)."
+        }
+      ],
+      "reason": ".NET minimum and install description are stale; the AD/Entra module option is new.",
+      "note": "Visual C++ 14.50 (F112) is also an installer prerequisite of a remote host. Consider adding Integration Service-only host requirements; no fact gives hardware figures."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/client.md",
+      "title": "Client Requirements",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Supported browsers are untouched by in-scope facts.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/ports.md",
+      "title": "Ports Requirements",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 50,
+      "facts": [
+        "F102",
+        "F103",
+        "F161"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "## Remote Action Service Firewall Rules",
+          "factId": "F102",
+          "why": "Missing the Integration Service rule: installer opens TCP 55558 (rule \"Threat Manager Integration Service\"); Threat Manager calls back to it (F155)."
+        },
+        {
+          "quote": "Outbound | TCP | 8080 | Remote access to the Action Service server",
+          "factId": "F132",
+          "why": "Remote services connect to Threat Manager on port 8080 (window default); the Action Service has no listening port in the code. Confirm direction and wording."
+        },
+        {
+          "quote": "| Inbound | TCP | 10001 | ... | Bidirectional | TCP | 8080 |",
+          "factId": "F103",
+          "why": "Rules are created only for the services you install; Event Service 10001/UDP 10000 and Web Service 8080 are unchanged."
+        }
+      ],
+      "reason": "A new Integration Service port and firewall rule must be added and the remote service rule needs verification.",
+      "note": "F161: Integration Service listens on 55558 by default and serves HTTPS on WebService:Port when WebService:Certificate is set. F155 (call-back) is assigned to actionservice.md."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/permissions/overview.md",
+      "title": "Overview",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "requirements",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Index page for the two permission pages; no fact concerns it.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/permissions/adsync.md",
+      "title": "Permissions for Active Directory Sync",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact changes Active Directory sync permissions.",
+      "note": "The page links to the Entra ID Sync page for AD sync; cross-links look swapped between adsync.md and entraidsync.md (editorial, not a fact)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/permissions/entraidsync.md",
+      "title": "Application Permissions for Entra ID Sync",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "The permission list already includes IdentityRiskyAgent.Read.All, which F335 and F195 confirm.",
+      "note": "F049 and F388 (separate RiskyUsers, RiskyServicePrincipals, RiskyAgents tasks) belong on the administration Entra ID sync page. The tip 'new in Threat Manager 3.3' stays true but reads dated in 3.4."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/home.md",
+      "title": "Home Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns the Home page.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/overview.md",
+      "title": "Administration",
+      "action": "UPDATE",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [
+        "F403"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "A magenta alert banner will display below the navigation header if one of the following scenarios occurs:",
+          "factId": "F403",
+          "why": "3.4 adds a red banner for users with Show Configuration: 'App tokens are no longer valid and must be refreshed.' The list of banner triggers and the color description omit it."
+        }
+      ],
+      "reason": "The banner list needs the new broken-app-token banner.",
+      "note": "Data grids section lists Results Per Page as 10, 50, 100, 1000; F360 says the Events table now offers 5, 10, 50, 100, 1000 (assigned to investigations/reports.md). Confirm whether the generic data grid also gained 5 before changing this page."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/serviceaccounts.md",
+      "title": "Service Accounts",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [
+        "F039",
+        "F200",
+        "F201",
+        "F368",
+        "F369",
+        "F370"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "dMSA, gMSA, and sMSA \u2014 Group / Delegated / Standalone Managed Service Account",
+          "factId": "F370",
+          "why": "Managed service accounts are now recognized by their specific class and tagged as service accounts instead of being classed as computers; the page does not state this, and its dMSA expansion differs from the Type section ('Domain Managed Service Account'), so one is wrong."
+        }
+      ],
+      "reason": "New facts: search matches Display name and all words, managed accounts no longer classified as computers, full AD scan on upgrade.",
+      "note": "F371 (grid columns, unchanged) already matches the page. Search behavior (F368, F369) has no section yet; add under the table description. Code does not name dMSA; verify expansion with the Jira or product owner."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/troubleshooting/overview.md",
+      "title": "Troubleshooting",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Index page; nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/troubleshooting/log.md",
+      "title": "Log Files",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F020",
+        "F021"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Log export behavior changed for remote PostgreSQL installs and the export zip name and error text are new.",
+      "note": "Page documents the log files only, with no mention of exporting logs. Add a short section on the export zip (Logs_<version>_<yyyy-MM-dd_HH-mm-ss>.zip, DatabaseLogs_PathNotFound.txt, DatabaseLogs_NoFilesFound.txt). The export UI entry point is probably on another page (System Health or similar); confirm where and cross-link."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/troubleshooting/updatepasswords.md",
+      "title": "Updating Passwords",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Credential Profile password steps are unaffected.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/editstep.md",
+      "title": "Edit or Delete a Playbook Step",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/export.md",
+      "title": "Export a Playbook",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/import.md",
+      "title": "Import a Playbook",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/importsteps.md",
+      "title": "Import Action Steps for Playbooks",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/overview.md",
+      "title": "Playbooks",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns playbook creation, tabs, or logs.",
+      "note": "Mixes concept, task, and reference sections but is accurate; leave to the central style linter."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/save.md",
+      "title": "Save a Playbook Step to My Steps",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/trigger.md",
+      "title": "Trigger a Playbook Manually",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/overview.md",
+      "title": "Action Configuration for Playbook Steps",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Action list is unchanged in 3.4.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/activedirectory.md",
+      "title": "Active Directory Target Actions",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns AD actions.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/entraid.md",
+      "title": "Entra ID Target Actions",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F189",
+        "F036"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Flag a user as confirmed compromised within your Entra ID tenant.",
+          "factId": "F189",
+          "why": "The action now reads application and service principal IDs from the event details, so a service principal or application perpetrator is flagged; the page describes users only."
+        }
+      ],
+      "reason": "Flag as Confirmed Compromised now handles enterprise applications and service principals.",
+      "note": "F036 and F189 describe the same fix from two code paths; state once."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/localhost.md",
+      "title": "Local Host Target Actions",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F182",
+        "F183",
+        "F323",
+        "F185",
+        "F187",
+        "F034",
+        "F033",
+        "F186"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "By default, the PowerShell script includes a comment section which includes Threat Manager threat variables that can be used in PowerShell script action steps.",
+          "factId": "F183",
+          "why": "Default script text now includes 'Primary Event Originating Agent: $PrimaryEventOriginatingAgent'; the variable is new in 3.4 (F182, F323)."
+        },
+        {
+          "quote": "Body \u2013 The body of the email. HTML is supported.",
+          "factId": "F185",
+          "why": "The /n line-break conversion now keeps URLs intact, including hosts that start with n."
+        }
+      ],
+      "reason": "PowerShell variable $PrimaryEventOriginatingAgent and Send Email URL fix belong here.",
+      "note": "The full threat variable list probably lives in configuration/threatresponse.md (other slice); the variable is also available in SIEM templates (F182). F186 (threat email summaries) is in unplaced."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/tag.md",
+      "title": "Tag Threat Actions",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [
+        "F022",
+        "F188"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Tag Object now sends each tagged object's unique name and drops duplicate IDs.",
+      "note": "Manage Blocking Policy's Users bullet says 'to have their RDP Session ended', a copy error from End User Session; fix while editing (not code-verified here)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/thirdparty.md",
+      "title": "Third-Party Applications Target Actions",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns third-party actions.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/windowsfileserver.md",
+      "title": "Windows File System Target Actions",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns these actions.",
+      "note": "Revert Permission Change here says 'Active Directory Object' on a file system page (3.3 text, left as is)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/playbooks/action/windowsserver.md",
+      "title": "Windows Server Target Actions",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns these actions.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/overview.md",
+      "title": "Investigations Interface",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Page list and descriptions still hold.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/newinvestigation.md",
+      "title": "New Investigation Page",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F004",
+        "F005",
+        "F359"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "This option is available only to users with the Administrator or the Response Managers roles.",
+          "factId": "F005",
+          "why": "Access to investigations is now decided by permission, not role name. In the web app Save and Edit are gated on the AlterInvestigations permission, and Run Query is read-only for users without Show Search (F359)."
+        }
+      ],
+      "reason": "Save access is described by role names that 3.4 replaced with permissions.",
+      "note": "Owner and Access role steps are unchanged, but F004 (ViewAllInvestigations shows every saved investigation regardless of owner or access) should be stated on this page or in My Investigations; the roles reference is in the configuration slice (F240, F241, F006)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/favorites.md",
+      "title": "Favorites Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/auditcompliance.md",
+      "title": "Audit and Compliance Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No fact concerns the default Audit and Compliance investigations.",
+      "note": "Pre-existing typo in the table: 'Domain Admin>s'."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/predefinedinvestigations.md",
+      "title": "Predefined Investigations Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No fact concerns the default predefined investigations.",
+      "note": "3.3 table errors carried over: 'Applications Deleted' appears three times (the second and third rows are added and updated), 'Remove Memeber from Role', 'iNetOrgPeson'. Names are not in the code (seeded data), so not verified."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/myinvestigations.md",
+      "title": "My Investigations Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Nothing changed.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/reports.md",
+      "title": "Investigation Reports",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F360",
+        "F361",
+        "F362",
+        "F363",
+        "F366",
+        "F041"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Events table paging, empty state, and error behavior are new, plus the Top Resources card layout.",
+      "note": "Page has no mention of Rows per page (5, 10, 50, 100, 1000), the 'from-to of total' pager with trailing +, or the 'Run a query to see results' / 'No rows' empty states. F041 is a bug fix (Entra ID authentication events with no target objects no longer return 500); fold it into the Event Details section only if worth stating."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/subscriptionsexports.md",
+      "title": "Subscriptions and Exports Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 80,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Table columns and actions menu still hold.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/edit.md",
+      "title": "Edit or Duplicate an Investigation",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Edit and duplicate steps are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/export.md",
+      "title": "Export Report",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [
+        "F372"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Ensure the frequency doesn't exceed the \"Time to Retain\" settings for the System Jobs configured in the System Settings interface.",
+          "factId": "F372",
+          "why": "The monthly-frequency warning now depends on the data source: for a Threat Manager source Time to Retain Events must be at least one month, with a link to System Settings (F193 covers the Threat Prevention message)."
+        }
+      ],
+      "reason": "Monthly export retention guidance is source-specific in 3.4.",
+      "note": "F193 (Threat Prevention source message) is assigned to options/subscription.md; both messages apply to both pages and to Schedule Export step 6."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/filters.md",
+      "title": "Filters Section",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F320",
+        "F354",
+        "F355",
+        "F184",
+        "F321",
+        "F350",
+        "F351",
+        "F352",
+        "F353",
+        "F322"
+      ],
+      "claims": [
+        "C024",
+        "C025"
+      ],
+      "stale": [
+        {
+          "quote": "- Event ( group header in the menu):",
+          "factId": "F320",
+          "why": "The Event group gains the 'Originating Agent' attribute, a multi-select with search that matches the name of the Netwrix agent that sent the event (F354, F184)."
+        },
+        {
+          "quote": "Preset timeframes: / Custom timeframe",
+          "factId": "F350",
+          "why": "A saved custom time range now shows on the Timeframe button when the investigation is reopened, with AM/PM in the 'MMM dd, hh:mm a' format (F351, F352)."
+        }
+      ],
+      "reason": "Originating Agent filter attribute and timeframe display changes belong on the Filters page.",
+      "note": "F320 text: values are free text or suggestions from an object search. The page's attribute list has no Location or other new attributes in the facts. F353 (collapse chevron in the query builder header next to Run Query) is minor UI. F321 notes the label is also used in saved investigations and custom threats, so the custom threats page (threats slice) should mention it."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/overview.md",
+      "title": "Investigation Options",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Options list still holds.",
+      "note": "Query builder header gained a collapse chevron (F353, assigned to filters.md); not worth a change here."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/investigations/options/subscription.md",
+      "title": "Add Subscription",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F193",
+        "F374",
+        "F031",
+        "F192"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Ensure the frequency doesn't exceed the \"Time to Retain\" settings for the System Jobs configured in the System Settings interface.",
+          "factId": "F193",
+          "why": "For a monthly subscription the page now shows a source-specific message: for Netwrix Threat Prevention, event retention must be at least one month; other sources keep the Time to Retain Events message with a link to settings (F372)."
+        }
+      ],
+      "reason": "Monthly subscription warning varies by data source; form resets on close; upgrade clears stray shared folder IDs.",
+      "note": "F031 and F192 are the upgrade cleanup of shared_folder_id on email subscriptions; mention only if customers need to know. F372 (Threat Manager source message) is assigned to options/export.md; both apply here too."
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/entraid.md",
+      "title": "Entra ID Threats",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 20,
+      "facts": [
+        "F257",
+        "F258",
+        "F259",
+        "F260",
+        "F261",
+        "F263",
+        "F266",
+        "F267",
+        "F386",
+        "F279",
+        "F280",
+        "F281",
+        "F282",
+        "F284",
+        "F285",
+        "F286",
+        "F294",
+        "F295",
+        "F296",
+        "F297",
+        "F312",
+        "F313",
+        "F314",
+        "F315",
+        "F316",
+        "F046",
+        "F047",
+        "F032",
+        "F262",
+        "F264",
+        "F265",
+        "F268",
+        "F269",
+        "F283",
+        "F288",
+        "F289",
+        "F290",
+        "F291",
+        "F292",
+        "F293",
+        "F298",
+        "F299",
+        "F300",
+        "F301",
+        "F302",
+        "F303",
+        "F304",
+        "F305",
+        "F306",
+        "F307",
+        "F309",
+        "F310"
+      ],
+      "claims": [
+        "C001",
+        "C002",
+        "C006",
+        "C008",
+        "C009",
+        "C011",
+        "C013",
+        "C004"
+      ],
+      "stale": [
+        {
+          "quote": "| Trigger           | A threat is triggered when a user logs in from two distant locations within a short period of time.",
+          "factId": "F314",
+          "why": "In 3.4 Impossible Travel evaluates only user sign-ins by default; application and service principal sign-ins count only when Trigger on Non-Human Identities (F312) is on."
+        },
+        {
+          "quote": "The following threats are monitored for Microsoft Entra ID.",
+          "factId": "F257",
+          "why": "Does not list First Time Location, Authentication Methods Policy Weakening, or Security Policy Weakening, which 3.4 adds (F279, F294)."
+        }
+      ],
+      "reason": "Three new Entra ID threats (First Time Location, Authentication Methods Policy Weakening, Security Policy Weakening) and the Impossible Travel change belong in this catalog.",
+      "note": "Pattern here: H2 = threat name; one-sentence lead; two-column table with rows Definition, Example, Trigger (no severity, evidence, or exclusions rows in 3.3). The in-product group is labelled \"Azure\"; the page title says Entra ID. Catalog-level facts (name, description, default severity, trigger) are assigned here; settings, evidence text, rollup, exclusions, map, and upgrade behavior are in `unplaced` for the later NEW per-threat pages. Impossible Travel File Tag/Process exclusion removal (F316/F046) is not stated on this page; add only if an exclusions line is added. Best page for the threat pattern is this one, extended per threat with severity (default), evidence entry title, and exclusions as F258-F269, F281-F291, F296-F307 supply."
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/custom.md",
+      "title": "Custom Threats",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "threats",
+      "sidebar_position": 50,
+      "facts": [
+        "F042",
+        "F043",
+        "F325",
+        "F326",
+        "F327",
+        "F328",
+        "F329",
+        "F330",
+        "F331"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Count \u2013The number of times that an event must occur before a threat is generated",
+          "factId": "F328",
+          "why": "Threshold totals the event count (one event can stand for several occurrences) and triggers when the total reaches or exceeds the count."
+        },
+        {
+          "quote": "Group By Perpetrator \u2013 When checked, the threat criteria is evaluated on a per-user basis.",
+          "factId": "F329",
+          "why": "One threat is created per perpetrator whose total in the window reaches the threshold; events with no perpetrator are ignored in this mode."
+        },
+        {
+          "quote": "**Step 10 \u2013** Click **Save**. The investigation is now saved as a custom threat.",
+          "factId": "F327",
+          "why": "A new custom threat, or one whose filters were edited, starts from the current moment and does not evaluate earlier events; editing filters starts a new rollup (F042)."
+        }
+      ],
+      "reason": "Custom threat evaluation changed (incremental polling, no schedules, rollup per alert query, catch-up limit).",
+      "note": "Polling/job-service settings (F331, F043, F330) are admin settings and may fit better on a config or troubleshooting page; the Originating Agent filter (F321) is listed as unplaced."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/threats.md",
+      "title": "Threats Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F318",
+        "F319"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "### Tags\n\nThe Tags section contains any tags associated with threats that are in the filtered time\nrange.",
+          "factId": "F318",
+          "why": "The AI Agent tag and filter now apply when an AI agent is the perpetrator, target, or an affected object (before 3.4 only the perpetrator)."
+        },
+        {
+          "quote": "The list displays threats that have a threat level of Low, Medium, High, or Audit",
+          "factId": "F319",
+          "why": "The threat list now shows an AI Agent label on threats where an AI agent is involved; page does not mention it."
+        }
+      ],
+      "reason": "AI Agent tag and label facts belong on the threat list and Tags filter.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/threatdetails/overview.md",
+      "title": "Threat Details Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F270",
+        "F272",
+        "F273",
+        "F274",
+        "F275",
+        "F276",
+        "F377",
+        "F378",
+        "F379",
+        "F380",
+        "F317",
+        "F381",
+        "F382",
+        "F383",
+        "F364",
+        "F362",
+        "F384",
+        "F385"
+      ],
+      "claims": [
+        "C010"
+      ],
+      "stale": [
+        {
+          "quote": "The Threat Activity diagram contains a diagram that displays the flow of the threat activity.",
+          "factId": "F270",
+          "why": "For First Time Location the Threat Activity panel shows a world map of new and known locations instead of the attack path; Impossible Travel shows a route map (F317, F382)."
+        },
+        {
+          "quote": "The top of the page displays a Threat Overview box, Threat Activity diagram, and an Evidence box.",
+          "factId": "F381",
+          "why": "The duplicated Evidence block was removed from the Impossible Travel view and the map fits the panel."
+        },
+        {
+          "quote": "Use the Search icon to search for data in the table. Click the + icon in the table to view\nadditional details about a threat.",
+          "factId": "F364",
+          "why": "Event Details and Related Activity tabs now show a loading spinner and a working Cancel Request link when rows per page, page, or sort change."
+        }
+      ],
+      "reason": "Map widgets for First Time Location and Impossible Travel and the tab loading behavior are new on the threat details page.",
+      "note": "F363 (event row expand error) and F360 (Rows per page 5/10/50/100/1000) concern the shared Events table; assigned to the investigations slice, but also apply to the Event Details tab here. Top Resources cards (F366) not placed here."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraiduser.md",
+      "title": "User Details Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F337",
+        "F338",
+        "F339",
+        "F340",
+        "F341",
+        "F342",
+        "F343",
+        "F344",
+        "F416"
+      ],
+      "claims": [
+        "C014",
+        "C027"
+      ],
+      "stale": [
+        {
+          "quote": "The Activity by Host and Activity by Client tables are displayed below the charts.",
+          "factId": "F342",
+          "why": "The Activity by Host table is now titled Activity by Target (and its export file); an Activity by Location table was added."
+        },
+        {
+          "quote": "**Activity by Host Table**\n\nThe Activity by Host table displays the user's activity by host.",
+          "factId": "F342",
+          "why": "Renamed to Activity by Target; the export file is named Activity by Target (F344)."
+        }
+      ],
+      "reason": "New Activity by Location section with Show On Map, and the Activity by Host to Activity by Target rename.",
+      "note": "Same F342-F344 rename applies to activedirectoryobjects/user.md and both overview pages. Activity by Location appears only for objects with Entra ID sign-in data (F340). Agent Users keep Group Membership and Roles tabs (F345 is on entraidapplication.md)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidobjects.md",
+      "title": "Entra ID Object Details Pages",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F337",
+        "F342",
+        "F345"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "    - Activity by Host Table",
+          "factId": "F342",
+          "why": "Now Activity by Target; Activity by Location table added (F337)."
+        },
+        {
+          "quote": "- Group Membership Tab \u2013 For a:",
+          "factId": "F345",
+          "why": "Group Membership and Roles tabs are hidden for Agent Blueprints, Agent Blueprint Principals, and Agent Identities."
+        }
+      ],
+      "reason": "Common-elements list names the renamed table and omits Activity by Location and the hidden agent tabs.",
+      "note": "Facts F337 and F342 are primary on entraiduser.md; listed here too for the overview bullets."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidapplication.md",
+      "title": "Application Details Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [
+        "F345",
+        "F346"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "- Group Membership Tab\n- Roles Tab",
+          "factId": "F345",
+          "why": "Agent Blueprint applications do not show Group Membership or Roles tabs; in Report Only the Group Membership tab is hidden for them too (F346)."
+        }
+      ],
+      "reason": "Tab list is wrong for AI agent blueprint objects.",
+      "note": "Same fact covers Agent Identity and Blueprint Principal objects; entraidserviceprincipal.md already omits those tabs."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/activedirectoryobjects/user.md",
+      "title": "User Details Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F342",
+        "F344"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "The Activity by Host, Activity by Client, and Activity Details tables are displayed below the\ncharts.",
+          "factId": "F342",
+          "why": "The Activity by Host table is now Activity by Target (same component serves AD users)."
+        },
+        {
+          "quote": "**Activity by Host Table**",
+          "factId": "F342",
+          "why": "Renamed Activity by Target; export file named Activity by Target (F344)."
+        }
+      ],
+      "reason": "Table rename applies to AD user details.",
+      "note": "Activity by Location is hidden for AD-only users (F340), so no new section."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/activedirectoryobjects/activedirectoryobjects.md",
+      "title": "Active Directory Object Details Pages",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F342"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "    - Activity by Host Table",
+          "factId": "F342",
+          "why": "Now Activity by Target (user pages)."
+        }
+      ],
+      "reason": "Overview bullet names the old table title.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/overview.md",
+      "title": "Type of Threats",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "threats",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Lists the threat sections; no new section was added in 3.4.",
+      "note": "Section list omits Certificate Services (pre-existing, not a 3.4 change). Version links point to 3.3 (mechanical)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/activedirectory.md",
+      "title": "Active Directory Threats",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns Active Directory threats.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/certificateservices.md",
+      "title": "Certificate Services Threats",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 15,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns Certificate Services threats.",
+      "note": "Not linked from threats/overview.md or index.md (pre-existing)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/filesystem.md",
+      "title": "File System Threats",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns file system threats.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/threats/general.md",
+      "title": "General Threats",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "threats",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "First Time Location is an Entra ID threat, not general; no other fact concerns this page.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/threatdetails/abnormalbehavior.md",
+      "title": "Abnormal Behavior Threat Details",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns abnormal behavior details.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidgroup.md",
+      "title": "Group Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns Entra ID group details.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidrole.md",
+      "title": "Role Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns Entra ID role details.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/entraidobjects/entraidserviceprincipal.md",
+      "title": "Service Principal Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Tab list already matches the 3.4 hidden-tab behavior for agent objects.",
+      "note": "F345 checked: page already omits Group Membership and Roles tabs."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/activedirectoryobjects/group.md",
+      "title": "Group Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact concerns AD group details.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/threats/activedirectoryobjects/host.md",
+      "title": "Host Details Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Host Activity Summary has no host/client tables, so the rename does not apply.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/gettingstarted.md",
+      "title": "Getting Started with Threat Manager",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "root",
+      "sidebar_position": 2,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No 3.4 fact changes the getting-started integration and console steps.",
+      "note": "Links point to /3.3/ (mechanical version rewrite)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/index.md",
+      "title": "Netwrix Threat Manager v3.3 Documentation",
+      "action": "UPDATE",
+      "type": "concept",
+      "zone": "root",
+      "sidebar_position": 1,
+      "facts": [],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "title: \"Netwrix Threat Manager v3.3 Documentation\"",
+          "factId": "",
+          "why": "Title, description, H1, and links name or point to 3.3; no fact id, mechanical version bump."
+        }
+      ],
+      "reason": "Version label and links still say 3.3; threat category list is otherwise unchanged.",
+      "note": "No in-scope fact belongs here; manifest validation may need a fact or an exception. Intro says only Active Directory and File Systems (Entra ID omitted), not a 3.4 fact.",
+      "mechanical": true
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/signingkey.md",
+      "title": "JWT Signing Key",
+      "action": "NEW",
+      "type": "concept",
+      "zone": "install",
+      "sidebar_position": 42,
+      "facts": [
+        "F110",
+        "F203",
+        "F204",
+        "F207",
+        "F209",
+        "F211"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Readers ask where the login-token signing key lives, who can read it, and what happens when it is missing; none of that fits a install step on install/secure.md, which should link here. Sits after secure.md (40) and before appsettings (45).",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/exportsigningkeys.md",
+      "title": "Export the JWT Signing Key to Another Host",
+      "action": "NEW",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 43,
+      "facts": [
+        "F104",
+        "F105",
+        "F107",
+        "F108",
+        "F109",
+        "F213",
+        "F214",
+        "F215",
+        "F216",
+        "F217"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Distinct task with its own prerequisites (installed product, existing key, admin rights, .NET Framework 4.7.2), procedure on the installer Welcome page, one-time code handling, and failure messages. Link from install/application.md (Welcome page step) and install/secure.md; limit F217 (copying the registry value does not work) goes in a Limits section.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/syslogevents.md",
+      "title": "Syslog Event Fields",
+      "action": "NEW",
+      "type": "reference",
+      "zone": "install",
+      "sidebar_position": 40,
+      "facts": [
+        "F037",
+        "F180",
+        "F181"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Inbound syslog name-parsing (upn, ntname, username order, blank skipping, storage key name) has no page: siem.md is outbound only and the integration pages are product-specific. A short reference under install/integration, linked from integration/overview.md and the Activity Monitor page. F037 and F180 overlap; keep both ids so the drafter covers the NAM wording.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/silentinstall.md",
+      "title": "Silent installation",
+      "action": "NEW",
+      "type": "reference",
+      "zone": "install",
+      "sidebar_position": 25,
+      "facts": [
+        "F071",
+        "F072",
+        "F073",
+        "F074",
+        "F076",
+        "F077",
+        "F078",
+        "F079"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Writer decision: split the silent-install variables out of application.md.",
+      "note": ""
+    }
+  ],
+  "dropped": [
+    {
+      "id": "F023",
+      "reason": "Bug fix to Top Threat Counts names; no page documents Top Threat Counts or the old wrong behavior."
+    },
+    {
+      "id": "F190",
+      "reason": "Cosmetic product-name rename in an internal REST client error message; no page quotes the old text."
+    },
+    {
+      "id": "F246",
+      "reason": "Bug fix (500 on ADMIN password change with malformed history); no page describes the failure and the documented behavior is unchanged."
+    },
+    {
+      "id": "F349",
+      "reason": "Unchanged notice text on the tag picker; tagmanagement.md is KEEP and the notice is not documented, nothing false to fix."
+    },
+    {
+      "id": "F365",
+      "reason": "Unchanged, cosmetic loading overlay link label."
+    },
+    {
+      "id": "F371",
+      "reason": "Unchanged; the Service Accounts page already lists these columns (manifest note on serviceaccounts.md)."
+    },
+    {
+      "id": "F415",
+      "reason": "Unchanged; System Settings pages are KEEP and already match this tree."
+    },
+    {
+      "id": "F024",
+      "reason": "Writer decision: the Location API is left out of the 3.4 docs"
+    },
+    {
+      "id": "F025",
+      "reason": "Writer decision: the Location API is left out of the 3.4 docs"
+    },
+    {
+      "id": "F026",
+      "reason": "Writer decision: the Location API is left out of the 3.4 docs"
+    },
+    {
+      "id": "C014",
+      "reason": "Writer decision: the Location API is left out of the 3.4 docs"
+    }
+  ]
+}

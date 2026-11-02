@@ -1,0 +1,91 @@
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/activedirectorysync.md  (vale: pass, dale: fail)
+   229  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   261  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   268  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   244  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   18  dale:copula-avoidance  Use 'is' or 'are' instead of 'serves as', 'functions as', 'acts as', or 'stands as'.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md  (vale: pass, dale: fail)
+   36  dale:wordiness  This sentence is wordy. A more concise, direct alternative is possible.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/apptoken.md  (vale: pass, dale: fail)
+   60  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md  (vale: pass, dale: fail)
+   22  dale:filler-phrases  Cut the throat-clearing; it adds words, not information.
+   116  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md  (vale: pass, dale: fail)
+   96  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/netwrixintegrations.md  (vale: pass, dale: fail)
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   177  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   193  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   216  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/page/radius.md  (vale: pass, dale: fail)
+   86  dale:undefined-acronyms  Acronym used without being defined on first use. Spell it out: 'Full Name (ACRONYM)'.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/page/saml.md  (vale: pass, dale: fail)
+   52  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   35  dale:wordiness  This sentence is wordy. A more concise, direct alternative is possible.
+   41  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   45  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/page/openid/openid.md  (vale: pass, dale: fail)
+   32  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   46  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   70  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/integrations/page/openid/entraidopenid.md  (vale: pass, dale: fail)
+   15  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   31  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   137  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md  (vale: pass, dale: fail)
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   99  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/install/application.md  (vale: pass, dale: fail)
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   134  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/install/actionservice.md  (vale: pass, dale: fail)
+   160  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/install/appsettings.md  (vale: pass, dale: fail)
+   9  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   16  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/install/proxy.md  (vale: pass, dale: fail)
+   15  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   52  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/install/firstlaunch/firstlaunch.md  (vale: pass, dale: fail)
+   55  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   71  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/install/integration/threatprevention/threatmanagerconfiguration.md  (vale: pass, dale: fail)
+   16  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   63  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/install/upgrade/upgrade_pg14_to_pg18.md  (vale: pass, dale: fail)
+   96  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   120  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   184  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   192  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   10  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   10  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/playbooks/overview.md  (vale: pass, dale: fail)
+   11  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   74  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   42  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   104  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   9  dale:wordiness  This sentence is wordy. A more concise, direct alternative is possible.
+FAIL  docs/threatmanager/3.4/administration/playbooks/action/activedirectory.md  (vale: pass, dale: fail)
+   24  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/administration/playbooks/action/windowsfileserver.md  (vale: pass, dale: fail)
+   18  dale:passive-voice  Don't use passive voice. Use active voice instead.
+PASS  docs/threatmanager/3.4/administration/playbooks/action/windowsserver.md  (vale: pass, dale: pass)
+FAIL  docs/threatmanager/3.4/administration/investigations/options/overview.md  (vale: pass, dale: fail)
+   24  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   39  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/threats/certificateservices.md  (vale: pass, dale: fail)
+   31  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   42  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   14  dale:undefined-acronyms  Acronym used without being defined on first use. Spell it out: 'Full Name (ACRONYM)'.
+   51  dale:undefined-acronyms  Acronym used without being defined on first use. Spell it out: 'Full Name (ACRONYM)'.
+   20  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/threats/filesystem.md  (vale: pass, dale: fail)
+   -  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   20  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   20  dale:passive-voice  Don't use passive voice. Use active voice instead.
+FAIL  docs/threatmanager/3.4/threats/general.md  (vale: pass, dale: fail)
+   26  dale:passive-voice  Don't use passive voice. Use active voice instead.
+exit=1

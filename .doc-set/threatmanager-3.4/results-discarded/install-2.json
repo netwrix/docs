@@ -1,0 +1,124 @@
+{
+ "batch": "install-2",
+ "pages": [
+  {
+   "path": "docs/threatmanager/3.4/install/upgrade/upgrade.md",
+   "status": "done",
+   "factsCovered": [
+    "F057",
+    "F111",
+    "F205",
+    "F206",
+    "F406"
+   ],
+   "todos": [],
+   "untraced": [],
+   "preexistingFindings": 0,
+   "checks": {
+    "quality": "vale pass; Dale model check did not complete (claude -p hung)",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/upgrade/upgrade3.4.md",
+   "status": "failed",
+   "factsCovered": [
+    "F158",
+    "F045",
+    "F264",
+    "F265",
+    "F038"
+   ],
+   "todos": [
+    "Installer steps for the 3.3 to 3.4 upgrade: no assigned fact describes the 3.4 installer pages"
+   ],
+   "untraced": [
+    "Step 2 - Register each one again. For the Action Service, see [Configure a Remote Action Service to Register with Threat Manager](.../actionservice.md#configure-a-remote-action-service-to-register-with-threat-manager): the target heading is \"Configure a Remote Service to Register with Threat Manager\", so the anchor and link text don't exist"
+   ],
+   "preexistingFindings": 0,
+   "checks": {
+    "quality": "vale pass; Dale model check did not complete (claude -p hung)",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/signingkey.md",
+   "status": "done",
+   "factsCovered": [
+    "F110",
+    "F203",
+    "F204",
+    "F207",
+    "F209",
+    "F211"
+   ],
+   "todos": [],
+   "untraced": [],
+   "preexistingFindings": 0,
+   "checks": {
+    "quality": "vale pass; Dale model check did not complete (claude -p hung)",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/exportsigningkeys.md",
+   "status": "done",
+   "factsCovered": [
+    "F104",
+    "F105",
+    "F107",
+    "F108",
+    "F109",
+    "F213",
+    "F214",
+    "F215",
+    "F216",
+    "F217"
+   ],
+   "todos": [],
+   "untraced": [],
+   "preexistingFindings": 0,
+   "checks": {
+    "quality": "vale pass; Dale model check did not complete (claude -p hung)",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/integration/syslogevents.md",
+   "status": "done",
+   "factsCovered": [
+    "F037",
+    "F180",
+    "F181"
+   ],
+   "todos": [],
+   "untraced": [],
+   "preexistingFindings": 0,
+   "checks": {
+    "quality": "vale pass; Dale model check did not complete (claude -p hung)",
+    "integrity": "n/a"
+   }
+  },
+  {
+   "path": "docs/threatmanager/3.4/install/silentinstall.md",
+   "status": "done",
+   "factsCovered": [
+    "F071",
+    "F072",
+    "F073",
+    "F074",
+    "F076",
+    "F077",
+    "F078",
+    "F079"
+   ],
+   "todos": [],
+   "untraced": [],
+   "preexistingFindings": 0,
+   "checks": {
+    "quality": "vale pass; Dale model check did not complete (claude -p hung)",
+    "integrity": "n/a"
+   }
+  }
+ ]
+}

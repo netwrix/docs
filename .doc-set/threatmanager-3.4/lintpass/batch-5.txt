@@ -1,0 +1,12 @@
+docs/threatmanager/3.4/install/integration/threatprevention/threatprevention.md
+docs/threatmanager/3.4/install/proxy.md
+docs/threatmanager/3.4/install/upgrade/upgrade_pg14_to_pg18.md
+docs/threatmanager/3.4/requirements/client.md
+docs/threatmanager/3.4/requirements/permissions/adsync.md
+docs/threatmanager/3.4/requirements/permissions/entraidsync.md
+docs/threatmanager/3.4/requirements/permissions/overview.md
+docs/threatmanager/3.4/threats/activedirectory.md
+docs/threatmanager/3.4/threats/certificateservices.md
+docs/threatmanager/3.4/threats/filesystem.md
+docs/threatmanager/3.4/threats/general.md
+docs/threatmanager/3.4/threats/overview.md

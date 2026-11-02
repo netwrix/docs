@@ -1,0 +1,15 @@
+docs/threatmanager/3.4/administration/investigations/options/edit.md
+docs/threatmanager/3.4/administration/investigations/options/overview.md
+docs/threatmanager/3.4/administration/investigations/overview.md
+docs/threatmanager/3.4/administration/investigations/predefinedinvestigations.md
+docs/threatmanager/3.4/administration/investigations/subscriptionsexports.md
+docs/threatmanager/3.4/administration/playbooks/action/activedirectory.md
+docs/threatmanager/3.4/administration/playbooks/action/overview.md
+docs/threatmanager/3.4/administration/playbooks/action/thirdparty.md
+docs/threatmanager/3.4/administration/playbooks/action/windowsfileserver.md
+docs/threatmanager/3.4/administration/playbooks/action/windowsserver.md
+docs/threatmanager/3.4/administration/playbooks/editstep.md
+docs/threatmanager/3.4/administration/playbooks/export.md
+docs/threatmanager/3.4/administration/playbooks/import.md
+docs/threatmanager/3.4/administration/playbooks/importsteps.md
+docs/threatmanager/3.4/administration/playbooks/overview.md

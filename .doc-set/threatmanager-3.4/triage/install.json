@@ -1,0 +1,742 @@
+{
+  "slice": "install",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/install/overview.md",
+      "title": "Installation",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 30,
+      "facts": [
+        "F060",
+        "F075",
+        "F098"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "The Threat Manager installer is packaged with four executable files.",
+          "factId": "F095",
+          "why": "NetwrixThreatManager.ActionService.exe is removed; Action Service is an optional feature of NetwrixThreatManager.exe."
+        },
+        {
+          "quote": "**NetwrixThreatManager.ActionService.exe** This executable is for installing the Netwrix Threat Manager Action Service on additional servers.",
+          "factId": "F095",
+          "why": "The separate Action Service installer no longer exists. Remote install uses Remote Services Only on the Advanced Settings page (F060, F062)."
+        },
+        {
+          "quote": "VC++ redist v14.28.29914",
+          "factId": "F112",
+          "why": "Prerequisite is now Microsoft Visual C++ 2017-2026 x64 14.50 Redistributable."
+        },
+        {
+          "quote": "The PostgreSQL database must be installed before installing Threat Manager.",
+          "factId": "F100",
+          "why": "Not true for a Remote install of Action Service and/or Integration Service: the database pages are skipped."
+        },
+        {
+          "quote": "Optional: Install the Action Service on additional servers. ... Configure a remote Action Service to register with Threat Manager.",
+          "factId": "F060",
+          "why": "Remote services (Action Service, Integration Service) are installed from the main installer and configured with the --config-ui window."
+        }
+      ],
+      "reason": "Executable list, prerequisites, and post-install steps changed with the single-installer model and the new VC++ prerequisite.",
+      "note": "Also add the Report Only installer name (F118) and SbSetup behavior (F075). Link retargets to the rewritten remote services page. Requirement minimums (.NET 10, VC++) live on requirements/server.md; keep consistent."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/database.md",
+      "title": "Install the PostgreSQL Database Application",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 10,
+      "facts": [
+        "F121"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "right-click `NetwrixPostgreSQL14.exe` and select Run as administrator",
+          "factId": "F121",
+          "why": "The launcher offers the newest PostgreSQL installer (PostgreSQL 18, port 5439); PostgreSQL 14 is shown only when installed."
+        },
+        {
+          "quote": "Install Folder – C:\\Program Files\\Stealthbits\\PostgresSQL14",
+          "factId": "F121",
+          "why": "Steps describe only PostgreSQL 14; the default install is now PostgreSQL 18 (port 5439)."
+        }
+      ],
+      "reason": "Steps and default paths describe PostgreSQL 14 only while the installer now installs PostgreSQL 18 by default.",
+      "note": "Confirm PostgreSQL 18 default folders and screenshots in the code (not in the fact pack). F122 (service start wait) is a small note for the troubleshooting-type content."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/application.md",
+      "title": "Install the Threat Manager Application",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 20,
+      "facts": [
+        "F061",
+        "F063",
+        "F064",
+        "F065",
+        "F066",
+        "F067",
+        "F068",
+        "F069",
+        "F070",
+        "F071",
+        "F072",
+        "F073",
+        "F074",
+        "F076",
+        "F077",
+        "F078",
+        "F079",
+        "F097",
+        "F099",
+        "F100",
+        "F113",
+        "F117",
+        "F122"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "**Step 2 –** Click **Install**. ... **Step 4 –** By default, the installation directory is set to:",
+          "factId": "F061",
+          "why": "New Advanced Settings page (All Services or Remote Services Only) and Advanced Installation check box on the Welcome page change the wizard flow."
+        },
+        {
+          "quote": "**Step 5 –** On the Database page, ensure the host and port are set correctly.",
+          "factId": "F100",
+          "why": "The database pages are skipped when no installed service uses the database (Remote install)."
+        },
+        {
+          "quote": "**Step 8 –** By default, the **Create Inbound Windows Firewall Rules** checkbox is selected",
+          "factId": "F101",
+          "why": "Firewall page also offers Install AD/Entra PowerShell Modules, only when Action Service is installed; rules are created only for installed services (F103)."
+        },
+        {
+          "quote": "There is no Securing Threat Manager step.",
+          "factId": "F088",
+          "why": "The Securing Threat Manager page (HTTPS choice) appears on Install when a service has no appsettings.json or Advanced Installation is selected, and always on Modify; see secure.md."
+        },
+        {
+          "quote": "Step 9–10: Click Exit when the installation completes",
+          "factId": "F113",
+          "why": "Finish page can require a reboot (Reboot now) after the Visual C++ prerequisite, and lists remote services needing configuration (F091)."
+        }
+      ],
+      "reason": "New Advanced Settings and Securing Threat Manager pages, install-mode lock, Action Service as optional feature, and silent-install variables are missing.",
+      "note": "Silent-install variables (F071-F074, F076-F079) fit a separate reference section or page; the later step may split. F102/F103 firewall rules go on requirements/ports.md; F087/F088 go on install/secure.md. Add a one-line link to Export Signing Keys (unplaced F104-F109) on the Welcome page step."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/actionservice.md",
+      "title": "Optionally Install the Action Service on Additional Servers",
+      "action": "REWRITE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 30,
+      "facts": [
+        "F092",
+        "F093",
+        "F094",
+        "F095",
+        "F096",
+        "F162",
+        "F208",
+        "F255",
+        "F127",
+        "F128",
+        "F129",
+        "F130",
+        "F131",
+        "F132",
+        "F134",
+        "F135",
+        "F136",
+        "F137",
+        "F138",
+        "F139",
+        "F141",
+        "F142",
+        "F143",
+        "F144",
+        "F145",
+        "F146",
+        "F147",
+        "F148",
+        "F149",
+        "F150",
+        "F152",
+        "F153",
+        "F154",
+        "F155",
+        "F156",
+        "F408",
+        "F409",
+        "F410",
+        "F411",
+        "F412",
+        "F091"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Run the StealthDEFEND.ActionService MSI installation package and the Threat Manager Action Service Setup wizard will open.",
+          "factId": "F095",
+          "why": "The standalone Action Service installer is removed; use NetwrixThreatManager.exe, Advanced Settings, Remote Services Only."
+        },
+        {
+          "quote": "The Action Service installer is in the zip file with the Threat Manager Console installer. However, it can be downloaded from within the Threat Manager Console.",
+          "factId": "F095",
+          "why": "No separate installer exists to download."
+        },
+        {
+          "quote": "<StealthDEFENDDirectory>\\ActionService\\ActionService.exe --config",
+          "factId": "F128",
+          "why": "Primary configuration is now the Netwrix Threat Manager Configuration window (--config-ui, Start Menu shortcut Configure Action Service). The console --config prompt remains (F147, F148)."
+        },
+        {
+          "quote": "Include http:// or https:// if configured ... Ignore certificate errors – Netwrix recommends that you set this to True",
+          "factId": "F143",
+          "why": "Window and console now warn that http sends credentials unencrypted and Ignore certificate errors disables identity verification; configuring HTTPS first is advised."
+        },
+        {
+          "quote": "stores locally in the Action Service C:\\ProgramData\\Stealthbits directory",
+          "factId": "F160",
+          "why": "Settings saved to C:\\ProgramData\\STEALTHbits\\StealthDEFEND\\ActionService (and IntegrationService\\appsettings.user.json)."
+        }
+      ],
+      "reason": "Install method, configuration method, and scope (now also Integration Service) all changed; only the service-account section survives.",
+      "note": "Rewrite as remote services page covering both Action Service and Integration Service; rename title (and possibly path) needs the writer's yes. The configuration window (F127-F150, F408-F412) and status check (F152-F160) could be split into their own reference/task pages. Keep the Configure a Service Account to Run Actions section; add F208 (registry read access for non-default accounts). Ports for the Integration Service are on requirements/ports.md."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/secure.md",
+      "title": "Secure the Threat Manager Console",
+      "action": "REWRITE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 40,
+      "facts": [
+        "F080",
+        "F081",
+        "F082",
+        "F083",
+        "F085",
+        "F086",
+        "F087",
+        "F088",
+        "F089",
+        "F250",
+        "F251",
+        "F252"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Configure the Netwrix Threat Manager Web Service and the Netwrix Threat Manager Active Directory Service with a certificate thumbprint and a new port value",
+          "factId": "F250",
+          "why": "The installer's Securing Threat Manager page sets WebService:Certificate; manual editing is no longer the primary method."
+        },
+        {
+          "quote": "\"CertificateFile\": \"C:\\\\ProgramData\\\\Stealthbits\\\\StealthDEFEND\\\\WebService\\\\jwtsign.pfx\", \"CertificatePassword\": ...",
+          "factId": "F210",
+          "why": "Jwt:CertificateFile, CertificateEncryptedPassword, and CertificatePassword are removed and no longer read; the signing key is in the registry (F203)."
+        },
+        {
+          "quote": "Don't modify the Jwt section of the appsettings.json file.",
+          "factId": "F210",
+          "why": "The Jwt section with certificate file settings is gone; legacy settings make a service fail to start."
+        },
+        {
+          "quote": "<StealthDEFENDDirectory>\\ActionService\\ActionService.exe --config",
+          "factId": "F147",
+          "why": "Re-registration now uses the configuration window or --config with the new warnings; links to the remote services page."
+        },
+        {
+          "quote": "Create or obtain an SSL Server certificate ... import it",
+          "factId": "F252",
+          "why": "The installer can also generate a self-signed certificate (valid 20 years) from the certificate list (F085)."
+        }
+      ],
+      "reason": "HTTPS is now configured in the installer (Securing Threat Manager page); the manual JWT and appsettings procedure is stale.",
+      "note": "Retitle to match the installer page (Securing Threat Manager) with the writer's yes. Keep a manual section for changing the certificate after install if the code still reads WebService:Certificate (it does, F250). Unplaced F104-F109 and F203-F217 (signing key) link from here. F090 (HTTPS dashboard URL) is on login.md."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/appsettings.md",
+      "title": "Modify Service Configuration Settings",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 45,
+      "facts": [
+        "F160"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "This file isn't created by the installer — you must create it yourself.",
+          "factId": "F082",
+          "why": "The installer now writes appsettings.json (WebService:Certificate) when you pick HTTPS on the Securing Threat Manager page, and Integration Service/Action Service configuration is saved to appsettings.user.json (F160)."
+        },
+        {
+          "quote": "| Action Service | `C:\\Program Files\\STEALTHbits\\StealthDEFEND\\ActionService\\` |",
+          "factId": "F160",
+          "why": "Remote service settings are written under C:\\ProgramData\\STEALTHbits\\StealthDEFEND\\<Service>\\appsettings.user.json."
+        }
+      ],
+      "reason": "One statement about who creates appsettings.json is false and the user-settings file is missing.",
+      "note": "F212 (UpdateAppSettings.ps1 removed) and F210 (legacy Jwt settings removed) are removed facts: do not mention. The page also lists RestServer as the Web Service folder while secure.md uses WebService; verify the folder name in the installer."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/proxy.md",
+      "title": "Configure a Proxy for Azure and Entra ID Connections",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Azure Service proxy settings are untouched by in-scope facts.",
+      "note": "Link to appsettings.md stays valid."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/firstlaunch/firstlaunch.md",
+      "title": "First Launch",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 50,
+      "facts": [
+        "F055",
+        "F247",
+        "F248"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "A new fact covers setting the ADMIN password for an ADMIN account created on 2.7 that has no password.",
+      "note": "Add a short note; no existing sentence is false. Desktop icon opens the HTTPS URL when HTTPS is selected (F090, on login.md)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/firstlaunch/login.md",
+      "title": "User Login After First Launch",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 10,
+      "facts": [
+        "F090",
+        "F249",
+        "F407"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "http://localhost:8080",
+          "factId": "F090",
+          "why": "With HTTPS selected, the shortcuts open https://<fully qualified host name>:<port> (WebService:Port, 5000 by default); only HTTP opens http://localhost:8080."
+        },
+        {
+          "quote": "http://[MACHINENAME.DOMAIN.COM]:8080",
+          "factId": "F090",
+          "why": "Port and scheme depend on the Securing Threat Manager choice."
+        }
+      ],
+      "reason": "Login URLs assume HTTP on 8080; login errors now display in red.",
+      "note": "Note F090 says the HTTPS default port is 5000 while ports.md and secure.md use 8080; verify with the code before drafting."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/overview.md",
+      "title": "Integration with Other Netwrix Products",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "install",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns integration with Activity Monitor, Threat Prevention, or Access Analyzer.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/activitymonitor.md",
+      "title": "Netwrix Activity Monitor Integration",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "install",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns this page.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/accessanalyzer.md",
+      "title": "Netwrix Access Analyzer (formerly Enterprise Auditor) Integration",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": null,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns this page.",
+      "note": "The page has no frontmatter (no title, description, or sidebar_position); the md-extension autofix or the assemble step must add it. Title shown is the H1."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/threatprevention/threatprevention.md",
+      "title": "Netwrix Threat Prevention Integration",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "install",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact concerns this page.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/threatprevention/threatmanagerconfiguration.md",
+      "title": "Netwrix Threat Manager Configuration Window",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "install",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Describes the Threat Prevention window, not the new Threat Manager service configuration window.",
+      "note": "Easy to confuse with the new Netwrix Threat Manager Configuration window for Action/Integration Service (F127); both share the title, so the new page needs a distinct title."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/upgrade/upgrade.md",
+      "title": "Upgrade Procedure",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 70,
+      "facts": [
+        "F057",
+        "F111",
+        "F205",
+        "F206",
+        "F406"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Compatibility with Threat Manager v3.3",
+          "factId": "F112",
+          "why": "Table header names v3.3; set to 3.4 (compatibility itself is not changed by any fact)."
+        },
+        {
+          "quote": "| [Upgrade Threat Manager from 3.2 to 3.3] link under Upgrade Cases",
+          "factId": "F068",
+          "why": "Upgrade Cases must point to the 3.4 upgrade page."
+        },
+        {
+          "quote": "Stop all Threat Manager services ... (list)",
+          "factId": "F096",
+          "why": "Upgrade now removes an old standalone Action Service installation; the service list is otherwise still valid."
+        }
+      ],
+      "reason": "Upgrade behavior changed (signing key moves to the registry, old Action Service removed, browser cache recovery).",
+      "note": "Add: jwtsign.pfx reused then deleted (F111, F205), unreadable pfx generates a new key and invalidates tokens (F206), clearing cache (F406, F057). F158 (services registered before 3.4 need re-registering) is on upgrade3.3.md."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/upgrade/upgrade3.3.md",
+      "title": "Upgrade Threat Manager from 3.2 to 3.3",
+      "action": "REWRITE",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 40,
+      "facts": [
+        "F158"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Upgrade Threat Manager from 3.2 to 3.3",
+          "factId": "F095",
+          "why": "The upgrade guide for this release is 3.3 to 3.4; the 3.2 to 3.3 steps do not apply."
+        },
+        {
+          "quote": "**Step 8 –** By default, the installer will Create Inbound Windows Firewall Rules ... will also by default install AD and Entra PowerShell modules.",
+          "factId": "F101",
+          "why": "AD/Entra module options appear only when Action Service is installed; Advanced Settings and Securing pages are new."
+        },
+        {
+          "quote": "Threat Manager 3.3 requires new Microsoft Entra ID application permissions.",
+          "factId": "F335",
+          "why": "3.3-only note; no new permission in the 3.4 facts (IdentityRiskyAgent.Read.All is already listed)."
+        }
+      ],
+      "reason": "The page is the 3.2 to 3.3 upgrade and its steps and screenshots no longer match the 3.4 installer.",
+      "note": "Rewrite as the 3.3 to 3.4 upgrade (rename to upgrade3.4.md and add a redirect; needs the writer's yes). Prior versions replaced the previous upgrade page the same way. Screenshots under images/threatmanager/3.3/intsall/ are stale. Remote services must be re-registered because pre-3.4 services have no status token (F158)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/upgrade/upgrade_pg14_to_pg18.md",
+      "title": "Upgrade PostgreSQL 14 to 18",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "PostgreSQL 14 to 18 migration steps are untouched by in-scope facts.",
+      "note": "F121 and F099 (Move Database button shown when installed services need the database) are consistent with the page. Screenshots come from the 3.3 installer; the installer UI gained the Advanced Settings page only on first install."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/overview.md",
+      "title": "Requirements",
+      "action": "UPDATE",
+      "type": "concept",
+      "zone": "requirements",
+      "sidebar_position": 20,
+      "facts": [
+        "F062"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Threat Manager Application Server – This is where the v3.3 application is installed.",
+          "factId": "F112",
+          "why": "Version number is 3.3; set to 3.4."
+        },
+        {
+          "quote": "Threat Manager Action Service Server – ... it can be installed on additional servers.",
+          "factId": "F095",
+          "why": "Action Service and Integration Service are remote services selected with Remote Services Only in the main installer."
+        }
+      ],
+      "reason": "Version number and remote-service description are stale.",
+      "note": "Links point at /3.3/ paths; the seeding or assemble step must retarget them (applies to every page in this slice)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/server.md",
+      "title": "Application Server Requirements",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 10,
+      "facts": [
+        "F112",
+        "F115",
+        "F116",
+        "F118",
+        "F120"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": ".NET 8.0.11 / .NET Desktop Runtime 8.0.11 / ASP.NET Core 8.0.11",
+          "factId": "F114",
+          "why": "The installer requires .NET Desktop Runtime 10.0.10 and ASP.NET Core Runtime 10.0.10 (x64)."
+        },
+        {
+          "quote": "VC++ redist v14.28.29914",
+          "factId": "F112",
+          "why": "Prerequisite is Microsoft Visual C++ 2017-2026 x64 14.50 Redistributable."
+        },
+        {
+          "quote": "Netwrix Threat Manager can't be installed on the same server as Netwrix Threat Manager Reporting Module.",
+          "factId": "F120",
+          "why": "Full and Report Only installers share one UpgradeCode; only one can be installed; the Report Only installer is named Netwrix Threat Manager Reporting (F118)."
+        },
+        {
+          "quote": "PostgreSQL v14 database",
+          "factId": "F121",
+          "why": "PostgreSQL 18 is the default; antivirus guidance should cover both versions."
+        }
+      ],
+      "reason": ".NET and Visual C++ minimums are stale, and the Report Only conflict wording changed.",
+      "note": "F115: installer needs Server 2008 R2 SP1 or later and .NET Framework 4.7.2 (does not contradict the supported Windows Server 2016-2022 list). F116: 64-bit only. F113: VC++ install can require a reboot. Python v3.10.8x64 has no fact; verify in code (not in fact pack)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/database.md",
+      "title": "Database Server Requirements",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 20,
+      "facts": [
+        "F114"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": ".NET 8.0.11 / .NET Desktop Runtime 8.0.11 / ASP.NET Core 8.0.11",
+          "factId": "F114",
+          "why": "Installer prerequisite is .NET 10.0.10; confirm whether a separate database server needs the runtime at all."
+        },
+        {
+          "quote": "VC++ redist v14.28.29914",
+          "factId": "F112",
+          "why": "Prerequisite is Visual C++ 2017-2026 x64 14.50."
+        },
+        {
+          "quote": "When running antivirus scans against the PostgreSQL v14 database",
+          "factId": "F121",
+          "why": "PostgreSQL 18 (port 5439) is the default and recommended version."
+        }
+      ],
+      "reason": "Runtime and Visual C++ minimums are stale and the text names only PostgreSQL 14.",
+      "note": "No fact states what a standalone PostgreSQL server needs; check with the writer."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/actionservice.md",
+      "title": "Action Service Requirements",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 40,
+      "facts": [
+        "F101"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": ".NET 8.0.11 / .NET Desktop Runtime 8.0.11 / ASP.NET Core 8.0.11",
+          "factId": "F114",
+          "why": "Installer requires .NET Desktop Runtime 10.0.10 and ASP.NET Core Runtime 10.0.10."
+        },
+        {
+          "quote": "The Action Service can be installed on additional servers. ... Remember, the Action Service is installed on the Threat Manager Console server.",
+          "factId": "F095",
+          "why": "Action Service is an optional feature of the main installer; remote hosts run NetwrixThreatManager.exe with Remote Services Only."
+        },
+        {
+          "quote": "PowerShell 5.1+ installed",
+          "factId": "F101",
+          "why": "AD and Entra PowerShell modules are installed by the installer, only when Action Service is installed (option on the firewall page)."
+        }
+      ],
+      "reason": ".NET minimum and install description are stale; the AD/Entra module option is new.",
+      "note": "Visual C++ 14.50 (F112) is also an installer prerequisite of a remote host. Consider adding Integration Service-only host requirements; no fact gives hardware figures."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/client.md",
+      "title": "Client Requirements",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Supported browsers are untouched by in-scope facts.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/ports.md",
+      "title": "Ports Requirements",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 50,
+      "facts": [
+        "F102",
+        "F103",
+        "F161"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "## Remote Action Service Firewall Rules",
+          "factId": "F102",
+          "why": "Missing the Integration Service rule: installer opens TCP 55558 (rule \"Threat Manager Integration Service\"); Threat Manager calls back to it (F155)."
+        },
+        {
+          "quote": "Outbound | TCP | 8080 | Remote access to the Action Service server",
+          "factId": "F132",
+          "why": "Remote services connect to Threat Manager on port 8080 (window default); the Action Service has no listening port in the code. Confirm direction and wording."
+        },
+        {
+          "quote": "| Inbound | TCP | 10001 | ... | Bidirectional | TCP | 8080 |",
+          "factId": "F103",
+          "why": "Rules are created only for the services you install; Event Service 10001/UDP 10000 and Web Service 8080 are unchanged."
+        }
+      ],
+      "reason": "A new Integration Service port and firewall rule must be added and the remote service rule needs verification.",
+      "note": "F161: Integration Service listens on 55558 by default and serves HTTPS on WebService:Port when WebService:Certificate is set. F155 (call-back) is assigned to actionservice.md."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/permissions/overview.md",
+      "title": "Overview",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "requirements",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Index page for the two permission pages; no fact concerns it.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/permissions/adsync.md",
+      "title": "Permissions for Active Directory Sync",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No in-scope fact changes Active Directory sync permissions.",
+      "note": "The page links to the Entra ID Sync page for AD sync; cross-links look swapped between adsync.md and entraidsync.md (editorial, not a fact)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/requirements/permissions/entraidsync.md",
+      "title": "Application Permissions for Entra ID Sync",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "requirements",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "The permission list already includes IdentityRiskyAgent.Read.All, which F335 and F195 confirm.",
+      "note": "F049 and F388 (separate RiskyUsers, RiskyServicePrincipals, RiskyAgents tasks) belong on the administration Entra ID sync page. The tip 'new in Threat Manager 3.3' stays true but reads dated in 3.4."
+    }
+  ],
+  "unplaced": [
+    "F104",
+    "F105",
+    "F107",
+    "F108",
+    "F109",
+    "F110",
+    "F203",
+    "F204",
+    "F207",
+    "F209",
+    "F211",
+    "F213",
+    "F214",
+    "F215",
+    "F216",
+    "F217",
+    "F119",
+    "F029",
+    "F231",
+    "F233",
+    "F234",
+    "F235",
+    "F405",
+    "F226",
+    "F227",
+    "F228",
+    "F229",
+    "F230",
+    "F232"
+  ]
+}

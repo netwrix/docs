@@ -1,0 +1,15 @@
+docs/threatmanager/3.4/administration/configuration/systemhealth/actionqueue.md
+docs/threatmanager/3.4/administration/configuration/systemhealth/agents.md
+docs/threatmanager/3.4/administration/configuration/systemhealth/backlog.md
+docs/threatmanager/3.4/administration/configuration/systemhealth/overview.md
+docs/threatmanager/3.4/administration/configuration/systemhealth/services.md
+docs/threatmanager/3.4/administration/configuration/systemsettings/about.md
+docs/threatmanager/3.4/administration/configuration/systemsettings/auditing.md
+docs/threatmanager/3.4/administration/configuration/systemsettings/overview.md
+docs/threatmanager/3.4/administration/configuration/systemsettings/systemjobs.md
+docs/threatmanager/3.4/administration/configuration/threatdetection/threatdetection.md
+docs/threatmanager/3.4/administration/configuration/threatresponse.md
+docs/threatmanager/3.4/administration/home.md
+docs/threatmanager/3.4/administration/investigations/auditcompliance.md
+docs/threatmanager/3.4/administration/investigations/favorites.md
+docs/threatmanager/3.4/administration/investigations/myinvestigations.md

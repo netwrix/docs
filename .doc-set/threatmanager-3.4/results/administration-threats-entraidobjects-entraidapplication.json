@@ -1,0 +1,4 @@
+{"batch":"administration-threats-entraidobjects-entraidapplication","pages":[
+{"path":"docs/threatmanager/3.4/administration/threats/entraidobjects/entraidapplication.md","status":"done","factsCovered":["F345","F346"],"todos":[],"untraced":[],"preexistingFindings":1,"checks":{"quality":"pass","integrity":"n/a"}},
+{"path":"docs/threatmanager/3.4/administration/threats/activedirectoryobjects/user.md","status":"done","factsCovered":["F342","F344"],"todos":[],"untraced":[],"preexistingFindings":0,"checks":{"quality":"pass","integrity":"n/a"}},
+{"path":"docs/threatmanager/3.4/administration/threats/activedirectoryobjects/activedirectoryobjects.md","status":"done","factsCovered":["F342"],"todos":[],"untraced":[],"preexistingFindings":6,"checks":{"quality":"pass","integrity":"n/a"}}]}

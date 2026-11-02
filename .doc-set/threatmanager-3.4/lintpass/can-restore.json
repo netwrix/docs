@@ -1,0 +1,245 @@
+{
+  "restored": [
+    {
+      "page": "administration/configuration/integrations/activedirectorysync.md",
+      "line": 129,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "line": 87,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/configuration/integrations/entraidsync.md",
+      "line": 95,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/configuration/integrations/credentialprofile.md",
+      "line": 144,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/configuration/integrations/foldersettings.md",
+      "line": 10,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/configuration/policies/policiesconfiguration.md",
+      "line": 184,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/configuration/systemhealth/agents.md",
+      "line": 10,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/configuration/systemsettings/useraccess.md",
+      "line": 158,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/configuration/threatdetection/threatconfiguration.md",
+      "line": 35,
+      "action": "UPDATE"
+    },
+    {
+      "page": "install/database.md",
+      "line": 9,
+      "action": "UPDATE"
+    },
+    {
+      "page": "install/application.md",
+      "line": 9,
+      "action": "UPDATE"
+    },
+    {
+      "page": "install/application.md",
+      "line": 88,
+      "action": "UPDATE"
+    },
+    {
+      "page": "install/integration/overview.md",
+      "line": 9,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "install/integration/overview.md",
+      "line": 11,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "install/integration/overview.md",
+      "line": 15,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "install/integration/activitymonitor.md",
+      "line": 9,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "install/integration/accessanalyzer.md",
+      "line": 8,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "install/integration/threatprevention/threatmanagerconfiguration.md",
+      "line": 70,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "install/integration/threatprevention/threatmanagerconfiguration.md",
+      "line": 81,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "install/upgrade/upgrade_pg14_to_pg18.md",
+      "line": 28,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "install/upgrade/upgrade_pg14_to_pg18.md",
+      "line": 55,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "requirements/overview.md",
+      "line": 23,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/playbooks/importsteps.md",
+      "line": 10,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "line": 42,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/playbooks/overview.md",
+      "line": 104,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/playbooks/save.md",
+      "line": 9,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/playbooks/save.md",
+      "line": 20,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/playbooks/action/overview.md",
+      "line": 14,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/playbooks/action/localhost.md",
+      "line": 20,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/playbooks/action/thirdparty.md",
+      "line": 84,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "administration/investigations/options/overview.md",
+      "line": 24,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "threats/entraid.md",
+      "line": 54,
+      "action": "UPDATE"
+    },
+    {
+      "page": "threats/custom.md",
+      "line": 13,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/threats/threats.md",
+      "line": 54,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraiduser.md",
+      "line": 129,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidapplication.md",
+      "line": 70,
+      "action": "UPDATE"
+    },
+    {
+      "page": "administration/threats/entraidobjects/entraidgroup.md",
+      "line": 83,
+      "action": "RESTYLED"
+    },
+    {
+      "page": "index.md",
+      "line": 12,
+      "action": "UPDATE"
+    }
+  ],
+  "skipped": [
+    {
+      "page": "administration/configuration/policies/policiesconfiguration.md",
+      "line": 45,
+      "action": "UPDATE",
+      "why": "content page, similarity 0.37: the line changed for more than style",
+      "now": "    You can change the token username after deployment, but Threat Manager no longer detects tokens under the previous"
+    },
+    {
+      "page": "administration/configuration/policies/policiesconfiguration.md",
+      "line": 69,
+      "action": "UPDATE",
+      "why": "content page, similarity 0.39: the line changed for more than style",
+      "now": "- Token Domain – The domain for the deployed Honeytoken. You can select an existing, known domain or specify a custom domain."
+    },
+    {
+      "page": "administration/configuration/systemsettings/useraccess.md",
+      "line": 85,
+      "action": "UPDATE",
+      "why": "content page, similarity 0.19: the line changed for more than style",
+      "now": "You can assign the following Roles to AD users and groups. The built-in roles are Administrators, Report Administrator, Report Rev"
+    },
+    {
+      "page": "install/actionservice.md",
+      "line": 154,
+      "action": "REWRITE",
+      "why": "content page, similarity 0.57: the line changed for more than style",
+      "now": "You can configure the Action Service that Threat Manager installs to execute as a service"
+    },
+    {
+      "page": "administration/threats/threats.md",
+      "line": 26,
+      "action": "UPDATE",
+      "why": "content page, similarity 0.26: the line changed for more than style",
+      "now": "Specify a timeframe to filter threats. You can also select a predefined time span from the menu"
+    },
+    {
+      "page": "administration/threats/threats.md",
+      "line": 48,
+      "action": "UPDATE",
+      "why": "content page, similarity 0.53: the line changed for more than style",
+      "now": "The left pane of the page lists filters that you can select and apply"
+    },
+    {
+      "page": "administration/threats/threats.md",
+      "line": 65,
+      "action": "UPDATE",
+      "why": "content page, similarity 0.53: the line changed for more than style",
+      "now": "The Level section displays the threat types you can select for filtering. You assign"
+    }
+  ]
+}

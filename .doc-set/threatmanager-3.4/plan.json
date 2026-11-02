@@ -1,0 +1,263 @@
+{
+  "attach": [
+    {
+      "page": "docs/threatmanager/3.4/threats/entraid.md",
+      "facts": [
+        "F032",
+        "F262",
+        "F264",
+        "F265",
+        "F268",
+        "F269",
+        "F283",
+        "F288",
+        "F289",
+        "F290",
+        "F291",
+        "F292",
+        "F293",
+        "F298",
+        "F299",
+        "F300",
+        "F301",
+        "F302",
+        "F303",
+        "F304",
+        "F305",
+        "F306",
+        "F307",
+        "F309",
+        "F310"
+      ],
+      "claims": [
+        "C004"
+      ],
+      "reason": "Extends the per-threat H2 sections this page already carries for the three new threats (their catalog facts are already assigned here) and the New Applicaton Credentials H2 (F032). Add table rows for Severity, Evidence, Rollup, and Exclusions after Definition, Example, and Trigger, and add one reported-changes table under Security Policy Weakening. Each threat gets an H2, not its own page: the page-structure guide's 'existing page answers the same reader question' rule applies, the catalog pattern in threatmanager/CLAUDE.md is one H2 per threat, and no existing threat has a page of its own. Generic rollup and exclusion mechanics stay on threatconfiguration.md; only values specific to each threat go here. Already UPDATE."
+    },
+    {
+      "page": "docs/threatmanager/3.4/install/upgrade/upgrade3.3.md",
+      "facts": [
+        "F045",
+        "F264",
+        "F265",
+        "F038"
+      ],
+      "claims": [],
+      "reason": "Upgrade-time behavior readers must know before they upgrade: First Time Location locations are purged and the threat is suspended 30 days (F045, F264, F265), and the next Entra ID sync is a full sync (F038). Page is already REWRITE (becomes the 3.3 to 3.4 upgrade). F264 and F265 are also on threats/entraid.md so the threat reader sees the suspension; link between them."
+    },
+    {
+      "page": "docs/threatmanager/3.4/install/actionservice.md",
+      "facts": [
+        "F018",
+        "F019"
+      ],
+      "claims": [],
+      "reason": "Registration response and the ServiceStatus endpoint are the server half of the remote-service status check this page already documents (F152-F160, F158). Already REWRITE. Customers never call them directly, so state them only as how the status check works."
+    },
+    {
+      "page": "docs/threatmanager/3.4/install/overview.md",
+      "facts": [
+        "F119"
+      ],
+      "claims": [],
+      "reason": "The Report Only installer (F118, already assigned here) runs the License Service with -ro; same topic. Already UPDATE."
+    },
+    {
+      "page": "docs/threatmanager/3.4/administration/configuration/systemsettings/licensing.md",
+      "facts": [
+        "F235"
+      ],
+      "claims": [],
+      "reason": "Report Only installs and the trial key are a licensing behavior; extends this page's licensing facts. Already UPDATE."
+    },
+    {
+      "page": "docs/threatmanager/3.4/administration/configuration/systemsettings/useraccess.md",
+      "facts": [
+        "F244"
+      ],
+      "claims": [],
+      "reason": "FullControl and the Administrators role belong with the roles and permissions on the User Access page. Already UPDATE."
+    },
+    {
+      "page": "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md",
+      "facts": [
+        "F049",
+        "F334",
+        "F038"
+      ],
+      "claims": [],
+      "reason": "Risky object sync split into RiskyUsers, RiskyServicePrincipals, RiskyAgents with a 1 minute wait, and display-name resync, are Entra ID Sync behavior. Already UPDATE."
+    },
+    {
+      "page": "docs/threatmanager/3.4/administration/playbooks/action/localhost.md",
+      "facts": [
+        "F033",
+        "F186"
+      ],
+      "claims": [],
+      "reason": "Send Email action: email template date format with the viewer's offset (F033) and URL-safe /n handling in email summaries (F186) extend this page's Send Email and template facts (F182, F183, F187). Already UPDATE."
+    },
+    {
+      "page": "docs/threatmanager/3.4/administration/investigations/options/filters.md",
+      "facts": [
+        "F322"
+      ],
+      "claims": [],
+      "reason": "F321 (Originating Agent filter) is already here; F322 says the same filter applies to SIEM event queries. Already UPDATE."
+    }
+  ],
+  "newPages": [
+    {
+      "path": "docs/threatmanager/3.4/install/signingkey.md",
+      "title": "JWT Signing Key",
+      "type": "concept",
+      "zone": "install",
+      "sidebar_position": 42,
+      "facts": [
+        "F110",
+        "F203",
+        "F204",
+        "F207",
+        "F209",
+        "F211"
+      ],
+      "claims": [],
+      "reason": "Readers ask where the login-token signing key lives, who can read it, and what happens when it is missing; none of that fits a install step on install/secure.md, which should link here. Sits after secure.md (40) and before appsettings (45)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/exportsigningkeys.md",
+      "title": "Export the JWT Signing Key to Another Host",
+      "type": "task",
+      "zone": "install",
+      "sidebar_position": 43,
+      "facts": [
+        "F104",
+        "F105",
+        "F107",
+        "F108",
+        "F109",
+        "F213",
+        "F214",
+        "F215",
+        "F216",
+        "F217"
+      ],
+      "claims": [],
+      "reason": "Distinct task with its own prerequisites (installed product, existing key, admin rights, .NET Framework 4.7.2), procedure on the installer Welcome page, one-time code handling, and failure messages. Link from install/application.md (Welcome page step) and install/secure.md; limit F217 (copying the registry value does not work) goes in a Limits section."
+    },
+    {
+      "path": "docs/threatmanager/3.4/install/integration/syslogevents.md",
+      "title": "Syslog Event Fields",
+      "type": "reference",
+      "zone": "install",
+      "sidebar_position": 40,
+      "facts": [
+        "F037",
+        "F180",
+        "F181"
+      ],
+      "claims": [],
+      "reason": "Inbound syslog name-parsing (upn, ntname, username order, blank skipping, storage key name) has no page: siem.md is outbound only and the integration pages are product-specific. A short reference under install/integration, linked from integration/overview.md and the Activity Monitor page. F037 and F180 overlap; keep both ids so the drafter covers the NAM wording."
+    },
+    {
+      "path": "docs/threatmanager/3.4/api/locations.md",
+      "title": "Location API",
+      "type": "reference",
+      "zone": "integrations-api",
+      "sidebar_position": 10,
+      "facts": [
+        "F024",
+        "F025",
+        "F026"
+      ],
+      "claims": [
+        "C014"
+      ],
+      "reason": "New REST endpoints with no existing home. The product has no documented API and no OpenAPI spec for these, so follow the small-API form: one page per resource group, endpoint-first with method, path, parameters, response codes. Needs an api/ category (proposal below)."
+    }
+  ],
+  "dropped": [
+    {
+      "id": "F023",
+      "reason": "Bug fix to Top Threat Counts names; no page documents Top Threat Counts or the old wrong behavior."
+    },
+    {
+      "id": "F190",
+      "reason": "Cosmetic product-name rename in an internal REST client error message; no page quotes the old text."
+    },
+    {
+      "id": "F246",
+      "reason": "Bug fix (500 on ADMIN password change with malformed history); no page describes the failure and the documented behavior is unchanged."
+    },
+    {
+      "id": "F349",
+      "reason": "Unchanged notice text on the tag picker; tagmanagement.md is KEEP and the notice is not documented, nothing false to fix."
+    },
+    {
+      "id": "F365",
+      "reason": "Unchanged, cosmetic loading overlay link label."
+    },
+    {
+      "id": "F371",
+      "reason": "Unchanged; the Service Accounts page already lists these columns (manifest note on serviceaccounts.md)."
+    },
+    {
+      "id": "F415",
+      "reason": "Unchanged; System Settings pages are KEEP and already match this tree."
+    }
+  ],
+  "proposals": [
+    {
+      "kind": "rename",
+      "paths": [
+        "docs/threatmanager/3.4/install/upgrade/upgrade3.3.md",
+        "docs/threatmanager/3.4/install/upgrade/upgrade3.4.md"
+      ],
+      "recommendation": "Rename to upgrade3.4.md, retitle 'Upgrade Threat Manager from 3.3 to 3.4', and rewrite for 3.4.",
+      "reason": "Every earlier release has its own upgrade page replacing the previous one: 3.1 has upgrade3.1.md (plus upgrade3.0.md and upgrade2.8.md), 3.2 has upgrade3.2.md, 3.3 has upgrade3.3.md. The 3.4 copy is the seeded 3.3 page and documents 3.2 to 3.3. Keep upgrade_pg14_to_pg18.md and upgrade.md. Update links to the old filename inside 3.4."
+    },
+    {
+      "kind": "redirect",
+      "paths": [
+        "docs/threatmanager/3.4/install/upgrade/upgrade3.3.md"
+      ],
+      "recommendation": "No redirect needed for the rename or for any of the four NEW pages.",
+      "reason": "The 3.4 folder is new and unpublished, so none of these 3.4 URLs exist yet; the 3.3 folder keeps its own upgrade3.3.md. A redirect is only needed if the writer later moves a page that existed in an earlier published version."
+    },
+    {
+      "kind": "move",
+      "paths": [
+        "docs/threatmanager/3.4/api/_category_.json",
+        "docs/threatmanager/3.4/api/locations.md"
+      ],
+      "recommendation": "Create a new top-level api/ folder (label 'API', position 50, after Administration at 40) with a short overview.md page (what the REST API is, base URL, authentication via app token) before locations.md, or fold locations.md under administration/ if you do not want an API zone for one page.",
+      "reason": "Integrations & API is a conditional zone; Threat Manager 3.3 has no API pages, so the zone is new. A single page does not justify an overview with no other endpoints, which is why this needs your call. Facts for AppToken, License, and ServiceStatus endpoints are placed on their feature pages rather than here."
+    },
+    {
+      "kind": "split",
+      "paths": [
+        "docs/threatmanager/3.4/install/application.md",
+        "docs/threatmanager/3.4/install/silentinstall.md"
+      ],
+      "recommendation": "Move the command-line variables (F071-F074, F076-F079) to a new reference page install/silentinstall.md, title 'Silent Installation Variables', position 25.",
+      "reason": "The manifest already notes the variables do not fit the step-by-step install task; the page carries 23 facts and mixes a task and a reference. The writer's yes is needed before drafting."
+    },
+    {
+      "kind": "split",
+      "paths": [
+        "docs/threatmanager/3.4/install/actionservice.md",
+        "docs/threatmanager/3.4/install/remoteservicestatus.md"
+      ],
+      "recommendation": "Optional: after the REWRITE as the remote services page, split the configuration window (F127-F150, F408-F412) and the status check (F152-F160) into their own pages (for example install/remoteservices.md and install/remoteservicestatus.md).",
+      "reason": "Page carries 41 facts and a service-account task, a configuration reference, and a status check, three reader questions. Splitting is cleaner but also needs a title or path change the manifest already flags for approval."
+    },
+    {
+      "kind": "split",
+      "paths": [
+        "docs/threatmanager/3.4/threats/entraid.md"
+      ],
+      "recommendation": "Keep the three new threats as H2 sections for now. If the Security Policy Weakening section grows past one screen of tables once drafted, move it to threats/securitypolicyweakening.md and link from the H2.",
+      "reason": "It carries the most facts (about 14 of the 23 threat facts), with a table of five policies, but no threat has its own page today, so a split would break the catalog pattern."
+    }
+  ]
+}

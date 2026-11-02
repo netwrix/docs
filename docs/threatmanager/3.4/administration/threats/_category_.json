@@ -1,0 +1,10 @@
+{
+  "label": "Threats Page",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "threats"
+  }
+}

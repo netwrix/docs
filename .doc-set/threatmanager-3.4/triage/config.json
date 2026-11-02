@@ -1,0 +1,598 @@
+{
+  "slice": "config",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/overview.md",
+      "title": "Configuration Menu",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Menu entries and descriptions still hold; NTP integration is out of scope.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/threatresponse.md",
+      "title": "Threat Response Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Action list is unchanged; the Send Email, Tag Object, and Flag Compromised fixes change no statement here.",
+      "note": "F034, F185, F188, F189, F182, F183 belong to the playbook action pages."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/overview.md",
+      "title": "Integrations Interface",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Lists the same integration pages; Netwrix Threat Prevention (NTP) page is out of scope.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/activedirectorysync.md",
+      "title": "Active Directory Sync Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Statements still hold; the gMSA/dMSA/sMSA classification fixes (F039, F200, F201) are already consistent with the Service Accounts tab text.",
+      "note": "F200 and F201 (full AD scan on upgrade) best fit the Service Accounts page, not this one."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md",
+      "title": "Entra ID Sync Page",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F194",
+        "F195",
+        "F196",
+        "F197",
+        "F198",
+        "F333",
+        "F335",
+        "F388"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Type – The object class that was being synced",
+          "factId": "F194",
+          "why": "Sync history Type now shows Risky Users, Risky Service Principals, and Risky Agents; Risky Objects remains only for older rows."
+        },
+        {
+          "quote": "This includes general information about user, group, and computer objects within the Entra ID tenant.",
+          "factId": "F388",
+          "why": "History also lists the three risky sync types and agent identities."
+        }
+      ],
+      "reason": "Sync History now lists separate Risky Users, Risky Service Principals, and Risky Agents sync types, and agent tagging and display-name sync changed.",
+      "note": "F335 also names the IdentityRiskyAgent.Read.All permission; the Entra ID sync permissions page in requirements/ needs it too."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/apptoken.md",
+      "title": "App Tokens Page",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F010",
+        "F012",
+        "F013",
+        "F015",
+        "F202",
+        "F218",
+        "F221",
+        "F222",
+        "F245",
+        "F401",
+        "F402",
+        "F403",
+        "F404"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Step 3 – Enter a Name for the token in the Name field, and a Description for the token in the Description field.",
+          "factId": "F015",
+          "why": "The add dialog also has \"How will this token be used\": \"Send event data to Threat Manager from an Agent\" or \"Grant access to the Threat Manager console\" (AppTokenConfiguration.jsx, Application and Agent types only). No fact states the UI labels; read the code when drafting."
+        },
+        {
+          "quote": "Step 1 – In the App Token box, click Copy Token.The app token is copied to the clipboard.",
+          "factId": "F401",
+          "why": "The value shows \"[Hidden Value]\" until you click View Token (then Hide Token); Copy still copies the real token."
+        },
+        {
+          "quote": "Ensure that the app token is enabled for sending data to Threat Manager.",
+          "factId": "F402",
+          "why": "An invalid token also shows an error alert on its page and needs replacing (F202, F218, F403, F404)."
+        }
+      ],
+      "reason": "Token value is now hidden until View Token, the add dialog asks how the token is used (Agent or console), and broken tokens raise alerts.",
+      "note": "F010, F012, F013, F222 are API facts; place on API pages if the product has them. F245 describes the Agent type used by NTP/NAM agents."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/credentialprofile.md",
+      "title": "Credential Profile Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Credential profile behavior is unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/email.md",
+      "title": "Email Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Email settings and defaults still hold; URL-safe /n handling (F034, F185, F186) concerns playbook actions.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/foldersettings.md",
+      "title": "Folder Settings Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 70,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Folder and shared folder settings are unchanged.",
+      "note": "F031, F192, F374 (stale shared folder id on email subscriptions) belong with subscriptions."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/siem.md",
+      "title": "SIEM Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 80,
+      "facts": [
+        "F182"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "**Primary Event**  \nThe primary event is the event that initially triggered the threat.",
+          "factId": "F182",
+          "why": "Add the PrimaryEventOriginatingAgent variable (\"The agent that originated the primary event.\", shows \"Primary Event Originating Agent Not Available\" when empty). Confirm the %...% name and SIEM exposure in the code."
+        }
+      ],
+      "reason": "The SIEM template variable list lacks the new primary event originating agent variable.",
+      "note": "Reference table is embedded in a setup task page; step 3 says Send Test Message sends \"a test email\" (pre-3.4, verify). F180 (inbound syslog fields) does not belong here. F183 belongs to the playbook PowerShell action templates."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/netwrixintegrations.md",
+      "title": "Netwrix Integrations Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 90,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Netwrix integration settings still hold; the NTP integration is out of scope.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/tagmanagement.md",
+      "title": "Tag Management Page",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 100,
+      "facts": [
+        "F348"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Built-in tags and procedures still hold; F348 (description field wraps up to 3 rows) is cosmetic.",
+      "note": "F348 changes no statement; drop it if the writer prefers. F319 AI Agent label belongs on the threats list page."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/page.md",
+      "title": "Authentication Provider Page",
+      "action": "KEEP",
+      "type": "concept",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Provider types and steps are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/radius.md",
+      "title": "RADIUS Authentication Provider",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "RADIUS settings are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/saml.md",
+      "title": "SAML Authentication Provider",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "SAML settings are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/openid/openid.md",
+      "title": "OpenID Authentication Provider",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "OpenID settings are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/page/openid/entraidopenid.md",
+      "title": "Microsoft Entra ID Configuration",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Entra ID OpenID registration steps are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/policies/overview.md",
+      "title": "Policies Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Policy table, deployment history, and add steps are unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/policies/honeytoken.md",
+      "title": "Configure Honeytoken Threats",
+      "action": "KEEP",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "LDAP monitoring setup is unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md",
+      "title": "Policy Configuration",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F017"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "The History tab displays audit history for changes to this policy.",
+          "factId": "F017",
+          "why": "History now also records \"App token replaced. Honey Tokens must be re-deployed.\" when the policy token is broken or deleted; the old token stays active until deleted."
+        }
+      ],
+      "reason": "Honeytoken policies now replace a broken or deleted app token automatically and log it in history.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/overview.md",
+      "title": "System Health Interface",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Lists the same pages.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/backlog.md",
+      "title": "Backlog",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No change.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/actionqueue.md",
+      "title": "Action Queue",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No change.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/agents.md",
+      "title": "Agents",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No change.",
+      "note": "F245 (Agent token type) is on the App Tokens page."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemhealth/services.md",
+      "title": "Services Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Services table and details are unchanged in the UI.",
+      "note": "Remote service status (F152 to F160, F018, F019) is install/configure-remote-service content."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/overview.md",
+      "title": "System Settings Interface",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 60,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Lists the same pages.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/auditing.md",
+      "title": "Auditing Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Audit table is unchanged.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/useraccess.md",
+      "title": "User Access Page",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 20,
+      "facts": [
+        "F001",
+        "F004",
+        "F005",
+        "F006",
+        "F008",
+        "F240",
+        "F241",
+        "F242",
+        "F243"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Administrator – This role provides unrestricted access to all functionality",
+          "factId": "F008",
+          "why": "Built-in role is named \"Administrators\"; unrestricted access comes from the FullControl permission (also granted to the built-in admin account)."
+        },
+        {
+          "quote": "Report Administrator – This role can configure/use anything on the investigations page",
+          "factId": "F241",
+          "why": "Sees all investigations through the ViewAllInvestigations permission, not a role-name check; upgrade grants it to Administrators and Report Administrator."
+        },
+        {
+          "quote": "Can only see and run saved investigations that have been assigned to them",
+          "factId": "F005",
+          "why": "Access is by permission; a user without ShowSearch gets no access through role-based sharing."
+        }
+      ],
+      "reason": "Role descriptions predate the permission-based model: ViewAllInvestigations, FullControl, and built-in role names changed.",
+      "note": "F001, F006, F243 are role API facts; F242 (built-in roles cannot be edited or deleted) also applies. Login facts F246 to F248 are in unplaced."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/licensing.md",
+      "title": "Licensing Page",
+      "action": "UPDATE",
+      "type": "task",
+      "zone": "administration",
+      "sidebar_position": 30,
+      "facts": [
+        "F028",
+        "F029",
+        "F030",
+        "F226",
+        "F227",
+        "F228",
+        "F229",
+        "F230",
+        "F231",
+        "F232",
+        "F233",
+        "F234",
+        "F405"
+      ],
+      "claims": [],
+      "stale": [
+        {
+          "quote": "Step 3 – Refresh the page to confirm that the license has been uploaded properly.",
+          "factId": "F405",
+          "why": "A failed import shows the server error (or \"Error installing license\") in red and keeps the current license; reloading does not show a false \"Installed license.\" (F226, F232)."
+        },
+        {
+          "quote": "Threat Manager comes with a temporary 15-day license.",
+          "factId": "F234",
+          "why": "Trial key file is deleted only after it activates; confirm the 15-day length in code when drafting."
+        }
+      ],
+      "reason": "Rejected license activation now shows specific errors and keeps the current license; trial key handling changed.",
+      "note": "Add a troubleshooting section for the messages in F029 and F227 to F230. F028 and F231 describe the License API response."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/systemjobs.md",
+      "title": "System Jobs Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 40,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "Retention settings and defaults still hold.",
+      "note": "System Settings tree also shows Abnormal Time Evidence and Automated Account Detection under System Jobs (unchanged since 3.3)."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/systemsettings/about.md",
+      "title": "About Threat Manager Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 50,
+      "facts": [],
+      "claims": [],
+      "stale": [],
+      "reason": "No change.",
+      "note": ""
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/threatdetection/threatdetection.md",
+      "title": "Threat Detection Page",
+      "action": "KEEP",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F386"
+      ],
+      "claims": [],
+      "stale": [],
+      "reason": "Page statements hold; new threats appear under the existing Entra ID group (the UI label; facts say Azure).",
+      "note": "F257 and F386 are placed on the threat catalog pages."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/threatdetection/threatconfiguration.md",
+      "title": "Fine Tune a Threat",
+      "action": "UPDATE",
+      "type": "reference",
+      "zone": "administration",
+      "sidebar_position": 10,
+      "facts": [
+        "F284",
+        "F285",
+        "F287",
+        "F312",
+        "F313",
+        "F314",
+        "F047",
+        "F046",
+        "F316",
+        "F356",
+        "F357",
+        "F358"
+      ],
+      "claims": [
+        "C005"
+      ],
+      "stale": [
+        {
+          "quote": "This tab shows the settings that are required for the Forged Ticket threat.",
+          "factId": "F312",
+          "why": "Settings tab also carries Trigger on Non-Human Identities for Impossible Travel (default off, F313, F314) and Tracked Weak Methods and Tracked Strong Methods for Authentication Methods Policy Weakening (F284, F285, F287)."
+        },
+        {
+          "quote": "Select an Attribute from the Attribute dropdown list:\n- User\n- Host\n- Client\n- File",
+          "factId": "F356",
+          "why": "Exclusion editor gains Weakened Policy and Target Setting filters (F357, F358); Impossible Travel drops File Tag and Process (F046, F316)."
+        }
+      ],
+      "reason": "Settings tab and exclusion attribute lists omit the new Impossible Travel and Authentication Methods Policy Weakening settings and the Security Policy Weakening exclusion filters.",
+      "note": "F269, F291, F307 (per-threat exclusion fields) belong on the threat catalog pages."
+    }
+  ],
+  "unplaced": [
+    "F037",
+    "F180",
+    "F043",
+    "F330",
+    "F331",
+    "F055",
+    "F246",
+    "F247",
+    "F248",
+    "F249",
+    "F406",
+    "F407",
+    "F022",
+    "F023",
+    "F033"
+  ]
+}

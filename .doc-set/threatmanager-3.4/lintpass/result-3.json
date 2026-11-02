@@ -1,0 +1,134 @@
+{
+ "batch": 3,
+ "pages": [
+  {
+   "path": "docs/threatmanager/3.4/administration/investigations/options/edit.md",
+   "before": 6,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/investigations/options/overview.md",
+   "before": 6,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/investigations/overview.md",
+   "before": 1,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/investigations/predefinedinvestigations.md",
+   "before": 1,
+   "after": 1,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": [
+    "38: \"Occurs when an a Entra ID Application is added\" flagged for undefined acronym (Entra ID); it is a table cell for an investigation description and the product name cannot be spelled out without adding content"
+   ]
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/investigations/subscriptionsexports.md",
+   "before": 4,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/action/activedirectory.md",
+   "before": 4,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/action/overview.md",
+   "before": 3,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/action/thirdparty.md",
+   "before": 5,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/action/windowsfileserver.md",
+   "before": 2,
+   "after": 1,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": [
+    "29: \"If not specified, the action runs as the credentials of the Action Service.\" Dale passive-voice flag persists on an already-active sentence (likely false positive)"
+   ]
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/action/windowsserver.md",
+   "before": 2,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/editstep.md",
+   "before": 1,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/export.md",
+   "before": 1,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/import.md",
+   "before": 1,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/importsteps.md",
+   "before": 2,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  },
+  {
+   "path": "docs/threatmanager/3.4/administration/playbooks/overview.md",
+   "before": 8,
+   "after": 0,
+   "integrity": "pass",
+   "suppressions": [],
+   "unfixed": []
+  }
+ ],
+ "typos": [
+  "docs/threatmanager/3.4/administration/investigations/predefinedinvestigations.md:38: \"an a Entra ID Application\" -> \"an Entra ID Application\"",
+  "docs/threatmanager/3.4/administration/investigations/predefinedinvestigations.md:39: Applications Deleted row says \"Occurs when ... Application is added\" -> \"is deleted\" (filter is Delete application); also \"an a\" -> \"an\"",
+  "docs/threatmanager/3.4/administration/playbooks/action/windowsserver.md:61: \"those user who triggered the threat\" -> \"the user who triggered the threat\" (kept as is; now reads \"Threat Manager uses those user who triggered the threat\")"
+ ]
+}

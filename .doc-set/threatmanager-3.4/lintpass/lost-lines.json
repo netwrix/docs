@@ -1,0 +1,186 @@
+[
+  {
+    "page": "administration/playbooks/action/activedirectory.md",
+    "action": "KEEP",
+    "afterNewLine": 18,
+    "oldNo": 19,
+    "line": "  triggered the threat will be used.",
+    "missing": [
+      "will",
+      "used"
+    ],
+    "containment": 0.5
+  },
+  {
+    "page": "administration/playbooks/action/activedirectory.md",
+    "action": "KEEP",
+    "afterNewLine": 22,
+    "oldNo": 24,
+    "line": "  threat will be used.",
+    "missing": [
+      "will",
+      "used"
+    ],
+    "containment": 0.33
+  },
+  {
+    "page": "administration/playbooks/action/activedirectory.md",
+    "action": "KEEP",
+    "afterNewLine": 35,
+    "oldNo": 38,
+    "line": "  triggered the threat will be used.",
+    "missing": [
+      "will",
+      "used"
+    ],
+    "containment": 0.5
+  },
+  {
+    "page": "administration/playbooks/action/activedirectory.md",
+    "action": "KEEP",
+    "afterNewLine": 73,
+    "oldNo": 77,
+    "line": "  threat will be used.",
+    "missing": [
+      "will",
+      "used"
+    ],
+    "containment": 0.33
+  },
+  {
+    "page": "administration/playbooks/action/activedirectory.md",
+    "action": "KEEP",
+    "afterNewLine": 86,
+    "oldNo": 91,
+    "line": "  will be run as the credentials of the Action Service.",
+    "missing": [
+      "will"
+    ],
+    "containment": 0.75
+  },
+  {
+    "page": "administration/playbooks/action/windowsfileserver.md",
+    "action": "KEEP",
+    "afterNewLine": 29,
+    "oldNo": 30,
+    "line": "  will be run as the credentials of the Action Service.",
+    "missing": [
+      "will"
+    ],
+    "containment": 0.75
+  },
+  {
+    "page": "administration/playbooks/action/windowsserver.md",
+    "action": "KEEP",
+    "afterNewLine": 60,
+    "oldNo": 61,
+    "line": "  who triggered the threat will be used.",
+    "missing": [
+      "will"
+    ],
+    "containment": 0.75
+  },
+  {
+    "page": "administration/investigations/options/overview.md",
+    "action": "KEEP",
+    "afterNewLine": 24,
+    "oldNo": 28,
+    "line": "  scheduled as desired. See the [Export Report](/docs/threatmanager/3.4/administration/investigations/options/export.md) topic for additional information.",
+    "missing": [
+      "scheduled",
+      "desired",
+      "export.md"
+    ],
+    "containment": 0.77
+  },
+  {
+    "page": "administration/playbooks/importsteps.md",
+    "action": "KEEP",
+    "afterNewLine": 10,
+    "oldNo": 11,
+    "line": "as Playbook steps.",
+    "missing": [
+      "playbook"
+    ],
+    "containment": 0.5
+  },
+  {
+    "page": "administration/playbooks/action/overview.md",
+    "action": "KEEP",
+    "afterNewLine": 9,
+    "oldNo": 11,
+    "line": "following information is displayed:",
+    "missing": [
+      "displayed"
+    ],
+    "containment": 0.67
+  },
+  {
+    "page": "administration/playbooks/action/thirdparty.md",
+    "action": "KEEP",
+    "afterNewLine": 29,
+    "oldNo": 31,
+    "line": "  be used.",
+    "missing": [
+      "used"
+    ],
+    "containment": 0
+  },
+  {
+    "page": "administration/playbooks/action/thirdparty.md",
+    "action": "KEEP",
+    "afterNewLine": 37,
+    "oldNo": 40,
+    "line": "  will be used.",
+    "missing": [
+      "used"
+    ],
+    "containment": 0.5
+  },
+  {
+    "page": "administration/playbooks/action/thirdparty.md",
+    "action": "KEEP",
+    "afterNewLine": 84,
+    "oldNo": 89,
+    "line": "monitor this property. This allows Threat Manager to integrate with the Forescout platform to enable",
+    "missing": [
+      "integrate",
+      "platform",
+      "enable"
+    ],
+    "containment": 0.75
+  },
+  {
+    "page": "administration/playbooks/action/thirdparty.md",
+    "action": "KEEP",
+    "afterNewLine": 84,
+    "oldNo": 90,
+    "line": "the use of the capabilities of Forescout for threat response.",
+    "missing": [
+      "capabilities"
+    ],
+    "containment": 0.75
+  },
+  {
+    "page": "administration/playbooks/action/thirdparty.md",
+    "action": "KEEP",
+    "afterNewLine": 114,
+    "oldNo": 121,
+    "line": "  message will be sent.",
+    "missing": [
+      "sent"
+    ],
+    "containment": 0.67
+  },
+  {
+    "page": "administration/playbooks/action/thirdparty.md",
+    "action": "KEEP",
+    "afterNewLine": 122,
+    "oldNo": 130,
+    "line": "  subject will be used.",
+    "missing": [
+      "used"
+    ],
+    "containment": 0.67
+  }
+]

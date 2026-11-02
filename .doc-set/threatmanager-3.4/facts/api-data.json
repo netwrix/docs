@@ -1,0 +1,594 @@
+{
+  "area": "api-data",
+  "facts": [
+    {
+      "statement": "Role permissions are now stored per role as a list. The Role object returned by the roles API drops the 11 boolean fields (ShowConfiguration, ExecuteActions, AlterActions, AlterInvestigations, ShowAuditLogs, ShowSearch, ShowThreat, ShowHome, CreateThreat, ShowSubscription, ShowServiceAccounts) and has a Permissions array of numeric permission values plus an IsBuiltIn boolean.",
+      "cite": "StealthDefendCore/Common/Dto/Role.cs:21",
+      "area": "roles-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#451120"
+      ]
+    },
+    {
+      "statement": "Numeric role permission values: FullControl=0, ShowConfiguration=1, ExecuteActions=2, AlterActions=3, AlterInvestigations=4, ShowAuditLogs=5, ShowSearch=6, ShowThreat=7, CreateThreat=8, ShowHome=9, ShowSubscription=10, ShowServiceAccounts=11, ManageNtp=12, ViewAllInvestigations=13.",
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:135",
+      "area": "roles-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451120"
+      ]
+    },
+    {
+      "statement": "New role permission ManageNtp (12) controls who can manage the Netwrix Threat Prevention (NTP) gRPC integration configuration and trigger NTP actions. Every NTP management endpoint requires it.",
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:148",
+      "area": "roles-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451120"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "New role permission ViewAllInvestigations (13) gives unrestricted visibility into every saved investigation (alert query), bypassing ownership, the public flag, and explicit access grants.",
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:153",
+      "area": "roles-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451120"
+      ]
+    },
+    {
+      "statement": "Access to investigations is now decided by permission, not role name. A user with ViewAllInvestigations sees all investigations. A user without ShowSearch is not given access through role-based sharing. Previously the Administrators and Report Administrator roles were matched by name and the Report Reviewer role was excluded by name.",
+      "cite": "StealthDefendCore/Actor/AlertQueryActor.cs:195",
+      "area": "roles-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#451120"
+      ]
+    },
+    {
+      "statement": "On upgrade, the built-in Administrators role receives ManageNtp and ViewAllInvestigations, and the built-in Report Administrator role receives ViewAllInvestigations. Existing roles keep their current permissions.",
+      "cite": "installerFiles/sql13/v3.2.23.sql:23",
+      "area": "roles-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451120"
+      ]
+    },
+    {
+      "statement": "Built-in roles (those that exist before upgrade, such as Administrators and Report Administrator) are marked IsBuiltIn. Updating or deleting a built-in role fails with \"Role '<name>' is built-in and cannot be updated.\" or \"Role '<name>' is built-in and cannot be deleted.\"",
+      "cite": "StealthDefendCore/Actor/RoleActor.cs:75",
+      "area": "roles-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451120"
+      ]
+    },
+    {
+      "statement": "The FullControl permission passes every permission check. It is granted to the built-in Administrators role and to the built-in 'admin' account. It replaces the earlier match on the Administrators role name.",
+      "cite": "StealthDefendCore/WebApi/SdAuthorizeAttribute.cs:18",
+      "area": "roles-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#451120"
+      ]
+    },
+    {
+      "statement": "Role tables role_permission and role_permission_join replace the boolean permission columns on the role table. The migration copies existing flags into join rows and drops the columns.",
+      "cite": "installerFiles/sql13/v3.2.23.sql:8",
+      "area": "roles-api",
+      "status": "changed",
+      "internal": true,
+      "tickets": [
+        "AB#451120"
+      ]
+    },
+    {
+      "statement": "New endpoint GET api/v1/Apptoken/{id}/token returns the raw value of an app token as { token }. It requires ShowConfiguration, returns 404 when the id is unknown, and writes an audit entry that records only the token id and name.",
+      "cite": "StealthDefendCore/WebApi/Controllers/ApptokenController.cs:100",
+      "area": "apptoken-api",
+      "status": "new",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "The audit log message for viewing a token reads: Application token '<name>' value viewed or copied.",
+      "cite": "StealthDefendCore/WebApi/Resources.resx:252",
+      "area": "apptoken-api",
+      "status": "new",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "Policy list responses no longer include the app token value. The AppToken.Token field returns \"[REDACTED]\". Use GET api/v1/Apptoken/{id}/token to read it.",
+      "cite": "StealthDefendCore/WebApi/Controllers/PolicyController.cs:124",
+      "area": "apptoken-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "New endpoint GET api/v1/Apptoken/BrokenTokens returns the names of app tokens that are no longer signed with the current signing key. It requires ShowConfiguration. The Apptoken object has a new Broken boolean.",
+      "cite": "StealthDefendCore/WebApi/Controllers/ApptokenController.cs:123",
+      "area": "apptoken-api",
+      "status": "new",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "A background check marks app tokens as broken or resolved and writes audit entries: \"App token '<name>' is no longer signed with the current signing key.\" and \"App token '<name>' issue has been resolved.\"",
+      "cite": "StealthDefendCore/WebApi/Resources.resx:381",
+      "area": "apptoken-api",
+      "status": "new",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "Creating an app token accepts only the Application and Agent types. Any other type returns 400 with \"Only Application and Agent tokens can be created.\" The created token takes the type you send.",
+      "cite": "StealthDefendCore/WebApi/Controllers/ApptokenController.cs:174",
+      "area": "apptoken-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "App token types now include Agent (3), alongside Application and Integration (2). On upgrade, tokens linked to an Integration service are retyped to Integration, and a new apptoken.broken column defaults to false. Agent tokens are not detected automatically.",
+      "cite": "installerFiles/sql13/v3.2.34.sql:1",
+      "area": "apptoken-api",
+      "status": "new",
+      "internal": true,
+      "tickets": []
+    },
+    {
+      "statement": "When a honey token policy is read or its script is fetched and its app token is broken or deleted, Threat Manager creates a new app token and records the history entry \"App token replaced. Honey Tokens must be re-deployed.\" The old token stays active until you delete it.",
+      "cite": "StealthDefendCore/Actor/PolicyActor.cs:422",
+      "area": "honey-token",
+      "status": "new",
+      "internal": false,
+      "tickets": []
+    },
+    {
+      "statement": "A remote Integration Service registration response (POST to the integration service registration endpoint) now returns RegisterIntegrationServiceResponse with an EncryptedStatusJwt instead of an empty 200.",
+      "cite": "StealthDefendCore/WebApi/Controllers/ServiceController.cs:261",
+      "area": "service-status-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "New endpoint GET api/v1/ServiceStatus lets a remote service check that Threat Manager can reach it and that it accepts its token. It uses the status token issued at registration and returns 400 \"The token does not name a machine.\" or \"The token does not name a service type.\", or 404 when no matching service exists. It is not audited.",
+      "cite": "StealthDefendCore/WebApi/Controllers/ServiceStatusController.cs:31",
+      "area": "service-status-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "statement": "Exporting logs on a Threat Manager install whose PostgreSQL database is on a different server no longer fails with 500. The export zip contains DatabaseLogs_PathNotFound.txt when the database log path does not exist on the local machine, or DatabaseLogs_NoFilesFound.txt when it exists but has no log files.",
+      "cite": "StealthDefendCore/Actor/LogsActor.cs:131",
+      "area": "logs-export",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#450892"
+      ]
+    },
+    {
+      "statement": "The log export endpoint now catches unexpected errors and returns 500 with \"Failed to export logs. See server logs for details.\" The export file is named Logs_<version>_<yyyy-MM-dd_HH-mm-ss>.zip.",
+      "cite": "StealthDefendCore/WebApi/Controllers/LogsController.cs:72",
+      "area": "logs-export",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#450892"
+      ]
+    },
+    {
+      "statement": "POST v1/Tag/TagObjects accepts a uniqueName with each object in ObjectTags ({ objectId, uniqueName }). The tagging response action and the object details UI now send it when they tag users, hosts, clients, groups and Entra ID objects.",
+      "cite": "StealthDefendCore/ActionManager.PS/PowerShell/TagObject.ps1:59",
+      "area": "tag-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#452973"
+      ]
+    },
+    {
+      "statement": "The tag threat-count query for a tag now takes object names from all objects (display name, then unique name, then id), which fixes the wrong or missing computer name shown for tagged hosts in Top Threat Counts.",
+      "cite": "StealthDefendCore/Actor/ThreatActor.cs:635",
+      "area": "tag-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#365026"
+      ]
+    },
+    {
+      "statement": "New endpoint GET api/v1/UserLocationCount/byUserId?userId=<guid> returns a data table of the locations a user signed in from. Each row has UserName, LocationId, LocationName, City, State, CountryOrRegion, FirstAccessTime, LastAccessTime, Count, UserLinkedId and UserDisplayName. It requires the User claim.",
+      "cite": "StealthDefendCore/WebApi/Controllers/UserLocationCountController.cs:77",
+      "area": "location-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "statement": "New endpoint GET api/v1/UserLocationCount?skip=&take= lists user location counts. skip and take below 0 return 400, and an empty result returns 404.",
+      "cite": "StealthDefendCore/WebApi/Controllers/UserLocationCountController.cs:59",
+      "area": "location-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "statement": "New endpoint GET api/v1/EvLocation/byIds?ids=1&ids=2 returns location records for the given ids. An empty result returns 404. A request for more than 1000 ids is logged as a warning but still answered.",
+      "cite": "StealthDefendCore/WebApi/Controllers/EvLocationController.cs:86",
+      "area": "location-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "statement": "Database view user_location_summary and a count column widened from int to long support the Activity by Location grid.",
+      "cite": "installerFiles/sql13/v3.2.24.sql:57",
+      "area": "location-api",
+      "status": "new",
+      "internal": true,
+      "tickets": [
+        "TMR-1455"
+      ]
+    },
+    {
+      "statement": "License upload (installing a license key) that Netwrix rejects now returns 400 with the LicenseInfo body and its ErrorMessage. Previously the failure came back as 200. A rejected activation is no longer cached as the installed license.",
+      "cite": "StealthDefendCore/WebApi/Controllers/LicenseController.cs:131",
+      "area": "license-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "License activation error messages shown on the Licensing page: \"The license key has expired. Contact Netwrix to get a new license key.\"; \"The license key is invalid. Make sure you selected the correct license key file.\"; \"The license could not be installed because the existing license file is corrupted. Contact Netwrix support for assistance.\"; \"The license could not be installed. See the License Service log for details.\"; and \"The license could not be installed. <detail>\" for other errors.",
+      "cite": "StealthDefendCore/LicenseService/LicenseErrorMessages.cs:14",
+      "area": "license-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1470"
+      ]
+    },
+    {
+      "statement": "A trial license key file is deleted only after the key activates successfully, so a failed activation no longer loses the trial key. Existing license information is no longer removed before the next activation.",
+      "cite": "StealthDefendCore/LicenseService/LicenseActor.cs:69",
+      "area": "license-api",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-199"
+      ]
+    },
+    {
+      "statement": "Subscriptions that email recipients no longer carry a stale shared folder id. On upgrade, shared_folder_id is cleared on every subscription that has at least one recipient.",
+      "cite": "installerFiles/sql13/v3.2.25.sql:6",
+      "area": "subscriptions",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-253",
+        "AB#452302"
+      ]
+    },
+    {
+      "statement": "The expiration date and time of new application credentials and passwords in threat evidence now use the viewer's local time zone, and two evidence entries, Dangerous Expiry (key credentials) and Dangerous Password Expiry (password credentials), are defined for the app credential threat.",
+      "cite": "installerFiles/sql13/v3.2.28.sql:1",
+      "area": "app-credentials",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-260",
+        "AB#451634"
+      ]
+    },
+    {
+      "statement": "Date and time values in email and evidence templates are converted with the viewer's UTC offset (dateTimeOffset register) and keep that offset when formatted, with dates shown as MM/dd/yyyy.",
+      "cite": "StealthDefendCore/Common/LocalizedDateFilter.cs:100",
+      "area": "app-credentials",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-260"
+      ]
+    },
+    {
+      "statement": "The Send Email action no longer breaks a threat URL whose host starts with 'n' (for example https://netwrix...). Only a '/n' outside URLs becomes a line break.",
+      "cite": "StealthDefendCore/Core/PseudoNewLineConverter.cs:8",
+      "area": "email-action",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#439684"
+      ]
+    },
+    {
+      "statement": "Default PowerShell action script now lists Primary Event Originating Agent: $PrimaryEventOriginatingAgent after Primary Event Host.",
+      "cite": "installerFiles/sql13/v3.2.31.sql:6",
+      "area": "response-actions",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1497"
+      ]
+    },
+    {
+      "statement": "The Flag as Confirmed Compromised action for an enterprise application now reads the service principal id and app id from AzureEventDetails.App, so it finds the application instead of skipping it.",
+      "cite": "StealthDefendCore/ActionManager.PS/PowerShell/Azure/FlagCompromisedUser.ps1:14",
+      "area": "response-actions",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#451064"
+      ]
+    },
+    {
+      "statement": "Syslog events from Netwrix Access Management (NAM) can carry upn= and ntname= fields. The perpetrator name uses ntname, then upn, then username. Blank values are skipped, which stops wrong display names for accounts that are not synced.",
+      "cite": "StealthDefendCore/Common/SyslogMessageParser.cs:381",
+      "area": "event-handling",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#452063",
+        "AB#452775"
+      ]
+    },
+    {
+      "statement": "A display name change on an already-linked Entra ID user, host or client now updates the display name stored on events. This fixes a wrong perpetrator name on Application Permission Change events. On upgrade, the next Entra ID replication sync is a full sync.",
+      "cite": "StealthDefendCore/Azure.EFCore/Migrations/20260806194700_FullSyncForDisplayNames.cs:16",
+      "area": "event-handling",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#451958"
+      ]
+    },
+    {
+      "statement": "gMSA, dMSA and sMSA accounts are no longer classified as computers, because only the last objectClass value is compared with computer. They appear as service accounts with the correct tags. On upgrade, the next Active Directory sync is a full scan.",
+      "cite": "StealthDefendCore/AD.DTO/Views/ADUserView.cs:80",
+      "area": "service-accounts",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#452096"
+      ]
+    },
+    {
+      "statement": "Full Active Directory scan is flagged by migration FullSyncToFixServiceAccountTags (ad.sync_config.perform_full_scan_next = true).",
+      "cite": "StealthDefendCore/AD.EFCore/Migrations/20260810163759_FullSyncToFixServiceAccountTags.cs:17",
+      "area": "service-accounts",
+      "status": "changed",
+      "internal": true,
+      "tickets": [
+        "AB#452096"
+      ]
+    },
+    {
+      "statement": "Investigation event tables no longer return 500 for Entra ID authentication events that have no target objects.",
+      "cite": "StealthDefendCore/Common/EventExtData/EventExtDeserializer.cs:165",
+      "area": "investigations",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#450916"
+      ]
+    },
+    {
+      "statement": "Custom threats roll up per alert query parameter set. Editing the filters of a custom threat starts a new rollup instead of continuing the earlier threat. On upgrade, the Custom rollup criterion is added to all investigation jobs.",
+      "cite": "installerFiles/sql13/v3.2.32.sql:117",
+      "area": "custom-threats",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1464"
+      ]
+    },
+    {
+      "statement": "Job service setting Job:AlertCatchUpLimitHours (default 6) sets how many hours a custom threat job can fall behind before Threat Manager skips the backlog of events as overflow. With Job:InsertOverflow true (default) it records the skipped range.",
+      "cite": "StealthDefendCore/JobService/appsettings.default.json:44",
+      "area": "custom-threats",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1464"
+      ]
+    },
+    {
+      "statement": "Custom threat polling is two-stage: stage 1 stores matching events in the new alert_query_event table, partitioned by day with the same retention as events. Stage 2 evaluates thresholds from that table.",
+      "cite": "installerFiles/sql13/v3.2.32.sql:12",
+      "area": "custom-threats",
+      "status": "new",
+      "internal": true,
+      "tickets": [
+        "TMR-1464"
+      ]
+    },
+    {
+      "statement": "First Time Location now ignores failed sign-ins. On upgrade, learned user locations older than event retention or without a successful sign-in are deleted, and the threat is suspended for 30 days (disabled_until) while locations are learned again.",
+      "cite": "installerFiles/sql13/v3.2.29.sql:33",
+      "area": "threat-migrations",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1495"
+      ]
+    },
+    {
+      "statement": "Impossible Travel no longer offers the File Tag and Process exclusion attributes, because location data exists only for authentication events. On upgrade they are added to the job's disabled exclusion types.",
+      "cite": "installerFiles/sql13/v3.2.19.sql:4",
+      "area": "threat-migrations",
+      "status": "removed",
+      "internal": false,
+      "tickets": [
+        "AB#450912"
+      ]
+    },
+    {
+      "statement": "Impossible Travel has a new setting 'Trigger on Non-Human Identities' (name trigger-on-non-human-identities) so sign-ins from applications and service principals can also trigger it.",
+      "cite": "installerFiles/sql13/v3.2.21.sql:5",
+      "area": "threat-migrations",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#452150"
+      ]
+    },
+    {
+      "statement": "New threat ids: FirstTimeLocation 74, AuthMethodsPolicyWeakening 75, SecurityPolicyWeakening 76. Exclusion types SecurityPolicyWeakeningPolicy (26), SecurityPolicyWeakeningTargetSetting (27) and OriginatingAgent (43) are new.",
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:331",
+      "area": "threat-migrations",
+      "status": "new",
+      "internal": true,
+      "tickets": [
+        "TMR-1455",
+        "TMR-135",
+        "TMR-141"
+      ]
+    },
+    {
+      "statement": "Entra ID risky object sync is split into three tasks, RiskyUsers, RiskyServicePrincipals and RiskyAgents, each with MinimumWaitTime 00:01:00, replacing the single RiskyObjects task in the Azure service config. Risky agents are read from the Graph beta endpoint.",
+      "cite": "StealthDefendCore/AzureService/appsettings.default.json:131",
+      "area": "azure-sync",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#452054"
+      ]
+    },
+    {
+      "statement": "A failed TLS connection to a remote service reports: \"A secure (TLS) connection could not be established: <detail> The certificate presented by the remote host is probably not trusted by <machine>. Import it into the Trusted Root Certification Authorities store (Local Computer) there.\"",
+      "cite": "StealthDefendCore/Common/ConnectionErrorDescriber.cs:43",
+      "area": "tls-errors",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "TMR-1518"
+      ]
+    },
+    {
+      "statement": "Creating or updating a Netwrix Threat Prevention configuration whose name already exists returns 409 \"A configuration with this name already exists.\" Configuration names must be unique.",
+      "cite": "StealthDefendCore/WebApi/Controllers/NtpGrpcConfigController.cs:56",
+      "area": "ntp-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "PUT api/v1/NtpGrpcConfig/{id}/CertificateData sets the trusted certificate from PEM text and returns 400 \"The provided certificate is not valid PEM data.\" for bad input, or 404 for an unknown id.",
+      "cite": "StealthDefendCore/WebApi/Controllers/NtpGrpcConfigController.cs:118",
+      "area": "ntp-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "POST api/v1/NtpManagement/GetCertificate and POST api/v1/NtpManagement/Test take an unsaved configuration. Without a selected Integration Service they return 400 \"An Integration Service must be selected before fetching the certificate.\" or \"... before testing the connection.\" Connection failures return 400 \"Could not connect to '<host>:<port>': <detail>\".",
+      "cite": "StealthDefendCore/WebApi/Controllers/NtpConnectionTestController.cs:46",
+      "area": "ntp-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "POST api/v1/NtpManagement/{id}/GetProductLicenseData, /GetDefendSettings and /SetDefendSettings work against a saved configuration id and return 404 for an unknown id.",
+      "cite": "StealthDefendCore/WebApi/Controllers/NtpManagementController.cs:32",
+      "area": "ntp-api",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    },
+    {
+      "statement": "Setting the ADMIN password after a reset works for an ADMIN account created on 2.7 whose login record has no password. The setup wizard reports the account as not set up when it has no password, so the create-password screen appears again.",
+      "cite": "StealthDefendCore/WebApi/Controllers/UserTokenController.cs:182",
+      "area": "admin-login",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "AB#452285"
+      ]
+    },
+    {
+      "statement": "Changing the ADMIN password no longer returns 500 when the password history holds a malformed entry. The entry is skipped and an error is logged.",
+      "cite": "StealthDefendCore/Stealthbits.Identity/Validator/PasswordHistoryValidator.cs:55",
+      "area": "admin-login",
+      "status": "changed",
+      "internal": false,
+      "tickets": [
+        "TMR-1513"
+      ]
+    },
+    {
+      "statement": "The web server sends Cache-Control: no-cache for HTML files, so browsers load the new index.html after an upgrade instead of a cached page that points to removed files.",
+      "cite": "StealthDefendCore/WebApi/Startup.cs:691",
+      "area": "web-server",
+      "status": "new",
+      "internal": false,
+      "tickets": [
+        "AB#451965"
+      ]
+    },
+    {
+      "statement": "Index idx_event_server_name_lower on lower(event_server.name) is added.",
+      "cite": "installerFiles/sql13/v3.2.31.sql:11",
+      "area": "database",
+      "status": "new",
+      "internal": true,
+      "tickets": []
+    },
+    {
+      "statement": "New table ntp_grpc_config holds NTP connection settings (name, service, host, port, credential profile, certificate, SPN).",
+      "cite": "installerFiles/sql13/v3.2.22.sql:5",
+      "area": "database",
+      "status": "new",
+      "internal": true,
+      "tickets": [
+        "AB#451117"
+      ],
+      "outOfScope": "Writer decision: the NTP integration is a beta UI not meant for release, so it is left out of the 3.4 docs"
+    }
+  ],
+  "notFound": [
+    "AB#451209: Python jobs failing to load libraries. Code shows only a Visual C++ redistributable bump (2015-2019 14.24 to 2017-2026 14.50) in the installer bundle and a build change that copies dot-prefixed Python runtime folders (.libs); the installer agent should confirm. No API or data-layer change.",
+    "AB#451634: threat notification date. Only the app credential evidence templates (v3.2.20 and v3.2.28) and new evidence filters were found. Which notification date was wrong is not stated in the code.",
+    "AB#451958: the code change is the display name update in AzureReplicationSync, not a perpetrator-specific field. Cited as a display-name fix.",
+    "Data retention: no new retention settings or changes found in my area, other than alert_query_event partitions following event retention."
+  ]
+}

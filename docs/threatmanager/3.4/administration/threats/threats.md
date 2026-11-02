@@ -1,0 +1,170 @@
+---
+title: "Threats Page"
+description: "Threats Page"
+sidebar_position: 30
+---
+
+# Threats Page
+
+The Threats page is where end-users and analysts investigate possible threats in their environment.
+This page displays an historical timeline of the detected threats and advanced filtering to help
+users find threats.
+
+## All Threats
+
+The Threats section contains a bar chart and a pie chart. The Threats bar chart displays the number
+of each type of threat by date range increments of one week, over a 13-week time span. The Threats
+pie chart displays the total number of threats by type of threat.
+
+![threatspage](/images/threatmanager/3.0/administration/threatspage.webp)
+
+Hover over the bar chart or pie chart to view the number of threats by threat type.
+
+## Historical Events
+
+The Historical Events section provides a dropdown menu to select threats for a specific date range.
+Specify a timeframe to filter threats. You can also select a predefined time span from the menu
+options in the right pane.
+
+![historicalevents](/images/threatmanager/3.0/administration/historicalevents.webp)
+
+The page lists these threats after the Historical Events section.
+
+## Threats List
+
+The Threats list appears after the Historical Events section.
+
+![threatlist](/images/threatmanager/3.0/administration/threatlist.webp)
+
+The list displays threats that have a threat level of Low, Medium, High, or Audit for the selected
+timeframe. Threats that involve an AI agent show an AI Agent label. AI agents are objects that carry the agent blueprint, agent user, or agent identity tag. Each threat in the list contains a link which opens the
+[User Details Page](/docs/threatmanager/3.4/administration/threats/activedirectoryobjects/user.md) or the [Group Details Page](/docs/threatmanager/3.4/administration/threats/activedirectoryobjects/group.md) and a
+host link which opens the [Host Details Page](/docs/threatmanager/3.4/administration/threats/activedirectoryobjects/host.md). In addition, threats have an
+Edit button which opens the Edit Threats window. The View Details button opens the
+[Threat Details Page](/docs/threatmanager/3.4/administration/threats/threatdetails/overview.md).
+
+## Filter Threats
+
+The left pane of the page lists filters that you can select and apply
+to display the threats. The filters reflect the threat types detected. Each filter is a collapsible section. Use the arrow to hide or expand it. To clear any -selected
+filters, click the **Clear Filters** button.
+
+### Type
+
+The Type section displays the threat types which can be selected for filtering. This list of threats
+to filter by is dynamic, depending upon the type of threats detected. See the following topics for
+additional information:
+
+- [Active Directory Threats](/docs/threatmanager/3.4/threats/activedirectory.md)
+- [Entra ID Threats](/docs/threatmanager/3.4/threats/entraid.md)
+- [File System Threats](/docs/threatmanager/3.4/threats/filesystem.md)
+- [General Threats](/docs/threatmanager/3.4/threats/general.md)
+
+### Level
+
+The Level section displays the threat types you can select for filtering. You assign
+or configure levels on the [Threat Detection Page](/docs/threatmanager/3.4/administration/configuration/threatdetection/threatdetection.md).
+
+### Tags
+
+The Tags section contains any tags associated with threats that are in the filtered time
+range.
+
+The AI Agent tag and the AI Agent filter apply when an AI agent is the perpetrator, the target, or
+one of the affected objects of a threat. Earlier versions checked only the perpetrator.
+
+#### Sensitive Data
+
+Threats containing sensitive data display Sensitive Data tags when you install Access Analyzer and the Sensitive Data Discovery Add-on in addition to Threat Manager. With the
+Sensitive Data Discovery Add-on installed, Access Analyzer scans for sensitive data using File System
+Sensitive Data Discovery Auditing. See the
+[Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.4/install/integration/accessanalyzer.md)
+topic for additional information. See the File System Solution topic in the
+[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
+additional information on Access Analyzer Sensitive Data Discovery capabilities.
+
+When a threat event contains sensitive data, Threat Manager displays a Sensitive Data tag next to the threat:
+
+![threatsensitivedatafilter](/images/threatmanager/3.0/administration/threatsensitivedatafilter.webp)
+
+To view the type of sensitive data contain in a threat, click View Details on the threat containing
+a Sensitive Data tag. The Sensitive Data column shows the type of sensitive data.
+
+The following tables contain a Sensitive Data column:
+
+- Event Details
+- Related Activity
+- Activity Details
+
+**Host**
+
+Filter on a host by selecting the checkbox next to the host or entering a host name in the search
+box.
+
+**User**
+
+Filter on a user by selecting the checkbox next to the user or entering a user name in the search
+box.
+
+**Status**
+
+The Status section may contain the following filters:
+
+- Open – Default status for new threats
+- Under Investigation – Threats that are under or pending investigation by an
+  administrator
+- Closed - Resolved – Legitimate threats that administrators have contained or dealt with
+- Closed - False Positive – Behavior that Threat Manager has incorrectly identified as a
+  threat
+
+    :::note
+    False positives influence abnormal behavior threat detection. Marking
+    abnormal behavior threats as False Positive will reduce the sensitivity of the abnormality
+    detection for this perpetrator.
+    :::
+
+
+**Assignee**
+
+The Assignee section lets you filter by user. Select one or more users.
+
+- Unassigned – Threat doesn't have a user assigned
+- `Assigned to me` – Threat has the logged-in user as its assignee
+
+## Edit Threats
+
+Threats can be edited to assign a user, set a status, or ignore future threats of a specified type
+using Threat Manager’s Incident Detection Response (IDR) workflow.
+
+To edit a threat:
+
+**Step 1 –** Select a threat from the list and click Edit. The Workflow window opens.
+
+![editthreats](/images/threatmanager/3.0/administration/editthreats.webp)
+
+**Step 2 –** Enter the following information:
+
+- (Optional) Assigned To – Select a user who has a role assigned via the User Access page on the
+  System Settings interface to assign to a threat to. See the User Access Page topic for additional
+  information.
+- Set Status – Select the status for the threat from the dropdown list. Options include:
+
+    - Open – Default status for new threats
+ - Under Investigation – Threats that are under or pending investigation by an
+      administrator
+    - Closed - Resolved – Legitimate threats that administrators have contained or dealt with
+    - Closed - False Positive – Behavior that Threat Manager incorrectly identified as a threat
+
+        :::note
+        False positives influence abnormal behavior threat detection. Marking
+        abnormal behavior threats as False Positive will reduce the sensitivity of the abnormality
+        detection for this perpetrator.
+        :::
+
+
+- (Optional) Comment – Add a comment to the threat
+- Ignore future threats of this type by [domain\user]
+
+**Step 3 –** Click Submit to save the changes.
+
+Threats can also be edited from the [Threat Details Page](/docs/threatmanager/3.4/administration/threats/threatdetails/overview.md).

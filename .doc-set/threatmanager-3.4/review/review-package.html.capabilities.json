@@ -1,0 +1,32 @@
+{
+  "db": {
+    "rules": [
+      {
+        "path": "votes",
+        "read": "view",
+        "write": "owner"
+      },
+      {
+        "path": "votes/{self}",
+        "write": "interact"
+      },
+      {
+        "path": "suggestions",
+        "read": "view",
+        "write": "owner"
+      },
+      {
+        "path": "suggestions/{self}",
+        "write": "interact"
+      }
+    ]
+  },
+  "user": {
+    "scopes": [
+      "profile"
+    ]
+  },
+  "comments": {
+    "composer_only": true
+  }
+}

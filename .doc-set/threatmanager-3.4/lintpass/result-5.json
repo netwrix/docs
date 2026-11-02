@@ -1,0 +1,23 @@
+{
+  "batch": 5,
+  "pages": [
+    {"path":"docs/threatmanager/3.4/install/integration/threatprevention/threatprevention.md","before":2,"after":1,"integrity":"pass","suppressions":[],"unfixed":["16: 'was introduced with the release of Threat Prevention v6.0' is inside a :::note admonition, left as is"]},
+    {"path":"docs/threatmanager/3.4/install/proxy.md","before":3,"after":1,"integrity":"pass","suppressions":[],"unfixed":["52: 'If `Enabled` is set to `true` and `Address` is left `null`' is inside a :::note admonition, left as is"]},
+    {"path":"docs/threatmanager/3.4/install/upgrade/upgrade_pg14_to_pg18.md","before":9,"after":3,"integrity":"pass","suppressions":[],"unfixed":["184: 'If the data directory was installed to a non-default location' is inside a :::note admonition, left as is","192: 'The data directory can't be recovered after deletion' is inside a :::warning admonition, left as is","unlocated passive-voice finding (no line number reported) remains after round 3"]},
+    {"path":"docs/threatmanager/3.4/requirements/client.md","before":0,"after":0,"integrity":"n/a","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/requirements/permissions/adsync.md","before":3,"after":0,"integrity":"pass","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/requirements/permissions/entraidsync.md","before":0,"after":0,"integrity":"n/a","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/requirements/permissions/overview.md","before":0,"after":0,"integrity":"n/a","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/threats/activedirectory.md","before":2,"after":0,"integrity":"pass","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/threats/certificateservices.md","before":1,"after":3,"integrity":"pass","suppressions":[],"unfixed":["13/18/51: ESC1 and ESC7 acronyms are not defined on the page and the expansion is not stated in the source, so not invented","20: passive-voice flag persists on the SAN.UPN trigger row after rewording; likely the neighbouring 'submitted on behalf of another user' passive in the ESC3 trigger row (left, actor unstated)"]},
+    {"path":"docs/threatmanager/3.4/threats/filesystem.md","before":5,"after":1,"integrity":"pass","suppressions":[],"unfixed":["one passive-voice finding without a line number remains after round 3"]},
+    {"path":"docs/threatmanager/3.4/threats/general.md","before":4,"after":0,"integrity":"pass","suppressions":[],"unfixed":[]},
+    {"path":"docs/threatmanager/3.4/threats/overview.md","before":2,"after":0,"integrity":"pass","suppressions":[],"unfixed":[]}
+  ],
+  "typos": [
+    "docs/threatmanager/3.4/requirements/permissions/adsync.md:10: link text 'Entra ID Sync Page' sits in the Active Directory Sync page and points to entraidsync.md; probably should be the Active Directory Sync page",
+    "docs/threatmanager/3.4/threats/activedirectory.md:~52: 'the user's actual group member' should be 'group membership'; 'the users Active Directory group membership' needs an apostrophe (user's)",
+    "docs/threatmanager/3.4/threats/activedirectory.md:~68: 'When an attack scans memory they may' should be 'When an attacker scans memory, they may'",
+    "docs/threatmanager/3.4/install/upgrade/upgrade_pg14_to_pg18.md:68: 'You will see this warning, it is safe to Install Again.' is a comma splice; suggest 'You will see this warning. It is safe to select Install Again.'"
+  ]
+}

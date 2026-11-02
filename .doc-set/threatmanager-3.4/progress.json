@@ -1,0 +1,59 @@
+{
+  "updatedAt": "2026-10-26T19:17:56.645Z",
+  "phases": [
+    {
+      "n": 1,
+      "name": "Intake",
+      "status": "done",
+      "detail": "code pinned at 05e12b936"
+    },
+    {
+      "n": 2,
+      "name": "Fact pack",
+      "status": "done",
+      "detail": "416 facts"
+    },
+    {
+      "n": 3,
+      "name": "Claims",
+      "status": "done",
+      "detail": "27 Jira claims"
+    },
+    {
+      "n": 4,
+      "name": "Seed and triage",
+      "status": "done",
+      "detail": "seeded, 4 zones triaged"
+    },
+    {
+      "n": 5,
+      "name": "Manifest",
+      "status": "done",
+      "detail": "119 pages (72 KEEP, 40 UPDATE, 3 REWRITE, 4 NEW)"
+    },
+    {
+      "n": 6,
+      "name": "Draft",
+      "status": "done",
+      "detail": "47 of 47 pages drafted"
+    },
+    {
+      "n": 7,
+      "name": "Review package",
+      "status": "done",
+      "detail": "package built"
+    },
+    {
+      "n": 8,
+      "name": "Collect review feedback",
+      "status": "current",
+      "detail": "runs in rounds, when the writer asks"
+    },
+    {
+      "n": 9,
+      "name": "Assemble and report",
+      "status": "pending",
+      "detail": "not started"
+    }
+  ]
+}

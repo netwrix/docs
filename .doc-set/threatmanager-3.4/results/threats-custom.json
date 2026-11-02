@@ -1,0 +1,1 @@
+{"batch": "threats-custom", "pages": [{"path": "docs/threatmanager/3.4/threats/custom.md", "status": "done", "factsCovered": ["F042", "F043", "F325", "F326", "F327", "F328", "F329", "F330", "F331"], "todos": [], "untraced": [], "preexistingFindings": 4, "checks": {"quality": "pass", "integrity": "n/a"}}]}

@@ -1,0 +1,317 @@
+[
+  {
+    "page": "administration/configuration/integrations/activedirectorysync.md",
+    "action": "RESTYLED",
+    "line": 129,
+    "old": "the exception of the domain itself, these settings can be updated as needed.",
+    "now": "the exception of the domain itself, you can update these settings as needed."
+  },
+  {
+    "page": "administration/configuration/integrations/entraidsync.md",
+    "action": "UPDATE",
+    "line": 87,
+    "old": "settings can be modified on this tab. See the Tenant Configuration Tab topic for additional",
+    "now": "you can modify these settings on this tab. See the Tenant Configuration Tab topic for additional"
+  },
+  {
+    "page": "administration/configuration/integrations/entraidsync.md",
+    "action": "UPDATE",
+    "line": 95,
+    "old": "the exception of the Tenant and Azure Cloud fields, these settings can be updated as needed.",
+    "now": "the exception of the Tenant and Azure Cloud fields, you can update these settings as needed."
+  },
+  {
+    "page": "administration/configuration/integrations/credentialprofile.md",
+    "action": "RESTYLED",
+    "line": 144,
+    "old": "Multiple credentials can be added to a single profile. Credential stacking is when you add multiple",
+    "now": "You can add multiple credentials to a single profile. Credential stacking is when you add multiple"
+  },
+  {
+    "page": "administration/configuration/integrations/foldersettings.md",
+    "action": "RESTYLED",
+    "line": 10,
+    "old": "Investigation exports folder location. Additionally, a shared folder can be provided for",
+    "now": "Investigation exports folder location. Additionally, you can provide a shared folder for"
+  },
+  {
+    "page": "administration/configuration/policies/policiesconfiguration.md",
+    "action": "UPDATE",
+    "line": 45,
+    "old": "The token username can be changed post-deployment, however tokens under the previous",
+    "now": "You can change the token username after deployment, but Threat Manager no longer detects tokens under the previous"
+  },
+  {
+    "page": "administration/configuration/policies/policiesconfiguration.md",
+    "action": "UPDATE",
+    "line": 69,
+    "old": "- Token Domain – The domain to be used for the deployed Honeytoken. This can be selected from",
+    "now": "- Token Domain – The domain for the deployed Honeytoken. You can select an existing, known domain or specify a custom domain."
+  },
+  {
+    "page": "administration/configuration/policies/policiesconfiguration.md",
+    "action": "UPDATE",
+    "line": 184,
+    "old": "viewable by clicking the caret. Deployment status for each host may also be viewed on the Policy",
+    "now": "view by clicking the caret. You may also view deployment status for each host on the Policy"
+  },
+  {
+    "page": "administration/configuration/systemhealth/agents.md",
+    "action": "RESTYLED",
+    "line": 10,
+    "old": "Manager. This requires a minimum version of Threat Prevention7.5. This section may be used to",
+    "now": "Manager. This requires a minimum version of Threat Prevention 7.5. You can use this section to"
+  },
+  {
+    "page": "administration/configuration/systemsettings/useraccess.md",
+    "action": "UPDATE",
+    "line": 85,
+    "old": "The following Roles can be assigned to AD users and groups:",
+    "now": "You can assign the following Roles to AD users and groups. The built-in roles are Administrators, Report Administrator, Report Reviewer, Responders, Response Managers, and Reviewers. You can't edit or"
+  },
+  {
+    "page": "administration/configuration/systemsettings/useraccess.md",
+    "action": "UPDATE",
+    "line": 158,
+    "old": "The following authentication types can be assigned to users and groups:",
+    "now": "You can assign the following authentication types to users and groups:"
+  },
+  {
+    "page": "administration/configuration/threatdetection/threatconfiguration.md",
+    "action": "UPDATE",
+    "line": 35,
+    "old": "should be investigated. The medium threat level setting can be used as a filter on the",
+    "now": "should be investigated. You can use the medium threat level setting as a filter on the"
+  },
+  {
+    "page": "install/database.md",
+    "action": "UPDATE",
+    "line": 9,
+    "old": "The PostgreSQL database application can be installed on the same server as the application or a",
+    "now": "You can install the PostgreSQL database application on the same server as the application or a"
+  },
+  {
+    "page": "install/application.md",
+    "action": "UPDATE",
+    "line": 9,
+    "old": "The application can be installed on the same server as the PostgreSQL databases or a different",
+    "now": "You can install the application on the same server as the PostgreSQL databases or a different"
+  },
+  {
+    "page": "install/application.md",
+    "action": "UPDATE",
+    "line": 88,
+    "old": "accurate by default. The default database name is stealthdefend; however, it can be modified as",
+    "now": "accurate by default. The default database name is stealthdefend; however, you can change it as"
+  },
+  {
+    "page": "install/actionservice.md",
+    "action": "REWRITE",
+    "line": 154,
+    "old": "The Action Service that is installed with Threat Manager can be configured to execute as a service",
+    "now": "You can configure the Action Service that Threat Manager installs to execute as a service"
+  },
+  {
+    "page": "install/integration/overview.md",
+    "action": "RESTYLED",
+    "line": 9,
+    "old": "The following Netwrix products can be configured to send data to Threat Manager:",
+    "now": "You can configure the following Netwrix products to send data to Threat Manager:"
+  },
+  {
+    "page": "install/integration/overview.md",
+    "action": "RESTYLED",
+    "line": 11,
+    "old": "- [Netwrix Activity Monitor Integration](/docs/threatmanager/3.4/install/integration/activitymonitor.md) – Activity Monitor can be configured to",
+    "now": "- [Netwrix Activity Monitor Integration](/docs/threatmanager/3.4/install/integration/activitymonitor.md) – You can configure Activity Monitor to"
+  },
+  {
+    "page": "install/integration/overview.md",
+    "action": "RESTYLED",
+    "line": 15,
+    "old": "- [Netwrix Threat Prevention Integration](/docs/threatmanager/3.4/install/integration/threatprevention/threatprevention.md) – Threat Prevention can be configured",
+    "now": "- [Netwrix Threat Prevention Integration](/docs/threatmanager/3.4/install/integration/threatprevention/threatprevention.md) – You can configure Threat Prevention"
+  },
+  {
+    "page": "install/integration/activitymonitor.md",
+    "action": "RESTYLED",
+    "line": 9,
+    "old": "The Activity Monitor can be configured to send file system data and/or Active Directory and/or",
+    "now": "You can configure the Activity Monitor to send file system data and/or Active Directory and/or"
+  },
+  {
+    "page": "install/integration/accessanalyzer.md",
+    "action": "RESTYLED",
+    "line": 8,
+    "old": "Access Analyzer can be configured to send Sensitive Data to Threat Manager. In Access Analyzer, the",
+    "now": "You can configure Access Analyzer to send Sensitive Data to Threat Manager. In Access Analyzer, the"
+  },
+  {
+    "page": "install/integration/threatprevention/threatmanagerconfiguration.md",
+    "action": "RESTYLED",
+    "line": 70,
+    "old": "The State column doesn't control the state of the policy. A policy can be enabled or disabled",
+    "now": "The State column doesn't control the state of the policy. You can enable or disable a policy"
+  },
+  {
+    "page": "install/integration/threatprevention/threatmanagerconfiguration.md",
+    "action": "RESTYLED",
+    "line": 81,
+    "old": "The Threat Manager URI configuration can also be used to send Threat Prevention policy",
+    "now": "You can also use the Threat Manager URI configuration to send Threat Prevention policy"
+  },
+  {
+    "page": "install/upgrade/upgrade_pg14_to_pg18.md",
+    "action": "RESTYLED",
+    "line": 28,
+    "old": "This step can be skipped if you already have a green checkmark here.",
+    "now": "You can skip this step if you already have a green checkmark here."
+  },
+  {
+    "page": "install/upgrade/upgrade_pg14_to_pg18.md",
+    "action": "RESTYLED",
+    "line": 55,
+    "old": "Multiple PostgreSQL instances can be installed on the same server simultaneously. After this step,",
+    "now": "You can install multiple PostgreSQL instances on the same server simultaneously. After this step,"
+  },
+  {
+    "page": "requirements/overview.md",
+    "action": "UPDATE",
+    "line": 23,
+    "old": "- Threat Manager Client – Threat Manager is a web service that can be accessed locally or remotely",
+    "now": "- Threat Manager Client – Threat Manager is a web service that you can access locally or remotely"
+  },
+  {
+    "page": "administration/playbooks/importsteps.md",
+    "action": "RESTYLED",
+    "line": 10,
+    "old": "actions into Threat Manager. Imported actions are listed in the Threat Response box and can be added",
+    "now": "actions into Threat Manager. The Threat Response box lists imported actions, and you can add them as Playbook steps."
+  },
+  {
+    "page": "administration/playbooks/overview.md",
+    "action": "RESTYLED",
+    "line": 42,
+    "old": "The new playbook now has the name you want, and steps can be added to the playbook. See the Actions",
+    "now": "The new playbook now has the name you want, and you can add steps to the playbook. See the Actions"
+  },
+  {
+    "page": "administration/playbooks/overview.md",
+    "action": "RESTYLED",
+    "line": 104,
+    "old": "Follow-Up Playbooks can be configured on the Follow-Up tab. Follow-Up playbooks allow additional",
+    "now": "You can configure Follow-Up Playbooks on the Follow-Up tab. Follow-Up playbooks allow additional"
+  },
+  {
+    "page": "administration/playbooks/save.md",
+    "action": "RESTYLED",
+    "line": 9,
+    "old": "Sometimes it may be convenient to save a step so that it can be added to multiple playbooks without",
+    "now": "Sometimes it may be convenient to save a step so that you can add it to multiple playbooks without"
+  },
+  {
+    "page": "administration/playbooks/save.md",
+    "action": "RESTYLED",
+    "line": 20,
+    "old": "The step is saved to the My Steps list and can be added to other playbooks as needed.",
+    "now": "Threat Manager saves the step to the My Steps list. You can add it to other playbooks as needed."
+  },
+  {
+    "page": "administration/playbooks/action/overview.md",
+    "action": "RESTYLED",
+    "line": 14,
+    "old": "- Action Type – A dropdown list containing all preconfigured actions that can be selected to add as",
+    "now": "- Action Type – A dropdown list containing all preconfigured actions you can select to add as a playbook step"
+  },
+  {
+    "page": "administration/playbooks/action/localhost.md",
+    "action": "UPDATE",
+    "line": 20,
+    "old": "includes a comment section which includes Threat Manager threat variables that can be used in",
+    "now": "includes a comment section which includes Threat Manager threat variables that you can use in"
+  },
+  {
+    "page": "administration/playbooks/action/thirdparty.md",
+    "action": "RESTYLED",
+    "line": 84,
+    "old": "This action adds a property to a Forescout host record. Forescout collections can be configured to",
+    "now": "This action adds a property to a Forescout host record. You can configure Forescout collections to monitor this property. This lets Threat Manager integrate with the Forescout platform and use Foresco"
+  },
+  {
+    "page": "administration/investigations/options/overview.md",
+    "action": "RESTYLED",
+    "line": 24,
+    "old": "investigation. The report can be exported in a specified format and can be downloaded, emailed, or",
+    "now": "investigation. You can export the report in a specified format and download, email, or schedule it as desired. See the [Export Report](/docs/threatmanager/3.4/administration/investigations/options/exp"
+  },
+  {
+    "page": "threats/entraid.md",
+    "action": "UPDATE",
+    "line": 54,
+    "old": "| Definition                  | Application credentials are usually provided at the time of application creation or when a secret is close to its expiry. New credentials can be added on need basis as ",
+    "now": "| Definition                  | Application credentials usually arrive at the time of application creation or when a secret is close to its expiry. You can add new credentials on need basis as well. A"
+  },
+  {
+    "page": "threats/custom.md",
+    "action": "UPDATE",
+    "line": 13,
+    "old": "Custom threats can be created in one of the following ways:",
+    "now": "You can create custom threats in one of the following ways:"
+  },
+  {
+    "page": "administration/threats/threats.md",
+    "action": "UPDATE",
+    "line": 26,
+    "old": "Threats can also be filtered by specifying a timeframe. A predefined time span can also be selected",
+    "now": "Specify a timeframe to filter threats. You can also select a predefined time span from the menu"
+  },
+  {
+    "page": "administration/threats/threats.md",
+    "action": "UPDATE",
+    "line": 48,
+    "old": "The left pane of the page, below Historical Events, lists filters that can be selected and applied",
+    "now": "The left pane of the page lists filters that you can select and apply"
+  },
+  {
+    "page": "administration/threats/threats.md",
+    "action": "UPDATE",
+    "line": 54,
+    "old": "The Type section displays the threat types which can be selected for filtering. This list of threats",
+    "now": "The Type section displays the threat types you can select for filtering. This list of threats"
+  },
+  {
+    "page": "administration/threats/threats.md",
+    "action": "UPDATE",
+    "line": 65,
+    "old": "The Level section displays the threat types which can be selected for filtering. Levels are assigned",
+    "now": "The Level section displays the threat types you can select for filtering. You assign"
+  },
+  {
+    "page": "administration/threats/entraidobjects/entraiduser.md",
+    "action": "UPDATE",
+    "line": 129,
+    "old": "- Role Assignments Allowed - This flag shows whether a group can be assigned a role within",
+    "now": "- Role Assignments Allowed - This flag shows whether you can assign a role to a group within Microsoft Entra ID"
+  },
+  {
+    "page": "administration/threats/entraidobjects/entraidapplication.md",
+    "action": "UPDATE",
+    "line": 70,
+    "old": "- Role Assignments Allowed - This flag shows whether a group can be assigned a role within",
+    "now": "- Role Assignments Allowed - This flag shows whether you can assign a role to a group within"
+  },
+  {
+    "page": "administration/threats/entraidobjects/entraidgroup.md",
+    "action": "RESTYLED",
+    "line": 83,
+    "old": "- Role Assignments Allowed - This flag shows whether a group can be assigned a role within",
+    "now": "- Role Assignments Allowed - This flag shows whether you can assign a role to a group within"
+  },
+  {
+    "page": "index.md",
+    "action": "UPDATE",
+    "line": 12,
+    "old": "catalog of preconfigured response actions, Threat Manager can be configured to integrate with you",
+    "now": "catalog of preconfigured response actions, you can configure Threat Manager to integrate with your"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "jiraEpics": [
+    "TMR-141",
+    "TMR-1454",
+    "TMR-99",
+    "TMR-96"
+  ],
+  "notes": {
+    "TMR-141": "Security Policy Weakening. Shipped; children in 3.3 CU and 3.4 GA.",
+    "TMR-1454": "First Time Location. Replaces TMR-131. Children: 1455, 1458, 1495, 1503, 1476 (validate), 1494 (cancelled), 1543 (documentation ticket).",
+    "TMR-99": "Privileged Role Escalation. Expected not built; tests jira-only / not-shipped.",
+    "TMR-96": "Migrate to MUI 7. Expected internal; tests no-docs-impact."
+  },
+  "excluded": {
+    "TMR-131": "NTM/NTP Consolidation. The NTP integration is a beta UI not meant for release (writer decision); NTP facts are marked outOfScope. Its non-NTP child TMR-1519 (signing key) is covered by the security facts."
+  },
+  "kb": "excluded",
+  "decisions": {
+    "upgradePage": "rename upgrade3.3.md to upgrade3.4.md and rewrite",
+    "locationApi": "left out of 3.4 (F024-F026, C014 dropped)",
+    "silentInstall": "split into install/silentinstall.md",
+    "threatPages": "H2 sections on threats/entraid.md; split Security Policy Weakening later only if it outgrows one screen",
+    "ntpIntegration": "left out (beta UI)"
+  }
+}

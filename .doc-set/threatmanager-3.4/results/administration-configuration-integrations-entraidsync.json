@@ -1,0 +1,89 @@
+{
+  "batch": "administration-configuration-integrations-entraidsync",
+  "pages": [
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/entraidsync.md",
+      "status": "done",
+      "factsCovered": [
+        "F194",
+        "F195",
+        "F196",
+        "F197",
+        "F198",
+        "F333",
+        "F335",
+        "F388",
+        "F049",
+        "F334",
+        "F038"
+      ],
+      "todos": [
+        "Add IdentityRiskyAgent.Read.All to requirements/permissions/entraidsync.md"
+      ],
+      "untraced": [],
+      "preexistingFindings": 3,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Style-only pass on old 3.3 sentences; no facts changed. Suspected typos are listed in lintpass/result-config-fix.json."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/apptoken.md",
+      "status": "done",
+      "factsCovered": [
+        "F015",
+        "F202",
+        "F218",
+        "F221",
+        "F245",
+        "F401",
+        "F402",
+        "F403",
+        "F404"
+      ],
+      "todos": [
+        "F010, F012, F013, F222 are API facts; place on API pages"
+      ],
+      "untraced": [],
+      "preexistingFindings": 0,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Drafter untraced list was from before the last redraft; the audit sentence now says application token (F221) and the replace-broken-token step follows F402. F010, F012, F013 and F222 are API facts with no API page, so they are not stated."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/integrations/siem.md",
+      "status": "done",
+      "factsCovered": [
+        "F182"
+      ],
+      "todos": [
+        "Step 3 Send Test Message says test email (pre-3.4, verify)"
+      ],
+      "untraced": [],
+      "preexistingFindings": 3,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Writer-assistant fix: removed the example value DC\\BATMAN, which came only from a unit test. The Example cell reads None."
+    },
+    {
+      "path": "docs/threatmanager/3.4/administration/configuration/policies/policiesconfiguration.md",
+      "status": "done",
+      "factsCovered": [
+        "F017"
+      ],
+      "todos": [],
+      "untraced": [],
+      "preexistingFindings": 12,
+      "checks": {
+        "quality": "pass",
+        "integrity": "n/a"
+      },
+      "note": "Style-only pass on old 3.3 sentences; no facts changed. Suspected typos are listed in lintpass/result-config-fix.json."
+    }
+  ]
+}

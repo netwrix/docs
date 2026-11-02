@@ -1,0 +1,1 @@
+This run used the Dale passive-voice rule that is on dev today. About 114 of the 125 findings are passive voice, many on sentences that were restored to their original wording on purpose, because making them active would add an actor the page never named. Pull request 1772 narrows that rule. Rerun the check after it merges.

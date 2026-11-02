@@ -1,0 +1,642 @@
+{
+  "service-status-api": [
+    {
+      "id": "F018",
+      "status": "changed",
+      "statement": "A remote Integration Service registration response (POST to the integration service registration endpoint) now returns RegisterIntegrationServiceResponse with an EncryptedStatusJwt instead of an empty 200.",
+      "cite": "StealthDefendCore/WebApi/Controllers/ServiceController.cs:261",
+      "tickets": [
+        "TMR-1482"
+      ]
+    },
+    {
+      "id": "F019",
+      "status": "new",
+      "statement": "New endpoint GET api/v1/ServiceStatus lets a remote service check that Threat Manager can reach it and that it accepts its token. It uses the status token issued at registration and returns 400 \"The token does not name a machine.\" or \"The token does not name a service type.\", or 404 when no matching service exists. It is not audited.",
+      "cite": "StealthDefendCore/WebApi/Controllers/ServiceStatusController.cs:31",
+      "tickets": [
+        "TMR-1482"
+      ]
+    }
+  ],
+  "tag-api": [
+    {
+      "id": "F023",
+      "status": "changed",
+      "statement": "The tag threat-count query for a tag now takes object names from all objects (display name, then unique name, then id), which fixes the wrong or missing computer name shown for tagged hosts in Top Threat Counts.",
+      "cite": "StealthDefendCore/Actor/ThreatActor.cs:635",
+      "tickets": [
+        "AB#365026"
+      ]
+    }
+  ],
+  "location-api": [
+    {
+      "id": "F024",
+      "status": "new",
+      "statement": "New endpoint GET api/v1/UserLocationCount/byUserId?userId=<guid> returns a data table of the locations a user signed in from. Each row has UserName, LocationId, LocationName, City, State, CountryOrRegion, FirstAccessTime, LastAccessTime, Count, UserLinkedId and UserDisplayName. It requires the User claim.",
+      "cite": "StealthDefendCore/WebApi/Controllers/UserLocationCountController.cs:77",
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "id": "F025",
+      "status": "new",
+      "statement": "New endpoint GET api/v1/UserLocationCount?skip=&take= lists user location counts. skip and take below 0 return 400, and an empty result returns 404.",
+      "cite": "StealthDefendCore/WebApi/Controllers/UserLocationCountController.cs:59",
+      "tickets": [
+        "TMR-1503"
+      ]
+    },
+    {
+      "id": "F026",
+      "status": "new",
+      "statement": "New endpoint GET api/v1/EvLocation/byIds?ids=1&ids=2 returns location records for the given ids. An empty result returns 404. A request for more than 1000 ids is logged as a warning but still answered.",
+      "cite": "StealthDefendCore/WebApi/Controllers/EvLocationController.cs:86",
+      "tickets": [
+        "TMR-1503"
+      ]
+    }
+  ],
+  "app-credentials": [
+    {
+      "id": "F032",
+      "status": "changed",
+      "statement": "The expiration date and time of new application credentials and passwords in threat evidence now use the viewer's local time zone, and two evidence entries, Dangerous Expiry (key credentials) and Dangerous Password Expiry (password credentials), are defined for the app credential threat.",
+      "cite": "installerFiles/sql13/v3.2.28.sql:1",
+      "tickets": [
+        "TMR-260",
+        "AB#451634"
+      ]
+    },
+    {
+      "id": "F033",
+      "status": "changed",
+      "statement": "Date and time values in email and evidence templates are converted with the viewer's UTC offset (dateTimeOffset register) and keep that offset when formatted, with dates shown as MM/dd/yyyy.",
+      "cite": "StealthDefendCore/Common/LocalizedDateFilter.cs:100",
+      "tickets": [
+        "TMR-260"
+      ]
+    }
+  ],
+  "event-handling": [
+    {
+      "id": "F037",
+      "status": "new",
+      "statement": "Syslog events from Netwrix Access Management (NAM) can carry upn= and ntname= fields. The perpetrator name uses ntname, then upn, then username. Blank values are skipped, which stops wrong display names for accounts that are not synced.",
+      "cite": "StealthDefendCore/Common/SyslogMessageParser.cs:381",
+      "tickets": [
+        "AB#452063",
+        "AB#452775"
+      ]
+    },
+    {
+      "id": "F038",
+      "status": "changed",
+      "statement": "A display name change on an already-linked Entra ID user, host or client now updates the display name stored on events. This fixes a wrong perpetrator name on Application Permission Change events. On upgrade, the next Entra ID replication sync is a full sync.",
+      "cite": "StealthDefendCore/Azure.EFCore/Migrations/20260806194700_FullSyncForDisplayNames.cs:16",
+      "tickets": [
+        "AB#451958"
+      ]
+    }
+  ],
+  "threat-migrations": [
+    {
+      "id": "F045",
+      "status": "changed",
+      "statement": "First Time Location now ignores failed sign-ins. On upgrade, learned user locations older than event retention or without a successful sign-in are deleted, and the threat is suspended for 30 days (disabled_until) while locations are learned again.",
+      "cite": "installerFiles/sql13/v3.2.29.sql:33",
+      "tickets": [
+        "TMR-1495"
+      ]
+    }
+  ],
+  "azure-sync": [
+    {
+      "id": "F049",
+      "status": "changed",
+      "statement": "Entra ID risky object sync is split into three tasks, RiskyUsers, RiskyServicePrincipals and RiskyAgents, each with MinimumWaitTime 00:01:00, replacing the single RiskyObjects task in the Azure service config. Risky agents are read from the Graph beta endpoint.",
+      "cite": "StealthDefendCore/AzureService/appsettings.default.json:131",
+      "tickets": [
+        "AB#452054"
+      ]
+    }
+  ],
+  "signing-key-export": [
+    {
+      "id": "F104",
+      "status": "new",
+      "statement": "The Welcome page has an Export Signing Keys button, shown only when the product is installed and a JWT signing key exists. It has no silent equivalent.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/WelcomePage/WelcomePageViewModel.cs:158",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F105",
+      "status": "new",
+      "statement": "The Export page (\"Export\") asks where to save the export file (\"Save the export file as:\", Browse...). The default is NTM-SigningKeys-<computer name>.exe on the desktop. The name must end with .exe and the folder must exist.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Views/Pages/ExportSigningKeysPage/ExportSigningKeysPageViewModel.cs:14",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F107",
+      "status": "new",
+      "statement": "After export, the Finish page shows a one-time code with Copy code and Open folder buttons: \"Save this code now. It is not stored anywhere and cannot be shown again. Send it to the person importing the keys over a different channel than the file.\"",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:477",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F108",
+      "status": "new",
+      "statement": "The exported exe runs on another machine, asks for the one-time code, and writes the JWT signing key to that machine's registry. It requires Administrator rights and .NET Framework 4.7.2 or later.",
+      "cite": "STEALTHbits.Installer/RegistryValueTransfer/README.md:13",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F109",
+      "status": "new",
+      "statement": "The export tool is installed under <install folder>\\Tools\\RegistryValueTransfer\\RegistryValueTransfer.exe. If it is missing the installer shows \"The export tool was not found at '{0}'.\"",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:468",
+      "tickets": [
+        "TMR-1519"
+      ]
+    }
+  ],
+  "jwt-signing-key": [
+    {
+      "id": "F110",
+      "status": "changed",
+      "statement": "The installer stores the JWT signing key in the registry (HKLM\\SOFTWARE\\STEALTHbits Technologies\\StealthDEFEND\\Security, value JwtSigningKey), protected with DPAPI Local Machine. Only SYSTEM and Administrators can read it. Service accounts must be granted read access manually.",
+      "cite": "STEALTHbits.Installer/StealthDEFEND.Installer.DatabaseActions/Utilities/RegUtils.cs:181",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F203",
+      "status": "changed",
+      "statement": "The services sign login tokens with an RSA private key stored in the registry value JwtSigningKey under HKLM\\SOFTWARE\\STEALTHbits Technologies\\StealthDEFEND\\Security. The key is protected with DPAPI using the Local Machine scope.",
+      "cite": "StealthDefendCore/StealthDefend.Registry/StealthDefend.cs:121",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F204",
+      "status": "new",
+      "statement": "The installer generates the JWT signing key on a fresh install. If a signing key already exists in the registry, the installer leaves it unchanged.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/ConfigureJwtCertificate.cs:49",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F207",
+      "status": "new",
+      "statement": "The installer step is named \"Configure JWT Signing Key\" and fails with \"Failed to configure the JWT signing key: {reason}\" if it cannot store the key.",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Actions/ConfigureJwtCertificate.cs:75",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F209",
+      "status": "changed",
+      "statement": "When the registry key does not exist, a service uses the certificate named by the Jwt:CertificateThumbprint setting, looked up in the LocalMachine\\My store. If that certificate cannot be loaded, the service fails to start with \"Unable to load the JWT certificate with thumbprint '{thumbprint}': {reason}\".",
+      "cite": "StealthDefendCore/Stealthbits.AspNet.Core.Middleware/JwtUtilities.cs:158",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F211",
+      "status": "changed",
+      "statement": "With no registry key, no thumbprint, and no legacy settings, a service falls back to an insecure built-in symmetric key and prints \"WARNING: Use of symmetric key is insecure. Re-run the installer to generate a secure JWT signing key\".",
+      "cite": "StealthDefendCore/Stealthbits.AspNet.Core.Middleware/JwtUtilities.cs:169",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F213",
+      "status": "new",
+      "statement": "The installer's Welcome page has a Modify action named \"Export Signing Keys\" (button text \"_Export Signing Keys\"). It creates a single-file .exe that carries the signing key encrypted with a one-time code. It is interactive only and has no command-line variant.",
+      "cite": "STEALTHbits.Installer/COMMAND_LINE.md:142",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F214",
+      "status": "new",
+      "statement": "The export page says: \"Choose where to save the export file. A one-time code is generated when the file is created.\" and warns: \"The export file and the one-time code are secrets. The code is shown once, after the file has been created. The file is not code signed, so Windows or security software may warn about it.\"",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:450",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F215",
+      "status": "new",
+      "statement": "Export failure messages: \"The export tool was not found at '{0}'.\" and \"Exporting the signing keys failed: {0}\".",
+      "cite": "STEALTHbits.Installer/StealthDEFENDBA/Localization.resx:468",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F216",
+      "status": "new",
+      "statement": "To move the signing key to another host, run the exported .exe as an Administrator on the new host and enter the one-time code. The key is re-protected with that host's DPAPI and written to the registry with the same restricted access. Restart the services afterward.",
+      "cite": "README.md:144",
+      "tickets": [
+        "TMR-1519"
+      ]
+    },
+    {
+      "id": "F217",
+      "status": "new",
+      "statement": "The signing key is bound to the machine through DPAPI Local Machine, so copying the registry value to another host does not work.",
+      "cite": "README.md:144",
+      "tickets": [
+        "TMR-1519"
+      ]
+    }
+  ],
+  "report-only-installer": [
+    {
+      "id": "F119",
+      "status": "unchanged",
+      "statement": "The Report Only installer runs the License Service with the -ro argument so it never activates or reports a license.",
+      "cite": "STEALTHbits.Installer/StealthDEFEND.Installer/Product.wxs:7",
+      "tickets": []
+    }
+  ],
+  "syslog-siem": [
+    {
+      "id": "F180",
+      "status": "changed",
+      "statement": "Syslog input recognizes the new fields upn= and ntname=. The perpetrator name is taken from ntname first, then upn, then username, then usrname. An empty ntname or upn is skipped.",
+      "cite": "StealthDefendCore/Common/SyslogMessageParser.cs:381",
+      "tickets": [
+        "ADO 452063",
+        "ADO 452775"
+      ]
+    },
+    {
+      "id": "F181",
+      "status": "changed",
+      "statement": "A storage account perpetrator with the reserved storage key GUID now always shows the reserved storage key name, instead of being prefixed with the domain.",
+      "cite": "StealthDefendCore/Common/SyslogMessageParser.cs:612",
+      "tickets": [
+        "ADO 452063"
+      ]
+    }
+  ],
+  "send-email-action": [
+    {
+      "id": "F186",
+      "status": "changed",
+      "statement": "Threat email summaries use the same URL-safe /n conversion.",
+      "cite": "StealthDefendCore/EmailManager/EmailMessage.cs:71",
+      "tickets": [
+        "ADO 439684",
+        "TMR-243"
+      ]
+    },
+    {
+      "id": "F190",
+      "status": "changed",
+      "statement": "Action messages say Netwrix Threat Manager instead of StealthDEFEND: \"Failed to communicate with the Netwrix Threat Manager REST API.\"",
+      "cite": "StealthDefendCore/ActionManager/DefendRestClient.cs:110",
+      "tickets": [
+        "TMR-1482"
+      ]
+    }
+  ],
+  "licensing": [
+    {
+      "id": "F235",
+      "status": "unchanged",
+      "statement": "A ReportOnly install does not activate or consume the bundled trial key, so a later upgrade to Full still gets a trial period.",
+      "cite": "StealthDefendCore/LicenseService/LicenseActor.cs:47",
+      "tickets": [
+        "TMR-199"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "F244",
+      "status": "unchanged",
+      "statement": "FullControl bypasses every permission check and is assigned to the Administrators role.",
+      "cite": "StealthDefendCore/PostgresEFCore.Models/Enums/Constants.cs:135",
+      "tickets": [
+        "ADO 451120"
+      ]
+    }
+  ],
+  "login": [
+    {
+      "id": "F246",
+      "status": "changed",
+      "statement": "Changing the ADMIN password on the login screen no longer returns a 500 error when the password history contains a malformed entry. The malformed entry is skipped and logged, and the change goes through.",
+      "cite": "StealthDefendCore/Stealthbits.Identity/Validator/PasswordHistoryValidator.cs:55",
+      "tickets": [
+        "TMR-1513"
+      ]
+    }
+  ],
+  "first-time-location": [
+    {
+      "id": "F262",
+      "status": "new",
+      "statement": "Evidence entry titled 'First Time Location': '{user} signed in from {location or N new locations including names}, a location not previously seen for this user.'",
+      "cite": "installerFiles/sql13/v3.2.24.sql:47",
+      "tickets": [
+        "TMR-1455"
+      ]
+    },
+    {
+      "id": "F264",
+      "status": "new",
+      "statement": "Failed sign-in locations learned earlier are removed on upgrade. Locations with no successful sign-in, and locations not used within the event retention period, are deleted.",
+      "cite": "installerFiles/sql13/v3.2.29.sql:8",
+      "tickets": [
+        "TMR-1495"
+      ]
+    },
+    {
+      "id": "F265",
+      "status": "new",
+      "statement": "After upgrade, First Time Location alerting is suspended for 30 days while locations are learned again from successful sign-ins only.",
+      "cite": "installerFiles/sql13/v3.2.29.sql:33",
+      "tickets": [
+        "TMR-1495"
+      ]
+    },
+    {
+      "id": "F268",
+      "status": "new",
+      "statement": "Rollup is on by default with a 24-hour window (1440 minutes) and can be configured. New locations from further sign-ins in the window are merged into the same threat.",
+      "cite": "installerFiles/sql13/v3.2.24.sql:30",
+      "tickets": [
+        "TMR-1455"
+      ]
+    },
+    {
+      "id": "F269",
+      "status": "new",
+      "statement": "Exclusions available for First Time Location: Perpetrator, Target, Client, Perpetrator Tag, Target Tag, and Location (to exclude specific countries or cities). File, Process, File Tag, and Affected Object DN exclusions are disabled for this threat.",
+      "cite": "installerFiles/sql13/v3.2.24.sql:34",
+      "tickets": [
+        "TMR-1455"
+      ]
+    }
+  ],
+  "auth-methods-policy-weakening": [
+    {
+      "id": "F283",
+      "status": "new",
+      "statement": "A target broadening is reported only when the previous include targets did not already contain all_users.",
+      "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/AuthMethodsPolicyWeakeningV2.cs:144",
+      "tickets": [
+        "TMR-135"
+      ]
+    },
+    {
+      "id": "F288",
+      "status": "new",
+      "statement": "Threat description text: 'The authentication method {method} was enabled / disabled / broadened to all users.' With several changes it lists the first 3 and then 'and N more'.",
+      "cite": "installerFiles/sql13/v3.2.27.sql:30",
+      "tickets": [
+        "TMR-135"
+      ]
+    },
+    {
+      "id": "F289",
+      "status": "new",
+      "statement": "Evidence entry titled 'Weakened Authentication Methods' lists up to 5 changes ('{method} was enabled', 'was disabled', or 'was broadened to all users') and then 'and N more'.",
+      "cite": "installerFiles/sql13/v3.2.27.sql:44",
+      "tickets": [
+        "TMR-135"
+      ]
+    },
+    {
+      "id": "F290",
+      "status": "new",
+      "statement": "Rollup is on by default with a 24-hour window (1440 minutes). In a rollup, repeated changes to the same method and change type keep only the latest.",
+      "cite": "installerFiles/sql13/v3.2.27.sql:36",
+      "tickets": [
+        "TMR-135"
+      ]
+    },
+    {
+      "id": "F291",
+      "status": "new",
+      "statement": "Exclusion fields for this threat: 'Authentication Method' and 'Change Type', plus the Perpetrator exclusion. File, Process, File Tag, and Affected Object DN exclusions are disabled. The Change Type values are WeakMethodEnabled, StrongMethodDisabled, and TargetBroadened.",
+      "cite": "installerFiles/sql13/v3.2.27.sql:39",
+      "tickets": [
+        "TMR-135"
+      ]
+    },
+    {
+      "id": "F292",
+      "status": "new",
+      "statement": "The attack path shows the perpetrator followed by the affected method names (up to 3, then 'and N more').",
+      "cite": "installerFiles/sql13/v3.2.27.sql:33",
+      "tickets": [
+        "TMR-135"
+      ]
+    },
+    {
+      "id": "F293",
+      "status": "new",
+      "statement": "The current configuration state of the policy is not shown as evidence in this release.",
+      "cite": "installerFiles/sql13/v3.2.27.sql:8",
+      "tickets": [
+        "TMR-135"
+      ]
+    }
+  ],
+  "security-policy-weakening": [
+    {
+      "id": "F298",
+      "status": "new",
+      "statement": "Guest Invite Policy is reported when the guest invite restriction becomes less restrictive. The levels, from least to most restrictive, are 'Anyone in the organization', 'Members and admin roles', 'Admin roles only', 'No one'. Tightening the policy is not reported.",
+      "cite": "StealthDefendCore/Common/ThreatPropertyModel/SecurityPolicyWeakeningData.cs:67",
+      "tickets": [
+        "TMR-141"
+      ]
+    },
+    {
+      "id": "F299",
+      "status": "new",
+      "statement": "User Consent for Apps is reported when the setting moves to a less restrictive option. From most to least restrictive: 'Do not allow user consent', 'Allow user consent for apps from verified publishers, for selected permissions', 'Let Microsoft manage your consent settings'.",
+      "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:53",
+      "tickets": [
+        "TMR-141"
+      ]
+    },
+    {
+      "id": "F300",
+      "status": "new",
+      "statement": "A move to a custom (non-portal) user consent policy is reported as weakening when a self-service consent policy was added. A move to a portal option from a custom policy is not reported.",
+      "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:221",
+      "tickets": [
+        "TMR-141"
+      ]
+    },
+    {
+      "id": "F301",
+      "status": "new",
+      "statement": "Security Defaults is reported only when it changes from enabled to disabled. Re-enabling it is not reported.",
+      "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:284",
+      "tickets": [
+        "TMR-141"
+      ]
+    },
+    {
+      "id": "F302",
+      "status": "new",
+      "statement": "App Creation is reported when the tenant policy that lets users register applications changes from disabled to enabled.",
+      "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:314",
+      "tickets": [
+        "TMR-141"
+      ]
+    },
+    {
+      "id": "F303",
+      "status": "new",
+      "statement": "Source audit events: 'Update authorization policy' and 'Update company settings' (category AuthorizationPolicy), and 'Update security defaults' (category Policy).",
+      "cite": "StealthDefendCore/JobManager/AD/ThreatActorsV2/Azure/SecurityPolicyWeakeningV2.cs:380",
+      "tickets": [
+        "TMR-141"
+      ]
+    },
+    {
+      "id": "F304",
+      "status": "new",
+      "statement": "Threat description with one change: 'The {policy} tenant policy was loosened from '{old}' to '{new}'.' (values in single quotes since TMR-1539); Security Defaults reads 'was disabled' and App Creation reads 'was enabled'. With 2 or 3 changes it lists the policy names; with more it lists 3 and 'and N more'.",
+      "cite": "installerFiles/sql13/v3.2.33.sql:7",
+      "tickets": [
+        "TMR-141",
+        "TMR-1539"
+      ]
+    },
+    {
+      "id": "F305",
+      "status": "new",
+      "statement": "Evidence entry titled 'Weakened Security Policies' lists up to 5 changes, for example 'Guest invite policy weakened from 'X' to 'Y'', 'User consent for apps weakened from 'X' to 'Y'', 'Security defaults disabled', 'User app registration enabled', then 'and N more'.",
+      "cite": "installerFiles/sql13/v3.2.33.sql:15",
+      "tickets": [
+        "TMR-141",
+        "TMR-1539"
+      ]
+    },
+    {
+      "id": "F306",
+      "status": "new",
+      "statement": "Rollup is on by default with a 24-hour window (1440 minutes). When one control is weakened in several steps within the rollup, the threat shows one change from the original setting to the final setting.",
+      "cite": "StealthDefendCore/JobManager/AD/ThreatRollupActors/SecurityPolicyWeakeningRollup.cs:31",
+      "tickets": [
+        "TMR-141"
+      ]
+    },
+    {
+      "id": "F307",
+      "status": "new",
+      "statement": "Exclusion fields: 'Weakened Policy' and 'Target Setting', plus Perpetrator. Both offer a fixed autocomplete list. File, Process, File Tag, and Affected Object DN exclusions are disabled.",
+      "cite": "installerFiles/sql13/v3.2.33.sql:8",
+      "tickets": [
+        "TMR-1540"
+      ]
+    },
+    {
+      "id": "F309",
+      "status": "new",
+      "statement": "The 'Target Setting' autocomplete is grouped by policy and lists the setting a policy was loosened to: Anyone in the organization, Members and admin roles, Admin roles only, the two lower user consent options, 'Disabled' (Security Defaults), 'Enabled' (App Creation). The most restrictive settings are not listed because they can never be a target.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/QueryBuilder/components/attributeEditors/WeakenedTargetSettingFilter.tsx:33",
+      "tickets": [
+        "TMR-1540"
+      ]
+    },
+    {
+      "id": "F310",
+      "status": "new",
+      "statement": "The attack path shows the perpetrator, a 'Weakened' key, and the weakened policy names.",
+      "cite": "installerFiles/sql13/v3.2.30.sql:31",
+      "tickets": [
+        "TMR-141"
+      ]
+    }
+  ],
+  "originating-agent": [
+    {
+      "id": "F322",
+      "status": "new",
+      "statement": "The same 'Originating Agent' filter is applied in integration (SIEM) event queries, matching the event's originating server.",
+      "cite": "StealthDefendCore/IntegrationService/SIActor.cs:724",
+      "tickets": [
+        "TMR-1497"
+      ]
+    }
+  ],
+  "risky-agents": [
+    {
+      "id": "F334",
+      "status": "changed",
+      "statement": "Each risky sync waits at least 1 minute between runs (MinimumWaitTime 00:01:00).",
+      "cite": "StealthDefendCore/AzureService/appsettings.default.json:131",
+      "tickets": []
+    }
+  ],
+  "tags": [
+    {
+      "id": "F349",
+      "status": "unchanged",
+      "statement": "When the tag object picker is truncated it still shows the notice \"Filter the query further to view more specific results\"; the object lists are now virtualized checkbox lists.",
+      "cite": "web/src/app/components/defend/configuration/integrations/TagManagement/TagSettings.tsx:1117",
+      "tickets": []
+    }
+  ],
+  "threat-details": [
+    {
+      "id": "F365",
+      "status": "unchanged",
+      "statement": "The \"Cancel Request\" link label in the loading overlay.",
+      "cite": "web/src/app/pages/investigations/components/Investigation/components/LoadingOverlay.tsx:84",
+      "tickets": [
+        "452778"
+      ]
+    }
+  ],
+  "service-accounts": [
+    {
+      "id": "F371",
+      "status": "unchanged",
+      "statement": "Service Accounts grid columns: Display name, Domain, Type, Status, Vulnerable, Password Age (days), Tags, Auth Protocols, Encryption Types, SPNs, Targets, Clients, Created.",
+      "cite": "web/src/app/pages/serviceAccounts/ServiceAccounts.tsx:198",
+      "tickets": []
+    }
+  ],
+  "system-settings": [
+    {
+      "id": "F415",
+      "status": "unchanged",
+      "statement": "System Settings tree items (Auditing, User Access, Licensing, System Jobs with Abnormal Time Evidence, Automated Account Detection, Database Maintenance, Report Maintenance, and About Threat Manager) are unchanged.",
+      "cite": "web/src/app/components/defend/configuration/SystemConfigurations.tsx:149",
+      "tickets": [
+        "TMR-1456"
+      ]
+    }
+  ]
+}

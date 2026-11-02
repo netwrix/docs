@@ -1,0 +1,10 @@
+FAIL  docs/threatmanager/3.4/administration/serviceaccounts.md  (vale: pass, dale: fail)
+   15  dale:undefined-acronyms  Acronym used without being defined on first use. Spell it out: 'Full Name (ACRONYM)'.
+FAIL  docs/threatmanager/3.4/administration/threats/entraidobjects/entraidapplication.md  (vale: pass, dale: fail)
+   77  dale:passive-voice  Don't use passive voice. Use active voice instead.
+   66  dale:wordiness  This sentence is wordy. A more concise, direct alternative is possible.
+PASS  docs/threatmanager/3.4/index.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/threats/entraid.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/configuration/systemsettings/useraccess.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/administration/configuration/systemsettings/licensing.md  (vale: pass, dale: cached-pass)
+PASS  docs/threatmanager/3.4/install/actionservice.md  (vale: pass, dale: cached-pass)
