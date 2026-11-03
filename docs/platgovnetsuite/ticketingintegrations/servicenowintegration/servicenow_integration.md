@@ -8,8 +8,8 @@ sidebar_position: 20
 
 ## Features and Benefits
 
-With Platform Governance for NetSuite's integration of **NetSuite** and **ServiceNow**, you can use
-the **ServiceNow** tool while Platform Governance for NetSuite automatically adds and tracks the associated changes in your NetSuite
+With Strongpoint for NetSuite's integration of **NetSuite** and **ServiceNow**, you can use
+the **ServiceNow** tool while Strongpoint for NetSuite automatically adds and tracks the associated changes in your NetSuite
 account. The integration eliminates the need for double entry in the two systems.
 
 The ServiceNow integration automatically syncs ServiceNow with NetSuite:
@@ -48,7 +48,7 @@ The following should be considered before deploying the ServiceNow integration:
 This process is performed by the ServiceNow Administrator.
 
 1. Create a ServiceNow ticket for deployment.
-2. Click **Select Account** to connect to Platform Governance for NetSuite.
+2. Click **Select Account** to connect to Strongpoint for NetSuite.
 3. Add customization to the ServiceNow ticket:
 
     - Parsed from text with script identifiers.

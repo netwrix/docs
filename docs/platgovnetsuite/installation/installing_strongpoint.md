@@ -1,12 +1,12 @@
 ---
-title: "Installing Platform Governance for NetSuite"
-description: "Installing Platform Governance for NetSuite"
+title: "Installing Strongpoint for NetSuite"
+description: "Installing Strongpoint for NetSuite"
 sidebar_position: 10
 ---
 
-# Installing Platform Governance for NetSuite
+# Installing Strongpoint for NetSuite
 
-To install Platform Governance for NetSuite, complete the following steps:
+To install Strongpoint for NetSuite, complete the following steps:
 
 1. [Install the bundle](#install-the-bundle) using the correct bundle name and the bundle ID.
 2. [Set the number of rows in list segments](#set-the-number-of-row-in-list-segments) to 1,000. This
@@ -41,7 +41,7 @@ The Bundle ID has been updated due to NetSuite changes.
 
 ## Set the Number of Row in List Segments
 
-Set your NUMBER OF ROWS IN LIST SEGMENTS to 1,000. This is a NetSuite best practice and critical for the proper spidering of your workflows. If you cannot edit this field, refer to
+Set your NUMBER OF ROWS IN LIST SEGMENTS to 1,000. This is a NetSuite best practice and critical for the proper spidering of your workflows. If you can't edit this field, refer to
 [Can't Change the Number of Rows in List Segments](/docs/platgovnetsuite/reportabug/list_segments_not_editable.md)
 
 To set the Number of Rows in List Segments:

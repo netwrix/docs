@@ -90,7 +90,7 @@ To add new change levels, select **New** or use the **+** next to a field when e
   Default: Log Changes Only
 - **Formula Objects**: Fields used in Formulas. Default: Sandbox Development & Testing
 - **Workflows and Related Objects**: Changes to Workflows, or any objects used by a Workflow. When
-  an object is used by a Script and a Workflow, Platform Governance for NetSuite uses the higher level between Scripted Objects,
+  an object is used by a Script and a Workflow, Strongpoint for NetSuite uses the higher level between Scripted Objects,
   and Workflows and Related Objects change controls. Default: Change Request
 - **Integration Objects**: Changes to External Records, External Fields, External Systems, and
   Integrations. Default: Log Changes Only

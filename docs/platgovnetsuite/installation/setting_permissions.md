@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Setting Role Permissions
 
-The **Access Type** for Platform Governance for NetSuite Custom **Record Types** is set to **Use
+The **Access Type** for Strongpoint for NetSuite Custom **Record Types** is set to **Use
 Permission List**. This controls access using Roles, Permission Lists and Strongpoint License
 verification to prevent unauthorized users from changing the records. Users with Roles not included
 in the Permission List for a record type are denied access.
@@ -16,7 +16,7 @@ Remember to give your [licensed](/docs/platgovnetsuite/installation/license_mana
 [Strongpoint tab](/docs/platgovnetsuite/installation/setting_strongpoint_tab_access.md).
 :::
 
-To use Platform Governance for NetSuite with your custom roles, add the record types to the
+To use Strongpoint for NetSuite with your custom roles, add the record types to the
 permission list for each role. The Strongpoint roles have the correct access levels by default.
 
 1. Open **Setup** > **Users/Roles** > **Manage Roles**
