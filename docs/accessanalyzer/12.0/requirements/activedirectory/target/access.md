@@ -236,6 +236,28 @@ the following minimum requirements:
 
 The Certification Authority server doesn't require local administrator rights.
 
+The PowerShell queries in this job run locally on the Access Analyzer Console server (or the
+proxy server, when one is used), so the following software must be installed on that server:
+
+- Active Directory module for Windows PowerShell (RSAT: Active Directory Domain Services and
+  Lightweight Directory Services Tools) – Provides the `Get-ADRootDSE`, `Get-ADObject`, and
+  `Get-ADDomainController` cmdlets used to discover the Certification Authorities
+- Certification Authority Management Tools (RSAT: Active Directory Certificate Services Tools) –
+  Provides the `CertificateAuthority.Admin` and `CertificateAuthority.View` COM objects used to read
+  Certification Authority security, registry settings, enrollment agents, templates, and requests
+
+Install the Remote Server Administration Tools (RSAT) features only. The Active Directory Domain
+Services, Active Directory Lightweight Directory Services, and Active Directory Certificate Services
+server roles aren't required on the Access Analyzer server. Run the following in an elevated
+PowerShell session to install the features:
+
+```powershell
+Install-WindowsFeature RSAT-AD-PowerShell, RSAT-ADCS-Mgmt
+```
+
+The Access Analyzer server must also be able to reach each Certification Authority over RPC/DCOM
+and, for the NTLM Endpoints query, over HTTP and HTTPS.
+
 :::info
 If the job fails to collect Certification Authority security, registry, or enrollment agent data
 under a Read-only account, escalate incrementally (Read, then Enroll, then Officer, then Manage CA)
