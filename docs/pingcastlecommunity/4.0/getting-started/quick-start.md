@@ -5,6 +5,10 @@ description: Run your first PingCastle healthcheck with the most common command 
 ---
 # Quick Start Commands
 
+**Run without the command line**:
+
+Double-click `PingCastle.exe` to launch interactive mode. Select "healthcheck" from the menu and follow the prompts. See [Running PingCastle](../install/running-pingcastle.md) for details.
+
 **Basic scan of a domain**:
 ```
 PingCastle.exe --healthcheck --server domain.local

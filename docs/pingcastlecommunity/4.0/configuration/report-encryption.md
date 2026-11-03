@@ -1,11 +1,9 @@
 ---
 sidebar_position: 2
-sidebar_label: Centralizing reports
+sidebar_label: Report encryption
 description: Encrypt PingCastle reports with RSA keys so you can transfer them over unsecured channels.
 ---
-# Centralizing reports
-
-## Report Encryption
+# Report encryption
 
 For environments where you must transfer reports over unsecured channels, PingCastle supports RSA encryption.
 

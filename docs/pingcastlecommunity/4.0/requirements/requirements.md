@@ -42,8 +42,6 @@ For optimal performance, install Active Directory Web Services (ADWS) on your do
 Starting with PingCastle 3.5, PingCastle bundles the .NET runtime directly with the application, eliminating the need for any prerequisites or manual .NET framework installation.
 
 **System Requirements**:
-- PingCastle runs on any system that supports .NET 8
+- PingCastle runs on any system that supports .NET 10
 - No local administrator privileges required
 - No need to install additional components or frameworks
-
-**Previous Versions**: PingCastle versions before 3.5 required a separate installation of .NET Framework 4.7.2.

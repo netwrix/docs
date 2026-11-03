@@ -21,5 +21,5 @@ The tool surfaces this date as the End of Support date.
 
 To continue using PingCastle after the built-in license expires, you must purchase one of the following:
 
-- **PingCastle Standard**: Traditional licensing model for ongoing use
+- **PingCastle Standard**: Renewal only. Existing customers can renew, but Netwrix no longer sells new PingCastle Standard licenses
 - **PingCastle for Service Providers**: Per-assessment licensing where each license is valid for 2 weeks for specific Active Directory domains and forests. You can perform forest-level assessments using wildcard notation (e.g., `*.domain.local` to scan all subdomains within a forest)

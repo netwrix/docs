@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 sidebar_label: Settings migration
 description: Migrate settings from pingcastle.exe.config to appsettings.console.json when you upgrade to version 3.5 or later.
 ---

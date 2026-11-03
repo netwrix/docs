@@ -1,13 +1,27 @@
 ---
 sidebar_position: 3
 sidebar_label: Updating PingCastle
-description: Update PingCastle with PingCastleAutoUpdater.exe and review its command line options.
+description: Update PingCastle by running PingCastleAutoUpdater.exe, and review the command line options for preview releases, delayed updates, and forced downloads.
 ---
 # Updating PingCastle
 
-PingCastle includes `PingCastleAutoUpdater.exe`, which automatically downloads the latest release from GitHub releases.
+PingCastle includes `PingCastleAutoUpdater.exe`, which downloads the latest release from GitHub releases.
 
-**Available Options**:
+## Update PingCastle
+
+To update PingCastle, double-click `PingCastleAutoUpdater.exe` in the PingCastle folder. The updater downloads the latest release from GitHub. You don't need to pass any options.
+
+## Run the updater from the command line
+
+Run the updater from a command prompt to change which release it downloads, or to script updates. Add the options after the executable name:
+
+```
+PingCastleAutoUpdater.exe --wait-for-days 30
+```
+
+This example downloads only releases that have been publicly available for at least 30 days.
+
+### Command line options
 
 | Option | Description |
 |--------|-------------|
