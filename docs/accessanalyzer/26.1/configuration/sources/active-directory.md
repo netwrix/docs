@@ -51,7 +51,7 @@ The equivalent `dsacls` command, for a domain `corp.example.com` with NetBIOS na
 dsacls "DC=corp,DC=example,DC=com" /I:S /G "CORP\svc-access-analyzer:GR;;msDS-DelegatedManagedServiceAccount"
 ```
 
-Without the grant, dMSAs are missing from the data. Group memberships that include a dMSA point to an account the sync didn't store, and the account a dMSA replaced shows only the dMSA's identifier in `supersededById`. gMSAs and sMSAs aren't affected.
+Without the grant, dMSAs are missing from the data. Group memberships that include a dMSA point to an account the sync didn't store, and the user or computer account that a dMSA replaced shows only the dMSA's identifier in its `supersededById` attribute (see [dMSA migration links](#dmsa-migration-links)). gMSAs and sMSAs aren't affected.
 
 The grant lets the account read dMSA objects, not their passwords. The dMSA class denies everyone read access to the managed password, and Access Analyzer never requests it.
 
