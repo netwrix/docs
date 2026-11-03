@@ -111,7 +111,7 @@ least privilege permissions model.
 **1-AD_Scan Job Permissions**
 
 The ADInventory Data Collector in the .Active Directory Inventory > 1-AD_Scan Job has the following
-minimum requirements, which must be configured at the Domain level in Active Directory:
+minimum requirements, which you must configure at the Domain level in Active Directory:
 
 - Read access to directory tree
 - List Contents & Read Property on the Deleted Objects Container
@@ -187,7 +187,7 @@ AD_DSRM Job. The minimum requirements for running this job are:
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg
 
-Alternatively, granting access to the Server Operators group also allows read-only access to the Lsa key, just requiring access added to the winreg key.
+Alternatively, add the account to the Server Operators group, which grants read-only access to the Lsa key. You then only need to add access to the winreg key.
 
 **AD_TimeSync Job Permissions**
 
@@ -200,14 +200,14 @@ AD_TimeSync Job. The minimum requirements for running this job are:
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time
   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg
 
-Alternatively, granting access to the Network Configuration Operators group also allows read-only access to the W32Time key, just requiring access added to the winreg key.
+Alternatively, add the account to the Network Configuration Operators group, which grants read-only access to the W32Time key. You then only need to add access to the winreg key.
 
 **AD_DomainInfo Job Permissions**
 
 While the LDAP Data Collector and Active Directory Data Collector typically requires Domain
 Administrator permissions when targeting a domain controller, that level of access isn't required
-to run the 5.Domains > AD_DomainInfo Job. The minimum requirements for running this job, which must
-be configured at the Domain level in Active Directory, are:
+to run the 5.Domains > AD_DomainInfo Job. The minimum requirements for running this job, which you
+must configure at the Domain level in Active Directory, are:
 
 - Read access to: %DOMAINDN% and its children
 - Read access to: CN=System,%DOMAINDN% and its children
@@ -237,7 +237,7 @@ the following minimum requirements:
 The Certification Authority server doesn't require local administrator rights.
 
 The PowerShell queries in this job run locally on the Access Analyzer Console server (or the
-proxy server, when one is used), so the following software must be installed on that server:
+proxy server, when one is used), so install the following software on that server:
 
 - Active Directory module for Windows PowerShell (RSAT: Active Directory Domain Services and
   Lightweight Directory Services Tools) – Provides the `Get-ADRootDSE`, `Get-ADObject`, and
