@@ -50,7 +50,7 @@ Permission entries never count as objects, on any scan type.
 The count belongs to one run and starts from zero each time:
 
 - An Access scan reads everything in its scope on every run, so running it again on a share that hasn't changed shows the same number.
-- A Sensitive data scan with **Differential scan** on counts only the files that are new or changed since the last run, so a later run on a File Server source where few files changed can show a handful of files, or none.
+- A Sensitive data scan with **Differential scan** on counts only the files that are new or changed since the last run, so a later run on a File Server source where few files changed can show only a few files, or none.
 - An Active Directory Identity sync with **Enable differential scan** on counts only the users, groups, computers, and managed service accounts that changed since the previous sync, including deleted ones.
 
 For example, a share with 4 folders and 6 text files shows 11 for an Access scan and **6 / 6 files (est.)** for a Sensitive data scan. Add an empty file, a `.jpg` image, and one more text file, and run both scans again: the Access scan shows 14, a full Sensitive data scan shows **7 / 7 files (est.)**, and a Sensitive data scan with **Differential scan** on shows **1 / 1 files (est.)**.
