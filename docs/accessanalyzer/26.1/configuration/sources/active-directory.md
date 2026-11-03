@@ -47,8 +47,6 @@ Set-Acl -Path "AD:\$domainDn" -AclObject $acl
 
 The equivalent `dsacls` command, for a domain `corp.example.com` with NetBIOS name `CORP`, is:
 
-{/* TODO: verify this dsacls form on the AD lab; only the PowerShell example was tested */}
-
 ```
 dsacls "DC=corp,DC=example,DC=com" /I:S /G "CORP\svc-access-analyzer:GR;;msDS-DelegatedManagedServiceAccount"
 ```
