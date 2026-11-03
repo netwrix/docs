@@ -474,7 +474,7 @@ export const PRODUCTS = [
   },
   {
     id: 'platgovnetsuite',
-    name: 'Platform Governance for NetSuite',
+    name: 'Strongpoint for NetSuite',
     description: 'NetSuite governance and compliance',
     path: 'docs/platgovnetsuite',
     categories: ['Identity Management'],
@@ -490,7 +490,7 @@ export const PRODUCTS = [
   },
   {
     id: 'platgovnetsuiteflashlight',
-    name: 'Platform Governance for NetSuite Flashlight',
+    name: 'Strongpoint for NetSuite Flashlight',
     description: 'Lightweight NetSuite documentation and analysis',
     path: 'docs/platgovnetsuiteflashlight',
     categories: ['Other'],

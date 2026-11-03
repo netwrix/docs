@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # License Manager
 
-The License Manager is where you manage your Platform Governance for NetSuite license and licensed
+The License Manager is where you manage your Strongpoint for NetSuite license and licensed
 users. Contact your customer service representative if you need modifications to your license.
 
 :::note
@@ -55,7 +55,7 @@ Some buttons and fields are only visible when you **Edit** the License.
   Optimization**, **Intelligent Change Management** and **Enterprise**.
 - **Edition**: displays your NetSuite Edition.
 - **Subsidiaries**: displays the number of operating subsidiaries you have in your OneWorld account.
-  Platform Governance for NetSuite doesn't count subsidiaries that are only used for financial
+  Strongpoint for NetSuite doesn't count subsidiaries that are only used for financial
   transactions or as an elimination subsidiary.
 - **View**: select **Strongpoint Licensed Users** to filter the view and see the user information.
 - **Licensed User**: select a user number and click the Open icon that appears if you hover next to

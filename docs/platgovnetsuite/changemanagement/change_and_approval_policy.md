@@ -77,7 +77,7 @@ The criteria for non-material changes:
 
 ## Managed and Non-Managed Bundles
 
-Platform Governance for NetSuite can process changes that are bundled together as a group. There are
+Strongpoint for NetSuite can process changes that are bundled together as a group. There are
 different processes for **Managed Bundles** (changes pushed by a third party) and **Non-Managed
 Bundles** (your own packaged changes). System generated **Manage Bundle** change requests are now
 created with an approved status to be consistent with the change logs (compliant) that are attached

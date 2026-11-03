@@ -7,9 +7,9 @@ sidebar_position: 160
 # Integrations
 
 Many customers use ticketing and change approval systems in the management of changes to all of
-their business systems not just Salesforce or NetSuite. Platform Governance for NetSuite provides
+their business systems not just Salesforce or NetSuite. Strongpoint for NetSuite provides
 integrations with external ticketing systems to improve workflows for customers using both. This
-brings all the benefits of Platform Governance for NetSuite to your external ticketing systems,
+brings all the benefits of Strongpoint for NetSuite to your external ticketing systems,
 including the impact analysis, release management and change reconciliation features.
 
 Integrations with NetSuite include:
@@ -19,7 +19,7 @@ Integrations with NetSuite include:
 - [Zendesk](/docs/platgovnetsuite/ticketingintegrations/zendeskintegration/zendesk_integration.md) ticketing System integration
 - The [Integration API](/docs/platgovnetsuite/ticketingintegrations/apioverview/api_overview.md) enables your developers to support your ticketing
   systems, making the integration functionality available to everyone. Integrating your systems with
-  your Platform Governance for NetSuite account helps you make the most of your change management
+  your Strongpoint for NetSuite account helps you make the most of your change management
   and ticketing strategies.
 
 The [Integration Mapping](/docs/platgovnetsuite/integrations/integration_mapping.md) tool helps you map customizations between your
