@@ -28,7 +28,7 @@ All PingCastle editions share the `PingCastle.exe` command-line tool. PingCastle
 - [Quick start](/docs/pingcastlecommunity/4_0/getting-started/quick-start)
 - [Command reference](/docs/pingcastlecommunity/4_0/admin/command-reference)
 - [Scanners](/docs/pingcastlecommunity/4_0/admin/scanners)
-- [Report encryption and centralizing reports](/docs/pingcastlecommunity/4_0/configuration/centralizing-reports)
+- [Report encryption](/docs/pingcastlecommunity/4_0/configuration/report-encryption)
 - [Troubleshooting PingCastle.exe](/docs/pingcastlecommunity/4_0/troubleshooting/faq)
 
 ## Next steps

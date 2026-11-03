@@ -4,7 +4,7 @@ sidebar_label: Decryption keys
 ---
 # Decryption Keys for PingCastle Enterprise
 
-PingCastle.exe agents can encrypt reports with `--encrypt` before sending them, using an RSA key pair, so reports aren't exposed in plain text in transit or in email. See [Report Encryption](/docs/pingcastlecommunity/4_0/configuration/centralizing-reports#report-encryption) for how to generate that key pair and configure an agent to encrypt with it.
+PingCastle.exe agents can encrypt reports with `--encrypt` before sending them, using an RSA key pair, so reports aren't exposed in plain text in transit or in email. See [Report Encryption](/docs/pingcastlecommunity/4_0/configuration/report-encryption) for how to generate that key pair and configure an agent to encrypt with it.
 
 PingCastle Enterprise needs the matching private key to decrypt those reports when it receives them. Manage this key at **Configuration** > **Decryption**.
 
@@ -14,7 +14,7 @@ The default PingCastle decryption key is insecure, and newer versions of PingCas
 
 To set up decryption:
 
-1. Generate an RSA key pair on an agent using `PingCastle.exe --generate-key`. See [Report Encryption](/docs/pingcastlecommunity/4_0/configuration/centralizing-reports#report-encryption) for the full command output and JSON structure.
+1. Generate an RSA key pair on an agent using `PingCastle.exe --generate-key`. See [Report Encryption](/docs/pingcastlecommunity/4_0/configuration/report-encryption) for the full command output and JSON structure.
 2. In PingCastle Enterprise, go to **Configuration** > **Decryption** and add the private key.
 3. Add the matching public key to the `appsettings.console.json` file of every agent that should encrypt reports with this key.
 
