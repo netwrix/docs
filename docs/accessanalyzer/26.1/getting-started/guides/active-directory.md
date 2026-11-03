@@ -14,8 +14,8 @@ One source covers one domain. If you have several domains, repeat the guide for 
 
 The Identity sync only reads. A regular domain user with the default read access to the domain is enough, with two exceptions that a domain administrator grants once:
 
-- **Read access to delegated Managed Service Accounts (dMSAs).** dMSAs exist only in domains with a Windows Server 2025 domain controller, and they deny regular users read access by default. Without the grant, the sync skips them. See [Grant read access to dMSAs](../../configuration/sources/active-directory.md#grant-read-access-to-dmsas).
-- **List Contents and Read Property on the Deleted Objects container**, so that differential syncs detect deleted objects. See [Grant read access to the Deleted Objects container](../../configuration/sources/active-directory.md#grant-read-access-to-the-deleted-objects-container).
+- **Read access to delegated Managed Service Accounts (dMSAs)**, if the domain has a Windows Server 2025 domain controller. dMSAs exist only in those domains, and they deny regular users read access by default. Without the grant, the sync skips them. See [Grant read access to dMSAs](../../configuration/sources/active-directory.md#grant-read-access-to-dmsas).
+- **List Contents and Read Property on the Deleted Objects container**, if the sync uses **Differential Scan**, which is on by default. Without the grant, differential syncs don't detect deleted objects. See [Grant read access to the Deleted Objects container](../../configuration/sources/active-directory.md#grant-read-access-to-the-deleted-objects-container).
 
 ### Network
 
