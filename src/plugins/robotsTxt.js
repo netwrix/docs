@@ -4,10 +4,9 @@ import { isIndexableSite } from '../config/indexing.js';
 
 export function buildRobotsTxt(siteUrl) {
   if (!isIndexableSite(siteUrl)) {
-    // Crawling stays allowed on purpose: the site's noIndex meta tag only
-    // removes pages from search once a crawler can fetch them and see it.
-    // Switch this to 'Disallow: /' once docs-dev has dropped out of the index.
-    return 'User-agent: *\nAllow: /\n';
+    // docs-dev has dropped out of search, so crawling is closed too. The
+    // site's noIndex meta tag stays on as a second layer.
+    return 'User-agent: *\nDisallow: /\n';
   }
   return `User-agent: *\nAllow: /\n\nSitemap: ${new URL(siteUrl).origin}/sitemap.xml\n`;
 }
