@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Script Management
 
-With the Platform Governance for NetSuite tools and the Critical Script Analysis methodology you
+With the Strongpoint for NetSuite tools and the Critical Script Analysis methodology you
 can:
 
 - Identify high priority scripts based on usage
@@ -15,7 +15,7 @@ can:
 - Understand script execution times
 
 :::note
-Platform Governance for NetSuite doesn't document or analyze locked scripts.
+Strongpoint for NetSuite doesn't document or analyze locked scripts.
 :::
 
 ## Automatically Archiving Scripts
@@ -46,12 +46,12 @@ where detectable, execution data. The result is a manageable number of errors.
 2. Review the Error Report. All script errors are reported regardless of if the script is locked,
    unlocked, part of a bundle or any other factor.
 3. Identify errors that aren't material to your business and mark them as resolved
-4. Platform Governance for NetSuite no longer reports those errors, so any future errors that occur
+4. Strongpoint for NetSuite no longer reports those errors, so any future errors that occur
    are unexpected and should be managed.
 
 ## Analyze Script Performance Data
 
-With Platform Governance for NetSuite, you can systematically analyze:
+With Strongpoint for NetSuite, you can systematically analyze:
 
 - How often scripts are executing so you can focus on high-volume scripts or identity scripts
   that are executing many times more than the transactions in the account would warrant.
@@ -72,10 +72,10 @@ Governance for NetSuite can analyze for locked scripts.
 
 1. **Locked Script Records**: A locked script record doesn't impact script analysis since Platform
    Governance for NetSuite analyzes the Script File. If all elements of the script are unlocked or
-   if only the script record is locked, Platform Governance for NetSuite can report on script
+   if only the script record is locked, Strongpoint for NetSuite can report on script
    performance metrics.
 2. **Locked but readable (not hidden) Script File**: Script tags can't be added to locked files,
-   but Platform Governance for NetSuite can read them if they have audit tags already in them.
+   but Strongpoint for NetSuite can read them if they have audit tags already in them.
 
     - With audit tags:
         - Spiders identify the audit tags and documents them in the **Audit Tags** field in the
@@ -89,8 +89,8 @@ Governance for NetSuite can analyze for locked scripts.
     - Without audit tags: Same and locked and hidden scripts below.
 
 3. **Locked and hidden script files**: For scripts where the script file is hidden and locked,
-   Platform Governance for NetSuite can't track performance metrics, in most cases. However, if the
-   script Log Level is changed to Debug mode, Platform Governance for NetSuite can document who is
+   Strongpoint for NetSuite can't track performance metrics, in most cases. However, if the
+   script Log Level is changed to Debug mode, Strongpoint for NetSuite can document who is
    executing the script while the script is at that log level.
 
 ## Define the Scope of your Analysis
@@ -115,7 +115,7 @@ associated with specific processes using the mass update filters.
 In this case you can either add the audit tags and change the log levels manually or filter the mass
 updates.
 
-Platform Governance for NetSuite has tools to automatically change the log level of script
+Strongpoint for NetSuite has tools to automatically change the log level of script
 deployments and add start tags to files. Before deploying these tools, consider the following factors.
 
 1. Changing the log level from Error or Emergency to Audit, which is required for Script Analysis
@@ -126,7 +126,7 @@ deployments and add start tags to files. Before deploying these tools, consider 
 3. Because audit tags can only be added to unlocked files, changing the log levels of locked files
    serves no purpose from a Script Analysis perspective.
 
-Platform Governance for NetSuite has the following capabilities to set up script analysis. Specific
+Strongpoint for NetSuite has the following capabilities to set up script analysis. Specific
 ways to use these tools depend on your objectives and account setup.
 
 ## Identify which Scripts and how many Scripts have Locked and Hidden Files

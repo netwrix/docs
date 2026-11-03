@@ -339,7 +339,7 @@ Product IDs in the `products` field are used for Algolia search metadata. If a p
 | Netwrix Password Policy Enforcer | Password Policy Enforcer | `passwordpolicyenforcer` |
 | Netwrix Password Reset | Password Reset | `passwordreset` |
 | Netwrix Password Secure | Password Secure | `passwordsecure` |
-| Netwrix Platform Governance for NetSuite | Platform Governance for NetSuite | `platgovnetsuite` |
+| Netwrix Strongpoint for NetSuite | Strongpoint for NetSuite | `platgovnetsuite` |
 | Netwrix Platform Governance for Salesforce | Platform Governance for Salesforce | `platgovsalesforce` |
 | Netwrix Privilege Secure for Access Management | Privilege Secure for Access Management | `privilegesecure` |
 | Netwrix Privilege Secure for Discovery | Privilege Secure for Discovery | `privilegesecurediscovery` |

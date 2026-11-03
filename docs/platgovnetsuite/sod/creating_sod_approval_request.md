@@ -57,7 +57,7 @@ SoD Exemption** button is available after the request is Approved.
     ![Select Affected Employees](/images/platgovnetsuite/sod/sod_add_employee_select.webp)
 
 3. Click **Request Approval**. Approvers must be
-   [licensed](/docs/platgovnetsuite/installation/license_manager.md) Platform Governance for NetSuite users
+   [licensed](/docs/platgovnetsuite/installation/license_manager.md) Strongpoint for NetSuite users
    and have the correct [role permissions](/docs/platgovnetsuite/installation/setting_permissions.md) if they
    are using a custom (non-Strongpoint) role.
    A new request is created with **Add to SoD Exemption** prepended to the Name of the original

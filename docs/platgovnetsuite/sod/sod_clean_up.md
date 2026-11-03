@@ -11,7 +11,7 @@ efficient clean up of your roles. Many NetSuite accounts are littered with unuse
 assignments. Eliminating this clutter reduces the violations you encounter, and makes it easier to
 see exactly what is going on in your accounts.
 
-Platform Governance for NetSuite automatically removes employees from SoD Approval requests if one
+Strongpoint for NetSuite automatically removes employees from SoD Approval requests if one
 of these conditions occur:
 
 - NetSuite access is removed
@@ -35,7 +35,7 @@ Saved Searches are:
 - **Role Permission Change** identifies all role permission changes.
 - **Employees with Multiple Roles Detailed** identifies users with multiple roles and lists the
   roles. Multiple roles create conflicts. Users who require multiple roles for support or
-  administration can be isolated in a sandbox using Platform Governance for NetSuite to keep the
+  administration can be isolated in a sandbox using Strongpoint for NetSuite to keep the
   sandbox the same as production for troubleshooting and support.
 - **Employees with Multiple Roles Summary** identifies users with multiple roles.
 - **Current Global Permission** identifies users with global permissions, which can cause conflicts.
