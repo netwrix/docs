@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Product
 
-**Platform Governance for NetSuite** (formerly Strongpoint) is a NetSuite SuiteApp that auto-documents customizations and enforces change management and compliance workflows. It is a single-version SaaS product (`version: "current"`), so all edits apply to the one live version.
+**Strongpoint for NetSuite** (formerly Strongpoint) is a NetSuite SuiteApp that auto-documents customizations and enforces change management and compliance workflows. It is a single-version SaaS product (`version: "current"`), so all edits apply to the one live version.
 
-The legacy product name "Strongpoint" still appears in some file names, internal NetSuite UI labels, and older content. When writing or editing docs, use "Platform Governance for NetSuite" — not "Strongpoint" — except when referring to a specific UI element that says "Strongpoint" (e.g., the Strongpoint tab in NetSuite's toolbar).
+The legacy product name "Strongpoint" still appears in some file names, internal NetSuite UI labels, and older content. When writing or editing docs, use "Strongpoint for NetSuite" — not "Strongpoint" — except when referring to a specific UI element that says "Strongpoint" (e.g., the Strongpoint tab in NetSuite's toolbar).
 
 ## Content Map
 

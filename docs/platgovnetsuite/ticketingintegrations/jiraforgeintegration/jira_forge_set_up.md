@@ -23,7 +23,7 @@ The steps below show detailed instructions and prerequisites on how to set up Pl
 
 Netwrix Platform Governance(Strongpoint) bundle is a key prerequisite for Jira Forge to work. It is required that your NetSuite account is installed with the latest version or at least **7.7.5** or above. 
 
-For installation details you may refer to the installation guide found in [Installing Platform Governance for NetSuite](/docs/platgovnetsuite/installation/installing_strongpoint).
+For installation details you may refer to the installation guide found in [Installing Strongpoint for NetSuite](/docs/platgovnetsuite/installation/installing_strongpoint).
 
 :::note
 If the latest version of the bundle is already installed, you may skip this part.
@@ -82,7 +82,7 @@ This step will require a user to have NetSuite account access and an Administrat
 
 Token Based Authentication is set up through NetSuite. The basic process is as follows:
 
-1. NetSuite Administrator creates an Integration Record for the Platform Governance for NetSuite application. This only needs to be performed once per account. Open **Setup > Integration > Integration Management > Manage Integrations > New**. See the NetSuite help article "Create Integration Records for Applications to Use TBA" for details. To view a list of integration records in this account, open **Setup > Integration > Integration Management > Manage Integrations**.
+1. NetSuite Administrator creates an Integration Record for the Strongpoint for NetSuite application. This only needs to be performed once per account. Open **Setup > Integration > Integration Management > Manage Integrations > New**. See the NetSuite help article "Create Integration Records for Applications to Use TBA" for details. To view a list of integration records in this account, open **Setup > Integration > Integration Management > Manage Integrations**.
 
     :::note
     Take note of these values and keep them secure.
@@ -131,7 +131,7 @@ Click 'Save'.
 
 ### Set up Jira Status Mapping
 
-To take advantage of the automatic synchronization feature, review your Jira statuses to be mapped to the Change Management statuses. When a ticket status is updated to a mapped status, Platform Governance for NetSuite handles the synchronization between Jira and NetSuite.
+To take advantage of the automatic synchronization feature, review your Jira statuses to be mapped to the Change Management statuses. When a ticket status is updated to a mapped status, Strongpoint for NetSuite handles the synchronization between Jira and NetSuite.
 
 The mapping allows multiple Jira statuses to map to each Change Request status. The mapping is part of the Configure NetSuite and Jira procedure.
 
@@ -154,7 +154,7 @@ Enter the mappings between your Jira statuses and the Change Request statuses. F
 
 **Jira Statuses for Canceled Status**
 
-2. Check Automatic Synchronization to enable Platform Governance for NetSuite to handle the synchronization between Jira and NetSuite when a Ticket status is updated to a mapped status, without having to click Push. If you are using an account where you don't want to create a Change Request, leave this unchecked so you can do your research or testing without generating Change Requests.
+2. Check Automatic Synchronization to enable Strongpoint for NetSuite to handle the synchronization between Jira and NetSuite when a Ticket status is updated to a mapped status, without having to click Push. If you are using an account where you don't want to create a Change Request, leave this unchecked so you can do your research or testing without generating Change Requests.
 
 3. Check Allow NS to Jira Push to enable pushing NetSuite change requests into Jira. Otherwise, you can leave it as unchecked if you don't need to enable this feature.
 
@@ -162,7 +162,7 @@ Click 'Save'
 
 ### Set up Jira Project Keys
 
-This step requires Jira instance access where the Netwrix Platform Governance for NetSuite Jira Forge app is installed.
+This step requires Jira instance access where the Netwrix Strongpoint for NetSuite Jira Forge app is installed.
 
 1. In your browser, open your Jira application.
 2. In the left part of the page, there is a sidebar that lists shortcuts and apps that are installed in this Jira instance. Under **Your Apps**, click **Netwrix NetSuite Settings**.
@@ -185,7 +185,7 @@ This step requires Jira instance access where the Netwrix Platform Governance fo
 
 ### Set up Jira TBA Credentials
 
-This step requires Jira instance access where the Netwrix Platform Governance for NetSuite Jira Forge app is installed.
+This step requires Jira instance access where the Netwrix Strongpoint for NetSuite Jira Forge app is installed.
 
 1. In your browser, open your Jira application.
 2. In the left part of the page, there is a sidebar that lists shortcuts and apps that are installed in this Jira instance. Under **Your Apps**, click **Netwrix NetSuite Settings**.

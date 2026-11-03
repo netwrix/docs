@@ -69,6 +69,8 @@ Install the Password Policy Enforcer Mailer Service on one server in the domain.
 
 **Port**. Enter a different port number if another service uses the default port in your environment. The default port number is 12345. You must also configure the mailer service to use the new port. Make this change on the server that hosts the mailer service. Set `MailService.Port` in `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEMailService.json` to the new port number, then restart the Netwrix Password Policy Enforcer Mail Service.
 
+**Network connectivity**. Ensure that the port configured for the mailer service is open for TCP communication from all Domain Controllers running PPE to the server hosting the mailer service.
+
 ## License
 
 Use the **License** tab to view and update your license key.

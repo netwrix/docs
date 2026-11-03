@@ -87,8 +87,8 @@ size of the hash file, this download requires significant CPU and download time.
         directly from the Netwrix website using an FTP connection:
         :::
 
-        - [https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip](https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip)
-        - [https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip.sha256.txt](https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip.sha256.txt)
+        - [https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-2.0.0.zip](https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-2.0.0.zip)
+        - [https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-2.0.0.zip.sha256.txt](https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-2.0.0.zip.sha256.txt)
 
         Then use the File option to enable incremental updates.
 
