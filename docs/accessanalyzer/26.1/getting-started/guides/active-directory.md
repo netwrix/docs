@@ -4,7 +4,7 @@ description: Add a domain as an Active Directory source, run an Identity sync, a
 sidebar_position: 2
 ---
 
-Add one Active Directory domain as a source and run an Identity sync, which reads the domain's users, groups, and direct group memberships, along with the organizational unit path of each user and group. The results feed the Active Directory dashboard and the AD Users report, and they let file server permission reports show account and group names instead of security identifiers (SIDs).
+Add one Active Directory domain as a source and run an Identity sync, which reads the domain's users, groups, computers, managed service accounts, and direct group memberships, along with the organizational unit path of each object. The results feed the Active Directory dashboard and the AD Users report, and they let file server permission reports show account and group names instead of security identifiers (SIDs).
 
 One source covers one domain. If you have several domains, repeat the guide for each.
 
@@ -12,7 +12,10 @@ One source covers one domain. If you have several domains, repeat the guide for 
 
 ### Account
 
-The Identity sync only reads. A regular domain user with the default read access to the domain is enough.
+The Identity sync only reads. A regular domain user with the default read access to the domain is enough, with two exceptions that a domain administrator grants once:
+
+- **Read access to delegated Managed Service Accounts (dMSAs)**, if the domain has a Windows Server 2025 domain controller. dMSAs exist only in those domains, and they deny regular users read access by default. Without the grant, the sync skips them. See [Grant read access to dMSAs](../../configuration/sources/active-directory.md#grant-read-access-to-dmsas).
+- **List Contents and Read Property on the Deleted Objects container**, if the sync uses **Differential Scan**, which is on by default. Without the grant, differential syncs don't detect deleted objects. See [Grant read access to the Deleted Objects container](../../configuration/sources/active-directory.md#grant-read-access-to-the-deleted-objects-container).
 
 ### Network
 

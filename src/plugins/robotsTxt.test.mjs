@@ -10,9 +10,9 @@ test('docs.netwrix.com is crawlable and advertises its sitemap', () => {
   );
 });
 
-test('docs-dev and local builds stay crawlable so noindex can be seen, with no sitemap', () => {
+test('docs-dev and local builds are closed to crawlers, with no sitemap', () => {
   for (const url of ['https://docs-dev.netwrix.com', 'http://localhost:4500']) {
-    assert.equal(buildRobotsTxt(url), 'User-agent: *\nAllow: /\n', url);
+    assert.equal(buildRobotsTxt(url), 'User-agent: *\nDisallow: /\n', url);
   }
 });
 
