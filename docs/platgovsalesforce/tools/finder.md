@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Finder
 
-Platform Governance for Salesforce's **Finder** searches and finds standard and customized objects
+Strongpoint for Salesforce's **Finder** searches and finds standard and customized objects
 created by the scanner.
 
 To use the Finder:

@@ -4,11 +4,11 @@ title: Zendesk Walkthrough Example
 
 # Overview
 
-This walkthrough demonstrates how to use the Platform Governance for Salesforce Zendesk integration. It covers adding existing and proposed customizations, data records, and managing approval processes directly from a Zendesk ticket.
+This walkthrough demonstrates how to use the Strongpoint for Salesforce Zendesk integration. It covers adding existing and proposed customizations, data records, and managing approval processes directly from a Zendesk ticket.
 
 # Step 1 – Open a Zendesk Ticket
 
-When you open a Zendesk ticket, the Platform Governance for Salesforce app appears in the sidebar.
+When you open a Zendesk ticket, the Strongpoint for Salesforce app appears in the sidebar.
 
 ![Integration After Create Zendesk Ticket](/images/platgovsalesforce/integrations/zendesk/1_See_integration_after_create_a_zendesk_ticket.webp)
 

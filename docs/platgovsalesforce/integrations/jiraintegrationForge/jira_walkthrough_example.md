@@ -7,7 +7,7 @@ sidebar_position: 2
 # Jira Walkthrough Example
 
 This walkthrough is one example based on a test account. You must
-[install and configure](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_walkthrough_example.md) the Platform Governance for Salesforce Jira
+[install and configure](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_walkthrough_example.md) the Strongpoint for Salesforce Jira
 integration, including setting up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md)** before using this
 walkthrough.
 
@@ -154,7 +154,7 @@ This procedure adds a new Customization.
 
 ### Create the Change Request
 
-The Platform Governance for Salesforce Jira integration automatically creates your Change Requests
+The Strongpoint for Salesforce Jira integration automatically creates your Change Requests
 when you add a Customization. To set up or update the status mapping, refer to setting
 up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md)** procedure.
 

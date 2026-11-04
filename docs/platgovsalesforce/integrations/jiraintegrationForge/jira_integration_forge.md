@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Set Up the Jira Integration
 
-Platform Governance for Salesforce's Change Enablement capabilities are integrated with Jira, one of
+Strongpoint for Salesforce's Change Enablement capabilities are integrated with Jira, one of
 the most popular issue ticketing and development project management systems. Customers can look for and include Salesforce Customizations, assess impacts for requested changes, and push Jira
 change tickets into a Change Request. This enables change management, tracking of
 compliant changes and automating the reconciliation of change logs during an audit (Now in Forge).
@@ -16,13 +16,13 @@ User benefits include:
 - Avoid duplicate effort of creating tickets in two different systems.
 - Perform impact analysis assessment.
 - Navigate to Dependency Relationship Diagram (DRD) views.
-- Enable automatic synchronization of Jira and Platform Governance for Salesforce change tickets.
+- Enable automatic synchronization of Jira and Strongpoint for Salesforce change tickets.
 
 :::note
 Change Requests aren't automatically created, as not all tickets result in a Change Request.
-Tickets must be pushed to Platform Governance for Salesforce to begin the process. If Automatic
+Tickets must be pushed to Strongpoint for Salesforce to begin the process. If Automatic
 Synchronization is turned on, then changes to the Status and Customizations are synchronized between
-Jira and Platform Governance for Salesforce without the need to keep manually pushing the changes.
+Jira and Strongpoint for Salesforce without the need to keep manually pushing the changes.
 :::
 
 To set up the Jira integration:
@@ -39,7 +39,7 @@ You can map custom fields between Change Requests and Jira. Refer to
 
 To take advantage of the automatic synchronization feature, review your Jira
 statuses to be mapped to the Change Request statuses. When a ticket status is updated to a mapped
-status, Platform Governance for Salesforce handles the synchronization between Jira and Salesforce.
+status, Strongpoint for Salesforce handles the synchronization between Jira and Salesforce.
 
 :::note
 The mapping allows multiple Jira statuses to map to each Change Request status.
@@ -114,7 +114,7 @@ alternative.
 
 #### Restricting Access to a Project
 
-By default, all projects are visible for the Jira Platform Governance for Salesforce integration.
+By default, all projects are visible for the Jira Strongpoint for Salesforce integration.
 You can restrict this by project or profile.
 
 Users opening a restricted project receive a information message, instructions for enabling access,
@@ -131,16 +131,16 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
 2. Select **Netwrix Salesforce Settings**.
 3. Select the **Project Visibility Settings** tab.
 4. Enter the name of the project in the **Visibility Settings**. The specified project is the only
-   one that is available to the Platform Governance for Salesforce integration. Leave **Visibility
+   one that is available to the Strongpoint for Salesforce integration. Leave **Visibility
    Settings** blank to allow all projects access.
 5. Click **Save**.
 
-Only the specified project has access to the Platform Governance for Salesforce Jira installation.
+Only the specified project has access to the Strongpoint for Salesforce Jira installation.
 If **Visibility Settings** is blank, all projects have access.
 
 #### Setting Groups/Profiles Visibility
 
-You can also restrict access to the Jira Platform Governance for Salesforce integration using Profile groups.
+You can also restrict access to the Jira Strongpoint for Salesforce integration using Profile groups.
 
 Users opening a restricted project receive a information message, instructions for enabling access,
 and a link to this topic.
@@ -153,7 +153,7 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
 2. Select **Space Settings**.
 3. Select the **Netwrix Salesforce Settings** tab. There are two lists:
    **Allowed Profiles (User Groups)** are all of the current groups in Jira
-   **Allowed Projects** are projects that can see the Platform Governance for Salesforce Jira
+   **Allowed Projects** are projects that can see the Strongpoint for Salesforce Jira
    integration. If **Selected Profiles and Projects** are blank, all groups have access to the integration.
 
     ![Newrix Settings Page](/images/platgovsalesforce/integrations/jiraForge/netwrix_sf_settings_oauth.webp)
@@ -183,7 +183,7 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
     - **Pending Approval Values**
     - **Rejected Values**
 
-5. Check **Is Automatic Sync** to enable Platform Governance for Salesforce to handle the
+5. Check **Is Automatic Sync** to enable Strongpoint for Salesforce to handle the
    synchronization between Jira and Salesforce when a Ticket status is updated to a mapped status,
    without requiring a manual **Push**. If you are using an org where you don't want to create a
    Change Request, leave this unchecked so you can do your research or testing without generating
@@ -191,9 +191,9 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
 
    :::note
    Change Requests aren't automatically created, as not all tickets result in a Change Request.
-   Tickets must be pushed to Platform Governance for Salesforce to begin the process. If Automatic
+   Tickets must be pushed to Strongpoint for Salesforce to begin the process. If Automatic
    Synchronization is turned on, then changes to the Status and Customizations are synchronized
-   between Jira and Platform Governance for Salesforce without the need to keep manually pushing the
+   between Jira and Strongpoint for Salesforce without the need to keep manually pushing the
    changes.
    :::
 
