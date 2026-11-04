@@ -25,6 +25,11 @@ products:
 
 # Error: !REMOVED- Host Name in AIC and/or FSAA Host Table
 
+## Related Queries
+
+- "`!Removed_<GUID>` hostname showing in AIC"
+- "`!Removed_<GUID>` replaces a hostname after running Remove Host Data for File Systems"
+
 ## Symptom
 
 After you drop data for a File Server, Access Information Center and/or the [`SA_FSAA_Hosts` table](/docs/accessanalyzer/12_0/admin/datacollector/fsaa/standardtables) in the SQL database display a machine name such as `!REMOVED_<GUID>`.
