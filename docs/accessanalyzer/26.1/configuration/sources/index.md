@@ -16,7 +16,7 @@ Four source types are available. The first column shows the name you select in t
 | Source type | System | What its scans collect | Scan types | Service account type |
 |---|---|---|---|---|
 | **File Server** | SMB file servers | Shares, folders, and files with their attributes; owners and permissions of shares and folders, plus file owners and permissions when the scan's file-level permission option is on; file contents matched against sensitive data patterns | Access scan, Sensitive data scan | Username/password |
-| **Active Directory** | One Active Directory domain | Users, groups, and direct group memberships, with the organizational unit path of each user and group | Identity sync | Username/password |
+| **Active Directory** | One Active Directory domain | Users, groups, computers, managed service accounts, and direct group memberships, with the organizational unit path of each object | Identity sync | Username/password |
 | **Entra ID** | One Microsoft Entra ID tenant | Users, groups, directory roles, group memberships and owners, and role assignments | Identity sync | Client ID/secret |
 | **SharePoint Online** | One SharePoint Online tenant | Site collections, subsites, lists, libraries, folders, documents, OneDrive personal sites (when the scan's Collect OneDrive option is on, the default), sharing settings, sharing links, permissions, and SharePoint groups; document contents matched against sensitive data patterns | Access scan, Sensitive data scan | Client ID/certificate |
 
