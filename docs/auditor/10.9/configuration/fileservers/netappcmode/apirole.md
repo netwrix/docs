@@ -84,6 +84,9 @@ security login rest-role create -role netwrix_rest_role -api /api/storage/volume
 ```
 security login rest-role create -role netwrix_rest_role -api /api/protocols/cifs/shares -access readonly -vserver svm_name
 ```
+```
+security login rest-role create -role netwrix_rest_role -api /api/cluster -access readonly -vserver svm_name
+```
 
 **NOTE:** The commands in the first two lines above can be used on NetApp versions 9.11+. In earlier
 versions, use the following commands:
@@ -147,3 +150,5 @@ The role you set up for working with RESTAPI must have the following attributes:
 - /api/protocols/audit read_create_modify
 - /api/storage/volumes readonly
 - /api/protocols/cifs/shares readonly
+- /api/cluster readonly
+- /api/network/ip/interfaces readonly
