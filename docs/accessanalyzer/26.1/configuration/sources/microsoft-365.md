@@ -116,7 +116,7 @@ Access scans skip some content on every run, whatever the scope:
 
 - Archived site collections, the content type hub, and the root site of the OneDrive host. For the SharePoint admin site collection, the scan records the site collection and its permissions but not its contents.
 - The permissions and contents of a site collection locked with **No access**. The scan records the site collection itself, with its URL, type, lock state, and sharing settings, so reports can show that it exists and is locked.
-- The hidden **Sharing Links** list, lists and libraries with no items, and system lists and libraries such as **Site Pages**, **Site Assets**, **Style Library**, **Preservation Hold Library**, and anything under `_catalogs` or `_layouts`.
+- Lists and libraries with no items, the hidden **Sharing Links** list, and system lists and libraries such as **Site Pages**, **Site Assets**, **Style Library**, **Preservation Hold Library**, and anything under `_catalogs` or `_layouts`.
 
 <details>
 <summary>Built-in exclusion patterns for sites, lists, folders, and documents</summary>
