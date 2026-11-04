@@ -506,7 +506,7 @@ export const PRODUCTS = [
   },
   {
     id: 'platgovsalesforce',
-    name: 'Platform Governance for Salesforce',
+    name: 'Strongpoint for Salesforce',
     description: 'Salesforce governance and compliance',
     path: 'docs/platgovsalesforce',
     categories: ['Identity Management'],

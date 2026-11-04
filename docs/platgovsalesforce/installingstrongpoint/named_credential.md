@@ -1,12 +1,12 @@
 ---
 title: "Named Credential Setup"
-description: "Configure Platform Governance for Salesforce using Named Credential authentication"
+description: "Configure Strongpoint for Salesforce using Named Credential authentication"
 sidebar_position: 15
 ---
 
 # Named Credential Setup
 
-This guide explains how to configure Platform Governance for Salesforce using an External Client App for authentication. This configuration uses OAuth authentication exclusively to call Salesforce APIs and document all Salesforce metadata types.
+This guide explains how to configure Strongpoint for Salesforce using an External Client App for authentication. This configuration uses OAuth authentication exclusively to call Salesforce APIs and document all Salesforce metadata types.
 
 ## Overview
 
@@ -178,7 +178,7 @@ After completing all steps, verify the following:
 - The Auth Provider is configured with the correct endpoints.
 - The Named Credential shows an **Authenticated** status.
 
-Your Platform Governance for Salesforce is now configured to use External Client App authentication with Named Credentials.
+Your Strongpoint for Salesforce is now configured to use External Client App authentication with Named Credentials.
 
 ## Troubleshooting
 

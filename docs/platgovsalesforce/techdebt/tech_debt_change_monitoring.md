@@ -11,14 +11,14 @@ monitoring records all changes that occur in the org and automatically alerts st
 that fall outside of policy or impose unacceptable levels of risk.
 
 Change monitoring can be integrated into your change governance process or used as the
-foundation of a new efficient process using Platform Governance for Salesforce. For now,
+foundation of a new efficient process using Strongpoint for Salesforce. For now,
 oversight is the goal. In particular, notification of any changes that touch automation (code,
 workflows, triggers), profiles or roles is essential. The severity level can be set to the level of
 change a policy should impose. For example, code-related changes normally follow a tighter approval
 process than simple data model changes.
 
 :::tip
-**How Change Policies Work**: Every time a customization is created or changed in an org, Platform Governance for Salesforce checks to see if the change should have been reviewed or approved. By default, this depends on the dependencies — a picklist with no dependencies is a relatively safe change compared to a picklist with risky code dependencies. Default policies can be customized and applied to specific customizations. For example, most reports don't need change control, but management reports need to be tightly controlled.
+**How Change Policies Work**: Every time a customization is created or changed in an org, Strongpoint for Salesforce checks to see if the change should have been reviewed or approved. By default, this depends on the dependencies — a picklist with no dependencies is a relatively safe change compared to a picklist with risky code dependencies. Default policies can be customized and applied to specific customizations. For example, most reports don't need change control, but management reports need to be tightly controlled.
 :::
 
 Policies define the level of change control to follow to reduce risk. The five change levels contain
@@ -47,7 +47,7 @@ Specific Monitoring for anything needing special protection.
 ![Netwrix Default Policy](/images/platgovsalesforce/tech_debt/tech_debt_default_policy_3.webp)
 
 
-Platform Governance for Salesforce documents **Unresolved Non-Compliant Changes** in both a List
+Strongpoint for Salesforce documents **Unresolved Non-Compliant Changes** in both a List
 View and a Report. Both show you all the changes that should have received approval and the level of
 change control required for the change. Use the List View to review and manage the resolution from a single screen through the **Short Resolution Description** and **Status** fields.
 
@@ -206,7 +206,7 @@ watching your org to spot problems before they happen.
 
 ### Adding Custom Fields and Objects to the Policy
 
-When you add sensitive objects to a policy, also apply the same policy to the custom fields that belong to that object. Platform Governance for Salesforce provides a streamlined **Set Policy** action directly on the Customization record to support this workflow.
+When you add sensitive objects to a policy, also apply the same policy to the custom fields that belong to that object. Strongpoint for Salesforce provides a streamlined **Set Policy** action directly on the Customization record to support this workflow.
 
 #### Applying a Policy from a Custom Object
 To assign a Change / Approval Policy to a Custom Object and its related fields:

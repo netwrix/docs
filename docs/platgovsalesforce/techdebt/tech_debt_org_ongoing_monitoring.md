@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Ongoing Monitoring
 
-One of Platform Governance for Salesforce’s strengths is that it is built right into Salesforce. You
+One of Strongpoint for Salesforce’s strengths is that it is built right into Salesforce. You
 can use all of your Salesforce administration and configuration skills to efficiently monitor and
 organize what is important to you.
 

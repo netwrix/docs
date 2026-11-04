@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Change Enablement Reports
 
-Platform Governance for Salesforce has many different reports you can use to view your changes,
+Strongpoint for Salesforce has many different reports you can use to view your changes,
 these include: Compliant, Open Non-Compliant, and What Changed Reports.
 
 The **Compliant Changes** and **Unresolved Non-Compliant** reports are the primary reports for
