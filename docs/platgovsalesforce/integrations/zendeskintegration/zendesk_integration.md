@@ -1,10 +1,10 @@
 ---
-title: Platform Governance for Salesforce - Zendesk Integration
+title: Strongpoint for Salesforce - Zendesk Integration
 ---
 
 # Overview
 
-Platform Governance for Salesforce's Change Management capabilities are integrated with Zendesk, one of the most popular customer service and issue ticketing systems. Customers can look for and include Salesforce Customizations, assess impacts for requested changes, and push Zendesk change tickets into a Change Request. This enables change management, tracking of compliant changes and automating the reconciliation of change logs during an audit.
+Strongpoint for Salesforce's Change Management capabilities are integrated with Zendesk, one of the most popular customer service and issue ticketing systems. Customers can look for and include Salesforce Customizations, assess impacts for requested changes, and push Zendesk change tickets into a Change Request. This enables change management, tracking of compliant changes and automating the reconciliation of change logs during an audit.
 
 User benefits include:
 
@@ -20,7 +20,7 @@ User benefits include:
 - Salesforce org with Platform Governance (FLODocs) package installed
 - Zendesk account with admin access
 - Consumer Key and Consumer Secret from Salesforce Connected App
-- Platform Governance for Salesforce Zendesk App installed from Marketplace
+- Strongpoint for Salesforce Zendesk App installed from Marketplace
 
 To set up the Zendesk integration:
 
@@ -35,18 +35,18 @@ Here are the steps to install the Zendesk app. You must have **Admin** privilege
 2. Click the **Admin** icon in the left panel.
 3. Navigate to **Apps and integrations** > **Zendesk Support apps** > **Marketplace**.
 ![Zendesk App Menu](/images/platgovsalesforce/integrations/zendesk/Zendesk_Apps_Menu.webp)
-4. Search for **Platform Governance for Salesforce**.
-5. Click **Platform Governance for Salesforce** when it appears.
+4. Search for **Strongpoint for Salesforce**.
+5. Click **Strongpoint for Salesforce** when it appears.
 6. Click **Install**. When installation is complete, you are prompted to sign in to your Zendesk dashboard to continue.
 7. Click the **Admin** icon in the left panel.
 8. Navigate to **Apps and integrations** > **Zendesk Support apps**.
-9. Hover on the **Platform Governance for Salesforce** tile to access the **Settings** menu.
+9. Hover on the **Strongpoint for Salesforce** tile to access the **Settings** menu.
 ![Zendesk App Menu](/images/platgovsalesforce/integrations/zendesk/App_Change_Setting.webp)
 10. Click **Change settings**.
 
-    ![Set up the Platform Governance for Salesforce Zendesk app](/images/platgovsalesforce/integrations/zendesk/App_Setup.webp)
+    ![Set up the Strongpoint for Salesforce Zendesk app](/images/platgovsalesforce/integrations/zendesk/App_Setup.webp)
 
-    - **Title**: the name associated with the app. The default is **Platform Governance for Salesforce**.
+    - **Title**: the name associated with the app. The default is **Strongpoint for Salesforce**.
     - **Consumer Key**: Enter the Consumer Key from your Salesforce Connected App.
     - **Consumer Secret**: Enter the Consumer Secret from your Salesforce Connected App.
     - **Sandbox**: Check this option if connecting to a Salesforce sandbox org.
@@ -84,7 +84,7 @@ This step is only for Zendesk Admins.
 
 After installation, you need to authorize the connection to Salesforce:
 
-1. Click the new **Platform Governance for Salesforce** icon in the left panel.
+1. Click the new **Strongpoint for Salesforce** icon in the left panel.
 1. Click the **Salesforce Credentials** option.
 2. Click the **Login** button.
 
@@ -92,7 +92,7 @@ After installation, you need to authorize the connection to Salesforce:
 
 3. A popup window opens, redirecting to the Salesforce OAuth 2.0 authorization screen.
 4. Log in with your Salesforce credentials.
-5. Authorize Platform Governance for Salesforce to access data in your org.
+5. Authorize Strongpoint for Salesforce to access data in your org.
 6. Once authorized, the app securely stores the access and refresh tokens and links the Salesforce org with Zendesk.
 
 ![Auth Succesfull](/images/platgovsalesforce/integrations/zendesk/Auth_Succesfull.webp)
@@ -105,7 +105,7 @@ This step is only for Zendesk Admins.
 
 After you install the Zendesk app, set up the approvals.
 
-Click the new Platform Governance for Salesforce icon in the left panel. The Group Configurations page opens.
+Click the new Strongpoint for Salesforce icon in the left panel. The Group Configurations page opens.
 
 Enter the group and approval information:
 

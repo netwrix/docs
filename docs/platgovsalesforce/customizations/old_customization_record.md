@@ -8,7 +8,7 @@ sidebar_position: 20
 
 This topic details the old-style customization record. Refer to
 [Understanding the Customization Record](/docs/platgovsalesforce/customizations/understanding_customization_record.md) for the updated
-Platform Governance for Salesforce Lightning customization record.
+Strongpoint for Salesforce Lightning customization record.
 
 The customization detail contains general information about the customization record. The
 customization name appears in the banner with function buttons:

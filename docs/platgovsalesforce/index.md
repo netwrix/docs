@@ -1,17 +1,17 @@
 ---
 title: "Welcome"
 description: "Welcome"
-sidebar_label: Netwrix Platform Governance for Salesforce
+sidebar_label: Netwrix Strongpoint for Salesforce
 sidebar_position: 1
 ---
 
 # Welcome
 
-Platform Governance for Salesforce integrates into the Salesforce backend, keeping all your data
+Strongpoint for Salesforce integrates into the Salesforce backend, keeping all your data
 within your Salesforce account. The system automatically maintains your documentation so it is always up to
 date.
 
-By implementing Platform Governance for Salesforce you can:
+By implementing Strongpoint for Salesforce you can:
 
 - Automatically catalog all custom fields, scripts, forms, searches, records, and workflows.
 - Visually browse standard and custom fields, lists, and records to find all related scripts,
@@ -22,7 +22,7 @@ By implementing Platform Governance for Salesforce you can:
 
 ## Installation and Initial Scan
 
-After you install Platform Governance for Salesforce, click the **Start Spider** button.
+After you install Strongpoint for Salesforce, click the **Start Scanner** button.
 Your customizations are documented over the course of 4-5 days with minimal impact on system
 performance. After the scan completes, you have a searchable database of all your customizations.
 
@@ -53,11 +53,11 @@ can:
 
 ## Intelligent Change Management
 
-Platform Governance for Salesforce provides end-to-end
+Strongpoint for Salesforce provides end-to-end
 change management and compliance. This process can be completed in 5 weeks after
 install.
 
-By implementing Platform Governance for Salesforce, you give your customers the ability to:
+By implementing Strongpoint for Salesforce, you give your customers the ability to:
 
 - Track all changes to custom objects in Salesforce.
 - Automatically be alerted to non-compliant changes.
@@ -74,7 +74,7 @@ After Intelligent Change Management is complete, Enterprise Compliance takes 3 t
 ### Environment Comparison
 
 The Environment Management Module enables Salesforce customers and consultants to identify differences between any two Salesforce accounts that have Intelligent Change
-Management installed. Because both accounts have Platform Governance for Salesforce documentation in
+Management installed. Because both accounts have Strongpoint for Salesforce documentation in
 place, the tool can quickly compare them. It is principally used in four scenarios:
 
 - Sandbox Refreshes

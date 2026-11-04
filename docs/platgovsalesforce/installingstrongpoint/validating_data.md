@@ -7,7 +7,7 @@ sidebar_position: 50
 # Validate the Data
 
 Accurate documentation is critical to support your change management and clean up processes.
-Platform Governance for Salesforce provides automated tools to ensure that your
+Strongpoint for Salesforce provides automated tools to ensure that your
 customizations are documented properly.
 
 ## Status Report
