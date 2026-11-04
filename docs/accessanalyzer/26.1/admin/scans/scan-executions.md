@@ -15,11 +15,11 @@ Go to **Configuration > Scan executions**. The page refreshes itself every 3 sec
 | Column | What it shows |
 |---|---|
 | **Scan Name** | The scan that created the execution. |
-| **Scan Type** | **Access**, **Sensitive data**, or **Identity sync**. Child rows show the name of the follow-up step instead. |
+| **Scan Type** | **Access**, **Classification**, or **Identity sync**. Child rows show the name of the follow-up step instead. |
 | **Source** | The source this execution ran against. |
 | **Source Type** | The source's type, such as **File Server**. |
 | **Status** | The execution's status; see [Execution statuses](#execution-statuses). |
-| **Progress** | How many objects the execution has processed so far, or in total after it has finished. A Sensitive data scan shows a bar and a count of files, such as **6 / 7 files (est.)**, against an estimated total. See [What counts as an object](#what-counts-as-an-object). |
+| **Progress** | How many objects the execution has processed so far, or in total after it has finished. A Classification scan shows a bar and a count of files, such as **6 / 7 files (est.)**, against an estimated total. See [What counts as an object](#what-counts-as-an-object). |
 | **Duration** | How long the execution ran, or has been running. |
 | **Started** | When Access Analyzer created the execution. |
 | **Actions** | The row menu with **View logs** and, while the run is active, **Pause**, **Resume**, or **Stop**. |
@@ -30,7 +30,7 @@ Some executions run follow-up steps after the main collection. Those rows have a
 
 ![Scan executions status filter options](/images/accessanalyzer/26.1/scans/executions-status-filter.webp)
 
-There is no separate detail page for an execution. Everything beyond the row itself lives in the logs dialog, described in [View the logs](#view-the-logs).
+Click **View details** in an execution's **Actions** menu to open its detail page, with the **Logs**, **Performance**, and, for a Classification scan, **Files** tabs. See [Files tab](#files-tab).
 
 ### What Counts as an Object
 
@@ -40,8 +40,8 @@ An object is one item the execution counted. What counts depends on the scan typ
 |---|---|---|
 | **Access** | **File Server** | A share, a folder, or a file. The share also stands for its top-level folder, so that folder doesn't count a second time. |
 | **Access** | **SharePoint Online** | A site collection, a site, a list or library, a folder, or a file or list item. |
-| **Sensitive data** | **File Server** | A file the scan processed, whether it was clean, had findings, or couldn't be read. Empty files, and files that the [classification settings](scan-types.md#prerequisites) leave out for size or extension, aren't part of the scan, so they don't count. |
-| **Sensitive data** | **SharePoint Online** | A document the scan checked. Documents it skips because they're empty, or because the [classification settings](scan-types.md#prerequisites) leave them out for size or extension, still count. |
+| **Classification** | **File Server** | A file the scan processed, whether it was clean, had findings, or couldn't be read. Empty files, and files that the [classification settings](scan-types.md#prerequisites) leave out for size or extension, aren't part of the scan, so they don't count. |
+| **Classification** | **SharePoint Online** | A document the scan checked. Documents it skips because they're empty, or because the [classification settings](scan-types.md#prerequisites) leave them out for size or extension, still count. |
 | **Identity sync** | **Active Directory** | A user, group, computer, or managed service account. Group memberships don't count separately. |
 | **Identity sync** | **Entra ID** | A user, a group, or another directory object the sync reads. |
 
@@ -50,10 +50,10 @@ Permission entries never count as objects, on any scan type.
 The count belongs to one run and starts from zero each time:
 
 - An Access scan reads everything in its scope on every run, so running it again on a share that hasn't changed shows the same number.
-- A Sensitive data scan with **Differential scan** on counts only the files that are new or changed since the last run, so a later run on a File Server source where few files changed can show only a few files, or none.
+- A Classification scan with **Differential scan** on counts only the files that are new or changed since the last run, so a later run on a File Server source where few files changed can show only a few files, or none.
 - An Active Directory Identity sync with **Enable differential scan** on counts only the users, groups, computers, and managed service accounts that changed since the previous sync, including deleted ones.
 
-For example, a share with 4 folders and 6 text files shows 11 for an Access scan and **6 / 6 files (est.)** for a Sensitive data scan. Add an empty file, a `.jpg` image, and one more text file, and run both scans again: the Access scan shows 14, a full Sensitive data scan shows **7 / 7 files (est.)**, and a Sensitive data scan with **Differential scan** on shows **1 / 1 files (est.)**.
+For example, a share with 4 folders and 6 text files shows 11 for an Access scan and **6 / 6 files (est.)** for a Classification scan. Add an empty file, a `.jpg` image, and one more text file, and run both scans again: the Access scan shows 14, a full Classification scan shows **7 / 7 files (est.)**, and a Classification scan with **Differential scan** on shows **1 / 1 files (est.)**.
 
 While a run is active, the count rises in steps rather than one object at a time, because Access Analyzer records objects in batches. SharePoint Online Access scans and Entra ID Identity syncs report their progress about every 5 minutes. The final count appears when the run finishes. On a File Server Access scan, a folder the scan can't open still counts as one object, but its contents don't; the run then ends as **Completed with errors**.
 
@@ -137,6 +137,48 @@ An execution that has just started shows **No logs available yet** until the age
 
 ![Execution logs dialog Detailed logs tab with structured log lines](/images/accessanalyzer/26.1/scans/execution-logs-detailed.webp)
 
+## Files Tab
+
+The **Files** tab of a Classification scan's execution lists every file the run recorded with findings, an error, or a skip. Clean files are counted, not listed: the footer reads, for example, **4,407 files recorded. 1,519 were clean and are not listed.**
+
+![Files tab of a Classification scan execution listing files with findings, their severity, and classifiers](/images/accessanalyzer/26.1/classifiers/execution-files.webp)
+
+| Column | What it shows |
+|---|---|
+| **Outcome** | **Findings**, **Error**, or **Skipped**. |
+| **Path** | The file's full path. |
+| **Type** | The file extension. |
+| **Size** | The file size. |
+| **Duration** | How long classifying the file took. |
+| **Findings** | The number of findings in the file. |
+| **Severity** | The highest severity among the file's findings. |
+| **Classifiers** | The classifiers that reported a finding. |
+| **Scanned** | When the run classified the file. |
+
+A **◐** marker on a row means the file was classified only partly, because classification hit a time budget, a deadline, or the per-file match limit.
+
+Use **Search paths** and the **Outcome**, **Severity**, and **Classifier** filters to narrow the list. Expand a row to see its findings, each with its severity, classifier, kind, and pattern. For an errored or skipped file, the expanded row shows the error the scan logged.
+
+### Explain a Finding
+
+Click a finding to open its decision view. It draws how the classifier reached its verdict, from the file through each detector and its evidence to the severity that matched, and lists the **Summary**, **Conditions**, **Evidence**, and **Rule source** beside it.
+
+![Decision view for a Spain SSN finding with masked evidence and the High severity it matched](/images/accessanalyzer/26.1/classifiers/finding-trace.webp)
+
+The evidence shows each match masked: digits appear as `#`, letters as `x`, and punctuation as `*`, with up to 24 characters of context on each side. **Focus on result** hides the branches that didn't decide the result, and **Copy trace JSON** copies the full evaluation for troubleshooting.
+
+### File List Retention
+
+Three settings on the **Classification** card of **Settings > Application** control what the **Files** tab keeps:
+
+| Setting | Default | Details |
+|---|---|---|
+| **Decision traces** | On | When off, the run records findings without a decision view. |
+| **Runs that keep their file list** | 3 | How many of a scan's latest runs keep their file lists, from 1 to 20. |
+| **Days to keep file lists** | 90 | How long a run keeps its file list, from 7 to 90 days. |
+
+When a run's file list is removed, its totals stay, and the **Files** tab reports **This run's file list was removed**.
+
 ## Run a Scan Again
 
 You can't retry an execution on its own. To collect again, run the scan:
@@ -144,7 +186,7 @@ You can't retry an execution on its own. To collect again, run the scan:
 1. Go to **Configuration > Scans**.
 2. Open the scan's **Actions** menu and click **Run** (see [Row actions](index.md#row-actions)).
 
-For each target source, Access Analyzer starts a fresh execution, resumes a paused one, or skips the source if an execution is still in progress. A Sensitive data scan or an Active Directory Identity sync with its differential setting turned on collects only what changed since the last run; see [Scan types](scan-types.md).
+For each target source, Access Analyzer starts a fresh execution, resumes a paused one, or skips the source if an execution is still in progress. A Classification scan or an Active Directory Identity sync with its differential setting turned on collects only what changed since the last run; see [Scan types](scan-types.md).
 
 ## Retention
 

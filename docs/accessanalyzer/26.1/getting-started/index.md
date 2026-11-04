@@ -28,7 +28,7 @@ An Access Scan inventories shares, folders, files (and their metadata), and site
 
 ### Sensitive Data
 
-Sensitive Data Patterns are regular expressions that you can group by compliance program, data category, or any other system you choose. Access Analyzer ships 139 built-in patterns in 11 groups, and you can add your own. A scan records which patterns matched in a file and how many times, but never the matched text. See [Sensitive data patterns](../configuration/sensitive-data-patterns/index.md).
+Classifiers find sensitive data in file content and rate each finding **Critical**, **High**, **Medium**, or **Low**. Access Analyzer ships 129 built-in classifiers, and you can copy them or build your own from patterns, word lists, and checksums. A scan records which classifiers reported a file and why, but never the matched text. See [Classifiers](../configuration/classifiers/index.md).
 
 ### Dashboards and Reports
 

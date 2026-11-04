@@ -17,7 +17,7 @@ flowchart LR
 
 ## Source and Source Type
 
-A source is a system that Access Analyzer connects to and scans. Its source type, one of **File Server**, **Active Directory**, **Entra ID**, or **SharePoint Online**, decides which Scan Types can run against it and which Service Account type it needs. A File Server source named `fs-finance-01` pointing at `fs01.corp.example.com` supports Access scans and Sensitive data scans. [Sources](../configuration/sources/index.md) covers adding and managing them.
+A source is a system that Access Analyzer connects to and scans. Its source type, one of **File Server**, **Active Directory**, **Entra ID**, or **SharePoint Online**, decides which Scan Types can run against it and which Service Account type it needs. A File Server source named `fs-finance-01` pointing at `fs01.corp.example.com` supports Access scans and Classification scans. [Sources](../configuration/sources/index.md) covers adding and managing them.
 
 ## Service Account
 
@@ -45,7 +45,7 @@ The scan target is the set of sources a scan covers: a fixed list (**Specific So
 
 ## Sensitive Data Pattern and Pattern Group
 
-A sensitive data pattern is a regular expression with a name and a description. A pattern group collects related patterns under a name such as **PCI DSS** (Payment Card Industry Data Security Standard) or **Credentials**. Scans work at the group level: pick the groups, and every pattern in them runs. Access Analyzer ships 139 built-in patterns in 11 built-in groups. A custom employee ID pattern placed in the built-in **PII** (personally identifiable information) group runs in every scan that classifies PII. See [Sensitive data patterns](../configuration/sensitive-data-patterns/index.md).
+A classifier decides whether a file holds one kind of sensitive data, such as credit card numbers or a national ID, and how severe the finding is: **Critical**, **High**, **Medium**, or **Low**. It's built from patterns, which are regular expressions or keyword lists that find candidate values, plus filters such as a nearby label or a passing checksum, and severity rules. Access Analyzer ships 129 built-in classifiers, and you can copy them or build your own, such as one for your employee IDs. A Classification scan runs the classifiers you select, either directly or by label. See [Classifiers](../configuration/classifiers/index.md).
 
 ## Dashboard and Report
 
@@ -57,6 +57,6 @@ A role decides what a user can do; every user holds exactly one of three. **Admi
 
 ## Objects and Identities
 
-An object is one item a scan counts, and what counts depends on the scan type. An Access scan counts every share, folder, and file it inventories on a file server, and every site collection, site, list, library, folder, file, and list item in SharePoint Online. A Sensitive data scan counts the files it classifies. An Identity sync counts the users and groups it reads, plus the computers and managed service accounts it reads from Active Directory. A share that holds 4 folders and 9 files is 14 objects to an Access scan: the share itself, the 4 folders, and the 9 files. The **Progress** column on the Scan executions page shows the count for each run; [Scan executions](../admin/scans/scan-executions.md#what-counts-as-an-object) lists what each scan type counts.
+An object is one item a scan counts, and what counts depends on the scan type. An Access scan counts every share, folder, and file it inventories on a file server, and every site collection, site, list, library, folder, file, and list item in SharePoint Online. A Classification scan counts the files it classifies. An Identity sync counts the users and groups it reads, plus the computers and managed service accounts it reads from Active Directory. A share that holds 4 folders and 9 files is 14 objects to an Access scan: the share itself, the 4 folders, and the 9 files. The **Progress** column on the Scan executions page shows the count for each run; [Scan executions](../admin/scans/scan-executions.md#what-counts-as-an-object) lists what each scan type counts.
 
 Identities are the users and groups an Identity sync collects. [Requirements](../requirements/index.md#size) states its sizes in objects and identities: a file server holding about 12 million objects, plus a domain with about 3,000 users and groups, fits the **small** size.

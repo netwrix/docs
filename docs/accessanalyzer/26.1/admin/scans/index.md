@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 A scan is a saved definition: a name, one scan type, a target, settings per source type, an agent, and a schedule. The scan collects nothing until it runs. Each run creates one scan execution per target source, and those executions are what fill the dashboards and reports.
 
-Three scan types exist. An **Access scan** inventories shares, folders, files, sites, and their permissions. A **Sensitive data scan** reads file content and classifies it against sensitive data patterns. An **Identity sync** pulls users, groups, and memberships from a directory. [Scan types](scan-types.md) explains what each one collects, which source types support it, and every setting. [Schedules](schedules.md) covers when scans run, and [Scan executions](scan-executions.md) covers following a run after it has started.
+Three scan types exist. An **Access scan** inventories shares, folders, files, sites, and their permissions. A **Classification scan** reads file content and runs classifiers against it. An **Identity sync** pulls users, groups, and memberships from a directory. [Scan types](scan-types.md) explains what each one collects, which source types support it, and every setting. [Schedules](schedules.md) covers when scans run, and [Scan executions](scan-executions.md) covers following a run after it has started.
 
 ## How a Scan Runs
 
@@ -33,7 +33,7 @@ Go to **Configuration > Scans**. The page lists every scan with its type, target
 | Column | What it shows |
 |---|---|
 | **Name** | The scan's name. Click it to open **Edit scan**. An icon next to the name shows the scan's description in a tooltip. |
-| **Scan Type** | **Access**, **Sensitive data**, or **Identity sync**. |
+| **Scan Type** | **Access**, **Classification**, or **Identity sync**. |
 | **Target** | The sources the scan covers, or the labels that select them. |
 | **Agent** | **System** when the scan runs on the System agent, otherwise the agent label as `key=value`. |
 | **Schedule** | **Manual**, or a short summary of the schedule such as **Daily 2AM** or **Hourly**. Click it to open the calendar. |
@@ -63,15 +63,15 @@ After **Run**, a notification reports the outcome: **Scan started** with the num
 
 ### Calendar View
 
-**Calendar view** opens the **Scan schedule calendar**, a month grid of upcoming scheduled runs across every scan. Switch between **month**, **week**, **day**, and **agenda** views, and move with **Previous**, **Today**, and **Next**. The legend tells **Access scan**, **Sensitive data scan**, and **Disabled** entries apart, and the footer counts the scheduled executions in view. Clicking a scan's **Schedule** cell opens the same calendar.
+**Calendar view** opens the **Scan schedule calendar**, a month grid of upcoming scheduled runs across every scan. Switch between **month**, **week**, **day**, and **agenda** views, and move with **Previous**, **Today**, and **Next**. The legend tells **Access scan**, **Classification scan**, and **Disabled** entries apart, and the footer counts the scheduled executions in view. Clicking a scan's **Schedule** cell opens the same calendar.
 
 ![Scan schedule calendar dialog showing a month grid with Previous, Today, Next, and month/week/day/agenda controls](/images/accessanalyzer/26.1/scans/calendar.webp)
 
 ## Before You Begin
 
-You need at least one source whose type supports the scan type you want. File Server and SharePoint Online sources support Access and Sensitive data scans; Active Directory and Entra ID sources support Identity sync. [Sources](../../configuration/sources/index.md) covers adding them.
+You need at least one source whose type supports the scan type you want. File Server and SharePoint Online sources support Access and Classification scans; Active Directory and Entra ID sources support Identity sync. [Sources](../../configuration/sources/index.md) covers adding them.
 
-For a File Server source, a Sensitive data scan needs a completed Access scan first, because it picks its files from the inventory that the Access scan built. Run the Access scan to completion before you run the Sensitive data scan.
+For a File Server source, a Classification scan needs a completed Access scan first, because it picks its files from the inventory that the Access scan built. Run the Access scan to completion before you run the Classification scan.
 
 If you want to target sources by label, put the labels on the sources first. [Labels](../../configuration/sources/labels.md) explains source labels.
 
@@ -84,7 +84,7 @@ Creating a scan takes five steps: **Type**, **Target**, **Configure**, **Schedul
 
 ### Select the Scan Type
 
-1. Under **What should this scan do?**, select **Access**, **Sensitive data**, or **Identity sync**.
+1. Under **What should this scan do?**, select **Access**, **Classification**, or **Identity sync**.
 2. Click **Next**.
 
 ![Create scan step 1 with Access, Sensitive data, and Identity sync cards](/images/accessanalyzer/26.1/scans/create-scan-1-type.webp)
@@ -137,7 +137,7 @@ Every source type in the target starts on its default settings. You can leave it
 3. Change the settings. **Reset to defaults** puts them back.
 4. To give one source its own settings, under **Source overrides**, select the source in **Source to override**.
 5. Click **Add source override**. The override has its own copy of every setting and its own **Agent** picker. **Remove override** discards it.
-6. For a Sensitive data scan, set the pattern groups under **Sensitive data classification**. See [Sensitive data scan](scan-types.md#sensitive-data-scan).
+6. For a Classification scan, choose the classifiers on the **Classifiers** step, before **Configure**. See [Classifiers](scan-types.md#classifiers).
 7. Click **Next**.
 
 ![Create scan step 3 with customized File Server settings](/images/accessanalyzer/26.1/scans/create-scan-3-configure-customize.webp)
