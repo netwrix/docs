@@ -87,6 +87,9 @@ security login rest-role create -role netwrix_rest_role -api /api/protocols/cifs
 ```
 security login rest-role create -role netwrix_rest_role -api /api/cluster -access readonly -vserver svm_name
 ```
+```
+security login rest-role create -role netwrix_rest_role -api /api/network/ip/interfaces -access readonly -vserver svm_name
+```
 
 **NOTE:** The commands in the first two lines above can be used on NetApp versions 9.11+. In earlier
 versions, use the following commands:
