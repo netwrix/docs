@@ -12,7 +12,7 @@ organize what is important to you.
 
 Most of the examples so far have used List Views to move Customizations through the Clean Up Process
 of identification, assessment, approval, and clean up. Reports, when combined with Controls, can
-deliver powerful results for your clean up process.
+deliver targeted results for your clean up process.
 
 For example, you can set up a Report to search the **XML/Code** or **Changed By** fields of
 Customizations for any ongoing situations. You can then set a trigger to update the filters on the

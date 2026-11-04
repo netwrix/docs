@@ -27,7 +27,7 @@ As a result, you no longer have to use field history reports and manual review t
 other configuration data is protected. Auditors have the documentation they need, audit costs
 decrease, and IT leadership has full visibility into configuration changes.
 
-You must have an Enterprise Compliance license to benefit from this feature.
+You must have an Enterprise Compliance license to use this feature.
 
 The basic steps for CPQ data tracking:
 

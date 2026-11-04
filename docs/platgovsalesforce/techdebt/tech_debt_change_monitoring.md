@@ -58,7 +58,7 @@ prioritize what you see.
 
 ## Related Tab Overview
 
-The Related tab on the Policy page provides a consolidated view of all elements associated with a Change / Approval Policy and serves as the main workspace for managing policy scope and tracking its usage.
+The Related tab on the Policy page provides a consolidated view of all elements associated with a Change / Approval Policy and is the main workspace for managing policy scope and tracking its usage.
 
 From this tab, you can:
 

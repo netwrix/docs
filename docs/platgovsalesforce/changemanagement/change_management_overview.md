@@ -43,7 +43,7 @@ The **Advanced Change Management** Module provides additional functionality:
 - Delete customizations.
 
 :::note
-Change Management can be integrated with other change tracking systems using the External Change
+You can integrate Change Management with other change tracking systems using the External Change
 Request Number field. Use the change records because they can be linked to
 processes, customizations, and clean-up activities.
 :::

@@ -28,7 +28,7 @@ This situation can be daunting given the dependencies and complexities involved.
    unused and the risk posed by changes.
 3. **Activate** Change Monitoring to alert stakeholders of risky changes. Platform Governance for
    Salesforce warns org owners and admins about risk at very granular levels.
-4. **Plan** the clean up of unused, defunct, and redundant customizations using the powerful search
+4. **Plan** the clean up of unused, defunct, and redundant customizations using the search
    capabilities.
 5. **Implement** Automated Risk Management to guide all change agents to make enhancements in a
    structured, safe, and efficient manner.
