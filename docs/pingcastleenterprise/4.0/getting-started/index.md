@@ -5,7 +5,7 @@ sidebar_label: About PingCastle Enterprise
 ---
 # About PingCastle Enterprise
 
-This documentation covers PingCastle Enterprise 4.0, the web-based edition of PingCastle that adds a scheduler service, agents, an API, and centralized reporting. Netwrix also offers PingCastle Pro and PingCastle Community. See [PingCastle Pro](/docs/pingcastlepro/4_0/) and [PingCastle Community](/docs/pingcastlecommunity/4_0/) for those editions.
+This documentation covers PingCastle Enterprise 4.0, the web-based edition of PingCastle that adds a scheduler service, agents, an API, and centralized reporting. Netwrix also offers PingCastle Pro and PingCastle Community. See [PingCastle Pro](/docs/pingcastlepro/4_1/) and [PingCastle Community](/docs/pingcastlecommunity/4_0/) for those editions.
 
 ## About PingCastle
 

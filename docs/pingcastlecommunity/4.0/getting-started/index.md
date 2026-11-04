@@ -13,7 +13,7 @@ Netwrix offers various products to help protect your network infrastructure. Pin
 These reports help you identify and prioritize security issues that need remediation, giving you clear visibility into your security posture and enabling data-driven decisions to improve your environment's security.
 
 :::note
-This documentation covers PingCastle Community, the edition you run with `PingCastle.exe`. For the other PingCastle editions, see [PingCastle Enterprise](/docs/pingcastleenterprise/4_0/) and [PingCastle Pro](/docs/pingcastlepro/4_0/).
+This documentation covers PingCastle Community, the edition you run with `PingCastle.exe`. For the other PingCastle editions, see [PingCastle Enterprise](/docs/pingcastleenterprise/4_0/) and [PingCastle Pro](/docs/pingcastlepro/4_1/).
 :::
 
 `PingCastle.exe` is also the data collector for PingCastle Enterprise and PingCastle Pro, so these pages apply to all editions. The Enterprise and Pro documentation link here instead of repeating this content.

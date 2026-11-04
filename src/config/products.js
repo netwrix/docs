@@ -454,9 +454,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '4.1',
+        label: '4.1',
+        isLatest: true,
+        sidebarFile: './sidebars/pingcastleenterprise/4.1.js',
+      },
+      {
         version: '4.0',
         label: '4.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/pingcastleenterprise/4.0.js',
       },
       {
@@ -466,7 +472,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/pingcastleenterprise/3.5.js',
       },
     ],
-    defaultVersion: '4.0',
+    defaultVersion: '4.1',
   },
   {
     id: 'pingcastlepro',
@@ -478,11 +484,11 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '4.0',
-        label: '4.0',
+        version: '4.1',
+        label: '4.1',
         isLatest: true,
         kbSource: 'docs/kb/pingcastleenterprise',
-        sidebarFile: './sidebars/pingcastlepro/4.0.js',
+        sidebarFile: './sidebars/pingcastlepro/4.1.js',
       },
       {
         version: '3.5',
@@ -492,7 +498,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/pingcastlepro/3.5.js',
       },
     ],
-    defaultVersion: '4.0',
+    defaultVersion: '4.1',
   },
   {
     id: 'pingcastlecommunity',
@@ -504,9 +510,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '4.1',
+        label: '4.1',
+        isLatest: true,
+        sidebarFile: './sidebars/pingcastlecommunity/4.1.js',
+      },
+      {
         version: '4.0',
         label: '4.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/pingcastlecommunity/4.0.js',
       },
       {
@@ -516,7 +528,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/pingcastlecommunity/3.5.js',
       },
     ],
-    defaultVersion: '4.0',
+    defaultVersion: '4.1',
   },
   {
     id: 'platgovnetsuite',

@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Product Overview
 
-PingCastle Pro documentation. Pro is the mid-tier edition with a web UI, scheduling, and agents. Pro 4.0 may not be released yet. PingCastle is split into three sibling products, each with its own docs tree: `docs/pingcastleenterprise/`, `docs/pingcastlepro/`, and `docs/pingcastlecommunity/`. The first Getting Started page of each states which edition it covers and links to the other two.
+PingCastle Pro documentation. Pro is the mid-tier edition with a web UI, scheduling, and agents. Pro 4.1 is the first Pro release of the split (there is no Pro 4.0). PingCastle is split into three sibling products, each with its own docs tree: `docs/pingcastleenterprise/`, `docs/pingcastlepro/`, and `docs/pingcastlecommunity/`. The first Getting Started page of each states which edition it covers and links to the other two.
 
 ## File Structure
 
-- `4.0/` follows the section guide zones: `getting-started/`, `requirements/`, `install/`, `migration/`, `configuration/`, `admin/`, `integrations/`, `troubleshooting/`, with only the zones that apply.
+- `4.1/` follows the section guide zones: `getting-started/`, `requirements/`, `install/`, `migration/`, `configuration/`, `admin/`, `integrations/`, `troubleshooting/`, with only the zones that apply.
 - `3.5/` is the legacy flat layout. Don't restructure it.
 - `3.5/` holds `proinstall.md`, `proupgrade.md`, and `prouser.md`.
 
