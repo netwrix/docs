@@ -1,9 +1,11 @@
 ---
+title: "Netwrix PingCastle Enterprise Documentation"
+description: "Learn what PingCastle Enterprise does and where to start installing and configuring it."
 slug: /
 sidebar_position: 1
-sidebar_label: About PingCastle Enterprise
 ---
-# About PingCastle Enterprise
+
+# Netwrix PingCastle Enterprise Documentation
 
 This documentation covers PingCastle Enterprise 4.1, the web-based edition of PingCastle that adds a scheduler service, agents, an API, and centralized reporting. Netwrix also offers PingCastle Pro and PingCastle Community. See [PingCastle Pro](/docs/pingcastlepro/4_1/) and [PingCastle Community](/docs/pingcastlecommunity/4_1/) for those editions.
 
@@ -33,6 +35,6 @@ All PingCastle editions share the `PingCastle.exe` command-line tool. PingCastle
 
 ## Next steps
 
-- [Architecture](./architecture.md): how the components of PingCastle Enterprise fit together.
-- [Requirements](../requirements/index.md): system, database, and network requirements.
-- [Installation](../install/install.md): install PingCastle Enterprise.
+- [Architecture](./getting-started/architecture.md): how the components of PingCastle Enterprise fit together.
+- [Requirements](./requirements/index.md): system, database, and network requirements.
+- [Installation](./install/install.md): install PingCastle Enterprise.

@@ -1,10 +1,11 @@
 ---
+title: "Netwrix PingCastle Community Documentation"
+description: "Learn what PingCastle Community is and which edition this documentation covers."
 slug: /
 sidebar_position: 1
-sidebar_label: About PingCastle
-description: Learn what PingCastle Community is and which edition this documentation covers.
 ---
-# About PingCastle
+
+# Netwrix PingCastle Community Documentation
 
 PingCastle is a security assessment and auditing tool for CISOs, Security Auditors, and IT Professionals working with Active Directory and Entra ID.
 

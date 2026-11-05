@@ -1,11 +1,11 @@
 ---
-title: "PingCastle Pro"
+title: "Netwrix PingCastle Pro Documentation"
 description: "Learn what PingCastle Pro does and where to start installing and configuring it."
 slug: /
-sidebar_position: 10
+sidebar_position: 1
 ---
 
-# PingCastle Pro
+# Netwrix PingCastle Pro Documentation
 
 This documentation covers the PingCastle Pro edition. For the other editions, see [PingCastle Enterprise](/docs/pingcastleenterprise/4_1/) and [PingCastle Community](/docs/pingcastlecommunity/4_1/).
 
