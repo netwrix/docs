@@ -11,6 +11,10 @@ PingCastle requires an Active Directory account to connect and perform audits. I
 
 ## Privileged Mode
 
+:::note
+To run privileged mode with a least-privilege service account instead of an administrator account, see [Least-Privilege Permissions for Privileged Mode](privileged-mode-permissions.md).
+:::
+
 PingCastle offers a privileged mode that enhances the reliability and accuracy of specific security checks. While non-privileged mode works for basic operations and many checks, privileged mode provides higher confidence results for certain assessments.
 
 **Running as Administrator**: Most operations don't require running PingCastle as an administrator, though certain checks (such as DNS-related checks) may have limited functionality without administrator privileges.
