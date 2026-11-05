@@ -9,6 +9,7 @@ import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
+import { pingcastleSplitRedirects } from './src/config/redirects/pingcastle-split.js';
 import { threatManager33Redirects } from './src/config/redirects/threatmanager-3.3.js';
 import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects } from './src/config/redirects/privilegesecurediscovery.js';
 import { threatPrevention81Redirects } from './src/config/redirects/threatprevention-8.1.js';
@@ -215,6 +216,10 @@ const config = {
       {
         redirects: [
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...pingcastleSplitRedirects
+            .filter(({ productId, version }) => activeProductIds.includes(productId)
+              && (version === null || activeVersionsByProduct[productId].map(versionToUrl).includes(version)))
+            .map(({ from, to }) => ({ from, to })),
           ...(activeProductIds.includes('threatmanager') ? threatManager33Redirects : []),
           ...(activeProductIds.includes('privilegesecurediscovery') ? privilegeSecureDiscoveryRedirects : []),
           ...(activeProductIds.includes('threatprevention') ? threatPrevention81Redirects : []),

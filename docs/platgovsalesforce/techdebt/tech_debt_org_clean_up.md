@@ -7,7 +7,7 @@ sidebar_position: 40
 # Org Clean Up
 
 Cleaning up your orgs is a process. The key to clean up success is to move forward through sets of
-closely-related customizations using clear and repeatable steps. Platform Governance for Salesforce
+closely-related customizations using clear and repeatable steps. Strongpoint for Salesforce
 helps you through each step in the process.
 
 Every clean up project has these key steps:
@@ -68,14 +68,14 @@ Knowing who is using a customization is useful. This is tackled in steps, by Use
 ### Users
 
 **Field and Object Users**: Track employees editing a field (using a custom or standard object). Enabling tracking for all customizations would be inefficient, so it is enabled selectively. If you use _Salesforce Shield
-Event Monitoring_, Platform Governance for Salesforce captures this data automatically.
+Event Monitoring_, Strongpoint for Salesforce captures this data automatically.
 
 To capture the data without Salesforce Shield Event Monitoring:
 
 1. Enable **Field Audit Trail** for the field.
 2. Permit Salesforce to populate the audit log for the last 18 months.
 3. Rescan the tracked fields.
-4. Platform Governance for Salesforce automatically gathers the names of employees changing the data in each field. This process can take multiple days for a large dataset.
+4. Strongpoint for Salesforce automatically gathers the names of employees changing the data in each field. This process can take multiple days for a large dataset.
 5. Turn off audit history if desired.
 
 **Code, App, and Component Users**: With _Salesforce Shield Event Monitoring_, capture users from

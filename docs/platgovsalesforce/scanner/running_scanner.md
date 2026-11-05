@@ -11,7 +11,7 @@ When the initial scan is complete, you can run additional on demand scans as req
 When you add or change a specific customization, you can choose to run an on demand scan of only the
 Metadata type of the affected customization, instead of scanning the entire environment. This type
 of scan reduces the run time. For example if you change a Report, pick reports as the Metadata type
-and Platform Governance for Salesforce only scans reports.
+and Strongpoint for Salesforce only scans reports.
 
 :::note
 The scanner is only available to Administrators.

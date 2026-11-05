@@ -8,7 +8,7 @@ sidebar_position: 5
 
 ## Object Types Captured and Documented in the Customization Record
 
-Platform Governance for Salesforce documents over 120 Salesforce metadata types. Metadata is
+Strongpoint for Salesforce documents over 120 Salesforce metadata types. Metadata is
 organized into eight categories and 18 subcategories. Policies are set and applied at the
 subcategory level. Open [Documented Metadata Types](/docs/platgovsalesforce/changemanagement/documented_metadata_types.md)
 for a complete list of Metadata sorted by **Type** and by **Category**.
