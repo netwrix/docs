@@ -77,7 +77,9 @@ const draftPrompt = (b, problems) =>
 
 const verifyPrompt = (b) =>
   `${common(b)}\n\n` +
-  `Verify the drafted pages in ${runDir}/results/${b.name}.json. Try to refute them: for each page with status "done", read the file and trace every factual sentence (requirements, steps' outcomes, defaults, limits, option names, UI labels) to an assigned fact id and its cite in the code worktree. ` +
+  `Verify the drafted pages in ${runDir}/results/${b.name}.json. Try to refute them. Read ${runDir}/meta.json first. ` +
+  `If it says "versionless": true (an align run: pages are edited in place and an updated page keeps most of its old text), check only the sentences the draft ADDED or CHANGED: get them with "git diff <meta.oldRef> -- <page>" run in meta.docsWorktree. For each added or changed factual sentence (requirements, steps' outcomes, defaults, limits, option names, UI labels), trace it to an assigned fact id and its cite in the code worktree. A sentence the draft left as it was is out of scope: flag it only if it directly contradicts an assigned fact, and name that fact. ` +
+  `Otherwise (a versioned run), for each page with status "done", read the file and trace every factual sentence to an assigned fact id and its cite in the code worktree. ` +
   `A sentence with no fact, or one that disagrees with its cite, is a problem. A jira-only claim stated as fact is a problem. A ticket key on the page is a problem. ` +
   `Return ok:false with one problem per line (file, quoted sentence, why) if there is any. Also update that page's "untraced" list in the results file to match, and set a page's status to "failed" if it has a problem. Don't fix the page.`
 
