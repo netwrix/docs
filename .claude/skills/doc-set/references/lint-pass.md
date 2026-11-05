@@ -1,12 +1,12 @@
 # Lint-only pass for KEEP pages
 
-A KEEP page keeps its facts and structure. It is not exempt from the style check. Pre-commit checks copied pages as new files, whole, so old wording that passed in the previous version can fail in the new folder. In the Threat Manager 3.4 pilot, 62 of 72 KEEP pages failed with 142 findings, mostly passive voice. The lint-only pass fixes those findings and nothing else.
+A KEEP page keeps its facts, structure, and wording. Use this pass only on a KEEP page that fails the commit's own style check, which runs in diff mode and looks only at the lines a change adds or rewrites (`npm run quality:check -- --only <list>`). A whole-page check (`--files`, `--file`) reports old wording too: in the Threat Manager 3.4 pilot it failed 62 of 72 KEEP pages with 142 findings, mostly passive voice. Those whole-page findings are for the report and the separate restyle pass, not for this pass. The lint-only pass fixes what the commit check fails and nothing else.
 
 This pass fixes KEEP pages. It does not replace the final check: every run ends by linting ALL the version's pages, kept pages included (`SKILL.md`, Phase 9, "Lint every page", and `scripts/doc-set/lint-all.mjs`).
 
 ## Procedure
 
-1. From the docs worktree, run `npm run quality:check -- --files <run-dir>/lintpass/all-keep.txt` (or a smaller list). If every page passes, stop.
+1. From the docs worktree, run `npm run quality:check -- --only <run-dir>/lintpass/all-keep.txt` (diff mode, or a smaller list). If every page passes, stop.
 2. `node scripts/doc-set/lint-batches.mjs <run-dir>` splits the KEEP pages into batches of up to 15 (`lintpass/batch-N.txt`).
 3. Launch one agent per batch, in parallel, with the prompt below. Each takes 30 to 65 minutes because the model-based check is slow.
 4. `node scripts/doc-set/lint-batches.mjs <run-dir> --summary` totals the results. The agents' before and after counts are estimates, because Dale flags different sentences between runs.

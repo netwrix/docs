@@ -19,7 +19,7 @@ if (typeof document !== 'undefined') (function () {
   var queue = Promise.resolve();
   var renderSeq = 0;
   var LABEL = { changes: 'Changes requested', approved: 'Approved', stale: 'Changed since review', none: 'Not reviewed' };
-  var TAG = { NEW: 'New', REWRITE: 'Rewritten', UPDATE: 'Updated', RESTYLED: 'Restyled only' };
+  var TAG = { NEW: 'New', REWRITE: 'Rewritten', UPDATE: 'Updated', RESTYLED: 'Style fixes only' };
   var PREFS_KEY = 'doc-set-review-prefs';
   var prefs = { mode: 'change', view: 'rendered', all: false, old: false, open: { 'g:NEW': true }, last: '', q: '', st: 'all' };
 
@@ -165,7 +165,7 @@ if (typeof document !== 'undefined') (function () {
     var name = el('span', 'lt', p.title || p.short.split('/').pop());
     name.title = p.short;
     a.appendChild(name);
-    if (prefs.mode !== 'change' || p.band) a.appendChild(el('span', 'tg tg-' + p.group, TAG[p.group] === 'Restyled only' ? 'Restyled' : TAG[p.group]));
+    if (prefs.mode !== 'change' || p.band) a.appendChild(el('span', 'tg tg-' + p.group, TAG[p.group] === 'Style fixes only' ? 'Style fixes' : TAG[p.group]));
     var cnt = (live[p.slug] || []).length;
     if (cnt) a.appendChild(el('span', 'sgn', cnt + (cnt === 1 ? ' edit' : ' edits')));
     return a;

@@ -12,7 +12,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export const ACTIONS = ['KEEP', 'RESTYLE', 'UPDATE', 'REWRITE', 'RETIRE', 'NEW'];
+export const ACTIONS = ['KEEP', 'UPDATE', 'REWRITE', 'RETIRE', 'NEW'];
 const NEEDS_FACTS = ['UPDATE', 'REWRITE', 'NEW'];
 
 export function readJson(dir, name, fallback) {
@@ -51,7 +51,8 @@ export function validateManifest({ facts, claims, manifest }) {
     else if (/(^|\/)kb\//.test(page.path)) problems.push(`${page.path}: KB articles are out of scope for a doc set`);
     else if (paths.has(page.path)) problems.push(`Duplicate page path ${page.path}`);
     paths.add(page.path);
-    if (!ACTIONS.includes(page.action)) problems.push(`${where}: unknown action "${page.action}"`);
+    if (page.action === 'RESTYLE') problems.push(`${where}: RESTYLE is not a doc-set action. Restyle is a separate pass after the doc-set completes (/doc-restyle); use KEEP`);
+    else if (!ACTIONS.includes(page.action)) problems.push(`${where}: unknown action "${page.action}"`);
     if (page.action !== 'RETIRE' && page.action !== 'KEEP' && !page.type) problems.push(`${where}: missing page type`);
     if (NEEDS_FACTS.includes(page.action) && !page.mechanical && !(page.facts || []).length) problems.push(`${where}: ${page.action} page has no assigned facts`);
     for (const id of page.facts || []) {

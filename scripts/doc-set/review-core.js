@@ -225,7 +225,7 @@ var PRIORITY = {
   bands: { P1: 55, P2: 35 }
 };
 var BAND_ORDER = ['P1', 'P2', 'P3', 'P4'];
-var BAND_LABEL = { P1: 'P1 Review first', P2: 'P2 Review next', P3: 'P3 If time allows', P4: 'P4 Restyled only' };
+var BAND_LABEL = { P1: 'P1 Review first', P2: 'P2 Review next', P3: 'P3 If time allows', P4: 'P4 Style fixes only' };
 
 /** Move a scope one level toward product (used for pages many other pages link to). */
 function boostScope(scope) {
@@ -247,7 +247,7 @@ function bandOf(score, action) {
 }
 
 /** Score one changed page. in: { action, changedShare (0-1), scope, consequence, uncertain (count) }.
- *  Returns { score, band, C, R, Q, U }. A restyled-only page is always P4. */
+ *  Returns { score, band, C, R, Q, U }. A style-fixes-only page is always P4. */
 function scorePage(inp) {
   var P = PRIORITY;
   var C = inp.action === 'NEW' ? P.change.NEW : inp.action === 'REWRITE' ? P.change.REWRITE
@@ -261,7 +261,7 @@ function scorePage(inp) {
 }
 
 /** The sidebar tree. pages: [{ slug, short, group, title }]. mode 'zone' nests pages by their folders;
- *  mode 'change' ranks them by priority (new, rewritten, updated, restyled only), then by folder.
+ *  mode 'change' ranks them by priority (new, rewritten, updated, style fixes only), then by folder.
  *  Nodes: { type: 'folder', key, name, children, count } and { type: 'leaf', slug, page }. */
 function buildTree(pages, mode) {
   function folderTree(list, prefix) {

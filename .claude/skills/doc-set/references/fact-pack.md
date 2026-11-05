@@ -54,7 +54,7 @@ Where to look: UI resource and string files, settings and config schemas, CLI he
 ```
 
 - `path` is never under a `kb/` folder; the validator rejects it.
-- `action`: `KEEP`, `RESTYLE`, `UPDATE`, `REWRITE`, `RETIRE`, or `NEW`.
+- `action`: `KEEP`, `UPDATE`, `REWRITE`, `RETIRE`, or `NEW`. Restyle is a separate pass after the doc-set, not an action.
 - `type`: `task`, `concept`, `reference`, or `troubleshooting` (`.claude/references/page-structure-guide.md`). Not needed for KEEP or RETIRE.
 - `zone` and `sidebar_position` follow `.claude/references/documentation-section-guide.md`.
 - UPDATE, REWRITE, and NEW pages must list at least one fact.
@@ -73,7 +73,7 @@ Where to look: UI resource and string files, settings and config schemas, CLI he
   ] }
 ```
 
-- `status`: `done` or `failed`. A page is done only when `quality:check` passes (and `integrity.mjs` passes for RESTYLE).
+- `status`: `done` or `failed`. A page is done only when `quality:check` passes on the lines the draft wrote or changed.
 - `factsCovered`: the fact ids the final page states.
-- `preexistingFindings`: the number of old 3.3 sentences the drafter reworded only to clear a style finding. A page is `done` only when the whole-page check passes.
+- `preexistingFindings`: always 0. A drafter does not reword old text to clear a style finding; style work on old text is the separate restyle pass. A page is `done` only when the check passes on the lines the draft wrote or changed.
 - `untraced`: sentences the verifier could not trace to a fact. Fix them or turn them into TODOs; the list must be empty for `done`.

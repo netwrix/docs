@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * lint-all.mjs — the final style check of a doc-set run covers EVERY page of the version: new, rewritten, updated,
- * restyled, and kept pages alike, not only the pages the run edited.
+ * and kept pages alike, not only the pages the run edited. The whole-page report is for the author report and for the
+ * separate restyle pass; only findings on the lines the run changed (the commit check) must be fixed in the run.
  *
  *   node scripts/doc-set/lint-all.mjs <run-dir>            write <run-dir>/lintpass/all-pages.txt and print the command to run
  *   node scripts/doc-set/lint-all.mjs <run-dir> --check    exit 1 unless <run-dir>/lintpass/final-recheck.txt covers every page
@@ -63,7 +64,11 @@ export function run(argv) {
     return 0;
   }
   console.log(`${pages.length} pages listed in ${list}. From ${meta.docsWorktree}, run:`);
-  console.log(`  npm run quality:check -- --files ${list} --progress > ${path.join(lintDir, 'final-recheck.txt')} 2>&1`);
+  console.log('  (1) the whole-page report, which lists every finding on every page, old text included:');
+  console.log(`      npm run quality:check -- --files ${list} --progress > ${path.join(lintDir, 'final-recheck.txt')} 2>&1`);
+  console.log('  (2) the commit check, which looks only at the lines this run added or changed. It must be clean:');
+  console.log('      npm run quality:check');
+  console.log('Findings only (1) shows are on old text: report them as candidates for the separate restyle pass, and do not reword them.');
   console.log('Then: node scripts/doc-set/lint-all.mjs <run-dir> --check');
   return 0;
 }

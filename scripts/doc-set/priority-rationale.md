@@ -13,7 +13,7 @@ If a reviewer only has time for 20 pages, which 20 reduce the most harm and wast
 3. **Costly when wrong.** A bad install step or a wrong port costs a customer far more than a wrong label in a rarely used dialog.
 4. **Uncertain.** Claims the tools couldn't verify need a person who knows the product.
 
-That gives four factors. Restyled-only pages are different: the integrity check already confirms that their facts, numbers, links, code and labels are unchanged, so they always rank last.
+That gives four factors. Pages with style fixes only are different: the integrity check already confirms that their facts, numbers, links, code and labels are unchanged, so they always rank last. (Restyling itself is a separate pass after the doc-set, not part of it.)
 
 ## The score
 
@@ -55,7 +55,7 @@ Reach and consequence get the most weight because they describe what a wrong pag
 | P1 Review first | 55 or more | Approve before the release PR merges |
 | P2 Review next | 35 to 54 | Approve before the release |
 | P3 If time allows | below 35 | Best effort |
-| P4 Restyled only | none | Spot-check about 10% |
+| P4 Style fixes only | none | Spot-check about 10% |
 
 Thresholds were set on the first run (Threat Manager 3.4) so that P1 holds about 10% of the changed pages. If P1 grows past about 20%, raise `PRIORITY.bands.P1`. Never move one page between bands by hand: change its scope or consequence in `priority-input.json` and rerun, so the reason shown with the page stays true.
 

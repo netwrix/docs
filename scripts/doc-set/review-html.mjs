@@ -97,7 +97,7 @@ export const GROUPS = [
   { key: 'NEW', title: 'New pages', blurb: 'No page existed in the previous version. Drafted from the code facts. Review these first.' },
   { key: 'REWRITE', title: 'Rewritten pages', blurb: 'Most of the previous text was replaced because it no longer described the product.' },
   { key: 'UPDATE', title: 'Updated pages', blurb: 'The previous page is kept. Statements the new code changes were edited and new facts were added.' },
-  { key: 'RESTYLED', title: 'Restyled only', blurb: 'Wording and typo fixes with no content change. The integrity check confirms that facts, numbers, links, images, code and labels are unchanged.' },
+  { key: 'RESTYLED', title: 'Style fixes only', blurb: 'Wording and typo fixes with no content change. The integrity check confirms that facts, numbers, links, images, code and labels are unchanged.' },
 ];
 
 const rowHtml = r => {
@@ -173,7 +173,7 @@ export function loadEntries(dir) {
   const entries = [];
   for (const p of manifest.pages) {
     if (p.action === 'RETIRE') continue;
-    const restyled = p.action === 'KEEP' || p.action === 'RESTYLE';
+    const restyled = p.action === 'KEEP';
     if (p.action !== 'KEEP' && !done.has(p.path)) continue;
     const newText = fs.readFileSync(path.join(meta.docsWorktree, p.path), 'utf8');
     const oldText = readOldText(meta, p);

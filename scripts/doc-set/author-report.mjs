@@ -4,7 +4,7 @@
  *
  *   node scripts/doc-set/author-report.mjs <run-dir> <out.html> [--title "Page title"]
  *
- * The report is organized by what happened to each page: new, rewritten, updated, restyled only,
+ * The report is organized by what happened to each page: new, rewritten, updated, style fixes only,
  * or unchanged. It reads meta.json, manifest.json, facts.json, claims.json, results/*.json and, when
  * present, scope.json, plan.json, lintpass/result-*.json, lintpass/integrity-keep.json (the content
  * integrity check on the pages that were not given new content), and lintpass/final-recheck.txt (the last
@@ -26,7 +26,7 @@ export const GROUP_DEFS = [
   { key: 'NEW', title: 'New pages', blurb: 'No page existed in the previous version. Each was drafted from the code facts, and a verifier traced every statement to a fact. These need a careful read.' },
   { key: 'REWRITE', title: 'Rewritten pages', blurb: 'Most of the previous text was replaced because it no longer described the product.' },
   { key: 'UPDATE', title: 'Updated pages', blurb: 'The previous page is kept. Statements that the new code changes were edited, and new facts were added. Some old sentences were also reworded to pass the style check.' },
-  { key: 'RESTYLED', title: 'Restyled only', blurb: 'Wording and typo fixes with no change in content.' },
+  { key: 'RESTYLED', title: 'Style fixes only', blurb: 'Wording and typo fixes with no change in content, made so the page passes the style check.' },
 ];
 
 /** What the author must look at, from manifest pages and their results. Pure; no file access. */
@@ -71,7 +71,7 @@ export function groupPages({ manifest, rows, diffs }) {
     if (p.action === 'KEEP' && p.unverifiable) {
       // A page the code cannot verify is left exactly as it is, and the report says why.
       groups.UNVERIFIABLE.push({ path: p.path, reason: p.unverifiable });
-    } else if (p.action === 'KEEP' || p.action === 'RESTYLE') {
+    } else if (p.action === 'KEEP') {
       const d = diffs[p.path] || { add: 0, del: 0 };
       (d.add + d.del > 0 ? groups.RESTYLED : groups.UNCHANGED).push({ path: p.path, ...d });
     } else if (groups[p.action]) groups[p.action].push({ ...(byPath.get(p.path) || { path: p.path }), ...(diffs[p.path] || {}) });
@@ -139,7 +139,7 @@ export function reportBody({ title, meta, cov, rows, need, claims, scope, lint, 
   <li><strong>New:</strong> ${esc(GROUP_DEFS[0].blurb)}</li>
   <li><strong>Rewritten:</strong> ${esc(GROUP_DEFS[1].blurb)}</li>
   <li><strong>Updated:</strong> ${esc(GROUP_DEFS[2].blurb)}</li>
-  <li><strong>Restyled only:</strong> Wording and typo fixes. Facts, numbers, links, images, code and labels are unchanged, and a check confirms it.</li>
+  <li><strong>Style fixes only:</strong> Wording and typo fixes. Facts, numbers, links, images, code and labels are unchanged, and a check confirms it.</li>
   <li><strong>Unchanged:</strong> ${isAlign(meta) ? 'Identical to the page on origin/dev.' : `Identical to the previous version apart from links that now point at ${esc(meta.version)}.`}</li>
 </ul>`;
   const newRows = g.NEW.map(r => `<tr><td>${code(r.path)}<br><span class="meta">${esc(r.title)}</span></td><td>${esc(r.type)}</td><td class="num">${r.covered}/${r.assigned}</td><td class="num">${r.newLines ?? ''}</td><td>${flags(r.path)}</td>${rv(r.path)}</tr>`).join('');
@@ -165,7 +165,7 @@ ${table(['Page', 'Why it was not changed'], g.UNVERIFIABLE.map(r => `<tr><td>${c
   for (const f of cov.uncovered) uncoveredByArea[f.area] = (uncoveredByArea[f.area] || 0) + 1;
   const topUncovered = Object.entries(uncoveredByArea).sort((a, b) => b[1] - a[1]).slice(0, 12);
   const decisions = scope?.decisions ? Object.entries(scope.decisions).map(([k, v]) => `<li><strong>${esc(k)}:</strong> ${esc(v)}</li>`).join('') : '';
-  const lintBlock = lint ? `<p>Restyle passes: ${lint.typos} suspected typos listed, ${lint.unfixed} flagged sentences left as written, ${lint.suppressions} Vale suppression(s).</p>` : '';
+  const lintBlock = lint ? `<p>Lint-only passes: ${lint.typos} suspected typos listed, ${lint.unfixed} flagged sentences left as written, ${lint.suppressions} Vale suppression(s).</p>` : '';
   const proposalBlock = proposals.length ? `<h3>Structural changes</h3><ul>${proposals.map(p => `<li><strong>${esc(p.kind)}:</strong> ${esc((p.paths || []).join(', '))}. ${esc(p.recommendation || '')}</li>`).join('')}</ul>` : '';
   const recheckBlock = recheck ? `<h2>Style check on every page</h2>
 <p>Final recheck of all ${recheck.pages} pages in the new version: ${recheck.pass} pass and ${recheck.fail} fail. Dale is model-based, so a page can pass on one run and fail on another. These pages failed on the last run.</p>
@@ -189,7 +189,7 @@ ${proposalBlock}
 <p>${esc(GROUP_DEFS[2].blurb)} "Facts stated" is how many of the facts assigned to a page it states. "Old sentences reworded" counts sentences changed only to pass the style check.</p>
 ${count('UPDATE') ? table(H(['Page', 'Facts stated', 'Lines added / removed', 'Old sentences reworded', 'Open flags']), updateRows) : '<p class="none">No updated pages.</p>'}
 
-<h2>Restyled only (${count('RESTYLED')}): no content change</h2>
+<h2>Style fixes only (${count('RESTYLED')}): no content change</h2>
 <p>These pages kept their facts and structure. Only sentences that failed the style check were reworded, and typos were corrected. The comparison shows each change.</p>
 ${integrityLine}
 ${lintBlock}
@@ -273,7 +273,7 @@ export function loadReportArgs(dir, title) {
     const j = JSON.parse(fs.readFileSync(ik, 'utf8'));
     integrity = { ok: !!j.ok, violations: (j.violations || []).length, pages: groups.RESTYLED.length + groups.UNCHANGED.length };
   }
-  const actions = Object.fromEntries(manifest.pages.map(p => [p.path, p.action === 'KEEP' ? 'Restyled or unchanged' : p.action]));
+  const actions = Object.fromEntries(manifest.pages.map(p => [p.path, p.action === 'KEEP' ? 'Style fixes or unchanged' : p.action]));
   const nf = path.join(lintDir, 'recheck-note.txt');
   const recheckNote = fs.existsSync(nf) ? fs.readFileSync(nf, 'utf8').trim() : '';
   const args = { title: title || `${meta.product} ${meta.version} author report`, meta, cov, rows, need, claims, scope, lint, plan, proposals: plan.proposals || [], recheck, actions, groups, integrity, recheckNote };

@@ -301,7 +301,7 @@ ${FONT_LINK}
 <div class="how">
 <h2 style="margin-top:0">How to review</h2>
 <ol>
-<li>Pick a page in the sidebar. <strong>Priority</strong> ranks the pages: new pages first, then rewritten, updated, and restyled-only pages. Use <strong>Folders</strong> to browse by the docs structure instead. Search by name, or filter by review state.</li>
+<li>Pick a page in the sidebar. <strong>Priority</strong> ranks the pages: new pages first, then rewritten, updated, and style-fix-only pages. Use <strong>Folders</strong> to browse by the docs structure instead. Search by name, or filter by review state.</li>
 <li>The <strong>Rendered</strong> view shows the page as readers will see it, with the old text on the left and the new text on the right. Added words are green, removed words are red, and a bar marks each changed block. Use <strong>Show the whole page</strong> to read the unchanged blocks too. The <strong>Markdown</strong> view shows the old and new source side by side.</li>
 <li>Use <strong>Approve</strong> or <strong>Request changes</strong> on each page you review.</li>
 <li>To change the text, hover over a block and select <strong>Edit</strong>, <strong>Delete</strong>, or <strong>Add below</strong>. These are suggestions. Claude checks each one against the code before it goes into the page.</li>
