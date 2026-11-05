@@ -1,4 +1,5 @@
 ---
+description: Configure local, Windows, OpenID Connect, SAML2, header, and client certificate sign-in, plus passkeys, for PingCastle Enterprise.
 sidebar_position: 2
 sidebar_label: Authentication
 ---
@@ -380,6 +381,63 @@ If PingCastle can't recognize the certificate, it displays an error. Ensure the 
 
   </TabItem>
 </Tabs>
+
+### Passkeys
+
+Passkeys let users with local accounts verify their identity with a device or security key that supports the WebAuthn and FIDO2 standards. Users can use a passkey as a second factor after their password, or, if you allow it, to sign in without a password. Users register and manage their own passkeys. See [Sign-in security](../../admin/account.md#sign-in-security).
+
+Passkeys are available only to local accounts. Users who sign in with Windows, OpenID Connect, SAML2, or another external method can't use them.
+
+#### Passkey requirements
+
+- PingCastle Enterprise must use HTTPS. Passkeys don't work over HTTP.
+- Users must reach PingCastle Enterprise through a DNS name. Passkeys don't work on `localhost` or an IP address.
+- Users must browse to PingCastle Enterprise using the address you set in **Allowed Origins**.
+
+The installer sets up passkeys for you when you enter an HTTPS address. When you upgrade from an earlier version that already uses HTTPS and has a web host configured, the upgrade fills in the passkey settings from that web host and enables passkeys.
+
+#### Configure passkeys
+
+Configure passkeys on **Configuration** > **Settings** > **Authentication**, in the **Passkeys** section.
+
+| Field | Description |
+|---|---|
+| Passkeys | Turns passkeys on or off. When you turn this off, users can't register or use passkeys, and passwordless sign-in is also turned off. |
+| Allow passwordless sign-in | Lets users sign in with a passkey alone, without a password or second factor. When this is off, users can use passkeys only as a second factor. |
+| Server Domain | The host name users browse to, with no `https://` prefix or port. For example, `pingcastle.contoso.com`. |
+| Allowed Origins | The exact address the browser reports, in the form `https://<host>[:<port>]`. For example, `https://pingcastle.contoso.com`. |
+
+You can't turn on passkeys while **Server Domain** is empty. These changes take effect without a restart.
+
+:::warning
+Changing **Server Domain** or **Allowed Origins** invalidates every registered passkey. PingCastle Enterprise asks you to confirm, then deletes them. Users sign in with their password and register their passkeys again.
+:::
+
+{/* TODO: confirm exact field labels (for example "Server Domain" vs "Server domain") against a 4.1 build, and add a screenshot */}
+
+#### Revoke passkeys by authenticator type
+
+You can revoke every passkey of one authenticator type at once. Use this when a vulnerability affects a type of authenticator, when you retire a type of device, or when you migrate users to a different one. For example, you can revoke all passkeys created with one vendor's security keys and leave the rest in place.
+
+1. Go to **Configuration** > **Settings** > **Authentication**.
+
+2. In the **Passkeys** section, scroll below all the settings to the table of authenticator types and find the type you want to revoke.
+
+3. Click **Revoke** next to it, and confirm.
+
+Affected users see nothing different. They sign in with their password, and if passkeys are still enabled, they can register a passkey again.
+
+{/* TODO: confirm the confirmation wording for Revoke against a 4.1 build */}
+
+#### Troubleshooting passkey availability
+
+When passkeys aren't available, a banner on the page explains why. Administrators see how to fix the problem, and other users see a message to contact an administrator. The banner appears when:
+
+- HTTPS is turned off.
+- The address in the browser doesn't match **Allowed Origins**.
+- **Server Domain** is empty.
+
+Passkey controls stay disabled until you resolve the cause.
 
 ### Login options
 
