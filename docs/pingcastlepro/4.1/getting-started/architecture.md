@@ -15,7 +15,7 @@ PingCastle Pro uses a distributed architecture. `PingCastle.exe` performs Active
 graph LR
     subgraph Core["Active Directory Domain"]
         direction TB
-        Pro["PingCastle Pro<br/>ASP.NET Core 8.0<br/>HTTPS: 443"]
+        Pro["PingCastle Pro<br/>ASP.NET Core 10.0<br/>HTTPS: 443"]
         DB[("SQL Server<br/>Database")]
         LocalAD{{"Local<br/>Active Directory"}}
 
@@ -46,7 +46,7 @@ graph LR
 
 ### PingCastle Pro server
 
-- Runs as an ASP.NET Core 8.0 application, typically behind Internet Information Services (IIS)
+- Runs as an ASP.NET Core 10.0 application, typically behind Internet Information Services (IIS)
 - Requires a database for data storage, such as SQL Server or SQL Server Express
 - Signs users in with Windows Authentication or Microsoft Entra ID
 - Provides a web interface for administrators and users

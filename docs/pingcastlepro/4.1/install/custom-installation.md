@@ -8,11 +8,11 @@ sidebar_position: 40
 
 Use a custom installation if you don't want to use the MSI. You prepare the database, extract the application files, create the IIS application pool, and configure the application settings yourself.
 
-PingCastle Pro runs on any infrastructure that the ASP.NET Core 8.0 middleware supports. This page covers IIS on Windows. For Nginx or Apache on Linux, see the Microsoft procedures in [Host ASP.NET Core on Linux with Nginx](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-8.0) and [Host ASP.NET Core on Linux with Apache](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache).
+PingCastle Pro runs on any infrastructure that the ASP.NET Core 10.0 middleware supports. This page covers IIS on Windows. For Nginx or Apache on Linux, see the Microsoft procedures in [Host ASP.NET Core on Linux with Nginx](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-10.0) and [Host ASP.NET Core on Linux with Apache](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache).
 
 ## Before you begin
 
-- Install the .NET 8.0 runtime and, on IIS, the ASP.NET Core 8.0 Hosting Bundle. See [Installation](installation.md#install-iis) for the IIS and Hosting Bundle steps.
+- Install the .NET 10.0 runtime and, on IIS, the ASP.NET Core 10.0 Hosting Bundle. See [Installation](installation.md#install-iis) for the IIS and Hosting Bundle steps.
 - Have the license key that Netwrix distributes with the PingCastle Pro files. If it's missing, contact PingCastle support.
 - Have a SQL Server or PostgreSQL server available. See [Database requirements](../requirements/database.md).
 

@@ -5,6 +5,10 @@ sidebar_label: Upgrade guide
 ---
 # PingCastle Pro Upgrade Guide
 
+:::warning
+PingCastle Pro 4.1 requires ASP.NET Core 10.0. Versions up to 3.5 use ASP.NET Core 8.0. Before you upgrade from 3.5 or earlier, install the ASP.NET Core 10.0 Hosting Bundle on the server. See [Software requirements](#software-requirements).
+:::
+
 ## Before proceeding to the upgrade
 
 **Version check**
@@ -32,7 +36,8 @@ version.
 |---|---|
 | Any 2.x version | All versions have the same requirements. |
 | 2.x to 3.2 | Upgrade ASP.NET from 3.1 to 6.0. |
-| 3.2 to 3.x | Upgrade ASP.NET from 6.0 to 8.0. |
+| 3.2 to 3.5 | Upgrade ASP.NET from 6.0 to 8.0. |
+| 3.5 to 4.1 | Upgrade ASP.NET from 8.0 to 10.0. Install the ASP.NET Core 10.0 Hosting Bundle before you replace the files. |
 
 ## Performing the upgrade
 
@@ -43,7 +48,7 @@ If PingCastle Pro connects to the database with a limited-privilege account (rea
 To upgrade PingCastle Pro:
 
 1. Download the ZIP file for the new version.
-2. On the server where PingCastle Pro is installed, open an elevated command prompt and stop IIS:
+2. On the server where PingCastle Pro is installed, open a command prompt as an administrator and stop IIS:
 
    ```cmd
    iisreset /stop

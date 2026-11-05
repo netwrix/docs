@@ -8,13 +8,13 @@ sidebar_position: 30
 
 PingCastle Pro requires:
 
-- **ASP.NET Core 8.0 Hosting Bundle**: Hosts the web application
+- **ASP.NET Core 10.0 Hosting Bundle**: Hosts the web application
 - **IIS (Internet Information Services)**: Hosts the web server, with Windows Authentication available as a sign-in method
 
 `PingCastle.exe` is self-contained and has no .NET dependency to install.
 
 :::note
-Install IIS before the ASP.NET Core 8.0 Hosting Bundle. If you don't, you may need to repair the Hosting Bundle installation.
+Install IIS before the ASP.NET Core 10.0 Hosting Bundle. If you don't, you may need to repair the Hosting Bundle installation.
 :::
 
 :::note

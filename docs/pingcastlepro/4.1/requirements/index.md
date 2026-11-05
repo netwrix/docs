@@ -16,7 +16,7 @@ PingCastle Pro supports the following operating systems:
 
 - For PingCastle Pro:
 
-  - Windows Server operating systems that support ASP.NET 8.0:
+  - Windows Server operating systems that support ASP.NET 10.0:
 
     - Windows Server 2016
     - Windows Server 2019
@@ -25,4 +25,4 @@ PingCastle Pro supports the following operating systems:
 
 To check Windows Server support lifecycle details, refer to the [Windows Lifecycle Fact Sheet](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
 
-For ASP.NET 8.0 operating system compatibility, refer to the [.NET 8.0 supported OS documentation](https://learn.microsoft.com/en-us/dotnet/core/install/windows#supported-versions).
+For ASP.NET 10.0 operating system compatibility, refer to the [.NET 10.0 supported OS documentation](https://learn.microsoft.com/en-us/dotnet/core/install/windows#supported-versions).

@@ -1,12 +1,12 @@
 ---
 title: "Installation"
-description: "Install IIS, the ASP.NET Core 8.0 Hosting Bundle, and the PingCastle Pro MSI to set up PingCastle Pro."
+description: "Install IIS, the ASP.NET Core 10.0 Hosting Bundle, and the PingCastle Pro MSI to set up PingCastle Pro."
 sidebar_position: 20
 ---
 
 # Installation
 
-Install PingCastle Pro on a Windows server in four parts: IIS, the ASP.NET Core 8.0 Hosting Bundle, a SQL Server database, and the PingCastle Pro Windows Installer (MSI). This installation is suitable for production.
+Install PingCastle Pro on a Windows server in four parts: IIS, the ASP.NET Core 10.0 Hosting Bundle, a SQL Server database, and the PingCastle Pro Windows Installer (MSI). This installation is suitable for production.
 
 :::note
 PingCastle Pro needs a SQL Server database. Have one available before you run the MSI. See [Database requirements](../requirements/database.md). If you don't have a SQL Server instance, [get SQL Server Express](#get-sql-server-express).
@@ -26,12 +26,12 @@ Install-WindowsFeature Web-Server -IncludeManagementTools
 ```
 
 :::warning
-Install IIS before the ASP.NET Core 8.0 Hosting Bundle. If you don't, you may need to repair the Hosting Bundle installation.
+Install IIS before the ASP.NET Core 10.0 Hosting Bundle. If you don't, you may need to repair the Hosting Bundle installation.
 :::
 
-## Install the ASP.NET Core 8.0 Hosting Bundle
+## Install the ASP.NET Core 10.0 Hosting Bundle
 
-1. On the [.NET 8.0 download page](https://dotnet.microsoft.com/en-us/download/dotnet/8.0), find the Windows installers for **ASP.NET Core Runtime** and select **Hosting Bundle**.
+1. On the [.NET 10.0 download page](https://dotnet.microsoft.com/en-us/download/dotnet/10.0), find the Windows installers for **ASP.NET Core Runtime** and select **Hosting Bundle**.
 
    ![The ASP.NET Core Runtime download page with the Hosting Bundle link highlighted](/images/pingcastlepro/4.1/proinstall/image13.webp)
 
