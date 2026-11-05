@@ -670,3 +670,11 @@ test('applyKeep drops duplicate marks on facts the reviewer keeps apart', async 
   assert.deepEqual([...applyKeep(marks, ['F4'])], [['F2', 'F1'], ['F3', 'F1']], 'a kept canonical stands in for nothing');
   assert.equal(applyKeep(marks, undefined).size, 3);
 });
+
+test('triage-to-manifest turns a slice\'s newPages into NEW pages', async () => {
+  const { combine } = await import('./doc-set/triage-to-manifest.mjs');
+  const { pages, problems } = combine([{ slice: 's', pages: [{ path: 'docs/p/a.md', action: 'KEEP' }], newPages: [{ path: 'docs/p/b.md', title: 'B', type: 'task', zone: 'z', facts: ['F1'] }] }]);
+  assert.deepEqual(problems, []);
+  assert.deepEqual(pages.map(p => [p.path, p.action]), [['docs/p/a.md', 'KEEP'], ['docs/p/b.md', 'NEW']]);
+  assert.deepEqual(combine([{ pages: [{ path: 'docs/p/a.md', action: 'KEEP' }] }, { pages: [], newPages: [{ path: 'docs/p/a.md', facts: [] }] }]).problems.length, 1, 'a new page cannot reuse an existing path');
+});

@@ -23,7 +23,8 @@ export function combine(slices) {
   const seen = new Set();
   const problems = [];
   for (const s of slices) {
-    for (const p of s.pages) {
+    // A slice may also propose pages that don't exist yet: `newPages` rows become NEW pages.
+    for (const p of [...s.pages, ...(s.newPages || []).map(n => ({ ...n, action: 'NEW' }))]) {
       if (seen.has(p.path)) { problems.push(`Page ${p.path} appears in more than one slice`); continue; }
       seen.add(p.path);
       const page = {
