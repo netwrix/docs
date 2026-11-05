@@ -6,8 +6,9 @@
  *
  * Reads <run-dir>/meta.json and <run-dir>/facts/*.json, assigns ids (F001, F002, ...),
  * and flags suspected duplicates across areas (same cite, or very similar statements) in
- * a report. It never drops a fact: a reviewer decides, then edits the area files or the
- * `duplicateOf` list in <run-dir>/dedupe.json. --write saves facts.json and dedupe-report.md.
+ * a report. It never drops a fact: a reviewer decides. To keep two similar facts apart, list the ids in
+ * <run-dir>/dedupe.json as {"keep": ["F027", "F185"]}: a listed fact is never marked `duplicateOf` and never
+ * stands in for another. --write saves facts.json and dedupe-report.md.
  * Pairs at similarity 0.5 or above are marked `duplicateOf` (canonical = longest statement); lower pairs are only listed.
  * Exits 1 when a non-internal fact has no cite or a field is missing.
  */
@@ -45,6 +46,19 @@ export function mergeAreas(areas, previous = []) {
   for (const f of facts) if (!f.id) { max += 1; f.id = `F${String(max).padStart(3, '0')}`; used.add(f.id); }
   facts.sort((a, b) => Number(a.id.slice(1)) - Number(b.id.slice(1)));
   return facts.map(({ id, statement, cite, area, status, internal, tickets, source, outOfScope }) => ({ id, statement, cite: cite || '', area, status, internal: !!internal, tickets: tickets || [], source, ...(outOfScope ? { outOfScope } : {}) }));
+}
+
+/** Drop duplicate marks that involve a fact the reviewer listed under `keep`. */
+export function applyKeep(dupOf, keep) {
+  const k = new Set(keep || []);
+  const out = new Map();
+  for (const [id, canon] of dupOf) if (!k.has(id) && !k.has(canon)) out.set(id, canon);
+  return out;
+}
+
+function readKeep(dir) {
+  const f = path.join(dir, 'dedupe.json');
+  return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')).keep || [] : [];
 }
 
 export function problems(facts) {
@@ -106,7 +120,7 @@ export function run(argv) {
   const facts = mergeAreas(areas, fs.existsSync(prevFile) ? JSON.parse(fs.readFileSync(prevFile, 'utf8')).facts : []);
   const probs = problems(facts);
   const dups = suspectedDuplicates(facts);
-  const dupOf = clusterDuplicates(facts, dups);
+  const dupOf = applyKeep(clusterDuplicates(facts, dups), readKeep(dir));
   for (const f of facts) if (dupOf.has(f.id)) f.duplicateOf = dupOf.get(f.id);
   const byId = new Map(facts.map(f => [f.id, f]));
   const counts = {};

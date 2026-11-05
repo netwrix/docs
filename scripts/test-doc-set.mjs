@@ -662,3 +662,11 @@ test('mergeAreas keeps existing fact ids when an area is added or the merge is r
   assert.equal(third.find(f => f.statement === 'four').id, 'F004');
   assert.deepEqual(mergeAreas([{ area: 'b', facts: [fact('one', 'b')] }]).map(f => f.id), ['F001']);
 });
+
+test('applyKeep drops duplicate marks on facts the reviewer keeps apart', async () => {
+  const { applyKeep } = await import('./doc-set/merge-facts.mjs');
+  const marks = new Map([['F2', 'F1'], ['F3', 'F1'], ['F5', 'F4']]);
+  assert.deepEqual([...applyKeep(marks, ['F3'])], [['F2', 'F1'], ['F5', 'F4']]);
+  assert.deepEqual([...applyKeep(marks, ['F4'])], [['F2', 'F1'], ['F3', 'F1']], 'a kept canonical stands in for nothing');
+  assert.equal(applyKeep(marks, undefined).size, 3);
+});
