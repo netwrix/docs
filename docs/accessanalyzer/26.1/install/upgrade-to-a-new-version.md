@@ -7,6 +7,10 @@ sidebar_position: 4
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::warning
+To upgrade to 1.2.0 from an earlier release, you must run `dspm-installer upgrade` on the server, whatever your install type. The **Settings** page, automatic updates, and `dspmctl` can't make this upgrade. See [Upgrade to 1.2.0](#upgrade-to-120).
+:::
+
 How you upgrade Access Analyzer depends on how you installed it.
 
 | Install | How it upgrades |
@@ -15,25 +19,74 @@ How you upgrade Access Analyzer depends on how you installed it.
 | **Air-gapped** | You download the new media on a connected machine, copy it to the server, and run `dspm-installer upgrade --bundle-dir`. |
 | **Registry** (a connected install made before media installs, or with `DSPM_MEDIA_INSTALL=false`) | ArgoCD pulls new releases from the Netwrix registry. You tell it which version to run with `dspmctl`. [Convert a registry install](convert-or-connect-an-install.md) to downloaded media to upgrade the same way as any connected install. |
 
-Pick the tab that matches your install.
+Pick the tab that matches your install. You upgrade only the server: deployed agents run the new release's connectors from their next scan. See [Agents and upgrades](../configuration/agents/index.md#agents-and-upgrades).
 
-The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell wrapper that runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace. That pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
+The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell wrapper that runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace. The `dspmctl` program in that pod changes the ArgoCD applications through the Kubernetes API, with its own service account. It doesn't sign in to ArgoCD, and you don't need the `argocd` command-line interface (CLI) on the host.
 
 Run `dspmctl` and `dspm-installer` with `sudo`. Only root can read the default kubeconfig at `/etc/rancher/k3s/k3s.yaml`, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
 :::note
-On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` and `dspmctl` can fail with `command not found`. Run them by their full paths instead, for example `sudo /usr/local/bin/dspm-installer` or `sudo /usr/local/bin/dspmctl`.
+On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` and `dspmctl` can fail with `command not found`. Run them by their full paths instead, for example `sudo /usr/local/bin/dspm-installer` or `sudo /usr/local/bin/dspmctl`.
 :::
+
+## Download the Latest Installer
+
+Before every upgrade, whatever your install type, download the latest `dspm-installer` and run the upgrade with it. The `upgrade` command exists only in newer installers, and an installer from an older release can reject newer media.
+
+1. Read your license key into an environment variable.
+
+   ```bash
+   read -rs LICENSE_KEY && export LICENSE_KEY
+   ```
+
+2. Download the installer and replace the copy in `/usr/local/bin`.
+
+   ```bash
+   ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+   TMP_FILE=$(mktemp)
+   curl -Lf -o "$TMP_FILE" \
+     "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
+   sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+   rm -f "$TMP_FILE"
+   ```
+
+   Keep the `channel=stable` parameter. Without it, the registry can return a pre-release build.
+
+3. Confirm the version.
+
+   ```bash
+   dspm-installer --version
+   ```
+
+   The output should show `dspm-installer version {{installerVersion}}` or later. [Release and installer versions](../release-notes/versions.md) lists the installer for each release.
+
+If the server has no network access, run these commands on a connected machine with the same architecture, then copy `/usr/local/bin/dspm-installer` to the same path on the server with `scp` or removable media.
 
 ## Check Which Version Is Running
 
-Start by checking which version is running:
+Check which version is running:
 
 ```bash
 sudo dspmctl version
 ```
 
-Compare the output with the latest release Netwrix has announced. If they match, Access Analyzer is already up to date.
+Compare the output with the latest release, {{appVersion}}. If they match, Access Analyzer is already up to date. [Release and installer versions](../release-notes/versions.md) lists every release.
+
+## Upgrade to 1.2.0
+
+An install on a release earlier than 1.2.0 can upgrade to 1.2.0, or to any later release, only with `dspm-installer upgrade` on the server. This applies to every install type. The **Settings** page, automatic updates, and `dspmctl` can't make this upgrade.
+
+[Download the latest installer](#download-the-latest-installer) first, then run the command for your install type:
+
+| Install | Run |
+|---|---|
+| **Connected** | `sudo dspm-installer upgrade --download` |
+| **Air-gapped** | `sudo dspm-installer upgrade --bundle-dir <path-to-archive>`, after you [download the new release](#download-the-new-release) |
+| **Registry** | `sudo dspm-installer upgrade --download`, which also [converts the install](convert-or-connect-an-install.md#convert-a-registry-install) to downloaded media |
+
+These commands upgrade to the newest stable release. To upgrade to a specific release, add `--target-revision <version>` to the connected or registry command.
+
+After the install runs 1.2.0 or later, every upgrade method on this page works.
 
 ## Choose an Upgrade Command
 
@@ -45,8 +98,8 @@ Find your situation in the table and run its command on the server. Every comman
 | Upgrade a connected install to a specific release | `sudo dspm-installer upgrade --download --target-revision <version>` |
 | Upgrade a connected install from media you copied to the server | `sudo dspm-installer upgrade --bundle-dir <path-to-archive>` |
 | Upgrade an air-gapped install | `sudo dspm-installer upgrade --bundle-dir <path-to-archive>` |
-| Convert a registry install to downloaded media and upgrade it | `sudo dspm-installer upgrade --download --migrate --target-revision <version>` |
-| Convert a registry install to downloaded media on the same release | `sudo dspm-installer upgrade --download --migrate --target-revision <installed-version>` |
+| Convert a registry install to downloaded media and upgrade it | `sudo dspm-installer upgrade --download --target-revision <version>` |
+| Convert a registry install to downloaded media on the same release | `sudo dspm-installer upgrade --download --target-revision <installed-version>` |
 | Connect an air-gapped install | `sudo --preserve-env=LICENSE_KEY dspm-installer upgrade --connect` |
 | Connect an air-gapped install and upgrade it | Run `upgrade --connect`, then `upgrade --download --target-revision <version>` as a second command |
 | Redeploy the installed release, or downgrade | Add `--allow-downgrade` to the upgrade command |
@@ -58,7 +111,7 @@ These changes have no command:
 
 - **Connected to air-gapped.** `--connect` works in one direction only, so returning to air-gapped takes a reinstall. `upgrade --bundle-dir` works on a connected install, but the install stays connected: the version poller stays on and the license key stays saved.
 - **Connect and upgrade in one run.** `--connect` doesn't redeploy or change the release, so the upgrade is a second command.
-- **Registry install straight to air-gapped media.** `--migrate` requires `--download`, so convert the registry install while it's online first.
+- **Registry install straight to air-gapped media.** Converting needs `--download`, so convert the registry install while it's online first.
 - **`upgrade --download` on an air-gapped install.** The command refuses and exits with code `16`. Run `upgrade --connect` first.
 
 ## Upgrade
@@ -71,6 +124,8 @@ All three ways to upgrade a connected install run the same upgrade. Only one upg
 ### Upgrade from the Settings page
 
 You need the **Administrator** role.
+
+An install on a release earlier than 1.2.0 can't upgrade to 1.2.0 from this page. [Upgrade it with the installer](#upgrade-to-120) instead.
 
 1. Go to **Settings** > **System**.
 2. Select the version and click **Update**. The confirmation says the app downloads the release media and is briefly unavailable.
@@ -93,6 +148,8 @@ If another upgrade is already running, the page says so.
 
 The version poller checks for new releases every 12 hours. When a newer release matches the install's version constraint and Netwrix has published its media, the poller starts the same upgrade the **Settings** page starts.
 
+Automatic updates can't upgrade an install on a release earlier than 1.2.0 to 1.2.0. [Upgrade it with the installer](#upgrade-to-120) instead.
+
 If an upgrade fails partway through deploying, the poller doesn't retry it. Fix the cause, then run `sudo dspm-installer upgrade --download` on the host.
 
 ### Upgrade from the host
@@ -106,7 +163,7 @@ sudo dspm-installer upgrade --download
 Upgrade to a specific release:
 
 ```bash
-sudo dspm-installer upgrade --download --target-revision 1.5.0
+sudo dspm-installer upgrade --download --target-revision {{appVersion}}
 ```
 
 `--download` reads the license key from `/etc/dspm/installer.yaml`. On a host without a saved key, pass the key through the environment, as the install does:
@@ -138,7 +195,7 @@ Add `--dry-run` to check the preconditions and free space and print the upgrade 
 6. Turns automated sync back on and waits for every application to become healthy.
 7. Deletes the downloaded media.
 
-If something interrupts the upgrade (Ctrl-C, a dropped SSH session, or a stopped pod), it turns automated sync back on before it exits. Run the same command again to finish the upgrade.
+If something interrupts the upgrade (Ctrl-C, a dropped SSH session, or a stopped pod), the upgrade turns automated sync back on before it exits. Run the same command again to finish the upgrade.
 
 </TabItem>
 <TabItem value="airgap" label="Air-gapped upgrade">
@@ -149,36 +206,25 @@ Before it changes anything, the command checks that the server runs from offline
 
 ### Download the new release
 
-Download the new installer and the new media the same way you did for the install, with the new release's version number.
+[Download the latest installer](#download-the-latest-installer) first. Then download the new media the same way you did for the install, with the new release's version number.
 
-:::warning
-Download the latest `dspm-installer` binary along with the media, and run the upgrade with that binary. The `upgrade` command exists only in newer installers, and an installer from an older release can reject newer media. Confirm the version with `dspm-installer --version` after the download.
-:::
-
-1. Read your license key into an environment variable.
+1. Read your license key into an environment variable, if it isn't already set.
 
    ```bash
    read -rs LICENSE_KEY && export LICENSE_KEY
    ```
 
-2. Download the installer and the offline media archive for the new release.
+2. Download the offline media archive for the new release.
 
    ```bash
    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
-   VERSION='<release-version>'  # the release you're upgrading to, for example 1.6.0
-   TMP_FILE=$(mktemp)
-   curl -Lf -o "$TMP_FILE" \
-     "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
-   sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
-   rm -f "$TMP_FILE"
-   dspm-installer --version
-
+   VERSION='{{appVersion}}'  # the latest release; change it to upgrade to another one
    sudo mkdir -p /etc/dspm/media
    sudo curl -Lf -o "/etc/dspm/media/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz" \
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable"
    ```
 
-   Don't extract the archive, and keep its name as downloaded. If the server has no network access, run these commands on a connected machine with the same architecture, then copy `/usr/local/bin/dspm-installer` and the archive to the server with `scp` or removable media. Keep the `channel=stable` parameter on every download. Without it, the registry can return a pre-release build.
+   Don't extract the archive, and keep its name as downloaded. If the server has no network access, run these commands on a connected machine with the same architecture, then copy the archive to the server with `scp` or removable media, along with the installer. Keep the `channel=stable` parameter. Without it, the registry can return a pre-release build.
 
 3. Confirm the archive downloaded completely.
 
@@ -215,35 +261,53 @@ A host that later gains internet access can [connect the air-gapped install](con
 </TabItem>
 <TabItem value="registry" label="Registry upgrade">
 
-A registry install pulls releases from the Netwrix registry. To upgrade it with downloaded media instead, [convert it](convert-or-connect-an-install.md#convert-a-registry-install). Otherwise, follow these steps.
+A registry install pulls releases from the Netwrix registry. Upgrading it to a newer release converts it to downloaded media first, so later upgrades work like any connected install. The conversion downloads about 3.5 GB of media, takes about 15 to 20 minutes, and makes the app briefly unavailable. You can't undo it. See [Convert a registry install](convert-or-connect-an-install.md#convert-a-registry-install) for what the conversion does.
 
-If the installed version doesn't match the latest release, check how you installed the app. The installer's default `--target-revision` is `1.*`, a wildcard. If nobody pinned a specific version at install time, ArgoCD already tracks the newest stable 1.x tag and picks up new releases on its next sync. You don't need any `dspmctl` steps.
+Any of these starts the upgrade and its conversion:
 
-If you pinned a specific version at install time, or want to pin one now, follow these steps.
+- The **Settings** page: select the new version, then select **Update**.
+- The automatic updater: when a newer release that matches the install's version constraint appears, it starts the upgrade on its next run. It checks every 12 hours.
+- `dspmctl` on the host, with the following steps.
+- `dspm-installer upgrade --download`, as [Convert a registry install](convert-or-connect-an-install.md#convert-a-registry-install) shows.
 
-1. Point the umbrella app at the new version.
+To upgrade with `dspmctl`:
 
-   ```bash
-   sudo dspmctl set-revision netwrix 1.1.2
-   ```
-
-   For the `netwrix` app, this command does three things. It turns off automated sync and self-heal, sets `targetRevision` to `1.1.2`, and sets the Helm parameter `config.spec.source.targetRevision=1.1.2` so every child application (webapp, core-api, and so on) gets the same version.
-
-2. Trigger the sync. `set-revision` disables auto-sync, so nothing deploys until you run this command.
+1. Check that automated sync is on for the `netwrix` application. The upgrade refuses to start while it's off.
 
    ```bash
-   sudo dspmctl sync netwrix --prune
+   sudo dspmctl auto-status
    ```
 
-   `--prune` deletes resources the new release no longer includes. Without it, those leftover resources can keep the app showing as not healthy even after the upgrade completes.
-
-3. Turn auto-sync back on so later releases in the pinned range deploy without manual steps.
+   If it's off, turn it on:
 
    ```bash
    sudo dspmctl enable-auto netwrix
    ```
 
-   `enable-auto` changes only the sync policy. It doesn't force a reconcile, and the ArgoCD controller polls roughly every 3 minutes. If you ran only `enable-auto` and nothing changed yet, run `sync`.
+2. Start the upgrade and follow it until it finishes:
+
+   ```bash
+   sudo dspmctl set-revision netwrix <version> --wait
+   ```
+
+   The command explains the conversion, starts the upgrade job, and prints its progress. It exits with the job's exit code. The job pauses automated sync while it deploys and turns it back on when it finishes, so you don't run `sync` or `enable-auto` yourself.
+
+   If your session drops while the upgrade runs, the job keeps going. Check on it again with:
+
+   ```bash
+   sudo dspmctl upgrade-status --wait
+   ```
+
+:::note
+If you're upgrading from a version earlier than 1.1.7, the Apache Tika resources from the older release can remain in the cluster after the upgrade and keep the app showing as not healthy. Preview what a pruning sync removes, confirm that the output lists only the Tika resources, and then run the sync with `--prune`:
+
+```bash
+sudo dspmctl sync netwrix --prune --dry-run
+sudo dspmctl sync netwrix --prune
+```
+:::
+
+To roll a registry install back to an older release, see [Rolling back to a previous version](roll-back-to-a-previous-version.md). A rollback re-pins the install in the registry, and its next upgrade converts it.
 
 </TabItem>
 </Tabs>
@@ -254,13 +318,13 @@ On a connected install, when an upgrade fails after it starts applying the new v
 
 From the host, a rollback is a re-pin. The previous chart tag and images stay in the cluster, so you don't need the old media. The in-cluster registry keeps only the previous release's images, so a rollback works one release back. To roll back further, you need that release's media again.
 
-For the precautions to take first and the full procedure, see [Rolling back to a previous version](roll-back-to-a-previous-version.md). In short, read the previous version from the annotation, then run all three `dspmctl` commands. `set-revision` turns off automated sync so self-heal doesn't immediately re-sync the new version, `sync` applies it, and `enable-auto` turns automated sync back on. If you skip `enable-auto`, the `netwrix` app never syncs again, and the next `dspm-installer upgrade` refuses to run.
+For the precautions to take first and the full procedure, see [Rolling back to a previous version](roll-back-to-a-previous-version.md). Read the previous version from the annotation, then run all three `dspmctl` commands. `set-revision` turns off automated sync so self-heal doesn't immediately re-sync the new version, `sync` applies it, and `enable-auto` turns automated sync back on. If you skip `enable-auto`, the `netwrix` app never syncs again, and the next `dspm-installer upgrade` refuses to run.
 
 ```bash
 sudo kubectl -n argocd get application netwrix \
   -o jsonpath='{.metadata.annotations.dspm\.netwrix\.com/previous-target-revision}'
 sudo dspmctl set-revision netwrix v<previous>
-sudo dspmctl sync netwrix --prune
+sudo dspmctl sync netwrix
 sudo dspmctl enable-auto netwrix
 sudo dspm-installer wait-for-apps
 ```
@@ -275,7 +339,7 @@ A re-pin doesn't roll back database schema changes the new release made.
 |---|---|---|
 | `0` | The cluster runs the new release and every application is Synced and Healthy, or the cluster already runs the newest release. | Nothing. |
 | `10` | Netwrix rejected the license key. | Check the key, then run the command again. |
-| `15` | The command couldn't load or deploy the media, and the cluster is still on the previous release. With `--migrate`, the command also exits with this code when an agent node runs on a different CPU architecture from the server. | Fix the cause and run the command again. The deploy is idempotent. |
+| `15` | The command couldn't load or deploy the media, and the cluster is still on the previous release. When it converts a registry install, the command also exits with this code when an agent node runs on a different CPU architecture from the server. | Fix the cause and run the command again. The deploy is idempotent. |
 | `16` | A precondition failed, such as no cluster or root application, the install type doesn't match the command, the release isn't newer, automated sync is off, or the media volume lacks free space. Nothing changed. | Read the message. For automated sync, run `sudo dspmctl enable-auto netwrix` first. For a same-version redeploy, add `--allow-downgrade`. For free space, free space on the media volume or use `--tmp-dir`. |
 | `17` | The command couldn't download, verify, or unpack the media. Nothing changed. | Run the command again. It resumes the download. |
 | `20` | No release matches `--target-revision`, or the release has no media for this architecture. | Check the release number. |
@@ -285,7 +349,7 @@ A re-pin doesn't roll back database schema changes the new release made.
 
 ## Troubleshooting an Upgrade
 
-**Automated sync is still off after a failed upgrade.** Run the same upgrade command to finish it, or turn sync back on with `sudo dspmctl enable-auto netwrix`.
+**Automated sync is still off after a failed upgrade.** Run the same upgrade command to finish it, or turn sync back on with `sudo dspmctl enable-auto netwrix`. On the `netwrix` app, `enable-auto` also clears the pause an unfinished upgrade leaves.
 
 **An upgrade exits with code `70`, and running it again says the cluster is already on that version.** The new version is in place but wasn't healthy in time. Run `sudo dspm-installer wait-for-apps`.
 
@@ -303,58 +367,28 @@ sudo dspmctl version
 
 The output should show the version you set. Pod restarts take longer on a busy server, so if the version hasn't changed after five minutes, wait another two or three minutes and run the command again.
 
-For a detailed view of the sync, ask ArgoCD directly:
+For a detailed view of the sync, read the `netwrix` application's status:
 
 ```bash
-sudo kubectl exec -n argocd -ti deploy/dspmctl -- argocd app get argocd/netwrix
+sudo kubectl get application netwrix -n argocd \
+  -o custom-columns='REVISION:.spec.source.targetRevision,SYNC:.status.sync.status,HEALTH:.status.health.status'
 ```
 
-Check `TARGET REVISION` and `Sync Status`. The `netwrix` app only manages the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
+Check that `REVISION` shows the version you set and `SYNC` shows `Synced`. The `netwrix` app manages only the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
 
 ```bash
 sudo dspmctl sync netwrix.webapp
 ```
 
 <details>
-<summary>Troubleshooting: dspmctl hangs after a cancelled command</summary>
+<summary>Troubleshooting: dspmctl says an operation is already in progress</summary>
 
-If you press Ctrl-C part-way through a `dspmctl` command (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. Even `argocd version --client`, which needs no network at all, hangs, so the cause is local to the pod. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod unresponsive.
+If a `dspmctl` command fails with `an operation on <app> is already in progress`, ArgoCD is still running an earlier sync of that application. A sync keeps running in ArgoCD even if you press Ctrl-C while `dspmctl sync` waits for it. Wait for the sync to finish, then run the command again.
 
-Restart that pod and re-run the upgrade:
-
-```bash
-sudo kubectl rollout restart deploy/dspmctl -n argocd
-sudo kubectl rollout status deploy/dspmctl -n argocd
-sudo kubectl exec -n argocd deploy/dspmctl -- argocd version --client   # should print instantly now
-sudo dspmctl set-revision netwrix 1.1.2
-sudo dspmctl sync netwrix --prune
-```
-
-If `argocd version --client` still hangs after the restart, `dspmctl` isn't usable in that environment. Everything `dspmctl` does is an edit to the `netwrix` ArgoCD `Application` object, so make the same changes directly with `kubectl` from the host.
-
-Pin the umbrella chart:
+If the operation makes no progress after the ArgoCD application controller restarted, the request is stale. Clear it, then run the command again:
 
 ```bash
-sudo kubectl patch application netwrix -n argocd --type merge \
-  -p '{"spec":{"source":{"targetRevision":"1.1.2"}}}'
-```
-
-Set the Helm parameter that propagates the version to the child apps. List the parameters, find the 0-based position of `config.spec.source.targetRevision`, and use it as `N`:
-
-```bash
-sudo kubectl get application netwrix -n argocd \
-  -o jsonpath='{range .spec.source.helm.parameters[*]}{.name}{"\n"}{end}'
-sudo kubectl patch application netwrix -n argocd --type json \
-  -p '[{"op":"replace","path":"/spec/source/helm/parameters/N/value","value":"1.1.2"}]'
-```
-
-Turn auto-sync back on and force an immediate refresh:
-
-```bash
-sudo kubectl patch application netwrix -n argocd --type merge \
-  -p '{"spec":{"syncPolicy":{"automated":{"selfHeal":true,"prune":true}}}}'
-sudo kubectl annotate application netwrix -n argocd argocd.argoproj.io/refresh=hard --overwrite
-sudo kubectl get applications -n argocd -w
+sudo kubectl -n argocd patch application <app> --type=json -p '[{"op":"remove","path":"/operation"}]'
 ```
 
 </details>

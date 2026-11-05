@@ -29,7 +29,7 @@ The app is accessed in Salesforce via **App Launcher > Netwrix Lightning**.
 
 ## Key Terminology
 
-- **Scanner** — the process that catalogs all Salesforce metadata customizations; replaces the term "Spider" used in Platform Governance for NetSuite. Takes 4–5 days on first run.
+- **Scanner** — the process that catalogs all Salesforce metadata customizations; replaces the term "Spider" used in Strongpoint for NetSuite. Takes 4–5 days on first run.
 - **Customization Record** — a Platform Governance record documenting a single Salesforce metadata object (field, class, flow, etc.).
 - **Change Request** — the central record for planning, approving, and tracking a change.
 - **Change Log** — audit trail of changes to customizations; generated automatically by the scanner.

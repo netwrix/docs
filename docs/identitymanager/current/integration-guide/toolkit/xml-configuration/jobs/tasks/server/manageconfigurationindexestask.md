@@ -4,7 +4,7 @@ description: "Manage indexes for items from configuration."
 sidebar_position: 12
 ---
 
-Manage indexes for configuration items with the tool [Usercube-Manage-ConfigurationDependantIndexes](/docs/identitymanager/current/integration-guide/executables/references/manage-configurationdependantindexes).
+Manage indexes for configuration items with the tool [Usercube-Manage-ConfigurationDependantIndexes](../../../../../executables/references/manage-configurationdependantindexes).
 
 ## Examples
 ```xml

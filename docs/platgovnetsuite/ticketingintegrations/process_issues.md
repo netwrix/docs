@@ -60,7 +60,7 @@ continue to use that and reference the external ticket in the Change Request.
 9. Best practice is to enter a meaningful **Issue Description** to make it easy to identify the
    issue in a list or report.
 10. Select the **Process** affected by the issue.
-11. Add one or more **Customizations** affected by the issue. Platform Governance for NetSuite
+11. Add one or more **Customizations** affected by the issue. Strongpoint for NetSuite
     analyzes the customization records, attaches them to appropriate policies and determines the
     Change Control Level required.
 12. Check **Do Not ReSpider Automatically** if you prefer not to automatically run the spider when

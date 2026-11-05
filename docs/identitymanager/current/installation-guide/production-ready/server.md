@@ -7,11 +7,11 @@ sidebar_position: 30
 # Install the Server
 
 :::note
- If you are a SaaS client this topic does not apply. You can skip directly to end user authentication. See the Set up End-User Authentication topic for additional information. 
+ If you are a SaaS client this topic doesn't apply. You can skip directly to end user authentication. See the Set up End-User Authentication topic for additional information.
 :::
 Identity Manager Server can be installed on the same workstation as the database **or** on a separate workstation. If Identity Manager is installed on a separate workstation, it requires the SQL PowerShell components to function properly.
 
-Please make sure that the server requirements are met before going further. See the [Server](../../installation-guide/requirements/server-requirements) topic for additional information.
+ensure that the server requirements are met before going further. See the [Server](../../installation-guide/requirements/server-requirements) topic for additional information.
 
 ## Server Working Directory
 
@@ -25,7 +25,7 @@ The license key provided by Identity Manager must be set up in the **appsetting.
 
 It is **recommended** to run the Identity Manager Server as an IIS website.
 
-To install the Identity Manager Server as a Windows service, please jump to Install the Server as a Windows Service. See the Install the Server topic for additional information.
+To install the Identity Manager Server as a Windows service, jump to Install the Server as a Windows Service. See the Install the Server topic for additional information.
 
 Adding the Identity Manager Server as an IIS website can be achieved with the [Internet Information Services (IIS) Manager](https://www.iis.net) which can be launched with the `INETMGR.MSC` command. You need to have an IIS 10.0 **or** greater.
 
@@ -81,23 +81,23 @@ To create a service account you need to perform the following steps:
 **Step 1 –** Log on to a Windows server in the target domain environment. You should use an account with the necessary permissions to create new domain accounts.
 
 :::note
- The target domain is the domain where SQL Server is installed. 
+ The target domain is the domain where SQL Server is installed.
 :::
 **Step 2 –** Access the _Active Directory User **and** Computers_ tool with the command `dsa.mc`.
 
-**Step 3 –** Select the target domain **and** Click on **Users**. From the users list, right-click to select **New** > **User**.
+**Step 3 –** Select the target domain **and** Click **Users**. From the users list, right-click to select **New** > **User**.
 
 **Step 4 –** Choose a mnemonic _First Name_ for the Identity Manager Server, as for **Example** `<b>UsercubeContoso</b>Server`, **and** click **Next**.
 
 :::tip
- Remember, the down-level log on name in the format `DOMAIN/userName`,.as for **Example** `CONTOSO/identitymanagerContosoServer`. 
+ Remember, the down-level log on name in the format `DOMAIN/userName`,.as for **Example** `CONTOSO/identitymanagerContosoServer`.
 :::
 **Step 5 –** Set a password **and** remember it for later, check the boxes **User cannot change password** **and** **Password never expires**.
 
 This newly created service account is a domain account **and** will be used as an IIS identity.
 
 :::note
- You can go further **and** use Managed Service Account to avoid dealing with the service account password update yourself **and** let Windows worry about it. This feature requires installing Identity Manager on Windows Server 2016 **or** later, **and** using an Active Directory with a forest level set to Windows Server 2016 **or** later. 
+ You can go further **and** use Managed Service Account to avoid dealing with the service account password update yourself **and** let Windows worry about it. This feature requires installing Identity Manager on Windows Server 2016 **or** later, **and** using an Active Directory with a forest level set to Windows Server 2016 **or** later.
 :::
 ### Set an IIS identity
 
@@ -109,9 +109,9 @@ To set an IIS identity you need to perform the following steps:
 
 **Step 2 –** Select the `Usercube/<Organization>` application pool **and** right-click **and** select **Advanced Settings**.
 
-**Step 3 –** In the **Process Model** section, on the **Identity** list item, click on the three dots to open the **Application Pool Identity** dialog.
+**Step 3 –** In the **Process Model** section, on the **Identity** list item, click the three dots to open the **Application Pool Identity** dialog.
 
-**Step 4 –** Select the **Custom Account** radio button **and** click on **Set** **and** enter the previously created Service Account credentials:
+**Step 4 –** Select the **Custom Account** radio button **and** click **Set** **and** enter the previously created Service Account credentials:
 
 - User name in the format `DOMAIN/userName` that you have previously written down
 - Password, previously remembered
@@ -141,15 +141,15 @@ This guide will show you how to perform these operations using SQL Server Manage
 
 **Step 2 –** Expand the **Security** **and** **Login** nodes, **and** look for the Identity Manager service account in the list.
 
-If you cannot find the service account click on the **Login** node, right-click **and** select **New** > **Login**.
+If you can't find the service account click the **Login** node, right-click **and** select **New** > **Login**.
 
 **Step 3 –** On the **General** page, enter the service account login name in the down-level logon format, such as `CONTOSO/identitymanagerContosoServer`. If you're not sure about the correct spelling of your service account **or** domain, you can search for it using the search window. From the **Login** node, right-click **and** select **New login** > **Login name** > **Search**.
 
 **Step 4 –** Choose **either****Windows authentication** if you chose to connect the server to the database with a Windows service account (<b>Integrated Security=SSPI</b> in the connection string) **or** a **SQL Server authentication** for a SQL Server account (if you set up the connection string with a login/password). In the SQL case, fill in the same password in the form as in the connection string. You should now see the newly created login in the Login list.
 
-**Step 5 –** From the **Login** node, right-click the newly created login **and** select **Properties** then go to the **Server Roles** page on the left **and** make sure **public** is checked.
+**Step 5 –** From the **Login** node, right-click the newly created login **and** select **Properties** then go to the **Server Roles** page on the left **and** ensure **public** is checked.
 
-**Step 6 –** Go to **User Mapping****and** make sure `Usercube/<Organization/>` is checked (top panel), as well as **db_owner** **and** **public** (bottom panel).
+**Step 6 –** Go to **User Mapping****and** ensure `Usercube/<Organization/>` is checked (top panel), as well as **db_owner** **and** **public** (bottom panel).
 
 ![Bulk](/images/identitymanager/bulk.webp)
 
@@ -187,7 +187,7 @@ The Identity Manager Server service account that was chosen previously:
 to do
 - Is **missing** one of the needed permissions **and** you need to perform the steps underlined below:
 
-**Step 1 –** Click on **Edit** **and** then on **Add**.
+**Step 1 –** Click **Edit** **and** then on **Add**.
 
     ![Object Names](/images/identitymanager/enter-the-object-names-to-select.webp)
 
@@ -223,7 +223,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 ```text
 1.
 openssl req -x509 -newkey rsa:2048 -keyout <b>UsercubeContoso</b>.key -out <b>UsercubeContoso</b>.cert -days 18250
-2. 
+2.
 openssl pkcs12 -export -out <b>UsercubeContoso</b>.pfx -inkey <b>UsercubeContoso</b>.key -in <b>UsercubeContoso</b>.cert
 ```
 
@@ -296,7 +296,7 @@ Now that the Identity Manager Server has been provided with a service account wi
 
 The connection between the Server **and** the Database requires choosing an authentication method: [Windows Authentication](https://docs.microsoft.com/en-us/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15#windows-authentication) **or** SQL Server authentication. See the [Connection to the Database](../../integration-guide/network-configuration/server-configuration/database-connection) **and** [Usercube-Protect-CertificatePassword](../../integration-guide/executables/references/protect-certificatepassword) topics for additional information. Windows authentication will require the IIS identity to be set to the custom Windows service account used to log in to the Identity Manager's Windows Server session. SQL authentication will work with both the _built-in_ app pool identity **and** a custom service account. This authentication method will write the login **and** password directly in the connection string.
 
-`Runtime/*appsettings.json*` is a technical configuration file that enables you to set up the connection between the Server **and** the Database through the ConnectionString attribute. See the [Network Configuration](../../integration-guide/network-configuration) topic for additional information.
+`Runtime/*appsettings.json*` is a technical configuration file where you set up the connection between the Server **and** the Database through the ConnectionString attribute. See the [Network Configuration](../../integration-guide/network-configuration) topic for additional information.
 
 The connection string is set up in the `Runtime/*appsettings.json*` configuration file which can be edited with any text editor, such as [Notepad++](https://notepad-plus-plus.org/downloads/).
 
@@ -336,7 +336,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 ```
 
 :::info
- SQL Server authentication stores plain text credentials in the configuration file. This is **strongly discouraged**. To avoid storing plain text credentials, you should always strive to use Windows authentication **or** encrypt sensitive setting values such as the connection string. 
+ SQL Server authentication stores plain text credentials in the configuration file. This is **strongly discouraged**. To avoid storing plain text credentials, you should always strive to use Windows authentication **or** encrypt sensitive setting values such as the connection string.
 :::
 ## SSL Certificate
 
@@ -350,9 +350,9 @@ Your organization's DNS needs to be updated according to the requirements indica
 
 ## Test Your Installation
 
-In order to test your installation you must:
+to test your installation you must:
 
-**Step 1 –** Make sure the IIS site is running.
+**Step 1 –** ensure the IIS site is running.
 
 **Step 2 –** Go to the following URL with a browser: `<hostname>:<port>/hc` with the hostname **and** port set up in Create an IIS website. See the Install the Server topic for additional information.
 
@@ -360,7 +360,7 @@ In order to test your installation you must:
 
 ## Configure the Starting Mode in IIS (optional)
 
-This step is important if the scheduler is enabled. IIS starts the Identity Manager Server only if an incoming http request is made on the server **and** the scheduler is not launched until the Identity Manager Server is started. Because of that, you need to carefully set up the starting mode of IIS to force the starting of the Identity Manager Server.
+This step is important if the scheduler is enabled. IIS starts the Identity Manager Server only if an incoming http request is made on the server **and** the scheduler isn't launched until the Identity Manager Server is started. Because of that, you need to carefully set up the starting mode of IIS to force the starting of the Identity Manager Server.
 
 The Identity Manager Server warm up is done using the `<applicationInitialization>` element in the web.config file, the configuration is described in the [Microsoft documentation](https://learn.microsoft.com/en-us/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization).
 
@@ -380,13 +380,13 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 Once done, you need to check that the configured jobs are launched via the Identity Manager's scheduler without having to manually issue a request on the Identity Manager Server.
 
-If this is not correctly configured, any restart of your IIS **or** application pool could prevent jobs from being launched.
+If this isn't correctly configured, any restart of your IIS **or** application pool could prevent jobs from being launched.
 
 ## Set up End-User Authentication
 
 The next step consists in setting up one **or** more authentication methods for end-users. You may choose one **or** several external authentication providers among the following:
 
-- [OpenId Connect](https://openid.net/connect/)
+- [OpenID Connect](https://openid.net/connect/)
 - [WS-Federation](http://docs.oasis-open.org/wsfed/federation/v1.2/ws-federation.html)
 - [OAuth](https://tools.ietf.org/html/rfc6749)
 - [SAML2](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)

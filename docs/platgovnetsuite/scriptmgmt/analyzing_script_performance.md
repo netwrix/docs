@@ -27,7 +27,7 @@ The **Add Audit Tags Mass Update** inserts audit **Start Tags** into the scripts
 capture of script performance data. Script Monitoring calculates execution speed based on the
 difference between successive Start and End tags. Multiple tags can cause inaccuracy. The mass
 update backs up your scripts so you can access the older version through the Customization Record.
-Platform Governance for NetSuite has an Archive folder to store the original versions, and this
+Strongpoint for NetSuite has an Archive folder to store the original versions, and this
 folder must be set on the mass update when adding audit tags.
 
 Audit tags can't be automatically added for Client Scripts due to the NetSuite Client Script

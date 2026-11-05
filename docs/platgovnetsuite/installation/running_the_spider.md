@@ -46,7 +46,7 @@ If you aren't sure the spider completed successfully:
 
 ### Wait for the Scheduled Scripts to Run
 
-Platform Governance for NetSuite's scheduled scripts run to document the connections between
+Strongpoint for NetSuite's scheduled scripts run to document the connections between
 customizations. This phase takes 3 to 5 days to complete. The scripts automatically stop processing
 after 10 minutes and reschedule themselves based on queue priority to enable other scripts to run.
 
@@ -69,7 +69,7 @@ Status** tab to confirm the **Last Completed Spider** shows a date.
 ### Validate the Data and ReSpider
 
 There are very large differences between NetSuite accounts. The automated algorithms may not catch
-everything during the first pass. Platform Governance for NetSuite has a variety of tools to
+everything during the first pass. Strongpoint for NetSuite has a variety of tools to
 validate the data.
 
 1. Open **Strongpoint** > **Support** > **Installation Settings**

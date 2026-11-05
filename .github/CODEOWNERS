@@ -16,10 +16,15 @@
 /static/images/1secure/ @netwrix/1secure-docs
 
 # Access Analyzer team
-/docs/accessanalyzer/ @netwrix/accessanalyzer-docs
-/sidebars/accessanalyzer/ @netwrix/accessanalyzer-docs
-/static/files/accessanalyzer/ @netwrix/accessanalyzer-docs
-/static/images/accessanalyzer/ @netwrix/accessanalyzer-docs
+/docs/accessanalyzer/11.6/ @netwrix/team-dspm-accessanalyzerclassic
+/sidebars/accessanalyzer/11.6.js @netwrix/team-dspm-accessanalyzerclassic
+/static/images/accessanalyzer/11.6/ @netwrix/team-dspm-accessanalyzerclassic
+/docs/accessanalyzer/12.0/ @netwrix/team-dspm-accessanalyzerclassic
+/sidebars/accessanalyzer/12.0.js @netwrix/team-dspm-accessanalyzerclassic
+/static/images/accessanalyzer/12.0/ @netwrix/team-dspm-accessanalyzerclassic
+/docs/accessanalyzer/26.1/ @netwrix/accessanalyzer-docs
+/sidebars/accessanalyzer/26.1.js @netwrix/accessanalyzer-docs
+/static/images/accessanalyzer/26.1/ @netwrix/accessanalyzer-docs
 
 # Access Information Center team
 /docs/accessinformationcenter/ @netwrix/accessinformationcenter-docs

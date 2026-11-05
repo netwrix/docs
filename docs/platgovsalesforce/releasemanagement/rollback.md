@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Rollback
 
-When deploying changes in a single Salesforce environment, you can roll back to a previous state after a deployment. Platform Governance for Salesforce's rollback tool
+When deploying changes in a single Salesforce environment, you can roll back to a previous state after a deployment. Strongpoint for Salesforce's rollback tool
 lets you roll back all or selected components of your deployment, enabling you
 to address a specific problem. There are two steps:
 

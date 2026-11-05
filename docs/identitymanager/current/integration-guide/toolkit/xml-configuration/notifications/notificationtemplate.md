@@ -4,13 +4,13 @@ description: ""
 sidebar_position: 2
 ---
 
-A notification template is used to overwrite the subject and/or body of a [native notification](/docs/identitymanager/current/integration-guide/notifications/native) with personalized templates.
+A notification template is used to overwrite the subject and/or body of a [native notification](../../../notifications/native) with personalized templates.
 
 ## Authorized code in templates
 
-Razor templates referenced by `RazorTemplate` are compiled with the same security restrictions as [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#white-list). Only methods, classes, and namespaces from the white list can be used in template code.
+Razor templates referenced by `RazorTemplate` are compiled with the same security restrictions as [C# expressions](../../expressions#white-list). Only methods, classes, and namespaces from the white list can be used in template code.
 
-See [Razor template white list](/docs/identitymanager/current/integration-guide/toolkit/expressions#razor-template-white-list) for the template-specific additions.
+See [Razor template white list](../../expressions#razor-template-white-list) for the template-specific additions.
 
 
 ## Examples

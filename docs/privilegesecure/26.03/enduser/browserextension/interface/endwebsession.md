@@ -1,6 +1,13 @@
 ---
 title: "End Web Session"
-description: "End Web Session"
+description: "End a web session from the browser extension with the END MY SESSION link and learn how the Activity closes."
+keywords:
+  - End Web Session
+  - END MY SESSION
+  - green session page
+  - browser extension
+  - web session
+  - Close Tab
 sidebar_position: 20
 ---
 
@@ -11,23 +18,22 @@ the extension icon displays the green session page.
 
 To end a Web Session.
 
-**Step 1 –** Open the browser extension interface to display the green session page
+1. Open the browser extension interface to display the green session page
 
-![Browser Extension Start Web Session](/images/privilegesecure/26.03/accessmanagement/enduser/browserextension/browserextensionstartsession.webp)
+   ![Browser Extension Start Web Session](/images/privilegesecure/26.03/accessmanagement/enduser/browserextension/browserextensionstartsession.webp)
 
-A count-down timer indicates how much time is remaining for the web session. A REC icon is
-overlayed on the extension if the current page is being recorded.
+   A count-down timer indicates how much time is remaining for the web session. A REC icon is
+   overlaid on the extension if the current page is being recorded.
 
-**Step 2 –** Click the red **END MY SESSION** link to close the web session.
+2. Click the red **END MY SESSION** link to close the web session.
+3. A notification displays to indicate that the session has ended. Click the **Close
+   Tab** button on the page or close the tab manually.
 
-**Step 3 –** A notification displays to indicate that the session has ended. Click the **Close
-Tab** button on the page or close the tab manually.
-
-![Browser Extension End Session Message](/images/privilegesecure/26.03/accessmanagement/enduser/browserextension/browserextensionendsession.webp)
+   ![Browser Extension End Session Message](/images/privilegesecure/26.03/accessmanagement/enduser/browserextension/browserextensionendsession.webp)
 
 If the browser extension is configured to automatically end the Activity when all sessions are
 closed, the Activity will automatically be canceled if there are no remaining browser tabs for the
-Activity. 
+Activity.
 
 If the extension is configured to not end the Activity sessions on web session closure, the
-Activity can be closed by clicking on the red icon. 
+Activity can be closed by clicking on the red icon.

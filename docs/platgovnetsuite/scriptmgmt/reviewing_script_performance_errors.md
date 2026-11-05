@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Reviewing Script Performance and Errors
 
-There are several tools included in Platform Governance for NetSuite that enable analysis of the
+There are several tools included in Strongpoint for NetSuite that enable analysis of the
 script data.
 
 ## Performance Data

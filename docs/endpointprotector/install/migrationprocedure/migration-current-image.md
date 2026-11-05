@@ -107,7 +107,7 @@ EPP clients continue logging events locally during server downtime. The server r
 :::
 
 :::tip
-In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, allowing the server to focus on the upgrade and ensuring no logs remain unprocessed in the queue. You can disable client communications in several ways:
+In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, so the server can complete the upgrade and no logs remain unprocessed in the queue. You can disable client communications in several ways:
 - Blocking the EPP communication port on the perimeter or host-based firewall
 - Blocking the port at the virtual machine network stack level (vSwitch port group policy, NSX rule, or equivalent)
 
@@ -116,7 +116,7 @@ Re-enable communications after you verify the upgraded server and it's ready to 
 
 ### VM Snapshot and Backup
 
-**This step is non-negotiable. Don't proceed without completing both.**
+**This step is mandatory. Don't proceed without completing both.**
 
 :::note
 VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot leaves you with no rollback path — if a failure occurs, recovery may be impossible, and Netwrix Support can't help restore the environment.
@@ -169,6 +169,10 @@ The System Configuration Backup doesn't include logs and file shadows — and Cr
 If your organization has compliance requirements for data retention (e.g., GDPR, HIPAA, SOX), never decommission the old server until you have confirmed that an alternative solution (SIEM, external export) meets log retention requirements.
 :::
 
+### Obtaining the Offline Activation Patch
+
+To activate Content Aware Protection or eDiscovery on the 2608 server, you need the Offline Activation Patch for 2608. Request it in advance from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html), before the maintenance window begins. Servers on version 2611.0.1.x and later don't need the patch.
+
 ### Pre-Migration Checklist Summary
 
 | # | Task | Status |
@@ -183,6 +187,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 | 8 | Appliance → Server Information screenshot taken | ☐ |
 | 9 | EPP Client 2608 packages downloaded | ☐ |
 | 10 | Enforced Encryption (EE) Client 2608 packages downloaded (if applicable) | ☐ |
+| 11 | Offline Activation Patch for 2608 obtained from Netwrix Endpoint Protector Support | ☐ |
 
 ---
 
@@ -226,7 +231,7 @@ If you use Enforced Encryption and change the IP/FQDN, every user with an EE-pro
 :::
 
 :::warning
-If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, you must review your SSO configuration after you restore the backup. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
+If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, you must review your SSO configuration after you restore the backup. SSO response/callback URLs include the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case so Netwrix Support updates it on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
 :::
 
 ### Deploying the 2608 Base Image
@@ -259,6 +264,10 @@ To upgrade a clean appliance, activate at least a Trial license. Go to **System 
 After successful activation, you should see a green banner at the top.
 
 ![EPP License Trial activation](licensetrialactivation.webp)
+
+:::tip Apply the Offline Activation Patch first
+To activate Content Aware Protection or eDiscovery on the new server, first apply the Offline Activation Patch that matches your server version, which is 2608 for this migration. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
+:::
 
 ### Restoring Your Backup onto 2608
 
@@ -304,6 +313,10 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 ![Appliance → Server Information — license](server_info_license.webp)
 
 If the license doesn't show as active, or entitlements look incorrect, contact Netwrix Support or your account team before continuing.
+
+:::tip Apply the Offline Activation Patch first
+To activate Content Aware Protection or eDiscovery on the new server, first apply the Offline Activation Patch that matches your server version, which is 2608 for this migration. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
+:::
 
 ---
 
@@ -376,7 +389,7 @@ If you use eDiscovery with Scan Locations configured on any policy, this check i
 In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, without reporting an error.
 :::
 
-If you use Content Aware Protection, this check is recommended after restore:
+If you use Content Aware Protection, Netwrix recommends this check after restore:
 
 1. Test each active CAP policy against a known-blocked transfer to confirm it still triggers.
 2. If a policy doesn't trigger, open it, edit it, and save it — even without changing anything — to redistribute it to endpoints.
@@ -395,7 +408,7 @@ policies relying on them still work as expected.
 
 ### DPI / CAP Functionality Verification
 
-If using Deep Packet Inspection or Content Aware Protection:
+If you use Deep Packet Inspection or Content Aware Protection:
 
 1. Verify endpoints trust the root CA certificate.
 2. Test a known-blocked transfer to confirm CAP policy is active.
@@ -465,7 +478,7 @@ After reconfiguration, verify each integration is functioning:
 :::warning
 **Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after you restore the backup. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until you correct it. You have two options:
 1. Manually recreate the SSO configuration in **System Configuration → SSO / Single Sign-On** with the updated response/callback URL, and update the corresponding redirect URI in your identity provider.
-2. Raise a Netwrix Support case to have the SSO configuration updated on the backend.
+2. Raise a Netwrix Support case so Netwrix Support updates the SSO configuration on the backend.
 :::
 
 :::warning

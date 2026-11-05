@@ -4,7 +4,7 @@ title: Approval Process - Zendesk Integration
 
 # Overview
 
-Platform Governance for Salesforce – Zendesk Integration supports three types of approval processes. These processes control how Change Requests (CRs) are approved, either within Zendesk or Salesforce. The approval type is configured in the app settings in Zendesk and determines the user actions available.
+Strongpoint for Salesforce – Zendesk Integration supports three types of approval processes. These processes control how Change Requests (CRs) are approved, either within Zendesk or Salesforce. The approval type is configured in the app settings in Zendesk and determines the user actions available.
 
 # Approval Process Types
 

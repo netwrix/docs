@@ -9,7 +9,7 @@ sidebar_position: 50
 You can fine-tune your portal pages by customizing display options. With these options, you can
 personalize the GroupID portal.
 
-These settings are saved for a user with respect to the identity store. When this user logs on to
+The portal saves these settings for each user per identity store. When this user logs on to
 another GroupID portal for the same identity store, the settings apply there too.
 
 ## Set Identity Store mode
@@ -19,7 +19,7 @@ link different identity stores. If an administrator creates a GroupID Portal and
 the linked identity stores, the portal users can view the data from the linked identity stores at
 the same time, rather than having to switch identity stores.
 
-Via Portal settings, you can choose either of the two modes by following these steps:
+To choose a mode in portal settings:
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -32,11 +32,10 @@ Step 3 – Click **Save**.
 
 ## Set a language for notifications
 
-GroupID generates a number of notifications that are, by default, sent to users in the English
-language. However, a user can opt to receive notifications in a different language by personalizing
+By default, GroupID sends notifications to users in English. However, a user can opt to receive notifications in a different language by personalizing
 the language settings from the **User Settings** panel in the portal.
 
-However, there are a few exceptions to it. See the
+A few notifications are exceptions. See the
 [Notifications](/docs/directorymanager/11.1/admincenter/notification/overview.md) topic for more information.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -71,18 +70,18 @@ page.
 Step 1 – Click the **Settings** icon at the top of the page.
 
 Step 2 – In the **History items to display on home page** box, set the maximum number of history
-items to be displayed on the portal's home page.
+items to display on the portal's home page.
 
 Step 3 – Click **Save**.
 
-History is displayed if the administrator has enabled history tracking for the identity store.
+The portal displays history if the administrator has enabled history tracking for the identity store.
 
 ## Set the number of history items to show for objects
 
-Set the number of history items to display on the History tab. This tab is displayed when viewing
-the properties for a User, Group, Contact, or Mailbox.
+Set the number of history items to display on the History tab. This tab appears when you view
+the properties of a User, Group, Contact, or Mailbox.
 
-This setting also controls the number of history items displayed on the
+This setting also controls the number of history items that appear on the
 [My History](/docs/directorymanager/11.1/portal/history/myhistory.md), [My Direct Reports' History](/docs/directorymanager/11.1/portal/history/mydirectreport.md),
 and [My Groups' History](/docs/directorymanager/11.1/portal/history/mydirectorygroup.md) pages.
 
@@ -93,13 +92,13 @@ pages that display history data.
 
 Step 3 – Click **Save**.
 
-History is displayed if the administrator has enabled history tracking for the identity store.
+The portal displays history if the administrator has enabled history tracking for the identity store.
 
 ## Set the number of recent objects to show
 
 The GroupID portal keeps a list of recently viewed objects on the left navigation bar. This provides
 a convenient way to navigate back to objects later. You can specify the number of recent objects to
-be shown on the navigation bar.
+show on the navigation bar.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -110,12 +109,12 @@ Step 3 – Click **Save**.
 
 ## Set the default domains for search lists
 
-You can specify the default domains to be searched when you perform a search using the portal. If
+You can specify the default domains to search when you search in the portal. If
 portal is running in:
 
-- **Stand-alone mode**: domain of the associated identity store is listed.
+- **Stand-alone mode**: the portal lists the domain of the associated identity store.
 
-- **Linked mode**: domains of all the linked identity stores are listed.
+- **Linked mode**: the portal lists the domains of all the linked identity stores.
 
 To select domains for searches:
 
@@ -128,7 +127,7 @@ Step 3 – Click **Save**.
 
 ## Set the number of results to show on a page
 
-You can specify the number of search results to be displayed on a portal page.
+You can specify the number of search results to display on a portal page.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -139,8 +138,8 @@ Step 3 – Click **Save**.
 
 ## Show additional group ownership in My Groups
 
-By default, the **My Groups** page displays the groups that you are a primary owner for. You can,
-however, set this page to display those groups too for which you are an additional owner.
+By default, the **My Groups** page displays the groups that you are a primary owner for. You can
+also set this page to display groups for which you are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -154,7 +153,7 @@ Step 4 – Click **Save**.
 ## Show additional group ownership in My Expiring Groups
 
 By default, the **My Expiring Groups** page displays the soon-to-expire groups that you are the
-primary owner of. You can, however, set this page to display those expiring groups too for which you
+primary owner of. You can also set this page to display expiring groups for which you
 are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -166,7 +165,7 @@ Step 3 – Click **Save**.
 ## Show additional group ownership in My Expired Groups
 
 By default, the **My Expired Groups** page displays the expired groups that you are the primary
-owner for. You can, however, set this page to display those expired groups too for which you are an
+owner for. You can also set this page to display expired groups for which you are an
 additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -178,7 +177,7 @@ Step 3 – Click **Save**.
 ## Show additional group ownership in My Deleted Groups
 
 By default, the **My Deleted Groups** page displays the deleted groups that you are the primary
-owner for. You can, however, set this page to display those deleted groups too for which you are an
+owner for. You can also set this page to display deleted groups for which you are an
 additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -190,7 +189,7 @@ Step 3 – Click **Save**.
 ## Display additional group ownership in Smart Groups
 
 By default, the **My Smart Groups** page displays the Smart Group that you are the primary owner
-for. You can, however, set this page to display those Smart Groups too for which you are an
+for. You can also set this page to display Smart Groups for which you are an
 additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -202,7 +201,7 @@ Step 3 – Click **Save**.
 ## Display additional group ownership in Dynasties
 
 By default, the My Dynasties page displays the Dynasties that you are the primary owner for. You
-can, however, set this page to display those Dynasties too for which you are an additional owner.
+can also set this page to display Dynasties for which you are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -213,13 +212,36 @@ Step 3 – Click **Save**.
 ## Display Additional Manager Direct Reports
 
 By default, the **My Direct Reports** page displays the users that you are the primary manager for.
-You can, however, set this page to display those users too for which you are an additional manager.
+You can also set this page to display users for whom you are an additional manager.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
 Step 2 – Select the **Display Additional Manager Direct Reports** checkbox.
 
 Step 3 – Click **Save**.
+
+## Display exchange co-managed groups
+
+By default, the **My Groups** page displays the groups that you are the primary owner for. You can
+also set this page to display groups for which you are an Exchange co-managed owner.
+A co-managed owner is an additional owner added in Microsoft Exchange. Exchange lists such owners in
+the `msExchCoManagedByLink` attribute of the group.
+
+Step 1 – Click the **Settings** icon at the top of the page.
+
+Step 2 – Select the **Display exchange co-managed groups** checkbox.
+
+Step 3 – Click **Save**.
+
+:::note
+This option is available only for Active Directory identity stores, and it works only if the
+identity store's messaging provider supports Exchange additional owners.
+
+The administrator can also enable **Display Co-Managed Groups in My Groups** in the portal's
+[advanced settings](/docs/directorymanager/11.1/admincenter/applications/portal/server/advanced.md#listings-display).
+When the administrator enables it, the portal displays co-managed groups for all users, regardless of
+whether this checkbox is selected. The portal displays co-managed groups if either setting is enabled.
+:::
 
 ## Reset default user options
 
@@ -229,7 +251,7 @@ Step 1 – Click the **Settings** icon at the top of the page.
 
 Step 2 – On the **User Settings** page, click **Reset Defaults**.
 
-The following table lists the default values that are reset:
+The following table lists the default values that **Reset Defaults** restores:
 
 | Option                                         | Default Value                                    |
 | ---------------------------------------------- | ------------------------------------------------ |

@@ -21,7 +21,7 @@ products:
 
 This article explains how to add a new entry to the Justification List in Endpoint Protector (EPP) and apply it to a Content Aware Protection policy for user remediation.
 
-For the full reference, see [Justifications List](/docs/endpointprotector/admin/systempar#justiﬁcations-list) in the System Parameters documentation.
+For the full reference, see [Justifications List](/docs/endpointprotector/admin/systempar#justifications-list) in the System Parameters documentation.
 
 ## Instructions
 

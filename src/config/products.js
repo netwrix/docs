@@ -243,9 +243,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '11.2',
+        label: '11.2',
+        isLatest: true,
+        sidebarFile: './sidebars/directorymanager/11.2.js',
+      },
+      {
         version: '11.1',
         label: '11.1',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/directorymanager/11.1.js',
       },
       {
@@ -255,7 +261,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/directorymanager/11.0.js',
       },
     ],
-    defaultVersion: '11.1',
+    defaultVersion: '11.2',
   },
   {
     id: 'policypak',
@@ -532,7 +538,7 @@ export const PRODUCTS = [
   },
   {
     id: 'platgovnetsuite',
-    name: 'Platform Governance for NetSuite',
+    name: 'Strongpoint for NetSuite',
     description: 'NetSuite governance and compliance',
     path: 'docs/platgovnetsuite',
     categories: ['Identity Management'],
@@ -548,7 +554,7 @@ export const PRODUCTS = [
   },
   {
     id: 'platgovnetsuiteflashlight',
-    name: 'Platform Governance for NetSuite Flashlight',
+    name: 'Strongpoint for NetSuite Flashlight',
     description: 'Lightweight NetSuite documentation and analysis',
     path: 'docs/platgovnetsuiteflashlight',
     categories: ['Other'],
@@ -564,7 +570,7 @@ export const PRODUCTS = [
   },
   {
     id: 'platgovsalesforce',
-    name: 'Platform Governance for Salesforce',
+    name: 'Strongpoint for Salesforce',
     description: 'Salesforce governance and compliance',
     path: 'docs/platgovsalesforce',
     categories: ['Identity Management'],
@@ -614,12 +620,6 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
-      {
-        version: '4.2',
-        label: '4.2',
-        isLatest: false,
-        sidebarFile: './sidebars/privilegesecure/4.2.js',
-      },
     ],
     defaultVersion: '26.03',
   },
@@ -632,13 +632,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '2.22',
-        label: '2.22',
+        version: 'current',
+        label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/privilegesecurediscovery/2.22.js',
+        sidebarFile: './sidebars/privilegesecurediscovery.js',
+        apiSidebarPath: './docs/privilegesecurediscovery/integrations/api/reference/sidebar.ts',
       },
     ],
-    defaultVersion: '2.22',
   },
   {
     id: 'recoveryforactivedirectory',
@@ -975,7 +975,7 @@ function transformApiSidebarLabels(items) {
     if (item.type === 'category') {
       return {
         ...item,
-        label: camelToTitleCase(item.label),
+        label: /\s/.test(item.label) ? item.label : camelToTitleCase(item.label),
         items: item.items ? transformApiSidebarLabels(item.items) : item.items,
       };
     }
@@ -1009,7 +1009,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
         ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
-            .filter(item => !(item.type === 'doc' && item.id?.endsWith('/changetracker-hub')))
+            .filter(item => !(item.type === 'doc' && (item.id?.endsWith('/changetracker-hub') || item.id?.endsWith('/netwrix-privilege-secure-for-discovery-api'))))
         : [];
 
       // Build plugin configuration

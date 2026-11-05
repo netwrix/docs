@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Agents Interface
 
-Use the Agents interface to view, deploy, and manage Agents from a centralized
-location to the targeted domain controllers in a domain. You must deploy the Agent on all domain
+Use the Agents interface to deploy Agents to the targeted domain controllers in a domain, and to
+view and manage them from a centralized location. You must deploy the Agent on all domain
 controllers that you want to receive event data for. After you deploy one or more Agents to a
 domain, it becomes known as a targeted domain.
 
@@ -53,7 +53,7 @@ information for an Agent:
 
     :::note
     When the **Send Latency Alerts** option is enabled in the
-    [Event Filtering Configuration Window](/docs/threatprevention/8.1/admin/configuration/eventfilteringconfiguration.md), a
+    [Event Filtering Configuration Window](/docs/threatprevention/8.1/configuration/eventfilteringconfiguration.md), a
     warning symbol appears to indicate excessive latency. This warning symbol also appears when
     the Agent fails to load the instrumentation DLL, SI.ActiveDirectoryMonitor.dll (commonly
     known as ADMonitor DLL), into the LSASS process or when it fails to load the instrumentation

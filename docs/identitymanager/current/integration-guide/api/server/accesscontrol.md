@@ -485,7 +485,7 @@ Deletes an assigned profile.
 #### Get
 ##### Summary:
 
-Returns all the openId clients according to the provided query.
+Returns all the OpenID clients according to the provided query.
 
 ##### Parameters:
 
@@ -510,7 +510,7 @@ Returns all the openId clients according to the provided query.
 #### Post
 ##### Summary:
 
-Creates an openId client.
+Creates an OpenID client.
 
 ##### Parameters:
 
@@ -522,20 +522,20 @@ Creates an openId client.
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the openId client creation. | OpenIdClientCreatedResult |
+| 200 | The result of the OpenID client creation. | OpenIdClientCreatedResult |
 
 ### /api/AccessControl/OpenIdClient/\{id\}
 
 #### Get
 ##### Summary:
 
-Returns an openId client corresponding to the provided identifier and its information according to the provided query.
+Returns an OpenID client corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the openId client. | True |  |  |
+| id | Identifier of the OpenID client. | True |  |  |
 | squery | Query compliant to the API query grammar. | False |  |  |
 | Path | Represents the permission path. | False |  |  |
 | QueryRootEntityType | Defines the query root entity type. | False |  |  |
@@ -548,43 +548,43 @@ Returns an openId client corresponding to the provided identifier and its inform
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The open id client. | OpenIdClient |
+| 200 | The OpenID client. | OpenIdClient |
 
 #### Put
 ##### Summary:
 
-Updates an openId client.
+Updates an OpenID client.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the openId client to update. | True |  |  |
+| id | Identifier of the OpenID client to update. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the openId client update. | OpenIdClientUpdatedResult |
+| 200 | The result of the OpenID client update. | OpenIdClientUpdatedResult |
 
 #### Delete
 ##### Summary:
 
-Deletes an openId client.
+Deletes an OpenID client.
 
 ##### Parameters:
 
 | Name | Description | Required | Type | Reference |
 | --- | --- | --- | --- | --- |
-| id | Identifier of the openId client to delete. | True |  |  |
+| id | Identifier of the OpenID client to delete. | True |  |  |
 | api-version | The requested API version | True |  |  |
 
 ##### Responses:
 
 | Code | Description | Reference |
 | --- | --- | --- |
-| 200 | The result of the openId client delete. | OpenIdClientDeletedResult |
+| 200 | The result of the OpenID client delete. | OpenIdClientDeletedResult |
 
 ### /api/AccessControl/Profile
 

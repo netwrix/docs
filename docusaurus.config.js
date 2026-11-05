@@ -10,6 +10,16 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
 import { pingcastleSplitRedirects } from './src/config/redirects/pingcastle-split.js';
+import { threatManager33Redirects } from './src/config/redirects/threatmanager-3.3.js';
+import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects } from './src/config/redirects/privilegesecurediscovery.js';
+import { threatPrevention81Redirects } from './src/config/redirects/threatprevention-8.1.js';
+import { directoryManager110Redirects } from './src/config/redirects/directorymanager-11.0.js';
+import { privilegeSecure42Redirects } from './src/config/redirects/privilegesecure-4.2.js';
+import { isIndexableSite } from './src/config/indexing.js';
+import { identityRecovery31Redirects } from './src/config/redirects/identityrecovery-3.1.js';
+import robotsTxtPlugin from './src/plugins/robotsTxt.js';
+import { docVariablesPreprocessor } from './src/config/docVariables.js';
+
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -73,6 +83,8 @@ const unversionedDocsBasePaths = redirectProducts
   })
   .filter(Boolean);
 
+const siteUrl = process.env.APP_EXTERNAL_URL || 'http://localhost:4500';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Netwrix Product Documentation',
@@ -82,7 +94,10 @@ const config = {
   // Set the production url of your site here
   // Use environment variable for dynamic URL configuration
   projectName: 'docs',
-  url: process.env.APP_EXTERNAL_URL || 'http://localhost:4500',
+  url: siteUrl,
+  // Pages on any host other than the production one carry a noindex meta tag
+  // (and Docusaurus skips the sitemap), so docs-dev stays out of search results.
+  noIndex: !isIndexableSite(siteUrl),
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
@@ -94,12 +109,18 @@ const config = {
   // own plugin instance regardless of filtering, so those stay strict to catch
   // real mistakes during single-product iteration.
   onBrokenLinks: targetProduct ? 'warn' : 'throw',
-  onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
 
   // Set Mermaid
   markdown: {
     mermaid: true,
+    // Moved here from the deprecated top-level onBrokenMarkdownLinks option
+    // (removed in Docusaurus v4).
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+    // Fills {{appVersion}} and the other release tokens; see src/config/docVariables.js.
+    preprocessor: docVariablesPreprocessor,
     // Strip trailing periods from title/sidebar_label in generated API operation pages.
     // The OpenAPI summaries often end with a period; Docusaurus uses title as the
     // prev/next pagination label, so this cleans up navigation text site-wide.
@@ -178,6 +199,9 @@ const config = {
         };
       },
 
+      // Writes build/robots.txt: crawlable on docs.netwrix.com only
+      robotsTxtPlugin,
+
       // Google Analytics
       [
         '@docusaurus/plugin-google-gtag',
@@ -195,6 +219,12 @@ const config = {
           ...pingcastleSplitRedirects
             .filter(({ productId }) => activeProductIds.includes(productId))
             .map(({ from, to }) => ({ from, to })),
+          ...(activeProductIds.includes('threatmanager') ? threatManager33Redirects : []),
+          ...(activeProductIds.includes('privilegesecurediscovery') ? privilegeSecureDiscoveryRedirects : []),
+          ...(activeProductIds.includes('threatprevention') ? threatPrevention81Redirects : []),
+          ...(activeProductIds.includes('directorymanager') ? directoryManager110Redirects : []),
+          ...(activeProductIds.includes('privilegesecure') ? privilegeSecure42Redirects : []),
+          ...(activeProductIds.includes('identityrecovery') ? identityRecovery31Redirects : []),
           ...(activeProductIds.includes('changetracker')
             ? [{ from: '/docs/changetracker/componentreleases', to: '/docs/changetracker' }]
             : []),
@@ -218,6 +248,9 @@ const config = {
           }),
         ],
         createRedirects(existingPath) {
+          // Privilege Secure for Discovery dropped its version folder; keep the old 2_22 addresses working.
+          const legacyPaths = privilegeSecureDiscoveryLegacyPaths(existingPath);
+          if (legacyPaths) return legacyPaths;
           for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
             const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
             if (existingPath.startsWith(versionedPrefix)) {
@@ -262,11 +295,49 @@ const config = {
         },
       },
     ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi-privilegesecurediscovery',
+        docsPluginId: 'privilegesecurediscovery',
+        config: {
+          'privilegesecurediscovery-api': {
+            specPath: 'static/openapi/privilegesecurediscovery.yaml',
+            outputDir: 'docs/privilegesecurediscovery/integrations/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/privilegesecurediscovery.yaml',
+            version: 'current',
+            label: 'Netwrix Privilege Secure for Discovery API',
+            baseUrl: '/docs/privilegesecurediscovery/integrations/api/reference/',
+          },
+        },
+      },
+    ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Code-sample tabs on API reference pages (docusaurus-theme-openapi-docs). The first entry is the default.
+      languageTabs: [
+        { highlight: 'bash', language: 'curl', logoClass: 'curl' },
+        { highlight: 'powershell', language: 'powershell', logoClass: 'powershell' },
+        { highlight: 'python', language: 'python', logoClass: 'python', variant: 'requests' },
+        { highlight: 'javascript', language: 'nodejs', logoClass: 'nodejs', variant: 'axios' },
+        { highlight: 'csharp', language: 'csharp', logoClass: 'csharp', variant: 'httpclient' },
+      ],
+      // Shown only on scoped paths — see src/theme/AnnouncementBar
+      announcementBar: {
+        id: 'endpointprotector-announcement',
+        content: '<a href="https://community.netwrix.com/discourse-ai/ai-bot/conversations?agent=epp-navigator" target="_blank" rel="noopener noreferrer">⚡ <strong>Skip the searching:</strong> Chat with EPP Navigator, an AI guide built on this documentation. <small>(Community account required)</small> <svg class="announcement-external-icon" width="18" height="18" aria-label="(opens in new tab)"><use href="#theme-svg-external-link"></use></svg></a>',
+        backgroundColor: '#5851DB',
+        textColor: '#ffffff',
+        isCloseable: true,
+      },
       // MermaidJS Config
       mermaid: {
         theme: {

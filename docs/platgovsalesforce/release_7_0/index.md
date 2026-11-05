@@ -7,7 +7,7 @@ sidebar_label: "⭐ Release 7.0 (Latest)"
 
 # Release 7.0
 
-Platform Governance for Salesforce Release 7.0 introduces new capabilities for enhanced governance, monitoring, and change tracking across your Salesforce environment.
+Strongpoint for Salesforce Release 7.0 introduces new capabilities for enhanced governance, monitoring, and change tracking across your Salesforce environment.
 
 ## New Features
 
@@ -87,7 +87,7 @@ For new installations, the system assigns the latest layout automatically by def
 
 To use these new features:
 
-1. Update your Platform Governance for Salesforce package to Release 7.0.
+1. Update your Strongpoint for Salesforce package to Release 7.0.
 2. Review the documentation for each feature to understand configuration requirements.
 3. Configure the new scanners and monitoring tools based on your organization's needs.
 

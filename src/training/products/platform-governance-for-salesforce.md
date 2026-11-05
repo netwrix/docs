@@ -1,1 +1,1 @@
-<span>Netwrix Platform Governance for Salesforce</span>
+<span>Netwrix Strongpoint for Salesforce</span>

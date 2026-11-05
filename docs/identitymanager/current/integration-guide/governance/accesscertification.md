@@ -10,7 +10,7 @@ The Access Certification module enables chosen end-users to carry out assignment
 
 ## Overview
 
-The aim of an access certification campaign is to review specific entitlement assignments for specific identities, in order to certify them and express an audit opinion that justifies their necessity. So, for all relevant permissions, the idea is to specify if these assignments ought to be deleted or not.
+The aim of an access certification campaign is to review specific entitlement assignments for specific identities, to certify them and express an audit opinion that justifies their necessity. So, for all relevant permissions, the idea is to specify if these assignments ought to be deleted or not.
 
 There are several ways to arrange an access certification campaign. Among others, through filters you can choose to focus on:
 
@@ -53,7 +53,7 @@ Such permission can be granted using the AccessReviewAdministrationAccessControl
 
 The administrator profile, created with CreateAdministratorProfile scaffolding, already has these permissions. See the [Create Administrator Profile](../../integration-guide/toolkit/xml-configuration/configuration/scaffoldings/templates/createadministratorprofile) topic for additional information.
 
-If you are not using the AccessReviewAdministrationAccessControlRules scaffolding, the user cannot query on dimensions when editing the owner filters, so you need to give the permissions on the correct contexts:
+If you aren't using the AccessReviewAdministrationAccessControlRules scaffolding, the user can't query on dimensions when editing the owner filters, so you need to give the permissions on the correct contexts:
 
 
 ```
@@ -114,7 +114,7 @@ This example completes the previous one by adding the automatic assignment capab
 
 This example enables automatic assignments of access certification items that match the filter to end-users with the **Manager** profile.
 
-If the filter criterion is matched for several end-users, only one is assigned the certification item, and this assignment is made randomly. Therefore, in order to have a cleaner reviewing architecture, it is recommended to carefully set the Filter attributes in the access control rules so that no two end-users' scope of responsibility overlap.
+If the filter criterion is matched for several end-users, only one is assigned the certification item, and this assignment is made randomly. Therefore, to have a cleaner reviewing architecture, it is recommended to carefully set the Filter attributes in the access control rules so that no two end-users' scope of responsibility overlap.
 
 #### Forwarded assignments
 
@@ -141,6 +141,32 @@ The example below allows the **Manager** profile to be selected as a delegated r
 ```
 <AccessControlRule Identifier="Manager_AccessCertificationItem_Custom_AccessCertification_DelegationAssigned_Directory_User" DisplayName_L1="User - Access certification delegated reviewer" EntityType="AccessCertificationItem" Profile="Manager">        <Entry CanExecute="true" Permission="/Custom/AccessCertification/DelegationAssigned/Directory_User" />    </AccessControlRule>
 ```
+
+Filters set on the rule aren't evaluated for a delegation, single or bulk: the **Manager** profile can
+be delegated any certification item of the Directory_User entity type, regardless of its scope of
+responsibility. Eligibility is checked again when the delegation is submitted.
+
+#### Filter evaluation per action
+
+| Action | Rule filters |
+|---|---|
+| Forward, single item | Applied |
+| Forward, bulk | Ignored |
+| Delegation, single item or bulk | Ignored |
+
+A bulk action targets a set of items, against which a filter bearing on a single item has no unique
+answer. A filter restricting single-item forwarding therefore doesn't restrict bulk forwarding:
+restrict bulk recipients through the profile granted the permission instead.
+
+#### Permissions and review actions
+
+Each of the three permissions governs both the reception of a certification item and the right to act
+on it, for the owner entity type of the campaign:
+
+- `AutoAssigned` or `ManualAssigned` is required to review the items received, and to forward or
+  delegate one of them.
+- `DelegationAssigned` is required to review the items delegated by another reviewer and to record a
+  recommendation on them.
 
 ### Certification policy
 
@@ -174,7 +200,7 @@ To use it, modify the access control rules by adding a filter on the campaign po
 
 In this example, the **Manager** profile is only able to certify items for a campaign defined with the **Manager** policy.
 
-A default policy is already defined. If no filter is set when giving the permission, the policy is not considered.
+A default policy is already defined. If no filter is set when giving the permission, the policy isn't considered.
 
 ### Access certification item processing
 

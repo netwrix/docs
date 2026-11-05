@@ -10,7 +10,7 @@ status: drafted from a code survey; not yet reviewed by someone who owns the pro
 
 Netwrix Data Classification (NDC) is an on-premises Windows product for security and compliance teams. It crawls data sources (file shares, SharePoint, Exchange, Box, Dropbox, Google Drive, SQL databases, and others), extracts and indexes document text, and classifies documents against built-in and user-defined taxonomies. Optional workflows act on classified documents, and classifications can be written back into Office and PDF files. A web app (QueryServer) provides administration, search, reports, and a REST API. The repo targets .NET Framework 4.7.2 and runs on IIS, three Windows services, and SQL Server. The repo also carries a licensing portal, an SDK, and a SharePoint provider-hosted app. Editions and tiers: not stated in the repo.
 
-Docs use the name "Netwrix Data Classification" (about 200 times in 5.8, against about 185 for "NDC"). There is no `docs/dataclassification/CLAUDE.md`, so no product-specific naming rules exist beyond `docs/CLAUDE.md`.
+Docs use the name "Netwrix Data Classification" (about 200 times in 5.8, against about 185 for "NDC"). Product-specific rules are in `docs/dataclassification/CLAUDE.md`.
 
 ## Code layout
 
@@ -92,7 +92,7 @@ Page types are mostly concept and reference pages with a few procedures. There a
 - The repo's `CLAUDE.md` says to start every GitHub comment with a "Comment authored by Claude Code" header. That applies to comments in the product repo, not to docs PRs.
 - PowerShell scripts in the repo must be ASCII-only.
 - The `concept*` names are legacy and many are not used by customers. The `concept*Form` projects are debug harnesses, and `conceptUITests`, `conceptQS.UXTests`, `conceptIntegrationTests`, and `NDC_AT` are unused or not on `master` per `TESTING.md`. `conceptExchange.Legacy`, `conceptSearch.Presentation.Win`, `conceptTermStoreManager`, and `Documentum` interop are old components.
-- `Oracle` and `Postgres` exist in the `DatabaseType` enum and schema installers, and `docs/postgres-*.md` describe a Postgres migration. `CLAUDE.md` says the installer allows only SQL Server. Docs 5.8 has a `postgresqlserver.md` source page for scanning a PostgreSQL source, which is a different thing. Do not document Postgres as a supported NDC database without confirming.
+- `Oracle` and `Postgres` exist in the `DatabaseType` enum and schema installers, and `docs/postgres-*.md` describe a Postgres migration. The installer allows PostgreSQL as an NDC database from PR #1457 (5.8; its tab is **Postgres**, and the button is **Create SQL Database**), and docs 5.8 already document PostgreSQL 16 or later as supported. The repo's own `CLAUDE.md` may still say the installer allows only SQL Server. `postgresqlserver.md` is a different thing: a PostgreSQL source to scan. Do not document Oracle as a supported NDC database without confirming.
 - Versions come from release branches (`release/5.7.10`) and from the numbered migration folders. Customer docs for a release live in a `release` branch named `NDC/<version>` created from `dev` in the docs repo (per `CONTRIBUTING.md`).
 - Bugs live in Azure DevOps (`Data Classification\Backlog`) and PR titles carry a Jira key such as `NDC-76:`. Enhancement requests go to the NDC Ideas page on the Netwrix Community.
 - Folder names under 5.8 do not match the sidebar or UI labels (`contentconfigurationoverview`, `dataanalysisoverview`), so search by topic and not by path.

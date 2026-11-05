@@ -7,10 +7,10 @@ sidebar_position: 100
 # Change Management Overview
 
 Closed Loop Change Management and Compliance is an enhanced change management system for changes to
-NetSuite accounts using the Platform Governance for NetSuite automated documentation and change
+NetSuite accounts using the Strongpoint for NetSuite automated documentation and change
 management system.
 
-Platform Governance for NetSuite extends your current change management system so you can:
+Strongpoint for NetSuite extends your current change management system so you can:
 
 - Establish change management policies for different types of objects and processes.
 - Route changes for approval within NetSuite.

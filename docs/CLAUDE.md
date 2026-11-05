@@ -4,7 +4,7 @@ This file is loaded automatically by Claude Code when working in the `docs/` dir
 
 ## Project Overview
 
-Netwrix builds security products that help IT professionals and security teams protect their organizations. This documentation site serves 27+ Netwrix products across 6 categories, built with Docusaurus v3.8.1 with multi-version support.
+Netwrix builds security products that help IT professionals and security teams protect their organizations. This documentation site serves 27+ Netwrix products across 6 categories, built with Docusaurus (always the latest stable release) with multi-version support.
 
 ## Audience
 

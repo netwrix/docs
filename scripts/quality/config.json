@@ -27,7 +27,10 @@
   "dale": {
     "runs": 3,
     "agree": 2,
-    "ignoreQuotes": []
+    "ignoreQuotes": [
+      "are published on the Netwrix Community",
+      "will no longer be supported"
+    ]
   },
   "vale": {
     "ignore": []
