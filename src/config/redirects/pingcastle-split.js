@@ -96,10 +96,12 @@ const PRODUCT_ID_OVERRIDES = {
   '/docs/kb/pingcastle/scheduler-or-agent-deployment-returns-401-unauthorized-error': 'pingcastleenterprise',
 };
 
-// Each entry carries the target product id so single-product builds
-// (DOCS_PRODUCT) only emit redirects whose target exists.
+// Each entry carries the target product id and URL version (null for KB routes)
+// so single-product builds (DOCS_PRODUCT, DOCS_PRODUCT_LATEST_ONLY) only emit
+// redirects whose target exists.
 export const pingcastleSplitRedirects = Object.entries(PAGE_MAP).map(([from, to]) => ({
   from,
   to,
   productId: PRODUCT_ID_OVERRIDES[from] || to.split('/')[2],
+  version: PRODUCT_ID_OVERRIDES[from] ? null : to.split('/')[3],
 }));

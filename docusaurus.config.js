@@ -217,7 +217,8 @@ const config = {
         redirects: [
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
           ...pingcastleSplitRedirects
-            .filter(({ productId }) => activeProductIds.includes(productId))
+            .filter(({ productId, version }) => activeProductIds.includes(productId)
+              && (version === null || activeVersionsByProduct[productId].map(versionToUrl).includes(version)))
             .map(({ from, to }) => ({ from, to })),
           ...(activeProductIds.includes('threatmanager') ? threatManager33Redirects : []),
           ...(activeProductIds.includes('privilegesecurediscovery') ? privilegeSecureDiscoveryRedirects : []),
