@@ -59,7 +59,7 @@ For example, an agent with a 90-day key that you extend on March 1 with the 365-
 
 When an agent logs in with an expired key, PingCastle Enterprise rejects the login with the generic message "Agent not found". It returns the same message for an unknown key or a disabled agent. The server logs a warning with the agent ID and the sanitized agent name.
 
-To restore access, use **Extend** or **Regenerate**. If the 401 error appears on a scheduler or agent, see [Scheduler or Agent Deployment Returns 401 Unauthorized Error](../../kb/scheduler-or-agent-deployment-returns-401-unauthorized-error.md).
+To restore access, use **Extend** or **Regenerate**. If the 401 error appears on a scheduler or agent, see [Scheduler or Agent Deployment Returns 401 Unauthorized Error](/docs/pingcastleenterprise/4_1/kb/scheduler-or-agent-deployment-returns-401-unauthorized-error).
 
 ## Email reminders
 
