@@ -65,10 +65,13 @@ export function collectAttention({ manifest, results, facts }) {
 /** Split the manifest pages into the four groups the author reads, plus the unchanged ones. `diffs` maps a path to { add, del, oldLines, newLines }. */
 export function groupPages({ manifest, rows, diffs }) {
   const byPath = new Map(rows.map(r => [r.path, r]));
-  const groups = { NEW: [], REWRITE: [], UPDATE: [], RESTYLED: [], UNCHANGED: [] };
+  const groups = { NEW: [], REWRITE: [], UPDATE: [], RESTYLED: [], UNCHANGED: [], UNVERIFIABLE: [] };
   for (const p of manifest.pages) {
     if (p.action === 'RETIRE') continue;
-    if (p.action === 'KEEP' || p.action === 'RESTYLE') {
+    if (p.action === 'KEEP' && p.unverifiable) {
+      // A page the code cannot verify is left exactly as it is, and the report says why.
+      groups.UNVERIFIABLE.push({ path: p.path, reason: p.unverifiable });
+    } else if (p.action === 'KEEP' || p.action === 'RESTYLE') {
       const d = diffs[p.path] || { add: 0, del: 0 };
       (d.add + d.del > 0 ? groups.RESTYLED : groups.UNCHANGED).push({ path: p.path, ...d });
     } else if (groups[p.action]) groups[p.action].push({ ...(byPath.get(p.path) || { path: p.path }), ...(diffs[p.path] || {}) });
@@ -130,6 +133,7 @@ export function reportBody({ title, meta, cov, rows, need, claims, scope, lint, 
   <div><b>${count('UPDATE')}</b><span>updated pages (content changed)</span></div>
   <div><b>${count('RESTYLED')}</b><span>restyled only (no content change)</span></div>
   <div><b>${count('UNCHANGED')}</b><span>unchanged pages</span></div>
+  ${count('UNVERIFIABLE') ? `<div><b>${count('UNVERIFIABLE')}</b><span>left untouched: the code cannot verify them</span></div>` : ''}
 </div>`;
   const guide = `<ul class="guide">
   <li><strong>New:</strong> ${esc(GROUP_DEFS[0].blurb)}</li>
@@ -146,6 +150,10 @@ export function reportBody({ title, meta, cov, rows, need, claims, scope, lint, 
     ? (integrity.ok ? `<p class="ok-line">Content-integrity check: passed on all ${integrity.pages} pages that were not given new content. Facts, numbers, links, images, inline code, bold labels and admonitions are the same as in the previous version.</p>` : `<p class="bad-line">Content-integrity check: ${integrity.violations} violation(s). See the run folder.</p>`)
     : '';
   const unchangedList = g.UNCHANGED.length ? `<details><summary>${g.UNCHANGED.length} unchanged pages</summary><ul class="cols">${g.UNCHANGED.map(r => `<li>${code(r.path)}</li>`).join('')}</ul></details>` : '';
+
+  const unverifiableBlock = count('UNVERIFIABLE') ? `<h2>Left untouched (${count('UNVERIFIABLE')}): pages the code cannot verify</h2>
+<p>These pages describe things the product's code repository does not contain: setup on the customer's own systems, the on-premises agent and installer, and security and privacy policy statements. doc-set checks every page against the code, so it cannot confirm or correct them. By the writer's decision they were left exactly as they are, with no wording or style changes. They are listed so a reviewer who knows the subject can check them, and so that nobody assumes they were reviewed against the code.</p>
+${table(['Page', 'Why it was not changed'], g.UNVERIFIABLE.map(r => `<tr><td>${code(r.path)}</td><td>${esc(r.reason)}</td></tr>`).join(''))}` : '';
 
   const attention = need.filter(n => !['Renamed'].includes(n.kind));
   const needRows = attention.map(n => `<tr><td>${code(n.path)}</td><td>${esc(n.kind)}</td><td>${esc(clip(n.text, 260))}</td></tr>`).join('');
@@ -187,6 +195,7 @@ ${integrityLine}
 ${lintBlock}
 ${count('RESTYLED') ? table(H(['Page', 'Lines changed']), restyleRows) : '<p class="none">No restyled pages.</p>'}
 ${unchangedList}
+${unverifiableBlock}
 
 <h2>Open items for the author</h2>
 <p>Everything that was flagged during drafting, in one list: TODO markers left on pages, sentences the verifier could not trace, notes where a fix was made by hand, and facts assigned to a page that the page does not state.</p>

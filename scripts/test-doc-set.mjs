@@ -678,3 +678,30 @@ test('triage-to-manifest turns a slice\'s newPages into NEW pages', async () => 
   assert.deepEqual(pages.map(p => [p.path, p.action]), [['docs/p/a.md', 'KEEP'], ['docs/p/b.md', 'NEW']]);
   assert.deepEqual(combine([{ pages: [{ path: 'docs/p/a.md', action: 'KEEP' }] }, { pages: [], newPages: [{ path: 'docs/p/a.md', facts: [] }] }]).problems.length, 1, 'a new page cannot reuse an existing path');
 });
+
+test('pages the code cannot verify are left out of the change groups and explained in the report', async () => {
+  const { groupPages, run } = await import('./doc-set/author-report.mjs');
+  const reason = 'Setup happens on the customer systems, not in this code.';
+  const manifest = { pages: [{ path: 'docs/p/a.md', action: 'KEEP', unverifiable: reason }, { path: 'docs/p/b.md', action: 'KEEP' }] };
+  const g = groupPages({ manifest, rows: [], diffs: {} });
+  assert.deepEqual(g.UNVERIFIABLE, [{ path: 'docs/p/a.md', reason }]);
+  assert.deepEqual(g.UNCHANGED.map(x => x.path), ['docs/p/b.md']);
+
+  const { dir: repo, sha } = alignRepo({ 'docs/p/a.md': '---\ntitle: A\n---\n\nText.\n', 'docs/p/b.md': '---\ntitle: B\n---\n\nText.\n' });
+  const runDir = fs.mkdtempSync(path.join(os.tmpdir(), 'unver-'));
+  fs.mkdirSync(path.join(runDir, 'results'));
+  fs.writeFileSync(path.join(runDir, 'meta.json'), JSON.stringify({ product: 'p', version: 'current', versionless: true, oldRef: sha, docsWorktree: repo, refSha: 'abc1234567' }));
+  fs.writeFileSync(path.join(runDir, 'facts.json'), JSON.stringify({ facts: [] }));
+  fs.writeFileSync(path.join(runDir, 'claims.json'), JSON.stringify({ claims: [] }));
+  const write = m => fs.writeFileSync(path.join(runDir, 'manifest.json'), JSON.stringify({ pages: m, dropped: [] }));
+  const out = path.join(runDir, 'report.html');
+  const quiet = fn => { const log = console.log; console.log = () => {}; try { return fn(); } finally { console.log = log; } };
+  write(manifest.pages);
+  assert.equal(quiet(() => run([runDir, out, '--title', 'T'])), 0);
+  const html = fs.readFileSync(out, 'utf8');
+  assert.match(html, /Left untouched \(1\): pages the code cannot verify/);
+  assert.ok(html.includes(reason));
+  write([{ path: 'docs/p/b.md', action: 'KEEP' }]);
+  quiet(() => run([runDir, out, '--title', 'T']));
+  assert.doesNotMatch(fs.readFileSync(out, 'utf8'), /Left untouched/);
+});
