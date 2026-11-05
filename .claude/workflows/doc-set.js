@@ -1,7 +1,7 @@
 export const meta = {
   name: 'doc-set',
   description: 'Draft every non-KEEP page of an approved /doc-set manifest in zone batches, then verify each batch against the fact pack',
-  whenToUse: 'Called by the /doc-set skill after the writer approves manifest.json. args: { runDir: "<absolute path to .doc-set/<product>-<version>>", pathPrefixes?: ["<prefix relative to the version folder>"], zone?: "<manifest zone to draft; omit for all>" }',
+  whenToUse: 'Called by the /doc-set skill after the writer approves manifest.json. args: { runDir: "<absolute path to .doc-set/<product>-<version>>", pathPrefixes?: ["<prefix relative to the pages' folder>"], zone?: "<manifest zone to draft; omit for all>" }',
   phases: [
     { title: 'Plan', detail: 'group manifest pages into batches' },
     { title: 'Draft', detail: 'one agent per batch writes pages and runs the style checks' },
@@ -47,7 +47,7 @@ const plan = await agent(
   `Read ${runDir}/manifest.json and the files in ${runDir}/results/ (if any). ` +
     `Return the pages to draft: every page whose action is NEW, REWRITE, UPDATE, or RESTYLE and that has no result with status "done"` +
     (zone ? `, limited to pages whose manifest zone is "${zone}"` : '') +
-    (prefixes ? `, and only pages whose path starts with one of these prefixes (relative to the version folder docs/<product>/<version>/): ${prefixes.map((p) => `"${p}"`).join(', ')}` : '') + '. ' +
+    (prefixes ? `, and only pages whose path starts with one of these prefixes (relative to the pages' folder: docs/<product>/<version>/, or docs/<product>/ in an align run): ${prefixes.map((p) => `"${p}"`).join(', ')}` : '') + '. ' +
     `Group them by zone (the manifest's zone field), splitting a zone into chunks of at most 4 pages. ` +
     `Never include a path under a kb/ folder. Name each batch "<zone>-<path of its first page relative to the zone folder, without .md, with / replaced by ->" (for example "administration-threats-threatdetails-overview"), so runs on different folders and later runs with different batching never reuse a name. Pages are manifest paths. List already-done paths in skippedDone. Do not draft anything.`,
   { label: 'plan batches', phase: 'Plan', schema: BATCHES, effort: 'low' },

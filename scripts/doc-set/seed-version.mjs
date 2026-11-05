@@ -58,7 +58,6 @@ export function addVersion(text, id, to) {
   return text.slice(0, start) + next + text.slice(end);
 }
 
-/** Point doc links at the new version: /docs/<id>/<from>/ becomes /docs/<id>/<to>/ (dotted or underscored). Image paths are shared files and stay. */
 /** A sidebar copied from the previous version: point version-specific paths and IDs (<id>/<from>, <id>/<from_underscored>) at the new version. */
 export function rewriteSidebar(text, id, from, to) {
   const variants = [[from, to], [from.replace(/\./g, '_'), to.replace(/\./g, '_')]];
@@ -67,6 +66,7 @@ export function rewriteSidebar(text, id, from, to) {
   return out;
 }
 
+/** Point doc links at the new version: /docs/<id>/<from>/ becomes /docs/<id>/<to>/ (dotted or underscored). Image paths are shared files and stay. */
 export function rewriteDocLinks(text, id, from, to) {
   const esc = v => v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const variants = [[from, to], [from.replace(/\./g, '_'), to.replace(/\./g, '_')]];

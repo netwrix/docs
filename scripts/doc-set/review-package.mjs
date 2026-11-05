@@ -18,6 +18,7 @@ import { fileURLToPath } from 'url';
 import { BASE_CSS, FONT_LINK } from './page-style.mjs';
 import { loadEntries, comparisonBody, metaText, CMP_CSS } from './review-html.mjs';
 import { loadReportArgs, reportBody, REPORT_CSS } from './author-report.mjs';
+import { runLabel } from './docs-paths.mjs';
 
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -260,7 +261,7 @@ function pageMeta(e) { return metaText(e); }
 export function buildPackage({ title, meta, entries, reportArgs }) {
   const css = [BASE_CSS, scopeCss(REPORT_CSS, '.rep'), scopeCss(CMP_CSS, '.cmp'), PKG_CSS].join('\n');
   const { summary, pages } = comparisonBody(entries, { reviewBars: true });
-  const data = entries.map(e => ({ slug: e.id, short: e.short, title: e.title, group: e.action, band: e.band, score: e.score, why: e.why, hash: e.hash, old: e.oldText, new: e.newText, meta: pageMeta(e), oldLabel: e.oldLabel.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'), newLabel: `New (${meta.version})` }));
+  const data = entries.map(e => ({ slug: e.id, short: e.short, title: e.title, group: e.action, band: e.band, score: e.score, why: e.why, hash: e.hash, old: e.oldText, new: e.newText, meta: pageMeta(e), oldLabel: e.oldLabel.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'), newLabel: e.newLabel || `New (${meta.version})` }));
   const here = path.dirname(fileURLToPath(import.meta.url));
   const script = ['review-core.js', 'review-client.js'].map(f => fs.readFileSync(path.join(here, f), 'utf8')).join('\n');
   const total = entries.length;
@@ -289,7 +290,7 @@ ${FONT_LINK}
 <button type="button" id="side-toggle" class="side-toggle">Pages</button>
 <template id="tpl-overview">
 <h1>${esc(title)}</h1>
-<p class="meta">${esc(meta.product)} ${esc(meta.from)} to ${esc(meta.version)}. ${total} pages changed. Everyone with access sees the same review status, comments, and suggested edits.</p>
+<p class="meta">${esc(runLabel(meta))}. ${total} pages changed. Everyone with access sees the same review status, comments, and suggested edits.</p>
 <section id="progress" class="panel" aria-live="polite">
 <h2>Review progress</h2>
 <p class="rv-summary">${total} pages to review. Nobody has recorded a review yet.</p>

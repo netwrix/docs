@@ -4,6 +4,8 @@ A `/doc-set` run keeps its state in `.doc-set/<product>-<version>/`. All files a
 
 ## facts.json (from code)
 
+In an align run (a versionless product) `baseline` and `baselineSha` are optional: with no baseline every fact has status `unchanged`, and the manifest has no `from`. `version` is `current`.
+
 ```json
 {
   "product": "pingcastle", "version": "3.6", "ref": "v3.6.0", "refSha": "<sha>", "baseline": "v3.5.0", "baselineSha": "<sha>",

@@ -511,3 +511,107 @@ test('review page labels use the run versions, and the client builds its review 
   assert.match(src, /PREF_TYPES/);
   assert.doesNotMatch(src, /\.innerHTML = rvBarHtml/);
 });
+
+// ---- align mode (versionless products)
+import { execFileSync } from 'child_process';
+
+/** A throwaway git repo with an origin/dev ref, so align code can read "before" text from git. */
+function alignRepo(files) {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'align-'));
+  const git = (...a) => execFileSync('git', a, { cwd: dir, encoding: 'utf8' }).trim();
+  git('init', '-q');
+  git('config', 'user.email', 't@example.com');
+  git('config', 'user.name', 't');
+  for (const [f, text] of Object.entries(files)) {
+    fs.mkdirSync(path.dirname(path.join(dir, f)), { recursive: true });
+    fs.writeFileSync(path.join(dir, f), text);
+  }
+  git('add', '-A');
+  git('commit', '-q', '-m', 'base');
+  const sha = git('rev-parse', 'HEAD');
+  git('update-ref', 'refs/remotes/origin/dev', sha);
+  return { dir, sha, git };
+}
+
+test('docsPrefix and shortPath follow the run type', async () => {
+  const { docsPrefix, shortPath, runLabel, versionLabels } = await import('./doc-set/docs-paths.mjs');
+  const versioned = { product: 'tm', version: '3.4', from: '3.3' };
+  const align = { product: '1secure', version: 'current', versionless: true };
+  assert.equal(docsPrefix(versioned), 'docs/tm/3.4/');
+  assert.equal(docsPrefix(align), 'docs/1secure/');
+  assert.equal(shortPath(versioned, 'docs/tm/3.4/install/a.md'), 'install/a.md');
+  assert.equal(shortPath(align, 'docs/1secure/install/a.md'), 'install/a.md');
+  assert.equal(runLabel(versioned), 'tm 3.3 to 3.4');
+  assert.match(runLabel(align), /aligned to the deployed code/);
+  assert.equal(versionLabels(versioned).old, 'Old (3.3)');
+  assert.equal(versionLabels(align).old, 'Old (origin/dev)');
+});
+
+test('readOldText reads the page from git at oldRef in an align run', async () => {
+  const { readOldText } = await import('./doc-set/docs-paths.mjs');
+  const { dir, sha } = alignRepo({ 'docs/p/a.md': 'old a\n', 'docs/p/old-name.md': 'renamed old\n' });
+  fs.writeFileSync(path.join(dir, 'docs/p/a.md'), 'new a\n');
+  const meta = { product: 'p', version: 'current', versionless: true, oldRef: sha, docsWorktree: dir };
+  assert.equal(readOldText(meta, { path: 'docs/p/a.md', action: 'UPDATE' }), 'old a\n');
+  assert.equal(readOldText(meta, { path: 'docs/p/new-name.md', renamedFrom: 'docs/p/old-name.md', action: 'UPDATE' }), 'renamed old\n');
+  assert.equal(readOldText(meta, { path: 'docs/p/missing.md', action: 'UPDATE' }), null);
+  assert.equal(readOldText(meta, { path: 'docs/p/a.md', action: 'NEW' }), null);
+});
+
+test('loadEntries on an align run diffs each page against origin/dev', async () => {
+  const { loadEntries } = await import('./doc-set/review-html.mjs');
+  const { dir: repo, sha } = alignRepo({ 'docs/p/a.md': '---\ntitle: A\n---\n\nThe thing can be used.\n' });
+  fs.writeFileSync(path.join(repo, 'docs/p/a.md'), '---\ntitle: A\n---\n\nUse the thing.\n');
+  fs.writeFileSync(path.join(repo, 'docs/p/b.md'), '---\ntitle: B\n---\n\nA brand new page.\n');
+  const run = fs.mkdtempSync(path.join(os.tmpdir(), 'alignrun-'));
+  fs.mkdirSync(path.join(run, 'results'));
+  fs.writeFileSync(path.join(run, 'meta.json'), JSON.stringify({ product: 'p', version: 'current', versionless: true, oldRef: sha, docsWorktree: repo }));
+  fs.writeFileSync(path.join(run, 'manifest.json'), JSON.stringify({ pages: [
+    { path: 'docs/p/a.md', action: 'UPDATE', type: 'task', facts: ['F1'] },
+    { path: 'docs/p/b.md', action: 'NEW', type: 'task', facts: ['F2'] },
+  ] }));
+  fs.writeFileSync(path.join(run, 'results', 'r.json'), JSON.stringify({ pages: [{ path: 'docs/p/a.md', status: 'done' }, { path: 'docs/p/b.md', status: 'done' }] }));
+  const { entries } = loadEntries(run);
+  const a = entries.find(e => e.short === 'a.md');
+  const b = entries.find(e => e.short === 'b.md');
+  assert.ok(a.add > 0 && a.del > 0, 'the update shows a real diff, not an empty one');
+  assert.equal(a.oldLabel, 'Old (origin/dev)');
+  assert.equal(a.newLabel, 'New (aligned to code)');
+  assert.equal(b.oldText, null);
+  assert.equal(b.action, 'NEW');
+});
+
+test('align-init refuses a versioned product and sets up a versionless one', async () => {
+  const { isVersionless, run } = await import('./doc-set/align-init.mjs');
+  assert.equal(isVersionless("versions: [\n      {\n        version: 'current',\n        label: 'current',\n        isLatest: true,\n"), true);
+  assert.equal(isVersionless("versions: [\n      {\n        version: '2.0',\n        label: '2.0',\n        isLatest: true,\n      },\n      {\n        version: '1.0',\n        label: '1.0',\n        isLatest: false,\n"), false);
+  const products = [
+    "module.exports = [",
+    "  {\n    id: 'solo',\n    name: 'Solo',\n    path: 'docs/solo',\n    versions: [\n      {\n        version: 'current',\n        label: 'current',\n        isLatest: true,\n        sidebarFile: './sidebars/solo/current.js',\n      },\n    ],\n  },",
+    "  {\n    id: 'multi',\n    name: 'Multi',\n    path: 'docs/multi',\n    versions: [\n      {\n        version: '2.0',\n        label: '2.0',\n        isLatest: true,\n      },\n      {\n        version: '1.0',\n        label: '1.0',\n        isLatest: false,\n      },\n    ],\n  },",
+    "];\n",
+  ].join('\n');
+  const { dir, sha } = alignRepo({ 'src/config/products.js': products, 'docs/solo/a.md': 'a\n', 'docs/multi/2.0/a.md': 'a\n' });
+  const quiet = fn => { const log = console.log, err = console.error; console.log = console.error = () => {}; try { return fn(); } finally { console.log = log; console.error = err; } };
+  assert.equal(quiet(() => run(['multi', '--root', dir])), 1);
+  assert.equal(quiet(() => run(['solo', '--root', dir])), 0, 'a dry run succeeds and creates nothing');
+  assert.equal(fs.existsSync(path.join(dir, '.doc-set')), false);
+  const wt = path.join(os.tmpdir(), `align-wt-${Date.now()}`);
+  assert.equal(quiet(() => run(['solo', '--root', dir, '--worktree', wt, '--apply'])), 0);
+  assert.ok(fs.existsSync(path.join(wt, 'docs/solo/a.md')));
+  const meta = JSON.parse(fs.readFileSync(path.join(dir, '.doc-set/solo-align/meta.json'), 'utf8'));
+  assert.deepEqual([meta.versionless, meta.docsPrefix, meta.oldRef, meta.docsWorktree], [true, 'docs/solo/', sha, wt]);
+  assert.equal(quiet(() => run(['solo', '--root', dir, '--worktree', wt, '--apply'])), 1, 'refuses to overwrite an existing worktree');
+});
+
+test('progress counts an align run as set up once oldRef is recorded', async () => {
+  const { phaseStatus } = await import('./doc-set/progress.mjs');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'prog-'));
+  fs.writeFileSync(path.join(dir, 'meta.json'), JSON.stringify({ product: 'p', versionless: true, oldRef: 'abc1234', refSha: 'def5678abc' }));
+  fs.writeFileSync(path.join(dir, 'facts.json'), JSON.stringify({ facts: [] }));
+  fs.writeFileSync(path.join(dir, 'claims.json'), JSON.stringify({ claims: [] }));
+  fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify({ pages: [] }));
+  const seed = phaseStatus(dir).find(p => /Seed/.test(p.name));
+  assert.equal(seed.status, 'done');
+  assert.match(seed.detail, /set up/);
+});

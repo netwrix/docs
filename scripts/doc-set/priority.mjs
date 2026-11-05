@@ -19,6 +19,7 @@ import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import { readJson } from './manifest.mjs';
 import { loadEntries } from './review-html.mjs';
+import { docsPrefix } from './docs-paths.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const core = createRequire(import.meta.url)(path.join(here, 'review-core.js'));
@@ -72,7 +73,7 @@ export function rank(dir) {
 
   const pages = {};
   for (const e of entries) {
-    const p = byPath[`docs/${meta.product}/${meta.version}/${e.short}`] || {};
+    const p = byPath[`${docsPrefix(meta)}${e.short}`] || {};
     const given = input[e.short];
     let scope = given && given.scope ? given.scope : guessScope(e.short);
     let consequence = given && given.consequence ? given.consequence : 'medium';

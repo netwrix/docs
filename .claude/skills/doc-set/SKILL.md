@@ -12,7 +12,7 @@ You build the docs for a whole product version. Three sources, in order of autho
 2. **Jira.** Claims. Code confirms or contradicts each one. A claim with no code evidence becomes a TODO, never a fact.
 3. **Existing docs.** Reused when accurate and on-style. An accurate page is left byte-for-byte.
 
-Run state lives in `.doc-set/<product>-<version>/` (facts, claims, manifest, results). Schemas: `references/fact-pack.md`. If the folder exists, resume from the latest completed phase and say so.
+Run state lives in `.doc-set/<product>-<version>/` (facts, claims, manifest, results), or `.doc-set/<product>-align/` in align mode (see below). Schemas: `references/fact-pack.md`. If the folder exists, resume from the latest completed phase and say so.
 
 Read `docs/CLAUDE.md`, `.claude/skills/doc-draft/style-reference.md`, `.claude/references/lint-rules.md`, `.claude/references/documentation-section-guide.md`, and `.claude/references/page-structure-guide.md`. They are the one source of style and structure; don't copy them into notes. Writer gates are marked ⛔: stop there and wait.
 
@@ -24,10 +24,23 @@ A doc set is the product guide only: the zones in `documentation-section-guide.m
 
 Get these from the writer. Ask once for whatever is missing:
 
-- Product id (from `src/config/products.js`) and the new version.
-- Previous docs version. Default: the product's `isLatest` version.
-- Code: `org/repo@ref` or a local path, plus a baseline ref for the previous release.
+- Product id (from `src/config/products.js`) and the new version. A versionless product (a single `current` version) has no new version: use Align mode below.
+- Previous docs version (versioned products). Default: the product's `isLatest` version.
+- Code: `org/repo@ref` or a local path, plus a baseline ref for the previous release. In align mode, the deployed ref instead: the commit that is live in production.
 - Jira epic and issue keys.
+
+## Align mode (versionless products)
+
+A product with a single `current` version has no release to diff and no previous folder to copy. In align mode you check every page against the code that is live in production and edit the pages in place. The fact pack, manifest gate, draft workflow, verifier, ranking, and review page work as written below. These steps differ:
+
+- **Start.** Run `node scripts/doc-set/align-init.mjs <product>` and show the writer the dry-run plan. ⛔ After they confirm, run it with `--apply`. It creates the worktree and the branch `docs/<product>-align` from `origin/dev`, and writes `.doc-set/<product>-align/meta.json` with `versionless`, `docsPrefix`, `docsWorktree`, and `oldRef` (the `origin/dev` commit the old text is read from). It refuses a versioned product. There is no seed, no sidebar file, and no `products.js` change.
+- **Intake.** Ask the writer for the deployed ref and never default to the tip of `main`, which can hold unreleased work. Pin it as `ref` and `refSha` in `meta.json`. If the product brief's frontmatter has `verified_ref` (the ref the docs were last aligned to), use it as `baseline` and set fact status from the three-dot diff. If not, there is no baseline: the fact pack is a full snapshot and every fact is `unchanged`.
+- **Triage is a full audit.** One subagent per zone checks every page against the whole fact pack and assigns the same actions. `NEW` comes from customer-visible facts no page covers, and `RETIRE` from pages whose feature is gone. The old text is the page on `origin/dev`.
+- **Lint pass.** Use `oldRef` from `meta.json` where the skill says `seedBaseline`.
+- **Jira is optional.** There is no fixVersion to scope by, so skip the Claims phase unless the writer gives keys.
+- **One zone at a time.** Draft and review one zone per run (the workflow's `zone` argument) and open one PR per zone, so reviewers never face the whole product at once.
+- **Assemble.** Skip redirects and sidebar edits unless a page moved. Build with `DOCS_PRODUCT=<id>` and without `DOCS_PRODUCT_LATEST_ONLY`.
+- **Record.** After the last PR merges, set `verified_ref: <deployed ref>` in the product brief's frontmatter (`git add -f`), so the next run diffs from there.
 
 ## Phases
 

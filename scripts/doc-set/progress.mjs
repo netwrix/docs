@@ -32,7 +32,8 @@ export function phaseStatus(dir) {
   add(!!facts, facts ? `${facts.facts.length} facts` : 'not started');
   add(!!claims, claims ? `${claims.claims.length} Jira claims` : 'not started');
   const triaged = count(dir, 'triage', '.json');
-  add(!!(manifest && meta && meta.seedBaseline), meta && meta.seedBaseline ? `seeded, ${triaged} zone${triaged === 1 ? '' : 's'} triaged` : 'not seeded');
+  const based = meta && (meta.seedBaseline || meta.oldRef);
+  add(!!(manifest && based), based ? `${meta.versionless ? 'set up' : 'seeded'}, ${triaged} zone${triaged === 1 ? '' : 's'} triaged` : (meta && meta.versionless ? 'not set up' : 'not seeded'));
   const tally = {};
   if (manifest) for (const p of manifest.pages) tally[p.action] = (tally[p.action] || 0) + 1;
   add(!!manifest, manifest ? `${manifest.pages.length} pages (${Object.entries(tally).map(([k, v]) => `${v} ${k}`).join(', ')})` : 'not written');

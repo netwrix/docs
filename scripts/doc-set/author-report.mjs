@@ -14,12 +14,12 @@ import fs from 'fs';
 import path from 'path';
 import { readJson, readResults } from './manifest.mjs';
 import { buildCoverage } from './coverage.mjs';
-import { rewriteDocLinks } from './seed-version.mjs';
+import { isAlign, readOldText, runLabel, shortPath } from './docs-paths.mjs';
 import { alignRows, stats } from './review-html.mjs';
 import { BASE_CSS, FONT_LINK } from './page-style.mjs';
 
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const short = (p, meta) => p.replace(`docs/${meta.product}/${meta.version}/`, '');
+const short = (p, meta) => shortPath(meta, p);
 const clip = (s, n = 190) => (String(s).length > n ? String(s).slice(0, n - 1) + '…' : String(s));
 
 export const GROUP_DEFS = [
@@ -136,7 +136,7 @@ export function reportBody({ title, meta, cov, rows, need, claims, scope, lint, 
   <li><strong>Rewritten:</strong> ${esc(GROUP_DEFS[1].blurb)}</li>
   <li><strong>Updated:</strong> ${esc(GROUP_DEFS[2].blurb)}</li>
   <li><strong>Restyled only:</strong> Wording and typo fixes. Facts, numbers, links, images, code and labels are unchanged, and a check confirms it.</li>
-  <li><strong>Unchanged:</strong> Identical to the previous version apart from links that now point at ${esc(meta.version)}.</li>
+  <li><strong>Unchanged:</strong> ${isAlign(meta) ? 'Identical to the page on origin/dev.' : `Identical to the previous version apart from links that now point at ${esc(meta.version)}.`}</li>
 </ul>`;
   const newRows = g.NEW.map(r => `<tr><td>${code(r.path)}<br><span class="meta">${esc(r.title)}</span></td><td>${esc(r.type)}</td><td class="num">${r.covered}/${r.assigned}</td><td class="num">${r.newLines ?? ''}</td><td>${flags(r.path)}</td>${rv(r.path)}</tr>`).join('');
   const rewriteRows = g.REWRITE.map(r => `<tr><td>${code(r.path)}${r.renamedFrom ? `<br><span class="meta">Renamed from <code>${esc(short(r.renamedFrom, meta))}</code></span>` : ''}</td><td class="num">${r.oldLines ?? ''} to ${r.newLines ?? ''}</td><td>${esc(clip(r.reason || '', 220))}</td><td class="num">${r.covered}/${r.assigned}</td><td>${flags(r.path)}</td>${rv(r.path)}</tr>`).join('');
@@ -164,7 +164,7 @@ export function reportBody({ title, meta, cov, rows, need, claims, scope, lint, 
 ${recheckNote ? `<p class="note-line">${esc(recheckNote)}</p>` : ''}
 ${recheck.failing.length ? table(['Page', 'Group', 'Findings', 'Rules'], recheck.failing.map(f => `<tr><td>${code(f.path)}</td><td>${esc(actions?.[f.path] || '')}</td><td class="num">${f.findings}</td><td>${esc(Object.entries(f.rules).map(([k, v]) => `${k} ${v}`).join(', '))}</td></tr>`).join('')) : '<p class="none">Every page passes.</p>'}` : '';
 
-  return `<p class="meta">${esc(meta.product)} ${esc(meta.from)} to ${esc(meta.version)}. Code: <code>${esc(String(meta.refSha).slice(0, 9))}</code> against merge base <code>${esc(String(meta.baselineSha).slice(0, 9))}</code>. The side-by-side comparison shows the old and new text of every page below.</p>
+  return `<p class="meta">${esc(runLabel(meta))}. Code: <code>${esc(String(meta.refSha).slice(0, 9))}</code> against merge base <code>${esc(String(meta.baselineSha).slice(0, 9))}</code>. The side-by-side comparison shows the old and new text of every page below.</p>
 ${statusStrip}
 ${guide}
 
@@ -238,8 +238,7 @@ export function loadReportArgs(dir, title) {
     const file = path.join(meta.docsWorktree, p.path);
     if (!fs.existsSync(file)) continue;
     const newText = fs.readFileSync(file, 'utf8');
-    const oldFile = path.join(meta.docsWorktree, (p.renamedFrom || p.path).replace(`/${meta.version}/`, `/${meta.from}/`));
-    const oldText = p.action === 'NEW' || !fs.existsSync(oldFile) ? null : rewriteDocLinks(fs.readFileSync(oldFile, 'utf8'), meta.product, meta.from, meta.version);
+    const oldText = readOldText(meta, p);
     const st = stats(alignRows(oldText, newText));
     diffs[p.path] = { add: st.add, del: st.del, oldLines: oldText === null ? null : oldText.split('\n').length, newLines: newText.split('\n').length };
   }

@@ -12,7 +12,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { readJson, readResults } from './manifest.mjs';
-import { rewriteDocLinks } from './seed-version.mjs';
+import { readOldText, shortPath, versionLabels } from './docs-paths.mjs';
 import { BASE_CSS, FONT_LINK } from './page-style.mjs';
 
 /** Longest-common-subsequence diff of two arrays; returns [{op:'eq'|'del'|'ins', a?, b?}]. */
@@ -156,7 +156,7 @@ ${FONT_LINK}
 <style>${css}</style>
 <main>
 <h1>${esc(title)}</h1>
-<p class="meta">Each page shows the ${esc(meta.from || 'previous')} text on the left and the drafted ${esc(meta.version || 'new')} text on the right, as Markdown source. Changed lines are shaded and the changed words are marked. Long unchanged runs are collapsed to three lines of context. Links in the old text are rewritten to ${esc(meta.version || 'the new version')} so that only real edits show.</p>
+<p class="meta">Each page shows the ${esc(meta.versionless ? 'current' : meta.from || 'previous')} text on the left and the drafted ${esc(meta.versionless ? 'code-aligned' : meta.version || 'new')} text on the right, as Markdown source. Changed lines are shaded and the changed words are marked. Long unchanged runs are collapsed to three lines of context. ${meta.versionless ? 'The old text is the page on origin/dev.' : `Links in the old text are rewritten to ${esc(meta.version || 'the new version')} so that only real edits show.`}</p>
 <div class="tablewrap"><table><thead><tr><th>Page</th><th>Action</th><th class="num">Old lines</th><th class="num">New lines</th><th class="num">Change</th><th class="num">Facts stated</th></tr></thead><tbody>${summary}</tbody></table></div>
 ${sections}
 </main>
@@ -169,27 +169,26 @@ export function loadEntries(dir) {
   const manifest = readJson(dir, 'manifest.json');
   const done = new Map();
   for (const r of readResults(dir)) for (const p of r.pages || []) if (p.status === 'done') done.set(p.path, p);
+  const labels = versionLabels(meta);
   const entries = [];
   for (const p of manifest.pages) {
     if (p.action === 'RETIRE') continue;
     const restyled = p.action === 'KEEP' || p.action === 'RESTYLE';
     if (p.action !== 'KEEP' && !done.has(p.path)) continue;
     const newText = fs.readFileSync(path.join(meta.docsWorktree, p.path), 'utf8');
-    const oldRel = (p.renamedFrom || p.path).replace(`/${meta.version}/`, `/${meta.from}/`);
-    const oldFile = path.join(meta.docsWorktree, oldRel);
-    const oldText = p.action === 'NEW' || !fs.existsSync(oldFile) ? null : rewriteDocLinks(fs.readFileSync(oldFile, 'utf8'), meta.product, meta.from, meta.version);
+    const oldText = readOldText(meta, p);
     const rows = alignRows(oldText, newText);
     const st = stats(rows);
-    const short = p.path.replace(`docs/${meta.product}/${meta.version}/`, '');
+    const short = shortPath(meta, p.path);
     const res = done.get(p.path) || {};
     if (restyled && st.add + st.del === 0) continue;
     entries.push({
       id: short.replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, ''), short, oldText, newText, title: (newText.match(/^---\n(?:[\s\S]*?\n)?title:\s*"?(.*?)"?\s*\n/) || [])[1] || '', hash: crypto.createHash('sha256').update(newText).digest('hex').slice(0, 12), action: restyled ? 'RESTYLED' : p.action,
-      renamed: p.renamedFrom ? p.renamedFrom.replace(`docs/${meta.product}/${meta.version}/`, '') : null,
+      renamed: p.renamedFrom ? shortPath(meta, p.renamedFrom) : null,
       oldLines: oldText === null ? null : oldText.split('\n').length, newLines: newText.split('\n').length,
       add: st.add, del: st.del, assigned: restyled ? 0 : (p.facts || []).length, covered: (res.factsCovered || []).length,
-      newLabel: `New (${meta.version})`,
-      oldLabel: oldText === null ? `Old (no ${meta.from} page)` : `Old (${meta.from})${p.renamedFrom ? ' ' + esc(path.basename(p.renamedFrom)) : ''}`,
+      newLabel: labels.new,
+      oldLabel: oldText === null ? labels.oldMissing : `${labels.old}${p.renamedFrom ? ' ' + esc(path.basename(p.renamedFrom)) : ''}`,
       rows: oldText === null ? rows : collapse(rows),
     });
   }
