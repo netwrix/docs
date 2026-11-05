@@ -705,3 +705,26 @@ test('pages the code cannot verify are left out of the change groups and explain
   quiet(() => run([runDir, out, '--title', 'T']));
   assert.doesNotMatch(fs.readFileSync(out, 'utf8'), /Left untouched/);
 });
+
+test('lint-all lists every page of the version, kept pages included, and checks the final run covers them all', async () => {
+  const { listPages, checkedPages, missingPages, run } = await import('./doc-set/lint-all.mjs');
+  const wt = fs.mkdtempSync(path.join(os.tmpdir(), 'lintall-'));
+  const put = (f, t = '# x\n') => { fs.mkdirSync(path.dirname(path.join(wt, f)), { recursive: true }); fs.writeFileSync(path.join(wt, f), t); };
+  put('docs/p/2.0/new.md'); put('docs/p/2.0/kept/a.mdx'); put('docs/p/2.0/kb/article.md'); put('docs/p/2.0/CLAUDE.md'); put('docs/p/1.0/old.md'); put('docs/p/2.0/_category_.json', '{}');
+  assert.deepEqual(listPages(wt, 'docs/p/2.0/'), ['docs/p/2.0/kept/a.mdx', 'docs/p/2.0/new.md']);
+
+  const log = 'PASS  docs/p/2.0/new.md  (vale: pass, dale: pass)\nFAIL  docs/p/2.0/kept/a.mdx  (vale: fail)\n   3  vale:Netwrix.X  msg\n';
+  assert.deepEqual([...checkedPages(log)].sort(), ['docs/p/2.0/kept/a.mdx', 'docs/p/2.0/new.md']);
+  assert.deepEqual(missingPages(['docs/p/2.0/new.md', 'docs/p/2.0/kept/b.md'], log), ['docs/p/2.0/kept/b.md']);
+
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'lintrun-'));
+  fs.writeFileSync(path.join(dir, 'meta.json'), JSON.stringify({ product: 'p', version: '2.0', from: '1.0', docsWorktree: wt }));
+  const quiet = fn => { const l = console.log, e = console.error; console.log = console.error = () => {}; try { return fn(); } finally { console.log = l; console.error = e; } };
+  assert.equal(quiet(() => run([dir])), 0);
+  assert.equal(fs.readFileSync(path.join(dir, 'lintpass/all-pages.txt'), 'utf8'), 'docs/p/2.0/kept/a.mdx\ndocs/p/2.0/new.md\n');
+  assert.equal(quiet(() => run([dir, '--check'])), 1, 'fails when the final check has not run');
+  fs.writeFileSync(path.join(dir, 'lintpass/final-recheck.txt'), 'PASS  docs/p/2.0/new.md\n');
+  assert.equal(quiet(() => run([dir, '--check'])), 1, 'fails when a kept page was skipped');
+  fs.writeFileSync(path.join(dir, 'lintpass/final-recheck.txt'), log);
+  assert.equal(quiet(() => run([dir, '--check'])), 0);
+});

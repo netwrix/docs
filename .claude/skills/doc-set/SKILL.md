@@ -142,6 +142,7 @@ Tell reviewers (with the sharing steps in step 7):
 
 ### 9. Assemble and report
 
+- **Lint every page.** A run is not finished until the style check has covered ALL the version's pages: new, rewritten, updated, restyled, and kept pages alike, not only the ones the run edited. Run `node scripts/doc-set/lint-all.mjs <run-dir>`. It writes `<run-dir>/lintpass/all-pages.txt` (every `.md` and `.mdx` under the version's folder, or `docs/<id>/` in an align run, minus `kb/` and `CLAUDE.md`) and prints the command. Run that command from the docs worktree, detached with `--progress`, saving to `<run-dir>/lintpass/final-recheck.txt`. Then run `node scripts/doc-set/lint-all.mjs <run-dir> --check`: it exits 1 and names any page the check missed. Fix each failing page you edited this run, in your own words and without changing a fact (`references/lint-pass.md`). A page the writer told you not to change, such as an unverifiable page in an align run, is linted too: list its findings in the report and leave it as it is. The author report's "Style check on every page" section reads `final-recheck.txt`.
 - Add `_category_.json` files and landing pages for new zones; fix `sidebar_position` collisions; update links and anchors; add `{ from, to }` redirects in `docusaurus.config.js` for each moved or retired page, matching the existing entries.
 - Run `/docs-build` for `DOCS_PRODUCT=<id> DOCS_PRODUCT_LATEST_ONLY=true`. Fix broken links and MDX errors.
 - Run `node scripts/doc-set/coverage.mjs .doc-set/<product>-<version> --write`, then summarize `REPORT.md` for the writer. It lists uncovered facts, contradictions, jira-only TODOs, untraced sentences, and dropped internals.
@@ -149,6 +150,7 @@ Tell reviewers (with the sharing steps in step 7):
 
 ## Rules
 
+- The style check covers every page of the version at the end of the run, kept pages included (Phase 9, "Lint every page"). Never report a run as finished on the strength of a check of the changed pages alone.
 - The code wins over a ticket, and a ticket wins over an old page. When they disagree, follow the higher source and log it.
 - Never state a fact you can't cite. Gaps become `{/* TODO */}` markers and report lines.
 - Images stay on the previous version's paths unless the UI changed; list screenshots that look stale in the report. Don't invent images.
