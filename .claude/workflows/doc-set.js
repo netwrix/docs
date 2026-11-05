@@ -72,7 +72,7 @@ const draftPrompt = (b, problems) =>
   `Then run npm run quality:check -- --file <page> from the docs worktree, at most 3 fix rounds. Pages in this folder are new files, so the check reads the whole page. Fix every finding on the page. On a line you did not otherwise change (old 3.3 wording), reword only the flagged sentence, minimally, without changing any fact; make a passive sentence active only when the actor is stated or obvious, and never add "you", "someone" or the product as the actor of a past or completed action (leave such a sentence as written and list it in the page's untraced notes as "past or completed action, actor not stated"), number, code span, link, bold label, or quoted message; count those old-line fixes in preexistingFindings. Don't commit.\n` +
   `Write ${runDir}/results/${b.name}.json in the results shape from fact-pack.md, with factsCovered listing only fact ids the final page states. Set status "done" only when quality:check passes on the whole page.` +
   (problems && problems.length
-    ? `\n\nA previous attempt failed verification. Fix exactly these problems:\n${problems.map((p) => `- ${p}`).join('\n')}`
+    ? `\n\nA previous attempt failed verification. Fix exactly these problems:\n${problems.map((p) => `- ${p}`).join('\n')}\n\nFix a problem by correcting the sentence or by stating the missing fact. Never fix it by deleting a sentence that was on the page before this run (the page as it is on origin/dev, or in the previous version folder): an unbacked original sentence stays, and you list it under "todos" in the results file as "unverified, kept". Delete only a sentence that you wrote in this run, or one that an assigned fact contradicts.`
     : '')
 
 const verifyPrompt = (b) =>
