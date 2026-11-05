@@ -646,3 +646,19 @@ test('the report generators create the output folder when it does not exist', as
   assert.ok(fs.existsSync(out));
   assert.ok(fs.existsSync(`${out}.capabilities.json`));
 });
+
+test('mergeAreas keeps existing fact ids when an area is added or the merge is rerun', async () => {
+  const { mergeAreas } = await import('./doc-set/merge-facts.mjs');
+  const fact = (statement, area) => ({ statement, cite: `x.cs:${statement.length}`, area, status: 'unchanged', internal: false });
+  const first = mergeAreas([{ area: 'b', facts: [fact('one', 'b'), fact('two', 'b')] }]);
+  assert.deepEqual(first.map(f => f.id), ['F001', 'F002']);
+  // An area that sorts before 'b' is added: the old facts keep F001 and F002.
+  const second = mergeAreas([{ area: 'a', facts: [fact('three', 'a')] }, { area: 'b', facts: [fact('one', 'b'), fact('two', 'b')] }], first);
+  assert.equal(second.find(f => f.statement === 'one').id, 'F001');
+  assert.equal(second.find(f => f.statement === 'two').id, 'F002');
+  assert.equal(second.find(f => f.statement === 'three').id, 'F003');
+  // Rerunning changes nothing, and a dropped fact's id is not reused.
+  const third = mergeAreas([{ area: 'a', facts: [fact('three', 'a')] }, { area: 'b', facts: [fact('two', 'b'), fact('four', 'b')] }], second);
+  assert.equal(third.find(f => f.statement === 'four').id, 'F004');
+  assert.deepEqual(mergeAreas([{ area: 'b', facts: [fact('one', 'b')] }]).map(f => f.id), ['F001']);
+});

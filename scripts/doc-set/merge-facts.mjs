@@ -28,10 +28,22 @@ export function jaccard(a, b) {
   return inter / (a.size + b.size - inter);
 }
 
-export function mergeAreas(areas) {
+/** Merge per-area fact lists. `previous` is the facts of an earlier merge: a fact that is still there (same area, cite, and
+ *  statement) keeps its id, and new facts get ids after the highest one. Manifests, results and notes refer to ids, so they
+ *  must survive adding an area or rerunning the merge. Without `previous`, ids are F001 upward in file order. */
+export function mergeAreas(areas, previous = []) {
   const facts = [];
   for (const a of areas) for (const f of a.facts) facts.push({ ...f, source: a.area });
-  facts.forEach((f, i) => { f.id = `F${String(i + 1).padStart(3, '0')}`; });
+  const key = f => `${f.area}\u0000${f.cite || ''}\u0000${f.statement}`;
+  const kept = new Map(previous.map(f => [key(f), f.id]));
+  const used = new Set();
+  let max = previous.reduce((m, f) => Math.max(m, Number(String(f.id).replace(/\D/g, '')) || 0), 0);
+  for (const f of facts) {
+    const id = kept.get(key(f));
+    if (id && !used.has(id)) { f.id = id; used.add(id); }
+  }
+  for (const f of facts) if (!f.id) { max += 1; f.id = `F${String(max).padStart(3, '0')}`; used.add(f.id); }
+  facts.sort((a, b) => Number(a.id.slice(1)) - Number(b.id.slice(1)));
   return facts.map(({ id, statement, cite, area, status, internal, tickets, source, outOfScope }) => ({ id, statement, cite: cite || '', area, status, internal: !!internal, tickets: tickets || [], source, ...(outOfScope ? { outOfScope } : {}) }));
 }
 
@@ -90,7 +102,8 @@ export function run(argv) {
   const meta = JSON.parse(fs.readFileSync(path.join(dir, 'meta.json'), 'utf8'));
   const files = fs.readdirSync(path.join(dir, 'facts')).filter(f => f.endsWith('.json')).sort();
   const areas = files.map(f => JSON.parse(fs.readFileSync(path.join(dir, 'facts', f), 'utf8')));
-  const facts = mergeAreas(areas);
+  const prevFile = path.join(dir, 'facts.json');
+  const facts = mergeAreas(areas, fs.existsSync(prevFile) ? JSON.parse(fs.readFileSync(prevFile, 'utf8')).facts : []);
   const probs = problems(facts);
   const dups = suspectedDuplicates(facts);
   const dupOf = clusterDuplicates(facts, dups);
