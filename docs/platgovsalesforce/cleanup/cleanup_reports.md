@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Running Clean Up Reports
 
-Platform Governance for Salesforce provides predefined reports to help you clean up your Salesforce
+Strongpoint for Salesforce provides predefined reports to help you clean up your Salesforce
 Instance. The reports are available by opening **Netwrix Dashboard** > **Reports** > **Clean Up**
 and selecting a report:
 
@@ -65,7 +65,7 @@ Ownership of customizations is important for clean up and accountability in the 
 The results list customizations with owners who are either:
 
 - Not active in Salesforce
-- Don't have access to Platform Governance for Salesforce
+- Don't have access to Strongpoint for Salesforce
 
 ### Custom Fields without Help Text
 

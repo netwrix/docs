@@ -19,7 +19,7 @@ Clean up involves some or all of the following steps:
 
 ## Clean Up Tools
 
-Platform Governance for Salesforce provides a series of built-in Clean Up Tools to enable Administrators to clean up their account in
+Strongpoint for Salesforce provides a series of built-in Clean Up Tools to enable Administrators to clean up their account in
 an organized and efficient manner. There are many types of clean up, but they generally follow the
 same steps:
 
@@ -101,7 +101,7 @@ investigations are conducted and approvals are obtained the customization can be
 appropriate based on company policies and procedures.
 
 Some of the items being changed, such as the description or owner, can be direct list edited or bulk
-edited like any other Salesforce data directly in a Platform Governance for Salesforce view such as
+edited like any other Salesforce data directly in a Strongpoint for Salesforce view such as
 **Unused Fields**.
 
 ### Run the Scanner

@@ -1,12 +1,12 @@
 ---
-title: "Install Platform Governance for Salesforce"
-description: "Install Platform Governance for Salesforce"
+title: "Install Strongpoint for Salesforce"
+description: "Install Strongpoint for Salesforce"
 sidebar_position: 10
 ---
 
-# Install Platform Governance for Salesforce
+# Install Strongpoint for Salesforce
 
-The Netwrix customer success team sends you a package installation file. To install Platform Governance for Salesforce:
+The Netwrix customer success team sends you a package installation file. To install Strongpoint for Salesforce:
 
 1. Click the install URL. If installing in the sandbox, replace the initial portion of the URL
    with [http://test.salesforce.com](http://test.salesforce.com)
@@ -20,7 +20,7 @@ The installation runs in the background. You receive an email notification when 
 
 ## Configure Authentication
 
-After installing the package, configure authentication credentials. Platform Governance for Salesforce supports two authentication methods:
+After installing the package, configure authentication credentials. Strongpoint for Salesforce supports two authentication methods:
 
 ### Recommended: Named Credential Authentication (OAuth)
 
@@ -72,7 +72,7 @@ When using Session ID authentication, create a dedicated Integration User specif
 
 ## Assign Permission Set to Users
 
-After configuring authentication, assign the required Permission Set to users who need access to Platform Governance for Salesforce, and to any users running scheduled jobs or background processes the application requires.
+After configuring authentication, assign the required Permission Set to users who need access to Strongpoint for Salesforce, and to any users running scheduled jobs or background processes the application requires.
 
 The Permission Set grants access to the data and system processes Platform Governance uses, including metadata scanning and other automated operations.
 
@@ -85,12 +85,12 @@ The Permission Set grants access to the data and system processes Platform Gover
 ![ManageAssignment](/images/platgovsalesforce/installing_strongpoint/ManageAssignment.webp)
 4. Click **Add Assignments**
 ![AddAssignment](/images/platgovsalesforce/installing_strongpoint/AddAssignment.webp)
-5. Select the users who need access to Platform Governance for Salesforce
+5. Select the users who need access to Strongpoint for Salesforce
 6. Click **Assign**
 7. Click **Done**
 
 :::note Required Permission Set
-All users who access the Netwrix Lightning application need the **Netwrix Grant Permissions** permission set to use Platform Governance for Salesforce.
+All users who access the Netwrix Lightning application need the **Netwrix Grant Permissions** permission set to use Strongpoint for Salesforce.
 :::
 
 ### Verify Permission Assignment
@@ -113,7 +113,7 @@ After configuring authentication (either Named Credentials or Session ID), acces
 
 ![eula](/images/platgovsalesforce/installing_strongpoint/eula.webp)
 
-You can now use Platform Governance for Salesforce.
+You can now use Strongpoint for Salesforce.
 
 ## Next Steps
 

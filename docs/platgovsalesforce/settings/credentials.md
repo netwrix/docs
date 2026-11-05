@@ -12,7 +12,7 @@ Dashboard** > **Settings** > **App Credentials/Test Connection**
 ![credentials_handler](/images/platgovsalesforce/settings/credentials_handler.webp)
 
 You must create a Connected App to run the scanner. Refer to
-[Install Platform Governance for Salesforce](/docs/platgovsalesforce/installingstrongpoint/installing_strongpoint.md)
+[Install Strongpoint for Salesforce](/docs/platgovsalesforce/installingstrongpoint/installing_strongpoint.md)
 for instructions.
 
 Click **New** to add a new credential or **Edit** an existing credential. **Search** finds and

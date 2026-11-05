@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Understanding the Customization Record
 
-This topic discusses the new Platform Governance for Salesforce Lightning customization record. It
-is only available with the Platform Governance for Salesforce Lightning app. Refer to the topic
+This topic discusses the new Strongpoint for Salesforce Lightning customization record. It
+is only available with the Strongpoint for Salesforce Lightning app. Refer to the topic
 [Old Customization Record](/docs/platgovsalesforce/customizations/old_customization_record.md) for the old style customization record.
 
 :::note

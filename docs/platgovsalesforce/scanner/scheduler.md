@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Scheduler
 
-Platform Governance for Salesforce's scheduler creates automated scans, manages scripts, uses the
+Strongpoint for Salesforce's scheduler creates automated scans, manages scripts, uses the
 Agent and finds the date last used (DLU). The schedules are validated to prevent scanners from
 running concurrently, potentially causing conflicts and incomplete documentation. The scheduler displays a warning if you create an overlapping scanner schedule.
 
@@ -28,7 +28,7 @@ To use the scheduler tool:
 
 ### Initial Documentation Phase
 
-When you first install Platform Governance for Salesforce, enable only the **Automated Scan** with **Daily** frequency. Don't enable other scanners until your org is fully documented. This approach ensures:
+When you first install Strongpoint for Salesforce, enable only the **Automated Scan** with **Daily** frequency. Don't enable other scanners until your org is fully documented. This approach ensures:
 
 - Complete baseline documentation before change detection begins
 - Optimal resource utilization during initial scan
