@@ -152,7 +152,7 @@ Assesses risks arising from Active Directory trust relationships, including misc
 
 **Stale Objects**
 
-Identifies outdated, unused, or poorly maintained objects in Active Directory that indicate weak hygiene practices. Covers inactive user and computer accounts, expired or unused objects, and other legacy artifacts that expand the attack surface if you leave them unaddressed.
+Identifies outdated, unused, or poorly maintained objects in Active Directory that indicate weak hygiene practices. Covers inactive user and computer accounts, objects that are expired or unused, and other legacy artifacts that expand the attack surface if you leave them unaddressed.
 
 **Privileged accounts**
 

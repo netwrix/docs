@@ -12,7 +12,7 @@ Because these settings sync from a separate microservice rather than the main Se
 - **Rate limiting** — Request throttling for the API, including permit, window, and queue limits, with separate limits for filtered queries and encryption key rotation.
 - **Scanning** — Tuning for the scan worker pool: queue capacity, worker count, maximum concurrent scans per tenant, and drain rate.
 - **Azure scanning** — Maximum parallelism for Azure and Entra scan operations.
-- **HTTP resilience** — Retry attempts, backoff delay, request and client timeouts, and circuit breaker thresholds for outbound HTTP calls.
+- **HTTP resilience** — Retry attempts, backoff delay, request timeouts, client timeouts, and circuit breaker thresholds for outbound HTTP calls.
 - **Audit store** — Where the Entra Scanner stores audit events (file, database, or none), the file path, and the retention period.
 - **Maintenance** — Interval for background maintenance jobs.
 - **Telemetry** — Telemetry exporter (OTLP, Console, or None) and the tracing toggle.

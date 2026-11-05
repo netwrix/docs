@@ -26,7 +26,7 @@ To enable SCIM and generate a token:
 4. In the dialog, enter a label to identify the token (for example, `Okta production`) and select a connector type.
 5. Copy the token.
 
-The token doesn't expire. Because a compromised token stays valid indefinitely, revoke and regenerate it immediately if you suspect it has been exposed, and rotate it periodically as part of your organization's credential management practices.
+The token doesn't expire. A compromised token stays valid indefinitely, so if you suspect it has been exposed, revoke it and regenerate it immediately, and rotate it periodically as part of your organization's credential management practices.
 
 ![A screenshot of the Generate SCIM token dialog, showing the label and connector type fields.](/images/pingcastleenterprise/4.0/settings-scim/scim-token-generation.webp)
 

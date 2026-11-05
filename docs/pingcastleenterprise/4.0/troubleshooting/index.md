@@ -175,7 +175,7 @@ Add SQL Server credentials to the connection string in `appsettings.Production.j
 <details>
 <summary>Entra Scan Config Missing</summary>
 
-If Entra ID scanning isn't available, Enterprise and CloudAPI aren't integrated correctly. Check for either of these signs:
+If Entra ID scanning isn't available, the integration between Enterprise and CloudAPI isn't configured correctly. Check for either of these signs:
 
 - **Entra Scan Config** isn't available in the **Configuration** dropdown menu.
 - **Configuration** > **Settings** doesn't show any Entra configuration settings.

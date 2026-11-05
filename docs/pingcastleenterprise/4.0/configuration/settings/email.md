@@ -43,7 +43,7 @@ When you select **Microsoft Graph** as the email provider, configure these field
 
 - **Tenant ID** — The Entra ID tenant ID for your organization.
 - **Client ID** — The application (client) ID from the Entra ID app registration that PingCastle uses to send email.
-- **Authentication Method** — The credential type the app registration uses: a client secret or a certificate.
+- **Authentication Method** — The type of credential the app registration uses: a client secret or a certificate.
 - **Client Secret** — The application's client secret. This field applies only when you set **Authentication Method** to client secret.
 - Certificate fields (location, file, thumbprint, store location, and store name) — These fields apply only when you set **Authentication Method** to certificate. They identify which certificate PingCastle uses to authenticate.
 
