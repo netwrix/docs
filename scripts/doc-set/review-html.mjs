@@ -212,6 +212,7 @@ export function run(argv) {
     return 2;
   }
   const { meta, entries } = loadEntries(dir);
+  fs.mkdirSync(path.dirname(path.resolve(out)), { recursive: true });
   fs.writeFileSync(out, buildPage({ title: title || `${meta.product} ${meta.version} side by side`, entries, meta }));
   console.log(`Wrote ${entries.length} page comparisons to ${out}`);
   return 0;

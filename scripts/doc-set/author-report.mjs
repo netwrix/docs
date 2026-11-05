@@ -280,6 +280,7 @@ export function run(argv) {
     return 2;
   }
   const { args, groups, need } = loadReportArgs(dir, title);
+  fs.mkdirSync(path.dirname(path.resolve(out)), { recursive: true });
   fs.writeFileSync(out, buildAuthorPage(args));
   console.log(`Wrote the author report to ${out}: new ${groups.NEW.length}, rewritten ${groups.REWRITE.length}, updated ${groups.UPDATE.length}, restyled only ${groups.RESTYLED.length}, unchanged ${groups.UNCHANGED.length}; ${need.length} open items`);
   return 0;

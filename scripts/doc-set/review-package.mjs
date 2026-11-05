@@ -331,6 +331,7 @@ export function run(argv) {
   const { meta, entries } = loadEntries(dir);
   const { args } = loadReportArgs(dir, title);
   const finalTitle = title || `${meta.product} ${meta.version} Review`;
+  fs.mkdirSync(path.dirname(path.resolve(out)), { recursive: true });
   fs.writeFileSync(out, buildPackage({ title: finalTitle, meta, entries, reportArgs: { ...args, title: finalTitle } }));
   fs.writeFileSync(`${out}.capabilities.json`, JSON.stringify(CAPABILITIES, null, 2) + '\n');
   console.log(`Wrote the review package to ${out} (${entries.length} pages) and ${out}.capabilities.json`);

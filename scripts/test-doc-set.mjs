@@ -628,3 +628,21 @@ test('the doc-set workflow script parses as JavaScript', () => {
   assert.doesNotThrow(() => check(src));
   assert.throws(() => check(src.replace('pages folder>', "pages' folder>")), 'the check catches a stray apostrophe');
 });
+
+test('the report generators create the output folder when it does not exist', async () => {
+  const { run } = await import('./doc-set/review-package.mjs');
+  const { dir: repo, sha } = alignRepo({ 'docs/p/a.md': '---\ntitle: A\n---\n\nOld text.\n' });
+  fs.writeFileSync(path.join(repo, 'docs/p/a.md'), '---\ntitle: A\n---\n\nNew text.\n');
+  const runDir = fs.mkdtempSync(path.join(os.tmpdir(), 'outdir-'));
+  fs.mkdirSync(path.join(runDir, 'results'));
+  fs.writeFileSync(path.join(runDir, 'meta.json'), JSON.stringify({ product: 'p', version: 'current', versionless: true, oldRef: sha, docsWorktree: repo, refSha: 'abc1234567', baselineSha: '' }));
+  fs.writeFileSync(path.join(runDir, 'facts.json'), JSON.stringify({ facts: [{ id: 'F1', statement: 's', cite: 'x:1', area: 'a', status: 'unchanged', internal: false }] }));
+  fs.writeFileSync(path.join(runDir, 'claims.json'), JSON.stringify({ claims: [] }));
+  fs.writeFileSync(path.join(runDir, 'manifest.json'), JSON.stringify({ pages: [{ path: 'docs/p/a.md', action: 'UPDATE', type: 'task', zone: 'z', facts: ['F1'] }], dropped: [] }));
+  fs.writeFileSync(path.join(runDir, 'results', 'r.json'), JSON.stringify({ pages: [{ path: 'docs/p/a.md', status: 'done', factsCovered: ['F1'], todos: [], untraced: [] }] }));
+  const out = path.join(runDir, 'review', 'nested', 'page.html');
+  const log = console.log; console.log = () => {};
+  try { assert.equal(run([runDir, out, '--title', 'T']), 0); } finally { console.log = log; }
+  assert.ok(fs.existsSync(out));
+  assert.ok(fs.existsSync(`${out}.capabilities.json`));
+});
