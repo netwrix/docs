@@ -79,6 +79,8 @@ PingCastle.exe --hc-conso --filter-date 2024-01-01 --center-on primary.local --x
 | `--protocol <proto>` | Protocol selection: `ADWSThenLDAP` (default), `ADWSOnly`, `LDAPOnly`, `LDAPThenADWS` |
 | `--pagesize <size>` | LDAP page size (default: 500) |
 | `--quota <num>` | LDAP items per second to process (default: unlimited) |
+| `--skip-ldap-signing` | Skip the LDAP signing checks and probing during the scan. The checks that depend on them don't report results, but endpoint detection and response (EDR) products that monitor unsigned LDAP communications don't raise alerts |
+| `--skip-gpo-forest-lookup` | Don't look for unresolved Group Policy Objects (GPOs) in parent domains. By default, GPO scanning looks in parent domains for GPOs it can't resolve |
 
 ## Report Options
 
