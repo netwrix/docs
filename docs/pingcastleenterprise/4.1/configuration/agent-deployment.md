@@ -16,7 +16,7 @@ Configure Windows Task Scheduler (or your organization's batch scheduler) to run
 
 ## Command line
 
-Create an API key with upload permissions (**Configuration** > **Agents**) and test the command before scheduling:
+Create an API key with upload permissions (**Configuration** > **Agents**) and test the command before scheduling. API keys expire after the period you choose, so plan to extend or regenerate the key before then. See [Managing agents](../admin/agents/index.md) and [Agent API key expiration](../admin/agents/key-expiration.md).
 
 ```powershell
 PingCastle.exe --healthcheck --level Full --api-endpoint https://yourservername --api-key yourapikey

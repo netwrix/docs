@@ -68,6 +68,8 @@ PingCastle Enterprise can remind administrators before scheduled items expire an
 - **Default Domain Reminder Days** — The number of days before an Active Directory domain's scheduled review that PingCastle sends a reminder email.
 - **Default Entra Reminder Days** — The number of days before an Entra ID tenant's scheduled review that PingCastle sends a reminder email.
 - **Monday Hour** — The hour of the day, on Mondays, when PingCastle sends the weekly report.
+- **Agent API key expiry reminder** — The number of days before an agent API key expires that PingCastle sends a reminder email. The default is 30. The allowed range is 1 to 89.
+- **Also send follow-up reminders** — When selected, PingCastle also sends reminders 21, 14, and 7 days before expiry, if each day is within the main threshold. It is selected by default. See [Agent API key expiration](../../admin/agents/key-expiration.md).
 
 For example, setting **Default Domain Reminder Days** to 7 sends a reminder email one week before a domain's next scheduled review.
 
