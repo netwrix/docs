@@ -20,7 +20,7 @@ test('docs, sidebar, image, and file paths map to the product label', () => {
   assert.deepEqual(resolve('docs/auditor/10.7/a.md'), ['auditor']);
   assert.deepEqual(resolve('sidebars/1secure.js'), ['1secure']);
   assert.deepEqual(resolve('sidebars/auditor/10.7.js'), ['auditor']);
-  assert.deepEqual(resolve('static/images/pingcastle/x.webp'), ['pingcastle']);
+  assert.deepEqual(resolve('static/images/pingcastleenterprise/x.webp'), ['pingcastle']);
   assert.deepEqual(resolve('static/files/threatmanager/x.zip'), ['threat-manager']);
 });
 

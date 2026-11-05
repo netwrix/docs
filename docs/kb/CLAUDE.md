@@ -20,7 +20,7 @@ The `kb` tag is mandatory for all KB articles regardless of topic or product. It
 
 ## Folder Organization
 
-KB articles live in `docs/kb/<product>/`. Some product folders use category subfolders (e.g., `docs/kb/privilegesecure/troubleshooting-and-errors/`); others drop articles directly in the product folder (e.g., `docs/kb/pingcastle/`). Each folder that contains articles has a `0-images/` subfolder for that article's images.
+KB articles live in `docs/kb/<product>/`. Some product folders use category subfolders (e.g., `docs/kb/privilegesecure/troubleshooting-and-errors/`); others drop articles directly in the product folder (e.g., `docs/kb/pingcastleenterprise/`). Each folder that contains articles has a `0-images/` subfolder for that article's images.
 
 Never manually copy KB articles into versioned product folders — the KB copy script handles that at build time.
 

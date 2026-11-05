@@ -139,13 +139,13 @@ You can build or run the documentation for a single product using the `DOCS_PROD
 
 **Windows (PowerShell):**
 ```powershell
-$ENV:DOCS_PRODUCT="pingcastle"
+$ENV:DOCS_PRODUCT="pingcastleenterprise"
 npm run start
 ```
 
 **Unix/Linux/macOS:**
 ```bash
-export DOCS_PRODUCT="pingcastle"
+export DOCS_PRODUCT="pingcastleenterprise"
 npm run start
 ```
 
@@ -154,7 +154,7 @@ This works with any command (`start`, `start-chok`, `build`) and speeds up devel
 Add `DOCS_PRODUCT_LATEST_ONLY=true` to also restrict the build to that product's latest version only (default `false` builds all versions, same as a full build):
 
 ```bash
-DOCS_PRODUCT=pingcastle DOCS_PRODUCT_LATEST_ONLY=true npm run build
+DOCS_PRODUCT=pingcastleenterprise DOCS_PRODUCT_LATEST_ONLY=true npm run build
 ```
 
 In Claude Code, `/docs-build` builds one product or the whole site and summarizes broken links and errors. `/docs-preview` starts, stops, or checks a local dev server or production preview. Both ask which product and scope to use.
