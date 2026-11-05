@@ -12,22 +12,16 @@ activities across the entire IT infrastructure. Use flexible searches to get pre
 Based on your filter preferences, you can create your customized report or choose the report from
 the list with the predefined filter settings.
 
-This functionality is available for the following data sources:
+{/* TODO: link the Connect sources page here when it exists. It covers which data sources and connectors support search and state-in-time reports. */}
 
-- Active Directory (on-premise)
-- Azure AD
-- Computer
-- Exchange Online
-- SharePoint Online
+You can create subscriptions for Activity reports, State (risk) reports, Risk Assessment reports, and
+Compliance reports. See the [Subscriptions](/docs/1secure/admin/searchandreports/subscriptions.md) topic for
+additional information.
 
-Netwrix 1Secure also lets you generate state-in-time reports. This functionality
-is available for the following connectors:
-
-- Active Directory State
-- Microsoft Entra ID State
+Netwrix 1Secure also lets you generate state-in-time reports.
 
 See the following topics for additional information:
 
 - [Apply Filters](/docs/1secure/admin/searchandreports/applyfilters.md)
-- Create Reports with Custom Filters
+- [Create Reports with Custom Filters](/docs/1secure/admin/searchandreports/customreports.md)
 - [State In Time Risks Reports](/docs/1secure/admin/searchandreports/stateintime.md)

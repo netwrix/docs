@@ -15,43 +15,41 @@ sidebar_position: 30
 * Select the SharePoint Online source's Connectors
 * Add/Edit SharePoint Online Data Classification
 
+The connector has these settings: **Classifier Function App Url**, **Service Bus SAS Connection String**, **Run OCR to improve classification of images (increases processing time)**, and **Sensitive Data Types to Classify**. You must register the classifier before you save the connector. You complete the URL and connection string in [Register the Classifier in 1Secure](#register-the-classifier-in-1secure).
+
+:::note
+The new web UI can't edit this connector type. It shows "Editing this connector type is not supported in the new UI yet. Please use the classic UI to make changes."
+:::
+
 ## Deploy and Configure the Classifier in Azure
 
 * Create new resource group
-* Give current user at least: Domain Services Contributor, Contributor, Key Vault Secrets Officer, Key Vault Certificates User, and Role Based Access Control Administrator within resource group
+* Give the current user at least Contributor and Role Based Access Control Administrator within the resource group. The deployment assigns Key Vault Administrator to the deploying user and Key Vault roles to the classifier function app, so the deploying user must be able to create role assignments.
 * Add "Netwrix 1Secure Classifier" from marketplace
 
   \
   ![The configuration screen for deploying the 1Secure classifier app](attachments/c8e939c8-8634-4a60-9cba-a931ef38e8f1.png " =599x391")
 * Set Region
-* Set Resource name `<prefix>`e.g. CompanyName-1Secure
+* Set Resource name `<prefix>` (8 to 21 characters), e.g. CompanyName-1Secure
+* Optionally set the text extraction API key. The default is a random GUID. The deployment sets it as `TextExtraction__ApiKey` on both the classifier and text extraction function apps, so you don't copy a key by hand.
 * After creation go to resource group
-* Go to `<prefix>`-textextraction
-* Open Functions page and go to App Keys
-* Copy "default" key
-* Go to `<prefix>`-classifier
-* Open Settings folder and go to Environment variables
-* Paste "default" key into "TextExtraction__ApiKey" value
+
+The deployment creates these resources, named from `<prefix>`:
+
+* `<prefix>`-classifier and `<prefix>`-textextraction (function apps)
+* `<prefix>`-ai (Application Insights)
+* `<prefix>`-kv (Key Vault)
+* `<prefix>`-sb-core (Service Bus), with a queue named `state-classification`
+* `<prefix>`-workspace
+
+The deployment also creates a Service Bus shared access policy named `1Secure-AccessKey` that has only the Send right.
 
 ## Register the Classifier in 1Secure
 
-* In Azure classifier app, go to Overview
-* Click the **Default domain** link and copy the full URL (shown in the following screenshot)
-
-  \
-  ![](attachments/0138b931-17d4-4266-ade7-d619757f14e2.png " =1890x197")
-
-
-* In 1Secure and paste as "Classifier Function App Url"
-* Go to `<prefix>`-sb-core
-* Open Settings Folder and go to Shared access policies
-* Create new shared access policy, only 'Send' claims are required
-
-
- ![](attachments/0fff23ad-9695-406b-b172-636c384d5fba.png " =1678x899")
-
-
-* Copy the "Primary connection string"
+* In the Azure deployment, go to the outputs
+* Copy the `ClassifierFunctionAppUrl` output (`https://<prefix>-classifier.azurewebsites.net`)
+* In 1Secure, paste it as "Classifier Function App Url". The URL must be a valid absolute HTTPS URL and, depending on your organization's firewall rules, must be publicly accessible.
+* Copy the `ServiceBusSasConnectionString` output, which is the primary connection string of the `1Secure-AccessKey` policy
 * Swap to 1Secure tab and paste as "Service Bus SAS Connection String"
 
 
@@ -61,9 +59,15 @@ sidebar_position: 30
 * Press Register
 * After success, save, and swap back to Azure Portal (tab 1)
 
+Registration needs the source group to have at least one source. 1Secure sends the request to the classifier and waits up to 5 minutes, to allow for certificate generation in Key Vault. It then checks up to 30 times, at 10-second intervals, for the classifier public key. A classifier counts as registered when 1Secure stores its public key. On success, 1Secure shows "Classifier has been registered successfully."
+
+If you change the URL or connection string after you register, 1Secure shows "You've made changes to the classifier settings. Please re-register the classifier before saving." If you save without registering, it shows "Please register the classifier before saving your changes."
+
 ## Set Up Classifier Link to SPO
 
 **On Azure Portal (tab 1):**
+
+The classifier reads the SharePoint app registration from its Key Vault. The secrets `source-auth-key-<source GUID>-client-id` and `source-auth-key-<source GUID>-tenant-id` must contain valid GUIDs, and the certificate is `sharepoint-auth-<source GUID>`.
 
 * Go to `<prefix>`-kv
 * Open Objects folder and go to Secrets![](attachments/ac55f3e0-fee7-4318-a86b-58e9899c3a10.png " =1738x283")
@@ -122,6 +126,24 @@ sidebar_position: 30
 
 * There could be errors in the classifier app - check the Application Insights resource (in the classifier resource group, resource ending in `-ai`) for more detailed errors - see the [Application Insights Errors](#application-insights-errors) section for further troubleshooting steps
 
+### Registration Errors
+
+**The classifier function app URL must be a valid absolute HTTPS URL.**
+
+* Enter the full HTTPS URL of the classifier function app.
+
+**Registration times out**
+
+* The error advises you to check the classifier function app logs and Key Vault permissions.
+
+**Failed to register the user-hosted classifier. The classifier app did not return a public key.**
+
+* The classifier didn't return a public key within 30 checks at 10-second intervals. Check the classifier function app logs.
+
+**Failed to register the user-hosted classifier. The request to the provided URL did not succeed.**
+
+* Check the URL. For a 400 response, 1Secure also shows the reason the classifier returned.
+
 ### Application Insights Errors
 
 **No ClientId was specified**
@@ -130,10 +152,18 @@ sidebar_position: 30
 
 * Check that the client ID and tenant ID secrets are set in the KeyVault instance
 
+
+
+* Populate the client ID and tenant ID secrets in the classifier Key Vault with valid GUIDs
+
+**invalid_client or unauthorized_client**
+
+* The classifier treats these Entra token errors as app registration configuration errors. For example, the signing certificate might not be registered on the app registration.
+
 **The maximum entity size has been reached or exceeded for queue**
 
 * The classifier has been unable to process service bus messages and the queue is now full, the queue can be emptied. The classifications should be processed successfully on the next crawl.
-  * In the classifier resource group, find the service bus namespace resource (named `<classifier-name>`**-class-sb-core**)
+  * In the classifier resource group, find the service bus namespace resource (named `<classifier-name>`**-sb-core**)
   * Open the **state-classification** queue, and click **Service Bus Explorer** in the left-hand side bar
   * Click **Peek Mode** and change it to **Receive Mode**, then click **Purge messages**
 

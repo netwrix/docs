@@ -27,7 +27,7 @@ that lists the managed organizations defined in 1Secure.
 You can view the following for each risk metric:
 
 - Category – The name of the preconfigured category a risk metric belongs to, which can be Data,
-  Identity, or Infrastructure. The State In Time Risk report generated for this metric can be found
+  Identity, Infrastructure, or Overexposed Sensitive Data (Sensitive Data in the Netwrix metric set). The State In Time Risk report generated for this metric can be found
   under this particular category on the Risk reports page, See the
   [State In Time Risks Reports](/docs/1secure/admin/searchandreports/stateintime.md) topic for additional
   information.
@@ -35,14 +35,15 @@ You can view the following for each risk metric:
   analyze potential vulnerabilities in an environment, such as disabled computer accounts, stale
   direct user permission, inactive user accounts, etc.
 - Measures in – The measurement type used to calculate risk thresholds for a risk metric.
-  Measurement types are:
+  Measurement types are Num, Bytes, and Binary. For Num metrics, the threshold units are:
 
-    - Number – Indicates that risk thresholds are calculated in absolute numbers (e.g., the number
+    - Numbers – Indicates that risk thresholds are calculated in absolute numbers (e.g., the number
       of inactive user accounts).
-    - Percentage – Indicates that risk thresholds are calculated as a proportion of a total value
+    - Percentage (%) – Indicates that risk thresholds are calculated as a proportion of a total value
       (e.g., the percentage of user accounts with password never expires).
-    - Binary – Indicates that risk level is calculated on the basis of a true/false condition (
-      e.g., whether third-party applications are allowed or not).
+
+  A Binary metric indicates that risk level is calculated on the basis of a true/false condition (
+  e.g., whether third-party applications are allowed or not).
 
 - Low – The low risk threshold for a risk metric.
 - Medium – The medium risk threshold for a risk metric
@@ -65,30 +66,30 @@ that lists the managed organizations defined in 1Secure.
 
 **Step 5 –** Select a measurement type to calculate risk thresholds for the metric. Options are:
 
-- Number – Indicates that risk thresholds are calculated in absolute numbers (e.g., the number of
+- Numbers – Indicates that risk thresholds are calculated in absolute numbers (e.g., the number of
   inactive user accounts). This option is selected by default.
-- Percentage – Indicates that risk thresholds are calculated as a proportion of a total value (e.g.,
+- Percentage (%) – Indicates that risk thresholds are calculated as a proportion of a total value (e.g.,
   the percentage of user accounts with password never expires).
 
-**Step 6 –** Specify a range of values to set the low risk threshold for the metric. For example, if
-you set the low risk threshold for inactive user accounts to 0-3, the risk level is considered
-low as long as the number of inactive user accounts remains between 0 and 3.
+**Step 6 –** Specify the **Medium threshold** for the metric. The risk level is low for any value
+below the Medium threshold. For example, if you set the Medium threshold for inactive user accounts
+to 3, the risk level is considered low as long as the number of inactive user accounts remains
+below 3.
 
-Follow these rules when setting the low risk threshold:
+Follow these rules when setting the thresholds:
 
-- The minimum value of the low risk threshold must be equal to 0.
-- The maximum value of the low risk threshold is equal to the minimum value of the medium risk
-  threshold.
+- Threshold values must be positive decimals greater than 0.
+- The maximum value of the low risk range is equal to the Medium threshold.
+- The maximum value of the medium risk range is equal to the High threshold.
+- The Medium and High values must differ by at least 1 (0.01 for percentages) in the direction that
+  matches the metric. If they don't, 1Secure shows "The threshold boundaries for this metric are
+  invalid - high threshold must be at least {0} higher than the value for the medium threshold."
+- If you select Percentage (%), values must be from 0 to 100. Otherwise, 1Secure shows
+  "Percentage thresholds should be between 0 and 100".
+- A metric is Low below the Medium threshold, Medium from the Medium threshold, and High from the
+  High threshold. For metrics where lower values are worse, the comparison reverses.
 
-The medium risk threshold is calculated automatically and you can't modify it. It follows these
-rules:
-
-- The minimum value of the medium risk threshold is equal to the maximum value of the low risk
-  threshold.
-- The maximum value of the medium risk threshold is equal to the minimum value of the high risk
-  threshold.
-
-**Step 7 –** Specify a range of values to set high risk threshold for a metric. For example, if you
+**Step 7 –** Specify the **High threshold** for the metric. For example, if you
 set the high risk threshold for inactive user accounts to 10 and above, the risk level is
 considered high as long as the number of inactive user accounts exceeds 10.
 
@@ -98,7 +99,8 @@ Follow this rule when setting the high risk threshold:
   threshold.
 
 **Step 8 –** (Optional) Click the **Restore default** button to reset the risk metric to its default
-settings. This button is enabled if the default settings have been modified.
+settings. This button is enabled if the default settings have been modified. After the revert, 1Secure shows
+"Reverted successfully".
 
 **Step 9 –** Click **Save**.
 
@@ -110,6 +112,11 @@ Some risks are evaluated based on a true/false condition. For example, if a thir
 isn't allowed and the system doesn't detect any, the risk level is low. However, if the
 system detects one, the severity level is set to medium or high, depending on what you set
 here.
+
+For a Boolean risk metric, the pane says `Boolean risk. When the risk is not present, it is
+categorized as Low.` and asks "Severity when the risk is present:". Set exactly one of the Medium
+or High thresholds to 1. Otherwise, 1Secure shows "A boolean metric must have either an error or
+warning threshold set to 1."
 
 **To modify severity for a Boolean risk metric:**
 
@@ -131,7 +138,8 @@ displayed.
 - Medium – Set the risk severity level to Medium
 
 :::note
-When the risk isn't detected, the severity level is automatically set to Low.
+When the risk isn't detected, the severity level is automatically set to Low. Exactly one of the
+Medium or High thresholds must be set to 1.
 :::
 
 
@@ -182,7 +190,9 @@ that lists the managed organizations defined in 1Secure.
 
 **Step 3 –** Click a risk profile. The risk metrics for the profile are displayed in a list.
 
-**Step 4 –** Click **Add**. The Add new risk threshold pane is displayed.
+**Step 4 –** Click **Add**. The Add new risk threshold pane is displayed. It has the Metric
+("Select a metric..."), Medium threshold, and High threshold fields and the Threshold is percentage
+option.
 
 ![Add new risk threshold pane](/images/1secure/admin/riskprofiles/addnumberthreshold.webp)
 
@@ -226,7 +236,8 @@ that lists the managed organizations defined in 1Secure.
 - Medium – Set the risk severity level to Medium
 
 :::note
-When the risk isn't detected, the severity level is automatically set to Low.
+When the risk isn't detected, the severity level is automatically set to Low. Exactly one of the
+Medium or High thresholds must be set to 1.
 :::
 
 

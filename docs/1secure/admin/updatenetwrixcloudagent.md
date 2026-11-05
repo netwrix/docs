@@ -12,6 +12,12 @@ notifications, agent schedule management, and a bulk update option.
 
 Activity monitoring continues during the update process.
 
+Updating an agent or scheduling an agent update requires the **Update Agent** permission. Users with
+this permission can update an agent. The Sites page requires the Manage Sites permission.
+
+An agent has the status **Update Recommended** when it is behind the latest version. An agent has
+the status **Offline** when it has never connected or last connected more than 3 hours ago.
+
 | Icon                                                                                    | Description                                                                                     |
 | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | ![selfupdate_icon](/images/1secure/admin/selfupdate_icon.webp) | Bell Icon. Click the Bell Icon to view available updates for the Netwrix Cloud Agent. |
@@ -21,7 +27,7 @@ Activity monitoring continues during the update process.
 **To update agents in bulk:**
 
 **Step 1 –** To update selected agents, on the Managed Organizations page, select **Bulk Update
-Agent**.
+Agent**. The Bulk Update Managed Tenant Agents dialog opens.
 
 ![updateagents](/images/1secure/admin/updateagents.webp)
 
@@ -42,7 +48,9 @@ Update Settings**. The Edit Agent Update Schedule page displays.
 **Step 2 –** In the Update Schedule section, select Enabled.
 
 **Step 3 –** In the Update Window section, configure the options to specify when you want the update
-to occur.
+to occur. Use 24-hour HH:MM times. The window must end at least 60 minutes after it starts and
+can't wrap past midnight. Select at least one day, Monday to Sunday. A new schedule has no days
+selected and a window of 00:00 to 01:00. If the schedule is invalid, the messages are "At least one day must be selected." and "The update window must be at least 1 hour."
 
 **Step 4 –** Select Confirm.
 
@@ -74,7 +82,7 @@ page. Select the **organization** and then the **Sites** tab.
 
 **Step 6 –** Click Update.
 
-**Step 7 –** To change the update defaults for that organization, toggle on **Override Tenancy Defaults**.
+**Step 7 –** To change the update defaults for that organization, toggle on **Override tenancy default**.
 
 **Step 8 –** Click Edit.
 

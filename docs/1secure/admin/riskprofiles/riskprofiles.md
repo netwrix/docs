@@ -6,7 +6,10 @@ sidebar_position: 60
 
 # Manage Risk Profiles
 
-In Netwrix 1Secure, the Managed Service Provider (MSP) can create risk profiles. A risk profile
+In Netwrix 1Secure, the Managed Service Provider (MSP) can create risk profiles. Creating and
+configuring risk profiles and thresholds requires the Risk Profile Management permission. The Risk
+profiles item appears on the Configuration menu only for managing and end-customer tenants, not for
+managed organizations. A risk profile
 consists of a set of risk metrics, each with preconfigured risk thresholds that represent low,
 medium, and high risk levels for the metric. You can't add new metrics but you can change the risk
 thresholds for each metric. A risk metric is a measurable security parameter that helps analyze
@@ -54,8 +57,8 @@ next to the column name to indicate the sort order. Click the column header agai
 in descending order.
 
 :::note
-The risk profile named Default Profile is available by default and is automatically
-applied to all managed organizations. You can assign a different risk profile to an organization if
+The risk profile named Default Profile is available by default and is used when no other risk
+profile is assigned to an organization. You can assign a different risk profile to an organization if
 needed. You can do this when creating a new organization or editing an organization. See the
 [Add Organizations](/docs/1secure/admin/organizations/addorganizations.md) topic for additional information.
 :::
@@ -74,7 +77,8 @@ that lists the managed organizations defined in 1Secure.
 
 ![New risk profile pane](/images/1secure/admin/riskprofiles/newriskprofilepane.webp)
 
-**Step 4 –** Enter a name for the risk profile in the Name field and click **Save**.
+**Step 4 –** Enter a name for the risk profile in the Name field and click **Save**. If the name matches an existing risk profile, 1Secure rejects
+it with the message "A profile with this name already exists".
 
 The risk profile is added to the list on the Risk profiles page. You can:
 
@@ -103,7 +107,8 @@ that lists the managed organizations defined in 1Secure.
 
 **Step 4 –** Modify the name of the profile in the Name field.
 
-**Step 5 –** Click **Save**.
+**Step 5 –** Click **Save**. If organizations use the profile, a warning appears: "The change will be
+applied to all organizations where this profile is used. Save it anyway?"
 
 ## Delete a Risk Profile
 
@@ -122,6 +127,8 @@ that lists the managed organizations defined in 1Secure.
 **Step 2 –** In the left pane, click **Risk profiles**.The Risk profiles page is displayed.
 
 **Step 3 –** Click the Delete icon for a risk profile to delete it. A dialog box is displayed,
-prompting you to confirm the deletion.
+prompting you to confirm the deletion. When no organization uses the profile, the dialog box reads
+"Are you sure you want to delete this risk profile?"
 
-**Step 4 –** Click **Yes**. The risk profile is deleted from the system.
+**Step 4 –** Click **Yes**. The risk profile is deleted from the system. If organizations use the profile, 1Secure first
+switches them to the default profile, then removes the profile and its thresholds.

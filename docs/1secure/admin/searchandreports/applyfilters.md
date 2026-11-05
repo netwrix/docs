@@ -72,19 +72,21 @@ The dropdown list in the **Property** field shows all the properties retrieved i
 records' list below the Search bar. It varies depending on the displayed records. You can filter the
 required Property, Action, Value operator, and Value within the list. The property changes are
 dynamic and aren't related to a given report directly but the activity records. If the query
-changes, the shown property changes also change.
+changes, so do the shown property changes.
 :::
 
 
 ![Filters list](/images/1secure/admin/searchandreports/search_search_function.webp)
 
 **Step 4 –** Click Search to find and view your reports. The reports display with the
-predefined filters. Your search results appear in the table.
+predefined filters. Your search results appear in the table. The grid columns are Who, Action, What, Where, When, When (Local), Workstation, and Tags.
+
+A query that takes too long returns "Retrieval of results timed out. Please try again or, if the problem persists, reduce the scope of the query with a When filter." Large results show "Total Count Disabled (Reduced functionality due to query size)" in place of a total count.
 
 ![Filter results](/images/1secure/admin/searchandreports/search_searchresults.webp)
 
 **Step 5 –** Click the required activity record from the grid view the activity record details. You
-can see who, when, or where was the activity made.
+can see who did the activity, and when and where.
 
 ![Activity record details](/images/1secure/admin/searchandreports/activityrecorddetails.webp)
 
@@ -110,7 +112,7 @@ This table provides a list of filters and descriptions.
 | What        | Specify an object name (e.g., _Policy_) to find all entries containing it (e.g., _HiSecPolicy_, _\\FileSserver\Share\NewFolder\NewPolicy.docx_, _http://sharepoint/sites/collection1/Lists/Policy_). Netwrix 1Securesearches across all audited systems.                                                                                                         |
 | Where       | Specify a resource name (e.g., _Enterprise_) to find all entries containing it (e.g., _Enterprise-SQL_, _FileStorage.enterprise.local_). The resource name can be an Active Directory domain. Netwrix 1Securesearches across all audited systems.                                                                                                                |
 | Who         | Specify an account name (e.g., _John_) to find all entries containing it (e.g., _Domain1\John_, _Domain1\Johnson_, _Domain2\Johnny_).                                                                                                                                                                                                                            |
-| When        | Specify a timeframe or provide a custom date range. Netwrix 1Secureallows you to see changes that occurred today, yesterday, in the last 7 or 30 days, or within the specified date range.                                                                                                                                                                       |
+| When        | Specify a timeframe or provide a custom date range. Netwrix 1Secureallows you to see changes that occurred today, yesterday, in the last 7 or 30 days, or within the specified date range. Relative values are `@StartOfDay`, `@StartOfWeek`, `@StartOfMonth`, `@StartOfYear`, and `@StartOfDay('-Nd')`.                                                                                                                                                                       |
 | Connector   | Specify name of the file system for audit. The available options are:<br /><ul><li>Active Directory Activity</li><li>Active Directory Logons</li><li>AD Logon Activity</li><li>Self Audit</li><li>Azure AD Logons</li><li>Azure AD Activity</li><li>File Server Activity</li><li>Exchange Online Activity</li><li>SharePoint Online Activity</li><li>Active Directory State</li></ul>                                                       |
 | Source Type | Specify the source type:<br /><ul><li>computer</li><li>contact</li><li>controlAccessRight</li><li>crossRef</li><li>crossRefContainer</li><li>domainDNS</li><li>foreignSecurityPrincipal</li><li>group</li><li>groupPolicyContainer</li><li>inetOrgPerson</li><li>msDS-ManagedServiceAccount</li><li>organizationalUnit</li><li>user</li></ul>                                                                                                                 |
 | Source      | Specify the value of the item, namely the name of the computer, or the IP-address.                                                                                                                                                                                                                                                                               |

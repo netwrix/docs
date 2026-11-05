@@ -12,10 +12,19 @@ data collection session and adjusts them if necessary.
 
 To adjust audit settings automatically, do any of the following:
 
-- When creating an organization, select the **Adjust audit settings automatically** option.
+- When connecting Active Directory in the connect wizard, select **Let 1Secure manage audit policy**. It turns on auditing on your domain controllers so that 1Secure's reports and alerts have data. Turn it off if you manage audit policy yourself, for example with Netwrix Auditor.
 
 - For the existing organization, modify data collection settings for Active Directory, selecting
-  **Adjust audit settings automatically** option.
+  **Adjust audit settings automatically** option. Netwrix will continuously enforce the relevant audit policies in your environment.
+
+The audit policy option is available for the following connectors:
+
+- Active Directory Activity
+- Active Directory Logons
+- Group Policy Activity
+- File Server Activity
+- File Server State
+- Windows Server Activity
 
 See also:
 

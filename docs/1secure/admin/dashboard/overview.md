@@ -10,7 +10,7 @@ The Netwrix 1Secure dashboard provides an intuitive, single-pane-of-glass view o
 organizations, enabling managing organizations, such as Managed Service Providers (MSPs), to quickly
 identify and prioritize what requires immediate attention. It displays the alerts triggered by
 specific events, offering drill-down capabilities for accessing detailed information on
-specific alerts and issues, ensuring timely and effective responses. See the
+specific alerts and issues, so you can respond in time. See the
 [Alerts](/docs/1secure/admin/alerts/alerts.md) topic for additional information on alerts.
 
 Click **Home** at the top of the page to access the dashboard. This page is also the default landing
@@ -22,22 +22,22 @@ If you are a managed organization user, this page displays insights specific to 
 See the [Organization Dashboard](/docs/1secure/admin/dashboard/organizationstatistics.md) topic for additional information.
 
 If you are a managing organization (MSP) user, this page provides insights for all your
-organizations.
+organizations. The page title is **My organizations**.
 
-**Top 5 Triggered Alerts by Type**
+**Top 5 triggered alerts by type**
 
 This card displays a bar chart that highlights the five most frequently triggered alert types. Hover
 over a bar to view the exact number of alerts for that type. Click a bar to navigate to the Alerts
 Timeline page. See the [Alerts Timeline](/docs/1secure/admin/dashboard/alertstimeline.md) topic for additional information.
 
-**Top 5 Organizations with Most Alerts**
+**Top 5 organizations with most alerts**
 
 This card displays a bar chart that highlights the five organizations with the highest number of
 triggered alerts. Hover over a bar to view the exact number of alerts triggered for that
 organization. Click a bar to navigate to the Alerts Timeline page. See the
 [Alerts Timeline](/docs/1secure/admin/dashboard/alertstimeline.md) topic for additional information.
 
-**Top 5 Organizations at Risk**
+**Top 5 organizations at risk**
 
 This card lists the five organizations with the highest risk levels. Each record includes the
 organization’s name, risk level (high, medium, or low), and the number of risks detected. Click a
@@ -45,7 +45,7 @@ record to navigate to the Risk Assessment dashboard. See the
 [Risk Assessment Dashboard](/docs/1secure/admin/riskprofiles/riskassessmentdashboard.md) topic for additional
 information.
 
-**Health Status**
+**Health Status Summary**
 
 This bar lists the different health statuses assigned to organizations in the Organizations list,
 along with the number of organizations associated with each status.
@@ -69,25 +69,25 @@ This section lists all managed organizations with the following information:
   relative to the total number of users in the managed organizations (tenant) in 1Secure. Click
   the value to navigate to the Billable Users page. See the
   [System Reports](/docs/1secure/admin/searchandreports/system.md) topic for additional information.
-- Status – Displays the current health status of the organization, which can be: Healthy, Trial in
-  Progress, New, Update Recommended, Needs Attention, Experiencing Issues, Offline, Disabled, Not
-  Configured, and Pending Deletion. Click the value to navigate to the Health Status for
+- Status – Displays the current health status of the organization, which can be: Connected,
+  Disconnected, or Not configured. Click the value to navigate to the Health Status for
   Organization: `<organization name>` pane.
+- AD Users and AD Users %
 - Tags – Displays the user-defined tags applied to the organization.
 
 Click a column header to sort the data in the organizations list by that column in ascending order.
 An arrow appears next to the column name to indicate the sort order. Click the column header again
 to sort the data in descending order.
 
-**Add Organization**
+**Add organization**
 
-Click the Add Organization button to add a new organization. See the
+Click the **Add organization** button to add a new organization. See the
 [Add Organizations](/docs/1secure/admin/organizations/addorganizations.md) topic for additional information.
 
 ## Filter Data
 
 Multiple filters are available on this page. You can apply
-one or more filters at a time.
+one or more filters at a time. Click **Clear all** to reset the filters.
 
 :::note
 Some filters apply to all data displayed on this page, while others are specific to the
@@ -101,19 +101,12 @@ Organizations list.
 - Alert – Select an alert type from the Alert dropdown menu. The organizations with alerts
   triggered for the selected type appear in the list. By default, All is selected.
 - Health Status – Select a health status from the Health Status dropdown menu. The organizations
-  with the selected health status appear in the list. By default, All is selected . Other
+  with the selected health status appear in the list. By default, All is selected. Other
   statuses are:
 
-    - Healthy
-    - Trial in Progress
-    - New
-    - Update Recommended
-    - Needs attention
-    - Experiencing Issues
-    - Offline
-    - Disabled
+    - Connected
+    - Disconnected
     - Not configured
-    - Pending deletion
 
 - Tag – Select a tag from the Tag dropdown menu. The bar charts and the organizations list on the
   dashboard display data for the organizations the tag is associated with. By default, All is

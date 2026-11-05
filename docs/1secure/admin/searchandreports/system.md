@@ -7,7 +7,7 @@ sidebar_position: 40
 # System Reports
 
 A System report named Billable Users is automatically generated and provides insights into your
-1Secure tenant.
+1Secure tenant. It isn't shared with business users.
 
 ## Review Billable Users Report
 
@@ -20,7 +20,8 @@ A System report named Billable Users is automatically generated and provides ins
 **Step 2 –** Select the **Billable Users** report in the left pane to view it.
 
 This report lists the number of Active Directory and Microsoft Entra ID users contributing to the
-billing counter.
+billing counter. The report counts only enabled user accounts and excludes people whose
+billing-excluded property is set.
 
 **Filter a Report**
 

@@ -8,22 +8,14 @@ sidebar_position: 40
 
 ## Data at rest
 
-Data is persistently stored within the Azure SQL Database in the region you select when creating
-your account. All data stored in the database is encrypted with an AES 256-bit encryption algorithm.
+Both activity records and state-in-time data persist within Azure Cosmos DB.
 
 ## Data in transit
 
-Data is transferred between the system components in the following ways:
-
-- Agent -> API
-- API -> SQL Database
-- SQL Database -> Application
-- Application -> Browser (User)
-
-Data is always encrypted in transit, and connections are made over HTTPS to prevent eavesdropping.
+The minimum TLS version that the Azure SQL Server accepts for connections is 1.2.
 
 ## Data Retention Period
 
-Data retention is the practice of storing and managing your data and records for a designated period
-of time. A data retention period refers to the amount of time that a company or an organization
-holds onto your information. Netwrix 1Secure provides data retention for 1 rolling year by default.
+Retention is the practice of storing and managing your data and records for a set period. A retention period is how long an organization keeps your information.
+
+Activity records and state-in-time data are kept for 385 days by default.

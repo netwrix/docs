@@ -47,8 +47,8 @@ information.
 - Private Key – Private key you specify at
   [https://www.connectwise.com/](https://www.connectwise.com/)
 
-All four fields are required. If a field is empty, 1Secure shows a message such as "The Company Url
-field is required."
+You must fill in all four fields. If you leave a field empty, 1Secure shows a message such as "The
+Company Url field is required."
 
 1Secure connects to ConnectWise with HTTP Basic authentication built from the Company Id, Public Key,
 and Private Key. It sends requests to the Company Url followed by `/v4_6_release/apis/3.0`.
@@ -87,21 +87,17 @@ pane opens.
 
 **Step 3 –** Toggle on the Enabled button to enable the ConnectWise delivery.
 
-**Step 4 –** (Optional) Select the **Alert detail level**: **Summary** or **Activity details**.
-This option appears only if the ConnectWiseActivityDetails feature flag, an alpha
-feature, is on for the organization. Without it, tickets always use the summary.
-
-**Step 5 –** In the **Priority** dropdown, select the default priority of raised tickets. The
+**Step 4 –** In the **Priority** dropdown, select the default priority of raised tickets. The
 dropdown lists the priorities read from the connected ConnectWise system, sorted alphabetically by
 name. If no priority is saved, the dropdown preselects the priority that ConnectWise flags as the
 default.
 
-**Step 6 –** In the **Child Tenant Mappings** table, select the corresponding ConnectWise Company ID
+**Step 5 –** In the **Child Tenant Mappings** table, select the corresponding ConnectWise Company ID
 for each managed organization. Each row in the **Managed Organization** column has a dropdown of
 ConnectWise companies. The first entry is **\<No Company\>**. The table lists managed organizations
 only, not the Managed Service Provider's own organization.
 
-**Step 7 –** Click **Save**.
+**Step 6 –** Click **Save**.
 
 The ConnectWise delivery settings save along with the organization-to-company mappings. Saving
 requires the Manage Alerts permission. The save fails with the message
@@ -136,7 +132,7 @@ triggered this alert can be found in the most recent note."
 ticket's detail description. It starts with the italic text "Note: This note includes all alert activity data
 from previous notes."
 
-With the **Summary** alert detail level, the note for an activity alert lists:
+The note for an activity alert lists:
 
 - A header: "The alert _name_ was triggered by _n_ activity records being captured in _period_."
 - Organization
@@ -147,13 +143,6 @@ With the **Summary** alert detail level, the note for an activity alert lists:
 - "Activity record times in" followed by the time zone
 - A "Click here to investigate" link to the report, only for alerts that aren't grouped or are
   grouped with a value
-
-With the **Activity details** level, each activity record lists When, Who, Action, What, Type,
-Where, Workstation (if any), Source, Connector, Source Type, Succeeded, and Bulk Correlation ID (if
-any). When more than one record matched, it also lists Record Count and Record Count Period
-(seconds). A dashed line separates the records. The ticket includes only the 10 most recent
-activity records and says "Only the 10 most recent activity records have been included in this
-ticket."
 
 Times in tickets use the organization's default time zone and culture.
 

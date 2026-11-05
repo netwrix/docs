@@ -13,6 +13,8 @@ or upload reports to a designated folder in SharePoint Online. This enables MSPs
 - Carry out reporting obligations with the clients
 - Store an audit trail for compliance purposes
 
+Managing subscriptions requires the SubscriptionManage permission (Manage Saving Activity Record Subscriptions). The Administrator, Editor, and Co-managing Administrator roles hold it. The Subscriptions menu item appears for managed organizations and end-customer tenants.
+
 ## Add a Subscription
 
 **To add a subscription:**
@@ -40,7 +42,7 @@ Subscribe button remains disabled.
 ![Subscription to Report pane](/images/1secure/admin/searchandreports/subscriptions.webp)
 
 **Step 6 –** Set a start date, time, and time zone for sending the report to the intended
-recipients.
+recipients. A start date in the past is rejected with the message "Can only schedule subscriptions for the future".
 
 - Start Date – Click the icon in this field to open a calendar to select a date. You can also enter a
   date in the field.
@@ -51,7 +53,7 @@ recipients.
 **Step 7 –** Select a frequency for sending the reports from the Frequency dropdown menu. The
 available options are: Daily, Weekly, and Monthly.
 
-You can view the subscription timing details in the footer of the pane.
+You can view the subscription timing details in the footer of the pane, under "Next 3 reports will generate on:".
 
 **Step 8 –** In the Attached File field, specify the name of the file the intended recipients will
 receive. The default name is: Report on `{{Report_Name}}` `{{Export_Date}}`. These variables are
@@ -65,7 +67,7 @@ file. To use multiple variables, select them one by one from the dropdown menu. 
 options are: Report Name, Export Date, Frequency, Num Records, Managing Organization, and Managed
 Organization.
 
-**Step 10 –** Select a file format (XLSX, CSV) from the dropdown menu.
+**Step 10 –** Select a file format (XLSX, CSV) from the dropdown menu. XLSX is the default. A Risk Assessment subscription is delivered only as PPTX.
 
 **Step 11 –** Click the **Send reports by email** checkbox to specify email delivery settings. The
 Email Settings section expands to display the following:
@@ -93,10 +95,10 @@ Email Settings section expands to display the following:
     :::
 
 
-- Message – Enter the information to be included in the body of the email.
+- Message – Enter the information to be included in the body of the email. The default message is: "This is a follow-up on the audit data you have subscribed to. The report is attached to this email."
 
 **Step 12 –** Click the **Upload reports to a designated folder in SharePoint Online** checkbox to
-specify the settings for SharePoint Online delivery.
+specify the settings for SharePoint Online delivery. You must select at least one delivery option; otherwise the message "At least one delivery option must be selected" appears.
 
 :::note
 If you encounter the message, Integration required, you must first configure your
@@ -133,8 +135,7 @@ The subscription is created.
 
 **Step 3 –** Click the **Subscriptions** tab. The subscriptions for the organization are listed
 here. On this page, you can review statuses for your subscriptions in the Last run result column. It
-indicates the status for sending the reports or creating a subscription (New, Success, Error
-Processing, Error Sending).
+indicates the status for sending the reports or creating a subscription (New, Success, Error Processing, Error Delivering).
 
 **Step 4 –** (Optional) To disable a subscription, toggle OFF the switch for it.
 
@@ -146,7 +147,9 @@ Processing, Error Sending).
 **Step 6 –** Modify the required information. For details, refer to Steps 6 through 12 in the
 [Add a Subscription](#add-a-subscription) topic.
 
-**Step 7 –** Click **Save**.
+**Step 7 –** Click **Save**. If the edit leaves the subscription less than 12 hours after its last run, the save succeeds with the warning "Subscription has ran within the 12 hours of last run date, will skip the next run date".
+
+Changing a schedule shows the warning: "Changing your schedule could cause the next delivery to repeat some data you've already seen, or miss some data you haven't seen."
 
 ## Delete a Subscription
 

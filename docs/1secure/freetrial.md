@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Free Trial
 
-Netwrix 1Secure is available as a 14-day self-serve free trial. The trial gives you full access to
-the capabilities included in 1Secure Complete, the most comprehensive package.
+Netwrix 1Secure is available as a 14-day self-serve free trial (the default length). The trial gives you full access to
+the capabilities included in 1Secure Complete, the broadest package.
 
 ## Start a Trial
 
@@ -33,6 +33,14 @@ During the free trial, the following object limits apply:
 | SharePoint Online | 10,000 |
 | Windows File Server | 10,000 |
 | SQL Server | 10,000 |
+
+Scans may be limited by the number of objects collected during free trials.
+
+Neo, the AI assistant, is limited to 15 messages per day on trial organizations by default.
+
+A trial managing organization can have at most 4 managed organizations. When you reach that limit,
+1Secure shows a message that the trial tenant is limited to 4 organizations you can audit and
+directs you to Sales.
 
 You can't pause self-serve trials.
 
@@ -73,14 +81,17 @@ framework. Results are typically available within 20 minutes of deployment.
 
 ## Data Hosting
 
-Your data is hosted in Microsoft Azure in the region closest to your location. Available regions
-are the United States, Netherlands, Switzerland, and South Korea. You can select a specific region
+Microsoft Azure hosts your data in the region closest to your location. Available regions
+are the United States (Azure `East US`), Netherlands (Azure `West Europe`), Switzerland, South Korea (Azure
+Korea Central), and Canada (Azure Canada Central). You can select a specific region
 if you have particular data residency requirements.
 
 ## Security
 
-1Secure uses encryption, role-based access controls, and MFA support to protect your data. It holds
-SOC 2 Type I certification. For details on Netwrix security, compliance, and privacy practices,
+1Secure uses encryption, role-based access controls, and MFA support to protect your data. MFA is
+required at login except for users whose organizations are all Self-Service Trial, so trial users
+aren't prompted. It holds
+SOC 2 Type 1 certification. For details on Netwrix security, compliance, and privacy practices,
 visit the [Netwrix Trust Center](https://trust.netwrix.com/).
 
 ## Support During the Trial
@@ -91,14 +102,24 @@ During the trial, you have access to:
 - Product documentation
 - The Netwrix community
 
-For additional assistance, use the [Contact Us](https://netwrix.com/en/contact/) link on the
-Netwrix website to reach the field success team.
+For additional assistance, use the contact link on the
+Netwrix website ([netwrix.com/en/contact](https://netwrix.com/en/contact/)) to reach the field success team.
 
 ## After the Trial
 
-If you purchase a subscription, your data and configurations transition seamlessly to production.
+If you purchase a subscription, your data and configurations transition to production without rework.
 If you don't continue, Netwrix permanently deletes your data 14 days after the trial ends.
+Converting a trial organization to a commercial tier clears its scheduled deletion date.
 [Contact Sales](https://netwrix.com/en/contact/) to discuss next steps.
+
+During the trial, a banner shows how much time is left in your free trial, for example "You're
+halfway through your trial.", and offers a **Request a quote** link. After the trial expires, a
+splash screen shows "Your free trial ended on {{date}}" and "Your data will be permanently deleted
+on {{date}}", with a **Request Pricing** button.
+
+Extending a standard trial sets the end date to 30 days from today. Extending a self-serve trial
+sets the end date to 14 days from today, the configured trial length. Extending a trial also
+reactivates an inactive organization and its managed organizations.
 
 The following packages are available for purchase:
 
@@ -106,7 +127,7 @@ The following packages are available for purchase:
   risks with PingCastle, and get near real-time alerts and state-in-time visibility.
 - **1Secure Pro Data** — Audit activity across Microsoft 365 and Windows environments, assess
   data risks with PingCastle, monitor SharePoint permissions, and get near real-time alerts.
-- **1Secure Pro Complete** — Unify identity and data security, discover and classify sensitive
+- **1Secure Pro Complete** — Unify identity and data security. Discover and classify sensitive
   data, mitigate risks with PingCastle, detect threats, and enable secure AI adoption.
 
 ## Trial Terms

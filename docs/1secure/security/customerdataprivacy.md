@@ -13,14 +13,13 @@ All customers access Netwrix 1Secure via the same address:
 However, based on your selection at account signup / creation, your data is stored in one of the
 following Microsoft Azure regions:
 
-<!-- vale off -->
-- If you select the Americas, your data is stored in the Microsoft Azure region known as "West
-  Central US".
-<!-- vale on -->
-- If you select Europe/Africa, your data is stored in the Microsoft Azure region known as "West
-  Europe".
+- The United States region stores your data in the Microsoft Azure region known as "East US".
+- The EU region stores your data in the Microsoft Azure region known as "West Europe".
+- The Switzerland region stores your data in the Microsoft Azure region known as "Switzerland North".
+- The Korea region stores your data in the Microsoft Azure region known as "Korea Central".
+- The Canada region stores your data in the Microsoft Azure region known as "Canada Central".
 
-The region is selected by the user who is signing up for the product. Netwrix 1Secure creates a tenant for your
+The user who signs up for the product selects the region. Netwrix 1Secure creates a tenant for your
 organization in that region and guarantees that all your data always stays within that region.
 
 If your company is split across multiple regions, you can select the region where the headquarters

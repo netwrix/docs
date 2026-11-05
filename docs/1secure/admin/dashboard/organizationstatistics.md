@@ -33,13 +33,14 @@ the configuration page of the organization.
 
 ## Data Collection Overview
 
-Click **Data Collection Overview** to navigate to the data collection page for the organization,
+The dashboard is headed by the organization name and a **Data Collection Overview** section. Click
+**Data Collection Overview** to navigate to the data collection page for the organization,
 where you can review the status of all configured data sources and connectors.
 
 ## Risk Assessment
 
 This card displays the risk level for the organization broken down by severity: High, Medium, and
-Low. It also lists the top three highest risks detected. Click a severity count or
+Low. It also lists the **Top 3 highest risks** detected, labeled **Last month**. Click a severity count or
 **View full risk assessment** to navigate to the Risk Assessment page for the selected
 organization. See the
 [Risk Assessment Dashboard](/docs/1secure/admin/riskprofiles/riskassessmentdashboard.md) topic for
@@ -54,21 +55,18 @@ Timeline page. See the
 
 ## Reports
 
-This card provides quick access to reports and investigations for the organization.
+This card provides quick access to reports for the organization.
 
-- **Popular** — Links to commonly used reports, such as All Logon Activity, Failed Logons, and
+- **Popular:** — Links to commonly used reports, such as All Logon Activity, Failed Logons, and
   Accounts Enabled.
-- **Custom** — Links to custom reports you have previously saved for the organization.
-- **New Investigation** — Click to navigate to the New Investigation page where you can create a
-  new custom report. See the
-  [Custom Reports](/docs/1secure/admin/searchandreports/customreports.md) topic for additional
-  information.
+- **Custom:** — Links to custom reports you have previously saved for the organization.
 - **View all reports** — Click to navigate to the full reports list.
 
 ## Activity Summary
 
-This card displays a summary of activity for the organization since the first scan. It shows the
-following metrics:
+This card displays a summary of activity for the organization, labeled **Since first scan**. While
+the first scan runs, the dashboard shows **Scan in progress** with the `We'll email you when it's ready`
+button. The card shows the following metrics:
 
 - **Total logons** — The total number of logon events recorded.
 - **Failed logons** — The total number of failed logon attempts.
@@ -95,6 +93,11 @@ on the Changes by User report.
 
 ## Failed Logon Activity Trend
 
+:::note
+For a Self-Service Trial tenant, this card stays hidden until 5 or more days of data exist, or 9 or
+fewer trial days remain. The trial lasts 14 days.
+:::
+
 This card displays a line chart illustrating the number of failed logon attempts to the environment
 during the past 3 months. Hover over a point on the chart to view the exact number of failed logon
 attempts on any specific date. Click a point on the chart to navigate to the Activity page, where
@@ -103,6 +106,11 @@ you can view the complete Failed Logons report. See the
 on the Failed Logons report.
 
 ## Changes By Date
+
+:::note
+For a Self-Service Trial tenant, this card stays hidden until 5 or more days of data exist, or 9 or
+fewer trial days remain. The trial lasts 14 days.
+:::
 
 This card displays a line chart illustrating the number of changes made to monitored objects during
 the past 3 months. Hover over a point on the chart to view the exact number of changes made on any

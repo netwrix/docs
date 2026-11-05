@@ -21,16 +21,19 @@ opens to the Activity tab with New Investigation selected in the left pane.
 **Step 2 –** Select an organization from the dropdown menu at the top of the left pane to access
 its reports. An organization is selected by default, but you can choose a different one if needed.
 
-**Step 3 –** Click the **Compliance** tab to access the compliance reports. This opens the
-Compliance page with the Group Membership report selected by default in the left pane.
+**Step 3 –** Click the **Compliance** tab to access the compliance reports.
 
 ![Compliance Reports Page](/images/1secure/admin/searchandreports/reportscompliance.webp)
 
 **Step 4 –** In the left pane, click a category to view its reports. Categories are:
 
 - [Active Directory](#active-directory)
-- [Microsoft Entra ID](#microsoft-entra-id)
+- [Azure](#azure)
+- [Entra ID](#entra-id)
 - [SharePoint Online](#sharepoint-online)
+- [File Server](#file-server)
+- [Permissions](#permissions)
+- [Sensitive Data](#sensitive-data)
 
 **Step 5 –** Click a report to open it. Reports without a filter are automatically generated when
 you open them. Click **Search** to generate reports with a predefined filter set.
@@ -50,7 +53,13 @@ The following Compliance reports are available by category.
 | User Attributes         | Lists the user accounts with settings that violate company policies or applicable compliance standards.                                                          |
 | User Membership         | Lists the groups the user is a member of, with the permissions granted to the groups.                                                                            |
 
-### Microsoft Entra ID
+### Azure
+
+| Report Name |
+| --- |
+| Storage Accounts |
+
+### Entra ID
 
 | Report Name     | Description                                                                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -60,15 +69,35 @@ The following Compliance reports are available by category.
 
 ### SharePoint Online
 
-| Name                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Broken Permissions Inheritance   | Lists objects with permissions that differ from their parent, such as a folder with permissions different from its parent site.                                                                                                                                                                                                                                                                                            |
-| Direct Object Permissions        | Lists all identities (users or groups) that have assigned permissions to specific objects, such as documents, lists, or sites. Use this report to review which users or groups have access to data objects.                                                                                                                                                                                                                |
-| Direct User Permissions          | Lists user accounts with direct permissions to specific objects. Use this report to see which users have permissions to what data.                                                                                                                                                                                                                                                                                         |
-| High Risk Permissions            | Lists the permissions and permission levels of high-risk trustees, such as Everyone, Authenticated Users, and Everyone except external users.                                                                                                                                                                                                                                                                              |
+| Report Name | Description |
+| --- | --- |
+| Sharing Links | Provides an overview of all the active sharing links within your SharePoint Online site. For each record, it displays the site collection, URL of the shared resource, name of the shared object, link creation and expiration dates, link type, assigned permissions, and more. Click the "Shared with" link to see exactly who or which groups have access. |
+
+### File Server
+
+| Report Name |
+| --- |
+| **Files, Folders and Shares** |
+
+### Permissions
+
+| Report Name | Description |
+| --- | --- |
+| Broken Permissions Inheritance | Lists objects with permissions that differ from their parent, such as a folder with permissions different from its parent site. |
+| Direct Object Permissions | Lists all identities (users or groups) that have assigned permissions to specific objects, such as documents, lists, or sites. Use this report to review which users or groups have access to data objects. |
+| Direct User Permissions | Lists user accounts with direct permissions to specific objects. Use this report to see which users have permissions to what data. |
+| Effective Object Permissions |  |
+| Effective User Permissions |  |
+| High Risk Permissions | Lists the permissions and permission levels of high-risk trustees, such as Everyone, Authenticated Users, and Everyone except external users. |
 | Permissions Overview by Resource | Provides a summary of assigned permissions in your organization, including the count of direct user permissions, stale permissions, broken permission inheritance, and high-risk permissions for each object. Click any permissions value to navigate to the specific permissions report for the selected resource. For example, clicking a High Risk Permissions value takes you to the High Risk Permissions report. |
-| Sensitive Documents              | Lists the documents that are classified according to the sensitive data types enabled in the SharePoint Online Data Classification connector. See step 7 in the [Add a Source and Connectors for SharePoint Online](/docs/1secure/admin/organizations/sourcesandconnectors/sharepointonline.md) topic for addition information.                                                                                                             |
-| Sharing Links                    | Provides an overview of all the active sharing links within your SharePoint Online site. For each record, it displays the site collection, URL of the shared resource, name of the shared object, link creation and expiration dates, link type, assigned permissions, and more. Click the "Shared with" link to see exactly who or which groups have access.                                                              |
+
+### Sensitive Data
+
+| Report Name | Description |
+| --- | --- |
+| Sensitive Documents | Lists the documents that are classified according to the sensitive data types enabled in the SharePoint Online Data Classification connector. See step 7 in the [Add a Source and Connectors for SharePoint Online](/docs/1secure/admin/organizations/sourcesandconnectors/sharepointonline.md) topic for addition information. |
+
+All built-in Compliance reports are shared with business users.
 
 **Sort a Report**
 
@@ -127,3 +156,9 @@ This table provides a list of filters and descriptions.
 | Sensitive Data Types                              | Lists the documents based on the sensitive data type they contain. Available data types are:<br /><ul><li>PII</li><li>Financial Records</li><li>GDPR Restricted</li><li>GDPR</li><li>GLBA</li><li>HIPAA</li><li>PCI DSS</li><li>PHI</li><li>CCPA</li><li>CMMC</li><li>Credentials</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                         |
 | Sensitive Data Criteria                           | Lists the documents based on a sensitive data criteria. Each data type (e.g., PII) can have multiple data criteria, like PII >> Denmark, PII >> French passport, PII >> France, and so on.                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | Sensitivity Label                                 | Lists the documents based on a sensitivity label. For example, if you specify a label named "sensitive", it lists all the documents with that label. Sensitivity labels are applied to documents on the basis of the settings configured for the SharePoint Online Data Classification connector in the SharePoint Online data source. See step 7 in the [Add a Source and Connectors for SharePoint Online](/docs/1secure/admin/organizations/sourcesandconnectors/sharepointonline.md) topic for additional information.                                                                                                          |
+
+**Export a Report**
+
+Exporting a Compliance report requires the ReportExport permission. See the
+[Export a Report or Investigation Results](/docs/1secure/admin/searchandreports/exportreport.md)
+topic for additional information.

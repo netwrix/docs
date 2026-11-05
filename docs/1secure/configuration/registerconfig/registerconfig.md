@@ -14,13 +14,16 @@ cloud-based infrastructure via Microsoft Graph and other modern APIs.
 Configure the app in Microsoft Entra ID once. Use it to audit multiple Microsoft 365 data sources,
 including SharePoint Online, Microsoft Entra ID, and Exchange Online.
 
+A tenancy can hold at most 10 pending or active connector app registrations.
+
 :::note
 Register a dedicated app in Microsoft Entra ID for each data source you want to audit in Netwrix 1Secure. Sharing a single app across multiple data sources is allowed but may cause issues such as throttling. For example, too many connections to Microsoft Graph may cause some connections to stop temporarily. Additionally, different data sources may require different permissions, and a single app may not support all of them.
 :::
 
 
-To begin auditing Microsoft 365 data sources, manually register the app for Netwrix 1Secure in
-Microsoft Entra ID and provide its settings while adding a data source in Netwrix 1Secure.
+To begin auditing Microsoft 365 data sources with the **Register in Azure** method, manually
+register the app for Netwrix 1Secure in Microsoft Entra ID and provide its settings while adding a
+data source in Netwrix 1Secure.
 
 :::note
 A user account with the Global Administrator, Application Administrator, or Cloud
@@ -35,6 +38,32 @@ Unified audit log must be enabled for a tenant. See the Microsoft
 article for additional information.
 :::
 
+
+## Choose How to Connect
+
+The Microsoft connect flow lists **Cloud (Microsoft 365)** with SharePoint Online, Exchange Online,
+and Microsoft 365 & Entra ID. The cloud card asks you to confirm that you have admin access to your
+organization's Microsoft 365 tenant.
+
+Choose one of the following methods:
+
+- **Register in Azure** – Create the app registration yourself in the Azure portal. You have full
+  control over every step and paste your credentials when you're done. The rest of this topic
+  describes this method.
+- **Run setup script** – Run a PowerShell script that creates the app registration and configures
+  permissions automatically. You control the credentials. See
+  [Run the Setup Script](#run-the-setup-script).
+
+If you lack Global Administrator or Exchange Administrator access, 1Secure shows the message "You'll
+need help from your technical team". Connecting Exchange Online and SharePoint Online requires an
+app registration with admin-level permissions, so send the instructions to someone who has that
+access.
+
+## Run the Setup Script
+
+The setup script is Register-1SecureMicrosoft365App.ps1. It requires the Microsoft.Graph PowerShell
+module and the Global Administrator or Application Administrator role. The script outputs the
+Application (Client) ID and a secret. The secret is shown once.
 
 ## Register an App in Microsoft Entra ID
 
@@ -57,9 +86,9 @@ Register an application page is displayed.
 
 **Step 4 –** Specify the following information on the Register an application page:
 
-- Name – Enter a user-facing display name for the application, for example, Netwrix 1Secure Entra ID
+- Name – Enter a user-facing display name for the application, for example, Netwrix 1Secure
 - Supported account types – Select **Accounts in this organizational directory only**
-- Redirect URL (optional) – You can leave the field blank
+- Redirect URL (optional) – Leave the field blank
 
 **Step 5 –** Click **Register**.
 
@@ -121,8 +150,9 @@ The API permissions are granted to the application.
 
 ## Assign Roles to the App
 
-The registered application must be assigned to the Global Administrator or Exchange Administrator
-role for Microsoft Entra ID state collection.
+Assign the registered application to the Global Administrator or Exchange Administrator
+role for Microsoft Entra ID state collection. Exchange.ManageAsApp alone isn't sufficient for
+Exchange Online app-only authentication, so also assign the Exchange Administrator role.
 
 **To assign roles to an application:**
 
@@ -188,14 +218,28 @@ The client secret value is required while adding a data source in Netwrix 1Secu
 additional information on adding a data source.
 
 :::warning
-If you leave this page before copying the key, it isn't retrievable, and you need to repeat the process.
+Copy the secret value immediately. It is only shown once and can't be retrieved later. If you leave
+this page before copying the key, you need to repeat the process.
 :::
 
 
 ## Upload a Certificate
 
-Certain connectors require a certificate rather than a client secret for authentication. 1Secure downloads this certificate while you configure a data source. Once downloaded, upload the certificate to the registered application in Microsoft Entra ID. See the
-[Add a Source and Connectors for SharePoint Online](/docs/1secure/admin/organizations/sourcesandconnectors/sharepointonline.md)topic
+SharePoint Online requires a certificate instead of a client secret. Client secrets aren't supported
+for this connector. Other connectors that need a certificate, such as SharePoint Online State, also
+use it to authenticate instead of a client secret.
+
+1Secure issues the certificate. It is self-signed, uses a 2048-bit RSA key, and is valid for 24
+months. The file you download is the public certificate (.cer).
+
+When SharePoint Online is included, the Register in Azure flow adds a step titled **Download and
+upload the certificate**. Click **Download certificate**, and then upload the certificate to the
+registered application in Microsoft Entra ID. You can't continue until you download it: 1Secure shows
+"Download the certificate before continuing." After the download, 1Secure shows "Certificate
+downloaded successfully. Upload it to your app registration to continue." If the download shows
+"Certificate download is temporarily unavailable. Please try again in a moment.", try again. The
+download can take a while, so wait while 1Secure processes the certificate. See the
+[Add a Source and Connectors for SharePoint Online](/docs/1secure/admin/organizations/sourcesandconnectors/sharepointonline.md) topic
 for additional information on downloading a certificate.
 
 **To upload a certificate to the registered application:**
@@ -285,6 +329,10 @@ this:
 {
 "id": "332a536c-c7ef-4017-ab91-336970924f0d",
 "type": "Role"
+},
+{
+"id": "9492366f-7969-46a4-8d15-ed1a20078fff",
+"type": "Role"
 }
 ]
 },
@@ -313,3 +361,19 @@ this:
 
 Optionally, you can select **Download** to edit the manifest locally, and then use Upload to reapply
 it to your application.
+
+## Check the Connection Result
+
+After you connect, 1Secure shows one of the following results:
+
+- **You're connected** – The connection succeeded.
+- **Some sources need attention** – Reconnect the sources from the Configuration page. This is usually
+  caused by missing admin consent or an incomplete role assignment. Go back and choose how you'd like
+  to connect again.
+- **We couldn't verify the connection** – 1Secure couldn't confirm the connection.
+
+If 1Secure shows "Connected successfully, but some connectors have limited functionality", it
+couldn't detect the required permissions. The message reads "Required permissions couldn't be
+detected. Check that they're configured correctly in your environment as propagation can take a few
+minutes. You can verify data source health in Configuration after onboarding." Azure returns the
+error messages.

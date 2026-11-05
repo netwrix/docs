@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Single Sign On
 
-Single Sign On (SSO) is a powerful authentication process that enhances security and improves user
+Single Sign On (SSO) is a authentication process that enhances security and improves user
 experience by allowing users to access multiple applications with a single set of login credentials.
 With Single Sign On (SSO), you can log in to 1Secure using Microsoft Entra ID or Open ID Connect
 credentials. It enhances the user experience by enabling access with existing organizational
@@ -44,7 +44,7 @@ click **Continue**. Based on your authentication status, one of the following oc
 
 ## SSO Configuration with Authentication Services
 
-To enable Single Sign-On (SSO) for tenant users, an MSP must configure SSO using one of the
+To enable Single Sign-On (SSO) for tenant users, a user with the Tenancy Administration permission (Administrators) must configure SSO using one of the
 following authentication services:
 
 - [Configure SSO with Microsoft Entra ID Authentication](#configure-sso-with-microsoft-entra-id-authentication)
@@ -53,10 +53,20 @@ following authentication services:
 :::note
 When you first log in to 1Secure, SSO isn't enabled, and 1Secure Authentication is
 applied by default. This method requires Multi-factor authentication (MFA) to verify your identity
-for secure access. See the [Log In](/docs/1secure/admin/overview.md) topic for additional information on
+for secure access. MFA is required at login for every user who has access to any organization other
+than a self-service trial. See the [Log In](/docs/1secure/admin/overview.md) topic for additional information on
 Multi-factor authentication.
 :::
 
+
+SSO configuration is available only when the SSOConfiguration feature is on. Each organization can
+have at most one SSO connection. When you change the method, 1Secure creates the new connection
+before it deletes the old one. At sign-in, your email domain must match the domain of the SSO
+connection, otherwise login is refused.
+
+To switch back to 1Secure Authentication, select it in the Method dropdown menu. The product warns:
+Switching to 1Secure Authentication will disconnect this SSO provider and sign every user in this
+domain out of it.
 
 ### Configure SSO with Microsoft Entra ID Authentication
 
@@ -81,7 +91,14 @@ See the
 [Register an App in Microsoft Entra ID For Authentication](#register-an-app-in-microsoft-entra-id-for-authentication) topic
 for additional information.
 
-**Step 6 –** Click **Save**. The Single Sing-On (SSO) is configured with Microsoft Entra ID
+**Step 6 –** In Client secret field, specify the client secret of the registered app.
+
+**Step 7 –** Optionally, in Client Secret Expiry Date field, specify the date the client secret
+expires. 1Secure alerts you when the secret is close to expiring.
+
+The Domain field is read-only and must match your domain.
+
+**Step 8 –** Click **Save**. The Single Sing-On (SSO) is configured with Microsoft Entra ID
 authentication.
 
 ### Configure SSO with OpenID Connect Authentication
@@ -107,8 +124,15 @@ to communicate with the OpenID provider.
 
 **Step 6 –** In Discovery url field, specify the Discovery URL of the OpenID application.
 
+The Domain field is read-only and must match your domain.
+
 **Step 7 –** Click **Save**. The Single Sign On (SSO) is configured with OpenID Connect
 authentication.
+
+:::note
+Entra ID and OpenID Connect are the only SSO methods available. Okta is handled as an OpenID
+Connect connection.
+:::
 
 #### Register an App in Microsoft Entra ID For Authentication
 

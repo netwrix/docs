@@ -13,10 +13,15 @@ audit the following Microsoft 365 data sources:
 - SharePoint Online
 - Exchange Online
 
+The connector app receives the following application permissions: Directory.Read.All,
+AuditLog.Read.All, Policy.Read.All, Sites.Read.All, and Sites.ReadWrite.All (Microsoft Graph);
+ActivityFeed.Read (Office 365 Management APIs); Exchange.ManageAsApp (Office 365 Exchange Online);
+and Sites.FullControl.All (SharePoint). It also receives the Exchange Administrator directory role.
+
 ## Permissions to Audit Microsoft Entra ID
 
 :::note
-The registered application must be assigned to the Global Administrator or Exchange
+Assign the registered application to the Global Administrator or Exchange
 Administrator role for Microsoft Entra ID state collection.
 :::
 
@@ -25,7 +30,7 @@ Administrator role for Microsoft Entra ID state collection.
 | ---| ---|
 | Microsoft Graph | Directory <br /><ul><li>Directory.Read.All – Read directory data</li></ul> <br /> AuditLog <br /> <ul><li>AuditLog.Read.All – Read all audit log data</li></ul> <br />Policy <br /><ul><li>Policy.Read.All – Read your organization's policies. This permission is required to collect state-in-time reports.</li></ul> |
 | Office 365 Management APIs | ActivityFeed <br /><ul><li>ActivityFeed.Read – Read activity data for your organization</li></ul>                                                                                                                                                            |
-| Office 365 Exchange Online | Exchange<ul><li>Exchange.ManageAsApp – Manage Exchange As Application This permission is required to collect state-in-time reports.</li></ul>                                                                                                          |
+| Office 365 Exchange Online | Exchange<ul><li>Exchange.ManageAsApp – Manage Exchange as an application. This permission is required to collect state-in-time reports.</li></ul>                                                                                                          |
 
 :::note
 To access the Office 365 Exchange Online API, click the **APIs your organization uses** tab
@@ -49,6 +54,12 @@ example, when you have to save subscriptions to a SharePoint location).
 
 ## Permissions to Audit Exchange Online
 
-| API                        | Permissions                                                                 |
-| -------------------------- | --------------------------------------------------------------------------- |
-| Office 365 Management APIs | ActivityFeed <br /> <ul><li>ActivityFeed.Read – Read activity data for your organization</li></ul> |
+| API | Permissions |
+| --- | --- |
+| Office 365 Management APIs | ActivityFeed <br /><ul><li>ActivityFeed.Read – Read activity data for your organization. This permission is required by all cloud connectors.</li></ul> |
+| Office 365 Exchange Online | Exchange<ul><li>Exchange.ManageAsApp – Manage Exchange as an application. This permission is required to collect state-in-time reports.</li></ul> |
+
+:::note
+Exchange.ManageAsApp alone isn't sufficient for Exchange Online app-only authentication. Also assign
+the Exchange Administrator directory role, tenant-wide, to the registered application.
+:::

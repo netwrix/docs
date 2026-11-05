@@ -18,6 +18,24 @@ may contain warnings, errors, or incomplete audit data.
 
 The product collects successful and failed logon attempts for Windows and SQL logons.
 
+The SQL Server source type appears in the add-source wizard as the **SQL Server** tile with the
+sub-text **SQL Logons**. SQL Logons is the only SQL Server connector.
+
+### Choose Which Accounts to Audit
+
+The **Audit SQL Logons** option has three choices:
+
+- **Audit all accounts** – Default. The connector audits every account.
+- **Audit specific accounts** – The connector audits only the accounts you list.
+- **Audit all accounts except** – The connector audits every account except the ones you list.
+
+Use a wildcard (\*) to include or exclude multiple accounts at once, for example `MYDOMAIN\*`.
+Adding an entry that is already in the list shows the message "This account is already in the list".
+
+Each account entry also has workstation and application filters. Both default to `*`.
+
+The connector collects SQL Server activity event types 1 through 6. You can't change this range.
+
 | Logon Type    | Action                            |
 | ------------- | --------------------------------- |
 | SQL logon     | <ul><li>Successful logon</li><li>Failed logon</li></ul> |

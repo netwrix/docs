@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Risk Assessment Dashboard
 
-The Risk Assessment dashboard serves as a diagnostic tool for Managed Service Providers (MSPs)
+The Risk Assessment dashboard is a diagnostic tool for Managed Service Providers (MSPs)
 and managed organization users to assess and monitor the security posture of an organization. By
-regularly reviewing this dashboard, you can get a comprehensive view of the security risks for an
+regularly reviewing this dashboard, you can get a full view of the security risks for an
 organization, track risk levels, address vulnerabilities, and ensure that your environment aligns
 with industry best practices and standards such as NIST.
 
@@ -24,7 +24,7 @@ On the Risk Assessment dashboard, you can check:
 - Does your organization's security posture aligns with security frameworks like NIST?
 
 :::tip
-Each organization has a risk profile associated with it, and the risk analysis of an organization is based on the metrics included in the risk profile. See the
+Each organization has a risk profile associated with it, and the risk analysis of an organization uses the metrics in the risk profile. See the
 [Manage Risk Profiles](/docs/1secure/admin/riskprofiles/riskprofiles.md) topic for additional information.
 :::
 
@@ -98,7 +98,7 @@ The following cards are available for filtering data:
 
 The following dropdown menus are available for filtering data:
 
-- Risks - Select the Risk source from the dropdown menu. By default, _All Risks_ is selected.
+- Risks - Select the Risk source from the dropdown menu. By default, _All risks_ is selected.
 Other options are:
     - PingCastle
 
@@ -108,6 +108,7 @@ Other options are:
     - Data
     - Identity
     - Infrastructure
+    - Overexposed Sensitive Data
 
 - MITRE tactics – Select an MITRE tactic from the dropdown menu to view the risks that belong to
   it. The MITRE tactic options may vary based on the selected organization.
@@ -151,6 +152,8 @@ applied filters.
 Each risk is a metric included in the risk profile associated with the organization. See the [Risk Metrics List](/docs/1secure/admin/riskprofiles/metrics_list.md) topic for details on each of the risk metrics.
 :::
 
+
+A risk's severity is High for an error status, Medium for a warning, and Low otherwise.
 
 Risks are categorized into two types:
 
@@ -228,14 +231,18 @@ The left pane displays the following details for an enumerated risk:
     - Red line – Indicates the minimum value of the high risk threshold set for the risk metric
     - Yellow line – Indicates the minimum value of the medium risk threshold set for the risk metric
 
+  The history panel shows Risk thresholds and 30-day exposure change.
+
 - Description – A description of the risk metric
 - NIST Regulations – Displays the NIST regulation names associated with the risk metric
-- View - A dropdown menu with three potential options:
+- View - A dropdown menu with the following options:
 
   - Open Report – Click this button to navigate to the State In Time Risk Reports page, where you can view a detailed report for that risk metric. See the [State In Time Risks Reports](/docs/1secure/admin/searchandreports/stateintime.md) topic for additional information.
-  - Export PingCastle report - Click this button to navigate to the full PingCastle HTML report to review the details of the specific risk and all other PingCastle risks. This option is only available on risks from the PingCastle data source.
+  - Export PingCastle Report - Click this button to navigate to the full PingCastle HTML report to review the details of the specific risk and all other PingCastle risks. This option is only available on risks from the PingCastle data source.
   - Remediate – When you click this button, the Remediate `<risk name>` pane appears, which provides
-  AI-generated step-by-step guidance to help you remediate the risk.
+  AI-generated step-by-step guidance to help you remediate the risk. The guidance carries a
+  Netwrix AI disclaimer that asks you to review and test the steps before applying them.
+  - Generate remediation steps – Generates remediation steps for the risk.
 - Edit risk settings – Click [Manage Risk Profiles](/docs/1secure/admin/riskprofiles/riskprofiles.md) to manage the risk profiles.
 
 **Boolean Risk Details**
@@ -254,7 +261,8 @@ The left pane displays the following details for a Boolean risk:
 
 - NIST Regulations – Displays the NIST regulation names associated with the risk metric
 - Remediate – When you click this button, the Remediate `<risk name>` pane appears, which provides
-  AI-generated step-by-step guidance to help you remediate the risk.
+  AI-generated step-by-step guidance to help you remediate the risk. The guidance carries a
+  Netwrix AI disclaimer that asks you to review and test the steps before applying them.
 - Edit risk settings – Click [Manage Risk Profiles](/docs/1secure/admin/riskprofiles/riskprofiles.md) to manage the risk profiles.
 
 ## Export a Risk Assessment Report for an Organization

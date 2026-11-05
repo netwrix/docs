@@ -11,21 +11,35 @@ sidebar_position: 20
 **Step 1 –** On the Netwrix 1Secure Website, on the **Home** page, select the Add organization icon
 to add an organization.
 
+:::note
+A trial managing organization can have at most 4 managed organizations. Creating more fails with
+the message "The current tenant has exceeded the maximum number of child tenants". Other license
+tiers have no limit.
+:::
+
+A managed organization is always created as a child of the current organization. It inherits the
+license tier of its managing organization. Under a trial managing organization, it also inherits
+the parent's deletion date. You need the Manage Managed Tenant permission to create a managed
+organization.
+
 ![organization_adding](/images/1secure/admin/organizations/organization_adding.webp)
 
 **Step 2 –** On the Add Organization (Step 1 of 4) window, specify the following:
 
 - Name – Specify a name for the organization
+- Language – Select a language for the organization
 - Timezone – Select a timezone for the organization
 - Country – Select a country for the organization
-- Tags – Select tags for the organization. Tags provide a way of adding metadata to the tenancies
+- Tags – Select tags for the organization. Tags add metadata to the tenancies
   being managed. To specify multiple tags, select them one by one from the dropdown menu.
 - Alert profile – Select an alert profile for the organization. With alert profiles, you can group
   alert configurations and delivery notification settings together.
 - Risk Profile – Select a risk profile for the organization. With risk profiles, you can group
   thresholds together.
 - Groups – Select a group for the organization. To assign an organization to multiple groups, select
-  the groups one by one from the dropdown menu.
+  the groups one by one from the dropdown menu. If your account is restricted to specific
+  organization groups, you must assign the organization to at least one of your permitted groups.
+  The Groups field appears only when the TenancyGroups feature is on.
 
 Click **Next**.
 
@@ -49,7 +63,7 @@ information.
 ![addorganizationssites](/images/1secure/admin/organizations/addorganizationssites.webp)
 
 **Step 4 –** On the Configure source details (Step 3 of 4) window, add a site for your organization.
-Sites are used to signify physical groupings within the organization. Click **Next**.
+Sites signify physical groupings within the organization. Click **Next**.
 
 :::note
 This step is displayed only when adding Active Directory and Computer sources.

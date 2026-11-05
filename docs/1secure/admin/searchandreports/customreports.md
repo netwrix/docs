@@ -53,7 +53,12 @@ This checkbox isn't available for End Customer Organizations.
 :::
 
 
-**Step 9 –** Click **Save Report**.
+**Step 9 –** Click **Save Report**. At least one filter must be configured to save a custom report. The
+Report saved message appears. If required fields are missing, a message states that the report can't be
+saved.
+
+Saving a custom report requires the ActivityRecordReportSave permission (Manage Saving Activity
+Record Reports), which the Administrator and Editor roles hold.
 
 Your custom report is created under the respective category.
 
@@ -76,7 +81,7 @@ its reports. An organization is selected by default, but you can choose a differ
 **Step 3 –** In the left pane, click a category to view its reports.
 
 **Step 4 –** Click a custom report to open it. Predefined reports and custom reports are represented
-by different icons, enabling you to distinguish between them.
+by different icons, so you can tell them apart.
 
 **Step 5 –** Click **Edit** to modify the report. The Edit Report pane opens.
 
@@ -98,8 +103,11 @@ its reports. An organization is selected by default, but you can choose a differ
 **Step 3 –** In the left pane, click a category to view its reports.
 
 **Step 4 –** Click a custom report to open it. Predefined reports and custom reports are represented
-by different icons, enabling you to distinguish between them.
+by different icons, so you can tell them apart.
 
-**Step 5 –** Click **Delete**. A confirmation dialog box appears. Click **Delete**.
+**Step 5 –** Click **Delete**. A confirmation dialog box appears. It states that the deletion can't be
+undone. If the report has associated alerts, the
+dialog box lists them and warns that they are also deleted. If the report has associated
+subscriptions, the dialog box warns that they are also deleted. Click **Delete**.
 
-The custom report is deleted from the system.
+The Report deleted message appears and the custom report is deleted from the system.

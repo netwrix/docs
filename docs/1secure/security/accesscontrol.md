@@ -6,14 +6,15 @@ sidebar_position: 30
 
 # Access Control
 
-Netwrix 1Secure is a multi-tenant cloud application. All data is segregated by tenants and access
-control is enforced.
+You can add a single-sign-on (SSO) connection to an organization, using Entra ID or OpenID Connect (Okta
+is handled as an OpenID Connect connection). Each organization can have at most one SSO connection,
+and at sign-in the user's email domain must match the domain of the connection, otherwise login is
+refused. For Entra ID, the connection needs a Client ID, a Client secret, and a Client Secret Expiry
+Date. For OpenID Connect, it needs a Client ID and a Discovery URL. The Domain field is read-only
+and must match your domain. SSO configuration is available only when the SSOConfiguration feature
+flag is on. When you change the strategy, 1Secure creates the new connection before it deletes the
+old one.
 
-Only the users who you explicitly add to your organization in Netwrix 1Secure get to see your
-dashboards in the product. User access is set up using a customer Azure AD account. You can further
-protect access using Azure AD support for Multi-Factor Authentication (MFA). Thus, when users get
-deprovisioned from their corporate directories they also automatically lose access to Netwrix
-1Secure.
-
-Netwrix employees who have administrative access to the Azure deployment to maintain the application
-only do so under their own Netwrix corporate accounts and all their activity is audited.
+Multi-factor authentication (MFA) is required at login for every user who has access to any
+organization other than a Self-Service Trial. Users whose organizations are all Self-Service Trial
+skip it. A user with no active organization is treated as MFA-required.
