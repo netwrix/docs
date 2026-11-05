@@ -615,3 +615,16 @@ test('progress counts an align run as set up once oldRef is recorded', async () 
   assert.equal(seed.status, 'done');
   assert.match(seed.detail, /set up/);
 });
+
+test('the doc-set workflow script parses as JavaScript', () => {
+  // A stray apostrophe in a single-quoted string once broke it, and `node --check` on a .js file did not notice.
+  const src = fs.readFileSync(new URL('../.claude/workflows/doc-set.js', import.meta.url), 'utf8');
+  // The Workflow tool runs the body inside an async function, so check it the same way.
+  const check = text => {
+    const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'wf-')), 'doc-set.mjs');
+    fs.writeFileSync(tmp, `async function workflow() {\n${text.replace(/^export const meta/m, 'const meta')}\n}\n`);
+    execFileSync(process.execPath, ['--check', tmp], { stdio: 'pipe' });
+  };
+  assert.doesNotThrow(() => check(src));
+  assert.throws(() => check(src.replace('pages folder>', "pages' folder>")), 'the check catches a stray apostrophe');
+});

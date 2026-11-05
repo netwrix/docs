@@ -1,7 +1,7 @@
 export const meta = {
   name: 'doc-set',
   description: 'Draft every non-KEEP page of an approved /doc-set manifest in zone batches, then verify each batch against the fact pack',
-  whenToUse: 'Called by the /doc-set skill after the writer approves manifest.json. args: { runDir: "<absolute path to .doc-set/<product>-<version>>", pathPrefixes?: ["<prefix relative to the pages' folder>"], zone?: "<manifest zone to draft; omit for all>" }',
+  whenToUse: 'Called by the /doc-set skill after the writer approves manifest.json. args: { runDir: "<absolute path to .doc-set/<product>-<version>>", pathPrefixes?: ["<prefix relative to the pages folder>"], zone?: "<manifest zone to draft; omit for all>" }',
   phases: [
     { title: 'Plan', detail: 'group manifest pages into batches' },
     { title: 'Draft', detail: 'one agent per batch writes pages and runs the style checks' },
