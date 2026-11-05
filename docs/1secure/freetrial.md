@@ -114,8 +114,8 @@ Converting a trial organization to a commercial tier clears its scheduled deleti
 
 During the trial, a banner shows how much time is left in your free trial, for example "You're
 halfway through your trial.", and offers a **Request a quote** link. After the trial expires, a
-splash screen shows "Your free trial ended on {{date}}" and "Your data will be permanently deleted
-on {{date}}", with a **Request Pricing** button.
+splash screen shows "Your free trial ended on `{{date}}`" and "Your data will be permanently deleted
+on `{{date}}`", with a **Request Pricing** button.
 
 Extending a standard trial sets the end date to 30 days from today. Extending a self-serve trial
 sets the end date to 14 days from today, the configured trial length. Extending a trial also

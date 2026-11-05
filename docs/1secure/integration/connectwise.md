@@ -73,7 +73,7 @@ settings.
 Also, when you add a new organization, you can specify your ConnectWise company from the start. See
 the [Add Organizations](/docs/1secure/admin/organizations/addorganizations.md) topic for additional
 information. The **ConnectWise Company** dropdown in that drawer appears only if ConnectWise is
-configured. It has a **\<No Company\>** entry and creates a link to an existing ConnectWise company.
+configured. It has a `<No Company>` entry and creates a link to an existing ConnectWise company.
 
 To manage delivery settings for ConnectWise:
 
@@ -94,7 +94,7 @@ default.
 
 **Step 5 –** In the **Child Tenant Mappings** table, select the corresponding ConnectWise Company ID
 for each managed organization. Each row in the **Managed Organization** column has a dropdown of
-ConnectWise companies. The first entry is **\<No Company\>**. The table lists managed organizations
+ConnectWise companies. The first entry is `<No Company>`. The table lists managed organizations
 only, not the Managed Service Provider's own organization.
 
 **Step 6 –** Click **Save**.

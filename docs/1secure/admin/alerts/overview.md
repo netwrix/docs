@@ -113,7 +113,7 @@ least one email address or select Email Organization Admins."
 **Step 7 –** Click Save.
 
 Emails are sent only for new alerts. Alerts that already existed in the batching period don't
-trigger another email. The email subject is "Netwrix 1Secure Alert: <alert name>". Activity alert
+trigger another email. The email subject is "Netwrix 1Secure Alert: _alert name_". Activity alert
 emails contain a "Click here to investigate" button that opens the report for the alert's time
 range. When grouping is on, the email lists a table with the columns Item, Num of occurrences,
 First Activity, Last Activity, and View Activity.

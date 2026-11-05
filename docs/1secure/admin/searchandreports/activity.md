@@ -47,7 +47,7 @@ Activity reports are available under the following categories.
 - [Overview](#overview)
 - [Active Directory](#active-directory)
 - [Group Policy](#group-policy)
-- [Entra ID](#entra-id)
+- [Entra ID](#microsoft-entra-id)
 - [File Server](#file-server)
 - [Exchange Online](#exchange-online)
 - [SharePoint Online](#sharepoint-online)
@@ -90,7 +90,7 @@ Activity reports are available under the following categories.
 | Password Policy Changes |
 | Security Settings Changes |
 
-## Entra ID
+## Entra ID {#microsoft-entra-id}
 
 | Report Name | Description |
 | --- | --- |

@@ -40,7 +40,7 @@ SharePoint Online is a data source type that collects from Microsoft 365 with an
 credential. It is separate from the SharePoint Online report-delivery integration. The source type
 allows one source per organization and defaults to 25 maximum concurrent jobs. The source asks for
 the **Tenant ID**, described as "The Tenant ID for the SharePoint Online source." The Tenant ID must
-be a GUID. Otherwise, the message is "{title} must be a valid Tenant ID (GUID)."
+be a GUID. Otherwise, the message is "`{title}` must be a valid Tenant ID (GUID)."
 
 SharePoint Online has four connectors:
 

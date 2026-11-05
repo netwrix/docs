@@ -83,7 +83,7 @@ Follow these rules when setting the thresholds:
 - The maximum value of the medium risk range is equal to the High threshold.
 - The Medium and High values must differ by at least 1 (0.01 for percentages) in the direction that
   matches the metric. If they don't, 1Secure shows "The threshold boundaries for this metric are
-  invalid - high threshold must be at least {0} higher than the value for the medium threshold."
+  invalid - high threshold must be at least `{0}` higher than the value for the medium threshold."
 - If you select Percentage (%), values must be from 0 to 100. Otherwise, 1Secure shows
   "Percentage thresholds should be between 0 and 100".
 - A metric is Low below the Medium threshold, Medium from the Medium threshold, and High from the

@@ -194,10 +194,10 @@ example with Netwrix Auditor."
 ### Licensing
 
 A default connector that the license doesn't cover shows "Not included in your license". 1Secure
-skips disabled connectors when you add a source. It shows "One Connector is not enabled and won't be added to the source." or "{0} Connectors are not enabled and won't be added to the source."
+skips disabled connectors when you add a source. It shows "One Connector is not enabled and won't be added to the source." or "`{0}` Connectors are not enabled and won't be added to the source."
 
 Licensing messages for connectors are "License required", "License is required for the connector
-{0}", and "Requires {0}".
+`{0}`", and "Requires `{0}`".
 
 ## Manage sources and connectors
 
@@ -214,12 +214,12 @@ If validation fails, 1Secure shows "Validation failed, please try again" or "A p
 
 Deleting a source group asks "Are you sure you want to delete this source group? This will also
 delete all its sources and connectors." Deleting a connector asks "Are you sure you want to delete
-connector {0}?"
+connector `{0}`?"
 
 ## Check source health
 
 Open the health-status dialog from the status column. For a connector, the dialog title reads
-"Health Status for {0} of type {1}".
+"Health Status for `{0}` of type `{1}`".
 
 | Status | When it appears |
 |---|---|
