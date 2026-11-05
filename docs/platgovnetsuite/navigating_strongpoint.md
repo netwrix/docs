@@ -6,7 +6,7 @@ sidebar_position: 18
 
 # Navigation
 
-There are two ways to access Platform Governance for NetSuite's functionality: the **Strongpoint**
+There are two ways to access Strongpoint for NetSuite's functionality: the **Strongpoint**
 tab on the NetSuite tab bar or from the **Strongpoint Overview**. Menu options are available based
 on your [License Type](/docs/platgovnetsuite/installation/features_by_license_type.md). In addition, menu items
 can be hidden for each account through [Menu Management](/docs/platgovnetsuite/installation/managing_menus.md).

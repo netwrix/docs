@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Zendesk
 
-Platform Governance For NetSuite's Change Management capabilities are integrated with Zendesk, one
+Strongpoint for NetSuite's Change Management capabilities are integrated with Zendesk, one
 of the most popular customer service and issue ticketing systems. Customers can look for and
 include NetSuite Customizations, assess impacts for requested changes, and push Zendesk change
 tickets into a Change Request. This enables easy management of changes, seamless tracking of
@@ -46,10 +46,10 @@ To install the Zendesk app, you must have **Admin** privileges.
 
     ![Open the Zendesk Marketplace](/images/platgovnetsuite/integrations/zendesk_admin_marketplace.webp)
 
-4. Search for **Platform Governance For NetSuite**.
-5. Click **Platform Governance For NetSuite** when it is displayed.
+4. Search for **Strongpoint for NetSuite**.
+5. Click **Strongpoint for NetSuite** when it is displayed.
 
-    ![Platform Governance For NetSuite app in the Marketplace](/images/platgovnetsuite/integrations/zendesk_platform_governance.webp)
+    ![Strongpoint for NetSuite app in the Marketplace](/images/platgovnetsuite/integrations/zendesk_platform_governance.webp)
 
 6. Click **Install**. When installation is complete, you are prompted to sign in to your Zendesk
    dashboard to continue.
@@ -58,15 +58,15 @@ To install the Zendesk app, you must have **Admin** privileges.
 
     ![Configure the Platform Governance Zendesk app](/images/platgovnetsuite/integrations/zendesk_configure_app.webp)
 
-9. Hover on the **Platform Governance For NetSuite** tile to access the **Settings** menu.
+9. Hover on the **Strongpoint for NetSuite** tile to access the **Settings** menu.
 
     ![Hover to access the Settings](/images/platgovnetsuite/integrations/zendesk_configure_app_menu.webp)
 
 10. Click **Change settings**.
 
-    ![Set up the Platform Governance For NetSuite Zendesk app](/images/platgovnetsuite/integrations/zendesk_change_settings.webp)
+    ![Set up the Strongpoint for NetSuite Zendesk app](/images/platgovnetsuite/integrations/zendesk_change_settings.webp)
 
-    - **Title**: the name associated with the app. The default is **Platform Governance For NetSuite**.
+    - **Title**: the name associated with the app. The default is **Strongpoint for NetSuite**.
     - Account ID: enter the NetSuite account ID. The **Account ID** must be a lowercase string. For
       example, **tstdrv12345678**.
 
@@ -100,7 +100,7 @@ To install the Zendesk app, you must have **Admin** privileges.
 
 After you install the Zendesk app, set up the approvals.
 
-1. Click the new **Platform Governance For NetSuite** icon in the left panel. The **Group Configurations**
+1. Click the new **Strongpoint for NetSuite** icon in the left panel. The **Group Configurations**
    page opens.
 
    ![Group Configuration Icon](/images/platgovnetsuite/integrations/zendesk_group_config_icon.webp)

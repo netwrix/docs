@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Integration Records
 
-Platform Governance for NetSuite documents your NetSuite integrations by creating an **Integration Record** for each application. The Spiders build and maintain them. Changes to integration records are captured in Change Logs. The **Access Tokens/Integration Record** Policy control assigns the level of change reporting.
+Strongpoint for NetSuite documents your NetSuite integrations by creating an **Integration Record** for each application. The Spiders build and maintain them. Changes to integration records are captured in Change Logs. The **Access Tokens/Integration Record** Policy control assigns the level of change reporting.
 
 Token-based authentication can be specified on the **Authentication** tab. Use the **Customization
 Quick Search** to locate an integration record.

@@ -35,8 +35,8 @@ npm run kb:clean         # Remove copied KB files from versioned folders
 npm run kb:dry           # Dry run of KB copy script
 
 # Single-product builds (faster iteration — only generates plugins/routes for one product)
-DOCS_PRODUCT=pingcastle npm run build
-DOCS_PRODUCT=pingcastle npm run start
+DOCS_PRODUCT=pingcastleenterprise npm run build
+DOCS_PRODUCT=pingcastleenterprise npm run start
 ```
 
 The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set automatically by npm scripts). Markdown links and anchors always throw build errors. `onBrokenLinks` also throws, except it's relaxed to `'warn'` for `DOCS_PRODUCT` single-product builds, since those intentionally filter out other products' pages (cross-product links 404 on purpose).

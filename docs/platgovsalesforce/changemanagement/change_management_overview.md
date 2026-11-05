@@ -6,11 +6,11 @@ sidebar_position: 80
 
 # Change Management Overview
 
-Platform Governance for Salesforce Closed Loop Change Management and Compliance is an enhanced
+Strongpoint for Salesforce Closed Loop Change Management and Compliance is an enhanced
 change management system for changes to Salesforce accounts using the Platform Governance for
 Salesforce automated documentation and change management system.
 
-With Platform Governance for Salesforce, you can extend your current change management system to:
+With Strongpoint for Salesforce, you can extend your current change management system to:
 
 - Establish change management policies for different types of objects and processes.
 - Route changes for approval within Salesforce.
@@ -43,7 +43,7 @@ The **Advanced Change Management** Module provides additional functionality:
 - Delete customizations.
 
 :::note
-Change Management can be integrated with other change tracking systems using the External Change
+You can integrate Change Management with other change tracking systems using the External Change
 Request Number field. Use the change records because they can be linked to
 processes, customizations, and clean-up activities.
 :::

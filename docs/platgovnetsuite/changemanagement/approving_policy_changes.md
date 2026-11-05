@@ -19,7 +19,7 @@ sidebar_position: 50
     ![change_request_bar_approved_override](/images/platgovnetsuite/change_management/change_request_bar_approved_override.webp)
 
 6. Click **Pending Approval** to begin the normal approval process. Approvers must be
-   [licensed](/docs/platgovnetsuite/installation/license_manager.md) Platform Governance for NetSuite users
+   [licensed](/docs/platgovnetsuite/installation/license_manager.md) Strongpoint for NetSuite users
    and have the correct [role permissions](/docs/platgovnetsuite/installation/setting_permissions.md) if they
    are using a custom (non-Strongpoint) role.
 7. Approvers can use the link in the email notification to **Approve** or **Reject** the Policy

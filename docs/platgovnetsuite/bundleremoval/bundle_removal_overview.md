@@ -6,11 +6,11 @@ sidebar_position: 80
 
 # Bundle Removal Overview
 
-Platform Governance for NetSuite helps you remove bundles from NetSuite safely and efficiently using mass
+Strongpoint for NetSuite helps you remove bundles from NetSuite safely and efficiently using mass
 updates and saved searches. By following the bundle removal process, the current functionality in your account keeps working as expected.
 
 Customizations that are built on top of a bundle can cause issues or break when the bundle is
-removed. Platform Governance for NetSuite helps you determine what could cause issues or break if you remove the bundle by:
+removed. Strongpoint for NetSuite helps you determine what could cause issues or break if you remove the bundle by:
 
 - Recognizing which customizations are built on top of the bundle.
 - Seeing how customizations relate to different components.
@@ -37,9 +37,9 @@ To remove a bundle:
     remove.  
     **Developer and/or Administrator**: When you remove the bundle, the associated scripts are removed as well. Assign a developer or administrator to investigate the scripts, identify which scripts need to be recreated, and rebuild them.
 
-2. Document your account. If Platform Governance for NetSuite is already installed and running in
+2. Document your account. If Strongpoint for NetSuite is already installed and running in
    your account, you can run a manual spider to update your account. If you have a new account,
-   install Platform Governance for NetSuite and complete the initial spider.
+   install Strongpoint for NetSuite and complete the initial spider.
 3. Create Mass Updates.
 4. Create a Custom List and Custom Fields.
 5. Create Saved Searches and export/import CSV files (where applicable).

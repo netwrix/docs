@@ -17,7 +17,7 @@ processes and compliance at risk.
 This challenge isn't unique to CPQ. Billing and other applications that handle revenue-related data
 are all potentially in scope for audit review.
 
-Platform Governance for Salesforce solves this problem by treating configuration data with
+Strongpoint for Salesforce solves this problem by treating configuration data with
 the same scrutiny it applies to other Apex metadata in your org. You can create mitigating controls
 to automatically block changes to critical CPQ rules. For example, you can designate the fields on
 the **Discount Schedule** and **Discount Tier** objects to be under change control, and generate
@@ -27,7 +27,7 @@ As a result, you no longer have to use field history reports and manual review t
 other configuration data is protected. Auditors have the documentation they need, audit costs
 decrease, and IT leadership has full visibility into configuration changes.
 
-You must have an Enterprise Compliance license to benefit from this feature.
+You must have an Enterprise Compliance license to use this feature.
 
 The basic steps for CPQ data tracking:
 

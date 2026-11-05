@@ -72,7 +72,7 @@ helps if you don't have the exact name.
 ## Prototype Customizations
 
 If a user creates a new customization without using a NetSuite prefix, the system flags it as a
-Prototype Customization. When you use Platform Governance for NetSuite to create your
+Prototype Customization. When you use Strongpoint for NetSuite to create your
 customizations, the prefix is added for you. An example is adding a new field to a form.
 
 To fix this situation:

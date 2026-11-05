@@ -6,7 +6,7 @@ sidebar_position: 14
 
 # What is documented
 
-There are four outcomes for customizations Platform Governance for NetSuite finds in the system:
+There are four outcomes for customizations Strongpoint for NetSuite finds in the system:
 
 - [Captured and Documented](#captured-and-documented-in-the-customization-record)
 - [Partially Documented](#partially-documented-in-the-customization-record)
@@ -54,7 +54,7 @@ more of the following reasons:
 
 ## Not Documented in the Customization Record
 
-These record types don't have a NetSuite API to enable Platform Governance for NetSuite to capture
+These record types don't have a NetSuite API to enable Strongpoint for NetSuite to capture
 customization data.
 
 | Object                 | Category                    | Description                                                                                                                                                                                  | Change Impact                                                               |

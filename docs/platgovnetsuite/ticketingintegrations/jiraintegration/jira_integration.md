@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Jira
 
-Platform Governance for NetSuite's Change Management capabilities are integrated with Jira, one of
+Strongpoint for NetSuite's Change Management capabilities are integrated with Jira, one of
 the most popular issue ticketing and development project management systems. Customers can
 look for and include NetSuite Customizations, assess impacts for requested changes, and push Jira
 change tickets into a Change Request. This enables easy management of changes, seamless tracking of
@@ -20,8 +20,8 @@ compliant changes and automating the reconciliation of change logs during an aud
 
 ### Features and Benefits
 
-With Platform Governance for NetSuite's integration of NetSuite and Jira (Cloud), you can use the
-Jira tool while Platform Governance for NetSuite automatically adds and tracks the associated changes in your NetSuite account. The
+With Strongpoint for NetSuite's integration of NetSuite and Jira (Cloud), you can use the
+Jira tool while Strongpoint for NetSuite automatically adds and tracks the associated changes in your NetSuite account. The
 integration eliminates the need for double entry in the two systems.
 
 The Jira integration automatically syncs Jira tickets with NetSuite change request:
@@ -43,7 +43,7 @@ Change Managers and System Administrators quickly realize the integration benefi
 
 Review these considerations before deploying the Jira integration:
 
-1. Platform Governance for NetSuite's integration is a client script that can be enabled or disabled
+1. Strongpoint for NetSuite's integration is a client script that can be enabled or disabled
    by form, user, or role. It has high order value to ensure it is the last thing to run and does
    not interrupt any other process.
 2. All functions are self-executing, complying with Jira best practices.
@@ -69,7 +69,7 @@ To set up the Strongpoint Jira integration:
 
 To take advantage of the automatic synchronization feature, review your Jira
 statuses to be mapped to the Change Management statuses. When a ticket status is updated to a mapped
-status, Platform Governance for NetSuite handles the synchronization between Jira and NetSuite.
+status, Strongpoint for NetSuite handles the synchronization between Jira and NetSuite.
 
 The mapping allows multiple Jira statuses to map to each Change Request status.
 The mapping is part of the Configure NetSuite and Jira procedure.
@@ -105,7 +105,7 @@ Refer to the Atlassian documentation for instructions on
     - **Jira Statuses for Rejected Status**
     - **Jira Statuses for Canceled Status**
 
-6. Check **Automatic Synchronization** to enable Platform Governance for NetSuite to handle the
+6. Check **Automatic Synchronization** to enable Strongpoint for NetSuite to handle the
    synchronization between Jira and NetSuite when a Ticket status is updated to a mapped status.
    without having to click **Push**. If you are using an account where you don't want to create a
    Change Request, leave this unchecked so you can do your research or testing without generating
@@ -149,7 +149,7 @@ must have access granted for the **Strongpoint Developer Role**.
 
 Token Based Authentication is set up through NetSuite. The basic process is as follows:
 
-1. NetSuite Administrator creates an Integration Record for the Platform Governance for NetSuite
+1. NetSuite Administrator creates an Integration Record for the Strongpoint for NetSuite
    application. This only needs to be performed once per account. Open **Setup** > **Integration** >
    **Integration Management** > **Manage Integrations** > **New**
    Refer to the NetSuite help
@@ -176,7 +176,7 @@ Token Based Authentication is set up through NetSuite. The basic process is as f
     ![Add tokens for Jira](/images/platgovnetsuite/release_notes/jira_add_token.webp)
 
 8. Enter your credentials and click **Add Token Based Authentication Credential**.
-9. When logging into Platform Governance for NetSuite from Jira you can select your credentials.
+9. When logging into Strongpoint for NetSuite from Jira you can select your credentials.
    Credentials persist once selected.
 
 ### Jira Integration Deployment
@@ -195,7 +195,7 @@ This process is performed by the Jira Administrator.
     - Added as customizations(existing or proposed), objects added are reflected in the Existing
       Customization table and/or the Proposed Customization table in the Jira ticket.
 
-4. Click **Push** when complete. Platform Governance for NetSuite creates a Change Request using the
+4. Click **Push** when complete. Strongpoint for NetSuite creates a Change Request using the
    changes in the Jira ticket.
 5. Start a Respider to create the Change Log and documents.
 
