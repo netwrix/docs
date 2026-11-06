@@ -4,7 +4,7 @@ description: How the Compliance page arranges eight of the Data reports under GD
 sidebar_position: 3
 ---
 
-The **Compliance** page is a second way into the Data reports, arranged for someone preparing evidence for an audit rather than investigating an incident. It organizes reports that already exist: it doesn't run checks against a framework, score your environment, or produce findings of its own. What it gives you is a shortlist of the reports worth opening for a given framework, labeled by the control area each one covers.
+The **Compliance** page is a second way into the Data reports, arranged for someone preparing evidence for an audit rather than investigating an incident. It organizes reports that already exist: it doesn't run checks against a framework, score your environment, or produce findings of its own. It gives you a shortlist of the reports worth opening for a given framework, labeled by the control area each one covers.
 
 Open the page from **Reports > Compliance**. [Data reports](data.md) describes every report the page links to, with its filters and cards.
 

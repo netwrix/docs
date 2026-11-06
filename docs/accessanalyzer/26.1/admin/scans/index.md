@@ -43,7 +43,7 @@ Go to **Configuration > Scans**. The page lists every scan with its type, target
 
 **Search scans…** matches the scan name, the scan type, the names and types of the target sources, and label selectors written as `key=value`. The **Scan type** and **Source type** dropdowns narrow the list further, and **Clear filters** resets both. You can sort by **Name**, **Scan Type**, or **Created**; the newest scans come first by default. The table shows 10, 25, 50, or 100 rows per page.
 
-Scan names don't have to be unique. Two scans can both be called "Finance shares", so give scans names that tell them apart at a glance.
+Scan names don't have to be unique. Two scans can both be called "Finance shares", so give each scan a name that tells it apart from the others.
 
 ### Row Actions
 
