@@ -19,12 +19,12 @@ Run these Access Analyzer job groups successfully before you import. Privilege S
 
 For the jobs themselves, see the following Access Analyzer pages:
 
-- [Active Directory Inventory solution](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/overview.md)
-- [Windows privileged accounts solution](/docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/overview.md)
+- [Active Directory Inventory solution](/docs/accessanalyzer/12_0/solutions/activedirectoryinventory/overview)
+- [Windows privileged accounts solution](/docs/accessanalyzer/12_0/solutions/windows/privilegedaccounts/overview)
 
 ## Create the access role in Access Analyzer
 
-The access role gives Privilege Secure a Client ID and a Client secret that it uses to read data from Access Analyzer. For the full wizard, see [Assign application access](/docs/accessanalyzer/12.0/admin/settings/access/restapi/assignappaccess.md).
+The access role gives Privilege Secure a Client ID and a Client secret that it uses to read data from Access Analyzer. For the full wizard, see [Assign application access](/docs/accessanalyzer/12_0/admin/settings/access/restapi/assignappaccess).
 
 1. In Access Analyzer, go to the **Access** node and select **Add Access** in the upper-right corner. The Access Role wizard opens.
 1. Select **An application accessing data remotely through Web Service**, and then click **Next**.

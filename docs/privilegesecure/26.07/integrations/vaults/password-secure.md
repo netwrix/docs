@@ -14,7 +14,7 @@ The **Password Secure** template appears in the **Connector Template** list by d
 
 ## Prerequisites
 
-- A working Password Secure server and Password Secure Web Application. Install them on a separate server from Privilege Secure. See the Password Secure [installation](/docs/passwordsecure/9.3/installation/installation.md) and [Web Application](/docs/passwordsecure/9.3/configuration/webapplication/web_application.md) documentation.
+- A working Password Secure server and Password Secure Web Application. Install them on a separate server from Privilege Secure. See the Password Secure [installation](/docs/passwordsecure/9_3/installation/installation) and [Web Application](/docs/passwordsecure/9_3/configuration/webapplication/web_application) documentation.
 - A Password Secure API key with read access to passwords. See [Generate an API key](#generate-an-api-key).
 - In Password Secure, an entry for each account to check out, created with the **AD User** template. The **Domain** and **Username** fields of the entry must match the account that the activity uses.
 - The Password Secure API URL reachable from the Privilege Secure server.
