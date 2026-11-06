@@ -306,6 +306,9 @@ test('a review counts only while the page text is unchanged', () => {
   assert.equal(stateFor([v('a', 'approved', 'h1'), v('b', 'approved', 'h2')], 'h2').state, 'approved');
   assert.equal(stateFor([v('a', 'approved', 'h1'), v('b', 'changes', 'h2')], 'h2').state, 'changes');
   assert.equal(stateFor([v('a', 'approved', '')], 'h2').state, 'approved');
+  assert.equal(stateFor([v('a', 'approved', 'h2'), v('b', 'rejected', 'h2')], 'h2').state, 'rejected');
+  assert.equal(stateFor([v('a', 'changes', 'h2'), v('b', 'rejected', 'h2')], 'h2').state, 'rejected');
+  assert.equal(stateFor([v('a', 'rejected', 'h1')], 'h2').state, 'stale');
   const mixed = stateFor([v('a', 'approved', 'h1'), v('b', 'approved', 'h2')], 'h2');
   assert.deepEqual([mixed.fresh.length, mixed.stale.length], [1, 1]);
 });

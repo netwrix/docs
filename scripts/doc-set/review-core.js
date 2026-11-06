@@ -7,9 +7,10 @@
 function stateFor(list, hash) {
   var fresh = [], stale = [];
   list.forEach(function (v) { (v.hash && hash && v.hash !== hash ? stale : fresh).push(v); });
+  var hasRejected = fresh.some(function (v) { return v.status === 'rejected'; });
   var hasChanges = fresh.some(function (v) { return v.status === 'changes'; });
   var hasApproved = fresh.some(function (v) { return v.status === 'approved'; });
-  var state = hasChanges ? 'changes' : hasApproved ? 'approved' : stale.length ? 'stale' : 'none';
+  var state = hasRejected ? 'rejected' : hasChanges ? 'changes' : hasApproved ? 'approved' : stale.length ? 'stale' : 'none';
   return { state: state, fresh: fresh, stale: stale };
 }
 
@@ -329,7 +330,7 @@ function zoneOf(short) { var i = short.indexOf('/'); return i < 0 ? '(top level)
 function dashboardStats(pages, votes, live) {
   var hashOf = {}, per = {}, reviewers = {}, events = [];
   pages.forEach(function (p) { hashOf[p.slug] = p.hash; per[p.slug] = []; });
-  function rv(uid) { return reviewers[uid] || (reviewers[uid] = { uid: uid, approved: 0, changes: 0, stale: 0, suggestions: 0, last: 0 }); }
+  function rv(uid) { return reviewers[uid] || (reviewers[uid] = { uid: uid, approved: 0, changes: 0, rejected: 0, stale: 0, suggestions: 0, last: 0 }); }
   Object.keys(votes).forEach(function (uid) {
     var pg = (votes[uid] && votes[uid].pages) || {};
     Object.keys(pg).forEach(function (slug) {
@@ -337,19 +338,23 @@ function dashboardStats(pages, votes, live) {
       if (!per[slug] || !v || !v.status) return;
       per[slug].push({ uid: uid, status: v.status, at: v.at || 0, hash: v.hash || '' });
       var r = rv(uid), fresh = !(v.hash && hashOf[slug] && v.hash !== hashOf[slug]);
-      if (!fresh) r.stale++; else if (v.status === 'approved') r.approved++; else if (v.status === 'changes') r.changes++;
+      if (!fresh) r.stale++; else if (v.status === 'approved') r.approved++; else if (v.status === 'changes') r.changes++; else if (v.status === 'rejected') r.rejected++;
       r.last = Math.max(r.last, v.at || 0);
       if (fresh) events.push({ uid: uid, slug: slug, kind: v.status, at: v.at || 0 });
     });
   });
-  var totals = { total: pages.length, none: 0, approved: 0, changes: 0, stale: 0, suggestions: 0, suggestionPages: 0 };
-  var byGroup = {}, zones = {}, attention = { changes: [], stale: [], suggested: [] };
-  function blank() { return { total: 0, approved: 0, changes: 0, stale: 0, none: 0 }; }
+  var totals = { total: pages.length, none: 0, approved: 0, changes: 0, rejected: 0, stale: 0, suggestions: 0, suggestionPages: 0 };
+  var byGroup = {}, zones = {}, attention = { rejected: [], changes: [], stale: [], suggested: [] };
+  function blank() { return { total: 0, approved: 0, changes: 0, rejected: 0, stale: 0, none: 0 }; }
   pages.forEach(function (p) {
     var s = stateFor(per[p.slug], p.hash);
     totals[s.state]++;
     var gk = p.band || p.group, g = byGroup[gk] || (byGroup[gk] = blank()); g.total++; g[s.state]++;
     var zn = zoneOf(p.short), z = zones[zn] || (zones[zn] = (function () { var b = blank(); b.zone = zn; return b; })()); z.total++; z[s.state]++;
+    if (s.state === 'rejected') {
+      var rj = s.fresh.filter(function (v) { return v.status === 'rejected'; });
+      attention.rejected.push({ slug: p.slug, uids: rj.map(function (v) { return v.uid; }), at: Math.max.apply(null, rj.map(function (v) { return v.at; })) });
+    }
     if (s.state === 'changes') {
       var ch = s.fresh.filter(function (v) { return v.status === 'changes'; });
       attention.changes.push({ slug: p.slug, uids: ch.map(function (v) { return v.uid; }), at: Math.max.apply(null, ch.map(function (v) { return v.at; })) });
@@ -362,6 +367,7 @@ function dashboardStats(pages, votes, live) {
       sg.forEach(function (x) { var r = rv(x.uid); r.suggestions++; r.last = Math.max(r.last, x.at || 0); events.push({ uid: x.uid, slug: p.slug, kind: 'suggestion', at: x.at || 0 }); });
     }
   });
+  attention.rejected.sort(function (a, b) { return b.at - a.at; });
   attention.changes.sort(function (a, b) { return b.at - a.at; });
   attention.suggested.sort(function (a, b) { return b.count - a.count; });
   var byZone = Object.keys(zones).sort().map(function (k) { return zones[k]; });

@@ -76,6 +76,7 @@ body{padding-block:16px 56px}
 .dot{flex:0 0 10px;height:10px;border-radius:50%;border:2px solid var(--muted);box-sizing:border-box}
 .dot[data-state=approved]{background:var(--ok);border-color:var(--ok)}
 .dot[data-state=changes]{background:var(--warn);border-color:var(--warn)}
+.dot[data-state=rejected]{background:var(--bad,#c0392b);border-color:var(--bad,#c0392b)}
 .dot[data-state=stale]{background:var(--new);border-color:var(--new)}
 .tg{font-size:.68rem;font-weight:600;padding:0 6px;border-radius:8px;white-space:nowrap}
 .tg-NEW,.tag.NEW{background:var(--new-soft);color:var(--new)}
@@ -101,6 +102,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,s
 .rvbadge{display:inline-block;font-size:.76rem;font-weight:600;padding:1px 8px;border-radius:10px;background:var(--rule);color:var(--muted);white-space:nowrap}
 .rvbadge[data-state=approved]{background:var(--ok-soft);color:var(--ok)}
 .rvbadge[data-state=changes]{background:var(--warn-soft);color:var(--warn)}
+.rvbadge[data-state=rejected],.rv-state[data-state=rejected]{background:var(--bad,#c0392b);color:#fff}
 .rvbadge[data-state=stale]{background:var(--new-soft);color:var(--new)}
 .rv{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 14px;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
 .rv button[aria-pressed=true]{border-color:var(--accent);background:var(--accent-soft)}
@@ -111,7 +113,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,s
 .rv-who{color:var(--muted);font-size:.84rem;flex:1 1 200px}
 .rv-btns{display:flex;flex-wrap:wrap;gap:8px}
 .no-comments .rv button[data-act=comment],.no-comments .hint-comment,.no-comments .bt-b-comment{display:none}
-.no-review .rv button[data-act=approved],.no-review .rv button[data-act=changes],.no-review .rv button[data-act=clear]{display:none}
+.no-review .rv button[data-act=approved],.no-review .rv button[data-act=changes],.no-review .rv button[data-act=rejected],.no-review .rv button[data-act=clear]{display:none}
 .no-edit .blk-tools .bt-b-edit,.no-edit .blk-tools .bt-b-del,.no-edit .blk-tools .bt-b-add,.no-edit .sg-edit{display:none}
 .how{margin:0 0 24px}
 .how li{margin-bottom:6px}
@@ -220,6 +222,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,s
 .swatch{display:inline-block;width:10px;height:10px;border-radius:3px;flex:0 0 10px}
 .st-approved{background:var(--ok)}
 .st-changes{background:var(--warn)}
+.st-rejected{background:var(--bad,#c0392b)}
 .st-stale{background:var(--new)}
 .st-none{background:var(--rule)}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem}
@@ -278,7 +281,7 @@ ${FONT_LINK}
 <nav class="sb-nav" aria-label="Pages overview"><a href="#overview" data-nav="overview">Overview</a><a href="#dashboard" data-nav="dashboard">Dashboard</a></nav>
 <div><div class="bar2" role="img" aria-label="Review progress"><i class="rv-bar-ap ap" style="width:0%"></i><i class="rv-bar-ch ch" style="width:0%"></i><i class="rv-bar-st st" style="width:0%"></i></div><p class="sb-reviewed meta">0 of ${total} reviewed</p></div>
 <input id="sb-q" type="search" placeholder="Find a page" aria-label="Find a page" autocomplete="off">
-<div class="sb-filters"><select id="sb-state" aria-label="Filter by review state"><option value="all">All pages</option><option value="none">Not reviewed</option><option value="changes">Changes requested</option><option value="approved">Approved</option><option value="stale">Changed since review</option></select>
+<div class="sb-filters"><select id="sb-state" aria-label="Filter by review state"><option value="all">All pages</option><option value="none">Not reviewed</option><option value="changes">Changes requested</option><option value="rejected">Rejected</option><option value="approved">Approved</option><option value="stale">Changed since review</option></select>
 <div class="seg" id="sb-mode" role="group" aria-label="Order pages by"><button type="button" data-mode="change" aria-pressed="true">Priority</button><button type="button" data-mode="zone" aria-pressed="false">Folders</button></div></div>
 <p id="sb-count" class="meta">${total} pages</p>
 </div>
@@ -303,7 +306,7 @@ ${FONT_LINK}
 <ol>
 <li>Pick a page in the sidebar. <strong>Priority</strong> ranks the pages: new pages first, then rewritten, updated, and style-fix-only pages. Use <strong>Folders</strong> to browse by the docs structure instead. Search by name, or filter by review state.</li>
 <li>The <strong>Rendered</strong> view shows the page as readers will see it, with the old text on the left and the new text on the right. Added words are green, removed words are red, and a bar marks each changed block. Use <strong>Show the whole page</strong> to read the unchanged blocks too. The <strong>Markdown</strong> view shows the old and new source side by side.</li>
-<li>Use <strong>Approve</strong> or <strong>Request changes</strong> on each page you review.</li>
+<li>Use <strong>Approve</strong> or <strong>Request changes</strong> on each page you review. Use <strong>Reject</strong> when a new, rewritten, or updated page shouldn't ship: the author proposes removing it from the PR (a new page is dropped, a rewritten or updated page goes back to its old text). Add a comment saying why.</li>
 <li>To change the text, hover over a block and select <strong>Edit</strong>, <strong>Delete</strong>, or <strong>Add below</strong>. These are suggestions. Claude checks each one against the code before it goes into the page.</li>
 <li class="hint-comment">To comment, select <strong>Comment</strong> on a block, <strong>Comment on this page</strong>, or a line number in the Markdown view.</li>
 </ol>

@@ -18,7 +18,7 @@ if (typeof document !== 'undefined') (function () {
   var building = false;
   var queue = Promise.resolve();
   var renderSeq = 0;
-  var LABEL = { changes: 'Changes requested', approved: 'Approved', stale: 'Changed since review', none: 'Not reviewed' };
+  var LABEL = { rejected: 'Rejected', changes: 'Changes requested', approved: 'Approved', stale: 'Changed since review', none: 'Not reviewed' };
   var TAG = { NEW: 'New', REWRITE: 'Rewritten', UPDATE: 'Updated', RESTYLED: 'Style fixes only' };
   var PREFS_KEY = 'doc-set-review-prefs';
   var prefs = { mode: 'change', view: 'rendered', all: false, old: false, open: { 'g:NEW': true }, last: '', q: '', st: 'all' };
@@ -70,10 +70,10 @@ if (typeof document !== 'undefined') (function () {
       try { var p = await user.profiles(ids); Object.keys(p).forEach(function (k) { profiles[k] = p[k]; }); } catch (e) { /* names stay generic */ }
     }
     if (seq !== renderSeq) return;
-    var n = { none: 0, approved: 0, changes: 0, stale: 0 };
+    var n = { none: 0, approved: 0, changes: 0, rejected: 0, stale: 0 };
     DATA.forEach(function (d) { var s = stateFor(lastPer[d.slug], d.hash); stateOf[d.slug] = s.state; n[s.state]++; });
-    var total = DATA.length, reviewed = n.approved + n.changes;
-    var text = reviewed + ' of ' + total + ' pages reviewed. ' + n.approved + ' approved, ' + n.changes + ' with changes requested, ' + n.stale + ' changed since review, ' + n.none + ' not yet reviewed.';
+    var total = DATA.length, reviewed = n.approved + n.changes + n.rejected;
+    var text = reviewed + ' of ' + total + ' pages reviewed. ' + n.approved + ' approved, ' + n.changes + ' with changes requested, ' + n.rejected + ' rejected, ' + n.stale + ' changed since review, ' + n.none + ' not yet reviewed.';
     $all('.rv-summary').forEach(function (e) { e.textContent = text; });
     $all('.rv-bar-ap').forEach(function (e) { e.style.width = (100 * n.approved / total) + '%'; });
     $all('.rv-bar-ch').forEach(function (e) { e.style.width = (100 * n.changes / total) + '%'; });
@@ -93,13 +93,13 @@ if (typeof document !== 'undefined') (function () {
       var s = stateFor(lastPer[slug] || [], d.hash);
       $('.rv-state', bar).textContent = LABEL[s.state];
       $('.rv-state', bar).setAttribute('data-state', s.state);
-      var parts = s.fresh.map(function (v) { return (v.status === 'changes' ? 'Changes requested by ' : 'Approved by ') + nameOf(v.uid); });
-      if (s.stale.length) parts.push('Reviewed before the page changed: ' + s.stale.map(function (v) { return nameOf(v.uid) + ' (' + (v.status === 'changes' ? 'changes requested' : 'approved') + ')'; }).join(', '));
+      var parts = s.fresh.map(function (v) { return (v.status === 'rejected' ? 'Rejected by ' : v.status === 'changes' ? 'Changes requested by ' : 'Approved by ') + nameOf(v.uid); });
+      if (s.stale.length) parts.push('Reviewed before the page changed: ' + s.stale.map(function (v) { return nameOf(v.uid) + ' (' + (v.status === 'rejected' ? 'rejected' : v.status === 'changes' ? 'changes requested' : 'approved') + ')'; }).join(', '));
       $('.rv-who', bar).textContent = parts.join('; ');
       var mine = myId ? (s.fresh.filter(function (v) { return v.uid === myId; })[0] || {}).status : '';
       $all('button[data-act]', bar).forEach(function (b) {
         var act = b.getAttribute('data-act');
-        if (act === 'approved' || act === 'changes') b.setAttribute('aria-pressed', String(mine === act));
+        if (act === 'approved' || act === 'changes' || act === 'rejected') b.setAttribute('aria-pressed', String(mine === act));
       });
     });
     gateControls();
@@ -110,7 +110,7 @@ if (typeof document !== 'undefined') (function () {
     document.body.classList.toggle('no-review', !(db && myId));
     document.body.classList.toggle('no-edit', !canEdit());
     var ro = !!(db && myId && canWrite === false);
-    $all('.rv button[data-act="approved"], .rv button[data-act="changes"], .rv button[data-act="clear"]').forEach(function (b) {
+    $all('.rv button[data-act="approved"], .rv button[data-act="changes"], .rv button[data-act="rejected"], .rv button[data-act="clear"]').forEach(function (b) {
       b.disabled = ro;
       b.title = ro ? 'Recording a review needs Contributor access. Ask the owner to change your access.' : '';
     });
@@ -180,7 +180,7 @@ if (typeof document !== 'undefined') (function () {
     var s = document.createElement('summary');
     s.appendChild(el('span', 'fname', n.name));
     var slugs = slugsUnder(n);
-    var done = slugs.filter(function (x) { return stateOf[x] === 'approved' || stateOf[x] === 'changes'; }).length;
+    var done = slugs.filter(function (x) { return stateOf[x] === 'approved' || stateOf[x] === 'changes' || stateOf[x] === 'rejected'; }).length;
     s.appendChild(el('span', 'fcount', done + '/' + slugs.length));
     d.appendChild(s);
     var kids = el('div', 'kids');
@@ -504,7 +504,7 @@ if (typeof document !== 'undefined') (function () {
     bar.appendChild(el('span', 'rv-state', 'Not reviewed'));
     bar.appendChild(el('span', 'rv-who'));
     var btns = el('span', 'rv-btns');
-    [['approved', 'Approve'], ['changes', 'Request changes'], ['clear', 'Clear my review'], ['comment', 'Comment on this page']].forEach(function (x) {
+    [['approved', 'Approve'], ['changes', 'Request changes'], ['rejected', 'Reject (remove from the PR)'], ['clear', 'Clear my review'], ['comment', 'Comment on this page']].forEach(function (x) {
       var b = el('button', null, x[1]); b.type = 'button'; b.setAttribute('data-act', x[0]); btns.appendChild(b);
     });
     bar.appendChild(btns);
@@ -591,7 +591,7 @@ if (typeof document !== 'undefined') (function () {
   /* ---------- dashboard ---------- */
 
   var lastSync = 0;
-  var STATES = [['approved', 'Approved'], ['changes', 'Changes requested'], ['stale', 'Changed since review'], ['none', 'Not reviewed']];
+  var STATES = [['approved', 'Approved'], ['changes', 'Changes requested'], ['rejected', 'Rejected'], ['stale', 'Changed since review'], ['none', 'Not reviewed']];
 
   function ago(at) {
     if (!at) return 'never';
@@ -626,7 +626,7 @@ if (typeof document !== 'undefined') (function () {
     if (attrs) { r.type = 'button'; Object.keys(attrs).forEach(function (k) { r.setAttribute(k, attrs[k]); }); }
     r.appendChild(el('span', 'dl', label));
     r.appendChild(stackBar(c, label + ': ' + STATES.map(function (x) { return (c[x[0]] || 0) + ' ' + x[1].toLowerCase(); }).join(', ')));
-    r.appendChild(el('span', 'dn', ((c.approved || 0) + (c.changes || 0)) + ' of ' + c.total));
+    r.appendChild(el('span', 'dn', ((c.approved || 0) + (c.changes || 0) + (c.rejected || 0)) + ' of ' + c.total));
     return r;
   }
 
@@ -649,7 +649,7 @@ if (typeof document !== 'undefined') (function () {
     var box = $('#dash');
     if (!box) return;
     var stats = dashboardStats(DATA, votes, live);
-    var T = stats.totals, reviewed = T.approved + T.changes;
+    var T = stats.totals, reviewed = T.approved + T.changes + T.rejected;
     var bar = $('.livebar');
     if (bar) {
       var on = !!db;
@@ -659,7 +659,7 @@ if (typeof document !== 'undefined') (function () {
     box.textContent = '';
     var tiles = el('div', 'tiles');
     [['Reviewed', Math.round(100 * reviewed / T.total) + '%', reviewed + ' of ' + T.total + ' pages', ''],
-      ['Approved', T.approved, 'pages', 'approved'], ['Changes requested', T.changes, 'pages', 'changes'],
+      ['Approved', T.approved, 'pages', 'approved'], ['Changes requested', T.changes, 'pages', 'changes'], ['Rejected', T.rejected, 'pages', 'rejected'],
       ['Changed since review', T.stale, 'pages', 'stale'], ['Not reviewed', T.none, 'pages', 'none'],
       ['Suggested edits', T.suggestions, T.suggestionPages + (T.suggestionPages === 1 ? ' page' : ' pages'), '']].forEach(function (x) {
       var t = el('div', 'tile');
@@ -694,6 +694,7 @@ if (typeof document !== 'undefined') (function () {
       att.appendChild(ul);
       if (rows.length > 12) att.appendChild(el('p', 'meta', (rows.length - 12) + ' more. Filter the sidebar by review state to see them all.'));
     }
+    group('Rejected (to remove from the PR)', stats.attention.rejected, function (r) { return ' ' + nameList(r.uids) + ', ' + ago(r.at); });
     group('Changes requested', stats.attention.changes, function (r) { return ' ' + nameList(r.uids) + ', ' + ago(r.at); });
     group('Changed since review', stats.attention.stale, function (r) { return ' reviewed before the page changed by ' + nameList(r.uids); });
     group('Suggested edits waiting for a decision', stats.attention.suggested, function (r) { return ' ' + r.count + (r.count === 1 ? ' edit' : ' edits'); });
@@ -725,7 +726,7 @@ if (typeof document !== 'undefined') (function () {
       var ul2 = el('ul', 'alist');
       stats.activity.slice(0, 12).forEach(function (ev) {
         var li = el('li');
-        li.appendChild(el('span', null, nameOf(ev.uid) + (ev.kind === 'approved' ? ' approved ' : ev.kind === 'changes' ? ' requested changes on ' : ' suggested an edit on ')));
+        li.appendChild(el('span', null, nameOf(ev.uid) + (ev.kind === 'approved' ? ' approved ' : ev.kind === 'rejected' ? ' rejected ' : ev.kind === 'changes' ? ' requested changes on ' : ' suggested an edit on ')));
         li.appendChild(pageLink(ev.slug));
         li.appendChild(el('span', 'meta', ' ' + ago(ev.at)));
         ul2.appendChild(li);
