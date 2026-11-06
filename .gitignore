@@ -30,6 +30,9 @@ docs/changetracker/api/reference/*
 docs/privilegesecure/26.07/api/reference/*
 !docs/privilegesecure/26.07/api/reference/_category_.json
 !docs/privilegesecure/26.07/api/reference/index.md
+docs/privilegesecurediscovery/integrations/api/reference/*
+!docs/privilegesecurediscovery/integrations/api/reference/_category_.json
+!docs/privilegesecurediscovery/integrations/api/reference/index.md
 
 # KB copy script lockfile
 .kb-copy.lock

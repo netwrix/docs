@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Deployments
 
-Platform Governance for Salesforce documents your deployments across test environments to production
+Strongpoint for Salesforce documents your deployments across test environments to production
 environments. Each step in the deployment process complies with your policies and a comprehensive
-approval process. Deployments are blocked if approvals aren't complete. Platform Governance for Salesforce maintains a full audit trail of the
+approval process. Deployments are blocked if approvals aren't complete. Strongpoint for Salesforce maintains a full audit trail of the
 entire deployment process. The process is:
 
 - Create a Change Request

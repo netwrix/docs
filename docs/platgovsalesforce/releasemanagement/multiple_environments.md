@@ -10,7 +10,7 @@ Multiple Environment Deployment Tracking helps you manage changes between your P
 Development/Testing environments.
 
 With multiple environment deployment tracking, you can push, pull, and access your change requests in
-all your environments that have Platform Governance for Salesforce installed. This reduces the
+all your environments that have Strongpoint for Salesforce installed. This reduces the
 risk of breaking your production account. By documenting and validating the change process through
 change requests, deployment records, and environment comparison, multiple environment deployment
 tracking lets you access change requests in any environment where Platform Governance for

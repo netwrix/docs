@@ -9,13 +9,16 @@ import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
+import { pingcastleSplitRedirects } from './src/config/redirects/pingcastle-split.js';
 import { threatManager33Redirects } from './src/config/redirects/threatmanager-3.3.js';
 import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects } from './src/config/redirects/privilegesecurediscovery.js';
+import { threatPrevention81Redirects } from './src/config/redirects/threatprevention-8.1.js';
 import { directoryManager110Redirects } from './src/config/redirects/directorymanager-11.0.js';
 import { privilegeSecure42Redirects } from './src/config/redirects/privilegesecure-4.2.js';
 import { isIndexableSite } from './src/config/indexing.js';
 import { identityRecovery31Redirects } from './src/config/redirects/identityrecovery-3.1.js';
 import robotsTxtPlugin from './src/plugins/robotsTxt.js';
+import { docVariablesPreprocessor } from './src/config/docVariables.js';
 
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
@@ -116,6 +119,8 @@ const config = {
     hooks: {
       onBrokenMarkdownLinks: 'throw',
     },
+    // Fills {{appVersion}} and the other release tokens; see src/config/docVariables.js.
+    preprocessor: docVariablesPreprocessor,
     // Strip trailing periods from title/sidebar_label in generated API operation pages.
     // The OpenAPI summaries often end with a period; Docusaurus uses title as the
     // prev/next pagination label, so this cleans up navigation text site-wide.
@@ -213,8 +218,13 @@ const config = {
       {
         redirects: [
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...pingcastleSplitRedirects
+            .filter(({ productId, version }) => activeProductIds.includes(productId)
+              && (version === null || activeVersionsByProduct[productId].map(versionToUrl).includes(version)))
+            .map(({ from, to }) => ({ from, to })),
           ...(activeProductIds.includes('threatmanager') ? threatManager33Redirects : []),
           ...(activeProductIds.includes('privilegesecurediscovery') ? privilegeSecureDiscoveryRedirects : []),
+          ...(activeProductIds.includes('threatprevention') ? threatPrevention81Redirects : []),
           ...(activeProductIds.includes('directorymanager') ? directoryManager110Redirects : []),
           ...(activeProductIds.includes('privilegesecure') ? privilegeSecure42Redirects : []),
           ...(activeProductIds.includes('identityrecovery') ? identityRecovery31Redirects : []),
@@ -306,6 +316,28 @@ const config = {
             version: '26.07',
             label: 'Privilege Secure API',
             baseUrl: '/docs/privilegesecure/26.07/api/reference/',
+          },
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi-privilegesecurediscovery',
+        docsPluginId: 'privilegesecurediscovery',
+        config: {
+          'privilegesecurediscovery-api': {
+            specPath: 'static/openapi/privilegesecurediscovery.yaml',
+            outputDir: 'docs/privilegesecurediscovery/integrations/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/privilegesecurediscovery.yaml',
+            version: 'current',
+            label: 'Netwrix Privilege Secure for Discovery API',
+            baseUrl: '/docs/privilegesecurediscovery/integrations/api/reference/',
           },
         },
       },

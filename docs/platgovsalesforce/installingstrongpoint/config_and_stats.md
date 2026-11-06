@@ -38,7 +38,7 @@ creation (sandbox).
 
 ### Documentation Stats
 
-This section displays the current status of the documentation Platform Governance for Salesforce has
+This section displays the current status of the documentation Strongpoint for Salesforce has
 created for your account. The statistics included the total number of customization, and the various
 **junctions** created to track the relationships between customizations. **junctions** represent
 critical relationship information to help you determine if it is safe to delete or change something,
@@ -147,7 +147,7 @@ Governance for Salesforce.
 
 ### Credentials
 
-Generate your credentials in Jira, then enter them here for the Platform Governance for Salesforce
+Generate your credentials in Jira, then enter them here for the Strongpoint for Salesforce
 Jira integration.
 
 1. Open **Netwrix Dashboard** > **Settings** > **Configuration and Stats**.
@@ -186,15 +186,15 @@ Jira integration.
     - **Pending Approval Values**
     - **Rejected Values**
 
-5. Check **Is Automatic Sync** to enable Platform Governance for Salesforce to handle the
+5. Check **Is Automatic Sync** to enable Strongpoint for Salesforce to handle the
    synchronization between Jira and Salesforce when a Ticket status is updated to a mapped status.
    without clicking **Push**. If you are using an org where you don't want to create a
    Change Request, leave this unchecked so you can do your research or testing without generating
    Change Requests.
-6. Platform Governance for Salesforce doesn't automatically create Change Requests, because not all tickets result in a Change Request.
-   Tickets must be pushed to Platform Governance for Salesforce to begin the process. When Automatic
-   Synchronization is on, Platform Governance for Salesforce synchronizes changes to the Status and Customizations
-   between Jira and Platform Governance for Salesforce without manually pushing changes.
+6. Strongpoint for Salesforce doesn't automatically create Change Requests, because not all tickets result in a Change Request.
+   Tickets must be pushed to Strongpoint for Salesforce to begin the process. When Automatic
+   Synchronization is on, Strongpoint for Salesforce synchronizes changes to the Status and Customizations
+   between Jira and Strongpoint for Salesforce without manually pushing changes.
 7. Click **Save**.
 
 ## Orgs Credentials

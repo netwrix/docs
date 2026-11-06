@@ -9,7 +9,7 @@ sidebar_position: 40
 The Recent Events tab provides information on the events the selected policy recently monitored or
 blocked. See the [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) for
 recent events monitored or blocked by all policies. You can also view event data configured to be
-sent to syslog (SIEM) on the [SIEM Output Viewer](/docs/threatprevention/8.1/admin/configuration/siemoutputviewer.md) window.
+sent to syslog (SIEM) on the [SIEM Output Viewer](/docs/threatprevention/8.1/configuration/siemoutputviewer.md) window.
 
 ![Policy - Recent Events tab](/images/threatprevention/8.1/admin/policies/recentevents/recenteventstab.webp)
 

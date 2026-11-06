@@ -22,7 +22,7 @@ You can configure Threat Prevention to send alerts when the license nears expira
 alerts serve as a reminder for license renewal.
 
 To generate license expiration alerts 14 days before license expiry, enable the **License** option
-on the [System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md). Go to the Email, Event
+on the [System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md). Go to the Email, Event
 Log or SIEM tab depending on how you want to receive alerts (i.e., by email, in the Windows event
 log, or in a SIEM product) and click Configuration in the left pane to locate the License option for
 enabling it.

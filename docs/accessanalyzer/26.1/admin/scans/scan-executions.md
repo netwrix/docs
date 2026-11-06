@@ -42,7 +42,7 @@ An object is one item the execution counted. What counts depends on the scan typ
 | **Access** | **SharePoint Online** | A site collection, a site, a list or library, a folder, or a file or list item. |
 | **Sensitive data** | **File Server** | A file the scan processed, whether it was clean, had findings, or couldn't be read. Empty files, and files that the [classification settings](scan-types.md#prerequisites) leave out for size or extension, aren't part of the scan, so they don't count. |
 | **Sensitive data** | **SharePoint Online** | A document the scan checked. Documents it skips because they're empty, or because the [classification settings](scan-types.md#prerequisites) leave them out for size or extension, still count. |
-| **Identity sync** | **Active Directory** | A user or a group. Group memberships don't count separately. |
+| **Identity sync** | **Active Directory** | A user, group, computer, or managed service account. Group memberships don't count separately. |
 | **Identity sync** | **Entra ID** | A user, a group, or another directory object the sync reads. |
 
 Permission entries never count as objects, on any scan type.
@@ -50,8 +50,8 @@ Permission entries never count as objects, on any scan type.
 The count belongs to one run and starts from zero each time:
 
 - An Access scan reads everything in its scope on every run, so running it again on a share that hasn't changed shows the same number.
-- A Sensitive data scan with **Differential scan** on counts only the files that are new or changed since the last run, so a later run on a quiet File Server source can show a handful of files, or none.
-- An Active Directory Identity sync with **Enable differential scan** on counts only the users and groups that changed since the previous sync, including deleted ones.
+- A Sensitive data scan with **Differential scan** on counts only the files that are new or changed since the last run, so a later run on a File Server source where few files changed can show only a few files, or none.
+- An Active Directory Identity sync with **Enable differential scan** on counts only the users, groups, computers, and managed service accounts that changed since the previous sync, including deleted ones.
 
 For example, a share with 4 folders and 6 text files shows 11 for an Access scan and **6 / 6 files (est.)** for a Sensitive data scan. Add an empty file, a `.jpg` image, and one more text file, and run both scans again: the Access scan shows 14, a full Sensitive data scan shows **7 / 7 files (est.)**, and a Sensitive data scan with **Differential scan** on shows **1 / 1 files (est.)**.
 
@@ -101,7 +101,7 @@ The status moves to **Pausing**, then to **Paused** when the run has saved its p
 1. Open the **Actions** menu of a **Paused** execution.
 2. Click **Resume**.
 
-The status passes through **Pending** or **Resuming** and returns to **Running** when the agent picks the work back up. Clicking **Run** on the scan resumes its paused executions too.
+The status passes through **Pending** or **Resuming** and returns to **Running** when the agent resumes the work. Clicking **Run** on the scan resumes its paused executions too.
 
 ### Stop an Execution
 

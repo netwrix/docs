@@ -1,12 +1,12 @@
 ---
-title: "Launch Platform Governance for Salesforce"
-description: "Launch Platform Governance for Salesforce"
+title: "Launch Strongpoint for Salesforce"
+description: "Launch Strongpoint for Salesforce"
 sidebar_position: 7
 ---
 
-# Launch Platform Governance for Salesforce
+# Launch Strongpoint for Salesforce
 
-To access Platform Governance for Salesforce in Salesforce Lightning Experience:
+To access Strongpoint for Salesforce in Salesforce Lightning Experience:
 
 1. Select the **App Launcher** (grid icon) in the upper-left corner of the Salesforce header.
 
@@ -116,7 +116,7 @@ To open the Netwrix support site, select **Contact Support**.
 
 ## Download Files
 
-The **Download Files** section displays files that Platform Governance for Salesforce generates and their current status.
+The **Download Files** section displays files that Strongpoint for Salesforce generates and their current status.
 
 To download a file:
 

@@ -63,7 +63,7 @@ and the policies within it.
 
 :::note
 Only users with rights assigned in the
-[Users and Roles Window](/docs/threatprevention/8.1/admin/configuration/userroles/overview.md) are available in the list.
+[Users and Roles Window](/docs/threatprevention/8.1/configuration/userroles/overview.md) are available in the list.
 :::
 
 

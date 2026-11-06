@@ -1,0 +1,50 @@
+.submenu {
+  position: relative;
+  list-style: none;
+}
+
+/* Let the flyout escape the parent menu's scroll container */
+:global(.dropdown__menu):has(.submenu) {
+  overflow: visible;
+  max-height: none;
+}
+
+.submenuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* Right-pointing caret, mirroring the Infima dropdown caret */
+.submenuToggle::after {
+  content: '';
+  border-style: solid;
+  border-width: 0.3rem 0 0.3rem 0.4rem;
+  border-color: transparent transparent transparent currentColor;
+  opacity: 0.7;
+}
+
+/* Not an Infima dropdown__menu, so Infima hover/show rules can't reach it */
+.submenuMenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: var(--ifm-z-index-dropdown);
+  min-width: 12rem;
+  margin: 0;
+  padding: 0.5rem;
+  list-style: none;
+  background-color: var(--ifm-dropdown-background-color);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.submenuOpen > .submenuMenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}

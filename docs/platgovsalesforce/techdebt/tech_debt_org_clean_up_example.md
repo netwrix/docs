@@ -26,7 +26,7 @@ Use the Default Clean Up List View with these filters:
   App.
 - Filter on **Salesforce CustomField** to return all Custom Fields.
 - Filter to exclude **Standard** fields. The Salesforce metadata type for all fields is CustomField.
-  Platform Governance for Salesforce identifies standard fields and appends **Standard:
+  Strongpoint for Salesforce identifies standard fields and appends **Standard:
   object_name** to the Customization Name so they can be filtered out of your results.
 - In this example, **unused** means _not used within the last six months_, so finish with a
   Date Last Used filter.
@@ -70,7 +70,7 @@ complications.
    scripts and workflows are still useful, need to be fixed, or cleaned up. What are the scripts or
    workflows doing if there is no data in the field?
 6. As you work through the list, note your findings in the **Clean Up Comments** field.
-7. To keep an unused field, set the **Clean Up Status** to **Ignore**. Alternatively, set the **Date Last Used** to a date in the future. Platform Governance for Salesforce doesn't override the manually set date with an earlier date, so you can retain the customization. To view
+7. To keep an unused field, set the **Clean Up Status** to **Ignore**. Alternatively, set the **Date Last Used** to a date in the future. Strongpoint for Salesforce doesn't override the manually set date with an earlier date, so you can retain the customization. To view
    ignored Customizations, select:
    **Strongpoint** > **Reports** > **Clean Up** > **Customizations Excluded From Clean Up**
 
@@ -178,7 +178,7 @@ the fields.
 
 Clean up the fields in a sandbox first, run your test sets, and review the changes with the affected business owners before making the change in production.
 
-Platform Governance for Salesforce tools don't support deleting items. To remove objects in bulk, use [Destructive Change Sets](https://developer.salesforce.com/docs/atlas.en-us.daas.meta/daas/daas_destructive_changes.htm). You can also remove them manually.
+Strongpoint for Salesforce tools don't support deleting items. To remove objects in bulk, use [Destructive Change Sets](https://developer.salesforce.com/docs/atlas.en-us.daas.meta/daas/daas_destructive_changes.htm). You can also remove them manually.
 
 ## Step 7: Validate Your Change Approval Process Was Followed
 

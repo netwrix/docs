@@ -7,9 +7,9 @@ sidebar_position: 100
 # Integrations
 
 Many customers use ticketing and change approval systems in the management of changes to all of
-their business systems, not only Salesforce or NetSuite. Platform Governance for Salesforce provides
+their business systems, not only Salesforce or NetSuite. Strongpoint for Salesforce provides
 integrations with external ticketing systems to improve workflows for customers using both. This
-brings all the benefits of Platform Governance for Salesforce to your external ticketing systems,
+brings all the benefits of Strongpoint for Salesforce to your external ticketing systems,
 including the impact analysis, release management and change reconciliation features.
 
 Integrations with Salesforce include:
@@ -18,7 +18,7 @@ Integrations with Salesforce include:
 
 ## Jira
 
-Platform Governance for Salesforce’s Change Management capabilities are integrated with Jira, one of
+Strongpoint for Salesforce’s Change Management capabilities are integrated with Jira, one of
 the most popular issue ticketing and development project management systems. Customers can
 push Jira change tickets into a Change Request, enabling change management directly in
 their system, tracking compliant changes, and automating the reconciliation of change

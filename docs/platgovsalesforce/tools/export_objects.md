@@ -17,7 +17,7 @@ Dashboard to download your file.
 You can export **Permissions by Object** or **Object Permissions by Profile/PermSet**.
 
 :::note
-Platform Governance for Salesforce stores Object-level permissions in a Custom Object. There are two
+Strongpoint for Salesforce stores Object-level permissions in a Custom Object. There are two
 reports (**Netwrix Dashboard** > **Reports** > **Access Reports**) for easy access to this
 information:
 :::

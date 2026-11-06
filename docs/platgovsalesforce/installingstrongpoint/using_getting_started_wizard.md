@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Run the Getting Started Wizard
 
-The Getting Started Wizard helps you set up Platform Governance for Salesforce after you have done
+The Getting Started Wizard helps you set up Strongpoint for Salesforce after you have done
 the [basic installation](installing_strongpoint.md) and configuration.
 
 ## Prerequisites

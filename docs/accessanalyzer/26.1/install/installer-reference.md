@@ -20,6 +20,17 @@ dspm-installer --help
 dspm-installer --version
 ```
 
+Run `dspm-installer <command> --help` for what each command and flag does. To pick a command for your situation:
+
+- Install on a new server: `dspm-installer`. See [Run the installer](run-the-installer.md).
+- Resume the wait after an install or upgrade times out: `wait-for-apps`. See [The `wait-for-apps` command](#the-wait-for-apps-command).
+- Upgrade a connected install: `upgrade --download`. See [Upgrade to a new version](upgrade-to-a-new-version.md).
+- Upgrade an air-gapped install: `upgrade --bundle-dir <path>`. See [Upgrade to a new version](upgrade-to-a-new-version.md).
+- Convert a registry install onto downloaded media: `upgrade --download`. See [Convert or connect an install](convert-or-connect-an-install.md#convert-a-registry-install).
+- Connect an air-gapped install that now has internet access: `upgrade --connect`. See [Convert or connect an install](convert-or-connect-an-install.md#connect-an-air-gapped-install).
+- Add an agent on a separate Linux host: `install-agent`. See [The `install-agent` command](#the-install-agent-command).
+- Replace or roll back the TLS certificate: `update-cert` and `rollback-cert`. See [Rotate the TLS certificate](rotate-the-tls-certificate.md).
+
 There are no single-letter flags.
 
 ## Flags
@@ -41,7 +52,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--tls-cert-validity-days` (alias `--cert-days`) | `DSPM_TLS_CERT_VALIDITY_DAYS` | `365` | Validity period, in days, for a certificate `--generate-self-signed-cert` generates. Maximum `36500`. |
 | `--cert-manager-issuer-mode` (alias `--issuer-mode`) | `CERT_MANAGER_ISSUER_MODE` | `none` | Hand issuance and renewal of the `dspm-tls` certificate to cert-manager instead of managing it yourself: `none`, `selfsigned`, `adcs`, or `acme`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the `acme` mode. The installer saves this to `/etc/dspm/installer.yaml`, so later runs keep the mode — see [Configuration File](#configuration-file). |
 | `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](../requirements/index.md#size) for the CPU, RAM, and disk each size requires. A re-run on an existing install never shrinks it. Without `--size`, `SIZE`, or a `size:` key in `/etc/dspm/installer.yaml`, the re-run keeps the installed size, and a smaller size exits with code `1`. To grow an install, pass a larger `--size`, or run `dspmctl resize`, which also grows the volume claims. See [Change the deployment size](change-the-deployment-size.md). |
-| `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. The installer refuses a release older than itself and exits with code `16`. Also appears as **Target Revision** under **Show advanced settings?**. |
+| `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `{{appVersion}}`. The default installs the latest 1.x release. The installer refuses a release older than itself and exits with code `16`. Also appears as **Target Revision** under **Show advanced settings?**. |
 | `--progress` | `DSPM_PROGRESS` | `auto` | Download progress style: `auto`, `bar`, `ascii`, or `lines`. Also applies to `upgrade`. See [Download progress](run-the-installer.md#download-progress). |
 | `--storage-dir` | `DSPM_STORAGE_DIR` | `/var/lib` | Directory holding everything the Kubernetes platform writes: container image layers, the server datastore, and every persistent volume. Set it at install time only. It also moves the install media to `<dir>/dspm/media`. Also appears as **Storage Directory** under **Show advanced settings?**. See [Install media](../requirements/index.md#install-media). |
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
@@ -63,7 +74,7 @@ The defaults for `--tls-cert` and `--tls-key` apply only when you omit both flag
 
 ### Storage Location
 
-By default, everything the Kubernetes platform writes lands under `/var/lib/rancher/k3s`: extracted container image layers and every container's writable layer, the server datastore, and, under `storage/`, every persistent volume in the cluster (PostgreSQL, ClickHouse, NATS, Redis, Prometheus, Metabase, log exports, and PostgreSQL backups). The image layers alone take about 13 GB, and the volumes then grow toward the disk figure for the chosen `--size`.
+By default, everything the Kubernetes platform writes goes under `/var/lib/rancher/k3s`: extracted container image layers and every container's writable layer, the server datastore, and, under `storage/`, every persistent volume in the cluster (PostgreSQL, ClickHouse, NATS, Redis, Prometheus, Metabase, log exports, and PostgreSQL backups). The image layers alone take about 13 GB, and the volumes then grow toward the disk figure for the chosen `--size`.
 
 `--storage-dir` replaces `/var/lib`, so the whole tree moves to a mount you choose and you don't have to add space to `/var/lib`:
 
@@ -91,10 +102,10 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
-| `--k3s-version` | none | `v1.33.4+k3s1` | K3s version to install. |
+| `--k3s-version` | none | `{{k3sVersion}}` | K3s version to install. |
 | `--k3s-name` | none | `dspm` | K3s service and instance name. |
 | `--kubeconfig` | `KUBECONFIG` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
-| `--argocd-version` | none | `3.2.0` | ArgoCD image tag. |
+| `--argocd-version` | none | `{{argocdVersion}}` | ArgoCD image tag. |
 | `--argocd-namespace` | none | `argocd` | Kubernetes namespace for ArgoCD. A media install doesn't support a non-default value. |
 | `--argocd-reconciliation-timeout` | none | `1h` | How often ArgoCD self-heals configuration drift. The version-poller CronJob detects new releases separately. |
 | `--disable-dex` | none | `true` | Disable the Dex identity provider. |
@@ -109,13 +120,13 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 | `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
 | `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all Access Analyzer data. Prompts for confirmation unless you pass `--force`. |
 | `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
-| `--tmp-dir` | `DSPM_TMP_DIR` | none | `--help` doesn't list this flag. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](../requirements/index.md#install-media). |
+| `--tmp-dir` | `DSPM_TMP_DIR` | none | `--help` doesn't list this flag. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with enough free RAM can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](../requirements/index.md#install-media). |
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 
 ### Certificate Manager Flags
 
-The installer only reads the following flags when `--cert-manager-issuer-mode` selects the matching mode: the Automatic Certificate Management Environment (ACME) flags apply to `acme`, and the Active Directory Certificate Services (AD CS) flags apply to `adcs`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for `acme` and `selfsigned`, and [AD CS TLS Certificates](adcs-tls-certificates.md) for `adcs`.
+The installer reads the following flags only when `--cert-manager-issuer-mode` selects the matching mode: the Automatic Certificate Management Environment (ACME) flags apply to `acme`, and the Active Directory Certificate Services (AD CS) flags apply to `adcs`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for `acme` and `selfsigned`, and [AD CS TLS Certificates](adcs-tls-certificates.md) for `adcs`.
 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
@@ -179,7 +190,7 @@ When the file supplies every required value and the installer runs in a terminal
 | 0 | Success. |
 | 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or you canceled the prompts with Esc or Ctrl-C (`installation cancelled`). |
 | 10 | License key error. The key is expired, suspended, unknown, or invalid. |
-| 15 | The installer rejected the air-gapped flags, or couldn't load the media: `--airgap` without `--bundle-dir`, `--bundle-dir` without `--airgap`, or media with no valid `manifest.json`. Also, this host already has a registry install. Use `sudo dspm-installer upgrade --download --migrate` instead. |
+| 15 | The installer rejected the air-gapped flags, or couldn't load the media: `--airgap` without `--bundle-dir`, `--bundle-dir` without `--airgap`, or media with no valid `manifest.json`. Also, this host already has a registry install. Use `sudo dspm-installer upgrade --download` instead. |
 | 16 | A precondition failed and nothing changed, such as too little free space for the media, or a release older than the installer. |
 | 17 | Connected installs only. The installer couldn't download, verify, or unpack the media. Run the command again to resume. |
 | 20 | Connected installs only. The release version you requested with `--target-revision` isn't available for this license key, or the release has no media for this architecture. |
@@ -309,9 +320,9 @@ Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a 
 
 | Form | Use it to |
 |---|---|
-| `upgrade --download` | Download the release's media from Netwrix and upgrade a connected install. |
+| `upgrade --download` | Download the release's media from Netwrix and upgrade a connected install. On a registry install, it also converts the install onto the media. |
 | `upgrade --bundle-dir <path>` | Upgrade from media you downloaded, such as on an air-gapped install. |
-| `upgrade --download --migrate` | Convert a registry install onto downloaded media. |
+| `upgrade --download --migrate` | Convert a registry install onto downloaded media. `upgrade --download` does the same on a registry install. |
 | `upgrade --connect` | Connect an air-gapped install so it can download upgrades. |
 
 Pass exactly one of `--bundle-dir` or `--download`, except for `--connect`. A bare `upgrade` exits with code `16`.
@@ -323,9 +334,11 @@ sudo dspm-installer upgrade --download
 sudo dspm-installer upgrade --bundle-dir /etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz
 ```
 
+Each form works on only some installs. On an air-gapped cluster, `--download` refuses and exits with code `16`, and `--bundle-dir` refuses a bundle that isn't newer than the installed release.
+
 Run it with the `dspm-installer` binary from the release you're upgrading to. It doesn't run the prompts, preflight checks, or platform setup. It upgrades the Access Analyzer services and ArgoCD but not the k3s platform or the offline package manager. If the media targets a different version of either, it prints a warning that names both versions and continues with the installed ones.
 
-Before it changes anything, it checks that the kubeconfig reaches a cluster with a `netwrix` application installed from offline media, that automated sync is on for that application, and that the release is newer than the installed one. A registry install needs `--migrate` first, or `dspmctl` as [Upgrade to a New Version](upgrade-to-a-new-version.md) describes.
+Before it changes anything, it checks that the kubeconfig reaches a cluster with a `netwrix` application installed from offline media, that automated sync is on for that application, and that the release is newer than the installed one. On a registry install, `--download` converts the install onto the media as part of the upgrade, and `--migrate` isn't needed. You can also upgrade with `dspmctl`, as [Upgrade to a New Version](upgrade-to-a-new-version.md) describes.
 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
@@ -333,7 +346,7 @@ Before it changes anything, it checks that the kubeconfig reaches a cluster with
 | `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the offline media of the release to upgrade to: the `.tar.gz` archive or an extracted directory. |
 | `--target-revision` | `TARGET_REVISION`* | newest stable | Release to upgrade to. Needs `--download`. |
 | `--license-key` | `LICENSE_KEY` | the saved key | License key. Needs `--download`. |
-| `--migrate` | `DSPM_UPGRADE_MODE=migrate` | `false` | Convert a registry install onto downloaded media. Needs `--download`. |
+| `--migrate` | `DSPM_UPGRADE_MODE=migrate` | `false` | Convert a registry install onto downloaded media. Needs `--download`. `--download` already implies it on a registry install. |
 | `--connect` | none | `false` | Connect an air-gapped install. Takes only the license key, `--dry-run`, `--kubeconfig`, and `--timeout`. |
 | `--in-cluster` | `DSPM_IN_CLUSTER` | `false` | Run as the in-cluster upgrade Job. The app uses this flag. Don't run it on the host. |
 | `--tmp-dir` | `DSPM_TMP_DIR`* | none | Where to keep the media. |
@@ -352,7 +365,7 @@ Before it changes anything, it checks that the kubeconfig reaches a cluster with
 | 0 | The cluster runs the new release and every application is Synced and Healthy, or the cluster already runs the newest release. |
 | 1 | Unexpected error. |
 | 10 | Netwrix rejected the license key. |
-| 15 | The command couldn't load or deploy the media, and the cluster is still on the previous release. With `--migrate`, the command also exits with this code when an agent node runs on a different CPU architecture from the server. Run the command again after you fix the cause. |
+| 15 | The command couldn't load or deploy the media, and the cluster is still on the previous release. When it converts a registry install, the command also exits with this code when an agent node runs on a different CPU architecture from the server. Run the command again after you fix the cause. |
 | 16 | A precondition failed. Nothing changed. |
 | 17 | The command couldn't download, verify, or unpack the media. Nothing changed. Run the command again to resume. |
 | 20 | No release matches `--target-revision`, or the release has no media for this architecture. |
@@ -390,10 +403,10 @@ The bundle expires 30 minutes after the panel generates it, and `install-agent` 
 | `--token` | none | none | Required. The registration bundle from the **Add agent** panel. |
 | `--name` | none | none | Required. The agent's display name. |
 | `--label` | none | none | An agent label as `key=value`. Repeat the flag for more labels. |
-| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. `install-agent` refuses it for a server that pulls from the registry. Without it, an agent for a connected media install downloads the media. |
+| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. `install-agent` refuses it for a server that pulls from the registry. Without it, an agent of a cluster running from media downloads k3s from the Access Analyzer server, or the release's media when the server has none. |
 | `--accept-warnings` | none | `false` | Continue past preflight warnings without the prompt. |
 
-Before it changes the host, `install-agent` stops if the host runs the Access Analyzer server, if you don't run it as root, if the host's CPU architecture differs from the server's on a media install, or if the server's certificate doesn't cover the address in `--server`. It then runs the agent preflight, opens the firewall ports on a host that runs firewalld or ufw, and joins the host. On a media install, it downloads or unpacks the release's media first, keeps it in `/var/lib/dspm/media`, and deletes the media it unpacked or downloaded after the agent joins.
+Before it changes the host, `install-agent` stops if the host runs the Access Analyzer server, if you don't run it as root, if the host's CPU architecture differs from the server's on a media install, or if the server's certificate doesn't cover the address in `--server`. It then runs the agent preflight, opens the firewall ports on a host that runs firewalld or ufw, and joins the host. On a media install, it takes k3s from the server's agent kit. If the server has none, it downloads or unpacks the release's media first, keeps it in `/var/lib/dspm/media`, and deletes the media it unpacked or downloaded after the agent joins.
 
 | Check | Minimum |
 |---|---|

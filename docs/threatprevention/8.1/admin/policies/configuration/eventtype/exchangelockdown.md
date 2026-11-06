@@ -35,7 +35,7 @@ information on resolving this.
 
 :::note
 There are additional factors to consider to block delegations through Outlook.
-See the [Troubleshooting FAQs](/docs/threatprevention/8.1/troubleshooting/overview.md#troubleshooting-faqs) topic for
+See the [Delegations through Outlook](/docs/threatprevention/8.1/troubleshooting/exchangelockdown.md#delegations-through-outlook) topic for
 additional information.
 :::
 
@@ -75,7 +75,7 @@ Select the **Include** or **Exclude** button and then edit the list.
 - The **Add** (+) button opens the
   [Select Exchange Objects from Active Directory Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/exchangeobjects.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
@@ -95,7 +95,7 @@ Use the buttons in the Trustees and Collections of Trustees areas to edit the li
 - The Trustees **Add** (+) button opens the
   [Select Active Directory Trustees Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/trustees.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
@@ -179,13 +179,13 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - The Perpetrators Add (+) button opens the
   [Select Active Directory Perpetrators Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/perpetrators.md).
 - The Collection button opens the
-  [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
+  [List of Collections Window](/docs/threatprevention/8.1/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
 - The Remove (x) button deletes the selected items from that box.
 
 :::note
 To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
+Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 

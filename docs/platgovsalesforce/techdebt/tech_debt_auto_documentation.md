@@ -6,17 +6,17 @@ sidebar_position: 20
 
 # Automated Documentation
 
-Platform Governance for Salesforce continuously maintains automated digital documentation of each Salesforce org and provides diagrams and clean-up tools. Install the managed package in a sandbox or production org and start the scanners. You can print or export results for offline reference.
+Strongpoint for Salesforce continuously maintains automated digital documentation of each Salesforce org and provides diagrams and clean-up tools. Install the managed package in a sandbox or production org and start the scanners. You can print or export results for offline reference.
 
 :::tip
 **Learning About the Scanners**: Review the [Running the Scanner](/docs/platgovsalesforce/installingstrongpoint/running_scanner.md) topic or reach out to the Customer Success team. Setup takes about half an hour.
 
 The scanning process is a function of size: smaller orgs index in only a few hours, while large orgs can take up to 5 days.
 
-Platform Governance for Salesforce is a 100% native Salesforce App. Records and code usage don't count against your governance limits. Moreover, after the initial scan is complete, Platform Governance for Salesforce automatically updates documentation relating only to things that have changed, greatly reducing the amount of time required to scan.
+Strongpoint for Salesforce is a 100% native Salesforce App. Records and code usage don't count against your governance limits. Moreover, after the initial scan is complete, Strongpoint for Salesforce automatically updates documentation relating only to things that have changed, greatly reducing the amount of time required to scan.
 :::
 
-Once your orgs are documented, Platform Governance for Salesforce provides several ways to understand the downstream dependencies of any change:
+Once your orgs are documented, Strongpoint for Salesforce provides several ways to understand the downstream dependencies of any change:
 
 - Dependency Relationship Diagram (DRD)
 - Customization Record
@@ -61,7 +61,7 @@ Click **Show/Hide Standard Fields** to toggle displaying Standard Fields in the 
 
 ## Customization Record
 
-The Customization record is the central element of Platform Governance for Salesforce documentation. It consolidates technical, operational, and governance-related metadata into a single, structured view that helps administrators, architects, and change agents fully understand a customization, its context, and its impact.
+The Customization record is the central element of Strongpoint for Salesforce documentation. It consolidates technical, operational, and governance-related metadata into a single, structured view that helps administrators, architects, and change agents fully understand a customization, its context, and its impact.
 
 Each Customization record is organized into sections and tabs, allowing users to navigate between metadata, dependencies, change controls, and historical activity.
 
@@ -268,7 +268,7 @@ further research. See [Exporting Objects](/docs/platgovsalesforce/tools/export_o
 
 ## Reports and List Views
 
-Platform Governance for Salesforce is fully built into Salesforce so you can use the built-in
+Strongpoint for Salesforce is fully built into Salesforce so you can use the built-in
 libraries of List Views and Reports or build your own.
 
 **Next Technical Debt Topic:** [Change Monitoring](/docs/platgovsalesforce/techdebt/tech_debt_change_monitoring.md)
