@@ -147,7 +147,15 @@ guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway 
 
 3. When the credential dialog opens, enter the credentials of the account that runs the task. The script has no unattended mode.
 
-{/* TODO verify: that the task keeps the WSL distribution, and therefore guacd, running after a restart. The script only runs wsl.exe with no arguments, and whether that keeps the distribution running after a reboot is runtime behavior on the host that the code and Microsoft's documentation don't show. */}
+After every restart, confirm that guacd is running before you rely on the gateway:
+
+1. In PowerShell, run `wsl -l -v`. The distribution shows **Running**. If it shows **Stopped**, run `wsl` to start it.
+2. In the Ubuntu distribution, run `sudo docker ps`. The output lists a container named `guacd` that publishes port 4822. If `guacd` isn't listed, run `sudo docker start guacd`.
+3. In PowerShell, run `Test-NetConnection <guacd-host> -Port 4822` and confirm that `TcpTestSucceeded` is `True`.
+
+{/* TODO verify: whether guacd is still reachable a few minutes after a restart and after the server is idle for a while. If it isn't, document a keep-alive task. */}
+
+If guacd isn't running, see [Sessions fail after the server restarts](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md#sessions-fail-after-the-server-restarts).
 
 ## Verify the installation
 

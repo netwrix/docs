@@ -10,6 +10,8 @@ A command restriction is a named set of rules. When a user enters a command that
 
 Command restrictions apply to SSH sessions that go through the Privilege Secure proxy. They don't apply to RDP or website sessions.
 
+Use command restrictions for monitoring and deterrence. They aren't a security boundary. See [Limitations](#limitations).
+
 :::note
 If the **Command Restriction** page or list doesn't appear, contact Netwrix support.
 :::
@@ -64,6 +66,17 @@ Go (RE2) syntax isn't the same as the POSIX extended regular expressions that `s
 | **Terminate** | The console ends the session. |
 
 The **Custom Lock Message** field is empty and shows `Locked by NPS Command Restrictions Rule` as placeholder text. If you leave it empty, the user sees that text.
+
+## Limitations
+
+The proxy builds the command line from the characters that the user types, and it tests that line against the rules when the user presses Enter. A command can run without matching a rule when the user:
+
+- Recalls the command from the shell history
+- Completes the command with the Tab key
+- Runs the command through an alias
+- Runs the command from a script
+
+Use command restrictions to log commands, to discourage unwanted ones, and to alert your security team. To limit what a user can run, also restrict the account's privileges. See [Sudoers pattern reference](/docs/privilegesecure/26.07/configuration/service-accounts/sudoers-pattern-reference.md).
 
 ## Apply a command restriction
 

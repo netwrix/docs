@@ -38,7 +38,7 @@ For the task list, see [Scheduled tasks](/docs/privilegesecure/26.07/admin/servi
 
 **Symptom:** A **Full Sync** stays at the "Processing group members" step for a long time.
 
-**Cause:** The sync doesn't read every group in the domain. It starts from the seed groups, which are Domain Admins, Enterprise Admins, and the groups that hold a role in Privilege Secure. It then follows nested groups. A very large group with deep nesting makes this step slow.
+**Cause:** Each synchronization reads the membership of every group that changed since the last run (every group on a full sync), plus Domain Admins and Enterprise Admins, and resolves nested groups down to 10 levels. A very large group with deep nesting makes this step slow.
 
 **Fix:** Wait, and check the **History** tab for progress entries such as "Synchronized N group member relationships for domain". If no entries appear for an extended period, upgrade to 26.07.3 or later. Release 26.07.3 looks up nested groups in batches of up to 200 groups per directory query, instead of one query for each group. For how the sync finds group members, see [How Active Directory synchronization works](/docs/privilegesecure/26.07/resources/ad-sync.md#how-group-members-are-found).
 

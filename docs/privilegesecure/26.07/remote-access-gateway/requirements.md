@@ -81,7 +81,7 @@ The gateway installer creates the Windows Firewall rule "NPS Gateway Web Service
 ## Certificates
 
 - **Portal:** The portal configuration script creates a self-signed certificate. Browsers show a certificate warning until you replace it with a certificate from your certification authority. A replacement certificate must include the portal's DNS name in its subject alternative names.
-- **Gateway:** The gateway installer creates a self-signed certificate for port 6550. The portal doesn't verify it.
+- **Gateway:** The gateway installer installs a self-signed certificate for port 6550. The portal doesn't verify it.
 - **guacd:** The configuration script creates a self-signed certificate for the connection between the gateway and guacd. The gateway pins the certificate by thumbprint.
 
 See [Portal and gateway certificates](/docs/privilegesecure/26.07/remote-access-gateway/configuration/certificates.md).

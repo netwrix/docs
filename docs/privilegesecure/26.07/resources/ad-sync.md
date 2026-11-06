@@ -40,15 +40,11 @@ Reading from one domain controller keeps results consistent, because replication
 
 ## How group members are found
 
-Privilege Secure doesn't copy the membership of every group in the domain. It starts from a set of seed groups and follows nested groups from there. The seed groups are:
+Each synchronization reads the membership of every group that changed since the last successful run. A full synchronization reads the membership of every group. Privilege Secure also reads the membership of the Domain Admins and Enterprise Admins groups on every run, even when they didn't change.
 
-- Domain Admins
-- Enterprise Admins
-- Groups that hold a role in Privilege Secure
+Privilege Secure resolves nested group membership down to 10 levels. It doesn't resolve nesting beyond that.
 
 Members of a group that you add to Privilege Secure with **Add to NPS User Role** are found on the next synchronization, so the roles you assign to the group apply to its members.
-
-Membership lookups for these groups read the group's current members, not only recent changes.
 
 :::note
 A large group with deep nesting can make the "Processing group members" step take a long time. If a run seems stuck at that step, check the **History** tab on the domain for progress entries such as `Synchronized <n> group member relationships`.

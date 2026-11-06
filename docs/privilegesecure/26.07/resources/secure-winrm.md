@@ -45,13 +45,15 @@ The server now has a certificate for WinRM over HTTPS.
 
 ## Choose HTTP or HTTPS
 
-Privilege Secure uses HTTPS only when **WinRM HTTP Setting** is **Use Https If Available** or **Use Https Only**. The default is **Use Http**, so a certificate alone doesn't switch the connection to HTTPS. Set the option under **System Settings** > **WinRM Options**. See [System settings](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md).
+Privilege Secure tries HTTPS only when **WinRM HTTP Setting** is **Use Https If Available** or **Use Https Only**. The default is **Use Http**, so a certificate alone doesn't switch the connection to HTTPS. Set the option under **System Settings** > **WinRM Options**. See [System settings](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md).
 
 | Option | Result |
 |---|---|
-| **Use Http** | The default. |
-| **Use Https If Available** | Uses HTTPS. |
-| **Use Https Only** | Uses HTTPS. |
+| **Use Http** | The default. Connects over HTTP. |
+| **Use Https If Available** | Tries HTTPS first. If the host doesn't answer over HTTPS, the connection falls back to HTTP and the action continues, so the traffic might not be encrypted. The action log doesn't always record the fallback. |
+| **Use Https Only** | Requires HTTPS. If Privilege Secure can't get the HTTPS certificate of the host, the action fails instead of falling back to HTTP. |
+
+To use HTTPS for WinRM connections without the fallback that **Use Https If Available** allows, choose **Use Https Only**.
 
 The server details page has no setting for this. **WinRM HTTP Setting** applies to every server.
 

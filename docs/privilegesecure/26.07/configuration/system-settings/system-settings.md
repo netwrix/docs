@@ -46,7 +46,7 @@ When you select **Multi Monitor**, Privilege Secure sets `use multimon` to 1 in 
 | --- | --- | --- |
 | **WinRM HTTP Setting** | **Use Http** | The transport for Windows Remote Management (WinRM) connections: **Use Http**, **Use Https If Available**, or **Use Https Only**. |
 
-A resource can override this setting on its own details page. See [Secure WinRM](/docs/privilegesecure/26.07/resources/secure-winrm.md).
+**WinRM HTTP Setting** applies to every server. See [Configure a secure WinRM connection](/docs/privilegesecure/26.07/resources/secure-winrm.md#choose-http-or-https).
 
 ## UI Idle Timeout
 

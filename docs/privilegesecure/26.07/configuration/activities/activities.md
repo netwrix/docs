@@ -10,7 +10,7 @@ An activity defines what happens when a user starts a privileged session. It set
 
 Open the **Activities** page from the left navigation pane. The page lists every activity. The list has a search box and a green **+** button that starts a new activity. Hover over an activity to show the copy icon, which clones the activity, and the trash can icon, which deletes it after you confirm. A number badge beside an activity name shows that access policies use the activity.
 
-Netwrix Privilege Secure installs with 11 activities and 2 activity groups. Your list can contain more, because administrators add their own. To build one, see [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
+Administrators can add their own activities. To build one, see [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
 
 ![The Activities page with the activity list on the left and the details of the selected activity on the right.](/images/privilegesecure/26.07/configuration/activities-page.webp)
 

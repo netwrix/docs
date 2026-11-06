@@ -63,12 +63,14 @@ The **Status** column uses these values on both tiles:
 |---|---|
 | **Provisioning** | Privilege Secure is assigning permissions to the login account before the session. |
 | **Pending** | The scheduled start time is still in the future. Scheduled tab only. |
-| **Waiting for Approval** | The session needs approval before it can begin. |
+| **Waiting for approval** | The session needs approval before it can begin. |
 | **Available** | The session is ready. The user can start it or sign in through a client. |
 | **Failed** | The provisioning stage encountered an error. |
 | **Logged In** | The user is signed in to the resource, either directly or through the proxy. Privilege Secure detects a direct sign-in by polling the resource at regular intervals, so the status can lag. |
-| **Canceling** | The session expired, or the user or an administrator canceled it. |
+| **Deprovisioning** | The session expired, the user or an administrator ended it, or a pre-session action failed. Privilege Secure is running the activity's post-session actions. |
 | **Locked** | An administrator locked the session. |
+
+When an approver denies a request or the approval fails, the session moves to the **Historical** tile.
 
 ## End a session
 
@@ -78,9 +80,9 @@ End a session to cancel it before its scheduled end time.
 2. Select the checkbox for each session to end.
 3. Select **End Session**.
 
-The status of each selected session changes to **Canceling**. When the session ends, it moves to the **Historical** tile.
+The status of each selected session changes to **Deprovisioning**. When the session ends, it moves to the **Historical** tile.
 
-For example, to stop a contractor's session that is still running after the change window, select its row on the **Active** tile and select **End Session**. The status changes to **Canceling**.
+For example, to stop a contractor's session that is still running after the change window, select its row on the **Active** tile and select **End Session**. The status changes to **Deprovisioning**.
 
 If you don't have the Terminate Session permission, the console shows "You need 'Terminate Session' permission to end sessions".
 

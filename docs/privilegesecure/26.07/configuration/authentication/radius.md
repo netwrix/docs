@@ -47,7 +47,7 @@ For the other connector types and how a user's connector is chosen, see [Authent
 
 {/* TODO screenshot: MFA connector fields, shared secret masked */}
 
-{/* TODO verify: the value Privilege Secure sends as the NAS Identifier when Send NAS Identifier is selected. The RADIUS client library that sends it (Stealthbits.Radius 1.0.6) isn't in the release source. Next step: read how the library sets NAS-Identifier when SendNasIdentifier is true, or capture a request on the application server. */}
+{/* TODO verify: the value Privilege Secure sends as the NAS Identifier when Send NAS Identifier is selected. The RADIUS client component that sets it isn't in the release source. Next step: capture an authentication request on the application server and read the NAS-Identifier attribute. */}
 
 A new MFA connector starts with these values: **Remote Port** 1812, **Auth. Type** **MSCHAPv2**, **Max Retries** 0, **Timeout (Seconds)** 60, **Send NAS Identifier** cleared, and **Format for username** empty.
 

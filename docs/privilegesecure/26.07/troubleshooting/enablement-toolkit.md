@@ -63,10 +63,8 @@ The results list whether ports 22 (SSH), 3389 (Remote Desktop Protocol, RDP), 59
 | **Verify WinRM Status for Host** | Tests WinRM (PowerShell remoting) on port 5985: the port, whether WinRM is enabled, whether the credentials authenticate, and whether `Invoke-Command` runs with them. | **Host** | With only **Host**, the toolkit runs the port and WinRM checks. Add **Username** and **Password** to run all checks. The toolkit doesn't test port 5986. |
 | **Port Scan for Host** | Scans ports 22, 3389, 5985, and 5986 and runs a ping test. | **Host** | |
 | **Verify SSH Connectivity for Host** | Tests SSH connectivity and authentication. Also checks whether the user can run `sudo`, which commands the user can run, and whether those commands use the "NOPASSWD" directive. | **Host**, **Port**, **Username**, **Password** | The port defaults to 22. |
-| **Set Privilege Secure AppSettingUser Config Files** | Sets the host name in each Privilege Secure `appsettings.user.json` file. | **Host** | Enter the full URL, such as `https://<nps-server>:6500`. The host name must match the common name (CN) of the certificate bound in IIS to the Privilege Secure web application. Run it on each Privilege Secure server that has an IIS-bound certificate. |
+| **Set Privilege Secure AppSettingUser Config Files** | Run only when Netwrix Support asks you to. Sets the host name in each Privilege Secure `appsettings.user.json` file. | **Host** | Enter the full URL, such as `https://<nps-server>:6500`. The host name must match the common name (CN) of the certificate bound in IIS to the Privilege Secure web application. Run it on each Privilege Secure server that has an IIS-bound certificate. |
 | **Export Privilege Secure Diagnostics** | Exports logs, configuration files, and version information into a zip file. | **Date Range** | Select a date range to shorten the run. The toolkit prompts for a save location. It exports diagnostics only for the server that runs the toolkit. |
-
-{/* TODO verify: whether the Set Privilege Secure AppSettingUser Config Files operation is current in 26.07 and which services' config files it changes. The toolkit source isn't in the product repositories; only running the 26.07.3 toolkit settles it. */}
 
 ## Export diagnostics for support
 
@@ -76,9 +74,7 @@ The results list whether ports 22 (SSH), 3389 (Remote Desktop Protocol, RDP), 59
 1. Click **Execute**.
 1. When prompted, choose a folder for the zip file.
 
-The export includes logs and configuration files. Send it only to [Netwrix Support](https://www.netwrix.com/support.html). Run the export on each server that runs a Privilege Secure service, because it covers only the local server.
-
-{/* TODO verify: whether the diagnostics export removes secrets from the configuration files it collects. The toolkit source isn't in the product repositories; only inspecting an export from the 26.07.3 toolkit settles it. */}
+The export includes logs and configuration files. The configuration files can hold connection strings, so handle the zip file as sensitive. Send it only to [Netwrix Support](https://www.netwrix.com/support.html). Run the export on each server that runs a Privilege Secure service, because it covers only the local server.
 
 ## Related topics
 

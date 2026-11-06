@@ -74,7 +74,7 @@ The account can be a manually managed account, or an account that a secret vault
    This script doesn't use **API Url** or **Skip Certificate Check**. It sends its requests to the Privilege Secure address that the Action Service uses, and those requests follow the certificate setting of the Action Service, not the connector. The form still requires an **API Url** value.
    :::
 
-3. In **Checkout Script Block**, paste the following script. Leave **Checkin Script Block** empty. If you leave it empty, the built-in check-in deletes the credential record that is linked to the connector, when the last session that uses it ends.
+3. In **Checkout Script Block**, paste the following script. This script is an example. Test it in your environment before you use it in production. Leave **Checkin Script Block** empty. If you leave it empty, the built-in check-in deletes the credential record that is linked to the connector, when the last session that uses it ends.
 
    ```powershell
    param (
@@ -162,13 +162,6 @@ The account can be a manually managed account, or an account that a secret vault
            Uri = "$($Uri.TrimEnd("/"))/api/v1/Credential/$($result[0].CredentialId)?showPassword=true";
        }
        $result = Invoke-SbPAMRest @Params
-       # To support domain users in secret vaults
-       if ($result.Username -match ".*\.*") {
-           $Parts = $result.Username.split("\")
-           $Credential.Username = $Parts[1]
-           $Credential.Domain = $Parts[0]
-           $Credential.Password = $result.Password
-       }
        $Credential.Username = $result.Username
        $Credential.Domain = $result.Domain
        $Credential.Password = $result.Password
@@ -181,8 +174,6 @@ The account can be a manually managed account, or an account that a secret vault
    ```
 
 4. Click **Save**.
-
-The `if ($result.Username -match ".*\.*")` block in the script has no effect on the result. The pattern matches every name, and the three assignments after the block overwrite the values that the block sets.
 
 {/* TODO verify: that this script, carried over from the 26.03 documentation, runs unchanged in a session on 26.07.3. It depends on the records in your vault and on a live session. */}
 
@@ -223,8 +214,7 @@ This procedure is a workaround that Netwrix staff have shared on the Community, 
 2. Store the local account in a secret vault. See [Secret vaults](/docs/privilegesecure/26.07/resources/secret-vaults.md).
 3. Create a BYOV connector that points to Privilege Secure, as described in [Use Privilege Secure as the vault](#use-privilege-secure-as-the-vault).
 4. Create an activity with **Login Account** set to **Vault** and the BYOV connector selected.
-5. Add a pre-session script that removes the domain or resource prefix from the user name. {/* TODO verify: the script and the action type for the prefix removal. The release code has no built-in step that rewrites a user name, so the step must be authored and tested in a session. */}
-6. Create an access policy that grants the activity and records the session.
+5. Create an access policy that grants the activity and records the session.
 
 If the resource doesn't appear in the access policy, check the following:
 
@@ -232,5 +222,3 @@ If the resource doesn't appear in the access policy, check the following:
 - The resource has a platform selected.
 
 {/* TODO verify: the end-to-end procedure, including whether the resource needs a service account and why. The code doesn't show a service account requirement, and the check needs a Linux device and a recorded session. */}
-
-For example, the check-out script can return the stored user name with the resource prefix, such as `ESXI01\root`. The prefix removal is meant to make the session sign in as `root`. {/* TODO verify: that the session signs in as `root` after the prefix removal. The step isn't written or tested yet (see the TODO in the procedure). */}

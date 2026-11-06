@@ -54,7 +54,7 @@ The user who signs in to Privilege Secure isn't always the account that signs in
 | Requester | The user's own account is also the login account. |
 | Managed | An account that Privilege Secure manages and controls. |
 | Activity Token | An ephemeral account that Privilege Secure creates for the session. The **Delete After Use** option removes it when the session ends. |
-| Resource | The resource's own account. The console shows this option disabled. |
+| Resource | The resource's own account. Only website activities without group or role assignment actions can use it. For other activities, the console shows this option disabled. |
 | Vault | A managed account from a vault connector, such as CyberArk, HashiCorp, LAPS, Password Secure, or the Bring Your Own Vault (BYOV) connector. |
 
 An activity token is the basis of just-in-time access. When the activity has **Create Account** and **Delete After Use** selected, the account is created for the session and removed when it ends, so no standing privileged account remains between sessions. See [Vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md) for BYOV.

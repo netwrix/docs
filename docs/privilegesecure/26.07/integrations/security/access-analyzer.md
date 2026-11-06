@@ -1,12 +1,12 @@
 ---
 title: "Netwrix Access Analyzer integration"
-description: "Connect Privilege Secure to Netwrix Access Analyzer and import the administrator accounts, groups, and resources that Access Analyzer discovers."
+description: "Connect Privilege Secure to Netwrix Access Analyzer and import the local administrator accounts and computers that Access Analyzer discovers. The import also creates access policies."
 sidebar_position: 10
 ---
 
 # Netwrix Access Analyzer integration
 
-Netwrix Access Analyzer can send information about administrator accounts to Privilege Secure. You create an access role in Access Analyzer, add two service accounts in Privilege Secure, add an integration connector, and then import the data.
+Netwrix Access Analyzer discovers which domain users are local administrators on which computers. The sync imports that data into Privilege Secure as users, Active Directory computer records, and resources, and creates an access policy for each local administrator. You create an access role in Access Analyzer, add two service accounts in Privilege Secure, add an integration connector, and then run the sync.
 
 The connector template for this integration is named **StealthAUDIT**. This is the former product name, and it is the template that Netwrix Access Analyzer uses. **StealthAUDIT** is also the default template for a new connector.
 
@@ -19,12 +19,12 @@ Run these Access Analyzer job groups successfully before you import. Privilege S
 
 For the jobs themselves, see the following Access Analyzer pages:
 
-- [Active Directory Inventory solution](/docs/accessanalyzer/12_0/solutions/activedirectoryinventory/overview)
-- [Windows privileged accounts solution](/docs/accessanalyzer/12_0/solutions/windows/privilegedaccounts/overview)
+- [Active Directory Inventory solution](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/overview.md)
+- [Windows privileged accounts solution](/docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/overview.md)
 
 ## Create the access role in Access Analyzer
 
-The access role gives Privilege Secure a Client ID and a Client secret that it uses to read data from Access Analyzer. For the full wizard, see [Assign application access](/docs/accessanalyzer/12_0/admin/settings/access/restapi/assignappaccess).
+The access role gives Privilege Secure a Client ID and a Client secret that it uses to read data from Access Analyzer. For the full wizard, see [Assign application access](/docs/accessanalyzer/12.0/admin/settings/access/restapi/assignappaccess.md).
 
 1. In Access Analyzer, go to the **Access** node and select **Add Access** in the upper-right corner. The Access Role wizard opens.
 1. Select **An application accessing data remotely through Web Service**, and then click **Next**.
@@ -83,6 +83,22 @@ An asterisk (\*) marks a required field. Both credential fields list the service
 1. Select **Configuration** > **Integration Connectors**.
 1. Select the connector that you created.
 1. Click **Sync StealthAUDIT** below the connector settings. The button is unavailable while an import runs, and the log of the last run appears under it. The import can take some time.
+
+The sync creates these objects in Privilege Secure:
+
+- A user on the [Users & Groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md) page for each domain user that Access Analyzer reports as a local administrator and that Privilege Secure doesn't already have
+- An Active Directory computer record for each computer in the Access Analyzer inventory that Privilege Secure doesn't already have. The sync uses these records to create resources.
+- A resource on the **Resources** page for each computer that has a local administrator in the Access Analyzer data and that Privilege Secure doesn't already have as a resource
+- One access policy for each local administrator, named `Local Admin Policy for <account>`, which uses the activity **Activity Token for Local Admin Access**
+
+If the sync can't find the user for a local administrator, it doesn't create that policy. If it can't find the resource for a computer, it leaves that computer out of the policy. If it can't find the Active Directory computer record for a computer, it doesn't create that resource. The log of the run reports the number of warnings.
+
+If a policy with the same name already exists, the sync doesn't change it. If you delete a policy, the next sync creates it again.
+
+:::warning
+The sync creates access policies that need no approval and that you don't review first. Each policy lets the local administrator start the **Activity Token for Local Admin Access** activity on the computers where they are a local administrator. After each sync, select **Access Policy**, review the new policies, and delete any that you don't want in force. The next sync creates a deleted policy again, so repeat this review after every sync.
+{/* TODO verify: whether removing the user from the policy's Users tab keeps the policy and stops it granting access, since the sync doesn't change a policy that already exists */}
+:::
 
 To follow the progress, open the Action Service on the **Service Nodes** page. See [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).
 

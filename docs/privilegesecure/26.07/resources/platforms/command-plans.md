@@ -19,7 +19,13 @@ A command plan is a named, ordered set of steps that Netwrix Privilege Secure fo
 
 The service account that you assign to the resource runs the commands. For Linux, the account needs permission to run them. See [Target environments](/docs/privilegesecure/26.07/requirements/target-environments.md).
 
-Privilege Secure ships the plans for each of these platforms. The console doesn't show command plans.
+Privilege Secure ships the plans for each of these platforms.
+
+## View and edit command plans
+
+The Linux, BSD, and Palo Alto PanOS platforms, and platforms that you create or copy, show **Settings** and **Command Plans** tabs when your license includes the custom platform connector. Select the **Command Plans** tab to view and edit the command plans of the platform. The other built-in platforms show one form with no tabs.
+
+For the steps to build a custom platform, see [Creating a custom platform for SSH activity sessions](/docs/kb/privilegesecure/network-and-platform-integration/creating-a-custom-platform-for-ssh-activity-sessions).
 
 ## Updates restore the built-in plans
 

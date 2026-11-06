@@ -79,7 +79,7 @@ The download is a ZIP file named `nps-logs.zip`. It contains every log file in t
 
 ## Change the log level
 
-The log level controls how much detail a service writes. Set a more detailed level, such as Debug, only when support asks. The services on this page hide credentials, tokens, and session content from their logs at every level.
+The log level controls how much detail a service writes. Set a more detailed level, such as Debug, only when support asks. Debug and Verbose logs can contain sensitive data. Treat them as confidential and share them only with Netwrix Support.
 
 1. Select a log file.
 2. Select **Options** (the gear icon) above the log list. The **\<Service\> Options** window opens for the service that wrote that log.
@@ -106,6 +106,6 @@ The levels, from most to least detailed, are:
 
 The Proxy service offers **Debug**, **Information**, **Warning**, **Error**, **Panic**, and **Fatal**. It has no **Verbose** level.
 
-**Options** is available when the selected log belongs to the Action, Email, Proxy, Scheduler, SIEM, Web, or Host Scan service. It isn't shown for License service logs, for logs that match none of these services, or to users who aren't Administrators, including Admin View Read Only users.
+**Options** is available to Administrators for the Action, Email, Proxy, Scheduler, SIEM, Web, and Host Scan services. It isn't shown for License service logs, to users who aren't Administrators, or to Admin View Read Only users. For other logs, such as SSH client, installer, and PostgreSQL upgrade logs, the icon appears but the window doesn't load any settings.
 
 For help with a specific problem, see [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md).

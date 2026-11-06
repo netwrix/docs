@@ -62,8 +62,10 @@ You can resize the columns and sort them in ascending or descending order.
 | Status | Meaning |
 |---|---|
 | **Completed** | The activity reached its scheduled end, or the requester ended it early. |
-| **Canceled** | An administrator canceled the activity before its scheduled end. |
+| **Cancelled** | An administrator canceled the activity before its scheduled end. |
 | **Failed** | The provisioning stage encountered an error. |
+| **Approval denied** | An approver denied the request. |
+| **Approval failed** | The approval process failed, or the session reached its scheduled end time before it was approved. |
 
 ### Row actions
 

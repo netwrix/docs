@@ -47,19 +47,19 @@ These settings control how Privilege Secure trusts the certificate or host key t
 | Field | Description |
 |---|---|
 | **Trust on Discovery** | When selected, Privilege Secure trusts the certificate or host key that the server presents the first time it connects, and saves its thumbprint as the trusted thumbprint. This option is selected by default. When cleared, the first connection is blocked until an administrator approves the thumbprint. |
-| **Action on Fingerprint Mismatch** | Sets what happens when the thumbprint a server presents differs from the trusted thumbprint. |
+| **Action on Thumbprint Mismatch** or **Action on Fingerprint Mismatch** | Sets what happens when the thumbprint a server presents differs from the trusted thumbprint. The label reads **Thumbprint** on Windows servers and **Fingerprint** on SSH servers. |
 
 **Trust on Discovery** applies to every kind of certificate or host key that Privilege Secure checks on the server: the WinRM HTTPS certificate, the RDP certificate, and the SSH host key. A server keeps one trusted thumbprint.
 
-The **Action on Fingerprint Mismatch** dropdown has these values:
+The action dropdown has these values:
 
 | Value | Behavior |
 |---|---|
-| **Allow Connection** | Allows the connection. Privilege Secure records no event. |
-| **Log event and allow** | Allows the connection and records an event. This value is the default. |
-| **Log event and block** | Blocks the connection and records an event. |
+| **Allow Connection** | Allows the connection and records a Warning event. |
+| **Log event and allow** | Allows the connection and records a Warning event. This value is the default. |
+| **Log event and block** | Blocks the connection and records an Error event. |
 
-When you choose a value that records an event, Privilege Secure writes it to the Events table. If you configured a Security Information and Event Management (SIEM) connection, Privilege Secure also sends the event to the SIEM. See [Events](/docs/privilegesecure/26.07/admin/audit-reporting/events.md).
+Privilege Secure writes the event to the Events table. If you configured a Security Information and Event Management (SIEM) connection, Privilege Secure also sends the event to the SIEM. See [Events](/docs/privilegesecure/26.07/admin/audit-reporting/events.md).
 
 ## Tabs
 

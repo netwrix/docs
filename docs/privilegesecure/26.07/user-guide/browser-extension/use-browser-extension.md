@@ -98,21 +98,18 @@ Which actions are available depends on the connection profile for the activity:
 
 Click **Extend session** in the banner, or use the extend action in the session notification, then pick a duration.
 
-The extension and the server limit extensions as follows:
-
-- In build 25.8.26, the extension offers **Extend session** and every duration option to administrators, even when the connection profile doesn't allow extension. Other users see **Extend session** only while extensions remain, and only up to the maximum that the profile sets.
-- The server enforces the profile limits for everyone: whether extension is allowed, the number of extensions, and the maximum (**Extend By (minutes)**).
+The server enforces the profile limits for everyone: whether extension is allowed, the number of extensions, and the maximum (**Extend By (minutes)**).
 
 For the extension limits that a profile sets, see [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
-The server rejects an extension request when the connection profile doesn't allow session extension, when no extensions remain, or when the request is longer than the profile maximum. This applies to administrators too. In this build, the extension doesn't show an error when the server rejects a request.
+The server rejects an extension request when the connection profile doesn't allow session extension, when no extensions remain, or when the request is longer than the profile maximum. If the server rejects a request from the **Extend session** dialog, the extension shows "Failed to extend session." A request from the session notification shows no error.
 
 ## End a web session
 
 End the session before the timer runs out when you finish your work.
 
 1. Click the extension icon to open the session page. It shows the countdown timer.
-2. Click the red **END MY SESSION** link.
+2. Click the **End session** stop icon.
 3. Click **Close Tab** on the page that confirms the session ended, or close the tab yourself.
 
 A notification confirms that the session ended.

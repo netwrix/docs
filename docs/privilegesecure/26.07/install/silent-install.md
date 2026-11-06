@@ -60,7 +60,11 @@ Without `/log`, the installer writes its log to the `%TEMP%` folder.
 
 ## After the installation
 
-{/* TODO verify: whether the application needs a server restart to finish and whether a silent installation restarts the server on its own, and the exit codes for success and for a pending restart. The installer source schedules no restart itself, and the bootstrapper's restart and exit-code behavior depends on the Windows installer at run time, so a silent install test on a host settles it. */}
+### Restart the server after a silent installation
+
+Restart the server after `NPS.exe /quiet` finishes. The [Netwrix Setup Launcher](/docs/privilegesecure/26.07/install/install-application-server.md) asks you to restart the server to complete the installation. `NPS.exe` doesn't ask, so restart the server yourself.
+
+### Open the console
 
 Open `https://localhost:6500` on the server, and then [run the setup wizard](/docs/privilegesecure/26.07/install/first-launch.md).
 

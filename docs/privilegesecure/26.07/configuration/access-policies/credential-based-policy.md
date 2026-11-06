@@ -1,16 +1,16 @@
 ---
 title: "Create a credential-based access policy"
-description: "Create a credential-based access policy so users can check out credentials and files that are stored in a secret vault."
+description: "Create a credential-based access policy so users can check out managed credentials, and credentials and files in a Privilege Secure secret vault."
 sidebar_position: 30
 ---
 
 # Create a credential-based access policy
 
-A credential-based access policy lets users check out managed credentials, and credentials and files that are stored in a secret vault. For an overview of policies, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
+A credential-based access policy lets users check out managed credentials, and credentials and files in a Privilege Secure secret vault. For an overview of policies, see [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
 
 ## Prerequisites
 
-- A secret vault with the credentials or files that users need. See [Secret vaults](/docs/privilegesecure/26.07/resources/secret-vaults.md).
+- A Privilege Secure secret vault with the credentials or files that users need. See [Secret vaults](/docs/privilegesecure/26.07/resources/secret-vaults.md).
 - A [connection profile](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md). The **Connection Profile** field is required on every policy.
 - The users and groups that you want to include.
 
@@ -42,13 +42,13 @@ The **Activities** tab of a credential-based policy is read-only. It shows that 
 
 The **Credentials** tab lists the credentials and credential groups that users can check out.
 
-- **Add** opens the **Add Credentials** window, which lists credentials and credential groups that aren't on the policy yet. A credential appears only when Privilege Secure manages it and it has no service account dependencies. Credentials held in a secret vault don't appear unless the service is configured to release vault credentials.
+- **Add** opens the **Add Credentials** window, which lists credentials and credential groups that aren't on the policy yet. A credential appears only when Privilege Secure manages it and it has no service account dependencies. Credentials in a Privilege Secure secret vault appear in the list. By default, a credential-based policy doesn't list or release credentials from an external [vault connector](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md), such as CyberArk, HashiCorp, or Password Secure. To release them, contact Netwrix Support.
 - **Remove** removes the selected items from the policy.
 - **Search** filters the list.
 - The type filter offers **All**, **Credential**, and **Credential Group**.
 - **Refresh** reloads the table.
 
-{/* TODO verify: how a customer enables the release of vault credentials (the ReleaseVaultCredentials service setting; the release code reads it as a Boolean), since no shipped configuration sets it. */}
+{/* TODO verify: whether a supported way exists to release credentials from an external vault connector, and whether contacting Netwrix Support is the right instruction. */}
 
 The table has these columns:
 
@@ -71,7 +71,7 @@ See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-polic
 
 A credential can change its password when a user checks it out, when the user releases it, or both. Websites, Microsoft Entra ID tenants, and managed credentials change the password on both by default. Credentials in a secret vault don't change it on either by default.
 
-To change this for any of these credential types, select the account on the **Users** tab of its resource (the website, Entra ID tenant, managed resource, or secret vault) and click **Password Reset Options**. Select **Rotate on Session Start** to change the password on checkout and **Rotate on Session End** to change it on release.
+To change this for an Entra ID tenant account or a managed credential, select the account on the **Users** tab of its resource (the Entra ID tenant or managed resource) and click **Password Reset Options**. Select **Rotate on Session Start** to change the password on checkout and **Rotate on Session End** to change it on release. Website and secret vault accounts don't offer **Password Reset Options**.
 
 The account state after a session, including the **Keep Enabled** option, is described in [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md). Resource-based sessions and credential-release sessions treat the account differently, so read that section before you choose a policy type.
 

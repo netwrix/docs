@@ -130,7 +130,8 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 **Fix:**
 
 1. On the gateway server, run `wsl -l -v`. If the distribution shows **Stopped**, start it.
-2. Run `Test-NetConnection <guacd-host> -Port 4822` and confirm that `TcpTestSucceeded` is `True`.
+2. In the Ubuntu distribution, run `sudo docker ps`. The output lists a container named `guacd` that publishes port 4822. If `guacd` isn't listed, run `sudo docker start guacd`.
+3. In PowerShell, run `Test-NetConnection <guacd-host> -Port 4822` and confirm that `TcpTestSucceeded` is `True`.
 
 If the address of the WSL instance changed, run `wsl hostname -I` to get the current address. Then run `Configure-Gateway.ps1` again with that address as the `-NPSGuacdHost` value.
 

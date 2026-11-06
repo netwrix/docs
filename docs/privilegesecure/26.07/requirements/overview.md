@@ -14,7 +14,7 @@ A deployment uses the following systems:
 
 - **Application server** – The Windows server where you install Privilege Secure. It hosts the Privilege Secure Console and the core services.
 - **Database** – The PostgreSQL or SQL Server database that stores Privilege Secure data.
-- **Additional service nodes (optional)** – Remote hosts that run the Action, Host Scan, Scheduler, Email, Security Information and Event Management (SIEM), or Proxy services for scale, redundancy, or network segmentation.
+- **Additional service nodes (optional)** – Remote hosts that run the Action, Host Scan, Scheduler, Security Information and Event Management (SIEM), or Proxy services for scale, redundancy, or network segmentation.
 - **Client** – The computer where a user opens the Privilege Secure Console in a supported browser and starts Remote Desktop Protocol (RDP) or Secure Shell (SSH) sessions.
 - **Target environments** – The systems that Privilege Secure manages and gives privileged access to, such as Active Directory, Windows hosts, and Linux hosts.
 

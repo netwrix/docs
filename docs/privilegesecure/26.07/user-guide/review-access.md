@@ -22,12 +22,12 @@ For how an Administrator creates a task, see [Run an access certification](/docs
 
 1. Select **Auditing & Reporting** > **Access Certification** in the left navigation.
 2. In the task list, select the task, and then select the **Entitlements** tab.
-3. Select **Review** to open the **Review Activity Details** window.
+3. Select **Review** to open the **Review Entitlements** window.
 4. Select the rows to change. Use **Search** to filter the rows, or sort a column.
 5. Select **Approve** to keep the access, or **Deny** to remove it.
 6. Select **Close**.
 
-{/* TODO screenshot: the Review Activity Details window with entitlement rows selected */}
+{/* TODO screenshot: the Review Entitlements window with entitlement rows selected */}
 
 The window has these columns:
 
@@ -39,13 +39,13 @@ The window has these columns:
 | **Activity** | The activity. |
 | **Credential** | The credential the access policy lets the activity release. |
 | **Permissions** | The permissions the access policy grants. |
-| **Access Policy** | The name of the access policy that grants the access. |
+| **Access Policies** | The name of the access policy that grants the access. |
 | **Connection Profile** | The connection profile on the access policy. |
 | **Last Accessed** | The last time the user used the activity. |
 
-The **Access Policy** column shows which policy grants each entitlement. This is useful when a user has the same resource and activity through more than one policy.
+The **Access Policies** column shows which policy grants each entitlement. This is useful when a user has the same resource and activity through more than one policy.
 
-{/* TODO screenshot: the Review Activity Details window showing the Access Policy column. The lab had no access certification with data. */}
+{/* TODO screenshot: the Review Entitlements window showing the Access Policies column. */}
 
 :::note
 A denial doesn't remove the user from the access policy. Privilege Secure sets a deny flag on that user, activity, and resource or credential. After you commit the review, a session request for that combination fails with an access denied message. An Administrator can restore the access. See [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md#what-denial-does).

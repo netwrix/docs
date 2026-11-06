@@ -49,9 +49,9 @@ Other activities use an account that Privilege Secure manages. For these, you ca
 
 ## View or copy the password
 
-When the connection profile has **Allow User to Access Password** selected, the session row shows a copy icon. The eye icon, which shows the password as plain text, also needs **Enable 'Show Password' option in user interface and browser extension** to be selected in the profile. The password is valid only while the session is active. To view it, click the eye icon. The password shows for the time set in **View Password Timeout (seconds)** in the connection profile. If that field is empty or 0, the password shows for 20 seconds.
+For activities other than Credential Release, the session row shows the copy icon and the eye icon, which shows the password as plain text, only when the connection profile has both **Allow User to Access Password** and **Enable 'Show Password' option in user interface and browser extension** selected. The password is valid only while the session is active. To view it, click the eye icon. The password shows for the time set in **View Password Timeout (seconds)** in the connection profile. If that field is empty, the password shows for 20 seconds.
 
-If the icons are missing, ask your administrator to turn on **Allow User to Access Password** and **Enable 'Show Password' option in user interface and browser extension** in the connection profile. For credential-based activities, you can always view the password.
+If the icons are missing, ask your administrator to turn on **Allow User to Access Password** and **Enable 'Show Password' option in user interface and browser extension** in the connection profile. For Credential Release activities, you can view the password while the session is active, whatever the profile says.
 
 On **My Activities**, the **...** menu on a session card also has options to stop the session, add notes, view the password, copy the password, and copy the user name.
 

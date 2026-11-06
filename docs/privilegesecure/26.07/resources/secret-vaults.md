@@ -69,8 +69,6 @@ To give users access, create an access policy of type **Credential Based**. The 
 
 Update a stored secret by hand when the password changes on the device. By default, credentials in a secret vault don't change their password when a user checks them out or releases them. Privilege Secure sets both options off for every account you add to a vault, and the **Add a Managed Account** window has no setting to change them.
 
-You can record SSH sessions that use accounts stored only in a secret vault. {/* TODO verify: the exact settings on the vault connector, the login account, and automatic rotation that turn on SSH session recording for vault-only accounts. The 26.07.3 code confirms the vault connector link (PasswordVaultConnectorId) but not these settings. */}
-
 ## Review the vault tabs
 
 | Tab | Shows |

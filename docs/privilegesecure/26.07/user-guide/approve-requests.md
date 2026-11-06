@@ -23,7 +23,7 @@ The table has these columns:
 
 | Column | Shows |
 |---|---|
-| **Status** | **Waiting for approval** while the request needs a decision. **Cancelling** when the session expired or someone canceled it. |
+| **Status** | **Waiting for approval** while the request needs a decision. **Deprovisioning** while the session ends and the post-session actions run. |
 | **Requested** | When the request was created. |
 | **Requested By** | The user who requested the session. |
 | **Host** | The resource the activity runs on. |

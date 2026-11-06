@@ -22,7 +22,7 @@ Every access policy has one of two types.
 | Type | Use it to | Page |
 |---|---|---|
 | **Resource Based** | Let users run activities on remote devices such as computers, databases, and network equipment. | [Create a resource-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md) |
-| **Credential Based** | Let users check out managed credentials, and credentials and files that are stored in a secret vault. | [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md) |
+| **Credential Based** | Let users check out managed credentials, and credentials and files in a Privilege Secure secret vault. | [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md) |
 
 ## Access Policy menu
 

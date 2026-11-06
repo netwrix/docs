@@ -14,12 +14,16 @@ The Privilege Secure Console and REST API listen on TCP port 6500. The default c
 
 The installer sets this port in the HTTPS binding of the IIS site named "SbPAM Web Service" and creates a matching Windows Firewall rule named "SbPAM Web Service Port (6500)". The installer has no property for the port. Use the same port in every URL, firewall rule, and identity provider setting.
 
+:::warning
+Netwrix tests the console on port 6500. Contact Netwrix Support before you change it. Plan for high availability, service nodes, and the Remote Access Gateway, which each store the console address.
+:::
+
 To change the port, complete the following steps in order:
 
 1. In Windows Firewall, update the inbound rule for the web service port, named "SbPAM Web Service Port (6500)" by default.
 1. In the console, go to **System Settings** > **Services** and update the port in **NPS Rest URL**.
 1. In Internet Information Services (IIS) Manager, change the port in the HTTPS binding of the **SbPAM Web Service** site.
-1. In the console, go back to **System Settings** > **Services** and click **Register Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+1. In the console, go back to **System Settings** > **Services**, confirm that **NPS Rest URL** uses the new port, and click **Register Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 1. Restart IIS.
 1. Restart the server.
 
