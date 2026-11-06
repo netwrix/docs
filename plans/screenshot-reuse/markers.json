@@ -1,0 +1,656 @@
+[
+ {
+  "id": 0,
+  "file": "admin/audit-reporting/access-certification.md",
+  "line": 49,
+  "description": "the Access Certification page with a task selected, showing the task list, the details, and the Users tab"
+ },
+ {
+  "id": 1,
+  "file": "admin/audit-reporting/access-certification.md",
+  "line": 69,
+  "description": "the Entitlements tab with the Access Policy column"
+ },
+ {
+  "id": 2,
+  "file": "admin/audit-reporting/activity-log.md",
+  "line": 13,
+  "description": "Activity Log page showing the summary, top 5 users, and sessions tables with the Export as CSV button"
+ },
+ {
+  "id": 3,
+  "file": "admin/audit-reporting/events.md",
+  "line": 13,
+  "description": "Events page showing the Access Policy column and the result count (redact host names and account names)"
+ },
+ {
+  "id": 4,
+  "file": "admin/credentials/credential-groups.md",
+  "line": 54,
+  "description": "the Add Credentials dialog"
+ },
+ {
+  "id": 5,
+  "file": "admin/credentials/internal-service-accounts.md",
+  "line": 29,
+  "description": "the Manage dialog for an internal service account"
+ },
+ {
+  "id": 6,
+  "file": "admin/credentials/manage-credentials.md",
+  "line": 44,
+  "description": "the Manage dialog for a Standard account"
+ },
+ {
+  "id": 7,
+  "file": "admin/credentials/manage-credentials.md",
+  "line": 100,
+  "description": "the Password Reset Options dialog"
+ },
+ {
+  "id": 8,
+  "file": "admin/credentials/password-history.md",
+  "line": 36,
+  "description": "the View Password dialog with the password hidden"
+ },
+ {
+  "id": 9,
+  "file": "admin/credentials/password-history.md",
+  "line": 44,
+  "description": "the Password History dialog with values hidden"
+ },
+ {
+  "id": 10,
+  "file": "admin/credentials/service-account-dependencies.md",
+  "line": 26,
+  "description": "the Account Dependencies dialog on the Dependencies tab"
+ },
+ {
+  "id": 11,
+  "file": "admin/roles/admin-view-read-only.md",
+  "line": 51,
+  "description": "the Permission Assignment list of an Auditors custom role with Admin View Read Only and Reporting assigned"
+ },
+ {
+  "id": 12,
+  "file": "admin/roles/roles.md",
+  "line": 13,
+  "description": "the Role Management page with the role list on the left and the Administrators members on the right"
+ },
+ {
+  "id": 13,
+  "file": "admin/service-nodes/scheduled-tasks.md",
+  "line": 13,
+  "description": "Scheduled Tasks page with the task list and the result count"
+ },
+ {
+  "id": 14,
+  "file": "admin/sessions/active-sessions.md",
+  "line": 112,
+  "description": "Active tab with a session selected and the toolbar enabled."
+ },
+ {
+  "id": 15,
+  "file": "admin/sessions/historical-sessions.md",
+  "line": 80,
+  "description": "Historical tab toolbar and filters, with host names redacted."
+ },
+ {
+  "id": 16,
+  "file": "admin/sessions/live-session-viewer.md",
+  "line": 28,
+  "description": "Active tile with a session row expanded to show the recording"
+ },
+ {
+  "id": 17,
+  "file": "admin/sessions/live-session-viewer.md",
+  "line": 45,
+  "description": "Live Session Viewer for an RDP session"
+ },
+ {
+  "id": 18,
+  "file": "admin/sessions/live-session-viewer.md",
+  "line": 80,
+  "description": "Lock Session window with a title, a message, and the Prevent User From options"
+ },
+ {
+  "id": 19,
+  "file": "admin/sessions/live-session-viewer.md",
+  "line": 95,
+  "description": "Terminate Proxy Session window"
+ },
+ {
+  "id": 20,
+  "file": "admin/sessions/replay-viewer.md",
+  "line": 28,
+  "description": "Historical sessions dashboard showing a session that has a recording"
+ },
+ {
+  "id": 21,
+  "file": "admin/sessions/replay-viewer.md",
+  "line": 44,
+  "description": "Replay Viewer for an RDP session"
+ },
+ {
+  "id": 22,
+  "file": "admin/sessions/session-logs.md",
+  "line": 21,
+  "description": "Active tile toolbar with a session selected and View Logs enabled"
+ },
+ {
+  "id": 23,
+  "file": "admin/users-groups/collections.md",
+  "line": 15,
+  "description": "the User and Group Collections page with one collection selected and its members listed"
+ },
+ {
+  "id": 24,
+  "file": "admin/users-groups/user-details.md",
+  "line": 13,
+  "description": "the details page for a domain user, showing the header and the tab row"
+ },
+ {
+  "id": 25,
+  "file": "admin/users-groups/users-groups.md",
+  "line": 13,
+  "description": "the Users & Groups list with the Licenses counter, the filters, and the LOCKED column"
+ },
+ {
+  "id": 26,
+  "file": "configuration/access-policies/activity-token-complexity.md",
+  "line": 39,
+  "description": "the Activity Token Complexity form with default values"
+ },
+ {
+  "id": 27,
+  "file": "configuration/access-policies/approval-workflows.md",
+  "line": 68,
+  "description": "the Approval Workflow section with a tier card showing Escalation, Account, Group, Approvers, and Approvals Required"
+ },
+ {
+  "id": 28,
+  "file": "configuration/access-policies/approval-workflows.md",
+  "line": 69,
+  "description": "the Tier Escalation dialog"
+ },
+ {
+  "id": 29,
+  "file": "configuration/access-policies/approval-workflows.md",
+  "line": 70,
+  "description": "the Add Users and Groups as Approvers dialog"
+ },
+ {
+  "id": 30,
+  "file": "configuration/access-policies/connection-profiles.md",
+  "line": 162,
+  "description": "the Proxy and Session Control sections of a connection profile."
+ },
+ {
+  "id": 31,
+  "file": "configuration/access-policies/connection-profiles.md",
+  "line": 163,
+  "description": "the Credential Management and Website sections of a connection profile."
+ },
+ {
+  "id": 32,
+  "file": "configuration/access-policies/connection-profiles.md",
+  "line": 164,
+  "description": "the Require Ticket Number for Sessions option with the ServiceNow Connector list shown."
+ },
+ {
+  "id": 33,
+  "file": "configuration/access-policies/credential-based-policy.md",
+  "line": 112,
+  "description": "the tabs of a credential-based policy, including Users, Activities, Credentials, and Files."
+ },
+ {
+  "id": 34,
+  "file": "configuration/access-policies/resource-based-policy.md",
+  "line": 111,
+  "description": "the Users tab of a resource-based policy, showing the Type and Connection Profile fields and the three tabs."
+ },
+ {
+  "id": 35,
+  "file": "configuration/access-policies/resource-based-policy.md",
+  "line": 112,
+  "description": "the Add Activities and Activity Groups window with the two panes."
+ },
+ {
+  "id": 36,
+  "file": "configuration/access-policies/resource-based-policy.md",
+  "line": 113,
+  "description": "a new policy form with the required Connection Profile error before Save."
+ },
+ {
+  "id": 37,
+  "file": "configuration/activities/activities.md",
+  "line": 15,
+  "description": "the Activities page with the activity list on the left and the activity details on the right"
+ },
+ {
+  "id": 38,
+  "file": "configuration/activities/activity-groups.md",
+  "line": 36,
+  "description": "the Activity Groups page with a group selected and its activities listed"
+ },
+ {
+  "id": 39,
+  "file": "configuration/activities/create-activity.md",
+  "line": 27,
+  "description": "the new activity form with Login Account set to Activity Token, showing Login Account Template, Create Account, and Delete After Use"
+ },
+ {
+  "id": 40,
+  "file": "configuration/activities/group-role-activities.md",
+  "line": 51,
+  "description": "the Add Groups/Roles dialog with the Platform list open and several groups and roles selected"
+ },
+ {
+  "id": 41,
+  "file": "configuration/authentication/openid-connect.md",
+  "line": 50,
+  "description": "Configure Client page, client values redacted"
+ },
+ {
+  "id": 42,
+  "file": "configuration/authentication/overview.md",
+  "line": 32,
+  "description": "Add connector form with Connector Type list and Use Remote Access Gateway checkbox"
+ },
+ {
+  "id": 43,
+  "file": "configuration/authentication/radius.md",
+  "line": 48,
+  "description": "MFA connector fields, shared secret masked"
+ },
+ {
+  "id": 44,
+  "file": "configuration/authentication/saml.md",
+  "line": 30,
+  "description": "the Authentication page with Connector Type set to SAML"
+ },
+ {
+  "id": 45,
+  "file": "configuration/encryption-keys/aws-kms-rotation.md",
+  "line": 30,
+  "description": "the AWS Connection Settings window with the fields filled in with placeholder values, with the Access Key and Secret Key masked."
+ },
+ {
+  "id": 46,
+  "file": "configuration/service-accounts/service-accounts.md",
+  "line": 51,
+  "description": "the Add Service account form with the Platform list open"
+ },
+ {
+  "id": 47,
+  "file": "configuration/system-settings/data-retention.md",
+  "line": 30,
+  "description": "Data Retention panel with all three options visible"
+ },
+ {
+  "id": 48,
+  "file": "configuration/system-settings/email.md",
+  "line": 24,
+  "description": "System Settings Email panel"
+ },
+ {
+  "id": 49,
+  "file": "configuration/system-settings/rdp-files.md",
+  "line": 13,
+  "description": "System Settings RDP Options panel"
+ },
+ {
+  "id": 50,
+  "file": "configuration/system-settings/services-url.md",
+  "line": 29,
+  "description": "System Settings Services panel with the URL redacted"
+ },
+ {
+  "id": 51,
+  "file": "configuration/system-settings/system-settings.md",
+  "line": 28,
+  "description": "the System Settings page with the panel list (retake the searchable list)"
+ },
+ {
+  "id": 52,
+  "file": "install/additional-services.md",
+  "line": 41,
+  "description": "a service setup wizard with the Options page. Use one service as the example."
+ },
+ {
+  "id": 53,
+  "file": "install/components.md",
+  "line": 11,
+  "description": "contents of the downloaded zip file"
+ },
+ {
+  "id": 54,
+  "file": "install/first-launch.md",
+  "line": 36,
+  "description": "wizard Welcome page. Blur nothing; no lab values on this page."
+ },
+ {
+  "id": 55,
+  "file": "install/first-launch.md",
+  "line": 46,
+  "description": "Create Your First User page. Use a placeholder domain and account."
+ },
+ {
+  "id": 56,
+  "file": "install/first-launch.md",
+  "line": 56,
+  "description": "Register Authenticator page. Blur the QR code and the key."
+ },
+ {
+  "id": 57,
+  "file": "install/first-launch.md",
+  "line": 60,
+  "description": "recovery codes page. Blur the recovery codes."
+ },
+ {
+  "id": 58,
+  "file": "install/first-launch.md",
+  "line": 66,
+  "description": "Add an Active Directory Service Account page. Use a placeholder account."
+ },
+ {
+  "id": 59,
+  "file": "install/first-launch.md",
+  "line": 72,
+  "description": "domain synchronization in progress."
+ },
+ {
+  "id": 60,
+  "file": "install/first-launch.md",
+  "line": 76,
+  "description": "Add a Resource page."
+ },
+ {
+  "id": 61,
+  "file": "install/first-launch.md",
+  "line": 80,
+  "description": "Check Resource window with test results."
+ },
+ {
+  "id": 62,
+  "file": "install/install-application-server.md",
+  "line": 41,
+  "description": "the Netwrix Setup Launcher main window with the four buttons"
+ },
+ {
+  "id": 63,
+  "file": "install/install-application-server.md",
+  "line": 42,
+  "description": "the Pre-requisites Setup grid"
+ },
+ {
+  "id": 64,
+  "file": "install/install-application-server.md",
+  "line": 55,
+  "description": "the PostgreSQL setup wizard install and folder pages"
+ },
+ {
+  "id": 65,
+  "file": "install/install-application-server.md",
+  "line": 74,
+  "description": "the Netwrix Privilege Secure Setup wizard license agreement, options, and completion pages"
+ },
+ {
+  "id": 66,
+  "file": "install/rdp-monitor.md",
+  "line": 29,
+  "description": "the Remote Desktop Monitor setup window after a successful install. Blur or crop any host name."
+ },
+ {
+  "id": 67,
+  "file": "install/remote-proxy.md",
+  "line": 39,
+  "description": "Proxy Service setup wizard Options page."
+ },
+ {
+  "id": 68,
+  "file": "install/remote-proxy.md",
+  "line": 107,
+  "description": "the proxy registration output. Use placeholders for the server, account, and hash."
+ },
+ {
+  "id": 69,
+  "file": "install/upgrade.md",
+  "line": 68,
+  "description": "the Setup Launcher in its upgrade state, with the Netwrix Privilege Secure Upgrade button visible."
+ },
+ {
+  "id": 70,
+  "file": "integrations/itsm/servicenow.md",
+  "line": 58,
+  "description": "the ServiceNow connector form. The lab has no ServiceNow instance."
+ },
+ {
+  "id": 71,
+  "file": "integrations/siem/siem-servers.md",
+  "line": 51,
+  "description": "the Add SIEM Server form filled in with the example values"
+ },
+ {
+  "id": 72,
+  "file": "integrations/vaults/cyberark.md",
+  "line": 46,
+  "description": "the CyberArk connector form with the fields in the preceding table."
+ },
+ {
+  "id": 73,
+  "file": "remote-access-gateway/install/install-gateway.md",
+  "line": 34,
+  "description": "the gateway installer license page and the completion page."
+ },
+ {
+  "id": 74,
+  "file": "remote-access-gateway/install/install-portal.md",
+  "line": 97,
+  "description": "retake the certificate warning with the portal DNS name"
+ },
+ {
+  "id": 75,
+  "file": "remote-access-gateway/install/install-portal.md",
+  "line": 103,
+  "description": "the portal sign-in page, retaken without selected text. The portal-login-form-working image needs a retake before use."
+ },
+ {
+  "id": 76,
+  "file": "remote-access-gateway/user-guide/sign-in.md",
+  "line": 59,
+  "description": "portal sign-in page with Username, Password, and Domain fields, no text selected, no licence banner"
+ },
+ {
+  "id": 77,
+  "file": "resources/add-resources.md",
+  "line": 38,
+  "description": "Add Resources window with Import from AD selected and two servers in Resources to Add"
+ },
+ {
+  "id": 78,
+  "file": "resources/domains.md",
+  "line": 35,
+  "description": "New Domain page with the domain name entered, the Active Directory service account selected, and Use TLS selected."
+ },
+ {
+  "id": 79,
+  "file": "resources/domains.md",
+  "line": 137,
+  "description": "the window that opens from Add as NPS Managed Resource."
+ },
+ {
+  "id": 80,
+  "file": "resources/entra-id-tenants.md",
+  "line": 39,
+  "description": "New Entra ID Tenant page with the fields filled in. Blur the tenant ID and domain."
+ },
+ {
+  "id": 81,
+  "file": "resources/overview.md",
+  "line": 13,
+  "description": "Resources list with the Add menu open, showing the six entries and the filter bar"
+ },
+ {
+  "id": 82,
+  "file": "resources/overview.md",
+  "line": 95,
+  "description": "Change Platform dialog with the Platform dropdown open"
+ },
+ {
+  "id": 83,
+  "file": "resources/platforms/schedule-policies.md",
+  "line": 31,
+  "description": "Schedule Policies page with the policy list and the selected policy details"
+ },
+ {
+  "id": 84,
+  "file": "resources/resource-groups.md",
+  "line": 37,
+  "description": "the New Resource Group form with Map to OU or CN selected."
+ },
+ {
+  "id": 85,
+  "file": "resources/secure-winrm.md",
+  "line": 42,
+  "description": "Configure Secure WinRM Connection window with the three certificate sources and the thumbprint box"
+ },
+ {
+  "id": 86,
+  "file": "resources/servers.md",
+  "line": 11,
+  "description": "server details header showing the buttons, fields, ports, Trust on Discovery, and Action on Fingerprint Mismatch"
+ },
+ {
+  "id": 87,
+  "file": "resources/websites.md",
+  "line": 21,
+  "description": "New Website page with the fields filled in."
+ },
+ {
+  "id": 88,
+  "file": "troubleshooting/enablement-toolkit.md",
+  "line": 22,
+  "description": "Enablement Toolkit main window with the operation menu open"
+ },
+ {
+  "id": 89,
+  "file": "user-guide/approve-requests.md",
+  "line": 39,
+  "description": "the Approvals tile with a pending request"
+ },
+ {
+  "id": 90,
+  "file": "user-guide/audit-sessions.md",
+  "line": 53,
+  "description": "the Historical tile on the All Historical tab with the filters visible"
+ },
+ {
+  "id": 91,
+  "file": "user-guide/browser-extension/use-browser-extension.md",
+  "line": 26,
+  "description": "extension popup signed in, showing the Activities tab (store 25.8.26, not the beta channel)"
+ },
+ {
+  "id": 92,
+  "file": "user-guide/browser-extension/use-browser-extension.md",
+  "line": 69,
+  "description": "extension showing the countdown timer and REC icon during a web session (store 25.8.26)"
+ },
+ {
+  "id": 93,
+  "file": "user-guide/browser-extension/use-browser-extension.md",
+  "line": 120,
+  "description": "the session-ended message with the Close Tab button (store 25.8.26)"
+ },
+ {
+  "id": 94,
+  "file": "user-guide/connect-session.md",
+  "line": 36,
+  "description": "an Available row on the Active tile showing the password and connect icons."
+ },
+ {
+  "id": 95,
+  "file": "user-guide/my-activities.md",
+  "line": 13,
+  "description": "the My Activities page with activity cards (needs a user who belongs to an access policy)"
+ },
+ {
+  "id": 96,
+  "file": "user-guide/my-activities.md",
+  "line": 28,
+  "description": "the Group by menu"
+ },
+ {
+  "id": 97,
+  "file": "user-guide/my-activities.md",
+  "line": 41,
+  "description": "an expanded activity card with a session"
+ },
+ {
+  "id": 98,
+  "file": "user-guide/my-sessions.md",
+  "line": 122,
+  "description": "a Historical row showing the Actions icons"
+ },
+ {
+  "id": 99,
+  "file": "user-guide/navigate-console.md",
+  "line": 108,
+  "description": "the expanded navigation menu"
+ },
+ {
+  "id": 100,
+  "file": "user-guide/review-access.md",
+  "line": 30,
+  "description": "the Review Activity Details window with entitlement rows selected"
+ },
+ {
+  "id": 101,
+  "file": "user-guide/review-access.md",
+  "line": 48,
+  "description": "the Review Activity Details window showing the Access Policy column. The lab had no access certification with data."
+ },
+ {
+  "id": 102,
+  "file": "user-guide/servicenow-tickets.md",
+  "line": 25,
+  "description": "the Ticket Number box with the label and the validation message. Retake with a demo resource name, because the lab host name shows in the dialog."
+ },
+ {
+  "id": 103,
+  "file": "user-guide/servicenow-tickets.md",
+  "line": 60,
+  "description": "the End Session dialog with Keep In Progress, On Hold, and Resolved. The lab has no ServiceNow connector."
+ },
+ {
+  "id": 104,
+  "file": "user-guide/sign-in.md",
+  "line": 37,
+  "description": "sign-in page with the Username, Password, and Domain fields"
+ },
+ {
+  "id": 105,
+  "file": "user-guide/sign-in.md",
+  "line": 53,
+  "description": "sign-in page with single sign-on buttons"
+ },
+ {
+  "id": 106,
+  "file": "user-guide/sign-in.md",
+  "line": 70,
+  "description": "MFA registration page with the QR code (blur the code)"
+ },
+ {
+  "id": 107,
+  "file": "user-guide/sign-in.md",
+  "line": 71,
+  "description": "recovery codes dialog"
+ },
+ {
+  "id": 108,
+  "file": "user-guide/sign-in.md",
+  "line": 85,
+  "description": "idle timeout warning dialog"
+ }
+]

@@ -1,0 +1,358 @@
+{
+ "0": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "1": {
+  "cause": "content-gap",
+  "why": "no Access Policy column"
+ },
+ "2": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "3": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "4": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "5": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "6": {
+  "cause": "content-gap",
+  "why": "old image is not the dialog"
+ },
+ "7": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "8": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "9": {
+  "cause": "content-gap",
+  "why": "history list empty"
+ },
+ "10": {
+  "cause": "content-gap",
+  "why": "no Dependencies tab row"
+ },
+ "11": {
+  "cause": "content-gap",
+  "why": "wrong role and permissions"
+ },
+ "12": {
+  "cause": "content-gap",
+  "why": "fewer columns than current page"
+ },
+ "13": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "14": {
+  "cause": "content-gap",
+  "why": "lacks 26.07 toolbar and columns"
+ },
+ "15": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "16": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "17": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "18": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "19": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "20": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "22": {
+  "cause": "content-gap",
+  "why": "shows Session Logs window, wrong view"
+ },
+ "23": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "25": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "26": {
+  "cause": "content-gap",
+  "why": "non-default values"
+ },
+ "27": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "28": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "29": {
+  "cause": "content-gap",
+  "why": "different control layout and columns"
+ },
+ "30": {
+  "cause": "content-gap",
+  "why": "no Proxy section"
+ },
+ "31": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "33": {
+  "cause": "content-gap",
+  "why": "extra Certified column"
+ },
+ "34": {
+  "cause": "content-gap",
+  "why": "extra Certified column"
+ },
+ "35": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "37": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "38": {
+  "cause": "content-gap",
+  "why": "empty unsaved group, wrong state"
+ },
+ "39": {
+  "cause": "content-gap",
+  "why": "wrong form, not new-activity form"
+ },
+ "41": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "42": {
+  "cause": "content-gap",
+  "why": "lacks Connector Type list and gateway checkbox"
+ },
+ "43": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "44": {
+  "cause": "content-gap",
+  "why": "lacks disabled Connector Type and wizard state"
+ },
+ "45": {
+  "cause": "content-gap",
+  "why": "different controls and fields"
+ },
+ "46": {
+  "cause": "content-gap",
+  "why": "platform list closed and different"
+ },
+ "51": {
+  "cause": "content-gap",
+  "why": "no search box, different panel names"
+ },
+ "52": {
+  "cause": "content-gap",
+  "why": "wizard flow differs"
+ },
+ "53": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "54": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "55": {
+  "cause": "content-gap",
+  "why": "heading differs from Create Your First User"
+ },
+ "56": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "57": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "58": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "59": {
+  "cause": "content-gap",
+  "why": "wrong state, 0% progress"
+ },
+ "60": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "61": {
+  "cause": "content-gap",
+  "why": "in-progress, no Details/Troubleshoot"
+ },
+ "62": {
+  "cause": "content-gap",
+  "why": "three buttons, not four"
+ },
+ "65": {
+  "cause": "content-gap",
+  "why": "Install location vs Install Folder label"
+ },
+ "67": {
+  "cause": "content-gap",
+  "why": "install path contradicts 26.07"
+ },
+ "68": {
+  "cause": "content-gap",
+  "why": "different registration flow"
+ },
+ "71": {
+  "cause": "content-gap",
+  "why": "form empty, not filled"
+ },
+ "72": {
+  "cause": "content-gap",
+  "why": "Advanced collapsed hides fields"
+ },
+ "73": {
+  "cause": "content-gap",
+  "why": "wrong product installer"
+ },
+ "74": {
+  "cause": "content-gap",
+  "why": "no image of portal warning with DNS name"
+ },
+ "75": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "76": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "77": {
+  "cause": "content-gap",
+  "why": "three servers instead of two"
+ },
+ "78": {
+  "cause": "content-gap",
+  "why": "form empty, not filled"
+ },
+ "79": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "80": {
+  "cause": "content-gap",
+  "why": "form empty, not filled"
+ },
+ "82": {
+  "cause": "content-gap",
+  "why": "dropdown closed, lacks platform entries"
+ },
+ "83": {
+  "cause": "content-gap",
+  "why": "empty details, different policy names"
+ },
+ "84": {
+  "cause": "content-gap",
+  "why": "different labels Map to OU/OU FQDN"
+ },
+ "85": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "86": {
+  "cause": "content-gap",
+  "why": "Thumbprint vs Fingerprint label"
+ },
+ "87": {
+  "cause": "content-gap",
+  "why": "empty form, extra field"
+ },
+ "88": {
+  "cause": "content-gap",
+  "why": "operation menu not open"
+ },
+ "89": {
+  "cause": "content-gap",
+  "why": "different columns"
+ },
+ "90": {
+  "cause": "content-gap",
+  "why": "Requested date vs Start date filter"
+ },
+ "92": {
+  "cause": "content-gap",
+  "why": "no countdown with REC icon"
+ },
+ "94": {
+  "cause": "content-gap",
+  "why": "no Ticket Number column"
+ },
+ "95": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "97": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "98": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "99": {
+  "cause": "content-gap",
+  "why": "old layout and menu names"
+ },
+ "100": {
+  "cause": "content-gap",
+  "why": "different title, no selected rows"
+ },
+ "101": {
+  "cause": "content-gap",
+  "why": "wrong window title"
+ },
+ "104": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "105": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ },
+ "106": {
+  "cause": "content-gap",
+  "why": "not the MFA registration page"
+ },
+ "107": {
+  "cause": "content-gap",
+  "why": "not the dialog"
+ },
+ "108": {
+  "cause": "style-only",
+  "why": "old styling and/or unredacted data"
+ }
+}
