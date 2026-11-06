@@ -26,8 +26,6 @@ For how synchronization reads the directory, see [How Active Directory synchroni
    **Service Account** defaults to the internal **Netwrix Password Secure** account. Replace it with your Active Directory service account before you test or save.
    :::
 
-   {/* TODO verify: how the connection test reports the internal Netwrix Password Secure account. The test code sends whichever account is selected to the domain and returns the domain's answer, so the result depends on a live domain and isn't stated in code or public sources. */}
-
 1. Select **Use TLS** to connect to the domain over a Transport Layer Security (TLS) connection.
 1. Select **Test** to check the connection.
 1. Select **Save**. The **Save** button is available after the test succeeds.

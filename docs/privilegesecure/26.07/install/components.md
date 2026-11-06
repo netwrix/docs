@@ -38,7 +38,7 @@ The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it 
 | `NPS.ProxyService` | Installs a Proxy service on another server. It is available as an `.exe` and an `.msi` file. Use the `.msi` file with a software deployment tool. |
 | `NPS.TSMon.exe` | Installs the Remote Desktop Monitor on target Windows hosts. |
 | `NPS.HaMgr.exe` | The high availability manager tool. Copy it to the server and run it. See [High availability](/docs/privilegesecure/26.07/install/high-availability.md). |
-| `SbPAMPowershellModules.msi` | Installs the Privilege Secure PowerShell modules, which run custom PowerShell scripts against the application API. |
+| `SbPAMPowershellModules.msi` | Installs the Privilege Secure PowerShell modules, which run custom PowerShell scripts against the application API. Requires PowerShell 7.6 or later. |
 | `sbpam-url.exe` | Installs the `sbpam-url` URL handler, which starts SSH sessions from the browser in your preferred SSH client. |
 | `Enablement Toolkit.exe` | Installs a graphical utility for common troubleshooting tests. |
 | `ADSyncDiagnostic.exe` | A diagnostic tool for Active Directory synchronization. |
@@ -50,8 +50,6 @@ The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it 
 The package has no standalone Email service installer.
 
 {/* TODO verify: what the Netwrix Endpoint Policy Manager extension, the Group Policy snap-in, and the NPS.LaunchApp folder do in a Privilege Secure deployment. The package names them but the release code doesn't describe their use. */}
-
-{/* TODO verify: the PowerShell version that `SbPAMPowershellModules.msi` requires. The 26.03 page says PowerShell 7.1. The modules installer is built outside the repositories that hold the release code. */}
 
 ## What NPS.exe installs
 

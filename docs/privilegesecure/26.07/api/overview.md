@@ -21,7 +21,9 @@ https://<nps-server>:6500/api/v1/
 Each resource group is a controller name appended to the base URL, for example `https://<nps-server>:6500/api/v1/ActivitySession`. A few sign-in endpoints sit at the root of the site instead, such as `https://<nps-server>:6500/signinBody`. See [Authenticate to the API](/docs/privilegesecure/26.07/api/authentication.md).
 
 :::note
-Use port 6500, the default console port, for API calls. {/* TODO verify: whether changing the web port is supported. The installer binds the site to port 6500, and code and public sources don't state a support position. */}
+Use the console port for API calls. The default is 6500.
+
+To change the port, see [Ports](/docs/privilegesecure/26.07/requirements/ports.md#console-port).
 :::
 
 Two endpoints report on the server itself:
@@ -87,8 +89,6 @@ The API groups its endpoints by the areas of the console.
 | Integrations and notifications | Manage integration connectors, SIEM servers and templates, and email. |
 | Platform administration | Read and change system settings, license information, and configuration export and import. |
 
-{/* TODO: add an example of a complete call, such as rotating a credential, after a generated 26.07.3 reference exists */}
-
 ## Errors
 
 The API reports most errors as an HTTP status code with a JSON body in the standard problem details format. Some sign-in failures return a plain text message instead, for example "Invalid Username or Password". The message for a failed application user sign-in is intentionally vague.
@@ -102,8 +102,6 @@ Trust the certificate authority (CA) that issued the server certificate instead 
 :::note
 The `SbPAMPowershellModules.msi` installer in the `Extras` folder installs the `SbPAMAPI` PowerShell module, which wraps these calls with cmdlets such as `Get-SbPAMToken` and `Invoke-SbPAMRest`. The Knowledge Base articles that use it call for PowerShell 7. This guide doesn't document the full cmdlet list.
 :::
-
-{/* TODO verify: the full cmdlet list for the SbPAMAPI module and its supported PowerShell versions for 26.07. The Knowledge Base articles name PowerShell 7.1 and warn against 7.2 and later, so the shipped installer package must settle it. */}
 
 ## Next steps
 

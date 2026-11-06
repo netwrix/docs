@@ -12,8 +12,6 @@ Microsoft Local Administrator Password Solution (LAPS) manages the password of t
 The LAPS connector reads the legacy LAPS password attribute, `ms-Mcs-AdmPwd`, and resets its expiration time, `ms-Mcs-AdmPwdExpirationTime`, at check-in. It doesn't read the encrypted passwords that Windows LAPS stores in the `msLAPS-` attributes.
 :::
 
-{/* TODO verify: whether Netwrix supports Windows LAPS in legacy Microsoft LAPS emulation mode. Microsoft documents that emulation mode stores the password in the legacy clear-text attribute, which the connector reads, but the release code and public sources don't state a support position. */}
-
 ## Prerequisites
 
 - LAPS installed in your Active Directory domain, and the target computers configured to use it. Download the legacy LAPS package from the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=46899).

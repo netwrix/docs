@@ -68,8 +68,6 @@ Earlier releases named these action types **Add to Azure AD Group** and **Add to
 
 The Salesforce actions sign in to Salesforce with the OAuth JWT bearer flow. They sign a token with the **Private Key**, use the **Consumer Key** as the issuer, and use the login account name of the session as the Salesforce user. They then send the add or remove request to the StrongPoint API in the Salesforce org. **Use sandbox instance** sends the sign-in to the Salesforce sandbox login service instead of the production one. The **Permission Set** and **Permission Set Group** fields take any text you type, and the API receives it unchanged.
 
-{/* TODO verify: with the Platform Governance for Salesforce team, or in the FLODocs SbPAM/updatePermissions Apex source, whether the API expects the permission set label or its API name. It is most likely the API name (PermissionSet.Name). The Privilege Secure scripts pass the text through. */}
-
 In **Add User to Domain Group** and **Add User to Local Group**, the **Group** field lists common groups, but you can also enter the name of a group that isn't in the list.
 
 In 26.07.3, Add User to Groups/Roles is the default name of a new Add User to Groups & Roles (User Selected) action, not a separate action type.
@@ -157,8 +155,6 @@ If you paste a rule from a sudoers example, Privilege Secure ignores a leading `
 
 :::warning
 From 26.07.3, the rule limits the user to the **Run As** account.
-
-{/* TODO verify: Support/Security to approve this security-fix wording, and confirm 26.07.2 is affected (no release branch available). */}
 :::
 
 If you enter `PASSWD` or `NOPASSWD` in **Commands**, Privilege Secure ignores it and writes a warning to the action log. The warning says that the **Prompt for password** setting controls the behavior. The other tags and the commands still apply.

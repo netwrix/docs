@@ -15,8 +15,6 @@ You can install the Netwrix Privilege Secure for Access Management (Privilege Se
 - Copy `NPS.exe` from the `Extras` folder to the application server.
 - Open a command prompt as an administrator.
 
-{/* TODO verify: the Netwrix-supported way to install the bundled PostgreSQL silently. `NetwrixPostgreSQL16.exe` is a prebuilt package, the Setup Launcher starts it without arguments, and its command-line switches aren't in the product source. */}
-
 ## Install with the default options
 
 Run the following command:

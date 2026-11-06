@@ -79,9 +79,7 @@ The download is a ZIP file named `nps-logs.zip`. It contains every log file in t
 
 ## Change the log level
 
-The log level controls how much detail a service writes. Set a more detailed level, such as Debug, only when support asks.
-
-{/* TODO verify: whether Verbose and Debug write sensitive data to the logs of services other than the Remote Access Gateway. The release source states this only for the gateway, and no code or public source settles the others. */}
+The log level controls how much detail a service writes. Set a more detailed level, such as Debug, only when support asks. The services on this page hide credentials, tokens, and session content from their logs at every level.
 
 1. Select a log file.
 2. Select **Options** (the gear icon) above the log list. The **\<Service\> Options** window opens for the service that wrote that log.

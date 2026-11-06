@@ -39,7 +39,7 @@ For example, to review what an administrator typed on `<server-name>` yesterday,
 | SSH | SSH sessions |
 | Website | Website sessions |
 
-{/* TODO verify: whether Active Directory domain and Microsoft Entra ID resources start RDP sessions or website sessions. The console picks the viewer from the session protocol. The release code gives Website resources their own session path but doesn't settle the other resource types. */}
+Activities on Active Directory domain resources start RDP sessions. Activities on Microsoft Entra ID resources start website sessions through the browser extension.
 
 ![The Replay Viewer playing an RDP session, with the event timeline, the playback controls, and the user, target, and activity details.](/images/privilegesecure/26.07/admin/replay-viewer-rdp.webp)
 

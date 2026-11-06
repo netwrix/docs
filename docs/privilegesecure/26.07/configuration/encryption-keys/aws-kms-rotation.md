@@ -43,8 +43,6 @@ Other servers that share the database need the new key. See [Export and import t
 
 The export reads the key through AWS KMS, so run it on a server that has working AWS access. The import writes the key on the other server protected by that server's Windows machine key, not by AWS KMS, and the other server needs no AWS access to use it.
 
-{/* TODO verify: whether Netwrix supports protecting the key on an additional server with AWS KMS. The tools in the release have no command that re-protects an imported key with AWS KMS, and public sources don't state a supported procedure. */}
-
 ## Rotate the KMS key in AWS
 
 If you rotate the KMS key itself in AWS, you don't need to rotate the Privilege Secure key. Privilege Secure continues to decrypt existing values, and new encryption uses the updated KMS key.

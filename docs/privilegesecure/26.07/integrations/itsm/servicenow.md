@@ -119,8 +119,6 @@ When a user ends a session that has a ServiceNow ticket, Privilege Secure asks h
 
 If your ServiceNow data policy requires a resolution code and close notes, ServiceNow rejects the update to Resolved. The Privilege Secure log records a warning that the update returned "Forbidden", and the console doesn't show an error. Privilege Secure sends only a work note and the status, so the ticket isn't resolved. A data policy that requires these fields can cause this.
 
-{/* TODO verify: a supported workaround for the Resolved update. It depends on the data policy of the ServiceNow instance. */}
-
 ## Other ticketing tools
 
 Privilege Secure has a built-in connector for ServiceNow only. It validates ticket numbers only against ServiceNow, and it doesn't pass the ticket number to PowerShell steps as a parameter.

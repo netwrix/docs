@@ -66,11 +66,9 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 **Cause:** The target rejected the sign-in. Check these causes:
 
 - **Wrong password.** The password isn't the one for the account that the activity uses on the target.
-- **Wrong account type.** The activity uses the **Requester** login account, and the user signed in to the portal with a local Privilege Secure user. The target receives that username, and a domain-joined Windows target has no such account. Sign in with a domain user, or ask the administrator to use a different login account on the activity.
+- **Wrong account type.** The activity uses the **Requester** login account, and the user signed in to the portal with a local Privilege Secure user. The target receives that username, and a domain-joined Windows target might not have such an account. Sign in with a domain user, or ask the administrator to use a different login account on the activity.
 
 **Fix:** Enter the correct password, or fix the login account. The prompt takes only a password, so you can't enter a different username at connect time.
-
-{/* TODO verify: whether Privilege Secure supports a Requester login account for a local Privilege Secure user on a domain-joined target. */}
 
 ## The portal refuses to connect while the service is running
 

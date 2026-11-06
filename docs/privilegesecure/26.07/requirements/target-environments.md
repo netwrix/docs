@@ -20,8 +20,6 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) manages resour
 | Microsoft SQL Server | A database instance. |
 | Oracle | A container database instance. |
 
-{/* TODO verify: whether Windows Server 2008 R2 and PowerShell 5.1 are still the supported minimums for 26.07 targets. The release code still handles Windows Server 2008 R2, but code doesn't state a support policy. */}
-
 For BSD targets, the service account signs in over SSH and runs commands with `sudo`. The command plans use the FreeBSD `pw` utility. For PAN-OS targets, Privilege Secure manages administrator accounts through the PAN-OS XML API over HTTPS at the device's address.
 
 Privilege Secure also supports any device that accepts an SSH connection, and any device or website that uses Active Directory or Microsoft Entra ID authentication. These devices have no local account management and no preconfigured activity steps.
@@ -57,8 +55,6 @@ Privilege Secure manages Windows hosts through PowerShell remoting over WinRM. O
 When a Windows resource must reach a domain controller during a host scan, the request makes a second network hop from the resource to the domain controller. This second hop needs Kerberos delegation between the resource and the domain controller. Without it, the host scan fails, the operating system stays blank, and password rotation can proceed while a session still holds the old password. The result can be recurring Active Directory account lockouts.
 
 Configure delegation so the resource can authenticate to the domain controllers on the second hop.
-
-{/* TODO verify: which protocol the resource-to-domain-controller hop uses (for example LDAP/ADSI or WinRM) and the delegation configuration Netwrix supports for it. Microsoft notes that constrained and resource-based constrained delegation don't support a WinRM second hop. */}
 
 ### Non-domain-joined hosts
 

@@ -12,14 +12,12 @@ For the components and how they connect, see [Architecture and components](/docs
 
 ## Packages to download
 
-Netwrix publishes two packages. Download them from the Netwrix Customer Portal.
+The installation uses the following packages. Download them from the Netwrix Customer Portal. Use a Remote Access Gateway package from the same release as the application server.
 
 | Package | File name | Use it to |
 |---|---|---|
 | Privilege Secure | `privilegesecure-accessmanagement-<version>.zip` | Install the application server, the database, and the services on additional servers. |
 | Remote Access Gateway | `privilegesecure-accessmanagement-rag-<version>.zip` | Install the optional Remote Access Gateway for external users. |
-
-{/* TODO verify: whether a Remote Access Gateway package ships for 26.07.3. The 26.07.1 release notes link both packages, but the 26.07.3 download folder lists only the Privilege Secure package. */}
 
 For the contents of the Privilege Secure package, see [Installation package contents](/docs/privilegesecure/26.07/install/components.md).
 

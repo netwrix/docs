@@ -28,8 +28,6 @@ The gateway loads the following settings files in this order. A later file overr
 
 Make your changes in `appsettings.json`, except where a section on this page names another file.
 
-{/* TODO verify: whether Netwrix supports editing appsettings.user.json and appsettings.svc.json. The release code shows what each file holds but doesn't say whether customers should edit them. */}
-
 `Configure-Gateway.ps1` sets `NPS.Uri`, `Guacd.Hostname`, `Guacd.ServerThumbprint`, and `Guacd.InsecureSkipVerify` for you. Until the script writes the file, the gateway runs on the defaults, and `Guacd.ServerThumbprint` reads "Guacd:ServerThumbprint not set!". For the install order, see [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md).
 
 :::note
@@ -104,9 +102,7 @@ When `InsecureSkipVerify` is `true`, the gateway accepts any certificate from th
 | SSH | `args=connect`, `port=22`, `width=1024`, `height=768`, `dpi=96`, `version=1.5.0` |
 | Telnet | `args=connect`, `port=23`, `width=1024`, `height=768`, `dpi=96`, `version=1.5.0` |
 
-For the arguments listed in `Client.UnencryptedArguments`, a non-empty value from the browser request overrides the value from the connection token, and a value from the token overrides a default. To change the default display size, change `width` and `height`. The browser normally sends its own `width` and `height`, so these defaults apply only when it doesn't. Leave the other values unchanged unless Netwrix Support asks you to change them.
-
-{/* TODO verify: which arguments other than width and height Netwrix supports changing in Client.DefaultArguments. The release code accepts any Guacamole argument, but no source lists the supported ones. */}
+For the arguments listed in `Client.UnencryptedArguments`, a non-empty value from the browser request overrides the value from the connection token, and a value from the token overrides a default. To change the default display size, change `width` and `height`. The browser normally sends its own `width` and `height`, so these defaults apply only when it doesn't. Leave the other values unchanged unless Netwrix Support asks you to change them. The RDP default `ignore-cert=true` tells guacd to accept the certificate of the target without validating it.
 
 ## Log level
 

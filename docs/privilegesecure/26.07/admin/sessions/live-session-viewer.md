@@ -38,9 +38,7 @@ The viewer depends on the protocol of the session.
 | RDP | Remote Desktop sessions. The viewer shows the screen of the session. |
 | SSH | SSH sessions. The viewer shows the terminal of the session. |
 
-A website session has no live viewer. You can replay a website session after it ends. See [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
-
-{/* TODO verify: whether Active Directory domain and Microsoft Entra ID resources start RDP sessions or website sessions. The console picks the viewer from the session protocol. The release code gives Website resources their own session path but doesn't settle the other resource types. */}
+Activities on Active Directory domain resources start RDP sessions. Activities on Microsoft Entra ID resources start website sessions through the browser extension. A website session has no live viewer. You can replay a website session after it ends. See [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
 
 {/* TODO screenshot: Live Session Viewer for an RDP session */}
 

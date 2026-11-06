@@ -62,7 +62,10 @@ Plan backups around four items:
 
 High availability replicates the database only. Back up recordings, configuration files, and encryption keys separately, and keep the encryption keys with your other secrets. Keep a copy of the keys that matches each database backup.
 
-{/* TODO verify: the Netwrix-supported backup and restore procedure for recordings and configuration files. The product code defines no backup feature for these items, so a Netwrix support statement is needed. */}
+Include these folders in your file-level backups:
+
+- Session recordings: `C:\ProgramData\Stealthbits\PAM\ProxyService\iolog` on each proxy server
+- Configuration files: `C:\ProgramData\Stealthbits\PAM`
 
 ### Fail over to the secondary server
 
@@ -70,7 +73,9 @@ Failover is manual.
 
 1. On the secondary server, open the HA manager tool and click **Failover**. Confirm the prompt. The prompt names the server that becomes the primary.
 
-   The HA manager starts PostgreSQL if it is stopped, promotes the replica to primary, and writes the local host and PostgreSQL port into the database settings file, `appsettings.db.json`, in the `Database` folder under `C:\ProgramData\Stealthbits\PAM`. It then restarts the `SbPAMProxy` service. {/* TODO verify: whether the web service (IIS) must be restarted to pick up the new database settings after a failover. The HA manager restarts only the SbPAMProxy service, so a host test or an SME statement settles it. */}
+   The HA manager starts PostgreSQL if it is stopped, promotes the replica to primary, and writes the local host and PostgreSQL port into the database settings file, `appsettings.db.json`, in the `Database` folder under `C:\ProgramData\Stealthbits\PAM`. It then restarts the `SbPAMProxy` service.
+
+   The HA manager doesn't restart the **SbPAM Web Service** site in IIS. Run `iisreset` on the new primary server so the web service uses the new database settings.
 2. If the Action Service runs on another server, point it at the new primary server. Run the following command on that server, and enter the password when prompted:
 
    ```
@@ -101,8 +106,6 @@ After an upgrade, the primary Privilege Secure Console can show no nodes for the
 4. Click **Register Services**.
 
 The secondary node then appears in the primary console.
-
-{/* TODO verify: Support confirmation of a known issue where configuring the secondary node fails intermittently on a slow link between the nodes, its workaround, and the supported latency. Unconfirmed, so it isn't published. */}
 
 ## Related topics
 

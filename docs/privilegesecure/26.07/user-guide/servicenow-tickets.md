@@ -67,13 +67,9 @@ For the general procedure, see [Connect to a session](/docs/privilegesecure/26.0
 
 ### Resolved can fail
 
-Choosing **Resolved** can fail when your ServiceNow instance requires a resolution code and close notes to resolve a ticket. Privilege Secure sends only a work note and the new state, so the instance can reject the update. The session still ends, and the console doesn't show an error.
+Privilege Secure sends only a work note and the new state when you choose **Resolved**. If ServiceNow rejects the update, the ticket state doesn't change, the session still ends, and the console doesn't show an error.
 
 After you end a session with **Resolved**, check the ticket in ServiceNow and resolve it there if its state didn't change. To avoid this, end the session with **Keep In Progress** or **On Hold**, and then resolve the ticket in ServiceNow.
-
-{/* TODO verify: SME approval to publish the Resolved-failure known issue and its workaround. */}
-
-{/* TODO verify: that a default ServiceNow instance rejects a state-only update to Resolved. Only community posts describe the required resolution fields, and no real instance was available. */}
 
 ## Related topics
 

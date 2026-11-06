@@ -25,9 +25,7 @@ To change the user name format that a Requester activity uses, set **Requester L
 :::
 
 :::warning
-If a **Custom** requester login format with a trim-based template produces a name that doesn't match an existing domain user or a discovered local account on the resource, the session fails with the error "Unable to find custom format user." To avoid it, use a standard requester login format and contact Netwrix Support.
-
-{/* TODO verify: which workaround Support approves for this error. */}
+If a **Custom** requester login format with a trim-based template produces a name that doesn't match an existing domain user or a discovered local account on the resource, the session fails with the error "Unable to find custom format user." To avoid it, ensure the template produces the name of an existing account.
 :::
 
 ## Variables

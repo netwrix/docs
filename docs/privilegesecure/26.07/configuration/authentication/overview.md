@@ -65,8 +65,6 @@ With a default connector, add `?adlogin=1` to the address of the sign-in page to
 While a connector is exclusive, nobody can sign in with a user name and password, including administrators. Test the connector with an administrator account before you set it as exclusive.
 :::
 
-{/* TODO verify: how an administrator gives a user the Active Directory sign-in exception (the AllowAdLogin user flag, which lets a user sign in with a password while a connector is exclusive). In 26.07.3 the only code that reads it is the exclusive-connector sign-in check; no console page, API call, or setup script sets it. The supported way to recover from an exclusive connector that stops working isn't settled by code or public sources. Ask Support for the supported recovery procedure. */}
-
 ## Assignment is required
 
 By default, Privilege Secure refuses a sign-in through an external connector when the user isn't assigned to that connector. The `StrictExternalAuth` setting in the web service configuration controls this behavior, and its default is `true`.

@@ -97,8 +97,6 @@ The gateway package includes `install-docker.sh`. It installs Docker, pulls `gua
 On some Ubuntu releases, `install-docker.sh` installs a Docker engine that can't start containers, and `docker run` fails with the error `cgroups: cgroup mountpoint does not exist`. If you see this error, contact Netwrix Support.
 :::
 
-{/* TODO verify: which replacement engine (docker.io or docker-ce) Netwrix supports for hosts where the cgroup error occurs. The script installs moby-engine from the packages.microsoft.com Debian stretch repository, whose newest 3.0.x predates cgroup v2 support (added in Docker 20.10), so the failure likely affects hosts running cgroup v2 (Ubuntu 21.10 and later, current WSL). Only the supported alternative needs an SME answer. */}
-
 ## Configure the gateway
 
 Run the configuration script after guacd is reachable. The script generates the guacd certificate if one doesn't exist, writes the gateway settings, and writes `guacd.conf`, which turns on TLS in guacd.
@@ -134,8 +132,6 @@ In 26.07.3 the gateway installs with validation of the certificate on `https://<
 
 :::note
 The script stores `<guacd-host>` in the `Guacd.Hostname` setting. In the default NAT networking mode, WSL 2 gives the distribution its own virtual network address, and Microsoft doesn't document that this address stays the same after WSL or the server restarts. After a restart, run `wsl hostname -I` again. If the address differs from `Guacd.Hostname`, run `Configure-Gateway.ps1` again with the new address. The script reuses the existing guacd certificate.
-
-{/* TODO verify: whether Guacd.Hostname=localhost (WSL localhost forwarding in NAT mode, or mirrored networking mode) is a supported, restart-stable alternative. */}
 :::
 
 ## Start WSL automatically

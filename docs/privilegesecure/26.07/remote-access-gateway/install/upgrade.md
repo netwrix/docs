@@ -21,7 +21,7 @@ Both installers upgrade an existing installation in place and refuse to install 
 - Back up `C:\ProgramData\Stealthbits\PAM\RagGateway\appsettings.json` on the gateway server.
 - Back up `nginx.conf` on the portal server. See [Upgrade the portal](#upgrade-the-portal).
 
-{/* TODO verify: the supported combinations of gateway, portal, and Privilege Secure releases when they aren't all the same 26.07 release. */}
+Netwrix recommends the same release for the gateway, the portal, and the Privilege Secure application server. Netwrix tests the latest gateway and portal with the latest application server.
 
 ## Upgrade the gateway
 

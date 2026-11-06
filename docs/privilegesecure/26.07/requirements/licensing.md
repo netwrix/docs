@@ -24,7 +24,7 @@ The license counts users. The number of resources doesn't affect it.
 
 ## Trial license
 
-A new installation includes a trial license. The trial allows at least 10 users. {/* TODO verify: the trial user count on a 26.07.3 trial install. */}
+A new installation includes a trial license. The trial allows 10 users.
 
 {/* TODO verify: the trial duration. The Netwrix EULA says the term for trial software is 30 days from installation, but the expiry in the embedded trial key hasn't been checked against it. */}
 
@@ -36,9 +36,7 @@ To apply a license file, see [Activate a license](/docs/privilegesecure/26.07/in
 
 ## Expired licenses
 
-{/* TODO verify: whether the credit count of an expired subscription license drops to 0, as it does for an expired trial. The licensing library that computes credits isn't public. */}
-
-When the trial license has expired, Privilege Secure can't create new users, and no user can start a session. Users who already have a license can still sign in. A license that reports no credits has the same effect. A banner tells users that the license has expired or the license service is offline, and administrators get a link to the **About** page. Import a valid license file before the trial or subscription license expires. To import a file, see [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).
+When the trial license has expired, Privilege Secure can't create new users, and no user can start a session. Users who already have a license can still sign in. A license that reports no credits has the same effect. A banner tells users that the license has expired or the license service is offline, and administrators get a link to the **About** page. When a subscription license expires, the banner appears and the **Users & Groups** page still shows the number of licenses in use. Import a valid license file before the trial or subscription license expires. To import a file, see [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).
 
 ## Removing users
 

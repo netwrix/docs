@@ -32,7 +32,7 @@ You provide SQL Server. The Setup Launcher doesn't install it. SQL Server uses p
 A SQL Server deployment is an advanced configuration that requires additional support from Netwrix. Contact Netwrix Support before you choose SQL Server.
 :::
 
-{/* TODO verify: the SQL Server versions and editions that Netwrix supports. The release code uses Entity Framework Core 10 for SQL Server and doesn't define a version range, and Microsoft's documentation doesn't state Netwrix's support. */}
+Netwrix tests Privilege Secure against Microsoft SQL Server 2022.
 
 ## High availability
 

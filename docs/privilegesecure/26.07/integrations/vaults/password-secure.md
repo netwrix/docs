@@ -12,8 +12,6 @@ The Password Secure connector lets Netwrix Privilege Secure check out passwords 
 
 The **Password Secure** connector template is controlled by the `password_secure` feature flag. The flag is on by default, so the template appears in the **Connector Template** list.
 
-{/* TODO verify: how a customer turns the password_secure flag on if the template is missing from the Connector Template list. The release ships a feature-flag utility, but no source states that customers may run it. */}
-
 ## Prerequisites
 
 - A working Password Secure server and Password Secure Web Application. Install them on a separate server from Privilege Secure. See the Password Secure [installation](/docs/passwordsecure/9_3/installation/installation) and [Web Application](/docs/passwordsecure/9_3/configuration/webapplication/web_application) documentation.
@@ -107,6 +105,4 @@ Release 26.07.3 identifies the user name field of a Password Secure entry by its
 
 ## Update the Password Secure SDK files
 
-Privilege Secure includes the Password Secure SDK files that it uses to communicate with Password Secure. The included files work with Password Secure 9.2.0 and later. To use a newer Password Secure release, replace the files in the `psrapi` folder of the Action Service Worker installation, by default `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\psrapi`, with the files from the newer SDK. Download the SDK from the Password Secure Customer Information System.
-
-{/* TODO verify: the 9.2.0 minimum Password Secure version for the included SDK files. The release code doesn't state a minimum version, and the Password Secure documentation would need to confirm it. */}
+Privilege Secure includes the Password Secure SDK files that it uses to communicate with Password Secure. To use a newer Password Secure release, replace the files in the `psrapi` folder of the Action Service Worker installation, by default `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\psrapi`, with the files from the newer SDK. Download the SDK from the Password Secure Customer Information System.

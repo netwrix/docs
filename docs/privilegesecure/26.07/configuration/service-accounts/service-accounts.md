@@ -79,5 +79,3 @@ Check which resources use the account first. Use **Change Service Account** on t
 ## Managed service accounts
 
 Privilege Secure can also manage a service account. A chip on the account shows **Service Account is Managed by Netwrix Privilege Secure**. See [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
-
-{/* TODO verify: whether a service account named Netwrix Password Secure appears in the list on some installations, and what it is for. The 26.07.3 release code seeds a Password Secure integration connector, with a service account setting in its template, but it doesn't seed a service account. */}

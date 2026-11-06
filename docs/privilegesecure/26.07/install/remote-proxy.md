@@ -108,8 +108,6 @@ Run these commands as administrator on the remote proxy server.
 
 The Proxy Service is now registered. Confirm it appears on the Service Nodes page of the console.
 
-{/* TODO verify: whether Netwrix supports the token-based join for customers. The executable is `sbpam-proxy`, and the proxy code accepts a join token through the `--token` option of `node join` and the `--join-token` option of `register`, but only a Netwrix support statement settles whether to document it. */}
-
 ## Allow legacy SSH algorithms
 
 To connect to older SSH devices, such as legacy Cisco devices, see [Configure SSH algorithms](/docs/privilegesecure/26.07/configuration/ssh-algorithms.md).

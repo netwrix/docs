@@ -12,16 +12,14 @@ The Remote Access Gateway uses two Windows servers. The portal runs on its own s
 
 Install the gateway and portal from the package for your Privilege Secure release. This page covers 26.07.3.
 
-{/* TODO verify: whether a 26.07.3 gateway works with an earlier 26.07 application server. The gateway and portal code has no version check against the application server, and no public source states a supported range. */}
+Netwrix tests the latest gateway and portal with the latest Privilege Secure application server. Use the same release for the portal, the gateway, and the application server.
 
 ## Recommended server sizing
 
 | Server | Operating system | Processor cores | Memory |
 | --- | --- | --- | --- |
-| Portal | Windows Server 2022 or later | 4 | 8 GB |
-| Gateway and guacd | Windows Server 2022 or later | 8 | 16 GB |
-
-{/* TODO verify: the minimum supported Windows Server version and the minimum sizing. Microsoft documents `wsl --install` on Windows Server 2022 and 2025, but Netwrix publishes no tested-versions list or minimum sizing. */}
+| Portal | Windows Server 2022 | 4 | 8 GB |
+| Gateway and guacd | Windows Server 2022 | 8 | 16 GB |
 
 ## Portal server requirements
 

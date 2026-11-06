@@ -47,8 +47,6 @@ The access role gives Privilege Secure a Client ID and a Client secret that it u
 The client secret stops working when the access expiration passes. Set an expiration that suits how long you want the integration to run, and create a new access role before the old one expires.
 :::
 
-{/* TODO verify: which Access Analyzer versions the StealthAUDIT connector supports. The Privilege Secure code doesn't restrict the version, and the Access Analyzer REST steps are documented only in older Privilege Secure pages. */}
-
 ## Add the service accounts in Privilege Secure
 
 The connector uses two service accounts. For the add form and its fields, see [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).

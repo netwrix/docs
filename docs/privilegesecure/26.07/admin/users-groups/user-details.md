@@ -137,7 +137,7 @@ After 5 failed sign-in attempts in a row, the account is locked out for 5 minute
 
 Privilege Secure counts the failed attempts itself, so the lockout applies to domain users and to local users alike.
 
-The lockout applies to every account, including the administrator created during setup.
+The lockout applies to every account, including accounts in the Administrator role.
 
 ### Unlock an account
 
@@ -155,11 +155,9 @@ A user mistypes a password five times. The **LOCKED** column shows the account a
 
 ### Keep a second administrator
 
-If the only administrator is locked out, no one can unlock the account from the console. Keep at least two accounts in the Administrator role, and keep one of them as a local account that uses a different sign-in path from your domain. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
+If every account in the Administrator role is locked, no one can unlock an account from the console. Contact Netwrix Support, who can provide a script that unlocks the account. To avoid this, keep at least two accounts in the Administrator role, and keep one of them as a local account that uses a different sign-in path from your domain. See [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 
-Local users and the built-in administrator account check their passwords in Privilege Secure, so they stay usable when domain sign-in is unavailable. Domain users are checked against the domain.
-
-{/* TODO verify: the supported recovery steps when every administrator is locked out. The console has no path for it, and the code and public sources don't describe a supported procedure. */}
+Local users check their passwords in Privilege Secure, so they stay usable when domain sign-in is unavailable. Domain users are checked against the domain.
 
 ### Locked accounts in Active Directory
 

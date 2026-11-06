@@ -32,21 +32,27 @@ If provisioning finishes but takes more than 30 seconds, see [Long Provisioning 
 
 **Fix:** Check the Action Service log for the failed step. On Linux, see [Linux deprovisioning fails because the account is still in use](#linux-deprovisioning-fails-because-the-account-is-still-in-use). For other targets, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
 
-{/* TODO verify: the cause of a session that stays in Deprovisioning on non-Linux targets, whether it depends on the database back end (SQL Server or PostgreSQL), and a workaround. Release code doesn't identify a cause, and no public source covers it. */}
-
 ## Linux deprovisioning fails because the account is still in use
 
 **Symptom:** After a Linux session ends, the temporary user and the home directory remain, and the console shows an error. The log shows that `userdel` found the account still in use.
 
 **Cause:** Deprovisioning ran before the user's processes finished ending. The command works a few seconds later.
 
-**Fix:** Upgrade to 26.07.3 or later. From 26.07.3, the Linux remove-user step runs `userdel -r` up to 10 times, 3 seconds apart, until the account is gone. On an earlier release, the step runs `userdel` once. If the temporary account remains after the session ends, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
+**Fix:** Upgrade to 26.07.3 or later. From 26.07.3, the Linux remove-user step runs `userdel -r` up to 10 times, 3 seconds apart, until the account is gone. On an earlier release, the step runs `userdel` once. If the session stays on the **Active** tile, select it and select **End Session** again until it leaves the tile. See [Active sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md). If the temporary account remains after the session ends, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
 
-{/* TODO verify: whether the web console has a control that retries deprovisioning on an earlier release. Release code shows no such control, so the page doesn't name one. */}
+## Group removal is reported incorrectly during a bulk deprovision
 
-A bulk deprovision of many accounts can log a misleading error about removing a user from a group, even though the user is removed. Check the target before you deprovision again.
+**Symptom:** A bulk deprovision of many accounts finishes with a successful activity, but the log reports errors about removing a user from a group. Or the log reports a group, role, or user as "not found (may have been deleted)" when the lookup failed for another reason.
 
-{/* TODO verify: the exact wording of the bulk deprovision log message and the first 26.07 release that corrects it. Not found in release code. */}
+**Cause:** The cleanup step that removes users from Active Directory groups, Microsoft Entra ID groups, and SQL Server and Oracle roles never fails the activity, even when a removal fails. Several messages that look harmless, such as "not found (may have been deleted)" and "user may not exist in tenant (cleanup complete)", count the item as removed even when a permissions or connection problem caused the result.
+
+**Fix:** Don't rely on the activity status. In the Action Service log, search for these entries:
+
+- `Failed to remove user from <type> <group name>` followed by the reason, where the type is AD, Entra, SQL, or Oracle.
+- `Group/role removal complete: N succeeded, M failed`, which summarizes the run.
+- `All group/role removals failed (cleanup incomplete)` or `Completed with partial failures`.
+
+Check the group membership of the affected accounts on the target, and remove any membership that remains. For Entra ID groups, the error "No credential available for Entra ID group" means the Entra ID tenant has no managed resource with credentials configured.
 
 ## The session request returns "Unable to find policy"
 
@@ -70,9 +76,7 @@ If a scan or session fails with a null platform ID error, see [Troubleshoot inst
 
 **Symptom:** A user who connects with a Remote Desktop Protocol (RDP) file enters a valid multifactor authentication (MFA) code, and the console reports a wrong code. The code is accepted on the third or fourth attempt.
 
-**Fix:** Ask the user to try again. Confirm that the Privilege Secure server and the user's device have synchronized clocks, for example with a network time protocol (NTP) source. The problem can occur without any clock drift.
-
-{/* TODO verify: whether the intermittent MFA code rejection when connecting through RDP files is fixed in 26.07.3. Release code gives no confirmation; don't call it fixed until Support confirms. */}
+**Fix:** Ask the user to try again. Confirm that the Privilege Secure server and the user's device have synchronized clocks, for example with a network time protocol (NTP) source. The problem can occur without any clock drift. If the code is still rejected, contact [Netwrix Support](https://www.netwrix.com/support.html).
 
 ## Related topics
 

@@ -31,8 +31,6 @@ Complete these checks on the application server before you start.
 7. If you run a high availability pair or remote service nodes, read the [high availability upgrade article](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations) before you begin.
 8. If you upgrade from 26.03, check the resources list for resources with a null DNS name or duplicates. Remove the affected resources before you upgrade, and onboard and scan them again afterward. Otherwise they can appear as duplicates with the same IP address.
 
-{/* TODO verify: with the SME, the wording of the 26.07.1 announcement about null DNS or duplicate resources, and whether it also covers resources with a null host or platform. */}
-
 ### Back up the SAML templates
 
 The files `SamlRequestTemplate.xml` and `SamlSignoutTemplate.xml` are in the `Web` folder of the installation folder. They hold your SAML customizations.
@@ -111,8 +109,6 @@ A scheduled Active Directory (AD) sync can show a **Failed** status after an upg
 See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md).
 
 {/* TODO verify: the status label after the reset and whether a manual Sync is needed. */}
-
-{/* TODO verify: whether the uninstall during an upgrade or removal leaves the Host Scan and Scheduler services (SbPAMHostScan, SbPAMScheduler) on the server, why, and the supported cleanup. The installers are written to remove them and Support hasn't confirmed the issue, so don't publish it as a known issue until Support or a host reproduces it. */}
 
 ## Upgrade the Remote Access Gateway separately
 

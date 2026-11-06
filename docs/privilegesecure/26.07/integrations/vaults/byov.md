@@ -26,11 +26,9 @@ For an overview of vault connectors, see [Third-party vault connectors](/docs/pr
 | **Client Certificate** | A value that Privilege Secure passes to your scripts as `$Options.Connector.Options.ClientCertificate`. Privilege Secure doesn't use it itself. |
 | **Skip Certificate Check** | Under **Advanced**. When selected, Privilege Secure doesn't validate the certificate of the vault. It's cleared by default. |
 | **Checkout Script Block** | Under **Advanced**. Required for a BYOV connector. A PowerShell script that returns the credential. Without it, the connector supplies no credential. |
-| **Checkin Script Block** | Under **Advanced**. A PowerShell script that runs when the session ends. If you leave it empty, the built-in check-in deletes the credential record that is linked to the connector, when the last session that uses it ends. |
+| **Checkin Script Block** | Under **Advanced**. A PowerShell script that runs when the session ends. If you leave it empty, the built-in check-in deletes the temporary credential record that the activity creates for the session, when the last session that uses it ends. It never deletes a stored account. |
 
 An asterisk (\*) marks a required field.
-
-{/* TODO verify: that the credential record the built-in check-in deletes is a temporary record and never the stored account. The check-in deletes the credential record that it receives, and the code doesn't show whether the activity creates that record for each session. */}
 
 ![The Add Integration Connector form with the BYOV template selected and the Advanced section expanded, showing Skip Certificate Check and the Checkout Script Block editor.](/images/privilegesecure/26.07/integrations/integration-connector-byov-advanced.webp)
 
@@ -47,8 +45,6 @@ Both scripts receive the following parameters:
 - `$Credential` holds the credential to fill. The check-out script sets `Username`, `Domain`, and `Password`, and returns the object. Privilege Secure also passes the domain credential as a third argument, which a script can read with a third `param` entry, `$DomainCredentials`.
 
 The scripts run in the Action Service session, so they can use its Privilege Secure commands, such as `Invoke-SbPAMRest` to call the API and `Add-SbPAMActionLog` to write to the action log.
-
-{/* TODO verify: the complete list of Privilege Secure commands that are supported for use in BYOV scripts. The code loads many commands, and none is documented as supported for customer scripts. */}
 
 ## Use Privilege Secure as the vault
 

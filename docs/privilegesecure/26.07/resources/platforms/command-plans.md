@@ -19,15 +19,7 @@ A command plan is a named, ordered set of steps that Netwrix Privilege Secure fo
 
 The service account that you assign to the resource runs the commands. For Linux, the account needs permission to run them. See [Target environments](/docs/privilegesecure/26.07/requirements/target-environments.md).
 
-Privilege Secure ships the plans for each of these platforms.
-
-## Command plans in the console
-
-A default installation doesn't show the **Command Plans** tab on a platform. A platform shows one form with no tabs, as described in [Platforms](/docs/privilegesecure/26.07/resources/platforms/platforms.md).
-
-The tab appears only on a copy of a platform that ships command plans, and only when the custom platform connector feature is turned on for your installation.
-
-{/* TODO verify: with product management, whether the custom platform connector feature is part of the standard license and whether to document the Command Plans tab for customers. The code gates the tab on that feature, and no code or public source says which licenses include it. */}
+Privilege Secure ships the plans for each of these platforms. The console doesn't show command plans.
 
 ## Updates restore the built-in plans
 

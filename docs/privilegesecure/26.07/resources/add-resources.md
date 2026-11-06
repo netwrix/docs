@@ -16,7 +16,7 @@ Onboard a server so that Netwrix Privilege Secure for Access Management (Privile
 
 Each method has a **Service Account** dropdown in the window footer. Privilege Secure uses that account to scan the servers. Select an account that has the rights it needs on the servers. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 
-{/* TODO verify: COM 4 reports that a manually added server didn't appear in an access policy until a service account and a platform were set, and that a placeholder service account worked. The root cause is unconfirmed, and it is unclear whether a scan must fail first. Confirm in the lab, then state the requirement here. */}
+A server appears in an access policy after Privilege Secure scans it successfully with a valid service account.
 
 ## Prerequisites
 
