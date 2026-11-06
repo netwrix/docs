@@ -154,13 +154,29 @@ An Entra ID source needs only the login and Graph hosts. Entra ID as the identit
 
 ## Antivirus Exclusions
 
-Real-time scanning by antivirus or endpoint protection software can interfere with the container runtime that Access Analyzer runs on. Exclude these directories from real-time scanning on the Access Analyzer server and on every [agent](../configuration/agents/index.md) host:
+Real-time scanning by antivirus or endpoint protection software can interfere with the container runtime that Access Analyzer runs on and with its databases. A database can fail to start when the product quarantines or blocks one of its files. Exclude these directories from real-time scanning and quarantine on the Access Analyzer server:
 
-- `/var/lib/rancher/k3s/agent/containerd`
-- `/var/lib/rancher/k3s/data`
-- `/run/k3s/containerd`
+- `/var/lib/rancher/k3s`: the platform's data directory, which holds the container images, the cluster datastore, and every persistent volume, including the PostgreSQL and ClickHouse data
+- `/var/lib/kubelet`: the local volumes of running pods
+- `/run/k3s`: the file systems and runtime state of running containers
+- `/var/backups/dspm/postgres` and `/var/backups/dspm/k3s`: the local backup destinations
 
-If you install the server with `--storage-dir`, the first two directories move under it. For example, `--storage-dir /data` puts them at `/data/rancher/k3s/agent/containerd` and `/data/rancher/k3s/data`. Agent hosts always use the default directories.
+If your security policy doesn't allow excluding container images and binaries, exclude at least the directories that hold data:
+
+- `/var/lib/rancher/k3s/storage`: every persistent volume, including the PostgreSQL and ClickHouse data
+- `/var/lib/rancher/k3s/server/db`: the cluster datastore
+- `/var/lib/kubelet`
+- `/var/backups/dspm/postgres` and `/var/backups/dspm/k3s`
+
+On every [agent](../configuration/agents/index.md) host, exclude `/var/lib/rancher/k3s`, `/var/lib/kubelet`, and `/run/k3s`. If your policy doesn't allow that, exclude at least `/var/lib/kubelet`.
+
+Some install options move the server's directories:
+
+- `--storage-dir` moves the platform's data directory under the directory you give. For example, `--storage-dir /data` puts it at `/data/rancher/k3s`. Agent hosts always use the default directory.
+- `--postgres-backup-dir` and `--k3s-backup-dir` replace the backup directories.
+- `--postgres-data-dir` and `--clickhouse-data-dir` put that database's data outside the platform's data directory. Exclude each directory you set.
+
+After you add the exclusions, confirm in the antivirus product's own event log that it no longer scans or quarantines files under these directories.
 
 The preflight check warns when it detects a known antivirus product and names the product's command or console for adding the exclusions. See [Preflight Checks](../install/installer-reference.md#preflight-checks).
 
