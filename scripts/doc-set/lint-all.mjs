@@ -67,7 +67,7 @@ export function run(argv) {
   console.log('  (1) the whole-page report, which lists every finding on every page, old text included:');
   console.log(`      npm run quality:check -- --files ${list} --progress > ${path.join(lintDir, 'final-recheck.txt')} 2>&1`);
   console.log('  (2) the commit check, which looks only at the lines this run added or changed. It must be clean:');
-  console.log('      npm run quality:check');
+  console.log(`      npm run quality:check > ${path.join(lintDir, 'commit-check.txt')} 2>&1`);
   console.log('Findings only (1) shows are on old text: report them as candidates for the separate restyle pass, and do not reword them.');
   console.log('Then: node scripts/doc-set/lint-all.mjs <run-dir> --check');
   return 0;

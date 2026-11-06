@@ -114,7 +114,7 @@ ul.guide li{margin-bottom:6px}ul.cols{columns:2;column-gap:24px;font-size:.88rem
 export const slugOf = (p, meta) => short(p, meta).replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, '');
 
 /** Everything after the page title. opts.reviewLinks adds a Compare link and a review badge to each page row. */
-export function reportBody({ title, meta, cov, rows, need, claims, scope, lint, plan, proposals, recheck, actions, groups, integrity, recheckNote }, opts = {}) {
+export function reportBody({ title, meta, cov, rows, need, claims, scope, lint, plan, proposals, recheck, commit, actions, groups, integrity, recheckNote }, opts = {}) {
   const rv = p => (opts.reviewLinks ? `<td><a href="#${slugOf(p, meta)}">Compare</a> <span class="rvbadge" data-slug="${slugOf(p, meta)}">Not reviewed</span></td>` : '');
   const H = arr => (opts.reviewLinks ? [...arr, 'Review'] : arr);
   const table = (head, body, cls = '') => `<div class="tablewrap"><table class="${cls}"><thead><tr>${head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div>`;
@@ -168,7 +168,8 @@ ${table(['Page', 'Why it was not changed'], g.UNVERIFIABLE.map(r => `<tr><td>${c
   const lintBlock = lint ? `<p>Lint-only passes: ${lint.typos} suspected typos listed, ${lint.unfixed} flagged sentences left as written, ${lint.suppressions} Vale suppression(s).</p>` : '';
   const proposalBlock = proposals.length ? `<h3>Structural changes</h3><ul>${proposals.map(p => `<li><strong>${esc(p.kind)}:</strong> ${esc((p.paths || []).join(', '))}. ${esc(p.recommendation || '')}</li>`).join('')}</ul>` : '';
   const recheckBlock = recheck ? `<h2>Style check on every page</h2>
-<p>Final recheck of all ${recheck.pages} pages in the new version: ${recheck.pass} pass and ${recheck.fail} fail. Dale is model-based, so a page can pass on one run and fail on another. These pages failed on the last run.</p>
+<p>Final recheck of all ${recheck.pages} pages${meta.versionless ? '' : ' in the new version'}: ${recheck.pass} pass and ${recheck.fail} fail. Dale is model-based, so a page can pass on one run and fail on another. These pages failed on the last run.</p>
+<p>This is a whole-page check, so it also reports text the doc-set did not write or change, and the doc-set does not reword old text to clear it.${commit ? ` The commit check, which looks only at the lines this run added or changed, has ${commit.pass} pass and ${commit.fail} fail.` : ''} A page that fails only on old text is a candidate for the separate restyle pass.</p>
 ${recheckNote ? `<p class="note-line">${esc(recheckNote)}</p>` : ''}
 ${recheck.failing.length ? table(['Page', 'Group', 'Findings', 'Rules'], recheck.failing.map(f => `<tr><td>${code(f.path)}</td><td>${esc(actions?.[f.path] || '')}</td><td class="num">${f.findings}</td><td>${esc(Object.entries(f.rules).map(([k, v]) => `${k} ${v}`).join(', '))}</td></tr>`).join('')) : '<p class="none">Every page passes.</p>'}` : '';
 
@@ -267,6 +268,8 @@ export function loadReportArgs(dir, title) {
   }
   const rc = path.join(lintDir, 'final-recheck.txt');
   const recheck = fs.existsSync(rc) ? parseRecheck(fs.readFileSync(rc, 'utf8')) : null;
+  const cc = path.join(lintDir, 'commit-check.txt');
+  const commit = fs.existsSync(cc) ? parseRecheck(fs.readFileSync(cc, 'utf8')) : null;
   const ik = path.join(lintDir, 'integrity-keep.json');
   let integrity = null;
   if (fs.existsSync(ik)) {
@@ -276,7 +279,7 @@ export function loadReportArgs(dir, title) {
   const actions = Object.fromEntries(manifest.pages.map(p => [p.path, p.action === 'KEEP' ? 'Style fixes or unchanged' : p.action]));
   const nf = path.join(lintDir, 'recheck-note.txt');
   const recheckNote = fs.existsSync(nf) ? fs.readFileSync(nf, 'utf8').trim() : '';
-  const args = { title: title || `${meta.product} ${meta.version} author report`, meta, cov, rows, need, claims, scope, lint, plan, proposals: plan.proposals || [], recheck, actions, groups, integrity, recheckNote };
+  const args = { title: title || `${meta.product} ${meta.version} author report`, meta, cov, rows, need, claims, scope, lint, plan, proposals: plan.proposals || [], recheck, commit, actions, groups, integrity, recheckNote };
   return { args, groups, need };
 }
 

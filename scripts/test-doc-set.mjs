@@ -735,3 +735,24 @@ test('lint-all lists every page of the version, kept pages included, and checks 
   fs.writeFileSync(path.join(dir, 'lintpass/final-recheck.txt'), log);
   assert.equal(quiet(() => run([dir, '--check'])), 0);
 });
+
+test('the report explains the whole-page lint and shows the commit-check counts', async () => {
+  const { run } = await import('./doc-set/author-report.mjs');
+  const { dir: repo, sha } = alignRepo({ 'docs/p/a.md': '---\ntitle: A\n---\n\nText.\n', 'docs/p/b.md': '---\ntitle: B\n---\n\nText.\n' });
+  const runDir = fs.mkdtempSync(path.join(os.tmpdir(), 'lintrep-'));
+  fs.mkdirSync(path.join(runDir, 'results')); fs.mkdirSync(path.join(runDir, 'lintpass'));
+  fs.writeFileSync(path.join(runDir, 'meta.json'), JSON.stringify({ product: 'p', version: 'current', versionless: true, oldRef: sha, docsWorktree: repo, refSha: 'abc1234567' }));
+  fs.writeFileSync(path.join(runDir, 'facts.json'), JSON.stringify({ facts: [] }));
+  fs.writeFileSync(path.join(runDir, 'claims.json'), JSON.stringify({ claims: [] }));
+  fs.writeFileSync(path.join(runDir, 'manifest.json'), JSON.stringify({ pages: [{ path: 'docs/p/a.md', action: 'KEEP' }, { path: 'docs/p/b.md', action: 'KEEP' }], dropped: [] }));
+  fs.writeFileSync(path.join(runDir, 'lintpass/final-recheck.txt'), 'PASS  docs/p/a.md\nFAIL  docs/p/b.md\n   2  dale:passive-voice  msg\n');
+  fs.writeFileSync(path.join(runDir, 'lintpass/commit-check.txt'), 'PASS  docs/p/a.md\n');
+  const out = path.join(runDir, 'report.html');
+  const log = console.log; console.log = () => {};
+  try { assert.equal(run([runDir, out, '--title', 'T']), 0); } finally { console.log = log; }
+  const html = fs.readFileSync(out, 'utf8');
+  assert.match(html, /Final recheck of all 2 pages: 1 pass and 1 fail/);
+  assert.doesNotMatch(html, /in the new version/);
+  assert.match(html, /commit check, which looks only at the lines this run added or changed, has 1 pass and 0 fail/);
+  assert.match(html, /candidate for the separate restyle pass/);
+});
