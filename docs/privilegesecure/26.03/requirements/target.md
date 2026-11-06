@@ -44,8 +44,11 @@ The following permissions are required for the service accounts:
 - For Linux server management:
   - Service account on each server to be managed or a central domain account in the case of
     AD-bridged hosts
-  - Permissions may either be root or delegated via sudo or other commercial least privilege
-    solutions
+  - Use a dedicated account with least-privilege permissions, delegated via sudo or another
+    commercial least privilege solution. Avoid root and blanket sudo access (`ALL=(ALL) NOPASSWD: ALL`).
+    The account name in the sudoers file must match the service account name in Privilege Secure.
+    For a sudoers policy that grants only the commands Privilege Secure runs, see
+    [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/linuxbsdsudoers.md).
 - For standalone Windows Servers/desktops:
   - Membership in the local Administrator group on each server/desktop to be managed
 - For Cisco

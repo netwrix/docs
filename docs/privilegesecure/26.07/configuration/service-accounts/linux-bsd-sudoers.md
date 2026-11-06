@@ -49,11 +49,12 @@ Before you install a policy file:
 
 1. Prefix each `Cmnd_Alias` name with the account name or another tag that's unique to the account. The examples use the prefix `SVC_`.
 1. Confirm that no other file in the drop-in directory uses the same alias names.
-1. Check the syntax with `visudo -cf`.
+1. Check the syntax with `visudo -cf <file>`.
+1. After you install the file, run `sudo -l` as the service account to confirm the policy.
 
 ## Add the policy
 
-Add the block for the platform to the file. Each alias covers one group of commands:
+The command lists apply to Privilege Secure 26.07.3 and later. Add the block for the platform to the file. Each alias covers one group of commands:
 
 | Alias | Used for |
 | --- | --- |
@@ -68,8 +69,8 @@ Add the block for the platform to the file. Each alias covers one group of comma
 ```text
 Cmnd_Alias SVC_ACT_CHKSUM = /usr/bin/find, /usr/bin/test, /usr/bin/stat, /usr/bin/md5sum
 Cmnd_Alias SVC_ACT_SUDOERS = /usr/bin/tee, /usr/sbin/visudo, /bin/rm, /bin/mv, /bin/chmod, /bin/sed
-Cmnd_Alias SVC_SB_PASS = /usr/bin/chpasswd, /usr/sbin/chpasswd, /usr/sbin/usermod, /usr/sbin/userdel, /usr/sbin/useradd, /usr/sbin/groupadd, /usr/bin/gpasswd
-Cmnd_Alias SVC_SB_CMNDS = /usr/bin/getent, /bin/grep, /usr/bin/id, /usr/sbin/adcli, /usr/bin/ps, /usr/bin/pkill, /usr/bin/who, /usr/bin/w, /usr/bin/last, /usr/bin/write
+Cmnd_Alias SVC_SB_PASS = /usr/bin/chpasswd, /usr/sbin/chpasswd, /usr/sbin/usermod, /usr/sbin/userdel, /usr/sbin/useradd, /usr/sbin/groupadd, /usr/sbin/groupdel, /usr/bin/gpasswd
+Cmnd_Alias SVC_SB_CMNDS = /usr/bin/getent, /bin/grep, /usr/bin/id, /usr/sbin/adcli, /bin/ps, /usr/bin/pkill, /usr/bin/who, /usr/bin/w, /usr/bin/last, /usr/bin/write
 Cmnd_Alias SVC_SB_SHELL = /bin/bash -c *, /bin/sh -c *
 
 svc_sbpam ALL = NOPASSWD: SVC_ACT_CHKSUM, SVC_ACT_SUDOERS, SVC_SB_PASS, SVC_SB_CMNDS, SVC_SB_SHELL
@@ -89,12 +90,9 @@ svc_sbpam ALL = NOPASSWD: SVC_ACT_CHKSUM, SVC_ACT_SUDOERS, SVC_SB_PASS, SVC_SB_C
 Defaults:svc_sbpam !requiretty
 ```
 
-{/* TODO verify: the BSD ACT_CHKSUM alias lists /sbin/md5sum, but the 26.07.3 BSD checksum plan runs md5sum unqualified, and base FreeBSD ships md5, not md5sum. Confirm the path (or whether a coreutils md5sum is expected at /usr/local/bin/md5sum) on FreeBSD, OpenBSD, and NetBSD. */}
-
-{/* TODO verify: the Linux SB_CMNDS alias lists /usr/bin/ps, which no 26.07.3 Linux command plan runs through sudo. Confirm whether to keep it. */}
-
 - `NOPASSWD` lets the account run the listed commands without a password prompt. Privilege Secure can't answer one.
 - `!requiretty` lets the account run elevated commands in a non-interactive session.
+- On an Azure Linux 4.0 resource, also add `Defaults:svc_sbpam !pam_session`. See [Prepare an Azure Linux resource](/docs/privilegesecure/26.07/configuration/service-accounts/prepare-azure-linux.md).
 - Replace the `SVC_` prefix with a tag that's unique to the account when more than one service account uses the same host.
 - The paths in the examples match a typical layout. Confirm each path on the host with `command -v <command>`, because some distributions keep a command in `/bin` and others in `/usr/bin`. On a system where `/bin` is a link to `/usr/bin`, either path matches.
 
@@ -132,20 +130,9 @@ If a scan or a session fails with `sudo: no tty present and no askpass program s
 1. Find the command that `sudo` refused and note its full path.
 1. Add the path to the matching alias and validate the file again.
 
-## Tags in activity rules
+## Tags and patterns in sudoers rules
 
-The **Add Sudoers rule** activity action writes its own rule file for the user who connects, separate from this policy. It supports sudoers tags such as `SETENV` and `LOG_OUTPUT` in its **Commands** field. The **Prompt for password** field controls `PASSWD` and `NOPASSWD`. See [Add Sudoers rule](/docs/privilegesecure/26.07/configuration/activities/action-types.md#add-sudoers-rule).
+- To add sudoers tags such as `SETENV` or `LOG_OUTPUT` to the rules that the **Add Sudoers rule** action writes, see [Sudoers tags reference](/docs/privilegesecure/26.07/configuration/service-accounts/sudoers-tags-reference.md).
+- To narrow an entry with wildcards, arguments, or regular expressions, see [Sudoers pattern reference](/docs/privilegesecure/26.07/configuration/service-accounts/sudoers-pattern-reference.md).
 
-On BSD, the action writes its rule files to the `/usr/local/etc/sudoers.d` directory.
-
-## Narrow a command with arguments
-
-Sudoers matches the command path and, when you give arguments, the complete argument string. These rules help when you narrow an entry:
-
-- In a command path, a wildcard doesn't match `/`. `/opt/myapp/*` matches `/opt/myapp/tool` but not `/opt/myapp/sub/tool`.
-- In arguments, `*` can match `/` and spaces. `/usr/bin/systemctl status *` matches `status` followed by one or more arguments.
-- A command with no argument pattern allows any arguments. An argument string of `""` allows the command only with no arguments.
-- From sudo 1.9.10, you can match a path or arguments with a POSIX extended regular expression. It must start with `^` and end with `$`, and is limited to 1,024 characters. Check `sudo --version` first.
-- Avoid negation and broad wildcards, such as `/usr/bin/*`, in a production policy. The last matching entry wins, and a permitted shell or editor can run an excluded command indirectly.
-
-For the full syntax, see the [sudoers manual](https://www.sudo.ws/docs/man/sudoers.man/) on the sudo project site.
+The **Add Sudoers rule** action writes its own rule file for the user who connects, separate from this policy. On BSD, the action writes its rule files to the `/usr/local/etc/sudoers.d` directory.

@@ -44,7 +44,8 @@ The selected service account details display at the top of the main pane:
   [Microsoft Entra ID App Registration](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/entraidappregistration.md) for
   additional information.
 - **Elevation Command** — Displays the elevation mechanism for the host, such as: sudo, pbrun, pmrun,
-  dzdo, etc. This field only applies to Linux platforms.
+  dzdo, etc. This field only applies to Linux platforms. For the sudo permissions the account needs, see
+  [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/linuxbsdsudoers.md).
 - **Vault Connector** — Displays the name of the assigned vault connector. See the
   [Bring Your Own Vault (BYOV) Integration](/docs/privilegesecure/26.03/admin/configuration/integrationconnector/integrationbyov/integrationbyov.md) topic for additional
   information.

@@ -13,7 +13,7 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) manages resour
 | Active Directory | Domain controllers that the application server can reach. |
 | Windows | Windows Server 2008 R2 or later with PowerShell 5.1, or a Windows desktop with the Windows Remote Management (WinRM) service running. |
 | Microsoft Entra ID | An app registration with Microsoft Graph permissions. |
-| Linux | A distribution under long-term support (LTS) with SSHv2 or later, such as Debian, CentOS, Red Hat Enterprise Linux (RHEL), or openSUSE. |
+| Linux | A distribution under long-term support (LTS) with SSHv2 or later, such as Debian, CentOS, Red Hat Enterprise Linux (RHEL), or openSUSE. Azure Linux 4.0 is also supported; see [Prepare an Azure Linux resource](/docs/privilegesecure/26.07/configuration/service-accounts/prepare-azure-linux.md). |
 | BSD | SSH access. |
 | Cisco | SSH access. |
 | Palo Alto PAN-OS | SSH access and the PAN-OS API. |
@@ -42,7 +42,7 @@ Websites and secret vaults are platforms too. For the full platform list and the
 
 For the Entra ID app registration, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md).
 
-For BSD targets, use root or an account that can run the needed commands through `sudo`. See [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md). For PAN-OS targets, use an administrator whose role enables the XML API and allows configuration changes and commits. See [Configure an admin role profile](https://docs.paloaltonetworks.com/ngfw/administration/firewall-administration/manage-firewall-administrators/configure-an-admin-role-profile) in the Palo Alto Networks documentation.
+For BSD targets, use root or an account that can run the needed commands through `sudo`. For the least-privilege policy, see [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md). For PAN-OS targets, use an administrator whose role enables the XML API and allows configuration changes and commits. See [Configure an admin role profile](https://docs.paloaltonetworks.com/ngfw/administration/firewall-administration/manage-firewall-administrators/configure-an-admin-role-profile) in the Palo Alto Networks documentation.
 
 ## Windows targets
 
@@ -73,6 +73,8 @@ The command sets the `LocalAccountTokenFilterPolicy` registry value to 1, which 
 
 ## Linux targets
 
-Use a dedicated service account with least privilege instead of root. Create a sudoers file for the account that allows only the commands Privilege Secure needs, and don't grant blanket sudo access.
+Use a dedicated service account with least privilege instead of root. Create a sudoers file for the account that allows only the commands Privilege Secure needs, and don't grant blanket sudo access. The same applies to BSD targets.
+
+Azure Linux 4.0 resources need extra preparation before you add them. See [Prepare an Azure Linux resource](/docs/privilegesecure/26.07/configuration/service-accounts/prepare-azure-linux.md).
 
 The account name that you add as a service account in Privilege Secure must match the account name in the sudoers file. For the policy, the command list, and how to check it, see [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md).

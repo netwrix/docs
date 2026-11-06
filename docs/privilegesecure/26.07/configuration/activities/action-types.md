@@ -131,7 +131,9 @@ The Post-Session action list also shows **Command Plan Test**. Privilege Secure 
 
 ### Sudoers tags in the Commands field
 
-A sudoers tag changes how `sudo` treats the commands that follow it. Enter tags in the **Commands** field before the commands they apply to. Separate tags and commands with commas, or join tags with colons. Each row lists a tag and its opposite.
+From 26.07.3, you can add sudoers tags to the **Commands** field. A sudoers tag changes how `sudo` treats the commands that follow it. Enter tags in the **Commands** field before the commands they apply to. Separate tags and commands with commas, or join tags with colons. Each row lists a tag and its opposite.
+
+For what each tag does in `sudo`, including the `PASSWD` and `NOPASSWD` tags that this field doesn't use, see [Sudoers tags reference](/docs/privilegesecure/26.07/configuration/service-accounts/sudoers-tags-reference.md).
 
 | Tags | Effect |
 |---|---|

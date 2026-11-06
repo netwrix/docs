@@ -38,6 +38,10 @@ This restriction blocks a command and sends an email:
 
 The proxy skips a rule whose expression isn't valid.
 
+:::note
+Go (RE2) syntax isn't the same as the POSIX extended regular expressions that `sudoers` rules use, and a `sudoers` expression must match the whole command path or argument string. For `sudoers` patterns, see [Sudoers pattern reference](/docs/privilegesecure/26.07/configuration/service-accounts/sudoers-pattern-reference.md).
+:::
+
 ## Command restriction fields
 
 | Field | Description |

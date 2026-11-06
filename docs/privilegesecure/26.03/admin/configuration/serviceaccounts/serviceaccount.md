@@ -28,4 +28,8 @@ To add a service account to the console.
 
 4. Click **Save** to create the new service account.
 
+For a Linux or BSD resource, the account name must match the account name in the sudoers file on the
+resource. See
+[Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/linuxbsdsudoers.md).
+
 The new service account is added to the Service Accounts list.

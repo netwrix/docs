@@ -22,7 +22,7 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) includes 11 pl
 | **BSD** | BSD servers. |
 | **Cisco** | Cisco network devices. |
 | **Entra ID** | Microsoft Entra ID tenants. |
-| **Linux** | Linux servers. |
+| **Linux** | Linux servers, including Azure Linux 4.0. See [Prepare an Azure Linux resource](/docs/privilegesecure/26.07/configuration/service-accounts/prepare-azure-linux.md). |
 | **Microsoft SQL Server** | SQL Server databases. |
 | **Oracle** | Oracle databases. |
 | **Palo Alto PanOS** | Palo Alto Networks PAN-OS devices. |
