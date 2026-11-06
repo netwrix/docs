@@ -17,11 +17,17 @@ The builder lays a classifier out from top to bottom in the order the scan evalu
 | Section | What it does |
 |---|---|
 | **Run if** | Optional conditions about the file, built from **File**, **CEL expression**, and **Group** conditions. When they're false, the classifier doesn't run on the file. |
-| **Detectors** | What the classifier looks for. Each detector uses one pattern, or every pattern with a label, and filters that keep only the matches worth counting. |
+| **Detectors** | What the classifier looks for. A detector either finds values that match a pattern, narrowed by filters, or asks System One a question about the file. |
 | **Severity variables** | Optional conditions you name once and reuse in any severity rule. |
 | **Severities** | Rules under **Critical**, **High**, **Medium**, and **Low**. The scan reports the highest severity whose rule matches; if no rule matches, the classifier reports nothing. |
 
-The header holds the classifier name, **Details**, the **Visual** and **Code** views, and the save buttons. **Details** opens the classifier's **Description**, **Regulations**, and **Labels**. **Visual** is the form shown on this page; **Code** shows the same classifier as text that you can edit directly. Switching from **Code** back to **Visual** discards changes you made in **Code**, and the builder asks first.
+### The Builder Toolbar
+
+The bar across the top of the builder holds the classifier's name and everything that isn't a rule. Replace **Untitled classifier** with a name, and click **Details** to add a **Description**, **Regulations**, and **Labels**. **Visual** and **Code** switch between editing the classifier as a form, which this page describes, and as text. **Cancel** leaves without saving, and **Create classifier** saves; for an existing classifier, it reads **Save changes**.
+
+:::warning
+Edits you make in **Code** don't carry over to **Visual**. If you switch back to **Visual**, the builder asks first and then discards them.
+:::
 
 ## Create a Classifier
 
@@ -60,7 +66,18 @@ If something is missing, the builder highlights it and reports **Fix the highlig
 
 ## Detectors
 
-A detector finds candidate values. Choose **One pattern** to use a single pattern, or **Patterns by label** to use every pattern with a **Label key** and **Label value**, and choose whether **any of them** or **all of them** must match. After you click **Done**, the detector shows a summary of its filters, such as **within 100 of a list's words or header**. Click **Edit filters** to change them.
+A detector is one thing a classifier looks for. Severity rules don't read the file themselves; they test what the detectors found. Click **Add detector** and choose the kind of detector, which decides how it looks:
+
+| Kind | What it looks for |
+|---|---|
+| **Patterns** | Values that match a pattern, or every pattern with a label, narrowed by filters. |
+| **System One** | The answer to a choice question about the whole file, such as "Is this a record about one identifiable person?" |
+
+Every detector has a name, which severity rules use to refer to it. Click **Look only when…** on a pattern detector, or **Ask only when…** on a System One detector, to add a condition the detector needs before it runs.
+
+### Pattern Detectors
+
+A pattern detector finds candidate values. Choose **One pattern** to use a single pattern, or **Patterns by label** to use every pattern with a **Label key** and **Label value**, and choose whether **any of them** or **all of them** must match. After you click **Done**, the detector shows a summary of its filters, such as **within 100 of a list's words or header**. Click **Edit filters** to change them.
 
 Filters narrow the pattern's matches to the ones that count:
 
@@ -80,7 +97,21 @@ Filters narrow the pattern's matches to the ones that count:
 
 **Found when** decides when the detector counts as found: **Any match passes the filters**, **Every match passes the filters**, or **Exactly one match passes the filters**. "Every" also holds when the pattern has no matches at all.
 
-Click **Look only when…** on a detector to add a condition the detector needs before it looks.
+### System One Detectors
+
+A System One detector asks System One a question about the file and records which option it chose. Use one when the answer depends on meaning rather than on a shape you can write down, such as whether a document is a record about one identifiable person.
+
+1. Under **Detectors**, click **Add detector**, and then click **System One**.
+2. In **Detector name**, enter a name.
+3. In **Question**, write the question System One answers about the file.
+4. Review the **Options**. A new question starts with **Yes** and **No**. Click **Add option** for more, and give each option a clear **Option name**.
+5. Optionally, click the arrow beside an option to add its **Description**, **Not for (optional)**, and **Examples (optional, one per line)**. These tell System One how the option differs from its neighbors.
+6. Set **Confidence**, the percent sure System One must be before its answer counts. The default is 60%.
+7. Optionally, pick a **Model**. Leave it on its default to use the default model.
+
+A question needs at least two options. By default, a classifier can ask up to 8 System One questions in total, counting detectors and severity reviews together. A question can have up to 16 options and up to 4,096 characters across its text and options. When all the questions are in use, the builder reports **All 8 System One questions are in use** and turns off the buttons that add more.
+
+To use the answer, add a **System One answer** condition to a severity rule, and then select the detector and the option that must be the answer. See [Severity rules](#severity-rules).
 
 ## Severity Rules
 
@@ -94,12 +125,24 @@ Each rule under a severity starts with **ALL**, **ANY**, or **AT LEAST N** **of 
 | **Not inside** | Matches outside another detector's matches. |
 | **Patterns across** | How many different patterns matched across detectors. |
 | **Total matches** | The total match count across detectors. |
+| **System One answer** | Whether a System One detector answered with a given option. |
 | **File** | The file name, folder path, readable content, length, or file status, such as **Access denied**, **Encrypted or password protected**, or **Text cut off**. |
 | **Variable** | A severity variable. |
 | **CEL expression** | A condition you write by hand in Common Expression Language (CEL). |
 | **Group** | A nested **ALL**, **ANY**, or **AT LEAST N** group of conditions. |
 
 The classifier reports the highest severity with a rule that holds. For example, the built-in **Credit Cards** classifier reports **Medium** when any card brand's detector finds a number that passes the Luhn check.
+
+### System One Review
+
+Under any severity, click **Ask System One before `<severity>` is final** to add a review. System One runs it when the severity's rule holds, and the answer decides whether that severity stands. **What System One does** has two settings:
+
+| Setting | What System One does |
+|---|---|
+| **Confirm the severity** | Checks the severity against the **Criteria** you write. If it agrees, the severity is final. If it picks another severity, that one is final. If it says the file doesn't meet the criteria, the classifier drops the severity and continues with the next one. |
+| **Ask your own question** | Answers a question with options you define. The severity is final when the answer is the option you select under **`<severity>` is final when the answer is**. Any other answer drops the severity, and the classifier continues with the next one. |
+
+A review has the same **Confidence** and **Model** settings as a System One detector, and it counts toward the same limit on System One questions. Click **Remove** to delete a review.
 
 ## Severity Variables
 
@@ -117,7 +160,7 @@ The **Test** panel runs the classifier you're editing on sample text with the sa
 
 ![Test panel reporting the sample as Medium with two Employee ID matches](/images/accessanalyzer/26.1/classifiers/builder-test.webp)
 
-The panel reports **Reported as `<severity>`** with the matches found, or **Not reported** with the reason: **Run if didn't hold**, **nothing matched**, **every match failed a check**, or **no level's conditions held**. Each detector also shows how many matches its pattern found before filters. Click **Show decision tree** to see how the classifier reached the result.
+The panel reports **Reported as `<severity>`** with the matches found, or **Not reported** with the reason: **Run if didn't hold**, **nothing matched**, **every match failed a check**, or **no level's conditions held**. Each pattern detector also shows how many matches its pattern found before filters, and each System One detector shows the option System One chose, or **Not asked** when it didn't run. Click **Show decision tree** to see how the classifier reached the result.
 
 To test a saved classifier without opening the builder, click **Try it** in its **Actions** menu on the **Classifiers** tab.
 
