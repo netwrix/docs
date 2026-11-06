@@ -61,9 +61,14 @@ export function run(argv) {
   if (fs.existsSync(nm) && !fs.existsSync(path.join(worktree, 'node_modules'))) fs.symlinkSync(nm, path.join(worktree, 'node_modules'), 'dir');
   fs.mkdirSync(path.join(runDir, 'facts'), { recursive: true });
   const metaFile = path.join(runDir, 'meta.json');
-  const prev = fs.existsSync(metaFile) ? JSON.parse(fs.readFileSync(metaFile, 'utf8')) : {};
+  let prev = {};
+  try { prev = JSON.parse(fs.readFileSync(metaFile, 'utf8')); } catch (e) { if (e.code !== 'ENOENT') throw e; }
   const meta = { ...prev, product: id, version: 'current', versionless: true, docsPrefix: `docs/${id}/`, docsWorktree: worktree, oldRef };
-  fs.writeFileSync(metaFile, JSON.stringify(meta, null, 2) + '\n');
+  const stage = fs.mkdtempSync(path.join(runDir, '.meta-'));
+  const staged = path.join(stage, 'meta.json');
+  fs.writeFileSync(staged, JSON.stringify(meta, null, 2) + '\n', { flag: 'wx', mode: 0o600 });
+  fs.renameSync(staged, metaFile);
+  fs.rmdirSync(stage);
   console.log(`Created. Next: pin the deployed code ref in ${path.relative(ROOT, metaFile)} (ref, refSha) and run the fact pack.`);
   return 0;
 }
