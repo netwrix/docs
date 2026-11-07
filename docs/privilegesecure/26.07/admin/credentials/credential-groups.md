@@ -51,7 +51,7 @@ For example, name a group `<build-admin-accounts>` with the description `<Local 
 5. Optional: Clear a checkbox in **Credentials to Add** to move the account back.
 6. Select **Add**.
 
-{/* TODO screenshot: the Add Credentials dialog */}
+![The Add Credentials dialog with Available Credentials on the left and the empty Credentials to Add pane on the right.](/images/privilegesecure/26.07/admin/add-credentials-dialog.webp)
 
 **Available Credentials** lists the credentials that aren't already in the group. It leaves out deleted credentials and application credentials. The search box matches the account name, and the type dropdown limits the list to one account type.
 

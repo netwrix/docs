@@ -10,7 +10,7 @@ The **Events** page lists the events that Privilege Secure logs, such as passwor
 
 To open it, select **Auditing & Reporting** > **Events**.
 
-{/* TODO screenshot: Events page showing the Access Policy column and the result count (redact host names and account names) */}
+![The Events page with the Status, Time, User, Access Policy, Event Message, and Session ID columns and the result count.](/images/privilegesecure/26.07/admin/events-page.webp)
 
 ## Browse events
 

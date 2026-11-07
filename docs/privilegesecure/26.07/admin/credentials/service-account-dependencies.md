@@ -23,7 +23,7 @@ A service account is an account that Windows services or scheduled tasks run as.
 
 The **Account Dependencies** dialog opens.
 
-{/* TODO screenshot: the Account Dependencies dialog on the Dependencies tab */}
+![The Account Dependencies dialog on the Dependencies tab, showing the account details, the Rotate, Rollback, and Cancel buttons, and one dependent scheduled task.](/images/privilegesecure/26.07/admin/account-dependencies-dialog.webp)
 
 ## Read the dialog
 

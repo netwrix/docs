@@ -33,7 +33,7 @@ The dialog closes automatically after a 20-second countdown. The countdown resta
 
 For example, view the password of `<local-admin>` to sign in to `<server-name>` during an outage.
 
-{/* TODO screenshot: the View Password dialog with the password hidden */}
+![The View Password dialog with the password masked, a Copy to Clipboard button, and a 20-second countdown.](/images/privilegesecure/26.07/admin/view-password-dialog.webp)
 
 ## View password history
 
@@ -41,7 +41,7 @@ For example, view the password of `<local-admin>` to sign in to `<server-name>` 
 2. Select the checkbox for a managed account.
 3. Select **View History**.
 
-The **Password History** dialog opens. {/* TODO screenshot: the Password History dialog with values hidden */}
+The **Password History** dialog opens. ![The Password History dialog with the creation date of each password and the values hidden.](/images/privilegesecure/26.07/admin/password-history-dialog.webp)
 
 The dialog has these controls:
 

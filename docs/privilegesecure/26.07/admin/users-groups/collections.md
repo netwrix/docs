@@ -12,7 +12,7 @@ Only accounts that are already onboarded on the **Users & Groups** page can join
 
 Open the page from the left navigation: click **Users & Groups**, then **User and Group Collections**.
 
-{/* TODO screenshot: the User and Group Collections page with one collection selected and its members listed */}
+![The User and Group Collections page with a collection selected and its two members listed.](/images/privilegesecure/26.07/admin/collections-page-filled.webp)
 
 ## Page layout
 

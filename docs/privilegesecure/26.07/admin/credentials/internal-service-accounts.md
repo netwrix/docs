@@ -26,7 +26,7 @@ Internal accounts rotate on the primary domain controller (PDC) of the domain.
 3. Select the checkbox for the account.
 4. Select **Manage**.
 
-   {/* TODO screenshot: the Manage dialog for an internal service account */}
+   ![The Manage Account dialog for an internal account, with the Automatic, Manual, and Cancel buttons.](/images/privilegesecure/26.07/admin/internal-manage-account-dialog.webp)
 
 5. If Privilege Secure finds a matching user, choose one of these options:
 

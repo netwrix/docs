@@ -97,7 +97,7 @@ The **Users** tab then shows the settings in the **Rotate Start | End** and **Ke
 
 A newly managed account has **Rotate on Session Start** and **Rotate on Session End** selected and **Keep Enabled** cleared.
 
-{/* TODO screenshot: the Password Reset Options dialog */}
+![The Password Reset Options dialog with Rotate on Session Start, Rotate on Session End, and Keep Enabled options.](/images/privilegesecure/26.07/admin/password-reset-options-dialog.webp)
 
 :::note
 These options belong to the account on the resource. You can't set them for each requesting user.
