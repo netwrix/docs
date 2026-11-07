@@ -40,7 +40,7 @@ The viewer depends on the protocol of the session.
 
 Activities on Active Directory domain resources start RDP sessions. Activities on Microsoft Entra ID resources start website sessions through the browser extension. A website session has no live viewer. You can replay a website session after it ends. See [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
 
-{/* TODO screenshot: Live Session Viewer for an RDP session */}
+![The Live Session Viewer showing an SSH session. The left pane lists the recording events, ending with "Now" and "Watching for interaction...". The player below shows the Terminate and Lock controls, and the header shows the user, target, activity, start time, and duration.](/images/privilegesecure/26.07/admin/live-session-viewer-ssh.webp)
 
 Both viewers show these details in the header:
 
@@ -90,7 +90,7 @@ Terminate a session to disconnect the user at once.
 3. (Optional) Select **Cancel Activity Session** to also cancel the activity session in Privilege Secure. The user can't sign in again through the same session.
 4. Confirm the termination.
 
-{/* TODO screenshot: Terminate Proxy Session window */}
+![The Terminate Proxy Session window with the prompt "Are you sure?", the Cancel Activity Session check box, and the Okay button.](/images/privilegesecure/26.07/admin/terminate-proxy-session.webp)
 
 For example, a user runs an unapproved script during a session. Select **Terminate Session**, select **Cancel Activity Session**, and confirm. The user is disconnected and can't reconnect through that session.
 
