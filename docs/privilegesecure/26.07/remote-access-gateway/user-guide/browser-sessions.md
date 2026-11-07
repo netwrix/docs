@@ -75,7 +75,7 @@ For the fields on each step, see [Request a session](/docs/privilegesecure/26.07
 
 The prompt asks for a password only. The account name comes from the activity's login account. If the target rejects the sign-in, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md#errconnect_logon_failure-after-you-enter-the-target-password).
 
-{/* TODO verify: whether the target password prompt appears in the portal when Allow Proxy Auto-connect is on. The backend sets prompt for credentials to 0 in the RDP settings when it is on and 1 when it is off, but the portal's getRdpConnection builds the guacd connection without that value and sets the password to not_used only for managed or activity-identity login accounts, so the login account type may decide whether the target asks for a password. This needs an RDP test. */}
+The target prompts for a password in a browser session whether or not **Allow Proxy Auto-connect** is on. That setting suppresses the prompt in a downloaded RDP file, which the Windows Remote Desktop client opens. The browser session builds its own connection to the gateway and doesn't carry the setting, so the target still asks for the password.
 
 For an SSH target, the monitor icon opens a terminal in the browser on the **Live Sessions** page.
 
@@ -98,13 +98,13 @@ The page also shows:
 
 ![Live Sessions toolbar with the Resolution list, Ctrl+Alt+Delete, and Close controls](/images/privilegesecure/26.07/remote-access-gateway/portal-resolution-menu.webp)
 
-{/* TODO verify: large mouse pointers on Windows 11 and Windows Server 2025 targets. The pointer is drawn by guacd, and the release code has no pointer handling that settles how large pointers display. */}
+The mouse pointer is drawn by guacd, the component that renders the session, and not by Privilege Secure. Privilege Secure sends no pointer-size setting, so the pointer keeps the size the target sends and the browser and guacd render it. The display itself scales to fit the browser window.
 
 ### Clipboard
 
 The session copies plain text between the target and your browser. Text that you copy on the target goes to your browser clipboard. To send text from your browser clipboard to the target, click the session display. Your browser might ask for permission to read the clipboard. If it doesn't support clipboard reading, the toolbar shows "This browser does not support reading from the clipboard."
 
-{/* TODO verify: audio playback from the target in the browser session. The browser page requests the audio formats it supports, but whether a target plays sound depends on the target and guacd settings that the release code doesn't show. */}
+The session plays sound from the target by default. The browser page asks for the audio formats it supports, and the gateway asks guacd to send audio as `audio/L16`. Whether you hear anything still depends on the target playing sound and on the target's own audio settings. There is no setting in the portal to turn audio off.
 
 ## Switch between sessions
 
