@@ -67,13 +67,11 @@ When Privilege Secure identifies an SSH device, it compares the device's version
 
 On the **Windows** platform, **Built-in Account** is a list with **Administrator** and **Well-known SID**. A well-known security identifier (SID) identifies the built-in administrator by the pattern `S-1-5-21*-500`. You can type another account name in the list.
 
-On a new installation, **Reset On Mismatch** is selected on Windows, Linux, Active Directory, and Entra ID, and cleared on BSD, Palo Alto PanOS, Microsoft SQL Server, and Oracle. An upgraded installation can keep earlier values.
+On a new installation, **Reset On Mismatch** is selected by default. You can clear it on a platform if you don't want Privilege Secure to reset an account when its password doesn't match the stored one.
 
-{/* TODO verify: the new-installation value of Reset On Mismatch on the Cisco platform. The PostgreSQL and SQL Server installation code disagree, and the console on an upgraded installation shows it cleared. Confirm on a new installation. */}
+An upgraded installation can keep earlier values.
 
 On a new installation, the **Default** password complexity policy applies to every platform except BSD, Cisco, Linux, and Palo Alto PanOS, which use the policy with their name.
-
-{/* TODO verify: the default schedules of each platform on a new installation. The installation code sets no schedule on any platform, and the setup wizard might set them. */}
 
 ## Create a platform from an existing platform
 

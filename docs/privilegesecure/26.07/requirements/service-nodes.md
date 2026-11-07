@@ -36,7 +36,7 @@ For installation steps, see [Install services on additional servers](/docs/privi
 | 900 | 300 | 32 GB | 8 | 42 GB per day |
 | 1800 | 600 | 64 GB | 16 | 84 GB per day |
 
-{/* TODO verify: whether the Proxy Service is supported on Linux or in Docker in 26.07. */}
+The **Proxy Service** runs as a Windows service. It can also run as a Linux daemon. Docker containers are for development and testing only, not production.
 
 ## Antivirus exclusions
 

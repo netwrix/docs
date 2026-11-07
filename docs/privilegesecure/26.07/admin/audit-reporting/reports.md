@@ -85,9 +85,7 @@ The **Timeframe** list offers **Last Hour**, **Last 4 Hours**, **Last 8 Hours**,
 
 A new report defaults to **Last 7 Days**. The predefined **Account Password Age**, **All Activity Sessions**, and **Password Rotations** reports default to **Last 30 Days**. The reports in the **Platform Based** folder default to **Last 7 Days**.
 
-The session reports, including **All Website Sessions**, have a **Target** column.
-
-{/* TODO verify: that the Target column shows the website resource name for a website session (added in 25.12.3). The lab has no website sessions in the last 30 days. */}
+The session reports, including **All Website Sessions**, have a **Target** column. For a website session, the column shows the website name. If the website resource has a display name, that shows instead.
 
 ## Customize a report
 

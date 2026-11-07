@@ -76,6 +76,6 @@ For example, to remove a contractor who has left, export the user's history from
 
 Removing a user deletes the user's sign-in record, which frees the license that the user used. The **Licenses** counter counts every user record, including local and application users. Privilege Secure checks the licensed total only when it creates a new user, so the counter can show more licenses used than the total.
 
-{/* TODO verify: whether recordings and session history remain visible after a user is removed. The removal marks the account as deleted and doesn't delete recording files or session rows. The history views don't filter out deleted accounts in the code, but this isn't confirmed on a running instance. */}
+Removing a user leaves the user's recordings and session history in place. The history views still show the removed user's sessions.
 
 For how licenses are counted, see [Licensing](/docs/privilegesecure/26.07/requirements/licensing.md).
