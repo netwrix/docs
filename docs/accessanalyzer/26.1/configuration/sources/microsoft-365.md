@@ -4,7 +4,7 @@ description: Add a SharePoint Online source to scan the sites, documents, sharin
 sidebar_position: 4
 ---
 
-A **SharePoint Online** source points Access Analyzer at the SharePoint Online service of one Microsoft 365 tenant. Access scans crawl the tenant's site collections, including OneDrive personal sites, and record sites, lists, libraries, folders, documents, sharing settings, sharing links, permissions, and SharePoint groups. Sensitive data scans open the documents and look for sensitive data patterns.
+A **SharePoint Online** source points Access Analyzer at the SharePoint Online service of one Microsoft 365 tenant. Access scans crawl the tenant's site collections, including OneDrive personal sites, and record sites, lists, libraries, folders, documents, sharing settings, sharing links, permissions, and SharePoint groups. Classification scans open the documents and look for sensitive data patterns.
 
 Authentication uses an app registration with a certificate rather than a client secret, so the setup has one extra step: you upload the service account's public certificate to the app registration in the Microsoft Entra admin center.
 
@@ -116,7 +116,7 @@ Access scans skip some content on every run, whatever the scope:
 
 - Archived site collections, the content type hub, and the root site of the OneDrive host. For the SharePoint admin site collection, the scan records the site collection and its permissions but not its contents.
 - The permissions and contents of a site collection locked with **No access**. The scan records the site collection itself, with its URL, type, lock state, and sharing settings, so reports can show that it exists and is locked.
-- The hidden **Sharing Links** list, lists and libraries with no items, and system lists and libraries such as **Site Pages**, **Site Assets**, **Style Library**, **Preservation Hold Library**, and anything under `_catalogs` or `_layouts`.
+- Lists and libraries with no items, the hidden **Sharing Links** list, and system lists and libraries such as **Site Pages**, **Site Assets**, **Style Library**, **Preservation Hold Library**, and anything under `_catalogs` or `_layouts`.
 
 <details>
 <summary>Built-in exclusion patterns for sites, lists, folders, and documents</summary>
@@ -166,7 +166,7 @@ See [Scan types](../../admin/scans/scan-types.md) for how these options appear w
 
 ## Sensitive Data Scans
 
-Sensitive data scans read the contents of the documents an Access scan found and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). Their options narrow which documents they read:
+Classification scans read the contents of the documents an Access scan found and run the [classifiers](../classifiers/index.md) the scan selects against them. Their options narrow which documents they read:
 
 | Option | Default | Effect |
 |---|---|---|
@@ -261,7 +261,7 @@ One record per item in a scanned list or library. Access Analyzer classifies eac
 | `sourceSystemId` | Derived from `FileRef` | Full URL of the item. |
 | `createdDate` | `Created` | When the file, folder, or list item was created in SharePoint. |
 | `modifiedDate` | `Modified` | When the file, folder, or list item was last changed. |
-| `spoDocumentId` | `UniqueId` | Unique ID of a document, a GUID. Sensitive data scans use it to download the file. Folders and list items don't carry it. |
+| `spoDocumentId` | `UniqueId` | Unique ID of a document, a GUID. Classification scans use it to download the file. Folders and list items don't carry it. |
 
 ### Permission Sets and Sharing Links
 
@@ -328,4 +328,4 @@ One record per member of each SharePoint group, and per site collection administ
 
 ### Sensitive Data Scan Attributes
 
-Sensitive data scans locate each document by the `spoDocumentId` and URL the Access scan stored. For each document they read, they also record SharePoint's content hash for the file (`vti_streamhash`), which a **Differential scan** compares to tell whether the document changed.
+Classification scans locate each document by the `spoDocumentId` and URL the Access scan stored. For each document they read, they also record SharePoint's content hash for the file (`vti_streamhash`), which a **Differential scan** compares to tell whether the document changed.

@@ -4,7 +4,7 @@ description: How the Compliance page arranges eight of the Data reports under GD
 sidebar_position: 3
 ---
 
-The **Compliance** page is a second way into the Data reports, arranged for someone preparing evidence for an audit rather than investigating an incident. It organizes reports that already exist: it doesn't run checks against a framework, score your environment, or produce findings of its own. What it gives you is a shortlist of the reports worth opening for a given framework, labeled by the control area each one covers.
+The **Compliance** page is a second way into the Data reports, arranged for someone preparing evidence for an audit rather than investigating an incident. It organizes reports that already exist: it doesn't run checks against a framework, score your environment, or produce findings of its own. It gives you a shortlist of the reports worth opening for a given framework, labeled by the control area each one covers.
 
 Open the page from **Reports > Compliance**. [Data reports](data.md) describes every report the page links to, with its filters and cards.
 
@@ -56,4 +56,4 @@ The eight reports on this page are the seven file server reports from the Data p
 
 Click a row to open the report exactly as the Data page does, with the same filters and cards. The link at the top of the report reads **Back to Data reports** and takes you to the Data reports page, not back to Compliance. To return to the framework tab you were on, use your browser's Back button or open **Reports > Compliance** again.
 
-Because the reports are the same ones, the prerequisites are too: an Access scan on your File Server sources for the permission and file share structure reports, a Sensitive data scan for the sensitive data reports, an Access scan on your SharePoint Online sources for Shared Links, and events from Netwrix Activity Monitor for Activity Investigation. [Dashboards and reports](../index.md) has the full table.
+Because the reports are the same ones, the prerequisites are too: an Access scan on your File Server sources for the permission and file share structure reports, a Classification scan for the sensitive data reports, an Access scan on your SharePoint Online sources for Shared Links, and events from Netwrix Activity Monitor for Activity Investigation. [Dashboards and reports](../index.md) has the full table.
