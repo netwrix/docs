@@ -39,7 +39,7 @@ The **Configure Secure WinRM Connection** window offers three certificate source
 
 A certificate thumbprint is 40 hexadecimal characters, for example `0123456789ABCDEF0123456789ABCDEF01234567`. Replace the example with the thumbprint of your certificate.
 
-{/* TODO screenshot: Configure Secure WinRM Connection window with the three certificate sources and the thumbprint box */}
+![The Configure Secure WinRM Connection window with the three certificate sources and the Host certificate thumbprint box.](/images/privilegesecure/26.07/resources/configure-secure-winrm.webp)
 
 The server now has a certificate for WinRM over HTTPS.
 

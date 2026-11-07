@@ -36,7 +36,7 @@ The form accepts a **Length** from 5 to 19 characters. When a connection profile
 1. Under **Include Characters**, select the kinds of characters to include.
 1. Click **Save**.
 
-{/* TODO screenshot: the Activity Token Complexity form with default values */}
+![The Activity Token Complexity form with the default values.](/images/privilegesecure/26.07/configuration/activity-token-complexity-form.webp)
 
 ### Example
 
