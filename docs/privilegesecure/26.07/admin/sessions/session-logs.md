@@ -18,7 +18,7 @@ The **Session Logs** window shows the log messages for one session. Use it to se
 
 For example, a session shows **Failed**. Select it, select **View Logs**, and filter **Log Level** to errors to see which provisioning step failed.
 
-{/* TODO screenshot: Active tile toolbar with a session selected and View Logs enabled */}
+![The Active tile toolbar with a session selected and View Logs enabled.](/images/privilegesecure/26.07/admin/active-tile-view-logs.webp)
 
 You can also open the log from other pages.
 
