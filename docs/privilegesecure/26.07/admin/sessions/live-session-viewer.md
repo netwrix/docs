@@ -25,7 +25,7 @@ The **Terminate Session** and **Lock Session** permissions stay disabled until *
 2. Select the expand icon on the session's row. The row lists one entry for each sign-in, for example `RDP Session is live now.`
 3. Select the entry with the eye icon to open the viewer. If the entry has no icon, the session isn't being recorded or you don't have permission to watch it.
 
-{/* TODO screenshot: Active tile with a session row expanded to show the recording */}
+![The Active tile with a session row expanded to show its recordings. The row lists three completed SSH sessions and the current one, "SSH Session is live now."](/images/privilegesecure/26.07/admin/live-session-row-expanded.webp)
 
 If the user signed in to the session more than once, the row lists several recordings. Select the current one.
 
@@ -75,7 +75,7 @@ The window opens with the title "Netwrix Privilege Secure" and the message "Your
 
 The first two options are selected when the window opens. The options build on each other. Selecting **Opening new activities to this resource** also selects **Opening new sessions on this activity**, and selecting **Any further activity with this account** selects both. When you lock from the **Active** tile, the window doesn't offer **Opening new sessions on this activity**.
 
-{/* TODO screenshot: Lock Session window with a title, a message, and the Prevent User From options */}
+![The Lock Session window with the Lock Title "Netwrix Privilege Secure", a Lock Message, and the Prevent User From options "Opening new activities to this resource" and "Any further activity with this account (Unlock via Users & Groups)".](/images/privilegesecure/26.07/admin/lock-session-dialog.webp)
 
 To unlock the session, select **Unlock** in the viewer. You can also select the session on the **Active** tile and select **Unlock Activity**.
 
