@@ -22,7 +22,7 @@ When you start a session from a card on **My Activities**, the **Configure sessi
 
 When you click **Start Session**, Privilege Secure checks the ticket in ServiceNow before it creates the session. If the check fails, a message appears at the top of the page and the dialog stays open, for example "Ticket 'INC0009004' has status 'Closed' which is not allowed." or "Ticket 'INC0999999' not found in ServiceNow." For all messages, see [ServiceNow integration](/docs/privilegesecure/26.07/integrations/itsm/servicenow.md#what-privilege-secure-does-with-a-ticket).
 
-{/* TODO screenshot: the Ticket Number box with the label and the validation message. Retake with a demo resource name, because the lab host name shows in the dialog. */}
+![The Notes step of the session request, with the Notes for this session box and the Ticket number for this session box showing the INC# label and the validation message "The ticket number entered is invalid. Please enter a valid ServiceNow ticket number."](/images/privilegesecure/26.07/user-guide/servicenow-ticket-field.webp)
 
 If the connection profile requires a ticket number, you can't continue without one.
 
@@ -59,7 +59,7 @@ When you end a session that has a ServiceNow ticket, the console shows a dialog 
 
    The session ends. To keep the session running, click **Cancel** instead.
 
-{/* TODO screenshot: the End Session dialog with Keep In Progress, On Hold, and Resolved. The lab has no ServiceNow connector. */}
+![The End Session dialog, titled End Session, with the prompt "How should the ServiceNow ticket be updated?", a link to ticket INC0000055, and the buttons Keep In Progress, On Hold, Resolved, and Cancel.](/images/privilegesecure/26.07/user-guide/end-session-servicenow-dialog.webp)
 
 The text in this dialog appears in English in every console language.
 

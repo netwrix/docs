@@ -34,7 +34,7 @@ If you enter your username as `<DOMAIN>\<username>` or `<username>@<domain>`, th
 
 After you sign in, the console opens on the Dashboard.
 
-{/* TODO screenshot: sign-in page with the Username, Password, and Domain fields */}
+![The Privilege Secure sign-in page with the Username, Password, and Domain fields and the Login button.](/images/privilegesecure/26.07/user-guide/sign-in-form.webp)
 
 ## Sign in with single sign-on
 
