@@ -67,8 +67,8 @@ The console shows the recovery codes once, after registration. Copy them to a se
 
 After registration, each sign-in asks for a code from your authenticator application. The console opens on the Dashboard after you enter a valid code. If your authenticator application is unavailable, enter one of your recovery codes in the same code box instead of the authenticator code.
 
-{/* TODO screenshot: MFA registration page with the QR code (blur the code) */}
-{/* TODO screenshot: recovery codes dialog */}
+![The Register Authenticator page with a QR code and a manual key.](/images/privilegesecure/26.07/user-guide/mfa-register.webp)
+![The recovery codes dialog with the list of one-time recovery codes.](/images/privilegesecure/26.07/user-guide/mfa-recovery-codes.webp)
 
 ## Change an expired password
 
