@@ -95,7 +95,7 @@ Go to **Configuration > Scan executions**. The list refreshes on its own, and th
 
 If the status is **Failed**, open the row's actions menu, click **View logs**, and check the **Detailed logs** tab. A sign-in error points at the certificate or the app registration. [Scan executions](../../admin/scans/scan-executions.md) lists every status.
 
-## 6. Create the Classification Scan
+## 6. Create the Classification scan
 
 After the Access scan shows **Completed**, create the second scan. It downloads documents from the Access scan's inventory and runs classifiers against them. By default the scan classifies only the file types on **Include list** and skips documents larger than 10 MB; both settings are on the **SharePoint scanning** card in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
 

@@ -8,7 +8,7 @@ A list is a set of words or phrases that classifiers read. Most lists hold the l
 
 Access Analyzer ships the lists its built-in classifiers use, such as **ABA routing number labels** and **Australian Passport Keywords**. You can add your own. You need the Admin role to create, edit, or delete lists.
 
-## The Lists Tab
+## The Lists tab
 
 Go to **Classification > Classifiers** and select the **Lists** tab.
 
@@ -24,7 +24,7 @@ Go to **Classification > Classifiers** and select the **Lists** tab.
 | **Description** | What the list is for. |
 | **Actions** | **View list** for a built-in list; **Edit** and **Delete** for yours. |
 
-## Create a List
+## Create a list
 
 1. On the **Lists** tab, click **Add list**.
 2. In **Name**, enter a name, such as `Employee ID labels`.
@@ -44,7 +44,7 @@ Go to **Classification > Classifiers** and select the **Lists** tab.
 
 Whether a word must stand alone is up to the filter that reads the list: **is within N characters of text** has a **Whole words** option, on by default, so `id` doesn't match inside `idle`.
 
-## Score a Pattern's Matches
+## Score a pattern's matches
 
 Under **Scores a pattern's matches**, click **Add a pattern** to bind the list to a pattern, and choose the role its words play:
 
@@ -56,7 +56,7 @@ Under **Scores a pattern's matches**, click **Add a pattern** to bind the list t
 
 When a scan decides whether a match of that pattern is labeled, it uses the list's words in place of the built-in ones. Use this to teach a built-in classifier the labels your organization writes next to a value, without copying the classifier.
 
-## Edit or Delete a List
+## Edit or delete a list
 
 Open the list's **Actions** menu and click **Edit** or **Delete**. A change to a list applies to every classifier that reads it, from the next scan on. You can't delete a list while a classifier reads it; the message names the classifiers to change first.
 

@@ -45,7 +45,7 @@ The scan target is the set of sources a scan covers: a fixed list (**Specific So
 
 ## Sensitive Data Pattern and Pattern Group
 
-A classifier decides whether a file holds one kind of sensitive data, such as credit card numbers or a national ID, and how severe the finding is: **Critical**, **High**, **Medium**, or **Low**. It's built from patterns, which are regular expressions or keyword lists that find candidate values, plus filters such as a nearby label or a passing checksum, and severity rules. Access Analyzer ships 129 built-in classifiers, and you can copy them or build your own, such as one for your employee IDs. A Classification scan runs the classifiers you select, either directly or by label. See [Classifiers](../configuration/classifiers/index.md).
+A classifier decides whether a file holds one kind of sensitive data, such as credit card numbers or a national ID, and how severe the finding is: **Critical**, **High**, **Medium**, or **Low**. It's built from patterns, which are regular expressions or keyword lists that find candidate values, plus filters such as a nearby label or a passing checksum, and severity rules. Access Analyzer ships built-in classifiers, and you can copy them or build your own, such as one for your employee IDs. A Classification scan runs the classifiers you select, either directly or by label. See [Classifiers](../configuration/classifiers/index.md).
 
 ## Dashboard and Report
 

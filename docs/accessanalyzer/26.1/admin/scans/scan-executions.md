@@ -137,7 +137,7 @@ An execution that has just started shows **No logs available yet** until the age
 
 ![Execution logs dialog Detailed logs tab with structured log lines](/images/accessanalyzer/26.1/scans/execution-logs-detailed.webp)
 
-## Files Tab
+## Files tab
 
 The **Files** tab of a Classification scan's execution lists every file the run recorded with findings, an error, or a skip. Clean files are counted, not listed: the footer reads, for example, **4,407 files recorded. 1,519 were clean and are not listed.**
 
@@ -159,7 +159,7 @@ A **◐** marker on a row means the file was classified only partly, because cla
 
 Use **Search paths** and the **Outcome**, **Severity**, and **Classifier** filters to narrow the list. Expand a row to see its findings, each with its severity, classifier, kind, and pattern. For an errored or skipped file, the expanded row shows the error the scan logged.
 
-### Explain a Finding
+### Explain a finding
 
 Click a finding to open its decision view. It draws how the classifier reached its verdict, from the file through each detector and its evidence to the severity that matched, and lists the **Summary**, **Conditions**, **Evidence**, and **Rule source** beside it.
 
@@ -167,7 +167,7 @@ Click a finding to open its decision view. It draws how the classifier reached i
 
 The evidence shows each match masked: digits appear as `#`, letters as `x`, and punctuation as `*`, with up to 24 characters of context on each side. **Focus on result** hides the branches that didn't decide the result, and **Copy trace JSON** copies the full evaluation for troubleshooting.
 
-### File List Retention
+### File list retention
 
 Three settings on the **Classification** card of **Settings > Application** control what the **Files** tab keeps:
 

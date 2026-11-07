@@ -105,7 +105,7 @@ The status moves from **Pending** to **Running** and ends at **Completed**, **Co
 
 [Scan executions](../../admin/scans/scan-executions.md) lists every status and the pause, resume, and stop controls.
 
-## 5. Create the Classification Scan
+## 5. Create the Classification scan
 
 After the Access scan shows **Completed**, create the second scan. It runs classifiers against the files in the Access scan's inventory. By default the scan classifies only the file types on **Include list** and skips files larger than 10 MB; both settings are on the **File server scanning** card in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
 

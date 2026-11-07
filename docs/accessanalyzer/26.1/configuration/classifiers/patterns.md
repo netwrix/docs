@@ -8,7 +8,7 @@ A pattern finds candidate values in a file's text. It's either a regular express
 
 Access Analyzer ships the patterns its built-in classifiers use. You can add your own and use them in any custom classifier. You need the Admin role to create, edit, or delete patterns.
 
-## The Patterns Tab
+## The Patterns tab
 
 Go to **Classification > Classifiers** and select the **Patterns** tab.
 
@@ -28,7 +28,7 @@ Select rows to act on several patterns at once: **New classifier** opens the bui
 | **Description** | What the pattern finds. |
 | **Actions** | For every pattern, **Test pattern** and **Edit labels**. For a built-in pattern, **View pattern** and **Edit (makes your copy)**, or **Open your copy** and **Restore the built-in** after you copy it. For a custom pattern, **Copy regex** (regular expressions only), **Edit**, and **Delete**. |
 
-## Create a Pattern
+## Create a pattern
 
 1. On the **Patterns** tab, click **Create pattern**.
 2. In **Name**, enter a name, such as `Employee ID`.
@@ -50,7 +50,7 @@ A message confirms the save: **Pattern "`<name>`" created**. Use the pattern in 
 | **Keywords** | Yes, for **Keyword list** | One word per line; up to 10,000 keywords of up to 200 characters each, and 256 KB in total. A keyword list ignores letter case and also matches inside longer words; add the **is a whole word** or **matches case exactly** filter in the detector to change that. |
 | **Labels** | No | Key and value pairs. A detector set to use every pattern with a label picks up the patterns that carry it. |
 
-## Regular Expression Dialect
+## Regular expression dialect
 
 Access Analyzer compiles regular expressions with a linear-time engine that uses the RE2 dialect. Linear-time matching means a pattern can't stall a scan on a pathological input, but the engine rejects a few constructs that other regex engines accept:
 
@@ -64,7 +64,9 @@ Access Analyzer compiles regular expressions with a linear-time engine that uses
 
 When the expression uses one of these, the field shows an error that names the construct and its position. Rewrite the expression without it. Most lookarounds become a detector filter instead: to require a label before a value, use **is within N characters of text** rather than a lookbehind. A word boundary (`\b`) at each end stops a pattern from matching inside a longer token.
 
-## Test a Pattern
+A checksum checks the whole match, unless the match captures exactly one named group, written `(?P<name>…)`. Then it checks only that group's text, and the match still includes the text around the group. Use a named group to keep a label out of the check. For example, with the **UK NHS number (mod 11)** checksum, the pattern `NHS:\s*(?P<nhs>\d{3} \d{3} \d{4})` keeps `NHS: 943 476 5919` and drops `NHS: 943 476 5918`, because the checksum reads only the number after the label. Unnamed groups don't count, and a match with two or more named groups is checked whole.
+
+## Test a pattern
 
 1. On the **Patterns** tab, open the pattern's **Actions** menu.
 2. Click **Test pattern**.
@@ -74,11 +76,11 @@ When the expression uses one of these, the field shows an error that names the c
 
 **Line by line**, the default, checks each line separately; **Multiline** checks the whole text as one document and highlights every match, up to the first 100. A test accepts up to 64 KB of sample text, and up to 200 lines in **Line by line** mode, and has 2 seconds to complete. To test a pattern together with the filters and severity rules around it, test the classifier instead; see [Test a classifier](build-a-classifier.md#test-a-classifier).
 
-## Change a Built-in Pattern
+## Change a built-in pattern
 
 Built-in patterns are read-only. Click **Edit (makes your copy)** to create your own copy; scans then use your copy wherever a classifier uses the built-in pattern. Click **Restore the built-in** to delete your copy. Scans run the built-in pattern as shipped from their next run, and past findings stay.
 
-## Edit or Delete a Custom Pattern
+## Edit or delete a custom pattern
 
 1. On the **Patterns** tab, open the pattern's **Actions** menu.
 2. Click **Edit** to change the pattern in the side panel, or **Delete** to remove it.

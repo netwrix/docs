@@ -14,11 +14,11 @@ A classifier is built from smaller parts, all managed on the Classifiers page:
 | **Checksum** | A check-digit rule that a candidate value must pass. | **Luhn (payment cards)** rejects most digit strings that only look like card numbers. |
 | **Classifier** | Detectors that use patterns, filters that keep only the matches worth reporting, and severity rules that decide how serious the finding is. | **Credit Cards** reports a card number that passes the Luhn check and sits near a card label. |
 
-Access Analyzer ships 129 built-in classifiers, together with the patterns, lists, and checksums they use. You can publish or unpublish any classifier, change a built-in classifier by copying it, and build new classifiers of your own.
+Access Analyzer ships built-in classifiers, together with the patterns, lists, and checksums they use. You can publish or unpublish any classifier, change a built-in classifier by copying it, and build new classifiers of your own.
 
 To manage classifiers, go to **Classification > Classifiers**. The page is available to the Admin role; see [Users and roles](../../admin/users.md).
 
-## The Classifiers Page
+## The Classifiers page
 
 The page has four tabs:
 
@@ -29,7 +29,7 @@ The page has four tabs:
 
 The selected tab is part of the page address, so you can bookmark a tab or share a link to it.
 
-## The Classifiers Tab
+## The Classifiers tab
 
 ![Classifiers tab listing built-in classifiers with their regulations and Published switches](/images/accessanalyzer/26.1/classifiers/classifiers-list.webp)
 
@@ -60,7 +60,7 @@ The per-country IBAN (International Bank Account Number) classifiers share one r
 
 Select rows to apply **Edit labels** to several classifiers at once.
 
-### Row Actions
+### Row actions
 
 | Classifier | Actions |
 |---|---|
@@ -73,13 +73,13 @@ Select rows to apply **Edit labels** to several classifiers at once.
 
 When you delete a classifier, scans stop running it from their next run. Findings it already recorded stay, and a warning lists the scans that used it.
 
-## Published and Unpublished Classifiers
+## Published and unpublished classifiers
 
-Only published classifiers are offered to scans, and only published classifiers run. Turn a classifier's **Published** switch off to stop scans from running it without deleting it, for example while you rework a custom classifier, or when a built-in classifier finds data your organization doesn't track. The switch saves as soon as you change it, and a message confirms it: **`<name>` is published** or **`<name>` is unpublished**. When unpublishing affects scans, a warning names the scans that stop running the classifier from their next run.
+Only published classifiers are offered to scans, and only published classifiers run. A classifier you build is published when you save it, so there's no separate publish step. Turn a classifier's **Published** switch off to stop scans from running it without deleting it, for example while you rework a custom classifier, or when a built-in classifier finds data your organization doesn't track. The switch saves as soon as you change it, and a message confirms it: **`<name>` is published** or **`<name>` is unpublished**. When unpublishing affects scans, a warning names the scans that stop running the classifier from their next run.
 
 A scan that selects classifiers by label picks up any classifier you publish later that carries those labels, and drops any classifier you unpublish. A scan that lists specific classifiers runs only the ones in its list. See [How a scan picks its classifiers](#how-a-scan-picks-its-classifiers).
 
-## Built-in and Custom Classifiers
+## Built-in and custom classifiers
 
 Built-in classifiers are read-only. When you open one, a banner reads "This classifier ships with the product and is read-only. Edit makes your own copy, which runs in its place until you delete it."
 
@@ -87,7 +87,7 @@ To change a built-in classifier, open its **Actions** menu and click **Edit (mak
 
 Custom classifiers are yours to create, test, edit, and delete. See [Build a classifier](build-a-classifier.md).
 
-## How a Scan Picks Its Classifiers
+## How a scan picks its classifiers
 
 A Classification scan chooses its classifiers on the **Classifiers** step of the **Create scan** wizard, under **Which classifiers should this scan run?**:
 
@@ -102,13 +102,13 @@ There is no default set: every Classification scan names its classifiers, either
 Access Analyzer converts pattern groups from earlier versions into classifiers automatically. Each group becomes a custom classifier with the group's name, the group's patterns get a `group=<name>` label, and scans that selected the group run the new classifier.
 :::
 
-## What a Scan Classifies
+## What a scan classifies
 
-A Classification scan extracts text from Excel workbooks, Word documents, Portable Document Format (PDF) files, and plain text files. It can't read encrypted Office documents. It reads text in images and scanned PDFs only when the experimental **OCR** (optical character recognition) feature flag is on; see [Feature flags](../settings/feature-flags.md).
+A Classification scan extracts text from Excel workbooks, Word documents, Portable Document Format (PDF) files, plain text files, images, and scanned PDFs. It can't read encrypted Office documents.
 
 The scan skips files above the size limit. The default limit is 10 MB for both File Server and SharePoint Online sources, adjustable between 1 and 100 MB. Each source type also has an include list of file types to classify, used by default, and an exclude list of media, binaries, fonts, and similar files, used when the include list is off or empty. These settings are on the **File server scanning** and **SharePoint scanning** cards of [Application settings](../settings/application.md#file-server-scanning-and-sharepoint-scanning).
 
-## Where Findings Appear
+## Where findings appear
 
 Each execution of a Classification scan lists the files it read on its **Files** tab, with the outcome, severity, and classifiers for every file with findings. Each finding opens a decision view that explains how the classifier reached its verdict. See [Scan executions](../../admin/scans/scan-executions.md#files-tab).
 

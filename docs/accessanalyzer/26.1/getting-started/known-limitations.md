@@ -42,7 +42,7 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 
 1. You can't edit or delete [built-in classifiers](../configuration/classifiers/index.md#built-in-and-custom-classifiers) or built-in lists. To change a built-in classifier, make your copy, which runs in its place; to change a built-in list, bind your own list to the same pattern.
 2. Only [published classifiers](../configuration/classifiers/index.md#published-and-unpublished-classifiers) run. Unpublishing a classifier removes it from every scan's next run.
-3. [Classification scans](../configuration/classifiers/index.md#what-a-scan-classifies) extract text from Excel, Word, Portable Document Format (PDF), and plain text files. They don't open encrypted documents, and they read text in images only when the experimental **OCR** (optical character recognition) feature flag is on.
+3. [Classification scans](../configuration/classifiers/index.md#what-a-scan-classifies) extract text from Excel, Word, Portable Document Format (PDF), plain text, and image files. They don't open encrypted documents.
 
 ## Dashboards and Reports
 

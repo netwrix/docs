@@ -4,11 +4,11 @@ description: Review the built-in check-digit rules and build your own in the vis
 sidebar_position: 4
 ---
 
-Many identifiers end in a check digit computed from the other digits: payment card numbers, International Bank Account Numbers (IBANs), United States bank routing numbers, and many national IDs. A checksum is the rule that recomputes that digit. A detector's **passes a checksum** filter keeps only the matches that pass, which removes most random digit strings that merely have the right shape. See [Build a classifier](build-a-classifier.md#detectors).
+Many identifiers end in a check digit computed from the other digits: payment card numbers, International Bank Account Numbers (IBANs), United States bank routing numbers, and many national IDs. A checksum is the rule that recomputes that digit. A detector's **passes a checksum** filter keeps only the matches that pass, which removes most random digit strings that merely have the right shape. A checksum checks the whole match, unless the match captures exactly one [named group](patterns.md#regular-expression-dialect), and then it checks only that group's text. See [Build a classifier](build-a-classifier.md#detectors).
 
 You need the Admin role to create, edit, or delete checksums.
 
-## The Checksums Tab
+## The Checksums tab
 
 Go to **Classification > Classifiers** and select the **Checksums** tab.
 
@@ -24,7 +24,7 @@ Go to **Classification > Classifiers** and select the **Checksums** tab.
 | **Used by** | How many classifiers use the checksum. |
 | **Actions** | **View checksum** and **Duplicate** for a built-in checksum; **Edit**, **Duplicate**, and **Delete** for yours. A duplicate is named `<name> copy`. You can't delete a checksum while a classifier uses it. |
 
-Access Analyzer ships 17 checksums:
+Access Analyzer ships these checksums:
 
 | Checksum | Checks |
 |---|---|
@@ -46,7 +46,7 @@ Access Analyzer ships 17 checksums:
 | **Spanish NIF / NIE** | Spanish tax and foreigner identification numbers. |
 | **UK NHS number (mod 11)** | UK National Health Service (NHS) numbers. |
 
-## Create a Checksum
+## Create a checksum
 
 The checksum builder describes a rule in three steps: clean up the value, add up and divide, and decide. A **Check it** panel recomputes the rule on a number as you build it.
 

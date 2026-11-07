@@ -28,7 +28,7 @@ An Access Scan inventories shares, folders, files (and their metadata), and site
 
 ### Sensitive Data
 
-Classifiers find sensitive data in file content and rate each finding **Critical**, **High**, **Medium**, or **Low**. Access Analyzer ships 129 built-in classifiers, and you can copy them or build your own from patterns, word lists, and checksums. A scan records which classifiers reported a file and why, but never the matched text. See [Classifiers](../configuration/classifiers/index.md).
+Classifiers find sensitive data in file content and rate each finding **Critical**, **High**, **Medium**, or **Low**. Access Analyzer ships built-in classifiers, and you can copy them or build your own from patterns, word lists, and checksums. A scan records which classifiers reported a file and why, but never the matched text. See [Classifiers](../configuration/classifiers/index.md).
 
 ### Dashboards and Reports
 

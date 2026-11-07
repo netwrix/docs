@@ -1,5 +1,5 @@
 ---
-title: Build a Classifier
+title: Build a classifier
 description: Create a custom classifier in the classifier builder, from detectors and filters to severity rules, and test it on sample text before you save.
 sidebar_position: 1
 ---
@@ -8,7 +8,7 @@ The built-in classifiers cover regulated identifiers, financial data, and secret
 
 You build classifiers in the classifier builder. It opens when you click **New classifier** on the **Classifiers** tab, when you open a classifier, and when you copy a built-in classifier with **Edit (makes your copy)**. You need the Admin role.
 
-## Parts of a Classifier
+## Parts of a classifier
 
 The builder lays a classifier out from top to bottom in the order the scan evaluates it:
 
@@ -21,7 +21,7 @@ The builder lays a classifier out from top to bottom in the order the scan evalu
 | **Severity variables** | Optional conditions you name once and reuse in any severity rule. |
 | **Severities** | Rules under **Critical**, **High**, **Medium**, and **Low**. The scan reports the highest severity whose rule matches; if no rule matches, the classifier reports nothing. |
 
-### The Builder Toolbar
+### The builder toolbar
 
 The bar across the top of the builder holds the classifier's name and everything that isn't a rule. Replace **Untitled classifier** with a name, and click **Details** to add a **Description**, **Regulations**, and **Labels**. **Visual** and **Code** switch between editing the classifier as a form, which this page describes, and as text. **Cancel** leaves without saving, and **Create classifier** saves; for an existing classifier, it reads **Save changes**.
 
@@ -29,7 +29,7 @@ The bar across the top of the builder holds the classifier's name and everything
 Edits you make in **Code** don't carry over to **Visual**. If you switch back to **Visual**, the builder asks first and then discards them.
 :::
 
-## Create a Classifier
+## Create a classifier
 
 The following steps build an **Employee ID** classifier that reports `EMP-` numbers next to a label such as "Employee ID". It uses the **Employee ID** pattern from [Create a pattern](patterns.md#create-a-pattern) and the **Employee ID labels** list from [Create a list](lists.md#create-a-list). Create those first.
 
@@ -41,9 +41,10 @@ The following steps build an **Employee ID** classifier that reports `EMP-` numb
    1. Under **Detectors**, click **Add detector**, and then click **Patterns**.
    2. In **Detector name**, enter a name, such as `Employee badge number`.
    3. Leave **One pattern** selected, and in **Pick a pattern**, select **Employee ID**.
-   4. Click **Add filter**, and then click **is within N characters of text**.
-   5. Set the distance to `100`, select **Employee ID labels** in place of **the values typed here**, and select **Or in the column header**.
-   6. Click **Done**.
+   4. Click **Add filter** to open the filters.
+   5. In the filters, click **Add filter**, and then click **is within N characters of text**.
+   6. Set the distance to `100`, select **Employee ID labels** in place of **the values typed here**, and select **Or in the column header**.
+   7. Click **Done**.
 6. Add a severity rule:
    1. Under **Medium**, click **Add rule**.
    2. Click **Add condition**, and then click **Detector test**.
@@ -53,7 +54,7 @@ The following steps build an **Employee ID** classifier that reports `EMP-` numb
 
 ![Detector with the Employee ID pattern and a filter that requires a word from the Employee ID labels list within 100 characters](/images/accessanalyzer/26.1/classifiers/detector-filter-list.webp)
 
-A message confirms the save: **`<name>` saved — scans use it within a minute**. The classifier appears on the **Classifiers** tab as a custom classifier.
+A message confirms the save: **`<name>` saved — scans use it within a minute**. The classifier appears on the **Classifiers** tab as a custom classifier. Saving a new classifier turns its **Published** switch on, so there's no separate publish step; see [Published and unpublished classifiers](index.md#published-and-unpublished-classifiers).
 
 If something is missing, the builder highlights it and reports **Fix the highlighted problems, then save again**, with messages such as **Pick a pattern**, **Add a condition**, or **Add a rule to at least one severity**.
 
@@ -75,7 +76,7 @@ A detector is one thing a classifier looks for. Severity rules don't read the fi
 
 Every detector has a name, which severity rules use to refer to it. Click **Look only when…** on a pattern detector, or **Ask only when…** on a System One detector, to add a condition the detector needs before it runs.
 
-### Pattern Detectors
+### Pattern detectors
 
 A pattern detector finds candidate values. Choose **One pattern** to use a single pattern, or **Patterns by label** to use every pattern with a **Label key** and **Label value**, and choose whether **any of them** or **all of them** must match. After you click **Done**, the detector shows a summary of its filters, such as **within 100 of a list's words or header**. Click **Edit filters** to change them.
 
@@ -95,9 +96,13 @@ Filters narrow the pattern's matches to the ones that count:
 | **matches case exactly** | The letter case matches. Keyword lists only; matches from other patterns always pass. |
 | **passes a checksum** | The match passes a check-digit rule from the [Checksums](checksums.md) tab. A keyword list never checks. A detector can use one checksum. |
 
+Detectors in one classifier that read the same pattern must use the same checksum, and a detector with no checksum counts as different from one with a checksum. The builder refuses to test or save a classifier that breaks this rule, and it reports **Reads the same pattern as "`<detector name>`" with a different checksum**, where `<detector name>` is another detector that reads the pattern.
+
+**Or in the column header** works only on delimited text, such as a comma-separated values (CSV) file or a sheet in an Excel workbook. Access Analyzer treats text as a table when at least 3 of its first 20 non-empty lines, including the first, split into the same number of cells on one delimiter: tab, comma, semicolon, or pipe. The first non-empty line is the header.
+
 **Found when** decides when the detector counts as found: **Any match passes the filters**, **Every match passes the filters**, or **Exactly one match passes the filters**. "Every" also holds when the pattern has no matches at all.
 
-### System One Detectors
+### System One detectors
 
 A System One detector asks System One a question about the file and records which option it chose. Use one when the answer depends on meaning rather than on a shape you can write down, such as whether a document is a record about one identifiable person.
 
@@ -113,7 +118,7 @@ A question needs at least two options. By default, a classifier can ask up to 8 
 
 To use the answer, add a **System One answer** condition to a severity rule, and then select the detector and the option that must be the answer. See [Severity rules](#severity-rules).
 
-## Severity Rules
+## Severity rules
 
 Each rule under a severity starts with **ALL**, **ANY**, or **AT LEAST N** **of the following**, followed by conditions. Click **not** before a rule or condition to negate it. Click **Save as a variable** to turn a rule into a [severity variable](#severity-variables), and **Delete** to remove it. Groups nest up to three levels deep; past that, save the inner group as a variable.
 
@@ -133,7 +138,7 @@ Each rule under a severity starts with **ALL**, **ANY**, or **AT LEAST N** **of 
 
 The classifier reports the highest severity with a rule that holds. For example, the built-in **Credit Cards** classifier reports **Medium** when any card brand's detector finds a number that passes the Luhn check.
 
-### System One Review
+### System One review
 
 Under any severity, click **Ask System One before `<severity>` is final** to add a review. System One runs it when the severity's rule holds, and the answer decides whether that severity stands. **What System One does** has two settings:
 
@@ -144,11 +149,11 @@ Under any severity, click **Ask System One before `<severity>` is final** to add
 
 A review has the same **Confidence** and **Model** settings as a System One detector, and it counts toward the same limit on System One questions. Click **Remove** to delete a review.
 
-## Severity Variables
+## Severity variables
 
 A severity variable is a named condition you define once under **Severity variables** and reuse in any severity rule with the **Variable** condition. Use one when several severities share a test, such as "a card number near a card label", so a change to the test applies everywhere it's used.
 
-## Test a Classifier
+## Test a classifier
 
 The **Test** panel runs the classifier you're editing on sample text with the same engine a scan uses, before you save.
 
@@ -168,7 +173,7 @@ To test a saved classifier without opening the builder, click **Try it** in its 
 
 The decision tree draws the file, each detector with its match count, and each severity that passed or failed. **Focus on result** hides the branches that didn't decide the result, and **Copy trace JSON** copies the full evaluation for troubleshooting.
 
-## Edit a Classifier
+## Edit a classifier
 
 1. On the **Classifiers** tab, click the classifier name.
 2. Change the classifier in the builder.

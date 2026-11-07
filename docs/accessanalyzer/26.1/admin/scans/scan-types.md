@@ -50,7 +50,7 @@ Exclude rules always take precedence over include rules. A pattern in **Exclude 
 
 Access scans feed the reports in the **Permissions** category on **Reports > Data**: for File Server, **Broken Inheritance**, **High Risk ACLs**, **Open Access**, and **Share Audit**; for SharePoint Online, **Shared Links**, **High-Risk ACLs**, and **Open Access**. Both feed the [Data security dashboard](../dashboards-reports/dashboards/data-security.md), and [Data reports](../dashboards-reports/reports/data.md) describes each report.
 
-## Classification Scan
+## Classification scan
 
 A Classification scan opens files, reads their content, and runs [classifiers](../../configuration/classifiers/index.md) against it. For each file it records which classifiers reported a finding, at what severity, and which patterns matched; it doesn't store the matched text itself.
 
@@ -69,7 +69,7 @@ The scan doesn't read every inventoried file. The **File server scanning** and *
 
 Changes to these settings reach the scanning service within five minutes and apply to scans that start after that. Scans already running keep the values they started with.
 
-### File Server Settings for Classification Scans
+### File Server settings for Classification scans
 
 | Setting | Default | Meaning |
 |---|---|---|
@@ -84,7 +84,7 @@ Turn on **Differential scan** for a recurring scan after the first full pass fin
 
 ![Create scan step 3 with customized File Server settings](/images/accessanalyzer/26.1/scans/create-scan-3-configure-customize.webp)
 
-### SharePoint Online Settings for Classification Scans
+### SharePoint Online settings for Classification scans
 
 | Setting | Default | Meaning |
 |---|---|---|
@@ -106,7 +106,7 @@ The step lists only published classifiers. Type in **Search classifiers** or pic
 
 ![Create scan wizard on the Classifiers step with Specific classifiers selected](/images/accessanalyzer/26.1/classifiers/scan-classifiers.webp)
 
-### Reports Fed by Classification Scans
+### Reports fed by Classification scans
 
 Classification scans feed both **Sensitive Data Overview** reports, one for file systems and one for SharePoint, and the sensitive-data variant of **Share Audit**, all listed in [Data reports](../dashboards-reports/reports/data.md). Findings also appear on the [Data security dashboard](../dashboards-reports/dashboards/data-security.md).
 
