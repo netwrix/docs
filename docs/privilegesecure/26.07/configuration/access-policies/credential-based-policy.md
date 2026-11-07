@@ -109,4 +109,4 @@ File Release is a built-in activity. The console hides it from the **Activity Ty
 - [Secret vaults](/docs/privilegesecure/26.07/resources/secret-vaults.md)
 - [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)
 
-{/* TODO screenshot: the tabs of a credential-based policy, including Users, Activities, Credentials, and Files. */}
+![A credential-based access policy with the Users, Activities, Credentials, and Files tabs.](/images/privilegesecure/26.07/configuration/credential-based-policy-tabs.webp)
