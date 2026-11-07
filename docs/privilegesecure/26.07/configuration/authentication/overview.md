@@ -29,7 +29,7 @@ An authentication connector connects Privilege Secure to an external service tha
 1. Complete the fields for the type. See the page for that type in the table.
 1. Select **Save**.
 
-{/* TODO screenshot: Add connector form with Connector Type list and Use Remote Access Gateway checkbox */}
+![The Add Authentication Connector form with a name entered, the Connector Type list open and showing MFA, OpenID Connect, and SAML, and the Use Remote Access Gateway check box.](/images/privilegesecure/26.07/configuration/auth-connector-form.webp)
 
 The connector appears in the connector list. To remove a connector, hover over it in the list and select the trash icon.
 

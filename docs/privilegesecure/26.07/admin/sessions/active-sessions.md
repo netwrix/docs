@@ -111,4 +111,4 @@ If you selected **Any further activity with this account (Unlock via Users & Gro
 1. Select a session, and then select **View Logs** to see what happened while the session was provisioned.
 2. Select the expand icon on the row to watch the session live.
 
-{/* TODO screenshot: Active tab with a session selected and the toolbar enabled. */}
+![The Active tab with a session row selected and the toolbar enabled, showing Create Session, End Session, View Logs, and Lock Activity.](/images/privilegesecure/26.07/admin/active-session-selected.webp)

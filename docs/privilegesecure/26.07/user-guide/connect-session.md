@@ -33,7 +33,7 @@ A locked session can't be launched. If an administrator locked your session, con
 
 If you prefer to use PuTTY, MobaXterm, or Remote Desktop yourself, see [Connect with your own RDP or SSH client](/docs/privilegesecure/26.07/user-guide/connect-own-client.md). To open a session in a browser from outside the network, see [Connect to a session in the browser](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
-{/* TODO screenshot: an Available row on the Active tile showing the password and connect icons. */}
+![An Available row on the Active tile, showing the password icon and the connect icon at the start of the row.](/images/privilegesecure/26.07/admin/active-session-row.webp)
 
 ## Sign in to the resource
 

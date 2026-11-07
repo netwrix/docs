@@ -55,7 +55,7 @@ The Table API applies the access controls of your instance to the integration ac
 
 An asterisk (\*) marks a required field.
 
-{/* TODO screenshot: the ServiceNow connector form. The lab has no ServiceNow instance. */}
+![The ServiceNow connector form with Connector Template set to ServiceNow, Ticket Number Label set to INC#, Ticket Type set to Incidents, and Ticket Number Regex set to ^INC[\d]{7}$.](/images/privilegesecure/26.07/integrations/servicenow-connector-incidents.webp)
 
 ### Example: connectors for incidents and change requests
 

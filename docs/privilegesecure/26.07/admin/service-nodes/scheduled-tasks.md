@@ -10,7 +10,7 @@ The **Scheduled Tasks** page lists the recurring jobs that Privilege Secure runs
 
 To open it, select **Configuration** > **Scheduled Tasks**.
 
-{/* TODO screenshot: Scheduled Tasks page with the task list and the result count */}
+![The Scheduled Tasks page with the task list, the last run time, the next run time, the recurrence, the last status, and the result count.](/images/privilegesecure/26.07/admin/scheduled-tasks-list.webp)
 
 ## Read the list
 

@@ -72,6 +72,8 @@ The **Proxy** section controls which proxy servers start sessions and what the p
 
 Each proxy field takes one server. To use more than one proxy server, put a load balancer in front of the servers.
 
+![The Proxy and Session Control sections of a connection profile, showing the proxy fields, the recording options, the session length and notification settings, and the ticket and notes options.](/images/privilegesecure/26.07/configuration/connection-profile-proxy-session-control.webp)
+
 ## Session Control
 
 The **Session Control** section sets the session length, extensions, and the information users must provide.
@@ -102,6 +104,8 @@ To validate tickets against ServiceNow, create the connector first. See [Service
 
 To define custom complexity rules for activity token accounts, see [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md).
 
+![The Require Ticket Number for Sessions option selected, with the ServiceNow Connector list open and showing the connectors to choose from.](/images/privilegesecure/26.07/configuration/connection-profile-ticket-number.webp)
+
 ## Credential Management
 
 The **Credential Management** section controls how users view the password of the managed account for a session or checkout.
@@ -114,6 +118,8 @@ The **Credential Management** section controls how users view the password of th
 | **View Password Timeout (seconds)** | How long a user can view the password on the sign-in page. |
 
 Select **Allow User to Access Password** to show the two options for auto-fill and the Show Password icon.
+
+![The Credential Management and Website sections of a connection profile, showing the password access options and the website data and audio options.](/images/privilegesecure/26.07/configuration/connection-profile-credential-management.webp)
 
 ## Website
 
@@ -158,7 +164,3 @@ See [Configure approval workflows](/docs/privilegesecure/26.07/configuration/acc
 - [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md)
 - [Restrict SSH commands](/docs/privilegesecure/26.07/configuration/access-policies/command-restrictions.md)
 - [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md)
-
-{/* TODO screenshot: the Proxy and Session Control sections of a connection profile. */}
-{/* TODO screenshot: the Credential Management and Website sections of a connection profile. */}
-{/* TODO screenshot: the Require Ticket Number for Sessions option with the ServiceNow Connector list shown. */}
