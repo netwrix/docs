@@ -13,13 +13,17 @@ The installer adds `aa` to the server when it installs Access Analyzer, and each
 ## Before You Begin
 
 - Sign in to the Access Analyzer server with an account that can run `sudo`.
-- You don't need to type `sudo`. The cluster credentials in `/etc/rancher/k3s/k3s.yaml` are readable only by root, so `aa` runs itself again with `sudo` when you start it as another user. `sudo` asks for your password the first time, as it does for any command.
+- You don't need to type `sudo`. Only root can read the cluster credentials in `/etc/rancher/k3s/k3s.yaml`, so `aa` runs itself again with `sudo` when you start it as another user. `sudo` asks for your password the first time, as it does for any command.
 - Every `aa` command acts with full administrator rights on the cluster. A query you run in a database shell or a service you restart takes effect at once.
 
 ## Command Summary
 
 | Task | Command |
 |---|---|
+| Check everything and get the next step for each problem | `aa doctor` |
+| Explain why a service isn't running | `aa why <service>` |
+| Explain every service that isn't ready | `aa why` |
+| List warning events from the last hour | `aa events` |
 | Show application and pod status | `aa status` |
 | Open a PostgreSQL shell on the `access_analyzer` database | `aa psql` |
 | Run one PostgreSQL statement | `aa psql -c "<statement>"` |
@@ -36,21 +40,90 @@ The installer adds `aa` to the server when it installs Access Analyzer, and each
 | Write a support bundle | `aa export-logs` |
 | Show help for a command | `aa <command> --help` |
 
+## Use Short Service Names
+
+`aa why`, `aa restart`, and `aa sh` accept these short names for a service:
+
+| Short name | Service |
+|---|---|
+| `api` | `core-api` |
+| `conn` | `connector-api` |
+| `pg`, `postgresql` | `postgres` |
+| `ch` | `clickhouse` |
+| `web`, `ui` | `webapp` |
+
+When a name doesn't match a service, `aa` suggests the closest one, for example `did you mean core-api?`, and lists the valid names.
+
+## Find Problems with aa doctor
+
+Start here when something is wrong. `aa doctor` checks the server and every part of Access Analyzer, marks each check as passed (✔), a warning (⚠), or a problem (✘), and prints the command to run next for each warning and problem.
+
+```bash
+aa doctor
+```
+
+![aa doctor passing every check except one warning about a service that restarted recently, with the aa why command to run next](/images/accessanalyzer/26.1/install/aa-doctor.webp)
+
+`aa doctor` checks:
+
+- How full the disk that holds the Kubernetes data is. It warns from 85% and reports a problem from 95%, where Kubernetes starts to stop services to free space.
+- That each server in the cluster is ready and isn't short of memory, disk space, or process IDs.
+- That every Argo CD application is `Synced` and `Healthy`.
+- That every service pod is ready, and which pods restarted in the last hour. Scan jobs aren't included; list them with `aa scans`.
+- Which failed pods Kubernetes left behind after it replaced them, for example after it stopped them to free disk space. Delete each one with the `aa k delete pod` command that `aa doctor` prints.
+- That every persistent volume claim is `Bound`.
+- That PostgreSQL, ClickHouse, and Redis accept connections.
+- How long the web TLS certificate stays valid. It warns when fewer than 30 days remain.
+
+If the Kubernetes API doesn't respond, `aa doctor` reports that as a problem, still checks the disk, and points you to `systemctl status` for the Kubernetes service.
+
+`aa doctor` only reads. It never restarts a service or changes a setting. It exits with code `1` when it finds a problem, so a script can run it as a health check.
+
+## Explain Why a Service Isn't Running
+
+`aa why` gathers what you need to understand a failing service in one place:
+
+- Each pod's state, the node it runs on, and when it started.
+- Each container's state, restart count, and why it last stopped, such as `OOMKilled` when it ran out of memory.
+- The memory and CPU each container requests and is limited to.
+- The pod's recent events.
+- The last 30 lines of each container's log, including setup containers that haven't finished. When a container restarted, these are the lines from before the restart, which usually show why it stopped.
+
+```bash
+aa why metabase
+```
+
+![aa why metabase showing a pod with 28 restarts, its last exit with code 137, its memory limit, liveness probe failures in its events, and the last log lines before the restart](/images/accessanalyzer/26.1/install/aa-why.webp)
+
+With no service name, `aa why` explains every pod that isn't ready. Add `--all` to explain every pod, or `--tail <lines>` to show more or fewer log lines. `aa desc` is another name for `aa why`.
+
+## List Recent Events
+
+Kubernetes records an event when it can't schedule a pod, pull an image, mount a volume, or pass a health check. `aa events` lists the warning events from the last hour, oldest first.
+
+```bash
+aa events
+```
+
+- `--since <duration>` changes how far back to look, for example `--since 24h`.
+- `--all` adds normal events, such as a container starting.
+- `-w` keeps the list open and prints new events as they happen. Press **Ctrl+C** to stop. It can't be combined with `--since`.
+
 ## Check the Status of Access Analyzer
 
-`aa status` lists the Argo CD applications that deploy Access Analyzer, with their sync and health status, and then every pod in the `access-analyzer` namespace.
+`aa status` starts with one line that counts the ready services and the healthy Argo CD applications. It then lists the Argo CD applications that deploy Access Analyzer, with their sync and health status, and every pod in the `access-analyzer` namespace.
 
 ```bash
 aa status
 ```
 
-![aa status listing every Argo CD application as Synced and Healthy, followed by each Access Analyzer pod with its ready count, status, and restarts](/images/accessanalyzer/26.1/install/aa-status.webp)
+![aa status opening with a summary of ready services and healthy applications, then every Argo CD application as Synced and Healthy, followed by each Access Analyzer pod with its ready count, status, and restarts](/images/accessanalyzer/26.1/install/aa-status.webp)
 
 Read the output this way:
 
 - An application that isn't `Synced` and `Healthy` is still deploying, or one of its resources has a problem.
 - A pod is ready when both numbers in its `READY` column match, such as `1/1`. Pods whose `STATUS` is `Completed` are one-time jobs that have finished, and `0/1` is normal for them.
-- A `RESTARTS` count that keeps growing points to a service that crashes. Read the logs from before the last restart with `aa logs <service> --previous`, as [View and Export Logs](view-and-export-logs.md) describes.
+- A `RESTARTS` count that keeps growing points to a service that crashes. Run `aa why <service>` to see why it last stopped and its logs from before the restart.
 
 ## Open a Database Shell
 
@@ -142,7 +215,7 @@ To work in another namespace, add `-n <namespace>` or `-A` after `k`, for exampl
 
 ## Turn On Tab Completion
 
-The installer writes a Bash completion script for `aa` to `/etc/bash_completion.d/aa`. With it, the **Tab** key completes command names, service names for `aa restart` and `aa sh`, and the `kubectl` arguments after `aa k`.
+The installer writes a Bash completion script for `aa` to `/etc/bash_completion.d/aa`. With it, the **Tab** key completes command names, service names for `aa why`, `aa restart`, and `aa sh`, and the `kubectl` arguments after `aa k`.
 
 ![Pressing Tab after aa listing its commands, after aa restart c listing the matching services, and after aa k get pod listing the matching resource types](/images/accessanalyzer/26.1/install/aa-completion.webp)
 
