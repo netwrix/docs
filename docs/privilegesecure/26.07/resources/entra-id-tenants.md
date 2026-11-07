@@ -36,7 +36,7 @@ A Microsoft Entra ID tenant resource connects Netwrix Privilege Secure for Acces
 
 The **Platform** field shows **Entra ID** and can't be changed.
 
-{/* TODO screenshot: New Entra ID Tenant page with the fields filled in. Blur the tenant ID and domain. */}
+![The New Entra ID Tenant page with the name, Tenant ID, Logon URL, and Email Domain fields filled in. The tenant ID and domain are example values.](/images/privilegesecure/26.07/resources/new-entra-id-tenant.webp)
 
 ## Synchronize the tenant
 
