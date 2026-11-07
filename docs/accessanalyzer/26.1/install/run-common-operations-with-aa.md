@@ -20,6 +20,7 @@ The installer adds `aa` to the server when it installs Access Analyzer, and each
 
 | Task | Command |
 |---|---|
+| Pick a task from a menu | `aa` |
 | Check everything and get the next step for each problem | `aa doctor` |
 | Explain why a service isn't running | `aa why <service>` |
 | Explain every service that isn't ready | `aa why` |
@@ -36,9 +37,23 @@ The installer adds `aa` to the server when it installs Access Analyzer, and each
 | Run one command in a service | `aa sh <service> -- <command>` |
 | List connector scan and sync jobs | `aa scans` |
 | Run any `kubectl` command in the Access Analyzer namespace | `aa k <kubectl arguments>` |
+| Pick a common `kubectl` command from a list | `aa k` |
+| Show the Access Analyzer, installer, Kubernetes, and operating system versions | `aa version` |
 | Show or follow a service's logs | `aa logs <service>` |
 | Write a support bundle | `aa export-logs` |
 | Show help for a command | `aa <command> --help` |
+
+## Pick a Task from the Menu
+
+If you don't remember a command, type `aa` on its own. A menu lists every task, grouped by area, with the command that runs it. Move with the arrow keys and press **Enter** to run a task, or press **/** to filter the list by typing. When a task needs a service, such as a restart, `aa` then lists the services to pick from.
+
+```bash
+aa
+```
+
+![The aa menu listing tasks grouped as Health, Logs, Databases, Services, Scans, kubectl, and Support, each with its command, and running aa events after the task is picked](/images/accessanalyzer/26.1/install/aa-menu.webp)
+
+The menu shows each task's command, so you can type it directly next time. Press **Esc** or **Ctrl+C** to leave the menu without running anything.
 
 ## Use Short Service Names
 
@@ -62,7 +77,7 @@ Start here when something is wrong. `aa doctor` checks the server and every part
 aa doctor
 ```
 
-![aa doctor passing every check except one warning about a service that restarted recently, with the aa why command to run next](/images/accessanalyzer/26.1/install/aa-doctor.webp)
+![aa doctor opening with the Access Analyzer, installer, Kubernetes, and operating system versions, then passing every check except one warning about a service that restarted recently, with the aa why command to run next](/images/accessanalyzer/26.1/install/aa-doctor.webp)
 
 `aa doctor` checks:
 
@@ -74,6 +89,8 @@ aa doctor
 - That every persistent volume claim is `Bound`.
 - That PostgreSQL, ClickHouse, and Redis accept connections.
 - How long the web TLS certificate stays valid. It warns when fewer than 30 days remain.
+
+The first line names the Access Analyzer and installer versions and the Kubernetes and operating system versions of the server, which Netwrix Support usually asks for first.
 
 If the Kubernetes API doesn't respond, `aa doctor` reports that as a problem, still checks the disk, and points you to `systemctl status` for the Kubernetes service.
 
@@ -208,6 +225,31 @@ aa k get pvc
 ![aa k get pvc listing the Access Analyzer persistent volume claims with their capacity](/images/accessanalyzer/26.1/install/aa-k.webp)
 
 To work in another namespace, add `-n <namespace>` or `-A` after `k`, for example `aa k -n argocd get applications`. Your namespace takes the place of `access-analyzer`.
+
+### Pick a Common kubectl Command
+
+Type `aa k` on its own to pick from a list of the `kubectl` commands that help most when something is wrong, such as the pods stuck in `Pending` or `Failed`, recent events, a pod's logs from before its last restart, and Argo CD applications. A pod that keeps restarting stays in the `Running` phase, so use `aa why` to find it. When a command needs a pod or an application, `aa` lists the names to pick from. Before it runs the command, `aa` prints it, so you can type it directly next time.
+
+```bash
+aa k
+```
+
+![aa k listing common kubectl commands, picking Persistent volume claims, then printing aa k get pvc and its output](/images/accessanalyzer/26.1/install/aa-k-picker.webp)
+
+When `aa k` runs in a script or with its output redirected, it prints the list of commands instead.
+
+## Show Versions
+
+`aa version` shows the versions to include when you contact Netwrix Support:
+
+- The Access Analyzer version.
+- The installer version.
+- The version each Argo CD application deploys. Applications that differ from the Access Analyzer version are named.
+- For each server in the cluster, the Kubernetes (k3s), operating system, and kernel versions. The server that runs the cluster is listed first.
+
+```bash
+aa version
+```
 
 ## Read Logs
 
