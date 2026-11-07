@@ -13,8 +13,7 @@ Complete the steps in order. Run `Configure-Gateway.ps1` only after guacd is run
 ## Before you begin
 
 - Check the server against [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md), including nested virtualization if the server is a virtual machine.
-- Get the Remote Access Gateway package from the Netwrix Customer Portal. It is a separate download from the main Privilege Secure package. The zip file is named `privilegesecure-accessmanagement-rag-<version>.zip`, for example `privilegesecure-accessmanagement-rag-26.07.3.zip`. It contains `NPS.RagGateway.exe` and `NPS.RagPortal.exe`.
-  {/* TODO verify: the folder of the Remote Access Gateway package on the Customer Portal. */}
+- Get the Remote Access Gateway package from the Netwrix Customer Portal. Search for **Privilege Secure** and download the Remote Access Gateway package. It is a separate download from the main Privilege Secure package. The zip file is named `privilegesecure-accessmanagement-rag-<version>.zip`, for example `privilegesecure-accessmanagement-rag-26.07.3.zip`. It contains `NPS.RagGateway.exe` and `NPS.RagPortal.exe`.
 - Sign in to the gateway server as a local administrator and run PowerShell as an administrator.
 
 The examples use these placeholders. Replace them with your values.

@@ -16,7 +16,7 @@ In the Remote Access Gateway portal, you request a session for an activity and c
 
 ## Dashboard
 
-After you sign in, the portal opens the dashboard. It shows four tiles:
+After you sign in, the portal opens the **My Activities** page. Select the **Home** icon in the left navigation, or **Home** in the breadcrumb, to open the dashboard. It shows four tiles:
 
 | Tile | Shows |
 |---|---|
@@ -32,7 +32,7 @@ The **Active** tile also has the **Create Session**, **End Session**, **Lock Act
 - **End Session** ends the selected sessions. It stays unavailable until you select a row.
 - **Lock Activity** and **Unlock Activity** require the **Lock Session** permission from the Auditors permission group, or the **Admin View Read Only** role with **Lock Session**. Without it, the buttons are unavailable and a tooltip names the missing permission.
 
-![Portal dashboard with the Active, Scheduled, Approvals, and Historical tiles and an empty session table](/images/privilegesecure/26.07/remote-access-gateway/portal-dashboard-signed-in.webp)
+![Portal dashboard with the Active, Scheduled, Approvals, and Historical tiles and a session in the table](/images/privilegesecure/26.07/remote-access-gateway/portal-dashboard-signed-in.webp)
 
 ## Request a session
 
@@ -96,7 +96,7 @@ The page also shows:
 - A banner with the target name and the time left, in the form `<resource> [Remaining: <time>]`.
 - A blue **REC** indicator in the top right corner. It shows that Privilege Secure is recording the session.
 
-![Live Sessions toolbar with the Resolution list open and the REC indicator](/images/privilegesecure/26.07/remote-access-gateway/portal-resolution-menu.webp)
+![Live Sessions toolbar with the Resolution list, Ctrl+Alt+Delete, and Close controls](/images/privilegesecure/26.07/remote-access-gateway/portal-resolution-menu.webp)
 
 {/* TODO verify: large mouse pointers on Windows 11 and Windows Server 2025 targets. The pointer is drawn by guacd, and the release code has no pointer handling that settles how large pointers display. */}
 

@@ -54,9 +54,9 @@ The sign-in page changes when your administrator sets a default or exclusive con
 4. Click **Login**.
 5. If the portal asks for a verification code, enter the code from your authenticator application.
 
-After you sign in, the portal opens the dashboard with the **Active**, **Scheduled**, **Approvals**, and **Historical** tiles. To start a session, see [Connect to a session in the browser](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
+After you sign in, the portal opens the **My Activities** page. To open the dashboard with the **Active**, **Scheduled**, **Approvals**, and **Historical** tiles, select the **Home** icon in the left navigation, or **Home** in the breadcrumb. To start a session, see [Connect to a session in the browser](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
-{/* TODO screenshot: portal sign-in page with Username, Password, and Domain fields, no text selected, no licence banner */}
+![Portal sign-in page with Username, Password, and Domain fields and a Login button](/images/privilegesecure/26.07/remote-access-gateway/portal-login-form-working.webp)
 
 The portal uses the same sign-in and verification-code pages as the console. To register an authenticator application, see [Register multi-factor authentication](/docs/privilegesecure/26.07/user-guide/sign-in.md#register-multi-factor-authentication).
 

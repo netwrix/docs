@@ -100,8 +100,6 @@ Create a similar rule for port 80 if users need the redirect to HTTPS. The porta
 
 The portal sign-in page opens. By default it offers single sign-on (SSO) only. If it shows "The license has expired or the license service is offline", fix the Privilege Secure license. See [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).
 
-{/* TODO screenshot: the portal sign-in page, retaken without selected text. The portal-login-form-working image needs a retake before use. */}
-
 To choose which sign-in methods users see, see [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## Place the portal behind a web application firewall
