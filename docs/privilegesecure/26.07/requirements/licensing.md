@@ -24,7 +24,7 @@ The license counts users. The number of resources doesn't affect it.
 
 ## Trial license
 
-A new installation includes a trial license. The trial allows 10 users.
+A new installation includes a trial license. The trial allows at least 10 users.
 
 {/* TODO verify: the trial duration. The Netwrix EULA says the term for trial software is 30 days from installation, but the expiry in the embedded trial key hasn't been checked against it. */}
 

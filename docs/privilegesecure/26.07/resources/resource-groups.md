@@ -90,7 +90,7 @@ Both tabs have **Add** and **Remove** buttons. Their columns are **Service Name*
 
 ## Resource group tabs
 
-A saved group has these tabs. The **Host Scan Services** and **Action Services** tabs appear only when your license includes the resource group affinity feature.
+A saved group has these tabs. The **Host Scan Services** and **Action Services** tabs appear only when the resource group affinity feature is enabled.
 
 | Tab | Shows |
 |---|---|

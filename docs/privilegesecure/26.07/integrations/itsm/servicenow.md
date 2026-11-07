@@ -74,7 +74,7 @@ The default regular expression matches incident numbers only. For change request
 
 By default, ServiceNow numbers change requests as `CHG` followed by 7 digits. The change request example uses state labels from the default ServiceNow change model (New, Assess, Authorize, Scheduled, Implement, Review, Closed, and Canceled). Instances can customize both the number format and the labels.
 
-{/* TODO verify: whether the connector's update to In Progress at session start works for change requests, which have no In Progress state in the default change model. Verified 2026-11-06 on a ServiceNow dev instance: the update returns HTTP 200 and the work note is added, but the state is unchanged because "In Progress" isn't a valid change request state. */}
+{/* Verified 2026-11-06 on a ServiceNow dev instance: the session-start update to In Progress returns HTTP 200 and adds the work note, but the state is unchanged, because "In Progress" isn't a valid change request state. */}
 
 ## Attach the connector to a connection profile
 

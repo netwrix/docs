@@ -104,6 +104,12 @@ Run these commands as administrator on the remote proxy server.
 
    If the `-s` address has no port, the command connects on port 6520.
 
+   Instead of a username and password, you can register with a bootstrap join token. Add `-t <join-token>` to the command, or set the `SBPAM_JOIN_TOKEN` environment variable. Get the token from the console. With a token, the command skips the user name and password prompts.
+
+   ```
+   "C:\Program Files\Stealthbits\PAM\ProxyService\sbpam-proxy.exe" register -s 203.0.113.10 -t <join-token>
+   ```
+
 {/* TODO screenshot: the proxy registration output. Use placeholders for the server, account, and hash. */}
 
 The Proxy Service is now registered. Confirm it appears on the Service Nodes page of the console.

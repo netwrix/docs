@@ -8,7 +8,7 @@ sidebar_position: 10
 
 A platform sets the defaults for every resource of one type, such as Windows servers or SQL Server databases. A platform holds the built-in account to discover, the password complexity policy, and the schedules for rotation, scanning, verification, and protection. Each resource uses the settings of its platform.
 
-Select **Platforms** in the left navigation to open the list. Most built-in platforms are one form with no tabs. The Linux, BSD, and Palo Alto PanOS platforms, and platforms that you create or copy, show **Settings** and **Command Plans** tabs when your license includes the custom platform connector. See [Command plans](/docs/privilegesecure/26.07/resources/platforms/command-plans.md).
+Select **Platforms** in the left navigation to open the list. Most built-in platforms are one form with no tabs. The Linux, BSD, and Palo Alto PanOS platforms, and platforms that you create or copy, show **Settings** and **Command Plans** tabs when the custom platform connector feature is enabled. See [Command plans](/docs/privilegesecure/26.07/resources/platforms/command-plans.md).
 
 ![The Platforms page with Linux selected, showing the built-in account root, password complexity policy, and the change, scan, and verification schedules.](/images/privilegesecure/26.07/resources/platforms-linux-form.webp)
 

@@ -52,9 +52,11 @@ Privilege Secure manages Windows hosts through PowerShell remoting over WinRM. O
 
 ### Kerberos delegation
 
-When a Windows resource must reach a domain controller during a host scan, the request makes a second network hop from the resource to the domain controller. This second hop needs Kerberos delegation between the resource and the domain controller. Without it, the host scan fails, the operating system stays blank, and password rotation can proceed while a session still holds the old password. The result can be recurring Active Directory account lockouts.
+A host scan runs on the target host itself. It reads local users and local groups with local WMI and ADSI calls, so it doesn't contact a domain controller. You don't need delegation for a host scan.
 
-Configure delegation so the resource can authenticate to the domain controllers on the second hop.
+Some actions on Active Directory resources run a command on the target host that then reads from a domain controller. This makes a second network hop, from the target host to the domain controller. The command reaches the domain controller only when the target host can forward the administrator's credentials on that second hop. Configure Kerberos delegation for this case, so the target host can authenticate to the domain controllers on the second hop.
+
+Without delegation, the second hop fails. The command can't read the domain, so the collected data is incomplete. Password rotation can still proceed while a session holds the old password, which can cause recurring Active Directory account lockouts.
 
 ### Non-domain-joined hosts
 

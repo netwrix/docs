@@ -23,7 +23,7 @@ Privilege Secure ships the plans for each of these platforms.
 
 ## View and edit command plans
 
-The Linux, BSD, and Palo Alto PanOS platforms, and platforms that you create or copy, show **Settings** and **Command Plans** tabs when your license includes the custom platform connector. Select the **Command Plans** tab to view and edit the command plans of the platform. The other built-in platforms show one form with no tabs.
+The Linux, BSD, and Palo Alto PanOS platforms, and platforms that you create or copy, show **Settings** and **Command Plans** tabs when the custom platform connector feature is enabled. Select the **Command Plans** tab to view and edit the command plans of the platform. The other built-in platforms show one form with no tabs.
 
 For the steps to build a custom platform, see [Creating a custom platform for SSH activity sessions](/docs/kb/privilegesecure/network-and-platform-integration/creating-a-custom-platform-for-ssh-activity-sessions).
 
