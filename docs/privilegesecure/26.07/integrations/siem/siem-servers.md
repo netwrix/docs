@@ -48,7 +48,7 @@ This example sends events in CEF format to a SIEM server over TCP port 514, with
 | **Use SSL** | Cleared |
 | **Enabled** | Selected |
 
-{/* TODO screenshot: the Add SIEM Server form filled in with the example values */}
+![The Add SIEM Server form filled in with the example values: a SIEM Host, Server Type TCP, Port 514, Protocol none, Template CEF, Use SSL cleared, and Enabled selected.](/images/privilegesecure/26.07/integrations/siem-server-form.webp)
 
 ## Which events are sent
 

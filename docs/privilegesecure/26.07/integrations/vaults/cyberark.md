@@ -43,7 +43,7 @@ The connector calls the CyberArk Central Credential Provider (CCP). The CCP is a
 
 When you select the **CyberArk** template, the form fills **API Url** with `http://localhost/PasswordVault` and **App Id** with `SbPAM`. Replace both with the values for your CCP.
 
-{/* TODO screenshot: the CyberArk connector form with the fields in the preceding table. */}
+![The CyberArk integration connector form with the Connector Template set to CyberArk, an API Url, an App Id, and an empty Client Certificate field.](/images/privilegesecure/26.07/integrations/integration-connector-cyberark-form.webp)
 
 **Example:** To use a CCP server at `https://ccp.example.com` with an App ID of `PrivilegeSecure` and no client certificate:
 

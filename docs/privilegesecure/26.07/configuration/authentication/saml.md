@@ -26,7 +26,7 @@ This page covers the connector fields, the values to register at the IdP, and th
 1. Enter the connector settings, using the wizard or manual entry. See the next two sections.
 1. Click **Save**.
 
-{/* TODO screenshot: the Authentication page with Connector Type set to SAML */}
+![A new authentication connector named corporate-saml with the Connector Type list set to SAML, showing the Configuration Wizard and Manually Enter Data buttons.](/images/privilegesecure/26.07/configuration/authentication-saml-connector.webp)
 
 ### Enter the settings manually
 

@@ -45,7 +45,7 @@ For the other connector types and how a user's connector is chosen, see [Authent
 | **Prefix for Response Text** | A value that Privilege Secure adds to the start of the user's response. The value depends on the RADIUS server. |
 | **Format for username** | The user name format that Privilege Secure sends to the RADIUS server. Select a preset or enter your own format. |
 
-{/* TODO screenshot: MFA connector fields, shared secret masked */}
+![The MFA connector fields with a server address, the Remote Port, the authentication type, and a masked shared secret.](/images/privilegesecure/26.07/configuration/authentication-mfa-connector-form.webp)
 
 {/* TODO verify: the value Privilege Secure sends as the NAS Identifier when Send NAS Identifier is selected. The RADIUS client component that sets it isn't in the release source. Next step: capture an authentication request on the application server and read the NAS-Identifier attribute. */}
 

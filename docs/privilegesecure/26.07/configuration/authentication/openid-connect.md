@@ -47,7 +47,7 @@ The wizard has three pages: **Configure Client**, **Test Login**, and **Configur
 
 ### Configure the client
 
-{/* TODO screenshot: Configure Client page, client values redacted */}
+![The Configure Client page of the OpenID Connect wizard, with the Connector Name, placeholder Issuer and Client Id values, and the read-only Callback Address and CORS fields.](/images/privilegesecure/26.07/configuration/authentication-oidc-configure-client.webp)
 
 1. On the **Configure Client** page, enter the **Issuer**. This is the address of the identity provider. A wrong value usually causes a 404 error when Privilege Secure redirects to the provider.
 1. Enter the **Client Id** from the provider.
