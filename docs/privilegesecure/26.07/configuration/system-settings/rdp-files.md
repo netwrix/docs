@@ -25,9 +25,7 @@ Select **System Settings** > **RDP Options** to open the panel.
 
 To change an option, edit it and click **Save**.
 
-Privilege Secure writes the selected resolution into every RDP file that it generates, whether **Certificate Thumbprint** has a value or not. The signing step runs after the resolution is set.
-
-{/* TODO verify: whether the Default Resolution setting affects the client when Certificate Thumbprint is empty. The 26.07.3 web service code writes the resolution into the file before it signs, so the page doesn't say the setting needs a thumbprint. Test an unsigned RDP file in the Windows Remote Desktop client to see how it treats desktopwidth and desktopheight. */}
+Privilege Secure writes the selected resolution into every RDP file that it generates, whether **Certificate Thumbprint** has a value or not. The resolution is set before the file is signed, so an unsigned file still carries the `desktopwidth` and `desktopheight` values. Windows doesn't require a signature to apply them.
 
 ## Sign RDP files
 

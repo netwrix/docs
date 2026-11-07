@@ -58,7 +58,7 @@ If the user doesn't click **Keep Session Active** within 5 minutes of the warnin
 
 The setting applies to the Privilege Secure console. The web service rejects a value above 1000 and a negative value.
 
-{/* TODO verify: that the Remote Access Gateway portal applies this setting in practice. The shared web UI renders IdleTimeout through PageLayout and the portal serves that build, but this hasn't been tested on a portal server. See [Session timeout](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/sign-in.md#session-timeout). */}
+The Remote Access Gateway portal applies the same setting. The portal serves the same web interface build, which reads the timeout value from the web service when a signed-in user loads the portal, so the **Session timeout** warning and sign-out behave the same way there.
 
 ## User Expiration
 

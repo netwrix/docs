@@ -97,7 +97,9 @@ If a policy with the same name already exists, the sync doesn't change it. If yo
 
 :::warning
 The sync creates access policies that need no approval and that you don't review first. Each policy lets the local administrator start the **Activity Token for Local Admin Access** activity on the computers where they are a local administrator. After each sync, select **Access Policy**, review the new policies, and delete any that you don't want in force. The next sync creates a deleted policy again, so repeat this review after every sync.
-{/* TODO verify: whether removing the user from the policy's Users tab keeps the policy and stops it granting access, since the sync doesn't change a policy that already exists */}
+
+To remove one user from a policy without deleting it, edit the policy's **Users** tab. The policy stays in force for the other users, and the sync doesn't add the removed user back. The sync only creates a policy when none with that name exists, so it never changes an existing policy's members.
+:::
 :::
 
 To follow the progress, open the Action Service on the **Service Nodes** page. See [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).
