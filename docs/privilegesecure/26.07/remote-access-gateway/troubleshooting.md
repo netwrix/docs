@@ -145,4 +145,23 @@ If WSL doesn't start by itself, see [Start WSL automatically](/docs/privilegesec
 
 **Fix:** In WSL, run `docker ps` and confirm that the guacd image is exactly `guacamole/guacd:1.6.0`. If it isn't, upgrade guacd. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/install/upgrade.md#match-the-guacd-version).
 
-{/* TODO verify: keyboard behavior (numeric keypad, AltGr, special characters) and mouse pointer artifacts with guacd 1.6.0. The portal uses the standard Guacamole keyboard and mouse handlers, so the behavior depends on guacd and the browser and needs a test session. */}
+## Keyboard or pointer behaves oddly in an RDP session
+
+**Symptom:** Some keys don't type what you expect in an RDP session. The numeric keypad, `AltGr`, or
+characters that need a key combination may do nothing or type the wrong character. The pointer can also
+look larger than usual or sit slightly away from the click point.
+
+**Cause:** The portal uses the standard Guacamole keyboard and mouse handlers, and guacd draws the
+session. The browser decides whether it captures special keys, and guacd decides how the target sees
+them. The target's own keyboard layout and pointer size also apply.
+
+**Fix:** Check these in order:
+
+1. Click inside the session display so the canvas has focus, then try the key again.
+2. Set the target's keyboard layout to match yours.
+3. If the numeric keypad doesn't work, turn on Num Lock on your keyboard. Browsers send these keys only
+   with Num Lock on.
+4. If a key combination is captured by the browser or the operating system, use the **Ctrl+Alt+Delete**
+   button in the session toolbar for that combination, or press the keys on a different combination.
+5. If the pointer is large, change the pointer size on the target. The target sends the pointer image
+   and guacd draws it, so the portal can't shrink it.
