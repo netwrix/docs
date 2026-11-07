@@ -50,7 +50,7 @@ You can also search the **Login Account**, **Activity**, **Notes**, and **Ticket
 
 For the columns and statuses, see [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md).
 
-{/* TODO screenshot: the Historical tile on the All Historical tab with the filters visible */}
+![The Historical tab with the All Historical and Mine tabs, the search and filter controls, and the session list.](/images/privilegesecure/26.07/admin/historical-tab-filters.webp)
 
 ## Search recorded data
 

@@ -34,7 +34,7 @@ For example, enter the name `Branch servers`, enter `ops@example.com` as the not
 
 The four default groups start with **Manage Local Administrator Accounts** set to **Off (do not manage accounts)**.
 
-{/* TODO screenshot: the New Resource Group form with Map to OU or CN selected. */}
+![The New Resource Group form with Map to OU or CN selected.](/images/privilegesecure/26.07/resources/new-resource-group-form.webp)
 
 ## Map a group to an OU or CN
 

@@ -92,7 +92,7 @@ Change the platform when Privilege Secure detects the wrong platform or when a r
    - Windows
 1. Select **Okay**.
 
-{/* TODO screenshot: Change Platform dialog with the Platform dropdown open */}
+![The Change Platform dialog with the Platform dropdown open.](/images/privilegesecure/26.07/resources/change-platform-dialog.webp)
 
 ## Change the service account of resources
 

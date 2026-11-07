@@ -105,7 +105,7 @@ The **Command Restriction** item requires a license feature. The **Users**, **Re
 
 A **Live Sessions** item appears only while you have browser sessions open through the Remote Access Gateway portal. See [Browser sessions](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/browser-sessions.md).
 
-{/* TODO screenshot: the expanded navigation menu */}
+![The left navigation menu with the Auditing & Reporting group expanded to show its sub-items.](/images/privilegesecure/26.07/user-guide/navigation-menu-expanded.webp)
 
 ## Banners
 

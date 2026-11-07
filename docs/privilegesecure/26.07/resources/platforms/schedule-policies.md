@@ -28,7 +28,7 @@ The schedules mean the following:
 
 The page lists every schedule policy. Each policy is named after its recurrence, such as `Every 4 hours`. Use **Search** to filter the list.
 
-{/* TODO screenshot: Schedule Policies page with the policy list and the selected policy details */}
+![The Schedule Policies page with the policy list on the left and the selected policy details on the right.](/images/privilegesecure/26.07/resources/schedule-policies-page.webp)
 
 ## Frequency types
 

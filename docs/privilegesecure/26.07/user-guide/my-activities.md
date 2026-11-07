@@ -10,7 +10,7 @@ The **My Activities** page lists the activities that your access policies grant 
 
 Each activity appears as a card. If your access policies contain only one activity, the console opens that card automatically.
 
-{/* TODO screenshot: the My Activities page with activity cards (needs a user who belongs to an access policy) */}
+![The My Activities page with activity cards and the Group by control.](/images/privilegesecure/26.07/user-guide/my-activities-cards.webp)
 
 ## Search and group activities
 
@@ -25,7 +25,7 @@ If two access policies grant you the same activity, the console merges them into
 
 For example, if the access policies `<policy-a>` and `<policy-b>` both grant the same activity, grouping by **Activities (a-z)** shows one card. Grouping by **Access Policy (a-z)** shows the activity under both policies.
 
-{/* TODO screenshot: the Group by menu */}
+![The Group by menu open, listing Activities (a-z) and Access Policy (a-z).](/images/privilegesecure/26.07/user-guide/my-activities-group-by-menu.webp)
 
 ## Start a session from an activity
 
