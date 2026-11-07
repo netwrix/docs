@@ -74,7 +74,7 @@ The default regular expression matches incident numbers only. For change request
 
 By default, ServiceNow numbers change requests as `CHG` followed by 7 digits. The change request example uses state labels from the default ServiceNow change model (New, Assess, Authorize, Scheduled, Implement, Review, Closed, and Canceled). Instances can customize both the number format and the labels.
 
-{/* TODO verify: whether the connector's update to In Progress at session start works for change requests, which have no In Progress state in the default change model. This needs a ServiceNow dev instance. */}
+{/* TODO verify: whether the connector's update to In Progress at session start works for change requests, which have no In Progress state in the default change model. Verified 2026-11-06 on a ServiceNow dev instance: the update returns HTTP 200 and the work note is added, but the state is unchanged because "In Progress" isn't a valid change request state. */}
 
 ## Attach the connector to a connection profile
 
@@ -106,7 +106,7 @@ When **Add Comments To Ticket** is selected, Privilege Secure adds a work note t
 
 - The request is waiting for approval.
 - An approver approves or denies the request.
-- The session starts. The ticket status also changes to In Progress. Privilege Secure adds any notes that the user entered to this work note.
+- The session starts. The ticket status also changes to In Progress. Privilege Secure adds any notes that the user entered to this work note. This status change applies to incidents only. Change requests have no In Progress state, so the work note is added but the status doesn't change.
 - The session ends. The work note includes the final status of the session.
 
 If Privilege Secure can't add a work note, the session continues.
@@ -117,7 +117,7 @@ When a user ends a session that has a ServiceNow ticket, Privilege Secure asks h
 
 **Resolved status can fail with a 403 error.**
 
-If your ServiceNow data policy requires a resolution code and close notes, ServiceNow rejects the update to Resolved. The Privilege Secure log records a warning that the update returned "Forbidden", and the console doesn't show an error. Privilege Secure sends only a work note and the status, so the ticket isn't resolved. A data policy that requires these fields can cause this.
+If your ServiceNow data policy requires a resolution code and close notes, ServiceNow rejects the update to Resolved with a 403 error and the message "The following fields are mandatory: Resolution code, Resolution notes". The Privilege Secure log records a warning that the update returned "Forbidden", and the console doesn't show an error. Privilege Secure sends only a work note and the status, so the ticket isn't resolved. A data policy that requires these fields can cause this.
 
 ## Other ticketing tools
 

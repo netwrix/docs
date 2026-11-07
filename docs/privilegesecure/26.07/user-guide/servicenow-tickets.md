@@ -44,7 +44,7 @@ If the connector has **Add Comments to Ticket** on, Privilege Secure adds a work
 
 - The request is waiting for approval.
 - An approver approves or denies the request.
-- The session starts. The ticket state also changes to In Progress. Notes that you entered are added to this work note.
+- The session starts. The ticket state also changes to In Progress for incidents. Change requests have no In Progress state, so the work note is added but the state doesn't change. Notes that you entered are added to this work note.
 - The session ends. The work note includes the final status of the session.
 
 If Privilege Secure can't post a work note, the session still continues.
@@ -68,6 +68,8 @@ For the general procedure, see [Connect to a session](/docs/privilegesecure/26.0
 ### Resolved can fail
 
 Privilege Secure sends only a work note and the new state when you choose **Resolved**. If ServiceNow rejects the update, the ticket state doesn't change, the session still ends, and the console doesn't show an error.
+
+ServiceNow rejects the update when its data policy requires a resolution code and close notes, which is the default behavior for incidents. Privilege Secure doesn't send those fields, so ServiceNow returns a 403 error with the message "The following fields are mandatory: Resolution code, Resolution notes". The Privilege Secure log records a warning that the update returned "Forbidden", but the console shows nothing.
 
 After you end a session with **Resolved**, check the ticket in ServiceNow and resolve it there if its state didn't change. To avoid this, end the session with **Keep In Progress** or **On Hold**, and then resolve the ticket in ServiceNow.
 
