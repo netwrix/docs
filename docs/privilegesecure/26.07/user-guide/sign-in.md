@@ -50,7 +50,7 @@ If your administrator makes a connector exclusive, the sign-in page shows only t
 
 To sign in with a different account than the one the console offers, click **Login with a different account** to show the other sign-in options.
 
-{/* TODO screenshot: sign-in page with single sign-on buttons */}
+![The sign-in page with the username and password form and an Or login using single sign-on button.](/images/privilegesecure/26.07/user-guide/sign-in-sso-buttons.webp)
 
 ## Register multi-factor authentication
 
@@ -82,7 +82,7 @@ The console signs you out when you are idle. The **Idle Timeout (minutes)** sett
 
 When the idle timeout passes, the **Session Timeout** dialog displays "Your session has been idle and will expire soon." Click **Keep Session Active** to keep working, or click **Logout** to sign out. If you take no action, the console signs you out 5 minutes later. With the default setting, you are signed out after about 15 minutes of inactivity.
 
-{/* TODO screenshot: idle timeout warning dialog */}
+![The Session Timeout dialog with the message Your session has been idle and will expire soon, and the Keep Session Active and Logout buttons.](/images/privilegesecure/26.07/user-guide/idle-timeout-warning.webp)
 
 ## Account lockout
 
