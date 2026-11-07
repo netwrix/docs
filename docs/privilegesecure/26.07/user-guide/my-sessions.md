@@ -119,4 +119,4 @@ Relaunch a session to run the same activity on the same resource with the same c
 
 The icon appears only on your own sessions. It isn't shown for Credential Release or File Release sessions. If the connection profile requires notes or a ticket, the console asks for them first. On success, the console shows "Started session `<activity>`". If you no longer have access to the activity, the console shows "You no longer have access to execute the activity: `<activity>` targetting `<resource>`".
 
-{/* TODO screenshot: a Historical row showing the Actions icons */}
+![The Historical tab on the Mine view with session rows. The Actions column shows the expand, quick launch, and logs icons.](/images/privilegesecure/26.07/user-guide/my-sessions-actions-row.webp)
