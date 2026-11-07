@@ -46,7 +46,7 @@ A new task starts in **Setup**. It moves to **Ready to Start** when the Administ
 You can't add or remove users after you add them to the task. To change the list, create a new task.
 :::
 
-{/* TODO screenshot: the Access Certification page with a task selected, showing the task list, the details, and the Users tab */}
+![The Access Certification page with a task selected, showing the task list on the left and the task details and Users tab on the right.](/images/privilegesecure/26.07/admin/access-certification-users-tab.webp)
 
 The task list on the left has a **Search** box, a status for each task, and a delete icon. The details on the right show **Name**, **Description**, **Reviewer**, **Status**, **Date Started** (after the review starts), and **Date Completed**.
 
@@ -66,7 +66,7 @@ The **Entitlements** tab lists the access of the users in the task. It stays emp
 - **Permissions:** The permissions the policy grants.
 - **Access Policies:** The policies that grant the access.
 
-{/* TODO screenshot: the Entitlements tab with the Access Policies column */}
+![The Entitlements tab with the entitlement list and the Access Policies column.](/images/privilegesecure/26.07/admin/access-certification-entitlements-tab.webp)
 
 The tab has three buttons:
 
