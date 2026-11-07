@@ -36,7 +36,7 @@ The table has these columns:
 
 Use **Search** to filter the table. Select **Refresh** to reload it. You can resize the columns and sort them in ascending or descending order.
 
-{/* TODO screenshot: the Approvals tile with a pending request */}
+![The Approvals tile with a pending session request and the Approve and Deny toolbar buttons.](/images/privilegesecure/26.07/user-guide/approvals-tile.webp)
 
 ## Approve or deny requests
 
