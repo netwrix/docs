@@ -152,7 +152,7 @@ After every restart, confirm that guacd is running before you rely on the gatewa
 2. In the Ubuntu distribution, run `sudo docker ps`. The output lists a container named `guacd` that publishes port 4822. If `guacd` isn't listed, run `sudo docker start guacd`.
 3. In PowerShell, run `Test-NetConnection <guacd-host> -Port 4822` and confirm that `TcpTestSucceeded` is `True`.
 
-{/* TODO verify: whether guacd is still reachable a few minutes after a restart and after the server is idle for a while. If it isn't, document a keep-alive task. */}
+The installer registers a Windows scheduled task, **NPS RAG WSL keepalive**, that runs at logon. It starts the Ubuntu distribution and keeps it running, so the `guacd` container stays up without a manual `wsl` command. Keep this task enabled. If guacd still becomes unreachable, restart the container: run `wsl -d Ubuntu -u root -- docker restart guacd`, then repeat step 3.
 
 If guacd isn't running, see [Sessions fail after the server restarts](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md#sessions-fail-after-the-server-restarts).
 
