@@ -30,7 +30,7 @@ If provisioning finishes but takes more than 30 seconds, see [Long Provisioning 
 
 **Symptom:** A session ends, but its status stays at **Deprovisioning**. The temporary account or group membership isn't removed. In **Configuration** > **Service Nodes** > **Scheduler Service**, the action queue shows the activity as **Cancelling**.
 
-**Fix:** Check the Action Service log for the failed step. On Linux, see [Linux deprovisioning fails because the account is still in use](#linux-deprovisioning-fails-because-the-account-is-still-in-use). For other targets, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
+**Fix:** Upgrade to 26.07.3, which fixes two causes of a queue stuck in **Cancelling**. In an earlier release, cancelling a Running or Queued DisableUser action could reschedule in a loop, and the last action in a queue was compared against the action group template, so it was never detected as the last action. If the session still stays in **Deprovisioning**, check the Action Service log for the failed step. On Linux, see [Linux deprovisioning fails because the account is still in use](#linux-deprovisioning-fails-because-the-account-is-still-in-use). For other targets, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
 
 ## Linux deprovisioning fails because the account is still in use
 

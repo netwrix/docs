@@ -41,7 +41,7 @@ For more about SAML settings, see [SAML authentication](/docs/privilegesecure/26
 
 ### Permanent command plans
 
-Each upgrade imports the built-in permanent command plans again. The import overwrites any edits you made to them. Before you upgrade, record your edits, and reapply them afterward. See [Command plans](/docs/privilegesecure/26.07/resources/platforms/command-plans.md).
+Starting in 26.07.3, each upgrade imports the built-in permanent command plans again. The import overwrites any edits you made to them. Before you upgrade, record your edits, and reapply them afterward. See [Command plans](/docs/privilegesecure/26.07/resources/platforms/command-plans.md).
 
 ### Check the NPS Rest URL
 

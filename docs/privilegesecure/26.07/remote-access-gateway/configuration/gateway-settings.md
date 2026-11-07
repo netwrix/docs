@@ -25,6 +25,7 @@ The gateway loads the following settings files in this order. A later file overr
 | `appsettings.user.json` | Optional overrides. The gateway creates the file with a `RestService` block (`Url` and `InsecureSkipVerify`) when it is missing. |
 | `appsettings.log.json` | Installed with the gateway. It holds the log settings under `Serilog` and sets `InsecureSkipVerify`. See [Log level](#log-level) and [Skip certificate validation for Privilege Secure](#skip-certificate-validation-for-privilege-secure). |
 | `appsettings.svc.json` | The service identity, `ServiceInfo`, with `ScmName` and `RegisteredServiceType`. |
+| Command-line flags | Flags passed to the gateway on the command line. They override every file. |
 
 Make your changes in `appsettings.json`, except where a section on this page names another file.
 
@@ -86,6 +87,8 @@ In the default networking mode, WSL 2 runs behind network address translation (N
 The root-level `InsecureSkipVerify` key controls whether the gateway validates the Privilege Secure certificate when it forwards requests to `NPS.Uri`. The key is at the root of the file, not under `NPS`. It isn't in `appsettings.default.json`, and the shipped `appsettings.log.json` sets it to `true`. Because `appsettings.log.json` loads after `appsettings.json`, a value in `appsettings.json` doesn't override it.
 
 When the key is `true`, the gateway doesn't validate the Privilege Secure certificate. To make the gateway validate it, set the key to `false` in `appsettings.log.json`, and then recycle the gateway application pool.
+
+The `-I` flag on the command line also turns off validation. When you pass `-I`, the gateway sets `InsecureSkipVerify` to `true` in memory. The flag overrides every settings file, including `appsettings.log.json`.
 
 :::warning
 When `InsecureSkipVerify` is `true`, the gateway accepts any certificate from the server it forwards to. The shipped value of `true` is for initial setup. Set it to `false` for production, and ensure that the gateway server trusts the certificate on `https://<nps-server>:6500`, for example by importing the root certificate authority (CA) certificate on the gateway server.

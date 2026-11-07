@@ -65,6 +65,8 @@ With a default connector, add `?adlogin=1` to the address of the sign-in page to
 While a connector is exclusive, nobody can sign in with a user name and password, including administrators. Test the connector with an administrator account before you set it as exclusive.
 :::
 
+The password sign-in path stays blocked for an exclusive connector, even when you add `?adlogin=1`. The `?adlogin=1` address only shows the password fields in the sign-in page. If the exclusive connector fails and no administrator can sign in, Netwrix Support can set an internal **Allow AD Login** exception on an account. The exception has no console or API setting, so it can only be set on the account row in the database. Contact Netwrix Support before you set an exclusive connector on a production system.
+
 ## Assignment is required
 
 By default, Privilege Secure refuses a sign-in through an external connector when the user isn't assigned to that connector. The `StrictExternalAuth` setting in the web service configuration controls this behavior, and its default is `true`.
