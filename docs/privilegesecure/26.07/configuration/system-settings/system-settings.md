@@ -25,7 +25,7 @@ The panels appear in this order:
 9. [Data Retention](#data-retention)
 10. [Services](#services)
 
-{/* TODO screenshot: the System Settings page with the panel list (retake the searchable list) */}
+![The System Settings page with the searchable list of settings panels.](/images/privilegesecure/26.07/configuration/system-settings-page.webp)
 
 ## RDP Options
 

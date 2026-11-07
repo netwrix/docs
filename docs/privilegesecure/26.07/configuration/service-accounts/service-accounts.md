@@ -48,7 +48,7 @@ Before 26.07.3, SQL Server actions for a domain user created a local SQL login. 
 
 The account appears in the list. Select a name in the list to see and edit the details. Click **Save** to keep an edit, or **Cancel** to discard it.
 
-{/* TODO screenshot: the Add Service account form with the Platform list open */}
+![The Add Service account form with the Platform list open.](/images/privilegesecure/26.07/configuration/service-account-add-form.webp)
 
 ## Service account fields
 

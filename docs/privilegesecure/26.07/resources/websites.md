@@ -18,7 +18,7 @@ A website resource lets Netwrix Privilege Secure for Access Management (Privileg
 1. Optional: In **Associated Resource**, select a server that Privilege Secure manages and that hosts the website. Active Directory account operations then run on the domain controller that the resource is bound to.
 1. Select **Save**.
 
-{/* TODO screenshot: New Website page with the fields filled in. */}
+![The New Website page with the name, Platform, and Logon URL fields filled in.](/images/privilegesecure/26.07/resources/new-website-form.webp)
 
 ## Website details
 

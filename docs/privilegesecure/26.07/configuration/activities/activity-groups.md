@@ -33,7 +33,7 @@ The activities table lists the activities in the group. The first column shows t
 - **Remove**: remove the selected activities from the group after you confirm. This doesn't delete the activities.
 - **Refresh**: reload the table.
 
-{/* TODO screenshot: the Activity Groups page with a group selected and its activities listed */}
+![The Activity Groups page with a group selected and its one activity listed.](/images/privilegesecure/26.07/configuration/activity-groups-page.webp)
 
 ## Create an activity group
 
