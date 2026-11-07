@@ -11,6 +11,10 @@ Every Access Analyzer service runs as a pod on the server's Kubernetes cluster. 
 
 Run both on the Access Analyzer server as root, or with `sudo`. They read the cluster's credentials from `/etc/rancher/k3s/k3s.yaml`, which only root can read.
 
+:::tip
+`aa logs` and `aa export-logs` run the same commands with a shorter name, and don't need `sudo`. See [Run Common Operations with aa](run-common-operations-with-aa.md).
+:::
+
 ## Command Summary
 
 | Task | Command |
