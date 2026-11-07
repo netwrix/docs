@@ -25,6 +25,12 @@ The installer adds `aa` to the server when it installs Access Analyzer, and each
 | Explain why a service isn't running | `aa why <service>` |
 | Explain every service that isn't ready | `aa why` |
 | List warning events from the last hour | `aa events` |
+| Show CPU, memory, and volume use | `aa top` |
+| Explain Argo CD applications that aren't healthy | `aa apps` |
+| Explain a scan job | `aa scan <job or connector>` |
+| List failed scan jobs | `aa scans --failed` |
+| Show database sizes | `aa db size` |
+| Show the applied database migrations | `aa db migrations` |
 | Show application and pod status | `aa status` |
 | Open a PostgreSQL shell on the `access_analyzer` database | `aa psql` |
 | Run one PostgreSQL statement | `aa psql -c "<statement>"` |
@@ -126,6 +132,31 @@ aa events
 - `--all` adds normal events, such as a container starting.
 - `-w` keeps the list open and prints new events as they happen. Press **Ctrl+C** to stop. It can't be combined with `--since`.
 
+## Show CPU, Memory, and Volume Use
+
+`aa top` shows how much CPU and memory each server and each service uses, sorted by memory, and then how much disk space each persistent volume claim uses.
+
+```bash
+aa top
+```
+
+![aa top listing CPU and memory per node and per pod, then each volume claim with its used space, requested size, and percentage](/images/accessanalyzer/26.1/install/aa-top.webp)
+
+- Volume use is measured on the server, against the size each claim requested. Access Analyzer doesn't stop a volume from growing past its requested size, so a percentage above 100% means the volume uses more than it asked for, not that it's full. How full the disk itself is appears in `aa doctor`.
+- If the Kubernetes metrics service doesn't answer, `aa top` says that CPU and memory aren't available and still shows volume use.
+
+## Explain Argo CD Applications That Aren't Healthy
+
+Argo CD deploys Access Analyzer as a set of applications. When `aa doctor` or `aa status` shows an application that isn't `Synced` and `Healthy`, `aa apps` shows why: the result of its last sync, its error conditions, and each of its resources that is out of sync or unhealthy, with the reason.
+
+```bash
+aa apps
+```
+
+Add `--all` to first list every application with its sync status, health status, and version.
+
+![aa apps --all listing every Argo CD application as Synced and Healthy with its version](/images/accessanalyzer/26.1/install/aa-apps.webp)
+
 ## Check the Status of Access Analyzer
 
 `aa status` starts with one line that counts the ready services and the healthy Argo CD applications. It then lists the Argo CD applications that deploy Access Analyzer, with their sync and health status, and every pod in the `access-analyzer` namespace.
@@ -214,6 +245,20 @@ aa scans
 
 Add `-w` to keep the list open and print each change as jobs start and finish. Press **Ctrl+C** to stop. When no scan has run recently, the command prints `No resources found in access-analyzer namespace.`
 
+Kubernetes deletes a scan job and its pods one hour after the job finishes. For older scans, use the scan history in Access Analyzer.
+
+### Explain a Scan Job
+
+`aa scan` shows a scan job's status and why it failed, then each of its pods the way `aa why` shows a service, with the last 50 lines of its log.
+
+```bash
+aa scan file-server
+```
+
+Name a job from `aa scans`, or a connector type such as `file-server`, `active-directory`, `entra-id`, or `sharepoint` to see that connector's newest job. With no name, `aa scan` lists the newest jobs to pick from.
+
+To list only the failed jobs, with the reason each one failed, run `aa scans --failed`.
+
 ## Run Any kubectl Command
 
 `aa k` runs `kubectl` with the cluster credentials and the `access-analyzer` namespace already set. Everything after `k` goes to `kubectl` unchanged.
@@ -251,9 +296,22 @@ When `aa k` runs in a script or with its output redirected, it prints the list o
 aa version
 ```
 
+## Check the Databases
+
+`aa db` runs common queries that only read:
+
+| Command | Shows |
+|---|---|
+| `aa db size` | The 25 largest ClickHouse tables with their disk space and row counts, and the size of each PostgreSQL database |
+| `aa db migrations` | The schema version applied to ClickHouse and PostgreSQL, and to the job queue that Access Analyzer keeps in PostgreSQL |
+
+Netwrix Support might ask for the output of `aa db migrations` when an upgrade doesn't finish. A `dirty` value of `1` or `t` means a migration stopped partway.
+
 ## Read Logs
 
 `aa logs` and `aa export-logs` are the same commands as `dspm-installer logs` and `dspm-installer export-logs`. For targets, flags, and support bundles, see [View and Export Logs](view-and-export-logs.md).
+
+Each support bundle also includes the output of `aa doctor`, `aa version`, and `aa events` for the last 24 hours, in `aa-doctor.txt`, `aa-version.txt`, and `aa-events-24h.txt`.
 
 ## Turn On Tab Completion
 
