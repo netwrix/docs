@@ -24,7 +24,7 @@ The Action and Host Scan services include the PowerShell 7.6 engine, so those ho
 
 Remote service hosts run Windows Server 2016 through Windows Server 2025.
 
-{/* TODO verify: the minimum hardware for remote service hosts. Release code states no hardware requirement. */}
+Privilege Secure sets no minimum hardware for remote service hosts. Size them for the services you install there, using the [proxy server sizing](#proxy-server-sizing) table as a guide for hosts that run the Proxy Service.
 
 For installation steps, see [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 

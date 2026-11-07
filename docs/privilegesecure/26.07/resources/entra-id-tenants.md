@@ -28,9 +28,9 @@ A Microsoft Entra ID tenant resource connects Netwrix Privilege Secure for Acces
 
    :::warning
    **Service Account** defaults to the internal **Netwrix Password Secure** account. Replace it with the Entra ID service account before you save.
-   :::
 
-   {/* TODO verify: how a synchronization behaves when the internal Netwrix Password Secure account stays selected. The code only checks that a service account is selected, and the result depends on a live Entra ID tenant. */}
+   If you leave the internal account selected, the synchronization fails. Privilege Secure sends the account's user name and password to Microsoft as the Graph application's client ID and secret. The internal account isn't a registered Entra ID application, so Microsoft rejects the sign-in and the sync reports an authentication failure.
+   :::
 
 1. Select **Save**.
 

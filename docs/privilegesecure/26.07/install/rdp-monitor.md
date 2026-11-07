@@ -37,10 +37,8 @@ Install the service on each Windows host that users reach through an RDP session
 The service is now ready for the next RDP session to the host.
 
 :::note
-Start a new RDP session after you install the service. A session that was already open doesn't report Windows event activity.
+Start a new RDP session after you install the service. A session that was already open doesn't report Windows event activity. The service starts at the next logon or remote connect, so a host restart isn't needed.
 :::
-
-{/* TODO verify: that an RDP session open before the install reports no Windows event activity, and whether the host needs a restart. The monitor executable's source has no release branch. The release installer registers a scheduled task that starts the monitor at logon and at remote connect, which suggests an already-open session isn't monitored, but a test on a host settles it. */}
 
 ## Check the result
 

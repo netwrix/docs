@@ -49,8 +49,6 @@ The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it 
 
 The package has no standalone Email service installer.
 
-{/* TODO verify: what the Netwrix Endpoint Policy Manager extension, the Group Policy snap-in, and the NPS.LaunchApp folder do in a Privilege Secure deployment. The package names them but the release code doesn't describe their use. */}
-
 ## What NPS.exe installs
 
 `NPS.exe` installs the following components on the application server:

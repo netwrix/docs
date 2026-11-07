@@ -51,7 +51,7 @@ The launcher shows the steps for your situation on screen. For a first installat
 
 The installer puts PostgreSQL 16 in `C:\Program Files\Stealthbits\PostgreSQL16` and the data in `C:\ProgramData\Stealthbits\PostgreSQL16`. The Windows service is named `postgresql-x64-16` and is listed as **PostgreSQL Server 16**.
 
-{/* TODO verify: that these are the defaults on a fresh installation. They were read on a server where the Netwrix installer upgraded PostgreSQL 12 to 16. */}
+{/* TODO verify: on a fresh installation, confirm the PostgreSQL 16 install folder, data folder, and service name. These values were read on a server where the Netwrix installer upgraded PostgreSQL 12 to 16. The Setup Launcher in the release source also carries a PostgreSQL 16 to 18 upgrade path, so confirm which version a current fresh install uses. */}
 ![The Netwrix PostgreSQL 16 setup wizard install page.](/images/privilegesecure/26.07/install/postgresql-wizard-install.webp)
 
 ![The Netwrix PostgreSQL 16 setup wizard page with the install and data folders.](/images/privilegesecure/26.07/install/postgresql-wizard-folders.webp)
@@ -118,7 +118,7 @@ By default, the database settings point to the local server: PostgreSQL on port 
 
 On a server that was upgraded from PostgreSQL 12 to 16, PostgreSQL 16 listens on port 5437. The installer records the port in the `Port` value under `HKEY_LOCAL_MACHINE\SOFTWARE\Stealthbits Technologies\PostgreSQL16`.
 
-{/* TODO verify: the port that the bundled PostgreSQL 16 installer configures on a fresh installation. The Setup Launcher assumes 5432 when the registry has no `Port` value, but the prebuilt installer isn't in the product source. */}
+{/* TODO verify: the port that the bundled PostgreSQL 16 installer configures on a fresh installation. The Setup Launcher uses 5432 when the registry has no `Port` value, but the prebuilt installer isn't in the product source, so confirm the fresh-install port on a new host. */}
 
 ## If the installer can't reach the database
 

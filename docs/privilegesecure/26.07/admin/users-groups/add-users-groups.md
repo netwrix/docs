@@ -10,7 +10,7 @@ Onboard an Active Directory (AD) user or group to give it access to the console.
 
 The **Members** tab of an onboarded group lists the members of the group. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#members).
 
-{/* TODO verify: whether a member who has never signed in appears in the **Users & Groups** list without being onboarded separately. The lab group members already appear in the list. */}
+An onboarded group appears in the **Users & Groups** list as a single group row. Its members appear on the group's **Members** tab, not as separate rows, even if a member has never signed in. Onboard a member separately to give that person their own row and their own settings.
 
 ## Prerequisites
 

@@ -30,6 +30,10 @@ Exporting the "Activity Log" report is a common auditing and compliance use case
 
 1. On your Netwrix Privilege Secure server, ensure that PowerShell 7.1 is installed. It can be obtained from the official PowerShell github repository: https://github.com/PowerShell/PowerShell/releases/tag/v7.1.7. _Note: This specific version of PowerShell is a necessary prerequisite to running the SbPAM API. Do not install PowerShell 7.2+._
 
+   :::note
+   In Privilege Secure 26.07 and later, the requirement changed to PowerShell 7.6 or later. Follow the version in the [system requirements](/docs/privilegesecure/26.07/requirements/application-server.md) for your release.
+   :::
+
 2. Locate the "Extras" folder, which was packaged alongside your Netwrix Privilege Secure installer. Run the `SbPAMPowerShellModules` installer.  
    ![User-added image](./../0-images/ka04u000000HdD5_0EM4u000005yZ7y.png)
 

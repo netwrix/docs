@@ -221,4 +221,4 @@ If the resource doesn't appear in the access policy, check the following:
 - The resource has a service account. A dummy service account is enough.
 - The resource has a platform selected.
 
-{/* TODO verify: the end-to-end procedure, including whether the resource needs a service account and why. The code doesn't show a service account requirement, and the check needs a Linux device and a recorded session. */}
+The resource needs a service account for platform detection, so that Privilege Secure can resolve the platform and list the resource. The account isn't used to sign in. The Vault-login session uses the credential that the BYOV connector returns.

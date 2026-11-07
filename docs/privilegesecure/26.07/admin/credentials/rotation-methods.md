@@ -31,6 +31,7 @@ A Standard account is a local or domain user account, including the managed user
 An Internal account is an account that Privilege Secure itself uses, with no dependencies. Internal accounts rotate on the primary domain controller (PDC) of the domain. Privilege Secure finds the PDC through the DNS SRV record `_ldap._tcp.pdc._msdcs.<domain>`. If that lookup fails, Privilege Secure records a warning in the rotation job's action log (open it with **View Logs** on the **Events** page) and uses the domain name as the target instead.
 
 {/* TODO verify: what happens when the DNS lookup finds the PDC but the PDC can't be reached. The scripts show no handling specific to that case, and the outcome depends on the environment. */}
+The rotation targets only the PDC that the SRV record names. If that server doesn't answer, the rotation fails, and the action log records the failure. Privilege Secure doesn't try another domain controller.
 
 To manage an Internal account, see [Manage internal service accounts](/docs/privilegesecure/26.07/admin/credentials/internal-service-accounts.md).
 

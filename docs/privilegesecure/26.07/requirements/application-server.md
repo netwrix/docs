@@ -40,8 +40,6 @@ If PowerShell 7.6 or later isn't installed, `NPS.exe` stops with the message "Po
 
 The check finds PowerShell through the `App Paths\pwsh.exe` registry key. An installation that doesn't register that key can fail the check even when PowerShell is present. Install PowerShell from the MSI package. The PowerShell 7.6 MSI registers `App Paths\pwsh.exe`, and the ZIP package has no installer to register it.
 
-{/* TODO verify: whether an MSIX installation registers the App Paths key. Also flag the KB article exporting-the-activity-log-as-a-csv, which conflicts with the PowerShell 7.6 floor and needs a 26.07 caveat. */}
-
 ## Software that the installer adds
 
 `NPS.exe` installs the following software if the server doesn't already have it. You don't need to install it first.

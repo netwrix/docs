@@ -100,15 +100,12 @@ After a PostgreSQL 12 to 16 migration, the database schema can be incomplete. To
 
 ### The scheduled Active Directory sync fails after the upgrade
 
-A scheduled Active Directory (AD) sync can show a **Failed** status after an upgrade, even when the sync itself works. To clear the status:
+A scheduled Active Directory (AD) sync can show a **Failed** status after an upgrade, even when the sync itself works. The stored status comes from the last sync run. Changing the schedule doesn't clear it, so the **Failed** label stays until a new sync runs. To clear the status, run a synchronization:
 
 1. Open the domain in **Resources**.
-2. Change the sync schedule time, and click **Save**.
-3. Change the schedule back to the original time, and click **Save**.
+2. Select **Sync**.
 
-See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md).
-
-{/* TODO verify: the status label after the reset and whether a manual Sync is needed. */}
+The next scheduled run also clears the label. See [Run a synchronization](/docs/privilegesecure/26.07/resources/domains.md#run-a-synchronization).
 
 ## Upgrade the Remote Access Gateway separately
 
