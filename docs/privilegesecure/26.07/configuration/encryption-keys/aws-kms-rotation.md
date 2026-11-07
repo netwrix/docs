@@ -28,7 +28,7 @@ The `SbPAM.RotateAwsKey` tool applies an Amazon Web Services (AWS) Key Managemen
 ## Apply or rotate the KMS key
 
 1. Open the `KeyTools` folder in the installation directory. The default is `C:\Program Files\Stealthbits\PAM\KeyTools`.
-1. Run `SbPAM.RotateAwsKey` as an administrator. The **AWS Connection Settings** window opens.
+1. Run `SbPAM.RotateAwsKey` as an administrator. The **Rotate AWS Key** window opens.
 1. Enter the **Access Key** and the **Secret Key** of the AWS user. If the server runs on Amazon Elastic Compute Cloud (EC2) and uses an instance profile, select **Use EC2 Instance Profile** instead.
 1. In **KMS Key**, enter the ARN of the KMS key.
 1. In **Region**, select the AWS Region of the key.
@@ -37,7 +37,7 @@ The `SbPAM.RotateAwsKey` tool applies an Amazon Web Services (AWS) Key Managemen
 
 The log window shows the progress and the result. The tool takes a few minutes, especially on a large system, because it re-encrypts all stored secrets. When it finishes, the log shows "Protect key Rotate successful".
 
-{/* TODO screenshot: the AWS Connection Settings window with the fields filled in with placeholder values, with the Access Key and Secret Key masked. */}
+![The Rotate AWS Key window with Rotate Key selected, an Access Key, a masked Secret Key, a Region, and a KMS key ARN.](/images/privilegesecure/26.07/configuration/aws-kms-connection-settings.webp)
 
 Other servers that share the database need the new key. See [Export and import the key](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md#export-and-import-the-key).
 

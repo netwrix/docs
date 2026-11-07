@@ -77,7 +77,7 @@ To synchronize Active Directory for vault connectors, use an account with Domain
 
 Netwrix prefers physical machines but supports virtual machines. For VMware, install all virtual machines in the same datacenter or rack. When the server requirements specify separate disks, configure separate data stores on the VM host.
 
-Netwrix tests Privilege Secure on VMware vSphere 7.0 Update 3.
+Netwrix tests Privilege Secure on VMware ESXi 8.0 or later.
 
 ## Next steps
 
