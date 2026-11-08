@@ -1,6 +1,6 @@
 ---
 title: "System settings reference"
-description: "Look up each System Settings panel in Privilege Secure, its fields, default values, and allowed ranges."
+description: "Look up each Privilege Secure System Settings panel, such as RDP, WinRM, idle timeout, password history, and data retention, with defaults and ranges."
 sidebar_position: 10
 ---
 

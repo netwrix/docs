@@ -1,6 +1,6 @@
 ---
 title: "High availability options"
-description: "Choose a high availability deployment, see what replicates, and learn how to back up, fail over, and register a secondary node."
+description: "Choose a Privilege Secure high availability deployment, see what replicates, and back up, fail over to, and register a secondary server."
 sidebar_position: 100
 ---
 

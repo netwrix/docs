@@ -1,6 +1,6 @@
 ---
 title: "Grant group or role membership without a resource"
-description: "Build an activity that lets users pick groups or roles to join for a session, with an optional connection to a resource."
+description: "Create a Privilege Secure activity that adds users to Active Directory, Entra ID, SQL Server, or Oracle groups and roles for the length of a session."
 sidebar_position: 60
 ---
 

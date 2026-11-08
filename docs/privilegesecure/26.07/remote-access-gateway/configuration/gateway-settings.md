@@ -56,7 +56,7 @@ Restart-WebAppPool -Name NPSGatewayAppPool
 | `Guacd.InsecureSkipVerify` | `false` | When `true`, the gateway connects to guacd without TLS. Keep it `false`. |
 | `Client.DefaultArguments` | Per protocol | The default connection arguments the gateway passes to guacd for each protocol, such as the default port and the display size. |
 | `Client.UnencryptedArguments` | Per protocol | The arguments the browser may pass outside the encrypted token, such as `width`, `height`, and `dpi`. |
-| `AllowedLoginMethods` | `0` | The sign-in methods the portal offers. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md). |
+| `AllowedLoginMethods` | `0` | The sign-in methods the portal offers. See [Configure sign-in for the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md). |
 
 In the table, `Section.Key` means a nested JSON key. For example, `NPS.Uri` is `"NPS": { "Uri": ... }`.
 

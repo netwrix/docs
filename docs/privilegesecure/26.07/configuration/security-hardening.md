@@ -1,6 +1,6 @@
 ---
 title: "Security hardening checklist"
-description: "Review the settings to lock down after you install Netwrix Privilege Secure, with links to the pages that cover each one."
+description: "Harden a Privilege Secure server: replace the console certificate, restrict SSH algorithms, protect the encryption key with AWS KMS, and use WinRM HTTPS."
 sidebar_position: 80
 ---
 

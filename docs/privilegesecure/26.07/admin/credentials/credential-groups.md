@@ -1,6 +1,6 @@
 ---
 title: "Credential groups"
-description: "Create credential groups and add managed credentials to them so credential-based access policies can grant access to the group."
+description: "Create credential groups in Privilege Secure and add managed credentials to them, so a credential-based access policy can grant access to the group."
 sidebar_position: 70
 ---
 
@@ -64,4 +64,4 @@ For example, name a group `<build-admin-accounts>` with the description `<Local 
 ## Related topics
 
 - [Credential policy overrides](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md)
-- [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md)
+- [Password rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md)

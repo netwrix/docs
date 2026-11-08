@@ -80,4 +80,4 @@ The **Dependents** count on the **Credentials** page leaves out services and sch
 
 Select **Rollback** to return the account to its previous password. Privilege Secure restores the most recent previous password first, then schedules an update for each dependent so that they use it again, the same way as a rotation. Select **Cancel** to stop a rollback that's in progress.
 
-For how the account types differ, see [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
+For how the account types differ, see [Password rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).

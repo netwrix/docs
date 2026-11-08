@@ -1,10 +1,10 @@
 ---
-title: "Configure sign-in for the portal"
-description: "Choose which sign-in methods the Remote Access Gateway portal offers by setting AllowedLoginMethods and the Use Remote Access Gateway connector option."
+title: "Configure sign-in for the Remote Access Gateway portal"
+description: "Set which sign-in methods the Privilege Secure Remote Access Gateway portal accepts with AllowedLoginMethods and the Use Remote Access Gateway option."
 sidebar_position: 10
 ---
 
-# Configure sign-in for the portal
+# Configure sign-in for the Remote Access Gateway portal
 
 The Remote Access Gateway portal offers the sign-in methods that you allow in two places. The `AllowedLoginMethods` setting in the gateway decides whether users can sign in with a username and password. The **Use Remote Access Gateway** option on each authentication connector decides which single sign-on connectors the portal accepts.
 

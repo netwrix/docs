@@ -1,6 +1,6 @@
 ---
 title: "Installation overview"
-description: "Learn which packages to download, which installer to run, and the order in which to install and set up Privilege Secure."
+description: "Choose the Privilege Secure packages and installer, and follow the installation order for the application server, optional services, and the gateway."
 sidebar_position: 10
 ---
 

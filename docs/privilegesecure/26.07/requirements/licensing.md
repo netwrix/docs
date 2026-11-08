@@ -1,6 +1,6 @@
 ---
 title: "Licensing"
-description: "Learn how user count sets your Privilege Secure license, what the trial license includes, and what happens when you exceed the user count."
+description: "Find out how Privilege Secure counts licensed users, what the trial license includes, and what happens when the user count or trial term runs out."
 sidebar_position: 80
 ---
 

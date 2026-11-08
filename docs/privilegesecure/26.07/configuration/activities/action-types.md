@@ -1,6 +1,6 @@
 ---
 title: "Action types reference"
-description: "Look up each action type in the Add Action picker, the fields it has, and the matching post-session action that undoes it."
+description: "Look up each Privilege Secure action type in the Add Action picker, the fields it takes, and the paired post-session action that undoes it."
 sidebar_position: 50
 ---
 

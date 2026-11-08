@@ -1,6 +1,6 @@
 ---
 title: "Review historical sessions"
-description: "Find past sessions by user, resource, or date, search recording data, replay recordings, and export the session list to a CSV file."
+description: "Find past Privilege Secure sessions by user, resource, or date, search recording data, replay recordings, and export the session list to a CSV file."
 sidebar_position: 30
 ---
 

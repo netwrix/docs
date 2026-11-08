@@ -1,6 +1,6 @@
 ---
 title: "Restrict SSH commands"
-description: "Create a command restriction that logs, blocks, locks, or terminates a session when a command matches a rule, and apply it to a connection profile."
+description: "Create a Privilege Secure command restriction that logs, blocks, locks, or terminates an SSH session on a regex match, and apply it to a connection profile."
 sidebar_position: 60
 ---
 

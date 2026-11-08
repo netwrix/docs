@@ -1,6 +1,6 @@
 ---
 title: "Administration overview"
-description: "Learn what Privilege Secure administrators do day to day and find the console pages for sessions, users, roles, credentials, auditing, and service health."
+description: "Find the Privilege Secure administrator tasks for sessions, users, roles, credentials, auditing, and service health, and the pages that cover each one."
 sidebar_position: 10
 ---
 

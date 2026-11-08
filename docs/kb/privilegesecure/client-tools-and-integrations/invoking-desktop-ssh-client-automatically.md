@@ -34,7 +34,7 @@ To automatically invoke a local SSH client for sessions, you need to register a 
 
    ![sbpam-url.exe in the NPS-AM Extras folder](./../0-images/ka0Qk000000E5z7_extras-folder.png)
 
-   > **NOTE:** The **Extras** folder also includes batch files with known configurations for popular SSH clients. For information about the full NPS-AM package and its contents, see [Privilege Secure Components](https://docs.netwrix.com/docs/privilegesecure/25_12/install/components).
+   > **NOTE:** The **Extras** folder also includes batch files with known configurations for popular SSH clients. For information about the full NPS-AM package and its contents, see [Privilege Secure Components](https://docs.netwrix.com/docs/privilegesecure/26_07/install/components).
 
 2. Ensure that your preferred SSH app (for example, PuTTY) is installed and note its installation location.
 

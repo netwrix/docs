@@ -1,6 +1,6 @@
 ---
 title: "How Active Directory synchronization works"
-description: "Learn what Active Directory synchronization reads, how often it runs, how it finds group members, and how delta sync shortens later runs."
+description: "Find out what Privilege Secure reads during Active Directory synchronization, how it finds group members, and how delta sync shortens later runs."
 sidebar_position: 60
 ---
 

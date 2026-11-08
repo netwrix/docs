@@ -1,6 +1,6 @@
 ---
 title: "View passwords and password history"
-description: "Copy or view the current password of a managed account and review its previous passwords from the Credentials page."
+description: "View or copy the current password of a managed account in Privilege Secure, and review its stored password history, history limits, and retention."
 sidebar_position: 60
 ---
 

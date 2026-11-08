@@ -1,6 +1,6 @@
 ---
 title: "REST API overview"
-description: "Learn how the Privilege Secure REST API is addressed, authenticated, paged, and secured, before you automate the product."
+description: "Find the base URL, authentication, roles, paging, and error conventions that apply to every Privilege Secure REST API endpoint."
 sidebar_position: 10
 ---
 

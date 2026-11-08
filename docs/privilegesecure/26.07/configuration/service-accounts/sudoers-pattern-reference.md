@@ -1,6 +1,6 @@
 ---
 title: "Sudoers pattern reference"
-description: "Match commands and arguments in a sudoers rule with wildcards and POSIX regular expressions on Linux and BSD, and test a rule safely."
+description: "Match commands and arguments in a Privilege Secure sudoers rule with wildcards and POSIX regular expressions on Linux and BSD, and test a rule safely."
 sidebar_position: 31
 ---
 

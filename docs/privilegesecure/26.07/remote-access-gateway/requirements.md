@@ -81,7 +81,7 @@ The gateway installer creates this inbound Windows Firewall rule, open to any ad
 | --- | --- |
 | `NPS Gateway Web Service Port (6550)` | 6550 |
 
-The portal installer creates no Windows Firewall rules. Create a rule for port 443, and for port 80 when you use the redirect to HTTPS. See [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md#open-the-portal-ports).
+The portal installer creates no Windows Firewall rules. Create a rule for port 443, and for port 80 when you use the redirect to HTTPS. See [Install the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md#open-the-portal-ports).
 
 Limit each rule to the address of the server that connects to it. No installer creates a rule for ports 80 or 4822.
 

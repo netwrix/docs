@@ -1,6 +1,6 @@
 ---
 title: "Platforms"
-description: "Review the 11 platforms in Privilege Secure and the settings that set the password rules and schedules for every resource on a platform."
+description: "Review the built-in Privilege Secure platforms, such as Windows, Linux, Entra ID, and Cisco, and the password and schedule settings each one applies."
 sidebar_position: 10
 ---
 

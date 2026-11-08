@@ -1,6 +1,6 @@
 ---
 title: "Create a credential-based access policy"
-description: "Create a credential-based access policy so users can check out managed credentials, and credentials and files in a Privilege Secure secret vault."
+description: "Create a credential-based access policy so Privilege Secure users can check out managed credentials and release files from a secret vault."
 sidebar_position: 30
 ---
 

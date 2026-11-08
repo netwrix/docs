@@ -32,14 +32,14 @@ The **Active** tile also has the **Create Session**, **End Session**, **Lock Act
 - **End Session** ends the selected sessions. It stays unavailable until you select a row.
 - **Lock Activity** and **Unlock Activity** require the **Lock Session** permission from the Auditors permission group, or the **Admin View Read Only** role with **Lock Session**. Without it, the buttons are unavailable and a tooltip names the missing permission.
 
-![Portal dashboard with the Active, Scheduled, Approvals, and Historical tiles and a session in the table](/images/privilegesecure/26.07/remote-access-gateway/portal-dashboard-signed-in.webp)
+![The Remote Access Gateway portal dashboard with the Active, Scheduled, Approvals, and Historical tiles and one session in the table.](/images/privilegesecure/26.07/remote-access-gateway/portal-dashboard-signed-in.webp)
 
 ## Request a session
 
 1. On the dashboard, click **Create Session**. The **Activity Request** wizard opens.
 2. On the **Activity Selection** step, search for and select an activity. Click **Next >**.
 
-   ![Activity Selection step of the Activity Request wizard](/images/privilegesecure/26.07/remote-access-gateway/portal-activity-request-step1.webp)
+   ![The Activity Selection step of the Activity Request wizard with the activity search box and the list of activities.](/images/privilegesecure/26.07/remote-access-gateway/portal-activity-request-step1.webp)
 
 3. If the **Group Selection** step appears, select the groups or roles. Click **Next >**.
 
@@ -48,11 +48,11 @@ The **Active** tile also has the **Create Session**, **End Session**, **Lock Act
 4. On the **Resource Selection** step, select one or more resources. Click **Next >**.
 5. On the **Notes** step, enter notes and a ticket number. Click **Next >**.
 
-   ![Notes step with the Notes for this session and Ticket number for this session fields](/images/privilegesecure/26.07/remote-access-gateway/portal-wizard-notes.webp)
+   ![The Notes step of the Activity Request wizard with the Notes for this session and Ticket number for this session fields.](/images/privilegesecure/26.07/remote-access-gateway/portal-wizard-notes.webp)
 
 6. On the **Scheduling** step, select **Now**, or select **Choose a time** and set a start time. Click **Next >**.
 
-   ![Scheduling step with the Now and Choose a time options](/images/privilegesecure/26.07/remote-access-gateway/portal-wizard-scheduling.webp)
+   ![The Scheduling step of the Activity Request wizard with the Now and Choose a time options.](/images/privilegesecure/26.07/remote-access-gateway/portal-wizard-scheduling.webp)
 
    The wizard shows that the session expires after the **Max Duration (minutes)** of the connection profile in the access policy. The default is 120. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 

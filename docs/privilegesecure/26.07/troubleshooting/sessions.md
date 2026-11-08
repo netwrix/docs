@@ -1,6 +1,6 @@
 ---
 title: "Sessions fail or get stuck"
-description: "Fix a session that won't provision, stays in Provisioning, doesn't deprovision, or is rejected for multifactor authentication or policy reasons."
+description: "Fix Privilege Secure sessions that won't provision, stay in Provisioning or Deprovisioning, or fail on multifactor authentication or policy errors."
 sidebar_position: 40
 ---
 

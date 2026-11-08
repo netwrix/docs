@@ -1,10 +1,10 @@
 ---
-title: "Rotation methods"
-description: "Learn how password rotation differs for Standard, Internal, and Service accounts, and which toolbar button starts each rotation."
+title: "Password rotation methods"
+description: "Compare how Privilege Secure rotates passwords for Standard, Internal, and Service accounts, and which toolbar button starts each rotation."
 sidebar_position: 30
 ---
 
-# Rotation methods
+# Password rotation methods
 
 How an account rotates depends on its **Managed Type** and its **Method**. The **Credentials** page shows both columns. See [Credentials](/docs/privilegesecure/26.07/admin/credentials/overview.md).
 

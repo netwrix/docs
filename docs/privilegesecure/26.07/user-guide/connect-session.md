@@ -1,6 +1,6 @@
 ---
 title: "Connect to a session"
-description: "Launch, extend, and end an available session from the console, and view or copy its password."
+description: "Launch an available Privilege Secure session from the console, sign in to the resource, view or copy its password, and extend or end the session."
 sidebar_position: 60
 ---
 

@@ -167,4 +167,4 @@ If guacd isn't running, see [Sessions fail after the server restarts](/docs/priv
 
 The gateway writes `PAM-RagGateway*.log` to `C:\ProgramData\Stealthbits\PAM\Log`. The file stays empty until the gateway receives its first request.
 
-Install the portal next. See [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md). To fix problems, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md).
+Install the portal next. See [Install the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md). To fix problems, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md).

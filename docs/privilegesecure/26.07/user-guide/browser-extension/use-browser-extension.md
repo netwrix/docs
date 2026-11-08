@@ -1,6 +1,6 @@
 ---
 title: "Use the browser extension"
-description: "Sign in to the browser extension, start, extend, and end web sessions, and change the extension settings in Chrome or Edge."
+description: "Sign in to the Privilege Secure browser extension, start, extend, and end web sessions from the toolbar, and change the extension settings."
 sidebar_position: 20
 ---
 

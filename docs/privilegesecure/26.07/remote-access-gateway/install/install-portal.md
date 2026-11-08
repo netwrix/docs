@@ -1,10 +1,10 @@
 ---
-title: "Install the portal"
-description: "Install the Remote Access Gateway portal on a dedicated DMZ server, point it at the gateway, and open it in a browser."
+title: "Install the Remote Access Gateway portal"
+description: "Install the Privilege Secure Remote Access Gateway portal on a dedicated DMZ server, connect it to the gateway on port 6550, and open it in a browser."
 sidebar_position: 20
 ---
 
-# Install the portal
+# Install the Remote Access Gateway portal
 
 The portal is the web front end that external users open. Install it on a dedicated server in the demilitarized zone (DMZ). It runs nginx as the **NPS Rag Portal** Windows service and forwards requests to the gateway on port 6550.
 
@@ -38,11 +38,11 @@ The examples use these placeholders. Replace them with your values.
 2. Right-click the installer and select **Run as administrator**. The setup wizard opens.
 3. Select **I agree to the license terms and conditions** and click **Install**.
 
-   ![Portal installer license agreement page](/images/privilegesecure/26.07/remote-access-gateway/portal-license.webp)
+   ![The Remote Access Gateway portal installer with the license agreement checkbox and the Install button.](/images/privilegesecure/26.07/remote-access-gateway/portal-license.webp)
 
 4. When the page shows "Installation Successfully Completed", click **Close**.
 
-   ![Portal installer completion page](/images/privilegesecure/26.07/remote-access-gateway/portal-install-complete.webp)
+   ![The Remote Access Gateway portal installer showing Installation Successfully Completed and the Close button.](/images/privilegesecure/26.07/remote-access-gateway/portal-install-complete.webp)
 
 ## Point the portal at the gateway
 
@@ -92,13 +92,13 @@ Create a similar rule for port 80 if users need the redirect to HTTPS. The porta
 
 4. If the browser shows a certificate warning, continue to the site. The warning appears because the portal uses a self-signed certificate.
 
-   ![Browser warning for the portal's self-signed certificate](/images/privilegesecure/26.07/remote-access-gateway/portal-cert-warning.webp)
+   ![A browser certificate warning that appears when the Remote Access Gateway portal uses its self-signed certificate.](/images/privilegesecure/26.07/remote-access-gateway/portal-cert-warning.webp)
 
    To remove the warning, install a certificate from your certification authority. See [Portal and gateway certificates](/docs/privilegesecure/26.07/remote-access-gateway/configuration/certificates.md).
 
 The portal sign-in page opens. By default it offers single sign-on (SSO) only. If it shows "The license has expired or the license service is offline", fix the Privilege Secure license. See [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).
 
-To choose which sign-in methods users see, see [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
+To choose which sign-in methods users see, see [Configure sign-in for the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## Place the portal behind a web application firewall
 

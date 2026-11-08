@@ -1,6 +1,6 @@
 ---
 title: "Manage active and scheduled sessions"
-description: "End, lock, unlock, and inspect sessions in progress, and find sessions that are scheduled to start later, from the Active and Scheduled dashboard tiles."
+description: "End, lock, unlock, and inspect Privilege Secure sessions in progress, and find sessions scheduled to start later, from the Active and Scheduled tiles."
 sidebar_position: 20
 ---
 

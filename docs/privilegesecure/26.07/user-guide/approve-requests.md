@@ -1,6 +1,6 @@
 ---
 title: "Approve or deny session requests"
-description: "Review the session requests that wait for your approval, and approve or deny one or several requests from the Approvals tile."
+description: "Approve or deny Privilege Secure session requests that wait for you as an approver, one at a time or several together, from the Approvals tile."
 sidebar_position: 100
 ---
 

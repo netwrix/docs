@@ -1,6 +1,6 @@
 ---
 title: "Credential policy overrides"
-description: "Give selected managed credentials their own change schedule and verification schedule instead of the ones from their platform."
+description: "Give selected managed credentials in Privilege Secure their own change schedule and verification schedule instead of the ones from their platform."
 sidebar_position: 80
 ---
 
@@ -66,4 +66,4 @@ The override table shows **Account**, **Resource**, **Password Changed**, **Age*
 ## Related topics
 
 - [Credential groups](/docs/privilegesecure/26.07/admin/credentials/credential-groups.md)
-- [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md)
+- [Password rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md)

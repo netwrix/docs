@@ -1,6 +1,6 @@
 ---
 title: "Dashboard"
-description: "Learn what each Dashboard tile shows, who sees it, and where to manage sessions, users, resources, and credentials."
+description: "Find what each Privilege Secure Dashboard tile shows, who sees it, and where to manage sessions, approvals, users, resources, and credentials."
 sidebar_position: 10
 ---
 

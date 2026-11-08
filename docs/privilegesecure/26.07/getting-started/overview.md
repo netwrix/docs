@@ -1,6 +1,6 @@
 ---
 title: "Privilege Secure for Access Management overview"
-description: "Learn what Netwrix Privilege Secure for Access Management does, how just-in-time access works, and who uses each part of the product."
+description: "Find out what Netwrix Privilege Secure for Access Management does, how just-in-time access works, and which roles use each part of the product."
 sidebar_position: 10
 ---
 

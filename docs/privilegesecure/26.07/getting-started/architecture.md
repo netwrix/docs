@@ -1,6 +1,6 @@
 ---
 title: "Architecture and components"
-description: "Learn which components make up Privilege Secure, which ports they use, and how the deployment topologies connect them."
+description: "Find the Privilege Secure components, their default ports, and how the single-server, distributed, and high availability topologies connect them."
 sidebar_position: 30
 ---
 

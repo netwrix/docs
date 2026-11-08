@@ -1,6 +1,6 @@
 ---
 title: "Troubleshoot the Remote Access Gateway"
-description: "Find the cause and fix for Remote Access Gateway sign-in errors, portal load failures, and failed sessions, and where to find the logs."
+description: "Fix Privilege Secure Remote Access Gateway problems such as license banners, ERRCONNECT_LOGON_FAILURE, 502 errors, and sessions that close at once."
 sidebar_position: 60
 ---
 
@@ -47,7 +47,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 **Cause:** The `AllowedLoginMethods` setting doesn't allow the method. The default value, `0`, allows single sign-on (SSO) only. With value `1`, the portal also rejects a username that contains `\` or `@`.
 
-**Fix:** Ask the user to use an allowed method, or change the setting. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
+**Fix:** Ask the user to use an allowed method, or change the setting. See [Configure sign-in for the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## A connector can't be used through the gateway
 
@@ -55,7 +55,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 **Cause:** The connector doesn't match where the user signs in. A connector with **Use Remote Access Gateway** selected works only through the portal, and fails on the console. A connector with the checkbox cleared works only on the console, and fails through the portal.
 
-**Fix:** To offer the identity provider on the portal, edit the connector, or create one for the portal, and select **Use Remote Access Gateway**. To offer it on both the portal and the console, create one connector for each. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
+**Fix:** To offer the identity provider on the portal, edit the connector, or create one for the portal, and select **Use Remote Access Gateway**. To offer it on both the portal and the console, create one connector for each. See [Configure sign-in for the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## ERRCONNECT_LOGON_FAILURE after you enter the target password
 
@@ -92,7 +92,7 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 - A firewall blocks port 6550 between the portal server and the gateway server.
 - The nginx upstream still holds the placeholder `nps-gatewayhost` because `Configure-Nginx.ps1` didn't run.
 
-**Fix:** Start the IIS site, open port 6550, or run `Configure-Nginx.ps1 <gateway-server>` on the portal server. See [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md).
+**Fix:** Start the IIS site, open port 6550, or run `Configure-Nginx.ps1 <gateway-server>` on the portal server. See [Install the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md).
 
 ## The gateway runs with default settings
 

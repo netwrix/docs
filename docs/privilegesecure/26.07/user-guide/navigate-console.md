@@ -1,6 +1,6 @@
 ---
 title: "Navigate the console"
-description: "Find the header controls, the navigation menu, the language selector, the theme toggle, and the Product Tour, and change your console password."
+description: "Find the Privilege Secure console header, navigation menu, language selector, theme toggle, and Product Tour, and change your local console password."
 sidebar_position: 30
 ---
 

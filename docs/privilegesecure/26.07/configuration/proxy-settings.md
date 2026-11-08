@@ -1,6 +1,6 @@
 ---
 title: "Proxy settings reference"
-description: "Look up the settings for the SSH and RDP proxy, the connection string separators, the recording limits, and how the service applies a change."
+description: "Look up the Privilege Secure SSH and RDP proxy settings, including listen ports 4422 and 4489, connection string separators, and recording limits."
 sidebar_position: 60
 ---
 

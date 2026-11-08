@@ -1,6 +1,6 @@
 ---
 title: "Review an access certification"
-description: "Approve or deny the access entitlements of an access certification task assigned to you, and commit the review."
+description: "Review a Privilege Secure access certification task as the assigned Reviewer, approve or deny each entitlement, and commit the review."
 sidebar_position: 110
 ---
 

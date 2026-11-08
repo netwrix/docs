@@ -1,6 +1,6 @@
 ---
 title: "Review sessions as an auditor"
-description: "Find the sessions you are allowed to audit, replay recordings, watch live sessions, and search recorded keystrokes and commands."
+description: "Find the Privilege Secure sessions you can audit, replay their recordings, watch live sessions, and search recorded keystrokes and commands."
 sidebar_position: 120
 ---
 

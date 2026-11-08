@@ -22,7 +22,7 @@ The Remote Access Gateway portal is a web page that lets you request and open Ne
 
 ## Choose a sign-in method
 
-The sign-in page shows the methods that your administrator allows. By default, the portal allows SSO only. An administrator can also allow local Privilege Secure users, or local and domain users. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
+The sign-in page shows the methods that your administrator allows. By default, the portal allows SSO only. An administrator can also allow local Privilege Secure users, or local and domain users. See [Configure sign-in for the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 | What the page shows | Method |
 | --- | --- |

@@ -1,6 +1,6 @@
 ---
 title: "Key concepts"
-description: "Learn what access policies, activities, resources, login accounts, sessions, and roles are, and how they fit together in Privilege Secure."
+description: "Find out how access policies, activities, resources, login accounts, connection profiles, sessions, and roles fit together in Privilege Secure."
 sidebar_position: 20
 ---
 

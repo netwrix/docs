@@ -1,6 +1,6 @@
 ---
 title: "Track your sessions"
-description: "Check the status of your active, scheduled, and past sessions, end a session, open its logs, and relaunch a past session."
+description: "Check the status of your active, scheduled, and past Privilege Secure sessions, end a session, open its logs, and relaunch a past session."
 sidebar_position: 90
 ---
 

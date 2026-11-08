@@ -1,6 +1,6 @@
 ---
 title: "Manage, rotate, and verify credentials"
-description: "Bring accounts under management and see how the Rotate, Verify, and Keep Enabled options work."
+description: "Bring accounts under Privilege Secure management, rotate and verify their passwords, and keep accounts enabled after a credential release."
 sidebar_position: 20
 ---
 
@@ -66,7 +66,7 @@ Automatic accounts also rotate on the schedule of their platform or [credential 
 A rotation doesn't run while a session on the account is active. This applies to manual and scheduled rotation. The console doesn't block the **Rotate** button. The rotation job stops, marks the rotation as failed, and logs that it aborted because the account has active sessions. Wait until the session ends, then select **Rotate** again.
 :::
 
-To rotate a service account that services or scheduled tasks use, see [Rotate service accounts and their dependencies](/docs/privilegesecure/26.07/admin/credentials/service-account-dependencies.md). Internal accounts rotate on the primary domain controller (PDC). See [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
+To rotate a service account that services or scheduled tasks use, see [Rotate service accounts and their dependencies](/docs/privilegesecure/26.07/admin/credentials/service-account-dependencies.md). Internal accounts rotate on the primary domain controller (PDC). See [Password rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
 
 ## Verify an account
 

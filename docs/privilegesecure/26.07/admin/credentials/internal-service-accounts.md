@@ -61,4 +61,4 @@ The **Credentials** page doesn't show the **Set Password**, **Copy Password to C
 ## Related topics
 
 - [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md)
-- [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md)
+- [Password rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md)

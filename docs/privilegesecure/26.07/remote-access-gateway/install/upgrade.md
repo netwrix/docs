@@ -89,5 +89,5 @@ After you create the container, start a session from the portal and confirm that
 ## Related topics
 
 - [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md)
-- [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md)
+- [Install the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md)
 - [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md)

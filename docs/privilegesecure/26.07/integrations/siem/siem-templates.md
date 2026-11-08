@@ -1,6 +1,6 @@
 ---
 title: "SIEM templates and event fields"
-description: "Look up the built-in SIEM templates, the fields you can insert into a message, and how to create a custom template."
+description: "Look up the built-in CEF and LEEF SIEM templates in Privilege Secure, the event fields and placeholders you can insert, and how to create a template."
 sidebar_position: 20
 ---
 

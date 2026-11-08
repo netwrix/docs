@@ -1,6 +1,6 @@
 ---
 title: "Run the setup wizard"
-description: "Complete the five-step setup wizard to create the first administrator, sync Active Directory, and add a resource."
+description: "Run the Privilege Secure setup wizard to create the first administrator, register MFA, sync Active Directory, and add the first resource."
 sidebar_position: 50
 ---
 

@@ -76,5 +76,5 @@ If you regenerate the certificate files without updating `Guacd.ServerThumbprint
 ## Related topics
 
 - [Gateway settings reference](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md)
-- [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md)
+- [Install the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md)
 - [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md)

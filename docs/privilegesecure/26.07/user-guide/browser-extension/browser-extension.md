@@ -1,6 +1,6 @@
 ---
 title: "Browser extension"
-description: "Learn what the Privilege Secure browser extension does, which browsers it supports, and how to install it from the Chrome Web Store or Microsoft Edge Add-ons."
+description: "Find out what the Privilege Secure browser extension does, which browsers it supports, and how to install it from Chrome Web Store or Edge Add-ons."
 sidebar_position: 10
 ---
 

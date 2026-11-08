@@ -1,6 +1,6 @@
 ---
 title: "Access policies"
-description: "Learn how an access policy combines users, activities, a connection profile, and either resources or credentials to grant just-in-time access."
+description: "Find out how a Privilege Secure access policy combines users, activities, a connection profile, and resources or credentials for just-in-time access."
 sidebar_position: 10
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Configure approval workflows"
-description: "Require one or more tiers of approvers to approve a session request before the session starts, and set the escalation time for each tier."
+description: "Require tiers of approvers to approve a Privilege Secure session request on a connection profile, and set the approvals and escalation time per tier."
 sidebar_position: 50
 ---
 

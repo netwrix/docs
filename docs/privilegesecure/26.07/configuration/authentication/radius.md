@@ -1,6 +1,6 @@
 ---
 title: "Configure a RADIUS MFA connector"
-description: "Add a multi-factor authentication connector that sends second-factor requests to a RADIUS server, such as a Duo RADIUS proxy, and assign it to users."
+description: "Add a Privilege Secure MFA connector that sends second-factor requests to a RADIUS server, such as a Duo RADIUS proxy, and assign it to users."
 sidebar_position: 20
 ---
 

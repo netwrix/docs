@@ -1,6 +1,6 @@
 ---
 title: "Configure data retention"
-description: "Delete old SIEM, email, and session recording data automatically after a number of days that you set."
+description: "Delete old SIEM, email, and session recording data in Privilege Secure automatically after a number of days that you set, and see when cleanup runs."
 sidebar_position: 40
 ---
 

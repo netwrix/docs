@@ -1,6 +1,6 @@
 ---
 title: "Third-party vault connectors"
-description: "Learn how activities use passwords from another vault, which vault connectors Privilege Secure provides, and how to choose one."
+description: "Find out how Privilege Secure activities check out and check in passwords from CyberArk, HashiCorp, LAPS, Password Secure, or BYOV vault connectors."
 sidebar_position: 10
 ---
 

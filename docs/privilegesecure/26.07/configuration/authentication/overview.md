@@ -1,6 +1,6 @@
 ---
 title: "Authentication methods"
-description: "Learn the sign-in methods that Privilege Secure supports, how to add an authentication connector, and how a user's connector is chosen."
+description: "Find the sign-in methods Privilege Secure supports, add an MFA, OpenID Connect, or SAML connector, and see how it picks a connector for each user."
 sidebar_position: 10
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Glossary and product names"
-description: "Look up Privilege Secure terms, console menu labels, and the legacy SbPAM and Stealthbits names in service names, file paths, and logs."
+description: "Look up Privilege Secure terms, console menu labels, and the legacy SbPAM, NPS, and Stealthbits names that appear in service names, paths, and logs."
 sidebar_position: 50
 ---
 

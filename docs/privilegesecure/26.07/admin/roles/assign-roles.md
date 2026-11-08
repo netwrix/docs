@@ -1,6 +1,6 @@
 ---
 title: "Assign administrators, reviewers, and auditors"
-description: "Give a user or group the Administrator, Reviewer, or Auditors role from the Role Management page or from the account's details page."
+description: "Give a user or group the Administrator, Reviewer, or Auditors role in Privilege Secure from the Role Management page or the account's details page."
 sidebar_position: 20
 ---
 

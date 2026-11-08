@@ -1,6 +1,6 @@
 ---
 title: "Activity groups"
-description: "Create an activity group, add activities to it, and use it in an access policy to cover several platforms with one entry."
+description: "Create an activity group in Privilege Secure, add activities to it, and use it in an access policy so one entry covers several platforms."
 sidebar_position: 70
 ---
 

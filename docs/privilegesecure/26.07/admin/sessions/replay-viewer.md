@@ -1,6 +1,6 @@
 ---
 title: "Replay a recorded session"
-description: "Play back a recorded RDP, SSH, or website session, and learn which controls and details the Replay Viewer shows."
+description: "Play back a recorded RDP, SSH, or website session in the Privilege Secure Replay Viewer, and find what its controls and recording details show."
 sidebar_position: 50
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Command plans"
-description: "Learn how Privilege Secure runs account commands on Linux, BSD, Cisco, and PAN-OS devices, and why updates restore the built-in command plans."
+description: "Find out how Privilege Secure runs account commands on Linux, BSD, Cisco, and PAN-OS devices, and why each update restores the built-in command plans."
 sidebar_position: 20
 ---
 

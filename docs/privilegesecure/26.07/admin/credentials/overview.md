@@ -66,7 +66,7 @@ The **Managed** filter value matches both **Automatic** and **Manual** accounts.
 
 ## Managed type
 
-The managed type decides how an account rotates. See [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
+The managed type decides how an account rotates. See [Password rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
 
 | Value | Meaning |
 | --- | --- |

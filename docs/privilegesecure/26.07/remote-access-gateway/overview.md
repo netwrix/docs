@@ -1,6 +1,6 @@
 ---
 title: "Remote Access Gateway overview"
-description: "Learn what the Remote Access Gateway is, which components it has, and how a browser session reaches a target system without a VPN."
+description: "Find out what the Privilege Secure Remote Access Gateway is, which components it has, and how a browser session reaches a target without a VPN."
 sidebar_position: 10
 ---
 
@@ -39,13 +39,13 @@ The gateway exposes only what an external user needs: sign-in, the activities th
 
 ## Sign-in methods
 
-A new gateway allows single sign-on (SSO) only. You can also allow local Privilege Secure users, or local and domain users. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
+A new gateway allows single sign-on (SSO) only. You can also allow local Privilege Secure users, or local and domain users. See [Configure sign-in for the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 ## Plan the deployment
 
 1. Review the hosts, software, ports, and certificates in [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md).
 2. Install the gateway and guacd. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md).
-3. Install the portal. See [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md).
-4. Configure sign-in. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
+3. Install the portal. See [Install the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md).
+4. Configure sign-in. See [Configure sign-in for the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 For the ports that each connection uses, see [Ports](/docs/privilegesecure/26.07/requirements/ports.md). For the Privilege Secure architecture, see [Architecture](/docs/privilegesecure/26.07/getting-started/architecture.md).
