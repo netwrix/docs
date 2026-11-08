@@ -53,15 +53,16 @@ Several components store the console URL. Each one must match the address that u
 | 6500 | TCP | Browsers, service nodes, and the Remote Access Gateway | Console and REST API. Service nodes register against this port. |
 | 4489 | TCP | RDP clients | RDP proxy |
 | 4422 | TCP | SSH clients | SSH proxy |
-| 6520, 6523, 6524 | TCP | Remote proxy and service nodes | Service mesh registration and proxy REST (6520), leaf nodes (6523), cluster nodes (6524) |
+| 6520, 6523 | TCP | Remote proxy and service nodes | Service mesh registration and proxy REST (6520), leaf nodes (6523) |
+| 6524 | TCP | Other application servers | Cluster routes between application servers that you mesh |
+| 6522 | TCP | Application servers and proxy servers | Proxy connection broker. Relays sessions and API calls between nodes |
 
-The application server also uses these ports internally. Don't expose the loopback ports to other hosts.
+The application server also uses these ports on the local host. Don't expose them to other hosts.
 
 | Port | Protocol | Purpose |
 | --- | --- | --- |
 | 6501 | TCP | License service (local host only) |
 | 6521 | TCP | Proxy message service client (local host only) |
-| 6522 | TCP | Proxy connection broker |
 
 Each node advertises the address of its connection broker, on port 6522 by default, to the other nodes. The nodes that relay a session connect to that address, so allow 6522 between the application server and the proxy servers.
 
@@ -134,7 +135,7 @@ The Remote Access Gateway has three components. The portal sits in the perimeter
 | --- | --- | --- | --- |
 | 443 | TCP | Users to the portal | Portal HTTPS |
 | 80 | TCP | Users to the portal | Redirect to HTTPS. This port must be free on the portal server. |
-| 6550 | TCP | Portal to gateway | Gateway web service |
+| 6550 | TCP | Portal to gateway | Gateway web service. Carries HTTPS and WebSocket traffic |
 | 6500 | TCP | Gateway to application server | Console and REST API |
 | 4822 | TCP | Gateway to guacd | Guacamole daemon |
 | 4489 | TCP | guacd to proxy | RDP proxy |
