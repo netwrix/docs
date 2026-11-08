@@ -160,7 +160,7 @@ MobaXterm:
 
 ## Launch a session from the console with a one-time token
 
-When you click **Connect** in the console to open a local SSH or RDP client, the console passes a one-time token as the user name instead of a connection string. The token identifies the session that the console already created, so you don't type the activity, the resource, or a password.
+When you click **Connect** in the console to open a local SSH or RDP client, the console passes a one-time token as the user name instead of a connection string. The token identifies the session that the console already created, so you don't enter the activity, the resource, or a password.
 
 The proxy accepts the token once. A token expires 60 seconds after the console creates it. If the token has expired, or you already used it, the connection fails. Start a new session from the console to get a new token.
 

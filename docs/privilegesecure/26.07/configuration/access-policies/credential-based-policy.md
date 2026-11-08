@@ -73,7 +73,7 @@ A credential can change its password when a user checks it out, when the user re
 
 To change this for an Entra ID tenant account or a managed credential, select the account on the **Users** tab of its resource (the Entra ID tenant or managed resource) and click **Password Reset Options**. Select **Rotate on Session Start** to change the password on checkout and **Rotate on Session End** to change it on release. Website and secret vault accounts don't offer **Password Reset Options**.
 
-The account state after a session, including the **Keep Enabled** option, is described in [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md). Resource-based sessions and credential-release sessions treat the account differently, so read that section before you choose a policy type.
+[Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md) describes the account state after a session, including the **Keep Enabled** option. Resource-based sessions and credential-release sessions treat the account differently, so read that section before you choose a policy type.
 
 ## Release files with File Release
 
