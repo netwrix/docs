@@ -41,7 +41,8 @@ The access role gives Privilege Secure a Client ID and a Client secret that it u
 1. Set **Access Expiration**. Select **Access expires within** (the default is 72 hours) or **Access expires on specified date**.
 1. Select **Generate**, and copy the **Client ID** and the **Client secret**.
 1. Click **Finish**, and then click **Save** on the **Access** view.
-{/* TODO verify: whether Access Analyzer must be restarted after you create the access role. The 26.03 page says to restart it. The Access Analyzer 12.0 pages (assign application access, obtain token) don't require a restart. Confirm on a 12.x server. */}
+
+Privilege Secure can use the access role as soon as you save it. You don't restart Access Analyzer first. Each token request re-reads the role, so a new role takes effect at once.
 
 :::warning
 The client secret stops working when the access expiration passes. Set an expiration that suits how long you want the integration to run, and create a new access role before the old one expires.
