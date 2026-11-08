@@ -980,13 +980,7 @@ export function hasKBContent(productId) {
 }
 
 function camelToTitleCase(str) {
-  // Split on lower-to-upper boundaries and after an acronym ("IPAddressRule" -> "IP Address Rule"),
-  // so runs of capitals such as IP are not broken into single letters.
-  return str
-    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
-    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2')
-    .replace(/^./, s => s.toUpperCase())
-    .trim();
+  return str.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase()).trim();
 }
 
 function transformApiSidebarLabels(items) {

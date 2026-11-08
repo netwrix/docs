@@ -202,8 +202,7 @@ const config = {
       // Writes build/robots.txt: crawlable on docs.netwrix.com only
       robotsTxtPlugin,
 
-      // Google Analytics (set DOCS_DISABLE_ANALYTICS=true to turn it off, e.g. in the preview container)
-      ...(process.env.DOCS_DISABLE_ANALYTICS === 'true' ? [] : [
+      // Google Analytics
       [
         '@docusaurus/plugin-google-gtag',
       {
@@ -211,7 +210,6 @@ const config = {
         anonymizeIP: true,
       },
     ],
-      ]),
     // Client-side redirects - redirect base product URLs to latest version
     [
       '@docusaurus/plugin-client-redirects',
