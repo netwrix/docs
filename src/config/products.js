@@ -1022,7 +1022,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
         ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
-            .filter(item => !(item.type === 'doc' && (item.id?.endsWith('/changetracker-hub') || item.id?.endsWith('/privilegesecure-api') || item.id?.endsWith('/netwrix-privilege-secure-for-discovery-api'))))
+            .filter(item => !(item.type === 'doc' && (item.id?.endsWith('/changetracker-hub') || item.id?.endsWith('/netwrix-privilege-secure-for-access-management-api') || item.id?.endsWith('/netwrix-privilege-secure-for-discovery-api'))))
         : [];
 
       // Build plugin configuration
