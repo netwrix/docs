@@ -37,7 +37,7 @@ Additional Supported Platforms (no local account management or pre-configured ac
 
 ## Permissions
 
-The following permissions are required for the service accounts:
+The service accounts require the following permissions:
 
 - For Active Directory and Windows member server/desktop management:
   - Membership in the Domain Administrators group in the target domains

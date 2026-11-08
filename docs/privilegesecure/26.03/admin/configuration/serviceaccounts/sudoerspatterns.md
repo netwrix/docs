@@ -308,8 +308,8 @@ Example wrapper-only rule:
 %testgroup ALL = (root) /usr/local/sbin/admin-wrapper
 ```
 
-The wrapper and every directory in its path should be owned by root and not writable by the
-authorized user.
+Root should own the wrapper and every directory in its path, and the authorized user shouldn't be
+able to write to them.
 
 ## Validation and testing
 

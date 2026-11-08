@@ -56,7 +56,7 @@ When a user requests a session, the console picks one access policy:
 1. If the request names an access policy, the console uses that policy.
 1. Otherwise, the console uses the first matching policy when the matching policies are sorted by name in alphabetical order. A policy matches when it includes the requested activity and applies to the user and to the resource or credential.
 
-A policy has no priority setting. The console has no priority field, and the policy name decides which matching policy wins.
+A policy has no priority setting. The policy name decides which matching policy wins.
 
 Because the first match by name wins, two policies that both match the same request can give different connection profiles. Give overlapping policies names that sort in the order you want them applied, or avoid overlap.
 
