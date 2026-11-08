@@ -1,8 +1,7 @@
 ---
 description: >-
-  Explains how to resolve the WS-Management error caused by Group Policy
-  disabling remote shell access, including how to verify the GPO and registry
-  value and how to correct the configuration.
+  Fix failed Actions caused by a Group Policy that disables remote shell access:
+  verify the GPO and registry value, then set the GPO to Enabled or Not Configured.
 keywords:
   - WinRM
   - AllowRemoteShellAccess
@@ -14,41 +13,42 @@ keywords:
   - Netwrix Privilege Secure
   - Action Service
 products:
-  - privilege-secure-access-management
-sidebar_label: Resolving failed Actions on a Windows resource due
-tags: []
-title: >-
-  Resolving failed Actions on a Windows resource due to error "The
-  WS-Management service cannot process the request. The service is configured to
-  not accept any remote shell requests."
+  - privilegesecure
+sidebar_label: "Resolving Failed Actions on a Windows Resource Due to Error \"The WS-Management service cannot process the request. The service is configured to not accept any remote shell requests.\""
+tags:
+  - kb
+  - resource-management
+title: "Resolving Failed Actions on a Windows Resource Due to Error \"The WS-Management service cannot process the request. The service is configured to not accept any remote shell requests.\""
 knowledge_article_id: kA04u0000000HRqCAM
 ---
 
-# Resolving failed Actions on a Windows resource due to error "The WS-Management service cannot process the request. The service is configured to not accept any remote shell requests."
+# Resolving Failed Actions on a Windows Resource Due to Error "The WS-Management service cannot process the request. The service is configured to not accept any remote shell requests."
 
-## Summary
+## Symptom
 
-If remote shell access is disabled on a Windows resource, Netwrix Privilege Secure's Action Service cannot perform actions on that host. You can confirm this when an action's logs contain the following error:
+If remote shell access is disabled on a Windows resource, the Action Service in Netwrix Privilege Secure for Access Management cannot perform actions on that host. You can confirm this when an action's logs contain the following error:
 
 ```
 Unable to connect using PowerShell remoting to <hostname> with user <domain>\<user>: Connecting to remote server <ip_address> failed with the following error message : The WS-Management service cannot process the request. The service is configured to not accept any remote shell requests.
 ```
 
-![User-added image](./../0-images/ka04u000000HcZv_0EM4u000004bUoa.png)
+![Action logs showing the WS-Management error for the failed remote shell connection](./../0-images/ka04u000000HcZv_0EM4u000004bUoa.png)
 
-This is caused by a Group Policy, configured at the local or domain level, that disables remote shell access on the resources the GPO targets:
+## Cause
 
-![User-added image](./../0-images/ka04u000000HcZv_0EM4u000004bUof.png)
+This is caused by a Group Policy Object (GPO), configured at the local or domain level, that disables remote shell access on the resources the GPO targets:
 
-## Instructions
+![Allow Remote Shell Access GPO setting set to Disabled](./../0-images/ka04u000000HcZv_0EM4u000004bUof.png)
 
-You can verify this GPO in the Group Policy Editor on the target resource (or in the domain GPO configuration). Remember that domain configuration takes precedence over local configuration.
+## Resolution
+
+Verify this GPO in the Group Policy Editor on the target resource (or in the domain GPO configuration). Domain configuration takes precedence over local configuration.
 
 ```
 Computer Configuration > Administrative Templates > Windows Components > Windows Remote Shell > Allow Remote Shell Access
 ```
 
-![User-added image](./../0-images/ka04u000000HcZv_0EM4u000004bUok.png)
+![Group Policy Editor showing the Allow Remote Shell Access setting set to Disabled](./../0-images/ka04u000000HcZv_0EM4u000004bUok.png)
 
 You can also verify the setting in PowerShell, but the GPO must first have been **Enabled** or **Disabled** so the correct registry key exists:
 
@@ -59,6 +59,6 @@ Get-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\WinRM\Service\
 - If the value is set to **0**, then remote shell access is **Disabled**.
 - If the value is set to **1**, then remote shell access is **Enabled**.
 
-![User-added image](./../0-images/ka04u000000HcZv_0EM4u000004bUop.png)
+![PowerShell output showing the AllowRemoteShellAccess registry value](./../0-images/ka04u000000HcZv_0EM4u000004bUop.png)
 
-To resolve the error, set this GPO to either **Enabled** or **Not Configured**. In a domain environment, you should make this change via a domain-configured GPO rather than manually modifying the registry key on the target resource.
+To resolve the error, set this GPO to either **Enabled** or **Not Configured**. In a domain environment, make this change in a domain-configured GPO rather than manually modifying the registry key on the target resource.

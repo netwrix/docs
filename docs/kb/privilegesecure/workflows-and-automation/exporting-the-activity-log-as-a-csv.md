@@ -1,8 +1,7 @@
 ---
 description: >-
-  Shows how to export the Activity Log from Netwrix Privilege Secure to a CSV
-  file using a PowerShell script that calls the SbPAM API and handles MFA
-  tokens.
+  Export the Activity Log from Privilege Secure to a CSV file using a
+  PowerShell script that calls the SbPAM API and handles MFA tokens.
 keywords:
   - activity log
   - CSV export
@@ -12,123 +11,130 @@ keywords:
   - MFA
   - ActivitySession
   - Invoke-SbPAMRest
+  - SbPAMPowerShellModules
+  - ActivityReport.ps1
 products:
-  - privilege-secure-access-management
+  - privilegesecure
 sidebar_label: Exporting the Activity Log as a CSV
-tags: []
+tags:
+  - kb
+  - workflows-and-automation
 title: "Exporting the Activity Log as a CSV"
 knowledge_article_id: kA04u0000004mylCAA
 ---
 
 # Exporting the Activity Log as a CSV
 
-## Summary
+## Overview
 
-Exporting the "Activity Log" report is a common auditing and compliance use case. This article provides a scripted method of exporting the Activity Log data from Netwrix Privilege Secure.
+This article describes how to export the Activity Log data from Netwrix Privilege Secure for Access Management by using a script. Exporting the "Activity Log" report is a common auditing and compliance use case.
 
 ## Instructions
 
-1. On your Netwrix Privilege Secure server, ensure that PowerShell 7.1 is installed. It can be obtained from the official PowerShell github repository: https://github.com/PowerShell/PowerShell/releases/tag/v7.1.7. _Note: This specific version of PowerShell is a necessary prerequisite to running the SbPAM API. Do not install PowerShell 7.2+._
+1. On your Privilege Secure server, ensure that PowerShell 7.1 is installed. It can be obtained from the official PowerShell GitHub repository: https://github.com/PowerShell/PowerShell/releases/tag/v7.1.7.
 
-   :::note
-   In Privilege Secure 26.07 and later, the requirement changed to PowerShell 7.6 or later. Follow the version in the [system requirements](/docs/privilegesecure/26_07/requirements/application-server) for your release.
-   :::
+    > **NOTE:** This specific version of PowerShell is a necessary prerequisite to running the SbPAM API. Do not install PowerShell 7.2+.
 
-2. Locate the "Extras" folder, which was packaged alongside your Netwrix Privilege Secure installer. Run the `SbPAMPowerShellModules` installer.  
-   ![User-added image](./../0-images/ka04u000000HdD5_0EM4u000005yZ7y.png)
+    > **NOTE:** In Privilege Secure 26.07 and later, the requirement changed to PowerShell 7.6 or later. Follow the version in the [system requirements](/docs/privilegesecure/26_07/requirements/application-server) for your release.
+
+2. Locate the "Extras" folder, which was packaged alongside your Netwrix Privilege Secure installer. Run the `SbPAMPowerShellModules` installer.
+
+    ![The Extras folder with the SbPAMPowerShellModules installer.](./../0-images/ka04u000000HdD5_0EM4u000005yZ7y.png)
 
 3. In your preferred text editor, paste the following PowerShell script. Save it as `ActivityReport.ps1`.
 
-```powershell
-[cmdletbinding()]
-param(
-    [Parameter(Mandatory)][PSCredential]$UserCred,
-    [Parameter()][String]$UserCode = $null,
-    [Parameter(Mandatory)][String]$SbPamUrl,
-    [Parameter(Mandatory)][datetime]$StartDate,
-    [Parameter(Mandatory)][datetime]$EndDate,
-    [Parameter()][string]$FilePath = "out.csv"
-)
-
-Import-Module SbPAMAPI -Force
-
-function Renew-Token {
-    [CmdletBinding()]
-    param (
-        [string]
-        $Token,
-        $Uri
-    )
-    $mfaObj = Convert-SbPAMToken $Token
-    if ($null -eq $global:expiration) {
-        $global:expiration = Get-Date -UnixTimeSeconds $mfaObj.exp
-    }
-
-    if ($global:expiration -lt (Get-Date).AddMinutes(7)) {
-        Write-Host "$(Get-Date) Refreshing token"
-        $Token = Invoke-SbPAMRest -Uri "$Uri/api/v1/UserToken" -Token $Token -ErrorAction Stop -SkipCertificateCheck
-        $mfaObj = Convert-SbPAMToken $Token
-        $global:expiration = Get-Date -UnixTimeSeconds $mfaObj.exp
-    }
-    return $Token
-}
-
-function Get-SbPAMActivitySessionReport {
+    ```powershell
+    [cmdletbinding()]
     param(
-        $Uri,
-        $Token,
-        $StartDate,
-        $EndDate
+        [Parameter(Mandatory)][PSCredential]$UserCred,
+        [Parameter()][String]$UserCode = $null,
+        [Parameter(Mandatory)][String]$SbPamUrl,
+        [Parameter(Mandatory)][datetime]$StartDate,
+        [Parameter(Mandatory)][datetime]$EndDate,
+        [Parameter()][string]$FilePath = "out.csv"
     )
-    $Token = Renew-Token -Uri $Uri -Token $Token
-    $Skip = 0
-    $Take = 100
-    $StartDateString = $StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-    $EndDateString = $EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-    
-    $ApiUri = "$($Uri)/api/v1/ActivitySession/Search?skip=$($Skip)&filterText=&filterDateTimeMin=$($StartDateString)&filterDateTimeMax=$($EndDateString)&filterTopUsersType=1&take=$Take"
-    $Data = @()
-    
-    $Results = Invoke-SbPAMRest -Uri $ApiUri -SkipCertificateCheck -Token $Token
-    while ($Results.Data.Length -ge $Take) {
-        $Data += $Results.Data
-        $Skip += $Take
-        Write-Progress -Activity "Fetching activity report from $StartDate to $EndDate" -PercentComplete 0 -Status "$Skip of $($Results.recordsTotal) $($Results.Data.Length)"
+
+    Import-Module SbPAMAPI -Force
+
+    function Renew-Token {
+        [CmdletBinding()]
+        param (
+            [string]
+            $Token,
+            $Uri
+        )
+        $mfaObj = Convert-SbPAMToken $Token
+        if ($null -eq $global:expiration) {
+            $global:expiration = Get-Date -UnixTimeSeconds $mfaObj.exp
+        }
+
+        if ($global:expiration -lt (Get-Date).AddMinutes(7)) {
+            Write-Host "$(Get-Date) Refreshing token"
+            $Token = Invoke-SbPAMRest -Uri "$Uri/api/v1/UserToken" -Token $Token -ErrorAction Stop -SkipCertificateCheck
+            $mfaObj = Convert-SbPAMToken $Token
+            $global:expiration = Get-Date -UnixTimeSeconds $mfaObj.exp
+        }
+        return $Token
+    }
+
+    function Get-SbPAMActivitySessionReport {
+        param(
+            $Uri,
+            $Token,
+            $StartDate,
+            $EndDate
+        )
+        $Token = Renew-Token -Uri $Uri -Token $Token
+        $Skip = 0
+        $Take = 100
+        $StartDateString = $StartDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+        $EndDateString = $EndDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
         
         $ApiUri = "$($Uri)/api/v1/ActivitySession/Search?skip=$($Skip)&filterText=&filterDateTimeMin=$($StartDateString)&filterDateTimeMax=$($EndDateString)&filterTopUsersType=1&take=$Take"
+        $Data = @()
+        
         $Results = Invoke-SbPAMRest -Uri $ApiUri -SkipCertificateCheck -Token $Token
+        while ($Results.Data.Length -ge $Take) {
+            $Data += $Results.Data
+            $Skip += $Take
+            Write-Progress -Activity "Fetching activity report from $StartDate to $EndDate" -PercentComplete 0 -Status "$Skip of $($Results.recordsTotal) $($Results.Data.Length)"
+            
+            $ApiUri = "$($Uri)/api/v1/ActivitySession/Search?skip=$($Skip)&filterText=&filterDateTimeMin=$($StartDateString)&filterDateTimeMax=$($EndDateString)&filterTopUsersType=1&take=$Take"
+            $Results = Invoke-SbPAMRest -Uri $ApiUri -SkipCertificateCheck -Token $Token
+        }
+        $Data += $Results.Data
+        $Data
     }
-    $Data += $Results.Data
-    $Data
-}
 
-# "https://192.168.77.99:6500/api/v1/ActivitySession/Search?skip=0&filterText=&filterDateTimeMin=2022-07-01T05:00:00.000Z&filterDateTimeMax=2022-08-24T04:59:59.999Z&filterTopUsersType=1&take=30" 
-# Create the web session
-$WebSession = New-Object Microsoft.PowerShell.Commands.WebRequestSession
-# Set up the user credentials - MFA and JWT objects
-$userToken = Get-SbPAMToken -Credential $userCred -Uri $SbPamUrl -WebSession $WebSession -SkipCertificateCheck -ErrorAction Stop
-if ("" -eq $UserCode -or $null -eq $UserCode) {
-    $userCode = Read-Host -Prompt "Enter MFA code"
-}
-$userToken = Get-SbPAMMfaToken -Uri $SbPamUrl -Token $userToken -Code $userCode -WebSession $WebSession -SkipCertificateCheck -ErrorAction Stop
+    # "https://192.168.77.99:6500/api/v1/ActivitySession/Search?skip=0&filterText=&filterDateTimeMin=2022-07-01T05:00:00.000Z&filterDateTimeMax=2022-08-24T04:59:59.999Z&filterTopUsersType=1&take=30" 
+    # Create the web session
+    $WebSession = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+    # Set up the user credentials - MFA and JWT objects
+    $userToken = Get-SbPAMToken -Credential $userCred -Uri $SbPamUrl -WebSession $WebSession -SkipCertificateCheck -ErrorAction Stop
+    if ("" -eq $UserCode -or $null -eq $UserCode) {
+        $userCode = Read-Host -Prompt "Enter MFA code"
+    }
+    $userToken = Get-SbPAMMfaToken -Uri $SbPamUrl -Token $userToken -Code $userCode -WebSession $WebSession -SkipCertificateCheck -ErrorAction Stop
 
-Write-Progress -Activity "Fetching activity report from $StartDate to $EndDate" -PercentComplete 0 -Status "Fetching..."
-Write-Host "Exporting From $StartDate to $EndDate to $FilePath"
+    Write-Progress -Activity "Fetching activity report from $StartDate to $EndDate" -PercentComplete 0 -Status "Fetching..."
+    Write-Host "Exporting From $StartDate to $EndDate to $FilePath"
 
-$Data = Get-SbPAMActivitySessionReport -Uri $SbpamUrl -Token $userToken -StartDate $StartDate -EndDate $EndDate
+    $Data = Get-SbPAMActivitySessionReport -Uri $SbpamUrl -Token $userToken -StartDate $StartDate -EndDate $EndDate
 
-$Data | ConvertTo-Csv -NoTypeInformation -UseQuotes Always | Out-File -FilePath $FilePath
-Write-Host "Export complete found $($Data.Length) records"
-```
+    $Data | ConvertTo-Csv -NoTypeInformation -UseQuotes Always | Out-File -FilePath $FilePath
+    Write-Host "Export complete found $($Data.Length) records"
+    ```
 
-4. Open up PowerShell 7. Navigate to the directory containing `ActivityReport.ps1`, and execute the following command:
+4. Open PowerShell 7. Go to the directory containing `ActivityReport.ps1`, and run the following command:
 
-```powershell
-.\ActivityReport.ps1
-```
+    ```powershell
+    .\ActivityReport.ps1
+    ```
 
-5. You are prompted for a Netwrix Privilege Secure administrator username and password, your Netwrix Privilege Secure URL, and an MFA code (if applicable).  
-   ![User-added image](./../0-images/ka04u000000HdD5_0EM4u000005yZ83.png)
+5. When prompted, enter a Privilege Secure administrator username and password, your Privilege Secure URL, and a multi-factor authentication (MFA) code (if applicable).
 
-6. Your activity data will then be output to a file called `out.csv`.  
-   ![User-added image](./../0-images/ka04u000000HdD5_0EM4u000005yZ88.png)
+    ![The prompts for the administrator credentials, the Privilege Secure URL, and the MFA code.](./../0-images/ka04u000000HdD5_0EM4u000005yZ83.png)
+
+    Your activity data is then output to a file called `out.csv`.
+
+    ![The out.csv file containing the exported activity data.](./../0-images/ka04u000000HdD5_0EM4u000005yZ88.png)

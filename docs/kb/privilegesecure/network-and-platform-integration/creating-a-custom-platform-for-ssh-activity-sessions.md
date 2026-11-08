@@ -1,8 +1,7 @@
 ---
 description: >-
-  Shows how to duplicate the out-of-the-box Linux platform to create a Palo Alto
-  (PAN-OS) platform in SbPAM, and how to configure the service account,
-  resource, activity, and access policy to launch SSH Activity Sessions.
+  Duplicate the Linux platform to create a Palo Alto (PAN-OS) platform, then set
+  up the service account, resource, activity, and access policy for SSH sessions.
 keywords:
   - SbPAM
   - SSH
@@ -14,37 +13,38 @@ keywords:
   - access policy
   - resource
 products:
-  - privilege-secure-access-management
+  - privilegesecure
 sidebar_label: Creating a Custom Platform for SSH Activity Sessio
-tags: []
+tags:
+  - kb
+  - network-and-platform-integration
 title: "Creating a Custom Platform for SSH Activity Sessio"
 knowledge_article_id: kA04u0000000Hk9CAE
 ---
 
 # Creating a Custom Platform for SSH Activity Sessio
 
-## Summary
+## Overview
 
-Platforms in SbPAM can be customized to meet specific SSH Activity Session workflow needs. As an example, in this article we will duplicate the out-of-the-box Linux Platform to create a Platform for Palo Alto (PAN-OS).
+This article describes how to duplicate the built-in Linux Platform to create a Platform for Palo Alto (PAN-OS) in Netwrix Privilege Secure for Access Management. Platforms can be customized to meet specific SSH Activity Session workflow needs.
 
 ## Instructions
 
-1. As an SbPAM admin user, navigate to the **Policy > Platforms** page. Locate the Linux Platform, duplicate it, and name it as desired. In this case, we will name the new Platform "Palo Alto".
+1. As a Privilege Secure admin user, go to the **Policy > Platforms** page. Locate the Linux Platform, duplicate it, and name it as desired. In this example, name the new Platform "Palo Alto".
 
-   ![User-added image](./../0-images/ka04u000000HcaJ_0EM4u000004cJVQ.png)
+   ![Platforms page with the duplicated Palo Alto Platform selected in the Platforms list](./../0-images/ka04u000000HcaJ_0EM4u000004cJVQ.png)
 
-2. Navigate to the **Configuration > Service Accounts** page and add a domain-level account as the Palo Alto service account.
+2. Go to the **Configuration > Service Accounts** page and add a domain-level account as the Palo Alto service account.
 
-   ![User-added image](./../0-images/ka04u000000HcaJ_0EM4u000004cJVz.png)
+   ![Service Accounts page showing the Palo Alto service account with the Palo Alto Platform selected](./../0-images/ka04u000000HcaJ_0EM4u000004cJVz.png)
 
-3. Navigate to the **Resources** page and manually add the Palo Alto resource by IP or DNS name (using the service account added in step 2). In this step, it is expected for the Host Scan to fail. Close the Host Scan window and proceed to the next step.
+3. Go to the **Resources** page and manually add the Palo Alto resource by IP or DNS name (using the service account added in step 2). In this step, it is expected for the Host Scan to fail. Close the Host Scan window and proceed to the next step.
 
-   ![User-added image](./../0-images/ka04u000000HcaJ_0EM4u000004cJWE.png)
+   ![Add Resources page with Add Manually selected and a Palo Alto resource name entered](./../0-images/ka04u000000HcaJ_0EM4u000004cJWE.png)
 
-4. Navigate to the **Activities** page and create a new Activity. For **Login Account**, "Activity Token", "Managed Account", or "Requester" can be used. For the Login Account Template, remove the domain element (ex. ` %targetdomain%`) or use ` %domain%` instead of ` %targetdomain%`.
+4. Go to the **Activities** page and create a new Activity. For **Login Account**, you can use "Activity Token", "Managed Account", or "Requester". For the Login Account Template, remove the domain element (for example, ` %targetdomain%`) or use ` %domain%` instead of ` %targetdomain%`.
 
-   ![User-added image](./../0-images/ka04u000000HcaJ_0EM4u000004cJWJ.png)
+   ![New Palo Alto Activity with the Palo Alto Platform, Login Account, Activity Type, and Login Account Template fields](./../0-images/ka04u000000HcaJ_0EM4u000004cJWJ.png)
 
-5. Navigate to the **Access Policy** page, create a new resource-based Access Policy that includes SbPAM users, the activity created in step 4, and the resource added in step 3.
-
-6. Navigate to **My Activities** as an SbPAM user in the Access Policy, and launch an SSH Activity Session for the Palo Alto resource.
+5. Go to the **Access Policy** page, create a new resource-based Access Policy that includes Privilege Secure users, the activity created in step 4, and the resource added in step 3.
+6. Go to **My Activities** as a Privilege Secure user in the Access Policy, and launch an SSH Activity Session for the Palo Alto resource.

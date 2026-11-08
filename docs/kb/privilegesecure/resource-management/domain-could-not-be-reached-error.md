@@ -1,8 +1,6 @@
 ---
 description: >-
-  Netwrix Privilege Secure may report a 'Domain could not be reached' error when
-  running an Active Directory sync with **Use TLS** enabled. This article
-  describes causes and steps to resolve the issue.
+  Resolve the 'Domain could not be reached' error during an AD sync with Use TLS enabled by checking LDAP ports and domain controller certificates.
 keywords:
   - Active Directory
   - AD sync
@@ -15,9 +13,11 @@ keywords:
   - domain resolution
   - troubleshooting
 products:
-  - privilege-secure-access-management
+  - privilegesecure
 sidebar_label: Domain Could Not Be Reached Error
-tags: []
+tags:
+  - kb
+  - resource-management
 title: "Domain Could Not Be Reached Error"
 knowledge_article_id: kA0Qk0000000XFJKA2
 ---
@@ -26,7 +26,7 @@ knowledge_article_id: kA0Qk0000000XFJKA2
 
 ## Symptom
 
-Netwrix Privilege Secure generates the following error when running an Active Directory (AD) sync with the **Use TLS** option enabled:
+Netwrix Privilege Secure for Access Management generates the following error when running an Active Directory (AD) sync with the **Use TLS** option enabled:
 
 ```text
 AD Sync [ERR] 'Unable to connect to %domain% with credential %affected_account% with SSL:
@@ -35,20 +35,20 @@ AD Sync [ERR] 'Unable to connect to %domain% with credential %affected_account% 
 
 If the **Use TLS** option is disabled, the AD sync completes with no errors.
 
-## Causes
+## Cause
 
-1. Firewall exclusions for LDAP/LDAPS ports are misconfigured in your environment.
-2. The domain name cannot be resolved to any DC in your environment.
+- Firewall exclusions for Lightweight Directory Access Protocol (LDAP) and LDAP over SSL (LDAPS) ports are misconfigured in your environment.
+- The domain name cannot be resolved to any domain controller (DC) in your environment.
 
-## Resolutions
+## Resolution
 
-- Verify the LDAP/LDAPS ports are open in your environment. Refer to the following article for additional information on ports required for Netwrix Privilege Secure: https://docs.netwrix.com/docs/privilegesecure/26_07/requirements/ports
+- Verify the LDAP and LDAPS ports are open in your environment. See the following article for additional information on ports required for Privilege Secure: https://docs.netwrix.com/docs/privilegesecure/26_07/requirements/ports
 - Issue Kerberos authentication certificates to domain controllers in your environment.
 
-> **TIP:** The **Use TLS** feature is optional—it is not required to perform AD syncs. When the feature is enabled, the LDAPS protocol is used. It requires the ability to resolve both domain names and FQDNs.
+> **NOTE:** The **Use TLS** feature is optional—it is not required to perform AD syncs. When the feature is enabled, the LDAPS protocol is used. It requires the ability to resolve both domain names and fully qualified domain names (FQDNs).
 >
 > When the **Use TLS** feature is disabled, only the ability to resolve domain names in your environment is required.
 
-## Related articles
+## Related Links
 
 - Requirements − Ports Requirements · v26.03: https://docs.netwrix.com/docs/privilegesecure/26_07/requirements/ports
