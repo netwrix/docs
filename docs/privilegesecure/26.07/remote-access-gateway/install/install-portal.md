@@ -94,8 +94,6 @@ Create a similar rule for port 80 if users need the redirect to HTTPS. The porta
 
    ![Browser warning for the portal's self-signed certificate](/images/privilegesecure/26.07/remote-access-gateway/portal-cert-warning.webp)
 
-   {/* TODO screenshot: retake the certificate warning with the portal DNS name */}
-
    To remove the warning, install a certificate from your certification authority. See [Portal and gateway certificates](/docs/privilegesecure/26.07/remote-access-gateway/configuration/certificates.md).
 
 The portal sign-in page opens. By default it offers single sign-on (SSO) only. If it shows "The license has expired or the license service is offline", fix the Privilege Secure license. See [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md).

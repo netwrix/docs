@@ -26,7 +26,7 @@ Install the service on each Windows host that users reach through an RDP session
 4. Click **Install**.
 5. When the installation finishes, click **Close**.
 
-{/* TODO screenshot: the Remote Desktop Monitor setup window after a successful install. Blur or crop any host name. */}
+![The Remote Desktop Monitor setup window with the message Installation Successfully Completed.](/images/privilegesecure/26.07/install/rdp-monitor-install-complete.webp)
 
 ## Verify the service
 

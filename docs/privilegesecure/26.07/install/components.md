@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The Netwrix Privilege Secure for Access Management (Privilege Secure) download is a zip file named `privilegesecure-accessmanagement-<version>.zip`. It contains the Setup Launcher, the main installer, and standalone installers for services and tools.
 
-{/* TODO screenshot: contents of the downloaded zip file */}
+![The extracted download package with the NPS_Setup.exe launcher and the Pre-Reqs and Extras folders.](/images/privilegesecure/26.07/install/installation-package-contents.webp)
 
 ## Main files
 
@@ -25,6 +25,8 @@ The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it 
 :::
 
 ## Extras folder
+
+![The Extras folder with the standalone installers, such as NPS.exe, the service installers, and the diagnostic tools.](/images/privilegesecure/26.07/install/extras-folder.webp)
 
 | File | Description |
 |---|---|
