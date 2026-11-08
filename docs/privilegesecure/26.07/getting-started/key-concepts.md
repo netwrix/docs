@@ -17,9 +17,9 @@ An access policy connects users to resources and runs activities to make that co
 | Resource-based | Access to remote systems such as servers, databases, and websites. | Users and groups, activities, resources, and a connection profile. |
 | Credential-based | Access to credentials and files stored in a vault. | Users and groups, credentials, or files, and a connection profile. The activities are fixed. |
 
-![A resource-based access policy contains users and groups, activities, resources, and a connection profile. Users and groups are linked through activities to the resources they reach.](/images/privilegesecure/26.07/getting-started/resource-based-access-policy.webp)
+![A resource-based access policy contains users and groups, activities, and resources. Arrows show that users request an activity and the activity runs on a resource. A connection profile spans the policy and sets the session rules for every session it grants.](/images/privilegesecure/26.07/getting-started/resource-based-access-policy.webp)
 
-![A credential-based access policy contains users and groups, credentials, files stored in a vault, and a connection profile. The activities in this policy type are fixed.](/images/privilegesecure/26.07/getting-started/credential-based-access-policy.webp)
+![A credential-based access policy contains users and groups, the built-in Credential Release and File Release activities, credentials, and files. Arrows show that users request an activity, which releases a credential or a file. A connection profile sets the session rules.](/images/privilegesecure/26.07/getting-started/credential-based-access-policy.webp)
 
 A user must belong to an access policy to create a session. When a request names a policy, Privilege Secure uses that policy. Otherwise, it uses the first matching policy in alphabetical order by name.
 
