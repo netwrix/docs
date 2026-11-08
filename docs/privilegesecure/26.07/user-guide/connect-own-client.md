@@ -116,7 +116,7 @@ Privilege Secure can open a local SSH client when you click an `ssh://` link. On
 
 `sbpam-url handle -p ssh -- <command>`
 
-In the command, use `{{user}}` for the user name, `{{host}}` for the host and port, `{{hostname}}` for the host name, and `{{port}}` for the port. To remove the registration for a protocol, run `sbpam-url handle -U -p ssh`.
+In the command, use `{{user}}` for the user name, `{{user_esc}}` for the user name with special characters escaped, `{{host}}` for the host and port, `{{hostname}}` for the host name, and `{{port}}` for the port. To remove the registration for a protocol, run `sbpam-url handle -U -p ssh`.
 
 `sbpam-url.exe` is in the `Extras` folder of the product package. See [Installation package contents](/docs/privilegesecure/26.07/install/components.md). Copy it to a permanent folder on the computer, because the registration points to that location.
 
@@ -130,9 +130,7 @@ MobaXterm:
 
 `sbpam-url handle -p ssh -- "C:\Program Files (x86)\Mobatek\MobaXterm\MobaXterm.exe" -newtab 'ssh -o PasswordAuthentication=no -l {{user_esc}} -p {{port}} {{hostname}}'`
 
-`{{user_esc}}` is the user name with special characters escaped. Change the MobaXterm path to match where you installed it.
-
-{/* TODO verify: run each example against a current PuTTY and MobaXterm build. The examples come from the sbpam-url documentation in the proxy source, not from a test run. The `-newtab` option is a MobaXterm option that isn't confirmed against Mobatek's documentation. */}
+`{{user_esc}}` is the user name with special characters escaped. Change the MobaXterm path to match where you installed it. The handler decodes `{{user}}` back to its plain text and leaves `{{user_esc}}` percent-encoded, so use `{{user_esc}}` when the client parses the value itself, as MobaXterm does. `-newtab` opens the connection as a new tab in a running MobaXterm window, or starts a new window if none is open.
 
 ## More client guidance
 
