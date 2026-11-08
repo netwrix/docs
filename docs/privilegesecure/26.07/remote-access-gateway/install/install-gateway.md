@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Install the gateway and guacd
 
-The gateway runs inside your network. It is an Internet Information Services (IIS) site that connects the portal to Netwrix Privilege Secure for Access Management (Privilege Secure) and to the Apache Guacamole daemon (guacd). guacd runs as a Docker container in Windows Subsystem for Linux (WSL) on the same server.
+The gateway runs inside your network. It is an Internet Information Services (IIS) site that connects the portal to Netwrix Privilege Secure for Access Management (Privilege Secure) and to the Apache Guacamole daemon (guacd). guacd runs as a Docker container in Windows Subsystem for Linux (WSL) on the same server by default. You can also run guacd on a separate Linux host. See [Run guacd on a separate Linux host](#run-guacd-on-a-separate-linux-host).
 
 Complete the steps in order. Run `Configure-Gateway.ps1` only after guacd is running.
 
@@ -21,7 +21,7 @@ The examples use these placeholders. Replace them with your values.
 | Placeholder | Meaning |
 | --- | --- |
 | `<nps-server>` | Fully qualified domain name (FQDN) of the Privilege Secure application server |
-| `<guacd-host>` | Address of the WSL instance that runs guacd, as the Windows host sees it |
+| `<guacd-host>` | Address that runs guacd, as the gateway server sees it: the WSL instance by default, or a separate Linux host |
 
 ## Run the gateway installer
 
@@ -95,6 +95,72 @@ The gateway package includes `install-docker.sh`. It installs Docker, pulls `gua
 :::warning
 On some Ubuntu releases, `install-docker.sh` installs a Docker engine that can't start containers, and `docker run` fails with the error `cgroups: cgroup mountpoint does not exist`. If you see this error, contact Netwrix Support.
 :::
+
+## Run guacd on a separate Linux host
+
+Instead of running guacd in WSL on the gateway server, you can run guacd as a Docker container on a separate, always-on Linux host. The gateway keeps running on Windows; only guacd moves. This section replaces **Enable systemd in WSL**, **Install Docker and start guacd**, and **Start WSL automatically**.
+
+1. Install Docker Engine on the Linux host. Follow your distribution's instructions, for example [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
+
+2. Create a folder for the guacd certificate and generate a self-signed certificate. The gateway pins this certificate by SHA-1 thumbprint, so keep both files.
+
+   ```bash
+   sudo mkdir -p /opt/nps-guacd/certs
+   sudo chown "$USER" /opt/nps-guacd/certs
+   cd /opt/nps-guacd/certs
+   openssl req -x509 -newkey rsa:2048 -nodes -days 3650 \
+     -keyout guacd.key -out guacd.crt -subj "/CN=localhost"
+   chmod 644 guacd.crt guacd.key
+   ```
+
+3. Print the certificate thumbprint. Record it for the `Configure-Gateway.ps1` step.
+
+   ```bash
+   openssl x509 -in guacd.crt -noout -fingerprint -sha1
+   ```
+
+4. Start guacd with TLS and, if the host can't resolve the Privilege Secure server name, add a hosts entry for it. Replace `<nps-server>` with the server name and `<nps-ip>` with its address.
+
+   ```bash
+   sudo docker run --name guacd --restart unless-stopped \
+     --add-host <nps-server>:<nps-ip> \
+     -v /opt/nps-guacd/certs:/etc/guacamole:ro \
+     -p 4822:4822/tcp -d guacamole/guacd:1.6.0 \
+     -C /etc/guacamole/guacd.crt -K /etc/guacamole/guacd.key
+   ```
+
+   :::note
+   Put the Docker options before the image name (`guacamole/guacd:1.6.0`). Options after the image name are passed to guacd, which stops with `unrecognized option: -`.
+   :::
+
+5. Confirm that guacd listens with TLS on port 4822. The log must include "Communication will require SSL/TLS".
+
+   ```bash
+   sudo docker logs guacd
+   ```
+
+6. From the gateway server, confirm that the gateway reaches the host on port 4822.
+
+   ```powershell
+   Test-NetConnection <guacd-host> -Port 4822
+   ```
+
+   `TcpTestSucceeded` must be `True`. Here, `<guacd-host>` is the Linux host's address.
+
+7. Point the gateway at the Linux host. Run `Configure-Gateway.ps1` with the host address, then set the pinned thumbprint to the one from step 3.
+
+   ```powershell
+   .\Configure-Gateway.ps1 -NPSGuacdHost <guacd-host> -NPSHost https://<nps-server>:6500
+   ```
+
+   The script writes `<guacd-host>` into the `Guacd.Hostname` setting and records a thumbprint. If the script's thumbprint doesn't match the Linux certificate from step 3, update `Guacd.ServerThumbprint` in `C:\ProgramData\Stealthbits\PAM\RagGateway\appsettings.json` with the thumbprint from step 3 (uppercase, no colons), then recycle the gateway application pool.
+
+   ```powershell
+   Import-Module WebAdministration
+   Restart-WebAppPool -Name "NPSGatewayAppPool"
+   ```
+
+If guacd runs on a separate host, you don't need WSL or the "Start Gaucd on WSL" task on the gateway server. To keep guacd up across restarts, the Linux host's Docker engine with `--restart unless-stopped` is enough.
 
 ## Configure the gateway
 

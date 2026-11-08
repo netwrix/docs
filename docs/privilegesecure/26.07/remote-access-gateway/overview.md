@@ -12,13 +12,13 @@ The browser experience matches the Privilege Secure console for the actions an e
 
 ## Components
 
-The Remote Access Gateway has three components. Install the portal in the demilitarized zone (DMZ). Install the gateway and the Apache Guacamole daemon (guacd) inside your network.
+The Remote Access Gateway has three components. Install the portal in the demilitarized zone (DMZ). Install the gateway and the Apache Guacamole daemon (guacd) inside your network. guacd runs on the gateway server by default, or on a separate Linux host.
 
 | Component | Where it runs | What it does |
 | --- | --- | --- |
 | Portal | A dedicated server in the DMZ | Serves the sign-in page and the browser interface to users on port 443. It runs as the **NPS Rag Portal** Windows service and uses nginx. It forwards user requests to the gateway. |
 | Gateway | A Windows server inside the network | Runs as the Internet Information Services (IIS) site **NPS Gateway Web Service** on port 6550. It passes an allowed set of requests to Privilege Secure on port 6500 and opens session connections to guacd. |
-| guacd | The gateway server, in Docker under Windows Subsystem for Linux 2 (WSL 2) | Translates between the browser and the Privilege Secure proxy. It listens on port 4822 and uses Transport Layer Security (TLS) by default. |
+| guacd | The gateway server, in Docker under Windows Subsystem for Linux 2 (WSL 2); or a separate Linux host | Translates between the browser and the Privilege Secure proxy. It listens on port 4822 and uses Transport Layer Security (TLS) by default. |
 
 ![Remote Access Gateway architecture. A user browser connects to the Portal in the DMZ on port 443. The Portal passes requests to the Gateway on 6550. The Gateway calls the web service on 6500 and connects to guacd on 4822. guacd connects to the proxy service on 4489 for RDP or 4422 for SSH, and the proxy connects to the target.](/images/privilegesecure/26.07/remote-access-gateway/remote-access-gateway-data-path.webp)
 

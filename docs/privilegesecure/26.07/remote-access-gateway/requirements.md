@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Remote Access Gateway requirements
 
-The Remote Access Gateway uses two Windows servers. The portal runs on its own server in the demilitarized zone (DMZ). The gateway and the Apache Guacamole daemon (guacd) run together on a second server inside your network. This page lists what each server needs before you install.
+The Remote Access Gateway uses two Windows servers. The portal runs on its own server in the demilitarized zone (DMZ). The gateway runs on a second server inside your network. The Apache Guacamole daemon (guacd) runs on the gateway server in Windows Subsystem for Linux (WSL) by default, or on a separate Linux host. This page lists what each server needs before you install.
 
 ## Privilege Secure version
 
@@ -32,15 +32,35 @@ Netwrix tests the latest gateway and portal with the latest Privilege Secure app
 
 - Internet Information Services (IIS). The gateway installer turns on the IIS role and the features it needs. The gateway runs as the IIS site **NPS Gateway Web Service**, not as a Windows service.
 - The .NET 10 Hosting Bundle. The gateway installer includes it.
-- Windows Subsystem for Linux 2 (WSL 2) with a Ubuntu distribution. The gateway doesn't support WSL 1. Run Windows Update before you install WSL.
-- Docker running inside WSL. guacd runs as a Docker container, and the install script installs Docker.
-- Systemd enabled in WSL. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md).
-- Outbound access from WSL to download packages and the `guacamole/guacd:1.6.0` image.
 - guacd version 1.6.0. The 26.07.3 portal requires this version. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/install/upgrade.md).
+- A place to run guacd, either of the following:
+  - **WSL 2 with an Ubuntu distribution (default).** The gateway doesn't support WSL 1. Run Windows Update before you install WSL. Docker runs inside WSL, and the install script installs Docker. Enable systemd in WSL. WSL needs outbound access to download packages and the `guacamole/guacd:1.6.0` image. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md).
+  - **A separate Linux host with Docker.** Instead of running guacd in WSL on the gateway server, you can run guacd as a Docker container on its own Linux server. This keeps WSL and Docker off the gateway server. See [Run guacd on a separate Linux host](#run-guacd-on-a-separate-linux-host).
 
-{/* TODO verify: whether running guacd on a separate Linux host instead of WSL 2 on the gateway server is supported. */}
+## Run guacd on a separate Linux host
+
+By default, guacd runs in WSL on the gateway server. You can instead run guacd as a Docker container on a separate, always-on Linux server. The gateway keeps running on Windows; only guacd moves. Run it on a Linux server that can stay powered on, so the container survives restarts.
+
+The gateway connects to the remote guacd over the network, so set the requirements for the separate host as follows.
+
+| Requirement | Value |
+| --- | --- |
+| Operating system | A Linux distribution with Docker Engine. Ubuntu 26.04 LTS is tested. |
+| Docker | Docker Engine with the Compose plugin. |
+| guacd | The `guacamole/guacd:1.6.0` container, published on port 4822. |
+| Ports | 4822 open from the gateway server to the host; the host reaches the proxy on ports 4489 and 4422. |
+| Name resolution | The guacd host resolves the Privilege Secure server name, so guacd can reach the proxy. |
+| Certificate | A guacd certificate (`guacd.crt` and `guacd.key`). The gateway pins it by thumbprint. |
+
+The gateway doesn't use WSL when guacd runs on a separate host, so you can leave WSL and its scheduled tasks off the gateway server.
+
+:::warning
+The gateway and the portal are Windows components. The gateway and portal installers are Windows packages, and Netwrix ships no Linux build of either. Only guacd runs on Linux.
+:::
 
 ### Nested virtualization
+
+This section applies only when guacd runs in WSL on the gateway server. A separate Linux host for guacd doesn't need nested virtualization on the gateway server.
 
 WSL 2 needs hardware virtualization. If the gateway server is a virtual machine, enable nested virtualization on the host.
 
