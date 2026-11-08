@@ -55,7 +55,7 @@ The account can be a manually managed account, or an account that a secret vault
 ### Prerequisites
 
 - The account is managed by Privilege Secure, or it's in a secret vault in Privilege Secure. See [Secret vaults](/docs/privilegesecure/26.07/resources/secret-vaults.md).
-- For a managed account, rotate the password at least once after you start managing the account. Until then, Privilege Secure has no stored password for the account.
+- For an automatically managed account, rotate the password at least once after you start managing the account. Until then, Privilege Secure has no stored password for the account.
 
 ### Create the connector
 
@@ -179,7 +179,7 @@ The account can be a manually managed account, or an account that a secret vault
 
 ### Manage the account manually
 
-1. Select **Dashboard** in the left navigation, then select the **Credentials** tab.
+1. Select **Credentials** in the left navigation.
 2. Find the account and select its checkbox. Ensure the account isn't already managed.
 3. Click **Manage** above the list, then select **Manual**.
 4. In the **Set Password for Credential** window, enter the account's password in **Password**, then click **Save**. Enter the password that the account already has on the resource, because Privilege Secure doesn't change the password on the resource for a manually managed account. To set the password again later, select the **Set Password** icon beside the account name. See [Passwords of manually managed accounts](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md#passwords-of-manually-managed-accounts).

@@ -45,8 +45,6 @@ The window has these columns:
 
 The **Access Policies** column shows which policy grants each entitlement. This is useful when a user has the same resource and activity through more than one policy.
 
-![The Review Entitlements window with the Access Policies column.](/images/privilegesecure/26.07/user-guide/review-entitlements-window.webp)
-
 :::note
 A denial doesn't remove the user from the access policy. Privilege Secure sets a deny flag on that user, activity, and resource or credential. After you commit the review, a session request for that combination fails with an access denied message. An Administrator can restore the access. See [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md#what-denial-does).
 :::

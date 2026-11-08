@@ -19,7 +19,7 @@ Use the policy as a starting point. Adjust the command lists to the resource, an
 
 ## Create the policy file
 
-Create a file named after the account in the sudoers drop-in directory. Sudo ignores a drop-in file unless root owns it and only root can write to it.
+Create an empty file named after the account in the sudoers drop-in directory, then set its owner and mode. Sudo ignores a drop-in file unless root owns it and only root can write to it. Run these commands as root. You add the policy to the file in the next sections.
 
 | | Linux | BSD |
 | --- | --- | --- |
@@ -30,6 +30,7 @@ Create a file named after the account in the sudoers drop-in directory. Sudo ign
 On Linux:
 
 ```bash
+touch /etc/sudoers.d/svc_sbpam
 chown root:root /etc/sudoers.d/svc_sbpam
 chmod 0440 /etc/sudoers.d/svc_sbpam
 ```
@@ -37,6 +38,7 @@ chmod 0440 /etc/sudoers.d/svc_sbpam
 On BSD:
 
 ```bash
+touch /usr/local/etc/sudoers.d/svc_sbpam
 chown root:wheel /usr/local/etc/sudoers.d/svc_sbpam
 chmod 0440 /usr/local/etc/sudoers.d/svc_sbpam
 ```
@@ -106,7 +108,7 @@ Defaults:svc_sbpam !requiretty
 `SVC_SB_SHELL` lets the account run any command through a shell, which is effectively full root access. Privilege Secure uses `/bin/bash -c` for the account scan and `/bin/sh -c` for the SSH key certificate operations. Leave out the shell entries on resources where you don't use those operations. Then check the other aliases against the commands those resources run.
 :::
 
-For the full list of commands that the 26.07 command plans run, and what to do when a scan stops on a `sudo` error, see [Linux resources aren't scanned after an upgrade to 26.07.1](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md#linux-resources-arent-scanned-after-an-upgrade-to-26071).
+For the full list of commands that the 26.07 command plans run, and what to do when a scan stops on a `sudo` error, see [Linux resources fail to scan](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md#linux-resources-fail-to-scan).
 
 ## Session actions on a Linux target
 

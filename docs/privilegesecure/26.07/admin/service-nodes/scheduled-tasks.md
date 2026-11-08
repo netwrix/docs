@@ -33,7 +33,7 @@ The toolbar shows the number of tasks. You can sort the columns.
 | **LAST STATUS** | The result of the last run. |
 | **STATUS** | The state of the task. |
 
-**LAST STATUS** and **STATUS** use the same set of labels: Scheduled, Pending, Queued, Running, Complete, Completed with errors, Failed, Cancelled, and Unknown. A task in any other internal state, such as paused, shows as Unknown.
+**LAST STATUS** and **STATUS** use the same set of labels: Scheduled, Pending, Queued, Running, Complete, Completed With Errors, Failed, Cancelled, and Unknown. A task in any other internal state, such as paused, shows as Unknown.
 
 ## Task names
 

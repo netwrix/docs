@@ -101,7 +101,6 @@ The sync creates access policies that need no approval and that you don't review
 
 To remove one user from a policy without deleting it, edit the policy's **Users** tab. The policy stays in force for the other users, and the sync doesn't add the removed user back. The sync only creates a policy when none with that name exists, so it never changes an existing policy's members.
 :::
-:::
 
 To follow the progress, open the Action Service on the **Service Nodes** page. See [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).
 

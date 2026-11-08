@@ -49,7 +49,7 @@ The documentation uses Remote Access Gateway. See [Remote Access Gateway overvie
 
 | Name | Meaning |
 | --- | --- |
-| Netwrix Privilege Secure for Access Management | The product name. The short forms are Privilege Secure and NPS-AM. |
+| Netwrix Privilege Secure for Access Management | The product name. The short form is Privilege Secure. |
 | NPS | A short form of the product name that appears in file names, installers, and the console. |
 | SbPAM | A legacy prefix from the product's earlier name. It appears in service names, the IIS site name, and registry keys. |
 | Stealthbits | The company name before the product became part of Netwrix. It appears in file paths. |

@@ -15,11 +15,11 @@ Use this page when users can't sign in to the portal, the portal doesn't load, o
 | Gateway | `PAM-RagGateway*.log` | `C:\ProgramData\Stealthbits\PAM\Log` |
 | Portal | `PAM-RagPortal*.log` | `C:\ProgramData\Stealthbits\PAM\Log` |
 | Portal web server (nginx) | `nginx-access.log` | `C:\ProgramData\Stealthbits\PAM\Log` |
-| Apache Guacamole daemon (guacd) | Output of `docker logs <container>` | On the host that runs guacd: in Windows Subsystem for Linux (WSL) on the gateway server, or on a separate Linux host |
+| Apache Guacamole daemon (guacd) | Output of `docker logs <container>` | Inside Windows Subsystem for Linux (WSL) on the gateway server |
 
 The gateway log is empty until the gateway receives its first request. The portal log also holds the nginx error output.
 
-To find the guacd container name, run `docker ps` on the host that runs guacd. For the logs of the other Privilege Secure services, see [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md).
+To find the guacd container name, run `docker ps` inside WSL. For the logs of the other Privilege Secure services, see [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md).
 
 ## The sign-in page says the license has expired
 
@@ -136,34 +136,6 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 If the address of the WSL instance changed, run `wsl hostname -I` to get the current address. Then run `Configure-Gateway.ps1` again with that address as the `-NPSGuacdHost` value.
 
 If WSL doesn't start by itself, see [Start WSL automatically](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#start-wsl-automatically).
-
-## Sessions stay black when guacd runs on a separate Linux host
-
-**Symptom:** The session canvas opens but stays black. guacd is reachable and accepts the connection.
-
-**Cause:** The guacd host can't resolve the Privilege Secure server name. The gateway tells guacd to reach the Privilege Secure proxy (ports 4489 and 4422) by the server's name, not by its address. A separate Linux host that uses a different Domain Name System (DNS) server may not resolve that name, while WSL on the gateway server usually does.
-
-**Fix:**
-
-1. In the guacd log, look for `RDP server closed/refused connection: DNS lookup failed (incorrect hostname?)`.
-2. Confirm that the host resolves the server name. On the Linux host, run:
-
-   ```bash
-   getent hosts <nps-server>
-   ```
-
-3. If the name doesn't resolve, add a hosts entry. Restart the container with a host entry that maps the server name to its address:
-
-   ```bash
-   sudo docker rm -f guacd
-   sudo docker run --name guacd --restart unless-stopped \
-     --add-host <nps-server>:<nps-ip> \
-     -v /opt/nps-guacd/certs:/etc/guacamole:ro \
-     -p 4822:4822/tcp -d guacamole/guacd:1.6.0 \
-     -C /etc/guacamole/guacd.crt -K /etc/guacamole/guacd.key
-   ```
-
-   Put the Docker options before the image name. Options placed after the image name are passed to guacd, which stops with `unrecognized option: -`.
 
 ## Colors look wrong in an RDP session
 

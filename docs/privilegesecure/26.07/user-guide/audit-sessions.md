@@ -58,7 +58,7 @@ Search and filters cover live and recorded sessions. When you search recorded da
 
 For example, enter a command name in **Search**, and then open a recording from the results to see where the user ran it.
 
-The recording data includes keystrokes. In SSH sessions, keystrokes typed at a password prompt are hidden in the viewer. See [Session recording](/docs/privilegesecure/26.07/admin/sessions/session-recording.md).
+The recording data includes keystrokes. See [Session recording](/docs/privilegesecure/26.07/admin/sessions/session-recording.md).
 
 ## Replay a recording
 

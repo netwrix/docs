@@ -87,7 +87,7 @@ A session is a time-limited grant of access. It is the unit of work for users. A
 | Active | **Available** or **Logged In** | The pre-session actions finished and the user can connect. **Logged In** appears when the user's sign-in falls within the session window. Otherwise the session shows **Available**. |
 | Completed | **Completed** | The session ended and the post-session actions ran. |
 | Failed | **Failed** | The session ended with errors. |
-| Cancelled | **Cancelled** | The session was cancelled. |
+| Cancelled | **Cancelled** | The session was canceled. |
 | Approval denied or approval failed | **Approval denied**, **Approval failed** | An approver denied the request, or the approval couldn't finish. |
 | Locked | **Locked** | An auditor or a command restriction locked the session. |
 | Cancelling | **Deprovisioning** | The session is ending and the post-session actions are running. |

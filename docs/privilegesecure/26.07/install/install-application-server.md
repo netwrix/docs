@@ -49,9 +49,9 @@ The launcher shows the steps for your situation on screen. For a first installat
 4. Review the install folder and the data folder. To change a location, click **Browse**. Click **Next**.
 5. When the installation finishes, click **Exit**.
 
-The installer puts PostgreSQL 16 in `C:\Program Files\Stealthbits\PostgreSQL16` and the data in `C:\ProgramData\Stealthbits\PostgreSQL16`. The Windows service is named `postgresql-x64-16` and is listed as **PostgreSQL Server 16**.
+The installer puts PostgreSQL 16 in a `PostgreSQL16` folder under the Stealthbits folders in `C:\Program Files` and `C:\ProgramData`. Check the paths in the setup wizard.
 
-{/* TODO verify: on a fresh installation, confirm the PostgreSQL 16 install folder, data folder, and service name. These values were read on a server where the Netwrix installer upgraded PostgreSQL 12 to 16. The Setup Launcher in the release source also carries a PostgreSQL 16 to 18 upgrade path, so confirm which version a current fresh install uses. */}
+{/* TODO verify: on a fresh installation, confirm the PostgreSQL 16 install folder, data folder, and service name. These values were read on a server where the Netwrix installer upgraded PostgreSQL 12 to 16. */}
 ![The Netwrix PostgreSQL 16 setup wizard install page.](/images/privilegesecure/26.07/install/postgresql-wizard-install.webp)
 
 ![The Netwrix PostgreSQL 16 setup wizard page with the install and data folders.](/images/privilegesecure/26.07/install/postgresql-wizard-folders.webp)

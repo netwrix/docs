@@ -127,7 +127,7 @@ An account can be blocked from signing in through two routes. The two blocks cle
 | Administrator lock | An administrator clicks **Lock Account** on the details page, or locks the account from the active sessions view. | An administrator unlocks the account. |
 | Failed-sign-in lockout | The account enters a wrong password too many times in a row. | The lockout expires, or an administrator unlocks the account. |
 
-The **LOCKED** column on the **Users & Groups** page shows whether the account is blocked. A blocked user can't sign in or create a session.
+The **LOCKED** column on the **Users & Groups** page shows whether the account is blocked. A blocked user can't create a session. From 26.07.3, a blocked user also can't sign in.
 
 From version 26.07.3, Privilege Secure refuses sign-in for a locked account. A locked account that tries to create a session gets the message "This account is locked and cannot create a new session."
 

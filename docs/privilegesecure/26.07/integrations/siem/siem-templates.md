@@ -11,7 +11,7 @@ A SIEM template sets the content and layout of each message that Privilege Secur
 Privilege Secure includes two templates, **CEF** and **LEEF**. You can also create custom templates.
 
 :::note
-The **CEF** and **LEEF** templates contain the same message body. Both messages start with the date and the host name, then the template name and version, the company, the product, the product version, and the event status. They start with `%SYSLOG_DATE%|%HOST%`, not with a `CEF:` or `LEEF:` header. Test the output in your SIEM before you rely on it, and create a custom template if your SIEM needs a different layout.
+The **CEF** and **LEEF** templates contain the same message body. Both start with `%SYSLOG_DATE%|%HOST%`, not with a `CEF:` or `LEEF:` header. Check the output in your SIEM before you write a parser, and create a custom template if your SIEM needs a different layout.
 :::
 
 ## Create a custom template

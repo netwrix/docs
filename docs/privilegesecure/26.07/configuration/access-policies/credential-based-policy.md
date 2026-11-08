@@ -42,7 +42,7 @@ The **Activities** tab of a credential-based policy is read-only. It shows that 
 
 The **Credentials** tab lists the credentials and credential groups that users can check out.
 
-- **Add** opens the **Add Credentials** window, which lists credentials and credential groups that aren't on the policy yet. A credential appears only when Privilege Secure manages it and it has no service account dependencies. Credentials in a Privilege Secure secret vault appear in the list. By default, a credential-based policy doesn't list or release credentials from an external [vault connector](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md), such as CyberArk, HashiCorp, or Password Secure. To release them, contact Netwrix Support.
+- **Add** opens the **Add Credentials** window, which lists credentials and credential groups that aren't on the policy yet. A credential appears only when Privilege Secure manages it and it has no service account dependencies. Credentials in a Privilege Secure secret vault appear in the list. By default, a credential-based policy doesn't list or release credentials from an external [vault connector](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md), such as CyberArk, HashiCorp, or Password Secure.
 - **Remove** removes the selected items from the policy.
 - **Search** filters the list.
 - The type filter offers **All**, **Credential**, and **Credential Group**.

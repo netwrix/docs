@@ -30,7 +30,7 @@ Complete these steps on each Azure Linux resource.
 2. Remove the systemd Bash hook. Add the following fragment at the end of `/etc/skel/.bashrc`. It removes only the systemd hook and keeps any other `PROMPT_COMMAND` entries, such as a terminal title.
 
    ```bash
-   # Remove only the systemd OSC 3008 hook (breaks NPS-AM scan-tool prompt detection); keep other PROMPT_COMMAND entries (e.g. xterm title) intact
+   # Remove only the systemd OSC 3008 hook (breaks Privilege Secure scan-tool prompt detection); keep other PROMPT_COMMAND entries (e.g. xterm title) intact
    for __i in "${!PROMPT_COMMAND[@]}"; do
      if [[ "${PROMPT_COMMAND[$__i]}" == "__systemd_osc_context_precmdline" ]]; then
        unset 'PROMPT_COMMAND[$__i]'

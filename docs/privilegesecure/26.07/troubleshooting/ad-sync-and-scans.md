@@ -60,11 +60,11 @@ For the task list, see [Scheduled tasks](/docs/privilegesecure/26.07/admin/servi
 These lockouts are on accounts in Active Directory. They are separate from the lockout that blocks a user from signing in to the Privilege Secure console. For the console lockout, see [Sign-in lockout and unlocking](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#sign-in-lockout-and-unlocking).
 :::
 
-## Linux resources aren't scanned after an upgrade to 26.07.1
+## Linux resources fail to scan
 
-**Symptom:** After an upgrade to 26.07.1, scans of Linux resources fail, even though the platform is set correctly on the resource.
+**Symptom:** Scans of Linux resources fail, even though the platform is set correctly on the resource.
 
-**Cause:** One reported cause is a sudoers file on the Linux resource that doesn't allow every command the scan runs for the service account. The scan fails when sudo refuses one of them.
+**Cause:** The sudoers file on the Linux resource doesn't allow every command the scan runs for the service account. The scan fails when sudo refuses one of them.
 
 **Fix:** Check the sudoers file for the service account against the commands that Privilege Secure needs. Allow only those commands. Don't grant the account unrestricted sudo access. For the policy, see [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md).
 

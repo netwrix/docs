@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Device account and session actions
 
-Privilege Secure manages local accounts on network devices and Linux or BSD hosts through SSH. Each platform has a set of command plans that run the actions: add an account, remove an account, enable or disable it, set its password, and add or remove it from a group. Some platforms also have session actions that report a signed-in user's state, end that user's processes, or send a message to that user's terminals.
+Privilege Secure manages local accounts on network devices and Linux or BSD hosts through SSH. Each platform has a set of command plans that run the actions: add, remove, enable, or disable an account; set its password; and add it to or remove it from a group. Some platforms also have session actions that report a signed-in user's state, end that user's processes, or send a message to that user's terminals.
 
 The command plans are the same actions that Privilege Secure runs during a scan, a password rotation, or an activity. You don't run them by hand. Use this page to see what each action does on the target, and the commands it needs, so that a least-privilege account can run it. For the sudo policy that grants the Linux and BSD commands, see [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md).
 

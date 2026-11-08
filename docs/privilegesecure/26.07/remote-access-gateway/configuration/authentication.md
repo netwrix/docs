@@ -36,7 +36,7 @@ A new installation uses `0`, so users sign in only through SSO. Keep `0` unless 
    Restart-WebAppPool -Name NPSGatewayAppPool
    ```
 
-   The gateway reads `AllowedLoginMethods` again on each sign-in request, so a saved change applies to new sign-ins without the recycle. The recycle also applies any other setting that you changed in the same file.
+   The gateway reads `AllowedLoginMethods` again on each sign-in request, so a saved change applies to new sign-ins. The recycle applies any other setting that you changed in the same file.
 5. Browse to the portal by its DNS name. With value `2`, the sign-in form shows **Username**, **Password**, and **Domain**.
 
 If a user tries a method that the value doesn't allow, the portal rejects the sign-in with "Cannot use this login method".

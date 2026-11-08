@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Use the browser extension to start web sessions from the toolbar without opening the console. Install the extension first. See [Browser extension](/docs/privilegesecure/26.07/user-guide/browser-extension/browser-extension.md).
 
-This page describes the Chrome Web Store build 25.8.26.
+This page describes the extension version in the Chrome Web Store and Microsoft Edge Add-ons, build 25.8.26.
 
 ## Before you begin
 

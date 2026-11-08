@@ -30,6 +30,8 @@ For example, to give a team access to a set of web servers, enter the name `Web 
 
 A new policy has three tabs: **Users**, **Activities**, and **Resources**. Add items to each tab so the policy can match a session request.
 
+![A new policy form with the Connection Profile field outlined in red and the message A value is required.](/images/privilegesecure/26.07/configuration/new-policy-connection-profile-error.webp)
+
 ## Add users and groups
 
 On the **Users** tab, you choose who the policy applies to.
@@ -66,6 +68,8 @@ Expand a row to see the details under the headings **Access Approved**, **Access
 
 For how access certification affects a policy, see [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md).
 
+![The Users tab of a resource-based access policy with the Type and Connection Profile fields and the Users, Activities, and Resources tabs.](/images/privilegesecure/26.07/configuration/access-policy-users-tab.webp)
+
 ## Add activities and activity groups
 
 On the **Activities** tab, you choose what users can do.
@@ -79,6 +83,8 @@ On the **Activities** tab, you choose what users can do.
 The table has the columns **NAME**, **TYPE**, and **DESCRIPTION**. The type icon shows whether a row is an activity or an activity group. To remove an item, select its checkbox and click **Remove**.
 
 To create activities and groups, see [Activities](/docs/privilegesecure/26.07/configuration/activities/activities.md) and [Activity groups](/docs/privilegesecure/26.07/configuration/activities/activity-groups.md).
+
+![The Add Activities and Activity Groups window with the available list on the left and the activities to add on the right.](/images/privilegesecure/26.07/configuration/add-activities-window.webp)
 
 ## Add resources and resource groups
 
@@ -107,7 +113,3 @@ To remove an item, select its checkbox and click **Remove**.
 - [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md)
 - [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md)
 - [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md)
-
-![The Users tab of a resource-based access policy with the Type and Connection Profile fields and the Users, Activities, and Resources tabs.](/images/privilegesecure/26.07/configuration/access-policy-users-tab.webp)
-![The Add Activities and Activity Groups window with the available list on the left and the activities to add on the right.](/images/privilegesecure/26.07/configuration/add-activities-window.webp)
-![A new policy form with the Connection Profile field outlined in red and the message A value is required.](/images/privilegesecure/26.07/configuration/new-policy-connection-profile-error.webp)

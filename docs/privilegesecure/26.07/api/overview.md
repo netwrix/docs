@@ -41,7 +41,7 @@ Every request, except the sign-in requests, carries a bearer token in the `Autho
 Authorization: Bearer <token>
 ```
 
-A token is valid for 15 minutes by default. The token lifetime is a server setting, separate from the console's **UI Idle Timeout**. A script that runs longer renews the token before it expires. Two kinds of account can request a token:
+A token is valid for 15 minutes by default. The token lifetime is a server setting, separate from the console's **Idle Timeout (minutes)** setting. A script that runs longer renews the token before it expires. Two kinds of account can request a token:
 
 | Account | Use it for | Credentials |
 | --- | --- | --- |
@@ -95,7 +95,7 @@ The API reports most errors as an HTTP status code with a JSON body in the stand
 
 ## Calling the API from a script
 
-Use PowerShell 7 or `curl`. If the server certificate isn't trusted for the address you use, for example when you connect to `localhost` and the certificate names the server, Windows PowerShell 5.1 reports "The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel." Connect with the host name in the certificate. The server answers a request that addresses it as `localhost` with HTTP 400.
+Use PowerShell 7 or `curl`. If the server certificate isn't trusted for the address you use, for example when you connect to `localhost` and the certificate names the server, Windows PowerShell 5.1 reports "The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel." Connect with the host name in the certificate. An API request that uses `localhost` as the host name returns HTTP 400. Use the host name in the certificate.
 
 Trust the certificate authority (CA) that issued the server certificate instead of turning certificate checks off. With `curl`, point the client at the CA certificate file with `--cacert <ca-certificate-file>`.
 
