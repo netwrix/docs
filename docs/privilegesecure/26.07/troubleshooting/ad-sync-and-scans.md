@@ -68,7 +68,7 @@ These lockouts are on accounts in Active Directory. They are separate from the l
 
 **Fix:** Check the sudoers file for the service account against the commands that Privilege Secure needs. Allow only those commands. Don't grant the account unrestricted sudo access. For the policy, see [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md).
 
-If the scan still fails after the account has every listed command, contact [Netwrix Support](https://www.netwrix.com/support.html). See also [Known issues](/docs/privilegesecure/26.07/troubleshooting/known-issues.md).
+If the scan still fails after the account has every listed command, contact [Netwrix Support](https://www.netwrix.com/support.html).
 
 In 26.07.3, the Linux command plans run these commands through `sudo`: `getent`, `id`, `useradd`, `usermod`, `userdel`, `groupadd`, `gpasswd`, `chpasswd`, `pkill`, `who`, `w`, `last`, `write`, `find`, `test`, `md5sum`, `/bin/rm`, `/usr/sbin/adcli`, `/bin/sh`, and `/bin/bash`. The plan that adds a sudoers file also runs `visudo`, `tee`, `/bin/mv`, `/bin/chmod`, `/bin/grep`, `/bin/sed`, and `stat`. The plans call the commands shown with a full path by that exact path, and sudoers rules match on the command path, so write those rules with the full path. The plans resolve the other commands through the target's PATH.
 

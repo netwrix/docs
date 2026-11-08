@@ -91,10 +91,9 @@ remote command is waiting for an interactive password (sudo/su prompt detected) 
 **Fix:**
 
 1. Open the sudoers policy file for the service account on the target. See [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md).
-1. Add the command that the action needs to the matching `Cmnd_Alias`, and make sure the account has it under `NOPASSWD`.
+1. Add the command that the action needs to the matching `Cmnd_Alias`, and ensure the account has it under `NOPASSWD`.
 1. Validate the file with `visudo -cf <file>`, then run the action again.
 
 ## Related topics
 
 - [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md)
-- [Known issues in 26.07](/docs/privilegesecure/26.07/troubleshooting/known-issues.md)

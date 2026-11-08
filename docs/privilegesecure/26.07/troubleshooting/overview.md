@@ -18,7 +18,6 @@ Use this section when Netwrix Privilege Secure for Access Management (Privilege 
 | A domain sync fails or shows stale status, a host isn't scanned, or AD accounts lock out | [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md) |
 | Users can't connect through the Remote Access Gateway | [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md) |
 | You need to test connectivity to a host, or collect diagnostics for support | [Run diagnostics with the Enablement Toolkit](/docs/privilegesecure/26.07/troubleshooting/enablement-toolkit.md) |
-| You suspect a defect | [Known issues in 26.07](/docs/privilegesecure/26.07/troubleshooting/known-issues.md) |
 
 ## Start with the logs
 
