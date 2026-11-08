@@ -22,7 +22,7 @@ When you start a session from a card on **My Activities**, the **Configure sessi
 
 When you click **Start Session**, Privilege Secure checks the ticket in ServiceNow before it creates the session. If the check fails, a message appears at the top of the page and the dialog stays open, for example "Ticket 'INC0009004' has status 'Closed' which is not allowed." or "Ticket 'INC0999999' not found in ServiceNow." For all messages, see [ServiceNow integration](/docs/privilegesecure/26.07/integrations/itsm/servicenow.md#what-privilege-secure-does-with-a-ticket).
 
-![The Notes step of the session request, with the Notes for this session box and the Ticket number for this session box showing the INC# label and the validation message "The ticket number entered is invalid. Please enter a valid ServiceNow ticket number."](/images/privilegesecure/26.07/user-guide/servicenow-ticket-field.webp)
+![The Notes step of the session request, with the Notes for this session box and the Ticket number for this session box showing the INC# label and the invalid ticket number validation message.](/images/privilegesecure/26.07/user-guide/servicenow-ticket-field.webp)
 
 If the connection profile requires a ticket number, you can't continue without one.
 
@@ -31,7 +31,7 @@ If the connection profile requires a ticket number, you can't continue without o
 Privilege Secure checks the format of the number, then looks up the ticket in ServiceNow. The request fails with one of these messages:
 
 | Message | Cause |
-|---|---|
+| --- | --- |
 | "Ticket number does not match the required format" | The number doesn't match the pattern that your administrator set. The message can include a custom text. |
 | "Ticket '`<ticket>`' not found in ServiceNow." | ServiceNow has no ticket with that number. |
 | "Ticket '`<ticket>`' has status '`<status>`' which is not allowed." | The ticket is in a state that the connector doesn't accept. By default, the allowed states are New and In Progress. |

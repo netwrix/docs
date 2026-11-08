@@ -19,14 +19,14 @@ Privilege Secure uses the platform's policy whenever it generates a password for
 The console includes five policies. The **Default** policy can't be deleted.
 
 | Policy | Length | Must start with | Must end with | Max consecutive characters | Included characters |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | **Default** | 21 | **Symbol** | **Uppercase** | 2 | **Lowercase**, **Uppercase**, **Symbols**, **Spaces**, **Numbers** |
 | **Default BSD** | 16 | **Lowercase** | **Symbol** | 2 | **Lowercase**, **Uppercase**, **Symbols**, **Numbers** |
 | **Default Cisco** | 16 | **Lowercase** | **Symbol** | 2 | **Lowercase**, **Uppercase**, **Symbols**, **Numbers** |
 | **Default Linux** | 16 | **Lowercase** | **Symbol** | 2 | **Lowercase**, **Uppercase**, **Symbols**, **Numbers** |
 | **Default PanOS** | 16 | **Lowercase** | **Symbol** | 2 | **Lowercase**, **Uppercase**, **Symbols**, **Numbers** |
 
-The **Default** policy excludes no characters. The other four policies describe themselves as "Exclude unsafe special characters and spaces" for their platform. The **Default BSD**, **Default Linux**, **Default Cisco**, and **Default PanOS** policies exclude these characters from the password:
+The **Default** policy excludes no characters. The other four policies have the description "Exclude unsafe special characters and spaces" for their platform. The **Default BSD**, **Default Linux**, **Default Cisco**, and **Default PanOS** policies exclude these characters from the password:
 
 - **Default Linux**: `` ' " \ $ ` ! & | ; < > ( ) { } [ ] / @ : # ``
 - **Default BSD**: `` ' " \ $ ` ! & | ; < > ( ) { } [ ] / @ : # ``
@@ -40,7 +40,7 @@ The BSD, Cisco, Linux, and PanOS platforms each use the policy with their name. 
 Select **Platforms** > **Password Complexity** to open the list of policies. Selecting a policy shows these settings.
 
 | Setting | Description |
-|---|---|
+| --- | --- |
 | **Name** | The name of the policy. |
 | **Description** | The purpose of the policy. |
 | **Must Start With** | The type of character that the password starts with. |
@@ -59,11 +59,11 @@ The **Must Start With** and **Must End With** lists offer **None**, **Lowercase*
 1. Select **Platforms** > **Password Complexity**.
 1. Select the plus (**+**) button above the list of policies.
 1. In **Name**, enter a unique name, for example `Strict 24`.
-1. Optional: In **Description**, enter the purpose of the policy.
+1. (Optional) In **Description**, enter the purpose of the policy.
 1. Set **Must Start With** and **Must End With**.
 1. In **Length**, enter `24`.
 1. In **Max Consecutive Chars**, enter `2`.
-1. Optional: In **Characters to Exclude**, enter the characters that your targets don't accept.
+1. (Optional) In **Characters to Exclude**, enter the characters that your targets don't accept.
 1. Under **Include Characters**, select the kinds of characters to include.
 1. Select **Save**.
 

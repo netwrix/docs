@@ -32,7 +32,7 @@ For how an Administrator creates a task, see [Run an access certification](/docs
 The window has these columns:
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | **Status** | The review state of the entitlement: **Requested** (review started), **Approved**, or **Denied**. |
 | **Name** | The name of the account. |
 | **Resource** | The resource. |

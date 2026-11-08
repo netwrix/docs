@@ -19,7 +19,7 @@ Windows Remote Management (WinRM) is one way Netwrix Privilege Secure for Access
 The **Configure Secure WinRM Connection** window offers three certificate sources.
 
 | Option | Use it when |
-|---|---|
+| --- | --- |
 | **Import certificate from host** | The server already has a certificate for WinRM HTTPS. Privilege Secure imports it. This option is the default. |
 | **Push NPS certificate to host** | You want to send a certificate from Privilege Secure to the server. |
 | **Generate a new self-signed certificate** | The server has no certificate, and you want Privilege Secure to create one. Privilege Secure generates the certificate and imports it automatically. |
@@ -48,7 +48,7 @@ The server now has a certificate for WinRM over HTTPS.
 Privilege Secure tries HTTPS only when **WinRM HTTP Setting** is **Use Https If Available** or **Use Https Only**. The default is **Use Http**, so a certificate alone doesn't switch the connection to HTTPS. Set the option under **System Settings** > **WinRM Options**. See [System settings](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md).
 
 | Option | Result |
-|---|---|
+| --- | --- |
 | **Use Http** | The default. Connects over HTTP. |
 | **Use Https If Available** | Tries HTTPS first. If the host doesn't answer over HTTPS, the connection falls back to HTTP and the action continues, so the traffic might not be encrypted. The action log doesn't always record the fallback. |
 | **Use Https Only** | Requires HTTPS. If Privilege Secure can't get the HTTPS certificate of the host, the action fails instead of falling back to HTTP. |

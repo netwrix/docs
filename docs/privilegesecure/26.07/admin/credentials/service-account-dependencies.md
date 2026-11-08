@@ -10,7 +10,7 @@ A service account is an account that Windows services or scheduled tasks run as.
 
 ## Prerequisites
 
-- The account appears on the **Credentials** page with managed type **Service**. Privilege Secure finds the dependents when it scans a resource: the host scan reads the Windows services and scheduled tasks on the resource and records the account each one runs as. Scan the resource before you rotate so the **Dependencies** tab is current. See [Scan resources for dependents](#scan-resources-for-dependents).
+- The account appears on the **Credentials** page with managed type **Service**. Privilege Secure finds the dependents when it scans a resource. The host scan reads the Windows services and scheduled tasks on the resource and records the account each one runs as. Scan the resource before you rotate so the **Dependencies** tab is current. See [Scan resources for dependents](#scan-resources-for-dependents).
 - You're an Administrator, or you hold a custom role with the **Rotate Services** permission. See [Create a custom role](/docs/privilegesecure/26.07/admin/roles/custom-roles.md).
 - No session is active on the account. A rotation doesn't run while a session is active. See [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
 
@@ -30,7 +30,7 @@ The **Account Dependencies** dialog opens.
 The top of the dialog shows these fields:
 
 | Field | Shows |
-|---|---|
+| --- | --- |
 | **Account Name** | The account. |
 | **Last Changed** | When the password last changed. |
 | **Last Checked** | When Privilege Secure last verified the password. |
@@ -46,7 +46,7 @@ The buttons are **Rotate**, **Rollback**, and **Cancel**. **Cancel** stops a ser
 The **Dependencies** tab lists what uses the account. Use **Search Dependencies...** to filter the list and **Refresh** to reload it.
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | **Resource** | The resource that holds the dependent. |
 | **Type** | **Service** or **ScheduledTask**. |
 | **Name** | The name of the service or task. |
@@ -68,7 +68,9 @@ For example, `<domain>\svc-example` can show one **Service** dependent on `<serv
 2. Check the **Dependencies** tab for the services and tasks that run as the account.
 3. Select **Rotate**.
 
-Privilege Secure changes the account password first. When that succeeds, it schedules an update for each dependent in the list. The console shows the message "N service rotate(s) scheduled", where N is the number of dependents. If the account has no dependents, the console shows the warning "No services rotated". The account password still changes in that case: the password job runs first and finishes before Privilege Secure checks the dependents list. If the password change itself fails or is cancelled, Privilege Secure doesn't update any dependent. The **Rotation Status** field and the **Status** column on the **Dependencies** tab show the progress. For each dependent, the **Status** column shows the state of its last update, such as Queued, Running, Complete, or Failed. Failed, Completed With Errors, and Completed Not Run show in red.
+Privilege Secure changes the account password first. When that succeeds, it schedules an update for each dependent in the list. The console shows the message "N service rotate(s) scheduled", where N is the number of dependents. If the account has no dependents, the console shows the warning "No services rotated". The account password still changes in that case, because the password job runs first and finishes before Privilege Secure checks the dependents list. If the password change itself fails or is cancelled, Privilege Secure doesn't update any dependent.
+
+The **Rotation Status** field and the **Status** column on the **Dependencies** tab show the progress. For each dependent, the **Status** column shows the state of its last update, such as Queued, Running, Complete, or Failed. Failed, Completed With Errors, and Completed Not Run show in red.
 
 The **Rotate** button on the **Credentials** page doesn't rotate an account that has dependents. Rotate a service account from this dialog so that its dependents are updated.
 

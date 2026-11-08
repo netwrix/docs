@@ -20,7 +20,7 @@ A token is valid for 15 minutes by default. For the other conventions of the API
 
 ## Get a token as a user
 
-Send the user name and password to `/signinBody`. The response is the token.
+Send the user name and password to `/signinBody`. The response is the token. The `/signin` endpoint accepts the same credentials as form data and returns the same token.
 
 ```bash
 curl --cacert <ca-certificate-file> \
@@ -134,7 +134,7 @@ The server revokes the token in the `Authorization` header. It ignores the `<use
 ## Troubleshooting
 
 | Symptom | Cause |
-|---|---|
+| --- | --- |
 | The TLS connection fails from Windows PowerShell 5.1. | Windows PowerShell 5.1 can fail to negotiate TLS with the server. Use PowerShell 7 or `curl`. |
 | The server rejects the certificate. | The client doesn't trust the CA that issued the server certificate. Point the client at the CA certificate file. |
 | "Invalid Username or Password" | The credentials are wrong. For an application user, the certificate serial number, the application user name, or the API key can also be wrong. |

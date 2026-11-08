@@ -11,7 +11,7 @@ How an account rotates depends on its **Managed Type** and its **Method**. The *
 ## Rotation by account type
 
 | Managed type | Dependencies | Method | How the password rotates |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Standard** | None | **Automatic** | Privilege Secure rotates the password on the platform's schedule. Select **Rotate** to rotate it now. |
 | **Standard** | None | **Manual** | You update the password on the resource and in Privilege Secure. |
 | **Standard** | None | **Not Managed** | Privilege Secure has never stored a password. Select **Manage** first. |

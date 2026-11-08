@@ -1,6 +1,6 @@
 ---
 title: "High availability options"
-description: "Choose a high availability deployment for Privilege Secure, learn what is replicated, and find how to back up, fail over, and register a secondary node."
+description: "Choose a high availability deployment, see what replicates, and learn how to back up, fail over, and register a secondary node."
 sidebar_position: 100
 ---
 
@@ -11,7 +11,7 @@ Netwrix Privilege Secure for Access Management (Privilege Secure) supports deplo
 ## Choosing a deployment
 
 | Option | Database | Failover | Complexity |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Active-passive | PostgreSQL only. Uses the database that the installer provides. | Manual | Lowest. Two identical servers. |
 | Active-active | PostgreSQL or SQL Server | No manual step | Higher. Needs an extra server for the database. |
 | Cloud-native database | A PostgreSQL or SQL Server database that you provide and manage | Your responsibility | Depends on your database setup |
@@ -54,7 +54,7 @@ To upgrade a high availability pair, fail over and upgrade the secondary server,
 Plan backups around four items:
 
 | Item | Included in high availability replication |
-|---|---|
+| --- | --- |
 | PostgreSQL database | Yes |
 | RDP and SSH session recordings | No. Recordings are stored on the proxy servers. |
 | Configuration files | No |
@@ -76,6 +76,7 @@ Failover is manual.
    The HA manager starts PostgreSQL if it is stopped, promotes the replica to primary, and writes the local host and PostgreSQL port into the database settings file, `appsettings.db.json`, in the `Database` folder under `C:\ProgramData\Stealthbits\PAM`. It then restarts the `SbPAMProxy` service.
 
    The HA manager doesn't restart the **SbPAM Web Service** site in IIS. Run `iisreset` on the new primary server so the web service uses the new database settings.
+
 2. If the Action Service runs on another server, point it at the new primary server. Run the following command on that server, and enter the password when prompted:
 
    ```

@@ -21,7 +21,7 @@ This page covers the Okta-specific settings. For the connector steps, see [Confi
 In the Okta Admin Console, go to **Applications** > **Applications**, click **Create App Integration**, and select **OIDC - OpenID Connect** as the sign-in method. Set these values. The callback and CORS addresses are the ones in the prerequisites of [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md#prerequisites).
 
 | Okta setting | Value |
-|---|---|
+| --- | --- |
 | Callback (redirect) address | `https://<nps-server>:6500/callback` |
 | Sign-out redirect address | `https://<nps-server>:6500/logoutCallback` |
 | CORS origin | `https://<nps-server>:6500` |
@@ -37,7 +37,7 @@ Copy the **Client ID** of the Okta application and the issuer address of your Ok
 Privilege Secure uses the Okta **Username** to find the AD user. In the connector, **Login Format** says which AD property to compare it with.
 
 | Login Format | Use when the Okta Username is |
-|---|---|
+| --- | --- |
 | **Email Address** | The user's email address |
 | **User Principal Name** | The user's user principal name |
 

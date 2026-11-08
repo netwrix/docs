@@ -1,6 +1,6 @@
 ---
 title: "LAPS integration"
-description: "Connect Netwrix Privilege Secure to Microsoft Local Administrator Password Solution (LAPS) so activities sign in with LAPS-managed local administrator passwords."
+description: "Connect Privilege Secure to Microsoft Local Administrator Password Solution (LAPS) so activities sign in with LAPS-managed local administrator passwords."
 sidebar_position: 50
 ---
 
@@ -29,7 +29,7 @@ The LAPS connector reads the legacy LAPS password attribute, `ms-Mcs-AdmPwd`, an
 6. Click **Save**.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Service Account**\* | The service account that Privilege Secure uses to read the LAPS password from Active Directory. |
 | **Domain Name**\* | The fully qualified domain name of the Active Directory domain to query for LAPS passwords. |
 
@@ -40,7 +40,7 @@ An asterisk (\*) marks a required field.
 **Example:** To read passwords from the domain `example.com` with the service account `LAPS Reader`:
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Service Account** | `LAPS Reader` |
 | **Domain Name** | `example.com` |
 

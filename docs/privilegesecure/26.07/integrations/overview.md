@@ -23,7 +23,7 @@ To create a connector:
 The **Connector Template** list has 7 values:
 
 | Template | Use it to | Page |
-|---|---|---|
+| --- | --- | --- |
 | **BYOV** | Check out credentials from any vault, or from Privilege Secure itself, with PowerShell scripts that you provide. | [Bring Your Own Vault connector](/docs/privilegesecure/26.07/integrations/vaults/byov.md) |
 | **CyberArk** | Check out credentials held in CyberArk. | [CyberArk integration](/docs/privilegesecure/26.07/integrations/vaults/cyberark.md) |
 | **HashiCorp** | Check out credentials held in HashiCorp Vault. | [HashiCorp Vault integration](/docs/privilegesecure/26.07/integrations/vaults/hashicorp.md) |

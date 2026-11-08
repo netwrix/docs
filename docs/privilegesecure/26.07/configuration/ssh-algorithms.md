@@ -13,14 +13,14 @@ Change both files together. If the lists differ, a device can accept sessions or
 ## Which file controls which connection
 
 | File | Component | What it controls |
-|---|---|---|
+| --- | --- | --- |
 | `sbpam_sshclient.json` | SSH client that the Action Service and Host Scan Service run | Connections that Privilege Secure opens to managed devices to run actions, such as discovery and password rotation. |
 | `sbpam_ssh.json` | Proxy Service | SSH sessions that users start through the proxy. `ClientSettings` applies from the proxy to the managed device. `ServerSettings` applies from the user's SSH client to the proxy. |
 
 The default file locations are:
 
 | File | Default location |
-|---|---|
+| --- | --- |
 | `sbpam_sshclient.json` (Action Service and Host Scan Service) | `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\sbpam_sshclient.json` |
 | `sbpam_ssh.json` | `C:\ProgramData\Stealthbits\PAM\ProxyService\sbpam_ssh.json` |
 
@@ -37,7 +37,7 @@ The proxy requires TLS 1.2 or later and prefers TLS 1.3. `sbpam_ssh.json` doesn'
 The following defaults come from the 26.07.3 files. The settings for connections to managed devices are the same in `SSHClientConfig` of `sbpam_sshclient.json` and in `ClientSettings` of `sbpam_ssh.json`. Algorithms are listed in the order that Privilege Secure offers them.
 
 | Setting | Default algorithms |
-|---|---|
+| --- | --- |
 | `HostKeyAlgorithms` | `ssh-ed25519`, `ecdsa-sha2-nistp521`, `ecdsa-sha2-nistp384`, `ecdsa-sha2-nistp256`, `rsa-sha2-512`, `rsa-sha2-256`, `ssh-rsa`, `ssh-dss` |
 | `KeyExchanges` | `mlkem768x25519-sha256`, `sntrup761x25519-sha512@openssh.com`, `curve25519-sha256`, `curve25519-sha256@libssh.org`, `ecdh-sha2-nistp521`, `ecdh-sha2-nistp384`, `ecdh-sha2-nistp256`, `diffie-hellman-group18-sha512`, `diffie-hellman-group16-sha512`, `diffie-hellman-group14-sha256`, `diffie-hellman-group-exchange-sha256`, `diffie-hellman-group14-sha1`, `diffie-hellman-group-exchange-sha1`, `diffie-hellman-group1-sha1` |
 | `Ciphers` | `chacha20-poly1305@openssh.com`, `aes256-gcm@openssh.com`, `aes128-gcm@openssh.com`, `aes256-ctr`, `aes192-ctr`, `aes128-ctr`, `aes128-cbc`, `3des-cbc` |

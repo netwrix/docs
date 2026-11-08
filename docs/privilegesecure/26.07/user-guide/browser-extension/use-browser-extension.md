@@ -30,7 +30,7 @@ The extension shows the activity list after you sign in.
 The extension has three tabs.
 
 | Tab | What it shows |
-|---|---|
+| --- | --- |
 | **Activities** | All website activities that your access policies give you, grouped by resource |
 | **Current Tab** | The activities for the resource that matches the address of the page in the current tab |
 | **Settings** | The extension settings |
@@ -48,7 +48,7 @@ The **Current Tab** tab shows the resource that matches the current page, with i
 ### Settings tab
 
 | Setting | What it does |
-|---|---|
+| --- | --- |
 | **End web sessions automatically** | Ends the activity session that you started in the extension when no web sessions remain in any tab. |
 | **Delete RDP files after 1 day** | Removes the temporary `.rdp` files that Privilege Secure RDP sessions download to your download folder after 1 day. |
 | **Logout** | Signs you out of the extension. |
@@ -83,7 +83,7 @@ To start the session in a tab that is already open, right-click the page and sel
 While you run a privileged session, the extension shows a banner that says the session is running. The banner has four actions:
 
 | Action | What it does |
-|---|---|
+| --- | --- |
 | **Autofill credentials** | Fills the managed account's credentials into the sign-in form on the page |
 | **Copy credentials** | Copies the username and password to the clipboard |
 | **End session** | Ends the session |

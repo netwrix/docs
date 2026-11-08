@@ -9,7 +9,7 @@ sidebar_position: 80
 After you install Netwrix Privilege Secure, review the settings that control how the server is exposed and how it protects secrets. Start with [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md), because the installer creates a self-signed certificate.
 
 | Task | Where to find it |
-|---|---|
+| --- | --- |
 | Replace the console certificate with one from a trusted certificate authority | [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md) |
 | Renew the JWT signing certificate | [Renew the JWT signing certificate](/docs/privilegesecure/26.07/configuration/certificates.md#renew-the-jwt-signing-certificate) |
 | Restrict the SSH algorithms that Privilege Secure offers | [Configure SSH algorithms](/docs/privilegesecure/26.07/configuration/ssh-algorithms.md) |

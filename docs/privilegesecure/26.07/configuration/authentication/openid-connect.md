@@ -15,7 +15,7 @@ For the other connector types and how a user's connector is chosen, see [Authent
 Register Privilege Secure as an application in the identity provider first. The provider needs these values.
 
 | Item | Value |
-|---|---|
+| --- | --- |
 | Callback (redirect) address | `https://<nps-server>:6500/callback` |
 | Sign-out callback address | `https://<nps-server>:6500/logoutCallback` |
 | Cross-Origin Resource Sharing (CORS) origin | `https://<nps-server>:6500` |
@@ -77,7 +77,7 @@ If the provider returns a 500 error, the CORS entry at the provider is wrong.
 The **Source** column shows where the data came from. Use the sources in this order of preference.
 
 | Source | Notes |
-|---|---|
+| --- | --- |
 | **Introspection Endpoint** | Preferred. Not every provider supports it. It also validates the token. |
 | **UserInfo Endpoint** | Some providers require authorization for this endpoint. |
 | **Access Token** or **Id Token** | Least preferred. Privilege Secure reads the claims in the token. Use these only if the other sources fail. |
@@ -87,7 +87,7 @@ The **Source** column shows where the data came from. Use the sources in this or
 Select **Manually Enter Data** to show the fields. Select **Hide Data** to hide them again. The console marks the required fields with an asterisk.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Issuer** | The address of the identity provider. |
 | **Client Id** | The application ID of Privilege Secure at the provider. |
 | **Login Format** | The AD property that matches the provider's user ID: **sAMAccountName**, **User Principal Name**, **Email Address**, or **SID**. |
@@ -99,7 +99,7 @@ Select **Manually Enter Data** to show the fields. Select **Hide Data** to hide 
 This example uses placeholders for the values from your provider.
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Issuer** | `https://<identity-provider>` |
 | **Client Id** | `<client-id>` |
 | **Login Format** | **User Principal Name** |

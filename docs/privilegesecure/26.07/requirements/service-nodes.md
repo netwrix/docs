@@ -31,7 +31,7 @@ For installation steps, see [Install services on additional servers](/docs/privi
 ## Proxy server sizing
 
 | Administrators | Concurrent sessions | Memory | CPU cores | Disk (maximum) |
-| -------------- | ------------------- | ------ | --------- | -------------- |
+| --- | --- | --- | --- | --- |
 | 450 | 150 | 16 GB | 4 | 21 GB per day |
 | 900 | 300 | 32 GB | 8 | 42 GB per day |
 | 1800 | 600 | 64 GB | 16 | 84 GB per day |

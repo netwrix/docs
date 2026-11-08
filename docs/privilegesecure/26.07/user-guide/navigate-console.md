@@ -13,7 +13,7 @@ The Privilege Secure console has a header across the top and a navigation menu d
 The header contains these controls, from left to right:
 
 | Control | What it does |
-|---|---|
+| --- | --- |
 | Menu button | Collapses the navigation menu to icons, or expands it again. |
 | Logo | Returns to the Dashboard. |
 | Breadcrumb | Shows where you are, for example **Home > My Activities**. Each crumb is a link. |
@@ -55,7 +55,7 @@ The console is available in seven languages. The language menu lists each langua
 To change the language:
 
 1. Click the language globe in the header.
-1. Select a language. A check mark shows the current language.
+2. Select a language. A check mark shows the current language.
 
 The console switches to that language right away. For example, selecting Deutsch changes the menu labels to German.
 
@@ -78,7 +78,7 @@ Click the dark mode toggle in the header. The toggle's accessible name is "Switc
 The navigation menu lists the areas of the console that you can use. Some items have sub-pages. When you open an item, or one of its sub-pages, its sub-pages appear below it in the menu. When the menu is collapsed, only the item icons show. The sub-pages you see depend on your role and your license. Click the menu button in the header to collapse or expand the menu.
 
 | Item | Sub-pages | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | **My Activities** | None | Request access with an activity. See [My Activities](/docs/privilegesecure/26.07/user-guide/my-activities.md). |
 | **Dashboard** | None | Track and manage sessions. See [Track your sessions](/docs/privilegesecure/26.07/user-guide/my-sessions.md). |
 | **Access Policy** | **Connection Profiles**, **Activity Token Complexity**, **Command Restriction** | Define who can run which activities on which resources. |
@@ -131,10 +131,10 @@ The tour doesn't show again at your next sign-in unless you clear the "don't dis
 If you sign in with a local console account, change your password on the **Settings** page.
 
 1. Click your name in the header, and then click **Settings**.
-1. Click the **Change Password** tab.
-1. Enter your current password in **Old Password**.
-1. Enter the new password in **Password** and again in **Confirm Password**.
-1. Click **Save**.
+2. Click the **Change Password** tab.
+3. Enter your current password in **Old Password**.
+4. Enter the new password in **Password** and again in **Confirm Password**.
+5. Click **Save**.
 
 **Save** is available after you fill in all three fields. The new password must meet the password rules your administrator sets in the password options: a minimum length, if one is set, and, if required, an uppercase letter, a lowercase letter, a digit, and a non-alphanumeric character. While you type, the form shows which rule isn't met yet, for example "Need 3 more characters" or "Passwords are not the same." No confirmation message appears. After a successful change, the console signs you out and opens the sign-in page. Sign in again with the new password.
 

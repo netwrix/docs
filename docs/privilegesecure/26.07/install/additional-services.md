@@ -1,6 +1,6 @@
 ---
 title: "Install services on additional servers"
-description: "Install the Action, Host Scan, Scheduler, or SIEM service on another server, move the encryption keys, and register the service with the application server."
+description: "Install the Action, Host Scan, Scheduler, or SIEM service on another server, copy the encryption keys, and register the service."
 sidebar_position: 70
 ---
 

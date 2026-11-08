@@ -13,7 +13,7 @@ Users sign in to the Privilege Secure console with a password and a second facto
 An authentication connector connects Privilege Secure to an external service that verifies users. Add connectors on the **Configuration** > **Authentication** page. Each connector has one **Connector Type**.
 
 | Connector Type | Use it to | Configure it |
-|---|---|---|
+| --- | --- | --- |
 | **MFA** | Send a second-factor request to a Remote Authentication Dial-In User Service (RADIUS) server, such as a Duo RADIUS proxy. | [Configure a RADIUS MFA connector](/docs/privilegesecure/26.07/configuration/authentication/radius.md) |
 | **OpenID Connect** | Sign users in with an OpenID Connect identity provider. | [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md) |
 | **SAML** | Sign users in with a SAML identity provider. | [Configure a SAML connector](/docs/privilegesecure/26.07/configuration/authentication/saml.md) |
@@ -29,7 +29,7 @@ An authentication connector connects Privilege Secure to an external service tha
 1. Complete the fields for the type. See the page for that type in the table.
 1. Select **Save**.
 
-![The Add Authentication Connector form with a name entered, the Connector Type list open and showing MFA, OpenID Connect, and SAML, and the Use Remote Access Gateway check box.](/images/privilegesecure/26.07/configuration/auth-connector-form.webp)
+![The Add Authentication Connector form with a name entered, the Connector Type list open and showing MFA, OpenID Connect, and SAML, and the Use Remote Access Gateway checkbox.](/images/privilegesecure/26.07/configuration/auth-connector-form.webp)
 
 The connector appears in the connector list. To remove a connector, hover over it in the list and select the trash icon.
 

@@ -34,7 +34,7 @@ For example, to review what an administrator typed on `<server-name>` yesterday,
 ## Viewer types
 
 | Viewer | Sessions |
-|---|---|
+| --- | --- |
 | RDP | RDP sessions |
 | SSH | SSH sessions |
 | Website | Website sessions |
@@ -46,7 +46,7 @@ Activities on Active Directory domain resources start RDP sessions. Activities o
 ### Controls for RDP and SSH replays
 
 | Control | Use |
-|---|---|
+| --- | --- |
 | **Play**, **Pause**, **Rewind**, **Forward**, **Replay** | Start, stop, or move through the recording |
 | **Playback** | Select a point on the bar to jump to that place in the recording |
 | **Speed** | Change the playback speed |
@@ -58,7 +58,7 @@ Website recordings play in the video player that is built into your web browser,
 ## Recording details
 
 | Detail | Meaning |
-|---|---|
+| --- | --- |
 | **User** | The account used to sign in to the resource |
 | **logged on to** | The resource |
 | **using** | The computer the session connected from |
@@ -68,10 +68,6 @@ Website recordings play in the video player that is built into your web browser,
 | **Duration** | How long the activity ran, until it reached its scheduled end or a user or administrator canceled it |
 
 RDP and SSH replays also show a timeline of recorded events in the pane to the left of the player. The timeline starts with "Recording started." and includes keystrokes. When the Remote Desktop Monitor service runs on the target host, the RDP timeline also lists Windows events. See [Install the Remote Desktop Monitor](/docs/privilegesecure/26.07/install/rdp-monitor.md).
-
-:::note
-When a user types at a password prompt during an SSH session, the replay hides the keystrokes.
-:::
 
 ## Related topics
 

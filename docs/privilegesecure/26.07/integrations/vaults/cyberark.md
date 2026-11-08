@@ -30,7 +30,7 @@ The connector calls the CyberArk Central Credential Provider (CCP). The CCP is a
 6. Click **Save**.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **API Url**\* | The base URL of the CCP server, for example `https://<ccp-server>`. Privilege Secure appends `/AIMWebService/api/Accounts` to this value. Enter only the base URL. |
 | **App Id**\* | The application ID that Privilege Secure sends with each request. |
 | **Client Certificate** | The thumbprint of the client certificate for CCP authentication. Leave it empty if the CCP doesn't use client certificates. |
@@ -48,7 +48,7 @@ When you select the **CyberArk** template, the form fills **API Url** with `http
 **Example:** To use a CCP server at `https://ccp.example.com` with an App ID of `PrivilegeSecure` and no client certificate:
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **API Url** | `https://ccp.example.com` |
 | **App Id** | `PrivilegeSecure` |
 | **Client Certificate** | (empty) |
@@ -58,7 +58,7 @@ When you select the **CyberArk** template, the form fills **API Url** with `http
 The built-in check-out identifies a CyberArk account by its safe, address, and user name. It queries the CCP with a regular-expression match on those three values.
 
 | Value | Where it comes from |
-|---|---|
+| --- | --- |
 | User name | For an activity, the login account name of the session. For a service account, the **Username** of the service account. |
 | Address | The text before the backslash in the user name, such as `<address>\<username>`. If the name has no backslash, the NetBIOS name of the target host. If there is no target host, the **Domain** of the credential. |
 | Safe | The **Safe** value of the service account or activity. |
@@ -122,7 +122,7 @@ The check-in block receives the existing known password and must return `$Creden
 `$Options` carries the connector settings and, during a session, the details of the session and the target host. The `ActivitySession` members exist only when the script runs during an activity session.
 
 | Variable | Description | Example |
-|---|---|---|
+| --- | --- | --- |
 | `$Options.Connector.Name` | The connector name. | `CyberArk` |
 | `$Options.Connector.Id` | The connector GUID. | `00000000-0000-0000-0000-000000000001` |
 | `$Options.Connector.Options.APIUrl` | The CCP base URL from the connector. The built-in script appends `/AIMWebService/api/Accounts`. | `https://ccp.example.com` |
@@ -146,7 +146,7 @@ The check-in block receives the existing known password and must return `$Creden
 ### The $Credential object
 
 | Variable | Description | Example |
-|---|---|---|
+| --- | --- | --- |
 | `$Credential.Username` | The user name. On check-out, set it to the name of the account that you checked out. On check-in, it holds the name of the account to check in. | `jsmith` |
 | `$Credential.Domain` | The domain of the account. On check-out, set it to the domain, or to the computer name for a local account. | `EXAMPLE`, `example.com`, or `SERVER01` |
 | `$Credential.Password` | On check-out, a random value to overwrite with the password from the vault. On check-in, the existing known password. | |

@@ -32,7 +32,7 @@ The connector calls the library check-out and check-in endpoints and splits the 
 6. Click **Save**.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **API Url**\* | The base URL of the Vault API, including the version. The default is `http://localhost:8200/v1`. |
 | **Access Token**\* | The Vault token that Privilege Secure sends with each request. The field masks the value. |
 | **Skip Certificate Check** | When selected, Privilege Secure doesn't validate the Vault server certificate. This option is selected by default and isn't under **Advanced**. |
@@ -48,7 +48,7 @@ An asterisk (\*) marks a required field.
 **Example:** To connect to a Vault server at `https://vault.example.com:8200`:
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **API Url** | `https://vault.example.com:8200/v1` |
 | **Access Token** | `<vault-token>` |
 | **Skip Certificate Check** | Cleared |
@@ -62,7 +62,7 @@ Enter the library in the following places:
 - In a service account, in the **Library** field that appears when you select the HashiCorp connector. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 - In an activity that uses the **Vault** login account and the HashiCorp connector. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md).
 
-On the activity form, once you select **Vault** as the **Login Account**, a required **Vault Connector** list appears below **Login Account Template**. After you select the HashiCorp connector in that list, a **Library** field appears directly below **Vault Connector**. The **Library** field uses the same value as the service account field, for example `/ad/library/my-set`.
+On the activity form, after you select **Vault** as the **Login Account**, a required **Vault Connector** list appears below **Login Account Template**. After you select the HashiCorp connector in that list, a **Library** field appears directly below **Vault Connector**. The **Library** field uses the same value as the service account field, for example `/ad/library/my-set`.
 
 When the last session that uses the credential ends, Privilege Secure checks the account back in. It sends the user name and domain of the checked-out account, joined as `<user>@<domain>`, to `<API Url><library>/check-in`, for example `<API Url>/ad/library/my-set/check-in`.
 

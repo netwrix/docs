@@ -13,7 +13,7 @@ Every person who signs in is a user. Approvers, reviewers, and auditors do the t
 ## What each audience can do
 
 | Audience | Tasks | Pages |
-|---|---|---|
+| --- | --- | --- |
 | Users | Sign in, find activities, request sessions, connect, and track your sessions. | [Sign in](/docs/privilegesecure/26.07/user-guide/sign-in.md), [My Activities](/docs/privilegesecure/26.07/user-guide/my-activities.md), [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md), [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md), [Track your sessions](/docs/privilegesecure/26.07/user-guide/my-sessions.md) |
 | Approvers | Approve or deny the requests that wait for you. | [Approve or deny session requests](/docs/privilegesecure/26.07/user-guide/approve-requests.md) |
 | Reviewers | Certify or deny access in an access certification. | [Review an access certification](/docs/privilegesecure/26.07/user-guide/review-access.md) |

@@ -1,6 +1,6 @@
 ---
 title: "Sign in to the console"
-description: "Sign in to the Privilege Secure console with a username, password, or single sign-on, register multi-factor authentication, and understand the idle timeout."
+description: "Sign in to the Privilege Secure console with a username and password or single sign-on, register MFA, and learn how the idle timeout works."
 sidebar_position: 20
 ---
 
@@ -25,10 +25,10 @@ To reach the console from outside the network through a browser, see [Sign in to
 ## Sign in with a username and password
 
 1. Open `https://<nps-server>:6500` in a browser. The sign-in page opens.
-1. Enter your **Username** and **Password**.
-1. Select your **Domain** from the list. Select `<none>` if you use a local console account, which includes the built-in Admin account.
-1. Click **Login**.
-1. If the console asks for a verification code, enter the code from your authenticator application. See [Register multi-factor authentication](#register-multi-factor-authentication).
+2. Enter your **Username** and **Password**.
+3. Select your **Domain** from the list. Select `<none>` if you use a local console account, which includes the built-in Admin account.
+4. Click **Login**.
+5. If the console asks for a verification code, enter the code from your authenticator application. See [Register multi-factor authentication](#register-multi-factor-authentication).
 
 If you enter your username as `<DOMAIN>\<username>` or `<username>@<domain>`, the console fills in the **Domain** field for you.
 
@@ -41,8 +41,8 @@ After you sign in, the console opens on the Dashboard.
 When your administrator configures a SAML or OpenID Connect connector, the sign-in page shows an **Or login using:** button for each connector. With a connector, you don't enter a username or password in the console.
 
 1. Click the button for your identity provider. The browser redirects to the identity provider's sign-in page.
-1. Sign in to the identity provider. Complete any MFA that the identity provider requires.
-1. After authentication, the browser returns to the console Dashboard.
+2. Sign in to the identity provider. Complete any MFA that the identity provider requires.
+3. After authentication, the browser returns to the console Dashboard.
 
 If the identity provider returns an error, the console shows it and waits. Click **Sign Out** before you try again.
 
@@ -59,15 +59,16 @@ Your administrator assigns an authentication connector to each user. The assigne
 If your connector uses the built-in MFA, you register an authenticator application the first time you sign in.
 
 1. Sign in with your username and password. The console shows a QR code and a manual key.
-1. In your authenticator application, scan the QR code or enter the manual key. For example, use Microsoft Authenticator or Google Authenticator.
-1. Enter the verification code that the application shows.
-1. Save the recovery codes that the console displays.
+2. In your authenticator application, scan the QR code or enter the manual key. For example, use Microsoft Authenticator or Google Authenticator.
+3. Enter the verification code that the application shows.
+4. Save the recovery codes that the console displays.
 
 The console shows the recovery codes once, after registration. Copy them to a secure location before you close the dialog. The **Recovery Codes** button in the page header appears only at that time, and the codes aren't available to view again.
 
 After registration, each sign-in asks for a code from your authenticator application. The console opens on the Dashboard after you enter a valid code. If your authenticator application is unavailable, enter one of your recovery codes in the same code box instead of the authenticator code.
 
 ![The Register Authenticator page with a QR code and a manual key.](/images/privilegesecure/26.07/user-guide/mfa-register.webp)
+
 ![The recovery codes dialog with the list of one-time recovery codes.](/images/privilegesecure/26.07/user-guide/mfa-recovery-codes.webp)
 
 ## Change an expired password
@@ -83,6 +84,10 @@ The console signs you out when you are idle. The **Idle Timeout (minutes)** sett
 When the idle timeout passes, the **Session Timeout** dialog displays "Your session has been idle and will expire soon." Click **Keep Session Active** to keep working, or click **Logout** to sign out. If you take no action, the console signs you out 5 minutes later. With the default setting, you are signed out after about 15 minutes of inactivity.
 
 ![The Session Timeout dialog with the message Your session has been idle and will expire soon, and the Keep Session Active and Logout buttons.](/images/privilegesecure/26.07/user-guide/idle-timeout-warning.webp)
+
+## Session closed
+
+The console shows a **Session Closed** dialog with the message "Your session has been closed." when your session token is revoked, for example when you sign in again elsewhere. Click **Logout** to return to the sign-in page. When another sign-in caused it, the message adds "due to a login at IP Address" and the address.
 
 ## Account lockout
 

@@ -17,7 +17,7 @@ To open it, select **Auditing & Reporting** > **Events**.
 The toolbar has these controls:
 
 | Control | Description |
-|---|---|
+| --- | --- |
 | **View Logs** | Opens the log for the selected event. The button is unavailable until you select one row that has a session or an action log. For an event with an action log, it opens the **Event Logs** window. Otherwise it opens the **Session Logs** window for the event's session. See [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md). |
 | **Search** | Filters the list to events that match the text you enter. |
 | **Refresh** | Reloads the list. |
@@ -27,7 +27,7 @@ The toolbar shows the number of events, abbreviated for large counts (for exampl
 ## Read the list
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **STATUS** | The severity of the event: Information, Warning, or Error. |
 | **TIME** | When the event occurred, shown relative to now (for example, "18 minutes ago") or as the time of day. |
 | **USER** | The user associated with the event. System events show `<nobody>`. |

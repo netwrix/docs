@@ -25,7 +25,7 @@ The toolbar has two buttons:
 ## Filters
 
 | Filter | Narrows the list by | Tab |
-|---|---|---|
+| --- | --- | --- |
 | **Search** | Any column value. Partial matches count. | Both |
 | **Resource name** | The value in the **Host** column. | Both |
 | **User name** | The value in the **Session User** column. | **All Historical** |
@@ -42,7 +42,7 @@ For the Remote Desktop Monitor, see [Install the Remote Desktop Monitor on targe
 ## Columns
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | **ACTIONS** | The expand icon, the logs icon, and, on your own sessions, the quick launch icon. See [Row actions](#row-actions). |
 | **REQUESTED** | When the session was created. |
 | **STATUS** | The final state of the session. See [Statuses](#statuses). |
@@ -60,7 +60,7 @@ You can resize the columns and sort them in ascending or descending order.
 ### Statuses
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | **Completed** | The activity reached its scheduled end, or the requester ended it early. |
 | **Cancelled** | An administrator canceled the activity before its scheduled end. |
 | **Failed** | The provisioning stage encountered an error. |

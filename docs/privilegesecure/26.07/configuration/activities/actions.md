@@ -9,7 +9,7 @@ sidebar_position: 40
 Actions are the steps that Privilege Secure runs for an activity. Each activity has three action groups:
 
 | Group | When the actions run |
-|---|---|
+| --- | --- |
 | **Pre-Session (Grant)** | Before the session begins. Use it to grant access, such as adding the login account to a group. |
 | **Session (Connect)** | During the session. |
 | **Post-Session (Remove)** | After the session completes. Use it to remove the access that the pre-session actions granted. |
@@ -21,12 +21,12 @@ An action can be paired. A pre-session action that grants access is often paired
 ## Add an action
 
 1. In the left navigation pane, click **Activities**.
-2. Select the activity in the list.
-3. Click the green **+** button for the action group.
-4. In the **Add Action to Pre-Session Group** dialog (the title names the group you chose), select an **Action Type**.
-5. Complete the fields that appear. They depend on the action type.
-6. Click **Okay**.
-7. Repeat for each action in each group.
+1. Select the activity in the list.
+1. Click the green **+** button for the action group.
+1. In the **Add Action to Pre-Session Group** dialog (the title names the group you chose), select an **Action Type**.
+1. Complete the fields that appear. They depend on the action type.
+1. Click **Okay**.
+1. Repeat for each action in each group.
 
 ![The Add Action to Pre-Session Group dialog with Add Sudoers rule selected, showing Run As, Commands, Prompt for password, Username Format, Continue on Error, and Action Name.](/images/privilegesecure/26.07/configuration/add-action-dialog-sudoers.webp)
 
@@ -35,7 +35,7 @@ The action types are available only in the **Action Type** list of this dialog. 
 Fields that most action types share:
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Continue on Error** | Continues to the next action if this action fails, instead of stopping. Selected by default for Post-Session (Remove) actions. |
 | **Action Name** | Optional. A name for the action in the activity. |
 | **Paired Action's Name** | Optional. For a paired action, a name for the action that Privilege Secure adds to the other group. |
@@ -49,9 +49,9 @@ The **Action Type** list depends on the action group, not on the platform.
 This example grants local administrator rights before the session and removes them afterward.
 
 1. In the **Pre-Session (Grant)** group, click **+**.
-2. For **Action Type**, select **Add User to Local Group**.
-3. For **Group**, select **Administrators**.
-4. Click **Okay**.
+1. For **Action Type**, select **Add User to Local Group**.
+1. For **Group**, select **Administrators**.
+1. Click **Okay**.
 
 Privilege Secure names the action Add to Administrators and adds the paired Remove from Administrators action to the **Post-Session (Remove)** group.
 

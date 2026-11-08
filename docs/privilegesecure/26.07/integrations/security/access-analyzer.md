@@ -1,6 +1,6 @@
 ---
 title: "Netwrix Access Analyzer integration"
-description: "Connect Privilege Secure to Netwrix Access Analyzer and import the local administrator accounts and computers that Access Analyzer discovers. The import also creates access policies."
+description: "Connect Privilege Secure to Netwrix Access Analyzer to import discovered local administrator accounts and computers and create access policies."
 sidebar_position: 10
 ---
 
@@ -53,7 +53,7 @@ The client secret stops working when the access expiration passes. Set an expira
 The connector uses two service accounts. For the add form and its fields, see [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
 
 | Service account | Name (example) | Username | Password | Platform |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | API access | `Access Analyzer API` | The **Client ID** from the access role | The **Client secret** from the access role | Windows |
 | Administrator | `Access Analyzer Admin` | A local administrator account on the Access Analyzer server | The password of that account | Windows |
 
@@ -69,7 +69,7 @@ For the administrator account, set **Domain** to the domain that the Access Anal
 1. Click **Save**.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Server Hostname**\* | The host name of the server that Access Analyzer is installed on. The default is `localhost`. |
 | **Port**\* | The port of the Access Analyzer web service. The default is `8082`. |
 | **REST Credentials**\* | The service account that holds the Client ID and Client secret. Select `Access Analyzer API` from the example. |

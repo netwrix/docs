@@ -1,6 +1,6 @@
 ---
 title: "Grant group or role membership without a resource"
-description: "Build an activity that lets users pick groups or roles to join for a session. A connection to a resource is optional."
+description: "Build an activity that lets users pick groups or roles to join for a session, with an optional connection to a resource."
 sidebar_position: 60
 ---
 
@@ -20,17 +20,17 @@ A connection to a resource is optional. The session request doesn't require reso
 ## Create the activity
 
 1. Click **Activities** in the left navigation pane, and then click the green **+** button.
-2. Enter a name, select a **Login Account** (not Vault or Resource), and select an **Activity Type**. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md) for the other fields.
-3. Click **Save**. The action groups are disabled until you save the activity.
-4. In the **Pre-Session (Grant)** group, click the green **+** button.
-5. In **Add Action to Pre-Session Group**, open **Action Type** and select **Add User to Groups & Roles (User Selected)**.
-6. Click **Select Groups/Roles**.
-7. In the **Add Groups/Roles** dialog, add the groups and roles that users can choose from. Use these controls:
+1. Enter a name, select a **Login Account** (not Vault or Resource), and select an **Activity Type**. See [Create an activity](/docs/privilegesecure/26.07/configuration/activities/create-activity.md) for the other fields.
+1. Click **Save**. The action groups are disabled until you save the activity.
+1. In the **Pre-Session (Grant)** group, click the green **+** button.
+1. In **Add Action to Pre-Session Group**, open **Action Type** and select **Add User to Groups & Roles (User Selected)**.
+1. Click **Select Groups/Roles**.
+1. In the **Add Groups/Roles** dialog, add the groups and roles that users can choose from. Use these controls:
    - **Platform**: filter the list by **All Platforms** (default), **Active Directory**, **Entra ID**, **SQL Server**, or **Oracle**.
    - Use the search box to filter the list by name, type, platform, or context.
    - The list shows the **Name**, **Type**, **Platform**, and **Context** of each group or role.
-8. Confirm the selection. The button changes to **Change Groups/Roles** and the action lists the selected items. Select at least one group or role. The console shows "Please select at least one group or role" if you select none.
-9. Click **Okay**.
+1. Confirm the selection. The button changes to **Change Groups/Roles** and the action lists the selected items. Select at least one group or role. The console shows "Please select at least one group or role" if you select none.
+1. Click **Okay**.
 
 Privilege Secure creates the paired action **Remove User from Groups & Roles (User Selected)** in the **Post-Session (Remove)** group. This action removes the user from the groups and roles when the session ends. See [Action types reference](/docs/privilegesecure/26.07/configuration/activities/action-types.md) for both action types.
 
@@ -43,7 +43,7 @@ The new action is named Add User to Groups/Roles by default. This is the default
 Privilege Secure changes the membership with a service account that depends on the platform:
 
 | Platform | Account that changes the membership |
-|---|---|
+| --- | --- |
 | Active Directory | The service account of the domain that holds the group. |
 | Microsoft Entra ID | The service account of the Entra ID tenant that holds the group. |
 | SQL Server and Oracle | The service account of the database server that holds the role. |
@@ -55,9 +55,9 @@ Privilege Secure changes the membership with a service account that depends on t
 When a user requests a session for one of these activities, the request dialog includes a **Group Selection** step after **Activity Selection**. The step is titled **Select Groups & Roles**.
 
 1. Select the activity.
-2. In **Select Groups & Roles**, click **Choose Groups/Roles**.
-3. Select the groups and roles to join during the session. The list shows only the groups and roles that the administrator added to the activity.
-4. Continue through the remaining steps and finish the request.
+1. In **Select Groups & Roles**, click **Choose Groups/Roles**.
+1. Select the groups and roles to join during the session. The list shows only the groups and roles that the administrator added to the activity.
+1. Continue through the remaining steps and finish the request.
 
 The step shows the message "Resource selection is not required for this activity." For the other steps of a request, see [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md).
 

@@ -28,9 +28,9 @@ A database resource lets Netwrix Privilege Secure for Access Management (Privile
 1. Select **Save**. **Scan Now** becomes available after the save.
 1. Select **Scan Now** to discover the database users, databases, and roles.
 
-For example, to add a default SQL Server instance, enter the name `Finance SQL`, leave **Platform** as **Microsoft SQL Server**, enter `default` as the **Instance**, enter `sql01.example.com` as the **IP Address**, enter `1433` as the **Port**, and select the SQL service account.
+For example, to add a default SQL Server instance, enter the name `Finance SQL` and leave **Platform** as **Microsoft SQL Server**. Enter `default` as the **Instance**, `sql01.example.com` as the **IP Address**, and `1433` as the **Port**. Then select the SQL service account.
 
-For Oracle, enter the **Instance** as `<host>/<service-name>`, for example `ora01.example.com/orclpdb`. Privilege Secure connects to the address in **IP Address** when you enter one, on the port you enter, and uses the service name after the slash. The default Oracle listener port is 1521, which the **Port** field shows as a placeholder for Oracle. If the **Port** value is missing or isn't a valid port, Privilege Secure connects on 1521. Privilege Secure connects to Oracle with SYSDBA privileges.
+For Oracle, enter the **Instance** as `<host>/<service-name>`, for example `ora01.example.com/orclpdb`. When you enter an address in **IP Address**, Privilege Secure connects to it on the port you enter. It uses the service name after the slash. The default Oracle listener port is 1521, which the **Port** field shows as a placeholder for Oracle. If the **Port** value is missing or isn't a valid port, Privilege Secure connects on 1521. Privilege Secure connects to Oracle with SYSDBA privileges.
 
 ![The New Database page with Microsoft SQL Server selected as the platform, an empty Port field, and the Service Account list set to Netwrix Password Secure.](/images/privilegesecure/26.07/resources/new-database-form.webp)
 
@@ -59,7 +59,7 @@ Select **Scan Now** on the database page to scan the database. **Cancel** appear
 The database page has these tabs.
 
 | Tab | Shows |
-|---|---|
+| --- | --- |
 | **Users** | Database login accounts. |
 | **External Users** | Accounts that sign in to the database through Windows authentication rather than a database login: domain users and domain groups, and local computer accounts and local groups on the database server. The tab shows each account's type and its **Samaccountname**, and has a **Search External Users** box. |
 | **Databases** | The databases that the scan discovered. |

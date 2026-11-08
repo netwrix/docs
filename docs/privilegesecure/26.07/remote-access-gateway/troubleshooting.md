@@ -11,7 +11,7 @@ Use this page when users can't sign in to the portal, the portal doesn't load, o
 ## Log files
 
 | Component | Log | Location |
-|---|---|---|
+| --- | --- | --- |
 | Gateway | `PAM-RagGateway*.log` | `C:\ProgramData\Stealthbits\PAM\Log` |
 | Portal | `PAM-RagPortal*.log` | `C:\ProgramData\Stealthbits\PAM\Log` |
 | Portal web server (nginx) | `nginx-access.log` | `C:\ProgramData\Stealthbits\PAM\Log` |
@@ -173,10 +173,12 @@ If WSL doesn't start by itself, see [Start WSL automatically](/docs/privilegesec
 
 **Fix:** In WSL, run `docker ps` and confirm that the guacd image is exactly `guacamole/guacd:1.6.0`. If it isn't, upgrade guacd. See [Upgrade the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/install/upgrade.md#match-the-guacd-version).
 
+The portal applies the color swap only for RDP sessions, and only when the application server setting `Client:ColorChannelSwap` is `true`. The setting is `true` by default. To turn the filter off, set it to `false` in the application server's `appsettings.json`, then recycle the `SbPAMAppPool` application pool.
+
 ## Keyboard or pointer behaves oddly in an RDP session
 
 **Symptom:** Some keys don't type what you expect in an RDP session. The numeric keypad, `AltGr`, or
-characters that need a key combination may do nothing or type the wrong character. The pointer can also
+characters that need a key combination may do nothing or produce the wrong character. The pointer can also
 look larger than usual or sit slightly away from the click point.
 
 **Cause:** The portal uses the standard Guacamole keyboard and mouse handlers, and guacd draws the

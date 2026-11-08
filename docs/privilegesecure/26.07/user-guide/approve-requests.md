@@ -22,7 +22,7 @@ When a request needs approval, the approvers also receive an email. The email sh
 The table has these columns:
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | **Status** | **Waiting for approval** while the request needs a decision. **Deprovisioning** while the session ends and the post-session actions run. |
 | **Requested** | When the request was created. |
 | **Requested By** | The user who requested the session. |

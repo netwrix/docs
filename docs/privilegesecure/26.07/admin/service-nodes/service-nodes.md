@@ -19,8 +19,8 @@ The page is for monitoring and reading logs. The only settings you change here a
 The page has three panes:
 
 1. The node list, with **Search Service Nodes...**.
-1. The service list for the selected node, with **Search Services...**.
-1. The details of the selected service.
+2. The service list for the selected node, with **Search Services...**.
+3. The details of the selected service.
 
 On the main server, the node lists six services: Action, Email, Host Scan, Proxy, Scheduler, and security information and event management (SIEM). A node lists only the services registered on that server. For example, a server that runs only the Proxy Service lists Proxy, and a server where you installed the Action Service lists Action and Proxy.
 
@@ -29,7 +29,7 @@ On the main server, the node lists six services: Action, Email, Host Scan, Proxy
 Each node and each service has a status icon. Hover over an icon to see its status.
 
 | Icon | Status | Meaning |
-|---|---|---|
+| --- | --- | --- |
 | Green | Online | The service is online. On a node, all services are online. |
 | Amber | Partial | A node status. Some of the node's services are offline. |
 | Red | Offline | The service is offline. |
@@ -41,13 +41,13 @@ The status of a node comes from the services registered under its name. The node
 A red Host Scan service reflects the service's heartbeat to the web service. It doesn't show whether the Windows service is running. A Host Scan service can show Offline while the `SbPAMHostScan` Windows service runs.
 
 1. On the service node, open the Host Scan log from the **Log Files** page. See [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md). The file is `PAM-HostScanService<yyyymmdd>.log`.
-1. Look for repeated lines that start with "Heartbeat unable to connect". They show that the heartbeat fails.
-1. Search all `PAM-HostScanService*.log` files for `RemoteCertificate`. The repeated warning hides the inner exception, which is logged only occasionally. A certificate name mismatch on the console port means the certificate doesn't cover the name the heartbeat uses.
-1. Fix the cause, and then, on the service node, open **Services** and restart the `SbPAMHostScan` Windows service.
+2. Look for repeated lines that start with "Heartbeat unable to connect". They show that the heartbeat fails.
+3. Search all `PAM-HostScanService*.log` files for `RemoteCertificate`. The repeated warning hides the inner exception, which is logged only occasionally. A certificate name mismatch on the console port means the certificate doesn't cover the name the heartbeat uses.
+4. Fix the cause, and then, on the service node, open **Services** and restart the `SbPAMHostScan` Windows service.
 
 The **Register Services** action might not restart the Host Scan service, so restart `SbPAMHostScan` yourself.
 
-"Heartbeat unable to connect" means that the service's web request to the console failed. The text after the colon is the underlying error. The service tries again every 5 seconds, and the status returns to online when a request succeeds. To fix it, ensure the console address that the service uses is correct and reachable from the node, and that the certificate on that address covers the name in the address. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+"Heartbeat unable to connect" means that the service's web request to the console failed. The text after the colon is the underlying error. The service tries again every 5 seconds, and the status returns to online when a request succeeds. To fix it, ensure that the console address the service uses is correct and reachable from the node. Also ensure that the certificate on that address covers the name in the address. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 To reissue the certificate, see [Certificates](/docs/privilegesecure/26.07/configuration/certificates.md). After you bind the certificate and register the services with the new DNS name, the node returns to online when the heartbeat succeeds.
 
@@ -60,7 +60,7 @@ After an upgrade, a secondary node in a high availability deployment might not a
 The Action Service runs the actions that other features queue, such as password rotation and Active Directory sync. It has two tabs:
 
 | Tab | Description |
-|---|---|
+| --- | --- |
 | **Action Logs** | The actions the service processed. |
 | **Action Queue** | The actions waiting to run. |
 
@@ -77,7 +77,7 @@ The **Email Queue** tab shows the outgoing messages. **Search** matches the **To
 The Host Scan Service collects information from resources. It has these tabs:
 
 | Tab | Description |
-|---|---|
+| --- | --- |
 | **Scan Logs** | The scans that ran, with their status. |
 | **Scan Queue** | The scans waiting to run. |
 
@@ -92,7 +92,7 @@ The Proxy Service page has no tabs. It shows a **Name** and **Value** table of p
 The Scheduler Service starts the scheduled jobs. It has these tabs:
 
 | Tab | Description |
-|---|---|
+| --- | --- |
 | **Statistics** | The number of actions in each status. |
 | **Action Queues** | The scheduled jobs and their queue status. |
 
@@ -111,7 +111,7 @@ For the list of scheduled jobs, see [Scheduled tasks](/docs/privilegesecure/26.0
 The SIEM Service page has no tabs. It lists the events queued for your SIEM servers. It has **Search** on the message, a **Status** filter, and **Refresh**. The **Status** filter offers All, Sent, and Not Sent.
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **SENT TIME** | When the service processed the event. |
 | **SENT** | Whether the service sent the message. |
 | **MESSAGE** | The SIEM event. |

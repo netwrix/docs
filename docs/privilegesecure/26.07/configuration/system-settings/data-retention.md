@@ -13,7 +13,7 @@ Retention is off for every data type by default, so nothing is deleted until you
 ## Retention settings
 
 | Data type | Checkbox | Days field | Default days | Allowed range |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | SIEM records | **Enable SIEM Retention** | **SIEM Retention Days** | 90 | 1-3650 |
 | Email records | **Enable Email Retention** | **Email Retention Days** | 90 | 1-3650 |
 | Session recordings (input and output logs) | **Enable I/O Log Retention** | **I/O Log Retention Days** | 90 | 1-3650 |

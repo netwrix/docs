@@ -23,7 +23,7 @@ For the full list of roles and what each can do, see [Roles and permissions](/do
 ## Administrative tasks
 
 | Task | Where to start |
-|---|---|
+| --- | --- |
 | Watch, lock, or end sessions in progress, and review past sessions | [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md) |
 | Add users and groups, create local and application users, and check license use | [Users and groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md) |
 | Assign built-in roles or create a custom role | [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md) |

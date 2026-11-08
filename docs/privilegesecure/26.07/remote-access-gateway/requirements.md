@@ -76,7 +76,7 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 
-The first command reports whether the firmware exposes virtualization. {/* TODO verify: the value that the first command returns inside a virtual machine with nested virtualization enabled. It depends on the hypervisor and the host, and Microsoft's documentation doesn't state it for a guest. */}
+The first command reports whether the firmware exposes virtualization. Inside a virtual machine, it can report `False` even when nested virtualization is enabled and WSL 2 works, because a guest doesn't expose the firmware flag the same way a physical host does. Treat a `False` result together with an `Enabled` result for both features as virtualization being available.
 
 ## Application server requirements
 
@@ -96,7 +96,15 @@ The gateway connects to the Privilege Secure web service at `https://<nps-server
 
 Allow only these connections between the DMZ and the internal network. The portal doesn't connect to port 6500. For the full list of Privilege Secure ports, see [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
-The gateway installer creates the Windows Firewall rule "NPS Gateway Web Service Port (6550)", open to any address. Limit it to the portal server's address. The installers create no rules for ports 443, 80, and 4822.
+The gateway installer creates this inbound Windows Firewall rule, open to any address:
+
+| Rule | Port |
+| --- | --- |
+| `NPS Gateway Web Service Port (6550)` | 6550 |
+
+The portal installer creates no Windows Firewall rules. Create a rule for port 443, and for port 80 when you use the redirect to HTTPS. See [Install the portal](/docs/privilegesecure/26.07/remote-access-gateway/install/install-portal.md#open-the-portal-ports).
+
+Limit each rule to the address of the server that connects to it. No installer creates a rule for ports 80 or 4822.
 
 ## Certificates
 

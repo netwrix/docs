@@ -23,7 +23,7 @@ If a SAML or OpenID Connect authentication connector is enabled for your account
 The connection string joins these values with a plus sign (`+`):
 
 | Value | Required | Description |
-|---|---|---|
+| --- | --- | --- |
 | `<username>` | Yes | Your sign-in name: `domain\username`, `user@domain`, or `user@domain.suffix`. |
 | `<activity>` | Yes | The name of the activity. Replace each space with an underscore (`_`) if your client doesn't accept spaces. |
 | `<resource>` | Yes | The fully qualified domain name (FQDN) of the resource. |
@@ -49,6 +49,32 @@ This example sets notes and a ticket number:
 
 The `user@domain` form of the user name works in a connection string. The proxy splits the string on whichever of `+` or `@` occurs more often, and a string with an activity and a resource has more plus signs than the one `@` in the user name.
 
+Administrators can change the separators. For the settings that control them, see [Proxy settings](/docs/privilegesecure/26.07/configuration/proxy-settings.md).
+
+## Connect as another target user
+
+By default, the session on the target runs as the account that the activity chooses. To run the session as a different account, add the target user name after your own, separated by a colon (`:`):
+
+`<username>:<target-user>+<activity>+<resource>`
+
+Example, running the session on the target as `root`:
+
+`CONTOSO\jsmith:root+Add_Requester_to_Local_Administrators+linux01.contoso.com`
+
+The account must be one that the activity can use on the target. If it isn't, the session fails.
+
+## Supply a multi-factor authentication code over SSH
+
+When your account uses a multi-factor authentication (MFA) connector that asks for a code, add the code after your password, separated by a comma (`,`). The proxy reads the password as everything before the last comma and the code as everything after it.
+
+Example, at the password prompt:
+
+`<password>,<code>`
+
+If you sign in without the code, the proxy asks for it with a keyboard-interactive prompt. The example string in the prompt is the one your connector returns. In PuTTY, a keyboard-interactive prompt appears as a separate dialog box.
+
+For RDP, paste the code from the clipboard instead. See [Connect with MobaXterm (RDP)](#connect-with-mobaxterm-rdp).
+
 ## Connect with PuTTY (SSH)
 
 1. In **Host Name (or IP address)**, enter `<connection-string>@<nps-server>`.
@@ -62,7 +88,7 @@ Example host name: `CONTOSO\jsmith+Activity_Token_for_wheel_Group+linux01.contos
 1. Create an SSH session.
 2. In **Remote host**, enter `<connection-string>@<nps-server>`.
 3. In **Port**, enter 4422.
-4. Clear the check boxes under **Advanced SSH settings** and **Bookmark settings**.
+4. Clear the checkboxes under **Advanced SSH settings** and **Bookmark settings**.
 5. Click **OK**.
 
 Example remote host: `CONTOSO\jsmith+Activity_Token_for_wheel_Group+linux01.contoso.com@<nps-server>`
@@ -131,6 +157,14 @@ MobaXterm:
 `sbpam-url handle -p ssh -- "C:\Program Files (x86)\Mobatek\MobaXterm\MobaXterm.exe" -newtab 'ssh -o PasswordAuthentication=no -l {{user_esc}} -p {{port}} {{hostname}}'`
 
 `{{user_esc}}` is the user name with special characters escaped. Change the MobaXterm path to match where you installed it. The handler decodes `{{user}}` back to its plain text and leaves `{{user_esc}}` percent-encoded, so use `{{user_esc}}` when the client parses the value itself, as MobaXterm does. `-newtab` opens the connection as a new tab in a running MobaXterm window, or starts a new window if none is open.
+
+## Launch a session from the console with a one-time token
+
+When you click **Connect** in the console to open a local SSH or RDP client, the console passes a one-time token as the user name instead of a connection string. The token identifies the session that the console already created, so you don't type the activity, the resource, or a password.
+
+The proxy accepts the token once. A token expires 60 seconds after the console creates it. If the token has expired, or you already used it, the connection fails. Start a new session from the console to get a new token.
+
+The token is sensitive. Don't copy it into a script, a log, or a shared ticket.
 
 ## More client guidance
 

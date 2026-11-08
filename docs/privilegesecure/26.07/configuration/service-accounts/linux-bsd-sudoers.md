@@ -90,8 +90,14 @@ svc_sbpam ALL = NOPASSWD: SVC_ACT_CHKSUM, SVC_ACT_SUDOERS, SVC_SB_PASS, SVC_SB_C
 Defaults:svc_sbpam !requiretty
 ```
 
-- `NOPASSWD` lets the account run the listed commands without a password prompt. Privilege Secure can't answer one.
-- `!requiretty` lets the account run elevated commands in a non-interactive session.
+- `NOPASSWD` lets the account run the listed commands without a password prompt. Privilege Secure can't answer one. When a command stops at a `sudo` or `su` password prompt, Privilege Secure ends it and reports that the account is likely missing a `NOPASSWD` grant for that command. The message is:
+
+  ```text
+  remote command is waiting for an interactive password (sudo/su prompt detected) — the target account is likely missing a NOPASSWD sudoers grant for this command
+  ```
+
+  Privilege Secure detects the prompt and fails at once, so you see the cause instead of a timeout. Without the check, the read would block until the hung timer expires, 180 seconds by default.
+- `!requiretty` lets the account run privileged commands in a non-interactive session.
 - On an Azure Linux 4.0 resource, also add `Defaults:svc_sbpam !pam_session`. See [Prepare an Azure Linux resource](/docs/privilegesecure/26.07/configuration/service-accounts/prepare-azure-linux.md).
 - Replace the `SVC_` prefix with a tag that's unique to the account when more than one service account uses the same host.
 - The paths in the examples match a typical layout. Confirm each path on the host with `command -v <command>`, because some distributions keep a command in `/bin` and others in `/usr/bin`. On a system where `/bin` is a link to `/usr/bin`, either path matches.
@@ -101,6 +107,18 @@ Defaults:svc_sbpam !requiretty
 :::
 
 For the full list of commands that the 26.07 command plans run, and what to do when a scan stops on a `sudo` error, see [Linux resources aren't scanned after an upgrade to 26.07.1](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md#linux-resources-arent-scanned-after-an-upgrade-to-26071).
+
+## Session actions on a Linux target
+
+A user with the right permissions can run three session actions against a logged-in Linux user. All three need the commands in `SVC_SB_CMNDS`.
+
+| Action | What it runs | Result |
+| --- | --- | --- |
+| Get session state | `who`, `w -h`, and `last <user> -w` | The sign-in time, and the idle time in minutes when the user has an active session |
+| End user processes | `pkill -9 -u "<user>"` | **user processes terminated**, or **user processes not confirmed terminated** |
+| Send a message | `who` and `write <user> <tty>` for each terminal | **message sent**, or **message not confirmed sent** |
+
+The message action writes to every terminal that the user is signed in to. The commands are read-only for the session state action, and the message action only writes to the user's own terminals.
 
 ## Check the policy
 

@@ -69,7 +69,7 @@ For all status values, see [Manage active and scheduled sessions](/docs/privileg
 ## Request errors
 
 | Message | What to do |
-|---|---|
+| --- | --- |
 | "Unable to find policy for activity: `<activity>`, with resource: `<resource>`. Contact the NPS Administrator to request access." | No access policy of yours includes that activity and resource together. Ask your administrator for access. |
 | "This account is locked from creating sessions on this resource." | An administrator blocked your account from creating sessions on this resource. Contact your administrator. |
 | "This account is locked and cannot create a new session." | An administrator locked your account. Contact your administrator. |

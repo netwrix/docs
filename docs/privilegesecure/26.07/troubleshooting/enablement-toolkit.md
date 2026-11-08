@@ -26,7 +26,7 @@ The Enablement Toolkit is a Windows application with a graphical interface for c
 The fields in the window change with the selected operation. These controls are always present:
 
 | Control | Description |
-|---|---|
+| --- | --- |
 | **File** > **Save Results** | Saves the results after an operation runs successfully. |
 | **File** > **Exit** | Closes the toolkit. |
 | **Help** > **About** | Shows information about the toolkit. |
@@ -56,7 +56,7 @@ The results list whether ports 22 (SSH), 3389 (Remote Desktop Protocol, RDP), 59
 ## Operations
 
 | Operation | What it does | Required fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Enumerate Active Directory Objects** | Counts users, group members, and computers in the domain or domain controller you enter. | **Domain**, **Username**, **Password** | Enter the domain or controller as a DNS name or an IP address. Select **Use TLS** for LDAPS. |
 | **Verify Domain Group Membership for Credential** | Checks that a domain group exists and that a user is a member of it. | **Domain / User**, **Group**, **Username**, **Password** | Enter **Domain / User** as `<domain>\<user>`. **Username** and **Password** can be any domain user. Enter the domain controller as an IP address, a DNS name, or a domain name. Select **Use TLS** for LDAPS. |
 | **Verify Local Windows Group Membership for User Account** | Checks that a local Windows group exists on a host and that a user is a member of it. | **User / Host**, **Group**, **Username**, **Password** | Enter **User / Host** as `<user>@<hostname>`. **Username** and **Password** must belong to an account that is a local administrator on the host. It can be a domain account or a local account. To check a domain user's membership, authenticate with a domain user. |

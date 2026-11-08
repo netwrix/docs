@@ -1,6 +1,6 @@
 ---
 title: "Prepare an Azure Linux resource"
-description: "Install gawk, suppress the systemd escape sequences, and turn off PAM session handling for the service account so Privilege Secure can manage an Azure Linux 4.0 resource."
+description: "Install gawk, suppress systemd escape sequences, and turn off PAM session handling for the service account so Privilege Secure can manage Azure Linux 4.0."
 sidebar_position: 40
 ---
 

@@ -12,16 +12,16 @@ This section describes what must be in place before you install Netwrix Privileg
 
 A deployment uses the following systems:
 
-- **Application server** – The Windows server where you install Privilege Secure. It hosts the Privilege Secure Console and the core services.
-- **Database** – The PostgreSQL or SQL Server database that stores Privilege Secure data.
-- **Additional service nodes (optional)** – Remote hosts that run the Action, Host Scan, Scheduler, Security Information and Event Management (SIEM), or Proxy services for scale, redundancy, or network segmentation.
-- **Client** – The computer where a user opens the Privilege Secure Console in a supported browser and starts Remote Desktop Protocol (RDP) or Secure Shell (SSH) sessions.
-- **Target environments** – The systems that Privilege Secure manages and gives privileged access to, such as Active Directory, Windows hosts, and Linux hosts.
+- **Application server**: The Windows server where you install Privilege Secure. It hosts the Privilege Secure Console and the core services.
+- **Database**: The PostgreSQL or SQL Server database that stores Privilege Secure data.
+- **Additional service nodes (optional)**: Remote hosts that run the Action, Host Scan, Scheduler, Security Information and Event Management (SIEM), or Proxy services for scale, redundancy, or network segmentation.
+- **Client**: The computer where a user opens the Privilege Secure Console in a supported browser and starts Remote Desktop Protocol (RDP) or Secure Shell (SSH) sessions.
+- **Target environments**: The systems that Privilege Secure manages and gives privileged access to, such as Active Directory, Windows hosts, and Linux hosts.
 
 ## Requirements pages
 
 | Page | What it covers |
-| ---- | -------------- |
+| --- | --- |
 | [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md) | Operating system, software that must be installed first, and sizing |
 | [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) | PostgreSQL and SQL Server options |
 | [Additional service node and proxy server requirements](/docs/privilegesecure/26.07/requirements/service-nodes.md) | Hosts for remote services, proxy sizing, and antivirus exclusions |

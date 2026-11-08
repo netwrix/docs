@@ -38,7 +38,7 @@ Each card shows the activity name and, below it, the name of the resource. Selec
 When you have sessions for the activity, the panel shows a tile for each session, with a **+** (**Create a session**) button beside the tiles. A card that has a session also shows a green dot. Each tile shows the resource name, the login account, when the session started and when it ends, and its status, such as "Waiting for approval". The **...** menu on a tile that waits for approval has **Copy username** and **Stop session**.
 
 {/* TODO verify: the menu on a tile for a running session, and the tile for a session that has started. The lab sessions are still waiting for approval. */}
-![An expanded activity card with a session tile that shows the resource, login account, start and end time, and an Available status.](/images/privilegesecure/26.07/user-guide/my-activities-expanded-session.webp)
+![An expanded activity card with a session tile that shows the resource, login account, start time, end time, and an Available status.](/images/privilegesecure/26.07/user-guide/my-activities-expanded-session.webp)
 
 ## When the page is empty
 

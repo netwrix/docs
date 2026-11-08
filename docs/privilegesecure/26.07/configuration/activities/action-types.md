@@ -11,8 +11,8 @@ An action type is a template for one step in an activity. When you add an action
 The console has no separate Action Types page. Action types appear only in the **Action Type** list of the **Add Action to \<group\>** dialog. To open the list:
 
 1. Select **Activities** in the left navigation pane, and then select an activity.
-2. In the action group you want, click the green **+** button. The dialog title shows the group, for example **Add Action to Pre-Session Group**.
-3. Open the **Action Type** list.
+1. In the action group you want, click the green **+** button. The dialog title shows the group, for example **Add Action to Pre-Session Group**.
+1. Open the **Action Type** list.
 
 The list depends only on the action group, not on the activity's platform, so choose an action type that fits the platform. For the steps to add actions, see [Add actions to an activity](/docs/privilegesecure/26.07/configuration/activities/actions.md).
 
@@ -23,7 +23,7 @@ An action type is the template. An action is a saved instance of that template o
 Every action type has these fields:
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Continue on Error** | When an error occurs, the activity continues to the next step instead of stopping. |
 | **Action Name** | (Optional) The name of the action on the activity. |
 | **Paired Action's Name** | (Optional) The name of the paired action. Only action types that have a pair show this field. |
@@ -39,7 +39,7 @@ You can't change the action type after you create an action. To use a different 
 ## Pre-Session (Grant) action types
 
 | Action type | What it does | Fields | Paired post-session action |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **AD Sync With Args** | Replicates the target user object and the groups it belongs to from the primary domain controller (PDC) of the domain to each listed domain controller, so that a group change takes effect without waiting for normal replication. The action runs on the Action Service with the domain's service account and doesn't use Windows Remote Management (WinRM). It fails only if replication fails to every destination. | **Destinations**: comma-separated list of domain controllers to replicate to (required). **Domain**: the domain of the PDC that is the replication source (required). | None |
 | **Add ADUC Permission** | Delegates Active Directory Users and Computers rights to the login account on one organizational unit (OU). | **AD Organizational Unit** (required). **AD Object Type**: `user` or `computer` (required). **AD Rights to be Added**: **Update Password Not Required Bit**, **Unexpire Password**, **Change Password**, or **Reset Password** (default). **Domain** (optional). | **Remove ADUC Permission** |
 | **Add Salesforce PermissionSet** | Grants a Salesforce permission set to the user for the session. | **Permission Set**, **Consumer Key**, **Private Key**, and **Use sandbox instance**. | **Remove Salesforce PermissionSet** |
@@ -77,7 +77,7 @@ In 26.07.3, Add User to Groups/Roles is the default name of a new Add User to Gr
 These action types run while the session is active.
 
 | Action type | What it does | Fields |
-|---|---|---|
+| --- | --- | --- |
 | **AD Sync With Args** | Replicates the target user object and its groups to the listed domain controllers, as the pre-session action does. | **Destinations** and **Domain** (both required). |
 | **Monitor for User Login** | Watches the resource for a login by the user. | None. |
 | **Purge Kerberos Tickets for Host** | Purges all Kerberos tickets on the resource. | None. |
@@ -91,7 +91,7 @@ These action types run while the session is active.
 These action types run after the session ends. The paired actions in this list undo the matching pre-session action. Privilege Secure creates each paired action when you add the pre-session action.
 
 | Action type | What it does | Fields |
-|---|---|---|
+| --- | --- | --- |
 | **AD Sync With Args** | Replicates the target user object and its groups to the listed domain controllers, as the pre-session action does. | **Destinations** and **Domain** (both required). |
 | **Disable RDP on Host** | Disables RDP on the resource. | None. |
 | **Invoke Protection Policy** | Runs the protection policies that apply to the session host. The action checks the membership of protected groups and removes unauthorized accounts. You don't select a policy. | None. |
@@ -123,7 +123,7 @@ The Post-Session action list also shows **Command Plan Test**. Privilege Secure 
 **Add Sudoers rule** writes a rule file for the login account into the `sudoers.d` directory on a Linux resource. The console label uses a lowercase r in "rule". **Remove Sudoers rule** deletes the file after the session.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Run As** | The accounts the user can run commands as, for example `oracle, sybase`. The default is `root`. |
 | **Commands** | The commands the user can run, separated by commas, or `ALL` for every command on the resource. The default is `ALL`. You can mix sudoers tags into the list. |
 | **Prompt for password** | When selected, the user must enter a password to run the elevated commands. This field, not a tag, controls the `PASSWD` and `NOPASSWD` behavior. |
@@ -136,7 +136,7 @@ From 26.07.3, you can add sudoers tags to the **Commands** field. A sudoers tag 
 For what each tag does in `sudo`, including the `PASSWD` and `NOPASSWD` tags that this field doesn't use, see [Sudoers tags reference](/docs/privilegesecure/26.07/configuration/service-accounts/sudoers-tags-reference.md).
 
 | Tags | Effect |
-|---|---|
+| --- | --- |
 | `EXEC`, `NOEXEC` | Allow or block the command from running other programs. `NOEXEC` blocks shell escapes. |
 | `SETENV`, `NOSETENV` | Allow or block the user from setting environment variables. |
 | `LOG_INPUT`, `NOLOG_INPUT` | Log or don't log the input that the user types. |

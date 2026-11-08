@@ -29,7 +29,7 @@ To change the port, see [Ports](/docs/privilegesecure/26.07/requirements/ports.m
 Two endpoints report on the server itself:
 
 | Endpoint | Returns |
-|---|---|
+| --- | --- |
 | `GET /api/v1/health` | The health of the web service. |
 | `GET /api/v1/Version` | The product version. |
 
@@ -44,7 +44,7 @@ Authorization: Bearer <token>
 A token is valid for 15 minutes by default. The token lifetime is a server setting, separate from the console's **UI Idle Timeout**. A script that runs longer renews the token before it expires. Two kinds of account can request a token:
 
 | Account | Use it for | Credentials |
-|---|---|---|
+| --- | --- | --- |
 | User | Interactive scripts that run as a person. | User name and password, plus a second factor if the user's authentication connector requires one. |
 | Application user | Unattended automation. | Client certificate serial number and API key. |
 
@@ -59,7 +59,7 @@ The role of the account that owns the token decides what each endpoint allows. A
 List endpoints are named `Search` and page their results with query parameters.
 
 | Parameter | Description |
-|---|---|
+| --- | --- |
 | `skip` | The number of records to skip. |
 | `take` | The number of records to return. |
 | `filterText` | Text to match. Many endpoints add their own filters, for example a date range or a credential type. |
@@ -79,7 +79,7 @@ The default value of `take` differs between endpoints, for example 10 for activi
 The API groups its endpoints by the areas of the console.
 
 | Area | Examples of what you can do |
-|---|---|
+| --- | --- |
 | Authentication and sessions | Sign in, renew a token, sign out. |
 | Users, groups, and roles | Create users and application users, assign roles. |
 | Resources and discovery | Manage resources, resource groups, platforms, and host scans. |

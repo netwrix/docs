@@ -22,7 +22,7 @@ A person is a reviewer when they hold the Reviewer role directly, or through a g
 ## Task statuses
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | **Setup** | The Administrator is creating the task. The reviewer can't see it. |
 | **Ready to Start** | The task waits for the reviewer to begin. |
 | **Incomplete** | The reviewer started the review and hasn't committed it. |

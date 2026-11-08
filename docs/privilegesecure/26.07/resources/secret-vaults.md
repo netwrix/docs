@@ -72,7 +72,7 @@ Update a stored secret by hand when the password changes on the device. By defau
 ## Review the vault tabs
 
 | Tab | Shows |
-|---|---|
+| --- | --- |
 | **Accounts** | The accounts stored in the vault. |
 | **Files** | The encrypted files stored in the vault. |
 | **Sessions** | Earlier sessions that used the vault. Select a row and select **View Logs** to open the session log. |

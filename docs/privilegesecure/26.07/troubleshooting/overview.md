@@ -11,7 +11,7 @@ Use this section when Netwrix Privilege Secure for Access Management (Privilege 
 ## Find the right page
 
 | Symptom | Page |
-|---|---|
+| --- | --- |
 | The installer or an upgrade fails, or the product misbehaves right after an upgrade | [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md) |
 | The console shows "Action Service is not running or registered.", or a service shows as offline | [Services not running or not registered](/docs/privilegesecure/26.07/troubleshooting/services.md) |
 | A session won't provision, stays in Provisioning, or doesn't end | [Sessions fail or get stuck](/docs/privilegesecure/26.07/troubleshooting/sessions.md) |

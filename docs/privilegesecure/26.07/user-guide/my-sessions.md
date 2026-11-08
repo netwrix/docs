@@ -28,7 +28,7 @@ To request a new session, select **Create Session** on the **Active** or **Sched
 The **Active** and **Scheduled** tables show these columns:
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | **Status** | The state of the session. See [Statuses](#statuses). |
 | **Requested** | When the session was created. |
 | **Requested By** | The user who requested the session. |
@@ -47,7 +47,7 @@ Use **Search** to filter the table. On the **Active** tile, you can also filter 
 ### Statuses
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | **Provisioning** | Privilege Secure is assigning permissions to the login account before the session. |
 | **Pending** | The scheduled start time is still in the future. Scheduled tile only. |
 | **Waiting for approval** | An approver must approve the request before the session can begin. |
@@ -81,7 +81,7 @@ You can filter the table with these controls: **Search**, **Resource name**, and
 The table has these columns:
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | **Actions** | The expand icon, the logs icon, and on your own sessions the quick launch icon. See [Row actions](#row-actions). |
 | **Requested** | When the session was created. |
 | **Status** | The final state of the session. |
@@ -97,7 +97,7 @@ The table has these columns:
 A historical session has one of these statuses:
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | **Completed** | The activity reached its scheduled end, or the requester ended it early. |
 | **Cancelled** | An administrator canceled the activity before its scheduled end. |
 | **Failed** | The provisioning stage hit an error. |

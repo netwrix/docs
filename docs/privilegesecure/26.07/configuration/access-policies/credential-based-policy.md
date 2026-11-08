@@ -17,12 +17,12 @@ A credential-based access policy lets users check out managed credentials, and c
 ## Create the policy
 
 1. Select **Access Policy** in the left navigation.
-2. Click the plus (**+**) button above the policy list.
-3. Enter a **Name**. This field is required.
-4. (Optional) Enter a **Description**.
-5. Select **Credential Based** in the **Type** list. A new policy uses **Resource Based** by default.
-6. Select a profile in the **Connection Profile** list. **Save** is blocked while the list shows `<none>`.
-7. Click **Save**.
+1. Click the plus (**+**) button above the policy list.
+1. Enter a **Name**. This field is required.
+1. (Optional) Enter a **Description**.
+1. Select **Credential Based** in the **Type** list. A new policy uses **Resource Based** by default.
+1. Select a profile in the **Connection Profile** list. **Save** is blocked while the list shows `<none>`.
+1. Click **Save**.
 
 For example, to let a team check out a shared service account, enter the name `Shared service accounts`, select **Credential Based**, and select a connection profile. Then add the team's group and the credential on the tabs.
 
@@ -53,7 +53,7 @@ The **Credentials** tab lists the credentials and credential groups that users c
 The table has these columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **NAME** | The name of the account or credential group. |
 | **TYPE** | An icon for the type of item. |
 | **RESOURCE** | The resource that the account is on. |
@@ -87,7 +87,7 @@ Both settings are under **System Settings** > **Encrypted Files**. See [System s
 The **Files** tab lists the files that belong to the policy. The tab has **Add**, **Remove**, **Search**, and **Refresh**, as on the **Credentials** tab. The table has these columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **FILE** | The name of the file. |
 | **ACTION** | Download the file or its checksum. |
 | **RESOURCE** | The vault that holds the file. |

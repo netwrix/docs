@@ -17,7 +17,7 @@ To open it, select **Auditing & Reporting** > **Activity Log** in the Privilege 
 The toolbar has these controls:
 
 | Control | Description |
-|---|---|
+| --- | --- |
 | **Search** | Filters the sessions table to rows that match the text you enter. |
 | **Change type** | `<all users>` (the default) shows the top 5 users and every session. **Top 5 Users** or **Top 10 Users** lists that many users and limits the sessions table to their sessions. |
 | **Date range** | Sets the start and end dates. The default range is the last 30 days. |
@@ -32,7 +32,7 @@ When a table has no rows for the range, it shows **None**. Widen the date range 
 The **Summary for the date range** table combines all sessions in the range.
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **SESSIONS** | Total number of sessions. |
 | **TOTAL DURATION** | Combined duration of all sessions. |
 | **AVERAGE** | Average session duration. |
@@ -48,7 +48,7 @@ The **Top 5 users for the date range** table lists the users with the most sessi
 The sessions table is titled with the number of sessions, for example "12 sessions by all users". It has these columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **SESSION USER** | The user who ran the session. |
 | **HOST** | The resource the session used. |
 | **LOGIN ACCOUNT** | The account the user signed in with on the resource. |

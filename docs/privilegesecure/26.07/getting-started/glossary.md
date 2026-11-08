@@ -11,7 +11,7 @@ This page defines the terms used in the Privilege Secure documentation. It also 
 ## Terms
 
 | Term | Definition |
-|---|---|
+| --- | --- |
 | Access policy | A rule that links users, activities, resources, or credentials, and a connection profile. It is either resource-based or credential-based. |
 | Action group | An ordered set of actions in an activity. The groups are Pre-Session (Grant), Session (Connect), and Post-Session (Remove). |
 | Activity | The work that Privilege Secure performs before, during, and after a session. |
@@ -48,7 +48,7 @@ The documentation uses Remote Access Gateway. See [Remote Access Gateway overvie
 ## Product and legacy names
 
 | Name | Meaning |
-|---|---|
+| --- | --- |
 | Netwrix Privilege Secure for Access Management | The product name. The short forms are Privilege Secure and NPS-AM. |
 | NPS | A short form of the product name that appears in file names, installers, and the console. |
 | SbPAM | A legacy prefix from the product's earlier name. It appears in service names, the IIS site name, and registry keys. |
@@ -61,7 +61,7 @@ These names are expected. They don't indicate a problem.
 ## Service names
 
 | Name | Component |
-|---|---|
+| --- | --- |
 | SbPAM Web Service | The IIS site that hosts the console and the REST API. Its application pool is `SbPAMWebAppPool`. |
 | `SbPAMAction` | Action service |
 | `SbPAMHostScan` | Host Scan service |
@@ -76,7 +76,7 @@ These names are expected. They don't indicate a problem.
 ## Paths
 
 | Path | Contents |
-|---|---|
+| --- | --- |
 | `C:\Program Files\Stealthbits\PAM` | The default install folder. |
 | `C:\ProgramData\Stealthbits\PAM` | Configuration files and data. |
 | `C:\ProgramData\Stealthbits\PAM\Log` | Log files, named `PAM-<service>.log`. |
@@ -89,7 +89,7 @@ The default database name is `PAM`. The setup program writes it to the `Database
 An administrator sees these items in the left navigation of the 26.07.3 console, in this order:
 
 | Menu label | Use |
-|---|---|
+| --- | --- |
 | My Activities | Request and connect to your own sessions. |
 | Dashboard | See active, scheduled, approval, and historical sessions. |
 | Access Policy | Manage access policies, connection profiles, activity token complexity, and command restrictions. |

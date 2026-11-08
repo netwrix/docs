@@ -9,7 +9,7 @@ sidebar_position: 20
 A Remote Access Gateway deployment uses three certificates. The installers and configuration scripts create all three as self-signed certificates, so the portal works after installation. Browsers show a certificate warning until you replace the portal certificate with one from a trusted certificate authority (CA).
 
 | Certificate | Where | Created by | Used for |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Portal certificate | `nginx.crt` and `nginx.key` in `C:\ProgramData\Stealthbits\PAM\RagPortal` | `Configure-Nginx.ps1` | The HTTPS connection from the user's browser to the portal on port 443. |
 | Gateway certificate | The IIS binding of the **NPS Gateway Web Service** site on port 6550 | The gateway installer | The HTTPS connection from the portal to the gateway. |
 | guacd certificate | `guacd.crt`, `guacd.key`, and `guacd.thumbprint` in `C:\ProgramData\Stealthbits\PAM\RagGateway` | `Configure-Gateway.ps1` | The TLS connection from the gateway to guacd on port 4822. |

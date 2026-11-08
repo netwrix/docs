@@ -19,7 +19,7 @@ Administrators can add their own activities. To build one, see [Create an activi
 Select an activity in the list to show its settings.
 
 | Setting | What it controls |
-|---|---|
+| --- | --- |
 | **Name** and **Description** | How the activity appears in the list and in access policies. |
 | **Platform** | The type of resource that the activity runs on. |
 | **Login Account** | The account that the session uses to log in to the resource. See [Login account types](#login-account-types). |
@@ -33,7 +33,7 @@ Other fields appear depending on the login account and the activity type. [Creat
 The **Activity Type** list offers three types.
 
 | Activity type | Use it when |
-|---|---|
+| --- | --- |
 | Interactive | The requester logs on to a host desktop or command-line interface, either directly or through the proxy. |
 | Interactive App Launch | The session launches an application on the requested resource, rather than a full desktop. |
 | Task Automation | The activity runs an automated script and needs no interaction from the user. |
@@ -45,7 +45,7 @@ Privilege Secure also has two built-in activity types, Credential Release and Fi
 The login account decides which account the user connects with on the resource.
 
 | Login account | How the session logs in |
-|---|---|
+| --- | --- |
 | Requester | The user's own account. The user logs on to the resource directly or through the proxy, and needs a matching account on the resource and its password. Use it to avoid a separately managed account. |
 | Managed | An account that Privilege Secure manages. The account persists on the resource after it is created. When the session ends or is canceled, Privilege Secure rotates the password and disables the account, or deletes it when **Delete After Use** is selected. Use it when the user's desktop experience, such as the profile, must persist across sessions. The user can see the password in the Privilege Secure Console during an active session. |
 | Activity Token | A unique, time-limited account that Privilege Secure creates when the activity starts and removes when it completes. Use it when each session needs a clean profile, for example for vendors and contractors. [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md) controls the generated account name. |

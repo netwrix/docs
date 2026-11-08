@@ -19,7 +19,7 @@ C:\ProgramData\Stealthbits\PAM\RagGateway
 The gateway loads the following settings files in this order. A later file overrides an earlier one.
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `appsettings.default.json` | The shipped defaults. Don't edit it. |
 | `appsettings.json` | The settings that `Configure-Gateway.ps1` writes. |
 | `appsettings.user.json` | Optional overrides. The gateway creates the file with a `RestService` block (`Url` and `InsecureSkipVerify`) when it is missing. |
@@ -46,7 +46,7 @@ Restart-WebAppPool -Name NPSGatewayAppPool
 ## Settings
 
 | Key | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `Uri` | `https://*:6550` | The address and port the gateway listens on. |
 | `Cors.AllowOrigins` | `[]` | The origins that the gateway allows for cross-origin requests. |
 | `NPS.Uri` | `https://localhost:6500` | The Netwrix Privilege Secure for Access Management (Privilege Secure) web service the gateway forwards requests to. `Configure-Gateway.ps1 -NPSHost` sets this value. Use the form `https://<nps-server>:6500`. |
@@ -99,7 +99,7 @@ When `InsecureSkipVerify` is `true`, the gateway accepts any certificate from th
 `Client.DefaultArguments` holds the arguments the gateway uses when the browser doesn't supply them. The shipped defaults are:
 
 | Protocol | Defaults |
-|---|---|
+| --- | --- |
 | RDP | `args=connect`, `port=3389`, `width=1024`, `height=768`, `dpi=96`, `security=any`, `ignore-cert=true` |
 | VNC | `args=connect`, `port=5900`, `width=1024`, `height=768`, `dpi=96`, `version=1.5.0` |
 | SSH | `args=connect`, `port=22`, `width=1024`, `height=768`, `dpi=96`, `version=1.5.0` |

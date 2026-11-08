@@ -57,7 +57,7 @@ Mapping adds the computers in an Active Directory OU or CN to the group.
 
 For example, enter `OU=Servers,DC=example,DC=com` as the **Distinguished Name** and select **Include Child OUs**.
 
-The mapping runs again after every manual or scheduled domain sync, for all groups of that domain, so it follows the schedule you set on the domain. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md). **Sync Now** starts a domain sync and then maps every OU-mapped group of that domain. When it runs, members that are no longer in the OU are removed from the group.
+The mapping runs again after every manual or scheduled domain sync, for all groups of that domain. It follows the schedule you set on the domain. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md). **Sync Now** starts a domain sync and then maps every OU-mapped group of that domain. When it runs, Privilege Secure removes members that are no longer in the OU from the group.
 
 **Sync Now** is unavailable until you save the group, and while you edit it. When you select it, the **Confirm Resource Group - OU sync** window explains that a domain sync runs first, followed by an OU sync for all domain resource groups. Select **Sync Now** in that window to continue.
 
@@ -73,7 +73,7 @@ When you select **Auto-Onboard**, two more fields appear.
 
 ## Prefer service nodes for a group
 
-By default, Host Scan and Action services take the next available job. A resource group can name preferred services. This is called affinity. A common use is a group per site, with the closest service nodes assigned to it.
+By default, Host Scan and Action services take the next available job. A resource group can name preferred services. This setting is called affinity. A common use is a group per site, with the closest service nodes assigned to it.
 
 1. Open the resource group.
 1. Select the **Host Scan Services** or **Action Services** tab.
@@ -90,10 +90,10 @@ Both tabs have **Add** and **Remove** buttons. Their columns are **Service Name*
 
 ## Resource group tabs
 
-A saved group has these tabs. The **Host Scan Services** and **Action Services** tabs appear only when the resource group affinity feature is enabled.
+A saved group has these tabs. The **Host Scan Services** and **Action Services** tabs appear when the resource group affinity feature is on. The feature is on by default.
 
 | Tab | Shows |
-|---|---|
+| --- | --- |
 | **Resources** | The resources in the group. |
 | **Access Policies** | The access policies that include the group. |
 | **Connection Profiles** | The connection profiles that include the group. The default profile appears here. |
@@ -113,6 +113,6 @@ The table has these columns: **Managed**, **Local Admin**, **Resource**, **Opera
 
 ## Copy or delete a group
 
-Point to a group in the list to show the copy and delete icons. The copy icon duplicates the group. The trash icon deletes it after you confirm.
+Hover over a group in the list to show the copy and delete icons. The copy icon duplicates the group. The trash icon deletes it after you confirm.
 
-Deleting a group doesn't delete its resources. They stay in Privilege Secure and leave the group. If **Manage Local Administrator Accounts** is **On (manage all accounts)**, Privilege Secure stops managing the local Administrator accounts on the group's resources before it deletes the group. The trash can icon is unavailable for the default groups and for groups that a platform created.
+Deleting a group doesn't delete its resources. They stay in Privilege Secure and leave the group. If **Manage Local Administrator Accounts** is **On (manage all accounts)**, Privilege Secure stops managing the local Administrator accounts on the group's resources before it deletes the group. The trash icon is unavailable for the default groups and for groups that a platform created.

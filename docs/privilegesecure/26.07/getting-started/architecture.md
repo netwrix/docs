@@ -13,7 +13,7 @@ For the complete port list, see [Ports](/docs/privilegesecure/26.07/requirements
 ## Components
 
 | Component | Role | Default port |
-|---|---|---|
+| --- | --- | --- |
 | Web service | Hosts the Privilege Secure Console and the REST API in Microsoft Internet Information Services (IIS). It reads and writes the database and communicates with each service. | TCP 6500 (HTTPS) |
 | License service | Stores the license and reports the license state to the web service. It listens on the local host. | TCP 6501 |
 | Action service | Connects to managed resources and runs the actions that activities define, such as Active Directory sync, password changes, and account orchestration. You can run several Action services. | Outgoing connections vary by action |
@@ -47,7 +47,7 @@ Open the console at `https://<nps-server>:6500`. See [Ports](/docs/privilegesecu
 The Remote Access Gateway lets external users start browser-based RDP and SSH sessions without direct access to the console. It is an add-on with its own installers. The components are:
 
 | Component | Where it runs | Default port |
-|---|---|---|
+| --- | --- | --- |
 | Portal | In the DMZ. It runs on nginx as the `SbPAMRagPortal` Windows service and is the entry point for external users. | TCP 443, with TCP 80 redirecting to HTTPS |
 | Gateway | Inside the network. It is an IIS site that passes a fixed set of requests from the Portal to the console. | TCP 6550 |
 | guacd | On the Gateway host under Windows Subsystem for Linux 2 (WSL 2). It is the Apache Guacamole 1.6.0 daemon and runs in Docker. | TCP 4822 |

@@ -15,7 +15,7 @@ Open the page from the left navigation: click **Users & Groups**, then **Role Ma
 ## Built-in roles
 
 | Role | What it grants |
-|---|---|
+| --- | --- |
 | **Administrators** | Access to every configuration option in the console. |
 | **Users** | The ability to request and start sessions under the access policies that include the user. The role is assigned when you add the user to the console. |
 | **Reviewers** | The ability to review access entitlements. See [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md). |
@@ -40,7 +40,7 @@ The role list on the left has a **Search Roles...** box and a **+** button (**Ad
 For the **Administrators** and **Reviewers** roles, the member list has these controls:
 
 | Control | What it does |
-|---|---|
+| --- | --- |
 | **Search** and **Type** filter | Find members by text or by account type. |
 | **Add User** | Opens a window to add members. |
 | **Remove** | Takes the selected members out of the role. |
@@ -54,7 +54,7 @@ The **Users** role lists every licensed user and shows the same filters and the 
 Custom roles and the **Auditors** role are built from permissions. A role has one target, and the target decides which permissions the role can hold.
 
 | Target | Permission | What it allows |
-|---|---|---|
+| --- | --- | --- |
 | Auditors | **View Recordings** | Review recorded sessions of the users and resources assigned to the role. |
 | Auditors | **Live Session Viewer** | Watch sessions in progress. |
 | Auditors | **Terminate Session** | End a live session. Requires **Live Session Viewer**. |

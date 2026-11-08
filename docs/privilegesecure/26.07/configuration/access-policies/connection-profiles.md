@@ -15,11 +15,11 @@ To open the page, select **Access Policy** > **Connection Profiles** in the left
 ## Create a connection profile
 
 1. Select **Access Policy** > **Connection Profiles**.
-2. Click the plus (**+**) button.
-3. Enter a **Name**. Names must be unique.
-4. (Optional) Enter a **Description** that states the purpose of the profile.
-5. Review each section in this order: **Proxy**, **Session Control**, **Credential Management**, **Website**, **Custom Fields**, and **Approval Workflow**.
-6. Click **Save**.
+1. Click the plus (**+**) button.
+1. Enter a **Name**. Names must be unique.
+1. (Optional) Enter a **Description** that states the purpose of the profile.
+1. Review each section in this order: **Proxy**, **Session Control**, **Credential Management**, **Website**, **Custom Fields**, and **Approval Workflow**.
+1. Click **Save**.
 
 The new profile appears in the list. Select it in the **Connection Profile** list of an [access policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md#create-the-policy) to use it.
 
@@ -30,7 +30,7 @@ For example, to create a profile for short sessions that need a ticket, enter th
 The console has two sets of defaults. The seeded **Default** profile has one set. The new-profile form pre-fills another set. Settings that aren't listed as different have the same default in both.
 
 | Setting | Seeded Default profile | New-profile form |
-|---|---|---|
+| --- | --- | --- |
 | **Description** | "Default connection profile." | Empty |
 | **Max Duration (minutes)** | 120 | 120 |
 | **Session End Notification (minutes)** | 5 | 5 |
@@ -62,7 +62,7 @@ The console has two sets of defaults. The seeded **Default** profile has one set
 The **Proxy** section controls which proxy servers start sessions and what the proxy records. The section note reads "Leave either of these blank to use default settings".
 
 | Setting | Description |
-|---|---|
+| --- | --- |
 | **RDP Proxy** | The RDP proxy to use, in `host:port` format. If blank, the local proxy on the Privilege Secure server is used. The default RDP proxy port is 4489. |
 | **SSH Proxy** | The SSH proxy to use, in `host:port` format. If blank, the local proxy on the Privilege Secure server is used. The default SSH proxy port is 4422. |
 | **Allow Proxy Auto-connect** | When you clear it, the requester must give secondary authentication (password and multifactor authentication) to start a proxy connection from the dashboard. |
@@ -79,7 +79,7 @@ Each proxy field takes one server. To use more than one proxy server, put a load
 The **Session Control** section sets the session length, extensions, and the information users must provide.
 
 | Setting | Description |
-|---|---|
+| --- | --- |
 | **Max Duration (minutes)** | The session length for a new activity request. The default is 120. Sessions for activities without a resource also respect this value. |
 | **Session End Notification (minutes)** | How long before the session ends the requester is notified in the RDP or SSH client. It works for direct connections and for connections through the proxy. The default is 5. |
 | **Enable Session Extension** | Lets users extend the current session. The default is off. |
@@ -111,7 +111,7 @@ To define custom complexity rules for activity token accounts, see [Activity tok
 The **Credential Management** section controls how users view the password of the managed account for a session or checkout.
 
 | Setting | Description |
-|---|---|
+| --- | --- |
 | **Allow User to Access Password** | Lets users view or copy the password of the managed account from the dashboard. The password is valid only while the session is active. The default is on. |
 | **Enable credential auto-fill in browser extension** | Allows auto-fill in the browser extension. The default is on. |
 | **Enable 'Show Password' option in user interface and browser extension** | Shows the Show Password icon on the sign-in page of the console and the browser extension. The default is off. |
@@ -126,7 +126,7 @@ Select **Allow User to Access Password** to show the two options for auto-fill a
 The **Website** section applies to website sessions.
 
 | Setting | Description |
-|---|---|
+| --- | --- |
 | **Clear Website Data Before Start** | Clears the browser cache before the session starts. |
 | **Clear Website Data After Stop** | Clears the browser cache after the session ends. |
 | **Record Session Audio** | Records the computer audio during the session. |
@@ -136,7 +136,7 @@ The **Website** section applies to website sessions.
 Custom fields add data entries that users complete when they create a session. Click **Add Custom Field** to add a row. Click **Remove Custom Field** to delete a row.
 
 | Setting | Description |
-|---|---|
+| --- | --- |
 | **Label** | The display name of the field. |
 | **Variable Name** | The name that PowerShell scripts use to read the field. |
 | **Description** | A description of the field. |
@@ -152,7 +152,7 @@ A profile holds up to three custom fields. A variable name must be unique within
 The **Approval Workflow** radio buttons set whether a session needs approval.
 
 | Option | Description |
-|---|---|
+| --- | --- |
 | **Automatic** | No approval is required. This is the default. |
 | **Tiered** | One or more approver tiers must approve the session before the requester can sign in. |
 

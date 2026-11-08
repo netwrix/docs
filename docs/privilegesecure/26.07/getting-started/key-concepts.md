@@ -13,7 +13,7 @@ Privilege Secure grants access through an **access policy**. A policy links the 
 An access policy connects users to resources and runs activities to make that connection possible. Every policy is one of two types.
 
 | Policy type | What it grants | What it contains |
-|---|---|---|
+| --- | --- | --- |
 | Resource-based | Access to remote systems such as servers, databases, and websites. | Users and groups, activities, resources, and a connection profile. |
 | Credential-based | Access to credentials and files stored in a vault. | Users and groups, credentials, or files, and a connection profile. The activities are fixed. |
 
@@ -36,7 +36,7 @@ An activity is the work that Privilege Secure performs before, during, and after
 The **Activity Type** field offers three values:
 
 | Activity type | Use |
-|---|---|
+| --- | --- |
 | Interactive | The user connects to the resource with RDP, SSH, or a browser. |
 | Interactive App Launch | The user launches an application on the resource. |
 | Task Automation | Privilege Secure runs the actions without an interactive connection. |
@@ -50,7 +50,7 @@ See [Activities](/docs/privilegesecure/26.07/configuration/activities/activities
 The user who signs in to Privilege Secure isn't always the account that signs in to the remote system. The account used on the remote system is the login account. Each activity sets the **Login Account** to one of these values:
 
 | Login account | Description |
-|---|---|
+| --- | --- |
 | Requester | The user's own account is also the login account. |
 | Managed | An account that Privilege Secure manages and controls. |
 | Activity Token | An ephemeral account that Privilege Secure creates for the session. The **Delete After Use** option removes it when the session ends. |
@@ -81,7 +81,7 @@ A connection profile sets how users connect. It controls the session length, whe
 A session is a time-limited grant of access. It is the unit of work for users. A session moves through these stages:
 
 | Stage | Console label | Meaning of the session state |
-|---|---|---|
+| --- | --- | --- |
 | Approval required | **Waiting for approval** | The connection profile requires approval, and no approver has answered. |
 | Pending | **Pending**, or **Provisioning** in the active sessions list | The session is scheduled and has not started. |
 | Active | **Available** or **Logged In** | The pre-session actions finished and the user can connect. **Logged In** appears when the user's sign-in falls within the session window. Otherwise the session shows **Available**. |
@@ -113,7 +113,7 @@ See [Manage credentials](/docs/privilegesecure/26.07/admin/credentials/manage-cr
 Privilege Secure has four built-in roles:
 
 | Role | Purpose |
-|---|---|
+| --- | --- |
 | Administrators | Configure and manage the product. The built-in Admin account is always an administrator. Anyone granted console access is also an administrator. |
 | Users | Request and run sessions. This is the licensed-user role. |
 | Reviewers | Review access in access certifications. |

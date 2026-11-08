@@ -71,7 +71,7 @@ A confirmation window lists the roles or accounts you selected. Confirm to remov
 
 Removing an account from the Administrators or Reviewers role takes effect at the user's next sign-in or token renewal, not at the moment you click **Remove**. Auditors and custom-role permissions are checked on each request, so removing those roles takes effect at once.
 
-The console doesn't let you remove yourself from the **Administrators** role. **Remove** is disabled when your own account, or a group that you belong to, is selected for that role, and its tooltip reads "Admins can't remove themselves from the admin role." or "Admins can't remove groups they're in from the admin role." This applies to the **Administrators** role only.
+The console doesn't let you remove yourself from the **Administrators** role. **Remove** is disabled when you select your own account, or a group that you belong to, for that role. Its tooltip reads "Admins can't remove themselves from the admin role." or "Admins can't remove groups they're in from the admin role." This applies to the **Administrators** role only.
 
 ## Custom roles
 

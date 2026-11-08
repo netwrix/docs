@@ -9,7 +9,7 @@ sidebar_position: 30
 Netwrix Privilege Secure for Access Management (Privilege Secure) stores its data in one of two databases:
 
 | Database | Provided by | Default port |
-| -------- | ----------- | ------------ |
+| --- | --- | --- |
 | PostgreSQL 16 (bundled installer) | Netwrix | 5432 |
 | Microsoft SQL Server | You | 1433 |
 

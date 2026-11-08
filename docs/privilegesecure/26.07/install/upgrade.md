@@ -1,6 +1,6 @@
 ---
 title: "Upgrade Privilege Secure"
-description: "Upgrade Privilege Secure from 25.12, 26.03, or an earlier 26.07 release to 26.07, including the pre-upgrade checks and the known issues to expect."
+description: "Upgrade Privilege Secure to 26.07 from 25.12, 26.03, or an earlier 26.07 release, with the pre-upgrade checks and known issues."
 sidebar_position: 110
 ---
 
@@ -57,7 +57,7 @@ Privilege Secure creates two default activity groups: **Domain Administrator Acc
 2. Run `NPS_Setup.exe` as an administrator. The Setup Launcher shows the installed version and the version you are installing.
 3. If the launcher offers a PostgreSQL upgrade, complete [Upgrade PostgreSQL from 12 to 16](#upgrade-postgresql-from-12-to-16) first.
 4. Click **Netwrix Privilege Secure Upgrade**.
-5. When the launcher reports an existing installation, click **OK**. The launcher stops the services, uninstalls an old Stealthbits Privileged Activity Manager installation if one exists, and starts the installer, which replaces the earlier version.
+5. When the launcher reports an existing installation, click **OK**. The launcher stops the services and uninstalls an old Stealthbits Privileged Activity Manager installation if one exists. It then starts the installer, which replaces the earlier version.
 6. When the installer finishes, click **OK** to restart the server.
 7. Clear the browser cache on the computers that use the Privilege Secure Console.
 8. Open the console and sign in. The URL is `https://<nps-server>:6500`.
@@ -83,7 +83,7 @@ When the Setup Launcher detects PostgreSQL 12, it asks for two database steps be
 2. When the button changes, click **Step 2 - Migrate PostgreSQL Data to V16**. Read the **Migrate Database?** warning, and click **Yes** to continue.
 3. When the migration finishes, click **Netwrix Privilege Secure Upgrade**.
 
-Keep these points in mind:
+These points apply to the migration:
 
 - The launcher shows the **Estimated Required Space**, which equals the size of the PostgreSQL 12 data folder. If the drive for the new data has less free space than that, the launcher shows "requires at least `<size>` free. Found `<size>` available. Migration blocked." and stops.
 - Set the Windows regional format to **English (United States)** before you start. Otherwise the migration fails with the message "Locale is not supported by the target database".

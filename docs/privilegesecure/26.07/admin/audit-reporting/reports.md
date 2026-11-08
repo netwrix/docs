@@ -28,7 +28,7 @@ The report tree is on the left. Use **Search Reports...** to filter the tree by 
 The tree has these folders:
 
 | Folder | Contents |
-|---|---|
+| --- | --- |
 | **Favorites** | Reports you marked with a star. Select the star beside a report name again to remove it. |
 | **Predefined Reports** | **Account Password Age**, **All Activity Sessions**, **Password Rotations**, and the **Platform Based** folder. |
 | **Platform Based** | **All Active Directory Sessions**, **All Cisco Sessions**, **All Entra ID Sessions**, **All Linux Sessions**, **All Microsoft SQL Server Sessions**, **All Oracle Sessions**, **All Website Sessions**, and **All Windows Sessions**. |
@@ -69,7 +69,7 @@ For example, to report on Windows sessions only, select the source **Activity Se
 ### Sources
 
 | Source | Reports on |
-|---|---|
+| --- | --- |
 | **Activity Sessions** | Sessions that users ran. Filter attributes are **Domain**, **Platform**, **Activity**, **Target User**, **Target Host**, and **User**. |
 | **Resource Sync** | Resources that synced. Filter attributes are **Name**, **Operating System**, **Version**, **IP Address**, and **DnsHostName**. |
 | **Password Rotation** | Password rotation events. Filter attributes are **User**, **Target Resource**, **Change Reason**, and **Results**. |
@@ -92,7 +92,7 @@ The session reports, including **All Website Sessions**, have a **Target** colum
 Predefined, platform-based, and custom reports work the same way. The **Filters** tab has these buttons:
 
 | Button | Description |
-|---|---|
+| --- | --- |
 | **Run Query** | Runs the report and shows the matching data. |
 | **Download Report** | Downloads the report. |
 | **Save** | Saves your changes. The button stays disabled until you change something. Saving a predefined report creates a copy in **My Reports**. |
@@ -118,7 +118,7 @@ After you subscribe, the **Subscriptions** tab shows **CSV** and **PDF** check b
 The **Subscriptions** tab has these controls:
 
 | Control | Description |
-|---|---|
+| --- | --- |
 | **Search** | Filters the subscriptions by user name. |
 | **Subscribe** | Subscribes you to the report. |
 | **Refresh** | Reloads the list. |
@@ -126,7 +126,7 @@ The **Subscriptions** tab has these controls:
 The table has these columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **USER** | The subscribed user. |
 | **REPORT** | The report name. |
 | **SCHEDULE** | How often the report is sent. |

@@ -1,6 +1,6 @@
 ---
 title: "Run the setup wizard"
-description: "Sign in to the console for the first time and complete the five-step setup wizard to create the first administrator, sync Active Directory, and add a resource."
+description: "Complete the five-step setup wizard to create the first administrator, sync Active Directory, and add a resource."
 sidebar_position: 50
 ---
 
@@ -51,7 +51,7 @@ Each wizard page shows its position, for example "Step 2 out of 5".
    2. Enter the code that the app shows in **Verification Code**.
    3. Click **Next** while the code is still valid.
 
-   To register MFA later, click **Setup Later**. The wizard then skips the recovery codes. The account then uses the built-in **Not Required** authentication connector, so it signs in without a verification code. To register MFA later, an administrator assigns the **Internal MFA** connector to the account on the **Authentication Connector** tab, as described in [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector). The account registers its authenticator at the next sign-in. See [Register multi-factor authentication](/docs/privilegesecure/26.07/user-guide/sign-in.md#register-multi-factor-authentication).
+   To register MFA later, click **Setup Later**. The wizard then skips the recovery codes. The account then uses the built-in **Not Required** authentication connector, so it signs in without a verification code. To add MFA afterward, an administrator assigns the **Internal MFA** connector to the account on the **Authentication Connector** tab, as described in [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector). The account registers its authenticator at the next sign-in. See [Register multi-factor authentication](/docs/privilegesecure/26.07/user-guide/sign-in.md#register-multi-factor-authentication).
 
    {/* TODO screenshot: Register Authenticator page. Blur the QR code and the key. */}
 

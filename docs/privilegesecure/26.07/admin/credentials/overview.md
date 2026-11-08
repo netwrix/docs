@@ -25,7 +25,7 @@ The toolbar buttons are **Manage**, **Unmanage**, **Service Account Details**, *
 Select a filter chip to open its "Filter by" popup. An active filter stays on the page as a chip with an **X**. Select the **X** to clear it. Use **Search** to match an account or resource name.
 
 | Filter | Values |
-|---|---|
+| --- | --- |
 | **Method** | All, Not Managed, Managed, Automatic, Manual |
 | **Managed type** | All, Internal, Standard, Service |
 | **Privilege type** | Not Set, Administrator, Power User, Guest, User, Superuser, Linux User, Cisco Privilege 0, Cisco Privilege 1, Cisco Privilege 15 |
@@ -39,7 +39,7 @@ The page also shows the number of results and a **Refresh** button.
 You can sort and resize every column.
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | **Account** | The account name. Managed rows also show the **Copy Password to Clipboard** and **View Password** icons. The name isn't a link, because accounts have no detail page. |
 | **Resource** | The resource that holds the account. Select the link to open the resource. |
 | **Privilege** | The privilege type of the account on the resource. |
@@ -57,7 +57,7 @@ You can sort and resize every column.
 ## Method
 
 | Value | Meaning |
-|---|---|
+| --- | --- |
 | **Automatic** | Privilege Secure rotates the password on the schedule of the platform, or of a [credential policy override](/docs/privilegesecure/26.07/admin/credentials/policy-overrides.md). |
 | **Manual** | You rotate the password yourself, or you update it on both the resource and in Privilege Secure. |
 | **Not Managed** | Privilege Secure doesn't manage the account and has never stored a password for it. |
@@ -69,7 +69,7 @@ The **Managed** filter value matches both **Automatic** and **Manual** accounts.
 The managed type decides how an account rotates. See [Rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
 
 | Value | Meaning |
-|---|---|
+| --- | --- |
 | **Standard** | A local or domain user account, including managed users that activity sessions create. |
 | **Internal** | An account that Privilege Secure itself uses, with no dependencies. See [Manage internal service accounts](/docs/privilegesecure/26.07/admin/credentials/internal-service-accounts.md). |
 | **Service** | An account that one or more Windows services or scheduled tasks use. This includes Internal accounts that have dependencies. See [Rotate service accounts and their dependencies](/docs/privilegesecure/26.07/admin/credentials/service-account-dependencies.md). |
@@ -77,7 +77,7 @@ The managed type decides how an account rotates. See [Rotation methods](/docs/pr
 ## Status
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | **Unspecified** | No verification has run. |
 | **Verified** | The password on the resource matches the password that Privilege Secure stores. |
 | **Mismatch** | The verification found that the password on the resource doesn't match the stored password. |

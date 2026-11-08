@@ -15,7 +15,7 @@ Select **System Settings** > **RDP Options** to open the panel.
 ## RDP options
 
 | Option | Description | Default |
-|---|---|---|
+| --- | --- | --- |
 | **Default Resolution** | The resolution the session uses when it first connects. | 1440x900 |
 | **Multi Monitor** | Select to let the session span multiple monitors. | Cleared |
 | **Smart Sizing** | Select to scale the remote desktop to fit the client window. | Selected |

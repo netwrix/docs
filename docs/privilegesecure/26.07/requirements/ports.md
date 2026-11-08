@@ -122,6 +122,8 @@ Antivirus exclusions apply on every server. See [Additional service node and pro
 
 The Proxy Service installer creates Windows Firewall rules for 4422, 4489, and the 6520 to 6525 range.
 
+To change the RDP and SSH proxy ports, or any other proxy setting, see [Proxy settings reference](/docs/privilegesecure/26.07/configuration/proxy-settings.md).
+
 A proxy server joins the node mesh through the join address, which uses port 6520 unless the address names another port.
 
 ## Remote Access Gateway

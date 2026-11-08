@@ -30,7 +30,7 @@ For the other connector types and how a user's connector is chosen, see [Authent
 ## MFA connector fields
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Server FQDN / IP** | The fully qualified domain name (FQDN) or IP address of the RADIUS server. |
 | **Remote Port** | The port the RADIUS server listens on. Enter a value from 1 to 65535. The seeded **Duo** connector uses 1812. |
 | **Auth. Type** | The protocol for communication with the RADIUS server: **MSCHAPv2** (Microsoft Challenge Handshake Authentication Protocol version 2) or **PAP** (Password Authentication Protocol). Select the type that the RADIUS server expects. |
@@ -61,7 +61,7 @@ The **Format for username** list offers these presets. You can also enter your o
 Privilege Secure replaces these placeholders with the user's values from Active Directory before it sends the user name to the RADIUS server:
 
 | Placeholder | Replaced with |
-|---|---|
+| --- | --- |
 | `%samaccountname%` | The sAMAccountName without the domain. |
 | `%domain%` | The NetBIOS domain name. |
 | `%fqdn%` | The DNS name of the user's domain. |
@@ -76,7 +76,7 @@ When **Format for username** is empty, Privilege Secure sends the sAMAccountName
 This example connects Privilege Secure to a Duo RADIUS proxy that prompts the user's phone application.
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Name | `Duo RADIUS` |
 | **Connector Type** | **MFA** |
 | **Server FQDN / IP** | `<radius-server>` |

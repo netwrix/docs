@@ -15,7 +15,7 @@ For the full path from installation to the first session, see [Quick start](/doc
 Configuration settings are in two places in the left navigation.
 
 | Menu item | What it holds |
-|---|---|
+| --- | --- |
 | **Configuration** | **Service Accounts**, **Service Nodes**, **Scheduled Tasks**, **Authentication**, **Integration Connectors**, **SIEM Servers**, and **SIEM Templates**. |
 | **System Settings** | The system-wide settings panels, **Action Service Settings**, and **Database**. |
 
@@ -44,8 +44,10 @@ Complete these tasks in order. The later tasks depend on the earlier ones.
 These tasks aren't part of the core setup.
 
 | Task | Where to find it |
-|---|---|
+| --- | --- |
 | Set RDP file options and sign RDP files | [Configure and sign RDP files](/docs/privilegesecure/26.07/configuration/system-settings/rdp-files.md) |
 | Allow or restrict SSH algorithms | [Configure SSH algorithms](/docs/privilegesecure/26.07/configuration/ssh-algorithms.md) |
+| Change the SSH or RDP proxy settings | [Proxy settings reference](/docs/privilegesecure/26.07/configuration/proxy-settings.md) |
+| Change the SSH client timing or log settings | [SSH client settings reference](/docs/privilegesecure/26.07/configuration/ssh-client-settings.md) |
 | Send events to a SIEM | [SIEM servers](/docs/privilegesecure/26.07/integrations/siem/siem-servers.md) |
 | Monitor service nodes and scheduled tasks | [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md) and [Scheduled tasks](/docs/privilegesecure/26.07/admin/service-nodes/scheduled-tasks.md) |

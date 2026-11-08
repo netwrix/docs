@@ -13,7 +13,7 @@ Auditors review what other users did in their sessions. You can find past sessio
 An administrator gives you the Auditors role and sets what it covers. The role controls what you can do and which sessions you can see.
 
 | Permission | Lets you |
-|---|---|
+| --- | --- |
 | **View Recordings** | Review recordings of historical sessions for the assigned users and resources. |
 | **Live Session Viewer** | Watch live sessions for the assigned users and resources. |
 | **Terminate Session** | Stop a live session. The user can start a new session. Requires **Live Session Viewer**. |
@@ -38,7 +38,7 @@ In the left navigation, an auditor sees at least **Dashboard** and **My Activiti
 The **All Historical** and **Mine** tabs appear only for administrators. An auditor sees one list on the **Historical** tile, showing the sessions in the role's **Users** and **Resources** scope plus the auditor's own sessions.
 
 | Filter | Narrows the list by |
-|---|---|
+| --- | --- |
 | **Search** | Any column value. Partial matches count. |
 | **Resource name** | The value in the **Host** column. |
 | **User name** | The value in the **Session User** column. |

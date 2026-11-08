@@ -29,7 +29,7 @@ Each built-in connector connects to the address in its own settings. CyberArk, H
 ## Available connectors
 
 | Connector template | Source of the credentials | Page |
-|---|---|---|
+| --- | --- | --- |
 | **BYOV** | Any vault, through PowerShell scripts that you provide. Also Privilege Secure itself. | [Bring Your Own Vault connector](/docs/privilegesecure/26.07/integrations/vaults/byov.md) |
 | **CyberArk** | CyberArk | [CyberArk integration](/docs/privilegesecure/26.07/integrations/vaults/cyberark.md) |
 | **HashiCorp** | HashiCorp Vault | [HashiCorp Vault integration](/docs/privilegesecure/26.07/integrations/vaults/hashicorp.md) |
@@ -48,7 +48,7 @@ Each built-in connector connects to the address in its own settings. CyberArk, H
 The check-in step runs for every connector. When the last session that uses a credential ends, Privilege Secure erases the stored password and runs the connector's check-in. What the built-in check-in does depends on the connector:
 
 | Connector | Built-in check-in |
-|---|---|
+| --- | --- |
 | **BYOV** | Deletes the credential record from Privilege Secure. |
 | **CyberArk** | Does nothing. |
 | **HashiCorp** | Checks the account back in to the library. |

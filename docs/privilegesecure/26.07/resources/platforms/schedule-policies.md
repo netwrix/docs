@@ -35,7 +35,7 @@ The page lists every schedule policy. Each policy is named after its recurrence,
 The **Schedule Policy Editor** offers four frequencies under **Select Frequency**. The fields change with the frequency you select.
 
 | Frequency | Fields |
-|---|---|
+| --- | --- |
 | **Every x Hours** | The number of hours between runs, from 1 to 24. The default is 1. |
 | **Every x Days** | The number of days between runs, from 1 to 512, and the time of day. |
 | **Weekly** | The **Day of Week** and the time of day. The list offers one day, Monday through Sunday. |
@@ -73,7 +73,7 @@ Tasks that use the policy run on the new schedule.
 
 1. Open the **Schedule Policies** page.
 1. Hover over the policy in the list.
-1. Select the trash can icon, and then confirm the deletion.
+1. Select the trash icon and confirm the deletion.
 
 A policy that a platform uses as its rotation, protection, or verification schedule, or that a credential policy override uses, can't be deleted. The deletion fails and the console shows an **Unable to delete** message with the error. Select a different policy in those places first, and then delete the policy. A policy that a platform uses only as its scan schedule, or that a single resource or account uses as a verification override, can be deleted. Privilege Secure clears the schedule in those places.
 

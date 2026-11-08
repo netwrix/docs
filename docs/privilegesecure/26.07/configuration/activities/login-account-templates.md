@@ -33,7 +33,7 @@ If a **Custom** requester login format with a trim-based template produces a nam
 Privilege Secure replaces each variable with a value for the user and the resource when the session starts.
 
 | Variable | Value |
-|---|---|
+| --- | --- |
 | `%samaccountname%` | The user name part of the requester's account, without the domain. |
 | `%domain%` | The NetBIOS name of the requester's domain. |
 | `%targetdomain%` | The NetBIOS name of the domain of the resource. |
@@ -59,7 +59,7 @@ When the requester is a local Privilege Secure user, the user has no domain. In 
 ### Examples
 
 | Template | Requester | Login account |
-|---|---|---|
+| --- | --- | --- |
 | `%domain%\%samaccountname%-a` | `example\jsmith` | `example\jsmith-a` |
 | `%upn-username%-a@%upn-domain%` | `jsmith@example.com` | `jsmith-a@example.com` |
 | `%email-username%-a@%email-domain%` | `jsmith@example.com` | `jsmith-a@example.com` |
@@ -80,7 +80,7 @@ Returns the first characters of a string.
 ```
 
 | Argument | Description |
-|---|---|
+| --- | --- |
 | `string` | The text or variable to change. |
 | `count` | The number of characters to return, counting from the start. A positive number. If it is larger than the string, the whole string returns. |
 
@@ -95,7 +95,7 @@ Returns the part of a string that starts at an index, or the last characters of 
 ```
 
 | Argument | Description |
-|---|---|
+| --- | --- |
 | `string` | The text or variable to change. |
 | `index` | A positive number removes that many characters from the start and returns the rest. A negative number returns that many characters from the end. The value can't be `0`. |
 
@@ -110,7 +110,7 @@ Replaces every occurrence of one string with another.
 ```
 
 | Argument | Description |
-|---|---|
+| --- | --- |
 | `string` | The text or variable to change. |
 | `old` | The text to find. It can't contain a `%` character. |
 | `new` | The text to put in its place. It can't contain a `%` character. |
@@ -126,7 +126,7 @@ Removes characters from the end of a string.
 ```
 
 | Argument | Description |
-|---|---|
+| --- | --- |
 | `string` | The text or variable to change. |
 | `count` | The number of characters to remove from the end. Must be greater than `0`. If it is the same as or larger than the string length, the function returns an empty string. |
 

@@ -17,7 +17,7 @@ To open the page, select **Users & Groups** in the left navigation. The same lis
 The list shows four types of account.
 
 | Type | What it is | Add it with |
-|---|---|---|
+| --- | --- | --- |
 | User | An Active Directory (AD) user | [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md) |
 | Group | An AD group. Members sign in with their own accounts. | [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md) |
 | Application | An account for an automation tool that calls the REST API. It can't sign in to the console. | [Add application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md) |
@@ -42,7 +42,7 @@ The **Licenses** counter at the top right of the page shows the licenses in use 
 ## Columns
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | **TYPE** | An icon for the account type. |
 | **NAME** | The account name. Select the name to open the account's details page. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md). An account with no display name shows `<null>`. |
 | **USER NAME** | The `sAMAccountName` value. Groups leave this blank. |

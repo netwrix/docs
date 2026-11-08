@@ -9,7 +9,7 @@ sidebar_position: 30
 Privilege Secure sends email for approval requests, approval results, command restriction actions, and subscribed reports. Email needs two settings in two places:
 
 | Setting | Where | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | **Website URL** | **System Settings** > **Email** | The address that links in emails point to. |
 | Simple Mail Transfer Protocol (SMTP) server | **Configuration** > **Service Nodes** > `<node>` > **Email Service** > **Email Settings** | The server that delivers the email. |
 
@@ -40,7 +40,7 @@ The Email Service sends mail through your SMTP server. Configure it on each serv
 1. Click **Save**. The **Save** and **Cancel** buttons appear at the bottom of the page after you change a field.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **From Address** | The address shown in the **From** field of each email. |
 | **Hostname (FQDN or IP)** | The SMTP server. |
 | **Port** | The SMTP port. The default is 25. |

@@ -15,7 +15,7 @@ To open it, select **Auditing & Reporting** > **DB Change History**.
 ## Filter the history
 
 | Control | Description |
-|---|---|
+| --- | --- |
 | **Search** | Filters the table to rows that match the text you enter. |
 | **Change type** | Shows all changes (the default), **Additions**, **Updates**, or **Deletes**. |
 | **Data table** | Limits the history to one record type, such as Access Control Policy, Action, or Action Group. The default is `<all record types>`. |
@@ -29,7 +29,7 @@ The default range here is 7 days. The [Activity log](/docs/privilegesecure/26.07
 ## Read the table
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **WHEN** | Timestamp of the change. |
 | **BY** | The user who made the change. Changes made by the product itself show `<NPS Internal>`. |
 | **CHANGE** | The type of change: addition, update, or deletion. |

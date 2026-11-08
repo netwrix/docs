@@ -32,7 +32,7 @@ The application user appears on the **Users & Groups** page with the type **Appl
 Open the application user and select the **Authentication** tab. The **API Key** field is masked. Use the buttons beside it:
 
 | Button | Use |
-|---|---|
+| --- | --- |
 | **Reveal** | Show the key. The button changes to **Hide**. |
 | **Copy** | Copy the key to the clipboard. |
 | **Regenerate** | Replace the key with a new one. The previous key stops working, so update the tool that uses it. |

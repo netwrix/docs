@@ -69,7 +69,7 @@ See [Service accounts](/docs/privilegesecure/26.07/configuration/service-account
 6. Click **Save**.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **API Url**\* | The base URL of the Password Secure API, such as `https://<password-secure-server>/api`. |
 | **Service Account**\* | The service account that holds the Password Secure API key. |
 | **Skip Certificate Check** | Under **Advanced**. When selected, Privilege Secure doesn't validate the Password Secure server certificate. The option is cleared by default. Leave it cleared in production. |

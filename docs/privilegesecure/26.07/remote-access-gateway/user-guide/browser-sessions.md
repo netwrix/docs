@@ -19,7 +19,7 @@ In the Remote Access Gateway portal, you request a session for an activity and c
 After you sign in, the portal opens the **My Activities** page. Select the **Home** icon in the left navigation, or **Home** in the breadcrumb, to open the dashboard. It shows four tiles:
 
 | Tile | Shows |
-|---|---|
+| --- | --- |
 | **Active** | Your sessions that are provisioning, available, or in progress |
 | **Scheduled** | Your sessions with a later start time |
 | **Approvals** | Your session requests that wait for an approver to decide |
@@ -75,7 +75,7 @@ For the fields on each step, see [Request a session](/docs/privilegesecure/26.07
 
 The prompt asks for a password only. The account name comes from the activity's login account. If the target rejects the sign-in, see [Troubleshoot the Remote Access Gateway](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md#errconnect_logon_failure-after-you-enter-the-target-password).
 
-The target prompts for a password in a browser session whether or not **Allow Proxy Auto-connect** is on. That setting suppresses the prompt in a downloaded RDP file, which the Windows Remote Desktop client opens. The browser session builds its own connection to the gateway and doesn't carry the setting, so the target still asks for the password.
+The target prompts for a password in a browser session whether **Allow Proxy Auto-connect** is on or off. That setting suppresses the prompt in a downloaded RDP file, which the Windows Remote Desktop client opens. The browser session builds its own connection to the gateway and doesn't carry the setting, so the target still asks for the password.
 
 For an SSH target, the monitor icon opens a terminal in the browser on the **Live Sessions** page.
 
@@ -84,7 +84,7 @@ For an SSH target, the monitor icon opens a terminal in the browser on the **Liv
 The page shows the target desktop. A toolbar at the top has these controls:
 
 | Control | What it does |
-|---|---|
+| --- | --- |
 | **Resolution** | Sets the size of the remote display. Choose **Dynamic**, **1280x720**, **1920x1080**, **2560x1440**, or **3840x2160**. |
 | **Ctrl+Alt+Delete** | Sends the Ctrl+Alt+Delete key combination to the target. |
 | **Close** | Closes the session window. |

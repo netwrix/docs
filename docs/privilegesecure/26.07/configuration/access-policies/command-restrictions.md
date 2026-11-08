@@ -47,7 +47,7 @@ Go (RE2) syntax isn't the same as the POSIX extended regular expressions that `s
 ## Command restriction fields
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Name** | The name of the command restriction. |
 | **Email Recipient** | The email address that receives a message when a rule with **Email** selected matches. |
 | **Active** | Turns the rule on or off. New rules are active. |
@@ -59,7 +59,7 @@ Go (RE2) syntax isn't the same as the POSIX extended regular expressions that `s
 ### Actions
 
 | Action | Result |
-|---|---|
+| --- | --- |
 | **Log Only** | The console records the command. The command runs. |
 | **Block** | The console doesn't run the command. |
 | **Block And Lock** | The console doesn't run the command and locks the session. The user sees the custom lock message. |

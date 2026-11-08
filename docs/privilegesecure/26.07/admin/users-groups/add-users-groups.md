@@ -34,7 +34,7 @@ The accounts now appear on the **Users & Groups** page. For example, to give the
 The window has two tables. **Available Accounts** lists the accounts that the AD sync found. **Accounts to Add** lists your selection and starts empty.
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | **TYPE** | An icon for a user or a group. |
 | **NAME** | The account name. |
 | **USER PRINCIPAL NAME** | The user principal name. |

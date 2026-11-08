@@ -34,7 +34,7 @@ If the user signed in to the session more than once, the row lists several recor
 The viewer depends on the protocol of the session.
 
 | Viewer | Sessions |
-|---|---|
+| --- | --- |
 | RDP | Remote Desktop sessions. The viewer shows the screen of the session. |
 | SSH | SSH sessions. The viewer shows the terminal of the session. |
 
@@ -45,7 +45,7 @@ Activities on Active Directory domain resources start RDP sessions. Activities o
 Both viewers show these details in the header:
 
 | Detail | Meaning |
-|---|---|
+| --- | --- |
 | **User** | The account used to sign in to the resource |
 | **logged on to** | The resource |
 | **using** | The computer the session connects from |
@@ -90,7 +90,7 @@ Terminate a session to disconnect the user at once.
 3. (Optional) Select **Cancel Activity Session** to also cancel the activity session in Privilege Secure. The user can't sign in again through the same session.
 4. Confirm the termination.
 
-![The Terminate Proxy Session window with the prompt "Are you sure?", the Cancel Activity Session check box, and the Okay button.](/images/privilegesecure/26.07/admin/terminate-proxy-session.webp)
+![The Terminate Proxy Session window with the prompt "Are you sure?", the Cancel Activity Session checkbox, and the Okay button.](/images/privilegesecure/26.07/admin/terminate-proxy-session.webp)
 
 For example, a user runs an unapproved script during a session. Select **Terminate Session**, select **Cancel Activity Session**, and confirm. The user is disconnected and can't reconnect through that session.
 

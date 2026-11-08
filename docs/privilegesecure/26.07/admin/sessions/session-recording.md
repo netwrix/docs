@@ -13,7 +13,7 @@ Privilege Secure can record the sessions that users start through an access poli
 The connection profile on the access policy controls recording. These settings are in the **Proxy** section of the profile, and the website audio setting is in the **Website** section. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
 
 | Setting | Effect |
-|---|---|
+| --- | --- |
 | **Record Proxy Session** | Records the session so that an administrator can watch it live or review it later |
 | **Record Keystrokes and Metadata** | Records keystrokes and metadata. When you clear it, the session video is still recorded. |
 | **Record Session Audio** | Records the computer audio during the session |
@@ -21,14 +21,22 @@ The connection profile on the access policy controls recording. These settings a
 ## What is recorded
 
 | Session type | What the recording holds |
-|---|---|
+| --- | --- |
 | RDP | The session video. Keystrokes and metadata are included when **Record Keystrokes and Metadata** is on. Windows events are included when the Remote Desktop Monitor service runs on the target host. |
 | SSH | The input and output of the session. Keystrokes are included when **Record Keystrokes and Metadata** is on. |
 | Website | A video of the browser session, captured by the browser extension. Audio is included when **Record Session Audio** is on. |
 
-For SSH, the proxy can also record commands that run without an interactive shell and SFTP file operations. Both are off by default. To turn them on, set `RecordExec` (commands without a shell) and `RecordSFTP` (SFTP operations) to `true` in `sbpam_ssh.json` on the proxy server. The file is in `C:\ProgramData\Stealthbits\PAM\ProxyService`. An upgrade keeps your copy of this file. The proxy service picks up changes to `sbpam_ssh.json` without a restart. The new settings apply to SSH sessions that start after you save the file.
+For SSH, the proxy can also record commands that run without an interactive shell and SFTP file operations. Both are off by default. The settings are in `sbpam_ssh.json` on the proxy server, in `C:\ProgramData\Stealthbits\PAM\ProxyService`.
 
-When a user types at a password prompt in an SSH session, the recording hides the keystrokes.
+| Setting | Default | Effect |
+| --- | --- | --- |
+| `RecordExec` | `false` | Records commands that run without an interactive shell, for example `ssh <user>@<proxy> "<command>"` |
+| `RecordSFTP` | `false` | Records SFTP file operations |
+| `RecordLimit` | `65536` | Caps the recorded size, in bytes, of a single channel |
+
+An upgrade keeps your copy of this file. The proxy service picks up changes to `sbpam_ssh.json` without a restart. The new settings apply to SSH sessions that start after you save the file.
+
+In an RDP recording, the replay replaces keystrokes that the target marks as password input with `*`. In an SSH recording, keystrokes are recorded as typed, including anything you type at a password prompt. The SSH recording doesn't mask password input. Don't type secrets at a prompt in a recorded SSH session unless you are sure that recording them is acceptable.
 
 To capture Windows events in RDP recordings, install the Remote Desktop Monitor on the target hosts. See [Install the Remote Desktop Monitor](/docs/privilegesecure/26.07/install/rdp-monitor.md).
 

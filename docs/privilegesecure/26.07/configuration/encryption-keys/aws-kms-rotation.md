@@ -18,7 +18,7 @@ The `SbPAM.RotateAwsKey` tool applies an Amazon Web Services (AWS) Key Managemen
 ## Tool actions
 
 | Option | Effect |
-|---|---|
+| --- | --- |
 | **Create Key** | Generates a key that AWS KMS protects. It doesn't make the key current, and it doesn't re-encrypt the stored secrets. |
 | **Rotate Key** | Generates a key that AWS KMS protects, makes it the current key, and re-encrypts the stored secrets with it. |
 | **Update Key** | Replaces the access key and secret key that are stored with the current key. The stored KMS key and Region stay the same, and the stored secrets aren't re-encrypted. **KMS Key** and **Region** aren't available. |

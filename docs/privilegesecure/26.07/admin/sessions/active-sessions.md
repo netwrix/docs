@@ -24,7 +24,7 @@ The filters are **Search**, **Resource name**, **User name**, and **Recording da
 ### Toolbar
 
 | Button | What it does |
-|---|---|
+| --- | --- |
 | **Create Session** | Opens the **Activity Request** dialog. See [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md). |
 | **End Session** | Cancels the selected sessions. You need the Terminate Session permission. |
 | **View Logs** | Opens the session logs for the selected session. See [View session logs](/docs/privilegesecure/26.07/admin/sessions/session-logs.md). |
@@ -36,7 +36,7 @@ All buttons except **Create Session** stay disabled until you select a row. **Re
 ### Columns
 
 | Column | Shows |
-|---|---|
+| --- | --- |
 | Checkbox | Selects the row. |
 | **STATUS** | The state of the session. See [Session statuses](#session-statuses). |
 | **REQUESTED** | When the session was created. |
@@ -60,7 +60,7 @@ The **Scheduled** tile has no tabs and one filter, **Search**. The toolbar has o
 The **Status** column uses these values on both tiles:
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | **Provisioning** | Privilege Secure is assigning permissions to the login account before the session. |
 | **Pending** | The scheduled start time is still in the future. Scheduled tab only. |
 | **Waiting for approval** | The session needs approval before it can begin. |

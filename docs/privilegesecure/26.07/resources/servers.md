@@ -13,7 +13,7 @@ The server details page shows the settings of one server and what Netwrix Privil
 ## Header buttons
 
 | Button | What it does |
-|---|---|
+| --- | --- |
 | **Test** | Tests whether Privilege Secure can connect to the server. A window shows the status and any messages. The button appears only for Windows and Hyper-V servers. |
 | **Scan Now** | Scans the server for local users, groups, services, scheduled tasks, and databases. On a Windows server, the scan also collects the installed Windows features. |
 | **WinRM Config** | Opens the **Configure Secure WinRM Connection** window. The button appears only for Windows servers. See [Configure a secure WinRM connection](/docs/privilegesecure/26.07/resources/secure-winrm.md). |
@@ -23,7 +23,7 @@ The server details page shows the settings of one server and what Netwrix Privil
 Change a setting and select **Save**, or select **Cancel** to discard the change.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **DNS Host Name** | The DNS name of the server. |
 | **OS Version** | The operating system that the last scan found. |
 | **Last Scanned** | The date and time of the last scan. |
@@ -45,7 +45,7 @@ If a server uses other ports, change the port fields on its details page. Open t
 These settings control how Privilege Secure trusts the certificate or host key that a server presents.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Trust on Discovery** | When selected, Privilege Secure trusts the certificate or host key that the server presents the first time it connects, and saves its thumbprint as the trusted thumbprint. This option is selected by default. When cleared, the first connection is blocked until an administrator approves the thumbprint. |
 | **Action on Thumbprint Mismatch** or **Action on Fingerprint Mismatch** | Sets what happens when the thumbprint a server presents differs from the trusted thumbprint. The label reads **Thumbprint** on Windows servers and **Fingerprint** on SSH servers. |
 
@@ -54,10 +54,14 @@ These settings control how Privilege Secure trusts the certificate or host key t
 The action dropdown has these values:
 
 | Value | Behavior |
-|---|---|
+| --- | --- |
 | **Allow Connection** | Allows the connection and records a Warning event. |
 | **Log event and allow** | Allows the connection and records a Warning event. This value is the default. |
 | **Log event and block** | Blocks the connection and records an Error event. |
+
+With **Allow Connection**, the resource details page doesn't show the mismatch icon, because Privilege Secure doesn't compare the thumbprint for that value.
+
+When a server presents a different host key and the action is **Log event and allow** or **Log event and block**, the resource details page shows a fingerprint icon with the tooltip **SSH key fingerprint mismatch**. Select it to open the mismatch window, which shows the cached key and the new key, and an **Update** button to trust the new key.
 
 Privilege Secure writes the event to the Events table. If you configured a Security Information and Event Management (SIEM) connection, Privilege Secure also sends the event to the SIEM. See [Events](/docs/privilegesecure/26.07/admin/audit-reporting/events.md).
 
@@ -66,7 +70,7 @@ Privilege Secure writes the event to the Events table. If you configured a Secur
 A Windows server has 10 tabs. A Linux server has 7: **Sessions**, **Access Policies**, **Protection Policies**, **Users**, **Groups**, **History**, and **Installed Software**. The **Services**, **Scheduled Tasks**, and **Databases** tabs appear only for Windows servers. Each tab shows a count. If the tab strip doesn't fit the window, use the arrow to scroll it.
 
 | Tab | Shows |
-|---|---|
+| --- | --- |
 | **Sessions** | Sessions on the server. Columns: **Requested**, **Requested By**, **Login Account**, **Activity**, **Start**, **End**, **Status**. Select a row and select **View Logs** to open the session logs. |
 | **Access Policies** | The access policies that include the server. Columns: **Name**, **Description**. |
 | **Protection Policies** | The protection policies that include the server. Columns: **Name**, **Description**. See [Protection policies](/docs/privilegesecure/26.07/resources/protection-policies.md). |
@@ -87,7 +91,7 @@ The **Type** filter on the **Services** and **Scheduled Tasks** tabs offers **Al
 The **Users** tab lists the local accounts on the server. Use its buttons to bring accounts under management and to rotate and verify their passwords.
 
 | Button | What it does |
-|---|---|
+| --- | --- |
 | **Manage** | Brings the selected account under Privilege Secure management. |
 | **Unmanage** | Stops managing the selected account. |
 | **Rotate** | Queues a password rotation for the selected managed account. |
@@ -102,7 +106,7 @@ The tab has a **Search** box and a **Type** filter. The columns are **Name**, **
 The **Status** column shows the result of the last verification:
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | Unspecified | No verification has run. |
 | Verified | The password matches the one that Privilege Secure stores. |
 | Mismatch | The password doesn't match. This status appears only when the platform has Reset On Mismatch turned off. |

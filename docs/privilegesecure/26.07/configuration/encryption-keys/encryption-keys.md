@@ -19,7 +19,7 @@ Windows machine protection ties the key files to the server. Don't copy the fold
 `SbPAM.RotateKey.exe` manages the encryption key. It is in the `KeyTools` folder of the installation directory, which is `C:\Program Files\Stealthbits\PAM\KeyTools` by default. Run it from a Command Prompt that you opened as an administrator. The tool stops with the message "You must run as Administrator." otherwise.
 
 | Command | What it does |
-|---|---|
+| --- | --- |
 | `rotate` | Generates a new encryption key, makes it the current key, and re-encrypts the stored secrets with it. |
 | `update-secrets` | Re-encrypts the stored secrets with the current key. |
 | `export` | Writes the key files to a password-protected file for import on another server. |
@@ -30,7 +30,7 @@ Windows machine protection ties the key files to the server. Don't copy the fold
 ### Options
 
 | Command | Option | Description |
-|---|---|---|
+| --- | --- | --- |
 | `rotate` | `-f`, `--force` | Rotates without asking for confirmation. |
 | `rotate` | `-k`, `--keymodule` | The key module type. The default is `LocalMachine`. For AWS KMS protection, use `AwsKms` or its number, `6`. The name is case-sensitive. |
 | `rotate` | `-a`, `--awsfilename` | A file that holds the AWS KMS settings. Required with `-k AwsKms`. |

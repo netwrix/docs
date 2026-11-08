@@ -22,7 +22,7 @@ The **CEF** and **LEEF** templates contain the same message body. Both messages 
 1. Click **Save**.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Name** | The name of the template. |
 | **Description** | A description of the template. |
 | **Characters To Escape** | The characters in event text that need an escape character. |
@@ -48,7 +48,7 @@ Pipe characters (`|`) in the text of an event message are removed before the mes
 The editor offers 25 fields. Each field belongs to the event, the session behind the event, or the account and resource involved.
 
 | Group | Fields |
-|---|---|
+| --- | --- |
 | Event | `EventTimeUTC`, `EventLoggedInUserName`, `EventLoggedInFromIPAddress`, `EventAccessPolicyName`, `EventSourceHost`, `EventServiceType`, `EventType`, `EventStatus`, `EventMessage` |
 | Session | `ActivitySessionCreatedByUserName`, `ActivitySessionCreatedFromAddress`, `ActivitySessionCreatedDateTimeUTC`, `ActivitySessionLoginAccountName`, `ActivitySessionStatus`, `ActivitySessionStatusDescription` |
 | Account | `ManagedAccountName`, `ManagedAccountType` |
@@ -65,7 +65,7 @@ The built-in **CEF** and **LEEF** templates write each field as `key=value`. Som
 A message can start with a header made of the following placeholders.
 
 | Placeholder | Description |
-|---|---|
+| --- | --- |
 | `%SYSLOG_DATE%` | The time that Privilege Secure sends the message, in sortable universal format. For the time of the event, use `%EVENTTIMEUTC%`. |
 | `%HOST%` | The host name of the computer that runs the SIEM service. |
 | `%TEMPLATENAME%` | The name of the template. |
@@ -79,7 +79,7 @@ A message can start with a header made of the following placeholders.
 The enumerated fields hold the name of the value:
 
 | Field | Values |
-|---|---|
+| --- | --- |
 | `EventServiceType` | `Unspecified`, `WebUi`, `ActionService`, `ProxyService`, `SchedulerService`, `EmailService`, `ADSyncService`, `RagGateway`, `RagPortal` |
 | `EventType` | `Unspecified`, `Status`, `ServiceStart`, `PasswordRotation`, `HostScan`, `ADSync`, `ActivitySession`, `Manage`, `Unmanage`, `Verify`, `RotateServices`, `CommandRestrictionAction` |
 

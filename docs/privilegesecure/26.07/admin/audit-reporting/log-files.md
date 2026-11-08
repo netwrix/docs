@@ -21,8 +21,9 @@ Files are named `PAM-<Service><yyyymmdd>.log`, where `<Service>` is the service 
 The page lists logs for these services:
 
 | Service | Log |
-|---|---|
+| --- | --- |
 | Web | `PAM-Web` |
+| Web API | `PAM-WebAppApi` |
 | Proxy | `PAM-Proxy` |
 | SSH client | `PAM-SSHClient` |
 | Host Scan | `PAM-HostScanService`, `PAM-HostScanServiceWorker` |
@@ -59,7 +60,7 @@ For example, to find problems in a service, select its log and set **Log Level**
 The right pane shows the log lines in four columns: **LINE**, **DATETIME**, **STATUS**, and **MESSAGE**. It has these controls:
 
 | Control | Description |
-|---|---|
+| --- | --- |
 | **Search** | Searches the log. |
 | **Log Level** | Filters lines by level. The values are **Debug**, **Info**, **Warn**, and **Error**. The default is **Debug**. |
 | **Requested date** | Filters lines by date. |
@@ -90,7 +91,7 @@ The log level controls how much detail a service writes. Set a more detailed lev
 For example, when support asks for detailed logs, select the Action Service and set **Minimum Log Level** to **Debug**. After you collect the logs, set it back to **Information**.
 
 | Setting | Description |
-|---|---|
+| --- | --- |
 | **Minimum Log Level** | The lowest level the service logs. See the following levels. |
 | **Retained File Count Limit** | The number of log files to keep before the oldest are deleted. |
 | **File Size Limit Bytes** | The maximum size of one log file, in bytes. |

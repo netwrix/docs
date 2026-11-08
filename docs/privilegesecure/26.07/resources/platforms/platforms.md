@@ -8,7 +8,7 @@ sidebar_position: 10
 
 A platform sets the defaults for every resource of one type, such as Windows servers or SQL Server databases. A platform holds the built-in account to discover, the password complexity policy, and the schedules for rotation, scanning, verification, and protection. Each resource uses the settings of its platform.
 
-Select **Platforms** in the left navigation to open the list. Most built-in platforms are one form with no tabs. The Linux, BSD, and Palo Alto PanOS platforms, and platforms that you create or copy, show **Settings** and **Command Plans** tabs when the custom platform connector feature is enabled. See [Command plans](/docs/privilegesecure/26.07/resources/platforms/command-plans.md).
+Select **Platforms** in the left navigation to open the list. Most built-in platforms are one form with no tabs. When the custom platform connector feature is enabled, these platforms show **Settings** and **Command Plans** tabs: Linux, BSD, Palo Alto PanOS, and the platforms that you create or copy. See [Command plans](/docs/privilegesecure/26.07/resources/platforms/command-plans.md).
 
 ![The Platforms page with Linux selected, showing the built-in account root, password complexity policy, and the change, scan, and verification schedules.](/images/privilegesecure/26.07/resources/platforms-linux-form.webp)
 
@@ -17,7 +17,7 @@ Select **Platforms** in the left navigation to open the list. Most built-in plat
 Netwrix Privilege Secure for Access Management (Privilege Secure) includes 11 platforms.
 
 | Platform | Used for |
-|---|---|
+| --- | --- |
 | **Active Directory** | Active Directory domains. |
 | **BSD** | BSD servers. |
 | **Cisco** | Cisco network devices. |
@@ -39,7 +39,7 @@ When a resource has no platform set, **Scan Resource** identifies it. The scan t
 The settings that appear depend on the platform.
 
 | Setting | Description |
-|---|---|
+| --- | --- |
 | **Name** | The name of the platform. |
 | **Description** | The purpose of the platform. |
 | **Built-in Account** | The built-in administrator account on resources of this platform. It tells Privilege Secure which accounts to discover and onboard. |
@@ -59,19 +59,19 @@ When Privilege Secure identifies an SSH device, it compares the device's version
 ### Settings by platform
 
 | Platform | Settings shown |
-|---|---|
+| --- | --- |
 | **Windows**, **Linux**, **BSD**, **Palo Alto PanOS** | All settings, including **Protection Policy Schedule**. A scheduled protection policy changes group membership only on Windows-based platforms. |
 | **Cisco**, **Entra ID**, **Microsoft SQL Server**, **Oracle** | All settings except **Protection Policy Schedule**. |
 | **Active Directory** | All settings except **Protection Policy Schedule** and **Scan Schedule**. |
 | **Secret Vault**, **Website** | **Name**, **Description**, and **Operating Systems** only. |
 
-On the **Windows** platform, **Built-in Account** is a list with **Administrator** and **Well-known SID**. A well-known security identifier (SID) identifies the built-in administrator by the pattern `S-1-5-21*-500`. You can type another account name in the list.
+On the **Windows** platform, **Built-in Account** is a list with **Administrator** and **Well-known SID**. A well-known security identifier (SID) identifies the built-in administrator by the pattern `S-1-5-21*-500`. You can enter another account name in the list.
 
 On a new installation, **Reset On Mismatch** is selected by default. You can clear it on a platform if you don't want Privilege Secure to reset an account when its password doesn't match the stored one.
 
 An upgraded installation can keep earlier values.
 
-On a new installation, the **Default** password complexity policy applies to every platform except BSD, Cisco, Linux, and Palo Alto PanOS, which use the policy with their name.
+On a new installation, the **Default** password complexity policy applies to every platform except BSD, Cisco, Linux, and Palo Alto PanOS. Those four use the policy with their name.
 
 ## Create a platform from an existing platform
 
@@ -86,7 +86,7 @@ Create a copy of a platform when some resources need a different built-in accoun
 
 You can delete only a copied platform. Hover over it, select the trash icon, and confirm.
 
-The copy is created at once. Privilege Secure names it after the source platform with `Copy` added, for example `Windows Copy`, and then `Windows Copy (2)`. The copy keeps the source platform's password complexity policy and schedules. You can copy every platform except Active Directory and the unspecified platform.
+Privilege Secure creates the copy at once. Privilege Secure names it after the source platform with `Copy` added, for example `Windows Copy`, and then `Windows Copy (2)`. The copy keeps the source platform's password complexity policy and schedules. You can copy every platform except Active Directory and the unspecified platform.
 
 The plus (**+**) button above the list opens a blank platform form. Enter the settings and select **Save** to create the platform.
 

@@ -40,7 +40,7 @@ The console is available in English, French, Italian, German, Spanish, Korean, a
 ## Who uses Privilege Secure
 
 | Person | What the person does | Where to start |
-|---|---|---|
+| --- | --- | --- |
 | Administrator | Installs the product, onboards resources, and writes activities and access policies. | [Quick start](/docs/privilegesecure/26.07/getting-started/quick-start.md) |
 | User | Requests sessions and connects to resources. | [Request a session](/docs/privilegesecure/26.07/user-guide/request-session.md) |
 | Approver | Approves or denies session requests. The approvers are the users and groups that a tier of the approval workflow names. | [Approve or deny session requests](/docs/privilegesecure/26.07/user-guide/approve-requests.md) |

@@ -44,7 +44,7 @@ Each synchronization reads the membership of every group that changed since the 
 
 Privilege Secure resolves nested group membership down to 10 levels. It doesn't resolve nesting beyond that.
 
-Members of a group that you add to Privilege Secure with **Add to NPS User Role** are found on the next synchronization, so the roles you assign to the group apply to its members.
+Privilege Secure finds the members of a group that you add with **Add to NPS User Role** on the next synchronization. The roles you assign to the group then apply to its members.
 
 :::note
 A large group with deep nesting can make the "Processing group members" step take a long time. If a run seems stuck at that step, check the **History** tab on the domain for progress entries such as `Synchronized <n> group member relationships`.

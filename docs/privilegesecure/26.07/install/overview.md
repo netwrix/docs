@@ -15,7 +15,7 @@ For the components and how they connect, see [Architecture and components](/docs
 The installation uses the following packages. Download them from the Netwrix Customer Portal. Use a Remote Access Gateway package from the same release as the application server.
 
 | Package | File name | Use it to |
-|---|---|---|
+| --- | --- | --- |
 | Privilege Secure | `privilegesecure-accessmanagement-<version>.zip` | Install the application server, the database, and the services on additional servers. |
 | Remote Access Gateway | `privilegesecure-accessmanagement-rag-<version>.zip` | Install the optional Remote Access Gateway for external users. |
 
@@ -36,7 +36,7 @@ To move an existing installation to this version, see [Upgrade Privilege Secure]
 ## Choose an installation method
 
 | Method | Use it when | Page |
-|---|---|---|
+| --- | --- | --- |
 | Setup Launcher (`NPS_Setup.exe`) | You install the database and the application on one server, or you upgrade an existing installation. | [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md) |
 | Installer only (`NPS.exe`) | You install the application on a server whose database is already in place. | [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md) |
 | Silent install (`NPS.exe /quiet`) | You install from the command line or with a deployment tool. | [Install silently](/docs/privilegesecure/26.07/install/silent-install.md) |

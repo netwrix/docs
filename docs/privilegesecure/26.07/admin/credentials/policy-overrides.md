@@ -25,7 +25,7 @@ When no override exists, the left pane shows `<no matches>` and the right pane s
 ## Override settings
 
 | Setting | Description |
-|---|---|
+| --- | --- |
 | **Name** | The name of the override. |
 | **Description** | A description. |
 | **Scheduled Change Policy** | The schedule policy that controls how often the credentials rotate. Select a policy you created earlier. The default is `<none>`. |

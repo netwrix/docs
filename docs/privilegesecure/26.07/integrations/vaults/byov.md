@@ -20,7 +20,7 @@ For an overview of vault connectors, see [Third-party vault connectors](/docs/pr
 6. Click **Save**.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **API Url**\* | The base address of the API of the vault. The default is `http://localhost/PasswordVault`. |
 | **App Id**\* | The application ID for the vault. The default is `SbPAM`. |
 | **Client Certificate** | A value that Privilege Secure passes to your scripts as `$Options.Connector.Options.ClientCertificate`. Privilege Secure doesn't use it itself. |

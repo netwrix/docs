@@ -21,7 +21,7 @@ Which icons appear depends on the connection profile. See [View or copy the pass
 Click the **connect** icon. What happens next depends on the session type:
 
 | Session type | What the console does |
-|---|---|
+| --- | --- |
 | RDP | Downloads an `.rdp` file named `<host>--<id>.rdp`. Open it with your Remote Desktop client. If the download fails, the console shows "Unable to download RDP file." |
 | SSH | Opens an `ssh://` link in your SSH client. |
 | Web | Opens the website in a new browser tab. |
@@ -60,7 +60,7 @@ On **My Activities**, the **...** menu on a session card also has options to sto
 Each session ends when the **Max Duration (minutes)** of its connection profile passes. The profile's session extension settings decide whether you can add time:
 
 | Setting | Default | Effect |
-|---|---|---|
+| --- | --- | --- |
 | **Enable Session Extension** | Off | When off, you can't extend a session. |
 | **Extend By (minutes)** | 30 | The time each extension adds. |
 | **Session Extension Limit** | 2 | The most times you can extend one session. |

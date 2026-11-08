@@ -1,6 +1,6 @@
 ---
 title: "Install a proxy service on another server"
-description: "Install the Proxy Service on a remote server and register it with the application server so the server can broker sessions across security zones."
+description: "Install the Proxy Service on a remote server and register it with the application server to broker sessions across security zones."
 sidebar_position: 80
 ---
 
@@ -117,3 +117,7 @@ The Proxy Service is now registered. Confirm it appears on the Service Nodes pag
 ## Allow legacy SSH algorithms
 
 To connect to older SSH devices, such as legacy Cisco devices, see [Configure SSH algorithms](/docs/privilegesecure/26.07/configuration/ssh-algorithms.md).
+
+## Change the proxy settings
+
+To change the SSH or RDP proxy behavior, the connection string separators, or the proxy log, see [Proxy settings reference](/docs/privilegesecure/26.07/configuration/proxy-settings.md).

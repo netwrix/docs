@@ -20,7 +20,7 @@ Each access policy combines four things:
 Every access policy has one of two types.
 
 | Type | Use it to | Page |
-|---|---|---|
+| --- | --- | --- |
 | **Resource Based** | Let users run activities on remote devices such as computers, databases, and network equipment. | [Create a resource-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md) |
 | **Credential Based** | Let users check out managed credentials, and credentials and files in a Privilege Secure secret vault. | [Create a credential-based access policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md) |
 
@@ -54,7 +54,7 @@ The tabs under the fields hold the users, activities, resources, and credentials
 When a user requests a session, the console picks one access policy:
 
 1. If the request names an access policy, the console uses that policy.
-2. Otherwise, the console uses the first matching policy when the matching policies are sorted by name in alphabetical order. A policy matches when it includes the requested activity and applies to the user and to the resource or credential.
+1. Otherwise, the console uses the first matching policy when the matching policies are sorted by name in alphabetical order. A policy matches when it includes the requested activity and applies to the user and to the resource or credential.
 
 A policy has no priority setting. The console has no priority field, and the policy name decides which matching policy wins.
 
@@ -73,8 +73,8 @@ Custom roles can delegate parts of policy management. The permissions are **Modi
 ## Set up access policies
 
 1. Create or review the [connection profile](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md) that the policy uses.
-2. Create the [activities](/docs/privilegesecure/26.07/configuration/activities/activities.md) that users need, and optionally [activity groups](/docs/privilegesecure/26.07/configuration/activities/activity-groups.md).
-3. Create a [resource-based policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md) or a [credential-based policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md).
-4. Add users, activities, and resources or credentials to the policy.
+1. Create the [activities](/docs/privilegesecure/26.07/configuration/activities/activities.md) that users need, and optionally [activity groups](/docs/privilegesecure/26.07/configuration/activities/activity-groups.md).
+1. Create a [resource-based policy](/docs/privilegesecure/26.07/configuration/access-policies/resource-based-policy.md) or a [credential-based policy](/docs/privilegesecure/26.07/configuration/access-policies/credential-based-policy.md).
+1. Add users, activities, and resources or credentials to the policy.
 
 ![The Access Policy page with the policy list on the left and the CentOS Linux Server Administrator policy open on its Users tab, listing the NPS Administrators and NPS Users groups.](/images/privilegesecure/26.07/configuration/access-policy-list-users-tab.webp)

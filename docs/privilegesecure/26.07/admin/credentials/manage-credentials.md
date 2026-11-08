@@ -1,6 +1,6 @@
 ---
 title: "Manage, rotate, and verify credentials"
-description: "Learn how to bring accounts under management and how the Rotate, Verify, and Keep Enabled options work."
+description: "Bring accounts under management and see how the Rotate, Verify, and Keep Enabled options work."
 sidebar_position: 20
 ---
 
@@ -13,7 +13,7 @@ Use the **Credentials** page to bring an account under Privilege Secure manageme
 The toolbar buttons stay disabled until you select a row. The selected row decides which buttons are enabled.
 
 | Selected row | Enabled buttons |
-|---|---|
+| --- | --- |
 | **Not Managed**, managed type **Standard** or **Internal** | **Manage** |
 | **Managed**, managed type **Standard**, method **Automatic** | **Unmanage**, **Rotate**, **Verify**, **View History** |
 | **Managed**, managed type **Standard**, method **Manual** | **Unmanage**, **Verify**, **View History** |

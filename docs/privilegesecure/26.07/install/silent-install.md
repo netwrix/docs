@@ -48,7 +48,7 @@ Without `/log`, the installer writes its log to the `%TEMP%` folder.
 ## Installer switches
 
 | Switch | Description |
-|---|---|
+| --- | --- |
 | `/install` | Installs the application. |
 | `/repair` | Repairs an existing installation. |
 | `/uninstall` | Uninstalls the application. |

@@ -13,7 +13,7 @@ The Remote Access Gateway portal offers the sign-in methods that you allow in tw
 The `AllowedLoginMethods` setting is in `appsettings.json` on the gateway server. For the file location, see [Gateway settings reference](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md).
 
 | Value | Name | Sign-in methods the portal accepts |
-|---|---|---|
+| --- | --- | --- |
 | `0` (default) | Single sign-on only | Single sign-on (SSO) through an OpenID Connect or SAML connector. The sign-in form shows only the SSO buttons, and the gateway rejects a password sign-in. |
 | `1` | SSO plus local | SSO and Netwrix Privilege Secure for Access Management (Privilege Secure) local users. The sign-in form shows **Username** and **Password**, and no **Domain** field. The gateway rejects a username that contains `\` or `@` with "Cannot use this login method", so domain users can't sign in with a password. |
 | `2` | SSO plus local plus domain | SSO, local users, and domain users. The sign-in form shows **Username**, **Password**, and **Domain** fields. |

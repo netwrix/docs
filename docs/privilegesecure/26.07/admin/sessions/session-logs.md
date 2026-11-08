@@ -30,7 +30,7 @@ The Remote Access Gateway portal doesn't show the **Logs** button.
 ## Window controls
 
 | Control | Use |
-|---|---|
+| --- | --- |
 | **Search** | Filter the table to messages that match the text |
 | **Filter** | Filter by **Log Level** or by **Requested date** (session start and end dates) |
 | **Export as CSV** | Download the table as a CSV file to your browser's default download folder |
@@ -43,7 +43,7 @@ The **Log Level** filter lists **Debug**, **Info**, **Warn**, and **Error**. It 
 ## Columns
 
 | Column | Meaning |
-|---|---|
+| --- | --- |
 | **Line** | The position of the message in the log |
 | **DateTime** | When the message was recorded |
 | **Status** | An icon that shows whether the action succeeded, and the log level of the message |

@@ -9,7 +9,7 @@ sidebar_position: 30
 A custom role delegates part of administration to people who aren't Administrators. Each custom role has one **Target** that decides which permissions it offers:
 
 | Target | Delegates | Typical use |
-|---|---|---|
+| --- | --- | --- |
 | **Access Policies** | Changes to selected parts of selected access policies | A team lead who maintains the policies for one group of servers |
 | **Credentials** | Managing, verifying, and rotating selected credentials | A team that owns a set of service accounts |
 | **Auditors** | Viewing recordings and live sessions for selected users and resources, and running reports | An audit team that reviews one business unit |
@@ -47,7 +47,7 @@ Changes save as soon as you move a permission. There is no **Save** button.
 Each permission lets a role member change one part of a policy.
 
 | Permission | Lets the member |
-|---|---|
+| --- | --- |
 | **Modify Name** | Change the policy name |
 | **Modify Description** | Change the policy description |
 | **Modify Connection Profile** | Change the connection profile of the policy |
@@ -60,7 +60,7 @@ For how these permissions work in a policy, see [Access policies](/docs/privileg
 ### Credentials permissions
 
 | Permission | Lets the member |
-|---|---|
+| --- | --- |
 | **Manage** | Put an account and its credentials under Privilege Secure control |
 | **Unmanage** | Remove an account and its credentials from Privilege Secure control |
 | **View Password** | See the credential |
@@ -75,7 +75,7 @@ For the credential tasks themselves, see [Credentials](/docs/privilegesecure/26.
 ### Auditors permissions
 
 | Permission | Lets the member | Depends on |
-|---|---|---|
+| --- | --- | --- |
 | **View Recordings** | Review recordings of historical sessions for the assigned users and resources | |
 | **Live Session Viewer** | Watch live sessions for the assigned users and resources | |
 | **Terminate Session** | Stop a live session. The user can start a new session. | **Live Session Viewer** |

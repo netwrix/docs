@@ -17,12 +17,12 @@ A resource-based access policy lets users run activities on resources such as co
 ## Create the policy
 
 1. Select **Access Policy** in the left navigation.
-2. Click the plus (**+**) button above the policy list.
-3. Enter a **Name**. This field is required.
-4. (Optional) Enter a **Description**.
-5. Select **Resource Based** in the **Type** list. A new policy uses this type by default.
-6. Select a profile in the **Connection Profile** list.
-7. Click **Save**.
+1. Click the plus (**+**) button above the policy list.
+1. Enter a **Name**. This field is required.
+1. (Optional) Enter a **Description**.
+1. Select **Resource Based** in the **Type** list. A new policy uses this type by default.
+1. Select a profile in the **Connection Profile** list.
+1. Click **Save**.
 
 A new policy shows `<none>` in the **Connection Profile** list. If you click **Save** without selecting a profile, the console shows "Please correct the errors" and "A value is required." under **Connection Profile**. If the profile doesn't exist yet, create it on the **Connection Profiles** page first. The round arrow next to the list opens the selected profile.
 
@@ -35,17 +35,17 @@ A new policy has three tabs: **Users**, **Activities**, and **Resources**. Add i
 On the **Users** tab, you choose who the policy applies to.
 
 1. Select the policy, and then select the **Users** tab.
-2. Click **Add**. The **Add Users and Groups** window opens.
-3. (Optional) Use **Search Users and Groups...** or the type filter to narrow the list. The filter offers **All**, **User**, **Group**, **Application**, **Collection**, and **Local User**.
-4. Click a row in **Available Users and Groups** to move it to **Users and Groups to Add**. Click a row in **Users and Groups to Add** to move it back.
-5. Click **Add**.
+1. Click **Add**. The **Add Users and Groups** window opens.
+1. (Optional) Use **Search Users and Groups...** or the type filter to narrow the list. The filter offers **All**, **User**, **Group**, **Application**, **Collection**, and **Local User**.
+1. Click a row in **Available Users and Groups** to move it to **Users and Groups to Add**. Click a row in **Users and Groups to Add** to move it back.
+1. Click **Add**.
 
 To remove an item, select its checkbox and click **Remove**. **Remove** stays unavailable until you select a row.
 
 The table has these columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **NAME** | The name of the user, group, or other item. Expand the row to list the activities and resources the item can use. |
 | **EMAIL** | The email address, if one is available. Groups show `<None>`. |
 | **USER NAME** | The account name, if one is available. Groups show `<None>`. |
@@ -71,10 +71,10 @@ For how access certification affects a policy, see [Run an access certification]
 On the **Activities** tab, you choose what users can do.
 
 1. Select the **Activities** tab.
-2. Click **Add**. The **Add Activities and Activity Groups** window opens.
-3. (Optional) Search, or filter by **All**, **Activity**, or **Activity Group**.
-4. Click a row in the available list to move it to **Activities and Activity Groups to Add**.
-5. Click **Add**.
+1. Click **Add**. The **Add Activities and Activity Groups** window opens.
+1. (Optional) Search, or filter by **All**, **Activity**, or **Activity Group**.
+1. Click a row in the available list to move it to **Activities and Activity Groups to Add**.
+1. Click **Add**.
 
 The table has the columns **NAME**, **TYPE**, and **DESCRIPTION**. The type icon shows whether a row is an activity or an activity group. To remove an item, select its checkbox and click **Remove**.
 
@@ -85,15 +85,15 @@ To create activities and groups, see [Activities](/docs/privilegesecure/26.07/co
 On the **Resources** tab, you choose where users can run the activities.
 
 1. Select the **Resources** tab.
-2. Click **Add**. The **Add Resources and Resource Groups** window opens.
-3. (Optional) Search, or filter by **All**, **Resource**, or **Resource Group**.
-4. Click a row in **Available Resources and Resource Groups** to move it to **Resources and Resource Groups to Add**.
-5. Click **Add**.
+1. Click **Add**. The **Add Resources and Resource Groups** window opens.
+1. (Optional) Search, or filter by **All**, **Resource**, or **Resource Group**.
+1. Click a row in **Available Resources and Resource Groups** to move it to **Resources and Resource Groups to Add**.
+1. Click **Add**.
 
 The table has these columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **NAME** | The name of the resource or resource group. |
 | **TYPE** | **Resource** or **Resource Group**. |
 | **DNS HOST NAME** | The DNS host name of a host, or the fully qualified domain name of a domain. |

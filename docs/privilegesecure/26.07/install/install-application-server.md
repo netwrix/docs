@@ -108,7 +108,7 @@ SQL Server is an advanced configuration that requires additional support from Ne
 3. If you need SQL Server software, click **Download SQL Server (if needed)**. This opens the Microsoft download page.
 4. Install SQL Server, install Privilege Secure, and then point it at the SQL Server database with the Database Configuration Tool, which can also create the database.
 
-The **Advanced** checkbox appears only when the launcher detects an installed Privilege Secure version 4.1 or later. It's hidden on a server without Privilege Secure, and when the installed version matches the installer, so the switch applies to an existing installation. To go back, click **Switch to PostgreSQL**.
+The **Advanced** checkbox appears only when the launcher detects an installed Privilege Secure version 4.1 or later. It's hidden on a server without Privilege Secure and when the installed version matches the installer. The switch therefore applies to an existing installation. To go back, click **Switch to PostgreSQL**.
 
 {/* TODO verify: how a first installation on a server without Privilege Secure chooses SQL Server, because the Advanced checkbox is hidden there. */}
 
@@ -124,7 +124,7 @@ On a server that was upgraded from PostgreSQL 12 to 16, PostgreSQL 16 listens on
 
 When the installer can't reach the database, for example a remote database, it still completes. It writes the error to `ImportActivities.log` in the `Logs` folder under `C:\ProgramData\Stealthbits\PAM`.
 
-If the database wasn't reachable during installation, check the log and fix the connection. The installer doesn't import the activities again when you re-run or repair the same version, so run the database updater yourself after the connection works. Open an elevated command prompt in the `DatabaseTools` folder of the install folder, which is `C:\Program Files\Stealthbits\PAM` by default, and run these commands in order:
+If the database wasn't reachable during installation, check the log and fix the connection. The installer doesn't import the activities again when you re-run or repair the same version, so run the database updater yourself after the connection works. Open a command prompt as an administrator in the `DatabaseTools` folder of the install folder, which is `C:\Program Files\Stealthbits\PAM` by default, and run these commands in order:
 
 ```
 SbPAM.DbUpdater.exe

@@ -9,7 +9,7 @@ sidebar_position: 20
 Onboard a server so that Netwrix Privilege Secure for Access Management (Privilege Secure) can scan it, manage its accounts, and include it in access policies. The **New Server** entry on the **Add** menu opens the **Add Resources** window. The window has three onboarding methods.
 
 | Method | Use it when |
-|---|---|
+| --- | --- |
 | **Import from AD** | The servers are computers in an Active Directory domain that Privilege Secure has synchronized. This method is the default. |
 | **Import from CSV** | You have a comma-separated values (CSV) list of servers to onboard in one pass. |
 | **Add Manually** | You have a few servers, or servers that aren't in Active Directory. |
@@ -44,7 +44,7 @@ Both tables show the **Type**, **Name**, **Operating System**, and **DNS Host Na
 Each row describes one server. Identify each server by a DNS host name, an IP address, or both. The other columns are optional. A **Platform** or **Credential** value must exactly match a platform or service account that Privilege Secure already has.
 
 | Column | Required | Value |
-|---|---|---|
+| --- | --- | --- |
 | DNS Host Name | One of this column or IP Address | The fully qualified domain name (FQDN) of the server |
 | Operating System | No | The operating system of the server |
 | IP Address | One of this column or DNS Host Name | The IP address of the server |

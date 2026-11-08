@@ -42,7 +42,7 @@ The Table API applies the access controls of your instance to the integration ac
 6. Click **Save**.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Ticket Number Label** | The label that appears when users are asked for a ticket number, for example `INC#` or `Change Request`. |
 | **Ticket Type**\* | The type of ticket that the connector handles. Select **Incidents** (default) or **Change Requests**. |
 | **View Ticket Url Template**\* | The address that opens a ticket in ServiceNow. Enter `{ticket}` where the ticket number goes. |
@@ -62,7 +62,7 @@ An asterisk (\*) marks a required field.
 This example creates one connector for each ticket type.
 
 | Field | Incident connector | Change request connector |
-|---|---|---|
+| --- | --- | --- |
 | **Ticket Number Label** | `INC#` | `CHG#` |
 | **Ticket Type**\* | Incidents | Change Requests |
 | **Ticket Number Regex** | `^INC[\d]{7}$` | `^CHG[\d]{7}$` |
@@ -94,7 +94,7 @@ When a user requests a session and enters a ticket number, Privilege Secure:
 If a check fails, the request shows one of these messages:
 
 | Message | Cause |
-|---|---|
+| --- | --- |
 | "Ticket 'X' not found in ServiceNow." | ServiceNow has no ticket with that number. |
 | "Ticket 'X' has status 'S' which is not allowed." | The ticket status isn't in **Allowed Statuses**. |
 | "Unable to reach ServiceNow. Please try again." | The lookup failed. The cause can be a network or certificate problem, a wrong host name, or ServiceNow refusing the integration account, for example a wrong password. |

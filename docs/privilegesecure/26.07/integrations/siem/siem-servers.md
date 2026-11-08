@@ -21,7 +21,7 @@ Privilege Secure can send its events to a security information and event managem
 1. Click **Save**.
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **SIEM Host** | The name or address of the SIEM server. |
 | **Server Type** | The transport. Select **TCP** (the default) or **UDP**. |
 | **Port**\* | The port the SIEM server listens on. The default is `514`. |
@@ -39,7 +39,7 @@ Encryption applies to **TCP** only. Privilege Secure encrypts the connection onl
 This example sends events in CEF format to a SIEM server over TCP port 514, without encryption.
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **SIEM Host** | `<siem-server>` |
 | **Server Type** | **TCP** |
 | **Port**\* | `514` |

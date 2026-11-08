@@ -15,7 +15,7 @@ The policy applies to the account name, not to a password. **Length** is the num
 A new policy form starts with these values.
 
 | Field | Default |
-|---|---|
+| --- | --- |
 | **Must Start With** | **Lowercase** |
 | **Must End With** | **None** |
 | **Length** | 19 |
@@ -43,7 +43,7 @@ The form accepts a **Length** from 5 to 19 characters. When a connection profile
 A policy named `short-names` uses these values:
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Must Start With** | **Lowercase** |
 | **Must End With** | **None** |
 | **Length** | 12 |
@@ -56,7 +56,7 @@ When the name includes no text from the user's name, each generated name has 12 
 ## Fields
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **Name** | The name of the policy. |
 | **Description** | The purpose of the policy. |
 | **Must Start With** | The kind of character the name starts with: **None**, **Lowercase**, **Uppercase**, or **Numeric**. |

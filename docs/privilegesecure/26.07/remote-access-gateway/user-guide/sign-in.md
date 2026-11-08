@@ -25,7 +25,7 @@ The Remote Access Gateway portal is a web page that lets you request and open Ne
 The sign-in page shows the methods that your administrator allows. By default, the portal allows SSO only. An administrator can also allow local Privilege Secure users, or local and domain users. See [Configure sign-in for the portal](/docs/privilegesecure/26.07/remote-access-gateway/configuration/authentication.md).
 
 | What the page shows | Method |
-|---|---|
+| --- | --- |
 | One button for each identity provider | SSO |
 | **Username** and **Password** fields, with no **Domain** field | Local Privilege Secure users, when the administrator allows SSO and local users |
 | **Username**, **Password**, and **Domain** fields | Local and domain users, when the administrator allows SSO, local users, and domain users |
@@ -50,7 +50,7 @@ The sign-in page changes when your administrator sets a default or exclusive con
 
 1. Open the portal address in your browser.
 2. Enter your **Username** and **Password**.
-3. Select your **Domain**. Select `<none>` if you use a local Privilege Secure account. If you enter `<domain>\<user>` or `<user>@<domain>` in **Username**, the portal fills in **Domain** from your entry and locks the field.
+3. In the **Domain** field, keep the default `<none>` if you use a local Privilege Secure account, or enter your domain name. If you enter `<domain>\<user>` or `<user>@<domain>` in **Username**, the portal fills in **Domain** from your entry and locks the field.
 4. Click **Login**.
 5. If the portal asks for a verification code, enter the code from your authenticator application.
 
@@ -67,7 +67,7 @@ The portal signs you out after a period of inactivity. It uses the same **Idle T
 ## Fix a sign-in error
 
 | What you see | What to do |
-|---|---|
+| --- | --- |
 | "The license has expired or the license service is offline" | Tell your administrator. They must fix the Privilege Secure license. |
 | "Cannot use this login method" | The portal doesn't allow that method. Use SSO, or ask your administrator to change the allowed methods. |
 | The sign-in option for your identity provider isn't listed, or the sign-in fails with "This authentication method cannot be used via Remote Access Gateway" | The identity provider connector isn't enabled for the portal. Ask your administrator. |

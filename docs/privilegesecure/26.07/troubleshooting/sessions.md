@@ -1,6 +1,6 @@
 ---
 title: "Sessions fail or get stuck"
-description: "Find the cause and fix when a session won't provision, stays in Provisioning, doesn't deprovision, or is rejected for multifactor authentication or policy reasons."
+description: "Fix a session that won't provision, stays in Provisioning, doesn't deprovision, or is rejected for multifactor authentication or policy reasons."
 sidebar_position: 40
 ---
 
@@ -77,6 +77,22 @@ If a scan or session fails with a null platform ID error, see [Troubleshoot inst
 **Symptom:** A user who connects with a Remote Desktop Protocol (RDP) file enters a valid multifactor authentication (MFA) code, and the console reports a wrong code. The code is accepted on the third or fourth attempt.
 
 **Fix:** Ask the user to try again. Confirm that the Privilege Secure server and the user's device have synchronized clocks, for example with a network time protocol (NTP) source. The problem can occur without any clock drift. If the code is still rejected, contact [Netwrix Support](https://www.netwrix.com/support.html).
+
+## A Linux action fails because the account has no NOPASSWD grant
+
+**Symptom:** A session or a rotation on a Linux resource fails with the message:
+
+```text
+remote command is waiting for an interactive password (sudo/su prompt detected) — the target account is likely missing a NOPASSWD sudoers grant for this command
+```
+
+**Cause:** The service account connects, but its `sudoers` policy doesn't cover the command that the action runs. The command then stops at a `sudo` or `su` password prompt, which Privilege Secure can't answer.
+
+**Fix:**
+
+1. Open the sudoers policy file for the service account on the target. See [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md).
+1. Add the command that the action needs to the matching `Cmnd_Alias`, and make sure the account has it under `NOPASSWD`.
+1. Validate the file with `visudo -cf <file>`, then run the action again.
 
 ## Related topics
 

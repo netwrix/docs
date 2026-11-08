@@ -38,21 +38,21 @@ The activities table lists the activities in the group. The first column shows t
 ## Create an activity group
 
 1. Select **Activities** in the left navigation pane, and then select **Activity Groups**.
-2. Click the green **+** button.
-3. Enter a name in **Enter Activity Group Name**.
-4. (Optional) Enter a **Description**.
-5. Click **Save**.
-6. With the new group selected, add activities. See [Add activities to a group](#add-activities-to-a-group).
+1. Click the green **+** button.
+1. Enter a name in **Enter Activity Group Name**.
+1. (Optional) Enter a **Description**.
+1. Click **Save**.
+1. With the new group selected, add activities. See [Add activities to a group](#add-activities-to-a-group).
 
 For example, create a group named `Local Administrator Access for All Platforms`, and then add one Windows activity and one Linux activity to it.
 
 ## Add activities to a group
 
 1. On the **Activity Groups** page, select the group.
-2. In the activities table controls, click **Add**.
-3. In the **Add Activities** dialog, use the search box to find activities. The dialog has two panes: **Available Activities** and **Activities to Add**. Both list the columns **Name**, **Description**, and **Created**.
-4. Click a row to move it to the list of activities to add. Click a row in that list to move it back.
-5. Click **Add**.
+1. In the activities table controls, click **Add**.
+1. In the **Add Activities** dialog, use the search box to find activities. The dialog has two panes: **Available Activities** and **Activities to Add**. Both list the columns **Name**, **Description**, and **Created**.
+1. Click a row to move it to the list of activities to add. Click a row in that list to move it back.
+1. Click **Add**.
 
 The activities appear in the table.
 

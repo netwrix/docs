@@ -17,7 +17,7 @@ To open the page, click a name on the **Users & Groups** page, on a role's membe
 The header shows the display name, the sign-in name in `DOMAIN\sam` form, and the number of active sessions. Domain users and groups also show the number of scheduled sessions.
 
 | Button | What it does | Shown for |
-|---|---|---|
+| --- | --- | --- |
 | **Lock Account** | Blocks the account from signing in and creating sessions. See [Sign-in lockout and unlocking](#sign-in-lockout-and-unlocking). | Domain, local, and application users |
 | **Reset MFA** | Forces the user to register a new authenticator at the next sign-in. See [Reset a user's MFA](#reset-a-users-mfa). | Domain and local users that use Internal MFA |
 | **Reset Password** | Sets a new password for the account. | Local users only |
@@ -29,7 +29,7 @@ A group's details page doesn't show **Lock Account** or **Reset MFA**.
 The tabs depend on the type of account.
 
 | Account type | Tabs |
-|---|---|
+| --- | --- |
 | Domain user | **Sessions**, **Policies**, **Local Rights**, **History**, **Authentication Connector**, **User Roles** |
 | Local user | **Sessions**, **Policies**, **History**, **Authentication Connector**, **Properties**, **User Roles** |
 | Group | **Sessions**, **Members**, **Policies**, **History**, **Authentication Connector**, **Group Roles** |
@@ -42,7 +42,7 @@ Every list on the tabs has a search box and can be resized and sorted by column.
 The **Sessions** tab lists the sessions of the account. Group sessions include a **LOCAL GROUP** column.
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **REQUESTED** | When the session was requested. |
 | **USER** | The account that logs on to the resource. |
 | **HOST** | The resource where the activity runs. |
@@ -80,7 +80,7 @@ Check this tab first when a user reports that they can't sign in.
 The **Authentication Connector** tab sets how the account proves its identity at sign-in. It lists **Internal MFA**, then the built-in **Not Required** option and every connector in alphabetical order, with a check mark on the active one. The built-in Duo entry and any RADIUS, OpenID Connect, or SAML connectors that an administrator adds also appear.
 
 | Choice | Behavior |
-|---|---|
+| --- | --- |
 | **Internal MFA** | The user registers an authenticator app and enters a one-time code at sign-in. |
 | A connector you added | The user signs in through that connector, for example Duo. |
 | **Not Required** | The user signs in with a user name and password only. |
@@ -123,7 +123,7 @@ After the user enters the password, the **Register Authenticator** page shows th
 An account can be blocked from signing in through two routes. The two blocks clear in different ways.
 
 | Block | How it happens | How it clears |
-|---|---|---|
+| --- | --- | --- |
 | Administrator lock | An administrator clicks **Lock Account** on the details page, or locks the account from the active sessions view. | An administrator unlocks the account. |
 | Failed-sign-in lockout | The account enters a wrong password too many times in a row. | The lockout expires, or an administrator unlocks the account. |
 

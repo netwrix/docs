@@ -41,12 +41,14 @@ For example, view the password of `<local-admin>` to sign in to `<server-name>` 
 2. Select the checkbox for a managed account.
 3. Select **View History**.
 
-The **Password History** dialog opens. ![The Password History dialog with the creation date of each password and the values hidden.](/images/privilegesecure/26.07/admin/password-history-dialog.webp)
+The **Password History** dialog opens.
+
+![The Password History dialog with the creation date of each password and the values hidden.](/images/privilegesecure/26.07/admin/password-history-dialog.webp)
 
 The dialog has these controls:
 
 | Control | Description |
-|---|---|
+| --- | --- |
 | **Show Password(s)** | Reveals the password of the selected row. It is unavailable until you select a row. |
 | **Hide Password(s)** | Hides the password of the selected row again. It is unavailable until you select a row whose password is shown. |
 | **Refresh** | Reloads the list. |
@@ -56,7 +58,7 @@ You can select one row at a time, so **Show Password(s)** reveals one password a
 The table has these columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **Creation Date** | When the password was created. |
 | **Password (click to view)** | The password, shown as `<hidden>` until you reveal it with **Show Password(s)**. Select a revealed password to highlight its text. |
 

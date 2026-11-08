@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Dashboard
 
-The **Dashboard** is the console's page for managing sessions. A row of tiles at the top shows live counts, and each tile opens a table of the matching items. Use the session tiles to follow requests from approval to completion, and use the **Users**, **Resources**, and **Credentials** tiles as shortcuts to pages you can also reach from the left navigation.
+The **Dashboard** is the console's page for managing sessions. A row of tiles at the top shows live counts, and each tile opens a table of the matching items. Use the session tiles to follow requests from approval to completion. Use the **Users**, **Resources**, and **Credentials** tiles as shortcuts to pages you can also reach from the left navigation.
 
 To open the dashboard, select **Dashboard** in the left navigation. The console opens the tile you used last.
 
@@ -15,7 +15,7 @@ To open the dashboard, select **Dashboard** in the left navigation. The console 
 Each tile shows a count. Hover over a tile to see what the count measures, for example "pending approval" for the **Approvals** tile.
 
 | Tile | Shows | Details |
-|---|---|---|
+| --- | --- | --- |
 | **Active** | Sessions that are provisioning, available, or in progress | [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md) |
 | **Scheduled** | Sessions set to start at a later time | [Manage active and scheduled sessions](/docs/privilegesecure/26.07/admin/sessions/active-sessions.md) |
 | **Approvals** | Session requests waiting for an approver | See [Approvals](#approvals) |

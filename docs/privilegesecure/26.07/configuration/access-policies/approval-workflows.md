@@ -21,7 +21,7 @@ A workflow is a list of tiers. Each tier has its own approvers, the number of ap
 The **Approval Workflow** section of a connection profile has a radio button with two choices.
 
 | Option | Behavior |
-|---|---|
+| --- | --- |
 | **Automatic** | No approval is needed. The session starts when the user requests it. This is the default. |
 | **Tiered** | The session waits until the tiers approve the request. |
 
@@ -30,7 +30,7 @@ The **Approval Workflow** section of a connection profile has a radio button wit
 When you select **Tiered**, the section shows a card for each tier. The card has these items.
 
 | Item | Description |
-|---|---|
+| --- | --- |
 | Edit (pencil) icon | Opens the **Tier Escalation** dialog. |
 | Delete icon | Deletes the tier after you confirm. |
 | **Escalation** | The time, in minutes, that approvers have to respond before the request escalates. |

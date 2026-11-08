@@ -13,7 +13,7 @@ To open them, select **Auditing & Reporting** in the left navigation. The menu l
 ## Pages
 
 | Page | Question it answers | Default range |
-|---|---|---|
+| --- | --- | --- |
 | [Run an access certification](/docs/privilegesecure/26.07/admin/audit-reporting/access-certification.md) | Who still needs the access they have, according to a reviewer? | Not applicable |
 | [Activity log](/docs/privilegesecure/26.07/admin/audit-reporting/activity-log.md) | What sessions ran, and for how long? | Last 30 days |
 | [Database change history](/docs/privilegesecure/26.07/admin/audit-reporting/db-change-history.md) | Who changed the configuration, and when? | Last 7 days |
@@ -26,7 +26,7 @@ For a session-by-session view of live and past sessions, see the [Dashboard](/do
 ## Who can open the pages
 
 | Role | Pages |
-|---|---|
+| --- | --- |
 | Administrators | All pages |
 | Users with **Admin View Read Only** | All pages, read-only |
 | Reviewers | **Access Certification**, limited to the tasks assigned to them |

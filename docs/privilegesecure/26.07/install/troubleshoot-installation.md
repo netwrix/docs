@@ -13,7 +13,7 @@ Use this page when an installation or upgrade of Netwrix Privilege Secure for Ac
 Installation and upgrade logs are in `C:\ProgramData\Stealthbits\PAM\Log`. The `PAM-` log file names follow the pattern `PAM-<Service><yyyymmdd>.log`. The PostgreSQL migration writes text files instead. The files to check after a failed install or upgrade are:
 
 | Log | Use it for |
-|---|---|
+| --- | --- |
 | `PAM-InstallCmd` | Installer custom actions |
 | `PAM-DbUpdater` | Database schema updates and data import during install and upgrade |
 | `PGUpgrade_out<yyyymmdd>.txt` | Progress log of the PostgreSQL 12 to 16 migration |
@@ -52,7 +52,7 @@ By default, the installer also writes a log to the `%TEMP%` folder of the accoun
 
 Check these causes:
 
-- **Not enough free space.** The message says the drive requires at least a given amount of free space and reports how much is available. The drive needs at least as much free space as the PostgreSQL 12 data folder. Free space, and run the migration again.
+- **Not enough free space.** The message says the drive requires at least a given amount of free space and reports how much is available. The drive needs at least as much free space as the PostgreSQL 12 data folder. Free up space, and run the migration again.
 - **Unsupported locale.** The message says the locale isn't supported by the target database. Set the Windows regional format to **English (United States)**, and run the migration again.
 - **Other errors.** Open the `PGUpgrade_out` and `PGUpgrade_err` files in the log folder, and contact [Netwrix Support](https://www.netwrix.com/support.html) with the files.
 
@@ -62,7 +62,7 @@ Check these causes:
 
 **Cause:** The installer doesn't fail when it can't import the default activities. It records the failure in `ImportActivities.log` in `C:\ProgramData\Stealthbits\PAM\Logs` and continues. This folder is named `Logs`, not `Log`.
 
-**Fix:** Open `ImportActivities.log` and read the error. Correct the database connection. Then, in an elevated PowerShell window, go to the `DatabaseTools` folder of the installation folder, which is `C:\Program Files\Stealthbits\PAM\DatabaseTools` by default, and run these commands in order. The first applies pending schema updates. The second imports the default activities and other default data.
+**Fix:** Open `ImportActivities.log` and read the error. Correct the database connection. Then, in a PowerShell window that you opened as an administrator, go to the `DatabaseTools` folder of the installation folder, which is `C:\Program Files\Stealthbits\PAM\DatabaseTools` by default, and run these commands in order. The first applies pending schema updates. The second imports the default activities and other default data.
 
 ```powershell
 .\SbPAM.DbUpdater.exe

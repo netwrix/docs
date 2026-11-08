@@ -26,7 +26,7 @@ Keep the Privilege Secure server out of the domain for additional security.
 Install the following software on the application server before you run `NPS.exe`.
 
 | Software | Requirement |
-| -------- | ----------- |
+| --- | --- |
 | PowerShell | PowerShell 7.6 or later. The `NPS.exe` installer enforces this requirement from 26.07.0. |
 | .NET Framework | 4.7.2. The `Pre-Reqs` folder of the product zip file includes the installer. |
 
@@ -45,7 +45,7 @@ The check finds PowerShell through the `App Paths\pwsh.exe` registry key. An ins
 `NPS.exe` installs the following software if the server doesn't already have it. You don't need to install it first.
 
 | Software | Version |
-| -------- | ------- |
+| --- | --- |
 | .NET 10 Hosting Bundle | Included in the installer (10.0.10) |
 | Microsoft Visual C++ runtime | 14.51 (14.51.36247.0) |
 | Internet Information Services (IIS) | Features that the installer's IIS package (`NPS.IIS.msi`) enables |
@@ -55,7 +55,7 @@ The check finds PowerShell through the `App Paths\pwsh.exe` registry key. An ins
 The RAM, CPU, and disk space you need depend on the number of administrators who use Privilege Secure.
 
 | Environment | Extra large | Large | Medium | Small |
-| ----------- | ----------- | ----- | ------ | ----- |
+| --- | --- | --- | --- | --- |
 | Number of administrators | 500-1000 | 100-500 | 50-100 | 50 or fewer |
 | RAM | 64 GB | 32 GB | 16 GB | 16 GB |
 | Cores | 8-16 | 6-8 | 4-6 | 4 |

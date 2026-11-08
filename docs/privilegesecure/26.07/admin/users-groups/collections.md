@@ -23,7 +23,7 @@ Select a collection to show its name, its description, and its members in the ma
 The member list has these controls:
 
 | Control | What it does |
-|---|---|
+| --- | --- |
 | **Search** | Filters the members by the text you enter. |
 | **Type** | Shows only users, groups, applications, or local users. |
 | **Add Users and Groups** | Opens a window to add members. |
@@ -47,7 +47,7 @@ The new collection appears in the list with no members.
 This example creates a collection for the help desk.
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Enter User and Group Collection Name** | `Help desk` |
 | **Description** | `Tier 1 and tier 2 support staff` |
 

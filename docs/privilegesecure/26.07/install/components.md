@@ -13,7 +13,7 @@ The Netwrix Privilege Secure for Access Management (Privilege Secure) download i
 ## Main files
 
 | File | Description |
-|---|---|
+| --- | --- |
 | `NPS_Setup.exe` | Opens the Netwrix Setup Launcher. The launcher checks prerequisites, installs PostgreSQL, and installs or upgrades the application. See [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md). |
 | `Pre-Reqs` folder | Contains the installer for .NET Framework 4.7.2. |
 | `Extras` folder | Contains the standalone installers in the next table. |
@@ -29,7 +29,7 @@ The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it 
 ![The Extras folder with the standalone installers, such as NPS.exe, the service installers, and the diagnostic tools.](/images/privilegesecure/26.07/install/extras-folder.webp)
 
 | File | Description |
-|---|---|
+| --- | --- |
 | `NPS.exe` | Installs the Privilege Secure application. The Setup Launcher runs it by default. |
 | `NetwrixPostgreSQL16.exe` | Installs the bundled PostgreSQL 16 database. The Setup Launcher runs it by default. It installs the PostgreSQL 16 service, directory, and database. |
 | `NPS.DbCfg.msi` | Installs the Netwrix Privilege Secure Database Configuration Tool, which points Privilege Secure at a local or remote PostgreSQL or SQL Server database. |

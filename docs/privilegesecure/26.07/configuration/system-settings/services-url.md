@@ -35,7 +35,7 @@ Don't end the URL with a slash. Before Privilege Secure 26.07.3, a URL such as `
 ## Fields
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **NPS Rest URL** | The address the services use to call the web service. It must start with `http://` or `https://`. The default is `https://localhost:6500`. |
 | **Ignore HTTPS Certificate Errors** | When checked, services accept certificate errors from the web service. Leave it unchecked. |
 | **Register Services** | Writes the URL to each service and restarts the services. |
