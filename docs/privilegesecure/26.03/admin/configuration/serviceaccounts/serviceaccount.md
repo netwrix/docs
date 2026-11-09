@@ -32,4 +32,4 @@ For a Linux or BSD resource, the account name must match the account name in the
 resource. See
 [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/linuxbsdsudoers.md).
 
-The new service account is added to the Service Accounts list.
+The new service account appears in the Service Accounts list.
