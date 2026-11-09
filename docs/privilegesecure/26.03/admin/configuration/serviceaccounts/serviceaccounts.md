@@ -52,7 +52,7 @@ The selected service account details display at the top of the main pane:
 - **Authentication**:
   - **Enable Password** — Temporarily elevates the Service Account to `Privileged EXEC` mode, allowing
     the account to manage the users and privileges required by Privilege Secure workflows on Cisco
-    resources. The Enable Password can be used with any existing user account on the Cisco device
+    resources. You can use the Enable Password with any existing user account on the Cisco device
     (privilege level 1 - 15). This field only applies to Cisco platforms.
   - **Authentication Method** — Displays the method by which a service account is authenticated. This
     field only applies to Linux platforms.

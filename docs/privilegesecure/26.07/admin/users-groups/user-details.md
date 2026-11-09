@@ -36,7 +36,7 @@ The tabs depend on the type of account.
 | Group | **Sessions**, **Members**, **Policies**, **History**, **Authentication Connector**, **Group Roles** |
 | Application user | **Sessions**, **Policies**, **History**, **Authentication**, **Properties** |
 
-Every list on the tabs has a search box and can be resized and sorted by column.
+Every list on the tabs has a search box, and you can resize and sort it by column.
 
 ### Sessions
 

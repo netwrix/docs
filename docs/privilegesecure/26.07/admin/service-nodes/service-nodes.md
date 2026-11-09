@@ -8,7 +8,7 @@ sidebar_position: 10
 
 A service node is a server that runs Privilege Secure services. The **Service Nodes** page shows each node, the services on it, and whether they are healthy. Use it to find a stopped service and to read what each service is doing.
 
-To open it, select **Configuration** > **Service Nodes**. The page is under **Configuration** in the console menu.
+To open it, select **Configuration** > **Service Nodes**.
 
 The page is for monitoring and reading logs. The only settings you change here are the Email service settings. To run services on more servers, see [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 

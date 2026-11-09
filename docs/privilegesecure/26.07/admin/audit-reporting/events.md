@@ -49,6 +49,6 @@ The list includes events such as these:
 
 The list has no column for the event type. SIEM templates can include the event type and the service that logged the event. See [SIEM templates and event fields](/docs/privilegesecure/26.07/integrations/siem/siem-templates.md).
 
-When a SIEM server is enabled, Privilege Secure forwards each event that appears in this list to it. Events from the Remote Access Gateway service are written only to that service's log file, so they don't appear in the list or reach a SIEM.
+When a SIEM server is enabled, Privilege Secure forwards each event that appears in this list to it. The Remote Access Gateway service writes its events only to its own log file, so they don't appear in the list or reach a SIEM.
 
 To forward events to a SIEM, see [Forward events to a SIEM](/docs/privilegesecure/26.07/integrations/siem/siem-servers.md).

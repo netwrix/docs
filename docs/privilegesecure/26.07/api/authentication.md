@@ -91,7 +91,7 @@ If a load balancer or reverse proxy ends TLS before the request reaches the serv
 The server reads `ClientCertificateHeader` at startup, so restart the web application (recycle its application pool) after you change it. Check the header format that your load balancer sends in its vendor documentation. For example, AWS Application Load Balancer sends the certificate in the `X-Amzn-Mtls-Clientcert` header.
 
 :::warning
-If the proxy doesn't percent-encode the certificate, the server decodes it incorrectly. An unescaped `+` becomes `C`, so the server reads a corrupted certificate. The `GET` check then returns a wrong serial number, and the token call fails with "Invalid Username or Password". Always encode the header value as described above.
+If the proxy doesn't percent-encode the certificate, the server decodes it incorrectly. An unescaped `+` becomes `C`, so the server reads a corrupted certificate. The `GET` check then returns a wrong serial number, and the token call fails with "Invalid Username or Password". Always percent-encode the header value.
 :::
 
 ## Call the API with the token

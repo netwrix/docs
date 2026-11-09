@@ -29,8 +29,8 @@ The account appears on the **Users & Groups** page with the type **Local User**.
 
 The password you enter must meet the local user password policy. Administrators change the policy in **System Settings** > **Local User Password**. The default policy requires:
 
-- At least 8 characters. The length can be set from 8 to 1024.
-- At least 1 unique character. This can be set from 1 to 12.
+- At least 8 characters. The length setting accepts 8 to 1024.
+- At least 1 unique character. The setting accepts 1 to 12.
 - At least one lowercase letter, one uppercase letter, one digit, and one non-alphanumeric character. Each requirement has its own setting.
 
 Local user passwords also expire. The default is 90 days, and **Expiration (Days)** accepts 10 to 365. A user whose password has expired can't continue after signing in until the user sets a new password on the sign-in page. A password that you create with **Change Password Next Login** selected expires immediately, so the user sets a new password at the first sign-in. See [System settings reference](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md#local-user-password).
