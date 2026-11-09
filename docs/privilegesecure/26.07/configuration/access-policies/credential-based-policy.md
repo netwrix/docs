@@ -26,7 +26,7 @@ A credential-based access policy lets users check out managed credentials, and c
 
 For example, to let a team check out a shared service account, enter the name `Shared service accounts`, select **Credential Based**, and select a connection profile. Then add the team's group and the credential on the tabs.
 
-When you select **Credential Based**, the **Resources** tab is replaced by the **Credentials** and **Files** tabs. Save the policy before you add credentials or files. If you change **Type** on a saved policy, the **Confirm policy type change** dialog warns that the associated credentials or resources, and the policy's access certifications, will be removed.
+When you select **Credential Based**, the **Credentials** and **Files** tabs replace the **Resources** tab. Save the policy before you add credentials or files. If you change **Type** on a saved policy, the **Confirm policy type change** dialog warns that the associated credentials or resources, and the policy's access certifications, will be removed.
 
 The **Credentials** and **Files** tabs appear for administrators and for the Admin View Read Only role.
 
