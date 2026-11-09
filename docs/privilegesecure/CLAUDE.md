@@ -55,7 +55,8 @@ Edits to one version do **not** propagate to others. Update each version that ne
 | `resources/` | 460 | Servers, domains, Entra ID, databases, websites, platforms |
 | `remote-access-gateway/` | 500 | Gateway requirements, install, configuration, user guide, troubleshooting. Repeats the zones one level down. |
 | `user-guide/` | 600 | Sign in, request and connect to sessions, approvals, browser extension |
-| `integrations/` | 700 | API, identity providers, ITSM, SIEM, vaults |
+| `integrations/` | 700 | Identity providers, ITSM, SIEM, vaults |
+| `api/` | 750 | API overview, authentication, and the generated API reference |
 | `troubleshooting/` | 800 | Known issues, services, sessions, Active Directory sync |
 | `kb/` | 999 | Knowledge Base copies (see below) |
 
@@ -84,6 +85,15 @@ Upgrades go through `install/upgrade.md`. There is no migration zone.
 - **Console address.** The console runs over HTTPS on port 6500 (`https://<server>:6500`). `requirements/ports.md` is the canonical page for the port. Use placeholders such as `<nps-server>` in examples.
 - **Images.** Store them in `static/images/privilegesecure/26.07/<zone>/` as `.webp` and reference them with absolute paths.
 - **Names.** Take product, component, and menu names from `getting-started/glossary.md`, and write UI labels exactly as the console shows them, in bold.
+
+## API reference (26.07)
+
+`docs/privilegesecure/26.07/api/` holds two hand-authored pages (`overview.md`, `authentication.md`) and `reference/`, which is generated from the OpenAPI spec.
+
+- **Spec.** `static/openapi/privilegesecure-26.07.json` is the public spec for 26.07.3. It is generated from the product code and published as-is. Don't edit it by hand, and keep the internal inputs and the full internal spec out of commits.
+- **Derived copy.** At build time `scripts/prepare-privilegesecure-spec.mjs` writes `.generated/privilegesecure-26.07.json` (schemas inlined to depth 1, unique operation IDs). The plugin reads that copy. It is never published.
+- **Generated files.** `reference/*.mdx` and `reference/sidebar.ts` are gitignored. `npm run build` and `npm run start` regenerate them when `DOCS_PRODUCT` is unset or `privilegesecure`. `reference/_category_.json` and `reference/index.md` are tracked. If `clean-api-docs` deletes `_category_.json`, restore it with `git checkout -- docs/privilegesecure/26.07/api/reference/_category_.json`.
+- **Sidebar.** `_category_.json` carries `customProps.isGeneratedApiSidebar`. `sidebarItemsGenerator` in `src/config/products.js` swaps in the tag-grouped sidebar from `sidebar.ts`.
 
 ## Knowledge Base Articles
 
