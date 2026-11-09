@@ -18,7 +18,7 @@ The Netwrix Setup Launcher (`NPS_Setup.exe`) checks prerequisites, installs the 
 - Install PowerShell 7.6 or later. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md#software-to-install-before-you-run-the-installer).
 
 :::warning
-Install PowerShell 7.6 or later before you start the Setup Launcher. The launcher checks for it, and the application installer stops without it. Download PowerShell from [aka.ms/powershell](https://aka.ms/powershell).
+The Setup Launcher checks for PowerShell 7.6 or later, and the application installer stops without it. Download PowerShell from [aka.ms/powershell](https://aka.ms/powershell).
 :::
 
 If PowerShell 7.6 or later isn't installed when the launcher starts `NPS.exe`, the installer stops and shows the message "PowerShell 7.6 or later is required. Please install it from https://aka.ms/powershell". Install PowerShell, and then run the installer again.

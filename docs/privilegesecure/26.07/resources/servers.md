@@ -55,8 +55,8 @@ The action dropdown has these values:
 
 | Value | Behavior |
 | --- | --- |
-| **Allow Connection** | Allows the connection. When the thumbprint differs from the trusted thumbprint, records a Warning event. |
-| **Log event and allow** | Allows the connection. When the thumbprint differs from the trusted thumbprint, records a Warning event. This value is the default. |
+| **Allow Connection** | Allows the connection. When the thumbprint differs from the trusted thumbprint, records a Warning event. The resource details page doesn't show the mismatch icon. |
+| **Log event and allow** | Allows the connection. When the thumbprint differs from the trusted thumbprint, records a Warning event and shows the mismatch icon on the resource details page. This value is the default. |
 | **Log event and block** | Blocks the connection and records an Error event. |
 
 With **Allow Connection**, the resource details page doesn't show the mismatch icon. Privilege Secure still compares the thumbprint and records the Warning event when it differs.

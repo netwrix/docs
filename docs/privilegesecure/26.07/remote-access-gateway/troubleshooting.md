@@ -129,13 +129,13 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 
 **Fix:**
 
-1. On the gateway server, run `wsl -l -v` in PowerShell. The distribution shows **Running**. If it shows **Stopped**, run `wsl` to start it.
+1. On the gateway server, run `wsl -l -v` in PowerShell. Confirm that the distribution shows **Running**. If it shows **Stopped**, run `wsl` to start it.
 2. In the Ubuntu distribution, run `sudo docker ps`. The output lists a container named `guacd` that publishes port 4822. If `guacd` isn't listed, run `sudo docker start guacd`.
 3. In PowerShell, run `Test-NetConnection <guacd-host> -Port 4822` and confirm that `TcpTestSucceeded` is `True`.
 
 If the address of the WSL instance changed, run `wsl hostname -I` to get the current address. Then run `Configure-Gateway.ps1` again with that address as the `-NPSGuacdHost` value.
 
-The installer registers two scheduled tasks, `NPS WSL holder` and `NPS WSL net keepalive`, that run at startup and keep WSL and guacd up without a manual `wsl` command. Keep both tasks enabled. If guacd still becomes unreachable, restart the container: run `wsl -d Ubuntu -u root -- docker restart guacd`, then repeat step 3. For the task details, see [Start WSL automatically](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#start-wsl-automatically).
+The installer registers two scheduled tasks, `NPS WSL holder` and `NPS WSL net keepalive`, that run at startup and keep WSL and guacd up without a manual `wsl` command. Keep both tasks enabled. If guacd still becomes unreachable, restart the container: run `wsl -d Ubuntu -u root -- docker restart guacd`, then repeat the port 4822 connection check in step 3. For the task details, see [Start WSL automatically](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#start-wsl-automatically).
 
 ## Colors look wrong in an RDP session
 

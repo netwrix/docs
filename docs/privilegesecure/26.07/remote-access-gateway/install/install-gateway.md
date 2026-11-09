@@ -136,7 +136,7 @@ The script stores `<guacd-host>` in the `Guacd.Hostname` setting. In the default
 
 ## Start WSL automatically
 
-guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway package includes `Setup-WslTask.ps1` to register a scheduled task that starts WSL when the server starts. The script registers the scheduled task "Start Gaucd on WSL". The task runs `wsl.exe` 60 seconds after startup. It runs with the highest privileges as the account that you enter, and it has no time limit.
+guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway package includes `Setup-WslTask.ps1` to register a scheduled task that starts WSL when the server starts. The script registers the scheduled task "Start Gaucd on WSL". Search Task Scheduler for that exact name, which the script spells "Gaucd" rather than "guacd". The task runs `wsl.exe` 60 seconds after startup. It runs with the highest privileges as the account that you enter, and it has no time limit.
 
 1. Sign in as the Windows user who installed WSL. Each user has a separate WSL environment.
 2. Run the script from the gateway installation folder:
