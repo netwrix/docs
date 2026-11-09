@@ -7,7 +7,7 @@ const PREFIX = '/docs/platgovsalesforce';
 
 // old path (relative to the product) -> new path
 const MOVED_PAGES = {
-  'release_7_0': 'release-notes/release-7-0',
+  'release_7_0': 'release-notes/whats-new',
 };
 
 export const platgovsalesforceRestructureRedirects = Object.entries(MOVED_PAGES).map(
