@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Configure a SAML connector
 
-A SAML connector lets users sign in to the Privilege Secure console through a Security Assertion Markup Language (SAML) identity provider (IdP), such as Active Directory Federation Services (AD FS) or Microsoft Entra ID. The console shows an **Or login using** button for each SAML connector.
+A Security Assertion Markup Language (SAML) connector lets users sign in to the Netwrix Privilege Secure for Access Management (Privilege Secure) console through a SAML identity provider (IdP). Examples are Active Directory Federation Services (AD FS) and Microsoft Entra ID. The console shows an **Or login using** button for each SAML connector.
 
 This page covers the connector fields, the values to register at the IdP, and the template files to protect during an upgrade. For the other connector types, see [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md).
 
@@ -21,7 +21,7 @@ This page covers the connector fields, the values to register at the IdP, and th
 1. Select **Configuration** > **Authentication** in the left navigation.
 1. Click the **+** button above the connector list.
 1. Enter a name in **Enter Authentication Connector Name**, for example `corporate-saml`. The **Connector Type** list stays unavailable until you enter a name.
-1. Optional: Enter a **Description**.
+1. (Optional) Enter a **Description**.
 1. In **Connector Type**, select **SAML**.
 1. Enter the connector settings, using the wizard or manual entry. See the next two sections.
 1. Click **Save**.
@@ -81,14 +81,14 @@ The wizard builds both values from the address in the browser. Open the console 
 
 For step-by-step IdP recipes, see:
 
-- [Add Active Directory Federation Services as an authentication connector (SAML)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-saml)
-- [Add Microsoft Entra ID as an authentication connector (SAML)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-saml)
+- [Add Active Directory Federation Services as an authentication connector (SAML)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-saml.md)
+- [Add Microsoft Entra ID as an authentication connector (SAML)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-saml.md)
 
 ## Assign users to the connector
 
 Open a user on the **Users & Groups** page, select the **Authentication Connector** tab, and choose the SAML connector. Privilege Secure refuses an external sign-in when the user isn't assigned to the connector.
 
-The `StrictExternalAuth` setting controls this check. Its default is `true`, and Privilege Secure reads it from the web service configuration. The user is matched to the connector through the user's own assignment, or when the user has none, through the first group that has a connector. When the check fails, Privilege Secure refuses the sign-in.
+The `StrictExternalAuth` setting controls this check. Its default is `true`, and Privilege Secure reads it from the web service configuration. Privilege Secure matches the user to the connector through the user's own assignment. When the user has none, it uses the first group that has a connector. When the check fails, Privilege Secure refuses the sign-in.
 
 To make the SAML connector the default or the only sign-in method, or to show the password fields again with `?adlogin=1`, see [Default and exclusive connectors](/docs/privilegesecure/26.07/configuration/authentication/overview.md#default-and-exclusive-connectors).
 

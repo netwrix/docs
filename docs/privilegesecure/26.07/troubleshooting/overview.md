@@ -34,7 +34,7 @@ The Remote Access Gateway and Portal write logs on their own hosts. See [Trouble
 Before you dig into a specific page, check these items:
 
 1. Select **Configuration** > **Service Nodes**, and confirm that every service on every node shows **Online**. See [Service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).
-1. Open **System Settings** > **Services** and confirm that **NPS Rest URL** uses the form `https://<nps-server>:6500` with no trailing slash. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+1. Open **System Settings** > **Services** and confirm that **NPS Rest URL** uses the form `https://<nps-server>:6500` with no trailing slash. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 1. Open **Auditing & Reporting** > **Events** and look for recent warnings, such as a service that stopped.
 1. Open the log for the service that handles the failing task and look for warning and error lines around the time of the failure.
 
@@ -51,4 +51,4 @@ Set a more detailed log level only when support asks you to, and set it back to 
 
 ## Knowledge Base
 
-The Netwrix Knowledge Base has articles on specific Privilege Secure problems in its Troubleshooting and errors category, such as [Logs Location](/docs/kb/privilegesecure/troubleshooting-and-errors/logs-location) and [services that aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running). See the [Privilege Secure Knowledge Base](/docs/kb/privilegesecure/privilegesecure).
+The Netwrix Knowledge Base has articles on specific Privilege Secure problems in its Troubleshooting and errors category, such as [Logs Location](/docs/kb/privilegesecure/troubleshooting-and-errors/logs-location.md) and [services that aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running.md). See the [Privilege Secure Knowledge Base](/docs/kb/privilegesecure/index.md).

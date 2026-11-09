@@ -56,13 +56,13 @@ To offer SSO on the portal, enable a connector for it:
 3. Select **Use Remote Access Gateway**.
 4. Select **Save**.
 
-If a user signs in with a connector that doesn't match, the sign-in fails with an error that reads "The authentication method: '\<name\>' cannot be used via Remote Access Gateway", where `<name>` is the connector name.
+If a user signs in with a connector that doesn't match, the sign-in fails. The error reads "The authentication method: '\<name\>' cannot be used via Remote Access Gateway", where `<name>` is the connector name.
 
 The portal lists only the connectors that have **Use Remote Access Gateway** selected, and the console lists only the others. To offer the same identity provider on both, create a second connector for the portal, as [Use Remote Access Gateway](/docs/privilegesecure/26.07/configuration/authentication/overview.md#use-remote-access-gateway) describes.
 
 For an OpenID Connect connector, the sign-in sends the user back to the address of the page that started the sign-in, followed by `/callback`. For the portal, that address is `https://<portal DNS name>/callback`. Register it with the identity provider as a callback address, and register the sign-out address, `https://<portal DNS name>/logoutCallback`, as well.
 
-The **Set as Default** and **Set as Exclusive** options work on the portal sign-in page as they do on the console page, but only for a connector that has **Use Remote Access Gateway** selected, because the portal doesn't list any other connector. For what the two options do, see [Default and exclusive connectors](/docs/privilegesecure/26.07/configuration/authentication/overview.md#default-and-exclusive-connectors).
+The **Set as Default** and **Set as Exclusive** options work on the portal sign-in page as they do on the console page. They apply only to a connector that has **Use Remote Access Gateway** selected, because the portal doesn't list any other connector. For what the two options do, see [Default and exclusive connectors](/docs/privilegesecure/26.07/configuration/authentication/overview.md#default-and-exclusive-connectors).
 
 ## Related topics
 

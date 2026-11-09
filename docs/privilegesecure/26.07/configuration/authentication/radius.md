@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Configure a RADIUS MFA connector
 
-An **MFA** connector sends a second-factor request to a Remote Authentication Dial-In User Service (RADIUS) server when a user signs in. Use it with a RADIUS server, such as a Duo RADIUS proxy.
+An **MFA** connector in Netwrix Privilege Secure for Access Management (Privilege Secure) sends a second-factor request to a Remote Authentication Dial-In User Service (RADIUS) server when a user signs in. Use it with a RADIUS server, such as a Duo RADIUS proxy.
 
 For the other connector types and how a user's connector is chosen, see [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md).
 
@@ -15,14 +15,14 @@ For the other connector types and how a user's connector is chosen, see [Authent
 - You have the Administrator role. Only administrators can open **Configuration** > **Authentication**.
 - A RADIUS server that is reachable from the application server.
 - The RADIUS server's address, port, authentication type, and shared secret.
-- The application server registered as a RADIUS client on the RADIUS server, with the same shared secret. A RADIUS server picks the shared secret for a request from the source IP address of the request (RFC 2865, section 3), so register the address that the application server's requests come from.
+- The application server registered as a RADIUS client on the RADIUS server, with the same shared secret. A RADIUS server picks the shared secret for a request from the source IP address of the request (RFC 2865, section 3). Register the address that the application server's requests come from.
 
 ## Add the connector
 
 1. Select **Configuration** > **Authentication**.
 1. Click the **+** button above the connector list.
 1. Enter a name for the connector. The **Connector Type** list stays unavailable until you enter a name.
-1. Optional: Enter a **Description**.
+1. (Optional) Enter a **Description**.
 1. In **Connector Type**, select **MFA**. After you save the connector, you can't change its type.
 1. Complete the fields in the following table.
 1. Select **Save**.
@@ -100,10 +100,10 @@ Privilege Secure includes a **Duo** connector in the connector list. It appears 
 
 For the tab and the rules for users in several groups, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector) and [Connector precedence](/docs/privilegesecure/26.07/configuration/authentication/overview.md#connector-precedence).
 
-If users aren't assigned to the connector, Privilege Secure refuses their sign-in through it. For a connector that must accept unassigned users, see [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector).
+If users aren't assigned to the connector, Privilege Secure refuses their sign-in through it. For a connector that must accept unassigned users, see [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector.md).
 
 ## Related topics
 
-- [How to Configure a Duo RADIUS Proxy for Multi-Factor Authentication](/docs/kb/privilegesecure/authentication-and-mfa/how-to-configure-a-duo-radius-proxy-for-multi-factor-authentication)
-- [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector)
-- [Invalid Multi-Factor Authentication Code Error](/docs/kb/privilegesecure/authentication-and-mfa/invalid-multi-factor-authentication-code-error)
+- [How to Configure a Duo RADIUS Proxy for Multi-Factor Authentication](/docs/kb/privilegesecure/authentication-and-mfa/how-to-configure-a-duo-radius-proxy-for-multi-factor-authentication.md)
+- [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector.md)
+- [Invalid Multi-Factor Authentication Code Error](/docs/kb/privilegesecure/authentication-and-mfa/invalid-multi-factor-authentication-code-error.md)

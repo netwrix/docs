@@ -11,9 +11,9 @@ The HashiCorp connector lets Netwrix Privilege Secure check out account credenti
 - **Service accounts**, such as the account that synchronizes Active Directory.
 - **Activities** that use the **Vault** login account to sign in to a resource.
 
-The connector uses the HashiCorp Vault Active Directory secrets engine. The engine groups usernames and passwords into libraries. When Privilege Secure checks out an account from a library, the engine chooses which account in the library it returns, so the account can differ from one check-out to the next. For how vault connectors work in general, see [Third-party vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md).
+The connector uses the HashiCorp Vault Active Directory secrets engine. The engine groups usernames and passwords into libraries. When Privilege Secure checks out an account from a library, the engine chooses which account in the library it returns. The account can differ from one check-out to the next. For how vault connectors work in general, see [Third-party vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md).
 
-The connector calls the library check-out and check-in endpoints and splits the returned account name at the `@` into a user name and a domain. HashiCorp documents the same endpoints for its LDAP secrets engine and names library service accounts in `<user>@<domain>` form, so the LDAP secrets engine works with this connector when its library accounts are named that way. The **API Url** plus the **Library** value must resolve to the engine's mount path.
+The connector calls the library check-out and check-in endpoints and splits the returned account name at the `@` into a user name and a domain. HashiCorp documents the same endpoints for its LDAP secrets engine and names library service accounts in `<user>@<domain>` form. The LDAP secrets engine therefore works with this connector when its library accounts are named that way. The **API Url** plus the **Library** value must resolve to the engine's mount path.
 
 ## Prerequisites
 

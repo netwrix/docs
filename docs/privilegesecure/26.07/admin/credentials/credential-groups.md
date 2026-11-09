@@ -26,7 +26,7 @@ The member table has these controls:
 
 - **Search**: Filters the members.
 - **Type**: Filters by managed type: All, Internal, Standard, or Service.
-- **Add Credentials**: Opens the Add Credentials dialog.
+- **Add Credentials**: Opens the **Add Credentials** dialog.
 - **Remove**: Removes the selected members from the group. It is disabled until you select a row.
 - **Refresh**: Reloads the table.
 
@@ -48,7 +48,7 @@ For example, name a group `<build-admin-accounts>` with the description `<Local 
 2. Select **Add Credentials**.
 3. Use the search box and the type dropdown (All, Internal, Standard, Service) to find accounts.
 4. Select the checkbox for each account in **Available Credentials**. The account moves to **Credentials to Add**.
-5. Optional: Clear a checkbox in **Credentials to Add** to move the account back.
+5. (Optional) Clear a checkbox in **Credentials to Add** to move the account back.
 6. Select **Add**.
 
 ![The Add Credentials dialog with Available Credentials on the left and the empty Credentials to Add pane on the right.](/images/privilegesecure/26.07/admin/add-credentials-dialog.webp)

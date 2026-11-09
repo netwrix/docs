@@ -52,7 +52,7 @@ The AWS KMS settings file is a JSON file with the properties `AwsAccessKey`, `Aw
 
 ## Export and import the key
 
-Export and import the key to install an additional server that shares the database, such as a high availability secondary or a server that runs a remote Action Service, Host Scan Service, or Scheduler Service. Every server that decrypts secrets needs the same key files.
+Export and import the key to install an additional server that shares the database. Examples are a high availability secondary and a server that runs a remote Action Service, Host Scan Service, or Scheduler Service. Every server that decrypts secrets needs the same key files.
 
 1. On the server that has the key, open a Command Prompt as an administrator.
 1. Run the export command. Replace `keys.exp` with a file name.
@@ -65,20 +65,21 @@ Export and import the key to install an additional server that shares the databa
 1. Copy the password that the tool prints. If you don't supply `-p`, the tool generates a 32-character password and prints it as `Password for file: <password>`.
 1. Copy `keys.exp` to the `KeyTools` folder on the other server.
 1. On the other server, back up the `C:\ProgramData\Stealthbits\PAM\Protect` folder. The import overwrites key files that have the same names.
-1. Run the import command, enter `Y` to confirm, and enter the password when prompted. To skip the confirmation, add `-f`. To supply the password, add `-p <password>`.
+1. Run the import command. To skip the confirmation, add `-f`. To supply the password, add `-p <password>`.
 
    ```bat
    cd "C:\Program Files\Stealthbits\PAM\KeyTools"
    .\SbPAM.RotateKey.exe import -n keys.exp
    ```
 
+1. Enter `Y` to confirm, and enter the password when prompted.
 1. Delete `keys.exp` and any saved copies of the password from both servers.
 
 The import protects the key files on the other server with that server's Windows machine key.
 
 If AWS KMS protects the key, the export reads the key through AWS KMS, so the exporting server needs working AWS access. The other server doesn't need AWS access. The import protects the key there with the Windows machine key, so the key on that server isn't protected by AWS KMS.
 
-For the full high availability procedure, see [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments).
+For the full high availability procedure, see [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md).
 
 ## Rotate the key
 

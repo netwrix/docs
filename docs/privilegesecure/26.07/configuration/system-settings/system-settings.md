@@ -58,7 +58,7 @@ If the user doesn't click **Keep Session Active** within 5 minutes of the warnin
 
 The setting applies to the Privilege Secure console. The web service rejects a value above 1000 and a negative value.
 
-The Remote Access Gateway portal applies the same setting. The portal serves the same web interface build, which reads the timeout value from the web service when a signed-in user loads the portal, so the **Session timeout** warning and sign-out behave the same way there.
+The Remote Access Gateway portal applies the same setting. The portal serves the same web interface build. That build reads the timeout value from the web service when a signed-in user loads the portal, so the **Session timeout** warning and sign-out behave the same way there.
 
 ## User Expiration
 
@@ -67,7 +67,7 @@ The Remote Access Gateway portal applies the same setting. The portal serves the
 | **Idle Limit to Disable Users (days)** | 0, with **Disabled** selected | The number of days without a sign-in after which Privilege Secure acts on an idle user. The field is unavailable while **Disabled** is selected. The allowed values are 0 (off) or 90 to 365. |
 
 :::warning
-Despite the label, this setting removes idle users from Privilege Secure. It doesn't disable them. An hourly check deletes the account of each user whose last sign-in is older than the number of days you set, and removes the user's sign-in record. Users who get the Administrator role only through a group aren't exempt and can be deleted. Users who have the Administrator role assigned directly, application users, and users who have never signed in are exempt. Don't turn it on in a production system until you have confirmed the result on a test system.
+Despite the label, this setting removes idle users from Privilege Secure. It doesn't disable them. An hourly check deletes the account of each user whose last sign-in is older than the number of days you set. It also removes the user's sign-in record. Users who get the Administrator role only through a group aren't exempt and can be deleted. Users who have the Administrator role assigned directly, application users, and users who have never signed in are exempt. Don't turn it on in a production system until you have confirmed the result on a test system.
 :::
 
 ## Encrypted Files
@@ -130,7 +130,7 @@ Each retention period accepts 1 to 3650 days. See [Configure data retention](/do
 | **Ignore HTTPS Certificate Errors** | Cleared | Skips certificate validation for connections to the web service. Leave it cleared. |
 | **Register Services** | Not applicable | Applies the **NPS Rest URL** to the services and registers them again. |
 
-See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 ## Action Service Settings
 

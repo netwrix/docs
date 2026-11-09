@@ -24,7 +24,7 @@ Register Privilege Secure as an application in the identity provider first. The 
 
 Privilege Secure builds the callback addresses from the address in the browser. Register them with the same host name and port that users use to open the console, which is 6500 by default. Open the console at `https://<nps-server>:6500` before you run the wizard.
 
-An OpenID Connect provider compares the callback address in each sign-in request with the addresses registered for the application, character for character. A callback address with a different host name or port doesn't match and the provider rejects the request. Register the sign-out callback address as well. When a user signs out, the console asks the provider to return the user to that address, and a provider only redirects to an address that is registered.
+An OpenID Connect provider compares the callback address in each sign-in request with the addresses registered for the application, character for character. A callback address with a different host name or port doesn't match and the provider rejects the request. Register the sign-out callback address as well. When a user signs out, the console asks the provider to return the user to that address. A provider only redirects to an address that is registered.
 
 Copy the **Issuer** address and the application's **Client Id** from the provider. You enter both in Privilege Secure.
 
@@ -35,7 +35,7 @@ The users who sign in must exist in Privilege Secure, and you must assign the co
 1. Select **Configuration** > **Authentication**.
 1. Click the **+** button above the connector list.
 1. Enter a name for the connector. The **Connector Type** list stays unavailable until you enter a name.
-1. Optional: Enter a **Description**.
+1. (Optional) Enter a **Description**.
 1. In **Connector Type**, select **OpenID Connect**.
 1. Select **Configuration Wizard** to fill in the connector with a guided test, or select **Manually Enter Data** to enter the values yourself.
 
@@ -116,7 +116,7 @@ The **Issuer** is the address of the provider's issuer identifier, an `https` ad
 1. Select the **Authentication Connector** tab.
 1. Select the connector.
 
-If a user isn't assigned to the connector, Privilege Secure refuses the sign-in. See [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md#assignment-is-required).
+If a user isn't assigned to the connector, Privilege Secure refuses the sign-in. See [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md#required-assignment).
 
 If the connector must work through the Remote Access Gateway, read [Use Remote Access Gateway](/docs/privilegesecure/26.07/configuration/authentication/overview.md#use-remote-access-gateway) before you select the checkbox.
 
@@ -126,5 +126,5 @@ In 26.07.3 and later, an OpenID Connect sign-in error doesn't sign the user out 
 
 ## Related topics
 
-- [Add Microsoft Entra ID as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-openid-connect)
-- [Add Active Directory Federation Services (AD FS) as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-openid-connect)
+- [Add Microsoft Entra ID as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-openid-connect.md)
+- [Add Active Directory Federation Services (AD FS) as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-openid-connect.md)

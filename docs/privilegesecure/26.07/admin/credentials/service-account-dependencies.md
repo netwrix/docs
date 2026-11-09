@@ -74,10 +74,10 @@ The **Rotation Status** field and the **Status** column on the **Dependencies** 
 
 The **Rotate** button on the **Credentials** page doesn't rotate an account that has dependents. Rotate a service account from this dialog so that its dependents are updated.
 
-The **Dependents** count on the **Credentials** page leaves out services and scheduled tasks that a later host scan found removed, and services on resources that were deleted from Privilege Secure. Deleting a resource removes its managed-resource record, so its services leave the count at the next scan. If a removed dependent still appears, run a host scan on its resource from the **Resources** tab.
+The **Dependents** count on the **Credentials** page leaves out two kinds of dependents: services and scheduled tasks that a later host scan found removed, and services on resources that were deleted from Privilege Secure. Deleting a resource removes its managed-resource record, so its services leave the count at the next scan. If a removed dependent still appears, run a host scan on its resource from the **Resources** tab.
 
 ## Roll back a rotation
 
-Select **Rollback** to return the account to its previous password. Privilege Secure restores the most recent previous password first, then schedules an update for each dependent so that they use it again, the same way as a rotation. Select **Cancel** to stop a rollback that's in progress.
+Select **Rollback** to return the account to its previous password. Privilege Secure restores the most recent previous password first. It then schedules an update for each dependent so that they use it again, the same way as a rotation. Select **Cancel** to stop a rollback that's in progress.
 
 For how the account types differ, see [Password rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).

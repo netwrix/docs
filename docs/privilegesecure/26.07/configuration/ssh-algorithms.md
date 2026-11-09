@@ -43,14 +43,14 @@ The following defaults come from the 26.07.3 files. The settings for connections
 | `Ciphers` | `chacha20-poly1305@openssh.com`, `aes256-gcm@openssh.com`, `aes128-gcm@openssh.com`, `aes256-ctr`, `aes192-ctr`, `aes128-ctr`, `aes128-cbc`, `3des-cbc` |
 | `MACs` | `hmac-sha2-256-etm@openssh.com`, `hmac-sha2-512-etm@openssh.com`, `hmac-sha2-256`, `hmac-sha2-512`, `hmac-sha1`, `hmac-sha1-96` |
 
-For connections from users' SSH clients to the proxy, `ServerSettings` in `sbpam_ssh.json` sets `MACs` to the same list as above. Its `KeyExchanges` and `Ciphers` lists are empty by default.
+For connections from users' SSH clients to the proxy, `ServerSettings` in `sbpam_ssh.json` sets `MACs` to the same list as the preceding table. Its `KeyExchanges` and `Ciphers` lists are empty by default.
 
 An empty list makes the proxy use the default set of the SSH library that it is built with, so users' SSH clients can negotiate any algorithm in that set. To limit what users' clients can use, enter an explicit list.
 
 The defaults include algorithms that are obsolete, such as `ssh-dss`, `3des-cbc`, `hmac-sha1`, and the SHA-1 Diffie-Hellman groups. They remain enabled because older devices need them. Remove the ones that your devices don't need.
 
 :::note
-An upgrade doesn't replace an existing `sbpam_ssh.json`. A server upgraded from an earlier release keeps the algorithm lists that were in its file before the upgrade, and these can differ from the defaults above. Compare the file on the server with the defaults before you edit it.
+An upgrade doesn't replace an existing `sbpam_ssh.json`. A server upgraded from an earlier release keeps the algorithm lists that were in its file before the upgrade, and these can differ from the defaults in the preceding table. Compare the file on the server with the defaults before you edit it.
 
 An upgrade replaces `sbpam_sshclient.json`. Keep a copy of your edits and compare the file after each upgrade. If you edit only one of the two files, the connections that use the other file keep the old lists.
 :::
@@ -62,7 +62,7 @@ The `sbpam_ssh.json` file that the installer creates lists `KeyExchanges`, `Ciph
 :::
 
 1. Sign in to the server that runs the component as an administrator.
-1. Back up the file that you will edit.
+1. Back up the file that you edit.
 1. Open `sbpam_sshclient.json` in a text editor that doesn't change the file encoding.
 1. In the `SSHClientConfig` section, edit the `HostKeyAlgorithms`, `KeyExchanges`, `Ciphers`, or `MACs` list. Keep the JSON syntax valid.
 1. Save the file.
@@ -72,7 +72,7 @@ The `sbpam_ssh.json` file that the installer creates lists `KeyExchanges`, `Ciph
 
 If `sbpam_sshclient.json` is missing or can't be read, the SSH client uses its built-in defaults. Check the file syntax if your changes have no effect.
 
-The Action Service and Host Scan Service start a new SSH client process for each command plan, and each process reads `sbpam_sshclient.json` when it starts, so a change to that file needs no service restart. The Proxy Service reloads `sbpam_ssh.json` when the file changes. New sessions use the saved algorithms without a service restart. Sessions that are already open keep the algorithms they negotiated.
+The Action Service and Host Scan Service start a new SSH client process for each command plan, and each process reads `sbpam_sshclient.json` when it starts. A change to that file needs no service restart. The Proxy Service reloads `sbpam_ssh.json` when the file changes. New sessions use the saved algorithms without a service restart. Sessions that are already open keep the algorithms they negotiated.
 
 ### Example: remove the legacy ciphers
 
@@ -110,10 +110,10 @@ In `sbpam_ssh.json`, the same list goes inside an `Algorithms` object under `Cli
 
 If a session or action fails with the error "no common algorithm for key exchange", the device offers only algorithms that are missing from the lists. Add the algorithm that the device requires to the matching list in both files. See these Knowledge Base articles for a Cisco example:
 
-- [Resolving the "no common algorithm for key exchange" SSH error for Cisco resources](/docs/kb/privilegesecure/network-and-platform-integration/resolving-no-common-algorithm-for-key-exchange-ssh-error-for-cisco-resources)
-- [Cisco SSH session fails with error "ssh: handshake failed: ssh: no common algorithm for key exchange"](/docs/kb/privilegesecure/network-and-platform-integration/cisco-ssh-session-fails-with-error-ssh-handshake-failed-ssh-no-common-algorithm-for-key-exchange)
+- [Resolving the "no common algorithm for key exchange" SSH error for Cisco resources](/docs/kb/privilegesecure/network-and-platform-integration/resolving-no-common-algorithm-for-key-exchange-ssh-error-for-cisco-resources.md)
+- [Cisco SSH session fails with error "ssh: handshake failed: ssh: no common algorithm for key exchange"](/docs/kb/privilegesecure/network-and-platform-integration/cisco-ssh-session-fails-with-error-ssh-handshake-failed-ssh-no-common-algorithm-for-key-exchange.md)
 
 ## Related topics
 
 - [Security hardening checklist](/docs/privilegesecure/26.07/configuration/security-hardening.md)
-- [Invoke a desktop SSH client automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically)
+- [Invoke a desktop SSH client automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically.md)

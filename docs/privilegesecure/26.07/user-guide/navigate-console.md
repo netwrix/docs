@@ -98,7 +98,7 @@ Most users see only part of this menu. Everyone sees **My Activities** and **Das
 - Reviewers see **Auditing & Reporting > Access Certification**. See [Review an access certification](/docs/privilegesecure/26.07/user-guide/review-access.md).
 - Auditors see **Activity Log**, **DB Change History**, **Events**, **Log Files**, and **Reporting** under **Auditing & Reporting**. See [Review sessions as an auditor](/docs/privilegesecure/26.07/user-guide/audit-sessions.md).
 - Users with the Admin View Read Only role see the same menu as administrators, but can't make changes.
-- Users with a custom role that targets Access Policies see **Access Policy**, without the **Connection Profiles**, **Activity Token Complexity**, and **Command Restriction** sub-items, which only administrators see. Users with a custom role that targets Credentials see the **Credentials** tile.
+- Users with a custom role that targets Access Policies see **Access Policy**. They don't see the **Connection Profiles**, **Activity Token Complexity**, and **Command Restriction** sub-items, which only administrators see. Users with a custom role that targets Credentials see the **Credentials** tile.
 - A user who has no other role sees **My Activities** and **Dashboard**, plus **Live Sessions** when it is available to them.
 
 The **Command Restriction** item requires a license feature. The **Users**, **Resources**, and **Credentials** tiles on the Dashboard repeat the pages of the same names for administrators.
@@ -113,7 +113,7 @@ The console shows a banner at the top of the page when something needs attention
 
 - A license banner appears when the license has expired or is offline, expires soon, or is a trial license. The banner shows the date where one applies.
 - "Action Service is not running or registered." appears when the Action Service is down. Tell your administrator.
-- A read-only banner appears when you are in read-only mode and says "You are in read-only mode. Changes are not permitted."
+- A read-only banner appears when you're in read-only mode and says "You are in read-only mode. Changes are not permitted."
 
 ## Take the Product Tour
 
@@ -136,7 +136,7 @@ If you sign in with a local console account, change your password on the **Setti
 4. Enter the new password in **Password** and again in **Confirm Password**.
 5. Click **Save**.
 
-**Save** is available after you fill in all three fields. The new password must meet the password rules your administrator sets in the password options: a minimum length, if one is set, and, if required, an uppercase letter, a lowercase letter, a digit, and a non-alphanumeric character. While you type, the form shows which rule isn't met yet, for example "Need 3 more characters" or "Passwords are not the same." No confirmation message appears. After a successful change, the console signs you out and opens the sign-in page. Sign in again with the new password.
+**Save** is available after you fill in all three fields. The new password must meet the password rules that your administrator sets in the password options. The rules are a minimum length, if one is set, and, if required, an uppercase letter, a lowercase letter, a digit, and a non-alphanumeric character. While you type, the form shows which rule isn't met yet, for example "Need 3 more characters" or "Passwords are not the same." No confirmation message appears. After a successful change, the console signs you out and opens the sign-in page. Sign in again with the new password.
 
 Domain users don't change their password in the console. The **Change Password** tab shows only for local console accounts. Change a domain password the way your organization changes any Windows sign-in password.
 

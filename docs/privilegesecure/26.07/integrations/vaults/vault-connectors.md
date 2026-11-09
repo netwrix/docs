@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Third-party vault connectors
 
-Privilege Secure has a built-in vault for credential management. Many organizations already store credentials in another vault. A vault connector lets Privilege Secure activities use the passwords from that vault, so you don't have to move or re-enter them.
+Netwrix Privilege Secure for Access Management (Privilege Secure) has a built-in vault for credential management. Many organizations already store credentials in another vault. A vault connector lets Privilege Secure activities use the passwords from that vault, so you don't have to move or re-enter them.
 
 ## How activities use a vault
 
@@ -22,7 +22,7 @@ To let the user see the password that the vault supplies, select **Allow User to
 
 The Action Service on the Privilege Secure service node calls the vault during the session's Pre-Session (Grant) and Post-Session (Remove) actions. The vault must be reachable from that node.
 
-Each built-in connector connects to the address in its own settings. CyberArk, HashiCorp, and Password Secure use the **API Url** of the connector, so the port is the one in that URL. LAPS reads Active Directory for the domain in **Domain Name**, and its check-in also opens a WinRM connection from the service node to the target computer. A BYOV connector connects to whatever address its scripts use; its built-in check-in calls the Privilege Secure API that the Action Service uses. No connector runs from another component.
+Each built-in connector connects to the address in its own settings. CyberArk, HashiCorp, and Password Secure use the **API Url** of the connector, so the port is the one in that URL. Local Administrator Password Solution (LAPS) reads Active Directory for the domain in **Domain Name**. Its check-in also opens a Windows Remote Management (WinRM) connection from the service node to the target computer. A Bring Your Own Vault (BYOV) connector connects to whatever address its scripts use. Its built-in check-in calls the Privilege Secure API that the Action Service uses. No connector runs from another component.
 
 ![Vault connector flow. The Action service on the Privilege Secure service node uses a vault connector to check out a credential from the vault at session start and check it back in at session end. The vault can be CyberArk, HashiCorp, LAPS, Password Secure, or a BYOV script source.](/images/privilegesecure/26.07/integrations/vault-connector-check-out-check-in.webp)
 

@@ -64,7 +64,7 @@ The default `Client.UnencryptedArguments` are `width`, `height`, and `dpi` for `
 
 ### Gateway address
 
-The gateway listens on port 6550. The portal connects to the gateway on this port, and the installer binds the **NPS Gateway Web Service** site in Internet Information Services (IIS) to it.
+The gateway listens on port 6550. The portal connects to the gateway on this port. The installer binds the **NPS Gateway Web Service** site in Internet Information Services (IIS) to it.
 
 Don't change the port. The gateway runs inside IIS, so the IIS binding of the **NPS Gateway Web Service** site decides the port, not `Uri`. The portal's nginx upstream expects port 6550.
 
@@ -80,7 +80,7 @@ The gateway connects to guacd on `Guacd.Hostname` and `Guacd.Port` over TLS. The
 Keep `Guacd.InsecureSkipVerify` set to `false`. When it is `true`, the gateway sends session traffic to guacd without TLS, and it logs a warning.
 :::
 
-In the default networking mode, WSL 2 runs behind network address translation (NAT), and the address of the WSL instance can change when WSL or the server restarts. After a restart, run `wsl hostname -I` on the gateway server. If the address changed, run `Configure-Gateway.ps1 -NPSGuacdHost <new address> -NPSHost <Privilege Secure URL>`, and then recycle the `NPSGatewayAppPool` application pool so the gateway reads the new value. The script also resets `NPS.Uri`, `Guacd.ServerThumbprint`, and `Guacd.InsecureSkipVerify`.
+In the default networking mode, WSL 2 runs behind network address translation (NAT). The address of the WSL instance can change when WSL or the server restarts. After a restart, run `wsl hostname -I` on the gateway server. If the address changed, run `Configure-Gateway.ps1 -NPSGuacdHost <new address> -NPSHost <Privilege Secure URL>`. Then recycle the `NPSGatewayAppPool` application pool so the gateway reads the new value. The script also resets `NPS.Uri`, `Guacd.ServerThumbprint`, and `Guacd.InsecureSkipVerify`.
 
 ### Skip certificate validation for Privilege Secure
 
@@ -91,7 +91,7 @@ When the key is `true`, the gateway doesn't validate the Privilege Secure certif
 The `-I` flag on the command line also turns off validation. When you pass `-I`, the gateway sets `InsecureSkipVerify` to `true` in memory. The flag overrides every settings file, including `appsettings.log.json`.
 
 :::warning
-When `InsecureSkipVerify` is `true`, the gateway accepts any certificate from the server it forwards to. The shipped value of `true` is for initial setup. Set it to `false` for production, and ensure that the gateway server trusts the certificate on `https://<nps-server>:6500`, for example by importing the root certificate authority (CA) certificate on the gateway server.
+When `InsecureSkipVerify` is `true`, the gateway accepts any certificate from the server it forwards to. The shipped value of `true` is for initial setup. Set it to `false` for production. Ensure that the gateway server trusts the certificate on `https://<nps-server>:6500`, for example by importing the root certificate authority (CA) certificate on the gateway server.
 :::
 
 ### Default connection arguments
@@ -105,7 +105,7 @@ When `InsecureSkipVerify` is `true`, the gateway accepts any certificate from th
 | SSH | `args=connect`, `port=22`, `width=1024`, `height=768`, `dpi=96`, `version=1.5.0` |
 | Telnet | `args=connect`, `port=23`, `width=1024`, `height=768`, `dpi=96`, `version=1.5.0` |
 
-For the arguments listed in `Client.UnencryptedArguments`, a non-empty value from the browser request overrides the value from the connection token, and a value from the token overrides a default. To change the default display size, change `width` and `height`. The browser normally sends its own `width` and `height`, so these defaults apply only when it doesn't. Leave the other values unchanged unless Netwrix Support asks you to change them. The RDP default `ignore-cert=true` tells guacd to accept the certificate of the target without validating it.
+For the arguments listed in `Client.UnencryptedArguments`, a non-empty value from the browser request overrides the value from the connection token. A value from the token overrides a default. To change the default display size, change `width` and `height`. The browser normally sends its own `width` and `height`, so these defaults apply only when it doesn't. Leave the other values unchanged unless Netwrix Support asks you to change them. The RDP default `ignore-cert=true` tells guacd to accept the certificate of the target without validating it.
 
 ## Log level
 

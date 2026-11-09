@@ -34,7 +34,7 @@ Each node and each service has a status icon. Hover over an icon to see its stat
 | Amber | Partial | A node status. Some of the node's services are offline. |
 | Red | Offline | The service is offline. |
 
-The status of a node comes from the services registered under its name. The node is **Online** when every one of those services is online, **Offline** when none is, and **Partial** when some are online and some aren't. A service is online while it keeps its connection to the console open. The tooltip on the icon shows the status name: Online, Partial, or Offline. The console refreshes the statuses every 15 seconds.
+The status of a node comes from the services registered under its name. The node is **Online** when every one of those services is online. It's **Offline** when none is, and **Partial** when some are online and some aren't. A service is online while it keeps its connection to the console open. The tooltip on the icon shows the status name: Online, Partial, or Offline. The console refreshes the statuses every 15 seconds.
 
 ### Fix a Host Scan service that shows Offline
 
@@ -48,13 +48,13 @@ A red Host Scan service reflects the service's heartbeat to the web service. It 
 
 The **Register Services** action might not restart the Host Scan service, so restart `SbPAMHostScan` yourself.
 
-"Heartbeat unable to connect" means that the service's web request to the console failed. The text after the colon is the underlying error. The service tries again every 5 seconds, and the status returns to online when a request succeeds. To fix it, ensure that the console address the service uses is correct and reachable from the node. Also ensure that the certificate on that address covers the name in the address. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+"Heartbeat unable to connect" means that the service's web request to the console failed. The text after the colon is the underlying error. The service tries again every 5 seconds, and the status returns to online when a request succeeds. To fix it, ensure that the console address the service uses is correct and reachable from the node. Also ensure that the certificate on that address covers the name in the address. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 To reissue the certificate, see [Certificates](/docs/privilegesecure/26.07/configuration/certificates.md). After you bind the certificate and register the services with the new DNS name, the node returns to online when the heartbeat succeeds.
 
 ### Show a secondary node in a high availability deployment
 
-After an upgrade, a secondary node in a high availability deployment might not appear in the primary console. Sign in to the console on the secondary server and register the services there. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md) and [High availability options](/docs/privilegesecure/26.07/install/high-availability.md).
+After an upgrade, a secondary node in a high availability deployment might not appear in the primary console. Sign in to the console on the secondary server and register the services there. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md) and [High availability options](/docs/privilegesecure/26.07/install/high-availability.md).
 
 ## Action Service
 

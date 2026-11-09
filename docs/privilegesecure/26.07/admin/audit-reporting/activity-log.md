@@ -23,7 +23,7 @@ The toolbar has these controls:
 | **Date range** | Sets the start and end dates. The default range is the last 30 days. |
 | **Refresh** | Reloads the data. |
 
-**Search** applies to the sessions table. It finds the text anywhere in the **Session User**, **Login Account**, **Policy**, **Activity**, **Notes**, **Ticket Number**, or **Host** value and ignores case. A space at the start or end counts as part of the text, so a full name typed with a trailing space doesn't match that name. **Change type** doesn't match on text.
+**Search** applies to the sessions table. It finds the text anywhere in the **Session User**, **Login Account**, **Policy**, **Activity**, **Notes**, **Ticket Number**, or **Host** value and ignores case. A space at the start or end counts as part of the text. As a result, a full name typed with a trailing space doesn't match that name. **Change type** doesn't match on text.
 
 When a table has no rows for the range, it shows **None**. Widen the date range if you expect results.
 
@@ -66,6 +66,6 @@ You can resize and sort the columns.
 
 Select **Export as CSV** above the sessions table to save the log as a CSV file.
 
-To export the log with a script instead, see [Exporting the Activity Log as a CSV](/docs/kb/privilegesecure/workflows-and-automation/exporting-the-activity-log-as-a-csv).
+To export the log with a script instead, see [Exporting the Activity Log as a CSV](/docs/kb/privilegesecure/workflows-and-automation/exporting-the-activity-log-as-a-csv.md).
 
-The export follows the current **Search**, **Change type**, and **Date range** settings and includes every matching session, not only the rows on screen. The file is named `activity_logs.csv`. Its header row uses the field names of the session data rather than the on-screen column titles.
+The export follows the current **Search**, **Change type**, and **Date range** settings. It includes every matching session, not only the rows on screen. The file is named `activity_logs.csv`. Its header row uses the field names of the session data rather than the on-screen column titles.

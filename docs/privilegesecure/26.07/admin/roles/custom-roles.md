@@ -19,7 +19,7 @@ A custom role grants only the permissions you assign, and only over the entities
 ## Prerequisites
 
 - You're signed in as an Administrator.
-- The users or groups that will receive the role are already on the **Users & Groups** page. See [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
+- The users or groups that receive the role are already on the **Users & Groups** page. See [Add domain users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
 
 ## Create a custom role
 
@@ -40,7 +40,7 @@ The role list shows copy and delete icons beside each role. They're enabled only
 
 The **Permission Assignment** section is a two-column list. Permissions on the left aren't assigned to the role. Permissions on the right are. Select a permission and use the arrows to move it between the columns.
 
-Changes save as soon as you move a permission. There is no **Save** button.
+Changes save as soon as you move a permission. There's no **Save** button.
 
 ### Access Policies permissions
 
@@ -108,7 +108,7 @@ An Auditors role has two scope tabs, **Users** and **Resources**. The tab descri
 - On **Users**, select **Add Users** to choose the users whose sessions the auditor can see, or select the **All Users** checkbox.
 - On **Resources**, select **Add Resources** to choose the resources, or groups of resources, whose sessions the auditor can see, or select the **All Resources** checkbox. The table shows **Type**, **Name**, and **Operating System**.
 
-A session is in scope only when both its user and its resource are covered, either by an entry you added or by the **All Users** or **All Resources** checkbox. For example, a role with one user added and **All Resources** selected covers every session of that user, on any resource. When a member holds more than one Auditors role, the scopes add together. Members always see their own sessions.
+A session is in scope only when both its user and its resource are covered. Either an entry you added or the **All Users** or **All Resources** checkbox covers each. For example, a role with one user added and **All Resources** selected covers every session of that user, on any resource. When a member holds more than one Auditors role, the scopes add together. Members always see their own sessions.
 
 ## Add users to the role
 

@@ -13,11 +13,12 @@ The Netwrix Setup Launcher (`NPS_Setup.exe`) checks prerequisites, installs the 
 - Review the [application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md) and the [database requirements](/docs/privilegesecure/26.07/requirements/database.md).
 - Sign in to the server with an account that has local administrator rights. The Setup Launcher stops with the message "Netwrix Setup Launcher must be run as Administrator" otherwise.
 - Disable antivirus software on the server during the installation. The launcher recommends this.
+- If you copied the download from another computer, ensure that Windows hasn't blocked it. Right-click the `privilegesecure-accessmanagement-<version>.zip` file, select **Properties**, select **Unblock** if it appears, and click **OK**. Do this before you extract the file, so the extracted files aren't blocked.
 - Extract the downloaded `privilegesecure-accessmanagement-<version>.zip` file. Keep `NPS_Setup.exe` with the `Extras` folder.
-- Install PowerShell 7.6 or later.
+- Install PowerShell 7.6 or later. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md#software-to-install-before-you-run-the-installer).
 
 :::warning
-Install PowerShell 7.6 or later before you start the Setup Launcher. The launcher doesn't check for it. Its **Pre-requisites Setup** grid checks only for PowerShell 5.1 or later, so it can show every prerequisite as installed while the application installer still stops. Download PowerShell from [aka.ms/powershell](https://aka.ms/powershell).
+Install PowerShell 7.6 or later before you start the Setup Launcher. The launcher checks for it, and the application installer stops without it. Download PowerShell from [aka.ms/powershell](https://aka.ms/powershell).
 :::
 
 If PowerShell 7.6 or later isn't installed when the launcher starts `NPS.exe`, the installer stops and shows the message "PowerShell 7.6 or later is required. Please install it from https://aka.ms/powershell". Install PowerShell, and then run the installer again.
@@ -35,7 +36,7 @@ The launcher shows the steps for your situation on screen. For a first installat
 
 1. Right-click `NPS_Setup.exe` and select **Run as administrator**.
 2. Click **Pre-requisites Setup**.
-3. Review the grid. It lists .NET Framework 4.7.2 and PowerShell 5.1 or later, with a link to download each missing item.
+3. Review the grid. It lists the prerequisites, including .NET Framework 4.7.2 and PowerShell 7.6 or later, with a link to download each missing item.
 4. Install anything that is missing, and then confirm that PowerShell 7.6 or later is installed.
 
 {/* TODO screenshot: the Netwrix Setup Launcher main window with the four buttons */}
@@ -124,7 +125,7 @@ On a server that was upgraded from PostgreSQL 12 to 16, PostgreSQL 16 listens on
 
 When the installer can't reach the database, for example a remote database, it still completes. It writes the error to `ImportActivities.log` in the `Logs` folder under `C:\ProgramData\Stealthbits\PAM`.
 
-If the database wasn't reachable during installation, check the log and fix the connection. The installer doesn't import the activities again when you re-run or repair the same version, so run the database updater yourself after the connection works. Open a command prompt as an administrator in the `DatabaseTools` folder of the install folder, which is `C:\Program Files\Stealthbits\PAM` by default, and run these commands in order:
+If the database wasn't reachable during installation, check the log and fix the connection. The installer doesn't import the activities again when you re-run or repair the same version. After the connection works, run the database updater yourself. Open a command prompt as an administrator in the `DatabaseTools` folder of the install folder, which is `C:\Program Files\Stealthbits\PAM` by default. Run these commands in order:
 
 ```
 SbPAM.DbUpdater.exe

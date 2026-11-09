@@ -25,7 +25,7 @@ To change the user name format that a Requester activity uses, set **Requester L
 :::
 
 :::warning
-If a **Custom** requester login format with a trim-based template produces a name that doesn't match an existing domain user or a discovered local account on the resource, the session fails with the error "Unable to find custom format user." To avoid it, ensure the template produces the name of an existing account.
+A **Custom** requester login format with a trim-based template can produce a name that doesn't match an existing domain user or a discovered local account on the resource. When it does, the session fails with the error "Unable to find custom format user." To avoid it, ensure the template produces the name of an existing account.
 :::
 
 ## Variables
@@ -65,7 +65,7 @@ When the requester is a local Privilege Secure user, the user has no domain. In 
 | `%email-username%-a@%email-domain%` | `jsmith@example.com` | `jsmith-a@example.com` |
 | `%targetdomain%\%samaccountname%` | `jsmith` on a resource in the `EXAMPLE` domain | `EXAMPLE\jsmith` |
 
-Privilege Secure takes the value of each variable from the requester's account. For a local user or an application user, you can change these values (**Display Name**, **SamAccountName**, **Department**, **User Principal Name**, and **Email**) on the **Properties** tab of the user's details page. See [Local users](/docs/privilegesecure/26.07/admin/users-groups/local-users.md) and [Application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md). Active Directory users take the values from Active Directory.
+Privilege Secure takes the value of each variable from the requester's account. For a local user or an application user, you can change these values on the **Properties** tab of the user's details page: **Display Name**, **SamAccountName**, **Department**, **User Principal Name**, and **Email**. See [Local users](/docs/privilegesecure/26.07/admin/users-groups/local-users.md) and [Application users](/docs/privilegesecure/26.07/admin/users-groups/application-users.md). Active Directory users take the values from Active Directory.
 
 ## Functions
 

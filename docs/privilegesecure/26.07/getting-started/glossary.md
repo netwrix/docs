@@ -30,11 +30,11 @@ This page defines the terms used in the Privilege Secure documentation. It also 
 | Resource | A system that users reach through Privilege Secure: a host, domain, website, Entra ID tenant, secret vault, or database. |
 | Resource-based access policy | An access policy that gives users access to remote systems. |
 | Reviewer | A built-in role that reviews access in an access certification. |
+| Security information and event management (SIEM) | A system that collects and analyzes security events. Privilege Secure can forward events to one. |
 | Service account | A credential that Privilege Secure uses to connect to a domain or resource. |
 | Service mesh | The connections that join remote services to the central web service. |
 | Service node | A server that runs one or more Privilege Secure services. |
 | Session | A time-limited grant of access to a resource or credential. |
-| Security information and event management (SIEM) | A system that collects and analyzes security events. Privilege Secure can forward events to one. |
 | User and Group Collection | A named set of users and groups that you can use to assign roles and console access. |
 
 ## Remote Access Gateway names
@@ -53,9 +53,9 @@ The documentation uses Remote Access Gateway. See [Remote Access Gateway overvie
 | Netwrix Privilege Secure for Access Management | The product name. The short form is Privilege Secure. |
 | NPS | A short form of the product name that appears in file names, installers, and the console. |
 | SbPAM | A legacy prefix from the product's earlier name. It appears in service names, the IIS site name, and registry keys. |
+| StealthAUDIT | The name of an integration connector template in the console. |
 | Stealthbits | The company name before the product became part of Netwrix. It appears in file paths. |
 | Stealthbits Privileged Activity Manager | The earlier product name. The Setup Launcher removes it during an upgrade. If you run `NPS.exe` directly, it refuses to install until you uninstall it. |
-| StealthAUDIT | The name of an integration connector template in the console. |
 
 These names are expected. They don't indicate a problem.
 
@@ -63,16 +63,16 @@ These names are expected. They don't indicate a problem.
 
 | Name | Component |
 | --- | --- |
+| NPS Gateway Web Service | The IIS site that hosts the Gateway component of the Remote Access Gateway. It listens on TCP 6550. |
 | SbPAM Web Service | The IIS site that hosts the console and the REST API. Its application pool is `SbPAMWebAppPool`. |
 | `SbPAMAction` | Action service |
-| `SbPAMHostScan` | Host Scan service |
-| `SbPAMScheduler` | Scheduler service |
-| `SbPAMLicense` | License service. The display name is "NPS License Service". |
 | `SbPAMEmail` | Email service |
-| `SbPAMSIEM` | SIEM service |
+| `SbPAMHostScan` | Host Scan service |
+| `SbPAMLicense` | License service. The display name is "NPS License Service". |
 | `SbPAMProxy` | Proxy service |
 | `SbPAMRagPortal` | Remote Access Gateway Portal. The display name is "NPS Rag Portal". |
-| NPS Gateway Web Service | The IIS site that hosts the Gateway component of the Remote Access Gateway. It listens on TCP 6550. |
+| `SbPAMScheduler` | Scheduler service |
+| `SbPAMSIEM` | SIEM service |
 
 ## Paths
 

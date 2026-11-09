@@ -26,7 +26,7 @@ Open the log for the failing service, such as `PAM-HostScanService<yyyymmdd>.log
 1. Select **System Settings** > **Services**, and confirm that **NPS Rest URL** has the form `https://<nps-server>:6500`, with no trailing slash.
 1. Click **Save**, and then click **Register Services**.
 
-See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md) for the fields and the second **Register Services** button under **User Options** > **Settings**.
+See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md) for the fields and the second **Register Services** button under **User Options** > **Settings**.
 
 ## Services return HTTP 500, or sessions stay in Provisioning
 
@@ -34,7 +34,7 @@ See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/con
 
 **Cause:** The **NPS Rest URL** ends with a slash, for example `https://<nps-server>:6500/`.
 
-**Fix:** Remove the trailing slash, click **Save**, and click **Register Services** again. Check this setting after an upgrade if sessions stick in Provisioning. Release 26.07.3 removes the trailing slash automatically. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+**Fix:** Remove the trailing slash, click **Save**, and click **Register Services** again. Check this setting after an upgrade if sessions stick in Provisioning. Release 26.07.3 removes the trailing slash automatically. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 ## A high availability secondary server shows no nodes
 
@@ -67,7 +67,7 @@ The log rarely records the inner exception. To find it, search all `PAM-HostScan
 
 ### Reissue the certificate with every name
 
-If the log shows `RemoteCertificateNameMismatch`, reissue the certificate bound to the console website on port 6500 so that its Subject Alternative Name (SAN) field includes the host name in **NPS Rest URL**. The Host Scan heartbeat connects to the `actionhub` endpoint at that URL, so the name in the URL must match a name on the certificate. Bind the new certificate and restart the services.
+If the log shows `RemoteCertificateNameMismatch`, reissue the certificate that is bound to the console website on port 6500. Its Subject Alternative Name (SAN) field must include the host name in **NPS Rest URL**. The Host Scan heartbeat connects to the `actionhub` endpoint at that URL, so the name in the URL must match a name on the certificate. Bind the new certificate and restart the services.
 
 1. Request a certificate that lists the name from **NPS Rest URL** in the SAN field. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 1. Bind the certificate to the **SbPAM Web Service** website in Internet Information Services (IIS), and run `iisreset`.
@@ -112,4 +112,4 @@ Releases before 26.03.0 overwrote `appsettings.user.json` during service registr
 - [Troubleshooting](/docs/privilegesecure/26.07/troubleshooting/overview.md)
 - [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md)
 - [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md)
-- [Services that aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running)
+- [Services that aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running.md)

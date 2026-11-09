@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Administration overview
 
-Administrators run Netwrix Privilege Secure day to day. They watch and control sessions, decide who can sign in to the console, delegate responsibilities through roles, keep credentials rotating, review the audit trail, and check that the services are healthy.
+Administrators run Netwrix Privilege Secure for Access Management (Privilege Secure) day to day. They watch and control sessions, decide who can sign in to the console, delegate responsibilities through roles, keep credentials rotating, review the audit trail, and check that the services are healthy.
 
 This section assumes you have installed the product and signed in to the console at `https://<nps-server>:6500` for the first time. See [Sign in to the console](/docs/privilegesecure/26.07/user-guide/sign-in.md).
 

@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Client requirements
 
-Users reach Netwrix Privilege Secure for Access Management through a web browser. They can also use the browser extension and their own remote desktop and SSH clients.
+Users reach Netwrix Privilege Secure for Access Management (Privilege Secure) through a web browser. They can also use the browser extension and their own remote desktop and SSH clients.
 
 ## Browsers
 
@@ -41,6 +41,6 @@ Privilege Secure sessions work with these clients:
 - Microsoft Remote Desktop Connection Manager
 - Microsoft Remote Desktop Connection (`mstsc`)
 
-To start a desktop SSH client automatically from a browser session, see [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically).
+To start a desktop SSH client automatically from a browser session, see [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically.md).
 
 RDP clients connect to the RDP proxy on port 4489, and SSH clients connect to the SSH proxy on port 4422.

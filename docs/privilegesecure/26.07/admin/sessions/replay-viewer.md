@@ -23,7 +23,10 @@ Users of the Remote Access Gateway portal can't replay recordings. View recordin
 
 1. Open the **Historical** tile. See [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md).
 2. Find the session. To find text that was typed in a session, enter it in the **Recording data** search box. Matching rows expand on their own and list each match.
-3. Select the expand icon on the row, then select the entry with the play icon, for example `RDP Session completed at <time>.` Select a search match to start playback at that point. If the entry has no play icon, the session wasn't recorded or you don't have permission to view the recording.
+3. Select the expand icon on the row.
+4. Select the entry with the play icon, for example `RDP Session completed at <time>.` Select a search match to start playback at that point.
+
+If the entry has no play icon, the session wasn't recorded or you don't have permission to view the recording.
 
 ![The Historical sessions dashboard with one session expanded to show its recorded entries, each with a play icon to open the Replay Viewer.](/images/privilegesecure/26.07/admin/replay-historical-recording.webp)
 

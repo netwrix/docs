@@ -47,7 +47,7 @@ This example sets notes and a ticket number:
 
 `CONTOSO\jsmith+Add_Requester_to_Local_Administrators+sql01.contoso.com++Server Maintenance+INC0012345`
 
-The `user@domain` form of the user name works in a connection string. The proxy splits the string on whichever of `+` or `@` occurs more often, and a string with an activity and a resource has more plus signs than the one `@` in the user name.
+The `user@domain` form of the user name works in a connection string. The proxy splits the string on whichever of `+` or `@` occurs more often. A string with an activity and a resource has more plus signs than the one `@` in the user name.
 
 Administrators can change the separators. For the settings that control them, see [Proxy settings](/docs/privilegesecure/26.07/configuration/proxy-settings.md).
 
@@ -99,7 +99,7 @@ Example remote host: `CONTOSO\jsmith+Activity_Token_for_wheel_Group+linux01.cont
 2. In **Remote host**, enter `<nps-server>`.
 3. In **Username**, enter the connection string.
 4. In **Port**, enter 4489.
-5. On the **Advanced RDP settings** tab, select **Redirect clipboard**. This lets you paste a multi-factor authentication (MFA) token.
+5. On the **Advanced RDP settings** tab, select **Redirect clipboard**. This lets you paste an MFA token.
 6. Click **OK**.
 
 Example username: `CONTOSO\jsmith+Add_Requester_to_Local_Administrators+sql01.contoso.com`
@@ -168,8 +168,8 @@ The token is sensitive. Don't copy it into a script, a log, or a shared ticket.
 
 ## More client guidance
 
-- [Invoke a desktop SSH client automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically)
-- [Register and use the sbpam-url SSH protocol handler](/docs/kb/privilegesecure/client-tools-and-integrations/registering-and-using-the-sbpam-url-ssh-protocol-handler)
-- [Enable the session extension countdown tab for SSH sessions in MobaXterm](/docs/kb/privilegesecure/client-tools-and-integrations/enable-session-extension-countdown-tab-display-for-sbpam-ssh-sessions-in-mobaxterm)
+- [Invoke a desktop SSH client automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically.md)
+- [Register and use the sbpam-url SSH protocol handler](/docs/kb/privilegesecure/client-tools-and-integrations/registering-and-using-the-sbpam-url-ssh-protocol-handler.md)
+- [Enable the session extension countdown tab for SSH sessions in MobaXterm](/docs/kb/privilegesecure/client-tools-and-integrations/enable-session-extension-countdown-tab-display-for-sbpam-ssh-sessions-in-mobaxterm.md)
 
 For the access flow in a browser, see [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md).

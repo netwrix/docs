@@ -128,7 +128,8 @@ To onboard computers as resources:
 1. Open the **Computers** tab.
 1. Select one or more computers.
 1. Select **Add as NPS Managed Resource**.
-1. In the **Enroll Hosts in Management** window, check the list of selected computers. In **Use Service Account**, select the service account Privilege Secure uses to connect to the computers. **Okay** stays unavailable until a service account is available to select.
+1. In the **Enroll Hosts in Management** window, check the list of selected computers.
+1. In **Use Service Account**, select the service account Privilege Secure uses to connect to the computers. **Okay** stays unavailable until a service account is available to select.
 1. Select **Okay**.
 
 The computers appear on the Resources page as hosts. To stop managing a computer, select it and select **Remove as NPS Managed Resource**.

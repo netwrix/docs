@@ -11,7 +11,6 @@ The application server is the Windows server where you install Netwrix Privilege
 ## Server requirements
 
 - Windows Server 2016 through Windows Server 2025
-- American English language installation
 - 2.0 GHz or faster dual-core 64-bit (x64) processor
 - Domain-integrated DNS that resolves all managed components forward and in reverse
 - A server hardened and dedicated to Privilege Secure (recommended)
@@ -33,10 +32,10 @@ Install the following software on the application server before you run `NPS.exe
 Download PowerShell from [aka.ms/powershell](https://aka.ms/powershell).
 
 :::warning
-The Setup Launcher doesn't warn you if PowerShell 7.6 or later is missing. Its **Pre-requisites Setup** grid checks for PowerShell 5.1 or later, so it can show PowerShell as installed while `NPS.exe` still stops. Install PowerShell 7.6 or later before you start the Setup Launcher.
+Install PowerShell 7.6 or later before you start the Setup Launcher. The launcher checks for it, and `NPS.exe` doesn't run without it.
 :::
 
-If PowerShell 7.6 or later isn't installed, `NPS.exe` stops with the message "PowerShell 7.6 or later is required. Please install it from https://aka.ms/powershell".
+If PowerShell 7.6 or later isn't installed, `NPS.exe` stops with the message "PowerShell 7.6 or later is required. Please install it from https://aka.ms/powershell". For the fix, see [The installer stops and asks for PowerShell 7.6](/docs/privilegesecure/26.07/install/troubleshoot-installation.md#the-installer-stops-and-asks-for-powershell-76).
 
 The check finds PowerShell through the `App Paths\pwsh.exe` registry key. An installation that doesn't register that key can fail the check even when PowerShell is present. Install PowerShell from the MSI package. The PowerShell 7.6 MSI registers `App Paths\pwsh.exe`, and the ZIP package has no installer to register it.
 

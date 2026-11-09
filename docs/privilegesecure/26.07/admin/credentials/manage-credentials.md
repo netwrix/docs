@@ -35,7 +35,10 @@ A button also needs the role permission for its action. **View History** isn't a
 1. In the left navigation, select **Credentials**.
 2. Select the row of a **Not Managed** account. For example, select the `<local-admin>` account on `<server-name>`.
 3. Select **Manage**.
-4. In the **Manage Account** window, wait for Privilege Secure to search for a matching user. When it lists the account under **Found matching user:** or **Credentials:**, select **Automatic** or **Manual**. Select **Cancel** to close the window without changes. If no match exists, the window shows **No matching user found.**
+4. In the **Manage Account** window, wait for Privilege Secure to search for a matching user.
+5. When it lists the account under **Found matching user:** or **Credentials:**, select **Automatic** or **Manual**.
+
+Select **Cancel** to close the window without changes. If no match exists, the window shows **No matching user found.**
 
 The row's **Method** changes to **Automatic** or **Manual**. Both choices are available for Standard and Internal accounts.
 

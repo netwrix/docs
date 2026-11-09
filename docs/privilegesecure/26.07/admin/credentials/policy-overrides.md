@@ -54,7 +54,7 @@ Only credentials with the method **Automatic** appear in the **Available Credent
 1. Select the override.
 2. Select **Add Credentials**.
 3. Select the checkbox for the account in **Available Credentials**.
-4. Optional: Clear the checkbox in **Credentials to Add** to move the account back.
+4. (Optional) Clear the checkbox in **Credentials to Add** to move the account back.
 5. Select **Add**.
 
 For example, add `<domain>\<privileged-account>` to the `<hourly-rotation>` override.

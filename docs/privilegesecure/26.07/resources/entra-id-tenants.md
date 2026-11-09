@@ -21,7 +21,10 @@ A Microsoft Entra ID tenant resource connects Netwrix Privilege Secure for Acces
 1. In **Enter Entra ID Name**, enter a name, for example `Contoso Entra ID`.
 1. Enter the **Tenant ID**, the globally unique identifier of the tenant.
 1. Check **Logon URL**. It defaults to the Azure portal address. Change it only if your users sign in at a different address.
-1. Enter the **Email Domain**, for example `contoso.com`. Privilege Secure adds it to a user name to build the user principal name. It's required, and it must be unique across your tenants. Privilege Secure also adds the domain to the tenant's sign-in URLs on the **URLs** tab.
+1. Enter the **Email Domain**, for example `contoso.com`.
+
+   Privilege Secure adds it to a user name to build the user principal name. It's required, and it must be unique across your tenants. Privilege Secure also adds the domain to the tenant's sign-in URLs on the **URLs** tab.
+
 1. For a hybrid environment, select the on-premises Active Directory domain that synchronizes with the tenant in **Associated Domain**. Otherwise leave it set to **None**.
 1. To collect group memberships, select **Process Group Memberships**. The option is off by default.
 1. In **Service Account**, select the Entra ID service account.

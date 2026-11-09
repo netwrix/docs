@@ -1,6 +1,6 @@
 ---
 title: "Sessions fail or get stuck"
-description: "Fix Privilege Secure sessions that won't provision, stay in Provisioning or Deprovisioning, or fail on multifactor authentication or policy errors."
+description: "Fix Privilege Secure sessions that won't provision, stay in Provisioning or Deprovisioning, or fail on multi-factor authentication or policy errors."
 sidebar_position: 40
 ---
 
@@ -19,18 +19,18 @@ Session actions run through the Action Service. Check the Action Service log fir
 **Fix:**
 
 1. Select **Configuration** > **Service Nodes**, and confirm the Action and Scheduler services are online. See [Services not running or not registered](/docs/privilegesecure/26.07/troubleshooting/services.md).
-1. Select **System Settings** > **Services**, and remove any trailing slash from **NPS Rest URL**. Click **Save** and **Register Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+1. Select **System Settings** > **Services**, and remove any trailing slash from **NPS Rest URL**. Click **Save** and **Register Services**. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 1. Read the Action Service log for errors at the time of the request.
 
 If the session stays in **Provisioning** after an upgrade, also see [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md).
 
-If provisioning finishes but takes more than 30 seconds, see [Long Provisioning Times in Privilege Secure](/docs/kb/privilegesecure/troubleshooting-and-errors/long-provisioning-times-in-privilege-secure).
+If provisioning finishes but takes more than 30 seconds, see [Long Provisioning Times in Privilege Secure](/docs/kb/privilegesecure/troubleshooting-and-errors/long-provisioning-times-in-privilege-secure.md).
 
 ## A session stays in Deprovisioning
 
 **Symptom:** A session ends, but its status stays at **Deprovisioning**. The temporary account or group membership isn't removed. In **Configuration** > **Service Nodes** > **Scheduler Service**, the action queue shows the activity as **Cancelling**.
 
-**Cause:** In an earlier release, cancelling a Running or Queued DisableUser action could reschedule in a loop, and the last action in a queue was compared against the action group template, so it was never detected as the last action.
+**Cause:** In an earlier release, cancelling a Running or Queued DisableUser action could reschedule in a loop. The last action in a queue was also compared against the action group template, so it was never detected as the last action.
 
 **Fix:** Upgrade to 26.07.3, which fixes both causes of a queue stuck in **Cancelling**. If the session still stays in **Deprovisioning**, check the Action Service log for the failed step. On Linux, see [Linux deprovisioning fails because the account is still in use](#linux-deprovisioning-fails-because-the-account-is-still-in-use). For other targets, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
 
@@ -46,7 +46,7 @@ If provisioning finishes but takes more than 30 seconds, see [Long Provisioning 
 
 **Symptom:** A bulk deprovision of many accounts finishes with a successful activity, but the log reports errors about removing a user from a group. Or the log reports a group, role, or user as "not found (may have been deleted)" when the lookup failed for another reason.
 
-**Cause:** The cleanup step that removes users from Active Directory groups, Microsoft Entra ID groups, and SQL Server and Oracle roles never fails the activity, even when a removal fails. Several messages that look harmless, such as "not found (may have been deleted)" and "user may not exist in tenant (cleanup complete)", count the item as removed even when a permissions or connection problem caused the result.
+**Cause:** The cleanup step that removes users from Active Directory groups, Microsoft Entra ID groups, and SQL Server and Oracle roles never fails the activity, even when a removal fails. Several messages look harmless, such as "not found (may have been deleted)" and "user may not exist in tenant (cleanup complete)". These messages count the item as removed even when a permissions or connection problem caused the result.
 
 **Fix:** Don't rely on the activity status. In the Action Service log, search for these entries:
 
@@ -74,9 +74,9 @@ Check the group membership of the affected accounts on the target, and remove an
 
 If a scan or session fails with a null platform ID error, see [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md).
 
-## Multifactor authentication rejects the code on the first attempts
+## Multi-factor authentication rejects the code on the first attempts
 
-**Symptom:** A user who connects with a Remote Desktop Protocol (RDP) file enters a valid multifactor authentication (MFA) code, and the console reports a wrong code. The code is accepted on the third or fourth attempt.
+**Symptom:** A user who connects with a Remote Desktop Protocol (RDP) file enters a valid multi-factor authentication (MFA) code, and the console reports a wrong code. The code is accepted on the third or fourth attempt.
 
 **Cause:** Clock drift between the Privilege Secure server and the user's device can cause it, but the problem also occurs without clock drift.
 

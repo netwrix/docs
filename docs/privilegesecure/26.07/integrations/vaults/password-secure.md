@@ -105,4 +105,4 @@ Release 26.07.3 identifies the user name field of a Password Secure entry by its
 
 ## Update the Password Secure SDK files
 
-Privilege Secure includes the Password Secure SDK files that it uses to communicate with Password Secure. To use a newer Password Secure release, replace the files in the `psrapi` folder of the Action Service Worker installation, by default `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\psrapi`, with the files from the newer SDK. Download the SDK from the Password Secure Customer Information System.
+Privilege Secure includes the Password Secure SDK files that it uses to communicate with Password Secure. To use a newer Password Secure release, replace the files in the `psrapi` folder of the Action Service Worker installation with the files from the newer SDK. By default, the folder is `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\psrapi`. Download the SDK from the Password Secure Customer Information System.

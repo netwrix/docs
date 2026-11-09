@@ -35,7 +35,9 @@ RDP files that you download from Privilege Secure show as coming from an unknown
 
 - A certificate in the local computer certificate store on the Privilege Secure server. It can be the certificate that you use for the console.
 - Permission to edit Group Policy for the client computers.
-- The `IIS_IUSRS` account has read permission on the certificate's private key. Set the permission in `certlm.msc`. Without this permission, the web service log shows "Could not sign RDP file with certificate for RDP Session" with the error "Keyset does not exist", and the file isn't signed.
+- The `IIS_IUSRS` account has read permission on the certificate's private key. Set the permission in `certlm.msc`.
+
+Without the `IIS_IUSRS` permission, the web service log shows "Could not sign RDP file with certificate for RDP Session" with the error "Keyset does not exist", and the file isn't signed.
 
 ### Add the thumbprint to Privilege Secure
 

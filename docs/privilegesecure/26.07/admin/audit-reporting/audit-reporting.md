@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Auditing and reporting overview
 
-The **Auditing & Reporting** menu groups the pages that show what happened in Privilege Secure: who accessed what, what changed in the configuration, what the system logged, and what the services wrote to their log files. Use these pages to answer audit questions, certify access, and schedule reports.
+The **Auditing & Reporting** menu groups the pages that show what happened in Privilege Secure. They show who accessed what, what changed in the configuration, what the system logged, and what the services wrote to their log files. Use these pages to answer audit questions, certify access, and schedule reports.
 
 To open them, select **Auditing & Reporting** in the left navigation. The menu lists, in order, **Access Certification**, **Activity Log**, **DB Change History**, **Events**, **Log Files**, and **Reporting**.
 

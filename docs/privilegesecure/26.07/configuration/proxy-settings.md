@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Proxy settings reference
 
-The Proxy Service reads its settings from JSON files on the proxy server. This page lists the files, the settings you are most likely to change, their defaults, and whether you must restart the service after a change.
+The Proxy Service reads its settings from JSON files on the proxy server. This page lists the files, the settings you are most likely to change, and their defaults. It also says whether you must restart the service after a change.
 
 ## Locate the settings files
 
@@ -28,7 +28,7 @@ The service reads these files:
 | `sbpam_node.json` | The names and addresses the node advertises |
 | `appsettings.user.json` | The REST URL and the refresh token that bind the proxy to the application server |
 
-An upgrade keeps your copies of these files. The Proxy Service reads most of them when it starts.
+An upgrade keeps your copies of these files. The Proxy Service watches these files and reloads one when you save it. See [Apply a change](#apply-a-change).
 
 ## Connection string settings
 
@@ -72,7 +72,7 @@ These settings are in `sbpam_ssh.json`.
 
 ## RDP proxy settings
 
-These settings are in `sbpam.rdp.json`. The installer doesn't create the file, so the RDP proxy uses the defaults below until you create the file and set a value.
+These settings are in `sbpam.rdp.json`. The installer doesn't create the file, so the RDP proxy uses the defaults in the following table until you create the file and set a value.
 
 | Setting | Default | Effect |
 | --- | --- | --- |
@@ -115,7 +115,7 @@ A failed sign-in writes an entry to `PAM-Proxy.log`. Raise the level to `info` o
 
 ## Apply a change
 
-The Proxy Service watches its JSON files. When you save a change to `sbpam_ssh.json`, `sbpam.rdp.json`, or `sbpam_api.json`, the service reloads the file and writes a line to `PAM-Proxy.log`. The new settings apply to sessions that start after the change. You don't restart the service.
+The Proxy Service watches its JSON files. When you save a change to a file such as `sbpam_ssh.json`, `sbpam.rdp.json`, `sbpam_api.json`, or `sbpam_log.json`, the service reloads the file and writes a line to `PAM-Proxy.log`. The new settings apply to sessions that start after the change. You don't restart the service.
 
 To confirm the port that the SSH proxy listens on, run `netstat -ano` and look for the address in `ListenAddress`.
 

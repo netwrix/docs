@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Run diagnostics with the Enablement Toolkit
 
-The Enablement Toolkit is a Windows application with a graphical interface for common connectivity tests. Use it to check Active Directory (AD) lookups, group membership, Windows Remote Management (WinRM), Secure Shell (SSH), and ports from the Privilege Secure server, and to export diagnostics for support.
+The Enablement Toolkit is a Windows application with a graphical interface for common connectivity tests. Use it to check Active Directory (AD) lookups, group membership, Windows Remote Management (WinRM), Secure Shell (SSH), and ports from the Privilege Secure server. You can also export diagnostics for support.
 
 ## Prerequisites
 
@@ -40,10 +40,10 @@ The fields in the window change with the selected operation. These controls are 
 ## Run an operation
 
 1. Select an operation from the operation menu.
-1. Optional: press **F1** to read the help for the operation, and click **Close**.
+1. (Optional) press **F1** to read the help for the operation, and click **Close**.
 1. Fill in the fields for the operation. The [Operations](#operations) table lists the required fields.
 1. Click **Execute**. The results appear in the window.
-1. Optional: select **File** > **Save Results** to keep the output.
+1. (Optional) select **File** > **Save Results** to keep the output.
 
 For example, to check which management ports a Linux or Windows target accepts:
 

@@ -75,9 +75,10 @@ Replace `<windows-service-account>` and `<linux-service-account>` with the names
 1. Select **Resources** in the left navigation.
 1. Select **Add**, then select **New Server**.
 1. Select **Import from CSV**.
-1. Select **Import CSV**, then select your file and select **Open**. The window validates each row and adds it to the table.
+1. Select **Import CSV**.
+1. Select your file, then select **Open**. The window validates each row and adds it to the table.
 1. Fix any row that shows a red icon. Either correct the CSV file and import it again, or select the row and select **Remove**.
-1. To import more files, repeat steps 4 and 5.
+1. To import more files, repeat steps 4 through 6.
 1. In the **Service Account** dropdown, select the account that has credentials for the servers. Privilege Secure applies it to each row that has no service account.
 1. When every row has a service account, select **Add**.
 
@@ -114,4 +115,4 @@ A row shows "DNS Host Name required" when **DNS Host Name** is empty and **IP Ad
 
 ## Next steps
 
-After you onboard a server, open it to check that **Platform** and **Service Account** are set, and to check its ports and certificate trust settings. See [Server details](/docs/privilegesecure/26.07/resources/servers.md). Add the server to an access policy so users can request sessions on it. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).
+After you onboard a server, open it. Check that **Platform** and **Service Account** are set, and check its ports and certificate trust settings. See [Server details](/docs/privilegesecure/26.07/resources/servers.md). Add the server to an access policy so users can request sessions on it. See [Access policies](/docs/privilegesecure/26.07/configuration/access-policies/overview.md).

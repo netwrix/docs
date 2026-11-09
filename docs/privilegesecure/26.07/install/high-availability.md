@@ -32,14 +32,14 @@ In this option, the database is a PostgreSQL or SQL Server server that you provi
 
 ## Set up high availability
 
-The HA manager tool (`NPS.HaMgr.exe`) is in the `Extras` folder of the product download. You run it on both servers to configure PostgreSQL replication for an active-passive pair.
+The high availability (HA) manager tool (`NPS.HaMgr.exe`) is in the `Extras` folder of the product download. You run it on both servers to configure PostgreSQL replication for an active-passive pair.
 
 For the full setup and upgrade procedures, use these Knowledge Base articles:
 
-- [Configuring and Upgrading in High Availability Mode and Using Remote Services Configurations](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations)
-- [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments)
-- [How to Create a Service Mesh Between App Servers](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-create-a-service-mesh-between-app-servers)
-- [How to Configure a Multi-Server NPS Environment with a Shared Database Server](/docs/kb/privilegesecure/database-and-backend/how-to-configure-a-multi-server-nps-environment-with-a-shared-database-server)
+- [Configuring and Upgrading in High Availability Mode and Using Remote Services Configurations](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations.md)
+- [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md)
+- [How to Create a Service Mesh Between App Servers](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-create-a-service-mesh-between-app-servers.md)
+- [How to Configure a Multi-Server NPS Environment with a Shared Database Server](/docs/kb/privilegesecure/database-and-backend/how-to-configure-a-multi-server-nps-environment-with-a-shared-database-server.md)
 
 The servers in a pair must reach each other on the console port, 6500 by default, and on the PostgreSQL port. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
@@ -73,7 +73,7 @@ Failover is manual.
 
 1. On the secondary server, open the HA manager tool and click **Failover**. Confirm the prompt. The prompt names the server that becomes the primary.
 
-   The HA manager starts PostgreSQL if it is stopped, promotes the replica to primary, and writes the local host and PostgreSQL port into the database settings file, `appsettings.db.json`, in the `Database` folder under `C:\ProgramData\Stealthbits\PAM`. It then restarts the `SbPAMProxy` service.
+   The HA manager starts PostgreSQL if it is stopped, and then promotes the replica to primary. It writes the local host and PostgreSQL port into the database settings file, `appsettings.db.json`, in the `Database` folder under `C:\ProgramData\Stealthbits\PAM`. It then restarts the `SbPAMProxy` service.
 
 2. On the new primary server, run `iisreset`. The HA manager doesn't restart the **SbPAM Web Service** site in IIS, so the web service doesn't use the new database settings until you do.
 3. If the Action Service runs on another server, point it at the new primary server. Run the following command on that server, and enter the password when prompted:
@@ -89,10 +89,10 @@ Failover is manual.
 
 These Knowledge Base articles cover recovery tasks. Review each one against your version before you follow it.
 
-- [Exporting and Importing the Database to a New Server](/docs/kb/privilegesecure/database-and-backend/exporting-and-importing-the-database-to-a-new-server)
-- [Moving the PostgreSQL Data Directory (PGDATA_DIR) to a New Location](/docs/kb/privilegesecure/database-and-backend/moving-the-postgresql-data-directory-pgdatadir-to-a-new-location)
-- [Netwrix Privilege Secure: Performing an In-Place Postgres Upgrade](/docs/kb/privilegesecure/database-and-backend/netwrix-privilege-secure-performing-an-in-place-postgres-upgrade)
-- [Index Was Outside the Bounds of the Array Error](/docs/kb/privilegesecure/high-availability-and-clustering/index-was-outside-the-bounds-of-array-error)
+- [Exporting and Importing the Database to a New Server](/docs/kb/privilegesecure/database-and-backend/exporting-and-importing-the-database-to-a-new-server.md)
+- [Moving the PostgreSQL Data Directory (PGDATA_DIR) to a New Location](/docs/kb/privilegesecure/database-and-backend/moving-the-postgresql-data-directory-pgdatadir-to-a-new-location.md)
+- [Netwrix Privilege Secure: Performing an In-Place Postgres Upgrade](/docs/kb/privilegesecure/database-and-backend/netwrix-privilege-secure-performing-an-in-place-postgres-upgrade.md)
+- [Index Was Outside the Bounds of the Array Error](/docs/kb/privilegesecure/high-availability-and-clustering/index-was-outside-the-bounds-of-array-error.md)
 
 For how encryption keys protect stored secrets, and how to rotate them, see [Encryption keys](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md).
 
@@ -101,7 +101,7 @@ For how encryption keys protect stored secrets, and how to rotate them, see [Enc
 After an upgrade, the primary Privilege Secure Console can show no nodes for the secondary server. To register the secondary server's services:
 
 1. Sign in to the Privilege Secure Console on the secondary server.
-2. Select **System Settings** > **Services** to open the page that holds the **NPS Rest URL** setting. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+2. Select **System Settings** > **Services** to open the page that holds the **NPS Rest URL** setting. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 3. Enter the fully qualified domain name (FQDN) URL of the secondary server, for example `https://<secondary-server-fqdn>:6500`. Don't add a trailing slash.
 4. Click **Register Services**.
 

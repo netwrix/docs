@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Use ServiceNow tickets with sessions
 
-When your access policy uses a ServiceNow connector, Privilege Secure checks the ticket you enter against ServiceNow and posts updates to the ticket as your session progresses. When you end the session, you choose the state the ticket moves to.
+When your access policy uses a ServiceNow connector, Privilege Secure checks the ticket you enter against ServiceNow. It posts updates to the ticket as your session progresses. When you end the session, you choose the state the ticket moves to.
 
 An administrator sets up the connector and attaches it to the connection profile. For that setup, see [ServiceNow integration](/docs/privilegesecure/26.07/integrations/itsm/servicenow.md).
 
@@ -55,7 +55,9 @@ When you end a session that has a ServiceNow ticket, the console shows a dialog 
 
 1. Click **Dashboard** in the left navigation, then click the **Active** tile.
 2. Select the session and click **End Session**.
-3. Click the state to set: **Keep In Progress** (leaves the ticket state unchanged), **On Hold**, or **Resolved**. If the connector has **Add Comments to Ticket** on, **On Hold** and **Resolved** set the ticket to the ServiceNow state with that name. Otherwise the ticket state doesn't change.
+3. Click the state to set: **Keep In Progress** (leaves the ticket state unchanged), **On Hold**, or **Resolved**.
+
+   If the connector has **Add Comments to Ticket** on, **On Hold** and **Resolved** set the ticket to the ServiceNow state with that name. Otherwise the ticket state doesn't change.
 
    The session ends. To keep the session running, click **Cancel** instead.
 

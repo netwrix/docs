@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Sign in to the portal
 
-The Remote Access Gateway portal is a web page that lets you request and open Netwrix Privilege Secure for Access Management (Privilege Secure) sessions from outside the corporate network. You sign in with your single sign-on (SSO) account, or with a username and password if your administrator allows it.
+The Remote Access Gateway portal is a web page that lets you request and open sessions in Netwrix Privilege Secure for Access Management (Privilege Secure) from outside the corporate network. You sign in with your single sign-on (SSO) account, or with a username and password if your administrator allows it.
 
 ## Before you begin
 
@@ -50,7 +50,10 @@ The sign-in page changes when your administrator sets a default or exclusive con
 
 1. Open the portal address in your browser.
 2. Enter your **Username** and **Password**.
-3. In the **Domain** field, keep the default `<none>` if you use a local Privilege Secure account, or enter your domain name. If you enter `<domain>\<user>` or `<user>@<domain>` in **Username**, the portal fills in **Domain** from your entry and locks the field.
+3. In the **Domain** field, keep the default `<none>` if you use a local Privilege Secure account, or enter your domain name.
+
+   If you enter `<domain>\<user>` or `<user>@<domain>` in **Username**, the portal fills in **Domain** from your entry and locks the field.
+
 4. Click **Login**.
 5. If the portal asks for a verification code, enter the code from your authenticator application.
 

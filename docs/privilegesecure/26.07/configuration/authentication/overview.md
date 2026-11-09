@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Authentication methods
 
-Users sign in to the Privilege Secure console with a password and a second factor, or through an identity provider. You add the second-factor servers and identity providers as authentication connectors. You then assign a connector to each user or group.
+Users sign in to the Netwrix Privilege Secure for Access Management (Privilege Secure) console with a password and a second factor, or through an identity provider. You add the second-factor servers and identity providers as authentication connectors. You then assign a connector to each user or group.
 
 ## Connector types
 
@@ -23,9 +23,9 @@ An authentication connector connects Privilege Secure to an external service tha
 1. Select **Configuration** > **Authentication**.
 1. Click the **+** button above the connector list.
 1. Enter a name in the name box. The **Connector Type** list stays unavailable until you enter a name.
-1. Optional: Enter a **Description**.
+1. (Optional) Enter a **Description**.
 1. Select a **Connector Type**: **MFA**, **OpenID Connect**, or **SAML**. The remaining fields depend on the type.
-1. Optional: Select **Use Remote Access Gateway**. Read [Use Remote Access Gateway](#use-remote-access-gateway) first.
+1. (Optional) Select **Use Remote Access Gateway**. Read [Use Remote Access Gateway](#use-remote-access-gateway) first.
 1. Complete the fields for the type. See the page for that type in the table.
 1. Select **Save**.
 
@@ -37,7 +37,7 @@ The connector appears in the connector list. To remove a connector, hover over i
 
 A connector does nothing until you assign it to users or groups. Select the method on the **Authentication Connector** tab of the user or group. The tab lists **Internal MFA**, which is built in, the seeded **Duo** and **Not Required** connectors, and every connector that you add, whatever its type. For the choices and the warning about **Not Required**, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector).
 
-To remove the second factor for a user or group, see the knowledge base article [Disable MFA for users or groups](/docs/kb/privilegesecure/authentication-and-mfa/disable-mfa-for-users-or-groups).
+To remove the second factor for a user or group, see the knowledge base article [Disable MFA for users or groups](/docs/kb/privilegesecure/authentication-and-mfa/disable-mfa-for-users-or-groups.md).
 
 ## Connector precedence
 
@@ -51,7 +51,7 @@ These rules apply to every connector type, including OpenID Connect and SAML con
 
 ## Default and exclusive connectors
 
-An OpenID Connect or SAML connector can be the default connector or the exclusive connector for the sign-in page. MFA connectors can be neither. Only one connector at a time can be the default or the exclusive connector. To change it, clear the current default or exclusive connector first.
+An OpenID Connect or SAML connector can be the default connector or the exclusive connector for the sign-in page. Multi-factor authentication (MFA) connectors can be neither. Only one connector at a time can be the default or the exclusive connector. To change it, clear the current default or exclusive connector first.
 
 To set one, hover over the connector in the list on **Configuration** > **Authentication** and select an icon:
 
@@ -67,7 +67,7 @@ While a connector is exclusive, nobody can sign in with a user name and password
 
 The password sign-in path stays blocked for an exclusive connector, even when you add `?adlogin=1`. The `?adlogin=1` address only shows the password fields in the sign-in page. Contact Netwrix Support before you set an exclusive connector on a production system.
 
-## Assignment is required
+## Required assignment
 
 By default, Privilege Secure refuses a sign-in through an external connector when the user isn't assigned to that connector. The `StrictExternalAuth` setting in the web service configuration controls this behavior, and its default is `true`.
 
@@ -77,7 +77,7 @@ If a connector must accept users who aren't assigned to it, add the following li
 "StrictExternalAuth": "False"
 ```
 
-For an example, see the knowledge base article [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector).
+For an example, see the knowledge base article [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector.md).
 
 ## Use Remote Access Gateway
 

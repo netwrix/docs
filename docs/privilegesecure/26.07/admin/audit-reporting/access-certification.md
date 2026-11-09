@@ -28,7 +28,7 @@ A person is a reviewer when they hold the Reviewer role directly, or through a g
 | **Incomplete** | The reviewer started the review and hasn't committed it. |
 | **Complete** | The reviewer committed the review. |
 
-A new task starts in **Setup**. It moves to **Ready to Start** when the Administrator opens the task's **Users** tab, selects **Add**, chooses the accounts to review in the **Add Users** window, and selects **Save**. Privilege Secure then lists the entitlements of those accounts on the **Entitlements** tab, and **Add** is no longer available for the task. You don't set a start time.
+A new task starts in **Setup**. To move it to **Ready to Start**, the Administrator opens the task's **Users** tab and selects **Add**. The Administrator then chooses the accounts to review in the **Add Users** window and selects **Save**. After the save, Privilege Secure lists the entitlements of those accounts on the **Entitlements** tab, and **Add** is no longer available for the task. You don't set a start time.
 
 ## Create a task
 
@@ -96,7 +96,7 @@ You can't undo a commit or delete the task afterward. To review again, create a 
 
 ## What denial does
 
-A denial sets a deny flag on that user, activity, and resource or credential. The user stays in the access policy. After the commit, a session request for that combination fails with an access denied message that names the user, the activity, and the resource or credential.
+A denial sets a deny flag on that user, activity, and resource or credential. The user stays in the access policy. After the commit, a session request for that combination fails with an access denied message. The message names the user, the activity, and the resource or credential.
 
 To restore the access, an Administrator removes the denial from the access policy:
 

@@ -65,7 +65,7 @@ For an activity with the Vault login account, Privilege Secure adds **Check-out 
 
 ## Run protection policies when a session ends
 
-To run the protection policies that apply to the resource when the session completes, instead of waiting for the scheduled run, add the **Invoke Protection Policy** action to **Post-Session (Remove)**. You don't select a protection policy. Privilege Secure runs every protection policy that applies to the session host.
+To run the protection policies that apply to the resource when the session completes, add the **Invoke Protection Policy** action to **Post-Session (Remove)**. The policies then run without waiting for the scheduled run. You don't select a protection policy. Privilege Secure runs every protection policy that applies to the session host.
 
 ## Related topics
 
