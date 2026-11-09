@@ -1,0 +1,122 @@
+---
+title: "Use the browser extension"
+description: "Sign in to the Privilege Secure browser extension, start, extend, and end web sessions from the toolbar, and change the extension settings."
+sidebar_position: 20
+---
+
+# Use the browser extension
+
+Use the browser extension to start web sessions from the toolbar without opening the console. Install the extension first. See [Browser extension](/docs/privilegesecure/26.07/user-guide/browser-extension/browser-extension.md).
+
+This page describes the extension version in the Chrome Web Store and Microsoft Edge Add-ons, build 25.8.26.
+
+## Before you begin
+
+- An access policy that gives you at least one website activity. See [My activities](/docs/privilegesecure/26.07/user-guide/my-activities.md).
+- The address of your Privilege Secure server, in the form `https://<nps-server>:6500`.
+
+## Sign in to the extension
+
+1. Click the Netwrix Privilege Secure icon on the browser toolbar.
+2. Enter the server address, `https://<nps-server>:6500`, when the extension asks for it.
+3. Sign in with your credentials, MFA, or an OpenID Connect provider, the same way you sign in to the console. See [Sign in to the console](/docs/privilegesecure/26.07/user-guide/sign-in.md).
+
+The extension shows the activity list after you sign in.
+
+![The browser extension popup on the Activities tab, with the All and Favorites lists and the Activities, Current Tab, and Settings tabs.](/images/privilegesecure/26.07/user-guide/browser-extension-activities-tab.webp)
+
+## Extension tabs
+
+The extension has three tabs.
+
+| Tab | What it shows |
+| --- | --- |
+| **Activities** | All website activities that your access policies give you, grouped by resource |
+| **Current Tab** | The activities for the resource that matches the address of the page in the current tab |
+| **Settings** | The extension settings |
+
+### Activities tab
+
+Click a resource to expand it and show its activities. Use the plus and minus buttons at the top right to expand or collapse all resources.
+
+Click the favorite icon next to an activity to move it to the top of the list.
+
+### Current Tab
+
+The **Current Tab** tab shows the resource that matches the current page, with its activities expanded. Click an activity to start a session.
+
+### Settings tab
+
+| Setting | What it does |
+| --- | --- |
+| **End web sessions automatically** | Ends the activity session that you started in the extension when no web sessions remain in any tab. |
+| **Delete RDP files after 1 day** | Removes the temporary `.rdp` files that Privilege Secure RDP sessions download to your download folder after 1 day. |
+| **Logout** | Signs you out of the extension. |
+
+Logout is blocked while a session is active. The extension shows the message "All `<n>` active proxy sessions must be ended before logging out." Here, `<n>` is the number of active sessions. End the sessions, then sign out.
+
+## Start a web session
+
+1. Open the extension and select the **Activities** or **Current Tab** tab.
+2. Click a resource to expand it.
+3. Click an activity to start an activity session.
+4. If the **Configure Session** dialog opens, complete it and confirm. See [Configure Session dialog](#configure-session-dialog).
+5. Wait for the session icons to appear to the right of the activity. A green icon means the session is ready. A red icon ends the session.
+6. Click the green icon to open the web session in the current browser tab.
+
+The extension then shows a countdown timer with the time left in the session. A **REC** icon shows on the extension when the page is being recorded.
+
+{/* TODO screenshot: extension showing the countdown timer and REC icon during a web session (store 25.8.26) */}
+
+If the access policy requires approval, the status dot next to the activity shows an orange dot. Pointing at it shows "pending approval. Please return once approved." Come back to the extension after the approver approves the session.
+
+### Configure Session dialog
+
+The **Configure Session** dialog has a **Note** field and a **Ticket Number** field. Each field is required when the connection profile for the activity requires it. For the profile settings, see [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
+
+### Start a session in the current tab
+
+To start the session in a tab that is already open, right-click the page and select **Activate session in this tab**. The extension also has a keyboard shortcut for this action, Alt+Shift+S. You can change the shortcut on the extension shortcuts page of your browser.
+
+### Use the privileged session banner
+
+While you run a privileged session, the extension shows a banner that says the session is running. The banner has four actions:
+
+| Action | What it does |
+| --- | --- |
+| **Autofill credentials** | Fills the managed account's credentials into the sign-in form on the page |
+| **Copy credentials** | Copies the username and password to the clipboard |
+| **End session** | Ends the session |
+| **Extend session** | Adds time to the session |
+
+Which actions are available depends on the connection profile for the activity:
+
+- For sessions that use a vaulted or user credential, **Autofill credentials** is available only when the profile has both **Enable credential auto-fill in browser extension** and **Allow User to Access Password** selected. It is also available for credential release activities and for sessions that have no vaulted or user credential, whatever the profile says.
+- **Copy credentials** always offers **Copy username**. It offers **Copy Password** only when the profile has both **Allow User to Access Password** and **Enable 'Show Password' option in user interface and browser extension** selected.
+
+## Extend a session
+
+Click **Extend session** in the banner, or use the extend action in the session notification, then pick a duration.
+
+The server enforces the profile limits for everyone: whether extension is allowed, the number of extensions, and the maximum (**Extend By (minutes)**).
+
+For the extension limits that a profile sets, see [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
+
+The server rejects an extension request when the connection profile doesn't allow session extension, when no extensions remain, or when the request is longer than the profile maximum. If the server rejects a request from the **Extend session** dialog, the extension shows "Failed to extend session." A request from the session notification shows no error.
+
+## End a web session
+
+End the session before the timer runs out when you finish your work.
+
+1. Click the extension icon to open the session page. It shows the countdown timer.
+2. Click the **End session** stop icon.
+3. Click **Close Tab** on the page that confirms the session ended, or close the tab yourself.
+
+A notification confirms that the session ended.
+
+![The browser extension page that says the session has ended, with the Close Tab button.](/images/privilegesecure/26.07/user-guide/browser-extension-session-ended.webp)
+
+What happens to the activity depends on the **End web sessions automatically** setting:
+
+- When the setting is on, the activity ends after you close the last browser tab for it.
+- When the setting is off, the activity stays open. Click the red icon next to the activity to end it.

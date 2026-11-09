@@ -1,8 +1,7 @@
 ---
 description: >-
-  This article explains why you may see an Access Denied error when connecting
-  to a non-domain-joined Windows resource and provides steps to enable remote
-  PowerShell authentication for the service account.
+  Resolve the Access Denied error in the ActionServiceWorker log when connecting to
+  a non-domain-joined Windows resource by enabling remote PowerShell authentication.
 keywords:
   - Access Denied
   - non-domain-joined
@@ -13,9 +12,11 @@ keywords:
   - lusrmgr.msc
   - remote troubleshooting
 products:
-  - privilege-secure-access-management
-sidebar_label: Access Denied Error Connecting to a Non-domain-joi
-tags: []
+  - privilegesecure
+sidebar_label: Access Denied Error Connecting to a Non-domain-joined Windows Resource
+tags:
+  - kb
+  - resource-management
 title: "Access Denied Error Connecting to a Non-domain-joined Windows Resource"
 knowledge_article_id: kA04u000000LLRQCA4
 ---
@@ -24,7 +25,9 @@ knowledge_article_id: kA04u000000LLRQCA4
 
 ## Overview
 
-When connecting to a non-domain-joined Windows resource, you may receive an `Access Denied` message in the ActionServiceWorker log when trying to provision an activity session or run a resource scan.
+This article describes how to resolve the `Access Denied` message you may receive in the ActionServiceWorker log when connecting to a non-domain-joined Windows resource to provision an activity session or run a resource scan.
+
+Example error:
 
 ```
 Add-SbPAMActionLog: Warn Message: Unable to create New-PSSSession for HOSTNAME using ComputerName (HOSTNAME)
@@ -37,21 +40,23 @@ For more information, see the about_Remote_Troubleshooting Help topic
 
 Review the local configuration of the target host resource:
 
-1. Run `lusrmgr.msc` via the Run command window − make sure the NPS service account used is a member of the **Administrators** group. In case the NPS account is not a part of the **Administrators** group, proceed to the next step.
+1. Run `lusrmgr.msc` from the Run command window and ensure the Netwrix Privilege Secure for Access Management service account is a member of the **Administrators** group. If the account is not a member of the **Administrators** group, proceed to the next step.
 
-2. Change a UAC setting preventing remote PowerShell authentication for non-Administrator accounts. Run the following line in elevated PowerShell:
+2. Change a User Account Control (UAC) setting that prevents remote PowerShell authentication for non-Administrator accounts. Run the following line in elevated PowerShell:
 
-```powershell
-New-ItemProperty -Name LocalAccountTokenFilterPolicy `
--Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System `
--PropertyType DWord -Value 1
-```
+   ```powershell
+   New-ItemProperty -Name LocalAccountTokenFilterPolicy `
+   -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System `
+   -PropertyType DWord -Value 1
+   ```
 
-> **NOTE:** Learn more in [about_Remote_Troubleshooting − How to enable remoting for administrators in other domains ⸱ Microsoft &#129125;](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-7.3#how-to-enable-remoting-for-administrators-in-other-domains).
+   You should now be able to use your service account to connect to the resource through Privilege Secure.
 
-You should now be able to use your service account to connect to the resource via NPS. For additional information on configuring non-domain-joined NPS resources, to refer to the following article: [Managing Non-domain-joined Windows Computers with Netwrix Privilege Secure](/docs/kb/privilegesecure/resource-management/managing-non-domain-joined-windows-computers-with-privilege-secure.md).
+   > **NOTE:** For details on enabling remoting for administrators in other domains, see [about_Remote_Troubleshooting − How to enable remoting for administrators in other domains ⸱ Microsoft &#129125;](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-7.3#how-to-enable-remoting-for-administrators-in-other-domains).
 
-## Related articles
+For additional information on configuring non-domain-joined Privilege Secure resources, see [Managing Non-Domain-Joined Windows Computers with Netwrix Privilege Secure](/docs/kb/privilegesecure/resource-management/managing-non-domain-joined-windows-computers-with-privilege-secure.md).
+
+## Related Links
 
 - [about_Remote_Troubleshooting − How to enable remoting for administrators in other domains ⸱ Microsoft &#129125;](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-7.3#how-to-enable-remoting-for-administrators-in-other-domains)
-- [Managing Non-domain-joined Windows Computers with Netwrix Privilege Secure](/docs/kb/privilegesecure/resource-management/managing-non-domain-joined-windows-computers-with-privilege-secure.md)
+- [Managing Non-Domain-Joined Windows Computers with Netwrix Privilege Secure](/docs/kb/privilegesecure/resource-management/managing-non-domain-joined-windows-computers-with-privilege-secure.md)

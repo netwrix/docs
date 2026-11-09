@@ -1,0 +1,10 @@
+{
+  "label": "Resources",
+  "position": 460,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

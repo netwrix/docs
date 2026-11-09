@@ -1,9 +1,7 @@
 ---
 description: >-
-  Registers the sbpam-url SSH protocol handler and shows how to use it to
-  automatically launch external SSH clients for NPS-proxied connections.
-  Includes command examples, available replacement strings, registry keys
-  modified, and alternatives.
+  Register the sbpam-url SSH protocol handler to launch external SSH clients
+  automatically, with example commands, replacement strings, and registry keys.
 keywords:
   - sbpam-url
   - SSH
@@ -15,9 +13,11 @@ keywords:
   - URL handler
   - ssh handler
 products:
-  - privilege-secure-access-management
-sidebar_label: Registering and Using the sbpam-url SSH Protocol H
-tags: []
+  - privilegesecure
+sidebar_label: "Registering and Using the sbpam-url SSH Protocol Handler"
+tags:
+  - kb
+  - client-tools-and-integrations
 title: "Registering and Using the sbpam-url SSH Protocol Handler"
 knowledge_article_id: kA0Qk0000002VvlKAE
 ---
@@ -26,9 +26,11 @@ knowledge_article_id: kA0Qk0000002VvlKAE
 
 ## Overview
 
-The `sbpam-url` utility, located in the **Extras** folder of the download package, registers an SSH URL handler. This utility helps you automatically connect to an NPS-proxied SSH session.
+This article describes how to register the `sbpam-url` SSH protocol handler and use it to automatically connect to an SSH session proxied by Netwrix Privilege Secure for Access Management.
 
-For additional information, refer to the following article: [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically.md)
+The `sbpam-url` utility, located in the **Extras** folder of the download package, registers an SSH URL handler.
+
+For additional information, see [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically.md).
 
 At the time this article was written, the referenced KB article instructed users to download the utility from a static link, which may provide an outdated version. Use the utility bundled in the **Extras** folder to ensure you have the latest version.
 
@@ -36,7 +38,7 @@ At the time this article was written, the referenced KB article instructed users
 
 ### Where to Install or Run the Utility
 
-The URL handler must be registered on the machine where NPS users run their browser. Ensure you run the utility on the appropriate client system.
+The URL handler must be registered on the machine where Privilege Secure users run their browser. Ensure you run the utility on the appropriate client system.
 
 ### Example Commands for External SSH Clients
 
@@ -60,9 +62,22 @@ Use the following PowerShell commands and arguments for various external SSH cli
 
 ### Remove the SSH Handler
 
+To remove the SSH handler, run the following command:
+
 ```powershell
 & .\sbpam-url handle -U -p ssh
 ```
+
+### Alternatives to `sbpam-url`
+
+You can use WinSCP to install an SSH handler as an alternative to `sbpam-url`.
+
+> **NOTE:** WinSCP requires Putty to be installed first.
+
+- [Download Putty ⸱ PuTTY 🐍](https://www.putty.org/)
+- [Download WinSCP ⸱ WinSCP 🐘](https://winscp.net/eng/download.php)
+
+## Command Reference
 
 ### General Command-Line Form
 
@@ -74,44 +89,37 @@ Use the following syntax to register a handler:
 
 | Command | Description |
 |---|---|
-| `completion` | Generate the autocompletion script for the specified shell. |
-| `handle` | Register a URL handler. |
-| `help` | Display help about any command. |
+| `completion` | Generate the autocompletion script for the specified shell |
+| `handle` | Register a URL handler |
+| `help` | Display help about any command |
 
 ### Command Flags
 
 | Flag | Description |
 |---|---|
-| `-h, --help` | Display help for sbpam-url. |
-| `-d, --debug` | Display debug messages. |
-| `-Q, --quiet` | Do not display messages. |
-| `-u, --url string` | URL to handle. |
-| `-v, --version` | Display version information. |
-| `handle -p <protocol>` | Handle the specified protocol. |
-| `handle -u` | Unregister all protocols. |
-| `handle -u -p <protocol>` | Unregister a specific protocol. |
+| `-h, --help` | Display help for sbpam-url |
+| `-d, --debug` | Display debug messages |
+| `-Q, --quiet` | Do not display messages |
+| `-u, --url string` | URL to handle |
+| `-v, --version` | Display version information |
+| `handle -p <protocol>` | Handle the specified protocol |
+| `handle -u` | Unregister all protocols |
+| `handle -u -p <protocol>` | Unregister a specific protocol |
 
 ### Available Replacement Strings
 
 | Replacement String | Description |
 |---|---|
-| `{{scheme}}` | Protocol, for example, SSH. |
-| `{{user}}` | User portion of the URL (direct connect string). |
-| `{{user_esc}}` | Escaped user portion of the URL. |
-| `{{host}}` | The host and port in the format `host:port`. |
-| `{{hostname}}` | Just the hostname. |
-| `{{port}}` | Just the port. |
-| `{{path}}` | The URL path. |
-| `{{query}}` | The URL query. |
-| `{{fragment}}` | The URL fragment. |
-| `{{password}}` | The password portion of the URL. |
-
-### Alternatives to sbpam-url
-
-You can use WinSCP to install an SSH handler as an alternative to `sbpam-url`. Note that WinSCP requires Putty to be installed first.
-
-- [Download Putty ⸱ PuTTY 🐍](https://www.putty.org/)
-- [Download WinSCP ⸱ WinSCP 🐘](https://winscp.net/eng/download.php)
+| `{{scheme}}` | Protocol, for example, SSH |
+| `{{user}}` | User portion of the URL (direct connect string) |
+| `{{user_esc}}` | Escaped user portion of the URL |
+| `{{host}}` | The host and port in the format `host:port` |
+| `{{hostname}}` | Just the hostname |
+| `{{port}}` | Just the port |
+| `{{path}}` | The URL path |
+| `{{query}}` | The URL query |
+| `{{fragment}}` | The URL fragment |
+| `{{password}}` | The password portion of the URL |
 
 ### Registry Keys Modified by sbpam-url
 
