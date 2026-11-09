@@ -48,7 +48,7 @@ Mapping adds the computers in an Active Directory OU or CN to the group.
 ### Steps
 
 1. Open the group or create a new one.
-1. Select **Map to OU or CN**. This turns on **Sync Now**, **Distinguished Name**, **Include Child OUs**, and **Auto-Onboard**.
+1. Select **Map to OU or CN**. This shows **Sync Now**, **Distinguished Name**, **Include Child OUs**, and **Auto-Onboard**. **Sync Now** becomes available after you save.
 1. Enter the **Distinguished Name** of the OU or CN. The format is `OU=Name,DC=domain,DC=com` or `CN=Name,DC=domain,DC=com`.
 1. (Optional) Select **Include Child OUs** to include the OUs below the one you entered.
 1. (Optional) Select **Auto-Onboard** to have Privilege Secure manage the computers it finds. See the next section.

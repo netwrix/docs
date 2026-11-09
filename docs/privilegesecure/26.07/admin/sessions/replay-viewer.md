@@ -29,7 +29,7 @@ Users of the Remote Access Gateway portal can't replay recordings. View recordin
 
 A session can have several recordings. Select the one you want.
 
-For example, to review what an administrator typed on `<server-name>` yesterday, filter **Recording data** for the command text, expand the row, and select the recording. Playback jumps to the first match.
+For example, to review what an administrator typed on `<server-name>` yesterday, filter **Recording data** for the command text, expand the row, and select a match to start playback at that point.
 
 ## Viewer types
 

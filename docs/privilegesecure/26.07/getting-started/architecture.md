@@ -22,7 +22,7 @@ For the complete port list, see [Ports](/docs/privilegesecure/26.07/requirements
 | Email service | Sends notifications through an external SMTP server. It supports authenticated and unauthenticated connections and TLS. | Not applicable |
 | SIEM service | Processes events and forwards them to a configured SIEM. It has built-in Common Event Format (CEF) and Log Event Extended Format (LEEF) templates. | Not applicable |
 | Message bus (NATS) | Carries messages between the web service and the services on the same server. The Proxy service hosts it, and the other services connect to it on the local host. | TCP 6521 (local, TLS) |
-| Proxy service | Connects users to resources over RDP and SSH and stores session recordings. You can run several proxies for load balancing and redundancy. | TCP 4489 (RDP) and TCP 4422 (SSH) |
+| Proxy service | Connects users to resources over RDP and SSH and stores session recordings. You can run several proxies for load balancing and redundancy. | TCP 4489 (RDP), TCP 4422 (SSH), and TCP 6522 (connection broker) |
 | Service mesh | Joins Proxy services into one message mesh. The Proxy service on a service node registers with the application server's proxy and joins as a leaf node. Application servers that you mesh route to each other. | TCP 6520 to register, TCP 6523 for leaf nodes, and TCP 6524 for cluster nodes |
 | Remote Desktop Monitor service | Runs on target Windows hosts and sends the window and menu activity of an RDP session to the recording. | Not applicable |
 | Database | Stores configuration, sessions, and credentials. PostgreSQL 16 or Microsoft SQL Server. | See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) |

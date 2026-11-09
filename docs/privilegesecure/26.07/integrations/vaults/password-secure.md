@@ -31,10 +31,10 @@ Privilege Secure uses an API key to sign in to Password Secure.
    - **Expires:** A validity period, such as one year.
    - **Access Rights:** Read
    - **Access Scopes:** Password
-5. Click **Next**, and copy the API token to a safe location.
+5. Click **Next**, and copy the API key to a safe location.
 
 :::warning
-Password Secure shows the token once. If you lose it, generate a new key.
+Password Secure shows the key once. If you lose it, generate a new key.
 :::
 
 ## Create the AD user entry

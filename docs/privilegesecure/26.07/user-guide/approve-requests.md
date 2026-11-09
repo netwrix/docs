@@ -12,7 +12,7 @@ When a connection profile uses a tiered approval workflow, a session request wai
 
 Privilege Secure has no Approver role. You see a request when an approval workflow tier names you, or a group you belong to, as an approver. An administrator sets this up in the connection profile. See [Configure approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
 
-When a request needs approval, the approvers also receive an email. The email shows the requester, activity, resource, notes, and ticket number, and, in the default template, an approval link that opens the **Approvals** tile (`<website URL>/dashboard/approval`). The link starts with the **Website URL** system setting. When that setting is empty, the link uses `http://<server name>:5000`, so set **Website URL** to the address that users open in a browser. See [Email settings](/docs/privilegesecure/26.07/configuration/system-settings/email.md).
+When a request needs approval, the approvers also receive an email. The email shows the requester, activity, resource, notes, and ticket number, and, in the default template, an approval link that opens the **Approvals** tile (`<website URL>/dashboard/approval`). If the link opens the wrong address, ask your administrator to set the **Website URL** system setting. See [Email settings](/docs/privilegesecure/26.07/configuration/system-settings/email.md).
 
 ## Review the queue
 

@@ -57,6 +57,10 @@ An upgrade replaces `sbpam_sshclient.json`. Keep a copy of your edits and compar
 
 ## Change the algorithms
 
+:::warning
+The `sbpam_ssh.json` file that the installer creates lists `KeyExchanges`, `Ciphers`, and `MACs` directly under `ClientSettings` and `ServerSettings`. The proxy doesn't read the lists in that position and uses its built-in defaults instead. A change to those lists has no effect. Move the lists into an `Algorithms` object, as the example shows. `HostKeyAlgorithms` takes effect where the installer puts it.
+:::
+
 1. Sign in to the server that runs the component as an administrator.
 1. Back up the file that you will edit.
 1. Open `sbpam_sshclient.json` in a text editor that doesn't change the file encoding.
@@ -65,10 +69,6 @@ An upgrade replaces `sbpam_sshclient.json`. Keep a copy of your edits and compar
 1. Open `sbpam_ssh.json`. In `ClientSettings`, edit `HostKeyAlgorithms` directly. Put `KeyExchanges`, `Ciphers`, and `MACs` inside an `Algorithms` object, as the example shows. To change what users' SSH clients can negotiate with the proxy, edit `ServerSettings` the same way.
 1. Save the file.
 1. Test a connection to a device that uses the changed algorithms.
-
-:::warning
-The `sbpam_ssh.json` file that the installer creates lists `KeyExchanges`, `Ciphers`, and `MACs` directly under `ClientSettings` and `ServerSettings`. The proxy doesn't read the lists in that position and uses its built-in defaults instead. A change to those lists has no effect. Move the lists into an `Algorithms` object, as the example shows. `HostKeyAlgorithms` takes effect where the installer puts it.
-:::
 
 If `sbpam_sshclient.json` is missing or can't be read, the SSH client uses its built-in defaults. Check the file syntax if your changes have no effect.
 

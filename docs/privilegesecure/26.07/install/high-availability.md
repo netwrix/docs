@@ -75,16 +75,15 @@ Failover is manual.
 
    The HA manager starts PostgreSQL if it is stopped, promotes the replica to primary, and writes the local host and PostgreSQL port into the database settings file, `appsettings.db.json`, in the `Database` folder under `C:\ProgramData\Stealthbits\PAM`. It then restarts the `SbPAMProxy` service.
 
-   The HA manager doesn't restart the **SbPAM Web Service** site in IIS. Run `iisreset` on the new primary server so the web service uses the new database settings.
-
-2. If the Action Service runs on another server, point it at the new primary server. Run the following command on that server, and enter the password when prompted:
+2. On the new primary server, run `iisreset`. The HA manager doesn't restart the **SbPAM Web Service** site in IIS, so the web service doesn't use the new database settings until you do.
+3. If the Action Service runs on another server, point it at the new primary server. Run the following command on that server, and enter the password when prompted:
 
    ```
    ActionService.exe -register -u <domain>\<nps-admin> -url https://<new-primary-server>:6500
    ```
 
    See [Additional services](/docs/privilegesecure/26.07/install/additional-services.md) for the `-register` options.
-3. Confirm that you can sign in to the Privilege Secure Console on the new primary server.
+4. Confirm that you can sign in to the Privilege Secure Console on the new primary server.
 
 ### Related procedures
 

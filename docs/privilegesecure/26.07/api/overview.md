@@ -95,7 +95,10 @@ The API reports most errors as an HTTP status code with a JSON body in the stand
 
 ## Calling the API from a script
 
-Use PowerShell 7 or `curl`. If the server certificate isn't trusted for the address you use, for example when you connect to `localhost` and the certificate names the server, Windows PowerShell 5.1 reports "The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel." Connect with the host name in the certificate. An API request that uses `localhost` as the host name returns HTTP 400. Use the host name in the certificate.
+Use PowerShell 7 or `curl`. Always connect with the host name in the server certificate. Two problems occur otherwise:
+
+- If the address you use doesn't match the certificate, for example when you connect to `localhost` and the certificate names the server, Windows PowerShell 5.1 reports "The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel."
+- An API request that uses `localhost` as the host name returns HTTP 400.
 
 Trust the certificate authority (CA) that issued the server certificate instead of turning certificate checks off. With `curl`, point the client at the CA certificate file with `--cacert <ca-certificate-file>`.
 

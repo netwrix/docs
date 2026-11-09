@@ -73,7 +73,9 @@ The details page header shows the domain name, the **Service Account** list, the
 
 A domain has five tabs: **Users**, **Groups**, **Computers**, **History**, and **Sync Errors**. A domain has no **Sessions** or **Access Policies** tab.
 
+:::warning
 **Delete** removes the domain from Privilege Secure only. It deletes the domain resource, the computer resources onboarded from the domain, the domain's managed account credentials, and the recurring synchronization job. It makes no change in Active Directory. Delete is blocked while resource groups still depend on the domain.
+:::
 
 ### Users tab
 

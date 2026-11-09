@@ -56,7 +56,7 @@ For the columns and statuses, see [Review historical sessions](/docs/privilegese
 
 Search and filters cover live and recorded sessions. When you search recorded data, such as a command, and open a matching recording, playback jumps to the first point where the text appears.
 
-For example, enter a command name in **Search**, and then open a recording from the results to see where the user ran it.
+For example, enter a command name in **Recording data**, and then open a recording from the results to see where the user ran it.
 
 The recording data includes keystrokes. See [Session recording](/docs/privilegesecure/26.07/admin/sessions/session-recording.md).
 

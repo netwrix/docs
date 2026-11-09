@@ -30,7 +30,9 @@ If provisioning finishes but takes more than 30 seconds, see [Long Provisioning 
 
 **Symptom:** A session ends, but its status stays at **Deprovisioning**. The temporary account or group membership isn't removed. In **Configuration** > **Service Nodes** > **Scheduler Service**, the action queue shows the activity as **Cancelling**.
 
-**Fix:** Upgrade to 26.07.3, which fixes two causes of a queue stuck in **Cancelling**. In an earlier release, cancelling a Running or Queued DisableUser action could reschedule in a loop, and the last action in a queue was compared against the action group template, so it was never detected as the last action. If the session still stays in **Deprovisioning**, check the Action Service log for the failed step. On Linux, see [Linux deprovisioning fails because the account is still in use](#linux-deprovisioning-fails-because-the-account-is-still-in-use). For other targets, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
+**Cause:** In an earlier release, cancelling a Running or Queued DisableUser action could reschedule in a loop, and the last action in a queue was compared against the action group template, so it was never detected as the last action.
+
+**Fix:** Upgrade to 26.07.3, which fixes both causes of a queue stuck in **Cancelling**. If the session still stays in **Deprovisioning**, check the Action Service log for the failed step. On Linux, see [Linux deprovisioning fails because the account is still in use](#linux-deprovisioning-fails-because-the-account-is-still-in-use). For other targets, contact [Netwrix Support](https://www.netwrix.com/support.html) with the Action Service log.
 
 ## Linux deprovisioning fails because the account is still in use
 
@@ -76,7 +78,9 @@ If a scan or session fails with a null platform ID error, see [Troubleshoot inst
 
 **Symptom:** A user who connects with a Remote Desktop Protocol (RDP) file enters a valid multifactor authentication (MFA) code, and the console reports a wrong code. The code is accepted on the third or fourth attempt.
 
-**Fix:** Ask the user to try again. Confirm that the Privilege Secure server and the user's device have synchronized clocks, for example with a network time protocol (NTP) source. The problem can occur without any clock drift. If the code is still rejected, contact [Netwrix Support](https://www.netwrix.com/support.html).
+**Cause:** Clock drift between the Privilege Secure server and the user's device can cause it, but the problem also occurs without clock drift.
+
+**Fix:** Ask the user to try again. Confirm that the server and the device have synchronized clocks, for example with a network time protocol (NTP) source. If the code is still rejected, contact [Netwrix Support](https://www.netwrix.com/support.html).
 
 ## A Linux action fails because the account has no NOPASSWD grant
 

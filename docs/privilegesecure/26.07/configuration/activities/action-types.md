@@ -156,7 +156,7 @@ Both entries give the user `sqlplus` with the `SETENV` and `LOG_INPUT` tags.
 If you paste a rule from a sudoers example, Privilege Secure ignores a leading `user ALL=(RunAs)` and uses only the tags and commands that follow it.
 
 :::warning
-From 26.07.3, the rule limits the user to the **Run As** account.
+From 26.07.3, the user can run the listed commands only as the accounts in **Run As**. List every account the user needs in **Run As**.
 :::
 
 If you enter `PASSWD` or `NOPASSWD` in **Commands**, Privilege Secure ignores it and writes a warning to the action log. The warning says that the **Prompt for password** setting controls the behavior. The other tags and the commands still apply.

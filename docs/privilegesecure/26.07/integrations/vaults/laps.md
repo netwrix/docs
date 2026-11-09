@@ -57,7 +57,7 @@ An asterisk (\*) marks a required field.
 
 5. Click **Save**.
 
-At check-out, Privilege Secure looks up the target computer by its NetBIOS name in the domain and reads its LAPS password. The session signs in with the computer's NetBIOS name as the domain and the account name from the activity's login account setting as the user name.
+At check-out, Privilege Secure looks up the target computer by its NetBIOS name in the domain and reads its LAPS password. The session signs in with the computer's NetBIOS name as the domain and the account name you entered in **Login Account Template** as the user name.
 
 At check-in, Privilege Secure sets the password expiration time to 0 and runs `gpupdate /force` on the computer, so LAPS rotates the password.
 

@@ -33,7 +33,7 @@ The toolbar has two buttons:
 | **Recording data** | Text in the session recordings, such as keystroke data and, when the Remote Desktop Monitor is installed, Windows event activity from RDP sessions. Enter the text to search for. Available to administrators and auditors. | Both |
 | **Start date** | A start date, an end date, or both. | Both |
 
-Search and filters cover live and recorded sessions. They match partial strings. Within the filtered list, you can search any column, including **Login Account**, **Activity**, **Notes**, and **Ticket Number**.
+Search and filters match partial strings. Within the filtered list, you can search any column, including **Login Account**, **Activity**, **Notes**, and **Ticket Number**.
 
 When you search recording data and open the matching recording, playback jumps to the first point where the text appears.
 

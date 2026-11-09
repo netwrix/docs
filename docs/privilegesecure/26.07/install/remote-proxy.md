@@ -42,7 +42,7 @@ Open `services.msc` and confirm the Proxy Service is running and set to start au
 
 ## Register the remote Proxy Service
 
-Registration has three parts. You get a hash from the application server, describe each server in an `sbpam_node.json` file, and register the remote server.
+Registration has two parts. On the application server, you describe the server in `sbpam_node.json` and get the certificate authority hash. On the remote server, you describe that server and register it with the hash.
 
 ### Prepare the application server
 

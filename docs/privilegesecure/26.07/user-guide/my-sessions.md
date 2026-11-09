@@ -54,7 +54,7 @@ Use **Search** to filter the table. On the **Active** tile, you can also filter 
 | **Approval denied** | An approver denied the request. |
 | **Approval failed** | The approval workflow couldn't complete. |
 | **Available** | The session is ready. Connect to it. See [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md). |
-| **Failed** | The provisioning stage hit an error. |
+| **Failed** | An error occurred during provisioning. |
 | **Logged In** | You are signed in to the resource, either directly or through the proxy. Privilege Secure detects a direct sign-in by polling the resource at regular intervals, so the status can lag. |
 | **Deprovisioning** | Privilege Secure is removing the permissions after the session ends, expires, or is canceled by you or an administrator. |
 | **Locked** | An administrator locked the session. |
@@ -100,7 +100,7 @@ A historical session has one of these statuses:
 | --- | --- |
 | **Completed** | The activity reached its scheduled end, or the requester ended it early. |
 | **Cancelled** | An administrator canceled the activity before its scheduled end. |
-| **Failed** | The provisioning stage hit an error. |
+| **Failed** | An error occurred during provisioning. |
 
 For the full list of Historical filters and recordings, see [Review historical sessions](/docs/privilegesecure/26.07/admin/sessions/historical-sessions.md).
 

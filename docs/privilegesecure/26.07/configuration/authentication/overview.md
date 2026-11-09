@@ -71,7 +71,13 @@ The password sign-in path stays blocked for an exclusive connector, even when yo
 
 By default, Privilege Secure refuses a sign-in through an external connector when the user isn't assigned to that connector. The `StrictExternalAuth` setting in the web service configuration controls this behavior, and its default is `true`.
 
-If a connector must accept users who aren't assigned to it, change the setting. For an example, see the knowledge base article [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector).
+If a connector must accept users who aren't assigned to it, add the following line to the `appsettings.json` file. On a default installation, the file is in `C:\ProgramData\Stealthbits\PAM\WebService`.
+
+```json
+"StrictExternalAuth": "False"
+```
+
+For an example, see the knowledge base article [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector).
 
 ## Use Remote Access Gateway
 

@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Quick start
 
-Set up Privilege Secure from the bottom up. First install the product and prepare sign-in. Then add the accounts, domains, users, and resources that sessions need. Finally, define the activities, connection profile, and access policy that tie them together. A user must belong to an access policy to create a session.
+Set up Privilege Secure in three stages. First install the product and prepare sign-in. Then add the accounts, domains, users, and resources that sessions need. Finally, define the activities, connection profile, and access policy that tie them together. A user must belong to an access policy to create a session.
 
 For the concepts behind these tasks, see [Key concepts](/docs/privilegesecure/26.07/getting-started/key-concepts.md).
 

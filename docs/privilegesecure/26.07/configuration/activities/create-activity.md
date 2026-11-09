@@ -44,7 +44,7 @@ This example creates an activity that gives a user a temporary account on a Linu
 | **Create Account** | Selected |
 | **Delete After Use** | Selected |
 
-For a user whose account name is `jsmith`, the template evaluates to `at.jsmith.appadmin`. For an Activity Token, Privilege Secure keeps the first 15 characters (`at.jsmith.appad`) and adds random characters until the name is 20 characters long. When the connection profile sets an activity token complexity policy, Privilege Secure keeps the policy **Length** minus 5 characters and fills up to the policy **Length**. See [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md).
+For a user whose account name is `jsmith`, the template evaluates to `at.jsmith.appadmin`. For an Activity Token, Privilege Secure keeps the first 15 characters (`at.jsmith.appad`) and adds random characters until the name is 20 characters long. When the connection profile sets an activity token complexity policy, Privilege Secure keeps the first policy **Length** minus 5 characters and adds random characters up to the policy **Length**. See [Activity token complexity](/docs/privilegesecure/26.07/configuration/access-policies/activity-token-complexity.md).
 
 ## Activity fields
 

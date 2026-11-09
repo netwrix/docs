@@ -34,7 +34,7 @@ Websites and secret vaults are platforms too. For the full platform list and the
 | --- | --- |
 | Active Directory, and Windows member servers and desktops | Membership in the Domain Administrators group in the target domains. |
 | Standalone Windows servers and desktops | Membership in the local Administrators group on each server or desktop. |
-| Linux | A service account on each server, or a central domain account for hosts bridged to Active Directory. The account is root, or has permissions delegated through sudo or another least-privilege solution. |
+| Linux | A service account on each server, or a central domain account for hosts bridged to Active Directory. The account is root, or has permissions delegated through sudo or another least-privilege solution. Netwrix recommends a least-privilege account instead of root. See [Linux targets](#linux-targets). |
 | Cisco | Level 15 Privileged EXEC, which gives full access for configuration and management. |
 | Microsoft Entra ID | An app registration with Microsoft Graph application permissions and Entra directory role assignments. For the permission and role list, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md). |
 | Oracle | `SYSDBA` privileges. |

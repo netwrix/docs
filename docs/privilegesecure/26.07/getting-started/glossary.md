@@ -24,6 +24,7 @@ This page defines the terms used in the Privilege Secure documentation. It also 
 | Local Administrator Password Solution (LAPS) | A Microsoft feature that manages local Administrator passwords. Activities can use these passwords through the LAPS connector. |
 | Login account | The account that signs in to the remote system during a session. |
 | Multi-factor authentication (MFA) | An additional proof of identity, such as a code from an authenticator, required at sign-in. |
+| Platform | The resource type setting that sets a resource's password complexity and schedules, for example Windows or Linux. |
 | Privileged access management (PAM) | The practice of controlling and auditing access to privileged accounts and systems. |
 | Protection policy | A policy that monitors named groups on a resource and removes unauthorized members. |
 | Resource | A system that users reach through Privilege Secure: a host, domain, website, Entra ID tenant, secret vault, or database. |

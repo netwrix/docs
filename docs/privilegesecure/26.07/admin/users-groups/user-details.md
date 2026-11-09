@@ -19,6 +19,7 @@ The header shows the display name, the sign-in name in `DOMAIN\sam` form, and th
 | Button | What it does | Shown for |
 | --- | --- | --- |
 | **Lock Account** | Blocks the account from signing in and creating sessions. See [Sign-in lockout and unlocking](#sign-in-lockout-and-unlocking). | Domain, local, and application users |
+| **Unlock Account** | Shown in place of **Lock Account** while the account is locked. Clears an administrator lock and a failed-sign-in lockout. See [Unlock an account](#unlock-an-account). | Domain, local, and application users |
 | **Reset MFA** | Forces the user to register a new authenticator at the next sign-in. See [Reset a user's MFA](#reset-a-users-mfa). | Domain and local users that use Internal MFA |
 | **Reset Password** | Sets a new password for the account. | Local users only |
 
@@ -127,9 +128,7 @@ An account can be blocked from signing in through two routes. The two blocks cle
 | Administrator lock | An administrator clicks **Lock Account** on the details page, or locks the account from the active sessions view. | An administrator unlocks the account. |
 | Failed-sign-in lockout | The account enters a wrong password too many times in a row. | The lockout expires, or an administrator unlocks the account. |
 
-The **LOCKED** column on the **Users & Groups** page shows whether the account is blocked. A blocked user can't create a session. From 26.07.3, a blocked user also can't sign in.
-
-From version 26.07.3, Privilege Secure refuses sign-in for a locked account. A locked account that tries to create a session gets the message "This account is locked and cannot create a new session."
+The **LOCKED** column on the **Users & Groups** page shows whether the account is blocked. A blocked user can't create a session. From version 26.07.3, a blocked user also can't sign in. A blocked user who tries to create a session gets the message "This account is locked and cannot create a new session."
 
 ### Failed-sign-in lockout rules
 

@@ -84,6 +84,10 @@ For the full high availability procedure, see [How to Configure Encryption Keys 
 
 Rotate the key to replace it with a new one. The tool re-encrypts the stored secrets, so the run can take several minutes on a large system.
 
+:::warning
+If the key is protected with AWS KMS, don't run `rotate` without the AWS options. Without `-k`, the tool creates a key protected by the Windows machine key. To rotate an AWS KMS-protected key, see [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md).
+:::
+
 1. Back up the database and the `Protect` folder.
 1. Open a Command Prompt as an administrator.
 1. Run the rotate command.
@@ -94,8 +98,6 @@ Rotate the key to replace it with a new one. The tool re-encrypts the stored sec
    ```
 
 1. Enter `Y` to confirm.
-
-If the key is protected with AWS KMS, don't run `rotate` without the AWS options. Without `-k`, the tool creates a key protected by the Windows machine key. To rotate an AWS KMS-protected key, see [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md).
 
 The output includes "Key rotation complete." when the key rotation succeeds. The tool sets exit code 2 when it doesn't generate a key and exit code 3 after an unexpected error. It can exit with code 0 after it reports an error for a missing option, so check the output.
 

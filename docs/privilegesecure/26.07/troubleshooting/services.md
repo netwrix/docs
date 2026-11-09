@@ -85,7 +85,17 @@ If **NPS Rest URL** uses an IP address or `localhost`, the certificate must list
 
 If the service can't trust the certificate because the certificate authority (CA) isn't trusted, fix the trust first. Install the CA certificate in the Trusted Root store on each service node. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 
-Only when you can't fix the trust, the services can skip certificate validation. Check **Ignore HTTPS Certificate Errors** in **System Settings** > **Services**, and click **Save**. Saving sets `RestService.InsecureSkipVerify` to `true` in the `appsettings.user.json` file of each service that uses the **NPS Rest URL**: Action, Email, Host Scan, Proxy, Scheduler, and SIEM. Click **Register Services** afterward to restart the services. The console asks you to save first, and registration keeps the saved setting. Skipping validation exposes the connection to impersonation. Don't use it for a name mismatch, which a reissued certificate fixes.
+Only when you can't fix the trust, the services can skip certificate validation:
+
+1. In **System Settings** > **Services**, select **Ignore HTTPS Certificate Errors**.
+1. Click **Save**. The console asks you to save first, and registration keeps the saved setting.
+1. Click **Register Services** to restart the services.
+
+:::warning
+Skipping validation exposes the connection to impersonation. Don't use it for a name mismatch, which a reissued certificate fixes.
+:::
+
+Saving sets `RestService.InsecureSkipVerify` to `true` in the `appsettings.user.json` file of each service that uses the **NPS Rest URL**: Action, Email, Host Scan, Proxy, Scheduler, and SIEM.
 
 Releases before 26.03.0 overwrote `appsettings.user.json` during service registration, so a manual `InsecureSkipVerify` setting was lost after an upgrade. From 26.03.0, the file is preserved.
 

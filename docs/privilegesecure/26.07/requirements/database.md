@@ -36,7 +36,7 @@ Netwrix tests Privilege Secure against Microsoft SQL Server 2022.
 
 ## High availability
 
-- An active-passive configuration is available only with PostgreSQL. It uses the embedded database and needs manual failover.
+- An active-passive configuration is available only with PostgreSQL. It uses the bundled PostgreSQL database and needs manual failover.
 - An active-active configuration supports both PostgreSQL and SQL Server. It needs an additional server for the database and requires no manual failover.
 - A customer-provided PostgreSQL or SQL Server database suits an active-active configuration.
 

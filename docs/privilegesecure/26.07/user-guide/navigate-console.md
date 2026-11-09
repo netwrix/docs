@@ -124,7 +124,7 @@ New users see a product tour the first time they sign in. The tour walks through
 
 The tour doesn't show again at your next sign-in unless you clear the "don't display again" checkbox.
 
-![The first step of the Product Walkthrough, highlighting the activity cards on the My Activities page with the message that available activities are displayed as cards.](/images/privilegesecure/26.07/user-guide/product-tour-first-step.webp)
+![The first step of the Product Tour, highlighting the activity cards on the My Activities page with the message that available activities are displayed as cards.](/images/privilegesecure/26.07/user-guide/product-tour-first-step.webp)
 
 ## Change your password
 

@@ -36,7 +36,7 @@ To manage an Internal account, see [Manage internal service accounts](/docs/priv
 
 ## Service accounts
 
-A Service account is a local or domain account that one or more Windows services or scheduled tasks use. Internal accounts that have dependencies also show as Service. The **Dependents** column shows how many. A Service account rotates from the **Account Dependencies** dialog, which updates each dependent after the password changes. See [Rotate service accounts and their dependencies](/docs/privilegesecure/26.07/admin/credentials/service-account-dependencies.md).
+A Service account is a local or domain account that one or more Windows services or scheduled tasks use. Internal accounts that have dependencies also show as Service. The **Dependents** column shows how many. A Service account rotates from the **Account Dependencies** dialog, which you open with **Service Account Details** on the **Credentials** page. The dialog updates each dependent after the password changes. See [Rotate service accounts and their dependencies](/docs/privilegesecure/26.07/admin/credentials/service-account-dependencies.md).
 
 ## Rotation rules
 

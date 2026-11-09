@@ -49,6 +49,8 @@ For example, create an override named `<hourly-rotation>` with the **Scheduled C
 
 ## Add credentials to an override
 
+Only credentials with the method **Automatic** appear in the **Available Credentials** list. For the methods, see [Password rotation methods](/docs/privilegesecure/26.07/admin/credentials/rotation-methods.md).
+
 1. Select the override.
 2. Select **Add Credentials**.
 3. Select the checkbox for the account in **Available Credentials**.
@@ -57,7 +59,7 @@ For example, create an override named `<hourly-rotation>` with the **Scheduled C
 
 For example, add `<domain>\<privileged-account>` to the `<hourly-rotation>` override.
 
-Only credentials with the method **Automatic** appear in the list. You can select several accounts and add them in one step.
+You can select several accounts and add them in one step.
 
 The override table has **Search**, **Add Credentials**, **Remove**, and **Refresh**. Select a row, and then select **Remove** to take a credential out of the override. It then uses the rotation and verification schedules from its platform again. If the platform has no schedule for rotation or verification, that job is disabled for the account.
 

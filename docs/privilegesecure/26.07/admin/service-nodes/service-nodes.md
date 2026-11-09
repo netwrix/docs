@@ -42,8 +42,9 @@ A red Host Scan service reflects the service's heartbeat to the web service. It 
 
 1. On the service node, open the Host Scan log from the **Log Files** page. See [Log files](/docs/privilegesecure/26.07/admin/audit-reporting/log-files.md). The file is `PAM-HostScanService<yyyymmdd>.log`.
 2. Look for repeated lines that start with "Heartbeat unable to connect". They show that the heartbeat fails.
-3. Search all `PAM-HostScanService*.log` files for `RemoteCertificate`. The repeated warning hides the inner exception, which is logged only occasionally. A certificate name mismatch on the console port means the certificate doesn't cover the name the heartbeat uses.
-4. Fix the cause, and then, on the service node, open **Services** and restart the `SbPAMHostScan` Windows service.
+3. Search all `PAM-HostScanService*.log` files for `RemoteCertificate`. The repeated warning hides the inner exception, which is logged only occasionally. A certificate name mismatch on the console port (6500 by default) means the certificate doesn't cover the name the heartbeat uses.
+4. If the certificate doesn't cover the name, reissue the certificate, bind it, and then register the services with the new DNS name. See [Certificates](/docs/privilegesecure/26.07/configuration/certificates.md).
+5. On the service node, open **Services** and restart the `SbPAMHostScan` Windows service.
 
 The **Register Services** action might not restart the Host Scan service, so restart `SbPAMHostScan` yourself.
 

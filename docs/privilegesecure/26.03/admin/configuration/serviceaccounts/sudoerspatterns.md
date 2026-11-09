@@ -62,8 +62,6 @@ Wildcard behavior depends on what sudo is matching:
   `/opt/myapp/subdir/tool`.
 - In command arguments, `/` has no special meaning, and `*` or `?` can match it.
 
-A command-path wildcard doesn't cross directory boundaries, despite a common claim that it does.
-
 ## Command-argument matching
 
 When a command specification includes arguments, sudo joins the invoked arguments into one

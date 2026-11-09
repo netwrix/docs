@@ -13,7 +13,7 @@ A workflow is a list of tiers. Each tier has its own approvers, the number of ap
 ## Prerequisites
 
 - A connection profile to edit. See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-policies/connection-profiles.md).
-- The approvers exist in the console as domain users or groups of domain users, and Privilege Secure manages each domain user. See [Add users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
+- The approvers exist in the console as domain users or groups of domain users. Local Privilege Secure users can't be approvers, because they never receive approval requests. See [Add users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).
 - Email is configured, so that approvers and requesters receive notifications. See [Configure email notifications](/docs/privilegesecure/26.07/configuration/system-settings/email.md).
 
 ## Approval workflow options

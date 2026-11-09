@@ -102,6 +102,8 @@ Predefined, platform-based, and custom reports work the same way. The **Filters*
 
 A subscription emails the report to you on a schedule.
 
+To subscribe to a predefined report, first change a filter and select **Save** to create a copy in **My Reports**. The **Subscriptions** tab is disabled until the report is saved.
+
 1. Open a report you saved, and select the **Subscriptions** tab.
 1. Select **Subscribe**.
 1. In **Subscription Schedule**, select **Every 1 hours**, **Every 4 hours**, **Every 8 hours**, or **Every 24 hours**.

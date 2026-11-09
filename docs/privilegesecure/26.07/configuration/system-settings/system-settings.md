@@ -67,10 +67,8 @@ The Remote Access Gateway portal applies the same setting. The portal serves the
 | **Idle Limit to Disable Users (days)** | 0, with **Disabled** selected | The number of days without a sign-in after which Privilege Secure acts on an idle user. The field is unavailable while **Disabled** is selected. The allowed values are 0 (off) or 90 to 365. |
 
 :::warning
-Despite the label, this setting removes idle users from Privilege Secure. It doesn't disable them. An hourly check deletes the account of each user whose last sign-in is older than the number of days you set, and removes the user's sign-in record. Don't turn it on in a production system until you have confirmed the result on a test system.
+Despite the label, this setting removes idle users from Privilege Secure. It doesn't disable them. An hourly check deletes the account of each user whose last sign-in is older than the number of days you set, and removes the user's sign-in record. Users who get the Administrator role only through a group aren't exempt and can be deleted. Users who have the Administrator role assigned directly, application users, and users who have never signed in are exempt. Don't turn it on in a production system until you have confirmed the result on a test system.
 :::
-
-Users who have the Administrator role assigned directly, application users, and users who have never signed in are exempt. Users who get the Administrator role only through a group aren't exempt.
 
 ## Encrypted Files
 

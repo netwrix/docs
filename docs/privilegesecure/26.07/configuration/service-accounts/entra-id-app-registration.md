@@ -62,11 +62,7 @@ Assign the app registration to two Entra roles. Repeat these steps for each role
 1. Under **Select members**, click **No member selected**, search for the app registration, click it, and click **Select**.
 1. Click **Next**. Set **Assignment type** to **Active** and **Duration** to **Permanently assigned**, enter a justification, and click **Assign**.
 
-:::note
-**User Administrator** is the least privileged option and can't manage Global Administrator accounts. To manage the Global Administrator role, assign the **Global Administrator** role to the app registration instead of **User Administrator**.
-:::
-
-To rotate passwords of accounts that hold administrator roles, the app registration needs **Privileged Authentication Administrator** (or **Global Administrator**). **User Administrator** covers accounts that hold no administrator role. Deployments set up before 2026 may not have needed it, so add it to older registrations.
+To rotate passwords of accounts that hold administrator roles, the app registration needs **Privileged Authentication Administrator**. **User Administrator** covers accounts that hold no administrator role, and it can't manage Global Administrator accounts. Assign both roles, or assign **Global Administrator** in place of both. Deployments set up before 2026 may not have needed **Privileged Authentication Administrator**, so add it to older registrations.
 
 :::note
 Microsoft allows **User Administrator** to reset passwords for users who have no administrator role and for a small set of low-privilege roles. Resetting the password of a Global Administrator or most other administrator roles needs **Privileged Authentication Administrator** or **Global Administrator**. **Password Administrator** can reset a subset of what **User Administrator** can reset, so it adds nothing to either role. If rotation fails with a permissions error, check the roles assigned to the app registration against the target account's roles. See [Microsoft Entra roles](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions#who-can-reset-passwords).

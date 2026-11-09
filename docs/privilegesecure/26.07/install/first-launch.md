@@ -55,7 +55,7 @@ Each wizard page shows its position, for example "Step 2 out of 5".
 
    {/* TODO screenshot: Register Authenticator page. Blur the QR code and the key. */}
 
-4. Click **Copy to clipboard** to copy the one-time recovery codes, save them in a secure location, and then click **Next**. You can use a recovery code to sign in if you lose the device that runs the authenticator app.
+4. If you registered MFA, click **Copy to clipboard** to copy the one-time recovery codes, save them in a secure location, and then click **Next**. You can use a recovery code to sign in if you lose the device that runs the authenticator app. If you clicked **Setup Later**, go on to step 5.
 
    {/* TODO screenshot: recovery codes page. Blur the recovery codes. */}
 

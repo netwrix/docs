@@ -44,6 +44,8 @@ unless root owns it and only root can write to it.
 | Owner | `root:root` | `root:wheel` |
 | Mode | `0440` | `0440` |
 
+Create the file with `visudo`. On Linux, run `visudo -f /etc/sudoers.d/svc_sbpam`. On BSD, run `visudo -f /usr/local/etc/sudoers.d/svc_sbpam`. You add the policy content in [Add the policy](#add-the-policy). Then set the owner and mode.
+
 On Linux:
 
 ```bash

@@ -26,7 +26,7 @@ The following AWS steps use a user with an access key. If the application server
 1. Select **Create policy**.
 1. Choose the KMS service.
 1. In **Actions allowed**, select the `Encrypt` and `Decrypt` actions. These are the only KMS permissions that Privilege Secure needs.
-1. For resources, allow all KMS keys in the account. You restrict this to one key after you create the key.
+1. For resources, allow all KMS keys in the account. You restrict this to one key after you create the key. See [Limit the policy to the key](#limit-the-policy-to-the-key).
 1. Enter a **Policy name**, such as `NPS_KMS_Policy`. A description is optional.
 1. Select **Create policy**.
 
@@ -86,4 +86,4 @@ With this option, Privilege Secure doesn't store an access key. It asks the AWS 
 
 ## Next step
 
-Apply the key in Privilege Secure. See [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md).
+Confirm that you limited the IAM policy to the key ARN. See [Limit the policy to the key](#limit-the-policy-to-the-key). Then apply the key in Privilege Secure. See [Rotate the AWS KMS key](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms-rotation.md).

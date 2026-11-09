@@ -164,6 +164,6 @@ them. The target's own keyboard layout and pointer size also apply.
 3. If the numeric keypad doesn't work, turn on Num Lock on your keyboard. Browsers send these keys only
    with Num Lock on.
 4. If a key combination is captured by the browser or the operating system, use the **Ctrl+Alt+Delete**
-   button in the session toolbar for that combination, or press the keys on a different combination.
+   button in the session toolbar for that combination.
 5. If the pointer is large, change the pointer size on the target. The target sends the pointer image
    and guacd draws it, so the portal can't shrink it.

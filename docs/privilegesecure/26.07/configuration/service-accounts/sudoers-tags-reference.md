@@ -8,7 +8,7 @@ sidebar_position: 32
 
 A sudoers tag changes how `sudo` treats the commands that follow it on a rule. This page lists the tags that `sudo` supports and shows which ones the **Add Sudoers rule** action accepts.
 
-Tags apply to everything after them on the same rule line until an opposite tag overrides them. Separate several tags with colons or commas, depending on where you write them. In a sudoers file, tags are joined with colons. In the **Commands** field of the action, see [Sudoers tags in the Commands field](/docs/privilegesecure/26.07/configuration/activities/action-types.md#sudoers-tags-in-the-commands-field).
+Tags apply to everything after them on the same rule line until an opposite tag overrides them. Separate several tags with colons or commas, depending on where you write them. In a sudoers file, tags are joined with colons. In the **Commands** field of the action, use commas or colons. See [Sudoers tags in the Commands field](/docs/privilegesecure/26.07/configuration/activities/action-types.md#sudoers-tags-in-the-commands-field).
 
 ## Authentication
 

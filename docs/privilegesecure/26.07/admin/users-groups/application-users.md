@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Add application users
 
-An application user is an account for an external tool that calls the Privilege Secure REST API. An application user has the same capabilities as a standard user, except that it can't sign in to the console. Each application user has a unique name that identifies the calling tool. The tool authenticates with a client certificate serial number and an API key.
+An application user is an account for an external tool that calls the Privilege Secure REST API. Like a standard user, an application user acts only through the access policies you include it in, and it can't sign in to the console. See [Next steps](#next-steps). Each application user has a unique name that identifies the calling tool. The tool authenticates with a client certificate serial number and an API key.
 
 ## Prerequisites
 

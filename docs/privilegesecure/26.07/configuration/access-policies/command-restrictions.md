@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Restrict SSH commands
 
-A command restriction is a named set of rules. When a user enters a command that matches a rule, the console takes the action that you chose for that rule. You apply a command restriction to a connection profile.
+A command restriction is a named set of rules. When a user enters a command that matches a rule, the proxy takes the action that you chose for that rule. You apply a command restriction to a connection profile.
 
 Command restrictions apply to SSH sessions that go through the Privilege Secure proxy. They don't apply to RDP or website sessions.
 
@@ -52,7 +52,7 @@ Go (RE2) syntax isn't the same as the POSIX extended regular expressions that `s
 | **Email Recipient** | The email address that receives a message when a rule with **Email** selected matches. |
 | **Active** | Turns the rule on or off. New rules are active. |
 | **Match (regex)** | The text that identifies the commands to act on. |
-| **Action to Perform** | What the console does when a command matches. The default is **Block**. |
+| **Action to Perform** | What the proxy does when a command matches. The default is **Block**. |
 | **Email** | Sends an email to the email recipient when the rule matches, regardless of the action. New rules have it selected. |
 | **Custom Lock Message** | The message shown to the user when the session is locked. It appears only when the action is **Block And Lock**. |
 
@@ -60,10 +60,10 @@ Go (RE2) syntax isn't the same as the POSIX extended regular expressions that `s
 
 | Action | Result |
 | --- | --- |
-| **Log Only** | The console records the command. The command runs. |
-| **Block** | The console doesn't run the command. |
-| **Block And Lock** | The console doesn't run the command and locks the session. The user sees the custom lock message. |
-| **Terminate** | The console ends the session. |
+| **Log Only** | Privilege Secure records the command. The command runs. |
+| **Block** | The proxy doesn't run the command. |
+| **Block And Lock** | The proxy doesn't run the command and locks the session. The user sees the custom lock message. |
+| **Terminate** | The proxy ends the session. |
 
 The **Custom Lock Message** field is empty and shows `Locked by NPS Command Restrictions Rule` as placeholder text. If you leave it empty, the user sees that text.
 

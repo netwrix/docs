@@ -52,12 +52,14 @@ If you rotate the KMS key itself in AWS, you don't need to rotate the Privilege 
 Rotate the access key of the AWS user regularly. Rotating the access key in AWS doesn't update the key that Privilege Secure stores, so update Privilege Secure before you delete the old access key.
 
 1. In AWS, create a new access key for the IAM user.
-1. In the `SbPAM.RotateAwsKey` tool, enter the new **Access Key** and **Secret Key**, and run **Rotate Key** with the KMS key ARN and Region. To change only the stored access key, select **Update Key** instead. **Update Key** doesn't call AWS.
+1. In the `SbPAM.RotateAwsKey` tool, enter the new **Access Key** and **Secret Key**, and then choose one of these actions:
+   - To change only the stored access key, select **Update Key**. **Update Key** doesn't call AWS.
+   - To store the new access key and also rotate the encryption key, run **Rotate Key** with the KMS key ARN and Region.
 1. Confirm that the log shows success.
 1. In AWS, delete the old access key.
 
 :::warning
-Don't delete the old AWS access key before you update Privilege Secure. If you delete it first, Privilege Secure can no longer use the KMS key to decrypt its encryption key. Run **Update Key** with the new access key to restore access. **Update Key** changes only the current key file. Older AWS KMS-protected key files from earlier rotations, and keys made with **Create Key**, keep the old access key. Update each one with `SbPAM.RotateKey.exe refreshaws -k <keyId> -a <file>`, or rotate before you delete the old access key.
+Don't delete the old AWS access key before you update Privilege Secure. If you delete it first, Privilege Secure can no longer use the KMS key to decrypt its encryption key. Run **Update Key** with the new access key to restore access. **Update Key** changes only the current key file. Older AWS KMS-protected key files from earlier rotations, and keys made with **Create Key**, keep the old access key. Update each one with `SbPAM.RotateKey.exe refreshaws -k <keyId> -a <file>`, or rotate before you delete the old access key. The tool is in the `KeyTools` folder, which is `C:\Program Files\Stealthbits\PAM\KeyTools` by default. For the `-k` and `-a` options, see [The SbPAM.RotateKey.exe tool](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md#the-sbpamrotatekeyexe-tool).
 :::
 
 The access key is stored in the key file on each server, protected by the Windows machine key of that server. After you replace the access key, repeat the update on any other server that has an AWS KMS-protected key file. A server that uses an imported key has a key file protected by DPAPI, which has no AWS access key to update.

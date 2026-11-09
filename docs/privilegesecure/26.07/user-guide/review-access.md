@@ -24,7 +24,7 @@ For how an Administrator creates a task, see [Run an access certification](/docs
 2. In the task list, select the task, and then select the **Entitlements** tab.
 3. Select **Review** to open the **Review Entitlements** window.
 4. Select the rows to change. Use **Search** to filter the rows, or sort a column.
-5. Select **Approve** to keep the access, or **Deny** to remove it.
+5. Select **Approve** to keep the access, or **Deny** to block it.
 6. Select **Close**.
 
 ![The Review Entitlements window with entitlement rows selected and the Approve and Deny buttons.](/images/privilegesecure/26.07/user-guide/review-entitlements-window.webp)
