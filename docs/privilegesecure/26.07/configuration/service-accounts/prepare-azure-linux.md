@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Azure Linux is a Microsoft-maintained, RPM-based Linux distribution for cloud and container workloads on Azure. Version 4.0 derives from Fedora and ships systemd 258. Netwrix Privilege Secure for Access Management (Privilege Secure) 26.07.3 and later supports Azure Linux 4.0 as a Linux resource, after you complete the steps on this page.
 
-## Why Azure Linux needs preparation
+## Azure Linux preparation
 
 Two components that systemd provides write extra terminal escape sequences, known as OSC 3008 sequences, on Azure Linux:
 
@@ -17,7 +17,7 @@ Two components that systemd provides write extra terminal escape sequences, know
 
 Privilege Secure reads the prompt in each SSH session to know when a command has finished. These sequences interfere with that prompt detection, so you suppress them before you add the resource.
 
-## Prerequisites
+## Prepare the resource
 
 Complete these steps on each Azure Linux resource.
 
@@ -73,11 +73,11 @@ Defaults:svc_sbpam !requiretty
 Defaults:svc_sbpam !pam_session
 ```
 
-## If the prerequisites are missing
+## Missing preparation steps
 
 If you skip a step, Privilege Secure can't create the temporary users that sessions need. In the session log you see:
 
 - `Enable-SbPAMCustomUser` reports that the user wasn't created.
 - A later error says that removal of the user wasn't confirmed. The error text includes fragments of escape sequences.
 
-The extra escape sequences interfere with prompt detection, so Privilege Secure can't read the result of the command. To fix it, complete the [prerequisites](#prerequisites) on the resource and run the session again.
+The extra escape sequences interfere with prompt detection, so Privilege Secure can't read the result of the command. To fix it, complete the steps in [Prepare the resource](#prepare-the-resource) and run the session again.

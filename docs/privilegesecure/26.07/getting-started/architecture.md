@@ -19,10 +19,10 @@ For the complete port list, see [Ports](/docs/privilegesecure/26.07/requirements
 | Action service | Connects to managed resources and runs the actions that activities define, such as Active Directory sync, password changes, and account orchestration. You can run several Action services. | Outgoing connections vary by action |
 | Host Scan service | Scans resources for accounts, services, scheduled tasks, and other data. | Outgoing connections vary by scan |
 | Scheduler service | Runs scheduled work such as password changes and scans. | Not applicable |
-| Email service | Sends notifications through an external SMTP server. It supports authenticated and unauthenticated connections and TLS. | Not applicable |
-| SIEM service | Processes events and forwards them to a configured SIEM. It has built-in Common Event Format (CEF) and Log Event Extended Format (LEEF) templates. | Not applicable |
+| Email service | Sends notifications through an external Simple Mail Transfer Protocol (SMTP) server. It supports authenticated and unauthenticated connections and TLS. | Not applicable |
+| SIEM service | Processes events and forwards them to a configured Security Information and Event Management (SIEM) system. It has built-in Common Event Format (CEF) and Log Event Extended Format (LEEF) templates. | Not applicable |
 | Message bus (NATS) | Carries messages between the web service and the services on the same server. The Proxy service hosts it, and the other services connect to it on the local host. | TCP 6521 (local, TLS) |
-| Proxy service | Connects users to resources over RDP and SSH and stores session recordings. You can run several proxies for load balancing and redundancy. | TCP 4489 (RDP), TCP 4422 (SSH), and TCP 6522 (connection broker) |
+| Proxy service | Connects users to resources over Remote Desktop Protocol (RDP) and Secure Shell (SSH) and stores session recordings. You can run several proxies for load balancing and redundancy. | TCP 4489 (RDP), TCP 4422 (SSH), and TCP 6522 (connection broker) |
 | Service mesh | Joins Proxy services into one message mesh. The Proxy service on a service node registers with the application server's proxy and joins as a leaf node. Application servers that you mesh route to each other. | TCP 6520 to register, TCP 6523 for leaf nodes, and TCP 6524 for cluster nodes |
 | Remote Desktop Monitor service | Runs on target Windows hosts and sends the window and menu activity of an RDP session to the recording. | Not applicable |
 | Database | Stores configuration, sessions, and credentials. PostgreSQL 16 or Microsoft SQL Server. | See [Database requirements](/docs/privilegesecure/26.07/requirements/database.md) |
@@ -81,7 +81,7 @@ See [Install services on additional servers](/docs/privilegesecure/26.07/install
 
 ### Active-passive database
 
-Two identical servers run all components. The databases replicate from the primary to the standby. When the primary is unavailable, an administrator starts the failover manually. See [High availability options](/docs/privilegesecure/26.07/install/high-availability.md). This topology requires PostgreSQL and works with the bundled database. It is the simplest high-availability option. The HA manager runs on both servers, and the standby database connects to the primary on the PostgreSQL port. After a failover, re-register the services and send users to the new primary.
+Two identical servers run all components. The databases replicate from the primary to the standby. When the primary is unavailable, an administrator starts the failover manually. See [High availability options](/docs/privilegesecure/26.07/install/high-availability.md). This topology requires PostgreSQL and works with the bundled database. It is the simplest high-availability option. The high availability (HA) manager runs on both servers, and the standby database connects to the primary on the PostgreSQL port. After a failover, re-register the services and send users to the new primary.
 
 ![Active-passive. A primary and a standby server each run all components, PostgreSQL, and the HA manager. Users connect to the primary on 6500. The standby database connects to the primary database on 5432 or 5437 and copies its changes. The servers reach each other on 6500. An administrator starts failover in the HA manager on the standby.](/images/privilegesecure/26.07/getting-started/active-passive-database-deployment.webp)
 

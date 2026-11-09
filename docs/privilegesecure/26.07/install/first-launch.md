@@ -51,11 +51,17 @@ Each wizard page shows its position, for example "Step 2 out of 5".
    2. Enter the code that the app shows in **Verification Code**.
    3. Click **Next** while the code is still valid.
 
-   To register MFA later, click **Setup Later**. The wizard then skips the recovery codes. The account then uses the built-in **Not Required** authentication connector, so it signs in without a verification code. To add MFA afterward, an administrator assigns the **Internal MFA** connector to the account on the **Authentication Connector** tab, as described in [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector). The account registers its authenticator at the next sign-in. See [Register multi-factor authentication](/docs/privilegesecure/26.07/user-guide/sign-in.md#register-multi-factor-authentication).
+   To register MFA later, click **Setup Later**. The wizard then skips the recovery codes. The account then uses the built-in **Not Required** authentication connector, so it signs in without a verification code. To add MFA afterward, an administrator assigns the **Internal MFA** connector to the account on the **Authentication Connector** tab. See [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector). The account registers its authenticator at the next sign-in. See [Register multi-factor authentication](/docs/privilegesecure/26.07/user-guide/sign-in.md#register-multi-factor-authentication).
 
    {/* TODO screenshot: Register Authenticator page. Blur the QR code and the key. */}
 
-4. If you registered MFA, click **Copy to clipboard** to copy the one-time recovery codes, save them in a secure location, and then click **Next**. You can use a recovery code to sign in if you lose the device that runs the authenticator app. If you clicked **Setup Later**, go on to step 5.
+4. If you registered MFA, save the one-time recovery codes. You can use a recovery code to sign in if you lose the device that runs the authenticator app.
+
+   1. Click **Copy to clipboard** to copy the recovery codes.
+   2. Save the recovery codes in a secure location.
+   3. Click **Next**.
+
+   If you clicked **Setup Later**, go on to step 5.
 
    {/* TODO screenshot: recovery codes page. Blur the recovery codes. */}
 

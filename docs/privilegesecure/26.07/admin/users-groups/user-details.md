@@ -104,7 +104,7 @@ Click **Add** to open the **Add Roles** window, or select a role and click **Rem
 
 ## Reset a user's MFA
 
-Reset MFA when a user loses their authenticator device. The **Reset MFA** button appears only when the account uses **Internal MFA**. It is hidden when the account uses any other connector, such as Duo, or **Not Required**.
+Reset MFA when a user loses their authenticator device. The **Reset MFA** button appears only when the account uses **Internal MFA**. It's hidden when the account uses any other connector, such as Duo, or **Not Required**.
 
 1. In the left navigation, click **Users & Groups**.
 2. Click the name of the user to open the details page.
@@ -160,4 +160,4 @@ Local users check their passwords in Privilege Secure, so they stay usable when 
 
 ### Locked accounts in Active Directory
 
-The lockout described here applies to signing in to the Netwrix Privilege Secure console. It is separate from Active Directory (AD) account lockout on managed accounts. See [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md).
+The lockout described here applies to signing in to the Netwrix Privilege Secure console. It's separate from Active Directory (AD) account lockout on managed accounts. See [Active Directory sync and scan problems](/docs/privilegesecure/26.07/troubleshooting/ad-sync-and-scans.md).

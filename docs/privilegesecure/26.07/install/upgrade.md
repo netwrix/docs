@@ -23,7 +23,7 @@ Don't cancel, close, or stop the installer during an upgrade. The upgrade update
 Complete these checks on the application server before you start.
 
 1. Back up the database. Also back up your encryption keys. See [Back up and recover](/docs/privilegesecure/26.07/install/high-availability.md#back-up-and-recover).
-2. Install PowerShell 7.6 or later. The `NPS.exe` installer stops without it, and the Setup Launcher doesn't warn you. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md).
+2. Install PowerShell 7.6 or later. The `NPS.exe` installer stops without it. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md).
 3. Back up the SAML templates. See [Back up the SAML templates](#back-up-the-saml-templates).
 4. Record any changes you made to permanent command plans. The upgrade overwrites them. See [Permanent command plans](#permanent-command-plans).
 5. Check the **NPS Rest URL** for a trailing slash. See [Check the NPS Rest URL](#check-the-nps-rest-url).
@@ -45,7 +45,7 @@ Starting in 26.07.3, each upgrade imports the built-in permanent command plans a
 
 ### Check the NPS Rest URL
 
-A trailing slash in the **NPS Rest URL** can cause HTTP 500 errors or sessions that stay in the Provisioning status. Open the **Services** page in **System Settings**, check the URL, and remove a trailing slash if there is one. For example, enter `https://<nps-server>:6500` and not `https://<nps-server>:6500/`. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+A trailing slash in the **NPS Rest URL** can cause HTTP 500 errors or sessions that stay in the Provisioning status. Open the **Services** page in **System Settings**, check the URL, and remove a trailing slash if there is one. For example, enter `https://<nps-server>:6500` and not `https://<nps-server>:6500/`. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 ### Default activity groups
 
@@ -57,11 +57,14 @@ Privilege Secure creates two default activity groups: **Domain Administrator Acc
 2. Run `NPS_Setup.exe` as an administrator. The Setup Launcher shows the installed version and the version you are installing.
 3. If the launcher offers a PostgreSQL upgrade, complete [Upgrade PostgreSQL from 12 to 16](#upgrade-postgresql-from-12-to-16) first.
 4. Click **Netwrix Privilege Secure Upgrade**.
-5. When the launcher reports an existing installation, click **OK**. The launcher stops the services and uninstalls an old Stealthbits Privileged Activity Manager installation if one exists. It then starts the installer, which replaces the earlier version.
+5. When the launcher reports an existing installation, click **OK**.
+
+   The launcher stops the services and uninstalls an old Stealthbits Privileged Activity Manager installation if one exists. It then starts the installer, which replaces the earlier version.
+
 6. When the installer finishes, click **OK** to restart the server.
 7. Clear the browser cache on the computers that use the Privilege Secure Console.
 8. Open the console and sign in. The URL is `https://<nps-server>:6500`.
-9. Check the **Service Nodes** page. If a node is offline, run **Register Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+9. Check the **Service Nodes** page. If a node is offline, run **Register Services**. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 
 {/* TODO screenshot: the Setup Launcher in its upgrade state, with the Netwrix Privilege Secure Upgrade button visible. */}
 

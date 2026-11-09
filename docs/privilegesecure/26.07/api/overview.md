@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # REST API overview
 
-Netwrix Privilege Secure has a REST API. Every operation that the console performs goes through this API, so a script or an external tool can do the same work that an administrator does in the console.
+Netwrix Privilege Secure has a REST API. Every operation that the console performs goes through this API. A script or an external tool can do the same work that an administrator does in the console.
 
 The API returns JSON and uses standard HTTP methods. This page describes the conventions that apply to every endpoint. To get a token, see [Authenticate to the API](/docs/privilegesecure/26.07/api/authentication.md).
 
@@ -52,7 +52,7 @@ For the steps, see [Authenticate to the API](/docs/privilegesecure/26.07/api/aut
 
 ## Roles and permissions
 
-The role of the account that owns the token decides what each endpoint allows. A user token carries the roles of that user. An application user token is built the same way: it carries the roles that the application user has through console access and the roles assigned to it. An application user without a role can't call endpoints that require one. Give an application user only the roles that its tool needs, and give the API key and client certificate only to tools that you trust with those roles. For the roles that exist in the console, see [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md). To assign roles, see [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
+The role of the account that owns the token decides what each endpoint allows. A user token carries the roles of that user. An application user token is built the same way. It carries the roles that the application user has through console access and the roles assigned to it. An application user without a role can't call endpoints that require one. Give an application user only the roles that its tool needs. Give the API key and client certificate only to tools that you trust with those roles. For the roles that exist in the console, see [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md). To assign roles, see [Assign administrators, reviewers, and auditors](/docs/privilegesecure/26.07/admin/roles/assign-roles.md).
 
 ## Searching and paging
 
@@ -97,7 +97,7 @@ The API reports most errors as an HTTP status code with a JSON body in the stand
 
 Use PowerShell 7 or `curl`. Always connect with the host name in the server certificate. Two problems occur otherwise:
 
-- If the address you use doesn't match the certificate, for example when you connect to `localhost` and the certificate names the server, Windows PowerShell 5.1 reports "The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel."
+- If the address you use doesn't match the certificate, Windows PowerShell 5.1 reports "The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel." This happens, for example, when you connect to `localhost` and the certificate names the server.
 - An API request that uses `localhost` as the host name returns HTTP 400.
 
 Trust the certificate authority (CA) that issued the server certificate instead of turning certificate checks off. With `curl`, point the client at the CA certificate file with `--cacert <ca-certificate-file>`.

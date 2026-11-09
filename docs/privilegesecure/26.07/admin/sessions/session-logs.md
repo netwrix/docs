@@ -25,7 +25,7 @@ You can also open the log from other pages.
 - On the **Historical** tile, select the logs icon in the **ACTIONS** column of the row.
 - On the **Events** page, select an event that belongs to a session or an action, then select **View Logs**.
 
-The Remote Access Gateway portal doesn't show the **Logs** button.
+The Remote Access Gateway portal doesn't show the **View Logs** button.
 
 ## Window controls
 

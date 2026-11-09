@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Roles and permissions
 
-A role controls what a user can see and do in the console. Netwrix Privilege Secure has four built-in roles. You can add custom roles to delegate part of administration.
+A role controls what a user can see and do in the console. Netwrix Privilege Secure for Access Management (Privilege Secure) has four built-in roles. You can add custom roles to delegate part of administration.
 
 Open the page from the left navigation: click **Users & Groups**, then **Role Management**.
 
@@ -31,7 +31,7 @@ You can't copy, delete, or rename the built-in roles (**Administrators**, **User
 
 ### Approvers
 
-There is no Approver role. Approvers are the users and groups that you name in a tier of an approval workflow on a connection profile. See [Approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
+There's no Approver role. Approvers are the users and groups that you name in a tier of an approval workflow on a connection profile. See [Approval workflows](/docs/privilegesecure/26.07/configuration/access-policies/approval-workflows.md).
 
 ## Role list
 
@@ -77,6 +77,6 @@ To use scope in practice, give the built-in **Auditors** role access to all user
 
 ## Read-only console access
 
-The **Admin View Read Only** permission lets an auditor open the administration pages without changing anything. It is a permission. Add it to a role with the Auditors target. See [Give auditors read-only console access](/docs/privilegesecure/26.07/admin/roles/admin-view-read-only.md).
+The **Admin View Read Only** permission lets an auditor open the administration pages without changing anything. It's a permission. Add it to a role with the Auditors target. See [Give auditors read-only console access](/docs/privilegesecure/26.07/admin/roles/admin-view-read-only.md).
 
 A read-only user sees the banner "You are in read-only mode. Changes are not permitted." Only a few actions stay available, such as running reports, replaying recordings, and locking or terminating live sessions.

@@ -35,7 +35,7 @@ The page lists logs for these services:
 | Installer and maintenance | `PAM-InstallCmd`, `PAM-RotateKey`, `PAM-DbUpdater` |
 | PostgreSQL upgrade | `NPS-PGUpgrade`, `NPS-PGUpgradeErr` |
 
-Services keep a limited number of files. By default, the Web, Action, Host Scan, Email, Scheduler, SIEM, and Proxy services start a new file each day, keep 10 files, and start another file when one reaches 100 MB. The **Options** window shows and changes the file count and size limit that a service uses. The Proxy service also deletes log files older than 30 days.
+Services keep a limited number of files. By default, the Web, Action, Host Scan, Email, Scheduler, SIEM, and Proxy services start a new file each day and keep 10 files. They also start another file when one reaches 100 MB. The **Options** window shows and changes the file count and size limit that a service uses. The Proxy service also deletes log files older than 30 days.
 
 The SSH client service starts a new file when one reaches 100 MB, keeps 10 files, and deletes files older than 30 days. It doesn't start a new file each day. The License service follows the same default as the first group: a new file each day, 10 files, and 100 MB per file.
 
@@ -76,7 +76,7 @@ Select **Download Logs** above the log list to download the logs, for example to
 1. In the **Download Logs** window, set **Start Date** and **End Date**. The start date can't be in the future or after the end date.
 2. Select **Download**.
 
-The download is a ZIP file named `nps-logs.zip`. It contains every log file in the log folder of the server that runs the console whose dates fall in the range, not only the selected log.
+The download is a ZIP file named `nps-logs.zip`. It contains every log file whose date falls in the range, not only the selected log. The files come from the log folder of the server that runs the console.
 
 ## Change the log level
 

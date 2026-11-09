@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Install a proxy service on another server
 
-The Netwrix Privilege Secure for Access Management (Privilege Secure) proxy brokers connections to managed systems between security zones. Users don't connect from their desktops to the managed systems, which avoids leaving credentials on desktops and avoids opening ports into secure networks. The application server includes a proxy. You can install the Proxy Service on another server to add a session proxy node, and you must install it on any server that runs another remote service. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
+The Netwrix Privilege Secure for Access Management (Privilege Secure) proxy brokers connections to managed systems between security zones. Users don't connect from their desktops to the managed systems. This arrangement avoids leaving credentials on desktops and avoids opening ports into secure networks. The application server includes a proxy. You can install the Proxy Service on another server to add a service node. You must also install it on any server that runs another remote service. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
 
 ## Before you begin
 

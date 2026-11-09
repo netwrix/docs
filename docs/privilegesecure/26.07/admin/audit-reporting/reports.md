@@ -75,7 +75,7 @@ For example, to report on Windows sessions only, select the source **Activity Se
 | **Password Rotation** | Password rotation events. Filter attributes are **User**, **Target Resource**, **Change Reason**, and **Results**. |
 | **Password Age** | The age of account passwords. Filter attributes are **Name**, **Password Age**, **Account Name**, **Privilege**, and **Computer**. |
 
-The operators are **Equals**, **Not Equals**, **Contains**, **Not Contains**, **Starts With**, **Ends With**, **Less Than**, and **Greater Than**. Each attribute offers only the operators that fit it. For example, **Domain** and **Platform** offer only **Equals** and **Not Equals**, and **Password Age** offers **Equals**, **Not Equals**, **Less Than**, and **Greater Than**.
+The operators are **Equals**, **Not Equals**, **Contains**, **Not Contains**, **Starts With**, **Ends With**, **Less Than**, and **Greater Than**. Each attribute offers only the operators that fit it. For example, **Domain** and **Platform** offer only **Equals** and **Not Equals**. **Password Age** offers **Equals**, **Not Equals**, **Less Than**, and **Greater Than**.
 
 The **Activity Sessions** source has no **Access Policy** attribute.
 

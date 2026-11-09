@@ -41,7 +41,7 @@ By default, the cleanup runs when the web service starts and then every 24 hours
 
 ## Session recording retention
 
-Session recording (input and output log) retention deletes session recordings from disk when they are older than the number of days you set. The session proxy reads this setting from the web service, checks for expired recordings about once an hour by default, and deletes the input and output log files that are older than the cutoff. The web service cleanup job doesn't handle session recordings. Each proxy deletes only the recordings stored on its own server.
+Session recording (input and output log) retention deletes session recordings from disk when they are older than the number of days you set. The session proxy reads this setting from the web service. By default, it checks for expired recordings about once an hour and deletes the input and output log files that are older than the cutoff. The web service cleanup job doesn't handle session recordings. Each proxy deletes only the recordings stored on its own server.
 
 ## Related topics
 

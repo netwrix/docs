@@ -32,7 +32,7 @@ The following tables list the other fields for each action type.
 
 ## Paired actions
 
-Many pre-session actions have a paired post-session action that undoes them. When you add the pre-session action, Privilege Secure creates the paired action in the **Post-Session (Remove)** group, and the console shows a linked chain icon on both rows. A grey chain icon means the action has no pair.
+Many pre-session actions have a paired post-session action that undoes them. When you add the pre-session action, Privilege Secure creates the paired action in the **Post-Session (Remove)** group. The console shows a linked chain icon on both rows. A grey chain icon means the action has no pair.
 
 You can't change the action type after you create an action. To use a different type, delete the action and add a new one.
 
@@ -66,9 +66,9 @@ You can't change the action type after you create an action. To use a different 
 
 Earlier releases named these action types **Add to Azure AD Group** and **Add to Azure AD Role**. An upgrade renames them to **Add to Entra ID Group** and **Add to Entra ID Role**.
 
-The Salesforce actions sign in to Salesforce with the OAuth JWT bearer flow. They sign a token with the **Private Key**, use the **Consumer Key** as the issuer, and use the login account name of the session as the Salesforce user. They then send the add or remove request to the StrongPoint API in the Salesforce org. **Use sandbox instance** sends the sign-in to the Salesforce sandbox login service instead of the production one. The **Permission Set** and **Permission Set Group** fields take any text you type, and the API receives it unchanged.
+The Salesforce actions sign in to Salesforce with the OAuth JWT bearer flow. They sign a token with the **Private Key**. They use the **Consumer Key** as the issuer and the login account name of the session as the Salesforce user. They then send the add or remove request to the StrongPoint API in the Salesforce org. **Use sandbox instance** sends the sign-in to the Salesforce sandbox login service instead of the production one. The **Permission Set** and **Permission Set Group** fields take any text you type, and the API receives it unchanged.
 
-In **Add User to Domain Group** and **Add User to Local Group**, the **Group** field lists common groups, but you can also enter the name of a group that isn't in the list.
+In **Add User to Domain Group** and **Add User to Local Group**, the **Group** field lists common groups. You can also enter the name of a group that isn't in the list.
 
 In 26.07.3, Add User to Groups/Roles is the default name of a new Add User to Groups & Roles (User Selected) action, not a separate action type.
 
@@ -164,6 +164,6 @@ If you enter `PASSWD` or `NOPASSWD` in **Commands**, Privilege Secure ignores it
 The action fails in these cases:
 
 - **Commands** contains a tag that isn't in the preceding table. The action log lists the valid tags.
-- More than one command has its own colon-joined tags, for example `NOEXEC: /usr/bin/a, SETENV: /usr/bin/b`. This fails even when the tags are the same. To apply tags to several commands, list each tag once followed by the commands, such as `NOEXEC, /usr/bin/a, /usr/bin/b`, or create a separate **Add Sudoers rule** action for each set.
+- More than one command has its own colon-joined tags, for example `NOEXEC: /usr/bin/a, SETENV: /usr/bin/b`. This fails even when the tags are the same. To apply tags to several commands, list each tag once followed by the commands, such as `NOEXEC, /usr/bin/a, /usr/bin/b`. Alternatively, create a separate **Add Sudoers rule** action for each set.
 
-The rule file has a `Runas_Alias` line for **Run As**, a `Cmnd_Alias` line for the commands (omitted when **Commands** is `ALL`), and a line for the login account. The tags go before the commands on that line, and `NOPASSWD:` goes before them when **Prompt for password** is cleared.
+The rule file has a `Runas_Alias` line for **Run As** and a `Cmnd_Alias` line for the commands (omitted when **Commands** is `ALL`). It also has a line for the login account. The tags go before the commands on that line, and `NOPASSWD:` goes before them when **Prompt for password** is cleared.

@@ -21,7 +21,7 @@ The Netwrix Privilege Secure for Access Management (Privilege Secure) download i
 The Setup Launcher looks for `NPS.exe` and `NetwrixPostgreSQL16.exe` in the `Extras` folder first, and then in its own folder.
 
 :::warning
-The Setup Launcher doesn't install or check PowerShell 7.6 or later. Install it before you run `NPS.exe`. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md).
+The Setup Launcher checks for PowerShell 7.6 or later but doesn't install it. Install it before you run `NPS.exe`. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md).
 :::
 
 ## Extras folder

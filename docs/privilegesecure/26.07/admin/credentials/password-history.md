@@ -19,7 +19,7 @@ You're an Administrator, or you hold a custom role with the **[C] View Password*
 On the **Credentials** page, each managed account shows two icons beside its name:
 
 - **Copy Password to Clipboard**: Copies the current password.
-- **View Password**: Opens the View Password dialog.
+- **View Password**: Opens the **View Password** dialog.
 
 The same icons appear in credential groups and policy overrides.
 

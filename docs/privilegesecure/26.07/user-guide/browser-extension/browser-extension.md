@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Browser extension
 
-The Netwrix Privilege Secure browser extension lets you start and manage web sessions from your browser toolbar. You sign in to the extension with your Privilege Secure account, pick a website activity that an access policy gives you, and open the site in a recorded, time-limited session.
+The Netwrix Privilege Secure browser extension lets you start and manage web sessions from your browser toolbar. You sign in to the extension with your Privilege Secure account. Then you pick a website activity that an access policy gives you, and open the site in a recorded, time-limited session.
 
 This page describes the extension version in the Chrome Web Store and Microsoft Edge Add-ons, build 25.8.26.
 

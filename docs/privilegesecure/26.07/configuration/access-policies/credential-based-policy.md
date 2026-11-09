@@ -26,7 +26,7 @@ A credential-based access policy lets users check out managed credentials, and c
 
 For example, to let a team check out a shared service account, enter the name `Shared service accounts`, select **Credential Based**, and select a connection profile. Then add the team's group and the credential on the tabs.
 
-When you select **Credential Based**, the **Credentials** and **Files** tabs replace the **Resources** tab. Save the policy before you add credentials or files. If you change **Type** on a saved policy, the **Confirm policy type change** dialog warns that the associated credentials or resources, and the policy's access certifications, will be removed.
+When you select **Credential Based**, the **Credentials** and **Files** tabs replace the **Resources** tab. Save the policy before you add credentials or files. If you change **Type** on a saved policy, the **Confirm policy type change** dialog warns that the associated credentials or resources, and the policy's access certifications, are removed.
 
 The **Credentials** and **Files** tabs appear for administrators and for the Admin View Read Only role.
 
@@ -71,7 +71,7 @@ See [Connection profiles](/docs/privilegesecure/26.07/configuration/access-polic
 
 A credential can change its password when a user checks it out, when the user releases it, or both. Websites, Microsoft Entra ID tenants, and managed credentials change the password on both by default. Credentials in a secret vault don't change it on either by default.
 
-To change this for an Entra ID tenant account or a managed credential, select the account on the **Users** tab of its resource (the Entra ID tenant or managed resource) and click **Password Reset Options**. Select **Rotate on Session Start** to change the password on checkout and **Rotate on Session End** to change it on release. Website and secret vault accounts don't offer **Password Reset Options**.
+To change this for an Entra ID tenant account or a managed credential, select the account on the **Users** tab of its resource (the Entra ID tenant or managed resource). Then click **Password Reset Options**. Select **Rotate on Session Start** to change the password on checkout and **Rotate on Session End** to change it on release. Website and secret vault accounts don't offer **Password Reset Options**.
 
 [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md) describes the account state after a session, including the **Keep Enabled** option. Resource-based sessions and credential-release sessions treat the account differently, so read that section before you choose a policy type.
 

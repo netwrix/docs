@@ -32,7 +32,7 @@ In this option, the database is a PostgreSQL or SQL Server server that you provi
 
 ## Set up high availability
 
-The HA manager tool (`NPS.HaMgr.exe`) is in the `Extras` folder of the product download. You run it on both servers to configure PostgreSQL replication for an active-passive pair.
+The high availability (HA) manager tool (`NPS.HaMgr.exe`) is in the `Extras` folder of the product download. You run it on both servers to configure PostgreSQL replication for an active-passive pair.
 
 For the full setup and upgrade procedures, use these Knowledge Base articles:
 
@@ -73,7 +73,7 @@ Failover is manual.
 
 1. On the secondary server, open the HA manager tool and click **Failover**. Confirm the prompt. The prompt names the server that becomes the primary.
 
-   The HA manager starts PostgreSQL if it is stopped, promotes the replica to primary, and writes the local host and PostgreSQL port into the database settings file, `appsettings.db.json`, in the `Database` folder under `C:\ProgramData\Stealthbits\PAM`. It then restarts the `SbPAMProxy` service.
+   The HA manager starts PostgreSQL if it is stopped, and then promotes the replica to primary. It writes the local host and PostgreSQL port into the database settings file, `appsettings.db.json`, in the `Database` folder under `C:\ProgramData\Stealthbits\PAM`. It then restarts the `SbPAMProxy` service.
 
 2. On the new primary server, run `iisreset`. The HA manager doesn't restart the **SbPAM Web Service** site in IIS, so the web service doesn't use the new database settings until you do.
 3. If the Action Service runs on another server, point it at the new primary server. Run the following command on that server, and enter the password when prompted:
@@ -101,7 +101,7 @@ For how encryption keys protect stored secrets, and how to rotate them, see [Enc
 After an upgrade, the primary Privilege Secure Console can show no nodes for the secondary server. To register the secondary server's services:
 
 1. Sign in to the Privilege Secure Console on the secondary server.
-2. Select **System Settings** > **Services** to open the page that holds the **NPS Rest URL** setting. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+2. Select **System Settings** > **Services** to open the page that holds the **NPS Rest URL** setting. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 3. Enter the fully qualified domain name (FQDN) URL of the secondary server, for example `https://<secondary-server-fqdn>:6500`. Don't add a trailing slash.
 4. Click **Register Services**.
 

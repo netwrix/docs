@@ -58,17 +58,19 @@ Perform these changes on each proxy node, including any node in a high availabil
     ```json
     {
         "idletimeout": 300000000000,
-        "path": "D:\new\path\for\sessions",
+        "path": "D:\\new\\path\\for\\sessions",
         "replicas": 1
     }
     ```
 
     The `path` value determines where new session recordings are stored after you save the change.
 
+    > **IMPORTANT:** Use two backslashes (`\\`) between folder names in the JSON value. JSON treats a single backslash as an escape character, so a path with single backslashes isn't read correctly. This applies only to the JSON file. In the PowerShell commands, use single backslashes.
+
 4. To apply the necessary permissions to the new directory, run the following command in an administrator PowerShell window:
 
     ```powershell
-    $recordingDir = D:\new\path\for\sessions
+    $recordingDir = "D:\new\path\for\sessions"
     &icacls.exe $recordingDir /grant "NT SERVICE\SbpamProxy:(OI)(CI)F" /Q /T
     ```
 
@@ -93,16 +95,18 @@ After you complete these steps, all old and new recordings are stored in the new
 
     ```json
     {
-        "DataDirectory": "D:\new\path\for\webrecordings"
+        "DataDirectory": "D:\\new\\path\\for\\webrecordings"
     }
     ```
 
     The `DataDirectory` value determines where new web recordings are stored after you save the change.
 
+    > **IMPORTANT:** Use two backslashes (`\\`) between folder names in the JSON value. JSON treats a single backslash as an escape character, so a path with single backslashes isn't read correctly. This applies only to the JSON file. In the PowerShell commands, use single backslashes.
+
 3. To apply the necessary permissions to the new directory, run the following command in an administrator PowerShell window (substitute `<directory>` with your chosen recording directory):
 
     ```powershell
-    $webRecordingDir = D:\new\path\for\webrecordings
+    $webRecordingDir = "D:\new\path\for\webrecordings"
     &icacls.exe $webRecordingDir /grant "NT SERVICE\SbPAMProxy:(OI)(CI)F" /Q /T
     ```
 

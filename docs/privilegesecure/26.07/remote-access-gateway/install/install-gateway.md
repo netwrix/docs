@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Install the gateway and guacd
 
-The gateway runs inside your network. It is an Internet Information Services (IIS) site that connects the portal to Netwrix Privilege Secure for Access Management (Privilege Secure) and to the Apache Guacamole daemon (guacd). guacd runs as a Docker container in Windows Subsystem for Linux (WSL) on the same server.
+The gateway runs inside your network. It is an Internet Information Services (IIS) site. The site connects the portal to Netwrix Privilege Secure for Access Management (Privilege Secure) and to the Apache Guacamole daemon (guacd). guacd runs as a Docker container in Windows Subsystem for Linux (WSL) on the same server.
 
 Complete the steps in order. Run `Configure-Gateway.ps1` only after guacd is running.
 
@@ -42,21 +42,22 @@ The output lists an `https` binding on `*:6550`.
 
 ## Enable systemd in WSL
 
-1. Run Windows Update on the server before you install WSL. If the server has no WSL distribution, run `wsl --install` and restart the server if prompted. WSL installs the default Ubuntu distribution.
-2. Open the Ubuntu distribution and edit `/etc/wsl.conf` as root. Add these lines:
+1. Run Windows Update on the server before you install WSL.
+2. If the server has no WSL distribution, run `wsl --install`. Restart the server if prompted. WSL installs the default Ubuntu distribution.
+3. Open the Ubuntu distribution and edit `/etc/wsl.conf` as root. Add these lines:
 
    ```ini
    [boot]
    systemd=true
    ```
 
-3. In PowerShell, stop WSL so the change takes effect:
+4. In PowerShell, stop WSL so the change takes effect:
 
    ```powershell
    wsl --shutdown
    ```
 
-4. Open the Ubuntu distribution again.
+5. Open the Ubuntu distribution again.
 
 ## Install Docker and start guacd
 
@@ -93,7 +94,7 @@ The gateway package includes `install-docker.sh`. It installs Docker, pulls `gua
    `TcpTestSucceeded` must be `True` before you continue.
 
 :::warning
-On some Ubuntu releases, `install-docker.sh` installs a Docker engine that can't start containers, and `docker run` fails with the error `cgroups: cgroup mountpoint does not exist`. If you see this error, contact Netwrix Support.
+On some Ubuntu releases, `install-docker.sh` installs a Docker engine that can't start containers. `docker run` fails with the error `cgroups: cgroup mountpoint does not exist`. If you see this error, contact Netwrix Support.
 :::
 
 ## Configure the gateway
@@ -130,12 +131,12 @@ If guacd isn't reachable on port 4822, `Configure-Gateway.ps1` prints one error 
 In 26.07.3 the gateway installs with validation of the certificate on `https://<nps-server>:6500` turned off, so it connects even when it doesn't trust the certificate. For production, turn validation on and ensure the gateway server trusts the certificate. See [Skip certificate validation for Privilege Secure](/docs/privilegesecure/26.07/remote-access-gateway/configuration/gateway-settings.md#skip-certificate-validation-for-privilege-secure).
 
 :::note
-The script stores `<guacd-host>` in the `Guacd.Hostname` setting. In the default NAT networking mode, WSL 2 gives the distribution its own virtual network address, and Microsoft doesn't document that this address stays the same after WSL or the server restarts. After a restart, run `wsl hostname -I` again. If the address differs from `Guacd.Hostname`, run `Configure-Gateway.ps1` again with the new address. The script reuses the existing guacd certificate.
+The script stores `<guacd-host>` in the `Guacd.Hostname` setting. In the default NAT networking mode, WSL 2 gives the distribution its own virtual network address. Microsoft doesn't document that this address stays the same after WSL or the server restarts. After a restart, run `wsl hostname -I` again. If the address differs from `Guacd.Hostname`, run `Configure-Gateway.ps1` again with the new address. The script reuses the existing guacd certificate.
 :::
 
 ## Start WSL automatically
 
-guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway package includes `Setup-WslTask.ps1` to register a scheduled task that starts WSL when the server starts. The script registers the scheduled task "Start Gaucd on WSL". The task runs `wsl.exe` 60 seconds after startup with the highest privileges, as the account that you enter, and has no time limit.
+guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway package includes `Setup-WslTask.ps1` to register a scheduled task that starts WSL when the server starts. The script registers the scheduled task "Start Gaucd on WSL". Search Task Scheduler for that exact name, which the script spells "Gaucd" rather than "guacd". The task runs `wsl.exe` 60 seconds after startup. It runs with the highest privileges as the account that you enter, and it has no time limit.
 
 1. Sign in as the Windows user who installed WSL. Each user has a separate WSL environment.
 2. Run the script from the gateway installation folder:
@@ -146,12 +147,6 @@ guacd stops when WSL stops, and sessions fail until WSL runs again. The gateway 
 
 3. When the credential dialog opens, enter the credentials of the account that runs the task. The script has no unattended mode.
 
-After every restart, confirm that guacd is running before you rely on the gateway:
-
-1. In PowerShell, run `wsl -l -v`. The distribution shows **Running**. If it shows **Stopped**, run `wsl` to start it.
-2. In the Ubuntu distribution, run `sudo docker ps`. The output lists a container named `guacd` that publishes port 4822. If `guacd` isn't listed, run `sudo docker start guacd`.
-3. In PowerShell, run `Test-NetConnection <guacd-host> -Port 4822` and confirm that `TcpTestSucceeded` is `True`.
-
 The installer registers two Windows scheduled tasks that run at startup and keep WSL and guacd up without a manual `wsl` command:
 
 | Task | Trigger | Action |
@@ -159,9 +154,9 @@ The installer registers two Windows scheduled tasks that run at startup and keep
 | `NPS WSL holder` | At startup | `wsl.exe -d Ubuntu -u root --exec sleep infinity` |
 | `NPS WSL net keepalive` | Repeating | Runs `wsl-net-keepalive.ps1` in `C:\ProgramData\Stealthbits\PAM\RagGateway` |
 
-Keep both tasks enabled. If guacd still becomes unreachable, restart the container: run `wsl -d Ubuntu -u root -- docker restart guacd`, then repeat step 3.
+Keep both tasks enabled.
 
-If guacd isn't running, see [Sessions fail after the server restarts](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md#sessions-fail-after-the-server-restarts).
+After a restart, if guacd isn't running, see [Sessions fail after the server restarts](/docs/privilegesecure/26.07/remote-access-gateway/troubleshooting.md#sessions-fail-after-the-server-restarts).
 
 ## Verify the installation
 

@@ -37,7 +37,7 @@ For Oracle, enter the **Instance** as `<host>/<service-name>`, for example `ora0
 ## Platform-specific behavior
 
 - **SQL Server:** activities create Windows authentication logins for Active Directory accounts. They create SQL logins only for local database accounts.
-- **Oracle:** Privilege Secure reads the common user prefix from the database. It is `C##` unless the database defines another prefix. Active Directory users without managed credentials can't be provisioned on Oracle. Oracle accounts use password authentication.
+- **Oracle:** Privilege Secure reads the common user prefix from the database. It's `C##` unless the database defines another prefix. Active Directory users without managed credentials can't be provisioned on Oracle. Oracle accounts use password authentication.
 
 When Privilege Secure creates or changes an Oracle account, it adds the prefix to the account name unless the name already starts with it. For example, with the default prefix, the user `jsmith` becomes `C##jsmith`. If the database defines an empty prefix, Privilege Secure adds nothing. If Privilege Secure can't read the prefix, it uses `C##`.
 

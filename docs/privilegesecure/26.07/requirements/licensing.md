@@ -6,13 +6,13 @@ sidebar_position: 80
 
 # Licensing
 
-A license file sets how many users Netwrix Privilege Secure for Access Management allows. The file provides a number of credits, and each credit allows one user.
+A license file sets how many users Netwrix Privilege Secure for Access Management (Privilege Secure) allows. The file provides a number of credits, and each credit allows one user.
 
 ## What uses a license
 
 A user who has provisioned access consumes a license after their first sign-in. This applies to every user, regardless of role.
 
-When the number of licensed users reaches the number of credits, a user who signs in for the first time can't sign in, because Privilege Secure can't create the user. The same happens when the trial license has expired or when the license service isn't reachable. Users who already have a license can still sign in, but they can't start sessions.
+When the number of licensed users reaches the number of credits, a user who signs in for the first time can't sign in. This happens because Privilege Secure can't create the user. The same happens when the trial license has expired or when the license service isn't reachable. Users who already have a license can still sign in, but they can't start sessions.
 
 The sign-in page shows one of these messages:
 

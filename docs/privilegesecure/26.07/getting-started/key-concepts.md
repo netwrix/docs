@@ -57,7 +57,7 @@ The user who signs in to Privilege Secure isn't always the account that signs in
 | Resource | The resource's own account. Only website activities without group or role assignment actions can use it. For other activities, the console shows this option disabled. |
 | Vault | A managed account from a vault connector, such as CyberArk, HashiCorp, LAPS, Password Secure, or the Bring Your Own Vault (BYOV) connector. |
 
-An activity token is the basis of just-in-time access. When the activity has **Create Account** and **Delete After Use** selected, the account is created for the session and removed when it ends, so no standing privileged account remains between sessions. See [Vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md) for BYOV.
+An activity token is the basis of just-in-time access. When the activity has **Create Account** and **Delete After Use** selected, the account is created for the session and removed when it ends. No standing privileged account remains between sessions. See [Vault connectors](/docs/privilegesecure/26.07/integrations/vaults/vault-connectors.md) for BYOV.
 
 ## Resources
 
@@ -102,7 +102,7 @@ The two session types treat the login account differently.
 
 A **Requester** login account is different. Privilege Secure doesn't create, disable, or delete it. The session uses the requester's existing account and leaves it enabled at session end. This is why a requester login account must already exist and stay enabled.
 
-**Credential-release sessions** give the user a credential from a vault or a managed account. The password rotates when the user checks it out, when the user releases it, or both. Whether the account stays enabled after release is set for each account by **Keep Enabled (Credential Release only)** in **Password Reset Options** on the resource's **Users** tab. The setting belongs to the account on the resource. There is no option to set it for each user.
+**Credential-release sessions** give the user a credential from a vault or a managed account. The password rotates when the user checks it out, when the user releases it, or both. **Keep Enabled (Credential Release only)** in **Password Reset Options** on the resource's **Users** tab sets whether the account stays enabled after release. The setting belongs to the account on the resource. There is no option to set it for each user.
 
 A credential-release session has no remote connection, so Privilege Secure doesn't record a session for it. The connection profile's Show Password option doesn't apply: the user can view the released password while the session is active, whatever the profile says. See [Connect to a session](/docs/privilegesecure/26.07/user-guide/connect-session.md).
 

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Configuration overview
 
-After you install Netwrix Privilege Secure for Access Management, configure sign-in, the accounts and resources that sessions use, and the access policies that connect them. This page lists the configuration tasks in the order to complete them and links to the page for each one.
+After you install Netwrix Privilege Secure for Access Management (Privilege Secure), configure sign-in, the accounts and resources that sessions use, and the access policies that connect them. This page lists the configuration tasks in the order to complete them and links to the page for each one.
 
 For the full path from installation to the first session, see [Quick start](/docs/privilegesecure/26.07/getting-started/quick-start.md). For the concepts behind the tasks, see [Key concepts](/docs/privilegesecure/26.07/getting-started/key-concepts.md).
 
@@ -27,7 +27,7 @@ Some settings are on other pages of the console. Email server settings are under
 
 Complete these tasks in order. The later tasks depend on the earlier ones.
 
-1. **Replace the console certificate and register the services.** Bind a trusted certificate to the console, then set the NPS REST URL to the name on the certificate. Sign-in connectors and the services use this name. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md) and [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+1. **Replace the console certificate and register the services.** Bind a trusted certificate to the console, then set **NPS Rest URL** to the name on the certificate. Sign-in connectors and the services use this name. See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md) and [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 1. **Add service accounts.** Add the accounts that Privilege Secure uses to read and manage your domains and resources. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md). To manage Microsoft Entra ID, see [Register an app in Microsoft Entra ID](/docs/privilegesecure/26.07/configuration/service-accounts/entra-id-app-registration.md).
 1. **Add an Active Directory domain.** Add the domain that holds your users, groups, and computers, and synchronize it. See [Active Directory domains](/docs/privilegesecure/26.07/resources/domains.md).
 1. **Add users and groups.** Add the people who sign in to the console. See [Add users and groups](/docs/privilegesecure/26.07/admin/users-groups/add-users-groups.md).

@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Server details
 
-The server details page shows the settings of one server and what Netwrix Privilege Secure for Access Management (Privilege Secure) found on it. To open the page, select **Resources** in the left navigation, then select the name of a server in the **Resource** column. The Type filter calls servers **Host**.
+The server details page shows the settings of one server and what Netwrix Privilege Secure for Access Management (Privilege Secure) found on it. To open the page, select **Resources** in the left navigation, then select the name of a server in the **Resource** column. The **Type** filter calls servers **Host**.
 
 ![The header of a server details page with the buttons, fields, ports, Trust on Discovery, and Action on Fingerprint Mismatch.](/images/privilegesecure/26.07/resources/server-details.webp)
 
@@ -55,11 +55,11 @@ The action dropdown has these values:
 
 | Value | Behavior |
 | --- | --- |
-| **Allow Connection** | Allows the connection and records a Warning event. |
-| **Log event and allow** | Allows the connection and records a Warning event. This value is the default. |
+| **Allow Connection** | Allows the connection. When the thumbprint differs from the trusted thumbprint, records a Warning event. The resource details page doesn't show the mismatch icon. |
+| **Log event and allow** | Allows the connection. When the thumbprint differs from the trusted thumbprint, records a Warning event and shows the mismatch icon on the resource details page. This value is the default. |
 | **Log event and block** | Blocks the connection and records an Error event. |
 
-With **Allow Connection**, the resource details page doesn't show the mismatch icon, because Privilege Secure doesn't compare the thumbprint for that value.
+With **Allow Connection**, the resource details page doesn't show the mismatch icon. Privilege Secure still compares the thumbprint and records the Warning event when it differs.
 
 When a server presents a different host key and the action is **Log event and allow** or **Log event and block**, the resource details page shows a fingerprint icon with the tooltip **SSH key fingerprint mismatch**. Select it to open the mismatch window, which shows the cached key and the new key, and an **Update** button to trust the new key.
 
@@ -109,9 +109,9 @@ The **Status** column shows the result of the last verification:
 | --- | --- |
 | Unspecified | No verification has run. |
 | Verified | The password matches the one that Privilege Secure stores. |
-| Mismatch | The password doesn't match. This status appears only when the platform has Reset On Mismatch turned off. |
-| Changed | Privilege Secure reset the password to match. This status appears only when Reset On Mismatch is on. |
-| Failed | The reset didn't succeed. This status appears only when Reset On Mismatch is on. |
+| Mismatch | The password doesn't match. This status appears only when the platform has **Reset On Mismatch** turned off. |
+| Changed | Privilege Secure reset the password to match. This status appears only when **Reset On Mismatch** is on. |
+| Failed | The reset didn't succeed. This status appears only when **Reset On Mismatch** is on. |
 
 For rotation methods, password history, and verification schedules, see [Manage, rotate, and verify credentials](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md).
 

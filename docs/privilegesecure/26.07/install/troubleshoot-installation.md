@@ -28,7 +28,7 @@ By default, the installer also writes a log to the `%TEMP%` folder of the accoun
 
 **Symptom:** `NPS.exe` stops with the message "PowerShell 7.6 or later is required. Please install it from https://aka.ms/powershell".
 
-**Cause:** Privilege Secure 26.07 requires PowerShell 7.6 or later on the application server. The Setup Launcher doesn't check for it, so the launcher can show PowerShell as installed when only Windows PowerShell 5.1 is present.
+**Cause:** Privilege Secure 26.07 requires PowerShell 7.6 or later on the application server. The installer stops when it can't find it, including when only Windows PowerShell 5.1 is present.
 
 **Fix:** Install PowerShell 7.6 or later, and run the installer again. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md).
 
@@ -62,7 +62,7 @@ Check these causes:
 
 **Cause:** The installer doesn't fail when it can't import the default activities. It records the failure in `ImportActivities.log` in `C:\ProgramData\Stealthbits\PAM\Logs` and continues. This folder is named `Logs`, not `Log`.
 
-**Fix:** Open `ImportActivities.log` and read the error. Correct the database connection. Then, in a PowerShell window that you opened as an administrator, go to the `DatabaseTools` folder of the installation folder, which is `C:\Program Files\Stealthbits\PAM\DatabaseTools` by default, and run these commands in order. The first applies pending schema updates. The second imports the default activities and other default data.
+**Fix:** Open `ImportActivities.log` and read the error. Correct the database connection. Then, in a PowerShell window that you opened as an administrator, go to the `DatabaseTools` folder of the installation folder. By default, this is `C:\Program Files\Stealthbits\PAM\DatabaseTools`. Run these commands in order. The first applies pending schema updates. The second imports the default activities and other default data.
 
 ```powershell
 .\SbPAM.DbUpdater.exe

@@ -49,11 +49,9 @@ This article contains the following sections:
 2. HA Upgrade Instructions
    1. Failover and Upgrade the Secondary
    2. Upgrade the Primary
-   3. Copy appsettings.json File to the Secondary
-   4. Copy the Encryption Keys to the Secondary
-   5. Re-establish HA on the Secondary
-   6. Verify the Secondary
-   7. Verify the Primary
+   3. Re-establish HA on the Secondary
+   4. Verify the Secondary
+   5. Verify the Primary
 3. Remote Service Upgrade Instructions
    1. Upgrade the Netwrix Privilege Secure Server
    2. Upgrade All Remote Services
@@ -120,7 +118,7 @@ If neither of these is configured, you may proceed with a standard Privilege Sec
 
 ### HA Upgrade Instructions
 
-Each host in the active/passive configuration must be upgraded, starting with the secondary (passive) host and proceeding to the primary (active) host. After both hosts are upgraded, steps are included to ensure that both Privilege Secure installations share the same encryption keys. After the encryption keys match, the primary and secondary are restored to an HA configuration and their services are re-registered in the Privilege Secure console.
+Each host in the active/passive configuration must be upgraded, starting with the secondary (passive) host and proceeding to the primary (active) host. After both hosts are upgraded, the primary and secondary are restored to an HA configuration and their services are re-registered in the Privilege Secure console. If the secondary can't connect or decrypt data after the upgrade, see [HA Troubleshooting](#ha-troubleshooting).
 
 #### Step 1 — Failover and Upgrade the Secondary
 
@@ -149,41 +147,14 @@ Each host in the active/passive configuration must be upgraded, starting with th
 5. Run `NPS_Setup` and click the **Upgrade Netwrix Privilege Secure** button.
 6. After the installer completes, close the installer and close `NPS_Setup`.
 
-#### Step 3 — Copy appsettings.json File to the Secondary
-
-On the primary server, locate the `appsettings.json` file at `C:\ProgramData\Stealthbits\PAM\HA\appsettings.json` and copy it to the same path on the secondary server.
-
-#### Step 4 — Copy the Encryption Keys to the Secondary
-
-1. On the primary server, run `cmd` as Administrator.
-2. Enter the following commands to export the encryption keys for the secondary:
-   ```text
-   cd "C:\Program Files\Stealthbits\PAM\KeyTools"
-   .\SbPAM.RotateKey.exe export -n keys.exp 
-   ```
-3. Take note of the password for the export file.
-
-   > **IMPORTANT:** This temporary password protects the Privilege Secure encryption keys during copying. Do not save it to digital media or transmit it with the encryption key package.
-
-4. Copy the export file to `C:\Program Files\Stealthbits\PAM\KeyTools` on the secondary server.
-5. On the secondary server, run `cmd` as Administrator.
-6. Enter the following commands to import the encryption keys:
-   ```text
-   cd "C:\Program Files\Stealthbits\PAM\KeyTools"
-   .\SbPAM.RotateKey.exe import -n keys.exp 
-   ```
-
-   You are prompted for the password.
-7. Delete the export file from both the primary and secondary servers.
-
-#### Step 5 — Re-establish HA on the Secondary
+#### Step 3 — Re-establish HA on the Secondary
 
 1. Launch the HA Tool on the secondary server.
 2. Enter the primary IP address into the **Primary IP** text box.
 3. Enter the secondary IP address into the **Secondary IP** text box.
 4. Click the **Configure HA** button.
 
-#### Step 6 — Verify the Secondary
+#### Step 4 — Verify the Secondary
 
 1. Connect to the secondary Web UI directly.
 2. Log in with a Privilege Secure Administrator account (`domain\\user`).
@@ -193,7 +164,7 @@ On the primary server, locate the `appsettings.json` file at `C:\ProgramData\Ste
    - Verify that your secondary server shows up as online.
    - Verify that your primary server shows up as online.
 
-#### Step 7 — Verify the Primary
+#### Step 5 — Verify the Primary
 
 1. Connect to the primary Web UI directly.
 2. Log in with a Privilege Secure Administrator account (`domain\\user`).
@@ -258,7 +229,7 @@ After all remote hosts have the correct encryption keys, delete the export file 
 
 Complete the following steps to manually configure critical HA settings on your HA pair:
 
-1. On the primary server, go to the `%PROGRAMDATA%\Stealthbits\Postgres12` folder. The following is the default path:
+1. On the primary server, go to the `%PROGRAMDATA%\Stealthbits\Postgres16` folder. The following is the default path:
    ```text
    C:\ProgramData\Stealthbits\Postgres16
    ```
@@ -268,7 +239,7 @@ Complete the following steps to manually configure critical HA settings on your 
    host  all  all  %SECONDARY_IP%/32  md5
    ```
    Replace the `%SECONDARY_IP%` placeholders with the IP address of your secondary server. Save the changes.
-3. On the secondary server, go to the `%PROGRAMDATA%\Stealthbits\Postgres12` folder. The following is the default path:
+3. On the secondary server, go to the `%PROGRAMDATA%\Stealthbits\Postgres16` folder. The following is the default path:
    ```text
    C:\ProgramData\Stealthbits\Postgres16
    ```
@@ -278,3 +249,34 @@ Complete the following steps to manually configure critical HA settings on your 
    host  all  all  %PRIMARY_IP%/32  md5
    ```
    Replace the `%PRIMARY_IP%` placeholders with the IP address of your primary server. Save the changes.
+
+### If the secondary can't connect or decrypt after an upgrade
+
+Newer upgrades keep the existing `appsettings.json` file and encryption keys, so you normally don't need these steps. If the secondary can't connect to the primary or can't decrypt data after the upgrade, complete the following procedures on the primary and the secondary.
+
+#### Copy the appsettings.json file to the secondary
+
+On the primary server, locate the `appsettings.json` file at `C:\ProgramData\Stealthbits\PAM\HA\appsettings.json` and copy it to the same path on the secondary server.
+
+#### Copy the encryption keys to the secondary
+
+1. On the primary server, run `cmd` as Administrator.
+2. Enter the following commands to export the encryption keys for the secondary:
+   ```text
+   cd "C:\Program Files\Stealthbits\PAM\KeyTools"
+   .\SbPAM.RotateKey.exe export -n keys.exp 
+   ```
+3. Take note of the password for the export file.
+
+   > **IMPORTANT:** This temporary password protects the Privilege Secure encryption keys during copying. Do not save it to digital media or transmit it with the encryption key package.
+
+4. Copy the export file to `C:\Program Files\Stealthbits\PAM\KeyTools` on the secondary server.
+5. On the secondary server, run `cmd` as Administrator.
+6. Enter the following commands to import the encryption keys:
+   ```text
+   cd "C:\Program Files\Stealthbits\PAM\KeyTools"
+   .\SbPAM.RotateKey.exe import -n keys.exp 
+   ```
+
+   You are prompted for the password.
+7. Delete the export file from both the primary and secondary servers.

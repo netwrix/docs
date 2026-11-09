@@ -45,7 +45,7 @@ chmod 0440 /usr/local/etc/sudoers.d/svc_sbpam
 
 ### Give every alias a unique name
 
-`Cmnd_Alias` names are global across every file in the drop-in directory. If two files declare an alias with the same name, `sudo` fails with an `Alias already defined` parse error and refuses to load its configuration for every account on the host, not only the two that collided.
+`Cmnd_Alias` names are global across every file in the drop-in directory. If two files declare an alias with the same name, `sudo` fails with an `Alias already defined` parse error. It refuses to load its configuration for every account on the host, not only the two that collided.
 
 Before you install a policy file:
 
@@ -92,7 +92,7 @@ svc_sbpam ALL = NOPASSWD: SVC_ACT_CHKSUM, SVC_ACT_SUDOERS, SVC_SB_PASS, SVC_SB_C
 Defaults:svc_sbpam !requiretty
 ```
 
-- `NOPASSWD` lets the account run the listed commands without a password prompt. Privilege Secure can't answer one. When a command stops at a `sudo` or `su` password prompt, Privilege Secure ends it and reports that the account is likely missing a `NOPASSWD` grant for that command. The message is:
+- `NOPASSWD` lets the account run the listed commands without a password prompt. Privilege Secure can't answer one. When a command stops at a `sudo` or `su` password prompt, Privilege Secure ends it. It reports that the account is likely missing a `NOPASSWD` grant for that command. The message is:
 
   ```text
   remote command is waiting for an interactive password (sudo/su prompt detected) — the target account is likely missing a NOPASSWD sudoers grant for this command

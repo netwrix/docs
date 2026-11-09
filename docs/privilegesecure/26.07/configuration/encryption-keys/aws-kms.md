@@ -39,7 +39,7 @@ Privilege Secure calls the KMS `Encrypt` operation when it creates or rotates th
 1. Open the user, and select the **Security credentials** tab.
 1. In the **Access keys** section, select **Create access key**.
 1. On the best practices page, select **Other**, and then select **Next**.
-1. Optional: Enter a description tag, and select **Create access key**.
+1. (Optional) Enter a description tag, and select **Create access key**.
 1. Copy the access key ID and the secret access key, or select **Download .csv file**. AWS shows the secret access key only once.
 
 Store the access key and the secret access key securely. You enter them in Privilege Secure when you apply the key.

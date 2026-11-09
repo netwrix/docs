@@ -47,7 +47,7 @@ This example sets notes and a ticket number:
 
 `CONTOSO\jsmith+Add_Requester_to_Local_Administrators+sql01.contoso.com++Server Maintenance+INC0012345`
 
-The `user@domain` form of the user name works in a connection string. The proxy splits the string on whichever of `+` or `@` occurs more often, and a string with an activity and a resource has more plus signs than the one `@` in the user name.
+The `user@domain` form of the user name works in a connection string. The proxy splits the string on whichever of `+` or `@` occurs more often. A string with an activity and a resource has more plus signs than the one `@` in the user name.
 
 Administrators can change the separators. For the settings that control them, see [Proxy settings](/docs/privilegesecure/26.07/configuration/proxy-settings.md).
 
@@ -99,7 +99,7 @@ Example remote host: `CONTOSO\jsmith+Activity_Token_for_wheel_Group+linux01.cont
 2. In **Remote host**, enter `<nps-server>`.
 3. In **Username**, enter the connection string.
 4. In **Port**, enter 4489.
-5. On the **Advanced RDP settings** tab, select **Redirect clipboard**. This lets you paste a multi-factor authentication (MFA) token.
+5. On the **Advanced RDP settings** tab, select **Redirect clipboard**. This lets you paste an MFA token.
 6. Click **OK**.
 
 Example username: `CONTOSO\jsmith+Add_Requester_to_Local_Administrators+sql01.contoso.com`

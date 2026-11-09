@@ -54,7 +54,7 @@ The tabs under the fields hold the users, activities, resources, and credentials
 When a user requests a session, the console picks one access policy:
 
 1. If the request names an access policy, the console uses that policy.
-1. Otherwise, the console uses the first matching policy when the matching policies are sorted by name in alphabetical order. A policy matches when it includes the requested activity and applies to the user and to the resource or credential.
+1. Otherwise, the console sorts the matching policies by name in alphabetical order and uses the first one. A policy matches when it includes the requested activity. It must also apply to the user and to the resource or credential.
 
 A policy has no priority setting. The policy name decides which matching policy wins.
 
