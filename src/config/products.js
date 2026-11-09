@@ -11,6 +11,8 @@
  * - Easier maintenance and fewer places for errors
  */
 
+import { isIndexableSite } from './indexing.js';
+
 /**
  * @typedef {Object} ProductVersion
  * @property {string} version - Version string (e.g., "12.0", "saas")
@@ -33,6 +35,7 @@
  * @property {string} [icon] - Icon for the product
  * @property {string} [navbarGroup] - Products sharing a navbarGroup are shown as one nested submenu with this label inside their category dropdown
  * @property {boolean} [hideFromNavbar] - Leave the product out of the navbar dropdowns and the landing page. Its pages stay reachable by URL.
+ * @property {boolean} [devOnly] - Build the product on docs-dev and locally but not on the production site (docs.netwrix.com). The pages still merge to main with the rest of dev; production just doesn't build them. Remove the flag to release the product.
  * @property {boolean} [noIndex] - Keep the product out of search engines and site search: its pages carry a noindex tag and are left out of the sitemap, production robots.txt disallows its routes, and it is not offered in the search product filter. Pair with hideFromNavbar for an unlisted product such as a beta.
  */
 
@@ -40,7 +43,7 @@
  * All Netwrix products and their configurations
  * @type {Product[]}
  */
-export const PRODUCTS = [
+const ALL_PRODUCTS = [
   {
     id: '1secure',
     name: '1Secure',
@@ -66,6 +69,7 @@ export const PRODUCTS = [
     icon: '',
     hideFromNavbar: true, // Unlisted beta: reachable by URL only
     noIndex: true,
+    devOnly: true, // Not built on production until the beta is released
     versions: [
       {
         version: 'current',
@@ -788,6 +792,23 @@ export const PRODUCTS = [
     defaultVersion: '8.1',
   },
 ];
+
+/**
+ * True when this build is for the production site (docs.netwrix.com). The
+ * client bundle has no APP_EXTERNAL_URL, so there it is false and devOnly
+ * products stay in the list. That is harmless: they have no routes in production.
+ */
+function isProductionBuild() {
+  const url = typeof process !== 'undefined' ? process.env?.APP_EXTERNAL_URL : undefined;
+  return Boolean(url) && isIndexableSite(url);
+}
+
+/**
+ * Products the site builds. Products flagged devOnly are left out of the
+ * production build, so they get no plugin, routes, or pages there.
+ * @type {Product[]}
+ */
+export const PRODUCTS = ALL_PRODUCTS.filter((product) => !(product.devOnly && isProductionBuild()));
 
 /**
  * Product categories with their metadata
