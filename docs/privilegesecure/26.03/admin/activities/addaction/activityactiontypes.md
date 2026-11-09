@@ -14,7 +14,7 @@ sidebar_position: 10
 
 # Action Types
 
-The following tables list all available actions that can be added to an activity.
+The following tables list all available actions that you can add to an activity.
 
 ## Pre-Session (Grant) Actions
 

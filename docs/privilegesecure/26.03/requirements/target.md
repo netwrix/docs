@@ -14,7 +14,7 @@ sidebar_position: 40
 
 # Target Environments
 
-Netwrix Privilege Secure supports management of the following target environments:
+Netwrix Privilege Secure can manage the following target environments:
 
 - Microsoft® Active Directory®
 - **Windows Server 2008 R2 or later** — Requires PowerShell v5.1
