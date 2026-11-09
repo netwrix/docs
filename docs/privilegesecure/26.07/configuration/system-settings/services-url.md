@@ -55,5 +55,5 @@ After you register the services, select **Configuration** > **Service Nodes** an
 ## Related topics
 
 - [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md)
-- [Installing an IIS Certificate](/docs/kb/privilegesecure/certificates-and-security/installing-an-iis-certificate.md)
-- [Services aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running.md)
+- [Installing an IIS Certificate](/docs/kb/privilegesecure/certificates-and-security/installing-an-iis-certificate)
+- [Services aren't running](/docs/kb/privilegesecure/troubleshooting-and-errors/services-are-not-running)

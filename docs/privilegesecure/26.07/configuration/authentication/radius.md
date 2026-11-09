@@ -100,10 +100,10 @@ Privilege Secure includes a **Duo** connector in the connector list. It appears 
 
 For the tab and the rules for users in several groups, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector) and [Connector precedence](/docs/privilegesecure/26.07/configuration/authentication/overview.md#connector-precedence).
 
-If users aren't assigned to the connector, Privilege Secure refuses their sign-in through it. For a connector that must accept unassigned users, see [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector.md).
+If users aren't assigned to the connector, Privilege Secure refuses their sign-in through it. For a connector that must accept unassigned users, see [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector).
 
 ## Related topics
 
-- [How to Configure a Duo RADIUS Proxy for Multi-Factor Authentication](/docs/kb/privilegesecure/authentication-and-mfa/how-to-configure-a-duo-radius-proxy-for-multi-factor-authentication.md)
-- [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector.md)
-- [Invalid Multi-Factor Authentication Code Error](/docs/kb/privilegesecure/authentication-and-mfa/invalid-multi-factor-authentication-code-error.md)
+- [How to Configure a Duo RADIUS Proxy for Multi-Factor Authentication](/docs/kb/privilegesecure/authentication-and-mfa/how-to-configure-a-duo-radius-proxy-for-multi-factor-authentication)
+- [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector)
+- [Invalid Multi-Factor Authentication Code Error](/docs/kb/privilegesecure/authentication-and-mfa/invalid-multi-factor-authentication-code-error)

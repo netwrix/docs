@@ -32,10 +32,10 @@ Set **NPS Rest URL** to the FQDN on the certificate and register the services. S
 
 ## Renew the JWT signing certificate
 
-The console signs sign-in tokens with a separate JSON Web Token (JWT) signing certificate. Renew it only when Netwrix Support tells you to. The procedure stops services, removes the existing certificate, and runs the key generator. For the steps, see [Renewing the JWT Signing Certificate](/docs/kb/privilegesecure/certificates-and-security/renewing-the-jwt-signing-certificate.md).
+The console signs sign-in tokens with a separate JSON Web Token (JWT) signing certificate. Renew it only when Netwrix Support tells you to. The procedure stops services, removes the existing certificate, and runs the key generator. For the steps, see [Renewing the JWT Signing Certificate](/docs/kb/privilegesecure/certificates-and-security/renewing-the-jwt-signing-certificate).
 
 ## Related topics
 
-- [Installing an IIS Certificate](/docs/kb/privilegesecure/certificates-and-security/installing-an-iis-certificate.md)
-- [Speeding Up CRL Checks on SbPAM Servers Without Internet Connectivity](/docs/kb/privilegesecure/certificates-and-security/speeding-up-crl-checks-on-sbpam-servers-without-internet-connectivity.md)
+- [Installing an IIS Certificate](/docs/kb/privilegesecure/certificates-and-security/installing-an-iis-certificate)
+- [Speeding Up CRL Checks on SbPAM Servers Without Internet Connectivity](/docs/kb/privilegesecure/certificates-and-security/speeding-up-crl-checks-on-sbpam-servers-without-internet-connectivity)
 - [Security hardening checklist](/docs/privilegesecure/26.07/configuration/security-hardening.md)

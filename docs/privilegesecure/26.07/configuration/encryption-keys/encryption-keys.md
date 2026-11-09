@@ -79,7 +79,7 @@ The import protects the key files on the other server with that server's Windows
 
 If AWS KMS protects the key, the export reads the key through AWS KMS, so the exporting server needs working AWS access. The other server doesn't need AWS access. The import protects the key there with the Windows machine key, so the key on that server isn't protected by AWS KMS.
 
-For the full high availability procedure, see [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md).
+For the full high availability procedure, see [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments).
 
 ## Rotate the key
 

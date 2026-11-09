@@ -70,8 +70,8 @@ New-ItemProperty -Name LocalAccountTokenFilterPolicy `
 
 The command sets the `LocalAccountTokenFilterPolicy` registry value to 1, which turns off UAC remote restrictions for local accounts. For more information, see these articles:
 
-- [Access Denied Error Connecting to a Non-domain-joined Windows Resource](/docs/kb/privilegesecure/resource-management/access-denied-error-connecting-to-a-non-domain-joined-windows-resource.md)
-- [Managing Non-domain-joined Windows Computers with Netwrix Privilege Secure](/docs/kb/privilegesecure/resource-management/managing-non-domain-joined-windows-computers-with-privilege-secure.md)
+- [Access Denied Error Connecting to a Non-domain-joined Windows Resource](/docs/kb/privilegesecure/resource-management/access-denied-error-connecting-to-a-non-domain-joined-windows-resource)
+- [Managing Non-domain-joined Windows Computers with Netwrix Privilege Secure](/docs/kb/privilegesecure/resource-management/managing-non-domain-joined-windows-computers-with-privilege-secure)
 
 ## Linux targets
 

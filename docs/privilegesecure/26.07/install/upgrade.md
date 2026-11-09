@@ -28,7 +28,7 @@ Complete these checks on the application server before you start.
 4. Record any changes you made to permanent command plans. The upgrade overwrites them. See [Permanent command plans](#permanent-command-plans).
 5. Check the **NPS Rest URL** for a trailing slash. See [Check the NPS Rest URL](#check-the-nps-rest-url).
 6. If you upgrade from a release earlier than 26.07.3, don't delete and re-create the default activity groups. See [Default activity groups](#default-activity-groups).
-7. If you run a high availability pair or remote service nodes, read the [high availability upgrade article](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations.md) before you begin.
+7. If you run a high availability pair or remote service nodes, read the [high availability upgrade article](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations) before you begin.
 8. If you upgrade from 26.03, check the resources list for resources with a null DNS name or duplicates. Remove the affected resources before you upgrade, and onboard and scan them again afterward. Otherwise they can appear as duplicates with the same IP address.
 
 ### Back up the SAML templates
@@ -70,7 +70,7 @@ Privilege Secure creates two default activity groups: **Domain Administrator Acc
 
 The upgrade keeps the existing encryption key and creates one only when none exists. See [Encryption key management](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md).
 
-Upgrade each remote service node with its own installer. See the [high availability upgrade article](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations.md).
+Upgrade each remote service node with its own installer. See the [high availability upgrade article](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations).
 
 ### What the upgrade keeps
 

@@ -37,7 +37,7 @@ The connector appears in the connector list. To remove a connector, hover over i
 
 A connector does nothing until you assign it to users or groups. Select the method on the **Authentication Connector** tab of the user or group. The tab lists **Internal MFA**, which is built in, the seeded **Duo** and **Not Required** connectors, and every connector that you add, whatever its type. For the choices and the warning about **Not Required**, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md#authentication-connector).
 
-To remove the second factor for a user or group, see the knowledge base article [Disable MFA for users or groups](/docs/kb/privilegesecure/authentication-and-mfa/disable-mfa-for-users-or-groups.md).
+To remove the second factor for a user or group, see the knowledge base article [Disable MFA for users or groups](/docs/kb/privilegesecure/authentication-and-mfa/disable-mfa-for-users-or-groups).
 
 ## Connector precedence
 
@@ -77,7 +77,7 @@ If a connector must accept users who aren't assigned to it, add the following li
 "StrictExternalAuth": "False"
 ```
 
-For an example, see the knowledge base article [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector.md).
+For an example, see the knowledge base article [Configuring a Custom RADIUS Authentication Connector](/docs/kb/privilegesecure/authentication-and-mfa/configuring-a-custom-radius-authentication-connector).
 
 ## Use Remote Access Gateway
 

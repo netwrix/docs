@@ -87,7 +87,7 @@ Two identical servers run all components. The databases replicate from the prima
 
 ### Active-active database
 
-Several application servers share one database. Failover needs no manual step. This topology works with PostgreSQL and SQL Server. Setup is more complex, and you need an additional server for the database. If you mesh the application servers, their Proxy services connect to each other on TCP 6520, 6522, and 6524. See [How to create a service mesh between app servers](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-create-a-service-mesh-between-app-servers.md).
+Several application servers share one database. Failover needs no manual step. This topology works with PostgreSQL and SQL Server. Setup is more complex, and you need an additional server for the database. If you mesh the application servers, their Proxy services connect to each other on TCP 6520, 6522, and 6524. See [How to create a service mesh between app servers](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-create-a-service-mesh-between-app-servers).
 
 ![Active-active. A browser connects to either of two application servers on 6500. Both connect to one shared PostgreSQL or SQL Server database on a separate server, on 5432 or 1433. When you mesh the servers, their Proxy services connect to each other on 6520, 6522, and 6524.](/images/privilegesecure/26.07/getting-started/active-active-database-deployment.webp)
 

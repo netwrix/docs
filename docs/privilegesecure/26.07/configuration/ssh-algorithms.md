@@ -110,10 +110,10 @@ In `sbpam_ssh.json`, the same list goes inside an `Algorithms` object under `Cli
 
 If a session or action fails with the error "no common algorithm for key exchange", the device offers only algorithms that are missing from the lists. Add the algorithm that the device requires to the matching list in both files. See these Knowledge Base articles for a Cisco example:
 
-- [Resolving the "no common algorithm for key exchange" SSH error for Cisco resources](/docs/kb/privilegesecure/network-and-platform-integration/resolving-no-common-algorithm-for-key-exchange-ssh-error-for-cisco-resources.md)
-- [Cisco SSH session fails with error "ssh: handshake failed: ssh: no common algorithm for key exchange"](/docs/kb/privilegesecure/network-and-platform-integration/cisco-ssh-session-fails-with-error-ssh-handshake-failed-ssh-no-common-algorithm-for-key-exchange.md)
+- [Resolving the "no common algorithm for key exchange" SSH error for Cisco resources](/docs/kb/privilegesecure/network-and-platform-integration/resolving-no-common-algorithm-for-key-exchange-ssh-error-for-cisco-resources)
+- [Cisco SSH session fails with error "ssh: handshake failed: ssh: no common algorithm for key exchange"](/docs/kb/privilegesecure/network-and-platform-integration/cisco-ssh-session-fails-with-error-ssh-handshake-failed-ssh-no-common-algorithm-for-key-exchange)
 
 ## Related topics
 
 - [Security hardening checklist](/docs/privilegesecure/26.07/configuration/security-hardening.md)
-- [Invoke a desktop SSH client automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically.md)
+- [Invoke a desktop SSH client automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically)

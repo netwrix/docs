@@ -56,4 +56,4 @@ Import a valid license file before the trial or subscription license expires. Fo
 
 ## Import a license from the application server
 
-If you can't use the console, you can import the license through the license service on the application server. For the procedure, see the knowledge base article [Apply a New License](/docs/kb/privilegesecure/installation-configuration-and-licensing/apply-a-new-license.md).
+If you can't use the console, you can import the license through the license service on the application server. For the procedure, see the knowledge base article [Apply a New License](/docs/kb/privilegesecure/installation-configuration-and-licensing/apply-a-new-license).

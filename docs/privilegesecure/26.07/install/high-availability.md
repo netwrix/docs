@@ -36,10 +36,10 @@ The high availability (HA) manager tool (`NPS.HaMgr.exe`) is in the `Extras` fol
 
 For the full setup and upgrade procedures, use these Knowledge Base articles:
 
-- [Configuring and Upgrading in High Availability Mode and Using Remote Services Configurations](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations.md)
-- [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md)
-- [How to Create a Service Mesh Between App Servers](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-create-a-service-mesh-between-app-servers.md)
-- [How to Configure a Multi-Server NPS Environment with a Shared Database Server](/docs/kb/privilegesecure/database-and-backend/how-to-configure-a-multi-server-nps-environment-with-a-shared-database-server.md)
+- [Configuring and Upgrading in High Availability Mode and Using Remote Services Configurations](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations)
+- [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments)
+- [How to Create a Service Mesh Between App Servers](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-create-a-service-mesh-between-app-servers)
+- [How to Configure a Multi-Server NPS Environment with a Shared Database Server](/docs/kb/privilegesecure/database-and-backend/how-to-configure-a-multi-server-nps-environment-with-a-shared-database-server)
 
 The servers in a pair must reach each other on the console port, 6500 by default, and on the PostgreSQL port. See [Ports](/docs/privilegesecure/26.07/requirements/ports.md).
 
@@ -89,10 +89,10 @@ Failover is manual.
 
 These Knowledge Base articles cover recovery tasks. Review each one against your version before you follow it.
 
-- [Exporting and Importing the Database to a New Server](/docs/kb/privilegesecure/database-and-backend/exporting-and-importing-the-database-to-a-new-server.md)
-- [Moving the PostgreSQL Data Directory (PGDATA_DIR) to a New Location](/docs/kb/privilegesecure/database-and-backend/moving-the-postgresql-data-directory-pgdatadir-to-a-new-location.md)
-- [Netwrix Privilege Secure: Performing an In-Place Postgres Upgrade](/docs/kb/privilegesecure/database-and-backend/netwrix-privilege-secure-performing-an-in-place-postgres-upgrade.md)
-- [Index Was Outside the Bounds of the Array Error](/docs/kb/privilegesecure/high-availability-and-clustering/index-was-outside-the-bounds-of-array-error.md)
+- [Exporting and Importing the Database to a New Server](/docs/kb/privilegesecure/database-and-backend/exporting-and-importing-the-database-to-a-new-server)
+- [Moving the PostgreSQL Data Directory (PGDATA_DIR) to a New Location](/docs/kb/privilegesecure/database-and-backend/moving-the-postgresql-data-directory-pgdatadir-to-a-new-location)
+- [Netwrix Privilege Secure: Performing an In-Place Postgres Upgrade](/docs/kb/privilegesecure/database-and-backend/netwrix-privilege-secure-performing-an-in-place-postgres-upgrade)
+- [Index Was Outside the Bounds of the Array Error](/docs/kb/privilegesecure/high-availability-and-clustering/index-was-outside-the-bounds-of-array-error)
 
 For how encryption keys protect stored secrets, and how to rotate them, see [Encryption keys](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md).
 

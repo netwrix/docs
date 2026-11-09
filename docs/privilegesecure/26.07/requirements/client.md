@@ -41,6 +41,6 @@ Privilege Secure sessions work with these clients:
 - Microsoft Remote Desktop Connection Manager
 - Microsoft Remote Desktop Connection (`mstsc`)
 
-To start a desktop SSH client automatically from a browser session, see [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically.md).
+To start a desktop SSH client automatically from a browser session, see [Invoking Desktop SSH Client Automatically](/docs/kb/privilegesecure/client-tools-and-integrations/invoking-desktop-ssh-client-automatically).
 
 RDP clients connect to the RDP proxy on port 4489, and SSH clients connect to the SSH proxy on port 4422.

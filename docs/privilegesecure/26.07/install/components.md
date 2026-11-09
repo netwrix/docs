@@ -44,7 +44,7 @@ The Setup Launcher checks for PowerShell 7.6 or later but doesn't install it. In
 | `sbpam-url.exe` | Installs the `sbpam-url` URL handler, which starts SSH sessions from the browser in your preferred SSH client. |
 | `Enablement Toolkit.exe` | Installs a graphical utility for common troubleshooting tests. |
 | `ADSyncDiagnostic.exe` | A diagnostic tool for Active Directory synchronization. |
-| `launch-website` folder | Contains `launch-website.exe`, which starts a web application session on a Remote Desktop Services host. See [Configuring the Netwrix Privilege Secure RDS Web App Launcher](/docs/kb/privilegesecure/remote-desktop-and-rds/configuring-the-netwrix-privilege-secure-rds-web-app-launcher.md). |
+| `launch-website` folder | Contains `launch-website.exe`, which starts a web application session on a Remote Desktop Services host. See [Configuring the Netwrix Privilege Secure RDS Web App Launcher](/docs/kb/privilegesecure/remote-desktop-and-rds/configuring-the-netwrix-privilege-secure-rds-web-app-launcher). |
 | `NPS.LaunchApp` folder | Contains the application launcher for Remote Desktop Services hosts. |
 | `Netwrix Endpoint Policy Manager Client-Side Extension x64.msi` and `Netwrix Endpoint Policy Manager Client-Side Extension ARM64.msi` | The Netwrix Endpoint Policy Manager client-side extension for x64 and ARM64 Windows. |
 | `NPS Endpoint Group Policy Snap-In x64.msi` | The Group Policy snap-in for Privilege Secure. |

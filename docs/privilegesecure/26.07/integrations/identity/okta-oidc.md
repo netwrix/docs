@@ -68,5 +68,5 @@ A user who signs in with Okta needs a role in Privilege Secure. Assign roles on 
 
 - [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md)
 - [Authentication methods](/docs/privilegesecure/26.07/configuration/authentication/overview.md)
-- [Add Microsoft Entra ID as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-openid-connect.md)
-- [Add Active Directory Federation Services (AD FS) as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-openid-connect.md)
+- [Add Microsoft Entra ID as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-openid-connect)
+- [Add Active Directory Federation Services (AD FS) as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-openid-connect)

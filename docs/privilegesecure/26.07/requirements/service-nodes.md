@@ -40,7 +40,7 @@ The **Proxy Service** runs as a Windows service. It can also run as a Linux daem
 
 ## Antivirus exclusions
 
-Exclude the Privilege Secure folders from antivirus and endpoint protection software on every Privilege Secure server, including remote service nodes. The exclusions differ for each service. For the full list, see the knowledge base article [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software.md).
+Exclude the Privilege Secure folders from antivirus and endpoint protection software on every Privilege Secure server, including remote service nodes. The exclusions differ for each service. For the full list, see the knowledge base article [Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software).
 
 During installation, the Setup Launcher recommends that you disable antivirus software on the computer. After installation, turn it back on with the exclusions in place.
 

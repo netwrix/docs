@@ -126,5 +126,5 @@ In 26.07.3 and later, an OpenID Connect sign-in error doesn't sign the user out 
 
 ## Related topics
 
-- [Add Microsoft Entra ID as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-openid-connect.md)
-- [Add Active Directory Federation Services (AD FS) as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-openid-connect.md)
+- [Add Microsoft Entra ID as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-openid-connect)
+- [Add Active Directory Federation Services (AD FS) as an Authentication Connector (OpenID Connect)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-openid-connect)

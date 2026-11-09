@@ -48,7 +48,7 @@ The proxy service stores recordings on the proxy server, in the `iolog` folder u
 C:\ProgramData\Stealthbits\PAM\ProxyService\iolog
 ```
 
-A service node first writes the recording of each session it handles to this folder. About once an hour, the node copies finished recordings to an application server. Once a recording is copied, a node that doesn't store recordings deletes its own copy. Every Privilege Secure application server stores recordings, including each application server in a cluster. A remote service node doesn't. After replication, a remote service node's recording is kept on an application server, in that server's `iolog` folder. Protect this folder on every application server and include it in your backups. To move it, for example when the drive runs low on space, see the Knowledge Base article [Changing the Path Where Session Recordings Are Stored](/docs/kb/privilegesecure/session-management-and-recording/how-to-change-the-path-where-session-recordings-are-stored.md).
+A service node first writes the recording of each session it handles to this folder. About once an hour, the node copies finished recordings to an application server. Once a recording is copied, a node that doesn't store recordings deletes its own copy. Every Privilege Secure application server stores recordings, including each application server in a cluster. A remote service node doesn't. After replication, a remote service node's recording is kept on an application server, in that server's `iolog` folder. Protect this folder on every application server and include it in your backups. To move it, for example when the drive runs low on space, see the Knowledge Base article [Changing the Path Where Session Recordings Are Stored](/docs/kb/privilegesecure/session-management-and-recording/how-to-change-the-path-where-session-recordings-are-stored).
 
 ## Recording retention
 
@@ -58,7 +58,7 @@ Each service node reads the setting from the console and applies it to the recor
 
 For all retention settings, see [Configure data retention](/docs/privilegesecure/26.07/configuration/system-settings/data-retention.md).
 
-To stop keystroke and metadata logging for all sessions, see the Knowledge Base article [Disabling Keystroke Logging](/docs/kb/privilegesecure/session-management-and-recording/disable-keystroke-logging.md). That change applies to new sessions only and doesn't remove existing recordings. The same article describes how to delete existing recordings for a time window by hand.
+To stop keystroke and metadata logging for all sessions, see the Knowledge Base article [Disabling Keystroke Logging](/docs/kb/privilegesecure/session-management-and-recording/disable-keystroke-logging). That change applies to new sessions only and doesn't remove existing recordings. The same article describes how to delete existing recordings for a time window by hand.
 
 ## Remote sessions in the browser
 

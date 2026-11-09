@@ -66,6 +66,6 @@ You can resize and sort the columns.
 
 Select **Export as CSV** above the sessions table to save the log as a CSV file.
 
-To export the log with a script instead, see [Exporting the Activity Log as a CSV](/docs/kb/privilegesecure/workflows-and-automation/exporting-the-activity-log-as-a-csv.md).
+To export the log with a script instead, see [Exporting the Activity Log as a CSV](/docs/kb/privilegesecure/workflows-and-automation/exporting-the-activity-log-as-a-csv).
 
 The export follows the current **Search**, **Change type**, and **Date range** settings. It includes every matching session, not only the rows on screen. The file is named `activity_logs.csv`. Its header row uses the field names of the session data rather than the on-screen column titles.

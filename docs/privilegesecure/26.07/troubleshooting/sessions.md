@@ -24,7 +24,7 @@ Session actions run through the Action Service. Check the Action Service log fir
 
 If the session stays in **Provisioning** after an upgrade, also see [Troubleshoot installation and upgrade](/docs/privilegesecure/26.07/install/troubleshoot-installation.md).
 
-If provisioning finishes but takes more than 30 seconds, see [Long Provisioning Times in Privilege Secure](/docs/kb/privilegesecure/troubleshooting-and-errors/long-provisioning-times-in-privilege-secure.md).
+If provisioning finishes but takes more than 30 seconds, see [Long Provisioning Times in Privilege Secure](/docs/kb/privilegesecure/troubleshooting-and-errors/long-provisioning-times-in-privilege-secure).
 
 ## A session stays in Deprovisioning
 

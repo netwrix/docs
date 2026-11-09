@@ -81,8 +81,8 @@ The wizard builds both values from the address in the browser. Open the console 
 
 For step-by-step IdP recipes, see:
 
-- [Add Active Directory Federation Services as an authentication connector (SAML)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-saml.md)
-- [Add Microsoft Entra ID as an authentication connector (SAML)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-saml.md)
+- [Add Active Directory Federation Services as an authentication connector (SAML)](/docs/kb/privilegesecure/authentication-and-mfa/add-active-directory-federation-services-ad-fs-as-an-authentication-connector-saml)
+- [Add Microsoft Entra ID as an authentication connector (SAML)](/docs/kb/privilegesecure/authentication-and-mfa/add-microsoft-entra-id-as-an-authentication-connector-saml)
 
 ## Assign users to the connector
 
