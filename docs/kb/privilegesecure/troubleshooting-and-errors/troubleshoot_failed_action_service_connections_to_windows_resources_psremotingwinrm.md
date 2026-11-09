@@ -1,30 +1,38 @@
 ---
 description: >-
-  This article provides troubleshooting steps for resolving issues with the NPS Action Service connections to Windows resources using PowerShell Remoting (PSRemoting) and WinRM.
+  Troubleshoot failed Action Service connections to Windows resources by checking PSRemoting and WinRM, ports, Group Policy, and permissions.
 keywords:
   - NPS Action Service
   - PowerShell Remoting
   - WinRM
-sidebar_label: Troubleshoot Failed Action Service Connections
+  - PSRemoting
+  - Windows Remote Management
+  - Test-WSMan
+  - Enable-PSRemoting
+  - Get-PSSessionConfiguration
+  - Remote Management Users
+  - Group Policy
+sidebar_label: "Troubleshooting Failed Action Service Connections to Windows Resources (PSRemoting/WinRM)"
 tags:
-  - troubleshooting
-title: "Troubleshoot Failed Action Service Connections to Windows Resources (PSRemoting/WinRM)"
+  - kb
+  - troubleshooting-and-errors
+title: "Troubleshooting Failed Action Service Connections to Windows Resources (PSRemoting/WinRM)"
 knowledge_article_id: kA04u0000000HiICAU
 products:
   - privilegesecure
 ---
 
-# Troubleshoot Failed Action Service Connections to Windows Resources (PSRemoting/WinRM)
+# Troubleshooting Failed Action Service Connections to Windows Resources (PSRemoting/WinRM)
 
 ## Overview
 
-The Netwrix Privilege Secure (NPS) Action Service handles various workflows, including host scans and pre- and post-session actions. The Action Service must establish a connection via PowerShell Remoting (PSRemoting) for Windows target resources. PSRemoting is a PowerShell implementation of WinRM (Windows Remote Management).
+This article describes the variables that affect whether the Netwrix Privilege Secure for Access Management Action Service connects to a target Windows resource via PowerShell Remoting (PSRemoting), and the steps to resolve them.
 
-Several variables can affect whether the NPS Action Service connects to the target Windows resource via PSRemoting. This article describes those variables and steps to resolve them.
+The Action Service handles various workflows, including host scans and pre- and post-session actions. The Action Service must establish a connection via PSRemoting for Windows target resources. PSRemoting is a PowerShell implementation of WinRM (Windows Remote Management).
 
 ## Instructions
 
-Before running tests, complete the following steps on the target resource:
+Before running tests, complete the following steps on the target resource.
 
 ### Verify PSRemoting and WinRM Are Enabled
 
@@ -59,7 +67,7 @@ At line:1 char:1
 + FullyQualifiedErrorId : WsManError,Microsoft.WSMan.Management.TestWSManCommand
 ```
 
-**Resolution:** Run the following command in elevated PowerShell to enable PSRemoting/WinRM:
+**Resolution:** Run the following command in PowerShell with administrator privileges to enable PSRemoting/WinRM:
 
 ```powershell
 Enable-PSRemoting
@@ -85,21 +93,21 @@ Verify that ports 5985 (HTTP) and/or 5986 (HTTPS) are open in the Windows firewa
 
 Group Policy settings filter the origin of WinRM requests via IPv4 and IPv6 filters. If issues with PSRemoting/WinRM communications persist after enabling PSRemoting/WinRM and verifying firewall settings, the IP filter in Group Policy may be affecting the communication.
 
-Learn more about the **Allow remote server management through WinRM** Group Policy setting in [Configure Remote Management in Server Manager − Enabling or Disabling Remote Management ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/windows-server/administration/server-manager/configure-remote-management-in-server-manager#enabling-or-disabling-remote-management).
+For details about the **Allow remote server management through WinRM** Group Policy setting, see [Configure Remote Management in Server Manager − Enabling or Disabling Remote Management ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/windows-server/administration/server-manager/configure-remote-management-in-server-manager#enabling-or-disabling-remote-management).
 
 ![Windows Group Policy: Allow remote server management through WinRM](./../0-images/servlet_image_16fc9e2e2432.png)
 
 ### Allow Full Control to Remote Management Users
 
-Review the access permissions set up for Remote Management Users by running the following command in elevated PowerShell:
+Review the access permissions set up for Remote Management Users by running the following command in PowerShell with administrator privileges:
 
 ```powershell
 Get-PSSessionConfiguration -Name Microsoft.PowerShell
 ```
 
-Review the permissions of the **BUILTIN\Remote Management Users** group under the **Permission** section. If the permission is **AccessDenied**, authenticated network users (i.e., remote PSRemoting requests) cannot connect, even if credentials and other variables are correct.
+Review the permissions of the **BUILTIN\Remote Management Users** group under the **Permission** section. If the permission is **AccessDenied**, authenticated network users (that is, remote PSRemoting requests) cannot connect, even if credentials and other variables are correct.
 
-**Solution:** Run the following command in elevated PowerShell to review and change permissions for Remote Management Users:
+**Solution:** Run the following command in PowerShell with administrator privileges to review and change permissions for Remote Management Users:
 
 ```powershell
 Set-PSSessionConfiguration -Name Microsoft.PowerShell -ShowSecurityDescriptorUI -Force
@@ -107,17 +115,17 @@ Set-PSSessionConfiguration -Name Microsoft.PowerShell -ShowSecurityDescriptorUI 
 
 Select **Remote Management Users** and change **Full Control** from **Deny** to **Allow**, then click **Apply** and **OK**.
 
-## Testing
+### Testing the Action Service Connection
 
-Test the ability of the NPS Action Service to connect to a target resource via PowerShell Remoting by running the following PowerShell command on the server running Action Service:
+Test the ability of the Action Service to connect to a target resource via PowerShell Remoting by running the following PowerShell command on the server running the Action Service:
 
 ```powershell
 Invoke-Command -ComputerName %target_resource% -Credential (Get-Credential) -ScriptBlock { whoami }
 ```
 
-> **IMPORTANT:** Replace `%target_resource%` with the target FQDN.
+> **IMPORTANT:** Replace `%target_resource%` with the target fully qualified domain name (FQDN).
 
-When prompted for credentials, use the credentials of the service account assigned to the target resource in NPS. If the remote request succeeds, it will return the username used for authentication.
+When prompted for credentials, use the credentials of the service account assigned to the target resource in Privilege Secure. If the remote request succeeds, it returns the username used for authentication.
 
 ```
 PS C:\Users\admin> Invoke-Command -ComputerName TEST-DC -Credential (Get-Credential) -ScriptBlock { whoami }
@@ -130,7 +138,7 @@ test\admin
 
 The output indicates that the credentials used can run remote PowerShell commands on the target resource from the Action Service server via WinRM.
 
-## Related Articles
+## Related Links
 
 [Configure Remote Management in Server Manager − Enabling or Disabling Remote Management ⸱ Microsoft 🡥](https://learn.microsoft.com/en-us/windows-server/administration/server-manager/configure-remote-management-in-server-manager#enabling-or-disabling-remote-management)
 

@@ -1,0 +1,110 @@
+---
+title: "Netwrix Access Analyzer integration"
+description: "Connect Privilege Secure to Netwrix Access Analyzer to import discovered local administrator accounts and computers and create access policies."
+sidebar_position: 10
+---
+
+# Netwrix Access Analyzer integration
+
+Netwrix Access Analyzer discovers which domain users are local administrators on which computers. The sync imports that data into Privilege Secure as users, Active Directory computer records, and resources, and creates an access policy for each local administrator. You create an access role in Access Analyzer, add two service accounts in Privilege Secure, add an integration connector, and then run the sync.
+
+The connector template for this integration is named **StealthAUDIT**. This is the former product name, and it is the template that Netwrix Access Analyzer uses. **StealthAUDIT** is also the default template for a new connector.
+
+## Prerequisites
+
+Run these Access Analyzer job groups successfully before you import. Privilege Secure can't import data that the jobs haven't collected.
+
+- Active Directory Inventory job group
+- Windows > Privileged Accounts > Local Administrators job group
+
+For the jobs themselves, see the following Access Analyzer pages:
+
+- [Active Directory Inventory solution](/docs/accessanalyzer/12_0/solutions/activedirectoryinventory/overview)
+- [Windows privileged accounts solution](/docs/accessanalyzer/12_0/solutions/windows/privilegedaccounts/overview)
+
+## Create the access role in Access Analyzer
+
+The access role gives Privilege Secure a Client ID and a Client secret that it uses to read data from Access Analyzer. For the full wizard, see [Assign application access](/docs/accessanalyzer/12_0/admin/settings/access/restapi/assignappaccess).
+
+1. In Access Analyzer, go to the **Access** node and select **Add Access** in the upper-right corner. The Access Role wizard opens.
+1. Select **An application accessing data remotely through Web Service**, and then click **Next**.
+1. On the **Application Access** page, select **Tables** and click **Add**. The **Select Database Objects** window opens.
+1. Select these objects. Use **Filter objects by name** to find them.
+
+   | Type | Objects |
+   |---|---|
+   | Tables | `SA_ADInventory_Domains`, `SA_SG_LocalAdmins_Details` |
+   | Views | `SA_ADInventory_ComputersView`, `SA_ADInventory_UsersView` |
+
+1. Click **OK**, review the tables and views, and click **Next**.
+1. On the **Application Details** page, enter `Privilege Secure` as the application name.
+1. Set **Access Expiration**. Select **Access expires within** (the default is 72 hours) or **Access expires on specified date**.
+1. Select **Generate**, and copy the **Client ID** and the **Client secret**.
+1. Click **Finish**, and then click **Save** on the **Access** view.
+
+Privilege Secure can use the access role as soon as you save it. You don't restart Access Analyzer first. Each token request re-reads the role, so a new role takes effect at once.
+
+:::warning
+The client secret stops working when the access expiration passes. Set an expiration that suits how long you want the integration to run, and create a new access role before the old one expires.
+:::
+
+## Add the service accounts in Privilege Secure
+
+The connector uses two service accounts. For the add form and its fields, see [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
+
+| Service account | Name (example) | Username | Password | Platform |
+| --- | --- | --- | --- | --- |
+| API access | `Access Analyzer API` | The **Client ID** from the access role | The **Client secret** from the access role | Windows |
+| Administrator | `Access Analyzer Admin` | A local administrator account on the Access Analyzer server | The password of that account | Windows |
+
+For the administrator account, set **Domain** to the domain that the Access Analyzer server is in. For the API account, leave **Domain** empty.
+
+## Add the connector
+
+1. Select **Configuration** > **Integration Connectors**.
+1. Click **+** above the list.
+1. Enter a name for the connector and an optional description.
+1. In **Connector Template**, select **StealthAUDIT**.
+1. Fill in the fields in the table.
+1. Click **Save**.
+
+| Field | Description |
+| --- | --- |
+| **Server Hostname**\* | The host name of the server that Access Analyzer is installed on. The default is `localhost`. |
+| **Port**\* | The port of the Access Analyzer web service. The default is `8082`. |
+| **REST Credentials**\* | The service account that holds the Client ID and Client secret. Select `Access Analyzer API` from the example. |
+| **Power Shell Credentials** | Optional. The service account for the Access Analyzer server administrator. Select `Access Analyzer Admin` from the example. |
+
+An asterisk (\*) marks a required field. Both credential fields list the service accounts that you added.
+
+![The Add Integration Connector form with the StealthAUDIT template selected, showing Server Hostname, Port 8082, REST Credentials, and Power Shell Credentials.](/images/privilegesecure/26.07/integrations/integration-connector-stealthaudit-form.webp)
+
+## Import the data
+
+1. Select **Configuration** > **Integration Connectors**.
+1. Select the connector that you created.
+1. Click **Sync StealthAUDIT** below the connector settings. The button is unavailable while an import runs, and the log of the last run appears under it. The import can take some time.
+
+The sync creates these objects in Privilege Secure:
+
+- A user on the [Users & Groups](/docs/privilegesecure/26.07/admin/users-groups/users-groups.md) page for each domain user that Access Analyzer reports as a local administrator and that Privilege Secure doesn't already have
+- An Active Directory computer record for each computer in the Access Analyzer inventory that Privilege Secure doesn't already have. The sync uses these records to create resources.
+- A resource on the **Resources** page for each computer that has a local administrator in the Access Analyzer data and that Privilege Secure doesn't already have as a resource
+- One access policy for each local administrator, named `Local Admin Policy for <account>`, which uses the activity **Activity Token for Local Admin Access**
+
+If the sync can't find the user for a local administrator, it doesn't create that policy. If it can't find the resource for a computer, it leaves that computer out of the policy. If it can't find the Active Directory computer record for a computer, it doesn't create that resource. The log of the run reports the number of warnings.
+
+If a policy with the same name already exists, the sync doesn't change it. If you delete a policy, the next sync creates it again.
+
+:::warning
+The sync creates access policies that need no approval and that you don't review first. Each policy lets the local administrator start the **Activity Token for Local Admin Access** activity on the computers where they are a local administrator. After each sync, select **Access Policy**, review the new policies, and delete any policy that you don't want to apply. The next sync creates a deleted policy again, so repeat this review after every sync.
+
+To remove one user from a policy without deleting it, edit the policy's **Users** tab. The policy still applies to the other users, and the sync doesn't add the removed user back. The sync only creates a policy when none with that name exists, so it never changes an existing policy's members.
+:::
+
+To follow the progress, open the Action Service on the **Service Nodes** page. See [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md).
+
+## Related topics
+
+- [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md)
+- [Monitor service nodes](/docs/privilegesecure/26.07/admin/service-nodes/service-nodes.md)

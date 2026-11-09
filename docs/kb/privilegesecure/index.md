@@ -6,13 +6,14 @@ slug: privilegesecure
 
 # Privilege Secure Knowledge Base
 
-Welcome to the Privilege Secure knowledge base. Browse our collection of troubleshooting guides, configuration instructions, and best practices.
+Welcome to the Privilege Secure knowledge base. Browse the collection of troubleshooting guides, configuration instructions, and best practices.
 
 Use the search function above to find specific articles or browse through all Privilege Secure KB articles in this section.
 
-## Need Help?
+## Getting Help
 
-If you can't find what you're looking for:
-1. Use the search function above
-2. Check the main Privilege Secure documentation
-3. Contact [Netwrix support](https://www.netwrix.com/support.html)
+If you cannot find what you are looking for:
+
+- Use the search function above.
+- Check the main Privilege Secure documentation.
+- Contact [Netwrix support](https://www.netwrix.com/support.html).

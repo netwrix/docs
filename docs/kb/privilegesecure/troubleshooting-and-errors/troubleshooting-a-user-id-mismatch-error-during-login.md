@@ -1,8 +1,7 @@
 ---
 description: >-
-  When you attempt to log in to Netwrix Privilege Secure, you may receive a
-  "User Id Mismatch" error caused by a cookie-stored user mismatch. This article
-  explains how to resolve the issue by clearing sessions and cookies.
+  Resolve the "User Id Mismatch" login error caused by a user stored in a cookie
+  by logging out of all sessions and clearing browser cookies.
 keywords:
   - user id mismatch
   - login error
@@ -13,23 +12,25 @@ keywords:
   - browser
   - multiple sessions
 products:
-  - privilege-secure-access-management
-sidebar_label: 'Troubleshooting a "User Id Mismatch" Error During '
-tags: []
-title: Troubleshooting a "User Id Mismatch" Error During Login
+  - privilegesecure
+sidebar_label: 'Troubleshooting a "User Id Mismatch" Error During Login'
+tags:
+  - kb
+  - troubleshooting-and-errors
+title: 'Troubleshooting a "User Id Mismatch" Error During Login'
 knowledge_article_id: kA04u000000LLjtCAG
 ---
 
 # Troubleshooting a "User Id Mismatch" Error During Login
 
-## Summary
+## Overview
 
-When logging into the Netwrix Privilege Secure console, you may receive a "User Id Mismatch" response that prevents login. This is caused when there is a mismatch between a Netwrix Privilege Secure user stored in a cookie, and the user attempting login. Generally this is caused when multiple sessions are being launched from the same browser using different users.
+This article describes how to resolve a "User Id Mismatch" response that you may receive when logging in to the Netwrix Privilege Secure for Access Management console, which prevents login. The response is caused by a mismatch between a Privilege Secure user stored in a cookie and the user attempting login. Generally this is caused when multiple sessions are being launched from the same browser using different users.
 
-![image.png](./../0-images/ka04u000000HdEG_0EM4u000005gCr9.png)
+![Login page showing the "User Id Mismatch" response](./../0-images/ka04u000000HdEG_0EM4u000005gCr9.png)
 
 ## Instructions
 
-1. Log out of all active Netwrix Privilege Secure sessions.
+1. Log out of all active Privilege Secure sessions.
 2. Clear your browser's cookies.
 3. Reattempt login using your desired account. You should now be able to successfully log in.
