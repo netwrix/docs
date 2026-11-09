@@ -18,8 +18,8 @@ Netwrix tests the latest gateway and portal with the latest Privilege Secure app
 
 | Server | Operating system | Processor cores | Memory |
 | --- | --- | --- | --- |
-| Portal | Windows Server 2022 | 4 | 8 GB |
-| Gateway and guacd | Windows Server 2022 | 8 | 16 GB |
+| Portal | Windows Server 2022 or later | 4 | 8 GB |
+| Gateway and guacd | Windows Server 2022 or later | 8 | 16 GB |
 
 ## Portal server requirements
 
