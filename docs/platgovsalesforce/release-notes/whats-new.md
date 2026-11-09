@@ -17,13 +17,13 @@ Strongpoint for Salesforce Release 7.0 introduces new capabilities for enhanced 
 
 #### Document Report and Dashboard Folders
 
-Track and monitor access to Report and Dashboard folders with change logging. This feature provides visibility into folder-level permissions and user access patterns to help you maintain security and compliance for your reporting infrastructure.
+Track and monitor access to Report and Dashboard folders with change logging. This feature shows folder-level permissions and user access patterns to help you maintain security and compliance for your reporting infrastructure.
 
 [Document Report and Dashboard Folders](/docs/platgovsalesforce/customizations/folder_customization_record)
 
 #### DLU Scanner Improvements
 
-The Date Last Used (DLU) Scanner includes improved configuration options and performance optimizations. The new DLU Configuration tool provides granular control over which metadata types and fields are processed.
+The Date Last Used (DLU) Scanner includes improved configuration options and performance optimizations. The new DLU Configuration tool lets you choose which metadata types and fields the scanner processes.
 
 [DLU Configuration](/docs/platgovsalesforce/tools/dlu_configuration)
 
