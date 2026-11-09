@@ -117,9 +117,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.2',
+        label: '10.2',
+        isLatest: true,
+        sidebarFile: './sidebars/activitymonitor/10.2.js',
+      },
+      {
         version: '10.0',
         label: '10.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/activitymonitor/10.0.js',
       },
       {
@@ -141,7 +147,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/activitymonitor/7.1.js',
       },
     ],
-    defaultVersion: '10.0',
+    defaultVersion: '10.2',
   },
   {
     id: 'auditor',
@@ -609,9 +615,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '26.07',
+        label: '26.07',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/26.07.js',
+        apiSidebarPath: './docs/privilegesecure/26.07/api/reference/sidebar.ts',
+      },
+      {
         version: '26.03',
         label: '26.03',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/26.03.js',
       },
       {
@@ -621,7 +634,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
     ],
-    defaultVersion: '26.03',
+    defaultVersion: '26.07',
   },
   {
     id: 'privilegesecurediscovery',
@@ -1009,7 +1022,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
         ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
-            .filter(item => !(item.type === 'doc' && (item.id?.endsWith('/changetracker-hub') || item.id?.endsWith('/netwrix-privilege-secure-for-discovery-api'))))
+            .filter(item => !(item.type === 'doc' && (item.id?.endsWith('/changetracker-hub') || item.id?.endsWith('/netwrix-privilege-secure-for-access-management-api') || item.id?.endsWith('/netwrix-privilege-secure-for-discovery-api'))))
         : [];
 
       // Build plugin configuration

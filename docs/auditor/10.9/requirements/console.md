@@ -9,10 +9,10 @@ sidebar_position: 20
 This topic covers hardware requirements for Netwrix Auditor installation and provides estimations of
 the resources required for Netwrix Auditor deployment.
 
-The actual hardware requirements will depend on the number of activities collected per day in
+The actual hardware requirements depend on the number of activities collected per day in
 addition to the number of files and folders monitored.
 
-**CAUTION:** To keep your systems safe, Auditor shouldn't be exposed to inbound access from the
+**CAUTION:** To keep your systems safe, don't expose Auditor to inbound access from the
 internet.
 
 ## Full Installation
@@ -73,7 +73,7 @@ topic.
 Additional Sizing Information for File Server and SharePoint Online Data Sources
 
 Use this table to determine the requirements for File Servers and SharePoint Online monitoring based on the number of
-files or objects in the system. These requirements will add up to the requirements for other monitoring plans.
+files or objects in the system. These requirements add up to the requirements for other monitoring plans.
 
 | Netwrix Auditor                          | Per 1 Million Files | Per 5 Million Files |
 | ---------------------------------------- | ------------------- | ------------------- |
@@ -91,9 +91,8 @@ and 18.5 GB RAM.
 If you already use Netwrix Auditor and need help calculating the number of files you have, find this
 information in the Environment Stats on the Home screen.
 
-If you have not already started using Netwrix Auditor, you can download the Resource Estimation Tool
-by clicking
-[the download link](https://releases.netwrix.com/products/auditor/10.9/auditor-resource-estimation-tool-1.2.46.zip).
+If you have not started using Netwrix Auditor yet, download the
+[Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/auditor-resource-estimation-tool-1.2.46.zip).
 
 ## Client Installation
 
