@@ -83,7 +83,7 @@ For package upgrades, after you push the updates, you must **manually assign** t
   8. Change the current layout to **Strongpoint Change/Approval Policy Layout v11**
   9. Click **Save**
  
-For new installations, the system assigns the latest layout automatically by default.
+For new installations, the system assigns the latest layout automatically.
 
 ---
 
