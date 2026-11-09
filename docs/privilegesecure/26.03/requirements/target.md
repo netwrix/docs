@@ -24,7 +24,7 @@ Netwrix Privilege Secure can manage the following target environments:
 - Microsoft SQL Server databases
 - Oracle databases (container instances)
 - Microsoft Entra ID (formerly Azure AD)
-- Linux distributions with SSHv2 or higher that are under LTS
+- Linux distributions with SSHv2 or higher that are under long-term support (LTS)
   - Debian
   - CentOS
   - Red Hat Enterprise Linux (RHEL)

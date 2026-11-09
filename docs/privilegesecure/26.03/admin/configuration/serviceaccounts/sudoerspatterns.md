@@ -34,7 +34,7 @@ sudo --version
 Regular expressions in sudoers:
 
 - Must begin with `^` and end with `$`.
-- Are POSIX extended regular expressions, not PCRE.
+- Are POSIX extended regular expressions, not Perl Compatible Regular Expressions (PCRE).
 - Can match command paths and command arguments.
 - Are limited to 1,024 characters.
 - Require sudo 1.9.10 or later.

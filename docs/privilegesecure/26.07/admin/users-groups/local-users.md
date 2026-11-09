@@ -44,7 +44,7 @@ The header has these buttons:
 - **Reset Password:** Sets a new password for the user. This button appears on local users only.
 - **Lock Account:** Locks the account so the user can't sign in. It also locks the user's active, scheduled, and awaiting-approval sessions. When the account is locked, the button changes to **Unlock Account**.
 - **Unlock Account:** Unlocks the account and the sessions that the lock affected. It also clears a sign-in lockout that came from repeated failed sign-ins.
-- **Reset MFA:** Resets the user's multi-factor authentication (MFA) registration. A confirmation window titled **Reset MFA for user?** opens. When you confirm, Privilege Secure generates a new TOTP secret, and the user registers an authenticator again. The button appears only when no external MFA connector is set for the user.
+- **Reset MFA:** Resets the user's multi-factor authentication (MFA) registration. A confirmation window titled **Reset MFA for user?** opens. When you confirm, Privilege Secure generates a new time-based one-time password (TOTP) secret, and the user registers an authenticator again. The button appears only when no external MFA connector is set for the user.
 
 The **Properties** tab holds **Display Name**, **SamAccountName**, **Department**, **User Principal Name**, and **Email**. For details on each tab and on lockout, see [User and group details](/docs/privilegesecure/26.07/admin/users-groups/user-details.md).
 
