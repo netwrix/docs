@@ -25,7 +25,7 @@ The app is accessed in Salesforce via **App Launcher > Netwrix Lightning**.
 | `settings/` | Settings overview, credentials |
 | `techdebt/` | Tech debt workflows: auto-documentation, change monitoring, org clean-up, org-specific approaches |
 | `tools/` | Access review, DRD, environment comparison, field tracking, package usage, profile/permission comparison, system permission tracking, user activity, export tools |
-| `release_7_0/` | Release notes for the current release |
+| `release-notes/` | What's new landing page with the link to Community release notes, plus one page per release (`release-7-0.md`) |
 
 ## Key Terminology
 

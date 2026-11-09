@@ -87,8 +87,8 @@ For new installations, the system assigns the latest layout automatically by def
 
 To use these new features:
 
-1. Update your Strongpoint for Salesforce package to Release 7.0.
+1. Confirm your org is on Release 7.0. Netwrix pushes the update to your org automatically, so you don't need to update the package. If your org isn't on Release 7.0, [contact Support](https://netwrix.com/en/support/).
 2. Review the documentation for each feature to understand configuration requirements.
 3. Configure the new scanners and monitoring tools based on your organization's needs.
 
-For questions or assistance with Release 7.0 features, contact the Customer Success team.
+For questions or assistance with Release 7.0 features, [contact Support](https://netwrix.com/en/support/).
