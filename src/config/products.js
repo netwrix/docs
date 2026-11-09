@@ -32,6 +32,8 @@
  * @property {string[]} [categories] - Product categories (can belong to multiple)
  * @property {string} [icon] - Icon for the product
  * @property {string} [navbarGroup] - Products sharing a navbarGroup are shown as one nested submenu with this label inside their category dropdown
+ * @property {boolean} [hideFromNavbar] - Leave the product out of the navbar dropdowns and the landing page. Its pages stay reachable by URL.
+ * @property {boolean} [noIndex] - Keep the product out of search engines and site search: its pages carry a noindex tag and are left out of the sitemap, production robots.txt disallows its routes, and it is not offered in the search product filter. Pair with hideFromNavbar for an unlisted product such as a beta.
  */
 
 /**
@@ -52,6 +54,25 @@ export const PRODUCTS = [
         label: 'Current',
         isLatest: true,
         sidebarFile: './sidebars/1secure.js',
+      },
+    ],
+  },
+  {
+    id: '1securebeta',
+    name: '1Secure Beta',
+    description: 'Pre-release documentation for Netwrix 1Secure',
+    path: 'docs/1securebeta',
+    categories: ['Data Security Posture Management (DSPM)'],
+    icon: '',
+    hideFromNavbar: true, // Unlisted beta: reachable by URL only
+    noIndex: true,
+    versions: [
+      {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/1securebeta.js',
+        kb: false, // No Knowledge Base for the beta
       },
     ],
   },
@@ -1075,6 +1096,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
         versions: {
           current: {
             label: version.label,
+            ...(product.noIndex && { noIndex: true }),
           },
         },
       };
