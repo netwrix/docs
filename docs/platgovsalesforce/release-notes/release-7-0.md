@@ -13,25 +13,25 @@ Strongpoint for Salesforce Release 7.0 introduces new capabilities for enhanced 
 
 ### Document Report and Dashboard Folders
 
-Track and monitor access to Report and Dashboard folders with comprehensive change logging. This feature provides visibility into folder-level permissions and user access patterns to help you maintain security and compliance for your reporting infrastructure.
+Track and monitor access to Report and Dashboard folders with change logging. This feature provides visibility into folder-level permissions and user access patterns to help you maintain security and compliance for your reporting infrastructure.
 
 [Document Report and Dashboard Folders](/docs/platgovsalesforce/customizations/folder_customization_record)
 
 ### DLU Scanner Improvements
 
-The Date Last Used (DLU) Scanner includes improved configuration options and performance optimizations. The new DLU Configuration tool provides granular control over which metadata types and fields are processed, so you can focus on what matters most to your organization.
+The Date Last Used (DLU) Scanner includes improved configuration options and performance optimizations. The new DLU Configuration tool provides granular control over which metadata types and fields are processed.
 
 [DLU Configuration](/docs/platgovsalesforce/tools/dlu_configuration)
 
 ### Auto Scanner Inactivity Alert
 
-A proactive monitoring system automatically sends email notifications to designated administrators when the Auto Scanner fails to run according to its configured schedule. This keeps your Salesforce environment continuously protected and documented.
+A proactive monitoring system automatically sends email notifications to designated administrators when the Auto Scanner fails to run according to its configured schedule.
 
 [Auto Scanner Inactivity Alert](/docs/platgovsalesforce/installingstrongpoint/config_and_stats#scanner-inactivity-alert)
 
 ### Track Specific Permission Assignments
 
-Monitor and detect changes in System Permissions across Permission Sets and Profiles. Each scan compares selected permissions against previous snapshots and generates Change Logs for any detected differences, giving you complete visibility into permission changes at the user level.
+Monitor and detect changes in System Permissions across Permission Sets and Profiles. Each scan compares selected permissions against previous snapshots and generates Change Logs for any detected differences.
 
 [System Permission Tracking](/docs/platgovsalesforce/tools/system_permission_tracking)
 
@@ -64,7 +64,7 @@ This package version introduces a new version of the Change / Approval Policy la
 
 This new layout includes updates to the fields displayed for **Policy** records.
 
-For package upgrades, you must **manually assign** the new layout after pushing the updates for the changes to take effect.
+For package upgrades, after you push the updates, you must **manually assign** the new layout for the changes to take effect.
 :::
  
 **Steps to Assign the New Layout:**
