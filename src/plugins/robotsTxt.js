@@ -3,7 +3,7 @@ import { join } from 'path';
 import { isIndexableSite } from '../config/indexing.js';
 import { PRODUCTS, generateRouteBasePath } from '../config/products.js';
 
-/** Route prefixes of products flagged noIndex, for example /docs/1securebeta. */
+/** Route prefixes of products flagged noIndex, for example /docs/1secureaisecurity. */
 export function noIndexRoutes(products = PRODUCTS) {
   return products
     .filter((product) => product.noIndex)
