@@ -18,13 +18,13 @@ const ids = (products) => products.map((product) => product.id);
 
 test('devOnly products are left out of the production build', async () => {
   const products = await loadProducts('https://docs.netwrix.com', 'production');
-  assert.equal(ids(products).includes('1securebeta'), false);
+  assert.equal(ids(products).includes('1secureaisecurity'), false);
   assert.equal(ids(products).includes('1secure'), true);
 });
 
 test('devOnly products are built on docs-dev and locally', async () => {
   for (const [url, tag] of [['https://docs-dev.netwrix.com', 'dev'], ['http://localhost:4500', 'local'], [undefined, 'unset']]) {
     const products = await loadProducts(url, tag);
-    assert.equal(ids(products).includes('1securebeta'), true, String(url));
+    assert.equal(ids(products).includes('1secureaisecurity'), true, String(url));
   }
 });

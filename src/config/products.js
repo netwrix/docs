@@ -61,10 +61,10 @@ const ALL_PRODUCTS = [
     ],
   },
   {
-    id: '1securebeta',
-    name: '1Secure Beta',
-    description: 'Pre-release documentation for Netwrix 1Secure',
-    path: 'docs/1securebeta',
+    id: '1secureaisecurity',
+    name: '1Secure AI Security',
+    description: 'Pre-release documentation for Netwrix 1Secure AI Security',
+    path: 'docs/1secureaisecurity',
     categories: ['Data Security Posture Management (DSPM)'],
     icon: '',
     hideFromNavbar: true, // Unlisted beta: reachable by URL only
@@ -75,7 +75,7 @@ const ALL_PRODUCTS = [
         version: 'current',
         label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/1securebeta.js',
+        sidebarFile: './sidebars/1secureaisecurity.js',
         kb: false, // No Knowledge Base for the beta
       },
     ],
