@@ -9,10 +9,11 @@
  * The output is an HTML fragment (title, style, body) ready to publish as an Artifact.
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 import crypto from 'crypto';
 import { readJson, readResults } from './manifest.mjs';
-import { readOldText, shortPath, versionLabels } from './docs-paths.mjs';
+import { assertUniqueSlugs, readOldText, shortPath, slugify, versionLabels } from './docs-paths.mjs';
 import { BASE_CSS, FONT_LINK } from './page-style.mjs';
 
 /** Longest-common-subsequence diff of two arrays; returns [{op:'eq'|'del'|'ins', a?, b?}]. */
@@ -183,7 +184,7 @@ export function loadEntries(dir) {
     const res = done.get(p.path) || {};
     if (restyled && st.add + st.del === 0) continue;
     entries.push({
-      id: short.replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, ''), short, oldText, newText, title: (newText.match(/^---\n(?:[\s\S]*?\n)?title:\s*"?(.*?)"?\s*\n/) || [])[1] || '', hash: crypto.createHash('sha256').update(newText).digest('hex').slice(0, 12), action: restyled ? 'RESTYLED' : p.action,
+      id: slugify(short), short, oldText, newText, title: (newText.match(/^---\n(?:[\s\S]*?\n)?title:\s*"?(.*?)"?\s*\n/) || [])[1] || '', hash: crypto.createHash('sha256').update(newText).digest('hex').slice(0, 12), action: restyled ? 'RESTYLED' : p.action,
       renamed: p.renamedFrom ? shortPath(meta, p.renamedFrom) : null,
       oldLines: oldText === null ? null : oldText.split('\n').length, newLines: newText.split('\n').length,
       add: st.add, del: st.del, assigned: restyled ? 0 : (p.facts || []).length, covered: (res.factsCovered || []).length,
@@ -200,6 +201,7 @@ export function loadEntries(dir) {
   }
   const bandRank = { P1: 0, P2: 1, P3: 2, P4: 3 };
   entries.sort((x, y) => (x.band ? bandRank[x.band] : 0) - (y.band ? bandRank[y.band] : 0) || (y.score || 0) - (x.score || 0) || order[x.action] - order[y.action] || x.short.localeCompare(y.short));
+  assertUniqueSlugs(entries.map(e => e.short));
   return { meta, entries };
 }
 
@@ -218,4 +220,4 @@ export function run(argv) {
   return 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

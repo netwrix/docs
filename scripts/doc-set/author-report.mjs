@@ -11,10 +11,11 @@
  * style check of every page). The output is an HTML fragment ready to publish as an Artifact.
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 import { readJson, readResults } from './manifest.mjs';
 import { buildCoverage } from './coverage.mjs';
-import { isAlign, readOldText, runLabel, shortPath } from './docs-paths.mjs';
+import { isAlign, readOldText, runLabel, shortPath, slugify } from './docs-paths.mjs';
 import { alignRows, stats } from './review-html.mjs';
 import { BASE_CSS, FONT_LINK } from './page-style.mjs';
 
@@ -111,7 +112,7 @@ ul.guide li{margin-bottom:6px}ul.cols{columns:2;column-gap:24px;font-size:.88rem
 .bad-line{border-left:3px solid var(--bad);background:var(--bad-soft);padding:8px 12px;max-width:72ch}
 `;
 
-export const slugOf = (p, meta) => short(p, meta).replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, '');
+export const slugOf = (p, meta) => slugify(short(p, meta));
 
 /** Everything after the page title. opts.reviewLinks adds a Compare link and a review badge to each page row. */
 export function reportBody({ title, meta, cov, rows, need, claims, scope, lint, plan, proposals, recheck, commit, actions, groups, integrity, recheckNote }, opts = {}) {
@@ -298,4 +299,4 @@ export function run(argv) {
   return 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

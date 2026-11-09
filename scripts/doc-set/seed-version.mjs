@@ -13,6 +13,7 @@
  * (default: the repo this script lives in). Refuses to overwrite an existing folder.
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -44,6 +45,16 @@ export function productPath(block) {
   return m[1];
 }
 
+/** The other per-version lines of the entry marked isLatest: true, for example `kb: false, // No Knowledge Base section`. A new
+ *  latest version keeps them: dropping `kb: false` would turn the Knowledge Base back on for it. */
+export function latestExtras(block) {
+  for (const m of block.matchAll(/\{\n(\s+version: '[^']+',[\s\S]*?)\n\s*\},?/g)) {
+    if (!/isLatest: true/.test(m[1])) continue;
+    return m[1].split('\n').map(l => l.trim()).filter(l => l && !/^(version|label|isLatest|sidebarFile):/.test(l));
+  }
+  return [];
+}
+
 /** Returns the edited products.js text. */
 export function addVersion(text, id, to) {
   const { start, end, block } = findProductBlock(text, id);
@@ -52,7 +63,8 @@ export function addVersion(text, id, to) {
   if (versions.some(v => v.version === to)) throw new Error(`"${id}" already has version ${to}`);
   if (versions.length === 1 && versions[0].version === 'current') throw new Error(`"${id}" is a single-version product; update it in place`);
   let next = block.replace(/isLatest: true/g, 'isLatest: false');
-  const entry = `      {\n        version: '${to}',\n        label: '${to}',\n        isLatest: true,\n        sidebarFile: './sidebars/${id}/${to}.js',\n      },\n`;
+  const carried = latestExtras(block).map(l => `        ${l}\n`).join('');
+  const entry = `      {\n        version: '${to}',\n        label: '${to}',\n        isLatest: true,\n        sidebarFile: './sidebars/${id}/${to}.js',\n${carried}      },\n`;
   next = next.replace(/(versions: \[\n)/, `$1${entry}`);
   next = next.replace(/defaultVersion: '[^']*'/, `defaultVersion: '${to}'`);
   return text.slice(0, start) + next + text.slice(end);
@@ -99,13 +111,16 @@ export function run(argv) {
   }
   const text = fs.readFileSync(PRODUCTS, 'utf8');
   let edited;
+  let extras = [];
   let from;
   let docsPath;
   try {
     const { block } = findProductBlock(text, id);
     from = arg('--from') || parseVersions(block).find(v => v.isLatest)?.version;
+    if (!from) throw new Error(`"${id}" has no version marked isLatest: true, so there is nothing to copy from. Pass --from <version>.`);
     docsPath = productPath(block);
     edited = addVersion(text, id, to);
+    extras = latestExtras(block);
   } catch (e) {
     console.error(e.message);
     return 1;
@@ -119,6 +134,7 @@ export function run(argv) {
   console.log(`  copy    ${path.relative(ROOT, src)} -> ${path.relative(ROOT, dst)} (kb/ skipped; /docs/${id}/${from}/ links rewritten to ${to})`);
   console.log(`  create  ${path.relative(ROOT, sidebar)}`);
   console.log(`  edit    src/config/products.js: add ${to} as latest, set ${from} isLatest: false`);
+  if (extras.length) console.log(`          carried over from the ${from} entry: ${extras.join(' ')}`);
   if (!argv.includes('--apply')) { console.log('Dry run. Pass --apply to make the changes.'); return 0; }
   copyDir(src, dst, t => rewriteDocLinks(t, id, from, to));
   fs.mkdirSync(path.dirname(sidebar), { recursive: true });
@@ -133,4 +149,4 @@ export function run(argv) {
   return 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

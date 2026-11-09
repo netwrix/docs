@@ -12,6 +12,7 @@
  * author report's "Style check on every page" section reads its output.
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 import { readJson } from './manifest.mjs';
 import { docsPrefix } from './docs-paths.mjs';
@@ -73,4 +74,4 @@ export function run(argv) {
   return 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

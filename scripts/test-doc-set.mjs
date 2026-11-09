@@ -2,6 +2,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { test } from 'node:test';
+import { fileURLToPath } from 'url';
 import assert from 'node:assert/strict';
 import { validateManifest, statusSummary } from './doc-set/manifest.mjs';
 import { buildCoverage } from './doc-set/coverage.mjs';
@@ -755,4 +756,63 @@ test('the report explains the whole-page lint and shows the commit-check counts'
   assert.doesNotMatch(html, /in the new version/);
   assert.match(html, /commit check, which looks only at the lines this run added or changed, has 1 pass and 0 fail/);
   assert.match(html, /candidate for the separate restyle pass/);
+});
+
+// ---- review fixes: per-version keys, entry-point guard, missing latest version, slug collisions
+test('a new version keeps the previous latest entry\'s extra keys, such as kb: false', async () => {
+  const { addVersion, latestExtras } = await import('./doc-set/seed-version.mjs');
+  const text = [
+    'module.exports = [',
+    "  {\n    id: 'aa',\n    name: 'AA',\n    path: 'docs/aa',\n    versions: [",
+    "      {\n        version: '26.1',\n        label: '26.1',\n        isLatest: true,\n        sidebarFile: './sidebars/aa/26.1.js',\n        kb: false, // No Knowledge Base section\n      },",
+    "      {\n        version: '12.0',\n        label: '12.0',\n        isLatest: false,\n        sidebarFile: './sidebars/aa/12.0.js',\n      },",
+    "    ],\n    defaultVersion: '26.1',\n  },\n];\n",
+  ].join('\n');
+  const block = text.slice(text.indexOf('  {\n    id'), text.indexOf('\n];'));
+  assert.deepEqual(latestExtras(block), ['kb: false, // No Knowledge Base section']);
+  const out = addVersion(text, 'aa', '26.2');
+  const added = out.slice(out.indexOf("version: '26.2'"), out.indexOf("version: '26.1'"));
+  assert.match(added, /kb: false, \/\/ No Knowledge Base section/);
+  assert.match(added, /isLatest: true/);
+  assert.doesNotMatch(out.slice(out.indexOf("version: '12.0'")), /kb: false/, 'older entries are not touched');
+});
+
+test('the script entry guard runs from a path with a space, where the old comparison silently did nothing', async () => {
+  const { isMain } = await import('./doc-set/is-main.mjs');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'with space-'));
+  const isMainUrl = new URL('./doc-set/is-main.mjs', import.meta.url).href;
+  const script = path.join(dir, 'probe.mjs');
+  fs.writeFileSync(script, `import { isMain } from '${isMainUrl}';\nif (isMain(import.meta.url)) console.log('new-ran');\nif (import.meta.url === \`file://\${process.argv[1]}\`) console.log('old-ran');\n`);
+  const out = execFileSync(process.execPath, [script], { encoding: 'utf8' });
+  assert.match(out, /new-ran/);
+  assert.doesNotMatch(out, /old-ran/, 'the old comparison is false for a path with a space');
+  assert.equal(isMain(import.meta.url, ''), false, 'no argv[1] is not main');
+  assert.equal(isMain(import.meta.url, fileURLToPath(import.meta.url)), true);
+
+  // A real script, copied to a path with a space, still runs and prints its usage.
+  const copy = path.join(dir, 'doc-set');
+  fs.cpSync(new URL('./doc-set', import.meta.url), copy, { recursive: true });
+  const r = (() => { try { execFileSync(process.execPath, [path.join(copy, 'lint-all.mjs')], { encoding: 'utf8', stdio: 'pipe' }); return { status: 0 }; } catch (e) { return { status: e.status, stderr: String(e.stderr) }; } })();
+  assert.equal(r.status, 2);
+  assert.match(r.stderr, /Usage: node scripts\/doc-set\/lint-all.mjs/);
+});
+
+test('seed-version says what is wrong when no version is marked latest', async () => {
+  const { run } = await import('./doc-set/seed-version.mjs');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'seedroot-'));
+  fs.mkdirSync(path.join(dir, 'src/config'), { recursive: true });
+  fs.writeFileSync(path.join(dir, 'src/config/products.js'), "module.exports = [\n  {\n    id: 'zz',\n    path: 'docs/zz',\n    versions: [\n      {\n        version: '1.0',\n        label: '1.0',\n        isLatest: false,\n      },\n    ],\n  },\n];\n");
+  const errs = []; const err = console.error; console.error = m => errs.push(String(m));
+  let code; try { code = run(['--product', 'zz', '--to', '2.0', '--root', dir]); } finally { console.error = err; }
+  assert.equal(code, 1);
+  assert.match(errs.join('\n'), /no version marked isLatest: true.*--from/);
+});
+
+test('two pages that share a review id are reported instead of sharing reviews', async () => {
+  const { assertUniqueSlugs, slugify } = await import('./doc-set/docs-paths.mjs');
+  assert.equal(slugify('install/signing-key.md'), 'install-signing-key-md');
+  assert.doesNotThrow(() => assertUniqueSlugs(['a/b.md', 'a/c.md', 'x.md', 'x.mdx']));
+  assert.throws(() => assertUniqueSlugs(['a_b.md', 'a-b.md']), /share the review id "a-b-md".*a_b.md and a-b.md/);
+  assert.throws(() => assertUniqueSlugs(['a/b.md', 'a-b.md']), /share the review id/);
+  assert.doesNotThrow(() => assertUniqueSlugs(['a/b.md', 'a/b.md']), 'the same path twice is not a collision');
 });

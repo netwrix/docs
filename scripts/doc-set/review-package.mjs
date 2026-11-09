@@ -13,6 +13,7 @@
  *   - comments: the artifact's comment threads
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { BASE_CSS, FONT_LINK } from './page-style.mjs';
@@ -341,4 +342,4 @@ export function run(argv) {
   return 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

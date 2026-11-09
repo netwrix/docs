@@ -8,6 +8,7 @@
  * Nothing has to record progress as it goes: every phase leaves a file, and this reads them.
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 import { readJson, readResults, statusSummary } from './manifest.mjs';
 
@@ -72,4 +73,4 @@ export function run(argv) {
   return 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

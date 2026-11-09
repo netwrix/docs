@@ -9,6 +9,7 @@
  * The answer is { "<short path>": { "scope": "...", "consequence": "...", "rationale": "..." } }.
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 import { readJson } from './manifest.mjs';
 import { loadEntries } from './review-html.mjs';
@@ -77,4 +78,4 @@ export function run(argv) {
   return 2;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

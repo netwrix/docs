@@ -9,6 +9,7 @@
  * Exits 1 when a non-internal fact is uncovered.
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 import { readJson, readResults, statusSummary } from './manifest.mjs';
 
@@ -87,4 +88,4 @@ export function run(argv) {
   return cov.uncovered.length ? 1 : 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

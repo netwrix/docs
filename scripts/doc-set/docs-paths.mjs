@@ -24,6 +24,19 @@ export function shortPath(meta, p) {
   return p.startsWith(pre) ? p.slice(pre.length) : p;
 }
 
+/** The id a page gets in the review page, its links, and the vote store: its short path with every run of other characters as one hyphen. */
+export const slugify = short => short.replace(/[^a-z0-9]+/gi, '-').replace(/-+$/, '');
+
+/** Throws when two pages share a slug (for example a_b.md and a-b.md): they would share an anchor, a template, and reviews. */
+export function assertUniqueSlugs(shorts) {
+  const seen = new Map();
+  for (const s of shorts) {
+    const id = slugify(s);
+    if (seen.has(id) && seen.get(id) !== s) throw new Error(`Two pages share the review id "${id}": ${seen.get(id)} and ${s}. Rename one of them before building the review page.`);
+    seen.set(id, s);
+  }
+}
+
 /** The page's text before this run, or null when there was no such page. `page` is a manifest row. */
 export function readOldText(meta, page) {
   if (page.action === 'NEW') return null;

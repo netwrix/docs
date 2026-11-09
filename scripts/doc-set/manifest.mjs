@@ -10,6 +10,7 @@
  * validate exits 1 on any problem.
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 
 export const ACTIONS = ['KEEP', 'UPDATE', 'REWRITE', 'RETIRE', 'NEW'];
@@ -123,4 +124,4 @@ export function run(argv) {
   return 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

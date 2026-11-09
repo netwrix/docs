@@ -11,6 +11,7 @@
  * manifest.json by hand or by the planner; re-running this script keeps them (pages with action NEW).
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 import { readJson } from './manifest.mjs';
 
@@ -77,4 +78,4 @@ export function run(argv) {
   return problems.length ? 1 : 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));

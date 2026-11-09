@@ -13,6 +13,7 @@
  * Exits 1 when a non-internal fact has no cite or a field is missing.
  */
 import fs from 'fs';
+import { isMain } from './is-main.mjs';
 import path from 'path';
 
 const STATUSES = ['new', 'changed', 'removed', 'unchanged'];
@@ -140,4 +141,4 @@ export function run(argv) {
   return probs.length ? 1 : 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (isMain(import.meta.url)) process.exit(run(process.argv.slice(2)));
