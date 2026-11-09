@@ -16,6 +16,10 @@ if (!input || !output) {
   process.exit(1);
 }
 const maxDepth = Number(depthArg ?? 2);
+if (!Number.isFinite(maxDepth)) {
+  console.error('The depth argument must be a number.');
+  process.exit(1);
+}
 const spec = JSON.parse(readFileSync(input, 'utf8'));
 const schemas = spec.components?.schemas ?? {};
 
