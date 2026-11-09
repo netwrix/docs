@@ -49,6 +49,12 @@ PRODUCTS.forEach(product => {
 // from products that were never built in this run.
 const targetProduct = process.env.DOCS_PRODUCT;
 
+// DOCS_PRIVATE_BUILD=true produces a build for a private staging site: analytics
+// and the production Algolia search are left out. noindex and robots.txt already
+// follow the site URL (src/config/indexing.js), so a non-docs.netwrix.com
+// APP_EXTERNAL_URL is not indexable.
+const privateBuild = process.env.DOCS_PRIVATE_BUILD === 'true';
+
 const latestVersionMap = getLatestVersionUrlMap();
 
 // Match the product filtering generateDocusaurusPlugins() applies, so redirects
@@ -203,14 +209,33 @@ const config = {
       // Writes build/robots.txt: crawlable on docs.netwrix.com only
       robotsTxtPlugin,
 
-      // Google Analytics
-      [
-        '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-FZPWSDMTEX',
-        anonymizeIP: true,
-      },
-    ],
+      // Private staging builds: the classic navbar imports @theme/SearchBar, which
+      // resolves to the swizzled Algolia component that needs the (omitted) search theme.
+      ...(privateBuild
+        ? [
+            function privateSearchStubPlugin() {
+              return {
+                name: 'private-search-stub',
+                configureWebpack() {
+                  return {
+                    resolve: {
+                      alias: { '@theme/SearchBar': resolve('./src/config/NullSearchBar.js') },
+                    },
+                  };
+                },
+              };
+            },
+          ]
+        : [
+            // Google Analytics
+            [
+              '@docusaurus/plugin-google-gtag',
+              {
+                trackingID: 'G-FZPWSDMTEX',
+                anonymizeIP: true,
+              },
+            ],
+          ]),
     // Client-side redirects - redirect base product URLs to latest version
     [
       '@docusaurus/plugin-client-redirects',
@@ -382,7 +407,9 @@ const config = {
           autoCollapseCategories: true,
         },
       },
-      algolia: {
+      // Omitted for private builds: without themeConfig.algolia the classic preset
+      // skips the search theme, so no search box and no calls to the production index.
+      ...(privateBuild ? {} : { algolia: {
         // Your Algolia credentials
         appId: 'KPMSCF6G6J',
         apiKey: 'b38509adea6e7a1189bfb0d06ca37436', // Use the search-only API key, not the admin key
@@ -431,7 +458,7 @@ const config = {
         //   from: '/docs/',
         //   to: '/',
         // },
-      },
+      } }),
       navbar: {
         logo: {
           alt: 'Netwrix Logo',
@@ -466,7 +493,7 @@ const config = {
       },
     }),
   // Add preconnect for better search performance
-  headTags: [
+  headTags: privateBuild ? [] : [
     {
       tagName: 'link',
       attributes: {
