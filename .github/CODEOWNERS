@@ -17,6 +17,12 @@
 /static/files/1secure/ @netwrix/1secure-docs
 /static/images/1secure/ @netwrix/1secure-docs
 
+# 1Secure AI Security team
+/docs/1secureaisecurity/ @netwrix/1secureaisecurity-docs
+/sidebars/1secureaisecurity.js @netwrix/1secureaisecurity-docs
+/static/files/1secureaisecurity/ @netwrix/1secureaisecurity-docs
+/static/images/1secureaisecurity/ @netwrix/1secureaisecurity-docs
+
 # Access Analyzer team
 /docs/accessanalyzer/11.6/ @netwrix/team-dspm-accessanalyzerclassic
 /sidebars/accessanalyzer/11.6.js @netwrix/team-dspm-accessanalyzerclassic
