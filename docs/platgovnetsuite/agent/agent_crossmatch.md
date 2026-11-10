@@ -17,9 +17,9 @@ Before you begin, create the saved search to use as the Cross Match search. For 
 1. Open **Strongpoint** > **Financial Controls** > **Controls**.
 2. **Edit** the control to run.
 3. Open the **Controls** tab.
-4. Set **Control Type** to **Large Control**.
+4. Set **Control Type** to **Large Control**. Cross Match runs only on Large Controls.
 5. Set **Cross Match Control** to the Cross Match search. This is the secondary search used for the join.
-6. Set the **Cross Match Field**. This is the main search field to match with the results of the Cross Match search.
+6. Set the **Cross Match Field**. This is the main search field to match with the results of the Cross Match search. Skip this step if you use the Multiple Columns operator.
 7. Set **Cross Match Operator**. For the available operators, see [Cross Match operators](#cross-match-operators).
 8. Click **Save**.
 
@@ -42,7 +42,7 @@ Each of the two comparisons can use the Text, Numeric, or Date data type.
 
 To set up a Multiple Columns Cross Match:
 
-1. Set **Cross Match Operator** to **Multiple Columns**.
+1. Set **Cross Match Operator** to **Multiple Columns**. Leave **Cross Match Field** empty. The column table replaces it.
 2. In each of the two rows of the column table, set the following:
    - **Data Type**: the data type to compare as.
    - **Main Control Search Columns**: the main search column to compare.
@@ -55,6 +55,6 @@ To set up a Multiple Columns Cross Match:
 
 |  Data Type            |   Operation            |Description                                                                                                                                                                                                                                                                                                                                                                                             |
 | -------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Text             | Is             | A row matches when the main search column contains exactly the same text as the Cross Match search column. |
+| Text             | Is             | A row matches when the main search column contains exactly the same text as the Cross Match search column. The match is case-sensitive. |
 | Date       | Before, On or Before, On, After, On or After  | The main search column must contain a date, and a row matches when that date falls before, on or before, on, after, or on or after the date in the Cross Match search column. |
 | Number | Lesser Than, Lesser Than or Equal To, Equal To, Greater Than, Greater Than or Equal To | The main search column must contain a numeric value, and a row matches when that number is lesser than, lesser than or equal to, equal to, greater than, or greater than or equal to the number in the Cross Match search column. |
