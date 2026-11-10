@@ -18,13 +18,11 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Free disk on the storage volume | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib` by default. To put it on a different mount, pass `--storage-dir` at install time. See [Storage Location](../install/installer-reference.md#storage-location). Keep about 10 GB free on `/var/lib` either way, because the platform keeps pod-local storage there. |
 | Free disk for the install media | About 16 GB free on the volume that holds the media. See [Install media](#install-media). |
 | Free disk for an air-gapped install | 25 GB free on the volume that holds the media directory (`/var/lib/dspm/media` by default), where the installer expands the media. Pass `--tmp-dir` to move it. See [Install media](#install-media). |
-| Free disk for logs | At least 10 GB free on the volume that holds `/var/log`, and 20 GB is better. See [Log volume](#log-volume). |
+| Free disk for logs | At least 10 GB free on the volume that holds `/var/log`. See [Log volume](#log-volume). |
 
 On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can continue at your own risk.
 
 ### Log Volume
-
-Every container in the platform, including PostgreSQL, writes its log under `/var/log/pods`. Each container keeps up to 50 MB of log before it discards the oldest, and the platform runs about 70 containers, so pod logs alone can reach about 3.5 GB. The system journal and `/var/log/syslog` sit on the same volume. `--storage-dir` doesn't move any of these logs.
 
 If `/var/log` is a separate mount, give it at least 10 GB. When `/var/log` fills up, services that write logs can stop working, PostgreSQL among them. To free space on a full volume, run these commands, then restart any pod that failed:
 
