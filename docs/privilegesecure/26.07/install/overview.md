@@ -23,13 +23,13 @@ For the contents of the Privilege Secure package, see [Installation package cont
 
 ## Installation order
 
-1. Check the [requirements](/docs/privilegesecure/26.07/requirements/overview.md). Install PowerShell 7.6 or later on the application server first. The installer stops without it.
+1. Check the [requirements](/docs/privilegesecure/26.07/requirements/overview.md). Install PowerShell 7.6 or later on the application server first. The installer stops without it. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md#software-to-install-before-you-run-the-installer).
 2. [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md) with the Setup Launcher, or [install silently](/docs/privilegesecure/26.07/install/silent-install.md).
 3. [Run the setup wizard](/docs/privilegesecure/26.07/install/first-launch.md) the first time you open the console.
 4. [Activate a license](/docs/privilegesecure/26.07/install/activate-license.md). A new installation includes a trial license.
-5. Optional: [install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md), [install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md), or [install the Remote Desktop Monitor on target hosts](/docs/privilegesecure/26.07/install/rdp-monitor.md).
-6. Optional: set up [high availability](/docs/privilegesecure/26.07/install/high-availability.md).
-7. Optional: install the Remote Access Gateway. See the [Remote Access Gateway overview](/docs/privilegesecure/26.07/remote-access-gateway/overview.md).
+5. (Optional) [install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md), [install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md), or [install the Remote Desktop Monitor on target hosts](/docs/privilegesecure/26.07/install/rdp-monitor.md).
+6. (Optional) set up [high availability](/docs/privilegesecure/26.07/install/high-availability.md).
+7. (Optional) install the Remote Access Gateway. See the [Remote Access Gateway overview](/docs/privilegesecure/26.07/remote-access-gateway/overview.md).
 
 To move an existing installation to this version, see [Upgrade Privilege Secure](/docs/privilegesecure/26.07/install/upgrade.md).
 

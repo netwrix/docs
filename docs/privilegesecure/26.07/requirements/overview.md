@@ -32,7 +32,7 @@ A deployment uses the following systems:
 
 ## Remote Access Gateway
 
-The Remote Access Gateway lets users start sessions from a browser. It is a separate download and installer with its own hosts, software, and ports. See [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md) for what the Portal and Gateway servers need.
+The Remote Access Gateway lets users start sessions from a browser. It's a separate download and installer with its own hosts, software, and ports. See [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md) for what the Portal and Gateway servers need.
 
 ## Next steps
 

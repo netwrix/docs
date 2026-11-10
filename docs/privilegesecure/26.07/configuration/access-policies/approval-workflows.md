@@ -96,7 +96,7 @@ Tiers run in order. The next tier starts only after the previous tier approves, 
 
 ## Approve a request
 
-Approvers see pending requests on the **Approvals** tab of the dashboard. See [Approve or deny session requests](/docs/privilegesecure/26.07/user-guide/approve-requests.md).
+Approvers see pending requests on the **Approvals** tile of the dashboard. See [Approve or deny session requests](/docs/privilegesecure/26.07/user-guide/approve-requests.md).
 
 A requester who is also listed as an approver, whether directly or through a group, isn't notified and isn't asked to approve their own session. Another approver must approve it.
 

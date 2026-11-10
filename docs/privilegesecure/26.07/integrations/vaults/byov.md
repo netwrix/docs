@@ -26,7 +26,7 @@ For an overview of vault connectors, see [Third-party vault connectors](/docs/pr
 | **Client Certificate** | A value that Privilege Secure passes to your scripts as `$Options.Connector.Options.ClientCertificate`. Privilege Secure doesn't use it itself. |
 | **Skip Certificate Check** | Under **Advanced**. When selected, Privilege Secure doesn't validate the certificate of the vault. It's cleared by default. |
 | **Checkout Script Block** | Under **Advanced**. Required for a BYOV connector. A PowerShell script that returns the credential. Without it, the connector supplies no credential. |
-| **Checkin Script Block** | Under **Advanced**. A PowerShell script that runs when the session ends. If you leave it empty, the built-in check-in deletes the temporary credential record that the activity creates for the session, when the last session that uses it ends. It never deletes a stored account. |
+| **Checkin Script Block** | Under **Advanced**. A PowerShell script that runs when the session ends. If you leave it empty, the built-in check-in deletes the temporary credential record that the activity creates for the session. It deletes the record when the last session that uses it ends. It never deletes a stored account. |
 
 An asterisk (\*) marks a required field.
 
@@ -42,7 +42,7 @@ Both scripts receive the following parameters:
   - `ActivitySession` holds the details of the session, including `SessionId`, `LoginAccountName`, `LoginAccountNameFormat`, `UserId`, `TargetUserId`, and `TargetId`.
   - `TargetHost` holds the host object of the session target, when the session has one. `TargetDomain`, `TargetWebSite`, and `TargetAzureADTenant` are always empty in 26.07.
   - In the check-in script, `Username` and `Domain` hold the user name and domain of the credential.
-- `$Credential` holds the credential to fill. The check-out script sets `Username`, `Domain`, and `Password`, and returns the object. Privilege Secure also passes the domain credential as a third argument, which a script can read with a third `param` entry, `$DomainCredentials`.
+- `$Credential` holds the credential to fill. The check-out script sets `Username`, `Domain`, and `Password`, and returns the object. Privilege Secure also passes the domain credential as a third argument. A script can read it with a third `param` entry, `$DomainCredentials`.
 
 The scripts run in the Action Service session, so they can use its Privilege Secure commands, such as `Invoke-SbPAMRest` to call the API and `Add-SbPAMActionLog` to write to the action log.
 
@@ -74,7 +74,7 @@ The account can be a manually managed account, or an account that a secret vault
    This script doesn't use **API Url** or **Skip Certificate Check**. It sends its requests to the Privilege Secure address that the Action Service uses, and those requests follow the certificate setting of the Action Service, not the connector. The form still requires an **API Url** value.
    :::
 
-3. In **Checkout Script Block**, paste the following script. This script is an example. Test it in your environment before you use it in production. Leave **Checkin Script Block** empty. If you leave it empty, the built-in check-in deletes the credential record that is linked to the connector, when the last session that uses it ends.
+3. In **Checkout Script Block**, paste the following script. This script is an example. Test it in your environment before you use it in production.
 
    ```powershell
    param (
@@ -173,7 +173,8 @@ The account can be a manually managed account, or an account that a secret vault
    }
    ```
 
-4. Click **Save**.
+4. Leave **Checkin Script Block** empty. If you leave it empty, the built-in check-in deletes the credential record that is linked to the connector, when the last session that uses it ends.
+5. Click **Save**.
 
 {/* TODO verify: that this script, carried over from the 26.03 documentation, runs unchanged in a session on 26.07.3. It depends on the records in your vault and on a live session. */}
 
@@ -182,7 +183,10 @@ The account can be a manually managed account, or an account that a secret vault
 1. Select **Credentials** in the left navigation.
 2. Find the account and select its checkbox. Ensure the account isn't already managed.
 3. Click **Manage** above the list, then select **Manual**.
-4. In the **Set Password for Credential** window, enter the account's password in **Password**, then click **Save**. Enter the password that the account already has on the resource, because Privilege Secure doesn't change the password on the resource for a manually managed account. To set the password again later, select the **Set Password** icon beside the account name. See [Passwords of manually managed accounts](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md#passwords-of-manually-managed-accounts).
+4. In the **Set Password for Credential** window, enter the account's password in **Password**. Enter the password that the account already has on the resource, because Privilege Secure doesn't change the password on the resource for a manually managed account.
+5. Click **Save**.
+
+To set the password again later, select the **Set Password** icon beside the account name. See [Passwords of manually managed accounts](/docs/privilegesecure/26.07/admin/credentials/manage-credentials.md#passwords-of-manually-managed-accounts).
 
 ### Create the activity
 

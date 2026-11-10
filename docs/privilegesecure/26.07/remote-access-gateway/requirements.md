@@ -32,7 +32,7 @@ Netwrix tests the latest gateway and portal with the latest Privilege Secure app
 
 - Internet Information Services (IIS). The gateway installer turns on the IIS role and the features it needs. The gateway runs as the IIS site **NPS Gateway Web Service**, not as a Windows service.
 - The .NET 10 Hosting Bundle. The gateway installer includes it.
-- Windows Subsystem for Linux 2 (WSL 2) with a Ubuntu distribution. The gateway doesn't support WSL 1. Run Windows Update before you install WSL.
+- Windows Subsystem for Linux 2 (WSL 2) with an Ubuntu distribution. The gateway doesn't support WSL 1. Run Windows Update before you install WSL.
 - Docker running inside WSL. guacd runs as a Docker container, and the install script installs Docker.
 - Systemd enabled in WSL. See [Install the gateway and guacd](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md).
 - Outbound access from WSL to download packages and the `guacamole/guacd:1.6.0` image.
@@ -55,7 +55,7 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 
-The first command reports whether the firmware exposes virtualization. Inside a virtual machine, it can report `False` even when nested virtualization is enabled and WSL 2 works, because a guest doesn't expose the firmware flag the same way a physical host does. Treat a `False` result together with an `Enabled` result for both features as virtualization being available.
+The first command reports whether the firmware exposes virtualization. Inside a virtual machine, it can report `False` even when nested virtualization is enabled and WSL 2 works. A guest doesn't expose the firmware flag the same way a physical host does. Treat a `False` result together with an `Enabled` result for both features as virtualization being available.
 
 ## Application server requirements
 

@@ -23,7 +23,8 @@ To change the port, complete the following steps in order:
 1. In Windows Firewall, update the inbound rule for the web service port, named "SbPAM Web Service Port (6500)" by default.
 1. In the console, go to **System Settings** > **Services** and update the port in **NPS Rest URL**.
 1. In Internet Information Services (IIS) Manager, change the port in the HTTPS binding of the **SbPAM Web Service** site.
-1. In the console, go back to **System Settings** > **Services**, confirm that **NPS Rest URL** uses the new port, and click **Register Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+1. In the console, go back to **System Settings** > **Services** and confirm that **NPS Rest URL** uses the new port.
+1. Click **Register Services**. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
 1. Restart IIS.
 1. Restart the server.
 
@@ -35,7 +36,7 @@ Several components store the console URL. Each one must match the address that u
 
 | Component | Where the URL is stored |
 | --- | --- |
-| Action, Email, Proxy, Scheduler, SIEM, and Host Scan services | **NPS Rest URL** in **System Settings** > **Services**. See [Set the NPS REST URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md). |
+| Action, Email, Proxy, Scheduler, SIEM, and Host Scan services | **NPS Rest URL** in **System Settings** > **Services**. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md). |
 | Approval and report emails | **Website URL** in **System Settings** > **Email**. See [Configure email notifications](/docs/privilegesecure/26.07/configuration/system-settings/email.md). |
 | OpenID Connect and SAML sign-in | The callback (redirect) URI registered with the identity provider. See [Configure a SAML connector](/docs/privilegesecure/26.07/configuration/authentication/saml.md) and [Configure an OpenID Connect connector](/docs/privilegesecure/26.07/configuration/authentication/openid-connect.md). |
 | Remote Access Gateway | The `NPS:Uri` setting in the gateway configuration. See [Remote Access Gateway requirements](/docs/privilegesecure/26.07/remote-access-gateway/requirements.md). |
@@ -95,7 +96,7 @@ To manage Microsoft Entra ID, the application server must reach `https://login.m
 | 22 | TCP | Linux, BSD, Cisco, and PAN-OS hosts | SSH, including password changes |
 | 443 | TCP | PAN-OS hosts | PAN-OS XML API (account management) |
 
-When the Proxy service or Action service runs on another server, open these ports from that server instead: the Proxy service uses RDP and SSH, and the Action service uses WinRM, SSH, and the PAN-OS API.
+When the Proxy Service or Action Service runs on another server, open these ports from that server instead: the Proxy Service uses RDP and SSH, and the Action Service uses WinRM, SSH, and the PAN-OS API.
 
 Resource settings can override the default RDP, SSH, and WinRM ports for a host.
 

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Register an app in Microsoft Entra ID
 
-Privilege Secure manages a Microsoft Entra ID tenant through an app registration. You create the registration in the Microsoft Entra admin center, then enter its values in Privilege Secure as a service account and a tenant resource.
+Netwrix Privilege Secure for Access Management (Privilege Secure) manages a Microsoft Entra ID tenant through an app registration. You create the registration in the Microsoft Entra admin center, then enter its values in Privilege Secure as a service account and a tenant resource.
 
 This task needs three values from Entra ID:
 
@@ -25,7 +25,8 @@ This task needs three values from Entra ID:
 
 1. In the Microsoft Entra admin center, go to **Entra ID** > **App registrations**.
 1. Click **New registration**.
-1. Enter a name, for example `Privilege Secure`. Keep the default settings, and click **Register**.
+1. Enter a name, for example `Privilege Secure`.
+1. Keep the default settings, and click **Register**.
 1. Under **Manage**, click **API permissions**.
 1. Add these Microsoft Graph **Application** permissions:
 
@@ -46,7 +47,8 @@ After consent succeeds, the **Configured permissions** page shows the message "S
 
 1. In the app registration, click **Certificates & secrets**.
 1. Click **New client secret**.
-1. Enter a description, choose an expiration date, and click **Add**.
+1. Enter a description and choose an expiration date.
+1. Click **Add**.
 1. Copy the secret **Value** before you leave the page. Entra ID doesn't show it again.
 1. Open the **Overview** page, and copy the **Application (client) ID** and the **Directory (tenant) ID**.
 
@@ -59,8 +61,12 @@ Assign the app registration to two Entra roles. Repeat these steps for each role
 1. Go to **Entra ID** > **Roles & administrators**.
 1. Click the role name, **User Administrator** or **Privileged Authentication Administrator**. Don't select the checkbox next to the name.
 1. Click **Add assignments**.
-1. Under **Select members**, click **No member selected**, search for the app registration, click it, and click **Select**.
-1. Click **Next**. Set **Assignment type** to **Active** and **Duration** to **Permanently assigned**, enter a justification, and click **Assign**.
+1. Under **Select members**, click **No member selected**.
+1. Search for the app registration, and click it.
+1. Click **Select**.
+1. Click **Next**.
+1. Set **Assignment type** to **Active** and **Duration** to **Permanently assigned**.
+1. Enter a justification, and click **Assign**.
 
 To rotate passwords of accounts that hold administrator roles, the app registration needs **Privileged Authentication Administrator**. **User Administrator** covers accounts that hold no administrator role, and it can't manage Global Administrator accounts. Assign both roles, or assign **Global Administrator** in place of both. Deployments set up before 2026 may not have needed **Privileged Authentication Administrator**, so add it to older registrations.
 

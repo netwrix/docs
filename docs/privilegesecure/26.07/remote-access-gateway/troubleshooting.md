@@ -51,7 +51,7 @@ To find the guacd container name, run `docker ps` inside WSL. For the logs of th
 
 ## A connector can't be used through the gateway
 
-**Symptom:** The identity provider sign-in option isn't listed on the portal sign-in page. If a user reaches the sign-in through a direct link or a callback from the identity provider, the sign-in fails with "This authentication method cannot be used via Remote Access Gateway". The Privilege Secure log and event show the longer message "The authentication method: '\<name\>' cannot be used via Remote Access Gateway", with the name of the connector.
+**Symptom:** The identity provider sign-in option isn't listed on the portal sign-in page. If a user reaches the sign-in through a direct link or a callback from the identity provider, the sign-in fails. The error reads "This authentication method cannot be used via Remote Access Gateway". The Privilege Secure log and event show the longer message, with the name of the connector: "The authentication method: '\<name\>' cannot be used via Remote Access Gateway".
 
 **Cause:** The connector doesn't match where the user signs in. A connector with **Use Remote Access Gateway** selected works only through the portal, and fails on the console. A connector with the checkbox cleared works only on the console, and fails through the portal.
 
@@ -108,7 +108,7 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 
 **Cause:** One of these causes applies:
 
-- The **RDP Proxy (host:port)** or **SSH Proxy (host:port)** value on the connection profile of the access policy can't be reached from guacd, or is set to `localhost`. From inside the guacd container, `localhost` is the container, not the Privilege Secure server.
+- The **RDP Proxy (host:port)** or **SSH Proxy (host:port)** value on the connection profile of the access policy is set to `localhost`, or guacd can't reach it. From inside the guacd container, `localhost` is the container, not the Privilege Secure server.
 - The one-time token for the session expired or was revoked.
 
 **Fix:** Set the proxy host to an address that guacd can reach, and then start the session again from the dashboard.
@@ -129,13 +129,13 @@ bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a 
 
 **Fix:**
 
-1. On the gateway server, run `wsl -l -v`. If the distribution shows **Stopped**, start it.
+1. On the gateway server, run `wsl -l -v` in PowerShell. Confirm that the distribution shows **Running**. If it shows **Stopped**, run `wsl` to start it.
 2. In the Ubuntu distribution, run `sudo docker ps`. The output lists a container named `guacd` that publishes port 4822. If `guacd` isn't listed, run `sudo docker start guacd`.
 3. In PowerShell, run `Test-NetConnection <guacd-host> -Port 4822` and confirm that `TcpTestSucceeded` is `True`.
 
 If the address of the WSL instance changed, run `wsl hostname -I` to get the current address. Then run `Configure-Gateway.ps1` again with that address as the `-NPSGuacdHost` value.
 
-If WSL doesn't start by itself, see [Start WSL automatically](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#start-wsl-automatically).
+The installer registers two scheduled tasks, `NPS WSL holder` and `NPS WSL net keepalive`, that run at startup and keep WSL and guacd up without a manual `wsl` command. Keep both tasks enabled. If guacd still becomes unreachable, restart the container: run `wsl -d Ubuntu -u root -- docker restart guacd`, then repeat the port 4822 connection check in step 3. For the task details, see [Start WSL automatically](/docs/privilegesecure/26.07/remote-access-gateway/install/install-gateway.md#start-wsl-automatically).
 
 ## Colors look wrong in an RDP session
 

@@ -75,8 +75,8 @@ You can resize the columns and sort them in ascending or descending order.
 
 ## Who can view recordings
 
-Administrators can view recordings of historical sessions. Auditors can view recordings through the **View Recordings** permission. A recording opens only when both the user of the session and its resource are in the scope of the Auditors role, either added on the **Users** and **Resources** tabs or covered by **All Users** and **All Resources**. Auditors can also open recordings of their own sessions. When an auditor holds more than one role, the scopes add together.
+Administrators can view recordings of historical sessions. Auditors can view recordings through the **View Recordings** permission. A recording opens only when both the user of the session and its resource are in the scope of the Auditors role. They're in scope when they're added on the role's **Users** and **Resources** tabs, or covered by **All Users** and **All Resources**. Auditors can also open recordings of their own sessions. When an auditor holds more than one role, the scopes add together.
 
 A user who holds **Admin View Read Only** doesn't open recordings as an Administrator. Give that user the **View Recordings** permission as well. Other roles, such as **Users** and **Reviewers**, can't open recordings. See [Roles and permissions](/docs/privilegesecure/26.07/admin/roles/roles.md).
 
-![The Historical tab toolbar and filters, above the list of recorded sessions.](/images/privilegesecure/26.07/admin/historical-tab-filters.webp)
+![The Historical tile toolbar and filters, above the list of recorded sessions.](/images/privilegesecure/26.07/admin/historical-tab-filters.webp)

@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Client requirements
 
-Users reach Netwrix Privilege Secure for Access Management through a web browser. They can also use the browser extension and their own remote desktop and SSH clients.
+Users reach Netwrix Privilege Secure for Access Management (Privilege Secure) through a web browser. They can also use the browser extension and their own remote desktop and SSH clients.
 
 ## Browsers
 

@@ -18,7 +18,7 @@ The Privilege Secure console is a web application. You open it in a browser, sig
   ```
 
   `<nps-server>` is the NetBIOS name, fully qualified domain name (FQDN), or IP address of the server that runs Privilege Secure. A firewall can restrict access to the server, so ask your administrator if the page doesn't load.
-- If you are the administrator who installed the product and this is the first sign-in, see [Run the setup wizard](/docs/privilegesecure/26.07/install/first-launch.md) for the setup wizard.
+- If you're the administrator who installed the product and this is the first sign-in, see [Run the setup wizard](/docs/privilegesecure/26.07/install/first-launch.md) for the setup wizard.
 
 To reach the console from outside the network through a browser, see [Sign in to the Remote Access Gateway portal](/docs/privilegesecure/26.07/remote-access-gateway/user-guide/sign-in.md).
 
@@ -41,7 +41,7 @@ After you sign in, the console opens on the Dashboard.
 When your administrator configures a SAML or OpenID Connect connector, the sign-in page shows an **Or login using:** button for each connector. With a connector, you don't enter a username or password in the console.
 
 1. Click the button for your identity provider. The browser redirects to the identity provider's sign-in page.
-2. Sign in to the identity provider. Complete any MFA that the identity provider requires.
+2. Sign in to the identity provider. Complete any multi-factor authentication (MFA) that the identity provider requires.
 3. After authentication, the browser returns to the console Dashboard.
 
 If the identity provider returns an error, the console shows it and waits. Click **Sign Out** before you try again.
@@ -54,7 +54,7 @@ To sign in with a different account than the one the console offers, click **Log
 
 ## Register multi-factor authentication
 
-Your administrator assigns an authentication connector to each user. The assigned connector decides whether you must use multi-factor authentication (MFA). Administrators can assign a connector that doesn't require MFA. For the connector types, see [Authentication](/docs/privilegesecure/26.07/configuration/authentication/overview.md).
+Your administrator assigns an authentication connector to each user. The assigned connector decides whether you must use MFA. Administrators can assign a connector that doesn't require MFA. For the connector types, see [Authentication](/docs/privilegesecure/26.07/configuration/authentication/overview.md).
 
 If your connector uses the built-in MFA, you register an authenticator application the first time you sign in.
 
@@ -79,15 +79,15 @@ This page appears only for local console users. If you sign in with a domain acc
 
 ## Idle timeout
 
-The console signs you out when you are idle. The **Idle Timeout (minutes)** setting under **System Settings** controls how long the console waits. The default is 10 minutes. Your administrator can change it. See [System settings reference](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md).
+The console signs you out when you're idle. The **Idle Timeout (minutes)** setting under **System Settings** controls how long the console waits. The default is 10 minutes. Your administrator can change it. See [System settings reference](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md).
 
-When the idle timeout passes, the **Session Timeout** dialog displays "Your session has been idle and will expire soon." Click **Keep Session Active** to keep working, or click **Logout** to sign out. If you take no action, the console signs you out 5 minutes later. With the default setting, you are signed out after about 15 minutes of inactivity.
+When the idle timeout passes, the **Session Timeout** dialog displays "Your session has been idle and will expire soon." Click **Keep Session Active** to keep working, or click **Logout** to sign out. If you take no action, the console signs you out 5 minutes later. With the default setting, you're signed out after about 15 minutes of inactivity.
 
 ![The Session Timeout dialog with the message Your session has been idle and will expire soon, and the Keep Session Active and Logout buttons.](/images/privilegesecure/26.07/user-guide/idle-timeout-warning.webp)
 
 ## Session closed
 
-The console shows a **Session Closed** dialog with the message "Your session has been closed." when your session token is revoked, for example when you sign in again elsewhere. Click **Logout** to return to the sign-in page. When another sign-in caused it, the message adds "due to a login at IP Address" and the address.
+The console shows a **Session Closed** dialog with the message "Your session has been closed." This happens when your session token is revoked, for example when you sign in again elsewhere. Click **Logout** to return to the sign-in page. When another sign-in caused it, the message adds "due to a login at IP Address" and the address.
 
 ## Account lockout
 

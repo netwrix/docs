@@ -19,7 +19,7 @@ This page describes the extension version in the Chrome Web Store and Microsoft 
 
 1. Click the Netwrix Privilege Secure icon on the browser toolbar.
 2. Enter the server address, `https://<nps-server>:6500`, when the extension asks for it.
-3. Sign in with your credentials, MFA, or an OpenID Connect provider, the same way you sign in to the console. See [Sign in to the console](/docs/privilegesecure/26.07/user-guide/sign-in.md).
+3. Sign in with your credentials, multi-factor authentication (MFA), or an OpenID Connect provider, the same way you sign in to the console. See [Sign in to the console](/docs/privilegesecure/26.07/user-guide/sign-in.md).
 
 The extension shows the activity list after you sign in.
 
@@ -43,7 +43,7 @@ Click the favorite icon next to an activity to move it to the top of the list.
 
 ### Current Tab
 
-The **Current Tab** tab shows the resource that matches the current page, with its activities expanded. Click an activity to start a session.
+On **Current Tab**, the extension shows the resource that matches the current page, with its activities expanded. Click an activity to start a session.
 
 ### Settings tab
 

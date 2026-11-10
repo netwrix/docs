@@ -36,12 +36,12 @@ This restriction blocks a command and sends an email:
 - **Email Recipient**: the address of a security mailbox
 - Rule: **Active** selected, **Match (regex)** set to `shutdown`, **Action to Perform** set to **Block**, and **Email** selected
 
-**Match (regex)** takes a regular expression in Go (RE2) syntax. The proxy tests the command line that the user typed when the user presses Enter. The expression matches if it matches any part of the line, so `shutdown` matches `sudo shutdown -h now`. To match the whole line, anchor the expression with `^` and `$`. If more than one rule matches, only the first match that the proxy finds applies, and that isn't necessarily the first matching rule in the console list. Avoid rules whose expressions overlap.
+**Match (regex)** takes a regular expression in Go (RE2) syntax. The proxy tests the command line that the user typed when the user presses Enter. The expression matches if it matches any part of the line, so `shutdown` matches `sudo shutdown -h now`. To match the whole line, anchor the expression with `^` and `$`. If more than one rule matches, only the first match that the proxy finds applies. That isn't necessarily the first matching rule in the console list. Avoid rules whose expressions overlap.
 
 The proxy skips a rule whose expression isn't valid.
 
 :::note
-Go (RE2) syntax isn't the same as the POSIX extended regular expressions that `sudoers` rules use, and a `sudoers` expression must match the whole command path or argument string. For `sudoers` patterns, see [Sudoers pattern reference](/docs/privilegesecure/26.07/configuration/service-accounts/sudoers-pattern-reference.md).
+Go (RE2) syntax isn't the same as the POSIX extended regular expressions that `sudoers` rules use. A `sudoers` expression must match the whole command path or argument string. For `sudoers` patterns, see [Sudoers pattern reference](/docs/privilegesecure/26.07/configuration/service-accounts/sudoers-pattern-reference.md).
 :::
 
 ## Command restriction fields

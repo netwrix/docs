@@ -98,7 +98,7 @@ The page also shows:
 
 ![Live Sessions toolbar with the Resolution list, Ctrl+Alt+Delete, and Close controls](/images/privilegesecure/26.07/remote-access-gateway/portal-resolution-menu.webp)
 
-The mouse pointer is drawn by guacd, the component that renders the session, and not by Privilege Secure. Privilege Secure sends no pointer-size setting, so the pointer keeps the size the target sends and the browser and guacd render it. The display itself scales to fit the browser window.
+The mouse pointer is drawn by guacd, the component that renders the session, and not by Privilege Secure. Privilege Secure sends no pointer-size setting. The pointer keeps the size the target sends, and the browser and guacd render it. The display itself scales to fit the browser window.
 
 ### Clipboard
 

@@ -35,7 +35,7 @@ Privilege Secure blocks every change request (create, update, and delete) from a
 
 ## Assign the permission
 
-You can add **Admin View Read Only** to the built-in Auditors role or to a custom role with the Auditors target. Use a custom role. The built-in Auditors role applies to everyone who holds it, so adding the permission there makes all of those users read-only.
+You can add **Admin View Read Only** to the built-in Auditors role or to a custom role with the Auditors target. Use a custom role. The built-in Auditors role applies to everyone who holds it. Adding the permission there makes all of those users read-only.
 
 1. In the left navigation, select **Users & Groups** > **Role Management**.
 2. Select **+** (**Add Role**).
@@ -44,7 +44,8 @@ You can add **Admin View Read Only** to the built-in Auditors role or to a custo
 5. In **Permission Assignment**, select **Admin View Read Only** and move it to the assigned column. Privilege Secure adds **Reporting** automatically.
 6. Select the **Users** tab, and then select **All Users**, or add the users whose sessions the auditors can see.
 7. Select the **Resources** tab, and then select **All Resources**, or add the resources the auditors can see.
-8. Select **Add Role Users**, choose the auditors, and select **Add**.
+8. Select **Add Role Users**.
+9. Choose the auditors, and then select **Add**.
 
 Read-only users still need session scope. Without **All Users** and **All Resources**, they see only the sessions of the users and resources you add on the **Users** and **Resources** tabs.
 
@@ -52,12 +53,12 @@ Read-only users still need session scope. Without **All Users** and **All Resour
 
 If you later remove **Reporting**, Privilege Secure also removes **Admin View Read Only**.
 
-Hover over **Admin View Read Only** to see this tooltip: *"Admin View Read Only" may overrule permissions granted by other custom roles assigned to the same user.*
+Hover over **Admin View Read Only** to see this tooltip: "Admin View Read Only" may overrule permissions granted by other custom roles assigned to the same user.
 
 Privilege Secure locks a permission in two cases and explains why in its tooltip. The tooltips still use the former permission name, "Auditing and Reporting", for **Reporting**:
 
-- When you select **Reporting** for removal, **Admin View Read Only** is locked with this tooltip: *"Admin View Read Only" will be removed automatically because it requires "Auditing and Reporting".*
-- While **Admin View Read Only** is selected to be added, **Reporting** is locked with this tooltip: *"Auditing and Reporting" is required by "Admin View Read Only".*
+- When you select **Reporting** for removal, **Admin View Read Only** is locked with this tooltip: "Admin View Read Only" will be removed automatically because it requires "Auditing and Reporting".
+- While **Admin View Read Only** is selected to be added, **Reporting** is locked with this tooltip: "Auditing and Reporting" is required by "Admin View Read Only".
 
 ## Example: read-only access for the compliance team
 

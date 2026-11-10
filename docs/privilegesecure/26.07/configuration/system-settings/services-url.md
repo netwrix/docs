@@ -1,10 +1,10 @@
 ---
-title: "Set the NPS REST URL and register services"
+title: "Set the NPS Rest URL and register services"
 description: "Set the address that Privilege Secure services use to reach the web service, then register the services so they use it."
 sidebar_position: 20
 ---
 
-# Set the NPS REST URL and register services
+# Set the NPS Rest URL and register services
 
 The Privilege Secure services run separately from the web service. They include the Action, Email, Host Scan, Proxy, Scheduler, and SIEM services. Each service calls the web service at the address in **NPS Rest URL**. If the address is wrong, the services show as offline on the **Service Nodes** page.
 
@@ -16,7 +16,7 @@ Change the address when you install a certificate for the console website, or wh
 - The certificate for the console website is installed and bound in Internet Information Services (IIS). See [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md).
 - The IIS binding host name, the certificate subject, and the host name in the new URL match.
 
-## Set the NPS REST URL
+## Set the NPS Rest URL
 
 1. Select **System Settings** > **Services**.
 1. In **NPS Rest URL**, enter the address of the web service. Use the form `https://<nps-server>:6500`, where `<nps-server>` is the name in the certificate. For example: `https://<nps-server-fqdn>:6500`.
@@ -46,11 +46,11 @@ Register Services writes the URL to the Action, Email, Proxy, Scheduler, SIEM, a
 
 A second **Register Services** button is under **User Options** > **Settings**. It shows the text "Re-register services that are running on the Netwrix Privilege Secure Web Service server. Doing this will regenerate the settings and restart the services." Use it when the services are running but the console still warns that a service isn't registered.
 
-The **Settings** item is shown to users who have the Administrator role in Privilege Secure and to local users. Other users don't see it.
+Users who have the Administrator role in Privilege Secure, and local users, see the **Settings** item. Other users don't see it.
 
 ## Check that the services are running
 
-After you register the services, select **Configuration** > **Service Nodes** and confirm each service shows as online. Register Services stops and starts each service that runs on the web service server, including the Host Scan service, and waits up to 60 seconds for each change. If a service doesn't stop or start in that time, the console doesn't show an error. If Host Scan stays offline, restart the Host Scan service in Windows Services on the server.
+After you register the services, select **Configuration** > **Service Nodes** and confirm each service shows as online. Register Services stops and starts each service that runs on the web service server, including the Host Scan service. It waits up to 60 seconds for each change. If a service doesn't stop or start in that time, the console doesn't show an error. If Host Scan stays offline, restart the Host Scan service in Windows Services on the server.
 
 ## Related topics
 

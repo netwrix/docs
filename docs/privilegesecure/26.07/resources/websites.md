@@ -15,7 +15,7 @@ A website resource lets Netwrix Privilege Secure for Access Management (Privileg
 1. In **Enter Website Name**, enter the name that appears in the resource list, for example `Salesforce`.
 1. Check that **Platform** shows **Website**. You can't change it.
 1. Enter the **Logon URL**, the main sign-in page for the site, for example `https://login.example.com`. Privilege Secure uses it only when an activity doesn't specify a URL.
-1. Optional: In **Associated Resource**, select a server that Privilege Secure manages and that hosts the website. Active Directory account operations then run on the domain controller that the resource is bound to.
+1. (Optional) In **Associated Resource**, select a server that Privilege Secure manages and that hosts the website. Active Directory account operations then run on the domain controller that the resource is bound to.
 1. Select **Save**.
 
 ![The New Website page with the name, Platform, and Logon URL fields filled in.](/images/privilegesecure/26.07/resources/new-website-form.webp)
@@ -64,7 +64,7 @@ The **Username** must match the format in the **Login Account Template** field o
 1. Enter a **Display Name**, for example `Marketing admin`.
 1. Enter the **Username** in the format the activity expects.
 1. Enter the **Password**. Select the eye icon to show what you typed.
-1. Optionally, enter a **Comment** of up to 1,000 characters.
+1. (Optional) Enter a **Comment** of up to 1,000 characters.
 1. Select **Okay**.
 
 When you edit an account, the password field is named **Change Password (optional)**. Leave it empty to keep the current password.

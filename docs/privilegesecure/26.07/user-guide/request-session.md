@@ -25,11 +25,15 @@ If your license has expired, or Privilege Secure can't reach the license service
 1. Click **Dashboard** in the left navigation, then click the **Active** or **Scheduled** tile.
 2. Click **Create Session**. The **Activity Request** dialog opens.
 3. On the **Activity Selection** step, search for and select an activity. Click **Next >**.
-4. If the **Group Selection** step appears, select the groups or roles to assign. Click **Next >**. The step appears only for an activity that assigns users to groups or roles. For any other activity, the dialog skips it.
-5. On the **Resource Selection** step, select one or more resources in the table. Each selected resource has its own **Activity** list, so choose the activity to run on each one. Click **View Selections** to review your choices. Click **Next >**.
-6. On the **Notes** step, enter notes and a ticket number. Complete any custom fields. Click **Next >**.
-7. On the **Scheduling** step, choose **Now** or choose a date and time. Click **Next >**.
-8. On the **Review** step, check the summary. Click **Finish** to submit the request.
+4. If the **Group Selection** step appears, select the groups or roles to assign. Click **Next >**.
+
+   The step appears only for an activity that assigns users to groups or roles. For any other activity, the dialog skips it.
+5. On the **Resource Selection** step, select one or more resources in the table.
+6. In the **Activity** list of each selected resource, choose the activity to run on that resource.
+7. To review your choices, click **View Selections**. Click **Next >**.
+8. On the **Notes** step, enter notes and a ticket number. Complete any custom fields. Click **Next >**.
+9. On the **Scheduling** step, choose **Now** or choose a date and time. Click **Next >**.
+10. On the **Review** step, check the summary. Click **Finish** to submit the request.
 
 Use **< Previous** to go back a step. Click **Cancel** to close the dialog without a request.
 
@@ -46,7 +50,7 @@ The connection profile of your access policy decides what the **Notes** step ask
 - **Notes** and **Ticket Number** are required or optional. When a required field is empty, the step shows "Note required" or "Ticket required".
 - **Custom fields** appear with the label that the administrator set. A custom field can be required, and it holds an integer, a string, or a choice from a list. The **Notes** step shows the custom fields.
 
-If the profile uses a ServiceNow connector, the ticket number box takes the connector's label, and Privilege Secure checks the ticket before it accepts the request. See [Use ServiceNow tickets with sessions](/docs/privilegesecure/26.07/user-guide/servicenow-tickets.md).
+If the profile uses a ServiceNow connector, the ticket number box takes the connector's label. Privilege Secure checks the ticket before it accepts the request. See [Use ServiceNow tickets with sessions](/docs/privilegesecure/26.07/user-guide/servicenow-tickets.md).
 
 ## Scheduling
 

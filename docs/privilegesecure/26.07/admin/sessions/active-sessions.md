@@ -10,7 +10,7 @@ The **Active** tile lists sessions that are provisioning, available, or in progr
 
 To open them, select **Dashboard** in the left navigation, then select the **Active** or **Scheduled** tile. For an overview of all tiles, see [Dashboard](/docs/privilegesecure/26.07/admin/sessions/dashboard.md).
 
-## Active tab
+## Active tile
 
 ### Tabs and filters
 
@@ -19,7 +19,7 @@ The **Active** tile has two tabs:
 - **All Active** (the default) shows sessions for all users.
 - **Mine** shows sessions for the signed-in user.
 
-The filters are **Search**, **Resource name**, **User name**, and **Recording data**. The **Mine** tab has no **User name** filter. The **Recording data** filter works on keystroke data and, when the Remote Desktop Monitor is installed on the target hosts, on Windows event activity from RDP sessions. See [Install the Remote Desktop Monitor on target hosts](/docs/privilegesecure/26.07/install/rdp-monitor.md).
+The filters are **Search**, **Resource name**, **User name**, and **Recording data**. The **Mine** tab has no **User name** filter. The **Recording data** filter works on keystroke data. When the Remote Desktop Monitor is installed on the target hosts, it also works on Windows event activity from RDP sessions. See [Install the Remote Desktop Monitor on target hosts](/docs/privilegesecure/26.07/install/rdp-monitor.md).
 
 ### Toolbar
 
@@ -51,9 +51,9 @@ All buttons except **Create Session** stay disabled until you select a row. **Re
 
 Select the expand icon on a row to show more about the session. The expanded row has the live session viewer for a session in progress, and a replay viewer when a recording is available. If the user signed in more than once, the row lists one recording for each sign-in. See [Watch, lock, or terminate a live session](/docs/privilegesecure/26.07/admin/sessions/live-session-viewer.md) and [Replay a recorded session](/docs/privilegesecure/26.07/admin/sessions/replay-viewer.md).
 
-## Scheduled tab
+## Scheduled tile
 
-The **Scheduled** tile has no tabs and one filter, **Search**. The toolbar has only **Create Session** and **End Session**. The columns are the same as on the **Active** tab. A scheduled session has the status **Pending** until its start time.
+The **Scheduled** tile has no tabs and one filter, **Search**. The toolbar has only **Create Session** and **End Session**. The columns are the same as on the **Active** tile. A scheduled session has the status **Pending** until its start time.
 
 ## Session statuses
 
@@ -62,7 +62,7 @@ The **Status** column uses these values on both tiles:
 | Status | Meaning |
 | --- | --- |
 | **Provisioning** | Privilege Secure is assigning permissions to the login account before the session. |
-| **Pending** | The scheduled start time is still in the future. Scheduled tab only. |
+| **Pending** | The scheduled start time is still in the future. Scheduled tile only. |
 | **Waiting for approval** | The session needs approval before it can begin. |
 | **Available** | The session is ready. The user can start it or sign in through a client. |
 | **Failed** | The provisioning stage encountered an error. |
@@ -111,4 +111,4 @@ If you selected **Any further activity with this account (Unlock via Users & Gro
 1. Select a session, and then select **View Logs** to see what happened while the session was provisioned.
 2. Select the expand icon on the row to watch the session live.
 
-![The Active tab with a session row selected and the toolbar enabled, showing Create Session, End Session, View Logs, and Lock Activity.](/images/privilegesecure/26.07/admin/active-session-selected.webp)
+![The Active tile with a session row selected and the toolbar enabled, showing Create Session, End Session, View Logs, and Lock Activity.](/images/privilegesecure/26.07/admin/active-session-selected.webp)

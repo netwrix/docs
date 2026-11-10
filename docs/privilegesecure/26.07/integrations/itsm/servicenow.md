@@ -25,10 +25,14 @@ The connector connects to ServiceNow with HTTP basic authentication over HTTPS. 
 Prepare the ServiceNow instance first.
 
 - An integration account in ServiceNow that can read and update the tickets of the type that the connector handles.
-- The `snc_basic_auth_api_access` role on that account. ServiceNow describes the role as granting basic authentication API access when the instance enforces the basic authentication restriction. Instances that restrict basic authentication reject the account with a generic 401 error without this role, even when the credentials are correct. A developer instance's sample `itil` user has the `itil` role but not this role. When an instance enforces the restriction and the account lacks the role, ServiceNow logs "denied basic-auth API call for interactive-login user" in its system log, and Privilege Secure reports "Unable to reach ServiceNow". To check, open **System Logs** > **System Log** > **All** in ServiceNow and look for "Basic authentication failed for user".
+- The `snc_basic_auth_api_access` role on that account.
 - A password that you set with the **Set Password** UI action in ServiceNow. Don't set the password by editing the field.
 - The ServiceNow host name, reachable over HTTPS from the Privilege Secure server.
 - A service account in Privilege Secure that holds the integration account's user name and password, to select in **System Credentials**. See [Service accounts](/docs/privilegesecure/26.07/configuration/service-accounts/service-accounts.md).
+
+ServiceNow describes the `snc_basic_auth_api_access` role as granting basic authentication API access when the instance enforces the basic authentication restriction. Instances that restrict basic authentication reject the account with a generic 401 error without this role, even when the credentials are correct. A developer instance's sample `itil` user has the `itil` role but not this role.
+
+When an instance enforces the restriction and the account lacks the role, ServiceNow logs "denied basic-auth API call for interactive-login user" in its system log, and Privilege Secure reports "Unable to reach ServiceNow". To check, open **System Logs** > **System Log** > **All** in ServiceNow and look for "Basic authentication failed for user".
 
 The Table API applies the access controls of your instance to the integration account. The account needs access to read the ticket table that the connector uses (`incident` or `change_request`). When **Add Comments To Ticket** is selected, it also needs access to write the **Work notes** and **State** fields of those tickets. In a default instance, the `itil` role grants read and write access to incident and change request records and their work notes. Custom access controls can change this, so check the controls on your instance. See the ServiceNow documentation on incident and change management roles.
 

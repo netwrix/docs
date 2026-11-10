@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Security hardening checklist
 
-After you install Netwrix Privilege Secure, review the settings that control how the server is exposed and how it protects secrets. Start with [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md), because the installer creates a self-signed certificate.
+After you install Netwrix Privilege Secure for Access Management (Privilege Secure), review the settings that control how the server is exposed and how it protects secrets. Start with [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md), because the installer creates a self-signed certificate.
 
 | Task | Where to find it |
 | --- | --- |

@@ -30,7 +30,7 @@ For how licensing works, including what consumes a license, see [Licensing](/doc
 
 The **Upload License File** section shows "Installed license successfully." and the page shows the new license details. If the import fails, the section shows "Error prevented license installation." with the reason. If the license is already active, the section shows "This license is already active".
 
-After a successful import, the license banner at the top of the console no longer appears, unless the new license is a trial, has no credits left, or expires within 10 days.
+After a successful import, the license banner at the top of the console no longer appears. It still appears if the new license is a trial, has no credits left, or expires within 10 days.
 
 ![The About page showing the product version 26.07.00003, the license type, and the Upload License File section with the Import License button.](/images/privilegesecure/26.07/install/about-page.webp)
 

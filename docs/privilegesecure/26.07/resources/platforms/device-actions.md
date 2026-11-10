@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Device account and session actions
 
-Privilege Secure manages local accounts on network devices and Linux or BSD hosts through SSH. Each platform has a set of command plans that run the actions: add, remove, enable, or disable an account; set its password; and add it to or remove it from a group. Some platforms also have session actions that report a signed-in user's state, end that user's processes, or send a message to that user's terminals.
+Netwrix Privilege Secure for Access Management (Privilege Secure) manages local accounts on network devices and Linux or BSD hosts through SSH. Each platform has a set of command plans that run the actions: add, remove, enable, or disable an account; set its password; and add it to or remove it from a group. Some platforms also have session actions that report a signed-in user's state, end that user's processes, or send a message to that user's terminals.
 
 The command plans are the same actions that Privilege Secure runs during a scan, a password rotation, or an activity. You don't run them by hand. Use this page to see what each action does on the target, and the commands it needs, so that a least-privilege account can run it. For the sudo policy that grants the Linux and BSD commands, see [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.07/configuration/service-accounts/linux-bsd-sudoers.md).
 
@@ -16,11 +16,11 @@ The command plans are the same actions that Privilege Secure runs during a scan,
 | --- | --- | --- | --- |
 | Add account | `useradd -m`, then `chpasswd` | `username <user> privilege <n> secret <pw>` and `password <pw>` | Set the user entry, then commit |
 | Remove account | `userdel -r`, then remove the home directory | `no username <user>` | Delete the user entry, then commit |
-| Enable account | `usermod -U` | (not supported) | (not supported) |
-| Disable account | `usermod -L` | (not supported) | (not supported) |
+| Enable account | `usermod -U` | (not supported) | Restore the password hash in the user entry, then commit |
+| Disable account | `usermod -L` | (not supported) | Lock the password hash in the user entry (set it to `*`), then commit |
 | Set password | `chpasswd` | `username <user> secret <pw>` and `password <pw>` | Set the user entry, then commit |
-| Add to a group | `usermod -aG` | (not supported) | (not supported) |
-| Remove from a group | `gpasswd -d` | (not supported) | (not supported) |
+| Add to a group | `usermod -aG` | (not supported) | Set the user as a device administrator for the named device group, then commit |
+| Remove from a group | `gpasswd -d` | (not supported) | Delete the device group from the user entry, then commit |
 
 ### Linux and BSD
 
@@ -51,7 +51,7 @@ Privilege Secure sets both the `secret` and the `password` value for an account,
 
 PAN-OS account actions use the management API, not the command line. Each action sets the user entry under `/config/mgt-config/users`, then runs a commit. The commit uses a partial commit for the management-plane administrator, and the plan polls the commit job until it reports finished.
 
-The PAN-OS plans set the user entry, so they cover **add account**, **remove account**, and **set password**. They also add and remove group membership.
+The PAN-OS plans set the user entry, so they cover **add account**, **remove account**, and **set password**. They enable and disable an account by changing the password hash in the user entry. Disable sets the hash to `*`, and enable restores the stored hash. They also add the user to a device group and remove the user from one. Adding sets the user as a device administrator for the group under `permissions/role-based/deviceadmin`, and removing deletes that group member. Each action commits and then reads the user entry back to confirm.
 
 ## Session actions
 

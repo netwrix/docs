@@ -41,7 +41,7 @@ The log window shows the progress and the result. The tool takes a few minutes, 
 
 Other servers that share the database need the new key. See [Export and import the key](/docs/privilegesecure/26.07/configuration/encryption-keys/encryption-keys.md#export-and-import-the-key).
 
-The export reads the key through AWS KMS, so run it on a server that has working AWS access. The import writes the key on the other server protected by that server's Windows machine key, not by AWS KMS, and the other server needs no AWS access to use it.
+The export reads the key through AWS KMS, so run it on a server that has working AWS access. The import writes the key on the other server, protected by that server's Windows machine key, not by AWS KMS. That server needs no AWS access to use it.
 
 ## Rotate the KMS key in AWS
 

@@ -36,7 +36,8 @@ The access role gives Privilege Secure a Client ID and a Client secret that it u
    | Tables | `SA_ADInventory_Domains`, `SA_SG_LocalAdmins_Details` |
    | Views | `SA_ADInventory_ComputersView`, `SA_ADInventory_UsersView` |
 
-1. Click **OK**, review the tables and views, and click **Next**.
+1. Click **OK**, and review the tables and views.
+1. Click **Next**.
 1. On the **Application Details** page, enter `Privilege Secure` as the application name.
 1. Set **Access Expiration**. Select **Access expires within** (the default is 72 hours) or **Access expires on specified date**.
 1. Select **Generate**, and copy the **Client ID** and the **Client secret**.
