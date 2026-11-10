@@ -11,6 +11,8 @@
  * - Easier maintenance and fewer places for errors
  */
 
+import { isIndexableSite } from './indexing.js';
+
 /**
  * @typedef {Object} ProductVersion
  * @property {string} version - Version string (e.g., "12.0", "saas")
@@ -32,13 +34,16 @@
  * @property {string[]} [categories] - Product categories (can belong to multiple)
  * @property {string} [icon] - Icon for the product
  * @property {string} [navbarGroup] - Products sharing a navbarGroup are shown as one nested submenu with this label inside their category dropdown
+ * @property {boolean} [hideFromNavbar] - Leave the product out of the navbar dropdowns and the landing page. Its pages stay reachable by URL.
+ * @property {boolean} [devOnly] - Build the product on docs-dev and locally but not on the production site (docs.netwrix.com). The pages still merge to main with the rest of dev; production just doesn't build them. Remove the flag to release the product.
+ * @property {boolean} [noIndex] - Keep the product out of search engines and site search: its pages carry a noindex tag and are left out of the sitemap, production robots.txt disallows its routes, and it is not offered in the search product filter. Pair with hideFromNavbar for an unlisted product such as a beta.
  */
 
 /**
  * All Netwrix products and their configurations
  * @type {Product[]}
  */
-export const PRODUCTS = [
+const ALL_PRODUCTS = [
   {
     id: '1secure',
     name: '1Secure',
@@ -52,6 +57,26 @@ export const PRODUCTS = [
         label: 'Current',
         isLatest: true,
         sidebarFile: './sidebars/1secure.js',
+      },
+    ],
+  },
+  {
+    id: '1secureaisecurity',
+    name: '1Secure AI Security',
+    description: 'Pre-release documentation for Netwrix 1Secure AI Security',
+    path: 'docs/1secureaisecurity',
+    categories: ['Data Security Posture Management (DSPM)'],
+    icon: '',
+    hideFromNavbar: true, // Unlisted beta: reachable by URL only
+    noIndex: true,
+    devOnly: true, // Not built on production until the beta is released
+    versions: [
+      {
+        version: 'current',
+        label: 'Current',
+        isLatest: true,
+        sidebarFile: './sidebars/1secureaisecurity.js',
+        kb: false, // No Knowledge Base for the beta
       },
     ],
   },
@@ -615,9 +640,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '26.07',
+        label: '26.07',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/26.07.js',
+        apiSidebarPath: './docs/privilegesecure/26.07/api/reference/sidebar.ts',
+      },
+      {
         version: '26.03',
         label: '26.03',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/26.03.js',
       },
       {
@@ -627,7 +659,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
     ],
-    defaultVersion: '26.03',
+    defaultVersion: '26.07',
   },
   {
     id: 'privilegesecurediscovery',
@@ -760,6 +792,23 @@ export const PRODUCTS = [
     defaultVersion: '8.1',
   },
 ];
+
+/**
+ * True when this build is for the production site (docs.netwrix.com). The
+ * client bundle has no APP_EXTERNAL_URL, so there it is false and devOnly
+ * products stay in the list. That is harmless: they have no routes in production.
+ */
+function isProductionBuild() {
+  const url = typeof process !== 'undefined' ? process.env?.APP_EXTERNAL_URL : undefined;
+  return Boolean(url) && isIndexableSite(url);
+}
+
+/**
+ * Products the site builds. Products flagged devOnly are left out of the
+ * production build, so they get no plugin, routes, or pages there.
+ * @type {Product[]}
+ */
+export const PRODUCTS = ALL_PRODUCTS.filter((product) => !(product.devOnly && isProductionBuild()));
 
 /**
  * Product categories with their metadata
@@ -1015,7 +1064,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
         ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
-            .filter(item => !(item.type === 'doc' && (item.id?.endsWith('/changetracker-hub') || item.id?.endsWith('/netwrix-privilege-secure-for-discovery-api'))))
+            .filter(item => !(item.type === 'doc' && (item.id?.endsWith('/changetracker-hub') || item.id?.endsWith('/netwrix-privilege-secure-for-access-management-api') || item.id?.endsWith('/netwrix-privilege-secure-for-discovery-api'))))
         : [];
 
       // Build plugin configuration
@@ -1068,6 +1117,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
         versions: {
           current: {
             label: version.label,
+            ...(product.noIndex && { noIndex: true }),
           },
         },
       };

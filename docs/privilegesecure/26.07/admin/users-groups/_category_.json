@@ -1,0 +1,10 @@
+{
+  "label": "Users and Groups",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "users-groups"
+  }
+}

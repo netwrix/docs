@@ -1,0 +1,20 @@
+---
+title: "Security hardening checklist"
+description: "Harden a Privilege Secure server: replace the console certificate, restrict SSH algorithms, protect the encryption key with AWS KMS, and use WinRM HTTPS."
+sidebar_position: 80
+---
+
+# Security hardening checklist
+
+After you install Netwrix Privilege Secure for Access Management (Privilege Secure), review the settings that control how the server is exposed and how it protects secrets. Start with [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md), because the installer creates a self-signed certificate.
+
+| Task | Where to find it |
+| --- | --- |
+| Replace the console certificate with one from a trusted certificate authority | [Replace the web console certificate](/docs/privilegesecure/26.07/configuration/certificates.md) |
+| Renew the JWT signing certificate | [Renew the JWT signing certificate](/docs/privilegesecure/26.07/configuration/certificates.md#renew-the-jwt-signing-certificate) |
+| Restrict the SSH algorithms that Privilege Secure offers | [Configure SSH algorithms](/docs/privilegesecure/26.07/configuration/ssh-algorithms.md) |
+| Protect the encryption key in AWS Key Management Service | [Protect the encryption key with AWS KMS](/docs/privilegesecure/26.07/configuration/encryption-keys/aws-kms.md) |
+| Prefer HTTPS for WinRM connections by setting **WinRM HTTP Setting** to **Use Https Only**. The default, **Use Http**, connects over HTTP. | [Choose HTTP or HTTPS](/docs/privilegesecure/26.07/resources/secure-winrm.md#choose-http-or-https) |
+| Require strong passwords for local console users | [Local User Password](/docs/privilegesecure/26.07/configuration/system-settings/system-settings.md#local-user-password) |
+| Keep the Privilege Secure server off the managed domain | [Security Considerations: Non-Domain-Joined Netwrix Privilege Secure Server](/docs/kb/privilegesecure/certificates-and-security/security-considerations-non-domain-joined-netwrix-privilege-secure-server) |
+| Give the SQL Server backend only the permissions it needs | [Least Privilege Model for SQL Server Backend](/docs/kb/privilegesecure/database-and-backend/least-privilege-model-for-sql-server-backend) |

@@ -36,7 +36,7 @@ function stripHtmlTagsToText(input) {
 // Generate product options from PRODUCTS config
 const PRODUCT_OPTIONS = [
     {label: 'All products', value: '__all__'},
-    ...PRODUCTS.map(product => ({
+    ...PRODUCTS.filter(product => !product.noIndex).map(product => ({
         label: product.name,
         value: product.name,
     }))

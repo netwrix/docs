@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { isIndexableSite } from '../config/indexing.js';
-import { buildRobotsTxt } from './robotsTxt.js';
+import { buildRobotsTxt, noIndexRoutes } from './robotsTxt.js';
 
 test('docs.netwrix.com is crawlable and advertises its sitemap', () => {
   assert.equal(
@@ -20,4 +20,17 @@ test('only docs.netwrix.com is indexable', () => {
   assert.equal(isIndexableSite('https://docs.netwrix.com'), true);
   assert.equal(isIndexableSite('https://docs-dev.netwrix.com'), false);
   assert.equal(isIndexableSite('http://localhost:4500'), false);
+});
+
+test('docs.netwrix.com disallows the routes of noIndex products', () => {
+  const products = [
+    { id: 'listed', path: 'docs/listed', versions: [{ version: 'current' }] },
+    { id: 'beta', path: 'docs/beta', noIndex: true, versions: [{ version: 'current' }, { version: '2.0' }] },
+  ];
+  const routes = noIndexRoutes(products);
+  assert.deepEqual(routes, ['/docs/beta', '/docs/beta/2_0']);
+  assert.equal(
+    buildRobotsTxt('https://docs.netwrix.com', routes),
+    'User-agent: *\nAllow: /\nDisallow: /docs/beta\nDisallow: /docs/beta/2_0\n\nSitemap: https://docs.netwrix.com/sitemap.xml\n',
+  );
 });

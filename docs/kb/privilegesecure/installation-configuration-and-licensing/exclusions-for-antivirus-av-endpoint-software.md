@@ -1,8 +1,7 @@
 ---
 description: >-
-  Lists antivirus and endpoint protection exclusions required on Netwrix
-  Privilege Secure servers and registered remote nodes to ensure optimal
-  workflow performance.
+  Directories to exclude from antivirus and endpoint protection on Netwrix
+  Privilege Secure servers and registered remote nodes for optimal performance.
 keywords:
   - privilege secure
   - antivirus exclusions
@@ -14,28 +13,35 @@ keywords:
   - Postgres
   - performance
 products:
-  - privilege-secure-access-management
-sidebar_label: Exclusions for Antivirus (AV) & Endpoint Software
-tags: []
-title: "Exclusions for Antivirus (AV) & Endpoint Software"
+  - privilegesecure
+sidebar_label: "Configuring Exclusions for Antivirus (AV) & Endpoint Software"
+tags:
+  - kb
+  - installation-configuration-and-licensing
+title: "Configuring Exclusions for Antivirus (AV) & Endpoint Software"
 knowledge_article_id: kA04u0000000Hi8CAE
 ---
 
-# Exclusions for Antivirus (AV) & Endpoint Software
+# Configuring Exclusions for Antivirus (AV) & Endpoint Software
 
-## Summary
-Certain directories should be excluded from antivirus and endpoint protection on the Netwrix Privilege Secure (NPS) server and any registered remote nodes (ex. remote **Proxy Service**, remote **Action Service**) to ensure optimal performance of NPS workflows.
+## Overview
+
+This article describes the directories to exclude from antivirus and endpoint protection software on the Netwrix Privilege Secure for Access Management server and any registered remote nodes (for example, remote **Proxy Service**, remote **Action Service**) to ensure optimal performance of Privilege Secure workflows.
 
 Examples of unwanted behaviors caused by antivirus or endpoint protection include:
+
 - **NPS UI** fails to load or crashes to a blank page.
 - **NPS UI** experience errors in the browser's Developer Console.
 - **NPS UI** feels unresponsive, with pages taking much longer than usual to load.
-- Communication between the NPS server and its remote nodes feels slow (ex. service node's information UI takes a long time to load).
+- Communication between the Privilege Secure server and its remote nodes feels slow (for example, service node's information UI takes a long time to load).
 
 ## Instructions
-On all NPS servers and remote nodes running Action Services, Proxy Services, etc., you should exclude the following directories from antivirus and endpoint protection software. Please note a drive letter is not used in each path as that can be customized during each NPS and service installation.
 
-The following exclusions should be configured on each NPS server:
+On all Privilege Secure servers and remote nodes running Action Services, Proxy Services, and so on, exclude the following directories from antivirus and endpoint protection software.
+
+> **NOTE:** The paths do not include a drive letter because it can be customized during each Privilege Secure and service installation.
+
+Configure the following exclusions on each Privilege Secure server:
 
 ```text
 \Program Files\Stealthbits\PAM\ActionService
@@ -46,13 +52,13 @@ The following exclusions should be configured on each NPS server:
 \ProgramData\Stealthbits\PostgreSQL16
 ```
 
-The following exclusion should be configured on each server with a remote Proxy Service:
+Configure the following exclusion on each server with a remote Proxy Service:
 
 ```text
 \Program Files\Stealthbits\PAM\ProxyService
 ```
 
-The following exclusions should be configured on each server with a remote Action Service:
+Configure the following exclusions on each server with a remote Action Service:
 
 ```text
 \Program Files\Stealthbits\PAM\ProxyService
@@ -60,7 +66,7 @@ The following exclusions should be configured on each server with a remote Actio
 \Program Files\Stealthbits\PAM\ActionServiceWorker
 ```
 
-The following exclusions should be configured on each server with a remote Action Service and Host Scan Service:
+Configure the following exclusions on each server with a remote Action Service and Host Scan Service:
 
 ```text
 \Program Files\Stealthbits\PAM\ProxyService
@@ -69,7 +75,7 @@ The following exclusions should be configured on each server with a remote Actio
 \Program Files\Stealthbits\PAM\HostScanService
 ```
 
-The following exclusions should be configured on each server with a remote Scheduler Service:
+Configure the following exclusions on each server with a remote Scheduler Service:
 
 ```text
 \Program Files\Stealthbits\PAM\ProxyService

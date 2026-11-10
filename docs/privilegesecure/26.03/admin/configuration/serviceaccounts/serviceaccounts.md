@@ -26,7 +26,7 @@ has the following features:
   table or list is filtered to the matching results.
 - **Green + button** — Create a new service account. See the
   [Add Service Account](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccount.md) topic for additional information.
-- **Trashcan icon** — Deletes the service account. Icon appears when activity is hovered over. A
+- **Trashcan icon** — Deletes the service account. The icon appears when you hover over the service account. A
   confirmation window displays.
 
 The selected service account details display at the top of the main pane:
@@ -44,20 +44,21 @@ The selected service account details display at the top of the main pane:
   [Microsoft Entra ID App Registration](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/entraidappregistration.md) for
   additional information.
 - **Elevation Command** — Displays the elevation mechanism for the host, such as: sudo, pbrun, pmrun,
-  dzdo, etc. This field only applies to Linux platforms.
+  dzdo, etc. This field only applies to Linux platforms. For the sudo permissions the account needs, see
+  [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/linuxbsdsudoers.md).
 - **Vault Connector** — Displays the name of the assigned vault connector. See the
   [Bring Your Own Vault (BYOV) Integration](/docs/privilegesecure/26.03/admin/configuration/integrationconnector/integrationbyov/integrationbyov.md) topic for additional
   information.
 - **Authentication**:
   - **Enable Password** — Temporarily elevates the Service Account to `Privileged EXEC` mode, allowing
     the account to manage the users and privileges required by Privilege Secure workflows on Cisco
-    resources. The Enable Password can be used with any existing user account on the Cisco device
+    resources. You can use the Enable Password with any existing user account on the Cisco device
     (privilege level 1 - 15). This field only applies to Cisco platforms.
   - **Authentication Method** — Displays the method by which a service account is authenticated. This
     field only applies to Linux platforms.
-    - **Password** — Use a password to use for authentication
-    - **SSH Certificate** — Use an SSH certificate to use for authentication
-    - **SSH Certificate and Password** — Use both a password and an SSH certificate to use for
+    - **Password** — Use a password for authentication
+    - **SSH Certificate** — Use an SSH certificate for authentication
+    - **SSH Certificate and Password** — Use both a password and an SSH certificate for
       authentication
   - **Password** — Contains the service account password. The Eye icon lets you view the
     password. This field doesn't apply to Microsoft Entra ID platforms.
