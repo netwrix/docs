@@ -12,8 +12,6 @@
 # 1Secure team
 /docs/1secure/ @netwrix/1secure-docs
 /sidebars/1secure.js @netwrix/1secure-docs
-/docs/1secureaisecurity/ @netwrix/1secure-docs
-/sidebars/1secureaisecurity.js @netwrix/1secure-docs
 /static/files/1secure/ @netwrix/1secure-docs
 /static/images/1secure/ @netwrix/1secure-docs
 
