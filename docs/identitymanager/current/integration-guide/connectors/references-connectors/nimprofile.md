@@ -14,12 +14,12 @@ This page is about [NIM Profile](../../../integration-guide/connectors/reference
 
 ## Overview
 
-The NIM (Netwrix Identity Manager) Profile connector enables Identity Manager to manage its own profile assignments. This connector allows you to:
+The NIM (Netwrix Identity Manager) Profile connector enables Identity Manager to manage its own profile assignments. With this connector, you can:
 
 - Automatically assign profiles based on rules
 - Include assigned profiles in access certification campaigns
 - Apply separation of duties risk rules to Identity Manager profile permissions
-- Leverage the full governance lifecycle (approval workflows, audit trails, role mining, etc.)
+- Use the full governance lifecycle (approval workflows, audit trails, role mining, etc.)
 
 The connector supports two operational modes:
 
@@ -49,7 +49,7 @@ The user generating the [NIM Profile Template](#configuration-template) must hav
 
 The NIM Profile connector uses an automated configuration wizard that generates the necessary connector configuration based on a template.
 
-More specifically, based on the profiles, dimensions and entity types in the target instance, the wizard will generate and deploy:
+Based on the profiles, dimensions, and entity types in the target instance, the wizard generates and deploys:
 - Entity types and associations
 - Single roles (one per profile)
 - Resource types
@@ -60,10 +60,10 @@ More specifically, based on the profiles, dimensions and entity types in the tar
 - A dedicated category for the connector
 
 ![NIM Profile Modal](/images/identitymanager/nimProfileModal_v63.png)
-When generating the configuration, as seen above, the following elements need to be specified:
+When you generate the configuration, specify the following elements:
 - **Policy**: Defines where to include the category, single roles, resource types, and rules
 - **Profile**: Defines the profile used to specify the access control rules
-- **MenuItem**: Determines where to nest the sub-menu items for the NIM connector in the user interface (see screenshot below showing menu item locations). For example, in the demo configuration, `Nav_Connectors` should be used. Parent Menu Item `Nav` can be used. It will add the items to the root of the navigation left panel on the Home page. For more information, refer to the [Menu Item documentation](../../toolkit/xml-configuration/user-interface/menuitem).
+- **MenuItem**: Determines where to nest the sub-menu items for the NIM connector in the user interface (the following screenshot shows menu item locations). For example, in the demo configuration, use `Nav_Connectors`. You can also use the parent menu item `Nav`, which adds the items to the root of the navigation left panel on the Home page. For more information, refer to the [Menu Item documentation](../../toolkit/xml-configuration/user-interface/menuitem).
 
 ![NIM Profile Menu Items](/images/identitymanager/nimProfile_MenuItem_v63.png)
 
@@ -72,7 +72,7 @@ In complex scenarios, when the owner entity type is different from the identity 
 :::
 
 :::warning
-Do not set `CorrelateMultiple` to `true` on the generated Resource Types. The wizard generates the Resource Types, including one per identity correlation path. Enabling `CorrelateMultiple` breaks the correct behavior of the connector.
+Don't set `CorrelateMultiple` to `true` on the generated Resource Types. The wizard generates the Resource Types, including one per identity correlation path. Enabling `CorrelateMultiple` breaks the correct behavior of the connector.
 :::
 
 The connector supports scenarios where:
@@ -82,9 +82,9 @@ The connector supports scenarios where:
 - Users have both time-limited and permanent profile assignments
 
 :::warning
-The product currently faces limitations concerning evolutions:
+The product faces limitations concerning evolutions:
 - If the target instance's configuration changes (profiles added or removed, dimensions modified, ...), the connector configuration may become outdated. This could lead to uncorrelated resources for newly added profiles. For now, the only option is to re-create a connection and re-run the configuration wizard to regenerate the connector configuration.
-- Since the generation of the template also creates hard coded resources, it is not yet possible to export the configuration from one environment and import it in another environment. The template needs to be generated using the wizard in the second environment too.
+- Since the generation of the template also creates hard coded resources, it isn't yet possible to export the configuration from one environment and import it in another environment. Generate the template with the wizard in the second environment too.
 :::
 
 ### Local Mode vs Remote Mode
@@ -101,7 +101,7 @@ When the owner entity type differs from the identity entity type, binding expres
 
 In Remote mode, the source and target instances are different.
 
-The wizard cannot automatically determine how to map identities between the source and the target Identity Manager instances. The following steps must therefore be performed:
+The wizard can't automatically determine how to map identities between the source and the target Identity Manager instances. Therefore, perform the following steps:
 - Locate Placeholder Expressions (for Query and Correlation Rule): Placeholders contain the text "PLACEHOLDER" and include guidance.
 - Update Query Rules: For each Resource Type, replace the placeholder with an expression that returns the target instance user identifier.
 
@@ -120,7 +120,7 @@ The wizard cannot automatically determine how to map identities between the sour
   - If correlation fails (0 matches found), review and correct the user binding expressions
 
 :::warning
-In Remote mode, if placeholder expressions are not replaced, the connector will appear to work (Export and Synchronization jobs complete successfully), but no correlation will occur.
+In Remote mode, if placeholder expressions aren't replaced, the connector will appear to work (Export and Synchronization jobs complete successfully), but no correlation will occur.
 :::
 
 ## Export
@@ -142,7 +142,7 @@ The connection configuration is created through the UI during connector setup.
 
 For Local mode, no additional connection settings are required beyond selecting "Local" mode.
 
-For Remote mode, the connection settings must be configured through the UI or in the `appsettings.agent.json` > `Connections` section:
+For Remote mode, configure the connection settings through the UI or in the `appsettings.agent.json` > `Connections` section:
 
 ```json
 // appsettings.agent.json
@@ -185,7 +185,7 @@ As well as a file named `<connectionIdentifier>_Profile.csv`, with columns for:
 - **Identifier**: Reference of the profile
 - **DisplayName_L1**: Name of the profile
 
-Additional CSV files are generated for profile context values (dimensions as well as categories, single roles, bundles and resource types).
+Additional CSV files are generated for profile context values (dimensions as well as categories, single roles, bundles, and resource types).
 
 ## Fulfill
 
@@ -193,12 +193,12 @@ This connector provisions profile assignments to the target Identity Manager ins
 
 :::note
 The `BlockProvisioning` property is set to `true` and the `ApprovalWorkflowType` is set to `ManualAssignmentNotAllowed` on generated Resource Types.
-Therefore provisioning must occur through the Role Model engine based on Single Role assignments only. Once the orders are created, they have to be reviewed in the Provisioning Review screen.
+Therefore provisioning must occur through the Role Model engine based on Single Role assignments only. After the orders are created, review them in the Provisioning Review screen.
 :::
 
 ### Configuration
 
-The fulfillment configuration is automatically generated by the wizard and includes:
+The wizard automatically generates the fulfillment configuration, which includes:
 
 - **Resource Type Mappings**: Type `NimResourceTypeMapping` linked to the NIM Profile connection
 - **Provisioning Rules**: Navigation rules for profile and parameter values, Scalar rules for dates
@@ -254,21 +254,21 @@ The connector:
 
 ### Computed profiles display as non-conforming
 
-[ProfileRules](../../toolkit/xml-configuration/access-control/profilerulecontext) will continue to be computed. To ensure that computed profiles are properly recognized by the Compute Role Model job and do not display as non-conforming, Profile rules should be written through Single Role rules as for other connectors, rather than using ProfileRules.
+[ProfileRules](../../toolkit/xml-configuration/access-control/profilerulecontext) will continue to be computed. To ensure that computed profiles are properly recognized by the Compute Role Model job and don't display as non-conforming, write Profile rules through Single Role rules as for other connectors, rather than using ProfileRules.
 
 ## Authentication
 
 ### Password Reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential Protection
 
-For Remote mode connections, data protection can be ensured through:
+For Remote mode connections, you can protect data with:
 
 - [RSA Encryption](../../../integration-guide/network-configuration/agent-configuration/rsa-encryption) configured in the `appsettings.encrypted.agent.json` file
 - An [Azure Key Vault](../../../integration-guide/network-configuration/agent-configuration/azure-key-vault) safe
 
 Consider storing API credentials in:
 
-- A [CyberArk's AAM Credential Providers](../../../integration-guide/network-configuration/agent-configuration/cyberark-application-access-manager-credential-providers) able to store the target instance URL and API credentials
+- A [CyberArk Application Access Manager (AAM) Credential Providers](../../../integration-guide/network-configuration/agent-configuration/cyberark-application-access-manager-credential-providers) able to store the target instance URL and API credentials
