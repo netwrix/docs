@@ -43,7 +43,7 @@ From the home page, click **Access Certification Campaigns** in the **Administra
 
 Click the **+** button in the top right, then fill in the campaign details.
 
-![New Certification Campaign](/images/identitymanager/certifcampaign_newcertificationcampaign_v602.webp)
+![New Certification Campaign](/images/identitymanager/certifcampaign_newcertificationcampaign_v720.webp)
 
 **Configure the campaign**
 
@@ -57,11 +57,12 @@ Click the **+** button in the top right, then fill in the campaign details.
 | **Target Entity Type** | The type of entity the campaign will review. |
 | **Target Reviewers** | The identities responsible for performing the review. Reviewers are configured separately via [Access Certification policies](../../../integration-guide/governance/accesscertification). |
 | **Reviewer Mode** | Determines how reviewers act on each certification item — see below. |
+| **Allowed Actions** | The actions reviewers can take on a certification item besides approving or refusing it: **Delegate**, **Forward**, **Indicate "Not for me"** and **Apply bulk**. See [Allowed Actions](#allowed-actions). |
 
 **Reviewer Mode**
 
 - **Single** — each item is reviewed by exactly one reviewer.
-- **Multiple** — several reviewers can act on the same item. Any of them can approve or refuse it, and decisions stay editable until confirmed. "Delegation", "Forward" and "Not for me" actions aren't available in this mode.
+- **Multiple** — several reviewers can act on the same item. Any of them can approve or refuse it, and decisions stay editable until confirmed. "Delegation", "Forward" and "Not for me" actions are not available in this mode. **Apply bulk** is the only additional allowed action available.
 
 #### Multiple Reviewer Mode
 
@@ -72,8 +73,9 @@ Click the **+** button in the top right, then fill in the campaign details.
 3. **Editing before confirmation** — as long as decisions have not been confirmed, any authorized reviewer can edit and change a decision made by another reviewer.
 4. **Confirmation locks decisions** — once a reviewer confirms decisions, the decision can no longer be modified.
 
-> :::note 
+:::note
 **On simultaneous conflicting decisions:** in rare cases where two reviewers submit conflicting decisions at the same moment, the system resolves the conflict by applying the last received decision, consistent with how conflicts are handled in role reviews elsewhere in the product.
+:::
 
 ##### Confirming Decisions
 
@@ -81,7 +83,7 @@ When a reviewer clicks **Confirm Decisions**:
 
 - Only the decisions that the reviewer has personally made are finalized.
 - Decisions made by other reviewers are confirmed independently when those reviewers confirm their own decisions.
-- Confirmed decisions can't be modified.
+- Confirmed decisions cannot be modified.
 
 In the **Confirm Decisions** tab, each reviewer can see a summary that includes:
 
@@ -92,14 +94,37 @@ In the **Confirm Decisions** tab, each reviewer can see a summary that includes:
 
 #### Allowed Actions
 
-This section groups optional behaviors that can be enabled for a campaign. this includes **Delegation**.
+This section groups the optional actions that can be enabled for a campaign. Reviewers can use them on a certification item in addition to approving or refusing it.
+
+| Action | Description |
+|---|---|
+| **Delegate** | Asks another user for input as a recommendation. Responsibility stays with the original reviewer. See [Delegation](#delegation) for more details. |
+| **Forward** | Transfers certification responsibility to another reviewer, who then owns the decision. This action is irreversible, and an item can be forwarded to only one person. |
+| **Indicate "Not for me"** | Lets the reviewer flag an item as not relevant to them. Once confirmed, the item is removed from the reviewer's scope and cannot be forwarded or delegated afterward. |
+| **Apply bulk** | Lets the reviewer apply any of the other enabled actions to several items at once. |
+
+In **Multiple** reviewer mode, only **Apply bulk** is available.
+
+##### Bulk Actions
+
+When **Apply bulk** is selected, reviewers can apply an enabled action to several certification items at once during the review. Bulk actions do not require a specific permission.
+
+###### Audit
+
+Bulk actions are audited as follows:
+
+- **Per-item history:** forwarding, delegating, revoking a delegation and indicating "Not for me" each add an entry to the **Activity History** of every item they change, as when the action is performed on a single item.
+- **Comment:** the entry's comment states the action followed by `by bulk action`, for example `Forwarded by bulk action`. A comment entered by the reviewer is appended after a dash.
+- **Campaign report:** bulk actions are also recorded in the campaign's Certification Report.
+- **Result summary:** when the action completes, the reviewer sees how many items were changed and how many were skipped. Items that already have the requested state are skipped.
+- **Failures:** if a bulk action fails, the reviewer sees a generic error message. The technical details are written to the server log only.
 
 ##### Delegation
 
 For campaigns using `Single` reviewer mode, the **Delegation** checkbox is available under **Allowed Actions** during campaign creation. This lets reviewers hand off individual items to another reviewer. Note that:
 
-- This setting can't be changed once the campaign is created.
-- It isn't available for `Multiple` reviewer mode campaigns.
+- This setting cannot be changed once the campaign is created.
+- It is not available for `Multiple` reviewer mode campaigns.
 - To make this checkbox available, the **Delegation** feature must first be activated in the **Features** section of the settings.
 
 ###### Reviewer Experience
@@ -114,7 +139,7 @@ When delegation is enabled, reviewers see a tab on the **Access Certification** 
 
 A **Delegate** action is available on any undelegated item in **My Items** (items with an active delegation or a recorded decision don't show this action). Clicking **Delegate** opens a side panel to select a recipient and add an optional comment; the item then moves to **Delegated to Others**.
 
-An item is in **Delegated to Others** while it has a delegatee and the reviewer hasn't recorded a decision on it. Once the reviewer decides, the item moves back to **My Items**. The delegatee and their recommendation are kept and appear in the Certification Report. Bulk actions use the same rule: **Revoke Delegation** applies only to items in **Delegated to Others**.
+An item is in **Delegated to Others** while it has a delegatee and the reviewer hasn't recorded a decision on it. Once the reviewer decides, the item moves back to **My Items**. The delegatee and their recommendation are kept and appear in the Certification Report. Bulk actions use the same rule: **Revoke Delegation** applies only to items currently in **Delegated to Others**.
 
 To revoke a delegation, use **Revoke Delegation** on an item in **Delegated to Others**. This returns the item to **My Items**, removes it from the delegatee's view, and clears the delegatee's comment and decision.
 
@@ -125,7 +150,7 @@ The delegatee gets an immediate email notification with the campaign name and de
 - **Approve** or **Refuse** — a recommendation visible to the reviewer in **Delegated to Others**.
 - **Not For Me** — sends the item back to the reviewer's **My Items** tab with an activity indicator; the delegatee's comment is preserved in the audit trail.
 
-Delegatees can't delegate or transfer items further.
+Delegatees cannot delegate or transfer items further.
 
 ###### Confirming Delegated Decisions
 
@@ -175,7 +200,7 @@ Depending on the target entity type you chose, extra filters may appear here as 
 
 **Example:** the campaign below targets all assigned single roles for two specific users.
 
-![Campaign Example](/images/identitymanager/certifcampaign_example_v602.webp)
+![Campaign Example](/images/identitymanager/certifcampaign_example_v720.webp)
 
 ### Step 3: Save the campaign
 
