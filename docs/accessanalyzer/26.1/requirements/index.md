@@ -24,7 +24,7 @@ On a distribution the installer doesn't recognize, the preflight check reports a
 
 ### Log Volume
 
-Every container in the platform writes its log under `/var/log/pods`, and that includes the PostgreSQL log. Each container keeps up to 50 MB of log before it discards the oldest, and the platform runs about 70 containers, so pod logs alone can reach about 3.5 GB. The system journal and `/var/log/syslog` sit on the same volume. `--storage-dir` doesn't move any of these logs.
+Every container in the platform, including PostgreSQL, writes its log under `/var/log/pods`. Each container keeps up to 50 MB of log before it discards the oldest, and the platform runs about 70 containers, so pod logs alone can reach about 3.5 GB. The system journal and `/var/log/syslog` sit on the same volume. `--storage-dir` doesn't move any of these logs.
 
 If `/var/log` is a separate mount, give it at least 10 GB. When `/var/log` fills up, services that write logs can stop working, PostgreSQL among them. To free space on a full volume, run these commands, then restart any pod that failed:
 
