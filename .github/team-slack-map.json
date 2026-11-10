@@ -7,6 +7,10 @@
     "U0B9W5E5MSS",
     "U0B9Z9NTKH8"
   ],
+  "@netwrix/1secureaisecurity-docs": [
+    "U0B9GP10407",
+    "U0B9EQA5TH6"
+  ],
   "@netwrix/accessanalyzer-docs": [
     "U0B7Q76MZN3",
     "U0B899MVCSG",
@@ -48,7 +52,6 @@
   ],
   "@netwrix/directorymanager-docs": [
     "U0B9GP10407",
-    "U0B9Z8C8XL2",
     "U0BATJ89MCY",
     "U0BA2U1JEKW",
     "U0B9X7PUJ2J",
@@ -136,6 +139,7 @@
     "U0B9GP10407",
     "U0B9RQSQHHR",
     "U0B9Y67TRA6",
+    "U0B9Y6D52RG",
     "U0B9X7SCDV4"
   ],
   "@netwrix/team-dspm-accessanalyzerclassic": [
