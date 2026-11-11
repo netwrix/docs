@@ -6,7 +6,7 @@ sidebar_position: 3.5
 
 If you've administered Access Analyzer Classic, the Windows console product, most of what you did there has a counterpart in Access Analyzer 26.1 under a different name. This page maps each Access Analyzer Classic concept to its Access Analyzer equivalent, notes what works differently, and links to the page that covers it. [Key concepts](key-concepts.md) defines each Access Analyzer term on its own.
 
-Access Analyzer doesn't convert an Access Analyzer Classic installation. Data that Access Analyzer Classic collected stays in its own database, and Access Analyzer starts collecting from its first scan.
+Access Analyzer doesn't convert an Access Analyzer Classic installation. Data that Access Analyzer Classic collected stays in its own database, and Access Analyzer starts collecting from its first scan. Access Analyzer also runs on its own Linux server, not on the Windows server that runs Access Analyzer Classic. [Requirements](../requirements/index.md) lists what that server needs.
 
 ## Concept Mapping
 
