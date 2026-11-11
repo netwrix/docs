@@ -58,7 +58,7 @@ Use both files together, and don't change their contents.
 
 ### What the scripts do
 
-`secureone_management.ps1` runs on the Windows device. It requires the `Microsoft.PowerShell.LocalAccounts` module, version 1.0.0 or later. It takes a target and an action, and it returns structured JSON. With no parameters, it returns the members of the built-in Administrators group (SID `S-1-5-32-544`), which is what the sensor uses. When the product starts the package, it passes the target and action as parameters. The script supports the following targets.
+`secureone_management.ps1` runs on the Windows device. It requires the `Microsoft.PowerShell.LocalAccounts` module, version 1.0.0 or later. It takes a target and an action, and it returns structured JSON. With no parameters, it returns the members of the built-in Administrators group, which has the security identifier (SID) `S-1-5-32-544`. The sensor uses this output. When the product starts the package, it passes the target and action as parameters. The script supports the following targets.
 
 | Target | Actions |
 | --- | --- |
@@ -199,7 +199,7 @@ A configuration has no effect until you assign it to a domain or to systems. See
 
 ## Test one system
 
-Test with one system before you enable bulk scanning. Rescan can also run configured policy actions, so use a system with [Protect mode](../../configuration/onboard-systems/add-a-test-system-to-protect-mode.md), which removes administrator accounts that aren't persistent, and [Offline Access Management (OAM)](../../admin/systems/offline-access-management.md) disabled for the first test.
+Test with one system before you enable bulk scanning. Rescan can also run configured policy actions, so use a system that has [Protect mode](../../configuration/onboard-systems/add-a-test-system-to-protect-mode.md) and [Offline Access Management (OAM)](../../admin/systems/offline-access-management.md) disabled for the first test. Protect mode removes administrator accounts that aren't persistent.
 
 1. Open the Tanium Cloud configuration, and confirm that **Enable Bulk Scan** is set to **Disabled**.
 2. Select **Management** > **Systems**, and open the test system. Under **Access** > **Grant Access**, set **Scan Mode** to **Enabled** and **EDR Integration** to the Tanium Cloud configuration.
