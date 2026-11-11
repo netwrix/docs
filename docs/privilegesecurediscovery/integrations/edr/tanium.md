@@ -23,7 +23,7 @@ Start with one test system, and confirm its results before you enable bulk scann
 In Privilege Secure for Discovery:
 
 - Tanium Cloud appears in the provider list by default from release 26.06. You don't need to turn on a feature. If it's missing, contact Netwrix Support.
-- The Scan account and directory configuration that the product needs to scan Windows systems. These requirements still apply when you enable **Skip Direct Connection**.
+- The Scan account and directory configuration that the product needs to scan Windows systems. See [Scan Mode Account](../../requirements/service-accounts.md#scan-mode-account). These requirements still apply when you enable **Skip Direct Connection**.
 - HTTPS access (TCP 443) from the server to your Tanium Cloud API host. If the server uses a proxy, configure it under **Configure** > **Server** > **Proxy Configuration**.
 
 In Tanium Cloud:
@@ -111,8 +111,8 @@ If you already created the sensor or package, back up their definitions and file
 
 Enable collection in Tanium Data Service so that the product can read cached sensor values.
 
-1. In Tanium, open the sensor collection settings for Tanium Data Service. The location depends on your Tanium version. In older versions, select **Modules** > **Interact** > **Overview** > **Settings**. See the Tanium documentation for your tenant.
-2. Find **NPSD Admin Members**, and register it for collection. In older versions, select **Actions** > **Add**.
+1. In Tanium, select **Modules** > **Interact** > **Overview**, and select **Settings** > **Registration and Collection**. See [Managing sensor results collection through TDS](https://help.tanium.com/bundle/ug_interact_cloud/page/interact/tds.html#enable_sensor_caching) in the Tanium documentation.
+2. Find **NPSD Admin Members**, and select **Actions** > **Add** to register it for collection.
 3. Preview the results, and select **Confirm**.
 4. Optionally, select **Collect Now**.
 
@@ -159,7 +159,7 @@ The product supplies the parameter value as JSON when it starts the package. Don
 5. Copy the token to a secret manager. Tanium doesn't show it again.
 6. Get the API host from your Tanium administrator. It can differ from the host of the Tanium console. Use the host exactly as supplied, with `https://` and without a `/api/v2` suffix.
 
-See the Tanium [authentication documentation](https://developer.tanium.com/site/global/docs/how_tos/auth/index.gsp) for the token options.
+See the Tanium [authentication documentation](https://help.tanium.com/bundle/ug_console_cloud/page/platform_user/console_api_tokens.html) for the token options.
 
 ## Add the provider configuration
 
@@ -178,20 +178,18 @@ See the Tanium [authentication documentation](https://developer.tanium.com/site/
 10. Select **Test Connection**. The product shows `<name> EDR Integration configuration validated successfully.` when the connection works. This test checks only that the API is reachable and that the token is valid. It doesn't check the sensor, the package, the computer group, or action deployment.
 11. Select **Save**.
 
-The product shows a badge and warns administrators when they sign in if the token expires in 5 days or less. See [Provider tokens that expire](./overview.md#provider-tokens-that-expire). Create a new token and update the configuration before the old one expires.
+The provider list shows a warning label when the token expires within 14 days, and the label turns red within 5 days. Administrators also see an alert after they sign in when the token expires within 5 days. See [Provider tokens that expire](./overview.md#provider-tokens-that-expire). Create a new token and update the configuration before the old one expires.
 
 ### Set connection options
 
 | Setting | Default | Purpose |
 | --- | --- | --- |
-| **Skip Direct Connection** | Disabled | Controls the order for a refresh that you start, such as **Rescan**. When enabled, the product uses Tanium Cloud without first trying a direct connection. When disabled, it tries a direct connection first. Scheduled scans always try Tanium first, so this setting doesn't change them. Enable it when the server can't reach the devices. |
+| **Skip Direct Connection** | Disabled | Controls the order for a refresh that you start, such as **Rescan**, and for just-in-time access requests and their removal. When enabled, the product uses Tanium Cloud without first trying a direct connection. When disabled, it tries a direct connection first. Scheduled scans always try Tanium first, so this setting doesn't change them. Enable it when the server can't reach the devices. |
 | **Hostname Fallback** | Disabled | Matches a device by host name when Tanium doesn't find its fully qualified domain name. Keep it disabled unless you have checked how it works with your device names. Some lookups can still use host names, so resolve duplicate host names first. |
-| **Rate Limiting Enabled** | Enabled | Limits API requests during bulk operations. |
-| **Rate Limit (requests/second)** | 5.0 | The maximum sustained request rate. |
-| **Burst Capacity** | 10 | The maximum number of requests in a short burst. |
-| **Max Wait Time (seconds)** | 30.0 | The longest that a request waits for a rate limit slot. |
-
-The product always uses the default rate limit values. It doesn't save changes to these fields.
+| **Rate Limiting Enabled** | Enabled | Limits API requests during bulk operations. Always enabled. The product doesn't save changes. |
+| **Rate Limit (requests/second)** | 5.0 | The maximum sustained request rate. Fixed at 5.0. The product doesn't save changes. |
+| **Burst Capacity** | 10 | The maximum number of requests in a short burst. Fixed at 10. The product doesn't save changes. |
+| **Max Wait Time (seconds)** | 30.0 | The longest that a request waits for a rate limit slot. Fixed at 30.0. The product doesn't save changes. |
 
 The product waits up to 1200 seconds (20 minutes) for a single-device action to finish. The interface stores this value when you save an integration, and a stored value takes precedence over the product default. The interface has no setting for it. Contact Netwrix Support to change it.
 
@@ -201,20 +199,22 @@ A configuration has no effect until you assign it to a domain or to systems. See
 
 ## Test one system
 
-Test with one system before you enable bulk scanning. Rescan can also run configured policy actions, so use a system with Protect and Offline Access Management (OAM) disabled for the first test.
+Test with one system before you enable bulk scanning. Rescan can also run configured policy actions, so use a system with [Protect mode](../../configuration/onboard-systems/add-a-test-system-to-protect-mode.md), which removes administrator accounts that aren't persistent, and [Offline Access Management (OAM)](../../admin/systems/offline-access-management.md) disabled for the first test.
 
-1. Open the Tanium Cloud configuration, and confirm that **Bulk Scan** is disabled.
+1. Open the Tanium Cloud configuration, and confirm that **Enable Bulk Scan** is set to **Disabled**.
 2. Select **Management** > **Systems**, and open the test system. Under **Access** > **Grant Access**, set **Scan Mode** to **Enabled** and **EDR Integration** to the Tanium Cloud configuration.
-3. To confirm that the scan uses Tanium, enable **Skip Direct Connection** on a configuration that only this test system uses. Save it, and reopen it to confirm the value.
+3. To confirm that the scan uses Tanium, use a Tanium Cloud configuration that only this test system uses. If a domain or other systems use your configuration, create a second Tanium Cloud configuration with the same API details, and select it in **EDR Integration** in step 2. Enable **Skip Direct Connection** on that configuration, save it, and open it again to confirm the value.
 4. Select **Rescan**.
-5. When the operation finishes, look for the message `Successfully refreshed system via Tanium Cloud.` A success message that doesn't mention Tanium Cloud can mean that the scan used a direct connection.
+5. When the scan finishes, check the notification that appears on the page. It shows `Successfully refreshed system via Tanium Cloud.` when the scan used Tanium. If it shows `Successfully refreshed system` without Tanium Cloud, the scan used a direct connection.
 6. Compare the local administrators that the product shows with the members on the device. Confirm that the product updated the intended system.
 
 ## Configure bulk scanning
 
 A bulk scan reads every device in a Tanium computer group with one action instead of scanning each device in turn. The number of Tanium API calls stays small no matter how many devices the group holds.
 
-The scan runs on every device in the group. The product matches each result to a system by its fully qualified domain name or host name, regardless of the provider that the system uses. Assigning the configuration to systems doesn't limit the group, and choosing the group doesn't assign its members. If the group holds devices that the product doesn't manage, the action runs on those devices, and a result can match the wrong record or none. Create a dedicated Tanium computer group that holds only the intended systems. Start with a small static group, and compare its member names with the systems assigned to this configuration in both directions, not only their counts.
+The scan runs on every device in the group. The product matches each result to a system by its fully qualified domain name or host name, regardless of the provider that the system uses. Assigning the configuration to systems doesn't limit the group, and choosing the group doesn't assign its members. If the group holds devices that the product doesn't manage, the action runs on those devices, and a result can match the wrong record or none.
+
+Create a dedicated Tanium computer group that holds only the intended systems. Start with a small static group. Then compare names, not only counts. Confirm that every device in the group is a system assigned to this configuration, and that every system assigned to this configuration is in the group.
 
 1. Edit the Tanium Cloud configuration.
 2. Set **Enable Bulk Scan** to **Enabled**.
@@ -228,11 +228,16 @@ The scan runs on every device in the group. The product matches each result to a
    | **Bulk Scan Timeout (seconds)** | 600 | How long to wait for a bulk scan to finish. |
    | **Status Check Interval (seconds)** | 30 | How often to check a running bulk scan. |
    | **Bulk Scan Interval (hours)** | 4 | The minimum time between automatic bulk scans. It's not a fixed start time. Enter a positive whole number. |
-   | **Retry Failed Devices Individually** | Disabled | Scans devices that the bulk scan didn't read successfully one at a time. This includes `OFFLINE` devices. Leave it disabled for the first test, and enable it after per-system scans work. |
+   | **Retry Failed Devices Individually** | Disabled | Scans devices that the bulk scan didn't read successfully one at a time. This includes `OFFLINE` devices. Leave it disabled for the first bulk scan, and enable it after per-system scans work. |
 
 5. Select **Save**.
 
-Bulk scans run as part of the regular scan cycle, before the per-device scans. **Rescan** and **Scan Systems** scan one system and don't start a bulk scan. While bulk scanning is enabled, the product skips the per-device scan for every system that uses the configuration, including systems that aren't in the computer group. If **Retry Failed Devices Individually** is enabled, devices that the bulk scan couldn't read return to per-device scanning. A bulk scan collects inventory only. It doesn't run Protect, OAM, password rotation, or account changes. If a system needs those policy actions during every scan cycle, don't enable bulk scanning for its configuration, because the product skips the per-device scan that runs them.
+Bulk scans run as part of the regular scan cycle, before the per-device scans. **Rescan** and **Scan Systems** scan one system and don't start a bulk scan. If **Retry Failed Devices Individually** is enabled, devices that the bulk scan couldn't read return to per-device scanning.
+
+:::warning
+In each scan cycle that runs a bulk scan, the product skips the per-device scan for every system that uses the configuration, including systems that aren't in the computer group. A bulk scan collects inventory only. It doesn't run Protect, OAM, password rotation, or account changes. If a system needs those policy actions during every scan cycle, don't enable bulk scanning for its configuration.
+:::
+
 ### Monitor bulk scans
 
 Select **Management** > **Bulk Scans** to see the history of bulk scans, including start and end times, duration, status, and device counts. A scan has the status Completed, Partial, or Failed. The list has the following indicators.
@@ -258,6 +263,15 @@ Open a scan to see the result for each device. Each device has one of the follow
 
 In Tanium, select **Administration** > **Actions** > **Action History** to find the `NPSD Management` action and see which devices it targeted. If many devices fail, check the Tanium client on those devices, the API token, and the network path to Tanium Cloud. Compare a sample of successful results with the devices before you expand the group.
 
+## Validate the integration
+
+1. In Tanium **Interact**, ask for the `NPSD Admin Members` sensor on the test device only, and confirm that JSON results appear.
+2. In Privilege Secure for Discovery, select **Test Connection** on the configuration.
+3. Scan one system as described in [Test one system](#test-one-system), and confirm that its local administrators appear.
+4. If you use bulk scanning, confirm the first bulk scan in **Management** > **Bulk Scans**. See [Monitor bulk scans](#monitor-bulk-scans).
+
+Don't deploy the package manually with a test parameter. The product generates the package parameters when it runs a scan.
+
 ## Rotate the API token
 
 1. In Tanium, create a replacement token with the same permissions and an expiration date.
@@ -270,26 +284,17 @@ Changing **Token Expiry** in the product doesn't rotate the token or change the 
 ## Disable bulk scanning
 
 1. Edit the Tanium Cloud configuration, set **Enable Bulk Scan** to **Disabled**, and save it. Open the configuration again to confirm the change.
-2. Keep the provider enabled and the systems assigned to scan them one at a time through Tanium.
+2. To keep scanning these systems one at a time through Tanium, leave the provider enabled and the systems assigned to the configuration.
 3. Run **Rescan** on one test system, and check the next regular scan cycle.
 
-Disabling bulk scanning stops future bulk scans. An action that is already running can continue, and the product keeps the inventory it already saved. To cancel a running action, use your Tanium procedure.
+Disabling bulk scanning stops future bulk scans. An action that is already running can continue, and the product keeps the inventory it already saved. To cancel a running action, in Tanium select **Administration** > **Actions** > **Action History**, select the `NPSD Management` action, and select **Stop**. You can stop an action only while its status is Open.
 
 ## Remove the integration
 
 1. Assign the affected systems to a different configuration, and change any domain default that uses the provider. See [Delete a configuration](./overview.md#delete-a-configuration).
 2. Confirm that the replacement scan path works.
 3. Delete the Tanium Cloud configuration, and revoke its token in Tanium.
-4. Delete the sensor and the package in Tanium only if no other configuration uses them. Keep a backup of their definitions until the change is accepted.
-
-## Validate the integration
-
-1. In Tanium **Interact**, ask for the `NPSD Admin Members` sensor on the test device only, and confirm that JSON results appear.
-2. In Privilege Secure for Discovery, select **Test Connection** on the configuration.
-3. Scan one system as described in [Test one system](#test-one-system), and confirm that its local administrators appear.
-4. Enable bulk scanning, and confirm the first bulk scan in **Management** > **Bulk Scans**.
-
-Don't deploy the package manually with a test parameter. The product generates the package parameters when it runs a scan.
+4. Delete the sensor and the package in Tanium only if no other configuration uses them. Before you delete them, back up their definitions and files in case you need to set up the integration again.
 
 ## Troubleshoot the integration
 

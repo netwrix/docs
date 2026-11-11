@@ -18,7 +18,7 @@ An endpoint detection and response (EDR) integration lets Netwrix Privilege Secu
 
 ## How the integration works
 
-For a system that uses an EDR configuration, the product scans through the provider first. If that scan fails, it tries a direct connection. For Tanium Cloud, this order applies to scheduled scans. A refresh that you start tries a direct connection first unless you enable **Skip Direct Connection**. See [Set connection options](./tanium.md#set-connection-options). To change access on a device, the product runs its management script through the provider. Each provider guide describes the exact mechanism.
+For a system that uses an EDR configuration, the product scans through the provider first. If that scan fails, it tries a direct connection. For Tanium Cloud, this order applies to scheduled scans. A refresh that you start, such as **Rescan**, tries a direct connection first unless you enable **Skip Direct Connection**. See [Set connection options](./tanium.md#set-connection-options). To change access on a device, the product runs its management script through the provider. Each provider guide describes the exact mechanism.
 
 You create a provider configuration under **Configure** > **Server** > **EDR Provider Configuration**. A configuration has no effect until you assign it to a domain or to systems. You can create more than one configuration, for example one for each provider tenant, and assign each one to different systems.
 
