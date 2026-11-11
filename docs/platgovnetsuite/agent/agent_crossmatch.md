@@ -1,14 +1,14 @@
 ---
 title: "Using Agent Cross Match"
-description: "Using Agent Cross Match"
+description: "Use Agent Cross Match to filter a control's saved search results against a second saved search."
 sidebar_position: 35
 ---
 
 # Using Agent Cross Match
 
-_Agent Cross Match_ extends the filter capabilities of a control by using two saved searches: the _main search_ (the control's saved search) and the _Cross Match search_ (a second saved search). The results of the Cross Match search are used to join the results of the main search. The join uses the intersecting field that's defined in the **Cross Match Field**.
+_Agent Cross Match_ extends the filter capabilities of a control by using two saved searches: the _Main search_ (the control's saved search) and the _Cross Match search_ (a second saved search). The results of the Cross Match search are used to join the results of the main search. The join uses the intersecting field that's defined in the **Cross Match Field**.
 
-For example, use Cross Match to remove false positives from a search for transactions touched by an administrator. The main search returns all transactions by an administrator, the Cross Match search returns employees with the administrator role, and Cross Match returns only the transactions where both match.
+For example, use Cross Match to remove false positives from a search for transactions touched by employees from IT Department. The main search returns all transactions modified for the day, while the Cross Match search returns employees from the IT Department, and Cross Match returns only the transactions where the employee who touched the transaction also belongs to the IT Department.
 
 The Agent Cross Match is accessed from the Customization record for the control.
 
@@ -17,7 +17,7 @@ Before you begin, create the saved search to use as the Cross Match search. For 
 1. Open **Strongpoint** > **Financial Controls** > **Controls**.
 2. **Edit** the control to run.
 3. Open the **Controls** tab.
-4. Set **Control Type** to **Large Control**. Cross Match runs only on Large Controls.
+4. Set **Control Type** to **Large Control**. Cross Match is supported for Large Controls as well as Lookback Controls.
 5. Set **Cross Match Control** to the Cross Match search. This is the secondary search used for the join.
 6. Set the **Cross Match Field**. This is the main search field to match with the results of the Cross Match search. Skip this step if you use the Multiple Columns operator.
 7. Set **Cross Match Operator**. For the available operators, see [Cross Match operators](#cross-match-operators).
@@ -42,7 +42,7 @@ Each of the two comparisons can use the Text, Numeric, or Date data type.
 
 To set up a Multiple Columns Cross Match:
 
-1. Set **Cross Match Operator** to **Multiple Columns**. Leave **Cross Match Field** empty. The column table replaces it.
+1. Set **Cross Match Operator** to **Multiple Columns**. A **Cross Match Table** replaces the **Cross Match Field**.  This allows setting of up to 2 cross matches instead of 1.
 2. In each of the two rows of the column table, set the following:
    - **Data Type**: the data type to compare as.
    - **Main Control Search Columns**: the main search column to compare.
