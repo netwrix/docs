@@ -232,7 +232,7 @@ The scan runs on every device in the group. The product matches each result to a
 
 5. Select **Save**.
 
-Bulk scans run as part of the regular scan cycle, before the per-device scans. **Rescan** and **Scan Systems** scan one system and don't start a bulk scan. While bulk scanning is enabled, the product skips the per-device scan for every system that uses the configuration, including systems that aren't in the computer group. If **Retry Failed Devices Individually** is enabled, devices that the bulk scan couldn't read return to per-device scanning. A bulk scan collects inventory only. It doesn't run Protect, Offline Access Management (OAM), password rotation, or account changes. If a system needs those policy actions during every scan cycle, don't enable bulk scanning for its configuration, because the per-device scan that runs them is skipped.
+Bulk scans run as part of the regular scan cycle, before the per-device scans. **Rescan** and **Scan Systems** scan one system and don't start a bulk scan. While bulk scanning is enabled, the product skips the per-device scan for every system that uses the configuration, including systems that aren't in the computer group. If **Retry Failed Devices Individually** is enabled, devices that the bulk scan couldn't read return to per-device scanning. A bulk scan collects inventory only. It doesn't run Protect, Offline Access Management (OAM), password rotation, or account changes. If a system needs those policy actions during every scan cycle, don't enable bulk scanning for its configuration, because the product skips the per-device scan that runs them.
 ### Monitor bulk scans
 
 Select **Management** > **Bulk Scans** to see the history of bulk scans, including start and end times, duration, status, and device counts. A scan has the status Completed, Partial, or Failed. The list has the following indicators.
@@ -244,7 +244,7 @@ Select **Management** > **Bulk Scans** to see the history of bulk scans, includi
 | **Offline** | Devices that didn't respond. This doesn't always mean that the device is powered off. Check the last Tanium check-in and the action log. A stalled package process can appear as Offline instead of a timeout. |
 | **Failed** | Devices that returned an error, timed out, or returned data that the product couldn't parse. Open the scan to see the result for each device. |
 | **Unmatched** | Results that the product couldn't match to a system. Correct the device names and the system assignment before you add more devices. |
-| **Status** | Completed means that the group action finished. It doesn't mean that every device succeeded or that every result was stored. |
+| **Status** | Completed means that the group action finished. It doesn't mean that every device succeeded or that the product stored every result. |
 
 Open a scan to see the result for each device. Each device has one of the following results.
 
