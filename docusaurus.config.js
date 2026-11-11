@@ -15,6 +15,7 @@ import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects 
 import { threatPrevention81Redirects } from './src/config/redirects/threatprevention-8.1.js';
 import { directoryManager110Redirects } from './src/config/redirects/directorymanager-11.0.js';
 import { privilegeSecure42Redirects } from './src/config/redirects/privilegesecure-4.2.js';
+import { platgovsalesforceRestructureRedirects } from './src/config/redirects/platgovsalesforce-restructure.js';
 import { privilegeSecure2603Redirects } from './src/config/redirects/privilegesecure-26.03.js';
 import { isIndexableSite } from './src/config/indexing.js';
 import { identityRecovery31Redirects } from './src/config/redirects/identityrecovery-3.1.js';
@@ -226,6 +227,7 @@ const config = {
           ...(activeProductIds.includes('threatprevention') ? threatPrevention81Redirects : []),
           ...(activeProductIds.includes('directorymanager') ? directoryManager110Redirects : []),
           ...(activeProductIds.includes('privilegesecure') ? privilegeSecure42Redirects : []),
+          ...(activeProductIds.includes('platgovsalesforce') ? platgovsalesforceRestructureRedirects : []),
           ...(activeProductIds.includes('privilegesecure') ? privilegeSecure2603Redirects : []),
           ...(activeProductIds.includes('identityrecovery') ? identityRecovery31Redirects : []),
           ...(activeProductIds.includes('changetracker')
