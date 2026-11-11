@@ -33,7 +33,7 @@ The agent needs a host of its own. You can't run `install-agent` on the Access A
 
 | Requirement | Details |
 |---|---|
-| Operating system | A RHEL-family or Debian-family Linux distribution. Preflight warns on a distribution it doesn't recognize. |
+| Operating system | A Linux distribution in the Red Hat Enterprise Linux (RHEL) or Debian family. Preflight warns on a distribution it doesn't recognize. |
 | Access | Root, either directly or through `sudo`. `install-agent` stops with `install-agent must run as root: re-run it with sudo` otherwise. |
 | Architecture | The same CPU architecture as the server when the server runs from offline media. The in-cluster registry holds connector images only for the server's architecture, so `install-agent` refuses a host with another one. |
 | CPU | 2 cores. |
