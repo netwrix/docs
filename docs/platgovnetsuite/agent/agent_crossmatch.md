@@ -6,7 +6,7 @@ sidebar_position: 35
 
 # Using Agent Cross Match
 
-_Agent Cross Match_ extends the filter capabilities of a control by using two saved searches: the _Main search_ (the control's saved search) and the _Cross Match search_ (a second saved search). The results of the Cross Match search are used to join the results of the main search. The join uses the intersecting field that's defined in the **Cross Match Field**.
+_Agent Cross Match_ extends the filter capabilities of a control by using two saved searches: the _main search_ (the control's saved search) and the _Cross Match search_ (a second saved search). The results of the Cross Match search are used to join the results of the main search. The join uses the intersecting field that's defined in the **Cross Match Field**.
 
 For example, use Cross Match to remove false positives from a search for transactions touched by employees from IT Department. The main search returns all transactions modified for the day, while the Cross Match search returns employees from the IT Department, and Cross Match returns only the transactions where the employee who touched the transaction also belongs to the IT Department.
 
@@ -37,13 +37,13 @@ Before you begin, create the saved search to use as the Cross Match search. For 
 
 ## Multiple Columns operator
 
-The Multiple Columns operator lets you fine tune the Cross Match by comparing two columns from the main search with two columns from the Cross Match search.
-Each of the two comparisons can use the Text, Numeric, or Date data type.
+The Multiple Columns operator lets you refine the Cross Match by comparing two columns from the main search with two columns from the Cross Match search.
+Each of the two comparisons can use the Text, Number, or Date data type.
 
 To set up a Multiple Columns Cross Match:
 
-1. Set **Cross Match Operator** to **Multiple Columns**. A **Cross Match Table** replaces the **Cross Match Field**.  This allows setting of up to 2 cross matches instead of 1.
-2. In each of the two rows of the column table, set the following:
+1. Set **Cross Match Operator** to **Multiple Columns**. A **Cross Match Table** replaces the **Cross Match Field**.  The table has two rows, so you can define up to two comparisons. In this case, a row matches only when both comparisons are true.
+2. In each row of the Cross Match Table, set the following:
    - **Data Type**: the data type to compare as.
    - **Main Control Search Columns**: the main search column to compare.
    - **Operator**: the comparison to use. For the available operations, see the following table.
