@@ -1,2 +1,5 @@
 # bash fails on CRLF, and Git for Windows checks out CRLF by default.
 *.sh text eol=lf
+
+# The Tanium management script keeps CRLF so its published SHA-256 hash stays valid.
+static/files/privilegesecurediscovery/tanium/*.ps1 -text
