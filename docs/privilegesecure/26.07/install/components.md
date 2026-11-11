@@ -1,0 +1,82 @@
+---
+title: "Installation package contents"
+description: "Look up the installers and tools in the Privilege Secure download, and which installer to use for each component."
+sidebar_position: 20
+---
+
+# Installation package contents
+
+The Netwrix Privilege Secure for Access Management (Privilege Secure) download is a zip file named `privilegesecure-accessmanagement-<version>.zip`. It contains the Setup Launcher, the main installer, and standalone installers for services and tools.
+
+![The extracted download package with the NPS_Setup.exe launcher and the Pre-Reqs and Extras folders.](/images/privilegesecure/26.07/install/installation-package-contents.webp)
+
+## Main files
+
+| File | Description |
+| --- | --- |
+| `NPS_Setup.exe` | Opens the Netwrix Setup Launcher. The launcher checks prerequisites, installs PostgreSQL, and installs or upgrades the application. See [Install the application server](/docs/privilegesecure/26.07/install/install-application-server.md). |
+| `Pre-Reqs` folder | Contains the installer for .NET Framework 4.7.2. |
+| `Extras` folder | Contains the standalone installers in the next table. |
+
+The Setup Launcher looks for `NPS.exe` and `NetwrixPostgreSQL16.exe` in the `Extras` folder first, and then in its own folder.
+
+:::warning
+The Setup Launcher checks for PowerShell 7.6 or later but doesn't install it. Install it before you run `NPS.exe`. See [Application server requirements](/docs/privilegesecure/26.07/requirements/application-server.md).
+:::
+
+## Extras folder
+
+![The Extras folder with the standalone installers, such as NPS.exe, the service installers, and the diagnostic tools.](/images/privilegesecure/26.07/install/extras-folder.webp)
+
+| File | Description |
+| --- | --- |
+| `NPS.exe` | Installs the Privilege Secure application. The Setup Launcher runs it by default. |
+| `NetwrixPostgreSQL16.exe` | Installs the bundled PostgreSQL 16 database. The Setup Launcher runs it by default. It installs the PostgreSQL 16 service, directory, and database. |
+| `NPS.DbCfg.msi` | Installs the Netwrix Privilege Secure Database Configuration Tool, which points Privilege Secure at a local or remote PostgreSQL or SQL Server database. |
+| `NPS.ActionService.exe` | Installs an Action service on another server. |
+| `NPS.HostScanService.msi` | Installs a Host Scan service on another server. |
+| `NPS.SchedulerService.exe` | Installs a Scheduler service on another server. |
+| `NPS.SiemService.exe` | Installs a SIEM service on another server. |
+| `NPS.ProxyService` | Installs a Proxy service on another server. It is available as an `.exe` and an `.msi` file. Use the `.msi` file with a software deployment tool. |
+| `NPS.TSMon.exe` | Installs the Remote Desktop Monitor on target Windows hosts. |
+| `NPS.HaMgr.exe` | The high availability manager tool. Copy it to the server and run it. See [High availability](/docs/privilegesecure/26.07/install/high-availability.md). |
+| `SbPAMPowershellModules.msi` | Installs the Privilege Secure PowerShell modules, which run custom PowerShell scripts against the application API. Requires PowerShell 7.6 or later. |
+| `sbpam-url.exe` | Installs the `sbpam-url` URL handler, which starts SSH sessions from the browser in your preferred SSH client. |
+| `Enablement Toolkit.exe` | Installs a graphical utility for common troubleshooting tests. |
+| `ADSyncDiagnostic.exe` | A diagnostic tool for Active Directory synchronization. |
+| `launch-website` folder | Contains `launch-website.exe`, which starts a web application session on a Remote Desktop Services host. See [Configuring the Netwrix Privilege Secure RDS Web App Launcher](/docs/kb/privilegesecure/remote-desktop-and-rds/configuring-the-netwrix-privilege-secure-rds-web-app-launcher). |
+| `NPS.LaunchApp` folder | Contains the application launcher for Remote Desktop Services hosts. |
+| `Netwrix Endpoint Policy Manager Client-Side Extension x64.msi` and `Netwrix Endpoint Policy Manager Client-Side Extension ARM64.msi` | The Netwrix Endpoint Policy Manager client-side extension for x64 and ARM64 Windows. |
+| `NPS Endpoint Group Policy Snap-In x64.msi` | The Group Policy snap-in for Privilege Secure. |
+
+The package has no standalone Email service installer.
+
+## What NPS.exe installs
+
+`NPS.exe` installs the following components on the application server:
+
+- Web service, which hosts the console and the API in Microsoft Internet Information Services (IIS)
+- License service
+- Action service
+- Host Scan service
+- Scheduler service
+- Email service
+- SIEM service
+- Proxy service
+
+It also installs the .NET 10 Hosting Bundle, the Microsoft Visual C++ runtime, and the IIS features that it needs, if the server doesn't already have them.
+
+You can install the Action, Host Scan, Scheduler, SIEM, and Proxy services on other servers with the standalone installers. See [Install services on additional servers](/docs/privilegesecure/26.07/install/additional-services.md).
+
+## Installer options
+
+The installers that run from the command line accept the Windows installer bootstrapper switches, such as `/quiet` and `/log`. See [Install silently](/docs/privilegesecure/26.07/install/silent-install.md).
+
+:::note
+Disable antivirus software on the server during installation, as the Setup Launcher recommends.
+:::
+
+## Related packages
+
+- The Remote Access Gateway has its own package. See the [Remote Access Gateway overview](/docs/privilegesecure/26.07/remote-access-gateway/overview.md).
+- The browser extension installs from the browser store. See [Browser extension](/docs/privilegesecure/26.07/user-guide/browser-extension/browser-extension.md).

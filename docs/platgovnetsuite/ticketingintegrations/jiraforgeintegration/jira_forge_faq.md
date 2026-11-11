@@ -6,7 +6,7 @@ sidebar_position: 4
 
 # Jira Forge FAQs and Basic Troubleshooting
 
-This section covers frequently asked questions and basic troubleshooting for the Platform Governance for NetSuite Jira Forge app.
+This section covers frequently asked questions and basic troubleshooting for the Strongpoint for NetSuite Jira Forge app.
 
 ## Can you install the Forge app alongside the Strongpoint Connect app?
 

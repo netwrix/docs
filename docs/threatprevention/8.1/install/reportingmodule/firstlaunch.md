@@ -40,7 +40,7 @@ You have now set the built-in ADMIN account password.
 
 If you set the Enable MFA option to OFF, you need no additional configuration and the Netwrix
 Threat Manager Reporting Module Console opens. See the
-[Set Up the Threat Manager Reporting Module](/docs/threatprevention/8.1/gettingstarted.md#set-up-the-threat-manager-reporting-module)
+[Set Up the Threat Manager Reporting Module](/docs/threatprevention/8.1/gettingstarted/gettingstarted.md#set-up-the-threat-manager-reporting-module)
 topic for initial configuration information.
 
 If you set the Enable MFA option to ON, you must register an MFA authenticator. Proceed to
@@ -66,5 +66,5 @@ to the authenticator application or device. Save this list of codes for account 
 
 After you configure MFA for this account, the Netwrix Threat Manager Reporting Module console opens.
 See the
-[Set Up the Threat Manager Reporting Module](/docs/threatprevention/8.1/gettingstarted.md#set-up-the-threat-manager-reporting-module)
+[Set Up the Threat Manager Reporting Module](/docs/threatprevention/8.1/gettingstarted/gettingstarted.md#set-up-the-threat-manager-reporting-module)
 topic for the next steps.

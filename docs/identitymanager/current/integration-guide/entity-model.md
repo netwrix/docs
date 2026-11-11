@@ -10,7 +10,7 @@ At the heart of any successful IGA project, dwells an efficient data model.
 
 The data involved in the project, be it reference data, identities, or from the managed systems', needs to be modeled in a way that is both relevant to the organization and to Identity Manager.
 
-Identity Manager�allows integrators to adapt the data model to the target organization, instead of forcing the organization to fit in a pre-conceived hardwired model. This philosophy has proven successful by Identity Manager's field experience and project feedback.
+Identity Manager allows integrators to adapt the data model to the target organization, instead of forcing the organization to fit in a pre-conceived hardwired model. This philosophy has proven successful by Identity Manager's field experience and project feedback.
 
 ## Entity-Relationship model
 
@@ -107,11 +107,11 @@ An element `<EntityPropertyExpression>` can be used to calculate a scalar proper
 
 #### Display name
 
-Every declared **EntityType** automatically has the `InternalDisplayName` property even if it is not explicitly declared in the applicative configuration.
+Every declared **EntityType** automatically has the `InternalDisplayName` property even if it isn't explicitly declared in the applicative configuration.
 
 It represents a user-friendly name for **EntityType** that is used in the UI if needed.
 
-Its value can be explicitly computed by an [Entity Type](../integration-guide/toolkit/xml-configuration/metadata/entitytype) property expression. Otherwise, a default value is automatically computed by Identity Manager�using the first property of the **EntityType** where `identifier` contains the string _"name"_. If no such property is found, the first declared property of the **EntityType** is used instead.
+Its value can be explicitly computed by an [Entity Type](../integration-guide/toolkit/xml-configuration/metadata/entitytype) property expression. Otherwise, a default value is automatically computed by Identity Manager using the first property of the **EntityType** where `identifier` contains the string _"name"_. If no such property is found, the first declared property of the **EntityType** is used instead.
 
 The _InternalDisplayName_ property will be used as a default label of the entity in the UI.
 
@@ -137,7 +137,7 @@ Identity Manager's Entity Model also contains **a mapping** between the external
 
 This information is provided by the [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping), their [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) and [Entity Association Mapping](../integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping).
 
-To build Identity Manager�resources from external data found in the managed system, the entity model provides a mapping between the external data (often in the form of CSV files, see [Upward Data Synchronization](../integration-guide/synchronization/upward-data-sync)) and entity properties. This information is provided by the [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping), their [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping)and [Entity Association Mapping](../integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping).
+To build Identity Manager's resources from external data found in the managed system, the entity model provides a mapping between the external data (often in the form of CSV files, see [Upward Data Synchronization](../integration-guide/synchronization/upward-data-sync)) and entity properties. This information is provided by the [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping), their [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping)and [Entity Association Mapping](../integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping).
 
 Every [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping)maps a CSV column to a scalar [Entity Type](../integration-guide/toolkit/xml-configuration/metadata/entitytype).
 
@@ -145,34 +145,34 @@ Every [Entity Association Mapping](../integration-guide/toolkit/xml-configuratio
 
 #### Format
 
-When exporting entries from an external system, the results are usually retrieved as simple strings, written in a CSV file, and imported into the Identity Manager�Database as-is. But an external system will rarely uses the same format as Identity Manager to store objects such as dates.
+When exporting entries from an external system, the results are usually retrieved as simple strings, written in a CSV file, and imported into the Identity Manager's Database as-is. But an external system will rarely uses the same format as Identity Manager to store objects such as dates.
 
 Let's take, for example, a case where we want to store an employee's start date:
 
 - In the external system, the date is stored as a string with the format `2020-09-29 22:00:00`.
 - In Identity Manager, dates are stored as strings in the format `20200929220000`
 
-We need to transform the input data, from the export, into something readable by Identity Manager�and, when writing to the external system, transform Identity Manager's data back into something readable by the external system.
+We need to transform the input data, from the export, into something readable by Identity Manager and, when writing to the external system, transform Identity Manager's data back into something readable by the external system.
 
 ![Export and Fulfill Data transformation](/images/identitymanager/entitypropertymapping-format-flowchart.webp)
 
-The format used in the external system can be provided through the [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) using the [References: Format for the EntityPropertyMapping](../integration-guide/connectors/entitypropertymapping-format) attribute to help Identity Manager�to convert data appropriately.
+The format used in the external system can be provided through the [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) using the [References: Format for the EntityPropertyMapping](../integration-guide/connectors/entitypropertymapping-format) attribute to help Identity Manager to convert data appropriately.
 
-If the field in the external system is not forced to a specific value type, but is free-form (example: a string field in which date values are stored but which can sometimes hold other values), we strongly recommend not using the `Format` attribute to prevent inconsistent user input in the external system.
+If the field in the external system isn't forced to a specific value type, but is free-form (example: a string field in which date values are stored but which can sometimes hold other values), we strongly recommend not using the `Format` attribute to prevent inconsistent user input in the external system.
 
 #### Primary key
 
-When writing an [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping), one of the _scalar properties_ should be chosen as primary key. This property will be used by Identity Manager�to [uniquely identify a resource](https://en.wikipedia.org/wiki/Primary_key). It is hence crucial to choose carefully as many of Identity Manager's processes and optimizations depend on this choice.
+When writing an [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping), one of the _scalar properties_ should be chosen as primary key. This property will be used by Identity Manager to [uniquely identify a resource](https://en.wikipedia.org/wiki/Primary_key). It is hence crucial to choose carefully as many of Identity Manager's processes and optimizations depend on this choice.
 
 ### SQL views
 
-The `UR_Resource` table contains resources from all the connectors, for all the Entity Types. Columns names are not semantically meaningful because they have generic I\*/C\* names. For this reason, Identity Manager�provides SQL views to help the user explore the resource repository from the database. The views are useful to understand how Identity Manager�works or to debug a faulty configuration.
+The `UR_Resource` table contains resources from all the connectors, for all the Entity Types. Columns names aren't semantically meaningful because they have generic I\*/C\* names. For this reason, Identity Manager provides SQL views to help the user explore the resource repository from the database. The views are useful to understand how Identity Manager works or to debug a faulty configuration.
 
 SQL Views are built by the [Create Database Views Task](../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/createdatabaseviewstask).
 
 SQL Views created by this tool are identified in the database by a `zz_` prefix.
 
-Created views are not used by the Identity Manager�engine directly. Identity Manager's engine always creates, reads, updates and deletes from the `UR_*` tables.
+Created views aren't used by the Identity Manager engine directly. Identity Manager's engine always creates, reads, updates and deletes from the `UR_*` tables.
 
 ## Records
 

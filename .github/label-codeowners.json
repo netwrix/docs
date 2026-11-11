@@ -1,6 +1,7 @@
 {
   "1secure": "@netwrix/1secure-docs",
   "access-analyzer": "@netwrix/accessanalyzer-docs",
+  "dspm-access-analyzer": "@netwrix/team-dspm-accessanalyzerclassic",
   "access-information-center": "@netwrix/accessinformationcenter-docs",
   "activity monitor": "@netwrix/activitymonitor-docs",
   "auditor": "@netwrix/auditor-docs",

@@ -15,11 +15,22 @@
 /static/files/1secure/ @netwrix/1secure-docs
 /static/images/1secure/ @netwrix/1secure-docs
 
+# 1Secure AI Security team
+/docs/1secureaisecurity/ @netwrix/1secureaisecurity-docs
+/sidebars/1secureaisecurity.js @netwrix/1secureaisecurity-docs
+/static/files/1secureaisecurity/ @netwrix/1secureaisecurity-docs
+/static/images/1secureaisecurity/ @netwrix/1secureaisecurity-docs
+
 # Access Analyzer team
-/docs/accessanalyzer/ @netwrix/accessanalyzer-docs
-/sidebars/accessanalyzer/ @netwrix/accessanalyzer-docs
-/static/files/accessanalyzer/ @netwrix/accessanalyzer-docs
-/static/images/accessanalyzer/ @netwrix/accessanalyzer-docs
+/docs/accessanalyzer/11.6/ @netwrix/team-dspm-accessanalyzerclassic
+/sidebars/accessanalyzer/11.6.js @netwrix/team-dspm-accessanalyzerclassic
+/static/images/accessanalyzer/11.6/ @netwrix/team-dspm-accessanalyzerclassic
+/docs/accessanalyzer/12.0/ @netwrix/team-dspm-accessanalyzerclassic
+/sidebars/accessanalyzer/12.0.js @netwrix/team-dspm-accessanalyzerclassic
+/static/images/accessanalyzer/12.0/ @netwrix/team-dspm-accessanalyzerclassic
+/docs/accessanalyzer/26.1/ @netwrix/accessanalyzer-docs
+/sidebars/accessanalyzer/26.1.js @netwrix/accessanalyzer-docs
+/static/images/accessanalyzer/26.1/ @netwrix/accessanalyzer-docs
 
 # Access Information Center team
 /docs/accessinformationcenter/ @netwrix/accessinformationcenter-docs
@@ -94,10 +105,18 @@
 /static/images/passwordsecure/ @netwrix/passwordsecure-docs
 
 # PingCastle team
-/docs/pingcastle/ @netwrix/pingcastle-docs
-/sidebars/pingcastle/ @netwrix/pingcastle-docs
-/static/files/pingcastle/ @netwrix/pingcastle-docs
-/static/images/pingcastle/ @netwrix/pingcastle-docs
+/docs/pingcastleenterprise/ @netwrix/pingcastle-docs
+/sidebars/pingcastleenterprise/ @netwrix/pingcastle-docs
+/static/files/pingcastleenterprise/ @netwrix/pingcastle-docs
+/static/images/pingcastleenterprise/ @netwrix/pingcastle-docs
+/docs/pingcastlepro/ @netwrix/pingcastle-docs
+/sidebars/pingcastlepro/ @netwrix/pingcastle-docs
+/static/files/pingcastlepro/ @netwrix/pingcastle-docs
+/static/images/pingcastlepro/ @netwrix/pingcastle-docs
+/docs/pingcastlecommunity/ @netwrix/pingcastle-docs
+/sidebars/pingcastlecommunity/ @netwrix/pingcastle-docs
+/static/files/pingcastlecommunity/ @netwrix/pingcastle-docs
+/static/images/pingcastlecommunity/ @netwrix/pingcastle-docs
 
 # Platform Governor NetSuite team
 /docs/platgovnetsuite/ @netwrix/platgovnetsuite-docs

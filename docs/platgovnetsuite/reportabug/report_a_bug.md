@@ -6,7 +6,7 @@ sidebar_position: 100
 
 # Contact Support
 
-If you encounter any problems using Platform Governance for NetSuite or have suggested
+If you encounter any problems using Strongpoint for NetSuite or have suggested
 improvements, submit feedback through one of the following options:
 
 - Contact Support

@@ -1,7 +1,7 @@
 ---
 title: "RunJobNotificationAccessControlRules"
 description: "Generates access control to send notification when job finish with an error state."
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 Generates access control to send notification when job finish with an error state.

@@ -8,7 +8,7 @@ sidebar_position: 90
 
 Usually a _System Maintenance Period_ error indicates your primary web site in NetSuite is in
 maintenance mode, which blocks the display of all HTML content. If your web site is down for
-maintenance, you can resume using Platform Governance for NetSuite once your maintenance is complete
+maintenance, you can resume using Strongpoint for NetSuite once your maintenance is complete
 and your web site is online again.
 
 :::note

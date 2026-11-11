@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Dependency Relationship Diagram
 
-Platform Governance for Salesforce's Dependency Relationship Diagram (DRD) displays objects,
+Strongpoint for Salesforce's Dependency Relationship Diagram (DRD) displays objects,
 customizations, and their relationships and dependencies including scripts, reports, and workflows in
 a graphical diagram.
 

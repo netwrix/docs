@@ -145,7 +145,7 @@ in the Windows Event Log. Use the file logs described in this topic instead.
 
 For system alerts that Threat Prevention raises deliberately, such as a stopped Agent or a failed
 database connection, configure event log alerting. See the
-[Event Log Tab](/docs/threatprevention/8.1/admin/configuration/systemalerting/eventlog.md) topic
+[Event Log Tab](/docs/threatprevention/8.1/configuration/systemalerting/eventlog.md) topic
 for additional information.
 
 See the [Best Practices and Troubleshooting](/docs/threatprevention/8.1/troubleshooting/overview.md)

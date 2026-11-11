@@ -1,8 +1,7 @@
 ---
 description: >-
-  Provides the least privilege model for the MS SQL Server service accounts used
-  by Netwrix Privilege Secure when a SQL Server backend and SQL authentication
-  are required.
+  Lists the privileges the MS SQL Server service account needs for regular
+  usage, installations, and upgrades of Privilege Secure with a SQL backend.
 keywords:
   - MS SQL Server
   - service account
@@ -12,10 +11,14 @@ keywords:
   - db_datareader
   - db_datawriter
   - db_ddladmin
+  - SQL authentication
+  - REFERENCES permission
 products:
-  - privilege-secure-access-management
+  - privilegesecure
 sidebar_label: Least Privilege Model for SQL Server Backend
-tags: []
+tags:
+  - kb
+  - database-and-backend
 title: "Least Privilege Model for SQL Server Backend"
 knowledge_article_id: kA04u000000wnnrCAA
 ---
@@ -24,13 +27,13 @@ knowledge_article_id: kA04u000000wnnrCAA
 
 ## Overview
 
-This article provides the least privilege model for the MS SQL Server service accounts used by Netwrix Privilege Secure. This model applies exclusively to Privilege Secure for Access Management version 4.1 and higher, and only in environments where a SQL Server backend is being used. Further, you must use a SQL user, as Windows (Active Directory) authentication is not supported at this time.
+This article describes the least privilege model for the MS SQL Server service accounts used by Netwrix Privilege Secure for Access Management. This model applies exclusively to Privilege Secure for Access Management version 4.1 and higher, and only in environments where a SQL Server backend is being used. Further, you must use a SQL user, as Windows (Active Directory) authentication is not supported at this time.
 
 ## Instructions
 
-The service account used by Netwrix Privilege Secure requires the following privileges:
+The service account used by Privilege Secure requires the following privileges:
 
-### During regular usage
+### During Regular Usage
 
 The service account requires the following roles on the PAM database:
 
@@ -40,9 +43,9 @@ The service account requires the following roles on the PAM database:
 4. ALTER permission on the dbo schema
 5. CREATE TABLE
 
-> **NOTE:** As an alternate privilege, instead of 4. and 5. in the preceding list, the `db_ddladmin` role may be granted. The purpose of the ALTER/CREATE permissions, whether granted directly or through `ddladmin`, is to allow for non-temporary tables to be created and dropped inside of the NPS database during regular operation of the software.
+> **NOTE:** As an alternate privilege, instead of 4. and 5. in the preceding list, the `db_ddladmin` role may be granted. The purpose of the ALTER/CREATE permissions, whether granted directly or through `ddladmin`, is to allow for non-temporary tables to be created and dropped inside of the Privilege Secure database during regular operation of the software.
 
-### During installations and upgrades
+### During Installations and Upgrades
 
 The service account must be granted the following additional permissions:
 
@@ -60,4 +63,4 @@ These permissions can then be revoked after installation and upgrade:
 - REFERENCES permission ON `scheduled_change_policy`: `REVOKE REFERENCES ON scheduled_change_policy TO [serviceaccount]`
 - REFERENCES permission ON `email_settings`: `REVOKE REFERENCES ON email_settings TO [serviceaccount]`
 
-> **IMPORTANT:** It is critical that these permissions be granted to the service account during all installations and upgrades.
+> **IMPORTANT:** It is critical to grant these permissions to the service account during all installations and upgrades.

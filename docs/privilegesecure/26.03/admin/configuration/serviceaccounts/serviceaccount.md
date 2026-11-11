@@ -1,6 +1,12 @@
 ---
 title: "Add Service Account"
-description: "Add Service Account"
+description: "Add a service account to the console by entering its details, including a vault connector for vault-based accounts."
+keywords:
+  - vault connector
+  - Service Accounts list
+  - Bring Your Own Vault (BYOV) Integration
+  - add service account
+  - Privilege Secure
 sidebar_position: 10
 ---
 
@@ -8,19 +14,21 @@ sidebar_position: 10
 
 To add a service account to the console.
 
-**Step 1 –** Navigate to the Configuration > Service Accounts page.
+1. Navigate to the **Configuration** > **Service Accounts** page.
+2. In the Service Account list, click the **Plus** icon.
 
-**Step 2 –** In the Service Account list, click the Plus icon.
+   ![Add Service Account](/images/privilegesecure/26.03/accessmanagement/admin/configuration/add/addserviceaccount.webp)
 
-![Add Service Account](/images/privilegesecure/26.03/accessmanagement/admin/configuration/add/addserviceaccount.webp)
+3. Enter the applicable information. See the
+   [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) section for detailed descriptions of the fields.
 
-**Step 3 –** Enter the applicable information. See the
-[Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) section for detailed descriptions of the fields.
+   - For service accounts checked out through a vault connector, select a previously added vault
+     connector from the dropdown list. See the
+     [Bring Your Own Vault (BYOV) Integration](/docs/privilegesecure/26.03/admin/configuration/integrationconnector/integrationbyov/integrationbyov.md) topic for additional information.
+   - For a Linux or BSD resource, the account name must match the account name in the sudoers file on
+     the resource. See
+     [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/linuxbsdsudoers.md).
 
-- For service accounts checked out through a vault connector, select a previously added vault
-connector from the dropdown list. See the
-[Bring Your Own Vault (BYOV) Integration](/docs/privilegesecure/26.03/admin/configuration/integrationconnector/integrationbyov/integrationbyov.md) topic for additional information.
+4. Click **Save** to create the new service account.
 
-**Step 4 –** Click Save to create the new service account.
-
-The new service account is added to the Service Accounts list.
+The new service account appears in the Service Accounts list.

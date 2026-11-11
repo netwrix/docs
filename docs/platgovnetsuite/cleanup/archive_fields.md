@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Archive Fields
 
-When cleaning up your account with Platform Governance for NetSuite clean up tools, you may find fields that are no longer in use and need to be deleted. Create a Change Request and add the fields you want to delete.
+When cleaning up your account with Strongpoint for NetSuite clean up tools, you may find fields that are no longer in use and need to be deleted. Create a Change Request and add the fields you want to delete.
 
 ## Create a Change Request to Archive Fields
 
@@ -21,12 +21,12 @@ To create a change request:
    tabs:
 
     - Can Be Safely Deleted or Modified
-    - Cannot Be Safely Deleted or Modified or
+    - Can't Be Safely Deleted or Modified or
     - Inactive Customizations (Already Deleted)
 
 ![archivefields1](/images/platgovnetsuite/clean_up/archivefields1.webp)
 
-6. Click the **Archive Customizations** if you find your customizations under **Cannot Be Safely
+6. Click the **Archive Customizations** if you find your customizations under **Can't Be Safely
 Deleted or Modified** and under **Warning it says Not Archived**
 
 ![archivefields2](/images/platgovnetsuite/clean_up/archivefields2.webp)

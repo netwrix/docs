@@ -12,7 +12,7 @@ This tool `Usercube-Protect-X509JsonValue` is used to encrypt only given values,
 
 ## Examples
 
-The command below encrypts the task agent configuration `0` and the OpenId Client `secret` used in the `appsettings.agent.json` file.
+The command below encrypts the task agent configuration `0` and the OpenID Client `secret` used in the `appsettings.agent.json` file.
 
 ```
 **./Usercube-Protect-X509JsonValue.exe --values "0" "secret"**
@@ -28,7 +28,7 @@ kxABAJT+2u1C1r0JI8criUz15QkI71x6/BPeNMlPWEL5ZHkTvZWVnMLG/zNJz9PvnjfecROC4fkxPRI5
 
 Then you just need to copy and paste them.
 
-The following example shows how to update the OpenId ClientSecret matching the "ContosoCharlotte" OpenId ClientId in the `appsettings.encrypted.agent.json` file.
+The following example shows how to update the OpenID ClientSecret matching the "ContosoCharlotte" OpenID ClientId in the `appsettings.encrypted.agent.json` file.
 
 The initial `appsettings.encrypted.agent.json` file resembles the following:
 
@@ -36,7 +36,7 @@ The initial `appsettings.encrypted.agent.json` file resembles the following:
 *appsettings.encrypted.agent.json before update*
 {
   ...
-  "OpenId": {
+  "OpenID": {
     "OpenIdClients": {
       "ContosoCharlotte": "dKIHkloXG6i1LkxkhjkKoVKS9gFO7Hx8VUm"
     }
@@ -65,7 +65,7 @@ The last step is to update the `appsettings.encrypted.agent.json` file by copy/p
 ```
 *appsettings.encrypted.agent.json after update*
 {
-  "OpenId": {
+  "OpenID": {
     "OpenIdClients": {
       "ContosoCharlotte": "kxABABJR7wYaQIqNjHT/rhYVMp5Vmsao7/eBLb7JCIiHMOKbi2sC0dY0SAJgj50NQ0kEH5LS3Y3TYso98+IdnxAzpURrtNu/LUWCJo1kTLM/taygebc0MK4XbkFmWzEgzLcVhAIy8GyFgEWqgNhOx7vwSPXFRrhQTVqIjwO0QNqxlZ5s6uyQm5fk9es2o6aLL0xwbvqspReFxZwuHrguAoIvkBnaKSsDfTLSuheP6VN7yOglLHvZ8Sn9R42M2BpG/dKIHXG6i1LkxkKoVKS9gFO7Hx8VUmYgxG+qIKTRVHdpMctqWKNUJTsQkmRKs+S3qiA2mgK/iC/dp923TfigAnBLWtyXw8eKDJjZ+s6n878BIf55iEjpgOrbm5FLzj8dfqPhQw=="
     }
@@ -75,7 +75,7 @@ The last step is to update the `appsettings.encrypted.agent.json` file by copy/p
 
 ## Arguments
 
- | Name | Details | 
- | --- | --- | 
- | --values required | **Type** String **Description** List of values to encrypt. | 
+ | Name | Details |
+ | --- | --- |
+ | --values required | **Type** String **Description** List of values to encrypt. |
 

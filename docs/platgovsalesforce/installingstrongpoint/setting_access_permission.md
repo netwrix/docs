@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Set Access and Permissions
 
-By default, Platform Governance for Salesforce grants access only to system administrators. To extend
+By default, Strongpoint for Salesforce grants access only to system administrators. To extend
 access to other users:
 
 1. Open Salesforce **Setup** > **Users** > **Users**
@@ -25,7 +25,7 @@ access to other users:
 
    ![enablepermissionsets](/images/platgovsalesforce/installing_strongpoint/enablepermissionsets.webp)
 
-The user is ready to view and use Platform Governance for Salesforce.
+The user is ready to view and use Strongpoint for Salesforce.
 
 :::note
 The previous image shows additional Permission Sets included in the package. The following is a brief description of each:

@@ -1,8 +1,7 @@
 ---
 description: >-
-  Add an IIS outbound rewrite rule to set Cache-Control for JavaScript files
-  served by Netwrix Privilege Secure to improve page load performance and reduce
-  SAML login failures caused by repeated downloads of large ReactJS bundles.
+  Add an IIS outbound rewrite rule that sets Cache-Control for JavaScript files to
+  reduce SAML login failures caused by repeated large ReactJS downloads.
 keywords:
   - cache-control
   - IIS
@@ -12,29 +11,33 @@ keywords:
   - SAML
   - web.config
   - performance
+  - ReactJS
+  - NPS
 products:
-  - privilege-secure-access-management
-sidebar_label: Add Cache Settings for JavaScript Files to Improve
-tags: []
-title: "Add Cache Settings for JavaScript Files to Improve NPS Page Load Performance"
+  - privilegesecure
+sidebar_label: Adding Cache Settings for JavaScript Files to Improve NPS Page Load Performance
+tags:
+  - kb
+  - installation-configuration-and-licensing
+title: "Adding Cache Settings for JavaScript Files to Improve NPS Page Load Performance"
 knowledge_article_id: kA04u000001113mCAA
 ---
 
-# Add Cache Settings for JavaScript Files to Improve NPS Page Load Performance
+# Adding Cache Settings for JavaScript Files to Improve NPS Page Load Performance
 
-## Summary
+## Overview
 
-The main ReactJS bundle for the Netwrix Privilege Secure website is 6.5MB. This is sent with the HTTP header `Cache-Control: no-cache, no-store`. This causes SAML Logins to sometimes fail, as downloading the ReactJS module during each login can cause the SAML token cache to expire.
+This article describes how to create an IIS configuration setting that updates the `Cache-Control` header for all JavaScript files that are downloaded from the Netwrix Privilege Secure for Access Management web service. This setting improves the performance of the website and lowers the burden on the webservice.
 
-To address this issue, you can create an IIS configuration setting that will update the `Cache-Control` header for all JavaScript files that are downloaded from the Netwrix Privilege Secure web service. This will improve the performance of the website and lower the burden on the webservice.
+The main ReactJS bundle for the Privilege Secure website is 6.5MB. This is sent with the HTTP header `Cache-Control: no-cache, no-store`. This causes SAML Logins to sometimes fail, as downloading the ReactJS module during each login can cause the SAML token cache to expire.
 
 ## Instructions
 
-1. On all NPS servers, download and install the Url Rewrite module.
+1. On all Privilege Secure servers, download and install the Url Rewrite module.
 
    https://www.iis.net/downloads/microsoft/url-rewrite
 
-2. Navigate to your NPS Web directory (by default, `C:\Program Files\Stealthbits\PAM\Web\)` and make a copy of the web.config file.
+2. Go to your Privilege Secure Web directory (by default, `C:\Program Files\Stealthbits\PAM\Web\)` and make a copy of the `web.config` file.
 
 3. Open the file `C:\Program Files\Stealthbits\PAM\Web\web.config` in a text editor. Find this line:
 
@@ -56,7 +59,7 @@ To address this issue, you can create an IIS configuration setting that will upd
    </rewrite>
    ```
 
-5. Save the file
+5. Save the file.
 
 6. Launch a PowerShell window and restart IIS using the command:
 
@@ -66,16 +69,18 @@ To address this issue, you can create an IIS configuration setting that will upd
 
 7. To verify the file is now cached, open Chrome or Edge and then open the developer tools.
 
-8. Open your NPS web page and look at the `Network` tab in the developer tools Window.
+8. Open your Privilege Secure web page and look at the `Network` tab in the developer tools window.
 
-9. See the page download:  
-   ![001.png](./../0-images/ka0Qk0000000zjR_0EM4u000008M2O1.png)
+9. See the page download:
 
-10. Reload the page, see it is loaded from the cache:  
-    ![002.png](./../0-images/ka0Qk0000000zjR_0EM4u000008M2O6.png)
+   ![Network tab in the browser developer tools showing the page download](./../0-images/ka0Qk0000000zjR_0EM4u000008M2O1.png)
 
-11. Copy the updated `web.config` to `C:\Program Files\Stealthbits\PAM\Web\web.config.rewrite`, you will need this for future upgrades.
+10. Reload the page, see it is loaded from the cache:
 
-## Upgrades
+    ![Network tab in the browser developer tools showing the page loaded from the cache](./../0-images/ka0Qk0000000zjR_0EM4u000008M2O6.png)
 
-1. After an upgrade of NPS, you will need to copy the `C:\Program Files\Stealthbits\PAM\Web\web.config.rewrite` file to `C:\Program Files\Stealthbits\PAM\Web\web.config` in order to restore the cache settings.
+11. Copy the updated `web.config` to `C:\Program Files\Stealthbits\PAM\Web\web.config.rewrite`; you need this copy for future upgrades.
+
+### Restoring the Cache Settings After an Upgrade
+
+After an upgrade of Privilege Secure, copy the `C:\Program Files\Stealthbits\PAM\Web\web.config.rewrite` file to `C:\Program Files\Stealthbits\PAM\Web\web.config` to restore the cache settings.

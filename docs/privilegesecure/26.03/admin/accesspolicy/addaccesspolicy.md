@@ -1,6 +1,15 @@
 ---
 title: "Add Access Policy"
-description: "Add Access Policy"
+description: "Add a resource based or credential based access policy and associate it with a connection profile."
+keywords:
+  - add access policy
+  - Access Policies
+  - Resource Based
+  - Credential Based
+  - Connection Profile
+  - Users
+  - Activities
+  - Resources
 sidebar_position: 10
 ---
 
@@ -14,33 +23,27 @@ time on the [Connection Profiles Page](/docs/privilegesecure/26.03/admin/accessp
 to create one during these steps.
 :::
 
+1. Navigate to the **Policy** > **Access Policies** page.
+2. In the Access Policy list, click the **Plus** icon.
 
-**Step 1 –** Navigate to the **Policy** > **Access Policies** page.
+   ![Add Access Policy](/images/privilegesecure/26.03/accessmanagement/admin/configuration/add/addaccesspolicy.webp)
 
-**Step 2 –** In the Access Policy list, click the **Plus** icon.
+3. Enter the following information:
 
-![Add Access Policy](/images/privilegesecure/26.03/accessmanagement/admin/configuration/add/addaccesspolicy.webp)
+   - **Name** — Displays the name of the policy
+   - **Description** — (Optional) Description of the policy
+   - **Type** — Classification of the access policy. The Type dropdown contains the following options:
+     - **Resource Based** — lets users access remote devices (computers, databases, network equipment)
+     - **Credential Based** — lets users access credentials and files stored in vaults.
+   - **Connection Profile** — Displays the name of the connection profile associated to the access policy
 
-**Step 3 –** Enter the following information:
-
-- Name – Displays the name of the policy
-- Description – (Optional) Description of the policy
-- Type – Classification of the access policy. The Type dropdown contains the following options:
-
-- Resource Based - lets users access remote devices (computers, databases, network equipment)
-- Credential Based - lets users access credentials and files stored in vaults.
-
-- Connection Profile – Displays the name of the connection profile associated to the access policy
-
-**Step 4 –** Click **Save** to create the new access policy.
+4. Click **Save** to create the new access policy.
 
 The new access policy has been created. The next step is to associate Users, Activities, and
 Resources/Credentials to the policy. See the following topics for additional information:
 
 - Resource Based Policy
-
-- [Users Tab for Resource Based Access Policies](/docs/privilegesecure/26.03/admin/accesspolicy/resourcebasedpolicyt/resourcebasedpolicy.md)
-- [Activities Tab for Resource Based Access Policies](/docs/privilegesecure/26.03/admin/accesspolicy/resourcebasedpolicyt/resourcebasedpolicy.md)
-- [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/26.03/admin/accesspolicy/resourcebasedpolicyt/resourcebasedpolicy.md)
-
+  - [Users Tab for Resource Based Access Policies](/docs/privilegesecure/26.03/admin/accesspolicy/resourcebasedpolicyt/resourcebasedpolicy.md)
+  - [Activities Tab for Resource Based Access Policies](/docs/privilegesecure/26.03/admin/accesspolicy/resourcebasedpolicyt/resourcebasedpolicy.md)
+  - [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/26.03/admin/accesspolicy/resourcebasedpolicyt/resourcebasedpolicy.md)
 - Credential Based Policy [CreCredential Based Access Policies](/docs/privilegesecure/26.03/admin/accesspolicy/credentials.md)

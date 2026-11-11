@@ -25,11 +25,11 @@ The app is accessed in Salesforce via **App Launcher > Netwrix Lightning**.
 | `settings/` | Settings overview, credentials |
 | `techdebt/` | Tech debt workflows: auto-documentation, change monitoring, org clean-up, org-specific approaches |
 | `tools/` | Access review, DRD, environment comparison, field tracking, package usage, profile/permission comparison, system permission tracking, user activity, export tools |
-| `release_7_0/` | Release notes for the current release |
+| `release-notes/` | What's new page: link to the Community release notes and the content of the latest release |
 
 ## Key Terminology
 
-- **Scanner** — the process that catalogs all Salesforce metadata customizations; replaces the term "Spider" used in Platform Governance for NetSuite. Takes 4–5 days on first run.
+- **Scanner** — the process that catalogs all Salesforce metadata customizations; replaces the term "Spider" used in Strongpoint for NetSuite. Takes 4–5 days on first run.
 - **Customization Record** — a Platform Governance record documenting a single Salesforce metadata object (field, class, flow, etc.).
 - **Change Request** — the central record for planning, approving, and tracking a change.
 - **Change Log** — audit trail of changes to customizations; generated automatically by the scanner.

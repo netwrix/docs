@@ -4,7 +4,7 @@ description: "Task that sends a notification to each configured recipient."
 sidebar_position: 17
 ---
 
-Task that sends all the custom notifications defined by the [`Notification`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notification) XML tag.
+Task that sends all the custom notifications defined by the [`Notification`](../../../notifications/notification) XML tag.
 
 
 ## Examples

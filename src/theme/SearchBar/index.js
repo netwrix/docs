@@ -355,7 +355,7 @@ function useSearchParameters({contextualSearch, productFacetFilters = [], ...pro
 // Values MUST match Algolia facet values exactly
 const PRODUCT_OPTIONS = [
     {label: 'All products', value: '__all__'},
-    ...PRODUCTS.map(product => ({
+    ...PRODUCTS.filter(product => !product.noIndex).map(product => ({
         label: product.name,
         value: product.name,
     }))

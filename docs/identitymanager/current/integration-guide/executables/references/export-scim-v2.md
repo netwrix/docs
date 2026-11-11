@@ -48,4 +48,6 @@ Export data by pointing to the Identity Manager server, which automatically fetc
  | --password optional | **Type** String **Description** Password for password-flow OAuth2 or HTTP Basic auth. |
  | --scope optional | **Type** String **Description** Space-separated OAuth2 scopes to request. |
  | --resource optional | **Type** String **Description** RFC 8707 resource indicator. |
- | --page-size optional | **Type** Int32 **Description** Number of resources returned per page request. Default: 100. |
+ | --page-size optional | **Type** Int32 **Description** Number of resources requested per page. Default: 100. Must be at least 1; automatically capped by the server's advertised `maxPageSize` when smaller. |
+ | --filter optional | **Type** String **Description** Per-resource-type SCIM filter expressions applied to every list request. Syntax: `ResourceType1|expression1*ResourceType2|expression2` (e.g. `Users|active eq true*Groups|displayName sw "Eng"`). Fails at startup if the server declares filtering unsupported and a filter is configured for that resource type. |
+ | --headers optional | **Type** String **Description** Custom HTTP headers added to every request, JSON-encoded as a flat object (e.g. `{"User-Agent":"MyOrg/1.0"}`). |

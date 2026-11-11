@@ -24,7 +24,7 @@ incident.
 1. Configure the analytic policy
 2. Enable the analytic policy
 3. Enable alerting on incidents through the
-   [System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md).
+   [System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md).
 
 See the Golden Tickets Analytic Data Grid topic for information on event data collected per
 incident.
@@ -104,7 +104,7 @@ The **Policy** tab for configuring analytics consists of three sub-tabs:
   event data they collect in memory until an incident triggers. Use _caution_ with the “Send Raw
   Data to SIEM” option, as it sends all event data rather than the triggered incident, which
   could be a large volume of data. To send notifications on incidents, use the
-  [System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md) to configure Email and SIEM
+  [System Alerting Window](/docs/threatprevention/8.1/configuration/systemalerting/overview.md) to configure Email and SIEM
   alerts.
 
 ## Golden Tickets Analytic Data Grid

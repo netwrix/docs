@@ -24,16 +24,16 @@ When Identity Manager provides a native connector for a given system, for examp
 
 Implementing this connector requires:
 
-- making sure that the command `powershell.exe`, inside the command prompt (`cmd.exe`), does execute
-a PowerShell terminal;
-- knowledge of scripting in PowerShell 5.1 or later,
-[see here PowerShell's requirements](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/windows-powershell-system-requirements);
+- making sure that the appropriate PowerShell executable is installed on the device hosting the agent: by default (`Edition` set to `Desktop`), the connector runs `powershell.exe` (Windows Powershell 5.1); when `Edition` is set to `Core`, the connector runs `pwsh` (PowerShell 7);
+- knowledge of scripting in PowerShell 5.1 (Windows PowerShell, [see here requirements](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/windows-powershell-system-requirements)) or PowerShell 7 (PowerShell Core, [see support lifecycle here](https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-support-lifecycle)) depending on the selected `Edition`;
 - making sure that the device hosting the agent has its execution policy properly configured to
 execute the given PowerShell script;
 - checking the targeted system's requirements (environment, libraries, etc.), as this connector is
 meant to connect Identity Manager to a PowerShell-compatible system;
 - writing and testing a PowerShell script (`.ps1`) according to Netwrix Identity Manager (formerly
 Usercube)' guidelines below.
+
+Windows PowerShell 5.1 is in maintenance mode. Netwrix recommends using `Edition: "Core"` (`pwsh`) for new connections where possible.
 
 ## Export
 
@@ -83,18 +83,19 @@ The identifier of the connection and thus the name of the subsection must:
 
 ##### Setting attributes
 
- | Name | Details | 
- | --- | --- | 
- | PowerShellScriptPath required | **Type** String **Description** Path of the PowerShell script (.ps1) to be executed. | 
+ | Name | Details |
+ | --- | --- |
+ | PowerShellScriptPath required | **Type** String **Description** Path of the PowerShell script (.ps1) to be executed. |
+ | Edition optional | **Type** String **Description** Selects which PowerShell executable runs the script: `Desktop` (default) uses `powershell.exe` (Windows Powershell 5.1), `Core` uses `pwsh` (PowerShell 7). **Example** `"Edition": "Core"` |
 
 ### Write a script
 
 Identity Manager provides a few variables to be used in the PowerShell script.
 
- | Name | Details | 
- | --- | --- | 
- | OutputPath | **Type** String **Description** Prefix of the path of the generated CSV file. **Info:** the synchronization process requires the generated CSV file to be located in a very specific location, with a specific name prefix. Hence the need for this predefined variable. **Value** [`<TempFolderPath>`](../../../integration-guide/network-configuration/agent-configuration/appsettings)`/ExportOutput/<connectionIdentifier>_` **Example** In this example, if the temp folder is named `Temp` and the connection `PowerShellExport`, then the generated file is: `Temp/ExportOutput/PowerShellExport_users.csv`. ```generateCSV | Export-CSV ($OutputPath + "users.csv")` where`generateCSV``` is a generic PowerShell method that generates CSV files. | 
- | IsIncremental | **Type** Boolean **Description** Variable to be used to provide a different behavior for complete and incremental synchronization. | 
+ | Name | Details |
+ | --- | --- |
+ | OutputPath | **Type** String **Description** Prefix of the path of the generated CSV file. **Info:** the synchronization process requires the generated CSV file to be located in a very specific location, with a specific name prefix. Hence the need for this predefined variable. **Value** [`<TempFolderPath>`](../../../integration-guide/network-configuration/agent-configuration/appsettings)`/ExportOutput/<connectionIdentifier>_` **Example** In this example, if the temp folder is named `Temp` and the connection `PowerShellExport`, then the generated file is: `Temp/ExportOutput/PowerShellExport_users.csv`. ```generateCSV | Export-CSV ($OutputPath + "users.csv")` where`generateCSV``` is a generic PowerShell method that generates CSV files. |
+ | IsIncremental | **Type** Boolean **Description** Variable to be used to provide a different behavior for complete and incremental synchronization. |
 
 ## Fulfill
 

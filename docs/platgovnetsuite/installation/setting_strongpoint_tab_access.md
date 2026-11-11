@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Setting Tab Access
 
-Platform Governance for NetSuite tab access is managed like any other tab in NetSuite.
+Strongpoint for NetSuite tab access is managed like any other tab in NetSuite.
 
 By default, access is granted to the following roles:
 
