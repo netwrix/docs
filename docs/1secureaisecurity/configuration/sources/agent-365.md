@@ -11,7 +11,7 @@ Agent 365 is Microsoft's agent inventory for Microsoft 365: the agents built and
 ## Before you start
 
 * Connect Microsoft Entra ID first, or at least create its app registration. You need its three values: the Directory (tenant) ID, the Application (client) ID, and the client secret. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
-* ensure the tenant holds a Microsoft Agent 365 license. Without one, there is nothing to read. The Microsoft Defender source is the other way to list the organization's agents.
+* Check that the tenant holds a Microsoft Agent 365 license. Without one, there is nothing to read. The Microsoft Defender source is the other way to list the organization's agents.
 * Have a Global Administrator or Privileged Role Administrator grant the admin consent.
 * Sign in to the Microsoft Entra admin center at entra.microsoft.com.
 
@@ -26,7 +26,7 @@ Agent 365 is Microsoft's agent inventory for Microsoft 365: the agents built and
 The permission rows show the status "Granted".
 
 :::info
-Don't add `AgentRegistration.Read.All`. It belongs to an agent registry API that Microsoft retired on 15 June 2026. AI Security reads the catalog with `CopilotPackages.Read.All`.
+Don't add `AgentRegistration.Read.All`. It belongs to an agent registry API that Microsoft retired on June 15, 2026. AI Security reads the catalog with `CopilotPackages.Read.All`.
 :::
 
 ## Connect the source
@@ -41,7 +41,7 @@ Don't add `AgentRegistration.Read.All`. It belongs to an agent registry API that
 8. Click **Connect**. The dialog shows "Saved. Testing the connection." and then the result of the test.
 9. Click **Done**.
 
-A missing license or permission fails the test. A throttled or failing Microsoft Graph only warns.
+The test reads the catalog as a scan does, so a missing license or permission fails the test in the scan's words. A throttled or failing Microsoft Graph only warns.
 
 Select the Agent 365 row to see the source.
 
@@ -49,9 +49,9 @@ Select the Agent 365 row to see the source.
 |------|---------------|
 | Credential | "Readable". |
 | Last test | "Succeeded". A passing test confirms the permission and the license together. |
-| Last scanned | "Never", then "Succeeded", with anything the scan couldn't read listed as skipped. "Partly scanned" when the scan couldn't read the whole catalog or all publish requests. "Not set up" when the tenant has no Agent 365 license. |
+| Last scanned | "Never", then "Succeeded", with anything the scan couldn't read listed as skipped. "Partly scanned" when the catalog or the publish requests were cut at the page limit. "Not set up" when the tenant has no Agent 365 license. |
 
-A scan of this source also reads the other Microsoft platforms that the same three values unlock. If the registration lacks permissions for another Microsoft platform, that platform's own source lists what it skipped. That doesn't change this source's **Last scanned** status.
+A scan of this source also reads the other Microsoft platforms that the same three values unlock. If the registration lacks permissions for another Microsoft platform, that platform's own source lists what it skipped and reads "Succeeded", or reads "Failed" where it read nothing. That doesn't change this source's **Last scanned** status.
 
 If Microsoft refuses the catalog, the scan still reads the other Microsoft platforms and reports Agent 365 as not measured. If a permission is missing, this source reads "Failed". If the tenant has no Agent 365 license, the test, the last scan, and the source row read "Not set up" in the ordinary color, not as a failure. The last scan says "The tenant has no license for this product."
 
@@ -113,19 +113,21 @@ Without the catalog, every agent that Agent 365 might have vouched for reads as 
 | "The platform refused the credential. It is wrong, expired or revoked." | Microsoft refused the sign-in or the token. | Check the secret under **Certificates & secrets** and both IDs on the app's **Overview**. |
 | "Agent 365 refused access. Grant admin consent to CopilotPackages.Read.All again, then test again shortly." | The catalog refused the read. Microsoft can take a few minutes to apply a consent. | If you connected with **Connect with Microsoft**, grant admin consent to the 1Secure registration again under **Enterprise applications**, then test again in a few minutes. If you connected with your own app registration, grant the permission as the steps in "Grant the permissions in Microsoft Entra" describe. If the tenant has no Agent 365 license, connect Microsoft Defender for Endpoint to list the same agents. |
 | "The app registration is missing these permissions, or they have no admin consent: CopilotPackages.Read.All. Add them as application permissions, grant admin consent, and test again." | The permission is missing or has no admin consent. | Add the permission and grant admin consent as the steps in "Grant the permissions in Microsoft Entra" describe. |
-| "Agent 365 refused access despite consent to CopilotPackages.Read.All. Check the license, or test again shortly." | The app holds the permission with admin consent, and Microsoft still refused the catalog without naming a license. | Check that the tenant holds a Microsoft Agent 365 license, and click **Test again** in a few minutes. If it fails again, send the technical details to Netwrix support. Microsoft Defender for Endpoint lists the same agents without the license. |
-| "The tenant has no Microsoft Agent 365 license." | Microsoft refused the read and named the license, for example "Customer must be a licensed for Agent 365 in order to use Agent 365 Graph APIs." AI Security can't read the organization's declarative and custom engine agents from the catalog. | Ask your Microsoft account team about an Agent 365 license, or connect Microsoft Defender for Endpoint with `ThreatHunting.Read.All` as [Microsoft Defender for Endpoint](/docs/1secureaisecurity/configuration/sources/microsoft-defender-for-endpoint.md) describes. |
-| "Microsoft retired the Agent 365 catalog address 1Secure uses. Contact Netwrix support." | Microsoft retired the endpoint. | Contact Netwrix support. AI Security needs an update. |
-| "The platform didn't answer, or said it is down or busy." or "The Agent 365 catalog didn't respond. Test again later." | Microsoft Graph didn't answer, or answered that it's down. | Check that AI Security can reach graph.microsoft.com, then click **Test again**. |
+| "Agent 365 refused access despite consent to CopilotPackages.Read.All. Check the license, or test again shortly." | The app holds the permission with admin consent, and Microsoft still refused the catalog without naming a license. | Check that the tenant holds a Microsoft Agent 365 license, and click **Test again** in a few minutes. If it fails again, send the technical details to Netwrix Support. Microsoft Defender for Endpoint lists the same agents without the license. |
+| "The tenant has no Microsoft Agent 365 license." | Microsoft refused the read and named the license, for example "Customer must be a licensed for Agent 365 in order to use Agent 365 Graph APIs." AI Security can't read the organization's declarative and custom engine agents from the catalog. The test says: "Either add a Microsoft Agent 365 license, or connect Microsoft Defender for Endpoint with ThreatHunting.Read.All, which lists these agents without one." | Ask your Microsoft account team about an Agent 365 license, or connect Microsoft Defender for Endpoint with `ThreatHunting.Read.All` as [Microsoft Defender for Endpoint](/docs/1secureaisecurity/configuration/sources/microsoft-defender-for-endpoint.md) describes. |
+| "The tenant has no Microsoft Agent 365 license." | The catalog doesn't exist on this tenant. The test says: "Add a Microsoft Agent 365 license and publish an agent package to its catalog." | Check the license, and that the catalog holds a package. |
+| "Microsoft retired the Agent 365 catalog address 1Secure uses. Contact Netwrix Support." | Microsoft retired the endpoint. | Contact Netwrix Support. AI Security needs an update. |
+| "The platform didn't answer, or said it is down or busy." or "The Agent 365 catalog didn't respond. Test again later." | Microsoft Graph didn't answer, or answered that it's down. | Click **Test again** later. |
 | "The platform didn't answer in time." | Microsoft didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the credential. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix Support. |
 
-{/* TODO: the source listed "The tenant has no Microsoft Agent 365 license." a second time for a catalog that doesn't exist on the tenant, with the fix "Add a Microsoft Agent 365 license and publish an agent package to its catalog." Confirm whether that is a separate message. */}
+The test shows "The tenant has no Microsoft Agent 365 license." in two cases: Microsoft says a license is required, or the catalog doesn't exist. The scan tells them apart. It says the agents are read "only for a tenant with an Agent 365 license" in the first case, and that the catalog wasn't read "because the tenant has not set it up" in the second.
 
 ## Security notes
 
 * AI Security stores the three values encrypted when you click **Connect** and never shows them again. The source shows only whether a credential is set and which settings are missing.
-* A source connected with **Sign in with Microsoft** never receives the registration's secret.
+* A test or a scan decrypts the credential for that run only.
+* A source connected with **Sign in with Microsoft** stores no secret of yours. A test or a scan reads with Microsoft tokens that 1Secure requests for your tenant with Netwrix's application.
 * The secret goes only to Microsoft's token endpoint. The token goes only to graph.microsoft.com.
 * To revoke access, remove `CopilotPackages.Read.All` or delete the client secret. **Disconnect** on the source removes the stored credential from 1Secure.

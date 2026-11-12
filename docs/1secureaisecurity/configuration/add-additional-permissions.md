@@ -15,7 +15,7 @@ Some Microsoft reads need a role or a grant that the Microsoft consent screen do
 | Power Platform application user | Power Platform or Microsoft Copilot Studio | "Reads Power Platform policies and what Copilot Studio agents can reach." |
 | SharePoint sites | SharePoint Online | "How far should 1Secure look into SharePoint sites?" |
 
-Microsoft Defender for Endpoint has no line. It reads through Microsoft Graph with ThreatHunting.Read.All, which the first consent grants. Its optional account read takes two WindowsDefenderATP permissions granted on the app registration, as the [Microsoft Defender for Endpoint](/docs/1secureaisecurity/configuration/sources/microsoft-defender-for-endpoint.md) page describes.
+Microsoft Defender for Endpoint has no line. It reads through Microsoft Graph with ThreatHunting.Read.All, which the first consent grants.
 
 ## Grant a line
 
@@ -35,7 +35,7 @@ Each card also offers these options:
 
 What each grant does:
 
-- **Azure Reader roles.** 1Secure is granted Reader on each subscription selected, and Foundry User, formerly Azure AI User, on each Foundry account that holds an Azure AI Foundry project in them, so the scan reads their agents.
+- **Azure Reader roles.** 1Secure is granted Reader on the subscriptions you select, and Foundry User, formerly Azure AI User, on the Foundry projects you select, so the scan reads their agents. Foundry User is assigned once on each Foundry account that holds those projects, so every project of that account inherits it.
 - **Microsoft Entra AI Reader role.** "Gives 1Secure the Microsoft Entra AI Reader role, one role for the whole directory. Read-only."
 - **Power Platform application user.** "Registers 1Secure as a management application, with Agent Viewer in each selected environment. Read-only." 1Secure also gives its application user the 1Secure Flow Reader role.
 
@@ -49,7 +49,7 @@ Where Power Platform added 1Secure in only some environments, the card says so, 
 
 ## While a role applies
 
-A new role can take Microsoft minutes to apply. While it does, the line reads **Applying** and the card says "Microsoft can take minutes to apply a role. You can continue while 1Secure checks." The line turns to **Granted** when the tests of the sources the grant opens pass. 1Secure keeps checking after you move on, so it finds a role that applies later.
+A new role can take Microsoft minutes to apply. While it does, the line reads **Applying** and the card says "Microsoft can take minutes to apply a role. You can continue while 1Secure checks." 1Secure tests again by itself for a few minutes, and the line turns to **Granted** when the tests of the sources the grant opens pass, even if you move on.
 
 ## SharePoint sites
 

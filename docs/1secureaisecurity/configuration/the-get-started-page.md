@@ -12,9 +12,7 @@ The Get started page is where AI Security opens until your organization has a so
 
 1. In the 1Secure sidebar, select **AI Security**. While no source is connected, the **Get started** page opens, titled "Discover your AI agents".
 
-   ![Get started page titled Find the AI agents working in your environment, with the Discover every agent, Understand what each can do, and Decide and keep a record cards and the Get started button](/images/1secureaisecurity/getting-started/get-started-page.webp)
-
-{/* TODO: the source text says the page title is "Discover your AI agents", but the screenshot shows "Find the AI agents working in your environment". Confirm the current title. */}
+   ![Get started page with the Discover every agent, Understand what each can do, and Decide and keep a record cards and the Get started button](/images/1secureaisecurity/getting-started/get-started-page.webp)
 
 The three cards say what the first run sets up.
 

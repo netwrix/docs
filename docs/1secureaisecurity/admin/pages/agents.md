@@ -57,7 +57,7 @@ Select a row to open the agent's drawer. It shows the agent's name, its platform
 
 At the foot of **Overview**, **Next step** says what to do with the agent.
 
-- An agent with open issues offers **Work through its 3 open issues**, which opens the **Issues** tab.
+- An agent with open issues offers **Review its 3 open issues**, which opens the **Issues** tab.
 - An agent with an owner and no open issues reads "Nothing to do. It has an owner and no open issues."
 
 An agent with no owner is asked for one at the top of **Overview**, not in **Next step**. Its **Owner** line reads **No owner**, or names the owners who left with **Owner has left**. An administrator clicks **Assign an owner** beside it. Anyone else reads "Ask an administrator to assign one."

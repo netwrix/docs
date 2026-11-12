@@ -50,9 +50,7 @@ With the workspace API key, AI Security reads the following:
 - Each agent's version history, one entry per version with its model.
 - The libraries the key's creator made or was given: name, document count, size, who owns each, and how widely it is shared.
 - The maker of each agent, as the ID Mistral records as its owner. A workspace key can't read the organization's members, so AI Security never matches the ID to a person or gives it a name. The agent's owner reads "Reported by the platform", with the ID beneath.
-- Each conversation the key's own creator started on an agent, as an event: which agent, which version, and when. A workspace key lists only its own creator's conversations, never the workspace's, so these events are a sample of the agent's use, not all of it.
-
-{/* TODO: confirm how far back the conversation read goes (the source gave 90 days). */}
+- Each conversation the key's own creator started on an agent, as an event: which agent, which version, and when, over the last 90 days, or since the last scan. A workspace key lists only its own creator's conversations, never the workspace's, so these events are a sample of the agent's use, not all of it.
 
 Each tool on an agent appears as follows.
 
@@ -92,12 +90,12 @@ A workspace API key can't read the workspace's API keys, the organization, or ot
 | "The stored credential can't be used. Enter it again." | AI Security can't use the stored key. | Click **Edit**, and enter the key again. |
 | "The platform refused the credential. It is wrong, expired or revoked." | Mistral refused the key: it is wrong, revoked, or expired. | Create a new key, and enter it under **Edit**. |
 | "The credential works, but access was denied. A permission is missing." | Mistral accepted the key and refused the agent list. The test says: "create an API key in Mistral Studio under the workspace whose agents you want read. A key from another workspace reads that workspace's agents instead". | Create the key in the workspace your agents are in. |
-| "The platform didn't answer, or said it is down or busy." | Mistral didn't answer. | Check that AI Security can reach api.mistral.ai. |
+| "The platform didn't answer, or said it is down or busy." | Mistral didn't answer. | Test again later. |
 | "The platform didn't answer in time." | Mistral didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the key. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix Support. |
 
-A scan also notes, without failing, an agent whose version history Mistral refused or that was past the cap of 200 agents. The scan still lists that agent with its current version.
+A scan also notes, without failing, an agent whose version history Mistral refused or that was past the most a scan reads. The scan still lists that agent with its current version.
 
 If Mistral slowed down a read of versions, conversations, or libraries, or didn't answer it, the scan lists it once among the skipped items. The scan keeps what earlier scans found for the workspace, rather than removing it as gone.
 

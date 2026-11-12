@@ -32,7 +32,7 @@ Filter the rows with **All**, **Connected**, **Needs attention**, and **Needs co
 
 ### Scan all
 
-**Scan all** asks you to confirm, such as "Scan 27 sources now?", and then scans every enabled source, skipping any with no usable credential. Where some sources have no usable credential, the dialog says how many, for example "2 of them have no usable credential and will be skipped."
+**Scan all** asks you to confirm, such as "Scan 27 platforms now?", counting the connected platforms, and then scans every enabled source. A source whose credential isn't set, can't be used, or was refused at its last test is left out and reads **Not scanned**.
 
 **Scan all** is off while a scan runs, and while a source's connection test is still running. In the second case, hover over it to read "Sources are still being tested. Scan when that finishes."
 
@@ -48,7 +48,7 @@ Select a platform's row to open its drawer. A Microsoft source that reads with t
 |------|---------------|
 | Status | **Connected**, **Needs attention**, **Needs a grant**, **Not set up**, or **Scanning**, with what the source needs. |
 | Last scanned | When the source was last scanned, how long the scan took where that is known, and its outcome: **Succeeded**, **Partly scanned**, **Failed**, **Not scanned**, or **Not set up**. **Not set up** gives the reason, such as "The tenant has no license for this product." A read that succeeded with nothing to read says "Succeeded, nothing to read yet". |
-| Found | The agents and identities the last scan found. |
+| Discovered | The agents and identities the last scan found. |
 | Scanned | What the last scan read, platform by platform. SharePoint Online with no site approved says "Nothing to read until a site is approved". |
 | Skipped | For a source read to the end, how many things the last scan skipped. Click the count to see each one with what to do, and click **Export** to save the list. Where a Power Platform environment refused 1Secure, or 1Secure has no access to SharePoint sites, the line names the environment or the sites after what wasn't read. |
 | Not scanned | For a source whose last read stopped short or failed, what wasn't scanned and what to do. |
@@ -57,9 +57,9 @@ Select a platform's row to open its drawer. A Microsoft source that reads with t
 | Missing | The settings the source still needs, where any are missing. |
 | Last test | The test's outcome, **Succeeded**, **Warning**, **Failed**, or **Not set up**, with its date and sentence. A scan that signed in with the credential counts as a test. Where no test has run since the scan started, the line reads **Succeeded**, "The last scan signed in with this credential and read what it reaches.", dated when the scan started. |
 
-A source waiting on an optional grant, such as the Microsoft Entra AI Reader role or the Power Platform policies, reads **Needs a grant** in its row and in its drawer. The drawer says "Waiting on a grant to" the application and the grant, with a link to the card that grants it: **Grant with my sign in** for a source connected with Microsoft, or **How to grant** for one on an app registration of its own.
+A source waiting on an optional grant, such as the Microsoft Entra AI Reader role or the Power Platform policies, reads **Needs a grant** in its row and in its drawer. The drawer says "Waiting on a grant to" the application and the grant, with a link to the card that grants it: **Grant with my sign in** for a source connected with Microsoft, or **How to grant** for one on an app registration of its own. A platform that needs only an optional grant still counts as **Connected**. One that is missing a required permission reads "Needs permissions, [N] missing" and doesn't count as **Connected** until the permission is granted.
 
-Where the last scan failed or skipped something, **Download scan report** under it saves one file with the scan, each source, what it read, what it didn't read, and what to do. Send the file to support when you ask for help.
+To send a scan to Netwrix Support, open it on the **Scans** tab and click **Download scan report**. The file holds the scan, each source, what it read, what it didn't read, and what to do.
 
 The drawer's **Scan now** waits while a scan of your organization runs, as the row's button does. It reads **Scan running** where the running scan covers the source, and **In next scan** where it doesn't.
 
@@ -86,4 +86,4 @@ A Microsoft source that can hold an app registration of its own, such as SharePo
 
 ## Scans tab
 
-The **Scans** tab lists every scan with **When**, **Started by**, **Scanned sources**, **Outcome**, **Duration**, and **Agents discovered**. See [Scans](/docs/1secureaisecurity/admin/scans.md) for how to start, follow, stop, and retry a scan.
+The **Scans** tab lists every scan with **When**, **Started by**, **Scanned sources**, **Outcome**, **Duration**, and **What was discovered**. See [Scans](/docs/1secureaisecurity/admin/scans.md) for how to start, follow, stop, and retry a scan.

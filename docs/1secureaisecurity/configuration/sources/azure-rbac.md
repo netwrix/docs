@@ -61,7 +61,7 @@ A scan of this source also reads the other Microsoft platforms that the same thr
 * The role, the scope, and the date of each assignment, and the role's name.
 * Privileged Identity Management eligible schedules and active assignment schedules in each subscription, to tell a standing privileged role from a time-bound one. An active assignment with an end date still to come is time-bound.
 * Which identity each grant belongs to, matched by object ID to the identities that the directory and Azure AI Foundry reads find. If a scan doesn't read the directory, AI Security reads from Microsoft Graph, by ID, the identities that the grants and changes name. AI Security leaves out a grant whose holder none of these reads finds.
-* Each role assignment written or deleted, from each subscription's Activity Log: who made the change, for which identity, and when. Each change carries the role by its name, where the scan resolved it, and the scope in words, such as a resource group in a named subscription, beside the path the log states it by. Set how far back scans read under **Settings** in the Activity window. AI Security doesn't read changes to role definitions.
+* Each role assignment written or deleted, from each subscription's Activity Log: who made the change, for which identity, and when. Each change carries the role by its name, where the scan resolved it, and the scope in words, such as a resource group in a named subscription, beside the path the log states it by. The first scan reads the last 3 days, or the Activity window set under **Settings**. Each later scan reads on from where the last stopped, and catches up on no more than the last 14 days, or the Activity window if it is longer. AI Security doesn't read changes to role definitions.
 
 The same credential and the same subscriptions also run two reads that have no card of their own: Azure Logic Apps agent workflows and their runs, described in [Azure Logic Apps](/docs/1secureaisecurity/configuration/sources/azure-logic-apps.md), and Azure Bot Service bots, described in [Azure Bot Service](/docs/1secureaisecurity/configuration/sources/azure-bot-service.md).
 
@@ -101,10 +101,10 @@ Reader is enough for the three Azure reads. A subscription whose schedules Reade
 | "The platform refused the credential. It is wrong, expired or revoked." | Microsoft refused the sign-in: the secret is wrong or expired, or an ID belongs to another directory. | Check the secret under **Certificates & secrets** in Microsoft Entra, and both IDs on the app's **Overview**. |
 | "The credential works, but access was denied. A permission is missing." | The sign-in worked and no subscription is visible or readable. The test says: "Give the app registration the Reader role on each subscription or their management group." If no subscription is visible at all, the test says: "No Azure subscription is visible. Give the registration Reader on one, or leave Azure unconnected." The test then reads "Not set up". Otherwise, the scan ends as a missing grant: "Any Azure subscription, because none is readable by the app registration." with "Give the app registration the Reader role on at least one subscription or its management group." | Assign Reader as steps 2 to 7 of [Create the credential in Azure](#create-the-credential-in-azure) describe. |
 | "The credential works, but Azure RBAC refused part of what the scan reads." | AI Security read some subscriptions and Azure refused at least one. | Assign Reader on the subscriptions the scan should cover, or accept that AI Security doesn't read the others. |
-| "The platform didn't answer, or said it is down or busy." | Azure Resource Manager or the sign-in service didn't answer. | Check that AI Security can reach management.azure.com and login.microsoftonline.com. |
+| "The platform didn't answer, or said it is down or busy." | Azure Resource Manager or the sign-in service didn't answer. | Test again later. |
 | "The platform didn't answer in time." | Azure didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the credential. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix Support. |
 
 ### If the scan skips something or warns
 
@@ -122,6 +122,6 @@ A scan that reads to the end lists what it couldn't read as skipped items, and i
 ## Security notes
 
 * AI Security stores the three values encrypted when you click **Connect** and never shows them again. The source shows only whether a credential is set and which settings are missing.
-* A source connected with **Sign in with Microsoft** never receives the registration's secret.
+* A source connected with **Sign in with Microsoft** stores no secret of yours. A test or a scan reads with Microsoft tokens that 1Secure requests for your tenant with Netwrix's application.
 * The secret goes only to Microsoft's token endpoint. The token goes only to Azure Resource Manager.
 * To revoke access, remove the role assignments under **Access control (IAM)**, or delete the client secret. **Disconnect** on the source removes the stored credential from 1Secure.

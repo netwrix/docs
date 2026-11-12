@@ -53,6 +53,7 @@ With the Compliance API key:
 * Every Codex environment in the workspace, as an agent: its name, who created it, its network access, the repositories it holds with the permissions the environment has on each, who in the workspace may start a task in it, and how many tasks have run in it. AI Security counts its environment variables and secrets and never reads them.
 * Every user in the workspace, for their email, role, and status. The scan shows a user as the owner of what they own, with their role and status on the owner. If AI Security also reads the organization's directory, the user's email matches them to the directory user. The scan doesn't list a user who owns nothing.
 
+
 How sharing reads:
 
 | Sharing in ChatGPT | Shown as |
@@ -105,10 +106,10 @@ The test lists the workspace's users with the key.
 | "No credential is stored for this source." or "The credential is missing settings this platform needs." | The key or the workspace ID isn't stored. | Click **Edit**, and enter both. |
 | "The stored credential can't be used. Enter it again." | AI Security can't use the stored key. | Click **Edit**, and enter the key again. |
 | "The credential works, but access was denied. A permission is missing." | The Compliance API refused the key. It isn't a Compliance API key, it was issued for another workspace, it was revoked, or the workspace ID is wrong. The test says: "the Compliance API key is issued by a workspace owner in the ChatGPT admin console for one workspace. A key made on the OpenAI Platform is refused, and so is a key for another workspace". | Check the workspace ID, or have a workspace owner issue a Compliance API key for this workspace, and enter it under **Edit**. |
-| "The platform didn't answer, or said it is down or busy." | The Compliance API didn't answer. | Check that AI Security can reach api.chatgpt.com. |
+| "The platform didn't answer, or said it is down or busy." | The Compliance API didn't answer. | Test again later. |
 | "The platform didn't answer in time." | The Compliance API didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the key. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix Support. |
 
 ## If the scan reports a list it couldn't read
 

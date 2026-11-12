@@ -19,7 +19,7 @@ Connect ElevenLabs so AI Security can read the conversational agents in one Elev
 1. Select **Developers** in the left sidebar, then the **API Keys** tab.
 2. Click **Create API key**, and name it, for example "Netwrix 1Secure AI Security".
 3. Keep **Restrict Key** on, which is the default.
-4. Give the key read access to the agents and conversational AI resources and to workspace webhooks, and no write access. {/* TODO: confirm which restricted key scope covers agents. */}
+4. Give the key read access to the agents and conversational AI resources and to workspace webhooks, and no write access.
 5. Create the key, and copy it.
 
 :::warning
@@ -45,19 +45,17 @@ Select the ElevenLabs row to see the source.
 | Last test | "Succeeded", with the date of the test. |
 | Last scanned | "Never", then "Succeeded", with a refused optional read, or one agent's detail refused while the agent list answered, listed as skipped. "Partly scanned" when a listing was cut at the page limit. |
 
-The test reads the agent list with the key. A key with no Conversational AI scope can fail the test with "The credential works, but access was denied. A permission is missing." {/* TODO: confirm that a key with no Conversational AI scope fails the test this way. */}
+The test reads the agent list with the key.
 
 ## What this connector reads
 
 * Every conversational agent: name, tags, model, tools, the IDs of its Model Context Protocol (MCP) servers, the names of its knowledge bases, whether callers must authenticate, voice recording and transcript retention settings, and its creator, by the email address ElevenLabs states for them. The scan doesn't name a creator that ElevenLabs states without an email address. An MCP server is known by ID only, so AI Security doesn't know the server's address.
 * The phone numbers attached to agents, masked to the last four characters. AI Security stores the whole number nowhere, not on the agent, in an issue, or in an export.
 * Where a call can be transferred, masked to the last four characters.
-* How many calls each agent took, for how long, and when the last one was. If a scan reads fewer calls than the workspace holds, the next scan reads on from where it stopped.
+* How many calls each agent took, for how long, and when the last one was, over the last 90 days, or since the last scan. Where that span holds more calls than one scan reads, the scan reads the earliest part of it whole, and the next scan reads on from where it stopped.
 * The workspace's stored secrets by name and type, and which agents and numbers use each one.
 * Where post-call transcripts are sent, from the workspace's webhooks.
 * The workspace's knowledge base listing. AI Security records knowledge only by name on the agents that use it.
-
-{/* TODO: confirm how far back the call counts reach (the source gave 90 days). */}
 
 ### What the connector never touches
 
@@ -85,10 +83,10 @@ The test reads the agent list with the key. A key with no Conversational AI scop
 | "The stored credential can't be used. Enter it again." | AI Security can't use the stored key. | Click **Edit**, and paste the key again. |
 | "The platform refused the credential. It is wrong, expired or revoked." | ElevenLabs refused the key: it is wrong, or deleted. | Create a new key, and paste it under **Edit**. |
 | "The credential works, but access was denied. A permission is missing." | ElevenLabs accepted the key and refused the agent list. Under **Technical details**, the test says: "Create an ElevenLabs API key with read access to Conversational AI and to workspace webhooks, then save it in the source's settings." | Edit the key's restrictions, or create a new key with that access. |
-| "The platform didn't answer, or said it is down or busy." | ElevenLabs didn't answer. | Check that AI Security can reach api.elevenlabs.io. |
+| "The platform didn't answer, or said it is down or busy." | ElevenLabs didn't answer. | Test again later. |
 | "The platform didn't answer in time." | ElevenLabs didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the key. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix Support. |
 
 ### If the scan skips something or warns
 

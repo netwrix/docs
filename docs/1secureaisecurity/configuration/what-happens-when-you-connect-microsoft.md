@@ -44,6 +44,8 @@ The window can mark the 1Secure application as **unverified** and say "This appl
 
 The second window asks you, as an administrator, to consent for your whole organization. When you click **Accept**, Microsoft grants the 1Secure application every permission it lists, across the directory. 1Secure uses them to read, and never to change your directory. A few are rights that Microsoft offers only in a form wider than reading, such as full control of each SharePoint site you approve, because reading a site's own permissions needs that right. These are the permissions 1Secure keeps and scans with.
 
+The second window lists eighteen Microsoft Graph application permissions: Application.Read.All, User.Read.All, DelegatedPermissionGrant.Read.All, Organization.Read.All, Policy.Read.All, Policy.Read.PermissionGrant, AuditLog.Read.All, AuditLogsQuery.Read.All, RoleManagement.Read.Directory, Reports.Read.All, Sites.Read.All, CopilotPackages.Read.All, AppCatalog.Read.All, Sites.Selected, SharePointTenantSettings.Read.All, Group.Read.All, InformationProtectionPolicy.Read.All, and ThreatHunting.Read.All. Sites.FullControl.All is added only when you choose **All sites** for SharePoint.
+
 [Connect every Microsoft source](/docs/1secureaisecurity/configuration/sources/connect-every-microsoft-source.md) lists each permission, what it reads, and what a test or scan says when it is missing.
 
 ## What 1Secure keeps and what it drops

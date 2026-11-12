@@ -6,6 +6,10 @@ sidebar_position: 1
 
 # Netwrix 1Secure AI Security Documentation
 
+:::note
+This is pre-release documentation for the 1Secure AI Security Beta.
+:::
+
 AI Security finds the AI agents and the non-human identities working across the platforms your organization uses. You connect each platform as a source, run a scan, and work the results on the AI Security pages in 1Secure.
 
 ![AI Security Overview page with the Agents, High risk, Open issues, and Shadow AI cards, the Last scanned line, and the headline with View issues](/images/1secureaisecurity/misc/ai-security-overview-page.webp)
@@ -23,6 +27,12 @@ AI Security finds the AI agents and the non-human identities working across the 
 AI Security reads each platform with read-only access. It never changes, deletes, or sends anything on a platform it scans. Microsoft sources connect through one Microsoft sign-in or through an app registration you create. Every other platform takes a credential you create in that platform's console.
 
 A scan reads each connected source and reports what it couldn't read. A figure that wasn't read shows as **Not measured**, never as zero, so a smaller answer is never mistaken for a smaller estate.
+
+## Which platforms the Beta connects
+
+The Beta connects the platforms 1Secure can reach over the public internet. A server, cluster, or instance reachable only inside your network can't be connected yet.
+
+Eight platforms show **Coming soon** on the **Sources** page and offer no way to connect a source yet: AWS Bedrock, Atlassian, ServiceNow, ServiceNow AI Control Tower, Salesforce, Google Workspace, Docker, and OpenShell.
 
 ## Where to start
 
