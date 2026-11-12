@@ -31,6 +31,10 @@ Privilege Secure writes the selected resolution into every RDP file that it gene
 
 RDP files that you download from Privilege Secure show as coming from an unknown publisher. To remove the warning, sign the files with a certificate and tell Windows to trust it.
 
+:::note
+Signing the file fixes the unknown publisher warning only. If the RDP client warns that "The identity of the remote computer cannot be verified", replace the certificate that the RDP proxy presents. See [Replace the proxy RDP certificate](/docs/privilegesecure/26.07/configuration/certificates.md#replace-the-proxy-rdp-certificate).
+:::
+
 ### Prerequisites
 
 - A certificate in the local computer certificate store on the Privilege Secure server. It can be the certificate that you use for the console.

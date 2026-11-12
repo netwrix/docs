@@ -125,3 +125,4 @@ To confirm the port that the SSH proxy listens on, run `netstat -ano` and look f
 - [Session recording](/docs/privilegesecure/26.07/admin/sessions/session-recording.md)
 - [Configure SSH algorithms](/docs/privilegesecure/26.07/configuration/ssh-algorithms.md)
 - [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md)
+- [Replace the proxy RDP certificate](/docs/privilegesecure/26.07/configuration/certificates.md#replace-the-proxy-rdp-certificate)
