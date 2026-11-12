@@ -24,7 +24,7 @@ The installer creates a self-signed certificate for the Netwrix Privilege Secure
 1. Select **OK**, then **Close**.
 1. Open Command Prompt as an administrator and run `iisreset`.
 
-The installer saves the bindings of the website during an install or upgrade and applies them again. It restores each binding that has a certificate, as long as the certificate is still in a Local Computer certificate store. It skips a binding whose certificate is no longer there. An upgrade doesn't recreate or reconfigure the website, so custom bindings are kept.
+The installer saves the bindings of the website during an install or upgrade and applies them again. It restores each binding that has a certificate, as long as the certificate is still in a Local Computer certificate store. It skips a binding whose certificate is no longer there. An upgrade doesn't recreate or reconfigure the website, so it keeps custom bindings.
 
 ## Register services with the new DNS name
 
@@ -32,7 +32,7 @@ Set **NPS Rest URL** to the FQDN on the certificate and register the services. S
 
 ## Replace the proxy RDP certificate
 
-When a user connects to a session over Remote Desktop Protocol (RDP), the RDP proxy presents a certificate to the RDP client. The Proxy Service creates a self-signed certificate that is valid for five years the first time it starts, so the client warns that "The identity of the remote computer cannot be verified". Replace it with a certificate that the clients trust to remove the warning.
+When a user connects to a session over Remote Desktop Protocol (RDP), the RDP proxy presents a certificate to the RDP client. The first time the Proxy Service starts, it creates a self-signed certificate that is valid for five years, so the client warns that "The identity of the remote computer cannot be verified". Replace it with a certificate that the clients trust to remove the warning.
 
 This warning is separate from the "unknown publisher" warning. Signing the RDP file fixes the publisher warning, not this one. See [Configure and sign RDP files](/docs/privilegesecure/26.07/configuration/system-settings/rdp-files.md).
 
@@ -50,7 +50,7 @@ This warning is separate from the "unknown publisher" warning. Signing the RDP f
 
 ### Import the certificate
 
-The import overwrites the existing proxy certificate and key without a backup. The private key is stored unencrypted, so restrict access to the folders.
+The import overwrites the existing proxy certificate and key without a backup. The import stores the private key unencrypted, so restrict access to the folders.
 
 1. Copy the `.pfx` file to the proxy server and name it `rdp.pfx`, for example `C:\install\rdp.pfx`.
 1. Back up the `C:\ProgramData\Stealthbits\PAM\tls\certs` and `C:\ProgramData\Stealthbits\PAM\tls\keys` folders.
