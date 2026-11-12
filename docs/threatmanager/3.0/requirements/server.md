@@ -69,9 +69,9 @@ estimations based on organization size can be used:
 
 The following are additional requirements for the application server:
 
-- .NET 8.0.11
-- .NET Desktop Runtime 8.0.11
-- ASP.NET Core 8.0.11
+- .NET 8.0
+- .NET Desktop Runtime 8.0
+- ASP.NET Core 8.0
 - VC++ redist v14.28.29914
 - Python v3.10.8x64
 

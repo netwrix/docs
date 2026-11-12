@@ -24,8 +24,10 @@ knowledge_article_id: kA0Qk0000002E25KAE
 Which version of .NET is required for Netwrix Threat Manager?
 
 ## Answer
-For NTM Versions running PostgreSQL version 14.X Netwrix Threat Manager requires ASP.NET Core 8.0.11 (or newer) and .NET Desktop Runtime 8.0.11 (or newer). 
-For NTM version running PostgreSQL version 18.X Netwrix Threat Manager requires ASP.NET Core 10.0.10 (or newer) and .NET Desktop Runtime 10.0.10 (or newer).
+
+NTM versions 3.0 and 3.1 require ASP.NET Core 8.0 (or newer within the same major release) and .NET Desktop Runtime 8.0 (or newer within the same major release).
+
+NTM versions 3.2 and later require ASP.NET Core 10.0 (or newer within the same major release) and .NET Desktop Runtime 10.0 (or newer within the same major release).
 
 See also [Netwrix Threat Manager Requirements Version 3.0](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server) in **Getting Started**.
 [Netwrix Threat Manager Requirements Version 3.1](https://docs.netwrix.com/docs/threatmanager/3_1/requirements/server)
@@ -33,7 +35,7 @@ See also [Netwrix Threat Manager Requirements Version 3.0](https://docs.netwrix.
 [Netwrix Threat Manager Requirements Version 3.3](https://docs.netwrix.com/docs/threatmanager/3_3/requirements/server)
 
 :::note
-.Net componments may be upgraded within the same major release independent of Netwrix Threat Manager. 
+.Net components may be upgraded within the same major release independent of Netwrix Threat Manager. 
 
 .NET Framework and ASP.NET Core are separate components — installing one does not install the other. ASP.NET Core and .NET Desktop Runtime appear in the list of installed Apps & features. .NET Framework does not appear on that list. You can check which versions of .NET Framework you have installed by running the following command in PowerShell:
 :::

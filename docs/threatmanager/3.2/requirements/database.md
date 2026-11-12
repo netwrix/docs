@@ -26,16 +26,16 @@ Additionally the server must meet these requirements:
 
 The following are additional requirements for the database server:
 
-- .NET 8.0.11
-- .NET Desktop Runtime 8.0.11
-- ASP.NET Core 8.0.11
+- .NET 10.0
+- .NET Desktop Runtime 10.0
+- ASP.NET Core 10.0
 - VC++ redist v14.28.29914
 
 **Additional Considerations**
 
 The following considerations must be accommodated for:
 
-- When running antivirus scans against the PostgreSQL v14 database, the PostgreSQL data folder must
+- When running antivirus scans against the PostgreSQL database, the PostgreSQL data folder must
   be excluded from the scans to prevent database complications.
 - For performance reasons, disable Windows File Indexing on the drive containing the Threat Manager
   database.

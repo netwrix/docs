@@ -70,17 +70,17 @@ estimations based on organization size can be used:
 
 The following are additional requirements for the application server:
 
-- .NET 8.0.11
-- .NET Desktop Runtime 8.0.11
-- ASP.NET Core 8.0.11
-- VC++ redist v14.28.29914
+- .NET 10.0
+- .NET Desktop Runtime 10.0
+- ASP.NET Core 10.0
+- VC++ redist v14.50.35719
 - Python v3.10.8x64
 
 **Additional Considerations when Database is on the Application Server**
 
 The following considerations must be accommodated for:
 
-- When running antivirus scans against the PostgreSQL v14 database, the PostgreSQL data folder must
+- When running antivirus scans against the PostgreSQL database, the PostgreSQL data folder must
   be excluded from the scans to prevent database complications.
 - For performance reasons, disable Windows File Indexing on the drive containing the Threat Manager
   database.

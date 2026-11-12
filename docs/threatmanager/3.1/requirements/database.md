@@ -26,9 +26,9 @@ Additionally the server must meet these requirements:
 
 The following are additional requirements for the database server:
 
-- .NET 8.0.11
-- .NET Desktop Runtime 8.0.11
-- ASP.NET Core 8.0.11
+- .NET 8.0
+- .NET Desktop Runtime 8.0
+- ASP.NET Core 8.0
 - VC++ redist v14.28.29914
 
 **Additional Considerations**
