@@ -143,7 +143,7 @@ The DNS search names the program file that asked, such as chrome.exe or curl.exe
 
 ## Read which account each AI tool signed in with
 
-The CrowdStrike Falcon source has an option, **Collect the account each AI tool signed in with**, that is off until an administrator turns it on. With it on, each scan reads which account Claude Code and Codex signed in with on the hosts where it found either installed or started. The product row then says how many hosts signed in to your organization's own vendor organization, to another organization, with a personal account, or with nothing the read could tell.
+The CrowdStrike Falcon source has an option, **Collect the account each AI tool signed in with**, that is off until an administrator turns it on. With it on, each scan reads which account Claude Code and Codex signed in with on the hosts where it found either installed or started. The product row then says how many hosts signed in to your connected organization, to another organization, with a personal account, or with an account the read couldn't tell.
 
 **What the option reads and what it never reads.** On each host, a script reads, for every profile, the sign-in record of Claude Code (`.claude.json`) and of Codex (`.codex/auth.json`). It returns one line per tool and profile with two values: the email domain of the signed-in Claude Code or Codex account, the part after the at sign, and the organization ID of that account. It never returns the part before the at sign, the address, a name, a profile name, a path, a token, a key, or the file. The file never leaves the host. AI Security keeps no domain. Per host, it keeps the organization identifier and whether the domain was a consumer mail domain such as gmail.com. It counts them and drops both after it has made the counts.
 
@@ -153,26 +153,26 @@ Running a script is a real time response administrator command, so the option ne
 
 **The admin scope is tenant-wide.** The option limits itself instead. It targets only the hosts where it found Claude Code or Codex, never the whole estate, and runs only the account script. Revoke the scope when you turn the option off.
 
-**How it reads.** AI Security adds two scripts to your custom script library itself, the first time a scan needs them, and updates them after: `netwrix-ai-account.ps1` for Windows and `netwrix-ai-account.sh` for Mac and Linux. There is nothing to download or upload. Only real time response administrators can run them. The scan opens one batch session over the hosts where it found a listed tool, and runs each script once over the hosts of its platform. It doesn't read an offline host, and nothing runs on one after the scan. It waits a short time for a host whose command hasn't finished before it stops waiting. Every session and command is in Falcon's real time response audit, under the API client's name. The scan doesn't read or count a host that was offline, refused, or didn't finish, and the source says how many.
+**How it reads.** AI Security adds two scripts to your custom script library itself, the first time a scan needs them, and updates them after: `netwrix-ai-account.ps1` for Windows and `netwrix-ai-account.sh` for Mac and Linux. There is nothing to download or upload. Only real time response administrators can run them. The scan opens one batch session over the hosts where it found a listed tool, and runs each script once over the hosts of its platform. It doesn't read an offline host, and nothing runs on one after the scan. It waits a short time for a host whose command hasn't finished before it stops waiting. Every session and command is in Falcon's real time response audit, under the API client's name. A host where the script ran and found no AI tool signed in counts as **Account unknown**. The scan doesn't read or count a host that was offline, returned no output, didn't finish, or whose response policy doesn't allow custom scripts, and the source says how many.
 
 **The outcomes.** Each host read is counted under each outcome its profiles showed:
 
 | Outcome | When |
 |---------|------|
-| Signed in to your organization | The tool's organization ID is the Anthropic organization your Anthropic source connected. AI Security compares only Claude Code, because the OpenAI source reads a platform organization, which isn't the ChatGPT workspace Codex records. |
-| Personal account | The domain is a consumer mail domain. |
-| Another organization | The tool names an organization, and the one your vendor source connected isn't it. |
-| Unknown | Anything else: no sign-in, an API key or cloud provider run, or no connected organization to compare with. |
+| Signed in to your connected organization | Claude Code's organization ID is one of the Anthropic organizations you connected. AI Security compares only Claude Code, because the OpenAI source reads a platform organization, which isn't the ChatGPT workspace Codex records. |
+| Signed in with a personal account | The domain is a consumer mail domain. |
+| Signed in to another organization | The tool names an organization, and it isn't one you connected. |
+| Account unknown | Anything else: no AI tool signed in, an API key or cloud provider run, or no connected organization to compare with. |
 
-**The statement you confirm.** Turning either switch on opens a statement of what the option reads and never reads or keeps. The statement also says that each read is a real time response script that Falcon records in its real time response audit, and that telling the people who use the hosts is your organization's responsibility. Nothing turns on until you confirm it. The source shows who confirmed it and when. Turning a switch off asks nothing. **Per device detail** is a second switch under the first. With it on, the row also lists each host read and its outcome, never a domain.
+**The statement you confirm.** Turning the switch on opens a statement of what the option reads and never reads or keeps. The statement also says that each read is a real time response script that Falcon records in its real time response audit, and that telling the people who use the hosts is your organization's responsibility. It also says to turn on real time response and custom scripts in your response policy. Select **Also list each device** to list each host read and its outcome, never a domain. When you click **Confirm**, AI Security checks the API client's permissions first. If one is missing, nothing is saved and the statement names it. Nothing turns on until you confirm it. The source shows who confirmed it and when. Turning the switch off asks nothing.
 
 ### Turn on the account read
 
 1. In the Falcon console, select **Support and resources > Resources and tools > API clients and keys**, and add the three real time response scopes in the table that follows these steps to the API client.
 2. In each platform's response policy, under **Host setup and management > Response policies**, turn on **Real time response** and **Custom scripts** for the host groups to read.
 3. In AI Security, select the CrowdStrike Falcon row on **Sources**, and turn on **Collect the account each AI tool signed in with**.
-4. Read the statement, and click **Confirm**.
-5. To also list each host read and its outcome, turn on **Per device detail**.
+4. Read the statement. To also list each host read and its outcome, select **Also list each device**.
+5. Click **Confirm**. If the statement names a missing permission, add it in Falcon, and click **Confirm** again.
 
 | Scope, as the API client page names it | Why |
 |----------------------------------------|-----|
@@ -180,7 +180,7 @@ Running a script is a real time response administrator command, so the option ne
 | Real time response: Write | Opens the batch session. |
 | Real time response (admin): Write | Keeps the scripts in the custom script library and runs them. It is tenant-wide, as described earlier. |
 
-With the option on, the test also checks the scopes that the Falcon token states, and runs nothing on a host. It fails with "The credential works, but access was denied. A permission is missing.", naming each of the three scopes still missing and the response policy settings. AI Security can't read the response policy with these scopes, so a scan says when it didn't read a host.
+A missing real time response scope doesn't fail the source's test, because the account read is optional. The test runs nothing on a host. AI Security can't read the response policy with these scopes, so a scan says when it didn't read a host.
 
 ## If the test fails
 
@@ -189,7 +189,7 @@ With the option on, the test also checks the scopes that the Falcon token states
 | "No credential is stored for this source." or "The credential is missing settings this platform needs." | The base URL, the client ID, or the secret isn't stored. | Click **Edit**, and enter all three. |
 | "The stored credential can't be used. Enter it again." | AI Security can't use the stored credential. | Click **Edit**, and enter them again. |
 | "The platform refused the credential. It is wrong, expired or revoked." | Falcon refused the client ID and secret. Under **Technical details**, the test says: "Check the client ID, client secret and base URL in the source's settings." | Check them, and check that the base URL is your cloud's, then click **Edit** to enter them again. |
-| "The credential works, but access was denied. A permission is missing." | Falcon accepted the API client and refused the host read. Or, with the account read on, the token lacks Real time response: Read, Real time response: Write, or Real time response (admin): Write, and the message names which. | Grant it Hosts: Read, and the real time response scopes the account read needs. |
+| "The credential works, but access was denied. A permission is missing." | Falcon accepted the API client and refused the host read. | Grant it Hosts: Read. |
 | "A setting is invalid. Addresses must start with https:// on the platform's domain." | The base URL isn't https, isn't on crowdstrike.com or crowdstrike.mil, or its name resolves to a private address. | Enter the API base URL of your cloud as the console shows it. |
 | "The platform didn't answer, or said it is down or busy." | Falcon didn't answer at that base URL. | Check that the base URL is the API address of your cloud, then test again later. |
 | "The platform slowed down the test. Wait a few minutes and test again." | Falcon rate limited the test, so **Last test** shows "Warning". This isn't a missing scope. | Wait a few minutes, then click **Test again**. |
@@ -213,7 +213,7 @@ A scan that reads to the end lists what it couldn't read as skipped items, and i
 | "Partly scanned", and "Not scanned: The rest of a long list, because the scanner reached the most it reads in one scan." | A listing stopped at the page limit, and the scan keeps the rows it read. | Set **Run scans** to **Every day** under **Settings > Scan schedule**, so each scan reads a shorter span. |
 | "Succeeded", with a skipped item that names the real time response scopes | Falcon refused the script library or the batch. The scan says: "Grant the Falcon API client the Real time response: Read, Real time response: Write and Real time response (admin): Write scopes to read which account each AI tool signed in with; until then no account is read". | Grant the three scopes as [Turn on the account read](#turn-on-the-account-read) describes. |
 | "Succeeded", with "The account each AI tool signed in with on some hosts, because Falcon slowed the scanner down." among the skipped items | Falcon throttled the account read, which stopped there, and the scan read the rest. | Nothing to grant. The next scan asks again. |
-| "Succeeded", with "The account each AI tool signed in with on some hosts where Falcon found it." among the skipped items | The scan didn't read some hosts: they were offline, their response policy refused, they didn't finish in time, or they were past the most one run holds. The scan doesn't count them. | Turn on **Real time response** and **Custom scripts** in each platform's response policy for those hosts. The scan reads an offline host when a scan finds it online. |
+| "Succeeded", with "The account each AI tool signed in with on some hosts where Falcon found it." among the skipped items | The scan didn't read some hosts: they were offline, their response policy doesn't allow custom scripts, they returned no output, they didn't finish in time, or they were past the most one run holds. The scan doesn't count them. | Turn on **Real time response** and **Custom scripts** in each platform's response policy for those hosts. The scan reads an offline host when a scan finds it online. |
 
 ## Security notes
 

@@ -29,15 +29,15 @@ Each card opens the list it counts, and the number on the card equals the number
 
 Under **What was discovered**, the headline reads "Your environment has" the number of AI agents "across" the number of platforms. The line under it says how many agents are high risk and how many open issues there are to resolve. **View issues** opens the **Issues** page.
 
-Under the categories, a line says how many shadow AI tools need a decision.
+The category list shows only the categories that hold agents. Under the categories, a line says how many shadow AI tools need a decision.
 
 The picture beside the category list draws every agent as one dot, grouped around the ring by the platform it is on. One dot can stand for several agents. Each dot takes the color of its category, the same color the category list shows, as the legend under the picture says. Bigger dots have more open issues. Hover over a dot to see its platform and its risk. Select a dot to open the agent. To see only the agents at risk, use the picture's **High risk** filter.
 
 ## While a scan runs
 
-During the first scan, the line under the title says "Agents discovered so far in your first scan." A banner ahead of the cards says "First scan in progress" with how many sources have finished, for example "12 agents discovered so far, 2 of 5 sources finished", and the minutes left where 1Secure can estimate them. The banner also says "Results below are partial and update as each source finishes." **View progress** opens the **Sources** page. After the scan ends, the banner changes to "First scan finished." with the agents found and the sources read, until you click **Close**.
+During the first scan, the line under the title says "Agents discovered so far in your first scan." The four cards wait until the first scan ends. A banner in their place says "First scan in progress" with how many sources have finished, for example "12 agents discovered so far, 2 of 5 sources finished", and the minutes left where 1Secure can estimate them. The banner also says "Results below are partial and update as each source finishes." **View progress** opens the **Sources** page. After the scan ends, the banner changes to "First scan finished." with the agents found and the sources read, until you click **Close**.
 
-During a later scan, the page keeps its results, and one line under the title says "Scan in progress." with the same count and **View progress**.
+During a later scan, the page keeps its results, and one line under the title says "Scan in progress." with the same count and **View progress**. A card that isn't measured yet says "Not measured".
 
 ## Before the first agent
 
