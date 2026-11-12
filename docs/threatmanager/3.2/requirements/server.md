@@ -7,7 +7,7 @@ sidebar_position: 10
 # Application Server Requirements
 
 :::warning
-Netwrix Threat Manager can't be installed on the same server as Netwrix Threat Manager
+You can't install Netwrix Threat Manager on the same server as Netwrix Threat Manager
 Reporting Module.
 :::
 
@@ -38,12 +38,12 @@ events for a peak day of the week, by activity.
 | IOPS             | 8,000      | 5,000       | 3,000  | 2,000  | 1,000 | 500         |
 
 :::note
-All values are based upon a seven day event retention period in Threat Manager.
+All values are based on a seven-day event retention period in Threat Manager.
 :::
 
 
 You can typically discover the daily events for Threat Manager to monitor by using Netwrix Threat
-Prevention or Netwrix Activity Monitor. When planning a deployment where no Netwrix agent is
+Prevention or Netwrix Activity Monitor. When you plan a deployment where no Netwrix agent is
 deployed, scaling is harder to plan. Use the following estimations based on organization size:
 
 - For fewer than 1,000 active users
@@ -95,7 +95,7 @@ The following permissions are required to install and use the application:
 ## Virtual Environment Recommendations
 
 Although physical machines are always preferred, Netwrix fully supports virtual machines. This
-section contains special considerations when using virtualization.
+section contains special considerations for virtualization.
 
 - VMWare® ESX® – If using ESX, the following specifications are recommended:
 
