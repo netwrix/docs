@@ -7,7 +7,7 @@ sidebar_position: 40
 
 # Deep Packet Inspection
 
-Deep Packet Inspection (DPI) gives Endpoint Protector native network traffic visibility, covering embedded network Data Loss Prevention (DLP) needs without requiring external web proxy components or web traffic redirection. DPI inspects and protects sensitive content even when it's encrypted — over standard SSL/TLS or Post-Quantum Cryptography (PQC) web tunnels — so encryption doesn't prevent content inspection or block policy enforcement. Content inspection happens directly on the endpoint, so you can monitor and control web traffic without it physically leaving the endpoint, ensuring data is protected before it leaves the end user's computer and the organization. This provides comprehensive, full visibility over network egress channels, including web applications, web services, and protocols.
+Deep Packet Inspection (DPI) gives Endpoint Protector native network traffic visibility, covering embedded network Data Loss Prevention (DLP) needs without requiring external web proxy components or web traffic redirection. DPI inspects and protects sensitive content even when it's encrypted — over standard SSL/TLS or Post-Quantum Cryptography (PQC) web tunnels — so encryption doesn't prevent content inspection or block policy enforcement. Content inspection happens directly on the endpoint, so you can monitor and control web traffic without it physically leaving the endpoint, so data is protected before it leaves the end user's computer and the organization. This provides comprehensive, full visibility over network egress channels, including web applications, web services, and protocols.
 
 Starting with EPP Client version 2605, DPI supports content inspection over PQC-encrypted tunnels.
 

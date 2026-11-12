@@ -45,7 +45,7 @@ The Enforced Encryption application is available for two platforms: Windows and 
 ## Enforced Encryption 140-3 FIPS Validated Engine
 
 :::note
-Starting with Netwrix Enforced Encryption version 3.0.0.2 (5.9.4.2 release), Netwrix introduced a new encryption engine, replacing the previous 256-bit AES CBC-mode encryption with FIPS 140-3 validated cryptography. This FIPS 140-3 validated encryption provides the highest standards of data protection, ensuring compliance with the latest industry regulations. While the new encryption engine is fully backward compatible for existing users, allowing for a seamless upgrade and continued use of previously encrypted drives, USB sticks encrypted with the FIPS 140-3 validated engine will not be compatible with older Enforced Encryption Clients. Therefore, Netwrix recommends updating EE Clients to ensure compatibility.
+Starting with Netwrix Enforced Encryption version 3.0.0.2 (5.9.4.2 release), Netwrix introduced a new encryption engine, replacing the previous 256-bit AES CBC-mode encryption with FIPS 140-3 validated cryptography. This FIPS 140-3 validated encryption provides the highest standards of data protection and supports compliance with the latest industry regulations. While the new encryption engine is fully backward compatible for existing users, allowing for a seamless upgrade and continued use of previously encrypted drives, USB sticks encrypted with the FIPS 140-3 validated engine will not be compatible with older Enforced Encryption Clients. Therefore, Netwrix recommends updating EE Clients to ensure compatibility.
 :::
 
 To verify the version of the 140-3 FIPS validated engine and view certification details, check the "About" section in the Enforced Encryption application.

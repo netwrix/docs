@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Netwrix Endpoint Protector Server-Side Support Policy
 
-Netwrix is committed to providing high-performing solutions. To achieve this, the support policy focuses on maintaining compatibility with recent software versions. Staying current with both the server and the agent is critical to accessing full support, ensuring end-to-end functionality, and maintaining optimal security.
+Netwrix is committed to providing high-performing solutions. To achieve this, the support policy focuses on maintaining compatibility with recent software versions. Staying current with both the server and the agent is critical to accessing full support, keeping end-to-end functionality, and maintaining optimal security.
 
 This document defines how Endpoint Protector server updates are released, supported, and how customers can stay fully supported.
 

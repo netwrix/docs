@@ -127,7 +127,7 @@ Endpoint Protector saves File Shadows in this structure:
 sub-folder come from **S3 Bucket Location**.
 
 When you select the S3 Bucket repository type, the console shows this message at the top of the page:
-"Make sure the Endpoint Protector Server time is synchronized (Appliance > Serv. Maintenance) with a reliable
+"ensure the Endpoint Protector Server time is synchronized (Appliance > Serv. Maintenance) with a reliable
 time source before using an S3 bucket as a File Shadow repository. Amazon S3 may reject requests if the
 server time differs by more than 5 minutes from the S3 service time."
 

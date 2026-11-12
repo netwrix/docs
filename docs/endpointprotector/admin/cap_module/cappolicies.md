@@ -162,7 +162,7 @@ Report Only policies.
 ### Regular and Global Threshold Use Cases
 
 This section allows Block & Report policies to handle Social Security Numbers (SSN) and phone
-numbers, emphasizing the distinctions between Regular and Global Thresholds.
+numbers, and shows the distinctions between Regular and Global Thresholds.
 
 1. Block & Report Policy for Social Security Numbers (SSN) in Multiple Browsers:
 
@@ -246,7 +246,7 @@ To apply labels from a policy:
 3. In **NDC Label(s)**, select one or more NDC labels to apply when the policy triggers. The list shows the labels defined under **Denylists** > **NDC Classification**.
 4. Click **Save**.
 
-![NDC Labeling turned on in a Content Aware Protection policy, with the NDC Label(s) list](capndclabeling.webp)
+![NDC Labeling turned on in a Content Aware Protection policy, with the NDC Labels list](capndclabeling.webp)
 
 If no NDC labels exist, the console shows the message "No NDC labels are defined. Go to Denylist → NDC Classification to create one before enabling NDC Labeling." You can't save a policy with **NDC Labeling** turned on and no label selected.
 
@@ -456,7 +456,7 @@ From the **Storage Devices** tab, you can select to monitor transfers:
 - for all Storage Devices—turn on **Apply policy to all storage devices** to enforce
   content policies on all storage devices, regardless of Custom Classes.
 
-When you turn the setting on or off, Endpoint Protector asks you to confirm. Turning it off enforces content policies only on Custom Classes, and it affects all other Content Aware Protection policies, whether or not they select Custom Classes.
+When you turn the setting on or off, Endpoint Protector asks you to confirm. Turning it off enforces content policies only on Custom Classes, and it affects all other Content Aware Protection policies, whether they select Custom Classes.
 
 The **Custom Classes** group lists the Custom Classes with an ON or OFF status. Storage Devices and Custom Classes exclude one another: the list is disabled while **Apply policy to all storage devices** is on. A Custom Class that another policy already uses is greyed out, and Endpoint Protector ignores a Custom Class that is set to OFF.
 

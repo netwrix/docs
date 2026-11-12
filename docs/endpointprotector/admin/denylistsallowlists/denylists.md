@@ -355,7 +355,7 @@ the following example for Google Chrome:
 
 With CLI commands denylists, you can define criteria for command line arguments that match specific
 application behaviors. This lets you create CAP policies tailored to your organization's needs,
-ensuring that the launch and behavior of applications align with your security and compliance
+so that the launch and behavior of applications align with your security and compliance
 requirements.
 
 :::note

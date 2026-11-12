@@ -1128,7 +1128,7 @@ Before you use these settings, ensure that you configure a Master Password. See 
 
 This section configures the eDiscovery feature for [user-initiated scans](/docs/endpointprotector/admin/ed_module/edscanning.md#user-initiated-scan-settings).
 
-- **User-Initiated Scans** — Allows users to scan their computers against company policies to assess and remediate data on their own. Users receive reports directly in the EPP Notifier.
+- **User-Initiated Scans** — Lets users scan their computers against company policies to assess and remediate data on their own. Users receive reports directly in the EPP Notifier.
 
 - **Number of Scans** — Retains a specified number of scan results (range: 1–10, default: 1).
 - **Number of Days** — Retains scan results for a specified number of days (range: 1–30, default: 1).

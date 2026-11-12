@@ -173,7 +173,7 @@ unintentional changes or data breaches.
 ![User Role Matrix](userrolematrix.webp)
 
 Endpoint Protector has several user roles, each with its own set of
-permissions. The Super Administrator role is the most powerful and has access to all features,
+permissions. The Super Administrator role has the broadest permissions and has access to all features,
 whilst other roles have more restricted access based on their job tasks.
 
 :::note

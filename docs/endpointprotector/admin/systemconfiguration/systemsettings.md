@@ -562,7 +562,7 @@ Edit contact details for the main administrator and then click Save to keep all 
 
 ### Server Display Name
 
-Endpoint Protector users can visually differentiate environments within the Endpoint Protector console, ensuring precise identification and preventing unintended actions in the wrong environment. This customization feature lets users add custom text at the Endpoint Protector logo on the login page and alongside the logo in the console header. Users can also upload a custom logo.
+Endpoint Protector users can visually differentiate environments within the Endpoint Protector console, so they can identify each environment precisely and avoid unintended actions in the wrong environment. This customization feature lets users add custom text at the Endpoint Protector logo on the login page and alongside the logo in the console header. Users can also upload a custom logo.
 
 Organizations managing multiple Endpoint Protector Server consoles (such as production and testing environments) can use distinct visual cues—custom text, icon markings, and extended legal banners—to differentiate between them. These elements help administrators identify the environment they are working in and ensure appropriate console usage.
 

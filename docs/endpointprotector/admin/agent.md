@@ -353,9 +353,8 @@ and **allow** the Endpoint Protector Client Extension.
 The macOS Endpoint Protector Client installation is now complete.
 
 :::note
-If EPPNotifier isn't visible or notifications don't display after the installation or
-upgrade of the Endpoint Protector Client on macOS, resolve this issue by restarting your
-machine. If you install and then uninstall the Endpoint Protector Client on
+If EPPNotifier isn't visible or notifications don't display after you install or
+upgrade the Endpoint Protector Client on macOS, restart your machine. If you install and then uninstall the Endpoint Protector Client on
 macOS, you may still see EPPNotifier in the Notification settings. To remove it from the list,
 right-click and select "Reset notifications."
 :::

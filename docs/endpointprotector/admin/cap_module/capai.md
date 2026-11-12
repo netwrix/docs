@@ -161,7 +161,7 @@ To configure a CAP policy for this purpose:
     For the full description of the actions, see [Policy Information](/docs/endpointprotector/admin/cap_module/cappolicies.md#policy-information).
 
 2.  Define the CAP application exit points to cover every way a user can reach Claude:
-    - Check the desired web browsers in the **Web Browsers** group to cover Claude in a web browser, for example when a user accesses Claude at `https://claude.ai/`. Check every browser that your users use, because the policy applies only to the browsers you select.
+    - Check the web browsers you want in the **Web Browsers** group to cover Claude in a web browser, for example when a user accesses Claude at `https://claude.ai/`. Check every browser that your users use, because the policy applies only to the browsers you select.
     - Check **Claude App** and **Claude Code CLI** in the **AI/LLMs** group to cover the Claude native desktop application and Claude Code.
 
 :::note

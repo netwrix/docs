@@ -10,7 +10,7 @@ Netwrix Endpoint Protector is a comprehensive Data Loss Prevention (DLP) solutio
 
 Traditional network security measures often struggle to prevent data breaches originating from endpoints such as laptops, desktops, and servers. Endpoint Protector addresses this challenge with a robust suite of features including Device Control, Content Aware Protection, eDiscovery, and Enforced Encryption.
 
-Device Control empowers organizations to manage and monitor all device activities at the endpoint, ensuring that sensitive data remains protected from unauthorized access or transfer. Content Aware Protection extends this security by scanning and detecting sensitive content at all potential exit points, whether users are copying it to external devices or transmitting it over the internet.
+Device Control empowers organizations to manage and monitor all device activities at the endpoint, so that sensitive data remains protected from unauthorized access or transfer. Content Aware Protection extends this security by scanning and detecting sensitive content at all potential exit points, whether users are copying it to external devices or transmitting it over the internet.
 
 As AI chat tools and AI-powered browser assistants become part of everyday workflows, Content Aware Protection extends the same visibility and control to AI interactions. Administrators can define which AI applications end users may access, and monitor or block sensitive content — typed directly into a prompt or attached as a file — before it reaches an AI provider that isn't on the organization's approved list. For details, see [Content Aware Protection for AI Interactions](admin/cap_module/capai.md).
 

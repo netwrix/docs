@@ -217,7 +217,7 @@ This is a known product defect on 2601.
 
 ## 19. Activating Content Aware Protection and eDiscovery in an Air-Gapped or Offline Environment {#activating-2608-in-an-air-gapped-or-offline-environment}
 
-Servers that stay on 2608 still require an **Offline Activation Patch** for 2608 to activate Content Aware Protection or eDiscovery offline. Request it from Netwrix Support in advance. Servers on 2611.0.1.x and later don't need it, because activation no longer requires a connection to the Netwrix activation service. Once the server is on 2611, you activate the modules directly.
+Servers that stay on 2608 still require an **Offline Activation Patch** for 2608 to activate Content Aware Protection or eDiscovery offline. Request it from Netwrix Support in advance. Servers on 2611.0.1.x and later don't need it, because activation no longer requires a connection to the Netwrix activation service. After the server is on 2611, you activate the modules directly.
 
 **Steps:**
 1. Download the 2611 offline patch from the My Products portal before the migration maintenance window.
@@ -304,7 +304,7 @@ Contact Netwrix Support before attempting any rollback.
 
 ## 25. CAP Policies Don't Trigger After Migration {#cap-policies-dont-trigger-after-migration}
 
-In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, with no error reported. If you notice a CAP policy isn't triggering after migration, open the affected policy, edit and save it — even without changing anything — to redistribute it to endpoints. This resolves the issue. See [CAP Policies Not Triggering After Migration](/docs/endpointprotector/install/migrationprocedure/troubleshooting#cap-policies-not-triggering-after-migration) in Troubleshooting for more detail.
+In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, with no error reported. If you notice a CAP policy isn't triggering after migration, open the affected policy, then edit and save it — even without changing anything — to redistribute it to endpoints. This resolves the issue. See [CAP Policies Not Triggering After Migration](/docs/endpointprotector/install/migrationprocedure/troubleshooting#cap-policies-not-triggering-after-migration) in Troubleshooting for more detail.
 
 ---
 

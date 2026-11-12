@@ -381,7 +381,7 @@ Example:
 EPP IP - 192.0.2.10 - Content Aware Protection - Content Threat Blocked: [Log ID] 3b5d5c3712955042212316173ccf37be | [Client Computer] WS-014 | [IP Address] 192.0.2.45 | [MAC Address] 00:00:5E:00:53:01 | [Serial Number] SN-FAKE-014 | [OS] Windows 11 | [Client User] jsmith | [Content Policy] Fake PII Policy | [Content Policy Type] Predefined | [Destination Type] Web | [Destination] example.com | [Destination Details] | [Email Sender] | [Email Subject] | [Device VID] | [Device PID] | [Device Serial] | [File Name] report.docx | [File Hash] | [File Size] 1024 | [File Shadow] NO | [Repository Type] | [Matched Item] 000-00-0000 | [Item Details] | [Date/Time(Server)] 2026-10-30 09:20:00 | [Date/Time(Client)] 2026-10-30 09:19:59 | [Date/Time(Server UTC)] 2026-10-30T07:20:00Z | [Date/Time(Client UTC)] 2026-10-30T07:19:59Z | [Certificate State] | [Department Name] Default Department | [EPP Client Version] 0.0.0.0 | [Severity] High
 ```
 
-Endpoint Protector includes the **Justification** field only for the **Content Remediation Session Active** and **DPI Bypassed Traffic** events. For other events, the field is not in the message. The Content Aware Protection format has no **Event Name** field.
+Endpoint Protector includes the **Justification** field only for the **Content Remediation Session Active** and **DPI Bypassed Traffic** events. For other events, the field isn't in the message. The Content Aware Protection format has no **Event Name** field.
 
 When you use Reporting V1, fields associated with Reporting V2 content, such as **Destination Details**, **Email Sender**, and **Email Subject**, remain blank.
 
