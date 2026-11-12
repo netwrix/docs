@@ -45,7 +45,7 @@ Two different warnings can appear, and each has its own fix:
 
 - Administrator access to the server that runs the Proxy Service.
 - A PKCS#12 file (`.pfx`) that holds the certificate, its private key, and the issuing chain. The file needs a password, because the import fails for a file without one.
-- A certificate issued for server authentication, with the proxy host in its Subject Alternative Name (SAN) field. The proxy host is the host in the **RDP Proxy** setting of the connection profile. If that setting is blank, it is the name that users type to open the console. If the SAN doesn't list that name, the client shows a name mismatch warning. {/* TODO verify: confirm that the access policy's RDP proxy host is the connection profile **RDP Proxy** setting. */}
+- A certificate issued for server authentication, with the proxy host in its Subject Alternative Name (SAN) field. The proxy host is the host in the **RDP Proxy** setting of the connection profile. If that setting is blank, it is the name that users type to open the console. If the SAN doesn't list that name, the client shows a name mismatch warning.
 - The issuing CA's root certificate is trusted on every client computer that opens RDP sessions.
 
 ### Import the certificate
@@ -76,8 +76,6 @@ A `.pfx` file that can't be read, or a wrong password, makes the import fail bef
 ### Import on every proxy server
 
 Each server that runs the RDP proxy has its own certificate. Nothing copies it between servers. Run the import on every server that proxies RDP, including remote proxy servers and each node of a high availability deployment. See [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
-
-{/* TODO screenshot: the Windows RDP client warning "The identity of the remote computer cannot be verified" */}
 
 ## Renew the JWT signing certificate
 
