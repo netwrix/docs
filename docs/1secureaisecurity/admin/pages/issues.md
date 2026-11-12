@@ -50,12 +50,7 @@ Select an issue to open its drawer. It shows **What we found**, **How to resolve
 
 An issue about a setting for the whole Microsoft tenant, such as who may consent to apps or Anyone sharing in SharePoint, names **Microsoft tenant settings** under **Affected**.
 
-An issue about a setting for a whole workspace names that platform's workspace settings, such as **Notion workspace settings**. This applies to a Notion workspace, n8n instance, Atlassian site, Gemini Enterprise project, OpenAI organization, GitHub organization, Okta org, Anthropic organization, or Google Workspace domain. Neither a tenant settings issue nor a workspace settings issue has an owner, and nothing opens from it.
-
-An earlier scan showed each workspace settings issue on one of the platform's agents, workflows, tokens, keys, members, or OAuth clients. The next scan moves the issue onto the workspace settings.
-
-- Where the platform held one open issue for that rule, the moved issue keeps its first seen date, its status, and any exception. The scan counts it as neither resolved nor new.
-- Where the platform held more than one open issue for that rule, such as two Confluence spaces open to anonymous readers, the earlier issues resolve and the moved ones start as new.
+An issue about a setting for a whole workspace names that platform's workspace settings, such as **Notion workspace settings**. This applies to a Notion workspace, n8n instance, Gemini Enterprise project, OpenAI organization, GitHub organization, Okta org, or Anthropic organization. Neither a tenant settings issue nor a workspace settings issue has an owner, and nothing opens from it.
 
 ## Mark an issue resolved
 

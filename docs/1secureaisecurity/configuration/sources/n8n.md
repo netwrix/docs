@@ -12,6 +12,7 @@ Connect n8n so AI Security can read one n8n instance with an API key that the in
 
 - Sign in to the instance as the instance owner.
 - Enable the instance's public API. On n8n's hosted service, it isn't available during the free trial.
+- The Beta covers n8n's hosted service, or an instance of your own that has a public https address. An instance reachable only inside your network can't be connected yet.
 - Know the instance's public address, for example `https://acme.app.n8n.cloud`. A public address must be https.
 
 ## Connect n8n
@@ -45,12 +46,12 @@ Select the n8n row to see the source.
 |------|---------------|
 | Credential | "Readable". |
 | Last test | "Succeeded", or "Warning" when the audit answered and the workflow list didn't. |
-| Last scanned | "Never", then "Succeeded", with anything that a missing scope in the Permissions section left unread listed as skipped. "Partly scanned" appears when a list stopped short. |
+| Last scanned | "Never", then "Succeeded", with anything that a missing scope in the Permissions section left unread listed as skipped. "Partly scanned" appears when a list stopped short because n8n handed back a page cursor it had already given. |
 
 ## What this connector reads
 
 - Every workflow: its steps, whether it is active, who it is shared with, and the credential each step names.
-- The credentials the workflows use, by name and type, taken from the workflows and from n8n's own audit.
+- The credentials the workflows use, by name and type, taken from the workflows and from n8n's own audit. n8n doesn't let a key list credentials directly.
 - Where each workflow calls out to, and which other workflows it calls.
 - The projects that workflows and credentials belong to, and the people in them, so an owner is a person.
 - The admins of a team project, from the same member listing, named as administrators of what the project owns. The project stays the owner.
@@ -70,7 +71,7 @@ Select the n8n row to see the source.
 | API key scope, as n8n names it | What AI Security reads with it | Scan without it |
 |--------------------------------|--------------------------------|-----------------|
 | `workflow:list` | Workflows and the credentials they bind. | No credential and no reach is known. |
-| `user:list` | The instance's users and each project's members. | Owners can stop at the project name. |
+| `user:list` | The instance's users, and possibly each project's members, though n8n documents the user list for the instance owner only. | The user list isn't read. If the project member listing is refused too, owners stop at the project name. |
 | `project:list` | Projects, so a personal project resolves to one person. | No owner resolves to a person. |
 | `execution:list` | Runs, as metadata. | Every workflow's usage is unknown. |
 | `securityAudit:generate` | n8n's own audit. | n8n's findings are absent. |
@@ -90,10 +91,10 @@ You don't need the `credential:list` scope.
 | "Access denied because of the platform's plan or license. Changing permissions won't fix it." | The instance answered that its plan doesn't offer the public API, and the audit didn't answer either. | Use a plan that offers the public API. On the hosted service, it isn't available during the free trial. |
 | "The credential works, but n8n refused part of what the scan reads." | The audit answered and n8n refused the workflow list. The test says: "Grant the n8n API key the workflow:list scope." | Add `workflow:list`, or create the key again as the owner. |
 | "A setting is invalid. Addresses must start with https:// on the platform's domain." | The address isn't https, or its name is a local, private, or internal address or resolves to one. | Use the public https address. |
-| "The platform didn't answer, or said it is down or busy." | The instance didn't answer, or answered with something that isn't n8n's API. | Check that the address is the instance itself, that its public API is on, and that AI Security can reach it. |
+| "The platform didn't answer, or said it is down or busy." | The instance didn't answer, or answered with something that isn't n8n's API. | Check that the address is the instance itself, that it is a public https address, and that its public API is on. |
 | "The platform didn't answer in time." | The instance didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to check the key. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact Netwrix Support. |
 
 ## Security notes
 

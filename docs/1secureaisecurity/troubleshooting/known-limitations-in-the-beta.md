@@ -24,31 +24,27 @@ No permission fixes a missing license or service. 1Secure also connects to the w
 
 **What to do.** Skip the source during setup, or add the license or service. A scan of every source tests a source with nothing to read again first, and reads it after its test passes.
 
-{/* TODO: confirm which Microsoft 365 plans (for example E3 and Business Basic) are supported for each source */}
-
 ## A very large directory is read only in part
 
-**What you see.** The Microsoft Entra ID source says the read of people was cut short.
+**What you see.** The Microsoft Entra ID source says it didn't read "Some of the directory's people, because the directory holds more than one scan reads."
 
-**Why.** One scan reads at most 99,900 people. 1Secure keeps the people it read. It doesn't offer people past that number as owners.
+**Why.** A very large directory may be read in part, and the scan says so. 1Secure keeps the people it read. It doesn't offer the people it didn't read as owners.
 
-{/* TODO: confirm the 99,900-person limit is a supported customer limit */}
-
-**What to do.** If your directory holds more people, contact Netwrix support.
+**What to do.** Nothing. The agents and identities are read in full. Only the list of people offered as owners is cut short.
 
 ## A short time per source spreads the sign-in read over several scans
 
-**What you see.** The scan reads "Done, still loading", its drawer lists **Automatic retries**, and the **Sources** page shows "Scanning continues, 1 of 12".
+**What you see.** The scan reads **Running** while follow-on scans read on, and its drawer says of the source "Part was read. The next scans read the rest."
 
-**Why.** **Time per source**, under **Scan limits** on the **Settings** page, sets how long each source's scan can run, from 5 to 60 minutes. The sign-in read stops early to leave time to save the results. The next scans read what isn't read yet, from where the last one stopped.
+**Why.** **Time per source**, under **Scan limits** on the **Settings** page, sets how long each source's scan can run, from 5 to 60 minutes. The sign-in read stops early to leave time to save the results, so it gets only part of that time. The next scans continue from where the last one stopped.
 
-**What to do.** To read additional data in one scan, raise **Time per source**.
+**What to do.** To cover more in one scan, raise **Time per source**.
 
-## Follow-on scans stop after twelve in a row
+## Follow-on scans stop before the sign-in read is done
 
-**What you see.** The follow-on scans stop before the sign-in read is done. A source can say "The rest of the activity, because the last two follow on scans read nothing new."
+**What you see.** A source can say "The rest of the activity, because the last two follow on scans read nothing new."
 
-**Why.** A scan that didn't finish the sign-in read starts a follow-on scan, which reads on. At most 12 run in a row. The chain also stops when two follow-on scans in a row read nothing new, or when a scan you start or a scheduled scan runs.
+**Why.** A scan that didn't finish the sign-in read starts follow-on scans, which read on. They stop after a while if they keep reading nothing new. A scan you start, or a scheduled scan, also stops them.
 
 **What to do.** Nothing is lost. The next scan you start, or the next scheduled one, reads on from where the last read stopped.
 

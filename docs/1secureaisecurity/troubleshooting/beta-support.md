@@ -1,22 +1,16 @@
 ---
 title: "Beta support"
-description: "Learn how to report a problem with Netwrix 1Secure AI Security during the Beta, what to include, and what happens to your report."
+description: "Learn how to report a problem with Netwrix 1Secure AI Security during the Beta to Netwrix Support, and what to include."
 sidebar_position: 4
 ---
 
 # Beta support
 
-This page says how to report a problem with AI Security during the Beta, what to put in a report, and what happens to your report.
-
-## Who the Beta tenants are
-
-The Beta is open to a small set of invited organizations on the Beta environment.
-
-{/* TODO: the product owner must confirm the names of the Beta tenants. The source lists this as an open question. */}
+This page says how to report a problem with AI Security during the Beta and what to put in a report.
 
 ## Where to report
 
-{/* TODO: confirm the customer-facing reporting channel and the required fields. */}
+Report a problem to Netwrix Support, through your normal support channel. Standard Netwrix support terms apply during the Beta.
 
 Write the summary of each report as the page or source, then what went wrong, in one line. For example, "Sources: Microsoft Entra ID test reads Failed after a grant".
 
@@ -33,9 +27,11 @@ Write the description as plain sentences under these headings:
    - The source or the scan, such as "Microsoft Entra ID" or "the scan started at 09:14".
    - The time it happened, in UTC.
    - A screenshot of the page.
-   - The **Copy for support** text from the scan drawer, where the source shows one. Click **Copy for support** and paste the text into the report as it is.
+   - The support details from the scan drawer, where the source shows them. Click **Show support details**, then **Copy**, and paste the text into the report as it is.
 
 Report one problem in each report. Two problems in one report slow both down.
+
+You may be asked for more detail. Answer on the same report, so that the whole history stays in one place.
 
 ## What never goes in a report
 
@@ -43,21 +39,7 @@ Report one problem in each report. Two problems in one report slow both down.
 - A screenshot that shows a secret, a key, or a sign-in code. Crop or blur it first.
 - Personal data you don't need to show the problem, such as a list of user names.
 
-If a secret reaches a report by mistake, revoke it on its platform at once, then say so on the ticket.
-
-## What happens to your report
-
-1. **The AI Security team reads it.** The team takes each new report into triage.
-2. **The team sorts it.** A report is either a clear defect, or a question about what the product does or how it is worded.
-3. **The team fixes a clear defect.** The team deploys the fix to the Beta environment. The ticket then comes back to you marked ready for testing, with a note of what to test.
-4. **You test it.** Try the steps again. If the fix works, say so on the ticket. If it doesn't, say what you saw and the ticket goes back to the team.
-5. **The team answers a question.** The team answers a question about the product or its wording on the ticket.
-
-You may be asked for more detail on the ticket. Answer there, so that the whole history stays in one place.
-
-## Answer times and severity
-
-{/* TODO: the product owner must confirm the first answer time, the definition of the highest severity for the Beta, and the time to a fix for it. The source lists all three as unconfirmed. */}
+If a secret reaches a report by mistake, revoke it on its platform at once, then say so on the report.
 
 ## Before you report
 

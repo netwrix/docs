@@ -8,8 +8,6 @@ sidebar_position: 65
 
 Connect Notion so AI Security can read the custom agents in one Notion workspace. You create an internal integration in Notion, connect it to the content it should see, and enter its secret in AI Security.
 
-{/* TODO: confirm with the product team which Notion capabilities AI Security needs to list custom agents, because Notion doesn't document the agent list. */}
-
 ## Before you start
 
 - A workspace owner creates the integration. Connecting it to pages needs full access to those pages.
@@ -68,7 +66,7 @@ AI Security reads the MCP clients and the personal access tokens only where the 
 
 An issue about published pages appears on **Notion workspace settings**, the workspace itself, rather than on the integration. It has no owner and no page to open. See [Issues](/docs/1secureaisecurity/admin/pages/issues.md).
 
-A personal access token can't list members, so use an internal integration.
+A personal access token can't list members, so use an internal integration. Custom agents exist only on a Notion plan that offers them. The agent list AI Security reads is an interface Notion hasn't documented, and it answers to an integration with **Read content**.
 
 ### What it never touches
 
@@ -80,7 +78,7 @@ A personal access token can't list members, so use an internal integration.
 - AI Security never writes to Notion.
 - Hosted Notion MCP and its tools. How those tools show pages, files, or connected source results doesn't change what AI Security reads.
 
-If Notion asks AI Security to slow down, the read ends there, and the next scan reads the rest.
+AI Security sends requests well below the rate Notion allows. If Notion asks it to slow down, the read ends there, and the next scan reads the rest.
 
 ## The optional organization bot token
 
@@ -113,11 +111,11 @@ Without the token, or where Notion refuses the token a list, the source's test s
 | "The stored credential can't be used. Enter it again." | The stored secret can't be used. | Click **Edit**, and paste it again. |
 | "The platform refused the credential. It is wrong, expired or revoked." | Notion refused the secret: it is wrong, or was refreshed. | Copy the current secret from the integration, and paste it under **Edit**. |
 | "The credential works, but access was denied. A permission is missing." | Notion accepted the secret and refused the agent list. Under **Technical details**, the test says: "Create an internal integration in Notion under Settings, then Connections, with read content access, connect it to the pages and databases it should see, and save its token in the source's settings." | Select **Read content** on the integration, and check that the workspace's plan offers custom agents. |
-| "The platform returned a response the scanner doesn't support." | Notion answered in a form AI Security doesn't know. Under **Technical details**, the test says: "If the next scan reports the same, send Copy for support to Netwrix support." | Nothing to change on your side. If the next scan reports the same, send **Copy for support** to Netwrix support. |
-| "The platform didn't answer, or said it is down or busy." | Notion didn't answer. | Check that AI Security can reach api.notion.com. |
+| "The platform returned a response the scanner doesn't support." | Notion answered in a form AI Security doesn't know. Under **Technical details**, the test says: "If the next scan reports the same, send the support details to Netwrix Support." | Nothing to change on your side. If the next scan reports the same, send the support details to Netwrix Support. |
+| "The platform didn't answer, or said it is down or busy." | Notion didn't answer. | Test again later. |
 | "The platform didn't answer in time." | Notion didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to check the secret. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact Netwrix Support. |
 
 ### If the scan skips something or warns
 
@@ -126,7 +124,7 @@ A scan that reads to the end lists what it couldn't read as skipped, and its sou
 | What you see | What it means | What to do |
 |--------------|---------------|------------|
 | "Succeeded", with "The creator of every Notion agent, because Notion refused the list of workspace members." skipped | Notion refused the member list, so no agent names its creator this scan. The scan says: "A personal access token cannot list users, so no creator resolves to a person and every agent is listed with no creator, keeping only the creator's Notion id. Install the integration as an internal integration with user information capability to name each agent's creator." | Use an internal integration, and give it user information. |
-| "Succeeded", with "Notion agent runs, so they do not reach the Activity report." skipped | Notion refused agent runs, or the workspace doesn't offer them. The scan says: "Give the integration the Interact with agents capability and share each custom agent with its connection, or read with a personal access token of a member who can see the agents. Until then no agent run reaches the Activity report and each agent keeps only its last run time." | Select **Interact with agents**, and share each agent with the integration. |
+| "Succeeded", with "Notion agent runs, so they do not reach the Activity tab." skipped | Notion refused agent runs, or the workspace doesn't offer them. The scan says: "Give the integration the Interact with agents capability and share each custom agent with its connection, or read with a personal access token of a member who can see the agents. Until then no agent run reaches the Activity tab and each agent keeps only its last run time." | Select **Interact with agents**, and share each agent with the integration. |
 | "Succeeded", with "One Notion agent's configuration, though the agent is still listed." skipped | Notion refused one agent's detail. The scan still reports the agent, with its configuration unknown. A 404 means the agent was removed during the scan. Any other refusal is worth checking against what the integration is connected to. | Do nothing for a 404, because the next scan clears it. Otherwise, check that the integration is connected to that agent's pages, as step 8 of "Create the integration in Notion" describes. |
 | "Succeeded", with "The MCP clients each Notion member connected to the workspace, such as Claude or Cursor." skipped | Notion refused the organization bot token the list. The token lacks the `mcp-client-connection:read` scope, or the workspace isn't on an Enterprise plan. | Give the token that scope in Notion, or paste a token that has it under **Edit**. |
 | "Succeeded", with "The personal access tokens Notion members created in the workspace." skipped | Notion refused the organization bot token the list. The token lacks the `personal-access-token:read` scope, or the workspace isn't on an Enterprise plan. | Give the token that scope in Notion, or paste a token that has it under **Edit**. |
@@ -138,5 +136,5 @@ A scan that reads to the end lists what it couldn't read as skipped, and its sou
 ## Security notes
 
 - AI Security stores the secret when you click **Connect** and never shows it again.
-- AI Security sends the secret, and the organization bot token where one is set, only to Notion.
+- AI Security sends the secret, and the organization bot token where one is set, only to api.notion.com.
 - To revoke access, delete the integration, or remove it from a page's **Connections**. **Disconnect** on the source removes the secret from AI Security.

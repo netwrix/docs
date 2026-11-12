@@ -14,9 +14,9 @@ The Identities page lists the non-human identities your AI agents act as or use,
 
 | Tab | What it lists |
 |-----|---------------|
-| AI-related | Identities that AI runs as or uses, and Microsoft's own AI applications, such as Microsoft 365 Copilot. AI Security counts these in its totals. |
+| AI-related | Identities that AI runs as or uses. AI Security counts these in its totals. |
 | AI runs as | Identities an agent acts as. The identity's permissions are the agent's permissions. |
-| AI uses | Identities whose credential an agent uses to reach another system, and Microsoft's own AI applications. |
+| AI uses | Identities whose credential an agent uses to reach another system. |
 | Other non-human | Non-human identities that AI doesn't run as or use. AI Security doesn't count these in its totals. The table has no **Risk and top issue** column on this tab, and an identity's drawer still lists its issues. |
 
 Agent identity blueprints always appear on the tab their link to AI puts them in, the **AI-related** tab among them, and each one is marked as a blueprint in its row. No switch hides them. A blueprint is the template an agent identity is made from, and it doesn't sign in.

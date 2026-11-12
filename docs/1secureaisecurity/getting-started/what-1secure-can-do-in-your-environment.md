@@ -80,8 +80,6 @@ Azure RBAC, Azure AI Foundry, Logic Apps, and Bot Service read with these rights
 | Right | Kind | Category | What 1Secure uses it for | Without it |
 |-------|------|----------|--------------------------|------------|
 | ThreatHunting.Read.All | Graph application permission | Read-only | Runs advanced hunting queries for onboarded machines, installed AI tools, sign-ins, process starts, AI network requests, and the agents Defender lists. | The Defender for Endpoint test fails. |
-| Machine.LiveResponse | WindowsDefenderATP application permission, added by hand for the optional account read | Read via a privileged right | Runs one live response script that reads which account each AI tool signed in with. | Which account each AI tool used isn't read. |
-| Machine.ReadWrite.All | WindowsDefenderATP application permission, added by hand for the optional account read | Read via a privileged right | Fetches the live response script's result. | Which account each AI tool used isn't read. |
 
 ## The privileged rights
 
@@ -91,24 +89,23 @@ Each of these is used for a read. What Microsoft lets the right do is wider than
 - **Power Platform management application.** Microsoft gives the registration the same rights as a Power Platform tenant administrator, and they can't be narrowed. It is the only way an app lists every environment and reads the data policies at every scan, because no directory role opens the environment list to an app.
 - **Sites.Selected with full control on each approved site.** Microsoft lets full control read and change the site's content and permissions. Reading a site's own permissions needs full control on that site, and Microsoft offers no read role for that list.
 - **Sites.FullControl.All.** Microsoft lets it read and change the content and permissions of every site. Microsoft accepts no other application permission for reading a site's permissions, so Selected sites is the narrower choice, one site at a time.
-- **Foundry User.** Microsoft's built-in role also lets the holder run a project's agents and change project content. It is the only role that opens a project's agents to a read. Reader doesn't. 1Secure assigns it once on each Foundry account, the Foundry resource that holds the projects, so every project of that account is covered, including projects created later.
-- **Machine.LiveResponse.** Microsoft lets it run live response scripts on onboarded machines. 1Secure runs one script, which reads which account each AI tool signed in with. It is only for the optional account read, and the rest of Defender for Endpoint reads without it.
-- **Machine.ReadWrite.All.** Microsoft lets it read and change machine information, such as tags. Microsoft asks for it to fetch a live response action's result, which is all 1Secure does with it.
+- **Foundry User.** Microsoft's built-in role also lets the holder run a project's agents and change project content. It is the only role that opens a project's agents to a read. Reader doesn't. 1Secure assigns it on the Foundry projects you select, once on each Foundry account, the Foundry resource that holds them, so every project of that account is covered, including projects created later.
 
 ## Rights you can remove
 
-Two rights can go with nothing lost. Three can go with the loss of what they read. The steps follow each right.
+Two rights can go with nothing lost. Two can go with the loss of what they read. The steps follow each right.
 
 1. **System Administrator on the application user: nothing lost.** Agent Viewer and 1Secure Flow Reader carry every read. Repeat these steps in each environment the product names as added through the admin API.
    1. In the Power Platform admin center, open **Environments** and the environment.
    2. Open **Settings > Users + permissions > Application users**, and select 1Secure.
    3. Select **Edit security roles**, clear System Administrator, keep Agent Viewer and 1Secure Flow Reader, and click **Save**.
 2. **The delegated permissions on the enterprise application: nothing lost.** 1Secure keeps no token from them, as [Your sign-in](#your-sign-in) says. The next **Let 1Secure do it** asks you to consent again.
-   1. In the Microsoft Entra admin center, open **Entra ID > Enterprise apps**, then the Netwrix application. {/* TODO: confirm the application name shown in Enterprise apps */}
+   1. In the Microsoft Entra admin center, open **Entra ID > Enterprise apps**, then the 1Secure application, "Netwrix 1Secure AI Security". A connection test of a Microsoft source also shows it, as "Tested as the app" and the name.
+
    2. Open **Permissions**, and revoke only the rows of type **Delegated**.
    3. Keep every row of type **Application**.
-3. **Sites.FullControl.All: site permissions go unread.** Site permissions are read at every scan. After you remove it, the next SharePoint test warns that they are unreadable, and they are read only on sites granted one at a time with Selected sites, as [SharePoint Online](/docs/1secureaisecurity/configuration/sources/sharepoint-online.md) describes. A new consent doesn't add it back, because the registration doesn't ask for it.
-   1. In the Microsoft Entra admin center, open **Entra ID > Enterprise apps**, then the Netwrix application.
+3. **Sites.FullControl.All: site permissions go unread.** Site permissions are read at every scan. After you remove it, the next SharePoint test warns that they are unreadable, and they are read only on sites granted one at a time with Selected sites, as [SharePoint Online](/docs/1secureaisecurity/configuration/sources/sharepoint-online.md) describes. It isn't one of the eighteen permissions of the consent, so a new consent doesn't add it back. It is added again only when you choose **All sites** for SharePoint.
+   1. In the Microsoft Entra admin center, open **Entra ID > Enterprise apps**, then the 1Secure application.
    2. Open **Permissions**, select the **Application** row Sites.FullControl.All, and click **Revoke permission**.
 4. **Power Platform management application: policies and new environments go unread.** Read the Power Platform policies once from the **Power Platform policies** card first, so a dated copy exists. After you remove the application, the policies aren't refreshed and new environments aren't found. Sign in to PowerShell as a Power Platform administrator with the Power Platform administration module, and run the following commands.
 
@@ -117,10 +114,6 @@ Two rights can go with nothing lost. Three can go with the loss of what they rea
    Get-PowerAppManagementApp
    Remove-PowerAppManagementApp -ApplicationId <the application (client) ID of the Netwrix application>
    ```
-5. **Machine.LiveResponse and Machine.ReadWrite.All: the account read goes.** The rest of the Defender for Endpoint scan is unaffected.
-   1. In the Microsoft Entra admin center, open **App registrations** and the registration you added them to.
-   2. Open **API permissions**, and remove both WindowsDefenderATP rows.
-   3. Turn the account read off in 1Secure.
 
 You can't remove Reader, Foundry User, AI Reader, Agent Viewer, 1Secure Flow Reader, or any Graph read permission without breaking the reads they serve. You can narrow Foundry User to fewer Foundry accounts.
 

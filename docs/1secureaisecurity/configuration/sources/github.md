@@ -57,11 +57,11 @@ Select the GitHub row to see the source.
 * The GitHub Apps installed on the organization.
 * Classic personal access tokens and SSH keys authorized for the organization, if it uses SAML single sign-on on GitHub Enterprise Cloud.
 * Fine-grained personal access tokens and the repositories each reaches, if the token is a GitHub App installation token.
-* Deploy keys on each repository, either read or write, for up to 500 repositories.
+* Deploy keys on each repository, either read or write.
 * The Actions policy: the workflow token's default permission, allowed actions, the OpenID Connect subject template, and self-hosted runners.
 * Copilot: seats, who holds them, activity, and the coding agent's configuration per repository.
-* The custom agents, Model Context Protocol (MCP) servers, and skills that Copilot used, from the latest 28-day usage report. The scan keeps each one that the report named on at least one day, with how often it was used. For an MCP server, the count is connection attempts, not tool calls. The scan doesn't keep plugins and slash commands, or activity that GitHub groups under other or custom. Names appear only from Copilot CLI 1.0.97 or later and for report days after 2026-10-22.
-* What a GitHub App, a token, or the Actions identity did, from the organization audit log. The scan keeps only events that a machine credential made. GitHub serves the audit log on GitHub Enterprise Cloud only.
+* The custom agents, Model Context Protocol (MCP) servers, and skills that Copilot used, from the latest usage report. The scan keeps each one that the report named on at least one day, with how often it was used. For an MCP server, the count is connection attempts, not tool calls. The scan doesn't keep plugins and slash commands, or activity that GitHub groups under other or custom. Names appear only from Copilot CLI 1.0.97 or later and for report days after October 22, 2026.
+* What a GitHub App, a token, or the Actions identity did, from the organization audit log, 30 days back on the first scan and from the last read after that. The scan keeps only events that a machine credential made. GitHub serves the audit log on GitHub Enterprise Cloud only.
 * Who installed each GitHub App, from the App installation events in the same audit log, over the 180 days it keeps. The scan names only a person, by public email where the member publishes one and by login otherwise. An App installed earlier, or by a bot, names no installer.
 * Who changed the MCP servers of a repository's Copilot coding agent and when, from the same audit log over the same 180 days. The event names the person and the repository, never the servers.
 * Each workflow run on the repositories read: workflow, event, status, and times. The scan keeps no commit, message, or pull request.
@@ -75,6 +75,7 @@ With a classic personal access token, fine-grained tokens are reported as unknow
 * It never writes. Every call is a read.
 * It reads no repository contents, no secrets, and no workflow files.
 * Of a token, it keeps the last eight characters at most. It drops deploy key material and keeps only the key's type and a hint.
+* It leaves part of the token owner's hourly API allowance untouched. On a busy organization it reads part of the audit log, and the next scan continues where it stopped.
 
 ## Permissions
 
@@ -85,13 +86,13 @@ With a classic personal access token, fine-grained tokens are reported as unknow
 | `repo` | Deploy keys on private repositories, and workflow runs. | Private repositories' deploy keys are unknown, and the Actions identity shows no runs. |
 | `read:audit_log`, on GitHub Enterprise Cloud | What Apps, tokens, and the Actions identity did, who installed each App, and who changed a coding agent's MCP servers. | These agents show last used dates and no runs, which is unknown, not idle. The Apps name no installer, and those changes name nobody. |
 | `manage_billing:copilot`, or `read:org` | Copilot seats and metrics. | Seats are unknown. |
-| `read:org`, and the organization's Copilot usage metrics policy turned on | The custom agents, MCP servers, and skills that Copilot used. Names appear only from Copilot CLI 1.0.97 or later and for report days after 2026-10-22. | They are unknown, never none. |
+| `read:org`, and the organization's Copilot usage metrics policy turned on | The custom agents, MCP servers, and skills that Copilot used. Names appear only from Copilot CLI 1.0.97 or later and for report days after October 22, 2026. | They are unknown, never none. |
 | Copilot Business or Enterprise | Copilot seats. | Seats are unknown. |
+| Copilot Pro+, Business, or Enterprise | The coding agent's configuration per repository. | The coding agent's configuration is unknown, never none. |
+| GitHub Enterprise Cloud with SAML single sign-on | Classic personal access tokens and SSH keys authorized for the organization. | Those authorizations aren't read. |
 | A GitHub App installation, with Organization permissions "Administration: Read-only" and "Personal access tokens: Read-only" | Fine-grained personal access tokens, which only an App can list. | Fine-grained tokens are unknown, never zero. |
 
 GitHub ships no read-only variant of `admin:org`. AI Security only reads.
-
-{/* TODO: confirm the supported GitHub plans and the Copilot CLI version and report date requirement. */}
 
 ## If the test fails
 
@@ -103,11 +104,11 @@ GitHub ships no read-only variant of `admin:org`. AI Security only reads.
 | "No GitHub organization named [login]. Use the name from its address." | GitHub answered that no organization has that login. A personal account's name answers the same way. | Click **Edit**, and enter the organization's login, the part after github.com/ in its address. |
 | "The credential works, but access was denied. A permission is missing." | GitHub accepted the token and refused the owner list. Under **Technical details**, the test says: "Connect a classic personal access token with read:org owned by an organization owner, or install the scanner's GitHub App on this organization." | Check that the token's owner is an organization owner, the token has `read:org`, the organization login is right, and the token is authorized for SAML single sign-on. |
 | "The credential works, but GitHub refused part of what the scan reads." | Members answered and the owner-only settings didn't. The test says: "Grant the token admin:org, or give the GitHub App the Administration read-only organization permission." | Add `admin:org` to the token. |
-| "The platform didn't answer, or said it is down or busy." | GitHub didn't answer. | Check that AI Security can reach api.github.com, and test again later. |
-| "The platform slowed down the test. Wait a few minutes and test again." | GitHub slowed the test down. The test shows "Warning". This isn't a missing permission. | Wait a few minutes, and click **Test again**. |
+| "The platform didn't answer, or said it is down or busy." | GitHub didn't answer. | Test again later. |
+| "The platform slowed down the test. Wait a few minutes and test again." | GitHub slowed the test down, which it can answer with a 403 as well as a 429. The test shows "Warning". This isn't a missing permission. | Wait a few minutes, and click **Test again**. |
 | "The platform didn't answer in time." | GitHub didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the token. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix Support. |
 
 ### If the scan skips something or warns
 
@@ -121,5 +122,5 @@ A scan that reads to the end lists what it couldn't read as skipped items, and i
 ## Security notes
 
 * AI Security stores the token encrypted when you click **Connect** and never shows it again. The source shows only whether a credential is set and which settings are missing.
-* AI Security sends the token only to api.github.com.
+* AI Security sends the token only to api.github.com. It downloads the Copilot usage report from the signed link GitHub hands back, without the token.
 * To revoke access, delete the token under **Personal access tokens** in GitHub. **Disconnect** on the source removes it from 1Secure.

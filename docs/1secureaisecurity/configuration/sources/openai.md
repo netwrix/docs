@@ -62,24 +62,22 @@ With the Admin key, AI Security reads the following:
 - The organization's projects and members. The members also place Codex and ChatGPT users that an endpoint product sees under this organization.
 - Every admin key and every project API key: name, owner, when it was created, and when it was last used. OpenAI never returns key values. OpenAI states no expiry on a key, so the scan records whether a key expires as not read.
 - Each project's service accounts.
-- Who created each key, from the organization audit log.
+- Who created each key, from the organization audit log's `api_key.created` events.
   - The scan names a member who created a key in the console, or through a key of their own, by email address.
-  - A key that a service account owns names the person who created that service account, unless the key's own creation names someone.
+  - A key that a service account owns names the person who created that service account, from its `service_account.created` event, unless the key's own creation event names someone.
   - A key that a service account created names no creator.
   - The scan keeps the stated owner as well. Where your Microsoft Entra ID directory holds one person with the owner's email address as their sign-in name or mail, the scan shows the owner as that person.
   - The audit log answers only after you turn on audit logging for the organization.
-
-{/* TODO: confirm the audit log events AI Security relies on for key creators against a live organization. */}
 
 An issue about the organization holding more than one admin key appears on **OpenAI workspace settings**, once for the organization, rather than on any key. It has no owner and no page to open. See [Issues](/docs/1secureaisecurity/admin/pages/issues.md).
 
 With a project key for a project, AI Security reads the following:
 
 - The project's agents, both saved agents and those that exist only on a session: whether instructions are set, how long they are, and their first sentence, Model Context Protocol (MCP) tools, environments, their network settings, and whether an agent can run other agents. Where no network setting is stated, the platform default applies, which is unrestricted outbound.
-- Sessions, as events with a start time and a status. A source's first scan reads the sessions started in the last 3 days, or in the Activity window the organization chose under Settings. Each later scan continues from where the previous scan stopped, and reads back no further than 14 days, or the Activity window where the organization chose a longer one.
+- Sessions, as events with a start time and a status. A source's first scan reads the sessions started in the last 3 days, or in the Activity window the organization chose under Settings. Each later scan reads on from where the previous scan stopped, and catches up on no more than the last 14 days, or the Activity window where the organization chose a longer one. The listing has no time filter, so AI Security reads it newest first and stops at the first older session.
 - Vaults: which MCP servers their credentials authenticate to, with the authentication type, OAuth client ID, scopes, and expiry. AI Security never reads a secret.
 
-An agent that exists only on a session stays for 30 days after the last scan that saw it. The sandboxes and vaults that a session showed stay linked to a saved agent while that agent stays.
+An agent that exists only on a session stays for a while after the last scan that saw it. The sandboxes and vaults that a session showed stay linked to a saved agent while that agent stays.
 
 ### How the keys divide the work
 
@@ -89,7 +87,7 @@ An agent that exists only on a session stays for 30 days after the last scan tha
 
 ### What it never touches
 
-- Instructions beyond whether they are present, their length, and their first sentence (at most 200 characters).
+- Instructions beyond whether they are present, their length, and their first sentence.
 - Session transcripts, turn output, and command text. AI Security records sessions as metadata only.
 - Secret values in vault and tool records.
 - From the audit log, anything beyond who created a key, when, and the key's ID.
@@ -113,11 +111,11 @@ An agent that exists only on a session stays for 30 days after the last scan tha
 | "The stored credential can't be used. Enter it again." | The stored keys can't be used. | Click **Edit**, and enter them again. |
 | "The platform refused the credential. It is wrong, expired or revoked." | OpenAI refused the Admin key: it is wrong, or deleted. | Create a new admin key, and enter it under **Edit**. |
 | "The credential works, but access was denied. A permission is missing." | OpenAI accepted the key and refused the project list. The test says: "Save an Admin key, created by an organization owner under Settings, API keys, Admin keys, in the source's settings." or, for an empty list, "Check that the Admin key in the source's settings belongs to the organization you meant to scan." | Put an Admin key from the right organization in **Admin key**. If the key is restricted, create it unrestricted, or add `api.management.read` and, for the audit log, `api.audit_logs.read`. |
-| "The platform didn't answer, or said it is down or busy." | OpenAI didn't answer. | Check that AI Security can reach api.openai.com. |
+| "The platform didn't answer, or said it is down or busy." | OpenAI didn't answer. | Test again later. |
 | "The platform slowed down the test. Wait a few minutes and test again." | OpenAI rate limited the read. This is a warning, not a missing permission. | Wait a few minutes, then click **Test again**. |
 | "The platform didn't answer in time." | OpenAI didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to check the keys. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact Netwrix Support. |
 
 ### If the scan skips something or warns
 
@@ -130,7 +128,7 @@ A scan that reads to the end lists what it couldn't read as skipped, and its sou
 | "Succeeded", with "The agents, sandboxes and vaults of OpenAI projects with no project key." skipped | A project has no project key. The scan says: "Create an application key with the api.agents.read permission inside each project (Settings -> API keys, inside the project) and configure it in the OpenAI project keys setting as the project id and the key, alongside the Admin key. One key reads one project's agents and vaults." | Add a key for each project, or accept those projects as not read. |
 | "Succeeded", with "The agents, sandboxes and vaults of the OpenAI project [name], whose key was refused." skipped | OpenAI refused a project key. The scan says: "The key for this project authenticated and was refused: give it the api.agents.read permission, which a key with model access does not carry by default." | Create the key again with agents read. |
 | "Succeeded", with "OpenAI agents, sandboxes and vaults, because the Agents API is off for this organization." skipped | The scan says: "The agents beta is not enabled for this organization, or the endpoint has moved." | Confirm the agents beta is on for the organization before you change any key. |
-| "Succeeded", with "The agents, sandboxes and vaults of the OpenAI project [name], which answered with an error." skipped | That project's agent read failed for another reason. | Scan again. If it repeats, send **Copy for support** to Netwrix support. |
+| "Succeeded", with "The agents, sandboxes and vaults of the OpenAI project [name], which answered with an error." skipped | That project's agent read failed for another reason. | Scan again. If it repeats, send the **Technical details** to Netwrix Support. |
 | "Succeeded", with "The OpenAI sandbox or credential vault [id], which an agent used, though the agent is still listed." skipped | AI Security didn't read a sandbox or a credential vault behind an agent, though it read the agent. The scan says: "A sandbox or a credential vault this project's agents used did not read, so it is missing from this inventory while the agent stays in it." | Check that project's key, then scan again. Or accept that the agent's sandboxes and vaults are unknown. |
 
 ## Security notes

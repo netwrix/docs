@@ -21,7 +21,7 @@ The token has no scopes of its own. It acts with the admin role of the person wh
 ### Create the API token in Okta
 
 1. In the Okta Admin Console, select **Security > Administrators**, and assign the service account the Super Administrator role. Read-only Administrator reads only the apps, users, and groups. Without Super Administrator, the reads of admin roles and scope grants described in [Permissions](#permissions) are incomplete.
-2. If you keep Read-only Administrator instead, give it a custom admin role that includes the `okta.users.apitokens.read` permission for the token list.
+2. For the API token list, give the service account an admin role that includes the `okta.users.apitokens.read` permission, such as a custom admin role.
 3. Sign in to the Admin Console as the service account.
 4. Select **Security > API > Tokens**, and click **Create token**.
 5. Enter a name, for example "Netwrix 1Secure AI Security", and create the token.
@@ -51,7 +51,7 @@ Select the Okta row to see the source.
 | Last test | "Succeeded" and the date of the test. |
 | Last scanned | "Never", then "Succeeded", with anything the scan couldn't read listed as skipped, such as a refused read or an app's detail that didn't read. "Partly scanned" appears when a list was cut short. |
 
-The scan records the warning `credential_roles_unread` and reports the token's visibility as unknown. The scan says: "Okta publishes no documented endpoint that identifies the calling token or its owner, so the admin role bounding what this scan could see is unknown." No permission clears the warning. The results are complete for what the token's role can see.
+The scan records a warning and reports the token's visibility as unknown. The scan says: "Okta publishes no documented endpoint that identifies the calling token or its owner, so the admin role bounding what this scan could see is unknown." No permission clears the warning. The results are complete for what the token's role can see.
 
 ## What this connector reads
 
@@ -67,30 +67,30 @@ The scan records the warning `credential_roles_unread` and reports the token's v
 
 - AI Security never writes to Okta.
 - Token values. Okta's token list returns none.
-- System log reads are limited to the following events, inside Okta's 90-day retention.
+- System log reads are limited to the following events, inside the System Log's retention.
   - Events made with each API token.
   - Events made by an OAuth app acting as itself.
   - App token grants.
   - App creation.
   - An app's lifecycle changes: deactivation, a new client secret or key, consent grants, and admin role grants.
 - Any user's password, factors, or sessions.
-- AI Security leaves at least half of Okta's rate limit available, so your own integrations keep working.
+- AI Security keeps its share of Okta's rate limits small, so your own integrations keep working.
 
 ## Permissions
 
 | Read | Required role or permission | Scan without it |
 |------|-----------------------------|-----------------|
 | Apps, their users and groups | An admin role that includes `okta.apps.read`, such as Read-only Administrator. | Nothing is read and the test fails. |
-| Admin roles, and the admin roster | Super Administrator, because Okta refuses this read to Read-only Administrator, to Application Administrator, and to a custom role holding `okta.iam.read`. | An app's or a token's actual reach is unknown, and the Super Administrator count is unknown. |
-| The org's API tokens | An admin role that includes `okta.users.apitokens.read`: a custom admin role carrying it, or Super Administrator. | API tokens are unknown, not zero, and no dormant token finding is raised. |
-| Each app's scope grants | Super Administrator, for the same reason. | An app's grants are unknown, not none. |
+| Admin roles, and the admin roster | Super Administrator. | An app's or a token's actual reach is unknown, and the Super Administrator count is unknown. |
+| The org's API tokens | An admin role that includes `okta.users.apitokens.read`, such as a custom admin role. | API tokens are unknown, not zero, and no dormant token finding is raised. |
+| Each app's scope grants | Super Administrator. | An app's grants are unknown, not none. |
 | Owners by login | An admin role that reads users, such as Read-only Administrator. | Owners appear as Okta user IDs, and the scan doesn't flag a departed owner. |
 | The system log | An admin role that reads the System Log, such as Read-only Administrator. | The scan derives a token's last use from its expiry, which is less exact. |
 | The org's name | An admin role that reads the org settings, such as Read-only Administrator. | Reports carry no org name. |
 
-Read-only Administrator reads the apps, users, and groups, but not the admin roles, the admin roster, or the app scope grants. The Super Administrator spread finding, the overscoped app finding, and the sign-on signal need those reads, so use Super Administrator for them. {/* TODO: confirm the minimum roles for the admin roles, admin roster, scope grants, and API token reads, and which standard roles carry okta.users.apitokens.read. */}
+Read-only Administrator reads the apps, users, and groups, but not the admin roles, the admin roster, or the app scope grants. The Super Administrator spread finding, the overscoped app finding, and the sign-on signal need those reads, so use Super Administrator for them. For the API token list, AI Security names the permission `okta.users.apitokens.read` rather than a role, because Okta doesn't document which standard roles carry it.
 
-You can't connect an Okta API service app that signs in with client credentials. The **Connect Okta** dialog accepts an API token only. If an older setup guide names the fields "Org ID" and "Instance URL", enter that value in **Okta domain**. If it names "API key", enter that value in **API token**.
+You can't connect an Okta API service app that signs in with client credentials. The **Connect Okta** dialog accepts an API token only, and sends it as an SSWS token. If an older setup guide names the fields "Org ID" and "Instance URL", enter that value in **Okta domain**. If it names "API key", enter that value in **API token**.
 
 ## If the test fails
 
@@ -102,11 +102,11 @@ You can't connect an Okta API service app that signs in with client credentials.
 | "The credential works, but access was denied. A permission is missing." | Okta accepted the token and refused the app list, or the list came back empty. Under **Technical details**, the test says: "Give the API token's admin the Okta Read-only Administrator role." For an empty list, it says: "Check that the org has app integrations and that the credential's admin role covers them." | Assign the role that step 1 of the token procedure describes, then create a new token. If the org has apps, check the role's resource set. |
 | "The credential works, but Okta refused part of what the scan reads." | The test doesn't raise this for an API token, because the test reads only the app list. A later read that Okta refuses shows on the scan instead. | See "If the scan skips something or warns" in this article. |
 | "A setting is invalid. Addresses must start with https:// on the platform's domain." | The address isn't https, or isn't on okta.com or okta-emea.com, or its name resolves to a private address. AI Security refuses a custom domain or a preview org. | Use the org's okta.com or okta-emea.com address. |
-| "The platform didn't answer, or said it is down or busy." | Okta didn't answer. | Click **Test again**, and check that AI Security can reach the org's address. |
+| "The platform didn't answer, or said it is down or busy." | Okta didn't answer. | Test again later. |
 | "The platform slowed down the test. Wait a few minutes and test again." | Okta rate limited the read. This is a warning, not a missing permission. | Wait a few minutes, then click **Test again**. |
 | "The platform didn't answer in time." | Okta didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to check the token. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact Netwrix Support. |
 
 ### If the scan skips something or warns
 
@@ -122,5 +122,5 @@ A scan that reads to the end lists what it couldn't read as skipped, and its sou
 ## Security notes
 
 - AI Security stores the token when you click **Connect** and never shows it again.
-- AI Security sends the token only to the org address you entered.
+- AI Security sends the token only to the org address you entered, which it checks before anything is sent.
 - To revoke, select **Security > API > Tokens** in Okta and revoke the token, or deactivate the service account. **Disconnect** on the source removes it from AI Security.

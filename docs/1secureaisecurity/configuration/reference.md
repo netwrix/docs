@@ -20,4 +20,4 @@ Every source asks for read-only access.
 - **Credentials.** AI Security encrypts the settings you enter for a source when you save them and never shows them again. Editing a source starts with empty fields, and a field left empty keeps its stored value.
 - **Scan results.** Everything a scan finds about agents and identities, what they can reach, and the issues and shadow AI it raises. Each scan updates these results.
 - **Decisions.** Each owner you name, each exception you make, each issue you resolve, and each Shadow AI decision. AI Security records who made the decision and when.
-- **Retention.** The retention periods for agent activity and acknowledged alerts, and for trend history, appear on [Settings](/docs/1secureaisecurity/admin/settings.md), under **Retention**. It applies to the whole deployment.
+- **Retention.** Netwrix keeps agent activity for 180 days from when it happened, trend history for 400 days, and acknowledged alerts for 90 days from the acknowledgment. Open alerts are never removed. The periods appear on [Settings](/docs/1secureaisecurity/admin/settings.md), under **Retention**, and may change after the Beta.

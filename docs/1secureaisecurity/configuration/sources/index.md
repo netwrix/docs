@@ -1,6 +1,6 @@
 ---
 title: "Sources"
-description: "Connect each platform your organization uses as a source so AI Security can read its agents, identities, and access, and look up what each test and scan code means."
+description: "Connect each platform your organization uses as a source so AI Security can read its agents, identities, and access, and look up what each test and scan result means."
 sidebar_position: 1
 ---
 
@@ -22,61 +22,62 @@ The dialog is the same for every platform.
 6. Click **Done**.
 
 :::info
-Where your AI Security deployment offers one-click Microsoft consent, the eight Microsoft dialogs start with **Sign in with Microsoft**. A Global Administrator or Privileged Role Administrator clicks it, accepts the permissions, and returns to the dialog's test answer with nothing pasted. **Use an app registration instead** opens the fields for an administrator who registers the application themselves.
+Where your 1Secure offers one-click Microsoft consent, the eight Microsoft dialogs start with **Sign in with Microsoft**. A Global Administrator or Privileged Role Administrator clicks it, accepts the permissions, and returns to the dialog's test answer with nothing pasted. **Use an app registration instead** opens the fields for an administrator who registers the application themselves.
 :::
 
 ### Edit a source
 
 AI Security never shows a stored value again. When you click **Edit** on a source, the fields start empty and say "Kept unless you enter a new one". A setting left empty keeps its stored value, and a setting you enter replaces that one value. **Clear credential** removes it. When you change where the credential is sent, such as an instance URL or a tenant ID, enter the secret again too: 1Secure never sends a saved secret to a new address.
 
-## Test and scan codes
+## Test and scan results
 
-{/* TODO: confirm that customers see these code names on screen. If not, remove the Code column and keep the sentences. */}
+A test's outcome reads "Succeeded", "Warning", or "Failed". It comes with a date and a sentence that says why. A scan's outcome for a source reads "Succeeded", "Partly scanned", "Failed", or "Not scanned". The test and the scan read "Not set up" where the tenant has nothing for the source to read. Each platform's page explains the results that apply there.
 
-A test's outcome reads "Succeeded", "Warning", or "Failed". It comes with a date and a sentence for the code. A scan's outcome for a source reads "Succeeded", "Partly scanned", "Failed", or "Not scanned". The test and the scan read "Not set up" where the tenant has nothing for the source to read. Each platform's page explains the codes that apply there.
+Netwrix Support may ask for the code shown under **Technical details** of a failed test, or under **Show support details** in the scan drawer. Copy it from there.
 
-| Code | What the screen shows | Outcome | What it means and what to do |
-|------|-----------------------|---------|------------------------------|
-| `credential_not_set` | "No credential is stored for this source." | Failed | Enter the credential. |
-| `credential_incomplete` | "The credential is missing settings this platform needs." | Failed | A required setting is missing. The source's "Missing" line names it. Enter it. |
-| `credential_cannot_be_opened` | "The stored credential can't be used. Enter it again." | Failed | Enter the credential again. |
-| `probe_not_available` | "A live connection test isn't available for this platform. All required settings are entered." | "Settings checked, no live test" | The credential is complete. Run a scan to check access. |
-| `probe_failed` | "The test failed on our side. Try again." | Failed | The test couldn't finish. Test again. |
-| `probe_succeeded` | "The credential works." | Succeeded | The credential works and reaches what the scan reads first. |
-| `read_partial` | "The credential works, but [platform] refused part of what the scan reads." Where the test names permissions, it adds "Grant the permissions listed below, then test again." | Warning | The scan reads the rest. Grant the named permissions, then test again. |
-| `credential_refused` | "The platform refused the credential. It is wrong, expired or revoked." | Failed | Enter a valid credential. |
-| `read_refused` | "The credential works, but access was denied. A permission is missing." | Failed | Grant the missing permission, then test again. |
-| `read_unsupported` | "The platform returned a response the scanner doesn't support." | Failed | The platform answered in a form AI Security can't read. Use "Copy for support" and contact support. |
-| `not_reachable` | "The platform didn't answer, or said it is down or busy." | Failed | Check that the platform is up and reachable, then test again. For the Microsoft sources, [Troubleshooting](/docs/1secureaisecurity/troubleshooting/index.md) lists the cases where a Microsoft server error gives a Warning instead. |
-| `rate_limited` | "The platform slowed down the test. Wait a few minutes and test again." | Warning | Nothing in the configuration is wrong. Wait, then test again. |
-| `probe_timed_out` | "The platform didn't answer in time." | Failed | Test again. |
-| `service_unavailable` | "The service didn't answer. Try again shortly." | Failed | The source is connected with Sign in with Microsoft, and AI Security couldn't get a token. Nothing about the credential is known. Test again shortly. |
-| `setting_refused` | "A setting is invalid. Addresses must start with https:// on the platform's domain." | Failed | Correct the address. It must use `https://` and the platform's own domain. |
-| `platform_unknown` | "This platform isn't supported." | Failed | Contact support. |
-| `probe_not_declared` | "No connection test exists for this platform. Run a scan to check access." | Failed | Run a scan to check the credential. |
-| `credential_source_missing` | "This source uses the Microsoft Entra ID app registration. Connect Microsoft Entra ID first." | Failed | Connect the Microsoft Entra ID source. |
-| `consent_outdated` | "Your tenant consented to an older permission list. Reconnect with Microsoft to grant the rest." | Warning | Click **Reconnect** and accept the permissions. |
-| `permission_undeclared` | "The app registration doesn't ask for a permission this platform needs." | Warning | Signing in again grants nothing more. The test names the permissions: "The registration does not ask for [permissions]. Its owner adds them with admin consent." The app registration's owner adds them and grants admin consent. No **Reconnect** is offered. Where only optional permissions are missing, the test stays Succeeded and shows that sentence as a note. |
-| `scan_signed_in` | "The last scan signed in with this credential and read what it reaches." | Succeeded | A scan signed in with the credential and read something before it failed. The scan counts as the last test and keeps the missing permissions an older test listed. |
+| What the screen shows | Outcome | What it means and what to do |
+|-----------------------|---------|------------------------------|
+| "No credential is stored for this source." | Failed | Enter the credential. |
+| "The credential is missing settings this platform needs." | Failed | A required setting is missing. The source's "Missing" line names it. Enter it. |
+| "The stored credential can't be used. Enter it again." | Failed | Enter the credential again. |
+| "A live connection test isn't available for this platform. All required settings are entered." | "Settings checked, no live test" | The credential is complete. Run a scan to check access. |
+| "The test failed on our side. Try again." | Failed | The test couldn't finish. Test again. |
+| "The credential works." | Succeeded | The credential works and reaches what the scan reads first. |
+| "[platform] refused part of the read. Grant the permissions below and test again." where the test names the permissions, or "The credential works, but [platform] refused part of what the scan reads." where it doesn't | Warning | The scan reads the rest. Grant the named permissions, then test again. |
+| "The platform refused the credential. It is wrong, expired or revoked." | Failed | Enter a valid credential. |
+| "The credential works, but access was denied. A permission is missing." | Failed | Grant the missing permission, then test again. |
+| "The platform returned a response the scanner doesn't support." | Failed | The platform answered in a form AI Security can't read. Send the support details to Netwrix Support. |
+| "The platform didn't answer, or said it is down or busy." | Failed | Check that the platform is up, then test again. For the Microsoft sources, [Troubleshooting](/docs/1secureaisecurity/troubleshooting/index.md) lists the cases where a Microsoft server error gives a Warning instead. |
+| "The platform slowed down the test. Wait a few minutes and test again." | Warning | Nothing in the configuration is wrong. Wait, then test again. |
+| "The platform didn't answer in time." | Failed | Test again. |
+| "The service didn't answer. Try again shortly." | Failed | The source is connected with Sign in with Microsoft, and AI Security couldn't get a token. Nothing about the credential is known. Test again shortly. |
+| "A setting is invalid. Addresses must start with https:// on the platform's domain." | Failed | Correct the address. It must use `https://` and the platform's own domain. |
+| "This platform isn't supported." | Failed | Contact Netwrix Support. |
+| "No connection test exists for this platform. Run a scan to check access." | Failed | Run a scan to check the credential. |
+| "This source uses the Microsoft Entra ID app registration. Connect Microsoft Entra ID first." | Failed | Connect the Microsoft Entra ID source. |
+| "Your tenant consented to an older permission list. Reconnect with Microsoft to grant the rest." | Warning | Click **Reconnect** and accept the permissions. |
+| "The app registration doesn't ask for a permission this platform needs." | Warning | Signing in again grants nothing more. The test names the permissions: "The registration does not ask for [permissions]. Its owner adds them with admin consent." The app registration's owner adds them and grants admin consent. No **Reconnect** is offered. Where only optional permissions are missing, the test stays Succeeded and shows that sentence as a note. |
+| "The last scan signed in with this credential and read what it reaches." | Succeeded | A scan signed in with the credential and read something before it failed. The scan counts as the last test and keeps the missing permissions an older test listed. |
 
-After a scan, the source's "Last scanned" line shows one of these codes.
+After a scan, the source's "Last scanned" line shows one of these results.
 
-| Code | What the screen shows | Outcome | What it means and what to do |
-|------|-----------------------|---------|------------------------------|
-| `scan_succeeded` | "Scan complete." Where the scan skipped something, the counts and "[N] items skipped". | Succeeded | The scan read the source to the end. Anything it couldn't read, such as one missing permission, is listed as skipped. |
-| `scan_activity_pending` | "Read. Activity still loading." | Succeeded | The scan read the source and is still reading its activity. |
-| `scan_degraded` | "Part of [platform] wasn't read. If it repeats, use Copy for support." | Partly scanned | The scan read most of the source. Scan again. If it repeats, use **Copy for support**. |
-| `scan_refused` | "[platform] refused the scan before anything was read." | Failed | Check the settings and the permissions, then scan again. |
-| `scan_failed` | "Failed on our side. Try again." | Failed | Scan again. |
-| `scan_timed_out` | "The scan took too long and was stopped. Nothing was saved from it." | Failed | Scan again. |
-| `scan_interrupted` | "The scan was interrupted. Scan again." | Failed | Scan again. |
-| `scan_interrupted_by_update` | "Interrupted by a service update, runs again at the next scan" | Failed | The scan runs again at the next scan. |
-| `scan_cancelled` | "The scan was stopped before this source was scanned. No results were saved." | Not scanned | A person stopped the scan. Scan again. |
-| `scan_not_started` | "The scanner couldn't start." | Failed | Scan again. |
-| `platform_not_scanned` | "Scanning this platform isn't supported." | Failed | Contact support. |
-| `credential_not_set`, `credential_incomplete`, `credential_cannot_be_opened` | The test code's sentence of the same name. | Failed | Fix the credential as the test code of the same name says. |
-| `credential_refused_not_scanned` | "Not scanned because the credential was refused. Fix it and test again." | Not scanned | The scan left the source out because its last test failed on the credential. The next scan reads it after a test passes. |
-| `credential_source_not_scanned` | "Not scanned because the Microsoft Entra ID source is disabled. Enable it and scan." | Not scanned | Enable the Microsoft Entra ID source this source reads with. |
+| What the screen shows | Outcome | What it means and what to do |
+|-----------------------|---------|------------------------------|
+| "Scan complete." Where the scan skipped something, the counts and "[N] items skipped". | Succeeded | The scan read the source to the end. Anything it couldn't read, such as one missing permission, is listed as skipped. |
+| "Read. Activity still loading." | Succeeded | The scan read the source and is still reading its activity. |
+| "Part of [platform] wasn't read. If it repeats, send the support details to Netwrix." | Partly scanned | The scan read most of the source and stopped short. Scan again. If it repeats, click **Show support details** and send them to Netwrix Support. |
+| "[platform] refused the scan before anything was read." | Failed | Check the settings and the permissions, then scan again. |
+| "Failed on our side. Try again." | Failed | Scan again. |
+| "The scan took too long and was stopped. Nothing was saved from it." | Failed | Scan again. |
+| "The scan was interrupted. Scan again." | Failed | Scan again. |
+| "Interrupted by a service update, runs again at the next scan" | Failed | The scan runs again at the next scan. |
+| "The scan was stopped before this source was scanned. No results were saved." | Not scanned | A person stopped the scan. Scan again. |
+| "The scanner couldn't start." | Failed | Scan again. |
+| "Scanning this platform isn't supported." | Failed | Contact Netwrix Support. |
+| The same sentence as the test, for a credential that isn't stored, is missing settings, or can't be used. | Failed | Fix the credential as the test result above says. |
+| "Not scanned because the credential was refused. Fix it and test again." | Not scanned | The scan left the source out because its last test failed on the credential. The next scan reads it after a test passes. |
+| "Not scanned because the Microsoft Entra ID source is disabled. Enable it and scan." | Not scanned | Enable the Microsoft Entra ID source this source reads with. |
+| "Not scanned because the last test found nothing to read." | Not scanned | The source's last test found nothing it can read, so the scan left it out. Fix what the test reported, then test again. |
 
 Start a scan with **Scan now** on a source, or **Scan all** on the **Sources** screen.
 
@@ -84,7 +85,9 @@ Start a scan with **Scan now** on a source, or **Scan all** on the **Sources** s
 
 Four reads have no row of their own and use another source's credential. The Purview audit log and Microsoft Security Copilot use Microsoft Entra ID. Azure Logic Apps and Azure Bot Service use Azure RBAC. Connect the source whose credential they use, as their pages describe.
 
-Six platforms show "Coming soon" and offer no way to connect a new source. They are AWS Bedrock, Atlassian, ServiceNow, ServiceNow AI Control Tower, Salesforce, and Google Workspace. A source already connected on one of them still lists, edits, tests, and scans.
+Eight platforms show "Coming soon", planned for a later release, and offer no way to connect a new source yet. They are AWS Bedrock, Atlassian, ServiceNow, ServiceNow AI Control Tower, Salesforce, Google Workspace, Docker, and OpenShell.
+
+The Beta connects the platforms 1Secure can reach over the public internet. A server, cluster, or instance reachable only inside your network can't be connected yet.
 
 * [Every Microsoft source](/docs/1secureaisecurity/configuration/sources/connect-every-microsoft-source.md): one checklist of every grant, role, and test to connect all the Microsoft sources.
 * [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md): the directory's applications, service principals, and agent identities.
@@ -108,17 +111,9 @@ Six platforms show "Coming soon" and offer no way to connect a new source. They 
 * [Mistral](/docs/1secureaisecurity/configuration/sources/mistral.md): the agents in one workspace, with their tools and versions. It also reads their libraries.
 * [ChatGPT Enterprise](/docs/1secureaisecurity/configuration/sources/chatgpt-enterprise.md): the GPTs and projects in one workspace, plus Codex environments, and who owns them.
 * [n8n](/docs/1secureaisecurity/configuration/sources/n8n.md): workflows, the credentials they bind, and their runs on one instance.
-* [NVIDIA OpenShell](/docs/1secureaisecurity/configuration/sources/nvidia-openshell.md): the agents in the sandboxes on one gateway, with their credentials and policy.
 * [Kubernetes](/docs/1secureaisecurity/configuration/sources/kubernetes.md): the workloads in one cluster and the service accounts they run as. It also reads their roles and network policies.
-* [Docker](/docs/1secureaisecurity/configuration/sources/docker.md): the containers on one Docker host and their images. It also reads their credentials, mounts, and host access.
-* [Atlassian](/docs/1secureaisecurity/configuration/sources/atlassian.md): the API tokens in one Atlassian organization, and optionally Confluence spaces.
 * [Notion](/docs/1secureaisecurity/configuration/sources/notion.md): custom agents in one workspace.
-* [ServiceNow](/docs/1secureaisecurity/configuration/sources/servicenow.md): the Now Assist AI agents and their tools on one instance.
-* [ServiceNow AI Control Tower](/docs/1secureaisecurity/configuration/sources/servicenow-ai-control-tower.md): which agents your governance inventory on that instance registers.
-* [Salesforce](/docs/1secureaisecurity/configuration/sources/salesforce.md): the Agentforce agents in one org and their actions, plus the users they run as.
 * [Anthropic](/docs/1secureaisecurity/configuration/sources/anthropic.md): API keys in one organization, and the agents Anthropic hosts.
 * [OpenAI](/docs/1secureaisecurity/configuration/sources/openai.md): projects with their keys and service accounts, and each project's agents.
-* [AWS Bedrock](/docs/1secureaisecurity/configuration/sources/aws-bedrock.md): Bedrock and AgentCore agents and their knowledge bases, plus who can invoke models in one account.
 * [GitHub](/docs/1secureaisecurity/configuration/sources/github.md): apps and tokens, deploy keys, Actions settings, and Copilot in one organization.
-* [Google Workspace](/docs/1secureaisecurity/configuration/sources/google-workspace.md): third-party app access and delegation in one domain, and optionally its Google Cloud service accounts.
 * [Gemini Enterprise](/docs/1secureaisecurity/configuration/sources/gemini-enterprise.md): the identities and Gemini Enterprise apps in the Google Cloud projects you list, with their Agent Engine deployments and data stores.

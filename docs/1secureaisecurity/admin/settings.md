@@ -26,7 +26,7 @@ Scan limits set how far back a source's first scan looks, and how long each sour
 
 | Setting | What it limits |
 |---------|----------------|
-| Activity window | How far back a first scan looks. The default is each platform's own, 3 to 180 days. A later scan reads on from where the last one stopped, never further back than 14 days, or than the Activity window where it is longer. |
+| Activity window | How far back a first scan looks, from 1 to 365 days. Left empty, each platform uses its own default, between 3 and 180 days. A later scan reads on from where the last one stopped. A source not scanned for more than 14 days catches up on the last 14 days only, or on the Activity window where it is longer, and older activity isn't read. Agent activity is kept for 180 days, so a longer window shows no more than that. |
 | Time per source | How long each source's scan may run. Reads past this limit continue on the next scans. |
 
 The **Settings** tab doesn't hold limits for one platform. Where a platform has any, they are under **Scan settings** on the platform's card on the **Sources** page, and they apply to every source of that platform.
@@ -38,7 +38,7 @@ The **Settings** tab doesn't hold limits for one platform. Where a platform has 
 | Execution history pages | How many pages of run history a scan reads. |
 | Execution history window | How far back a scan reads run history. |
 | Detection events window | How far back a scan reads endpoint detection events. |
-| Read Microsoft 365 Copilot interactions | A switch in the **Purview audit log** source's drawer on the **Sources** page, on by default. Turn it off to shorten large scans. With it off, scans lose the files each Copilot answer touched, the jailbreak flag, and the per-person runs of the agents used in Copilot. |
+| Read Microsoft 365 Copilot interactions | A switch in the **Purview audit log** source's drawer on the **Sources** page, on by default. Its help says "Shows files Copilot used, jailbreak flags and who ran agents. Turn off to shorten large scans." Off, the scan doesn't read Copilot interaction records. It still reads the Agent 365 records. |
 
 :::info
 A source that runs out of time is read in part, and the scan drawer says "Raise Time per source under Settings, then scan again." Raise **Time per source** here.
@@ -46,7 +46,15 @@ A source that runs out of time is read in part, and the scan drawer says "Raise 
 
 ### Retention
 
-Retention shows how long scan results are kept before 1Secure removes them: **Agent activity**, **Acknowledged alerts**, and **Trend history**. The setting applies to the whole deployment, and you can't change it here.
+Retention shows how long scan results are kept before 1Secure removes them. Netwrix sets these periods. The card shows them under "Set by Netwrix.", and you can't change them.
+
+| Data | Kept for |
+|------|----------|
+| Agent activity | 180 days, counted from when the activity happened. |
+| Trend history | 400 days. |
+| Acknowledged alerts | 90 days, counted from the acknowledgment. Open alerts are never removed. |
+
+The periods may change after the Beta.
 
 ### Marked as not AI-related
 

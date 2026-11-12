@@ -30,7 +30,7 @@ Some sources read with another source's credential. Several Microsoft sources re
 
 ## Scans
 
-A scan reads every connected source and imports what it found. Each source in a scan ends as **Complete**, **Partly scanned**, or **Not scanned**.
+A scan reads every connected source and imports what it found. Each source in a scan ends as **Succeeded**, **Partly scanned**, **Failed**, or **Not scanned**.
 
 - A source read to the end still succeeds where the platform refused part of the read, most often because a permission is missing. It lists what it skipped.
 - A source is partly scanned only when its read stopped short.

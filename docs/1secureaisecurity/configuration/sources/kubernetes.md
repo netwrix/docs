@@ -12,6 +12,7 @@ AI agents often run as ordinary workloads in a cluster. The cluster is the one p
 
 ## Before you start
 
+- The cluster's API server must have a public address. A cluster whose API server is reachable only inside your network can't be connected yet.
 - Know the cluster's API server address, for example `https://k8s.example.com:6443`. Your kubeconfig holds it as the cluster's `server`.
 - Have rights in the cluster to create a service account, a cluster role, and a cluster role binding.
 - If the cluster's own authority issues the API server's certificate, which is the usual case, have that authority's certificate as PEM text. Your kubeconfig holds it, base64 encoded, as `certificate-authority-data`.
@@ -132,13 +133,11 @@ Select the Kubernetes row to see the source.
 
 ## What this connector reads
 
-- The pods in every namespace, grouped into the workloads that run them, such as a Deployment, a StatefulSet, or a Job. AI Security follows a pod through its replica set to its Deployment, and through its job to its CronJob. It reads each workload with its namespace, labels, the images its containers run, the nodes its pods run on, and the names of its image pull secrets. It reads a pod whose owner it can't resolve as its own workload.
+- The pods in every namespace, grouped into the workloads that run them, such as a Deployment, a StatefulSet, or a Job. AI Security follows a pod through its replica set to its Deployment, and through its job to its CronJob. It reads each workload with its namespace, labels, the images its containers run, the nodes its pods run on, and the names of its image pull secrets. It takes a pod's owner only where the pod names a replica set, job, stateful set, or daemon set that the read returned in the pod's own namespace, with the same UID. It reads any other pod as its own workload.
 - The service account each workload runs as, and the cloud workload identity that account is annotated with: an AWS role, a Google service account, or an Azure managed identity.
-- Roles and cluster roles, and the role bindings and cluster role bindings that grant them to service accounts. AI Security reads what the roles grant up to a limit. Past the limit, it doesn't read the rest, and it records a warning naming the role, the binding, or the service account where it stopped.
+- Roles and cluster roles, and the role bindings and cluster role bindings that grant them to service accounts. Where a cluster is too large to read in full, the scan warns, naming the role, the binding, or the service account where it stopped.
 - The network policies in every namespace, and where each lets the workloads it selects connect out. AI Security doesn't read ingress rules.
 - The secrets a pod uses, by name only, as the pod names them. AI Security never reads the secrets themselves.
-
-{/* TODO: confirm whether to publish the per-rule, per-binding, per-service-account, and per-read limits on how much a role grants that AI Security reads. */}
 
 ### What it never touches
 
@@ -151,9 +150,9 @@ Select the Kubernetes row to see the source.
 | Kubernetes resource | What AI Security reads with it | Scan without it |
 |---------------------|--------------------------------|-----------------|
 | `pods` | Workloads and their images. | Nothing is read. |
-| `replicasets` | The Deployment each pod belongs to. | A degradation for each namespace, and each pod of a Deployment reads as an agent of its own. |
-| `jobs` | The CronJob each job belongs to, and when a job ran and how it finished. | A degradation for each namespace, and each pod of a Job or CronJob reads as an agent of its own. |
-| `statefulsets`, `daemonsets` | The StatefulSet or DaemonSet each pod belongs to. | A degradation for each namespace, and each pod of a StatefulSet or DaemonSet reads as an agent of its own. |
+| `replicasets` | The Deployment each pod belongs to. | A skipped item for each namespace, and each pod of a Deployment reads as an agent of its own. |
+| `jobs` | The CronJob each job belongs to, and when a job ran and how it finished. | A skipped item for each namespace, and each pod of a Job or CronJob reads as an agent of its own. |
+| `statefulsets`, `daemonsets` | The StatefulSet or DaemonSet each pod belongs to. | A skipped item for each namespace, and each pod of a StatefulSet or DaemonSet reads as an agent of its own. |
 | `namespaces` | The owner stated on a namespace, and the namespaces to read one by one if a list across the cluster is refused. | No owner is taken from a namespace, and a list refused across the cluster isn't read at all. |
 | `serviceaccounts` | The cloud identity annotations on each service account. | The service account is still known by the name the pod gives it, but its cloud identity isn't. |
 | `roles`, `clusterroles` | The rules each role grants. | Bindings carry no permissions. |
@@ -169,9 +168,9 @@ Select the Kubernetes row to see the source.
 | "The platform refused the credential. It is wrong, expired or revoked." | The API server didn't accept the token. | Create a new token, since it may have expired, and click **Edit** to enter it. |
 | "The credential works, but access was denied. A permission is missing." | The API server accepted the token but refused a list. | Check that the cluster role binding names this service account, with the checks in step 5 of "Create the service account token in Kubernetes". |
 | "A setting is invalid. Addresses must start with https:// on the platform's domain." | The address isn't `https://`, its name is a local, private, or internal address or resolves to one, or the CA certificate can't be read as PEM text. | Click **Edit**, enter the address as `https://` with the host and port, and paste the decoded CA certificate from step 4. |
-| "The platform didn't answer, or said it is down or busy." | AI Security couldn't reach the API server at that address. | Check the address and port, that AI Security can reach the API server, and that the CA certificate is the cluster's. |
+| "The platform didn't answer, or said it is down or busy." | AI Security couldn't reach the API server at that address. | Check the address and port, that the API server has a public address, and that the CA certificate is the cluster's. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the credential. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix Support. |
 
 ## Security notes
 
