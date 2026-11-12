@@ -36,7 +36,7 @@ The agent host needs a Linux server of its own. You can't run `install-agent` on
 | Operating system | A RHEL-family or Debian-family Linux distribution. Preflight warns on a distribution it doesn't recognize. |
 | Access | Root, either directly or through `sudo`. `install-agent` stops with `install-agent must run as root: re-run it with sudo` otherwise. |
 | Architecture | The same CPU architecture as the server when the server runs from offline media. The in-cluster registry holds connector images only for the server's architecture, so `install-agent` refuses a host with another one. |
-| CPU | 2 cores at minimum. See [Agent sizing](#agent-sizing). |
+| CPU | 4 cores at minimum. See [Agent sizing](#agent-sizing). |
 | Memory | 4 GB at minimum. |
 | Disk | 5 GB free at minimum. A server that runs from offline media also needs room for the media and its unpacked copy, about 7 GB. The panel says about 8 GB of free disk, and preflight warns below 8 GB. |
 | Installer | The `dspm-installer` binary for the host's architecture. See [Download the installer](../../install/run-the-installer.md#download-the-installer). |
@@ -47,18 +47,18 @@ For example, an arm64 host can't join a server that runs from offline media on a
 
 ### Agent Sizing
 
-Preflight fails on a host with less than the minimum CPU, memory, or free disk. An agent of the minimum size runs every scan type. The more CPU and memory you give an agent, the more scans it runs at once.
+Give the agent at least 4 cores and 4 GB of memory. Preflight accepts a host with 2 cores, but an Access scan of a File Server source reserves 2 cores on its own, and the operating system and k3s share the same cores. Preflight fails on a host with less than 4 GB of memory or 5 GB of free disk. The more CPU and memory you give an agent, the more scans it runs at once.
 
 A scan creates one execution for each source, and each execution reserves CPU and memory on the agent that runs it. The agent starts an execution only when it has that much unreserved. An execution that doesn't fit waits until a running one finishes. The reservations don't change with the size of the agent or the size of the server.
 
-| Scan execution | Reserves | Runs at once on a 2-core, 4 GB agent |
+| Scan execution | Reserves | Runs at once on a 4-core, 4 GB agent |
 |---|---|---|
-| Access scan of a File Server source | 2 cores and 1 GB | 1 |
-| Access scan of a SharePoint Online source | 1 core and 768 MB | 2 |
-| Identity sync of an Active Directory or Entra ID source | 0.5 cores and 512 MB | 4 |
-| Sensitive data scan of a File Server or SharePoint Online source | About 0.5 cores and 250 MB | 4 |
+| Access scan of a File Server source | 2 cores and 1 GB | 2 |
+| Access scan of a SharePoint Online source | 1 core and 768 MB | 4 |
+| Identity sync of an Active Directory or Entra ID source | 0.5 cores and 512 MB | 7 |
+| Sensitive data scan of a File Server or SharePoint Online source | About 0.5 cores and 250 MB | 8 |
 
-Scans need more CPU than memory. Every execution in the table reserves 1 GB of memory or less for each core it reserves, so CPU decides how many run at once. To run more, add cores, and give the agent about 1 GB of memory for each core, never less than the 4 GB minimum. More memory than that doesn't let the agent run more scans.
+Scans need more CPU than memory. Every execution in the table reserves 1 GB of memory or less for each core it reserves. To run more, add cores, and give the agent about 1 GB of memory for each core, never less than the 4 GB minimum. More memory than that doesn't let the agent run more scans.
 
 The agent's disk holds the scan components and the logs of the executions it runs. Scan results don't stay on the agent, because every execution sends them to the server.
 
