@@ -122,7 +122,7 @@ Without the catalog, every agent that Agent 365 might have vouched for reads as 
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the credential. |
 | "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix Support. |
 
-The test shows "The tenant has no Microsoft Agent 365 license." in both of the cases above: Microsoft says a license is required, or the catalog doesn't exist. The scan tells them apart. It says the agents are read "only for a tenant with an Agent 365 license" in the first case, and that the catalog wasn't read "because the tenant has not set it up" in the second.
+The test shows "The tenant has no Microsoft Agent 365 license." in two cases: Microsoft says a license is required, or the catalog doesn't exist. The scan tells them apart. It says the agents are read "only for a tenant with an Agent 365 license" in the first case, and that the catalog wasn't read "because the tenant has not set it up" in the second.
 
 ## Security notes
 
