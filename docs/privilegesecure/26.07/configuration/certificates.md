@@ -1,12 +1,12 @@
 ---
-title: "Replace the web console certificate"
+title: "Replace certificates"
 description: "Bind a trusted certificate to the Privilege Secure web console, replace the proxy RDP certificate, and renew the JWT signing certificate."
 sidebar_position: 70
 ---
 
-# Replace the web console certificate
+# Replace certificates
 
-The installer creates a self-signed certificate for the Netwrix Privilege Secure for Access Management (Privilege Secure) console. It binds the certificate to the **SbPAM Web Service** website in Internet Information Services (IIS) on port 6500. Browsers don't trust a self-signed certificate. Replace it with a certificate from a trusted certificate authority (CA), then register services so they use the certificate's DNS name.
+The installer creates a self-signed certificate for the Netwrix Privilege Secure for Access Management (Privilege Secure) console. It binds the certificate to the **SbPAM Web Service** website in Internet Information Services (IIS) on port 6500. Browsers don't trust a self-signed certificate. Replace it with a certificate from a trusted certificate authority (CA), then register services so they use the certificate's DNS name. This page also covers the certificate that the RDP proxy presents and the JWT signing certificate.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ Set **NPS Rest URL** to the FQDN on the certificate and register the services. S
 
 When a user connects to a session over Remote Desktop Protocol (RDP), the RDP proxy presents a certificate to the RDP client. The first time the Proxy Service starts, it creates a self-signed certificate that is valid for five years, so the client warns that "The identity of the remote computer cannot be verified". Replace it with a certificate that the clients trust to remove the warning.
 
-This warning is separate from the "unknown publisher" warning. Signing the RDP file fixes the publisher warning, not this one. See [Configure and sign RDP files](/docs/privilegesecure/26.07/configuration/system-settings/rdp-files.md).
+Two different warnings can appear, and each has its own fix:
 
 | The client shows | Cause | Fix |
 | --- | --- | --- |
@@ -50,9 +50,9 @@ This warning is separate from the "unknown publisher" warning. Signing the RDP f
 
 ### Import the certificate
 
-The import overwrites the existing proxy certificate and key without a backup. The import stores the private key unencrypted, so restrict access to the folders.
+The import overwrites the existing proxy certificate and key. It doesn't make a backup, so back up the folders first. The import stores the private key unencrypted in the `keys` folder, so restrict access to that folder.
 
-1. Copy the `.pfx` file to the proxy server and name it `rdp.pfx`, for example `C:\install\rdp.pfx`.
+1. Copy the `.pfx` file to the proxy server, for example `C:\install\rdp.pfx`. The proxy uses only the credential named `rdp`, and the command names the credential after the file. If the file has another name, such as `proxy-cert.pfx`, add `-n rdp` to the command in step 4.
 1. Back up the `C:\ProgramData\Stealthbits\PAM\tls\certs` and `C:\ProgramData\Stealthbits\PAM\tls\keys` folders.
 1. Open Command Prompt as an administrator.
 1. Run the import command:
@@ -61,27 +61,21 @@ The import overwrites the existing proxy certificate and key without a backup. T
    "C:\Program Files\Stealthbits\PAM\ProxyService\sbpam-proxy.exe" ca import -p C:\install\rdp.pfx
    ```
 
-1. When prompted, enter the password of the `.pfx` file. To supply it on the command line, add `-P <password>`.
+1. When prompted, enter the password of the `.pfx` file. To supply it on the command line, add `-P <password>`. A password on the command line can be saved in command history.
 
 The command prints "PKCS12 Credentials imported successfully". The command prints an error and still exits with code 0 when it fails, so read the output instead of checking the exit code in a script.
 
 New RDP sessions use the new certificate. You don't restart the Proxy Service. Sessions that are already open keep the old certificate.
 
-The proxy uses only a credential named `rdp`. The command names the credential after the file, so the file must be `rdp.pfx`. For a file with another name, add `-n rdp`:
-
-```text
-"C:\Program Files\Stealthbits\PAM\ProxyService\sbpam-proxy.exe" ca import -p C:\install\proxy-cert.pfx -n rdp
-```
-
 To confirm the result, start a new RDP session from the console. The identity warning no longer appears.
+
+:::warning
+A `.pfx` file that can't be read, or a wrong password, makes the import fail before it changes any files. When the Proxy Service starts, it checks `rdp.crt` in the `certs` folder and `rdp.pem` in the `keys` folder. If either file is missing or can't be read, the service creates a new self-signed certificate, and clients show the identity warning again. To recover, restore both folders from your backup. New sessions use the restored files without a restart.
+:::
 
 ### Import on every proxy server
 
 Each server that runs the RDP proxy has its own certificate. Nothing copies it between servers. Run the import on every server that proxies RDP, including remote proxy servers and each node of a high availability deployment. See [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
-
-:::warning
-If the private key in the `.pfx` file can't be read, the Proxy Service replaces the certificate and key with a new self-signed pair the next time it starts. Test the new certificate with a session, and keep the backup from the import steps.
-:::
 
 {/* TODO screenshot: the Windows RDP client warning "The identity of the remote computer cannot be verified" */}
 
