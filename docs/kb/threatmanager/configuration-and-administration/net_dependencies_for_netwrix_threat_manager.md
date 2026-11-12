@@ -5,10 +5,19 @@ keywords:
   - .NET dependencies
   - Netwrix Threat Manager
   - ASP.NET Core
+  - .NET Desktop Runtime
+  - .NET 8
+  - .NET 10
+  - .NET Framework
+  - end of life
+  - "Apps & features"
+  - PowerShell
 products:
-  - threat-manager
-sidebar_label: .NET Dependencies for Threat Manager
-tags: []
+  - threatmanager
+sidebar_label: .NET Dependencies for Netwrix Threat Manager
+tags:
+  - kb
+  - configuration-and-administration
 title: ".NET Dependencies for Netwrix Threat Manager"
 knowledge_article_id: kA0Qk0000002E25KAE
 ---
@@ -25,20 +34,21 @@ Which version of .NET is required for Netwrix Threat Manager?
 
 ## Answer
 
-NTM versions 3.0 and 3.1 require ASP.NET Core 8.0 (or newer within the same major release) and .NET Desktop Runtime 8.0 (or newer within the same major release).
+The required .NET version depends on the Threat Manager version:
 
-NTM versions 3.2 and later require ASP.NET Core 10.0 (or newer within the same major release) and .NET Desktop Runtime 10.0 (or newer within the same major release).
+- Versions 3.0 and 3.1 require ASP.NET Core 8.0 and .NET Desktop Runtime 8.0, or a later 8.x release.
+- Versions 3.2 and later require ASP.NET Core 10.0 and .NET Desktop Runtime 10.0, or a later 10.x release.
 
-See also [Netwrix Threat Manager Requirements Version 3.0](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server) in **Getting Started**.
-[Netwrix Threat Manager Requirements Version 3.1](https://docs.netwrix.com/docs/threatmanager/3_1/requirements/server)
-[Netwrix Threat Manager Requirements Version 3.2](https://docs.netwrix.com/docs/threatmanager/3_2/requirements/server)
-[Netwrix Threat Manager Requirements Version 3.3](https://docs.netwrix.com/docs/threatmanager/3_3/requirements/server)
+You can upgrade .NET components within the same major release independent of Threat Manager.
 
-:::note
-.Net components may be upgraded within the same major release independent of Netwrix Threat Manager. 
+> **NOTE:** For the full requirements of each version, see:
+>
+> - [Netwrix Threat Manager Requirements Version 3.0](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server)
+> - [Netwrix Threat Manager Requirements Version 3.1](https://docs.netwrix.com/docs/threatmanager/3_1/requirements/server)
+> - [Netwrix Threat Manager Requirements Version 3.2](https://docs.netwrix.com/docs/threatmanager/3_2/requirements/server)
+> - [Netwrix Threat Manager Requirements Version 3.3](https://docs.netwrix.com/docs/threatmanager/3_3/requirements/server)
 
-.NET Framework and ASP.NET Core are separate components — installing one does not install the other. ASP.NET Core and .NET Desktop Runtime appear in the list of installed Apps & features. .NET Framework does not appear on that list. You can check which versions of .NET Framework you have installed by running the following command in PowerShell:
-:::
+.NET Framework and ASP.NET Core are separate components. Installing one does not install the other. ASP.NET Core and .NET Desktop Runtime appear in the list of installed Apps & features. .NET Framework does not appear on that list. To check which versions of .NET Framework you have installed, run the following command in PowerShell:
 
 ```powershell
 Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -Recurse | 
@@ -50,9 +60,12 @@ Example:
 
 ![PowerShell Example Output](../0-images/ka0Qk000000DG8bIAG.png)
 
-## Related Articles
+## Related Links
 
-- [Netwrix Threat Manager Requirements](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server)
+- [Netwrix Threat Manager Requirements Version 3.0](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server)
+- [Netwrix Threat Manager Requirements Version 3.1](https://docs.netwrix.com/docs/threatmanager/3_1/requirements/server)
+- [Netwrix Threat Manager Requirements Version 3.2](https://docs.netwrix.com/docs/threatmanager/3_2/requirements/server)
+- [Netwrix Threat Manager Requirements Version 3.3](https://docs.netwrix.com/docs/threatmanager/3_3/requirements/server)
 - [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/installation-and-upgrades/net_dependencies_for_netwrix_access_analyzer)
 - [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor)
 - [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/configuration-and-administration/net_dependencies_for_netwrix_threat_prevention)
