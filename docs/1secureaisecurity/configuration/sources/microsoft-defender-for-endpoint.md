@@ -10,7 +10,7 @@ Connect Microsoft Defender for Endpoint so AI Security can read the software inv
 
 ## Before you start
 
-* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
+* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values: the Directory (tenant) ID, the Application (client) ID, and the client secret value. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
 * Have a Global Administrator or Privileged Role Administrator grant the admin consent.
 * Sign in to the Microsoft Entra admin center at entra.microsoft.com.
 
@@ -80,22 +80,44 @@ It's an input, not an inventory of agents. It adds evidence where an AI tool is 
 
 ### What it produces
 
+#### Shadow AI rows and the people on them
+
 * One Shadow AI row per AI product for the tenant, never one per install, and an AI product rather than an agent unless [Agent or AI product](#agent-or-ai-product) makes it one. Claude Code on a thousand machines is one row that reads a thousand machines and the people who use them. The row states the machines it's on, the people who sign in there, the endpoint products that saw it and, where the process starts or CrowdStrike Falcon's events say, when it was first and last seen used and the AI API hosts its machines asked for.
   * AI Security matches a person to the directory person whose on-premises account name, or whose user principal name before the at sign, is the account name Defender states. It needs exactly one match, or the person stays named by the account alone.
   * The row waits in the Shadow AI queue with **Confirm** and **Dismiss**, beside the directory's applications.
   * If the product's vendor organization is connected (Anthropic, OpenAI, or GitHub), AI Security places its members under it by membership, not by key, and a row whose people are all members leaves the queue.
-* One activity record per machine, person, and tool that started, with how many times and the first and last time in the window. The person is the account as Defender names it, `DOMAIN\name`, or the name alone if no domain is stated. On Linux the domain is often the machine's own name, which names no domain. A start by the machine itself, such as SYSTEM or root, names no person and is a headless run. AI Security leaves out a start that the Defender sensor made itself, because it isn't use. Each record goes on the tool's row. If the inventory found the tool as well, it's the same row, with the machines of both and both reads named. On a machine where a person's start named who ran the tool, those accounts are its people in place of everyone signed in there. A machine that only the inventory saw, or where only the machine itself started the tool, keeps its sign-ins, and the row still records the headless run. The same rule joins Falcon's starts. This is how AI Security finds a tool that the inventory can't list, such as Claude Code installed by its own installer on Linux. The next scan updates the same record with its new count.
 * Each person on a tool's row says how they're known: "started", an account Defender or Falcon saw start the tool on a machine, or "signed in", known only from a machine's sign-ins, which says the person uses the machine, not that they ran the tool. A person who did both is "started".
+
+#### Activity records
+
+AI Security writes one activity record per machine, person, and tool that started, with how many times and the first and last time in the window. The next scan updates the same record with its new count. This is how AI Security finds a tool that the inventory can't list, such as Claude Code installed by its own installer on Linux.
+
+* **Who the person is.** The person is the account as Defender names it, `DOMAIN\name`, or the name alone if no domain is stated. On Linux the domain is often the machine's own name, which names no domain.
+* **Headless runs.** A start by the machine itself, such as SYSTEM or root, names no person and is a headless run.
+* **Sensor starts.** AI Security leaves out a start that the Defender sensor made itself, because it isn't use.
+* **Which row.** Each record goes on the tool's row. If the inventory found the tool as well, it's the same row, with the machines of both and both reads named.
+* **People on the row.** On a machine where a person's start named who ran the tool, those accounts are its people in place of everyone signed in there. A machine that only the inventory saw, or where only the machine itself started the tool, keeps its sign-ins, and the row still records the headless run. The same rule joins Falcon's starts.
+
+#### Combining with other sources
+
+To fold means AI Security merges the Defender row into an existing agent record, so the agent shows both sources.
+
 * If another source already holds the same tool for one of the same people, AI Security folds the Defender row into that agent. The agent keeps its own owners, grants, and reach, and gains the machines and people as evidence. If two or more discovered agents match, AI Security chooses none: the Defender row stays a Shadow AI row and the scan says so.
 * If CrowdStrike Falcon also reports the product, the two rows are one, kept on this source and naming both products as what saw it. A decision recorded on the row in the Shadow AI queue stays with it.
-* AI Security folds each agent that Defender lists and another source already holds into that agent, matched on its ID, the ID its own platform gave it, or the Entra agent ID the agent runs as, else on its name among the agents of the platform it names: Copilot Studio, Foundry, Microsoft 365, or SharePoint. A Microsoft 365 app is also matched on the app ID its catalog entry names. If no agent of that platform carries the name, AI Security matches the name among the Agent 365 packages that say they came from that platform, and folds the package into its own agent. Copilot Studio gives the environment and the bot joined by an underscore, so the bot part is matched too. Foundry gives the project's resource ID, which every agent of the project shares, so a Foundry agent is never matched on it. It needs exactly one match, or no fold. The agent keeps what its own source read and gains what Defender states about it, its declared data sources and MCP servers as what the agent connects to, and its triggers if its own source stated none: an agent with an event trigger, such as a new email, reads as running on its own. Each agent that no other source holds, such as a declarative agent on a tenant without an Agent 365 license, is an agent row on this source, naming the platform Defender stated.
+
+#### Agents that Defender lists
+
+* AI Security folds each agent that Defender lists and another source already holds into that agent, matched on its ID, the ID its own platform gave it, or the Entra agent ID the agent runs as, else on its name among the agents of the platform it names: Copilot Studio, Foundry, Microsoft 365, or SharePoint. A Microsoft 365 app is also matched on the app ID its catalog entry names. If no agent of that platform carries the name, AI Security matches the name among the Agent 365 packages that say they came from that platform, and folds the package into its own agent. Copilot Studio gives the environment and the bot joined by an underscore, so the bot part is matched too. Foundry gives the project's resource ID, which every agent of the project shares, so a Foundry agent is never matched on it. It needs exactly one match, or no fold.
+  * The agent keeps what its own source read and gains what Defender states about it, its declared data sources and MCP servers as what the agent connects to, and its triggers if its own source stated none: an agent with an event trigger, such as a new email, reads as running on its own.
+  * Each agent that no other source holds, such as a declarative agent on a tenant without an Agent 365 license, is an agent row on this source, naming the platform Defender stated.
 * AI Security reads a local agent as a tool installed on a computer, never as an agent of its own. Defender lists an AI tool installed on a computer, such as Claude Code, Cursor, OpenClaw, or Ollama Desktop, as a local agent, once for each computer and account. Each install adds its computer to the tool's machines and its account to the tool's people, on the same Shadow AI row. A tool that Defender lists only as a local agent gets a row of its own, which says it was found installed and is first seen when Defender recorded its earliest install. An install under a machine account, such as SYSTEM or root, names nobody and is a headless run.
 * Defender names the apps of the Microsoft 365 catalog with the platform "Other". AI Security reads an app that holds a declarative agent, a bot, or a custom engine agent as an agent of Microsoft 365. It leaves out an app with only tabs or message extensions, because it isn't an agent. AI Security reads only an app that the tenant acquired or a package it uploaded, and counts and leaves out a store listing it hasn't acquired.
-* AI Security writes the rows under the Microsoft Entra ID source's records, because it reads them with its app. Its own source, not those rows, says whether Defender for Endpoint is connected.
+
+AI Security writes the rows under the Microsoft Entra ID source's records, because it reads them with its app. Its own source, not those rows, says whether Defender for Endpoint is connected.
 
 ### Agent or AI product
 
-An endpoint row is an agent only if the tool runs as an agentic runtime. That means a container, a pod, or a sandbox, a headless or service account run, an MCP configuration naming tools, or a long-running process with no signed-in user. Everything else a person runs interactively, such as Claude Code, Codex, Cursor, Ollama, or a browser calling an AI API, is an AI product. A software inventory sees none of the runtime cases on its own. The process starts see one: a tool whose starts named only machine accounts, never a person, which stays an agent. The sources for the other runtimes read them, and the fold described earlier joins Defender's evidence to them.
+An endpoint row is an agent only if the tool runs as an agentic runtime. That means a container, a pod, or a sandbox, a headless or service account run, an MCP configuration naming tools, or a long-running process with no signed-in user. Everything else a person runs interactively, such as Claude Code, Codex, Cursor, Ollama, or a browser calling an AI API, is an AI product. A software inventory sees none of the runtime cases on its own. The process starts see one: a tool whose starts named only machine accounts, never a person, which stays an agent. The sources for the other runtimes read them, and the fold described in [Combining with other sources](#combining-with-other-sources) joins Defender's evidence to them.
 
 ### How sure
 

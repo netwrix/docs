@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Known limitations
 
-This page lists what AI Security doesn't do yet, or does only in part. Check it before you report a missing value as a problem.
+This page lists what AI Security doesn't do yet, or does only in part, grouped by area. Check it before you report a missing value as a problem. [Known limitations in the Beta](/docs/1secureaisecurity/troubleshooting/known-limitations-in-the-beta.md) covers something different: situations you may meet during a scan, each with what you see, why, and what to do.
 
 ## Scans
 
@@ -26,8 +26,8 @@ This page lists what AI Security doesn't do yet, or does only in part. Check it 
 
 Connect with Microsoft grants the Microsoft Graph permissions in one sign-in. It can't grant everything a Microsoft source needs.
 
-- **Azure roles are separate.** Assign Reader on each subscription, and Foundry User, formerly Azure AI User, on each Foundry project, in the Azure portal, or use **Let 1Secure do it** on the **Azure Reader on your subscriptions** card for the subscriptions and projects you select.
-- **Power Platform needs its own steps.** Register the management application with **Let 1Secure do it** or PowerShell. The System Administrator of each environment adds the application user.
+- **Azure roles are separate.** Assign Reader on each subscription, and Foundry User, formerly Azure AI User, on each Foundry project, in the Azure portal, or use **Let 1Secure do it** on the **Azure Reader on your subscriptions** card for the subscriptions and projects you select. [Azure RBAC](/docs/1secureaisecurity/configuration/sources/azure-rbac.md) and [Azure AI Foundry](/docs/1secureaisecurity/configuration/sources/azure-ai-foundry.md) have the steps.
+- **Power Platform needs its own steps.** Register the management application with **Let 1Secure do it** or PowerShell. The System Administrator of each environment adds the application user. [Power Platform](/docs/1secureaisecurity/configuration/sources/power-platform.md) has the steps.
 - **A tenant whose consent doesn't hold every permission reconnects once.** The source warns "Your tenant consented to an older permission list. Reconnect with Microsoft to grant the rest." Open the Microsoft Entra ID source, click **Sign in with Microsoft** or **Reconnect**, and accept the permissions.
 - **Sites.Selected replaces Sites.FullControl.All.** On SharePoint sites you haven't approved, apps holding Sites.Selected are reported as reaching unknown sites. Approve the sites on the **Sites** tab of the SharePoint Online source.
 

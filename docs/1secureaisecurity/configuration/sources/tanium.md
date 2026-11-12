@@ -8,7 +8,7 @@ sidebar_position: 72
 
 Connect Tanium so AI Security can read the endpoints Tanium manages and the AI tools that Tanium finds on them. Where Threat Response is deployed, it also reads the AI tools that run and the AI services that endpoints call. AI Security shows where AI tools such as Claude Code, Codex, and Cursor are installed, on which endpoints, and who last signed in there. It joins that to the people, identities, and agents that AI Security already holds. You create a Tanium API token and enter it in AI Security.
 
-This source gives the same evidence as CrowdStrike Falcon and Microsoft Defender for Endpoint, for organizations that run Tanium instead. The Shadow AI rows, the activity records, and the issues read Tanium as they read Falcon.
+This source gives the same evidence as CrowdStrike Falcon and Microsoft Defender for Endpoint, for organizations that run Tanium instead. The Shadow AI rows, the activity records, and the issues read Tanium as they read Falcon. A Shadow AI row is a row on the [Shadow AI](/docs/1secureaisecurity/admin/pages/shadow-ai.md) page, which lists AI found in your environment for you to approve or not. The issues are the findings AI Security raises on [Issues](/docs/1secureaisecurity/admin/pages/issues.md).
 
 ## Before you start
 
@@ -50,13 +50,15 @@ Tanium harvests `Installed Applications` hourly and `AI Coding Agents` every twe
 ### What it produces
 
 - One Shadow AI row per AI product for the instance, never one per endpoint and never an agent, with the endpoints it is on and the people signed in there. Where Falcon or Defender for Endpoint also reports the product, the rows are one.
-- A person keyed to the directory by account name. Each row says its people come from the last signed in user, one account per endpoint. Tanium states the account in three shapes.
-  - `DOMAIN\name` is a domain account, and AI Security keys it by the name.
-  - `.\name`, `Local\name`, or the endpoint's own name before the backslash is a local account. AI Security names it as the endpoint's, such as `WS01\admin`, and never keys it to a directory person.
-  - `WORKGROUP\name` is kept as stated and never keyed to a directory person either.
-  - `AzureAD\Name` is a Microsoft Entra ID account. AI Security keeps it as stated, because the name after the backslash is the profile Windows made, which need not be the sign-in name, and keys it only where a directory person answers to it.
+- A person keyed to the directory by account name. Each row says its people come from the last signed in user, one account per endpoint.
 - One activity record per endpoint, person, and tool that ran, and one per endpoint and AI API host it asked for. Each record has how many times and the first and last time in the window.
 - One Shadow AI row per AI service, such as "OpenAI API", for AI API hosts that endpoints asked for where no tool that calls them was seen. The issue is "AI service reached from a machine with no known AI tool for it", medium, on the endpoints where no tool that calls the service was found installed or starting.
+
+Tanium states the account in three shapes:
+
+- `DOMAIN\name` is a domain account, and AI Security keys it by the name. The exception is `WORKGROUP\name`, which is kept as stated and never keyed to a directory person.
+- `.\name`, `Local\name`, or the endpoint's own name before the backslash is a local account. AI Security names it as the endpoint's, such as `WS01\admin`, and never keys it to a directory person.
+- `AzureAD\Name` is a Microsoft Entra ID account. AI Security keeps it as stated, because the name after the backslash is the profile Windows made, which need not be the sign-in name, and keys it only where a directory person answers to it.
 
 ### How titles are matched
 

@@ -10,7 +10,7 @@ Connect Power Platform so AI Security can read your Power Automate cloud flows a
 
 ## Before you start
 
-* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
+* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values: the Directory (tenant) ID, the Application (client) ID, and the client secret value. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
 * Adding an application user needs System Administrator in that environment. Reading the data policies once, or registering the app as a management application, which is an opt-in, needs a Power Platform administrator or Global Administrator.
 * Decide whether to name environments or let AI Security discover them. The source needs one or the other, and named environments win where both are set.
 * Sign in to the Power Platform admin center at admin.powerplatform.microsoft.com.
@@ -25,21 +25,21 @@ Connect Power Platform so AI Security can read your Power Automate cloud flows a
 4. Open **Settings > Users + permissions > Application users**, and click **New app user**.
 5. Add the app registration, choose the business unit, and give it the role from step 3.
 6. Repeat steps 2 to 5 for every environment to cover.
-7. Optional. To read each discovered environment, and the data policies and cross-tenant isolation at every scan, register the app registration as a Power Platform management application.
+7. Optional. To read each discovered environment, and the data policies and cross-tenant isolation at every scan, register the app registration as a Power Platform management application. As a Power Platform administrator, run this command once:
 
-Where Microsoft Entra ID is connected with Microsoft, AI Security does steps 2 to 6 for you on the environments you select. See [Let AI Security do it](#let-ai-security-do-it). Do them by hand for an environment made after that sign-in, and for one where your account isn't a System Administrator.
+   ```powershell
+   Add-PowerAppsAccount; New-PowerAppManagementApp -ApplicationId <app-id>
+   ```
 
-Microsoft gives a management application the same rights as a tenant administrator, and you can't narrow them. The registration is what opens the environment list, the data policies, and cross-tenant isolation to an app. No directory role opens them for an app, Power Platform Administrator included. A Power Platform administrator registers it once:
+Where Microsoft Entra ID is connected with **Sign in with Microsoft**, AI Security does steps 2 to 6 for you on the environments you select. See [Let AI Security do it](#let-ai-security-do-it). Do them by hand for an environment made after that sign-in, and for one where your account isn't a System Administrator.
 
-```powershell
-Add-PowerAppsAccount; New-PowerAppManagementApp -ApplicationId <app-id>
-```
+Microsoft gives a management application the same rights as a tenant administrator, and you can't narrow them. The registration is what opens the environment list, the data policies, and cross-tenant isolation to an app. No directory role opens them for an app, Power Platform Administrator included.
 
 Each environment URL must be a public https address under `dynamics.com`, for example `https://contoso.crm.dynamics.com`. AI Security refuses a private or reserved address, a single-label name, a name in an internal zone such as `.local` or `.internal`, and plain http.
 
 ### Let AI Security do it
 
-Where Entra ID is connected with Microsoft, the **Power Platform policies** card under **Sources** holds every Power Platform grant in one place, with one button, **Finish Power Platform setup**, and one Microsoft sign-in. The card says "Needs Power Platform Administrator or Global Administrator, and System Administrator in each environment."
+Where Entra ID is connected with **Sign in with Microsoft**, the **Power Platform policies** card under **Sources** holds every Power Platform grant in one place, with one button, **Finish Power Platform setup**, and one Microsoft sign-in. The card says "Needs Power Platform Administrator or Global Administrator, and System Administrator in each environment."
 
 Being a Global Administrator or Power Platform administrator doesn't make you a member of an environment's Dataverse. Until you are, the user record and the security role's Members page refuse you, with read-only or no privileges. The card says "Read-only or no privileges means you aren't a member yet. Use Membership, Add me."
 
@@ -157,7 +157,7 @@ Where Microsoft refuses the sharing read, each flow reports its primary owner on
 | The same role with Read on Connection Reference and Connector | Each environment | Connector reach and custom connector names. | The scan lists flows, each saying its reach is unreadable. |
 | The same role with Read on User | Each environment | Owners as people. | Owners stay Dataverse IDs and join to no directory identity. |
 | The same role with Read on Flow Run | Each environment | Run history. | No flow has a last-used date, and the scan calls none unused. |
-| Registration as a Power Platform management application, an opt-in | The tenant | Each discovered environment's address, so discovery reads it. | The scan lists environments under the AI Reader role and doesn't read them. Name the environments instead. |
+| Registration as a Power Platform management application, an opt-in | The tenant | Each discovered environment's address, so discovery reads it. | The scan lists environments under the Microsoft Entra AI Reader directory role, which [Microsoft Copilot Studio](/docs/1secureaisecurity/configuration/sources/microsoft-copilot-studio.md) assigns, and doesn't read them. Name the environments instead. |
 | Registration as a Power Platform management application, or an administrator's sign-in on the **Power Platform policies** card | The tenant | Data policies and cross-tenant isolation, at every scan, or as of the sign-in. | Both read as unknown, never as off. |
 
 ## Troubleshooting

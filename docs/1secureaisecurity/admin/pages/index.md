@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Pages
 
-AI Security has one page for each part of the work. The 1Secure sidebar lists the pages under **AI Security**. Each page in this section explains what every card, tab, and column means.
+AI Security has one page for each part of the work. The 1Secure sidebar lists the pages under **AI Security**. Each page in this section explains what every card, tab, and column means. On every page, a figure AI Security didn't read shows as **Not measured**, and a value the platform doesn't give shows as **Not reported**. AI Security never shows either one as zero.
 
 - [Overview](/docs/1secureaisecurity/admin/pages/overview.md): the estate in one headline and four cards.
 - [Agents](/docs/1secureaisecurity/admin/pages/agents.md): every AI agent discovered across connected sources.
@@ -17,7 +17,3 @@ AI Security has one page for each part of the work. The 1Secure sidebar lists th
 - [Alerts](/docs/1secureaisecurity/admin/pages/alerts.md): what happened, newest first.
 
 Settings has a page of its own. See [Settings](/docs/1secureaisecurity/admin/settings.md).
-
-:::info
-A figure AI Security didn't read shows as **Not measured**, and a value the platform doesn't give shows as **Not reported**. AI Security never shows either one as zero.
-:::

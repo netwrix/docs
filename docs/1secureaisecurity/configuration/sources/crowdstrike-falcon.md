@@ -81,21 +81,32 @@ The DNS search reads every process start on the tenant in the window, so it grow
 
 ### What the scan produces
 
+#### Shadow AI rows and the people on them
+
 * One Shadow AI row per AI product for the tenant, never one per host and never an agent. Claude Code on a thousand hosts is one row that reads a thousand machines and the people who use them. The row states the hosts it is on, the people, when the product was first and last seen used, the endpoint products that saw it, and the AI API hosts its machines asked for.
   * The scan matches a person to the directory person whose SID is the one Falcon states.
   * If Falcon states no SID, the scan matches the person to the directory person whose on-premises account name, or whose user principal name before the at sign, is the account name Falcon states, on exactly one match.
   * The scan never matches a local account to a directory person by name. A local account is an account whose SID no directory person holds (other than a Microsoft Entra identifier), or whose domain is the host's own name, a dot, or `WORKGROUP`.
   * A person the scan doesn't match stays named by the account, or by the SID if Falcon states no name. That person waits in the **Shadow AI** queue with **Confirm** and **Dismiss**, beside the directory's applications.
   * If the product's vendor organization is connected (Anthropic, OpenAI, or GitHub), the scan places its members under it by membership, not by key, and a row whose people are all members leaves the queue.
+* Each person on the row says how the scan knows them. "Started" means an account Falcon or Defender saw start the product, or run the program that asked for its AI API, on a host. "Signed in" means the scan knows them only from a host's sign-ins, which says the person uses the host, not that they ran the product. A person who did both is "Started".
+* A host with no listed tool on it writes no row. The scan reads and counts it, and nothing more.
+
+#### Combining with other sources
+
 * If Defender for Endpoint also reports the product, the two rows are one, kept on Defender's side and naming both products as what saw it. A decision recorded on the row in the **Shadow AI** queue stays with it.
   * On a host where Falcon saw a person start the product, the row's people there are the accounts that started it, in place of everyone Defender saw signed in to it.
   * If Falcon saw only machine accounts start it, such as SYSTEM or the host's own account, the starts name nobody there. The host keeps Defender's sign-ins as its people, and the scan still records the headless run on the row.
-* Each person on the row says how the scan knows them. "Started" means an account Falcon or Defender saw start the product, or run the program that asked for its AI API, on a host. "Signed in" means the scan knows them only from a host's sign-ins, which says the person uses the host, not that they ran the product. A person who did both is "Started".
-* If another source already holds the same tool for one of the same people, the scan folds the Falcon row into that agent. The agent keeps its own owners, grants, and reach, and gains the hosts and people as evidence.
-* A host with no listed tool on it writes no row. The scan reads and counts it, and nothing more.
+* If another source already holds the same tool for one of the same people, the scan folds the Falcon row into that agent: it merges the row into the existing record, as [Microsoft Defender for Endpoint](/docs/1secureaisecurity/configuration/sources/microsoft-defender-for-endpoint.md) describes. The agent keeps its own owners, grants, and reach, and gains the hosts and people as evidence.
+
+#### Activity records
+
 * One activity record per host, person, and tool that ran, and one per host and AI API host it asked for, each with how many times and the first and last time in the window. The scan keeps each on the row the tool already is: Falcon's own row for the tool, else Defender for Endpoint's, else, if neither found it installed, a row for the tool made from the process starts. The next scan updates the same record with its new count.
+
+#### AI service rows and issues
+
 * AI API hosts that machines asked for, with no tool seen on them that calls them, become one Shadow AI row per AI service, such as "OpenAI API", with every machine that asked. The scan raises the finding "AI service reached from a machine with no known AI tool for it", medium, on the machines where no endpoint source found a tool that calls the service installed or seen starting.
-  * The row's people are the accounts whose programs asked, such as a person running curl, matched to the directory as described earlier and each listed once. The row names the program and doesn't call it AI. A machine account isn't a person. If no request named the account, the row counts nobody rather than no one.
+  * The row's people are the accounts whose programs asked, such as a person running curl, matched to the directory as [Shadow AI rows and the people on them](#shadow-ai-rows-and-the-people-on-them) describes, and each listed once. The row names the program and doesn't call it AI. A machine account isn't a person. If no request named the account, the row counts nobody rather than no one.
   * The issue names each machine once, by its host name without the domain a sensor adds, and says the other AI tools seen there, such as "Other AI tools seen on those machines: Claude Code, Cursor, none of which calls OpenAI."
   * If more machines asked for the service than the issue names, it says its machines are some of those, such as "5 of the 7 machines that asked for api.anthropic.com have no known AI tool for it", so it agrees with the count the Shadow AI row and the alert give.
   * The issue's fix never asks you to connect a service that is connected. If exactly one AI tool was seen on a machine that asked, the fix names it as the likely program, such as "OpenClaw on" the machine, and says to approve it on the **Shadow AI** page if it is approved.
@@ -116,7 +127,7 @@ Each AI product row says how sure the endpoint products are that it is AI, in th
 * **AI service used**: a program asked for an AI API name, and every program that asked is named and is a known browser or a cataloged tool.
 * **Needs a look**: a program nobody knows, or no named program, asked for an AI API name.
 
-A "needs a look" row is in the **Shadow AI** queue with **Confirm** and **Dismiss** like any other, and a **Dismiss** teaches the tenant's catalog. The scan doesn't ask again about each program that asked. The exception is a shell, a script host, or a command line client such as powershell.exe or curl.exe, which runs whatever it is told and so is never taught. If the row names such a program, or no program, the scan doesn't ask again about its domains. The tenant's **Configuration** lists what a **Dismiss** taught, with an undo. Undoing the last thing a **Dismiss** taught also restores that dismissal, so the next scan puts the row back in the queue.
+A "needs a look" row is in the **Shadow AI** queue with **Confirm** and **Dismiss** like any other, and a **Dismiss** adds each program that asked to the tenant's list of known programs, so the scan stops asking about it. The exception is a shell, a script host, or a command line client such as powershell.exe or curl.exe, which runs whatever it is told and so is never added. If the row names such a program, or no program, the scan stops asking about its domains instead. The tenant's **Configuration** lists what each **Dismiss** added, with an undo. Undoing the last thing a **Dismiss** added also restores that dismissal, so the next scan puts the row back in the queue.
 
 The DNS search names the program file that asked, such as chrome.exe or curl.exe, and the AI service row lists those programs. A request whose event names no program reads as "needs a look". The scan leaves out a request that the Defender for Endpoint or Falcon sensor made itself, such as MsSense.exe checking a name, because it isn't use of AI. The sensor isn't listed as a program, and a machine whose only requests came from it isn't on the row.
 

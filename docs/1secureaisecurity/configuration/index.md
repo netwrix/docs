@@ -6,7 +6,9 @@ sidebar_position: 1
 
 # Configuration
 
-The first run takes you from no sources to your first scan. You pick where agents could be running, connect those platforms, add any permissions they still need, and start the scan. Check the [Requirements](/docs/1secureaisecurity/requirements/index.md) first.
+The first run takes you from no sources to your first scan. You pick where agents could be running, connect those platforms, add any permissions they still need, and start the scan.
+
+Before you start, confirm the [Requirements](/docs/1secureaisecurity/requirements/index.md) are met. Have ready an organization administrator account in 1Secure and, to connect Microsoft sources, a Global Administrator or Privileged Role Administrator account in Microsoft.
 
 ## Run your first scan
 

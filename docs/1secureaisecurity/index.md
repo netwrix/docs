@@ -24,7 +24,7 @@ AI Security finds the AI agents and the non-human identities working across the 
 
 ## How AI Security reads your platforms
 
-AI Security reads each platform with read-only access. It never changes, deletes, or sends anything on a platform it scans. Microsoft sources connect through one Microsoft sign-in or through an app registration you create. Every other platform takes a credential you create in that platform's console.
+AI Security reads each platform with read-only access. It never changes, deletes, or sends anything on a platform it scans. Microsoft sources connect through one Microsoft sign-in or through an app registration you create, the identity in Microsoft Entra ID that 1Secure reads with. Every other platform takes a credential, such as an API key or token, that you create in that platform's console. [Key concepts](/docs/1secureaisecurity/getting-started/key-concepts.md) explains these terms.
 
 A scan reads each connected source and reports what it couldn't read. A figure that wasn't read shows as **Not measured**, never as zero, so a smaller answer is never mistaken for a smaller estate.
 

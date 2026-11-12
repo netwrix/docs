@@ -38,7 +38,7 @@ The **Platform** filter lists each group of platforms, such as **Microsoft 365 a
 
 After you set a filter, the link that removes every filter says how many it removes, for example "Clear 2 filters". The search counts as one filter. On **Agent reach**, the same link removes the bands and labels you selected.
 
-Where your role allows it, a checkbox on each row lets you act on several agents at once. The bar over the table counts the selected agents, says how many have no owner, a suggested owner, or open issues, and offers **Export selected**. For an administrator, the bar also offers **Assign owner** for the selected agents with no owner, and **Change owner**.
+If your 1Secure role is **Administrator** or **Editor**, a checkbox on each row lets you act on several agents at once. The bar over the table counts the selected agents, says how many have no owner, a suggested owner, or open issues, and offers **Export selected**. For an administrator, the bar also offers **Assign owner** for the selected agents with no owner, and **Change owner**.
 
 Where any selected agent has a suggested owner, **Assign suggested owners** lists each agent with its suggested owner and why. Clear any you don't want and click **Assign [n] owners**. The page says how many owners were assigned, with **Undo**. The link that clears the selection says how many agents it clears, for example "Deselect 3 agents".
 

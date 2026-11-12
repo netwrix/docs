@@ -17,12 +17,14 @@ The dialog is the same for every platform.
 1. In AI Security, select **Sources**.
 2. In **Search platforms**, enter the platform's name.
 3. In the platform's row, click **Connect**. The **Connect `<platform>`** dialog opens, with one field per setting. There's no name to enter: the source is named for its platform. The vendor's own words label each field.
-4. Enter each setting. Secret settings are password fields. A platform's reference, such as "Instance address" or "Subscription ID", is either taken from a setting or read from the credential by the test. You never enter it in a field of its own.
+4. Enter each setting. Secret settings are password fields.
+
+   Some platforms need an address or ID, such as "Instance address" or "Subscription ID", that you don't enter in a field of its own. AI Security takes it from another setting or reads it from the credential during the test.
 5. Click **Connect**. The dialog saves the source, tests the connection, and shows the test's answer.
 6. Click **Done**.
 
 :::info
-Where your 1Secure offers one-click Microsoft consent, the eight Microsoft dialogs start with **Sign in with Microsoft**. A Global Administrator or Privileged Role Administrator clicks it, accepts the permissions, and returns to the dialog's test answer with nothing pasted. **Use an app registration instead** opens the fields for an administrator who registers the application themselves.
+On the eight Microsoft platforms that share one app registration, the dialog starts with **Sign in with Microsoft** if your 1Secure offers one-click consent. They are Microsoft Entra ID, Azure AI Foundry, Azure RBAC, Microsoft Copilot Studio, Agent 365, Power Platform, SharePoint Online, and SharePoint agents. [Connect every Microsoft source](/docs/1secureaisecurity/configuration/sources/connect-every-microsoft-source.md) covers them together. A Global Administrator or Privileged Role Administrator clicks it, accepts the permissions, and returns to the dialog's test answer with nothing pasted. **Use an app registration instead** opens the fields for an administrator who registers the application themselves.
 :::
 
 ### Edit a source
@@ -83,7 +85,7 @@ Start a scan with **Scan now** on a source, or **Scan all** on the **Sources** s
 
 ## The platforms
 
-Four reads have no row of their own and use another source's credential. The Purview audit log and Microsoft Security Copilot use Microsoft Entra ID. Azure Logic Apps and Azure Bot Service use Azure RBAC. Connect the source whose credential they use, as their pages describe.
+Four reads have no source of their own and use another source's credential. Where one has a row on the **Sources** page, selecting it opens the source whose credential it uses. The Purview audit log and Microsoft Security Copilot use Microsoft Entra ID. Azure Logic Apps and Azure Bot Service use Azure RBAC. Connect the source whose credential they use, as their pages describe.
 
 Eight platforms show "Coming soon", planned for a later release, and offer no way to connect a new source yet. They are AWS Bedrock, Atlassian, ServiceNow, ServiceNow AI Control Tower, Salesforce, Google Workspace, Docker, and OpenShell.
 

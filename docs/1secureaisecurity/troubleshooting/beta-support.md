@@ -10,7 +10,7 @@ This page says how to report a problem with AI Security during the Beta and what
 
 ## Where to report
 
-Report a problem to Netwrix Support, through your normal support channel. Standard Netwrix support terms apply during the Beta.
+Report a problem to Netwrix Support. Standard Netwrix support terms apply during the Beta.
 
 Write the summary of each report as the page or source, then what went wrong, in one line. For example, "Sources: Microsoft Entra ID test reads Failed after a grant".
 

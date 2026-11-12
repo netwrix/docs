@@ -10,7 +10,7 @@ Connect SharePoint agents so AI Security can find the SharePoint agents in your 
 
 ## Before you start
 
-* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
+* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values: the Directory (tenant) ID, the Application (client) ID, and the client secret value. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
 * Have a Global Administrator or Privileged Role Administrator grant the admin consent.
 * Sign in to the Microsoft Entra admin center at entra.microsoft.com.
 
@@ -52,7 +52,7 @@ A scan of this source reads every Microsoft source the three values unlock, not 
 
 * Every site collection, and every document library on each site, searched for .agent files. A scan searches 500 sites by default. **Sites scanned** under **Scan settings** on the source raises that, up to 5,000.
 * Where the tenant has more sites than one scan searches, each scan continues where the scan before it stopped, and starts again at the first site after the last one, so every site is searched in turn. The scan says which sites it searched. A site that refused a read doesn't count as searched. A personal OneDrive site that answered locked does count as searched, because a locked OneDrive is normal and not yours to unlock. The scan names those sites in a note of their own. An agent found on a site stays until a later scan of that site no longer finds it.
-* Each agent file's definition: its name, description, and capabilities, and the libraries, folders, and files it's grounded in.
+* Each agent file's definition: its name, description, and capabilities, and the libraries, folders, and files it's grounded in. AI Security also reads the agent's instructions from the file, shortened if they are long, and holds them only while the scan runs.
 * Each agent file's creator, last editor, and dates. AI Security keeps the last editor as its own fact, never as the creator.
 * Who can open each agent file and every knowledge source it names, so the scan can tell when an agent reaches people its data doesn't. SharePoint limits how many knowledge sources an agent names, so the scan measures every agent built in SharePoint in full.
 * The files inside each library or folder an agent is grounded in: each item's ID, name, path, and whether its own sharing differs from its folder's. The scan reads the sharing scope of each item marked that way, and the sensitivity labels of the files. On a very large library a scan may read only part of these. A library the scan didn't reach waits for the next scan, which starts with it. From this come three issues per agent: files with an Anyone link, files with an organization link inside a source shared more narrowly than the organization, and files carrying a sensitivity label, each with a count and the first paths.
@@ -68,7 +68,8 @@ Restricted Content Discovery, the site setting that keeps a site out of Copilot'
 
 * AI Security never writes to SharePoint.
 * AI Security opens only files whose names end in .agent.
-* The agent's icon. AI Security reads the agent's instructions from the file, shortened if they are long, holds them only while the scan runs, and doesn't keep them in the scan's results.
+* The agent's icon.
+* The agent's instructions, in the scan's results. [What this connector reads](#what-this-connector-reads) says how the scan uses them.
 * A sharing link's address and share ID. AI Security drops them before it stores anything.
 * Usage and conversations with the agent.
 * The contents of files in a knowledge source. AI Security reads each item's name and path, the link scopes of the shared ones, and the labels of the files, and keeps only counts and the first ten paths under each heading.

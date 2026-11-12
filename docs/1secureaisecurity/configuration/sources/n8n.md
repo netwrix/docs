@@ -40,12 +40,12 @@ Without scope selection, the key carries the role of the user who creates it. A 
 
 The instance address must be a public https address that AI Security can reach over the internet. AI Security refuses a private or reserved address, a single-label name, a name in an internal zone such as `.local` or `.internal`, and plain http.
 
-Select the n8n row to see the source.
+Select the n8n row to see the source. The security audit that the lines mention is a report n8n generates about the instance, such as its unused credentials and unprotected webhooks. AI Security asks for it with the `securityAudit:generate` scope.
 
 | Line | What it shows |
 |------|---------------|
 | Credential | "Readable". |
-| Last test | "Succeeded", or "Warning" when the audit answered and the workflow list didn't. |
+| Last test | "Succeeded", or "Warning" when n8n's security audit answered and the workflow list didn't. |
 | Last scanned | "Never", then "Succeeded", with anything that a missing scope in the Permissions section left unread listed as skipped. "Partly scanned" appears when a list stopped short because n8n handed back a page cursor it had already given. |
 
 ## What this connector reads

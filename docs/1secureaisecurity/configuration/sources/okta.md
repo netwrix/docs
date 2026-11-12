@@ -21,7 +21,7 @@ The token has no scopes of its own. It acts with the admin role of the person wh
 ### Create the API token in Okta
 
 1. In the Okta Admin Console, select **Security > Administrators**, and assign the service account the Super Administrator role. Read-only Administrator reads only the apps, users, and groups. Without Super Administrator, the reads of admin roles and scope grants described in [Permissions](#permissions) are incomplete.
-2. For the API token list, give the service account an admin role that includes the `okta.users.apitokens.read` permission, such as a custom admin role.
+2. Super Administrator also covers the API token list. Skip this step if you assigned it. If you keep Read-only Administrator instead, also give the service account a custom admin role that includes the `okta.users.apitokens.read` permission.
 3. Sign in to the Admin Console as the service account.
 4. Select **Security > API > Tokens**, and click **Create token**.
 5. Enter a name, for example "Netwrix 1Secure AI Security", and create the token.
@@ -51,7 +51,7 @@ Select the Okta row to see the source.
 | Last test | "Succeeded" and the date of the test. |
 | Last scanned | "Never", then "Succeeded", with anything the scan couldn't read listed as skipped, such as a refused read or an app's detail that didn't read. "Partly scanned" appears when a list was cut short. |
 
-The scan records a warning and reports the token's visibility as unknown. The scan says: "Okta publishes no documented endpoint that identifies the calling token or its owner, so the admin role bounding what this scan could see is unknown." No permission clears the warning. The results are complete for what the token's role can see.
+Every Okta scan shows a warning. It isn't a failure, and nothing needs fixing. The scan reports the token's visibility as unknown and says: "Okta publishes no documented endpoint that identifies the calling token or its owner, so the admin role bounding what this scan could see is unknown." The results are complete for what the token's role can see.
 
 ## What this connector reads
 

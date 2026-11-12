@@ -28,7 +28,7 @@ Connect GitHub so AI Security can read one organization's non-human access: inst
 9. If the organization enforces Security Assertion Markup Language (SAML) single sign-on, click **Configure SSO** beside the token, and click **Authorize** beside the organization.
 
 :::warning
-Use a classic personal access token. A GitHub App installation token lasts one hour, and 1Secure stores the token rather than the App's key, so a stored installation token stops working before the next scan.
+The GitHub source supports a classic personal access token only. A GitHub App installation token lasts one hour, and 1Secure stores the token rather than the App's key, so a stored installation token stops working before the next scan.
 :::
 
 ## Connect the source
@@ -56,7 +56,6 @@ Select the GitHub row to see the source.
 * The organization's owners and members, and its default repository permission and two-factor requirement. The members, by login or public email, also place GitHub Copilot users seen by an endpoint product under this organization. The placement is by membership, not by key.
 * The GitHub Apps installed on the organization.
 * Classic personal access tokens and SSH keys authorized for the organization, if it uses SAML single sign-on on GitHub Enterprise Cloud.
-* Fine-grained personal access tokens and the repositories each reaches, if the token is a GitHub App installation token.
 * Deploy keys on each repository, either read or write.
 * The Actions policy: the workflow token's default permission, allowed actions, the OpenID Connect subject template, and self-hosted runners.
 * Copilot: seats, who holds them, activity, and the coding agent's configuration per repository.
@@ -68,14 +67,14 @@ Select the GitHub row to see the source.
 
 An issue about the workflow token's default permission, allowed actions, or the Copilot seat policy appears on **GitHub workspace settings**, once per organization, rather than on the Copilot agent or the Actions identity. It has no owner. See [Issues](/docs/1secureaisecurity/admin/pages/issues.md).
 
-With a classic personal access token, fine-grained tokens are reported as unknown. On an organization without SAML single sign-on, classic tokens are unknown too. A scan therefore normally lists them as skipped, and its source still reads "Succeeded".
+Fine-grained personal access tokens are reported as unknown. GitHub lists them only to a GitHub App installation token, which the source can't keep. On an organization without SAML single sign-on, classic tokens are unknown too. A scan therefore normally lists them as skipped, and its source still reads "Succeeded".
 
 ### What the connector never touches
 
 * It never writes. Every call is a read.
 * It reads no repository contents, no secrets, and no workflow files.
 * Of a token, it keeps the last eight characters at most. It drops deploy key material and keeps only the key's type and a hint.
-* It leaves part of the token owner's hourly API allowance untouched. On a busy organization it reads part of the audit log, and the next scan continues where it stopped.
+* It doesn't use up the token's hourly API limit. On a busy organization it reads only part of the audit log, and the next scan continues where it stopped.
 
 ## Permissions
 
@@ -90,7 +89,6 @@ With a classic personal access token, fine-grained tokens are reported as unknow
 | Copilot Business or Enterprise | Copilot seats. | Seats are unknown. |
 | Copilot Pro+, Business, or Enterprise | The coding agent's configuration per repository. | The coding agent's configuration is unknown, never none. |
 | GitHub Enterprise Cloud with SAML single sign-on | Classic personal access tokens and SSH keys authorized for the organization. | Those authorizations aren't read. |
-| A GitHub App installation, with Organization permissions "Administration: Read-only" and "Personal access tokens: Read-only" | Fine-grained personal access tokens, which only an App can list. | Fine-grained tokens are unknown, never zero. |
 
 GitHub ships no read-only variant of `admin:org`. AI Security only reads.
 
@@ -116,7 +114,7 @@ A scan that reads to the end lists what it couldn't read as skipped items, and i
 
 | What you see | What it means | What to do |
 |--------------|---------------|------------|
-| "Succeeded", with a skipped item and what to do on its line, most often "The fine-grained personal access tokens with access to this GitHub organization." followed by "Install the scanner's GitHub App on this organization with the Personal access tokens read-only permission." | Something was unknown, most often the fine-grained tokens, which GitHub lets only a GitHub App list. | Nothing, with a classic token. For the rest, add the scope the line names. The table under [Permissions](#permissions) lists each one. |
+| "Succeeded", with a skipped item and what to do on its line, most often "The fine-grained personal access tokens with access to this GitHub organization." followed by "Install the scanner's GitHub App on this organization with the Personal access tokens read-only permission." | Something was unknown, most often the fine-grained tokens, which GitHub lets only a GitHub App list. | For the fine-grained tokens, nothing: the source can't read them with a classic token. For the rest, add the scope the line names. The table under [Permissions](#permissions) lists each one. |
 | "Succeeded", with a skipped item that names the item, such as "The GitHub member, token or repository octo-org/app.", and the line says: "Check the token's access to that member, token or repository, then scan again." | GitHub refused one item while the organization's other reads answered: a member's profile, a fine-grained token's repositories, or a repository's deploy keys or Copilot coding agent settings. What the detail names is unknown this run, not absent. | Scan again. If GitHub refuses the same item again, check the token's access to that repository or member. |
 
 ## Security notes

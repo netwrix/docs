@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Known limitations in the Beta
 
-This page lists the limits you may meet during the Beta. Each one says what you see, why, and what to do. [Known limitations](/docs/1secureaisecurity/troubleshooting/known-limitations.md) lists the general ones.
+This page lists situations you may meet during a scan in the Beta. Each one says what you see, why, and what to do. [Known limitations](/docs/1secureaisecurity/troubleshooting/known-limitations.md) covers something different: what AI Security doesn't do yet, or does only in part, grouped by area.
 
 ## Some Microsoft sources need a license or a service your tenant lacks
 
@@ -22,7 +22,7 @@ This page lists the limits you may meet during the Beta. Each one says what you 
 
 No permission fixes a missing license or service. 1Secure also connects to the worldwide Microsoft cloud only, not to a national or government cloud.
 
-**What to do.** Skip the source during setup, or add the license or service. A scan of every source tests a source with nothing to read again first, and reads it after its test passes.
+**What to do.** Skip the source during setup, or add the license or service. Then run **Scan all** on the **Sources** page. 1Secure tests the source again first and reads it only if the test passes.
 
 ## A very large directory is read only in part
 
@@ -34,7 +34,7 @@ No permission fixes a missing license or service. 1Secure also connects to the w
 
 ## A short time per source spreads the sign-in read over several scans
 
-**What you see.** The scan reads **Running** while follow-on scans read on, and its drawer says of the source "Part was read. The next scans read the rest."
+**What you see.** The scan's status stays **Running**, the status of a scan in progress, while follow-on scans read on. A follow-on scan is an automatic scan 1Secure starts to read the rest of the activity. The scan drawer says of the source "Part was read. The next scans read the rest."
 
 **Why.** **Time per source**, under **Scan limits** on the **Settings** page, sets how long each source's scan can run, from 5 to 60 minutes. The sign-in read stops early to leave time to save the results, so it gets only part of that time. The next scans continue from where the last one stopped.
 
@@ -44,7 +44,7 @@ No permission fixes a missing license or service. 1Secure also connects to the w
 
 **What you see.** A source can say "The rest of the activity, because the last two follow on scans read nothing new."
 
-**Why.** A scan that didn't finish the sign-in read starts follow-on scans, which read on. They stop after a while if they keep reading nothing new. A scan you start, or a scheduled scan, also stops them.
+**Why.** A scan that didn't finish the sign-in read starts follow-on scans, which read the rest of the sign-in log. They stop after a while if they keep reading nothing new. A scan you start, or a scheduled scan, also stops them.
 
 **What to do.** Nothing is lost. The next scan you start, or the next scheduled one, reads on from where the last read stopped.
 

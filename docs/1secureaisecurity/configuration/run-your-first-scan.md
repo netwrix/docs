@@ -25,9 +25,9 @@ Only an organization administrator can start a scan. Anyone else sees "Only an o
 3. Where you skipped a Microsoft permission, click the link that counts them, for example **1 skipped**, last on the step. Each row names the permission and what granting it adds, for example "Adds the agents built in Copilot Studio to the scan.", with **Grant now**, which opens that permission's card in a window over the step.
 4. Click **Start first scan with** the number of sources that will be scanned. The **Overview** opens.
 
-A source whose last test refused its credential is left out of the scan. Under the button, a line counts the sources that won't be scanned yet, for example "2 sources won't be scanned yet. Their cards above say why." The step doesn't list them by name.
+A source whose last test refused its credential is left out of the scan. A line under **Start first scan with**, at the foot of the step, counts these sources, for example "2 sources won't be scanned yet. Their cards above say why." To see which sources they are, read the rows under **Still to connect** and the tiles marked **No access** or **Needs a license**. Click **Fix it** on a source's row to fix it now, or start the scan without it and fix it later from **Sources**.
 
-Where a role is still applying, a line above the button says so, for example "2 sources join as their roles apply. Nothing to do." 1Secure tests again by itself for a few minutes, so a tile turns green as its test passes.
+Where a role is still applying, a line under the button says so, for example "2 sources join as their roles apply. Nothing to do." 1Secure tests again by itself for a few minutes, so a tile turns green as its test passes.
 
 While a source's connection test is still running, the button is off, and hovering it says "Sources are still being tested. Scan when that finishes."
 

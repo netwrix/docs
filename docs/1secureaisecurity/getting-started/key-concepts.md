@@ -16,7 +16,7 @@ An agent's reach is its own grants plus the grants of every identity it acts as.
 
 ## Identities
 
-A non-human identity is any principal that isn't a person: a service principal, a managed identity, an app registration, or a stored key. Every agent is one, and most non-human identities aren't agents. The **Identities** page lists all of them and separates the ones AI runs as or uses from the others. Only the AI-related identities count in the AI Security totals.
+A non-human identity is any principal that isn't a person: a service principal, a managed identity, an app registration, or a stored key. Every agent is a non-human identity, but most non-human identities aren't agents. The **Identities** page lists all of them and separates the ones AI runs as or uses from the others. Only the AI-related identities count in the AI Security totals.
 
 ## Owners
 
@@ -26,11 +26,15 @@ An owner is the person who answers for an agent. AI Security reads owners from t
 
 A source is a platform you connect: a Microsoft Entra directory, an n8n instance, or an Okta org. Each source holds one credential and is read with read-only access.
 
-Some sources read with another source's credential. Several Microsoft sources read with the app registration of your Microsoft Entra ID source, and their cards say so. A few reads have no card of their own. The Purview audit log and Microsoft Security Copilot read through Microsoft Entra ID, and Azure Logic Apps and Azure Bot Service read through Azure RBAC.
+- A credential is what a source signs in with, such as an API key, a token, or an app registration.
+- An app registration is the identity in Microsoft Entra ID that 1Secure reads your Microsoft sources with. You create it yourself, or you connect with one Microsoft sign-in and 1Secure reads with its own application, "Netwrix 1Secure AI Security".
+- A card is a panel on the **Sources** page where you grant a permission or test a connection.
+
+Some sources read with another source's credential. Microsoft Entra ID provides the credential for several Microsoft sources: they read with its app registration, and their cards say so. A few reads have no card of their own. The Purview audit log and Microsoft Security Copilot read through Microsoft Entra ID, and Azure Logic Apps and Azure Bot Service read through Azure RBAC.
 
 ## Scans
 
-A scan reads every connected source and imports what it found. Each source in a scan ends as **Succeeded**, **Partly scanned**, **Failed**, or **Not scanned**.
+A scan reads every connected source and imports what it found. While a scan is in progress, its status is **Running**. Each source in a scan ends as **Succeeded**, **Partly scanned**, **Failed**, **Not scanned**, or **Not set up**.
 
 - A source read to the end still succeeds where the platform refused part of the read, most often because a permission is missing. It lists what it skipped.
 - A source is partly scanned only when its read stopped short.

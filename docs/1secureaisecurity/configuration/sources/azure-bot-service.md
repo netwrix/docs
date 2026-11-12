@@ -6,7 +6,7 @@ sidebar_position: 12
 
 # Azure Bot Service
 
-AI Security reads the Azure Bot Service bots in your subscriptions, the channels each answers on, and the identity each runs as. You don't connect it on its own. It has no card of its own, and it reads with the Azure role-based access control (RBAC) source's credential, over the subscriptions that source can read. You connect Azure RBAC, and this read comes with it.
+AI Security reads the Azure Bot Service bots in your subscriptions, the channels each answers on, and the identity each runs as. You don't connect it on its own. It has no source of its own: its row on the **Sources** page opens the Azure RBAC source. It reads with the Azure role-based access control (RBAC) source's credential, over the subscriptions that source can read. You connect Azure RBAC, and this read comes with it.
 
 ## Before you start
 
@@ -24,13 +24,13 @@ There's nothing to create. The Azure RBAC source's app registration and its Read
 3. Check that the Azure RBAC row is connected. If it isn't, connect it as [Azure RBAC](/docs/1secureaisecurity/configuration/sources/azure-rbac.md) describes.
 4. Select the Azure RBAC row, and click **Test**.
 
-The Azure RBAC test also proves this read, because both list the same subscriptions with the same role.
+The Azure RBAC test also proves this read, because both list the same subscriptions with the same role. The Azure RBAC row shows these lines.
 
 | Line | What it shows |
 |------|---------------|
-| Credential | As on the Azure RBAC source. |
-| Last test | As on the Azure RBAC source. |
-| Last scanned | On the Azure RBAC source, "Succeeded". |
+| Credential | "Readable". |
+| Last test | "Succeeded", or "Warning" when some subscriptions answered and some didn't. |
+| Last scanned | "Succeeded", with anything the scan couldn't read listed as skipped. |
 
 Bots appear on the **Agents** page under Azure Bot Service after the first scan. A bot whose channels didn't read is still listed, with the channels its own resource names, and the scan says: "this bot's channels did not read; it is listed with the channels its own resource names".
 

@@ -17,7 +17,7 @@ Two sides hold a trace: 1Secure, which holds the source and what it read, and yo
 - A Power Platform administrator, for the management application.
 - A System Administrator in each Power Platform environment, for the application users.
 
-Note which 1Secure organizations hold the tenant.
+Make a list of the 1Secure organizations that connected this Microsoft tenant. You disconnect the sources in each one in step 1.
 
 ## 1. Disconnect the Microsoft sources in 1Secure
 
@@ -59,13 +59,24 @@ A subscription or project you cleared later under **Change** keeps its assignmen
 
 If you registered 1Secure as a Power Platform management application, with **Also register the management application** on the **Power Platform policies** card, remove the registration. Microsoft gives that registration the same rights as a tenant administrator, and deleting the application in Entra ID doesn't remove it.
 
-Sign in to PowerShell as a Power Platform administrator with the Power Platform administration module, and run:
+1. In PowerShell, install the Power Platform administration module if you don't have it:
 
-```powershell
-Add-PowerAppsAccount
-Get-PowerAppManagementApp
-Remove-PowerAppManagementApp -ApplicationId <the application (client) ID of the Netwrix application>
-```
+   ```powershell
+   Install-Module Microsoft.PowerApps.Administration.PowerShell
+   ```
+
+2. Sign in as a Power Platform administrator, and list the registered applications:
+
+   ```powershell
+   Add-PowerAppsAccount
+   Get-PowerAppManagementApp
+   ```
+
+3. Remove the Netwrix application. Replace `<client-id>` with its application (client) ID from the list:
+
+   ```powershell
+   Remove-PowerAppManagementApp -ApplicationId <client-id>
+   ```
 
 `Get-PowerAppManagementApp` lists the registered applications. Take the ID from that list before you delete the application in Entra ID, because the list shows the ID only.
 

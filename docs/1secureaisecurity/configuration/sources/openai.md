@@ -21,7 +21,7 @@ Connect OpenAI so AI Security can read one OpenAI API organization with two kind
 ### Create the keys in OpenAI
 
 1. Open **Settings > Organization > General**, and copy the "Organization ID". It starts with `org-`.
-2. Open **Settings > Organization > Admin keys**, and create an admin key.
+2. Open **Settings > Organization > Admin keys**, and create an admin key. Create it unrestricted, or restrict it to `api.management.read` and, for who created each key, `api.audit_logs.read`.
 3. Copy the admin key.
 4. For each project whose agents you want read, open **Settings**, select the project, and open **API keys** inside it.
 5. Create a key with restricted permissions that allow reading agents (`api.agents.read`) and nothing more.

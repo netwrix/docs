@@ -6,7 +6,7 @@ sidebar_position: 5
 
 # Add additional permissions
 
-Some Microsoft reads need a role or a grant that the Microsoft consent screen doesn't give. On **Connect Microsoft**, you add them in the lines after **Sign in and consent**, one at a time, before any source is tested. The lines open when Microsoft Entra ID reads, and only the lines the platforms you chose need are listed.
+Some Microsoft reads need a role or a grant that the Microsoft consent screen doesn't give. On **Connect Microsoft**, each grant is a line: a row with its own status. Each line opens a card, the panel where you make the grant. You add the lines one at a time after **Sign in and consent**, before any source is tested. The lines open when Microsoft Entra ID reads. The list shows only the lines your chosen platforms need.
 
 | Line | Listed when you chose | What its card says it is for |
 |------|-----------------------|------------------------------|
@@ -19,7 +19,7 @@ Microsoft Defender for Endpoint has no line. It reads through Microsoft Graph wi
 
 ## Grant a line
 
-Each card of the first three lines says what it grants and who can grant it, and offers one button, **Grant with my sign in**.
+The cards of the first three lines each say what the line grants and who can grant it, and offer one button, **Grant with my sign in**.
 
 1. Read the card. It says what the grant reads, for example "Grants Reader on the subscriptions you select and Foundry User on their projects. Read-only.", and what it needs, for example "Needs Owner or User Access Administrator on each subscription you select."
 2. Click **Grant with my sign in**. For **Azure Reader roles** and **Power Platform application user**, on a first run the card then lists the subscriptions, or the Power Platform environments, your account can see, all selected.
@@ -28,7 +28,7 @@ Each card of the first three lines says what it grants and who can grant it, and
 
 For fifteen minutes after **Sign in and consent**, 1Secure makes the **Microsoft Entra AI Reader role** grant with that same sign-in, so no Microsoft window opens for it. 1Secure keeps that sign-in only until the grants are recorded. Where the time has passed, or Microsoft needs to ask you something more, a small Microsoft window opens for the grant. **Azure Reader roles** and **Power Platform application user** open a small Microsoft window that asks for their own service alone, unless you consented to that service before.
 
-Each card also offers these options:
+Each of these cards also offers these options:
 
 - **Do it myself.** The grant to make by hand, with the application's client ID, ending on "Come back here and select Test again." and **Test again**.
 - **Skip.** The line reads **Skipped**. The line under the button says what is lost, for example "Azure AI Foundry, Bot Service, Logic Apps and Azure RBAC aren't scanned if you skip." 1Secure creates a source whose permission you skipped and doesn't test it.
@@ -76,9 +76,9 @@ Click **Continue** in the footer. It is available when every line except **Share
 
 ## Add permissions later on the Sources page
 
-You can scan with the sources connected so far and add the rest later. On the **Sources** page, the drawer of a source that still needs something shows a card for each missing grant, with **Let 1Secure do it**, **Do it yourself**, and **Test again**. **Let 1Secure do it** signs you in once more as an administrator, as described earlier, and **Use your own app registration** grants your own app registration instead of the 1Secure registration. Two cards offer more there.
+You can scan with the sources connected so far and add the rest later. On the **Sources** page, the drawer of a source that still needs something shows a card for each missing grant, with **Let 1Secure do it**, **Do it yourself**, and **Test again**. These are the same grants as the lines on **Connect Microsoft**, under other labels: **Let 1Secure do it** does what **Grant with my sign in** does and signs you in once more as an administrator, and **Do it yourself** matches **Do it myself**. **Use your own app registration** grants your own app registration instead of the 1Secure registration. Two cards offer more there.
 
-**Power Platform policies** card
+### Power Platform policies card
 
 The card has one button, **Finish Power Platform setup**, and one sign-in for every Power Platform grant.
 
@@ -89,7 +89,7 @@ The card has one button, **Finish Power Platform setup**, and one sign-in for ev
 
 The card then says what 1Secure did for each grant, and names each environment it skipped with the reason. It stays, so you can add more environments later. See [Power Platform](/docs/1secureaisecurity/configuration/sources/power-platform.md).
 
-**SharePoint site permissions** card
+### SharePoint site permissions card
 
 Choose **All sites** or **Selected sites**. **All sites** grants 1Secure Sites.FullControl.All, which reads every SharePoint site's permissions, and needs a Global Administrator or Privileged Role Administrator. After you record Selected sites, the card offers **Grant all sites instead** and says "Sites.Selected. You approve each site an agent uses." As you approve sites, the card names them, or counts them where there are many, with who approved them and when.
 

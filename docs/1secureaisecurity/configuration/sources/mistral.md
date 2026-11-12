@@ -12,6 +12,7 @@ Connect Mistral so AI Security can read one Mistral workspace with an API key fr
 
 - Have a Mistral account with access to the workspace whose agents you want read, in a role that can create API keys there.
 - Sign in to Mistral Studio at console.mistral.ai.
+- Create the key as the person whose conversations you want sampled. The key reads only the conversations its own creator started.
 - Open a password manager. Studio shows the key once.
 
 ## Create the API key in Mistral Studio
@@ -66,7 +67,7 @@ Each tool on an agent appears as follows.
 
 ### What the key can't read
 
-A workspace API key can't read the workspace's API keys, the organization, or other workspaces. The scan therefore doesn't show who holds a key to the workspace, doesn't name the organization, and reads only the key's own workspace. Members, API keys, the audit log, and the other workspaces belong to Mistral's Admin API. It takes an Admin API key made in the Mistral Backoffice, and this connector doesn't use it. A second workspace is a second source with its own key.
+A workspace API key can't read the workspace's API keys, the organization, or other workspaces. The scan therefore doesn't show who holds a key to the workspace, doesn't name the organization, and reads only the key's own workspace. Members, API keys, the audit log, and the other workspaces need a Mistral Admin API key. You don't need one: this connector doesn't use it. A second workspace is a second source with its own key.
 
 ### What it never touches
 

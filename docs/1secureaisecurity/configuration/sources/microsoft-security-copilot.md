@@ -24,11 +24,7 @@ There's nothing to create. The Microsoft Entra ID source's app registration, wit
 3. Check that the Microsoft Entra ID row is connected. If it isn't, connect it as [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md) describes.
 4. Select the Microsoft Entra ID row, and click **Scan now**.
 
-| Line | What it shows |
-|------|---------------|
-| Credential | As on the Microsoft Entra ID source. |
-| Last test | As on the Microsoft Entra ID source. |
-| Last scanned | As on the Microsoft Entra ID source. |
+When the scan ends, the Microsoft Entra ID row's **Last scanned** line reads "Succeeded", and the labeled agents are on the **Agents** page.
 
 AI Security lists each labeled agent on the platform "Microsoft Security Copilot", as a "Security Copilot agent (Microsoft built)" published by Microsoft, tied to the Entra agent identity it is. It runs on a schedule or on an alert rather than in a conversation, so AI Security classes it as a workflow. It reads as running or switched off, depending on whether its agent identity is enabled.
 
@@ -66,7 +62,7 @@ The Purview audit log read files no run on a Security Copilot agent. It drops an
 Microsoft Security Copilot has no test of its own. The label rests on the Microsoft Entra ID read, so its test is the Microsoft Entra ID source's test, which reads one service principal and one delegated permission grant. If that test fails, the Entra ID scan can't run and nothing is labeled.
 
 1. Fix what the Microsoft Entra ID test names, as the test table on [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md#if-the-test-fails) says.
-2. Open the Microsoft Entra ID source, and in its drawer's menu click **Test**.
+2. On the **Sources** page, select the Microsoft Entra ID row. In the drawer that opens, open the menu, and click **Test**.
 
 ### If the scan skips something or warns
 

@@ -10,7 +10,7 @@ Connect Azure AI Foundry so AI Security can read your Foundry estate: the AI res
 
 ## Before you start
 
-* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
+* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values: the Directory (tenant) ID, the Application (client) ID, and the client secret value. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
 * Have Owner or User Access Administrator on each subscription and each project, to assign roles.
 * Sign in to the Azure portal at portal.azure.com.
 
@@ -23,9 +23,7 @@ Connect Azure AI Foundry so AI Security can read your Foundry estate: the AI res
 5. Select **User, group, or service principal**, and click **Select members**.
 6. Select the app registration by name, and click **Review + assign**.
 7. Repeat steps 2 to 6 for every subscription to cover, or assign Reader once on a management group above them.
-8. Assign Foundry User on each Foundry project, using one of these methods:
-   * If you connected Microsoft Entra ID with **Sign in with Microsoft**, click **Let 1Secure do it** on the **Azure Reader on your subscriptions** card. In the same sign-in that grants Reader on the subscriptions you select, it assigns Foundry User on the Foundry projects you select, once on each Foundry resource that holds them. Every project under that resource inherits the role. Your account needs Owner or User Access Administrator on the subscriptions and projects. The card then says how many of each, for example "Reader on 3 subscriptions, Foundry User on 2 projects", with who signed in and the date. Do steps 9 to 11 for a project your account couldn't assign it on, and for a project you add later under another Foundry resource.
-   * Otherwise, do steps 9 to 11 on each project.
+8. Assign Foundry User on each Foundry project. If you connected Microsoft Entra ID with **Sign in with Microsoft**, you can let 1Secure assign it after you connect the source instead, as [Let 1Secure assign the roles](#let-1secure-assign-the-roles) describes. Otherwise, do steps 9 to 11 on each project.
 9. Open the Foundry project resource. It sits under its Foundry resource, of type Azure AI Services.
 10. On the project, open **Access control (IAM)**, and add a role assignment.
 11. Select **Foundry User**, formerly Azure AI User, and assign it to the same app registration. If you assign it with a script, use the role ID `53ca6127-db72-4b80-b1b0-d745d6d5456d`, because the old name no longer resolves.
@@ -39,7 +37,7 @@ If a Microsoft Entra ID source is connected, **Connect using** offers that sourc
 1. In AI Security, select **Sources**.
 2. In **Search platforms**, enter "Azure AI Foundry".
 3. In the Azure AI Foundry row, click **Connect**. The **Connect Azure AI Foundry** dialog opens.
-4. In **Directory (tenant) ID**, enter the Directory (tenant) ID.
+4. In **Directory (tenant) ID**, enter the Directory (tenant) ID. If you chose the Microsoft Entra ID source in **Connect using**, there are no fields. Go to step 7.
 5. In **Application (client) ID**, enter the Application (client) ID.
 6. In **Client secret value**, paste the client secret value from the **Value** column.
 7. Click **Connect**. The dialog shows "Saved. Testing the connection." and then the result of the test.
@@ -60,6 +58,18 @@ Select the Azure AI Foundry row to see the source. To test it again, click **Tes
 The test doesn't reach the Foundry projects, so it doesn't prove the Foundry User role. A project that lacks the role shows after a scan among the skipped items, and **Last scanned** still reads "Succeeded".
 
 A scan of this source also reads the other Microsoft platforms that the same three values unlock. If the registration lacks permissions for another Microsoft platform, that platform's own source lists what it skipped. That doesn't change this source's **Last scanned** status.
+
+## Let 1Secure assign the roles
+
+If you connected Microsoft Entra ID with **Sign in with Microsoft**, 1Secure can assign Reader and Foundry User for you. Your account needs Owner or User Access Administrator on the subscriptions and projects.
+
+1. On the **Sources** page, select the Azure AI Foundry row. Its drawer opens.
+2. On the **Azure Reader on your subscriptions** card, click **Let 1Secure do it**. A card is a panel in the drawer that grants a permission the source's last test found missing, so the card shows while a role is still needed.
+3. Sign in, and select the subscriptions and the Foundry projects.
+
+In the same sign-in, 1Secure grants Reader on the subscriptions you select and assigns Foundry User once on each Foundry resource that holds the projects you select. Every project under that resource inherits the role. The card then says how many of each, for example "Reader on 3 subscriptions, Foundry User on 2 projects", with who signed in and the date.
+
+Do steps 9 to 11 of [Create the credential in Azure](#create-the-credential-in-azure) for a project your account couldn't assign the role on, and for a project you add later under another Foundry resource.
 
 ## What this connector reads
 

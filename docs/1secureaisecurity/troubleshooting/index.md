@@ -6,7 +6,12 @@ sidebar_position: 1
 
 # Troubleshooting
 
-This page lists every failure sentence AI Security can show you, what it means and what to do. Find the sentence you see, grouped by where it appears: the connection test, the return from Microsoft sign-in, the scan drawer and the Sources page.
+This page lists every failure sentence AI Security can show you, what it means and what to do. Find the sentence you see, grouped by where it appears:
+
+- [Connection test](#connection-test)
+- [Connect with Microsoft](#connect-with-microsoft), the return from a Microsoft sign-in
+- [Scan drawer](#scan-drawer): [the scan's sentence](#the-scans-sentence), [the source's result](#the-sources-result), [what wasn't scanned](#what-wasnt-scanned), and [refused SharePoint sites](#refused-sharepoint-sites)
+- [Sources page](#sources-page), including [connecting a source](#connecting-a-source)
 
 :::info
 Each connector page under [Sources](/docs/1secureaisecurity/configuration/sources/index.md) has an "If the test fails" section with what each answer means for that platform. Start there when the test names a platform.
@@ -33,6 +38,8 @@ A test reads the first thing a scan reads, with the stored credential. Its outco
 | A live connection test isn't available for this platform. All required settings are entered. | No live test exists for this platform. The settings are complete. | Run a scan to prove the connection. |
 
 On Microsoft Entra ID, Azure AI Foundry, Azure RBAC, Azure Logic Apps, Azure Bot Service, Copilot Studio, Agent 365, Defender for Endpoint and Power Platform, a server error from Microsoft on the test's first read gives a **Warning**, not a failure: "The platform didn't answer, or said it is down or busy." Test again later.
+
+On any platform, the test can also end with one of these sentences.
 
 | What you see | What it means | What to do |
 |--------------|---------------|------------|
@@ -64,7 +71,11 @@ A role granted in Microsoft takes a few minutes to apply, so a test right after 
 
 ## Connect with Microsoft
 
-These sentences appear when you come back from the Microsoft sign-in, during **Connect with Microsoft** or **Let 1Secure do it**.
+These sentences appear when you come back from a Microsoft sign-in, during **Connect with Microsoft** or after **Let 1Secure do it**. They're grouped by the permission you were granting. The names match the lines of the **Connect Microsoft** step in Get started and the cards on the **Sources** page.
+
+### First sign-in
+
+These sentences appear when you come back from the first Microsoft sign-in of **Connect with Microsoft**.
 
 | What you see | What to do |
 |--------------|------------|
@@ -78,7 +89,7 @@ These sentences appear when you come back from the Microsoft sign-in, during **C
 | Conditional Access blocked the sign in. Ask your administrator which device or place is allowed. | Sign in again from a device or location the policy allows. |
 | Nothing connected because a needed service is missing. Use an app registration without it. | Click **Use an app registration instead** and leave out the permissions of the service **Technical details** names. |
 | Nothing connected because your tenant blocks user consent. Ask a Global Administrator or Privileged Role Administrator. | Ask a Global Administrator or Privileged Role Administrator to sign in, or click **Request approval**. |
-| Nothing connected: this tenant has no [service]. Connect with an app registration instead. | Microsoft refused the sign in because the tenant doesn't have Dynamics 365, Power Apps or Azure Service Management, which the page names. Click **Use an app registration instead** and leave out that service's permissions. |
+| Nothing connected: this tenant has no [service]. Connect with an app registration instead. | Click **Use an app registration instead** and leave out that service's permissions. Microsoft refused the sign-in because the tenant doesn't have the service the page names: Dynamics 365, Power Apps, or Azure Service Management. |
 | Nothing connected. 1Secure connects to the worldwide Microsoft cloud only. | The account belongs to another Microsoft cloud, such as a government or China cloud. Sign in with an account of the worldwide cloud. |
 | Nothing connected because your account isn't in this tenant. Guests enter the tenant domain first. | Sign in with an account of the directory you mean to connect. A guest account types the tenant's domain first. |
 | Nothing connected because the permissions weren't granted. Sign in with Microsoft again to grant them. | Sign in again and accept the permissions. |
@@ -100,27 +111,6 @@ These sentences appear when you come back from the Microsoft sign-in, during **C
 | Not connected because sign in started in another tab. Sign in with Microsoft again from Sources. | Start again in one browser tab. |
 | Consent was revoked in Microsoft. Sign in with Microsoft again. | Open Microsoft Entra ID on **Sources** and click **Sign in with Microsoft** again. |
 | Your browser blocked the sign in window. Allow pop-ups for this site, then try again. | Allow pop-ups for this site, then try again. |
-| The administrator didn't accept the permission, so the AI Reader role wasn't granted. Everything else keeps working. | On the **Entra AI Reader role** line of Connect Microsoft, click **Grant again** and accept the permission; later, **Let 1Secure do it** on the card under **Sources**. |
-| Microsoft returned no sign in, so the AI Reader role wasn't granted. Start again from Sources. | Start again from **Sources**. |
-| The administrator didn't accept the permission, so Azure Reader wasn't granted. Everything else keeps working. | On the **Azure Reader roles** line of Connect Microsoft, click **Grant again** and accept the permission; later, **Let 1Secure do it** on the card under **Sources**. |
-| Microsoft returned no sign in, so Azure Reader wasn't granted. Start again from Sources. | Start again from **Sources**. |
-| A subscription: your account isn't Owner or User Access Administrator here, so it was skipped. | Sign in with an account that holds Owner or User Access Administrator on that subscription. |
-| A subscription: Azure didn't accept the assignment, so it was skipped. Try again. | Try again. |
-| A project: your account isn't Owner or User Access Administrator on this project, so Foundry User wasn't assigned. | Ask an owner of the project to assign Foundry User, as steps 9 to 11 of [Azure AI Foundry](/docs/1secureaisecurity/configuration/sources/azure-ai-foundry.md) describe. |
-| A project: Azure didn't accept the Foundry User assignment, so it was skipped. Try again. | Try again. |
-| Your account sees no Azure subscriptions in this directory. | Sign in with an account that can see the subscriptions to cover. |
-| Your account sees no Azure subscriptions in this directory, so Azure Reader wasn't granted. | Sign in with an account that can see the subscriptions to cover. |
-| Azure Reader wasn't granted: your account isn't Owner or User Access Administrator on any subscription it sees. Sign in with one that is. | Sign in with an account that holds Owner or User Access Administrator on the subscriptions. |
-| Azure didn't accept the Reader assignments, so Azure Reader wasn't granted. Try again in a few minutes. | Try again in a few minutes. |
-| The administrator didn't accept the permission, so 1Secure wasn't registered as a Power Platform management application. Everything else keeps working. | On the **Power Platform application user** line of Connect Microsoft, click **Grant again** and accept the permission; later, **Let 1Secure do it** on the card under **Sources**. |
-| Microsoft returned no sign in, so 1Secure wasn't registered as a Power Platform management application. Start again from Sources. | Start again from **Sources**. |
-| The administrator didn't accept the permissions, so 1Secure wasn't added as an application user. Everything else keeps working. | Try again and accept the permissions: click **Finish Power Platform setup** on the "Power Platform policies" card, or **Let 1Secure do it** on the "Power Platform application users" card, on the **Sources** page. |
-| Microsoft returned no sign in, so 1Secure wasn't added as an application user. Start again from Sources. | Start again from **Sources**. |
-| An environment: your account isn't a System Administrator of this environment, so 1Secure wasn't added. | Do one of these for each environment named. In the Power Platform admin center, open the environment, then **Membership**, **System Administrators**, and click **Add me**, then click **Finish Power Platform setup** on the "Power Platform policies" card on the **Sources** page, select the environment and click **Add 1Secure**. Or add 1Secure there yourself with the steps shown under the names, which are steps 2 to 6 of [Create the application user in Power Platform](/docs/1secureaisecurity/configuration/sources/power-platform.md#create-the-application-user-in-power-platform). |
-| An environment: Dataverse didn't accept the application user, so it was skipped. Try again. | Try again. |
-| Your account sees no Power Platform environments with a Dataverse database. | Nothing to add. Only an environment with a Dataverse database takes an application user. |
-| The administrator didn't accept the permissions, so Sites.Selected full control wasn't granted. Everything else keeps working. | Click **Approve** on the site again and accept the permissions. |
-| Microsoft returned no sign in, so Sites.Selected full control wasn't granted. Start again from Sources. | Start again from **Sources**. |
 | The account that consented doesn't hold a role approved for it. Sign in as a Global Administrator or Privileged Role Administrator and try again. | Sign in as a Global Administrator or Privileged Role Administrator, with the role active rather than only eligible. |
 | The 1Secure registration doesn't hold RoleManagement.Read.Directory in this directory, so the roles of the account that consented couldn't be read and the consent wasn't recorded. Start again from Sources in a few minutes. | Wait a few minutes, then start again from **Sources**. |
 | Microsoft Graph didn't answer the read of the roles of the account that consented, so the consent wasn't recorded. Start again from Sources in a few minutes. | Wait a few minutes, then start again from **Sources**. |
@@ -130,57 +120,138 @@ These sentences appear when you come back from the Microsoft sign-in, during **C
 | Microsoft's sign in answer wasn't the one this consent asked for, so nothing was connected. Start again from Sources. | Start again from **Sources**. |
 | Microsoft's sign in answer carried no identity, so nothing was connected. Start again from Sources. | Start again from **Sources**. |
 | Microsoft's sign in answer couldn't be read, so nothing was connected. Start again from Sources. | Start again from **Sources**. |
-| The Microsoft sign in window closed before it finished. Ask a Global Administrator or Privileged Role Administrator to select [button]. | Ask a Global Administrator or Privileged Role Administrator to click the button the sentence names, **Let 1Secure do it** or **Finish Power Platform setup**. |
+| This directory blocks the app, or you aren't its administrator. | Click **Sign in again** and sign in as an administrator of the directory you mean to connect. This shows on Microsoft Entra ID in the **Connecting** window, after "Refused each time for 45 seconds. Testing stopped." The other sources read "Not tested". |
+
+Where Microsoft didn't sign the administrator in, the sentence can name Microsoft's error code in brackets. The page also shows Microsoft's own answer under **Technical details**. A refusal with a code that has no sentence of its own keeps the general sentence and adds "Microsoft error code: [code]" after it.
+
+**Request approval** is offered where an administrator's approval can help: you canceled, you aren't an administrator, or the tenant blocks people from consenting to apps. It isn't offered where the request was already sent, the app is disabled, the app has no reply address, you aren't assigned to the app, Conditional Access blocked the sign in, or a service isn't in the tenant.
+
+### Microsoft Entra AI Reader role
+
+These sentences appear when 1Secure assigns the AI Reader role. During Get started, you grant again with **Grant again** on the **Microsoft Entra AI Reader role** line of the **Connect Microsoft** step. Later, you use **Let 1Secure do it** on the **Microsoft Entra AI Reader role** card on the **Sources** page. "Grant again" in this table means either one.
+
+| What you see | What to do |
+|--------------|------------|
+| The administrator didn't accept the permission, so the AI Reader role wasn't granted. Everything else keeps working. | Grant again and accept the permission. |
+| Microsoft returned no sign in, so the AI Reader role wasn't granted. Start again from Sources. | Start again from **Sources**. |
 | Microsoft didn't let the account that signed in assign directory roles, so the AI Reader role wasn't granted. Sign in as a Global Administrator or a Privileged Role Administrator and accept the permission Microsoft asks for. | Sign in as a Global Administrator or Privileged Role Administrator and accept the permission. |
 | Microsoft Graph refused the role assignment, so the AI Reader role wasn't granted. Try again, or assign AI Reader to the Netwrix app in the Entra admin center. | Try again, or assign AI Reader to the Netwrix app in the Microsoft Entra admin center. |
 | The Netwrix app isn't in this directory, so the AI Reader role wasn't granted. Select Sign in with Microsoft for this directory first, then finish setup. | Open Microsoft Entra ID on **Sources**, click **Sign in with Microsoft** for this directory, then finish setup. |
 | Microsoft Graph didn't answer, so the AI Reader role wasn't granted. Try again in a few minutes. | Try again in a few minutes. |
 | Microsoft's sign in answer carried no access to Microsoft Graph, so the AI Reader role wasn't granted. Start again from Sources. | Start again from **Sources**. |
+
+### Azure Reader
+
+These sentences appear when 1Secure assigns Reader on your subscriptions and Foundry User on your Foundry projects. During Get started, you grant again with **Grant again** on the **Azure Reader roles** line of the **Connect Microsoft** step. Later, you use **Let 1Secure do it** on the **Azure Reader on your subscriptions** card on the **Sources** page. "Grant again" in this table means either one.
+
+| What you see | What to do |
+|--------------|------------|
+| The administrator didn't accept the permission, so Azure Reader wasn't granted. Everything else keeps working. | Grant again and accept the permission. |
+| Microsoft returned no sign in, so Azure Reader wasn't granted. Start again from Sources. | Start again from **Sources**. |
+| A subscription: your account isn't Owner or User Access Administrator here, so it was skipped. | Sign in with an account that holds Owner or User Access Administrator on that subscription. |
+| A subscription: Azure didn't accept the assignment, so it was skipped. Try again. | Grant again and select that subscription. If it fails again, contact Netwrix Support. |
+| A project: your account isn't Owner or User Access Administrator on this project, so Foundry User wasn't assigned. | Ask an owner of the project to assign Foundry User, as steps 9 to 11 of [Azure AI Foundry](/docs/1secureaisecurity/configuration/sources/azure-ai-foundry.md) describe. |
+| A project: Azure didn't accept the Foundry User assignment, so it was skipped. Try again. | Grant again and select that project. If it fails again, contact Netwrix Support. |
+| Your account sees no Azure subscriptions in this directory. | Sign in with an account that can see the subscriptions to cover. |
+| Your account sees no Azure subscriptions in this directory, so Azure Reader wasn't granted. | Sign in with an account that can see the subscriptions to cover. |
+| Azure Reader wasn't granted: your account isn't Owner or User Access Administrator on any subscription it sees. Sign in with one that is. | Sign in with an account that holds Owner or User Access Administrator on the subscriptions. |
+| Azure didn't accept the Reader assignments, so Azure Reader wasn't granted. Try again in a few minutes. | Try again in a few minutes. |
 | Microsoft Graph didn't let 1Secure read its app in this directory, so Azure Reader wasn't granted. Select Sign in with Microsoft for this directory again, then try again. | Open Microsoft Entra ID on **Sources**, click **Sign in with Microsoft** again, then try again. |
 | Microsoft didn't let 1Secure sign in to the directory ([error]), so Azure Reader wasn't granted. Select Sign in with Microsoft for this directory again, then try again. | Open Microsoft Entra ID on **Sources**, click **Sign in with Microsoft** again, then try again. |
-| Microsoft's answer carried no access to Microsoft Graph, so Azure Reader wasn't granted. Try again. | Try again. |
+| Microsoft's answer carried no access to Microsoft Graph, so Azure Reader wasn't granted. Try again. | Grant again. If it fails again, contact Netwrix Support. |
 | Microsoft's sign in answer carried no access to Azure, so Azure Reader wasn't granted. Start again from Sources. | Start again from **Sources**. |
-| Azure didn't answer, so Azure Reader wasn't granted. Try again in a few minutes. | Try again in a few minutes. |
+| Azure didn't answer, so Azure Reader wasn't granted. Try again in a few minutes. | Wait a few minutes, then grant again. If it fails again, contact Netwrix Support. |
 | Azure didn't list the subscriptions the account can see, so Azure Reader wasn't granted. Sign in again and accept the permission Microsoft asks for. | Sign in again and accept the permission. |
 | Pick at least one subscription to grant Azure Reader on. | Select at least one subscription, then click **Apply**. |
 | Azure Reader is granted only on the subscriptions the sign in listed. Pick from that list. | Pick from the listed subscriptions. |
 | Foundry User is assigned only on the AI Foundry projects the sign in listed under the subscriptions picked. Pick from that list. | Select the project's subscription too, or pick from the listed projects. |
+
+### Power Platform management application
+
+These sentences appear when 1Secure registers itself as a Power Platform management application. During Get started, you grant again with **Grant again** on the **Power Platform application user** line of the **Connect Microsoft** step. Later, you use **Let 1Secure do it** on the **Power Platform management application** card on the **Sources** page. "Grant again" in this table means either one.
+
+| What you see | What to do |
+|--------------|------------|
+| The administrator didn't accept the permission, so 1Secure wasn't registered as a Power Platform management application. Everything else keeps working. | Grant again and accept the permission. |
+| Microsoft returned no sign in, so 1Secure wasn't registered as a Power Platform management application. Start again from Sources. | Start again from **Sources**. |
 | The account that signed in isn't a Power Platform administrator or a Global Administrator, so 1Secure wasn't registered as a Power Platform management application. Sign in with one of those roles. | Sign in as a Power Platform administrator or Global Administrator. |
 | Power Platform refused the registration ([status]), so 1Secure wasn't registered as a Power Platform management application. Try again, or register it yourself with New-PowerAppManagementApp. | Try again, or follow **Do it yourself** on the card. |
 | Power Platform didn't answer, so 1Secure wasn't registered as a Power Platform management application. Try again in a few minutes. | Try again in a few minutes. |
 | Microsoft's sign in answer carried no access to Power Platform, so 1Secure wasn't registered as a Power Platform management application. Start again from Sources. | Start again from **Sources**. |
+| The 1Secure registration's id isn't set here, so 1Secure wasn't registered as a Power Platform management application. Contact Netwrix Support. | Contact Netwrix Support. |
+
+### Power Platform application users
+
+These sentences appear when 1Secure adds itself as an application user in your Power Platform environments, from the **Power Platform application users** card or **Finish Power Platform setup** on the **Power Platform policies** card.
+
+| What you see | What to do |
+|--------------|------------|
+| The administrator didn't accept the permissions, so 1Secure wasn't added as an application user. Everything else keeps working. | Try again and accept the permissions: click **Finish Power Platform setup** on the "Power Platform policies" card, or **Let 1Secure do it** on the "Power Platform application users" card, on the **Sources** page. |
+| Microsoft returned no sign in, so 1Secure wasn't added as an application user. Start again from Sources. | Start again from **Sources**. |
+| An environment: your account isn't a System Administrator of this environment, so 1Secure wasn't added. | Do one of these for each environment named. In the Power Platform admin center, open the environment, then **Membership**, **System Administrators**, and click **Add me**, then click **Finish Power Platform setup** on the "Power Platform policies" card on the **Sources** page, select the environment and click **Add 1Secure**. Or add 1Secure there yourself with the steps shown under the names, which are steps 2 to 6 of [Create the application user in Power Platform](/docs/1secureaisecurity/configuration/sources/power-platform.md#create-the-application-user-in-power-platform). |
+| An environment: Dataverse didn't accept the application user, so it was skipped. Try again. | Click **Let 1Secure do it** on the **Power Platform application users** card again and select that environment. If it fails again, contact Netwrix Support. |
+| Your account sees no Power Platform environments with a Dataverse database. | Nothing to add. Only an environment with a Dataverse database takes an application user. |
 | The account that signed in isn't a Power Platform administrator or a Global Administrator, so 1Secure wasn't added as an application user. Sign in with one of those roles. | Sign in as a Power Platform administrator or Global Administrator. |
 | Power Platform didn't answer, so 1Secure wasn't added as an application user. Try again in a few minutes. | Try again in a few minutes. |
 | Power Platform didn't list the environments, so 1Secure wasn't added as an application user. Try again. | Try again. |
 | Microsoft's sign in answer carried no access to Power Platform, so 1Secure wasn't added as an application user. Start again from Sources. | Start again from **Sources**. |
 | Pick at least one environment to add 1Secure to. | Select at least one environment, then click **Add 1Secure**. |
 | 1Secure is added only to the environments the sign in listed. Pick from that list. | Pick from the listed environments. |
-| The 1Secure registration's id isn't set here, so 1Secure wasn't registered as a Power Platform management application. Contact Netwrix Support. | Contact Netwrix Support. |
-| Microsoft Graph didn't list the SharePoint sites the account can see, so Sites.Selected full control wasn't granted. Sign in again and accept the permission Microsoft asks for. | Sign in again and accept the permissions. |
-| Microsoft Graph didn't answer, so Sites.Selected full control wasn't granted. Try again in a few minutes. | Try again in a few minutes. |
-| Microsoft's sign in answer carried no access to Microsoft Graph, so Sites.Selected full control wasn't granted. Start again from Sources. | Start again from **Sources**. |
-| Microsoft didn't let the account that signed in assign app permissions, so 1Secure wasn't given Sites.FullControl.All. Sign in as a Global Administrator or a Privileged Role Administrator, or use Do it yourself. | Sign in as a Global Administrator or Privileged Role Administrator, or follow **Do it yourself** on the card. |
-| Microsoft Graph refused the permission, so 1Secure wasn't given Sites.FullControl.All. Try again, or use Do it yourself. | Try again, or follow **Do it yourself** on the card. |
+| Registered. A System Administrator must add the app as application user per environment. | Have a System Administrator of each environment add it, as the steps under the sentence say, or use **Finish Power Platform setup** on the **Power Platform policies** card. The registration worked, and an environment doesn't yet admit the app registration as an application user. |
+
+### Power Platform policies
+
+These sentences appear when 1Secure reads the Power Platform policies from **Finish Power Platform setup** on the **Power Platform policies** card.
+
+| What you see | What to do |
+|--------------|------------|
 | The account that signed in isn't a Power Platform administrator or a Global Administrator, so the Power Platform policies weren't read. Sign in with one of those roles. | Click **Finish Power Platform setup** on the Power Platform policies card again, and sign in with one of those roles. |
 | Power Platform refused the read ([status]), so the Power Platform policies weren't read. Try again. | Try again. |
 | Power Platform didn't answer, so the Power Platform policies weren't read. Try again in a few minutes. | Try again in a few minutes. |
 | Power Platform answered in a shape 1Secure doesn't read, so the Power Platform policies weren't read. Try again. | Try again, and contact Netwrix Support if it repeats. |
 | The directory isn't known here, so the Power Platform policies weren't read. Start again from Sources. | Start again from **Sources**. |
-| The grant was made, and Microsoft takes a few minutes to apply it, so it isn't recorded yet. Select Test again shortly. | Wait a few minutes, then click **Test again**. |
-| Microsoft can take minutes to apply a role. You can continue while 1Secure checks. | Shown on a permission's card on **Connect Microsoft** while the role granted applies, with the line reading **Applying**. Wait, or carry on: 1Secure tests again by itself for a few minutes. |
-| Registered. A System Administrator must add the app as application user per environment. | The registration worked, and an environment admits no application user for the app registration. Have a System Administrator of each environment add it, as the steps under the sentence say, or use **Finish Power Platform setup** on the Power Platform policies card. |
-| This directory blocks the app, or you aren't its administrator. | Shown on Microsoft Entra ID in the Connecting window, after "Refused each time for 45 seconds. Testing stopped." The other sources read "Not tested". Click **Sign in again** and sign in as an administrator of the directory you mean to connect. |
-| Entra ID isn't connected with a Microsoft sign in here, so there is nothing to finish. | The Microsoft sign in isn't offered here. Grant the permission yourself, as **Do it yourself** on the card describes. |
+
+### SharePoint site permissions
+
+These sentences appear when you approve a SharePoint site, or choose **All sites**, on the **SharePoint site permissions** card or the **Sites** tab of the SharePoint Online source.
+
+| What you see | What to do |
+|--------------|------------|
+| The administrator didn't accept the permissions, so Sites.Selected full control wasn't granted. Everything else keeps working. | Click **Approve** on the site again and accept the permissions. |
+| Microsoft returned no sign in, so Sites.Selected full control wasn't granted. Start again from Sources. | Start again from **Sources**. |
+| Microsoft Graph didn't list the SharePoint sites the account can see, so Sites.Selected full control wasn't granted. Sign in again and accept the permission Microsoft asks for. | Sign in again and accept the permissions. |
+| Microsoft Graph didn't answer, so Sites.Selected full control wasn't granted. Try again in a few minutes. | Try again in a few minutes. |
+| Microsoft's sign in answer carried no access to Microsoft Graph, so Sites.Selected full control wasn't granted. Start again from Sources. | Start again from **Sources**. |
+| Microsoft didn't let the account that signed in assign app permissions, so 1Secure wasn't given Sites.FullControl.All. Sign in as a Global Administrator or a Privileged Role Administrator, or use Do it yourself. | Sign in as a Global Administrator or Privileged Role Administrator, or follow **Do it yourself** on the card. |
+| Microsoft Graph refused the permission, so 1Secure wasn't given Sites.FullControl.All. Try again, or use Do it yourself. | Try again, or follow **Do it yourself** on the card. |
 | Connect Microsoft Entra ID with Microsoft first, so 1Secure can be granted this site. | Connect Microsoft Entra ID with **Sign in with Microsoft**, then click **Approve** again. |
 | The account that signed in doesn't see this site in SharePoint, so it wasn't granted. Sign in as an owner of the site and approve it again. | Click **Approve** again and sign in as an owner of the site. |
 | Your account doesn't have full control of this site, so it wasn't granted. Ask an owner of the site to approve it. | Ask an owner of the site to click **Approve**. |
 | Microsoft didn't accept the grant for this site. Try again. | Click **Approve** again. |
 
-Where Microsoft didn't sign the administrator in, the sentence can name Microsoft's error code in brackets. The page also shows Microsoft's own answer under **Technical details**. A refusal with a code that has no sentence of its own keeps the general sentence and adds "Microsoft error code: [code]" after it.
+### Any permission
 
-**Request approval** is offered where an administrator's approval can help: you canceled, you aren't an administrator, or the tenant blocks people from consenting to apps. It isn't offered where the request was already sent, the app is disabled, the app has no reply address, you aren't assigned to the app, Conditional Access blocked the sign in, or a service isn't in the tenant.
+These sentences can appear on any permission's line or card.
 
-On a permission's card, "The account that signed in is not a Global Administrator or a Privileged Role Administrator of the directory" also shows, with that card's ending. A sentence that ends "so nothing was connected" on the first sign in ends instead "so the AI Reader role was not granted", "so Azure Reader was not granted", "so 1Secure was not registered as a Power Platform management application", "so the Power Platform policies were not read", "so 1Secure was not added as an application user", "so 1Secure was not given Sites.FullControl.All" or "so Sites.Selected full control was not granted" on that permission's card. Where a sentence shows [error] or [status], it names Microsoft's code there.
+| What you see | What to do |
+|--------------|------------|
+| The Microsoft sign in window closed before it finished. Ask a Global Administrator or Privileged Role Administrator to select [button]. | Ask a Global Administrator or Privileged Role Administrator to click the button the sentence names, **Let 1Secure do it** or **Finish Power Platform setup**. |
+| The grant was made, and Microsoft takes a few minutes to apply it, so it isn't recorded yet. Select Test again shortly. | Wait a few minutes, then click **Test again**. |
+| Microsoft can take minutes to apply a role. You can continue while 1Secure checks. | Wait, or carry on. 1Secure tests again by itself for a few minutes. This shows on a permission's line of the **Connect Microsoft** step while the granted role applies, and the line reads **Applying**. |
+| Entra ID isn't connected with a Microsoft sign in here, so there is nothing to finish. | The Microsoft sign in isn't offered here. Grant the permission yourself, as **Do it yourself** on the card describes. |
+
+On a permission's line or card, a sentence from [First sign-in](#first-sign-in) that ends "so nothing was connected" ends instead with that permission's ending:
+
+- **Microsoft Entra AI Reader role:** "so the AI Reader role was not granted"
+- **Azure Reader:** "so Azure Reader was not granted"
+- **Power Platform management application:** "so 1Secure was not registered as a Power Platform management application"
+- **Power Platform policies:** "so the Power Platform policies were not read"
+- **Power Platform application users:** "so 1Secure was not added as an application user"
+- **SharePoint site permissions:** "so 1Secure was not given Sites.FullControl.All" or "so Sites.Selected full control was not granted"
+
+A line or card can also show "The account that signed in is not a Global Administrator or a Privileged Role Administrator of the directory", with that permission's ending.
+
+Where a sentence shows [error] or [status], it names Microsoft's code there.
 
 ## Scan drawer
 
@@ -227,12 +298,11 @@ Each source in a scan ends with one of these sentences.
 | "Failed on our side. Try again." | The scan stopped before finishing. | Scan again. If it fails again, send the details to Netwrix Support. |
 | The scan didn't finish. If it repeats, send the support details to Netwrix. | The scan stopped with an error and left no reason. | Scan again. If it happens again, click **Show support details**, then **Copy**, and send the text to Netwrix Support. |
 | The [Platform] read couldn't sign in. Check the source's credential, then scan again. | AI Security couldn't sign in to the platform. | Check the source's credential with **Edit**, then scan again. |
-| Results weren't saved because of a 1Secure fault. Scan again shortly. | The scan read the source, and 1Secure couldn't save its results. Where 1Secure recorded the reason, the source drawer shows it behind **Details**, the scan drawer under the source's sentence, and the **Scans** row's outcome tooltip as a support line. | Scan again in a few minutes. If it repeats, send that reason to Netwrix Support. |
-| Results weren't saved because of a 1Secure fault. Contact Netwrix Support. | 1Secure didn't accept this scan's results for your organization. | Contact Netwrix Support. |
-| Results weren't saved. Scan again in a few minutes. | The results didn't reach 1Secure. The recorded reason, where there is one, is behind **Details** as for the previous row. | Scan again in a few minutes. If it fails again, contact Netwrix Support. |
+| Results weren't saved because of a 1Secure fault. Scan again shortly. | The scan read the source, and 1Secure didn't accept or couldn't save its results. Where 1Secure recorded the reason, the source drawer shows it behind **Details**, the scan drawer under the source's sentence, and the **Scans** row's outcome tooltip as a support line. | Scan again in a few minutes. If it repeats, send that reason to Netwrix Support. |
+| Results weren't saved because of a 1Secure fault. Contact Netwrix Support. | 1Secure didn't accept this scan's results for your organization, and scanning again won't help. This sentence ends "Contact Netwrix Support", where the previous one ends "Scan again shortly". | Contact Netwrix Support. |
+| Results weren't saved. Scan again in a few minutes. | The results didn't reach 1Secure. The recorded reason, where there is one, is behind **Details**, as for "Results weren't saved because of a 1Secure fault. Scan again shortly." | Scan again in a few minutes. If it fails again, contact Netwrix Support. |
 | Out of memory. Scan again, and contact support if it repeats. | The scan ran out of memory. | Scan again. If it happens again, contact Netwrix Support. |
 | The scan couldn't start because of a fault in 1Secure. Contact Netwrix Support. | The scan's own settings couldn't be read. | Contact Netwrix Support. |
-| Results weren't saved because of a 1Secure fault. Scan again shortly. | 1Secure didn't accept the scan's results. | Scan again in a few minutes. |
 | The scan took too long and was stopped. Nothing was saved from it. | The scan ran past its time limit. | Raise **Time per source** on **Settings**, then scan again. |
 | The scan was interrupted. Scan again. | The scan was stopped, for example by a restart of 1Secure. | Scan again. |
 | Interrupted by a service update, runs again at the next scan | A 1Secure update or restart stopped the scan. | Nothing. The next scan reads the source again. |
@@ -253,7 +323,13 @@ A source that was never launched because of its credential shows the same senten
 
 ### What wasn't scanned
 
-A partly read source, one whose read stopped short, lists what it didn't read after "Not scanned:" and what to do after "To fix:". A source read to the end lists the same things as its things skipped, and still reads Succeeded. Each thing skipped shows as one short bullet with the thing and what to do, for example "File labels on a site: check Sites.Read.All". The tables in this section list the full sentences, what wasn't read and what to do, which are behind its **Details**. Where there is nothing to do, such as a limit the platform or 1Secure sets, no To fix line is shown, and the table says None. These are every pair a scan can show, grouped by platform. Where a source's read stopped with an error and 1Secure recorded why, the first row gives way to one that says why. [address] is Microsoft Graph, or the address the read was sent to, and otherwise the platform's name.
+A partly read source, one whose read stopped short, lists what it didn't read after "Not scanned:" and what to do after "To fix:". A source read to the end lists the same things as its things skipped, and still reads Succeeded. Each thing skipped shows as one short bullet with the thing and what to do, for example "File labels on a site: check Sites.Read.All".
+
+The tables in this section list every pair a scan can show, grouped by platform. They give the full sentences, what wasn't read and what to do, which are behind the source's **Details**.
+
+- Where there is nothing to do, such as a limit the platform or 1Secure sets, no To fix line is shown, and the table says None.
+- Where a source's read stopped with an error and 1Secure recorded why, the first row of **Every platform** gives way to one that says why.
+- [address] names where the read was sent. It's "Microsoft Graph" for a Microsoft Graph read, and "the address" followed by the host name for any other address. Where no address was recorded, it's the platform's name.
 
 On a source connected with your own app registration, every sentence that names the 1Secure registration names the app registration instead, for example "open App registrations, the app registration, then API permissions". Where the scan ran out of time on a source, that is one line. A read the deadline cut partway and results it left unsent aren't listed beside it, and their details go with the details for Netwrix Support.
 
@@ -391,9 +467,16 @@ A platform that refuses a read with no pair of its own names who refused and wha
 | The Agent 365 catalog of agent packages, because the tenant has not set it up. | Add a Microsoft Agent 365 license and publish an agent package to its catalog. |
 | The publish requests waiting in the Agent 365 admin center, because the app registration lacks AppCatalog.Read.All. | In the Microsoft Entra admin center, open Enterprise applications, the 1Secure registration, then Permissions, and select Grant admin consent for your tenant again, then test again in a few minutes, since the registration already asks for AppCatalog.Read.All and Microsoft can take a minute to apply a consent. |
 
-**A sign in or audit read that stopped partway.** In place of "The rest of a sign in or audit log read that stopped partway, which keeps what it read before.", the source names the log and what it left out, for example "The sign in log for the days [days], with the [n] rows read from the other days kept.", "The audit log for the rest of the day [day], with the [n] rows read kept.", "The rest of the sign in log after its first [n] rows, which are kept." or "Part of the audit log, which stopped partway." The fix is the same: wait for the next scan, which reads the same days again. 1Secure starts that scan itself shortly after this one ends, as it does where Microsoft slowed the read down. See [Scans](/docs/1secureaisecurity/admin/scans.md#activity-read-over-more-than-one-scan).
+**A sign in or audit read that stopped partway.** In place of "The rest of a sign in or audit log read that stopped partway, which keeps what it read before.", the source names the log and what it left out. For example:
 
-**Activity read on by follow on scans.** Where a scan stopped the sign in or audit read partway and the source says "which the next scans read", 1Secure starts the next scan itself as soon as no other scan is running, and continues until the log is read to the end. See [Scans](/docs/1secureaisecurity/admin/scans.md#activity-read-over-more-than-one-scan). Do nothing unless the source still says it after the follow-on scans stop; then scan it again, or wait for the schedule.
+- "The sign in log for the days [days], with the [n] rows read from the other days kept."
+- "The audit log for the rest of the day [day], with the [n] rows read kept."
+- "The rest of the sign in log after its first [n] rows, which are kept."
+- "Part of the audit log, which stopped partway."
+
+The fix is the same for each: wait for the next scan, which reads the same days again. 1Secure starts that scan itself shortly after this one ends, as it does where Microsoft slowed the read down. See [Scans](/docs/1secureaisecurity/admin/scans.md#activity-read-over-more-than-one-scan).
+
+**Activity read on by follow on scans.** Where a scan stopped the sign in or audit read partway and the source says "which the next scans read", 1Secure starts follow-on scans, automatic scans that read the rest of the activity. The first starts as soon as no other scan is running, and they continue until the log is read to the end. See [Scans](/docs/1secureaisecurity/admin/scans.md#activity-read-over-more-than-one-scan). Do nothing unless the source still says it after the follow-on scans stop; then scan it again, or wait for the schedule.
 
 **Site names hidden in reports.** Microsoft 365 hides user, group, and site names in its usage reports by default, so those sites have no owner or file count from the report. Turning that off would close the gap, but it isn't recommended: it shows real names in every report to every admin in the tenant, and Microsoft records the change as an audit event. To turn it off anyway, open the Microsoft 365 admin center, select **Settings > Org settings > Services > Reports**, and clear **Conceal user, group, and site names in all reports**.
 
@@ -442,7 +525,7 @@ A platform that refuses a read with no pair of its own names who refused and wha
 | Who the Copilot Studio agents in an environment are shared with. | Give the 1Secure registration user in that environment Read on the Copilot table, at Business Unit level or deeper. |
 | Who the Copilot Studio agents in an environment are shared with, because the security role of the 1Secure registration user there lacks a privilege the read needs. | Add Read on the Copilot table at Business Unit level or deeper and Read on the Team table to the security role of the 1Secure registration user in that environment. |
 | Which Microsoft 365 group or Teams team stands behind each Copilot Studio agent shared with a team in an environment. | Give the 1Secure registration user in that environment Read on the Team table. |
-| The names and member counts of the Microsoft 365 groups and Teams teams Copilot Studio agents are shared with, because the app registration lacks GroupMember.Read.All. | In the Microsoft Entra admin center, open App registrations, the 1Secure registration, then API permissions, and add GroupMember.Read.All as an application permission and grant admin consent. |
+| The names and member counts of the Microsoft 365 groups and Teams teams Copilot Studio agents are shared with, because the app registration lacks GroupMember.Read.All. | In the Microsoft Entra admin center, open App registrations, the 1Secure registration, then API permissions, and add GroupMember.Read.All as an application permission and grant admin consent. Group.Read.All covers this read too. |
 | Who the Copilot Studio agents in an environment are shared with, past the number a scan asks about. | None. |
 | The environment of some Copilot Studio agents, so those with no knowledge source show unknown reach. | Make the 1Secure registration a Power Platform management application so the environment is named. |
 | The AI tools on your machines, because Defender refused the read. | Check that Defender for Endpoint is licensed and onboarded, and that ThreatHunting.Read.All is granted. |

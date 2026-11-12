@@ -6,7 +6,7 @@ sidebar_position: 13
 
 # Azure Logic Apps
 
-AI Security reads the Azure Logic Apps workflows that act as AI agents, the models and connectors they use, the identity they run as, and their runs. You don't connect it on its own. It has no card of its own, and it reads with the Azure role-based access control (RBAC) source's credential, over the subscriptions that source can read. You connect Azure RBAC, and this read comes with it.
+AI Security reads the Azure Logic Apps workflows that act as AI agents, the models and connectors they use, the identity they run as, and their runs. You don't connect it on its own. It has no source of its own: its row on the **Sources** page opens the Azure RBAC source. It reads with the Azure role-based access control (RBAC) source's credential, over the subscriptions that source can read. You connect Azure RBAC, and this read comes with it.
 
 ## Before you start
 
@@ -24,17 +24,19 @@ There's nothing to create. The Azure RBAC source's app registration and its Read
 3. Check that the Azure RBAC row is connected. If it isn't, connect it as [Azure RBAC](/docs/1secureaisecurity/configuration/sources/azure-rbac.md) describes.
 4. Select the Azure RBAC row, and click **Test**.
 
-The Azure RBAC test also proves the subscription read. It doesn't reach a Standard logic app's host, so a refused host shows only after a scan.
+The Azure RBAC test also proves the subscription read. It doesn't reach a Standard logic app's host, so a refused host shows only after a scan. The Azure RBAC row shows these lines.
 
 | Line | What it shows |
 |------|---------------|
-| Credential | As on the Azure RBAC source. |
-| Last test | As on the Azure RBAC source. |
-| Last scanned | On the Azure RBAC source, "Succeeded". |
+| Credential | "Readable". |
+| Last test | "Succeeded", or "Warning" when some subscriptions answered and some didn't. |
+| Last scanned | "Succeeded", with anything the scan couldn't read listed as skipped. |
 
 Agent workflows appear on the **Agents** page under Azure Logic Apps after the first scan, and their runs on the **Activity** tab. A note counts the workflows that aren't agents: "workflows with no Agent action and no model call; they are counted here and not listed".
 
 ## What this connector reads
+
+Azure Logic Apps has two hosting types. A Consumption workflow is one workflow that is its own Azure resource. A Standard logic app is one Azure resource that holds several workflows. An Agent action is the Logic Apps action that runs an AI agent with a model, and a Microsoft Sentinel playbook is a workflow that Microsoft Sentinel starts in response to an alert or incident.
 
 * Consumption workflows in each subscription the Azure RBAC source can read, and the workflows inside each Standard logic app.
 * Which workflows are agents. A workflow is an agent when its definition holds an Agent action, an Azure OpenAI connector or built-in action, or an HTTP action that calls an Azure OpenAI, Foundry, or OpenAI address. AI Security counts every other workflow and doesn't list it.

@@ -19,7 +19,12 @@ Connect ElevenLabs so AI Security can read the conversational agents in one Elev
 1. Select **Developers** in the left sidebar, then the **API Keys** tab.
 2. Click **Create API key**, and name it, for example "Netwrix 1Secure AI Security".
 3. Keep **Restrict Key** on, which is the default.
-4. Give the key read access to the agents and conversational AI resources and to workspace webhooks, and no write access.
+4. Give the key read access, and no write access, to each of these:
+   * Conversational AI: agents, knowledge base, phone numbers, conversations. Required.
+   * Conversations. Optional, for call counts per agent.
+   * Workspace secrets. Optional, for stored secrets by name.
+   * The conversational settings. Optional, for whether transcripts are posted out of the workspace.
+   * Workspace webhooks. Optional, for where post-call transcripts are sent.
 5. Create the key, and copy it.
 
 :::warning
@@ -69,7 +74,7 @@ The test reads the agent list with the key.
 
 | Key access | What AI Security reads with it | Scan without it |
 |------------|--------------------------------|-----------------|
-| Read access to Conversational AI: agents, knowledge base, phone numbers, conversations | Agents and everything listed earlier. | AI Security reads nothing and the test fails. |
+| Read access to Conversational AI: agents, knowledge base, phone numbers, conversations | Agents and everything [What this connector reads](#what-this-connector-reads) lists for them. | AI Security reads nothing and the test fails. |
 | Read access to conversations | Call counts per agent. | AI Security still reads the last call date from the agent list. |
 | Read access to workspace secrets | Stored secrets by name. | AI Security doesn't read secrets. |
 | Read access to the conversational settings | Whether transcripts are posted out of the workspace. | That setting is unknown. |

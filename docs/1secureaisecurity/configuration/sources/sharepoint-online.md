@@ -10,7 +10,7 @@ Connect SharePoint Online so AI Security can read the SharePoint sites your agen
 
 ## Before you start
 
-* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
+* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values: the Directory (tenant) ID, the Application (client) ID, and the client secret value. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
 * Have a Global Administrator or Privileged Role Administrator grant the admin consent.
 * Sign in to the Microsoft Entra admin center at entra.microsoft.com.
 
@@ -21,15 +21,41 @@ Connect SharePoint Online so AI Security can read the SharePoint sites your agen
 1. Create the app registration and its client secret as steps 1 to 8 of "Create the app registration in Microsoft Entra" on the [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md#create-the-app-registration-in-microsoft-entra) page describe, or reuse the one you have.
 2. Select **Entra ID > App registrations**, select the registration, and then select **API permissions**.
 3. Click **Add a permission**, select **Microsoft Graph**, and then select **Application permissions**.
-4. Add Sites.Read.All, Reports.Read.All, SharePointTenantSettings.Read.All, Group.Read.All, and InformationProtectionPolicy.Read.All.
+4. Add Sites.Read.All, Reports.Read.All, SharePointTenantSettings.Read.All, Group.Read.All, and InformationProtectionPolicy.Read.All. Add Application.Read.All too, unless the registration already holds it for Microsoft Entra ID.
 5. To read which apps reach which sites, add Sites.FullControl.All as well.
 6. Click **Grant admin consent for** your tenant, and then click **Yes**. Every row's status turns to "Granted".
 
+### Add the source in AI Security
+
+1. In AI Security, select **Sources**.
+2. In **Search platforms**, enter "SharePoint Online".
+3. In the SharePoint Online row, click **Connect**. The **Connect SharePoint Online** dialog opens.
+4. Where Microsoft Entra ID is connected, the dialog says "Uses your Microsoft app registration", and there's nothing to enter: go to step 8. To enter other values, click **Use different credentials**.
+5. In **Directory (tenant) ID**, enter the Directory (tenant) ID.
+6. In **Application (client) ID**, enter the Application (client) ID.
+7. In **Client secret value**, paste the client secret's Value.
+8. Click **Connect**. The dialog saves the source, shows "Saved. Testing the connection.", and then shows the test's answer.
+9. Click **Done**.
+
+Select the SharePoint Online row to see the source.
+
+| Line | What it shows |
+|------|---------------|
+| Credential | "Readable". |
+| Last test | "Succeeded", or "Warning" when AI Security read the sites and Microsoft refused the per-application grants, which is what a registration without Sites.FullControl.All shows. |
+| Last scanned | "Never", then "Succeeded", with anything it couldn't read listed as skipped, such as a grant that was missing, or a site whose permissions and sharing weren't read because Microsoft described it without an ID. "Partly scanned" when a list was cut short. On a source connected with **Sign in with Microsoft** that has neither All sites nor an approved site, a scan that read nothing of its own says "Succeeded, nothing to read yet", and its read line says "Nothing to read until a site is approved". |
+
+The test reads the tenant's root site, then tries its permission list. Where that list reads, it also reads the permission list of the sites the scan reads and the sites approved for Sites.Selected. The first read decides the test. The others only turn it to "Warning", naming the sites that refused.
+
+A scan of this source reads every Microsoft source the three values unlock, not only SharePoint. Where the registration lacks another Microsoft platform's grants, that platform's own source lists what it skipped, or reads "Failed" where it read nothing. That doesn't change this source's "Last scanned".
+
 ### Let AI Security do it
 
-Where Entra ID is connected with Microsoft and the SharePoint Online source was connected with Microsoft too, the **SharePoint site permissions** card under **AI Security > Sources** asks how to grant: **All sites** or **Selected sites**.
+Do this after you add the source.
 
-* **All sites** is Sites.FullControl.All on every site. **Let 1Secure do it** signs a Global Administrator or Privileged Role Administrator in once more, and AI Security grants itself Sites.FullControl.All. The card then says "Every site granted by" who signed in and the date, and SharePoint reads in full on the next scan. **Do it yourself** is steps 5 and 6 of the previous procedure.
+Where Entra ID is connected with **Sign in with Microsoft** and the SharePoint Online source was connected with **Sign in with Microsoft** too, the **SharePoint site permissions** card under **AI Security > Sources** asks how to grant: **All sites** or **Selected sites**.
+
+* **All sites** is Sites.FullControl.All on every site. **Let 1Secure do it** signs a Global Administrator or Privileged Role Administrator in once more, and AI Security grants itself Sites.FullControl.All. The card then says "Every site granted by" who signed in and the date, and SharePoint reads in full on the next scan. **Do it yourself** is steps 5 and 6 of [Add the permissions in Microsoft Entra](#add-the-permissions-in-microsoft-entra).
 * **Selected sites** grants the 1Secure registration Sites.Selected with the role full control, one site at a time, as scans find agents using each. **Let 1Secure do it** records the choice with no sign-in and lists no site. Each site a scan finds agents using then waits for your approval, as [The Sites tab](#the-sites-tab) describes. Full control is what reading a site's permissions needs. Sites you don't approve are untouched.
 
 A source on your own app registration keeps Do it yourself alone, because the grant names the 1Secure registration.
@@ -76,30 +102,6 @@ To undo it on a site:
 3. Delete it with `DELETE /sites/{site-id}/permissions/{permission-id}`.
 
 A SharePoint Administrator can also remove it with PnP PowerShell's Revoke-PnPAzureADAppSitePermission. To remove the accepted delegated permissions, select **Entra ID > Enterprise apps**, select the 1Secure registration, select **Permissions**, and revoke them.
-
-### Add the source in AI Security
-
-1. In AI Security, select **Sources**.
-2. In **Search platforms**, enter "SharePoint Online".
-3. In the SharePoint Online row, click **Connect**. The **Connect SharePoint Online** dialog opens.
-4. Where Microsoft Entra ID is connected, the dialog says "Uses your Microsoft app registration", and there's nothing to enter: go to step 8. To enter other values, click **Use different credentials**.
-5. In **Directory (tenant) ID**, enter the Directory (tenant) ID.
-6. In **Application (client) ID**, enter the Application (client) ID.
-7. In **Client secret value**, paste the client secret's Value.
-8. Click **Connect**. The dialog saves the source, shows "Saved. Testing the connection.", and then shows the test's answer.
-9. Click **Done**.
-
-Select the SharePoint Online row to see the source.
-
-| Line | What it shows |
-|------|---------------|
-| Credential | "Readable". |
-| Last test | "Succeeded", or "Warning" when AI Security read the sites and Microsoft refused the per-application grants, which is what a registration without Sites.FullControl.All shows. |
-| Last scanned | "Never", then "Succeeded", with anything it couldn't read listed as skipped, such as a grant that was missing, or a site whose permissions and sharing weren't read because Microsoft described it without an ID. "Partly scanned" when a list was cut short. On a source connected with Microsoft that has neither All sites nor an approved site, a scan that read nothing of its own says "Succeeded, nothing to read yet", and its read line says "Nothing to read until a site is approved". |
-
-The test reads the tenant's root site, then tries its permission list. Where that list reads, it also reads the permission list of the sites the scan reads and the sites approved for Sites.Selected. The first read decides the test. The others only turn it to "Warning", naming the sites that refused.
-
-A scan of this source reads every Microsoft source the three values unlock, not only SharePoint. Where the registration lacks another Microsoft platform's grants, that platform's own source lists what it skipped, or reads "Failed" where it read nothing. That doesn't change this source's "Last scanned".
 
 ## What this connector reads
 

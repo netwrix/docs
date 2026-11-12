@@ -52,7 +52,7 @@ The Purview audit log and Security Copilot read with this registration too. Secu
 | Power Platform management application | Power Platform tenant registration | Read via a privileged right | Lists every environment and its Dataverse address, and reads the data policies and tenant isolation at every scan. | Policies come only from the dated copy, and new environments aren't found. |
 | Power Platform policy copy | A one-time read with your sign-in; nothing is held | Read-only | Reads the data policies and tenant isolation once, and keeps them with the date. | Data policies and tenant isolation read as unknown. |
 
-Group.Read.All, listed under SharePoint, names the group or team an agent is shared with.
+Group.Read.All, listed under SharePoint, names the group or team an agent is shared with. On a Copilot Studio source connected with your own app registration, GroupMember.Read.All is enough for this read, and Group.Read.All covers it too.
 
 ## SharePoint Online and SharePoint agents
 
@@ -61,7 +61,7 @@ Group.Read.All, listed under SharePoint, names the group or team an agent is sha
 | Sites.Read.All | Graph application permission | Read-only | Finds SharePoint agents on every site, lists libraries, reads agent files and their access lists, and reads the site inventory. | The SharePoint tests fail and no SharePoint agent is found. |
 | Reports.Read.All | Graph application permission | Read-only | Reads each site's owner, file count, and last activity, and, for Microsoft Entra ID, each person's Microsoft 365 Copilot use from Microsoft's usage report. | Site owner, file count, and last activity aren't read, and Microsoft 365 Copilot use doesn't reach the Activity tab. |
 | SharePointTenantSettings.Read.All | Graph application permission | Read-only | Reads the tenant's external sharing settings. | That read is skipped. |
-| Group.Read.All | Graph application permission | Read-only | Reads the owners and labels of group-connected sites, and names the Microsoft 365 group or team a Copilot Studio agent is shared with. | Those owners and labels, and team shares, are skipped. |
+| Group.Read.All | Graph application permission | Read-only | Reads the owners and labels of group-connected sites, and names the Microsoft 365 group or team a Copilot Studio agent is shared with, in place of GroupMember.Read.All. | Those owners and labels, and team shares, are skipped. |
 | InformationProtectionPolicy.Read.All | Graph application permission | Read-only | Reads the sensitivity labels, so the labels on files can be named. | Labels aren't named. |
 | Sites.Selected, with full control on each site you approve | Graph application permission, with a permission on each site | Read via a privileged right | Reads each approved site's own permissions. | Apps holding Sites.Selected are reported as reaching unknown sites. |
 | Sites.FullControl.All | Graph application permission, granted only when you choose **All sites** | Read via a privileged right | Reads every site's permissions. | The SharePoint test warns that site permissions are unreadable, and apps holding Sites.Selected are reported as reaching unknown sites. |
@@ -104,7 +104,7 @@ Two rights can go with nothing lost. Two can go with the loss of what they read.
 
    2. Open **Permissions**, and revoke only the rows of type **Delegated**.
    3. Keep every row of type **Application**.
-3. **Sites.FullControl.All: site permissions go unread.** Site permissions are read at every scan. After you remove it, the next SharePoint test warns that they are unreadable, and they are read only on sites granted one at a time with Selected sites, as [SharePoint Online](/docs/1secureaisecurity/configuration/sources/sharepoint-online.md) describes. It isn't one of the eighteen permissions of the consent, so a new consent doesn't add it back. It is added again only when you choose **All sites** for SharePoint.
+3. **Sites.FullControl.All: site permissions go unread.** Site permissions are read at every scan. After you remove it, the next SharePoint test warns that they are unreadable, and they are read only on sites granted one at a time with Selected sites, as [SharePoint Online](/docs/1secureaisecurity/configuration/sources/sharepoint-online.md) describes. It isn't one of the eighteen permissions of the consent, which are the Graph application permissions in the tables on this page other than Sites.FullControl.All, so a new consent doesn't add it back. It is added again only when you choose **All sites** for SharePoint.
    1. In the Microsoft Entra admin center, open **Entra ID > Enterprise apps**, then the 1Secure application.
    2. Open **Permissions**, select the **Application** row Sites.FullControl.All, and click **Revoke permission**.
 4. **Power Platform management application: policies and new environments go unread.** Read the Power Platform policies once from the **Power Platform policies** card first, so a dated copy exists. After you remove the application, the policies aren't refreshed and new environments aren't found. Sign in to PowerShell as a Power Platform administrator with the Power Platform administration module, and run the following commands.
@@ -119,7 +119,7 @@ You can't remove Reader, Foundry User, AI Reader, Agent Viewer, 1Secure Flow Rea
 
 ## Your sign-in
 
-Under **Let 1Secure do it** or **Sign in to grant**, 1Secure makes each grant for you with your own Microsoft account and its own rights. 1Secure asks Microsoft for the delegated permissions in the following table, uses each once for that one grant, and keeps no token. It drops the token used to reach the other services in the same sign-in when they answer. The same sign-in also creates the application user and the 1Secure Flow Reader role in each environment, and gives the application user its roles. Microsoft keeps a record that you consented to each delegated permission on the 1Secure enterprise application. You can revoke those records at any time, as step 2 of [Rights you can remove](#rights-you-can-remove) describes.
+**Let 1Secure do it**, on the cards of the **Sources** page, and **Sign in to grant**, during Get started, are the buttons that make a grant for you. 1Secure makes each grant with your own Microsoft account and its own rights. 1Secure asks Microsoft for the delegated permissions in the following table, uses each once for that one grant, and keeps no token. It drops the token used to reach the other services in the same sign-in when they answer. The same sign-in also creates the application user and the 1Secure Flow Reader role in each environment, and gives the application user its roles. Microsoft keeps a record that you consented to each delegated permission on the 1Secure enterprise application. You can revoke those records at any time, as step 2 of [Rights you can remove](#rights-you-can-remove) describes.
 
 | Delegated permission | Category | Asked for by | What 1Secure does with it |
 |----------------------|----------|--------------|---------------------------|

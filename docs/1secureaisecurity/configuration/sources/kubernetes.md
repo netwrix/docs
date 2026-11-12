@@ -74,13 +74,17 @@ AI agents often run as ordinary workloads in a cluster. The cluster is the one p
    kubectl apply -f onesecure-ai-security.yaml
    ```
 
-3. Create a token for the service account. The token expires after the duration you ask for, and the API server may cap it lower.
+3. Create a token for the service account.
 
    ```sh
    kubectl create token onesecure-ai-security -n onesecure-ai-security --duration=8760h
    ```
 
    A token that doesn't expire is a secret of type `kubernetes.io/service-account-token` in the same namespace. Use it only if your policy allows a token with no expiry.
+
+   :::warning
+   The token expires after the duration you ask for, and the API server may cap it lower. Create a new token, and enter it under **Edit** on the source before the old one expires.
+   :::
 
 4. If the API server uses the cluster's own authority, print the cluster's certificate authority (CA) certificate as PEM text.
 
@@ -105,10 +109,6 @@ AI agents often run as ordinary workloads in a cluster. The cluster is the one p
    kubectl auth can-i get secrets -A \
      --as=system:serviceaccount:onesecure-ai-security:onesecure-ai-security
    ```
-
-:::warning
-The token expires after the duration you ask for, and the API server may cap it lower. Create a new token, and enter it under **Edit** on the source before the old one expires.
-:::
 
 ## Connect the source
 

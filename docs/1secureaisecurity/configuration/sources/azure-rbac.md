@@ -10,7 +10,7 @@ Connect Azure role-based access control (RBAC) so AI Security can read the Azure
 
 ## Before you start
 
-* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
+* Connect Microsoft Entra ID first, or at least create its app registration. You need its three values: the Directory (tenant) ID, the Application (client) ID, and the client secret value. See [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md).
 * Have Owner or User Access Administrator on each subscription, to assign roles. No custom role is needed.
 * Sign in to the Azure portal at portal.azure.com.
 
@@ -63,14 +63,16 @@ A scan of this source also reads the other Microsoft platforms that the same thr
 * Which identity each grant belongs to, matched by object ID to the identities that the directory and Azure AI Foundry reads find. If a scan doesn't read the directory, AI Security reads from Microsoft Graph, by ID, the identities that the grants and changes name. AI Security leaves out a grant whose holder none of these reads finds.
 * Each role assignment written or deleted, from each subscription's Activity Log: who made the change, for which identity, and when. Each change carries the role by its name, where the scan resolved it, and the scope in words, such as a resource group in a named subscription, beside the path the log states it by. The first scan reads the last 3 days, or the Activity window set under **Settings**. Each later scan reads on from where the last stopped, and catches up on no more than the last 14 days, or the Activity window if it is longer. AI Security doesn't read changes to role definitions.
 
-The same credential and the same subscriptions also run two reads that have no card of their own: Azure Logic Apps agent workflows and their runs, described in [Azure Logic Apps](/docs/1secureaisecurity/configuration/sources/azure-logic-apps.md), and Azure Bot Service bots, described in [Azure Bot Service](/docs/1secureaisecurity/configuration/sources/azure-bot-service.md).
+The same credential and the same subscriptions also run two reads that have no source of their own: Azure Logic Apps agent workflows and their runs, described in [Azure Logic Apps](/docs/1secureaisecurity/configuration/sources/azure-logic-apps.md), and Azure Bot Service bots, described in [Azure Bot Service](/docs/1secureaisecurity/configuration/sources/azure-bot-service.md).
 
 From these reads, AI Security raises four kinds of finding:
 
-* Owner converted from a classic administrator.
-* A privileged role such as Owner, Contributor, or User Access Administrator.
-* A role held at a wider scope than the workload needs.
-* A privileged role held permanently, with no eligible schedule and no end date.
+* **Owner converted from a classic administrator.** An Owner assignment whose description says Azure created it when it retired the classic administrator roles.
+* **A privileged role.** Owner, Contributor, or User Access Administrator held at subscription or management group scope.
+* **A role held at a wider scope than the workload needs.** Any other role that can write or grant access, held at subscription or management group scope. Read-only roles don't raise it.
+* **A privileged role held permanently.** A privileged role with no eligible schedule to activate it through and no end date.
+
+One assignment raises at most one of the first three. A permanent privileged role can raise the fourth beside one of them.
 
 ### What it never touches
 
@@ -88,7 +90,7 @@ From these reads, AI Security raises four kinds of finding:
 | Reader or Monitoring Reader, either of which carries `Microsoft.Insights/eventtypes/values/read` | Each subscription. | Role assignment changes from the Activity Log. | AI Security reads assignments, and no role assignment change in that subscription reaches the **Activity** tab. |
 | Microsoft Graph application permission `Application.Read.All`, with admin consent | The tenant. | The identities the role assignments name, where the scan doesn't read the directory. | The scan leaves out their role assignments and changes, and names the permission to grant. |
 
-Reader is enough for the three Azure reads. A subscription whose schedules Reader still can't read has a deny assignment or an Azure Policy that strips the read. Ask the subscription's administrator rather than creating a role.
+Reader is enough for the three Azure reads. A subscription whose schedules Reader still can't read has a deny assignment or an Azure Policy that blocks the read. A deny assignment is an Azure rule that blocks named actions even for an identity whose role allows them. An Azure Policy can also deny actions across a scope. Ask the subscription's administrator rather than creating a role.
 
 ## Troubleshooting
 

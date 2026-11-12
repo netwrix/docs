@@ -6,11 +6,62 @@ sidebar_position: 3
 
 # Settings
 
-Settings is where you set how this organization's AI Security scans run, how long their results are kept, which rules raise issues, and which alerts you receive. It has three tabs: **Rules**, **Alerts**, and **Settings**.
+Settings is where you set which rules raise issues, which alerts you receive, how this organization's AI Security scans run, and how long their results are kept. It has three tabs, in this order: **Rules**, **Alerts**, and **Settings**.
+
+Only an organization administrator can change a setting. For anyone else, the controls are off, and hovering a control on the **Rules** or **Alerts** tab says "Only an organization administrator can change this."
+
+## Rules tab
+
+The **Rules** tab lists all AI Security rules, the platforms they apply to, and whether each is on for this organization.
+
+| Column | What it shows |
+|--------|---------------|
+| Enabled | Whether the rule raises issues in this organization. |
+| Platforms | The platforms the rule applies to. |
+| Your severity | The severity in force, and whether it was changed from the default. |
+| Threshold | The number the rule checks against, where it has one. |
+| Open issues | How many open issues the rule has raised. |
+| Exceptions | How many of its issues have an exception. |
+
+Select a rule's row to open its drawer. The drawer says what the rule checks, why it matters, what an issue looks like, and the platforms it applies to. Under **Settings for this organization**, it holds the same **Enabled**, **Your severity**, and **Threshold** controls as the row.
+
+### Change a rule
+
+1. Select the **Rules** tab.
+2. Find the rule's row.
+3. Change any of these. Each change saves on its own.
+   - **Enabled**: turn the switch on or off.
+   - **Your severity**: choose a severity, or **Default** to use the rule's own.
+   - **Threshold**: enter a number, then press Enter or leave the field. A number outside the rule's range shows "Between [min] and [max]" and isn't saved. The field says **Saving**, then **Saved**. **Use default** returns the rule's own number.
+
+A rule the scanner doesn't evaluate can't be changed, and hovering its controls says "Not evaluated by the scanner." **Threshold** is empty on a rule whose number you can't change.
+
+### Change several rules at once
+
+1. On the **Rules** tab, select the checkbox on each rule's row. The bar over the table counts the rules selected.
+2. Click **Enable** or **Disable**, or choose a severity in **Set severity**.
+3. Read the confirmation, and click **Apply**.
+
+**Reset to defaults** returns every rule with custom settings to its defaults. It asks "Reset every rule to its default?" first.
+
+## Alerts tab
+
+The **Alerts** tab lists all AI Security alerts, what triggers each one, and whether this organization receives it. Alerts are grouped as **Agent change**, **Data access**, **Governance**, **Identity lifecycle**, and **Runtime**.
+
+**Roll up** is the period in which repeat alerts of one kind about the same item are combined into one alert. For example, with a roll up of 24 hours, repeats of one kind of alert about the same agent within 24 hours arrive as one alert. An alert raised from an issue shows **Once per issue**, its only choice: AI Security sends it once for each issue.
+
+### Change an alert
+
+1. Select the **Alerts** tab.
+2. Find the alert's row.
+3. Turn the **Enabled** switch on or off to choose whether this organization receives the alert.
+4. In **Roll up**, choose the period.
+
+Each change saves on its own. If a change can't be saved, the row says "This alert couldn't be saved."
+
+## Settings tab (scans and retention)
 
 ![Settings tab with the Scan schedule, Scan limits, Retention, and Marked as not AI-related cards](/images/1secureaisecurity/misc/settings-tab-scan-schedule-and-limits.webp)
-
-## Settings tab
 
 ### Scan schedule
 
@@ -20,9 +71,16 @@ An organization that never saved a schedule is scanned every day, at an hour 1Se
 
 Scans start on the schedule you save. A daily scan starts at the start hour. A weekly scan starts at the start hour once a week has passed since the last scan. With no hour set, scans start at 00:00 UTC. You can also start a scan at any time from **Sources**.
 
+To set the schedule:
+
+1. Select the **Settings** tab.
+2. Under **Scan schedule**, choose **Every day**, **Every week**, or **Not set** in **Run scans**.
+3. Choose the hour in **Start at (UTC)**.
+4. Click **Save**. The page says "Setting saved."
+
 ### Scan limits
 
-Scan limits set how far back a source's first scan looks, and how long each source's scan may run. Empty fields use the default, and changes apply from the next scan. Click **Save** to keep a change.
+Scan limits set how far back a source's first scan looks, and how long each source's scan may run. Empty fields use the default, and changes apply from the next scan. Click **Save** to keep a change. The same **Save** keeps the scan schedule.
 
 | Setting | What it limits |
 |---------|----------------|
@@ -59,24 +117,3 @@ The periods may change after the Beta.
 ### Marked as not AI-related
 
 This card lists the programs and domains marked as not AI-related on Shadow AI. Scans skip them. Click **Undo** on an entry to have scans report it again.
-
-## Rules tab
-
-The **Rules** tab lists all AI Security rules, the platforms they apply to, and whether each is on for this organization.
-
-| Column | What it shows |
-|--------|---------------|
-| Enabled | Whether the rule raises issues in this organization. |
-| Platforms | The platforms the rule applies to. |
-| Your severity | The severity in force, and whether it was changed from the default. |
-| Threshold | The number the rule checks against, where it has one. |
-| Open issues | How many open issues the rule has raised. |
-| Exceptions | How many of its issues have an exception. |
-
-**Reset to defaults** returns every rule with custom settings to its defaults.
-
-## Alerts tab
-
-The **Alerts** tab lists all AI Security alerts, what triggers each one, and whether this organization receives it. Alerts are grouped as **Agent change**, **Data access**, **Governance**, **Identity lifecycle**, and **Runtime**.
-
-**Roll up** is the period in which repeat alerts of one kind about the same item are combined into one. AI Security sends alerts from issues once for each issue.

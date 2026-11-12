@@ -6,9 +6,9 @@ sidebar_position: 48
 
 # Netwrix Endpoint Protector
 
-Connect Netwrix Endpoint Protector so AI Security can read the content aware protection log for the AI tools people sent data to, and the computers and users the server knows, which are the devices and people the scan names that use from. Netwrix Support issues a REST API client for your server, and you enter it in AI Security.
+Connect Netwrix Endpoint Protector so AI Security can read which AI tools people sent data to, and from which computers. AI Security reads the server's content aware protection log, which records the data that Content Aware Protection policies reported or blocked. It also reads the computers and users the server knows, to name the devices and people the use came from. Netwrix Support issues a REST API client for your server, and you enter it in AI Security.
 
-Each AI tool is one Shadow AI row, and each log row about it is one activity record. Endpoint Protector sees the AI tools people use and the data they send to them, and never an agent.
+Each AI tool is one Shadow AI row: a row on the [Shadow AI](/docs/1secureaisecurity/admin/pages/shadow-ai.md) page, which lists AI found in your environment for you to approve or not. Each log row about the tool is one activity record, a dated entry on that row. Endpoint Protector sees the AI tools people use and the data they send to them, and never an agent.
 
 ## Before you start
 
@@ -27,15 +27,14 @@ Each AI tool is one Shadow AI row, and each log row about it is one activity rec
 2. In the case, give the following details:
    * The server's version.
    * The consuming system (Netwrix 1Secure AI Security).
-   * The endpoint groups needed (computers, logs, and users).
+   * The endpoint groups needed: computers, logs, and users.
    * The expected volume and how often AI Security reads it.
    * That the API must allow the 1Secure AI Security addresses.
    * Whether the use is a test, a pilot, or production.
-3. Ask whether Support can issue a client limited to reading. Where it can't, the client holds a secret that can also make changes.
-4. Wait for Netwrix Support to turn on the API and issue a client ID and a client secret. Keep the secret in a password manager.
+3. Wait for Netwrix Support to turn on the API and issue a client ID and a client secret. Keep the secret in a password manager.
 
 :::warning
-The API has no read-only role and no scopes, so the client secret can also create, change, and delete users, computers, devices, and groups on the server. Keep it in a password manager.
+Netwrix Support can limit the client to the endpoint groups you ask for: computers, logs, and users. It can't limit what the client does in them. The API has no read-only role and no scopes, so the client secret can also create, change, and delete users, computers, devices, and groups on the server. Keep it in a password manager.
 :::
 
 ### Add the source in AI Security

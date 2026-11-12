@@ -30,7 +30,7 @@ This read finds no agents. It files each run on an agent another Microsoft read 
 
 1. In AI Security, select **Sources**.
 2. Check that the Microsoft Entra ID row is connected. If it isn't, connect it as the [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md) page describes.
-3. Run a scan.
+3. Select the Microsoft Entra ID row, and click **Scan now**.
 
 :::info
 The Entra ID source's test doesn't reach the audit log, so a missing permission or license shows only after a scan.
@@ -50,7 +50,7 @@ A search can take minutes. The scan waits for the searches for a limited time. A
 
 AI Security keeps its audit searches few, because Microsoft limits how many searches a tenant can make a day, and your own Purview and security information and event management (SIEM) searches share that allowance. Each search starts a little before the last scan ended, because the audit log can deliver a record late. A record read twice lands on the run it made the first time. The first scan searches the last 3 days, or the Activity window the organization chose under **Settings**. A later scan starts where the last one ended, and catches up on no more than the last 14 days, or the Activity window where the organization chose a longer one. No scan reaches back further than Audit (Standard) keeps a record.
 
-* Records for five operations: `CopilotInteraction`, and the Agent 365 operations `AIInvokeAgent`, `AIExecuteTool`, `AIInferenceCall`, and `AIGuardrail`. The scan reads `CopilotInteraction` unless the organization turned off the source's switch **Read Microsoft 365 Copilot interactions**, which is on by default. With it off, the scan searches only the four Agent 365 operations, which shortens large scans, and loses the files each Copilot answer touched, the jailbreak flag, and the per-person runs of the agents used in Copilot.
+* Records for five operations: `CopilotInteraction`, and the Agent 365 operations `AIInvokeAgent`, `AIExecuteTool`, `AIInferenceCall`, and `AIGuardrail`. The scan reads `CopilotInteraction` unless the organization turned off the switch **Read Microsoft 365 Copilot interactions**, which is on by default. The switch is in the drawer that opens when you select the **Purview audit log** row on the **Sources** page. With it off, the scan searches only the four Agent 365 operations, which shortens large scans, and loses the files each Copilot answer touched, the jailbreak flag, and the per-person runs of the agents used in Copilot.
 * From each record, one run on the agent it names: who, by user principal name and directory object ID. Also when, from which IP address, in which host application, the agent's ID, name, and version, the plugins and models it used, and the files, sites, and items it touched, by ID, site address, file name, type, sensitivity label ID, and action.
 * Whether a message in the interaction was flagged as a jailbreak, and whether a touched resource was flagged for cross-prompt injection. A guardrail record is a run Purview stopped, and reads as denied.
 * The SharePoint and OneDrive shares `AnonymousLinkCreated`, `CompanyLinkCreated`, `AddedToSecureLink`, `SharingSet`, and `SharingInvitationCreated` made by an agent's application acting as itself, or on a record that names its agent. Each is one share on that agent: the operation, the time, the identity, the file's address and name, the site, and who can now open it, anyone, the company, or the person or group named. AI Security doesn't keep the link itself, and it doesn't read a share a person made.

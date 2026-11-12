@@ -13,7 +13,8 @@ Connect Notion so AI Security can read the custom agents in one Notion workspace
 - A workspace owner creates the integration. Connecting it to pages needs full access to those pages.
 - Sign in to Notion, and open the Developer portal at app.notion.com/developers/connections. Notion calls an integration a connection.
 - Decide which top-level pages and data sources AI Security should see. It sees nothing else.
-- Use a Notion plan that offers custom agents.
+- Use a Notion plan that offers custom agents. They exist only on such a plan.
+- Connect with an internal integration, not a personal access token. A personal access token can't list members.
 
 ## Connect Notion
 
@@ -66,7 +67,7 @@ AI Security reads the MCP clients and the personal access tokens only where the 
 
 An issue about published pages appears on **Notion workspace settings**, the workspace itself, rather than on the integration. It has no owner and no page to open. See [Issues](/docs/1secureaisecurity/admin/pages/issues.md).
 
-A personal access token can't list members, so use an internal integration. Custom agents exist only on a Notion plan that offers them. The agent list AI Security reads is an interface Notion hasn't documented, and it answers to an integration with **Read content**.
+The agent list AI Security reads is an interface Notion hasn't documented, and it answers to an integration with **Read content**.
 
 ### What it never touches
 

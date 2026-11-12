@@ -8,12 +8,6 @@ sidebar_position: 40
 
 Connect Anthropic so AI Security can read one Anthropic organization with up to two keys. An Admin API key reads the organization's API keys. An ordinary workspace API key reads the agents that Anthropic hosts for you. Either key alone is a connection, and each reads its own half. You create the keys in the Claude Console and enter them in 1Secure.
 
-## What you see after a scan
-
-* **Agents**: every managed agent Anthropic runs for the organization (read with the workspace key). Claude Tag appears as one agent when the GitHub source is also connected.
-* **Identities**: every API key of the organization, each as a non-human identity with the workspace it reaches, its creator as its owner, and the workspace admins as its administrators (read with the Admin key). People aren't listed as identities here. AI Security reads the organization's members only to name each key's creator and to place Claude Code and Claude Desktop users that an endpoint product saw under this organization, on **Shadow AI**.
-* **Not read**: service accounts. Anthropic lists them only to an `org:admin` OAuth token, and the Sources dialog has no field for one.
-
 ## Before you start
 
 * An organization admin creates the Admin API key.
@@ -36,10 +30,11 @@ Connect Anthropic so AI Security can read one Anthropic organization with up to 
 1. In AI Security, select **Sources**.
 2. In **Search platforms**, enter "Anthropic".
 3. In the Anthropic row, click **Connect**. The **Connect Anthropic** dialog opens.
-4. In **Admin API key**, paste the Admin key.
-5. In **Workspace API key**, paste the workspace key. The dialog shows both fields under "Choose one of the following to connect:". Either key alone connects, so you can leave one empty.
-6. Click **Connect**. The dialog shows "Saved. Testing the connection." and then the result of the test.
-7. Click **Done**.
+4. Paste each key you created. Leave a field empty if you made only one key, since either key alone connects. The dialog shows both fields under "Choose one of the following to connect:".
+   * In **Admin API key**, paste the Admin key.
+   * In **Workspace API key**, paste the workspace key.
+5. Click **Connect**. The dialog shows "Saved. Testing the connection." and then the result of the test.
+6. Click **Done**.
 
 The dialog has no field for the organization ID. It says "Organization ID is read from the credential". A passing test fills it in and names this source.
 
@@ -54,6 +49,12 @@ Select the Anthropic row to see the source.
 :::info
 Anthropic refuses the service account list to an Admin key. A scan with the Admin key therefore lists the service accounts as skipped, and **Last scanned** still reads "Succeeded" when AI Security read everything else. See [If the scan skips something or warns](#if-the-scan-skips-something-or-warns).
 :::
+
+## What you see after a scan
+
+* **Agents**: every managed agent Anthropic runs for the organization (read with the workspace key). Claude Tag appears as one agent when the GitHub source is also connected.
+* **Identities**: every API key of the organization, each as a non-human identity with the workspace it reaches, its creator as its owner, and the workspace admins as its administrators (read with the Admin key). People aren't listed as identities here. AI Security reads the organization's members only to name each key's creator and to place Claude Code and Claude Desktop users that an endpoint product saw under this organization, on **Shadow AI**.
+* **Not read**: service accounts. Anthropic lists them only to an `org:admin` OAuth token, and the Sources dialog has no field for one.
 
 ## What this connector reads
 

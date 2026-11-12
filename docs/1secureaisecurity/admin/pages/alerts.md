@@ -33,51 +33,17 @@ Under the cards, **By group** has a tile for each group: **Data access**, **Iden
 
 The Issues page lists issues with **Open**, **Exceptions**, and **Resolved** tabs.
 
-## When alerts are raised
-
-### Identity lifecycle alerts
-
-AI Security raises **Identity lifecycle** alerts only for an AI agent the Agents page lists, or for an identity such an agent runs as. A service principal or app that no listed agent uses raises none of them. The alerts are:
-
-- A secret or certificate added, replaced, or expired.
-- An identity disabled or given a role.
-- An app consented to.
-- Failed sign ins.
-- A sign in from a new address or country.
-
-Only a public address raises a sign in from a new address. A private, link-local, or loopback address doesn't. AI Security marks as seen an open alert for a sign in from a new address, raised earlier, whose addresses are all private.
-
-An alert about an identity an agent runs as names that agent as its subject and in its title, and opens its page. The drawer's details name the identity under **Identity**. Any other alert whose subject is an identity reads **Identity** and opens the identity's page.
-
-An identity's first ever sign in raises no sign in from a new address or country. It raises **AI agent or tool first ran**, which names the address and the country it came from. Like the sign in alerts, it names the agent that runs as the identity in its title and opens that agent. A later sign in from a new country raises one **Sign in from a new country** alert that names the new place, its address, and its country together, with no new address alert beside it.
-
-### Combined alerts
-
-The first times one agent or identity shows in one scan are one alert, titled by its name. They include its first run, a host it reached, a new place or a new address it signed in from, and a secret or certificate added to it in the same scan. The drawer lists each under **Event**, and the alert takes the highest severity among them. AI Security marks the secret or certificate alert that the combined alert lists as seen.
-
-A knowledge source added to an agent raises one **AI agent can read new data** alert, which names the site or page with its address, and no **AI agent connected to a service** alert beside it. A connector is named by its display name and the action the agent calls, such as MSN Weather (Current weather).
-
-A new person or computer on a tool marked not approved raises one **Not approved AI tool in use** alert that names them. AI Security marks the first use and first computer alerts that the same records raised as seen.
-
-### Discovery and consent alerts
-
-**New AI agent discovered** is raised once for each agent, and lists the permissions the agent holds. An Agent 365 registry row that is an agent another platform already lists raises none. The row is matched by its application ID, and by its name only where it carries no application ID. The other agent's alert then says the row was taken to be that agent. After the agent leaves your environment, AI Security marks its alert as seen.
-
-**Person consented to an app** is High where the consent covers the whole organization, and lists the permissions it granted and whom it covers. AI Security counts one person's consents to one app within a minute as one.
-
-A role activated through Microsoft Entra Privileged Identity Management (PIM) raises **Identity given a role** only for Global Administrator. Any other activation is listed on the **Activity** tab with no alert.
-
-Failed sign ins that continue while their alert isn't yet seen update that alert's count and time rather than raise a new alert each day. A new alert starts after the alert is marked seen or the failures stop for a day.
-
-**Secret or certificate added** is Medium. It is High in any of these cases:
-
-- The identity holds a privileged directory, admin, or Azure role.
-- The identity is an AI agent that reaches sensitive data.
-- The platform names who added the secret or certificate, and that person isn't one of the identity's owners on record.
-
 ## Mark an alert as seen
 
-1. Select **Alerts** in the sidebar. The tabs are **New**, **Seen**, and **All**, with the columns **Severity**, **Subject**, **Owner**, **Alert**, **Time**, and **Status**. **All alerts** lists them by time. **By kind** groups them under each kind of alert.
+The alert list has these tabs, views, and columns.
+
+| Part of the list | What it holds |
+|------------------|---------------|
+| Tabs | **New**, **Seen**, and **All**. |
+| Views | **All alerts** lists the alerts by time. **By kind** groups them under each kind of alert. |
+| Columns | **Severity**, **Subject**, **Owner**, **Alert**, **Time**, and **Status**. |
+
+1. Select **Alerts** in the sidebar.
 2. Narrow the list with the **Platform**, **Group**, and **Severity** filters. The page hides low alerts until you turn on **Show low** or choose a severity. **Clear filters** removes every filter.
 3. Select an alert to open its drawer.
 4. Click **Mark as seen**. The alert moves to **Seen** for everyone in the organization, and the sidebar badge count goes down.
@@ -122,3 +88,45 @@ Alerts with no issue to relate to, such as an owner leaving, have no **Related i
 - **Settling the issue marks the alert seen.** When you mark the issue resolved or make an exception for it, the alert moves to **Seen** on its own. The **Seen** line under **Details** says who did it and when: "[Person] marked the issue as resolved on [date]" or "[Person] marked the issue as an exception on [date]".
 - **Seen is for the organization.** One person marking an alert seen marks it for everyone, and the record keeps who and when.
 - **The issue keeps its own state.** Marking an alert seen changes nothing on the issue. "Have we read this" and "is this still wrong" are two different questions, answered on two different pages.
+
+## When alerts are raised
+
+### Identity lifecycle alerts
+
+AI Security raises **Identity lifecycle** alerts only for an AI agent the Agents page lists, or for an identity such an agent runs as. A service principal or app that no listed agent uses raises none of them. The alerts are:
+
+- A secret or certificate added, replaced, or expired.
+- An identity disabled or given a role.
+- An app consented to.
+- Failed sign ins.
+- A sign in from a new address or country.
+
+Only a public address raises a sign in from a new address. A private, link-local, or loopback address doesn't. AI Security marks as seen an open alert for a sign in from a new address, raised earlier, whose addresses are all private.
+
+An alert about an identity an agent runs as names that agent as its subject and in its title, and opens its page. The drawer's details name the identity under **Identity**. Any other alert whose subject is an identity reads **Identity** and opens the identity's page.
+
+An identity's first ever sign in raises no sign in from a new address or country. It raises **AI agent or tool first ran**, which names the address and the country it came from. Like the sign in alerts, it names the agent that runs as the identity in its title and opens that agent. A later sign in from a new country raises one **Sign in from a new country** alert that names the new place, its address, and its country together, with no new address alert beside it.
+
+### Combined alerts
+
+The first times one agent or identity shows in one scan are one alert, titled by its name. They include its first run, a host it reached, a new place or a new address it signed in from, and a secret or certificate added to it in the same scan. The drawer lists each under **Event**, and the alert takes the highest severity among them. AI Security marks the secret or certificate alert that the combined alert lists as seen.
+
+A knowledge source added to an agent raises one **AI agent can read new data** alert, which names the site or page with its address, and no **AI agent connected to a service** alert beside it. A connector is named by its display name and the action the agent calls, such as MSN Weather (Current weather).
+
+A new person or computer on a tool marked not approved raises one **Not approved AI tool in use** alert that names them. AI Security marks the first use and first computer alerts that the same records raised as seen.
+
+### Discovery and consent alerts
+
+**New AI agent discovered** is raised once for each agent, and lists the permissions the agent holds. An Agent 365 registry row that is an agent another platform already lists raises none. The row is matched by its application ID, and by its name only where it carries no application ID. The other agent's alert then says the row was taken to be that agent. After the agent leaves your environment, AI Security marks its alert as seen.
+
+**Person consented to an app** is High where the consent covers the whole organization, and lists the permissions it granted and whom it covers. AI Security counts one person's consents to one app within a minute as one.
+
+A role activated through Microsoft Entra Privileged Identity Management (PIM) raises **Identity given a role** only for Global Administrator. Any other activation is listed on the **Activity** tab with no alert.
+
+Failed sign ins that continue while their alert isn't yet seen update that alert's count and time rather than raise a new alert each day. A new alert starts after the alert is marked seen or the failures stop for a day.
+
+**Secret or certificate added** is Medium. It is High in any of these cases:
+
+- The identity holds a privileged directory, admin, or Azure role.
+- The identity is an AI agent that reaches sensitive data.
+- The platform names who added the secret or certificate, and that person isn't one of the identity's owners on record.

@@ -24,6 +24,6 @@ The three cards say what the first run sets up.
 
 ## Start the first run
 
-1. Click **Get started**. The first run opens on **Choose where to look**.
+1. Click **Get started**. The first run opens on **Choose where to look**, with a bar at the top that shows your progress through the run.
 
-A bar at the top shows the steps of your run: **Choose where to look**, **Connect Microsoft** when you choose the Microsoft row, **Connect other sources** when you choose any other platform, and **Start your first scan**.
+The bar lists **Choose where to look**, **Connect Microsoft**, **Connect other sources**, and **Start your first scan**. **Connect Microsoft** stays faded until you choose the Microsoft row. **Connect other sources** appears only when you choose another platform.

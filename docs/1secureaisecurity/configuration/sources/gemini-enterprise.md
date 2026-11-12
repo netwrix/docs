@@ -23,7 +23,7 @@ The source takes one of two credentials for the service account. Know what each 
 The source can't sign in by workload identity federation on its own. If you store both a token and a key, the source uses the key.
 
 :::warning
-A JSON key used to connect makes the service account AI Security signs in as shows a "Long lived" credential on every scan until you delete the key.
+If you connect with a JSON key, the service account that AI Security signs in as shows a "Long lived" credential on every scan until you delete the key.
 :::
 
 ## Create the service account in Google Cloud
