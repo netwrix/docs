@@ -91,31 +91,74 @@ Eight platforms show "Coming soon", planned for a later release, and offer no wa
 
 The Beta connects the platforms 1Secure can reach over the public internet. A server, cluster, or instance reachable only inside your network can't be connected yet.
 
-* [Every Microsoft source](/docs/1secureaisecurity/configuration/sources/connect-every-microsoft-source.md): one checklist of every grant, role, and test to connect all the Microsoft sources.
+If you use Microsoft 365, Azure, or Entra ID, [Every Microsoft source](/docs/1secureaisecurity/configuration/sources/connect-every-microsoft-source.md) is one checklist of every grant, role, and test to connect all the Microsoft sources.
+
+### Identity and access
+
+Find who and what has access: directories, app integrations, tokens, and role assignments.
+
 * [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md): the directory's applications, service principals, and agent identities.
-* [Azure AI Foundry](/docs/1secureaisecurity/configuration/sources/azure-ai-foundry.md): AI resources, their identities, and the agents inside Foundry projects.
 * [Azure RBAC](/docs/1secureaisecurity/configuration/sources/azure-rbac.md): the Azure role assignments that service principals and managed identities hold.
-* [Azure Logic Apps](/docs/1secureaisecurity/configuration/sources/azure-logic-apps.md): the Logic Apps workflows that act as agents, with their models, connectors, and runs. It uses the Azure RBAC credential.
-* [Azure Bot Service](/docs/1secureaisecurity/configuration/sources/azure-bot-service.md): the bots in each subscription and their channels, plus the identity each runs as. It uses the Azure RBAC credential.
-* [Purview audit log](/docs/1secureaisecurity/configuration/sources/purview-audit-log.md): the agent and Copilot runs recorded in the Microsoft Purview audit log, on the Entra ID credential.
-* [Microsoft Security Copilot](/docs/1secureaisecurity/configuration/sources/microsoft-security-copilot.md): the Microsoft-built Security Copilot agents that have an Entra agent identity, labeled on the Entra ID credential.
+* [Okta](/docs/1secureaisecurity/configuration/sources/okta.md): app integrations, their assignments and grants, and the API tokens in one Okta org.
+
+Coming soon: Google Workspace.
+
+### AI platforms and model providers
+
+Find the agents, models, keys, and projects built and hosted on an AI platform.
+
+* [Azure AI Foundry](/docs/1secureaisecurity/configuration/sources/azure-ai-foundry.md): AI resources, their identities, and the agents inside Foundry projects.
+* [OpenAI](/docs/1secureaisecurity/configuration/sources/openai.md): projects with their keys and service accounts, and each project's agents.
+* [Anthropic](/docs/1secureaisecurity/configuration/sources/anthropic.md): API keys in one organization, and the agents Anthropic hosts.
+* [ChatGPT Enterprise](/docs/1secureaisecurity/configuration/sources/chatgpt-enterprise.md): the GPTs and projects in one workspace, plus Codex environments, and who owns them.
+* [Mistral](/docs/1secureaisecurity/configuration/sources/mistral.md): the agents in one workspace, with their tools and versions. It also reads their libraries.
+* [Gemini Enterprise](/docs/1secureaisecurity/configuration/sources/gemini-enterprise.md): the identities and Gemini Enterprise apps in the Google Cloud projects you list, with their Agent Engine deployments and data stores.
+* [ElevenLabs](/docs/1secureaisecurity/configuration/sources/elevenlabs.md): conversational agents in one workspace.
+
+Coming soon: AWS Bedrock.
+
+### Copilots and business-app agents
+
+Find the assistants and agents that ship inside productivity and business apps.
+
 * [Microsoft Copilot Studio](/docs/1secureaisecurity/configuration/sources/microsoft-copilot-studio.md): Copilot Studio agents across the tenant, and optionally their knowledge sources.
 * [Agent 365](/docs/1secureaisecurity/configuration/sources/agent-365.md): the organization's agent catalog, and which agents the organization registered.
+* [Microsoft Security Copilot](/docs/1secureaisecurity/configuration/sources/microsoft-security-copilot.md): the Microsoft-built Security Copilot agents that have an Entra agent identity, labeled on the Entra ID credential.
+* [SharePoint agents](/docs/1secureaisecurity/configuration/sources/sharepoint-agents.md): the .agent files in document libraries, and what each is grounded in.
+* [Notion](/docs/1secureaisecurity/configuration/sources/notion.md): custom agents in one workspace.
+
+Coming soon: Atlassian, ServiceNow, ServiceNow AI Control Tower, and Salesforce.
+
+### Workflow automation and bots
+
+Find the flows, workflows, and bots that act on a person's behalf.
+
+* [Power Platform](/docs/1secureaisecurity/configuration/sources/power-platform.md): Power Automate cloud flows in the environments you name or it discovers.
+* [Azure Logic Apps](/docs/1secureaisecurity/configuration/sources/azure-logic-apps.md): the Logic Apps workflows that act as agents, with their models, connectors, and runs. It uses the Azure RBAC credential.
+* [Azure Bot Service](/docs/1secureaisecurity/configuration/sources/azure-bot-service.md): the bots in each subscription and their channels, plus the identity each runs as. It uses the Azure RBAC credential.
+* [n8n](/docs/1secureaisecurity/configuration/sources/n8n.md): workflows, the credentials they bind, and their runs on one instance.
+
+### Data access and activity
+
+See what agents can reach and what the audit trail says they did.
+
+* [SharePoint Online](/docs/1secureaisecurity/configuration/sources/sharepoint-online.md): which applications can reach which sites, and how widely each site is shared.
+* [Purview audit log](/docs/1secureaisecurity/configuration/sources/purview-audit-log.md): the agent and Copilot runs recorded in the Microsoft Purview audit log, on the Entra ID credential.
+
+### Endpoint discovery
+
+Find the AI tools that people install and use on their devices.
+
 * [Microsoft Defender for Endpoint](/docs/1secureaisecurity/configuration/sources/microsoft-defender-for-endpoint.md): the AI tools installed on onboarded machines and who signs in there.
 * [CrowdStrike Falcon](/docs/1secureaisecurity/configuration/sources/crowdstrike-falcon.md): the AI tools Falcon Discover finds installed on each host, and who last signed in there.
 * [Tanium](/docs/1secureaisecurity/configuration/sources/tanium.md): the AI tools Tanium finds on each endpoint and who last signed in there. With Threat Response, it also reads the AI tools run and the AI services called.
 * [Netwrix Endpoint Protector](/docs/1secureaisecurity/configuration/sources/netwrix-endpoint-protector.md): the AI tools people sent data to, from its content-aware protection log, with the computers and people they were used from.
-* [Power Platform](/docs/1secureaisecurity/configuration/sources/power-platform.md): Power Automate cloud flows in the environments you name or it discovers.
-* [SharePoint Online](/docs/1secureaisecurity/configuration/sources/sharepoint-online.md): which applications can reach which sites, and how widely each site is shared.
-* [SharePoint agents](/docs/1secureaisecurity/configuration/sources/sharepoint-agents.md): the .agent files in document libraries, and what each is grounded in.
-* [Okta](/docs/1secureaisecurity/configuration/sources/okta.md): app integrations, their assignments and grants, and the API tokens in one Okta org.
-* [ElevenLabs](/docs/1secureaisecurity/configuration/sources/elevenlabs.md): conversational agents in one workspace.
-* [Mistral](/docs/1secureaisecurity/configuration/sources/mistral.md): the agents in one workspace, with their tools and versions. It also reads their libraries.
-* [ChatGPT Enterprise](/docs/1secureaisecurity/configuration/sources/chatgpt-enterprise.md): the GPTs and projects in one workspace, plus Codex environments, and who owns them.
-* [n8n](/docs/1secureaisecurity/configuration/sources/n8n.md): workflows, the credentials they bind, and their runs on one instance.
-* [Kubernetes](/docs/1secureaisecurity/configuration/sources/kubernetes.md): the workloads in one cluster and the service accounts they run as. It also reads their roles and network policies.
-* [Notion](/docs/1secureaisecurity/configuration/sources/notion.md): custom agents in one workspace.
-* [Anthropic](/docs/1secureaisecurity/configuration/sources/anthropic.md): API keys in one organization, and the agents Anthropic hosts.
-* [OpenAI](/docs/1secureaisecurity/configuration/sources/openai.md): projects with their keys and service accounts, and each project's agents.
+
+### Developer platforms and infrastructure
+
+Find the code platforms and clusters where workloads run.
+
 * [GitHub](/docs/1secureaisecurity/configuration/sources/github.md): apps and tokens, deploy keys, Actions settings, and Copilot in one organization.
-* [Gemini Enterprise](/docs/1secureaisecurity/configuration/sources/gemini-enterprise.md): the identities and Gemini Enterprise apps in the Google Cloud projects you list, with their Agent Engine deployments and data stores.
+* [Kubernetes](/docs/1secureaisecurity/configuration/sources/kubernetes.md): the workloads in one cluster and the service accounts they run as. It also reads their roles and network policies.
+
+Coming soon: Docker and OpenShell.
