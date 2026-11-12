@@ -163,7 +163,7 @@ On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`,
 
 2. Paste the command from the panel and press Enter.
 
-   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes after an interruption, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command right away.
+   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes after an interruption, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command immediately.
 
    To use media that's already on the host, add `--bundle-dir=<path>` to the command. The path is the archive, such as `/etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz`, or the extracted directory.
 
