@@ -47,7 +47,7 @@ For example, an arm64 host can't join a server that runs from offline media on a
 
 ### Agent Sizing
 
-Give the agent at least 4 cores and 4 GB of memory. Preflight accepts a host with 2 cores, but an Access scan of a File Server source reserves 2 cores on its own, and the operating system and k3s share the same cores. Preflight fails on a host with less than 4 GB of memory or 5 GB of free disk. The more CPU and memory you give an agent, the more scans it runs at once.
+Preflight fails on a host with less than 4 CPU cores, 4 GB of memory, or 5 GB of free disk. An Access scan of a File Server source reserves 2 cores on its own, and the operating system and k3s need the rest. The more CPU and memory you give an agent, the more scans it runs at once.
 
 A scan creates one execution for each source, and each execution reserves CPU and memory on the agent that runs it. The agent starts an execution only when it has that much unreserved. An execution that doesn't fit waits until a running one finishes. The reservations don't change with the size of the agent or the size of the server.
 
