@@ -1,12 +1,12 @@
 ---
-title: "Replace the web console certificate"
-description: "Bind your own trusted certificate to the Netwrix Privilege Secure web console, then register services so they use the certificate's DNS name."
+title: "Replace certificates"
+description: "Bind a trusted certificate to the Privilege Secure web console, replace the proxy RDP certificate, and renew the JWT signing certificate."
 sidebar_position: 70
 ---
 
-# Replace the web console certificate
+# Replace certificates
 
-The installer creates a self-signed certificate for the Netwrix Privilege Secure for Access Management (Privilege Secure) console. It binds the certificate to the **SbPAM Web Service** website in Internet Information Services (IIS) on port 6500. Browsers don't trust a self-signed certificate. Replace it with a certificate from a trusted certificate authority (CA), then register services so they use the certificate's DNS name.
+The installer creates a self-signed certificate for the Netwrix Privilege Secure for Access Management (Privilege Secure) console. It binds the certificate to the **SbPAM Web Service** website in Internet Information Services (IIS) on port 6500. Browsers don't trust a self-signed certificate. Replace it with a certificate from a trusted certificate authority (CA), then register services so they use the certificate's DNS name. This page also covers the certificate that the RDP proxy presents and the JWT signing certificate.
 
 ## Prerequisites
 
@@ -24,11 +24,58 @@ The installer creates a self-signed certificate for the Netwrix Privilege Secure
 1. Select **OK**, then **Close**.
 1. Open Command Prompt as an administrator and run `iisreset`.
 
-The installer saves the bindings of the website during an install or upgrade and applies them again. It restores each binding that has a certificate, as long as the certificate is still in a Local Computer certificate store. It skips a binding whose certificate is no longer there. An upgrade doesn't recreate or reconfigure the website, so custom bindings are kept.
+The installer saves the bindings of the website during an install or upgrade and applies them again. It restores each binding that has a certificate, as long as the certificate is still in a Local Computer certificate store. It skips a binding whose certificate is no longer there. An upgrade doesn't recreate or reconfigure the website, so it keeps custom bindings.
 
 ## Register services with the new DNS name
 
 Set **NPS Rest URL** to the FQDN on the certificate and register the services. See [Set the NPS Rest URL and register services](/docs/privilegesecure/26.07/configuration/system-settings/services-url.md).
+
+## Replace the proxy RDP certificate
+
+When a user connects to a session over Remote Desktop Protocol (RDP), the RDP proxy presents a certificate to the RDP client. The first time the Proxy Service starts, it creates a self-signed certificate that is valid for five years, so the client warns that "The identity of the remote computer cannot be verified". Replace it with a certificate that the clients trust to remove the warning.
+
+Two different warnings can appear, and each has its own fix:
+
+| The client shows | Cause | Fix |
+| --- | --- | --- |
+| An unknown publisher warning when you open the RDP file | The RDP file is unsigned, or Windows doesn't trust the certificate that signed it | [Sign the RDP file](/docs/privilegesecure/26.07/configuration/system-settings/rdp-files.md) |
+| "The identity of the remote computer cannot be verified", or a name mismatch | The proxy certificate is self-signed, or its name doesn't match the proxy host | Replace the proxy RDP certificate, as this section describes |
+
+### Prerequisites
+
+- Administrator access to the server that runs the Proxy Service.
+- A PKCS#12 file (`.pfx`) that holds the certificate, its private key, and the issuing chain. The file needs a password, because the import fails for a file without one.
+- A certificate issued for server authentication, with the proxy host in its Subject Alternative Name (SAN) field. The proxy host is the host in the **RDP Proxy** setting of the connection profile. If that setting is blank, it is the name that users type to open the console. If the SAN doesn't list that name, the client shows a name mismatch warning.
+- The issuing CA's root certificate is trusted on every client computer that opens RDP sessions.
+
+### Import the certificate
+
+The import overwrites the existing proxy certificate and key. It doesn't make a backup, so back up the folders first. The import stores the private key unencrypted in the `keys` folder, so restrict access to that folder.
+
+1. Copy the `.pfx` file to the proxy server, for example `C:\install\rdp.pfx`. The proxy uses only the credential named `rdp`, and the command names the credential after the file. If the file has another name, such as `proxy-cert.pfx`, add `-n rdp` to the command in step 4.
+1. Back up the `C:\ProgramData\Stealthbits\PAM\tls\certs` and `C:\ProgramData\Stealthbits\PAM\tls\keys` folders.
+1. Open Command Prompt as an administrator.
+1. Run the import command:
+
+   ```text
+   "C:\Program Files\Stealthbits\PAM\ProxyService\sbpam-proxy.exe" ca import -p C:\install\rdp.pfx
+   ```
+
+1. When prompted, enter the password of the `.pfx` file. To supply it on the command line, add `-P <password>`. A password on the command line can be saved in command history.
+
+The command prints "PKCS12 Credentials imported successfully". The command prints an error and still exits with code 0 when it fails, so read the output instead of checking the exit code in a script.
+
+New RDP sessions use the new certificate. You don't restart the Proxy Service. Sessions that are already open keep the old certificate.
+
+To confirm the result, start a new RDP session from the console. The identity warning no longer appears.
+
+:::warning
+A `.pfx` file that can't be read, or a wrong password, makes the import fail before it changes any files. When the Proxy Service starts, it checks `rdp.crt` in the `certs` folder and `rdp.pem` in the `keys` folder. If either file is missing or can't be read, the service creates a new self-signed certificate, and clients show the identity warning again. To recover, restore both folders from your backup. New sessions use the restored files without a restart.
+:::
+
+### Import on every proxy server
+
+Each server that runs the RDP proxy has its own certificate. Nothing copies it between servers. Run the import on every server that proxies RDP, including remote proxy servers and each node of a high availability deployment. See [Install a proxy service on another server](/docs/privilegesecure/26.07/install/remote-proxy.md).
 
 ## Renew the JWT signing certificate
 
