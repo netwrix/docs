@@ -4,12 +4,12 @@
 // (gettingstarted/, migration/, configuration/, integrations/,
 // troubleshooting/, ...) and the version root kept its address. The
 // product's in-app help links and older bookmarks still use the old
-// addresses, so every moved page maps to its new location, in its versioned
-// and its unversioned form. Earlier versions (3.0-3.2) keep the old layout
-// and are not redirected.
+// addresses, so every moved page maps to its new location. Only the versioned
+// (/3_3/) addresses are redirected here: 3.4 is the default version, so the
+// unversioned addresses redirect to 3.4 in threatmanager-3.4.js. Earlier
+// versions (3.0-3.2) keep the old layout and are not redirected.
 
 const VERSION_PREFIX = '/docs/threatmanager/3_3';
-const UNVERSIONED_PREFIX = '/docs/threatmanager';
 
 // 3.3 path before the zone reorganization -> current path (no leading slash).
 // A page named after its folder is served at the folder address.
@@ -80,8 +80,5 @@ export const threatManager33Redirects = Object.entries(MOVED_PAGES).flatMap(([ol
     throw new Error(`threatmanager-3.3 redirects: ${oldPath} is also a current page`);
   }
   const to = `${VERSION_PREFIX}/${newPath}${SECTION_INDEXES.has(newPath) ? '/' : ''}`;
-  return [
-    { from: `${VERSION_PREFIX}/${oldPath}`, to },
-    { from: `${UNVERSIONED_PREFIX}/${oldPath}`, to },
-  ];
+  return [{ from: `${VERSION_PREFIX}/${oldPath}`, to }];
 });
