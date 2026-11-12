@@ -41,7 +41,7 @@ Signing the file fixes the unknown publisher warning only. If the RDP client war
 - Permission to edit Group Policy for the client computers.
 - The `IIS_IUSRS` account has read permission on the certificate's private key. Set the permission in `certlm.msc`.
 
-Without the `IIS_IUSRS` permission, the web service log shows "Could not sign RDP file with certificate for RDP Session" with the error "Keyset does not exist", and the file isn't signed.
+Without the `IIS_IUSRS` permission, the web service log shows "Could not sign RDP file with certificate for RDP Session" with the error "Keyset does not exist", and Privilege Secure doesn't sign the file.
 
 ### Add the thumbprint to Privilege Secure
 
