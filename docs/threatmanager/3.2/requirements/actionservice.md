@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Action Service Requirements
 
-The Action Service can be installed on additional servers.
+You can install the Action Service on additional servers.
 
 :::tip
 Remember, the Action Service is installed on the Threat Manager Console server.
@@ -22,7 +22,7 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 
 **RAM, CPU, and Disk Space**
 

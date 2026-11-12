@@ -35,9 +35,9 @@ The following are additional requirements for the database server:
 
 Address the following considerations:
 
-- When running antivirus scans against the PostgreSQL v14 database, the PostgreSQL data folder must
-  be excluded from the scans to prevent database complications.
+- When running antivirus scans against the PostgreSQL v14 database, exclude the PostgreSQL data
+  folder from the scans to prevent database complications.
 - For performance reasons, disable Windows File Indexing on the drive containing the Threat Manager
   database.
-- Disk Defragmentation jobs should never be performed on the drive containing Threat Manager
-  PostgreSQL database. This can cause operational issues with the PostgreSQL database.
+- Never run Disk Defragmentation jobs on the drive containing the Threat Manager
+  PostgreSQL database. Defragmentation can cause operational issues with the PostgreSQL database.
