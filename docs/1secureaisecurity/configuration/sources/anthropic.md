@@ -10,7 +10,7 @@ Connect Anthropic so AI Security can read one Anthropic organization with up to 
 
 ## What you see after a scan
 
-* **Agents**: every managed agent Anthropic runs for the organization (read with the workspace key). Claude Tag appears as one agent when the GitHub or Google Workspace source is also connected.
+* **Agents**: every managed agent Anthropic runs for the organization (read with the workspace key). Claude Tag appears as one agent when the GitHub source is also connected.
 * **Identities**: every API key of the organization, each as a non-human identity with the workspace it reaches, its creator as its owner, and the workspace admins as its administrators (read with the Admin key). People aren't listed as identities here. AI Security reads the organization's members only to name each key's creator and to place Claude Code and Claude Desktop users that an endpoint product saw under this organization, on **Shadow AI**.
 * **Not read**: service accounts. Anthropic lists them only to an `org:admin` OAuth token, and the Sources dialog has no field for one.
 
@@ -68,17 +68,17 @@ An issue about how many admin keys the organization holds appears under **Anthro
 With the workspace API key:
 
 * Every managed agent: model, version, tools with their permission policies, Model Context Protocol (MCP) servers, skills, whether it can run other agents, and whether its system prompt is set. For a set prompt, AI Security records its length and its first sentence, which says what the agent is for.
-* The sandboxes an agent's sessions ran in and their network settings, and the vaults those sessions used. A sandbox that no session ran in isn't linked to any agent.
+* The sandboxes an agent's sessions ran in and their network settings, and the vaults those sessions used. A sandbox that no session ran in isn't linked to any agent. A sandbox, vault, or memory store found in a session stays linked while its agent stays, even when a later scan reads no session of that agent.
 * The memory stores an agent's sessions mounted: each store's name and whether any session could write to it. What one session writes to a store, later sessions read as the agent's memory. AI Security doesn't read the memories, the store's description, or the session's instructions for it.
-* Each session as an event: when it started, its status, and how long it ran. Set how far back scans read under **Settings** in the Activity window.
+* Each session as an event: when it started, its status, and how long it ran. A source's first scan reads the sessions started in the last 3 days, or in the Activity window the organization chose under **Settings**. Each later scan reads on from where the scan before it stopped, and catches up on no more than the last 14 days, or the Activity window where the organization chose a longer one.
 
-With the GitHub or Google Workspace source also connected:
+With the GitHub source also connected:
 
-* Claude Tag as one agent. The GitHub App installation and the Google Workspace client named for Claude or Anthropic are joined to it as identities it holds. AI Security doesn't read its Slack side.
+* Claude Tag as one agent. The GitHub App installation named for Claude or Anthropic is joined to it as an identity it holds. AI Security doesn't read its Slack side.
 
 ### What the connector never touches
 
-* It records a system prompt as present, as a length, and as its first sentence (at most 200 characters). It never records the rest of the text.
+* It records a system prompt as present, as a length, and as its first sentence. It never records the rest of the text.
 * It records sessions as counts, times, and status. It records no title, no transcript, and no usage content.
 * It never writes. Every call is a read.
 
@@ -91,9 +91,7 @@ With the GitHub or Google Workspace source also connected:
 | An `org:admin` OAuth token | Service accounts. | Service accounts aren't read, and API keys are unaffected. |
 | The Admin API key, reading each workspace's members | The workspace admins, named as administrators of every key bound to their workspace. | The keys name no administrator, and the scan lists "Who administers each Anthropic workspace." among the skipped items. |
 
-The Admin API isn't available to individual accounts. The Sources dialog has no field for an `org:admin` OAuth token, so AI Security doesn't read service accounts.
-
-{/* TODO: confirm the supported Anthropic plan and managed agents availability requirements. */}
+The Admin API isn't available to individual accounts. Managed agents are a beta that Anthropic enables for an organization. The Sources dialog has no field for an `org:admin` OAuth token, so AI Security doesn't read service accounts.
 
 ## If the test fails
 
@@ -105,10 +103,10 @@ The Admin API isn't available to individual accounts. The Sources dialog has no 
 | "The credential works, but access was denied. A permission is missing." | Anthropic accepted the key and refused the read. For the Admin key, the test says: "use an Admin API key, created by an organization admin in the Claude Console. A regular API key cannot read the Admin API." or "confirm the key belongs to an organization and has admin scope". | Put an Admin key, not a workspace key, in **Admin API key**. |
 | "The platform returned a response the scanner doesn't support." | The agents read isn't available. The test says: "managed agents need an ordinary workspace API key in the source's Anthropic API key setting and the managed agents beta enabled for the organization. The organization inventory read with the Admin key is unaffected." | Ask Anthropic to enable managed agents for the organization, or connect with the Admin key alone. |
 | "The credential works, but Anthropic refused part of what the scan reads." | You gave both keys and Anthropic refused one of them. | Fix the key that the message names. |
-| "The platform didn't answer, or said it is down or busy." | Anthropic didn't answer. | Check that AI Security can reach api.anthropic.com. |
+| "The platform didn't answer, or said it is down or busy." | Anthropic didn't answer. | Test again later. |
 | "The platform didn't answer in time." | Anthropic didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the keys. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Try again. If it keeps failing, contact Netwrix Support. |
 
 ### If the scan skips something or warns
 

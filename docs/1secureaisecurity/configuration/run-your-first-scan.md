@@ -27,7 +27,7 @@ Only an organization administrator can start a scan. Anyone else sees "Only an o
 
 A source whose last test refused its credential is left out of the scan. Under the button, a line counts the sources that won't be scanned yet, for example "2 sources won't be scanned yet. Their cards above say why." The step doesn't list them by name.
 
-Where a role is still applying, a line near the button says so, for example "2 sources join as their roles apply. Nothing to do." The step checks the sources again on its own, so a tile turns green as its test passes.
+Where a role is still applying, a line above the button says so, for example "2 sources join as their roles apply. Nothing to do." 1Secure tests again by itself for a few minutes, so a tile turns green as its test passes.
 
 While a source's connection test is still running, the button is off, and hovering it says "Sources are still being tested. Scan when that finishes."
 
@@ -47,13 +47,14 @@ While the scan runs, the **Overview** says "Your first scan is running".
    |---------|---------------|
    | Succeeded | Every source was read to the end, even where a source skipped something it couldn't read. |
    | Partly scanned | At least one source finished, and at least one failed or didn't start, or a source's read stopped short and its automatic retries are spent. |
-   | Done, still loading | The scan is done, and an automatic retry is due or running for a source the platform slowed down. The row names the sources still loading. |
    | Failed | No source finished. |
    | Stopped | Someone stopped the scan. Finished sources keep their results. |
 
-2. Click the scan's row. The scan drawer opens with **Requested**, **Started**, **Ended**, and **Agents discovered**, and a list of the sources with each one's result. The drawer lists automatic retries of a source inside the scan, under **Automatic retries**. **Download scan report** saves the whole scan as one file to send to support.
+   A scan whose automatic retry is due or running for a source a platform slowed down still reads **Running**.
 
-   ![Scans tab with the drawer of a finished, Partly scanned scan open, its Started by, Requested, Ended, Duration, and Agents found lines, and each source with its Not scanned and To fix lines](/images/1secureaisecurity/getting-started/scan-drawer-partly-scanned.webp)
+2. Click the scan's row. The scan drawer opens with how the scan went and what it found, when it started and how long it took, and lists the sources under **Needs attention**, **Scanned**, and **Not set up**, with each one's result. **Download scan report** saves the whole scan as one file to send to support.
+
+   ![Scans tab with the drawer of a finished, Partly scanned scan open, and each source with its Not scanned and To fix lines](/images/1secureaisecurity/getting-started/scan-drawer-partly-scanned.webp)
 
 3. Read each source's result. A source read to the end can still skip something, most often because a permission is missing. Its line ends with how many things it skipped, which you click to see each one and what to do. A source whose read stopped short says what it didn't read and what to do in lines that start "Not scanned:" and "To fix:".
 

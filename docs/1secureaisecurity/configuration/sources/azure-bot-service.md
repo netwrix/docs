@@ -41,14 +41,14 @@ Bots appear on the **Agents** page under Azure Bot Service after the first scan.
 * The identity each bot runs as: its Microsoft app ID, the app type, its tenant and, for a user-assigned managed identity, that identity's resource ID. AI Security matches the app ID to the directory's service principal with the same ID, so the bot's owners and grants are that principal's.
 * Each channel the bot is configured or enabled on, such as Microsoft Teams, Web Chat, or Direct Line, and whether it's enabled.
 * Whether local authentication is turned off, whether public network access is on, and whether streaming is supported.
-* Who changed each bot, read from the Azure Activity Log with who made each change and when: the bot itself saved, a channel added or changed, and an OAuth connection added or changed. Set how far back scans read under **Settings** in the Activity window.
+* Who changed each bot, read from the Azure Activity Log with who made each change and when: the bot itself saved, a channel added or changed, and an OAuth connection added or changed. The first scan reads the last 30 days, or the Activity window the organization chose under **Settings**. Each later scan reads on from where the last stopped, and catches up on no more than the last 14 days, or the Activity window where the organization chose a longer one.
 
 Azure Bot Service states no owner and no creation date on a bot, so AI Security reads none. The owner is the owner of the matched app registration in Microsoft Entra ID. A bot's conversations aren't in Azure Resource Manager. They're in the bot's own Application Insights, if its developer set one up, so this read records no conversation for a bot.
 
 ### What it never touches
 
 * It never writes. Every call is a read.
-* It never keeps a bot's LUIS key, Application Insights key, publishing credentials, app settings, or each channel's password or client secret.
+* AI Security picks every field it keeps by name. It never keeps a bot's Language Understanding (LUIS) key, Application Insights key, publishing credentials, app settings, or each channel's password or client secret.
 * It reads no conversation, message, or transcript.
 
 ## Permissions
@@ -75,9 +75,9 @@ A scan that reads to the end lists what it couldn't read as skipped items, and i
 
 | What you see | What it means | What to do |
 |--------------|---------------|------------|
-| On the Azure RBAC source, "Succeeded", with "Some Azure Bot Service bots or their channels." among the skipped items, or, for a list cut at the page limit, "The rest of a long list, because the scanner reached the most it reads in one scan." | A subscription's bot list was refused, throttled, or cut short. The scan says: "the Azure Bot Service read rides the Azure RBAC connector's credential. Reader on the subscription lists bots and their channels. A throttled or truncated read is read again on the next scan." | Give the service principal Reader on the subscription the detail names, or scan again for a throttled read. |
+| On the Azure RBAC source, "Succeeded", with "Some Azure Bot Service bots or their channels." among the skipped items, or, for a list cut at the page limit, "The rest of a long list, because the scanner reached the most it reads in one scan." | A subscription's bot list was refused, throttled, or cut short. The line says what to do: "Give the app registration the Reader role on each subscription that holds bots." A throttled or cut short read is read again on the next scan. | Give the service principal Reader on the subscription the detail names, or scan again for a throttled read. |
 | "Succeeded", and one bot listed with only the channels its own resource names | One bot's channels didn't read. | Check Reader on that bot's resource group, then scan again. |
-| "Succeeded", with "Who changed the Azure Bot Service bots, their channels and connections in a subscription, from the activity log." among the skipped items | The Activity Log read of one subscription was refused or didn't answer. A change to a bot there names nobody. The scan says: "Give the app registration the Reader or Monitoring Reader role on the subscription." | Assign one of those roles on the subscription the detail names, then scan again. |
+| "Succeeded", with "Who changed the Azure Bot Service bots, their channels and connections in a subscription, from the activity log." among the skipped items | The Activity Log read of one subscription was refused or didn't answer. A change to a bot there names nobody, and the bots are read as before. The line says what to do: "Give the app registration the Reader or Monitoring Reader role on the subscription." | Assign one of those roles on the subscription the detail names, then scan again. |
 
 ## Security notes
 

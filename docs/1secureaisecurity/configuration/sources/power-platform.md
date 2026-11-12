@@ -21,7 +21,7 @@ Connect Power Platform so AI Security can read your Power Automate cloud flows a
 
 1. Create the app registration and its client secret as the [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md) page describes, or reuse the one you have.
 2. Open **Manage > Environments**, select an environment, and copy its "Environment URL". It ends in .dynamics.com.
-3. In that environment, open **Settings > Users + permissions > Security roles**, and create a role with Organization Read on Process, Connection Reference, Connector, User, and Flow Run. {/* TODO: confirm the role privileges in the current Power Platform admin center. */}
+3. In that environment, open **Settings > Users + permissions > Security roles**, and create a role with Organization Read on Process, Connection Reference, Connector, User, and Flow Run.
 4. Open **Settings > Users + permissions > Application users**, and click **New app user**.
 5. Add the app registration, choose the business unit, and give it the role from step 3.
 6. Repeat steps 2 to 5 for every environment to cover.
@@ -48,16 +48,16 @@ Being a Global Administrator or Power Platform administrator doesn't make you a 
 3. On the card, select **Also register the management application** only if you want the policies read at every scan. The card warns: "It grants tenant-wide administrator rights that can't be narrowed. Policies are read at every scan." The option is cleared to start with, and not shown after the management application is registered.
 4. Click **Finish Power Platform setup**. A small Microsoft sign-in window opens.
 5. Sign in as a Power Platform administrator or Global Administrator who is also a System Administrator of the environments to add, and accept what Microsoft asks for this sign-in.
-6. On the card, review the environments with a Dataverse database. The card lists up to 40, all ticked. Where there are more, it says how many it shows of how many. The card clears an environment Microsoft gives your account no access to, and says "Power Platform administrators use Add me under Membership in" the environment, "and others ask a System Administrator."
+6. On the card, review the environments with a Dataverse database. The card lists them, all ticked. Where there are too many to list, it says how many it shows of how many. The card clears an environment Microsoft gives your account no access to, and says "Power Platform administrators use Add me under Membership in" the environment, "and others ask a System Administrator."
 7. Untick any environment to leave out, and click **Add 1Secure**.
 
 AI Security reads the tenant's data policies and cross-tenant isolation once with that sign-in, and keeps them with the date. Nothing is granted to AI Security for this read. Where you ticked the management application, the same sign-in registers the AI Security registration as a Power Platform management application. Where your account isn't a Power Platform administrator or Global Administrator, Power Platform refuses the registration and nothing is registered.
 
 The card then says what was done, one line per grant: "Policies read by" who signed in "on" the date, "Added as an application user in" the number of environments, by whom and when, and, where you didn't tick the management application, "Management application not registered." The card names each environment skipped with why. The source's drawer shows "Policies as of" and the date. The card stays, so you can add more environments later.
 
-**Show me the steps** shows the steps by hand in place of the button. Where AI Security knows the app's Application ID, it shows it under the steps with a copy button. Where it doesn't, the steps say "Find the Application ID of the app in the Entra admin center, under Enterprise applications." A source on an app registration of its own has only those steps.
+**Show me the steps** shows the steps by hand in place of the button. Where AI Security knows the app's Application ID, it shows it under the steps with a copy button. Where it doesn't, the steps say "Find the Application ID of the app in Microsoft Entra, under Enterprise applications." A source on an app registration of its own has only those steps.
 
-Where the Power Platform test sees no environment, or none that admits the AI Security registration as an application user, the source still counts as connected. A **Power Platform management application** card then offers the registration with **Let 1Secure do it**, which signs you in once more. Its **Do it yourself** option is the application user steps instead: add the registration as an application user in each environment, with a security role that has Read at Organization depth on Process, Connection Reference, Connector, User, and Flow Run. After the registration is made, AI Security tests the Power Platform and Copilot Studio sources again while Microsoft applies it, and the card shows "Registered. Checking the connection…".
+Where the Power Platform test sees no environment, or none that admits the AI Security registration as an application user, the source's row reads "Needs a grant" rather than failed. A **Power Platform management application** card then offers the registration with **Let 1Secure do it**, which signs you in once more. Its **Do it yourself** option is the application user steps instead: add the registration as an application user in each environment, with a security role that has Read at Organization depth on Process, Connection Reference, Connector, User, and Flow Run. After the registration is made, AI Security tests the Power Platform and Copilot Studio sources whose test asked for it, for a short while as Microsoft applies it, and the card shows "Registered. Checking the connection…".
 
 The Get started wizard doesn't ask for any of these. The **Sources** page is where you grant them.
 
@@ -78,7 +78,7 @@ Where Dataverse refuses your account because it isn't a System Administrator of 
 
 Where Microsoft refuses that too, AI Security skips the environment, and the card names it with why. Where Dataverse didn't accept the 1Secure Flow Reader role, the card says "flow runs not read. Needs Organization Read on Flow Run." for that environment.
 
-While you sign in, AI Security asks Microsoft for your access to each environment listed. It keeps that access only briefly, for the environments you select, and never stores it. The Microsoft Entra ID source records who added the app, when, in which environments, and which it skipped.
+While you sign in, AI Security asks Microsoft for your access to each environment listed. It keeps that access sealed for fifteen minutes, for the environments you select, and never stores it. The Microsoft Entra ID source records who added the app, when, in which environments, and which it skipped.
 
 For an environment made later, or one where your account isn't a System Administrator, do steps 2 to 6 of "Create the application user in Power Platform" by hand. Where a scan says it didn't read the flow runs of an environment, add Organization Read on Flow Run to a role of the application user there.
 
@@ -144,9 +144,10 @@ Where Microsoft refuses the sharing read, each flow reports its primary owner on
 ### What it never touches
 
 * A flow's definition. AI Security keeps only derived values, and cuts outbound addresses to scheme and host, because an author can enter a key into an HTTP action.
-* Run inputs or outputs. AI Security reads runs as status and times. On an environment with a very large run history, a scan says it read only part.
+* Run inputs or outputs. AI Security reads runs as status and times. On an environment with very many runs, a scan may read only part of them, and says so.
 * AI Security never writes, and never starts, stops, or edits a flow.
 * AI Security sends a Dataverse token only to an address on .dynamics.com. The scan skips and reports a discovered environment on any other address.
+* Every Dataverse read draws from your tenant's pooled daily allowance of Power Platform requests, which your own flows and apps share. A scan keeps its share of that allowance small, and stops there, keeping what it read.
 
 ## Permissions
 
@@ -174,10 +175,10 @@ Where Microsoft refuses the sharing read, each flow reports its primary owner on
 | "The credential works, but Power Platform refused part of what the scan reads." | No environment accepted AI Security, so the scan listed the flows from the tenant inventory without their reach, runs, or co-owners. The test says: "Add the app registration as an application user in each environment with a role that reads flows." | Create the role and the application user as steps 3 to 5 describe. |
 | "The credential works, but Power Platform refused part of what the scan reads." | AI Security read some environments, or the flow table was refused, or it returned no flows. The test says: "Give the 1Secure registration user Read at Organization depth on the Process table.", or for no flows: "Give the 1Secure registration user Read at Organization depth on the Process table if the environment has flows." Where some environments didn't accept AI Security, it gives the application user sentence from the previous row. | Check that the role's depth on Process is Organization. |
 | "A setting is invalid. Addresses must start with https:// on the platform's domain." | An environment URL isn't https, isn't on .dynamics.com, or resolves to a private address. | Paste the "Environment URL" exactly as the admin center shows it. |
-| "The platform didn't answer, or said it is down or busy." | Microsoft didn't answer. | Check that AI Security can reach api.bap.microsoft.com, management.azure.com, and each environment's host. |
+| "The platform didn't answer, or said it is down or busy." | Microsoft didn't answer. | Test again later. |
 | "The platform didn't answer in time." | Microsoft didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to check the credential. |
-| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact support. |
+| "The test failed on our side. Try again." | The test couldn't finish. | Test again. If it repeats, contact Netwrix Support. |
 
 ### If the scan skips something or warns
 
@@ -188,14 +189,14 @@ A scan that read to the end lists what it couldn't read as skipped, and its sour
 | "Succeeded", with the refused read skipped | AI Security read flows, and a table, the run history, the sharing read, or the tenant policies were refused. | Add the Read that the Permissions table names for that read. |
 | "Succeeded", with "The cloud flows in an environment where the scanner is not an application user." skipped | Some environments didn't accept AI Security, and the scan read the rest. Environments that refused alike are one entry, and the line names them after what wasn't read, for example "2 environments refused the scanner: a and b." The line under it says once: "Add the app registration as an application user in each environment with a role that reads flows." | Create the role and the application user in each environment the details name, as steps 3 to 5 describe. |
 | "Succeeded", with "The runs, connection targets and sharing of the cloud flows, which were listed from the tenant inventory because no environment admits the scanner as an application user." skipped | No environment accepted AI Security, so the scan listed the flows from the tenant inventory. The details name the environments that refused it. | Create the role and the application user as steps 3 to 5 describe. |
-| "Succeeded", with the environment list skipped | The environment list answered without the environments' Dataverse addresses, so the environments are unknown this run, not empty (`unparsable_record`). No grant fixes this. | Scan again. If it repeats, report it to support with the detail. |
-| "Succeeded", with "[count] more Power Automate flows, past the most one scan lists." skipped | The tenant inventory's flow listing was capped (`listing_truncated`), so the flows past the cap are unknown this run, not absent. The line reads "More" where Microsoft gave no total. | Scan again. If it repeats, send the details to Netwrix support. |
-| Skipped reads "One Microsoft read, because Microsoft slowed the scanner down.", "One Microsoft read, because Microsoft did not answer." or "The rest of one read, because the platform asked the scanner to slow down for longer than a scan allows.", with a detail naming an environment and the table read | An environment's Dataverse throttled the scan, failed, or didn't answer. No role is missing, and AI Security still reads the other environments. Where a listing of the environment's records came back short, the scan keeps what the source held from earlier scans rather than removing it. | Wait for the next scan, which reads it again. |
-| "Succeeded", with the tenant isolation setting skipped | The tenant policies answered without the tenant isolation setting, so cross-tenant connections are unknown this run, not unrestricted (`missing_field`). | Scan again. No grant fixes this. |
+| "Succeeded", with the environment list skipped | The environment list answered without the environments' Dataverse addresses, so the environments are unknown this run, not empty. No grant fixes this. | Scan again. If it repeats, send the details to Netwrix Support. |
+| "Succeeded", with "[count] more Power Automate flows, past the most one scan lists." skipped | The tenant inventory's flow listing was capped, so the flows past the cap are unknown this run, not absent. The line reads "More" where Microsoft gave no total. | Scan again. If it repeats, send the details to Netwrix Support. |
+| Skipped reads "One Microsoft read, because Microsoft slowed the scanner down.", "One Microsoft read, because Microsoft did not answer." or "The rest of one read, because the platform asked the scanner to slow down for longer than a scan allows.", with a detail naming an environment and the table read | An environment's Dataverse throttled the scan, failed, or didn't answer, or the scan reached its share of your tenant's Power Platform requests and sent no more. No role is missing, and AI Security still reads the other environments unless the scan reached its share. Where a listing of the environment's records came back short, the scan keeps what the source held from earlier scans rather than removing it. | Wait for the next scan, which reads it again. |
+| "Succeeded", with the tenant isolation setting skipped | The tenant policies answered without the tenant isolation setting, so cross-tenant connections are unknown this run, not unrestricted. | Scan again. No grant fixes this. |
 
 ## Security notes
 
-* AI Security stores the values when you click **Connect** and never shows them again.
+* AI Security stores the values encrypted when you click **Connect** and never shows them again.
 * A source connected with **Sign in with Microsoft** never receives the registration's secret.
 * AI Security sends the secret only to Microsoft. It sends each Dataverse token only to the environment it was issued for.
 * To revoke access, remove the application users and the management application registration (`Remove-PowerAppManagementApp`), or delete the client secret. **Disconnect** on the source removes the stored credential from AI Security.

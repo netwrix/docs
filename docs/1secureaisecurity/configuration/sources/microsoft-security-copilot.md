@@ -36,12 +36,11 @@ AI Security lists each labeled agent on the platform "Microsoft Security Copilot
 
 AI Security labels an agent identity that Microsoft created for a Security Copilot agent as a Security Copilot agent. It uses what the Microsoft Entra ID read already lists, and it makes no other call.
 
-* Each labeled agent keeps its Entra agent identity's name, its blueprint's application ID and display name, and whether its agent identity is enabled.
+* An agent identity is labeled a Security Copilot agent on either of two routes: its blueprint's application ID is one of Security Copilot's own application IDs, or its blueprint is a Microsoft-owned service principal whose display name contains "security copilot".
+* Each labeled agent keeps its Entra agent identity's name, its blueprint's application ID and display name, the route that labeled it, and whether its agent identity is enabled.
 * Security Copilot has no list API. The agents Microsoft builds for it, such as Phishing Triage, Conditional Access Optimization, Vulnerability Remediation, and DLP Alert Triage, leave one trace in the directory: the Entra agent identity an administrator can choose for one at setup. AI Security finds those agents from that trace.
 
-{/* TODO: confirm how AI Security recognizes a Security Copilot agent identity. The source says the label rests on a mapping Microsoft doesn't publish, so confirm the supported behavior before stating it as fact. */}
-
-Every scan that labels an agent says that the label rests on a mapping Microsoft doesn't publish. Check a labeled agent against the Security Copilot portal if the label matters.
+Microsoft publishes neither the application IDs nor the display names of the Security Copilot blueprints, so the label rests on a mapping Microsoft doesn't publish, and every scan that labels an agent says so. Check a labeled agent against the Security Copilot portal if the label matters.
 
 :::info
 Agents set up on a user account, custom agents, and partner agents run as a person and leave no such trace, so the scan can't discover them. Wherever the directory shows Security Copilot at all, the scan says so rather than letting their absence read as none.
@@ -64,7 +63,7 @@ The Purview audit log read files no run on a Security Copilot agent. It drops an
 
 ### If the test fails
 
-Microsoft Security Copilot has no test of its own. The label rests on the Microsoft Entra ID read, so its test is the Microsoft Entra ID source's test. If that test fails, the Entra ID scan can't run and nothing is labeled.
+Microsoft Security Copilot has no test of its own. The label rests on the Microsoft Entra ID read, so its test is the Microsoft Entra ID source's test, which reads one service principal and one delegated permission grant. If that test fails, the Entra ID scan can't run and nothing is labeled.
 
 1. Fix what the Microsoft Entra ID test names, as the test table on [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md#if-the-test-fails) says.
 2. Open the Microsoft Entra ID source, and in its drawer's menu click **Test**.
@@ -75,8 +74,8 @@ A scan that reads to the end lists what it couldn't read as skipped items, and i
 
 | What you see | What it means | What to do |
 |--------------|---------------|------------|
-| "Succeeded", with the scan naming the agent identities labeled Security Copilot agents | The scan labeled one or more agent identities as Security Copilot agents. The scan says the agent identities were "labelled Security Copilot agents on a mapping Microsoft does not publish: the label rests on the Security Copilot application ids and on a Microsoft owned blueprint whose display name contains 'security copilot'". | Nothing. Check a labeled agent against the Security Copilot portal if the label matters. |
-| "Succeeded", with the scan naming the Security Copilot agents that aren't discoverable | The directory shows Security Copilot. The scan says: "Security Copilot agents set up on a user account, custom agents and partner agents run as a person and have no list API, so they aren't discoverable; only Microsoft built agents given an Entra agent identity are shown". | Nothing. AI Security can't read those agents. |
+| "Succeeded", with the scan naming the agent identities labeled Security Copilot agents | The scan labeled one or more agent identities as Security Copilot agents. The scan says the agent identities were "labeled Security Copilot agents on a mapping Microsoft does not publish: the label rests on the Security Copilot application ids and on a Microsoft owned blueprint whose display name contains 'security copilot'". | Nothing. Check a labeled agent against the Security Copilot portal if the label matters. |
+| "Succeeded", with the scan naming the Security Copilot agents that aren't discoverable | The directory shows Security Copilot. The scan says: "Security Copilot agents set up on a user account, custom agents and partner agents run as a person and have no list API, so they are not discoverable; only Microsoft built agents given an Entra agent identity are shown". | Nothing. AI Security can't read those agents. |
 
 ## Security notes
 

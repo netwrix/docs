@@ -18,7 +18,7 @@ Connect Gemini Enterprise so AI Security can read the Google Cloud projects you 
 The source takes one of two credentials for the service account. Know what each costs before you choose.
 
 - **An access token.** You create it outside AI Security, by impersonating the service account or through workload identity federation. It leaves no key behind, so it raises no finding. Google expires it about an hour after you create it, and the source can't renew it, so it serves one test or one scan. This is the recommended path.
-- **A JSON key.** It is the only credential that lasts from scan to scan. It is also a user-managed key on the service account, and this connector reports a user-managed key that never expires.
+- **A JSON key.** It is the only credential that lasts from scan to scan, because AI Security creates a token from it on every test and scan. It is also a user-managed key on the service account, and this connector reports a user-managed key that never expires.
 
 The source can't sign in by workload identity federation on its own. If you store both a token and a key, the source uses the key.
 
@@ -124,10 +124,10 @@ Each project also needs these APIs enabled: cloudresourcemanager, serviceusage, 
 | "The platform refused the credential. It is wrong, expired or revoked." | Google refused the key or the token. A key was deleted or disabled, or a token expired. | Create a new key and paste its whole contents, or create a new token. Enter it with the project IDs under **Edit**. |
 | "The credential works, but access was denied. A permission is missing." | No listed project could be read. A role is missing, an API is off, or a token lacks the Cloud scope. The message names which, and for a role, the permission. | Grant the role or enable the API named. For a scope, create the token again. |
 | "The credential works, but Gemini Enterprise refused part of what the scan reads." | AI Security read at least one project, and another refused. | Fix the named project, or remove it from the list. |
-| "The platform didn't answer, or said it is down or busy." | Google didn't answer, or rate limited the read. | Check that AI Security can reach googleapis.com, then test again. |
+| "The platform didn't answer, or said it is down or busy." | Google didn't answer, or rate limited the read. | Test again later. |
 | "The platform didn't answer in time." | Google didn't answer in time. | Click **Test again**. |
 | "A live connection test isn't available for this platform. All required settings are entered." | AI Security has no live test for this platform. | Run a scan to prove the credential. |
-| "The test failed on our side. Try again." | The test couldn't finish, for example when the pasted key isn't complete JSON. | Paste the whole key file again, then contact Netwrix support. |
+| "The test failed on our side. Try again." | The test couldn't finish, for example when the pasted key isn't complete JSON. | Paste the whole key file again. If it repeats, contact Netwrix Support. |
 
 ### If the scan skips something or warns
 
@@ -145,6 +145,7 @@ A scan that reads to the end lists what it couldn't read as skipped items, and i
 ## Security notes
 
 - AI Security stores the key or token encrypted when you click **Connect** and never shows it again. The source shows only whether a credential is set and which settings are missing.
+- A test or a scan opens the credential for that run only. The key signs a request and is attached to no error or log line.
 - AI Security sends the signed request only to oauth2.googleapis.com, and the tokens only to Google API hosts on googleapis.com.
 - This connector reports a key that never expires, so a key used to connect appears among the keys it reads, as a "Long lived" credential on the service account AI Security signs in as. A token avoids that. If you use a key, keep it on this one service account with the read-only roles in [Permissions](#permissions).
 - To revoke access, delete the key under the service account's **Keys**, or remove the account's roles. A token expires on its own within the hour. **Disconnect** on the source removes the credential from 1Secure.

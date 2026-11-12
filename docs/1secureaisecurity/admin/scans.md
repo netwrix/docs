@@ -12,7 +12,7 @@ A scan reads every connected source and imports what it found into the AI Securi
 
 1. Select **Sources** in the sidebar.
 2. Click **Scan all**. To scan one source, open its card and click **Scan now**.
-3. Read the confirmation, "Scan N sources now?". It says how many of the sources have no usable credential and will be skipped.
+3. Read the confirmation, such as "Scan 27 platforms now?". A source whose credential isn't set, can't be used, or was refused at its last test is left out and reads **Not scanned**.
 4. Confirm the scan.
 
 :::warning
@@ -28,10 +28,9 @@ The **Scans** tab of **Sources** lists every scan, newest first, with who starte
 | Status | What it means |
 |--------|---------------|
 | Waiting to start | The scan is accepted and hasn't started. Where every scan slot it may take is in use, its drawer says "Waiting for a free scan slot." A scan started while another scan's activity is still being read also waits here until that activity has landed. |
-| Running | The scan is reading its sources. |
+| Running | The scan is reading its sources. A scan whose automatic retry is due or running for a source a platform slowed down also reads **Running**. |
 | First results in, reading activity | The first results are in, and a source's activity is still being read. |
 | Succeeded | Every source was read to the end, even where a source skipped something it couldn't read or had nothing to read. |
-| Done, still loading | The scan is done, and an automatic retry is due or running for a source a platform slowed down. The row names the sources, "[sources] still loading". |
 | Partly scanned | At least one source finished, and at least one failed or wasn't started, or a source's read stopped short. A scan with automatic retries reads this only after the retries are spent, stopped, or taken over with something still unread. |
 | Failed | No source finished. |
 | Stopped | Someone stopped the scan. |
@@ -51,24 +50,24 @@ A scan that a 1Secure restart put back to run again says "Started again after a 
 
 ## Read the scan drawer
 
-Open a scan's row to open its drawer, titled "Scan of" and the time. The drawer shows when the scan was requested, started, and ended, and lists each source with its result.
+Open a scan's row to open its drawer, titled "Scan of" and the time. The drawer opens with how the scan went and what it found, such as "Scan finished with 2 problems.", then "Started [when], took [duration]." While the scan saves what it read, it says "Saving results. This can take a while." The sources follow under **Needs attention**, **Scanned**, and **Not set up**.
 
-![Scans tab with the scan drawer open on a Partly scanned scan, showing its Requested, Started, Ended, and Agents found lines, and each source with its Not scanned and To fix lines](/images/1secureaisecurity/misc/scan-drawer-partly-scanned.webp)
+![Scans tab with the scan drawer open on a Partly scanned scan, showing each source with its Not scanned and To fix lines](/images/1secureaisecurity/misc/scan-drawer-partly-scanned.webp)
 
 For each source, the drawer shows:
 
 - **What was read**, as **Complete**, **Partly scanned**, or **Not scanned**, with counts such as "27 sites read", "2 locked", or "3 refused".
 - **The agents found**, as new, changed, unchanged, and removed.
 - **What was skipped**, for a source read to the end, or **what was not read and what to do**, for a source whose read stopped short or failed. The next two sections describe both.
-- **Copy for support**, which copies the technical details for Netwrix support, on a source whose read stopped short or failed.
+- **Show support details**, which shows the technical details for Netwrix Support on the page, with **Copy** beside them, on a source whose read stopped short or failed.
 
-**Download scan report** saves the scan as one file for support. The file holds the scan, each source, what it read, what it didn't read, and what to do.
+**Download scan report** saves the scan as one file for Netwrix Support. The file holds the scan, each source, what it read, what it didn't read, and what to do, then the same record as JSON.
 
 ## Things skipped
 
 A source can be read to the end and still skip something it couldn't read, most often because a permission is missing or the platform refused one item. Such a source reads **Succeeded**. Its line says what it found and read, then how many things it skipped, for example "12 agents found, 27 sites read, 2 items skipped".
 
-Click the count to list each thing skipped, followed by what to do. Click **Export** to download the list as a CSV file. The export also carries each thing's code and the details for Netwrix support. The readers under the source read **Complete**.
+Click the count to list each thing skipped, followed by what to do. Click **Export** to download the list as a CSV file. The export also carries each thing's code, the details for Netwrix Support, and each item the platform refused. The readers under the source read **Complete**.
 
 A read that a platform refused a permission for, where the platform lists the permission as optional, such as Policy.Read.All on Microsoft Entra ID, is listed the same way, with what to grant. The scan runs without the permission, so the source still reads **Succeeded**, and the next scan reads the activity on from where this one stopped.
 
@@ -85,7 +84,9 @@ On the **Sources** page, the source's test, its **Last scanned** line, and its r
 - "This product isn't set up on the tenant."
 - "No Power Platform environment has a Dataverse database."
 
-The scan counts the source as read, not failed, and the source needs nothing from you. A source the scan left out for the same reason after its last test ends the same way.
+A test can name the product, such as "This tenant has no Purview audit, so there is nothing to read here." In the scan drawer, such sources are listed under **Not set up**, for example "Purview audit log is not set up on this tenant."
+
+The scan counts the source as read, not failed, and the source needs nothing from you. Its last test isn't marked passed, so a scan of every source tests it again first. A source the scan left out for the same reason after its last test ends the same way.
 
 An Azure source reads **Not set up** only where the administrator's Azure Reader sign-in saw no subscription. Where the tenant has subscriptions but the app registration can't see them, the scan ends as the missing Reader grant instead.
 
@@ -116,28 +117,19 @@ A scan of every source tests such sources again before it starts, and reads each
 
 A partly read source lists what it didn't read in lines that start "Not scanned:" and "To fix:". Where a platform refused some items, the source shows **Details** and **Export**.
 
-**Details** opens the list, grouped by reason with a count for each, and each item with what the platform answered in a word: **Refused**, **Locked**, **Not found**, **Slowed down**, or **No answer**. One line under the list gives the platform's own answers for Netwrix support. The first 20 items show, with **Show all** for the rest. A list longer than 20 has a search box, "Search by item or reason". **Export** downloads the whole list as a CSV file with **Item**, **Status**, **Code**, and **Reason** columns. A scan lists up to 1,000 items.
+**Details** opens the list, grouped by reason with a count for each, and each item with what the platform answered in a word: **Refused**, **Locked**, **Not found**, **Slowed down**, or **No answer**. One line under the list gives the platform's own answers for Netwrix Support. **Show all** lists the rest, and a long list has a search box, "Search by item or reason". **Export** downloads the whole list as a CSV file with **Item**, **Status**, **Code**, and **Reason** columns.
 
 ## Activity read over more than one scan
 
-A scan reads Microsoft Entra ID sign ins and audit events for a limited time. A source's first scan reads the last three days of sign ins, unless the organization chose an **Activity window** under **Settings**. Every later scan reads on from where the last one stopped, and never starts further back than 14 days, or than the **Activity window** where the organization chose a longer one. {/* TODO: confirm the supported activity window values */}
+A source's first scan reads the last three days of Microsoft Entra ID sign ins and audit events, unless the organization chose an **Activity window** under **Settings**. Every later scan reads on from where the last one stopped. A source not scanned for more than 14 days catches up on the last 14 days only, or on the **Activity window** where the organization chose a longer one, and older activity isn't read. Each source reads on from its own last scan.
 
-Where more of the log is left, the source's drawer says "The [sign in or audit log] after the [days] this scan read, which the next scans read." A source's first scan reads the newest days first, so there the drawer says "The [sign in or audit log] before the [days] this scan read, newest first, which the next scans read."
+On a large tenant, one scan may read only part of the activity. The source's drawer then says "The [sign in or audit log] after the [days] this scan read, which the next scans read." A source's first scan reads the newest days first, so there the drawer says "The [sign in or audit log] before the [days] this scan read, newest first, which the next scans read."
 
-1Secure then starts follow-on scans by itself, one at a time, to read the rest. A follow-on scan reads only the activity of that source and the sources read with its app registration, such as Microsoft Defender for Endpoint. Follow-on scans also run after a platform slows a read down.
+1Secure then starts the next scan itself, a follow-on scan, as soon as no other scan of the organization is running. A follow-on scan reads only that source and the sources read with its app registration, such as Microsoft Defender for Endpoint, and reads on from where the scan before it stopped. It reads only the activity, not the directory again, and what the scan before it found stands. 1Secure also starts a follow-on scan, after a short wait, where a platform slowed a read down.
 
-- On the **Scans** tab, a follow-on scan has no row of its own. The scan it continues reads **Done, still loading** while one is due or running, and its drawer lists each follow-on scan under **Automatic retries**.
-- On the **Sources** tab, the source reads **Scanning continues, 3 of 12** while a follow-on scan waits or runs: the third follow-on scan in a row, of at most 12.
+On the **Scans** tab, a follow-on scan has no row of its own. The scan it continues reads **Running** while one is due or running, and its drawer shows each source's latest result. **Download scan report** lists each follow-on scan under "AUTOMATIC RETRIES".
 
-Follow-on scans stop in any of these cases:
-
-- A scan reads the log to the end.
-- 12 follow-on scans ran in a row.
-- Two follow-on scans in a row read nothing new.
-- Someone starts a scan.
-- The scan schedule is due.
-
-After two follow-on scans in a row read nothing new, the source says "The rest of the activity, because the last two follow on scans read nothing new." with "Scan again later. The next scan reads on from where the last read stopped." Scan the source again later.
+Follow-on scans stop when the log is read to the end, when someone starts a scan, or when the scan schedule is due. They also stop when they keep reading nothing new, and the source says "The rest of the activity, because the last two follow on scans read nothing new." with "Scan again later. The next scan reads on from where the last read stopped." The scan that takes over reads on from the same place.
 
 ## Retry failed sources
 

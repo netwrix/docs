@@ -18,7 +18,7 @@ The Shadow AI page lists unregistered AI found in your directories and on compan
 | Approved | Tools you approved. 1Secure keeps monitoring them without alerts. |
 | Not approved | Tools and agents you marked not approved. |
 
-The page doesn't list Microsoft's own apps.
+The page doesn't list Microsoft's own apps. An app is Microsoft's when one of Microsoft's own tenants owns it, or the directory states Microsoft Corporation as its verified publisher. A display name never counts.
 
 **Approved** lists the registration 1Secure scans your tenant with, known by its client ID, and any Netwrix product registration, each with a reason that says whose registration it is. This way, 1Secure never asks you to approve the product that reads your tenant.
 

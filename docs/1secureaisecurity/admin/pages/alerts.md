@@ -61,7 +61,7 @@ A new person or computer on a tool marked not approved raises one **Not approved
 
 ### Discovery and consent alerts
 
-**New AI agent discovered** is raised once for each agent, and lists the permissions the agent holds. An Agent 365 registry row that is an agent another platform already lists raises none. The other agent's alert then says the row was taken to be that agent. After the agent leaves your environment, AI Security marks its alert as seen.
+**New AI agent discovered** is raised once for each agent, and lists the permissions the agent holds. An Agent 365 registry row that is an agent another platform already lists raises none. The row is matched by its application ID, and by its name only where it carries no application ID. The other agent's alert then says the row was taken to be that agent. After the agent leaves your environment, AI Security marks its alert as seen.
 
 **Person consented to an app** is High where the consent covers the whole organization, and lists the permissions it granted and whom it covers. AI Security counts one person's consents to one app within a minute as one.
 
