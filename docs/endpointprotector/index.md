@@ -24,10 +24,10 @@ To ensure optimal security, performance, and access to the latest features, Netw
 
 ### Support Status Overview
 
-- **Current Endpoint Protector (EPP) Server Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Current EPP Client & Enforced Encryption (EE) Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Previous EPP Server Version (2604)**: Still in active support. Plan the migration to the new **2608** version to ensure full compatibility and access to the latest security fixes.
-- **Previous versions (2602 and older, including legacy versions 5.9.4.2 and earlier)**: Discontinued support — no new features, security patches, or technical assistance.
+- **Current Endpoint Protector (EPP) Server Version (2611)**: Full active support with new features, security updates, and technical assistance
+- **Current EPP Client & Enforced Encryption (EE) Version (2611)**: Full active support with new features, security updates, and technical assistance
+- **Previous EPP Server Version (2608)**: Still in active support. Plan the upgrade to the new **2611** version to receive the latest security fixes.
+- **Previous versions (2604 and older, including legacy versions 5.9.4.2 and earlier)**: Discontinued support — no new features, security patches, or technical assistance.
 
 ### What This Means
 

@@ -146,14 +146,15 @@ You can set a number of reported threats between 100 and 1000.
 :::
 
 
-- Enable Log Rotate After – sets how long Endpoint Protector keeps logs on the server, in months.
-  The default is three months. Log rotation runs every five minutes and deletes Device Control, Content Aware
+- Enable Log Rotate After (days) – sets how long Endpoint Protector keeps logs on the server, in days.
+  Log rotation runs every five minutes and deletes Device Control, Content Aware
   Protection, and eDiscovery logs older than the retention period, together with their associated
-  file shadows. For example, setting this option to 6 keeps six months of logs and removes anything
-  older. Enter a value between 1 and 360 months. There's no option to turn log rotation off once
-  it's active — 1 month is the shortest retention period you can configure, and Endpoint Protector
-  rejects a value of 0.
-
+  file shadow archives. For example, setting this option to 30 keeps 30 days of logs and removes
+  anything older. The default is 90 days. The setting appears only when the scalability architecture is active. Enter a whole number from 7 to 360. Enter 0, or leave the field empty, to turn log
+  rotation off. The shortest retention period is 7 days. Use it in environments that
+  generate a very large volume of logs. Earlier versions set this value in months.
+  When you upgrade, Endpoint Protector converts the existing value to days.
+  Exported log backup files follow the separate **Keep Log Backups For** setting.
 :::warning
 Endpoint Protector 2608 enables this setting by default. Earlier server versions kept these logs
 indefinitely unless an administrator removed them manually or through Audit Log Backup, which can
@@ -163,8 +164,7 @@ period at that point — export anything you need to keep before you upgrade. Re
 as soon as you migrate and configure it to match your organization's retention needs. If you must
 retain log data for compliance beyond the configured period, export it regularly through
 **Reports and Analysis** > **Export Logs** and store the exports separately — don't rely on
-server-side log storage for long-term compliance evidence, since you can't disable log rotation
-to keep data on the server indefinitely.
+server-side log storage for long-term compliance evidence.
 :::
 
 
@@ -172,7 +172,9 @@ to keep data on the server indefinitely.
   structure. Enabling this option adds an **Export Audit Logs** tab and makes the legacy Audit Log
   Backup sections visible. Leave it disabled if the server holds no pre-migration logs.
 
-![Log Settings](logsettings.png)
+If you enter a value outside the range, the console shows "Please enter 0 (or leave it empty) to disable log rotation, or a whole number of days between 7 and 360."
+
+![Log Settings with the log rotation field in days](logsettings.webp)
 
 ### Log Settings Use Case and Terminology
 

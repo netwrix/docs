@@ -9,6 +9,8 @@ This section includes settings such as Endpoint Protector Clients, Licensing, an
 advanced configurations. These settings affect the performance, stability, compliance, and
 reliability of Endpoint Protector.
 
+The **API Clients** page lets super administrators create the clients that integrations use to call the REST API. See [API Clients](/docs/endpointprotector/admin/systemconfiguration/apiclients.md).
+
 ## Server Update
 
 From this section, you can check and apply the latest security and Endpoint Protector Server

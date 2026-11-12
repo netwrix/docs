@@ -10,9 +10,9 @@ This page covers the most common questions and issues you may encounter during E
 
 ---
 
-## 1. Migrating Directly from 5.9.4.2 to 2608 {#can-i-migrate-directly-from-5942-to-2608}
+## 1. Migrating Directly from 5.9.4.2 to 2611 {#can-i-migrate-directly-from-5942-to-2608}
 
-**Yes.** Once your server is on exactly 5.9.4.2, you can deploy the 2608 base image directly and restore your backup onto it — there's no need to route through the older 2510/2604 platform first. See [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x).
+**Yes.** Once your server is on exactly 5.9.4.2, you can deploy the 2608 base image, apply the 2611 offline patch, and restore your backup onto it — you don't need to migrate to the older 2510/2604 platform first. See [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x).
 
 If you're on any version older than 5.9.4.2 (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0, 5.8.2.0, 5.9.0.0, 5.9.1.0, 5.9.2.0, 5.9.3.0, 5.9.4.0, or 5.9.4.1), you must first apply the cumulative patch to reach 5.9.4.2, create the backup there, and then deploy 2608. Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 directly onto 2608 will fail at the import step.
 
@@ -22,13 +22,13 @@ If you're on any version older than 5.9.4.2 (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0,
 
 ---
 
-## 2. Reaching 2604 Before Migrating to 2608 {#do-i-need-to-reach-2604-before-migrating-to-2608}
+## 2. Reaching 2604 Before Migrating to 2611 {#do-i-need-to-reach-2604-before-migrating-to-2608}
 
-No. 2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604 — no intermediate version is required. It's still good practice to upgrade to 2604 before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs. See [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image#backup-compatibility).
+No. 2611 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, 2604, 2608, or 2611 — no intermediate version is required. It's still good practice to upgrade to 2604 before migrating, since Netwrix labs validated the 2604 → 2608 path most thoroughly. See [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image#backup-compatibility).
 
 ---
 
-## 3. Log Data Handling When Migrating to 2608 {#what-happens-to-log-data-when-migrating-to-2608}
+## 3. Log Data Handling When Migrating to 2611 {#what-happens-to-log-data-when-migrating-to-2608}
 
 :::note
 This answer applies to **self-hosted** deployments — on-premises or customer-managed cloud-hosted (AWS, Azure, GCP). **SaaS** is the one exception: since Netwrix migrates SaaS appliances directly, Netwrix carries historical log data over as part of that managed migration. After migration, SaaS customers see two tabs in the Reports menu: one for historical data still held in MySQL, and one for current data captured and stored in CrateDB going forward. Everything in this answer applies only to the self-hosted migration paths covered in this guide.
@@ -42,9 +42,9 @@ If you need historical logs for compliance or forensics, export them via **Syste
 
 ---
 
-## 4. Client Bridge Version Requirement for the 2608 Client {#is-a-client-bridge-version-required-to-upgrade-to-the-2608-client}
+## 4. Client Bridge Version Requirement for the 2611 Client {#is-a-client-bridge-version-required-to-upgrade-to-the-2608-client}
 
-**No.** Any client on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client — there's no new intermediate/bridge version for this jump.
+**No.** Any client on **5.9.4.3 Hotfix 1** or on any **2511–2608** client version can upgrade directly to the 2611 client — this upgrade needs no new bridge version.
 
 The historical CoSoSys-to-Netwrix signature bridge (5.9.4.3 Hotfix 1) applies only to endpoints still running an old CoSoSys-signed client (5.9.4.1 or older). See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#is-a-bridge-client-required-for-2608) for the full compatibility table.
 
@@ -61,7 +61,7 @@ Delaying the EE client upgrade can cause EE-protected drives to lose synchroniza
 ## 6. Restoring a 2509 Backup onto a 2510 Server {#restoring-a-2509-backup-onto-a-2510-server}
 
 :::note
-This entry applies only if you're still deploying on the older 2509/2510 image line. If you're migrating to **2608**, see [Migrating Directly from 5.9.4.2 to 2608](#can-i-migrate-directly-from-5942-to-2608) and [Reaching 2604 Before Migrating to 2608](#do-i-need-to-reach-2604-before-migrating-to-2608) instead.
+This entry applies only if you're still deploying on the older 2509/2510 image line. If you're migrating to **2611**, see [Migrating Directly from 5.9.4.2 to 2611](#can-i-migrate-directly-from-5942-to-2608) and [Reaching 2604 Before Migrating to 2608](#do-i-need-to-reach-2604-before-migrating-to-2608) instead.
 :::
 
 Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. After you patch it to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
@@ -75,7 +75,7 @@ This most commonly occurs with large backups or under-resourced VMs, specificall
 **Steps:**
 1. Verify the target VM meets the free-disk minimum in [Server Requirements](/docs/endpointprotector/requirements/server).
 2. Verify the backup file isn't corrupted — re-download from the source server.
-3. Verify you created the backup on a version your target accepts: 5.9.4.2 for the legacy path, or 2509/2510/2601/2602/2604 for the current-image path.
+3. Verify you created the backup on a version your target accepts: 5.9.4.2 for the legacy path, or 2509/2510/2601/2602/2604/2608/2611 for the current-image path.
 4. Try increasing PHP upload limits temporarily (see [Backup File Exceeds 200 MB Import Limit](/docs/endpointprotector/install/migrationprocedure/troubleshooting#backup-file-exceeds-200-mb-import-limit)).
 5. If none of these steps resolves it, contact Netwrix Support with the server logs from `/var/log/epp/`.
 
@@ -120,7 +120,7 @@ AD Sync can complete without errors but only import a partial set of users or gr
 
 ---
 
-## 11. SSO / Entra ID Login Fails After Migration to 2608 {#sso--entra-id-login-fails-after-migration-to-2608}
+## 11. SSO / Entra ID Login Fails After Migration to 2611 {#sso--entra-id-login-fails-after-migration-to-2608}
 
 You may need to refresh Entra ID / SSO application registrations after migration.
 
@@ -145,9 +145,9 @@ See also [Endpoints Not Checking In After Migration](/docs/endpointprotector/ins
 **Checklist:**
 1. Confirm the new server's IP/FQDN is reachable from endpoints (firewall, DNS).
 2. Confirm you've reversed whatever mechanism you used to block client connectivity to the new server (firewall rule, routing block, disconnected network cable, and so on).
-3. Confirm you uploaded the client packages to the server — 2608 (the target version), plus 5.9.4.3 Hotfix 1 only if any endpoints are still below that bridge version.
+3. Confirm you uploaded the client packages to the server — 2611 (the target version), plus 5.9.4.3 Hotfix 1 only if any endpoints are still below that bridge version.
 4. Check the **Device Control → Computers** page and sort by **Last Seen**.
-5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 Hotfix 1 first, they can't receive the 2608 client package directly — deploy 5.9.4.3 Hotfix 1 first via your software distribution tool before upgrading to 2608. See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade) for the full client upgrade path.
+5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 Hotfix 1 first, they can't receive the 2611 client package directly — deploy 5.9.4.3 Hotfix 1 first via your software distribution tool before upgrading to 2608. See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade) for the full client upgrade path.
 6. Verify that firewall rules allow HTTPS connections on the configured EPP communication port.
 7. Consider reinstalling the EPP Client if it appears corrupted.
 
@@ -215,15 +215,15 @@ This is a known product defect on 2601.
 
 ---
 
-## 19. Activating 2608 in an Air-Gapped or Offline Environment {#activating-2608-in-an-air-gapped-or-offline-environment}
+## 19. Activating Content Aware Protection and eDiscovery in an Air-Gapped or Offline Environment {#activating-2608-in-an-air-gapped-or-offline-environment}
 
-Air-gapped activation requires an **Offline Activation Patch** specific to 2608. This is a separate patch from the EPP software cumulative patch; request it from Netwrix Support in advance.
+Servers that stay on 2608 still require an **Offline Activation Patch** for 2608 to activate Content Aware Protection or eDiscovery offline. Request it from Netwrix Support in advance. Servers on 2611.0.1.x and later don't need it, because activation no longer requires a connection to the Netwrix activation service. Once the server is on 2611, you activate the modules directly.
 
 **Steps:**
-1. Contact Netwrix Support or your account team before the migration maintenance window.
-2. Request the Offline Activation Patch for 2608 for your specific environment.
-3. Also request any offline CAP / eDiscovery activation patches if your license includes those modules.
-4. Stage all offline patches and have them ready before taking the server offline for migration.
+1. Download the 2611 offline patch from the My Products portal before the migration maintenance window.
+2. Deploy the 2608 base image and activate the trial license.
+3. Apply the 2611 offline patch in **System Configuration** → **Server Update** → **Software Update**.
+4. Restore your backup and import your license. Then activate the licensed modules.
 
 ---
 
@@ -252,10 +252,10 @@ Approximate time estimates based on real migration experience. The legacy 5.x pa
 | 5.9.4.2 cumulative patch installation | 15–60 minutes | Legacy 5.x path only |
 | Background DB tasks post-patch | Up to 24 hours (scheduled at 9 PM nightly) | Legacy 5.x path only |
 | System backup creation | 5–30 minutes depending on config size | Both paths |
-| New 2608 VM deployment and network config | 30–60 minutes | Both paths |
+| New 2608 base image VM deployment and network config | 30–60 minutes | Both paths |
 | Trial license activation on 2608 | 5 minutes | Both paths |
-| Upgrade fresh 2608 image to latest patch | 15–30 minutes | Both paths |
-| Backup restore on 2608 | 15–45 minutes | Both paths |
+| Apply the 2611 offline patch to the 2608 image | 15–30 minutes | Both paths |
+| Backup restore on 2611 | 15–45 minutes | Both paths |
 | License re-import and verification | 5–10 minutes | Both paths |
 | Client package uploads | 10–20 minutes | Both paths |
 | Integration reconfiguration and testing | 30–90 minutes | Both paths |
@@ -269,22 +269,22 @@ Plan for a full business day of active migration work, plus a 24-hour monitoring
 
 ---
 
-## 23. Running the Old Server Alongside the New 2608 Server {#running-the-old-server-alongside-the-new-2608-server}
+## 23. Running the Old Server Alongside the New 2611 Server {#running-the-old-server-alongside-the-new-2608-server}
 
 **Yes, and Netwrix recommends it** — at least temporarily. The old server:
-- Retains all historical event logs and file shadows (not migrated to 2608).
+- Retains all historical event logs and file shadows (not migrated to 2611).
 - Serves as your rollback if you discover critical issues post-migration.
 - Provides a source for compliance or forensic purposes if any applicable regulation requires retention of historical data.
 
 :::tip
-Keep the old server **offline** after you validate the new 2608 environment. Activate access to it only on demand (e.g. for a compliance review or rollback). Leaving it online unnecessarily increases the attack surface, particularly if the old server was running 5.9.4.2 or earlier, which no longer receives security patches.
+Keep the old server **offline** after you validate the new 2611 environment. Activate access to it only on demand (e.g. for a compliance review or rollback). Leaving it online unnecessarily increases the attack surface, particularly if the old server was running 5.9.4.2 or earlier, which no longer receives security patches.
 :::
 
 Decommission the old server only after:
-1. All endpoints successfully communicate with 2608.
+1. All endpoints successfully communicate with 2611.
 2. You verified all integrations.
 3. You satisfied compliance and retention requirements for historical logs (exported or confirmed in SIEM).
-4. You created a full post-migration backup on 2608 and stored it securely.
+4. You created a full post-migration backup on 2611 and stored it securely.
 
 :::note
 Keeping two live EPP Server instances in production at the same time can have licensing implications. Contact your Netwrix account team to adjust licensing accordingly before running the old and new servers in parallel for an extended period.

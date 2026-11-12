@@ -25,7 +25,7 @@ provide the following information:
 **Administrator Details**
 
 - Add the username, password, email, first name, last name, and phone number, and then select the
-  UI language
+  UI language. The EPP Server console, the Client Notifier, and Enforced Encryption support the same languages. See [Supported languages](/docs/endpointprotector/admin/dc_module/globalsettings.md#supported-languages).
 
 **Account Settings**
 

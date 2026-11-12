@@ -51,6 +51,52 @@ the Client's behavior for each specific entity (Global, Groups, and Computers).
 
 > This feature makes notifications more accessible to users.
 
+### Supported languages
+
+The EPP Server console, the EPP Client Notifier, and the Enforced Encryption interface support the same languages.
+
+New languages in version 2611:
+
+- Armenian
+- Danish
+- Filipino
+- Finnish
+- Georgian
+- Hindi
+- Icelandic
+- Indonesian
+- Malay
+- Norwegian (Bokmål)
+- Swedish
+
+Existing language base with refreshed translations:
+
+- Chinese (Simplified)
+- Chinese (Traditional)
+- Czech
+- English (default)
+- French
+- German
+- Hungarian
+- Italian
+- Japanese
+- Korean
+- Persian
+- Polish
+- Portuguese
+- Romanian
+- Russian
+- Spanish
+- Turkish
+- Ukrainian
+
+English is the default language. The Client, the console, and Enforced Encryption use it when you don't configure another language. English also appears in the language list, so users can switch back to it from another language.
+
+The new languages require Endpoint Protector Client version 2611 or later to display on the Client and on Enforced Encryption. You can assign the languages to Endpoint Protector Clients and to Enforced Encryption from the server settings.
+
+To assign a language to Enforced Encryption, go to **Enforced Encryption** > **EasyLock**. In the **Languages** section of the **Settings**, select the language in **Language** and click **Save**.
+
+
 - Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders have limited access and the EPP Client prevents unauthorized actors from unloading its processes on Windows and daemons macOS. 
 Tamper Mode applies to all supported operating systems (Windows, macOS, and Linux).
 
@@ -79,7 +125,8 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
   acts as a quarantine folder before Endpoint Protector fully inspects a transferred file for
   content, avoiding any potential file loss due to blocked transfers. After the specified time interval,
   Endpoint Protector permanently deletes the files.
-- Log Size (MB) – enter the largest size of all logs stored on the Client. When the value
+- Events Log Size (MB) – enter the maximum combined size of all client-side event logs (for example, File Copy
+  and Content Threat Detected) that the Client stores and sends to the server. When the value
   reaches this limit, new logs overwrite the oldest ones. This occurs only when the Client and Server
   don't communicate for an extended period.
 - Shadow Size (MB) – enter the largest size of all file shadows on the Client. When the value
@@ -109,7 +156,7 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
 - Custom Client Notifications - if enabled, you can customize the Client Notifications.
 - Mandatory OTP Justification - if enabled, the Justification a User has to provide when requesting or
   using an Offline Temporary Password is mandatory.
-- Extend Source Code Detection - if enabled, detection extends to file types such as PDF and Docx. With Monitor Webmail enabled, you can also detect source code in emails sent through web browsers.
+- Extended Source Code Detection - if enabled, detection extends to file types such as PDF and Docx. With Monitor Webmail enabled, you can also detect source code in emails sent through web browsers.
 
     :::note
     Source Code Detection may struggle with small code snippets due to overlap among programming languages.
@@ -129,9 +176,10 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
 
 ![Manage settings that relate directly to the Netwrix Endpoint Protector Client](clientsettingstwo.webp)
 
-- Disable Bluetooth File Transfer – if enabled, this setting will block transfers to Bluetooth
-  Devices, regardless of whether they're paired with the endpoint. This only applies to
-  Windows endpoints.
+- DC Disable Bluetooth File Transfer – if enabled, this setting will block transfers to Bluetooth
+  Devices, regardless of whether they're paired with the endpoint. This setting disables Bluetooth
+  file transfers on Windows at the Device Control level. To monitor and control transfers based on
+  their content, configure the Bluetooth exit points in a Content Aware Protection policy.
 - Allow formatting/renaming Removable devices in Trusted Device™ Level 1+ (TD1+) – available only
   for Windows. Enable this setting to allow the user to format or rename a USB device that has TD1-x
   access permission.
@@ -154,12 +202,16 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
   the Computers/Users/Groups/Global Rights sections with Manage Settings from the Actions column.
 - User Remediation Notification Template - you can select from the dropdown list a custom
   notification.
-- Show Request OTP section in Endpoint Protector Client – disable this setting to hide the Request
-  OTP action from Endpoint Protector Client
-- Show Authorize section in Endpoint Protector Client – disable this setting to hide the Authorize
-  action from Endpoint Protector Client
+- Shows Manual Requests OTP section in EPP Clients – disable this setting to hide the manual Request
+  OTP action from the Endpoint Protector Client
+- Shows Automatic Requests OTP section in EPP Client – enable this setting to let users send automatic
+  Offline Temporary Password requests from the Endpoint Protector Client. This setting is off by
+  default. See [Automatic access requests](/docs/endpointprotector/admin/otpassword.md#automatic-access-requests).
+- Show Authorize section in EPP Client – disable this setting to hide the Authorize action from the
+  Endpoint Protector Client. The two OTP request settings are disabled while this setting is off.
 
-![Manage settings that relate directly to the Netwrix Endpoint Protector Client](clientsettingsthree.webp)
+![Offline Temporary Password request settings in the client settings](otpclientsettings.webp)
+
 
 ### Client Mode
 
@@ -279,22 +331,23 @@ In this section, you can manage the following settings:
   traffic for content. This option is required for both the Deep Packet Inspection Allowlists and
   URL and Domain Denylist
 
-- Use Stealthy DPI Driver – enable this driver to improve interoperability with independent software
-  vendors
+- Windows Use Stealthy DPI Driver – enable this driver to enhance compatibility with third-party software
+  vendors. Applicable only to EPP Clients for Windows.
 
-- Intercept VPN Traffic – if you enable this setting, you allow the Endpoint Protector Client to
-  intercept VPN traffic on macOS using the network extension framework
+- macOS Intercept VPN Traffic – if you enable this setting, you allow the Endpoint Protector Client to
+  intercept VPN traffic on macOS, from macOS 11.0 onwards, using the network extension framework
 
     :::note
     See the [Intercept VPN Traffic](#intercept-vpn-traffic) topic.
     :::
 
-- Linux proxy loopback address – supports integration with custom VPN and proxy solutions, such as Cisco ANYConnect. When you enable this setting, you can specify a custom loopback address, typically within the 127.0.0.0/8 range. This feature applies to Linux Clients with version 2509.x.x.x or later
+- Linux ignore VPN interfaces – excludes local VPN interfaces from DPI traffic inspection to prevent conflicts with VPN connectivity. This setting is off by default.
 
-- Enable Http/2 - lets administrators enable support for HTTP/2 within DPI protocols, giving greater flexibility and control over HTTP/2 protocol usage. If negotiation fails, the protocol reverts to HTTP.
+- Linux proxy loopback address – supports integration with custom VPN and proxy solutions. When you enable this setting, you can specify a custom loopback address, typically within the 127.0.0.0/8 range. This feature applies to Linux Clients with version 2509.x.x.x or later The setting requires Linux Client version 2509.x.x.x or later, and it isn't available when IPv6 is active.
 
-- Endpoint Protector Behavior with Network Extension Off – select a behavior type from the available
-  entries
+- Enable HTTP/2 - lets administrators enable support for HTTP/2 within DPI protocols, giving greater flexibility and control over HTTP/2 protocol usage. If negotiation fails, the protocol reverts to HTTP. This setting is off by default and requires EPP Clients released after 2508.x.x.
+
+- EPP Behaviour with Network Extension Off – select the behavior when the network extension is off: **Temporary Disable Deep Packet Inspection**, **Block Internet access**, or **Repeat VPN notification**
 - Peer Certificate Validation – enable this setting to turn on the Endpoint Protector certificate
   validation of the websites that the user accesses when DPI is active
 
@@ -303,16 +356,15 @@ In this section, you can manage the following settings:
     - Ignore Hostname - when checked, Endpoint Protector doesn't validate the certificate hostname property against the server hostname.
 
     :::warning
-    Disabling setting 'Peer Certificate Validation' will not impact Endpoint Protector
-    functionality. Disable it only when an alternative network traffic inspection product,
+    If you disable 'Peer Certificate Validation', Endpoint Protector doesn't validate peer certificates and forwards the traffic to the scan engine. Disable it only when an alternative network traffic inspection product,
     such as a Secure Web Gateway Solution, is validating website certificates.
     :::
 
 
-- Display Dialog Boxes for DPI Dropped Connections - enable this setting to display dialog windows
-  containing more details on endpoint machines.
+- Display Dialog Boxes for DPI Dropped Connections - enable this setting to display dialog windows 
+  containing more details on endpoint machines. To prevent an overload of message boxes, enable Smart DPI logging.
 - Disable DPI Dropped Connections Notifications - check this setting to suppress notifications that
-  the Notification Center shows near the System tray.
+  the Notification Center shows near the System tray. This setting is on by default.
 - Block Unsecured Connection - if enabled, blocks unsecured HTTP access and restricts user
   access.
 
@@ -322,7 +374,7 @@ In this section, you can manage the following settings:
     :::
 
 
-- DPI Bypass Traffic – this setting automatically bypasses non-inspectable traffic and sends an event
+- DPI Bypass – this setting automatically bypasses non-inspectable traffic and sends an event
   for allowed traffic.
 
     Possible Bypass reasons:
@@ -499,6 +551,8 @@ from the Trust section.
 Enable this setting to reduce excessive false positives for URL Denylists. Filtering out
 non-relevant information produces a more accurate log that focuses on true false positives, reduces
 unnecessary noise, and saves database storage.
+
+Set **Smart DPI Suppress Interval (sec)** to define how long Endpoint Protector suppresses repeated DPI logs. The default is 30 seconds, and the value must be between 1 and 999.
 
 ![Enable this setting to address the number of excessive false positives for URL Denylists](smartdpi.webp)
 
@@ -1052,7 +1106,7 @@ Endpoint Protector installed or in relation to a list of trusted Endpoint Protec
 Before you use these settings, ensure that you configure a Master Password. See [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) for how to configure it.
 :::
 
-![Allow EasyLock to be installed](easylocksettings.webp)
+![EasyLock settings with Client Presence, Harden Client Presence Value, Multi Server, and Read Only mode](easylockclientpresence.webp)
 
 - **Endpoint Protector Client Presence Required** — When enabled, EasyLock (Enforced Encryption) runs only on computers where the Endpoint Protector (EPP) Client is installed.
 
@@ -1064,6 +1118,8 @@ Before you use these settings, ensure that you configure a Master Password. See 
   To prevent EasyLock from running on computers that don't have the EPP Client installed, enable **Client Presence Required** at the global level.
   :::
 
+- **Harden Client Presence Value** — When enabled, Endpoint Protector locks the current **Client Presence Required** value for devices in this scope. The value no longer changes automatically if group membership changes. Use **Reset Client Presence Hardening** on a device to unlock it and apply the current policy value. The setting is off by default and appears in the Global settings and in the Secure Group, Computer, and User settings. See [Client Presence Hardening](/docs/endpointprotector/admin/ee_module/eemodule.md#client-presence-hardening).
+
 - **EE Read-Only Mode** — When enabled, EasyLock blocks write access to encrypted drives on computers not managed by the EPP Client. When disabled (default), EasyLock doesn't start at all on unmanaged computers. See [Enforced Encryption in Read-Only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode).
 
 ![Enforced Encryption in Read-Only mode](eeromode.webp)
@@ -1072,7 +1128,7 @@ Before you use these settings, ensure that you configure a Master Password. See 
 
 This section configures the eDiscovery feature for [user-initiated scans](/docs/endpointprotector/admin/ed_module/edscanning.md#user-initiated-scan-settings).
 
-- **User-Initiated Scans** — Enables the User-Initiated Scan feature in the end-user EPP Notifier.
+- **User-Initiated Scans** — Allows users to scan their computers against company policies to assess and remediate data on their own. Users receive reports directly in the EPP Notifier.
 
 - **Number of Scans** — Retains a specified number of scan results (range: 1–10, default: 1).
 - **Number of Days** — Retains scan results for a specified number of days (range: 1–30, default: 1).
