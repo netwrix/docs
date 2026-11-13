@@ -52,8 +52,13 @@ def main():
         if pid in ids_seen:
             print("DUPLICATE proposal_id (two agents wrote the same page in one round):", pid, jp, ids_seen[pid], file=sys.stderr)
         ids_seen[pid] = jp
+    seen_ids = set()
     for jp in files:
         j = json.load(open(jp))
+        if j.get("proposal_id") in seen_ids:
+            print("skipped duplicate proposal_id (its gaps will show as 'no proposal'):", j.get("proposal_id"), jp, file=sys.stderr)
+            continue
+        seen_ids.add(j.get("proposal_id"))
         mp = jp[:-5] + ".md"
         if not os.path.exists(mp):
             print("missing .md for", jp, file=sys.stderr)
@@ -112,7 +117,11 @@ def main():
     print(f"added {len(new)} proposals; {len(ids)} gaps in data.json ({len(set(ids))} unique); {os.path.getsize(out_path)/1e6:.2f} MB")
     # only the gaps batched for drafting in the rounds so far (batch-<round>-N.json), not every tier
     scope = []
+    cur_n = int((re.search(r"(\d+)", a.round) or [0, 10**6])[1])
     for bf in glob.glob(f"{run}/batch-*-*.json"):
+        rn = re.search(r"batch-r?(\d+)-", os.path.basename(bf))
+        if rn and int(rn.group(1)) > cur_n:
+            continue  # batched for a later round: not expected yet
         bj = json.load(open(bf))
         for pg in (bj.get("pages", []) if isinstance(bj, dict) else bj):
             scope += [g["id"] for g in pg.get("gaps", [])]

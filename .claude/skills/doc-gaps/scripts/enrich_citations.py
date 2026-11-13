@@ -39,12 +39,15 @@ def main():
         for g in p["gaps"]:
             for c in (g.get("evidence") or {}).get("code", []):
                 tot += 1
-                m = re.match(r"^(.+?)(?::(\d+)(?:-(\d+))?)?\s*$", (c.get("cite") or "").split(";")[0].strip())
+                m = re.match(r"^(.+?)(?::L?(\d+)(?:[-,]L?(\d+))?)?\s*$", (c.get("cite") or "").split(";")[0].strip())
                 if not m:
                     c["verified"] = "no"; bad += 1; continue
                 rel, l1, l2 = m.group(1), m.group(2), m.group(3)
                 rel = re.sub(r"^code/", "", rel)
                 fp = os.path.join(a.code, rel)
+                if not os.path.isfile(fp) and "/code/" in rel:  # a run-folder prefix such as .doc-gaps/x-1.0/code/src/Foo.cs
+                    rel = rel.split("/code/", 1)[1]
+                    fp = os.path.join(a.code, rel)
                 sym = None
                 if not os.path.isfile(fp) and ":" in rel:  # cite names a symbol, not a line: path:symbol
                     rel, sym = rel.rsplit(":", 1)
@@ -55,7 +58,8 @@ def main():
                 if not os.path.isfile(fp):
                     c["verified"] = "no"; bad += 1; print("missing file:", g["id"], c.get("cite")); continue
                 if fp not in cache:
-                    cache[fp] = open(fp, errors="replace").read().split("\n")
+                    with open(fp, errors="replace") as fh:
+                        cache[fp] = fh.read().replace("\r\n", "\n").replace("\r", "\n").split("\n")
                 lines = cache[fp]
                 q = norm(c.get("quote", "")).rstrip("….").rstrip(".").strip()
                 if sym:  # anchor at the first line that mentions the symbol

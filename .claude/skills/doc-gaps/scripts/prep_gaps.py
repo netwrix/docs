@@ -25,7 +25,7 @@
       Reads OUT/impact-out-*.json, computes priority, writes OUT/gaps-ranked.json (the audit's shape, plus
       verdict, runs and source_ids), OUT/merged-final.json and OUT/dropped-merge.json. Then run convert.
 """
-import argparse, collections, json, os, re, sys
+import argparse, collections, glob, json, os, re, sys
 
 
 def norm_target(t, prefix):
@@ -92,6 +92,8 @@ def batches(run, root, tiers, rnd, agents, skip_done):
         i = load.index(min(load))
         bins[i].append(dict(page=page, exists=os.path.isfile(os.path.join(root, page)), gaps=v))
         load[i] += len(v) + 1.5
+    for old in glob.glob(f"{run}/batch-{rnd}-*.json"):  # leftovers of an earlier run with more agents
+        os.remove(old)
     for i, b in enumerate(bins, 1):
         json.dump(dict(suffix=f"{rnd}b{i}", pages=b), open(f"{run}/batch-{rnd}-{i}.json", "w"), indent=1)
     print(f"{sum(len(v) for v in grp.values())} gaps on {len(grp)} pages -> {n} batch files (batch-{rnd}-N.json; each carries its own suffix {rnd}bN)")
@@ -202,6 +204,8 @@ def merge_group(out):
         miss = set(G) - seen
         assert not miss or dim not in {g["dim"] for g in G.values() if g["id"] in miss}, f"{fn}: ids not covered: {sorted(miss)[:5]}"
     json.dump(merged, open(f"{out}/merged-pre.json", "w"), indent=1)
+    for old in glob.glob(f"{out}/recheck-in-*.json") + glob.glob(f"{out}/recheck-out-*.json"):
+        os.remove(old)  # stale batches from an earlier or resumed run would be rechecked again
     for i, c in enumerate(_chunks(pre_fix, 10), 1):
         json.dump(c, open(f"{out}/recheck-in-{i:02d}.json", "w"), indent=1)
     print(len(merged), "merged items;", len(pre_fix), "need a verdict ->", -(-len(pre_fix) // 10), "recheck batches")
@@ -222,6 +226,8 @@ def merge_impact_prep(out):
     act = [m for m in M if m["verdict"] in NEEDS_FIX and m["dim"] != "api"]
     rows = [dict(mid=m["mid"], dim=m["dim"], name=m["name"][:120], missing=m["missing"][:260], runs=m["runs"], verdict=m["verdict"],
                  prior_impact=m["prior_impact"], threads=len(m["links"])) for m in act]
+    for old in glob.glob(f"{out}/impact-in-*.json") + glob.glob(f"{out}/impact-out-*.json"):
+        os.remove(old)
     for i, c in enumerate(_chunks(rows, 30), 1):
         json.dump(c, open(f"{out}/impact-in-{i:02d}.json", "w"), indent=1)
     print(len(act), "gaps need an impact rating;", sum(1 for m in M if m["verdict"] is None), "have no verdict (api or unchecked)")
