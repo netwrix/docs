@@ -153,7 +153,7 @@ def merge_group(out):
             mg = dict(mid=f"M-{dim[:4].upper()}-{len(merged) + 1:03d}", dim=dim, runs=runs, rel=grp.get("relation", ""),
                       ids=ids, name=" / ".join(dict.fromkeys(g["name"] for g in m))[:200] if len(m) <= 3 else m[0]["name"],
                       missing=" | ".join(dict.fromkeys(g["missing"] for g in m if g.get("missing")))[:600],
-                      pages=sorted({g["page"].split(" ")[0] for g in m if g.get("page")}), conf=conf, conf_why=why,
+                      pages=sorted({norm_target(g["page"], "") for g in m if g.get("page")}), conf=conf, conf_why=why,
                       verdict=max(vs, key=lambda k: VRANK[k]) if vs else None,
                       effort=max((g["effort"] for g in m if g.get("effort")), key=lambda e: "SML".index(str(e).upper()[:1]) if str(e).upper()[:1] in ("S", "M", "L") else 1, default="M"),
                       links=sorted({l for g in m for l in (g.get("links") or [])}),

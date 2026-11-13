@@ -1,9 +1,9 @@
 <title>Doc Gap Review</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.2.0/diff.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js" integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" integrity="sha384-+VfUPEb0PdtChMwmBcBmykRMDd+v6D/oFmB3rZM/puCMDYcIvF968OimRh4KQY9a" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.2.0/diff.min.js" integrity="sha384-lJJVaUgxmk/PVfQnAsGN1QuJZrE+n6bg2EMu33yVZOJ2av/3UzTHbmnPCI7ENJYa" crossorigin="anonymous"></script>
 <style>
 /* layout: top tabs; Review = proposal list left, detail right (stacks on phones); decisions stored in shared db */
 :root{--bg:#f6f7f9;--surface:#fff;--fg:#1b2330;--muted:#5d6877;--line:#dde1e7;--accent:#2457c5;--accent-fg:#fff;--chip:#eceff3;
@@ -107,7 +107,8 @@ const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;',
 let META={},P=[],G=[],DEC={},dbc=null,me=null,tab='overview',sel=null,filter='all',mode='rendered',editing=false,connNote='';
 const OK=()=>!!dbc;
 const ids=['approved','hold','rejected','pending'];
-const st=x=>(DEC[x.g.id]&&DEC[x.g.id].status)||'pending';
+const STS=['approved','hold','rejected','pending'],LVS=['high','medium','low'],TRS=['P0','P1','P2','P3'];
+const st=x=>{const v=DEC[x.g.id]&&DEC[x.g.id].status;return STS.includes(v)?v:'pending'};
 
 /* ---------- markdown helpers ---------- */
 function prep(md){
@@ -175,7 +176,7 @@ const VL={real_gap:'real gap',partially_covered:'partly covered',already_covered
 async function decide(x,status,extra){
   if(!OK())return;
   let cur=DEC[x.g.id]||{};extra=extra||{};
-  try{const sn=await dbc.doc('decisions/'+x.g.id).get();if(sn&&sn.exists&&sn.data)cur=sn.data()||cur}catch(e){} /* newest stored comments, so two reviewers do not overwrite each other */
+  try{const sn=await dbc.doc('decisions/'+x.g.id).get();if(sn&&sn.exists&&sn.data)cur=sn.data()||cur}catch(e){} /* reads the newest stored comments first; this narrows the window for two reviewers saving at once but does not prevent it (the db has no atomic merge) */
   const comments=(cur.comments||[]).slice();
   if(extra.comment)comments.push({by:me,at:new Date().toISOString(),text:extra.comment,kind:status});
   const edited=('edited' in extra)?extra.edited:(cur.edited||null);
@@ -252,7 +253,7 @@ function drawOverview(){
   <tr><td><b>Overall</b></td><td>${dk.reduce((t,k)=>t+BASE[k].w,0)}</td><td><b>${esc(M.overall)}</b></td><td><b>${f1(A.overall)}</b></td><td><b>${f1(C.overall)}</b></td></tr></tbody></table></div>
   <p class="muted" style="margin:0;max-width:80ch">Coverage is the mean item score out of 3, weighted by area. The audit counted every item that scored 0 or 1 as a gap. When the drafter re-checked, ${nf} of those were not something users see (removed from the item count) or were already covered (rescored 2 out of 3). <b>Adjusted</b> applies all of the drafter's findings. <b>Confirmed so far</b> applies only the ones you have confirmed in the No fix needed tab. Figures are approximate if the audit's percentages were rounded. Partly covered gaps still count as gaps.</p></section>
   <section class="part"><h2>Gaps by priority and confidence</h2><div class="tw"><table class="t"><thead><tr><th>Priority</th><th>High</th><th>Medium</th><th>Low</th><th>Total</th><th>In this review</th></tr></thead><tbody>
-  ${['P0','P1','P2','P3'].map(t=>{const r=tiers[t]||{};return `<tr><td><span class="pill ${t}">${t}</span></td><td>${r.high??''}</td><td>${r.medium??''}</td><td>${r.low??''}</td><td>${r.total??''}</td><td>${tc(t)}</td></tr>`}).join('')}</tbody></table></div>
+  ${['P0','P1','P2','P3'].map(t=>{const r=tiers[t]||{};return `<tr><td><span class="pill ${t}">${t}</span></td><td>${esc(r.high??'')}</td><td>${esc(r.medium??'')}</td><td>${esc(r.low??'')}</td><td>${esc(r.total??'')}</td><td>${tc(t)}</td></tr>`}).join('')}</tbody></table></div>
   <p class="muted" style="margin:0;max-width:80ch">Many low-confidence gaps turn out to be already covered or not user-facing once the drafter checks them. Verify before you approve. Each gap lists the check to run.</p></section>
   <section class="part"><h2>How to read this report</h2>${legendHTML()}</section>
   <section class="part"><h2>Sources and limits</h2><ul><li>Docs: <span class="mono">${esc(M.docsPath||'')}</span>. Code: <span class="mono">${esc(M.codeRef||'')}</span>.</li><li>Questions: Netwrix Community, ${esc(M.communityWindow||'')}. ${esc(M.slackNote||'')}.</li><li>Scoring and drafting were done by AI models. Every drafted fix is a proposal for human review. Nothing has been changed in the docs.</li><li>Source report: ${esc(M.reportFile||'')}.</li></ul></section></div>`;
@@ -297,7 +298,7 @@ function codeEv(g){
   const cs=((g.evidence||{}).code)||[];if(!cs.length)return '<p class="muted">No code citations for this gap.</p>';
   return `<details class="qa small"><summary>Code evidence (${cs.length} citation${cs.length===1?'':'s'})</summary><div class="qabody">${cs.map(c=>{
     const v=c.verified==='no'?'<span class="pill medium">quote not found at this line</span>':c.verified?'<span class="pill high">quote found</span>':'';
-    const sn=(c.snippet||[]).length?`<div class="code">${c.snippet.map(l=>`<span class="ln${l.hit?' hit':''}"><span class="n">${l.n}</span>${esc(l.t)}</span>`).join('')}</div>`:(c.quote?`<div class="quote">${esc(c.quote)}</div>`:'');
+    const sn=(c.snippet||[]).length?`<div class="code">${c.snippet.map(l=>`<span class="ln${l.hit?' hit':''}"><span class="n">${esc(l.n)}</span>${esc(l.t)}</span>`).join('')}</div>`:(c.quote?`<div class="quote">${esc(c.quote)}</div>`:'');
     return `<details class="cit"><summary><span class="mono">${esc(c.cite)}</span>${v}${safeUrl(c.url)?`<a href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener">open in repo</a>`:''}</summary>${sn}</details>`}).join('')}</div></details>`;
 }
 function docEv(g){
@@ -400,7 +401,7 @@ function drawRejected(){
 /* ---------- boot ---------- */
 async function boot(){
   try{const r=await fetch('data.json');const J=await r.json();META=Array.isArray(J)?{}:(J.meta||{});P=Array.isArray(J)?J:J.proposals;BASE=META.dims||{};$('#h1').textContent=(META.productName||'')+' '+(META.version||'')+' doc gap review';document.title=(META.productName||'Doc')+' '+(META.version||'')+' gap review'}catch(e){$('#view').innerHTML='<div class="notice">Could not load the data.</div>';return}
-  G=[];P.forEach(p=>p.gaps.forEach(g=>G.push({g,p})));G.sort((a,b)=>a.g.rank-b.g.rank);
+  G=[];P.forEach(p=>{if(!LVS.includes(p.fix_confidence))p.fix_confidence='low';p.gaps.forEach(g=>{if(!LVS.includes(g.gap_confidence))g.gap_confidence='low';if(!TRS.includes(g.tier))g.tier='P3';G.push({g,p})})});G.sort((a,b)=>a.g.rank-b.g.rank);
   draw();
   try{
     const u=await claude.use('user');if(u){me=await u.id()}

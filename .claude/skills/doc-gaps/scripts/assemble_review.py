@@ -56,7 +56,11 @@ def main():
             print("missing .md for", jp, file=sys.stderr)
             continue
         page = j["page"]
-        full = os.path.join(root, page)
+        full = os.path.realpath(os.path.join(root, page))
+        # the drafter wrote this path: never read outside the docs root (data.json is published)
+        if not (full + os.sep).startswith(os.path.realpath(root) + os.sep):
+            print("page path outside docs root, skipped:", page, jp, file=sys.stderr)
+            continue
         orig = open(full).read() if os.path.isfile(full) else ""
         gl = []
         for g in j["gaps"]:

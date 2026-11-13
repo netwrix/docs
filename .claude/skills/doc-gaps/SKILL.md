@@ -36,7 +36,7 @@ The workflow runs planning, four inventories, an Opus sampling gate, a three-jud
 Two audits of the same release each miss gaps the other finds, so merge them before drafting.
 
 1. Make a new run folder `.doc-gaps/<product>-<version>-merged/` and export the code the same way as for an audit.
-2. Call the Workflow tool with `scriptPath` set to `references/merge-workflow.js`. Pass `args`: `product`, `productName`, `version`, `docsPath`, `codeDir`, `outDir` (the merged run folder), `skillDir` (this skill's folder, absolute), `runs` (for example `["A=.doc-gaps/x-1.0", "B=.doc-gaps/x-1.0-r2"]`; each is a run folder with `gaps-ranked.json`), and optionally `cutoffs`.
+2. Call the Workflow tool with `scriptPath` set to `references/merge-workflow.js`. Pass `args`: `product`, `productName`, `version`, `docsPath`, `codeDir`, `outDir` (the merged run folder), `docsPrefix` (the version docs folder, e.g. `docs/identitymanager/current`), `skillDir` (this skill's folder, absolute), `runs` (for example `["A=.doc-gaps/x-1.0", "B=.doc-gaps/x-1.0-r2"]`; each is a run folder with `gaps-ranked.json`), and optionally `cutoffs`.
 3. The workflow prefixes ids by run (runs reuse ids like `FEAT-001`), groups gaps that are the same by meaning, rechecks any gap no run has a verdict for, has Opus rate impact, ranks, and writes `gaps-ranked.json` in the audit's shape. API gaps are not ranked; they are listed in `merged-final.json` under `deferred_api`.
 4. Continue at step 3 (draft fixes) from the merged run folder. Report the merge counts: items found by both runs, by each run alone, and dropped.
 
