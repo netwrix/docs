@@ -80,14 +80,12 @@ def main():
         if not full.startswith(docs_dir) or not full.endswith(".md"):
             print("page path is not a .md file under <docs-root>/docs, skipped:", page, jp, file=sys.stderr)
             continue
-        pre = (a.docs_prefix or (cur.get("meta") or {}).get("docsPath") or "").replace("\\", "/")
-        rootp = os.path.realpath(root).replace("\\", "/").rstrip("/") + "/"
-        if pre.startswith(rootp):  # meta.docsPath may be absolute: compare repo-relative paths
-            pre = pre[len(rootp):]
-        pre = pre.strip("/")
-        if pre and (not page.startswith(pre + "/") or page[len(pre) + 1:].startswith("kb/")):
+        raw = a.docs_prefix or (cur.get("meta") or {}).get("docsPath") or ""
+        # compare real paths, so symlinks and an absolute docsPath both work
+        pre_abs = os.path.realpath(raw if os.path.isabs(raw) else os.path.join(root, raw)) if raw else ""
+        if pre_abs and (not (full + os.sep).startswith(pre_abs + os.sep) or (full + os.sep).startswith(os.path.join(pre_abs, "kb") + os.sep)):
             # another version or product, or a gitignored build-time KB copy: a PR could not carry this edit
-            print(f"page is outside the audited docs folder {pre}/ or is a KB copy, skipped:", page, jp, file=sys.stderr)
+            print(f"page is outside the audited docs folder {raw} or is a KB copy, skipped:", page, jp, file=sys.stderr)
             continue
         orig = open(full).read() if os.path.isfile(full) else ""
         gl = []
@@ -136,7 +134,7 @@ def main():
     json.dump(cur, open(out_path, "w"))
 
     ids = [g["id"] for p in cur["proposals"] for g in p["gaps"]]
-    bad = sorted({(g["id"], k) for p in new for g in p["gaps"] for k in PLAIN if not g.get(k)})
+    bad = sorted({(g["id"], k) for p in new for g in p["gaps"] for k in PLAIN if not g.get(k) and not (k == "change_summary" and g.get("verdict") in NOFIX)})
     print(f"added {len(new)} proposals; {len(ids)} gaps in data.json ({len(set(ids))} unique); {os.path.getsize(out_path)/1e6:.2f} MB")
     # only the gaps batched for drafting in the rounds so far (batch-<round>-N.json), not every tier
     scope = []

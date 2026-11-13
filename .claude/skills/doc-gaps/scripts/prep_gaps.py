@@ -137,8 +137,12 @@ def _norm_ranked(g, label):
 
 def _best_pages(targets):
     """Most frequent real page path first; free text and NEW-only strings last."""
-    cnt = collections.Counter(targets)
-    return sorted(cnt, key=lambda t: (not t.split(" ")[0].endswith(".md"), -cnt[t], t))
+    cnt, reps = collections.Counter(), {}
+    for t in targets:  # count by page path; the note after it varies per gap
+        k = t.split(" ")[0]
+        cnt[k] += 1
+        reps.setdefault(k, t)
+    return [reps[k] for k in sorted(cnt, key=lambda k: (not k.endswith(".md"), -cnt[k], k))]
 
 
 def _load_runs(out):

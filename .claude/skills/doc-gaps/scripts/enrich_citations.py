@@ -17,7 +17,8 @@ open = functools.partial(open, encoding="utf-8")  # never the platform default (
 
 CAP = 30
 # a line that assigns a literal to a secret-looking name is never published; a broader scan only warns
-SECRET_VALUE = re.compile(r"(passw(or)?d|secret|api[_-]?key|token|connectionstring|private[_-]?key)\w*\s*[:=]\s*[\"'][^\"']{6,}[\"']", re.I)
+SECRET_VALUE = re.compile(r"(passw(or)?d|pwd|secret|api[_-]?key|token|connection\s*string|private[_-]?key)\w*[\"']?\s*[:=]\s*[\"'][^\"']{6,}[\"']", re.I)  # name = "literal", "Name": "literal"
+SECRET_BARE = re.compile(r"(?:^|[\s;{,])(passw(or)?d|pwd|secret|api[_-]?key|token)\s*[:=]\s*[^\s\"'(;,]{6,}(?![\w.]*\()", re.I)  # .env, yaml, connection strings
 HIDDEN = "[line hidden: possible secret value]"
 LONG = 240
 
@@ -49,7 +50,12 @@ def main():
                 for k in ("snippet", "start", "end", "verified"):
                     c.pop(k, None)  # drafters do not get to supply the excerpt or its status
                 c.pop("url", None)  # never keep a drafter-supplied link; only the audited commit's blob URL is set below
-                m = re.match(r"^(.+?)(?::L?(\d+)(?:-L?(\d+))?(?:,L?\d+(?:-L?\d+)?)*)?\s*$", (c.get("cite") or "").split(";")[0].strip())
+                c["cite"] = str(c.get("cite") or "")  # drafter JSON is untrusted: coerce to text
+                c["quote"] = str(c.get("quote") or "")
+                if SECRET_VALUE.search(c["quote"]) or SECRET_BARE.search(c["quote"]):
+                    c["quote"] = HIDDEN  # the raw quote is published too (fallback view), so it gets the same masking
+                cite = re.sub(r"\s*\([^)]*\)\s*$", "", c["cite"].split(";")[0].strip()).replace("\u2013", "-").replace("\u2014", "-")  # '(method Bar)', en dash
+                m = re.match(r"^(.+?)(?::L?(\d+)(?:-L?(\d+))?(?:,\s*L?\d+(?:-L?\d+)?)*)?\s*$", cite)
                 if not m:
                     c["verified"] = "no"; bad += 1; continue
                 rel, l1, l2 = m.group(1), m.group(2), m.group(3)
@@ -71,7 +77,7 @@ def main():
                     with open(fp, errors="replace") as fh:
                         cache[fp] = fh.read().replace("\r\n", "\n").replace("\r", "\n").split("\n")
                 lines = cache[fp]
-                q = norm(c.get("quote", "")).rstrip("….").rstrip(".").strip()
+                q = norm(c["quote"]).rstrip("….").rstrip(".").strip()
                 if sym:  # anchor at the first line that mentions the symbol
                     hit = next((i + 1 for i, ln in enumerate(lines) if sym in ln), None)
                     l1 = str(hit) if hit else None
@@ -127,7 +133,7 @@ def main():
                 if status is None:  # unverified: show no excerpt and no link rather than code the claim does not rest on
                     c["snippet"] = []; c.pop("start", None); c.pop("end", None); continue
                 c["start"], c["end"] = s, e
-                c["snippet"] = [dict(n=i, t=(HIDDEN if SECRET_VALUE.search(lines[i - 1]) else lines[i - 1][:LONG] + ("…" if len(lines[i - 1]) > LONG else "")), hit=(s <= i <= e)) for i in range(lo, hi + 1)]
+                c["snippet"] = [dict(n=i, t=(HIDDEN if (SECRET_VALUE.search(lines[i - 1]) or SECRET_BARE.search(lines[i - 1])) else lines[i - 1][:LONG] + ("…" if len(lines[i - 1]) > LONG else "")), hit=(s <= i <= e)) for i in range(lo, hi + 1)]
                 if a.blob_base:
                     c["url"] = f"{a.blob_base.rstrip('/')}/{urllib.parse.quote(rel)}#L{s}" + (f"-L{e}" if e != s else "")
     json.dump(j, open(path, "w"))
