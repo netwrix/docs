@@ -81,7 +81,12 @@ def main():
                 lines = cache[fp]
                 q = norm(rawq).rstrip("….").rstrip(".").strip()
                 if sym:  # anchor at the first line that mentions the symbol
-                    hit = next((i + 1 for i, ln in enumerate(lines) if sym in ln), None)
+                    word = re.compile(r"\b" + re.escape(sym) + r"\b")
+                    decl = re.compile(r"\b(class|struct|interface|enum|record|void|public|internal|private|protected|def|function|const|static)\b")
+                    # prefer a declaration of the symbol, then a whole-word mention, then any substring
+                    hit = next((i + 1 for i, ln in enumerate(lines) if word.search(ln) and decl.search(ln)), None) \
+                        or next((i + 1 for i, ln in enumerate(lines) if word.search(ln)), None) \
+                        or next((i + 1 for i, ln in enumerate(lines) if sym in ln), None)
                     l1 = str(hit) if hit else None
                     if not hit:
                         print("symbol not found:", g["id"], c.get("cite"))

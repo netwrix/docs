@@ -129,6 +129,11 @@ def main():
         for p in cur["proposals"]:
             p["gaps"] = [g for g in p["gaps"] if g["id"] not in redone]
         cur["proposals"] = [p for p in cur["proposals"] if p["gaps"]]
+        fresh_pages = {p["page"] for p in new}
+        for p in cur["proposals"]:
+            if p["page"] in fresh_pages and "rev" not in p:
+                p["superseded"] = True  # its page text still holds the old edits of the redrafted gaps
+                print("WARNING: page", p["page"], "now has two proposal texts; redraft its remaining gaps too:", [g["id"] for g in p["gaps"]], file=sys.stderr)
     cur["proposals"] += new
     cur["proposals"].sort(key=lambda p: p.get("rank", 999))
     json.dump(cur, open(out_path, "w"))

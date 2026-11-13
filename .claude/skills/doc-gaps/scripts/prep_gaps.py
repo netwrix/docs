@@ -132,7 +132,7 @@ def _norm_ranked(g, label):
     return dict(id=f"{label}-{g['id']}", src=label, dim=g.get("dimension", ""), name=g.get("name", g["id"]),
                 page=g.get("target_page", ""), missing=g.get("what_missing", ""), score=g.get("final_score", 0),
                 conf=g.get("confidence", "low"), tier=g.get("tier", ""), impact=g.get("impact"), demand=g.get("demand"),
-                effort=g.get("effort", "M"), links=g.get("links") or [], cite=g.get("citation", ""), verdict=g.get("verdict"))
+                effort=g.get("effort", "M"), links=list(dict.fromkeys((g.get("links") or []) + [u.strip() for u in (g.get("citation") or "").split(";") if u.strip().startswith("http")])), cite=g.get("citation", ""), verdict=g.get("verdict"))
 
 
 def _best_pages(targets):
