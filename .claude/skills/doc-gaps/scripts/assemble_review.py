@@ -77,7 +77,7 @@ def main():
             gl.append(dict(g, item=re.sub(rf"^{re.escape(g['id'])}\s+", "", r.get("item", g["id"])), dimension=r.get("dimension", ""),
                            effort=r.get("effort", ""), score=r.get("score", 0), missing=r.get("missing", ""),
                            demand_links=links, audit_confidence=r.get("confidence", ""), rank=r.get("rank", 999), tier=r.get("tier") if r.get("tier") in TIERS else "P3"))
-        new.append(dict(id=j["proposal_id"], page=page, short=re.sub(r"^docs/[^/]+/[^/]+/", "", page), summary=j.get("summary", ""),
+        new.append(dict(id=j["proposal_id"], page=page, short=re.sub(r"^docs/[^/]+/(?:(?:\d[\w.]*|current)/)?", "", page), summary=j.get("summary", ""),
                         fix_confidence=j.get("fix_confidence") if j.get("fix_confidence") in LEVELS else "low", fix_confidence_reason=j.get("fix_confidence_reason", ""),
                         why_fix_confidence=j.get("why_fix_confidence", ""), sme_questions=j.get("sme_questions", []),
                         placement_note=j.get("placement_note", ""), gaps=gl, original=orig, proposed=open(mp).read()))

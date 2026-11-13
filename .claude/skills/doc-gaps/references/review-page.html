@@ -170,7 +170,7 @@ async function who(idsIn){
 const nm=i=>i?(names[i]||'A reviewer'):'A reviewer';
 const when=t=>t?new Date(t).toLocaleString([], {dateStyle:'medium',timeStyle:'short'}):'';
 /* a reviewer edit holds the whole page text and a page can carry several gaps: use the newest edit made on any gap of the same proposal */
-const pageEdit=x=>{let b=null;G.forEach(y=>{if(y.p.id===x.p.id){const d=DEC[y.g.id];if(d&&d.edited&&(!b||String(d.at)>String(b.at)))b=d}});return b?b.edited:null};
+const pageEdit=x=>{let b=null;G.forEach(y=>{if(y.p.id===x.p.id){const d=DEC[y.g.id];if(d&&typeof d.edited==='string'&&(!b||String(d.at)>String(b.at)))b=d}});return b?(b.edited||null):null}; /* an empty string means the reviewer reverted to the drafter's text */
 const noFix=x=>x.g.verdict==='already_covered'||x.g.verdict==='not_user_facing';
 const VL={real_gap:'real gap',contradicted:'contradicts the code',partially_covered:'partly covered',already_covered:'already covered',not_user_facing:'not user-facing'};
 
@@ -183,7 +183,7 @@ async function decide(x,status,extra){
   if(extra.comment)comments.push({by:me,at:new Date().toISOString(),text:extra.comment,kind:status});
   const edited=('edited' in extra)?extra.edited:(cur.edited||null);
   const body={status,by:me,at:new Date().toISOString(),comments,reason:status==='rejected'?extra.reason:'',edited,proposal:x.p.id,page:x.p.page};
-  try{await dbc.doc('decisions/'+x.g.id).set(body)}catch(e){note('Could not save: '+(e.message||e.code))}
+  try{await dbc.doc('decisions/'+x.g.id).set(body);document.querySelectorAll('#view textarea:not(#ed)').forEach(t=>{t.value=''});if(!editing)draw()}catch(e){note('Could not save: '+(e.message||e.code))}
 }
 function note(t){const n=$('#note');if(n){n.textContent=t;n.hidden=false}}
 
@@ -305,7 +305,7 @@ function codeEv(g){
 }
 function docEv(g){
   const e=g.evidence||{};let h='';
-  if((e.docs_checked||[]).length)h+='<h3>Docs checked</h3><ul>'+e.docs_checked.map(c=>`<li><span class="mono">${esc((c.path||'').replace(/^docs\/[^/]+\/[^/]+\//,''))}</span>: ${esc(c.finding)}${c.quote?`<div class="quote">${esc(c.quote)}</div>`:''}</li>`).join('')+'</ul>';
+  if((e.docs_checked||[]).length)h+='<h3>Docs checked</h3><ul>'+e.docs_checked.map(c=>`<li><span class="mono">${esc((c.path||'').replace(/^docs\/[^/]+\/(?:(?:\d[\w.]*|current)\/)?/,''))}</span>: ${esc(c.finding)}${c.quote?`<div class="quote">${esc(c.quote)}</div>`:''}</li>`).join('')+'</ul>';
   const th=(e.threads||[]).concat(g.demand_links||[]).filter((v,i,a)=>v&&a.indexOf(v)===i);
   if(th.length)h+='<h3>Community demand</h3><ul>'+th.map(u=>safeUrl(u)?`<li><a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//,''))}</a></li>`:`<li class="muted">${esc(u)}</li>`).join('')+'</ul>';
   if((e.searched_terms||[]).length)h+=`<h3>Searched terms</h3><div class="muted">${e.searched_terms.map(esc).join(', ')}</div>`;
@@ -372,7 +372,7 @@ function drawActions(x){
   on('ap',()=>decide(x,'approved',{}));
   on('ed1',()=>{editing=true;drawActions(x)});
   on('cancel',()=>{editing=false;drawActions(x)});
-  on('saveed',()=>{const t=$('#ed').value;decide(x,'hold',{edited:t===p.proposed?null:t,comment:val()||'Edited the proposed text.'}).then(()=>{editing=false;draw()})});
+  on('saveed',()=>{const t=$('#ed').value;decide(x,'hold',{edited:t===p.proposed?'':t,comment:val()||'Edited the proposed text.'}).then(()=>{editing=false;draw()})});
   on('rc',()=>{const c=val();if(!c){note('Write a comment first.');return}decide(x,'hold',{comment:c})});
   on('rj',()=>{const c=val();if(!c){note('A reason is required to reject.');return}decide(x,'rejected',{reason:c,comment:c})});
   on('addr',()=>decide(x,'pending',{comment:val()||'Marked addressed.'}));

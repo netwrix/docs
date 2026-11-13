@@ -29,22 +29,27 @@ import argparse, collections, json, os, re, sys
 
 
 def norm_target(t, prefix):
-    """Audit targets look like 'path (note)', 'NEW path (note)' or 'New page path'. Return 'docs/.../path (note)'."""
-    t = (t or "").replace("`", "")
-    m = re.match(r"^\s*(new(?:\s+page)?\s*:?\s+)?(\S+)(.*)$", t, re.I)
-    if m:  # drop trailing punctuation and make an absolute path relative to its docs/ folder
-        p = re.sub(r"(\.md)[.)\]]+$", r"\1", m.group(2).rstrip(",;:"))
-        if p.startswith("/") and "docs/" in p:
-            p = p[p.rindex("/docs/") + 1:] if "/docs/" in p else p
-        t = t[:m.start(2)] + p + t[m.end(2):]
-        m = re.match(r"^\s*(new(?:\s+page)?\s*:?\s+)?(\S+)(.*)$", t, re.I)
-    if not m or not m.group(2).endswith(".md"):
-        return (t or "").strip()  # no usable page path ('new page', free text): batches() gives it its own entry
-    new, path, rest = m.group(1), m.group(2), m.group(3).strip()
-    if prefix and not path.startswith("docs/") and path.endswith(".md"):
-        path = prefix.rstrip("/") + "/" + path
-    note = ("NEW page. " if new else "") + rest
-    return (path + " " + note).strip()
+    """Audit targets are free text: 'path (note)', 'NEW path (note)', 'New page: path', 'Extend path ...'.
+    Find the first token that is a .md path; return 'docs/.../path NOTE'. No path: return the text unchanged
+    (batches() then gives the gap its own NEW:<id> entry)."""
+    toks = (t or "").replace("`", "").split()
+    for k, tok in enumerate(toks):
+        p = re.sub(r"(\.md)[.)\]]+$", r"\1", tok.rstrip(",;:"))
+        if not p.endswith(".md"):
+            continue
+        lead, rest = toks[:k], toks[k + 1:]
+        new = any(w.lower().strip(":") in ("new", "create", "add") for w in lead) and not any(w.lower() == "extend" for w in lead)
+        if p.startswith("/"):  # absolute path: cut it back to the docs/ folder
+            if prefix and prefix in p:
+                p = p[p.index(prefix):]
+            elif "/docs/" in p:
+                p = p[p.rindex("/docs/") + 1:]
+        if prefix and not p.startswith("docs/"):
+            p = prefix.rstrip("/") + "/" + p
+        words = [w for w in lead if w.lower().strip(":") not in ("new", "page")]
+        note = " ".join(([ "NEW page." ] if new else []) + words + rest)
+        return (p + " " + note).strip()
+    return (t or "").strip()
 
 
 def convert(run, prefix=""):
@@ -125,6 +130,16 @@ def merge_prep(out, runs):
         src = src if isinstance(src, list) else src.get("gaps", [])
         for g in src:
             allg.append(g if "dim" in g and g.get("src") else _norm_ranked(g, label))
+        if not path.endswith(".json"):  # the run's deferred API gaps and troubleshooting items join the merge too
+            for extra, verdict in (("deferred-api.json", None), ("out-of-scope.json", "troubleshooting")):
+                if os.path.exists(f"{path}/{extra}"):
+                    for g in json.load(open(f"{path}/{extra}")):
+                        n = _norm_ranked(g, label)
+                        if extra == "deferred-api.json":
+                            n["dim"] = "api"
+                        if verdict:
+                            n["verdict"] = verdict
+                        allg.append(n)
     ids = [g["id"] for g in allg]
     assert len(ids) == len(set(ids)), "duplicate ids after prefixing; use distinct run labels"
     json.dump(allg, open(f"{out}/runs.json", "w"), indent=1)
@@ -179,7 +194,8 @@ def merge_group(out):
                       verdict=max(vs, key=lambda k: VRANK.get(k, 0)) if vs else None,
                       effort=max((g["effort"] for g in m if g.get("effort")), key=lambda e: "SML".index(str(e).upper()[:1]) if str(e).upper()[:1] in ("S", "M", "L") else 1, default="M"),
                       links=sorted({l for g in m for l in (g.get("links") or [])}),
-                      cite=" ; ".join(g["cite"] for g in m if g.get("cite"))[:400], prior_impact=[g.get("impact") for g in m])
+                      cite=" ; ".join(g["cite"] for g in m if g.get("cite"))[:400], prior_impact=[g.get("impact") for g in m],
+                      score=min((g["score"] for g in m if isinstance(g.get("score"), (int, float))), default=None))
             merged.append(mg)
             if mg["verdict"] is None and dim != "api":
                 pre_fix.append(dict(mid=mg["mid"], name=mg["name"], page=mg["pages"], missing=mg["missing"], cite=mg["cite"], links=mg["links"]))
@@ -252,7 +268,7 @@ def merge_final(out, cutoffs):
     for m in ranked:
         page = (m["pages"][0] if m["pages"] else "new page")
         ga.append(dict(id=m["mid"], name=m["name"], dimension=m["dim"], tier=m["tier"], confidence=m["conf"], confidence_reason=m["conf_why"],
-                       final_score=0 if m["verdict"] in ("real_gap", "contradicted") else 1, what_missing=m["missing"], target_page=page, effort=m["effort"],
+                       final_score=m["score"] if m.get("score") is not None else (0 if m["verdict"] in ("real_gap", "contradicted") else 1), what_missing=m["missing"], target_page=page, effort=m["effort"],
                        impact=m["impact"], demand=m["demand"], citation="; ".join(m["links"] + ([m["cite"]] if m["cite"] else [])),
                        links=m["links"], verdict=m["verdict"], runs="".join(m["runs"]), source_ids=m["ids"], needs_human_review=m["conf"] == "low"))
     json.dump(ga, open(f"{out}/gaps-ranked.json", "w"), indent=1)

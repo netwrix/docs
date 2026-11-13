@@ -81,9 +81,9 @@ def main():
                                 pos.append((off, n)); parts.append(t); off += len(t) + 1
                         flat[fp] = (" ".join(parts), pos)
                     text, pos = flat[fp]
-                    idx = text.find(q[:60])
+                    idx = text.find(q)  # the whole quote, so a repeated prefix elsewhere cannot win
                     hit_line = None
-                    if idx >= 0 and q in text:
+                    if idx >= 0:
                         for off, n in pos:
                             if off <= idx:
                                 hit_line = n
