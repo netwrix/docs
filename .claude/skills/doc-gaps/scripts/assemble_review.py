@@ -13,7 +13,9 @@ several proposals goes to the one with a real fix (so a drafter that moved a gap
 does not leave a duplicate). Proposals whose gaps are all no-fix get proposed == original.
 Prints any gap that has no drafted proposal so the caller can redo it.
 """
-import argparse, glob, json, os, re, sys
+import argparse, datetime, functools, glob, json, os, re, sys
+
+open = functools.partial(open, encoding="utf-8")  # never the platform default (cp1252 on Windows)
 
 LEVELS = ("high", "medium", "low")
 TIERS = ("P0", "P1", "P2", "P3")
@@ -104,6 +106,9 @@ def main():
         p["title"] = p["gaps"][0]["item"] if len(p["gaps"]) == 1 else " + ".join(g["id"] for g in p["gaps"][:3]) + (" +" if len(p["gaps"]) > 3 else "")
 
     if a.replace:  # drop the old entries for gaps that were redrafted
+        rev = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+        for p in new:
+            p["rev"] = rev  # the page ignores decisions and edits saved before this moment
         redone = {g["id"] for p in new for g in p["gaps"]}
         for p in cur["proposals"]:
             p["gaps"] = [g for g in p["gaps"] if g["id"] not in redone]

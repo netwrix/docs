@@ -11,7 +11,9 @@ and adds: snippet [{n, t, hit}] (the cited lines plus CONTEXT lines either side)
 "no" if not found), and url (BLOB_BASE/path#Lstart-Lend, when --blob-base is given, for example
 https://github.com/<org>/<repo>/blob/<commit>). Prints every citation whose quote could not be found.
 """
-import argparse, json, os, re
+import argparse, functools, json, os, re
+
+open = functools.partial(open, encoding="utf-8")  # never the platform default (cp1252 on Windows)
 
 CAP = 30
 LONG = 240

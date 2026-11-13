@@ -25,7 +25,9 @@
       Reads OUT/impact-out-*.json, computes priority, writes OUT/gaps-ranked.json (the audit's shape, plus
       verdict, runs and source_ids), OUT/merged-final.json and OUT/dropped-merge.json. Then run convert.
 """
-import argparse, collections, glob, json, os, re, sys
+import argparse, collections, functools, glob, json, os, re, sys
+
+open = functools.partial(open, encoding="utf-8")  # never the platform default (cp1252 on Windows)
 
 
 def norm_target(t, prefix):

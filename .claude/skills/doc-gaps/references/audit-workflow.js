@@ -54,6 +54,7 @@ const INV = {
 if (!COMMUNITY) delete INV.signals
 if (scope.hasApi === false) delete INV.api // no public API: skip the inventory and its Gate 1 review
 const invKeys = Object.keys(INV)
+const unreviewed = [] // inventories Opus rejected whose retry failed
 let invs = await parallel(invKeys.map(k => () => agent(`${SCOPE}\n\n${INV[k]}`, { label: `inv-${k}`, phase: 'Inventories', model: S, schema: FILE_RET })))
 invs = Object.fromEntries(invKeys.map((k, i) => [k, invs[i]]))
 log('Inventory counts: ' + invKeys.map(k => `${k}=${invs[k] ? invs[k].count : 'FAILED'}`).join(', '))
@@ -67,7 +68,7 @@ const redo = [...retryKeys.map(k => ({ k, ins: (gate1[invKeys.filter(x => invs[x
 if (redo.length) {
   log('Gate 1 retries: ' + redo.map(r => r.k).join(', '))
   const rr = await parallel(redo.map(r => () => agent(`${SCOPE}\n\n${INV[r.k]}\n\nOpus review feedback you must address (overwrite the file):\n${r.ins}`, { label: `inv-${r.k}-retry`, phase: 'Gate 1', model: S, schema: FILE_RET })))
-  redo.forEach((r, i) => { if (rr[i]) invs[r.k] = rr[i] })
+  redo.forEach((r, i) => { if (rr[i]) invs[r.k] = rr[i]; else if (invs[r.k]) { unreviewed.push(r.k); log(`inventory ${r.k}: retry failed, keeping the version Opus rejected`) } })
 }
 for (const k of invKeys) if (!invs[k]) { if (k === 'signals') log('Community signals inventory failed; continuing without demand evidence'); else throw new Error(`inventory ${k} failed twice; resume the run (an unaudited dimension would skew the score)`) }
 const HAS_SIGNALS = !!(invs.signals && invs.signals.count > 0)
@@ -92,6 +93,7 @@ const judged = await parallel(jobs.map(j => () => agent(`${SCOPE}\n\nYou are Jud
   { label: `judge${j.L}-${j.c.id}`, phase: 'Panel', model: S, schema: FILE_RET })))
 const missing = jobs.filter((j, i) => !judged[i]).map(j => `${j.L}-${j.c.id}`)
 if (missing.length) log('Judge jobs failed (no silent caps): ' + missing.join(', '))
+for (const c of chunks) { const votes = jobs.filter((j, i) => j.c.id === c.id && judged[i]).length; if (votes === 0) throw new Error(`chunk ${c.id}: all judges failed; resume the run (zero-vote items would skew coverage)`) }
 
 // ---------- Phase 3
 phase('Reconcile')
@@ -164,7 +166,7 @@ const RPT = `Write ${REPORT} (markdown, content only; follow Netwrix doc style l
 2. Inter-judge agreement (share within 1 point), overall and per dimension.
 3. Ranked gap list (items scoring 0-1 only; a contradiction, where the docs state something the code disproves, is a gap and is marked 'contradiction' in a Type column), grouped P0-P3, columns: rank, priority, type (missing, partial or contradiction), confidence, item, dimension, current score, what's missing, suggested page/location, demand evidence (links), effort (S/M/L), confidence reason. Within a tier order by confidence (high first). Low-confidence gaps go in a separate "Needs human review" table at the end of each tier.
 4. Out of scope: gaps that are mainly troubleshooting (out-of-scope.json), one line each. Deferred API gaps (deferred-api.json), as a count and list, unranked. Documented but not in code (from stale.json). Then 'Community signals not tied to a code gap' (from signal-candidates.json): threads that suggest a coverage gap but did not map to any code item, each marked 'code-backed candidate' or 'out of scope'.
-5. Methodology and limits: sources (code snapshot ${A.codeRef}, docs path ${DOCS}, Netwrix Community ${COMMUNITY ? 'window ' + A.communityWindow : 'not used (code-only run; omit the Community signals section)'}; ${SLACK}), models by role (Opus: planning, Gate 1 inventory sampling, tiebreaks, impact and priority, final check; Sonnet: inventories, judges, spot-check, verification, effort, drafting), failed agents/missing judge votes (${missing.length ? missing.join(', ') : 'none'}), Gate 1 retries (${redo.map(r => r.k).join(', ') || 'none'}), anything inaccessible.
+5. Methodology and limits: ${unreviewed.length ? 'state that the Opus review rejected these inventories and the retry failed, so they were used as built: ' + unreviewed.join(', ') + '; ' : ''}sources (code snapshot ${A.codeRef}, docs path ${DOCS}, Netwrix Community ${COMMUNITY ? 'window ' + A.communityWindow : 'not used (code-only run; omit the Community signals section)'}; ${SLACK}), models by role (Opus: planning, Gate 1 inventory sampling, tiebreaks, impact and priority, final check; Sonnet: inventories, judges, spot-check, verification, effort, drafting), failed agents/missing judge votes (${missing.length ? missing.join(', ') : 'none'}), Gate 1 retries (${redo.map(r => r.k).join(', ') || 'none'}), anything inaccessible.
 6. Confidence summary: count of gaps at each confidence level per priority tier, and the share of the overall score resting on low-confidence items. Show the overall score as a range (low-confidence gaps counted as gaps vs excluded).
 Every number must be computed from the data files by script, not by hand. Do not edit docs. Return the path, score range, and top 10 gaps.`
 const RET = { type: 'object', properties: { path: { type: 'string' }, scoreLow: { type: 'number' }, scoreHigh: { type: 'number' }, scoreMain: { type: 'number' }, top10: { type: 'array', items: { type: 'object', properties: { item: { type: 'string' }, confidence: { type: 'string' }, tier: { type: 'string' } }, required: ['item', 'confidence'] } } }, required: ['path', 'scoreLow', 'scoreHigh', 'top10'] }
