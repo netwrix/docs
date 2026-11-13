@@ -31,7 +31,7 @@ def main():
     path = f"{a.run}/review/data.json"
     j = json.load(open(path))
     props = j["proposals"] if isinstance(j, dict) else j
-    tot = ok = fix = bad = 0
+    tot = ok = fix = bad = unv = 0
     root_real = os.path.realpath(a.code)
     cache = {}
     for p in props:
@@ -68,19 +68,26 @@ def main():
                 if hi - lo + 1 > CAP:
                     hi = lo + CAP - 1
                 win = norm(" ".join(lines[lo - 1:hi]))
-                status = "window" if (not q or q in win) else None
+                status = ("unchecked" if not q else "window") if (not q or q in win) else None
+                if sym and not l1:
+                    status = None  # symbol not found: the snippet is only the top of the file
                 if status is None:
                     whole = norm(" ".join(lines))
                     if q and q in whole:
-                        for i in range(len(lines)):
-                            if q[:60] in norm(" ".join(lines[i:i + 3])):
-                                s = e = i + 1
-                                lo, hi = max(1, s - a.context), min(len(lines), e + a.context)
-                                status = "file"
-                                break
+                        hits = [i for i in range(len(lines)) if q[:60] in norm(" ".join(lines[i:i + 3]))]
+                        if hits:
+                            # windows starting up to 2 lines early also contain the quote: the last hit of the first run is its real first line
+                            i = hits[0]
+                            while i + 1 in hits:
+                                i += 1
+                            s = e = i + 1
+                            lo, hi = max(1, s - a.context), min(len(lines), e + a.context)
+                            status = "file"
                 c["verified"] = status or "no"
                 if status is None:
                     bad += 1; print("quote not found:", g["id"], c.get("cite"), "|", (c.get("quote") or "")[:60])
+                elif status == "unchecked":
+                    unv += 1; print("no quote to check:", g["id"], c.get("cite"))
                 elif status == "window":
                     ok += 1
                 else:
@@ -90,7 +97,7 @@ def main():
                 if a.blob_base:
                     c["url"] = f"{a.blob_base.rstrip('/')}/{rel}#L{s}" + (f"-L{e}" if e != s else "")
     json.dump(j, open(path, "w"))
-    print(f"{tot} code citations: {ok} verified in place, {fix} re-anchored, {bad} not verified")
+    print(f"{tot} code citations: {ok} verified in place, {fix} re-anchored, {unv} had no quote to check, {bad} not verified")
 
 
 if __name__ == "__main__":

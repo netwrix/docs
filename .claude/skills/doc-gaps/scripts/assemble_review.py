@@ -73,7 +73,7 @@ def main():
                 continue
             links = r.get("demand_links") or [u.strip() for u in re.split(r"<br>|;", r.get("demand", "")) if u.strip().startswith("http")]
             g = dict(g, gap_confidence=g.get("gap_confidence") if g.get("gap_confidence") in LEVELS else "low")  # drafter output: allowlist
-            gl.append(dict(g, item=re.sub(r"^\S+ ", "", r.get("item", g["id"])), dimension=r.get("dimension", ""),
+            gl.append(dict(g, item=re.sub(rf"^{re.escape(g['id'])}\s+", "", r.get("item", g["id"])), dimension=r.get("dimension", ""),
                            effort=r.get("effort", ""), score=r.get("score", 0), missing=r.get("missing", ""),
                            demand_links=links, audit_confidence=r.get("confidence", ""), rank=r.get("rank", 999), tier=r.get("tier") if r.get("tier") in TIERS else "P3"))
         new.append(dict(id=j["proposal_id"], page=page, short=re.sub(r"^docs/[^/]+/[^/]+/", "", page), summary=j.get("summary", ""),

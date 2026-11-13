@@ -133,6 +133,10 @@ def merge_prep(out, runs):
 def merge_group(out):
     G = {g["id"]: g for g in _load_runs(out)}
     merged, pre_fix = [], []
+    # every area with gaps must have a match file: a failed matcher agent must not drop a whole area silently
+    for fn in sorted(os.listdir(out)):
+        if fn.startswith("in-") and fn.endswith(".json") and json.load(open(f"{out}/{fn}")):
+            assert os.path.exists(f"{out}/match-{fn[3:]}"), f"no match file for area {fn[3:-5]}: its matcher agent failed; re-run it"
     for fn in sorted(os.listdir(out)):
         if not (fn.startswith("match-") and fn.endswith(".json")):
             continue
