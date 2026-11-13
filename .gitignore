@@ -77,3 +77,4 @@ touch_files.py
 # doc-gaps run state (exported product code) and audit reports
 .doc-gaps/
 coverage-report-*.md
+__pycache__/
