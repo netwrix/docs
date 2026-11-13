@@ -65,7 +65,7 @@ mustAll(impRes, 'impact')
 
 // ---------- Final
 phase('Final')
-const fin = await agentReq(`Run exactly: ${PY} merge-final --out ${q(OUT)}${A.cutoffs ? ' --cutoffs ' + A.cutoffs : ''}\nIf the command exits non-zero, stop: return ok false, the error text in note and no batches (do not run anything after it). Otherwise return ok true. Only after merge-final succeeded, run: ${PY} convert --run ${q(OUT)}${A.docsPrefix ? ' --docs-prefix ' + q(A.docsPrefix) : ''}\nReturn the tier x confidence counts from ${OUT}/gaps-ranked.json (python3 one-liner) in note and the path ${OUT}/gaps-ranked.json as the single batch.`,
+const fin = await agentReq(`Run exactly: ${PY} merge-final --out ${q(OUT)}${A.cutoffs ? ' --cutoffs ' + q(A.cutoffs) : ''}${A.effort ? ' --adj ' + q(A.effort) : ''}\nIf the command exits non-zero, stop: return ok false, the error text in note and no batches (do not run anything after it). Otherwise return ok true. Only after merge-final succeeded, run: ${PY} convert --run ${q(OUT)}${A.docsPrefix ? ' --docs-prefix ' + q(A.docsPrefix) : ''}\nReturn the tier x confidence counts from ${OUT}/gaps-ranked.json (python3 one-liner) in note and the path ${OUT}/gaps-ranked.json as the single batch.`,
   { label: 'merge-final', phase: 'Final', model: S, schema: BATCHES })
 for (const [r, w] of [[prep, 'merge-prep'], [ip, 'merge-impact-prep'], [fin, 'merge-final']]) if (!r.ok) throw new Error(w + ' failed: ' + (r.note || 'no detail'))
 return { gapsRanked: `${OUT}/gaps-ranked.json`, gaps: `${OUT}/draft-gaps.json`, counts: fin.note }

@@ -40,14 +40,18 @@ def norm_target(t, prefix):
         if not p.endswith(".md"):
             continue
         lead, rest = toks[:k], toks[k + 1:]
-        new = any(w.lower().strip(":") in ("new", "create", "add") for w in lead) and not any(w.lower() == "extend" for w in lead)
+        new = bool(lead) and lead[0].lower().strip(":") == "new"  # only an explicit leading NEW; the file system decides whether the page exists
         if p.startswith("/"):  # absolute path: cut it back to the docs/ folder
             if prefix and prefix in p:
                 p = p[p.index(prefix):]
             elif "/docs/" in p:
                 p = p[p.rindex("/docs/") + 1:]
         if prefix and not p.startswith("docs/"):
-            p = prefix.rstrip("/") + "/" + p
+            tail = prefix.split("/", 1)[1] if "/" in prefix else ""
+            if tail and (p.startswith(tail + "/") or p == tail):
+                p = prefix.split("/", 1)[0] + "/" + p  # already has the product/version folders
+            else:
+                p = prefix.rstrip("/") + "/" + p
         words = [w for w in lead if w.lower().strip(":") not in ("new", "page")]
         note = " ".join(([ "NEW page." ] if new else []) + words + rest)
         return (p + " " + note).strip()
@@ -91,6 +95,9 @@ def batches(run, root, tiers, rnd, agents, skip_done, ids=None):
         g = dict(g, target_note=note)
         grp.setdefault(page, []).append(g)
     items = sorted(grp.items(), key=lambda kv: -len(kv[1]))
+    if not items:
+        print("no gaps to draft for these tiers or ids: no batch files written")
+        return
     n = max(1, min(agents, len(items)))
     bins, load = [[] for _ in range(n)], [0.0] * n
     for page, v in items:
@@ -238,7 +245,8 @@ def merge_impact_prep(out):
     print(len(act), "gaps need an impact rating;", sum(1 for m in M if m["verdict"] is None), "have no verdict (api or unchecked)")
 
 
-def merge_final(out, cutoffs):
+def merge_final(out, cutoffs, adj=None):
+    adj = adj or ADJ
     p0, p1, p2 = cutoffs
     M = json.load(open(f"{out}/merged-pre.json"))
     imp = {}
@@ -265,7 +273,7 @@ def merge_final(out, cutoffs):
             i["impact"] = 1
         m["impact"], m["impact_reason"] = i["impact"], i.get("reason", "")
         m["demand"] = min(3, len(m["links"]))
-        m["priority_score"] = round(m["impact"] * max(m["demand"], 1) * ADJ.get(m["effort"], 1.0), 2)
+        m["priority_score"] = round(m["impact"] * max(m["demand"], 1) * adj.get(m["effort"], 1.0), 2)
         t = "P0" if m["priority_score"] >= p0 else "P1" if m["priority_score"] >= p1 else "P2" if m["priority_score"] >= p2 else "P3"
         if m["impact"] == 3 and m["conf"] == "high":
             t = "P0"
@@ -296,6 +304,7 @@ if __name__ == "__main__":
     ap.add_argument("--out")
     ap.add_argument("--runs", nargs="+")
     ap.add_argument("--cutoffs", default="4,3,1.6")
+    ap.add_argument("--adj", default="", help="merge-final: effort factors like S=1.2,M=1.0,L=0.8 (the audit's priority-params.json)")
     ap.add_argument("--docs-prefix", default="", help="convert: docs folder of the audited version, e.g. docs/identitymanager/current, prefixed to relative target pages")
     ap.add_argument("--docs-root")
     ap.add_argument("--tiers", default="P0,P1")
@@ -311,7 +320,7 @@ if __name__ == "__main__":
     elif a.cmd == "merge-impact-prep":
         merge_impact_prep(a.out)
     elif a.cmd == "merge-final":
-        merge_final(a.out, [float(x) for x in a.cutoffs.split(",")])
+        merge_final(a.out, [float(x) for x in a.cutoffs.split(",")], {k: float(v) for k, v in (kv.split("=") for kv in a.adj.split(",") if kv)} or None)
     elif a.cmd == "convert":
         convert(a.run, a.docs_prefix)
     else:

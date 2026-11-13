@@ -158,9 +158,10 @@ log('Tier x confidence: ' + prio.counts)
 
 // ---------- Phase 4
 phase('Report')
-const staleP = agentReq(`${SCOPE}\n\nFind "documented but not in code": doc pages under ${DOCS} describing features, settings, UI elements, or commands that do not exist in the code snapshot (possible stale content). Sample efficiently: extract concrete named claims (setting names, menu items, cmdlets, ports, services) from the docs by grep and check each against the code. Report only findings you verified absent by searching code with synonyms. Write ${OUT}/stale.json as [{doc_path, claim, why_stale, confidence}]. Return {path,count}.`,
+const staleP = agent(`${SCOPE}\n\nFind "documented but not in code": doc pages under ${DOCS} describing features, settings, UI elements, or commands that do not exist in the code snapshot (possible stale content). Sample efficiently: extract concrete named claims (setting names, menu items, cmdlets, ports, services) from the docs by grep and check each against the code. Report only findings you verified absent by searching code with synonyms. Write ${OUT}/stale.json as [{doc_path, claim, why_stale, confidence}]. Return {path,count}.`,
   { label: 'stale-content', phase: 'Report', model: S, schema: FILE_RET })
 const stale = await staleP
+if (!stale) log('stale-content agent failed: the report will lack the Documented-but-not-in-code section')
 
 const RPT = `Write ${REPORT} (markdown, content only; follow Netwrix doc style loosely, but this is a report, not a doc page; no frontmatter needed). Data files in ${OUT}: scores.json, agreement.json, gaps-ranked.json, dropped.json, dropped-recheck.json, out-of-scope.json, deferred-api.json (if any), stale.json, priority-params.json, scope.md, and judges' raw files if needed. Sections:
 1. Scorecard: coverage % per dimension (features 35, API 20, procedures/examples 25; weights are divided by their sum so the overall is 0-100; ${scope.hasApi ? 'API coverage is scored; its gaps are ' + (INCLUDE_API ? 'ranked' : 'deferred and listed unranked') : 'no API: drop it'}), weighted overall 0-100, and show the formula with numbers. Community questions are not a scored dimension; they feed demand only.

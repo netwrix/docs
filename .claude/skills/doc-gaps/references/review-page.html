@@ -109,7 +109,7 @@ const OK=()=>!!dbc;
 const ids=['approved','hold','rejected','pending'];
 const STS=['approved','hold','rejected','pending'],LVS=['high','medium','low'],TRS=['P0','P1','P2','P3'];
 /* a decision saved before the proposal was redrafted (p.rev) no longer applies to the new text */
-const fresh=(d,p)=>!p.rev||String(d.at)>=String(p.rev);
+const fresh=(d,p)=>!p.rev||(!!d.at&&String(d.at)>=String(p.rev));
 const st=x=>{const d=DEC[x.g.id];const v=d&&fresh(d,x.p)&&d.status;return STS.includes(v)?v:'pending'};
 
 /* ---------- markdown helpers ---------- */
@@ -310,10 +310,10 @@ function codeEv(g){
 }
 function docEv(g){
   const e=g.evidence||{};let h='';
-  if((e.docs_checked||[]).length)h+='<h3>Docs checked</h3><ul>'+e.docs_checked.map(c=>`<li><span class="mono">${esc((c.path||'').replace(/^docs\/[^/]+\/(?:(?:\d[\w.]*|current)\/)?/,''))}</span>: ${esc(c.finding)}${c.quote?`<div class="quote">${esc(c.quote)}</div>`:''}</li>`).join('')+'</ul>';
+  if((e.docs_checked||[]).length)h+='<h3>Docs checked</h3><ul>'+e.docs_checked.map(c=>`<li><span class="mono">${esc(String(c.path||'').replace(/^docs\/[^/]+\/(?:(?:\d[\w.]*|current)\/)?/,''))}</span>: ${esc(c.finding)}${c.quote?`<div class="quote">${esc(c.quote)}</div>`:''}</li>`).join('')+'</ul>';
   const th=(e.threads||[]).concat(g.demand_links||[]).filter((v,i,a)=>v&&a.indexOf(v)===i);
-  if(th.length)h+='<h3>Community demand</h3><ul>'+th.map(u=>safeUrl(u)?`<li><a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//,''))}</a></li>`:`<li class="muted">${esc(u)}</li>`).join('')+'</ul>';
-  if((e.searched_terms||[]).length)h+=`<h3>Searched terms</h3><div class="muted">${e.searched_terms.map(esc).join(', ')}</div>`;
+  if(th.length)h+='<h3>Community demand</h3><ul>'+th.map(u=>safeUrl(u)?`<li><a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(String(u).replace(/^https?:\/\//,''))}</a></li>`:`<li class="muted">${esc(u)}</li>`).join('')+'</ul>';
+  if((e.searched_terms||[]).length)h+=`<h3>Searched terms</h3><div class="muted">${e.searched_terms.map(t=>esc(String(t))).join(', ')}</div>`;
   if(!h)return '';
   return `<details class="qa small"><summary>Docs checked, Community threads and searched terms</summary><div class="qabody">${h}</div></details>`;
 }

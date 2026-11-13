@@ -44,7 +44,7 @@ def main():
                     print("skipped a malformed citation (not an object):", g.get("id"), str(c)[:60]); continue
                 tot += 1
                 c.pop("url", None)  # never keep a drafter-supplied link; only the audited commit's blob URL is set below
-                m = re.match(r"^(.+?)(?::L?(\d+)(?:[-,]L?(\d+))?)?\s*$", (c.get("cite") or "").split(";")[0].strip())
+                m = re.match(r"^(.+?)(?::L?(\d+)(?:-L?(\d+))?(?:,L?\d+(?:-L?\d+)?)*)?\s*$", (c.get("cite") or "").split(";")[0].strip())
                 if not m:
                     c["verified"] = "no"; bad += 1; continue
                 rel, l1, l2 = m.group(1), m.group(2), m.group(3)
