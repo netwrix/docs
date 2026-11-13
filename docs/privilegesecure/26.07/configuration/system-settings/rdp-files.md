@@ -25,11 +25,15 @@ Select **System Settings** > **RDP Options** to open the panel.
 
 To change an option, edit it and click **Save**.
 
-Privilege Secure writes the selected resolution into every RDP file that it generates, whether **Certificate Thumbprint** has a value or not. The resolution is set before the file is signed, so an unsigned file still carries the `desktopwidth` and `desktopheight` values. Windows doesn't require a signature to apply them.
+Privilege Secure writes the selected resolution into every RDP file that it generates, whether **Certificate Thumbprint** has a value. Privilege Secure sets the resolution before it signs the file, so an unsigned file still carries the `desktopwidth` and `desktopheight` values. Windows doesn't require a signature to apply them.
 
 ## Sign RDP files
 
 RDP files that you download from Privilege Secure show as coming from an unknown publisher. To remove the warning, sign the files with a certificate and tell Windows to trust it.
+
+:::note
+Signing the file fixes the unknown publisher warning only. If the RDP client warns that "The identity of the remote computer cannot be verified", replace the certificate that the RDP proxy presents. See [Replace the proxy RDP certificate](/docs/privilegesecure/26.07/configuration/certificates.md#replace-the-proxy-rdp-certificate).
+:::
 
 ### Prerequisites
 
@@ -37,7 +41,7 @@ RDP files that you download from Privilege Secure show as coming from an unknown
 - Permission to edit Group Policy for the client computers.
 - The `IIS_IUSRS` account has read permission on the certificate's private key. Set the permission in `certlm.msc`.
 
-Without the `IIS_IUSRS` permission, the web service log shows "Could not sign RDP file with certificate for RDP Session" with the error "Keyset does not exist", and the file isn't signed.
+Without the `IIS_IUSRS` permission, the web service log shows "Could not sign RDP file with certificate for RDP Session" with the error "Keyset does not exist", and Privilege Secure doesn't sign the file.
 
 ### Add the thumbprint to Privilege Secure
 
