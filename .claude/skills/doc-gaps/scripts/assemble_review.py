@@ -18,6 +18,12 @@ import argparse, datetime, functools, glob, json, os, re, sys
 open = functools.partial(open, encoding="utf-8")  # never the platform default (cp1252 on Windows)
 
 LEVELS = ("high", "medium", "low")
+ALIAS = {"partly_covered": "partially_covered", "partial": "partially_covered", "real": "real_gap", "contradiction": "contradicted"}
+
+
+def norm_verdict(v):
+    v = str(v or "").strip().lower().replace(" ", "_").replace("-", "_")
+    return ALIAS.get(v, v)
 TIERS = ("P0", "P1", "P2", "P3")
 
 NOFIX = ("already_covered", "not_user_facing")
@@ -48,29 +54,20 @@ def main():
     # round r1 matches __r1.json and per-agent __r1b3.json, never __r10
     pat = re.compile(rf"__{re.escape(a.round)}(b\d+)?\.json$")
     files = sorted(f for f in glob.glob(f"{run}/proposals/*.json") if pat.search(f))
-    ids_seen = {}
-    good = []
-    for jp in files:  # one truncated or malformed drafter file must not stop the others
+    good, seen_ids = [], set()
+    for jp in files:  # parse each drafter file once; one truncated or malformed file must not stop the others
         try:
-            jj = json.load(open(jp))
-            assert isinstance(jj, dict) and jj.get("proposal_id") and jj.get("page") and isinstance(jj.get("gaps"), list) and all(isinstance(x, dict) and x.get("id") for x in jj["gaps"])
+            j = json.load(open(jp))
+            assert isinstance(j, dict) and j.get("proposal_id") and j.get("page") and isinstance(j.get("gaps"), list) and all(isinstance(x, dict) and x.get("id") for x in j["gaps"])
         except Exception as ex:
             print("unreadable or incomplete proposal, skipped:", jp, "-", type(ex).__name__, file=sys.stderr)
             continue
-        good.append(jp)
-    files = good
-    for jp in files:
-        pid = json.load(open(jp)).get("proposal_id")
-        if pid in ids_seen:
-            print("DUPLICATE proposal_id (two agents wrote the same page in one round):", pid, jp, ids_seen[pid], file=sys.stderr)
-        ids_seen[pid] = jp
-    seen_ids = set()
-    for jp in files:
-        j = json.load(open(jp))
-        if j.get("proposal_id") in seen_ids:
-            print("skipped duplicate proposal_id (its gaps will show as 'no proposal'):", j.get("proposal_id"), jp, file=sys.stderr)
+        if j["proposal_id"] in seen_ids:
+            print("DUPLICATE proposal_id (two agents wrote the same page in one round), skipped; its gaps will show as 'no proposal':", j["proposal_id"], jp, file=sys.stderr)
             continue
-        seen_ids.add(j.get("proposal_id"))
+        seen_ids.add(j["proposal_id"])
+        good.append((jp, j))
+    for jp, j in good:
         mp = jp[:-5] + ".md"
         if not os.path.exists(mp):
             print("missing .md for", jp, file=sys.stderr)
@@ -91,6 +88,7 @@ def main():
                 continue
             links = r.get("demand_links") or [u.strip() for u in re.split(r"<br>|;", r.get("demand", "")) if u.strip().startswith("http")]
             g = dict(g, gap_confidence=g.get("gap_confidence") if g.get("gap_confidence") in LEVELS else "low")  # drafter output: allowlist
+            g["verdict"] = norm_verdict(g.get("verdict"))
             gl.append(dict(g, item=re.sub(rf"^{re.escape(g['id'])}\s+", "", r.get("item", g["id"])), dimension=r.get("dimension", ""),
                            effort=r.get("effort", ""), score=r.get("score", 0), missing=r.get("missing", ""),
                            demand_links=links, audit_confidence=r.get("confidence", ""), rank=r.get("rank", 999), tier=r.get("tier") if r.get("tier") in TIERS else "P3"))

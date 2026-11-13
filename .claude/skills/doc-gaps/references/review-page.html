@@ -137,8 +137,10 @@ function clean(html){
   return DOMPurify.sanitize(html,{USE_PROFILES:{html:true},FORBID_TAGS:['style','form','input','button','textarea','select'],ALLOWED_URI_REGEXP:/^(?:https?|mailto):/i});
 }
 const rend=b=>clean(marked.parse(b,{async:false}));
+const fmOf=md=>{const m=String(md||'').match(/^---\n[\s\S]*?\n---\n?/);return m?m[0]:''};
 function renderedDiff(a,b){
   const parts=Diff.diffArrays(blocks(a),blocks(b));let h='';
+  if(fmOf(a)!==fmOf(b))h+='<div class="notice"><b>Frontmatter changed</b> (shown here as source, the rendered view hides it)'+sourceDiff(fmOf(a),fmOf(b))+'</div>';
   parts.forEach(p=>{
     if(p.added)p.value.forEach(v=>h+='<div class="blk add">'+rend(v)+'</div>');
     else if(p.removed)p.value.forEach(v=>h+='<div class="blk del">'+rend(v)+'</div>');
@@ -207,10 +209,10 @@ let ftier='',fconf='',ffix='';
 
 function legendHTML(){return `<div class="legend">
 <div><h3>Priority: P0 to P3</h3><p>The audit ranks each gap by <b>impact × demand × effort factor</b>.</p>
-<ul><li><span class="pill P0">P0</span> Do now. Score of ${(META.cutoffs||{P0:4}).P0} or more, or a high-impact gap with high confidence.</li>
-<li><span class="pill P1">P1</span> Next. Score of ${(META.cutoffs||{P1:3}).P1} or more.</li>
-<li><span class="pill P2">P2</span> Plan. Score of ${(META.cutoffs||{P2:1.6}).P2} or more.</li>
-<li><span class="pill P3">P3</span> Backlog. Everything below ${(META.cutoffs||{P2:1.6}).P2}.</li></ul>
+<ul><li><span class="pill P0">P0</span> Do now. Score of ${esc(parseFloat((META.cutoffs||{}).P0)||4)} or more, or a high-impact gap with high confidence.</li>
+<li><span class="pill P1">P1</span> Next. Score of ${esc(parseFloat((META.cutoffs||{}).P1)||3)} or more.</li>
+<li><span class="pill P2">P2</span> Plan. Score of ${esc(parseFloat((META.cutoffs||{}).P2)||1.6)} or more.</li>
+<li><span class="pill P3">P3</span> Backlog. Everything below ${esc(parseFloat((META.cutoffs||{}).P2)||1.6)}.</li></ul>
 <p class="muted"><b>Impact</b>: 3 = security or data-loss risk, or a core workflow; 2 = a common task; 1 = an edge case. <b>Demand</b>: 0 to 3 from Community threads in the audit's date range (0 = none, 3 = recurring, recent and unresolved; in a merged run, the number of threads, at most 3). A gap with no thread evidence still ranks, counted as at least demand 1. <b>Effort factor</b>: small fixes rank slightly higher. The exact factors and tier cutoffs for this run are in the coverage report.</p></div>
 <div><h3>Gap confidence</h3><p>How sure the audit is that this is really missing from the docs.</p>
 <ul><li><span class="pill high">high</span> Direct evidence (code, API schema, or 3 or more independent threads) and a thorough docs search.</li>

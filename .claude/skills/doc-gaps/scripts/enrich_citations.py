@@ -43,6 +43,8 @@ def main():
                 if not isinstance(c, dict):
                     print("skipped a malformed citation (not an object):", g.get("id"), str(c)[:60]); continue
                 tot += 1
+                for k in ("snippet", "start", "end", "verified"):
+                    c.pop(k, None)  # drafters do not get to supply the excerpt or its status
                 c.pop("url", None)  # never keep a drafter-supplied link; only the audited commit's blob URL is set below
                 m = re.match(r"^(.+?)(?::L?(\d+)(?:-L?(\d+))?(?:,L?\d+(?:-L?\d+)?)*)?\s*$", (c.get("cite") or "").split(";")[0].strip())
                 if not m:
@@ -80,7 +82,12 @@ def main():
                 if hi - lo + 1 > CAP:
                     hi = lo + CAP - 1
                 win = norm(" ".join(lines[lo - 1:hi]))
-                status = ("unchecked" if (not q or len(q) < 12) else "window") if (not q or len(q) < 12 or q in win) else None  # a very short quote proves nothing
+                if not q:
+                    status = "unchecked"
+                elif q in win:
+                    status = "window" if len(q) >= 12 else "unchecked"  # a very short quote that is present still proves little
+                else:
+                    status = None
                 if sym and not l1:
                     status = None  # symbol not found: the snippet is only the top of the file
                 if status is None and q:
@@ -124,7 +131,7 @@ def main():
     for p in props:
         for g in p["gaps"]:
             for c in (g.get("evidence") or {}).get("code", []):
-                if isinstance(c, dict) and any(risky.search(l.get("t", "")) for l in c.get("snippet") or []):
+                if isinstance(c, dict) and (any(risky.search(l.get("t", "")) for l in c.get("snippet") or []) or risky.search(str(c.get("quote", "")))):
                     print("POSSIBLE SECRET in a published excerpt, check before sharing:", g["id"], c.get("cite"))
     print(f"{tot} code citations: {ok} verified in place, {fix} re-anchored, {unv} had no quote to check, {bad} not verified")
 

@@ -332,6 +332,8 @@ if __name__ == "__main__":
     ap.add_argument("--skip-done", action="store_true")
     ap.add_argument("--ids", default="", help="batches: comma-separated gap ids to (re)draft, ignoring tiers and --skip-done (held or sent-back gaps)")
     a = ap.parse_args()
+    if a.cmd == "batches" and not a.docs_root:
+        ap.error("batches needs --docs-root (the repo root)")
     if a.cmd == "merge-prep":
         merge_prep(a.out, a.runs)
     elif a.cmd == "merge-group":
