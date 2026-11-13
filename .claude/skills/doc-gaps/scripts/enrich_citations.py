@@ -43,6 +43,7 @@ def main():
                 if not isinstance(c, dict):
                     print("skipped a malformed citation (not an object):", g.get("id"), str(c)[:60]); continue
                 tot += 1
+                c.pop("url", None)  # never keep a drafter-supplied link; only the audited commit's blob URL is set below
                 m = re.match(r"^(.+?)(?::L?(\d+)(?:[-,]L?(\d+))?)?\s*$", (c.get("cite") or "").split(";")[0].strip())
                 if not m:
                     c["verified"] = "no"; bad += 1; continue
@@ -77,7 +78,7 @@ def main():
                 if hi - lo + 1 > CAP:
                     hi = lo + CAP - 1
                 win = norm(" ".join(lines[lo - 1:hi]))
-                status = ("unchecked" if not q else "window") if (not q or q in win) else None
+                status = ("unchecked" if (not q or len(q) < 12) else "window") if (not q or len(q) < 12 or q in win) else None  # a very short quote proves nothing
                 if sym and not l1:
                     status = None  # symbol not found: the snippet is only the top of the file
                 if status is None and q:

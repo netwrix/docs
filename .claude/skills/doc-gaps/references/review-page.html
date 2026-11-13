@@ -184,7 +184,7 @@ async function decide(x,status,extra){
   const comments=(cur.comments||[]).slice();
   if(extra.comment)comments.push({by:me,at:new Date().toISOString(),text:extra.comment,kind:status});
   const stale=!fresh(cur,x.p); /* saved before the proposal was redrafted: its page edit no longer applies */
-  const edited=('edited' in extra)?extra.edited:(stale?null:(cur.edited||null));
+  const edited=('edited' in extra)?extra.edited:(stale?null:(typeof cur.edited==='string'?cur.edited:null));
   const nowIso=new Date().toISOString();
   const editedAt=('edited' in extra)?nowIso:(stale?null:(cur.editedAt||null));
   const body={status,by:me,at:nowIso,comments,reason:status==='rejected'?extra.reason:'',edited,editedAt,proposal:x.p.id,page:x.p.page};
