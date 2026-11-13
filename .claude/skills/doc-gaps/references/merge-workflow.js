@@ -12,7 +12,8 @@ export const meta = {
 
 // args: product, productName, version, docsPath, codeDir, outDir (merge run folder), skillDir (this skill's folder),
 //       runs (array of "LABEL=PATH": a run folder with gaps-ranked.json, or a normalized JSON list),
-//       cutoffs (optional "4,3,1.6" = P0,P1,P2 score cutoffs)
+//       docsPrefix (the version docs folder, e.g. docs/identitymanager/current),
+//       cutoffs (optional "4,3,1.6" = P0,P1,P2 score cutoffs), effort (optional "S=1.2,M=1.0,L=0.8")
 const A = args || {}
 for (const k of ['product', 'productName', 'version', 'docsPath', 'codeDir', 'outDir', 'skillDir', 'docsPrefix', 'runs']) {
   if (!A[k]) throw new Error('doc-gaps merge: missing arg ' + k)
@@ -65,7 +66,7 @@ mustAll(impRes, 'impact')
 
 // ---------- Final
 phase('Final')
-const fin = await agentReq(`Run exactly: ${PY} merge-final --out ${q(OUT)}${A.cutoffs ? ' --cutoffs ' + q(A.cutoffs) : ''}${A.effort ? ' --adj ' + q(A.effort) : ''}\nIf the command exits non-zero, stop: return ok false, the error text in note and no batches (do not run anything after it). Otherwise return ok true. Only after merge-final succeeded, run: ${PY} convert --run ${q(OUT)}${A.docsPrefix ? ' --docs-prefix ' + q(A.docsPrefix) : ''}\nReturn the tier x confidence counts from ${OUT}/gaps-ranked.json (python3 one-liner) in note and the path ${OUT}/gaps-ranked.json as the single batch.`,
+const fin = await agentReq(`Run exactly: ${PY} merge-final --out ${q(OUT)}${A.cutoffs ? ' --cutoffs ' + q(A.cutoffs) : ''}${A.effort ? ' --adj ' + q(A.effort) : ''}\nIf the command exits non-zero, stop: return ok false, the error text in note and no batches (do not run anything after it). Otherwise return ok true. Only after merge-final succeeded, run: ${PY} convert --run ${q(OUT)} --docs-prefix ${q(A.docsPrefix)}\nReturn the tier x confidence counts from ${OUT}/gaps-ranked.json (python3 one-liner) in note and the path ${OUT}/gaps-ranked.json as the single batch.`,
   { label: 'merge-final', phase: 'Final', model: S, schema: BATCHES })
 for (const [r, w] of [[prep, 'merge-prep'], [ip, 'merge-impact-prep'], [fin, 'merge-final']]) if (!r.ok) throw new Error(w + ' failed: ' + (r.note || 'no detail'))
 return { gapsRanked: `${OUT}/gaps-ranked.json`, gaps: `${OUT}/draft-gaps.json`, counts: fin.note }

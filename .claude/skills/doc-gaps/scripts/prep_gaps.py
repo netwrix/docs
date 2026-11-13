@@ -135,6 +135,12 @@ def _norm_ranked(g, label):
                 effort=g.get("effort", "M"), links=g.get("links") or [], cite=g.get("citation", ""), verdict=g.get("verdict"))
 
 
+def _best_pages(targets):
+    """Most frequent real page path first; free text and NEW-only strings last."""
+    cnt = collections.Counter(targets)
+    return sorted(cnt, key=lambda t: (not t.split(" ")[0].endswith(".md"), -cnt[t], t))
+
+
 def _load_runs(out):
     return json.load(open(f"{out}/runs.json"))
 
@@ -204,7 +210,7 @@ def merge_group(out):
                 continue
             m = [G[i] for i in ids]
             runs = sorted({g["src"] for g in m})
-            vs = [g["verdict"] for g in m if g.get("verdict")]
+            vs = [norm_verdict(g["verdict"]) for g in m if g.get("verdict")]
             confs = [LV.index(str(g.get("conf", "low")).lower()) if str(g.get("conf", "low")).lower() in LV else 0 for g in m]
             if len(runs) > 1:
                 conf, why = LV[max(min(confs), 1)], "found by " + " and ".join(runs)  # at least medium, never above the lowest run
@@ -213,7 +219,7 @@ def merge_group(out):
             mg = dict(mid=f"M-{dim[:4].upper()}-{len(merged) + 1:03d}", dim=dim, runs=runs, rel=grp.get("relation", ""),
                       ids=ids, name=" / ".join(dict.fromkeys(g["name"] for g in m))[:200] if len(m) <= 3 else m[0]["name"],
                       missing=" | ".join(dict.fromkeys(g["missing"] for g in m if g.get("missing")))[:600],
-                      pages=sorted({norm_target(g["page"], "") for g in m if g.get("page")}), conf=conf, conf_why=why,
+                      pages=_best_pages([norm_target(g["page"], "") for g in m if g.get("page")]), conf=conf, conf_why=why,
                       verdict=max(vs, key=lambda k: VRANK.get(k, 0)) if vs else None,
                       effort=max((g["effort"] for g in m if g.get("effort")), key=lambda e: "SML".index(str(e).upper()[:1]) if str(e).upper()[:1] in ("S", "M", "L") else 1, default="M"),
                       links=sorted({l for g in m for l in (g.get("links") or [])}),

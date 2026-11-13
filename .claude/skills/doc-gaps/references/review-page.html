@@ -121,7 +121,7 @@ function prep(md){
 function blocks(md){
   const out=[];let cur=[],fence=false;
   for(const ln of prep(md).split('\n')){
-    if(/^```/.test(ln))fence=!fence;
+    if(/^\s*```/.test(ln))fence=!fence; /* indented fences inside list steps too */
     if(!fence&&ln.trim()===''){if(cur.length){out.push(cur.join('\n'));cur=[]}}
     else cur.push(ln);
   }
@@ -200,7 +200,7 @@ function drawTabs(){
   $('#tabs').innerHTML=T.map(([k,l,n])=>`<button class="tab" role="tab" aria-selected="${tab===k}" data-k="${k}">${l}${n===''?'':`<span class="n">${n}</span>`}</button>`).join('');
   document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.k;editing=false;draw()});
 }
-function draw(){drawTabs();({overview:drawOverview,review:drawReview,nofix:drawNofix,batch:drawBatch,hold:drawHold,rejected:drawRejected})[tab]()}
+function draw(){try{drawTabs();({overview:drawOverview,review:drawReview,nofix:drawNofix,batch:drawBatch,hold:drawHold,rejected:drawRejected})[tab]()}catch(e){const v=$('#view');if(v)v.innerHTML='<div class="notice">The page could not be drawn ('+esc(e&&e.message)+'). Check meta in data.json: coverage values must be numbers.</div>'}}
 const SL={all:'All',pending:'To review',approved:'Approved',hold:'On hold',rejected:'Rejected'};
 let ftier='',fconf='',ffix='';
 
@@ -407,7 +407,7 @@ function drawRejected(){
 
 /* ---------- boot ---------- */
 async function boot(){
-  try{const r=await fetch('data.json');const J=await r.json();META=Array.isArray(J)?{}:(J.meta||{});P=Array.isArray(J)?J:J.proposals;BASE=META.dims||{};$('#h1').textContent=(META.productName||'')+' '+(META.version||'')+' doc gap review';document.title=(META.productName||'Doc')+' '+(META.version||'')+' gap review'}catch(e){$('#view').innerHTML='<div class="notice">Could not load the data.</div>';return}
+  try{const r=await fetch('data.json');const J=await r.json();META=Array.isArray(J)?{}:(J.meta||{});P=Array.isArray(J)?J:J.proposals;BASE=META.dims||{};Object.keys(BASE).forEach(k=>{BASE[k].c=parseFloat(BASE[k].c)||0;BASE[k].n=parseFloat(BASE[k].n)||0;BASE[k].w=parseFloat(BASE[k].w)||0});$('#h1').textContent=(META.productName||'')+' '+(META.version||'')+' doc gap review';document.title=(META.productName||'Doc')+' '+(META.version||'')+' gap review'}catch(e){$('#view').innerHTML='<div class="notice">Could not load the data.</div>';return}
   G=[];P.forEach(p=>{if(!LVS.includes(p.fix_confidence))p.fix_confidence='low';p.gaps.forEach(g=>{if(!LVS.includes(g.gap_confidence))g.gap_confidence='low';if(!TRS.includes(g.tier))g.tier='P3';G.push({g,p})})});G.sort((a,b)=>a.g.rank-b.g.rank);
   draw();
   try{

@@ -74,6 +74,8 @@ def main():
                         print("symbol not found:", g["id"], c.get("cite"))
                 s = int(l1) if l1 else 1
                 e = int(l2) if l2 else s
+                if s > len(lines) or e < s:  # a line the file does not have: fabricated or stale reference
+                    c["verified"] = "no"; c["snippet"] = []; bad += 1; print("line out of range:", g["id"], c.get("cite"), f"(file has {len(lines)} lines)"); continue
                 lo, hi = max(1, s - a.context), min(len(lines), e + a.context)
                 if hi - lo + 1 > CAP:
                     hi = lo + CAP - 1
@@ -118,6 +120,12 @@ def main():
                 if a.blob_base:
                     c["url"] = f"{a.blob_base.rstrip('/')}/{rel}#L{s}" + (f"-L{e}" if e != s else "")
     json.dump(j, open(path, "w"))
+    risky = re.compile(r"(passw(or)?d|secret|api[_-]?key|token|connectionstring|private[_-]?key|BEGIN [A-Z ]*PRIVATE KEY)\s*[:=\"']", re.I)
+    for p in props:
+        for g in p["gaps"]:
+            for c in (g.get("evidence") or {}).get("code", []):
+                if isinstance(c, dict) and any(risky.search(l.get("t", "")) for l in c.get("snippet") or []):
+                    print("POSSIBLE SECRET in a published excerpt, check before sharing:", g["id"], c.get("cite"))
     print(f"{tot} code citations: {ok} verified in place, {fix} re-anchored, {unv} had no quote to check, {bad} not verified")
 
 
