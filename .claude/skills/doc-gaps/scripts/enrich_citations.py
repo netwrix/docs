@@ -150,6 +150,19 @@ def main():
             for c in (g.get("evidence") or {}).get("code", []):
                 if isinstance(c, dict) and (any(risky.search(l.get("t", "")) for l in c.get("snippet") or []) or risky.search(str(c.get("quote", "")))):
                     print("POSSIBLE SECRET in a published excerpt, check before sharing:", g["id"], c.get("cite"))
+    # the drafters' own words are published too: warn (do not edit) when a secret-looking assignment appears in them
+    def texts(g, p):
+        for k in ("why_gap", "why_gap_confidence", "change_summary", "verify"):
+            yield g.get(k)
+        yield from (g.get("ev") or {}).values()
+        for d in (g.get("evidence") or {}).get("docs_checked", []):
+            if isinstance(d, dict):
+                yield d.get("finding"); yield d.get("quote")
+        yield from p.get("sme_questions") or []
+    for p in props:
+        for g in p["gaps"]:
+            if any(isinstance(t, str) and risky.search(t) for t in texts(g, p)):
+                print("POSSIBLE SECRET in drafter text for", g["id"], "(summary, evidence notes or expert questions)")
     print(f"{tot} code citations: {ok} verified in place, {fix} re-anchored, {unv} had no quote to check, {bad} not verified")
 
 

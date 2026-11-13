@@ -131,7 +131,7 @@ def main():
         cur["proposals"] = [p for p in cur["proposals"] if p["gaps"]]
         fresh_pages = {p["page"] for p in new}
         for p in cur["proposals"]:
-            if p["page"] in fresh_pages and "rev" not in p:
+            if p["page"] in fresh_pages and p.get("rev") != rev:
                 p["superseded"] = True  # its page text still holds the old edits of the redrafted gaps
                 print("WARNING: page", p["page"], "now has two proposal texts; redraft its remaining gaps too:", [g["id"] for g in p["gaps"]], file=sys.stderr)
     cur["proposals"] += new

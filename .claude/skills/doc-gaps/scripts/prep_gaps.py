@@ -104,6 +104,8 @@ def batches(run, root, tiers, rnd, agents, skip_done, ids=None):
         i = load.index(min(load))
         bins[i].append(dict(page=page, exists=os.path.isfile(os.path.join(root, page)), gaps=v))
         load[i] += len(v) + 1.5
+    if glob.glob(f"{run}/proposals/*__{rnd}b*.json"):  # reusing a round name would make drafters overwrite proposals
+        sys.exit(f"ERROR: round {rnd} already has drafted proposals in {run}/proposals. Use a new round name (for example r{int(re.sub(r'[^0-9]', '', rnd) or 0) + 1}).")
     for old in glob.glob(f"{run}/batch-{rnd}-*.json"):  # leftovers of an earlier run with more agents
         os.remove(old)
     for i, b in enumerate(bins, 1):

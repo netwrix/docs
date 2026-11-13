@@ -417,7 +417,9 @@ async function boot(){
     dbc=await claude.use('db');
     if(dbc){ /* reading decisions needs no user id; saving does (OK()) */
       dbc.collection('decisions').onSnapshot(async snap=>{
+        const before=JSON.stringify(DEC);
         DEC={};const by=[];snap.docs.forEach(d=>{const v=d.data();DEC[d.id]=v;by.push(v.by);(v.comments||[]).forEach(c=>by.push(c.by))});
+        if(before===JSON.stringify(DEC)&&before!=='{}')return; /* nothing changed: do not redraw and collapse what a reviewer has open */
         await who(by);
         const ae=document.activeElement;const typing=ae&&(ae.tagName==='TEXTAREA');
         const unsaved=editing||[...document.querySelectorAll('#view textarea')].some(t=>t.value&&t.value.trim()); /* never wipe text a reviewer has typed but not saved */
