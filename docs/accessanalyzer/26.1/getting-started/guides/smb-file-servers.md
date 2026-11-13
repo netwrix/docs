@@ -1,10 +1,10 @@
 ---
 title: Scan SMB File Servers
-description: Connect a Windows, NetApp, Dell PowerScale, or Nutanix Files server over SMB, run an Access scan and a Sensitive data scan, and find the results.
+description: Connect a Windows, NetApp, Dell PowerScale, or Nutanix Files server over SMB, run an Access scan and a Classification scan, and find the results.
 sidebar_position: 1
 ---
 
-Connect one SMB file server to Access Analyzer and run the two scans that matter for file data: an Access scan that inventories shares, folders, and permissions, and a Sensitive data scan that classifies the files the Access scan found. At the end you'll have data in the Data security dashboard and the File system reports.
+Connect one SMB file server to Access Analyzer and run the two scans that matter for file data: an Access scan that inventories shares, folders, and permissions, and a Classification scan that classifies the files the Access scan found. At the end you'll have data in the Data security dashboard and the File system reports.
 
 The UI calls the source type **File Server**. It covers Windows file servers, NetApp, Dell PowerScale (formerly Isilon), and Nutanix Files over SMB 2 or SMB 3.
 
@@ -15,7 +15,7 @@ You need three things: an account that can read the shares, a network path to th
 **The account** - Access Analyzer only reads, so the account needs no write or administrator rights. Grant it four rights on the file server:
 
 - **Read** share permission on every share to scan.
-- **Read & execute** NTFS permission on the root folder of every share to scan, applied to **This folder, subfolders and files**. It covers listing folders, reading permissions, and the file contents that Sensitive data scans read.
+- **Read & execute** NTFS permission on the root folder of every share to scan, applied to **This folder, subfolders and files**. It covers listing folders, reading permissions, and the file contents that Classification scans read.
 - Membership in the local **Access Control Assistance Operators** group (Windows Server only), so the scan can list the server's shares and read their share-level permissions.
 - For a domain account, membership in the local **Backup Operators** group, so Access scans can open folders whose permissions have no entry for the account. Without it, the scan records those folders without their owner or permissions, logs a warning, and skips their contents.
 
@@ -27,7 +27,7 @@ You need three things: an account that can read the shares, a network path to th
 |-----------|------|---------|
 | Access Analyzer or agent to file server | TCP 445 | SMB for share enumeration, permission collection, and file content |
 
-Keep **Port** at 445 unless the file server listens on another port. Access scans and Sensitive data scans both use the port you enter.
+Keep **Port** at 445 unless the file server listens on another port. Access scans and Classification scans both use the port you enter.
 
 **Names in reports** - The Access scan records permissions as security identifiers (SIDs). To see account and group names in reports, and to expand group membership, add the domain as an Active Directory source and run an Identity sync. The [Scan Active Directory](./active-directory.md) guide covers it; you can do it before or after this guide.
 
@@ -46,7 +46,7 @@ File Server sources use a **Username/password** service account.
 
 :::tip
 
-The field accepts `username@domain` too, but Sensitive data scans read only the `DOMAIN\username` form. Use that form for any account that runs both scan types.
+The field accepts `username@domain` too, but Classification scans read only the `DOMAIN\username` form. Use that form for any account that runs both scan types.
 
 :::
 
@@ -71,7 +71,7 @@ To add many servers at once, [import sources from a CSV file](../../configuratio
 
 ## 3. Create the Access Scan
 
-Run the Access scan first. The Sensitive data scan you create in [Create the Sensitive data scan](#5-create-the-sensitive-data-scan) works from the file inventory this scan builds, so there's nothing for it to classify until an Access scan has completed.
+Run the Access scan first. The Classification scan you create in [Create the Classification scan](#5-create-the-classification-scan) works from the file inventory this scan builds, so there's nothing for it to classify until an Access scan has completed.
 
 1. Go to **Configuration > Scans** and click **Create scan**.
 2. On the **Type** step, select **Access** and click **Next**.
@@ -105,35 +105,35 @@ The status moves from **Pending** to **Running** and ends at **Completed**, **Co
 
 [Scan executions](../../admin/scans/scan-executions.md) lists every status and the pause, resume, and stop controls.
 
-## 5. Create the Sensitive Data Scan
+## 5. Create the Classification scan
 
-After the Access scan shows **Completed**, create the second scan. It classifies files from the Access scan's inventory against sensitive data patterns. By default the scan classifies only the file types on **Include list** and skips files larger than 10 MB; both settings are on the **File server scanning** card in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
+After the Access scan shows **Completed**, create the second scan. It runs classifiers against the files in the Access scan's inventory. By default the scan classifies only the file types on **Include list** and skips files larger than 10 MB; both settings are on the **File server scanning** card in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
 
 1. Go to **Configuration > Scans** and click **Create scan**.
-2. On the **Type** step, select **Sensitive data** and click **Next**.
+2. On the **Type** step, select **Classification** and click **Next**.
 3. On the **Target** step, select the same file server.
-4. On the **Configure** step, under **Sensitive data classification**, select the pattern groups to look for. With **Inherit from global configuration** on, the scan uses the groups marked **Scanned by default** at **Configuration > Sensitive data patterns**. Turn it off to select groups for this scan only, such as **PCI DSS**, **PII**, and **Credentials**, under **Sensitive Data Pattern Groups to Classify**.
+4. On the **Classifiers** step, select **Specific classifiers** and select the classifiers to run, such as **Credit Cards**, **ABA Routing Number**, and **AWS Connection Strings**. To run every classifier for a regulation, pick it in the regulation filter first. Click **Next**.
 
-   ![Create scan Configure step for a Sensitive data scan showing the classification settings](/images/accessanalyzer/26.1/scans/create-scan-sensitive-3-configure.webp)
+   ![Create scan wizard on the Classifiers step with Specific classifiers selected](/images/accessanalyzer/26.1/classifiers/scan-classifiers.webp)
 
-5. Leave the File Server settings at their defaults: **Workers** 3, **Differential scan** off, and **Exclude system shares** on. Turn **Differential scan** on later so scheduled runs classify only files that changed since the last run.
+5. On the **Configure** step, leave the File Server settings at their defaults: **Workers** 3, **Differential scan** off, and **Exclude system shares** on. Turn **Differential scan** on later so scheduled runs classify only files that changed since the last run.
 6. On the **Schedule** step, leave **Manual — run on demand**.
 7. On the **Review** step, enter a **Name** such as `Finance file server - sensitive data`.
 8. Click **Create & run now**.
 
 :::note
 
-On a fresh install no pattern group carries **Scanned by default**. A scan that inherits the global configuration with no groups enabled, or that has no groups selected, classifies against every pattern group, built-in and custom. Select groups when you want the findings limited to the categories you care about.
+The **Classifiers** step lists only published classifiers. Every built-in classifier is published on a fresh install; see [Classifiers](../../configuration/classifiers/index.md#published-and-unpublished-classifiers).
 
 :::
 
-Follow the run in **Configuration > Scan executions**, as described in [Watch the execution](#4-watch-the-execution). [Sensitive data patterns](../../configuration/sensitive-data-patterns/index.md) describes the built-in groups and how to add your own patterns.
+Follow the run in **Configuration > Scan executions**, as described in [Watch the execution](#4-watch-the-execution). [Classifiers](../../configuration/classifiers/index.md) describes the built-in classifiers and how to build your own.
 
 ## 6. Check the Dashboards and Reports
 
 Dashboards and reports don't refresh on their own. Open one and click **Refresh** after a scan completes.
 
-**Dashboards > Data security** fills in after the Access scan: **Total Data Repositories**, **Total Objects Scanned**, **Permissions Analyzed**, **File Server Objects by Host**, and **Data Source Inventory**. After the Sensitive data scan, **Sensitive Data Findings** and **Sensitive Data by Source** show counts too. The **Data Source** filter narrows the view by source type, **File Servers** or **SharePoint Online**, not to a single server.
+**Dashboards > Data security** fills in after the Access scan: **Total Data Repositories**, **Total Objects Scanned**, **Permissions Analyzed**, **File Server Objects by Host**, and **Data Source Inventory**. After the Classification scan, **Sensitive Data Findings** and **Sensitive Data by Source** show counts too. The **Data Source** filter narrows the view by source type, **File Servers** or **SharePoint Online**, not to a single server.
 
 ![Data security dashboard with file server data](/images/accessanalyzer/26.1/dashboards-reports/data-security-dashboard.webp)
 
@@ -145,7 +145,7 @@ Dashboards and reports don't refresh on their own. Open one and click **Refresh*
 | **High Risk ACLs** | Access scan | Shares and folders with overly permissive ACLs |
 | **Broken Inheritance** | Access scan | Folders with broken inheritance and explicit permissions |
 | **Share Audit** | Access scan | Effective permissions on one share; select a **Share** in the filters first |
-| **Sensitive Data Overview** | Sensitive data scan | Findings across the scanned locations, filtered by host, share, pattern group, or pattern |
+| **Sensitive Data Overview** | Classification scan | Findings across the scanned locations, filtered by host, share, pattern group, or pattern |
 
 **Activity Investigation** appears in the same tab but stays empty until you connect [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md). **Reports > Compliance** arranges the same reports by framework, so the **GDPR** or **PCI DSS** tabs populate from these two scans as well.
 
