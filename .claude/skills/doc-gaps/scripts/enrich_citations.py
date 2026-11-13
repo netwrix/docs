@@ -18,6 +18,7 @@ open = functools.partial(open, encoding="utf-8")  # never the platform default (
 CAP = 30
 # a line that assigns a literal to a secret-looking name is never published; a broader scan only warns
 SECRET_VALUE = re.compile(r"(passw(or)?d|pwd|secret|api[_-]?key|token|connection\s*string|private[_-]?key)\w*[\"']?\s*[:=]\s*[\"'][^\"']{6,}[\"']", re.I)  # name = "literal", "Name": "literal"
+SECRET_PEM = re.compile(r"BEGIN [A-Z ]*PRIVATE KEY|^[A-Za-z0-9+/=]{48,}\s*$")  # PEM header, or a long base64 line
 SECRET_BARE = re.compile(r"(?:^|[\s;{,])(passw(or)?d|pwd|secret|api[_-]?key|token)\s*[:=]\s*[^\s\"'(;,]{6,}(?![\w.]*\()", re.I)  # .env, yaml, connection strings
 HIDDEN = "[line hidden: possible secret value]"
 LONG = 240
@@ -52,8 +53,9 @@ def main():
                 c.pop("url", None)  # never keep a drafter-supplied link; only the audited commit's blob URL is set below
                 c["cite"] = str(c.get("cite") or "")  # drafter JSON is untrusted: coerce to text
                 c["quote"] = str(c.get("quote") or "")
-                if SECRET_VALUE.search(c["quote"]) or SECRET_BARE.search(c["quote"]):
-                    c["quote"] = HIDDEN  # the raw quote is published too (fallback view), so it gets the same masking
+                rawq = c["quote"]  # verification uses the real quote; only the published copy is masked
+                if SECRET_VALUE.search(rawq) or SECRET_BARE.search(rawq) or SECRET_PEM.search(rawq.strip()):
+                    c["quote"] = HIDDEN  # the quote is published too (fallback view), so it gets the same masking
                 cite = re.sub(r"\s*\([^)]*\)\s*$", "", c["cite"].split(";")[0].strip()).replace("\u2013", "-").replace("\u2014", "-")  # '(method Bar)', en dash
                 m = re.match(r"^(.+?)(?::L?(\d+)(?:-L?(\d+))?(?:,\s*L?\d+(?:-L?\d+)?)*)?\s*$", cite)
                 if not m:
@@ -77,7 +79,7 @@ def main():
                     with open(fp, errors="replace") as fh:
                         cache[fp] = fh.read().replace("\r\n", "\n").replace("\r", "\n").split("\n")
                 lines = cache[fp]
-                q = norm(c["quote"]).rstrip("….").rstrip(".").strip()
+                q = norm(rawq).rstrip("….").rstrip(".").strip()
                 if sym:  # anchor at the first line that mentions the symbol
                     hit = next((i + 1 for i, ln in enumerate(lines) if sym in ln), None)
                     l1 = str(hit) if hit else None
@@ -133,11 +135,11 @@ def main():
                 if status is None:  # unverified: show no excerpt and no link rather than code the claim does not rest on
                     c["snippet"] = []; c.pop("start", None); c.pop("end", None); continue
                 c["start"], c["end"] = s, e
-                c["snippet"] = [dict(n=i, t=(HIDDEN if (SECRET_VALUE.search(lines[i - 1]) or SECRET_BARE.search(lines[i - 1])) else lines[i - 1][:LONG] + ("…" if len(lines[i - 1]) > LONG else "")), hit=(s <= i <= e)) for i in range(lo, hi + 1)]
+                c["snippet"] = [dict(n=i, t=(HIDDEN if (SECRET_VALUE.search(lines[i - 1]) or SECRET_BARE.search(lines[i - 1]) or SECRET_PEM.search(lines[i - 1].strip())) else lines[i - 1][:LONG] + ("…" if len(lines[i - 1]) > LONG else "")), hit=(s <= i <= e)) for i in range(lo, hi + 1)]
                 if a.blob_base:
                     c["url"] = f"{a.blob_base.rstrip('/')}/{urllib.parse.quote(rel)}#L{s}" + (f"-L{e}" if e != s else "")
     json.dump(j, open(path, "w"))
-    risky = re.compile(r"(passw(or)?d|secret|api[_-]?key|token|connectionstring|private[_-]?key|BEGIN [A-Z ]*PRIVATE KEY)\s*[:=\"']", re.I)
+    risky = re.compile(r"(passw(or)?d|secret|api[_-]?key|token|connectionstring|private[_-]?key)\s*[:=\"']|BEGIN [A-Z ]*PRIVATE KEY", re.I)
     for p in props:
         for g in p["gaps"]:
             for c in (g.get("evidence") or {}).get("code", []):

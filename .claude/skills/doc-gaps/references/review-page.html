@@ -349,7 +349,7 @@ function drawDetail(x){
      <details class="qa small"><summary>Full notes${(p.sme_questions||[]).length?' and questions for a subject expert':''}</summary><div class="qabody">${p.why_fix_confidence?`<div>${esc(p.fix_confidence_reason)}</div>`:''}${(p.sme_questions||[]).length?`<div><h3>Questions for a subject expert</h3><ul>${p.sme_questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ul></div>`:''}</div></details></div></section>`;
   }
   $('#detail').innerHTML=`<div class="card sec">${gapPart}${fixPart}<section id="review" class="sec part"></section></div>`;
-  document.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{mode=b.dataset.m;drawDetail(x)});
+  document.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{const t=$('#ed');const keep=t?t.value:null;mode=b.dataset.m;drawDetail(x);const t2=$('#ed');if(keep!==null&&t2)t2.value=keep /* keep unsaved edits when switching views */});
   drawActions(x);
 }
 
@@ -415,7 +415,7 @@ async function boot(){
   try{
     const u=await claude.use('user');if(u){me=await u.id()}
     dbc=await claude.use('db');
-    if(dbc&&me){
+    if(dbc){ /* reading decisions needs no user id; saving does (OK()) */
       dbc.collection('decisions').onSnapshot(async snap=>{
         DEC={};const by=[];snap.docs.forEach(d=>{const v=d.data();DEC[d.id]=v;by.push(v.by);(v.comments||[]).forEach(c=>by.push(c.by))});
         await who(by);
