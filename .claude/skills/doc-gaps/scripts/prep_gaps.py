@@ -142,8 +142,16 @@ def merge_group(out):
             continue
         dim = fn[6:-5]
         seen = set()
+        groups = []
         for grp in json.load(open(f"{out}/{fn}")):
             ids = grp.get("a", []) + grp.get("b", []) + grp.get("ids", [])
+            # only 'same' groups merge into one gap; 'related' ones stay separate gaps (each is drafted on its own)
+            if grp.get("relation") == "related" and len(ids) > 1:
+                groups += [dict(grp, ids=[i], a=[], b=[]) for i in ids]
+            else:
+                groups.append(dict(grp, ids=ids, a=[], b=[]))
+        for grp in groups:
+            ids = grp["ids"]
             for i in ids:
                 assert i in G, f"{fn}: unknown id {i}"
                 assert i not in seen, f"{fn}: id {i} in two groups"

@@ -74,13 +74,20 @@ def main():
                 if status is None:
                     whole = norm(" ".join(lines))
                     if q and q in whole:
-                        hits = [i for i in range(len(lines)) if q[:60] in norm(" ".join(lines[i:i + 3]))]
-                        if hits:
-                            # windows starting up to 2 lines early also contain the quote: the last hit of the first run is its real first line
-                            i = hits[0]
-                            while i + 1 in hits:
-                                i += 1
-                            s = e = i + 1
+                        # find the quote in the whole file and map the offset back to its line
+                        pos, parts = [], []
+                        for n, ln in enumerate(lines, 1):
+                            t = norm(ln)
+                            if t:
+                                pos.append((sum(len(x) + 1 for x in parts), n)); parts.append(t)
+                        idx = " ".join(parts).find(q[:60])
+                        hit_line = None
+                        if idx >= 0:
+                            for off, n in pos:
+                                if off <= idx:
+                                    hit_line = n
+                        if hit_line:
+                            s = e = hit_line
                             lo, hi = max(1, s - a.context), min(len(lines), e + a.context)
                             status = "file"
                 c["verified"] = status or "no"

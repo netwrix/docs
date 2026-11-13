@@ -276,7 +276,7 @@ function drawNofix(){
 
 function drawReview(){
   const list=G.filter(x=>(filter==='all'||st(x)===filter)&&(!ftier||x.g.tier===ftier)&&(!fconf||x.g.gap_confidence===fconf)&&!noFix(x));
-  if(!sel||!G.find(x=>x.g.id===sel))sel=(list[0]||G[0]||{g:{}}).g.id;
+  if(!sel||!list.find(x=>x.g.id===sel))sel=list[0]?list[0].g.id:null;
   $('#view').innerHTML=`<div class="split"><div class="sec"><div class="row">${Object.keys(SL).map(f=>`<button class="btn chipbtn" aria-pressed="${filter===f}" data-f="${f}">${SL[f]}</button>`).join('')}</div>
   <div class="row"><select id="ft" aria-label="Priority"><option value="">All priorities</option>${['P0','P1','P2','P3'].map(t=>`<option ${ftier===t?'selected':''}>${t}</option>`).join('')}</select>
   <select id="fc" aria-label="Gap confidence"><option value="">All gap confidence</option>${['high','medium','low'].map(t=>`<option ${fconf===t?'selected':''}>${t}</option>`).join('')}</select></div>
@@ -411,7 +411,8 @@ async function boot(){
         DEC={};const by=[];snap.docs.forEach(d=>{const v=d.data();DEC[d.id]=v;by.push(v.by);(v.comments||[]).forEach(c=>by.push(c.by))});
         await who(by);
         const ae=document.activeElement;const typing=ae&&(ae.tagName==='TEXTAREA');
-        if(!typing)draw();else drawTabs();
+        const unsaved=editing||[...document.querySelectorAll('#view textarea')].some(t=>t.value&&t.value.trim()); /* never wipe text a reviewer has typed but not saved */
+        if(!typing&&!unsaved)draw();else drawTabs();
       },()=>{dbc=null;draw()});
     }else{dbc=null;draw()}
   }catch(e){dbc=null;draw()}
