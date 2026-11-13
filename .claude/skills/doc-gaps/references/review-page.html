@@ -1,0 +1,415 @@
+<title>Doc Gap Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.2.0/diff.min.js"></script>
+<style>
+/* layout: top tabs; Review = proposal list left, detail right (stacks on phones); decisions stored in shared db */
+:root{--bg:#f6f7f9;--surface:#fff;--fg:#1b2330;--muted:#5d6877;--line:#dde1e7;--accent:#2457c5;--accent-fg:#fff;--chip:#eceff3;
+--good:#067647;--warn:#b54708;--bad:#b42318;--add:#e6f6ec;--add-line:#2f9e5f;--del:#fdecea;--del-line:#d14a3f;
+--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121720;--surface:#1a212d;--fg:#e6eaf0;--muted:#9aa5b5;--line:#2c3544;--accent:#7ca3f5;--accent-fg:#0b1220;--chip:#252e3c;--good:#47cd89;--warn:#fdb022;--bad:#f97066;--add:#16301f;--add-line:#47cd89;--del:#3a1d1b;--del-line:#f97066;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121720;--surface:#1a212d;--fg:#e6eaf0;--muted:#9aa5b5;--line:#2c3544;--accent:#7ca3f5;--accent-fg:#0b1220;--chip:#252e3c;--good:#47cd89;--warn:#fdb022;--bad:#f97066;--add:#16301f;--add-line:#47cd89;--del:#3a1d1b;--del-line:#f97066;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.65 var(--sans);padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1{font-size:26px;line-height:1.25;margin:0;font-weight:600;text-wrap:balance}
+h2{font-size:18px;margin:0 0 14px;font-weight:600}
+h3{font-size:11px;margin:0 0 6px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.sub{color:var(--muted);margin:4px 0 0;max-width:80ch}
+button{font:inherit;color:inherit;cursor:pointer}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{background:none;border:0;border-bottom:2px solid transparent;padding:8px 12px;color:var(--muted)}
+.tab[aria-selected=true]{color:var(--fg);border-color:var(--accent);font-weight:600}
+.tab .n{background:var(--chip);border-radius:99px;padding:0 7px;font-size:12px;margin-left:4px}
+.split{display:grid;grid-template-columns:minmax(260px,360px) minmax(0,1fr);gap:32px;align-items:start}
+.split>.sec:first-child{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow-y:auto;padding-right:4px}
+@media(max-width:820px){.split{grid-template-columns:minmax(0,1fr);gap:24px}.split>.sec:first-child{position:static;max-height:none}.card{padding:18px!important}.diff{padding:8px 14px!important}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:32px;min-width:0}
+.list{display:flex;flex-direction:column;gap:10px}
+.pitem{display:block;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;line-height:1.5}
+.pitem[aria-current=true]{outline:2px solid var(--accent)}
+.pitem .path{font:12px var(--mono);word-break:break-all;color:var(--muted)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:1px 8px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.high,.approved{color:var(--good)}.medium,.hold{color:var(--warn)}.low,.rejected{color:var(--bad)}.pending{color:var(--muted)}
+.P0{color:var(--bad)}.P1{color:var(--warn)}.P2,.P3{color:var(--muted)}
+.mono{font:12px var(--mono)}
+.muted{color:var(--muted)}
+.sec{display:flex;flex-direction:column;gap:20px}
+.part{border-top:1px solid var(--line);padding-top:32px}
+.part0,.part{display:flex;flex-direction:column;gap:20px}
+h2.big{font-size:24px;line-height:1.3;margin:0}
+.lead{font-size:16px;margin:0;max-width:70ch}
+.chipbtn{padding:4px 12px;font-size:13px}.chipbtn[aria-pressed=true]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.row select{font:inherit;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:6px 10px;min-width:0}
+h2{scroll-margin-top:12px}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.legend ul{list-style:none;padding:0;margin:8px 0}.legend li{margin:10px 0}.legend p{margin:6px 0}
+details.qa.small{padding:10px 14px;font-size:13px}details.qa.small .legend{grid-template-columns:1fr;gap:18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:var(--bg);display:flex;flex-direction:column;gap:6px}
+.stat b{font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums}
+p.lead2{margin:0;font-size:15px;max-width:72ch}
+details.qa{border:1px solid var(--line);border-radius:8px;padding:12px 18px}
+details.qa>summary{font-weight:600;color:var(--accent)}
+.qabody{margin-top:14px;display:flex;flex-direction:column;gap:14px}
+.gap>div,.card>div>div,.cm{max-width:80ch}
+.gap{border:1px solid var(--line);border-radius:8px;padding:20px 22px;display:flex;flex-direction:column;gap:18px;background:var(--bg)}
+details>summary{cursor:pointer;color:var(--accent)}
+ul{margin:4px 0;padding-left:20px}
+li{margin:6px 0}
+.code{font:12px/1.5 var(--mono);background:var(--chip);border-radius:6px;overflow:auto;max-height:340px;padding:6px 0;margin-top:8px}.code .ln{display:block;padding:0 10px;white-space:pre}.code .ln.hit{background:var(--add)}.code .n{color:var(--muted);display:inline-block;min-width:3.6em;user-select:none}.cit{margin:6px 0}.cit summary{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.quote{font:12px var(--mono);background:var(--chip);border-radius:4px;padding:4px 6px;white-space:pre-wrap;word-break:break-word}
+.verify{border-left:3px solid var(--warn);padding:12px 16px;background:var(--chip);border-radius:0 4px 4px 0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{background:var(--surface);border:0;padding:5px 12px}
+.seg button[aria-pressed=true]{background:var(--accent);color:var(--accent-fg)}
+.diff{border:1px solid var(--line);border-radius:8px;padding:16px 28px;max-height:760px;line-height:1.7;overflow:auto;background:var(--surface)}
+.diff .blk{padding:6px 14px;margin:12px 0;border-left:3px solid transparent;min-width:0;overflow-wrap:anywhere}
+.diff .add{background:var(--add);border-left-color:var(--add-line)}
+.diff .del{background:var(--del);border-left-color:var(--del-line);opacity:.85}
+.diff .del *{text-decoration:line-through}
+.diff .gapbar{margin:6px 0;color:var(--muted);font-size:12px}
+.diff pre{overflow:auto;background:var(--chip);padding:8px;border-radius:4px}
+.diff table{border-collapse:collapse;display:block;overflow-x:auto}
+.diff td,.diff th{border:1px solid var(--line);padding:3px 8px}
+.src{font:12px/1.5 var(--mono);white-space:pre-wrap;word-break:break-word}
+.src .l{padding:0 8px;display:block}
+.src .a{background:var(--add)}.src .d{background:var(--del)}.src .c{color:var(--muted);text-align:center}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:10px 20px;font-weight:500}
+.btn.ok{background:var(--good);color:#fff;border-color:var(--good)}
+.btn.no{border-color:var(--bad);color:var(--bad)}
+.btn.hl{border-color:var(--warn);color:var(--warn)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+textarea,input[type=search]{font:inherit;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px;width:100%;min-width:0}
+textarea.code{font:12px/1.5 var(--mono);min-height:260px}
+.cm{border-left:3px solid var(--line);padding:4px 14px}
+.notice{background:var(--chip);border-radius:6px;padding:8px 12px;color:var(--muted)}
+table.t{border-collapse:collapse;width:100%;min-width:560px}
+table.t th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}
+table.t td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tw{overflow-x:auto}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+<div class="wrap">
+<header><h1 id="h1">Doc gap review</h1>
+<p class="sub">Each entry is a documentation gap found in the coverage audit: what it is, why we think it is a gap, and how sure we are. Under each gap is a suggested fix to review. Approve a fix to add it to the batch PR, suggest edits or comment to put it on hold, or reject it with a reason. Nothing here edits the docs until the batch PR is opened.</p></header>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div id="view"><div class="notice">Loading proposals…</div></div>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let META={},P=[],G=[],DEC={},dbc=null,me=null,tab='overview',sel=null,filter='all',mode='rendered',editing=false,connNote='';
+const OK=()=>!!dbc;
+const ids=['approved','hold','rejected','pending'];
+const st=x=>(DEC[x.g.id]&&DEC[x.g.id].status)||'pending';
+
+/* ---------- markdown helpers ---------- */
+function prep(md){
+  md=md.replace(/^---\n[\s\S]*?\n---\n?/,'');
+  md=md.replace(/^:::(\w+)(?:\[([^\]]*)\]|\s+(.*))?\n([\s\S]*?)^:::\s*$/gm,(m,t,a,b,body)=>'> **'+t.toUpperCase()+(a||b?': '+(a||b):'')+'**\n> '+body.trim().split('\n').join('\n> '));
+  return md;
+}
+function blocks(md){
+  const out=[];let cur=[],fence=false;
+  for(const ln of prep(md).split('\n')){
+    if(/^```/.test(ln))fence=!fence;
+    if(!fence&&ln.trim()===''){if(cur.length){out.push(cur.join('\n'));cur=[]}}
+    else cur.push(ln);
+  }
+  if(cur.length)out.push(cur.join('\n'));
+  return out;
+}
+function clean(html){
+  const t=document.createElement('template');t.innerHTML=html;
+  t.content.querySelectorAll('script,iframe,object,embed,style,link').forEach(n=>n.remove());
+  t.content.querySelectorAll('*').forEach(n=>{[...n.attributes].forEach(a=>{if(/^on/i.test(a.name)||/^\s*javascript:/i.test(a.value))n.removeAttribute(a.name)});if(n.tagName==='A'){n.target='_blank';n.rel='noopener'}});
+  return t.innerHTML;
+}
+const rend=b=>clean(marked.parse(b,{async:false}));
+function renderedDiff(a,b){
+  const parts=Diff.diffArrays(blocks(a),blocks(b));let h='';
+  parts.forEach(p=>{
+    if(p.added)p.value.forEach(v=>h+='<div class="blk add">'+rend(v)+'</div>');
+    else if(p.removed)p.value.forEach(v=>h+='<div class="blk del">'+rend(v)+'</div>');
+    else if(p.value.length>4){
+      const head=p.value.slice(0,1),tail=p.value.slice(-1),mid=p.value.length-2;
+      h+=head.map(v=>'<div class="blk">'+rend(v)+'</div>').join('')+'<details class="gapbar"><summary>'+mid+' unchanged blocks</summary>'+p.value.slice(1,-1).map(v=>'<div class="blk">'+rend(v)+'</div>').join('')+'</details>'+tail.map(v=>'<div class="blk">'+rend(v)+'</div>').join('');
+    }else p.value.forEach(v=>h+='<div class="blk">'+rend(v)+'</div>');
+  });
+  return h||'<p class="muted">No changes.</p>';
+}
+function sourceDiff(a,b){
+  const parts=Diff.diffLines(a,b);let h='';
+  parts.forEach(p=>{
+    const lines=p.value.replace(/\n$/,'').split('\n');
+    if(p.added)lines.forEach(l=>h+='<span class="l a">+ '+esc(l)+'</span>');
+    else if(p.removed)lines.forEach(l=>h+='<span class="l d">- '+esc(l)+'</span>');
+    else if(lines.length>8){lines.slice(0,3).forEach(l=>h+='<span class="l">  '+esc(l)+'</span>');h+='<span class="l c">… '+(lines.length-6)+' unchanged lines …</span>';lines.slice(-3).forEach(l=>h+='<span class="l">  '+esc(l)+'</span>')}
+    else lines.forEach(l=>h+='<span class="l">  '+esc(l)+'</span>');
+  });
+  return '<div class="src">'+h+'</div>';
+}
+const changed=p=>p.original!==p.proposed;
+
+/* ---------- people ---------- */
+const names={};
+async function who(idsIn){
+  const u=await claude.use('user').catch(()=>null);if(!u)return;
+  const need=[...new Set(idsIn.filter(Boolean))];if(!need.length)return;
+  const ps=await u.profiles(need);need.forEach(i=>names[i]=ps[i].isMe?'You':(ps[i].name||'A reviewer'));
+}
+const nm=i=>i?(names[i]||'A reviewer'):'A reviewer';
+const when=t=>t?new Date(t).toLocaleString([], {dateStyle:'medium',timeStyle:'short'}):'';
+const noFix=x=>x.g.verdict==='already_covered'||x.g.verdict==='not_user_facing';
+const VL={real_gap:'real gap',partially_covered:'partly covered',already_covered:'already covered',not_user_facing:'not user-facing'};
+
+/* ---------- decisions (one per gap) ---------- */
+async function decide(x,status,extra){
+  if(!OK())return;
+  const cur=DEC[x.g.id]||{};extra=extra||{};
+  const comments=(cur.comments||[]).slice();
+  if(extra.comment)comments.push({by:me,at:new Date().toISOString(),text:extra.comment,kind:status});
+  const edited=('edited' in extra)?extra.edited:(cur.edited||null);
+  const body={status,by:me,at:new Date().toISOString(),comments,reason:status==='rejected'?extra.reason:'',edited,proposal:x.p.id,page:x.p.page};
+  try{await dbc.doc('decisions/'+x.g.id).set(body)}catch(e){note('Could not save: '+(e.message||e.code))}
+}
+function note(t){const n=$('#note');if(n){n.textContent=t;n.hidden=false}}
+
+/* ---------- views ---------- */
+function counts(){const c={approved:0,hold:0,rejected:0,pending:0};G.forEach(x=>c[st(x)]++);return c}
+function drawTabs(){
+  const c=counts();
+  const T=[['overview','Overview',''],['review','Gap report',G.filter(x=>!noFix(x)).length],['nofix','No fix needed',G.filter(noFix).length],['batch','Batch PR',c.approved],['hold','On hold',c.hold],['rejected','Rejected',c.rejected]];
+  $('#tabs').innerHTML=T.map(([k,l,n])=>`<button class="tab" role="tab" aria-selected="${tab===k}" data-k="${k}">${l}${n===''?'':`<span class="n">${n}</span>`}</button>`).join('');
+  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.k;editing=false;draw()});
+}
+function draw(){drawTabs();({overview:drawOverview,review:drawReview,nofix:drawNofix,batch:drawBatch,hold:drawHold,rejected:drawRejected})[tab]()}
+const SL={all:'All',pending:'To review',approved:'Approved',hold:'On hold',rejected:'Rejected'};
+let ftier='',fconf='',ffix='';
+
+
+function legendHTML(){return `<div class="legend">
+<div><h3>Priority: P0 to P3</h3><p>The audit ranks each gap by <b>impact × demand × effort factor</b>.</p>
+<ul><li><span class="pill P0">P0</span> Do now. Score of ${(META.cutoffs||{P0:4}).P0} or more, or a high-impact gap with high confidence.</li>
+<li><span class="pill P1">P1</span> Next. Score of ${(META.cutoffs||{P1:3}).P1} or more.</li>
+<li><span class="pill P2">P2</span> Plan. Score of ${(META.cutoffs||{P2:1.6}).P2} or more.</li>
+<li><span class="pill P3">P3</span> Backlog. Everything below ${(META.cutoffs||{P2:1.6}).P2}.</li></ul>
+<p class="muted"><b>Impact</b>: 3 = security or data-loss risk, or a core workflow; 2 = a common task; 1 = an edge case. <b>Demand</b>: 0 to 3 from Community threads in the last 12 months (0 = none, 3 = recurring, recent and unresolved). A gap with no thread evidence still ranks, counted as demand 1. <b>Effort factor</b>: small fixes rank slightly higher (S 1.2, M 1.0, L 0.8).</p></div>
+<div><h3>Gap confidence</h3><p>How sure the audit is that this is really missing from the docs.</p>
+<ul><li><span class="pill high">high</span> Direct evidence (code, API schema, or 3 or more independent threads) and a thorough docs search.</li>
+<li><span class="pill medium">medium</span> Evidence from one source, or coverage is split or ambiguous.</li>
+<li><span class="pill low">low</span> The item may be internal, deprecated or renamed, or coverage elsewhere can't be ruled out. Verify before approving.</li></ul></div>
+<div><h3>Fix confidence</h3><p>How sure we are that the drafted edit is correct.</p>
+<ul><li><span class="pill high">high</span> Every added claim cites code or existing docs.</li>
+<li><span class="pill medium">medium</span> Some behavior is inferred.</li>
+<li><span class="pill low">low</span> Facts are thin. A subject expert should confirm.</li></ul></div>
+<div><h3>Other labels</h3><ul>
+<li><b>Audit score</b>: 0 = absent, 1 = mentioned but insufficient. Gaps are items scoring 0 or 1. (2 = adequate, 3 = complete.)</li>
+<li><b>Effort</b>: rough size of the doc change. S small, M medium, L large.</li>
+<li><b>Dimension</b>: features, API, or procedures.</li>
+<li><b>Drafter's check</b>: the drafter re-checked the gap against docs and code. Real gap, partly covered, already covered, or not user-facing.</li></ul></div>
+<div><h3>Your decisions</h3><ul>
+<li><b>Approve fix</b>: adds it to the Batch PR.</li>
+<li><b>Suggest edits</b> or <b>Comment and hold</b>: puts it on hold until addressed.</li>
+<li><b>Reject with reason</b>: the gap moves to the Rejected list with your reason.</li>
+<li><b>Agree: no fix needed</b>: for gaps the drafter found already covered or not user-facing.</li></ul></div></div>`}
+
+let BASE={}
+function adj(mode){
+  const d={};Object.keys(BASE).forEach(k=>d[k]={n:BASE[k].n,s:BASE[k].c*3*BASE[k].n/100});
+  G.forEach(x=>{const g=x.g,k=g.dimension;if(!d[k])return;
+    if(mode==='confirmed'&&st(x)!=='approved')return;
+    const sc=parseFloat(g.score)||0;
+    if(g.verdict==='not_user_facing'){d[k].n-=1;d[k].s-=sc}
+    else if(g.verdict==='already_covered'){d[k].s+=2-sc}});
+  let t=0,w=0;Object.keys(d).forEach(k=>{d[k].cov=d[k].n>0?d[k].s/(3*d[k].n)*100:null;if(d[k].n>0){t+=BASE[k].w*d[k].cov;w+=BASE[k].w}});
+  return {d,overall:t/w};
+}
+const f1=v=>v==null?'n/a':v.toFixed(1);
+function drawOverview(){
+  const M=META,A=adj('all'),C=adj('confirmed'),c=counts(),done=c.approved+c.hold+c.rejected,tc=t=>G.filter(x=>x.g.tier===t).length,nf=G.filter(noFix).length;
+  const dk=Object.keys(BASE),tiers=M.tiers||{};
+  $('#view').innerHTML=`<div class="card sec ov">
+  <div><h2>Coverage audit: ${esc(M.productName||'')} ${esc(M.version||'')} docs</h2>
+  <p class="lead">Independent judges scored ${esc(M.items||'')} items from the code against the docs. ${esc(M.gaps||'')} items scored 0 or 1 and are gaps. Of the ${G.length} gaps in this review, ${G.length-nf} need an edit and have a drafted fix. The other ${nf} were found already covered or not user-facing, and are listed under No fix needed for you to confirm or send back. The ${P.length} proposed page edits touch ${new Set(P.map(p=>p.page)).size} pages.</p></div>
+  <div class="stats"><div class="stat"><b>${f1(A.overall)}</b><span>Overall coverage, adjusted. <span class="muted">Gaps found not user-facing are removed and already-covered ones rescored. Was ${esc(M.overall)} as audited.</span></span></div>
+  <div class="stat"><b>${f1(C.overall)}</b><span>Coverage counting only the adjustments you have confirmed. <span class="muted">${G.filter(x=>noFix(x)&&st(x)==='approved').length} of ${nf} confirmed.</span></span></div>
+  <div class="stat"><b>${esc(M.gaps||G.length)}</b><span>Gaps found. <span class="muted">${esc(M.lowConfidence||'?')} are low confidence.</span></span></div>
+  <div class="stat"><b>${esc(M.agreement||'n/a')}</b><span>Judge agreement. <span class="muted">Share of items where all three judges were within 1 point.</span></span></div>
+  <div class="stat"><b>${done} / ${G.length}</b><span>Gaps decided in this review. <span class="muted">${c.approved} approved, ${c.hold} on hold, ${c.rejected} rejected.</span></span></div></div>
+  <div class="actions"><button class="btn ok" id="go">Start reviewing the gaps</button></div>
+  <section class="part"><h2>Coverage by area</h2><div class="tw"><table class="t"><thead><tr><th>Area</th><th>Weight</th><th>As audited</th><th>Adjusted</th><th>Confirmed so far</th></tr></thead><tbody>
+  ${dk.map(k=>`<tr><td>${esc(BASE[k].l)}</td><td>${BASE[k].w}</td><td>${BASE[k].c.toFixed(1)}% of ${BASE[k].n} items</td><td>${f1(A.d[k].cov)}% of ${A.d[k].n} items</td><td>${f1(C.d[k].cov)}% of ${C.d[k].n} items</td></tr>`).join('')}
+  <tr><td><b>Overall</b></td><td>${dk.reduce((t,k)=>t+BASE[k].w,0)}</td><td><b>${esc(M.overall)}</b></td><td><b>${f1(A.overall)}</b></td><td><b>${f1(C.overall)}</b></td></tr></tbody></table></div>
+  <p class="muted" style="margin:0;max-width:80ch">Coverage is the mean item score out of 3, weighted by area. The audit counted every item that scored 0 or 1 as a gap. When the drafter re-checked, ${nf} of those were not something users see (removed from the item count) or were already covered (rescored 2 out of 3). <b>Adjusted</b> applies all of the drafter's findings. <b>Confirmed so far</b> applies only the ones you have confirmed in the No fix needed tab. Figures are approximate if the audit's percentages were rounded. Partly covered gaps still count as gaps.</p></section>
+  <section class="part"><h2>Gaps by priority and confidence</h2><div class="tw"><table class="t"><thead><tr><th>Priority</th><th>High</th><th>Medium</th><th>Low</th><th>Total</th><th>In this review</th></tr></thead><tbody>
+  ${['P0','P1','P2','P3'].map(t=>{const r=tiers[t]||{};return `<tr><td><span class="pill ${t}">${t}</span></td><td>${r.high??''}</td><td>${r.medium??''}</td><td>${r.low??''}</td><td>${r.total??''}</td><td>${tc(t)}</td></tr>`}).join('')}</tbody></table></div>
+  <p class="muted" style="margin:0;max-width:80ch">Many low-confidence gaps turn out to be already covered or not user-facing once the drafter checks them. Verify before you approve. Each gap lists the check to run.</p></section>
+  <section class="part"><h2>How to read this report</h2>${legendHTML()}</section>
+  <section class="part"><h2>Sources and limits</h2><ul><li>Docs: <span class="mono">${esc(M.docsPath||'')}</span>. Code: <span class="mono">${esc(M.codeRef||'')}</span>.</li><li>Questions: Netwrix Community, ${esc(M.communityWindow||'')}. ${esc(M.slackNote||'')}.</li><li>Scoring and drafting were done by AI models. Every drafted fix is a proposal for human review. Nothing has been changed in the docs.</li><li>Source report: ${esc(M.reportFile||'')}.</li></ul></section></div>`;
+  $('#go').onclick=()=>{tab='review';draw()};
+}
+function drawNofix(){
+  const a=G.filter(noFix);
+  $('#view').innerHTML=`<div class="card sec"><div><h2>No fix needed</h2><p class="muted" style="margin:0;max-width:80ch">When the drafter re-checked these ${a.length} gaps against the docs and code, it found each one already covered or not something users see. They are out of the gap report. The drafter is an AI model, so confirm each one, or send it back if you think a fix is still needed.</p></div>
+  <div class="sec">${a.map(x=>{const d=DEC[x.g.id]||{};const s=st(x);return `<div class="gap"><div class="row"><span class="pill ${x.g.tier}">${x.g.tier}</span><span class="pill ${x.g.gap_confidence}">gap: ${x.g.gap_confidence}</span><span class="pill medium">${esc(VL[x.g.verdict]||x.g.verdict)}</span>${s==='approved'?'<span class="pill approved">confirmed</span>':s==='hold'?'<span class="pill hold">sent back</span>':''}<span class="mono muted">${esc(x.g.id)}</span></div>
+  <div style="font-size:16px;font-weight:600">${esc(x.g.item)}</div><p class="lead2">${esc(x.g.why_gap)}</p>
+  <details class="qa small"><summary>Evidence and confidence</summary><div class="qabody"><p class="lead2">${esc(x.g.why_gap_confidence)}</p>${evsum(x.g)}</div></details>${codeEv(x.g)}<details class="qa small"><summary>Docs checked and Community threads</summary><div class="qabody">${docEv(x.g)}</div></details>
+  ${(d.comments||[]).map(c=>`<div class="cm"><div class="muted" style="font-size:12px">${esc(nm(c.by))} · ${esc(when(c.at))}</div>${esc(c.text)}</div>`).join('')}
+  <textarea id="nc-${esc(x.g.id)}" rows="2" placeholder="If a fix is still needed, say why"></textarea>
+  <div class="actions"><button class="btn ok" data-ok="${esc(x.g.id)}" ${OK()?'':'disabled'}>${s==='approved'?'Confirmed':'Confirm: no fix needed'}</button><button class="btn hl" data-back="${esc(x.g.id)}" ${OK()?'':'disabled'}>Needs a fix after all</button>${s!=='pending'?`<button class="btn" data-re="${esc(x.g.id)}" ${OK()?'':'disabled'}>Reopen</button>`:''}</div></div>`}).join('')||'<div class="notice">Nothing here.</div>'}</div></div>`;
+  const f=id=>G.find(y=>y.g.id===id);
+  document.querySelectorAll('[data-ok]').forEach(b=>b.onclick=()=>decide(f(b.dataset.ok),'approved',{}));
+  document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>{const t=document.getElementById('nc-'+b.dataset.back);const c=(t.value||'').trim();if(!c){t.placeholder='Write why a fix is still needed first';t.focus();return}decide(f(b.dataset.back),'hold',{comment:c})});
+  document.querySelectorAll('[data-re]').forEach(b=>b.onclick=()=>decide(f(b.dataset.re),'pending',{comment:'Reopened.'}));
+}
+
+function drawReview(){
+  const list=G.filter(x=>(filter==='all'||st(x)===filter)&&(!ftier||x.g.tier===ftier)&&(!fconf||x.g.gap_confidence===fconf)&&!noFix(x));
+  if(!sel||!G.find(x=>x.g.id===sel))sel=(list[0]||G[0]||{g:{}}).g.id;
+  $('#view').innerHTML=`<div class="split"><div class="sec"><div class="row">${Object.keys(SL).map(f=>`<button class="btn chipbtn" aria-pressed="${filter===f}" data-f="${f}">${SL[f]}</button>`).join('')}</div>
+  <div class="row"><select id="ft" aria-label="Priority"><option value="">All priorities</option>${['P0','P1','P2','P3'].map(t=>`<option ${ftier===t?'selected':''}>${t}</option>`).join('')}</select>
+  <select id="fc" aria-label="Gap confidence"><option value="">All gap confidence</option>${['high','medium','low'].map(t=>`<option ${fconf===t?'selected':''}>${t}</option>`).join('')}</select></div>
+  <details class="qa small"><summary>What do P0, P1 and the confidence levels mean?</summary><div class="qabody">${legendHTML()}</div></details><div class="muted" style="font-size:13px">${list.length} of ${G.filter(x=>!noFix(x)).length} gaps that need a fix</div>
+  <div class="list">${list.map(x=>`<button class="pitem" aria-current="${x.g.id===sel}" data-id="${esc(x.g.id)}"><div class="row"><span class="pill ${x.g.tier}">${x.g.tier}</span><span class="pill ${x.g.gap_confidence}">gap: ${x.g.gap_confidence}</span><span class="pill ${st(x)}">${st(x)==='hold'?'on hold':st(x)==='pending'?'to review':st(x)}</span></div><div style="margin:8px 0 2px;font-weight:600">${esc(x.g.item)}</div><div class="mono muted">${esc(x.g.id)}</div></button>`).join('')||'<div class="notice">No gaps match.</div>'}</div></div>
+  <div id="detail"></div></div>`;
+  document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{filter=b.dataset.f;draw()});
+  $('#ft').onchange=e=>{ftier=e.target.value;draw()};$('#fc').onchange=e=>{fconf=e.target.value;draw()};
+  document.querySelectorAll('.pitem').forEach(b=>b.onclick=()=>{sel=b.dataset.id;editing=false;draw();scrollTo({top:0})});
+  const x=G.find(y=>y.g.id===sel);if(x)drawDetail(x);else $('#detail').innerHTML='<div class="notice">Select a gap.</div>';
+}
+
+function evsum(g){
+  const v=g.ev;if(!v)return '';
+  const rows=[['What the product does',v.product],['What the docs say',v.docs],['What users asked',v.users],['How we searched',v.searched]].filter(r=>r[1]);
+  return rows.map(r=>`<div><h3>${r[0]}</h3><p class="lead2">${esc(r[1])}</p></div>`).join('');
+}
+function codeEv(g){
+  const cs=((g.evidence||{}).code)||[];if(!cs.length)return '<p class="muted">No code citations for this gap.</p>';
+  return `<details class="qa small"><summary>Code evidence (${cs.length} citation${cs.length===1?'':'s'})</summary><div class="qabody">${cs.map(c=>{
+    const v=c.verified==='no'?'<span class="pill medium">quote not found at this line</span>':c.verified?'<span class="pill high">quote found</span>':'';
+    const sn=(c.snippet||[]).length?`<div class="code">${c.snippet.map(l=>`<span class="ln${l.hit?' hit':''}"><span class="n">${l.n}</span>${esc(l.t)}</span>`).join('')}</div>`:(c.quote?`<div class="quote">${esc(c.quote)}</div>`:'');
+    return `<details class="cit"><summary><span class="mono">${esc(c.cite)}</span>${v}${c.url?`<a href="${esc(c.url)}" target="_blank" rel="noopener">open in repo</a>`:''}</summary>${sn}</details>`}).join('')}</div></details>`;
+}
+function docEv(g){
+  const e=g.evidence||{};let h='';
+  if((e.docs_checked||[]).length)h+='<h3>Docs checked</h3><ul>'+e.docs_checked.map(c=>`<li><span class="mono">${esc((c.path||'').replace(/^docs\/[^/]+\/[^/]+\//,''))}</span>: ${esc(c.finding)}${c.quote?`<div class="quote">${esc(c.quote)}</div>`:''}</li>`).join('')+'</ul>';
+  const th=(e.threads||[]).concat(g.demand_links||[]).filter((v,i,a)=>v&&a.indexOf(v)===i);
+  if(th.length)h+='<h3>Community demand</h3><ul>'+th.map(u=>`<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//,''))}</a></li>`).join('')+'</ul>';
+  if((e.searched_terms||[]).length)h+=`<h3>Searched terms</h3><div class="muted">${e.searched_terms.map(esc).join(', ')}</div>`;
+  if(!h)return '';
+  return `<details class="qa small"><summary>Docs checked, Community threads and searched terms</summary><div class="qabody">${h}</div></details>`;
+}
+function evid(g){return codeEv(g)+docEv(g)}
+
+function drawDetail(x){
+  const {g,p}=x;const d=DEC[g.id]||{};const s=st(x);
+  const text=d.edited||p.proposed;
+  const sibs=p.gaps.filter(o=>o.id!==g.id);
+  const gapPart=`<section class="part0"><div class="row"><span class="pill ${g.tier}">${g.tier}</span><span class="pill ${s}">${s==='hold'?'on hold':s==='pending'?'to review':s}</span><span class="mono muted">${esc(g.id)} · ${esc(g.dimension)} · effort ${esc(g.effort)}</span></div>
+   <h2 class="big">${esc(g.item)}</h2>
+   <h3>What is the gap?</h3>
+   <p class="lead">${esc(g.missing)}</p>
+   <div class="row"><span class="pill ${g.verdict==='real_gap'?'high':'medium'}">drafter's check: ${esc(VL[g.verdict]||g.verdict)}</span><span class="muted">Audit score ${esc(g.score)}/3 on <span class="mono">${esc(p.short)}</span></span></div>
+   <div><h3>Why is this a gap?</h3><p class="lead2">${esc(g.why_gap||'')}</p><details class="qa small"><summary>Evidence summary</summary><div class="qabody">${evsum(g)}</div></details>${codeEv(g)}<details class="qa small"><summary>Docs checked and Community threads</summary><div class="qabody">${docEv(g)}</div></details></div>
+   <div class="gap"><div class="row"><h3 style="margin:0">Why this confidence for the gap?</h3><span class="pill ${g.gap_confidence}">${g.gap_confidence}</span></div>
+    <p class="lead2">${esc(g.why_gap_confidence||'')}</p>
+    ${g.gap_confidence!=='high'&&g.verify?`<div class="verify"><h3>Verify the gap first</h3><p style="margin:0">${esc(g.verify)}</p></div>`:''}
+    <details class="qa small"><summary>Detailed reasons${(g.verify_steps||[]).length&&g.gap_confidence!=='high'?' and verification steps':''}</summary><div class="qabody"><ul>${(g.gap_confidence_reasons||[]).map(r=>`<li>${esc(r)}</li>`).join('')||'<li class="muted">None recorded.</li>'}</ul>${(g.verify_steps||[]).length&&g.gap_confidence!=='high'?`<h3>Verification steps</h3><ul>${g.verify_steps.map(v=>`<li>${esc(v)}</li>`).join('')}</ul>`:''}</div></details></div></section>`;
+  let fixPart;
+  if(noFix(x)){
+    fixPart=`<section class="part"><h2>Suggested fix</h2><div class="notice">No edit proposed. The drafter found this item is ${esc((VL[g.verdict]||'').toLowerCase())}. Approving means you agree no fix is needed.</div></section>`;
+  }else{
+    fixPart=`<section class="part"><h2>Suggested fix</h2>
+    <p class="lead">${esc(g.change_summary)}</p>
+    ${sibs.length?`<div class="notice">This edit is one change to <span class="mono">${esc(p.short)}</span> shared with ${sibs.map(o=>esc(o.id)).join(', ')}. Decisions are saved per gap; I reconcile them when building the PR.</div>`:''}
+    <div class="row" style="justify-content:space-between"><h3 style="margin:0">Proposed change to the page${d.edited?' (with reviewer edit)':''}</h3>
+     <div class="seg"><button aria-pressed="${mode==='rendered'}" data-m="rendered">Rendered</button><button aria-pressed="${mode==='source'}" data-m="source">Markdown</button></div></div>
+    <div class="diff">${mode==='rendered'?renderedDiff(p.original,text):`<div style="padding:8px 0">${sourceDiff(p.original,text)}</div>`}</div>
+    <div class="gap"><div class="row"><h3 style="margin:0">Why this confidence for the fix?</h3><span class="pill ${p.fix_confidence}">${p.fix_confidence}</span></div><p class="lead2">${esc(p.why_fix_confidence||p.fix_confidence_reason)}</p>
+     <details class="qa small"><summary>Full notes${(p.sme_questions||[]).length?' and questions for a subject expert':''}</summary><div class="qabody">${p.why_fix_confidence?`<div>${esc(p.fix_confidence_reason)}</div>`:''}${(p.sme_questions||[]).length?`<div><h3>Questions for a subject expert</h3><ul>${p.sme_questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ul></div>`:''}</div></details></div></section>`;
+  }
+  $('#detail').innerHTML=`<div class="card sec">${gapPart}${fixPart}<section id="review" class="sec part"></section></div>`;
+  document.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{mode=b.dataset.m;drawDetail(x)});
+  drawActions(x);
+}
+
+function drawActions(x){
+  const {g,p}=x;const d=DEC[g.id]||{};const s=st(x);const box=$('#review');const nf=noFix(x);
+  const hist=(d.comments||[]).map(c=>`<div class="cm"><div class="muted" style="font-size:12px">${esc(nm(c.by))} · ${esc(c.kind==='hold'?'requested changes':c.kind==='rejected'?'rejected':c.kind==='approved'?'approved':'comment')} · ${esc(when(c.at))}</div>${esc(c.text)}</div>`).join('');
+  let h=`<h2>${nf?'Your decision':'Review the fix'}</h2><div id="note" class="notice" hidden></div>`;
+  if(!OK())h+='<div class="notice">Decisions cannot be saved in this view. Open the page signed in with Contributor access or higher.</div>';
+  if(s==='rejected')h+=`<div class="gap"><b class="rejected">Rejected</b><div>${esc(d.reason)}</div><div class="muted" style="font-size:12px">${esc(nm(d.by))} · ${esc(when(d.at))}</div></div>`;
+  if(s==='approved')h+=`<div class="gap"><b class="approved">${nf?'Agreed, no fix needed':'Approved for the batch PR'}</b><div class="muted" style="font-size:12px">${esc(nm(d.by))} · ${esc(when(d.at))}</div></div>`;
+  if(s==='hold')h+=`<div class="gap"><b class="hold">On hold until the changes are addressed</b>${d.edited?'<div>A reviewer edit is saved with this fix.</div>':''}</div>`;
+  h+=hist;
+  if(editing){
+    h+=`<label for="ed" class="muted">Edit the proposed page (markdown). Your version replaces the proposal and the fix goes on hold until it is addressed.</label>
+    <textarea id="ed" class="code" spellcheck="false">${esc(d.edited||p.proposed)}</textarea>
+    <label for="cm" class="muted">Note for the drafter (optional)</label><textarea id="cm" rows="2"></textarea>
+    <div class="actions"><button class="btn hl" id="saveed">Save edit and hold</button><button class="btn" id="cancel">Cancel</button></div>`;
+  }else{
+    const dis=OK()?'':'disabled';
+    h+=`<div class="actions"><button class="btn ok" id="ap" ${dis}>${nf?'Agree: no fix needed':(s==='approved'?'Approved':'Approve fix')}</button>${nf?'':`<button class="btn hl" id="ed1" ${dis}>Suggest edits</button>`}</div>
+    <label for="cm" class="muted">Comment, or reason for rejecting</label><textarea id="cm" rows="3" placeholder="${nf?'Why a fix is still needed, or why to drop this gap':'What needs to change, or why this fix should be dropped'}"></textarea>
+    <div class="actions"><button class="btn hl" id="rc" ${dis}>Comment and hold</button><button class="btn no" id="rj" ${dis}>Reject with reason</button>${s==='hold'?`<button class="btn" id="addr" ${dis}>Mark addressed</button>`:''}${s==='rejected'||s==='approved'?`<button class="btn" id="undo" ${dis}>Reopen</button>`:''}</div>`;
+  }
+  box.innerHTML=h;
+  const val=()=>(($('#cm')||{}).value||'').trim();
+  const on=(id,f)=>{const e=$('#'+id);if(e)e.onclick=f};
+  on('ap',()=>decide(x,'approved',{}));
+  on('ed1',()=>{editing=true;drawActions(x)});
+  on('cancel',()=>{editing=false;drawActions(x)});
+  on('saveed',()=>{const t=$('#ed').value;decide(x,'hold',{edited:t===p.proposed?null:t,comment:val()||'Edited the proposed text.'}).then(()=>{editing=false})});
+  on('rc',()=>{const c=val();if(!c){note('Write a comment first.');return}decide(x,'hold',{comment:c})});
+  on('rj',()=>{const c=val();if(!c){note('A reason is required to reject.');return}decide(x,'rejected',{reason:c,comment:c})});
+  on('addr',()=>decide(x,'pending',{comment:val()||'Marked addressed.',edited:null}));
+  on('undo',()=>decide(x,'pending',{comment:val()||'Reopened.',edited:null}));
+}
+
+function drawBatch(){
+  const a=G.filter(x=>st(x)==='approved'&&!noFix(x)),agreed=G.filter(x=>st(x)==='approved'&&noFix(x));
+  const pages=[...new Set(a.map(x=>x.p.id))].map(id=>P.find(p=>p.id===id));
+  const manifest=pages.map(p=>`${p.page}  [${a.filter(x=>x.p.id===p.id).map(x=>x.g.id).join(', ')}]`).join('\n');
+  $('#view').innerHTML=`<div class="card sec"><div><h2>Batch PR</h2><p class="muted" style="margin:0;max-width:80ch">Approved fixes collect here, grouped by page. Ask Claude to “open the batch PR from the approved fixes”. It reads these decisions, applies each page (using reviewer-edited text where there is one), and opens one PR to <span class="mono">dev</span>. A page can appear twice when it has gaps from both drafting rounds; I merge those edits when building the PR.</p></div>
+  ${pages.length?`<div class="tw"><table class="t"><thead><tr><th>Page</th><th>Approved gaps</th><th>Other gaps on this page</th><th>Fix confidence</th><th>Reviewer edit</th></tr></thead><tbody>${pages.map(p=>{const ap=a.filter(x=>x.p.id===p.id);const oth=p.gaps.filter(g=>!ap.find(x=>x.g.id===g.id));return `<tr><td class="mono" style="word-break:break-all">${esc(p.short)}</td><td>${ap.map(x=>esc(x.g.id)).join(', ')}</td><td>${oth.map(g=>{const k=G.find(y=>y.g.id===g.id);return esc(g.id)+' ('+(st(k)==='pending'?'to review':st(k))+')'}).join(', ')||'<span class="muted">none</span>'}</td><td><span class="pill ${p.fix_confidence}">${p.fix_confidence}</span></td><td>${ap.some(x=>(DEC[x.g.id]||{}).edited)?'yes':'no'}</td></tr>`}).join('')}</tbody></table></div><div class="actions"><button class="btn" id="cp">Copy page list</button></div>`:'<div class="notice">No approved fixes yet.</div>'}
+  ${agreed.length?`<div class="part"><h2>Agreed: no fix needed</h2><ul>${agreed.map(x=>`<li><span class="mono">${esc(x.g.id)}</span> ${esc(x.g.item)}</li>`).join('')}</ul></div>`:''}</div>`;
+  const b=$('#cp');if(b)b.onclick=()=>{navigator.clipboard.writeText(manifest).then(()=>b.textContent='Copied',()=>b.textContent='Copy not available')};
+}
+function drawHold(){
+  const a=G.filter(x=>st(x)==='hold');
+  $('#view').innerHTML=`<div class="card sec"><div><h2>On hold</h2><p class="muted" style="margin:0;max-width:80ch">These stay out of the batch until the requested changes are addressed. Ask Claude to “address the held fixes”, then reopen each one for review.</p></div>
+  ${a.map(x=>{const d=DEC[x.g.id]||{};return `<div class="gap"><div><span class="mono muted">${esc(x.g.id)}</span><div style="font-size:16px;font-weight:600">${esc(x.g.item)}</div></div>${(d.comments||[]).map(c=>`<div class="cm"><div class="muted" style="font-size:12px">${esc(nm(c.by))} · ${esc(when(c.at))}</div>${esc(c.text)}</div>`).join('')}${d.edited?'<div class="muted">Includes a reviewer edit.</div>':''}<div><button class="btn" data-open="${esc(x.g.id)}">Open</button></div></div>`}).join('')||'<div class="notice">Nothing on hold.</div>'}</div>`;
+  document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{sel=b.dataset.open;tab='review';filter='all';ftier='';fconf='';ffix='';draw()});
+}
+function drawRejected(){
+  const rows=G.filter(x=>st(x)==='rejected');
+  $('#view').innerHTML=`<div class="card sec"><h2>Rejected gaps</h2>
+  ${rows.length?`<div class="tw"><table class="t"><thead><tr><th>Gap</th><th>Item</th><th>Page</th><th>Reason</th><th>By</th></tr></thead><tbody>${rows.map(x=>{const d=DEC[x.g.id];return `<tr><td class="mono">${esc(x.g.id)}</td><td>${esc(x.g.item)}</td><td class="mono" style="word-break:break-all">${esc(x.p.short)}</td><td>${esc(d.reason)}</td><td class="muted">${esc(nm(d.by))}<br>${esc(when(d.at))}</td></tr>`}).join('')}</tbody></table></div>`:'<div class="notice">No rejected gaps.</div>'}</div>`;
+}
+
+/* ---------- boot ---------- */
+async function boot(){
+  try{const r=await fetch('data.json');const J=await r.json();META=Array.isArray(J)?{}:(J.meta||{});P=Array.isArray(J)?J:J.proposals;BASE=META.dims||{};$('#h1').textContent=(META.productName||'')+' '+(META.version||'')+' doc gap review';document.title=(META.productName||'Doc')+' '+(META.version||'')+' gap review'}catch(e){$('#view').innerHTML='<div class="notice">Could not load the data.</div>';return}
+  G=[];P.forEach(p=>p.gaps.forEach(g=>G.push({g,p})));G.sort((a,b)=>a.g.rank-b.g.rank);
+  draw();
+  try{
+    const u=await claude.use('user');if(u){me=await u.id()}
+    dbc=await claude.use('db');
+    if(dbc&&me){
+      dbc.collection('decisions').onSnapshot(async snap=>{
+        DEC={};const by=[];snap.docs.forEach(d=>{const v=d.data();DEC[d.id]=v;by.push(v.by);(v.comments||[]).forEach(c=>by.push(c.by))});
+        await who(by);
+        const ae=document.activeElement;const typing=ae&&(ae.tagName==='TEXTAREA');
+        if(!typing)draw();else drawTabs();
+      },()=>{dbc=null;draw()});
+    }else{dbc=null;draw()}
+  }catch(e){dbc=null;draw()}
+}
+boot();
+</script>
