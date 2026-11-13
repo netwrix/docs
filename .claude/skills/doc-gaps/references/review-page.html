@@ -183,13 +183,14 @@ async function decide(x,status,extra){
   try{const sn=await dbc.doc('decisions/'+x.g.id).get();if(sn&&sn.exists&&sn.data)cur=sn.data()||cur}catch(e){} /* reads the newest stored comments first; this narrows the window for two reviewers saving at once but does not prevent it (the db has no atomic merge) */
   const comments=(cur.comments||[]).slice();
   if(extra.comment)comments.push({by:me,at:new Date().toISOString(),text:extra.comment,kind:status});
-  const edited=('edited' in extra)?extra.edited:(cur.edited||null);
+  const stale=!fresh(cur,x.p); /* saved before the proposal was redrafted: its page edit no longer applies */
+  const edited=('edited' in extra)?extra.edited:(stale?null:(cur.edited||null));
   const nowIso=new Date().toISOString();
-  const editedAt=('edited' in extra)?nowIso:(cur.editedAt||null);
+  const editedAt=('edited' in extra)?nowIso:(stale?null:(cur.editedAt||null));
   const body={status,by:me,at:nowIso,comments,reason:status==='rejected'?extra.reason:'',edited,editedAt,proposal:x.p.id,page:x.p.page};
   try{await dbc.doc('decisions/'+x.g.id).set(body);['cm','nc-'+x.g.id].forEach(id=>{const t=document.getElementById(id);if(t)t.value=''});if(!editing)draw();return true}catch(e){note('Could not save: '+(e.message||e.code));return false}
 }
-function note(t){const n=$('#note');if(n){n.textContent=t;n.hidden=false}}
+function note(t){let n=$('#note')||$('#gnote');if(!n){n=document.createElement('div');n.id='gnote';n.className='notice';n.setAttribute('role','alert');const v=$('#view');if(v)v.prepend(n);else return}n.textContent=t;n.hidden=false}
 
 /* ---------- views ---------- */
 function counts(){const c={approved:0,hold:0,rejected:0,pending:0};G.forEach(x=>c[st(x)]++);return c}
@@ -275,7 +276,7 @@ function drawNofix(){
   <textarea id="nc-${esc(x.g.id)}" rows="2" placeholder="If a fix is still needed, say why"></textarea>
   <div class="actions"><button class="btn ok" data-ok="${esc(x.g.id)}" ${OK()?'':'disabled'}>${s==='approved'?'Confirmed':'Confirm: no fix needed'}</button><button class="btn hl" data-back="${esc(x.g.id)}" ${OK()?'':'disabled'}>Needs a fix after all</button>${s!=='pending'?`<button class="btn" data-re="${esc(x.g.id)}" ${OK()?'':'disabled'}>Reopen</button>`:''}</div></div>`}).join('')||'<div class="notice">Nothing here.</div>'}</div></div>`;
   const f=id=>G.find(y=>y.g.id===id);
-  document.querySelectorAll('[data-ok]').forEach(b=>b.onclick=()=>decide(f(b.dataset.ok),'approved',{}));
+  document.querySelectorAll('[data-ok]').forEach(b=>b.onclick=()=>{const t=document.getElementById('nc-'+b.dataset.ok);decide(f(b.dataset.ok),'approved',{comment:(t&&t.value.trim())||undefined})});
   document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>{const t=document.getElementById('nc-'+b.dataset.back);const c=(t.value||'').trim();if(!c){t.placeholder='Write why a fix is still needed first';t.focus();return}decide(f(b.dataset.back),'hold',{comment:c})});
   document.querySelectorAll('[data-re]').forEach(b=>b.onclick=()=>decide(f(b.dataset.re),'pending',{comment:'Reopened.'}));
 }
@@ -373,7 +374,7 @@ function drawActions(x){
   box.innerHTML=h;
   const val=()=>(($('#cm')||{}).value||'').trim();
   const on=(id,f)=>{const e=$('#'+id);if(e)e.onclick=f};
-  on('ap',()=>decide(x,'approved',{}));
+  on('ap',()=>decide(x,'approved',{comment:val()||undefined}));
   on('ed1',()=>{editing=true;drawActions(x)});
   on('cancel',()=>{editing=false;drawActions(x)});
   on('saveed',()=>{const t=$('#ed').value;decide(x,'hold',{edited:t===p.proposed?'':t,comment:val()||'Edited the proposed text.'}).then(ok=>{if(ok){editing=false;draw()}})});

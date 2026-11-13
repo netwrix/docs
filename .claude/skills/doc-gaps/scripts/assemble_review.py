@@ -49,6 +49,16 @@ def main():
     pat = re.compile(rf"__{re.escape(a.round)}(b\d+)?\.json$")
     files = sorted(f for f in glob.glob(f"{run}/proposals/*.json") if pat.search(f))
     ids_seen = {}
+    good = []
+    for jp in files:  # one truncated or malformed drafter file must not stop the others
+        try:
+            jj = json.load(open(jp))
+            assert isinstance(jj, dict) and jj.get("proposal_id") and jj.get("page") and isinstance(jj.get("gaps"), list)
+        except Exception as ex:
+            print("unreadable or incomplete proposal, skipped:", jp, "-", type(ex).__name__, file=sys.stderr)
+            continue
+        good.append(jp)
+    files = good
     for jp in files:
         pid = json.load(open(jp)).get("proposal_id")
         if pid in ids_seen:

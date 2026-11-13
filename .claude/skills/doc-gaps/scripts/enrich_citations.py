@@ -40,6 +40,8 @@ def main():
     for p in props:
         for g in p["gaps"]:
             for c in (g.get("evidence") or {}).get("code", []):
+                if not isinstance(c, dict):
+                    print("skipped a malformed citation (not an object):", g.get("id"), str(c)[:60]); continue
                 tot += 1
                 m = re.match(r"^(.+?)(?::L?(\d+)(?:[-,]L?(\d+))?)?\s*$", (c.get("cite") or "").split(";")[0].strip())
                 if not m:

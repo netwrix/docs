@@ -68,7 +68,7 @@ def convert(run, prefix=""):
     print(len(out), "gaps ->", f"{run}/draft-gaps.json")
 
 
-def batches(run, root, tiers, rnd, agents, skip_done):
+def batches(run, root, tiers, rnd, agents, skip_done, ids=None):
     gaps = json.load(open(f"{run}/draft-gaps.json"))
     done = set()
     dp = f"{run}/review/data.json"
@@ -77,7 +77,10 @@ def batches(run, root, tiers, rnd, agents, skip_done):
         done = {g["id"] for p in (j["proposals"] if isinstance(j, dict) else j) for g in p["gaps"]}
     grp = collections.OrderedDict()
     for g in gaps:
-        if g["tier"] not in tiers or g["id"] in done:
+        if ids:  # redrafts: exactly these gaps, whatever their tier or status
+            if g["id"] not in ids:
+                continue
+        elif g["tier"] not in tiers or g["id"] in done:
             continue
         t = g["target"]
         page = t.split(" ")[0]
@@ -299,6 +302,7 @@ if __name__ == "__main__":
     ap.add_argument("--round", default="r1")
     ap.add_argument("--agents", type=int, default=5)
     ap.add_argument("--skip-done", action="store_true")
+    ap.add_argument("--ids", default="", help="batches: comma-separated gap ids to (re)draft, ignoring tiers and --skip-done (held or sent-back gaps)")
     a = ap.parse_args()
     if a.cmd == "merge-prep":
         merge_prep(a.out, a.runs)
@@ -311,4 +315,4 @@ if __name__ == "__main__":
     elif a.cmd == "convert":
         convert(a.run, a.docs_prefix)
     else:
-        batches(a.run, a.docs_root, a.tiers.split(","), a.round, a.agents, a.skip_done)
+        batches(a.run, a.docs_root, a.tiers.split(","), a.round, a.agents, a.skip_done, [i for i in a.ids.split(",") if i] or None)
