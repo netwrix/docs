@@ -30,11 +30,11 @@ A CPU spike following a mass reconnect event is expected behavior. It doesn't in
 
 **Symptom:** The import wizard rejects the backup file or shows an error.
 
-**Root cause:** The backup originates from a server version 2608 doesn't accept directly. 2608 accepts backups only from **5.9.4.2** (legacy path) or from **2509, 2510, 2601, 2602, 2604** (current-image path).
+**Root cause:** The backup originates from a server version that 2611 doesn't accept directly. 2611 accepts backups only from **5.9.4.2** (legacy path) or from **2509, 2510, 2601, 2602, 2604, 2608, 2611** (current-image path).
 
 **Resolution:**
 1. Verify the source server version (Appliance → Server Information) against the accepted versions named in the root cause.
-2. If the source is an older 5.x version, complete the cumulative patch to 5.9.4.2 first — see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x).
+2. If the source is an older 5.x version, complete the cumulative patch to 5.9.4.2 first — see [Migrating from a Legacy 5.x Server to 2611](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x).
 3. Create a new backup on the accepted source version and retry.
 
 ---
@@ -150,7 +150,7 @@ This caching behavior is specific to the legacy communication flow. The 2608 ser
 
 ### Can't Log In After Migration Due to Two-Factor Authentication
 
-**Symptom:** After restoring the backup on the new 2608 server, an administrator with Two-Factor Authentication (2FA) enabled can't log in.
+**Symptom:** After restoring the backup on the new 2611 server, an administrator with Two-Factor Authentication (2FA) enabled can't log in.
 
 **Cause:** In some cases, a System Configuration Backup created while 2FA was enabled doesn't restore administrator access correctly on the new server.
 
@@ -247,13 +247,13 @@ If errors appear instead:
 **Checklist:**
 1. Verify that you've reversed whatever mechanism you used to block client connectivity to the new server (firewall rule, routing block, disconnected network cable, and so on).
 2. Confirm the new server is reachable on the expected IP/FQDN from endpoints.
-3. Check that you uploaded the 2608 client package to the server.
+3. Check that you uploaded the 2611 client package to the server.
 4. Verify the old server is no longer running on the same IP if using same-IP strategy.
 5. Check endpoint firewall rules allow outbound on ports 443 and any other configured EPP ports.
 6. Test with a clean install of the latest EPP Client to eliminate potential issues caused by a corrupted existing client.
 
 :::note
-If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 signature bridge before they can receive the 2608 client package — any client already on 5.9.4.3 Hotfix 1 or later can go straight to 2608. See [EPP Clients Not Communicating After Migration](/docs/endpointprotector/install/migrationprocedure/faq.md#epp-clients-not-communicating-after-migration) in the FAQ for the full checklist, including the signature bridge requirement.
+If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 signature bridge before they can receive the 2611 client package — any client already on 5.9.4.3 Hotfix 1 or later can upgrade directly to 2611. See [EPP Clients Not Communicating After Migration](/docs/endpointprotector/install/migrationprocedure/faq.md#epp-clients-not-communicating-after-migration) in the FAQ for the full checklist, including the signature bridge requirement.
 :::
 
 ---

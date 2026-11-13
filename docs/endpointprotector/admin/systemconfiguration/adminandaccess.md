@@ -25,7 +25,7 @@ provide the following information:
 **Administrator Details**
 
 - Add the username, password, email, first name, last name, and phone number, and then select the
-  UI language
+  UI language. The EPP Server console, the Client Notifier, and Enforced Encryption support the same languages. See [Supported languages](/docs/endpointprotector/admin/dc_module/globalsettings.md#supported-languages).
 
 **Account Settings**
 
@@ -173,7 +173,7 @@ unintentional changes or data breaches.
 ![User Role Matrix](userrolematrix.webp)
 
 Endpoint Protector has several user roles, each with its own set of
-permissions. The Super Administrator role is the most powerful and has access to all features,
+permissions. The Super Administrator role has the broadest permissions and has access to all features,
 whilst other roles have more restricted access based on their job tasks.
 
 :::note

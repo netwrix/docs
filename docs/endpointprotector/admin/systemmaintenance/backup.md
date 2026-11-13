@@ -43,6 +43,8 @@ must be enabled before the upgrade. Contact Customer Support for assistance.
 
 ### Creating a System Backup (Migration)
 
+Starting with Endpoint Protector Server version 2611, the migration backup includes the Deep Packet Inspection (DPI) certificates and the custom certificate of the server. When you import the backup on the new server, Endpoint Protector copies the certificates to the new server and restarts the web service to load them. The endpoints keep the same certificates, so DPI keeps working after the migration.
+
 You can create a new migration backup from the System Maintenance, System Backup section.
 
 ![Creating a System Backup (Migration)](createsystembackupone.webp)

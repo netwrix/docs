@@ -10,7 +10,7 @@ Netwrix Endpoint Protector is a comprehensive Data Loss Prevention (DLP) solutio
 
 Traditional network security measures often struggle to prevent data breaches originating from endpoints such as laptops, desktops, and servers. Endpoint Protector addresses this challenge with a robust suite of features including Device Control, Content Aware Protection, eDiscovery, and Enforced Encryption.
 
-Device Control empowers organizations to manage and monitor all device activities at the endpoint, ensuring that sensitive data remains protected from unauthorized access or transfer. Content Aware Protection extends this security by scanning and detecting sensitive content at all potential exit points, whether users are copying it to external devices or transmitting it over the internet.
+Device Control empowers organizations to manage and monitor all device activities at the endpoint, so that sensitive data remains protected from unauthorized access or transfer. Content Aware Protection extends this security by scanning and detecting sensitive content at all potential exit points, whether users are copying it to external devices or transmitting it over the internet.
 
 As AI chat tools and AI-powered browser assistants become part of everyday workflows, Content Aware Protection extends the same visibility and control to AI interactions. Administrators can define which AI applications end users may access, and monitor or block sensitive content — typed directly into a prompt or attached as a file — before it reaches an AI provider that isn't on the organization's approved list. For details, see [Content Aware Protection for AI Interactions](admin/cap_module/capai.md).
 
@@ -24,10 +24,10 @@ To ensure optimal security, performance, and access to the latest features, Netw
 
 ### Support Status Overview
 
-- **Current Endpoint Protector (EPP) Server Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Current EPP Client & Enforced Encryption (EE) Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Previous EPP Server Version (2604)**: Still in active support. Plan the migration to the new **2608** version to ensure full compatibility and access to the latest security fixes.
-- **Previous versions (2602 and older, including legacy versions 5.9.4.2 and earlier)**: Discontinued support — no new features, security patches, or technical assistance.
+- **Current Endpoint Protector (EPP) Server Version (2611)**: Full active support with new features, security updates, and technical assistance
+- **Current EPP Client & Enforced Encryption (EE) Version (2611)**: Full active support with new features, security updates, and technical assistance
+- **Previous EPP Server Version (2608)**: Still in active support. Plan the upgrade to the new **2611** version to receive the latest security fixes.
+- **Previous versions (2604 and older, including legacy versions 5.9.4.2 and earlier)**: Discontinued support — no new features, security patches, or technical assistance.
 
 ### What This Means
 

@@ -45,7 +45,7 @@ The Enforced Encryption application is available for two platforms: Windows and 
 ## Enforced Encryption 140-3 FIPS Validated Engine
 
 :::note
-Starting with Netwrix Enforced Encryption version 3.0.0.2 (5.9.4.2 release), Netwrix introduced a new encryption engine, replacing the previous 256-bit AES CBC-mode encryption with FIPS 140-3 validated cryptography. This FIPS 140-3 validated encryption provides the highest standards of data protection, ensuring compliance with the latest industry regulations. While the new encryption engine is fully backward compatible for existing users, allowing for a seamless upgrade and continued use of previously encrypted drives, USB sticks encrypted with the FIPS 140-3 validated engine will not be compatible with older Enforced Encryption Clients. Therefore, Netwrix recommends updating EE Clients to ensure compatibility.
+Starting with Netwrix Enforced Encryption version 3.0.0.2 (5.9.4.2 release), Netwrix introduced a new encryption engine, replacing the previous 256-bit AES CBC-mode encryption with FIPS 140-3 validated cryptography. This FIPS 140-3 validated encryption provides the highest standards of data protection and supports compliance with the latest industry regulations. While the new encryption engine is fully backward compatible for existing users, allowing for a seamless upgrade and continued use of previously encrypted drives, USB sticks encrypted with the FIPS 140-3 validated engine will not be compatible with older Enforced Encryption Clients. Therefore, Netwrix recommends updating EE Clients to ensure compatibility.
 :::
 
 To verify the version of the 140-3 FIPS validated engine and view certification details, check the "About" section in the Enforced Encryption application.
@@ -54,9 +54,11 @@ To verify the version of the 140-3 FIPS validated engine and view certification 
 
 ## Enforced Encryption Settings
 
+The Enforced Encryption interface supports the same languages as the EPP Server console and the EPP Client Notifier. See [Supported languages](/docs/endpointprotector/admin/dc_module/globalsettings.md#supported-languages). To assign a language to Enforced Encryption, select it in the **Languages** section of the settings and click **Save**.
+
 From this section, you can remotely manage Enforced Encryption encrypted devices. Before using these features, you must configure a Master Password.
 
-![Enforced Encryption Settings](settings.webp)
+![Enforced Encryption Settings with the Languages section](easylocksettingspage.webp)
 
 In the Settings section, you can configure the Master Password, enable the Enforced Encryption File Tracing, and define the installation and execution of Enforced Encryption only on computers where the Endpoint Protector Client is present.
 
@@ -92,6 +94,65 @@ After deploying the Enforced Encryption Client with Read-Only (RO) mode enabled,
 :::warning Important
 When multiple users or different machines use an Enforced Encryption (EE) encrypted USB drive with varying EE settings, the settings will not update automatically. To apply individual computer or user settings, the EPP administrator must update the related EE settings on the EPP Server at the computer/user level each time the USB drive is used on a specific computer or by a particular user. These settings will remain stored in the EE USB drive's configuration until you make further modifications.
 :::
+
+## Client Presence Hardening
+
+When an encrypted USB device moves to computers of less restricted users, departments with stricter policies need their security controls to stay in place. Client Presence Hardening locks the **Endpoint Protector Client Presence Required** value on an Enforced Encryption device. A change of the device's group membership no longer changes the value.
+
+Client Presence Hardening requires Endpoint Protector Server and Client version 2611 or later.
+
+Before version 2611, group membership overwrote **Endpoint Protector Client Presence Required** in both directions. Promoting a device to a secure group turned it on, and demoting the device turned it off again. The stricter setting didn't stay once a device left the secure group.
+
+### How hardening works
+
+- **The device stores the settings when you create it.** When someone creates an Enforced Encryption device, the Client reads the effective Client Presence settings of the user, computer, or group it is created for. The settings are Client Presence required and Client Presence hardened. The Client stores both on the device itself.
+- **A hardened device keeps its settings.** After the Client hardens a device, the device ignores later changes, such as a user being promoted or demoted, or a change to a global setting. The restrictions that the originating department chose stay in place wherever the device is used.
+- **The protection stays in place.** A hardened device keeps requiring the EPP Client, even on computers whose policies are more permissive.
+- **Devices that aren't hardened behave as before.** A device that you created before hardening, or without the hardening setting, keeps following the group and global settings.
+
+A hardened device also keeps the other settings in the **EasyLock Installation and Execution**, **EasyLock Multi Server**, and **EE Read Only mode** sections fixed. Later policy updates don't change **Endpoint Protector Client presence required**, **Harden Client Presence Value**, the **Multi Server** setting and its additional server IP addresses, or **EE Read Only mode** on the device. Only the **Reset Client Presence Hardening** action overrides them.
+
+### Turn on hardening
+
+1. Go to **Device Control** > **Global Settings** and expand **Easylock Settings**. You can also open the settings of a Secure Group, computer, or user.
+2. In the **EasyLock Installation and Execution** section, find **Endpoint Protector Client Presence Required**.
+3. Turn on **Harden Client Presence Value** in the same section. The setting is off by default.
+4. Save the settings.
+
+![EasyLock settings with the Harden Client Presence Value setting](../dc_module/easylockclientpresence.webp)
+
+Hardening isn't retroactive. The setting applies to devices that you create after you turn it on. Endpoint Protector doesn't recalculate the setting for existing devices.
+
+**Example**
+
+The Finance department has a Secure Group with **Endpoint Protector Client Presence Required** on, and **Harden Client Presence Value** on. A user in that group creates an encrypted USB device. The device stores the value as on and hardened. Later, the user leaves the Secure Group, or someone moves the device to a computer in a department with a more permissive policy. The device still requires the EPP Client.
+
+:::note
+If you remove a user from the Secure Group, the device keeps its hardened configuration until you reset the hardening or re-encrypt the device.
+:::
+
+### Reset Client Presence Hardening
+
+To remove the lock from a device and apply the current policy value, use the **Reset Client Presence Hardening** action. The action is available from the **Clients list** in **Enforced Encryption** > **EasyLock** and from the details page of the device.
+
+1. Go to **Enforced Encryption** > **EasyLock**. In the **Clients list**, select one or more devices, or open the details page of a device.
+2. Click **Reset Client Presence Hardening**.
+3. Confirm the action. The message says: "Are you sure you want to continue? This will trigger a hardening reset on Enforced Encryption's next check-in. EE will then apply the current configuration set."
+
+At its next check-in with the server, Enforced Encryption re-evaluates the Client Presence value from the current user and computer context of the device. It stores the result on the device, hardened or not, depending on the current settings. The action runs once. It doesn't change the **Harden Client Presence Value** setting itself.
+
+![Clients list in Enforced Encryption > EasyLock with the Reset Client Presence Hardening button](eeclientslist.webp)
+
+### Hardening state log
+
+The log of the USB device records every change of the hardening state:
+
+- "Client Presence Required: On and hardened"
+- "Client Presence Required: On, not hardened"
+- "Client Presence Required: Off and hardened"
+- "Client Presence Required: Off, not hardened"
+
+When you run **Reset Client Presence Hardening**, Endpoint Protector adds a separate action entry to the log with your administrator name and the time. It writes the entry when you start the action, without waiting for the device.
 
 ## Enforced Encryption Deployment
 

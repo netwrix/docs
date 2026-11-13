@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Best Practices Summary
 
-The following best practices come from the complete migration workflow and apply to any EPP Server upgrade or migration to 2608.
+The following best practices come from the complete migration workflow and apply to any EPP Server upgrade or migration to 2611.
 
 ## Planning
 
@@ -19,7 +19,7 @@ The following best practices come from the complete migration workflow and apply
 | 05 | Verify your license is valid and reflects your current entitlements before starting any migration activity, and again after backup import. `php_els` was strictly a 2509–2604 requirement — 2608 no longer needs it and ignores it if present. |
 | 06 | Keep the old server VM alive until you fully validate the new environment. Never decommission prematurely. |
 | 07 | Verify that the target server's assigned CPU, RAM, and disk meet at least the minimum sizing in [Server Requirements](/docs/endpointprotector/requirements/server) before starting migration — undersized environments are a common root cause of post-migration performance issues, including recurring server errors. |
-| 08 | If you're on 2509, 2510, 2601, or 2602, you can migrate directly to 2608 — no intermediate version is required. Upgrading to **2604 first** is still good practice, since 2604 → 2608 is the most thoroughly validated path in Netwrix labs. |
+| 08 | If you're on 2509, 2510, 2601, or 2602, you can migrate directly to 2611 — no intermediate version is required. Upgrading to **2604 first** is still good practice, since Netwrix labs validated the 2604 → 2608 path most thoroughly. |
 
 ## Backup and Recovery
 
@@ -27,7 +27,7 @@ The following best practices come from the complete migration workflow and apply
 |---|---|
 | 09 | Always create a VM snapshot AND a System Configuration Backup — they serve different recovery purposes. |
 | 10 | Store the System Backup Key in a password manager or secure vault. You can't recover it if you lose it. |
-| 11 | Label all backups with version, date, and purpose (e.g., `pre-patch-5942`, `migration-to-2608`). |
+| 11 | Label all backups with version, date, and purpose (e.g., `pre-patch-5942`, `migration-to-2611`). |
 | 12 | For compliance-regulated environments, export audit logs separately before migration — they aren't in the config backup. |
 | 13 | Test backup restoration in a non-production environment at least once before relying on it for production recovery. |
 | 14 | Create audit log backups to export logs off the server — don't use the server as a storage location. You can lose backup files left on the server if the image fails or you replace it. Always download and store audit log backup files in a secure, external location. |
@@ -56,7 +56,7 @@ The following best practices come from the complete migration workflow and apply
 
 | # | Best Practice |
 |---|---|
-| 25 | The 2608 client requires no new bridge version — any client on 5.9.4.3 Hotfix 1 or on any 2511–2605 client version can upgrade directly. If you are using the EPP Server Client Upgrade feature and still have clients on 5.9.4.1 or older, upgrade them to 5.9.4.3 Hotfix 1 first as the signature bridge before proceeding to 2608. |
+| 25 | The 2611 client requires no new bridge version — any client on 5.9.4.3 Hotfix 1 or on any 2511–2608 client version can upgrade directly. If you are using the EPP Server Client Upgrade feature and still have clients on 5.9.4.1 or older, upgrade them to 5.9.4.3 Hotfix 1 first as the signature bridge before proceeding to 2608. |
 | 26 | Use enterprise deployment tools (Intune, SCCM, Jamf) for client upgrades rather than relying solely on EPP's built-in client upgrade feature, which limits uploads to 50 machines per hour. |
 | 27 | Always run a pilot deployment of 10–20 endpoints before mass client rollout. |
 | 28 | For Enforced Encryption (EE) environments, upload both Windows and macOS EE clients to the server before restoring client connectivity — the server requires both packages regardless of which OS your endpoints use. |
@@ -69,9 +69,9 @@ The following best practices come from the complete migration workflow and apply
 
 | # | Best Practice |
 |---|---|
-| 33 | If migrating from a legacy 5.x server, create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. 2608 rejects any other legacy version and may cause OS regression. |
+| 33 | If migrating from a legacy 5.x server, create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. The new platform rejects any other legacy version and may cause OS regression. |
 | 34 | Label every backup file with the server version and date in the filename (e.g., `epp-5942-backup-2026-04-21.bak`). Mislabelled backups are a leading cause of wrong-version import errors. |
-| 35 | If migrating from the current image platform, 2608 accepts a direct backup from 2509, 2510, 2601, 2602, or 2604 — no intermediate version is required. Reaching 2604 first is still good practice, since it's the most thoroughly validated path (see [Planning](#planning)). |
+| 35 | If migrating from the current image platform, 2611 accepts a direct backup from 2509, 2510, 2601, 2602, 2604, 2608, or 2611 — no intermediate version is required. Reaching 2604 first is still good practice, since Netwrix labs validated that path most thoroughly (see [Planning](#planning)). |
 | 36 | After applying the 5.9.4.2 cumulative patch, wait 24 hours for background DB tasks to complete before creating the migration backup. |
 
 ## 3rd-Party Integrations
@@ -91,7 +91,7 @@ The following best practices come from the complete migration workflow and apply
 | 42 | Don't apply server patches immediately after backup restore — the import process can disrupt the patch pipeline. Allow 24 hours before patching. |
 | 43 | Observe the migrated server's CPU, RAM, and disk usage closely during the first 24 hours. Temporary peaks are normal — background cron jobs, database schema alignment, and log reindexing tasks continue running. Don't treat elevated resource usage alone as a failure indicator during this window. |
 | 44 | Monitor Audit Log Backup jobs after migration — they can enter an infinite running state. Verify job completion before scheduling recurring backups. |
-| 45 | For air-gapped / offline environments, obtain the Offline Activation Patch for 2608 before the maintenance window begins — request it from Netwrix Support in advance. |
+| 45 | For air-gapped / offline environments, download the 2611 offline patch before the maintenance window begins. Apply it to the 2608 base image right after trial activation and before the backup import. Servers that stay on 2608 still require the Offline Activation Patch for 2608. A server on 2611.0.1.x doesn't, because activation no longer requires a connection to the Netwrix activation service. |
 | 46 | After a mass client reinstall or extended communication outage, expect a temporary CPU spike when clients resume communication — machines request settings, rights, and policies simultaneously, and deliver any backlog of blocked logs. Spike severity scales with fleet size and the configured **Policy Refresh Interval** (see [Client Settings](/docs/endpointprotector/admin/dc_module/globalsettings.md#client-settings)). |
 | 47 | Stagger mass client reinstalls or reconnections in batches rather than restoring communication for the entire fleet at once — this reduces peak server load during resynchronization. |
 | 48 | Don't assume a coinciding SIEM or Audit issue is the cause of a CPU spike without evidence — both operate independently of client check-in load. |

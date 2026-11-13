@@ -13,6 +13,18 @@ information on Disk Space usage and Database, and the Server Uptime.
 
 ![View general information about the Server](serverinformation.webp)
 
+The page has these sections:
+
+- **System Fail/Over Status**
+- **Disk Space**—the disk space of the system and of the EPP Server, and the space that logs and shadows use. The **Info Disk Space** box lists the actions to take if you use up 95 percent of the storage.
+- **Database Disk Space occupied**—the database disk space and the number of logs in the database
+- **System**—the uptime, the Linux distribution, the **PHP2Shell vulnerability status**, and the time of the last system information update
+
+**Verify the PHP security fix**
+
+The **PHP2Shell vulnerability status** field shows whether the appliance has the PHP security fix: **Fixed** or **Not fixed**. If the status is **Not fixed**, click **Update now** to open **Security Updates** in System Configuration and apply the update. See [Security Updates](/docs/endpointprotector/admin/systemconfiguration/overview.md#security-updates). The status field is available starting with version 2611.
+
+
 ## Server Maintenance
 
 In this section, you can set up a preferential time zone and NTP synchronization server, conﬁgure
@@ -231,6 +243,7 @@ To create a SIEM Server, click **Add New** and provide the following information
 - Server Name – add a server name
 - Server Description – add a description
 - Server IP or DNS – add the IP or DNS
+- Security Token – optional. Endpoint Protector uses the token only when you enable [SIEM Encryption](#siem-encryption).
 - Server Protocol – select the UDP or TCP server protocol
 
     :::note
@@ -246,14 +259,12 @@ To create a SIEM Server, click **Add New** and provide the following information
     :::
 
 
-- Log Types – select the logs to send to the SIEM Server from the available options
+- Log Types – select the logs to send to the SIEM Server from the available options. The options are
+  grouped in Device Control, Content Aware Protection, eDiscovery, and Other SIEM Logs. Other SIEM Logs include
+  AD Synchronization, Admin Actions, APNS certificate, Client Info Update, Client Integrity Fail, Client Integrity
+  OK, Client Uninstall, Content Aware - Logs Amount, Delete, Device Control - Logs Amount, and Endpoint Licenses.
 
-![SIEM Intergration - Adding a New Server](siemintegrationnewserver.webp)
-
-:::warning
-To use the latest SIEM integration features, you must have installed Endpoint Protector from image version 5.6.0.0 or later, and your environment must maintain an active HTTPS connection.
-:::
-
+![SIEM Integration - Adding a New Server](siemintegrationnewserver2611.webp)
 
 ### SIEM Encryption
 
@@ -266,6 +277,12 @@ The same CA must sign both the certiﬁcate used on the SIEM server and the one
 uploaded to the Endpoint Protector Server.
 :::
 
+
+The **Security Token** field is optional. Endpoint Protector uses the token only when you enable Encryption. Use it for SIEM
+services that expect a token in each message, such as Splunk HTTP Event Collector or Sumo Logic. The
+token can have up to 512 characters: letters, numbers, and the characters `. _ ~ + - = / @`. When you
+enter a token, Endpoint Protector sends each message as `<PRI> [token] <message>`, without the other
+syslog header fields.
 
 Endpoint Protector will check the following:
 
@@ -286,327 +303,183 @@ setting, contact Customer Support.
 
 ### SIEM Export log formats
 
-Each log entry follows this
-format: `log_type: [field_name] field_value | [field_name] field_value | [field_name] field_value ..`
+Endpoint Protector sends each log entry to the SIEM server as one syslog message.
 
-#### Log structure
+#### Transport and syslog format
 
-The `log_type` is a combination of "Device Control" and the event name.
+- **Facility:** the messages use the syslog facility `local0`. The syslog severity depends on the log type.
+- **Protocols:** UDP or TCP. For TCP, you can turn on TLS encryption. See [SIEM Encryption](#siem-encryption).
+- **Standard:** the Endpoint Protector Server forwards messages with the `syslog()` driver of syslog-ng, which uses the IETF syslog format (RFC 5424). The transport follows RFC 5426 for UDP, RFC 6587 for TCP, and RFC 5425 for TLS. The syslog header timestamp is in ISO 8601 format with a time zone offset, as RFC 5424 defines. The syslog-ng service on the appliance writes it. The messages for a destination that uses a **Security Token** have no timestamp and no host name in the header. Every message body has its own date and time fields.
+- **Application name:** the application name in the syslog header is `EPP-<server-ip>`, where `<server-ip>` is the destination that you configured.
 
-Example terms for log types include:
 
-- Device Control – Blocked
+#### Message structure
 
-- Device Control – Connected
+The message text has this structure:
 
-- Device Control – Device not TD
+```text
+EPP IP - <server> - <section> - <log name>: [Log ID] <id> | [field name] value | [field name] value | ...
+```
 
-To see the supported events on the Endpoint Protector Server, navigate to Appliances > SIEM
-Integration > SIEM Policy.
+- `<server>` is the host name or IP address that the Client used to reach the Endpoint Protector Server.
+- `<section>` is Device Control, Content Aware Protection, eDiscovery, or System Logs.
+- `<log name>` is the event name that you select in **Log Types**, for example `Blocked`.
+- `[Log ID]` is always the first field. Endpoint Protector generates a 32-character identifier for each message.
+- Each field is `[field name] value`, and a vertical bar with spaces separates the fields. An empty value leaves the space after the field name empty.
+- The message can have up to 10,000 characters. Endpoint Protector truncates longer messages.
 
-#### Column header
+If you turn on **Exclude Headers**, the message has no `EPP IP` and section labels and no field names. It contains the values only, in the field order of the log: `<host> - <section> - <log name>: <value> | <value> | ...`. The first value is the Log ID.
 
-The column header is `[field_name]`.
+The date and time fields use these formats:
 
-Example column headers include:
+- **Date/Time(Server)** and **Date/Time(Client)**—`YYYY-MM-DD hh:mm:ss`
+- **Date/Time(Server UTC)**, **Date/Time(Client UTC)**, and **Date/Time(UTC)**—`YYYY-MM-DDThh:mm:ssZ`
 
-- [Event Name]
-- [Client Computer]
-- [IP Address]
+The **Severity** field of Content Aware Protection and eDiscovery logs shows the severity name: Informative, Low, Medium, High, or Critical. It shows "Not Set" for events without a severity.
 
-You can find the complete list of `[field_name]` in the
-[SIEM Export Log Fields](#siem-export-log-fields) section.
-
-#### Contents of the column
-
-The `field_value` represents the actual contents within the column.
-
-Example field values include:
-
-- Offline Temporary Password used
-- User’s computer
-- 192.168.0
+:::note
+Endpoint Protector version 2608 sent the database field names as keys, such as `machine_name` and `destination_type`. Version 2611 again sends the readable field names that this page lists, in the same order as before version 2608.
+:::
 
 ### SIEM Export Log Fields
 
-This section presents the field names for the Endpoint Protector Server's "Standard format," available since the Endpoint Protector 5.9.4 release. Endpoint Protector Server exports logs to SIEM solutions with a maximum of 2,100 characters. Starting with Endpoint Protector 5.9.1, the message limit increased to 10,000 characters.
-
-:::warning
-From Endpoint Protector 2608 onward, Device Control and Content Aware Protection SIEM log entries use internal database field names as keys (for example, `machine_name`, `destination_type`) instead of the readable field names listed in this section (for example, `[Client Computer]`, `[Destination Type]`). This change is an unintended side effect of the underlying log platform migration to CrateDB. There is no setting to restore the readable field names. If your SIEM parser or field mappings rely on those readable names, update them using the [SIEM Field Name Mapping (2608+)](#siem-field-name-mapping-2608) table.
-:::
+This section lists the fields for each log in the order that Endpoint Protector sends them. The examples show the message text with sample values. The syslog header isn't part of the examples.
 
 #### Device Control
 
-The standard format for the Device Control fields is as follows:
+The Device Control format applies to the events in the **Device Control** log types. It also applies to the Enforced Encryption events (file encrypt and decrypt, and EasyLock deployment), Print, Transfer Limit Reached, External Repository Upload, External Repository Upload Fail, Uninstall Attempt, and Forced Uninstall Attempt. These events use the Device Control label in the message. **Log Types** lists Transfer Limit Reached, Client Info Update, and the External Repository Upload events under **Other SIEM Logs**. For Uninstall Attempt and Forced Uninstall Attempt, the log name is the event name and the message uses the Device Control fields.
 
-- [Log ID]
-- [Event Name]
-- [Client Computer]
-- [IP Address]
-- [MAC Address]
-- [Serial Number]
-- [OS]
-- [Client User]
-- [Device Type]
-- [Device]
-- [Device VID]
-- [Device PID]
-- [Device Serial]
-- [EPP Client Version]
-- [File Name]
-- [File Hash]
-- [File Type]
-- [File Size]
-- [Justification]
-- [Time Interval]
-- [Date/Time(Server)]
-- [Date/Time(Client)]
-- [Date/Time(Server UTC)]
-- [Date/Time(Client UTC)]
-- [Shadow Exists]
-- [Repository Type]
+Header line (field order):
+
+```text
+[Log ID] | [Event Name] | [Client Computer] | [IP Address] | [MAC Address] | [Serial Number] | [OS] | [Client User] | [Device Type] | [Device] | [Device VID] | [Device PID] | [Device Serial] | [EPP Client Version] | [File Name] | [File Hash] | [File Type] | [File Size] | [File Shadow] | [Repository Type] | [Justification] | [Time Interval] | [Date/Time(Server)] | [Date/Time(Client)] | [Date/Time(Server UTC)] | [Date/Time(Client UTC)] | [Department Name]
+```
+
+Example:
+
+```text
+EPP IP - 192.0.2.10 - Device Control - Blocked: [Log ID] 9f86d081884c7d659a2feaa0c55ad015 | [Event Name] Blocked | [Client Computer] WS-014 | [IP Address] 192.0.2.45 | [MAC Address] 00:00:5E:00:53:01 | [Serial Number] SN-FAKE-014 | [OS] Windows 11 | [Client User] jsmith | [Device Type] USB Storage Device | [Device] Fake USB Drive | [Device VID] 0000 | [Device PID] 0001 | [Device Serial] FAKE0001 | [EPP Client Version] 0.0.0.0 | [File Name] | [File Hash] | [File Type] | [File Size] | [File Shadow] NO | [Repository Type] | [Justification] | [Time Interval] | [Date/Time(Server)] 2026-10-30 09:15:02 | [Date/Time(Client)] 2026-10-30 09:15:01 | [Date/Time(Server UTC)] 2026-10-30T07:15:02Z | [Date/Time(Client UTC)] 2026-10-30T09:15:01Z | [Department Name] Default Department
+```
+
+
+
+The **File Shadow** field shows `YES` or `NO`. **Repository Type** is empty unless a File Shadow exists.
 
 #### Content Aware Protection
 
-When you use Reporting V1, fields associated with Reporting V2 content, such as [Destination
-Details], [Email Sender], and [Email Subject], remain blank.
+Endpoint Protector sends one message for each matched item. **Content Policy**, **Content Policy Type**, **Matched Item**, and **Item Details** come from the matched item.
 
-The standard format for the Content Aware Protection fields is as follows:
+Header line (field order):
 
-- [Log ID]
-- [Client Computer]
-- [IP Address]
-- [MAC Address]
-- [Serial Number]
-- [OS]
-- [Client User]
-- [Content Policy]
-- [Content Policy Type]
-- [Destination Type]
-- [Destination]
-- [Destination Details]
-- [Email Sender]
-- [Email Subject]
-- [Justification]
-- [Device VID]
-- [Device PID]
-- [Device Serial]
-- [File Name]
-- [File Hash]
-- [File Size]
-- [Matched Item]
-- [Item Details]
-- [Date/Time(Server)]
-- [Date/Time(Client)]
-- [Date/Time(Server UTC)]
-- [Date/Time(Client UTC)]
-- [Certificate State]
-- [Shadow Exists]
-- [Repository Type]
+```text
+[Log ID] | [Client Computer] | [IP Address] | [MAC Address] | [Serial Number] | [OS] | [Client User] | [Content Policy] | [Content Policy Type] | [Destination Type] | [Destination] | [Destination Details] | [Email Sender] | [Email Subject] | [Justification] | [Device VID] | [Device PID] | [Device Serial] | [File Name] | [File Hash] | [File Size] | [File Shadow] | [Repository Type] | [Matched Item] | [Item Details] | [Date/Time(Server)] | [Date/Time(Client)] | [Date/Time(Server UTC)] | [Date/Time(Client UTC)] | [Certificate State] | [Department Name] | [EPP Client Version] | [Severity]
+```
+
+Example:
+
+```text
+EPP IP - 192.0.2.10 - Content Aware Protection - Content Threat Blocked: [Log ID] 3b5d5c3712955042212316173ccf37be | [Client Computer] WS-014 | [IP Address] 192.0.2.45 | [MAC Address] 00:00:5E:00:53:01 | [Serial Number] SN-FAKE-014 | [OS] Windows 11 | [Client User] jsmith | [Content Policy] Fake PII Policy | [Content Policy Type] Predefined | [Destination Type] Web | [Destination] example.com | [Destination Details] | [Email Sender] | [Email Subject] | [Device VID] | [Device PID] | [Device Serial] | [File Name] report.docx | [File Hash] | [File Size] 1024 | [File Shadow] NO | [Repository Type] | [Matched Item] 000-00-0000 | [Item Details] | [Date/Time(Server)] 2026-10-30 09:20:00 | [Date/Time(Client)] 2026-10-30 09:19:59 | [Date/Time(Server UTC)] 2026-10-30T07:20:00Z | [Date/Time(Client UTC)] 2026-10-30T07:19:59Z | [Certificate State] | [Department Name] Default Department | [EPP Client Version] 0.0.0.0 | [Severity] High
+```
+
+Endpoint Protector includes the **Justification** field only for the **Content Remediation Session Active** and **DPI Bypassed Traffic** events. For other events, the field isn't in the message. The Content Aware Protection format has no **Event Name** field.
+
+When you use Reporting V1, fields associated with Reporting V2 content, such as **Destination Details**, **Email Sender**, and **Email Subject**, remain blank.
 
 #### E-Discovery
 
-The standard format for the E-Discovery fields is as follows:
+Endpoint Protector sends this message for each file that an eDiscovery policy reports. **Matched type** holds the item details, and **Path** holds the file path.
 
-- [Log ID]
-- [Computer]
-- [IP Address]
-- [MAC Address]
-- [Serial Number]
-- [OS]
-- [Policy]
-- [Matched type]
-- [Matched Item]
-- [Path]
-- [Discovered at]
-- [Discovered at (UTC)]
+Header line (field order):
 
-### SIEM Field Name Mapping (2608+) {#siem-field-name-mapping-2608}
+```text
+[Log ID] | [Computer] | [IP Address] | [MAC Address] | [Serial Number] | [OS] | [Policy] | [Matched type] | [Matched Item] | [Path] | [Discovered at] | [Discovered at (UTC)] | [Severity]
+```
 
-From Endpoint Protector 2608 onward, Device Control and Content Aware Protection SIEM log entries use the internal database field name as the key instead of the readable field name. Use the following tables to update your SIEM parser or field mappings.
+Example:
 
-:::note
-This mapping covers the fields shared with the Reporting module's export field list. A small number of internal ID fields (for example, `device_id`, `client_id`) may also appear in the live SIEM stream. Validate the mapping against a captured log sample from your environment before finalizing your SIEM parser configuration.
-:::
+```text
+EPP IP - 192.0.2.10 - eDiscovery - File Reported: [Log ID] 2c26b46b68ffc68ff99b453c1d304134 | [Computer] WS-014 | [IP Address] 192.0.2.45 | [MAC Address] 00:00:5E:00:53:01 | [Serial Number] SN-FAKE-014 | [OS] Windows 11 | [Policy] Fake PII Scan | [Matched type] Social Security Number | [Matched Item] 000-00-0000 | [Path] C:\Users\jsmith\Documents\report.docx | [Discovered at] 2026-10-30 09:30:00 | [Discovered at (UTC)] 2026-10-30T07:30:00Z | [Severity] Medium
+```
 
-#### Device Control field name mapping
+#### User Login, User Logout, Client Integrity OK, and Client Integrity Fail
 
-| Readable name (pre-2608) | Database field name (2608+) |
-| --- | --- |
-| Client Computer | `machine_name` |
-| IP Address | `ip` |
-| Domain | `domain` |
-| Client User | `client_name` |
-| Department | `department_name` |
-| Device Type | `device_type_name` |
-| Device | `device_name` |
-| Device VID | `vid` |
-| Device PID | `pid` |
-| Device Serial | `serial_no` |
-| File Name | `file_name` |
-| File Type | `file_type` |
-| File Size | `file_size` |
-| File Hash | `file_hash` |
-| Justification | `ur_justification` |
-| Time Interval | `ur_time_interval` |
-| OS | `os_version` |
-| Event Name | `event_name` |
-| Shadow Exists | `shadow_exists` |
-| Repository Type | `repository_type` |
-| Date/Time(Server) | `timestamp` |
-| Date/Time(Client) | `event_time_local` |
-| EPP Client Version | `epp_client_version` |
+These logs use the System Logs section and the same fields.
 
-#### Content Aware Protection field name mapping
+Header line (field order):
 
-| Readable name (pre-2608) | Database field name (2608+) |
-| --- | --- |
-| Content Policy | `content_policy` |
-| Destination Type | `destination_type` |
-| Destination | `destination` |
-| Destination Details | `destination_details` |
-| Email Sender | `email_sender` |
-| Email Subject | `email_subject` |
-| File Name | `file_name` |
-| File Hash | `file_hash` |
-| File Type | `file_type` |
-| File Size | `file_size` |
-| Matched Item | `matched_item` |
-| Item Details | `item_details` |
-| Client Computer | `machine_name` |
-| Client User | `client_name` |
-| IP Address | `ip` |
-| OS | `os_type_name` |
-| Event Name | `event_name` |
-| Shadow Exists | `shadow_exists` |
-| Repository Type | `repository_type` |
-| Date/Time(Server) | `timestamp` |
-| Date/Time(Client) | `event_time_local` |
-| Date/Time(Client UTC) | `client_time_utc` |
-| EPP Client Version | `epp_client_version` |
+```text
+[Log ID] | [Client Computer] | [IP Address] | [MAC Address] | [Serial Number] | [OS] | [EPP Client Version] | [Client User] | [File Name] | [File Type] | [Date/Time(Server)] | [Date/Time(Client)] | [Date/Time(Server UTC)] | [Date/Time(Client UTC)]
+```
 
-#### Other SIEM Logs
+Example:
 
-**User Login/User Logout**
-
-The standard format for the Other SIEM Logs fields is as follows:
-
-- [Log ID]
-- [Client Computer]
-- [IP Address]
-- [MAC Address]
-- [Serial Number]
-- [OS]
-- [EPP Client Version]
-- [Client User]
-- [File Name]
-- [File Type]
-- [Date/Time(Server)]
-- [Date/Time(Client)]
-- [Date/Time(Server UTC)]
-- [Date/Time(Client UTC)]
-
-#### Client Integrity OK/Client Integrity Fail
-
-The standard format for the Client Integrity OK/Client Integrity Fail fields is as follows:
-
-- [Log ID]
-- [Client Computer]
-- [IP Address]
-- [MAC Address]
-- [Serial Number]
-- [OS]
-- [EPP Client Version]
-- [Client User]
-- [File Name]
-- [File Type]
-- [Date/Time(Server)]
-- [Date/Time(Client)]
-- [Date/Time(Server UTC)]
-- [Date/Time(Client UTC)]
-
-#### Admin Action
-
-The standard format for the Admin Action fields is as follows:
-
-- [Log ID]
-- [Administrator]
-- [Section]
-- [Action Type]
-- [Before]
-- [After]
-- [Date/Time(UTC)]
+```text
+EPP IP - 192.0.2.10 - System Logs - User Login: [Log ID] fcde2b2edba56bf408601fb721fe9b5c | [Client Computer] WS-014 | [IP Address] 192.0.2.45 | [MAC Address] 00:00:5E:00:53:01 | [Serial Number] SN-FAKE-014 | [OS] Windows 11 | [EPP Client Version] 0.0.0.0 | [Client User] jsmith | [File Name] | [File Type] | [Date/Time(Server)] 2026-10-30 08:00:00 | [Date/Time(Client)] 2026-10-30 07:59:58 | [Date/Time(Server UTC)] 2026-10-30T06:00:00Z | [Date/Time(Client UTC)] 2026-10-30T07:59:58Z
+```
 
 #### User Information Updated
 
-The standard format for the User Information Updated fields is as follows:
-
-- [Log ID]
-- [Client Computer]
-- [IP Address]
-- [MAC Address]
-- [Serial Number]
-- [OS]
-- [EPP Client Version]
-- [Client User]
-- [Date/Time(Server)]
-- [Date/Time(Client)]
-- [Date/Time(Server UTC)]
-- [Date/Time(Client UTC)]
+The **Client Info Update** log type in **Log Types** sends the User Information Updated event. The message has the Device Control header, and its **Event Name** field shows "User Information Updated". It carries the standard Device Control fields, in the same order. The device and file fields are empty. Endpoint Protector doesn't send the new user details, such as the employee ID, phone number, e-mail address, and team.
 
 #### Policies Received
 
-The standard format for the Policies Received fields is as follows:
+Header line (field order):
 
-- [Log ID]
-- [Event Name]
-- [Client Computer]
-- [IP Address]
-- [Client User]
-- [OS]
-- [Date/Time(Server)]
-- [Date/Time(Client)]
-- [Date/Time(Server UTC)]
-- [Date/Time(Client UTC)]
+```text
+[Log ID] | [Event Name] | [Client Computer] | [Department] | [IP Address] | [Client User] | [OS] | [EPP Client Version] | [Date/Time(Server)] | [Date/Time(Client)] | [Date/Time(Server UTC)] | [Date/Time(Client UTC)]
+```
 
-#### Uninstall Attempt / Forced Uninstall Attempt
+Example:
 
-The standard format for the Uninstall Attempt/Forced Uninstall Attempt fields is as follows:
+```text
+EPP IP - 192.0.2.10 - System Logs - Policies Received: [Log ID] 6b86b273ff34fce19d6b804eff5a3f57 | [Event Name] Policies Received | [Client Computer] WS-014 | [Department] Default Department | [IP Address] 192.0.2.45 | [Client User] jsmith | [OS] Windows 11 | [EPP Client Version] 0.0.0.0 | [Date/Time(Server)] 2026-10-30 08:05:00 | [Date/Time(Client)] 2026-10-30 08:04:59 | [Date/Time(Server UTC)] 2026-10-30T06:05:00Z | [Date/Time(Client UTC)] 2026-10-30T08:04:59Z
+```
 
-- [Log ID]
-- [Event Name]
-- [Client Computer]
-- [IP Address]
-- [MAC Address]
-- [Serial Number]
-- [OS]
-- [Client User]
-- [Device Type]
-- [Device]
-- [Device VID]
-- [Device PID]
-- [Device Serial]
-- [EPP Client Version]
-- [File Name]
-- [File Hash]
-- [File Type]
-- [File Size]
-- [Justification]
-- [Time Interval]
-- [Date/Time(Server)]
-- [Date/Time(Client)]
-- [Date/Time(Server UTC)]
-- [Date/Time(Client UTC)]
+#### Admin Action
+
+The **Administrator** field shows the name of the API client when the action comes from the REST API.
+
+Header line (field order):
+
+```text
+[Log ID] | [Administrator] | [Section] | [Action Type] | [Before] | [After] | [Date/Time(UTC)]
+```
+
+Example:
+
+```text
+EPP IP - 192.0.2.10 - System Logs - Admin Actions: [Log ID] d4735e3a265e16eee03f59718b9b5d03 | [Administrator] jsmith | [Section] Device Control | [Action Type] Edit | [Before] ... | [After] ... | [Date/Time(UTC)] 2026-10-30T07:00:00Z
+```
 
 #### Client Uninstall
 
-The standard format for the Client Uninstall fields is as follows:
+The **Department** field in this log holds the numeric department ID.
 
-- [Log ID]
-- [Client Computer]
-- [IP Address]
-- [MAC Address]
-- [Serial Number]
-- [Department]
-- [EPP Client Version]
-- [Last Time Online]
+Header line (field order):
+
+```text
+[Log ID] | [Client Computer] | [Ip Address] | [MAC Address] | [Serial Number] | [Department] | [EPP Client Version] | [Last Time Online]
+```
+
+Example:
+
+```text
+EPP IP - 192.0.2.10 - System Logs - Client Uninstall: [Log ID] 4e07408562bedb8b60ce05c1decfe3ad | [Client Computer] WS-014 | [Ip Address] 192.0.2.45 | [MAC Address] 00:00:5E:00:53:01 | [Serial Number] SN-FAKE-014 | [Department] 1 | [EPP Client Version] 0.0.0.0 | [Last Time Online] 2026-10-30 08:10:00
+```
+
+#### System alerts
+
+Endpoint Protector sends these logs when the number of Device Control logs or Content Aware Protection logs, the server disk space, or the license count reaches a threshold. In **Log Types**, they appear as **Device Control - Logs Amount**, **Content Aware - Logs Amount**, and **Endpoint Licenses**. The thresholds are 1,000,000 logs, 80 percent of the licenses, and 90 percent of the disk space.
+
+Header line (field order):
+
+```text
+[Log ID] | [Date/Time(UTC)] | [Message]
+```
+
+Example:
+
+```text
+EPP IP - 192.0.2.10 - System Logs - Server Disk Space: [Log ID] ef2d127de37b942baad06145e54b0c61 | [Date/Time(UTC)] 2026-10-30T07:00:00Z | [Message] This is an alert notification that you are running out of space for your Endpoint Protector Appliance!
+```
+
