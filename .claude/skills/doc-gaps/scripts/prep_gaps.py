@@ -25,10 +25,22 @@
       Reads OUT/impact-out-*.json, computes priority, writes OUT/gaps-ranked.json (the audit's shape, plus
       verdict, runs and source_ids), OUT/merged-final.json and OUT/dropped-merge.json. Then run convert.
 """
-import argparse, collections, json, os, sys
+import argparse, collections, json, os, re, sys
 
 
-def convert(run):
+def norm_target(t, prefix):
+    """Audit targets look like 'path (note)', 'NEW path (note)' or 'New page path'. Return 'docs/.../path (note)'."""
+    m = re.match(r"^\s*(new(?:\s+page)?\s+)?(\S+)(.*)$", t or "", re.I)
+    if not m:
+        return t
+    new, path, rest = m.group(1), m.group(2), m.group(3).strip()
+    if prefix and not path.startswith("docs/") and path.endswith(".md"):
+        path = prefix.rstrip("/") + "/" + path
+    note = ("NEW page. " if new else "") + rest
+    return (path + " " + note).strip()
+
+
+def convert(run, prefix=""):
     src = json.load(open(f"{run}/gaps-ranked.json"))
     out = []
     for i, g in enumerate(src, 1):
@@ -36,7 +48,7 @@ def convert(run):
         cites += [u for u in (g.get("links") or []) if isinstance(u, str) and u.startswith("http") and u not in cites]
         out.append(dict(id=g["id"], item=g.get("name", g["id"]), dimension=g.get("dimension", ""), tier=g.get("tier", "P3"),
                         confidence=g.get("confidence", ""), score=g.get("final_score", 0), missing=g.get("what_missing", ""),
-                        target=g.get("target_page", ""), demand_links=cites, effort=g.get("effort", ""), rank=i,
+                        target=norm_target(g.get("target_page", ""), prefix), demand_links=cites, effort=g.get("effort", ""), rank=i,
                         verdict=g.get("verdict", ""), runs=g.get("runs", ""), source_ids=g.get("source_ids", [])))
     json.dump(out, open(f"{run}/draft-gaps.json", "w"), indent=1)
     print(len(out), "gaps ->", f"{run}/draft-gaps.json")
@@ -231,6 +243,7 @@ if __name__ == "__main__":
     ap.add_argument("--out")
     ap.add_argument("--runs", nargs="+")
     ap.add_argument("--cutoffs", default="4,3,1.6")
+    ap.add_argument("--docs-prefix", default="", help="convert: docs folder of the audited version, e.g. docs/identitymanager/current, prefixed to relative target pages")
     ap.add_argument("--docs-root")
     ap.add_argument("--tiers", default="P0,P1")
     ap.add_argument("--round", default="r1")
@@ -246,6 +259,6 @@ if __name__ == "__main__":
     elif a.cmd == "merge-final":
         merge_final(a.out, [float(x) for x in a.cutoffs.split(",")])
     elif a.cmd == "convert":
-        convert(a.run)
+        convert(a.run, a.docs_prefix)
     else:
         batches(a.run, a.docs_root, a.tiers.split(","), a.round, a.agents, a.skip_done)

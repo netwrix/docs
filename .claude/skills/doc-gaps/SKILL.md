@@ -44,7 +44,7 @@ Rules: a gap found by two runs is at least medium confidence; a gap found by one
 
 ## 3. Draft fixes
 
-1. `python3 scripts/prep_gaps.py convert --run RUN` makes `draft-gaps.json` (the audit's own `gaps.json` is left alone).
+1. `python3 scripts/prep_gaps.py convert --run RUN --docs-prefix <docs folder of the version, e.g. docs/identitymanager/current>` makes `draft-gaps.json` (the audit's own `gaps.json` is left alone).
 2. `python3 scripts/prep_gaps.py batches --run RUN --docs-root <repo root> --tiers P0,P1 --round r1 --agents 5` groups the chosen gaps by target page and writes `batch-r1-N.json`. Use more agents for more tiers (about 10 for 140 gaps).
 3. Launch one Sonnet agent per batch file, all in one message, in the background. Each agent's prompt is only: read `references/draft-prompt.md` and follow it, plus the batch file, the run folder, the code folder, the docs root, and the product's former names. Each batch file carries its own unique suffix (`r1b3` = round 1, batch 3), and the drafter names its files `<slug>__r1b3`. Never send a prompt with an unfilled placeholder. Two agents sharing a suffix overwrite each other's files, which lost a proposal in the Threat Manager 3.3 run.
 4. Drafters write `RUN/proposals/<slug>__<suffix>.json` and `.md`. They never touch `docs/`.
