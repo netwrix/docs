@@ -65,7 +65,7 @@ After a scan, the source's "Last scanned" line shows one of these results.
 
 | What the screen shows | Outcome | What it means and what to do |
 |-----------------------|---------|------------------------------|
-| "Scan complete." Where the scan skipped something, the counts and "[N] items skipped". | Succeeded | The scan read the source to the end. Anything it couldn't read, such as one missing permission, is listed as skipped. |
+| "Scan complete." Where the scan skipped something, the counts and "[N] items skipped". | Succeeded | The scan read the source to the end. It lists anything it couldn't read, such as one missing permission, as skipped. |
 | "Read. Activity still loading." | Succeeded | The scan read the source and is still reading its activity. |
 | "Part of [platform] wasn't read. If it repeats, send the support details to Netwrix." | Partly scanned | The scan read most of the source and stopped short. Scan again. If it repeats, click **Show support details** and send them to Netwrix Support. |
 | "[platform] refused the scan before anything was read." | Failed | Check the settings and the permissions, then scan again. |
@@ -76,7 +76,7 @@ After a scan, the source's "Last scanned" line shows one of these results.
 | "The scan was stopped before this source was scanned. No results were saved." | Not scanned | A person stopped the scan. Scan again. |
 | "The scanner couldn't start." | Failed | Scan again. |
 | "Scanning this platform isn't supported." | Failed | Contact Netwrix Support. |
-| The same sentence as the test, for a credential that isn't stored, is missing settings, or can't be used. | Failed | Fix the credential as the test result above says. |
+| The same sentence as the test, for a credential that isn't stored, is missing settings, or can't be used. | Failed | Fix the credential as the matching test result says. |
 | "Not scanned because the credential was refused. Fix it and test again." | Not scanned | The scan left the source out because its last test failed on the credential. The next scan reads it after a test passes. |
 | "Not scanned because the Microsoft Entra ID source is disabled. Enable it and scan." | Not scanned | Enable the Microsoft Entra ID source this source reads with. |
 | "Not scanned because the last test found nothing to read." | Not scanned | The source's last test found nothing it can read, so the scan left it out. Fix what the test reported, then test again. |
@@ -87,7 +87,7 @@ Start a scan with **Scan now** on a source, or **Scan all** on the **Sources** s
 
 Four reads have no source of their own and use another source's credential. Where one has a row on the **Sources** page, selecting it opens the source whose credential it uses. The Purview audit log and Microsoft Security Copilot use Microsoft Entra ID. Azure Logic Apps and Azure Bot Service use Azure RBAC. Connect the source whose credential they use, as their pages describe.
 
-The Beta connects the platforms 1Secure can reach over the public internet. A server, cluster, or instance reachable only inside your network can't be connected yet.
+The Beta connects the platforms 1Secure can reach over the public internet. You can't connect a server, cluster, or instance reachable only inside your network yet.
 
 If you use Microsoft 365, Azure, or Entra ID, [Every Microsoft source](/docs/1secureaisecurity/configuration/sources/connect-every-microsoft-source.md) is one checklist of every grant, role, and test to connect all the Microsoft sources.
 
