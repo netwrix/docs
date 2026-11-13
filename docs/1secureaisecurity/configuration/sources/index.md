@@ -89,13 +89,13 @@ Four reads have no source of their own and use another source's credential. Wher
 
 The Beta connects the platforms 1Secure can reach over the public internet. You can't connect a server, cluster, or instance reachable only inside your network yet.
 
-If you use Microsoft 365, Azure, or Entra ID, [Every Microsoft source](/docs/1secureaisecurity/configuration/sources/connect-every-microsoft-source.md) is one checklist of every grant, role, and test to connect all the Microsoft sources.
+To connect all the Microsoft sources at once, use [Connect every Microsoft source](/docs/1secureaisecurity/configuration/sources/connect-every-microsoft-source.md).
 
-The product lists these platforms in one searchable list. They are grouped here by the areas the Overview uses.
+The product lists these platforms in one searchable list. This page groups them by the areas on the AI Security [Overview](/docs/1secureaisecurity/admin/pages/overview.md) page.
 
 ### Microsoft 365 agents
 
-Find the agents and flows that run inside Microsoft 365 and its Copilot products.
+These sources read the agents and flows that run inside Microsoft 365 and its Copilot products.
 
 * [Agent 365](/docs/1secureaisecurity/configuration/sources/agent-365.md): the organization's agent catalog, and which agents the organization registered.
 * [Microsoft Copilot Studio](/docs/1secureaisecurity/configuration/sources/microsoft-copilot-studio.md): Copilot Studio agents across the tenant, and optionally their knowledge sources.
@@ -105,7 +105,7 @@ Find the agents and flows that run inside Microsoft 365 and its Copilot products
 
 ### Custom agents
 
-Find the agents, bots, and apps your organization builds on AI platforms, and the keys and identities they use.
+These sources read the agents, bots, and apps your organization builds on AI model platforms, and the keys and identities they use.
 
 * [Azure AI Foundry](/docs/1secureaisecurity/configuration/sources/azure-ai-foundry.md): AI resources, their identities, and the agents inside Foundry projects.
 * [Gemini Enterprise](/docs/1secureaisecurity/configuration/sources/gemini-enterprise.md): the identities and Gemini Enterprise apps in the Google Cloud projects you list, with their Agent Engine deployments and data stores.
@@ -117,7 +117,7 @@ Find the agents, bots, and apps your organization builds on AI platforms, and th
 
 ### Automations
 
-Find the workflows and custom agents that automate work in your apps.
+These sources read the workflows that automate work in your apps, and the agents built inside those apps.
 
 * [n8n](/docs/1secureaisecurity/configuration/sources/n8n.md): workflows, the credentials they bind, and their runs on one instance reachable from the internet.
 * [Notion](/docs/1secureaisecurity/configuration/sources/notion.md): custom agents in one workspace.
@@ -125,19 +125,19 @@ Find the workflows and custom agents that automate work in your apps.
 
 ### Coding agents
 
-Find the apps, tokens, deploy keys, and Copilot use on a code platform.
+This source reads the apps, tokens, deploy keys, and Copilot use on a code platform.
 
 * [GitHub](/docs/1secureaisecurity/configuration/sources/github.md): apps and tokens, deploy keys, Actions settings, and Copilot in one organization.
 
 ### Voice agents
 
-Find the conversational voice agents in your workspace.
+This source reads the conversational voice agents in your workspace.
 
 * [ElevenLabs](/docs/1secureaisecurity/configuration/sources/elevenlabs.md): conversational agents in one workspace.
 
 ### Servers and workstations
 
-Find the AI tools that people install, run, or send data to on devices, and the workloads that run in a cluster.
+These sources read the AI tools that people install, run, or send data to on devices, and the workloads that run in a cluster.
 
 * [Microsoft Defender for Endpoint](/docs/1secureaisecurity/configuration/sources/microsoft-defender-for-endpoint.md): the AI tools installed on onboarded machines and who signs in there.
 * [CrowdStrike Falcon](/docs/1secureaisecurity/configuration/sources/crowdstrike-falcon.md): the AI tools Falcon Discover finds installed on each host, and who last signed in there.
@@ -147,7 +147,7 @@ Find the AI tools that people install, run, or send data to on devices, and the 
 
 ### Sources that link agents to people and data
 
-Find the directories, roles, app grants, and audit records that tie agents to people and data.
+These sources read the directories, roles, app grants, and audit records that tie agents to people and data.
 
 * [Microsoft Entra ID](/docs/1secureaisecurity/configuration/sources/microsoft-entra-id.md): the directory's applications, service principals, and agent identities.
 * [Purview audit log](/docs/1secureaisecurity/configuration/sources/purview-audit-log.md): the agent and Copilot runs recorded in the Microsoft Purview audit log, on the Entra ID credential.
@@ -165,5 +165,3 @@ Find the directories, roles, app grants, and audit records that tie agents to pe
 * ServiceNow AI Control Tower
 * Salesforce
 * Google Workspace
-
-Planned for a later release.
