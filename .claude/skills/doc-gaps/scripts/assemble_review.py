@@ -15,6 +15,9 @@ Prints any gap that has no drafted proposal so the caller can redo it.
 """
 import argparse, glob, json, os, re, sys
 
+LEVELS = ("high", "medium", "low")
+TIERS = ("P0", "P1", "P2", "P3")
+
 NOFIX = ("already_covered", "not_user_facing")
 PLAIN = ["why_gap", "why_gap_confidence", "ev", "gap_confidence_reasons", "change_summary", "verdict"]
 
@@ -69,11 +72,12 @@ def main():
                 print("unknown gap", g["id"], file=sys.stderr)
                 continue
             links = r.get("demand_links") or [u.strip() for u in re.split(r"<br>|;", r.get("demand", "")) if u.strip().startswith("http")]
+            g = dict(g, gap_confidence=g.get("gap_confidence") if g.get("gap_confidence") in LEVELS else "low")  # drafter output: allowlist
             gl.append(dict(g, item=re.sub(r"^\S+ ", "", r.get("item", g["id"])), dimension=r.get("dimension", ""),
                            effort=r.get("effort", ""), score=r.get("score", 0), missing=r.get("missing", ""),
-                           demand_links=links, audit_confidence=r.get("confidence", ""), rank=r.get("rank", 999), tier=r.get("tier", "P3")))
+                           demand_links=links, audit_confidence=r.get("confidence", ""), rank=r.get("rank", 999), tier=r.get("tier") if r.get("tier") in TIERS else "P3"))
         new.append(dict(id=j["proposal_id"], page=page, short=re.sub(r"^docs/[^/]+/[^/]+/", "", page), summary=j.get("summary", ""),
-                        fix_confidence=j.get("fix_confidence", "low"), fix_confidence_reason=j.get("fix_confidence_reason", ""),
+                        fix_confidence=j.get("fix_confidence") if j.get("fix_confidence") in LEVELS else "low", fix_confidence_reason=j.get("fix_confidence_reason", ""),
                         why_fix_confidence=j.get("why_fix_confidence", ""), sme_questions=j.get("sme_questions", []),
                         placement_note=j.get("placement_note", ""), gaps=gl, original=orig, proposed=open(mp).read()))
 

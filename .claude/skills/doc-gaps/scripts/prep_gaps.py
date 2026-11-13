@@ -30,9 +30,9 @@ import argparse, collections, json, os, re, sys
 
 def norm_target(t, prefix):
     """Audit targets look like 'path (note)', 'NEW path (note)' or 'New page path'. Return 'docs/.../path (note)'."""
-    m = re.match(r"^\s*(new(?:\s+page)?\s+)?(\S+)(.*)$", t or "", re.I)
-    if not m:
-        return t
+    m = re.match(r"^\s*(new(?:\s+page)?\s*:?\s+)?(\S+)(.*)$", t or "", re.I)
+    if not m or not m.group(2).endswith(".md"):
+        return (t or "").strip()  # no usable page path ('new page', free text): batches() gives it its own entry
     new, path, rest = m.group(1), m.group(2), m.group(3).strip()
     if prefix and not path.startswith("docs/") and path.endswith(".md"):
         path = prefix.rstrip("/") + "/" + path
@@ -67,7 +67,11 @@ def batches(run, root, tiers, rnd, agents, skip_done):
             continue
         t = g["target"]
         page = t.split(" ")[0]
-        g = dict(g, target_note=t[len(page):].strip())
+        if not page.endswith(".md"):  # no page path: one entry per gap, never one shared fake page
+            page, note = "NEW:" + g["id"], t
+        else:
+            note = t[len(page):].strip()
+        g = dict(g, target_note=note)
         grp.setdefault(page, []).append(g)
     items = sorted(grp.items(), key=lambda kv: -len(kv[1]))
     n = max(1, min(agents, len(items)))
@@ -154,7 +158,7 @@ def merge_group(out):
                       ids=ids, name=" / ".join(dict.fromkeys(g["name"] for g in m))[:200] if len(m) <= 3 else m[0]["name"],
                       missing=" | ".join(dict.fromkeys(g["missing"] for g in m if g.get("missing")))[:600],
                       pages=sorted({norm_target(g["page"], "") for g in m if g.get("page")}), conf=conf, conf_why=why,
-                      verdict=max(vs, key=lambda k: VRANK[k]) if vs else None,
+                      verdict=max(vs, key=lambda k: VRANK.get(k, 0)) if vs else None,
                       effort=max((g["effort"] for g in m if g.get("effort")), key=lambda e: "SML".index(str(e).upper()[:1]) if str(e).upper()[:1] in ("S", "M", "L") else 1, default="M"),
                       links=sorted({l for g in m for l in (g.get("links") or [])}),
                       cite=" ; ".join(g["cite"] for g in m if g.get("cite"))[:400], prior_impact=[g.get("impact") for g in m])
@@ -197,10 +201,12 @@ def merge_final(out, cutoffs):
         if fn.startswith("impact-out-"):
             for r in json.load(open(f"{out}/{fn}")):
                 imp[r["mid"]] = r
-    ranked, dropped, deferred = [], [], []
+    ranked, dropped, deferred, unjudged = [], [], [], []
     for m in M:
         if m["dim"] == "api":
             deferred.append(m); continue
+        if m["verdict"] is None:
+            unjudged.append(m["mid"]); continue
         if m["verdict"] not in NEEDS_FIX:
             dropped.append(m); continue
         i = imp.get(m["mid"])
@@ -220,6 +226,8 @@ def merge_final(out, cutoffs):
             t = "P0"
         m["tier"] = t
         ranked.append(m)
+    if unjudged:  # a failed recheck agent leaves verdict None: never drop those silently
+        sys.exit(f"ERROR: {len(unjudged)} non-API gaps have no verdict (a recheck agent failed): {unjudged[:10]}. Re-run the recheck for them before ranking.")
     order = {"high": 0, "medium": 1, "low": 2}
     ranked.sort(key=lambda m: (m["tier"], m["conf"] == "low", order.get(m["conf"], 2), -m["priority_score"], m["mid"]))
     ga = []
