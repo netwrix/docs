@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Specific Clean Up Approaches
 
-Cleaning up an org is driven by your priorities. Platform Governance for Salesforce documentation is
+Cleaning up an org is driven by your priorities. Strongpoint for Salesforce documentation is
 very flexible, to help you clean up objects quickly and effectively.
 
 Here are some guidelines to specific clean up problems:

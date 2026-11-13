@@ -9,11 +9,14 @@ import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
+import { pingcastleSplitRedirects } from './src/config/redirects/pingcastle-split.js';
 import { threatManager33Redirects } from './src/config/redirects/threatmanager-3.3.js';
 import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects } from './src/config/redirects/privilegesecurediscovery.js';
 import { threatPrevention81Redirects } from './src/config/redirects/threatprevention-8.1.js';
 import { directoryManager110Redirects } from './src/config/redirects/directorymanager-11.0.js';
 import { privilegeSecure42Redirects } from './src/config/redirects/privilegesecure-4.2.js';
+import { platgovsalesforceRestructureRedirects } from './src/config/redirects/platgovsalesforce-restructure.js';
+import { privilegeSecure2603Redirects } from './src/config/redirects/privilegesecure-26.03.js';
 import { isIndexableSite } from './src/config/indexing.js';
 import { identityRecovery31Redirects } from './src/config/redirects/identityrecovery-3.1.js';
 import robotsTxtPlugin from './src/plugins/robotsTxt.js';
@@ -215,11 +218,17 @@ const config = {
       {
         redirects: [
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...pingcastleSplitRedirects
+            .filter(({ productId, version }) => activeProductIds.includes(productId)
+              && (version === null || activeVersionsByProduct[productId].map(versionToUrl).includes(version)))
+            .map(({ from, to }) => ({ from, to })),
           ...(activeProductIds.includes('threatmanager') ? threatManager33Redirects : []),
           ...(activeProductIds.includes('privilegesecurediscovery') ? privilegeSecureDiscoveryRedirects : []),
           ...(activeProductIds.includes('threatprevention') ? threatPrevention81Redirects : []),
           ...(activeProductIds.includes('directorymanager') ? directoryManager110Redirects : []),
           ...(activeProductIds.includes('privilegesecure') ? privilegeSecure42Redirects : []),
+          ...(activeProductIds.includes('platgovsalesforce') ? platgovsalesforceRestructureRedirects : []),
+          ...(activeProductIds.includes('privilegesecure') ? privilegeSecure2603Redirects : []),
           ...(activeProductIds.includes('identityrecovery') ? identityRecovery31Redirects : []),
           ...(activeProductIds.includes('changetracker')
             ? [{ from: '/docs/changetracker/componentreleases', to: '/docs/changetracker' }]
@@ -287,6 +296,28 @@ const config = {
             version: 'current',
             label: 'Change Tracker Hub API',
             baseUrl: '/docs/changetracker/api/reference/',
+          },
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi-privilegesecure',
+        docsPluginId: 'privilegesecure26_07',
+        config: {
+          'privilegesecure-api': {
+            specPath: '.generated/privilegesecure-26.07.json',
+            outputDir: 'docs/privilegesecure/26.07/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/privilegesecure-26.07.json',
+            version: '26.07',
+            label: 'Privilege Secure API',
+            baseUrl: '/docs/privilegesecure/26_07/api/reference/',
           },
         },
       },

@@ -1,0 +1,10 @@
+{
+  "label": "Configuration",
+  "position": 360,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "index"
+  }
+}

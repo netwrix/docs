@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Release Management Overview
 
-Platform Governance for Salesforce’s release management assists with planning, scheduling, and
+Strongpoint for Salesforce’s release management assists with planning, scheduling, and
 controlling the movement of your deployments from your development and testing to production
 environments. The process ensures your production environment is protected and the correct
 deployments are released.

@@ -17,7 +17,9 @@ keywords:
 products:
   - privilegesecure
 sidebar_label: Understanding the Microsoft KB5082142 RC4-to-AES Encryption Change
-tags: [kb]
+tags:
+  - kb
+  - certificates-and-security
 title: "Understanding the Microsoft KB5082142 RC4-to-AES Encryption Change"
 knowledge_article_id:
 ---
@@ -52,4 +54,4 @@ Despite this, a subset of accounts and devices can still end up without a usable
 
 -   **Legacy or third-party devices that only support RC4.** Some non-Windows Kerberos clients—older network appliances, embedded devices, older Unix/Linux Kerberos implementations, and similar hardware—were never built with AES-SHA1 support. These devices structurally cannot generate or use an AES key, regardless of password rotation, and need an explicit exception or a hardware/software upgrade path.
 
-If you use Netwrix Privilege Secure for Access Management (NPS-AM) and are troubleshooting an authentication issue after installing this update, see [NPS-AM Authentication Failures After Microsoft KB5082142](/docs/kb/privilegesecure/troubleshooting-and-errors/netwrix-privilege-secure-authentication-failures-after-microsoft-kb5082142).
+If you use Netwrix Privilege Secure for Access Management and are troubleshooting an authentication issue after installing this update, see [Error: NPS-AM Authentication Failures After Microsoft KB5082142](/docs/kb/privilegesecure/troubleshooting-and-errors/netwrix-privilege-secure-authentication-failures-after-microsoft-kb5082142).

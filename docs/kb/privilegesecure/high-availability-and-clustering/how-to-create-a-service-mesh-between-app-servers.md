@@ -1,9 +1,5 @@
 ---
-description: >-
-  Step-by-step instructions to configure a service mesh between Netwrix
-  Privilege Secure application servers, including high-availability
-  prerequisites, key exchange requirements, node registration, and optional
-  recording replication.
+description: "Configure a service mesh between Privilege Secure application servers, including HA and key exchange prerequisites, node registration, and replication."
 keywords:
   - service mesh
   - Privilege Secure
@@ -12,27 +8,32 @@ keywords:
   - appsettings.jwt.json
   - recording replication
   - iolog
+  - sbpam_iolog.json
   - high availability
 products:
-  - privilege-secure-access-management
-sidebar_label: How to Create a Service Mesh Between App Servers
-tags: []
-title: "How to Create a Service Mesh Between App Servers"
+  - privilegesecure
+sidebar_label: Creating a Service Mesh Between App Servers
+tags:
+  - kb
+  - high-availability-and-clustering
+title: "Creating a Service Mesh Between App Servers"
 knowledge_article_id: kA04u0000000JqxCAE
 ---
 
-# How to Create a Service Mesh Between App Servers
+# Creating a Service Mesh Between App Servers
 
 ## Overview
 
-This article outlines the steps to configure a service mesh in Netwrix Privilege Secure for Access Management. Follow these instructions to ensure proper setup and high availability.
+This article describes how to configure a service mesh in Netwrix Privilege Secure for Access Management. Follow these instructions to ensure proper setup and high availability.
 
-- If you have two application servers with internal PostgreSQL on each, you must configure high availability (HA) before configuring a service mesh. For additional information on the HA setup, see Configure and Upgrade Netwrix Privilege Secure in High Availability Mode and Using Remote Services Configurations: [Configuring and Upgrading in High Availability Mode and Using Remote Services Configurations](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations.md)
-- In both PostgreSQL and SQL Server deployments, you must complete the key exchange in your environment before configuring a service mesh. For additional information on the key exchange setup, see [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md)
+Complete the following before configuring a service mesh:
 
-> **IMPORTANT:** Multi-factor authentication should be disabled for the Netwrix Privilege Secure Administrator account, if used. While this is indicated by an error message when running `sbpam-proxy.exe`, the error will not indicate the missing 2FA or the need to disable it prior to running.
+- If you have two application servers with internal PostgreSQL on each, you must configure high availability (HA) before configuring a service mesh. For additional information on the HA setup, see [Configuring and Upgrading in High Availability Mode and Using Remote Services Configurations](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations.md).
+- In both PostgreSQL and SQL Server deployments, you must complete the key exchange in your environment before configuring a service mesh. For additional information on the key exchange setup, see [Configuring Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md).
 
-For additional information on used protocols and ports, see [Port, Firewall, and Datacenter Requirements](https://docs.netwrix.com/docs/privilegesecurediscovery/requirements/portsandfirewalls#firewall-rules)
+> **IMPORTANT:** Multi-factor authentication (MFA) should be disabled for the Privilege Secure Administrator account, if used. While this is indicated by an error message when running `sbpam-proxy.exe`, the error does not indicate the missing 2FA or the need to disable it before running.
+
+For additional information on used protocols and ports, see [Port, Firewall, and Datacenter Requirements](https://docs.netwrix.com/docs/privilegesecurediscovery/requirements/portsandfirewalls#firewall-rules).
 
 ## Instructions
 
@@ -50,7 +51,7 @@ For additional information on used protocols and ports, see [Port, Firewall, and
    ```
    In the primary `.json` file, locate the `Jwt` node. Copy it to the `appsettings.jwt.json` file on the secondary server.
 
-   > **NOTE:** The `Jwt` node consists of the contents found within the `{}` braces following `Jwt`. Typically, the `Jwt` node will be the only node defined in the file. The entire file can be copied from one server to another, as in the following example.
+   > **NOTE:** The `Jwt` node consists of the contents found within the `{}` braces following `Jwt`. Typically, the `Jwt` node is the only node defined in the file. You can copy the entire file from one server to another, as in the following example.
 
    ![Example of Jwt node in appsettings.jwt.json file](./../0-images/ka0Qk000000FWkL_0EMQk000004AOpx.png)
 
@@ -83,7 +84,7 @@ For additional information on used protocols and ports, see [Port, Firewall, and
    C:\ProgramData\Stealthbits\PAM\tls\certs\sbpam-node.crt
    ```
 
-   > **NOTE:** The `sbpam-node.crt` file may reappear immediately following deletion—this behavior is expected.
+   > **NOTE:** The `sbpam-node.crt` file may reappear immediately following deletion. This behavior is expected.
 
 9. On the primary server, run the following command in an elevated Command Prompt to obtain the CA hash:
    ```text
@@ -112,13 +113,13 @@ For additional information on used protocols and ports, see [Port, Firewall, and
     Restart-Service w3svc
     ```
 
-## Enabling Recording Replication (Optional)
+### Enabling Recording Replication (Optional)
 
-To enable replication of session recordings (`.webm` files for web sessions, `.iolog` files for non-web sessions), perform the following steps:
+Complete the following steps to enable replication of session recordings (`.webm` files for web sessions, `.iolog` files for non-web sessions):
 
 > **IMPORTANT:** This must be done on both servers. The `sbpam_iolog.json` file is generated on the C drive regardless of the location from which the command is run.
 
-1. Generate the **iolog config** by opening a command prompt, navigating to `X:\Program Files\Stealthbits\PAM\ProxyService`, and running:
+1. Open a command prompt, go to `X:\Program Files\Stealthbits\PAM\ProxyService`, and run the following command to generate the **iolog config**:
    ```text
    sbpam-proxy.exe cfg -c sbpam_iolog
    ```
@@ -128,13 +129,13 @@ To enable replication of session recordings (`.webm` files for web sessions, `.i
    "replicas": 2
    ```
 
-3. Once the file is saved, restart the proxy service and recording replication should occur.
+3. After the file is saved, restart the proxy service. Recording replication should occur.
 
 For detailed steps on moving the recording locations, see [Changing the Path Where Session Recordings Are Stored](/docs/kb/privilegesecure/session-management-and-recording/how-to-change-the-path-where-session-recordings-are-stored.md).
 
-## Related Articles
+## Related Links
 
 - [Configuring and Upgrading in High Availability Mode and Using Remote Services Configurations](/docs/kb/privilegesecure/high-availability-and-clustering/configuring-and-upgrading-in-high-availability-mode-and-using-remote-services-configurations.md)
-- [How to Configure Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md)
+- [Configuring Encryption Keys in Multiple NPS Server Environments](/docs/kb/privilegesecure/high-availability-and-clustering/how-to-configure-encryption-keys-in-multiple-nps-server-environments.md)
 - [Port, Firewall, and Datacenter Requirements](https://docs.netwrix.com/docs/privilegesecurediscovery/requirements/portsandfirewalls#firewall-rules)
 - [Changing the Path Where Session Recordings Are Stored](/docs/kb/privilegesecure/session-management-and-recording/how-to-change-the-path-where-session-recordings-are-stored.md)

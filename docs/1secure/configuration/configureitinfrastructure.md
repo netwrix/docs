@@ -9,8 +9,8 @@ sidebar_position: 60
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
 - Automatically when creating an organization. This is the recommended method.
-- Manually. The following table lists the native audit settings that must be adjusted manually to ensure
-  collecting comprehensive and reliable audit data. You can enable Netwrix 1Secure to continually
+- Manually. The following table lists the native audit settings that you must adjust manually to
+  collect comprehensive and reliable audit data. You can enable Netwrix 1Secure to continually
   enforce the relevant audit policies or configure them manually.
                                                                                                            
 
@@ -334,6 +334,17 @@ You can configure your IT Infrastructure for monitoring in one of the following
                             </ul>
                             </li>
                             </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Network Attached Storage</p>
+                    </td>
+                    <td>
+                        <p>Network Attached Storage Activity (NAM)</p>
+                    </td>
+                    <td>
+                        <p>Configure monitoring of the storage devices in the Netwrix Activity Monitor Console, and connect Activity Monitor to the Netwrix Cloud Agent. See <a href="/docs/1secure/admin/datacollection/networkattachedstorage">Network Attached Storage</a> for related settings and procedures.</p>
                     </td>
                 </tr>
                 <tr>

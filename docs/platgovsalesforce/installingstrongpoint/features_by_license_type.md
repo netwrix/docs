@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Features by License Type
 
-Platform Governance for Salesforce offers three license types:
+Strongpoint for Salesforce offers three license types:
 
 - Automated Documentation
 - Intelligent Change Enablement

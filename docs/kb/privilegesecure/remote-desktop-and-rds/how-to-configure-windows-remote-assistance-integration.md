@@ -1,8 +1,7 @@
 ---
 description: >-
-  This document provides an outline and step-by-step guide for Netwrix Privilege
-  Secure integration with Microsoft Remote Assistance, including group policy
-  configuration and activity setup.
+  Configure Netwrix Privilege Secure integration with Microsoft Remote
+  Assistance, including Group Policy configuration and activity setup.
 keywords:
   - Netwrix Privilege Secure
   - Remote Assistance
@@ -13,32 +12,36 @@ keywords:
   - DirectConnect
   - Activity Setup
 products:
-  - privilege-secure-access-management
-sidebar_label: How to Configure Windows Remote Assistance Integra
-tags: []
-title: "How to Configure Windows Remote Assistance Integration"
+  - privilegesecure
+sidebar_label: Configuring Windows Remote Assistance Integration
+tags:
+  - kb
+  - remote-desktop-and-rds
+title: "Configuring Windows Remote Assistance Integration"
 knowledge_article_id: kA04u0000000HSKCA2
 ---
 
-# How to Configure Windows Remote Assistance Integration
+# Configuring Windows Remote Assistance Integration
 
-## Summary
+## Overview
 
-This document provides an outline and guide for Netwrix Privilege Secure integration with Microsoft Remote Assistance.
+This article describes how to configure Netwrix Privilege Secure for Access Management integration with Microsoft Remote Assistance.
 
-## Enrollment
+## Instructions
 
-- Netwrix Privilege Secure Server
+### Prerequisites
+
+Enrollment:
+
+- Privilege Secure Server
 - RDS Server with RemoteApp – single machine CAL license
 
-## Pre-requisites
+Pre-requisites:
 
 - Group Policy to configure **Offer Remote Assistance**
 - Domain group to be mapped to Configure Offer Remote Assistance policy
 - Domain group that is a member of the RDS server local Administrator group
 - Remote Assistance Feature added to RDS server
-
-## Instructions
 
 ### Group Policy
 
@@ -48,42 +51,42 @@ Enable **Configure Offer Remote Assistance** policy.
 Policies > Administrative Templates > System > Remote Assistance > Configure Offer Remote Assistance
 ```
 
-![User-added image](./../0-images/ka04u000000HcZw_0EM4u000004bWI7.png)
+![Group Policy editor showing the Configure Offer Remote Assistance policy under Administrative Templates, System, Remote Assistance](./../0-images/ka04u000000HcZw_0EM4u000004bWI7.png)
 
 Enable the policy and assign a domain group to control access.
 
-![User-added image](./../0-images/ka04u000000HcZw_0EM4u000004bWIC.png)
+![Configure Offer Remote Assistance policy enabled with a domain group assigned to control access](./../0-images/ka04u000000HcZw_0EM4u000004bWIC.png)
 
 ### Activity Setup
 
 Create an Interactive App Launch Activity making note of the following highlighted areas.
 
-**NOTE:** The Domain groups for Group Policy and RDS server local admin will have been created in the previous steps.
+> **NOTE:** The Domain groups for Group Policy and RDS server local admin have been created in the previous steps.
 
-![User-added image](./../0-images/ka04u000000HcZw_0EM4u000004bWIH.png)
+![Interactive App Launch activity settings with the highlighted areas for the Remote Assistance activity](./../0-images/ka04u000000HcZw_0EM4u000004bWIH.png)
 
-### Use Case
+## Use Case
 
-Via Netwrix Privilege Secure UI or DirectConnect, the helpdesk admin selects the Remote Assistance Activity and chooses the resource to which remote assistance is to be provided.
+Via the Privilege Secure UI or DirectConnect, the helpdesk admin selects the Remote Assistance Activity and chooses the resource to which remote assistance is to be provided.
 
-![User-added image](./../0-images/ka04u000000HcZw_0EM4u000004bWIM.png)
+![Privilege Secure interface where the helpdesk admin selects the Remote Assistance activity and the target resource](./../0-images/ka04u000000HcZw_0EM4u000004bWIM.png)
 
 When the Activity has been provisioned, the session is launched, and the target users’ desktop displays a message asking permission for the helpdesk admin to connect.
 
-![User-added image](./../0-images/ka04u000000HcZw_0EM4u000004bWIR.png)
+![Message on the target users desktop asking permission for the helpdesk admin to connect](./../0-images/ka04u000000HcZw_0EM4u000004bWIR.png)
 
 The helpdesk admin can now view the target users’ desktop and can establish a chat session.
 
-![User-added image](./../0-images/ka04u000000HcZw_0EM4u000004bWIW.png)
+![Helpdesk admin view of the target users desktop with a chat session](./../0-images/ka04u000000HcZw_0EM4u000004bWIW.png)
 
 If the helpdesk admin needs to take control of the remote system, they select **Request Control** and the end user is prompted for permission.
 
-![User-added image](./../0-images/ka04u000000HcZw_0EM4u000004bWIb.png)
+![Request Control option and the permission prompt shown to the end user](./../0-images/ka04u000000HcZw_0EM4u000004bWIb.png)
 
-Once shared, control can be terminated at any time by the helpdesk admin or the end user.
+After control is shared, the helpdesk admin or the end user can terminate it at any time.
 
-![User-added image](./../0-images/ka04u000000HcZw_0EM4u000004bWIg.png)
+![Remote Assistance session in which shared control can be terminated](./../0-images/ka04u000000HcZw_0EM4u000004bWIg.png)
 
-The live session may be viewed via the Netwrix Privilege Secure administrator dashboard or reviewed later as a recording at any time.
+You can view the live session in the Privilege Secure administrator dashboard or review it later as a recording at any time.
 
-![User-added image](./../0-images/ka04u000000HcZw_0EM4u000004bWIl.png)
+![Privilege Secure administrator dashboard showing the live Remote Assistance session and its recording](./../0-images/ka04u000000HcZw_0EM4u000004bWIl.png)

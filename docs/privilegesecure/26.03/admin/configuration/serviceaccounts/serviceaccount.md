@@ -25,7 +25,10 @@ To add a service account to the console.
    - For service accounts checked out through a vault connector, select a previously added vault
      connector from the dropdown list. See the
      [Bring Your Own Vault (BYOV) Integration](/docs/privilegesecure/26.03/admin/configuration/integrationconnector/integrationbyov/integrationbyov.md) topic for additional information.
+   - For a Linux or BSD resource, the account name must match the account name in the sudoers file on
+     the resource. See
+     [Configure a least-privilege sudoers policy for Linux and BSD](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/linuxbsdsudoers.md).
 
 4. Click **Save** to create the new service account.
 
-The new service account is added to the Service Accounts list.
+The new service account appears in the Service Accounts list.
