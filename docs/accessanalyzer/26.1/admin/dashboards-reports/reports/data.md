@@ -52,7 +52,7 @@ Every report opens the same way: breadcrumbs **Reports > Data** followed by the 
 
 ## File System Reports
 
-These seven reports read from your File Server sources. The permission reports need a completed Access scan on the source. The sensitive data reports need a Sensitive data scan. The activity report and the activity cards in Share Audit need events from Netwrix Activity Monitor. Where a report shows account or group names rather than identifiers, or expands group membership, it relies on an Identity sync of the Active Directory domain those accounts belong to. [Scan types](../../scans/scan-types.md) explains each scan.
+These seven reports read from your File Server sources. The permission reports need a completed Access scan on the source. The sensitive data reports need a Classification scan. The activity report and the activity cards in Share Audit need events from Netwrix Activity Monitor. Where a report shows account or group names rather than identifiers, or expands group membership, it relies on an Identity sync of the Active Directory domain those accounts belong to. [Scan types](../../scans/scan-types.md) explains each scan.
 
 ### Broken Inheritance
 
@@ -122,7 +122,7 @@ Where High Risk ACLs looks at individual permission entries, Open Access resolve
 | **Exposed Sensitive Data** | A pie chart of the patterns matched in open folders |
 | **Folders with Open Access** | The detail list, one row per open folder |
 
-Needs an Access scan on the File Server source, plus a Sensitive data scan for the two sensitive data cards. The effective membership resolution uses the Identity sync of the Active Directory domain the trustees belong to; without it, the report doesn't detect access granted through nested groups.
+Needs an Access scan on the File Server source, plus a Classification scan for the two sensitive data cards. The effective membership resolution uses the Identity sync of the Active Directory domain the trustees belong to; without it, the report doesn't detect access granted through nested groups.
 
 ### Share Audit
 
@@ -164,7 +164,7 @@ Share Audit is the one report that looks at a single share at a time and covers 
 | **Activity** | **Event Counts** | A bar chart of events over time, grouped by the **Group By** unit |
 | **Activity** | **File System Activity** | The event-level list for the share |
 
-Needs an Access scan on the File Server source for the **Overview** and **Permissions** tabs, a Sensitive data scan for the **Sensitive Data** tab, and Netwrix Activity Monitor events for the **Activity** tab and the **Probable Owner** card. Trustee names on the **Permissions** tab come from the Identity sync of the matching Active Directory source.
+Needs an Access scan on the File Server source for the **Overview** and **Permissions** tabs, a Classification scan for the **Sensitive Data** tab, and Netwrix Activity Monitor events for the **Activity** tab and the **Probable Owner** card. Trustee names on the **Permissions** tab come from the Identity sync of the matching Active Directory source.
 
 ### Activity Investigation
 
@@ -200,7 +200,7 @@ Needs Netwrix Activity Monitor sending file server events to Access Analyzer. [N
 
 "Summary of sensitive data findings across all scanned file system locations."
 
-The file server counterpart of the sensitive data tiles on the Data security dashboard, with filters that let you narrow the findings to a host, a share, a pattern group, or a single pattern. [Sensitive data patterns](../../../configuration/sensitive-data-patterns/index.md) explains what patterns and pattern groups are.
+The file server counterpart of the sensitive data tiles on the Data security dashboard, with filters that let you narrow the findings to a host, a share, a pattern group, or a single pattern. [Classifiers](../../../configuration/classifiers/index.md) explains how classifiers and their patterns find sensitive data; findings from pattern groups that Access Analyzer converted into classifiers keep the group name.
 
 ![Sensitive Data Overview report](/images/accessanalyzer/26.1/dashboards-reports/report-sensitive-data-overview.webp)
 
@@ -221,7 +221,7 @@ The file server counterpart of the sensitive data tiles on the Data security das
 | **Top Shares by Sensitive File Count** | A bar chart of shares ranked by sensitive file count |
 | **Sensitive Data File Details** | The detail list, one row per file |
 
-Needs a Sensitive data scan on the File Server source.
+Needs a Classification scan on the File Server source.
 
 ### Share Audit (Sensitive Data Entry)
 
@@ -233,7 +233,7 @@ This second Share Audit row sits under the **Classification / Stale Data** categ
 
 ## SharePoint Reports
 
-These four reports read from your SharePoint Online sources. Three need an Access scan; the fourth needs a Sensitive data scan. All four share the **Site** and **Site Type** filters, which limit a report to the selected sites or to sites of the selected types.
+These four reports read from your SharePoint Online sources. Three need an Access scan; the fourth needs a Classification scan. All four share the **Site** and **Site Type** filters, which limit a report to the selected sites or to sites of the selected types.
 
 ### Shared Links
 
@@ -261,7 +261,7 @@ An anonymous link works for anyone who has it; an organization link works for an
 | **Open Access Links with Sensitive Data** | A pie chart of sensitive data in anonymous or organization-scoped links |
 | **Shared Links Detail** | The detail list, one row per link |
 
-Needs an Access scan on the SharePoint Online source; the sensitive data cards also need a Sensitive data scan.
+Needs an Access scan on the SharePoint Online source; the sensitive data cards also need a Classification scan.
 
 ### High-Risk ACLs (SharePoint)
 
@@ -297,7 +297,7 @@ Needs an Access scan on the SharePoint Online source.
 
 "SharePoint content accessible by all authenticated users without restrictions."
 
-Open here means reachable by every signed-in user in the tenant. The report counts the sites and resources in that state and, where a Sensitive data scan has run, the exposed files that contain sensitive data.
+Open here means reachable by every signed-in user in the tenant. The report counts the sites and resources in that state and, where a Classification scan has run, the exposed files that contain sensitive data.
 
 ![Open Access report](/images/accessanalyzer/26.1/dashboards-reports/report-sharepoint-open-access.webp)
 
@@ -315,7 +315,7 @@ Open here means reachable by every signed-in user in the tenant. The report coun
 | **Top sites by exposed sensitive data (file count)** | Sites ranked by exposed sensitive file count |
 | **Open resource details** | The detail list, one row per open resource |
 
-Needs an Access scan on the SharePoint Online source, plus a Sensitive data scan for the sensitive data cards.
+Needs an Access scan on the SharePoint Online source, plus a Classification scan for the sensitive data cards.
 
 ### Sensitive Data Overview (SharePoint)
 
@@ -340,4 +340,4 @@ The SharePoint counterpart of the file server Sensitive Data Overview: which sit
 | **Sensitive Data Types by File Count** | A pie chart of patterns by how many files matched each |
 | **Sensitive Data Summary by Site** | One row per site with its counts |
 
-Needs a Sensitive data scan on the SharePoint Online source.
+Needs a Classification scan on the SharePoint Online source.

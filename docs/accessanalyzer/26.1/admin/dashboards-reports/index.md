@@ -36,21 +36,21 @@ Nothing on these pages updates on its own, and Access Analyzer caches dashboard 
 
 ## What Each Dashboard and Report Needs
 
-Every dashboard and report appears in the interface from the first sign-in, even when there's no data behind it. Until the right scan has run, tiles show zero or **No results!**, and charts and tables show **No results!**. The table shows which scan, or which event feed, populates each dashboard and group of reports. [Scan types](../scans/scan-types.md) explains the Access scan, Sensitive data scan, and Identity sync; [Sources](../../configuration/sources/index.md) explains which source types each applies to.
+Every dashboard and report appears in the interface from the first sign-in, even when there's no data behind it. Until the right scan has run, tiles show zero or **No results!**, and charts and tables show **No results!**. The table shows which scan, or which event feed, populates each dashboard and group of reports. [Scan types](../scans/scan-types.md) explains the Access scan, Classification scan, and Identity sync; [Sources](../../configuration/sources/index.md) explains which source types each applies to.
 
 | To populate | You need |
 |---|---|
-| Data security dashboard, **Scan Overview** tab | An Access scan on your File Server or SharePoint Online sources, plus a Sensitive data scan for the sensitive data tiles and charts |
+| Data security dashboard, **Scan Overview** tab | An Access scan on your File Server or SharePoint Online sources, plus a Classification scan for the sensitive data tiles and charts |
 | Data security dashboard, **Activity** tab | Netwrix Activity Monitor sending events to Access Analyzer |
 | Active Directory dashboard | An Identity sync on an Active Directory source |
-| File system permission reports: Broken Inheritance, High Risk ACLs, Open Access, Share Audit | An Access scan on a File Server source, plus a Sensitive data scan for the Open Access cards that show sensitive files and exposed patterns |
-| File system sensitive data reports: Sensitive Data Overview, the Share Audit **Sensitive Data** tab | A Sensitive data scan on a File Server source |
+| File system permission reports: Broken Inheritance, High Risk ACLs, Open Access, Share Audit | An Access scan on a File Server source, plus a Classification scan for the Open Access cards that show sensitive files and exposed patterns |
+| File system sensitive data reports: Sensitive Data Overview, the Share Audit **Sensitive Data** tab | A Classification scan on a File Server source |
 | File system activity: Activity Investigation, the Share Audit **Activity** tab | Netwrix Activity Monitor sending events to Access Analyzer |
-| SharePoint permission and sharing reports: Shared Links, High-Risk ACLs, Open Access | An Access scan on a SharePoint Online source, plus a Sensitive data scan for the cards that count links or files with sensitive data |
-| SharePoint Sensitive Data Overview | A Sensitive data scan on a SharePoint Online source |
+| SharePoint permission and sharing reports: Shared Links, High-Risk ACLs, Open Access | An Access scan on a SharePoint Online source, plus a Classification scan for the cards that count links or files with sensitive data |
+| SharePoint Sensitive Data Overview | A Classification scan on a SharePoint Online source |
 | AD Users | An Identity sync on an Active Directory source |
 | Entra Users, Entra Groups | An Identity sync on an Entra ID source |
 
-For the file system permission reports, an Identity sync on the matching Active Directory source turns identifiers into names and expands group membership. The Share Audit **Overview** tab also draws on two other feeds: its Matches card needs a Sensitive data scan, and its Probable Owner card needs Netwrix Activity Monitor events. On the Share Audit **Sensitive Data** tab, the Users by Activity on Sensitive Files card also needs Netwrix Activity Monitor events.
+For the file system permission reports, an Identity sync on the matching Active Directory source turns identifiers into names and expands group membership. The Share Audit **Overview** tab also draws on two other feeds: its Matches card needs a Classification scan, and its Probable Owner card needs Netwrix Activity Monitor events. On the Share Audit **Sensitive Data** tab, the Users by Activity on Sensitive Files card also needs Netwrix Activity Monitor events.
 
 Activity data doesn't come from a scan. It arrives from Netwrix Activity Monitor, which watches file servers, SharePoint Online, and Microsoft 365 Copilot and streams events to Access Analyzer. [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md) covers the connection.
