@@ -250,6 +250,9 @@ def merge_impact_prep(out):
             m["verdict"] = norm_verdict(rc[m["mid"]]["verdict"])
             m["verdict_reason"] = rc[m["mid"]].get("reason", "")
     json.dump(M, open(f"{out}/merged-pre.json", "w"), indent=1)
+    bad = [(m["mid"], m["verdict"]) for m in M if m["dim"] != "api" and m["verdict"] not in VRANK]
+    if bad:  # fail before the Opus impact pass is paid for
+        sys.exit(f"ERROR: {len(bad)} non-API gaps have no valid verdict (a recheck agent failed or wrote an unknown value): {bad[:10]}. Fix recheck-out-*.json or re-run the recheck first.")
     act = [m for m in M if m["verdict"] in NEEDS_FIX and m["dim"] != "api"]
     rows = [dict(mid=m["mid"], dim=m["dim"], name=m["name"][:120], missing=m["missing"][:260], runs=m["runs"], verdict=m["verdict"],
                  prior_impact=m["prior_impact"], threads=len(m["links"])) for m in act]

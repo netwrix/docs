@@ -11,7 +11,7 @@ and adds: snippet [{n, t, hit}] (the cited lines plus CONTEXT lines either side)
 "no" if not found), and url (BLOB_BASE/path#Lstart-Lend, when --blob-base is given, for example
 https://github.com/<org>/<repo>/blob/<commit>). Prints every citation whose quote could not be found.
 """
-import argparse, functools, json, os, re
+import argparse, functools, json, os, re, urllib.parse
 
 open = functools.partial(open, encoding="utf-8")  # never the platform default (cp1252 on Windows)
 
@@ -50,7 +50,7 @@ def main():
                 if not m:
                     c["verified"] = "no"; bad += 1; continue
                 rel, l1, l2 = m.group(1), m.group(2), m.group(3)
-                rel = re.sub(r"^code/", "", rel)
+                rel = re.sub(r"^code/", "", rel.replace("\\", "/"))  # Windows-style separators
                 fp = os.path.join(a.code, rel)
                 if not os.path.isfile(fp) and "/code/" in rel:  # a run-folder prefix such as .doc-gaps/x-1.0/code/src/Foo.cs
                     rel = rel.split("/code/", 1)[1]
@@ -125,7 +125,7 @@ def main():
                 c["start"], c["end"] = s, e
                 c["snippet"] = [dict(n=i, t=lines[i - 1][:LONG] + ("…" if len(lines[i - 1]) > LONG else ""), hit=(s <= i <= e)) for i in range(lo, hi + 1)]
                 if a.blob_base:
-                    c["url"] = f"{a.blob_base.rstrip('/')}/{rel}#L{s}" + (f"-L{e}" if e != s else "")
+                    c["url"] = f"{a.blob_base.rstrip('/')}/{urllib.parse.quote(rel)}#L{s}" + (f"-L{e}" if e != s else "")
     json.dump(j, open(path, "w"))
     risky = re.compile(r"(passw(or)?d|secret|api[_-]?key|token|connectionstring|private[_-]?key|BEGIN [A-Z ]*PRIVATE KEY)\s*[:=\"']", re.I)
     for p in props:

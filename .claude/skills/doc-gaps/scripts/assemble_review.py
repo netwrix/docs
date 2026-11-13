@@ -36,6 +36,7 @@ def main():
     ap.add_argument("--docs-root", required=True)
     ap.add_argument("--round", default="r1")
     ap.add_argument("--meta")
+    ap.add_argument("--docs-prefix", default="", help="the audited version docs folder (default: meta.docsPath); proposals outside it are skipped")
     ap.add_argument("--replace", action="store_true", help="redrafts: new proposals replace existing entries for the same gap ids")
     a = ap.parse_args()
     run, root = a.run, a.docs_root
@@ -78,6 +79,11 @@ def main():
         docs_dir = os.path.join(os.path.realpath(root), "docs") + os.sep
         if not full.startswith(docs_dir) or not full.endswith(".md"):
             print("page path is not a .md file under <docs-root>/docs, skipped:", page, jp, file=sys.stderr)
+            continue
+        pre = (a.docs_prefix or (cur.get("meta") or {}).get("docsPath") or "").strip("/")
+        if pre and (not page.startswith(pre + "/") or page[len(pre) + 1:].startswith("kb/")):
+            # another version or product, or a gitignored build-time KB copy: a PR could not carry this edit
+            print(f"page is outside the audited docs folder {pre}/ or is a KB copy, skipped:", page, jp, file=sys.stderr)
             continue
         orig = open(full).read() if os.path.isfile(full) else ""
         gl = []

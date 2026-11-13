@@ -134,7 +134,7 @@ const safeUrl=u=>/^https?:\/\//i.test(String(u||'').trim())?String(u).trim():'';
 if(window.DOMPurify)DOMPurify.addHook('afterSanitizeAttributes',n=>{if(n.tagName==='A'){n.setAttribute('target','_blank');n.setAttribute('rel','noopener noreferrer')}});
 function clean(html){
   if(!window.DOMPurify)return esc(html);
-  return DOMPurify.sanitize(html,{USE_PROFILES:{html:true},FORBID_TAGS:['style','form','input','button','textarea','select'],ALLOWED_URI_REGEXP:/^(?:https?|mailto):/i});
+  return DOMPurify.sanitize(html,{USE_PROFILES:{html:true},FORBID_TAGS:['style','form','input','button','textarea','select'],ALLOWED_URI_REGEXP:/^(?:(?:https?|mailto):|[#\/.]|[\w.\/-]+$)/i});
 }
 const rend=b=>clean(marked.parse(b,{async:false}));
 const fmOf=md=>{const m=String(md||'').match(/^---\n[\s\S]*?\n---\n?/);return m?m[0]:''};
