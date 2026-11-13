@@ -489,6 +489,10 @@ sudo dspm-installer rollback-cert --latest
 | 73 | `rollback-cert` applied the restore, but verification failed. |
 | 74 | `rollback-cert` couldn't apply the restore. |
 
+## The `aa` Command
+
+The installer links `/usr/local/bin/aa` to `dspm-installer`. Run under that name, the binary checks service status, opens database shells, restarts services, and runs `kubectl` in the `access-analyzer` namespace, and it runs itself with `sudo` when you start it as another user. See [Run Common Operations with aa](run-common-operations-with-aa.md).
+
 ## Logs
 
 For the logs of the Access Analyzer services themselves, and for support bundles, see [View and export logs](view-and-export-logs.md).
