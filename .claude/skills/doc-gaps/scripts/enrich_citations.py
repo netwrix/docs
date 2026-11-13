@@ -34,6 +34,7 @@ def main():
     tot = ok = fix = bad = unv = 0
     root_real = os.path.realpath(a.code)
     cache = {}
+    flat = {}
     for p in props:
         for g in p["gaps"]:
             for c in (g.get("evidence") or {}).get("code", []):
@@ -71,25 +72,27 @@ def main():
                 status = ("unchecked" if not q else "window") if (not q or q in win) else None
                 if sym and not l1:
                     status = None  # symbol not found: the snippet is only the top of the file
-                if status is None:
-                    whole = norm(" ".join(lines))
-                    if q and q in whole:
-                        # find the quote in the whole file and map the offset back to its line
-                        pos, parts = [], []
+                if status is None and q:
+                    if fp not in flat:  # normalized whole file with each line's offset, built once per file
+                        pos, parts, off = [], [], 0
                         for n, ln in enumerate(lines, 1):
                             t = norm(ln)
                             if t:
-                                pos.append((sum(len(x) + 1 for x in parts), n)); parts.append(t)
-                        idx = " ".join(parts).find(q[:60])
-                        hit_line = None
-                        if idx >= 0:
-                            for off, n in pos:
-                                if off <= idx:
-                                    hit_line = n
-                        if hit_line:
-                            s = e = hit_line
-                            lo, hi = max(1, s - a.context), min(len(lines), e + a.context)
-                            status = "file"
+                                pos.append((off, n)); parts.append(t); off += len(t) + 1
+                        flat[fp] = (" ".join(parts), pos)
+                    text, pos = flat[fp]
+                    idx = text.find(q[:60])
+                    hit_line = None
+                    if idx >= 0 and q in text:
+                        for off, n in pos:
+                            if off <= idx:
+                                hit_line = n
+                            else:
+                                break
+                    if hit_line:
+                        s = e = hit_line
+                        lo, hi = max(1, s - a.context), min(len(lines), e + a.context)
+                        status = "file"
                 c["verified"] = status or "no"
                 if status is None:
                     bad += 1; print("quote not found:", g["id"], c.get("cite"), "|", (c.get("quote") or "")[:60])

@@ -113,7 +113,7 @@ const st=x=>{const v=DEC[x.g.id]&&DEC[x.g.id].status;return STS.includes(v)?v:'p
 /* ---------- markdown helpers ---------- */
 function prep(md){
   md=md.replace(/^---\n[\s\S]*?\n---\n?/,'');
-  md=md.replace(/^:::(\w+)(?:\[([^\]]*)\]|\s+(.*))?\n([\s\S]*?)^:::\s*$/gm,(m,t,a,b,body)=>'> **'+t.toUpperCase()+(a||b?': '+(a||b):'')+'**\n> '+body.trim().split('\n').join('\n> '));
+  md=md.replace(/^:::(\w+)(?:\[([^\]]*)\]|[ \t]+(.*))?\n([\s\S]*?)^:::\s*$/gm,(m,t,a,b,body)=>'> **'+t.toUpperCase()+(a||b?': '+(a||b):'')+'**\n> '+body.trim().split('\n').join('\n> '));
   return md;
 }
 function blocks(md){
@@ -169,6 +169,8 @@ async function who(idsIn){
 }
 const nm=i=>i?(names[i]||'A reviewer'):'A reviewer';
 const when=t=>t?new Date(t).toLocaleString([], {dateStyle:'medium',timeStyle:'short'}):'';
+/* a reviewer edit holds the whole page text and a page can carry several gaps: use the newest edit made on any gap of the same proposal */
+const pageEdit=x=>{let b=null;G.forEach(y=>{if(y.p.id===x.p.id){const d=DEC[y.g.id];if(d&&d.edited&&(!b||String(d.at)>String(b.at)))b=d}});return b?b.edited:null};
 const noFix=x=>x.g.verdict==='already_covered'||x.g.verdict==='not_user_facing';
 const VL={real_gap:'real gap',contradicted:'contradicts the code',partially_covered:'partly covered',already_covered:'already covered',not_user_facing:'not user-facing'};
 
@@ -314,7 +316,7 @@ function evid(g){return codeEv(g)+docEv(g)}
 
 function drawDetail(x){
   const {g,p}=x;const d=DEC[g.id]||{};const s=st(x);
-  const text=d.edited||p.proposed;
+  const text=pageEdit(x)||p.proposed;
   const sibs=p.gaps.filter(o=>o.id!==g.id);
   const gapPart=`<section class="part0"><div class="row"><span class="pill ${esc(g.tier)}">${esc(g.tier)}</span><span class="pill ${s}">${s==='hold'?'on hold':s==='pending'?'to review':s}</span><span class="mono muted">${esc(g.id)} · ${esc(g.dimension)} · effort ${esc(g.effort)}</span></div>
    <h2 class="big">${esc(g.item)}</h2>
@@ -333,7 +335,7 @@ function drawDetail(x){
     fixPart=`<section class="part"><h2>Suggested fix</h2>
     <p class="lead">${esc(g.change_summary)}</p>
     ${sibs.length?`<div class="notice">This edit is one change to <span class="mono">${esc(p.short)}</span> shared with ${sibs.map(o=>esc(o.id)).join(', ')}. Decisions are saved per gap; I reconcile them when building the PR.</div>`:''}
-    <div class="row" style="justify-content:space-between"><h3 style="margin:0">Proposed change to the page${d.edited?' (with reviewer edit)':''}</h3>
+    <div class="row" style="justify-content:space-between"><h3 style="margin:0">Proposed change to the page${pageEdit(x)?' (with reviewer edit)':''}</h3>
      <div class="seg"><button aria-pressed="${mode==='rendered'}" data-m="rendered">Rendered</button><button aria-pressed="${mode==='source'}" data-m="source">Markdown</button></div></div>
     <div class="diff">${mode==='rendered'?renderedDiff(p.original,text):`<div style="padding:8px 0">${sourceDiff(p.original,text)}</div>`}</div>
     <div class="gap"><div class="row"><h3 style="margin:0">Why this confidence for the fix?</h3><span class="pill ${esc(p.fix_confidence)}">${esc(p.fix_confidence)}</span></div><p class="lead2">${esc(p.why_fix_confidence||p.fix_confidence_reason)}</p>
@@ -351,11 +353,11 @@ function drawActions(x){
   if(!OK())h+='<div class="notice">Decisions cannot be saved in this view. Open the page signed in with Contributor access or higher.</div>';
   if(s==='rejected')h+=`<div class="gap"><b class="rejected">Rejected</b><div>${esc(d.reason)}</div><div class="muted" style="font-size:12px">${esc(nm(d.by))} · ${esc(when(d.at))}</div></div>`;
   if(s==='approved')h+=`<div class="gap"><b class="approved">${nf?'Agreed, no fix needed':'Approved for the batch PR'}</b><div class="muted" style="font-size:12px">${esc(nm(d.by))} · ${esc(when(d.at))}</div></div>`;
-  if(s==='hold')h+=`<div class="gap"><b class="hold">On hold until the changes are addressed</b>${d.edited?'<div>A reviewer edit is saved with this fix.</div>':''}</div>`;
+  if(s==='hold')h+=`<div class="gap"><b class="hold">On hold until the changes are addressed</b>${pageEdit(x)?'<div>A reviewer edit is saved with this fix.</div>':''}</div>`;
   h+=hist;
   if(editing){
     h+=`<label for="ed" class="muted">Edit the proposed page (markdown). Your version replaces the proposal and the fix goes on hold until it is addressed.</label>
-    <textarea id="ed" class="code" spellcheck="false">${esc(d.edited||p.proposed)}</textarea>
+    <textarea id="ed" class="code" spellcheck="false">${esc(pageEdit(x)||p.proposed)}</textarea>
     <label for="cm" class="muted">Note for the drafter (optional)</label><textarea id="cm" rows="2"></textarea>
     <div class="actions"><button class="btn hl" id="saveed">Save edit and hold</button><button class="btn" id="cancel">Cancel</button></div>`;
   }else{
@@ -382,7 +384,7 @@ function drawBatch(){
   const pages=[...new Set(a.map(x=>x.p.id))].map(id=>P.find(p=>p.id===id));
   const manifest=pages.map(p=>`${p.page}  [${a.filter(x=>x.p.id===p.id).map(x=>x.g.id).join(', ')}]`).join('\n');
   $('#view').innerHTML=`<div class="card sec"><div><h2>Batch PR</h2><p class="muted" style="margin:0;max-width:80ch">Approved fixes collect here, grouped by page. Ask Claude to “open the batch PR from the approved fixes”. It reads these decisions, applies each page (using reviewer-edited text where there is one), and opens one PR to <span class="mono">dev</span>. A page can appear twice when it has gaps from both drafting rounds; I merge those edits when building the PR.</p></div>
-  ${pages.length?`<div class="tw"><table class="t"><thead><tr><th>Page</th><th>Approved gaps</th><th>Other gaps on this page</th><th>Fix confidence</th><th>Reviewer edit</th></tr></thead><tbody>${pages.map(p=>{const ap=a.filter(x=>x.p.id===p.id);const oth=p.gaps.filter(g=>!ap.find(x=>x.g.id===g.id));return `<tr><td class="mono" style="word-break:break-all">${esc(p.short)}</td><td>${ap.map(x=>esc(x.g.id)).join(', ')}</td><td>${oth.map(g=>{const k=G.find(y=>y.g.id===g.id);return esc(g.id)+' ('+(st(k)==='pending'?'to review':st(k))+')'}).join(', ')||'<span class="muted">none</span>'}</td><td><span class="pill ${esc(p.fix_confidence)}">${esc(p.fix_confidence)}</span></td><td>${ap.some(x=>(DEC[x.g.id]||{}).edited)?'yes':'no'}</td></tr>`}).join('')}</tbody></table></div><div class="actions"><button class="btn" id="cp">Copy page list</button></div>`:'<div class="notice">No approved fixes yet.</div>'}
+  ${pages.length?`<div class="tw"><table class="t"><thead><tr><th>Page</th><th>Approved gaps</th><th>Other gaps on this page</th><th>Fix confidence</th><th>Reviewer edit</th></tr></thead><tbody>${pages.map(p=>{const ap=a.filter(x=>x.p.id===p.id);const oth=p.gaps.filter(g=>!ap.find(x=>x.g.id===g.id));return `<tr><td class="mono" style="word-break:break-all">${esc(p.short)}</td><td>${ap.map(x=>esc(x.g.id)).join(', ')}</td><td>${oth.map(g=>{const k=G.find(y=>y.g.id===g.id);return esc(g.id)+' ('+(st(k)==='pending'?'to review':st(k))+')'}).join(', ')||'<span class="muted">none</span>'}</td><td><span class="pill ${esc(p.fix_confidence)}">${esc(p.fix_confidence)}</span></td><td>${ap.some(x=>pageEdit(x))?'yes':'no'}</td></tr>`}).join('')}</tbody></table></div><div class="actions"><button class="btn" id="cp">Copy page list</button></div>`:'<div class="notice">No approved fixes yet.</div>'}
   ${agreed.length?`<div class="part"><h2>Agreed: no fix needed</h2><ul>${agreed.map(x=>`<li><span class="mono">${esc(x.g.id)}</span> ${esc(x.g.item)}</li>`).join('')}</ul></div>`:''}</div>`;
   const b=$('#cp');if(b)b.onclick=()=>{navigator.clipboard.writeText(manifest).then(()=>b.textContent='Copied',()=>b.textContent='Copy not available')};
 }

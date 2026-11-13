@@ -61,8 +61,9 @@ def main():
         page = j["page"]
         full = os.path.realpath(os.path.join(root, page))
         # the drafter wrote this path: never read outside the docs root (data.json is published)
-        if not (full + os.sep).startswith(os.path.realpath(root) + os.sep):
-            print("page path outside docs root, skipped:", page, jp, file=sys.stderr)
+        docs_dir = os.path.join(os.path.realpath(root), "docs") + os.sep
+        if not full.startswith(docs_dir) or not full.endswith(".md"):
+            print("page path is not a .md file under <docs-root>/docs, skipped:", page, jp, file=sys.stderr)
             continue
         orig = open(full).read() if os.path.isfile(full) else ""
         gl = []

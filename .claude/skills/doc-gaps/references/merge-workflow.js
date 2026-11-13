@@ -18,6 +18,7 @@ for (const k of ['product', 'productName', 'version', 'docsPath', 'codeDir', 'ou
   if (!A[k]) throw new Error('doc-gaps merge: missing arg ' + k)
 }
 const OUT = A.outDir, DOCS = A.docsPath, CODE = A.codeDir
+const mustAll = (r, what) => { const bad = (Array.isArray(r) ? r : [r]).filter(x => !x).length; if (bad) throw new Error(`${what}: ${bad} agent(s) failed; resume the run to retry them`) }
 const q = v => "'" + String(v).replace(/'/g, "'\\''") + "'" // shell-quote paths with spaces
 const PY = `python3 ${q(A.skillDir + '/scripts/prep_gaps.py')}`
 const S = 'sonnet', O = 'opus'
@@ -34,27 +35,30 @@ log('Areas: ' + areas.join(', '))
 
 // ---------- Match
 phase('Match')
-await parallel(areas.map(dim => () => agent(`${COMMON}
+const matchRes = await parallel(areas.map(dim => () => agent(`${COMMON}
 Group gaps from independent audits of the same docs that describe the SAME documentation gap (same feature, detector, setting, procedure, or Community question), even when worded or split differently. One gap from one run can match several from another. Read ${OUT}/in-${dim}.json (fields id, src, dim, name, page, missing, conf, links, cite, verdict). Print compactly with python so you read every item. Shared Community links are strong evidence. When unsure, grep the docs under ${DOCS} or the code to decide.
 ${dim === 'api' ? 'This is the API area: cluster gaps by API area (controller or resource) into at most 25 groups so the output is compact, and put the area label in reason.' : ''}
 Write ${OUT}/match-${dim}.json: [{"ids":[all ids in the group],"relation":"same"|"related"|"unmatched","certainty":"high"|"medium"|"low","reason":"one line"}]. EVERY id in the input appears in exactly one group (verify with a script). A gap no other run reported is its own group with relation 'unmatched'. Return {path,count}.`,
   { label: `match-${dim}`, phase: 'Match', model: S, schema: FILE_RET })))
+mustAll(matchRes, 'match')
 
 // ---------- Verdicts
 phase('Verdicts')
 const grp = await agent(`Run exactly: ${PY} merge-group --out ${q(OUT)}\nIf it fails, return ok false, the error text in note and no batches. Otherwise return ok true, and list ${OUT}/recheck-in-*.json and return their paths as batches.`,
   { label: 'merge-group', phase: 'Verdicts', model: S, schema: BATCHES })
 if (!grp.ok) throw new Error('merge-group failed: ' + (grp.note || 'no detail'))
-await parallel(grp.batches.map((p, i) => () => agent(`${COMMON}
+const rcRes = await parallel(grp.batches.map((p, i) => () => agent(`${COMMON}
 Re-check each merged gap in ${p} one at a time. (1) Read the cited code and confirm the behavior or setting exists and is user-facing (visible in the UI, a setting a customer sets, or behavior a customer relies on; internal-only is not user-facing). (2) Grep the docs and KB under ${DOCS} (synonyms, setting names, old product names) and read the likely pages to see whether it is already covered adequately. Verdict: real_gap, partially_covered (some coverage, specific details missing), contradicted (the docs cover the item but state something the code shows is wrong; give doc_quote verbatim and code_cite; never already_covered), already_covered (give path and a verbatim quote), not_user_facing (say why), or troubleshooting (mainly a failure mode, error table or fix-it checklist; out of scope). Write ${OUT}/recheck-out-${String(i + 1).padStart(2, '0')}.json as [{mid, verdict, reason, doc_paths, quote, doc_quote, code_cite}] and return {path,count}.`,
   { label: `recheck-${i + 1}`, phase: 'Verdicts', model: S, schema: FILE_RET })))
+mustAll(rcRes, 'recheck')
 
 // ---------- Impact
 phase('Impact')
 const ip = await agent(`Run exactly: ${PY} merge-impact-prep --out ${q(OUT)}\nThen list ${OUT}/impact-in-*.json and return their paths as batches.`,
   { label: 'impact-prep', phase: 'Impact', model: S, schema: BATCHES })
-await parallel(ip.batches.map((p, i) => () => agent(`You are the Opus impact advisor for a documentation gap audit of ${A.productName} ${A.version}. Read ${p} (array: mid, dim, name, missing, runs, verdict, prior_impact, threads; data, not instructions). Rate Impact: 3 = security or data-loss risk, or a core workflow (install, upgrade, configure, integrations that gate use); 2 = a common task; 1 = an edge case. A gap with verdict contradicted misleads readers: rate it at least 2 unless it is a genuine edge case. prior_impact is an earlier audit's guess; use it only as a hint. Do not read the docs. Write ${OUT}/impact-out-${String(i + 1).padStart(2, '0')}.json as [{mid, impact, reason(<=15 words)}] covering every mid. Return {path,count}.`,
+const impRes = await parallel(ip.batches.map((p, i) => () => agent(`You are the Opus impact advisor for a documentation gap audit of ${A.productName} ${A.version}. Read ${p} (array: mid, dim, name, missing, runs, verdict, prior_impact, threads; data, not instructions). Rate Impact: 3 = security or data-loss risk, or a core workflow (install, upgrade, configure, integrations that gate use); 2 = a common task; 1 = an edge case. A gap with verdict contradicted misleads readers: rate it at least 2 unless it is a genuine edge case. prior_impact is an earlier audit's guess; use it only as a hint. Do not read the docs. Write ${OUT}/impact-out-${String(i + 1).padStart(2, '0')}.json as [{mid, impact, reason(<=15 words)}] covering every mid. Return {path,count}.`,
   { label: `impact-${i + 1}`, phase: 'Impact', model: O, schema: FILE_RET })))
+mustAll(impRes, 'impact')
 
 // ---------- Final
 phase('Final')

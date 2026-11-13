@@ -30,7 +30,14 @@ import argparse, collections, json, os, re, sys
 
 def norm_target(t, prefix):
     """Audit targets look like 'path (note)', 'NEW path (note)' or 'New page path'. Return 'docs/.../path (note)'."""
-    m = re.match(r"^\s*(new(?:\s+page)?\s*:?\s+)?(\S+)(.*)$", t or "", re.I)
+    t = (t or "").replace("`", "")
+    m = re.match(r"^\s*(new(?:\s+page)?\s*:?\s+)?(\S+)(.*)$", t, re.I)
+    if m:  # drop trailing punctuation and make an absolute path relative to its docs/ folder
+        p = re.sub(r"(\.md)[.)\]]+$", r"\1", m.group(2).rstrip(",;:"))
+        if p.startswith("/") and "docs/" in p:
+            p = p[p.rindex("/docs/") + 1:] if "/docs/" in p else p
+        t = t[:m.start(2)] + p + t[m.end(2):]
+        m = re.match(r"^\s*(new(?:\s+page)?\s*:?\s+)?(\S+)(.*)$", t, re.I)
     if not m or not m.group(2).endswith(".md"):
         return (t or "").strip()  # no usable page path ('new page', free text): batches() gives it its own entry
     new, path, rest = m.group(1), m.group(2), m.group(3).strip()
@@ -97,8 +104,7 @@ def _norm_ranked(g, label):
     return dict(id=f"{label}-{g['id']}", src=label, dim=g.get("dimension", ""), name=g.get("name", g["id"]),
                 page=g.get("target_page", ""), missing=g.get("what_missing", ""), score=g.get("final_score", 0),
                 conf=g.get("confidence", "low"), tier=g.get("tier", ""), impact=g.get("impact"), demand=g.get("demand"),
-                effort=g.get("effort", "M"), links=g.get("links") or [], cite=g.get("citation", ""),
-                why=next(iter((g.get("judge_rationales") or {}).values()), ""), verdict=g.get("verdict"))
+                effort=g.get("effort", "M"), links=g.get("links") or [], cite=g.get("citation", ""), verdict=g.get("verdict"))
 
 
 def _load_runs(out):
@@ -163,7 +169,7 @@ def merge_group(out):
             vs = [g["verdict"] for g in m if g.get("verdict")]
             confs = [LV.index(str(g.get("conf", "low")).lower()) if str(g.get("conf", "low")).lower() in LV else 0 for g in m]
             if len(runs) > 1:
-                conf, why = LV[max(max(confs), 1) if min(confs) >= 1 else 1], "found by " + " and ".join(runs)
+                conf, why = LV[max(min(confs), 1)], "found by " + " and ".join(runs)  # at least medium, never above the lowest run
             else:
                 conf, why = LV[min(confs)], f"found by run {runs[0]} only"
             mg = dict(mid=f"M-{dim[:4].upper()}-{len(merged) + 1:03d}", dim=dim, runs=runs, rel=grp.get("relation", ""),
