@@ -131,7 +131,7 @@ Complete the following steps on the Directory Manager server:
 
     ```powershell
     # --- settings ---
-    $IdentityStoreId = "<IdentityStoreID>"
+    $IdentityStoreId = <IdentityStoreID>
     $CredentialFile  = 'C:\GroupIDScripts\groupid-cred.xml'
     $LogFile         = "C:\GroupIDScripts\Logs\RemoveDisabled_$(Get-Date -Format 'yyyyMMdd_HHmmss').log"
 
