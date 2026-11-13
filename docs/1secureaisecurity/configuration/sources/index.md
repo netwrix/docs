@@ -91,7 +91,7 @@ The Beta connects the platforms 1Secure can reach over the public internet. You 
 
 To connect all the Microsoft sources at once, use [Connect every Microsoft source](/docs/1secureaisecurity/configuration/sources/connect-every-microsoft-source.md).
 
-The product lists these platforms in one searchable list. This page groups them by the areas on the AI Security [Overview](/docs/1secureaisecurity/admin/pages/overview.md) page.
+The **Sources** page groups the platforms under the same headings used here.
 
 ### Microsoft 365 agents
 
