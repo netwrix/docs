@@ -83,9 +83,9 @@ def batches(run, root, tiers, rnd, agents, skip_done):
 
 # ---------------------------------------------------------------- merging runs
 LV = ["low", "medium", "high"]
-VRANK = {"real_gap": 3, "partially_covered": 2, "already_covered": 1, "not_user_facing": 0, "troubleshooting": -1}
+VRANK = {"contradicted": 3.5, "real_gap": 3, "partially_covered": 2, "already_covered": 1, "not_user_facing": 0, "troubleshooting": -1}
 ADJ = {"S": 1.2, "M": 1.0, "L": 0.8}
-NEEDS_FIX = ("real_gap", "partially_covered")
+NEEDS_FIX = ("contradicted", "real_gap", "partially_covered")
 
 
 def _norm_ranked(g, label):
@@ -226,7 +226,7 @@ def merge_final(out, cutoffs):
     for m in ranked:
         page = (m["pages"][0] if m["pages"] else "new page")
         ga.append(dict(id=m["mid"], name=m["name"], dimension=m["dim"], tier=m["tier"], confidence=m["conf"], confidence_reason=m["conf_why"],
-                       final_score=0 if m["verdict"] == "real_gap" else 1, what_missing=m["missing"], target_page=page, effort=m["effort"],
+                       final_score=0 if m["verdict"] in ("real_gap", "contradicted") else 1, what_missing=m["missing"], target_page=page, effort=m["effort"],
                        impact=m["impact"], demand=m["demand"], citation="; ".join(m["links"] + ([m["cite"]] if m["cite"] else [])),
                        links=m["links"], verdict=m["verdict"], runs="".join(m["runs"]), source_ids=m["ids"], needs_human_review=m["conf"] == "low"))
     json.dump(ga, open(f"{out}/gaps-ranked.json", "w"), indent=1)

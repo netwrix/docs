@@ -170,7 +170,7 @@ async function who(idsIn){
 const nm=i=>i?(names[i]||'A reviewer'):'A reviewer';
 const when=t=>t?new Date(t).toLocaleString([], {dateStyle:'medium',timeStyle:'short'}):'';
 const noFix=x=>x.g.verdict==='already_covered'||x.g.verdict==='not_user_facing';
-const VL={real_gap:'real gap',partially_covered:'partly covered',already_covered:'already covered',not_user_facing:'not user-facing'};
+const VL={real_gap:'real gap',contradicted:'contradicts the code',partially_covered:'partly covered',already_covered:'already covered',not_user_facing:'not user-facing'};
 
 /* ---------- decisions (one per gap) ---------- */
 async function decide(x,status,extra){
@@ -217,7 +217,7 @@ function legendHTML(){return `<div class="legend">
 <li><b>Audit score</b>: 0 = absent, 1 = mentioned but insufficient. Gaps are items scoring 0 or 1. (2 = adequate, 3 = complete.)</li>
 <li><b>Effort</b>: rough size of the doc change. S small, M medium, L large.</li>
 <li><b>Dimension</b>: features, API, or procedures.</li>
-<li><b>Drafter's check</b>: the drafter re-checked the gap against docs and code. Real gap, partly covered, already covered, or not user-facing.</li></ul></div>
+<li><b>Drafter's check</b>: the drafter re-checked the gap against docs and code. Real gap, partly covered, contradicts the code (the docs state something the code shows is wrong), already covered, or not user-facing.</li></ul></div>
 <div><h3>Your decisions</h3><ul>
 <li><b>Approve fix</b>: adds it to the Batch PR.</li>
 <li><b>Suggest edits</b> or <b>Comment and hold</b>: puts it on hold until addressed.</li>
@@ -320,7 +320,7 @@ function drawDetail(x){
    <h2 class="big">${esc(g.item)}</h2>
    <h3>What is the gap?</h3>
    <p class="lead">${esc(g.missing)}</p>
-   <div class="row"><span class="pill ${g.verdict==='real_gap'?'high':'medium'}">drafter's check: ${esc(VL[g.verdict]||g.verdict)}</span><span class="muted">Audit score ${esc(g.score)}/3 on <span class="mono">${esc(p.short)}</span></span></div>
+   <div class="row"><span class="pill ${g.verdict==='contradicted'?'low':g.verdict==='real_gap'?'high':'medium'}">drafter's check: ${esc(VL[g.verdict]||g.verdict)}</span><span class="muted">Audit score ${esc(g.score)}/3 on <span class="mono">${esc(p.short)}</span></span></div>
    <div><h3>Why is this a gap?</h3><p class="lead2">${esc(g.why_gap||'')}</p><details class="qa small"><summary>Evidence summary</summary><div class="qabody">${evsum(g)}</div></details>${codeEv(g)}<details class="qa small"><summary>Docs checked and Community threads</summary><div class="qabody">${docEv(g)}</div></details></div>
    <div class="gap"><div class="row"><h3 style="margin:0">Why this confidence for the gap?</h3><span class="pill ${g.gap_confidence}">${g.gap_confidence}</span></div>
     <p class="lead2">${esc(g.why_gap_confidence||'')}</p>
