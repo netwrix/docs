@@ -41,6 +41,8 @@ The required .NET version depends on the Threat Manager version:
 
 You can upgrade .NET components within the same major release independent of Threat Manager.
 
+You can remove an EOL .NET version from the Threat Manager application server after you update Threat Manager and it installs the newer .NET versions it requires. Confirm that the required versions listed above appear in Apps & features before you remove the EOL version.
+
 > **NOTE:** For the full requirements of each version, see:
 >
 > - [Netwrix Threat Manager Requirements Version 3.0](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server)
