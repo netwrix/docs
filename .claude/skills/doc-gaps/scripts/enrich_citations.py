@@ -111,6 +111,8 @@ def main():
                     ok += 1
                 else:
                     fix += 1
+                if status is None:  # unverified: show no excerpt and no link rather than code the claim does not rest on
+                    c["snippet"] = []; c.pop("start", None); c.pop("end", None); continue
                 c["start"], c["end"] = s, e
                 c["snippet"] = [dict(n=i, t=lines[i - 1][:LONG] + ("…" if len(lines[i - 1]) > LONG else ""), hit=(s <= i <= e)) for i in range(lo, hi + 1)]
                 if a.blob_base:

@@ -36,7 +36,7 @@ def norm_target(t, prefix):
     (batches() then gives the gap its own NEW:<id> entry)."""
     toks = (t or "").replace("`", "").split()
     for k, tok in enumerate(toks):
-        p = re.sub(r"(\.md)[.)\]]+$", r"\1", tok.rstrip(",;:"))
+        p = re.sub(r"(\.md)(?:[#:?]\S*)?[.)\]]*$", r"\1", tok.rstrip(",;:"))
         if not p.endswith(".md"):
             continue
         lead, rest = toks[:k], toks[k + 1:]
@@ -115,6 +115,15 @@ def batches(run, root, tiers, rnd, agents, skip_done, ids=None):
 LV = ["low", "medium", "high"]
 VRANK = {"contradicted": 3.5, "real_gap": 3, "partially_covered": 2, "already_covered": 1, "not_user_facing": 0, "troubleshooting": -1}
 ADJ = {"S": 1.2, "M": 1.0, "L": 0.8}
+VALIASES = {"partly_covered": "partially_covered", "partial": "partially_covered", "real": "real_gap", "contradiction": "contradicted"}
+
+
+def norm_verdict(v):
+    """LLM agents write verdicts in free form: normalise case, spaces and a few aliases before validating."""
+    if v is None:
+        return None
+    v = str(v).strip().lower().replace(" ", "_").replace("-", "_")
+    return VALIASES.get(v, v)
 NEEDS_FIX = ("contradicted", "real_gap", "partially_covered")
 
 
@@ -232,7 +241,7 @@ def merge_impact_prep(out):
                 rc[r["mid"] if "mid" in r else r["id"]] = r
     for m in M:
         if m["verdict"] is None and m["mid"] in rc:
-            m["verdict"] = rc[m["mid"]]["verdict"]
+            m["verdict"] = norm_verdict(rc[m["mid"]]["verdict"])
             m["verdict_reason"] = rc[m["mid"]].get("reason", "")
     json.dump(M, open(f"{out}/merged-pre.json", "w"), indent=1)
     act = [m for m in M if m["verdict"] in NEEDS_FIX and m["dim"] != "api"]
@@ -254,12 +263,14 @@ def merge_final(out, cutoffs, adj=None):
         if fn.startswith("impact-out-"):
             for r in json.load(open(f"{out}/{fn}")):
                 imp[r["mid"]] = r
-    ranked, dropped, deferred, unjudged = [], [], [], []
+    ranked, dropped, deferred, unjudged, badv = [], [], [], [], []
     for m in M:
         if m["dim"] == "api":
             deferred.append(m); continue
         if m["verdict"] is None:
             unjudged.append(m["mid"]); continue
+        if m["verdict"] not in VRANK:
+            badv.append((m["mid"], m["verdict"])); continue
         if m["verdict"] not in NEEDS_FIX:
             dropped.append(m); continue
         i = imp.get(m["mid"])
@@ -273,12 +284,14 @@ def merge_final(out, cutoffs, adj=None):
             i["impact"] = 1
         m["impact"], m["impact_reason"] = i["impact"], i.get("reason", "")
         m["demand"] = min(3, len(m["links"]))
-        m["priority_score"] = round(m["impact"] * max(m["demand"], 1) * adj.get(m["effort"], 1.0), 2)
+        m["priority_score"] = round(m["impact"] * max(m["demand"], 1) * adj.get(str(m["effort"]).upper()[:1], 1.0), 2)
         t = "P0" if m["priority_score"] >= p0 else "P1" if m["priority_score"] >= p1 else "P2" if m["priority_score"] >= p2 else "P3"
         if m["impact"] == 3 and m["conf"] == "high":
             t = "P0"
         m["tier"] = t
         ranked.append(m)
+    if badv:  # an unknown verdict would drop a real gap silently
+        sys.exit(f"ERROR: unknown verdict values from a recheck agent: {badv[:10]}. Fix them in recheck-out-*.json (allowed: {sorted(VRANK)}) and re-run merge-impact-prep.")
     if unjudged:  # a failed recheck agent leaves verdict None: never drop those silently
         sys.exit(f"ERROR: {len(unjudged)} non-API gaps have no verdict (a recheck agent failed): {unjudged[:10]}. Re-run the recheck for them before ranking.")
     order = {"high": 0, "medium": 1, "low": 2}

@@ -53,7 +53,7 @@ def main():
     for jp in files:  # one truncated or malformed drafter file must not stop the others
         try:
             jj = json.load(open(jp))
-            assert isinstance(jj, dict) and jj.get("proposal_id") and jj.get("page") and isinstance(jj.get("gaps"), list)
+            assert isinstance(jj, dict) and jj.get("proposal_id") and jj.get("page") and isinstance(jj.get("gaps"), list) and all(isinstance(x, dict) and x.get("id") for x in jj["gaps"])
         except Exception as ex:
             print("unreadable or incomplete proposal, skipped:", jp, "-", type(ex).__name__, file=sys.stderr)
             continue
