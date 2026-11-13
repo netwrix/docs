@@ -80,7 +80,11 @@ def main():
         if not full.startswith(docs_dir) or not full.endswith(".md"):
             print("page path is not a .md file under <docs-root>/docs, skipped:", page, jp, file=sys.stderr)
             continue
-        pre = (a.docs_prefix or (cur.get("meta") or {}).get("docsPath") or "").strip("/")
+        pre = (a.docs_prefix or (cur.get("meta") or {}).get("docsPath") or "").replace("\\", "/")
+        rootp = os.path.realpath(root).replace("\\", "/").rstrip("/") + "/"
+        if pre.startswith(rootp):  # meta.docsPath may be absolute: compare repo-relative paths
+            pre = pre[len(rootp):]
+        pre = pre.strip("/")
         if pre and (not page.startswith(pre + "/") or page[len(pre) + 1:].startswith("kb/")):
             # another version or product, or a gitignored build-time KB copy: a PR could not carry this edit
             print(f"page is outside the audited docs folder {pre}/ or is a KB copy, skipped:", page, jp, file=sys.stderr)

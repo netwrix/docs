@@ -16,6 +16,9 @@ import argparse, functools, json, os, re, urllib.parse
 open = functools.partial(open, encoding="utf-8")  # never the platform default (cp1252 on Windows)
 
 CAP = 30
+# a line that assigns a literal to a secret-looking name is never published; a broader scan only warns
+SECRET_VALUE = re.compile(r"(passw(or)?d|secret|api[_-]?key|token|connectionstring|private[_-]?key)\w*\s*[:=]\s*[\"'][^\"']{6,}[\"']", re.I)
+HIDDEN = "[line hidden: possible secret value]"
 LONG = 240
 
 
@@ -57,7 +60,7 @@ def main():
                     fp = os.path.join(a.code, rel)
                 sym = None
                 if not os.path.isfile(fp) and ":" in rel:  # cite names a symbol, not a line: path:symbol
-                    rel, sym = rel.rsplit(":", 1)
+                    rel, sym = rel.split(":", 1)  # path:Type::Member keeps its own colons
                     fp = os.path.join(a.code, rel)
                 # drafter-supplied paths are untrusted: never read outside the exported code folder
                 if not (os.path.realpath(fp) + os.sep).startswith(root_real + os.sep) and os.path.realpath(fp) != root_real:
@@ -76,8 +79,9 @@ def main():
                         print("symbol not found:", g["id"], c.get("cite"))
                 s = int(l1) if l1 else 1
                 e = int(l2) if l2 else s
-                if s > len(lines) or e < s:  # a line the file does not have: fabricated or stale reference
-                    c["verified"] = "no"; c["snippet"] = []; bad += 1; print("line out of range:", g["id"], c.get("cite"), f"(file has {len(lines)} lines)"); continue
+                oob = s > len(lines) or e < s  # a line the file does not have: stale or fabricated; the quote may still be found elsewhere
+                if oob:
+                    s = e = 1
                 lo, hi = max(1, s - a.context), min(len(lines), e + a.context)
                 if hi - lo + 1 > CAP:
                     hi = lo + CAP - 1
@@ -88,9 +92,9 @@ def main():
                     status = "window" if len(q) >= 12 else "unchecked"  # a very short quote that is present still proves little
                 else:
                     status = None
-                if sym and not l1:
-                    status = None  # symbol not found: the snippet is only the top of the file
-                if status is None and q:
+                if (sym and not l1) or oob:
+                    status = None  # symbol not found or line out of range: the window proves nothing
+                if status is None and len(q) >= 12:  # a short quote would match almost anywhere
                     if fp not in flat:  # normalized whole file with each line's offset, built once per file
                         pos, parts, off = [], [], 0
                         for n, ln in enumerate(lines, 1):
@@ -123,7 +127,7 @@ def main():
                 if status is None:  # unverified: show no excerpt and no link rather than code the claim does not rest on
                     c["snippet"] = []; c.pop("start", None); c.pop("end", None); continue
                 c["start"], c["end"] = s, e
-                c["snippet"] = [dict(n=i, t=lines[i - 1][:LONG] + ("…" if len(lines[i - 1]) > LONG else ""), hit=(s <= i <= e)) for i in range(lo, hi + 1)]
+                c["snippet"] = [dict(n=i, t=(HIDDEN if SECRET_VALUE.search(lines[i - 1]) else lines[i - 1][:LONG] + ("…" if len(lines[i - 1]) > LONG else "")), hit=(s <= i <= e)) for i in range(lo, hi + 1)]
                 if a.blob_base:
                     c["url"] = f"{a.blob_base.rstrip('/')}/{urllib.parse.quote(rel)}#L{s}" + (f"-L{e}" if e != s else "")
     json.dump(j, open(path, "w"))

@@ -109,7 +109,7 @@ const OK=()=>!!dbc;
 const ids=['approved','hold','rejected','pending'];
 const STS=['approved','hold','rejected','pending'],LVS=['high','medium','low'],TRS=['P0','P1','P2','P3'];
 /* a decision saved before the proposal was redrafted (p.rev) no longer applies to the new text */
-const fresh=(d,p)=>!p.rev||(!!d.at&&String(d.at)>=String(p.rev));
+const fresh=(d,p)=>(d.rev||'')===(p.rev||''); /* a decision belongs to the proposal revision it was made on (no clock comparison) */
 const st=x=>{const d=DEC[x.g.id];const v=d&&fresh(d,x.p)&&d.status;return STS.includes(v)?v:'pending'};
 
 /* ---------- markdown helpers ---------- */
@@ -134,7 +134,7 @@ const safeUrl=u=>/^https?:\/\//i.test(String(u||'').trim())?String(u).trim():'';
 if(window.DOMPurify)DOMPurify.addHook('afterSanitizeAttributes',n=>{if(n.tagName==='A'){n.setAttribute('target','_blank');n.setAttribute('rel','noopener noreferrer')}});
 function clean(html){
   if(!window.DOMPurify)return esc(html);
-  return DOMPurify.sanitize(html,{USE_PROFILES:{html:true},FORBID_TAGS:['style','form','input','button','textarea','select'],ALLOWED_URI_REGEXP:/^(?:(?:https?|mailto):|[#\/.]|[\w.\/-]+$)/i});
+  return DOMPurify.sanitize(html,{USE_PROFILES:{html:true},FORBID_TAGS:['style','form','input','button','textarea','select','img'],ALLOWED_URI_REGEXP:/^(?:(?:https?|mailto):|[#\/.]|[\w.\/-]+$)/i});
 }
 const rend=b=>clean(marked.parse(b,{async:false}));
 const fmOf=md=>{const m=String(md||'').match(/^---\n[\s\S]*?\n---\n?/);return m?m[0]:''};
@@ -189,7 +189,7 @@ async function decide(x,status,extra){
   const edited=('edited' in extra)?extra.edited:(stale?null:(typeof cur.edited==='string'?cur.edited:null));
   const nowIso=new Date().toISOString();
   const editedAt=('edited' in extra)?nowIso:(stale?null:(cur.editedAt||null));
-  const body={status,by:me,at:nowIso,comments,reason:status==='rejected'?extra.reason:'',edited,editedAt,proposal:x.p.id,page:x.p.page};
+  const body={status,by:me,at:nowIso,comments,reason:status==='rejected'?extra.reason:'',edited,editedAt,rev:x.p.rev||'',proposal:x.p.id,page:x.p.page};
   try{await dbc.doc('decisions/'+x.g.id).set(body);['cm','nc-'+x.g.id].forEach(id=>{const t=document.getElementById(id);if(t)t.value=''});if(!editing)draw();return true}catch(e){note('Could not save: '+(e.message||e.code));return false}
 }
 function note(t){let n=$('#note')||$('#gnote');if(!n){n=document.createElement('div');n.id='gnote';n.className='notice';n.setAttribute('role','alert');const v=$('#view');if(v)v.prepend(n);else return}n.textContent=t;n.hidden=false}
@@ -381,7 +381,7 @@ function drawActions(x){
   on('cancel',()=>{editing=false;drawActions(x)});
   on('saveed',()=>{const t=$('#ed').value;decide(x,'hold',{edited:t===p.proposed?'':t,comment:val()||'Edited the proposed text.'}).then(ok=>{if(ok){editing=false;draw()}})});
   on('rc',()=>{const c=val();if(!c){note('Write a comment first.');return}decide(x,'hold',{comment:c})});
-  on('rj',()=>{const c=val();if(!c){note('A reason is required to reject.');return}decide(x,'rejected',{reason:c,comment:c})});
+  on('rj',()=>{const c=val();if(!c){note('A reason is required to reject.');return}decide(x,'rejected',{reason:c})});
   on('addr',()=>decide(x,'pending',{comment:val()||'Marked addressed.'}));
   on('undo',()=>decide(x,'pending',{comment:val()||'Reopened.'}));
 }
