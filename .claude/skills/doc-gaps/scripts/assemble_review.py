@@ -2,9 +2,9 @@
 """Merge drafted proposals into the review page's data.json.
 
 Usage:
-  assemble_review.py --run <run folder> --docs-root <repo root> [--round r1] [--meta meta.json]
+  assemble_review.py --run <run folder> --docs-root <repo root> [--round r1] [--meta meta.json] [--replace]
 
-Reads  <run>/gaps.json            ranked gaps (list of objects; see SKILL.md, step 5)
+Reads  <run>/draft-gaps.json      ranked gaps (list of objects; see SKILL.md, step 5)
        <run>/proposals/*__<round>.json and matching .md   (drafter output)
 Writes <run>/review/data.json     {"meta": {...}, "proposals": [...]}  (merges with an existing file)
 
@@ -25,9 +25,10 @@ def main():
     ap.add_argument("--docs-root", required=True)
     ap.add_argument("--round", default="r1")
     ap.add_argument("--meta")
+    ap.add_argument("--replace", action="store_true", help="redrafts: new proposals replace existing entries for the same gap ids")
     a = ap.parse_args()
     run, root = a.run, a.docs_root
-    gaps = {g["id"]: g for g in json.load(open(f"{run}/gaps.json"))}
+    gaps = {g["id"]: g for g in json.load(open(f"{run}/draft-gaps.json"))}
     out_path = f"{run}/review/data.json"
     os.makedirs(f"{run}/review", exist_ok=True)
     cur = {"meta": {}, "proposals": []}
@@ -36,7 +37,7 @@ def main():
         cur = j if isinstance(j, dict) else {"meta": {}, "proposals": j}
     if a.meta:
         cur["meta"] = json.load(open(a.meta))
-    have = {g["id"] for p in cur["proposals"] for g in p["gaps"]}
+    have = set() if a.replace else {g["id"] for p in cur["proposals"] for g in p["gaps"]}
 
     new = []
     # round r1 matches __r1.json and per-agent __r1b3.json, never __r10
@@ -75,19 +76,24 @@ def main():
     owner = {}
     for p in new:
         for g in p["gaps"]:
-            sc = (g["verdict"] not in NOFIX, p["original"] != p["proposed"])
+            sc = (g.get("verdict") not in NOFIX, p["original"] != p["proposed"])
             if g["id"] not in owner or sc > owner[g["id"]][0]:
                 owner[g["id"]] = (sc, p["id"])
     for p in new:
         p["gaps"] = [g for g in p["gaps"] if owner[g["id"]][1] == p["id"] and g["id"] not in have]
     new = [p for p in new if p["gaps"]]
     for p in new:
-        if all(g["verdict"] in NOFIX for g in p["gaps"]):
+        if all(g.get("verdict") in NOFIX for g in p["gaps"]):
             p["proposed"] = p["original"]
         p["tier"] = sorted(g["tier"] for g in p["gaps"])[0]
         p["rank"] = min(g["rank"] for g in p["gaps"])
         p["title"] = p["gaps"][0]["item"] if len(p["gaps"]) == 1 else " + ".join(g["id"] for g in p["gaps"][:3]) + (" +" if len(p["gaps"]) > 3 else "")
 
+    if a.replace:  # drop the old entries for gaps that were redrafted
+        redone = {g["id"] for p in new for g in p["gaps"]}
+        for p in cur["proposals"]:
+            p["gaps"] = [g for g in p["gaps"] if g["id"] not in redone]
+        cur["proposals"] = [p for p in cur["proposals"] if p["gaps"]]
     cur["proposals"] += new
     cur["proposals"].sort(key=lambda p: p.get("rank", 999))
     json.dump(cur, open(out_path, "w"))
@@ -95,7 +101,13 @@ def main():
     ids = [g["id"] for p in cur["proposals"] for g in p["gaps"]]
     bad = sorted({(g["id"], k) for p in new for g in p["gaps"] for k in PLAIN if not g.get(k)})
     print(f"added {len(new)} proposals; {len(ids)} gaps in data.json ({len(set(ids))} unique); {os.path.getsize(out_path)/1e6:.2f} MB")
-    scope = [i for i, g in gaps.items() if g.get("in_scope", True)]
+    # only the gaps batched for drafting in the rounds so far (batch-<round>-N.json), not every tier
+    scope = []
+    for bf in glob.glob(f"{run}/batch-*-*.json"):
+        bj = json.load(open(bf))
+        for pg in (bj.get("pages", []) if isinstance(bj, dict) else bj):
+            scope += [g["id"] for g in pg.get("gaps", [])]
+    scope = [i for i in dict.fromkeys(scope) if i in gaps]
     missing = [i for i in scope if i not in ids]
     print("gaps with no proposal:", missing or "none")
     if missing:

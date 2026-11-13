@@ -37,14 +37,14 @@ Two audits of the same release each miss gaps the other finds, so merge them bef
 
 1. Make a new run folder `.doc-gaps/<product>-<version>-merged/` and export the code the same way as for an audit.
 2. Call the Workflow tool with `scriptPath` set to `references/merge-workflow.js`. Pass `args`: `product`, `productName`, `version`, `docsPath`, `codeDir`, `outDir` (the merged run folder), `skillDir` (this skill's folder, absolute), `runs` (for example `["A=.doc-gaps/x-1.0", "B=.doc-gaps/x-1.0-r2"]`; each is a run folder with `gaps-ranked.json`), and optionally `cutoffs`.
-3. The workflow prefixes ids by run (runs reuse ids like `FEAT-001`), groups gaps that are the same by meaning, rechecks any gap no run has a verdict for, has Opus rate impact, ranks, and writes `gaps-ranked.json` and `gaps.json` in the audit's shape. API gaps are not ranked; they are listed in `merged-final.json` under `deferred_api`.
+3. The workflow prefixes ids by run (runs reuse ids like `FEAT-001`), groups gaps that are the same by meaning, rechecks any gap no run has a verdict for, has Opus rate impact, ranks, and writes `gaps-ranked.json` in the audit's shape. API gaps are not ranked; they are listed in `merged-final.json` under `deferred_api`.
 4. Continue at step 3 (draft fixes) from the merged run folder. Report the merge counts: items found by both runs, by each run alone, and dropped.
 
 Rules: a gap found by two runs is at least medium confidence; a gap found by one run keeps its own confidence. Merge counts also include `out-of-scope.json` (troubleshooting). Decisions saved on an earlier review page are keyed by the old ids and are not carried over unless the user asks.
 
 ## 3. Draft fixes
 
-1. `python3 scripts/prep_gaps.py convert --run RUN` makes `gaps.json`.
+1. `python3 scripts/prep_gaps.py convert --run RUN` makes `draft-gaps.json` (the audit's own `gaps.json` is left alone).
 2. `python3 scripts/prep_gaps.py batches --run RUN --docs-root <repo root> --tiers P0,P1 --round r1 --agents 5` groups the chosen gaps by target page and writes `batch-r1-N.json`. Use more agents for more tiers (about 10 for 140 gaps).
 3. Launch one Sonnet agent per batch file, all in one message, in the background. Each agent's prompt is only: read `references/draft-prompt.md` and follow it, plus the batch file, the run folder, the code folder, the docs root, and the product's former names. Each batch file carries its own unique suffix (`r1b3` = round 1, batch 3), and the drafter names its files `<slug>__r1b3`. Never send a prompt with an unfilled placeholder. Two agents sharing a suffix overwrite each other's files, which lost a proposal in the Threat Manager 3.3 run.
 4. Drafters write `RUN/proposals/<slug>__<suffix>.json` and `.md`. They never touch `docs/`.
@@ -55,7 +55,7 @@ A later round (the next tiers) uses a new round name (`--round r2`, giving suffi
 ## 4. Publish the review page
 
 1. Build `RUN/review/meta.json` from the report's scorecard and confidence summary: `productName`, `version`, `docsPath`, `codeRef`, `communityWindow`, `slackNote`, `reportFile`, `items`, `gaps`, `lowConfidence`, `agreement`, `overall`, `dims` (per area key `features`, `api`, `procedures`: `{n, c, w, l}` with items, coverage percent, weight, label), `tiers` (per tier `{high, medium, low, total}`), `cutoffs` (`P0`, `P1`, `P2` score cutoffs from the priority pass).
-2. `python3 scripts/assemble_review.py --run RUN --docs-root <repo root> --round r1 --meta RUN/review/meta.json`. It reports every gap with no proposal and any duplicate proposal id; redo those in a new batch round. Re-run it for each later round (`--round r2`) without `--meta`.
+2. `python3 scripts/assemble_review.py --run RUN --docs-root <repo root> --round r1 --meta RUN/review/meta.json`. It reports every batched gap with no proposal (gaps in tiers not yet drafted are not listed) and any duplicate proposal id; redo those in a new batch round. Re-run it for each later round (`--round r2`) without `--meta`.
    Then attach the real code behind every code citation: `python3 scripts/enrich_citations.py --run RUN --code RUN/code --blob-base <repo URL>/blob/<commit>`. It adds the cited lines with context, checks that each drafter's quote is really there (re-anchoring it if the line moved), and adds an "open in repo" link. Run it after every assemble, because assemble rebuilds `data.json`. It handles `path:line`, `path:start-end` and `path:symbol` citations. Report any citation it could not verify (it prints "quote not found", "missing file" or "symbol not found").
 3. Copy `references/review-page.html` to `RUN/review/index.html` and publish it with the Artifact tool. Follow the Artifact tool's own rules for first publishes (quickstart, then the `artifact-capabilities` skill). Publish with `files: {"data.json": RUN/review/data.json}` and `capabilities: {db: {}, user: {scopes: ["profile"]}}`. To update later, publish the same file path again. The page is private until the user shares it, and reviewers need Contributor access to save decisions.
 4. Do one `ArtifactData` list of the `decisions` collection to confirm it is readable.
@@ -68,7 +68,7 @@ Keep the chat summary short: the overall coverage range, the top 10 gaps with th
 
 ## 6. After review (only when the user asks)
 
-- **Address held fixes:** read `decisions` with `ArtifactData`, redraft the held ones from the reviewer comments and edits, republish, and say what changed. Gaps sent back from No fix needed have no draft yet, so draft them first.
+- **Address held fixes:** read `decisions` with `ArtifactData`, redraft the held ones from the reviewer comments and edits (a new round, then `assemble_review.py --round rN --replace` so the redrafts replace the old entries), republish, and say what changed. Gaps sent back from No fix needed have no draft yet, so draft them first.
 - **Batch PR:** read approved decisions, build one PR to `dev` (never `main`) on a new branch from the approved fixes, using reviewer-edited text where present and merging pages that have more than one proposal. Do not run `/dale` or Vale on the changed pages; the user runs `/doc-restyle` on them after the fixes are approved. The repo's pre-commit hook, pre-push hook and Stop hook run Vale, Dale and AI-isms checks on changed docs, so the PR step may need a way past them. Ask the user before bypassing any hook. Show the diff and confirm before pushing. Follow the repo's branch workflow in `CLAUDE.md`.
 - **Rejected and confirmed no-fix gaps:** list them with reasons when asked. On request, update the coverage report so its score and gap list reflect the confirmed no-fix gaps.
 

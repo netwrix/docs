@@ -2,6 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.2.0/diff.min.js"></script>
 <style>
 /* layout: top tabs; Review = proposal list left, detail right (stacks on phones); decisions stored in shared db */
@@ -124,11 +125,13 @@ function blocks(md){
   if(cur.length)out.push(cur.join('\n'));
   return out;
 }
+/* Markdown from drafters and reviewer edits is untrusted. DOMPurify strips scripts, event handlers, svg/math, meta, base, form
+   and non-http(s)/mailto URLs; links open in a new tab. */
+const safeUrl=u=>/^https?:\/\//i.test(String(u||'').trim())?String(u).trim():'';
+if(window.DOMPurify)DOMPurify.addHook('afterSanitizeAttributes',n=>{if(n.tagName==='A'){n.setAttribute('target','_blank');n.setAttribute('rel','noopener noreferrer')}});
 function clean(html){
-  const t=document.createElement('template');t.innerHTML=html;
-  t.content.querySelectorAll('script,iframe,object,embed,style,link').forEach(n=>n.remove());
-  t.content.querySelectorAll('*').forEach(n=>{[...n.attributes].forEach(a=>{if(/^on/i.test(a.name)||/^\s*javascript:/i.test(a.value))n.removeAttribute(a.name)});if(n.tagName==='A'){n.target='_blank';n.rel='noopener'}});
-  return t.innerHTML;
+  if(!window.DOMPurify)return esc(html);
+  return DOMPurify.sanitize(html,{USE_PROFILES:{html:true},FORBID_TAGS:['style','form','input','button','textarea','select'],ALLOWED_URI_REGEXP:/^(?:https?|mailto):/i});
 }
 const rend=b=>clean(marked.parse(b,{async:false}));
 function renderedDiff(a,b){
@@ -171,7 +174,8 @@ const VL={real_gap:'real gap',partially_covered:'partly covered',already_covered
 /* ---------- decisions (one per gap) ---------- */
 async function decide(x,status,extra){
   if(!OK())return;
-  const cur=DEC[x.g.id]||{};extra=extra||{};
+  let cur=DEC[x.g.id]||{};extra=extra||{};
+  try{const sn=await dbc.doc('decisions/'+x.g.id).get();if(sn&&sn.exists&&sn.data)cur=sn.data()||cur}catch(e){} /* newest stored comments, so two reviewers do not overwrite each other */
   const comments=(cur.comments||[]).slice();
   if(extra.comment)comments.push({by:me,at:new Date().toISOString(),text:extra.comment,kind:status});
   const edited=('edited' in extra)?extra.edited:(cur.edited||null);
@@ -228,7 +232,7 @@ function adj(mode){
     if(g.verdict==='not_user_facing'){d[k].n-=1;d[k].s-=sc}
     else if(g.verdict==='already_covered'){d[k].s+=2-sc}});
   let t=0,w=0;Object.keys(d).forEach(k=>{d[k].cov=d[k].n>0?d[k].s/(3*d[k].n)*100:null;if(d[k].n>0){t+=BASE[k].w*d[k].cov;w+=BASE[k].w}});
-  return {d,overall:t/w};
+  return {d,overall:w>0?t/w:0};
 }
 const f1=v=>v==null?'n/a':v.toFixed(1);
 function drawOverview(){
@@ -294,13 +298,13 @@ function codeEv(g){
   return `<details class="qa small"><summary>Code evidence (${cs.length} citation${cs.length===1?'':'s'})</summary><div class="qabody">${cs.map(c=>{
     const v=c.verified==='no'?'<span class="pill medium">quote not found at this line</span>':c.verified?'<span class="pill high">quote found</span>':'';
     const sn=(c.snippet||[]).length?`<div class="code">${c.snippet.map(l=>`<span class="ln${l.hit?' hit':''}"><span class="n">${l.n}</span>${esc(l.t)}</span>`).join('')}</div>`:(c.quote?`<div class="quote">${esc(c.quote)}</div>`:'');
-    return `<details class="cit"><summary><span class="mono">${esc(c.cite)}</span>${v}${c.url?`<a href="${esc(c.url)}" target="_blank" rel="noopener">open in repo</a>`:''}</summary>${sn}</details>`}).join('')}</div></details>`;
+    return `<details class="cit"><summary><span class="mono">${esc(c.cite)}</span>${v}${safeUrl(c.url)?`<a href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener">open in repo</a>`:''}</summary>${sn}</details>`}).join('')}</div></details>`;
 }
 function docEv(g){
   const e=g.evidence||{};let h='';
   if((e.docs_checked||[]).length)h+='<h3>Docs checked</h3><ul>'+e.docs_checked.map(c=>`<li><span class="mono">${esc((c.path||'').replace(/^docs\/[^/]+\/[^/]+\//,''))}</span>: ${esc(c.finding)}${c.quote?`<div class="quote">${esc(c.quote)}</div>`:''}</li>`).join('')+'</ul>';
   const th=(e.threads||[]).concat(g.demand_links||[]).filter((v,i,a)=>v&&a.indexOf(v)===i);
-  if(th.length)h+='<h3>Community demand</h3><ul>'+th.map(u=>`<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//,''))}</a></li>`).join('')+'</ul>';
+  if(th.length)h+='<h3>Community demand</h3><ul>'+th.map(u=>safeUrl(u)?`<li><a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//,''))}</a></li>`:`<li class="muted">${esc(u)}</li>`).join('')+'</ul>';
   if((e.searched_terms||[]).length)h+=`<h3>Searched terms</h3><div class="muted">${e.searched_terms.map(esc).join(', ')}</div>`;
   if(!h)return '';
   return `<details class="qa small"><summary>Docs checked, Community threads and searched terms</summary><div class="qabody">${h}</div></details>`;

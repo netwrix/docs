@@ -59,4 +59,4 @@ await parallel(ip.batches.map((p, i) => () => agent(`You are the Opus impact adv
 phase('Final')
 const fin = await agent(`Run exactly: ${PY} merge-final --out ${OUT}${A.cutoffs ? ' --cutoffs ' + A.cutoffs : ''}\nThen run: ${PY} convert --run ${OUT}\nReturn the tier x confidence counts from ${OUT}/gaps-ranked.json (python3 one-liner) in note and the path ${OUT}/gaps-ranked.json as the single batch.`,
   { label: 'merge-final', phase: 'Final', model: S, schema: BATCHES })
-return { gapsRanked: `${OUT}/gaps-ranked.json`, gaps: `${OUT}/gaps.json`, counts: fin.note }
+return { gapsRanked: `${OUT}/gaps-ranked.json`, gaps: `${OUT}/draft-gaps.json`, counts: fin.note }

@@ -73,3 +73,7 @@ touch_files.py
 
 # Prepared OpenAPI specs (scripts/prepare-privilegesecure-spec.mjs)
 .generated/
+
+# doc-gaps run state (exported product code) and audit reports
+.doc-gaps/
+coverage-report-*.md

@@ -2,7 +2,7 @@
 """Helpers between the audit and the drafters.
 
   prep_gaps.py convert --run RUN
-      RUN/gaps-ranked.json (audit output) -> RUN/gaps.json (the shape the drafters and
+      RUN/gaps-ranked.json (audit output) -> RUN/draft-gaps.json (the shape the drafters and
       assemble_review.py use). Adds rank by order.
 
   prep_gaps.py batches --run RUN --docs-root ROOT --tiers P0,P1 --round r1 [--agents 5] [--skip-done]
@@ -25,7 +25,7 @@
       Reads OUT/impact-out-*.json, computes priority, writes OUT/gaps-ranked.json (the audit's shape, plus
       verdict, runs and source_ids), OUT/merged-final.json and OUT/dropped-merge.json. Then run convert.
 """
-import argparse, collections, json, os
+import argparse, collections, json, os, sys
 
 
 def convert(run):
@@ -33,16 +33,17 @@ def convert(run):
     out = []
     for i, g in enumerate(src, 1):
         cites = [c.strip() for c in (g.get("citation") or "").split(";") if c.strip().startswith("http")]
+        cites += [u for u in (g.get("links") or []) if isinstance(u, str) and u.startswith("http") and u not in cites]
         out.append(dict(id=g["id"], item=g.get("name", g["id"]), dimension=g.get("dimension", ""), tier=g.get("tier", "P3"),
                         confidence=g.get("confidence", ""), score=g.get("final_score", 0), missing=g.get("what_missing", ""),
                         target=g.get("target_page", ""), demand_links=cites, effort=g.get("effort", ""), rank=i,
                         verdict=g.get("verdict", ""), runs=g.get("runs", ""), source_ids=g.get("source_ids", [])))
-    json.dump(out, open(f"{run}/gaps.json", "w"), indent=1)
-    print(len(out), "gaps ->", f"{run}/gaps.json")
+    json.dump(out, open(f"{run}/draft-gaps.json", "w"), indent=1)
+    print(len(out), "gaps ->", f"{run}/draft-gaps.json")
 
 
 def batches(run, root, tiers, rnd, agents, skip_done):
-    gaps = json.load(open(f"{run}/gaps.json"))
+    gaps = json.load(open(f"{run}/draft-gaps.json"))
     done = set()
     dp = f"{run}/review/data.json"
     if skip_done and os.path.exists(dp):
@@ -132,7 +133,7 @@ def merge_group(out):
             m = [G[i] for i in ids]
             runs = sorted({g["src"] for g in m})
             vs = [g["verdict"] for g in m if g.get("verdict")]
-            confs = [LV.index(g["conf"]) for g in m]
+            confs = [LV.index(str(g.get("conf", "low")).lower()) if str(g.get("conf", "low")).lower() in LV else 0 for g in m]
             if len(runs) > 1:
                 conf, why = LV[max(max(confs), 1) if min(confs) >= 1 else 1], "found by " + " and ".join(runs)
             else:
@@ -142,7 +143,7 @@ def merge_group(out):
                       missing=" | ".join(dict.fromkeys(g["missing"] for g in m if g.get("missing")))[:600],
                       pages=sorted({g["page"].split(" ")[0] for g in m if g.get("page")}), conf=conf, conf_why=why,
                       verdict=max(vs, key=lambda k: VRANK[k]) if vs else None,
-                      effort=max((g["effort"] for g in m if g.get("effort")), key=lambda e: "SML".index(e), default="M"),
+                      effort=max((g["effort"] for g in m if g.get("effort")), key=lambda e: "SML".index(str(e).upper()[:1]) if str(e).upper()[:1] in ("S", "M", "L") else 1, default="M"),
                       links=sorted({l for g in m for l in (g.get("links") or [])}),
                       cite=" ; ".join(g["cite"] for g in m if g.get("cite"))[:400], prior_impact=[g.get("impact") for g in m])
             merged.append(mg)
@@ -190,7 +191,15 @@ def merge_final(out, cutoffs):
             deferred.append(m); continue
         if m["verdict"] not in NEEDS_FIX:
             dropped.append(m); continue
-        i = imp[m["mid"]]
+        i = imp.get(m["mid"])
+        if i is None:
+            print("WARNING: no impact rating for", m["mid"], "- rated 1; re-run the impact pass for it", file=sys.stderr)
+            i = {"impact": 1, "reason": "no impact rating returned"}
+        try:
+            i["impact"] = max(0, min(3, int(i["impact"])))
+        except (TypeError, ValueError):
+            print("WARNING: bad impact value for", m["mid"], i.get("impact"), "- rated 1", file=sys.stderr)
+            i["impact"] = 1
         m["impact"], m["impact_reason"] = i["impact"], i.get("reason", "")
         m["demand"] = min(3, len(m["links"]))
         m["priority_score"] = round(m["impact"] * max(m["demand"], 1) * ADJ.get(m["effort"], 1.0), 2)
@@ -200,7 +209,7 @@ def merge_final(out, cutoffs):
         m["tier"] = t
         ranked.append(m)
     order = {"high": 0, "medium": 1, "low": 2}
-    ranked.sort(key=lambda m: (m["tier"], m["conf"] == "low", order[m["conf"]], -m["priority_score"], m["mid"]))
+    ranked.sort(key=lambda m: (m["tier"], m["conf"] == "low", order.get(m["conf"], 2), -m["priority_score"], m["mid"]))
     ga = []
     for m in ranked:
         page = (m["pages"][0] if m["pages"] else "new page")

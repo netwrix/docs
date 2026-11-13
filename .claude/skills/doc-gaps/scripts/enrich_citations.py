@@ -32,6 +32,7 @@ def main():
     j = json.load(open(path))
     props = j["proposals"] if isinstance(j, dict) else j
     tot = ok = fix = bad = 0
+    root_real = os.path.realpath(a.code)
     cache = {}
     for p in props:
         for g in p["gaps"]:
@@ -47,6 +48,9 @@ def main():
                 if not os.path.isfile(fp) and ":" in rel:  # cite names a symbol, not a line: path:symbol
                     rel, sym = rel.rsplit(":", 1)
                     fp = os.path.join(a.code, rel)
+                # drafter-supplied paths are untrusted: never read outside the exported code folder
+                if not (os.path.realpath(fp) + os.sep).startswith(root_real + os.sep) and os.path.realpath(fp) != root_real:
+                    c["verified"] = "no"; bad += 1; print("path outside code folder, skipped:", g["id"], c.get("cite")); continue
                 if not os.path.isfile(fp):
                     c["verified"] = "no"; bad += 1; print("missing file:", g["id"], c.get("cite")); continue
                 if fp not in cache:
