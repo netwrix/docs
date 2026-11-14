@@ -51,6 +51,9 @@ def norm_target(t, prefix):
             if tail and (p.startswith(tail + "/") or p == tail):
                 p = prefix.split("/", 1)[0] + "/" + p  # already has the product/version folders
             else:
+                last = prefix.rstrip("/").rsplit("/", 1)[-1]  # a path that starts with just the version folder
+                if p.startswith(last + "/"):
+                    p = p[len(last) + 1:]
                 p = prefix.rstrip("/") + "/" + p
         words = [w for w in lead if w.lower().strip(":") not in ("new", "page")]
         note = " ".join(([ "NEW page." ] if new else []) + words + rest)
@@ -60,6 +63,7 @@ def norm_target(t, prefix):
 
 def convert(run, prefix=""):
     src = json.load(open(f"{run}/gaps-ranked.json"))
+    src = src if isinstance(src, list) else src.get("gaps", [])  # the priority agent may wrap the list
     out = []
     for i, g in enumerate(src, 1):
         cites = [c.strip() for c in (g.get("citation") or "").split(";") if c.strip().startswith("http")]

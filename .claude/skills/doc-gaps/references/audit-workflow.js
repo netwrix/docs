@@ -40,6 +40,7 @@ const scope = await agentReq(`${COMMON}
 You are the orchestrator. Check inputs and look at the docs tree (ls, headings only) and code layout (top-level dirs, README/ARCHITECTURE/GLOSSARY). Decide scope: which code areas count as user-facing, which doc folders are in scope (include any non-version doc folders (for example shared guides) if they are part of this version), whether the product has a public API (REST/PowerShell/etc.), and which Community categories/keywords apply (${SLACK}; ${COMMUNITY ? 'Community window ' + A.communityWindow : 'no Community data, code-only run'}; today is ${A.today}). Write the scope to ${OUT}/scope.md (concise, under 60 lines) and return it.`,
   { label: 'plan-scope', phase: 'Plan', model: O, schema: { type: 'object', properties: { scopeText: { type: 'string' }, hasApi: { type: 'boolean' }, scopePath: { type: 'string' } }, required: ['scopeText', 'hasApi', 'scopePath'] } })
 const SCOPE = `${COMMON}\nSCOPE (from orchestrator, also at ${scope.scopePath}):\n${scope.scopeText}`
+if (typeof A.hasApi === 'boolean') scope.hasApi = A.hasApi // the user's answer beats the planner's guess
 log(`hasApi=${scope.hasApi}`)
 
 // ---------- Phase 1

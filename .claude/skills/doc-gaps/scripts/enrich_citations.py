@@ -79,7 +79,7 @@ def main():
                     with open(fp, errors="replace") as fh:
                         cache[fp] = fh.read().replace("\r\n", "\n").replace("\r", "\n").split("\n")
                 lines = cache[fp]
-                q = norm(rawq).rstrip("….").rstrip(".").strip()
+                q = re.sub(r"(…|\.\.\.)\s*$", "", norm(rawq)).strip()  # drop a trailing ellipsis marker only, not real dots
                 if sym:  # anchor at the first line that mentions the symbol
                     word = re.compile(r"\b" + re.escape(sym) + r"\b")
                     decl = re.compile(r"\b(class|struct|interface|enum|record|void|public|internal|private|protected|def|function|const|static)\b")

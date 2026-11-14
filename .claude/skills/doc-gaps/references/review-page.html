@@ -115,7 +115,7 @@ const st=x=>{const d=DEC[x.g.id];const v=d&&fresh(d,x.p)&&d.status;return STS.in
 /* ---------- markdown helpers ---------- */
 function prep(md){
   md=md.replace(/^---\n[\s\S]*?\n---\n?/,'');
-  md=md.replace(/^:::(\w+)(?:\[([^\]]*)\]|[ \t]+(.*))?\n([\s\S]*?)^:::\s*$/gm,(m,t,a,b,body)=>'> **'+t.toUpperCase()+(a||b?': '+(a||b):'')+'**\n> '+body.trim().split('\n').join('\n> '));
+  md=md.replace(/^:::(\w+)(?:\[([^\]]*)\]|[ \t]+(.*))?\n([\s\S]*?)^:::[ \t]*$/gm,(m,t,a,b,body)=>'> **'+t.toUpperCase()+(a||b?': '+(a||b):'')+'**\n> '+body.trim().split('\n').join('\n> '));
   return md;
 }
 function blocks(md){
@@ -306,7 +306,7 @@ function evsum(g){
 function codeEv(g){
   const cs=((g.evidence||{}).code)||[];if(!cs.length)return '<p class="muted">No code citations for this gap.</p>';
   return `<details class="qa small"><summary>Code evidence (${cs.length} citation${cs.length===1?'':'s'})</summary><div class="qabody">${cs.map(c=>{
-    const v=c.verified==='no'?'<span class="pill medium">quote not found at this line</span>':c.verified==='unchecked'?'<span class="pill pending">no quote to check</span>':c.verified?'<span class="pill high">quote found</span>':'';
+    const v=c.verified==='no'?'<span class="pill medium">quote not found at this line</span>':c.verified==='unchecked'?'<span class="pill pending">no quote, or too short to verify</span>':c.verified?'<span class="pill high">quote found</span>':'';
     const sn=(c.snippet||[]).length?`<div class="code">${c.snippet.map(l=>`<span class="ln${l.hit?' hit':''}"><span class="n">${esc(l.n)}</span>${esc(l.t)}</span>`).join('')}</div>`:(c.quote?`<div class="quote">${esc(c.quote)}</div>`:'');
     return `<details class="cit"><summary><span class="mono">${esc(c.cite)}</span>${v}${safeUrl(c.url)?`<a href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener">open in repo</a>`:''}</summary>${sn}</details>`}).join('')}</div></details>`;
 }
