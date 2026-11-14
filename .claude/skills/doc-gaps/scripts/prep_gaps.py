@@ -286,7 +286,7 @@ def merge_final(out, cutoffs, adj=None):
     for fn in os.listdir(out):
         if fn.startswith("impact-out-"):
             for r in json.load(open(f"{out}/{fn}")):
-                imp[r["mid"]] = r
+                imp[r.get("mid") or r.get("id")] = r
     ranked, dropped, deferred, unjudged, badv = [], [], [], [], []
     for m in M:
         if m["dim"] == "api":

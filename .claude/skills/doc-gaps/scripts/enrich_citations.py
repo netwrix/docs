@@ -38,7 +38,7 @@ def main():
     path = f"{a.run}/review/data.json"
     j = json.load(open(path))
     props = j["proposals"] if isinstance(j, dict) else j
-    tot = ok = fix = bad = unv = 0
+    tot = ok = fix = bad = unv = short = 0
     root_real = os.path.realpath(a.code)
     cache = {}
     flat = {}
@@ -56,6 +56,7 @@ def main():
                 rawq = c["quote"]  # verification uses the real quote; only the published copy is masked
                 if SECRET_VALUE.search(rawq) or SECRET_BARE.search(rawq) or SECRET_PEM.search(rawq.strip()):
                     c["quote"] = HIDDEN  # the quote is published too (fallback view), so it gets the same masking
+                multi = ";" in c["cite"].strip().strip(";")  # only the first of several citations can be checked
                 cite = re.sub(r"\s*\([^)]*\)\s*$", "", c["cite"].split(";")[0].strip()).replace("\u2013", "-").replace("\u2014", "-")  # '(method Bar)', en dash
                 m = re.match(r"^(.+?)(?::L?(\d+)(?:-L?(\d+))?(?:,\s*L?\d+(?:-L?\d+)?)*)?\s*$", cite)
                 if not m:
@@ -102,7 +103,7 @@ def main():
                 if not q:
                     status = "unchecked"
                 elif q in win:
-                    status = "window" if len(q) >= 12 else "unchecked"  # a very short quote that is present still proves little
+                    status = "window" if len(q) >= 12 else "short"  # present, but too short to prove much
                 else:
                     status = None
                 if (sym and not l1) or oob:
@@ -128,9 +129,13 @@ def main():
                         s = e = hit_line
                         lo, hi = max(1, s - a.context), min(len(lines), e + a.context)
                         status = "file"
+                if multi and status in ("window", "file", "short"):
+                    status = "unchecked"; print("several citations in one entry, only the first was checked; split them:", g["id"], c.get("cite"))
                 c["verified"] = status or "no"
                 if status is None:
                     bad += 1; print("quote not found:", g["id"], c.get("cite"), "|", (c.get("quote") or "")[:60])
+                elif status == "short":
+                    short += 1
                 elif status == "unchecked":
                     unv += 1; print("no quote to check:", g["id"], c.get("cite"))
                 elif status == "window":
@@ -165,7 +170,7 @@ def main():
         for g in p["gaps"]:
             if any(isinstance(t, str) and risky.search(t) for t in texts(g, p)):
                 print("POSSIBLE SECRET in drafter text for", g["id"], "(summary, evidence notes or expert questions)")
-    print(f"{tot} code citations: {ok} verified in place, {fix} re-anchored, {unv} had no quote to check, {bad} not verified")
+    print(f"{tot} code citations: {ok} verified in place, {fix} re-anchored, {unv} had no quote to check, {short} short quotes found but too short to prove much, {bad} not verified")
 
 
 if __name__ == "__main__":

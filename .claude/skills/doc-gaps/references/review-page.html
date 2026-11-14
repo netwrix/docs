@@ -134,7 +134,7 @@ const safeUrl=u=>/^https?:\/\//i.test(String(u||'').trim())?String(u).trim():'';
 if(window.DOMPurify)DOMPurify.addHook('afterSanitizeAttributes',n=>{if(n.tagName==='A'){n.setAttribute('target','_blank');n.setAttribute('rel','noopener noreferrer')}});
 function clean(html){
   if(!window.DOMPurify)return esc(html);
-  return DOMPurify.sanitize(html,{USE_PROFILES:{html:true},FORBID_TAGS:['style','form','input','button','textarea','select','img'],ALLOWED_URI_REGEXP:/^(?:(?:https?|mailto):|[#\/.]|[\w.\/-]+$)/i});
+  return DOMPurify.sanitize(html,{USE_PROFILES:{html:true},FORBID_TAGS:['style','form','input','button','textarea','select','img'],FORBID_ATTR:['style'],ALLOWED_URI_REGEXP:/^(?:(?:https?|mailto):|#|\/(?!\/)|\.{1,2}\/|[\w.-]+(?:\/[\w.-]+)*$)/i});
 }
 const rend=b=>clean(marked.parse(b,{async:false}));
 const fmOf=md=>{const m=String(md||'').match(/^---\n[\s\S]*?\n---\n?/);return m?m[0]:''};
@@ -306,7 +306,7 @@ function evsum(g){
 function codeEv(g){
   const cs=((g.evidence||{}).code)||[];if(!cs.length)return '<p class="muted">No code citations for this gap.</p>';
   return `<details class="qa small"><summary>Code evidence (${cs.length} citation${cs.length===1?'':'s'})</summary><div class="qabody">${cs.map(c=>{
-    const v=c.verified==='no'?'<span class="pill medium">quote not found at this line</span>':c.verified==='unchecked'?'<span class="pill pending">no quote, or too short to verify</span>':c.verified?'<span class="pill high">quote found</span>':'';
+    const v=c.verified==='no'?'<span class="pill medium">quote not found at this line</span>':c.verified==='unchecked'?'<span class="pill pending">no quote, or several citations in one entry</span>':c.verified?'<span class="pill high">quote found</span>':'';
     const sn=(c.snippet||[]).length?`<div class="code">${c.snippet.map(l=>`<span class="ln${l.hit?' hit':''}"><span class="n">${esc(l.n)}</span>${esc(l.t)}</span>`).join('')}</div>`:(c.quote?`<div class="quote">${esc(c.quote)}</div>`:'');
     return `<details class="cit"><summary><span class="mono">${esc(c.cite)}</span>${v}${safeUrl(c.url)?`<a href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener">open in repo</a>`:''}</summary>${sn}</details>`}).join('')}</div></details>`;
 }
