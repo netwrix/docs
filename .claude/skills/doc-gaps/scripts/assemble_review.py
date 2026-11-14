@@ -136,7 +136,10 @@ def main():
                 print("WARNING: page", p["page"], "now has two proposal texts; redraft its remaining gaps too:", [g["id"] for g in p["gaps"]], file=sys.stderr)
     cur["proposals"] += new
     cur["proposals"].sort(key=lambda p: p.get("rank", 999))
-    json.dump(cur, open(out_path, "w"))
+    tmp = out_path + ".tmp"  # write whole, then replace: a failed dump must not truncate data.json
+    with open(tmp, "w") as fh:
+        json.dump(cur, fh)
+    os.replace(tmp, out_path)
 
     ids = [g["id"] for p in cur["proposals"] for g in p["gaps"]]
     bad = sorted({(g["id"], k) for p in new for g in p["gaps"] for k in PLAIN if not g.get(k) and not (k == "change_summary" and g.get("verdict") in NOFIX)})

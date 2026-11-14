@@ -341,6 +341,8 @@ if __name__ == "__main__":
     ap.add_argument("--skip-done", action="store_true")
     ap.add_argument("--ids", default="", help="batches: comma-separated gap ids to (re)draft, ignoring tiers and --skip-done (held or sent-back gaps)")
     a = ap.parse_args()
+    if a.cmd == "convert" and not a.docs_prefix:
+        ap.error("convert needs --docs-prefix (the audited version's docs folder, e.g. docs/<product>/<version>), or target pages stay unprefixed and look nonexistent")
     if a.cmd == "batches" and not a.docs_root:
         ap.error("batches needs --docs-root (the repo root)")
     if a.cmd == "merge-prep":

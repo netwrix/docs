@@ -17,9 +17,9 @@ open = functools.partial(open, encoding="utf-8")  # never the platform default (
 
 CAP = 30
 # a line that assigns a literal to a secret-looking name is never published; a broader scan only warns
-SECRET_VALUE = re.compile(r"(passw(or)?d|pwd|secret|api[_-]?key|token|connection\s*string|private[_-]?key)\w*[\"']?\s*[:=]\s*[\"'][^\"']{6,}[\"']", re.I)  # name = "literal", "Name": "literal"
+SECRET_VALUE = re.compile(r"(passw(or)?d|pwd|secret|api[_-]?key|token|connection\s*string|private[_-]?key)\w*[\"']?\s*(?:==|:=|=|:)\s*[\"'][^\"']{6,}[\"']", re.I)  # name = "literal", "Name": "literal"
 SECRET_PEM = re.compile(r"BEGIN [A-Z ]*PRIVATE KEY|^[A-Za-z0-9+/=]{48,}\s*$")  # PEM header, or a long base64 line
-SECRET_BARE = re.compile(r"(?:^|[\s;{,])(passw(or)?d|pwd|secret|api[_-]?key|token)\s*[:=]\s*[^\s\"'(;,]{6,}(?![\w.]*\()", re.I)  # .env, yaml, connection strings
+SECRET_BARE = re.compile(r"(?:^|[\s;{,\"'])(passw(or)?d|pwd|secret|api[_-]?key|token)\s*[:=]\s*[^\s\"'(;,]{6,}(?![\w.]*\()", re.I)  # .env, yaml, connection strings
 HIDDEN = "[line hidden: possible secret value]"
 LONG = 240
 
@@ -143,7 +143,9 @@ def main():
                 c["snippet"] = [dict(n=i, t=(HIDDEN if (SECRET_VALUE.search(lines[i - 1]) or SECRET_BARE.search(lines[i - 1]) or SECRET_PEM.search(lines[i - 1].strip())) else lines[i - 1][:LONG] + ("…" if len(lines[i - 1]) > LONG else "")), hit=(s <= i <= e)) for i in range(lo, hi + 1)]
                 if a.blob_base:
                     c["url"] = f"{a.blob_base.rstrip('/')}/{urllib.parse.quote(rel)}#L{s}" + (f"-L{e}" if e != s else "")
-    json.dump(j, open(path, "w"))
+    with open(path + ".tmp", "w") as fh:  # write whole, then replace
+        json.dump(j, fh)
+    os.replace(path + ".tmp", path)
     risky = re.compile(r"(passw(or)?d|secret|api[_-]?key|token|connectionstring|private[_-]?key)\s*[:=\"']|BEGIN [A-Z ]*PRIVATE KEY", re.I)
     for p in props:
         for g in p["gaps"]:
