@@ -35,14 +35,14 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 ## Scans
 
 1. You can't change a [scan's](../admin/scans/index.md) type after creation; to collect something else, create another scan.
-2. A [Sensitive data scan](../admin/scans/scan-types.md) needs a completed Access scan on the same source, because it works from that inventory. By default it classifies only the file types on the include list and skips files above 10 MB, both set in [Application settings](../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
+2. A [Classification scan](../admin/scans/scan-types.md) needs a completed Access scan on the same source, because it works from that inventory. By default it classifies only the file types on the include list and skips files above 10 MB, both set in [Application settings](../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
 3. After 90 days, Access Analyzer deletes [executions](../admin/scans/scan-executions.md) that end as Completed, Failed, or Cancelled; Completed with errors and Stopped executions stay until you delete the scan. An execution's **Detailed logs** tab holds the last 1,000 entries. When a failure isn't explained there, look in [System logs](../configuration/settings/system-logs.md).
 
 ## Sensitive Data Patterns
 
-1. You can't edit or delete [built-in patterns](../configuration/sensitive-data-patterns/index.md) and groups, and there is no switch to turn off a single built-in pattern. To edit a pattern, create a custom pattern and copy the built-in pattern.
-2. An empty [group selection](../configuration/sensitive-data-patterns/pattern-groups.md) doesn't turn classification off; the scan classifies against every group, built-in and custom.
-3. [Sensitive data scans](../configuration/sensitive-data-patterns/index.md) extract text from Excel, Word, Portable Document Format (PDF), and plain text files. They don't read text in images or open encrypted documents.
+1. You can't edit or delete [built-in classifiers](../configuration/classifiers/index.md#built-in-and-custom-classifiers) or built-in lists. To change a built-in classifier, make your copy, which runs in its place; to change a built-in list, bind your own list to the same pattern.
+2. Only [published classifiers](../configuration/classifiers/index.md#published-and-unpublished-classifiers) run. Unpublishing a classifier removes it from every scan's next run.
+3. [Classification scans](../configuration/classifiers/index.md#what-a-scan-classifies) extract text from Excel, Word, Portable Document Format (PDF), plain text, and image files. They don't open encrypted documents.
 
 ## Dashboards and Reports
 

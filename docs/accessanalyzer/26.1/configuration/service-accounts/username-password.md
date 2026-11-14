@@ -10,7 +10,7 @@ A Username/password account is a domain or local account and its password. It's 
 
 Use a Username/password account for:
 
-- **File Server sources.** Access Analyzer signs in to the SMB server with the username and password, enumerates the shares, walks the folders, and reads their permissions. Sensitive data scans also read file contents.
+- **File Server sources.** Access Analyzer signs in to the SMB server with the username and password, enumerates the shares, walks the folders, and reads their permissions. Classification scans also read file contents.
 - **Active Directory sources.** Access Analyzer binds to a domain controller over the Lightweight Directory Access Protocol (LDAP) and reads users, groups, and organizational units.
 
 One account can serve many sources. Create separate accounts when sources live in different domains, or when you want to rotate their passwords independently.
@@ -72,5 +72,5 @@ There's no separate domain field. If you need to specify a domain, put it in the
 
 Which form to use depends on the source type:
 
-- **File Server sources**: use `DOMAIN\username`. Access scans accept all three forms, and a bare name takes its domain from the source's **Domain** setting. Sensitive data scans recognize the domain only in the `DOMAIN\username` form.
+- **File Server sources**: use `DOMAIN\username`. Access scans accept all three forms, and a bare name takes its domain from the source's **Domain** setting. Classification scans recognize the domain only in the `DOMAIN\username` form.
 - **Active Directory sources**: enter the account name on its own. The source's **Domain** setting supplies the domain.
