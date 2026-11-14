@@ -30,6 +30,11 @@ import argparse, collections, functools, glob, json, os, re, sys
 open = functools.partial(open, encoding="utf-8")  # never the platform default (cp1252 on Windows)
 
 
+def is_thread(u):
+    """Only Community thread links count as demand; code, docs and repo URLs in a citation do not."""
+    return isinstance(u, str) and u.startswith("http") and "community" in u.lower()
+
+
 def norm_target(t, prefix):
     """Audit targets are free text: 'path (note)', 'NEW path (note)', 'New page: path', 'Extend path ...'.
     Find the first token that is a .md path; return 'docs/.../path NOTE'. No path: return the text unchanged
@@ -66,8 +71,8 @@ def convert(run, prefix=""):
     src = src if isinstance(src, list) else src.get("gaps", [])  # the priority agent may wrap the list
     out = []
     for i, g in enumerate(src, 1):
-        cites = [c.strip() for c in (g.get("citation") or "").split(";") if c.strip().startswith("http")]
-        cites += [u for u in (g.get("links") or []) if isinstance(u, str) and u.startswith("http") and u not in cites]
+        cites = [c.strip() for c in (g.get("citation") or "").split(";") if is_thread(c.strip())]
+        cites += [u for u in (g.get("links") or []) if is_thread(u) and u not in cites]
         out.append(dict(id=g["id"], item=g.get("name", g["id"]), dimension=g.get("dimension", ""), tier=g.get("tier", "P3"),
                         confidence=g.get("confidence", ""), score=g.get("final_score", 0), missing=g.get("what_missing", ""),
                         target=norm_target(g.get("target_page", ""), prefix), demand_links=cites, effort=g.get("effort", ""), rank=i,
@@ -138,7 +143,7 @@ def _norm_ranked(g, label):
     return dict(id=f"{label}-{g['id']}", src=label, dim=g.get("dimension", ""), name=g.get("name", g["id"]),
                 page=g.get("target_page", ""), missing=g.get("what_missing", ""), score=g.get("final_score", 0),
                 conf=g.get("confidence", "low"), tier=g.get("tier", ""), impact=g.get("impact"), demand=g.get("demand"),
-                effort=g.get("effort", "M"), links=list(dict.fromkeys((g.get("links") or []) + [u.strip() for u in (g.get("citation") or "").split(";") if u.strip().startswith("http")])), cite=g.get("citation", ""), verdict=g.get("verdict"))
+                effort=g.get("effort", "M"), links=list(dict.fromkeys([u for u in (g.get("links") or []) if is_thread(u)] + [u.strip() for u in (g.get("citation") or "").split(";") if is_thread(u.strip())])), cite=g.get("citation", ""), verdict=g.get("verdict"))
 
 
 def _best_pages(targets):
@@ -223,7 +228,7 @@ def merge_group(out):
             vs = [norm_verdict(g["verdict"]) for g in m if g.get("verdict")]
             confs = [LV.index(str(g.get("conf", "low")).lower()) if str(g.get("conf", "low")).lower() in LV else 0 for g in m]
             if len(runs) > 1:
-                conf, why = LV[max(min(confs), 1)], "found by " + " and ".join(runs)  # at least medium, never above the lowest run
+                conf, why = LV[max(min(confs), 1)], "found by " + " and ".join(runs)  # floor of medium; otherwise the lowest run (two doubtful runs are lifted to medium, as SKILL.md says)
             else:
                 conf, why = LV[min(confs)], f"found by run {runs[0]} only"
             mg = dict(mid=f"M-{dim[:4].upper()}-{len(merged) + 1:03d}", dim=dim, runs=runs, rel=grp.get("relation", ""),

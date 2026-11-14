@@ -109,7 +109,7 @@ const OK=()=>!!dbc&&!!me; /* saving needs a resolved user id, so decisions alway
 const ids=['approved','hold','rejected','pending'];
 const STS=['approved','hold','rejected','pending'],LVS=['high','medium','low'],TRS=['P0','P1','P2','P3'];
 /* a decision saved before the proposal was redrafted (p.rev) no longer applies to the new text */
-const fresh=(d,p)=>(d.rev||'')===(p.rev||''); /* a decision belongs to the proposal revision it was made on (no clock comparison) */
+const fresh=(d,p)=>(d.rev||'')===(p.rev||'')&&(!d.proposal||d.proposal===p.id)&&(!d.page||d.page===p.page); /* also the same proposal and page, so ids reused by another audit never inherit old decisions */ /* a decision belongs to the proposal revision it was made on (no clock comparison) */
 const st=x=>{const d=DEC[x.g.id];const v=d&&fresh(d,x.p)&&d.status;return STS.includes(v)?v:'pending'};
 
 /* ---------- markdown helpers ---------- */
@@ -413,7 +413,7 @@ async function boot(){
   G=[];P.forEach(p=>{if(!LVS.includes(p.fix_confidence))p.fix_confidence='low';p.gaps.forEach(g=>{if(!LVS.includes(g.gap_confidence))g.gap_confidence='low';if(!TRS.includes(g.tier))g.tier='P3';G.push({g,p})})});G.sort((a,b)=>a.g.rank-b.g.rank);
   draw();
   try{
-    const u=await claude.use('user');if(u){me=await u.id()}
+    try{const u=await claude.use('user');if(u){me=await u.id()}}catch(e){me=null} /* a missing identity must not stop decisions from loading */
     dbc=await claude.use('db');
     if(dbc){ /* reading decisions needs no user id; saving does (OK()) */
       dbc.collection('decisions').onSnapshot(async snap=>{
