@@ -41,7 +41,7 @@ def norm_target(t, prefix):
     (batches() then gives the gap its own NEW:<id> entry)."""
     toks = (t or "").replace("`", "").split()
     for k, tok in enumerate(toks):
-        p = re.sub(r"(\.md)(?:[#:?]\S*)?[.)\]]*$", r"\1", tok.rstrip(",;:"))
+        p = re.sub(r"(\.md)(?:[#:?]\S*)?[.)\]]*$", r"\1", tok.rstrip(",;:").lstrip("([{<\"'"))
         if not p.endswith(".md"):
             continue
         lead, rest = toks[:k], toks[k + 1:]
@@ -211,7 +211,7 @@ def merge_group(out):
         for grp in json.load(open(f"{out}/{fn}")):
             ids = grp.get("a", []) + grp.get("b", []) + grp.get("ids", [])
             # only 'same' groups merge into one gap; 'related' ones stay separate gaps (each is drafted on its own)
-            if grp.get("relation") == "related" and len(ids) > 1:
+            if (grp.get("relation") == "related" or grp.get("certainty") == "low") and len(ids) > 1:
                 groups += [dict(grp, ids=[i], a=[], b=[]) for i in ids]
             else:
                 groups.append(dict(grp, ids=ids, a=[], b=[]))

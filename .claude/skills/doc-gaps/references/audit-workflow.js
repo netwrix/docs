@@ -145,6 +145,7 @@ if (invs.signals && invs.signals.count > 0) {
 
 // ---------- Gate 2
 phase('Gate 2')
+if (!fin2.batches || fin2.batches.length === 0) return { note: 'Every gap was dropped by the recheck (already covered, not user-facing or troubleshooting): nothing to rank. See dropped-recheck.json and out-of-scope.json in the run folder.' }
 const [imp, eff] = await parallel([
   () => parallel(fin2.batches.map((p, i) => () => agent(`You are the Opus advisor. For each gap in ${p}, assign Impact: 3 = security/data-loss risk or core workflow, 2 = common task, 1 = edge case (a gap with verdict contradicted misleads readers: rate it at least 2 unless it is a genuine edge case); and Demand 0-3 ${HAS_SIGNALS ? 'from Community evidence: read ' + OUT + '/inv-signals.json and match the gap to signal clusters (clusterSize, recency, resolved; 0 = no matching thread, 3 = recurring recent unresolved)' : '(there is no Community data in this run: set demand to 0 for every gap)'}. Read only the batch file. Write ${OUT}/impact-${String(i + 1).padStart(2, '0')}.json as [{id, impact, demand, reason(<=15 words)}]. Return {path,count}.`,
     { label: `impact-${i + 1}`, phase: 'Gate 2', model: O, schema: FILE_RET }))),

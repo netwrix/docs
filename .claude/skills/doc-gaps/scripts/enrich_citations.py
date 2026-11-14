@@ -93,7 +93,7 @@ def main():
                         print("symbol not found:", g["id"], c.get("cite"))
                 s = int(l1) if l1 else 1
                 e = int(l2) if l2 else s
-                oob = s > len(lines) or e < s  # a line the file does not have: stale or fabricated; the quote may still be found elsewhere
+                oob = s > len(lines) or e < s or e > len(lines)  # a line the file does not have: stale or fabricated; the quote may still be found elsewhere
                 if oob:
                     s = e = 1
                 lo, hi = max(1, s - a.context), min(len(lines), e + a.context)
