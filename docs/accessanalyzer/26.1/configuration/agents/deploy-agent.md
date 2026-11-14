@@ -1,13 +1,13 @@
 ---
 title: Deploy an Agent
-description: Prepare a Linux host, generate an install command in the Add agent panel, run it on the host, and edit or remove the agent later.
+description: Prepare a host, generate an install command in the Add agent panel, run it on the host, and edit or remove the agent later.
 sidebar_position: 1
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-You deploy an agent by running one command on the Linux host that becomes the agent. The **Add agent** panel generates the command. When you run it, the host joins the installation and registers itself under the name and labels you chose. The Access Analyzer server never connects to the host, so you don't give Access Analyzer a username, password, or SSH key for it.
+You deploy an agent by running one command on the host that becomes the agent. The **Add agent** panel generates the command. When you run it, the host joins the installation and registers itself under the name and labels you chose. The Access Analyzer server never connects to the host, so you don't give Access Analyzer a username, password, or SSH key for it.
 
 You need the Admin role for everything on this page. Viewers can see the Agents page but can't deploy, edit, or remove agents.
 
@@ -29,11 +29,11 @@ The panel text under the command tells you which case applies. For a server that
 
 ## Prepare the Host
 
-The agent host needs a Linux server of its own. You can't run `install-agent` on the Access Analyzer server.
+The agent needs a host of its own. You can't run `install-agent` on the Access Analyzer server.
 
 | Requirement | Details |
 |---|---|
-| Operating system | A RHEL-family or Debian-family Linux distribution. Preflight warns on a distribution it doesn't recognize. |
+| Operating system | A Linux distribution in the Red Hat Enterprise Linux (RHEL) or Debian family. Preflight warns on a distribution it doesn't recognize. |
 | Access | Root, either directly or through `sudo`. `install-agent` stops with `install-agent must run as root: re-run it with sudo` otherwise. |
 | Architecture | The same CPU architecture as the server when the server runs from offline media. The in-cluster registry holds connector images only for the server's architecture, so `install-agent` refuses a host with another one. |
 | CPU | 2 cores. |
@@ -240,7 +240,7 @@ Exit code `80` means preflight failed, you didn't accept its warnings, or `insta
 
 | Message or cause | What to do |
 |---|---|
-| `this host runs the DSPM k3s server: run install-agent on a separate host` | Run the command on a different Linux host. |
+| `this host runs the DSPM k3s server: run install-agent on a separate host` | Run the command on a different host. |
 | `install-agent must run as root: re-run it with sudo` | Run the command with `sudo`. |
 | `this host's architecture differs from the cluster's; its in-cluster registry holds no connector images for it` | Use a host with the server's CPU architecture. |
 | `the media's k3s is newer than the cluster's` (exit code `16`) | The release that the server runs from media moved k3s forward after you installed it. See [Agents can't join after a k3s change](#agents-cant-join-after-a-k3s-change). |

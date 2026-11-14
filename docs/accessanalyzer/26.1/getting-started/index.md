@@ -7,7 +7,7 @@ slug: /
 
 ## What Access Analyzer Is
 
-Netwrix Access Analyzer is a self-hosted web application that you install on a Linux server you own. It scans your file servers and cloud storage platforms, and shows where sensitive data is stored and who can reach it. It belongs to the data security posture management (DSPM) category of products. [Key concepts](key-concepts.md) defines the terms used throughout.
+Netwrix Access Analyzer is a self-hosted web application that you install on a server you own. It scans your file servers and cloud storage platforms, and shows where sensitive data is stored and who can reach it. It belongs to the data security posture management (DSPM) category of products. [Requirements](../requirements/index.md) lists the supported operating systems and hardware, and [Key concepts](key-concepts.md) defines the terms used throughout.
 
 ![Access Analyzer Home page with the navigation sidebar and getting-started content](/images/accessanalyzer/26.1/overview/home.webp)
 
@@ -24,7 +24,7 @@ A scan defines:
 2. from which sources
 3. and when
 
-An Access Scan inventories shares, folders, files (and their metadata), and sites with their permissions. Sensitive Data Scans read each file's content, so they take longer. An Identity Sync pulls users, groups, and memberships from a directory service. Scans can run on demand or on a schedule. Every scan runs on an Agent: the System agent built into the server, or agents you deploy on other Linux hosts and pick with labels. See [Scans](../admin/scans/index.md) and [Agents](../configuration/agents/index.md) for what they are and how to use them.
+An Access Scan inventories shares, folders, files (and their metadata), and sites with their permissions. Sensitive Data Scans read each file's content, so they take longer. An Identity Sync pulls users, groups, and memberships from a directory service. Scans can run on demand or on a schedule. Every scan runs on an Agent: the System agent built into the server, or agents you deploy on other hosts and pick with labels. See [Scans](../admin/scans/index.md) and [Agents](../configuration/agents/index.md) for what they are and how to use them.
 
 ### Sensitive Data
 
