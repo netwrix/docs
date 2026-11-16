@@ -226,7 +226,7 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 | `domain-join` | Whether the server belongs to an Active Directory domain. Informational only. | — | `no AD domain detected`, or a message naming the detected domain |
 | `clock-sync` | A time-sync service (`chronyd`, `ntpd`, or `systemd-timesyncd`) is running. | WARN | `no clock sync daemon detected; Kerberos authentication requires clocks within 5 minutes of the AD domain controller — install chronyd, ntpd, or systemd-timesyncd to eliminate clock-skew risk` |
 
-When the `antivirus` check finds a product, add these paths to that product's exclusion list: `<storage-dir>/rancher/k3s/agent/containerd`, `<storage-dir>/rancher/k3s/data`, and `/run/k3s/containerd`. `<storage-dir>` is `/var/lib` unless you set `--storage-dir`. See [Storage Location](#storage-location). The hint in the message names the product's own command or console for adding exclusions.
+When the `antivirus` check finds a product, add the directories in [Antivirus Exclusions](../requirements/index.md#antivirus-exclusions) to that product's exclusion list. The platform's data directory is `<storage-dir>/rancher/k3s`, and `<storage-dir>` is `/var/lib` unless you set `--storage-dir`. See [Storage Location](#storage-location). The hint in the message names the product's own command or console for adding exclusions.
 
 The [Requirements](../requirements/index.md) page lists the hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
 
