@@ -83,7 +83,7 @@ additional information.
 
 Auditor supports monitoring the following device versions:
 
-- Dell Isilon/PowerScale versions 7.2 – 9.12
+- Dell Isilon/PowerScale versions 7.2 – 9.14
 
 :::note
 Netwrix Auditor supports only CIFS configuration.
