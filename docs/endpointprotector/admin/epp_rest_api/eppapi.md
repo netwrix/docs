@@ -1,66 +1,75 @@
 ---
 title: "EPP REST API"
-description: "Programmatic access to Endpoint Protector device control management and log data over HTTPS using OAuth 2.0"
+description: "Automate Endpoint Protector administration over HTTPS with the REST API, OAuth 2.0 API clients, and the reference built into every server"
 sidebar_position: 10
 ---
 
 # EPP REST API
 
+The EPP REST API provides programmatic access over HTTPS to the main administration areas of the Endpoint Protector management console. You can automate with the API what you can do in the console, including provisioning, policy management, and monitoring. The API returns responses in JSON and authenticates every request with OAuth 2.0.
 
-The EPP REST API provides programmatic access over HTTPS to Endpoint Protector device control management data (users, computers, devices, groups, and Offline Temporary Passwords) and to audit and activity logs. The API returns responses in JSON and authenticates every endpoint with OAuth 2.0.
+The API covers these areas:
 
-The API organizes its endpoints into the following groups:
+| Area | What you can automate |
+|---|---|
+| Endpoint and group management | Computers, users, groups, departments, and devices, including computer actions such as restart and uninstall |
+| Device Control | Settings, rights, group membership, effective rights of a device, custom classes, and Offline Temporary Passwords, including requests for them |
+| Content Aware Protection | Policies and the entities they apply to, exit points and custom applications, content and context detection rules, Deep Packet Inspection, denylists, allowlists, URL categories, custom notifications, and advanced scanning exceptions |
+| eDiscovery | Policies, scans, automatic scans, and scan results |
+| Enforced Encryption | Drives and drive actions, messages, settings and master password, client upload and drive package, alerts, and logs |
+| Reporting and exports | Device Control, Content Aware Protection, eDiscovery, Enforced Encryption, System for Cross-domain Identity Management (SCIM), mail server, and admin action logs, and exports |
+| Alerts | System, log event, and Enforced Encryption alerts |
+| Appliance and system configuration | System administration, administrators, groups, roles, API clients, licensing, single sign-on, System Settings and System Security, shadow repositories, system backups, and client software |
+| Integrations | Directory services, SCIM, security information and event management (SIEM), and Enforced Encryption integrations |
 
-| Group | Purpose | Access |
-|---|---|---|
-| OAuth | Issues the access token used to authenticate every other request | Write (token issuance only) |
-| Health | Service liveness check for monitoring and health probes | Read |
-| Users | Manage endpoint users (create, read, update, delete) | Read/write |
-| Computers | Manage endpoint computers | Read/write |
-| Devices | Manage endpoint devices, plus device type reference data | Read/write |
-| Groups | Manage endpoint groups | Read/write |
-| Offline Temporary Passwords | Generate, list, revoke, and delete Offline Temporary Passwords (OTPs) | Read/write |
-| Logs | Query Device Control, Content-Aware Protection, eDiscovery, EasyLock, SCIM, system alert, and admin action logs | Read |
+Fingerprint dictionaries are under Content Aware Protection, in the policies inventory.
+
+To call the API, you first create an API client in the console. See [API Clients](/docs/endpointprotector/admin/systemconfiguration/apiclients.md).
+
+:::note
+The reference built into your server lists every endpoint, parameter, and response. See [Interactive API reference](#interactive-api-reference).
+:::
 
 ## Availability
 
-The EPP REST API is available as a controlled Preview for approved integration, automation, and reporting use cases. It isn't enabled by default.
+Starting with version 2611, every Endpoint Protector Server includes the full API and its reference. You create the API clients that your integrations use in the console. See [API clients](/docs/endpointprotector/admin/systemconfiguration/apiclients.md).
 
-To request Preview access, open a Netwrix Support case and include:
+:::note
+Upgrade your Endpoint Protector Server to version 2611 or later to use all the API capabilities. Earlier versions offer a smaller API, without the full reference on the server.
+:::
 
-- Endpoint Protector version and deployment type
-- Target integration or consuming system
-- The endpoint groups and operations you need (for example, log ingestion, computer provisioning, OTP automation)
-- Expected request volume and frequency
-- Source IP ranges or network path
-- Whether the intended use is test, pilot, or production
-
-Netwrix Support confirms suitability for the Preview, assists with enablement, provisions the OAuth client credentials your integration uses to authenticate, and provides the setup guidance required for your environment.
+The API is enabled by default. You don't need to turn it on or request access.
 
 ## Base URL and protocol
 
-- Base URL: `https://<epp-server>/api/`
+- Base URL: `https://<epp-server>/api/v1/`
 - Token endpoint: `https://<epp-server>/api/oauth/token`
 - HTTPS only (TLS 1.2+)
 - Content-Type: `application/json` for request and response bodies (the token request uses `application/x-www-form-urlencoded`)
 
+:::warning
+The earlier API paths without `/api/v1`, such as `/api/device-control/computers`, are deprecated and will be removed in the next Endpoint Protector release. Responses from these paths include `Deprecation` and `Link` headers that point to the `/api/v1` path of the same endpoint. Use the `/api/v1` paths. The token endpoint and the health probe (`/api/health`) stay at their paths.
+:::
+
+The `/api/v1` endpoints differ from the deprecated paths in the list filters and in the error body. The reference lists the changes in its changelog. Existing integrations keep working on the deprecated paths until Netwrix removes them.
+
 ## Interactive API reference
 
-When the API is enabled in your environment, an interactive OpenAPI (Swagger UI) reference is available at:
+Each Endpoint Protector Server includes the full API reference. Open it in a browser at:
 
 ```
-https://<epp-server>/api/doc
+https://<epp-server>/api/v1/doc
 ```
 
-Use it to browse every endpoint, parameter, and response schema, and to send authenticated test requests directly from the browser. The reference is generated from the running server, so it always reflects the exact contract deployed in your environment.
+The reference is the authoritative source for every endpoint, parameter, filter, and response schema. It also includes the changelog, and you can send test requests from the browser. The server generates the reference from its own version, so it always matches your server.
 
-:::tip
-The interactive reference is the authoritative source for the precise request and response schema of each endpoint. Use this page and the [specification](eppapispecification) for conceptual guidance and integration planning.
-:::
+![Interactive API reference on the Endpoint Protector Server](apireference.webp)
+
+The OpenAPI document for tools and code generators is at `https://<epp-server>/api/v1/doc.json`.
 
 ## Authentication
 
-The EPP REST API uses the **OAuth 2.0 Client Credentials** grant. Authentication is designed for machine-to-machine integrations: your integration authenticates with a dedicated API client identifier and secret rather than a console administrator's username and password.
+The EPP REST API uses the **OAuth 2.0 Client Credentials** grant. Your integration authenticates with a dedicated API client: a client ID and a client secret. A super administrator creates the API client in the console. See [API clients](/docs/endpointprotector/admin/systemconfiguration/apiclients.md).
 
 Request an access token from the token endpoint, then include it as a Bearer token on every subsequent request:
 
@@ -68,18 +77,22 @@ Request an access token from the token endpoint, then include it as a Bearer tok
 Authorization: Bearer <access_token>
 ```
 
-Access tokens are short-lived and expire after 1 hour by default. Request a new token when the current one expires.
+Access tokens are short-lived and expire after 1 hour. Request a new token when the current one expires.
 
 ### Security model
 
-- **Dedicated client credentials** — Netwrix Support provisions a `client_id` and `client_secret` specifically for API access. The API doesn't accept console administrator credentials.
-- **Signed, short-lived tokens** — access tokens are signed JSON Web Tokens (JWT) with a default lifetime of 1 hour. The server validates every request before it reaches an endpoint.
-- **Least exposure** — the token endpoint is the only endpoint that doesn't require a token. Every other endpoint rejects requests without a valid, unexpired token with a 401 response.
-- **Attributable writes** — create and update operations record the authenticating client identifier in the `created_by` and `modified_by` fields of the affected record.
+- **Dedicated client credentials**—each integration uses its own API client. The API doesn't accept console administrator credentials.
+- **Signed, short-lived tokens**—access tokens are signed JSON Web Tokens (JWT) with a lifetime of 1 hour. The server validates every request before it reaches an endpoint.
+- **Access levels on every part of the API**—the API grades access as **hide** (no access), **read**, or **write** on each part. In this release, every API client has write access to the whole API, and the console doesn't offer a way to limit it by area. The API answers a request to a part that the access of the client doesn't reach with a 403 response.
+- **Least exposure**—the token endpoint is the only endpoint that doesn't require a token. Every other endpoint rejects requests without a valid, unexpired token with a 401 response.
+- **Attributable writes**—create and update operations record the authenticating client in the affected record.
+- **Audit trail**—Endpoint Protector records the creation, change, and deletion of API clients in **Admin Actions**.
 
 :::warning
-Treat the `client_secret` like a password. Store it in a secret manager, never commit it to source control, and rotate it through Netwrix Support if it may have been exposed.
+Treat the client secret like a password. Store it in a secret manager and never commit it to source control. If it might be exposed, rotate it in the console.
 :::
+
+Existing API clients keep working after the upgrade to version 2611, with the same access as before.
 
 ## Quick start
 
@@ -96,32 +109,27 @@ TOKEN=$(curl -s -k -X POST \
 If your Endpoint Protector server uses a self-signed certificate, add `-k` to the curl command to ignore TLS verification. For production environments, use a certificate trusted by your clients instead.
 :::
 
-**2) Read data — list recent Device Control logs**
+**2) Read data—list recent Device Control logs**
 
 ```bash
 curl -s -k \
   -H "Authorization: Bearer ${TOKEN}" \
-  "https://<epp-server>/api/logs/device-control?sort_by=timestamp&sort_order=DESC&per_page=10"
+  "https://<epp-server>/api/v1/logs/device-control?per_page=10"
 ```
 
-**3) Write data — create a computer**
+**3) Write data—create a computer**
 
 ```bash
 curl -s -k -X POST \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{"name": "WORKSTATION-01", "description": "Finance laptop", "department_id": 3}' \
-  "https://<epp-server>/api/device-control/computers"
+  "https://<epp-server>/api/v1/device-control/computers"
 ```
 
 ## Conventions
 
-The API follows consistent conventions for pagination, sorting, filtering, responses, and errors. Two families of endpoints apply these slightly differently:
-
-- **Management endpoints** — Users, Computers, Devices, Groups, and Offline Temporary Passwords.
-- **Log endpoints** — the read-only endpoints under `/api/logs/`.
-
-The following sections and the [specification](eppapispecification) note these differences.
+The API follows consistent conventions for pagination, filtering, responses, and errors. The reference describes each endpoint in detail.
 
 ### Pagination
 
@@ -130,26 +138,19 @@ All list endpoints accept `page` and `per_page` and return a `meta` object along
 | Parameter | Type | Default | Notes |
 |---|---|---|---|
 | `page` | integer | 1 | 1-based |
-| `per_page` | integer | 25 (management), 50 (logs) | Maximum 200 for all endpoints |
+| `per_page` | integer | 25 | Maximum 200 |
 
-The `meta` object contains `page`, `per_page`, `total`, and `total_pages`. On the high-volume log endpoints, `total` is capped at a server-side maximum for performance — when a query reaches the cap, `total` reflects that maximum rather than the exact count.
+The `meta` object contains `page`, `per_page`, `total`, and `total_pages`. On the high-volume log endpoints, `total` is capped at a server-side maximum for performance. When a query reaches the cap, narrow the query with filters.
 
-### Sorting
+### Filtering
 
-| Endpoint family | Sort field parameter | Direction parameter | Default direction |
-|---|---|---|---|
-| Management | `sort_by` | `direction` | `ASC` |
-| Logs | `sort_by` | `sort_order` | `DESC` |
+Every list filters on the fields that its entries carry. Use `filter[<field>][<operator>]=<value>` once for each condition. Every condition must hold. For example:
 
-For both families, `sort_by` must be a valid column for that endpoint (unrecognized values fall back to the endpoint default), and the direction accepts `ASC` or `DESC`.
+```
+GET /api/v1/device-control/computers?filter[name][contains]=win&filter[department_id][in]=1,4
+```
 
-### Date filtering
-
-Where a list endpoint supports date filtering, `start_date` and `end_date` are inclusive and accept `YYYY-MM-DDTHH:MM:SS` (ISO 8601) or `YYYY-MM-DD`. A space is also accepted in place of `T`. The record field used for filtering depends on the endpoint.
-
-### Filtering and search
-
-Most list endpoints expose targeted filters (for example `department_id`, `machine_name`, or `otp_type`) and a free-text `search` parameter that performs partial (LIKE) matching across that endpoint's key fields. See each endpoint in the [specification](eppapispecification) for the exact filters it supports.
+The operators depend on the type of the field, for example `eq`, `ne`, `contains`, `starts_with`, `in`, `gt`, `gte`, `lt`, `lte`, and `is_empty`. A request can have up to 30 conditions. The API refuses a field, operator, or value that a list doesn't take with a 400 response that names it. On the log endpoints, a date range is a condition on the `timestamp` or `created_at` field, for example `filter[created_at][gte]=2026-01-01`.
 
 ### Response envelope
 
@@ -162,32 +163,22 @@ Most list endpoints expose targeted filters (for example `department_id`, `machi
 }
 ```
 
-**Single-resource responses** on the management endpoints return the resource object directly. Single-resource log responses wrap the object in a `data` property.
-
 ### Errors
 
-The API uses two error body shapes:
+The `/api/v1` endpoints return errors in this form:
 
 ```json
-{ "error": "Computer not found." }
+{ "error": { "code": 404, "message": "Computer not found." } }
 ```
 
-```json
-{ "errors": { "name": "Name must not be empty." } }
-```
+A request-body validation failure also returns an `errors` object that maps field names to messages.
 
-The API returns the first form for authentication failures, invalid IDs, and missing resources. It returns the second form (a map of field names to messages) for request-body validation failures.
+### Creating, updating, and deleting records
 
-### Creating and updating records
-
-- **Create** uses `POST` to the collection. For Users, Computers, and Devices, create is idempotent by identity: if a record with the same identity already exists, the API updates and returns it (HTTP 200) instead of creating a duplicate, and restores it if it had been deleted. A brand-new record returns HTTP 201.
-- **Update** uses `PATCH` to a single resource and is partial — only the fields present in the body change. Pass a field as `null` to clear an optional value such as `department_id`.
-- **Agent-managed fields** (for example a computer's `ip`, `mac`, and `os_version`, or a device's `vid`, `pid`, and `serial_no` after registration) — the EPP agent populates these automatically, and you can't set them through the API.
-
-### Deleting records
-
-- **Delete** uses `DELETE` on a single resource and performs a soft delete: the API flags the record as deleted and excludes it from future queries but retains it for audit. A successful delete returns `{ "response": "allok" }`.
-- **Bulk delete** uses `DELETE` on the collection with a body of `{ "id": [ ... ] }`. The API processes each ID independently; the response is a `resources` map keyed by ID, where each entry has a `code` (200 = deleted, 404 = not found). If every ID succeeds, the status is 200; if any ID wasn't found, the status is 207 (Multi-Status).
+- **Create** uses `POST` to the collection.
+- **Update** uses `PATCH` to a single resource and is partial. Only the fields present in the body change. Pass a field as `null` to clear an optional value.
+- **Delete** uses `DELETE` on a single resource. Many resources use a soft delete: the API flags the record as deleted and retains it for audit.
+- **Agent-managed fields**, such as the IP address of a computer, come from the EPP agent. The API doesn't change them.
 
 ## HTTP status codes
 
@@ -195,19 +186,20 @@ The API returns the first form for authentication failures, invalid IDs, and mis
 |---|---|
 | 200 | Success |
 | 201 | Resource created |
-| 207 | Multi-Status — bulk operation with at least one non-success item |
+| 207 | Multi-Status—bulk operation with at least one non-success item |
 | 400 | Invalid parameters or validation error |
 | 401 | Missing, invalid, or expired access token |
-| 403 | Operation not permitted |
+| 403 | The roles of the API client don't reach this part of the API |
 | 404 | Resource not found |
 | 405 | Method not allowed |
 | 500 | Internal error |
 
 ## Limits
 
-To protect the server and keep responses fast, the API caps result sizes rather than returning unbounded data:
+To protect the server and keep responses fast, the API caps result sizes:
 
 - `per_page` accepts a maximum of 200 records per page.
-- `total` in the `meta` object is capped at a server-side maximum on the high-volume log endpoints; use pagination and filters to retrieve complete data sets in batches.
+- A filter accepts up to 30 conditions, and an `in` condition up to 500 values.
+- `total` in the `meta` object is capped at a server-side maximum on the high-volume log endpoints. Use pagination and filters to retrieve complete data sets in batches.
 
-Netwrix Support may apply additional request-rate or network-level limits as part of your Preview enablement. Design integrations to page through results and to retry transient failures with backoff.
+Design integrations to page through results and to retry transient failures with backoff.

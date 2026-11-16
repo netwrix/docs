@@ -30,21 +30,40 @@ To create a new eDiscovery policy:
 
 ### Policy information
 
+![Policy Information in the eDiscovery policy, with thresholds, severity, and NDC labeling](edpolicyinformation.webp)
+
 - **OS Type**—select the operating system the policy applies to (Windows, macOS, or Linux)
 - **Policy Name**—enter a descriptive name for the policy
 - **Description**—enter a description of the policy's purpose
 - **Action**—select the action to take when sensitive content is detected
 - **Scan Type**—select the scan behavior
+- **Severity**—select the severity of the events that the policy produces. See [Threshold ranges and severity](#threshold-ranges-and-severity).
 
 ### Thresholds
 
 Configure thresholds to control when the policy reports a detection:
 
-- **Threat Threshold**—set the number of content matches required before a file is reported. Turn the threshold off to report all matches.
+- **Threat Threshold Range**—set the lowest and highest number of content matches that cause a file to be reported. See [Threshold ranges and severity](#threshold-ranges-and-severity).
 - **File Size Threshold**—set a maximum file size. Files larger than the threshold are skipped.
-- **Threshold operator**—select **AND** or **OR** to control how the Threat Threshold and File Size Threshold interact:
+- **Threshold operator**—select **AND** or **OR** to control how the Threat Threshold Range and File Size Threshold interact:
   - **AND**—both thresholds must be met for a file to be reported
   - **OR**—either threshold being met causes the file to be reported
+
+#### Threshold ranges and severity
+
+Threshold ranges and severity are new in version 2611. A policy can apply to a range of detections, and each policy has a severity. The feature is backward compatible. Clients earlier than 2611 ignore the new values when they receive policies from a 2611 server, and a 2611 Client behaves the old way with a server earlier than 2611. The range and severity apply only when both the server and the Client are version 2611 or later.
+
+The policy has the following fields, shown in the **Policy Information** section:
+
+- **Severity**—the severity of every event the policy produces. Select **Informative**, **Low**, **Medium**, **High**, or **Critical**. The default is **Informative**.
+- **Threat Threshold Range**—enter the lowest number of detections in **Min** and the highest in **Max**. The policy applies when the number of detections is between the two values, inclusive.
+- **No maximum (∞)**—select this checkbox to leave the range open at the top. The **Max** field is disabled.
+
+The range applies to the policy-level threshold and to the individual threshold of each content type in the Content Detection Summary. The **Max** value can't exceed 100,000. Existing policies keep their threshold as the minimum and get no maximum when you upgrade the server.
+
+For the validation rules and an example, see [Threshold ranges and severity](/docs/endpointprotector/admin/cap_module/cappolicies.md#threshold-ranges-and-severity) in the Content Aware Protection policy page. eDiscovery logs and reports show the severity of each event. The Client keeps the severity when it is offline and uploads it with the logs later.
+
+Unlike Content Aware Protection, eDiscovery scans have no reporting limit that restricts the **Max** value. The only limit is 100,000.
 
 ### Policy exit points
 
@@ -57,10 +76,19 @@ Configure where the policy scans for content:
 
 Define the content to detect and the content to ignore:
 
-- **Policy Denylists**—select the content types, file types, MIME types, predefined content patterns, regular expressions, and dictionaries to detect
+- **Policy Denylists**—select the content types, file types, MIME types, predefined content patterns, regular expressions, dictionaries, and Fingerprint dictionaries to detect. See [Fingerprinting](#fingerprinting).
 - **Policy Allowlists**—define exceptions for content that should be ignored during scanning
 
 For detailed information on configuring denylists and allowlists, see [Denylists and Allowlists](/docs/endpointprotector/admin/denylistsallowlists/overview.md).
+
+### Fingerprinting
+
+The denylists section includes a **Fingerprinting** tab. Select one or more Fingerprint dictionaries in **Fingerprint** to detect copies of whole documents, even when only part of the original is present. Set **Minimum Detection Confidence** for each dictionary. Click **Go to Fingerprinting Denylists** to manage the dictionaries. See [File Fingerprinting](/docs/endpointprotector/admin/denylistsallowlists/fingerprinting.md).
+
+### Apply NDC labels
+
+An eDiscovery policy can apply a Netwrix Data Classification (NDC) label to files that it detects. The **Labeling** section, with the **NDC Labeling** toggle and the **NDC Label(s)** list, works the same way as in Content Aware Protection policies, and it requires Endpoint Protector Client version 2611 or later. See [Apply NDC labels](/docs/endpointprotector/admin/cap_module/cappolicies.md#apply-ndc-labels).
+
 
 ### Last Modified filter
 

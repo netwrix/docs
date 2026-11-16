@@ -121,6 +121,8 @@ only to the new structure of logs. The **Date/Time(Client UTC)** field is also a
 
 ![Content Aware Protection Filters](capfilters.webp)
 
+The **Computer** and **Username** filters are searchable dropdown lists.
+
 For macOS users, when the Deep Packet Inspection feature is enabled on the Endpoint Protector agent
 for macOS, the agent might not provide full destination details for files transferred from a network
 share through monitored applications, such as browsers. In such cases, the destination information
@@ -133,7 +135,7 @@ such as browsers.
 ### Export Content Aware reports
 
 You can export Content Aware logs as Excel, PDF, or CSV, or create an export containing the entire log
-report as a CSV or XLSX file.
+report as a CSV file. The Logs Export page generates log exports only in CSV format.
 
 Excel/PDF/CSV—located above the Content Aware Reports list, this exports only the default
 columns. The **Date/Time(Client UTC)** column is included in exports when selected through Show/Hide Columns.

@@ -28,7 +28,7 @@ You don't need to restart anything. The classification engine rechecks the flag 
 
 ### `enable_pattern_execution_budget`
 
-During a Sensitive data scan, each [sensitive data pattern](../sensitive-data-patterns/index.md) runs against each document. Occasionally an unusual document makes a single pattern take implausibly long, and the scan waits on it.
+During a Classification scan, each [pattern](../classifiers/patterns.md) runs against each document. Occasionally an unusual document makes a single pattern take implausibly long, and the scan waits on it.
 
 With the flag on, each built-in pattern gets a budget of 250 ms per document. When a pattern runs past its budget on a document, the engine logs and counts the overrun, and it keeps the matches the pattern found within the budget. A document the engine processes in one pass still gets complete results from that pattern; a document processed in several passes may get partial results from it. This flag doesn't apply to custom patterns.
 

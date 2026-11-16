@@ -1,6 +1,6 @@
 ---
-title: "Migrating from a Legacy 5.x Server to 2608"
-description: "Netwrix Endpoint Protector — migrating a legacy 5.7.0.0–5.9.4.2 Server to the 2608 image-based platform."
+title: "Migrating from a Legacy 5.x Server to 2611"
+description: "Netwrix Endpoint Protector — migrating a legacy 5.7.0.0–5.9.4.2 Server to 2611 on the image-based platform (2608 base image)."
 sidebar_position: 12
 ---
 
@@ -9,15 +9,16 @@ sidebar_position: 12
 ---
 
 :::note
-This article covers on-premises Endpoint Protector (EPP) Servers running any version from **5.7.0.0 through 5.9.4.2** (5700, 5710, 5800, 5810, 5820, 5900, 5910, 5920, 5930, 5940, 5941, 5942). If your server is already on the current image-based platform (2509–2604), see [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image) instead. For an overview of how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
+This article covers on-premises Endpoint Protector (EPP) Servers running any version from **5.7.0.0 through 5.9.4.2** (5700, 5710, 5800, 5810, 5820, 5900, 5910, 5920, 5930, 5940, 5941, 5942). If your server is already on the current image-based platform (2509–2604), see [Migrating from the Current Image Platform to 2611](/docs/endpointprotector/install/migrationprocedure/migration-current-image) instead. For an overview of how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
 :::
 
 ## Overview
 
-Migrating a legacy 5.x server to 2608 is a two-step process:
+Migrating a legacy 5.x server to 2611 is a three-step process:
 
 1. **Reach exactly 5.9.4.2** — if you're on any earlier 5.x version, apply the cumulative patch first.
-2. **Deploy the 2608 image and restore your backup** — after you're on 5.9.4.2, deploy the 2608 base image directly and restore your 5.9.4.2 backup onto it. There's no need to route through the older 2510/2604 platform.
+2. **Deploy the 2608 base image and apply the 2611 patch** — after you're on 5.9.4.2, deploy the 2608 base image, activate a trial license, and apply the 2611 offline patch.
+3. **Restore your backup** — restore your 5.9.4.2 backup onto the 2611 server. You don't need to migrate to the older 2510/2604 platform first.
 
 ---
 
@@ -145,7 +146,7 @@ In AWS, the system queues snapshots and doesn't take them instantly. Verify the 
 :::
 
 :::tip
-Keep the VM snapshot active until you have fully validated the new 2608 environment and are ready to decommission the old server. This is your rollback path.
+Keep the VM snapshot active until you have fully validated the new 2611 environment and are ready to decommission the old server. This is your rollback path.
 :::
 
 **Step 2 — Create a System Configuration Backup (in the EPP Console):**
@@ -177,9 +178,9 @@ The System Configuration Backup doesn't include logs and file shadows. If you ne
 If your organization has compliance requirements for data retention (e.g., GDPR, HIPAA, SOX), never decommission the old server until you have confirmed that an alternative solution (SIEM, external export) meets log retention requirements.
 :::
 
-### Obtaining the Offline Activation Patch
+### Obtaining the 2611 Offline Patch
 
-To activate Content Aware Protection or eDiscovery on the 2608 server, you need the Offline Activation Patch for 2608. Request it in advance from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html), before the maintenance window begins. Servers on version 2611.0.1.x and later don't need the patch.
+Download the 2611 offline patch from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html) before the maintenance window begins. You apply it to the 2608 base image after trial activation. Servers that stay on 2608 still need the Offline Activation Patch to activate Content Aware Protection or eDiscovery. Servers on 2611.0.1.x and later don't: activation no longer requires a connection to the Netwrix activation service, so you activate the modules directly.
 
 ### Pre-Migration Checklist Summary
 
@@ -193,15 +194,15 @@ To activate Content Aware Protection or eDiscovery on the 2608 server, you need 
 | 6 | Server resource counters noted (baseline) | ☐ |
 | 7 | Maintenance window communicated | ☐ |
 | 8 | Appliance → Server Information screenshot taken | ☐ |
-| 9 | EPP Client 5.9.4.3 Hotfix 1 downloaded (only if any endpoints are still on 5.9.4.1 or older), plus the latest 2608 client packages | ☐ |
-| 10 | Enforced Encryption (EE) Client 2608 packages downloaded (if applicable) | ☐ |
-| 11 | Offline Activation Patch for 2608 obtained from Netwrix Endpoint Protector Support | ☐ |
+| 9 | EPP Client 5.9.4.3 Hotfix 1 downloaded (only if any endpoints are still on 5.9.4.1 or older), plus the latest 2611 client packages | ☐ |
+| 10 | Enforced Encryption (EE) Client 2611 packages downloaded (if applicable) | ☐ |
+| 11 | 2611 offline patch downloaded from the My Products portal | ☐ |
 
 ---
 
 ## Phase 1 — Upgrade to 5.9.4.2 via Cumulative Patch
 
-This phase applies to environments running **any version from 5.7.0.0 through 5.9.4.1** (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0, 5.8.2.0, 5.9.0.0, 5.9.1.0, 5.9.2.0, 5.9.3.0, 5.9.4.0, 5.9.4.1). The cumulative patch upgrades your server directly to 5.9.4.2 in a single operation, incorporating all fixes and features introduced across every intermediate version. If you're already on 5.9.4.2, skip to [Phase 2](#phase-2--deploy-the-2608-base-image-and-restore-your-backup).
+This phase applies to environments running **any version from 5.7.0.0 through 5.9.4.1** (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0, 5.8.2.0, 5.9.0.0, 5.9.1.0, 5.9.2.0, 5.9.3.0, 5.9.4.0, 5.9.4.1). The cumulative patch upgrades your server directly to 5.9.4.2 in a single operation, incorporating all fixes and features introduced across every intermediate version. If you're already on 5.9.4.2, skip to [Phase 2](#phase-2--deploy-the-2608-base-image-apply-the-2611-patch-and-restore-your-backup).
 
 ### Downloading the Cumulative Patch
 
@@ -258,24 +259,24 @@ These tasks run silently in the background and don't produce visible progress in
 
 ### Create Final Backup at 5.9.4.2
 
-After confirming the upgrade to 5.9.4.2 is stable (wait for the 24-hour background task window), create a **new System Configuration Backup** specifically for use in the 2608 migration:
+After confirming the upgrade to 5.9.4.2 is stable (wait for the 24-hour background task window), create a **new System Configuration Backup** specifically for use in the 2611 migration:
 
 :::warning
 Disable Two-Factor Authentication (2FA) for all administrator accounts before you create this
-backup. Re-enable 2FA only after you restore the backup and confirm the new 2608 server works
+backup. Re-enable 2FA only after you restore the backup and confirm the new 2611 server works
 correctly — see
 [Re-Enabling Two-Factor Authentication](#re-enabling-two-factor-authentication) in Post-Migration
 Verification.
 :::
 
 1. Navigate to **System Maintenance → System Backup**.
-2. Click **Create** and name it clearly: `migration-to-2608-YYYY-MM-DD`.
+2. Click **Create** and name it clearly: `migration-to-2611-YYYY-MM-DD`.
 3. Save the backup key securely.
 4. Download the backup file once status shows **"Ready to download"**.
 5. Check the size of the backup. If it's larger than 200 MB, refer to [Backups Larger Than 200 MB](#backups-larger-than-200-mb).
 
 :::tip
-This backup at 5.9.4.2 is the **only** backup that will work directly on the 2608 platform. Label it clearly and store it separately from previous backups to avoid any confusion during the restoration step.
+This backup at 5.9.4.2 is the **only** backup that will work directly on the new platform. Label it clearly and store it separately from previous backups to avoid restoring the wrong backup.
 :::
 
 :::note
@@ -299,11 +300,11 @@ This doesn't change the EPP Server version — it remains 5.9.4.2.
 
 ---
 
-## Phase 2 — Deploy the 2608 Base Image and Restore Your Backup
+## Phase 2 — Deploy the 2608 Base Image, Apply the 2611 Patch, and Restore Your Backup
 
 ### Choosing Your IP/FQDN Strategy
 
-Before deploying the new VM, decide whether the new 2608 server will use the **same or a different IP address/FQDN** as the current server. This decision has significant security and operational implications.
+Before deploying the new VM, decide whether the new server will use the **same or a different IP address/FQDN** as the current server. This decision has significant security and operational implications.
 
 #### Option A — Same IP/FQDN (Recommended)
 
@@ -352,7 +353,7 @@ If you use SSO (Single Sign-On) and choose a different IP address instead of an 
    - Configure DNS
 
 :::note
-On unpatched 2509 and early 2510 environments, IP network settings didn't save unless you filled in both DNS fields. Patch 2604 fixed this, so the workaround doesn't apply to 2608.
+On unpatched 2509 and early 2510 environments, IP network settings didn't save unless you filled in both DNS fields. Patch 2604 fixed this, so the workaround doesn't apply to 2608 or 2611.
 :::
 
 4. Power on the new VM and access the console at `https://<new-ip-or-fqdn>:443`.
@@ -372,36 +373,35 @@ Blocking client connectivity prevents endpoints from registering with an incompl
 
 ### Activate Trial License on a Newly Deployed Image
 
-To upgrade a clean appliance, activate at least a Trial license. Go to **System Configuration** → **Licensing** and choose **Free Trial**. You'll import the proper license in a later step, after the upgrade and backup restore process.
+To upgrade a clean appliance, activate at least a Trial license. Go to **System Configuration** → **Licensing** and choose **Free Trial**. You'll import the proper license in a later step, after the 2611 patch and the backup restore.
 After successful activation, you should see a green banner at the top.
 
 ![EPP License Trial activation](licensetrialactivation.webp)
 
-:::tip Apply the Offline Activation Patch first
-To activate Content Aware Protection or eDiscovery on the new server, first apply the Offline Activation Patch that matches your server version, which is 2608 for this migration. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
-:::
+### Apply the 2611 Offline Patch to the 2608 Image
 
-### Upgrade the 2608 Image to the Latest Patch
+With the trial license active, upgrade the fresh 2608 base image to 2611 before you restore your backup.
 
-With the license active, upgrade the fresh 2608 image to the current latest patch version in the 2608 line.
-
-1. Navigate to **System Configuration → Server Update**.
-2. Use the **Offline Patch Uploader** if the server has no internet access:
-   - Navigate to **Dashboard → Live Update → Offline Patch Uploader**.
-   - Upload the latest 2608 cumulative patch file.
+1. Download the Endpoint Protector 2611 offline patch from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html).
+2. Go to **System Configuration** → **Server Update** → **Software Update** and click **Offline Patch Upload**.
+3. Select the 2611 patch file you downloaded and start the upload.
 
 ![System Configuration → Software Update — patch upload and version progression](../../admin/systemconfiguration/softwareupdate.webp)
 
-:::tip
-For air-gapped environments, follow the same procedure using the 2608 cumulative patch file — this is the same patch as for online environments.
+4. After the patch completes, refresh the browser and confirm in **Appliance → Server Information** that the server version is **2611.0.1.x**.
+5. Confirm the server is stable and all services are running before you continue to the backup restore.
+
+:::note
+Netwrix offline patches are cumulative, so one 2611 patch brings the 2608 base image directly to 2611. Online and air-gapped environments use the same patch file.
 :::
 
-3. After each patch, refresh the browser and verify the version in **Appliance → Server Information** before applying the next.
-4. After you fully patch the server, confirm it's stable and all services are running before proceeding to the backup restore.
+:::tip
+Servers that stay on 2608 still need the Offline Activation Patch to activate Content Aware Protection or eDiscovery. Servers on 2611.0.1.x and later don't: activation no longer requires a connection to the Netwrix activation service, so you activate the modules directly. After you apply the 2611 patch, activate the modules as usual.
+:::
 
-### Restoring the 5.9.4.2 Backup onto 2608
+### Restoring the 5.9.4.2 Backup onto 2611
 
-1. Log in to the **2608 server console**.
+1. Log in to the **2611 server console**.
 2. Navigate to **System Maintenance → System Backup v2**.
 3. Click **Import and Restore (Migrate)**.
 
@@ -449,10 +449,6 @@ This is a one-time 500 error during import. If 500 errors instead recur every fe
 
 If the license doesn't show as active, or entitlements look incorrect, contact Netwrix Support or your account team before continuing.
 
-:::tip Apply the Offline Activation Patch first
-To activate Content Aware Protection or eDiscovery on the new server, first apply the Offline Activation Patch that matches your server version, which is 2608 for this migration. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
-:::
-
 ---
 
 ## Post-Migration Verification
@@ -463,7 +459,7 @@ Complete all items in this checklist after you finish the migration.
 
 | Check | How to Verify |
 |---|---|
-| Server version shows the latest 2608.x.x.x version | Appliance → Server Information |
+| Server version shows the latest 2611.x.x.x version | Appliance → Server Information |
 | Server responds to browser access | `https://<server>:443` loads normally |
 | License imported successfully and active | System Configuration → System Licensing |
 
@@ -681,4 +677,4 @@ Compare current resource utilization with the baseline captured in the prerequis
 
 ## Next Step
 
-Continue to [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade) to bring EPP and Enforced Encryption clients up to the 2608 release.
+Continue to [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade) to bring EPP and Enforced Encryption clients up to the 2611 release.

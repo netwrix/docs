@@ -1,10 +1,10 @@
 ---
 title: Scan SharePoint Online
-description: Connect a SharePoint Online tenant with a certificate-based app registration, run an Access scan and a Sensitive data scan, and find the results in the SharePoint reports.
+description: Connect a SharePoint Online tenant with a certificate-based app registration, run an Access scan and a Classification scan, and find the results in the SharePoint reports.
 sidebar_position: 4
 ---
 
-Connect one Microsoft 365 tenant's SharePoint Online sites and OneDrive drives to Access Analyzer and run two scans: an Access scan that collects sites, permissions, and sharing links, and a Sensitive data scan that classifies the documents the Access scan found. At the end you'll have data in the Data security dashboard and the SharePoint reports.
+Connect one Microsoft 365 tenant's SharePoint Online sites and OneDrive drives to Access Analyzer and run two scans: an Access scan that collects sites, permissions, and sharing links, and a Classification scan that classifies the documents the Access scan found. At the end you'll have data in the Data security dashboard and the SharePoint reports.
 
 Access Analyzer calls the source type **SharePoint Online**. It signs in to the tenant as an application with a certificate, so setup alternates between Access Analyzer and the Microsoft Entra app registration.
 
@@ -70,7 +70,7 @@ Field details are on the [SharePoint Online source](../../configuration/sources/
 
 ## 4. Create the Access Scan
 
-Run the Access scan first. The Sensitive data scan in step 6 classifies documents from the inventory this scan builds.
+Run the Access scan first. The Classification scan in step 6 classifies documents from the inventory this scan builds.
 
 1. Go to **Configuration > Scans** and click **Create scan**.
 2. On the **Type** step, select **Access** and click **Next**.
@@ -95,34 +95,35 @@ Go to **Configuration > Scan executions**. The list refreshes on its own, and th
 
 If the status is **Failed**, open the row's actions menu, click **View logs**, and check the **Detailed logs** tab. A sign-in error points at the certificate or the app registration. [Scan executions](../../admin/scans/scan-executions.md) lists every status.
 
-## 6. Create the Sensitive Data Scan
+## 6. Create the Classification scan
 
-After the Access scan shows **Completed**, create the second scan. It downloads documents from the Access scan's inventory and classifies them against sensitive data patterns. By default the scan classifies only the file types on **Include list** and skips documents larger than 10 MB; both settings are on the **SharePoint scanning** card in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
+After the Access scan shows **Completed**, create the second scan. It downloads documents from the Access scan's inventory and runs classifiers against them. By default the scan classifies only the file types on **Include list** and skips documents larger than 10 MB; both settings are on the **SharePoint scanning** card in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning).
 
 1. Go to **Configuration > Scans** and click **Create scan**.
-2. On the **Type** step, select **Sensitive data** and click **Next**.
+2. On the **Type** step, select **Classification** and click **Next**.
 3. On the **Target** step, select the same tenant.
-4. On the **Configure** step, under **Sensitive data classification**, choose which pattern groups the scan uses. Leave **Inherit from global configuration** on to use the groups marked **Scanned by default** at **Configuration > Sensitive data patterns**, or turn it off and pick groups under **Sensitive Data Pattern Groups to Classify**. SharePoint Online has no other Sensitive data settings.
+4. On the **Classifiers** step, select **Specific classifiers** and select the classifiers to run, or select **Classifiers matching labels** to run every published classifier with the labels you pick. Click **Next**.
 
-   ![Create scan Configure step for a Sensitive data scan showing the classification settings](/images/accessanalyzer/26.1/scans/create-scan-sensitive-3-configure.webp)
+   ![Create scan wizard on the Classifiers step with Specific classifiers selected](/images/accessanalyzer/26.1/classifiers/scan-classifiers.webp)
 
-5. On the **Schedule** step, leave **Manual — run on demand**.
-6. On the **Review** step, enter a **Name** such as `Contoso SharePoint - sensitive data`.
-7. Click **Create & run now**.
+5. On the **Configure** step, leave the SharePoint Online settings at their defaults.
+6. On the **Schedule** step, leave **Manual — run on demand**.
+7. On the **Review** step, enter a **Name** such as `Contoso SharePoint - sensitive data`.
+8. Click **Create & run now**.
 
 :::note
 
-On a fresh install, no pattern group carries **Scanned by default**, and a scan with no groups selected classifies against every pattern group. Select the groups you care about before putting the scan on a schedule.
+The **Classifiers** step lists only published classifiers. Select the ones you care about before putting the scan on a schedule.
 
 :::
 
-[Sensitive data patterns](../../configuration/sensitive-data-patterns/index.md) describes the built-in groups and confidence levels.
+[Classifiers](../../configuration/classifiers/index.md) describes the built-in classifiers and how to build your own.
 
 ## 7. Check the Dashboards and Reports
 
 Dashboards and reports don't refresh on their own. Open one and click **Refresh** to reload it; results from a scan that has just finished can take some time to appear.
 
-**Dashboards > Data security** shows the tenant in **Total Data Repositories**, **Total Objects Scanned**, **Permissions Analyzed**, **SharePoint Sites by Type**, and **Data Source Inventory**. After the Sensitive data scan, **Sensitive Data Findings** and **Sensitive Data by Source** include SharePoint too.
+**Dashboards > Data security** shows the tenant in **Total Data Repositories**, **Total Objects Scanned**, **Permissions Analyzed**, **SharePoint Sites by Type**, and **Data Source Inventory**. After the Classification scan, **Sensitive Data Findings** and **Sensitive Data by Source** include SharePoint too.
 
 **Reports > Data**, on the **SharePoint** tab, has four reports.
 
@@ -133,6 +134,6 @@ Dashboards and reports don't refresh on their own. Open one and click **Refresh*
 | **Shared Links** | Access scan | Anonymous and company-wide sharing links that expose content externally |
 | **High-Risk ACLs** | Access scan | Sites and libraries with overly permissive access control entries |
 | **Open Access** | Access scan | Content that all authenticated users can reach without restriction |
-| **Sensitive Data Overview** | Sensitive data scan | Sensitive data classifications across SharePoint sites |
+| **Sensitive Data Overview** | Classification scan | Sensitive data classifications across SharePoint sites |
 
 **Shared Links** also appears under **Reports > Compliance** for each framework. The other three SharePoint reports appear only on the **Data** page. [Data reports](../../admin/dashboards-reports/reports/data.md) describes every report and its filters, and the [Data security dashboard](../../admin/dashboards-reports/dashboards/data-security.md) page covers each card.

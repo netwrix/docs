@@ -1,6 +1,6 @@
 ---
 title: Scan Types
-description: Learn what Access scans, Sensitive data scans, and Identity sync collect, which sources each supports, their prerequisites and Configure settings, and the reports they feed.
+description: Learn what Access scans, Classification scans, and Identity sync collect, which sources each supports, their prerequisites and Configure settings, and the reports they feed.
 sidebar_position: 1
 ---
 
@@ -9,7 +9,7 @@ Every scan has exactly one type. You choose it on the first step of [Create a sc
 | Scan type | What it collects | Source types |
 |---|---|---|
 | **Access** | Shares, folders, files, sites, and the permissions on them | File Server, SharePoint Online |
-| **Sensitive data** | Sensitive data patterns found inside file content | File Server, SharePoint Online |
+| **Classification** | Sensitive data that classifiers find inside file content, with a severity for each finding | File Server, SharePoint Online |
 | **Identity sync** | Users, groups, and group memberships from a directory, plus directory roles from Entra ID | Active Directory, Entra ID |
 
 On the **Configure** step, each source type in the target starts on **Use default configuration**. To change the values in the following tables for every source of that type, select **Customize for all File Server sources**; the label names the source type, and it reads **Customize this source** when the target is a single source. To change them for one source only, add a **Source overrides** entry. Settings you don't touch keep their defaults.
@@ -18,7 +18,7 @@ On the **Configure** step, each source type in the target starts on **Use defaul
 
 An Access scan builds the inventory of what exists and who can reach it. On a File Server source that means the shares, the folders and files beneath them, and the permissions on shares and folders, with file-level permissions as an option. On a SharePoint Online source it means site collections, sites, lists, folders, and documents, plus the users and groups that hold permissions on them. When **Collect OneDrive** is on, it also covers users' OneDrive personal drives.
 
-The inventory is also what a Sensitive data scan works from, so run an Access scan before you schedule a Sensitive data scan on the same source.
+The inventory is also what a Classification scan works from, so run an Access scan before you schedule a Classification scan on the same source.
 
 ### File Server Settings
 
@@ -50,13 +50,13 @@ Exclude rules always take precedence over include rules. A pattern in **Exclude 
 
 Access scans feed the reports in the **Permissions** category on **Reports > Data**: for File Server, **Broken Inheritance**, **High Risk ACLs**, **Open Access**, and **Share Audit**; for SharePoint Online, **Shared Links**, **High-Risk ACLs**, and **Open Access**. Both feed the [Data security dashboard](../dashboards-reports/dashboards/data-security.md), and [Data reports](../dashboards-reports/reports/data.md) describes each report.
 
-## Sensitive Data Scan
+## Classification scan
 
-A Sensitive data scan opens files, reads their content, and matches it against [sensitive data patterns](../../configuration/sensitive-data-patterns/index.md). For each file it records which pattern groups and patterns matched and how many times; it doesn't store the matched text itself.
+A Classification scan opens files, reads their content, and runs [classifiers](../../configuration/classifiers/index.md) against it. For each file it records which classifiers reported a finding, at what severity, and which patterns matched; it doesn't store the matched text itself.
 
 ### Prerequisites
 
-The scan needs a completed Access scan on the same source, because it picks its files from the inventory that scan built. A Sensitive data scan on a source that has never had an Access scan finds nothing to classify.
+The scan needs a completed Access scan on the same source, because it picks its files from the inventory that scan built. A Classification scan on a source that has never had an Access scan finds nothing to classify.
 
 The scan doesn't read every inventoried file. The **File server scanning** and **SharePoint scanning** cards on **Settings > Application**, described in [Application settings](../../configuration/settings/application.md#file-server-scanning-and-sharepoint-scanning), decide which files qualify. Each card has the same four settings:
 
@@ -69,7 +69,7 @@ The scan doesn't read every inventoried file. The **File server scanning** and *
 
 Changes to these settings reach the scanning service within five minutes and apply to scans that start after that. Scans already running keep the values they started with.
 
-### File Server Settings for Sensitive Data Scans
+### File Server settings for Classification scans
 
 | Setting | Default | Meaning |
 |---|---|---|
@@ -84,7 +84,7 @@ Turn on **Differential scan** for a recurring scan after the first full pass fin
 
 ![Create scan step 3 with customized File Server settings](/images/accessanalyzer/26.1/scans/create-scan-3-configure-customize.webp)
 
-### SharePoint Online Settings for Sensitive Data Scans
+### SharePoint Online settings for Classification scans
 
 | Setting | Default | Meaning |
 |---|---|---|
@@ -93,25 +93,22 @@ Turn on **Differential scan** for a recurring scan after the first full pass fin
 | **Exclude object URLs** | Empty | Document URL patterns to skip. Supports the `*` wildcard; a pattern without a wildcard matches only the document at exactly that URL. |
 | **Differential scan** | Off | Reads only documents whose content changed since this scan last classified them, based on the content hash SharePoint keeps for each file. |
 
-SharePoint Online Sensitive data scans have no **Workers** setting; they use **Classification workers** on the **Classification** card of **Settings > Application**.
+SharePoint Online Classification scans have no **Workers** setting; they use **Classification workers** on the **Classification** card of **Settings > Application**.
 
-### Pattern Groups
+### Classifiers
 
-Under **Sensitive data classification**, the **Configuration source** card holds the **Inherit from global configuration** switch, which is on by default. While it's on, the scan classifies against the pattern groups marked **Scanned by default** on the Sensitive data patterns page, and the card reports how many groups that is. Changing the global set later changes what this scan looks for on its next run.
+A Classification scan picks its classifiers on the **Classifiers** step of the **Create scan** wizard, between **Target** and **Configure**. Under **Which classifiers should this scan run?**, choose one of these:
 
-Turn the switch off to select groups for this scan alone. **Sensitive Data Pattern Groups to Classify** lists the pattern groups and marks built-in ones with a **Built-in** badge. Type in **Search pattern groups** to filter the list, or click **Select All** to choose every group. [Pattern groups](../../configuration/sensitive-data-patterns/pattern-groups.md) describes the groups themselves.
+- **Specific classifiers** runs exactly the classifiers you select. The list stays fixed until you edit the scan.
+- **Classifiers matching labels** runs every published classifier that has all of the labels you pick. The labels are evaluated each time the scan runs, so a classifier that matches them later runs automatically.
 
-![Sensitive data scan settings with selectable pattern groups](/images/accessanalyzer/26.1/scans/create-scan-sensitive-3-configure-custom-groups.webp)
+The step lists only published classifiers. Type in **Search classifiers** or pick a regulation to narrow the list. [Classifiers](../../configuration/classifiers/index.md) describes the classifiers themselves.
 
-:::warning
+![Create scan wizard on the Classifiers step with Specific classifiers selected](/images/accessanalyzer/26.1/classifiers/scan-classifiers.webp)
 
-An empty selection doesn't mean "classify nothing". If the scan inherits the global configuration and no group carries **Scanned by default**, or if you turn inheritance off and select no groups, the scan classifies against every pattern group, built-in and custom alike. To narrow a scan, select the groups you want.
+### Reports fed by Classification scans
 
-:::
-
-### Reports Fed by Sensitive Data Scans
-
-Sensitive data scans feed both **Sensitive Data Overview** reports, one for file systems and one for SharePoint, and the sensitive-data variant of **Share Audit**, all listed in [Data reports](../dashboards-reports/reports/data.md). Findings also appear on the [Data security dashboard](../dashboards-reports/dashboards/data-security.md).
+Classification scans feed both **Sensitive Data Overview** reports, one for file systems and one for SharePoint, and the sensitive-data variant of **Share Audit**, all listed in [Data reports](../dashboards-reports/reports/data.md). Findings also appear on the [Data security dashboard](../dashboards-reports/dashboards/data-security.md).
 
 ## Identity Sync
 
