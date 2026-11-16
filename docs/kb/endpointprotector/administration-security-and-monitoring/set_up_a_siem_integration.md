@@ -52,3 +52,7 @@ Endpoint Protector exports logs to your SIEM server in a standard format, with a
 :::tip
 Review the exported log formats and fields before completing the integration, and adjust your SIEM parser accordingly. Netwrix periodically adds fields and data to the standard format across releases, so a parser configured against an older format may not capture newer fields.
 :::
+
+:::note
+On version 2608, the structure of the SIEM messages can differ from the previous SIEM Export format because of changes in the database. Version 2611 fixes this issue and restores the previous format. Upgrade to 2611 to get the previous format back.
+:::

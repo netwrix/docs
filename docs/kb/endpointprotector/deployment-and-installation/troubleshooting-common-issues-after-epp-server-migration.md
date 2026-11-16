@@ -1,7 +1,7 @@
 ---
 description: >-
   Summarizes the most common issues encountered after migrating the Netwrix
-  Endpoint Protector Server to the current image-based platform (2510/2604),
+  Endpoint Protector Server to the current image-based platform (2611, or the previous 2510/2604 platform),
   grouped by EPP Server and EPP Client, with links to the full troubleshooting
   guide for each.
 keywords:
@@ -30,7 +30,7 @@ knowledge_article_id: kA0Qk0000000000AAA
 
 ## Overview
 
-After migrating the Netwrix Endpoint Protector (EPP) Server from a legacy 5.x version to the current image-based platform (2510 with patch 2604), you may encounter a number of known, documented issues. This article summarizes the most common ones by symptom, grouped by whether they affect the EPP Server or the EPP Client, so you can quickly identify which applies to your situation.
+After migrating the Netwrix Endpoint Protector (EPP) Server from a legacy 5.x version to the current image-based platform (2611, or the previous 2510 platform with patch 2604), you may encounter a number of known, documented issues. This article summarizes the most common ones by symptom, grouped by whether they affect the EPP Server or the EPP Client, so you can quickly identify which applies to your situation.
 
 ## Instructions
 

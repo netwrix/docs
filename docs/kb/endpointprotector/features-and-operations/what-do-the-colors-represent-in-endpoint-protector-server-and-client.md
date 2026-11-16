@@ -35,6 +35,7 @@ Endpoint Protector uses color indicators to represent device rights and statuses
 - **Red**: The device is blocked in the system.
 - **Green**: The device is allowed on computers or users.
 - **Yellow**: The device is allowed on some users or computers with restrictions.
+- **Blue**: Encrypted (Allow Access if Trusted Device).
 
 ### Client Side
 - **Red**: The device is blocked.

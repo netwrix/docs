@@ -38,6 +38,10 @@ To configure this option, navigate to **Device Control** > **Global Settings** >
 - **Enabled (dependency required):** EasyLock only opens on computers where the Endpoint Protector Client is installed and running.
 - **Disabled:** EasyLock can be opened freely on any computer, including ones without the Endpoint Protector Client.
 
+:::note
+Starting with version 2611, turn on **Harden Client Presence Value** in the same section to lock this setting on devices that you create afterward. A hardened device keeps the value when its group membership or the global settings change. To remove the lock, use **Reset Client Presence Hardening** in **Enforced Encryption** > **EasyLock**. See [Client Presence Hardening](/docs/endpointprotector/admin/ee_module/eemodule#client-presence-hardening).
+:::
+
 :::tip
 For a middle-ground option, consider **Enforced Encryption Read-Only Mode** instead of fully disabling the Client presence requirement. This optional, configurable mode lets you grant **read-only** access to Enforced Encryption-encrypted drives on unmanaged computers — personal devices, conference room setups, or exhibition areas — without requiring the Endpoint Protector Client, while still preventing writes to the drive. Enable it under **Device Control** > **Global Settings**, in the same Enforced Encryption / EasyLock Settings area as **Endpoint Protector Client presence required**, by switching on the **EE Read-Only mode** toggle. See [Enforced Encryption in Read-Only mode](/docs/endpointprotector/admin/ee_module/eemodule#enforced-encryption-in-read-only-mode) for details.
 :::

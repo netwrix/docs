@@ -28,7 +28,7 @@ The Offline Patch Uploader is the only currently available update method — Liv
 :::
 
 :::tip
-If you're migrating a 5.x server to the current image-based platform (2510/2604) rather than applying a routine patch, follow the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide) instead — it covers the mandatory intermediate upgrade to 5.9.4.2 and the full migration sequence in detail.
+If you're migrating a 5.x server to the current image-based platform (2611, using the 2608 base image and the 2611 Offline Patch) rather than applying a routine patch, follow the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide) instead — it covers the mandatory intermediate upgrade to 5.9.4.2 and the full migration sequence in detail.
 :::
 
 To stay informed about future version releases, visit the [Netwrix Community Endpoint Protector](https://community.netwrix.com/c/products/endpoint-protector/22) page and click the **Subscribe** button.

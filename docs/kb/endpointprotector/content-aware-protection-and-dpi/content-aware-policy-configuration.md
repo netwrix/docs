@@ -57,7 +57,8 @@ When creating a Content Aware Policy, provide the following information:
 - **Policy Status:** Enable to activate the policy.
 - **Client Notifications:** Enable to send notifications to clients.
 - **Global Thresholds:** Enable or disable global thresholding.
-- **Threat Threshold:** Set the maximum allowed content violations for a file transfer.
+- **Threat Threshold Range:** Set the lowest (**Min**) and highest (**Max**) number of content violations for which the policy applies. Select **No maximum** to leave the range open. Version 2611 and later.
+- **Severity:** Select **Informative** (default), **Low**, **Medium**, **High**, or **Critical**. Every event that the policy produces carries this severity. Version 2611 and later.
 - **File Size Threshold:** Set the file size (in MB) for blocking or reporting transfers.
 
 :::note
@@ -69,6 +70,7 @@ If a File Size Threshold is set, it applies to the entire policy, regardless of 
 - **Regular Threshold:** Applies to individual content types (e.g., blocks four or more SSNs).
 - **Global Threshold:** Applies to combined threats (e.g., blocks four or more threats of different types).
 - **Best Practice:** Place **Block & Report** policies with thresholds at higher priority than **Report Only** policies.
+- **Range and severity:** The range and severity apply only when both the Server and the Client are version 2611 or later. Existing policies keep their threshold as the minimum, with no maximum. See [Threshold ranges and severity](/docs/endpointprotector/admin/cap_module/cappolicies#threshold-ranges-and-severity).
 
 ## Policy Exit Points
 

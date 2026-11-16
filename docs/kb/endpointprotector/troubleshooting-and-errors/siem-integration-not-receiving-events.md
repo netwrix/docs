@@ -51,6 +51,10 @@ systemctl status syslog-ng
 3. If `syslog-ng` is not running, restart the service and confirm SIEM event delivery resumes.
 4. If the service stays down, or events still do not arrive after a restart, contact Netwrix Support.
 
+:::note
+If events arrive but in a different structure than before, check the server version. On version 2608, the SIEM message structure can differ from the previous format because of database changes. Version 2611 restores the previous format. See [Set Up a SIEM Integration](/docs/kb/endpointprotector/administration-security-and-monitoring/set_up_a_siem_integration).
+:::
+
 ## Related Links
 
 - [SIEM Integration](/docs/endpointprotector/admin/appliance#siem-integration)
