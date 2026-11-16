@@ -305,6 +305,10 @@ setting, contact Customer Support.
 
 Endpoint Protector sends each log entry to the SIEM server as one syslog message.
 
+:::note
+On version 2608, the structure of the SIEM messages can differ from the previous SIEM Export format because of changes in the database. Version 2611 fixes this issue and restores the previous format. Netwrix recommends upgrading to 2611 to get the previous SIEM Export format back.
+:::
+
 #### Transport and syslog format
 
 - **Facility:** the messages use the syslog facility `local0`. The syslog severity depends on the log type.
