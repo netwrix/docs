@@ -467,8 +467,8 @@ information.
 
 In addition to the data sources the product monitors, Auditor supports technology integrations
 that use its API. Download free add-ons from
-[Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) to enrich your audit
-trails with activity from the following systems and applications.
+[Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) to add activity from
+other systems and applications to your audit trails.
 
 Add-ons are also available to export the data that Auditor collects to other systems (e.g., ArcSight and ServiceNow).
 
