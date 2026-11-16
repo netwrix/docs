@@ -7,8 +7,8 @@ sidebar_position: 60
 # Denylists and Allowlists
 
 From this section, you can create Denylists and Allowlists for use in both the Content
-Aware Protection and eDiscovery modules. After you deﬁne these lists, you can enable them for a
-speciﬁc policy.
+Aware Protection and eDiscovery modules. After you define these lists, you can enable them for a
+specific policy.
 
 Denylists serve as the parameters for a Content Aware Protection or eDiscovery policy, defining
 inclusively what the policy detects and protects.
@@ -23,7 +23,8 @@ inclusively what the policy detects and protects.
 | Denylists      | Scan Location          | Yes                             | Yes            | Yes            | No                              | Yes               |
 | Denylists      | Regex                  | Yes                             | Yes            | Yes            | Yes                             | Yes               |
 | Denylists      | Domain and URL         | Yes                             | Yes            | Yes            | Yes                             | No                |
-| Denylists      | E-mail Domain          | Yes                             | Yes            | Yes            | Yes                             | NO                |
+| Denylists      | E-mail Domain          | Yes                             | Yes            | Yes            | Yes                             | No                |
+| Denylists      | Fingerprinting         | Yes                             | Yes            | Yes            | Yes                             | Yes               |
 | Denylists      | NDC Classification     | Yes                             | Yes            | Yes            | Yes                             | Yes               |
 | Denylists      | MIP Classification     | Yes                             | Yes            | Yes            | Yes                             | Yes               |
 | Denylists      | Applications           | Yes                             | Yes            | Yes            | Yes                             | No                |
@@ -32,9 +33,10 @@ inclusively what the policy detects and protects.
 | Allowlists     | File Location          | Yes                             | Yes            | Yes            | Yes                             | Yes               |
 | Allowlists     | Network Share          | Yes                             | Yes            | No             | Yes                             | No                |
 | Allowlists     | E-mail Domain          | Yes                             | Yes            | Yes            | Yes                             | No                |
-| Allowlists     | URL Name               | Yes\* Only on Internet Explorer | No             | No             | Yes                             | No                |
 | Allowlists     | Deep Packet Inspection | Yes                             | Yes            | Yes            | Yes                             | No                |
 | URL Categories | URL Categories         | Yes                             | Yes            | Yes            | Yes                             | No                |
+
+Each tab accepts up to 1,000 lists, except the Network Share allowlist, which accepts up to 15 lists. A list name must have 2 to 128 characters, and a description can have up to 256 characters. You can import lists from an `.xls` file by using the sample file on the form.
 
 :::info
 Endpoint Protector supports large lists, but extensive use can impact

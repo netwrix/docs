@@ -1,6 +1,6 @@
 ---
 title: "Client Upgrade Management"
-description: "Netwrix Endpoint Protector — upgrading EPP and Enforced Encryption clients to the 2608 release, common to both migration paths."
+description: "Netwrix Endpoint Protector — upgrading EPP and Enforced Encryption clients to the 2611 release, common to both migration paths."
 sidebar_position: 14
 ---
 
@@ -9,12 +9,12 @@ sidebar_position: 14
 ---
 
 :::note
-This article is common to both migration paths — [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) and [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image). Complete your server migration first, then follow this article to bring EPP and Enforced Encryption (EE) clients up to the 2608 release.
+This article is common to both migration paths — [Migrating from a Legacy 5.x Server to 2611](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) and [Migrating from the Current Image Platform to 2611](/docs/endpointprotector/install/migrationprocedure/migration-current-image). Complete your server migration first, then follow this article to bring EPP and Enforced Encryption (EE) clients up to the 2608 release.
 :::
 
 ## Overview
 
-The 2608 server and its patches don't include client packages by default. You must upload EPP and EE client packages manually.
+The 2611 server and its patches don't include client packages by default. You must upload EPP and EE client packages manually.
 
 If you are using an external tool to manage your packages, you can ignore this article unless you are a Netwrix Enforced Encryption (EasyLock) customer — in that case, follow the instructions in this article.
 
@@ -34,9 +34,9 @@ The average update sizes are:
 
 For environments where the payload of an update is a concern, you can save bandwidth by using Offline Patches. You can also deploy Endpoint Protector Clients manually, directly on each endpoint.
 
-## Bridge Client Requirement for 2608 {#is-a-bridge-client-required-for-2608}
+## Bridge Client Requirement for 2611 {#is-a-bridge-client-required-for-2608}
 
-**No.** Unlike the earlier change of code signing certificates from CoSoSys to Netwrix (explained in the following section), the 2608 client release doesn't introduce a new trust or signature requirement. Any client on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client with no intermediate hop.
+**No.** Unlike the earlier change of code signing certificates from CoSoSys to Netwrix (explained in the following section), the 2611 client release doesn't introduce a new trust or signature requirement. Any client on **5.9.4.3 Hotfix 1** or on any **2511–2608** client version can upgrade directly to the 2611 client with no intermediate version.
 
 ### Certificate Bridge — Historical Context
 
@@ -46,7 +46,7 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 |---|---|---|
 | 5.9.4.1 and older | CoSoSys only | Can't verify Netwrix-signed packages |
 | 5.9.4.3 Hotfix 1 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
-| 2511 and newer (including 2608) | Netwrix only | The server can't push these to 5.9.4.1 clients directly |
+| 2511 and newer (including 2611) | Netwrix only | The server can't push these to 5.9.4.1 clients directly |
 
 Older Endpoint Protector releases identified client versions by a single release version number (for example, **5.9.4.3 Hotfix 1**) across documentation, but each platform's installed package uses its own internal build number. When checking an endpoint's installed client version, use the following table to confirm which release it corresponds to:
 
@@ -57,17 +57,17 @@ Older Endpoint Protector releases identified client versions by a single release
 
 This certificate bridge applies to any endpoint **still running** an old CoSoSys-signed client (5.9.4.1 or older). If all your endpoints are already on 5.9.4.3 Hotfix 1 or later, you can skip the rest of this section.
 
-Clients on 5.9.4.1 or older **can't** upgrade directly to 2608. They must first upgrade to **5.9.4.3 Hotfix 1** (which trusts both signature types), then proceed directly to 2608:
+Clients on 5.9.4.1 or older **can't** upgrade directly to 2611. They must first upgrade to **5.9.4.3 Hotfix 1** (which trusts both signature types), then proceed directly to 2611:
 
 ```mermaid
 flowchart LR
-    A["Clients on 5.9.4.1 or older<br/>(CoSoSys-signed trust only)"] --> X{"❌ Cannot skip to 2608 directly"}
+    A["Clients on 5.9.4.1 or older<br/>(CoSoSys-signed trust only)"] --> X{"❌ Cannot skip to 2611 directly"}
     X --> B["Step 1: Upgrade to 5.9.4.3 Hotfix 1<br/>→ trusts both old and new signatures"]
 
     D["Clients already on 5.9.4.3 Hotfix 1,<br/>or any 2511–2605 client"] -.-> Merge
 
-    B --> Merge["Step 2: Upgrade to 2608 client<br/>→ no bridge version needed from here"]
-    Merge --> Done(["✅ Running on 2608 client"])
+    B --> Merge["Step 2: Upgrade to 2611 client<br/>→ no bridge version needed from here"]
+    Merge --> Done(["✅ Running on 2611 client"])
 
     classDef startPoint fill:#fdebd3,stroke:#d68910,color:#7e5109
     classDef upgraded fill:#e8f8f0,stroke:#28a745,color:#1e7e34
@@ -82,13 +82,13 @@ The packages you need to upload depend on your current EPP client population and
 
 | Package | Notes |
 |---|---|
-| EPP Client 2608 (Windows) | Latest — primary target for all endpoints |
-| EPP Client 2608 (macOS) | Latest — primary target for all endpoints |
+| EPP Client 2611 (Windows) | Latest — primary target for all endpoints |
+| EPP Client 2611 (macOS) | Latest — primary target for all endpoints |
 | EPP Client 5.9.4.3 Hotfix 1 (Windows) | Bridge client — required only for endpoints still below 5.9.4.3 Hotfix 1 |
 | EPP Client 5.9.4.3 Hotfix 1 (macOS) | Bridge client — required only for endpoints still below 5.9.4.3 Hotfix 1 |
 | Checksum file for each client | Required for integrity verification |
-| EE Client 2608 (Windows) | Latest — required if Enforced Encryption is in use |
-| EE Client 2608 (macOS) | Latest — required if Enforced Encryption is in use |
+| EE Client 2611 (Windows) | Latest — required if Enforced Encryption is in use |
+| EE Client 2611 (macOS) | Latest — required if Enforced Encryption is in use |
 
 ## Upload Procedure
 

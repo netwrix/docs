@@ -32,13 +32,12 @@ risk of accidental or intentional transfers of sensitive company data, such as:
 :::note
 Predefined Content patterns cover the following countries and regions (exact pattern types
 available — SSN, passport, driving license, and so on — vary by country): Albania, Argentina,
-Australia, Austria, Belgium, Brazil, Bulgaria, Canada, Chile, China Mainland, Colombia, Croatia,
+Australia, Austria, Belgium, Bosnia and Herzegovina, Brazil, Bulgaria, Canada, Chile, China Mainland, Colombia, Croatia,
 Cyprus, Czech Republic, Denmark, Ecuador, Estonia, Finland, France, Germany, Greece, Hong Kong,
 Hungary, Iceland, India, Indonesia, Ireland, Israel, Italy, Japan, Kazakhstan, Korea, Latvia,
-Lithuania, Luxembourg, Macao, Malaysia, Mexico, Netherlands, Norway, Peru, Poland, Portugal,
-Romania, Russia, Singapore, Slovenia, South Africa, Spain, Sweden, Switzerland, Taiwan, Thailand,
-Turkey, Ukraine, United Arab Emirates, United Kingdom, United States, and Venezuela. Upcoming
-releases will extend coverage to Bosnia and Herzegovina, Montenegro, North Macedonia, and Serbia.
+Lithuania, Luxembourg, Macao, Malaysia, Mexico, Montenegro, Netherlands, North Macedonia, Norway, Peru, Poland, Portugal,
+Romania, Russia, Serbia, Singapore, Slovenia, South Africa, Spain, Sweden, Switzerland, Taiwan, Thailand,
+Turkey, Ukraine, United Arab Emirates, United Kingdom, United States, and Venezuela.
 :::
 
 To prevent sensitive data leakage, Endpoint Protector closely monitors all activity at various exit
