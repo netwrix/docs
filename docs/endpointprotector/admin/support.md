@@ -12,6 +12,12 @@ much more.
 
 The [Netwrix Community Portal](https://community.netwrix.com/c/products/endpoint-protector/22) includes a section dedicated to Endpoint Protector. It contains knowledge-sharing posts, Release Notes, bug lists, known limitations, and upcoming deprecations.
 
+The Support page in the console links to the Endpoint Protector User Manual.
+
+To ask questions about Endpoint Protector, click the chat icon in the header of the console and select **Ask Community Portal Navigator**. The Endpoint Protector Navigator, an AI assistant, opens in a new window. You can also open the [Endpoint Protector Navigator](https://community.netwrix.com/discourse-ai/ai-bot/conversations?agent=epp-navigator) directly.
+
+![Ask Community Portal Navigator button under the chat icon in the console header](asknavigator.webp)
+
 Contact the Netwrix technical support team by submitting a ticket through the
 [Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html). A team member
 will respond to your inquiry as soon as possible.
