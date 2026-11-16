@@ -16,29 +16,24 @@ keywords:
   - printers
 products:
   - endpointprotector
-sidebar_label: Content Aware Policy Configuration
+sidebar_label: Configuring Content Aware Policies
 tags:
   - content-aware-protection-and-dpi
   - kb
-title: "Content Aware Policy Configuration"
+title: "Configuring Content Aware Policies"
 knowledge_article_id: kA0Qk0000002BCYKA2
 ---
 
-# Content Aware Policy Configuration
+# Configuring Content Aware Policies
 
 ## Overview
 
-Content Aware Policies are rules for sensitive content detection that manage file transfers for users, computers, groups, or departments. You can create, edit, or delete policies, or apply predefined policies to address your organization’s data protection needs. Policies can be prioritized, and multiple policies can be enforced on the same entity.
+Content Aware Policies are rules for sensitive content detection that manage file transfers for users, computers, groups, or departments. You can create, edit, or delete policies, or apply predefined policies to address your organization’s data protection needs. You can prioritize policies, and you can enforce multiple policies on the same entity.
 
-For a full overview of the Content Aware Protection module, including activation and licensing requirements, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule).
+Content Aware Protection is a separate module from Device Control and eDiscovery, and it requires separate licensing and activation before you can create policies. For a full overview of the Content Aware Protection module, including activation and licensing requirements, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule).
 
-:::note
-Content Aware Protection is a separate module from Device Control and eDiscovery, and requires separate licensing and activation before you can create policies.
-:::
-
-:::note
-Content Aware Policies also apply to the File Allowlist. All files previously allowed will now be inspected for sensitive content and, depending on the policy configuration, either reported, blocked, or allowed.
-:::
+> **NOTE:**
+> Content Aware Policies also apply to the File Allowlist. Endpoint Protector now inspects all previously allowed files for sensitive content and, depending on the policy configuration, reports, blocks, or allows them.
 
 ## Policy Information and Configuration
 
@@ -61,15 +56,16 @@ When creating a Content Aware Policy, provide the following information:
 - **Severity:** Select **Informative** (default), **Low**, **Medium**, **High**, or **Critical**. Every event that the policy produces carries this severity. Version 2611 and later.
 - **File Size Threshold:** Set the file size (in MB) for blocking or reporting transfers.
 
-:::note
-If a File Size Threshold is set, it applies to the entire policy, regardless of file types or custom content. The value must be a positive, whole number. For best results, start with the **Report only** action to monitor data use without interrupting activity. To enforce Outside Hours or Outside Network options, enable the setting on the specific device after saving the policy.
-:::
+> **NOTE:**
+> If a File Size Threshold is set, it applies to the entire policy, regardless of file types or custom content. The value must be a positive, whole number. For best results, start with the **Report only** action to monitor data use without interrupting activity. To enforce Outside Hours or Outside Network options, enable the setting on the specific device after saving the policy.
 
 ## Thresholds and Use Cases
 
-- **Regular Threshold:** Applies to individual content types (e.g., blocks four or more SSNs).
-- **Global Threshold:** Applies to combined threats (e.g., blocks four or more threats of different types).
-- **Best Practice:** Place **Block & Report** policies with thresholds at higher priority than **Report Only** policies.
+Content Aware Policies support the following threshold types and best practices:
+
+- **Regular Threshold:** This threshold applies to individual content types (e.g., it blocks four or more SSNs).
+- **Global Threshold:** This threshold applies to combined threats (e.g., it blocks four or more threats of different types).
+- **Best Practice:** Place **Block & Report** policies with thresholds at higher priority than **Report only** policies.
 - **Range and severity:** The range and severity apply only when both the Server and the Client are version 2611 or later. Existing policies keep their threshold as the minimum, with no maximum. See [Threshold ranges and severity](/docs/endpointprotector/admin/cap_module/cappolicies#threshold-ranges-and-severity).
 
 ## Policy Exit Points
@@ -81,16 +77,20 @@ Policy Exit Points allow you to monitor and control the transfer of sensitive da
 - **Clipboard:** Monitor content captured through copy, cut, and paste operations. Applies to confidential content defined in the policy. Copy operations are always monitored; paste restrictions can be extended to specific applications.
 - **Additional Exit Points:** Network shares, thin clients, print screen, and printers.
 
-:::note
-When printers are enabled as an exit point, also enable the **Advanced Printer** and **MTP Scanning** options in Settings (Global, Groups, Computers, etc.).
-:::
+> **NOTE:**
+> When printers are enabled as an exit point, also enable the **Advanced Printer** and **MTP Scanning** options in Settings (Global, Groups, Computers, etc.).
 
 ## Limitations and Special Cases
 
-- **Encrypted content:** Endpoint Protector can't scan encrypted files or applications that use encryption to secure communication.
-- **Universal Windows Platform applications** (e.g., Windows 10 Mail) run in isolated environments, limiting add-on use and blocking by Content Aware policies.
+Content Aware Policies have the following limitations:
+
+- **Encrypted content:** Endpoint Protector cannot scan encrypted files or applications that use encryption to secure communication.
+- **Universal Windows Platform applications:** Applications such as Windows 10 Mail run in isolated environments, which limits add-on use and blocking by Content Aware policies.
 - **Linux:** Paste functionality is limited to Xorg GNOME sessions. On Wayland, content blocking occurs during copy operations. Snap-based applications may affect file event detection.
 - **Adobe Flash:** Select Adobe Flash Player from the Web Browser category to block sites using Adobe Flash Active X.
-- **OneDrive for Business:** Enable Deep Packet Inspection (DPI) to distinguish from OneDrive.
-- **Block CD/DVD Burning:** Available only for Windows, for both built-in and third-party burning features.
-- **Zoho WorkDrive and GDrive (Google Drive) sync applications:** Reported or blocked file names display internal cache paths instead of the original file name, which prevents location-based and file name denylists from working reliably. Block and Report log entries may be duplicated due to application-level transfer retries, and reported file sizes may be inaccurate. File shadowing works intermittently — shadows may contain corrupted content or be created without a hash, preventing download from the server.
+- **OneDrive for Business:** Enable Deep Packet Inspection (DPI) to distinguish it from OneDrive.
+- **Block CD/DVD Burning:** This option is available only for Windows, for both built-in and third-party burning features.
+- **Zoho WorkDrive and GDrive (Google Drive) sync applications:**
+  - Reported or blocked file names display internal cache paths instead of the original file name, which prevents location-based and file name denylists from working reliably.
+  - Block and Report log entries may be duplicated due to application-level transfer retries, and reported file sizes may be inaccurate.
+  - File shadowing works intermittently. Shadows may contain corrupted content or be created without a hash, preventing download from the server.
