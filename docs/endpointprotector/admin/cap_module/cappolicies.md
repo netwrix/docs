@@ -227,6 +227,8 @@ Each event in the Content Aware reports and logs shows the severity of the polic
 
 In the SIEM export of Content Aware Protection and eDiscovery logs, the **Severity** field holds the severity name, or "Not Set" for events without a severity. See [SIEM Export Log Fields](/docs/endpointprotector/admin/appliance.md#siem-export-log-fields).
 
+The EPP REST API carries the same fields. Content Aware Protection and eDiscovery policies have a `severity` value: `informative`, `low`, `medium`, `high`, or `critical`. A Content Aware Protection policy returns its threshold range in `thresholds`, as `min_threats` and `max_threats`. A `max_threats` value of `null` means no maximum. The log exports also filter by `severity`. See [EPP REST API](/docs/endpointprotector/admin/epp_rest_api/eppapi.md) and the full reference at `https://<epp-server>/api/v1/doc`.
+
 ## Apply NDC labels
 
 A Content Aware Protection policy can apply a Netwrix Data Classification (NDC) label to a file when the policy triggers. The label stays with the file. Netwrix Data Classification and other tools that rely on the label recognize the file wherever it goes.
