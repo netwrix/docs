@@ -20,6 +20,7 @@ import { privilegeSecure2603Redirects } from './src/config/redirects/privilegese
 import { isIndexableSite } from './src/config/indexing.js';
 import { identityRecovery31Redirects } from './src/config/redirects/identityrecovery-3.1.js';
 import robotsTxtPlugin from './src/plugins/robotsTxt.js';
+import llmsTxtPlugin from './src/plugins/llmsTxt.js';
 import { docVariablesPreprocessor } from './src/config/docVariables.js';
 
 
@@ -203,6 +204,9 @@ const config = {
 
       // Writes build/robots.txt: crawlable on docs.netwrix.com only
       robotsTxtPlugin,
+
+      // Writes build/llms.txt: an index of each product's latest version for AI tools (docs.netwrix.com only)
+      llmsTxtPlugin,
 
       // Google Analytics
       [
