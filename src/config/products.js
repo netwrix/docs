@@ -223,7 +223,7 @@ const ALL_PRODUCTS = [
   {
     id: 'customer',
     name: 'Customer Portal & Training Guide',
-    description: 'Access custsomer resources and training materials',
+    description: 'Access customer resources and training materials',
     path: 'docs/customer',
     categories: ['Other'],
     icon: '',
@@ -664,7 +664,7 @@ const ALL_PRODUCTS = [
   {
     id: 'privilegesecurediscovery',
     name: 'Privilege Secure for Discovery',
-    description: 'Privileged access management',
+    description: 'Discover privileged accounts on Windows and Linux systems and grant just-in-time access (formerly Remediant SecureONE)',
     path: 'docs/privilegesecurediscovery',
     categories: ['Privileged Access Management (PAM)'],
     icon: '',
