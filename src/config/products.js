@@ -113,7 +113,7 @@ const ALL_PRODUCTS = [
   {
     id: 'accessinformationcenter',
     name: 'Access Information Center',
-    description: 'Web portal where resource owners review access to resources and manage access requests',
+    description: 'Web application for self-service access requests, resource ownership, access reviews, and resource audit reports built on Access Analyzer data',
     path: 'docs/accessinformationcenter',
     categories: ['Other'],
     icon: '',
@@ -330,7 +330,7 @@ const ALL_PRODUCTS = [
   {
     id: 'identitymanager',
     name: 'Identity Manager',
-    description: 'Identity governance and administration: model identities, roles, and entitlements and manage access across systems (formerly Usercube)',
+    description: 'Identity governance and administration (IGA): manage identities, assign entitlements across systems, and check that assignments keep complying with policy (formerly Usercube)',
     path: 'docs/identitymanager',
     categories: ['Identity Management'],
     icon: '',
