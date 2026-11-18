@@ -31,8 +31,8 @@ To check the status and startup type of Windows services, complete the following
 
 **Step 1 –** Navigate to Start > Windows Administrative Tools > Services.
 
-**Step 2 –** In the **Services** snap-in, locate the **Remote Registry** service and make sure that
-its status is _"Running"_. If it is not, right-click the service and select Start from the pop-up
+**Step 2 –** In the **Services** snap-in, locate the **Remote Registry** service and ensure that
+its status is _"Running"_. If it isn't, right-click the service and select Start from the pop-up
 menu.
 
 **Step 3 –** Check that the **Startup Type** is set to _"Automatic"_. If it isn't, double-click the

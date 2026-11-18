@@ -17,12 +17,12 @@ application in AD FS, then configure ONTAP to trust tokens issued by your AD FS 
 - A DNS A record exists for the federation service name (for example `adfs.yourdomain.com`),
   pointing at the AD FS server.
 - An SSL certificate with a **Subject Alternative Name (SAN)** matching the federation service
-  name is installed. **NOTE:** ONTAP does not trust your internal CA automatically — you install
+  name is installed. **NOTE:** ONTAP doesn't trust your internal CA automatically — you install
   its root certificate separately in Step 7.
 - Port 443 is open inbound.
 - A domain service account is configured for the AD FS service.
 
-Deploying AD FS from scratch is outside the scope of this topic — see
+Deploying a new AD FS environment is outside the scope of this topic — see
 [AD FS Deployment](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/active-directory-federation-services-deployment-guide)
 in Microsoft documentation.
 
@@ -31,12 +31,12 @@ in Microsoft documentation.
 **Step 1 –** In **AD FS Management**, go to **Application Groups → Add Application Group**. Name
 the group (for example `NetApp`) and select the **Server application accessing a web API**
 template. This template configures a confidential OAuth 2.0 client for the client credentials
-flow (machine-to-machine, no interactive user) — the templates for interactive sign-in do not
+flow (machine-to-machine, no interactive user) — the templates for interactive sign-in don't
 apply here.
 
 **Step 2 –** On the **Server application** screen, copy the auto-generated **Client Identifier**
 (this is the `client_id` Netwrix Auditor will use to request a token), and set a **Redirect URI**.
-**NOTE:** This field is required by the wizard, but is not used in the client credentials flow —
+**NOTE:** This field is required by the wizard, but isn't used in the client credentials flow —
 any placeholder value works.
 
 **Step 3 –** On **Configure Application Credentials**, select **Generate a shared secret**, then
@@ -90,7 +90,7 @@ security oauth2 client show
 
 Where `<adfs-host>` is your AD FS federation service name.
 
-**CAUTION:** The `http` scheme and the `/adfs/services/trust` path in the issuer are not a typo —
+**CAUTION:** The `http` scheme and the `/adfs/services/trust` path in the issuer aren't a typo —
 this is the historical WS-Trust identifier that AD FS places in `iss` even for OAuth 2.0 tokens.
 
 ## Related Topics

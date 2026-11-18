@@ -60,7 +60,7 @@ Netwrix recommends using different accounts to connect to the SQL Server instan
 database and Categories database reside.
 
 :::note
-Netwrix Data Classification and Netwrix Auditor integration (NDC Provider) currently does
+Netwrix Data Classification and Netwrix Auditor integration (NDC Provider) does
 not support Single Sign-On. Single Sign-on needs to be disabled in Netwrix Data Classification in
 order for the account used by the NDC Provider to authenticate.
 :::
@@ -170,7 +170,7 @@ For NDC Endpoint Provider:
   :::note
   Shortly after the data collection, changes related to sensitive content are reported
   without data categories. For example, if a user adds some sensitive data to the SharePoint Online
-  document that initially does not contain sensitive data, this will be reported as document
+  document that initially doesn't contain sensitive data, this will be reported as document
   modification with empty "_data categories_" field. Another example: a user creates a new document
   containing sensitive data on a file server, this will be reported as a file add with empty "data
   categories" field. In this case, you have to wait until Netwrix Auditor processes information

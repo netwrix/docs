@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # How Risk Levels Are Estimated
 
-As mentioned, dashboard and built-in reports give you a comprehensive view of the following high-risk
+The dashboard and built-in reports give you a comprehensive view of the following high-risk
 areas:
 
 - User and computer accounts

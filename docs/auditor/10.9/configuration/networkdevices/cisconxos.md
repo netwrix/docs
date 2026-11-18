@@ -68,7 +68,7 @@ To configure your Cisco Nexus devices, do the following:
     switch(config)# login on-failure log
     ```
 
-6. Make sure command accounting is enabled, so that configuration changes are recorded with the
+6. ensure command accounting is enabled, so that configuration changes are recorded with the
    command text:
 
     ```

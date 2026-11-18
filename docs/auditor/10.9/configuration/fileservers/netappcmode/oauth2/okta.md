@@ -59,7 +59,7 @@ For every other application, the claim resolves to `ontap:*:no-access:none:*:`, 
 self-contained scope, and requires `-use-local-roles-if-present true` on the OAuth 2.0 client
 configuration (Step 5). The referenced role must already exist on the cluster.
 
-Then, on the **Access Policies** tab, make sure the rule for this application has a **No user**
+Then, on the **Access Policies** tab, ensure the rule for this application has a **No user**
 condition and allows the relevant scope — Access Policy rules assume an interactive user by
 default, and without an explicit **No user** condition Okta will refuse to issue a token to this
 application at all.

@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -43,7 +43,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
     - The following legacy audit policies can be configured instead of advanced: Audit object
       access, Audit policy change, and **Audit account management** must be set to _"Success"_.
     - The Enable Persistent Time Stamp local group policy must be enabled. This policy should be
-      configured manually since Auditor does not enable it automatically. See the
+      configured manually since Auditor doesn't enable it automatically. See the
       [Configure Enable Persistent Time Stamp Policy](/docs/auditor/10.9/configuration/windowsserver/persistenttimestamp.md) topic for additional
       information.
     - The Application, Security, and System event log maximum size must be set to 4 GB. The
@@ -77,12 +77,12 @@ You can configure your IT Infrastructure for monitoring in one of the following
         - Performance Logs and Alerts (TCP-In)
 
     - If the audited servers are behind the Firewall, review the list of protocols and ports
-      required for Netwrix Auditor and make sure that these ports are opened. See the
+      required for Netwrix Auditor and ensure that these ports are opened. See the
       [Windows Server Ports](/docs/auditor/10.9/configuration/windowsserver/ports.md) topic for additional information.
     - For auditing removable storage media, two Event Trace Session objects must be created. See the
       [Configure Removable Storage Media for Monitoring](/docs/auditor/10.9/configuration/windowsserver/removablestorage.md) topic for additional
       information.
-    - If you want to use Network traffic compression, make sure that the Auditor console computer is
+    - If you want to use Network traffic compression, ensure that the Auditor console computer is
       accessible by its FQDN name.
     - For auditing IIS:
 
@@ -173,10 +173,10 @@ reported as _“Not Applicable”_.
 |  | DHCP scope | <ul><li>Type:</li><li>IPv4</li><li>Multicast IPv4</li><li>Superscope for IPv4</li><li>IPv6</li><li>Action:</li><li>Added</li><li>Removed</li><li>Modified</li><li>Moved</li></ul> |
 |  | DHCP Reservation | <ul><li>Type:</li><li>IPv4</li><li>IPv6</li><li>Action:</li><li>Added</li><li>Removed</li><li>Modified</li></ul> |
 |  | DHCP Policy | <ul><li>Type:</li><li>IPv4</li><li>IPv4 server-wide</li><li>Action:</li><li>Added</li><li>Removed</li><li>Modified</li><li>Renamed</li></ul> |
-| Removable media | Removable Storage Media\*\* | Netwrix Auditor does not report on floppy/optical disk and memory card storage medias. For removable storages, the When value reports actual time when a change was made and/or a target server was started. <ul><li>Device class:</li><li>CD and DVD</li><li>Floppy Drives</li><li>Removable Disk</li><li>Tape Drives</li><li>Windows Portable Devices When the Audit Object Access local audit policy and/or the Audit Central Access Policy Staging \ Audit Removable Storage advanced audit policies are enabled on the target server, the `gpupdate /force` command execution issues removable storage restart. These actions are disclosed in Netwrix Auditor reports, search, and activity summaries. Note that these actions are system, not user-effected.</li></ul> |
+| Removable media | Removable Storage Media\*\* | Netwrix Auditor doesn't report on floppy/optical disk and memory card storage medias. For removable storages, the When value reports actual time when a change was made and/or a target server was started. <ul><li>Device class:</li><li>CD and DVD</li><li>Floppy Drives</li><li>Removable Disk</li><li>Tape Drives</li><li>Windows Portable Devices When the Audit Object Access local audit policy and/or the Audit Central Access Policy Staging \ Audit Removable Storage advanced audit policies are enabled on the target server, the `gpupdate /force` command execution issues removable storage restart. These actions are disclosed in Netwrix Auditor reports, search, and activity summaries. These actions are system, not user-effected.</li></ul> |
 | Scheduled tasks | Scheduled Task | <ul><li>Account Name</li><li>Application</li><li>Comment</li><li>Creator</li><li>Enabled</li><li>Parameters</li><li>Triggers</li></ul> |
 | Local users and groups | Local Group | <ul><li>Description</li><li>Name</li><li>Members</li></ul> |
-|  | Local User | <ul><li>Description</li><li>Disabled/Enabled</li><li>Full Name</li><li>Name</li><li>User cannot change password</li><li>Password Never Expires</li><li>User must change password at next logon</li></ul> |
+|  | Local User | <ul><li>Description</li><li>Disabled/Enabled</li><li>Full Name</li><li>Name</li><li>User can't change password</li><li>Password Never Expires</li><li>User must change password at next logon</li></ul> |
 | DNS configuration | DNS Server\*\* | <ul><li>Address Answer Limit</li><li>Allow Update</li><li>Auto Cache Update</li><li>Auto Config File Zones</li><li>Bind Secondaries</li><li>Boot Method</li><li>Default Aging State</li><li>Default No Refresh Interval</li><li>Default Refresh Interval</li><li>Disable Auto Reverse Zones</li><li>Disjoint Nets</li><li>Ds Available</li><li>Ds Polling Interval</li><li>Ds Tombstone Interval</li><li>EDns Cache Timeout</li><li>Enable Directory Partitions</li><li>Enable Dns Sec</li><li>Enable EDns Probes</li><li>CD-ROM D Enable Netmask Ordering</li><li>Event Log Level</li><li>Fail On Load If Bad Zone Data</li><li>Forward Delegations</li><li>Forwarders</li><li>Forwarding Timeout</li><li>Is Slave</li><li>Listen Addresses</li><li>Log File Max Size</li><li>Log File Path</li><li>Log Level</li><li>Loose Wildcarding</li><li>Max Cache TTL</li><li>Max Negative Cache TTL</li><li>Name Check Flag</li><li>No Recursion</li><li>Recursion Retry</li><li>Recursion Timeout</li><li>Round Robin</li><li>Rpc Protocol</li><li>Scavenging Interval</li><li>Secure Cache Against Pollution</li><li>Send Port</li><li>Server Addresses</li></ul> |
 |  | DNS Zone\*\* | <ul><li>Aging State</li><li>Allow update</li><li>Auto created</li><li>Data file name</li><li>Ds integrated</li><li>Expires after</li><li>Forwarder slave</li><li>Forwarder timeout</li><li>Master servers</li><li>Minimum TTL</li><li>No refresh interval</li><li>Notify</li><li>Notify servers</li><li>Owner name</li><li>Paused</li><li>Primary server</li><li>Refresh interval</li><li>Responsible person</li><li>Retry interval</li><li>Reverse</li><li>Scavenge servers</li><li>Secondary servers</li><li>Secure secondaries</li><li>Shutdown</li><li>TTL</li><li>User NB stat</li><li>Use WINS</li><li>Zone type</li></ul> |
 | DNS resource records | DNS AAAA\*\* | <ul><li>Container name</li><li>IPv6 Address</li><li>Owner name</li><li>Record class</li><li>TTL</li><li>Zone type</li></ul> |
@@ -208,14 +208,14 @@ reported as _“Not Applicable”_.
 |  | DNS SIG\*\* | <ul><li>Algorithm</li><li>Container name</li><li>Key tag</li><li>Labels</li><li>Original TTL</li><li>Owner name</li><li>Record class</li><li>Signature expiration (GMT)</li><li>Signature inception (GMT)</li><li>Signature (base 64)</li><li>Signer's name</li><li>TTL</li><li>Type covered</li><li>Zone type</li></ul> |
 |  | DNS SRV\*\* | <ul><li>Container name</li><li>Host offering this service</li><li>Owner name</li><li>Port number</li><li>Priority</li><li>Record class</li><li>TTL</li><li>Weight</li><li>Zone type</li></ul> |
 |  | DNS TEXT\*\* | <ul><li>Container name</li><li>Owner name</li><li>Record class</li><li>Text</li><li>TTL</li><li>Zone type</li></ul> |
-|  | DNS WINS\*\* | <ul><li>Cache time-out</li><li>Container name</li><li>Do not replicate this record</li><li>Lookup time-out</li><li>Owner name</li><li>Record class</li><li>Wins servers</li><li>Zone type</li></ul> |
+|  | DNS WINS\*\* | <ul><li>Cache time-out</li><li>Container name</li><li>Don't replicate this record</li><li>Lookup time-out</li><li>Owner name</li><li>Record class</li><li>Wins servers</li><li>Zone type</li></ul> |
 |  | DNS WKS\*\* | <ul><li>Container name</li><li>IP address</li><li>Owner name</li><li>Protocol</li><li>Record class</li><li>Services</li><li>TTL</li><li>Zone type</li></ul> |
 |  | DNS X25\*\* | <ul><li>Container name</li><li>Owner name</li><li>Record</li><li>Record class</li><li>TTL</li><li>X.121 PSDN address</li><li>Zone type</li></ul> |
 | File shares | Share | <ul><li>Access-based enumeration</li><li>Caching</li><li>Description</li><li>Enable BranchCache</li><li>Encrypt data access</li><li>Folder path</li><li>Share permissions</li><li>User limit</li></ul> |
 
 ### Windows Server Registry Keys
 
-If you want to monitor changes to system components on a Windows Server, make sure that Windows
+If you want to monitor changes to system components on a Windows Server, ensure that Windows
 Registry audit settings are configured on that Windows server.
 
 This refers to the following keys:
@@ -255,7 +255,7 @@ The below is the full list of keys (and subkeys) involved in Windows Server audi
 
 
 Consider that audit data for the registry keys themselves will not appear in Netwrix Auditor
-reports, alerts or search results, as it is only used as one of the sources for the Activity Records
+reports, alerts, or search results, as it is only used as one of the sources for the Activity Records
 formation.
 
 - You can configure these settings automatically using Netwrix Auditor, as described in the
@@ -277,7 +277,7 @@ will adjust the audit settings for the following subkeys:
 
 #### Monitoring Custom Registry Keys
 
-Follow the steps to monitor custom registry keys.
+To monitor custom registry keys:
 
 **Step 1 –** On the computer where Auditor Server resides, navigate to _%Netwrix Auditor
 installation folder%\Windows Server Auditing._
@@ -328,7 +328,7 @@ To ensure proper operation, the VM template must be excluded from the monitoring
 Omitting the VM template will allow Netwrix Auditor to assign unique IDs correctly and collect data
 as intended.
 
-Follow the steps to add the template server to exclusions.
+To add the template server to exclusions:
 
 **Step 1 –** In main Netwrix Auditor menu, select **Monitoring plans**.
 

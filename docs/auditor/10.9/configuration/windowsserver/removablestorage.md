@@ -98,7 +98,7 @@ If your environment variable accesses another directory, update the path.
 ## Review Event Trace Session Object Configuration
 
 :::note
-An Administrator can only modify the root directory and log file name. Other configurations are not
+An Administrator can only modify the root directory and log file name. Other configurations aren't
 supported by Netwrix Auditor.
 :::
 
