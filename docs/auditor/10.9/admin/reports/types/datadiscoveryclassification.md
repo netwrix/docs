@@ -15,10 +15,10 @@ are interested in.
 
 Data Discovery and Classification reports are grouped by data sources.
 
-The table below lists the reports available for Data Discovery and Classification.
+The following tables list the reports available for Data Discovery and Classification.
 
 :::note
-Some reports listed below are marked as obsolete but remain available for backward compatibility. Renewed versions of these reports are available under **SharePoint Online** in the **Reports** section and are described later in this article. All other reports remain current and fully supported.
+Some of the following reports are marked as obsolete but remain available for backward compatibility. Renewed versions of these reports are available under **SharePoint Online** in the **Reports** section and are described in [Renewed SharePoint Online Reports](#renewed-sharepoint-online-reports). All other reports remain current and fully supported.
 :::
 
 ### File Servers
