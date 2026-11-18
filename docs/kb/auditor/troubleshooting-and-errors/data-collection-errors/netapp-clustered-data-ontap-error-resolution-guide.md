@@ -1,6 +1,6 @@
 ---
 description: >
-  This knowledge base article provides a comprehensive guide to troubleshooting common errors encountered when configuring and using NetApp Clustered Data ONTAP with Netwrix Auditor.
+  This article describes how to troubleshoot errors that occur when you configure and use NetApp Clustered Data ONTAP with Netwrix Auditor.
 keywords:
   - NetApp
   - Clustered Data ONTAP
@@ -11,9 +11,9 @@ keywords:
   - 6181
   - 6186
   - 6187
-  - access denied
-  - auditing not enabled
-  - OAuth
+  - WinHttpSendRequest
+  - invalid_client
+  - OAuth 2.0
 products:
   - auditor
 sidebar_label: NetApp Clustered Data ONTAP Error Resolution Guide
@@ -32,9 +32,9 @@ This article describes how to troubleshoot errors that occur when you configure 
 ## Quick Reference
 | Error Code | Description | Primary Cause |
 |------------|-------------|---------------|
-| 6104 | Access Denied or Audit Configuration Not Found | Missing role permissions or no audit configuration on the SVM |
-| 6127 | Incorrectly Configured Auditing | Insufficient SACLs |
-| 6129 | Cannot Adjust Audit Settings | DPA lacks SACL rights |
+| 6104 | Access Denied or Audit Configuration Not Found | Missing role permissions or no audit configuration on the SVM (Storage Virtual Machine) |
+| 6127 | Incorrectly Configured Auditing | Insufficient SACLs (System Access Control Lists) |
+| 6129 | Cannot Adjust Audit Settings | DPA (Data Processing Account) lacks SACL rights |
 | 6180 | Cannot Start Auditing | Connection, REST, or OAuth 2.0 failure |
 | 6181 | Auditing Not Enabled | SVM audit disabled |
 | 6186 | Event Log Files Deleted | Missing/wrong log path |
@@ -55,11 +55,11 @@ Unable to process item: Access is denied. Insufficient privileges: user <DPA use
 ```
 
 **Cause:**
-The SVM (Storage Virtual Machine) role does not have sufficient rights to perform the required operations.
+The SVM role does not have sufficient rights to perform the required operations.
 
 **Resolution:**
 1. Verify that the NetApp role exists with the proper permissions.
-2. Check that the DPA (Data Processing Account) user is assigned to the correct role.
+2. Check that the DPA user is assigned to the correct role.
 3. Ensure the role includes necessary ONTAPI and REST API permissions.
 4. Verify both ONTAPI role and RESTAPI role configurations.
 
@@ -92,7 +92,7 @@ The following objects have incorrectly configured auditing entries: <objects lis
 ```
 
 **Cause:**
-Autoaudit is disabled and the provided list of files/folders have insufficient SACLs (System Access Control Lists) or inheritance is disabled.
+Autoaudit is disabled and the provided list of files/folders have insufficient SACLs or inheritance is disabled.
 
 **Resolution:**
 1. Check and configure proper SACLs on affected objects.
@@ -128,7 +128,7 @@ The DPA does not have rights to set or change SACLs.
 Cannot start auditing the <SVM> server. Cannot connect to file server.
 ```
 
-The text in parentheses in each scenario heading identifies the scenario.
+> **NOTE:** The text in parentheses in each scenario heading identifies the scenario.
 
 #### Scenario 1: Connection Could Not Be Established (WinHttpSendRequest 12029)
 
@@ -228,7 +228,10 @@ The OAuth 2.0 client on ONTAP uses a wrong claim to identify the user. For AD FS
 ### Error 6181: Auditing Not Enabled
 
 **Error Description:**
+
+```text
 Auditing is not enabled for the target system.
+```
 
 **Cause:**
 SVM audit is disabled.
@@ -277,7 +280,10 @@ The path to the log folder is wrong or has been changed.
 #### Scenario 7: Connection Timed Out (WinHttpSendRequest 12002)
 
 **Error Description:**
-Request to `https://<SVM IP address>/api/svm/svms?...` failed: WinHttpSendRequest: 12002: The operation timed out. The request to `<SVM IP address>` timed out.
+
+```text
+Request to https://<SVM IP address>/api/svm/svms?... failed: WinHttpSendRequest: 12002: The operation timed out. The request to <SVM IP address> timed out.
+```
 
 **Cause:**
 The Netwrix Auditor server sent the request, but the SVM did not respond in time. The SVM address is not reachable from the Netwrix Auditor server, a firewall silently drops the traffic, or the SVM is overloaded or unresponsive.
@@ -292,7 +298,10 @@ The Netwrix Auditor server sent the request, but the SVM did not respond in time
 #### Scenario 8: Identity Provider Certificate Not Trusted (WinHttpSendRequest 12175)
 
 **Error Description:**
-OAuth 2.0 token endpoint `https://<identity provider FQDN>/adfs/oauth2/token`: WinHttpSendRequest: 12175: A security error occurred. The TLS handshake with `<identity provider FQDN>` failed: the certificate was issued by a certification authority that is not trusted.
+
+```text
+OAuth 2.0 token endpoint https://<identity provider FQDN>/adfs/oauth2/token: WinHttpSendRequest: 12175: A security error occurred. The TLS handshake with <identity provider FQDN> failed: the certificate was issued by a certification authority that is not trusted.
+```
 
 **Cause:**
 The Netwrix Auditor server does not trust the certificate authority (CA) that issued the TLS certificate of the identity provider (for example, AD FS). The CA certificate is missing from the Trusted Root Certification Authorities store.
@@ -310,7 +319,10 @@ The Netwrix Auditor server does not trust the certificate authority (CA) that is
 #### Scenario 9: Client Certificate Required (WinHttpSendRequest 12044)
 
 **Error Description:**
-Request to `https://<SVM IP address>/api/svm/svms?...` failed: WinHttpSendRequest: 12044: A certificate is required to complete client authentication. The server requested a TLS client certificate, but client certificate authentication is not supported.
+
+```text
+Request to https://<SVM IP address>/api/svm/svms?... failed: WinHttpSendRequest: 12044: A certificate is required to complete client authentication. The server requested a TLS client certificate, but client certificate authentication is not supported.
+```
 
 **Cause:**
 The SVM requires a TLS client certificate (mutual TLS). Netwrix Auditor does not support client certificate authentication for ONTAP connections.
