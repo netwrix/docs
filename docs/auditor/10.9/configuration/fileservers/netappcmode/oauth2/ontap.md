@@ -44,7 +44,7 @@ where `<admin-svm>` is vserver name obtained on 'Step 2'
 
 
 **Step 5 –** Create the ONTAP Rest API role using vserver name obtained on 'Step 2'
-To create a role, please refer to [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/apirole.md).
+To create a role, refer to [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/apirole.md).
 
 
 **Step 6 –** Verify the configuration:

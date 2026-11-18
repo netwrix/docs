@@ -20,7 +20,7 @@ Set the following audit permissions to _"Successful"_ for the
 - Write DAC
 - Write Owner
 
-Follow the steps to configure Windows registry audit settings.
+To configure Windows registry audit settings:
 
 **Step 1 –** On your target server, open **Registry Editor**: navigate to **Start → Run** and type
 _"regedit"_.

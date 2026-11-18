@@ -122,8 +122,8 @@ Go back to the **Microsoft Entra ID admin center** > **Applications** > **App re
 **API permissions** and click **Grant admin consent for** *`<tenant name>`*. When prompted to
 confirm, click **Yes**.
 
-**NOTE:** For Office 365 permissions, go to **Request API Permissions** > **APIs my organization
-uses** and type "Office 365" in the search bar.
+**NOTE:** For Office 365 permissions, go to **Request API Permissions** >
+**APIs my organization uses** and type "Office 365" in the search bar.
 
 See the following Microsoft article for additional information on how to create an application and
 service principal using Microsoft Entra ID Admin portal:

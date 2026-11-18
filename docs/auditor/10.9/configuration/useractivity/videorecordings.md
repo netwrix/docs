@@ -17,7 +17,7 @@ be configured:
 - The user must have read permissions (resultant set) to the **Netwrix_UAVR$** shared folder where
   video files are stored. By default, all members of the **Netwrix Auditor Client Users** group can
   access this shared folder. Both the group and the folder are created automatically by Netwrix
-  Auditor. Make sure to grant sufficient permissions on folder or explicitly add user to the group
+  Auditor. ensure to grant sufficient permissions on folder or explicitly add user to the group
   (regardless his or her role delegated in the product). See the
   [To Add an Account to Netwrix Auditor Client Users Group](#to-add-an-account-to-netwrix-auditor-client-users-group)
   topic for additional information.
@@ -108,7 +108,7 @@ Computers snap-in.
 
 ## To Enable Windows Features
 
-Follow the steps to enable the required Windows features.
+To enable the required Windows features:
 
 **Step 1 –** Navigate to **Start** > **Server Manager**.
 

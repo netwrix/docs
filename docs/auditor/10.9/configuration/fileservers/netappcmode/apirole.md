@@ -123,7 +123,7 @@ security login role create -role netwrix_role -cmddirname "vserver audit rotate-
 security login role create -role netwrix_role -cmddirname "vserver cifs" -access readonly -vserver svm_name
 ```
 
-**Step 2 –** The capabilities must be assigned one by one. To review currently applied capabilities,
+**Step 2 –** The capabilities must be assigned one by one. To review applied capabilities,
 you can use the following command:
 
 ONTAPI role:

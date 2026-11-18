@@ -9,7 +9,7 @@ slug: /configuration/fileservers/netappcmode/oauth2/overview
 
 Netwrix Auditor can authenticate to NetApp ONTAP REST API using OAuth 2.0 / Modern Authentication
 instead of an AD user or group account. If your organization requires Modern Authentication and
-does not allow basic authentication for service accounts (for example, when Okta or AD FS is
+doesn't allow basic authentication for service accounts (for example, when Okta or AD FS is
 enforced), you can configure Netwrix Auditor to obtain a short-lived access token from your
 Identity Provider (IdP) and present it to ONTAP, instead of storing a domain account password.
 
