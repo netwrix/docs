@@ -10,7 +10,7 @@ To help you identify configuration gaps in your environment and understand their
 security, Netwrix Auditor offers a dashboard with a number of metrics and detailed reports on IT
 risk assessment. They pinpoint the weak points in your IT infrastructure such as overly broad
 assignment of access rights, loose password policies, and stale accounts. This information will help
-you to take corrective measures in the required area, ensuring the IT risks stay within acceptable levels.
+you to take corrective measures in the required area to keep IT risks within acceptable levels.
 
 To access the Risk Assessment dashboard, click the Risk assessment tile in the main window of
 Netwrix Auditor. For details about using the dashboard, see
@@ -40,6 +40,7 @@ include at least one item. See the following table for the certain reports:
 | Administrative groups                                                   | AD domain                                     |                     |
 | Administrative group membership sprawl                                  | Windows Server                                |                     |
 | Empty security group                                                    | AD domain                                     |                     |
+| Empty Entra ID security groups                                          | Microsoft Entra ID                            |                     |
 | Site collections with the "Get a link" feature enabled                  | SharePoint farm                               |                     |
 | Sites with the "Anonymous access" feature enabled                       | SharePoint farm                               |                     |
 | Site collections with broken inheritance                                | SharePoint farm                               |                     |
