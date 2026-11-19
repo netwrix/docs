@@ -80,5 +80,5 @@ Before upgrading an EPP Server to version 5.7.0.0 from a pre-5.2.0.6 (5206) vers
 
 - [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide)
 - [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x)
-- [How to Apply an Offline Patch or Upgrade](/docs/kb/endpointprotector/deployment-and-installation/how_to_apply_an_offline_patch_or_upgrade)
+- [Applying an Offline Patch or Upgrade](/docs/kb/endpointprotector/deployment-and-installation/how_to_apply_an_offline_patch_or_upgrade)
 - [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability)

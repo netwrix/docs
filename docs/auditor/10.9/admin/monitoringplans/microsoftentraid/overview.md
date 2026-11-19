@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # Microsoft Entra ID
 
-**NOTE:** Before configuring your monitoring plan, read and complete the instructions in
-the following topics:
+**NOTE:** Before configuring your monitoring plan, read the following topics and complete
+their instructions:
 
 - [Protocols and Ports Required](/docs/auditor/10.9/requirements/ports.md) – To ensure successful data
   collection and activity monitoring configure necessary protocols and ports for inbound and
@@ -64,7 +64,7 @@ Ensure you have the following at hand:
 The type of data Netwrix Auditor can collect from the Microsoft 365 tenant depends on the
 authentication option you choose.
 
-To configure an Office 365 tenant as a monitored item, complete the following steps.
+## Configure Office 365 Tenant as a Monitored Item
 
 **Step 1 –** On the **General** page of the item properties, specify **Tenant name**:
 
@@ -129,8 +129,8 @@ Starting with version 10.7, you can use Netwrix Privilege Secure to manage the a
 collecting data, after configuring the integration. See the
 [Netwrix Privilege Secure](/docs/auditor/10.9/admin/settings/privilegesecure.md) topic for additional information about
 integration and supported data sources. In this case, the credentials will not be stored by Netwrix
-Auditor. Instead, they will be managed by Netwrix Privilege Secure and provided on demand, ensuring
-password rotation or using temporary accounts for data collection.
+Auditor. Instead, they will be managed by Netwrix Privilege Secure and provided on demand. This lets you use
+password rotation or temporary accounts for data collection.
 
 To use Netwrix Privilege Secure as an account for data collection, complete the following steps.
 
