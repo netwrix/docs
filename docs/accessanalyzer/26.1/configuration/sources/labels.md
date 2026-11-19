@@ -22,10 +22,10 @@ Pick a small set of keys, decide their values up front, and use them on every so
 
 | Key | Example values | Use it for |
 |---|---|---|
-| `env` | `production`, `staging`, `dev` | Scheduling: nightly Sensitive data scans on production only |
+| `env` | `production`, `staging`, `dev` | Scheduling: nightly Classification scans on production only |
 | `team` | `finance`, `hr`, `engineering` | Ownership; filtering the list when a team asks what's scanned |
 | `region` | `emea`, `us-east`, `apac` | Splitting scans by region so each runs in its own maintenance window |
-| `data` | `confidential`, `internal`, `public` | Deciding which sources need Sensitive data scans at all |
+| `data` | `confidential`, `internal`, `public` | Deciding which sources need Classification scans at all |
 | `owner` | `jane.doe` | Who to call when a scan fails |
 
 With this scheme, a scan targeting `env=production` and `data=confidential` covers every confidential production source, including any you add later.

@@ -1,6 +1,6 @@
 ---
 title: Application Settings
-description: Deployment-wide defaults for the Home page, Sensitive data scans, and the audit log on the Settings > Application tab, with each setting's default, range, and effect.
+description: Deployment-wide defaults for the Home page, Classification scans, and the audit log on the Settings > Application tab, with each setting's default, range, and effect.
 sidebar_position: 1
 ---
 
@@ -71,7 +71,7 @@ When a number or list value differs from the shipped default, a reset icon appea
 
 ## File Server Scanning and SharePoint Scanning
 
-These two cards decide which files a Sensitive data scan downloads and classifies: **File server scanning** for File Server sources and **SharePoint scanning** for SharePoint Online sources. Each card holds the same four settings, and each card's settings apply only to its own source type.
+These two cards decide which files a Classification scan downloads and classifies: **File server scanning** for File Server sources and **SharePoint scanning** for SharePoint Online sources. Each card holds the same four settings, and each card's settings apply only to its own source type.
 
 | Setting | Default | Range | What it affects |
 |---|---|---|---|
@@ -129,17 +129,17 @@ Everything in the File Server list, plus:
 
 ## Classification
 
-These defaults apply to every Sensitive data scan.
+These defaults apply to every Classification scan.
 
 | Setting | Default | Range | What it affects |
 |---|---|---|---|
-| **Classification workers** | 15 | 1–50 | Default number of concurrent classification workers per scan. Applies when a Sensitive data scan doesn't set its own **Workers** value. |
+| **Classification workers** | 15 | 1–50 | Default number of concurrent classification workers per scan. Applies when a Classification scan doesn't set its own **Workers** value. |
 | **Report known test values** | Off | — | Reports matches on publicly documented test values, such as vendor test card numbers, test Social Security numbers, and Amazon Web Services (AWS) documentation keys, instead of suppressing them. Turn it on to evaluate Access Analyzer against synthetic data. Expect more false positives while it's on, because these values also appear in real documentation and sample files. |
 | **Decision traces** | On | — | Records a decision trace for every sensitive data finding, so the **Files** tab of a scan execution can show why Access Analyzer marked a file sensitive: the rule, the evidence, and the confidence. Turn it off to stop recording findings and traces; the per-file record and live progress stay on. |
 | **Runs that keep their file list** | 3 | 1–20 | How many of each scan's most recent runs keep their file list and findings on the **Files** tab. Older runs keep only their totals. A scan's newest completed run keeps its list for 90 days. |
 | **Days to keep file lists** | 90 | 7–90 | Runs that finished more than this many days ago lose their file list and findings, even if they're among the most recent runs. A scan's newest completed run keeps its list until it's 90 days old. Changes to this setting apply within a day. |
 
-A Sensitive data scan on a File Server source has its own **Workers** field (1–20), which shows 3 by default. If you leave it at 3, the scan uses **Classification workers**. If you change it, the scan saves your value and uses it instead of the global default. Sensitive data scans on SharePoint Online sources have no **Workers** field and always use **Classification workers**. See [Scan types](../../admin/scans/scan-types.md).
+A Classification scan on a File Server source has its own **Workers** field (1–20), which shows 3 by default. If you leave it at 3, the scan uses **Classification workers**. If you change it, the scan saves your value and uses it instead of the global default. Classification scans on SharePoint Online sources have no **Workers** field and always use **Classification workers**. See [Scan types](../../admin/scans/scan-types.md).
 
 ## Audit Log
 
@@ -172,4 +172,4 @@ If the button is disabled and the panel shows **NAM listener certificate is not 
 
 ## When Changes Take Effect
 
-You don't need to restart anything. Services pick up new values within 5 minutes. File server scanning, SharePoint scanning, and Classification settings apply to Sensitive data scans that start after the services pick up the new value; a running scan keeps the values it started with. Netwrix Activity Monitor settings apply to connections opened after the change; Activity Monitor agents already connected keep their current session.
+You don't need to restart anything. Services pick up new values within 5 minutes. File server scanning, SharePoint scanning, and Classification settings apply to Classification scans that start after the services pick up the new value; a running scan keeps the values it started with. Netwrix Activity Monitor settings apply to connections opened after the change; Activity Monitor agents already connected keep their current session.

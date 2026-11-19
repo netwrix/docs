@@ -8,7 +8,7 @@ sidebar_position: 10
 
 ## Custom Content
 
-Custom Content denylists are custom-deﬁned lists of terms and expressions detected as sensitive
+Custom Content denylists are custom-defined lists of terms and expressions detected as sensitive
 content by Endpoint Protector, available for both Content Aware Protection and eDiscovery modules.
 
 ![Denylists Custom Content configuration](customecontent.webp)
@@ -18,8 +18,8 @@ you can edit, delete, or export an existing denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description** and then type or paste items at least three characters separated by a new line,
-comma, or semicolon. You can import content using the sample ﬁle provided on the form and then
-select the option based on the number of uploaded items.
+comma, or semicolon. You can import content using the sample file provided on the form and then
+select the option based on the number of uploaded items. You can type or paste up to 100 items in a list. To add more items, import them from an `.xls` file.
 
 :::note
 You can edit dictionaries of under 100 items, but you must upload larger dictionaries
@@ -70,17 +70,17 @@ directly.
 
 ## File Name
 
-File Name Denylists are custom-deﬁned lists of ﬁle names detected by Endpoint Protector, available
+File Name Denylists are custom-defined lists of file names detected by Endpoint Protector, available
 for both Content Aware Protection and eDiscovery modules.
 
-From this section, you can view and add ﬁlename denylists and from the Actions column, you can edit,
+From this section, you can view and add filename denylists and from the Actions column, you can edit,
 delete, or export an existing denylist.
 
 To create a new denylist, under the list of available denylists, click Add, provide a name and
-description and then type or paste the ﬁle names separated by a new line, comma, or semicolon. You
-can import content using the sample ﬁle provided on the form.
+description and then type or paste the file names separated by a new line, comma, or semicolon. You
+can import content using the sample file provided on the form.
 
-You can deﬁne the content by adding the ﬁlename and extension, or just the extension.
+You can define the content by adding the filename and extension, or just the extension.
 
 Examples: Matching and Non-Matching for File Names like “example.pdf”:
 
@@ -105,26 +105,23 @@ Policies. The Case Sensitive and Whole Words Only features don't apply.
 
 ## File Location
 
-File Location Denylists are custom-deﬁned lists of locations identiﬁed by Endpoint Protector. File
+File Location Denylists are custom-defined lists of locations identified by Endpoint Protector. File
 transfers within this location are automatically blocked, regardless of the content inspection rules
-or permissions deﬁned in various Policies.
+or permissions defined in various Policies.
 
 File Location Denylists are available for both Content Aware Protection and eDiscovery modules.
 
 ![File Location Denylists](filelocation.webp)
 
-Enabling the option to Include subfolders for File Location Denylists will affect all other File
-Location Denylists and Allowlists throughout the system. By default, the File Location Denylists
-apply to all ﬁles located in the speciﬁc folder but also to any other ﬁles located in containing
-subfolders.
+The **Include subfolders** option applies to all File Location Denylists. It is off by default. When you turn it on, the denylists apply to the specified folder and to the files in its subfolders. The File Location Allowlists have their own **Include subfolders** option.
 
 :::note
 To use File Location Denylists, also select the browser or application for file transfers from within the Content Aware Protection Policy.
 :::
 
 
-From this section, you can view and add ﬁle location denylists and from the Actions column, you can
-edit, delete, or export an existing denylist.
+From this section, you can view and add file location denylists and from the Actions column, you can
+edit or delete an existing denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description**, add the items separated by a new line, comma, or semicolon and then select the
@@ -148,25 +145,25 @@ a desktop folder on Windows, use the pattern "?:\Users\\\*\Desktop\".
 
 | Wildcards Type | File Location  | Results matched                                        | Results not matched                                            |
 | -------------- | -------------- | ------------------------------------------------------ | -------------------------------------------------------------- |
-| Implicit       | C:\temp        | C:\temp\ﬁle.txt C:\temp\test\ﬁle2.txt C:\tempﬁle.txt   | C:\temp1\ﬁle.txt C:\Windows\ﬁle.txt                            |
+| Implicit       | C:\temp        | C:\temp\file.txt C:\temp\test\file2.txt C:\tempfile.txt   | C:\temp1\file.txt C:\Windows\file.txt                            |
 | Explicit       | C:\Windows\\\* | C:\Windows\regedit.exe C:\Windows\system32\notepad.exe | C:\Windows.old\regedit.exe C:\Windows.old\system32\notepad.exe |
 
 ## Scan Location
 
-Scan Location Denylists are custom-deﬁned lists of locations identiﬁed by the eDiscovery module.
+Scan Location Denylists are custom-defined lists of locations identified by the eDiscovery module.
 The eDiscovery module automatically inspects data at rest within this location for content,
-depending on the rules deﬁned in various Policies.
+depending on the rules defined in various Policies.
 
-![Scan Location Denylists are custom-deﬁned lists of locations identiﬁed by the eDiscovery module](scanlocation.webp)
+![Scan Location Denylists are custom-defined lists of locations identified by the eDiscovery module](scanlocation.webp)
 
 From this section, you can view and add scan location denylists and from the Actions column, you can
 edit or delete an existing denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description**, add the scan locations separated by a new line, comma, or semicolon or select
-from the **Predeﬁned Scan Locations** and then **Add to Content**.
+from the **Predefined Scan Locations** and then **Add to Content**.
 
-When deﬁning a Scan Location, use these special characters to deﬁne the path:
+When defining a Scan Location, use these special characters to define the path:
 
 - \* - to replace any word
 - ? - to replace any character
@@ -178,7 +175,7 @@ When deﬁning a Scan Location, use these special characters to deﬁne the path
 Regular Expressions are sequences of characters that form a search pattern, mainly for use in
 pattern matching with strings.
 
-You can create a regular expression to ﬁnd a certain recurrence in the data transferred
+You can create a regular expression to find a certain recurrence in the data transferred
 across the protected network. Regex Denylists are available for both the Content Aware Protection
 and eDiscovery modules.
 
@@ -281,7 +278,7 @@ Doesn't **match:** `"CONFIDENTIAL DOCUMENT"`
 
 ## Domain and URL
 
-Domain and URL Denylists are custom-deﬁned lists of web addresses identiﬁed by Endpoint Protector.
+Domain and URL Denylists are custom-defined lists of web addresses identified by Endpoint Protector.
 Endpoint Protector denies access to domains and URLs from these lists.
 
 :::note
@@ -296,10 +293,9 @@ can edit, delete, or export an existing denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description** and then **type or paste** items separated by a new line, comma, or semicolon.
-You can import content using the sample ﬁle provided on the form.
+You can import content using the sample file provided on the form.
 
-You can create or import up to 100 lists of dictionaries, each dictionary comprising up to 50000 web
-domains.
+You can create or import up to 1,000 lists of dictionaries, each dictionary comprising up to 50,000 web domains.
 
 :::note
 You can edit dictionaries comprising up to 100 web domains, but you must import more
@@ -307,9 +303,7 @@ extensive dictionaries again.
 :::
 
 
-You can deﬁne the content by adding the ﬁle name, ﬁle name and extension, or just the extension -
-pdf, test1example.pdf. example.endpointprotector.com, \*example.com, \*example\*example,
-https://website.com
+You can define the content by adding domains or URLs, for example `example.endpointprotector.com`, `*example.com`, `*example*example`, or `https://website.com`. The `*` represents any word.
 
 After you create the denylist, it appears on the Domain and URL list and is available
 when creating or editing a Content Aware Protection policy.
@@ -318,7 +312,7 @@ when creating or editing a Content Aware Protection policy.
 
 ## E-mail Domain
 
-E-mail Domain Denylists are custom-deﬁned e-mail addresses and domains applicable to groups and
+E-mail Domain Denylists are custom-defined e-mail addresses and domains applicable to groups and
 computers that block the user from sending emails.
 
 :::warning
@@ -342,7 +336,7 @@ edit, delete, or export an existing e-mail domain denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description**, add the items separated by a new line, comma, or semicolon and then select the
-**groups** and **computers**. You can import content using the sample ﬁle provided on the form.
+**groups** and **computers**. You can import content using the sample file provided on the form.
 
 ![E-mail Domain New Denylists](e-maildomainnewdenylists.webp)
 
@@ -350,7 +344,7 @@ and **description**, add the items separated by a new line, comma, or semicolon 
 
 This section introduces the documentation related to CLI (Command Line Interface) commands denylists
 usage. CLI commands denylists give customers greater control over application start events
-and let them scrutinize the command line arguments used to launch speciﬁc applications.
+and let them scrutinize the command line arguments used to launch specific applications.
 This functionality enhances the precision of CAP (Content Aware Protection) policies, enabling users
 to gain visibility and control over the usage of particular applications.
 
@@ -359,9 +353,9 @@ the following example for Google Chrome:
 
 **chrome.exe --incognito**
 
-With CLI commands denylists, you can deﬁne criteria for command line arguments that match speciﬁc
+With CLI commands denylists, you can define criteria for command line arguments that match specific
 application behaviors. This lets you create CAP policies tailored to your organization's needs,
-ensuring that the launch and behavior of applications align with your security and compliance
+so that the launch and behavior of applications align with your security and compliance
 requirements.
 
 :::note
@@ -372,11 +366,11 @@ egress channel.
 :::
 
 
-To deﬁne CLI command denylist policies:
+To define CLI command denylist policies:
 
 **Step 1 –** Navigate to **Denylists** > **Application** tab in the Endpoint Protector Console.
 
-**Step 2 –** Deﬁne your criteria based on the command line arguments used by the applications you
+**Step 2 –** Define your criteria based on the command line arguments used by the applications you
 want to control.
 
 **Step 3 –** Incorporate these criteria into your CAP policies as arguments to ensure precise
@@ -391,8 +385,7 @@ posture and ensure applications comply with your policies and regulations.
 The Endpoint Protector Client has limited visibility into activity within PowerShell and
 PowerShell ISE environments, as well as basic command-line operations on macOS and Linux systems
 (actions like `touch`, `cp`, `cd`, `mv`, and `mkdir`). To ensure Denylists entries match processes
-with default parameters, use the wildcard character "\*" at the end of the Application Name field
-(e.g, `notepad.exe *`.
+with default parameters, use the wildcard character `*` in the **Parameters** field next to the **Application & CLI Command** field (for example, command `notepad.exe` and parameter `*`).
 
 :::
 
@@ -400,19 +393,18 @@ with default parameters, use the wildcard character "\*" at the end of the Appli
 
 This section covers the use of Microsoft Purview Information Protection (MPIP) (formerly known as
 Microsoft Information Protection (MIP) and Azure Information protection (AIP)), including
-classification within Endpoint Protector 5.9.4+ Content Aware Protection and eDiscovery policies.
+classification within Content Aware Protection and eDiscovery policies.
 
 MPIP is a Microsoft toolset enabling organizations to enforce data classification, file encryption,
 and Rights Management Services (RMS) on user data.
 
-Since the 5.9.4 release, Endpoint Protector allows direct label definition for Content Aware
-Protection and eDiscovery policies via the Endpoint Protector Server interface.
+Define MIP labels directly on the **MIP Classification** tab, for Content Aware Protection and eDiscovery policies.
 
-The Endpoint Protector Server offers three options for defining MIP labels:
+Use the **Look For** options to define a MIP label:
 
-- MIP Label Name – Specify the human-redable name of the MIP label.
-- MIP GUID – use the unique identifier associated with the MIP label.
-- Both – Combine both the label name and GUID for maximum accuracy.
+- **MIP Name**—match the label by its name. Enter the **MIP Label Name**. The name must have at least 5 characters and can't contain `/`, `//`, `<`, `>`, `%`, `&`, `:`, `;`, `?`, `+`, or `|`. A short label name can cause false positives, so use the GUID instead.
+- **MIP Guid**—match the label by its unique identifier. Enter the **MIP Guid** in the Microsoft GUID format, for example `defa0070-0d00-0005-0005-bc11223344d2`.
+- **Both**—match the label name and the GUID, for maximum accuracy. Enter both values.
 
 This flexibility allows administrators to avoid creating custom dictionaries to recognize
 MIP-labeled files.
@@ -443,9 +435,9 @@ This section covers the use of and integration with Netwrix Data Classification 
 
 Netwrix Data Classification helps organizations identify, categorize, and tag data based on predefined policies. With NDC, you can understand where sensitive data resides, how it is used, and who has access to it, which supports data security, regulatory compliance, and informed decision-making.
 
-Starting with the 25.12 release, Endpoint Protector allows direct NDC label definition for Content Aware Protection and eDiscovery policies through the Endpoint Protector Server interface, so you don't need to build custom dictionaries to recognize labeled files.
+Endpoint Protector allows direct NDC label definition for Content Aware Protection and eDiscovery policies through the Endpoint Protector Server interface, so you don't need to build custom dictionaries to recognize labeled files.
 
-![Configuration for Netwrix Data Classification](NDCClassification.png)
+![NDC Classification denylist with an entry that has Look for set to Both NDC name property + label value](ndcclassification.webp)
 
 ### Configure an NDC label
 
@@ -457,8 +449,10 @@ Each NDC entry in a denylist defines a single classification to match against Of
 - **NDC label value** — the label value assigned in NDC. NDC stores this as a custom property value in the Office document. Obtain the value from your NDC administrator.
 - **Look for** — controls which properties Endpoint Protector scans. See [Look for options](#look-for-options) for the behavior of each choice.
 
+![Add form of the NDC Classification denylist](ndcclassificationadd.webp)
+
 :::note
-Each NDC entry is uniquely identified by the combination of **NDC name property value** and **NDC label value**. You can configure multiple entries that share the same property name with different label values — for example, `Sensitivity = Confidential` and `Sensitivity = Restricted`.
+Each NDC entry must be unique. For **Both**, the combination of **NDC name property value** and **NDC label value** must be unique. For **NDC name property value**, the property value must be unique. For **NDC label value** and **Keywords**, the label value must be unique. The label value is required for **NDC label value**, **Both**, and **Keywords**. The values can have up to 256 characters and can't contain a semicolon (`;`). You can configure multiple entries that share the same property name with different label values — for example, `Sensitivity = Confidential` and `Sensitivity = Restricted`.
 :::
 
 ### Look for options
@@ -473,3 +467,11 @@ Use the **Look for** field to control how Endpoint Protector matches the classif
 :::note
 Only Endpoint Protector Client version 2605.x.x.x and later support the NDC labeling feature.
 :::
+
+Denylist rules that match both the file name and the NDC label also apply to files that Deep Packet Inspection (DPI) inspects.
+
+To apply an entry as a label, set **Look for** to **Both NDC name property + label value** or to **Keywords**. In the **Labeling** section of Content Aware Protection and eDiscovery policies, turn on **NDC Labeling** and select one or more of these entries in **NDC Label(s)**. The policy applies them as NDC labels to files when it triggers. Entries that have only the name property or only the label value remain available for detection, but not for labeling. See [Apply NDC labels](/docs/endpointprotector/admin/cap_module/cappolicies.md#apply-ndc-labels).
+
+## Fingerprinting
+
+Fingerprinting denylists protect whole documents with a Fingerprint dictionary built from the documents themselves. See [File Fingerprinting](/docs/endpointprotector/admin/denylistsallowlists/fingerprinting.md).

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Netwrix Endpoint Protector Server-Side Support Policy
 
-Netwrix is committed to providing high-performing solutions. To achieve this, the support policy focuses on maintaining compatibility with recent software versions. Staying current with both the server and the agent is critical to accessing full support, ensuring end-to-end functionality, and maintaining optimal security.
+Netwrix is committed to providing high-performing solutions. To achieve this, the support policy focuses on maintaining compatibility with recent software versions. Staying current with both the server and the agent is critical to accessing full support, keeping end-to-end functionality, and maintaining optimal security.
 
 This document defines how Endpoint Protector server updates are released, supported, and how customers can stay fully supported.
 
@@ -18,7 +18,7 @@ Here is the current state of all versions of Endpoint Protector Server.
 
 | **Discontinued Support** | **Limited Support** | **N-1 Track (Active Support)** | **N Track (Active Support)** |
 | --- | --- | --- | --- |
-| All versions before 5.9.4.2 <br/> Limited support ended Feb 11, 2026. | | 2604.0.1.0 (Base image 2509/2510)<br/><br/>Released 4th May, 2026.<br/>Active Support | 2608.0.1.0 <br/><br/>Released 1st September, 2026.<br/>Full Active Support. |
+| All versions before 5.9.4.2 <br/> Limited support ended Feb 11, 2026. | | 2608.0.1.0 <br/><br/>Released 1st September, 2026.<br/>Active Support | 2611.0.1.0 <br/><br/>Released 17th November, 2026.<br/>Full Active Support. |
 
 # Support Definitions Used In This Document
 

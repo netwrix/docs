@@ -22,7 +22,7 @@ knowledge_article_id: kA0Qk0000002BDvKAM
 This article explains how to upgrade from Endpoint Protector Server v5.8.0.0 to v5.8.1.0 when the **Apply Updates** button is grayed out after selecting available Endpoint Protector (EPP) software updates.
 
 :::important
-This article applies to the **Live Update** feature, which Netwrix discontinued starting with EPP Server version 2509. If you're running EPP Server 2509 or later, this workaround doesn't apply — Live Update no longer exists on this platform, and the **Offline Patch Uploader** is the only available update method. See [How to Apply an Offline Patch or Upgrade](/docs/kb/endpointprotector/deployment-and-installation/how_to_apply_an_offline_patch_or_upgrade) for the current procedure.
+This article applies to the **Live Update** feature, which Netwrix discontinued starting with EPP Server version 2509. If you're running EPP Server 2509 or later, this workaround doesn't apply — Live Update no longer exists on this platform, and the **Offline Patch Uploader** is the only available update method. See [Applying an Offline Patch or Upgrade](/docs/kb/endpointprotector/deployment-and-installation/how_to_apply_an_offline_patch_or_upgrade) for the current procedure.
 :::
 
 ## Instructions

@@ -153,6 +153,7 @@ categories = {
         "error_server_user_interface_only_accessible_with_safari_on_vm-hosted_servers.md",
         "greyed-out-computer-in-the-client-software-upgrade.md",
         "how-to-check-the-client-to-server-connection-status.md",
+        "how-to-collect-debug-logs-locally-on-an-endpoint-using-the-diagnostic-script.md",
         "how-to-generate-a-memory-dump.md",
         "how_to_handle_the_111.33.33.111_ip_address_on_the_server.md",
         "how_to_manually_activate_debugging_logs_on_windows.md",

@@ -83,7 +83,7 @@ additional information.
 
 Auditor supports monitoring the following device versions:
 
-- Dell Isilon/PowerScale versions 7.2 – 9.12
+- Dell Isilon/PowerScale versions 7.2 – 9.14
 
 :::note
 Netwrix Auditor supports only CIFS configuration.
@@ -261,6 +261,24 @@ Auditor supports monitoring the following device versions:
 See the [Configure Cisco IOS Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoios.md) topic for
 additional information.
 
+Cisco IOS XE Devices
+
+Auditor supports monitoring the following device versions:
+
+- IOS XE 17.3 (Amsterdam)
+
+See the [Configure Cisco IOS XE Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoiosxe.md) topic for
+additional information.
+
+Cisco NX-OS (Nexus) Devices
+
+Auditor supports monitoring the following device versions:
+
+- NX-OS 10.x
+
+See the [Configure Cisco NX-OS (Nexus) Devices](/docs/auditor/10.9/configuration/networkdevices/cisconxos.md) topic
+for additional information.
+
 Cisco Meraki Dashboard
 
 Auditor supports monitoring the following device versions:
@@ -333,6 +351,15 @@ Auditor supports monitoring the following device versions:
 See the [Configure SonicWall Devices](/docs/auditor/10.9/configuration/networkdevices/sonicwall.md) topic for
 additional information.
 
+WatchGuard Firebox Devices
+
+Auditor supports monitoring the following device versions:
+
+- Fireware OS 12.x and above
+
+See the [Configure WatchGuard Firebox Devices](/docs/auditor/10.9/configuration/networkdevices/watchguard.md) topic
+for additional information.
+
 ## Oracle
 
 Auditor supports monitoring the following versions:
@@ -384,13 +411,9 @@ Auditor supports monitoring the following versions:
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
 
 - Windows 11
 - Windows 10 (32 and 64-bit)
-- Windows 8.1 (32 and 64-bit)
-- Windows 7 (32 and 64-bit)
 
 User Activity data source can support around 300 targets with one user session per target without
 scalability issues:
@@ -427,13 +450,9 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
 
 - Windows 11
 - Windows 10 (32 and 64-bit)
-- Windows 8.1 (32 and 64-bit)
-- Windows 7 (32 and 64-bit)
 
 DNS & DHCP
 
@@ -443,16 +462,6 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
-
-:::note
-Auditor supports DNS on Windows Server 2008 SP2 (32 and 64-bit) only.
-:::
-
-:::note
-Netwrix Auditor doesn't support DHCP on Windows Server 2008.
-:::
 
 Internet Information Services (IIS)
 
@@ -467,8 +476,8 @@ information.
 
 In addition to the data sources the product monitors, Auditor supports technology integrations
 that use its API. Download free add-ons from
-[Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) to enrich your audit
-trails with activity from the following systems and applications.
+[Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) to add activity from
+other systems and applications to your audit trails.
 
 Add-ons are also available to export the data that Auditor collects to other systems (e.g., ArcSight and ServiceNow).
 

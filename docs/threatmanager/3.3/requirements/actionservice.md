@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Action Service Requirements
 
-The Action Service can be installed on additional servers.
+You can install the Action Service on additional servers.
 
 :::tip
 Remember, the Action Service is installed on the Threat Manager Console server.
@@ -36,7 +36,7 @@ Minimum hardware requirements:
 
 The following are additional requirements for the application server:
 
-- .NET 8.0.11
-- .NET Desktop Runtime 8.0.11
-- ASP.NET Core 8.0.11
+- .NET 10.0
+- .NET Desktop Runtime 10.0
+- ASP.NET Core 10.0
 - PowerShell 5.1+ installed

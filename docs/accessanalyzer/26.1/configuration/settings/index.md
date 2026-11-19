@@ -3,7 +3,7 @@ title: Settings
 description: The Settings page holds deployment-wide defaults, feature flags, user accounts, single sign-on, backups, and system logs across six tabs, each shown only to the roles that can use it.
 ---
 
-Settings holds what applies to the whole installation rather than to one source or scan: Sensitive data scan and Netwrix Activity Monitor defaults, Activity Monitor agent enrollment, feature flags, user accounts, single sign-on, backups, and system logs. Open **Configuration > Settings** in the sidebar. Every role can open the page, but it shows only the tabs your role can use.
+Settings holds what applies to the whole installation rather than to one source or scan: Classification scan and Netwrix Activity Monitor defaults, Activity Monitor agent enrollment, feature flags, user accounts, single sign-on, backups, and system logs. Open **Configuration > Settings** in the sidebar. Every role can open the page, but it shows only the tabs your role can use.
 
 ![Settings page on the Application tab, with the Homepage and File server scanning cards](/images/accessanalyzer/26.1/settings/application.webp)
 
@@ -11,7 +11,7 @@ Settings holds what applies to the whole installation rather than to one source 
 
 | Tab | What it holds | Who sees it |
 |---|---|---|
-| [**Application**](application.md) | Deployment-wide defaults for the Home page, Sensitive data scans, classification, and the audit log | Admin, Viewer |
+| [**Application**](application.md) | Deployment-wide defaults for the Home page, Classification scans, classification, and the audit log | Admin, Viewer |
 | [**Feature flags**](feature-flags.md) | Experimental toggles for optional scan features | Admin, Viewer |
 | [**Users**](../../admin/users.md) | User accounts, their roles, and whether each account is active | Admin, User admin |
 | **System** | [Backups](backups.md) and [single sign-on](single-sign-on.md) | Admin, User admin |
@@ -32,5 +32,5 @@ Settings holds what applies to the whole installation rather than to one source 
 
 Saving an Application setting or a feature flag doesn't restart anything. Access Analyzer picks up the change on its own within 5 minutes; a feature flag can take about a minute longer to reach the classification engine. That has two consequences:
 
-- Classification settings apply to Sensitive data scans that start after the change takes effect. A scan that's already running keeps the values it started with.
+- Classification settings apply to Classification scans that start after the change takes effect. A scan that's already running keeps the values it started with.
 - Netwrix Activity Monitor settings apply to connections opened after the change takes effect. An Activity Monitor agent that's already connected keeps its current session.
