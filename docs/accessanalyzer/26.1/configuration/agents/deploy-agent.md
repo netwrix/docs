@@ -29,7 +29,7 @@ The panel text under the command tells you which case applies. For a server that
 
 ## Prepare the Host
 
-Each agent runs on its own host. You can't run `install-agent` on the Access Analyzer server.
+You can't run `install-agent` on the Access Analyzer server.
 
 | Requirement | Details |
 |---|---|
