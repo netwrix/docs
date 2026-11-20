@@ -7,7 +7,7 @@ sidebar_position: 2
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The installer is a single Linux binary, `dspm-installer`. Run it as root on the server, and it checks the hardware, asks for anything you haven't supplied, sets up every service, and prints the address and credentials for the first sign-in.
+The installer is a single binary, `dspm-installer`. Run it as root on the server, and it checks the hardware, asks for anything you haven't supplied, sets up every service, and prints the address and credentials for the first sign-in.
 
 Before you start, work through [Requirements](../requirements/index.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, the email address and name of the first administrator, and about 16 GB of free disk for the install media.
 

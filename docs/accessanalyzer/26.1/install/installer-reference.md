@@ -28,7 +28,7 @@ Run `dspm-installer <command> --help` for what each command and flag does. To pi
 - Upgrade an air-gapped install: `upgrade --bundle-dir <path>`. See [Upgrade to a new version](upgrade-to-a-new-version.md).
 - Convert a registry install onto downloaded media: `upgrade --download`. See [Convert or connect an install](convert-or-connect-an-install.md#convert-a-registry-install).
 - Connect an air-gapped install that now has internet access: `upgrade --connect`. See [Convert or connect an install](convert-or-connect-an-install.md#connect-an-air-gapped-install).
-- Add an agent on a separate Linux host: `install-agent`. See [The `install-agent` command](#the-install-agent-command).
+- Add an agent on a separate host: `install-agent`. See [The `install-agent` command](#the-install-agent-command).
 - Replace or roll back the TLS certificate: `update-cert` and `rollback-cert`. See [Rotate the TLS certificate](rotate-the-tls-certificate.md).
 
 There are no single-letter flags.
@@ -385,7 +385,7 @@ The output shows the state (`running`, `succeeded`, or `failed`), the phase, the
 
 ## The `install-agent` Command
 
-`install-agent` joins the host you run it on to an existing installation as an agent node. You don't write the command by hand: the **Add agent** panel generates it with a registration bundle, as [Deploy an agent](../configuration/agents/deploy-agent.md) describes. Run it as root on a separate Linux host, not on the Access Analyzer server.
+`install-agent` joins the host you run it on to an existing installation as an agent node. You don't write the command by hand: the **Add agent** panel generates it with a registration bundle, as [Deploy an agent](../configuration/agents/deploy-agent.md) describes. Run it as root on a separate host, not on the Access Analyzer server.
 
 ```bash
 sudo dspm-installer install-agent \

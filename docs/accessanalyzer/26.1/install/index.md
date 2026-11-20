@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: How to prepare a Linux server, run the Access Analyzer installer, and sign in for the first time.
+description: How to prepare a server, run the Access Analyzer installer, and sign in for the first time.
 ---
 
 Access Analyzer runs on a single Linux server that you own. You download one installer binary, run it as root, and answer a few prompts. The installer downloads the release's offline media from Netwrix (or reads media you downloaded for an air-gapped server), checks the server, sets up every service, and prints the address and credentials you use to sign in.
@@ -17,7 +17,7 @@ Once Access Analyzer is running, see [Upgrade to a new version](upgrade-to-a-new
 
 ## People You Need
 
-You need an administrator with root access to the Linux server, either signed in as root or using `sudo`. The installer writes to `/etc/dspm`, `/var/log`, and `/usr/local/bin`, so a non-root account can't complete it.
+You need an administrator with root access to the server, either signed in as root or using `sudo`. The installer writes to `/etc/dspm`, `/var/log`, and `/usr/local/bin`, so a non-root account can't complete it.
 
 You also need someone who can issue a TLS certificate for the server's hostname and someone who can open firewall ports. The [Requirements](../requirements/index.md) page lists exactly what to ask for.
 
