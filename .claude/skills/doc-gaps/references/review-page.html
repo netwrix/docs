@@ -284,16 +284,17 @@ function drawNofix(){
 }
 
 function drawReview(){
-  const list=G.filter(x=>(filter==='all'||st(x)===filter)&&(!ftier||x.g.tier===ftier)&&(!fconf||x.g.gap_confidence===fconf)&&!noFix(x));
+  const list=G.filter(x=>(filter==='all'||st(x)===filter)&&(!ftier||x.g.tier===ftier)&&(!fconf||x.g.gap_confidence===fconf)&&(!ffix||x.p.fix_confidence===ffix)&&!noFix(x));
   if(!sel||!list.find(x=>x.g.id===sel))sel=list[0]?list[0].g.id:null;
   $('#view').innerHTML=`<div class="split"><div class="sec"><div class="row">${Object.keys(SL).map(f=>`<button class="btn chipbtn" aria-pressed="${filter===f}" data-f="${f}">${SL[f]}</button>`).join('')}</div>
   <div class="row"><select id="ft" aria-label="Priority"><option value="">All priorities</option>${['P0','P1','P2','P3'].map(t=>`<option ${ftier===t?'selected':''}>${t}</option>`).join('')}</select>
-  <select id="fc" aria-label="Gap confidence"><option value="">All gap confidence</option>${['high','medium','low'].map(t=>`<option ${fconf===t?'selected':''}>${t}</option>`).join('')}</select></div>
+  <select id="fc" aria-label="Gap confidence"><option value="">All gap confidence</option>${['high','medium','low'].map(t=>`<option ${fconf===t?'selected':''}>${t}</option>`).join('')}</select>
+  <select id="ff" aria-label="Fix confidence"><option value="">All fix confidence</option>${['high','medium','low'].map(t=>`<option value="${t}" ${ffix===t?'selected':''}>${t} fix confidence (${G.filter(x=>!noFix(x)&&x.p.fix_confidence===t).length})</option>`).join('')}</select></div>
   <details class="qa small"><summary>What do P0, P1 and the confidence levels mean?</summary><div class="qabody">${legendHTML()}</div></details><div class="muted" style="font-size:13px">${list.length} of ${G.filter(x=>!noFix(x)).length} gaps that need a fix</div>
-  <div class="list">${list.map(x=>`<button class="pitem" aria-current="${x.g.id===sel}" data-id="${esc(x.g.id)}"><div class="row"><span class="pill ${esc(x.g.tier)}">${esc(x.g.tier)}</span><span class="pill ${esc(x.g.gap_confidence)}">gap: ${esc(x.g.gap_confidence)}</span><span class="pill ${st(x)}">${st(x)==='hold'?'on hold':st(x)==='pending'?'to review':st(x)}</span></div><div style="margin:8px 0 2px;font-weight:600">${esc(x.g.item)}</div><div class="mono muted">${esc(x.g.id)}</div></button>`).join('')||'<div class="notice">No gaps match.</div>'}</div></div>
+  <div class="list">${list.map(x=>`<button class="pitem" aria-current="${x.g.id===sel}" data-id="${esc(x.g.id)}"><div class="row"><span class="pill ${esc(x.g.tier)}">${esc(x.g.tier)}</span><span class="pill ${esc(x.g.gap_confidence)}">gap: ${esc(x.g.gap_confidence)}</span><span class="pill ${esc(x.p.fix_confidence)}">fix: ${esc(x.p.fix_confidence)}</span><span class="pill ${st(x)}">${st(x)==='hold'?'on hold':st(x)==='pending'?'to review':st(x)}</span></div><div style="margin:8px 0 2px;font-weight:600">${esc(x.g.item)}</div><div class="mono muted">${esc(x.g.id)}</div></button>`).join('')||'<div class="notice">No gaps match.</div>'}</div></div>
   <div id="detail"></div></div>`;
   document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{filter=b.dataset.f;draw()});
-  $('#ft').onchange=e=>{ftier=e.target.value;draw()};$('#fc').onchange=e=>{fconf=e.target.value;draw()};
+  $('#ft').onchange=e=>{ftier=e.target.value;draw()};$('#fc').onchange=e=>{fconf=e.target.value;draw()};$('#ff').onchange=e=>{ffix=e.target.value;draw()};
   document.querySelectorAll('.pitem').forEach(b=>b.onclick=()=>{sel=b.dataset.id;editing=false;draw();scrollTo({top:0})});
   const x=G.find(y=>y.g.id===sel);if(x)drawDetail(x);else $('#detail').innerHTML='<div class="notice">Select a gap.</div>';
 }
