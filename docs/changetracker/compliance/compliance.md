@@ -348,10 +348,10 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
     <tr><td>NNT CIS Red Hat Enterprise Linux 7 Server Benchmark - Level 2</td><td>2.2.0.3</td></tr>
     <tr><td rowspan="2">Red Hat Enterprise Linux Workstation 7</td><td>NNT CIS Red Hat Enterprise Linux 7 Workstation Benchmark - Level 1</td><td>2.2.0.3</td></tr>
     <tr><td>NNT CIS Red Hat Enterprise Linux 7 Workstation Benchmark - Level 2</td><td>2.2.0.3</td></tr>
-    <tr><td rowspan="2">Red Hat Enterprise Linux Server 8</td><td>NNT CIS Red Hat Enterprise Linux 8 Server Benchmark - Level 1</td><td>1.0.0.2</td></tr>
-    <tr><td>NNT CIS Red Hat Enterprise Linux 8 Server Benchmark - Level 2</td><td>1.0.0.2</td></tr>
-    <tr><td rowspan="2">Red Hat Enterprise Linux Workstation 8</td><td>NNT CIS Red Hat Enterprise Linux 8 Workstation Benchmark - Level 1</td><td>1.0.0.2</td></tr>
-    <tr><td>NNT CIS Red Hat Enterprise Linux 8 Workstation Benchmark - Level 2</td><td>1.0.0.2</td></tr>
+    <tr><td rowspan="2">Red Hat Enterprise Linux Server 8</td><td>NNT CIS Red Hat Enterprise Linux 8 Server Benchmark - Level 1</td><td>4.0.0</td></tr>
+    <tr><td>NNT CIS Red Hat Enterprise Linux 8 Server Benchmark - Level 2</td><td>4.0.0</td></tr>
+    <tr><td rowspan="2">Red Hat Enterprise Linux Workstation 8</td><td>NNT CIS Red Hat Enterprise Linux 8 Workstation Benchmark - Level 1</td><td>4.0.0</td></tr>
+    <tr><td>NNT CIS Red Hat Enterprise Linux 8 Workstation Benchmark - Level 2</td><td>4.0.0</td></tr>
     <tr><td rowspan="2">Red Hat Enterprise Linux Server 9</td><td>NNT CIS Red Hat Enterprise Linux 9 Server Benchmark - Level 1</td><td>2.0.0</td></tr>
     <tr><td>NNT CIS Red Hat Enterprise Linux 9 Server Benchmark - Level 2</td><td>2.0.0</td></tr>
     <tr><td rowspan="2">Red Hat Enterprise Linux Workstation 9</td><td>NNT CIS Red Hat Enterprise Linux 9 Workstation Benchmark - Level 1</td><td>2.0.0</td></tr>
