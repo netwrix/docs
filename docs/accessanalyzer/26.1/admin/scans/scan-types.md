@@ -104,6 +104,8 @@ A Classification scan picks its classifiers on the **Classifiers** step of the *
 
 The step lists only published classifiers. Type in **Search classifiers** or pick a regulation to narrow the list. [Classifiers](../../configuration/classifiers/index.md) describes the classifiers themselves.
 
+The step also has a **Read MIP labels from files** checkbox, which is cleared by default. Select it to record each file's Microsoft Information Protection (MIP) sensitivity label as the scan classifies the file. The scan reads labels only while MIP labeling is on; see [MIP labels](../../configuration/mip-labels/index.md). The checkbox doesn't control whether the scan applies labels. A Classification scan applies the labels its classifiers choose whenever MIP labeling is on and a Purview account is authenticated.
+
 ![Create scan wizard on the Classifiers step with Specific classifiers selected](/images/accessanalyzer/26.1/classifiers/scan-classifiers.webp)
 
 ### Reports fed by Classification scans

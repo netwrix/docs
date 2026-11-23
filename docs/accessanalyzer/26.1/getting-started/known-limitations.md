@@ -44,6 +44,14 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 2. Only [published classifiers](../configuration/classifiers/index.md#published-and-unpublished-classifiers) run. Unpublishing a classifier removes it from every scan's next run.
 3. [Classification scans](../configuration/classifiers/index.md#what-a-scan-classifies) extract text from Excel, Word, Portable Document Format (PDF), plain text, and image files. They don't open encrypted documents.
 
+## MIP Labels
+
+1. Access Analyzer [applies MIP labels](../configuration/mip-labels/index.md#supported-sources-and-file-types) on File Server and SharePoint Online sources only, and to Word, Excel, and PowerPoint files only. On SharePoint Online, the **Microsoft Graph** method also labels PDFs.
+2. A label that doesn't encrypt is applied on the next Classification scan, with no preview. A [dry run](../configuration/mip-labels/labels-that-encrypt.md#preview-encryption-with-a-dry-run) previews only labels that encrypt.
+3. Access Analyzer reads your labels from Purview only when you click **Sync labels**. A label you add or rename in Purview isn't offered to classifiers until the next sync.
+4. Encrypting a file on a File Server source can't be undone from Access Analyzer, because a file server has no version history.
+5. Your copy of a built-in classifier starts with no MIP labels, even when the built-in classifier had them.
+
 ## Dashboards and Reports
 
 1. User admins don't see **Dashboards**, and [report](../admin/dashboards-reports/index.md) content doesn't load for them; give people who need reports the Viewer or Admin role.
