@@ -1,0 +1,392 @@
+openapi: 3.0.3
+info:
+  title: Access Analyzer Web Service REST API
+  version: "12.0"
+  description: |
+    DRAFT for engineering review. Authored by hand from the 12.0 source (`release/12.0`, f4fe31d4); the product has no spec generator.
+
+    The Web Service (`NetwrixAccessAnalyzerWeb`, listens on port 8082 by default) lets an application read Access Analyzer data remotely.
+    Enable access in the Console under **Settings** > **Access** > **Add Access** > **An application accessing data remotely through Web Service**.
+    The wizard issues a client ID and client secret and lets you choose which database objects the application can read.
+
+    **Authentication.** Request an access token from `/api/v1/token` with the OAuth 2.0 client credentials grant, then send it as `Authorization: Bearer <token>`.
+    Client credentials must be sent as form fields; HTTP Basic authentication is not supported.
+    Defaults: the client secret expires after the period chosen in the wizard (72 hours by default), the access token after 1 hour (`AccessTokenExpiration`), and the refresh token after 168 hours (`RefreshTokenExpiration`). The two token settings are in `Webserver.exe.config`.
+
+    **Transport.** The shipped binding is plain HTTP (`BindingUrl` = `http://+:8082`). Configure HTTPS before sending client secrets or tokens over a network.
+
+    **Data.** The API reads SQL tables, views and stored procedures from the Access Analyzer database. Column names and types depend on the object and the install, so rows are returned as free-form JSON objects. There is no paging; the full result is returned.
+  contact:
+    name: Netwrix Documentation
+servers:
+  - url: "{scheme}://{host}:{port}"
+    description: Access Analyzer Web Service
+    variables:
+      scheme:
+        default: https
+        enum: [http, https]
+      host:
+        default: accessanalyzer.example.com
+      port:
+        default: "8082"
+tags:
+  - name: Authentication
+    description: Obtain and refresh access tokens.
+  - name: Data
+    description: Read rows from tables and views, or run stored procedures, that the application has been granted access to.
+security:
+  - clientCredentials: []
+paths:
+  /api/v1/token:
+    post:
+      tags: [Authentication]
+      operationId: getToken
+      summary: Get or refresh an access token
+      description: |
+        Use `grant_type=client_credentials` with the client ID and secret to get an access token and a refresh token.
+        Use `grant_type=refresh_token` with the refresh token to get a new access token. The client ID and secret are required for both grants.
+        The `scope` parameter is ignored.
+
+        Every failure returns HTTP 400 with a JSON `error` code, not 401.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/TokenRequest"
+            examples:
+              clientCredentials:
+                summary: Client credentials grant
+                value:
+                  grant_type: client_credentials
+                  client_id: "100"
+                  client_secret: "<client secret>"
+              refresh:
+                summary: Refresh token grant
+                value:
+                  grant_type: refresh_token
+                  refresh_token: "<refresh token>"
+                  client_id: "100"
+                  client_secret: "<client secret>"
+      responses:
+        "200":
+          description: Token issued.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TokenResponse"
+        "400":
+          description: |
+            The request failed. `invalid_client`: wrong or expired client ID or secret, credentials not sent as form fields, or the application has no access.
+            `invalid_grant`: the refresh token is invalid or expired. `unsupported_grant_type`: the grant type is not supported.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OAuthError"
+              example:
+                error: invalid_client
+  /api/v1/data/{objectName}/rows:
+    parameters:
+      - $ref: "#/components/parameters/objectName"
+    get:
+      tags: [Data]
+      operationId: getRows
+      summary: Get all rows from a table or view
+      description: |
+        Returns every column of the object for the latest job run. If the object has a `JobRunTimeKey` column, only rows from the latest run are returned.
+        To select columns, filter, group or choose a run, use `POST`.
+      responses:
+        "200":
+          $ref: "#/components/responses/Rows"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/ServerError"
+    post:
+      tags: [Data]
+      operationId: queryRows
+      summary: Query rows from a table or view
+      description: |
+        Returns rows from the object. Filters on different columns are combined with AND.
+        If the object has a `JobRunTimeKey` column and `jobRuntimeKey` is omitted, rows from the latest run are returned.
+        Supplying `jobRuntimeKey` for an object without that column returns 400.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RowsRequest"
+            example:
+              jobRuntimeKey: "2018-11-05T13:15:30"
+              columns: [url, trusteeName, rights]
+              groupby: [hostName]
+              filters:
+                - column: hostName
+                  function: equals
+                  value: ENGINEERING01
+                - column: trusteeName
+                  function: equals
+                  value: [Pete Smith, Jake Roberts]
+      responses:
+        "200":
+          $ref: "#/components/responses/Rows"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/ServerError"
+  /api/v1/data/{objectName}/proc:
+    parameters:
+      - $ref: "#/components/parameters/objectName"
+    get:
+      tags: [Data]
+      operationId: runProc
+      summary: Run a stored procedure without parameters
+      description: Runs the stored procedure with no parameters. To pass parameters or group the result, use `POST`.
+      responses:
+        "200":
+          $ref: "#/components/responses/Rows"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/ServerError"
+    post:
+      tags: [Data]
+      operationId: runProcWithParameters
+      summary: Run a stored procedure with parameters
+      description: |
+        Passes `parameters` to the stored procedure unchanged. An array value maps to a user-defined table type; only single-value arrays (one column) are supported.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProcRequest"
+            example:
+              parameters:
+                hostName: SBNJENGINEERING01
+                userName: DOMAIN\pete.smith
+                files:
+                  - name: puppets.xls
+                  - name: groups.pdf
+              groupby: [HostName]
+      responses:
+        "200":
+          $ref: "#/components/responses/Rows"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/ServerError"
+components:
+  securitySchemes:
+    clientCredentials:
+      type: oauth2
+      description: "OAuth 2.0 client credentials grant. Send the access token as `Authorization: Bearer <token>`."
+      flows:
+        clientCredentials:
+          tokenUrl: /api/v1/token
+          refreshUrl: /api/v1/token
+          scopes: {}
+  parameters:
+    objectName:
+      name: objectName
+      in: path
+      required: true
+      description: Name of a table, view or stored procedure in the `dbo` schema, for example `SA_ADInventory_UsersView`. The application must have been granted access to it in the Console.
+      schema:
+        type: string
+        example: SA_ADInventory_UsersView
+  responses:
+    Rows:
+      description: A JSON array of rows. With `groupby`, each element holds the grouping columns plus a `groupItems` array.
+      headers:
+        X-Audit-Version:
+          description: Access Analyzer product version.
+          schema:
+            type: string
+            example: 12.0.0
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: "#/components/schemas/RowList"
+              - $ref: "#/components/schemas/GroupedRowList"
+          examples:
+            rows:
+              summary: Without groupby
+              value:
+                - url: https://site/list
+                  trusteeName: Pete Smith
+                  rights: Read
+            grouped:
+              summary: With groupby
+              value:
+                - hostName: ENGINEERING01
+                  groupItems:
+                    - url: https://site/list
+                      trusteeName: Pete Smith
+                      rights: Read
+    BadRequest:
+      description: |
+        A parameter is invalid: an unknown column in `columns`, `groupby` or `filters`, an invalid object or column name, a filter that needs a single value, or `jobRuntimeKey` on an object without a `JobRunTimeKey` column.
+        The body is the error message as plain text.
+        If the bearer token is missing, invalid or expired, the body is `{"error":"invalid_client"}` as JSON.
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: 'Selection columns, "colA", don''t exist in SQL object "SA_Example"'
+        application/json:
+          schema:
+            $ref: "#/components/schemas/OAuthError"
+          example:
+            error: invalid_client
+    Forbidden:
+      description: The application has not been granted access to this object. The body is a plain-text message.
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: 'My Application does not have permission to access SQL object "SA_Example"'
+    NotFound:
+      description: The object does not exist. The body is a plain-text message.
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: 'SQL object "SA_Example" doesn''t exist'
+    ServerError:
+      description: Unhandled server error. The body is empty. Check the Web Service log.
+  schemas:
+    TokenRequest:
+      type: object
+      required: [grant_type, client_id, client_secret]
+      properties:
+        grant_type:
+          type: string
+          enum: [client_credentials, refresh_token]
+        client_id:
+          type: string
+          description: Client ID issued by the Application Access wizard.
+        client_secret:
+          type: string
+          format: password
+          description: Client secret issued by the Application Access wizard.
+        refresh_token:
+          type: string
+          description: Required when `grant_type` is `refresh_token`.
+    TokenResponse:
+      type: object
+      required: [access_token, token_type]
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+          enum: [bearer]
+        expires_in:
+          type: integer
+          format: int64
+          description: Seconds until the access token expires (3600 by default).
+        refresh_token:
+          type: string
+          description: Valid for 168 hours by default.
+    OAuthError:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+          enum: [invalid_client, invalid_grant, unsupported_grant_type]
+    RowsRequest:
+      type: object
+      properties:
+        jobRuntimeKey:
+          type: string
+          description: The job run to read. Defaults to the latest run when the object has a `JobRunTimeKey` column.
+        columns:
+          type: array
+          items:
+            type: string
+          description: Columns to return. Defaults to all columns. Columns named in `groupby` are always included.
+        groupby:
+          type: array
+          items:
+            type: string
+          description: Columns to group by. Each result element holds these columns and a `groupItems` array.
+        filters:
+          type: array
+          items:
+            $ref: "#/components/schemas/Filter"
+    Filter:
+      type: object
+      required: [column, function, value]
+      properties:
+        column:
+          type: string
+        function:
+          type: string
+          description: Case-insensitive. `equals` and `not_equals` accept a value or an array (matches any). `contains` and `starts_with` accept a value or an array (matches any). The `greater` and `less` functions accept a single value only.
+          enum: [equals, not_equals, greater, greater_equal, less, less_equal, contains, starts_with]
+        value:
+          description: A single value, or an array of values for `equals`, `not_equals`, `contains` and `starts_with`.
+          oneOf:
+            - type: string
+            - type: number
+            - type: boolean
+            - type: array
+              items:
+                oneOf:
+                  - type: string
+                  - type: number
+                  - type: boolean
+    ProcRequest:
+      type: object
+      properties:
+        parameters:
+          type: object
+          additionalProperties: true
+          description: Named parameters passed to the stored procedure.
+        groupby:
+          type: array
+          items:
+            type: string
+          description: Result columns to group by.
+    RowList:
+      type: array
+      items:
+        type: object
+        additionalProperties: true
+    GroupedRowList:
+      type: array
+      items:
+        type: object
+        required: [groupItems]
+        properties:
+          groupItems:
+            type: array
+            items:
+              type: object
+              additionalProperties: true
+        additionalProperties: true
