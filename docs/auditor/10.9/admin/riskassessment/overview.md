@@ -20,6 +20,8 @@ For details about metrics calculation, see [How Risk Levels Are Estimated](/docs
 
 For details about how hybrid account data is collected and merged across Active Directory and Entra ID for inactive user risk metrics, see [Hybrid Account Data for Inactive User Risks](/docs/auditor/10.9/admin/riskassessment/hybrid-accounts.md).
 
+For details about the Entra ID risk for privileged role assignments, see [Users with Privileged Role Assignments Risk](/docs/auditor/10.9/admin/riskassessment/privileged-role-assignments.md).
+
 ## Providing Data for Risk Assessment
 
 To provide data for metrics and reports that belong to different categories, you will need to
@@ -41,6 +43,7 @@ include at least one item. See the following table for the certain reports:
 | Administrative group membership sprawl                                  | Windows Server                                |                     |
 | Empty security group                                                    | AD domain                                     |                     |
 | Empty Entra ID security groups                                          | Microsoft Entra ID                            |                     |
+| Users with privileged role assignments                                  | Microsoft Entra ID                            |                     |
 | Site collections with the "Get a link" feature enabled                  | SharePoint farm                               |                     |
 | Sites with the "Anonymous access" feature enabled                       | SharePoint farm                               |                     |
 | Site collections with broken inheritance                                | SharePoint farm                               |                     |
