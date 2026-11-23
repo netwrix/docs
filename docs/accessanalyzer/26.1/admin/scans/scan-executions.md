@@ -183,7 +183,7 @@ When a run's file list is removed, its totals stay, and the **Files** tab report
 
 The **MIP labels** tab of a Classification scan's execution lists the files that a classifier chose a Microsoft Information Protection (MIP) sensitivity label for, and what happened to each one. Admins and Viewers can open it. [MIP labels](../../configuration/mip-labels/index.md) explains how a file gets a label.
 
-A sentence above the table sums up the run, such as **42 files would be encrypted with Highly Confidential. This was a dry run: no file was encrypted.** The counts in it are links that filter the table. While Access Analyzer is still labeling, the tab reads **`<N>` files are still being evaluated** and refreshes on its own.
+A sentence before the table summarizes the run, such as **42 files would be encrypted with Highly Confidential. This was a dry run: no file was encrypted.** The counts in it are links that filter the table. While Access Analyzer is still labeling, the tab reads **`<N>` files are still being evaluated** and refreshes on its own.
 
 | Column | What it shows |
 |---|---|

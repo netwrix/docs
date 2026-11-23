@@ -12,7 +12,7 @@ You manage these settings in the **Labels that encrypt** section. Go to **Settin
 
 ## Requirements
 
-On top of the Microsoft Graph permissions in [Connect to Microsoft Purview](connect-to-microsoft-purview.md#before-you-begin), Azure Rights Management needs the following. The **Requirements** list in the **Labels that encrypt** section shows the same items.
+In addition to the Microsoft Graph permissions in [Connect to Microsoft Purview](connect-to-microsoft-purview.md#before-you-begin), Azure Rights Management needs the following. The **Requirements** list in the **Labels that encrypt** section shows the same items.
 
 | Requirement | Details |
 |---|---|
