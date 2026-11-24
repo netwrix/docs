@@ -15,7 +15,8 @@ This page lists situations you may meet during a scan in the Beta. Each one says
 **Why.** Some sources read a Microsoft service that not every tenant has:
 
 - Azure AI Foundry needs an Azure subscription.
-- Power Platform and Copilot Studio need a Power Platform environment with a Dataverse database.
+- Power Platform needs a Power Platform environment with a Dataverse database.
+- Copilot Studio needs a Copilot Studio, Microsoft 365 Copilot, or paid Power Platform license. The Power Apps and Power Automate that come with Microsoft 365 don't count.
 - Defender for Endpoint needs its license, with machines onboarded.
 - The sign-in log needs Microsoft Entra ID P1. Without it, apps show no count of people using them, agents show no last sign-in, and the **Activity** tab gets no sign-ins.
 - The Purview audit log needs auditing turned on in the Purview portal.
@@ -34,7 +35,7 @@ No permission fixes a missing license or service. 1Secure also connects to the w
 
 ## A short time per source spreads the sign-in read over several scans
 
-**What you see.** The scan's status stays **Running**, the status of a scan in progress, while follow-on scans read on. A follow-on scan is an automatic scan 1Secure starts to read the rest of the activity. The scan drawer says of the source "Part was read. The next scans read the rest."
+**What you see.** The scan's status stays **Running**, the status of a scan in progress, while follow-on scans read on. A follow-on scan is an automatic scan 1Secure starts to read the rest of the activity. On the **Sources** page, the source reads **Scanning**. The scan drawer says of the source "Part was read. The next scans read the rest."
 
 **Why.** **Time per source**, under **Scan limits** on the **Settings** page, sets how long each source's scan can run, from 5 to 60 minutes. The sign-in read stops early to leave time to save the results, so it gets only part of that time. The next scans continue from where the last one stopped.
 

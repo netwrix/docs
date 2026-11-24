@@ -32,6 +32,7 @@ The Purview audit log and Security Copilot read with this registration too. Secu
 | AuditLog.Read.All | Graph application permission | Read-only | Reads sign-in activity and consent history. | Stale agent and usage signals are missing. |
 | RoleManagement.Read.Directory | Graph application permission | Read-only | Reads directory role assignments, such as Global Administrator held by an agent. | Directory roles read as unknown. |
 | AuditLogsQuery.Read.All | Graph application permission, with a Purview Audit (Standard) license | Read-only | Searches the Purview audit log for Copilot and agent runs. | Copilot and agent activity is skipped. |
+| Reports.Read.All | Graph application permission | Read-only | Reads how much each person uses Microsoft 365 Copilot. It's also listed under SharePoint Online, and counted once. | Each person's Copilot use isn't read. |
 
 ## Agent 365
 

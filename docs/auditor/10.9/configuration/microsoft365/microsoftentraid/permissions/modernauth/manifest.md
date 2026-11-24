@@ -34,6 +34,12 @@ The following Application permissions will be added:
 - Microsoft Graph
     - UserAuthenticationMethod.Read.All
     - IdentityRiskyUser.Read.All
+    - RoleAssignmentSchedule.Read.Directory
+    - RoleEligibilitySchedule.Read.Directory
+
+:::note
+The **RoleAssignmentSchedule.Read.Directory** and **RoleEligibilitySchedule.Read.Directory** permissions are needed only to collect role assignments for the [Users with Privileged Role Assignments Risk](/docs/auditor/10.9/admin/riskassessment/privileged-role-assignments.md) in a tenant with a Microsoft Entra ID Premium P2 license.
+:::
 
 ## Required Permissions Only
 
@@ -91,6 +97,14 @@ To add both required and optional permissions, use the following manifest config
         },
         {
             "id": "38d9df27-64da-44fd-b7c5-a6fbac20248f",
+            "type": "Role"
+        },
+        {
+            "id": "d5fe8ce8-684c-4c83-a52c-46e882ce4be1",
+            "type": "Role"
+        },
+        {
+            "id": "ff278e11-4a33-4d0c-83d2-d01dc58929a5",
             "type": "Role"
         }
     ]
