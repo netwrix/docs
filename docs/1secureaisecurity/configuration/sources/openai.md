@@ -6,7 +6,7 @@ sidebar_position: 68
 
 # OpenAI
 
-Connect OpenAI so AI Security can read one OpenAI API organization with two kinds of key. An Admin key reads the organization: its projects, keys, service accounts, and members. It can't read an agent. A project key, one per project, reads that project's agents. You create the keys in the OpenAI platform and enter them in AI Security.
+Connect OpenAI so AI Security can use two kinds of key to read one OpenAI API organization. An Admin key reads the organization: its projects, keys, service accounts, and members. It can't read an agent. A project key, one per project, reads that project's agents. You create the keys in the OpenAI platform and enter them in AI Security.
 
 ## Before you start
 
@@ -130,7 +130,7 @@ A scan that reads to the end lists what it couldn't read as skipped, and its sou
 | "Succeeded", with "OpenAI agents, sandboxes and vaults, because the Agents API is off for this organization." skipped | The scan says: "The agents beta is not enabled for this organization, or the endpoint has moved." | Confirm the agents beta is on for the organization before you change any key. |
 | "Succeeded", with "The agents, sandboxes and vaults of the OpenAI project [name], which answered with an error." skipped | That project's agent read failed for another reason. | Scan again. If it repeats, send the **Technical details** to Netwrix Support. |
 | "Succeeded", with "The OpenAI sandbox or credential vault [id], which an agent used, though the agent is still listed." skipped | AI Security didn't read a sandbox or a credential vault behind an agent, though it read the agent. The scan says: "A sandbox or a credential vault this project's agents used did not read, so it is missing from this inventory while the agent stays in it." | Check that project's key, then scan again. Or accept that the agent's sandboxes and vaults are unknown. |
-| "Succeeded", with "The latest network settings of some OpenAI sandboxes, which the next scans read." skipped | AI Security reads the sandboxes that agents ran in before again, one at a time, and the scan stopped before it read them all. A sandbox left unread keeps the access it had, and the next scan reads it first. The line has no To fix. | Nothing. The next scans read the rest. |
+| "Succeeded", with "The latest network settings of some OpenAI sandboxes, which the next scans read." skipped | AI Security reads again, one at a time, the sandboxes that agents ran in before, and the scan stopped before it read them all. A sandbox left unread keeps the access it had, and the next scan reads it first. The line has no To fix. | Nothing. The next scans read the rest. |
 
 ## Security notes
 
