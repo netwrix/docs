@@ -80,12 +80,13 @@ To set the schedule:
 
 ### Scan limits
 
-Scan limits set how far back a source's first scan looks, and how long each source's scan may run. Empty fields use the default, and changes apply from the next scan. Click **Save** to keep a change. The same **Save** keeps the scan schedule.
+Scan limits set how far back a source's first scan looks, how long each source's scan may run, and whether a scan reads only what changed. Empty fields use the default, and changes apply from the next scan. Click **Save** to keep a change. The same **Save** keeps the scan schedule.
 
 | Setting | What it limits |
 |---------|----------------|
 | Activity window | How far back a first scan looks, from 1 to 365 days. Left empty, each platform uses its own default, between 3 and 180 days. A later scan reads on from where the last one stopped. A source not scanned for more than 14 days catches up on the last 14 days only, or on the Activity window where it is longer, and older activity isn't read. Agent activity is kept for 180 days, so a longer window shows no more than that. |
 | Time per source | How long each source's scan may run. Reads past this limit continue on the next scans. |
+| Scan mode | **Changes only, recommended** reads what changed since the last scan. **Full scan** reads everything again on every scan, for when a scan seems to miss changes. Switch back to **Changes only** once things look right. |
 
 The **Settings** tab doesn't hold limits for one platform. Where a platform has any, they are under **Scan settings** on the platform's card on the **Sources** page, and they apply to every source of that platform.
 

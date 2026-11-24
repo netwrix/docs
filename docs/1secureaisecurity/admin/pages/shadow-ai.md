@@ -34,7 +34,7 @@ The page doesn't list Microsoft's own apps. An app is Microsoft's when one of Mi
 
 ## Drawer
 
-Select a row to open its drawer. It shows how the tool was found, its access in your environment, and its related issues, with **Approve** and **Not approved**.
+Select a row to open its drawer. It shows how the tool was found, its access in your environment, and its related issues, with **Approve** and **Not approved**. **Export audit trail**, in the drawer's **More actions** menu, downloads a CSV file with every entry its **Activity** tab lists, newest first, with the reason a reviewer gave.
 
 ## Approve a tool
 
