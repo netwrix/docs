@@ -59,7 +59,7 @@ The card then says what was done, one line per grant: "Policies read by" who sig
 
 Where the Power Platform test sees no environment, or none that admits the AI Security registration as an application user, the source's row reads "Needs a grant" rather than failed. A **Power Platform management application** card then offers the registration with **Let 1Secure do it**, which signs you in once more. Its **Do it yourself** option is the application user steps instead: add the registration as an application user in each environment, with a security role that has Read at Organization depth on Process, Connection Reference, Connector, User, and Flow Run. After the registration is made, AI Security tests the Power Platform and Copilot Studio sources whose test asked for it, for a short while as Microsoft applies it, and the card shows "Registered. Checking the connection…".
 
-The Get started wizard doesn't ask for any of these. The **Sources** page is where you grant them.
+The Get started wizard doesn't ask for any of these. Grant them on the **Sources** page.
 
 ### What adding the application users does
 
