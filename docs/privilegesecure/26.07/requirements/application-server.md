@@ -10,7 +10,7 @@ The application server is the Windows server where you install Netwrix Privilege
 
 ## Server requirements
 
-- Windows Server 2016 through Windows Server 2025
+- Windows Server 2016 or later
 - 2.0 GHz or faster dual-core 64-bit (x64) processor
 - Domain-integrated DNS that resolves all managed components forward and in reverse
 - A server hardened and dedicated to Privilege Secure (recommended)
