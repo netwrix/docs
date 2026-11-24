@@ -21,7 +21,7 @@ Connect OpenAI so AI Security can read one OpenAI API organization with two kind
 ### Create the keys in OpenAI
 
 1. Open **Settings > Organization > General**, and copy the "Organization ID". It starts with `org-`.
-2. Open **Settings > Organization > Admin keys**, and create an admin key. Create it unrestricted, or restrict it to `api.management.read` and, for who created each key, `api.audit_logs.read`.
+2. Open **Settings > Organization > Admin keys**, and create a new admin key. Leave its permissions set to **All**. If your organization requires a restricted admin key, it needs read access to organization management and, to show who created each key, to audit logs. OpenAI's error messages name these `api.management.read` and `api.audit_logs.read`. The key screen may not show those names.
 3. Copy the admin key.
 4. For each project whose agents you want read, open **Settings**, select the project, and open **API keys** inside it.
 5. Create a key with restricted permissions that allow reading agents (`api.agents.read`) and nothing more.
@@ -83,7 +83,7 @@ An agent that exists only on a session stays for a while after the last scan tha
 
 - The Admin key reads the organization inventory and gets nothing from the agents listing. A scan that holds the Admin key alone reports every project as not read for agents, sessions, and vaults. Add a project key to fix it.
 - A project key reads one project. It can't read the project list, and it can't read another project.
-- A restricted Admin key created without the `api.management.read` scope can't read the organization. Create the key unrestricted, or add that scope.
+- A restricted Admin key without read access to organization management can't read the organization, and the test reports a missing permission. OpenAI's message names the `api.management.read` scope. Create a new admin key with permissions set to **All** rather than editing the existing key. OpenAI can keep refusing a key whose permissions changed after it was created.
 
 ### What it never touches
 
@@ -110,7 +110,7 @@ An agent that exists only on a session stays for a while after the last scan tha
 | "No credential is stored for this source." or "The credential is missing settings this platform needs." | No Admin key is stored. | Click **Edit**, and enter the Admin key, and the project keys again if you use them. |
 | "The stored credential can't be used. Enter it again." | The stored keys can't be used. | Click **Edit**, and enter them again. |
 | "The platform refused the credential. It is wrong, expired or revoked." | OpenAI refused the Admin key: it is wrong, or deleted. | Create a new admin key, and enter it under **Edit**. |
-| "The credential works, but access was denied. A permission is missing." | OpenAI accepted the key and refused the project list. The test says: "Save an Admin key, created by an organization owner under Settings, API keys, Admin keys, in the source's settings." or, for an empty list, "Check that the Admin key in the source's settings belongs to the organization you meant to scan." | Put an Admin key from the right organization in **Admin key**. If the key is restricted, create it unrestricted, or add `api.management.read` and, for the audit log, `api.audit_logs.read`. |
+| "The credential works, but access was denied. A permission is missing." | OpenAI accepted the key and refused the project list. The test says: "Save an Admin key, created by an organization owner under Settings, API keys, Admin keys, in the source's settings." or, for an empty list, "Check that the Admin key in the source's settings belongs to the organization you meant to scan." | Put an Admin key from the right organization in **Admin key**. If the key is restricted or its permissions were edited, create a new admin key with permissions set to **All** and enter that one. |
 | "The platform didn't answer, or said it is down or busy." | OpenAI didn't answer. | Test again later. |
 | "The platform slowed down the test. Wait a few minutes and test again." | OpenAI rate limited the read. This is a warning, not a missing permission. | Wait a few minutes, then click **Test again**. |
 | "The platform didn't answer in time." | OpenAI didn't answer in time. | Click **Test again**. |
