@@ -4,7 +4,7 @@ description: Choose the MIP label each classifier severity applies, and control 
 sidebar_position: 2
 ---
 
-A classifier decides which MIP label a file gets. For each severity in a classifier, you can choose one label. When a Classification scan finds data at that severity, Access Analyzer applies the label to the file. This works for built-in classifiers and for your own.
+A classifier decides which Microsoft Information Protection (MIP) sensitivity label a file gets. For each severity in a classifier, you can choose one label. When a Classification scan finds data at that severity, Access Analyzer applies the label to the file. This works for built-in classifiers and for your own.
 
 ## Before you begin
 
