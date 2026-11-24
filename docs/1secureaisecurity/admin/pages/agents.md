@@ -53,6 +53,8 @@ Select a row to open the agent's drawer. It shows the agent's name, its platform
 | Reach | What the agent can reach through its own grants and the identities it acts as, as a picture. |
 | Activity | The agent's history, such as when 1Secure discovered it, when it was created, and the permissions and owners added. |
 
+**Export audit trail**, in the drawer's **More actions** menu, downloads a CSV file with every entry the **Activity** tab lists, newest first.
+
 ### Next step
 
 At the foot of **Overview**, **Next step** says what to do with the agent.

@@ -29,7 +29,6 @@ Each AI tool is one Shadow AI row: a row on the [Shadow AI](/docs/1secureaisecur
    * The consuming system (Netwrix 1Secure AI Security).
    * The endpoint groups needed: computers, logs, and users.
    * The expected volume and how often AI Security reads it.
-   * That the API must allow the 1Secure AI Security addresses.
    * Whether the use is a test, a pilot, or production.
 3. Wait for Netwrix Support to turn on the API and issue a client ID and a client secret. Keep the secret in a password manager.
 
@@ -133,7 +132,7 @@ The API has no scopes. Netwrix Support sets what the client may read, by endpoin
 | "No credential is stored for this source." or "The credential is missing settings this platform needs." | The server address, the client ID, or the secret is missing. | Click **Edit**, and enter all three. |
 | "The stored credential can't be used. Enter it again." | The stored credential can't be used. | Click **Edit**, and enter it again. |
 | "The platform refused the credential. It is wrong, expired or revoked." | The server refused the client ID and secret, or refused the token it issued. The test says: "Check the server address, client ID and client secret in the source's settings." | Check the three values against the ones Netwrix Support issued. |
-| "The credential works, but access was denied. A permission is missing." | The server accepted the token and refused the computer read. Under **Technical details**, the test says: "Ask Netwrix Support to turn on the REST API Preview for this server and allow the scanner's addresses." | Ask Netwrix Support to check that the Preview is on and that the 1Secure AI Security addresses are allowed. |
+| "The credential works, but access was denied. A permission is missing." | The server accepted the token and refused the computer read. Under **Technical details**, the test says: "Ask Netwrix Support to turn on the REST API Preview for this server." | Ask Netwrix Support to check that the Preview is on for your server. |
 | "The platform didn't answer, or said it is down or busy." | The server didn't answer, or answered that the API isn't there. | Check that the address is the server's host without `/api`. |
 | "A setting is invalid. Addresses must start with https:// on the platform's domain." | The address isn't https, or names a private or internal host. | Enter the server's public https address. |
 | "The platform didn't answer in time." | The server didn't answer in time. | Click **Test again**. |
