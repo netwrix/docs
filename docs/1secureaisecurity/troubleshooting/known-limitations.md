@@ -14,6 +14,7 @@ This page lists what AI Security doesn't do yet, or does only in part, grouped b
 - **Only an organization administrator can start a scan.** Anyone else sees "Only an organization administrator can start a scan."
 - **File counts aren't read.** How many files each agent can reach shows as unknown, because a scan doesn't count files yet.
 - **Retention is set by Netwrix.** Agent activity is kept for 180 days, trend history for 400 days, and acknowledged alerts for 90 days from the acknowledgment. Open alerts are never removed. The **Settings** page shows these periods, and you can't change them. They may change after the Beta.
+- **An owner change can take up to 7 days to show.** A new or removed owner of an application or service principal usually shows after the next scan. Where 1Secure can't read the Microsoft Entra audit log, it can take up to 7 days. So can a sponsor change on an agent identity. Starting a scan doesn't speed it up.
 
 ## Sources
 
@@ -27,7 +28,7 @@ This page lists what AI Security doesn't do yet, or does only in part, grouped b
 Connect with Microsoft grants the Microsoft Graph permissions in one sign-in. It can't grant everything a Microsoft source needs.
 
 - **Azure roles are separate.** Assign Reader on each subscription, and Foundry User, formerly Azure AI User, on each Foundry project, in the Azure portal, or use **Let 1Secure do it** on the **Azure Reader on your subscriptions** card for the subscriptions and projects you select. [Azure RBAC](/docs/1secureaisecurity/configuration/sources/azure-rbac.md) and [Azure AI Foundry](/docs/1secureaisecurity/configuration/sources/azure-ai-foundry.md) have the steps.
-- **Power Platform needs its own steps.** Register the management application with **Let 1Secure do it** or PowerShell. The System Administrator of each environment adds the application user. [Power Platform](/docs/1secureaisecurity/configuration/sources/power-platform.md) has the steps.
+- **Power Platform needs its own steps.** Register the management application with **Let 1Secure do it** or PowerShell. The System Administrator of each environment adds the application user with **Grant with my sign in**. [Power Platform](/docs/1secureaisecurity/configuration/sources/power-platform.md) has the steps.
 - **A tenant whose consent doesn't hold every permission reconnects once.** The source warns "Your tenant consented to an older permission list. Reconnect with Microsoft to grant the rest." Open the Microsoft Entra ID source, click **Sign in with Microsoft** or **Reconnect**, and accept the permissions.
 - **Sites.Selected replaces Sites.FullControl.All.** On SharePoint sites you haven't approved, apps holding Sites.Selected are reported as reaching unknown sites. Approve the sites on the **Sites** tab of the SharePoint Online source.
 
@@ -40,5 +41,5 @@ Each source's test or scan names the grant it is missing, so the **Sources** pag
 - **Agent 365** needs a Microsoft Agent 365 license with at least one agent package in the catalog. Without the license, ThreatHunting.Read.All lets the Microsoft Defender read list the same agents.
 - **Sign-in data** from Microsoft Entra ID needs Microsoft Entra ID P1.
 - **Purview audit log** needs Purview Audit (Standard) turned on for the tenant.
-- **Copilot Studio agents** exist only where somebody holds a Copilot Studio license, or Agent Builder in a Microsoft 365 Copilot tenant.
+- **Copilot Studio agents** exist only where somebody holds a Copilot Studio license, or Agent Builder in a Microsoft 365 Copilot tenant. A tenant with no Copilot Studio, Microsoft 365 Copilot, or paid Power Platform license shows Copilot Studio as "Not set up".
 - **Defender for Endpoint** needs Microsoft Defender for Endpoint, or Defender for Servers, with machines onboarded.

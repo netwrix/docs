@@ -26,7 +26,7 @@ A test reads the first thing a scan reads, with the stored credential. Its outco
 |--------------|---------------|------------|
 | The credential works. | The credential works and reaches what the scan reads first. | Nothing. Read any warning on the card as well. |
 | [platform] refused part of the read. Grant the permissions below and test again. | Part of what the scan reads was refused. The test lists each missing permission under the sentence. Where it has none to list, the sentence reads "The credential works, but [platform] refused part of what the scan reads." | Grant each listed permission, or the one the connector page names for this platform, then test again. |
-| Knowledge not read. Add the app as an application user with Agent Viewer. | The test read the Copilot Studio agents, and an environment doesn't admit the app as an application user. | Add the app as an application user with a role in each environment. On a source connected with Microsoft, use **Let 1Secure do it** on the "Power Platform application users" card in the Microsoft Copilot Studio drawer. |
+| Agent details not read. Use **Grant with my sign in** on the Power Platform line. | The test read the Copilot Studio agents, and an environment doesn't admit the app as an application user. | On the Power Platform line of the **Sources** page, select **Grant with my sign in**, or use **Let 1Secure do it** on the "Power Platform application users" card in the Microsoft Copilot Studio drawer. |
 | Your tenant consented to an older permission list. Reconnect with Microsoft to grant the rest. | The source is connected with Microsoft, and the registration asks for a permission your tenant has not consented to, for example one added since you connected. The permissions are named under it. | Open the Microsoft Entra ID source, click **Sign in with Microsoft** again and accept the permissions, then test again. |
 | The app registration doesn't ask for a permission this platform needs. | The source is connected with Microsoft, and a permission a platform needs wasn't granted by the consent, because the registration doesn't ask for it. The line under it says "The registration doesn't ask for [permissions]. Its owner adds them with admin consent." Signing in again grants nothing more, so no **Reconnect** is offered. | Ask the registration's owner to add the permissions it names, then test again. |
 | No credential is stored for this source. | No credential is stored for this source. | Open the source, click **Edit** and enter its settings. |
@@ -61,6 +61,7 @@ On any platform, the test can also end with one of these sentences.
 | Agent 365 refused access. Grant admin consent to CopilotPackages.Read.All again, then test again shortly. | The registration 1Secure reads with asks for the Agent 365 grants, and the tenant has not granted them admin consent, or has no Microsoft Agent 365 license. | Grant admin consent to the 1Secure registration again under **Enterprise applications**, where it shows under the name your directory gave it, then test again in a few minutes. |
 | Agent 365 refused access despite consent to CopilotPackages.Read.All. Check the license, or test again shortly. | The app holds the permission, and Microsoft still refused the catalog. Most often the tenant has no Microsoft Agent 365 license, or Microsoft has not yet applied the consent. Technical details carry the error code and message Microsoft returned. | Check the tenant's Microsoft Agent 365 license, and test again in a few minutes. If it fails again, send the Technical details to Netwrix Support, or connect Microsoft Defender for Endpoint, which lists the same agents. |
 | The tenant has no Microsoft Agent 365 license. | Microsoft opens the catalog only on a licensed tenant. | Get a Microsoft Agent 365 license. No permission fixes it. |
+| The tenant has not set up the Agent 365 catalog. | The catalog doesn't exist on this tenant. | Add a Microsoft Agent 365 license and publish an agent package to its catalog. |
 | The Agent 365 catalog didn't respond. Test again later. | The catalog didn't answer. | Test again later. |
 | Microsoft retired the Agent 365 catalog address 1Secure uses. Contact Netwrix Support. | Microsoft moved the catalog. | Contact Netwrix Support. |
 
@@ -81,14 +82,14 @@ These sentences appear when you come back from the first Microsoft sign-in of **
 |--------------|------------|
 | Microsoft didn't grant the permissions, so nothing was connected. If you canceled, sign in with Microsoft again. If Microsoft said an administrator must approve, a Global Administrator or Privileged Role Administrator must sign in. | Sign in again, as a Global Administrator or Privileged Role Administrator. |
 | Nothing connected because this tenant has no Defender for Endpoint. Use an app registration without it. | Click **Use an app registration instead** and connect your own app registration with the Microsoft Graph permissions only. Microsoft's own answer is under **Technical details**. |
-| Nothing connected. Ask a Global Administrator or Privileged Role Administrator to grant this. | Ask a Global Administrator or Privileged Role Administrator to sign in, or click **Request approval**. |
-| Request sent to your administrators. Return to Sources once approved. | Wait for an administrator to approve, then open **Sources**. No request button is offered, as the request is already sent. |
+| Nothing connected. Ask a Global Administrator or Privileged Role Administrator to grant this. | Ask a Global Administrator of your directory to sign in to 1Secure and connect Microsoft. A technician of a service provider who signs in through delegated administration can't connect yet. |
+| Request sent to your administrators. Return to Sources once approved. | Wait for an administrator to approve, then open **Sources**. |
 | The app is disabled. Ask an administrator to set Enabled for users to sign in. | Ask an administrator to turn the app back on, then sign in again. |
 | "Nothing connected because of a fault on our side. Send the Technical details to Netwrix Support." | Contact Netwrix Support with the **Technical details**. |
 | Nothing connected because you aren't assigned to the app. Ask an administrator to assign you. | Ask an administrator to assign you to the app, or to sign in themselves. |
 | Conditional Access blocked the sign in. Ask your administrator which device or place is allowed. | Sign in again from a device or location the policy allows. |
 | Nothing connected because a needed service is missing. Use an app registration without it. | Click **Use an app registration instead** and leave out the permissions of the service **Technical details** names. |
-| Nothing connected because your tenant blocks user consent. Ask a Global Administrator or Privileged Role Administrator. | Ask a Global Administrator or Privileged Role Administrator to sign in, or click **Request approval**. |
+| Nothing connected because your tenant blocks user consent. Ask a Global Administrator or Privileged Role Administrator. | Ask a Global Administrator of your directory to sign in to 1Secure and connect Microsoft. |
 | Nothing connected: this tenant has no [service]. Connect with an app registration instead. | Click **Use an app registration instead** and leave out that service's permissions. Microsoft refused the sign-in because the tenant doesn't have the service the page names: Dynamics 365, Power Apps, or Azure Service Management. |
 | Nothing connected. 1Secure connects to the worldwide Microsoft cloud only. | The account belongs to another Microsoft cloud, such as a government or China cloud. Sign in with an account of the worldwide cloud. |
 | Nothing connected because your account isn't in this tenant. Guests enter the tenant domain first. | Sign in with an account of the directory you mean to connect. A guest account types the tenant's domain first. |
@@ -124,7 +125,7 @@ These sentences appear when you come back from the first Microsoft sign-in of **
 
 Where Microsoft didn't sign the administrator in, the sentence can name Microsoft's error code in brackets. The page also shows Microsoft's own answer under **Technical details**. A refusal with a code that has no sentence of its own keeps the general sentence and adds "Microsoft error code: [code]" after it.
 
-**Request approval** is offered where an administrator's approval can help: you canceled, you aren't an administrator, or the tenant blocks people from consenting to apps. It isn't offered where the request was already sent, the app is disabled, the app has no reply address, you aren't assigned to the app, Conditional Access blocked the sign in, or a service isn't in the tenant.
+Where an administrator's approval is needed, because you aren't an administrator or the tenant blocks people from consenting to apps, a Global Administrator of your directory signs in to 1Secure and connects Microsoft. A technician of a service provider who signs in through delegated administration can't connect yet, so your own Global Administrator connects.
 
 ### Microsoft Entra AI Reader role
 
@@ -301,7 +302,7 @@ Each source in a scan ends with one of these sentences.
 | Results weren't saved because of a 1Secure fault. Scan again shortly. | The scan read the source, and 1Secure didn't accept or couldn't save its results. Where 1Secure recorded the reason, the source drawer shows it behind **Details**, the scan drawer under the source's sentence, and the **Scans** row's outcome tooltip as a support line. | Scan again in a few minutes. If it repeats, send that reason to Netwrix Support. |
 | Results weren't saved because of a 1Secure fault. Contact Netwrix Support. | 1Secure didn't accept this scan's results for your organization, and scanning again won't help. This sentence ends "Contact Netwrix Support", where the previous one ends "Scan again shortly". | Contact Netwrix Support. |
 | Results weren't saved. Scan again in a few minutes. | The results didn't reach 1Secure. The recorded reason, where there is one, is behind **Details**, as for "Results weren't saved because of a 1Secure fault. Scan again shortly." | Scan again in a few minutes. If it fails again, contact Netwrix Support. |
-| Out of memory. Scan again, and contact support if it repeats. | The scan ran out of memory. | Scan again. If it happens again, contact Netwrix Support. |
+| Out of memory. Scan again, and contact Netwrix Support if it repeats. | The scan ran out of memory. | Scan again. If it happens again, contact Netwrix Support. |
 | The scan couldn't start because of a fault in 1Secure. Contact Netwrix Support. | The scan's own settings couldn't be read. | Contact Netwrix Support. |
 | The scan took too long and was stopped. Nothing was saved from it. | The scan ran past its time limit. | Raise **Time per source** on **Settings**, then scan again. |
 | The scan was interrupted. Scan again. | The scan was stopped, for example by a restart of 1Secure. | Scan again. |
@@ -311,7 +312,7 @@ Each source in a scan ends with one of these sentences.
 | Scanning this platform isn't supported. | AI Security doesn't read this platform. | Nothing. The source stays listed. |
 | Not scanned because the credential was refused. Fix it and test again. | The scan left the source out, because its last test, or the last scan, was refused on the credential itself. A scan of every source tests it again first. | Enter the credential again with **Edit**, then test again. The next scan reads the source after the test passes. |
 | Not set up, followed by the reason | The tenant has nothing for this source to read: no Azure subscription, no license for the product, the product not set up on the tenant, or no Power Platform environment with a Dataverse database. The source counts as read, not failed, and its test reads **Not set up** too. Its last test isn't marked passed, so a scan of every source tests it again first. An Azure source reads this only where the administrator's Azure Reader sign in saw no subscription. | Nothing, unless you mean to add what the reason names. |
-| Not scanned because the last test found nothing to read. | The scan left the source out, because its last test found no Power Platform environment. | Make the 1Secure registration a Power Platform management application, or name the environments in the source's settings, then test again. |
+| Not scanned, as the last test found nothing to read. Open the source for the fix. | The scan left the source out, because its last test found the platform has nothing to read, such as no license or the product not set up on the tenant. A scan of every source tests it again first. | Open the source and read its test. Nothing, unless you mean to add what it names. |
 | Not scanned because the Microsoft Entra ID source is disabled. Enable it and scan. | The Microsoft Entra ID source this source reads with is turned off. | Turn it on and scan again. |
 | [Platform] refused the read. | The platform refused one of its reads, or didn't accept the credential. | Grant the permission or enter the credential named under it, then scan again. A refused source alone doesn't offer **Retry failed sources**, because only a grant fixes it. |
 | "[platform] failed on our side. The rest was read." | The read of one platform failed in 1Secure; the rest was read. | Scan again. If it fails again, contact Netwrix Support. |
@@ -323,7 +324,7 @@ A source that was never launched because of its credential shows the same senten
 
 ### What wasn't scanned
 
-A partly read source, one whose read stopped short, lists what it didn't read after "Not scanned:" and what to do after "To fix:". A source read to the end lists the same things as its things skipped, and still reads Succeeded. Each thing skipped shows as one short bullet with the thing and what to do, for example "File labels on a site: check Sites.Read.All".
+A partly read source, one whose read stopped short, lists what it didn't read after "Not scanned:" and what to do after "To fix:". A source read to the end lists the same things as its things skipped, and still reads Succeeded. Each thing skipped shows as one short bullet with the thing and what to do, for example "App roles and owners: add Application.Read.All".
 
 The tables in this section list every pair a scan can show, grouped by platform. They give the full sentences, what wasn't read and what to do, which are behind the source's **Details**.
 
@@ -357,6 +358,8 @@ On a source connected with your own app registration, every sentence that names 
 | The rest of a long list, because the scanner reached the most it reads in one scan. | Set Run scans to Every day under Settings, Scan schedule, so each scan reads a shorter span. |
 | Part of the results, which were read but didn't reach 1Secure in time. | Raise Time per source under Settings, then scan again. |
 | Anything from this source, because it didn't answer. | Test the connection again. |
+| Anything from this source, because an address in its settings can't be used. | Correct the address in the source's settings, then scan again. |
+| Anything from this source, because [Platform] slowed the scan down. | 1Secure tries again shortly. |
 | How many files each agent can reach, which shows as unknown. | None. |
 | The Azure resources under a subscription or resource group an agent holds a role on. | Give the app registration the Reader role on the subscriptions it scans. |
 
@@ -455,7 +458,7 @@ A platform that refuses a read with no pair of its own names who refused and wha
 | Microsoft agent runs, because Microsoft turned away the scanner's audit search. | Send the support details to Netwrix Support, because 1Secure may need an update. |
 | Any sensitivity label, because the app registration lacks InformationProtectionPolicy.Read.All. | In the Microsoft Entra admin center, open App registrations, the 1Secure registration, then API permissions, and add InformationProtectionPolicy.Read.All as an application permission and grant admin consent. |
 | Any sensitivity label, because Microsoft didn't answer. | Wait for the next scan, which reads the labels again. |
-| The sensitivity labels on the files of a site an agent reaches, because the site refused a read that needs Sites.Read.All. | In the Microsoft Entra admin center, open App registrations, the 1Secure registration, then API permissions, and check that Sites.Read.All is added as an application permission with admin consent. |
+| The sensitivity labels on the files of a site an agent reaches, because the site refused the read. | In the Microsoft Entra admin center, open App registrations, the 1Secure registration, then API permissions, and check that Sites.Read.All is added as an application permission with admin consent. |
 | The labels on some files of a site, because search couldn't count them. | Ensure Microsoft Search is available to the app registration. |
 | The default label of some sites' document libraries and their groups, because the app registration lacks Sites.Read.All. | In the Microsoft Entra admin center, open App registrations, the 1Secure registration, then API permissions, and check that Sites.Read.All is added as an application permission with admin consent. |
 | The labels on the Microsoft 365 groups behind the sites agents reach, because the app registration lacks Group.Read.All. | In the Microsoft Entra admin center, open App registrations, the 1Secure registration, then API permissions, and add Group.Read.All as an application permission and grant admin consent. |
@@ -478,7 +481,7 @@ The fix is the same for each: wait for the next scan, which reads the same days 
 
 **Activity read on by follow on scans.** Where a scan stopped the sign in or audit read partway and the source says "which the next scans read", 1Secure starts follow-on scans, automatic scans that read the rest of the activity. The first starts as soon as no other scan is running, and they continue until the log is read to the end. See [Scans](/docs/1secureaisecurity/admin/scans.md#activity-read-over-more-than-one-scan). Do nothing unless the source still says it after the follow-on scans stop; then scan it again, or wait for the schedule.
 
-**Site names hidden in reports.** Microsoft 365 hides user, group, and site names in its usage reports by default, so those sites have no owner or file count from the report. Turning that off would close the gap, but it isn't recommended: it shows real names in every report to every admin in the tenant, and Microsoft records the change as an audit event. To turn it off anyway, open the Microsoft 365 admin center, select **Settings > Org settings > Services > Reports**, and clear **Conceal user, group, and site names in all reports**.
+**Site names hidden in reports.** Microsoft 365 hides user, group, and site names in its usage reports by default, so those sites have no owner or file count from the report. Turning that off would add those owners and file counts, but it isn't recommended: it shows real names in every report to every admin in the tenant, and Microsoft records the change as an audit event. To turn it off anyway, open the Microsoft 365 admin center, select **Settings > Org settings > Services > Reports**, and clear **Conceal user, group, and site names in all reports**.
 
 **Azure, Power Platform, Copilot Studio and Defender for Endpoint**
 
@@ -520,16 +523,18 @@ The fix is the same for each: wait for the next scan, which reads the same days 
 | The Copilot Studio agents in this tenant, because the 1Secure registration doesn't hold the AI Reader role. | In the Microsoft Entra admin center, open Roles and administrators, then AI Reader, and assign the role to the 1Secure registration. |
 | Part of the Copilot Studio inventory, because a query answered unexpectedly. | Scan again, and if it happens again, send the support details to Netwrix Support. |
 | [count] more [Copilot Studio agents, Power Platform environments or Power Automate flows], past the most one scan lists. The count is the scan's own, and reads More where Microsoft gave none. | Scan again, and if it happens again, send the support details to Netwrix Support. |
-| The knowledge sources of the Copilot Studio agents in a Power Platform environment. | Have a System Administrator of that environment add the 1Secure registration as an application user with a role that reads bot components, such as the built in Agent Viewer role. |
+| The knowledge sources of the Copilot Studio agents in a Power Platform environment. | On the Power Platform line of the Sources page, select **Grant with my sign in**. |
+| The instructions, knowledge, and tools of the Copilot Studio agents in an environment, because 1Secure can't read them there. | On the Power Platform line of the Sources page, select **Grant with my sign in** again. |
+| Copilot Studio agents, because Copilot Studio isn't set up on the tenant. | Nothing to do unless you use Copilot Studio. Then grant Power Platform access and test again. |
 | Who the owners and creators of the Copilot Studio agents in an environment are in the directory. | Give the 1Secure registration user in that environment Read on the User table. |
-| Who the Copilot Studio agents in an environment are shared with. | Give the 1Secure registration user in that environment Read on the Copilot table, at Business Unit level or deeper. |
-| Who the Copilot Studio agents in an environment are shared with, because the security role of the 1Secure registration user there lacks a privilege the read needs. | Add Read on the Copilot table at Business Unit level or deeper and Read on the Team table to the security role of the 1Secure registration user in that environment. |
+| Who the Copilot Studio agents in an environment are shared with. | Give the 1Secure registration user in that environment Read on the Agent table (bot), at Business Unit level or deeper. |
+| Who the Copilot Studio agents in an environment are shared with, because the security role of the 1Secure registration user there lacks a privilege the read needs. | On the Power Platform line of the Sources page, select **Grant with my sign in** again. |
 | Which Microsoft 365 group or Teams team stands behind each Copilot Studio agent shared with a team in an environment. | Give the 1Secure registration user in that environment Read on the Team table. |
 | The names and member counts of the Microsoft 365 groups and Teams teams Copilot Studio agents are shared with, because the app registration lacks GroupMember.Read.All. | In the Microsoft Entra admin center, open App registrations, the 1Secure registration, then API permissions, and add GroupMember.Read.All as an application permission and grant admin consent. Group.Read.All covers this read too. |
 | Who the Copilot Studio agents in an environment are shared with, past the number a scan asks about. | None. |
 | The environment of some Copilot Studio agents, so those with no knowledge source show unknown reach. | Make the 1Secure registration a Power Platform management application so the environment is named. |
 | The AI tools on your machines, because Defender refused the read. | Check that Defender for Endpoint is licensed and onboarded, and that ThreatHunting.Read.All is granted. |
-| The AI tools on your machines, because Defender for Endpoint isn't licensed or onboarded. | Onboard your machines, or leave this off. |
+| The AI tools on devices, because Defender for Endpoint isn't licensed or onboarded. | To see the AI tools on devices, onboard them to Microsoft Defender for Endpoint. |
 | The AI tools installed on the machines Microsoft Defender watches, because the read didn't complete. | Wait for the next scan, which reads it again. |
 | Who signs in to each machine, because the app registration lacks the Microsoft Graph permission ThreatHunting.Read.All, so AI tools are listed without people. | In the Microsoft Entra admin center, open App registrations, the 1Secure registration, then API permissions, and add the Microsoft Graph permission ThreatHunting.Read.All as an application permission and grant admin consent. |
 | Who signs in to some machines, because their sign ins passed the most Microsoft Defender answers for one query. | None. |
@@ -604,15 +609,15 @@ The fix is the same for each: wait for the next scan, which reads the same days 
 | When each Okta API token and service app was last used, because this scan skipped the System Log. | None. |
 | The people and groups assigned to each Okta app, because this scan skipped assignments. | None. |
 | The Okta app, user, or API token [item]. | Check that app, user, or API token in Okta, then scan again. |
-| The members of this GitHub organization, so its agents and owners aren't listed. | Connect a classic personal access token with read:org owned by an organization owner, or install the 1Secure GitHub App on this organization. |
+| The members of this GitHub organization, so its agents and owners aren't listed. | Connect a classic personal access token with read:org owned by an organization owner. |
 | Part of this GitHub organization, because GitHub slowed the scanner down. | Wait for the next scan, which reads it again. |
 | One GitHub read, because GitHub retired the API version the scanner uses. | Send the support details to Netwrix Support, because 1Secure needs an update. |
-| The organization's default repository permission and two factor requirement. | Grant the token admin:org, or give the GitHub App the Administration read-only organization permission. |
-| The fine-grained personal access tokens with access to this GitHub organization. | Install the 1Secure GitHub App on this organization with the Personal access tokens read-only permission. |
+| The organization's default repository permission and two factor requirement. | Grant the token admin:org. |
+| The fine-grained personal access tokens with access to this GitHub organization. | Review them under Personal access tokens in the organization's GitHub settings. |
 | Fine-grained personal access tokens on this GitHub organization, because GitHub answers alike when the token policy was never set. | Check the fine-grained token policy in the organization's GitHub settings. |
 | Classic personal access tokens on this GitHub organization, because GitHub lists them only with SAML single sign-on. | Restrict classic personal access tokens in the organization's GitHub settings. |
-| The organization's Actions policy and self-hosted runners. | Grant the token admin:org, or give the GitHub App the Administration read-only organization permission. |
-| The GitHub Apps installed on this organization and the repositories they reach. | Grant admin:org to a token owned by an organization owner, or give the GitHub App the Administration read-only organization permission. |
+| The organization's Actions policy and self-hosted runners. | Grant the token admin:org. |
+| The GitHub Apps installed on this organization and the repositories they reach. | Grant admin:org to a token owned by an organization owner. |
 | The organization's OpenID Connect subject claim template. | Grant the token read:org. |
 | The organization's OpenID Connect subject claim template, because GitHub answered not found. | Confirm the token holds read:org, then scan again. |
 | The Copilot seats in this GitHub organization. | Grant read:org or manage_billing:copilot to a token owned by an organization owner. |
@@ -621,8 +626,8 @@ The fix is the same for each: wait for the next scan, which reads the same days 
 | What each GitHub App, token, and Actions identity did in this organization, who installed each App, and who changed a coding agent's MCP servers. | Grant read:audit_log to a token owned by an organization owner on GitHub Enterprise Cloud. |
 | Who changed the MCP servers of a repository's Copilot coding agent in this organization. | Grant read:audit_log to a token owned by an organization owner on GitHub Enterprise Cloud. |
 | Who installed each GitHub App in this organization. | Grant read:audit_log to a token owned by an organization owner on GitHub Enterprise Cloud. |
-| The workflow runs in this organization's repositories. | Grant the token the repo scope, or give the GitHub App the Actions read-only repository permission. |
-| The deploy keys on this organization's repositories. | Grant the token the repo scope, or give the GitHub App the Administration read-only repository permission. |
+| The workflow runs in this organization's repositories. | Grant the token the repo scope. |
+| The deploy keys on this organization's repositories. | Grant the token the repo scope. |
 | The email addresses of the organization's members, so owners show by GitHub login. | Turn on SAML single sign-on or SCIM provisioning in GitHub Enterprise Cloud, or ask members to make a work email public. |
 | The GitHub member, token, or repository [item]. | Check the token's access to that member, token, or repository, then scan again. |
 | Anything from this Falcon tenant, because Falcon refused the API client. | Check the client ID, client secret and base URL in the source's settings. |
@@ -647,7 +652,7 @@ The fix is the same for each: wait for the next scan, which reads the same days 
 | What a Tanium sensor reads on endpoints whose operating system it doesn't support. | None. |
 | The AI tool events on Tanium endpoints that didn't answer in time. | Wait for the next scan, which asks the endpoints again. |
 | Anything from this Endpoint Protector server, because it didn't accept the API client. | Check the server address, client ID and client secret in the source's settings. |
-| The computers and users on this Endpoint Protector server. | Ask Netwrix Support to turn on the REST API Preview for this server and allow 1Secure's addresses. |
+| The computers and users on this Endpoint Protector server. | Ask Netwrix Support to turn on the REST API Preview for this server. |
 | The AI tools people sent data to, from this server's content aware protection log. | Ask Netwrix Support to let the API client read the logs on this server. |
 | Anything from this Endpoint Protector server, because it didn't answer. | Check that the server address in the source's settings is right, then scan again. |
 | The users on this Endpoint Protector server, so the people who used AI tools are named without their email address. | Scan again, and ask Netwrix Support to let the API client read the users on this server if it happens again. |
@@ -773,13 +778,10 @@ The **Overview** and the source rows also say how each source's last scan went.
 
 | What you see | What to do |
 |--------------|------------|
-| No scan has succeeded | Open this source's health status to read the error, then fix the credentials it names. |
 | Partly scanned | Open this source to see what the last scan couldn't read and how to fix it. |
 | Partly scanned, retries next scan | Nothing. The platform slowed the read down, and the next scan reads it again. |
 | Partly scanned, no scan scheduled | The platform slowed the read down. Scan again, or set a scan schedule under **Settings**. |
 | Not set up   | Nothing, unless you mean to add what the reason names. |
-| Connected, not scanned | Nothing is counted for this source until its first scan finishes. |
-| Scanning now | The numbers shown for this source are from the previous scan. |
 
 ### Connecting a source
 

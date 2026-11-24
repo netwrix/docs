@@ -12,6 +12,7 @@ In these steps you connect the platforms you chose. On **Connect Microsoft**, on
 
 - Sign in to 1Secure as an organization administrator.
 - Have a Global Administrator or Privileged Role Administrator account of the Microsoft directory.
+- Have a Global Administrator of your own directory sign in to 1Secure and connect Microsoft. A technician of a service provider who signs in through delegated administration can't connect Microsoft yet.
 
 ## Connect the Microsoft sources
 
@@ -79,8 +80,8 @@ Until Microsoft Entra ID is connected, the footer offers **Skip for now**, which
 | What you see | What to do |
 |--------------|------------|
 | "The Microsoft window closed early, so nothing connected. Sign in again." | Click **Sign in with Microsoft** again. |
-| "Nothing connected. You can sign in with Microsoft again." | Click **Sign in with Microsoft** again, or click **Request approval** to ask an administrator to accept. |
-| "Nothing connected. Ask a Global Administrator or Privileged Role Administrator to grant this." | Ask a Global Administrator or Privileged Role Administrator to sign in, or click **Request approval**. |
+| "Nothing connected. You can sign in with Microsoft again." | Click **Sign in with Microsoft** again. If you aren't a Global Administrator, ask one to sign in to 1Secure and connect Microsoft. |
+| "Nothing connected. Ask a Global Administrator or Privileged Role Administrator to grant this." | Ask a Global Administrator of your directory to sign in to 1Secure and connect Microsoft. A technician of a service provider who signs in through delegated administration can't connect yet. |
 | "Request sent to your administrators. Return to Sources once approved." | Wait for an administrator to approve, then come back to **Sources**. |
 | "The sign in didn't finish. Select Try again to start it again." | In the small window, click **Try again**. |
 | "Not connected because sign in started in another tab. Sign in with Microsoft again from Sources." | Open **Sources**, open Microsoft Entra ID, and click **Sign in with Microsoft** again. |

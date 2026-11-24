@@ -26,7 +26,7 @@ The cards of the first three lines each say what the line grants and who can gra
 3. Clear any you want to leave out, and click **Grant on these**.
 4. Read the line's status. It reads **Granted**, **Applying** while Microsoft applies a new role, or, for Power Platform, how many environments took 1Secure, for example "2 of 3".
 
-For fifteen minutes after **Sign in and consent**, 1Secure makes the **Microsoft Entra AI Reader role** grant with that same sign-in, so no Microsoft window opens for it. 1Secure keeps that sign-in only until the grants are recorded. Where the time has passed, or Microsoft needs to ask you something more, a small Microsoft window opens for the grant. **Azure Reader roles** and **Power Platform application user** open a small Microsoft window that asks for their own service alone, unless you consented to that service before.
+For fifteen minutes after **Sign in and consent**, 1Secure makes the **Microsoft Entra AI Reader role** grant with that same sign-in, so no Microsoft window opens for it. 1Secure keeps that sign-in only until the grants are recorded. Where the time has passed, or Microsoft needs to ask you something more, a small Microsoft window opens for the grant. **Azure Reader roles** opens a small Microsoft window that asks for its own service alone, unless you consented to that service before. **Power Platform application user** opens a small Microsoft window that always shows Microsoft's consent for Power Platform and Dynamics 365.
 
 Each of these cards also offers these options:
 
@@ -43,9 +43,13 @@ What each grant does:
 |------|--------------|
 | Azure Reader roles | An account with Owner or User Access Administrator on each subscription you select. |
 | Microsoft Entra AI Reader role | A Privileged Role Administrator or Global Administrator. |
-| Power Platform application user | A Power Platform administrator who is also a System Administrator in each environment you select. In the Power Platform admin center, open each environment, then **Membership**, then **System Administrators**, and click **Add me** first, because an administrator isn't a member of an environment until added. |
+| Power Platform application user | A Power Platform administrator who is also a System Administrator in each environment you select. The card says "Needs Power Platform administrator. In each environment's Membership, use Add me to become System Administrator." In the Power Platform admin center, open each environment, then **Membership**, then **System Administrators**, and click **Add me** first, because an administrator isn't a member of an environment until added. |
 
-Where Power Platform added 1Secure in only some environments, the card says so, for example "Added to 2 of 3 environments.", and names each environment that didn't take it, such as "Power Platform administrators use Add me under Membership in [environment], and others ask a System Administrator.", with **How to become a System Administrator**. After you are added, click **Grant again**, or click **Continue without it**.
+Where Microsoft needs a consent from your directory before 1Secure can read the environments, each environment in the list says "Needs your consent", and the card says "Microsoft needs your consent before 1Secure can read these environments." Click **Give consent**. A Microsoft window shows the consent, and the card lists the environments again after it. Where the consent isn't given, the card says "Consent was not given. A Global Administrator can give it here."
+
+An environment your account can't access says "No access for your account". Where your account can't access any of them yet, the card says "Microsoft hasn't given access to these environments yet. A new role or consent can take about 10 minutes. Then select Check again." Click **Check again** to list them again.
+
+Where Power Platform added 1Secure in only some environments, the card says so, for example "Added to 2 of 3 environments.", and names each environment that didn't take it, such as "Your account isn't a System Administrator in [environment].", with a link to open each one in Power Platform and "In Membership, select Add me while signed in as this account, then Grant again." After you are added, click **Grant again**, or click **Continue without it**.
 
 ## While a role applies
 
@@ -58,7 +62,7 @@ The **SharePoint sites** line asks "How far should 1Secure look into SharePoint 
 - **Ask me each time.** Marked **Recommended** and chosen to start with: "1Secure asks before it reads each site an agent uses." It records **Selected sites** with no window, and the line reads **Asks per site**.
 - **Read every site now.** "1Secure reads any site an agent uses, with no prompts. Grants Sites.FullControl.All." It opens a Microsoft sign-in.
 
-Click **Save choice**, or **Decide later**, which leaves the line open without holding **Continue** back. The card says "Change it later under Sources. Reading every site needs a Global Administrator or Privileged Role Administrator."
+Click **Save choice**, or **Decide later**, which leaves the line open without holding **Continue** back. **Continue** in the footer saves the selected choice, as **Save choice** does. The card says "Change it later under Sources. Reading every site needs a Global Administrator or Privileged Role Administrator."
 
 ## When every line is answered
 

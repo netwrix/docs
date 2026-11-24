@@ -47,7 +47,7 @@ const ALL_PRODUCTS = [
   {
     id: '1secure',
     name: '1Secure',
-    description: 'Cloud-based security monitoring and compliance',
+    description: 'SaaS application that collects data from on-premises and cloud environments and reports on changes such as account and group membership changes',
     path: 'docs/1secure',
     categories: ['Data Security Posture Management (DSPM)'],
     icon: '',
@@ -83,7 +83,7 @@ const ALL_PRODUCTS = [
   {
     id: 'accessanalyzer',
     name: 'Access Analyzer',
-    description: 'Analyze and audit file system permissions',
+    description: 'Automate collection and analysis of data across files, directories, and other critical IT assets to audit access and permissions (formerly Enterprise Auditor)',
     path: 'docs/accessanalyzer',
     categories: ['Data Security Posture Management (DSPM)', 'Identity Threat Detection & Response (ITDR)'],
     icon: '',
@@ -113,7 +113,7 @@ const ALL_PRODUCTS = [
   {
     id: 'accessinformationcenter',
     name: 'Access Information Center',
-    description: 'Centralized access information management',
+    description: 'Web application for self-service access requests, resource ownership, access reviews, and resource audit reports built on Access Analyzer data',
     path: 'docs/accessinformationcenter',
     categories: ['Other'],
     icon: '',
@@ -136,7 +136,7 @@ const ALL_PRODUCTS = [
   {
     id: 'activitymonitor',
     name: 'Activity Monitor',
-    description: 'Track user activities across IT infrastructure',
+    description: 'Deploy agents that monitor activity in real time and send event data to other Netwrix products for reporting and alerting',
     path: 'docs/activitymonitor',
     categories: ['Other'],
     icon: '',
@@ -177,7 +177,7 @@ const ALL_PRODUCTS = [
   {
     id: 'auditor',
     name: 'Auditor',
-    description: 'Comprehensive IT infrastructure auditing',
+    description: 'Visibility platform for user behavior analysis and risk mitigation across changes, configurations, and access in hybrid IT environments',
     path: 'docs/auditor',
     categories: ['Directory Management', 'Data Security Posture Management (DSPM)'],
     icon: '',
@@ -223,7 +223,7 @@ const ALL_PRODUCTS = [
   {
     id: 'customer',
     name: 'Customer Portal & Training Guide',
-    description: 'Access custsomer resources and training materials',
+    description: 'Access customer resources and training materials',
     path: 'docs/customer',
     categories: ['Other'],
     icon: '',
@@ -239,7 +239,7 @@ const ALL_PRODUCTS = [
   {
     id: 'dataclassification',
     name: 'Data Classification',
-    description: 'Classify and protect sensitive data',
+    description: 'Identify and classify important and sensitive data across enterprise content to reduce risk',
     path: 'docs/dataclassification',
     categories: ['Data Security Posture Management (DSPM)'],
     icon: '🏷️',
@@ -268,7 +268,7 @@ const ALL_PRODUCTS = [
   {
     id: 'directorymanager',
     name: 'Directory Manager',
-    description: 'Active Directory group management',
+    description: 'Automate group, user, and password management in Active Directory and Microsoft Entra ID',
     path: 'docs/directorymanager',
     categories: ['Identity Management', 'Directory Management'],
     icon: '',
@@ -297,7 +297,7 @@ const ALL_PRODUCTS = [
   {
     id: 'policypak',
     name: 'PolicyPak',
-    description: 'Group Policy management and enforcement',
+    description: 'Endpoint management software that secures end users and enforces policy on desktops and laptops',
     path: 'docs/policypak',
     categories: ['Endpoint Management'],
     icon: '',
@@ -313,7 +313,7 @@ const ALL_PRODUCTS = [
   {
     id: 'endpointprotector',
     name: 'Endpoint Protector',
-    description: 'Comprehensive endpoint security',
+    description: 'Data loss prevention for endpoints: device control, content-aware protection, eDiscovery, and enforced encryption',
     path: 'docs/endpointprotector',
     categories: ['Endpoint Management'],
     icon: '',
@@ -330,7 +330,7 @@ const ALL_PRODUCTS = [
   {
     id: 'identitymanager',
     name: 'Identity Manager',
-    description: 'User provisioning and management',
+    description: 'Identity governance and administration (IGA): manage identities, assign entitlements across systems, and check that assignments keep complying with policy (formerly Usercube)',
     path: 'docs/identitymanager',
     categories: ['Identity Management'],
     icon: '',
@@ -453,7 +453,7 @@ const ALL_PRODUCTS = [
   {
     id: 'passwordsecure',
     name: 'Password Secure',
-    description: 'Secure password management',
+    description: 'Enterprise password manager for passwords and other security-relevant data such as documents and certificates',
     path: 'docs/passwordsecure',
     categories: ['Identity Management'],
     icon: '',
@@ -570,7 +570,7 @@ const ALL_PRODUCTS = [
   {
     id: 'platgovnetsuite',
     name: 'Strongpoint for NetSuite',
-    description: 'NetSuite governance and compliance',
+    description: 'NetSuite SuiteApp that catalogs customizations, tracks changes, and keeps documentation up to date automatically',
     path: 'docs/platgovnetsuite',
     categories: ['Identity Management'],
     icon: '',
@@ -602,7 +602,7 @@ const ALL_PRODUCTS = [
   {
     id: 'platgovsalesforce',
     name: 'Strongpoint for Salesforce',
-    description: 'Salesforce governance and compliance',
+    description: 'Catalogs Salesforce customizations, tracks changes, and keeps documentation up to date automatically',
     path: 'docs/platgovsalesforce',
     categories: ['Identity Management'],
     icon: '',
@@ -634,7 +634,7 @@ const ALL_PRODUCTS = [
   {
     id: 'privilegesecure',
     name: 'Privilege Secure',
-    description: 'Privileged access management',
+    description: 'Just-in-time, just-enough privileged access for administrators and help desk staff, without standing privileged accounts',
     path: 'docs/privilegesecure',
     categories: ['Privileged Access Management (PAM)'],
     icon: '',
@@ -664,7 +664,7 @@ const ALL_PRODUCTS = [
   {
     id: 'privilegesecurediscovery',
     name: 'Privilege Secure for Discovery',
-    description: 'Privileged access management',
+    description: 'Discover privileged accounts on Windows and Linux systems and grant just-in-time access (formerly Remediant SecureONE)',
     path: 'docs/privilegesecurediscovery',
     categories: ['Privileged Access Management (PAM)'],
     icon: '',
@@ -706,7 +706,7 @@ const ALL_PRODUCTS = [
   {
     id: 'identityrecovery',
     name: 'Identity Recovery',
-    description: 'Identity backup and recovery',
+    description: 'Roll back and recover Active Directory objects, attributes, domain controllers, or whole forests to a known good state',
     path: 'docs/identityrecovery',
     categories: ['Identity Threat Detection & Response (ITDR)'],
     icon: '',
@@ -730,7 +730,7 @@ const ALL_PRODUCTS = [
   {
     id: 'threatmanager',
     name: 'Threat Manager',
-    description: 'Advanced threat detection and response',
+    description: 'Detect and respond to abnormal behavior and advanced attacks against Active Directory and file systems',
     path: 'docs/threatmanager',
     categories: ['Identity Threat Detection & Response (ITDR)'],
     icon: '',
@@ -765,7 +765,7 @@ const ALL_PRODUCTS = [
   {
     id: 'threatprevention',
     name: 'Threat Prevention',
-    description: 'Proactive threat prevention',
+    description: 'Real-time protective layer around Active Directory, Exchange, and file systems that blocks risky activity',
     path: 'docs/threatprevention',
     categories: ['Identity Threat Detection & Response (ITDR)'],
     icon: '',
