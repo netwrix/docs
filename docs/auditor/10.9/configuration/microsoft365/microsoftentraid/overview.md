@@ -61,6 +61,7 @@ refreshTokensValidFromDateTime,signInSessionsValidFromDateTime,id
 **NOTE:** Additional user data is collected (requires optional permissions):
 - **Risk state** - Collected from Microsoft Entra ID Protection to identify users flagged as at-risk
 - **Authentication methods** - Registered authentication method types for each user
+- **Directory role assignments** - Active and eligible role assignments held by users
 
 Groups properties:
 
@@ -123,3 +124,7 @@ ServicePrincipals properties:
 | All SKUs Collected via MS Graph on endpoint _/subscribedSkus_                                                                                                            | Snapshot for SKUs Used in SSRS report "Entra ID roles and their members"                                                                                    |
 | User authentication methods Collected via MS Graph on endpoint _/users/\{id\}/authentication/methods_                                                                      | Snapshot for user authentication methods. Collects registered authentication method types for each user.                                                   |
 | Risky users Collected via MS Graph on endpoint _/identityProtection/riskyUsers_                                                                                          | Snapshot for risky users. Collects risk state attribute to identify users flagged as risky by Microsoft Entra ID Protection.                               |
+| Active role assignments Collected via MS Graph (beta) on endpoint _/roleManagement/directory/roleAssignmentScheduleInstances_ (tenants with a Microsoft Entra ID Premium P2 license) | Snapshot for active directory role assignments. Used in the "Users with privileged role assignments" risk and its drill-down report. |
+| Eligible role assignments Collected via MS Graph (beta) on endpoint _/roleManagement/directory/roleEligibilityScheduleInstances_ (tenants with a Microsoft Entra ID Premium P2 license) | Snapshot for eligible directory role assignments. Used in the "Users with privileged role assignments" risk and its drill-down report. |
+| Role assignments in tenants without a Microsoft Entra ID Premium P2 license Collected via MS Graph on endpoints _/roleManagement/directory/roleAssignments_ and _/roleManagement/directory/roleDefinitions_ | Snapshot for active directory role assignments, role names, and scopes. Used in the "Users with privileged role assignments" risk and its drill-down report. |
+| Privileged roles Collected via MS Graph (beta) on endpoint _/roleManagement/directory/roleDefinitions?$filter=isPrivileged eq true_ | Identifies the privileged roles. Used in the "Users with privileged role assignments" risk and its drill-down report. |
