@@ -90,7 +90,7 @@ From the customization record:
   Using cross match, the first Saved Search is for all transactions by an administrator. The second
   Saved Search is an employee search using the administrator role. Cross Match returns the
   intersection of those two searches, showing only the transactions performed by administrators.
-- Check the **Large Control** box if the expected results for this control are over 1000.
+- Set **Control Type** to **Large Control** if the expected results for this control are over 1000.
 - Set other optional values.
 
 5. **Save** the record.
