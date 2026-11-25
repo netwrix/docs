@@ -1,16 +1,21 @@
 ---
-title: "Import Additional Owners"
-description: "Import Additional Owners"
+title: "Import additional group owners in Directory Manager"
+description: "Add additional owners to a group by importing a text, CSV, Excel, or XML file with the Import Additional Owners wizard."
+keywords:
+  - "import additional owners"
+  - "group owners import"
+  - "Import Additional Owners wizard"
+  - "import file formats"
 sidebar_position: 160
 ---
 
-# Import Additional Owners
+# Import additional group owners in Directory Manager
 
-Use the **Import Additional Owners** wizard to specify additional owners for a group using
-an external file.
+Use the **Import Additional Owners** wizard to specify additional owners for a group using an
+external file.
 
-The wizards search the directory for objects listed in the external file, and if found, adds them as
-additional owners to the group.
+The wizard searches the directory for objects listed in the external file and, if found, adds them
+as additional owners to the group.
 
 Supported file formats are:
 
@@ -48,11 +53,11 @@ launch the **Import Additional Owners** wizard.
 
     - **Resolved Items:**
 
-        Shows all objects that will be successfully processed.
+        Shows all objects that are successfully processed.
 
     - **Unresolved Items:**
 
-        Shows objects that will not be processed because a matching object couldn't be found in the
+        Shows objects that aren't processed because a matching object couldn't be found in the
         destination directory.
 
     - **Ambiguous Items:**

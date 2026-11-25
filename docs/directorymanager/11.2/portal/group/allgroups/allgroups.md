@@ -1,22 +1,28 @@
 ---
-title: "All Groups"
-description: "All Groups"
+title: "View and Manage All Groups in Directory Manager"
+description: "View every group in the identity store, then update, expire, renew, join, move, or delete groups and filter the list."
+keywords:
+  - All Groups
+  - group management
+  - Set Expiration Policy
+  - Transfer Ownership
+  - group filters
 sidebar_position: 30
 ---
 
-# All Groups
+# View and Manage All Groups in Directory Manager
 
 This tab lists all groups defined in the identity store including all active groups:
 
-- [Private Groups](/docs/directorymanager/11.2/portal/group/allgroups/privategroups.md)
-- [Semi Private Groups](/docs/directorymanager/11.2/portal/group/allgroups/semiprivategroups.md)
-- [Public Groups](/docs/directorymanager/11.2/portal/group/allgroups/publicgroups.md)
-- [Expired Groups](/docs/directorymanager/11.2/portal/group/allgroups/allexpiredgroups.md)
-- [Expiring Groups](/docs/directorymanager/11.2/portal/group/allgroups/allexpiringgroups.md)
-- [Smart Groups](/docs/directorymanager/11.2/portal/group/allgroups/allsmartgroups.md)
-- [Dynasties](/docs/directorymanager/11.2/portal/group/allgroups/alldynasties.md)
-- [Password Expiry Groups](/docs/directorymanager/11.2/portal/group/allgroups/passwordexpirygroups.md)
-- [Teams](/docs/directorymanager/11.2/portal/group/allgroups/teams.md) (for Microsoft Entra ID based identity store)
+- [View Private Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/allgroups/privategroups.md)
+- [View Semi-Private Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/allgroups/semiprivategroups.md)
+- [View Public Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/allgroups/publicgroups.md)
+- [View Expired Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/allgroups/allexpiredgroups.md)
+- [View Expiring Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/allgroups/allexpiringgroups.md)
+- [View Smart Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/allgroups/allsmartgroups.md)
+- [View Dynasties in Directory Manager](/docs/directorymanager/11.2/portal/group/allgroups/alldynasties.md)
+- [View Password Expiry Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/allgroups/passwordexpirygroups.md)
+- [View Microsoft Teams Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/allgroups/teams.md) (for Microsoft Entra ID based identity store)
 
 Viewing all groups from the directory source may slow down the loading of groups in the view,
 especially when there are more than 100 groups.
@@ -24,15 +30,15 @@ especially when there are more than 100 groups.
 **You can:**
 
 - Manually update the membership of a Smart Group using the **Update** command. You can also view
-  update details on **Processing Object (s)** wizard. Click **OK** once done.
+  update details on the **Processing Object (s)** wizard. Click **OK** once done.
 
-    If you click **Background**, the update runs in the background and will show in the **Background
+    If you click **Background**, the update runs in the background and shows in the **Background
     Tasks** tab.
 
-- View and modify the [Group Properties](/docs/directorymanager/11.2/portal/group/properties/overview.md) of a group.
-- [Expire a group manually ](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupexpiryfunction.md#expire-a-group-manually). After expiring
-  the group, it will be listed in **Expired Group** list.
-- Select a smart group and click **Renew** on the toolbar; this re-applies the expiry policy of the
+- View and modify the [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.2/portal/group/properties/overview.md) of a group.
+- [Expire a group manually](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupexpiryfunction.md#expire-a-group-manually). After you expire
+  the group, it appears in the **Expired Group** list.
+- Select a Smart Group and click **Renew** on the toolbar; this re-applies the expiry policy of the
   group starting from today, thus renewing the group.
 - Join a group as a [Join a group temporarily](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupjoinleave.md#join-a-group-temporarily) or
   [Join a group permanently](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupjoinleave.md#join-a-group-permanently)
@@ -45,16 +51,16 @@ especially when there are more than 100 groups.
 
     Select **Other** to remove other users from the group.
 
-- To Join/Leave the group, you can also click **Want to write reason to group owner?** and state
+- To join or leave the group, you can also click **Want to write reason to group owner?** and state
   the reason for joining or leaving the group for the group owner.
-- Update the security type of a group using **Set Security Type** option. You can select one
+- Update the security type of a group using the **Set Security Type** option. You can select one
   of the following security types:
 
     - Public
     - Semi Private
     - Private
 
-- Update the expiration policy of a group using **Set Expiration Policy** option.
+- Update the expiration policy of a group using the **Set Expiration Policy** option.
 
     - Never Expire
     - Expire Every 30 Days
@@ -65,21 +71,21 @@ especially when there are more than 100 groups.
     - Expire Every Year
     - Other
 
-- Set owner for a group using **Set Owner** option. The dropdown list displays two options:
+- Set owner for a group using the **Set Owner** option. The dropdown list displays two options:
 
     - **Me**: You can set yourself as the Owner.
     - **Other**: You can select some other user as the Owner.
 
 - Physically delete a group. Select a group and click **Delete** on the toolbar.
 - Click **Attest Group** to update and verify group's attributes and memberships.
-- Get a list of all groups managed by a particular group (i.e., all groups for which the selected
+- Get a list of all groups managed by a particular group (all groups for which the selected
   group is a primary or additional owner).
 
     Select a group and click **Managed By** on the toolbar to get a list of groups managed by the
     selected group.
 
 - Select a group and click **Move Group** from the toolbar. You can specify a new container from
-  **Select Container** box where you want to move the group.
+  the **Select Container** box where you want to move the group.
 - Add a group’s email to your email contact list using the vCard.
 
     Select a group and click **Add to Contacts** on the toolbar. The portal creates the group's
@@ -96,7 +102,7 @@ especially when there are more than 100 groups.
 Use the page numbers under the group listing to page through all groups.
 
 You can also control the number of records to be displayed per page by modifying the **Search
-results per page** setting on the [Portal Settings](/docs/directorymanager/11.2/portal/generalfeatures/portal.md) panel.
+results per page** setting on the [Configure Directory Manager Portal Settings](/docs/directorymanager/11.2/portal/generalfeatures/portal.md) panel.
 
 ## Modify Search Directory
 
@@ -105,7 +111,7 @@ a domain to search active groups from.
 
 ## Transfer Ownership
 
-You can find [Transfer Ownership](/docs/directorymanager/11.2/portal/group/transferownership.md) option on the top right corner. Transfer
+You can find the [Transfer Group Ownership in Directory Manager](/docs/directorymanager/11.2/portal/group/transferownership.md) option on the top right corner. Transfer
 Ownership lets you:
 
 - Assign owners to orphan groups.
@@ -120,15 +126,15 @@ Step 1 – Click **Add Filter** to specify a criterion for filtering groups.
 
 Step 2 – From the **Select a Filter** list, select the attribute to filter groups.
 
-Step 3 – Two more boxes get displayed next to **Select a Filter** box upon selecting a filter.
+Step 3 – Two more boxes appear next to the **Select a Filter** box after you select a filter.
 
 - **Select an Operator** from the first list.
 - Specify a value for the selected operator in the second box.
 
 Step 4 – Click **Apply Filter**.
 
-Step 5 – All active groups that match the specified criterion are displayed.
+Step 5 – All active groups that match the specified criterion appear.
 
 Step 6 – You can add additional filters by clicking **Add Filter.**
 
-Step 7 – To undo the filters, click **Reset Filter.** It will remove all the criteria set before.
+Step 7 – To undo the filters, click **Reset Filter.** It removes all the criteria set before.

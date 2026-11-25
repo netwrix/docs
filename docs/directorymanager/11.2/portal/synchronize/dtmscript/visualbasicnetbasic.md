@@ -1,26 +1,32 @@
 ---
-title: "Visual Basic .NET for Directory Manager (formerly GroupID)"
-description: "Visual Basic .NET for Directory Manager (formerly GroupID)"
+title: "Visual Basic .NET Scripting for Directory Manager"
+description: "Learn the Visual Basic .NET syntax you need for DTM scripts in Synchronize: variables, string functions, decisions, and loops."
+keywords:
+  - Visual Basic .NET
+  - DTM scripting
+  - string manipulation
+  - Select Case
+  - Synchronize transform script
 sidebar_position: 30
 ---
 
-# Visual Basic .NET for Directory Manager (formerly GroupID)
+# Visual Basic .NET Scripting for Directory Manager
 
 This topic discusses some points of information relevant to DTM scripting in Directory Manager. See
-[Visual Basic Language Reference](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/)
+the [Visual Basic Language Reference](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/)
 article for additional information.
 
 ## Differences between Visual Basic .NET and other Visual Basic versions
 
 Visual Basic .NET is largely a superset of Visual Basic 6. If you are familiar with Visual Basic
-before the advent of .NET technology, you may want to refer to
+before the advent of .NET technology, you might want to refer to
 [Language Changes in Visual Basic](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/skw8dhdd(v%3dvs.90)),
 and particularly to
 [Programming Element Support Changes Summary](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/kaf4ssya(v%3dvs.90)).
-For the most part, statements and constructs that worked in Visual Basic 6, Visual BasicScript, and
-Visual BasicA continue to work in Visual Basic .NET.
+Most statements and constructs that worked in Visual Basic 6, VBScript, and
+Visual Basic for Applications continue to work in Visual Basic .NET.
 
-Important: A key difference, however, is that the Set keyword is no longer used to assign a value to
+**Important:** A key difference, however, is that the Set keyword is no longer used to assign a value to
 an object. Omit it.
 
 ## Declaring variables
@@ -39,7 +45,7 @@ The following declarations are valid:
 ## Manipulating Strings
 
 The most common use of Synchronize scripting is to dissect and combine strings. String literals are
-always enclosed in quotes, and Visual Basic provides the operator for concatenating strings.
+always enclosed in quotes, and Visual Basic provides the `&` operator for concatenating strings.
 
 ```
 Dim Fullname = Lastname & ", " & Firstname
@@ -48,25 +54,25 @@ Dim Fullname = Lastname & ", " & Firstname
 Visual Basic also provides a host of global functions that perform various string manipulations, for
 example:
 
-- Len(Str): e.g.,
+- Len(Str), for example:
 
     ```
     Dim LengthOfName = Len(Fullname)
     ```
 
-- Left(Str, Length): e.g.,
+- Left(Str, Length), for example:
 
     ```
     Dim MiddleInitial = Left(DTM.Source("middleName"), 1)
     ```
 
-- Mid(Str, Start, Length): e.g.,
+- Mid(Str, Start, Length), for example:
 
     ```
     Dim SeventhCharacter = Mid(Fullname, 7, 1)
     ```
 
-- LCase(Str): e.g.,
+- LCase(Str), for example:
 
     ```
     Dim LowerCaseName = LCase(Fullname)
@@ -76,26 +82,26 @@ For a list of such string functions, see the
 [String Manipulation Summary](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/keywords/string-manipulation-summary)
 topic.
 
-As an alternative to global functions (which are handed down from Visual Basic before the advent of
-.NET technology) you can instead use the .NET string class and related classes. These methods can
+As an alternative to global functions (which are carried over from Visual Basic before the advent of
+.NET technology), you can instead use the .NET string class and related classes. These methods can
 only be applied to a variable if you declare the data type of the variable to be As String (as in
-Dim Lastname As String). Unlike global functions, positions within a string are 0-based (that is,
-the first character occupies position 0) instead of 1-based (the first character occupies position
+Dim Lastname As String). Unlike global functions, positions within a string are zero-based (that is,
+the first character occupies position 0) instead of one-based (the first character occupies position
 1).
 
-- String.Length: e.g.,
+- String.Length, for example:
 
     ```
     Dim LengthOfName As Integer = Fullname.Length
     ```
 
-- String.Substring(Start, Length): e.g.,
+- String.Substring(Start, Length), for example:
 
     ```
     Dim MiddleInitial As String = DTM.Source("middleName").Substring(0, 1)
     ```
 
-- String.ToLower(): e.g.
+- String.ToLower(), for example:
 
     ```
     Dim LowerCaseName As String = Fullname.ToLower()
@@ -107,7 +113,7 @@ For a list of such string methods, see
 ## Line Continuation
 
 With extensive string manipulation, statement lines frequently become quite long. To break
-a statement into two or more lines, insert a space followed by an underline (“\_”) just before
+a statement into two or more lines, insert a space followed by an underscore (“\_”) just before
 each line break.
 
 :::note
@@ -148,7 +154,7 @@ End If
 
 To perform one of a number of alternative actions based on the value of a variable, the Select Case
 construct comes in handy. In this example, note the use of the global LCase function. This example
-illustrates a how to make case-insensitive string comparisons.
+illustrates how to make case-insensitive string comparisons.
 
 ```
 Select Case LCase(DTM.Source("Department"))
@@ -173,7 +179,7 @@ characters typically uses the For Each construct.
 **Example:**
 
 Count the number of numeric digits in an alphanumeric ID source field using the IsDigit() shared
-function of the .Net Char class.
+function of the .NET Char class.
 
 ```
  Dim Count = 0

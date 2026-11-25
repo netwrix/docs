@@ -1,10 +1,16 @@
 ---
-title: "Synchronize Providers"
-description: "Synchronize Providers"
+title: "Supported Synchronize Providers in Directory Manager"
+description: "See which identity store and data source providers Synchronize supports as a source or destination, with prerequisites and known issues."
+keywords:
+  - Synchronize providers
+  - identity store providers
+  - data source providers
+  - Generic LDAP
+  - Microsoft Excel provider
 sidebar_position: 20
 ---
 
-# Synchronize Providers
+# Supported Synchronize Providers in Directory Manager
 
 You can create identity stores for several identity providers (such as Active Directory and
 Microsoft Entra ID) as well as create data sources for providers such as files and databases. These
@@ -15,7 +21,7 @@ The following sections briefly describe each supported data provider.
 
 ## Identity Stores
 
-Identity store must be created for these providers. Identity store providers can be used as both
+You must create an identity store for these providers. Identity store providers can be used as both
 source and destination.
 
 - Microsoft Active Directory
@@ -25,10 +31,10 @@ source and destination.
 
 - Microsoft Entra ID
 
-    Microsoft Entra ID is a cloud computing platform operated by Microsoft. It can also be used as
+    Microsoft Entra ID is a cloud computing platform operated by Microsoft. You can also use it as a
     source and destination provider.
 
-- Generic LDAP version 3.0
+- Generic LDAP Version 3.0
 
     Use the Generic LDAP Version 3.0 provider to connect to any LDAP version 3-compliant directory
     server. This provider doesn't support dynamic schema detection. The schema included for this
@@ -42,7 +48,7 @@ source and destination.
     - Novell Directory Services
     - Sun ONE Directory Server
 
-    When connecting with any of these, use their specific provider
+    When connecting with any of these, use its specific provider
     instead of the generic LDAP provider. The use of specialized providers results in performance
     gains since they eliminate the extra steps involved in connecting with generic providers.
 
@@ -51,12 +57,11 @@ source and destination.
     Use Google Workspace to connect to Google Workspace plans. You can use it as a source and
     destination provider.
 
-See the [Identity Stores](/docs/directorymanager/11.2/admincenter/identitystore/overview.md) topic for additional
-information on identity stores.
+For more information on identity stores, see the [Identity Stores in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/overview.md) topic.
 
 ## Data Sources
 
-External data sources must be created first in Data Sources tab in Admin Center.
+Create external data sources first on the Data Sources tab in Admin Center.
 
 - Microsoft Access
 
@@ -81,18 +86,18 @@ External data sources must be created first in Data Sources tab in Admin Center.
 
     - Microsoft Office 2007/2010
 
-    Data connectivity components found at these sites:
+    You also need the data connectivity components found at these sites:
 
     - Microsoft Access Database Engine 2010 Redistributable
     - 2007 Office System Driver: Data Connectivity Components
 
-    You may encounter the following issues while using Excel provider in a Synchronize job:
+    You might encounter the following issues while using the Excel provider in a Synchronize job:
 
-    - In case of Excel as destination (with Replace file-discard existing content option selected on
-      the Destination Provider page of the Job wizard), if any sheet name of the Excel file is of
-      two or less character the Synchronize job corrupts all the sheets in that Excel file.
-    - In case of Excel as destination (with Delete option selected on the Create Object page of the
-      Job wizard), If the Excel file schema is of more than 127 columns the job fails.
+    - If Excel is the destination (with the Replace file-discard existing content option selected on
+      the Destination Provider page of the Job wizard) and any sheet name of the Excel file has
+      two or fewer characters, the Synchronize job corrupts all the sheets in that Excel file.
+    - If Excel is the destination (with the Delete option selected on the Create Object page of the
+      Job wizard) and the Excel file schema has more than 127 columns, the job fails.
 
 - Oracle
 
@@ -100,7 +105,7 @@ External data sources must be created first in Data Sources tab in Admin Center.
     supports dynamic schema detection.
 
     The Oracle client must be installed to use this provider (you must reboot your computer after
-    installing the Oracle client.
+    installing the Oracle client).
 
 - ODBC
 
@@ -109,7 +114,7 @@ External data sources must be created first in Data Sources tab in Admin Center.
 
 - Microsoft SQL Server
 
-    Use the SQL Server provider to connect to Microsoft SQL Server 2005, 2008, 2008 R2 and 2012. It
+    Use the SQL Server provider to connect to Microsoft SQL Server 2005, 2008, 2008 R2, and 2012. It
     can be selected both as a source and destination. This provider supports dynamic schema
     detection.
 
@@ -121,5 +126,4 @@ External data sources must be created first in Data Sources tab in Admin Center.
     files or tab-separated value (TSV) text files. This provider supports automatic schema detection
     if a header row is included in the file.
 
-See the [ Data Sources](/docs/directorymanager/11.2/admincenter/datasource/overview.md) topic for additional information
-on Data Sources.
+For more information on data sources, see the [Data Sources in Directory Manager](/docs/directorymanager/11.2/admincenter/datasource/overview.md) topic.

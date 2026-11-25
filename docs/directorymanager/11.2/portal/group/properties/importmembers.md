@@ -1,15 +1,21 @@
 ---
-title: "Import Group Members"
-description: "Import Group Members"
+title: "Import group members in Directory Manager"
+description: "Add members to a group from a file, an external data source, or another group, permanently or for a set period."
+keywords:
+  - "import group members"
+  - "Import Members wizard"
+  - "temporary group membership"
+  - "Query Designer import"
+  - "import members from groups"
 sidebar_position: 150
 ---
 
-# Import Group Members
+# Import group members in Directory Manager
 
 The **Import Members** wizard lets you add members to the group using an external file.
 
-The wizards search the directory for objects listed in the external file, and if found, adds them as
-members to the group.
+The wizard searches the directory for objects listed in the external file and, if found, adds them
+as members to the group.
 
 Supported file formats are:
 
@@ -28,11 +34,11 @@ launch the **Import Members** wizard.
 
     - **Import Members Perpetually**: to add imported members permanently to the group membership.
     - **Import Members Temporarily**: to add imported members to the group membership for a specific
-      period. At end of the period, the imported members are automatically removed from membership.
+      period. At the end of the period, the imported members are automatically removed from membership.
     - **Import Members From Groups**: to add all members of another group or groups to the
       membership of this group. See Import members of an existing group to this group.
 
-2. In case of temporary membership, use the **Duration** list to specify the membership duration of
+2. For temporary membership, use the **Duration** list to specify the membership duration of
    the imported members. Options are:
 
     - **7 Days**, to add members to the group for 7 days starting today.
@@ -58,8 +64,8 @@ launch the **Import Members** wizard.
 
     - **External Data Source**
 
-        1. On the **Providers** page, select [Query Designer](/docs/directorymanager/11.2/portal/group/querydesigner/overview.md) to
-           create a query. The query will fetch all those members that match the set criteria.
+        1. On the **Providers** page, select [Query Designer in the Directory Manager portal](/docs/directorymanager/11.2/portal/group/querydesigner/overview.md) to
+           create a query. The query fetches all members that match the set criteria.
 
             The Query Designer isn't working. After adding provider in the data source, it is
             unable to read the table.
@@ -95,11 +101,11 @@ launch the **Import Members** wizard.
 
     - **Resolved Items:**
 
-        Shows all objects that will be successfully processed.
+        Shows all objects that are successfully processed.
 
     - **Unresolved Items:**
 
-        Shows objects that will not be processed because a matching object couldn't be found in the
+        Shows objects that aren't processed because a matching object couldn't be found in the
         destination directory.
 
     - **Ambiguous Items:**
@@ -119,7 +125,7 @@ launch the **Import Members** wizard.
 
 1. On the **Lifecycle** page, select the **Import Members From Groups** option to add all members
    of another group or groups to the membership of this group.
-2. Click the **Search Groups** button; the [Find Dialog Box](/docs/directorymanager/11.2/portal/generalfeatures/find.md) is displayed,
+2. Click the **Search Groups** button; the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md) is displayed,
    where you can search and select the groups whose members you want to import into the membership
    of this group.
 3. Click **Next**.

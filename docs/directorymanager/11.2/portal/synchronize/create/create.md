@@ -1,14 +1,20 @@
 ---
-title: "Create a Job"
-description: "Create a Job"
+title: "Create a Synchronize Job in Directory Manager"
+description: "Create a Synchronize job without a template or from one, map fields, schedule it, and review the run and any workflow request."
+keywords:
+  - create Synchronize job
+  - job templates
+  - field mapping
+  - data transformation
+  - Synchronize job workflow request
 sidebar_position: 30
 ---
 
-# Create a Job
+# Create a Synchronize Job in Directory Manager
 
 Synchronize lets you move data from one data source to another using a set of sequential
-commands that run in the background. The set of commands is called a job. You can create a job from
-scratch, from a predefined template, or from a template that you create yourself.
+commands that run in the background. The set of commands is called a job. You can create a job
+without a template, from a predefined template, or from a template that you create yourself.
 
 Synchronize provides these predefined job templates:
 
@@ -22,7 +28,7 @@ to create your own custom templates. Templates offer predefined settings, which 
 new job (except for the source and destination configurations) and modify as required. You can also
 create a new job by duplicating and modifying an existing one.
 
-Creating a new job without using templates requires that you specify the source and destination resources involved
+To create a new job without using a template, specify the source and destination resources involved
 in the transfer of data. You must also map the fields for the source and destination objects in
 which the data transfer takes place.
 
@@ -31,7 +37,7 @@ transferred to the destination.
 
 After you create a job, you can either run it manually or schedule it to run periodically.
 
-You can create templates from existing jobs on-the-fly and reuse their settings in new jobs.
+You can create templates from existing jobs and reuse their settings in new jobs.
 
 To understand how workflows work with Synchronize jobs, see the
 [Synchronize Jobs and Workflows](/docs/directorymanager/11.2/admincenter/workflow/overview.md#synchronize-jobs-and-workflows)
@@ -39,11 +45,11 @@ topic.
 
 ## Create a new job
 
-Step 1 – On Directory Manager portal, select **Synchronize**on left pane.
+Step 1 – In the Directory Manager portal, select **Synchronize** in the left pane.
 
-Step 2 – On the Synchronize portal, click **Create New** and then click **Job**.
+Step 2 – In the Synchronize portal, click **Create New** and then click **Job**.
 
-Step 3 – On the [Choose Your Job Template](/docs/directorymanager/11.2/portal/synchronize/create/chooseyourjobtemplate.md) page, enter the job details and
+Step 3 – On the [Choose a Job Template in Directory Manager Synchronize](/docs/directorymanager/11.2/portal/synchronize/create/chooseyourjobtemplate.md) page, enter the job details and
 select whether to use a job template or create a new job without using templates.
 
 Step 4 – Click **Next Step**.
@@ -53,11 +59,11 @@ source and destination providers.
 
 Step 6 – Click **Next Step**.
 
-Step 7 – On the [Objects, Fields, and Mapping ](/docs/directorymanager/11.2/portal/synchronize/create/objectfieldsandmapping.md) page, map the source and
+Step 7 – On the [Map Objects and Fields in a Synchronize Job](/docs/directorymanager/11.2/portal/synchronize/create/objectfieldsandmapping.md) page, map the source and
 destination fields and apply transformations.
 
-Step 8 – On the [Schedule Job and Notifications](/docs/directorymanager/11.2/portal/synchronize/create/scheduleandnotification.md) page, choose a schedule
-for a job and set up notification settings.
+Step 8 – On the [Schedule a Synchronize Job and Set Notifications](/docs/directorymanager/11.2/portal/synchronize/create/scheduleandnotification.md) page, choose a schedule
+for the job and set up notification settings.
 
 :::note
 After creating the job, you can modify the schedule for the job and you can also create a new
@@ -65,18 +71,18 @@ schedule.
 :::
 
 
-Step 9 – Select **Preview job when finished** checkbox to preview the job.
+Step 9 – Select the **Preview Job when finished** checkbox to preview the job.
 
-Step 10 – **Review your Changes** before finishing the job.
+Step 10 – Click **Review your changes** to check your settings before finishing the job.
 
-Step 11 – Click **Finish** and create the job.
+Step 11 – Click **Finish** to create the job.
 
-Step 12 – After you run the job, the job runs if workflow isn't configured. If workflow is
-configured, the request gets generated.
+Step 12 – After you run the job, the job runs if no workflow is configured. If a workflow is
+configured, a request is generated.
 
-Step 13 – The generated workflow request appears in the [Requests](/docs/directorymanager/11.2/portal/request/overview.md)
-section for the workflow approvers. If the approver approves the workflow request, the job will
-execute the results.
+Step 13 – The generated workflow request appears in the [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.2/portal/request/overview.md)
+section for the workflow approvers. If the approver approves the workflow request, the job
+executes the results.
 
 Step 14 – The **Review Job Run** dialog box appears, providing access to run statistics, reports,
 and logs for the last job run.

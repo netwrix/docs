@@ -1,10 +1,15 @@
 ---
-title: "General page"
-description: "General page"
+title: "Specify Basic Group Information in Directory Manager"
+description: "Set the container, name, alias, type, scope and security of a new group on the General page of the Create Group wizard."
+keywords:
+  - Create Group wizard
+  - group name prefix
+  - group scope
+  - mail-enabled group
 sidebar_position: 10
 ---
 
-# General page
+# Specify Basic Group Information in Directory Manager
 
 Use this page to specify basic information about the group.
 
@@ -14,7 +19,7 @@ Use this page to specify basic information about the group.
     If you want to create a container, click **Create** and then add container to create the group
     in. Click **Refresh** to remove the changes.
 
-    This field will be read-only if the administrator has predefined a container for creating new
+    This field is read-only if the administrator has predefined a container for creating new
     groups.
 
 2. In the **Group Name** box, provide a name for the group by selecting a prefix and then entering a
@@ -30,7 +35,7 @@ Use this page to specify basic information about the group.
 
 3. The **Name Preview** is displayed if the prefix list is available and displays a preview of the
    prefix combined with the group name.
-4. The group name is also displayed in the **Group Name (Pre Windows 2000)** box. Modify it, if
+4. The group name is also displayed in the **Group Name (Pre-Windows 2000)** box. Modify it, if
    required.
 5. Select the **Mail Enabled** checkbox to create the group as mail-enabled. A mail-enabled group
    is one with an email address. Members of a mail-enabled group can receive emails.
@@ -49,9 +54,9 @@ Use this page to specify basic information about the group.
 
 7. Set the group type by selecting an option for **Group Type**.
 
-    - **Security** - this group will be used for securing public folders, printers, and other network
+    - **Security** – this group is used for securing public folders, printers, and other network
       resources.
-    - **Distribution** - this group will only be used for email distribution.
+    - **Distribution** – this group is used only for email distribution.
 
     :::note
     If the administrator has predefined a group type, you can't change it.
@@ -60,10 +65,10 @@ Use this page to specify basic information about the group.
 
 8. In the **Group Scope** list, select a scope for the group.
 
-    - **Domain Local** - if the group is to contain only users in this domain.
-    - **Global Group** - if the group is to contain users from other domains, but should only be
+    - **Domain Local** – if the group is to contain only users in this domain.
+    - **Global Group** – if the group is to contain users from other domains, but should only be
       visible within its own domain.
-    - **Universal Group** - if the group is to contain users and groups from any domain and be
+    - **Universal Group** – if the group is to contain users and groups from any domain and be
       visible in the Global Catalog.
 
     :::note

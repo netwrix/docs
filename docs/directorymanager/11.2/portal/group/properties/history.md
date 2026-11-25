@@ -1,15 +1,21 @@
 ---
-title: "History tab"
-description: "Object properties - History tab"
+title: "Directory Manager object properties: History tab"
+description: "View an object's change history, export it, and add, edit, or remove notes on history items from the History tab."
+keywords:
+  - "object history"
+  - "export history data"
+  - "history notes"
+  - "administrative view"
+  - "Directory Manager history"
 sidebar_position: 140
 ---
 
-# History tab
+# Directory Manager object properties: History tab
 
 This tab displays the object's history, which includes all changes to the object since its creation.
 
 History is available if the administrator has enabled history tracking for the identity store. See
-[History](/docs/directorymanager/11.2/portal/history/overview.md).
+[Directory Manager Portal History Tracking](/docs/directorymanager/11.2/portal/history/overview.md).
 
 ## View History
 
@@ -21,7 +27,7 @@ This view is also called the detailed view.
 ### Switch to Administrative View
 
 Click the **Switch to Administrative View** link to switch to the administrative view. This view is
-only available if you have administrative privileges.
+available only if you have administrative privileges.
 
 It displays history data in a tabular form. History items are grouped by date. Each date group
 displays changes made to the object during that period.
@@ -58,9 +64,9 @@ edit or add comments.
 ### Add a note
 
 The option to add a note is available on the My Account History card on Dashboard, and all History
-pages (i.e., [My History](/docs/directorymanager/11.2/portal/history/myhistory.md)),
-[My Direct Reports' History](/docs/directorymanager/11.2/portal/history/mydirectreport.md) and
-[My Groups' History](/docs/directorymanager/11.2/portal/history/mydirectorygroup.md) pages.
+pages ([View My History in the Directory Manager Portal](/docs/directorymanager/11.2/portal/history/myhistory.md),
+[View My Direct Reports' History in Directory Manager](/docs/directorymanager/11.2/portal/history/mydirectreport.md), and
+[View and Filter History of Groups You Own](/docs/directorymanager/11.2/portal/history/mydirectorygroup.md)).
 
 Step 1 – Click the **Add Note** button next to a history item to add a note to it.
 
@@ -70,7 +76,7 @@ Your note can have a maximum of 500 characters.
 
 ### Edit a note
 
-You can only edit the note that you have added.
+You can edit only your own notes.
 
 Step 1 – Click the **View Note** button next to a history item to view or edit the note for it.
 
@@ -80,7 +86,7 @@ Step 3 – Click **Update Note** to save the changes.
 
 ### View a note
 
-Once a note is added, other users can view it, but they can't edit it or add comments to it.
+After a note is added, other users can view it, but they can't edit it or add comments to it.
 
 - In the Detailed view:
 
@@ -92,7 +98,7 @@ Once a note is added, other users can view it, but they can't edit it or add com
 
 ### Remove a note
 
-You can only remove the note that you have added.
+You can remove only your own notes.
 
 Step 1 – Click the **View Note** button next to a history item to view or remove the note for it.
 

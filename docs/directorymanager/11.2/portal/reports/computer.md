@@ -1,17 +1,22 @@
 ---
-title: "Computer Reports"
-description: "Computer Reports"
+title: "Directory Manager Computer Reports"
+description: "Browse the report templates for computer objects, such as operating system, inactivity, and delegation reports, and generate them from the portal."
+keywords:
+  - computer reports
+  - computer report templates
+  - inactive computers
+  - domain controllers
 sidebar_position: 50
 ---
 
-# Computer Reports
+# Directory Manager Computer Reports
 
 Computer Reports contains reports for the Computer objects in the directory. Search a specific
 report by typing its name in the **Search Reports** box.
 
-Click any of the report template from the list to [Generate Reports](/docs/directorymanager/11.2/portal/reports/generate.md).
+Click any report template in the list to [Generate Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/generate.md).
 
-Following is the list of reports for this category:
+The following reports are in this category:
 
 | Reports                                              | Description                                                               |
 | ---------------------------------------------------- | ------------------------------------------------------------------------- |

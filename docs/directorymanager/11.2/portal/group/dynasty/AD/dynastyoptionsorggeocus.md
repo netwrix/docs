@@ -1,10 +1,16 @@
 ---
-title: "Dynasty Options page"
-description: "Dynasty Options page"
+title: "Configure Dynasty attributes in Directory Manager"
+description: "Add, edit, or remove the group-by attributes, child container, filter, and separator for an Organizational, Geographical, or Custom Dynasty."
+keywords:
+  - Dynasty attributes
+  - group-by attribute
+  - child container
+  - Dynasty filter
+  - regular expression filter
 sidebar_position: 20
 ---
 
-# Dynasty Options page
+# Configure Dynasty attributes in Directory Manager
 
 Dynasties create Smart Groups for each distinct value of each attribute listed in the **Attributes**
 area. Depending on the Dynasty template selected, the **Attributes** area displays the default
@@ -19,11 +25,11 @@ city in a state.
 - Click **Edit** to edit the selected attribute options.
 - Click **Remove** to remove the selected attribute.
 
-On the Dynasty Options page:
+On the **Dynasty Options** page:
 
 1. (Optional) Click **Add** to add more attributes to those shown in the **Attributes** list.
 
-    The **Add Attributes** dialog box is displayed.
+    The **Add Attributes** dialog box opens.
 
     This filter is used to strip out values from Dynasties by allowing you to collapse several
     values into one.
@@ -31,8 +37,8 @@ On the Dynasty Options page:
     An example is populating the Office field with the building/office number, thus conveniently
     storing two items of related data in the same field. Now, suppose you need a distribution list
     for each building. If the building name was in its own field (custom attribute 1), you could
-    create a Dynasty that groups by the custom attribute 1 field and Directory Manager would then
-    create a group for each building value.
+    create a Dynasty that groups by the custom attribute 1 field and Directory Manager then
+    creates a group for each building value.
 
     Attribute value:
 
@@ -43,7 +49,7 @@ On the Dynasty Options page:
 **Everyone in MacArthur Plaza**
 
     However, if you were to create a Dynasty that groups by the Office field (which contains both
-    the building name and office number), Directory Manager will create a group for each distinct
+    the building name and office number), Directory Manager creates a group for each distinct
     building/office value. This strategy gives you a group for every office number, rather than for
     each building.
 
@@ -58,11 +64,11 @@ On the Dynasty Options page:
     The filter option solves this problem by enabling you to filter out unwanted permutations of
     values.
 
-1. In the **Group items by** list, type or select the field to use for expanding the Dynasty.
+1. Use the **Group items by** list to type or select the field for expanding the Dynasty.
 
     Directory Manager creates a child group for each unique value of this field.
 
-1. The **Child container** box displays the container where new child groups will be created. If
+1. The **Child container** box displays the container where Directory Manager creates new child groups. If
    this setting is blank, Directory Manager creates child groups in the same container as the parent
    Dynasty.
 
@@ -71,7 +77,7 @@ On the Dynasty Options page:
 1. From the **Filter** dropdown list, select an additional group-by filter for greater control over
    the values used to create children.
 
-    - **None**: Don't apply any filter. Create a group for each distinct value of the
+    - **None**: Don't apply any filter; create a group for each distinct value of the
       attribute selected in the **Group items by** list. For example, distinct values for the
       ‘department’ attribute might be _Engineering_, _Marketing_, and _Finance_.
     - **Left**: Select a portion of the group-by attribute starting from the left for the number of

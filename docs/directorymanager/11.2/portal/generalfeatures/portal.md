@@ -1,21 +1,28 @@
 ---
-title: "Portal Settings"
-description: "Portal Settings"
+title: "Configure Directory Manager Portal Settings"
+description: "Customize your portal display options, such as identity store mode, notification language, time zone, start page, and group ownership views."
+keywords:
+  - portal settings
+  - Identity Store Mode
+  - notification language
+  - user time zone
+  - additional group ownership
+  - Reset Defaults
 sidebar_position: 50
 ---
 
-# Portal Settings
+# Configure Directory Manager Portal Settings
 
 You can fine-tune your portal pages by customizing display options. With these options, you can
-personalize the GroupID portal.
+personalize the Directory Manager portal.
 
-The portal saves these settings for each user per identity store. When this user logs on to
-another GroupID portal for the same identity store, the settings apply there too.
+The portal saves these settings for each user per identity store. When this user signs in to
+another Directory Manager portal for the same identity store, the settings apply there too.
 
 ## Set Identity Store mode
 
-GroupID portal works with a single identity store. However, GroupID also enables administrators to
-link different identity stores. If an administrator creates a GroupID Portal and associates it with
+The Directory Manager portal works with a single identity store. However, Directory Manager also enables administrators to
+link different identity stores. If an administrator creates a portal and associates it with
 the linked identity stores, the portal users can view the data from the linked identity stores at
 the same time, rather than having to switch identity stores.
 
@@ -23,7 +30,7 @@ To choose a mode in portal settings:
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – From the **Identity Store Mode** list, select one of the following mode:
+Step 2 – From the **Identity Store Mode** list, select one of the following modes:
 
 - Stand-alone mode
 - Linked mode
@@ -32,11 +39,11 @@ Step 3 – Click **Save**.
 
 ## Set a language for notifications
 
-By default, GroupID sends notifications to users in English. However, a user can opt to receive notifications in a different language by personalizing
+By default, Directory Manager sends notifications to users in English. However, a user can receive notifications in a different language by personalizing
 the language settings from the **User Settings** panel in the portal.
 
 A few notifications are exceptions. See the
-[Notifications](/docs/directorymanager/11.2/admincenter/notification/overview.md) topic for more information.
+[How Directory Manager Email Notifications Work](/docs/directorymanager/11.2/admincenter/notification/overview.md) topic for more information.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -56,10 +63,10 @@ Step 3 – Click **Save**.
 
 ## Set a default start page
 
-You can set the first page you see when you log into the portal.
+You can set the first page you see when you sign in to the portal.
 
 1. Click the **Settings** icon at the top of the page.
-2. From the **Default startup page** list, select a page to set as your start page.
+2. From the **Default Startup Page** list, select a page to set as your start page.
 3. Click **Save**.
 
 ## Set the number of history items to show on the home page
@@ -82,8 +89,8 @@ Set the number of history items to display on the History tab. This tab appears 
 the properties of a User, Group, Contact, or Mailbox.
 
 This setting also controls the number of history items that appear on the
-[My History](/docs/directorymanager/11.2/portal/history/myhistory.md), [My Direct Reports' History](/docs/directorymanager/11.2/portal/history/mydirectreport.md),
-and [My Groups' History](/docs/directorymanager/11.2/portal/history/mydirectorygroup.md) pages.
+[View My History in the Directory Manager Portal](/docs/directorymanager/11.2/portal/history/myhistory.md), [View My Direct Reports' History in Directory Manager](/docs/directorymanager/11.2/portal/history/mydirectreport.md),
+and [View and Filter History of Groups You Own](/docs/directorymanager/11.2/portal/history/mydirectorygroup.md) pages.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -96,7 +103,7 @@ The portal displays history if the administrator has enabled history tracking fo
 
 ## Set the number of recent objects to show
 
-The GroupID portal keeps a list of recently viewed objects on the left navigation bar. This provides
+The Directory Manager portal keeps a list of recently viewed objects on the left navigation bar. This provides
 a convenient way to navigate back to objects later. You can specify the number of recent objects to
 show on the navigation bar.
 
@@ -110,7 +117,7 @@ Step 3 – Click **Save**.
 ## Set the default domains for search lists
 
 You can specify the default domains to search when you search in the portal. If
-portal is running in:
+the portal is running in:
 
 - **Stand-alone mode**: the portal lists the domain of the associated identity store.
 
@@ -120,7 +127,7 @@ To select domains for searches:
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – In the **Domains to search** list, select the domains that you use frequently in your
+Step 2 – In the **Domains to Search** list, select the domains that you use frequently in your
 searches.
 
 Step 3 – Click **Save**.
@@ -131,24 +138,24 @@ You can specify the number of search results to display on a portal page.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – In the **Search results per page** box, type, or select the number of search results to
-display on a page.
+Step 2 – In the **Search results per page** box, enter the number of search results to
+display on a page, or select it from the list.
 
 Step 3 – Click **Save**.
 
 ## Show additional group ownership in My Groups
 
-By default, the **My Groups** page displays the groups that you are a primary owner for. You can
+By default, the **My Groups** page displays the groups that you are a primary owner of. You can
 also set this page to display groups for which you are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
 Step 2 – Select the **Display additional group ownership in My Groups** checkbox.
 
-Step 3 – Selecting this option also displays the history of these groups in the **My Groups
-History** view.
+Step 3 – Click **Save**.
 
-Step 4 – Click **Save**.
+Selecting this option also displays the history of these groups in the **My Groups
+History** view.
 
 ## Show additional group ownership in My Expiring Groups
 
@@ -188,7 +195,7 @@ Step 3 – Click **Save**.
 
 ## Display additional group ownership in Smart Groups
 
-By default, the **My Smart Groups** page displays the Smart Group that you are the primary owner
+By default, the **My Smart Groups** page displays the Smart Groups that you are the primary owner
 for. You can also set this page to display Smart Groups for which you are an
 additional owner.
 
@@ -200,7 +207,7 @@ Step 3 – Click **Save**.
 
 ## Display additional group ownership in Dynasties
 
-By default, the My Dynasties page displays the Dynasties that you are the primary owner for. You
+By default, the **My Dynasties** page displays the Dynasties that you are the primary owner for. You
 can also set this page to display Dynasties for which you are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -209,7 +216,7 @@ Step 2 – Select the **Display additional group ownership in My Dynasties** che
 
 Step 3 – Click **Save**.
 
-## Display Additional Manager Direct Reports
+## Display additional manager direct reports
 
 By default, the **My Direct Reports** page displays the users that you are the primary manager for.
 You can also set this page to display users for whom you are an additional manager.
@@ -257,8 +264,8 @@ The following table lists the default values that **Reset Defaults** restores:
 | ---------------------------------------------- | ------------------------------------------------ |
 | Identity Store Mode                            | Stand-alone                                      |
 | Notification Language                          | English                                          |
-| User Time Zone                                 | The time zone set on the GroupID server machine. |
-| Default startup page                           | Welcome                                          |
+| User Time Zone                                 | The time zone set on the Directory Manager server machine. |
+| Default Startup Page                           | Welcome                                          |
 | History items to display on home page          | 10                                               |
 | History items to display                       | 10                                               |
 | Most recent objects                            | 5                                                |

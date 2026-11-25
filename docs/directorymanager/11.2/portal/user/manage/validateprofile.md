@@ -1,25 +1,32 @@
 ---
-title: "Validate your profile"
-description: "Validate your profile"
+title: "Validate your profile in Directory Manager"
+description: "Verify and update your directory profile, change your primary manager, and transfer or terminate direct reports during profile validation."
+keywords:
+  - profile validation
+  - validate profile
+  - primary manager
+  - direct reports
+  - User Life Cycle job
+  - Directory Manager portal
 sidebar_position: 80
 ---
 
-# Validate your profile
+# Validate your profile in Directory Manager
 
-The profile validation process in Directory Manager is designed to ensure the accuracy of users’
+The profile validation process in Directory Manager ensures the accuracy of users’
 information in the directory.
 
 When the administrator applies profile validation to a group in an identity store, all group members
 must verify and update their profile information in the directory using the Directory Manager
 portal. The administrator also specifies a profile validation life cycle period (for example, 90
-days), so that each member must validate his/her profile once during each 90-day cycle.
+days), so that each member must validate their profile once during each 90-day cycle.
 
 While validating the profile, a user can:
 
-- Update his or her directory profile.
-- Specify or change his or her primary manager.
-- Transfer his or her direct reports to another manager.
-- Terminate his or her direct reports.
+- Update their directory profile.
+- Specify or change their primary manager.
+- Transfer their direct reports to another manager.
+- Terminate their direct reports.
 
 Periodically, users receive reminder emails to validate their profile information. Directory Manager
 expires users who ignore these reminders and don't validate their profiles within the required
@@ -30,23 +37,22 @@ an extension period. If they don't validate their profile information within tha
 either, Directory Manager expires them again and their managers are informed by email. To reactivate
 these accounts, users’ managers must send a request to the administrator or Helpdesk. The
 administrator or Helpdesk user can extend the profile validation period on the
-[Disabled Users](/docs/directorymanager/11.2/portal/user/manage/disableduser.md) page of the portal.
+[View and Manage Disabled Users in Directory Manager](/docs/directorymanager/11.2/portal/user/manage/disableduser.md) page of the portal.
 
 :::note
 For notifications to be sent, an SMTP server must be configured for the identity store.
 :::
 
-
-### Profile Validation for New Users
+## Profile Validation for New Users
 
 Apart from the regular profile validation life cycle, the administrator can set a separate profile
 validation period for new users by specifying a certain number of days, say 30.
 
 All new users receive a welcome email and a profile validation request, so that users must validate
 their profiles for the first time within the given number of days. Once they validate their
-profiles, the regular profile validation life cycle settings would apply.
+profiles, the regular profile validation life cycle settings apply.
 
-### The User Life Cycle job
+## The User Life Cycle job
 
 The profile validation feature in Directory Manager is monitored by the User Life Cycle job. This is
 a scheduled job that runs on a set frequency and does the following:
@@ -57,17 +63,16 @@ a scheduled job that runs on a set frequency and does the following:
 
 ## Validate your profile
 
-If profile validation applies to you, then you will see the following message displayed on the **My
-Account** panel:
+If profile validation applies to you, the following message appears on the **My Account** panel:
 
-![validateprofile](/images/directorymanager/11.2/portal/user/manage/validateprofile.webp)
+![My Account panel showing the number of days left to validate your profile](/images/directorymanager/11.2/portal/user/manage/validateprofile.webp)
 
 The message displays the number of days left to validate your profile.
 
 Step 1 – The My Profile card on the dashboard indicates your profile validation status. Click it to
 launch the user properties page.
 
-Step 2 – The toolbar on user properties page will display Validate your profile option. Click it
+Step 2 – The toolbar on the user properties page displays the Validate your profile option. Click it
 to launch the profile validation window.
 
 Step 3 – Provide or update information in the fields displayed on this window.
@@ -87,42 +92,40 @@ You can also manage your direct reports and managers on the Organization tab of 
 window.
 :::
 
-
 ## Change your primary manager
 
-The **Manager** field displays the name of your primary manager (if you have one); else it is blank.
+The **Manager** field displays the name of your primary manager (if you have one); otherwise, it is blank.
 
 To add or change your primary manager, click the ellipsis button next to the field. This launches
-the [Find Dialog Box](/docs/directorymanager/11.2/portal/generalfeatures/find.md), where you can search and select your primary manager.
+the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md), where you can search and select your primary manager.
 
-When you change your primary manager (Manager A), then Manager A is notified by email to accept or
+When you change your primary manager (Manager A), Manager A is notified by email to accept or
 reject the request. If Manager A accepts, your manager is changed. If Manager A rejects the request,
 you remain with Manager A and a notification is sent to you and Manager A.
 
 :::note
-This is the default flow of the ‘Workflow to Change Manager’ workflow. If the administrator
+This is the default flow of the "Workflow to Change Manager" workflow. If the administrator
 disables the workflow or changes the approver, the flow changes accordingly. See
-[Requests](/docs/directorymanager/11.2/portal/request/overview.md).
+[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.2/portal/request/overview.md).
 :::
-
 
 ## Transfer your direct report
 
 When you transfer a direct report, the direct report is notified by email to accept or reject the
-transfer. If the direct report accepts the transfer, he or she has to select another primary manager
-and validate his or her profile. If the direct report rejects the transfer, he or she is transferred
-back to the old manager, i.e., you.
+transfer. If the direct report accepts the transfer, they must select another primary manager
+and validate their profile. If the direct report rejects the transfer, they are transferred
+back to the old manager (you).
 
 :::note
-This is the default flow of the ‘Workflow to Transfer a User’ workflow, with the direct report
+This is the default flow of the "Workflow to Transfer a User" workflow, with the direct report
 set as the workflow approver. If the administrator disables the workflow or changes the approver,
-the flow changes accordingly. See [Requests](/docs/directorymanager/11.2/portal/request/overview.md).
+the flow changes accordingly. See [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.2/portal/request/overview.md).
 :::
 
 
 ## Terminate your direct report
 
-When you terminate a direct report, it takes effect immediately if the ‘Workflow to Terminate a
-User’ workflow is disabled. If enabled, a request is sent to the approver. If the approver accepts
+When you terminate a direct report, it takes effect immediately if the "Workflow to Terminate a
+User" workflow is disabled. If enabled, a request is sent to the approver. If the approver accepts
 it, the direct report is terminated and if the approver rejects it, the direct report remains with
-the manager, i.e., you.
+the manager (you).

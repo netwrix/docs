@@ -1,44 +1,49 @@
 ---
-title: "Group Deletion"
-description: "Group Deletion"
+title: "How Group Deletion Works in Directory Manager"
+description: "Learn how physical and logical group deletion differ in Directory Manager, and how the Group Life Cycle job deletes expired groups and notifies owners."
+keywords:
+  - group deletion
+  - physical deletion
+  - logical deletion
+  - Group Life Cycle job
+  - deleted groups
 sidebar_position: 60
 ---
 
-# Group Deletion
+# How Group Deletion Works in Directory Manager
 
-In Directory Manager, groups can be deleted in any of the following ways:
+In Directory Manager, groups can be deleted in the following ways:
 
 - Physical deletion
 - Logical deletion
 
 ## Physical Deletion
 
-When you manually delete a group using the **Delete** button on the toolbar, the group is said to be
-physically deleted. However,
+When you manually delete a group using the **Delete** button on the toolbar, the group is physically deleted. However:
 
-- A group with a valid expiry policy will not be deleted.
-- A group without an expiry policy will be physically deleted.
+- A group with a valid expiry policy isn't deleted.
+- A group without an expiry policy is physically deleted.
 
     Directory groups that are created outside of Directory Manager don't have an expiry policy.
 
     In Directory Manager, you can't distinguish groups with an expiry policy from groups without an
-    expiry policy because groups without an expiry policy are displayed with "Never Expire' set as
+    expiry policy because groups without an expiry policy are displayed with "Never Expire" set as
     policy.
 
-Moreover, when you use the **Expire** button on the toolbar to expire a group with a ‘Never Expire’
+When you use the **Expire** button on the toolbar to expire a group with a "Never Expire"
 policy, the portal physically deletes it.
 
 Physically deleted groups aren't available in the portal anymore.
 
-To renew a physically deleted group, contact the Directory Manager administrator.
+To renew a physically deleted group, contact your Directory Manager administrator.
 
 ## Logical Deletion
 
 Groups that are deleted by the Group Life Cycle job are considered to be logically deleted. This job
 deletes expired groups automatically based on the Group Life Cycle policy for the identity store.
 
-Logically deleted groups are moved to the [My Deleted Groups](/docs/directorymanager/11.2/portal/group/mygroups/mydeletedgroups.md) page with the
-'Deleted\_' prefix added to their names. Such groups have all their attributes intact. As a result,
+Logically deleted groups are moved to the [View My Deleted Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/mygroups/mydeletedgroups.md) page with the
+"Deleted\_" prefix added to their names. Such groups have all their attributes intact. As a result,
 a logically deleted group, when renewed, returns to the state it had at the time of deletion.
 
 See the

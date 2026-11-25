@@ -1,10 +1,15 @@
 ---
-title: "Job Collection Template"
-description: "Job Collection Template"
+title: "Job Collection Templates in Directory Manager Synchronize"
+description: "Create, import, export, rename, delete, and filter job collection templates, and create a job collection from a template."
+keywords:
+  - job collection templates
+  - create job collection from template
+  - import job collection templates
+  - export job collection templates
 sidebar_position: 30
 ---
 
-# Job Collection Template
+# Job Collection Templates in Directory Manager Synchronize
 
 You can create a job collection template either by converting an existing job collection into a job
 collection template or by importing a job collection template.
@@ -21,38 +26,38 @@ job collection templates.
 
 ## Create a Job Collection Template from a Job Collection
 
-To create a job collection template from a job collection.
+To create a job collection template from a job collection:
 
-Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
+Step 1 – In the Directory Manager portal, select **Synchronize** in the left pane.
 
-Step 2 – On the Synchronize portal, click **Job Collections**.
+Step 2 – In the Synchronize portal, click **Job Collections**.
 
 Step 3 – In the Job Collections view, click
-![option](/images/directorymanager/11.2/portal/synchronize/manage/option.webp)
-for the job collection you want to save as a template and click **Save As Template**.
+![Options (three vertical dots)](/images/directorymanager/11.2/portal/synchronize/manage/option.webp)
+for the job collection you want to save as a template and click **Save as template**.
 
-Step 4 – Now click **Job Collection Templates** and refresh the page. The newly created job group
+Step 4 – Now click **Job Collection Templates** and refresh the page. The newly created job collection
 template appears in the Job Collection Templates list.
 
-Step 5 – If a run schedule has been define for the collection, it doesn't become part of the
+Step 5 – If a run schedule has been defined for the collection, it doesn't become part of the
 template. Rather, when you create a job collection from the template, you have to define a run
 schedule for it.
 
 ## Import a Job Collection Template
 
-You can also import job collection templates. Only job collection templates that have been exported
+You can also import job collection templates. Only job collection templates that were exported
 from Directory Manager Synchronize can be imported to other machines running Directory Manager
 Synchronize.
 
 The import action only requires you to select the location where the exported template resides.
 
-Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
+Step 1 – In the Directory Manager portal, select **Synchronize** in the left pane.
 
-Step 2 – On the Synchronize portal, click **Job Collections Templates**.
+Step 2 – In the Synchronize portal, click **Job Collection Templates**.
 
 Step 3 – Click **Import Jobs** to open the dialog box.
 
-Step 4 – Click the **Browse** button to browse to the location where the exported job Collection
+Step 4 – Click the **Browse** button to browse to the location where the exported job collection
 templates are placed. The selected path is displayed in the adjacent box.
 
 All job collection templates at the given location get listed in the Name column.
@@ -62,7 +67,7 @@ The Description column shows the description of the job collection template.
 The Total Jobs column shows the total number of jobs in the job collection template.
 
 While importing, if a job collection template with the same name already exists on the machine, a
-confirmation box is displayed for you to verify the import by replacing the existing template or
+confirmation box appears for you to verify the import by replacing the existing template or
 saving it as a new one. If you import it as a new template, Synchronize appends a numeric code to
 the template name to differentiate it from the existing template.
 
@@ -70,9 +75,9 @@ the template name to differentiate it from the existing template.
 
 To export a job collection template, you need to follow these steps:
 
-Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
+Step 1 – In the Directory Manager portal, select **Synchronize** in the left pane.
 
-Step 2 – On the Synchronize portal, click **Job Collections Templates**.
+Step 2 – In the Synchronize portal, click **Job Collection Templates**.
 
 Step 3 – On the Job Collection Templates page, click the **three vertical dots** icon on the
 template in the list that you want to export and click **Export**.
@@ -82,59 +87,59 @@ the top right corner.
 
 ## Create a Job Collection from a Template
 
-To create a job collection from a template.
+To create a job collection from a template:
 
-Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
+Step 1 – In the Directory Manager portal, select **Synchronize** in the left pane.
 
-Step 2 – On the Synchronize portal, click **Job Collection Templates**.
+Step 2 – In the Synchronize portal, click **Job Collection Templates**.
 
 For every template listed, the view provides its name, description, and the number of jobs it
 contains.
 
 Step 3 – On the Job Collection Templates page, click the **three vertical dots** icon on the
-template in the list and select **Create from Template**.
+template in the list and select **Create From Template**.
 
 **OR**
 
 Double-click the job collection template you want to use for the new job collection.
 
-Step 4 – This will launch [Create a Job Collection ](/docs/directorymanager/11.2/portal/synchronize/collection/create.md) wizard starting from
+Step 4 – This launches the [Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.2/portal/synchronize/collection/create.md) wizard starting from
 the Job Collections page. Proceed to map the settings stored in the template on to the new job
 collection.
 
 ## Rename a Job Collection Template
 
-To rename a job collection template.
+To rename a job collection template:
 
-Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
+Step 1 – In the Directory Manager portal, select **Synchronize** in the left pane.
 
-Step 2 – On the Synchronize portal, click **Job Collection Templates**.
+Step 2 – In the Synchronize portal, click **Job Collection Templates**.
 
 Step 3 – On the **Job Collection Templates** page, click the **three vertical dots** icon on the
-template in the list click **Rename**.
+template in the list, and click **Rename**.
 
-Step 4 – On **Rename Job Template Name and Description wizard**, update the name and description and
-click **Save.**
+Step 4 – On the **Rename Job Template Name and Description** wizard, update the name and description and
+click **Save**.
 
 ## Delete a Job Collection Template
 
-To delete a job collection template.
+To delete a job collection template:
 
-Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
+Step 1 – In the Directory Manager portal, select **Synchronize** in the left pane.
 
-Step 2 – On the Synchronize portal, click **Job Collection Templates**.
+Step 2 – In the Synchronize portal, click **Job Collection Templates**.
 
 Step 3 – On the **Job Collection Templates** page, click the **three vertical dots** icon on the
 template in the list that you want to delete and click **Delete**.
 
 ## Filter Job Collection Templates
 
-You can apply filters on the **Job Collection Templates** page to display only those job templatess
+You can apply filters on the **Job Collection Templates** page to display only those job collection templates
 that match the criteria set in the **Search Filters** section.
 
-Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
+Step 1 – In the Directory Manager portal, select **Synchronize** in the left pane.
 
-Step 2 – On Synchronize portal, click **Job Collection Templates**.
+Step 2 – In the Synchronize portal, click **Job Collection Templates**.
 
 Step 3 – In the **Search Filters** section, select one of the following attributes from the
 **Attributes** list to filter job collection templates:
@@ -142,7 +147,7 @@ Step 3 – In the **Search Filters** section, select one of the following attrib
 - Name
 - Description
 
-Step 4 – Two more boxes get displayed next to **Attributes** box upon selecting a filter.
+Step 4 – Two more boxes appear next to the **Attributes** box after you select a filter.
 
 - **Select an Operator** from the first list.
 - Specify a value for the selected operator in the second box.

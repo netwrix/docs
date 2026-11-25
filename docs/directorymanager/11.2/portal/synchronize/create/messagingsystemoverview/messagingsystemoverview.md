@@ -1,15 +1,20 @@
 ---
-title: "Messaging System"
-description: "Messaging System"
+title: "Sync Messaging System Subscriptions in Synchronize"
+description: "Choose Exchange, Google Workspace, or Office 365 to sync or deprovision subscriptions for mail-enabled objects in a Synchronize job."
+keywords:
+  - messaging system
+  - Synchronize job
+  - mail-enabled objects
+  - subscriptions
 sidebar_position: 70
 ---
 
-# Messaging System
+# Sync Messaging System Subscriptions in Synchronize
 
-Use Directory Manager to configure messaging systems and efficiently create or edit mail
-enabled objects through a Synchronize job. You can sync or deprovision subscriptions from the
+Use Directory Manager to configure messaging systems and create or edit mail-enabled
+objects through a Synchronize job. You can sync or deprovision subscriptions from the
 following messaging systems:
 
-- [Exchange Subscription](/docs/directorymanager/11.2/portal/synchronize/create/messagingsystemoverview/exchange.md)
-- [Google Workspace Subscription](/docs/directorymanager/11.2/portal/synchronize/create/messagingsystemoverview/googleapp.md)
-- [Office 365 Subscription](/docs/directorymanager/11.2/portal/synchronize/create/messagingsystemoverview/office365.md)
+- [Sync Exchange Subscriptions in a Synchronize Job](/docs/directorymanager/11.2/portal/synchronize/create/messagingsystemoverview/exchange.md)
+- [Sync Google Workspace Subscriptions in a Synchronize Job](/docs/directorymanager/11.2/portal/synchronize/create/messagingsystemoverview/googleapp.md)
+- [Sync Office 365 Subscriptions in a Synchronize Job](/docs/directorymanager/11.2/portal/synchronize/create/messagingsystemoverview/office365.md)

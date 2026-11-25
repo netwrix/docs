@@ -1,12 +1,17 @@
 ---
-title: "Create User Objects"
-description: "Create User Objects"
+title: "Create User, Mailbox, and Contact Objects"
+description: "See the object types you can create in the Directory Manager portal and the identity providers that support creating them."
+keywords:
+  - create user objects
+  - create mailbox
+  - create contact
+  - identity providers
 sidebar_position: 10
 ---
 
-# Create User Objects
+# Create User, Mailbox, and Contact Objects
 
-Directory Manager portal lets you create following types of users:
+The Directory Manager portal lets you create the following types of users:
 
 - User
 - Mailbox

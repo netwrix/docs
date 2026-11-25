@@ -1,49 +1,54 @@
 ---
-title: "My Groups"
-description: "My Groups"
+title: "View and Manage My Groups in Directory Manager"
+description: "View the groups you own in the Directory Manager portal and update, expire, move, or delete them, and filter the list."
+keywords:
+  - My Groups
+  - group ownership
+  - Smart Group update
+  - group filters
+  - Directory Manager portal
 sidebar_position: 50
 ---
 
-# My Groups
+# View and Manage My Groups in Directory Manager
 
 To view and manage the groups that you own in the identity store, click **Groups** on the left
 navigation pane and select **My Groups**. This page lists all your active groups:
 
-- [My Memberships](/docs/directorymanager/11.2/portal/group/mygroups/mymemberships.md)
-- [My Expired Groups](/docs/directorymanager/11.2/portal/group/mygroups/myexpiredgroups.md)
-- [My Expiring Groups](/docs/directorymanager/11.2/portal/group/mygroups/myexpiringgroups.md)
-- [My Deleted Groups](/docs/directorymanager/11.2/portal/group/mygroups/mydeletedgroups.md)
-- [My Smart Groups](/docs/directorymanager/11.2/portal/group/mygroups/mysmartgroups.md)
-- [My Dynasties](/docs/directorymanager/11.2/portal/group/mygroups/mydynasties.md)
-- [My Teams](/docs/directorymanager/11.2/portal/group/mygroups/myteams.md) (for Microsoft Entra ID based identity store)
+- [View Your Group Memberships in Directory Manager](/docs/directorymanager/11.2/portal/group/mygroups/mymemberships.md)
+- [View My Expired Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/mygroups/myexpiredgroups.md)
+- [View My Expiring Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/mygroups/myexpiringgroups.md)
+- [View My Deleted Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/mygroups/mydeletedgroups.md)
+- [View Your Smart Groups in Directory Manager](/docs/directorymanager/11.2/portal/group/mygroups/mysmartgroups.md)
+- [View My Dynasties in Directory Manager](/docs/directorymanager/11.2/portal/group/mygroups/mydynasties.md)
+- [View Your Microsoft Teams in Directory Manager](/docs/directorymanager/11.2/portal/group/mygroups/myteams.md) (for Microsoft Entra ID based identity store)
 
 By default, the **My Groups** tab displays the groups that you are the primary owner for. To include
 the groups for which you are an additional owner, select the **Display additional group ownership in
-My Groups** checkbox on the [Portal Settings](/docs/directorymanager/11.2/portal/generalfeatures/portal.md) panel. This tab lists active
+My Groups** checkbox on the [Configure Directory Manager Portal Settings](/docs/directorymanager/11.2/portal/generalfeatures/portal.md) panel. This tab lists active
 groups only; expired and deleted groups aren't displayed.
 
 You can [Modify Search Directory](/docs/directorymanager/11.2/portal/group/allgroups/allgroups.md#modify-search-directory) to search your groups and
-add [Filter All Groups](/docs/directorymanager/11.2/portal/group/allgroups/allgroups.md#filter-all-groups)by clicking **My Groups Grid Filters**. All
+add [Filter All Groups](/docs/directorymanager/11.2/portal/group/allgroups/allgroups.md#filter-all-groups) by clicking **My Groups Grid Filters**. All
 your groups matching the filters appear.
 
 **You can:**
 
 - Manually update the membership of a Smart Group using the **Update** command. You can also view
   update details on **Processing Object (s)** wizard. Click **OK** once done. If you click
-  **Background**, the update runs in the background and will show in the **Background Tasks** tab.
-- View and modify the [Group Properties](/docs/directorymanager/11.2/portal/group/properties/overview.md) of a group.
-- Manually expire your groups. After expiring the group, it will be listed in **My Expired Groups**
+  **Background**, the update runs in the background and appears in the **Background Tasks** tab.
+- View and modify the [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.2/portal/group/properties/overview.md) of a group.
+- Manually expire your groups. After you expire a group, it appears in the **My Expired Groups**
   list.
 - Select a smart group and click **Renew** on the toolbar; this re-applies the expiry policy of the
   group starting from today, thus renewing the group.
 - Join a group as a [Join a group temporarily](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupjoinleave.md#join-a-group-temporarily) or
   [Join a group permanently](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupjoinleave.md#join-a-group-permanently)
-- Leave a group’s membership
+- Leave a group's membership:
   [Leave a group temporarily](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupjoinleave.md#leave-a-group-temporarily) or
   [Leave a group permanently](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupjoinleave.md#leave-a-group-permanently).
-- Join / leave a group
-  [Join or leave a group on behalf of a direct report or peer](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupjoinleave.md#join-or-leave-a-group-on-behalf-of-a-direct-report-or-peer)a
-  direct report or peer.
+- Join or leave a group
+  [Join or leave a group on behalf of a direct report or peer](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupjoinleave.md#join-or-leave-a-group-on-behalf-of-a-direct-report-or-peer).
 - To Join/Leave the group, you can also click **Want to write reason to group owner?** and state
   the reason for joining or leaving the group for the group owner.
 - Update the security type of your group using **Set Security Type** option. You can select one of
@@ -55,7 +60,7 @@ your groups matching the filters appear.
 
 - Select a group and click **Move Group** from the toolbar. You can specify a new container from
   **Select Container** box where you want to move the group.
-- Select a group and click **Add to Contacts** on the toolbar to add a group’s email to your email
+- Select a group and click **Add to Contacts** on the toolbar to add a group's email to your email
   contact list using the vCard. The portal creates the group's vCard and prompts you to save it on
   your machine. You can then use it to add the group's email address to your email contact list.
 - Click **Add to Group** to add the group into the membership of another group
@@ -70,7 +75,7 @@ your groups matching the filters appear.
     - **Other:** You can select some other user as the owner.
 
 - Manually [delete a group](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupdeletion.md).
-- Get a list of all groups managed by a particular group (i.e., all groups for which the selected
+- Get a list of all groups managed by a particular group (all groups for which the selected
   group is a primary or additional owner)
 
     Select a group and click **Managed By** on the toolbar to get a list of groups managed by the
@@ -82,8 +87,8 @@ your groups matching the filters appear.
 
 Use the page numbers under the group listing to page through all groups.
 
-You can control the number of records to be displayed per page by modifying the **Search results per
-page** setting on the [Portal Settings](/docs/directorymanager/11.2/portal/generalfeatures/portal.md) panel.
+You can control the number of records displayed per page by modifying the **Search results per
+page** setting on the [Configure Directory Manager Portal Settings](/docs/directorymanager/11.2/portal/generalfeatures/portal.md) panel.
 
 ## Modify Search Directory
 
@@ -92,7 +97,7 @@ a domain to search active groups from.
 
 ## Transfer Ownership
 
-You can find [Transfer Ownership](/docs/directorymanager/11.2/portal/group/transferownership.md) option on the top right corner. Use Transfer
+You can find [Transfer Group Ownership in Directory Manager](/docs/directorymanager/11.2/portal/group/transferownership.md) option on the top right corner. Use Transfer
 Ownership to:
 
 - Assign owners to orphan groups.

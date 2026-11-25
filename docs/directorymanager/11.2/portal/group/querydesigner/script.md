@@ -1,13 +1,19 @@
 ---
-title: "Script tab"
-description: "Query Designer - Script tab"
+title: "Query Designer Script tab"
+description: "View, compile, and check references for the script that manipulates group membership and Query Designer attributes."
+keywords:
+  - Query Designer
+  - group script
+  - compile script
+  - script references
+  - Smart Group
 sidebar_position: 50
 ---
 
-# Script tab
+# Query Designer Script tab
 
 This tab is read-only and displays any script that has been added for the group. The scripting
-feature enables administrators to manipulate group memberships and the Query Designer dialog
+feature lets administrators manipulate group memberships and the Query Designer dialog
 attributes (except for Include and Exclude attributes).
 
 If no script has been added for the group, the box on this tab is blank.
@@ -18,9 +24,9 @@ Displays the script based on the query set by the user.
 
 **Compile Script**
 
-Compile the script to determine if there are any errors which would prevent the code from loading or
-executing. While compiling your script will verify the code is free of syntactical errors, it does
-not guarantee that the code is free from logical errors.
+Compile the script to determine whether any errors would prevent the code from loading or
+executing. Compiling your script verifies that the code is free of syntax errors, but it doesn't
+guarantee that the code is free of logical errors.
 
 **References**
 

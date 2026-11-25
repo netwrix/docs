@@ -1,12 +1,18 @@
 ---
-title: "Dynasties"
-description: "Dynasties"
+title: "View Dynasties in Directory Manager"
+description: "View the Dynasties in the connected identity store, see how parent and child Dynasties relate, and filter the list."
+keywords:
+  - Dynasties
+  - parent Dynasty
+  - child Dynasty
+  - Dynasty naming template
+  - Dynasties Grid Filters
 sidebar_position: 70
 ---
 
-# Dynasties
+# View Dynasties in Directory Manager
 
-A [Dynasty](/docs/directorymanager/11.2/portal/group/dynasty/overview.md)is a Smart Group that creates and manages other Smart Groups using
+A [Dynasties in Directory Manager](/docs/directorymanager/11.2/portal/group/dynasty/overview.md) is a Smart Group that creates and manages other Smart Groups using
 information in the directory. This view lists only the Dynasties created in Directory Manager in the
 connected identity store, and doesn't include expired and deleted Dynasties.
 
@@ -21,6 +27,6 @@ Dynasty names help you group a parent Dynasty with its respective child Dynastie
 - For a Managerial Dynasty - By default, the naming template for its child Dynasties starts with
   "Direct reports of `manager`".
 
-You can [Modify Search Directory](allgroups.md#modify-search-directory) to search dynasties and add
-[Filter All Groups](allgroups.md#filter-all-groups)by clicking **Dynasties Grid Filters**. All the
-dynasties matching the filters appear.
+You can [Modify Search Directory](allgroups.md#modify-search-directory) to search Dynasties and add
+[Filter All Groups](allgroups.md#filter-all-groups) by clicking **Dynasties Grid Filters**. All the
+Dynasties matching the filters appear.

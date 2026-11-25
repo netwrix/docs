@@ -1,18 +1,24 @@
 ---
-title: "Smart Group/Query Designer tab"
-description: "Group properties - Smart Group/Query Designer tab"
+title: "Edit a Smart Group Query and Update Schedule"
+description: "View and modify the query behind a Smart Group or Dynasty, preview its membership, and associate a scheduled Smart Group Update job."
+keywords:
+  - Smart Group query
+  - Query Designer
+  - Dynasty
+  - Smart Group Update job
+  - membership preview
 sidebar_position: 90
 ---
 
-# Smart Group/Query Designer tab
+# Edit a Smart Group Query and Update Schedule
 
-Use this tab to view and modify the query defined for the Smart Group/Dynasty, and even schedule
+Use this tab to view and modify the query defined for the Smart Group/Dynasty, and schedule
 updates.
 
 The group’s membership is updated with the records fetched by the query.
 
 :::note
-In case of an Office 365 group in a Microsoft Entra ID based identity store, group membership
+For an Office 365 group in a Microsoft Entra ID based identity store, group membership
 is updated with user objects only.
 :::
 
@@ -22,11 +28,11 @@ membership update.
 
 **Containers**
 
-Displays the domain or containers the query will run on.
+Displays the domain or containers the query runs on.
 
 **Object Types**
 
-Lists the object types the query will fetch.
+Lists the object types the query fetches.
 
 **Server and Storage**
 
@@ -36,7 +42,7 @@ server and storage for the query to fetch the records from.
 **Query Designer**
 
 To modify the query, click the **Query Designer** button. This launches the
-[Query Designer](/docs/directorymanager/11.2/portal/group/querydesigner/overview.md) dialog box, where you can modify the query.
+[Query Designer in the Directory Manager portal](/docs/directorymanager/11.2/portal/group/querydesigner/overview.md) dialog box, where you can modify the query.
 
 Smart Groups and Dynasties in a Microsoft Entra ID based identity store use a device structured query
 language while those in an Active Directory based identity store use LDAP queries to update group
@@ -44,7 +50,7 @@ membership.
 
 **Membership Preview**
 
-You can preview the group members of the smart group before executing the changes.
+You can preview the group members of the Smart Group before executing the changes.
 
 **Clear**
 
