@@ -16,8 +16,8 @@ A Directory Manager portal represents a virtual link with the directory. Using i
 following in an identity store:
 
 - Search the directory.
-- Perform group management tasks, such as creating and updating their groups, joining or leaving a group,
-  attesting an expiring group, renewing an expired group, and more.
+- Perform group management tasks, such as creating and updating their groups, attesting an expiring group,
+  renewing an expired group, joining a group, leaving a group, and more.
 - Carry out user management tasks, such as create, update, and delete users in the directory. Users
   can maintain and update their profiles, change their passwords, manage direct reports, and more.
 - Synchronize data between a source and a destination, such as directories, files, and databases.
