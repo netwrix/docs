@@ -69,7 +69,7 @@ but for an Microsoft Entra ID identity store you must configure a SAML provider.
 topics for additional information on configuring a SAML provider:
 
 - [Configure Directory Manager in Microsoft Entra ID for SSO](/docs/directorymanager/11.2/authenticate/asserviceprovider/entrasso/configureinentra.md)
-- [Configure the Microsoft Entra SSO Application in Directory Manager](/docs/directorymanager/11.2/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md)
+- [Configure the Entra ID Provider in Directory Manager](/docs/directorymanager/11.2/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md)
 
 To log in with a SAML provider
 

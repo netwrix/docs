@@ -24,7 +24,7 @@ Use any of the following methods to connect and sign in:
     To sign in using the Directory Manager provider, enter the username and password you
     provided for the _GroupID administrator_ on the Service Account Settings page of the
     Configuration Tool. See the
-    [Configure a New Directory Manager Server with a New or an Existing Database](/docs/directorymanager/11.2/install/configure/gidserver.md)
+    [Configure a Directory Manager Server and Database](/docs/directorymanager/11.2/install/configure/gidserver.md)
     topic.
     :::
 
@@ -74,7 +74,7 @@ You can use single sign-on across all Directory Manager clients if you have conf
 SAML provider configuration:
 
 - [Configure Directory Manager in Microsoft Entra ID for SSO](/docs/directorymanager/11.2/authenticate/asserviceprovider/entrasso/configureinentra.md)
-- [Configure the Microsoft Entra SSO Application in Directory Manager](/docs/directorymanager/11.2/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md)
+- [Configure the Entra ID Provider in Directory Manager](/docs/directorymanager/11.2/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md)
 
 On the **GroupID Authenticate** page, click the button or image for the provider and proceed to sign
 in.

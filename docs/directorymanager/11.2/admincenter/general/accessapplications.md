@@ -33,7 +33,7 @@ To add a third-party application:
 2. Click **Add Apps** on the **GroupID Applications** page to add a third-party application. You are
    redirected to the **Create Application** page, where you can provide the details of the
    application you want to add as a service provider in Directory Manager. See the
-   [Register an Application (Service Provider) in Directory Manager](/docs/directorymanager/11.2/authenticate/asidentityprovider/register.md)
+   [Register a SAML Service Provider in Directory Manager](/docs/directorymanager/11.2/authenticate/asidentityprovider/register.md)
    topic.
 
 ## Enroll your Account

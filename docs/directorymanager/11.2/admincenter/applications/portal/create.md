@@ -332,7 +332,7 @@ After you re-run the tool, add the IP address again.
 :::
 
 For more on restricting access to Directory Manager services, see the
-[Security Utility](/docs/directorymanager/11.2/install/securityutility.md) topic.
+[Directory Manager Security Utility](/docs/directorymanager/11.2/install/securityutility.md) topic.
 
 ## Create a Self-Service Password Reset Portal
 

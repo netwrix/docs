@@ -16,5 +16,5 @@ Manager 11.2. The prerequisites may vary depending on your environment.
 
 Before installation, the [Preparation Tool](/docs/directorymanager/11.2/install/installer/preparationtool.md) installs the
 required software and Windows features. See the
-[What does the Preparation Tool Install](/docs/directorymanager/11.2/install/installer/whatprepinstall.md) topic for the list
+[Software the Directory Manager Preparation Tool Installs](/docs/directorymanager/11.2/install/installer/whatprepinstall.md) topic for the list
 of components the tool installs.

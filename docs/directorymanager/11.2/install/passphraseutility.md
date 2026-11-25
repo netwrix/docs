@@ -1,10 +1,15 @@
 ---
-title: "Passphrase Utility"
+title: "Directory Manager Passphrase Utility"
 description: "Export the passphrase from the primary Directory Manager server and import it on secondary servers in a multi-instance deployment."
+keywords:
+  - Directory Manager passphrase utility
+  - export passphrase
+  - import passphrase
+  - Directory Manager multi-instance deployment
 sidebar_position: 45
 ---
 
-# Passphrase Utility
+# Directory Manager Passphrase Utility
 
 In a multi-instance deployment, all Directory Manager servers must use the same passphrase. Use the
 passphrase utility, `directory-manager-passphrase-utility.exe`, to export the passphrase from the
@@ -48,4 +53,4 @@ Repeat these steps on every secondary server.
 
 For the other secrets that all servers in a multi-instance deployment share, see the
 [Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md)
-and [Security Utility](/docs/directorymanager/11.2/install/securityutility.md) topics.
+and [Directory Manager Security Utility](/docs/directorymanager/11.2/install/securityutility.md) topics.
