@@ -40,7 +40,7 @@ If you're migrating a 5.x server to the current image-based platform (2510/2604)
 To stay informed about future version releases, visit the [Netwrix Community Endpoint Protector](https://community.netwrix.com/c/products/endpoint-protector/22) page and click the **Subscribe** button.
 
 > **IMPORTANT:**
-> If you are migrating a 5.x server to the current image-based platform (2611, using the 2608 base image and the 2611 Offline Patch) rather than applying a routine patch, follow the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide) instead. It covers the mandatory intermediate upgrade to 5.9.4.2 and the full migration sequence in detail.
+> If you are migrating a 5.x server to the current image-based platform (2611, using the 2608 base image and the 2611 Offline Patch) rather than applying a routine patch, follow the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/migrationprocedure/migrationguide) instead. It covers the mandatory intermediate upgrade to 5.9.4.2 and the full migration sequence in detail.
 
 ## Instructions
 

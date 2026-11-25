@@ -66,7 +66,7 @@ Content Aware Policies support the following threshold types and best practices:
 - **Regular Threshold:** This threshold applies to individual content types (e.g., it blocks four or more SSNs).
 - **Global Threshold:** This threshold applies to combined threats (e.g., it blocks four or more threats of different types).
 - **Best Practice:** Place **Block & Report** policies with thresholds at higher priority than **Report only** policies.
-- **Range and severity:** The range and severity apply only when both the Server and the Client are version 2611 or later. Existing policies keep their threshold as the minimum, with no maximum. See [Threshold ranges and severity](/docs/endpointprotector/admin/cap_module/cappolicies#threshold-ranges-and-severity).
+- **Range and severity:** The range and severity apply only when both the Server and the Client are version 2611 or later. Existing policies keep their threshold as the minimum, with no maximum. See [Threshold ranges and severity](/docs/endpointprotector/configuration/cap_module/cappolicies#threshold-ranges-and-severity).
 
 ## Policy Exit Points
 
