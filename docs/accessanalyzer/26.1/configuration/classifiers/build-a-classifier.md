@@ -149,6 +149,10 @@ Under any severity, click **Ask System One before `<severity>` is final** to add
 
 A review has the same **Confidence** and **Model** settings as a System One detector, and it counts toward the same limit on System One questions. Click **Remove** to delete a review.
 
+### MIP label for a severity
+
+With Microsoft Information Protection (MIP) labeling on, each severity that has a rule also shows a **MIP label** list. Select a label there to apply it to every file where the classifier reports that severity. See [Apply labels with classifiers](../mip-labels/apply-labels-with-classifiers.md).
+
 ## Severity variables
 
 A severity variable is a named condition you define once under **Severity variables** and reuse in any severity rule with the **Variable** condition. Use one when several severities share a test, such as "a card number near a card label", so a change to the test applies everywhere it's used.

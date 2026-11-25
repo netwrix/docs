@@ -81,7 +81,7 @@ A scan that selects classifiers by label picks up any classifier you publish lat
 
 ## Built-in and custom classifiers
 
-Built-in classifiers are read-only. When you open one, a banner reads "This classifier ships with the product and is read-only. Edit makes your own copy, which runs in its place until you delete it."
+The rules of a built-in classifier are read-only. When you open one, a banner reads "This classifier ships with the product, so its rules are read-only". With Microsoft Information Protection (MIP) labeling on, you can still choose the MIP label each severity of a built-in classifier applies; see [Apply labels with classifiers](../mip-labels/apply-labels-with-classifiers.md#built-in-classifiers).
 
 To change a built-in classifier, open its **Actions** menu and click **Edit (makes your copy)**, or click **Edit (makes your copy)** in the builder. Access Analyzer creates a copy with the same rules, marked **Your copy**, and a message confirms that the copy now runs in place of the built-in classifier. Scans that select the built-in classifier run your copy instead, with no change to the scans. To go back to the shipped version, click **Restore the built-in** in the copy's **Actions** menu; this deletes your copy.
 
@@ -113,5 +113,7 @@ The scan skips files above the size limit. The default limit is 10 MB for both F
 Each execution of a Classification scan lists the files it read on its **Files** tab, with the outcome, severity, and classifiers for every file with findings. Each finding opens a decision view that explains how the classifier reached its verdict. See [Scan executions](../../admin/scans/scan-executions.md#files-tab).
 
 Findings never store the matched values. The decision view shows each match and up to 24 characters around it masked: digits appear as `#`, letters as `x`, and punctuation as `*`, so you can see the shape of the evidence without the data itself. Only the pattern's own fixed text, such as the `AKIA` prefix of an AWS access key, stays readable.
+
+When a classifier has a MIP label for the severity it found, Access Analyzer also applies that label to the file. The execution's **MIP labels** tab lists those files. See [MIP labels](../mip-labels/index.md).
 
 The **Sensitive Data Overview** reports and the [Data security dashboard](../../admin/dashboards-reports/dashboards/data-security.md) summarize findings across your sources. See [Dashboards and reports](../../admin/dashboards-reports/index.md).

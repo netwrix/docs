@@ -179,6 +179,71 @@ Three settings on the **Classification** card of **Settings > Application** cont
 
 When a run's file list is removed, its totals stay, and the **Files** tab reports **This run's file list was removed**.
 
+## MIP labels tab
+
+The **MIP labels** tab of a Classification scan's execution lists the files that a classifier chose a Microsoft Information Protection (MIP) sensitivity label for, and what happened to each one. Admins and Viewers can open it. [MIP labels](../../configuration/mip-labels/index.md) explains how a file gets a label.
+
+A sentence before the table summarizes the run, such as **42 files would be encrypted with Highly Confidential. This was a dry run: no file was encrypted.** The counts in it are links that filter the table. While Access Analyzer is still labeling, the tab reads **`<N>` files are still being evaluated** and refreshes on its own.
+
+| Column | What it shows |
+|---|---|
+| **File** | The file's path. |
+| **Label** | The label chosen for the file. A sublabel shows as **`<parent>` / `<sublabel>`**. |
+| **What happened** | The outcome; see [Label outcomes](#label-outcomes). |
+| **When** | When Access Analyzer recorded the outcome. |
+
+Use **Search paths…** and the two filters to narrow the list:
+
+| Filter | Options |
+|---|---|
+| **Files from** | **This run**, the default, or **The whole source**. A differential run only looks at new or changed files, so choose **The whole source** to see every file's latest outcome. |
+| **Files that** | **Would be encrypted**, the default, **Were encrypted**, **Kept the label they had**, **Are not Office files**, **Could not be read**, **Could not be checked**, **Got a label that does not encrypt**, **Were skipped, encryption is off**, or **Every file with a label**. |
+
+The tab opens on **Would be encrypted**, so a run that applied only labels that don't encrypt looks empty at first. Select **Got a label that does not encrypt** or **Every file with a label** to see its files.
+
+### Label outcomes
+
+| What happened | Meaning |
+|---|---|
+| **Labeled** | Access Analyzer applied a label that doesn't encrypt. |
+| **Encrypted** | Access Analyzer applied a label that encrypts. |
+| **Would be encrypted** | A dry run: the file passed every check, and nothing changed. |
+| **Skipped, encryption is off** | The label encrypts, and **Labels that encrypt** is set to **Off**. |
+| **Already had this label** | The file already carried the chosen label. |
+| **Kept a more sensitive label** | The file has a label that Purview ranks higher, and the classifier doesn't replace more sensitive labels. |
+| **Kept a label this app does not know** | The file has a label that isn't among the synced labels. |
+| **Kept, the label would remove protection** | The file has a label that encrypts, and the chosen label doesn't. |
+| **Not an Office file** | The file isn't a Word, Excel, or PowerPoint file, so no label was applied. |
+| **Left as saved, it changed while being labeled** | Someone saved the file while Access Analyzer was labeling it. The next scan labels it. |
+| **Not checked: Rights Management not ready** | The label encrypts, and encryption isn't ready. See [Check that encryption is ready](../../configuration/mip-labels/labels-that-encrypt.md#check-that-encryption-is-ready). |
+| **Access denied** | Access Analyzer couldn't open or write the file. For a file that's already encrypted, the app registration isn't a super user. |
+| **File not found** | The file was moved or deleted after the scan classified it. |
+| **Label no longer synced** | The chosen label isn't among the synced labels anymore. Sync the labels, or choose another label in the classifier. |
+| **Could not be read** | Labeling failed for another reason, such as a file larger than 256 MiB (about 268 MB) or an Office file that a password encrypts. |
+
+[Files that already have a label](../../configuration/mip-labels/apply-labels-with-classifiers.md#files-that-already-have-a-label) explains when a label is kept and how to change that.
+
+### Encrypt the files from a dry run
+
+Admins can encrypt the files that a dry run listed, without running the scan again.
+
+1. On the **MIP labels** tab, keep **Files that** on **Would be encrypted**.
+2. To encrypt every listed file, click **Encrypt all `<N>` files in this run**. To encrypt some, select their rows and click **Encrypt `<N>` files**.
+3. In **Encrypt `<N>` files?**, click **Encrypt `<N>` files**.
+
+A message confirms **Queued `<N>` files for encryption**. Each file is encrypted in place with its label, and only the people the label allows can open it afterwards.
+
+:::warning
+A file server has no version history to go back to. Encrypting a file on a File Server source can't be undone from Access Analyzer.
+:::
+
+The **Encrypt all** button isn't available while **Search paths…** holds text. Access Analyzer refuses the request in two cases:
+
+| Message | Fix |
+|---|---|
+| "Labels that encrypt are off. Choose Dry run or Apply in Settings, under Classification, on the MIP labels tab, then encrypt these files." | Set the mode to **Dry run** or **Apply**. See [Choose what scans do with labels that encrypt](../../configuration/mip-labels/labels-that-encrypt.md#choose-what-scans-do-with-labels-that-encrypt). |
+| "Rights Management has not accepted this app yet. Check encryption readiness in Settings, under Classification, on the MIP labels tab." | Fix the requirement the readiness check reports, and then click **Check now**. |
+
 ## Run a Scan Again
 
 You can't retry an execution on its own. To collect again, run the scan:
