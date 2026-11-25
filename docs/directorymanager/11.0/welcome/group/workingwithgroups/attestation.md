@@ -1,54 +1,59 @@
 ---
-title: "Attest an Expiring Group"
-description: "Attest an Expiring Group"
+title: "Attest an Expiring Group in Directory Manager"
+description: "Review and validate an expiring group's attributes and membership as its owner so the group can be renewed instead of expiring."
+keywords:
+  - group attestation
+  - expiring group
+  - group renewal
+  - member attestation
+  - membership type
 sidebar_position: 20
 ---
 
-# Attest an Expiring Group
+# Attest an Expiring Group in Directory Manager
 
-If the GroupID administrator enables group attestation for the identity store, then group owners
-must review and validate the attributes and membership of an expiring group before renewing it.
+If the Directory Manager administrator enables group attestation for the identity store, then group
+owners must review and validate the attributes and membership of an expiring group before renewing
+it.
 
 While attesting a group, the owner can:
 
-- Update a few attributes, such as the group’s display name, expiration policy, security type, etc.
+- Update a few attributes, such as the group’s display name, expiration policy, and security type.
 - Verify the group’s membership and inactivate unrequired members. Inactive members are removed from
   group membership instantly or after x number of days, depending on the configurations made by the
   administrator.
 
-A group expires when it is not attested and renewed during its expiring days.
+A group expires when it isn't attested and renewed during its expiring days.
 
 **History Logging**
 
-GroupID tracks and maintains history for group attestation. On the
-[Object properties - History tab](/docs/directorymanager/11.0/welcome/group/properties/history.md)
+Directory Manager tracks and maintains history for group attestation. On the
+[Directory Manager object properties: History tab](/docs/directorymanager/11.0/welcome/group/properties/history.md)
 in group properties, the following is logged:
 
 - The date the group was attested on.
 - Any attribute value updated during group attestation.
 - The status of a group member set to ‘active’ or ‘inactive’.
 
-What do you want to do?
-
-- [Attest a group](#attest-a-group)
-
 ## Attest a group
 
-1. In GroupID portal, on the left navigation bar, click **Groups.** On the **Groups** page select
-   the **All Groups** tab.
+To attest a group:
+
+1. In the Directory Manager portal, on the left navigation bar, click **Groups**. On the **Groups** page
+   select the **All Groups** tab.
 2. Select an expiring group and click **Attest Group** on the toolbar.
 
-    The button would be disabled if you select multiple groups.
+    The button is disabled if you select multiple groups.
 
-3. On the **Attest Group** wizard, review the values provided for the group attributes and update
+3. In the **Attest Group** wizard, review the values provided for the group attributes and update
    any information, if required. Then click **Next Step**.
-4. On the **Step 2: Member Attestation** page, verify the group members. The page has 3 tabs:
+4. On the **Step 2: Member Attestation** page, verify the group members. The page has three tabs:
 
     - **Disabled Members**: Lists group members that are disabled in the directory.
-    - **Not logged in 30 days**: Lists group members that have not logged into their workstations in
+    - **Not logged in 30 days**: Lists group members that haven't signed in to their workstations in
       the last 30 days.
-    - **All Members**: Lists active group members only. Disabled members and those who have not
-      logged in during the last 30 days are not included.
+    - **All Members**: Lists active group members only. Disabled members and those who haven't
+      signed in during the last 30 days aren't included.
 
 5. On each of these tabs, review the members list and set their status to _active_ or _inactive_.
 
@@ -57,19 +62,21 @@ What do you want to do?
       versa, click the relevant button for it.
 
         The **Active All** and **Inactive All** buttons are available if the administrator has
-        allowed group owners to specify the status of all member in a single click.
+        allowed group owners to specify the status of all members in a single click.
 
-    - If the **Active All** and **Inactive All** buttons are not available, the group owner must
-      verify each member one by one (by individually specifying its status as active or inactive.
+    - If the **Active All** and **Inactive All** buttons aren't available, the group owner must
+      verify each member one by one (by individually specifying its status as active or inactive).
 
-    NOTE: Setting ‘active’ as status for a disabled user does not activate or enable the user's
+    :::note
+    Setting ‘active’ as status for a disabled user doesn't activate or enable the user's
     account.  
-     Setting ‘active’ as status for users who have not logged in during the last 30 days does not
+    Setting ‘active’ as status for users who haven't signed in during the last 30 days doesn't
     move them to the **All Members** listing.
+    :::
 
 6. The **Membership** column displays the membership type for active members.
 
-    You can change the membership type of users in all three listings – **All Members**,**Disabled
+    You can change the membership type of users in all three listings – **All Members**, **Disabled
     Members** and **Not logged in 30 days**.
 
     Membership types are:
@@ -78,43 +85,43 @@ What do you want to do?
     - **Temporary Member** - To make the object a temporary member of the group for the period you
       specify in the **Beginning** and **Ending** boxes. At the end of the period, the object is
       removed from the group membership.
-    - **Addition Pending** - Indicates that the object will be a temporary member of the group for a
+    - **Addition Pending** - Indicates that the object is scheduled to become a temporary member of the group for a
       period in the future. Use the **Beginning** and **Ending** boxes to set a period. Before the
       beginning date, the object’s membership type is displayed as ‘Addition Pending’. On the
       beginning date, the membership type changes to ‘Temporary Member’.
 
-        **Here is an example:**
+        For example:
 
         You add Smith as a temporary member to Group A on May 15, 2019 for future dates, May
         20-30, 2019.
 
-        Smith will be displayed in Group A’s membership with ‘Addition Pending’ as its membership
-        type from May 15 to 19, 2019. However, Smith would not be added to group membership in the
+        Smith appears in Group A’s membership with ‘Addition Pending’ as its membership
+        type from May 15 to 19, 2019. However, Smith isn't added to group membership in the
         provider.
 
-        On May 20, Smith will become a temporary member of Group A and its membership type will
-        change to ‘Temporary Member’ from May 20 to 30, 2019. Smith will also be added to group
+        On May 20, Smith becomes a temporary member of Group A and its membership type
+        changes to ‘Temporary Member’ from May 20 to 30, 2019. Smith is also added to group
         membership in the provider.
 
-        After May 30, Smith will be removed from Group A as a member in GroupID and in the provider.
+        After May 30, Smith is removed from Group A as a member in Directory Manager and in the provider.
 
-    - **Removal Pending** - Indicates that the object will be temporarily removed from group
+    - **Removal Pending** - Indicates that the object is scheduled to be temporarily removed from group
       membership for a period in the future. Use the **Beginning** and **Ending** boxes to set a
       period. Before the beginning date, the object’s membership type is displayed as ‘Removal
-      Pending’. On the beginning date, the membership type will change to ‘Temporary Removed’.
+      Pending’. On the beginning date, the membership type changes to ‘Temporary Removed’.
 
-        _Here is an example:_
+        For example:
 
         You remove Smith from Group A on May 15, 2019 for future dates, May 20-30, 2019.
 
-        Smith will be displayed in Group A’s membership with ‘Removal Pending’ as membership type
+        Smith appears in Group A’s membership with ‘Removal Pending’ as membership type
         from May 15 to 19, 2019.
 
-        On May 20, Smith’s membership type in GroupID will change to ‘Temporary Removed’; lasting
-        till May 30, 2019. However, Smith will be removed from Group A’s membership in the provider.
+        On May 20, Smith’s membership type in Directory Manager changes to ‘Temporary Removed’,
+        lasting until May 30, 2019. However, Smith is removed from Group A’s membership in the provider.
 
-        After May 30, Smith will be added back to Group A as a permanent member in GroupID and in
-        the provider.
+        After May 30, Smith is added back to Group A as a permanent member in Directory Manager
+        and in the provider.
 
     - **Temporary Removed** - Indicates that the object is temporarily removed from group membership
       for the period specified in the **Beginning** and **Ending** boxes. At the end of the period,
@@ -126,19 +133,19 @@ What do you want to do?
 
     - The administrator can specify X number of days, say 5.
 
-        When the status of a member is set to inactive, he/she is immediately removed from group
-        membership in the directory provider. In GroupID, however, he/she remains a group member
-        till the specified number of days, starting from the inactivation date. On the **Attest &
+        When the status of a member is set to inactive, they're immediately removed from group
+        membership in the directory provider. In Directory Manager, however, they remain a group member
+        until the specified number of days, starting from the inactivation date. On the **Attest &
         Renew Group** wizard, the **Beginning** column displays the date when the user’s status was
-        set to inactive, and the **Ending** column displays the date when the user would be removed
-        from group membership in GroupID, based on the specified days.
+        set to inactive, and the **Ending** column displays the date when the user is removed
+        from group membership in Directory Manager, based on the specified days.
 
         During this period, the member can be activated (added back to group membership). When the
-        member is not activated, the Membership Life Cycle job removes it from group membership in
-        GroupID too.
+        member isn't activated, the Membership Life Cycle job removes it from group membership in
+        Directory Manager too.
 
-    - If the administrator has not specified any days, the inactivated member is removed from group
-      membership in the directory provider and in GroupID when the **Attest & Renew Group** wizard
+    - If the administrator hasn't specified any days, the inactivated member is removed from group
+      membership in the directory provider and in Directory Manager when the **Attest & Renew Group** wizard
       completes. In this case, the **Beginning** and **Ending** columns remain blank.
 
 8. Click **Next Step**.
@@ -147,9 +154,9 @@ What do you want to do?
 
     Click **Attest Group** to attest and renew the group.
 
-    On attestation, the group’s expiration policy is re-applied to it, starting from today.
+    On attestation, Directory Manager reapplies the group’s expiration policy, starting from today.
 
 **See Also**
 
-- [My Expiring Groups](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiringgroups.md)
-- [Working with Groups](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [View My Expiring Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiringgroups.md)
+- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

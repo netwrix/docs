@@ -1,12 +1,16 @@
 ---
-title: "Get My Expiring Groups Count"
-description: "Get My Expiring Groups Count"
+title: "Get My Expiring Groups Count with the Directory Manager API"
+description: "Get the number of groups of the authenticated user that are about to expire."
+keywords:
+  - Directory Manager API
+  - expiring groups count
+  - Groups/Expiring/count endpoint
 sidebar_position: 80
 ---
 
-# Get My Expiring Groups Count
+# Get My Expiring Groups Count with the Directory Manager API
 
-This API retrieves the number of expiring groups of the authenticate user.
+This API retrieves the number of expiring groups of the authenticated user.
 
 ## Endpoint
 
@@ -16,7 +20,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -25,7 +29,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -36,5 +40,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

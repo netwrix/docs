@@ -1,18 +1,23 @@
 ---
-title: "Contact Reports"
-description: "Contact Reports"
+title: "Contact Reports in Directory Manager"
+description: "Browse the contact report templates in Directory Manager, such as phone lists of users and contacts, and pick one to generate."
+keywords:
+  - Directory Manager contact reports
+  - contact report templates
+  - phone number report
+  - Exchange mail-enabled contacts
 sidebar_position: 60
 ---
 
-# Contact Reports
+# Contact Reports in Directory Manager
 
-Contact Reports contains reports for the Contact objects in the directory. Search a specific report
-by typing its name in the **Search Reports** box.
+Contact Reports include reports for the contact objects in the directory. To find a specific report,
+type its name in the **Search Reports** box.
 
-Click any of the report template from the list to
-[Generate Reports](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
+Click any report template in the list to
+[Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
 
-Following is the list of reports for this category:
+The following table lists the reports in this category:
 
 | Report                                                          | Description                                     |
 | --------------------------------------------------------------- | ----------------------------------------------- |
@@ -21,8 +26,8 @@ Following is the list of reports for this category:
 
 **See Also:**
 
-- [Generate Reports](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
-- [Manage Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
-- [Group Reports](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [User Reports](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
+- [Manage Directory Manager Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
+- [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)

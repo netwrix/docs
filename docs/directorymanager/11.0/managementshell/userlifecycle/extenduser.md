@@ -1,12 +1,18 @@
 ---
-title: "Extend-User"
-description: "Extend-User"
+title: "Extend-User Cmdlet for Directory Manager"
+description: "Extend the user lifecycle of an expired user for a specified period with the Extend-User cmdlet."
+keywords:
+  - Extend-User
+  - extend user lifecycle
+  - expired user
+  - profile validation
+  - Management Shell
 sidebar_position: 10
 ---
 
-# Extend-User
+# Extend-User Cmdlet for Directory Manager
 
-Use the **Extend-User** commandlet to extend the user lifecycle of an expired user for specified
+Use the **Extend-User** cmdlet to extend the user lifecycle of an expired user for a specified
 period of days.
 
 ## Syntax
@@ -28,7 +34,7 @@ Extend-User
 Example:
 
 The following cmdlet extends the profile validation period for the specified user. The period is
-extended up to the specified days for the identity store.
+extended by the number of days specified for the identity store.
 
 ```
 Extend-User -Identity "CN=ImanamiUser100,OU=BulkUsers,DC=gid,DC=local"
@@ -36,6 +42,6 @@ Extend-User -Identity "CN=ImanamiUser100,OU=BulkUsers,DC=gid,DC=local"
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Lifecycle Commands ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Lifecycle Cmdlets for Directory Manager ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

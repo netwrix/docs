@@ -1,13 +1,18 @@
 ---
-title: "Get File Server Metadata by Type"
-description: "Get File Server Metadata by Type"
+title: "Get File Server Metadata by Type with the Directory Manager API"
+description: "Send a GET request to the Directory Manager API to retrieve the configuration fields for data sources on a file server type such as OneDrive."
+keywords:
+  - file server metadata
+  - GetFileServerMetaDataByType
+  - OneDrive data source
+  - data source API
 sidebar_position: 100
 ---
 
-# Get File Server Metadata by Type
+# Get File Server Metadata by Type with the Directory Manager API
 
-Using this API you can get metadata information of data source(s) by server type. For example, all
-Excel data source(s) defined so far in GroupID that have their source files in cloud.
+Use this API to get metadata information of data sources by server type. For example, all
+Excel data sources defined so far in Directory Manager that have their source files in the cloud.
 
 ## Endpoint
 
@@ -17,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/GetFileServerMetaData
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -135,7 +140,7 @@ GET
 }
 ```
 
-See Also
+## See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

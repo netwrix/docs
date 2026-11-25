@@ -1,30 +1,29 @@
 ---
-title: "My Groups' History"
-description: "My Groups' History"
+title: "View and Filter History of Groups You Own"
+description: "View, filter, annotate, and export the history of changes made to groups you own, in Detailed or Administrative view."
+keywords:
+  - My Groups History
+  - group history
+  - history notes
+  - Administrative view
+  - export history
 sidebar_position: 30
 ---
 
-# My Groups' History
+# View and Filter History of Groups You Own
 
 To view a detailed list of the actions that you have performed on the groups that you own using the
 following, click **History** on the left navigation bar:
 
-- GroupID portal
-- GroupID Management Shell cmdlets
-- GroupID mobile app
-- GroupID APIs
+- Directory Manager portal
+- Directory Manager Management Shell cmdlets
+- Directory Manager mobile app
+- Directory Manager APIs
 
-History page opens with the **My History** tab in view. On the displayed page, click the **My Groups
+The History page opens with the **My History** tab in view. On the displayed page, click the **My Groups
 History** tab.
 
 History is logged for groups that have you as the primary or additional owner.
-
-What do you want to do?
-
-- History view modes
-- Filter history data
-- Add notes to history items
-- Export history data
 
 ## History view modes
 
@@ -50,18 +49,18 @@ action along with their old and new values.
 
 ## Filter history data
 
-1. Click **My Groups History Grid Filter** to specify a criteria for filtering history data.
+1. Click **My Groups History Grid Filter** to specify criteria for filtering history data.
 2. Click **Add Filter** to add the filter criteria.
 3. From the **Select a filter** list, select attributes to filter history data on the basis of the
    attribute modified.
-4. Two more boxes get displayed next to **Select a filter** box upon selecting a filter.
+4. Two more boxes are displayed next to the **Select a filter** box after you select a filter.
 
     - **Select an Operator**: Select an operator from the first list.
     - **Select a Value**: Specify a value for the selected operator in the second box.
 
     For example, if you select '_Modified on_' from the first list, '_is exactly_' from the second
     list, and specify a date in the third box, then history items that were modified on the
-    specified date will be displayed.
+    specified date are displayed.
 
 5. Click **Apply Filter**.
 
@@ -76,23 +75,23 @@ action along with their old and new values.
 
 ## Add notes to history items
 
-GroupID enables a user to add notes to history items that were logged as a result of any change they
-made. A note may explain the reason for making a certain change, such as why they changed the
+Directory Manager lets a user add notes to history items that were logged as a result of any change
+they made. A note may explain the reason for making a certain change, such as why they changed the
 security type for a group.
 
-Only the user who added the note can update it. Other users can only view this note; they cannot
+Only the user who added the note can update it. Other users can only view this note; they can't
 edit or add comments.
 
-- The **Add Note** button is available next to a history item listed.
-- Once you add a note, the **Add Note** button changes to **View Note**. All portal users can use
+- The **Add Note** button is available next to a listed history item.
+- After you add a note, the **Add Note** button changes to **View Note**. All portal users can use
   this button to view the note.
 
 ### Add a note
 
-The option to add a note is available on the My Account History card on Dashboard, and all History
-pages i.e.[My History](/docs/directorymanager/11.0/welcome/history/myhistory.md),
-[My Direct Reports' History](/docs/directorymanager/11.0/welcome/history/mydirectreport.md)
-and My Groups' History pages.
+The option to add a note is available on the My Account History card on the Dashboard and on all
+History pages: [View My History in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/history/myhistory.md),
+[View My Direct Reports' History in Directory Manager](/docs/directorymanager/11.0/welcome/history/mydirectreport.md),
+and My Groups' History.
 
 1. Click the **Add Note** button next to a history item to add a note to it.
 2. On the **Add Note** dialog box, write a note and click **Add Note** to save it.
@@ -101,7 +100,7 @@ and My Groups' History pages.
 
 ### Edit a note
 
-You can only edit the note that you have added.
+You can only edit notes you have added.
 
 1. Click the **View Note** button next to a history item to view or edit the note for it.
 2. On the **Note** dialog box, click the **Edit Note** button and update the note.
@@ -109,7 +108,7 @@ You can only edit the note that you have added.
 
 ### View a note
 
-Once a note is added, other users can view it, but they cannot edit it or add comments to it.
+After a note is added, other users can view it, but they can't edit it or add comments to it.
 
 - In the Detailed view:
 
@@ -121,7 +120,7 @@ Once a note is added, other users can view it, but they cannot edit it or add co
 
 ### Remove a note
 
-You can only remove the note that you have added.
+You can only remove notes you have added.
 
 1. Click the **View Note** button next to a history item to view or remove the note for it.
 2. Click the **Edit Note** button and remove the note.
@@ -142,5 +141,5 @@ The file is created at the download location specified in the browser settings.
 
 **See Also**
 
-- [History](/docs/directorymanager/11.0/welcome/history/overview.md)
-- [Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [Directory Manager Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md)
+- [Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

@@ -1,13 +1,18 @@
 ---
-title: "Delete Request Status"
-description: "Delete Request Status"
+title: "Delete Old Directory Manager Workflow Requests by Status"
+description: "Use this DELETE endpoint to remove workflow requests that have had a given status for longer than a set number of days."
+keywords:
+  - delete workflow requests
+  - request status cleanup
+  - RequestsOlderThanInDays
+  - DELETE Status endpoint
 sidebar_position: 70
 ---
 
-# Delete Request Status
+# Delete Old Directory Manager Workflow Requests by Status
 
-Use this API to delete a request which has the specified status for more than specified days. For
-example, if a request has approved status and is 60 days older, you can delete such requests using
+Use this API to delete requests that have had the specified status for more than the specified number of days. For
+example, if a request has the approved status and is more than 60 days old, you can delete it by using
 this API.
 
 ## Endpoint
@@ -18,7 +23,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 DELETE
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -38,5 +43,5 @@ DELETE
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

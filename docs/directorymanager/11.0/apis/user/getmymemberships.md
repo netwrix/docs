@@ -1,12 +1,17 @@
 ---
-title: "Get My Membership"
-description: "Get My Membership"
+title: "Get My Membership with the Directory Manager API"
+description: "Retrieve the groups the authenticated user is a member of, with paging and sorting options."
+keywords:
+  - Directory Manager API
+  - group membership
+  - Groups/Membership endpoint
+  - authenticated user
 sidebar_position: 110
 ---
 
-# Get My Membership
+# Get My Membership with the Directory Manager API
 
-Use this API to retrieve membership information of the authenticated user.
+Use this API to retrieve the membership information of the authenticated user.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -26,7 +31,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -177,5 +182,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

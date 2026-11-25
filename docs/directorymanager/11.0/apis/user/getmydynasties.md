@@ -1,10 +1,15 @@
 ---
-title: "Get My Dynasties"
-description: "Get My Dynasties"
+title: "Get My Dynasties with the Directory Manager API"
+description: "Retrieve the dynasties of the authenticated user from an identity store, with paging and sorting options."
+keywords:
+  - Directory Manager API
+  - get dynasties
+  - GET Groups Dynasties endpoint
+  - dynasty groups
 sidebar_position: 50
 ---
 
-# Get My Dynasties
+# Get My Dynasties with the Directory Manager API
 
 Use this API to retrieve the dynasties of the authenticated user.
 
@@ -16,7 +21,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -26,7 +31,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -108,5 +113,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

@@ -1,10 +1,15 @@
 ---
-title: "Replication Service"
-description: "Replication Service"
+title: "Directory Manager Replication Service"
+description: "View the Replication service, learn what it replicates to Elasticsearch, and enable or tune syncing between Elasticsearch clusters."
+keywords:
+  - Directory Manager Replication service
+  - Elastic Cluster Syncing
+  - Elasticsearch replication
+  - cluster syncing interval
 sidebar_position: 50
 ---
 
-# Replication Service
+# Directory Manager Replication Service
 
 The Replication service replicates the attributes of the following objects from the provider (such
 as Active Directory) to the Elasticsearch repository.
@@ -16,7 +21,7 @@ as Active Directory) to the Elasticsearch repository.
 - Organizational Unit
 
 For more on the Replication service, see the
-[Elasticsearch and Replication ](/docs/directorymanager/11.0/signin/replication/overview.md)topic.
+[Elasticsearch and Replication Service in Directory Manager](/docs/directorymanager/11.0/signin/replication/overview.md) topic.
 
 The service is also responsible for syncing data between the Elasticsearch clusters in your
 environment.
@@ -31,8 +36,8 @@ What do you want to do?
 
 1. In Admin Center, click **Applications** in the left pane.
 2. On the **Applications** page, click the **Service** tab.  
-   The tab displays the default Replication service hosted in native IIS. When multiple GroupID
-   instances have been deployed, you will find multiple default Replication services on this tab
+   The tab displays the default Replication service hosted in native IIS. When multiple Directory Manager
+   instances have been deployed, you find multiple default Replication services on this tab
    page, as each instance has its own default Replication service. See the
    [Elasticsearch Clusters, Nodes, and GroupID](/docs/directorymanager/11.0/signin/service/overview.md#elasticsearch-clusters-nodes-and-groupid)
    topic.  
@@ -40,7 +45,7 @@ What do you want to do?
    [View Data Service Details](/docs/directorymanager/11.0/signin/service/dataservice/manage.md#view-data-service-details)
    topic.
 
-    You cannot create a Replication Service or delete an existing one from Admin Center.
+    You can't create a Replication service or delete an existing one from Admin Center.
 
 ## Manage Replication Service Settings
 
@@ -56,11 +61,13 @@ You can manage the following settings for a Replication service:
 In an environment with multiple Elasticsearch clusters, you can choose to sync data between
 clusters. You can also specify an interval for syncing.
 
-NOTE: In GroupID, a separate Replication service is created for each node in a cluster. To enable
-data syncing between clusters, simply enable the sync option for one Replications service within
+:::note
+In Directory Manager, a separate Replication service is created for each node in a cluster. To
+enable data syncing between clusters, enable the sync option for one Replication service within
 each cluster.
+:::
 
-To sync data:
+To sync data between clusters:
 
 1. In Admin Center, select **Applications** in the left pane.
 2. On the **Applications** page, click the **Replication Service** tab.
@@ -68,10 +75,10 @@ To sync data:
 4. Click **Configurations** under **Server Settings**.
 5. On the **Configurations** page, enable the **Elastic Cluster Syncing** toggle button to sync data
    from all other clusters to the cluster that uses this Replication service.  
-   If this toggle button is disabled for a cluster (say, ClusterA), data from other clusters will
-   not be synced to ClusterA.  
+   If this toggle button is disabled for a cluster (say, ClusterA), data from other clusters
+   isn't synced to ClusterA.  
    Suppose syncing is disabled for ClusterA but enabled for ClusterB and ClusterC. This means that
-   (a) data from ClusterB and ClusterC will not be synced to ClusterA (b) data from ClusterA will be
+   (a) data from ClusterB and ClusterC isn't synced to ClusterA and (b) data from ClusterA is
    synced to ClusterB and ClusterC.
 6. You can specify an interval for syncing data. Click **Edit** under **Elastic Cluster Syncing
    Interval**, specify an interval (in seconds) and click the check mark.  
@@ -80,5 +87,5 @@ To sync data:
 
 **See Also**
 
-- [GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Services](/docs/directorymanager/11.0/signin/service/overview.md)
+- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [Directory Manager Services](/docs/directorymanager/11.0/signin/service/overview.md)

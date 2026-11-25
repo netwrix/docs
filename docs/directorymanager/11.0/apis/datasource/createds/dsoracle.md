@@ -1,36 +1,44 @@
 ---
-title: "Create a Data Source for Oracle"
-description: "Create a Data Source for Oracle"
+title: "Create an Oracle Data Source with the Directory Manager API"
+description: "Send a POST request to the Directory Manager API to create a data source for an Oracle server or database, for use in queries and Synchronize jobs."
+keywords:
+  - Oracle data source
+  - create data source API
+  - DataSource/Create
+  - Synchronize jobs
+  - Oracle client
 sidebar_position: 50
 ---
 
-# Create a Data Source for Oracle
+# Create an Oracle Data Source with the Directory Manager API
 
 Use this API to create a new data source.
 
 See the
 [Create a Data Source for Oracle](/docs/directorymanager/11.0/signin/datasource/create.md#create-a-data-source-for-oracle)
 section of the
-[Create a Data Source](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-to create an MS Access data source using the GroupID interface.
+[Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+to create an Oracle data source using Directory Manager.
 
 ## Endpoint
 
-https://demomachine:4443/GroupIDDataService/api/DataSource/Create
+**https://demomachine:4443/GroupIDDataService/api/DataSource/Create**
 
 ## HTTP Method
 
-POST
+**POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 The following syntax is for creating an Oracle data source. You can create a data source for an
-Oracle server or a specific database on a server. This data source can be used in queries and as
+Oracle server or a specific database on a server. You can use this data source in queries and as
 source and destination provider in Synchronize jobs. This provider supports dynamic schema
 detection.
 
-NOTE: Oracle client must be installed to use this provider. Make sure you reboot your computer after
+:::note
+Oracle client must be installed to use this provider. Ensure that you reboot your computer after
 installing the Oracle client.
+:::
 
 ```
 {
@@ -57,7 +65,7 @@ installing the Oracle client.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -77,5 +85,5 @@ installing the Oracle client.
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

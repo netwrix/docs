@@ -1,26 +1,31 @@
 ---
-title: "SAML Configuration for GroupID using Okta"
-description: "SAML Configuration for GroupID using Okta"
+title: "Configure Okta Single Sign-On for Directory Manager"
+description: "Learn the steps to configure single sign-on in Directory Manager by using Okta as a SAML identity provider."
+keywords:
+  - Okta single sign-on
+  - Okta SAML identity provider
+  - Directory Manager SSO setup
+  - Okta SAML configuration
 sidebar_position: 30
 ---
 
-# SAML Configuration for GroupID using Okta
+# Configure Okta Single Sign-On for Directory Manager
 
 Okta provides secure identity management and single sign-on to any application, whether in the
-cloud, on-premises or on a mobile device for the employees in an organization.
+cloud, on-premises, or on a mobile device, for the employees of an organization.
 
-Here are the steps to configure single sign-on in GroupID using Okta as a provider:
+To configure single sign-on in Directory Manager using Okta as the provider:
 
-- Generate the consumer URL and audience URL for the GroupID client with which you want to configure
-  Okta.
-- Configure GroupID in Okta.
-- Configure the Okta provider in GroupID.
+- Generate the consumer URL and audience URL for the Directory Manager client with which you want to
+  configure Okta.
+- Configure Directory Manager in Okta.
+- Configure the Okta provider in Directory Manager.
 
-That done, you can sign into GroupID using Okta.
+After that, you can sign in to Directory Manager using Okta.
 
 See Also
 
-- [Generate URLs](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/generateurls.md)
-- [Configure GroupID In Okta](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/configureinokta.md)
-- [Configure the Okta Provider In GroupID](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/configureoktaindirectorymanager.md)
-- [Sign In Using Okta](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/signin.md)
+- [Generate Consumer and Audience URLs for Okta](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/generateurls.md)
+- [Configure Directory Manager in Okta for SSO](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/configureinokta.md)
+- [Configure Okta as a SAML Provider in Directory Manager](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/configureoktaindirectorymanager.md)
+- [Sign In to Directory Manager Using Okta](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/signin.md)

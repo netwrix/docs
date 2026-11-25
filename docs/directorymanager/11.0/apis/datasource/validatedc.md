@@ -1,12 +1,18 @@
 ---
-title: "Validate Data Connectivity of a Data Source"
-description: "Validate Data Connectivity of a Data Source"
+title: "Validate a Data Source Connection in Directory Manager"
+description: "Check that a data source can connect to its provider or source file by calling the ValidateServerConnectivity endpoint of the Directory Manager API."
+keywords:
+  - Directory Manager API
+  - validate data source
+  - ValidateServerConnectivity endpoint
+  - data source connectivity
+  - Microsoft Excel data source
 sidebar_position: 170
 ---
 
-# Validate Data Connectivity of a Data Source
+# Validate a Data Source Connection in Directory Manager
 
-Use this API to validate connection of a data source with the provider or with a source file.
+Use this API to validate the connection of a data source with the provider or with a source file.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/ValidateServerConnect
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -35,7 +41,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -55,5 +61,5 @@ GET
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

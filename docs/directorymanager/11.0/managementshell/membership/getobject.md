@@ -1,12 +1,18 @@
 ---
-title: "Get-Object"
-description: "Get-Object"
+title: "Get-Object Cmdlet for Directory Manager"
+description: "Retrieve objects that match your criteria from one or more containers in a domain using the Get-Object cmdlet."
+keywords:
+  - Get-Object
+  - search directory objects
+  - LDAP filter
+  - search container
+  - Directory Manager cmdlets
 sidebar_position: 30
 ---
 
-# Get-Object
+# Get-Object Cmdlet for Directory Manager
 
-Use this commandlet to retrieve objects from one or more containers in a domain that match the given
+Use this cmdlet to retrieve objects from one or more containers in a domain that match the given
 criteria.
 
 ## Syntax
@@ -35,7 +41,7 @@ Get-Object
 
 Example 1:
 
-The following command retrieves all objects from the domain you are connected to.
+The following command retrieves all objects from the domain you're connected to.
 
 ```
 Get-Object
@@ -44,9 +50,9 @@ Get-Object
 Example 2:
 
 The command below retrieves the object **Event Management** starting from the container
-**Recruiting** excluding its sub-containers using the credentials set in the **$Credentials**
+**Recruiting**, excluding its subcontainers, using the credentials set in the **$Credentials**
 environment variable. See the
-[Set the $Credentials Environment Variable](/docs/directorymanager/11.0/managementshell/setthecredential.md)
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.0/managementshell/setthecredential.md)
 topic for setting credentials in an environment variable.
 
 ```
@@ -55,8 +61,8 @@ Get-Object -Identity "HR.Imanami.US\Event Management" -SearchContainer "OU=Recru
 
 Example 3:
 
-The following command searches all objects in the specified containers including sub-containers with
-display names starting with the letter S .
+The following command searches all objects in the specified containers including subcontainers, with
+display names starting with the letter S.
 
 ```
 Get-Object -SearchContainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US","OU=OutSourcing,DC=HR,DC=Imanami,DC=US" -LdapFilter "(DisplayName = S*)"
@@ -64,6 +70,6 @@ Get-Object -SearchContainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US","OU=OutSourci
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Membership Commands](/docs/directorymanager/11.0/managementshell/membership/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Directory Manager Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

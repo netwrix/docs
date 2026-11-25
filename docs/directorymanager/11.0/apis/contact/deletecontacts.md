@@ -1,14 +1,21 @@
 ---
-title: "Delete Contacts"
-description: "Delete Contacts"
+title: "Delete Multiple Contacts with the Directory Manager API"
+description: "Delete several contacts from an identity store in one DELETE request by passing a list of contact IDs."
+keywords:
+  - bulk delete contacts
+  - delete multiple contacts API
+  - contact IDs
+  - Directory Manager API
 sidebar_position: 30
 ---
 
-# Delete Contacts
+# Delete Multiple Contacts with the Directory Manager API
 
 This API is for deleting multiple contacts from a specified identity store.
 
-NOTE: The contact object type is not supported in a Microsoft Entra ID based identity store.
+:::note
+The contact object type isn't supported in a Microsoft Entra ID-based identity store.
+:::
 
 ## Endpoint
 
@@ -18,7 +25,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 DELETE
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -27,7 +34,7 @@ DELETE
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -74,5 +81,5 @@ DELETE
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

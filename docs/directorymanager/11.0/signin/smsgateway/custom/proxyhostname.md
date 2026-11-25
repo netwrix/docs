@@ -1,10 +1,15 @@
 ---
-title: "ISmsGateway.ProxyHostName"
-description: "ISmsGateway.ProxyHostName"
+title: "ISmsGateway.ProxyHostName Property"
+description: "Get or set the host name of the proxy server that a custom SMS gateway uses to reach the provider."
+keywords:
+  - ISmsGateway.ProxyHostName
+  - SMS gateway proxy host name
+  - proxy server host name
+  - custom SMS gateway
 sidebar_position: 50
 ---
 
-# ISmsGateway.ProxyHostName
+# ISmsGateway.ProxyHostName Property
 
 Gets or sets the host name of the proxy server.
 
@@ -31,4 +36,4 @@ provide the host name of the proxy server.
 
 **See Also**
 
-- [Implement and Deploy a Custom SMS Gateway](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

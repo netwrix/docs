@@ -1,17 +1,22 @@
 ---
 title: "Set-MessagingServer"
-description: "Set-MessagingServer"
+description: "Use the Set-MessagingServer cmdlet to configure the messaging system, such as Microsoft 365, Google Workspace or Exchange, for an identity store."
+keywords:
+  - Set-MessagingServer
+  - messaging server
+  - Exchange provider
+  - Management Shell cmdlet
 sidebar_position: 180
 ---
 
 # Set-MessagingServer
 
-The commandlet **Set-MessagingServer** configures a messaging system in identity store. The
-SmtpServer parameter requires the server name of the messaging system to be specified.
-[Get-AvailableMessagingServers](/docs/directorymanager/11.0/managementshell/identitystore/getavailablemessagingservers.md)
-commandlet can be used to retrieve the server names of the messaging systems.
+The **Set-MessagingServer** cmdlet configures a messaging system in an identity store. The
+SmtpServer parameter requires the server name of the messaging system to be specified. Use the
+[Get-AvailableMessagingServers Cmdlet](/docs/directorymanager/11.0/managementshell/identitystore/getavailablemessagingservers.md)
+cmdlet to retrieve the server names of the messaging systems.
 
-This commandlet also has some parameters that appear depending on the value of the Provider
+This cmdlet also has some parameters that appear depending on the value of the Provider
 parameter.
 
 ## Syntax
@@ -45,7 +50,7 @@ Set-MessagingServer
 
 Example 1:
 
-This example modifies the messaging system of the AsStore9 identity store to Microsoft Office 365.
+This example modifies the messaging system of the AdStore9 identity store to Microsoft 365.
 
 ```
 Set-MessagingServer -IdentityStoreName AdStore9 -Provider o365 -UserName admin@mydomain.onmicrosoft.com -Password webdir123R -SmtpServer ps.outlook.com -Domain mydomain.onmicrosoft.com -AppId 'a1b2c3d4-e5f6-f6e5-d4c3-b2a1b2c3d4e5'
@@ -59,8 +64,8 @@ This example modifies the messaging system of the AdStore9 identity store to Exc
 Set-MessagingServer -IdentityStoreName AdStore9 -Provider exchange2013 -UserName administrator -Password webdir123R - SmtpServer arslanahmadsvm.pucit.local -Domain pucit.local
 ```
 
-See Also
+## See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Identity Store Commands](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

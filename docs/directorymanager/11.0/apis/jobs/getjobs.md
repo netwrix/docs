@@ -1,22 +1,26 @@
 ---
-title: "Get Jobs"
-description: "Get Jobs"
+title: "Get Jobs API in Directory Manager"
+description: "Retrieve Synchronize jobs that match filter criteria, with paging and sorting options, using a GET request."
+keywords:
+  - "get jobs API"
+  - "Synchronize job filter"
+  - "DataSyncJobs endpoint"
 sidebar_position: 80
 ---
 
-# Get Jobs
+# Get Jobs API in Directory Manager
 
 Use this API to get information about jobs based on the filters provided in the request syntax.
 
 ## Endpoint
 
-https://demomachine:4443/GroupIDDataService/api/DataSyncJobs
+`https://demomachine:4443/GroupIDDataService/api/DataSyncJobs`
 
 ## HTTP Method
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -51,7 +55,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -91,5 +95,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

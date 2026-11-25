@@ -1,18 +1,23 @@
 ---
-title: "Create User Objects"
-description: "Create User Objects"
+title: "Create User, Mailbox, and Contact Objects"
+description: "See the object types you can create in the Directory Manager portal and the identity providers that support creating them."
+keywords:
+  - create user objects
+  - create mailbox
+  - create contact
+  - identity providers
 sidebar_position: 10
 ---
 
-# Create User Objects
+# Create User, Mailbox, and Contact Objects
 
-GroupID Portal enalbles you to create following types of users:
+The Directory Manager portal lets you create the following types of users:
 
 - User
 - Mailbox
 - Contact
 
-GroupID supports the following identity providers for creating the user objects:
+Directory Manager supports the following identity providers for creating the user objects:
 
 - Active Directory
 - Microsoft Entra ID
@@ -21,6 +26,6 @@ GroupID supports the following identity providers for creating the user objects:
 
 See Also
 
-- [User Management](/docs/directorymanager/11.0/welcome/user/overview.md)
-- [Create an AD User](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
-- [Create a Microsoft Entra ID User](/docs/directorymanager/11.0/welcome/user/create/azure/user.md)
+- [Manage users in Directory Manager](/docs/directorymanager/11.0/welcome/user/overview.md)
+- [Create an AD user in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
+- [Create a Microsoft Entra ID User in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/azure/user.md)

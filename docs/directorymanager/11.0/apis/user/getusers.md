@@ -1,12 +1,17 @@
 ---
-title: "Get Users"
-description: "Get Users"
+title: "Get Users with the Directory Manager API"
+description: "Retrieve information about multiple users from an identity store, with the attributes you choose to load."
+keywords:
+  - Directory Manager API
+  - get users
+  - Users endpoint
+  - attributesToLoad
 sidebar_position: 150
 ---
 
-# Get Users
+# Get Users with the Directory Manager API
 
-Use this API to retrieve information of multiple users from the specified identity store.
+Use this API to retrieve information about multiple users from the specified identity store.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -33,7 +38,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -285,5 +290,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

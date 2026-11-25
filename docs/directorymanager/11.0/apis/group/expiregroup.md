@@ -1,10 +1,15 @@
 ---
-title: "Expire a Group"
-description: "Expire a Group"
+title: "Expire a Group with the Directory Manager API"
+description: "Use the Expire Group API to expire a single group, identified in the endpoint URL, with the endpoint, HTTP method, and sample response."
+keywords:
+  - Directory Manager API
+  - expire group API
+  - group expiration
+  - POST Expire
 sidebar_position: 50
 ---
 
-# Expire a Group
+# Expire a Group with the Directory Manager API
 
 This API expires the group whose identity is provided in the endpoint URL.
 
@@ -16,7 +21,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 POST
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -36,5 +41,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

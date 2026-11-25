@@ -1,24 +1,31 @@
 ---
-title: "Create a Contact"
-description: "Create a Contact"
+title: "Create a Contact with the Directory Manager API"
+description: "Create a contact in an identity store by sending a POST request to the Contacts endpoint."
+keywords:
+  - create contact API
+  - POST Contacts
+  - identity store contact
+  - Directory Manager API
 sidebar_position: 10
 ---
 
-# Create a Contact
+# Create a Contact with the Directory Manager API
 
-Using this API you can create a contact in the specified identity store.
+Use this API to create a contact in the specified identity store.
 
-NOTE: The contact object type is not supported in a Microsoft Entra ID based identity store.
+:::note
+The contact object type isn't supported in a Microsoft Entra ID-based identity store.
+:::
 
 ## Endpoint
 
-https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}/Contacts
+**https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}/Contacts**
 
 ## HTTP Method
 
-POST
+**POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -42,7 +49,7 @@ POST
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -62,5 +69,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

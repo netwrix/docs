@@ -1,10 +1,15 @@
 ---
-title: "SendSmsMessageResult.Message"
-description: "SendSmsMessageResult.Message"
+title: "SendSmsMessageResult.Message property"
+description: "Get the ShortMessage object that the SendShortMessage method of a custom SMS gateway processed in Directory Manager."
+keywords:
+  - SendSmsMessageResult.Message
+  - ShortMessage object
+  - ISmsGateway.SendShortMessage
+  - custom SMS gateway
 sidebar_position: 20
 ---
 
-# SendSmsMessageResult.Message
+# SendSmsMessageResult.Message property
 
 Returns the
 [ShortMessage class](/docs/directorymanager/11.0/signin/smsgateway/custom/class/class.md)
@@ -28,8 +33,8 @@ Type: Imanami.directorymanager.DataTransferObjects.DataContracts.SMS.ShortMessag
 
 Object containing elements of the text message.
 
-See Also
+**See Also**
 
 - [SendSmsMessageResult class](/docs/directorymanager/11.0/signin/smsgateway/custom/class/class_1.md)
 - [ShortMessage class](/docs/directorymanager/11.0/signin/smsgateway/custom/class/class.md)
-- [Implement and Deploy a Custom SMS Gateway](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

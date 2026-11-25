@@ -1,16 +1,21 @@
 ---
-title: "Import Additional Owners"
-description: "Import Additional Owners"
+title: "Import additional group owners in Directory Manager"
+description: "Add additional owners to a group by importing a text, CSV, Excel, or XML file with the Import Additional Owners wizard."
+keywords:
+  - "import additional owners"
+  - "group owners import"
+  - "Import Additional Owners wizard"
+  - "import file formats"
 sidebar_position: 160
 ---
 
-# Import Additional Owners
+# Import additional group owners in Directory Manager
 
-The **Import Additional Owners** wizard enables you to specify additional owners for a group using
-an external file.
+Use the **Import Additional Owners** wizard to specify additional owners for a group using an
+external file.
 
-The wizards search the directory for objects listed in the external file, and if found, adds them as
-additional owners to the group.
+The wizard searches the directory for objects listed in the external file and, if found, adds them
+as additional owners to the group.
 
 Supported file formats are:
 
@@ -30,12 +35,12 @@ launch the **Import Additional Owners** wizard.
 
 1. On the **File** page, click **Browse** to locate and select the file containing the data to
    upload.
-2. Click the **Up** arrow to upload the file to the GroupID server for processing.
+2. Click the **Up** arrow to upload the file to the Directory Manager server for processing.
 3. Click **Next**.
 4. On the **Import** page, follow these steps:
 
     1. In the **Import Options** section, select this site/domain or the entire directory from the
-       **Search** drop-down list.
+       **Search** dropdown list.
 
         The wizard compares records in the import file with records in the selected domain or
         directory to update the group's membership.
@@ -53,11 +58,11 @@ launch the **Import Additional Owners** wizard.
 
     - **Resolved Items:**
 
-        Shows all objects that will be successfully processed.
+        Shows all objects that are successfully processed.
 
     - **Unresolved Items:**
 
-        Shows objects that will not be processed because a matching object could not be found in the
+        Shows objects that aren't processed because a matching object couldn't be found in the
         destination directory.
 
     - **Ambiguous Items:**
@@ -68,6 +73,6 @@ launch the **Import Additional Owners** wizard.
 
 **See Also**
 
-- [Groups](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasty](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
-- [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

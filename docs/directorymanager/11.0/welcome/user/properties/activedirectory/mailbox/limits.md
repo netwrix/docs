@@ -1,17 +1,22 @@
 ---
-title: "Mailbox properties - Limits tab"
-description: "Mailbox properties - Limits tab"
+title: "Mailbox Properties Limits Tab in Directory Manager"
+description: "Set the storage quota and the warning and send/receive limits for a user's mailbox."
+keywords:
+  - mailbox limits
+  - storage quota
+  - mailbox size limit
+  - Exchange mailbox
 sidebar_position: 30
 ---
 
-# Mailbox properties - Limits tab
+# Mailbox Properties Limits Tab in Directory Manager
 
-This tab applies to mailboxes only. It allows you to set the storage quota for the object's mailbox,
+This tab applies to mailboxes only. Use it to set the storage quota for the object's mailbox,
 such as an Exchange mailbox.
 
 **Use default storage quota**
 
-Select this check box to use the default quota for the mailbox store instead of defining it
+Select this checkbox to use the default quota for the mailbox store instead of defining it
 individually.
 
 **Issue warning (K)**
@@ -31,4 +36,4 @@ ability to both send and receive emails.
 
 **See Also**
 
-- [User Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

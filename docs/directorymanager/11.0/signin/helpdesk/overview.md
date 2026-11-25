@@ -1,10 +1,16 @@
 ---
-title: "Helpdesk"
-description: "Helpdesk"
+title: "Directory Manager Helpdesk Overview"
+description: "Learn how Admin Center Helpdesk lets administrators and helpdesk users unlock accounts, reset passwords, and manage enrollment."
+keywords:
+  - Directory Manager helpdesk
+  - helpdesk permissions
+  - helpdesk policy
+  - desktop notifications
+  - helpdesk analytics
 sidebar_position: 100
 ---
 
-# Helpdesk
+# Directory Manager Helpdesk Overview
 
 The Admin Center Helpdesk section enables administrators and helpdesk users to perform
 helpdesk-specific tasks, such as:
@@ -27,7 +33,7 @@ helpdesk-specific functions:
 See
 [Password Management](/docs/directorymanager/11.0/signin/securityrole/permissions.md#password-management)
 in the
-[Security Role – Permissions](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
+[Security Role Permissions in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
 topic.
 
 ## Helpdesk Policy
@@ -36,11 +42,13 @@ The administrator can define a Helpdesk policy for a user role in an identity st
 mainly defines whether helpdesk role members should operate under the restricted or unrestricted
 mode to perform the account unlock and reset password functions.
 
-NOTE: In unrestricted mode, helpdesk can unlock accounts and reset passwords of both enrolled and
+:::note
+In unrestricted mode, helpdesk can unlock accounts and reset passwords of both enrolled and
 unenrolled users. In restricted mode, helpdesk can perform these functions for enrolled users only.
+:::
 
 See the
-[Helpdesk Policy](/docs/directorymanager/11.0/signin/securityrole/policy/helpdesk.md)
+[Helpdesk Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/helpdesk.md)
 topic.
 
 ## Helpdesk Analytics
@@ -61,15 +69,15 @@ The dashboard displays the following helpdesk-specific cards:
 
 ## Desktop Notifications
 
-You can enable desktop notification for GroupID in browser settings. In this way, a user signed into
-Admin Center on the respective machine will receive desktop notifications when an end-user performs
-any of the following actions in the GroupID portal:
+You can enable desktop notifications for Directory Manager in browser settings. A user who is signed
+in to Admin Center on the respective machine receives desktop notifications when an end user
+performs any of the following actions in the Directory Manager portal:
 
 - Resets account password
-- Changes account Password
-- Unlocks Account
-- Links Account
-- Unlinks Account
+- Changes account password
+- Unlocks account
+- Links account
+- Unlinks account
 - Enrolls account
 - Authenticates with password, authentication types, or any other medium
 
@@ -77,5 +85,5 @@ These actions are also logged in helpdesk history.
 
 **See Also**
 
-- [Helpdesk Operations](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
-- [History in Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/history.md)
+- [Helpdesk Operations in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
+- [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/history.md)

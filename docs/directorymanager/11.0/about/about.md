@@ -1,21 +1,26 @@
 ---
-title: "Installation"
-description: "Installation"
+title: "Directory Manager Installation Overview"
+description: "Learn how the Directory Manager installer detects and installs prerequisites and integrates configuration and upgrade."
+keywords:
+  - Directory Manager installer
+  - automatic prerequisite installation
+  - Windows features prerequisites
+  - Directory Manager installation
+  - Directory Manager upgrade
 sidebar_position: 30
 ---
 
-# Installation
+# Directory Manager Installation Overview
 
-The GroupID installer auto detects the prerequisite software and Windows features that GroupID
-requires, and installs them without any manual intervention. This has practically simplified GroupID
-installation, reduced workloads, and diminished installation time.
+The Directory Manager installer automatically detects the prerequisite software and Windows features
+that Directory Manager requires, and installs them without any manual intervention. This simplifies
+Directory Manager installation, reduces workloads, and shortens installation time.
 
-Furthermore, GroupID configuration and upgrade has been seamlessly integrated into the installation
-experience.
+Directory Manager configuration and upgrade are also integrated into the installation experience.
 
 See Also
 
-- [Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
-- [Preparation Tool](/docs/directorymanager/11.0/about/installer/preparationtool.md)
-- [Installation Tool](/docs/directorymanager/11.0/about/installer/install.md)
-- [Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)
+- [Directory Manager 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
+- [Run the Directory Manager Preparation Tool](/docs/directorymanager/11.0/about/installer/preparationtool.md)
+- [Install Directory Manager](/docs/directorymanager/11.0/about/installer/install.md)
+- [Run the Directory Manager Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)

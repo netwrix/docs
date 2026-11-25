@@ -1,26 +1,34 @@
 ---
-title: "Security Roles"
-description: "Security Roles"
+title: "Security Roles in Directory Manager"
+description: "Learn about the built-in Administrator, Helpdesk, and User security roles and how roles control access to Directory Manager clients."
+keywords:
+  - security roles
+  - built-in roles
+  - Helpdesk role
+  - role-based access
+  - Administrator role
 sidebar_position: 40
 ---
 
-# Security Roles
+# Security Roles in Directory Manager
 
-Security roles enable you to control access to GroupID and the directory. An identity store in
-GroupID has the following built-in roles that you can assign to users:
+Use security roles to control access to Directory Manager and the directory. An identity store in
+Directory Manager has the following built-in roles that you can assign to users:
 
 - **Administrator:** By default, this role has permissions on all functions that can be performed in
   an identity store.
 - **Helpdesk:** This role is available for helpdesk users, who can reset identity store account
   passwords and unlock identity store accounts on behalf of other users.
 
-    NOTE: The Helpdesk role is not available by default for a Microsoft Entra ID identity store.
+    :::note
+    The Helpdesk role isn't available by default for a Microsoft Entra ID identity store.
+    :::
 
 - **User:** This role can be assigned to standard users, who can create new groups, manage their
   groups, update their directory profiles, and manage their direct reports.
 
 These roles are highly customizable. You can modify their display name, priority level, permissions,
-policies, and more. If the built-in roles do not meet your specific needs, you can create custom
+policies, and more. If the built-in roles don't meet your specific needs, you can create custom
 security roles.
 
 **View security role info**
@@ -33,43 +41,45 @@ topic.
 
 Settings defined for an identity store apply to all users while role-based permissions and policies
 only apply to members of a role. See the
-[Configure an Identity Store](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)topic.
-
-## Assign Distinct Roles to a User in Different GroupID Clients
-
-You can assign different roles to a user in different GroupID clients. For example, a user can have
-the administrator role in GroupID Management Shell and the role of a standard user in a GroupID
-portal. This flexibility is built into security roles using client-based criteria. See the
-[Security Role – Criteria](/docs/directorymanager/11.0/signin/securityrole/criteria.md)
+[Configure an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)
 topic.
 
-GroupID clients include:
+## Assign Distinct Roles to a User in Directory Manager Clients
+
+You can assign different roles to a user in different Directory Manager clients. For example, a user
+can have the administrator role in Directory Manager Management Shell and the role of a standard
+user in a Directory Manager portal. This flexibility is built into security roles using client-based criteria. See the
+[Set Security Role Criteria in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/criteria.md)
+topic.
+
+Directory Manager clients include:
 
 - Admin Center
-- All GroupID portals created using Admin Center
-- GroupID Management Shell
-- GroupID mobile app
+- All Directory Manager portals created using Admin Center
+- Directory Manager Management Shell
+- Directory Manager mobile app
 
 Consider the following scenario:
 
-- For the Administrator role, you allow role members to access one GroupID client: GroupID
-  Management Shell. User A is a member of the Administrator role, so it gets access to Management
-  Shell as an admin. User A cannot access any other GroupID client.
-- For the User role, you allow role members to access the GroupID portal only. User A is a member of
+- For the Administrator role, you allow role members to access one Directory Manager client:
+  Directory Manager Management Shell. User A is a member of the Administrator role, so it gets
+  access to Management Shell as an administrator. User A can't access any other Directory Manager
+  client.
+- For the User role, you allow role members to access the Directory Manager portal only. User A is a member of
   the User role, so it gets access to the portal as a standard user.
 
-As a result, User A has two different roles in two GroupID clients.
+As a result, User A has two different roles in two Directory Manager clients.
 
-Not only that, a user can also have multiple roles in a GroupIDGroupID client, in which case role
+A user can also have multiple roles in a Directory Manager client, in which case role
 priority is used to determine the access level of the user on the specific client. See
 [Priority](/docs/directorymanager/11.0/signin/securityrole/manage.md).
 
-To view the highest priority role of a user with respect to a GroupID client, see the
-[Check the Roles of a User](/docs/directorymanager/11.0/signin/securityrole/checkrole.md)
+To view the highest priority role of a user with respect to a Directory Manager client, see the
+[Check a User's Security Role in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/checkrole.md)
 topic.
 
 See Also
 
-- [Identity Stores](/docs/directorymanager/11.0/signin/identitystore/overview.md)
-- [Create a Security Role](/docs/directorymanager/11.0/signin/securityrole/create.md)
-- [Manage Security Roles](/docs/directorymanager/11.0/signin/securityrole/manage.md)
+- [Identity Stores in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/overview.md)
+- [Create a Security Role in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/create.md)
+- [Manage Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/manage.md)

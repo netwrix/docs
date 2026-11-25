@@ -1,12 +1,17 @@
 ---
-title: "Get a Data Source by Type and Name"
-description: "Get a Data Source by Type and Name"
+title: "Get a Data Source by Type and Name API"
+description: "Retrieve a data source of a specific type, such as Text/CSV, by its name through the Directory Manager data service."
+keywords:
+  - get data source by type and name
+  - data source type filter
+  - data source name lookup
+  - DataSource Get endpoint
 sidebar_position: 40
 ---
 
-# Get a Data Source by Type and Name
+# Get a Data Source by Type and Name API
 
-Using this API you can retrieve information of specific type data source, let's say a Text/CSV based
+Use this API to retrieve information about a data source of a specific type, for example a Text/CSV
 data source, with a specific name.
 
 ## Endpoint
@@ -17,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/Get?type=4&name=Text/
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -47,5 +52,5 @@ GET
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

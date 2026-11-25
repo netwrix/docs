@@ -1,82 +1,88 @@
 ---
-title: "Reports"
-description: "Reports"
+title: "Directory Manager Reports Dashboard"
+description: "Use the Reports Dashboard in Directory Manager to search reports, pin favorites, and review recent reports for your identity store."
 sidebar_position: 110
+keywords:
+  - Directory Manager Reports Dashboard
+  - pinned reports
+  - recent reports
+  - web-based reports
+  - report navigation pane
 ---
 
-# Reports
+# Directory Manager Reports Dashboard
 
-The GroupID Reports enables you to generate web-based reports for an identity store. It offers a
-wizard guided report generation process that accounts for quick and easy reporting.
+Use Directory Manager Reports to generate web-based reports for an identity store. It offers a
+wizard-guided report generation process.
 
-GroupID reports are organized into four categories:
+Directory Manager reports are organized into four categories:
 
-- [User Reports](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Group Reports](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-- [Contact Reports](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
 
-NOTE: A Microsoft Entra ID based identity store does not support the computer and contact object
+:::note
+A Microsoft Entra ID-based identity store doesn't support the computer and contact object
 types.
+:::
 
 You can view, edit, and delete the created reports. You can also download them in Excel and PDF
 formats.
 
-The user interface of Reports Dashboard is as follows:
+The following image shows the Reports Dashboard:
 
-![reportsdashboard](/images/directorymanager/11.0/portal/report/reportsdashboard.webp)
+![Reports Dashboard showing the search box, header icons, pinned reports, recent reports, and the navigation pane](/images/directorymanager/11.0/portal/report/reportsdashboard.webp)
 
-Different elements of the Dashboard are described below:
+The following list describes the different elements of the Dashboard:
 
-- Look on the top of the page for Reports Search. Use it to locate and display information for
-  reports.
-- In the top right corner, you will find the following icons:
+- At the top of the page, use Reports Search to locate and display information for reports.
+- In the top right corner, you can find the following icons:
 
     - Click the **Help** icon to launch the portal help.
-    - Your name also appears as an icon. On clicking it, you are presented with the following
-      options:
+    - Your name also appears as an icon. Click it to see the following options:
 
         - Connected identity store.
-        - GroupID version
+        - Directory Manager version.
         - See full profile.
         - My Applications
 
-            Displays GroupID and third party applications that the user is connected to. Click **Add
-            Apps** to add new applications.
+            Displays Directory Manager and third-party applications that the user is connected to.
+            Click **Add Apps** to add new applications.
 
         - Enroll your account.
         - Change Password.
-        - Switch account
+        - Switch account.
         - Sign Out of the portal.
 
 - The **Dashboard** displays general information about the Reports portal such as:
 
     - Name of the identity store the Reports portal is connected to.
     - Name of the domain.
-    - Number of each type directory objects in the directory.
+    - Number of each type of directory object in the directory.
 
-- In the **Pinned Reports** section, you can pin the reports you most frequently will use.
+- In the **Pinned Reports** section, you can pin the reports you use most frequently.
 
     You can unpin the pinned reports from the dashboard by clicking the unpin icon on the top right
     corner of the card.
 
-- In the **Recent Reports** section, you can view the most recent reports you have created or used.
+- In the **Recent Reports** section, you can view the most recent reports you created or used.
 
-    You can pin the recent reports by clicking pin icon on the top right corner of the card.
+    You can pin the recent reports by clicking the pin icon on the top right corner of the card.
 
-- Look on the left side of the page for the navigation pane, which lists links to the following:
+- The navigation pane on the left side of the page lists links to the following:
 
     - Dashboard
-    - [User Reports](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-    - [Group Reports](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-    - [Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-    - [Contact Reports](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+    - [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+    - [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+    - [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+    - [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
 
 **See Also:**
 
-- [Generate Reports](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
-- [Manage Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
-- [Group Reports](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [User Reports](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-- [Contact Reports](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
+- [Manage Directory Manager Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
+- [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)

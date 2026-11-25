@@ -1,10 +1,15 @@
 ---
-title: "ShortMessage.ReferenceId"
-description: "ShortMessage.ReferenceId"
+title: "ShortMessage.ReferenceId Property (SMS Gateway API)"
+description: "Get or set the reference ID that identifies a text message sent through a custom SMS gateway in Directory Manager."
+keywords:
+  - ShortMessage.ReferenceId
+  - SMS reference ID
+  - custom SMS gateway
+  - Directory Manager SMS API
 sidebar_position: 50
 ---
 
-# ShortMessage.ReferenceId
+# ShortMessage.ReferenceId Property (SMS Gateway API)
 
 Gets or sets the reference ID for the text message.
 

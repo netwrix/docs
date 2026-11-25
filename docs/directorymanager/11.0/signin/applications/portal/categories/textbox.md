@@ -1,27 +1,32 @@
 ---
-title: "Text Box Display Type"
-description: "Text Box Display Type"
+title: "Directory Manager Text Box Display Type"
+description: "Customize a text box display type with a default value, regular expression validation, and unique-value checks for portal fields."
+keywords:
+  - text box display type
+  - regular expression validation
+  - unique value check
+  - external validation URL
+  - Directory Manager portal
 sidebar_position: 20
 ---
 
-# Text Box Display Type
+# Directory Manager Text Box Display Type
 
-A text box display type can be used without customization, but you must customize it when you want
-to:
+A text box display type can be used without customization, but you must customize it to do any of the following:
 
 - specify a default value for it
 - use regular expressions to validate the data users enter in the text box
 - force users to provide a unique value for the field
 
-## What are Regular Expressions?
+## Regular Expressions
 
-A regular expression is a pattern of text that consists of ordinary characters (for example, letters
+A regular expression is a pattern of text that consists of ordinary characters (such as letters
 a through z) and special characters, known as metacharacters. You can use regular expressions to
 ensure that users enter data in an input field according to a standard pattern. For example, the
-regular expression for a US phone number of the pattern: (555) 123-4567 will be: ^\(\d\d\d\)
-\d\d\d-\d\d\d\d.
+regular expression for a phone number with the pattern (555) 123-4567 is
+`^\(\d\d\d\) \d\d\d-\d\d\d\d`.
 
-To learn about regular expressions and their syntax, see
+To learn about regular expressions and their syntax, see the following:
 
 - [Introduction to Regular Expressions](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/28hw3sce(v%3dvs.100))
 - [Regular Expression Syntax Reference](https://msdn.microsoft.com/en-us/library/ms840427.aspx)
@@ -53,33 +58,33 @@ What do you want to do?
 4. Click **Custom Display Types** in the left pane. The **Custom Display Types** page is displayed.
 5. Click **Add** on the **Custom Display Types** tab.
 6. On the **New Display Type** pane, enter a name for the display type in the **Name** box.  
-   You cannot change the name of a custom display type once you have created it.
-7. Select _Textbox_ in the **Type** drop-down list.
+   You can't change the name of a custom display type after you've created it.
+7. Select _Textbox_ in the **Type** dropdown list.
 8. Specify a value in the **Default Value** box to set it as the default value for the text box.
    Users can modify this value in the portal.
-9. In the **Regular Expression** box, type a regular expression to use for validating data that
-   users enter in the text box using the portal. Leave this box blank if you do not want to apply a
+9. In the **Regular Expression** box, enter a regular expression to use for validating data that
+   users enter in the text box using the portal. Leave this box blank if you don't want to apply a
    validation rule to the data.
 
     1. Click **Test Regular Expression** to check if the regular expression is valid.
-    2. On the **Test Regular Expression** dialog box, type an example that satisfies the regular
+    2. On the **Test Regular Expression** dialog box, enter an example that satisfies the regular
        expression and click **Test**.
 
 10. In the **Error Message** box, enter the text to be displayed as an error message when portal
-    users enter data in the text box that does not conform to the regular expression.
+    users enter data in the text box that doesn't conform to the regular expression.
 11. You can place a real-time validation check to ensure that users enter a unique value for the
-    field. GroupID can look up the value for uniqueness in the directory or an external data source.
-    The portal prevents users from proceeding unless a unique value is provided.
+    field. Directory Manager can look up the value for uniqueness in the directory or an external
+    data source. The portal prevents users from proceeding unless a unique value is provided.
 
-    - Select the **Unique** check box to force the user to enter a value that is unique for the
+    - Select the **Unique** checkbox to force the user to enter a value that is unique for the
       field (attribute) in the directory.
     - You can also use an external data source, such as an Excel file, to validate the uniqueness of
       the value in real time. Use an API to connect to the external data source. Select the
-      **External Validation URL** check box and enter the URL of your API in the box.
+      **External Validation URL** checkbox and enter the URL of your API in the box.
 
     **Example**: Link this text box display type to the group name field on the Create New Group
-    page. When a user enters a name for the group, the portal will look up this name for uniqueness
-    in the directory/external data source in real time and display an error message if it is not
+    page. When a user enters a name for the group, the portal looks up this name for uniqueness
+    in the directory or external data source in real time and displays an error message if it isn't
     unique.
 
 12. Click **OK**.
@@ -91,23 +96,25 @@ The external API for real-time validation should receive the following parameter
 
 | Parameter     | Description                                                                                    |
 | ------------- | ---------------------------------------------------------------------------------------------- |
-| objectType    | The type of object the user is creating or updating (for example, group, user).                |
-| attributeName | The name of the attribute the user is updating (for example, name, first name, logon name).    |
+| objectType    | The type of object the user is creating or updating (such as group or user).                |
+| attributeName | The name of the attribute the user is updating (such as name, first name, or logon name).    |
 | attributeName | The attribute value to be validated.                                                           |
-| objectID      | If an existing user is being updated, the ID of that user is sent; else it is an empty string. |
+| objectID      | If an existing user is being updated, the ID of that user is sent; otherwise, an empty string. |
 
 The API returns the following parameters:
 
 | Parameter | Description                                                                                                          |
 | --------- | -------------------------------------------------------------------------------------------------------------------- |
-| status    | Should be ‘true’ (when the attribute value is unique) or ‘false’ (when the attribute value is not unique).           |
-| message   | (Optional) For the ‘false’ status, you can return an error message in this parameter, that is displayed to the user. |
+| status    | Is ‘true’ (when the attribute value is unique) or ‘false’ (when the attribute value isn’t unique).           |
+| message   | (Optional) For the ‘false’ status, you can return an error message in this parameter to display to the user. |
 | data      | Not in use                                                                                                           |
 
-NOTE: Data should be in JSON format.
+:::note
+Data must be in JSON format.
+:::
 
 **See Also**
 
-- [Design a Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

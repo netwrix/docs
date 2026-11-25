@@ -1,10 +1,14 @@
 ---
-title: "Get My Membership Count"
-description: "Get My Membership Count"
+title: "Get My Membership Count with the Directory Manager API"
+description: "Get the number of groups the authenticated user is a member of."
+keywords:
+  - Directory Manager API
+  - membership count
+  - Groups/Membership/count endpoint
 sidebar_position: 120
 ---
 
-# Get My Membership Count
+# Get My Membership Count with the Directory Manager API
 
 Using this API, the authenticated user can get the number of groups the user is a member of.
 
@@ -16,7 +20,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -25,7 +29,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -36,5 +40,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

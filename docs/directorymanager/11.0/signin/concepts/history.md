@@ -1,12 +1,17 @@
 ---
-title: "History in GroupID"
-description: "History in GroupID"
+title: "History in Directory Manager"
+description: "Learn what history Directory Manager tracks, how to enable it, where it's displayed, and how long it's kept."
+keywords:
+  - Directory Manager history
+  - history tracking
+  - history retention
+  - audit trail
 sidebar_position: 30
 ---
 
-# History in GroupID
+# History in Directory Manager
 
-In GroupID, history is tracked for:
+In Directory Manager, history is tracked for:
 
 - **Admin Center -** Actions performed in Admin Center, such as creating identity stores, SMS
   gateway accounts, changes to notification templates, and more.
@@ -14,59 +19,62 @@ In GroupID, history is tracked for:
 - **Identity store configurations -** Changes made to identity store configurations, including
   changes to security roles and workflows.
 - **Identity store objects -** Modifications made to objects in an identity store, such as creating
-  objects, updating attributes for an object, etc. It includes modifications made through:
+  objects and updating attributes for an object. It includes modifications made through:
 
-    - GroupID portal (whether manually, through Synchronize jobs. or changes to object entitlements)
-    - GroupID Management Shell cmdlets
-    - GroupID mobile app
-    - GroupID Admin Center (actions performed by schedules only)
-    - GroupID APIs
+    - Directory Manager portal (whether manually, through Synchronize jobs, or changes to object
+      entitlements)
+    - Directory Manager Management Shell cmdlets
+    - Directory Manager mobile app
+    - Directory Manager Admin Center (actions performed by schedules only)
+    - Directory Manager APIs
 
-Enabling history tracking
+**Enable History Tracking**
 
-History for Admin Center and helpdesk is tracked by default and you cannot disable it.
+History for Admin Center and helpdesk is tracked by default and you can't disable it.
 
 However, history for identity store configurations and objects is disabled by default. You can
 enable it for an identity store as well as choose to track all or specific actions. See the
-[Configure History Tracking](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md)
+[Configure History Tracking in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md)
 topic.
 
-Where is history displayed?
+**Where is History Displayed?**
 
-- History for Admin Center, helpdeak, and identity store configurations is displayed in Admin
+- History for Admin Center, helpdesk, and identity store configurations is displayed in Admin
   Center, each displayed on separate pages.
-- History for identity store objects is displayed in the GroupID portal.
+- History for identity store objects is displayed in the Directory Manager portal.
 
-History Retention
+**History Retention**
 
-The _history retention_ setting for an identity store enables you to choose whether you want to keep
+Use the _history retention_ setting for an identity store to choose whether to keep
 history data forever or for a specific period. See the
 [Retain Complete History Data](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md#retain-complete-history-data)
 and
 [Retain History for a Specific Period](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md#retain-history-for-a-specific-period)
-topics. Your desired setting applies to all history tracked for the respective identity store,
+topics. Your chosen setting applies to all history tracked for the respective identity store,
 including that tracked for helpdesk and Admin Center.
 
-NOTE: Actions tracked under Admin Center history are independent of an identity store. In this case,
+:::note
+Actions tracked under Admin Center history are independent of an identity store. In this case,
 history retention settings apply to a history item in the context of the identity store selected by
-the user to log into Admin Center to perform that action.  
-**Example:** UserA selects IdentityStoreA to sign into Admin Center and creates an SMS gateway
-account. This user then selects IdentityStoreB to sign into Admin Center and creates a GroupID
-portal. Both actions are logged in Admin Center history. However, history retention setting of
-IdentityStoreA will apply to the SMS gateway account creation action and that of IdentityStoreB will
-apply to the GroupID portal creation action.
+the user to sign in to Admin Center to perform that action.  
+**Example:** UserA selects IdentityStoreA to sign in to Admin Center and creates an SMS gateway
+account. This user then selects IdentityStoreB to sign in to Admin Center and creates a Directory
+Manager portal. Both actions are logged in Admin Center history. However, the history retention
+setting of IdentityStoreA applies to the SMS gateway account creation action and that of
+IdentityStoreB applies to the Directory Manager portal creation action.
+:::
 
-Event Logging
+**Event Logging**
 
-In addition to history tracking, GroupID provides event logging, which includes file logging and
-Windows logging for GroupID clients and services. See the
-[Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)
+In addition to history tracking, Directory Manager provides event logging, which includes file logging and
+Windows logging for Directory Manager clients and services. See the
+[Directory Manager Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)
 topic.
 
 **See Also**
 
-- [Admin Center History](/docs/directorymanager/11.0/signin/concepts/history_1.md)
-- [History in Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/history.md)
-- [Identity Store History](/docs/directorymanager/11.0/signin/identitystore/view/view.md)
+- [View and Export Admin Center History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history_1.md)
+- [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/history.md)
+- [View Identity Store History in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/view/view.md)
   (for identity store configurations, workflows, and security roles)
-- [History](/docs/directorymanager/11.0/welcome/history/overview.md) (for directory objects)
+- [Directory Manager Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md) (for directory objects)

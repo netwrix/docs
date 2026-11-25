@@ -1,17 +1,25 @@
 ---
-title: "Create Active Directory Groups"
-description: "Create Active Directory Groups"
+title: "Create Active Directory Groups in Directory Manager"
+description: "Create static groups, Smart Groups, and password expiry groups in an Active Directory identity store with the Directory Manager Create Group wizard."
+keywords:
+  - create Active Directory group
+  - Create Group wizard
+  - static group
+  - Smart Group
+  - password expiry group
 sidebar_position: 20
 ---
 
-# Create Active Directory Groups
+# Create Active Directory Groups in Directory Manager
 
-Using GroupID portal, you can create static groups and Smart Groups in an Active Directory identity
-store.
+Using the Directory Manager portal, you can create static groups and Smart Groups in an Active
+Directory identity store.
 
-NOTE: If the GroupID administrator has specified the group creation action for review, the new group
-will be created after it is verified by an approver. See
-[Requests](/docs/directorymanager/11.0/welcome/request/overview.md).
+:::note
+If the Directory Manager administrator has specified the group creation action for review, the new
+group is created after an approver verifies it. See
+[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
+:::
 
 What do you want to do?
 
@@ -21,105 +29,105 @@ What do you want to do?
 
 ## Create a Static Group
 
-1. In the GroupID portal, click the **Create New** button in the left pane and select **Group**.
+1. In the Directory Manager portal, click the **Create New** button in the left pane and select **Group**.
 
     The **Create Group** wizard opens to the **Group Type** page.
 
-    Pages and fields on the Create Group wizard may vary, since the administrator can customize the
+    Pages and fields on the Create Group wizard can vary, since the administrator can customize the
     wizard by adding or removing pages and fields.
 
-2. On the [Group Type page](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
+2. On the [Select a group type in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
    select the **Static Group** option button and click **Next**.
 3. On the
-   [General page](/docs/directorymanager/11.0/welcome/group/create/group/general.md),
+   [Specify Basic Group Information in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/general.md),
    specify basic information about the group.
 4. On the
-   [Members page](/docs/directorymanager/11.0/welcome/group/create/group/members.md),
+   [Members Page in the Create Group Wizard](/docs/directorymanager/11.0/welcome/group/create/group/members.md),
    specify members for the group.
 5. On the
-   [Owners page](/docs/directorymanager/11.0/welcome/group/create/group/owners.md),
+   [Owners Page in the Create Group Wizard](/docs/directorymanager/11.0/welcome/group/create/group/owners.md),
    specify primary and additional owners for the group.
 6. On the
-   [Summary Page](/docs/directorymanager/11.0/welcome/user/create/activedirectory/summary.md),
-   review the settings and then click Finish to complete the wizard.
+   [Review the Summary page before creating an object](/docs/directorymanager/11.0/welcome/user/create/activedirectory/summary.md),
+   review the settings and then click **Finish** to complete the wizard.
 
 ## Create a Smart Group
 
-A Smart Group is one that dynamically maintains its membership based on the rules applied by a
+A Smart Group is a group that dynamically maintains its membership based on the rules applied by a
 user-defined query, such as an LDAP query.
 
-Rather than specifying static user memberships, you can use a query (for example, "All full-time
-employees in my company") to dynamically build membership in a Smart Group. Managing memberships
+Rather than specifying static user memberships, you can use a query (such as "All full-time
+employees in the company") to dynamically build membership in a Smart Group. Managing memberships
 with queries significantly reduces administrative costs.
 
 **To create a Smart Group:**
 
-1. In the GroupID portal, click the **Create New** button in the left pane and select **Group**.
+1. In the Directory Manager portal, click the **Create New** button in the left pane and select **Group**.
 
     The **Create Group** wizard opens to the **Group Type** page.
 
-    Pages and fields on the Create Group wizard may vary, since the administrator can customize the
-    wizard by adding or removing tabs and fields.
+    Pages and fields on the Create Group wizard can vary, since the administrator can customize the
+    wizard by adding or removing pages and fields.
 
-2. On the [Group Type page](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
+2. On the [Select a group type in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
    select the **Smart Group** option button and click **Next**.
 3. On the
-   [General page](/docs/directorymanager/11.0/welcome/group/create/group/general.md),
+   [Specify Basic Group Information in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/general.md),
    specify basic information about the group.
 4. On the
-   [ Smart Group page](/docs/directorymanager/11.0/welcome/group/create/group/smartgroup.md),
+   [Smart Group Page in the Create Group Wizard](/docs/directorymanager/11.0/welcome/group/create/group/smartgroup.md),
    review and modify the query for updating group membership.
 5. On the
-   [Owners page](/docs/directorymanager/11.0/welcome/group/create/group/owners.md),
+   [Owners Page in the Create Group Wizard](/docs/directorymanager/11.0/welcome/group/create/group/owners.md),
    specify primary and additional owners for the group.
 
     When a Smart Group Update job runs on a group, the notification behavior is as follows:  
-     Even when the **Do not Notify** check box is selected, the additional owner will receive the
+    Even when the **Do not Notify** checkbox is selected, the additional owner receives the
     notifications if the administrator has included its email address for job-specific
     notifications.
 
 6. On the
-   [Summary Page](/docs/directorymanager/11.0/welcome/user/create/activedirectory/summary.md),
-   review the settings and then click Finish to complete the wizard.
+   [Review the Summary page before creating an object](/docs/directorymanager/11.0/welcome/user/create/activedirectory/summary.md),
+   review the settings and then click **Finish** to complete the wizard.
 
 ## Create a Password Expiry Group
 
 A password expiry group is a Smart Group whose membership contains users whose identity store
 account passwords are approaching their expiry dates. Members of this group are notified by email to
-reset their passwords. When they do so, they are automatically removed from the group membership.
+reset their passwords. When they do so, they're automatically removed from the group membership.
 
-NOTE: Password Expiry group is not supported in Microsoft Entra ID.
+Password expiry groups aren't supported in Microsoft Entra ID.
 
 **To create a Password Expiry Group:**
 
-1. In the GroupID portal, click the **Create New** button in the left pane and select **Group**.
+1. In the Directory Manager portal, click the **Create New** button in the left pane and select **Group**.
 
     The **Create Group** wizard opens to the **Group Type** page.
 
-    Pages and fields on the Create Group wizard may vary, since the administrator can customize the
-    wizard by adding or removing tabs and fields.
+    Pages and fields on the Create Group wizard can vary, since the administrator can customize the
+    wizard by adding or removing pages and fields.
 
-2. On the [Group Type page](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
+2. On the [Select a group type in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
    select the **Password Expiry Group** option button and click **Next**.
 3. On the
-   [General page](/docs/directorymanager/11.0/welcome/group/create/group/general.md),
+   [Specify Basic Group Information in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/general.md),
    specify basic information about the group.
 4. On the
-   [ Smart Group page](/docs/directorymanager/11.0/welcome/group/create/group/smartgroup.md),
+   [Smart Group Page in the Create Group Wizard](/docs/directorymanager/11.0/welcome/group/create/group/smartgroup.md),
    review and modify the query for updating group membership.
 5. On the
-   [Owners page](/docs/directorymanager/11.0/welcome/group/create/group/owners.md),
+   [Owners Page in the Create Group Wizard](/docs/directorymanager/11.0/welcome/group/create/group/owners.md),
    specify primary and additional owners for the group.
 
     When a Smart Group Update job runs on a group, the notification behavior is as follows:  
-     Even when the **Do not Notify** check box is selected, the additional owner will receive the
+    Even when the **Do not Notify** checkbox is selected, the additional owner receives the
     notifications if the administrator has included its email address for job-specific
     notifications.
 
 6. On the
-   [Summary Page](/docs/directorymanager/11.0/welcome/user/create/activedirectory/summary.md),
-   review the settings and then click Finish to complete the wizard.
+   [Review the Summary page before creating an object](/docs/directorymanager/11.0/welcome/user/create/activedirectory/summary.md),
+   review the settings and then click **Finish** to complete the wizard.
 
 **See Also**
 
-- [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

@@ -1,61 +1,69 @@
 ---
-title: "Explore SharePoint Sites"
-description: "Explore SharePoint Sites"
+title: "View SharePoint Site Permissions in Directory Manager"
+description: "Explore replicated SharePoint sites in Directory Manager Entitlement to view, search, and update permissions on document libraries, files, and folders."
+keywords:
+  - SharePoint site permissions
+  - document libraries
+  - Entitlement SharePoint sites
+  - permission levels
+  - SharePoint permission replication
 sidebar_position: 20
 ---
 
-# Explore SharePoint Sites
+# View SharePoint Site Permissions in Directory Manager
 
 The **SharePoint Sites** page lists the sites specified for permission analysis in the identity
-store, displaying granular level permission granted to objects on document libraries. This data is
+store, displaying granular-level permissions granted to objects on document libraries. This data is
 subject to the date and time the permissions were last replicated.
 
-You can view all active sites as enabled and inactive sites as disabled. It is as:
+Active sites appear as enabled, and inactive sites appear as disabled, as follows:
 
-![disabledsites](/images/directorymanager/11.0/portal/entitlement/disabledsites.webp)
+![SharePoint site list showing enabled and disabled sites](/images/directorymanager/11.0/portal/entitlement/disabledsites.webp)
 
-A disabled site indicates that the Insights job has not run to replicate permission data for it.
-Once permissions are replicated, the site is enabled.
+A disabled site indicates that the Insights job hasn't run to replicate permission data for it.
+After permissions are replicated, the site is enabled.
 
-- You will find the following information under a site name:
+- The following information appears under a site name:
 
     - **Path**: the location where the site exists.
     - **Total Share**: number of the shared document libraries.
     - **Last Replication**: day, date, and time when the site was last replicated.
     - **Time Taken**: time it took to complete the replication.
 
-- Double click on the card to explore the site. Once explored, click **Go Back** to return to the
+- Double-click the card to explore the site. Once explored, click **Go Back** to return to the
   list of available sites.
-- You can search specific sites on the search bar on the top. If you want to undo the search
-  results, click **Refresh** which will display all the sites on the page.
+- You can search for specific sites in the search bar at the top. If you want to undo the search
+  results, click **Refresh** to display all the sites on the page.
 
 What do you want to do?
 
 - Explore a Site Card View
 - View levels and permissions on a library
-- Search document libraries, files and folders in a site
-- How GroupID Entitlement displays permissions
+- Search document libraries, files, and folders in a site
+- How Directory Manager Entitlement displays permissions
 
 ## Explore a Site Card View
 
-On double clicking the site, a separate card for each document library in the site is displayed,
-showcasing the following information:
+When you double-click the site, a separate card appears for each document library in the site,
+showing the following information:
 
 - The date and time the library was last created.
 
-    NOTE: Date format: mm/dd/yyyy
+    :::note
+    Date format: mm/dd/yyyy
+    :::
 
-- You can view the files and folders within a document library till the nth level. Double-click a
-  folder card to view its direct child files and folders. Continue till the nth level.
+- You can view the files and folders within a document library to the nth level. Double-click a
+  folder card to view its direct child files and folders. Continue to the nth level.
 
-    ![sitesfolders](/images/directorymanager/11.0/portal/entitlement/sitesfolders.webp)
+    ![Document library cards and folders within a SharePoint site](/images/directorymanager/11.0/portal/entitlement/sitesfolders.webp)
 
 ## View levels and permissions on a library
 
-On clicking a library card or even a file/folder card, all users and groups with permission on it
+When you click a library card or a file/folder card, all users and groups with permissions on it
 are listed in the right pane.
 
-![sitesrightpane](/images/directorymanager/11.0/portal/entitlement/sitesrightpane.webp)
+![Right pane listing users and groups with permission levels on a document library](/images/directorymanager/11.0/portal/entitlement/sitesrightpane.webp)
 
 Information includes:
 
@@ -63,58 +71,60 @@ Information includes:
   directly in the selected folder.
 
     For example, if the folder contains a folder, ABC, that further contains 3 folders, the direct
-    sub file/folder count will be 1, not 4.
+    sub file/folder count is 1, not 4.
 
 - Under **Users/Groups**, you can view all users and groups with permissions on the file/folder. You
-  can also view the levels, such as _Full Control_, _Limited Access_, _View_, _Read, and Edit._
+  can also view the levels, such as _Full Control_, _Limited Access_, _View_, _Read_, and _Edit_.
 
     Use the search box to filter the listing.
 
-- Add new users who can have permissions on the file/folder in a site. You can permanently or
-  temporarily add users.
+- Add new users who can have permissions on the file/folder in a site. You can add users permanently or
+  temporarily.
 
     You can select multiple users and collectively assign them the same permissions.
 
-- On clicking a user or group name, the user/group's properties are displayed.
+- When you click a user or group name, the user/group's properties are displayed.
 
     You can view and update properties, depending on your rights and privileges.
 
-    NOTE: For groups, this functionality is available for domain groups only; SharePoint groups are
+    :::note
+    For groups, this functionality is available for domain groups only; SharePoint groups are
     not linked.
+    :::
 
 - Clicking a level for a user displays the effective permissions assigned to this user on the
   file/folder.
 
-    You can update the permissions and click **Save** icon.
+    You can update the permissions and then click the **Save** icon.
 
-    ![sitespermissions](/images/directorymanager/11.0/portal/entitlement/sitespermissions.webp)
+    ![Effective permissions for a user on a SharePoint file or folder with the Save icon](/images/directorymanager/11.0/portal/entitlement/sitespermissions.webp)
 
     Permissions are displayed as **Explicit permissions** which list the effective permissions set
     the user/group has on the file/folder.
 
-## Search document libraries, files and folders in a site
+## Search document libraries, files, and folders in a site
 
 Use the search bar to search for specific files and folders in the site. You can also search for a
 file or folder in a particular folder. Click the card for that folder and search for the required
 child file/folder.
 
-![sitessearch](/images/directorymanager/11.0/portal/entitlement/sitessearch.webp)
+![Search bar for document libraries, files, and folders in a SharePoint site](/images/directorymanager/11.0/portal/entitlement/sitessearch.webp)
 
 **Search filter**
 
 Below the search box is the **Add new filter** link. Click it to apply a search filter with a
-user/group, access type, and permission criterion. This will display shared files/folders that match
+user/group, access type, and permission criterion. This displays shared files/folders that match
 your criterion.
 
-- Type the name of a user or group in the **User or Group** box. It must be a specific name, like
+- Enter the name of a user or group in the **User or Group** box. It must be a specific name, like
   'Sarah' (for user) or 'Engineering team' (for group), and not an object type, like 'users',
   'groups', 'contacts', or 'computers'.
-- From the **Access Type** drop-down list, select the _Allow_ or _Deny_ option.
+- From the **Access Type** dropdown list, select the _Allow_ or _Deny_ option.
 - In the **Permission** box, select one or more permissions.
 - Click **Apply filters**.
 
-GroupID Entitlement displays folders and files on which the user/group has the specific access type
-with respect to the specified permission(s).
+Directory Manager Entitlement displays folders and files on which the user/group has the specific access type
+with respect to the specified permissions.
 
 **Example:**
 
@@ -128,12 +138,11 @@ This would list all files and folders on which the Administrator has these three
 WriteAttributes, ExecuteFile, and Read - set to 'Allow'.
 
 You can apply multiple search filters. Click **Add new filter** to insert a filter row. Each filter
-row is taken as a separate criterion; any file or folder that matches all of these criteria will be
-displayed in the results.
+row is taken as a separate criterion; the results display any file or folder that matches all of these criteria.
 
-## How GroupID Entitlement displays permissions
+## How Directory Manager Entitlement displays permissions
 
-| Level                                                                  | Access level displayed in GroupID Entitlement SharePoint                                                           |
+| Level                                                                  | Access level displayed in Directory Manager Entitlement SharePoint                                               |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | User/Group has the 'Full Control' permission level on a file/folder.   | 'Allow' for all list permissions.                                                                                  |
 | User/Group has the 'Limited Access' permission level on a file/folder. | 'Allow' only for the View Application Pages list permission.                                                       |
@@ -142,4 +151,4 @@ displayed in the results.
 
 **See Also**
 
-- [ Entitlement](/docs/directorymanager/11.0/welcome/entitlement/overview.md)
+- [ Directory Manager Entitlement Management](/docs/directorymanager/11.0/welcome/entitlement/overview.md)

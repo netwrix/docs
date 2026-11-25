@@ -1,13 +1,18 @@
 ---
-title: "Get a Data Source by Type and with ID"
-description: "Get a Data Source by Type and with ID"
+title: "Get Filtered Data Sources by Type ID in Directory Manager"
+description: "Retrieve Directory Manager data sources of a given type ID, filtered by criteria such as the data source name."
+keywords:
+  - filtered data sources by type ID
+  - DataSource GetByType endpoint
+  - data source filter criteria
+  - data source search options
 sidebar_position: 50
 ---
 
-# Get a Data Source by Type and with ID
+# Get Filtered Data Sources by Type ID in Directory Manager
 
-Using this API, you can retrieve information of a data source by its type and ID. For example, an
-SQL data source with a specific id.
+Use this API to retrieve information about a data source by its type and ID. For example, an
+SQL data source with a specific ID.
 
 ## Endpoint
 
@@ -17,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/GetByType/{dataSource
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -52,7 +57,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -93,5 +98,5 @@ GET
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

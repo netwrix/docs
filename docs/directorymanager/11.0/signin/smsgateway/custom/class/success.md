@@ -1,12 +1,17 @@
 ---
-title: "SendSmsMessageResult.Success"
-description: "SendSmsMessageResult.Success"
+title: "SendSmsMessageResult.Success property"
+description: "Check whether a text message was sent to the target mobile numbers when you implement a custom SMS gateway in Directory Manager."
+keywords:
+  - SendSmsMessageResult.Success
+  - custom SMS gateway
+  - SMS delivery status
+  - Directory Manager SMS API
 sidebar_position: 30
 ---
 
-# SendSmsMessageResult.Success
+# SendSmsMessageResult.Success property
 
-Returns a boolean value indicating whether the text message is successfully sent to the target
+Returns a Boolean value indicating whether the text message was sent successfully to the target
 mobile phone numbers.
 
 **Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
@@ -23,7 +28,7 @@ public bool Success;
 
 Type: [System.Boolean](http://msdn.microsoft.com/en-us/library/system.boolean.aspx)
 
-True if the message is delivered successfully.
+`True` if the message is delivered successfully.
 
 See Also
 

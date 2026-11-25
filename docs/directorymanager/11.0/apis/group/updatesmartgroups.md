@@ -1,10 +1,15 @@
 ---
-title: "Update Smart Groups"
-description: "Update Smart Groups"
+title: "Update Smart Groups API"
+description: "Update multiple Smart Groups in one POST request by passing their group IDs in the request body."
+keywords:
+  - update Smart Groups API
+  - Smart Groups Update endpoint
+  - bulk Smart Group update
+  - Directory Manager data service
 sidebar_position: 190
 ---
 
-# Update Smart Groups
+# Update Smart Groups API
 
 This API updates multiple Smart Groups whose identities are provided in the request body.
 
@@ -14,9 +19,9 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 ## HTTP Method
 
-POST
+**POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -25,7 +30,7 @@ POST
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -51,5 +56,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

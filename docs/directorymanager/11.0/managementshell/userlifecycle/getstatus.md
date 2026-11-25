@@ -1,13 +1,19 @@
 ---
-title: "Get-Status"
-description: "Get-Status"
+title: "Get-Status Cmdlet for Directory Manager"
+description: "Check a user's status against the identity store's profile validation criteria and see the days left to validate with the Get-Status cmdlet."
+keywords:
+  - Get-Status
+  - user status
+  - profile validation
+  - user lifecycle
+  - Management Shell
 sidebar_position: 20
 ---
 
-# Get-Status
+# Get-Status Cmdlet for Directory Manager
 
-Use the **Get-Status** command to know the status of a specified user as per the profile validation
-criteria defined for the identity store.
+Use the **Get-Status** cmdlet to check the status of a specified user according to the profile
+validation criteria defined for the identity store.
 
 ## Syntax
 
@@ -26,7 +32,7 @@ Get-Status
 
 Example:
 
-The following command provides information about the status of the specified user as per the
+The following command provides information about the status of the specified user according to the
 criteria defined for user lifecycle for the connected identity store. It also provides information
 on the number of days left to validate the profile again.
 
@@ -36,6 +42,6 @@ Get-Status –Manager "Richard"
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Lifecycle Commands ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Lifecycle Cmdlets for Directory Manager ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

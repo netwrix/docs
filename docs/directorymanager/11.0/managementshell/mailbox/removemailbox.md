@@ -1,12 +1,17 @@
 ---
-title: "Remove-Mailbox"
-description: "Remove-Mailbox"
+title: "Remove-Mailbox Cmdlet in Directory Manager"
+description: "Delete a mailbox from the connected identity store with the Remove-Mailbox cmdlet."
+keywords:
+  - Remove-Mailbox
+  - delete mailbox
+  - identity store
+  - PowerShell cmdlet
 sidebar_position: 30
 ---
 
-# Remove-Mailbox
+# Remove-Mailbox Cmdlet in Directory Manager
 
-Use the **Remove-Mailbox** commandlet to delete mailbox from the connected identifty store.
+Use the **Remove-Mailbox** cmdlet to delete a mailbox from the connected identity store.
 
 ## Syntax
 
@@ -31,8 +36,8 @@ The following command deletes the specified mailbox from the connected identity 
 Remove-MailBox -Identity "OsamaMailBox"
 ```
 
-See Also
+**See Also**
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Mailbox Commands](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Mailbox Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

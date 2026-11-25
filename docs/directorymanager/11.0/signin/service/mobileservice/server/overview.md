@@ -1,15 +1,21 @@
 ---
-title: "Server Settings"
-description: "Server Settings"
+title: "Mobile Service Server Settings in Directory Manager"
+description: "See which general and deployment server settings you can manage for a Mobile service, by web server type."
+keywords:
+  - Mobile service server settings
+  - Mobile service deployment settings overview
+  - native IIS
+  - remote IIS
+  - Docker deployment
 sidebar_position: 40
 ---
 
-# Server Settings
+# Mobile Service Server Settings in Directory Manager
 
 Server settings for a Mobile service include:
 
 - General settings
-    - Change the name of a service (i.e., the application name given to the service)
+    - Change the name of a service (the application name given to the service)
     - Associate identity stores with a service
 - Deployment settings
     - Start or stop a service instance
@@ -23,6 +29,6 @@ Server settings for a Mobile service include:
 
 **See Also**
 
-- [Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
-- [Manage General Server Settings](/docs/directorymanager/11.0/signin/service/mobileservice/server/general.md)
-- [Manage Deployment Settings](/docs/directorymanager/11.0/signin/service/mobileservice/server/deployment.md)
+- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [Manage General Mobile Service Settings in Directory Manager](/docs/directorymanager/11.0/signin/service/mobileservice/server/general.md)
+- [Manage Mobile Service Deployment Settings in Directory Manager](/docs/directorymanager/11.0/signin/service/mobileservice/server/deployment.md)

@@ -1,12 +1,17 @@
 ---
-title: "Get-UserEnrollment"
-description: "Get-UserEnrollment"
+title: "Get-UserEnrollment Cmdlet in Directory Manager"
+description: "Check whether a user is enrolled and which authentication types they use with the Get-UserEnrollment cmdlet."
+keywords:
+  - Get-UserEnrollment
+  - Directory Manager Management Shell
+  - user enrollment status
+  - authentication enrollment types
 sidebar_position: 20
 ---
 
-# Get-UserEnrollment
+# Get-UserEnrollment Cmdlet in Directory Manager
 
-The commandlet **Get-UserEnrollment** retrieves enrollment information of a user.
+The **Get-UserEnrollment** cmdlet retrieves enrollment information of a user.
 
 ## Syntax
 
@@ -23,7 +28,7 @@ Get-UserEnrollment
 
 Example 1:
 
-If a user is enrolled, this cmdlet will enlist the authentication type(s) the user is enrolled with.
+If a user is enrolled, this cmdlet lists the authentication types the user is enrolled with.
 
 ```
 Get-UserEnrollment -Identity euser1
@@ -31,7 +36,7 @@ Get-UserEnrollment -Identity euser1
 
 Example 2:
 
-Check whether the specified user is enrolled in the specified enrollment type(s).
+Check whether the specified user is enrolled with the specified enrollment types.
 
 ```
 Get-UserEnrollment -Identity euser1 -EnrollmentTypes SecurityQuestions, Email
@@ -47,6 +52,6 @@ This example gets user enrollment information through the pipeline operator.
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Commands](/docs/directorymanager/11.0/managementshell/user/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/user/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

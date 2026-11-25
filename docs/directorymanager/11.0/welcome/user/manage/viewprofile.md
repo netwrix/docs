@@ -1,25 +1,31 @@
 ---
-title: "Manage your profile"
-description: "Manage your profile"
+title: "Manage your Directory Manager profile"
+description: "View and update your directory profile in the portal and check your profile validation status."
+keywords:
+  - user profile
+  - profile validation status
+  - Verification Pending
+  - Expired User
+  - Directory Manager portal
 sidebar_position: 60
 ---
 
-# Manage your profile
+# Manage your Directory Manager profile
 
 To view and update your profile information in the directory, click your profile info in the top
 right corner and select **See full profile**.
 
-The profile page has the same tabs as the user properties page. Refer to the information for
-[User Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md) to manage
-your profile.
+The profile page has the same tabs as the user properties page. See
+[Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md) to manage your
+profile.
 
 ## User profile validation
 
 If profile validation applies to you, then you must verify and update your profile information in
-the directory using the GroupID portal.
+the directory using the Directory Manager portal.
 
-Profile validation is not a one-time process; rather, the administrator specifies a profile
-validation life cycle period (for example, 90 days), which implies that you must validate your
+Profile validation isn't a one-time process; rather, the administrator specifies a profile
+validation life cycle period (for example, 90 days), which means that you must validate your
 profile once during each 90-day cycle.
 
 On your profile page, your profile validation status is displayed next to your name.
@@ -30,10 +36,10 @@ On your profile page, your profile validation status is displayed next to your n
     Click **Validate Your Profile** on the toolbar. The **Validate Profile Properties** window is
     displayed, where you can validate your profile.
 
-- The status, **Expired User**, indicates that a user has expired because he or she did not validate
-  his or her profile within the required duration. An expired user is disabled in the directory.
+- The status, **Expired User**, indicates that a user has expired because they didn't validate their
+  profile within the required duration. An expired user is disabled in the directory.
 
 **See Also**
 
-- [User Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
-- [Validate your profile](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)
+- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [Validate your profile in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)

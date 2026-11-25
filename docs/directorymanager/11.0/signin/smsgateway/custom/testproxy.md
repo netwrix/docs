@@ -1,10 +1,15 @@
 ---
-title: "ISmsGateway.TestProxy"
-description: "ISmsGateway.TestProxy"
+title: "ISmsGateway.TestProxy Method (SMS Gateway API)"
+description: "Validate the proxy settings Directory Manager uses to reach a custom SMS gateway by implementing the ISmsGateway.TestProxy method."
+keywords:
+  - ISmsGateway.TestProxy
+  - SMS gateway proxy settings
+  - custom SMS gateway
+  - Imanami.PublicInterfaces
 sidebar_position: 120
 ---
 
-# ISmsGateway.TestProxy
+# ISmsGateway.TestProxy Method (SMS Gateway API)
 
 Tests the proxy settings.
 
@@ -26,4 +31,4 @@ True if the proxy settings are valid.
 
 **See Also**
 
-- [Implement and Deploy a Custom SMS Gateway](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

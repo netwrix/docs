@@ -1,13 +1,19 @@
 ---
-title: "Clear-Notifications"
-description: "Clear-Notifications"
+title: "Clear-Notifications Cmdlet in Directory Manager"
+description: "Remove notification settings from a Directory Manager identity store individually or in sets with the Clear-Notifications cmdlet."
+keywords:
+  - Clear-Notifications
+  - notification settings
+  - identity store
+  - Management Shell
+  - PowerShell cmdlet
 sidebar_position: 20
 ---
 
-# Clear-Notifications
+# Clear-Notifications Cmdlet in Directory Manager
 
-The commandlet **Clear-Notifications** removes notifications settings from an identity store. The
-notifications settings can be removed individually or in sets.
+The Clear-Notifications cmdlet removes notification settings from an identity store. You can remove
+the notification settings individually or in sets.
 
 ## Syntax
 
@@ -41,8 +47,8 @@ Clear-Notifications
 
 Example 1:
 
-This example individually removes the Membership Lifecycle notification option – X days before user
-is going to leave the group for the AdStore9 identity store.
+This example individually removes the Membership Lifecycle notification option "X days before user
+is going to leave the group" for the AdStore9 identity store.
 
 ```
 Clear-Notifications -IdentityStoreName AdStore9 -NotifyLoggedInUsers –XdaysBeforeLeaveNotificationML 10
@@ -50,8 +56,8 @@ Clear-Notifications -IdentityStoreName AdStore9 -NotifyLoggedInUsers –XdaysBef
 
 Example 2:
 
-This example removes recipients in sets mentioned under the Recipients section on the Notification
-page of AdStore9 identity store properties.
+This example removes the recipients in the sets listed under the Recipients section on the
+Notification page of the AdStore9 identity store properties.
 
 ```
 Clear-Notifications -IdentityStoreName AdStore9 -ClearSet Recipients
@@ -59,6 +65,6 @@ Clear-Notifications -IdentityStoreName AdStore9 -ClearSet Recipients
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Identity Store Commands](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

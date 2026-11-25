@@ -1,12 +1,17 @@
 ---
-title: "Get All Data Sources"
-description: "Get All Data Sources"
+title: "Get All Data Sources API in Directory Manager"
+description: "Retrieve every data source defined in Directory Manager, including its type, creation date, and configuration values."
+keywords:
+  - Directory Manager data source API
+  - list all data sources
+  - DataSource GetAll endpoint
+  - data source configuration values
 sidebar_position: 60
 ---
 
-# Get All Data Sources
+# Get All Data Sources API in Directory Manager
 
-Using this API you can get information of all data source defined so far in GroupID.
+Use this API to get information about all data sources defined so far in Directory Manager.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/GetAll
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -85,7 +90,7 @@ GET
 ]
 ```
 
-See Also
+## See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

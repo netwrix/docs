@@ -1,13 +1,18 @@
 ---
-title: "Object properties - Attributes tab"
-description: "Object properties - Attributes tab"
+title: "Group properties Attributes tab"
+description: "Store extra information about a group in Directory Manager by setting its custom attribute values on the Attributes tab."
+keywords:
+  - custom attributes
+  - group properties
+  - Attributes tab
+  - Directory Manager group
 sidebar_position: 60
 ---
 
-# Object properties - Attributes tab
+# Group properties Attributes tab
 
-Use this tab to manage custom attributes for this object. These attributes are used to store
-additional information about the object. For example, you can use custom attributes to save health
+Use this tab to manage the custom attributes for this object, which store additional
+information about the object. For example, you can use custom attributes to save the health
 insurance data of a user.
 
 Attribute 1
@@ -68,4 +73,4 @@ The value of the custom attribute 14.
 
 **See Also**
 
-- [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

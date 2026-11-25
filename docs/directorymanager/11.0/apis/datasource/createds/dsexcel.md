@@ -1,30 +1,36 @@
 ---
-title: "Create a Data Source for MS Excel"
-description: "Create a Data Source for MS Excel"
+title: "Create an MS Excel Data Source with the API"
+description: "Create a Directory Manager data source that connects to a Microsoft Excel workbook on a local server or OneDrive."
+keywords:
+  - Directory Manager API
+  - Microsoft Excel
+  - data source
+  - xls file
+  - OneDrive
 sidebar_position: 30
 ---
 
-# Create a Data Source for MS Excel
+# Create an MS Excel Data Source with the API
 
-Use this API to create a new data source.
+Use this API to create a new data source for a Microsoft Excel file.
 
 See the
 [Create a Data Source for MS Excel](/docs/directorymanager/11.0/signin/datasource/create.md#create-a-data-source-for-ms-excel)
 section of the
-[Create a Data Source](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-for additional information on creating an Excel data source using GroupID interface.
+[Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+for additional information on creating an Excel data source using Directory Manager.
 
 ## Endpoint
 
-https://demomachine:4443/GroupIDDataService/api/DataSource/Create
+**https://demomachine:4443/GroupIDDataService/api/DataSource/Create**
 
 ## HTTP Method
 
-POST
+**POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
-The syntax given below provides you information for creating an Excel data source.
+The following syntax shows how to create an Excel data source.
 
 ```
 {
@@ -43,7 +49,7 @@ The syntax given below provides you information for creating an Excel data sourc
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -63,5 +69,5 @@ The syntax given below provides you information for creating an Excel data sourc
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

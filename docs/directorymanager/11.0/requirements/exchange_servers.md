@@ -1,12 +1,17 @@
 ---
-title: "Supported Microsoft Exchange Servers"
-description: "Supported Microsoft Exchange Servers"
+title: "Directory Manager Supported Exchange Servers"
+description: "Review the Microsoft Exchange Server versions that Directory Manager supports: Exchange Server 2013, 2016, and 2019."
+keywords:
+  - supported Exchange Server versions
+  - Microsoft Exchange Server 2019
+  - Directory Manager Exchange requirements
+  - Exchange Server 2016
 sidebar_position: 30
 ---
 
-# Supported Microsoft Exchange Servers
+# Directory Manager Supported Exchange Servers
 
-GroupID supports the following Microsoft Exchange Servers:
+Directory Manager supports the following Microsoft Exchange Server versions:
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2016
@@ -14,4 +19,4 @@ GroupID supports the following Microsoft Exchange Servers:
 
 See Also
 
-- [Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
+- [Directory Manager 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)

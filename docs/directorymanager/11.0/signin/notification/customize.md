@@ -1,29 +1,31 @@
 ---
-title: "Customize Notifications"
-description: "Customize Notifications"
+title: "Customize Directory Manager Notification Templates"
+description: "Edit the subject line, content, and tags of Directory Manager notification templates in the Notification Editor, in any supported language."
+keywords:
+  - notification templates
+  - Notification Editor
+  - notification tags
+  - subject line
+  - notification language
 sidebar_position: 20
 ---
 
-# Customize Notifications
+# Customize Directory Manager Notification Templates
 
-GroupID generates notifications for different events, such as when someone changes
-a group, when workflows start, and when profile validation is due for users. The
+Directory Manager generates notifications for different events, such as when someone changes a
+group, when workflows start, and when profile validation is due for users. The
 [Localization](/docs/directorymanager/11.0/gettingstarted.md#localization) topic lists the
 supported languages for notifications.
 
-Templates for all GroupID notifications are available in these languages. You can customize a
-notification template for the following in each of the supported languages:
+Templates for all Directory Manager notifications are available in these languages. You can
+customize a notification template for the following in each of the supported languages:
 
 - Subject line
 - Message (content and format)
 
-By default, GroupID sends notifications to users in English. However, a user can opt to
+By default, Directory Manager sends notifications to users in English. However, a user can opt to
 receive notifications in a different language by personalizing the language settings from the
-**Settings** panel in the GroupID portal.
-
-What do you want to do?
-
-- [Customize a Notification Template](#customize-a-notification-template)
+**Settings** panel in the Directory Manager portal.
 
 ## Customize a Notification Template
 
@@ -32,11 +34,11 @@ What do you want to do?
    Or
    In Admin Center, click **Notification Editor** at the bottom of the left navigation pane.
 
-    The editor displays a list of all notifications that GroupID generates. The editor displays
-    notification names in English, regardless of the language you select.
+    The editor displays a list of all notifications that Directory Manager generates. The editor
+    displays notification names in English, regardless of the language you select.
 
-2. By default, the editor selects English (United States), so you can view and customize the notification templates in
-   the English language. To set another language:
+2. By default, the editor selects English (United States), so you can view and customize the
+   notification templates in English. To set another language:
 
     1. Click **Filter**.
     2. On the **Filter(s)** dialog box, select a language in the **Locality** dropdown list.
@@ -53,9 +55,9 @@ What do you want to do?
 4. To open a notification template for editing, click **Open** for it in the **Actions** column.
 5. Select a mode to view the template. Options are:
 
-    - Source code - Click the **Source Code** tab to view and edit the notification template in the
+    - Source code – Click the **Source Code** tab to view and edit the notification template in the
       HTML editor.
-    - Interactive - Click the **Interactive** tab to view the template in a user–friendly format.
+    - Interactive – Click the **Interactive** tab to view the template in a user-friendly format.
       This view shows the notification as recipients see it. You can't format or edit
       the template in this view.
 
@@ -90,7 +92,7 @@ Don't insert tables or custom photos in a notification template.
 
 After making the required changes, click **Save** on the menu bar.
 
-The Source Code view uses the same editor as Microsoft Visual Studio, so you also have the following
+The Source Code view uses the same editor as Microsoft Visual Studio, so you also have these
 options:
 
 - Use the page navigator in the top right corner of the source code view to scroll through the
@@ -102,17 +104,17 @@ options:
 
 ### Replace the Tags
 
-In a notification template, a tag combines a variable with an attribute name between percentage
+In a notification template, a tag combines a variable with an attribute name between percent
 signs to display that attribute’s value in the notification. For example,
-%TARGETOBJECT_DisplayName% will resolve to the display name of the targetobject; %REQUESTER_mail%
-will show the email address of the requester, and so on.
+%TARGETOBJECT_DisplayName% resolves to the display name of the target object, and %REQUESTER_mail%
+shows the email address of the requester.
 
 **To replace a tag:**
 
 1. In the Source Code view, click the **Dictionary** tile to view the recommended tags to replace
    the default tags with.
 
-    ![tag_dictionary](/images/directorymanager/11.0/admincenter/notification/tag_dictionary.webp)
+    ![Tag dictionary listing the recommended tags for a notification template](/images/directorymanager/11.0/admincenter/notification/tag_dictionary.webp)
 
     Each notification template has its own set of recommended tags.
 
@@ -120,7 +122,7 @@ will show the email address of the requester, and so on.
    tag dictionary to see which tags the notification uses.
 3. After replacing a tag in the template, click **Save** on the menu bar.
 
-##### Complete List of Tags
+#### Complete List of Tags
 
 The following table lists all tags for object attributes. Netwrix doesn't recommend using
 other tags. By using a tag, you can display an attribute’s value in the notification.
@@ -137,12 +139,12 @@ other tags. By using a tag, you can display an attribute’s value in the notifi
 | 8.  | USER             | A user object under consideration in password-related notifications.                                                               |
 | 9.  | MASTER           | The master account of a user in password-related notifications.                                                                    |
 
-##### Complete List of Attributes
+#### Complete List of Attributes
 
 The following table lists all attributes you can use with tags in the notification templates. You
 can also use any custom attributes.
 
-| Attributes            |
+| Attributes            |                                |                             |                         |
 | --------------------- | ------------------------------ | --------------------------- | ----------------------- |
 | Owner                 | Member                         | MemberOf                    | Manager                 |
 | Name                  | DisplayName                    | FirstName                   | LastName                |
@@ -166,11 +168,11 @@ can also use any custom attributes.
 | HomeMDB               | Exchange2010AdditionalOwners   | ProxyAddresses              | DynamicDLFilter         |
 | GroupClassName        | ComputerClassName              | ContactClassName            | UserClassName           |
 | DatabaseMoniker       | GroupTypeUniversalSecurity     | GroupTypeGlobalSecurity     | PublicFolderClassName   |
-| AccountExpires        | GroupTypeUniversalDistribution | GroupTypeLocalDistribution  | GroupTypeLocalSecurity> |
+| AccountExpires        | GroupTypeUniversalDistribution | GroupTypeLocalDistribution  | GroupTypeLocalSecurity |
 | IsDeleted             | GroupTypeLocalSecurity_Builtin | GroupTypeGlobalDistribution | AccountDisabled         |
 | LastLogon             | PrimaryGroupToken              | PrimaryGroupId              | SubscribeByMail         |
 | AdPublicDelgateRights | UserPrincipleName              |                             |                         |
 
 **See Also**
 
-- [Notifications](/docs/directorymanager/11.0/signin/notification/overview.md)
+- [How Directory Manager Email Notifications Work](/docs/directorymanager/11.0/signin/notification/overview.md)

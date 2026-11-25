@@ -1,10 +1,15 @@
 ---
-title: "ISmsGateway.TestConnection"
-description: "ISmsGateway.TestConnection"
+title: "ISmsGateway.TestConnection Method (SMS Gateway API)"
+description: "Test the connection between Directory Manager and a custom SMS gateway by implementing the ISmsGateway.TestConnection method."
+keywords:
+  - ISmsGateway.TestConnection
+  - SMS gateway connection test
+  - custom SMS gateway
+  - Imanami.PublicInterfaces
 sidebar_position: 100
 ---
 
-# ISmsGateway.TestConnection
+# ISmsGateway.TestConnection Method (SMS Gateway API)
 
 Tests your connection with the SMS gateway.
 
@@ -26,4 +31,4 @@ True if a connection is established with the SMS gateway.
 
 **See Also**
 
-- [Implement and Deploy a Custom SMS Gateway](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

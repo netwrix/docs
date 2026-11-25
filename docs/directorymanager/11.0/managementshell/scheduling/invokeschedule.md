@@ -1,12 +1,17 @@
 ---
-title: "Invoke-Schedule"
-description: "Invoke-Schedule"
+title: "Invoke-Schedule Cmdlet in Directory Manager"
+description: "Use the Invoke-Schedule cmdlet to run a scheduled job immediately, by schedule name or job ID, without waiting for its trigger."
+keywords:
+  - Invoke-Schedule
+  - run scheduled job
+  - GUS job
+  - Management Shell cmdlet
 sidebar_position: 30
 ---
 
-# Invoke-Schedule
+# Invoke-Schedule Cmdlet in Directory Manager
 
-The commandlet **Invoke-Schedule** executes the specified schedule job.
+The **Invoke-Schedule** cmdlet executes the specified schedule job.
 
 ## Syntax
 
@@ -31,7 +36,7 @@ Invoke-Schedule
 
 Example 1:
 
-This example executes a schedule with name starting smm4_.
+This example executes a schedule with a name starting with smm4\_.
 
 ```
 Invoke-Schedule -ScheduleName smm4_
@@ -39,7 +44,7 @@ Invoke-Schedule -ScheduleName smm4_
 
 Example 2:
 
-This example executes a schedule with GUS as Job Type.
+This example executes the schedules that have GUS as the job type.
 
 ```
 Get-Schedule -JobType GUS | Select-Object -Property Name | Invoke-Schedule
@@ -47,7 +52,7 @@ Get-Schedule -JobType GUS | Select-Object -Property Name | Invoke-Schedule
 
 Example 3:
 
-This example executes all the GUS scheduled jobs with daily running trigger.
+This example executes all the GUS scheduled jobs with a daily trigger.
 
 ```
 Get-Schedule -JobType GUS -TriggerType RunDaily -MatchingCriteria And | Select-Object -Property Name | Invoke-Schedule
@@ -55,6 +60,6 @@ Get-Schedule -JobType GUS -TriggerType RunDaily -MatchingCriteria And | Select-O
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Scheduling Commands](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Directory Manager Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

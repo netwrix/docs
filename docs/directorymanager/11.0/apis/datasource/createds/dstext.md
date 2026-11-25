@@ -1,33 +1,39 @@
 ---
-title: "Create a Data Source for a Text/CSV File"
-description: "Create a Data Source for a Text/CSV File"
+title: "Create a Text/CSV Data Source with the Directory Manager API"
+description: "Send a POST request to the Directory Manager API to create a data source from a CSV or text file on a local server or OneDrive."
+keywords:
+  - Text/CSV data source
+  - create data source API
+  - DataSource/Create
+  - CSV delimiter
+  - OneDrive
 sidebar_position: 10
 ---
 
-# Create a Data Source for a Text/CSV File
+# Create a Text/CSV Data Source with the Directory Manager API
 
 Use this API to create a new data source.
 
 See the
 [Create a Data Source for a Text/CSV File](/docs/directorymanager/11.0/signin/datasource/create.md#create-a-data-source-for-a-textcsv-file)
 section of the
-[Create a Data Source](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-to create a Text/CSV data source using the GroupID interface.
+[Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+to create a Text/CSV data source using Directory Manager.
 
 ## Endpoint
 
-https://demomachine:4443/GroupIDDataService/api/DataSource/Create
+**https://demomachine:4443/GroupIDDataService/api/DataSource/Create**
 
 ## HTTP Method
 
-POST
+**POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 The following syntax is for creating a data source for a comma-separated values (.csv) file or a
-text (.txt) file. You must also specify the delimiter used in the file to separate values. This data
-source can be used in queries and only as a source in Synchronize jobs. GroupID enables you to
-connect to a text file that is placed on a local server or on OneDrive.
+text (.txt) file. You must also specify the delimiter used in the file to separate values. You can use this data
+source in queries and only as a source in Synchronize jobs. With Directory Manager, you can
+connect to a text file that is on a local server or on OneDrive.
 
 ```
 {
@@ -47,7 +53,7 @@ connect to a text file that is placed on a local server or on OneDrive.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -67,5 +73,5 @@ connect to a text file that is placed on a local server or on OneDrive.
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

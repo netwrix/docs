@@ -1,17 +1,24 @@
 ---
-title: "Set-SmartGroup"
-description: "Set-SmartGroup"
+title: "Set-SmartGroup Cmdlet"
+description: "Modify a Smart Group in Directory Manager, including its LDAP query, includes and excludes, Password Expiry settings and mail attributes."
+keywords:
+  - Set-SmartGroup
+  - modify Smart Group
+  - Smart Group LDAP query
+  - Password Expiry group
+  - Directory Manager cmdlet
+  - Management Shell
 sidebar_position: 40
 ---
 
-# Set-SmartGroup
+# Set-SmartGroup Cmdlet
 
-The **Set-SmartGroup** commandlet modifies a Smart Group in Directory. Attributes that are common to
+The **Set-SmartGroup** cmdlet modifies a Smart Group in the directory. Attributes that are common to
 both Smart Groups and unmanaged groups can also be modified using the
-[Set-Group](/docs/directorymanager/11.0/managementshell/group/setgroup.md) commandlet.
+[Set-Group](/docs/directorymanager/11.0/managementshell/group/setgroup.md) cmdlet.
 
-You can view events related to this commandlet in GroupID portal, against the **History** node in
-the left panel.
+You can view events related to this cmdlet in the Directory Manager portal, under the **History**
+node in the left panel.
 
 ## Syntax
 
@@ -122,8 +129,8 @@ Set-SmartGroup
 Example 1:
 
 The following command modifies a Smart Group by adding **Administrator** statically in the group
-membership, regardless of whether it is returned by the query, using the credentials of current user
-logged-on to the identity store.
+membership, regardless of whether it is returned by the query, using the credentials of the current user
+logged on to the identity store.
 
 ```
 Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IncludeRecipients "CN=Administrator,CN=Users,DC=HR,DC=Imanami,DC=US"
@@ -141,9 +148,9 @@ Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US
 
 Example 3:
 
-The following command modifies the Password Expiry group using the credentials of current user
-logged-on to the identity store. To be added are those users who reside in the containers specified
-in the **Add** parameter (including sub-containers) and whose password is 20 days or more older and
+The following command modifies the Password Expiry group using the credentials of the current user
+logged on to the identity store. To be added are those users who reside in the containers specified
+in the **Add** parameter (including sub-containers) and whose password is 20 days old or older and
 set to never expire.
 
 ```
@@ -169,9 +176,9 @@ Set-SmartGroup -Identity "CN=imrantest, OU=Testit, DC=minion,DC=local" –Replac
 
 ```
 
-Exampe 6:
+Example 6:
 
-The following command modifies lists of members a Smart Group can accept and reject messages from.
+The following command modifies the lists of members that a Smart Group can accept messages from and reject messages from.
 
 ```
 Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" –Add @{ RejectMessagesFrom = "CN=Roger_Manson,OU=ResignedStaff,DC=HR,DC=Imanami,DC=US"} -Add @(AcceptMessageOnlyFrom = "CN=PKWing,OU=Recruiting,DC=HR,DC=Imanami,DC=US","CN=USWing,OU=Recruiting,DC=HR,DC=Imanami,DC=US")
@@ -179,6 +186,6 @@ Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Smart Group Commands](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Smart Group Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

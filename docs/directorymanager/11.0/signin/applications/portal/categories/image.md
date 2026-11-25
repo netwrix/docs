@@ -1,10 +1,16 @@
 ---
-title: "Image Display Type"
-description: "Image Display Type"
+title: "Image Display Type in Directory Manager Portal"
+description: "Create an image display type so portal users can upload photos to Active Directory attributes such as thumbnailPhoto and jpegPhoto."
+keywords:
+  - image display type
+  - custom display types
+  - thumbnailPhoto attribute
+  - jpegPhoto attribute
+  - Directory Manager Portal
 sidebar_position: 50
 ---
 
-# Image Display Type
+# Image Display Type in Directory Manager Portal
 
 Use the image display type for schema attributes of the user object type that can store image data.
 The following table lists the supported attributes for Active Directory:
@@ -16,16 +22,15 @@ The following table lists the supported attributes for Active Directory:
 | thumbnailPhoto | Picture   | An image of a user for display in Outlook. A space-efficient format like JPEG or GIF is recommended.                                                    | 100                  |
 | thumbnailLogo  | Logo      | A small-sized image; a user’s logo.                                                                                                                     | 32                   |
 
-To define an image display type, specify the image’s display dimensions (height and width), that
-would be used to display the image in the portal. You must also specify the maximum image size that
+To define an image display type, specify the image’s display dimensions (height and width) to use when displaying the image in the portal. You must also specify the maximum image size that
 can be uploaded for this display type.
 
 A custom image display type is rendered on a portal page as:
 
-![photo_placeholder](/images/directorymanager/11.0/admincenter/portal/displaytype/photo_placeholder.webp)
+![Photo placeholder with edit and delete buttons next to it](/images/directorymanager/11.0/admincenter/portal/displaytype/photo_placeholder.webp)
 
 Click **Edit** to launch the **Manage Photo** dialog box for uploading a photo. The dialog box also
-provides many image editing options, including rotate, crop, flip, and re-size.
+provides many image editing options, including rotate, crop, flip, and resize.
 
 What do you want to do?
 
@@ -42,11 +47,11 @@ What do you want to do?
 4. Click **Custom Display Types** in the left pane.
 5. On the **Custom Display Types** page, click **Add** on the **Custom Display Types** tab.
 6. On the **New Display Type** pane, enter a name for the display type and select _Image_ in the
-   **Type** drop-down list.
-   You cannot change the name of a custom display type once you have created it.
-7. In the **Height** and **Width** boxes, enter image dimensions (in pixels). The image will be
+   **Type** dropdown list.
+   You can't change the name of a custom display type after you create it.
+7. In the **Height** and **Width** boxes, enter image dimensions (in pixels). The image is
    displayed in the portal with these dimensions.
-   The default is set to 100 x 100 pixels.
+   The default is 100 x 100 pixels.
 8. In the **Maximum Size (KB)** box, enter the maximum image size (in kilobytes) that users can
    upload for this display type.
 9. Click **OK**.
@@ -60,6 +65,6 @@ photos.
 
 **See Also**
 
-- [Design a Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

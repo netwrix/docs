@@ -1,12 +1,18 @@
 ---
-title: "Get-SmsGateways"
-description: "Get-SmsGateways"
+title: "Get-SmsGateways Cmdlet in Directory Manager"
+description: "List the SMS gateways configured in Directory Manager with the Get-SmsGateways cmdlet."
+keywords:
+  - Get-SmsGateways
+  - SMS gateways
+  - Management Shell
+  - PowerShell cmdlet
 sidebar_position: 110
 ---
 
-# Get-SmsGateways
+# Get-SmsGateways Cmdlet in Directory Manager
 
-The commandlet **Get-SmsGateways** provides information of the SMS gateways configured in GroupID.
+The Get-SmsGateways cmdlet provides information about the SMS gateways configured in Directory
+Manager.
 
 ## Syntax
 
@@ -21,7 +27,7 @@ Get-SmsGateways
 
 Example:
 
-This example lists all the configured SMS gateways in GroupID.
+This example lists all the configured SMS gateways in Directory Manager.
 
 ```
 Get-SmsGateways
@@ -29,6 +35,6 @@ Get-SmsGateways
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Identity Store Commands](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

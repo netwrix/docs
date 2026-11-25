@@ -1,23 +1,28 @@
 ---
-title: "Create a Data Source"
-description: "Create a Data Source"
+title: "Create a Data Source API in Directory Manager"
+description: "Choose the Directory Manager API request for creating a data source for a text or CSV file, Access, Excel, ODBC, Oracle, or SQL Server."
+keywords:
+  - Directory Manager API
+  - create data source
+  - data source providers
+  - Synchronize jobs
 sidebar_position: 10
 ---
 
-# Create a Data Source
+# Create a Data Source API in Directory Manager
 
-Using this API, you can create data sources for the supported providers. The data sources are
+Use this API to create data sources for the supported providers. Data sources are
 primarily used in Synchronize jobs, but you can also use them in queries to search for directory
 objects and in queries for group membership update.
 
-- [Create a Data Source for a Text/CSV File](/docs/directorymanager/11.0/apis/datasource/createds/dstext.md)
-- [Create a Data Source for MS Access](/docs/directorymanager/11.0/apis/datasource/createds/dsaccess.md)
-- [Create a Data Source for MS Excel](/docs/directorymanager/11.0/apis/datasource/createds/dsexcel.md)
-- [Create a Data Source for ODBC](/docs/directorymanager/11.0/apis/datasource/createds/dsodbc.md)
-- [Create a Data Source for Oracle](/docs/directorymanager/11.0/apis/datasource/createds/dsoracle.md)
-- [Create a Data Source for SQL Server](/docs/directorymanager/11.0/apis/datasource/createds/dssql.md)
+- [Create a Text/CSV Data Source with the Directory Manager API](/docs/directorymanager/11.0/apis/datasource/createds/dstext.md)
+- [Create an MS Access Data Source with the API](/docs/directorymanager/11.0/apis/datasource/createds/dsaccess.md)
+- [Create an MS Excel Data Source with the API](/docs/directorymanager/11.0/apis/datasource/createds/dsexcel.md)
+- [Create an ODBC Data Source with the API](/docs/directorymanager/11.0/apis/datasource/createds/dsodbc.md)
+- [Create an Oracle Data Source with the Directory Manager API](/docs/directorymanager/11.0/apis/datasource/createds/dsoracle.md)
+- [Create a SQL Server Data Source with the Directory Manager API](/docs/directorymanager/11.0/apis/datasource/createds/dssql.md)
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

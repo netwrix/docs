@@ -1,12 +1,17 @@
 ---
-title: "Get-User"
-description: "Get-User"
+title: "Get-User Cmdlet in Directory Manager"
+description: "Retrieve basic information about users that match your criteria from an identity store with the Get-User cmdlet."
+keywords:
+  - Get-User
+  - Directory Manager Management Shell
+  - retrieve user
+  - user search filters
 sidebar_position: 10
 ---
 
-# Get-User
+# Get-User Cmdlet in Directory Manager
 
-Use the **Get-User** commandlet to retrieve basic information about a user that match your given
+Use the **Get-User** cmdlet to retrieve basic information about users that match your
 criteria.
 
 ## Syntax
@@ -43,6 +48,6 @@ Get-User -Identity "Osama"
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Commands](/docs/directorymanager/11.0/managementshell/user/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/user/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

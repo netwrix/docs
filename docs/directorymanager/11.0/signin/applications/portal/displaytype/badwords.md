@@ -1,19 +1,24 @@
 ---
-title: "Manage the Bad Words List"
-description: "Manage the Bad Words List"
+title: "Manage the Bad Words List in a Directory Manager Portal"
+description: "Add, update, and remove words in a portal's bad words list, and turn the bad words check on or off."
+keywords:
+  - bad words list
+  - Filter Bad Words
+  - portal word filter
+  - Admin Center portal design
 sidebar_position: 70
 ---
 
-# Manage the Bad Words List
+# Manage the Bad Words List in a Directory Manager Portal
 
-GroupID enables you to restrict portal users from saving data containing words that might be
-offensive. You can maintain a list of undesired words for a portal. When a user enters a value that
-contains a word on the list, the portal does not save the entry until the word is removed or
+Use Directory Manager to restrict portal users from saving data that contains words that might
+be offensive. You can maintain a list of undesired words for a portal. When a user enters a value
+that contains a word on the list, the portal doesn't save the entry until the word is removed or
 corrected.
 
 The bad words check applies to the following:
 
-- Fields with the ‘Filter Bad Words’ option enabled in field properties
+- Fields with the **Filter Bad Words** option enabled in field properties
 - History notes that a user enters for a logged history action
 
 What do you want to do?
@@ -21,7 +26,7 @@ What do you want to do?
 - [Add a Bad Word to the List](#add-a-bad-word-to-the-list)
 - [Update a Bad Word](#update-a-bad-word)
 - [Remove a Bad Word from the List](#remove-a-bad-word-from-the-list)
-- [Enable/Disable the Bad Words Check](#enabledisable-the-bad-words-check)
+- [Enable or Disable the Bad Words Check](#enable-or-disable-the-bad-words-check)
 
 ## Add a Bad Word to the List
 
@@ -36,7 +41,7 @@ What do you want to do?
 6. In the **Value** box on the **New Bad Word** dialog box, enter a word that you want to prevent
    users from typing in the portal and click **OK**.  
    The bad word is displayed in the **Name** list on the **Bad Words List** page.
-7. Make sure to enable the toggle button at the top of the page to apply the bad words filter to the
+7. Ensure the toggle button at the top of the page is enabled to apply the bad words filter to the
    portal.
 8. Click **Save**.
 
@@ -61,11 +66,11 @@ What do you want to do?
 3. Select an identity store under **Design Settings** to customize the portal for it.  
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
-4. Click _Bad Words List_ in the left pane.
+4. Click **Bad Words List** in the left pane.
 5. On the **Bad Words List** page, click **Remove** for a bad word to remove it.
 6. Click **Save**.
 
-## Enable/Disable the Bad Words Check
+## Enable or Disable the Bad Words Check
 
 1. In Admin Center, select **Applications** in the left pane.  
    On the **GroupID Portal** tab, a portal's card displays its info.
@@ -76,9 +81,9 @@ What do you want to do?
 4. Click **Bad Words List** in the left pane.
 5. On the **Bad Words List** page, disable the toggle button at the top of the page to disable the
    bad word check in the portal.  
-   You can apply the check any time by enabling the toggle button.
+   You can apply the check at any time by enabling the toggle button.
 6. Click **Save**.
 
-See Also
+**See Also**
 
-- [Design a Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)

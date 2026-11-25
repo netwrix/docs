@@ -1,22 +1,26 @@
 ---
-title: "Get a Job Details"
-description: "Get a Job Details"
+title: "Get Job Details API in Directory Manager"
+description: "Retrieve the full configuration details of a single Synchronize job by its job ID using a GET request."
+keywords:
+  - "get job details API"
+  - "Synchronize job details"
+  - "DataSyncJobs endpoint"
 sidebar_position: 90
 ---
 
-# Get a Job Details
+# Get Job Details API in Directory Manager
 
-Use this API to get details of a job specified in endpoint URL.
+Use this API to get details of the job specified in the endpoint URL.
 
 ## Endpoint
 
-https://demomachine:4443/GroupIDDataService/api/DataSyncJobs/{jobId}/Details
+`https://demomachine:4443/GroupIDDataService/api/DataSyncJobs/{jobId}/Details`
 
 ## HTTP Method
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -382,5 +386,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

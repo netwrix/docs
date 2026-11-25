@@ -1,21 +1,24 @@
 ---
-title: "Change your Password"
-description: "Change your Password"
+title: "Change Your Password in Directory Manager"
+description: "Change your identity store account password in Admin Center, including limits for MFA-enabled Microsoft Entra ID users and master accounts."
+keywords:
+  - change password
+  - Admin Center password
+  - Microsoft Entra ID MFA
+  - master account
 sidebar_position: 50
 ---
 
-# Change your Password
+# Change Your Password in Directory Manager
 
 You can change the password of your identity store account. After changing it, use the new password
-to sign into GroupID and other applications that use your domain account.
+to sign in to Directory Manager and other applications that use your domain account.
 
 What do you want to do?
 
-- Change your Password
+- [Change Your Password](#change-your-password)
 
-## Change your Password
-
-Follow the steps to change your password.
+## Change Your Password
 
 Step 1 – In Admin Center, click your name in the top right corner and select **Change Password**.
 
@@ -27,15 +30,17 @@ Step 3 – Enter a new password in the **New Password** and **Confirm Password**
 
 Step 4 – Click **Change Password**.
 
-NOTE: Microsoft Entra ID users with multifactor authentication enabled cannot change their passwords
-in GroupID. The following message is displayed:.
+:::note
+MFA-enabled Microsoft Entra ID users can't change their passwords in Directory Manager. If they try
+to use the option, the following message is displayed.
+:::
 
-![Admin Center Change Password error message for an Entra ID user](/images/directorymanager/11.0/admincenter/general/admincenterchangepassword.webp)
+![Message shown when an MFA-enabled Microsoft Entra ID user tries to change a password in Admin Center](/images/directorymanager/11.0/admincenter/general/admincenterchangepassword.webp)
 
-If the user's account is a master account, password of its child accounts also cannot be changed in
-GroupID.
+If the user's account is a master account, the passwords of its child accounts also can't be changed
+in Directory Manager.
 
 **See Also**
 
-- [Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
-- [Navigation](/docs/directorymanager/11.0/signin/concepts/navigation.md)
+- [Monitor Directory Manager with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
+- [Navigate Admin Center in Directory Manager](/docs/directorymanager/11.0/signin/concepts/navigation.md)

@@ -1,15 +1,21 @@
 ---
-title: "Dashboard"
-description: "Dashboard"
+title: "Synchronize Dashboard in Directory Manager"
+description: "Use the Synchronize dashboard to search jobs, check background job status, and view job and job collection cards."
+keywords:
+  - synchronize dashboard
+  - background jobs
+  - pinned jobs
+  - job collections
+  - directory manager portal
 sidebar_position: 10
 ---
 
-# Dashboard
+# Synchronize Dashboard in Directory Manager
 
-After signing into the GroupID Portal, from the left pane select **Synchronize** to land on the
-dashboard.
+After signing in to the Directory Manager portal, select **Synchronize** in the left pane to open
+the dashboard.
 
-![synchronizedashboard](/images/directorymanager/11.0/portal/synchronize/synchronizedashboard.webp)
+![Synchronize dashboard in the Directory Manager portal showing the menu pane and job cards](/images/directorymanager/11.0/portal/synchronize/synchronizedashboard.webp)
 
 The interface has intuitive navigation options:
 
@@ -20,7 +26,7 @@ The interface has intuitive navigation options:
 
 ## Quick Search
 
-Look on the top of the page for **Search**. Use it to locate and display information for the jobs
+Look at the top of the page for **Search**. Use it to locate and display information for jobs
 and job templates.
 
 ## Top Right Options
@@ -29,40 +35,40 @@ The top right corner of the application displays:
 
 | Icon                 | Description                                                                                                                                                                                                                                                                                                                                           |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Background jobs icon | View the status of jobs and job collections that are running in the background. It displays: - Jobs - Completed Jobs: Jobs that have been completed. - In Progress Jobs: Jobs that are still in running. - Job Collections - Completed Jobs: Job collections that have been completed. - In Progress Jobs: Job collections that are still in running. |
-| Help icon            | Launch the synchronize portal help.                                                                                                                                                                                                                                                                                                                   |
-| User profile icon    | Displays your profile picture with your name and the identity store that GroupID Portal is connected to. Click it to launch the menu that displays the option to [Sign Out](/docs/directorymanager/11.0/welcome/login.md#sign-out) of the portal.                                                                                             |
+| Background jobs icon | View the status of jobs and job collections that are running in the background. It displays: <ul><li>Jobs</li><li>Completed Jobs: Jobs that have been completed.</li><li>In Progress Jobs: Jobs that are still running.</li><li>Job Collections</li><li>Completed Jobs: Job collections that have been completed.</li><li>In Progress Jobs: Job collections that are still running.</li></ul> |
+| Help icon            | Launch the Synchronize portal help.                                                                                                                                                                                                                                                                                                                   |
+| User profile icon    | Displays your profile picture with your name and the identity store that the Directory Manager portal is connected to. Click it to open the menu that includes the option to [Sign Out](/docs/directorymanager/11.0/welcome/login.md#sign-out) of the portal.                                                                                             |
 
 ## Menu Pane
 
 Look on the left side of the page for the navigation pane, which lists links to:
 
-- Create New ([Create a Job](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- Create New ([Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
   and
-  [Create a Job Collection ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md))
+  [Create a Job Collection in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md))
 - Dashboard
-- [Manage a Job](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
-- [Manage a Job Collection ](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)
-- [Job Templates](/docs/directorymanager/11.0/welcome/synchronize/manage/jobtemplate.md)
-- [Job Collection Template](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollectiontemplate.md)
+- [Manage Synchronize Jobs in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
+- [Manage Job Collections in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)
+- [Job Templates in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobtemplate.md)
+- [Job Collection Templates in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollectiontemplate.md)
 
 ## Dashboard
 
-The dashboard comprises of the following cards:
+The dashboard comprises the following cards:
 
 | Cards                  | Description                                                 |
 | ---------------------- | ----------------------------------------------------------- |
 | Jobs For               | Displays the jobs based on their object types.              |
 | Successful Jobs        | Displays the jobs that have been completed successfully.    |
 | Jobs with Errors       | Displays the jobs that are completed with errors.           |
-| Scheduled Jobs         | Displays jobs that will run based on the time set for them. |
+| Scheduled Jobs         | Displays jobs that run based on the time set for them. |
 | My Pinned Jobs         | Displays frequently used jobs.                              |
 | Pinned Job Collections | Displays frequently used job collections.                   |
 
 **See Also**
 
-- [Synchronize](/docs/directorymanager/11.0/welcome/synchronize/overview.md)
-- [Create a Job](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
-- [Create a Job Collection ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
-- [Manage a Job](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
-- [Manage a Job Collection ](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)
+- [Directory Manager Synchronize Overview](/docs/directorymanager/11.0/welcome/synchronize/overview.md)
+- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Create a Job Collection in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+- [Manage Synchronize Jobs in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
+- [Manage Job Collections in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)

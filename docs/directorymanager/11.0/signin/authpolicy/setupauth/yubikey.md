@@ -1,15 +1,22 @@
 ---
-title: "Set up Authentication via YubiKey"
-description: "Set up Authentication via YubiKey"
+title: "Set Up YubiKey Authentication in Directory Manager"
+description: "Review YubiKey browser requirements, then enable and enforce YubiKey authentication for an identity store and security role."
+keywords:
+  - YubiKey
+  - hardware security key
+  - second factor authentication
+  - multifactor authentication
+  - U2F
 sidebar_position: 60
 ---
 
-# Set up Authentication via YubiKey
+# Set Up YubiKey Authentication in Directory Manager
 
-YubiKey is a key-sized device that users can plug into the computer’s USB slot to verify their
-identity. They can use it to enroll and authenticate their identity store accounts in GroupID.
+YubiKey is a key-sized device that users can plug into the computer's USB slot to verify their
+identity. They can use it to enroll and authenticate their identity store accounts in Directory
+Manager.
 
-YubiKey can only be used on a physical machine. Virtual machines are not supported.
+YubiKey can only be used on a physical machine. Virtual machines aren't supported.
 
 YubiKey supports the following browsers:
 
@@ -28,7 +35,7 @@ You must enable the YubiKey authentication type for an identity store for users 
 factor authentication and multifactor authentication.
 
 To enable it, see the
-[Enable Authentication Types](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
+[Enable Authentication Types for an Identity Store](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
 topic.
 
 ## Enforce YubiKey Authentication for a Security Role in an Identity Store
@@ -43,4 +50,4 @@ and authentication.
 
 See Also
 
-- [Authentication Policy](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)

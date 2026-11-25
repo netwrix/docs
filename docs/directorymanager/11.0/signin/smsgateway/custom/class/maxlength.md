@@ -1,10 +1,15 @@
 ---
-title: "ShortMessage.MaxLength"
-description: "ShortMessage.MaxLength"
+title: "ShortMessage.MaxLength field"
+description: "Find the maximum length of an SMS message for a custom SMS gateway in Directory Manager and learn what happens when a message exceeds it."
+keywords:
+  - ShortMessage.MaxLength
+  - SMS message length
+  - custom SMS gateway
+  - Directory Manager SMS API
 sidebar_position: 20
 ---
 
-# ShortMessage.MaxLength
+# ShortMessage.MaxLength field
 
 Defines the maximum length of an SMS message.
 
@@ -26,11 +31,11 @@ The maximum length.
 
 **Remarks**
 
-This property stores the maximum length of an SMS message. If you send a message more than this
-length, the message is split in two or more pieces and the user is charged for each piece. Most, if
-not all, gateways will automatically split the message. You can increase this limit but it may cost
-more from the gateway.
+This property stores the maximum length of an SMS message. If you send a message longer than this
+limit, the message is split into two or more pieces and the user is charged for each piece. Most
+gateways, if not all, automatically split the message. You can increase this limit, but the gateway
+might charge more.
 
-See Also
+**See Also**
 
 - [ShortMessage class](/docs/directorymanager/11.0/signin/smsgateway/custom/class/class.md)

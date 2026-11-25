@@ -1,12 +1,18 @@
 ---
-title: "Get Groups"
-description: "Get Groups"
+title: "Get Multiple Groups API in Directory Manager"
+description: "Fetch several groups from an identity store in one request by specifying their identities and the attributes to return."
 sidebar_position: 80
+keywords:
+  - Directory Manager API
+  - get groups
+  - group identities
+  - identity store
+  - REST API
 ---
 
-# Get Groups
+# Get Multiple Groups API in Directory Manager
 
-Using this API, you can fetch multiple groups from an identity store.
+Use this API to fetch multiple groups from an identity store.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -31,7 +37,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -206,6 +212,6 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
-- [Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [Directory Manager Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

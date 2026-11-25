@@ -1,27 +1,31 @@
 ---
-title: "Get Job Collections Details"
-description: "Get Job Collections Details"
+title: "Get Synchronize Job Collection Details API"
+description: "Retrieve the jobs in a Synchronize job collection, filtered and paged by the criteria in the request, with a GET request."
+keywords:
+  - "get job collection details API"
+  - "job collection filter"
+  - "DataSyncJobs Collections Details"
+  - "paged job list"
 sidebar_position: 50
 ---
 
-# Get Job Collections Details
+# Get Synchronize Job Collection Details API
 
 Use this API to retrieve information about jobs within a job collection based on the criteria
 provided in the request syntax.
 
-See the
-[Create a Job Collection ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)for
-additional information on Job Collections.
+See the [Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md) topic for
+additional information on job collections.
 
 ## Endpoint
 
-https://demomachine:4443/GroupIDDataService/api/DataSyncJobs/Collections/Details
+`https://demomachine:4443/GroupIDDataService/api/DataSyncJobs/Collections/Details`
 
 ## HTTP Method
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -44,7 +48,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -110,5 +114,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

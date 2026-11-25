@@ -1,14 +1,19 @@
 ---
 title: "Send-TestNotification"
-description: "Send-TestNotification"
+description: "Use the Send-TestNotification cmdlet to send a test email through an SMTP server and confirm the settings work before you configure notifications."
+keywords:
+  - Send-TestNotification
+  - test notification
+  - SMTP settings
+  - Management Shell cmdlet
 sidebar_position: 150
 ---
 
 # Send-TestNotification
 
-The commandlet **Send-TestNotification** sends a test notification using the email addresses
-(specified From/To) through the SMTP server of the specified identity store. This cmdlet can be used
-to validate SMTP settings before configuring notifications or SMTP settings.
+The **Send-TestNotification** cmdlet sends a test notification using the specified From and To email
+addresses through the SMTP server of the specified identity store. Use this cmdlet to validate SMTP
+settings before configuring notifications or SMTP settings.
 
 ## Syntax
 
@@ -36,14 +41,14 @@ Send-TestNotification
 Example 1:
 
 This example sends a test notification to euser1@pucit.local using the SMTP server configured on
-port 25 for user arsalanahmadsvm in AdStore1 identity store.
+port 25 for user arsalanahmadsvm in the AdStore1 identity store.
 
 ```
 Send-TestNotification -IdentityStorename AdStore9 -SmtpServer arslanahmadsvm.pucit.local -Port 25 -FromEmail noreply@pucit.local -ToEmail euser1@pucit.local
 ```
 
-See Also
+**See Also**
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Identity Store Commands](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

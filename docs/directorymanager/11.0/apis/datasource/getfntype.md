@@ -1,13 +1,18 @@
 ---
-title: "Get Filenames by Type"
-description: "Get Filenames by Type"
+title: "Get File Names by Data Source Type API"
+description: "List source file names on local servers or in the cloud for a data source type, such as Excel files stored in OneDrive."
+keywords:
+  - data source file names API
+  - GetFilesNameByType endpoint
+  - OneDrive Excel data source
+  - Excel file names OneDrive
 sidebar_position: 80
 ---
 
-# Get Filenames by Type
+# Get File Names by Data Source Type API
 
-Use this API to get source file name(s) residing on local server(s) or in cloud for a specific type
-of a data source(s), let's say source file name(s) residing in OneDrive for Excel data source(s).
+Use this API to get source file names residing on local servers or in the cloud for a specific type
+of data source. For example, retrieve file names for Excel data sources stored in OneDrive.
 
 ## Endpoint
 
@@ -17,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/GetFilesNameByType
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -32,7 +37,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -42,5 +47,5 @@ GET
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

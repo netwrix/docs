@@ -1,16 +1,23 @@
 ---
-title: "GroupID Credential Provider"
-description: "GroupID Credential Provider"
+title: "Directory Manager Credential Provider for Windows"
+description: "Learn what the Directory Manager Credential Provider adds to the Windows sign-in screen and which files its download package contains."
+keywords:
+  - Credential Provider
+  - Windows sign-in screen
+  - self-service password reset
+  - account unlock
+  - CPSettings.xml
 sidebar_position: 60
 ---
 
-# GroupID Credential Provider
+# Directory Manager Credential Provider for Windows
 
-GroupID Credential Provider is a web interface for unlocking user accounts and resetting passwords.
+Directory Manager Credential Provider is a web interface for unlocking user accounts and resetting
+passwords.
 
 You must install it on each client workstation to make the password reset and account unlock
-features available to all users. It provides links on the Windows logon screen, which route users to
-the web page(s) where they can unlock their accounts and reset their passwords.
+features available to all users. It provides links on the Windows logon screen that route users to
+the web pages where they can unlock their accounts and reset their passwords.
 
 ## Files in the download package
 
@@ -29,4 +36,4 @@ The Credential Provider package consists of:
 
 See Also
 
-- [Install GroupID Credential Provider](/docs/directorymanager/11.0/credentialprovider/installcp.md)
+- [Install Directory Manager Credential Provider](/docs/directorymanager/11.0/credentialprovider/installcp.md)

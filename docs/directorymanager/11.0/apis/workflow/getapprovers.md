@@ -1,12 +1,17 @@
 ---
-title: "Get Approvers"
-description: "Get Approvers"
+title: "Get Workflow Request Approvers Using the API"
+description: "Retrieve the approvers of a workflow request, with paging and filtering, by sending a GET request to the Directory Manager API."
+keywords:
+  - workflow request approvers
+  - get approvers API
+  - approver filter criteria
+  - Directory Manager REST API
 sidebar_position: 100
 ---
 
-# Get Approvers
+# Get Workflow Request Approvers Using the API
 
-This API provides information about the approver(s) of a workflow request.
+Use this API to get information about the approvers of a workflow request.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -51,7 +56,7 @@ GET
 }   
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -75,5 +80,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

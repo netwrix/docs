@@ -1,12 +1,18 @@
 ---
-title: "Sample Container Scripts"
-description: "Sample Container Scripts"
+title: "Sample Container Scripts for Synchronize"
+description: "Copy sample Visual Basic .NET container scripts that route new objects to containers by department code with a case statement, an XML file, or an Excel file."
+keywords:
+  - container script samples
+  - object routing
+  - deptcode
+  - dtm.result
+  - synchronize scripts
 sidebar_position: 10
 ---
 
-# Sample Container Scripts
+# Sample Container Scripts for Synchronize
 
-## Object Routing Case-By-Case
+## Object Routing Case by Case
 
 **Assumptions**:
 
@@ -32,7 +38,7 @@ sidebar_position: 10
 
 - Source data contains a **DeptCode** field.
 - Each department has a container to which new user objects should be directed.
-- XML file **DeptCodes.xml** contains root element with **`<Department>`** child elements, each of
+- XML file **DeptCodes.xml** contains a root element with **`<Department>`** child elements, each of
   which contains **`<DeptCode>`** and **`<Container>`** attributes specifying desired location for
   user objects belonging to each department.
 
@@ -79,6 +85,6 @@ sidebar_position: 10
 
 **See Also**
 
-- [Script](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
-- [Visual Basic .NET for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
-- [Sample Transform Scripts](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
+- [Write Synchronize Scripts for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
+- [Visual Basic .NET Scripting for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
+- [Sample Transform Scripts for Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)

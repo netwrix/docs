@@ -1,22 +1,26 @@
 ---
-title: "Get Jobs Names"
-description: "Get Jobs Names"
+title: "Get Job Names API in Directory Manager"
+description: "Retrieve the names and types of all predefined and user-created Synchronize jobs with a GET request."
+keywords:
+  - "get job names API"
+  - "Synchronize jobs"
+  - "DataSyncJobs endpoint"
 sidebar_position: 100
 ---
 
-# Get Jobs Names
+# Get Job Names API in Directory Manager
 
-Using this API you can get a list of job names both predefined and user created.
+Use this API to get a list of job names, both predefined and user-created.
 
 ## Endpoint
 
-https://demomachine:4443/GroupIDDataService/api/DataSyncJobs/Names
+`https://demomachine:4443/GroupIDDataService/api/DataSyncJobs/Names`
 
 ## HTTP Method
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -49,5 +53,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

@@ -1,31 +1,36 @@
 ---
 title: "ShortMessage class"
-description: "ShortMessage class"
+description: "Review the ShortMessage DTO class, which defines the elements of an SMS text message, and its properties and methods."
+keywords:
+  - ShortMessage class
+  - SMS message DTO
+  - custom SMS gateway
+  - Data Transfer Object
 sidebar_position: 150
 ---
 
 # ShortMessage class
 
-ShortMessage is a DTO (Data Transfer Object) class that defines the elements of the text message.
+This DTO (Data Transfer Object) class defines the elements of the text message.
 
-Following is a list of its members with description:
+The following list shows its members:
 
-- [ShortMessage.AccessCode](/docs/directorymanager/11.0/signin/smsgateway/custom/class/accesscode.md)
-- [ShortMessage.MaxLength](/docs/directorymanager/11.0/signin/smsgateway/custom/class/maxlength.md)
-- [ShortMessage.Message](/docs/directorymanager/11.0/signin/smsgateway/custom/class/message.md)
-- [ShortMessage.PhoneNumbers](/docs/directorymanager/11.0/signin/smsgateway/custom/class/phonenumbers.md)
-- [ShortMessage.ReferenceId](/docs/directorymanager/11.0/signin/smsgateway/custom/class/referenceid.md)
-- [ShortMessage.Validate](/docs/directorymanager/11.0/signin/smsgateway/custom/class/validate.md)
+- [ShortMessage.AccessCode Property](/docs/directorymanager/11.0/signin/smsgateway/custom/class/accesscode.md)
+- [ShortMessage.MaxLength field](/docs/directorymanager/11.0/signin/smsgateway/custom/class/maxlength.md)
+- [ShortMessage.Message property](/docs/directorymanager/11.0/signin/smsgateway/custom/class/message.md)
+- [ShortMessage.PhoneNumbers Property (SMS Gateway API)](/docs/directorymanager/11.0/signin/smsgateway/custom/class/phonenumbers.md)
+- [ShortMessage.ReferenceId Property (SMS Gateway API)](/docs/directorymanager/11.0/signin/smsgateway/custom/class/referenceid.md)
+- [ShortMessage.Validate Method (SMS Gateway API)](/docs/directorymanager/11.0/signin/smsgateway/custom/class/validate.md)
 
 | Member                                                                                                                                | Description                                                                                                                   |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [ShortMessage.AccessCode](/docs/directorymanager/11.0/signin/smsgateway/custom/class/accesscode.md) property     | Gets or sets the confirmation code that will be sent to registered mobile phone users.                                        |
-| [ShortMessage.MaxLength](/docs/directorymanager/11.0/signin/smsgateway/custom/class/maxlength.md) property       | Defines the maximum length of an SMS message.                                                                                 |
-| [ShortMessage.Message](/docs/directorymanager/11.0/signin/smsgateway/custom/class/message.md) property           | Gets or sets the supporting message text that will be sent to registered mobile phone users along with the confirmation code. |
-| [ShortMessage.PhoneNumbers](/docs/directorymanager/11.0/signin/smsgateway/custom/class/phonenumbers.md) property | Gets or sets the list of phone numbers to send the message to.                                                                |
-| [ShortMessage.ReferenceId](/docs/directorymanager/11.0/signin/smsgateway/custom/class/referenceid.md) property   | Gets or sets the reference ID for the text message.                                                                           |
-| [ShortMessage.Validate](/docs/directorymanager/11.0/signin/smsgateway/custom/class/validate.md) method           | Validates various elements in an SMS message, such as message length and phone number.                                        |
+| [ShortMessage.AccessCode Property](/docs/directorymanager/11.0/signin/smsgateway/custom/class/accesscode.md) property     | Gets or sets the confirmation code that is sent to registered mobile phone users.                                        |
+| [ShortMessage.MaxLength field](/docs/directorymanager/11.0/signin/smsgateway/custom/class/maxlength.md) property       | Defines the maximum length of an SMS message.                                                                                 |
+| [ShortMessage.Message property](/docs/directorymanager/11.0/signin/smsgateway/custom/class/message.md)         | Gets or sets the supporting message text that is sent to registered mobile phone users along with the confirmation code. |
+| [ShortMessage.PhoneNumbers Property (SMS Gateway API)](/docs/directorymanager/11.0/signin/smsgateway/custom/class/phonenumbers.md) property | Gets or sets the list of phone numbers to send the message to.                                                                |
+| [ShortMessage.ReferenceId Property (SMS Gateway API)](/docs/directorymanager/11.0/signin/smsgateway/custom/class/referenceid.md) property   | Gets or sets the reference ID for the text message.                                                                           |
+| [ShortMessage.Validate Method (SMS Gateway API)](/docs/directorymanager/11.0/signin/smsgateway/custom/class/validate.md) method           | Validates various elements in an SMS message, such as message length and phone number.                                        |
 
 **See Also**
 
-- [ISMSGateway Members](/docs/directorymanager/11.0/signin/smsgateway/custom/overview.md)
+- [ISMSGateway Members for Custom SMS Gateways](/docs/directorymanager/11.0/signin/smsgateway/custom/overview.md)

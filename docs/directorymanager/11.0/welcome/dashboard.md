@@ -1,17 +1,22 @@
 ---
-title: "Dashboard"
-description: "Dashboard"
+title: "Directory Manager Portal Dashboard"
+description: "Learn how to navigate the Directory Manager portal using Quick Search, the top-right options, the menu pane, and the dashboard cards."
+keywords:
+  - Directory Manager portal
+  - portal dashboard
+  - Quick Search
+  - dashboard cards
+  - portal navigation
 sidebar_position: 20
 ---
 
-# Dashboard
+# Directory Manager Portal Dashboard
 
-The interface of the portal is designed in a manner that you can quickly access the main functions
-of the portal. These functions are available as links on the top and left navigation bars.
+The portal interface lets you quickly access the main functions of the portal. These functions are available as links on the top and left navigation bars.
 
-On logging into GroupID portal, you land on the dashboard.
+When you sign in to the Directory Manager portal, you land on the dashboard.
 
-![dashboard](/images/directorymanager/11.0/portal/dashboard.webp)
+![Directory Manager portal dashboard showing the top bar, menu pane, and dashboard cards](/images/directorymanager/11.0/portal/dashboard.webp)
 
 Use the following to navigate within the application:
 
@@ -22,9 +27,9 @@ Use the following to navigate within the application:
 
 ## Quick Search
 
-Look on the top of the page for **Search**. This element appears on every page. Use it to locate and
+Look at the top of the page for **Search**. This element appears on every page. Use it to locate and
 display information for objects. See the
-[Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) topic.
+[Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) topic.
 
 - Use Quick Search to locate an object by its name.
 - Use Advanced Search to search an object using a range of attributes.
@@ -35,10 +40,10 @@ The top right corner of the application displays:
 
 | Icon                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Background tasks icon | View the status of Smart Group update jobs. A Smart Group Update job updates the membership of a Smart Group on the basis of a query.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Background tasks icon | View the status of Smart Group update jobs. A Smart Group Update job updates the membership of a Smart Group based on a query.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Portal Settings       | Personalize the portal.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Help icon             | Launch the portal help.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| User profile icon     | Displays your profile picture with your name and the identity store that GroupID portal is connected to. Click it to launch the menu that displays the following: - GroupID version you’re using - The security role assigned to you in GroupID. The menu also displays the following options: - See full profile. See the [Object properties - General tab](/docs/directorymanager/11.0/welcome/user/properties/activedirectory/useroverview/general.md) topic. - My Applications. See the [Access your Applications](/docs/directorymanager/11.0/signin/concepts/accessapplications.md) topic. - Enroll your identity store account. See the [Enroll with Authentication Types](/docs/directorymanager/11.0/signin/authpolicy/enroll.md) topic. - Change Password. See the [Change your Password](/docs/directorymanager/11.0/signin/concepts/changepassword.md) topic. - Switch account. See the [Switch Accounts](/docs/directorymanager/11.0/signin/concepts/switchaccount.md) topic. - Sign Out |
+| User profile icon     | Displays your profile picture with your name and the identity store that the Directory Manager portal is connected to. <br />Click it to launch the menu that displays the following: <ul><li>Directory Manager version you’re using</li><li>The security role assigned to you in Directory Manager.</li></ul>The menu also displays the following options: <ul><li>See full profile. See the [View and Update General User Information in Directory Manager](/docs/directorymanager/11.0/welcome/user/properties/activedirectory/useroverview/general.md) topic.</li><li>My Applications. See the [Access Your Applications in Directory Manager](/docs/directorymanager/11.0/signin/concepts/accessapplications.md) topic.</li><li>Enroll your identity store account. See the [Enroll Your Account in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/enroll.md) topic.</li><li>Change Password. See the [Change Your Password in Directory Manager](/docs/directorymanager/11.0/signin/concepts/changepassword.md) topic.</li><li>Switch account. See the [Switch Accounts in Directory Manager](/docs/directorymanager/11.0/signin/concepts/switchaccount.md) topic.</li><li>Sign Out</li></ul> |
 
 ## Menu pane
 
@@ -56,23 +61,23 @@ Look on the left side of the page for the navigation pane, which lists links to:
 
 ## The Dashboard
 
-The dashboard comprises of a few cards.
+The dashboard consists of a few cards.
 
 | Cards              | Description                                                                                                                                                    |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | My Profile         | View and update your profile in the directory.                                                                                                                 |
-| All Users          | Displays number of active users. Clicking it takes you to the **Users** page.                                                                                  |
-| My Expiring Groups | Directs your attention to your expiring groups and any workflow requests that you may have to approve.                                                         |
+| All Users          | Displays the number of active users. Clicking it takes you to the **Users** page.                                                                                  |
+| My Expiring Groups | Directs your attention to your expiring groups and any workflow requests that you might have to approve.                                                         |
 | My Groups          | Takes you to a listing of groups that you own.                                                                                                                 |
-| Available Servers  | Displays number of available servers for computing the effective NTFS permissions granted on the shared resources residing on those server.                    |
-| Pending Requests   | Displays logged-in user's requests that have not been approved yet.                                                                                            |
-| Account Protection | Displays logged-in user's requests that have not been approved yet.                                                                                            |
+| Available Servers  | Displays the number of available servers for computing effective NTFS permissions on shared resources.                    |
+| Pending Requests   | Displays the signed-in user's requests that haven't been approved yet.                                                                                            |
+| Account Protection | Displays the signed-in user's requests that haven't been approved yet.                                                                                            |
 | My Account History | Keeps track of the actions you performed using the portal. Use the **Add Note** button next to a history item to explain the reason for performing the action. |
 
 **See Also**
 
-- [Welcome to the Portal](/docs/directorymanager/11.0/welcome/welcome.md)
-- [Access Portal](/docs/directorymanager/11.0/welcome/login.md)
-- [Enroll Your Identity Store Account](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
-- [ Change your password](/docs/directorymanager/11.0/welcome/user/manage/changepassword.md)
-- [Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [Directory Manager Portal Overview](/docs/directorymanager/11.0/welcome/welcome.md)
+- [Sign In to the Directory Manager Portal](/docs/directorymanager/11.0/welcome/login.md)
+- [Enroll Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
+- [Change Your Password in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/changepassword.md)
+- [Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

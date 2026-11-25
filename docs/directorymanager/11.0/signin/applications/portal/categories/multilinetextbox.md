@@ -1,25 +1,31 @@
 ---
-title: "Multiline Textbox Display Type"
-description: "Multiline Textbox Display Type"
+title: "Directory Manager Multiline Textbox Display Type"
+description: "Define a multiline textbox display type so portal users can enter lengthy values that wrap and scroll across multiple rows."
+keywords:
+  - multiline textbox
+  - custom display type
+  - Directory Manager portal
+  - Description field
+  - Design Settings
 sidebar_position: 80
 ---
 
-# Multiline Textbox Display Type
+# Directory Manager Multiline Textbox Display Type
 
-A multiline textbox allows portal users to type information into a box that supports word wrapping
+A multiline textbox lets portal users type information into a box that supports word wrapping
 and vertical scrolling.
 
 Like a textbox, use a multiline textbox display type to collect and display a single value for an
 attribute.
 
 The multiline textbox display type is especially useful for fields that require a lengthy value,
-such as the _Description_ field. Moreover, as it can have multiple rows, users can view more
-characters of the entered value on screen as compared to a textbox.
+such as the _Description_ field. Because it can have multiple rows, users can view more
+characters of the entered value on screen than in a textbox.
 
-In the portal’s default template, the _Description_ field on the _Create New Group_ page uses the
-multiline textbox display type. It is as:
+In the portal's default template, the _Description_ field on the _Create New Group_ page uses the
+multiline textbox display type. It appears as follows:
 
-![multiline_textbox](/images/directorymanager/11.0/admincenter/portal/displaytype/multiline_textbox.webp)
+![Description field on the Create New Group page using the multiline textbox display type](/images/directorymanager/11.0/admincenter/portal/displaytype/multiline_textbox.webp)
 
 To define a multiline textbox display type, provide a name for it and specify the on-screen width by
 giving the number of rows to be displayed for it. Portal users can use the _Enter_ key to add as
@@ -40,16 +46,16 @@ What do you want to do?
 4. Click **Custom Display Types** in the left pane.
 5. On the **Custom Display Types** page, click **Add** on the **Custom Display Types** tab.
 6. On the **New Display Type** pane, enter a name for the display type and select _Multiline
-   Textbox_ in the **Type** drop-down list.
-   You cannot change the name of a custom display type once you have created it.
-7. In the **Rows** box, type or select a value to specify the number of rows the multiline textbox
+   Textbox_ in the **Type** dropdown list.
+   You can't change the name of a custom display type after you create it.
+7. Type or select a value in the **Rows** box to specify the number of rows the multiline textbox
    display type should have. These rows make up the on-screen length of the textbox. Users can use
    the _Enter_ key to add as many rows as required while entering data.
 8. Click **OK**.
-9. Click Save on the **Custom Display Types** page.
+9. Click **Save** on the **Custom Display Types** page.
 
 **See Also**
 
-- [Design a Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

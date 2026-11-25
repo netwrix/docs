@@ -1,17 +1,27 @@
 ---
-title: "Create an AD Contact"
-description: "Create an AD Contact"
+title: "Create an Active Directory contact in Directory Manager"
+description: "Create a contact object in an Active Directory identity store by using the Create Contact wizard in the Directory Manager portal."
+keywords:
+  - Directory Manager
+  - Active Directory contact
+  - Create Contact wizard
+  - mail-enable contact
+  - Active Directory identity store
 sidebar_position: 20
 ---
 
-# Create an AD Contact
+# Create an Active Directory contact in Directory Manager
 
-The GroupID portal enables you to create the 'contact' object in the directory.
+The Directory Manager portal lets you create the 'contact' object in the directory.
 
-NOTE: The contact object type is not supported in a Microsoft Entra ID based identity store.
+:::note
+The contact object type isn't supported in a Microsoft Entra ID based identity store.
+:::
 
-NOTE: Pages and fields on the Create Contact wizard may vary from those discussed here, since the
+:::note
+Pages and fields on the Create Contact wizard might differ from those discussed here because the
 administrator can customize the wizard by adding or removing pages and fields.
+:::
 
 What do you want to do?
 
@@ -19,7 +29,7 @@ What do you want to do?
 
 ## Create a contact
 
-1. In the GroupID portal, click the **Create New** button in the left pane and select **Contact**.
+1. In the Directory Manager portal, click the **Create New** button in the left pane and select **Contact**.
 
     The **Create Contact** wizard opens to the Account page.
 
@@ -27,7 +37,7 @@ What do you want to do?
 
     1. Click **Browse** next to **Container** to select a container to create the contact in.
 
-        This field would be read-only if the administrator has pre-defined a container for creating
+        This field is read-only if the administrator has predefined a container for creating
         new contacts.
 
     2. Enter the contact's **First Name**, **Initials**, and **Last Name** in the respective boxes.
@@ -37,13 +47,15 @@ What do you want to do?
     3. Click **Next**.
 
 3. Use the **Exchange** page to mail-enable the contact.
-4. On the **Summary** page, review the settings and then click Finish to complete the wizard.
+4. On the **Summary** page, review the settings, and then click **Finish** to complete the wizard.
 
-NOTE: If the GroupID administrator has specified the contact creation action for review, your
-changes will not take effect until verified by an approver. See the
-[Requests](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
+:::note
+If the Directory Manager administrator has specified the contact creation action for review, your
+changes won't take effect until verified by an approver. See the
+[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
+:::
 
 **See Also**
 
-- [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [User Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

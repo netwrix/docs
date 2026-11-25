@@ -1,30 +1,35 @@
 ---
-title: "My Deleted Groups"
-description: "My Deleted Groups"
+title: "View My Deleted Groups in Directory Manager"
+description: "View and filter the deleted groups you own on the My Deleted Groups tab of the Directory Manager portal."
+keywords:
+  - My Deleted Groups
+  - deleted groups
+  - group ownership
+  - grid filters
+  - Directory Manager portal
 sidebar_position: 40
 ---
 
-# My Deleted Groups
+# View My Deleted Groups in Directory Manager
 
 To view a list of deleted groups, click **Groups** on the left navigation pane and select **My
 Groups**. On the My Groups page, click the **My Deleted Groups** tab.
 
-The **My Deleted Groups** tab lists the deleted groups that you are the primary owner for. To
+The **My Deleted Groups** tab lists the deleted groups that you are the primary owner of. To
 include the groups for which you are an additional owner, select the **Display additional group
-ownership in My Deleted Groups** check box on the
-[Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
+ownership in My Deleted Groups** checkbox on the
+[Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
 
 You can
 [Modify Search Directory](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md#modify-search-directory)
 to search deleted groups and add
-[Filter All Groups](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md#filter-all-groups)by
-clicking **My Deleted Groups Grid Filters**. All your deleted groups matching the filters will be
-displayed.
+[Filter All Groups](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md#filter-all-groups)
+by clicking **My Deleted Groups Grid Filters**. All your deleted groups matching the filters appear.
 
 **See Also**
 
-- [My Groups](/docs/directorymanager/11.0/welcome/group/mygroups/mygroups.md)
-- [Groups](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [ Group Deletion](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md)
-- [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [View and Manage My Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/mygroups.md)
+- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [How Group Deletion Works in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md)
+- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)

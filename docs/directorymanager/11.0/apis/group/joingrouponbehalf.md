@@ -1,14 +1,19 @@
 ---
-title: "Join a Group on behalf of another user"
-description: "Join a Group on behalf of another user"
+title: "Join a Group on Behalf of Another User API"
+description: "Join a group for another user by specifying the identity store, the user's identity, and the membership type details."
 sidebar_position: 100
+keywords:
+  - join group on behalf
+  - JoinOnBehalf API
+  - group membership
+  - Directory Manager API
 ---
 
-# Join a Group on behalf of another user
+# Join a Group on Behalf of Another User API
 
-Using this API, you can join the group specified in the endpoint URL on behalf of another user. You
-have to specify the identity store where the group exists, the identity of the other user on behalf
-of whom you are joining the group, and membership type details.
+Use this API to join the group specified in the endpoint URL on behalf of another user. You must
+specify the identity store where the group exists, the identity of the user you are joining the
+group for, and membership type details.
 
 ## Endpoint
 
@@ -18,7 +23,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 POST
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -34,7 +39,7 @@ POST
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -67,5 +72,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

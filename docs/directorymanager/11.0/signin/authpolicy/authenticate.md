@@ -1,12 +1,18 @@
 ---
-title: "Authenticate with Authentication Types"
-description: "Authenticate with Authentication Types"
+title: "Authenticate Your Account in Directory Manager"
+description: "Pass multifactor or second factor authentication in Directory Manager by using security questions, mobile, email, an authenticator app, YubiKey, or Windows Hello."
+keywords:
+  - authenticate identity store account
+  - verification code
+  - YubiKey authentication
+  - Windows Hello authentication
+  - authenticator app
 sidebar_position: 40
 ---
 
-# Authenticate with Authentication Types
+# Authenticate Your Account in Directory Manager
 
-To authenticate your identity store account in GroupID for multifactor authentication or second
+To authenticate your identity store account in Directory Manager for multifactor authentication or second
 factor authentication, you must use one or more authentication types that you enrolled your account
 with.
 
@@ -21,62 +27,62 @@ What do you want to do?
 
 ## Authenticate using Security Questions
 
-1. When you launch Admin Center, the GroupID portal or the GroupID Mobile app, the **GroupID
-   Authenticate** page is displayed.
+1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+   the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
-   authentication types the user enrolled his or her account with.
-3. Select the **Security Questions** check box and click **Continue**.
+   authentication types the user enrolled their account with.
+3. Select the **Security Questions** checkbox and click **Continue**.
 4. The next page lists the security questions you enrolled your account with. Provide answers to
    these questions.
 5. Click **Verify and Continue**.
 
 ## Authenticate using Mobile
 
-To authenticate using mobile, you have to enter the last 4 digits of the mobile number you provided
-during enrollment. GroupID sends a confirmation code to this number; you have to enter the code in
-GroupID for authentication.
+To authenticate using mobile, you must enter the last 4 digits of the mobile number you provided
+during enrollment. Directory Manager sends a confirmation code to this number; you must enter the code in
+Directory Manager for authentication.
 
 **To authenticate using mobile:**
 
-1. When you launch Admin Center, the GroupID portal or the GroupID Mobile app, the **GroupID
-   Authenticate** page is displayed.
+1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+   the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
-   authentication types the user enrolled his or her account with.
-3. Select the **Mobile Verification** check box and click **Continue**.
-4. On the next page, type the last four digits of your mobile number and click **Send Code**.
+   authentication types the user enrolled their account with.
+3. Select the **Mobile Verification** checkbox and click **Continue**.
+4. On the next page, enter the last four digits of your mobile number and click **Send Code**.
 5. When the verification code is successfully sent to the provided mobile number, a box appears on
    the page. Enter the received code in it.
 6. Click **Verify and Continue**.
 
-RECOMMENDED: If you do not receive the code, recheck your mobile number and click **Send Again**.
+RECOMMENDED: If you don’t receive the code, recheck your mobile number and click **Send Again**.
 
 ## Authenticate using Email
 
-To authenticate using Email, you have to complete the email address you provided during enrollment.
-GroupID then sends a confirmation code to this email address; you have to enter the code in GroupID
-for authentication.
+To authenticate using email, you must complete the email address you provided during enrollment.
+Directory Manager then sends a confirmation code to this email address; you must enter the code in
+Directory Manager for authentication.
 
 **To authenticate using email:**
 
-1. When you launch Admin Center, the GroupID portal or the GroupID Mobile app, the **GroupID
-   Authenticate** page is displayed.
+1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+   the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
-   authentication types the user enrolled his or her account with.
-3. Select the **Email Verification** check box and click **Continue**.
+   authentication types the user enrolled their account with.
+3. Select the **Email Verification** checkbox and click **Continue**.
 4. On the next page, complete your email address and click **Send Code**.
 5. When the verification code is successfully sent to the provided email address, a box appears on
    the page. Enter the received code in it.
 6. Click **Verify and Continue**.
 
-RECOMMENDED: If you do not receive the code, recheck your email address and click **Send Again**.
+RECOMMENDED: If you don’t receive the code, recheck your email address and click **Send Again**.
 
 ## Authenticate using Authenticator
 
-1. When you launch Admin Center, the GroupID portal or the GroupID Mobile app, the **GroupID
-   Authenticate** page is displayed.
+1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+   the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
-   authentication types the user enrolled his or her account with.
-3. Select the **Authenticator** check box and click **Continue**.
+   authentication types the user enrolled their account with.
+3. Select the **Authenticator** checkbox and click **Continue**.
 4. Launch the Authenticator app on your smartphone.
 5. The app displays a 6-digit code. Enter it in the **Security Code** box on the **Authenticator**
    page.
@@ -84,30 +90,30 @@ RECOMMENDED: If you do not receive the code, recheck your email address and clic
 
 ## Authenticate using YubiKey
 
-1. When you launch Admin Center, the GroupID portal or the GroupID Mobile app, the **GroupID
-   Authenticate** page is displayed.
+1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+   the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
-   authentication types the user enrolled his or her account with.
+   authentication types the user enrolled their account with.
 3. Insert the YubiKey device in the USB slot of your computer.
-4. Select the **YubiKey** check box and click **Continue**.
+4. Select the **YubiKey** checkbox and click **Continue**.
 5. On the next page, click your YubiKey device name.  
-   GroupID directs you to tap on the physical device.
-6. On tapping, you are authenticated in GroupID.
+   Directory Manager directs you to tap on the physical device.
+6. When you tap the device, you are authenticated in Directory Manager.
 
 ## Authenticate using Windows Hello
 
-1. When you launch Admin Center, the GroupID portal or the GroupID Mobile app, the **GroupID
-   Authenticate** page is displayed.
+1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+   the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
-   authentication types the user enrolled his or her account with.
-3. Select the **Windows Hello** check box and click **Continue**.
+   authentication types the user enrolled their account with.
+3. Select the **Windows Hello** checkbox and click **Continue**.
 4. On the next page, click **Authenticate and Continue**.
 5. Authenticate with the provided biometric information or with the PIN given in the Windows Hello
    sign-in options.
 
 **See Also**
 
-- [Authentication Policy](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
-- [Enable Authentication Types](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
-- [Authentication Policy for Security Roles](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
-- [Enroll with Authentication Types](/docs/directorymanager/11.0/signin/authpolicy/enroll.md)
+- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Enable Authentication Types for an Identity Store](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
+- [Authentication Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
+- [Enroll Your Account in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/enroll.md)

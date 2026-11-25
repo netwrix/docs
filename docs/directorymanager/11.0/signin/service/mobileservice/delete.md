@@ -1,18 +1,24 @@
 ---
-title: "Delete a Service"
-description: "Delete a Service"
+title: "Delete a Directory Manager Mobile Service"
+description: "Delete a Mobile service or one of its deployment instances in Admin Center, and see what Directory Manager removes from IIS or Docker."
+keywords:
+  - delete Mobile service
+  - Mobile service deployment instance
+  - native IIS
+  - remote IIS
+  - Docker container
 sidebar_position: 20
 ---
 
-# Delete a Service
+# Delete a Directory Manager Mobile Service
 
-You can delete a Mobile service or an instance of a service. On deleting a service, all its
-instances are deleted with it.
+You can delete a Mobile service or an instance of a service. When you delete a service, Directory Manager also deletes all its
+instances.
 
 What do you want to do?
 
-- Delete a Deployment Instance for a Service
-- Delete a Service
+- [Delete a Deployment Instance for a Service](#delete-a-deployment-instance-for-a-service)
+- [Delete a Service](#delete-a-service)
 
 ## Delete a Deployment Instance for a Service
 
@@ -21,9 +27,9 @@ removed:
 
 - **For an instance in native IIS:**
 
-    - The service directory under the following location on the GroupID server:  
+    - The service directory under the following location on the Directory Manager server:  
       X:\Program Files\Imanami\GroupID 11.0\GroupIDMobileService\Inetpub\  
-      (X represents the GroupID installation drive)
+      (X represents the Directory Manager installation drive)
     - The service directory in the IIS site
 
 - **For an instance in remote IIS:**
@@ -50,12 +56,12 @@ removed:
 
     Select a tab to delete a service instance deployed in the respective web server.
 
-4. The **Select Application Deployment** drop-down list displays the service instances deployed on
+4. The **Select Application Deployment** dropdown list displays the service instances deployed on
    the selected web server. Select an instance and click **Delete**.
 
 ## Delete a Service
 
-Deleting a Mobile service removes all its deployments and configurations from GroupID.
+Deleting a Mobile service removes all its deployments and configurations from Directory Manager.
 
 **To delete a service:**
 

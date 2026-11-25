@@ -1,12 +1,18 @@
 ---
-title: "Group Management Concepts"
-description: "Group Management Concepts"
+title: "Directory Manager Group Management Concepts"
+description: "Learn how Directory Manager classifies groups as unmanaged, Smart Groups, or Dynasties, and how group type, scope, and security type work."
+keywords:
+  - Smart Groups
+  - Dynasties
+  - group classification
+  - group scope
+  - group security types
 sidebar_position: 10
 ---
 
-# Group Management Concepts
+# Directory Manager Group Management Concepts
 
-To make the best of GroupID, you must be familiar with the following group management concepts:
+To get the most from Directory Manager, you must be familiar with the following group management concepts:
 
 - [Group Classification](#group-classification)
 - [Group Types](#group-types)
@@ -15,7 +21,7 @@ To make the best of GroupID, you must be familiar with the following group manag
 
 ## Group Classification
 
-Using GroupID, you can manage the following three kinds of groups:
+Using Directory Manager, you can manage the following three kinds of groups:
 
 - [Unmanaged Groups](#unmanaged-groups)
 - [Smart Groups](#smart-groups)
@@ -25,7 +31,7 @@ Using GroupID, you can manage the following three kinds of groups:
 
 An unmanaged group, also called a static group, is a group you normally create in a directory, for
 example, by using the Active Directory Users and Computers console. Though such groups can be
-created using the GroupID portal and Management Shell, GroupID does not support dynamic updates to
+created using the Directory Manager portal and Management Shell, Directory Manager doesn't support dynamic updates to
 them. Any changes to the membership have to be updated manually.
 
 ### Smart Groups
@@ -55,23 +61,23 @@ its own mechanism of dividing the query results into child groups.
 When you create a Dynasty, you specify a query and a field, referred to as the group-by field. The
 group-by field is used to divide the query results into groups.
 
-For example, if you set ‘department’ as the group-by field, then each distinct value for the
-‘department’ field is returned, for instance, Sales, Marketing, and Human Resources. Thus, a Dynasty
-with the group-by field set to ‘department’ creates child groups for each distinct value: Sales,
+For example, if you set "department" as the group-by field, then each distinct value for the
+"department" field is returned, for instance, Sales, Marketing, and Human Resources. Thus, a Dynasty
+with the group-by field set to "department" creates child groups for each distinct value: Sales,
 Marketing, and Human Resources.
 
 #### Built-in Updates
 
-GroupID keeps the Dynasty active in two ways:
+Directory Manager keeps the Dynasty active in two ways:
 
 - By adding new child groups as new values are returned for the group-by field.
 - By removing existing child groups as previous values of the group-by field no longer exist in the
   directory.
 
-Thus, as new values of the ‘department’ field appear, new groups are created, and as old values
+Thus, as new values of the "department" field appear, new groups are created, and as old values
 disappear, the corresponding child groups are deleted.
 
-The same process occurs with the membership of each child group. When a user’s department changes
+The same process occurs with the membership of each child group. When a user's department changes
 from Sales to Marketing, for example, the user is removed from the Sales child group and added to
 the Marketing child group.
 
@@ -88,7 +94,7 @@ the parent level.
 
 #### Dynasty Types
 
-GroupID provides the following templates for creating Dynasties:
+Directory Manager provides the following templates for creating Dynasties:
 
 - **Organizational** - to create a Smart Group for every distinct company, then for each department
   within a company, and finally for each title in a department.
@@ -110,11 +116,11 @@ Groups fall into two functional categories: distribution groups and security gro
 ### Distribution Groups
 
 Distribution groups, also called distribution lists, are designed to combine users together so that
-you can send emails (via a mail server) to a group rather than individually to each user in the
+you can send emails (through a mail server) to a group rather than individually to each user in the
 group.
 
 Distribution groups can be used only with email applications, such as Microsoft Exchange. These
-groups are not security-enabled, which means that they cannot be listed in discretionary access
+groups aren't security-enabled, which means that they can't be listed in discretionary access
 control lists (DACLs). If you need a group for controlling access to shared resources, create a
 security group.
 
@@ -125,7 +131,7 @@ security groups, you can:
 
 - **Assign user rights** - User rights are assigned to security groups to determine what members of
   that group can do within the scope of a domain (or forest). For example, a user who is added to
-  the Backup Operators group can back-up and restore files and directories located on each domain
+  the Backup Operators group can back up and restore files and directories located on each domain
   controller in the domain. By being a member of this group, you inherit the user rights assigned to
   the group.
 - **Assign permissions to resources**- This is different from user rights because user rights apply
@@ -141,10 +147,10 @@ Groups are characterized by a scope that identifies the extent to which the grou
 domain or forest. The boundary, or reach, of a group scope is also determined by the domain
 functional level of the domain in which it resides.
 
-A group’s scope determines:
+A group's scope determines:
 
 - the domains from where members can be added to the group
-- the domains where the group can be used to grant permissions
+- the domains in which you can grant permissions using the group
 - the domains where the group can be nested in other groups
 
 A group can be of universal, global, or domain local scope.
@@ -153,16 +159,16 @@ A group can be of universal, global, or domain local scope.
 
 Use groups with universal scope to consolidate groups that span domains. To do this, add the
 accounts to groups with global scope, and then nest these groups within groups that have universal
-scope. When you use this strategy, any membership changes in the groups that have global scope do
-not affect the groups with universal scope.
+scope. When you use this strategy, any membership changes in the groups that have global scope don't
+affect the groups with universal scope.
 
-Do not change the membership of a group with universal scope frequently, because membership changes
+Don't change the membership of a group with universal scope frequently, because membership changes
 cause the entire membership of the group to be replicated to every global catalog in the forest.
 
 ### Global
 
 Use groups with global scope to manage directory objects that require daily maintenance, such as
-user and computer accounts. Because groups with global scope are not replicated outside their own
+user and computer accounts. Because groups with global scope aren't replicated outside their own
 domain, you can change accounts in a group having global scope frequently without generating
 replication traffic to the global catalog.
 
@@ -184,18 +190,18 @@ Such a group can be a member of any domain local group in the same domain.
 
 ## Group Security Types
 
-A group’s security type determines how non-members can access the group and become its members.
-GroupID provides three security types:
+A group's security type determines how non-members can access the group and become its members.
+Directory Manager provides three security types:
 
 - **Private** - to restrict access to the group to members selected by the group owner. Only the
-  owner can add or remove members from the group. Requests to join or leave the group cannot be
+  owner can add or remove members from the group. Requests to join or leave the group can't be
   submitted.
 - **Semi-Private** - to restrict access to the group to members selected by the group owner.
   However, requests to join or leave the group can be sent to the owner.
-- **Public** - to allow all users to access the group. Users can join or leave the group at will and
-  do not require any permissions to do so. The administrator can configure email notifications to be
+- **Public** - to allow all users to access the group. Users can join or leave the group at any time and
+  don't require any permissions to do so. The administrator can configure email notifications to be
   sent to the group owner when a user joins or leaves the group.
 
 **See Also**
 
-- [Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
+- [Monitor Directory Manager with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)

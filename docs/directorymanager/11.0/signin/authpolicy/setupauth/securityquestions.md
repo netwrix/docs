@@ -1,14 +1,20 @@
 ---
-title: "Set up Authentication via Security Questions"
-description: "Set up Authentication via Security Questions"
+title: "Set Up Security Question Authentication in Directory Manager"
+description: "Manage the global and local question pools, enable and enforce security question authentication, and set answer policies for a role."
+keywords:
+  - security questions
+  - global question pool
+  - local question pool
+  - second factor authentication
+  - multifactor authentication
 sidebar_position: 10
 ---
 
-# Set up Authentication via Security Questions
+# Set Up Security Question Authentication in Directory Manager
 
-GroupID provides a list of predefined security questions. This list can be referred to as the global
-question pool, as it is available to all identity stores in GroupID. You can add and remove
-questions to this pool.
+Directory Manager provides a list of predefined security questions. This list is called the global
+question pool, because it's available to all identity stores in Directory Manager. You can add
+questions to and remove questions from this pool.
 
 Use the questions from the global pool to create a local pool of security questions for each
 identity store. Questions in the local pool are available to identity store users for enrolling with
@@ -30,12 +36,13 @@ What do you want to do?
 ## Modify the Global Question Pool
 
 See the
-[Manage the Global Question Pool ](/docs/directorymanager/11.0/signin/concepts/globalpool.md)topic.
+[Manage the Global Question Pool](/docs/directorymanager/11.0/signin/concepts/globalpool.md)
+topic.
 
 ## Modify the Local Question Pool
 
 See the
-[Manage the Local Question Pool](/docs/directorymanager/11.0/signin/identitystore/configure/securityquestions.md)
+[Manage the Local Security Question Pool](/docs/directorymanager/11.0/signin/identitystore/configure/securityquestions.md)
 topic.
 
 ## Enable Security Question Authentication for an Identity Store
@@ -44,7 +51,7 @@ The security question authentication type must be enabled for an identity store 
 it for second factor authentication and multifactor authentication.
 
 To enable it, see the
-[Enable Authentication Types](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
+[Enable Authentication Types for an Identity Store](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
 topic.
 
 ## Enforce Security Question Authentication for a Role in an Identity Store
@@ -64,5 +71,5 @@ See the
 
 See Also
 
-- [Authentication Policy](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
-- [Manage the Local Question Pool](/docs/directorymanager/11.0/signin/identitystore/configure/securityquestions.md)
+- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Manage the Local Security Question Pool](/docs/directorymanager/11.0/signin/identitystore/configure/securityquestions.md)

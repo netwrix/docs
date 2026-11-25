@@ -1,12 +1,18 @@
 ---
-title: "All Workflow Routes"
-description: "All Workflow Routes"
+title: "Get All Directory Manager Workflow Routes"
+description: "Use this GET endpoint to list every system-defined and user-defined workflow route in a Directory Manager identity store."
+keywords:
+  - workflow routes API
+  - get workflow routes
+  - system-defined routes
+  - user-defined routes
+  - identity store ID
 sidebar_position: 10
 ---
 
-# All Workflow Routes
+# Get All Directory Manager Workflow Routes
 
-Use this API to get information about all workflow routes, system defined and user defined, in a
+Use this API to get information about all workflow routes, system-defined and user-defined, in a
 specified identity store.
 
 ## Endpoint
@@ -17,7 +23,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -405,5 +411,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

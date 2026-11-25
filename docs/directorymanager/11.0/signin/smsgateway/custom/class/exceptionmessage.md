@@ -1,12 +1,17 @@
 ---
 title: "SendSmsMessageResult.ExceptionMessage"
-description: "SendSmsMessageResult.ExceptionMessage"
+description: "Get the exception message, if one occurs, when a custom SMS gateway sends a text message."
+keywords:
+  - SendSmsMessageResult.ExceptionMessage
+  - SMS gateway exception
+  - custom SMS gateway
+  - Imanami.directorymanager.DataTransferObjects
 sidebar_position: 10
 ---
 
 # SendSmsMessageResult.ExceptionMessage
 
-Gets the exception message if one occurs while sending SMS.
+Gets the exception message if one occurs while sending an SMS message.
 
 **Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
 
@@ -24,6 +29,6 @@ Type: [System.String](http://msdn.microsoft.com/en-us/library/system.string.aspx
 
 The exception details.
 
-See Also
+**See Also**
 
 - [SendSmsMessageResult class](/docs/directorymanager/11.0/signin/smsgateway/custom/class/class_1.md)

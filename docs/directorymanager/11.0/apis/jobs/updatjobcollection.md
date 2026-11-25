@@ -1,12 +1,18 @@
 ---
-title: "Update a Job Collection"
-description: "Update a Job Collection"
+title: "Update a Job Collection with the Directory Manager API"
+description: "Update the details of an existing job collection, including its jobs, field mappings, and schedule, by sending a PATCH request to the Data Service API."
+keywords:
+  - job collection API
+  - Data Service API
+  - PATCH job collection
+  - synchronize job
+  - Directory Manager API
 sidebar_position: 110
 ---
 
-# Update a Job Collection
+# Update a Job Collection with the Directory Manager API
 
-Use this API to update information of a job collection.
+Use this API to update information about a job collection.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSyncJobs/Collections
 
 PATCH
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -432,7 +438,7 @@ PATCH
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -452,5 +458,5 @@ PATCH
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
