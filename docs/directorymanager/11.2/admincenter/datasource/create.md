@@ -1,10 +1,17 @@
 ---
-title: "Create a Data Source"
-description: "Create a Data Source"
+title: "Create Data Sources in Directory Manager"
+description: "Create data sources for Excel, Access, Oracle, SQL Server, text/CSV, ODBC, and SCIM providers to use in Synchronize jobs and queries."
+keywords:
+  - create data source
+  - Synchronize job data source
+  - Excel data source
+  - SQL Server data source
+  - ODBC data source
+  - SCIM data source
 sidebar_position: 10
 ---
 
-# Create a Data Source
+# Create Data Sources in Directory Manager
 
 You can create Synchronize jobs to synchronize data across different providers. As a prerequisite,
 you must create data sources for those providers.
@@ -87,19 +94,18 @@ Step 5 – From the File Server dropdown list, select _OneDrive_.
 Step 6 – In the Service Account and Service Account Password boxes, enter the username and password
 of a service account to access the file on OneDrive.
 
-Step 7 – In the Registered Application ID on Azure Active Directory box, enter the application ID
-assigned to the Directory Manager application when you registered it in Microsoft Entra Admin
-Center.
+Step 7 – In the Registered Application ID on Entra ID box, enter the application ID
+assigned to the Directory Manager application when you registered it in Microsoft Entra admin center.
 
 :::note
 The registered app must have the following API permissions to access files on OneDrive:
 :::
 
 
-![API permissions](/images/directorymanager/11.2/admincenter/datasource/apipermissions.webp)
+![Required API permissions for the registered app](/images/directorymanager/11.2/admincenter/datasource/apipermissions.webp)
 
 Step 8 – In the Registered Tenant ID on Azure Active Directory box, enter the tenant ID assigned to
-the Directory Manager application when you registered it in Microsoft Entra Admin Center.
+the Directory Manager application when you registered it in Microsoft Entra admin center.
 
 Step 9 – Enter the name of the file in the **File Name** box. This name should be complete with the
 file extension, for example, Employee Contact Details.xlsx
@@ -181,19 +187,18 @@ of a service account to access the file on OneDrive.
 
 Step 7 – If the database file is password protected, enter the password in the File Password box.
 
-Step 8 – In the Registered Application ID on Azure Active Directory box, enter the application ID
-assigned to the Directory Manager application when you registered it in Microsoft Entra Admin
-Center.
+Step 8 – In the Registered Application ID on Entra ID box, enter the application ID
+assigned to the Directory Manager application when you registered it in Microsoft Entra admin center.
 
 :::note
 The registered app must have the following API permissions to access files on OneDrive:
 :::
 
 
-![API permissions](/images/directorymanager/11.2/admincenter/datasource/apipermissions.webp)
+![Required API permissions for the registered app](/images/directorymanager/11.2/admincenter/datasource/apipermissions.webp)
 
 Step 9 – In the Registered Tenant ID on Azure Active Directory box, enter the tenant ID assigned to
-the Directory Manager application when you registered it in Microsoft Entra Admin Center.
+the Directory Manager application when you registered it in Microsoft Entra admin center.
 
 Step 10 – Enter the name of the file in the File Name box. This name should be complete with the
 file extension, for example, Employee Medical Records.accdb.
@@ -230,7 +235,7 @@ server you want to create the data source for.
 
 Step 6 – In the Service Account and Service Account Password boxes, provide the username and
 password of a service account to connect to the Oracle server.
-When using this data source in a Synchronize job, the user will be able to select the databases that
+When using this data source in a Synchronize job, users can select the databases that
 are accessible with these credentials.
 
 Step 7 – In the Protocol box, specify the protocol to use for connecting to the databases on the
@@ -239,11 +244,11 @@ Oracle server. For example, TCP, or TCP/IP.
 Step 8 – In the HostName box, enter the name of the machine that hosts the Oracle server.
 
 Step 9 – In the Port Number box, enter the port configured for the Oracle server. This port is used
-to communicate with the oracle server.
+to communicate with the Oracle server.
 
 Step 10 – In the Database or Schema (optional) box, specify the name of the database you want to
 create the data source for. You may also leave this field blank. In that case, all databases on the
-specified server will be displayed to the user in a Synchronize job. The user can select a database
+specified server are displayed in a Synchronize job. The user can select a database
 as needed.
 
 Step 11 – Click **Create Data Source**.
@@ -275,8 +280,8 @@ server. In this case, the Service Account and Service Account Password boxes are
 username and password of an SQL server account to connect to the SQL server in the respective boxes.
 
 Step 7 – To use Windows authentication to connect to the SQL server using a Windows account, select
-the **Windows Authentication** checkbox. With Windows authentication, users are already logged onto
-Windows and don't have to log on separately to SQL Server.
+the **Windows Authentication** checkbox. With Windows authentication, users are already signed in to
+Windows and don't have to sign in separately to SQL Server.
 
 Step 8 – In the SQL Server Database Name box, specify the SQL database to create a data source for.
 
@@ -352,19 +357,18 @@ of a service account to access the file on OneDrive.
 Step 7 – In the Delimiter box, specify the character that is used to separate values in the file.
 You can also enter a space as a character.
 
-Step 8 – In the Registered Application ID on Azure Active Directory box, enter the application ID
-assigned to the Directory Manager application when you registered it in Microsoft Entra Admin
-Center.
+Step 8 – In the Registered Application ID on Entra ID box, enter the application ID
+assigned to the Directory Manager application when you registered it in Microsoft Entra admin center.
 
 :::note
 The registered app must have the following API permissions to access files on OneDrive:
 :::
 
 
-![API permissions](/images/directorymanager/11.2/admincenter/datasource/apipermissions.webp)
+![Required API permissions for the registered app](/images/directorymanager/11.2/admincenter/datasource/apipermissions.webp)
 
 Step 9 – In the Registered Tenant ID on Azure Active Directory box, enter the tenant ID assigned to
-the Directory Manager application when you registered it in Microsoft Entra Admin Center.
+the Directory Manager application when you registered it in Microsoft Entra admin center.
 
 Step 10 – Enter the name of the file in the File Name box. This name should be complete with the
 file extension, for example, “Employee Contact Details.csv”.
@@ -375,9 +379,9 @@ The data source is available on the Text/CSV tab of the Data Sources page.
 ## Create a Data Source for ODBC
 
 Use an ODBC data source to connect to an ODBC-compatible provider, such as databases, directories,
-or even files. Examples include SQL server, MS Access files, and Oracle.
+or even files. Examples include SQL Server, MS Access files, and Oracle.
 
-A separate data source should be created for each ODBC-compatible file, database, or directory you
+Create a separate data source for each ODBC-compatible file, database, or directory you
 want to use in queries or as source/destination in Synchronize jobs.
 
 To create a data source:

@@ -1,10 +1,16 @@
 ---
-title: "Characters (Complexity) Rule"
-description: "Characters (Complexity) Rule"
+title: "Configure the Characters (Complexity) Rule in Directory Manager"
+description: "Reject passwords that don't draw characters from enough character sets by configuring the Password Policy Enforcer Complexity rule."
+keywords:
+  - Characters (Complexity) rule
+  - Password Policy Enforcer
+  - character sets
+  - password complexity
+  - mandatory rule
 sidebar_position: 40
 ---
 
-# Characters (Complexity) Rule
+# Configure the Characters (Complexity) Rule in Directory Manager
 
 The Complexity rule rejects passwords that don't contain characters from a variety of character
 sets. Using several character types can make passwords more difficult to crack.
@@ -30,7 +36,7 @@ the Character rules are disabled.
 :::
 
 
-This default character set contains the following:
+The default character sets contain the following:
 
 | Rule        | Default character set |
 | ----------- | --- |

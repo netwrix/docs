@@ -1,10 +1,16 @@
 ---
-title: "Notify Users to Enroll"
-description: "Notify Users to Enroll"
+title: "Notify Users to Enroll in Directory Manager"
+description: "Send email notifications that direct unenrolled users to enroll their identity store accounts in Directory Manager."
+keywords:
+  - enrollment notification
+  - notify users
+  - unenrolled users
+  - Helpdesk Operations
+  - enrollment types
 sidebar_position: 50
 ---
 
-# Notify Users to Enroll
+# Notify Users to Enroll in Directory Manager
 
 You can send email notifications to unenrolled users, directing them to enroll their identity store
 accounts in Directory Manager. Notifications can be sent to:
@@ -24,14 +30,14 @@ Users must have an email address to receive notifications.
     - To send enrollment notifications to all users in all identity stores in Directory Manager,
       ensure _All_ is selected in the **Identity store** box. Then click **Notify All Users**.
     - To send the notification to specific recipients, search for the required users and click
-      **Notify All Users**. See the [Search Users](/docs/directorymanager/11.2/admincenter/helpdesk/operation/search.md) topic to perform a search.
+      **Notify All Users**. See the [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.2/admincenter/helpdesk/operation/search.md) topic to perform a search.
 
     Notifications are sent to all users listed on the **Helpdesk Operations** tab, including those
     on other pages (use the navigation options at the bottom of the listing to view the pages). To
     send it to specific users in the listing, select the checkboxes for them and click **Notify All
     Users**.
 
-3. On clicking **Notify All Users**, the **Compose email** dialog box is displayed.
+3. After you click **Notify All Users**, the **Compose email** dialog box is displayed.
 
     1. The **Recipients** box is read-only.
     2. The **Subject** box displays the default subject line. You can choose to use it or replace it

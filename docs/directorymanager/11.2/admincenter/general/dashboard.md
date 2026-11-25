@@ -1,10 +1,17 @@
 ---
-title: "Dashboard"
-description: "Dashboard"
+title: "Monitor Directory Manager with the Admin Center Dashboard"
+description: "Use the Admin Center dashboard cards to check service status, failed notifications, schedules, replication, enrollment, authentication, and activity."
+keywords:
+  - Admin Center dashboard
+  - Elasticsearch service status
+  - replication status
+  - enrollment summary
+  - authentication summary
+  - activity summary
 sidebar_position: 30
 ---
 
-# Dashboard
+# Monitor Directory Manager with the Admin Center Dashboard
 
 The Admin Center dashboard is a data visualization tool that displays widgets for performance
 analytics, alerts, and reporting on Directory Manager and identity stores on a single page.
@@ -13,7 +20,7 @@ In Admin Center, click **Dashboard** in the left pane. The dashboard displays th
 with aggregated data from all identity stores built on Active Directory, Microsoft Entra ID, Google
 Workspace, and Generic LDAP, as well as individual identity stores.
 
-![dashboard](/images/directorymanager/11.2/admincenter/general/dashboard.webp)
+![Admin Center dashboard showing the information cards for identity stores](/images/directorymanager/11.2/admincenter/general/dashboard.webp)
 
 The dashboard displays the following information:
 
@@ -58,18 +65,17 @@ list next to the card name to view the data for it.
 
 ## Failed Notifications
 
-This card displays the count for failed notifications, i.e., the Directory Manager-generated
+This card displays the count for failed notifications: the Directory Manager-generated
 notifications that couldn't be delivered for any reason, such as when the SMTP server is down or
-the recipient’s address is incorrect.
+the recipient's address is incorrect.
 
 Click **View All** to go to the **Notification Queue** page, where you can view the failed
-notifications in detail. See the [Manage the Notification Queue](/docs/directorymanager/11.2/admincenter/notification/queue.md) topic.
+notifications in detail. See the [Manage the Directory Manager Notification Queue](/docs/directorymanager/11.2/admincenter/notification/queue.md) topic.
 
 ## Upcoming Schedules
 
 Multiple schedules can be defined for an identity store. This card displays the number of schedules
-that will run in the next 24 hours. The card also displays the data and time the next schedule will
-run.
+that run in the next 24 hours. The card also displays the date and time the next schedule runs.
 
 You can:
 
@@ -82,7 +88,7 @@ or select _All Identity Stores_ to view the upcoming schedules for all identity 
 Click **View All** to view a list of the upcoming schedules with their names, the next date and time
 of schedule run, and the identity store they belong to.
 
-![image38](/images/directorymanager/11.2/admincenter/general/image38.webp)
+![Upcoming schedules list with schedule names, next run date and time, and identity store](/images/directorymanager/11.2/admincenter/general/image38.webp)
 
 ## Replication Status of Identity Stores
 
@@ -92,7 +98,7 @@ Generic LDAP defined in Directory Manager, along with their replication status, 
 - **Successful:** Indicates that identity store objects are successfully replicated.
 - **Failed:** Indicates that identity store objects have failed to replicate either because the
   Replication service didn't run as scheduled or an error occurred during replication.
-- **Never Replicated:** Indicates that the identity store is never replicated.
+- **Never Replicated:** Indicates that the identity store has never been replicated.
 
 ## Enrollment Summary
 
@@ -107,10 +113,10 @@ Consider the following:
   to view the enrollment data for it or select _All Identity Stores_ to view the data for all
   identity stores.
 - Hover the mouse over a bar to view the number of users enrolled with the specific authentication
-  type. Click a bar to launch the **Helpdesk** page, that displays a list of users enrolled with
+  type. Click a bar to launch the **Helpdesk** page, which displays a list of users enrolled with
   that authentication type. See the
   [View Users' Information](/docs/directorymanager/11.2/admincenter/helpdesk/operation/search.md#view-users-information) topic for
-  details on the information displayed for a user. (Notice that the **Filters** dialog box
+  details on the information displayed for a user. (The **Filters** dialog box
   displays the selected authentication type in the **Enrolled With** box.)
 - By default, data is displayed for the last one month. You can view enrollment data for any
   specific period. Click the tile showing the time period to launch the calendar. Use it to specify
@@ -118,22 +124,22 @@ Consider the following:
 
 ## Auth Summary
 
-This card employs a pie chart to display the authentication stats and trends for an identity store,
-i.e., the number of successful and failed authentication attempts made by identity store users in
+This card employs a pie chart to display the authentication stats and trends for an identity store:
+the number of successful and failed authentication attempts made by identity store users in
 Directory Manager. Information is based on:
 
 - Authentication attempts made using authentication types for second factor authentication.
 - Authentication attempts made using authentication types for multifactor authentication.
-- Sign in attempts made using username and password.
+- Sign-in attempts made using username and password.
 
 The pie chart is highly interactive. You can:
 
 - Hover the mouse over an arc to view the successful or failed authentication attempt count.
 - Click the arc for successful or failed attempts to view successful/failed authentication attempts
   for each authentication type. Another pie chart appears to display the authentication types used
-  in the authentication attempt. Click this chart to navigate to the **History** tab of the
+  in the authentication attempt. Click this chart to go to the **History** tab of the
   **Helpdesk** page to view the logged history for the authentication attempts with the respective
-  authentication type. See the [History in Helpdesk](/docs/directorymanager/11.2/admincenter/helpdesk/history.md) topic.
+  authentication type. See the [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.2/admincenter/helpdesk/history.md) topic.
 
 Consider the following:
 
@@ -145,7 +151,7 @@ Consider the following:
   specific period. Click the tile showing the time period to launch the calendar. Use it to specify
   a date range to view the data.
 
-See the [Authentication Policy](/docs/directorymanager/11.2/admincenter/authpolicy/authpolicy.md) topic for a list of
+See the [Directory Manager Authentication Policies](/docs/directorymanager/11.2/admincenter/authpolicy/authpolicy.md) topic for a list of
 supported authentication types.
 
 ## Activity Summary
@@ -168,7 +174,7 @@ Consider the following:
   all identity stores.
 - To view a list of users who used a function on a particular date, click the relevant data point on
   the function line. A list of users is displayed on the **History** tab of the **Helpdesk** page.
-  See the [History in Helpdesk](/docs/directorymanager/11.2/admincenter/helpdesk/history.md) topic. (Notice that the **Filters** dialog
+  See the [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.2/admincenter/helpdesk/history.md) topic. (The **Filters** dialog
   box displays the selected function in the **Action Type** box.)
 - By default, data is displayed for the last one week. You can view activity summary for any
   specific period. Click the tile showing the time period to launch the calendar. Use it to specify
@@ -179,4 +185,4 @@ Consider the following:
 
 **See Also**
 
-- [Navigation](/docs/directorymanager/11.2/admincenter/general/navigation.md)
+- [Navigate Admin Center in Directory Manager](/docs/directorymanager/11.2/admincenter/general/navigation.md)

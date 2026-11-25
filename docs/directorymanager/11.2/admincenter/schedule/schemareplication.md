@@ -1,31 +1,37 @@
 ---
-title: "Schema Replication Schedule"
-description: "Schema Replication Schedule"
+title: "Update the Directory Manager Schema Replication Schedule"
+description: "Change the scheduler service and triggers of the schema replication schedule that copies identity provider schemas to the Directory Manager database."
+keywords:
+  - schema replication
+  - Directory Manager schedule
+  - identity store schema
+  - scheduler service
+  - Active Directory schema
 sidebar_position: 110
 ---
 
-# Schema Replication Schedule
+# Update the Directory Manager Schema Replication Schedule
 
-An Identity store is built on an identity provider, that could be Active Directory, Microsoft Entra
+An identity store is built on an identity provider, which can be Active Directory, Microsoft Entra
 ID, Google Workspace, or Generic LDAP. The Schema Replication schedule replicates the schema of
 these identity providers to the Directory Manager database.
 
 Unlike other schedules that exist separately for each identity store, Directory Manager has only one
 Schema Replication schedule that serves all identity stores. Although the system displays the schedule
-separately for each identity store, it doesn't represent separate schedules. So when you run the
+separately for each identity store, it doesn't represent separate schedules. When you run the
 Schema Replication schedule for an identity store, it replicates the schema for all identity stores
-in Directory Manager. And if you terminate it, the process is terminated for all identity stores.
-Moreover, the schedule runs every time it is triggered from any of the identity stores, be it
+in Directory Manager. If you terminate it, the process is terminated for all identity stores.
+The schedule also runs every time it is triggered from any of the identity stores, whether
 manually or according to its triggers.
 
 When the Schema Replication schedule runs for the first time, it replicates the entire schema. In
-all subsequent runs, it replicates any changes made to the schema. Of this replicated schema, you
-can choose the object attributes you actually want to use in an identity store. See the
+all subsequent runs, it replicates any changes made to the schema. From this replicated schema, you
+can choose the object attributes you want to use in an identity store. See the
 [Specify Object Attributes to Replicate](/docs/directorymanager/11.2/admincenter/identitystore/replication.md#specify-object-attributes-to-replicate)
 topic for details.
 
 :::note
-For Microsoft Entra ID, schema is replicated from the schema file for Graph API v 3.26.0.
+For Microsoft Entra ID, schema is replicated from the schema file for Graph API v3.26.0.
 :::
 
 
@@ -47,10 +53,10 @@ ellipsis button for the schedule and select **Edit**.
 Step 5 – On the Edit Schedule page, the Schedule Name and Name Preview boxes display the name of the
 schedule as read-only.
 
-Step 6 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
-responsible for triggering this schedule. The list displays a number of services that depends on the
+Step 6 – In the Scheduler Service Name dropdown list, select a Scheduler service to
+trigger this schedule. The list displays a number of services that depends on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md) topic for additional
+service. See the [Directory Manager Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md) topic for additional
 information.
 
 :::note
@@ -59,17 +65,17 @@ When selecting a Scheduler service, the Scheduler service for the Directory Mana
 
 
 
-- The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  newly-selected Scheduler service will trigger the schedule.
+- The Scheduler service can be changed even after creating the schedule. On the next run, the
+  newly selected Scheduler service triggers the schedule.
 
 - If the selected Scheduler service fails to trigger the schedule, then no other Scheduler service
   can be selected automatically.
 
-- If you run a schedule manually on the Admin Center, the Scheduler service of that instance
+- If you run a schedule manually in Admin Center, the Scheduler service of that instance
   is used.
 
 :::warning
-In case of multiple Scheduler services, you must bind the same service with the Schema
+If there are multiple Scheduler services, you must bind the same service with the Schema
 Replication schedules in all the identity stores.
 :::
 

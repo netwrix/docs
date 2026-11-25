@@ -1,13 +1,18 @@
 ---
-title: "Scheduler Service"
-description: "Scheduler Service"
+title: "Directory Manager Scheduler Service"
+description: "View the Scheduler service, which triggers identity store schedules at their set frequency, and find the settings you can manage."
+keywords:
+  - Directory Manager Scheduler service
+  - scheduled jobs
+  - identity store schedules
+  - service settings
 sidebar_position: 50
 ---
 
-# Scheduler Service
+# Directory Manager Scheduler Service
 
 In Directory Manager, schedules perform different tasks in an identity store. They run at a
-specified frequency to auto execute their respective functions. The Scheduler service is responsible
+specified frequency to automatically run their respective functions. The Scheduler service is responsible
 for triggering these schedules at their respective frequency.
 
 ## View Scheduler Service Details
@@ -17,7 +22,7 @@ Step 1 – In Admin Center, click **Applications** in the left pane.
 Step 2 – On the Applications page, click the **Scheduler Service** tab.
 
 The tab displays the default Scheduler services hosted in native IIS. The number of services
-displayed on the tab depend on the number of nodes in all Elasticsearch clusters in your
+displayed on the tab depends on the number of nodes in all Elasticsearch clusters in your
 environment, as each cluster has its own Scheduler services. See the
 [Elasticsearch Clusters, Nodes, and Directory Manager](overview.md#elasticsearch-clusters-nodes-and-directory-manager)
 topic for additional information.  

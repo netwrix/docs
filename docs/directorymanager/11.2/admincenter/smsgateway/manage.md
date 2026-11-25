@@ -1,14 +1,20 @@
 ---
-title: "Manage SMS Gateway Accounts"
-description: "Manage SMS Gateway Accounts"
+title: "Manage SMS Gateway Accounts in Directory Manager"
+description: "Create, edit, test, set as default, link, and delete SMS gateway accounts in Admin Center so Directory Manager can send text messages."
+keywords:
+  - SMS gateway account
+  - Admin Center
+  - default SMS gateway
+  - test SMS gateway connection
+  - identity store
 sidebar_position: 10
 ---
 
-# Manage SMS Gateway Accounts
+# Manage SMS Gateway Accounts in Directory Manager
 
 You can create one or more SMS gateway accounts in Directory Manager and link an account with an
 identity store. You can also set an account as the default account, so that it is automatically
-linked to an identity store created thereafter.
+linked to an identity store created afterward.
 
 Directory Manager supports several SMS gateway providers. You can also use the Custom Gateway API to
 integrate with an unsupported provider.
@@ -47,7 +53,7 @@ integrate with an unsupported provider.
 
     1. Click **Test Connection**.
     2. In the **Test SMS Gateway Connection** dialog box, enter a mobile phone number for receiving
-       a test message. Use International format, with no spaces or special characters. For example:
+       a test message. Use international format, with no spaces or special characters. For example:
        18588123169, 447079692712, 923225867987.
     3. Click **OK** to send the message to the mobile number.
 
@@ -66,8 +72,8 @@ connect to the gateway.
    The **SMS Gateways** page is displayed with a list of the SMS gateway accounts that you have
    created.
 2. To update a gateway account, click **Edit** for it in the **Actions** column.
-3. On the **Edit SMS Gateway** page, update the required details. Refer to step 3 and onwards in the
-   Create an SMS Gateway Account topic for details.
+3. On the **Edit SMS Gateway** page, update the required details. Refer to step 3 and onward in
+   [Create an SMS Gateway Account](#create-an-sms-gateway-account) for details.
 
 ## Set an SMS Gateway Account as Default
 
@@ -76,8 +82,7 @@ connect to the gateway.
    created.
 2. Click **Edit** for a gateway account in the **Actions** column.
 3. On the **Edit SMS Gateway** page, select the **Set as default account** checkbox to set this
-   gateway account as default, which means that it will be linked with the identity stores created
-   hereafter.
+   gateway account as default, so that it is linked with identity stores created afterward.
 4. Click **Save SMS Gateway**.
 
 ## Test SMS Gateway Account Connection
@@ -88,7 +93,7 @@ connect to the gateway.
 2. Click **Test Connection** for a gateway to test whether Directory Manager can successfully send
    text messages through it.
 3. In the **Test SMS Gateway Connection** dialog box, enter a mobile phone number for receiving a
-   test message. Use International format, with no spaces or special characters. For example:
+   test message. Use international format, with no spaces or special characters. For example:
    18588123169, 447079692712, 923225867987.
 4. Click **OK** to send the message to the mobile number.
 
@@ -109,6 +114,6 @@ You can delete an SMS gateway account that isn't linked with any identity store.
 3. One of the following happens:
 
     - If the gateway account isn't linked with an identity store, a message is displayed, asking
-      you to confirm its deletion. Clicking **Delete** will delete the account.
-    - If the gateway account is linked with an identity store, Directory Manager will not allow you
+      you to confirm its deletion. Click **Delete** to delete the account.
+    - If the gateway account is linked with an identity store, Directory Manager doesn't allow you
       to delete it.

@@ -1,10 +1,15 @@
 ---
-title: "ISmsGateway.ProxyDomain"
-description: "ISmsGateway.ProxyDomain"
+title: "ISmsGateway.ProxyDomain Property"
+description: "Get or set the domain name or IP address of the proxy server that a custom SMS gateway uses to reach the provider."
+keywords:
+  - ISmsGateway.ProxyDomain
+  - SMS gateway proxy server
+  - proxy domain name
+  - custom SMS gateway
 sidebar_position: 40
 ---
 
-# ISmsGateway.ProxyDomain
+# ISmsGateway.ProxyDomain Property
 
 Gets or sets the domain name or IP address of the proxy server.
 
@@ -26,5 +31,5 @@ The domain name or IP address of the proxy server.
 
 **Remarks**
 
-If communication with the SMS gateway is through a proxy server, use this property to set
-the domain name or IP address of that proxy server.
+If communication with the SMS gateway is through a proxy server, use this property to set the
+domain name or IP address of that proxy server.

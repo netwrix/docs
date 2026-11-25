@@ -1,10 +1,15 @@
 ---
-title: "SendSmsMessageResult.Message"
-description: "SendSmsMessageResult.Message"
+title: "SendSmsMessageResult.Message property"
+description: "Get the ShortMessage object that the SendShortMessage method processed when you implement a custom SMS gateway in Directory Manager."
+keywords:
+  - SendSmsMessageResult.Message
+  - custom SMS gateway
+  - ShortMessage object
+  - Directory Manager SMS API
 sidebar_position: 20
 ---
 
-# SendSmsMessageResult.Message
+# SendSmsMessageResult.Message property
 
 Returns the [ShortMessage class](/docs/directorymanager/11.2/admincenter/smsgateway/custom/sendsmsmessageresult/class.md) object processed by the
 [ISmsGateway.SendShortMessage](/docs/directorymanager/11.2/admincenter/smsgateway/custom/sendshortmessage.md) method.

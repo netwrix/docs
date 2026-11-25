@@ -1,10 +1,15 @@
 ---
-title: "ISmsGateway.Password"
-description: "ISmsGateway.Password"
+title: "ISmsGateway.Password Property"
+description: "Get or set the password of the account registered with the SMS gateway provider for a custom SMS gateway."
+keywords:
+  - ISmsGateway.Password
+  - custom SMS gateway
+  - SMS gateway password
+  - Imanami.PublicInterfaces
 sidebar_position: 30
 ---
 
-# ISmsGateway.Password
+# ISmsGateway.Password Property
 
 Gets or sets the password of the user account registered with the SMS gateway provider.
 

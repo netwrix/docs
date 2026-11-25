@@ -1,10 +1,15 @@
 ---
-title: "Age (Min) Rule"
-description: "Age (Min) Rule"
+title: "Configure the Age (Min) Rule in Directory Manager"
+description: "Prevent users from cycling quickly through passwords by setting a minimum number of days between password changes in a domain policy."
+keywords:
+  - Age (Min) rule
+  - minimum password age
+  - domain policy
+  - Password Policy Enforcer
 sidebar_position: 20
 ---
 
-# Age (Min) Rule
+# Configure the Age (Min) Rule in Directory Manager
 
 The Minimum Age rule stops users from quickly cycling through a series of passwords to
 evade the History and Similarity rules. This rule can only be enforced by domain policies.

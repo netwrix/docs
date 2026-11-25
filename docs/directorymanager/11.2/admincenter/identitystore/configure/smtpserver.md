@@ -1,29 +1,36 @@
 ---
-title: "Configure an SMTP Server"
-description: "Configure an SMTP Server"
+title: "Configure an SMTP Server in Directory Manager"
+description: "Set up the SMTP server an identity store uses for email notifications, choose notification recipients, and manage life cycle notifications."
+keywords:
+  - SMTP server
+  - email notifications
+  - OAuth modern authentication
+  - notification recipients
+  - membership life cycle notifications
+  - Managed By notifications
 sidebar_position: 10
 ---
 
-# Configure an SMTP Server
+# Configure an SMTP Server in Directory Manager
 
 An identity store requires an SMTP server for sending email notifications. It can be an Exchange
-server deployed in your environment or an external SMTP server; for example, Gmail, or Office 365.
+server deployed in your environment or an external SMTP server, such as Gmail or Office 365.
 
 When configuring a provider that supports modern authentication, such as Exchange Online and Office
-365, you have the option to use OAuth for modern authentication.
+365, you can use OAuth for modern authentication.
 
 :::note
-With Microsoft Entra ID's mandatory multifactor authentication policy, basic authentication
-can't be used for an Office 365 SMTP server. You can only use OAuth for modern authentication.
+With Microsoft Entra ID's mandatory multifactor authentication policy, you can't use basic
+authentication for an Office 365 SMTP server. You can only use OAuth for modern authentication.
 :::
 
 
-You can also specify notification recipients, that can be:
+You can also specify notification recipients, which can be:
 
 - individual recipients
 - the user who makes a change to a directory object
 - the directory object being modified
-- group owners and user managers—a practice that doesn't require update when role assignments
+- group owners and user managers, a practice that doesn't require an update when role assignments
   change
 - owners of a public group on membership changes
 - an object that is added to the membership of a group
@@ -48,7 +55,7 @@ You can also specify notification recipients, that can be:
 The **Notifications** page is displayed.
 
 4. In the **SMTP Server** section, enter the fully qualified domain name or IP address of the
-SMTP server in the **SMTP Server** box. Email notifications will be routed through this server.
+SMTP server in the **SMTP Server** box. Email notifications are routed through this server.
 
 5. Enter the email address to use for sending notifications in the **From email address** box.
 
@@ -58,13 +65,13 @@ SMTP server in the **SMTP Server** box. Email notifications will be routed throu
 
 **Set up user authentication**
 
-By default, the credentials of the user logged into Admin Center are used to connect to the SMTP
+By default, the credentials of the user signed in to Admin Center are used to connect to the SMTP
 server. Hence, each user connects to the server in the context of the identity store and credentials
-he or she has used to sign into Admin Center.  
-However, you may choose to specify a single account for connecting, in case your user accounts do
-not have rights on the SMTP server or you want to use a dedicated account. Select the **Use SMTP
+they used to sign in to Admin Center.  
+However, you can specify a single account for connecting, in case your user accounts don't
+have rights on the SMTP server or you want to use a dedicated account. Select the **Use SMTP
 user authentication** checkbox. This enables the credentials options, where you can choose _basic
-authentication_ or _OAuth_; then provide the credentials of an authorized user account on the SMTP
+authentication_ or _OAuth_. Then provide the credentials of an authorized user account on the SMTP
 server.
 
 - **For basic authentication**
@@ -79,7 +86,7 @@ server.
     such as Exchange Online and Office 365.
 
     :::note
-    For OAuth to work, you must enable the Graph API’s ‘SMTP.Send’ permission for the
+    For OAuth to work, you must enable the Graph API's "SMTP.Send" permission for the
     Directory Manager app in Microsoft Entra Admin Center:
     :::
 
@@ -89,7 +96,7 @@ server.
        https://login.microsoftonline.com/organizations/oauth2/v2.0/token
 
         :::note
-        In case of Office 365 provider, you need to provide Graph Endpoint of your CloudType
+        For an Office 365 provider, provide the Graph Endpoint of your CloudType
         in the **Token Endpoint** box, for example, https://graph.microsoft.com/v1.0
         :::
 
@@ -103,7 +110,7 @@ server.
        https://outlook.office365.com/SMTP.Send
 
         :::note
-        In case of Office 365 provider, provide name of the tenant the **Scope** box, for
+        For an Office 365 provider, provide the name of the tenant in the **Scope** box, for
         example, abcd.onmicrosoft.com
         :::
 
@@ -112,8 +119,8 @@ server.
        server.
 
     :::note
-    The user account used for SMTP Authentication for OAuth should have no MFA applied to it
-    or have a conditional bypass for GraphAPI requests.
+    The user account used for SMTP authentication for OAuth should have no MFA applied to it
+    or have a conditional bypass for Graph API requests.
     :::
 
 
@@ -148,7 +155,7 @@ the **Also Notify** area, select the required checkboxes.
   This setting applies to mail-enabled users only.
 - Object being modified – To send email notifications to the object (group, user, contact) being
   modified. In case of a group, all members are notified.
-- Group ownsers for their groups To send email notifications to the primary and additional owners
+- Group owners for their groups – To send email notifications to the primary and additional owners
   of groups about changes made to their respective groups.
 - Managers for their direct reports – To send email notifications to managers about changes made
   to their respective direct reports.
@@ -167,7 +174,7 @@ the **Also Notify** area, select the required checkboxes.
 A password expiry Smart Group can be created using the Directory Manager portal. Its membership is
 limited to users whose identity store account passwords are approaching their expiry dates.
 
-The administrator can apply a setting to send a password expiry warning email to group members every
+You can apply a setting to send a password expiry warning email to group members every
 time group membership is updated. This email includes the URL of a Directory Manager portal to
 redirect users there for changing their passwords.
 
@@ -176,14 +183,14 @@ Users who change their passwords are removed from group membership.
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 
-2. On the Identity Store page, click the ellipsis button for an identity store and select
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
 **Edit**.
 
-3. Click **Configurations** under Settings in the left pane. Then click **Notifications**. The
-Notifications page is displayed.
+3. Click **Configurations** under **Settings** in the left pane. Then click **Notifications**. The
+**Notifications** page is displayed.
 
-4. In the Password Expiry Group Notifications section, select the URL of a Directory Manager
-portal in the **GroupID Portal URL** dropdown list. This URL will be included in password expiry
+4. In the **Password Expiry Group Notifications** section, select the URL of a Directory Manager
+portal in the **Directory Manager Portal URL** dropdown list. This URL is included in password expiry
 warning emails to redirect users to the portal, where they can change their identity store account
 passwords.  
 The list contains URLs of all Directory Manager portals linked with the identity store.
@@ -203,10 +210,10 @@ Membership lifecycle notifications are triggered on the following events:
   a semi-private or public group, the respective user is notified.
 - Peers and managers can temporarily join or leave a group on behalf of another user (User A).
   Membership lifecycle notifications are sent to User A when the Membership Life Cycle schedule adds
-  or removes him or her from group membership.
+  or removes them from group membership.
 - Users are also notified when they are temporarily added or removed from group membership according
   to membership lifecycle policies. See the
-  [Manage Membership Life Cycle Policies](/docs/directorymanager/11.2/admincenter/identitystore/configure/membershiplifecycle.md) topic.
+  [Manage Directory Manager Membership Lifecycle Policies](/docs/directorymanager/11.2/admincenter/identitystore/configure/membershiplifecycle.md) topic.
 
 You can choose to send notification when users are temporarily added to groups, removed from groups,
 or on both events.
@@ -214,24 +221,24 @@ or on both events.
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 
-2. On the Identity Stores page, click the ellipsis button for an identity store and select
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
 **Edit**.
 
-3. Click **Configurations** under Settings in the left pane. Then click **Notifications**. The
-page is displayed.
+3. Click **Configurations** under **Settings** in the left pane. Then click **Notifications**. The
+**Notifications** page is displayed.
 
-4. In the Membership Lifecycle Notifications section, select your desired options.
+4. In the **Membership Lifecycle Notifications** section, select your desired options.
 
 - On joining group – Sends email notifications to users when the Membership Life Cycle schedule
   temporarily adds them to group membership.
-- On leaving group – ends email notifications to users when the Membership Life Cycle schedule
+- On leaving group – Sends email notifications to users when the Membership Life Cycle schedule
   temporarily removes them from group membership.
 - X days before user is going to leave the group – Select this checkbox and specify a certain
-  number of days, say 2. The user receives a notification 2 days before he or she is removed from
+  number of days, say 2. The user receives a notification 2 days before they are removed from
   group membership by the Membership Life Cycle schedule. This setting also applies to users who
   have been marked for removal from group membership in the group attestation process. (See the
   **Specify member inactive period** setting in the
-  [Enable Group Attestation](/docs/directorymanager/11.2/admincenter/identitystore/configure/grouplifecycle.md#enable-group-attestation) topic.
+  [Enable Group Attestation](/docs/directorymanager/11.2/admincenter/identitystore/configure/grouplifecycle.md#enable-group-attestation) topic.)
 
 5. Click **Save** on the **Notifications** page.
 
@@ -245,10 +252,10 @@ When a group is set or removed as a temporary additional owner, all its members 
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 
-2. On the Identity Stores page, click the ellipsis button for an identity store and select
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
 **Edit**.
 
-3. Click **Configurations** under Settings in the left pane. Then click **Notifications**. The
+3. Click **Configurations** under **Settings** in the left pane. Then click **Notifications**. The
 **Notifications** page is displayed.
 
 4. In the **Managed By Notifications** section, select your desired options.
@@ -267,6 +274,6 @@ When a group is set or removed as a temporary additional owner, all its members 
   accordingly.
 - X Days before object is removed as additional owner/manager – Select this checkbox and specify a
   certain number of days, say 2. The temporary additional manager/owner receives a notification 2
-  days before the Managed By Life Cycle schedule removes him or her as additional manager/owner.
+  days before the Managed By Life Cycle schedule removes them as additional manager/owner.
 
 5. Click **Save** on the Notifications page.

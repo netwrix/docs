@@ -1,20 +1,26 @@
 ---
-title: "Customize the Toolbars"
-description: "Customize the Toolbars"
+title: "Customize Toolbars in the Directory Manager Portal"
+description: "Rename toolbar buttons, change their icons and visibility, and rearrange their order on the Directory Manager portal toolbars."
+keywords:
+  - Directory Manager
+  - portal toolbars
+  - toolbar buttons
+  - button icons
+  - button visibility
 sidebar_position: 50
 ---
 
-# Customize the Toolbars
+# Customize Toolbars in the Directory Manager Portal
 
-Toolbars are available on different pages of the Directory Manager portal; however, not all of these
-are customizable.
+Toolbars are available on different pages of the Directory Manager portal, but not all of them are
+customizable.
 
 You can customize the following toolbars:
 
 | Toolbar                                                | Availability in the portal                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | User                                                   | The **My Profile** and user properties pages NOTE: The _Validate your profile_, _Extend_, and _Reinstate_ buttons on this toolbar are displayed in the portal when user profile validation is enabled:                                                                                                                                                       |
-| Group                                                  | The group properties page NOTE: (1) The _Update_ button isn't displayed for static groups. (2) The _Expire_ button isn't displayed for groups with an expiation policy set to _Never Expire_. (3) The _Attest Group_ and _Renew_ buttons are displayed when group attestation is enabled. (4) The _Upgrade To_ button is displayed for static groups only. |
+| Group                                                  | The group properties page NOTE: (1) The _Update_ button isn't displayed for static groups. (2) The _Expire_ button isn't displayed for groups with an expiration policy set to _Never Expire_. (3) The _Attest Group_ and _Renew_ buttons are displayed when group attestation is enabled. (4) The _Upgrade To_ button is displayed for static groups only. |
 | Default Search                                         | The **All** tab on the **Search Results** page for Quick Search and Advanced Search                                                                                                                                                                                                                                                                          |
 | Users Search                                           | The **Users** and **Contacts** tabs on the **Search Results** page for Quick Search and Advanced Search                                                                                                                                                                                                                                                      |
 | Groups Search                                          | The **Groups** tab on the **Search Results** page for Quick Search and Advanced Search                                                                                                                                                                                                                                                                       |
@@ -62,8 +68,8 @@ can update a few details for a button, such as its name and image.
    On the **GroupID Portal** tab, a portal's card displays its info.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Select an identity store under **Design Settings** to customize the portal for it.  
-   All identity stores linked with the portal are listed under **Design Setting**s. You can design a
-different portal for each of these.
+   All identity stores linked with the portal are listed under **Design Settings**. You can design a
+   different portal for each of these.
 4. Click **Toolbars** in the left pane; the **Toolbars** page is displayed.
 5. In the **Select Toolbar Type** dropdown list, select the toolbar you want to update.  
    The **Name** area lists all buttons on this toolbar.
@@ -72,16 +78,16 @@ different portal for each of these.
 
     1. **Name** – The name of the toolbar button. It is read-only.
     2. **Text** – The text displayed on the button as its name.
-    3. **Show Text** – Select this checkbox to display the text on the button; else the button
-       would be displayed without the text.
-    4. **Tooltip Text** - The text to appear when a user hovers the mouse over the button.
+    3. **Show Text** – Select this checkbox to display the text on the button. Otherwise, the button
+       is displayed without the text.
+    4. **Tooltip Text** – The text to appear when a user hovers the mouse over the button.
     5. **Icon Class** – The image (icon) to be displayed for the button on the toolbar.
     6. **Active Icon Class** – The image (icon) to be displayed when a user hovers the mouse over
        this button.
     7. To manage images for Icon Class and Active Icon Class:
 
         - If no image has been uploaded, click **Upload** to browse and select an image to upload.
-        - If an image has been uploaded, the very image is displayed. Click **Upload** to replace
+        - If an image has been uploaded, the image is displayed. Click **Upload** to replace
           the existing image with a new one.
 
 :::note
@@ -90,7 +96,7 @@ Image dimensions: 30 x 30 pixels
 
         Supported formats: .webp, .jpg, .jpe, .jpeg
 
-    8. **Visibility Level** – Select a security role. The toolbar button would be visible to users
+    8. **Visibility Level** – Select a security role. The toolbar button is visible to users
        of this role and roles with a priority value higher than this role. See
        [Priority](/docs/directorymanager/11.2/admincenter/securityrole/manage.md).  
        Select _Never_ to hide the button from all users.
@@ -105,7 +111,7 @@ Image dimensions: 30 x 30 pixels
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Select an identity store under **Design Settings** to customize the portal for it.  
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
-different portal for each of these.
+   different portal for each of these.
 4. Click **Toolbars** in the left pane.
 5. On the **Toolbars** page, select a toolbar in the **Select Toolbar Type** dropdown list.  
    The **Name** area lists all buttons on this toolbar.

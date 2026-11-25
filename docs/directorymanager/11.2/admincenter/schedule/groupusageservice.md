@@ -1,10 +1,16 @@
 ---
-title: "Group Usage Service Schedule"
-description: "Group Usage Service Schedule"
+title: "Create a Group Usage Service Schedule in Directory Manager"
+description: "Create a Group Usage Service schedule that reads Exchange expansion logs to record when distribution lists were last used."
+keywords:
+  - Group Usage Service schedule
+  - Exchange expansion events
+  - message tracking log
+  - distribution list usage
+  - Scheduler service
 sidebar_position: 10
 ---
 
-# Group Usage Service Schedule
+# Create a Group Usage Service Schedule in Directory Manager
 
 A Group Usage Service schedule monitors expansion events and timestamps affected groups of the
 Microsoft Exchange Servers for an identity store.
@@ -13,13 +19,13 @@ An expansion event occurs when an Exchange Server expands a distribution list fo
 The Exchange Server records the event in its message tracking log. The Group Usage Service
 schedule reads this log to find the timestamp showing when the distribution list was last used.
 
-The timestamp is then used by the [Group Life Cycle Schedule](/docs/directorymanager/11.2/admincenter/schedule/grouplifecycle.md) to extend or reduce
+The timestamp is then used by the [Create a Group Life Cycle Schedule in Directory Manager](/docs/directorymanager/11.2/admincenter/schedule/grouplifecycle.md) to extend or reduce
 the life of mail-enabled distribution groups based on their usage. See the
 [Enable Group Usage Lifecycle](/docs/directorymanager/11.2/admincenter/identitystore/configure/grouplifecycle.md#enable-group-usage-lifecycle)
 topic.
 
 When you create a Group Usage Service schedule, specify a job triggering criterion, the
-containers the job will process, and the messaging servers for reading expansion logs.
+containers the job processes, and the messaging servers for reading expansion logs.
 
 ## Create a Group Usage Service Schedule
 
@@ -41,29 +47,29 @@ Step 7 – Select a Directory Manager portal URL in the **Portal URL** dropdown 
 notifications generated for the schedule. Users are redirected to this portal to perform any
 necessary action.
 
-Step 8 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
-responsible for triggering this schedule. The list displays a number of services that depends on the
+Step 8 – In the Scheduler Service Name dropdown list, select a Scheduler service that's
+responsible for triggering this schedule. The number of services in the list depends on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md) topic for additional
+service. See the [Directory Manager Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md) topic for additional
 information.
 
 :::note
 When selecting a Scheduler service, note the following:
 
-- The Scheduler service for the Directory Manager instance on which you are creating the schedule is
+- The Scheduler service for the Directory Manager instance on which you're creating the schedule is
   selected by default. However, you can select the Scheduler service of another instance as well.
 
-- The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  newly-selected Scheduler service will trigger the schedule.
+- The Scheduler service can be changed even after creating the schedule. On the next run, the
+  newly selected Scheduler service triggers the schedule.
 
 - If the selected Scheduler service fails to trigger the schedule, then no other Scheduler service
   can be selected automatically.
 
-- If you run a schedule manually on the Admin Center, the Scheduler service of that instance
+- If you run a schedule manually in Admin Center, the Scheduler service of that instance
   is used.
 :::
 
-Step 9 – You can specify containers as targets for the schedule. The schedule will process all
+Step 9 – You can specify containers as targets for the schedule. The schedule processes all
 groups in those containers and sub-containers.
 
 - Select the **Include all containers** checkbox to run the schedule on all the containers in the
@@ -71,7 +77,7 @@ groups in those containers and sub-containers.
   Or
 - Click **Add Container** to add one or more containers as targets. The Add Containers dialog box
   shows the domain name and the OUs in the identity store. Select the checkboxes for the required
-  containers and click **Add**; the system displays the selected containers in the Targets area. To
+  containers and click **Add**; the selected containers appear in the Targets area. To
   exclude a sub-container, clear the checkbox for it on the Add Containers dialog box.
 - To remove a container in the Targets area, click **Remove** for it.
   To remove all target objects, click **Remove All**.
@@ -89,17 +95,17 @@ these servers.
     Select the Server Name checkbox if you want this job to read the expansion logs of all
     messaging servers in the identity store.
 
-3. Click **Add**. The system displays the messaging servers in the Messaging Server area.
+3. Click **Add**. The messaging servers appear in the Messaging Server area.
 
 Step 11 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
-schedule, that, when met, starts the execution of the schedule. See the [Triggers](/docs/directorymanager/11.2/admincenter/schedule/triggers.md)
+schedule that, when met, starts the execution of the schedule. See the [Define Schedule Triggers in Directory Manager](/docs/directorymanager/11.2/admincenter/schedule/triggers.md)
 topic for information on the triggering criterion setting.
 
 Step 12 – After specifying the settings for triggers, click **Add**. The trigger is displayed in the
 Triggers area.
 
 A schedule can have one or more triggers, allowing the schedule to be started in many ways. With
-multiple triggers, the schedule will start when any of the triggers occur.
+multiple triggers, the schedule starts when any of the triggers occurs.
 To enable or disable a trigger - Click **Edit** for a trigger in the Triggers area and use the
 toggle button at the top of the Update Trigger dialog box to enable or disable the trigger.
 To remove a trigger - Click **Remove** for a trigger to remove it.
@@ -111,7 +117,7 @@ used for signing in. Select an account to authenticate with it or click **Login 
 user** to provide the credentials of another account to run the schedule in the identity store.
 
 :::note
-Ensure this account falls under a high priority security role that has elevated permissions
+Ensure this account falls under a high-priority security role that has administrative permissions
 in the identity store (for example, Administrator).
 :::
 
@@ -120,10 +126,10 @@ Due to security enhancements, when editing a schedule, you must re-enter the acc
 :::
 
 :::note
-If you are creating this schedule in a Microsoft Entra ID identity store, you can only specify
+If you're creating this schedule in a Microsoft Entra ID identity store, you can only specify
 the logged-in user's account. See the
 [Schedules for Microsoft Entra ID Identity Store](overview.md#schedules-for-microsoft-entra-id-identity-store)
-section of the [Schedules](/docs/directorymanager/11.2/admincenter/schedule/overview.md) topic for additional information.
+section of the [Schedules in Directory Manager](/docs/directorymanager/11.2/admincenter/schedule/overview.md) topic for additional information.
 :::
 
 

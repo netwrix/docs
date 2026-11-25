@@ -1,30 +1,36 @@
 ---
-title: "Enroll your Identity Store Account"
-description: "Enroll your Identity Store Account"
+title: "Enroll Your Account in Directory Manager"
+description: "Enroll your identity store account for multifactor and second factor authentication with security questions, SMS, email, an authenticator app, or a device."
+keywords:
+  - enroll identity store account
+  - enrollment authentication types
+  - security questions enrollment
+  - WebAuthn
+  - TLS certificate
 sidebar_position: 10
 ---
 
-# Enroll your Identity Store Account
+# Enroll Your Account in Directory Manager
 
 When the administrator has enabled multifactor authentication and second factor authentication for
 an identity store, users must enroll their identity store accounts in Directory Manager. Without
-enrolling, they will not be able to sign into Directory Manager.
+enrolling, they can't sign in to Directory Manager.
 
-To enroll, a user must register his or her identity store account in Directory Manager using one or
+To enroll, a user must register their identity store account in Directory Manager using one or
 more authentication types. When a user enrolls for multifactor authentication, it also suffices for
 second factor authentication, and vice versa. See the
-[Authentication Policy](/docs/directorymanager/11.2/admincenter/authpolicy/authpolicy.md) topic for a list of supported
+[Directory Manager Authentication Policies](/docs/directorymanager/11.2/admincenter/authpolicy/authpolicy.md) topic for a list of supported
 authentication types.
 
-- For second factor authentication, a user must enroll his or her account with any one
+- For second factor authentication, a user must enroll their account with any one
   authentication type.
 - For multifactor authentication, a user may have to enroll with more than one authentication type,
   depending on what the administrator has configured for the respective user's security role. See
-  the[Enforce Authentication Types for Multifactor Authentication](/docs/directorymanager/11.2/admincenter/securityrole/policy/authentication.md#enforce-authentication-types-for-multifactor-authentication)
+  the [Enforce Authentication Types for Multifactor Authentication](/docs/directorymanager/11.2/admincenter/securityrole/policy/authentication.md#enforce-authentication-types-for-multifactor-authentication)
   topic.
 
 Account enrollment is a one-time process. Enrolled users must authenticate their identity store
-accounts every time they have to pass multifactor or second factor authentication.
+accounts every time they must pass multifactor or second factor authentication.
 
 ## Enroll your identity store account
 
@@ -43,7 +49,7 @@ Step 3 – Select an authentication type to enroll your account with.
 - Enroll your account using Security Questions
 
     To enroll your identity store account with the Security Questions authentication type, select a
-    question and then provide an answer for it. The number of questions you must answer are
+    question and then provide an answer for it. The number of questions you must answer is
     configured by the administrator for your role.
 
     1. Click the **Security Questions** tab.
@@ -55,13 +61,13 @@ Step 3 – Select an authentication type to enroll your account with.
         If the answer meets the requirements, such as length-related checks, a tick mark is
         displayed for it.
 
-    4. Repeat steps b and c to select another security question and provide an answer.
+    4. Repeat steps 2 and 3 to select another security question and provide an answer.
     5. Click **Enroll Account**. A confirmation message is displayed on successful enrollment.
 
 - Enroll your account using SMS
 
-    To enroll your identity store account using Mobile, you have to provide your mobile number.
-    Directory Manager sends a verification code to this number via SMS and you have to enter it in
+    To enroll your identity store account using Mobile, you must provide your mobile number.
+    Directory Manager sends a verification code to this number by SMS and you must enter it in
     Directory Manager to enroll successfully.
 
     1. Click the **Mobile** tab.
@@ -75,8 +81,8 @@ Step 3 – Select an authentication type to enroll your account with.
 
 - Enroll your account using Email
 
-    To enroll your identity store account using Email, you have to provide your email address.
-    Directory Manager sends a verification code to this email address and you have to enter it in
+    To enroll your identity store account using Email, you must provide your email address.
+    Directory Manager sends a verification code to this email address and you must enter it in
     Directory Manager to enroll successfully.
 
     1. Click the **Email** tab.
@@ -94,7 +100,7 @@ Step 3 – Select an authentication type to enroll your account with.
 
     1. Click the **Authenticator** tab.
     2. Scan the QR code with the authenticator app installed on your phone. The app generates a
-       verification code and displays it on your phone’s screen.
+       verification code and displays it on your phone's screen.
     3. Enter this code in the box on the **Authenticator** tab and click **Enroll Account**. A
        confirmation message is displayed on successful enrollment.
 
@@ -106,7 +112,7 @@ Step 3 – Select an authentication type to enroll your account with.
     1. Insert the YubiKey device in the USB slot of your computer.
     2. Click the **YubiKey** tab.
     3. Enter a name for your YubiKey device in the box and click **Enroll Account**.
-    4. You are directed to tap on the physical device. On tapping, your account gets enrolled.
+    4. You are directed to tap on the physical device. When you tap the device, your account is enrolled.
 
 - Enroll your account using Windows Hello
 
@@ -116,12 +122,12 @@ Step 3 – Select an authentication type to enroll your account with.
     Directory Manager allows enrollment on one Windows Hello device only.
 
     1. Click the **Windows Hello** tab.
-    2. Enter a name for your authentication device in the box and click **Start Registration**. You
-       will be prompted to provide your biometric information using the configured biometric device.
+    2. Enter a name for your authentication device in the box and click **Start registration**. You
+       are prompted to provide your biometric information using the configured biometric device.
 
 :::note
 YubiKey and Windows Hello have issues with enrollment in browsers. To resolve this issue,
-configure a TLS certificate on your machine. Without a TLS certificate, YubiKey, and Windows Hello
-will only work with the Firefox browser, as only Firefox allows WebAuthn without a TLS certificate.
+configure a TLS certificate on your machine. YubiKey and Windows Hello work only with the Firefox
+browser if there's no TLS certificate, as only Firefox allows WebAuthn without a TLS certificate.
 
 :::

@@ -1,10 +1,16 @@
 ---
-title: "User Life Cycle Schedule"
-description: "User Life Cycle Schedule"
+title: "Create a Directory Manager User Life Cycle Schedule"
+description: "Create a schedule that tracks profile validation dates, sends reminder emails, and disables users who don't validate their profiles in time."
+keywords:
+  - user life cycle
+  - profile validation
+  - reminder emails
+  - disable users
+  - Directory Manager schedule
 sidebar_position: 140
 ---
 
-# User Life Cycle Schedule
+# Create a Directory Manager User Life Cycle Schedule
 
 The User Life Cycle schedule monitors the profile validation process in Directory Manager. It
 performs the following main functions in keeping with the user profile validation settings for an
@@ -16,7 +22,7 @@ identity store:
 
 ## Create a User Life Cycle Schedule
 
-To create a User Life Cycle Schedule.
+To create a User Life Cycle schedule:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -30,17 +36,17 @@ Create Schedule page is displayed.
 
 Step 5 – In the Schedule Name box, enter a name for the schedule.
 
-Step 6 – The Name Preview box displays the schedule name prefixed with \_UserLifeCycle\_\_; the
+Step 6 – The Name Preview box displays the schedule name prefixed with \_UserLifeCycle\_\_. The
 schedule is displayed with this name in email notifications.
 
 Step 7 – Select a Directory Manager portal URL in the Portal URL dropdown list to include it in
 notifications generated for the schedule. Users are redirected to this portal to perform any
 necessary action.
 
-Step 8 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
-responsible for triggering this schedule. The number of services displayed in the list depend on the
+Step 8 – In the Scheduler Service Name dropdown list, select a Scheduler service to
+trigger this schedule. The number of services displayed in the list depends on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md) topic for additional
+service. See the [Directory Manager Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md) topic for additional
 information.
 
 :::note
@@ -49,18 +55,18 @@ When selecting a Scheduler service:
 - The Scheduler service for the Directory Manager instance on which you are creating the schedule is
   selected by default. However, you can select the Scheduler service of another instance as well.
 
-- The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  schedule will be triggered by the newly-selected Scheduler service.
+- The Scheduler service can be changed even after creating the schedule. On the next run, the
+  newly selected Scheduler service triggers the schedule.
 
 - If the selected Scheduler service fails to trigger the schedule, then no other Scheduler service
   can be selected automatically.
 
-- If a schedule is run manually on the Admin Center, then the Scheduler service of that instance
-  will be used.
+- If you run a schedule manually in Admin Center, the Scheduler service of that instance
+  is used.
 :::
 
-Step 9 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
-schedule, that, when met, starts the execution of the schedule. Follow step 11 in the
+Step 9 – Click **Add Triggers** in the Triggers area to specify a triggering criterion that, when met, starts the execution of the
+schedule. Follow step 11 in the
 [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
 topic to add triggers.
 

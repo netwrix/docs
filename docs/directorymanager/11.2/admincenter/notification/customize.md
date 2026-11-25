@@ -1,10 +1,16 @@
 ---
-title: "Customize Notifications"
-description: "Customize Notifications"
+title: "Customize Directory Manager Notification Templates"
+description: "Edit the subject line, content, and tags of Directory Manager notification templates in the Notification Editor, in any supported language."
+keywords:
+  - notification templates
+  - Notification Editor
+  - notification tags
+  - subject line
+  - notification language
 sidebar_position: 20
 ---
 
-# Customize Notifications
+# Customize Directory Manager Notification Templates
 
 Directory Manager generates a variety of notifications for different events, such as when changes
 are made to a group, when workflows are triggered, and when profile validation is due for users.
@@ -52,8 +58,8 @@ receive notifications in a different language by personalizing the language sett
 
     - Source code - Click the **Source Code** tab to view and edit the notification template in the
       HTML editor.
-    - Interactive - Click the **Interactive** tab to view the template in a user–friendly format.
-      This is how the notification will be displayed to the recipients. You can't format or edit
+    - Interactive - Click the **Interactive** tab to view the template in a user-friendly format.
+      This is how the notification is displayed to the recipients. You can't format or edit
       the template in this view.
 
 6. You can customize the notification template in the following ways:
@@ -89,7 +95,7 @@ Don't insert tables or custom photos in a notification template.
 After making the required changes, click **Save** on the menu bar.
 
 To aid you in content management, the Source Code view uses the same editor that powers Microsoft
-Visual Studio; hence, you also have the following options available:
+Visual Studio, so you also have the following options available:
 
 - Use the page navigator in the top right corner of the source code view to scroll through the
   content. The navigator is divided into sections, enabling you to jump to the beginning, middle, and
@@ -102,15 +108,15 @@ Visual Studio; hence, you also have the following options available:
 
 In a notification template, variables are appended with an attribute name and enclosed in percentage
 signs, to display that attribute’s value in the notification. For example,
-%TARGETOBJECT_DisplayName% will resolve to the display name of the targetobject; %REQUESTER_mail%
-will show the email address of the requester, and so on.
+%TARGETOBJECT_DisplayName% resolves to the display name of the targetobject; %REQUESTER_mail%
+shows the email address of the requester, and so on.
 
 **To replace a tag:**
 
 1. In the Source Code view, click the **Dictionary** tile to view the recommended tags to replace
    the default tags with.
 
-    ![tagdictionary](/images/directorymanager/11.2/admincenter/notification/tagdictionary.webp)
+    ![Tag dictionary listing the recommended tags for a notification template](/images/directorymanager/11.2/admincenter/notification/tagdictionary.webp)
 
     Each notification template has its own set of recommended tags.
 
@@ -118,7 +124,7 @@ will show the email address of the requester, and so on.
    tag dictionary to know what tags are used in the notification.
 3. After replacing a tag in the template, click **Save** on the menu bar.
 
-##### Complete List of Tags
+#### Complete List of Tags
 
 Here is a complete list of tags for object attributes. Using tags other than these isn't
 recommended. By using a tag, you can display an attribute’s value in the notification.
@@ -135,9 +141,9 @@ recommended. By using a tag, you can display an attribute’s value in the notif
 | 8.  | USER             | A user object under consideration in password-related notifications                                                               |
 | 9.  | MASTER           | The master account of a user in password-related notifications                                                                    |
 
-##### Complete List of Attributes
+#### Complete List of Attributes
 
-Following is a list of all attributes that can be used with tags in the notification templates: You
+The following attributes can be used with tags in the notification templates. You
 can also use any custom attributes.
 
 | Attributes            |                                |                             |                        |

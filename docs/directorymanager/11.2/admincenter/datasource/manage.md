@@ -1,10 +1,15 @@
 ---
-title: "Manage a Data Source"
-description: "Manage a Data Source"
+title: "Manage Data Sources in Directory Manager"
+description: "Search, update, and delete data sources in Admin Center, and learn what happens to Synchronize jobs and queries when you delete one."
+keywords:
+  - search data source
+  - update data source
+  - delete data source
+  - Admin Center data sources
 sidebar_position: 20
 ---
 
-# Manage a Data Source
+# Manage Data Sources in Directory Manager
 
 With Directory Manager, you can create data sources for various data providers. You can also update
 and delete these data sources.
@@ -34,9 +39,9 @@ Due to security enhancements, when updating a data source, you must re-enter the
 
 2. On the Data Sources page, click the tab for the provider the data source is built on.
 
-3. Click **Edit** for a data source. The **Update Data Source** page is displayed, that
+3. Click **Edit** for a data source. The **Update Data Source** page is displayed, which
 differs by provider. Refer to the steps for creating the respective data source in the
-[Create a Data Source](/docs/directorymanager/11.2/admincenter/datasource/create.md) topic to modify the info.
+[Create Data Sources in Directory Manager](/docs/directorymanager/11.2/admincenter/datasource/create.md) topic to modify the info.
 
 4. Click **Update Data Source**.
 

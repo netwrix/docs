@@ -1,13 +1,19 @@
 ---
-title: "Set up Authentication via Windows Hello"
-description: "Set up Authentication via Windows Hello"
+title: "Set Up Windows Hello Authentication in Directory Manager"
+description: "Enable Windows Hello on a device, then enable and enforce Windows Hello authentication for an identity store and security role."
+keywords:
+  - Windows Hello
+  - biometric authentication
+  - second factor authentication
+  - multifactor authentication
+  - Microsoft Edge
 sidebar_position: 50
 ---
 
-# Set up Authentication via Windows Hello
+# Set Up Windows Hello Authentication in Directory Manager
 
-The Windows Hello authentication type can be used on Windows 10 devices only with specialized
-hardware installed, such as fingerprint reader and 3D camera.
+The Windows Hello authentication type works on Windows 10 devices only, and only with specialized
+hardware installed, such as a fingerprint reader or 3D camera.
 
 :::note
 Windows Hello supports the Microsoft Edge browser only.
@@ -17,9 +23,9 @@ Windows Hello supports the Microsoft Edge browser only.
 
 1. On the Windows Start menu, select **Settings**.
 2. Go to **Accounts > Sign-in options**.
-3. You are prompted to enter a PIN. Click/tap **Add** under **PIN** to set up a PIN code.  
+3. You're prompted to enter a PIN. Select **Add** under **PIN** to set up a PIN code.  
    Having set a PIN, you can proceed to add biometric data.
-4. In the **Windows Hello** section, click **Set up** under **Face** or **Fingerprint** to add
+4. In the **Windows Hello** section, select **Set up** under **Face** or **Fingerprint** to add
    recognition data.
 
 ## Enable Windows Hello Authentication for an Identity Store
@@ -27,7 +33,7 @@ Windows Hello supports the Microsoft Edge browser only.
 The Windows Hello authentication type must be enabled for an identity store before it can be used
 for second factor authentication and multifactor authentication.
 
-To enable it, see the [Enable Authentication Types](/docs/directorymanager/11.2/admincenter/identitystore/configure/authtypes.md) topic.
+To enable it, see the [Enable Authentication Types for an Identity Store](/docs/directorymanager/11.2/admincenter/identitystore/configure/authtypes.md) topic.
 
 ## Enforce Windows Hello Authentication for a Role in an Identity Store
 

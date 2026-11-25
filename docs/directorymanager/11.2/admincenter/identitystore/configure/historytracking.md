@@ -1,17 +1,22 @@
 ---
-title: "Configure History Tracking"
-description: "Configure History Tracking"
+title: "Configure History Tracking in Directory Manager"
+description: "Enable history tracking for an identity store, choose which actions to track, and set how long Directory Manager retains history data."
+keywords:
+  - enable history tracking
+  - tracked actions
+  - history retention period
+  - export history to CSV
 sidebar_position: 90
 ---
 
-# Configure History Tracking
+# Configure History Tracking in Directory Manager
 
 In Directory Manager, history for an identity store is tracked at two levels:
 
 - **When objects are created, modified, and deleted** - When you enable history tracking for an
   identity store, Directory Manager tracks all actions that are committed to the directory using:
 
-    - Directory Manager portal (whether manually, through Synchronize jobs. or changes to object
+    - Directory Manager portal (whether manually, through Synchronize jobs, or changes to object
       entitlements)
     - Management Shell cmdlets
     - Admin Center (actions performed by schedules only)
@@ -23,16 +28,16 @@ In Directory Manager, history for an identity store is tracked at two levels:
 
     Use the _History_ node in the Directory Manager portal to view the history data that the history
     tracking function collects for objects. History for individual objects is also displayed in the
-    respective object’s properties.
+    respective object's properties.
 
-- **When changes are made to an identity store’s configurations** - Directory Manager lets you
-  track the changes made to an identity store’s configurations, which include the following:
+- **When changes are made to an identity store's configurations** - Directory Manager lets you
+  track the changes made to an identity store's configurations, which include the following:
 
     - identity store properties
     - workflows
     - security roles
 
-    See the [Identity Store History](/docs/directorymanager/11.2/admincenter/identitystore/view/view.md) topic to view the tracked history data.
+    See the [View Identity Store History in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/view/view.md) topic to view the tracked history data.
 
 By default, history tracking is disabled. You can:
 
@@ -42,14 +47,13 @@ By default, history tracking is disabled. You can:
   over, data is exported to CSV files and deleted from the database.
 
 :::info
-History tracking can slow down system performance. For optimal performance, it is
-recommended that you track only specific, more important actions and limit Directory Manager history
+History tracking can slow down system performance. For optimal performance, track only specific, more important actions and limit Directory Manager history
 data storage to the most recent records.
 :::
 
 
 See the [History in Directory Manager](/docs/directorymanager/11.2/admincenter/general/history.md) and
-[Event Logging](/docs/directorymanager/11.2/admincenter/identitystore/view/eventlogging.md) topics for additional information.
+[Directory Manager Event Logging](/docs/directorymanager/11.2/admincenter/identitystore/view/eventlogging.md) topics for additional information.
 
 ## Enable History Tracking for All Actions
 
@@ -68,7 +72,7 @@ configurations, workflows, and security roles are also tracked.
 4. Use the toggle button in the top right corner to enable or disable history tracking for the
    identity store.
 
-    - On enabling, _All Actions_ is auto selected in the **Track** dropdown list. This indicates
+    - On enabling, _All Actions_ is selected automatically in the **Track** dropdown list. This indicates
       that (a) all actions that users perform on directory objects and (b) changes made to identity
       store configurations, workflows, and security roles are tracked for the identity store.  
       To track specific actions, see the Track Specific Actions for an Identity Store topic.
@@ -79,7 +83,7 @@ configurations, workflows, and security roles are also tracked.
 ## Track Specific Actions for an Identity Store
 
 Rather than tracking all actions for an identity store, you can choose to track the most important
-actions, such as changes to a group’s primary owner and object creation.
+actions, such as changes to a group's primary owner and object creation.
 
 **To track specific actions:**
 
@@ -103,7 +107,7 @@ actions, such as changes to a group’s primary owner and object creation.
     | Workflows history        | Addition, deletion, or modification made to a workflow. It doesn't track the deletion of workflow requests, that is tracked under the **Identity Store history** option.                                                                      |
     | Security Roles history   | Addition, deletion, or modification made to a security role                                                                                                                                                                                    |
     | Security Type Change     | Changes to a group's security type                                                                                                                                                                                                             |
-    | Identity Store history   | Changes to an identity store’s settings. This includes the configurations available for an identity store. This option doesn't track changes made to workflows and security roles. It does, however, track the deletion of workflow requests. |
+    | Identity Store history   | Changes to an identity store's settings. This includes the configurations available for an identity store. This option doesn't track changes made to workflows and security roles. It does, however, track the deletion of workflow requests. |
 
 5. Click an action to track it for the identity store. The tile for the action changes to blue,
    indicating that it is tracked.
@@ -112,7 +116,7 @@ actions, such as changes to a group’s primary owner and object creation.
 ## Retain Complete History Data
 
 You can set Directory Manager to retain history data for the identity store in the Directory Manager
-database forever.
+database indefinitely.
 
 **To retain history data forever:**
 
@@ -124,7 +128,7 @@ database forever.
    tracked history data in the database.
 
     :::note
-    This setting may result in a massive increase in the database size and may affect
+    This setting can greatly increase the database size and can affect
     Directory Manager performance.
     :::
 
@@ -136,7 +140,7 @@ database forever.
 You can set Directory Manager to retain an identity store's history data for a specified length of
 time in the database. When the retention period is over, the History Retention schedule archives
 this data by moving it from the database to CSV files. See the
-[History Retention Schedule](/docs/directorymanager/11.2/admincenter/schedule/historyretention.md) topic.
+[Directory Manager History Retention Schedule](/docs/directorymanager/11.2/admincenter/schedule/historyretention.md) topic.
 
 **To retain history data for a specific period:**
 
@@ -159,12 +163,11 @@ this data by moving it from the database to CSV files. See the
 5. Click **Save**.
 
 When you enable history tracking, a newly created identity store retains history for 1 year by
-default. You can change this period
-on the **History** page. An existing identity store keeps its current retention setting.
+default. You can change this period on the **History** page. An existing identity store keeps its current retention setting.
 
 ## Disable History Tracking
 
-On disabling history tracking for an identity store, Directory Manager doesn't log the history for
+When you disable history tracking for an identity store, Directory Manager doesn't log the history for
 actions performed in the identity store. Disabling history tracking doesn't delete any already
 recorded history data.
 

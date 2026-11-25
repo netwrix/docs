@@ -1,10 +1,16 @@
 ---
-title: "Data Service"
-description: "Data Service"
+title: "Directory Manager Data Service"
+description: "Learn what the Directory Manager Data service does, how the default service is created, and how multiple Data services support load balancing."
+keywords:
+  - Directory Manager Data service
+  - default Data service
+  - load balancing
+  - IP allow list
+  - native IIS
 sidebar_position: 10
 ---
 
-# Data Service
+# Directory Manager Data Service
 
 Admin Center lets you quickly create and deploy a Data service. This service is responsible for core
 Directory Manager operations, such as communication with identity providers, communications with the

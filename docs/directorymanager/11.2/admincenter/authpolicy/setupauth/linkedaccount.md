@@ -1,17 +1,22 @@
 ---
-title: "Set up Authentication via Linked Account"
-description: "Set up Authentication via Linked Account"
+title: "Set Up Linked Account Authentication in Directory Manager"
+description: "Let users enroll and authenticate across linked identity store accounts, and enable and enforce Linked Account authentication for multifactor use."
+keywords:
+  - Linked Account authentication
+  - multifactor authentication
+  - identity store
+  - account unlock
+  - password reset
 sidebar_position: 40
 ---
 
-# Set up Authentication via Linked Account
+# Set Up Linked Account Authentication in Directory Manager
 
-The Directory Manager portal enables a user to link accounts that he or she may have in different
-identity stores. When the user enrolls any one of those linked accounts in Directory Manager, it
+In the Directory Manager portal, users can link accounts that they might have in different
+identity stores. When a user enrolls any one of those linked accounts in Directory Manager, it
 suffices for the enrollment of all linked accounts.
 
-Users can then reset their account passwords and unlock accounts through a linked account. Let’s
-assume a user links his or her accounts in Identity Store A and Identity Store B. Using the Linked
+Users can then reset their account passwords and unlock accounts through a linked account. Suppose a user links their accounts in Identity Store A and Identity Store B. Using the Linked
 Account authentication type, the user can unlock the Identity Store A account by providing the
 credentials of the Identity Store B account and vice versa.
 
@@ -25,7 +30,7 @@ The Linked Account authentication type is available for multifactor authenticati
 The Linked Account authentication type must be enabled for an identity store before it can be used
 for multifactor authentication.
 
-To enable it, see the [Enable Authentication Types](/docs/directorymanager/11.2/admincenter/identitystore/configure/authtypes.md) topic.
+To enable it, see the [Enable Authentication Types for an Identity Store](/docs/directorymanager/11.2/admincenter/identitystore/configure/authtypes.md) topic.
 
 ## Enforce Linked Account Authentication for a Security Role
 

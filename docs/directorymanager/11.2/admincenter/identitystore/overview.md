@@ -1,20 +1,26 @@
 ---
-title: "Identity Stores"
-description: "Identity Stores"
+title: "Identity Stores in Directory Manager"
+description: "Learn what an identity store is, which identity providers Directory Manager supports, and the tasks you can perform through one."
+keywords:
+  - identity store
+  - identity provider
+  - Active Directory
+  - Microsoft Entra ID
+  - Google Workspace
 sidebar_position: 30
 ---
 
-# Identity Stores
+# Identity Stores in Directory Manager
 
 Use Directory Manager to create an identity store on an identity provider and perform
 different functions in that provider through the identity store. These functions include:
 
 - Group management tasks, such as creating groups, scheduling group updates, and expiring groups.
-- User management tasks, such as creating users and mailboxes, managing users’ profiles, and
+- User management tasks, such as creating users and mailboxes, managing user profiles, and
   managing direct reports.
 - Bulk user provisioning and deprovisioning in an identity provider, database, or even a file, such
   as an Excel file.
-- Entitlement related tasks, such as updating the effective NTFS permissions for shared resources on
+- Entitlement-related tasks, such as updating the effective NTFS permissions for shared resources on
   a file server.
 - Reporting and analytics.
 
@@ -30,9 +36,9 @@ Identity stores created for these providers can also be used as source and desti
 Synchronize jobs for bulk user management tasks.
 
 You can also link Active Directory and Microsoft Entra ID identity stores to sync identical objects
-there.
+between them.
 
 :::note
-You can define a custom identity store for non-supported identity providers in Directory
+You can define a custom identity store for unsupported identity providers in Directory
 Manager. Contact Netwrix Client Services for support.
 :::

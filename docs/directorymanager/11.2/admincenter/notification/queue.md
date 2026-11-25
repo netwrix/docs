@@ -1,25 +1,31 @@
 ---
-title: "Manage the Notification Queue"
-description: "Manage the Notification Queue"
+title: "Manage the Directory Manager Notification Queue"
+description: "View, filter, send, and delete queued email notifications that Directory Manager generates for identity store events."
+keywords:
+  - notification queue
+  - Email service
+  - send notification
+  - delete notification
+  - failed notifications
 sidebar_position: 10
 ---
 
-# Manage the Notification Queue
+# Manage the Directory Manager Notification Queue
 
-Directory Manager maintains a queue of the email notification generated on events that occur in the
+Directory Manager maintains a queue of the email notifications generated on events that occur in the
 identity stores, and sends them one by one through the SMTP server configured for the respective
 identity store. Each new email notification is stacked at the top of the queue.
 
 When the SMTP server for an identity store is down and notifications in the queue can't be
-delivered, Directory Manager attempts to re-send them until they are successfully delivered.
+delivered, Directory Manager attempts to resend them until they're successfully delivered.
 Successfully delivered notifications move out of the queue.
 
-The Email service is responsible for queuing and sending notifications. You can also manually send
-notifications as well as delete notifications. Both actions are tracked in Admin Center history.
+The Email service is responsible for queuing and sending notifications. You can also manually send or
+delete notifications. Both actions are tracked in Admin Center history.
 
 Directory Manager also features a Notification Editor that lists the notification templates for all
 notifications that Directory Manager generates on various events. See the
-[Customize Notifications](/docs/directorymanager/11.2/admincenter/notification/customize.md) topic for details.
+[Customize Directory Manager Notification Templates](/docs/directorymanager/11.2/admincenter/notification/customize.md) topic for details.
 
 ## View the Notification Queue
 
@@ -36,7 +42,7 @@ following is displayed for a notification:
 - **In Progress:** displays one of the following statuses for a notification:
 
     - **True:** indicates that the notification is being processed for sending
-    - **False:** indicates that the notification isn't under process
+    - **False:** indicates that the notification isn't being processed
 
     As Directory Manager processes notifications in batches, all notifications in a batch have the
     same status.
@@ -48,7 +54,7 @@ Click **Filter** to filter the notifications based on their status as either _pe
 In the **Categories** list on the **Filter** dialog box, select one of the following and click
 **Apply**:
 
-- **Pending:** to view notifications that are queued for sending and the Email service has not yet
+- **Pending:** to view notifications that are queued for sending and the Email service hasn't yet
   attempted to send them.
 - **Failed:** to view notifications the Email service attempted to send but failed. The retry count
   for such notifications is incremented by ‘1’ on every failed attempt.
@@ -57,11 +63,11 @@ In the **Categories** list on the **Filter** dialog box, select one of the follo
 ### Available Actions
 
 - Click **Send** for a notification in the **Actions** column to send it urgently, without waiting
-  for the Email service to send it on its turn.
+  for the Email service to send it in its turn.
 - Click **Delete** for a notification in the **Actions** column to delete it.
 - Click **Refresh** to refresh the notification queue.
 - Click **Notification Editor** to launch the Notification Editor, where you can view and modify
-  notification templates. See the [Customize Notifications](/docs/directorymanager/11.2/admincenter/notification/customize.md) topic for details.
+  notification templates. See the [Customize Directory Manager Notification Templates](/docs/directorymanager/11.2/admincenter/notification/customize.md) topic for details.
 
 ## Send a Notification Urgently
 
@@ -74,7 +80,7 @@ In the **Categories** list on the **Filter** dialog box, select one of the follo
     - To send multiple notifications, select the checkboxes for those notifications. To select all
       notifications, select the checkbox in the header row. This displays the following icons:
 
-        ![send_refresh](/images/directorymanager/11.2/admincenter/notification/send_refresh.webp)
+        ![Send and Delete icons displayed above the selected notifications](/images/directorymanager/11.2/admincenter/notification/send_refresh.webp)
 
         Click the **Send** icon to send the selected notifications urgently.
 
@@ -93,6 +99,6 @@ To delete a notification:
     - To delete multiple notifications, select the checkboxes for those notifications. To select
       all notifications, select the checkbox in the header row. This displays the following icons:
 
-        ![send_refresh](/images/directorymanager/11.2/admincenter/notification/send_refresh.webp)
+        ![Send and Delete icons displayed above the selected notifications](/images/directorymanager/11.2/admincenter/notification/send_refresh.webp)
 
         Click the **Delete** icon to delete the selected notifications.

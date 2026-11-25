@@ -1,7 +1,13 @@
 ---
 title: "Allow Return URLs for Load Balancers and Reverse Proxies"
-description: "Add the URLs clients use to reach Directory Manager to the Security service's list of allowed base URLs, so that load balancer, reverse proxy, and IdP-initiated sign-ins work."
+description: "Add client URLs to the Security service's allowed base URLs so sign-ins through a load balancer, reverse proxy, or identity provider work."
 sidebar_position: 40
+keywords:
+  - AllowedBaseUrls
+  - return URL validation
+  - load balancer
+  - reverse proxy
+  - IdP-initiated sign-in
 ---
 
 # Allow Return URLs for Load Balancers and Reverse Proxies

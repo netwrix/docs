@@ -1,12 +1,18 @@
 ---
-title: "Group Management Concepts"
-description: "Group Management Concepts"
+title: "Directory Manager Group Management Concepts"
+description: "Learn how Directory Manager classifies groups as unmanaged, Smart Groups, or Dynasties, and how group type, scope, and security type work."
+keywords:
+  - Smart Groups
+  - Dynasties
+  - group classification
+  - group scope
+  - group security types
 sidebar_position: 10
 ---
 
-# Group Management Concepts
+# Directory Manager Group Management Concepts
 
-To make the best of Directory Manager, you must be familiar with the following group management
+To get the most from Directory Manager, you must be familiar with the following group management
 concepts:
 
 - Group Classification
@@ -111,7 +117,7 @@ Groups fall into two functional categories: distribution groups and security gro
 ### Distribution Groups
 
 Distribution groups, also called distribution lists, are designed to combine users together so that
-you can send emails (via a mail server) to a group rather than individually to each user in the
+you can send emails (through a mail server) to a group rather than individually to each user in the
 group.
 
 Distribution groups can be used only with email applications, such as Microsoft Exchange. These
@@ -126,7 +132,7 @@ security groups, you can:
 
 - Assign user rights - User rights are assigned to security groups to determine what members of that
   group can do within the scope of a domain (or forest). For example, a user who is added to the
-  Backup Operators group can back-up and restore files and directories located on each domain
+  Backup Operators group can back up and restore files and directories located on each domain
   controller in the domain. By being a member of this group, you inherit the user rights assigned to
   the group.
 - Assign permissions to resources - This is different from user rights because user rights apply
@@ -154,8 +160,8 @@ A group can be of universal, global, or domain local scope.
 
 Use groups with universal scope to consolidate groups that span domains. To do this, add the
 accounts to groups with global scope, and then nest these groups within groups that have universal
-scope. When you use this strategy, any membership changes in the groups that have global scope do
-not affect the groups with universal scope.
+scope. When you use this strategy, any membership changes in the groups that have global scope
+don't affect the groups with universal scope.
 
 Don't change the membership of a group with universal scope frequently, because membership changes
 cause the entire membership of the group to be replicated to every global catalog in the forest.
@@ -192,6 +198,6 @@ Directory Manager provides three security types:
   can add or remove members from the group. Requests to join or leave the group can't be submitted.
 - Semi-Private - to restrict access to the group to members selected by the group owner. However,
   requests to join or leave the group can be sent to the owner.
-- Public - to allow all users to access the group. Users can join or leave the group at will and do
-  not require any permissions to do so. The administrator can configure email notifications to be
+- Public - to allow all users to access the group. Users can join or leave the group at any time and don't
+  require any permissions to do so. The administrator can configure email notifications to be
   sent to the group owner when a user joins or leaves the group.

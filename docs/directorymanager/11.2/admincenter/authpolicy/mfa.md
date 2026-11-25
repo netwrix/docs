@@ -1,12 +1,18 @@
 ---
-title: "Configure Multifactor Authentication"
-description: "Configure Multifactor Authentication"
+title: "Configure Multifactor Authentication in Directory Manager"
+description: "Define a multifactor authentication policy for an identity store and enforce authentication types for security role members."
+keywords:
+  - multifactor authentication
+  - MFA policy
+  - identity store enrollment
+  - security role authentication
+  - helpdesk restricted mode
 sidebar_position: 10
 ---
 
-# Configure Multifactor Authentication
+# Configure Multifactor Authentication in Directory Manager
 
-You can define a multifactor authentication (MFA) policy for an identity store. This policy enforces
+You can define a multifactor authentication (MFA) policy for an identity store. This policy requires
 users to enroll their identity store accounts in Directory Manager using one or more authentication
 types. Supported authentication types are discussed in the
 [Authentication Policies - A Comparison](/docs/directorymanager/11.2/admincenter/authpolicy/authpolicy.md) topic.
@@ -34,8 +40,8 @@ topic.
 To configure multifactor authentication for a security role in an identity store, do the following:
 
 1. Enable one or more authentication types for the identity store.  
-   See the [Enable Authentication Types](/docs/directorymanager/11.2/admincenter/identitystore/configure/authtypes.md) topic for details.
-2. Enforce role members to use specific authentication types for multifactor authentication.  
+   See the [Enable Authentication Types for an Identity Store](/docs/directorymanager/11.2/admincenter/identitystore/configure/authtypes.md) topic for details.
+2. Require role members to use specific authentication types for multifactor authentication.  
    See the
    [Enforce Authentication Types for Multifactor Authentication](/docs/directorymanager/11.2/admincenter/securityrole/policy/authentication.md#enforce-authentication-types-for-multifactor-authentication)
    topic for details.

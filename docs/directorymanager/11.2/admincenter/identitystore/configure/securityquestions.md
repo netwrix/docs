@@ -1,16 +1,21 @@
 ---
-title: "Manage the Local Question Pool"
-description: "Manage the Local Question Pool"
+title: "Manage the Local Security Question Pool"
+description: "Add questions from the global pool or your own questions to an identity store's local pool, or remove questions that users no longer need."
+keywords:
+  - local question pool
+  - global question pool
+  - security questions
+  - identity store
+  - security question enrollment
 sidebar_position: 130
 ---
 
-# Manage the Local Question Pool
+# Manage the Local Security Question Pool
 
 When you create a new identity store, four questions from the global question pool are added to the
-identity store’s local pool by default. A local pool is maintained individually by each identity
-store. You can modify a local pool by (a) adding questions from the global question pool, (b) adding
-questions of your choice (questions that aren't in the global pool), and (c) by removing questions
-from it.
+identity store's local pool by default. Each identity store maintains its own local pool. You can
+modify a local pool by (a) adding questions from the global question pool, (b) adding questions of
+your choice (questions that aren't in the global pool), and (c) removing questions from it.
 
 To enroll using security questions, identity store users must select a certain number of questions
 from the local pool and provide answers.
@@ -27,7 +32,7 @@ from the local pool and provide answers.
    to the **Questions** list.
 5. Click **Save**.
 
-## Add a Question of your Choice to the Local Pool
+## Add a Question of Your Choice to the Local Pool
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
@@ -46,4 +51,4 @@ from the local pool and provide answers.
 4. On the **Security Questions** page, click **Remove** for a security question to remove it from
    the local pool. To remove all questions, click **Remove All**.
 5. Click **Save**.  
-   Deleting a question doesn't impact the users enrolled with the question.
+   Deleting a question doesn't affect the users enrolled with the question.

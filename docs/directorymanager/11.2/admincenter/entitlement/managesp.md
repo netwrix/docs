@@ -1,20 +1,21 @@
 ---
-title: "Manage SharePoint Sites"
-description: "Manage SharePoint Sites"
+title: "Manage SharePoint Sites for Directory Manager Entitlement"
+description: "Add SharePoint sites to a Microsoft Entra ID identity store, replicate their permissions to Elasticsearch, and manage the service account and document libraries."
+keywords:
+  - SharePoint entitlement
+  - SharePoint admin URL
+  - document library permissions
+  - Elasticsearch replication
+  - Microsoft Entra ID identity store
 sidebar_position: 20
 ---
 
-# Manage SharePoint Sites
+# Manage SharePoint Sites for Directory Manager Entitlement
 
-An Entra ID user, who is:
-
-- logged-in to the Admin Center
-
-- a non-MFA user (i.e. multifactor authentication isn't enabled for the user)
-
-An Entra ID user can add and configure SharePoint sites in an Entra ID identity store to replicate
-their entitlement data to Elasticsearch for Directory Manager. The user can then manage permissions
-on the sites and the document libraries in those sites using Directory Manager.
+An Entra ID user who is signed in to Admin Center and isn't a multifactor authentication (MFA) user
+can add and configure SharePoint sites in an Entra ID identity store to replicate their entitlement
+data to Elasticsearch for Directory Manager. The user can then manage permissions on the sites and
+the document libraries in those sites using Directory Manager.
 
 The user can also manage certain settings for a site, such as change the service account for reading
 and managing permissions and exclude a document library in a site from entitlement management.
@@ -28,7 +29,7 @@ To provide the SharePoint Admin URL:
 
 In Admin Center, click **Identity Stores** in the left pane.
 
-Step 1 – On the Identify Stores page, click the ellipsis button for an identity store and select
+Step 1 – On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
 Step 2 – Click **Entitlement** under **Settings** in the left pane. The Entitlement page is
@@ -38,7 +39,7 @@ Step 3 – Click **Set up SharePoint Site** and then click **Configure New Site*
 
 Step 4 – On the Configure New Site dialog box:
 
-- In the Site URLox, enter the **SharePoint admin URL** to fetch the sites.
+- In the Site URL box, enter the **SharePoint admin URL** to fetch the sites.
 
 - In the User name and Password boxes, provide the credentials of a service account to connect to
   the site for managing entitlements.
@@ -50,15 +51,15 @@ Step 4 – On the Configure New Site dialog box:
 
 Step 5 – Click **Save**.
 
-#### SharePoint Site Details
+### SharePoint Site Details
 
 The information displayed for a site in the Included SharePoint Sites area is the same as displayed
 for a file server in an Active Directory identity store. Refer to the
 [File Server Details ](/docs/directorymanager/11.2/admincenter/entitlement/managefs.md#file-server-details) topic for more info. Though in this
-case, the User namecolumn displays the username of the account used to connect to the site, and it
+case, the User name column displays the username of the account used to connect to the site, and it
 isn't blank.
 
-#### Search SharePoint Sites
+### Search SharePoint Sites
 
 Use the _Search Filters_ option in the Included SharePoint Sites area to search for a site in the
 listing. The filters are the same as displayed for a file server in an Active Directory identity
@@ -76,7 +77,7 @@ Step 2 – On the **Identity Stores** page, click the ellipsis button for an ide
 
 Step 3 – Click **Entitlement** under **Settings** in the left pane.
 
-Step 4 – On the **Entitlement** page, select the **Include all Future Sites** checkbox to ensure
+Step 4 – On the **Entitlement** page, select the **Include all future Site** checkbox to ensure
 that any new site created under the SharePoint admin URL is automatically fetched and displayed in
 the **Included SharePoint Sites** area for permission replication.
 
@@ -88,7 +89,7 @@ To view the document libraries in a site:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identify Stores page, click the ellipsis button for an identity store and select
+Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
 Step 3 – Click **Entitlement** under Settings in the left pane.
@@ -97,7 +98,7 @@ Step 4 – In the Included SharePoint Sites area on the **Entitlement** page, cl
 button for a site and select **Edit**. On the **Edit Site** dialog box:
 
 - The Site Libraries area displays the document libraries in the site.
-- The name of the [GroupID Entitlement Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlement.md) that computes the
+- The name of the [Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlement.md) that computes the
   permissions on document libraries in the site and replicates them to Elasticsearch, is displayed
   next to **Job**.
 
@@ -113,7 +114,7 @@ To exclude a document library:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identify Stores page, click the ellipsis button for an identity store and select
+Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
 Step 3 – Click **Entitlement** under Settings in the left pane.
@@ -147,9 +148,9 @@ button for a site and select **Edit**.
 
 Step 5 – On the **Edit Site** dialog box, you can change the service account used to connect to the
 site for reading and updating permissions. The
-[GroupID Entitlement Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlement.md),
-[Entitlement Scope Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlementscope.md), and
-[Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlementtemporarypermissions.md) run
+[Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlement.md),
+[Edit the Directory Manager Entitlement Scope Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlementscope.md), and
+[Edit the Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlementtemporarypermissions.md) run
 in the context of the account specified here.
 
 - The User name and Password boxes display the credentials of the account used to connect to the
@@ -174,10 +175,10 @@ Step 2 – Click **Save** on the Entitlement page.
 After adding the SharePoint admin URL to manage entitlements for document libraries in the sites, it
 is essential to replicate object permissions from the SharePoint server to Elasticsearch.
 
-The [GroupID Entitlement Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlement.md) runs on a set frequency to
+The [Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlement.md) runs on a set frequency to
 replicate the effective permissions on document libraries in the sites. You can also run this
-schedule any time manually for a site listed in the Included SharePoint sites area on the
-Entitlementpage.
+schedule at any time manually for a site listed in the Included SharePoint sites area on the
+Entitlement page.
 
 To replicate permissions manually:
 
@@ -196,14 +197,14 @@ Step 4 – On the Entitlement page, you can manually replicate permissions for o
   replicate. To replicate all sites, select the checkbox in the header row. This displays the
   following icons:
 
-    ![replicate_permissions](/images/directorymanager/11.2/admincenter/entitlement/ad/replicate_permissions.webp)
+    ![Toolbar icons shown when sites are selected](/images/directorymanager/11.2/admincenter/entitlement/ad/replicate_permissions.webp)
 
     Either click the **Replicate** icon or the **Replicate** button.
 
-This triggers the GroupID Entitlement schedule for the identity store, which computes and replicates
+This triggers the Directory Manager Entitlement schedule for the identity store, which computes and replicates
 the effective permissions granted to directory objects on document libraries in the sites. This
 process may take some time.
-The Last Replicated column displays the date and time the GroupID Entitlement schedule last ran.
+The Last Replicated column displays the date and time the Directory Manager Entitlement schedule last ran.
 
 ## Exclude a Site from Entitlement Management
 
@@ -230,7 +231,7 @@ Step 4 – On the **Entitlement** page, you can exclude one or more sites.
     Select the checkboxes for the sites you don't want to replicate. To exclude all sites, select
     the checkbox in the header row. This displays the following icons:
 
-    ![replicate_permissions](/images/directorymanager/11.2/admincenter/entitlement/ad/replicate_permissions.webp)
+    ![Toolbar icons shown when sites are selected](/images/directorymanager/11.2/admincenter/entitlement/ad/replicate_permissions.webp)
 
     Click **Remove**. The sites are moved to the **Excluded SharePoint Sites** area.
 
@@ -244,7 +245,7 @@ To restore an excluded site:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identify Stores page, click the ellipsis button for an identity store and select
+Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
 Step 3 – Click **Entitlement** under Settings in the left pane.

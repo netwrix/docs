@@ -1,10 +1,16 @@
 ---
-title: "Entitlement"
-description: "Entitlement"
+title: "Entitlement Management in Directory Manager"
+description: "Learn how Directory Manager Entitlement replicates and manages permissions on Active Directory file servers and SharePoint sites, and how its schedules work."
+keywords:
+  - Directory Manager Entitlement
+  - NTFS permissions
+  - SharePoint document library permissions
+  - temporary permissions
+  - entitlement schedules
 sidebar_position: 70
 ---
 
-# Entitlement
+# Entitlement Management in Directory Manager
 
 With Directory Manager Entitlement, you can stay informed on the permissions assigned to objects
 residing on your Active Directory servers and SharePoint sites.
@@ -33,7 +39,7 @@ the following:
   file servers, and replicate those permissions to Elasticsearch.
 - View and manage entitlements in the Entitlement section of the Directory Manager portal.
 
-See the [Manage File Servers](/docs/directorymanager/11.2/admincenter/entitlement/managefs.md) topic for additional information.
+See the [Manage File Servers for Directory Manager Entitlement](/docs/directorymanager/11.2/admincenter/entitlement/managefs.md) topic for additional information.
 
 ## Entitlement for SharePoint
 
@@ -59,7 +65,7 @@ do the following:
   and replicate those permissions to Elasticsearch.
 - View and manage entitlements in the Entitlement section of the Directory Manager portal.
 
-See the [Manage SharePoint Sites](/docs/directorymanager/11.2/admincenter/entitlement/managesp.md) topic for additional information.
+See the [Manage SharePoint Sites for Directory Manager Entitlement](/docs/directorymanager/11.2/admincenter/entitlement/managesp.md) topic for additional information.
 
 ## Perpetual Entitlements vs Temporary Entitlements
 
@@ -69,7 +75,7 @@ Using Directory Manager, you can manage entitlements in the following ways:
   perpetually, it continues to apply until you choose to revoke it. Similarly, when a permission is
   revoked perpetually, it stays so until you choose to reapply it.
 - **Assign and revoke permissions on a temporary basis** - A temporary permission is one with a
-  start and end date specified. In case of temporary assignment, Directory Manager auto assigns the
+  start and end date specified. In case of temporary assignment, Directory Manager automatically assigns the
   permission on the start date and revokes it on the end date. Similarly, for temporary removal,
   Directory Manager revokes the permission on the start date and reassigns it on the end date.
 
@@ -78,19 +84,19 @@ Using Directory Manager, you can manage entitlements in the following ways:
 When you add the first server or site for entitlement management, the following three schedules are
 automatically created in the identity store:
 
-- [GroupID Entitlement Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlement.md) - replicates object permissions on file
+- [Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlement.md) - replicates object permissions on file
   servers and SharePoint sites for an Active Directory and Microsoft Entra ID identity store
   respectively. It performs a complete replication.
-- [Entitlement Scope Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlementscope.md) - replicates changes made to object
+- [Edit the Directory Manager Entitlement Scope Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlementscope.md) - replicates changes made to object
   permissions on file servers and SharePoint sites using Directory Manager.
-- [Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlementtemporarypermissions.md) -
+- [Edit the Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.2/admincenter/schedule/entitlementtemporarypermissions.md) -
   updates the temporary permissions for objects on file servers and SharePoint sites.
 
 ## Replication
 
 When a file server/SharePoint site is added for entitlement management, an essential task is to
 replicate object permissions from the file server or SharePoint site to the Elasticsearch
-repository. The GroupID Entitlement schedule for an identity store performs this replication, which
+repository. The Directory Manager Entitlement schedule for an identity store performs this replication, which
 involves the following:
 
 - Directory Manager first computes the effective NTFS permissions granted to directory objects on
@@ -98,14 +104,14 @@ involves the following:
   granted to objects on document libraries.
 - The Data service then replicates this data to Elasticsearch.
 
-The GroupID Entitlement schedule auto runs at a set frequency, but you can also run it manually for
-a file server or SharePoint site. Directory Manager time stamps the last time permissions were
+The Directory Manager Entitlement schedule runs automatically at a set frequency, but you can also run it manually for
+a file server or SharePoint site. Directory Manager records a timestamp each time permissions are
 replicated.
 
 ## Entitlement-related Permissions for Security Roles
 
 You can grant permissions to security roles in an identity store on the Entitlement section in the
-Directory Manager portal. Based on these permissions, role members can performs different actions,
+Directory Manager portal. Based on these permissions, role members can perform different actions,
 such as navigate file servers and SharePoint sites, grant permissions to objects on shared
 resources, revoke permissions, and more.
 

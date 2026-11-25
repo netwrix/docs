@@ -1,12 +1,18 @@
 ---
-title: "History in Helpdesk"
-description: "History in Helpdesk"
+title: "View and Search Helpdesk History in Directory Manager"
+description: "View, search, sort, and export the history of end-user and helpdesk actions tracked in Directory Manager identity stores."
+keywords:
+  - helpdesk history
+  - audit password resets
+  - history details
+  - export history
+  - identity store actions
 sidebar_position: 20
 ---
 
-# History in Helpdesk
+# View and Search Helpdesk History in Directory Manager
 
-Directory Manager tracks the following actions performed by end-users and helpdesk users in an
+Directory Manager tracks the following actions performed by end users and helpdesk users in an
 identity store and displays them as history to helpdesk users:
 
 - Unenroll account
@@ -20,7 +26,7 @@ identity store and displays them as history to helpdesk users:
 - Authenticate with password, authentication types, or any other medium
 
 Use history to audit and analyze your security, such as how many users changed their passwords in the
-last x days, reset their passwords using secure link, and more. You can also use it to verify the
+last X days, reset their passwords using secure link, and more. You can also use it to verify the
 identity of a user through the last action they performed.
 
 ## View History in Helpdesk
@@ -41,9 +47,9 @@ You can view history in two layouts:
 
 In both layouts, click **Details** for an item to view more details.
 
-You can also export history to MS Excel, CSV, and XML formats.
+You can also export history to Microsoft Excel, CSV, and XML formats.
 
-To Switch Layouts:
+To switch layouts:
 
 - In the Basic view, click the **Switch to Administrative View** button to view history in
   Administrative layout.
@@ -52,7 +58,7 @@ To Switch Layouts:
 
 #### View History in Basic Layout
 
-By default, the **History** tab of the **Helpdesk** page displays history in the Basic view, that
+By default, the **History** tab of the **Helpdesk** page displays history in the Basic view. This view
 lists the tracked actions in meaningful sentences.
 
 Click **Details** for a history item to launch the **History Details** dialog box that displays the
@@ -64,7 +70,7 @@ following:
 - **Authentication type:** the authentication types used by the user to authenticate to
   perform the action. For some actions performed by helpdesk, such as sending a secure link for
   password reset, no authentication type is displayed. For other actions such as _unenroll_, the
-  authentication type for which the end user is unenrolled will be displayed.
+  authentication type for which the end user is unenrolled is displayed.
 - **Status:** whether the action was performed successfully or not.
 - **Date/Time:** the date and time the action was performed.
 - **Performed by:** the user who performed the action.
@@ -84,18 +90,18 @@ page, click **Switch to Administrative View**.
 
 The following information is displayed for a record:
 
-- **Name:** The name of the user the action was performed on
+- **Name:** the name of the user the action was performed on
 - **Client Name:** the name of the Directory Manager client the action was performed from.
-- **Identity Store:** The identity store the action was performed in
-- **Action:** The action performed
-- **Date:** The date and time the action was performed on
+- **Identity Store:** the identity store the action was performed in
+- **Action:** the action performed
+- **Date:** the date and time the action was performed
 
 Click **Details** for a history item to view its details on the **History Details** dialog box. See
 the View History in Helpdesk topic for a discussion of the dialog box.
 
 Use the pagination options at the bottom of the listing to navigate through records.
 
-**Sort the Listing**
+#### Sort the Listing
 
 History records on the **History** tab of the **Helpdesk** page are sorted in chronological order,
 with the latest action at the top.
@@ -121,10 +127,10 @@ To perform a search:
 2. On the **Helpdesk** page, click the **History** tab.
 3. On the **History** tab, the following search options are available:
 
-    - **Identity Store list** - To get the history records for one or specific identity stores,
+    - **Identity Store list** - To get the history records for one or more specific identity stores,
       click in the **Identity Store** box and select the checkboxes for the identity stores you
       want to view the history for.
-    - **Search box to search for records specific to a user** - In the _Search_ box, enter a user’s
+    - **Search box to search for records specific to a user** - In the _Search_ box, enter a user's
       full name or part of a name and press _Enter_. Directory Manager displays all history actions
       that are performed by or performed on the user.
     - **Search filter** - Click **Filter**. On the **Filters** dialog box, you can search the
@@ -137,7 +143,7 @@ To perform a search:
         - **Device Type:** Specify a device type (PC/laptop, mobile, or both) to view actions that
           have been performed using that device type.
         - **Status:** Specify whether you want to view successful actions, failed actions, or both
-          successful and failed actions
+          successful and failed actions.
         - **Action Type:** Select an action to view the history records for it. On selecting
           _Enrollment_ or _Authenticate_, another dropdown list is displayed that lists the
           authentication types. Select an option to view the enrollment or authentication actions

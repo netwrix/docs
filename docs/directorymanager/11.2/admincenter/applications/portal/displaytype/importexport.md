@@ -1,21 +1,27 @@
 ---
-title: "Specify Attributes for Import/Export of Group Owners and Members"
-description: "Specify Attributes for Import/Export of Group Owners and Members"
+title: "Set Import and Export Attributes for Group Members and Owners"
+description: "Choose the schema attributes and friendly names the portal uses to import and export group members and additional owners."
+keywords:
+  - import group members
+  - export group members
+  - additional owners
+  - schema attributes
+  - Import/Export page
 sidebar_position: 80
 ---
 
-# Specify Attributes for Import/Export of Group Owners and Members
+# Set Import and Export Attributes for Group Members and Owners
 
 In the Directory Manager portal, users can:
 
-- Export members and additional owners of a group to a file, such as a csv or an xls file
+- Export members and additional owners of a group to a file, such as a CSV or XLS file
 - Import members and additional owners for a group from a file. Members can also be imported from an
   external data source.
 
 You can specify schema attributes to be used for export/import, along with a user-friendly name for
 each attribute.
 
-- The import function reads the objects’ information from an external file or data source and
+- The import function reads the objects' information from an external file or data source and
   searches for matching objects in the directory based on field mapping (where a column name in the
   file or data source is mapped to any of the attributes specified here).  
   Objects having the same values for the mapped fields are added to the membership or additional
@@ -54,7 +60,7 @@ attributes for a wizard.
 5. To add an attribute, click **Add**. The **Import/Export Attribute** dialog box is displayed.
 6. In the **Schema Attribute** dropdown list, select a schema attribute to use for import/export.
 7. In the **User-Friendly Name** box, enter an easy and meaningful name for the attribute. The
-   attribute will be displayed with this name on the Import Members, Export Members, Import
+   attribute is displayed with this name on the Import Members, Export Members, Import
    Additional Owners, and Export Additional Owners wizards in the portal.
 8. Click **OK**. The attribute is displayed with its user-friendly name on the **Import/Export**
    page.
@@ -84,6 +90,6 @@ attributes for a wizard.
    different portal for each of these.
 4. Click **Import/Export** in the left pane.
 5. On the **Import/Export** page, click **Remove** for an attribute to remove it.  
-   The attribute will not be available on the _Import Members_, _Export Members_, _Import Additional
+   The attribute isn't available on the _Import Members_, _Export Members_, _Import Additional
    Owners_, and _Export Additional Owners_ wizards in the portal.
 6. Click **Save**.

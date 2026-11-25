@@ -1,21 +1,28 @@
 ---
-title: "Workflow Approver Acceleration"
-description: "Workflow Approver Acceleration"
+title: "Configure Workflow Approver Acceleration in Directory Manager"
+description: "Escalate workflow requests to the next approver when no one acts on them, and learn the rules for users, groups, and default approvers."
+keywords:
+  - workflow approver acceleration
+  - Directory Manager workflows
+  - Workflow Acceleration schedule
+  - default approver
+  - static request
+  - approval escalation
 sidebar_position: 30
 ---
 
-# Workflow Approver Acceleration
+# Configure Workflow Approver Acceleration in Directory Manager
 
 The workflow approver acceleration feature ensures that no workflow request remains undecided. It
 automatically accelerates a request to another approver if the current approver doesn't act on it
 for a certain number of days.
 
-Let’s assume User A, who is the approver of a workflow, doesn't approve/deny a request for x number
-of days. This request will accelerate to User B (first acceleration level), and if User B doesn't
-take action for x days, it will accelerate to User C (second acceleration level). The request will
-continue to be accelerated to the maximum level, and if not approved/denied, it will go to the
+Assume User A, who is the approver of a workflow, doesn't approve or deny a request for x number
+of days. The request accelerates to User B (first acceleration level), and if User B doesn't
+take action for x days, it accelerates to User C (second acceleration level). The request
+continues to accelerate to the maximum level, and if it isn't approved or denied, it goes to the
 default approver. When no default approver is defined, the request becomes static. A static request
-is one that is active in Directory Manager and can be approved or denied by the approver any time.
+is one that is active in Directory Manager and can be approved or denied by the approver at any time.
 It continues to appear in the list of pending requests for the approvers.
 
 Workflow approver acceleration settings apply to all workflows in the identity store. However, you
@@ -23,7 +30,7 @@ can exempt individual workflows from it.
 
 ## Apply Approver Acceleration
 
-To configure approver acceleration for an identity store, you have to:
+To configure approver acceleration for an identity store, you must:
 
 - Enable approver acceleration.
 - Set the number of days a request stays with an approver before it is accelerated to the next
@@ -31,8 +38,8 @@ To configure approver acceleration for an identity store, you have to:
 - Specify the maximum number of acceleration levels.
 
 A scheduled job, Workflow Acceleration, is responsible for accelerating requests to the next level,
-auto approve requests, and send notifications. See the
-[Workflow Acceleration Schedule](/docs/directorymanager/11.2/admincenter/schedule/workflowacceleration.md) topic.
+auto-approving requests, and sending notifications. See the
+[Update the Directory Manager Workflow Acceleration Schedule](/docs/directorymanager/11.2/admincenter/schedule/workflowacceleration.md) topic.
 
 **To apply approver acceleration:**
 
@@ -53,29 +60,29 @@ auto approve requests, and send notifications. See the
    rules to all workflows defined for the identity store.  
    To exempt a particular workflow, open it and clear the **Approver Acceleration** checkbox. See
    the [Modify a Workflow](implement.md#modify-a-workflow) topic.
-6. In the **Maximum Levels** box, specify a number, say 2. Workflow requests would be accelerated to
+6. In the **Maximum Levels** box, specify a number, such as 2. Workflow requests are accelerated to
    a maximum of 2 levels for approval. Requests that aren't approved or denied at the maximum level
    become static.
-7. In the **Repeat Every X Days** box, specify x number of days, say 5. When an approver doesn't
+7. In the **Repeat Every X Days** box, specify x number of days, such as 5. When an approver doesn't
    act on a request for the specified number of days, the request is accelerated to the next
    approver in the acceleration chain.
 8. Click **Save**.
 
 ## Workflow Approver Acceleration Rules
 
-When the approver of a workflow doesn't approve/deny a request within a certain number of days,
-Directory Manager applies certain rules to forward it to another approver.
+When the approver of a workflow doesn't approve or deny a request within a certain number of days,
+Directory Manager applies rules to forward it to another approver.
 
-On acceleration, the new approver receives an email notification to approve/deny the request.
+On acceleration, the new approver receives an email notification to approve or deny the request.
 
 :::note
-Even after acceleration, all previous approvers are authorized to approve/deny the requests.
+Even after acceleration, all previous approvers are authorized to approve or deny the requests.
 Administrators can also approve or deny these requests at any given time from the _All Requests_
 node in the Directory Manager portal.
 :::
 
 
-The following sections discuss workflow acceleration rules, with these assumed acceleration settings:
+The following sections describe workflow acceleration rules, with these assumed acceleration settings:
 
 Acceleration level: 3  
 Approval days: 5
@@ -84,14 +91,14 @@ Approval days: 5
 
 Acceleration rules for a user approver are:
 
-1. When the approver is a user who doesn't approve/deny a request for 5 days, the request is
+1. When the approver is a user who doesn't approve or deny a request for 5 days, the request is
    accelerated to the user’s primary manager.  
-   Example: A workflow request is with User A, who doesn't approve/deny it. After 5 days, the
-   request will be accelerated to User A’s manager (first level acceleration).
-2. If the new approver (User B) doesn't approve/deny the request in the next 5 days, the request is
-   accelerated to User B's primary manager (User C) - second level acceleration.
-3. If the new approver (User C) doesn't approve/deny the request in the next 5 days, the request is
-   accelerated to User C’s primary manager (User D) – third level acceleration).
+   Example: A workflow request is with User A, who doesn't approve or deny it. After 5 days, the
+   request is accelerated to User A’s manager (first-level acceleration).
+2. If the new approver (User B) doesn't approve or deny the request in the next 5 days, the request is
+   accelerated to User B's primary manager (User C) - second-level acceleration.
+3. If the new approver (User C) doesn't approve or deny the request in the next 5 days, the request is
+   accelerated to User C’s primary manager (User D) – third-level acceleration.
 4. After the third (and the last) level acceleration, if User D doesn't approve or deny the request
    for 5 days, the request goes to the default approver. If the default approver isn't specified,
    the request becomes static.
@@ -102,8 +109,8 @@ Consider the following:
 
 
 1.  If, in the acceleration chain, any approver is disabled, the workflow request is directly sent
-    to the primary manager of the disabled approver in the same acceleration hop. Referring to the
-    example in step 3, if User C is disabled, the workflow request will go to User D (instead of
+    to the primary manager of the disabled approver in the same acceleration hop. Referring to the
+    example in step 3, if User C is disabled, the workflow request goes to User D (instead of
     User C) in second-level acceleration.
 2.  If the hierarchy breaks at any point in the acceleration chain, the request is routed to the
     default approver. Referring to the example in step 3, if User C doesn't have a manager, the
@@ -114,52 +121,52 @@ Consider the following:
 
 If a group is set as the approver of a workflow route or comes up as an approver in the acceleration
 chain, the request is available to all group members for approval. Members added to the group
-hereafter don't have the authority to approve or deny the request. The request is considered
+afterward don't have the authority to approve or deny the request. The request is considered
 approved or denied when any one group member takes action on it.
 
 Acceleration rules for a group approver are:
 
 1. When a group is set as the approver in a workflow, the request is available to all existing group
-   members for approval. If no group member approves/denies the request for 5 days, the request is
+   members for approval. If no group member approves or denies the request for 5 days, the request is
    accelerated to the group’s primary owner.  
-   Let’s assume a workflow request is with Group A, and none of the members approve/deny it. After 5
-   days, the request is accelerated to Group A’s primary owner, (first level acceleration).
-2. If Group A’s primary owner (Object O) doesn't approve/deny the request in the next 5 days, the
+   Assume a workflow request is with Group A, and none of the members approve or deny it. After 5
+   days, the request is accelerated to Group A’s primary owner (first-level acceleration).
+2. If Group A’s primary owner (Object O) doesn't approve or deny the request in the next 5 days, the
    following happens:
 
-    - When Object O is a user, the request will accelerate to its manager (second level
-      acceleration). It will move up the acceleration chain of Object O till the maximum
+    - When Object O is a user, the request accelerates to its manager (second-level
+      acceleration). It moves up the acceleration chain of Object O until the maximum
       acceleration level.
-    - When Object O is a group, the request will accelerate to all group members (second level
-      acceleration). And when none of the group members approve or deny the request in the next 5
-      days, the request will accelerate to the group;s primary owner (third level acceleration).
+    - When Object O is a group, the request accelerates to all group members (second-level
+      acceleration). When none of the group members approve or deny the request in the next 5
+      days, the request accelerates to the group's primary owner (third-level acceleration).
 
 3. After the third (and the last) level acceleration, if the approvers don't approve or deny the
    request for 5 days, the request goes to the default approver. If the default approver isn't
    specified, the request becomes static.
 4. If the group set as approver has a nested group as its member, then requests are also sent to
-   members of the nested group, but only up till level 1.  
-   Suppose a group has three members; User A, User B, and Group C (nested group). A request sent to
+   members of the nested group, but only up to level 1.  
+   Suppose a group has three members: User A, User B, and Group C (nested group). A request sent to
    this group goes to User A, User B, and all members of Group C. If Group C has another group as
-   its member, the request will not go to the member group.
-5. Scenarios where an approver is disabled or the hierarchy breaks are discussed as a note at the
-   end of the When the Approver is a User topic.
+   its member, the request doesn't go to the member group.
+5. Scenarios where an approver is disabled or the hierarchy breaks are described in the note at the
+   end of the When the Approver is a User section.
 
 ## Apply Approver Acceleration
 
-To configure approver acceleration for an identity store, you have to:
+To configure approver acceleration for an identity store, you must:
 
 ### Cases for the Default Approver
 
 Rules for the default approver are:
 
-1. When the default approver is a user who doesn't approve/deny a request for 5 days, the request
+1. When the default approver is a user who doesn't approve or deny a request for 5 days, the request
    becomes static.
 2. When a default approver isn't set in advanced workflow settings, requests can't be accelerated
-   to it; hence they become static.
+   to it, so they become static.
 3. When a group is set as the default approver, workflow requests are accelerated to all group
    members.
-4. If members of the default approver group don't approve/deny a request for 5 days, it is
+4. If members of the default approver group don't approve or deny a request for 5 days, it is
    accelerated to the group's primary owner.
 5. If the default approver group has no members or when all members are disabled, the request is
    accelerated to the group's primary owner.
@@ -169,30 +176,30 @@ Rules for the default approver are:
 ### Other Cases
 
 1. In a circular manager situation, requests are auto-approved.  
-   **Example:** User A is the approver of a workflow, who doesn't approve/deny a request for 5
-   days. The request is accelerated to User A’s manager – User B (first level acceleration). If User
-   B doesn't approve/deny the request in the next 5 days, the request goes to User B’s manager –
-   User C (second level acceleration). If User C doesn't approve/deny the request in the next 5
-   days, the request is accelerated to User C’s manager (third level acceleration). However, if User
-   A is the manager of User C, a circular manager situation occurs and the workflow request will be
-   auto approved (and not go to User A).
+   **Example:** User A is the approver of a workflow, who doesn't approve or deny a request for 5
+   days. The request is accelerated to User A’s manager – User B (first-level acceleration). If User
+   B doesn't approve or deny the request in the next 5 days, the request goes to User B’s manager –
+   User C (second-level acceleration). If User C doesn't approve or deny the request in the next 5
+   days, the request is accelerated to User C’s manager (third-level acceleration). However, if User
+   A is the manager of User C, a circular manager situation occurs and the workflow request is
+   auto-approved (and doesn't go to User A).
 2. When the requester comes up as an approver in the approval acceleration chain, the request is
-   auto approved.  
-   Example: User A doesn't approve/deny a request for 5 days. The request is accelerated to User
-   A’s manager (first level acceleration). If User A’s manager (User B) is the initiator of the
-   workflow request, the request is auto approved (and not accelerate to User B).
+   auto-approved.  
+   Example: User A doesn't approve or deny a request for 5 days. The request is accelerated to User
+   A’s manager (first-level acceleration). If User A’s manager (User B) is the initiator of the
+   workflow request, the request is auto-approved (and isn't accelerated to User B).
 3. For the _Transfer a User_ workflow, a request goes to the new primary manager of the requester
-   for first level acceleration.  
+   for first-level acceleration.  
    If User A transfers User B to another manager (User C), a request goes to User C for approval. If
-   User C doesn't approve/deny it for 5 days, the request will move up User C’’s acceleration
+   User C doesn't approve or deny it for 5 days, the request moves up User C’s acceleration
    chain.
 4. When the approver, with whom a request resides, is removed as manager or group owner,
-   the request is sent to the recipient that is set as the new manager/owner and removed from the
-   previous manager’s/owner’s approval queue. The request will also ascend the new manager's/owner's
+   the request is sent to the recipient set as the new manager or owner and removed from the
+   previous manager’s or owner’s approval queue. The request also ascends the new manager's or owner's
    managerial line.  
-   Example: A workflow request accelerates to User A but before User A approves/denies it and the
-   next acceleration is due, User A is replaced by User B as manager. In this case, the request will
-   move to User B and ascend User B’s managerial line accordingly.
+   Example: A workflow request accelerates to User A but before User A approves or denies it and the
+   next acceleration is due, User A is replaced by User B as manager. In this case, the request
+   moves to User B and ascends User B’s managerial line accordingly.
 5. If an administrator re-routes a workflow request to another user (User B) from the Directory
-   Manager portal, the request acceleration chain will follow User B’s managerial line.
+   Manager portal, the request acceleration chain follows User B’s managerial line.
    Note: this feature uses the new manager’s line for acceleration.

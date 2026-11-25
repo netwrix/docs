@@ -1,10 +1,15 @@
 ---
-title: "Licensing"
-description: "Licensing"
+title: "Manage Directory Manager Licenses"
+description: "Learn about Directory Manager license types and add-ons, and how to add, update, or remove a license in Admin Center."
+keywords:
+  - Directory Manager licensing
+  - license types
+  - add a license
+  - license expiration
 sidebar_position: 100
 ---
 
-# Licensing
+# Manage Directory Manager Licenses
 
 You can license Directory Manager under one or more of these license types:
 
@@ -15,7 +20,7 @@ You can license Directory Manager under one or more of these license types:
 - **User Management** - enables access to all the user management features in Directory Manager,
   except those licensed under add-ons.
 - **Password Management** - enables access to password management functions in Directory Manager,
-  that are:
+  namely:
 
     - Account unlock and password reset by both end users and helpdesk
     - Multifactor authentication
@@ -48,13 +53,13 @@ You can license Directory Manager under one or more of these license types:
       objects in the identity stores. It works as follows with other Directory Manager licenses:
 
         - **Suite License**: the linked identity stores feature is fully functional. You can
-          manage your linked identities. In case of an Active Directory identity store and Microsoft
-          Entra ID identity store link, you can manage entitlements of File Servers and SharePoint
-          sites also.
+          manage your linked identities. For a link between an Active Directory identity store and a Microsoft
+          Entra ID identity store, you can manage entitlements of file servers and SharePoint
+          sites too.
         - **Group Management license**: manage identical groups in the linked
-          identity stores and auto sync them.
+          identity stores and automatically synchronize them.
         - **User Management license**: manage identical user objects in the linked
-          identity stores and auto sync them.
+          identity stores and automatically synchronize them.
         - **Password Management license**: the linked identity stores feature works in preview mode.
 
 A license is valid for a period of 12 months.
@@ -72,10 +77,9 @@ Management license.
 
 **What happens when your license expires**
 
-When a license expires, its respective functions get read-only but you can configure certain
-settings, such as create identity stores, create data sources, and define replication settings.
-Moreover, unlicensed functions are displayed with a yellow icon next to them. On hovering the mouse
-over the icon, a message is displayed with two buttons: **Directory Manager licensing** and **Upgrade**. Both buttons
+When a license expires, its respective functions become read-only, but you can configure certain
+settings, such as creating identity stores, creating data sources, and defining replication settings.
+Unlicensed functions are displayed with a yellow icon next to them. When you hover over the icon, a message is displayed with two buttons: **Directory Manager licensing** and **Upgrade**. Both buttons
 redirect you to the
 [Directory Manager licensing and pricing page](https://www.netwrix.com/group_and_user_management_software.html)
 where you can review available Directory Manager licenses and purchase or renew your licenses.
@@ -83,7 +87,7 @@ where you can review available Directory Manager licenses and purchase or renew 
 ## Add a License
 
 1. In Admin Center, click **Settings** at the bottom of the left navigation pane.
-2. On the **Licensing Settings** tab of the **GroupID Settings** page, click **Add New License**.
+2. On the **Licensing Settings** tab of the **Directory Manager Settings** page, click **Add New License**.
 3. Enter a valid license number and key for your product copy in the respective boxes. A valid
    license and key enable the **Add License** button; if it remains disabled, check your entries for
    errors.
@@ -98,19 +102,19 @@ where you can review available Directory Manager licenses and purchase or renew 
     - **Actions:** displays the _Edit_ and _Delete_ icons, enabling you to update or remove the
       license accordingly.
 
-5. If you have multiple Directory Manager licenses, repeat steps 2 – 4 for each license.
+5. If you have multiple Directory Manager licenses, repeat steps 2 through 4 for each license.
 
 ## Update a License
 
 1. In Admin Center, click **Settings** at the bottom of the left navigation pane.
-2. On the **Licensing Settings** tab of the **GroupID Settings** page, click **Edit** for a license
+2. On the **Licensing Settings** tab of the **Directory Manager Settings** page, click **Edit** for a license
    in the **Actions** column to update it.
 3. On the **Update/Replace License** dialog box, update the license number and key.
 4. Click **Update** to save the changes.
 
 ## Remove a License
 
-On removing a license, users lose all access to the functionality covered under the license.
+When you remove a license, users lose all access to the functionality covered under the license.
 
 :::note
 A dependent license is rendered ineffective when you remove its parent license.
@@ -120,5 +124,5 @@ A dependent license is rendered ineffective when you remove its parent license.
 To remove a license:
 
 1. In Admin Center, click **Settings** at the bottom of the left navigation pane.
-2. On the **Licensing Settings** tab of the **GroupID Settings** page, click **Delete** for a
+2. On the **Licensing Settings** tab of the **Directory Manager Settings** page, click **Delete** for a
    license in the **Actions** column to remove it.

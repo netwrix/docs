@@ -1,29 +1,35 @@
 ---
-title: "Specify Attributes for the Object Card"
-description: "Specify Attributes for the Object Card"
+title: "Specify Attributes for the Directory Manager Object Card"
+description: "Choose the attributes, header details, and footer buttons that appear on the object card when portal users hover over an object name."
+keywords:
+  - object card
+  - Card View
+  - card header and footer
+  - portal design
+  - object attributes
 sidebar_position: 130
 ---
 
-# Specify Attributes for the Object Card
+# Specify Attributes for the Directory Manager Object Card
 
 In the portal, the names of directory objects are displayed as links. When a user hovers the mouse
-over an object name, a card is displayed, showcasing information about the object. For a user object, for
-example, the card displays the name, email address and phone number. It is as:
+over an object name, a card is displayed with information about the object. For a user object, for
+example, the card displays the name, email address, and phone number. The following image shows a user card:
 
-![usercard](/images/directorymanager/11.2/admincenter/portal/design/usercard.webp)
+![Object card for a user showing name, email address, and phone number](/images/directorymanager/11.2/admincenter/portal/design/usercard.webp)
 
 For each object type, you can specify a different set of attributes to display on this card. For a
-group, the card is as:
+group, the card looks like this:
 
-![groupcard](/images/directorymanager/11.2/admincenter/portal/design/groupcard.webp)
+![Object card for a group showing header attributes and footer buttons](/images/directorymanager/11.2/admincenter/portal/design/groupcard.webp)
 
-Notice that the card has three sections, namely:
+The card has three sections:
 
-- Header - The card template allows for four attributes to be specified for display in the header.
+- Header: The card template allows for four attributes to be specified for display in the header.
   When a specified attribute doesn't contain a value, NA is displayed on the card.
-- Body - You can specify any number of attributes for this section. When you don't specify any
+- Body: You can specify any number of attributes for this section. When you don't specify any
   attribute, this section isn't displayed.
-- Footer - This section has the _Add To Contact_ and _Send An Email_ buttons. You can choose whether
+- Footer: This section has the **Add To Contact** and **Send An Email** buttons. You can choose whether
   you want to display these buttons on the card or not.
 
 ## Manage the Card Header
@@ -45,12 +51,12 @@ attributes, but you can't add a fifth attribute or reduce the number to three.
 6. In the **Name** list, click **Edit** for **Header**.
    The **Card View Header/Footer** pane displays a sample header and how the specified attributes
    populate it.
-7. From the **Title** dropdown list, select an attribute whose value will be displayed as the title
-   of the header. By default, the title is set to the object’s display name.
+7. From the **Title** dropdown list, select an attribute whose value is displayed as the title
+   of the header. By default, the title is set to the object's display name.
 8. From the **Image** dropdown list, select an attribute that can store images for directory
-   objects .
+   objects.
 9. Use the **Attribute 1** and **Attribute 2** dropdown lists to select any other object attributes
-   to display on the card. By default, _mail_, and _mobile_ are selected.
+   to display on the card. By default, _mail_ and _mobile_ are selected.
 10. Click **OK**.
 11. Click **Save** on the **Card View** page.
 
@@ -74,7 +80,7 @@ attributes, but you can't add a fifth attribute or reduce the number to three.
 ## Specify an Attribute for the Card Body
 
 In addition to the card header, you can specify additional object attributes for the card. The
-values of these attributes would be displayed on the card body.
+values of these attributes are displayed on the card body.
 
 **To add an attribute:**
 
@@ -90,8 +96,8 @@ values of these attributes would be displayed on the card body.
 6. Click **Add** to add an attribute to the body of the card. The **Add New Card View Attribute**
    pane is displayed.
 7. Use the **Field Name** box to select one or more schema attributes. The value of these attributes
-   will be displayed on the object card.
-8. Specify a name for the attribute in the **Display Name** box. The attribute value would be
+   is displayed on the object card.
+8. Specify a name for the attribute in the **Display Name** box. The attribute value is
    displayed next to this label on the card.
    This box isn't available when multiple attributes are selected.
 9. Click **OK**.
@@ -115,7 +121,7 @@ You can update the display name of an attribute on the body of an object card.
 6. In the **Name** list, click **Edit** for an attribute.
 7. On the **Edit Card View Attribute** pane, the **Field Name** box isn't editable, so you can't
    change the attribute. However, you can specify a different display name for it. This display name
-   is displayed on the card's body and the attribute’s value is shown next to it.
+   is displayed on the card's body and the attribute's value is shown next to it.
 8. Click **OK**.
 9. Click **Save** on the **Card View** page.
 

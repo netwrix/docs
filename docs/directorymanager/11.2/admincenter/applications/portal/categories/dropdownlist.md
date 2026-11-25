@@ -1,19 +1,25 @@
 ---
-title: "Dropdown List Display Type"
-description: "Dropdown List Display Type"
+title: "Create a Dropdown List Display Type in Directory Manager"
+description: "Define a custom dropdown list display type with values, display text, and visibility, and review the predefined dropdown lists in the default portal template."
+keywords:
+  - dropdown list display type
+  - custom display type
+  - predefined dropdown lists
+  - portal design settings
+  - security role visibility
 sidebar_position: 30
 ---
 
-# Dropdown List Display Type
+# Create a Dropdown List Display Type in Directory Manager
 
 Use the dropdown list display type to give portal users a list of options to select from.
 
-To create a custom dropdown list display type, you have to specify the values (options) to display
+To create a custom dropdown list display type, you must specify the values (options) to display
 in the list. This custom display type can then be linked to a schema attribute. Options in the
 dropdown list are the different values that users can select for the schema attribute you link this
 display type with.
 
-### Predefined Dropdown List Display Types
+## Predefined Dropdown List Display Types
 
 A few dropdown list display types used in the default portal template are:
 
@@ -45,16 +51,16 @@ A few dropdown list display types used in the default portal template are:
 
     1. Click **Add Value**.
     2. Specify a value and a display text for that value in the respective boxes. The display text
-       will be displayed in the dropdown list, while the value will be saved in the directory or
+       appears in the dropdown list, while the value is saved in the directory or
        database when a user selects the display text from the dropdown list.  
-       (The value will be saved in the directory when the dropdown list display type is mapped to a
-       directory attribute. It will be saved in the database when the display type is mapped to a
+       (The value is saved in the directory when the dropdown list display type is mapped to a
+       directory attribute. It is saved in the database when the display type is mapped to a
        database attribute.)
     3. In the **Visibility** dropdown list, select a security role. The value in the dropdown list
-       will be visible to users of this role and roles with a priority value higher than this role.
+       is visible to users of this role and roles with a priority value higher than this role.
        See [Priority](/docs/directorymanager/11.2/admincenter/securityrole/manage.md).  
        Select _Never_ to hide the value from all users.
-    4. Click **OK**. The value is listed in the **Values** area, represented by its display text.
+    4. Click **OK**. The value appears in the **Values** area, represented by its display text.
 
 8. Repeat step 7 to define more values in the list.
 

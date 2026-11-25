@@ -1,10 +1,16 @@
 ---
-title: "Manage an Identity Store"
-description: "Manage an Identity Store"
+title: "Manage an Identity Store in Directory Manager"
+description: "View, enable, disable, update, and delete an identity store, exclude domains from replication, and set domain controller priority."
+keywords:
+  - manage identity store
+  - DC priority
+  - disable identity store
+  - exclude domain from replication
+  - identity store status
 sidebar_position: 20
 ---
 
-# Manage an Identity Store
+# Manage an Identity Store in Directory Manager
 
 After you create and configure an identity store, you can perform group and identity management
 operations in the identity provider using Directory Manager.
@@ -28,19 +34,19 @@ The card for an identity store displays the following information:
 | Info  | Description |
 | --- | --- |
 | Basic info | The display name of the identity store and the identity provider it is built on, such as Active Directory. |
-| Identity store status | The status is displayed on the top right corner of the card. An identity store has one of the following statuses: <br /><ul><li>**Healthy:** Indicates that the identity store is fully functional. Hover the mouse over the status to view the factors used to determine health.</li><li>**Errors:** Indicates that the identity store has run into one or both of the following errors: <br /><ul><li>It can't connect to the identity provider using the service account provided on the **Identity Store Details** page.</li><li>Data from the provider isn't replicated to Elasticsearch within the required time interval. The last replication time and date is displayed at the bottom of the card.</li></ul></li></ul> Hover the mouse over the status to view the reason for the _Errors_ status. |
-| History | Indicates whether history tracking for the identity store is enabled or disabled. <br />See the [Configure History Tracking](/docs/directorymanager/11.2/admincenter/identitystore/configure/historytracking.md) topic to enable or disable history tracking. |
-| MFA | Indicates whether second factor authentication is enabled for security roles in the identity store. See the [Configure Second Factor Authentication](/docs/directorymanager/11.2/admincenter/authpolicy/sfa.md) topic. One of the following is displayed for MFA: <br /><ul><li>**Available for x/x roles:** Indicates the number of security roles that second factor authentication is enabled for, out of the total security roles in the identity store. For example, 1/3 indicates that there are 3 security roles defined for the identity store and second factor authentication is enabled for one of those roles.</li><li>**Not Available:** Indicates that second factor authentication isn't enabled for any security role in the identity store.</li></ul> |
+| Identity store status | The status is displayed in the top right corner of the card. An identity store has one of the following statuses: <br /><ul><li>**Healthy:** Indicates that the identity store is fully functional. Hover over the status to view the factors used to determine health.</li><li>**Errors:** Indicates that the identity store has run into one or both of the following errors: <br /><ul><li>It can't connect to the identity provider using the service account provided on the **Identity Store Details** page.</li><li>Data from the provider isn't replicated to Elasticsearch within the required time interval. The last replication date and time are displayed at the bottom of the card.</li></ul></li></ul> Hover over the status to view the reason for the _Errors_ status. |
+| History | Indicates whether history tracking for the identity store is enabled or disabled. <br />See the [Configure History Tracking in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/historytracking.md) topic to enable or disable history tracking. |
+| MFA | Indicates whether second-factor authentication is enabled for security roles in the identity store. See the [Configure Second Factor Authentication in Directory Manager](/docs/directorymanager/11.2/admincenter/authpolicy/sfa.md) topic. One of the following is displayed for MFA: <br /><ul><li>**Available for x/x roles:** Indicates the number of security roles that second-factor authentication is enabled for, out of the total security roles in the identity store. For example, 1/3 indicates that there are 3 security roles defined for the identity store and second-factor authentication is enabled for one of those roles.</li><li>**Not Available:** Indicates that second-factor authentication isn't enabled for any security role in the identity store.</li></ul> |
 | Last replication date and time | The last run date and time of the Replication service. If the service doesn't run at the specified interval, the identity store status changes to **Errors**.  |
-| Ellipsis | Click it to launch a shortcut menu with the following options: <br /><ul><li>**Edit:** launches the identity store properties page, where you can manage identity store settings, workflows, security roles, replication attributes, and more. See the [Configure an Identity Store](/docs/directorymanager/11.2/admincenter/identitystore/configure/configure.md) topic.</li><li>**Disable:** disables the identity store.</li><li>**Replicate Objects:** runs the Replication service to replicate object data in the identity store. See the [Force Run the Replication Service (for Object Replication)](replication.md#force-run-the-replication-service-for-object-replication) topic.</li><li>**Replicate Deleted Objects:** runs the Replication service to remove those objects from Elasticsearch that have been deleted from the identity provider. See the [Force Run the Replication Service (for Deleting Objects)](replication.md#force-run-the-replication-service-for-deleting-objects) topic.</li><li>**Delete:** deletes the identity store from Directory Manager.</li></ul> |
+| Ellipsis | Click it to launch a shortcut menu with the following options: <br /><ul><li>**Edit:** launches the identity store properties page, where you can manage identity store settings, workflows, security roles, replication attributes, and more. See the [Configure an Identity Store in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/configure.md) topic.</li><li>**Disable:** disables the identity store.</li><li>**Replicate Objects:** runs the Replication service to replicate object data in the identity store. See the [Force Run the Replication Service (for Object Replication)](replication.md#force-run-the-replication-service-for-object-replication) topic.</li><li>**Replicate Deleted Objects:** runs the Replication service to remove those objects from Elasticsearch that have been deleted from the identity provider. See the [Force Run the Replication Service (for Deleting Objects)](replication.md#force-run-the-replication-service-for-deleting-objects) topic.</li><li>**Delete:** deletes the identity store from Directory Manager.</li></ul> |
 
 ## Enable or Disable an Identity Store
 
-When you disable an identity store, all users logged into Directory Manager with that store are
-logged out, and the identity store is unavailable for operations.
+When you disable an identity store, all users signed in to Directory Manager with that store are
+signed out, and the identity store is unavailable for operations.
 
-You can disable an identity store in any of the following ways. However, a disabled identity store
-can be enabled using **Method 1** only.
+You can disable an identity store in any of the following ways. However, you can enable a disabled identity store
+using **Method 1** only.
 
 **Method 1: Enable or disable an identity store**
 
@@ -50,7 +56,7 @@ can be enabled using **Method 1** only.
 
 **Method 2: Disable an identity store**
 
-1. In Admin Center, click Identity Stores in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. On the **Identity Store Details** page, use the toggle button in the top right to disable the
@@ -70,14 +76,14 @@ provided while creating it.
    **Edit**.
 3. On the **Identity Store Details** page, update the required information on the **General** tab.  
    This page differs by provider. Refer to the steps for creating the respective provider in the
-   [Create an Identity Store](/docs/directorymanager/11.2/admincenter/identitystore/create.md) topic for more information.
+   [Create an Identity Store in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/create.md) topic for more information.
 4. Click **Save**.
 
 ## Exclude an Active Directory Domain from Replication
 
 By default, Directory Manager replicates the domain specified for the identity store and its child
 domains. You can exclude a domain or a child domain from replication, in which case the Replication
-service will not replicate it. See the [Elasticsearch and Replication ](/docs/directorymanager/11.2/admincenter/replication/overview.md)
+service doesn't replicate it. See the [Elasticsearch and Replication Service in Directory Manager](/docs/directorymanager/11.2/admincenter/replication/overview.md)
 topic.
 
 You can still create and manage objects in an excluded domain using Directory Manager.
@@ -88,7 +94,7 @@ You can still create and manage objects in an excluded domain using Directory Ma
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. On the **Identity Store Details** page, click the **Connection** tab.
-4. In the **Excluded Domains** areas, select the checkboxes for the domains you want to exclude
+4. In the **Excluded Domains** area, select the checkboxes for the domains you want to exclude
    from replication.  
    To select all domains, select the checkbox in the header area.
 5. Click **Save**.
@@ -96,11 +102,11 @@ You can still create and manage objects in an excluded domain using Directory Ma
 ## Set DC Priority for an Active Directory Identity Store
 
 You can select a domain controller in an Active Directory domain to work with Directory Manager.
-Data service and Replication service will connect to this domain controller to perform their
+Data service and Replication service connect to this domain controller to perform their
 respective operations in the domain. In this way, you can ensure that the selected domain controller
 is always available with minimum downtime.
 
-To understand how the DC priority function works, let’s assume the following:
+To understand how the DC priority function works, assume the following:
 
 - gene.local is your parent domain with two child domains.
 - You have four domain controllers in the parent domain: DC_N, DC_S, DC_E, and DC_W.
@@ -109,7 +115,7 @@ To understand how the DC priority function works, let’s assume the following:
 You can set a separate DC priority list for the parent domain and each of the child domains.
 
 To create a DC priority list for a domain, list the domain controllers in the order of priority.
-Let’s say you set priority for the parent domain as:
+Say you set priority for the parent domain as:
 
 Priority 1:     DC_E  
 Priority 2:    DC_S  
@@ -117,50 +123,50 @@ DC_N and DC_W aren't included in your priority list.
 
 When the Data service restarts for reasons such as IIS restart, it does the following:
 
-- The Data service attempts to connect to the first domain controller in the priority list, i.e.,
+- The Data service attempts to connect to the first domain controller in the priority list,
   DC_E.
 - If DC_E isn't available, the Data service attempts to connect to the second domain controller in
-  the priority list, i.e., DC_S.
-- If DC_S isn't available either, the Data service will resort to the normal lookup process.
+  the priority list, DC_S.
+- If DC_S isn't available either, the Data service uses the normal lookup process.
 
 **Normal lookup process for Data service**
 
 Data service makes a connection with a domain controller through the System.DirectoryServices API.
 It sends a request to the API, which, in turn, connects to any domain controller in the domain. In
-this way, Data Service communicates with the domain controller to perform the required function.
+this way, Data service communicates with the domain controller to perform the required function.
 
 System.DirectoryServices doesn't evaluate the domain controller in the DC priority list for
-creating a connection. Hence, in the preceding example, the API will connect to DC_N or DC_W.
+creating a connection. Therefore, in the preceding example, the API connects to DC_N or DC_W.
 
-**“Server Not Operational” error**
+**"Server Not Operational" error**
 
 When Data service connects to a domain controller (say DC_E), it caches the domain logon information
-and uses it to create all subsequent sessions with the domain controller. Hence it doesn't iterate
+and uses it to create all subsequent sessions with the domain controller. Therefore, it doesn't iterate
 on the DC priority list every time it has to create a session.
 
-In case DC_E is down, the ‘Server Not Operational” error will be displayed in Directory Manager. It
+If DC_E is down, Directory Manager displays the "Server Not Operational" error. It
 indicates that Data service has lost connection with the domain and needs to re-establish a
 connection.
 
-To resolve the error, restart IIS. In this way, Data service will make a connection again using the
-process discussed previously. It will connect to a different domain controller and cache the domain logon
-information (and continue to make a session with this domain controller unless Data service is
+To resolve the error, restart IIS. In this way, Data service makes a connection again using the
+process discussed previously. It connects to a different domain controller and caches the domain logon
+information (and continues to make a session with this domain controller unless Data service is
 restarted).
 
 **DC priority and Replication**
 
 Every time the Replication service is triggered, it consults the DC priority list to connect to a
-domain controller for replication. If it is unable to connect to any domain controller in the
+domain controller for replication. If it can't connect to any domain controller in the
 priority list, it reverts to the normal lookup process to connect to a domain controller in the
 domain.
 
 **Summary**
 
-- If DC priority is defined for a domain, Data service and Replication service will connect to a
+- If DC priority is defined for a domain, Data service and Replication service connect to a
   domain controller in the domain using the defined DC priority list. If no domain controller in the
-  list is available, the services will rely on the normal lookup process to connect to a domain
+  list is available, the services rely on the normal lookup process to connect to a domain
   controller in the domain.
-- If DC priority isn't defined for a domain, Data service and Replication service will connect to
+- If DC priority isn't defined for a domain, Data service and Replication service connect to
   it using the normal lookup process.
 
 **To set DC priority for a domain:**
@@ -172,7 +178,7 @@ domain.
    displays two options:
 
     - **Set default priority:** This tile is selected by default and indicates that no DC priority
-      is set for the identity store domain. As a result, Data service and Replication service will
+      is set for the identity store domain. As a result, Data service and Replication service
       connect to it using the normal lookup process.
     - **Choose custom priority:** Select this tile to set a DC priority list for the identity store
       domain and its child domains, if any.
@@ -184,13 +190,13 @@ domain.
        list for it.  
        Each domain in the list displays either _Priority set_ or _Default Priority_ next to it.
 
-        - _Priority set:_ indicates that DC priority has been defined for the domain, even if it is
+        - _Priority set:_ indicates that DC priority is defined for the domain, even if it is
           set for one DC and not for all DCs in the domain.
-        - _Default Priority:_ indicates that priority has not been set for any DC in the domain.
+        - _Default Priority:_ indicates that priority isn't set for any DC in the domain.
 
     2. The table displays the domain controllers in the selected domain. The **DC Name** column
        displays the name of the DC while the **Priority** column displays the priority assigned to
-       it, with ‘1’ being the highest priority. When no priority is assigned to a DC, _Not set_ is
+       it, with "1" being the highest priority. When no priority is assigned to a DC, _Not set_ is
        displayed for it.  
        You can choose to assign priority to selected DCs in the domain. For example, if a domain has
        4 DCs, you can set priority for two and leave the rest.
@@ -199,18 +205,17 @@ domain.
           column displays the priority assigned to it. To revoke priority, click **Reset priority**.
         - To change the priority for a DC, click in the row, hold down the left mouse button, and
           drag to change its position in the list. By default, "1" is assigned as priority to the
-          first DC in the list, followed by '2' to the second DC in the list, and so on.
+          first DC in the list, followed by "2" to the second DC in the list, and so on.
         - To revoke priority for all DCs in the domain, click **Reset all to default**. With this,
-          _Default Priority_ is displayed next to the domain in name in the **Select Domain**
+          _Default Priority_ is displayed next to the domain name in the **Select Domain**
           dropdown list.
 
 5. Click **Save**.
 
 :::note
 When you change the DC priority for a domain or a child domain, it takes effect instantly.
-Data service reestablishes a connection with a DC based on new priority.
+Data service reestablishes a connection with a DC based on the new priority.
 :::
-
 
 ## Delete an Identity Store
 
@@ -221,7 +226,6 @@ be connected to that identity store, nor can it be used in a Synchronize job.
 You can't delete an identity store that has been linked to another identity store. You must
 first delete any links before deleting the identity store.
 :::
-
 
 **To delete an identity store:**
 

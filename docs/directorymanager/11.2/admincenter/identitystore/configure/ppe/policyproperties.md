@@ -1,12 +1,18 @@
 ---
-title: "Set up policy properties"
-description: "Set up policy properties"
+title: "Set Up Directory Manager PPE Policy Properties"
+description: "Set the name, notes, character set, compliance level, and post-change program for a Password Policy Enforcer policy."
+keywords:
+  - PPE policy properties
+  - Password Policy Enforcer
+  - compliance level
+  - default character set
+  - policy name
 sidebar_position: 40
 ---
 
-# Set up policy properties
+# Set Up Directory Manager PPE Policy Properties
 
-Sets the properties for the selected policy.
+Set the properties for the selected policy.
 
 To set up policy properties:
 
@@ -16,9 +22,9 @@ Step 2 – On the Identity Stores page, click the **ellipsis** button for an ide
 **Edit**.
 
 Step 3 – Click **Configurations** under Settings in the left pane. Then click **PPE Policies**. The
-PPE Policies page is displayed.
+PPE Policies page appears.
 
-Step 4 – Click the **three vertical dots** icon next to the policy , click **Edit**.
+Step 4 – Click the **three vertical dots** icon next to the policy, and then click **Edit**.
 
 **Or**
 
@@ -48,16 +54,16 @@ Step 5 – Open the **Properties** tab.
   dropdown list to specify the required compliance level for this policy. The default value **(all
   the rules**) requires users to comply with all enabled rules. Choose an alternative option if
   Password Policy Enforcer should enforce a more lenient password policy. The
-  [Age (Min) Rule](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/minimum_age_rule.md) and [Age (Max) Rule](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/maximum_age_rule.md) rules
-  are excluded from compliance level calculations. See the [Set up Rules](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/overview.md) topic
+  [Configure the Age (Min) Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/minimum_age_rule.md) and [Configure the Age (Max) Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/maximum_age_rule.md) rules
+  are excluded from compliance level calculations. See the [Set Up Password Policy Rules in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/overview.md) topic
   for additional information.
 
-    When setting the compliance level, consider that some rules may be disabled when a user enters a
-    passphrase. See the [Enable the use of an optional passphrase](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/passphrases.md) topic for
+    When setting the compliance level, consider that some rules might be disabled when a user enters a
+    passphrase. See the [Enable Optional Passphrases in a Directory Manager PPE Policy](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/passphrases.md) topic for
     additional information. Password Policy Enforcer accepts passphrases that comply with all
     enabled rules, irrespective of the compliance level. This ensures that passphrases can be used,
     even if they don't meet the compliance level when Password Policy Enforcer is configured to
     disable one or more rules for passphrases.
 
-- You can execute a program whenever a user successfully changes or resets their password. Enter the
+- You can run a program whenever a user successfully changes or resets their password. Enter the
   full path to the executable in the Execute the Program When Password is Changed text box.
