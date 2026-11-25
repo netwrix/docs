@@ -12,9 +12,9 @@ sidebar_position: 20
 
 # Manage Group Owners in Directory Manager
 
-This tab displays the primary and additional owners of the group. Depending on the Group Owner policy, you can do the following:
+This tab displays the primary and additional owners of the group. Depending on the Group Owner policy, you can:
 
-- Change the primary owner or even remove it.
+- Change or remove the primary owner.
 - Add and remove additional owners for the group.
 
 Additional owners have the same privileges as the primary owner to manage the group.
@@ -24,7 +24,6 @@ Only users, contacts, and security groups can be set as the primary and addition
 group.  
 If you specify a group, all its members are considered additional owners.
 :::
-
 
 You can also specify Exchange additional owners for the group. See the
 [Group properties - Email tab](/docs/directorymanager/11.2/portal/group/properties/email.md) in group properties.
@@ -42,33 +41,31 @@ additional owners aren't supported.
 The primary owner of the group.
 
 To change the primary owner, click **Browse** next to the **Owner** box to launch the
-[Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md), where you can search and select a primary owner.
+[Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md), where you can search for and select a primary owner.
 
 If the administrator hasn't enforced the selection of a primary owner in the Group Owner policy,
-you can also remove the primary owner. Click the **Remove** button next to the **Owner** box to
-remove the primary owner.
+you can also remove the primary owner. Click **Remove** next to the **Owner** box.
 
 :::note
 In a Microsoft Entra ID based identity store, use the **Add** and **Remove** buttons to update
 the group's primary owners.
 :::
 
-
 **Suggested Owners**
 
-The Directory Manager portal can suggest a primary owner for orphan groups, provided that the
-**Suggest Owner/Manager** setting is enabled by the administrator in Directory Manager Admin Center.
+The Directory Manager portal can suggest a primary owner for orphan groups if the administrator
+enabled the **Suggest Owner/Manager** setting in Directory Manager Admin Center.
 
-The owner is suggested with respect to the group’s membership; Directory Manager checks the managers
-of group members and the user who shows up most as a manager is suggested as the group owner. This
-user may or may not be a member of the group.
+The suggestion is based on the group's membership. Directory Manager checks the managers of the
+group members and suggests the user who appears most often as a manager. This user may or may not
+be a member of the group.
 
 For example, when 40 members of Group A have User A as their manager and 38 members have User B as a
 manager, User A is suggested as Group A’s primary owner. User A might not necessarily be a member of
 Group A.
 
 - Click **Make Owner** to set the suggested user as the group's primary owner.
-- You can also click **Show more options** to view a list of suggested owners.
+- Click **Show more options** to view a list of suggested owners.
 
 **Additional Owners**
 
@@ -93,11 +90,9 @@ The Managed By Life Cycle job updates the temporary ownership of groups by addin
 temporary owners on the specified dates.
 :::
 
-
-Consider a scenario where the Managed By Life Cycle job is scheduled to run once a week, say
-Mondays. If an object is to be added as a group’s temporary additional owner for three days,
-Wednesday through Friday, it isn't added. This happens because the Managed By Life Cycle job doesn't
-run on those days to update temporary ownership.
+Suppose the Managed By Life Cycle job runs once a week, on Mondays. If an object is to be a group's
+temporary additional owner from Wednesday through Friday, it isn't added. The job doesn't run on
+those days to update temporary ownership.
 
 **Add**
 
@@ -109,7 +104,7 @@ use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorym
 **Import**
 
 You can also specify additional owners for the group using an external file. Click **Import** to
-launch the **Import Additional Owners** wizard for importing additional owners. See
+launch the **Import Additional Owners** wizard. See
 [Import additional group owners in Directory Manager](/docs/directorymanager/11.2/portal/group/properties/importadditionalowners.md) for further information and instructions.
 
 **Export**
@@ -117,8 +112,8 @@ launch the **Import Additional Owners** wizard for importing additional owners. 
 You can export the list of additional owners to an external file. Supported file formats are .txt,
 .csv, .xls, .xlsx, and .xml.
 
-Click **Export** to launch the **Export Additional Owners** wizard for exporting additional owners.
-Select the attributes you want to export. For information and instructions, see
+Click **Export** to launch the **Export Additional Owners** wizard, and select the attributes you
+want to export. For information and instructions, see
 [Export additional owners](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupownershipfunction.md#export-additional-owners).
 
 **Remove**
@@ -129,5 +124,4 @@ To remove an object from the additional owners list, select it and click **Remov
 On saving group properties, you might see a message asking you to select X additional owners.
 This occurs because the Group Owner policy defined for your role at the identity
 store level requires the group to have at least X additional owners. Complete the required selections, and then save the information.
-
 :::

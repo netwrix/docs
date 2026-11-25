@@ -15,8 +15,7 @@ You can view and edit the properties of mailboxes in Active Directory.
 
 ## Mailbox properties
 
-The following list shows all the property tabs that users and mailbox users have in an Active
-Directory-based identity store.
+Users and mailbox users have the following property tabs in an Active Directory-based identity store.
 
 - [Object properties - General tab](/docs/directorymanager/11.2/portal/user/properties/AD/useroverview/general.md)
 - [Object properties - Organization tab](/docs/directorymanager/11.2/portal/user/properties/AD/useroverview/organization.md)

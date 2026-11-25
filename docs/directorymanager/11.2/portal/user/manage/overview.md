@@ -12,7 +12,7 @@ sidebar_position: 20
 
 # Manage Your User Account in Directory Manager
 
-In the Directory Manager portal, you can perform the following actions:
+In the Directory Manager portal, you can manage your own account. Use these topics:
 
 - [Manage Your Direct Reports in Directory Manager](/docs/directorymanager/11.2/portal/user/manage/directreport.md)
 - [Validate your profile in Directory Manager](/docs/directorymanager/11.2/portal/user/manage/validateprofile.md)

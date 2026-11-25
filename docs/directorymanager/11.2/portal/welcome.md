@@ -12,37 +12,23 @@ sidebar_position: 50
 
 # Directory Manager Portal Overview
 
-A Directory Manager portal represents a virtual link with the directory. Using it, users can do the
-following in an identity store:
+A Directory Manager portal represents a virtual link with the directory. In an identity store, users can do the following in the portal:
 
 - Search the directory.
-- Perform group management tasks, such as creating and updating their groups, attesting an expiring group,
-  renewing an expired group, joining a group, leaving a group, and more.
-- Carry out user management tasks, such as create, update, and delete users in the directory. Users
-  can maintain and update their profiles, change their passwords, manage direct reports, and more.
+- Perform group management tasks, such as creating and updating their groups, attesting an expiring group, renewing an expired group, joining a group, and leaving a group.
+- Carry out user management tasks, such as creating, updating, and deleting users in the directory. Users can also maintain their profiles, change their passwords, and manage direct reports.
 - Synchronize data between a source and a destination, such as directories, files, and databases.
 - Manage user and group entitlements to shared resources on file servers and SharePoint sites.
 - Approve and deny workflow requests.
-- Generate hundreds of insightful reports on Active Directory, Microsoft Entra ID, Exchange, and
-  Office 365 objects, such as groups, users, mailboxes, contacts, computers, and servers.
-- View history data for directory objects that are created, updated, or deleted in the directory
-  using Directory Manager.
+- Generate hundreds of insightful reports on Active Directory, Microsoft Entra ID, Exchange, and Office 365 objects, such as groups, users, mailboxes, contacts, computers, and servers.
+- View history data for directory objects that Directory Manager created, updated, or deleted in the directory.
 
-Delegating group and user management tasks to end users reduces the workload on IT administrators
-and helpdesk, as users can manage their groups and direct reports without assistance
-from an administrator. Moreover, when users maintain and update their profile information, data is
-more accurate and reliable.
+Delegating group and user management tasks to end users reduces the workload on IT administrators and the helpdesk. Users can manage their groups and direct reports without help from an administrator. When users maintain their own profile information, the data is also more accurate and reliable.
 
-Administrators can maintain complete control over data integrity, as they can implement fine-grained
-controls and policies that determine what users can view and change using the Directory Manager portal. They
-can also define workflows for an identity store, that serve as a built-in auditing system to ensure
-that users enter correct data before changes are committed to the directory.
+Administrators keep complete control over data integrity. They can set fine-grained controls and policies that determine what users can view and change in the portal. They can also define workflows for an identity store. Workflows serve as a built-in auditing system that ensures users enter correct data before changes are committed to the directory.
 
-A Directory Manager portal can be linked with multiple identity stores, thus eliminating the need to
-create a separate portal for each identity store. Users can select an identity store to sign in.
+You can link a Directory Manager portal to multiple identity stores, so you don't need a separate portal for each identity store. Users select an identity store to sign in.
 
 :::note
-Because the administrator can customize the portal for different identity stores and for
-different user roles within an identity store, you may not have access to all portal features.
-
+The administrator can customize the portal for different identity stores and for different user roles within an identity store. You may not have access to all portal features.
 :::

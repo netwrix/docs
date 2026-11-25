@@ -13,16 +13,9 @@ sidebar_position: 70
 
 # Query Designer in the Directory Manager portal
 
-Use the Query Designer to create queries for Smart Groups, Dynasties, and directory object
-searches. These queries provide a quick and consistent way to retrieve a common set of directory
-objects on which you want to perform specific tasks. For example, you can construct a query to
-retrieve all users having mailboxes on a particular Exchange Server or build a query to
-retrieve all directory objects whose information is present in an external data source, such as
-Microsoft SQL Server.
+Use the Query Designer to create queries for Smart Groups, Dynasties, and directory object searches. These queries provide a quick and consistent way to retrieve a common set of directory objects on which you want to perform specific tasks. For example, you can construct a query to retrieve all users who have mailboxes on a particular Exchange Server. You can also build a query to retrieve all directory objects whose information is present in an external data source, such as Microsoft SQL Server.
 
-If the administrator has defined a Query Designer access policy for your role, you can create
-queries according to the defined policy. The Query Designer dialog box displays a banner indicating
-that the administrator has implemented a policy for your role. See the
+If the administrator has defined a Query Designer access policy for your role, you can create queries according to the defined policy. The Query Designer dialog box displays a banner indicating that the administrator has implemented a policy for your role. See the
 [Configure a Query Designer Policy for a Security Role](/docs/directorymanager/11.2/admincenter/securityrole/policy/querydesigner.md) topic.
 
 The query language depends on the identity store type.
@@ -32,27 +25,21 @@ The query language depends on the identity store type.
 
 ## Launch the Query Designer
 
-You can launch the Query Designer dialog box for a Smart Group, a Dynasty, or a search query in any
-of the following ways:
+You can launch the Query Designer dialog box for a Smart Group, a Dynasty, or a search query in any of the following ways.
 
-- While creating a Smart Group or Dynasty – On the Smart Group/Query Designer page of the New Smart
-  Group wizard or New Dynasty wizard, click **Query Designer**.
-- From group properties – On the Smart Group/Query Designer tab in Smart Group/Dynasty properties,
-  click **Query Designer**.
-- When you upgrade a static group to a Smart Group or Dynasty.
-- From the Queries page – On the Advanced Search page, click the **Or use the new query based
+- **While creating a Smart Group or Dynasty** – On the Smart Group/Query Designer page of the New Smart Group wizard or New Dynasty wizard, click **Query Designer**.
+- **From group properties** – On the Smart Group/Query Designer tab in Smart Group/Dynasty properties, click **Query Designer**.
+- **When you upgrade a static group to a Smart Group or Dynasty.**
+- **From the Queries page** – On the Advanced Search page, click the **Or use the new query based
   search** link. Then click **Query Designer**.
 
 ## Query Designer interface
 
-The Query Designer dialog box provides a visual interface for designing queries, so that you don't
-have to write the commands. Its preview feature returns the results for the query before you commit
-them to the directory server.
+The Query Designer dialog box provides a visual interface for designing queries, so you don't have to write the commands. Its preview feature returns the results for the query before you commit them to the directory server.
 
-The Query Designer dialog box groups similar query options by tabs. Settings that aren't grouped in
-tabs are global; they apply to all tabs.
+The Query Designer dialog box groups similar query options by tabs. Settings that aren't grouped in tabs are global. They apply to all tabs.
 
-### Common Settings and Buttons
+### Common settings and buttons
 
 **Find**
 
@@ -60,28 +47,23 @@ Select an option to specify the type of object to include in the membership of t
 
 - **Messaging System Recipients** – Mail-enabled objects
 - **Computers** – Returns computers only
-- **Custom** – Returns all objects regardless of objectClass. Be sure to add an objectClass
-  predicate on the Database tab to avoid unpredictable results.
+- **Custom** – Returns all objects regardless of objectClass. Be sure to add an objectClass predicate on the Database tab to avoid unpredictable results.
 
-    Be sure to combine an external data source with the directory to search directory objects on the
-    Database tab to avoid unpredictable results.
+    Be sure to combine an external data source with the directory to search directory objects on the Database tab to avoid unpredictable results.
 
 - **Users, Contacts, and Groups** – Any user, contact, or group, whether mail-enabled or not.
 
 :::note
-The _Computers_ and _Contact_ object types aren't supported in a Microsoft Entra ID identity
-store.
+The _Computers_ and _Contact_ object types aren't supported in a Microsoft Entra ID identity store.
 :::
-
 
 **Start in**
 
-Click this button to select the containers to search in. The query searches for objects only in
-this container and its sub-containers to determine a group’s membership.
+Click this button to select the containers to search in. The query searches for objects only in this container and its sub-containers to determine a group's membership.
 
 **Preview**
 
-Previews the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
+Previews the results returned with the criteria specified on all tabs of the Query Designer dialog box. This check confirms the accuracy of the data before you commit changes to the directory.
 
 **OK**
 
@@ -109,7 +91,5 @@ The Query Designer has the following tabs:
   (only available for Smart Groups with a password expiry condition)
 
 :::note
-The **Storage** and **Script** tabs aren't available for groups in a Microsoft Entra ID
-identity store.
-
+The **Storage** and **Script** tabs aren't available for groups in a Microsoft Entra ID identity store.
 :::

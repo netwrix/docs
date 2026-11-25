@@ -13,8 +13,7 @@ sidebar_position: 10
 
 # Directory Manager Portal Toolbar Buttons
 
-Use the toolbar to perform different actions on the portal pages. Buttons on the toolbar vary,
-depending on the page you are on. Toolbar buttons are listed in the following table.
+Use the toolbar to perform different actions on the portal pages. The buttons on the toolbar vary with the page you are on. The following table lists the toolbar buttons.
 
 | Button | Description |
 | --- | --- |

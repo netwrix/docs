@@ -13,31 +13,27 @@ sidebar_position: 10
 
 # Select the Source and Destination for a Synchronize Job
 
-You must create the required identity providers and data sources before creating a job. Create them
-in Admin Center on the **Identity Stores** and **Data Sources** tabs, respectively. After creating
-the providers, specify them on the **Select Your Source and Destination** page.
+Before you create a job, create the required identity providers and data sources in Admin Center on the **Identity Stores** and **Data Sources** tabs. After you create the providers, specify them on the **Select Your Source and Destination** page.
 
 To configure the settings for the providers:
 
 1. On the **Select Your Source and Destination** page, do the following:
 
-    - **Your Source**: Specify the data source or identity store from which to move data.
+    - **Your Source**: Specify the data source or identity store to move data from.
     - **Your Destination**: Specify the data source or identity store to move data to.
 
-    Provide the following information for the selected providers:
+2. Provide the following information for the selected providers:
 
     - Microsoft Active Directory
 
-        Specify a container. To include sub containers, select the **Include Sub
-        Containers** checkbox.
+        Specify a container. To include sub containers, select the **Include Sub Containers** checkbox.
 
         - For a source, the job fetches data from the container.
         - For a destination, the job creates or updates data in the container.
 
     - Microsoft Entra ID
 
-        Specify a container. To include sub containers, select the **Include Sub
-        Containers** checkbox.
+        Specify a container. To include sub containers, select the **Include Sub Containers** checkbox.
 
         - For a source, the job fetches data from the container.
         - For a destination, the job creates or updates data in the container.
@@ -48,41 +44,27 @@ To configure the settings for the providers:
 
     - Google Workspace
 
-        Specify a container. To include sub containers, select the **Include Sub
-        Containers** checkbox.
+        Specify a container. To include sub containers, select the **Include Sub Containers** checkbox.
 
         - For a source, the job fetches data from the container.
         - For a destination, the job creates or updates data in the container.
 
     - Microsoft Access
 
-        In the **Table Name** dropdown list, select the table you want to use.
-
-        The list displays the tables in the selected Microsoft Access database.
+        In the **Table Name** dropdown list, select the table you want to use. The list shows the tables in the selected Microsoft Access database.
 
     - Microsoft Excel
 
-        In the **Select Sheet Name** dropdown list, select the sheet you want to use.
+        In the **Select Sheet Name** dropdown list, select the sheet you want to use. The list shows the sheets in the selected Microsoft Excel file.
 
-        The list displays the sheets in the selected Microsoft Excel file.
-
-        1. If Excel is the destination (with the **Replace file-discard existing content** option
-           selected on the **Destination Provider** page of the Job wizard) and any sheet name of the
-           Excel file is two or fewer characters, the Synchronize job corrupts all the sheets in
-           that Excel file.
-
-        2. If Excel is the destination (with the **Delete** option selected on the **Create Object** page of
-           the Job wizard) and the Excel file schema has more than 127 columns, the job fails.
+        - If Excel is the destination (with the **Replace file-discard existing content** option selected on the **Destination Provider** page of the Job wizard) and any sheet name of the Excel file is two or fewer characters, the Synchronize job corrupts all the sheets in that Excel file.
+        - If Excel is the destination (with the **Delete** option selected on the **Create Object** page of the Job wizard) and the Excel file schema has more than 127 columns, the job fails.
 
     - Oracle
 
-        In the **Table or View** dropdown list, select the database table you want to use.
+        In the **Table or View** dropdown list, select the database table you want to use. The list shows the tables in the Oracle database.
 
-        The list displays the tables in the Oracle database.
-
-        If the type column of the Oracle database isn't set as Datetime, the time stamp
-        functionality of Synchronize doesn't work. You must convert the given type to Datetime
-        explicitly while configuring the Synchronize job.
+        If the type column of the Oracle database isn't set as Datetime, the time stamp functionality of Synchronize doesn't work. You must convert the given type to Datetime explicitly while you configure the Synchronize job.
 
     - ODBC
 
@@ -90,12 +72,10 @@ To configure the settings for the providers:
 
     - Microsoft SQL Server
 
-        In the **Table or View** dropdown list, select the database table you want to use.
-
-        The list displays the tables in the Microsoft SQL Server database.
+        In the **Table or View** dropdown list, select the database table you want to use. The list shows the tables in the Microsoft SQL Server database.
 
     - Text Driver/CSV
 
         You don't need to provide any additional information for this provider.
 
-2. Click **Next Step**.
+3. Click **Next Step**.

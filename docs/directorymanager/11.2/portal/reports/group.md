@@ -12,10 +12,9 @@ keywords:
 
 # Group Reports in Directory Manager
 
-Directory Manager Reports include reports for the group objects in the directory. To find a specific
-report, type its name in the **Search Reports** box.
+Group reports cover the group objects in the directory. To find a report, type its name in the **Search Reports** box.
 
-Click any report template in the list to [Generate Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/generate.md).
+To generate a report, click its template in the list. See [Generate Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/generate.md).
 
 The following table lists the reports in this category:
 

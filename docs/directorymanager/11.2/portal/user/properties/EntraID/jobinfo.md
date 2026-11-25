@@ -10,9 +10,7 @@ sidebar_position: 40
 
 # Entra ID User Properties: Job Info Tab
 
-The Job Info tab is similar to the
-[Object properties - Organization tab](/docs/directorymanager/11.2/portal/user/properties/AD/useroverview/organization.md) in user properties, with
-the addition of two fields: Title and Department.
+The Job Info tab is similar to the [Object properties - Organization tab](/docs/directorymanager/11.2/portal/user/properties/AD/useroverview/organization.md) in user properties. It adds two fields: Title and Department.
 
 **Title**
 
@@ -20,4 +18,4 @@ The job title of the user or mailbox.
 
 **Department**
 
-The department in the organization that the user or mailbox works in.
+The department in the organization where the user or mailbox works.

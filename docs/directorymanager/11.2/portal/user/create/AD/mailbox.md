@@ -24,21 +24,15 @@ administrator can customize the wizard by adding or removing pages and fields.
 
 ## Create a mailbox in Active Directory
 
-Step 1 – In the Directory Manager portal, click the **Create New** button in the left pane and
-select **Mailbox**.
+1. In the Directory Manager portal, click the **Create New** button in the left pane and select **Mailbox**. The Create Mailbox wizard opens to the Account page.
 
-The Create Mailbox wizard opens to the Account page.
+2. On the [Account page in the Create User and Create Mailbox wizards](/docs/directorymanager/11.2/portal/user/create/AD/account.md), specify basic account info, such as the object's first name, last name, login ID, and the UPN suffix.
 
-Step 2 – On the [Account page in the Create User and Create Mailbox wizards](/docs/directorymanager/11.2/portal/user/create/AD/account.md), specify basic account info, such as the object's
-first name, last name, login ID, and the UPN suffix.
+3. On the [Set Password Options for a New AD User](/docs/directorymanager/11.2/portal/user/create/AD/password.md), provide a password for the mailbox account and set other password-specific options.
 
-Step 3 – On the [Set Password Options for a New AD User](/docs/directorymanager/11.2/portal/user/create/AD/password.md), provide a password for the mailbox account and set
-other password-specific options.
+4. On the [Exchange page in the Create Mailbox wizard](/docs/directorymanager/11.2/portal/user/create/AD/exchange.md), set the alias and Office 365 subscriptions.
 
-Step 4 – On the [Exchange page in the Create Mailbox wizard](/docs/directorymanager/11.2/portal/user/create/AD/exchange.md), set the alias and Office 365 subscriptions.
-
-Step 5 – On the [Review the Summary Page Before Creating an Object](/docs/directorymanager/11.2/portal/user/create/AD/summary.md), review the settings, and then click **Finish** to
-complete the wizard.
+5. On the [Review the Summary Page Before Creating an Object](/docs/directorymanager/11.2/portal/user/create/AD/summary.md), review the settings, and then click **Finish** to complete the wizard.
 
 :::note
 If the Directory Manager administrator has specified the mailbox creation action for review,

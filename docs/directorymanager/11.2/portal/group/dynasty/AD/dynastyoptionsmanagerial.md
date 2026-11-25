@@ -13,226 +13,142 @@ sidebar_position: 10
 
 # Set managerial Dynasty options in Directory Manager
 
-On the **Dynasty Options** page, select whether you want to create separate Smart Groups for the
-direct reports of the top manager and sub-level managers, or add all direct reports of the top
-manager and sub-level managers as members of a single group. In any case, you must specify a top
-manager to work as the starting point for the Dynasty.
+On the **Dynasty Options** page, select whether to create separate Smart Groups for the direct reports of the top manager and sub-level managers, or to add all those direct reports as members of a single group. In either case, you must specify a top manager to work as the starting point for the Dynasty.
 
 On the **Dynasty Options** page:
 
-1. Use the **Top Manager** field to specify the top-level manager, and thus, the start location for
-   the Dynasty.
+1. Use the **Top Manager** field to specify the top-level manager, and thus the start location for the Dynasty.
 
-    Click the ellipsis button and use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md) to select a top
-    manager.
+   Click the ellipsis button and use [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md) to select a top manager.
 
-2. Select an option from **Dynasty Type** to specify the type of managerial Dynasty you want to
-   create.
+2. Select an option from **Dynasty Type** to specify the type of managerial Dynasty you want to create.
 
-    - **Managerial List**
+   - **Managerial List**
 
-        Construct a managerial Dynasty structure by first creating a Smart Group containing all
-        direct reports of the top-level manager as members, then creating separate Smart Groups for
-        the direct reports (with their respective direct reports as members). This Dynasty structure
-        continues until a Smart Group is created for all managers and sub-managers with their
-        respective direct reports as members.
+     Directory Manager first creates a Smart Group containing all direct reports of the top-level manager as members. It then creates separate Smart Groups for the direct reports, with their respective direct reports as members. This structure continues until a Smart Group exists for all managers and sub-managers with their respective direct reports as members.
 
-        **Example:**
+     **Example:**
 
-        Take the following data set:
+     Take the following data set:
 
-        - Paul is the top manager with three direct reports: Sam, Eric, and Don.
-        - Sam has two direct reports: Peter and Sean.
-        - Eric has no direct report.
-        - Don has three direct reports: Ashley, Jason, and Tanya.
-        - Jason has a direct report, April.
+     - Paul is the top manager with three direct reports: Sam, Eric, and Don.
+     - Sam has two direct reports: Peter and Sean.
+     - Eric has no direct report.
+     - Don has three direct reports: Ashley, Jason, and Tanya.
+     - Jason has a direct report, April.
 
-        Directory Manager creates a Dynasty with the following child groups:
+     Directory Manager creates a Dynasty with the following child groups:
 
-        - Direct reports of Paul
+     - Direct reports of Paul: **Members: Sam, Eric, Don**
+     - Direct reports of Sam: **Members: Peter, Sean**
+     - Direct reports of Don: **Members: Ashley, Jason, Tanya**
+     - Direct reports of Jason: **Members: April**
 
-**Members: Sam, Eric, Don**
+   - **Flat Managerial List**
 
-        - Direct reports of Sam
+     A flat managerial list is one in which all direct reports of the top manager and sub-level managers are added as members of a single group. No separate groups are created for different levels of managers.
 
-**Members: Peter, Sean**
+     Referring to the data set used for a Managerial List, a flat managerial list consists of one Smart Group for Paul, with all users as members.
 
-        - Direct reports of Don
+     When you select this option button, some options on this page are disabled since they don't apply to a flat managerial list.
 
-**Members: Ashley, Jason, Tanya**
+   - **Recursive Flat Managerial List**
 
-        - Direct reports of Jason
+     Use a recursive flat managerial list to create a Smart Group for each manager and sub-manager. For members, each group contains the respective manager's direct reports, the direct reports of those direct reports, and so on down to the nth level.
 
-**Members: April**
+     Referring to the data set used for a Managerial List, Directory Manager creates the following child groups:
 
-    - **Flat Managerial List**
+     - Direct reports of Paul: Members: Sam, Eric, Don, Peter, Sean, Ashley, Jason, Tanya, April
+     - Direct reports of Sam: **Members: Peter, Sean**
+     - Direct reports of Don: **Members: Ashley, Jason, Tanya, April**
+     - Direct reports of Jason: **Members: April**
 
-        A flat managerial list is one in which all direct reports of the top manager and sub-level
-        managers are added as members of a single group; no separate groups are created for
-        different levels of managers.
+     On the [Query Designer in the Directory Manager portal](/docs/directorymanager/11.2/portal/group/querydesigner/overview.md) page, you can also specify a criterion to filter the managers for whom you want to create child groups in the Dynasty.
 
-        Referring to the data set used for a Managerial List, a flat managerial list consists of
-        one Smart Group for Paul, with all users as members.
+3. Select the **Include manager as member** checkbox to include the manager as a member of their group along with their direct reports, while creating groups for the managerial structure. With this checkbox selected, the manager receives a copy of any email sent to the direct reports group.
 
-        On selecting this option button, some options on this page are disabled since they don't
-        apply to a flat managerial list.
+   By default, this checkbox isn't selected, so the manager of each level of direct reports isn't included in their respective group.
 
-    - **Recursive Flat Managerial List**
+4. Select the **Set Manager as owner** checkbox to set the top manager as the primary owner of the parent Dynasty.
 
-        Use a recursive flat managerial list to create a Smart Group for each manager and
-        sub-manager. For members, each group contains the respective manager’s direct reports,
-        the direct reports of those direct reports, and so on down to the nth level.
+   On the **Owners** page of the wizard, the top manager is displayed as the primary owner. If you change it, the new recipient becomes the owner, even with the **Set manager as owner** checkbox selected.
 
-        Referring to the data set used for a Managerial List, Directory Manager creates the following child groups:
+   If the Dynasty isn't a flat managerial Dynasty, Directory Manager sets the manager of each child Dynasty as its respective owner.
 
-        - Direct reports of Paul
-
-            Members: Sam, Eric, Don, Peter, Sean, Ashley, Jason, Tanya, April
-
-        - Direct reports of Sam
-
-**Members: Peter, Sean**
-
-        - Direct reports of Don
-
-**Members: Ashley, Jason, Tanya, April**
-
-        - Direct reports of Jason
-
-**Members: April**
-
-        On the [Query Designer in the Directory Manager portal](/docs/directorymanager/11.2/portal/group/querydesigner/overview.md) page, you can also specify a criterion
-        to filter the managers for whom you want to create child groups in the Dynasty.
-
-3. Select the **Include manager as member** checkbox to include the manager as a member of their
-   group along with their direct reports, while creating groups for the managerial structure. With
-   this checkbox selected, the manager receives a copy of any email sent to the direct reports
-   group.
-
-    By default, this checkbox isn't selected, indicating that the manager of each level of direct
-    reports isn't included in their respective group.
-
-4. Select the **Set Manager as owner** checkbox to set the top manager as the primary owner of the
-   parent Dynasty.
-
-    On the **Owners** page of the wizard, the top manager is displayed as the primary owner.
-    If you change it, the new recipient becomes the owner, even with the **Set manager as owner**
-    checkbox selected.
-
-    In case the Dynasty isn't a flat managerial Dynasty, Directory Manager sets the manager of each child Dynasty
-    as its respective owner.
-
-5. For a hierarchical managerial Dynasty, by default, the Dynasty structure adds a sub-level
-   manager’s Smart Groups in the membership of the top-level manager’s Smart Groups. Select the
-   **Exclude nested lists of direct reports** checkbox to exclude them from the membership.
+5. For a hierarchical managerial Dynasty, by default, the Dynasty structure adds a sub-level manager's Smart Groups in the membership of the top-level manager's Smart Groups. Select the **Exclude nested lists of direct reports** checkbox to exclude them from the membership.
 6. Specify a container for creating child groups. Options are:
 
-    - **Create groups in same container as manager**: to create groups in the container the
-      top-level manager resides in.
-    - **Create groups in this container**: to specify a container or organizational unit for the
-      child groups to be created in. Click **Browse** next to the **Child Dynasty Container** box to
-      specify a container.
+   - **Create groups in same container as manager**: Create groups in the container the top-level manager resides in.
+   - **Create groups in this container**: Specify a container or organizational unit for the child groups to be created in. Click **Browse** next to the **Child Dynasty Container** box to specify a container.
 
-7. You can create a managerial Dynasty based on any attribute.
+7. (Optional) Set the attributes for the managerial Dynasty. You can create a managerial Dynasty based on any attribute.
 
-    Use the **Attributes** area to set a custom attribute, such as the XAdditionalManager attribute,
-    to create a managerial lineage in the context of this attribute.
+   Use the **Attributes** area to set a custom attribute, such as the XAdditionalManager attribute, to create a managerial lineage in the context of this attribute.
 
-    By default, the ‘Manager’ attribute is selected to create a managerial lineage. This attribute
-    involves the collaboration of two attributes: manager and direct reports, to create the
-    Dynasty’s hierarchical structure.
+   By default, the 'Manager' attribute is selected to create a managerial lineage. This attribute involves the collaboration of the manager attribute and the direct reports attribute to create the hierarchical structure of the Dynasty.
 
-    - To add another attribute, click **Add** and select the required attribute.
-    - To remove an attribute, select it and click **Remove**.
-    - To replace an attribute, select it and click **Edit**. Select another attribute as a replacement and click **OK**.
+   - To add another attribute, click **Add** and select the required attribute.
+   - To remove an attribute, select it and click **Remove**.
+   - To replace an attribute, select it and click **Edit**. Select another attribute as a replacement and click **OK**.
 
-    The following list gives some examples of a managerial Dynasty with a different set of
-    attributes:
+   The following list gives some examples of a managerial Dynasty with a different set of attributes:
 
-    - Specify the ‘XadditionalManager’ attribute in addition to the ‘Manager’ attribute to create a
-      managerial lineage
+   - Specify the 'XadditionalManager' attribute in addition to the 'Manager' attribute to create a managerial lineage
 
-        Here ‘Manager’ is the primary attribute to create the managerial lineage.
+     Here 'Manager' is the primary attribute to create the managerial lineage.
 
-        You select a top manager to create the Dynasty. The managerial hierarchy for this manager in
-        a provider (such as Active Directory) is as follows:
+     You select a top manager to create the Dynasty. The managerial hierarchy for this manager in a provider (such as Active Directory) is as follows:
 
-**Top manager: Alan**
+     - **Top manager: Alan**
+     - Alan is the manager of John, Jane, and Josephine.
+     - **John is the manager of Mark and Martin**
+     - Mark is the manager of Sophia and Martin is the manager of Sarah.
+     - John is also the additional manager of Sophia and Sarah.
 
-        Alan is the manager of John, Jane, and Josephine
+     When the Dynasty is updated, 'TestManagerial1' is the parent Dynasty with child Dynasties such as:
 
-**John is the manager of Mark and Martin**
+     - Direct reports of John
+     - Direct reports of Mark
+     - Direct reports of Martin
+     - Direct reports of Sophia. This child Dynasty is a part of the Direct reports of John and Direct reports of Mark, since John is the additional manager and Mark is the primary manager.
+     - Direct reports of Sarah. This child Dynasty is a part of the Direct reports of Martin.
 
-        Mark is the manager of Sophia and Martin is the manager of Sarah
+     If no user is set as additional manager, Directory Manager creates no child Dynasty with the additional manager attribute.
 
-        John is also the additional manager of Sophia and Sarah
+   - Specify a single attribute, 'XadditionalManager'
 
-        When the Dynasty is updated:
+     Suppose the managerial hierarchy for the top manager in a provider (such as Active Directory) is as follows:
 
-        - ‘TestManagerial1’ is the parent Dynasty with child Dynasties such as:
+     - **Top manager: Alan**
+     - Alan is the additional manager of John, Jane, and Josephine.
+     - John is the additional manager of Mark and Martin.
+     - Mark is the additional manager of Sophia and Martin is the additional manager of Sarah.
 
-            - Direct reports of John
-            - Direct reports of Mark
-            - Direct reports of Martin
-            - Direct reports of Sophia
+     When the Dynasty is updated, 'TestManagerial1' is the parent Dynasty with child Dynasties such as:
 
-                (This child Dynasty is a part of the Direct reports of John and Direct reports
-                of Mark, since John is the additional manager and Mark is the primary manager.)
+     - Direct reports of John
+     - Direct reports of Mark
+     - Direct reports of Martin
 
-            - Direct reports of Sarah
+     When Alan isn't the additional manager of any user, Directory Manager creates the parent Dynasty without any child Dynasties.
 
-                (This child Dynasty is a part of the Direct reports of Martin.)
+   - Specify a custom attribute, 'customattribute1'
 
-        If no user is set as additional manager, Directory Manager creates no child Dynasty with the
-        additional manager attribute.
+     Take employeeID as the custom attribute. The data is:
 
-    - Specify a single attribute, ‘XadditionalManager’
+     - **Top manager: Alan with EmployeeId 1**
+     - John (EmpID: 2, CA: 1); Jane (EmpID: 3, CA: 1); Josephine (EmpID: 4, CA: 1)
+     - Mark (EmpID: 5, CA: 2); Martin (EmpID: 6, CA: 2)
+     - Sophia (EmpID: 7, CA: 5); Sarah (EmpID: 8, CA: 6)
 
-        Suppose the managerial hierarchy for the top manager in a provider (such as Active
-        Directory) is as follows:
+     When the Dynasty is updated, 'TestManagerial1' is the parent Dynasty with child Dynasties such as:
 
-**Top manager: Alan**
+     - Direct reports of John (having Mark and Martin)
+     - Direct reports of Mark (having Sophia)
+     - Direct reports of Martin (having Sarah)
 
-        Alan is the additional manager of John, Jane, and Josephine
+   - Specify multiple attributes: 'Manager', 'XadditionalManager', and 'customattribute1'
 
-        John is the additional manager of Mark and Martin
-
-        Mark is the additional manager of Sophia and Martin is the additional manager of Sarah
-
-        When the Dynasty is updated:
-
-        - ‘TestManagerial1’ is the parent Dynasty with child Dynasties such as:
-        - Direct reports of John
-        - Direct reports of Mark
-        - Direct reports of Martin
-
-        When Alan isn't the additional manager of any user, Directory Manager creates the parent Dynasty
-        without any child Dynasties.
-
-    - Specify a custom attribute, ‘customattribute1’
-
-        Take employeeID as the custom attribute. The data is:
-
-**Top manager: Alan with EmployeeId 1**
-
-        John (EmpID: 2, CA: 1); Jane (EmpID: 3, CA: 1); Josephine (EmpID: 4, CA: 1)
-
-        Mark (EmpID: 5, CA: 2); Martin (EmpID: 6, CA: 2)
-
-        Sophia (EmpID: 7, CA: 5); Sarah (EmpID: 8, CA: 6)
-
-        When the Dynasty is updated:
-
-        - ‘TestManagerial1’ is the parent Dynasty with child Dynasties such as:
-
-            - Direct reports of John (having Mark and Martin)
-            - Direct reports of Mark (having Sophia)
-            - Direct reports of Martin (having Sarah)
-
-    - Specify multiple attributes – ‘Manager’, ‘XadditionalManager’ and ‘customattribute1’
-
-        Direct reports for users created with respect to additional manager and custom attribute 1
-        are added in their respective managers and additional managers according to the custom
-        attribute 1 data.
+     Direct reports for users created with respect to additional manager and custom attribute 1 are added in their respective managers and additional managers according to the custom attribute 1 data.
 
 8. Click **Next**.

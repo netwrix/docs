@@ -13,38 +13,14 @@ sidebar_position: 80
 
 Use this tab to view or update the phone numbers and notes of the user or contact.
 
-**Business**
-
-The primary business phone number of the user or contact.
-
-**Business 2**
-
-The secondary business phone number of the user or contact.
-
-**Home**
-
-The primary home phone number of the user or contact.
-
-**Home 2**
-
-The secondary home phone number of the user or contact.
-
-**Fax**
-
-The fax number of the user or contact.
-
-**Mobile**
-
-The cell phone number of the user or contact.
-
-**Telephone Assistant**
-
-The contact number of the assistant of the user or contact, if any.
-
-**Notes**
-
-Any additional information about the user or contact.
-
-**Pager**
-
-The pager number of the user or contact.
+| Field | Description |
+| --- | --- |
+| **Business** | The primary business phone number of the user or contact. |
+| **Business 2** | The secondary business phone number of the user or contact. |
+| **Home** | The primary home phone number of the user or contact. |
+| **Home 2** | The secondary home phone number of the user or contact. |
+| **Fax** | The fax number of the user or contact. |
+| **Mobile** | The cell phone number of the user or contact. |
+| **Telephone Assistant** | The contact number of the assistant of the user or contact, if any. |
+| **Notes** | Any additional information about the user or contact. |
+| **Pager** | The pager number of the user or contact. |

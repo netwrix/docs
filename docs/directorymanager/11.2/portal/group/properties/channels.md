@@ -13,40 +13,23 @@ sidebar_position: 170
 
 Use this tab to view, add, and remove the channels in a Teams group.
 
-## Add
+## Add a channel
 
-To add channels to the group, click **Add** on the toolbar. The **Add Channel** dialog
-box appears.
+1. Click **Add** on the toolbar. The **Add Channel** dialog box appears.
 
-Provide the following information:
+2. Provide the following information:
 
-- **Display Name**
+   - **Display Name**: Assign a display name for the channel that you are adding.
+   - **Privacy**: Select the security for the channel. Choose one of the following options:
+     - **Public:** Doesn't require any members. It's open to all.
+     - **Private:** Requires you to add members who can view the channel.
+   - **Description**: Provide a description for the channel you are creating.
+   - **Members**: This option appears only if you select **Private** from the **Privacy** list. To add a member, click **Add** and enter a search string to locate the user. Or click **Advance** to use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md) for performing a search. Click **Remove** to remove a member.
 
-    Assign a display name for the channel that you are adding.
+3. Click **Add** to add the channel to the Teams group. The channel appears in the **Channels** grid.
 
-- **Privacy**
+## Remove a channel
 
-    Select the security for the channel. Choose one of the following options:
+1. Select a channel from the **Channels** list.
 
-    - **Public:** Doesn't require any members. It's open to all.
-    - **Private:** Requires you to add members who can view the channel.
-
-- **Description**
-
-    Provide a description for the channel you are creating.
-
-- **Members**
-
-    This option appears only if you select **Private** from the **Privacy** list.
-
-    Click **Add** and enter a search string to locate the user to add as a member, or click
-    **Advance** to use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md) for performing a search.
-
-    Click **Remove** to remove a member.
-
-Click **Add** to add the channel to the Teams group. The channel appears in the **Channels** grid.
-
-## Remove
-
-Select a channel from the **Channels** list and click **Remove** to remove this channel from the
-Teams group.
+2. Click **Remove** to remove this channel from the Teams group.

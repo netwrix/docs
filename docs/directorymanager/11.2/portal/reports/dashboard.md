@@ -12,10 +12,9 @@ keywords:
 
 # Directory Manager Reports Dashboard
 
-Use Directory Manager Reports to generate web-based reports for an identity store. It offers a
-wizard-guided report generation process.
+Use Directory Manager Reports to generate web-based reports for an identity store. A wizard guides you through generating each report.
 
-Directory Manager reports are organized into four categories:
+Reports are organized into four categories:
 
 - [User Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/user.md)
 - [Group Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/group.md)
@@ -23,57 +22,55 @@ Directory Manager reports are organized into four categories:
 - [Contact Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/contact.md)
 
 :::note
-A Microsoft Entra ID-based identity store doesn't support the computer and contact object
-types.
+A Microsoft Entra ID-based identity store doesn't support the computer and contact object types.
 :::
 
-You can view, edit, and delete the created reports. You can also download them in Excel and PDF
-formats.
+You can view, edit, and delete the reports you create. You can also download them in Excel and PDF formats.
+
+## Dashboard elements
 
 The following image shows the Reports Dashboard:
 
 ![Reports Dashboard showing the search box, header icons, pinned reports, recent reports, and the navigation pane](/images/directorymanager/11.2/portal/report/reportsdashboard.webp)
 
-The following list describes the different elements of the Dashboard:
+The Dashboard has these elements:
 
-- At the top of the page, use Reports Search to locate and display information for reports.
+- At the top of the page, use Reports Search to find reports and view their information.
 - In the top right corner, you can find the following icons:
 
-    - Click the **Help** icon to launch the portal help.
-    - Your name also appears as an icon. Click it to see the following options:
+  - Click the **Help** icon to launch the portal help.
+  - Your name also appears as an icon. Click it to see the following options:
 
-        - Connected identity store.
-        - Directory Manager version.
-        - See full profile.
-        - My Applications
+    - Connected identity store.
+    - Directory Manager version.
+    - See full profile.
+    - My Applications
 
-            Displays Directory Manager and third-party applications that the user is connected to.
-            Click **Add Apps** to add new applications.
+      Displays Directory Manager and third-party applications that the user is connected to. Click **Add Apps** to add new applications.
 
-        - Enroll your account.
-        - Change Password.
-        - Switch account.
-        - Sign Out of the portal.
+    - Enroll your account.
+    - Change Password.
+    - Switch account.
+    - Sign Out of the portal.
 
-- The **Dashboard** displays general information about the Reports portal such as:
+- The **Dashboard** displays general information about the Reports portal, such as:
 
-    - Name of the identity store the Reports portal is connected to.
-    - Name of the domain.
-    - Number of each type of directory object in the directory.
+  - Name of the identity store the Reports portal is connected to.
+  - Name of the domain.
+  - Number of each type of directory object in the directory.
 
-- In the **Pinned Reports** section, you can pin the reports you use most frequently.
+- In the **Pinned Reports** section, you can pin the reports you use most often.
 
-    You can unpin the pinned reports from the dashboard by clicking the unpin icon on the top right
-    corner of the card.
+  To unpin a report, click the unpin icon in the top right corner of its card.
 
-- In the **Recent Reports** section, you can view the most recent reports you have created or used.
+- In the **Recent Reports** section, you can view the most recent reports you created or used.
 
-    You can pin the recent reports by clicking the pin icon on the top right corner of the card.
+  To pin a recent report, click the pin icon in the top right corner of its card.
 
 - The navigation pane on the left side of the page lists links to the following:
 
-    - Dashboard
-    - [User Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/user.md)
-    - [Group Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/group.md)
-    - [Directory Manager Computer Reports](/docs/directorymanager/11.2/portal/reports/computer.md)
-    - [Contact Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/contact.md)
+  - Dashboard
+  - [User Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/user.md)
+  - [Group Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/group.md)
+  - [Directory Manager Computer Reports](/docs/directorymanager/11.2/portal/reports/computer.md)
+  - [Contact Reports in Directory Manager](/docs/directorymanager/11.2/portal/reports/contact.md)

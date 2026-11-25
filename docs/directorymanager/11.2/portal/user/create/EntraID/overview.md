@@ -13,7 +13,5 @@ sidebar_position: 20
 
 In a Microsoft Entra ID identity store, you can create the following types of users:
 
-- User – See the [Create a Microsoft Entra ID User in Directory Manager](/docs/directorymanager/11.2/portal/user/create/EntraID/user.md) topic for additional information on how
-  to create a user in a Microsoft Entra ID identity store.
-- Mailbox – See the [Create a Microsoft Entra ID Mailbox in Directory Manager](/docs/directorymanager/11.2/portal/user/create/EntraID/mailbox.md) topic for additional
-  information on how to create a mailbox in a Microsoft Entra ID identity store.
+- User: To create a user, see the [Create a Microsoft Entra ID User in Directory Manager](/docs/directorymanager/11.2/portal/user/create/EntraID/user.md) topic.
+- Mailbox: To create a mailbox, see the [Create a Microsoft Entra ID Mailbox in Directory Manager](/docs/directorymanager/11.2/portal/user/create/EntraID/mailbox.md) topic.

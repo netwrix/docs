@@ -13,13 +13,13 @@ sidebar_position: 40
 
 # Work with Groups in the Directory Manager Portal
 
-Use the Directory Manager portal to manage your directory groups in the identity store. You can
-do the following and more:
+Use the Directory Manager portal to manage your directory groups in the identity store. You can do
+the following and more:
 
-- Add and remove members from your groups
-- Join and leave other groups
-- Associate a scheduled job for membership update with Smart Groups
-- Expire groups instantly or set an expiry policy to expire them automatically later
+- Add and remove members from your groups.
+- Join and leave other groups.
+- Associate a scheduled job for membership updates with Smart Groups.
+- Expire groups instantly, or set an expiry policy to expire them automatically later.
 
 **General**
 
@@ -28,12 +28,12 @@ do the following and more:
 - [View groups managed by an object](generalfunction.md#view-groups-managed-by-an-object)
 - [Manage group access](generalfunction.md#manage-group-access)
 - [Set email delivery restrictions](generalfunction.md#set-email-delivery-restrictions)
-- [Send As and Send on Behalf Features for Groups](/docs/directorymanager/11.2/portal/group/workingwithgroups/sendassendonbehalf.md)
+- [Send As and Send on Behalf features for groups](/docs/directorymanager/11.2/portal/group/workingwithgroups/sendassendonbehalf.md)
 
 **Group Membership**
 
 - [Add members to a group](groupmembershipfunction.md#add-members-to-a-group)
-- [Change the membership type of a group member ](groupmembershipfunction.md#change-the-membership-type-of-a-group-member)
+- [Change the membership type of a group member](groupmembershipfunction.md#change-the-membership-type-of-a-group-member)
 - [Remove members permanently from a group](groupmembershipfunction.md#remove-members-permanently-from-a-group)
 - [Add a group to the membership of another group (nesting)](groupmembershipfunction.md#add-a-group-to-the-membership-of-another-group-nesting)
 - [Import members to a group](groupmembershipfunction.md#import-members-to-a-group)
@@ -74,11 +74,11 @@ do the following and more:
 **Group Expiry and Deletion**
 
 - [How Group Expiry Works in Directory Manager](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupexpiry.md)
-- [Expire a group manually ](groupexpiryfunction.md#expire-a-group-manually)
+- [Expire a group manually](groupexpiryfunction.md#expire-a-group-manually)
 - [Change the expiry policy for a group](groupexpiryfunction.md#change-the-expiry-policy-for-a-group)
 - [Attest an expiring group](groupexpiryfunction.md#attest-an-expiring-group)
 - [Renew an expired group](groupexpiryfunction.md#renew-an-expired-group)
-- [ How Group Deletion Works in Directory Manager](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupdeletion.md)
+- [How Group Deletion Works in Directory Manager](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupdeletion.md)
 
 **Query Designer Policy for Groups**
 

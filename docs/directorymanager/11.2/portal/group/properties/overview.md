@@ -12,14 +12,13 @@ sidebar_position: 90
 
 # View and Edit Group Properties in Directory Manager
 
-You can view and change the properties of groups in the connected identity store, depending on
-the permissions the Directory Manager administrator has granted you.
+You can view and change the properties of groups in the connected identity store. Your access depends on the permissions the Directory Manager administrator has granted you.
 
-Select the required object and click **Properties** on the toolbar. The portal displays the object's properties page.
+To open a group's properties page, select the group and click **Properties** on the toolbar.
 
 **On the group's properties page, you can:**
 
-1. Save the changes made in the properties by clicking **Save**.
+1. Click **Save** to save the changes you made to the properties.
 2. Click **Delete** to delete the group.
 3. **Join** a group temporarily or permanently. See
    [Join a group temporarily](/docs/directorymanager/11.2/portal/group/workingwithgroups/groupjoinleave.md#join-a-group-temporarily) or
@@ -34,25 +33,25 @@ Select the required object and click **Properties** on the toolbar. The portal d
     Select **Other** to remove other users from the group.
 
 5. To **Join/Leave** the group, you can also click **Want to write reason to group owner?** and
-   state the reason for joining or leaving the group for the group owner.
+   state your reason for the group owner.
 6. Click **Upgrade To** to change the group into one of the following:
 
     - Smart Group
     - Dynasty
     - Managerial Dynasty
 
-7. Select a group and click **Move Group** from the toolbar. You can specify a new container from
-   **Select Container** box where you want to move the group.
-8. Add a group’s email to your email contact list using the vCard.
+7. Select a group and click **Move Group** on the toolbar. Specify the new container in the
+   **Select Container** box.
+8. Add a group's email address to your email contact list using the vCard.
 
     Select a group and click **Add to Contacts** on the toolbar. The portal creates the group's
     vCard and prompts you to save it on your machine. You can then use it to add the group's email
     address to your email contact list.
 
-9. Select a group and click **Send Email** on the toolbar. This launches the default Windows email
-   application for sending an email to group members.
-10. For Teams, click **Subscribe Group** to get subscriptions of that Teams channel.
-11. To unsubscribe from the Teams channel, click **Unsubscribe Group** from the toolbar.
+9. Select a group and click **Send Email** on the toolbar. This opens the default Windows email
+   application so you can email the group members.
+10. For Teams, click **Subscribe Group** to subscribe to that Teams channel.
+11. To unsubscribe from the Teams channel, click **Unsubscribe Group** on the toolbar.
 
 ## Group properties tabs
 
@@ -69,12 +68,10 @@ Select the required object and click **Properties** on the toolbar. The portal d
 - [Group properties - Similar Groups tab](/docs/directorymanager/11.2/portal/group/properties/similargroups.md)
 - [Object properties - History tab](/docs/directorymanager/11.2/portal/group/properties/history.md)
 - [Teams Properties - Channels](/docs/directorymanager/11.2/portal/group/properties/channels.md) (For Teams only)
-- [Group properties - Smart Group/Query Designer tab](/docs/directorymanager/11.2/portal/group/properties/smartgroup.md) (for Smart Groups and Dynasties
-  only)
+- [Group properties - Smart Group/Query Designer tab](/docs/directorymanager/11.2/portal/group/properties/smartgroup.md) (for Smart Groups and Dynasties only)
 - [Group properties - Dynasty Options tab](/docs/directorymanager/11.2/portal/group/properties/dynastyoptions.md) (for Dynasties only)
 
 :::note
 The **Delivery Restrictions**, **Attributes**, **Email**, and **Advanced** tabs aren't
 available for groups in a Microsoft Entra ID based identity store.
-
 :::

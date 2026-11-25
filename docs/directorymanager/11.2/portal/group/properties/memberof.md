@@ -11,18 +11,13 @@ sidebar_position: 40
 
 # Directory Manager group properties: Member Of tab
 
-Use this tab to view the groups of which this group is a member. You can add and remove this group
-from the membership of other groups.
+Use this tab to view the groups of which this group is a member. You can also add this group to, and remove it from, the membership of other groups.
 
 **Member Of**
 
-This group is a member of all groups listed in this grid.
+This group is a member of all groups listed in this grid. For each group, you can view the display name, email, and description.
 
-For each group listed, you can view the display name, email, and description.
-
-For each column in the grid, an item level filter is also available that lets you filter records
-based on a particular criterion. For example, to show groups whose display names start with D, type
-**D** in the box under the **Display Name** header and press Enter.
+Each column in the grid has an item-level filter that lets you filter records by a criterion. For example, to show groups whose display names start with D, type **D** in the box under the **Display Name** header and press Enter.
 
 | Column Name  | Description |
 | --- | --- |
@@ -33,14 +28,12 @@ based on a particular criterion. For example, to show groups whose display names
 
 **Add**
 
-Click it to add this group to the memberships of another group (for example, Group A).
+Click it to add this group to the membership of another group (for example, Group A).
 
-Enter a search string to locate the required group (Group A), or click **Advance** to use the
-[Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md) for performing a search.
+Enter a search string to locate the group (Group A), or click **Advance** to search with the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.2/portal/generalfeatures/find.md).
 
-The selected groups get listed in the **Member Of** grid.
+The selected groups appear in the **Member Of** grid.
 
 **Remove**
 
-Select a group (Group A) from the Member Of list and click **Remove** to remove this group from the
-membership of Group A.
+Select a group (Group A) from the Member Of list and click **Remove** to remove this group from the membership of Group A.

@@ -13,13 +13,9 @@ sidebar_position: 60
 
 # Manage Your Directory Manager User Account
 
-In the Directory Manager portal, you can manage your profile information and change your
-password, provided that the Directory Manager administrator has granted you the required
-permissions. You can also add your picture to your profile.
+In the Directory Manager portal, you can manage your profile information and change your password, provided that the Directory Manager administrator has granted you the required permissions. You can also add your picture to your profile.
 
-Administrators can also reset the passwords of other user accounts in the identity store. They can
-set the expiration policy of user accounts. They can also lock, unlock, enable, and disable
-accounts.
+Administrators can also reset the passwords of other user accounts in the identity store. They can set the expiration policy of user accounts. They can also lock, unlock, enable, and disable accounts.
 
 ## Update your account information
 
@@ -33,19 +29,17 @@ If the administrator has specified this action for review, your changes require 
 
 ## Add a photo to your profile
 
-1. In the Directory Manager portal, click **Dashboard** in the left pane and click the **My
-Profile** card.
+1. In the Directory Manager portal, click **Dashboard** in the left pane and click the **My Profile** card.
 
 2. Click the **General** tab.
 
 3. Click **Modify** next to the **Photo** box.
 
-The **Manage Photo** dialog box appears.
+   The **Manage Photo** dialog box appears.
 
-4. Click **Browse** to browse the file system to select the photo. The size of the image
-shouldn't exceed the size displayed in the header area of the dialog box.
+4. Click **Browse** to browse the file system to select the photo. The size of the image shouldn't exceed the size displayed in the header area of the dialog box.
 
-Use the options on the dialog box to edit the photo as desired.
+   Use the options on the dialog box to edit the photo as desired.
 
 5. Click **OK** to close the **Manage Photo** dialog box.
 
@@ -61,7 +55,7 @@ If the administrator has specified this action for review, your changes require 
 
 2. Select this user on the **Search Results** page and click **Properties** on the toolbar.
 
-The user's properties page appears.
+   The user's properties page appears.
 
 3. On the **Account** tab, select the **Never** option button for **Account Expires**.
 
@@ -73,10 +67,9 @@ The user's properties page appears.
 
 2. Select this user on the **Search Results** page and click **Properties** on the toolbar.
 
-The user's properties page appears.
+   The user's properties page appears.
 
-3. On the **Account** tab, select **End of** from the **Account Expires** options and click the
-Calendar button to set the date for expiring the user account.
+3. On the **Account** tab, select **End of** from the **Account Expires** options and click the Calendar button to set the date for expiring the user account.
 
 4. Click **Save**.
 
@@ -86,12 +79,12 @@ Calendar button to set the date for expiring the user account.
 
 2. Select this user on the **Search Results** page and click **Properties** on the toolbar.
 
-The user's properties page appears.
+   The user's properties page appears.
 
 3. On the **Account** tab:
 
-- Select the **Account is locked out** checkbox to lock the user account.
-- Clear the **Account is locked out** checkbox to unlock the account.
+   - Select the **Account is locked out** checkbox to lock the user account.
+   - Clear the **Account is locked out** checkbox to unlock the account.
 
 4. Click **Save**.
 
@@ -101,11 +94,11 @@ The user's properties page appears.
 
 2. Select this user on the **Search Results** page and click **Properties** on the toolbar.
 
-3. The user's properties page appears.
+   The user's properties page appears.
 
-4. On the **Account** tab:
+3. On the **Account** tab:
 
-- Select the **Account is disabled** checkbox to disable the user account.
-- Clear the **Account is disabled** checkbox to enable the user account.
+   - Select the **Account is disabled** checkbox to disable the user account.
+   - Clear the **Account is disabled** checkbox to enable the user account.
 
-5. Click **Save**.
+4. Click **Save**.

@@ -11,13 +11,13 @@ sidebar_position: 10
 
 # Create User, Mailbox, and Contact Objects
 
-The Directory Manager portal lets you create the following types of users:
+In the Directory Manager portal, you can create the following types of user objects:
 
 - User
 - Mailbox
 - Contact
 
-Directory Manager supports the following identity providers for creating the user objects:
+Directory Manager supports these identity providers for creating user objects:
 
 - Active Directory
 - Microsoft Entra ID

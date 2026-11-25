@@ -11,14 +11,15 @@ sidebar_position: 20
 
 # Entra ID User Directory Role Tab
 
-This tab displays the role assigned to the user or mailbox in Microsoft Entra ID. If required, you can
-change the role or modify the permissions assigned to the current role.
+This tab shows the role assigned to the user or mailbox in Microsoft Entra ID. You can change the role or modify the permissions assigned to the current role.
 
 The available roles are Global Administrator, Limited Administrator, and User.
 
 **Directory Roles**
 
-Displays the role assigned to the user on the Microsoft Entra admin center.
+Shows the role assigned to the user in the Microsoft Entra admin center.
 
-To change the user role, click the down arrow for the new role you want to assign, and then select
-the checkboxes for the role privileges for assignment.
+To change the user role:
+
+1. Click the down arrow for the new role you want to assign.
+2. Select the checkboxes for the role privileges to assign.

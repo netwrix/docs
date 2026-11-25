@@ -12,18 +12,15 @@ sidebar_position: 30
 
 # View My Expiring Groups in Directory Manager
 
-To view a list of your expiring groups, click **Groups** on the left navigation pane and select **My
+To view your expiring groups, click **Groups** on the left navigation pane and select **My
 Groups**. On the My Groups page, click the **My Expiring Groups** tab.
 
-Groups that expire in 30 days or less are considered expiring groups. The expiry date is
-calculated from a group’s expiry policy. The Group Life Cycle job is responsible for expiring these
-groups on their respective expiry dates; however, you can also manually expire a group before it
-reaches the expiry date.
+Groups that expire in 30 days or less are expiring groups. The expiry date comes from a group's expiry policy. The Group Life Cycle job expires these groups on their expiry dates. You can also manually expire a group before it reaches the expiry date.
 
-By default, the tab lists the groups that you are the primary owner of. To include the groups for
-which you are an additional owner, select the **Display additional group ownership in My Expiring
-Groups** checkbox on the [Configure Directory Manager Portal Settings](/docs/directorymanager/11.2/portal/generalfeatures/portal.md) panel.
+## Include groups you co-own
 
-You can [Modify Search Directory](/docs/directorymanager/11.2/portal/group/allgroups/allgroups.md#modify-search-directory) to search expiring groups
-and add [Filter All Groups](/docs/directorymanager/11.2/portal/group/allgroups/allgroups.md#filter-all-groups) by clicking **My Expiring Group Grid
-Filters**. All the expiring groups matching the filters appear.
+By default, the tab lists the groups that you are the primary owner of. To include the groups for which you are an additional owner, select the **Display additional group ownership in My Expiring Groups** checkbox on the [Configure Directory Manager Portal Settings](/docs/directorymanager/11.2/portal/generalfeatures/portal.md) panel.
+
+## Search and filter expiring groups
+
+You can [Modify Search Directory](/docs/directorymanager/11.2/portal/group/allgroups/allgroups.md#modify-search-directory) to search expiring groups. You can also add [Filter All Groups](/docs/directorymanager/11.2/portal/group/allgroups/allgroups.md#filter-all-groups) by clicking **My Expiring Group Grid Filters**. All the expiring groups that match the filters appear.

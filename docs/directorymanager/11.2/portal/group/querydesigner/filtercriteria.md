@@ -12,20 +12,14 @@ sidebar_position: 10
 
 # Query Designer Filter Criteria tab
 
-Use this tab to add custom criteria to your query that don't fit any of the categories on the other
-tabs of the Query Designer dialog box. For example, you can add criteria to retrieve all
-directory users who live in Houston and have a fax number. You can also apply logical operators
-(AND, OR) to your custom query to achieve the most accurate results.
+Use this tab to add custom criteria to your query that don't fit any of the categories on the other tabs of the Query Designer dialog box. For example, you can add criteria to retrieve all directory users who live in Houston and have a fax number. You can also apply logical operators (AND, OR) to your custom query to get the most accurate results.
 
-If the administrator has defined a default filter criteria in your role's Query Designer policy,
-the tab displays that filter criteria. You can view and copy the query using the **View
-Query** button. See the
+If the administrator has defined a default filter criteria in your role's Query Designer policy, the tab displays that filter criteria. You can view and copy the query with the **View Query** button. See the
 [Specify a Default Filter Criteria](/docs/directorymanager/11.2/admincenter/securityrole/policy/querydesigner.md#specify-a-default-filter-criteria)
 section of the [Configure a Query Designer Policy for a Security Role](/docs/directorymanager/11.2/admincenter/securityrole/policy/querydesigner.md)
 topic.
 
-The default criteria is part of the policy; therefore, in the Directory Manager portal it's visible to
-role members only.
+The default criteria is part of the policy, so in the Directory Manager portal only role members can see it.
 
 Suppose the administrator has defined the following default criteria in the policy:
 
@@ -35,22 +29,18 @@ You can add another row of filter criteria in the portal Query Designer window i
 
 **Select Attribute**
 
-By default, this is the only list displayed on the tab. It displays all or specific schema and
-Exchange attributes, depending on what the Directory Manager administrator has configured.
+By default, this is the only list on the tab. It displays all or specific schema and Exchange attributes, depending on what the Directory Manager administrator has configured.
 
-Select an attribute to be searched. For example, to search for users who live in the city of
+Select the attribute to search. For example, to search for users who live in the city of
 Houston, select the City attribute from this list.
 
 **Contains**
 
-From here, select the condition that identifies search results. The following table lists the
-available conditions:
+Select the condition that identifies search results. The following table lists the available conditions:
 
 :::note
-Depending on the configuration the Directory Manager administrator made for the portal, the list
-displays all of the following conditions or only specific ones.
+Depending on the configuration the Directory Manager administrator made for the portal, the list displays all of the following conditions or only specific ones.
 :::
-
 
 The condition list for query-based searches might vary.
 
@@ -76,34 +66,29 @@ The condition list for query-based searches might vary.
 
 **Value**
 
-Specify a value for the attribute. The query returns results based on the specified criteria
-(attribute, condition, and value).
+Specify a value for the attribute. The query returns results based on the specified criteria (attribute, condition, and value).
 
-For some operators, the Value box isn't available, as in the case of Present or Not Present. This
-happens because these operators aren't comparison operators. They only check whether the value for the
-selected field exists and return either TRUE or FALSE.
+For some operators, such as Present or Not Present, the Value box isn't available. These operators aren't comparison operators. They only check whether the value for the selected field exists and return either TRUE or FALSE.
 
 **AND**
 
-Click this button after selecting two or more records to insert a logical AND to the selected
-criteria.
+After you select two or more records, click this button to insert a logical AND into the selected criteria.
 
 To select a record, click the arrow icon next to it and click **Select Row**.
 
 **OR**
 
-Click this button after selecting two or more records to insert a logical OR to the selected
-criteria.
+After you select two or more records, click this button to insert a logical OR into the selected criteria.
 
 To select a record, click the arrow icon next to it and click **Select Row**.
 
 **Clear**
 
-Use this button to clear the given criteria.
+Click this button to clear the given criteria.
 
 **Preview**
 
-You can preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
+Preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This check confirms the accuracy of the data before you commit changes to the directory.
 
 **OK**
 

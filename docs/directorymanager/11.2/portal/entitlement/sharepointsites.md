@@ -12,48 +12,41 @@ sidebar_position: 20
 
 # View SharePoint Site Permissions in Directory Manager
 
-The **SharePoint Sites** page lists the sites specified for permission analysis in the identity
-store, displaying granular-level permissions granted to objects on document libraries. This data is
-subject to the date and time the permissions were last replicated.
+The **SharePoint Sites** page lists the sites specified for permission analysis in the identity store. It displays granular-level permissions granted to objects on document libraries. This data depends on the date and time the permissions were last replicated.
 
-Active sites appear as enabled, and inactive sites appear as disabled, as follows:
+Active sites appear as enabled, and inactive sites appear as disabled:
 
 ![SharePoint site list showing enabled and disabled sites](/images/directorymanager/11.2/portal/entitlement/disabledsites.webp)
 
-A disabled site indicates that the Insights job hasn't run to replicate permission data for it.
-After permissions are replicated, the site is enabled.
+A disabled site indicates that the Insights job hasn't run to replicate permission data for it. After permissions are replicated, the site is enabled.
 
-- The following information appears under a site name:
+The following information appears under a site name:
 
-    - **Path**: the location where the site exists.
-    - **Total Share**: number of the shared document libraries.
-    - **Last Replication**: day, date, and time when the site was last replicated.
-    - **Time Taken**: time it took to complete the replication.
+- **Path**: the location where the site exists.
+- **Total Share**: number of the shared document libraries.
+- **Last Replication**: day, date, and time when the site was last replicated.
+- **Time Taken**: time it took to complete the replication.
 
-- Double-click the card to explore the site. Once explored, click **Go Back** to return to the
-  list of available sites.
-- You can search for specific sites in the search bar at the top. If you want to undo the search
-  results, click **Refresh** to display all the sites on the page.
+To work with the site list:
 
-## Explore a site – card view
+- Double-click the card to explore the site. Once explored, click **Go Back** to return to the list of available sites.
+- Search for specific sites in the search bar at the top. To undo the search results, click **Refresh** to display all the sites on the page.
 
-When you double-click the site, a separate card appears for each document library in the site, showing the following information:
+## Explore a site in card view
 
-- The date and time the library was last created.
+When you double-click the site, a separate card appears for each document library in the site. Each card shows the date and time the library was last created.
 
 :::note
 Date format: mm/dd/yyyy
 :::
 
-- You can view the files and folders within a document library to the nth level. Double-click a
-  folder card to view its direct child files and folders. Continue to the nth level.
+You can view the files and folders within a document library to the nth level. Double-click a folder card to view its direct child files and folders. Continue to the nth level.
 
-    ![Document library cards and folders within a SharePoint site](/images/directorymanager/11.2/portal/entitlement/sitesfolders.webp)
+![Document library cards and folders within a SharePoint site](/images/directorymanager/11.2/portal/entitlement/sitesfolders.webp)
 
 ## View levels and permissions on a library
 
-When you click a library card or a file/folder card, all users and groups with permissions on it
-are listed in the right pane.
+When you click a library card or a file/folder card, the right pane lists all users and groups with permissions on it.
 
 ![Right pane listing users and groups with permission levels on a document library](/images/directorymanager/11.2/portal/entitlement/sitesrightpane.webp)
 

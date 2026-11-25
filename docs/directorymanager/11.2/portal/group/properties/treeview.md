@@ -11,10 +11,8 @@ sidebar_position: 110
 
 # View a Group's Hierarchy as a Tree in Directory Manager
 
-Using the Directory Manager portal, you can view the hierarchy for a group. This hierarchy is
-displayed in the form of a tree. For example, if Group A is a member of Group B, the graph
-displays Group A and Group B in a hierarchical form in this tab.
+In the Directory Manager portal, you can view a group's hierarchy as a tree. For example, if Group A is a member of Group B, the graph on this tab shows Group A and Group B in a hierarchy.
 
 **Export**
 
-You can also export the graphical representation of the group in the form of a PNG file.
+You can also export the graph of the group as a PNG file.

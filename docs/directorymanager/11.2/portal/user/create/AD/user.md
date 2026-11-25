@@ -25,21 +25,17 @@ administrator can customize the wizard by adding or removing pages and fields.
 
 ## Create a mail-enabled user in Active Directory
 
-Step 1 – In the Directory Manager portal, click the **Create New** button in the left pane and
-select **User**.
+1. In the Directory Manager portal, click the **Create New** button in the left pane and select **User**.
 
-The Create User wizard opens to the Account page.
+   The Create User wizard opens to the Account page.
 
-Step 2 – On the [Account page in the Create User and Create Mailbox wizards](/docs/directorymanager/11.2/portal/user/create/AD/account.md), specify basic account info, such as the user's first
-name, last name, sign-in ID and the UPN suffix.
+2. On the [Account page in the Create User and Create Mailbox wizards](/docs/directorymanager/11.2/portal/user/create/AD/account.md), specify basic account info, such as the user's first name, last name, sign-in ID, and the UPN suffix.
 
-Step 3 – On the [Set Password Options for a New AD User](/docs/directorymanager/11.2/portal/user/create/AD/password.md), provide a password for the user account and set other
-password-specific options.
+3. On the [Set Password Options for a New AD User](/docs/directorymanager/11.2/portal/user/create/AD/password.md), provide a password for the user account and set other password-specific options.
 
-Step 4 – Use the [Exchange page](/docs/directorymanager/11.2/portal/user/create/AD/messaging.md) to create the user as mail-enabled.
+4. Use the [Exchange page](/docs/directorymanager/11.2/portal/user/create/AD/messaging.md) to create the user as mail-enabled.
 
-Step 5 – On the [Review the Summary Page Before Creating an Object](/docs/directorymanager/11.2/portal/user/create/AD/summary.md), review the settings and then click **Finish** to complete
-the wizard.
+5. On the [Review the Summary Page Before Creating an Object](/docs/directorymanager/11.2/portal/user/create/AD/summary.md), review the settings and then click **Finish** to complete the wizard.
 
 :::note
 If the Directory Manager administrator has specified the user creation action for review, your
@@ -49,24 +45,19 @@ changes won't take effect until verified by an approver. See the
 
 ## Create a non-mail-enabled user in Active Directory
 
-Step 1 – In the Directory Manager portal, click the **Create New** button in the left pane and
-select **User**.
+1. In the Directory Manager portal, click the **Create New** button in the left pane and select **User**.
 
-The Create User wizard opens to the Account page.
+   The Create User wizard opens to the Account page.
 
-Step 2 – On the [Account page in the Create User and Create Mailbox wizards](/docs/directorymanager/11.2/portal/user/create/AD/account.md), specify basic account info, such as the user's first
-name, last name, sign-in ID and the UPN suffix.
+2. On the [Account page in the Create User and Create Mailbox wizards](/docs/directorymanager/11.2/portal/user/create/AD/account.md), specify basic account info, such as the user's first name, last name, sign-in ID, and the UPN suffix.
 
-Step 3 – On the [Set Password Options for a New AD User](/docs/directorymanager/11.2/portal/user/create/AD/password.md), provide a password for the user account and set other
-password-specific options.
+3. On the [Set Password Options for a New AD User](/docs/directorymanager/11.2/portal/user/create/AD/password.md), provide a password for the user account and set other password-specific options.
 
-Step 4 – On the [Exchange page](/docs/directorymanager/11.2/portal/user/create/AD/messaging.md), clear the **Mail-Enabled** checkbox to create the
-user as non-mail-enabled. This disables the remaining fields on the page.
+4. On the [Exchange page](/docs/directorymanager/11.2/portal/user/create/AD/messaging.md), clear the **Mail-Enabled** checkbox to create the user as non-mail-enabled. This disables the remaining fields on the page.
 
-A non-mail-enabled user doesn't have an email address.
+   A non-mail-enabled user doesn't have an email address.
 
-Step 5 – On the [Review the Summary Page Before Creating an Object](/docs/directorymanager/11.2/portal/user/create/AD/summary.md), review the settings and then click **Finish** to complete
-the wizard.
+5. On the [Review the Summary Page Before Creating an Object](/docs/directorymanager/11.2/portal/user/create/AD/summary.md), review the settings and then click **Finish** to complete the wizard.
 
 :::note
 If the Directory Manager administrator has specified the user creation action for review, your

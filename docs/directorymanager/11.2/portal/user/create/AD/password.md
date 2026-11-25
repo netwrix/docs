@@ -13,13 +13,12 @@ sidebar_position: 50
 
 Provide a password for the user account and set other password-specific options.
 
-Step 1 – Enter a password for the user account in the **Password** and **Confirm password** boxes.
+1. Enter a password for the user account in the **Password** and **Confirm password** boxes.
 
-Step 2 – Select the following checkboxes to set the security options for the user account:
+2. Select the checkboxes for the security options you want to set on the user account:
 
-- User must change password at next logon – To force the user to change the password the next time
-  they sign in to their workstations with the account.
-- Password never expires – To prevent the account password from expiring.
-- Account is disabled – To disable the account, so that the user can't sign in with it.
+   - User must change password at next logon – To force the user to change the password the next time they sign in to their workstations with the account.
+   - Password never expires – To prevent the account password from expiring.
+   - Account is disabled – To disable the account, so that the user can't sign in with it.
 
-Step 3 – Click **Next**.
+3. Click **Next**.
