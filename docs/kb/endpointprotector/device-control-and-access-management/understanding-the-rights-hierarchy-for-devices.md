@@ -44,9 +44,9 @@ Computer Rights and User Rights share one level. To choose which takes precedenc
 
 Custom Classes override all other rights. Use Custom Classes to globally set rights for a device or class of devices identified by Vendor ID (VID), Product ID (PID), and Serial Number.
 
-For the full reference, see [Priority order](/docs/endpointprotector/admin/dc_module/devicesandcomputers#priority-order) in the Devices and Computers documentation.
+For the full reference, see [Priority order](/docs/endpointprotector/configuration/dc_module/devicesandcomputers#priority-order) in the Devices and Computers documentation.
 
-> **NOTE:** If you do not configure device rights, the device uses the default Global Rights set per Device Type (USB Storage Device, Digital Camera, iPod, Thunderbolt, Chip Card Device, etc.). See [Directory Services](/docs/endpointprotector/admin/directoryservices) for more detail on how these defaults interact with directory-synced entities.
+> **NOTE:** If you do not configure device rights, the device uses the default Global Rights set per Device Type (USB Storage Device, Digital Camera, iPod, Thunderbolt, Chip Card Device, etc.). See [Directory Services](/docs/endpointprotector/integrations/directoryservices) for more detail on how these defaults interact with directory-synced entities.
 
 ## Instructions
 

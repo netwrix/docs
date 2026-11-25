@@ -1,0 +1,10 @@
+{
+  "label": "Install the EPP Client",
+  "position": 55,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "installeppclient"
+  }
+}

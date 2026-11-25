@@ -16,18 +16,26 @@ This product has **one version** and no version folder. Pages live directly unde
 
 | Folder | Purpose |
 |---|---|
-| `requirements/` | Server, client, components, network architecture |
-| `install/` | Virtual appliance, cloud images, Intune, Jamf, Active Directory GPO, migration and upgrade |
-| `admin/` | Console login, dashboard, alerts, reports, directory services, SCIM, backup, licensing, SSO, mail |
-| `admin/dc_module/` | Device Control |
-| `admin/cap_module/`, `admin/denylistsallowlists/` | Content Aware Protection, denylists and allowlists |
-| `admin/ed_module/` | eDiscovery |
-| `admin/ee_module/` | Enforced Encryption |
-| `admin/epp_rest_api/` | REST API |
+| `release-notes/` | What's New page that links to the release notes on the Netwrix Community |
+| `gettingstarted/` | Product introduction, key concepts, main components, quick start |
 | `supportability/` | Client and server support policy |
+| `requirements/` | Server and client requirements |
+| `install/` | Virtual appliance, cloud images, Intune, Jamf, Active Directory GPO, server update |
+| `migrationprocedure/` | EPP Appliance migration guide, client upgrade, best practices, FAQ, migration troubleshooting |
+| `configuration/` | One-time setup after installation. Contains the feature chapters: Device Control, Content Aware Protection, eDiscovery, denylists and allowlists, Enforced Encryption, EPP Client |
+| `admin/` | Console login, dashboard, alerts, reports, backup, licensing, SSO, mail, System Configuration, System Maintenance |
+| `configuration/dc_module/` | Device Control |
+| `configuration/cap_module/`, `configuration/denylistsallowlists/` | Content Aware Protection, denylists and allowlists |
+| `configuration/ed_module/` | eDiscovery |
+| `configuration/ee_module/` | Enforced Encryption |
+| `configuration/eppclients/` | EPP Client: architecture, policy caching, tamper mode, client software and upgrade jobs, Clients migration |
+| `install/eppclient/` | EPP Client installation (parameters, macOS DPI and VPN, Linux and WSL) and phased update rollout |
+| `admin/eppclientevents.md` | EPP Client integrity checks, policy received events, termination events |
+| `integrations/` | REST API, API clients, directory services, SCIM |
+| `troubleshooting/` | Pointers to the knowledge base and the migration troubleshooting page |
 | `kb/` | Knowledge base articles in seven topic folders |
 
-`index.md` and `gettingstarted.md` sit at the root. Most pages describe the server console and use many screenshots.
+`index.md` sits at the root. The zones follow the order in `.claude/references/documentation-section-guide.md`. Most pages describe the server console and use many screenshots.
 
 ## Terminology
 

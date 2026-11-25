@@ -27,7 +27,7 @@ products:
 
 This article describes how to install the Endpoint Protector Linux client and set the server address, port, and department code.
 
-For the full reference, see [Linux](/docs/endpointprotector/admin/agent#linux) under Agent Install Parameters in the Agent documentation.
+For the full reference, see [Linux](/docs/endpointprotector/install/eppclient/installeppclient#linux) under Agent Install Parameters in the Agent documentation.
 
 ## Instructions
 
@@ -52,4 +52,4 @@ To install the Endpoint Protector Linux Client:
 5. Save the modified `options.sh` file.
 6. Install the client by running the `install.sh` file.
 
-> **NOTE:** For RedHat-based distributions (CentOS, RedHat, Fedora, AWS Linux 2, OpenSuse, SUSE, SLED Linux Enterprise Server), an additional step is required after running `install.sh` to set the Endpoint Protector Server address. The exact method depends on your distribution. See [RedHat based distributions](/docs/endpointprotector/admin/agent#redhat-based-distributions) for details.
+> **NOTE:** For RedHat-based distributions (CentOS, RedHat, Fedora, AWS Linux 2, OpenSuse, SUSE, SLED Linux Enterprise Server), an additional step is required after running `install.sh` to set the Endpoint Protector Server address. The exact method depends on your distribution. See [RedHat based distributions](/docs/endpointprotector/install/eppclient/eppclientlinuxwsl#redhat-based-distributions) for details.

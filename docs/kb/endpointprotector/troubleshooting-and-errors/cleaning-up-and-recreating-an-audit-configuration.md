@@ -63,4 +63,4 @@ Back up files before deleting them from `/tmp`. Deleting `cflog_initial*` files 
 
 - [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup)
 - [User Interface Performance Issues](/docs/kb/endpointprotector/troubleshooting-and-errors/user_interface_performance_issues)
-- [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide)
+- [EPP Appliance migration guide](/docs/endpointprotector/migrationprocedure/migrationguide)

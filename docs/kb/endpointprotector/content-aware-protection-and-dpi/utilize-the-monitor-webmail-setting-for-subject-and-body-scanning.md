@@ -37,9 +37,9 @@ When using Yahoo, the email recipients whitelist for attachments will work only 
 1. Activate the **Deep Packet Inspection** module if it is not already activated.
 2. Go to **Content Aware Protection** > **Deep Packet Inspection** and check the **Monitor webmail for Gmail** setting.  
    
-   ![Creating a policy in Content Aware Protection](./../0-images/ka0Qk000000ESkP_0EMQk00000C7Jbh.png)
+   ![Creating a policy in Content Aware Protection](../0-images/ka0Qk000000ESkP_0EMQk00000C7Jbh.png)
 3. Go to **Content Aware Protection** and create the desired policy.
 
 :::note
-Endpoint Protector extracts the subject and body from webmail pages using a JSON parser. If a webmail provider changes its page structure and subject or body extraction stops working, see [Monitor Webmail JSON Format Parser Usage](/docs/endpointprotector/admin/cap_module/deeppacket#monitor-webmail-json-format-parser-usage) for the parser syntax and examples. Only adjust the parser if Monitor webmail stops working — don't change it otherwise.
+Endpoint Protector extracts the subject and body from webmail pages using a JSON parser. If a webmail provider changes its page structure and subject or body extraction stops working, see [Monitor Webmail JSON Format Parser Usage](/docs/endpointprotector/configuration/cap_module/deeppacket#monitor-webmail-json-format-parser-usage) for the parser syntax and examples. Only adjust the parser if Monitor webmail stops working — don't change it otherwise.
 :::

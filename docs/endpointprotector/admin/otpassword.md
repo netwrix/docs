@@ -220,7 +220,7 @@ The Offline Temporary Password Administrator role controls the **OTP Requests** 
 
 Create, accept, adjust, refuse, and delete actions appear in the **Admin Actions** report. There is no separate OTP requests report. You can export each panel to Excel, PDF, or CSV.
 
-You can also manage automatic requests with the EPP REST API. See [EPP REST API](/docs/endpointprotector/admin/epp_rest_api/eppapi.md).
+You can also manage automatic requests with the EPP REST API. See [EPP REST API](/docs/endpointprotector/integrations/epp_rest_api/eppapi.md).
 
 ## Validity status of predefined passwords
 

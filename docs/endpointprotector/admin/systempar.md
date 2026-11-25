@@ -143,7 +143,7 @@ detection rules with independent AND/OR logic.
 
 To configure contextual detection for a Content Aware Protection policy, go to
 **Content Aware Protection** > **Content Aware Policy** > edit a policy > **Contextual Detection**
-tab. For eDiscovery policies, see [eDiscovery policies and scans](ed_module/edpolicies.md).
+tab. For eDiscovery policies, see [eDiscovery policies and scans](../configuration/ed_module/edpolicies.md).
 :::
 
 ## Advanced Scanning Detection
@@ -318,7 +318,7 @@ can add a maximum of 10 justiﬁcations. By default, Endpoint Protector already 
 justiﬁcations, but ensure that at least one justiﬁcation stays enabled at all times.
 
 To enable and enforce the end-user to view User Remediation pop-up notiﬁcations, manage the option
-from Device Control, Global Settings, [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md).
+from Device Control, Global Settings, [Device Control](/docs/endpointprotector/configuration/dc_module/dcmodule.md).
 
 ![Justiﬁcations List](justflist.webp)
 
@@ -340,12 +340,12 @@ section, click **Create**, ﬁll in the mandatory ﬁelds and **Save**.
 ![Custom Device Control User Remediation Notiﬁcations](customdcuserremediationnotif.webp)
 
 **Step 3 –** Enable the **User Remediation Pop-up** setting from the
-[Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic and then select the **customized notiﬁcation**
+[Device Control](/docs/endpointprotector/configuration/dc_module/dcmodule.md) topic and then select the **customized notiﬁcation**
 from the User Remediation Notiﬁcation Template dropdown list;
 
 ![User Remediation Pop-up](userremediationpopup.webp)
 
-**Step 4 –** Navigate to [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md), Device Types section and
+**Step 4 –** Navigate to [Device Control](/docs/endpointprotector/configuration/dc_module/dcmodule.md), Device Types section and
 enable **User Remediation** for devices with limited access – devices that have full access
 permission can't beneﬁt from the User Remediation feature.
 

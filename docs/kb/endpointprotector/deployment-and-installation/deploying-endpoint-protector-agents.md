@@ -27,16 +27,16 @@ knowledge_article_id: kA0Qk0000002BCeKAM
 
 This article explains how to deploy Endpoint Protector agents to endpoint systems. You should deploy agents before modifying policies to perform blocking. This approach allows you to identify any system variables that may require allowances and gives you an opportunity for end-user feedback.
 
-For the full reference, see [Client Software](/docs/endpointprotector/admin/systemconfiguration/overview#client-software).
+For the full reference, see [Client Software](/docs/endpointprotector/configuration/eppclients/clientsoftware).
 
 :::warning
-Only the latest Endpoint Protector and Enforced Encryption Clients are available for download from Client Software. If you're deploying to endpoints still running client version 5.9.4.1 or older, they can't receive the latest client package directly — you must deploy the 5.9.4.3 Hotfix 1 signature bridge client first. See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#certificate-bridge--historical-context) for the full certificate bridge explanation and required package list.
+Only the latest Endpoint Protector and Enforced Encryption Clients are available for download from Client Software. If you're deploying to endpoints still running client version 5.9.4.1 or older, they can't receive the latest client package directly — you must deploy the 5.9.4.3 Hotfix 1 signature bridge client first. See [Client Upgrade Management](/docs/endpointprotector/migrationprocedure/clientupgrade#certificate-bridge--historical-context) for the full certificate bridge explanation and required package list.
 :::
 
 ## Instructions
 
 1. Retrieve the Endpoint Protector Client package(s) from the Endpoint Protector Management Console under **System Configuration** > **Client Software**.  
-   ![Client Software section in Endpoint Protector Management Console](./../0-images/ka0Qk000000ESMD_0EMQk00000C8gT0.png)
+   ![Client Software section in Endpoint Protector Management Console](../0-images/ka0Qk000000ESMD_0EMQk00000C8gT0.png)
 
 2. For Windows, select the add-ons that align with your blocking strategy. You can choose any combination of add-ons, or none at all.
 

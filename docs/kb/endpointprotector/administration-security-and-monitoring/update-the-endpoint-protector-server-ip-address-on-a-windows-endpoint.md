@@ -48,7 +48,7 @@ This article explains how to review and change the Netwrix Endpoint Protector (E
 
 The notifier displays the current configuration details:
 
-![Current configuration details in Netwrix Endpoint Protector Notifier](./../0-images/ka0Qk000000EcJx_0EMQk00000C91kM.png)
+![Current configuration details in Netwrix Endpoint Protector Notifier](../0-images/ka0Qk000000EcJx_0EMQk00000C91kM.png)
 
 #### Apply the New Settings
 

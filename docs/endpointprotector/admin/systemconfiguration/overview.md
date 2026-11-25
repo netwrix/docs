@@ -9,7 +9,7 @@ This section includes settings such as Endpoint Protector Clients, Licensing, an
 advanced configurations. These settings affect the performance, stability, compliance, and
 reliability of Endpoint Protector.
 
-The **API Clients** page lets super administrators create the clients that integrations use to call the REST API. See [API Clients](/docs/endpointprotector/admin/systemconfiguration/apiclients.md).
+The **API Clients** page lets super administrators create the clients that integrations use to call the REST API. See [API Clients](/docs/endpointprotector/integrations/epp_rest_api/apiclients.md).
 
 ## Server Update
 
@@ -34,7 +34,7 @@ Click the "Offline Patch Upload" button to begin the EPP Server patching procedu
 ![Select the oﬄine patches from your computer and successively install them to the latest](offlinepatch.webp)
 
 :::note
-Customers running EPP Server version 5.9.4.2 or older should review the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide) for the current migration path to 2608, and follow [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) for the on-premises migration procedure.
+Customers running EPP Server version 5.9.4.2 or older should review the [EPP Appliance migration guide](/docs/endpointprotector/migrationprocedure/migrationguide) for the current migration path to 2608, and follow [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/migrationprocedure/migration-legacy-5x) for the on-premises migration procedure.
 :::
 
 :::note
@@ -113,140 +113,4 @@ server or other sub-services in the background
 
 ## Client Software
 
-From this section, you can download the Endpoint Protector and Enforced Encryption Clients corresponding to
-your operating system.
-
-If you use a custom WebUI port, contact
-[Netwrix Support](https://www.netwrix.com/support.html) for help conﬁguring the Nginx
-conﬁguration ﬁle.
-
-:::warning
-Only the latest Endpoint Protector and Enforced Encryption Clients are available for download.
-:::
-
-When installing, click **Generate** to download a client that already contains the server configuration shown in the UI, or copy the following details from this screen using the **Copy** button:
-
-- Endpoint Protector Server IP
-- Endpoint Protector Server port
-- Department Code
-
-:::tip
-When you install a client, use the server's fully qualified domain name (FQDN) as the server address instead of the IP address. Clients configured with an FQDN keep working when the server moves to a new IP address, for example after a migration. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
-:::
-
-
-![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.webp)
-
-:::note
-Starting with release 2509.0.1.0, endpoints display Endpoint Protector Client versions in the format XXXX.X.X.X.
-:::
-
-### Generated client installers
-
-The server address that a generated installer uses depends on the operating system:
-
-- **Windows** – The generated MSI file name includes the server FQDN or IP address, in the format `EPPClientSetup.<version>_x86_64_[a=<server-address>].msi`, for example `EPPClientSetup.2608.1.1.3_x86_64_[a=domain.netwrix.com].msi`. The installer configures the server field with this address, even if you pass a different value in the installation parameters. To use a different address, rename the MSI file or enter the FQDN or IP address in the `[a=…]` part of the file name.
-- **macOS** – The generated package updates the script it contains with the server address.
-
-For more client install options, see [Agent Installation Options](/docs/endpointprotector/admin/agent.md)
-
-## Client Software Upgrade
-
-From this section, you can upload the latest clients you downloaded from the **Client Software** section to upgrade
-the Endpoint Protector and Enforced Encryption Client and manage the upgrade jobs. The Client Software Upgrade feature is available only
-for Windows and macOS Clients. To upgrade your Linux Clients, submit a request using the [online form](https://www.endpointprotector.com/linux).
-
-:::note
-When you update your operating system to the latest macOS Ventura, macOS deletes the eppclient.log
-and eppsslsplit.log files from private/var/log.
-:::
-
-:::note
-The Client Software Upgrade mechanism supports Windows ARM client packages. When you upload a
-combined package containing both x64 and ARM installers, the server automatically selects the
-correct installer for each client's architecture during upgrade.
-:::
-
-:::warning
-The feature isn't compatible with Endpoint Protector instances running on
-32-bit versions of Windows.
-:::
-
-
-![Client Software Upgrade](ClientSoftwareUpdatePage.png)
-
-:::note
-Starting with release 2509.0.1.0, endpoints display Endpoint Protector Client versions in the format XXXX.X.X.X.
-:::
-
-
-### Create New Upgrade Job
-
-To upgrade your Endpoint Protector Client, create a new upgrade job:
-
-**Step 1 –** Select the OS version from the dropdown list and then click **Next**.
-
-![Create New Upgrade Job](createnewupgradejob.webp)
-
-**Step 2 –** Select the groups and/or computers to perform or exclude from the upgrade and then
-click **Next**. A summary of your selection appears at the top of the table.
-
-:::note
-Endpoint Protector upgrades only computers that use the operating system you selected. If
-you selected a group that has an endpoint using a different operating system, Endpoint Protector
-doesn't upgrade that endpoint. If you selected a mixed group, with both computers and users,
-Endpoint Protector upgrades only the computers.
-:::
-
-
-![Select the groups and/or computers to perform or exclude from the upgrade](selectendpointsupgrade.webp)
-
-**Step 3 –** Edit the default job title, add a description and conﬁrm the upgrade job details by
-clicking **Start Upgrade job**. The upgrade appears as an entry in the Upgrade jobs section.
-
-:::note
-A dedicated cron drives the upgrade process for the Endpoint Protector Client.
-Running every 5 minutes, the cron sets the upgrade process status to Pending and every 15 minutes
-checks and updates process status to Completed or Completed with failures.
-:::
-
-
-![Edit the default job title, add a description and conﬁrm the upgrade job details](upgradejobdetails.webp)
-
-### Manage Upgrade Jobs
-
-From this section you can view the upgrade jobs and use the Actions column to view job details,
-cancel, pause, retry, archive, or delete an entry on the list.
-
-To continue upgrading canceled Client Upgrade jobs, use the **Retry** option from the Actions
-column.
-
-:::note
-If you deleted or archived a Client Upgrade job, the endpoints become available for
-selection in other jobs.
-:::
-
-
-![Manage Upgrade Jobs](manageupgradejobs.webp)
-
-## Client Uninstall
-
-From this section, you can perform a remote uninstall of the Endpoint Protector Client. The
-computers receive the uninstall command with the next set of commands from the server.
-
-If the computer is offline, it receives the uninstall command the first time it comes online.
-When you press the uninstall button, the computers appear grayed out until the action completes.
-
-You can cancel the uninstall command if it hasn't already run.
-
-![Client Uninstall](clientuninstall.webp)
-
-:::note
-If the server and Endpoint Protector client can't communicate due to missing server
-certiﬁcation validation (when you enable the certiﬁcation validation setting), you can't run
-uninstall commands from the Endpoint Protector Server. In such cases, if you can't manually
-install the certiﬁcate on the Endpoint Protector Client computer, you can temporarily disable the
-certiﬁcation validation setting on the Endpoint Protector Server and synchronize the Endpoint
-Protector Client to retrieve an uninstall command.
-
-:::
+The Client download, the upgrade jobs, and the remote uninstall are in the **EPP Client** section. In the console, they are under **System Configuration** > **Client Software**. See [Client Software](/docs/endpointprotector/configuration/eppclients/clientsoftware.md).

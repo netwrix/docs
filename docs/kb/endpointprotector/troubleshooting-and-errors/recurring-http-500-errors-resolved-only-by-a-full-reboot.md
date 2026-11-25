@@ -32,7 +32,7 @@ The Netwrix Endpoint Protector Server periodically returns HTTP 500 errors acros
 
 This pattern typically indicates the server is undersized for its current load — database size, log volume, or number of managed endpoints — rather than a one-time import or configuration failure. A reboot only clears the symptom by resetting exhausted resources or hung processes; it does not resolve the underlying sizing issue, which is why the errors return.
 
-In rare cases, this behavior can occur after a [server migration](/docs/endpointprotector/install/migrationprocedure/migrationguide) to the current image-based platform, if load increases without a matching resource review. It can also occur on a longstanding server whose load has grown beyond its original sizing.
+In rare cases, this behavior can occur after a [server migration](/docs/endpointprotector/migrationprocedure/migrationguide) to the current image-based platform, if load increases without a matching resource review. It can also occur on a longstanding server whose load has grown beyond its original sizing.
 
 ## Resolution
 
@@ -48,4 +48,4 @@ If you are troubleshooting general console slowness rather than specific HTTP 50
 
 - [Server Requirements](/docs/endpointprotector/requirements/server)
 - [User Interface Performance Issues](/docs/kb/endpointprotector/troubleshooting-and-errors/user_interface_performance_issues)
-- [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide)
+- [EPP Appliance migration guide](/docs/endpointprotector/migrationprocedure/migrationguide)

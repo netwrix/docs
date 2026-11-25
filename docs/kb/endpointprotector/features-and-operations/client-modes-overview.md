@@ -30,7 +30,7 @@ knowledge_article_id: kA0Qk0000002BCRKA2
 
 The Netwrix Endpoint Protector Client offers several modes that define its behavior on an end user's system. There are six modes available, and you can change them at any time by a Netwrix Endpoint Protector administrator. The summary below describes each mode and its key characteristics.
 
-For the full reference, see [Client Mode](/docs/endpointprotector/admin/dc_module/globalsettings#client-mode).
+For the full reference, see [Client Mode](/docs/endpointprotector/configuration/dc_module/globalsettings#client-mode).
 
 :::note
 Certain Linux distributions (such as SLED) lack system tray support, so the Endpoint Protector Notifier icon doesn't appear regardless of the selected mode. To receive notifications on these systems, keep the Endpoint Protector Notifier window open.
@@ -96,7 +96,7 @@ Certain Linux distributions (such as SLED) lack system tray support, so the Endp
    - **System tray notifications** are not displayed.
    - All rights and settings are applied as configured.
 
-For more information about Modes, see [Client Mode](/docs/endpointprotector/admin/dc_module/globalsettings#client-mode).
+For more information about Modes, see [Client Mode](/docs/endpointprotector/configuration/dc_module/globalsettings#client-mode).
 
 ## Recommendations
 
@@ -105,4 +105,4 @@ For more information about Modes, see [Client Mode](/docs/endpointprotector/admi
 
 ## Related Links
 
-- [Client Mode](/docs/endpointprotector/admin/dc_module/globalsettings#client-mode)
+- [Client Mode](/docs/endpointprotector/configuration/dc_module/globalsettings#client-mode)

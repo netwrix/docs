@@ -23,7 +23,7 @@ products:
 
 This article explains how to ensure all prerequisites are in place and how to install the Endpoint Protector (EPP) Client on macOS endpoints with Deep Packet Inspection (DPI) and VPN Traffic Intercept active.
 
-For the full reference, see [Installation on macOS with Deep Packet Inspection and VPN Traffic Intercept Active](/docs/endpointprotector/admin/agent#installation-on-macos-with-deep-packet-inspection-and-vpn-traffic-intercept-active) in the Agent documentation. For DPI and VPN configuration steps only (if the client is already installed), see [Enabling Deep Packet Inspection and Intercepting VPN Traffic on macOS Clients](/docs/kb/endpointprotector/content-aware-protection-and-dpi/enabling-deep-packet-inspection-and-intercepting-vpn-traffic-on-macos-clients).
+For the full reference, see [Installation on macOS with Deep Packet Inspection and VPN Traffic Intercept Active](/docs/endpointprotector/install/eppclient/eppclientmacosdpi) in the Agent documentation. For DPI and VPN configuration steps only (if the client is already installed), see [Enabling Deep Packet Inspection and Intercepting VPN Traffic on macOS Clients](/docs/kb/endpointprotector/content-aware-protection-and-dpi/enabling-deep-packet-inspection-and-intercepting-vpn-traffic-on-macos-clients).
 
 ## Instructions
 
@@ -39,21 +39,21 @@ For the full reference, see [Installation on macOS with Deep Packet Inspection a
 5. After installation, go to **System Preferences** > **Security & Privacy** > **Privacy** tab > **Full Disk Access**. Search for **Endpoint Protector Client**. Select the checkbox and then save the changes.
 
 6. In the Endpoint Protector console, navigate to **Device Control** > **Users/Computer/Group/Global Settings** > **Manage Settings** > **Endpoint Protector Client** > **Deep Packet Inspection** to enable DPI.  
-   ![Manage settings that relate directly to the Netwrix Endpoint Protector Client](../../../endpointprotector/admin/dc_module/clentsettings.webp)
+   ![Manage settings that relate directly to the Netwrix Endpoint Protector Client](../../../endpointprotector/configuration/dc_module/clentsettings.webp)
 
 7. Once enabled, go to **System Configuration** > **System Settings** > **Deep Packet Inspection Certificate** and download the **CA Certificate**.  
-   ![Deep Packet Inspection Certificate on macOS](../../../endpointprotector/admin/cap_module/dpicertificate.webp)
+   ![Deep Packet Inspection Certificate on macOS](../../../endpointprotector/configuration/cap_module/dpicertificate.webp)
 
 8. Open the **Keychain Access** application on your macOS and select **System**.  
-   ![Keychain Access application settings on MacOs](../../../endpointprotector/admin/cap_module/keychainaccess.webp)
+   ![Keychain Access application settings on MacOs](../../../endpointprotector/configuration/cap_module/keychainaccess.webp)
 
 9. Unzip the downloaded **ClientCerts** file.
 
 10. Select the `cacert.pem` file and drag then drop it into **Keychain Access > System**.  
-    ![Configuring Client Certificate on MacOs](../../../endpointprotector/admin/cap_module/clientcerts.webp)
+    ![Configuring Client Certificate on MacOs](../../../endpointprotector/configuration/cap_module/clientcerts.webp)
 
 11. Double-click the newly added certificate and select **Always Trust**.  
-    ![Keychain Access application settings on MacOs](../../../endpointprotector/admin/cap_module/keychainaccesstwo.webp)
+    ![Keychain Access application settings on MacOs](../../../endpointprotector/configuration/cap_module/keychainaccesstwo.webp)
 
 12. **Save** the changes.
 

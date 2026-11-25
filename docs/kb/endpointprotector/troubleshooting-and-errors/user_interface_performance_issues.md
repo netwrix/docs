@@ -54,10 +54,10 @@ The Endpoint Protector Console/User Interface is experiencing issues and other p
 
 5. **Endpoint Protector Server Upgrades or Audit Log Backups Running**
    1. Expect temporary UI performance decrease during and shortly after these processes.
-   2. During the first 24 hours after a migration or major upgrade, temporary CPU/RAM/disk peaks are normal while background cron jobs and database schema alignment tasks complete. See [Post-Migration Stability](/docs/endpointprotector/install/migrationprocedure/bestpractices) in the Migration Best Practices for details.
+   2. During the first 24 hours after a migration or major upgrade, temporary CPU/RAM/disk peaks are normal while background cron jobs and database schema alignment tasks complete. See [Post-Migration Stability](/docs/endpointprotector/migrationprocedure/bestpractices) in the Migration Best Practices for details.
 
 6. **Running Older Endpoint Protector Server and Client Versions**
-   1. Always use the latest Endpoint Protector server and client versions available as a best practice. See [Netwrix Endpoint Protector Server-Side Support Policy](/docs/endpointprotector/supportability/server-supportability) and [Netwrix Endpoint Protector Agent Support Policy](/docs/endpointprotector/supportability/client-supportability) for supported version tracks, and the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide) if you're on a version older than 5.9.4.2.
+   1. Always use the latest Endpoint Protector server and client versions available as a best practice. See [Netwrix Endpoint Protector Server-Side Support Policy](/docs/endpointprotector/supportability/server-supportability) and [Netwrix Endpoint Protector Agent Support Policy](/docs/endpointprotector/supportability/client-supportability) for supported version tracks, and the [EPP Appliance migration guide](/docs/endpointprotector/migrationprocedure/migrationguide) if you're on a version older than 5.9.4.2.
 
 7. **Third-Party Security Software Interference**
    1. Configure the required file, process, and registry exclusions for your antivirus, EDR, or HIPS solution. See [Security Exclusions](/docs/endpointprotector/requirements/client#security-exclusions) for the complete list for Windows, macOS, and Linux.
@@ -68,4 +68,4 @@ The Endpoint Protector Console/User Interface is experiencing issues and other p
 - [Server Requirements](/docs/endpointprotector/requirements/server)
 - [Security Exclusions](/docs/endpointprotector/requirements/client#security-exclusions)
 - [Netwrix Endpoint Protector Server-Side Support Policy](/docs/endpointprotector/supportability/server-supportability)
-- [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide)
+- [EPP Appliance migration guide](/docs/endpointprotector/migrationprocedure/migrationguide)

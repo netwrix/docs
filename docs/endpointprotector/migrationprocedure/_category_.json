@@ -1,0 +1,10 @@
+{
+  "label": "EPP Appliance migration guide",
+  "position": 35,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "migrationguide"
+  }
+}

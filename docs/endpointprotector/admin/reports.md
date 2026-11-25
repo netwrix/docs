@@ -161,7 +161,7 @@ eDiscovery scan results are accessible from the Reports and Analysis section. Th
 
 Endpoint Protector stores eDiscovery logs in CrateDB, and they support the same filtering, sorting, and export capabilities as Device Control and Content Aware logs.
 
-For detailed information on viewing and managing eDiscovery scan results, see [Scan results and actions](/docs/endpointprotector/admin/ed_module/edscanresults.md).
+For detailed information on viewing and managing eDiscovery scan results, see [Scan results and actions](/docs/endpointprotector/configuration/ed_module/edscanresults.md).
 
 ## Export list
 

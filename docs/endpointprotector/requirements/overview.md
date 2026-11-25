@@ -19,3 +19,14 @@ Deployed as a Virtual Appliance, Endpoint Protector supports approximately 1,000
 endpoints without additional configuration. As a Hardware Appliance, different configurations are available, scaling up to 5,000
 endpoints from a single appliance. All default versions of Endpoint Protector use MySQL as a
 database.
+
+## Endpoint requirements at a glance
+
+Before you deploy the Client, make sure that your environment meets the following requirements:
+
+- Operating Systems: Windows, macOS, Linux
+- CPU x86 64 bit or ARM64 bit
+- Disk Space: Sufficient for agent installation
+- Network: Access to Endpoint Protector Server
+
+For the full list, see [Client](/docs/endpointprotector/requirements/client.md).

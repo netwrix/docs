@@ -30,7 +30,7 @@ knowledge_article_id: kA0Qk0000002BCYKA2
 
 Content Aware Policies are rules for sensitive content detection that manage file transfers for users, computers, groups, or departments. You can create, edit, or delete policies, or apply predefined policies to address your organization’s data protection needs. Policies can be prioritized, and multiple policies can be enforced on the same entity.
 
-For a full overview of the Content Aware Protection module, including activation and licensing requirements, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule).
+For a full overview of the Content Aware Protection module, including activation and licensing requirements, see [Content Aware Protection](/docs/endpointprotector/configuration/cap_module/capmodule).
 
 :::note
 Content Aware Protection is a separate module from Device Control and eDiscovery, and requires separate licensing and activation before you can create policies.

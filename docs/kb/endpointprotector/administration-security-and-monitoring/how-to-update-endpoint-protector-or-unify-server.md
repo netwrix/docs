@@ -38,14 +38,14 @@ To find the version of the Netwrix Endpoint Protector server, follow these steps
 2. Log in.  
 3. View the bottom right of the screen to find the version information.
 
-![Netwrix Endpoint Protector version number](./../0-images/ka0Qk0000004M3Z_0EMQk000005fb5Z.png)
+![Netwrix Endpoint Protector version number](../0-images/ka0Qk0000004M3Z_0EMQk000005fb5Z.png)
 
 To find the version of the Unify server, follow these steps:
 
 1. Log in to the Unify web console.  
 2. Check the top left for the version information.
 
-![Unify version number](./../0-images/ka0Qk0000004M3Z_0EMQk000005fOGR.png)
+![Unify version number](../0-images/ka0Qk0000004M3Z_0EMQk000005fOGR.png)
 
 ## Updating with Live Update
 
@@ -59,9 +59,9 @@ To install the latest updates with Live Update, follow these steps:
 4. Check the box on the update(s) to be installed.  
 5. Select **Apply Updates.**
 
-![How to check Live Update](./../0-images/ka0Qk0000004M3Z_0EMQk000005fTch.png)
+![How to check Live Update](../0-images/ka0Qk0000004M3Z_0EMQk000005fTch.png)
 
-![How to configure Live Update](./../0-images/ka0Qk0000004M3Z_0EMQk000005fbGr.png)
+![How to configure Live Update](../0-images/ka0Qk0000004M3Z_0EMQk000005fbGr.png)
 
 ## Updating Using the Offline Patch Uploader
 
@@ -77,7 +77,7 @@ To apply an offline update, follow these steps:
 6. Click **Ok.**  
 7. Wait for the system to apply the update.
 
-![The button to activate offline patching](./../0-images/ka0Qk0000004M3Z_0EMQk000005fbNJ.png)
+![The button to activate offline patching](../0-images/ka0Qk0000004M3Z_0EMQk000005fbNJ.png)
 
 ## Verifying an Update Installed
 
@@ -88,6 +88,6 @@ To verify that the Netwrix Endpoint Protector server applied an update, follow t
 3. Click on **View Applied EPP Software Updates.**  
 4. Look through the applied updates to confirm the server installed the update.
 
-![The button to open the view of all updates](./../0-images/ka0Qk0000004M3Z_0EMQk000005fbTl.png)
+![The button to open the view of all updates](../0-images/ka0Qk0000004M3Z_0EMQk000005fbTl.png)
 
-![The list of all updates](./../0-images/ka0Qk0000004M3Z_0EMQk000005fbWz.png)
+![The list of all updates](../0-images/ka0Qk0000004M3Z_0EMQk000005fbWz.png)

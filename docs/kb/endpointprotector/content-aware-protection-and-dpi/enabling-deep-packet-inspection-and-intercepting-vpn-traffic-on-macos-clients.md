@@ -29,22 +29,22 @@ knowledge_article_id: kA0Qk0000002BCQKA2
 ## Overview
 This article describes how to enable Deep Packet Inspection and intercept VPN traffic on macOS clients. Ensure that you have installed the Netwrix Endpoint Protector Client and created the desired Content Aware Policy before proceeding.
 
-For the full Deep Packet Inspection reference, including the Stealthy vs. Regular DPI modes referenced by the Intercept VPN Traffic setting, see [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket).
+For the full Deep Packet Inspection reference, including the Stealthy vs. Regular DPI modes referenced by the Intercept VPN Traffic setting, see [Deep Packet Inspection](/docs/endpointprotector/configuration/cap_module/deeppacket).
 
 :::note
 Enabling Deep Packet Inspection can impact the upload speed of inspected files. Enabling **Intercept VPN Traffic** uses a network extension instead of Packet Filter, which is a possible workaround for this performance impact.
 :::
 
 :::note
-Before configuring Deep Packet Inspection and VPN interception, confirm the EPP Client was installed with **Full Disk Access** granted (**System Preferences** > **Security & Privacy** > **Privacy** > **Full Disk Access**). See [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation) for the full macOS installation steps, including this requirement.
+Before configuring Deep Packet Inspection and VPN interception, confirm the EPP Client was installed with **Full Disk Access** granted (**System Preferences** > **Security & Privacy** > **Privacy** > **Full Disk Access**). See [Install the EPP Client](/docs/endpointprotector/install/eppclient/installeppclient) for the full macOS installation steps, including this requirement.
 :::
 
 ## Instructions
 1. Open the **Netwrix Endpoint Protector Server** interface. In the **Device Control** section, select **User**, **Computer**, **Group**, or **Global Settings**. Click **Manage Settings**, then select **Netwrix Endpoint Protector Client** and enable **Deep Packet Inspection**.  
-   ![Deep Packet Inspection settings in Netwrix Endpoint Protector Server interface](./../0-images/ka0Qk000000EPcr_0EMQk00000C8gO9.png)
+   ![Deep Packet Inspection settings in Netwrix Endpoint Protector Server interface](../0-images/ka0Qk000000EPcr_0EMQk00000C8gO9.png)
 
 2. Navigate to **System Configuration** > **System Settings** > **Deep Packet Inspection Certificate**. Download the CA certificate.  
-   ![Download CA Certificate from Deep Packet Inspection Certificate section](./../0-images/ka0Qk000000EPcr_0EMQk00000C8ekY.png)
+   ![Download CA Certificate from Deep Packet Inspection Certificate section](../0-images/ka0Qk000000EPcr_0EMQk00000C8ekY.png)
 
 3. Open the **Keychain Access** application on your macOS device. In the sidebar, select **System**.
 

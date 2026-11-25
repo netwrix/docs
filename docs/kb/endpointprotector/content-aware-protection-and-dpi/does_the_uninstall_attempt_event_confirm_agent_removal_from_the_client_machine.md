@@ -39,7 +39,7 @@ If the EPP Client service isn't stopped cleanly, the client evaluates the state 
 | **Forced Uninstall Attempt** | The service was stopped or killed, and one or more files, registry keys, or drivers were found in an unexpected state — indicating a partial or unauthorized removal attempt. |
 | **Uninstall Attempt** | A deliberate uninstall was initiated — either directly on the endpoint (for example, via Add/Remove Programs) or remotely from the EPP Server using the **Uninstall Client** action. |
 
-Each of these classifications is based on evaluating file, registry, and driver state, not on confirmation of a completed removal — which is why none of them guarantee the outcome of the uninstall attempt. See [Client Termination Event Types](/docs/endpointprotector/admin/agent#client-termination-event-types) for the full explanation.
+Each of these classifications is based on evaluating file, registry, and driver state, not on confirmation of a completed removal — which is why none of them guarantee the outcome of the uninstall attempt. See [Client Termination Event Types](/docs/endpointprotector/admin/eppclientevents#client-termination-event-types) for the full explanation.
 
 :::tip
 If your organization has a Security Password for Uninstall Protection configured globally, an **Uninstall Attempt** without the correct password fails, and the agent continues running and communicating with the server. See [Security Password for Uninstall Protection](/docs/endpointprotector/admin/systemconfiguration/systemsecurity#security-password-for-uninstall-protection) to configure this setting.

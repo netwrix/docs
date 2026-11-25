@@ -33,12 +33,12 @@ End users are generally restricted from installing their own applications or dep
 
 The DPI feature within Endpoint Protector is not designed to cover scenarios where end users deploy their own browser-based VPN add-ons. In such cases, the Deep Packet Inspection functionality should be disabled, allowing the default method of confidential content inspection to operate.
 
-For the full reference, see [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket).
+For the full reference, see [Deep Packet Inspection](/docs/endpointprotector/configuration/cap_module/deeppacket).
 
 :::note
 This limitation applies specifically to uncontrolled, end-user-installed browser VPN add-ons — not to managed corporate VPN traffic. On macOS, Endpoint Protector supports intercepting managed VPN traffic through the **Intercept VPN Traffic** setting. See [Enabling Deep Packet Inspection and Intercepting VPN Traffic on macOS Clients](/docs/kb/endpointprotector/content-aware-protection-and-dpi/enabling-deep-packet-inspection-and-intercepting-vpn-traffic-on-macos-clients) for the configuration steps.
 :::
 
 :::tip
-If third-party software (including certain VPN or firewall clients) has trouble handling or blocking traffic redirected to Endpoint Protector's local proxy, switching from Regular DPI to **Stealthy DPI** on Windows can resolve some of these conflicts. See [Stealthy DPI vs. regular DPI](/docs/endpointprotector/admin/cap_module/deeppacket#stealthy-dpi-vs-regular-dpi) for the comparison. This doesn't extend DPI support to unmanaged, end-user browser VPN add-ons.
+If third-party software (including certain VPN or firewall clients) has trouble handling or blocking traffic redirected to Endpoint Protector's local proxy, switching from Regular DPI to **Stealthy DPI** on Windows can resolve some of these conflicts. See [Stealthy DPI vs. regular DPI](/docs/endpointprotector/configuration/cap_module/deeppacket#stealthy-dpi-vs-regular-dpi) for the comparison. This doesn't extend DPI support to unmanaged, end-user browser VPN add-ons.
 :::

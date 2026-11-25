@@ -40,15 +40,15 @@ This procedure changes the `epproot` Linux user account password used for SSH an
 1. Go to your VM manager and **reboot** the EPP appliance.  
    While it reboots, press the `Esc` key on your keyboard to access the **GRUB** boot menu, and select **Advanced options for Ubuntu**.
 
-   ![GRUB boot menu screenshot](./../0-images/43258ddd17f53d209349a9757595552d.png)
+   ![GRUB boot menu screenshot](../0-images/43258ddd17f53d209349a9757595552d.png)
 
 2. Choose the first entry labeled **(recovery mode)**.
 
-   ![Recovery mode selection screenshot](./../0-images/cb6a560ea7bc3e35cd3c0a30978e4dc7.png)
+   ![Recovery mode selection screenshot](../0-images/cb6a560ea7bc3e35cd3c0a30978e4dc7.png)
 
 3. Press **Enter** when prompted.
 
-   ![Boot confirmation screenshot](./../0-images/221e2f00e49f44fffcf64957a74adf46.png)
+   ![Boot confirmation screenshot](../0-images/221e2f00e49f44fffcf64957a74adf46.png)
 
 4. Change the password for the `epproot` user using the command:
 

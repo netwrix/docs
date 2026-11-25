@@ -1,12 +1,12 @@
 ---
-title: "Deployments"
-description: "Deployments"
+title: "Install and Update"
+description: "Install and update Netwrix Endpoint Protector: virtual appliances, cloud platforms, client deployment with Active Directory, Intune, and Jamf, and server updates."
 sidebar_position: 30
 ---
 
-# Deployments
+# Install and Update
 
-This documentation describes how to deploy Endpoint Protector on physical hardware, virtual
+This documentation describes how to install and update Endpoint Protector on physical hardware, virtual
 appliances, and cloud-based infrastructure, and how to integrate it with existing management
 systems.
 
@@ -18,6 +18,7 @@ This section covers a range of deployment methods, including:
   and basic platform knowledge.
 - Active Directory Integration: Using Group Policy Objects to deploy clients.
 - Third-party Management Tools: Using JAMF and Microsoft Intune to deploy clients.
+- EPP Client: Installing the Client on Windows, macOS, and Linux endpoints, and rolling out Client updates in phases. See [Install the EPP Client](/docs/endpointprotector/install/eppclient/installeppclient.md).
 
 :::warning Important
 This section of the documentation provides best-effort guidance on deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, refer to the official resources from the product vendor.
@@ -39,6 +40,8 @@ To use the Endpoint Protector Server in a production environment, you need a Lic
 :::
 
 The following sections describe the different methods for deploying Endpoint Protector, with step-by-step instructions and best practices.
+
+To apply patches and security updates to an installed server, see [Update the EPP Server](/docs/endpointprotector/install/update.md). To move from an earlier version, see the [EPP Appliance migration guide](/docs/endpointprotector/migrationprocedure/migrationguide.md).
 
 ## Use an FQDN Instead of an IP Address
 

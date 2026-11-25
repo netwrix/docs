@@ -26,7 +26,7 @@ For the full reference, see [Justifications List](/docs/endpointprotector/admin/
 ## Instructions
 
 1. In the Endpoint Protector Console, navigate to **System Parameters** > **User Remediation**.  
-   ![User Remediation section in System Parameters menu in Endpoint Protector](./../0-images/servlet_image_263da6ad1bf4.png)
+   ![User Remediation section in System Parameters menu in Endpoint Protector](../0-images/servlet_image_263da6ad1bf4.png)
 
 2. Create a **Justification** list that will appear to the end user when an explanation is required to remediate a file:
    - Click the **ADD** button.
@@ -50,7 +50,7 @@ You can add up to a maximum of 10 justifications. Several justifications are alr
 5. On an endpoint where the policy is applied, open the EPP client and update the policies.
 
 6. To test the policy, attempt to use the print screen function. The client should display a prompt as shown below:  
-   ![User prompt when using Screenshot function in Endpoint Protector client](./../0-images/servlet_image_72f774ab3bed.png)
+   ![User prompt when using Screenshot function in Endpoint Protector client](../0-images/servlet_image_72f774ab3bed.png)
 
 7. If the user clicks the **Self-Remediate** button, a new window will appear prompting them to fill in the reason for the action.  
-   ![Justification entry window for self-remediation in Endpoint Protector client](./../0-images/servlet_image_cc8577ae8f6b.png)
+   ![Justification entry window for self-remediation in Endpoint Protector client](../0-images/servlet_image_cc8577ae8f6b.png)

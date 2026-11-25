@@ -19,6 +19,7 @@ import { platgovsalesforceRestructureRedirects } from './src/config/redirects/pl
 import { privilegeSecure2603Redirects } from './src/config/redirects/privilegesecure-26.03.js';
 import { isIndexableSite } from './src/config/indexing.js';
 import { identityRecovery31Redirects } from './src/config/redirects/identityrecovery-3.1.js';
+import { endpointProtectorRestructureRedirects } from './src/config/redirects/endpointprotector-restructure.js';
 import robotsTxtPlugin from './src/plugins/robotsTxt.js';
 import { docVariablesPreprocessor } from './src/config/docVariables.js';
 
@@ -230,6 +231,7 @@ const config = {
           ...(activeProductIds.includes('platgovsalesforce') ? platgovsalesforceRestructureRedirects : []),
           ...(activeProductIds.includes('privilegesecure') ? privilegeSecure2603Redirects : []),
           ...(activeProductIds.includes('identityrecovery') ? identityRecovery31Redirects : []),
+          ...(activeProductIds.includes('endpointprotector') ? endpointProtectorRestructureRedirects : []),
           ...(activeProductIds.includes('changetracker')
             ? [{ from: '/docs/changetracker/componentreleases', to: '/docs/changetracker' }]
             : []),

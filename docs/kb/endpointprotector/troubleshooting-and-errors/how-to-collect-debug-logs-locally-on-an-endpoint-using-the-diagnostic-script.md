@@ -34,7 +34,7 @@ using the diagnostic collection script, for cases when the EPP Client cannot com
 EPP Server. Since the **Automatic Logging** method depends on that communication, it is not
 available in this scenario. Running the script directly on the endpoint instead captures a
 complete diagnostic package in a single run. For the full Debug Logging reference, see
-[Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) in the
+[Debug Logging](/docs/endpointprotector/configuration/dc_module/globalsettings#debug-logging) in the
 Global Settings documentation.
 
 > **NOTE:**

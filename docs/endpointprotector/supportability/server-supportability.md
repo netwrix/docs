@@ -251,7 +251,7 @@ As such you might want to maintain a small scale test lab to test your concern i
 
 By having a small test lab, you can do all your pre-flight testing of upgrading to latest Offline Patch, perform pre-flight transitions to latest major versions, and test the latest agent before a mass agent rollout.
 
-TIP: For information about a mass agent rollout using the “Ring Philosophy” (wherein a small amount of computers gets latest agents in a controlled manner), see the “Netwrix Endpoint Protector Agent Support Policy” companion document.
+TIP: For information about a mass agent rollout using the “Ring Philosophy” (wherein a small amount of computers gets latest agents in a controlled manner), see [Test and Roll Out EPP Client Updates](/docs/endpointprotector/install/eppclient/eppclientrollout.md) and the [Netwrix Endpoint Protector Agent Support Policy](/docs/endpointprotector/supportability/client-supportability.md).
 
 As long as you’re able to replicate a concern with a supported server (with latest patch) and latest client (in production or a test environment), Netwrix will then endeavor to fix the concern.
 

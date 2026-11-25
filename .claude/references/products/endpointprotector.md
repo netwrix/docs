@@ -61,10 +61,10 @@ The repo's `GLOSSARY.md` is the authoritative map for client terms.
 ## Where a change usually lands
 
 - **New or changed policy option or switch:** the server sends it, so the client change is in the parsing and enforcement code in `src/base/` (or `src/SiEServiceDLL/` on Windows), then each platform's service if behavior differs. The matching docs change is on a server console page, which this repo cannot confirm.
-- **New content detector (for example a PII format):** a new `*Detect.cpp` under `src/dlp/cap/`, tests in `src/UnitTest_Main/`. Docs: `admin/cap_module/contentdetection.md`.
-- **New device type or device control rule:** `src/base/` and the per-platform device monitoring (`mac/epp/ioreg/`, UDev in `linux/`, `src/SiEServiceDLL/` on Windows). Docs: `admin/dc_module/`.
+- **New content detector (for example a PII format):** a new `*Detect.cpp` under `src/dlp/cap/`, tests in `src/UnitTest_Main/`. Docs: `configuration/cap_module/contentdetection.md`.
+- **New device type or device control rule:** `src/base/` and the per-platform device monitoring (`mac/epp/ioreg/`, UDev in `linux/`, `src/SiEServiceDLL/` on Windows). Docs: `configuration/dc_module/`.
 - **New user-facing message or dialog:** `notifier/`, plus translation files.
-- **Network inspection change:** `src/netdlp/`, `mac/netext/`, `linux/epp-client/src/netdlp_setup/`. Docs: `admin/cap_module/deeppacket.md`.
+- **Network inspection change:** `src/netdlp/`, `mac/netext/`, `linux/epp-client/src/netdlp_setup/`. Docs: `configuration/cap_module/deeppacket.md`.
 - **Anything platform-specific:** check all three platforms; the same change usually appears in `src/`, `mac/`, and `linux/`.
 
 ## Docs map
@@ -73,14 +73,19 @@ Under `docs/endpointprotector/`. The product has one version, `current` (no vers
 
 | Area | Where |
 |---|---|
-| Overview, getting started | `index.md`, `gettingstarted.md` |
-| Requirements (server, client, components, network architecture) | `requirements/` (`client.md` covers the client) |
-| Install and deployment (virtual appliance, cloud images, Intune, Jamf, Active Directory GPO, migration and upgrade) | `install/` |
-| Administration (login, dashboard, alerts, reports, directory services, SCIM, backup, licensing, SSO, mail, REST API) | `admin/`, `admin/systemconfiguration/`, `admin/systemmaintenance/`, `admin/epp_rest_api/` |
-| Device Control | `admin/dc_module/` |
-| Content Aware Protection, DPI, Outlook add-ins | `admin/cap_module/`, `admin/denylistsallowlists/` |
-| eDiscovery | `admin/ed_module/` |
-| Enforced Encryption | `admin/ee_module/` |
+| Overview, getting started, main components | `index.md`, `gettingstarted/` |
+| Release notes | `release-notes/` (links to the Netwrix Community) |
+| Requirements (server, client) | `requirements/` (`client.md` covers the client) |
+| Install and update (virtual appliance, cloud images, Intune, Jamf, Active Directory GPO, server update) | `install/` |
+| Migration (new EPP appliance migration guide, client upgrade) | `migrationprocedure/` |
+| Configuration (one-time setup after installation) | `configuration/` |
+| Administration (login, dashboard, alerts, reports, backup, licensing, SSO, mail) | `admin/`, `admin/systemconfiguration/`, `admin/systemmaintenance/` |
+| EPP Clients (agent installation, policy caching, tamper mode, client software and upgrades, Clients migration) | `configuration/eppclients/` |
+| Integrations and API (REST API, API clients, directory services, SCIM) | `integrations/` |
+| Device Control | `configuration/dc_module/` |
+| Content Aware Protection, DPI, Outlook add-ins | `configuration/cap_module/`, `configuration/denylistsallowlists/` |
+| eDiscovery | `configuration/ed_module/` |
+| Enforced Encryption | `configuration/ee_module/` |
 | Client support policy | `supportability/client-supportability.md` (and `server-supportability.md`) |
 | Knowledge Base | `kb/`, in seven topic folders (administration, CAP and DPI, deployment, device control, enforced encryption, features, troubleshooting) |
 

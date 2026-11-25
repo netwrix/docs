@@ -30,7 +30,7 @@ knowledge_article_id: kA0Qk0000002B6PKAU
 This article explains how to configure Endpoint Protector to allow access to ChatGPT by adding the `openai.com` domain to a Deep Packet Inspection (DPI) allowlist. In environments where DPI is enabled, web-based AI services like ChatGPT may be blocked by default because security policies restrict access to certain domains.
 
 :::tip
-Since EPP Client release 2511, Endpoint Protector offers wide native Data Loss Prevention coverage for AI/LLM providers, including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, Perplexity, and Cursor. Instead of only allowing or blocking access at the domain level, you can monitor and control the content exchanged in AI prompts. See [Content Aware Protection for AI interactions](/docs/endpointprotector/admin/cap_module/capai) for the full list of supported AI platforms and configuration examples.
+Since EPP Client release 2511, Endpoint Protector offers wide native Data Loss Prevention coverage for AI/LLM providers, including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, Perplexity, and Cursor. Instead of only allowing or blocking access at the domain level, you can monitor and control the content exchanged in AI prompts. See [Content Aware Protection for AI interactions](/docs/endpointprotector/configuration/cap_module/capai) for the full list of supported AI platforms and configuration examples.
 :::
 
 ## Instructions

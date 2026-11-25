@@ -21,7 +21,7 @@ knowledge_article_id: kA0Qk0000002B9FKAU
 
 This article explains how to set up a **Report Only** Content Aware Protection (CAP) policy in **Endpoint Protector**. Creating a Report Only policy is recommended after configuring an Allow All Device Control Policy. This approach helps you understand file movement across endpoints without enforcing restrictions.
 
-For the full reference, see [Policy Configuration and Application](/docs/endpointprotector/admin/cap_module/cappolicies).
+For the full reference, see [Policy Configuration and Application](/docs/endpointprotector/configuration/cap_module/cappolicies).
 
 :::important
 Report Only policies generate a large volume of logs and should be used on a limited number of computers.
@@ -56,7 +56,7 @@ Report Only policies generate a large volume of logs and should be used on a lim
 5. After deploying agents, return to the policies and assign them to the target client systems.
 
 :::tip
-If you plan to later add a **Block & Report** policy alongside this Report Only policy for the same entity, place the Block & Report policy at a higher priority. See [Policy Processing Order](/docs/endpointprotector/admin/cap_module/cappolicies#policy-processing-order) — Endpoint Protector evaluates policies by entity level first, then by priority within that level, regardless of the configured policy action.
+If you plan to later add a **Block & Report** policy alongside this Report Only policy for the same entity, place the Block & Report policy at a higher priority. See [Policy Processing Order](/docs/endpointprotector/configuration/cap_module/cappolicies#policy-processing-order) — Endpoint Protector evaluates policies by entity level first, then by priority within that level, regardless of the configured policy action.
 :::
 
 ## Details
