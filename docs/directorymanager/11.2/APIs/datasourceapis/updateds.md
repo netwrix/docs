@@ -1,12 +1,18 @@
 ---
-title: "Update a Data Source"
-description: "Update a Data Source"
+title: "Update a Data Source with the Directory Manager API"
+description: "Send a PUT request to the Directory Manager API to change the name, provider settings, or connection details of an existing data source."
+keywords:
+  - Directory Manager API
+  - update data source
+  - DataSource Update endpoint
+  - PUT request
+  - data source configuration
 sidebar_position: 160
 ---
 
-# Update a Data Source
+# Update a Data Source with the Directory Manager API
 
-Using this API you can update information of an already created data source.
+Use this API to update the information of an existing data source.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ Using this API you can update information of an already created data source.
 
 **PUT**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -36,7 +42,7 @@ Using this API you can update information of an already created data source.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

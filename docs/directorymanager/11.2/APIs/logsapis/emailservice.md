@@ -1,13 +1,19 @@
 ---
-title: "Email Service Logs"
-description: "Email Service Logs"
+title: "Download Email Service Logs with the API"
+description: "Download the Directory Manager Email Service logs as an encrypted zip file by sending a GET request to the Logs API."
+keywords:
+  - Email Service logs
+  - Logs API
+  - download Email Service logs
+  - Email Service log download endpoint
+  - Directory Manager Email Service
 sidebar_position: 30
 ---
 
-# Email Service Logs
+# Download Email Service Logs with the API
 
-Use this API to get Email service logs. See the
-[Email Service](/docs/directorymanager/11.2/admincenter/service/emailservice.md) topic for additional information on the Email Service.
+Use this API to get Directory Manager Email Service logs. See the
+[Directory Manager Email Service](/docs/directorymanager/11.2/admincenter/service/emailservice.md) topic for additional information on the Email Service.
 
 ## Endpoint
 
@@ -17,7 +23,7 @@ Use this API to get Email service logs. See the
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 <Encrypted response>

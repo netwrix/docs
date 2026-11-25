@@ -1,12 +1,17 @@
 ---
-title: "Preview of a Smart Group Membership"
-description: "Get Preview of a Smart Group Membership"
+title: "Preview Smart Group Membership Changes API"
+description: "Preview the membership changes a Smart Group query would make, using a GET request to the Directory Manager data service."
+keywords:
+  - Smart Group preview API
+  - Smart Group membership preview
+  - membership query preview
+  - IMSGCriteria
 sidebar_position: 150
 ---
 
-# Preview of a Smart Group Membership
+# Preview Smart Group Membership Changes API
 
-Using this API, you can preview membership changes that will occur in a Smart Group membership according to the query given in the body.
+Use this API to preview the membership changes that would occur in a Smart Group according to the query in the request body.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ Using this API, you can preview membership changes that will occur in a Smart Gr
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -65,7 +70,7 @@ Using this API, you can preview membership changes that will occur in a Smart Gr
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

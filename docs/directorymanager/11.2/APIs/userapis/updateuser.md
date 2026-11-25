@@ -1,10 +1,15 @@
 ---
-title: "Update a User"
-description: "Update a User"
+title: "Update a User with the Directory Manager API"
+description: "Update the attributes of a user in an identity store with a PATCH request."
+keywords:
+  - Directory Manager API
+  - update user
+  - PATCH Users endpoint
+  - AttributesToUpdate
 sidebar_position: 170
 ---
 
-# Update a User
+# Update a User with the Directory Manager API
 
 This API updates a user's information in the specified identity store.
 
@@ -16,7 +21,7 @@ This API updates a user's information in the specified identity store.
 
 **PATCH**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -35,7 +40,7 @@ This API updates a user's information in the specified identity store.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

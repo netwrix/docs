@@ -1,10 +1,15 @@
 ---
-title: "Get My Expired Groups"
-description: "Get My Expired Groups"
+title: "Get My Expired Groups with the Directory Manager API"
+description: "Retrieve the groups of the authenticated user that have expired, with paging and sorting options."
+keywords:
+  - Directory Manager API
+  - expired groups
+  - Groups/Expired endpoint
+  - GET request
 sidebar_position: 70
 ---
 
-# Get My Expired Groups
+# Get My Expired Groups with the Directory Manager API
 
 This API retrieves the expired groups of the authenticated user.
 
@@ -16,7 +21,7 @@ This API retrieves the expired groups of the authenticated user.
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -26,7 +31,7 @@ This API retrieves the expired groups of the authenticated user.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

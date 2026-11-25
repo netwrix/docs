@@ -1,12 +1,18 @@
 ---
-title: "Get Token"
-description: "Get Token"
+title: "Get an Access Token for the Directory Manager API"
+description: "Request an access token, or a new one after expiry, to authenticate calls to the Directory Manager APIs through the connect/token endpoint."
+keywords:
+  - Directory Manager API
+  - access token
+  - authentication token
+  - connect/token endpoint
+  - OAuth password grant
 sidebar_position: 90
 ---
 
-# Get Token
+# Get an Access Token for the Directory Manager API
 
-This API generates a token for a user to access the Directory Manager APIs. You can also use this API to get a valid token if the token expires in a session.
+This API generates a token for a user to access the Directory Manager APIs. You can also use this API to get a valid token if the token expires during a session.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ This API generates a token for a user to access the Directory Manager APIs. You
 
 **POST**
 
-### Parameters Values and Description
+### Parameter Values and Descriptions
 
 Pass the parameters listed in the table in the request body using the following format:
 
@@ -30,10 +36,10 @@ application/x-www-form-urlencoded
 | username          | Send the username against this parameter to access APIs            |
 | password          | Password of the user          |
 | client_Id         | Secret of Directory Manager API from the SVC.Client database table         |
-| client_secret     | Secret of Directory ManagerAPI from the SVC.Client database table               |
+| client_secret     | Secret of Directory Manager API from the SVC.Client database table               |
 | identity_store_id | The ID of the identity store in which the user exists. <br />You can get the identity store ID from the SVC.Identitystore database table. |
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

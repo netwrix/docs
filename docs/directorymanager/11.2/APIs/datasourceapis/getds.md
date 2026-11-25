@@ -1,12 +1,17 @@
 ---
-title: "Get a Data Source"
-description: "Get a Data Source"
+title: "Get a Data Source API in Directory Manager"
+description: "Retrieve the details of one Directory Manager data source by passing its ID in the endpoint URL."
+keywords:
+  - get data source by ID
+  - retrieve data source by dataSourceId
+  - data source details API
+  - single data source details
 sidebar_position: 30
 ---
 
-# Get a Data Source
+# Get a Data Source API in Directory Manager
 
-Using this API you can retrieve information of a specific data source specified in the end point
+Use this API to retrieve information about the data source specified in the endpoint
 URL.
 
 ## Endpoint
@@ -17,13 +22,13 @@ URL.
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 true
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

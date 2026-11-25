@@ -1,12 +1,16 @@
 ---
-title: "Get Jobs Names"
-description: "Get Jobs Names"
+title: "Get Job Names API in Directory Manager"
+description: "Retrieve the names and types of all predefined and user-created Synchronize jobs with a GET request."
+keywords:
+  - "get job names API"
+  - "Synchronize jobs"
+  - "DataSyncJobs endpoint"
 sidebar_position: 100
 ---
 
-# Get Jobs Names
+# Get Job Names API in Directory Manager
 
-Using this API you can get a list of job names both predefined and user created.
+Use this API to get a list of job names, both predefined and user-created.
 
 ## Endpoint
 
@@ -16,33 +20,33 @@ Using this API you can get a list of job names both predefined and user created
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
-    {
-        "name": "Move and Disable Objects In Active Directory",
-        "type": "3"
-    },
-    {
-        "name": "Linked Mailbox Creation In Active Directory",
-        "type": "3"
-    },
-    {
-        "name": "Move Objects in Active Directory",
-        "type": "3"
-    },
-    {
-        "name": "Sync GAL In Active Directory",
-        "type": "3"
-    },
-    {
-        "name": "NewJob",
-        "type": "1"
-    },
-    {
-        "name": "Sync_API",
-        "type": "1"
-    }
+    {
+        "name": "Move and Disable Objects In Active Directory",
+        "type": "3"
+    },
+    {
+        "name": "Linked Mailbox Creation In Active Directory",
+        "type": "3"
+    },
+    {
+        "name": "Move Objects in Active Directory",
+        "type": "3"
+    },
+    {
+        "name": "Sync GAL In Active Directory",
+        "type": "3"
+    },
+    {
+        "name": "NewJob",
+        "type": "1"
+    },
+    {
+        "name": "Sync_API",
+        "type": "1"
+    }
 ]
 ```

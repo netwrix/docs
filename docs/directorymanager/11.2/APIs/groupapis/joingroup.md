@@ -1,12 +1,17 @@
 ---
-title: "Join a Group"
-description: "Join a Group"
+title: "Join a Group API in Directory Manager"
+description: "Join a group with a specified membership type, start date, end date, and reason."
 sidebar_position: 110
+keywords:
+  - join group API
+  - group membership type
+  - Directory Manager API
+  - membership request
 ---
 
-# Join a Group
+# Join a Group API in Directory Manager
 
-Using this API, you can join a group as per the specified membership type.
+Use this API to join a group with the membership type you specify.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ Using this API, you can join a group as per the specified membership type.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -31,7 +36,7 @@ Using this API, you can join a group as per the specified membership type.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

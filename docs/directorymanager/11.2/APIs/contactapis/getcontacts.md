@@ -1,17 +1,22 @@
 ---
-title: "Get Contacts"
-description: "Get Contacts"
+title: "Get Contacts API in Directory Manager"
+description: "Retrieve attributes for multiple contacts from an identity store with a GET request to the Directory Manager Contacts endpoint."
+keywords:
+  - Directory Manager API
+  - get contacts
+  - contact objects
+  - identity store
+  - REST endpoint
 sidebar_position: 50
 ---
 
-# Get Contacts
+# Get Contacts API in Directory Manager
 
-Use this API to retrieve information of multiple contacts from a specified identity store.
+Use this API to retrieve information about multiple contacts from a specified identity store.
 
 :::note
-The contact object type isn't supported in a Microsoft Entra ID based identity store.
+The contact object type isn't supported in a Microsoft Entra ID-based identity store.
 :::
-
 
 ## Endpoint
 
@@ -21,7 +26,7 @@ The contact object type isn't supported in a Microsoft Entra ID based identity s
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -35,7 +40,7 @@ The contact object type isn't supported in a Microsoft Entra ID based identity s
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

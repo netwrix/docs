@@ -1,12 +1,17 @@
 ---
-title: "Get My Smart Groups"
-description: "Get My Smart Groups"
+title: "Get My Smart Groups with the Directory Manager API"
+description: "Retrieve the Smart Groups of the authenticated user, with paging, sorting, and nested ownership options."
+keywords:
+  - Directory Manager API
+  - Smart Groups
+  - Groups/SmartGroups endpoint
+  - authenticated user
 sidebar_position: 140
 ---
 
-# Get My Smart Groups
+# Get My Smart Groups with the Directory Manager API
 
-Using this API, you can retrieve information about the authenticated user's Smart Groups.
+Use this API to retrieve information about the authenticated user's Smart Groups.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ Using this API, you can retrieve information about the authenticated user's Smar
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -26,7 +31,7 @@ Using this API, you can retrieve information about the authenticated user's Smar
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

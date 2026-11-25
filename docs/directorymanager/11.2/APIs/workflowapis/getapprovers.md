@@ -1,12 +1,17 @@
 ---
-title: "Get Approvers"
-description: "Get Approvers"
+title: "Get Workflow Request Approvers Using the API"
+description: "Retrieve the approvers of a workflow request, with paging and filtering, by sending a GET request to the Directory Manager API."
+keywords:
+  - workflow request approvers
+  - get approvers API
+  - approver filter criteria
+  - Directory Manager REST API
 sidebar_position: 100
 ---
 
-# Get Approvers
+# Get Workflow Request Approvers Using the API
 
-This API provides information about the approvers of a workflow request.
+Use this API to get information about the approvers of a workflow request.
 
 ## Endpoint
 
@@ -16,59 +21,59 @@ This API provides information about the approvers of a workflow request.
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
-    "pageIndex": 1,
-    "pageSize": 10,
-    "filterCriteria": {
-        "operator": null,
-        "attribute": null,
-        "value": null,
-        "valueType": 0,
-        "valueTypes": [
-            0
-        ],
-        "donotEscapeValue": true,
-        "child": [
-            {
-                "operator": "Contains",
-                "attribute": "Route.description",
-                "value": "UserDefinied"
-            }
-        ]
-    },
-    "getRecent": true,
-    "totalFound": 0,
-    "sortOrder": "asc",
-    "loadDetails": true,
-    "workflowRequestID": 8,
-    "resolveApprovers": true,
-    "excludedApprovers": [
-        "string"
-    ]
-}   
+    "pageIndex": 1,
+    "pageSize": 10,
+    "filterCriteria": {
+        "operator": null,
+        "attribute": null,
+        "value": null,
+        "valueType": 0,
+        "valueTypes": [
+            0
+        ],
+        "donotEscapeValue": true,
+        "child": [
+            {
+                "operator": "Contains",
+                "attribute": "Route.description",
+                "value": "UserDefinied"
+            }
+        ]
+    },
+    "getRecent": true,
+    "totalFound": 0,
+    "sortOrder": "asc",
+    "loadDetails": true,
+    "workflowRequestID": 8,
+    "resolveApprovers": true,
+    "excludedApprovers": [
+        "string"
+    ]
+}   
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
-    "total": 1,
-    "data": [
-        {
-            "workflowRequestApproverId": 0,
-            "approver": "Jonathan Blackwell",
-            "approverIdentityStoreID": 2,
-            "workflowRequestId": 0,
-            "approverType": 0,
-            "approverName": "80ffbf0d-142c-4822-b843-1840bf50c05a",
-            "approverClass": 6,
-            "approverIdFromIdentityStore": null,
-            "isDefaultApprover": false,
-            "parentApproverIdentity": ""
-        }
-    ]
+    "total": 1,
+    "data": [
+        {
+            "workflowRequestApproverId": 0,
+            "approver": "Jonathan Blackwell",
+            "approverIdentityStoreID": 2,
+            "workflowRequestId": 0,
+            "approverType": 0,
+            "approverName": "80ffbf0d-142c-4822-b843-1840bf50c05a",
+            "approverClass": 6,
+            "approverIdFromIdentityStore": null,
+            "isDefaultApprover": false,
+            "parentApproverIdentity": ""
+        }
+    ]
 }
 ```

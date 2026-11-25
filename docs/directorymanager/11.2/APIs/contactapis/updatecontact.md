@@ -1,18 +1,22 @@
 ---
-title: "Update a Contact"
-description: "Update a Contact"
+title: "Update a Contact API in Directory Manager"
+description: "Change a contact's attributes and values in an identity store with a PATCH request to the Directory Manager Contacts endpoint."
+keywords:
+  - Directory Manager API
+  - update contact
+  - contact attributes
+  - PATCH request
+  - identity store
 sidebar_position: 60
 ---
 
-# Update a Contact
+# Update a Contact API in Directory Manager
 
-Use this API if you want to update a contact's attributes and their values in a specified
-identity store.
+Use this API to update a contact's attributes and their values in a specified identity store.
 
 :::note
-The contact object type isn't supported in a Microsoft Entra ID based identity store.
+The contact object type isn't supported in a Microsoft Entra ID-based identity store.
 :::
-
 
 ## Endpoint
 
@@ -22,7 +26,7 @@ The contact object type isn't supported in a Microsoft Entra ID based identity s
 
 **PATCH**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -46,7 +50,7 @@ The contact object type isn't supported in a Microsoft Entra ID based identity s
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

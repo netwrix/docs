@@ -1,10 +1,15 @@
 ---
-title: "Get Provider Options of a Data Source"
-description: "Get Provider Options of a Data Source"
+title: "Get Data Source Provider Options API in Directory Manager"
+description: "Retrieve the provider type, capability mappings, and creatable objects of a data source specified by its ID."
+keywords:
+  - data source provider options
+  - GetDataSourceProviderOptions endpoint
+  - data source provider type
+  - capability mappings
 sidebar_position: 140
 ---
 
-# Get Provider Options of a Data Source
+# Get Data Source Provider Options API in Directory Manager
 
 Use this API to retrieve information about the provider of a specified data source.
 
@@ -16,7 +21,7 @@ Use this API to retrieve information about the provider of a specified data sour
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

@@ -1,10 +1,15 @@
 ---
-title: "Delete Users"
-description: "Delete Users"
+title: "Delete Multiple Users with the Directory Manager API"
+description: "Delete several users from an identity store in one DELETE request by passing a list of user identities."
+keywords:
+  - Directory Manager API
+  - delete multiple users
+  - bulk delete users
+  - identity store
 sidebar_position: 40
 ---
 
-# Delete Users
+# Delete Multiple Users with the Directory Manager API
 
 This API deletes multiple users from the identity store given in the endpoint URL.
 
@@ -16,7 +21,7 @@ This API deletes multiple users from the identity store given in the endpoint UR
 
 **DELETE**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -25,7 +30,7 @@ This API deletes multiple users from the identity store given in the endpoint UR
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

@@ -1,10 +1,15 @@
 ---
-title: "Search Group Members"
-description: "Search Group Members"
+title: "Search Group Members in Directory Manager"
+description: "Search the members of a group in an identity store by using the member attribute scope in the Searches endpoint."
+keywords:
+  - search group members
+  - Searches endpoint
+  - member attribute
+  - group membership search
 sidebar_position: 20
 ---
 
-# Search Group Members
+# Search Group Members in Directory Manager
 
 Use this API to search members of a specified group using the member attribute.
 
@@ -16,7 +21,7 @@ Use this API to search members of a specified group using the member attribute.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -61,7 +66,7 @@ Use this API to search members of a specified group using the member attribute.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

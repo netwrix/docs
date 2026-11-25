@@ -1,10 +1,15 @@
 ---
-title: "Get Filtered Data Sources by isSource"
-description: "Get Filtered Data Sources by isSource"
+title: "Get Filtered Data Sources API"
+description: "List the data sources your role policy allows, or all data sources, by setting the isSource parameter on the Directory Manager data service."
+keywords:
+  - filtered data sources API
+  - isSource parameter
+  - role policy data sources
+  - GetFilteredDataSources endpoint
 sidebar_position: 90
 ---
 
-# Get Filtered Data Sources by isSource
+# Get Filtered Data Sources API
 
 Use this API to get information about data sources filtered by your role policy. If the isSource parameter in the URL is true, the API filters the results; otherwise, it returns all data sources.
 
@@ -16,7 +21,7 @@ Use this API to get information about data sources filtered by your role policy.
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [

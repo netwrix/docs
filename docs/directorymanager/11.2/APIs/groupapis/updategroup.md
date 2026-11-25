@@ -1,12 +1,17 @@
 ---
-title: "Update a Group"
-description: "Update a Group"
+title: "Update a Group API"
+description: "Update the attributes of a single group, such as its description or company, with a PATCH request to the Directory Manager data service."
+keywords:
+  - update group API
+  - group attribute update
+  - PATCH group
+  - groupIdentity endpoint
 sidebar_position: 180
 ---
 
-# Update a Group
+# Update a Group API
 
-Using this API, you can update a group's details.
+Use this API to update a group's details.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ Using this API, you can update a group's details.
 
 **PATCH**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -39,7 +44,7 @@ Using this API, you can update a group's details.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

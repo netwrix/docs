@@ -1,12 +1,18 @@
 ---
-title: "Get Workflow Requests"
-description: "Get Workflow Requests"
+title: "Get Workflow Requests by ID in Directory Manager"
+description: "Retrieve the details of one or more workflow requests by passing their request IDs in the endpoint URL."
+keywords:
+  - workflow request details
+  - Directory Manager API
+  - workflow request ID
+  - Workflows endpoint
+  - GET request
 sidebar_position: 150
 ---
 
-# Get Workflow Requests
+# Get Workflow Requests by ID in Directory Manager
 
-Use this API to retrieve information about the workflow request IDs specified in the endpoint URL.
+Use this API to retrieve information about the workflow requests whose IDs are specified in the endpoint URL.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ Use this API to retrieve information about the workflow request IDs specified in
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [

@@ -1,16 +1,21 @@
 ---
-title: "Create a New Job Collection"
-description: "Create a New Job Collection"
+title: "Create a Synchronize Job Collection API"
+description: "Create a Synchronize job collection, a group of jobs that run in a set order, with a POST request to the Directory Manager data service."
+keywords:
+  - create job collection API
+  - DataSyncJobs Collections POST
+  - job collection POST request body
+  - job run order
 sidebar_position: 20
 ---
 
-# Create a New Job Collection
+# Create a Synchronize Job Collection API
 
-Using this API, you can create a new job collection which is a group of individual jobs that run in a
+Use this API to create a new job collection, which is a group of individual jobs that run in a
 particular order.
 
-See the [Create a Job Collection ](/docs/directorymanager/11.2/portal/synchronize/collection/create.md)topic for
-additional information on the Job collection.
+See the [Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.2/portal/synchronize/collection/create.md) topic for
+additional information on job collections.
 
 ## Endpoint
 
@@ -20,7 +25,7 @@ additional information on the Job collection.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -433,7 +438,7 @@ additional information on the Job collection.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
