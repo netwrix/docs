@@ -1,10 +1,15 @@
 ---
-title: "Supported Microsoft Exchange Servers"
-description: "Supported Microsoft Exchange Servers"
+title: "Directory Manager Supported Exchange Servers"
+description: "See which Microsoft Exchange Server versions Directory Manager supports."
+keywords:
+  - supported Exchange Server versions
+  - Microsoft Exchange Server 2019
+  - Exchange requirements
+  - Directory Manager requirements
 sidebar_position: 30
 ---
 
-# Supported Microsoft Exchange Servers
+# Directory Manager Supported Exchange Servers
 
 Directory Manager supports the following Microsoft Exchange Servers:
 

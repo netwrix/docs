@@ -52,5 +52,5 @@ Step 2 – Run the following command:
 Repeat these steps on every secondary server.
 
 For the other secrets that all servers in a multi-instance deployment share, see the
-[Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md)
+[Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md)
 and [Directory Manager Security Utility](/docs/directorymanager/11.2/install/securityutility.md) topics.

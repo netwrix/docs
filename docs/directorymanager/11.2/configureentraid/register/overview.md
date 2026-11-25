@@ -1,13 +1,19 @@
 ---
-title: "Register in Microsoft Entra ID"
-description: "Register in Microsoft Entra ID"
+title: "Directory Manager Registration Requirements in Entra ID"
+description: "Understand why Directory Manager must be registered in the Microsoft Entra Admin Center and what the registration requires."
+keywords:
+  - Directory Manager registration requirements
+  - registered application
+  - Microsoft Graph API
+  - Exchange API
+  - directory role
 sidebar_position: 10
 ---
 
-# Register in Microsoft Entra ID
+# Directory Manager Registration Requirements in Entra ID
 
-To use Microsoft Entra ID, formerly Azure Active Directory, identity provider, Directory Manager
-must first be registered in Microsoft Entra Admin Center portal. The registration grants Directory
+To use Microsoft Entra ID, formerly Azure Active Directory, as an identity provider, you must first register Directory Manager
+in the Microsoft Entra Admin Center. The registration grants Directory
 Manager access to a particular Microsoft Entra ID Directory and its data, such as Microsoft Entra ID
 groups and users.
 

@@ -12,7 +12,7 @@ sidebar_position: 20
 
 # Software the Directory Manager Preparation Tool Installs
 
-When the [Preparation Tool](/docs/directorymanager/11.2/install/installer/preparationtool.md) runs, it installs the following software and Windows
+When the [Run the Directory Manager Preparation Tool](/docs/directorymanager/11.2/install/installer/preparationtool.md) runs, it installs the following software and Windows
 features:
 
 | Software | Comments |

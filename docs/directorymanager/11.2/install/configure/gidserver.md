@@ -48,7 +48,7 @@ independently. For each account, select the authentication mode in the **Auth** 
 5. In the **SQL Database** box, either specify the name of a new SQL database to use for Directory
 Manager or select your existing database. The **Trust Server Certificate** checkbox is selected by
 default. See the
-[SQL Certificate for Windows Authentication](/docs/directorymanager/11.2/requirements/sqlcertificate.md)
+[Configure a SQL Certificate for Directory Manager](/docs/directorymanager/11.2/requirements/sqlcertificate.md)
 topic for details on the SQL certificate.
 
 6. Click **Next**.

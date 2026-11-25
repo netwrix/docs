@@ -162,7 +162,7 @@ use a Transparent Network Substrate (TNS) alias. Do one of the following:
 
 Step 21 – Schedules that you upgrade from Directory Manager 10 to Directory Manager 11.2 require you to
 reconfigure their authentication. See the
-[Schedules](/docs/directorymanager/11.2/admincenter/schedule/overview.md) topic.
+[Schedules in Directory Manager](/docs/directorymanager/11.2/admincenter/schedule/overview.md) topic.
 
 Step 22 – The upgrade doesn't upgrade reports from Directory Manager 10 to Directory Manager 11.2, and it
 doesn't attach them to an identity store. After the upgrade, reconfigure the reports manually in

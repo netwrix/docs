@@ -1,20 +1,26 @@
 ---
-title: "Requirements"
-description: "Requirements"
+title: "Directory Manager 11.2 System Requirements"
+description: "Find the hardware, operating system, Microsoft Exchange, and database requirements for running Directory Manager 11.2."
+keywords:
+  - Directory Manager system requirements
+  - Directory Manager 11.2 prerequisites
+  - supported Windows Server
+  - supported Exchange versions
+  - database requirements
 sidebar_position: 20
 ---
 
-# Requirements
+# Directory Manager 11.2 System Requirements
 
-This page lists the hardware, operating system, MS Exchange, and database required to run Directory
+This page lists the hardware, operating system, Microsoft Exchange, and database requirements for running Directory
 Manager 11.2. The prerequisites may vary depending on your environment.
 
-- [Hardware Requirements](/docs/directorymanager/11.2/requirements/hardware.md)
-- [Microsoft Windows Servers Requirements ](/docs/directorymanager/11.2/requirements/windowsserver.md)
-- [Supported Microsoft Exchange Servers](/docs/directorymanager/11.2/requirements/exchangeservers.md)
-- [Database Requirements](/docs/directorymanager/11.2/requirements/database.md)
+- [Directory Manager Hardware Requirements](/docs/directorymanager/11.2/requirements/hardware.md)
+- [Windows Server Requirements for Directory Manager ](/docs/directorymanager/11.2/requirements/windowsserver.md)
+- [Directory Manager Supported Exchange Servers](/docs/directorymanager/11.2/requirements/exchangeservers.md)
+- [Directory Manager Database Requirements](/docs/directorymanager/11.2/requirements/database.md)
 
-Before installation, the [Preparation Tool](/docs/directorymanager/11.2/install/installer/preparationtool.md) installs the
+Before installation, the [Run the Directory Manager Preparation Tool](/docs/directorymanager/11.2/install/installer/preparationtool.md) installs the
 required software and Windows features. See the
 [Software the Directory Manager Preparation Tool Installs](/docs/directorymanager/11.2/install/installer/whatprepinstall.md) topic for the list
 of components the tool installs.

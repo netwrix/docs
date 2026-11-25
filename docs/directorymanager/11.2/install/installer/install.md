@@ -29,7 +29,7 @@ Step 2 – Read the welcome message and click **Next**.
 
 ![End User License Agreement page of the Installation Tool](/images/directorymanager/11.2/install/installer/eula.webp)
 
-Step 3 – On the End User License Agreement page, review and accept the license agreement, and click
+Step 3 – On the End User License Agreement page, review the license agreement, accept it, and click
 **Next**.
 
 ![Installation Folder page with the install location box](/images/directorymanager/11.2/install/installer/installpath.webp)

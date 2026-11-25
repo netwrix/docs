@@ -1,40 +1,47 @@
 ---
-title: "Microsoft Entra ID Identity Store"
-description: "Microsoft Entra ID Identity Store"
+title: "Create a Microsoft Entra ID Identity Store"
+description: "Create an identity store for Microsoft Entra ID, assign the right Directory Manager security role, and review service account and Teams replication limits."
+keywords:
+  - Microsoft Entra ID identity store
+  - service account permissions
+  - User Account Administrator role
+  - ReplicateTeamsChannelChanges
+  - Microsoft Teams replication
+  - Directory Manager security roles
 sidebar_position: 20
 ---
 
-# Microsoft Entra ID Identity Store
+# Create a Microsoft Entra ID Identity Store
 
 After you register Directory Manager and create a user with the required directory role in
-Microsoft Entra ID, you can create an Microsoft Entra ID identity store in GroupID. This topic
-explains how to create an Microsoft Entra ID identity store and assign a role to the
+Microsoft Entra ID, you can create a Microsoft Entra ID identity store in Directory Manager. This topic
+explains how to create a Microsoft Entra ID identity store and assign a role to the
 Microsoft Entra ID user in Directory Manager.
 
 ## To create a Microsoft Entra ID Identity Store
 
 See the
 [Create an Identity Store for Microsoft Entra ID](/docs/directorymanager/11.2/admincenter/identitystore/create.md#create-an-identity-store-for-microsoft-entra-id)
-topic for creating an Microsoft Entra ID identity store.
+topic for creating a Microsoft Entra ID identity store.
 
 :::note
 If you intend to use a service account user with Global Administrator directory role, you don't
 need to change the default Directory Manager security roles settings of the Microsoft Entra ID
 identity store. If you intend to use a service account user with any role other than Global
-Administrator directory role (i.e. User Administrator + Exchange Administrator), you must change
+Administrator directory role (such as User Administrator + Exchange Administrator), you must change
 the Directory Manager Administrator security role criteria group to User Account Administrator.
 :::
 
 
 ## Directory Manager Security Role Setting
 
-If you want to use a service account user with a role other than Global administrator role for
+If you want to use a service account user with a role other than the Global Administrator role for a
 Microsoft Entra ID identity store, you must assign it the _User Account Administrator_ role in
 Directory Manager.
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for Microsoft Entra ID identity
+Step 2 – On the Identity Stores page, click the ellipsis button for the Microsoft Entra ID identity
 store and select **Edit**.
 
 Step 3 – Click **Security Roles** under Settings in the left pane.
@@ -54,7 +61,7 @@ Step 7 – On the Security Roles page, click **Save**.
 If you use a service account with minimum directory role assignments, the following
 limitations apply:
 
-- You can only assign the User role to newly created users and mailbox objects from GroupID. The
+- You can only assign the User role to newly created users and mailbox objects from Directory Manager. The
   same applies to existing users and mailboxes, because you can't change Directory Roles when
   using a service account with minimum directory role assignments.
 
@@ -68,8 +75,8 @@ channel is added, removed, or modified. As a result, Directory Manager can't det
 changes incrementally and must replicate all Microsoft Teams objects on every replication cycle.
 This is a known Microsoft platform limitation.
 
-This behavior increases replication time particularly in environments with large number of Microsoft
-Teams objects, because Directory Manager replicates all Microsoft Teams regardless of whether changes
+This behavior increases replication time, particularly in environments with a large number of Microsoft
+Teams objects, because Directory Manager replicates all Microsoft Teams objects regardless of whether changes
 occurred. To control this behavior, use the `ReplicateTeamsChannelChanges` setting. Disabling it
 (the default) skips Teams channel replication and avoids the performance impact; enable it only when
 you need full Teams channel replication.

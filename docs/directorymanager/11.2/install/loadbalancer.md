@@ -58,7 +58,7 @@ export also produces a password that you need to import the file.
 ```
 
 For more on these utilities, see the
-[Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md),
+[Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md),
 [Directory Manager Security Utility](/docs/directorymanager/11.2/install/securityutility.md), and
 [Directory Manager Passphrase Utility](/docs/directorymanager/11.2/install/passphraseutility.md) topics.
 

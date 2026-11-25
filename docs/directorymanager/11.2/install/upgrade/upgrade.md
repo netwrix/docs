@@ -91,7 +91,7 @@ can choose to upgrade all or selected data of the previous version. Options are:
     upgrades the history in the database to the Directory Manager 11.2 format and replicates it
     to Elasticsearch. Later, when you upgrade specific groups and their history using the
     Upgrade-Group cmdlet, the upgrade succeeds. See the
-    [Upgrade-Group](/docs/directorymanager/11.2/managementshell/smartgroup/upgradegroup.md) cmdlet for additional
+    [Upgrade-Group Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/smartgroup/upgradegroup.md) cmdlet for additional
     information.
     :::
 

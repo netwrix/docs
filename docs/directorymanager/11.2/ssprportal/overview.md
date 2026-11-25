@@ -1,14 +1,19 @@
 ---
-title: "Welcome to the SSPR Portal"
-description: "Welcome to the SSPR Portal"
+title: "Directory Manager SSPR Portal Overview"
+description: "Learn what the Directory Manager self-service password reset portal does and how to launch it to enroll, change, reset, unlock, and link accounts."
+keywords:
+  - self-service password reset
+  - SSPR portal
+  - launch SSPR portal
+  - password reset portal
 sidebar_position: 60
 ---
 
-# Welcome to the SSPR Portal
+# Directory Manager SSPR Portal Overview
 
-A Self-Service Password Reset portal (SSPR) is a type of Directory Manager portal that only
-facilitates password-related functions. Users can manage their directory account
-passwords, i.e., the password for the account they use to access their workstations and other
+A self-service password reset (SSPR) portal is a type of Directory Manager portal that only
+supports password-related functions. Users can manage their directory account
+passwords, meaning the password for the account they use to access their workstations and other
 Microsoft services.
 
 Using the portal, users can:
@@ -25,8 +30,8 @@ and languages that Directory Manager supports.
 
 ## Launch the Portal
 
-Use the SSPR portal URL the administrator has provided you to launch the portal. The Welcome to
-GroupID page lists the following functions:
+Use the SSPR portal URL the administrator has provided to you to launch the portal. The Welcome to the
+Directory Manager page lists the following functions:
 
 - Enroll
 - Change Password
@@ -36,11 +41,11 @@ GroupID page lists the following functions:
 You can either click a function and then sign in to perform that function or first sign in and then
 select a function.
 
-- Click a link to perform the specific function. Since you aren't signed in, you will be redirected
-  to the GroupID Authenticate page. See the [Log in](/docs/directorymanager/11.2/portal/login.md#log-in) topic for signing
-  into the portal. Then you can proceed to perform the specific function. See the
-  [Manage your Identity Store Accounts](/docs/directorymanager/11.2/ssprportal/functions.md) topic for a discussion of these functions.
-- To sign in before accessing any function, click the Login link in the top right corner. You will
-  be redirected to the GroupID Authenticate page. See the [Log in](/docs/directorymanager/11.2/portal/login.md#log-in) topic
-  for signing into the portal. On signing in, the main portal page is displayed. See the
-  [Navigation](/docs/directorymanager/11.2/ssprportal/navigation.md) topic for additional information.
+- Click a link to perform the specific function. Because you aren't signed in, you are redirected
+  to the Directory Manager Authenticate page. See the [Log in](/docs/directorymanager/11.2/portal/login.md#log-in) topic for signing
+  in to the portal. Then you can proceed to perform the specific function. See the
+  [Manage Your Identity Store Accounts in the SSPR Portal](/docs/directorymanager/11.2/ssprportal/functions.md) topic for a discussion of these functions.
+- To sign in before accessing any function, click the Login link in the top right corner. You are
+  redirected to the Directory Manager Authenticate page. See the [Log in](/docs/directorymanager/11.2/portal/login.md#log-in) topic
+  for signing in to the portal. After you sign in, the main portal page is displayed. See the
+  [Navigate the Directory Manager SSPR Portal](/docs/directorymanager/11.2/ssprportal/navigation.md) topic for additional information.

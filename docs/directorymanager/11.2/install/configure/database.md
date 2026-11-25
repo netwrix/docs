@@ -36,7 +36,7 @@ Step 2 – On the primary server, export the passphrase. See the
 
 Step 3 – On the primary server, export the signing key. See the
 [Export a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#export-a-signing-key)
-section of the [Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md)
+section of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md)
 topic.
 
 Step 4 – Copy the exported files to the new server.
@@ -81,7 +81,7 @@ Step 5 – Depending on the authentication mode selected, do the following:
 Step 6 – In the **SQL Database** box, specify the name of the SQL database being used by the primary
 Directory Manager node. This new Directory Manager instance uses the same database. The
 **Trust Server Certificate** checkbox is selected by default. See the
-[SQL Certificate for Windows Authentication](/docs/directorymanager/11.2/requirements/sqlcertificate.md)
+[Configure a SQL Certificate for Directory Manager](/docs/directorymanager/11.2/requirements/sqlcertificate.md)
 topic for details on the SQL certificate.
 
 Step 7 – Click **Next**.

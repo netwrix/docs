@@ -52,7 +52,7 @@ configured page as shown in the Single Directory Manager instance section.
 Step 2 – Export the Signing Key so that the secondary node has the same Signing Key as the
 primary node. See the
 [Export a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#export-a-signing-key) section
-of the [Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic for
+of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic for
 information on how to export the Signing Key.
 
 Step 3 – On the secondary node, copy the exported Signing Key file into a folder.
@@ -100,7 +100,7 @@ is successfully configured page as shown in the Single Directory Manager instanc
 Step 2 – Export the Signing Key so that the secondary nodes of both the clusters also have the same
 Signing Key as the primary node of Cluster A. See the
 [Export a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#export-a-signing-key) section
-of the [Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic for
+of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic for
 information on how to export the Signing Key file.
 
 Step 3 – On the secondary nodes of Cluster A and Cluster B (instances 2 and 4), copy the exported
@@ -124,10 +124,10 @@ Configuration Tool displays the Directory Manager is successfully configured pag
 disclaimer as shown in the Single Directory Manager instance section.
 
 Step 7 – On the primary node of Cluster B (instance 3), run the
-[Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) and import the
+[Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) and import the
 copied Signing Key file using the cmdlet given in the
 [Import a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#import-a-signing-key) section
-of the [Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic.
+of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic.
 
 :::tip
 After the Signing Key update, your existing schedules won't work because their
