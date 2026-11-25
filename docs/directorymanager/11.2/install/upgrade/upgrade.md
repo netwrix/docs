@@ -6,7 +6,12 @@ sidebar_position: 10
 
 # Upgrade to Directory Manager 11
 
-The topic guides you to upgrade to Directory Manager 11.2 from Directory Manager 10.
+The topic guides you to upgrade to Directory Manager 11.2 from GroupID 10 SR2.
+
+:::note
+You can upgrade to Directory Manager 11.2 only from GroupID 10 SR2. If you use GroupID 9 or a
+GroupID 10 release earlier than SR2, first upgrade to GroupID 10 SR2.
+:::
 
 Step 1 – To launch the Upgrade wizard, click **Next** on the GroupID Successfully Configured page of
 the Configuration Tool.
@@ -15,11 +20,10 @@ the Configuration Tool.
 
 Click **Start** > **Imanami** > **GroupID Upgrade Tool 11.0**.
 
-![Welcome page](/images/directorymanager/11.2/install/upgrade/1-welcome.webp)
-
 Step 2 – Read the welcome message and click **Next**.
 
-![2-select_source_version](/images/directorymanager/11.2/install/upgrade/2-select_source_version.webp)
+![Welcome page](/images/directorymanager/11.2/install/upgrade/1-welcome.webp)
+
 
 Step 2.1: Verify SSL/TLS Certificates
 
@@ -38,13 +42,15 @@ Before proceeding with the upgrade, verify that all SSL/TLS certificates used fo
    - Double-click each certificate
    - Verify "Valid from" and "Valid to" dates
    - Ensure certificates aren't expired
-![2-1-check_certificate_validity](/images/directorymanager/11.2/install/upgrade/2-1-check_certificate_validity.webp)
+
+      ![2-1-check_certificate_validity](/images/directorymanager/11.2/install/upgrade/2-1-check_certificate_validity.webp)
 
 3. **Verify certificate chain:**
    - In certificate details, go to **Certification Path** tab
    - Ensure all certificates in the chain show "This certificate is OK"
    - Verify no revocation errors
-![2-1-verify_certificate_chain](/images/directorymanager/11.2/install/upgrade/2-1-verify_certificate_chain.webp)
+
+      ![2-1-verify_certificate_chain](/images/directorymanager/11.2/install/upgrade/2-1-verify_certificate_chain.webp)
 
 :::warning
 - Connections using self-signed certificates NOT in the Trusted Root CA store will FAIL after upgrade
@@ -56,23 +62,19 @@ Before proceeding with the upgrade, verify that all SSL/TLS certificates used fo
 - Install/update certificates
 - Re-verify all certificates before continuing
 
-Step 3 – From the Select the previous version to upgrade list, select the Directory Manager version
-to upgrade from.
-
-:::note
-The following steps discuss the upgrade process with Directory Manager 10 as the source
-version. The process may vary for different source versions.
-:::
-
+Step 3 – From the Select the previous version to upgrade list, select GroupID 10 SR2.
+![2-select_source_version](/images/directorymanager/11.2/install/upgrade/2-select_source_version.webp)
 
 Step 4 – Click **Next**.
 
-![Select modules to upgrade](/images/directorymanager/11.2/install/upgrade/3-select_modules.webp)
 
 On the Select Modules to upgrade page, select the type of Directory Manager data for upgrade. You
 can choose to upgrade all or selective data of the previous version. Options are:
 
 - Everything – upgrades all data, which covers all options discussed under Custom.
+
+  ![Select modules to upgrade](/images/directorymanager/11.2/install/upgrade/3-select_modules.webp)
+
 - Custom – choose what data you want to upgrade. On selecting it, the following options are listed,
   from where you can choose the data to upgrade.
 
@@ -94,7 +96,7 @@ can choose to upgrade all or selective data of the previous version. Options are
 
 Step 5 – Click **Next**.
 
-Step 6 – If you have an Microsoft Entra ID based identity store in Directory Manager 10, the
+Step 6 – If you have an Microsoft Entra ID based identity store in GroupID 10 SR2, the
 following page appears.
 
 ![Microsoft Entra ID Store Upgrade page](/images/directorymanager/11.2/install/upgrade/entraidstore.webp)
@@ -111,7 +113,7 @@ Provide the following information:
 
 Step 7 – Click **Next**.
 
-Step 8 – If in the Directory Manager source version, Office 365 messaging provider is configured in
+Step 8 – If in GroupID 10 SR2, Office 365 messaging provider is configured in
 a Microsoft Entra ID based identity store or in an AD identity store, the Upgrade wizard displays
 the following page.
 
@@ -126,14 +128,14 @@ Provide the following information:
   ID.
 - PFX Certificate Password: Provide password of the PFX certificate.
 
-Step 9 – If any Synchronize jobs exist in Directory Manager 10 or the version you are upgrading
-from, then the wizard checks the destination domain set for them. Let's assume you have 5 jobs that
+Step 9 – If any Synchronize jobs exist in GroupID 10 SR2, then the wizard checks the destination
+domain set for them. Let's assume you have 5 jobs that
 connect to different child domains in a forest with different service accounts and different
 messaging providers.
 
-- If an identity store already exists in Directory Manager 10 for the destination domains that the
+- If an identity store already exists in GroupID 10 SR2 for the destination domains that the
   jobs connect to, the Upgrade wizard moves the jobs to the respective identity stores in Directory Manager 11.2.
-- When there is no identity store in Directory Manager 10 for the destination domain that the jobs
+- When there is no identity store in GroupID 10 SR2 for the destination domain that the jobs
   connect to, the Upgrade wizard reads the FQDN of the destination domains used in the jobs and
   tries to create a forest structure. On identifying one, it proceeds to create an identity store
   for the forest, requiring you to provide a service account. (The user name and password fields
@@ -152,7 +154,7 @@ messaging providers.
     In case it can't determine a forest structure, it creates separate identity stores for each
     domain.
 
-Step 10 – For Synchronize jobs that use Office 365 as messaging provider in Directory Manager 10,
+Step 10 – For Synchronize jobs that use Office 365 as messaging provider in GroupID 10 SR2,
 the wizard would require you to provide the PFX certificate. The wizard page lists all Synchronize jobs that use Office
 365 as messaging provider. Expand each job and provide the PFX
 certificate along with its password.
@@ -170,8 +172,8 @@ Provide the following information:
 
 Step 11 – Click **Next**.
 
-Step 12 – The Upgrade wizard doesn't upgrade reports. In Directory Manager 10 and earlier versions,
-Directory Manager generated reports for the domain that the Directory Manager server was joined to.
+Step 12 – The Upgrade wizard doesn't upgrade reports. In GroupID 10 SR2,
+GroupID generated reports for the domain that the GroupID server was joined to.
 Directory Manager 11.2 doesn't attach these reports to an identity store. After the upgrade,
 reconfigure the reports manually in Directory Manager 11.2.
 
@@ -181,7 +183,7 @@ directory provider, it will automatically move the schedule to the respective id
 
 :::tip
 Remember, during upgrade, the Upgrade wizard creates identity stores for destination directory providers of
-Synchronize jobs (i.e., for providers that don't have an identity store in the source version).
+Synchronize jobs (i.e., for providers that don't have an identity store in GroupID 10 SR2).
 :::
 
 
@@ -200,30 +202,29 @@ Consider the following:
 
 Step 14 – Click **Next**.
 
-![Summary page](/images/directorymanager/11.2/install/upgrade/5-summary.webp)
-
 This page displays a complete summary of the data to be copied/upgraded for your selected options.
 These options were selected on the Select modules to upgrade page..
 
+
 :::note
-If there are any disabled identity stores in the source Directory Manager version, Directory
-Manager will not upgrade those identity stores. However, data of those identity stores will
-remain intact in the source Directory Manager version.
+If there are any disabled identity stores in GroupID 10 SR2, Directory Manager will not upgrade
+those identity stores. However, data of those identity stores will remain intact in GroupID 10 SR2.
 :::
 
 
 Step 15 – Review the summary and click **Next**.
-
-![Upgrade Progress page](/images/directorymanager/11.2/install/upgrade/6-upgrade_process_complete.webp)
+![Summary page](/images/directorymanager/11.2/install/upgrade/5-summary.webp)
 
 The Upgrade Process upgrades Directory Manager while displaying the upgrade progress. On successful
 upgrade, Directory Manager displays the Upgrade Completed message above the progress bar.
 
+![Upgrade Progress page](/images/directorymanager/11.2/install/upgrade/6-upgrade_process_complete.webp)
+
 Step 16 – Click **Next**.
 
-![Upgrade Completed page](/images/directorymanager/11.2/install/upgrade/7-upgrade_complete.webp)
-
 The Upgrade Completed page displays the status of features selected for upgrade.
+
+![Upgrade Completed page](/images/directorymanager/11.2/install/upgrade/7-upgrade_complete.webp)
 
 Step 17 – You can click:
 
