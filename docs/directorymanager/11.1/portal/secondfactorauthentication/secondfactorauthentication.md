@@ -1,31 +1,38 @@
 ---
-title: "Second Factor Authentication"
-description: "Second Factor Authentication"
+title: "Second Factor Authentication in Directory Manager"
+description: "Learn how second factor authentication works in Directory Manager and how to enroll with and authenticate using each supported authentication type."
+keywords:
+  - second factor authentication
+  - authentication types
+  - YubiKey
+  - Windows Hello
+  - Authenticator app
+  - SMS verification
 sidebar_position: 40
 ---
 
-# Second Factor Authentication
+# Second Factor Authentication in Directory Manager
 
 The Directory Manager administrator can enable second factor authentication for a user role in an
 identity store.
 
-This implies that, in addition to providing a valid user name and password to connect the portal to
-an identity store, role members must authenticate themselves using an authentication type.
+This means that, in addition to providing a valid user name and password to connect the portal to
+an identity store, role members must authenticate using an authentication type.
 
 Second factor authentication works as follows:
 
-- An unenrolled user must enroll his or her identity store account in Directory Manager. See the
-  [Enroll your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/enroll.md) topic. Enrollment is a
+- An unenrolled user must enroll their identity store account in Directory Manager. See the
+  [Enroll Your Account in Directory Manager](/docs/directorymanager/11.1/admincenter/general/enroll.md) topic. Enrollment is a
   one-time process.
-- An enrolled user has to authenticate on the Directory Manager portal using the authentication type
-  he or she used to enroll his or her identity store account with. See the
-  [Authenticate your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/authenticate.md) topic.
+- An enrolled user must authenticate on the Directory Manager portal using the authentication type
+  they used to enroll their identity store account. See the
+  [Authenticate Your Account in Directory Manager](/docs/directorymanager/11.1/admincenter/general/authenticate.md) topic.
 
-    Authentication is required every time the user logs into the portal.
+    Authentication is required every time the user signs in to the portal.
 
 Directory Manager supports seven authentication types for second factor authentication. The
 administrator can enable all or any of these for enrollment. Of the enabled authentication types,
-users have to enroll and then authenticate with any one type.
+users must enroll and then authenticate with any one type.
 
 ## Supported Authentication Types
 
@@ -41,24 +48,24 @@ Directory Manager supports the following authentication types:
 
 ### Security Questions Authentication
 
-The administrator is responsible for configuring the security questions that users must answer to
+The administrator configures the security questions that users must answer to
 enroll their identity store accounts using the Directory Manager portal. Administrators can also
 enroll using Directory Manager Admin Center.
 
-To authenticate using the security questions, users must provide answers to the security questions
-they used to enroll their accounts with.
+To authenticate using security questions, users must provide answers to the security questions
+they used to enroll their accounts.
 
 ### SMS Verification
 
-In SMS authentication, confirmation codes sent on the user’s mobile phone are used to enroll and
+In SMS authentication, confirmation codes sent to the user's mobile phone are used to enroll and
 authenticate.
 
-- To enroll an identity store account through SMS verification, a user has to enter his or her
-  mobile number in the portal. The portal will send a verification code on this number via SMS and
-  the user has to enter it in the portal to enroll his or her account.
-- To authenticate using SMS, a user has to provide the last 4 digits of his or her registered mobile
-  number. The portal then sends a confirmation code on this number; the user has to enter the code
-  in the portal for authentication.
+- To enroll an identity store account through SMS verification, a user enters their
+  mobile number in the portal. The portal sends a verification code to this number by SMS and
+  the user enters it in the portal to enroll their account.
+- To authenticate using SMS, a user provides the last 4 digits of their registered mobile
+  number. The portal then sends a confirmation code to this number; the user enters the code
+  in the portal to authenticate.
 
 :::note
 The SMS authentication type is available if the Directory Manager administrator has linked an
@@ -68,15 +75,15 @@ SMS gateway account with the identity store.
 
 ### Email Verification
 
-In Email authentication, confirmation codes sent on the user’s email address are used to enroll and
+In Email authentication, confirmation codes sent to the user's email address are used to enroll and
 authenticate.
 
-- To enroll an identity store account through Email verification, a user has to enter his or her
-  email address in the portal. The portal will send a verification code to this email address and
-  the user has to enter it in the portal to enroll his or her account.
-- To authenticate using Email, a user has to complete the email address he or she provided during
-  enrollment. The portal then sends a confirmation code to this email address; the user has to enter
-  the code in the portal for authentication.
+- To enroll an identity store account through Email verification, a user enters their
+  email address in the portal. The portal sends a verification code to this email address and
+  the user enters it in the portal to enroll their account.
+- To authenticate using Email, a user completes the email address they provided during
+  enrollment. The portal then sends a confirmation code to this email address; the user enters
+  the code in the portal to authenticate.
 
 :::note
 The Email authentication type is available if the administrator has defined an SMTP server for
@@ -86,33 +93,32 @@ the identity store.
 
 ### Authenticator app
 
-Users have to install the Google Authenticator or Microsoft Authenticator app on their smartphones
+Users must install the Google Authenticator or Microsoft Authenticator app on their smartphones
 and use it to enroll and authenticate their identity store accounts on the portal.
 
-- To enroll, a user has to use the Authenticator app on his or her phone to scan the QR image
-  displayed on the portal. This generates a verification code in the app, that the user has to enter
+- To enroll, a user uses the Authenticator app on their phone to scan the QR image
+  displayed on the portal. This generates a verification code in the app, which the user enters
   in the portal to enroll.
 
     Authenticator apps generate a new code every 30 seconds, with each code expiring after 30
     seconds.
 
-- To authenticate, the user has to launch the Authenticator app on his or her phone and enter
-  the QR code generated by the app in the portal.
+- To authenticate, the user launches the Authenticator app on their phone and enters
+  the code generated by the app in the portal.
 
 ### Link Account authentication
 
-The Directory Manager portal enables a user to link accounts that he or she may have in different
+The Directory Manager portal enables a user to link accounts that they may have in different
 identity stores. When the user enrolls any one of those linked accounts in Directory Manager, it
 suffices for the enrollment of all linked accounts.
 
-Users can then reset their account passwords and unlock accounts through a linked account. Let’s
-assume a user links his or her accounts in Identity Store A and Identity Store B. Using the Linked
+Users can then reset their account passwords and unlock accounts through a linked account. Suppose a user links their accounts in Identity Store A and Identity Store B. Using the Linked
 Account authentication type, the user can unlock the Identity Store A account by providing the
 credentials of the Identity Store B account and vice versa.
 
 ### YubiKey authentication
 
-YubiKey is a key-sized device that users can plug into the computer’s USB slot to provide another
+YubiKey is a key-sized device that users can plug into the computer's USB slot to provide another
 layer of security when accessing their identity store accounts.
 
 YubiKey supported browsers:
@@ -121,7 +127,7 @@ YubiKey supported browsers:
 - Opera version 40 or later
 - Firefox (requires the U2F Support Add-on extension)
 
-IE and Microsoft Edge aren't supported.
+Internet Explorer and Microsoft Edge aren't supported.
 
 - To enroll your identity store account on the portal using YubiKey, insert the YubiKey device in
   the USB slot of your computer, enter a name for your device in the portal and tap on the device.
@@ -136,19 +142,19 @@ aren't supported.
 
 ### Windows Hello authentication
 
-The Windows Hello authentication type can be used on devices running Windows 10 with specialized
-hardware installed, such as fingerprint reader and 3D camera.
+You can use the Windows Hello authentication type on devices running Windows 10 with specialized
+hardware installed, such as a fingerprint reader and 3D camera.
 
 **Enable Windows Hello on Windows 10**
 
 Step 1 – Go to the **Start** menu and select **Settings**.
 
-Step 2 – Go to **Accounts Sign-in options**.
+Step 2 – Go to **Accounts** > **Sign-in options**.
 
-Step 3 – Windows Hello prompts you to enter a PIN; click/tap **Add** under **PIN** to set up a PIN
+Step 3 – Windows Hello prompts you to enter a PIN; click or tap **Add** under **PIN** to set up a PIN
 code first.
 
-Having set a PIN, proceed to add biometric data.
+After you set a PIN, add biometric data.
 
 Step 4 – In the **Windows Hello** section, click **Set up** under **Face** or **Fingerprint** to add
 the recognition data.
@@ -156,6 +162,6 @@ the recognition data.
 :::note
 If your device doesn't meet the hardware requirements, Windows Hello isn't available, even
 if Windows 10 is installed on it.  
-Window Hello supports the Microsoft Edge browser only.
+Windows Hello supports the Microsoft Edge browser only.
 
 :::

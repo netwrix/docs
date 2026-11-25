@@ -1,23 +1,30 @@
 ---
-title: "New-SmartGroup"
-description: "New-SmartGroup"
+title: "New-SmartGroup Cmdlet"
+description: "Create a Smart Group or Password Expiry group in Directory Manager whose membership is maintained dynamically by an LDAP query."
+keywords:
+  - New-SmartGroup
+  - create Smart Group
+  - Password Expiry group
+  - LDAP query membership
+  - Directory Manager cmdlet
+  - Management Shell
 sidebar_position: 30
 ---
 
-# New-SmartGroup
+# New-SmartGroup Cmdlet
 
-This commandlet helps you to create a new Smart Group (managed group) in Directory. A Smart Group is
+This cmdlet helps you create a new Smart Group (managed group) in the directory. A Smart Group is
 a conventional distribution or security group that dynamically maintains its membership based on the
 rules applied by a user-defined LDAP query.
 
 A Smart Group can also be defined as a Password Expiry group. A Password Expiry group is a dynamic
 group whose membership is based on password policy conditions defined by the administrator. The LDAP
-query defined for a Smart Group can be updated any time using the [Set-SmartGroup](/docs/directorymanager/11.1/managementshell/smartgroup/setsmartgroup.md)
-commandlet. When the LDAP query is changed, you must update the group once to modify its membership
+query defined for a Smart Group can be updated at any time using the [Set-SmartGroup Cmdlet](/docs/directorymanager/11.1/managementshell/smartgroup/setsmartgroup.md)
+cmdlet. When the LDAP query is changed, you must update the group once to modify its membership
 according to the changes made to the query. For information about updating a group, see
-[Update-Group](/docs/directorymanager/11.1/managementshell/smartgroup/updategroup.md).
+[Update-Group Cmdlet](/docs/directorymanager/11.1/managementshell/smartgroup/updategroup.md).
 
-You can view events related to this commandlet in Directory Manager portal, against the History node
+You can view events related to this cmdlet in the Directory Manager portal, under the History node
 in the left panel.
 
 ## Syntax
@@ -86,8 +93,8 @@ New-SmartGroup
 Example 1:
 
 The following command creates a new mail-enabled, universal, distribution Smart Group in the
-container specified by the **OrganizationalUnit** parameter, using the credentials of current user
-logged-on to the identity store.
+container specified by the **OrganizationalUnit** parameter, using the credentials of the current user
+logged on to the identity store.
 
 ```
 New-SmartGroup  -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Smart_Training" -GroupAlias "Smart_Training" -MailEnable True -SamAccountName "Smart_Training" -GroupScope "Universal Group" -Type "Distribution"
@@ -97,7 +104,6 @@ New-SmartGroup  -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Na
 In Microsoft Exchange 2007 and later, mail-enabled groups are created with _Universal Group
 Scope_.
 :::
-
 
 Example 2:
 
@@ -113,9 +119,8 @@ New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name 
 Example 3:
 
 The following command creates a new local, distribution, Password Expiry group, using the
-credentials set in the **$Credential**s environment variable. Those users will be members of the
-group who have passwords aged 20 days or older. Disabled users will also be included in the
-membership.
+credentials set in the **$Credentials** environment variable. Users who have passwords aged 20 days
+or older become members of the group. Disabled users are also included in the membership.
 
 ```
 New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name "Password_Expiry" -GroupAlias "Password_Expiry" -SamAccountName "Password_Expiry" -GroupScope "Domain Local" -Type "Distribution" -IsPasswordExpiryGroup -DomainExpiration 30 -ExpirationRange 10 -IncludeDisabledUsers True -Credential $Cred

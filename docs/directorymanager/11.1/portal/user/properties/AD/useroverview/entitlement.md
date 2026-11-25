@@ -1,15 +1,20 @@
 ---
-title: "Entitlements tab"
-description: "Object Properties - Entitlements tab"
+title: "View User Entitlements in Directory Manager"
+description: "View the effective NTFS permissions a user has on shared files and folders, and learn how the Entitlement job computes them."
+keywords:
+  - Entitlements tab
+  - NTFS permissions
+  - Entitlement job
+  - shared file permissions
 sidebar_position: 40
 ---
 
-# Entitlements tab
+# View User Entitlements in Directory Manager
 
 Entitlement computes the effective NTFS permissions granted to objects on shared resources residing
 on a server in an Active Directory identity store. The Entitlement tab provides an interface for
 users to view these permissions. Users can view the permissions granted to a user over files and
-folder residing on a server.
+folders residing on a server.
 
 Explicit permissions are assigned to a user. To facilitate permission viewing, do the following:
 
@@ -40,10 +45,10 @@ view, manage, and update these permissions in the Directory Manager portal.
 
 ## Permissions on the Entitlement portal
 
-You can grant permissions to security roles on the Entitlement section in the Directory Manager
-portal. Based on these permissions, role members can performs different actions in the Entitlement
+You can grant permissions to security roles in the Entitlement section of the Directory Manager
+portal. Based on these permissions, role members can perform different actions in the Entitlement
 section, such as navigate file servers and SharePoint sites, grant permissions to objects on shared
 resources, revoke permissions, and more.
 
-Entitlement-related permissions for a security role in an identity store are discussed in the
+Entitlement-related permissions for a security role in an identity store are described in the
 [Entitlement](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md#entitlement) section.

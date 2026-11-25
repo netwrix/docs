@@ -1,12 +1,18 @@
 ---
-title: "Group Expiry and Deletion"
-description: "Group Expiry and Deletion"
+title: "Group Expiry and Deletion in Directory Manager"
+description: "Learn what happens when Directory Manager expires, renews, or deletes a group, and how physical and logical deletion differ."
+keywords:
+  - group expiry
+  - group deletion
+  - Recycle Bin
+  - logical deletion
+  - Group Life Cycle schedule
 sidebar_position: 40
 ---
 
-# Group Expiry and Deletion
+# Group Expiry and Deletion in Directory Manager
 
-Using Directory Manager, you can expire and delete groups in two ways:
+In Directory Manager, you can expire and delete groups in two ways:
 
 - Manually expire and delete groups
 - Automatically expire and delete groups using the Group Life Cycle schedule
@@ -19,9 +25,9 @@ Directory Manager provides two ways to expire a group:
 - The Group Life Cycle schedule expires groups automatically based on the expiry policy specified
   for the respective group.
 
-The following events take place when a group expires:
+The following events occur when a group expires:
 
-**In case of an Active Directory identity store with Microsoft Exchange as messaging provider:**
+**In an Active Directory identity store with Microsoft Exchange as the messaging provider:**
 
 - The group becomes inactive and is locked for all activities.
 - "EXPIRED\_" is added as a prefix to the group name.
@@ -29,27 +35,27 @@ The following events take place when a group expires:
 - For a security group, its member list is cleared. However, Directory Manager keeps a backup of its
   membership in the database.
 
-**In case of an Active Directory identity store with Office 365 as messaging provider:**
+**In an Active Directory identity store with Office 365 as the messaging provider:**
 
-The following happens when a distribution group is expired manually or via the Group Lifecycle job:
+The following happens when a distribution group is expired manually or by the Group Lifecycle job:
 
-- The group’s email address is removed in Active Directory.
+- The group's email address is removed in Active Directory.
 - "EXPIRED\_" is added as a prefix to the group name.
 - The group is removed from Office 365 when the AAD Sync schedule runs.
 
 On renewing an expired distribution group, the following happens:
 
-- The group’s email address is added in Active Directory.
-- The "EXPIRED\_" prefix is removed from the group’s name.
+- The group's email address is added in Active Directory.
+- The "EXPIRED\_" prefix is removed from the group's name.
 - The group is created with members in Office 365 when the AAD Sync schedule runs.
 
-**In case of a Microsoft Entra ID identity store with Office 365 as messaging provider:**
+**In a Microsoft Entra ID identity store with Office 365 as the messaging provider:**
 
-The following happens when a distribution group is expired manually or via the Group Life Cycle
+The following happens when a distribution group is expired manually or by the Group Life Cycle
 schedule:
 
-- Directory Manager takes a backup of the group’s membership.
-- It empties out the group’s membership in Office 365.
+- Directory Manager takes a backup of the group's membership.
+- It empties the group's membership in Office 365.
 
     :::note
     When an Office 365 group is expired, its member list is backed up in the database and
@@ -59,18 +65,18 @@ schedule:
 
 On renewing an expired distribution group, the following happens:
 
-- The group’s membership is repopulated in Microsoft Entra ID and Office 365.
+- The group's membership is repopulated in Microsoft Entra ID and Office 365.
 
 ### Renewal of Expired Groups
 
 If you want an expired group back, you can renew it. On renewal, the group becomes active again and
 its expiry policy is re-applied to it, starting from the date of renewal.
 
-## What Happens When a Group is Deleted
+## What Happens When a Group Is Deleted
 
 Using Directory Manager, groups can be deleted physically or logically. Deleted groups can be viewed
 in the Directory Manager portal. You can distinguish physically deleted groups from logically
-deleted groups as:
+deleted groups as follows:
 
 - Physically deleted groups are listed under _Tombstone Groups_.
 - Logically deleted groups are listed under _Logically Deleted Groups_. They also have Deleted\_
@@ -80,8 +86,8 @@ deleted groups as:
 Both types are locked for further operations until restored.
 
 :::note
-While all searches in Directory Manager are catered through Elasticsearch, the Recycle Bin is
-an exception; it fetches data from the directory.
+Elasticsearch serves all searches in Directory Manager, except the Recycle Bin, which
+fetches data from the directory.
 :::
 
 
@@ -103,12 +109,12 @@ Smart Groups and Dynasties are restored as static groups with no members and no 
 
 ### Logical Deletion
 
-Groups that are deleted by the Group Life Cycle schedule are considered as logically deleted. The
-schedule deletes expired groups x number of days after group expiry, as specified in the
+Groups that the Group Life Cycle schedule deletes are considered logically deleted. The
+schedule deletes expired groups a set number of days after group expiry, as specified in the
 [Auto Delete Expired Groups](grouplifecycle.md#auto-delete-expired-groups) topic.
 
 On deletion, logically deleted groups are moved to the Recycle Bin with all their attributes intact.
-As a result, a logically deleted group, when restored, returns to its state it had at the time of
+As a result, a logically deleted group, when restored, returns to the state it had at the time of
 deletion. The restoration process not only restores the group to the container from where it was
 deleted but it also reinstates the home container for the group, if deleted.
 

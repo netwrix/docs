@@ -1,19 +1,24 @@
 ---
-title: "Create Groups"
-description: "Groups"
+title: "Create groups in Directory Manager"
+description: "Learn about the static groups, Smart Groups, and Dynasties you can create in the Directory Manager portal."
+keywords:
+  - create groups
+  - managed vs unmanaged groups
+  - static group vs Smart Group
+  - Smart Group Update job
 sidebar_position: 10
 ---
 
-# Create Groups
+# Create groups in Directory Manager
 
-Using Directory Manager portal, you can create:
+Using the Directory Manager portal, you can create:
 
 - An unmanaged group or a static group.
 
-    - A static group is a group you would normally create in a directory (for example, by using the
-      Active Directory Users and Computers snap-in). Though such groups can be created using
-      Directory Manager portal, Directory Manager doesn't support dynamic updates to them. Any
-      changes to the membership have to be updated manually.
+    - A static group is a group you normally create in a directory (for example, by using the
+      Active Directory Users and Computers snap-in). Though you can create such groups using
+      the Directory Manager portal, Directory Manager doesn't support dynamic updates to them. Any
+      changes to the membership must be updated manually.
 
 - A managed group or a Smart Group or a Dynasty.
 
@@ -30,4 +35,4 @@ Using Directory Manager portal, you can create:
 
     - A Dynasty is a Smart Group that creates and manages other Smart Groups using information in
       the directory. Dynasties help you manage large distribution lists by creating hierarchical
-      group structures that represent your organization’s hierarchy.
+      group structures that represent your organization's hierarchy.

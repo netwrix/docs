@@ -1,10 +1,17 @@
 ---
-title: "Services"
-description: "Services"
+title: "Directory Manager Services"
+description: "Learn what the Directory Manager and third-party services do, where they are hosted, and which accounts run them."
+keywords:
+  - Directory Manager services
+  - service accounts
+  - gMSA
+  - Key Distribution Service
+  - Elasticsearch service
+  - Windows services
 sidebar_position: 110
 ---
 
-# Services
+# Directory Manager Services
 
 Directory Manager services are long-running, non-UI software applications that operate in the
 background and run in their own Windows sessions. They are usually started when you boot the machine
@@ -14,9 +21,9 @@ start, pause, and stop them manually.
 Directory Manager relies on a few of its own services and third-party services for different
 functions.
 
-## Directory Manager Services
+## Directory Manager Core Services
 
-The following table discusses Directory Manager services.
+The following table describes the Directory Manager services.
 
 | Service | Description |
 | --- | --- |
@@ -27,11 +34,11 @@ The following table discusses Directory Manager services.
 | Scheduler service | Initiates schedule runs for scheduled jobs defined in Directory Manager. |
 
 These services run in the context of specific accounts that are different from the logged-on user or
-the default computer account. See the Accounts to Run the Servicestopic for details.
+the default computer account. See the Accounts to Run the Services topic for details.
 
 ### Services Hosting
 
-Directory Manager services are hosted on a web server, that could be native IIS or remote IIS.
+Directory Manager services are hosted on a web server, which can be native IIS or remote IIS.
 
 You can create multiple Data services and Security services while hosting them on different web
 servers. For example, you can host one Data service in native IIS and another in remote IIS.
@@ -39,7 +46,7 @@ servers. For example, you can host one Data service in native IIS and another in
 - To launch IIS on a machine, see
   [Opening IIS Manager](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525920(v=vs.90)).
 
-![in_iis](/images/directorymanager/11.1/admincenter/portal/in_iis.webp)
+![IIS Manager showing the Directory Manager services](/images/directorymanager/11.1/admincenter/portal/in_iis.webp)
 
 ## Third-party Services
 
@@ -49,16 +56,16 @@ Directory Manager requires the following third-party services:
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | SQL Server Browser service     | This service fetches the SQL servers present in the environment and displays them on the Database Settings page of the Directory Manager Configuration Tool, where you configure a database for Directory Manager. Moreover, Directory Manager stops when this service stops.                                     |
 | Key Distribution Service (KDS) | You must enable the Key Distribution Service (KDS) on the Directory Manager server if you want to use Group Managed Service Accounts (gMSA) in Directory Manager. Directory Manager supports a gMSA in various contexts, such as for the Directory Manager app pool and as service account for an identity store. |
-| Elasticsearch service          | This service is responsible for searching the Elasticsearch repository to display object listings and search results in Directory Manager. If this service stops, Directory Manager will not work.                                                                                                                |
+| Elasticsearch service          | This service is responsible for searching the Elasticsearch repository to display object listings and search results in Directory Manager. If this service stops, Directory Manager doesn't work.                                                                                                                |
 
 ### Services Hosting
 
 Third-party services are created as Windows services in Windows Services Manager:
 
-To launch the Services Manager, type ‘ services.msc’ in the Run dialog box and click OK. Here is an
+To launch the Services Manager, type `services.msc` in the Run dialog box and click OK. Here is an
 example of services in Windows Services Manager. You can start, stop, disable, and delay a service.
 
-![inwindowsservicesmanager](/images/directorymanager/11.1/admincenter/service/inwindowsservicesmanager.webp)
+![Windows Services Manager listing the third-party services that Directory Manager requires](/images/directorymanager/11.1/admincenter/service/inwindowsservicesmanager.webp)
 
 ## Accounts to Run the Services
 
@@ -73,7 +80,7 @@ Directory Manager app pool and Windows services.
 ## Elasticsearch Clusters, Nodes, and Directory Manager
 
 When you have multiple Elasticsearch clusters in your environment and each cluster has multiple
-nodes, you will notice that for each node in a cluster the following are created.
+nodes, you notice that for each node in a cluster the following are created.
 
 - An Admin Center
 - A Data service
@@ -84,7 +91,7 @@ nodes, you will notice that for each node in a cluster the following are created
 
 **Cluster syncing**
 
-To sync data between clusters, Directory Manager uses the Replication service. You have to enable
+To sync data between clusters, Directory Manager uses the Replication service. You must enable
 data sync for at least one Replication service within a cluster to sync the cluster's data to other
 clusters. See the
 [Enable Elastic Cluster Syncing](replicationservice.md#enable-elastic-cluster-syncing) topic for

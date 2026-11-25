@@ -1,16 +1,22 @@
 ---
-title: "Terminate-DirectReports"
-description: "Terminate-DirectReports"
+title: "Terminate-DirectReports Cmdlet for Directory Manager"
+description: "Terminate the specified direct reports of a manager and send the manager a notification per the defined workflow with Terminate-DirectReports."
+keywords:
+  - Terminate-DirectReports
+  - terminate users
+  - direct reports
+  - user lifecycle
+  - Management Shell
 sidebar_position: 40
 ---
 
-# Terminate-DirectReports
+# Terminate-DirectReports Cmdlet for Directory Manager
 
-Use the Terminate-DirectRreports command to terminate users. Specify manager of the user you want
+Use the Terminate-DirectReports cmdlet to terminate users. Specify the manager of the user you want
 to terminate.
 
 :::note
-You can perform this function in directory according to your role and permissions.
+You can perform this function in the directory according to your role and permissions.
 :::
 
 
@@ -34,8 +40,8 @@ Terminate-DirectReports 
 
 Example:
 
-The following command terminates the specified users in the connected identity store. Their Manager
-is also specified in the command who will receive notification as per the defined workflow.
+The following command terminates the specified users in the connected identity store. The command also
+specifies their manager, who receives a notification according to the defined workflow.
 
 ```
 Terminate-DirectReports -DirectReports "Irfan","Naeem" -Manager "Raja"

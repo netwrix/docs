@@ -1,21 +1,27 @@
 ---
-title: "Identity Store History"
-description: "Identity Store History"
+title: "View Identity Store History in Directory Manager"
+description: "View, filter, annotate, and export the history of configuration, workflow, and security role changes made to an identity store in Admin Center."
+keywords:
+  - identity store history
+  - history tracking
+  - Admin Center
+  - export history
+  - history filters
 sidebar_position: 70
 ---
 
-# Identity Store History
+# View Identity Store History in Directory Manager
 
 In Admin Center, you can view the history data that the Directory Manager history-tracking function
 collects for changes made to the configurations, workflows, and security roles in an identity store.
 
-This data represents the events that history-tracking is configured to track. For example, history
+This data represents the events that history tracking is configured to track. For example, history
 is logged when a user enables enrollment for the identity store, removes an approver from a
 workflow, modifies a policy for a security role, and more. History isn't logged when a user
 refreshes a page or previews any information.
 
-Furthermore, if history tracking isn't enabled or has been lately disabled, the **Identity Store
-History** page is blank or it displays data that was logged before history-tracking was turned off.
+If history tracking isn't enabled or was recently disabled, the **Identity Store
+History** page is blank or it displays data that was logged before history tracking was turned off.
 
 ## View Identity Store History
 
@@ -32,7 +38,7 @@ viewed in Admin Center.
     The **Identity Store History** page displays history data in a descriptive and concise manner.
     Items are sorted according to the date and time they were last updated, with the most recent at
     the top.  
-    Click a history item to view its details. See the [History Item Details](/docs/directorymanager/11.1/admincenter/identitystore/view/details.md) topic.
+    Click a history item to view its details. See the [View and Annotate History Item Details](/docs/directorymanager/11.1/admincenter/identitystore/view/details.md) topic.
 
 ## Filter History Data
 
@@ -74,7 +80,7 @@ value, old value, and more.
     | Present             | Returns everything that has a value.                                                                                        |
     | Not present         | Returns everything that doesn't have a value.                                                                              |
     | Greater or equal    | Returns everything with a value greater than or equal to the given value.                                                   |
-    | Less or equal       | Returns everything with a value lesser than or equal to the given value.                                                    |
+    | Less or equal       | Returns everything with a value less than or equal to the given value.                                                    |
 
 6. In the _Select a Value_ box, specify a value for the attribute. The selected attribute and
    operator determine the kind of value that can be entered in this box.  
@@ -118,8 +124,8 @@ items count along with the range of items you're viewing.
 
 ## Annotate History Items
 
-Directory Manager enables a user to add notes to history actions that he or she performed. A note
-may explain the reason for an action, such as why he or she changed the security type for a group.
+Directory Manager lets users add notes to the history actions they performed. A note
+may explain the reason for an action, such as why they changed the security type for a group.
 Only the user who added a note can update it. Other users can view it, but they can't edit it or
 add comments.
 
@@ -147,7 +153,7 @@ You can export identity store history to Microsoft Excel, CSV, and XML formats.
 5. On the **Export History** dialog box, enter a name for the history file in the **Name** box or
    leave it to default.
 6. Select a format for the history file in the Format dropdown list. Available formats are Excel,
-   CSV, and XML
+   CSV, and XML.
 7. Click **Export History**. The file is saved at the download location specified in browser
    settings.
 8. A message is displayed that history data is successfully exported. Click **OK**.

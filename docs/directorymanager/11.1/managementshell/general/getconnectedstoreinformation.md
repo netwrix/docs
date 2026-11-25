@@ -1,12 +1,17 @@
 ---
-title: "Get-ConnectedStoreInformation"
-description: "Get-ConnectedStoreInformation"
+title: "Get-ConnectedStoreInformation Cmdlet"
+description: "Display the connected identity store name, last Elasticsearch replication time, and configured messaging servers."
+keywords:
+  - Get-ConnectedStoreInformation
+  - identity store
+  - Management Shell
+  - PowerShell cmdlet
 sidebar_position: 20
 ---
 
-# Get-ConnectedStoreInformation
+# Get-ConnectedStoreInformation Cmdlet
 
-The Get-ConnectedStoreInformation commandlet retrieves information about the identity store
+The Get-ConnectedStoreInformation cmdlet retrieves information about the identity store
 connected to the current instance of the Management Shell.
 
 ## Syntax
@@ -22,7 +27,7 @@ Get-ConnectedStoreInformation
 
 Example 1:
 
-The example displays name of the connected identity store, the last replication time to
+This example displays the name of the connected identity store, the last replication time to
 Elasticsearch, and messaging servers configured in the connected identity store.
 
 ```

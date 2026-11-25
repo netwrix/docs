@@ -1,13 +1,19 @@
 ---
-title: "Patterns Rule"
-description: "Patterns Rule"
+title: "Configure the Patterns Rule in Directory Manager"
+description: "Reject passwords that contain character or keyboard patterns such as abcde or qwerty by enabling the Password Policy Enforcer Patterns rule."
+keywords:
+  - Patterns rule
+  - keyboard patterns
+  - character patterns
+  - password tolerance
+  - Password Policy Enforcer
 sidebar_position: 90
 ---
 
-# Patterns Rule
+# Configure the Patterns Rule in Directory Manager
 
 The Patterns rule rejects passwords that contain character patterns such as "abcde". Character
-patterns weaken the password.
+patterns weaken passwords.
 
 - Enable the **Patterns** button to enable the Patterns rule.
 - Reject character patterns like "abcde" – Enable this button to check for character patterns.
@@ -21,7 +27,7 @@ patterns weaken the password.
     - Tolerance – Choose a value from the dropdown list to specify the longest pattern that
       Password Policy Enforcer allows before rejecting a password. For example, the password
       "password **wxyz**" contains a four-character pattern (shown in bold type). Password Policy
-      Enforcer rejects this password if the tolerance is set to three (or lower), and accept it if
+      Enforcer rejects this password if the tolerance is set to three (or lower), and accepts it if
       the tolerance is set to four (or higher).
 
 - Character patterns – Click the **Character Patterns** button to set the patterns to apply. Default
@@ -37,5 +43,5 @@ patterns weaken the password.
     - Detect key repeat – Select the checkbox for repeated keys, based on the Tolerance value. If
       Tolerance is 4, aaaa is accepted and aaaaa is rejected.
     - Detect key skip – Select this checkbox for skipped keys, such as qetuo.
-    - Tolerance – Set tolerance for the number of characters in a keyboard pattern is allowed before
-      the password is rejected.
+    - Tolerance – Set the number of characters in a keyboard pattern that Password Policy
+      Enforcer allows before it rejects the password.

@@ -1,10 +1,16 @@
 ---
-title: "Synchronize Schedule"
-description: "Synchronize Schedule"
+title: "Create a Directory Manager Synchronize Schedule"
+description: "Create a schedule that runs Synchronize jobs and job collections automatically, and set its targets, triggers, and authentication."
+keywords:
+  - Synchronize schedule
+  - Synchronize jobs
+  - job collections
+  - scheduled synchronization
+  - Directory Manager schedule
 sidebar_position: 130
 ---
 
-# Synchronize Schedule
+# Create a Directory Manager Synchronize Schedule
 
 Use the Directory Manager scheduling function to configure any Synchronize job or job collection
 to run automatically. Create a Synchronize schedule and add Synchronize jobs and job collections as
@@ -12,7 +18,7 @@ targets. When the schedule runs, the target jobs and job collections are execute
 
 ## Create a Synchronize Schedule
 
-To create a Synchronize Schedule.
+To create a Synchronize schedule:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -26,12 +32,12 @@ Schedule page is displayed.
 
 Step 5 – In the Schedule Name box, enter a name for the schedule.
 
-Step 6 – The Name Preview displays the schedule name prefixed with \_SynchronizeJobPortal\_\_; email notifications show the schedule with this name.
+Step 6 – The Name Preview box displays the schedule name prefixed with \_SynchronizeJobPortal\_\_. Email notifications show the schedule with this name.
 
-Step 7 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
-responsible for triggering this schedule. The list displays a number of services that depends on the
+Step 7 – In the Scheduler Service Name dropdown list, select a Scheduler service to
+trigger this schedule. The list displays a number of services that depends on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
+service. See the [Directory Manager Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
 information.
 
 :::note
@@ -40,13 +46,13 @@ When selecting a Scheduler service:
 - The Scheduler service for the Directory Manager instance on which you are creating the schedule is
   selected by default. However, you can select the Scheduler service of another instance as well.
 
-- The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  newly-selected Scheduler service will trigger the schedule.
+- The Scheduler service can be changed even after creating the schedule. On the next run, the
+  newly selected Scheduler service triggers the schedule.
 
 - If the selected Scheduler service fails to trigger the schedule, then no other Scheduler service
   can be selected automatically.
 
-- If you run a schedule manually on the Admin Center, the Scheduler service of that instance
+- If you run a schedule manually in Admin Center, the Scheduler service of that instance
   is used.
 :::
 
@@ -58,13 +64,13 @@ Step 8 – Add a Synchronize job or a job collection or both to this schedule.
   Collections to Add dialog box displays job collections from Synchronize. Select one or more job
   collections from the list and click **Add**.
 
-The selected jobs and job collections are listed in the Targets area. They will be executed
+The selected jobs and job collections are listed in the Targets area. They are executed
 when the schedule runs.
 To remove a job or job collection in the Targets area, click **Remove** for it.
 To remove all target objects, click **Remove All**.
 
-Step 9 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
-schedule, that, when met, starts the execution of the schedule. Follow step 11 in the
+Step 9 – Click **Add Triggers** in the Triggers area to specify a triggering criterion that, when met, starts the execution of the
+schedule. Follow step 11 in the
 [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
 topic to add triggers.
 

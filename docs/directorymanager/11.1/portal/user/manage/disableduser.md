@@ -1,14 +1,20 @@
 ---
-title: "Disabled Users"
-description: "Disabled Users"
+title: "View and Manage Disabled Users in Directory Manager"
+description: "View disabled and expired users in the Directory Manager portal, then reinstate them, grant extensions, or export the list to Excel."
+keywords:
+  - disabled users
+  - expired users
+  - reinstate user
+  - user extension
+  - User Life Cycle job
 sidebar_position: 70
 ---
 
-# Disabled Users
+# View and Manage Disabled Users in Directory Manager
 
 In Directory Manager portal, you can view a list of disabled users.
 
-To view the list of disabled users in the Directory Manager portal.
+To view the list of disabled users in the Directory Manager portal:
 
 Step 1 – In Directory Manager portal, click **Users** on the left navigation bar and select **My
 Direct Reports**. On the displayed page, select the **Disabled Users** tab.
@@ -32,7 +38,7 @@ To view and modify the properties of a disabled or expired user, select it and c
 on the toolbar.
 
 Refer to the information for user properties to manage the properties of a disabled/expired user.
-See the [User Properties](/docs/directorymanager/11.1/portal/user/properties/overview.md) topic for additional information.
+See the [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.1/portal/user/properties/overview.md) topic for additional information.
 
 ## Reinstate a Disabled User
 
@@ -53,12 +59,12 @@ The duration of the extension period is set by the administrator in identity sto
 
 ## Send Disabled Users list to an Excel file
 
-To export list of disabled users to an Excel file, click **Export Results** on the toolbar.
+To export the list of disabled users to an Excel file, click **Export Results** on the toolbar.
 
 ### Navigate the Disabled Users listing
 
 Use the page numbers under the disabled users listing to page through the records.
 
-You can control the number of records to be displayed per page by modifying the Search results per
+You can control the number of records displayed per page by modifying the Search results per
 page setting on the User Settings panel. You can modify the search results in Modify Search
-Directory. You can select entire directory or a domain to search active groups from.
+Directory. You can select the entire directory or a domain to search active groups from.

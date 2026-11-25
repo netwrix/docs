@@ -1,14 +1,20 @@
 ---
-title: "Age (Max) Rule"
-description: "Age (Max) Rule"
+title: "Configure the Age (Max) Rule in Directory Manager"
+description: "Force users to change passwords regularly, delay expiration for longer passwords, and set expiry mode, email, and logging options."
+keywords:
+  - Age (Max) rule
+  - maximum password age
+  - password expiration
+  - PPE policies
+  - Password Policy Enforcer
 sidebar_position: 10
 ---
 
-# Age (Max) Rule
+# Configure the Age (Max) Rule in Directory Manager
 
 The Maximum Age rule forces users to change their passwords regularly. This decreases the likelihood
-of an attacker discovering a password before it changes. This rule can only be enforced by PPE
-policies.
+of an attacker discovering a password before it changes. Only PPE
+policies can enforce this rule.
 
 - Enable/Disable button – Enable the **Age (Max)** rule button to enable the Maximum Age rule.
 
@@ -19,10 +25,10 @@ policies.
   more characters – You can encourage users to choose longer passwords by extending the lifetime of
   their password if it exceeds a certain length. To enable this feature, choose a higher value from
   the number of days dropdown list and a minimum length from the number of characters dropdown
-  list. Passwords that contain the required number of characters don't expire until the number of
-  days (higher) days value. If both days values (i.e. number of days in Users must change password
-  after days and number of days in this in this field) are identical, then passwords will expire
-  after the specified number of days, irrespective of length.
+  list. Passwords that contain the required number of characters don't expire until the higher
+  number of days. If both days values (the number of days in Users must change password after days
+  and the number of days in this field) are identical, passwords expire after the specified number
+  of days, regardless of length.
 
     :::note
     When the Maximum Age rule is configured to delay the expiry of longer passwords, it
@@ -37,7 +43,7 @@ policies.
     :::
 
 
-- Mode – Mode Choose a value from the Mode dropdown list to specify how Password Policy Enforcer
+- Mode – Choose a value from the Mode dropdown list to specify how Password Policy Enforcer
   handles expired passwords. The Standard mode forces all users with expired passwords to change
   their password during logon. The Transitional modes force a percentage of users with expired
   passwords to change their password during logon. The Warning mode warns users that their password
@@ -52,7 +58,7 @@ policies.
     in the 2% Transitional mode (2% every day). The 5% Transitional mode reduces this to 20 days,
     and the 10% Transitional mode further reduces it to 10 days. The selection algorithm is
     randomized, so these are estimates only. You must switch to the Standard mode to ensure that all
-    old passwords will expire.
+    old passwords expire.
 
     Users with expired passwords are always prompted to change their password, even in the
     Transitional and Warning modes. Users can ignore the prompt to change their password unless they
@@ -70,14 +76,14 @@ policies.
 
     Password Policy Enforcer expires passwords at 1:00 AM every day on the domain controller holding
     the PDC emulator operations master role. It sets "User must change password at next logon" for
-    users whose password has expired, or is due to expire on that day. Password Policy Enforcer does
-    not expire passwords if the Maximum Age rule is in Warning mode, or for users with "Password
-    never expires" set in Active Directory. Some passwords will not expire immediately when the
+    users whose password has expired, or is due to expire on that day. Password Policy Enforcer doesn't
+    expire passwords if the Maximum Age rule is in Warning mode, or for users with "Password
+    never expires" set in Active Directory. Some passwords don't expire immediately when the
     Maximum Age rule is in a Transitional mode.
 
 ## Set up Email
 
-Click the **Set up email** to configure the e-mail message options.
+Click **Set up Email** to configure the email message options.
 
 Enter the _name_ and _email address_ you want to appear in the email's From field in the From text
 box. The correct format is "Display Name" `<mailbox@domain.com>`
@@ -92,5 +98,5 @@ Not supported.
 
 ## Expired Password Log
 
-If you want to record every event of an expired password in a log check the Log event for every
-expired password checkbox. It will record the event in a log named at the following path.
+To record every expired password event in a log, select the Log event for every
+expired password checkbox. It records the event in a log at the following path.

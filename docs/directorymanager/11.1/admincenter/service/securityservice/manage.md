@@ -1,12 +1,18 @@
 ---
-title: "Manage Security Service Settings"
-description: "Manage Security Service Settings"
+title: "Manage Directory Manager Security Service Settings"
+description: "View, rename, start, stop, and delete a Security service, and enable the distributed cache so multiple Security services share session information."
 sidebar_position: 20
+keywords:
+  - Security service settings
+  - distributed cache
+  - delete Security service
+  - Advanced Settings
+  - high availability
 ---
 
-# Manage Security Service Settings
+# Manage Directory Manager Security Service Settings
 
-Security services in Directory Manager are displayed on the **Security Service** tab. A card for a
+Security services in Directory Manager appear on the **Security Service** tab. A card for a
 service displays information such as its name and status.
 
 You can manage several settings for a service, such as:
@@ -24,8 +30,8 @@ Step 1 – In Admin Center, click **Applications** in the left pane.
 
 Step 2 – On the **Applications** page, click the **Security Service** tab.  
 The tab displays the default Security service created while configuring Directory Manager and any
-other Security service that you have created. When multiple Directory Manager instances have been
-deployed, you will find multiple default Security services on this tab page, as each instance has
+other Security service that you have created. When multiple Directory Manager instances are
+deployed, this tab shows multiple default Security services, because each instance has
 its own default Security service. See the
 [Elasticsearch Clusters, Nodes, and Directory Manager](/docs/directorymanager/11.1/admincenter/service/overview.md#elasticsearch-clusters-nodes-and-directory-manager)
 topic for additional information.  
@@ -34,7 +40,7 @@ For details displayed on a service card, see the table in the
 
 ## Manage Security Service Settings
 
-See the [Manage Data Service Settings](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md) topic to manage settings for a
+See the [Manage Directory Manager Data Service Settings](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md) topic to manage settings for a
 Security service, such as deployment and log settings.
 
 ## Manage Advanced Settings
@@ -46,20 +52,20 @@ To enable communication between multiple Security services:
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the **Security Service** tab.  
+Step 2 – On the **Applications** page, click the **Security Service** tab.  
 The tab displays the default Security service created while configuring Directory Manager and any
-other Security service that you have created. When multiple Directory Manager instances have been
-deployed, you will find multiple default Security services on this tab page, as each instance has
+other Security service that you have created. When multiple Directory Manager instances are
+deployed, this tab shows multiple default Security services, because each instance has
 its own default Security service. See the
 [Elasticsearch Clusters, Nodes, and Directory Manager](/docs/directorymanager/11.1/admincenter/service/overview.md#elasticsearch-clusters-nodes-and-directory-manager)
-topics for additional information.  
+topic for additional information.  
 For details displayed on a service card, see the table in the
-[View Data Service Details](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#view-data-service-details) topic for additional
-information.
+[View Data Service Details](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#view-data-service-details)
+topic.
 
 Step 3 – Click the **ellipsis button** for a Security service and select **Settings**.
 
-Step 4 – Select **Advanced Settings** under Server Settings.
+Step 4 – Select **Advanced Settings** under **Server Settings**.
 
 Step 5 – Enable the **Distributed Cache** toggle button to enable communication among defined
 Security services.
@@ -86,7 +92,7 @@ Deleting a Security service removes the following:
 
     The container created in Docker Engine for the Security service
 
-To delete a Security service.
+To delete a Security service:
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
@@ -95,7 +101,7 @@ Step 2 – On the **Applications** page, click the **Security Service** tab.
 Step 3 – Click the ellipsis button for a Security service and select **Delete**.
 
 :::note
-You can't delete the default Security service. You can't also delete a Security service that
-has been linked with a Directory Manager client, such as the Directory Manager portal.
+You can't delete the default Security service, and you can't delete a Security service that
+is linked with a Directory Manager client, such as the Directory Manager portal.
 
 :::

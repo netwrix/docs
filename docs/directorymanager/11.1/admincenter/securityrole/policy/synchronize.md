@@ -1,10 +1,16 @@
 ---
-title: "Synchronize Policy"
-description: "Synchronize Policy"
+title: "Configure a Synchronize Policy for a Security Role"
+description: "Control which providers, identity stores, data sources, object types, and attributes security role members can use in Synchronize jobs."
+keywords:
+  - Directory Manager
+  - Synchronize policy
+  - Synchronize job
+  - attribute mapping
+  - security role policy
 sidebar_position: 80
 ---
 
-# Synchronize Policy
+# Configure a Synchronize Policy for a Security Role
 
 Using Directory Manager, you can create identity stores for several identity providers (such as
 Active Directory and Microsoft Entra ID) as well as create data sources for providers such as files
@@ -23,11 +29,11 @@ Using the Synchronize policy, you can:
   setting to all or specific identity stores/data sources created for the provider.
 - Choose the object types that can be created or synced at the destination using a Synchronize job -
   This setting is individually defined for each identity store and data source.
-- For each object type in an identity store and data source, specify the attributes that will be
+- For each object type in an identity store and data source, specify the attributes that are
   available for mapping the source and destination fields in a Synchronize job - This setting is
   individually defined for each object type in an identity store and data source.
 
-These granular controls let you navigate to from the provider to the attribute level.
+These granular controls let you restrict access from the provider level down to the attribute level.
 
 - You can disallow a provider as a whole, or disallow a specific identity store/data source created
   for the provider.
@@ -40,7 +46,7 @@ These granular controls let you navigate to from the provider to the attribute l
 
 When creating or modifying a Synchronize job, users can specify any identity store or data source in
 Directory Manager as a source and destination. You can prevent role members from using the identity
-stores and data sources build on specific providers in a job.
+stores and data sources built on specific providers in a job.
 
 **To disallow a provider:**
 
@@ -74,10 +80,10 @@ stores and data sources build on specific providers in a job.
 
 :::note
 If you disallow a provider as a source, all Synchronize jobs already using an identity
-store/data source for that provider as source will become read-only for role members and they will
-not be able to run them. Similarly, if you disallow a provider as a destination, all Synchronize
-jobs already using an identity store/data source for that provider as destination will become
-read-only for role members and they will not be able to run them.
+store/data source for that provider as source become read-only for role members, and they can't
+run them. Similarly, if you disallow a provider as a destination, all Synchronize
+jobs already using an identity store/data source for that provider as destination become
+read-only for role members, and they can't run them.
 :::
 
 
@@ -120,9 +126,9 @@ identity store or data source in a job.
 
 :::note
 If you disallow an identity store or data source as a source, all Synchronize jobs already
-using it as source will become read-only for role members and they will not be able to run them.
+using it as source become read-only for role members, and they can't run them.
 Similarly, if you disallow an identity store or data source as destination, all Synchronize jobs
-already using it as destination will become read-only for role members and they will not be able to
+already using it as destination become read-only for role members, and they can't
 run them.
 :::
 
@@ -142,23 +148,23 @@ and update the following object types:
 - Mail-enabled Contact
 
 You can disallow any of these object types for an identity store. When that identity store is used
-as source or destination in a Synchronize job, role members will not be able to create or update the
+as source or destination in a Synchronize job, role members can't create or update the
 disallowed objects at the destination. For example, if you disallow the user object type for
-IdentityStore_A, role members won't be able to provision, update, and deprovision user objects in
+IdentityStore_A, role members can't provision, update, or deprovision user objects in
 identityStore_A through a Synchronize job.
 
 :::note
 If you disallow an object type in an identity store or data source, all Synchronize jobs
 already using that identity store or data source (either as source or destination) while only
-provisioning or updating the disallowed object type, will become read-only for role members and they
-will not be able to run them. If a job provisions or updates multiple objects, where the disallowed
-object is one of the object types it processes, it will run as usual, except that the disallowed
-object will not be processed.  
-**Example:** Suppose you disallow the mailbox object type in IdentityStore_A, when this identity
-store is already used as a destination in a Synchronize job that provisions mailbox objects, then
-the job will become read-only for role members and they will not be able to run it.  
+provisioning or updating the disallowed object type, become read-only for role members, and they
+can't run them. If a job provisions or updates multiple objects, where the disallowed
+object is one of the object types it processes, it runs as usual, except that the disallowed
+object isn't processed.  
+**Example:** Suppose you disallow the mailbox object type in IdentityStore_A. If this identity
+store is already used as a destination in a Synchronize job that provisions mailbox objects, the
+job becomes read-only for role members, and they can't run it.  
 If IdentityStore_A is used as a source or destination in a Synchronize job that provisions multiple
-objects types, then the job will run as usual, except that the mailbox object will not be processed.
+object types, then the job runs as usual, except that the mailbox object isn't processed.
 :::
 
 
@@ -166,7 +172,7 @@ For data sources, you can disallow the following to role members as an alternate
 
 - Sheets in an Excel workbook
 - Tables in an Access, Oracle, and SQL database
-- For ODBC, you can disallow tables in case of an SQL database and sheets in case of Excel
+- For ODBC, you can disallow tables in an SQL database and sheets in Excel
 - For text/CSV, this doesn't apply
 
 **To disallow object types in an identity store or data source:**
@@ -210,7 +216,7 @@ attributes:
 
 - Columns in an Excel sheet
 - Columns in an Access, Oracle, and SQL table
-- For ODBC, you can disallow columns in case of an SQL table and columns in case of an Excel sheet
+- For ODBC, you can disallow columns in an SQL table and columns in an Excel sheet
 - For text/CSV, each value in the first row, as separated by the delimiter
 
 **To disallow attributes for an object type in an identity store or data source:**
@@ -227,14 +233,14 @@ attributes:
    for it in Directory Manager.
 8. Click **Edit Object Policies** for an identity store or data source.
 9. On the next page, click **Edit Attribute Selection** for an object type. This option is available
-   for the ‘allowed’ object types only.
+   for the "allowed" object types only.
 10. By default, all attributes are selected on the **Edit Attribute Selection** dialog box. Clear
-    the checkbox for an attribute to disallow them to role members. Use the search box to search
+    the checkbox for an attribute to disallow it to role members. Use the search box to search
     and locate the required attributes. When done, click **Save Selection**.  
-    Disallowed attributes will not be available to role members for the object type in the identity
+    Disallowed attributes aren't available to role members for the object type in the identity
     store or data source. When this identity store or data source is used as a source or destination
-    in a Synchronize job that works with the respective object type, the disallowed attributes will
-    not be available for mapping.
+    in a Synchronize job that works with the respective object type, the disallowed attributes aren't
+    available for mapping.
 11. Click **OK**.
 12. On the **Edit Security Role** page, click **Update Security Role**.
 13. On the **Security Roles** page, click **Save**.

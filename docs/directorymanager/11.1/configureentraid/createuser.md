@@ -1,25 +1,31 @@
 ---
-title: "Microsoft Entra ID User"
-description: "Microsoft Entra ID User"
+title: "Create a Microsoft Entra ID Service Account User"
+description: "Create the Microsoft Entra ID user that Directory Manager uses as the service account for a Microsoft Entra ID identity store."
+keywords:
+  - Microsoft Entra ID user
+  - service account
+  - Entra admin center
+  - Global Administrator
+  - User Account Administrators
 sidebar_position: 30
 ---
 
-# Microsoft Entra ID User
+# Create a Microsoft Entra ID Service Account User
 
-Once your application has been registered with Microsoft Entra ID, formerly Azure Active Directory,
-create a user that will be set as a service account while creating an identity store for Microsoft
-Entra IDin Directory Manager.
+After you register your application with Microsoft Entra ID, formerly Azure Active Directory,
+create a user to set as the service account when you create an identity store for Microsoft
+Entra ID in Directory Manager.
 
 To create a user in Microsoft Entra ID:
 
-Step 1 – In the Microsoft Entra Admin Center, go to Microsoft Entra ID> Users and click **New
+Step 1 – In the Microsoft Entra Admin Center, go to Microsoft Entra ID > Users and click **New
 User** > **Create new user**.
 
-![create_user](/images/directorymanager/11.1/configureentraid/register/create_user.webp)
+![Microsoft Entra admin center Users page with the New user menu open](/images/directorymanager/11.1/configureentraid/register/create_user.webp)
 
 Step 2 – On the User page:
 
-![create_new_user_page](/images/directorymanager/11.1/configureentraid/register/create_new_user_page.webp)
+![Create new user page with the Basics, Properties, and Assignments tabs](/images/directorymanager/11.1/configureentraid/register/create_new_user_page.webp)
 
 - The **Basics** tab contains the core fields required to create a new user.
 
@@ -34,7 +40,7 @@ Step 2 – On the User page:
     - **Password**: Provide a password for the user to use during their initial sign-in. Uncheck the
       **Auto-generate password** option to enter a different password.
     - **Account enabled**: This option is checked by default. Uncheck to prevent the new user from
-      being able to sign-in. You can change this setting after the user is created.
+      being able to sign in. You can change this setting after the user is created.
 
     Either select the **Review + create** button to create the new user or **Next: Properties** to
     complete the next section.
@@ -52,25 +58,24 @@ Step 2 – On the User page:
     Either select the **Review + create** button to create the new user or **Next: Assignments** to
     complete the next section.
 
-- The **Assignments** tab. You can assign the user:
+- The **Assignments** tab lets you assign the user:
 
     - an administrative unit
-    - groups, select a group if you want to add the user to one or more existing groups
-    - roles, assign the user a Global administrator role
-      Members of this role can create/manage groups, create/manage groups settings like naming and
-      expiration policies, and view groups activity and audit reports.
+    - groups: select a group if you want to add the user to one or more existing groups
+    - roles: assign the user a Global administrator role.
+      Members of this role can create and manage groups and group settings, such as naming and
+      expiration policies. They can also view group activity and audit reports.
 
     Select the **Review + create** button.
 
 By default, the Directory Manager Administrator security role in a Microsoft Entra ID identity store
-binds to Global Administrator. If minimum role assignment for the service account is used, the
-default Admin Security role criteria should also be changed to the User Account Administrators
-group.
+binds to Global Administrator. If you use minimum role assignment for the service account, also change the
+default Admin Security role criteria to the User Account Administrators group.
 
 The user is created and added to your Microsoft Entra ID tenant.
 
 You can now create an identity store for Microsoft Entra ID in Directory Manager.
 
-Ensure you copy the application ID that Microsoft Entra ID generates when the application
-is registered. This application ID will be required while creating an identity store for Microsoft
+Ensure you copy the application ID that Microsoft Entra ID generates when you register the application.
+You need this application ID when you create an identity store for Microsoft
 Entra ID.

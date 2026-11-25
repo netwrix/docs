@@ -1,10 +1,15 @@
 ---
-title: "Get-UserEnrollment"
-description: "Get-UserEnrollment"
+title: "Get-UserEnrollment Cmdlet in Directory Manager"
+description: "Check whether a user is enrolled and which authentication types they use with the Get-UserEnrollment cmdlet."
+keywords:
+  - Get-UserEnrollment
+  - Directory Manager Management Shell
+  - user enrollment status
+  - authentication enrollment types
 sidebar_position: 20
 ---
 
-# Get-UserEnrollment
+# Get-UserEnrollment Cmdlet in Directory Manager
 
 The commandlet Get-UserEnrollment retrieves enrollment information of a user.
 
@@ -23,7 +28,7 @@ Get-UserEnrollment
 
 Example 1:
 
-If a user is enrolled, this cmdlet will enlist the authentication types the user is enrolled with.
+If a user is enrolled, this cmdlet lists the authentication types the user is enrolled with.
 
 ```
 Get-UserEnrollment -Identity euser1

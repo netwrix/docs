@@ -1,20 +1,26 @@
 ---
-title: "Access Admin Center"
-description: "Access Admin Center"
+title: "Sign In to Directory Manager Admin Center"
+description: "Sign in to Admin Center with an identity store account or a SAML provider, pass second factor authentication, and learn how sign-in throttling works."
 sidebar_position: 40
+keywords:
+  - Admin Center sign-in
+  - Super Admin
+  - SAML provider
+  - second factor authentication
+  - sign-in throttling
 ---
 
-# Access Admin Center
+# Sign In to Directory Manager Admin Center
 
-Admin Center is a web-based application accessible over the Internet and Intranet. It
-comes with a default provider, Directory Manager, which primarily facilitates first-time log in to the
+Admin Center is a web-based application accessible over the Internet and intranet. It
+comes with a default provider, Directory Manager, which primarily facilitates first-time sign-in to the
 application. Typically, the Directory Manager provider has one default user, _Super Admin_, that has
 full access to the Admin Center. On signing in, this user can create identity stores and configure
 settings to set up the application.
 
 ## Sign In
 
-You must connect the Admin Center to an identity store while signing in.
+You must connect Admin Center to an identity store while signing in.
 
 Use any of the following methods to connect and sign in:
 
@@ -22,9 +28,9 @@ Use any of the following methods to connect and sign in:
 
     :::note
     To sign in using the Directory Manager provider, enter the username and password you
-    provided for the _GroupID administrator_ on the Service Account Settings page of the
+    provided for the _Directory Manager Administrator_ on the Service Account Settings page of the
     Configuration Tool. See the
-    [Configure a New Directory Manager Server with a New or an Existing Database](/docs/directorymanager/11.1/install/configure/gidserver.md)
+    [Configure a Directory Manager Server and Database](/docs/directorymanager/11.1/install/configure/gidserver.md)
     topic.
     :::
 
@@ -33,32 +39,31 @@ Use any of the following methods to connect and sign in:
   administrator has configured a SAML provider for the selected identity store.
 
     :::note
-    Microsoft Entra ID MFA enabled users can't log into Directory Manager using their
+    Users with Microsoft Entra ID MFA enabled can't sign in to Directory Manager using their
     username and password. Directory Manager authenticates them through the SAML provider configured in
     Directory Manager.
     :::
 
 
-Next, you may have to pass second factor authentication, depending on whether your role in the
-identity store requires it. You can perform tasks in the Admin Center according to your role and
+Next, you might have to pass second factor authentication, depending on whether your role in the
+identity store requires it. You can perform tasks in Admin Center according to your role and
 permissions in the identity store.
 
-**To Sign In**
+**To sign in:**
 
 Use one of the following methods to sign in.
 
 - Enter the Admin Center URL in the address bar of a web browser and press Enter. For example:  
-  https://[machine name]:4443//AdminCenter
+  `https://[machine name]:4443//AdminCenter`
 - On the Windows Start menu, search for the Directory Manager 11.x icon and double-click it to
   launch Admin Center in a browser window.
 
 You can sign in using any of the following methods:
 
-- With your Identity Store Account
-- With a SAML Provider
-- Access Admin Center
+- With your identity store account
+- With a SAML provider
 
-### With your Identity Store Account
+### With Your Identity Store Account
 
 Step 1 – On the **GroupID Authenticate** page, click an identity store to connect to.
 
@@ -74,13 +79,13 @@ You can use single sign-on across all Directory Manager clients if you have conf
 SAML provider configuration:
 
 - [Configure Directory Manager in Microsoft Entra ID for SSO](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureinentra.md)
-- [Configure the Microsoft Entra SSO Application in Directory Manager](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md)
+- [Configure the Entra ID Provider in Directory Manager](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md)
 
 On the **GroupID Authenticate** page, click the button or image for the provider and proceed to sign
 in.
 
 :::note
-For Microsoft Entra ID MFA enabled users, you must configure a SAML provider for signing into
+For users with Microsoft Entra ID MFA enabled, you must configure a SAML provider for signing in to
 Directory Manager.
 :::
 
@@ -94,13 +99,13 @@ signing in via any of these methods.
 
 For second factor authentication, one of the following applies:
 
-- If you have not enrolled your identity store account in Directory Manager, Directory Manager displays the Enroll Account page.
+- If you haven't enrolled your identity store account in Directory Manager, Directory Manager displays the **Enroll Account** page.
   You must enroll using at least one authentication type. See the
-  [Enroll your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/enroll.md) topic.
-- If you have already enrolled your identity store account in Directory Manager, Directory Manager displays the Authenticate
+  [Enroll Your Account in Directory Manager](/docs/directorymanager/11.1/admincenter/general/enroll.md) topic.
+- If you have already enrolled your identity store account in Directory Manager, Directory Manager displays the **Authenticate**
   page. It lists the authentication types you enrolled with. Select an
   authentication type to authenticate. See the
-  [Authenticate your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/authenticate.md) topic.
+  [Authenticate Your Account in Directory Manager](/docs/directorymanager/11.1/admincenter/general/authenticate.md) topic.
 
 ## Sign-in Throttling
 
@@ -130,6 +135,6 @@ Directory Manager version.
 
 **See Also**
 
-- [Getting Started](/docs/directorymanager/11.1/gettingstarted.md)
-- [Dashboard](/docs/directorymanager/11.1/admincenter/general/dashboard.md)
-- [Navigation](/docs/directorymanager/11.1/admincenter/general/navigation.md)
+- [Get Started with Directory Manager](/docs/directorymanager/11.1/gettingstarted.md)
+- [Monitor Directory Manager with the Admin Center Dashboard](/docs/directorymanager/11.1/admincenter/general/dashboard.md)
+- [Navigate Admin Center in Directory Manager](/docs/directorymanager/11.1/admincenter/general/navigation.md)

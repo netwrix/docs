@@ -1,10 +1,16 @@
 ---
-title: "Assign Policies to Users, Groups & Containers"
-description: "Assign Policies to Users, Groups & Containers"
+title: "Assign Password Policies to Users, Groups, and Containers"
+description: "Assign Password Policy Enforcer policies to users, groups, and containers, and learn how Password Policy Enforcer resolves assignment conflicts."
+keywords:
+  - Password Policy Enforcer
+  - policy assignment
+  - assign policy to users
+  - assign policy to groups
+  - policy assignment conflicts
 sidebar_position: 20
 ---
 
-# Assign Policies to Users, Groups & Containers
+# Assign Password Policies to Users, Groups, and Containers
 
 Password Policy Enforcer uses policy assignments to decide which policy to enforce for each user.
 Domain policies can be assigned to users, groups, and containers (Organizational Units).
@@ -17,7 +23,7 @@ Step 2 – On the Identity Stores page, click the **ellipsis** button for an ide
 Step 3 – Click **Configurations** under Settings in the left pane. Then click **PPE Policies**. The
 PPE Policies page is displayed.
 
-Step 4 – Click the **three vertical dots** icon next to the policy , click **Edit**.
+Step 4 – Click the **three vertical dots** icon next to the policy, and click **Edit**.
 
 **Or**
 
@@ -32,15 +38,15 @@ information in the configuration. The assignment remains valid even if the user 
 
 1. Click **+Add User** to add users you want to apply policy on.
 2. On the Add Objects dialog box, select a container from the **Search Container** dropdown list.
-3. By default, the Include Sub-Contaners checkbox is selected. If you don't want to apply the
+3. By default, the Include Sub-Containers checkbox is selected. If you don't want to apply the
    policy on the users in the sub-containers, uncheck it.
-4. Click **Advanced**, to search users using the search fields displayed such as Name, Display Name,
-   First Name, Last Name and so on.
-5. Click **Search**. Users matching the given criteria get listed.
-6. Click the **Add** button next to the users name listed on the page.
-7. After adding all the required users from the search list, Click **Add** on the Add Objects dialog
+4. Click **Advanced** to search users using the search fields displayed such as Name, Display Name,
+   First Name, Last Name, and so on.
+5. Click **Search**. Users matching the given criteria are listed.
+6. Click the **Add** button next to the user's name listed on the page.
+7. After adding all the required users from the search list, click **Add** on the Add Objects dialog
    box.
-8. The selected users get listed in the Users box. You can remove a user from the list by clicking
+8. The selected users are listed in the Users box. You can remove a user from the list by clicking
    the cross (x) icon next to its name.
 
 **Assign Policies to Groups**
@@ -50,18 +56,18 @@ information in the configuration. The assignment remains valid even if the group
 Password Policy Enforcer enforces the policy for all members of the group as well as any nested
 groups. For example, if the Helpdesk group is a member of the Info Tech group, then any policy
 assigned to the Info Tech group also applies to the members of the Helpdesk group. If this behavior
-isn't desired, then you can assign a different policy to the Helpdesk group.
+isn't desired, you can assign a different policy to the Helpdesk group.
 
 1. Click **+Add Group** to add groups for the policy assignment.
 2. On the Add Objects dialog box, select a container from the **Search Container** dropdown list.
-3. By default, the Include Sub-Contaners checkbox is selected. If you don't want to apply the
+3. By default, the Include Sub-Containers checkbox is selected. If you don't want to apply the
    policy on the groups in the sub-containers, uncheck it.
-4. Click **Advanced**, to search groups using the Name, Display Name, and Description fields.
-5. Click **Search**. Groups matching the given criteria get listed.
-6. Click the **Add** button next to the users name listed on the page.
-7. After adding all the required groups from the search list, Click **Add** on the Add Objects
+4. Click **Advanced** to search groups using the Name, Display Name, and Description fields.
+5. Click **Search**. Groups matching the given criteria are listed.
+6. Click the **Add** button next to the group's name listed on the page.
+7. After adding all the required groups from the search list, click **Add** on the Add Objects
    dialog box.
-8. The selected groups get listed in the Groups box. You can remove a group from the list by
+8. The selected groups are listed in the Groups box. You can remove a group from the list by
    clicking the cross (x) icon next to its name.
 
 **Assign Policies to Containers**
@@ -69,7 +75,7 @@ isn't desired, then you can assign a different policy to the Helpdesk group.
 Step 8 – When a policy is assigned to a container, Password Policy Enforcer enforces the policy for
 all users in the container as well as any child containers. For example, if the Helpdesk and
 Managers OUs are children of the Info Tech OU, then any policy assigned to the Info Tech OU also
-applies to the two child OUs. If this behavior isn't desired, then you can assign a different
+applies to the two child OUs. If this behavior isn't desired, you can assign a different
 policy to a child OU.
 
 :::note
@@ -78,10 +84,10 @@ to a policy by both OU and group at the same time.
 :::
 
 
-1. Click **+Add Container** to add groups for the policy assignment.
-2. On the Add Container (s) dialog box, click **+** to expand the Entire Directory.
-3. Select the checkbox before the domain name to select the entire directory or select desired
-   containers you You can remove a containervfrom the list by clicking the cross (x) icon next to
+1. Click **+Add Container** to add containers for the policy assignment.
+2. On the **Add Container(s)** dialog box, click **+** to expand the Entire Directory.
+3. Select the checkbox before the domain name to select the entire directory or select the desired
+   containers. You can remove a container from the list by clicking the cross (x) icon next to
    its name.
 
 Step 9 – Click **Update**.

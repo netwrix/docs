@@ -1,13 +1,19 @@
 ---
-title: "Admin Center"
-description: "Admin Center"
+title: "Directory Manager Admin Center Application"
+description: "View the hosting and deployment details of Admin Center, launch it, rename it, and configure its event logging."
+keywords:
+  - Directory Manager Admin Center
+  - Admin Center deployment settings
+  - launch Admin Center
+  - Admin Center event logging
+  - native IIS
 sidebar_position: 10
 ---
 
-# Admin Center
+# Directory Manager Admin Center Application
 
-Admin Center enables administrators to configure settings that are used by different functions of
-the application and manage Directory Manager clients.
+Admin Center enables administrators to manage Directory Manager clients and configure settings
+that different functions of the application use.
 
 When multiple instances of Directory Manager are deployed, a separate Admin Center application is
 created for each instance in native IIS.
@@ -17,8 +23,8 @@ created for each instance in native IIS.
 1. In Admin Center, click **Applications** in the left pane.
 
 2. On the Applications page, click the **Admin Center** tab.  
-The tab displays Admin Center hosted in native IIS. When multiple Directory Manager instances have
-been deployed, you will find multiple Admin Center cards on this tab page, each card representing a
+The tab displays Admin Center hosted in native IIS. When multiple Directory Manager instances are
+deployed, this tab page shows multiple Admin Center cards, each representing a
 separate instance. See the
 [Elasticsearch Clusters, Nodes, and Directory Manager](/docs/directorymanager/11.1/admincenter/service/overview.md#elasticsearch-clusters-nodes-and-directory-manager)
 topic.  
@@ -26,7 +32,7 @@ For details displayed on an Admin Center card, see the table in the
 [View Data Service Details](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#view-data-service-details) topic for additional
 information.
 
-You can't create an Admin Center application or delete an existing one from Admin Center tab.
+You can't create an Admin Center application or delete an existing one from the Admin Center tab.
 
 ## Launch Admin Center
 
@@ -53,7 +59,7 @@ Application name given to it, and the URL to launch it.
 2. On the Admin Center tab, click the ellipsis button on an Admin Center card and select
 **Settings**.
 
-3. Click **Deployments** under Server Settings. The Deployment Settings page is displayed,
+3. Click **Deployments** under Server Settings. The Deployment Settings page opens,
 where you can view Admin Center deployment details in native IIS.
 
 ## Configure Event Logging

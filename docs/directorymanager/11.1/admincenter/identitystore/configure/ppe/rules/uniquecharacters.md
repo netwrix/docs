@@ -1,10 +1,16 @@
 ---
-title: "Unique Characters Rule"
-description: "Unique Characters Rule"
+title: "Unique Characters Rule for Password Policy Enforcer"
+description: "Require a minimum number of unique characters in passwords by configuring the Unique Characters rule in a Password Policy Enforcer policy."
+keywords:
+  - Password Policy Enforcer
+  - Unique Characters rule
+  - password strength
+  - unique characters
+  - password policy
 sidebar_position: 120
 ---
 
-# Unique Characters Rule
+# Unique Characters Rule for Password Policy Enforcer
 
 The Unique Characters rule rejects passwords that don't contain a minimum number of unique
 characters. For example, the password "aaaaaaaa" only contains one unique character (a), whereas

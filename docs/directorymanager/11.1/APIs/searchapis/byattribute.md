@@ -1,13 +1,18 @@
 ---
-title: "Search an Object By a Single Value Attribute"
-description: "Search an Object By a Single Value Attribute"
+title: "Search for Objects by Attribute in Directory Manager"
+description: "Search an identity store for a directory object by a single-valued attribute, such as finding a group by its displayName."
+keywords:
+  - search by attribute
+  - Searches endpoint
+  - identity store search
+  - displayName search
 sidebar_position: 10
 ---
 
-# Search an Object By a Single Value Attribute
+# Search for Objects by Attribute in Directory Manager
 
-Use this API to search a directory object in an identity store based on the specified attribute. For
-example, search a group based on the displayName attribute.
+Use this API to search for a directory object in an identity store based on the specified attribute. For
+example, search for a group based on the displayName attribute.
 
 ## Endpoint
 
@@ -17,7 +22,7 @@ example, search a group based on the displayName attribute.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -55,7 +60,7 @@ example, search a group based on the displayName attribute.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

@@ -1,6 +1,12 @@
 ---
 title: "Netwrix Directory Manager v11.1 Documentation"
 description: "Overview of Netwrix Directory Manager v11.1, an identity and access management (IAM) solution for managing groups, users, and passwords."
+keywords:
+  - Directory Manager
+  - identity and access management
+  - group management
+  - user management
+  - password management
 sidebar_position: 1
 ---
 

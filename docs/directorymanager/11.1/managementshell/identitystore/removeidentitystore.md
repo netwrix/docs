@@ -1,12 +1,17 @@
 ---
 title: "Remove-IdentityStore"
-description: "Remove-IdentityStore"
+description: "Use the Remove-IdentityStore cmdlet to remove one or more identity stores from Directory Manager, including through the pipeline."
+keywords:
+  - Remove-IdentityStore
+  - remove identity store
+  - delete identity store
+  - Management Shell cmdlet
 sidebar_position: 140
 ---
 
 # Remove-IdentityStore
 
-The commandlet Remove-IdentityStore removes an identity store from Directory Manager.
+The Remove-IdentityStore cmdlet removes an identity store from Directory Manager.
 
 ## Syntax
 
@@ -39,7 +44,7 @@ Remove-IdentityStore -IdentityStoreName DemoAzStore1
 
 Example 2:
 
-This example removes DemoGStore1 and DemoGStore2 identity stores through the pipeline operator.
+This example removes the DemoGStore1 and DemoGStore2 identity stores through the pipeline operator.
 
 ```
 'DemoGStore1', 'DemoGStore2' | Remove-IdentityStore

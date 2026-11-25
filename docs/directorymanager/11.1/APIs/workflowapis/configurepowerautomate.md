@@ -1,13 +1,19 @@
 ---
-title: "Configure Power Automate"
-description: "Configure Power Automate"
+title: "Connect Directory Manager to Power Automate"
+description: "Use this POST endpoint to link a Directory Manager identity store to Microsoft Power Automate so workflows can trigger flows."
+keywords:
+  - Power Automate
+  - Microsoft Flow settings
+  - msFlowID
+  - workflow integration API
+  - Power Automate tenant ID
 sidebar_position: 30
 ---
 
-# Configure Power Automate
+# Connect Directory Manager to Power Automate
 
 You can link an identity store in Directory Manager to Power Automate to trigger a flow from
-Directory Manager. Use this API to connect an identity tore to Power Automate.
+Directory Manager. Use this API to connect an identity store to Power Automate.
 
 ## Endpoint
 
@@ -17,32 +23,32 @@ Directory Manager. Use this API to connect an identity tore to Power Automate.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
-    "msFlowID": 0,
-    "msFlowUserID": "69d41d70-9b80-492d-aee8-56458db65582",
-    "groupIDServiceUrl": "https://powerautomate-netwrix1.msappproxy.net/directorymanagerdataservice",
-    "identityStoreID": 2,
-    "isAuthenticated": true,
-    "organizationalCode": "Netwrix-US",
-    "region": "US",
-    "tenantID": "69d41d70-9b80-492d-aee8-56458db65582"
+    "msFlowID": 0,
+    "msFlowUserID": "69d41d70-9b80-492d-aee8-56458db65582",
+    "groupIDServiceUrl": "https://powerautomate-netwrix1.msappproxy.net/directorymanagerdataservice",
+    "identityStoreID": 2,
+    "isAuthenticated": true,
+    "organizationalCode": "Netwrix-US",
+    "region": "US",
+    "tenantID": "69d41d70-9b80-492d-aee8-56458db65582"
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
-    "msFlowID": 3,
-    "msFlowUserID": "69d41d70-9b80-492d-aee8-56458db65582",
-    "groupIDServiceUrl": "https://powerautomate-netwrix1.msappproxy.net/directorymanagerdataservice",
-    "identityStoreID": 2,
-    "isAuthenticated": true,
-    "organizationalCode": "Netwrix-US",
-    "region": "US",
-    "tenantID": "69d41d70-9b80-492d-aee8-56458db65582"
+    "msFlowID": 3,
+    "msFlowUserID": "69d41d70-9b80-492d-aee8-56458db65582",
+    "groupIDServiceUrl": "https://powerautomate-netwrix1.msappproxy.net/directorymanagerdataservice",
+    "identityStoreID": 2,
+    "isAuthenticated": true,
+    "organizationalCode": "Netwrix-US",
+    "region": "US",
+    "tenantID": "69d41d70-9b80-492d-aee8-56458db65582"
 }
 ```

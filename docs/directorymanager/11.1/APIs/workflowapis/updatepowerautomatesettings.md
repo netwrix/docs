@@ -1,12 +1,18 @@
 ---
-title: "Update Power Automate Settings"
-description: "Update Power Automate Settings"
+title: "Update Power Automate Settings in Directory Manager"
+description: "Change the Power Automate settings of an identity store by sending a PATCH request to the MsFlow Settings endpoint."
+keywords:
+  - update Power Automate settings
+  - MsFlow Settings endpoint
+  - Directory Manager API
+  - PATCH request
+  - identity store settings
 sidebar_position: 170
 ---
 
-# Update Power Automate Settings
+# Update Power Automate Settings in Directory Manager
 
-If you have defined Power-Automate settings for an identity store, you can use this API to update
+If you have defined Power Automate settings for an identity store, you can use this API to update
 those settings.
 
 ## Endpoint
@@ -17,7 +23,7 @@ those settings.
 
 **PATCH**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -32,7 +38,7 @@ those settings.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 true

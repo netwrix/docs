@@ -1,12 +1,17 @@
 ---
-title: "Renew Groups"
-description: "Renew Groups"
+title: "Renew Multiple Groups API"
+description: "Renew several groups at once by sending their identities in a POST request body to the Directory Manager data service."
+keywords:
+  - renew multiple groups
+  - bulk group renewal
+  - renew groups in bulk API
+  - POST Groups/Renew request body
 sidebar_position: 170
 ---
 
-# Renew Groups
+# Renew Multiple Groups API
 
-This API renews multiple groups, identities of which are provided in the request body.
+This API renews multiple groups. Provide the group identities in the request body.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ This API renews multiple groups, identities of which are provided in the request
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -26,7 +31,7 @@ This API renews multiple groups, identities of which are provided in the request
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

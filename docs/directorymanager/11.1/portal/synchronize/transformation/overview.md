@@ -1,12 +1,18 @@
 ---
-title: "Transform"
-description: "Transform"
+title: "Transform Data in Synchronize Jobs"
+description: "Use the Static, Resolve, Join, Left, Substring, and Script transformations to change source data before a Synchronize job saves it."
+keywords:
+  - Synchronize transformations
+  - Join transformation
+  - Substring transformation
+  - Script transformation
+  - static text
 sidebar_position: 60
 ---
 
-# Transform
+# Transform Data in Synchronize Jobs
 
-During the creation of synchronize jobs, you can apply transformation scripts to manipulate source
+When you create Synchronize jobs, you can apply transformation scripts to manipulate source
 data before saving it to the destination.
 
 You can use transformations to perform these actions and more:
@@ -40,22 +46,22 @@ ignores the value in the source field mapped to it.
 
     Examples:
 
-    - If static text is set to **%COMPUTERNAME%**, running the Job will save the host computer's
+    - If static text is set to **%COMPUTERNAME%**, running the Job saves the host computer's
       name in the target field.
     - If static text is set to variables **%NOW%** and **%Computer%** as follows:
 
-        _Updated by GroupID %NOW% from %COMPUTERNAME%._
+        _Updated by Directory Manager %NOW% from %COMPUTERNAME%._
 
-        Running the job will return the current date and the name of the host machine. The results
-        will look like as:
+        Running the job returns the current date and the name of the host machine. The results
+        look like this:
 
-        _Updated by GroupID 1/12/2003 10:04 AM from EX01-DTM_
+        _Updated by Directory Manager 1/12/2003 10:04 AM from EX01-DTM_
 
-        Environment variables may vary for different Windows releases and editions. Before using
+        Environment variables might vary for different Windows releases and editions. Before using
         environment variables, determine that they are supported by the Windows installed on your
-        host machine
+        host machine.
 
-- [Auto-Generate Unique, Complex Passwords](/docs/directorymanager/11.1/portal/synchronize/transformation/autogenerateuniquepassword.md) based on complexity rules
+- [Auto-Generate Unique Passwords in Synchronize Jobs](/docs/directorymanager/11.1/portal/synchronize/transformation/autogenerateuniquepassword.md) based on complexity rules
 
     You can assign a single password to all synced objects or generate individual passwords for each
     object.
@@ -83,12 +89,12 @@ For instance, you can use a Join transformation to create a Display Name field a
 from the source’s **FirstName** and **LastName** fields. The values for the two source fields are
 saved as a single value in the destination.
 
-The following table list the three parameters the Join transformation requires:
+The following table lists the three parameters the Join transformation requires:
 
 | Parameter    | Description                                                                                                                             |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
 | First field  | Select the first source field.                                                                                                          |
-| Separator    | Specify the character to use as separator between the values of the two fields. You can specify more than one characters as separators. |
+| Separator    | Specify the character to use as separator between the values of the two fields. You can specify more than one character as separators. |
 | Second field | Select the second source field.                                                                                                         |
 
 ## Left
@@ -105,40 +111,40 @@ The following table lists the two parameters the Left transformation requires:
 | Parameter            | Description                                                             |
 | -------------------- | ----------------------------------------------------------------------- |
 | Source field         | Select the source field from which to get the value.                    |
-| Number of characters | Specify here the number of character to extract starting from the left. |
+| Number of characters | Specify here the number of characters to extract starting from the left. |
 
 ## Substring
 
 The Substring transformation returns a set of characters from the source value. The set of
-characters to extract from the source value is determined form the **Start at** and **Length**
+characters to extract from the source value is determined from the **Start at** and **Length**
 parameters passed to the transformation.
 
-Substring transformation is useful in cases where the set of characters to extract are from within a
+Substring transformation is useful in cases where the characters to extract are within a
 value that has a fixed number of characters or digits. The use of this transformation can become
-tricky if the number of characters or digits in values of the source field may vary.
+tricky if the number of characters or digits in values of the source field might vary.
 
 The following table lists the parameters the Substring transformation requires:
 
 | Parameter    | Description                                                                                                                                       |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Source field | Select the source field from which to get the value.                                                                                              |
-| Start at     | Specify the index number of the character to set as the starting point. The character at this position will not be included in the result itself. |
+| Start at     | Specify the index number of the character to set as the starting point. The character at this position isn't included in the result itself. |
 | Length       | This represents the count of characters to extract from the starting point.                                                                       |
 
 **Example:**
 
-Telephone numbers are usually written with country and city codes. You may have a destination field
-where you may only require the country code to be copied excluding the city code and the number
+Telephone numbers are usually written with country and city codes. You might have a destination field
+where you only need the country code to be copied excluding the city code and the number
 itself.
 
-Consider the number, +92-42-5787711. Where:
+Consider the number +92-42-5787711, where:
 
 | Country Code | City Code | Telephone |
 | ------------ | --------- | --------- |
 | 92           | 42        | 5787711   |
 
-To extract the country code, you would set the parameters for this transformation. When executed,
-this would extract 92 from the number and save it to the destination field.
+To extract the country code, set the parameters for this transformation. When executed,
+this extracts 92 from the number and saves it to the destination field.
 
 ## Script
 

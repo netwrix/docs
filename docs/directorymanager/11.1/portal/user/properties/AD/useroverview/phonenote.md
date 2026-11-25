@@ -1,12 +1,17 @@
 ---
-title: "Phone / Notes tab"
-description: "Object properties - Phone / Notes tab"
+title: "Phone / Notes Tab for Users and Contacts"
+description: "View or update the phone numbers, pager, and notes for a user or contact in Directory Manager."
+keywords:
+  - user phone numbers
+  - contact phone properties
+  - user notes
+  - Telephone Assistant
 sidebar_position: 80
 ---
 
-# Phone / Notes tab
+# Phone / Notes Tab for Users and Contacts
 
-Use this tab to view or update the contact information of the user or contact.
+Use this tab to view or update the phone numbers and notes of the user or contact.
 
 **Business**
 

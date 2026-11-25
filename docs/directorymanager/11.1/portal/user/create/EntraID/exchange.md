@@ -1,12 +1,17 @@
 ---
-title: "Exchange page (Create Mailbox wizard)"
-description: "Exchange page (Create Mailbox wizard)"
+title: "Exchange Page in the Entra ID Create Mailbox Wizard"
+description: "Set the alias, usage location, mailbox store, directory roles and Office 365 subscriptions for a new Microsoft Entra ID mailbox."
+keywords:
+  - Directory Manager
+  - Entra ID mailbox
+  - Office 365 subscriptions
+  - usage location
 sidebar_position: 60
 ---
 
-# Exchange page (Create Mailbox wizard)
+# Exchange Page in the Entra ID Create Mailbox Wizard
 
-To set alias and Office 365 subscriptions for a Microsoft Entra ID mailbox
+To set the alias and Office 365 subscriptions for a Microsoft Entra ID mailbox:
 
 Step 1 – In the **Alias** box, enter an alias for the mailbox.
 

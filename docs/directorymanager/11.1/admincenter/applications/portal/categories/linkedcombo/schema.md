@@ -1,10 +1,16 @@
 ---
-title: "Linked Combo Type - Schema"
-description: "Linked Combo Type - Schema"
+title: "Define Linked Combo Field Relationships in Directory Manager"
+description: "Map linked fields to binding expressions and set parent-child relationships on the Schema page of the Linked Combo Display Type wizard."
+keywords:
+  - linked combo schema
+  - binding expression
+  - parent-child field relationship
+  - linked combo display type
+  - Directory Manager Portal
 sidebar_position: 20
 ---
 
-# Linked Combo Type - Schema
+# Define Linked Combo Field Relationships in Directory Manager
 
 On the **Schema** page of the **Linked Combo Display Type** wizard, define the parent-child
 relationship between fields. Every linked field must have a parent field except the primary parent
@@ -17,10 +23,10 @@ Do the following:
 1. Map the **Type binding expression** list to the first worksheet (0-`<worksheet name>`) of the
    source Excel workbook. The portal fields use the binding expression to obtain reference to the
    worksheet in the source file to retrieve and display data from.
-   Expressions in the **Type binding expression** list are auto generated with respect to the number
-   of sheets in the source Excel workbook and the number of columns in a sheet. It is as:
+   Expressions in the **Type binding expression** list are automatically generated based on the number
+   of sheets in the source Excel workbook and the number of columns in a sheet, as shown here:
 
-    ![binding_expressions_examples](/images/directorymanager/11.1/admincenter/portal/linkedcombo/binding_expressions_examples.webp)
+    ![Type binding expression dropdown list showing expressions for the Company, Country, and City worksheets](/images/directorymanager/11.1/admincenter/portal/linkedcombo/binding_expressions_examples.webp)
 
     In an expression, worksheet names are enclosed in brackets while the names of the data columns
     in the worksheets are without brackets. The expressions in the preceding figure indicate that the
@@ -35,41 +41,41 @@ Do the following:
 
     1. Click **Add** to add a row.
 
-        ![child_fields](/images/directorymanager/11.1/admincenter/portal/linkedcombo/child_fields.webp)
+        ![Child Fields area with Linked Field, Parent Field, and Binding Expression columns](/images/directorymanager/11.1/admincenter/portal/linkedcombo/child_fields.webp)
 
     2. In the **Linked Field** dropdown list, select a field (for example, Country). This field
-       will be linked to the data column represented by the binding expression you select in the
+       is linked to the data column represented by the binding expression you select in the
        **Binding Expression** dropdown list.
-       The **Linked Field** list contains predefined, hard coded fields, where each field is already
+       The **Linked Field** list contains predefined, hard-coded fields, where each field is already
        mapped to a schema attribute. When you map a field to an expression, the values in the
-       worksheet’s data column will be available for the field in the portal. When a portal user
-       selects a value, it is set as the attribute’s value for the field.
+       worksheet’s data column are available for the field in the portal. When a portal user
+       selects a value, it's set as the attribute’s value for the field.
     3. The **Parent Field** list doesn't apply to the first row. For all other rows, use it to
        select the name of the parent field for the selected linked field. For example, when _State_
        is selected in the _Linked Field_ list, select Country as the parent field.
     4. In the **Binding Expression** dropdown list, select an expression that represents the data
        column you want to link to the field selected in the **Linked Field** list.
-       Expressions are auto generated with respect to the number of sheets in the source Excel
+       Expressions are automatically generated based on the number of sheets in the source Excel
        workbook and the number of columns in a sheet, as shown in the preceding figure.
 
     The following example shows the relationship for an Excel workbook with three worksheets:
     0-Company, 1-Country, and 2-City. (You can also create two linked combos to manage the
     relationship between these three fields.)
 
-    ![schema](/images/directorymanager/11.1/admincenter/portal/linkedcombo/schema.webp)
+    ![Schema grid linking Country, State, City, Office, and Zip fields to binding expressions](/images/directorymanager/11.1/admincenter/portal/linkedcombo/schema.webp)
 
-    The relationship formed between fields can be explained as:
+    The relationship formed between fields is as follows:
 
-    - The Company field, containing all records from the Name column on the Company worksheet, will
-      be the primary linked combo field in the portal.
-    - The Country field in the portal will contain all records from the Name column on the Country
+    - The Company field, containing all records from the Name column on the Company worksheet, is
+      the primary linked combo field in the portal.
+    - The Country field in the portal contains all records from the Name column on the Country
       worksheet.
-    - The State field in the portal will contain all records from the State column on the Country
-      worksheet. The Country field will be the parent field for the State field, which means that
-      when a user selects a country, the State field will show the states in that country.
-    - The City field in the portal will contain all records from the Name column on the City
-      worksheet. The State field will be the parent field for the City field, which means that when
-      a user selects a state, the City field will show the cities in the selected state.
+    - The State field in the portal contains all records from the State column on the Country
+      worksheet. The Country field is the parent field for the State field, which means that
+      when a user selects a country, the State field shows the states in that country.
+    - The City field in the portal contains all records from the Name column on the City
+      worksheet. The State field is the parent field for the City field, which means that when
+      a user selects a state, the City field shows the cities in the selected state.
 
     The complete structure for the data in the Excel workbook is explained in the following table.
 

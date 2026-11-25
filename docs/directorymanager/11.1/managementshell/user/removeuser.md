@@ -1,12 +1,17 @@
 ---
-title: "Remove-User"
-description: "Remove-User"
+title: "Remove-User Cmdlet in Directory Manager"
+description: "Delete a user from the directory by identity with the Remove-User cmdlet."
+keywords:
+  - Remove-User
+  - Directory Manager Management Shell
+  - delete user
+  - remove directory user
 sidebar_position: 40
 ---
 
-# Remove-User
+# Remove-User Cmdlet in Directory Manager
 
-Use the Remove-User commandlet to delete a user from directory.
+Use the Remove-User commandlet to delete a user from the directory.
 
 ## Syntax
 

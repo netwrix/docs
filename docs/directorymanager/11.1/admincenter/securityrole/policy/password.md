@@ -1,10 +1,16 @@
 ---
-title: "Password Policy"
-description: "Directory Manage Password Policy"
+title: "Configure a Password Policy for a Security Role"
+description: "Set security question, authentication lockout, and password validation rules for security role members in Directory Manager."
+keywords:
+  - Directory Manager
+  - password policy
+  - security role
+  - authentication lockout
+  - security questions
 sidebar_position: 60
 ---
 
-# Password Policy
+# Configure a Password Policy for a Security Role
 
 Using Directory Manager, you can implement a Password policy (a) for an identity store, (b) for
 security roles in an identity store, or (c) both at the identity store and role levels.
@@ -13,14 +19,14 @@ security roles in an identity store, or (c) both at the identity store and role 
   passwords.
 - For a security role, you can specify validation checks for passwords that role members create for
   their identity store accounts using Directory Manager. Hence, password validation checks are
-  role-specific
+  role-specific.
 
 With the Password policy, you can manage settings related to security questions and account
 lockout for security roles in an identity store.
 
 ## Set Password Restrictions and Rules for an Identity Store
 
-See the [Configure Password Options](/docs/directorymanager/11.1/admincenter/identitystore/configure/passwordoptions.md)
+See the [Configure Password Options in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/configure/passwordoptions.md)
 topic.
 
 ## Define Security Question Settings for a Security Role
@@ -46,7 +52,7 @@ As a result, different roles in an identity store can have different settings fo
     | Setting | Description |
     | --- | --- |
     | Number of Questions | The number of security questions role members must select while enrolling their accounts in Directory Manager for multifactor authentication or second factor authentication. The default number is 4. <br />Changing the number of security questions for a role has no impact on already enrolled role members unless they update their security questions information. |
-    | Minimum Answer Length | The minimum number of characters that a role member must type when saving the answer to a security question at the time of account enrollment. Answers with less than the specified number of characters will not be saved. |
+    | Minimum Answer Length | The minimum number of characters that a role member must type when saving the answer to a security question at the time of account enrollment. Answers with fewer than the specified number of characters aren't saved. |
 
 7. Click **OK**.
 8. On the **Edit Security Role** page, click **Update Security Role**.
@@ -62,7 +68,7 @@ following:
   in Directory Manager, after which authentication is disabled.
 - The duration for authentication to remain disabled.
 
-With authentication disabled, role members can't sign into Directory Manager.
+With authentication disabled, role members can't sign in to Directory Manager.
 
 :::note
 The authentication lockout policy only disables the user account in Directory Manager. It does
@@ -84,8 +90,8 @@ not disable it in the provider, such as Active Directory.
 
     |     | Setting                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                   |
     | --- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | 1.  | Failed Authentication Attempts Threshold | The number of consecutive attempts to provide a wrong value for an authentication type. Authentication is disabled for a user when the number of consecutive unsuccessful attempts by him or her reach the number given here.                                                                                                                                                                                                 |
-    | 2.  | Account Locked out Duration              | The number of minutes to disable authentication in Directory Manager after consecutive unsuccessful attempts to provide the right value for an authentication type. Note the following: - Authentication is automatically enabled after the specified duration. - Else it is enabled when, during the lockout period, the user correctly enters his or her identity store account credentials to sign into Directory Manager. |
+    | 1.  | Failed Authentication Attempts Threshold | The number of consecutive attempts to provide a wrong value for an authentication type. Authentication is disabled for a user when the number of consecutive unsuccessful attempts by that user reaches the number given here.                                                                                                                                                                                                 |
+    | 2.  | Account Locked out Duration              | The number of minutes to disable authentication in Directory Manager after consecutive unsuccessful attempts to provide the right value for an authentication type. Note the following: - Authentication is automatically enabled after the specified duration. - Otherwise, it is enabled when, during the lockout period, the user correctly enters their identity store account credentials to sign in to Directory Manager. |
 
 7. Click **OK**.
 8. On the **Edit Security Role** page, click **Update Security Role**.
@@ -96,14 +102,14 @@ not disable it in the provider, such as Active Directory.
 Identity providers have password validation and complexity policies defined, and users must follow
 them while creating passwords. With Directory Manager, you can extend these policies.
 
-With Directory Manager, you can specify password validation checks for a security role in an
+You can specify password validation checks for a security role in an
 identity store. This extended policy applies when:
 
 - Role members change or reset their identity store account passwords using Directory Manager.
 - Administrators or helpdesk members reset the identity store account passwords of role members
   using the Helpdesk section in Admin Center.
 
-The policy doesn't apply when password is reset using the **Reset Password** option in user
+The policy doesn't apply when a password is reset using the **Reset Password** option in user
 properties in the Directory Manager portal.
 
 **To specify password validation checks:**

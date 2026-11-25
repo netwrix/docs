@@ -1,10 +1,17 @@
 ---
-title: "Installation and Configuration"
-description: "Installation and Configuration"
+title: "Install and Configure Directory Manager Credential Provider"
+description: "Install Directory Manager Credential Provider, configure it with CPSettings.xml, the registry, or Group Policy, and deploy it with GPO or Intune."
+keywords:
+  - Credential Provider installation
+  - CPSettings.xml
+  - Group Policy deployment
+  - Microsoft Intune deployment
+  - credential provider filtering
+  - Windows sign-in screen
 sidebar_position: 1
 ---
 
-# Installation and Configuration
+# Install and Configure Directory Manager Credential Provider
 ---
 
 ## Table of Contents
@@ -51,17 +58,17 @@ The Netwrix Directory Manager Credential Provider, formerly known as Netwrix Gro
 3. Install the new version following the [First-Time Setup Guide](#first-time-setup-guide)
 4. Apply your configuration settings
 
-Your configuration settings in CPSettings.xml or Group Policy will be preserved during uninstall and can be reused with the new version.
+Your configuration settings in CPSettings.xml or Group Policy are preserved during uninstall and can be reused with the new version.
 
 ---
 
 ## Glossary
 
-Understanding these terms will help you configure the credential provider effectively:
+Understanding these terms helps you configure the credential provider effectively:
 
 | Term | Definition |
 |------|------------|
-| **Credential Provider** | A Windows component that handles user authentication at the login screen. Windows supports multiple credential providers simultaneously (password, PIN, fingerprint, etc.). |
+| **Credential Provider** | A Windows component that handles user authentication at the login screen. Windows supports multiple credential providers simultaneously (password, PIN, fingerprint, and so on). |
 | **CLSID** | Class Identifier - A unique GUID (Globally Unique Identifier) that identifies a COM class in Windows. The credential provider uses `{c8765b62-7058-4d7f-9421-11a75d623206}` as its identifier. |
 | **CPSettings.xml** | Configuration file that contains all settings for the credential provider. Located in the installation directory by default. |
 | **CEF** | Chromium Embedded Framework - An open-source framework used to embed a Chromium-based web browser in the credential provider for rendering password reset web pages. |
@@ -88,7 +95,7 @@ These are Windows built-in credential provider CLSIDs that you may want to filte
 
 ## First-Time Setup Guide
 
-This section provides a complete step-by-step walkthrough for installing and configuring the Netwrix GroupID Credential Provider for the first time.
+This section provides a complete step-by-step walkthrough for installing and configuring the Netwrix Directory Manager Credential Provider for the first time.
 
 ### Quick Start Checklist
 
@@ -120,15 +127,15 @@ This method is suitable for single computers or small deployments where centrali
 
 
 3. **Installation Complete**
-   - The installer will copy all necessary files
-   - Register the credential provider with Windows
-   - Install Visual C++ 2022 Redistributable if not already present
+   - The installer copies all necessary files
+   - It registers the credential provider with Windows
+   - It installs Visual C++ 2022 Redistributable if not already present
    - **Important**: A system reboot is required to activate the credential provider
 
 4. **Reboot the System**
-   - The installer will prompt for a reboot
+   - The installer prompts for a reboot
    - Save all work and restart the computer
-   - After reboot, the credential provider will be active
+   - After reboot, the credential provider is active
 
 **Default Installation Location**:
 ```
@@ -144,11 +151,11 @@ C:\Program Files\Imanami\Password Center Client (x64)\
 
 #### Post-Installation Verification
 
-After reboot, the Windows logon screen will display with the credential provider active:
+After reboot, the Windows logon screen displays with the credential provider active:
 
-![Windows Logon Screen](/images/directorymanager/11.1/portal/user/manage/windows_screen.webp)
+![Windows sign-in screen showing the Netwrix logo, title text, and the Forgot Password and Unlock Account links](/images/directorymanager/11.1/portal/user/manage/windows_screen.webp)
 
-The logon screen will show:
+The logon screen shows:
 - **Netwrix logo** (or custom logo if configured)
 - **Title text** under the logo (customizable via CPTitle setting)
 - **"Forgot Password?"** link (default text, customizable)
@@ -182,17 +189,17 @@ Open `CPSettings.xml` in a text editor (as administrator) and modify these value
    ```xml
    <ResetMyPasswordUrl value="https://MachineName:port/Portalname" />
    ```
-   Set the URL where users will be redirected to reset their password:
-   - **For GroupID 10**: `https://MachineName:port/portalname`
-   - **For GroupID 11**: `https://MachineName:port/portalname/Home/PasswordReset`
+   Set the URL where users are redirected to reset their password:
+   - **For version 10**: `https://MachineName:port/portalname`
+   - **For version 11**: `https://MachineName:port/portalname/Home/PasswordReset`
 
 4. **Account Unlock URL**:
    ```xml
    <UnlockMyAccountUrl value="https://MachineName:port/Portalname" />
    ```
-   Set the URL where users will be redirected to unlock their account:
-   - **For GroupID 10**: `https://MachineName:port/Portalname`
-   - **For GroupID 11**: `https://MachineName:port/portalname/Home/UnlockAccount`
+   Set the URL where users are redirected to unlock their account:
+   - **For version 10**: `https://MachineName:port/Portalname`
+   - **For version 11**: `https://MachineName:port/portalname/Home/UnlockAccount`
 
 5. **Credential Provider Title**:
    ```xml
@@ -202,7 +209,7 @@ Open `CPSettings.xml` in a text editor (as administrator) and modify these value
 
 **Important**: After modifying `CPSettings.xml`, restart the computer or lock/unlock the session twice for changes to take effect.
 
-For complete configuration options, see [Configure Required Settings](#step-3-configure-required-settings) below.
+For complete configuration options, see [Configure Required Settings](#step-3-configure-required-settings).
 
 ---
 
@@ -241,7 +248,7 @@ For organizations managing multiple computers in an Active Directory environment
 
 4. **Copy CPSettings.xml to Network Share** (Optional):
    - Copy the customized `CPSettings.xml` file to the same network share
-   - This file will be referenced by the MSI during installation
+   - The MSI references this file during installation
    - Share this file with Read permissions for Domain Computers
 
 #### 1A. (Optional) Create MSI Transform File Using Orca
@@ -263,9 +270,9 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Browse to the folder containing the Credential Provider package
    - Navigate to the `MST Guide` folder (if included with your package)
    - Run `Orca-x86_en-us.msi` to install Orca
-   - The Orca console will open after installation
+   - The Orca console opens after installation
 
-   ![Orca console](/images/directorymanager/11.1/portal/user/manage/orca_console.webp)
+   ![Orca console open after installation](/images/directorymanager/11.1/portal/user/manage/orca_console.webp)
 
 2. **Open MSI in Orca**:
    - Launch Orca application
@@ -273,20 +280,20 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Browse to the Credential Provider folder
    - Select and open `PasswordCenterClientSetup64.msi` 
 
-   ![Credential Provider in Orca](/images/directorymanager/11.1/portal/user/manage/cp_loaded.webp)
+   ![Orca with PasswordCenterClientSetup64.msi loaded](/images/directorymanager/11.1/portal/user/manage/cp_loaded.webp)
 
 3. **Create New Transform**:
    - From the menu, select **Transform** → **New Transform**
-   - This creates a new transform that will store your customizations
+   - This creates a new transform that stores your customizations
 
-   ![New Transform option](/images/directorymanager/11.1/portal/user/manage/new_transform.webp)
+   ![Orca Transform menu with the New Transform option](/images/directorymanager/11.1/portal/user/manage/new_transform.webp)
 
 4. **Modify Properties**:
    - In the left pane, click **Property**
    - The main window displays a list of MSI properties
    - Locate the **SOURCEPATH** property in the property list
 
-   ![Property page](/images/directorymanager/11.1/portal/user/manage/property.webp)
+   ![Orca Property table listing MSI properties, including SOURCEPATH](/images/directorymanager/11.1/portal/user/manage/property.webp)
 
 5. **Configure Source Path**:
    - Create a shared folder for configuration files:
@@ -298,14 +305,14 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Enter the UNC path to the shared folder: `\\fileserver\software\CredentialProvider\Config\`
    - Click **OK**
 
-   ![Property path](/images/directorymanager/11.1/portal/user/manage/property_path.webp)
+   ![Orca SOURCEPATH property value set to the UNC path of the configuration folder](/images/directorymanager/11.1/portal/user/manage/property_path.webp)
 
 6. **Generate Transform File**:
    - From the menu, select **Transform** → **Generate Transform**
 
-   ![Generate Transform option](/images/directorymanager/11.1/portal/user/manage/generate_transform.webp)
+   ![Orca Transform menu with the Generate Transform option](/images/directorymanager/11.1/portal/user/manage/generate_transform.webp)
 
-   - Save the transform file with a descriptive name (e.g., `CustomConfig.mst`)
+   - Save the transform file with a descriptive name (for example, `CustomConfig.mst`)
    - Save it to the same shared folder as the MSI package:
      ```
      \\fileserver\software\CredentialProvider\CustomConfig.mst
@@ -327,7 +334,7 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
 **Important Notes**:
 - The .mst file must be in the same network share as the MSI
 - The SOURCEPATH must point to a valid network location accessible by Domain Computers
-- Transform files are applied during GPO deployment (see step 3.3 below)
+- Transform files are applied during GPO deployment (see step 4)
 
 #### 2. Create Group Policy Object
 
@@ -336,7 +343,7 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Run: `gpmc.msc`
    - Or: Start → Administrative Tools → Group Policy Management
 
-   ![Group Policy Management console](/images/directorymanager/11.1/portal/user/manage/gp_policy.webp)
+   ![Group Policy Management console showing the domain and its GPOs](/images/directorymanager/11.1/portal/user/manage/gp_policy.webp)
 
    :::note
    Group Policy Management console is available if the Group Policy Management feature has been installed.
@@ -346,16 +353,16 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Navigate to your domain or appropriate Organizational Unit (OU)
    - Right-click → "Create a GPO in this domain, and Link it here"
 
-   ![Create a GPO in this domain and link it here option](/images/directorymanager/11.1/portal/user/manage/new_gpo.webp)
+   ![Context menu with the Create a GPO in this domain, and Link it here option](/images/directorymanager/11.1/portal/user/manage/new_gpo.webp)
 
    - Name: "Deploy Netwrix Credential Provider"
    - Click "OK"
 
 **Or**
 
-   Right-click the Select **Default Domain Policy** and select **Edit**:
+   Right-click **Default Domain Policy** and select **Edit**:
 
-   ![Edit Default Domain Policy option](/images/directorymanager/11.1/portal/user/manage/edit_gpo.webp)
+   ![Context menu on Default Domain Policy with the Edit option](/images/directorymanager/11.1/portal/user/manage/edit_gpo.webp)
 
 3. **Link GPO to Target OUs** (if not already linked):
    - Right-click the GPO
@@ -376,7 +383,7 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Expand: `Software Settings`
    - Click: `Software installation`
 
-   ![New Package option](/images/directorymanager/11.1/portal/user/manage/software_installation.webp)
+   ![Software installation node in the Group Policy Management Editor with the New Package option](/images/directorymanager/11.1/portal/user/manage/software_installation.webp)
 
    :::note
    This documentation describes steps for editing the default policy.
@@ -388,7 +395,7 @@ If you need to customize the MSI installation (such as pre-configuring the SOURC
    - Select: `PasswordCenterClientSetup64.msi`
    - **Important**: Use UNC path, not mapped drive letter
 
-   ![Deploy Software](/images/directorymanager/11.1/portal/user/manage/deploy_cp.webp)
+   ![Deploy Software dialog with the Assigned and Advanced deployment options](/images/directorymanager/11.1/portal/user/manage/deploy_cp.webp)
 
 4. **Choose Deployment Method**:
    - Dialog appears: "Deploy Software"
@@ -411,23 +418,23 @@ If you selected "Advanced" in step 3.4, configure additional options:
 
 2. **Modifications Tab** (For MST Transform Files):
 
-   If you created an MST transform file using Orca (see section 1A above), apply it here:
+   If you created an MST transform file using Orca (see section 1A), apply it here:
 
    - Click the **Modifications** tab
 
-   ![Modifications tab](/images/directorymanager/11.1/portal/user/manage/modification_tab.webp)
+   ![Package properties dialog with the Modifications tab selected](/images/directorymanager/11.1/portal/user/manage/modification_tab.webp)
 
    - Click **Add** button
    - Browse to the network share where you saved the .mst file
-   - Select your transform file (e.g., `CustomConfig.mst`)
+   - Select your transform file (for example, `CustomConfig.mst`)
    - Click **Open**
-   - The transform file will appear in the modifications list
+   - The transform file appears in the modifications list
    - Click **OK**
 
    **Important**:
    - The .mst file must be accessible via the same UNC path as the MSI
    - Ensure Domain Computers have Read access to the .mst file
-   - The transform will be applied automatically during installation
+   - The transform is applied automatically during installation
 
    **Verification**:
    - After adding the modification, you should see the .mst file listed in the Modifications tab
@@ -468,7 +475,7 @@ If you selected "Advanced" in step 3.4, configure additional options:
    - Use to apply settings only to specific computer groups
    - Right-click registry item → Properties → Common tab
    - ☑ Item-level targeting → Targeting button
-   - Add conditions (e.g., Computer in Group, Operating System)
+   - Add conditions (for example, Computer in Group or Operating System)
 
 #### 6. Test in Pilot Group
 
@@ -541,7 +548,7 @@ Get-ADComputer -Filter * -SearchBase "OU=Workstations,DC=company,DC=com" | ForEa
 
 **Client Machine Deployment**:
 
-After the GPO is configured and linked, client machines within the scope of the policy will automatically receive and install the credential provider:
+After the GPO is configured and linked, client machines within the scope of the policy automatically receive and install the credential provider:
 
 1. **Automatic Installation Trigger**:
    - Installation occurs automatically during the next computer startup
@@ -563,13 +570,13 @@ After the GPO is configured and linked, client machines within the scope of the 
 
 3. **Verify on Client Machines**:
 
-   After restart, the Windows logon screen will display the credential provider with:
+   After restart, the Windows logon screen displays the credential provider with:
    - Netwrix logo (or custom logo if configured)
    - "Forgot Password?" link
    - "Unlock Account" link
    - Custom title text under the logo
 
-   ![Windows Logon screen](/images/directorymanager/11.1/portal/user/manage/windows_screen.webp)
+   ![Windows sign-in screen with the credential provider links and custom title text](/images/directorymanager/11.1/portal/user/manage/windows_screen.webp)
 
    The credential provider is now active and ready for use on client workstations.
 
@@ -620,15 +627,15 @@ After the GPO is configured and linked, client machines within the scope of the 
 
 ---
 
-### Step 1B: Enterprise Deployment via Microsoft Intune (Entra ID)
+### Step 1B: Enterprise Deployment via Microsoft Intune (Microsoft Entra ID)
 
-For organizations using Microsoft Intune and Entra ID (Azure AD), deploy the credential provider to cloud-managed or hybrid-joined devices.
+For organizations using Microsoft Intune and Microsoft Entra ID, deploy the credential provider to cloud-managed or hybrid-joined devices.
 
 **Prerequisites**:
 - Microsoft Intune subscription
 - Global Administrator or Intune Administrator role
 - Windows 10/11 devices enrolled in Intune
-- Devices are Entra ID (Azure AD) joined or hybrid-joined
+- Devices are Microsoft Entra joined or hybrid joined
 - MSI package (PasswordCenterClientSetup64.msi)
 
 **Deployment Steps**:
@@ -786,7 +793,7 @@ Configure how Intune detects if the application is already installed:
 
 **Step 5: Dependencies**
 
-If your app depends on other applications (e.g., Visual C++ Redistributable):
+If your app depends on other applications (for example, Visual C++ Redistributable):
 
 1. **Add Dependencies** (if needed):
    - Click: **+ Add**
@@ -1060,7 +1067,7 @@ Or use Settings app:
 #### 9. Best Practices for Intune Deployment
 
 1. **Test with Pilot Group**:
-   - Create "Pilot Devices" group in Entra ID
+   - Create a "Pilot Devices" group in Microsoft Entra ID
    - Assign application to pilot group first
    - Test thoroughly before full rollout
 
@@ -1072,7 +1079,7 @@ Or use Settings app:
 
 3. **Use Dynamic Groups**:
    - Create dynamic device groups based on attributes
-   - Example: All Windows 10/11 devices
+   - For example, all Windows 10/11 devices:
    ```
    (device.deviceOSType -eq "Windows") and (device.deviceOSVersion -ge "10.0")
    ```
@@ -1106,7 +1113,7 @@ C:\Program Files\Imanami\Password Center Client (x64)\CPSettings.xml
 **How to Edit**:
 1. Open Notepad as Administrator (right-click → Run as administrator)
 2. Open the CPSettings.xml file from the installation directory
-3. Make your changes (see configuration below)
+3. Make your changes (see the configuration in the next section)
 4. Save the file
 5. Lock the computer (Win + L) or restart to see changes
 
@@ -1209,7 +1216,7 @@ After saving the configuration and restarting (or locking the screen):
 
 ## Configuration Methods
 
-The Netwrix GroupID Credential Provider can be configured using three methods, listed in order of precedence:
+The Netwrix Directory Manager Credential Provider can be configured using three methods, listed in order of precedence:
 
 ### 1. Group Policy (Highest Priority)
 
@@ -1229,7 +1236,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Imanami\GroupID\Version 10.0\PasswordCenter
 1. Open Group Policy Management Console (GPMC)
 2. Create or edit a GPO
 3. Navigate to: Computer Configuration → Preferences → Windows Settings → Registry
-4. Add registry values under the policy path above
+4. Add registry values under the Group Policy registry path
 
 ---
 
@@ -1247,7 +1254,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Imanami\GroupID\Version 10.0\PasswordCenterClient\Se
 
 **How to Configure**:
 1. Open Registry Editor (regedit.exe) as Administrator
-2. Navigate to the registry path above
+2. Navigate to the local registry path
 3. Create or modify String (REG_SZ) values
 4. Restart or lock the computer to apply changes
 
@@ -1457,7 +1464,7 @@ Filtering controls which other Windows credential providers (login methods) are 
 #### Understanding Filtering
 
 **What is Filtering?**
-By default, Windows displays all registered credential providers on the login screen (password, PIN, Windows Hello, etc.). Use filtering to:
+By default, Windows displays all registered credential providers on the login screen (password, PIN, Windows Hello, and so on). Use filtering to:
 - Hide specific credential providers in certain scenarios
 - Simplify the login screen by showing only relevant options
 - Create a cleaner user experience
@@ -1546,7 +1553,7 @@ DisableAutoFilter = true (Filtering Disabled):
 - **Default**: (same as FilterLogon)
 - **Description**: Specifies which credential providers to filter during workstation unlock scenario
 
-**Usage**: Typically set to the same value as FilterLogon unless you want different filtering behavior when unlocking vs. logging on.
+**Usage**: Typically set to the same value as FilterLogon unless you want different filtering behavior when unlocking versus logging on.
 
 ```xml
 <FilterUnlock value="{2135F72A-90B5-4ED3-A7F1-8BB705AC276A};{D6886603-9D2F-4EB2-B667-1971041FA96B}" />
@@ -1563,7 +1570,7 @@ You might want to allow Windows Hello Face during logon but not during unlock:
 - **Type**: String (semicolon-separated CLSIDs)
 - **Required**: No
 - **Default**: Empty (allow all)
-- **Description**: Whitelist of credential providers to allow (opposite of filtering)
+- **Description**: Allow list of credential providers (opposite of filtering)
 
 **Usage**: Instead of specifying what to hide (FilterLogon/FilterUnlock), specify what to show.
 
@@ -1576,9 +1583,9 @@ This example allows only:
 - Netwrix credential provider (`{c8765b62-7058-4d7f-9421-11a75d623206}`)
 
 **💡 When to Use**:
-- Use `AllowedCP` when you want to explicitly allow specific providers (whitelist approach)
-- Use `FilterLogon/FilterUnlock` when you want to hide specific providers (blacklist approach)
-- Don't use both simultaneously - choose one approach
+- Use `AllowedCP` when you want to explicitly allow specific providers (allow-list approach)
+- Use `FilterLogon/FilterUnlock` when you want to hide specific providers (block-list approach)
+- Don't use both simultaneously. Choose one approach
 
 ---
 
@@ -1879,7 +1886,7 @@ This section provides ready-to-use configuration examples for typical deployment
 **Deployment Steps**:
 1. Install MSI on each computer
 2. Copy company logo as `logo.bmp` to installation directory
-3. Edit CPSettings.xml with settings above
+3. Edit CPSettings.xml with the settings from this scenario
 4. Restart computers
 5. Test on one computer before rolling out to all
 
@@ -1928,7 +1935,7 @@ This section provides ready-to-use configuration examples for typical deployment
 **Benefits of GPO Deployment**:
 - Centralized configuration management
 - Consistent settings across all computers
-- Easy to update settings organization-wide
+- Update settings organization-wide from one place
 - Prevents local administrators from changing settings
 - Automatic application to new computers
 
@@ -2074,7 +2081,7 @@ This section provides ready-to-use configuration examples for typical deployment
 4. Restrict physical access to log files
 5. Regular security audits of configuration
 6. Monitor log files for suspicious activity
-7. Use multi-factor authentication on password reset portal
+7. Use multifactor authentication on the password reset portal
 
 ---
 
@@ -2161,13 +2168,13 @@ This file is created during installation if it exists within the same directory 
 **Option 2: Restart Computer** (most reliable):
 1. Save CPSettings.xml
 2. Restart the computer
-3. Changes will be applied on next login screen
+3. Changes are applied on the next login screen
 
 **Option 3: Restart Windows Logon Process** (advanced):
 1. Open Task Manager as Administrator
 2. Go to Details tab
 3. Find `winlogon.exe`
-4. End process (will restart automatically)
+4. End the process (it restarts automatically)
 5. ⚠️ Use with caution - may log you out
 
 **Note**: Configuration cached from Group Policy or Registry takes precedence over CPSettings.xml.
@@ -2395,7 +2402,7 @@ C:\Program Files\Imanami\Password Center Client (x64)\debug.log (CEF log)
 **✅ Recommended Solutions** (in order of preference):
 
 **Solution 1: Get Valid SSL Certificate**
-- Obtain certificate from trusted CA (Let's Encrypt, DigiCert, etc.)
+- Obtain certificate from trusted CA (Let's Encrypt, DigiCert, and others)
 - Install on your password reset portal
 - Problem solved permanently
 
@@ -2522,7 +2529,7 @@ See [Upgrade Policy](#upgrade-policy) for details.
 4. Reinstall credential provider
 5. Boot in Safe Mode to access system if locked out
 
-**⚠️ Important**: If locked out of system, see [Emergency Removal](#rollback-scenario-3-emergency-removal-system-locked-out) below.
+**⚠️ Important**: If locked out of system, see [Emergency Removal](#rollback-scenario-3-emergency-removal-system-locked-out).
 
 ---
 
@@ -2535,7 +2542,7 @@ See [Upgrade Policy](#upgrade-policy) for details.
    - Right-click Notepad
    - Select "Run as administrator"
 2. Then open CPSettings.xml from within Notepad
-3. Or use elevated Command Prompt:
+3. Or use a Command Prompt opened as administrator:
    ```cmd
    notepad "C:\Program Files\Imanami\Password Center Client (x64)\CPSettings.xml"
    ```
@@ -2598,7 +2605,7 @@ If the credential provider causes issues and you're locked out:
 1. Restart computer
 2. Press F8 during boot (or Shift + F8)
 3. Select "Safe Mode"
-4. Login with administrator account
+4. Sign in with an administrator account
 5. Uninstall credential provider or fix configuration
 6. Restart normally
 
@@ -2680,7 +2687,7 @@ Follow these best practices to ensure secure deployment of the credential provid
 
 **✅ DO:**
 - Obtain SSL certificates from trusted Certificate Authorities
-- Keep certificates up-to-date (monitor expiration)
+- Keep certificates up to date (monitor expiration)
 - Use proper hostname matching
 - Implement certificate pinning if available
 
@@ -2741,7 +2748,7 @@ C:\Program Files\Imanami\Password Center Client (x64)\CPSettings.xml
 **✅ DO:**
 - Use filtering to limit credential provider options
 - Simplify user experience by showing only necessary options
-- Use `AllowedCP` for whitelist approach (more secure)
+- Use `AllowedCP` for the allow-list approach (more secure)
 - Test filtering thoroughly before deployment
 
 **❌ DON'T:**
@@ -2809,7 +2816,7 @@ C:\Program Files\Imanami\Password Center Client (x64)\CPSettings.xml
 **Audit Checklist**:
 
 - [ ] Review CPSettings.xml or GPO configuration quarterly
-- [ ] Verify SSL certificates are valid and up-to-date
+- [ ] Verify SSL certificates are valid and up to date
 - [ ] Check for unauthorized changes to configuration
 - [ ] Review Windows Event Logs for credential provider errors
 - [ ] Test password reset functionality periodically
@@ -2827,7 +2834,7 @@ C:\Program Files\Imanami\Password Center Client (x64)\CPSettings.xml
 - Rate limiting on reset attempts
 - Account lockout after failed attempts
 - CAPTCHA for reset requests
-- Multi-factor authentication
+- Multifactor authentication
 - Email/SMS verification
 - Audit logging of all reset attempts
 - Anomaly detection
@@ -2936,7 +2943,7 @@ For enterprise environments where the credential provider was deployed via GPO:
    - Or: Start → Administrative Tools → Group Policy Management
 
 2. **Locate and Edit the GPO**:
-   - Right-click the GPO that contains the credential provider deployment (e.g., "Deploy Netwrix Credential Provider" or "Default Domain Policy")
+   - Right-click the GPO that contains the credential provider deployment (for example, "Deploy Netwrix Credential Provider" or "Default Domain Policy")
    - Select **Edit**
    - The Group Policy Management Editor opens
 
@@ -3005,7 +3012,7 @@ Review the HTML report to verify the software removal policy was applied.
 1. Reboot computer
 2. Press F8 during boot (or Shift + Restart → Troubleshoot → Advanced Options → Startup Settings → Restart → F4)
 3. Select "Safe Mode"
-4. Login with administrator account
+4. Sign in with an administrator account
 5. Uninstall credential provider via Control Panel
 6. Restart normally
 
@@ -3076,7 +3083,7 @@ Use this checklist when rolling back:
 - [ ] Document current configuration before rollback
 - [ ] Export registry keys before making changes
 - [ ] Test rollback procedure on non-production computer first
-- [ ] Notify users if credential provider will be unavailable
+- [ ] Notify users before the credential provider becomes unavailable
 - [ ] Have administrator access credentials ready
 - [ ] Backup current configuration files
 - [ ] Create system restore point
@@ -3145,7 +3152,7 @@ After rolling back, verify:
 
 ### Getting Help
 
-If you need assistance with the Netwrix GroupID Credential Provider:
+If you need assistance with the Netwrix Directory Manager Credential Provider:
 
 **Before Contacting Support**:
 
@@ -3175,7 +3182,7 @@ If you need assistance with the Netwrix GroupID Credential Provider:
 **When Contacting Support, Provide**:
 
 1. **Product Information**:
-   - Product name: Netwrix GroupID Credential Provider
+   - Product name: Netwrix Directory Manager Credential Provider
    - Version: 3.1.0.0
    - Installation date
 
@@ -3275,8 +3282,8 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Imanami\GroupID\Version 10.0\PasswordCenter
 | UnlockMyAccountUrl | https://portal.company.com/unlock | Account unlock URL |
 | WindowTitle | Company Password Reset | Browser window title |
 | CPTitle | Company Self-Service | Tile title |
-| ForgetPasswordText | Forgot my password? | Reset button text |
-| UnlockAccountText | Unlock my account | Unlock button text |
+| ForgetPasswordText | `Forgot my password?` | Reset button text |
+| UnlockAccountText | `Unlock my account` | Unlock button text |
 | ImageFile | logo.bmp | Logo filename |
 | IconImage | favicon.ico | Icon filename |
 | DisableAutoFilter | false | Enable/disable filtering |
@@ -3323,7 +3330,7 @@ Complete list of common Windows credential provider CLSIDs for filtering:
 | `{D6886603-9D2F-4EB2-B667-1971041FA96B}` | PIN Provider |
 | `{F64945DF-4FA9-4068-A2FB-61AF319EDD33}` | IrisRecognition Provider |
 | `{F8A0B131-5F68-486C-8040-7E8FC3C85BB6}` | Generic Tile Provider |
-| `{c8765b62-7058-4d7f-9421-11a75d623206}` | **Netwrix GroupID Credential Provider** |
+| `{c8765b62-7058-4d7f-9421-11a75d623206}` | **Netwrix Directory Manager Credential Provider** |
 
 ---
 
@@ -3336,7 +3343,7 @@ Complete list of common Windows credential provider CLSIDs for filtering:
 - Glossary of terms and acronyms
 - Configuration reference with defaults table
 - Common deployment scenarios with examples
-- Comprehensive troubleshooting and FAQ section
+- Troubleshooting and FAQ section
 - Security best practices
 - Rollback instructions for safe undoing
 - Appendices with complete configuration examples

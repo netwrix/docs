@@ -1,12 +1,17 @@
 ---
-title: "Leave a Group"
-description: "Leave a Group"
+title: "Leave a Group API in Directory Manager"
+description: "Leave a group by specifying the membership type, start date, and end date in the request body."
 sidebar_position: 130
+keywords:
+  - leave group API
+  - group membership
+  - Directory Manager API
+  - membership type
 ---
 
-# Leave a Group
+# Leave a Group API in Directory Manager
 
-Using this API, you can leave a group according to the parameters specified in the body, such as
+Use this API to leave a group according to the parameters specified in the body, such as
 membership type, start date, and end date.
 
 ## Endpoint
@@ -17,7 +22,7 @@ membership type, start date, and end date.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -32,7 +37,7 @@ membership type, start date, and end date.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

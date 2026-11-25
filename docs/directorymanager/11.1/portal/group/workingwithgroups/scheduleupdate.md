@@ -1,23 +1,30 @@
 ---
-title: "Scheduled Updates Functions"
-description: "Scheduled Updates Functions"
+title: "Update Smart Group and Dynasty Membership"
+description: "Modify a Smart Group or Dynasty query, schedule membership updates, run a manual update, and check Smart Group Update job status in the portal."
+keywords:
+  - Smart Group update
+  - Dynasty update
+  - Query Designer policy
+  - scheduled job
+  - Out of Bounds
+  - Background Tasks
 sidebar_position: 70
 ---
 
-# Scheduled Updates Functions
+# Update Smart Group and Dynasty Membership
 
-When a Smart Group or Dynasty is updated using a scheduled job, it involves the following:
+When a scheduled job updates a Smart Group or Dynasty, it involves the following:
 
 - Each Smart Group and Dynasty has a query defined for it. On update, the query retrieves records
   from the directory and group membership is updated with these records.
 
     If the administrator has defined a Query Designer policy for your role, group membership is
     updated as per the defined policy. See the
-    [ Query Designer Policy](/docs/directorymanager/11.1/admincenter/securityrole/policy/querydesigner.md)topic for
+    [Configure a Query Designer Policy for a Security Role](/docs/directorymanager/11.1/admincenter/securityrole/policy/querydesigner.md) topic for
     additional information.
 
     :::note
-    Whatever the records returned by the query, the membership of an Office 365 group is
+    Regardless of the records the query returns, the membership of an Office 365 group is
     updated with user objects only.
     :::
 
@@ -41,8 +48,8 @@ Directory Manager portal provides different methods to update Smart Groups and D
 - Manual update
 - Scheduled update
 
-In both methods, the query defined for the group is executed to update membership; the difference
-being that in manual update, you can execute the query manually any time while scheduled updates run
+In both methods, the query defined for the group runs to update membership. The difference
+is that in a manual update, you can run the query at any time, while scheduled updates run
 automatically at a specified frequency.
 
 In Directory Manager portal, you can perform the following functions for Smart Groups and Dynasties.
@@ -55,7 +62,7 @@ In Directory Manager portal, you can perform the following functions for Smart G
 
 **Or**
 
-    [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to modify the query for.
+    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to modify the query for.
 
 2. Select the required Smart Group or Dynasty and click **Properties** on the toolbar.
 3. Use the [Group properties - Smart Group/Query Designer tab](/docs/directorymanager/11.1/portal/group/properties/smartgroup.md) to view
@@ -87,12 +94,12 @@ membership update.
 
 **Or**
 
-    [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to associate a Smart Group Update
+    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to associate a Smart Group Update
     job with.
 
 2. Select the required Smart Group or Dynasty and click **Properties** on the toolbar.
 
-    The group's [Group Properties](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed.
+    The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed.
 
 3. On the **Smart Group/Query Designer** tab, select a Smart Group Update job from the **Scheduled
    Job** list.
@@ -100,7 +107,7 @@ membership update.
     When this job runs, it updates the group's membership.
 
     :::note
-    The schedule job will update the group taking into account Query Designer policy of group
+    The scheduled job updates the group, taking into account the Query Designer policy of the group
     owner role, if defined.
     :::
 
@@ -115,12 +122,12 @@ You can manually update a Smart Group or Dynasty any time by selecting the group
 Membership update settings defined for the identity store also impact Smart Group and Dynasty
 membership update.
 
-1. In Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**
-2. On the Groups page, click **My Groups**/**My Memberships**/**My Expiring Groups** tab.
+1. In Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
+2. On the Groups page, click the **My Groups**, **My Memberships**, or **My Expiring Groups** tab.
 3. On the page displayed, select the groups for manual membership update and click **Update** on the
    toolbar.
 
-    A dialog box is displayed, that shows the progress of the Smart Group Update job.
+    A dialog box is displayed that shows the progress of the Smart Group Update job.
 
 4. You can click the **Run in Background** button on this dialog box to run the update job in the
    background.
@@ -131,23 +138,23 @@ Use the **Background Tasks** icon in the top right corner to view the status of 
 Update jobs.
 
 - Jobs that are running in the background are displayed under **In Progress**.
-- All jobs that have completed successfully, failed, or canceled are listed under **Other**.
+- All jobs that have completed successfully, failed, or been canceled are listed under **Other**.
 
 ## Modify the query for a Smart Group/Dynasty created by other role members
 
 If you have the permission to manage any group, you can view and modify the query of an existing or
-a new Smart Group/Dynasty created by other role member according to the policy defined for your
-role. You can only modify the group if there is no conflict between yours and other role's policies.
+a new Smart Group/Dynasty created by another role member according to the policy defined for your
+role. You can only modify the group if there is no conflict between your policies and the other role's policies.
 
-Let’s say the administrator has defined the following Query Designer policy for the Administrator
+Say the administrator has defined the following Query Designer policy for the Administrator
 role:
 
 - Start In Containers: Entire Directory containers
 - Objects: Users, Groups, Contacts
 - Default Filter Criteria: None
 
-The administrator has defined the following Query Designer Policy for the User role of which you are
-a member of:
+The administrator has defined the following Query Designer policy for the User role of which you are
+a member:
 
 - Start In Containers: Users
 - Objects: Users
@@ -155,7 +162,7 @@ a member of:
 
 A member of administrator role has created a Smart Group named QDGroup1.
 
-1. In Directory Manager portal, you search this group query of which you want to view or modify.
+1. In Directory Manager portal, search for the group whose query you want to view or modify.
 2. On the **Properties** page, select the **Smart Group** tab.
 3. Click the **Query Designer** button to open the Query Designer dialog box.
 
@@ -166,8 +173,8 @@ A member of administrator role has created a Smart Group named QDGroup1.
     In case of a conflict in the role policies, you can't modify the group. For example:
 
     - the administrator role member who created the group has defined some settings on the Database
-      tab but in your role policy the Database tab is hidden, in this case, you will not be able to
+      tab but in your role policy the Database tab is hidden. In this case, you can't
       modify the query of the group.
-    - Similarly, if the group has been created using the user object and in your role policy the
-      user object isn't available, upon group update an error will be displayed.
+    - Similarly, if the group was created using the user object and in your role policy the
+      user object isn't available, an error is displayed upon group update.
     :::

@@ -1,10 +1,17 @@
 ---
-title: "Portal"
-description: "Directory Manager Portal"
+title: "Directory Manager Portal Overview"
+description: "Learn what users and administrators can do with a Directory Manager portal, including the SSPR portal, linked identity stores, and notifications."
+keywords:
+  - Directory Manager
+  - Directory Manager portal features
+  - Self-Service Password Reset
+  - SSPR portal
+  - linked identity stores
+  - portal notifications
 sidebar_position: 20
 ---
 
-# Directory Manager Portal
+# Directory Manager Portal Overview
 
 A Directory Manager portal represents a virtual link with the directory. Using it, users can do the
 following in an identity store:
@@ -18,22 +25,22 @@ following in an identity store:
 - Synchronize data between a source and a destination, such as directories, files, and databases.
 - Manage user and group entitlements to shared resources on file servers and SharePoint sites.
 - Approve and deny workflow requests.
-- Generate hundreds of insightful reports on Active Directory, Microsoft Entra ID, Exchange, and
+- Generate hundreds of reports on Active Directory, Microsoft Entra ID, Exchange, and
   Office 365 objects (groups, users, mailboxes, contacts, computers, and servers).
 - View history data for directory objects that are created, updated, or deleted in the directory
   using Directory Manager.
 
-Delegating group and user management tasks to end-users reduces the workload on IT administrators
-and helpdesk, as users are empowered to manage their groups and direct reports without assistance
+Delegating group and user management tasks to end users reduces the workload on IT administrators
+and help desk, because users manage their groups and direct reports without assistance
 from an administrator. Moreover, when users maintain and update their profile information, data is
 more accurate and reliable.
 
 Administrators can maintain complete control over data integrity, as they can implement fine-grained
 controls and policies that determine what users can view and change using the Directory Manager
-portal. They can also define workflows for an identity store, that serve as a built-in auditing
-system to ensure that users enter correct data before changes are committed to the directory.
+portal. They can also define workflows for an identity store that serve as a built-in auditing
+system to verify that users enter correct data before changes are committed to the directory.
 
-A Directory Manager portal can be linked with multiple identity stores, thus eliminating the need to
+You can link a Directory Manager portal with multiple identity stores, so you don’t need to
 create a separate portal for each identity store. Users can select an identity store while signing
 in.
 
@@ -41,7 +48,7 @@ in.
 
 A Self-Service Password Reset portal is a type of Directory Manager portal that only facilitates
 password-related functions. With this portal, users can manage their directory account passwords,
-i.e., the password for the account they use to access their workstations and other Microsoft
+that is, the password for the account they use to access their workstations and other Microsoft
 services. Users can change and reset their passwords, as well as unlock their accounts. They can
 also enroll their accounts in Directory Manager and link accounts in different identity stores.
 

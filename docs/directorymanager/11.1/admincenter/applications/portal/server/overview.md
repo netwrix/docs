@@ -1,17 +1,24 @@
 ---
-title: "Server Settings"
-description: "Server Settings"
+title: "Directory Manager Portal Server Settings"
+description: "See which server settings you can manage for a Directory Manager portal, including its name, identity stores, advanced options, and deployment instances."
+keywords:
+  - portal server settings
+  - application name
+  - portal deployment instances
+  - advanced settings
+  - Admin Center
+  - native IIS and remote IIS
 sidebar_position: 30
 ---
 
-# Server Settings
+# Directory Manager Portal Server Settings
 
 A Directory Manager portal is deployed as a web application on a web server (native IIS or remote
 IIS). You can manage the following server-related settings for a portal:
 
-- Change a portal’s name (i.e., the application name given to the portal).
+- Change a portal’s name (the application name given to the portal).
 - Associate identity stores with a portal.
-- Update support information for the portal, i.e., the contact email address and the portal’s help
+- Update support information for the portal, that is, the contact email address and the portal’s help
   URL.
 - Specify search-related, group-related, and other advanced settings for a portal.
 
@@ -30,5 +37,5 @@ You can also view the deployment details for all instances of a portal and do th
 
 :::note
 On changing some of these settings, the portal’s session ends and all connected users are
-logged out. When accessed again, the portal runs under the new configurations.
+signed out. When accessed again, the portal runs under the new configurations.
 :::

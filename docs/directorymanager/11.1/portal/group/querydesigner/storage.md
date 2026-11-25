@@ -1,19 +1,25 @@
 ---
-title: "Storage tab"
-description: "Query Designer - Storage tab"
+title: "Query Designer Storage Tab in Directory Manager"
+description: "Filter messaging system recipient queries by Exchange server or mailbox store using the Storage tab in the Query Designer."
+keywords:
+  - Query Designer
+  - Storage tab
+  - Messaging System Recipients
+  - mailbox store
+  - mailbox filter
 sidebar_position: 60
 ---
 
-# Storage tab
+# Query Designer Storage Tab in Directory Manager
 
-Settings on the Storage tab are available when the ‘Messaging System Recipients’ option is selected
+Settings on the Storage tab are available when the 'Messaging System Recipients' option is selected
 in the **Find** list.
 
-For the ‘Messaging System Recipients’ option, the default settings on the Storage tab retrieve all
+For the 'Messaging System Recipients' option, the default settings on the Storage tab retrieve all
 mailboxes, irrespective of any server or mailbox store. You can apply a filter to mailboxes you want
 the query to return.
 
-If filters are specified, the query will return only mailboxes on the specified server or mailbox
+If filters are specified, the query returns only mailboxes on the specified server or mailbox
 store. This filter doesn't affect custom recipients, public folders, and distribution lists.
 
 **Mailbox on any Server**

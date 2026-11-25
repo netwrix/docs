@@ -1,13 +1,19 @@
 ---
-title: "Set-User"
-description: "Set-User"
+title: "Set-User Cmdlet for Directory Manager"
+description: "Modify user properties in the directory with the Set-User cmdlet, including names, contact details, custom attributes, and display names."
+keywords:
+  - Set-User
+  - modify user
+  - user properties
+  - custom attributes
+  - Management Shell
 sidebar_position: 50
 ---
 
-# Set-User
+# Set-User Cmdlet for Directory Manager
 
-The Set-User commandlet modifies a user in Directory. Most user properties can be directly modified
-by using the parameters of this commandlet.
+The Set-User cmdlet modifies a user in the directory. You can modify most user properties directly
+by using the parameters of this cmdlet.
 
 ## Syntax
 

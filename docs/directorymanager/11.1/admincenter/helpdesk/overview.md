@@ -1,10 +1,17 @@
 ---
-title: "Helpdesk"
-description: "Helpdesk"
+title: "Directory Manager Helpdesk Overview"
+description: "Learn how Admin Center Helpdesk lets administrators and helpdesk users unlock accounts, reset passwords, and manage enrollment."
+keywords:
+  - Directory Manager
+  - Helpdesk
+  - helpdesk permissions
+  - helpdesk policy
+  - desktop notifications
+  - helpdesk analytics
 sidebar_position: 100
 ---
 
-# Helpdesk
+# Directory Manager Helpdesk Overview
 
 The Admin Center Helpdesk section enables administrators and helpdesk users to perform
 helpdesk-specific tasks, such as:
@@ -17,10 +24,10 @@ helpdesk-specific tasks, such as:
   [Helpdesk Operations](/docs/directorymanager/11.1/admincenter/helpdesk/operation/overview.md) topic for additional information.
 
 :::note
-The Admin Center for helpdesk role is available in Helpdesk mode only. By default, only the
+The Admin Center for the helpdesk role is available in Helpdesk mode only. By default, only the
 Helpdesk node of Admin Center is visible to the Helpdesk role members. The administrator can also
 restrict access of a security role by selecting the Helpdesk Role checkbox on the Security Role
-page. See the [Create a Security Role](/docs/directorymanager/11.1/admincenter/securityrole/create.md) topic for additional information.
+page. See the [Create a Security Role in Directory Manager](/docs/directorymanager/11.1/admincenter/securityrole/create.md) topic for additional information.
 :::
 
 
@@ -34,7 +41,7 @@ helpdesk-specific functions:
 - Unenroll
 
 See [Password Management](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md#password-management) in the
-[Security Role – Permissions](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md) topic.
+[Security Role Permissions in Directory Manager](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md) topic.
 
 ## Helpdesk Policy
 
@@ -48,7 +55,7 @@ unenrolled users. In restricted mode, helpdesk can perform these functions for e
 :::
 
 
-See the [Helpdesk Policy](/docs/directorymanager/11.1/admincenter/securityrole/policy/helpdesk.md) topic.
+See the [Helpdesk Policy for Security Roles in Directory Manager](/docs/directorymanager/11.1/admincenter/securityrole/policy/helpdesk.md) topic.
 
 ## Helpdesk Analytics
 
@@ -66,17 +73,17 @@ The dashboard displays the following helpdesk-specific cards:
 
 ## Desktop Notifications
 
-You can enable desktop notification for Directory Manager in browser settings. In this way, a user
-signed into Admin Center on the respective machine will receive desktop notifications when an
+You can enable desktop notifications for Directory Manager in browser settings. A user
+who is signed in to Admin Center on the respective machine receives desktop notifications when an
 end-user performs any of the following actions in the Directory Manager portal:
 
 - Resets account password
-- Changes account Password
-- Unlocks Account
-- Links Account
-- Unlinks Account
+- Changes account password
+- Unlocks account
+- Links account
+- Unlinks account
 - Enrolls account
 - Authenticates with password, authentication types, or any other medium
 
-These actions are also logged in helpdesk history. See the [History in Helpdesk](/docs/directorymanager/11.1/admincenter/helpdesk/history.md) topic
+These actions are also logged in helpdesk history. See the [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.1/admincenter/helpdesk/history.md) topic
 for additional information.

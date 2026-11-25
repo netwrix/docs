@@ -1,6 +1,12 @@
 ---
 title: "ISmsGateway.SendShortMessage"
-description: "ISmsGateway.SendShortMessage"
+description: "Send a text message to target mobile phone numbers through a custom SMS gateway and get back the delivery status."
+keywords:
+  - ISmsGateway.SendShortMessage
+  - send SMS message
+  - custom SMS gateway
+  - SendSmsMessageResult
+  - ShortMessage
 sidebar_position: 90
 ---
 

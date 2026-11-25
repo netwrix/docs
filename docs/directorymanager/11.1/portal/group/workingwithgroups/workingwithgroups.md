@@ -1,10 +1,17 @@
 ---
-title: "Working with Groups"
-description: "Working with Groups"
+title: "Work with Groups in the Directory Manager Portal"
+description: "Find the portal topics for managing group membership, ownership, scheduled updates, Dynasties, expiry, deletion, and Query Designer policy."
+keywords:
+  - manage groups
+  - group membership
+  - group ownership
+  - Smart Group updates
+  - Dynasties
+  - group expiry
 sidebar_position: 40
 ---
 
-# Working with Groups
+# Work with Groups in the Directory Manager Portal
 
 Use the Directory Manager portal to manage your directory groups in the identity store. You can
 do the following and more:
@@ -12,7 +19,7 @@ do the following and more:
 - Add and remove members from your groups
 - Join and leave other groups
 - Associate a scheduled job for membership update with Smart Groups
-- Expire groups instantly or set an expiry policy to auto expire them later
+- Expire groups instantly or set an expiry policy to expire them automatically later
 
 **General**
 
@@ -21,7 +28,7 @@ do the following and more:
 - [View groups managed by an object](generalfunction.md#view-groups-managed-by-an-object)
 - [Manage group access](generalfunction.md#manage-group-access)
 - [Set email delivery restrictions](generalfunction.md#set-email-delivery-restrictions)
-- [The Send As and Send on Behalf features](/docs/directorymanager/11.1/portal/group/workingwithgroups/sendassendonbehalf.md)
+- [Send As and Send on Behalf Features for Groups](/docs/directorymanager/11.1/portal/group/workingwithgroups/sendassendonbehalf.md)
 
 **Group Membership**
 
@@ -66,12 +73,12 @@ do the following and more:
 
 **Group Expiry and Deletion**
 
-- [Group Expiry](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupexpiry.md)
+- [How Group Expiry Works in Directory Manager](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupexpiry.md)
 - [Expire a group manually ](groupexpiryfunction.md#expire-a-group-manually)
 - [Change the expiry policy for a group](groupexpiryfunction.md#change-the-expiry-policy-for-a-group)
 - [Attest an expiring group](groupexpiryfunction.md#attest-an-expiring-group)
 - [Renew an expired group](groupexpiryfunction.md#renew-an-expired-group)
-- [ Group Deletion](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupdeletion.md)
+- [ How Group Deletion Works in Directory Manager](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupdeletion.md)
 
 **Query Designer Policy for Groups**
 

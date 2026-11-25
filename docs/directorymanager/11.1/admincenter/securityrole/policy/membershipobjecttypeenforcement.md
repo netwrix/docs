@@ -1,21 +1,27 @@
 ---
-title: "Membership Object Type Enforcement Policy"
-description: "Membership Object Type Enforcement Policy"
+title: "Membership Object Type Enforcement Policy in Directory Manager"
+description: "Limit which object types role members can add to static group membership, for all groups or only for specific groups and containers."
+keywords:
+  - Membership Object Type Enforcement
+  - static group membership
+  - object types
+  - security role policy
+  - group targets
 sidebar_position: 100
 ---
 
-# Membership Object Type Enforcement Policy
+# Membership Object Type Enforcement Policy in Directory Manager
 
 The Membership Object Type Enforcement policy applies to static groups only. Use it to limit
 the objects that role members can add to the membership of a static group. For example, you can
-disallow Role A to add a mailbox as member of a group.
+prevent Role A from adding a mailbox as a member of a group.
 
 You can choose to:
 
 - Extend the policy to all groups that role members create and manage in the identity store.
-- Specify the groups and/or containers the policy would apply to. In case of a container, the policy
-  would apply to all groups that role members can create and manage in that container and its
-  sub-containers. All other groups would be exempt, except those specified.
+- Specify the groups, containers, or both that the policy applies to. For a container, the policy
+  applies to all groups that role members can create and manage in that container and its
+  subcontainers. All other groups are exempt, except those you specify.
 
 **Impact on the Directory Manager portal**
 
@@ -32,21 +38,21 @@ The policy has the following impact on the Directory Manager portal:
 
 - The Membership Object Type Enforcement policy doesn't apply to critical system objects (such as
   domain controllers and computers). Therefore, even if the policy allows these objects to be added
-  to group membership, they will not show up in search results when users search for objects for
-  adding to group membership.
-- The Membership Object Type Enforcement policy may conflict with the [Search Policy](/docs/directorymanager/11.1/admincenter/securityrole/policy/search.md) you
+  to group membership, they don't show up in search results when users search for objects to
+  add to group membership.
+- The Membership Object Type Enforcement policy can conflict with the [Configure a Search Policy for a Security Role](/docs/directorymanager/11.1/admincenter/securityrole/policy/search.md) you
   define for the same user role in an identity store. An example of a conflict is: the Search policy
   prevents a security role from searching for user objects in the portal while the Membership Object
   Type Enforcement policy allows that same role to add only user objects to group membership. To
   avoid such conflicts, ensure the two policies align with each other.
-- The Membership Object Type Enforcement policy may conflict with the static group properties you
+- The Membership Object Type Enforcement policy can conflict with the static group properties you
   specify on the Properties page under the Design node for a portal. For example, for the Members
-  tab in group properties, you can allow/disallow object types that can be searched for adding to
+  tab in group properties, you can allow or disallow object types that can be searched for adding to
   group membership (see step 17 in the
-  [Add a Field to a Tab](/docs/directorymanager/11.1/admincenter/applications/portal/displaytype/objectproperties.md#add-a-field-to-a-tab)topic). If the
+  [Add a Field to a Tab](/docs/directorymanager/11.1/admincenter/applications/portal/displaytype/objectproperties.md#add-a-field-to-a-tab) topic). If the
   design settings prevent users from searching for user objects to set as members while the
   Membership Object Type Enforcement policy allows role members to add only user objects to group
-  membership, a conflict may arise. To avoid these, ensure the settings in the policy and the
+  membership, a conflict can arise. To avoid these conflicts, ensure the settings in the policy and the
   group properties design align with each other.
 
 **What do you want to do?**
@@ -67,16 +73,16 @@ The policy has the following impact on the Directory Manager portal:
 7. By default, the **Targets** area is empty, indicating that the policy applies to all groups
    that role members create and manage in the identity store.
 8. The **Objects** area displays four categories for object types: Users, Contacts, Groups, and
-   Computers. The sub-types are also listed for each of these.
+   Computers. The subtypes are also listed for each of these.
 
-    - Select the checkboxes for the object types or sub-types you want to allow role members to add
-      to group membership. On selecting the checkbox for an object type, all its sub-types are
-      automatically selected. You can, however, choose to select specific sub-types, to allow only
-      those to role members.
-    - Clear the checkboxes for the object types or sub-types you want to prevent role members from
-      adding to group membership. On clearing the checkbox for an object type, all its sub-types
-      are automatically deselected. You can, however, choose to deselect specific sub-types, to
-      disallow only those to role members.
+    - Select the checkboxes for the object types or subtypes you want to allow role members to add
+      to group membership. On selecting the checkbox for an object type, all its subtypes are
+      automatically selected. You can, however, select specific subtypes to allow only
+      those subtypes.
+    - Clear the checkboxes for the object types or subtypes you want to prevent role members from
+      adding to group membership. On clearing the checkbox for an object type, all its subtypes
+      are automatically cleared. You can, however, clear specific subtypes to
+      disallow only those subtypes.
 
 9. Click **OK**.
 10. On the **Edit Security Role** page, click **Update Security Role**.
@@ -92,14 +98,14 @@ The policy has the following impact on the Directory Manager portal:
 5. On the **Edit Security Role** page, click **Specify policies for the members** in the
    **Policies** area.
 6. On the **Add Policies** pane, click the **Membership Object Type Enforcement** tab.
-7. Use the **Targets** area to specify the groups and/or containers the policy would apply to.
-   This means that the policy would apply when role members try to add members to the specified
-   groups, or to groups that reside in the specified containers and their sub-containers.
+7. Use the **Targets** area to specify the groups, containers, or both that the policy applies to.
+   This means that the policy applies when role members try to add members to the specified
+   groups, or to groups that reside in the specified containers and their subcontainers.
 
-    1. To specific containers as target, follow step 9 in the
+    1. To add containers as targets, follow step 9 in the
        [Create a Group Usage Service Schedule](/docs/directorymanager/11.1/admincenter/schedule/groupusageservice.md#create-a-group-usage-service-schedule)
        topic.
-    2. To add groups as target, follow step 9b in the
+    2. To add groups as targets, follow step 9b in the
        [Create a Smart Group Update Schedule](/docs/directorymanager/11.1/admincenter/schedule/smartgroupupdate.md#create-a-smart-group-update-schedule)
        topic, replacing Smart Groups and Dynasties with static groups.
     3. To remove a container or group in the **Targets** area, click **Remove** for it.  

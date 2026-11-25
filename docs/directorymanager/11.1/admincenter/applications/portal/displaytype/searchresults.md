@@ -1,10 +1,16 @@
 ---
-title: "Customize Search Results"
-description: "Customize Search Results"
+title: "Customize Search Results in the Directory Manager Portal"
+description: "Add, edit, remove, and rearrange the fields that display on the search results pages and column headers in the Directory Manager portal."
+keywords:
+  - Directory Manager
+  - search results
+  - column headers
+  - search results fields
+  - display types
 sidebar_position: 20
 ---
 
-# Customize Search Results
+# Customize Search Results in the Directory Manager Portal
 
 You can customize the search result pages for a portal. You can:
 
@@ -17,8 +23,7 @@ You can customize the search result pages for a portal. You can:
 You can only customize existing search result pages; you can't add new ones.
 :::
 
-
-### Customizable Search Results Pages
+## Customizable Search Results Pages
 
 The following table lists the search results pages that you can customize:
 
@@ -29,7 +34,7 @@ The following table lists the search results pages that you can customize:
 | User                | Manage the column headers on the following portal pages: <ul><li>The **My Direct Reports** tab, where users can view a list of their direct reports. This tab is displayed when users click **Users > My Direct Reports** in the portal.</li><li>The **Users** and **Contacts** tabs on the search results page, which is displayed when users perform a search on the **Advanced Search** page in the portal.</li></ul>                                                                                                                                     |
 | Disabled Users      | Manage the column headers on the **Disabled Users** tab in the portal, which displays a list of disabled users in the directory. This tab is displayed when users click **Users > My Direct Reports** and then the **Disabled Users** tab in the portal.                                                                                                                                                                                                                                                                                                     |
 | Groups              | Manage the column headers on the following portal pages: <ul><li>The **All Groups** page – all except the **Expired Groups** and **Expiring Groups** tabs</li><li>The **My Groups** page – all except the **My Expired Groups** and **My Expiring Groups** tabs</li><li>The **Groups** tab on the search results page, which is displayed when users perform a search on the **Advanced Search** page in the portal.</li></ul>                                                                                                                               |
-| Expiring Groups     | Manage the column headers on the following tabs in the portal: <ul><li>Groups > All Groups and then the **Expiring Groups** tab . It displays the groups in the directory that will expire in 30 days or less.</li><li>Groups > My Groups and then the **My Expiring Groups** tab. It displays the logged-on user’s groups that will expire in 30 days or less.</li></ul>                                                                                                                                                                                    |
+| Expiring Groups     | Manage the column headers on the following tabs in the portal: <ul><li>Groups > All Groups and then the **Expiring Groups** tab. It displays the groups in the directory that expire in 30 days or less.</li><li>Groups > My Groups and then the **My Expiring Groups** tab. It displays the logged-on user’s groups that expire in 30 days or less.</li></ul>                                                                                                                                                                                    |
 | Expired Groups      | Manage the column headers on the following tabs in the portal: <ul><li>Groups > All Groups and then the **Expired Groups** tab. It displays the expired groups in the directory.</li><li>Groups > My Groups and then the **My Expired Groups** tab. It displays the logged-on user’s groups that have expired.</li></ul>                                                                                                                                                                                                                                     |
 | Find dialog         | Define the attributes to display for objects shown as search results on the _Find_ dialog box. The _Find_ dialog box is used to search and select objects to designate as owners, managers, additional owners, group members, and more. It has a _search_ area and a _search results_ area. This option controls the column headers (attributes) displayed in the **Search Results** area. The _Find_ dialog box can be launched from various portal pages, for example, from the **Owner** tab, **Members** tab, and **Member Of** tab in group properties. |
 
@@ -49,16 +54,16 @@ The following table lists the search results pages that you can customize:
    results on the selected page.  
    Click **Add Field** to add a new field.
 7. On the **Add Field** pane, use the **Field** dropdown list to select a schema attribute to link
-   to the field. The field will display the value of this attribute on the search results page.
+   to the field. The field displays the value of this attribute on the search results page.
 8. In the **Display Name** box, enter a display name for the field. This name is the field’s label
    on the search results page.
 9. In the **Tooltip** box, enter the text to appear when a user hovers the mouse over the field.
 10. In the **Display Type** dropdown list, select the display type to use to render this field in
     the portal. Available options are limited to textbox, DN, DNs, and Link, which are basic display
-    Types. See the [Basic Display Types](/docs/directorymanager/11.1/admincenter/applications/portal/categories/categories.md#basic-display-types) topic.
-11. Click **OK.** The field is displayed in the **Fields** area on the **Edit Search Results**
+    types. See the [Basic Display Types](/docs/directorymanager/11.1/admincenter/applications/portal/categories/categories.md#basic-display-types) topic.
+11. Click **OK**. The field is displayed in the **Fields** area on the **Edit Search Results**
     pane.  
-    To rearrange the fields on the search form, click the equal sign for a field and drag to change
+    To rearrange the fields on the search results page, click the equal sign for a field and drag to change
     its position.
 12. Click **OK**.
 13. Click **Save** on the **Search Forms** page.

@@ -1,15 +1,21 @@
 ---
-title: "Get Pending Requests"
-description: "Get Pending Requests"
+title: "Get Pending Workflow Requests in Directory Manager"
+description: "Retrieve all workflow requests that have a pending status in an identity store by calling the Pending endpoint with a GET request."
+keywords:
+  - Directory Manager API
+  - pending workflow requests
+  - Workflows/Pending endpoint
+  - approval requests
+  - GET request
 sidebar_position: 130
 ---
 
-# Get Pending Requests
+# Get Pending Workflow Requests in Directory Manager
 
-Use this API to retrieve information about all those requests with pending status provided you have
-the required permissions to manage all requests. See the
+Use this API to retrieve information about all requests with a pending status, provided you have the
+required permissions to manage all requests. See the
 [Miscellaneous](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md#miscellaneous) section of the
-[Security Role – Permissions](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md) topic.
+[Security Role Permissions in Directory Manager](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md) topic.
 
 ## Endpoint
 
@@ -19,7 +25,7 @@ the required permissions to manage all requests. See the
 
 GET.
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -44,7 +50,7 @@ GET.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

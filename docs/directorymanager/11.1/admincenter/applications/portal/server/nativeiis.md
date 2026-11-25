@@ -1,10 +1,17 @@
 ---
-title: "Manage Settings for a Native IIS Deployment"
-description: "Manage Settings for a Native IIS Deployment"
+title: "Manage Native IIS Deployment Settings in Directory Manager"
+description: "Start, stop, rename, or move a Directory Manager portal instance deployed in native IIS, and view its launch URL and bound services."
+keywords:
+  - native IIS deployment
+  - portal instance
+  - IIS application name
+  - launch URL
+  - Data service
+  - Security service
 sidebar_position: 20
 ---
 
-# Manage Settings for a Native IIS Deployment
+# Manage Native IIS Deployment Settings in Directory Manager
 
 You can manage settings for a portal instance deployed in native IIS.
 
@@ -40,15 +47,15 @@ specific deployment. The name uniquely identifies the deployment in the IIS site
 uses it to name:
 
 - The instance’s virtual directory in IIS.
-- It’s physical directory under X:\Program Files\Imanami \GroupID 11.0\GroupIDPortal\Inetpub\ on the
-  Directory Managerserver  
+- Its physical directory under X:\Program Files\Imanami \GroupID 11.0\GroupIDPortal\Inetpub\ on the
+  Directory Manager server  
   (X represents the Directory Manager installation drive)
 
 Directory Manager also appends this name to the web server address to construct the URL that users
 click to access the portal instance. For example:  
 `https://web-server-name:port/IIS-application-name`
 
-When you change the name, it propagates to the instance’s IIS directory, physical directory, and
+When you change the name, the change propagates to the instance’s IIS directory, physical directory, and
 launch URL. You must provide the updated URL to users so they can access the portal. See the
 [Launch a Portal](/docs/directorymanager/11.1/admincenter/applications/portal/create.md#launch-a-portal) topic.
 
@@ -87,16 +94,16 @@ access the instance. See the [Launch a Portal](/docs/directorymanager/11.1/admin
 6. Click **Save**.
 
 :::note
-The instance moves to the new IIS site, and its URL changes to match. However, due to a known
+The instance moves to the new IIS site, and its URL changes to match. However, because of a known
 limitation, the **Launch URL** box on the **Deployment Configurations** tab continues to
-display the port of the previously assigned site instead of the new site's port. Before using or
+display the port of the previously assigned site instead of the new site’s port. Before using or
 distributing the launch URL, manually replace the displayed port with the port configured for the
 new IIS site.
 :::
 
 ## View the Launch URL for an Instance
 
-Use the URL for a portal's deployment instance to launch that instance.
+Use the URL for a portal’s deployment instance to launch that instance.
 
 **To view the URL:**
 
@@ -110,7 +117,7 @@ Use the URL for a portal's deployment instance to launch that instance.
    dropdown list displays the portal instances deployed in the respective web server. Select an
    instance to view the launch URL for it.
 5. The **Launch URL** box on the **Deployment Configurations** tab displays the URL. Copy and paste
-   it in the browser to launch the portal's deployment instance, or share it with users so
+   it in the browser to launch the portal’s deployment instance, or share it with users so
    they can launch the instance.
 
 ## View the Data Service and Security Service Bound to an Instance
@@ -130,7 +137,7 @@ Use the URL for a portal's deployment instance to launch that instance.
 ## Set File Logging and Windows Logging for an Instance
 
 To set file logging and Windows logging levels for a deployment instance, see the
-[Manage Log Settings](/docs/directorymanager/11.1/admincenter/applications/portal/server/log.md) topic.
+[Manage Portal Log Settings in Directory Manager](/docs/directorymanager/11.1/admincenter/applications/portal/server/log.md) topic.
 
 ## Delete an Instance
 

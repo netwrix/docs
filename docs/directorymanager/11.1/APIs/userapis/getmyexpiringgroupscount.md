@@ -1,10 +1,14 @@
 ---
-title: "Get My Expiring Groups Count"
-description: "Get My Expiring Groups Count"
+title: "Get My Expiring Groups Count with the Directory Manager API"
+description: "Get the number of groups of the authenticated user that are about to expire."
+keywords:
+  - Directory Manager API
+  - expiring groups count
+  - Groups/Expiring/count endpoint
 sidebar_position: 90
 ---
 
-# Get My Expiring Groups Count
+# Get My Expiring Groups Count with the Directory Manager API
 
 This API retrieves the number of expiring groups of the authenticated user.
 
@@ -16,7 +20,7 @@ This API retrieves the number of expiring groups of the authenticated user.
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -25,7 +29,7 @@ This API retrieves the number of expiring groups of the authenticated user.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

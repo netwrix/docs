@@ -1,10 +1,16 @@
 ---
-title: "Getting Started"
-description: "Getting Started"
+title: "Get Started with Directory Manager"
+description: "Learn about the Directory Manager clients, the initial Admin Center configuration, supported browsers and devices, and supported languages."
+keywords:
+  - Directory Manager clients
+  - Admin Center configuration
+  - identity store setup
+  - supported browsers
+  - language support
 sidebar_position: 3
 ---
 
-# Getting Started
+# Get Started with Directory Manager
 
 To get started with Directory Manager, review the following:
 
@@ -15,7 +21,7 @@ To get started with Directory Manager, review the following:
 
 ## Clients 
 
-The Directory Manager application comprises the following main modules or clients:
+The Directory Manager application includes the following main modules, or clients:
 
 **Admin Center**
 
@@ -30,7 +36,7 @@ generate reports to analyze the directory.
 
 **Self-Service Password Reset portal (SSPR)**
 
-With this portal, users can manage their directory account passwords, i.e., the password for the
+With this portal, users can manage their directory account passwords, meaning the password for the
 account they use to access their workstations and other Microsoft services. Users can change and
 reset their passwords, as well as unlock their accounts. They can also enroll their accounts in
 Directory Manager and link accounts in different identity stores.
@@ -49,7 +55,7 @@ management functions.
 ## Initial Admin Center Configurations
 
 After installing and configuring Directory Manager, the Super Admin is the only user who can sign
-into Admin Center (see the [Access Admin Center](/docs/directorymanager/11.1/admincenter/signin.md) topic for additional
+in to Admin Center (see the [Sign In to Directory Manager Admin Center](/docs/directorymanager/11.1/admincenter/signin.md) topic for additional
 information). This user must create an identity store and configure security roles, so that other
 users can sign in and use the application. The Super Admin can choose to configure further settings
 or let another admin user in an identity store do so.
@@ -57,26 +63,26 @@ or let another admin user in an identity store do so.
 Configure the following settings in Admin Center so that administrators and users can
 perform identity and access management tasks using Directory Manager:
 
-- Create and configure identity stores - An identity store is built on an identity provider and
+- Create and configure identity stores: An identity store is built on an identity provider and
   lets you manage objects and object permissions in the provider. See the
-  [Identity Stores](/docs/directorymanager/11.1/admincenter/identitystore/overview.md) topic for additional information.
-- Create data sources - A data source is built on a provider, such as directories, databases, and
+  [Identity Stores in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/overview.md) topic for additional information.
+- Create data sources: A data source is built on a provider, such as directories, databases, and
   files. Data sources serve as source and destination in Synchronize jobs, in query-based
   searches, and in group membership queries. See the
-  [ Data Sources](/docs/directorymanager/11.1/admincenter/datasource/overview.md) topic for additional information.
-- Create a portal - Create a web-based Directory Manager portal and link it to an identity store, so
+  [Data Sources in Directory Manager](/docs/directorymanager/11.1/admincenter/datasource/overview.md) topic for additional information.
+- Create a portal: Create a web-based Directory Manager portal and link it to an identity store, so
   that users can carry out user, group, and entitlement management tasks. See the
-  [ Directory Manager Portal](/docs/directorymanager/11.1/admincenter/applications/portal/overview.md) topic for additional information.
-- Create an SMS gateway account - Using an SMS gateway account, Directory Manager sends text
+  [Directory Manager Portal](/docs/directorymanager/11.1/admincenter/applications/portal/overview.md) topic for additional information.
+- Create an SMS gateway account: Using an SMS gateway account, Directory Manager sends text
   messages to users’ mobile numbers, which may include verification codes and password reset links.
-  See the [SMS Gateway](/docs/directorymanager/11.1/admincenter/smsgateway/overview.md) topic for additional information.
+  See the [SMS Gateway Support in Directory Manager](/docs/directorymanager/11.1/admincenter/smsgateway/overview.md) topic for additional information.
 
 ## Compatibility
 
 This section lists the browsers, devices, and languages that Directory Manager supports.
 
 - Directory Manager can run on all modern desktop, laptop, and tablet devices.
-- -Directory Manager supports the latest versions of the following browsers:
+- Directory Manager supports the latest versions of the following browsers:
 
     - Microsoft Edge
     - Safari
@@ -87,7 +93,7 @@ This section lists the browsers, devices, and languages that Directory Manager s
 
 Directory Manager supports the following languages:
 
-- U.S. English (default)
+- English, United States (default)
 - French (Password Center, Portal)
 
 Directory Manager detects the language setting in your web browser and displays content in that language when available. However, some services or features may not be fully localized in your language—these parts display in English. If your browser’s language isn’t supported or can’t be detected, all content displays in English.

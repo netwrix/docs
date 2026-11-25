@@ -1,12 +1,18 @@
 ---
-title: "Delete a Portal"
-description: "Delete a Portal"
+title: "Delete a Directory Manager Portal"
+description: "Delete a portal or one of its deployment instances in Admin Center, and see what Directory Manager removes from IIS or Docker."
+keywords:
+  - delete portal
+  - portal deployment instance
+  - native IIS
+  - remote IIS
+  - Docker container
 sidebar_position: 20
 ---
 
-# Delete a Portal
+# Delete a Directory Manager Portal
 
-You can delete a portal or a deployment instance of a portal. On deleting a portal, all its
+You can delete a portal or a deployment instance of a portal. When you delete a portal, all its
 instances are deleted with it.
 
 ## Delete a Deployment Instance for a Portal
@@ -19,11 +25,11 @@ removed:
     - The portal directory under the following location on the Directory Manager server:  
       X:\Program Files\Imanami\GroupID 11.0\GroupIDPortal\Inetpub\  
       (X represents the Directory Manager installation drive)
-    - The portal’s directory in the IIS site
+    - The portal's directory in the IIS site
 
 - **For an instance in remote IIS:**
 
-    - The portal’s directory in the remote IIS site
+    - The portal's directory in the remote IIS site
     - The portal's physical directory under the folder mapped to the remote IIS site
 
 - **For an instance in Docker:**

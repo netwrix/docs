@@ -1,10 +1,16 @@
 ---
-title: "Group Commands"
-description: "Group Commands"
+title: "Directory Manager Group Cmdlets"
+description: "Find the Management Shell cmdlets that create, convert, move, expire, renew, modify, retrieve, and delete managed and unmanaged groups."
+keywords:
+  - group cmdlets
+  - Management Shell
+  - managed groups
+  - unmanaged groups
+  - Directory Manager PowerShell
 sidebar_position: 70
 ---
 
-# Group Commands
+# Directory Manager Group Cmdlets
 
 This section covers cmdlets for performing tasks related to managed and unmanaged groups.
 

@@ -1,18 +1,25 @@
 ---
-title: "Selected Fields for object types"
-description: "Selected Fields for object types"
+title: "Configure Selected Fields in a Synchronize Job"
+description: "Choose the create, update, delete, or skip action for each object type and select the fields a Synchronize job syncs to the destination."
+keywords:
+  - Synchronize selected fields
+  - object types
+  - Member Key
+  - two-way synchronization
+  - destination container
+  - Directory Manager
 sidebar_position: 50
 ---
 
-# Selected Fields for object types
+# Configure Selected Fields in a Synchronize Job
 
-On the Selected Fields for Object type section, click Add/Edit Fields. You can specify the action to
-take if the data or object being exported from the source doesn't exist at the destination.
+In the **Selected Fields for Object type** section, click **Add/Edit Fields**. You can specify the
+action to take if the data or object exported from the source doesn't exist at the destination.
 
 1. Select the operation that you want to perform. Click **Create** to create new objects and
    **Update** if you want to update the existing objects.
 
-    - If table provider is the destination, you can enable two-way synchronization.
+    - If a table provider is the destination, you can enable two-way synchronization.
 
         - If an object exists in the source but doesn't exist in the destination, you can select
           one of the following options:
@@ -37,7 +44,7 @@ take if the data or object being exported from the source doesn't exist at the d
 
                 Ignore objects at the destination that don't exist at the source.
 
-    - If LDAP-compliant directory server or a phone system is the destination, you can do the
+    - If an LDAP-compliant directory server or a phone system is the destination, you can do the
       following:
 
         - For LDAP providers such as Active Directory, you can select one or more object types that
@@ -52,15 +59,15 @@ take if the data or object being exported from the source doesn't exist at the d
                 no counterparts in the destination during synchronization. You must specify a target
                 container for each object type.
 
-                Click the **Container** button to view of each **Create** action that you selected
+                Click the **Container** button to view each **Create** action that you selected
                 in the preceding step, and select one of the following:
 
                 - **Create objects in this container** - Click **Browse** to change the displayed
                   destination container (specified on the Destination Provider page) or select a new
                   container.
-                - **Create objects in the container specified in this source field**- Enter the
+                - **Create objects in the container specified in this source field** - Enter the
                   distinguished name of the container.
-                - **Create objects in a container specified in script** - Click the Edit Script
+                - **Create objects in a container specified in script** - Click the **Edit Script**
                   button and write a script that identifies the target container.
 
             - **Skip**
@@ -75,22 +82,22 @@ take if the data or object being exported from the source doesn't exist at the d
 
             - **Create**
 
-                Select this option to create object at the destination for source object that has no
+                Select this option to create an object at the destination for a source object that has no
                 counterparts in the destination during synchronization. You must specify a target
                 container for the selected object type.
 
             - **Skip**
 
-                Select this option to ignore any source objects that doesn't exist at the
+                Select this option to ignore any source objects that don't exist at the
                 destination during synchronization.
 
 2. Select the fields to be synced. Repeat for each object type desired. Object types listed are
    based on the source directory that you selected on the previous page.
 3. If the destination isn't an Active Directory domain, select the names of fields to sync from the
    list.
-4. By default, Synchronize moves selects some fields from the list by analyzing the fields from the
+4. By default, Synchronize selects some fields from the list by analyzing the fields from the
    source.
-5. For the Group object type, clicking _member (sAMAccountName_) displays **Member Key** list.
+5. For the Group object type, clicking _member (sAMAccountName)_ displays **Member Key** list.
    Select the required Active Directory attribute from it to search matching group members in the
    destination.
 
@@ -101,5 +108,5 @@ take if the data or object being exported from the source doesn't exist at the d
     :::
 
 
-6. To select all the fields, check the **All Fields** checkbox below.
+6. To select all the fields, select the **All Fields** checkbox below.
 7. Click **Save**.

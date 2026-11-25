@@ -1,10 +1,15 @@
 ---
-title: "Invoke-Schedule"
-description: "Invoke-Schedule"
+title: "Invoke-Schedule Cmdlet in Directory Manager"
+description: "Use the Invoke-Schedule cmdlet to run a scheduled job immediately, by schedule name or job ID, without waiting for its trigger."
+keywords:
+  - Invoke-Schedule
+  - run scheduled job
+  - GUS job
+  - Management Shell cmdlet
 sidebar_position: 30
 ---
 
-# Invoke-Schedule
+# Invoke-Schedule Cmdlet in Directory Manager
 
 The commandlet Invoke-Schedule executes the specified schedule job.
 
@@ -31,7 +36,7 @@ Invoke-Schedule
 
 Example 1:
 
-This example executes a schedule with name starting smm4\_.
+This example executes a schedule with a name starting with smm4\_.
 
 ```
 Invoke-Schedule -ScheduleName smm4_
@@ -39,7 +44,7 @@ Invoke-Schedule -ScheduleName smm4_
 
 Example 2:
 
-This example executes a schedule with GUS as Job Type.
+This example executes the schedules that have GUS as the job type.
 
 ```
 Get-Schedule -JobType GUS | Select-Object -Property Name | Invoke-Schedule

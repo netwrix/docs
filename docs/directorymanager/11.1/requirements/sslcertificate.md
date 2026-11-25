@@ -1,21 +1,29 @@
 ---
-title: "SSL Certificate for LDAP/Authentication"
-description: "SSL Certificate for LDAP/Authentication"
+title: "SSL Certificate Requirements for LDAP and Authentication"
+description: "Meet the SSL/TLS certificate requirements for LDAP and authentication, and install self-signed certificates in the Trusted Root store."
+keywords:
+  - SSL certificate requirements
+  - self-signed certificate
+  - Trusted Root Certification Authorities
+  - certlm.msc
+  - LDAP over SSL
 sidebar_position: 60
 ---
 
-# SQL Certificate for Windows Authentication
+# SSL Certificate Requirements for LDAP and Authentication
 
-Before installing or configuring Directory Manager Admin Center, ensure all SSL/TLS certificates used for 
+Before installing or configuring Directory Manager Admin Center, ensure all SSL/TLS certificates used for
 LDAP and authentication services meet the following requirements:
 
-#### Certificate Installation Location
+## Certificate Installation Location
+
 - **Self-signed certificates MUST be installed in the Trusted Root Certification Authorities store**
   - Store Location: `LocalMachine` (Computer account)
   - Store Name: `Root` (Trusted Root Certification Authorities)
   - Access via: `certlm.msc` → Trusted Root Certification Authorities → Certificates
 
-#### Certificate Validity Requirements
+## Certificate Validity Requirements
+
 Directory Manager validates certificates against these criteria:
 
 1. **Certificate must not be null** - A valid certificate must be presented
@@ -27,7 +35,7 @@ Directory Manager validates certificates against these criteria:
    - Root certificate must exist in the Trusted Root CA store
 5. **Root certificate thumbprint must match**
 
-#### Installation Steps for Self-Signed Certificates
+## Installation Steps for Self-Signed Certificates
 
 1. Open Certificate Manager for Local Machine:
    ```

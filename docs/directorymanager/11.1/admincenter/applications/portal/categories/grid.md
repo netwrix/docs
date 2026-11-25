@@ -1,10 +1,16 @@
 ---
-title: "Grid Display Type"
-description: "Grid Display Type"
+title: "Grid Display Type in Directory Manager Portal"
+description: "Create a grid display type to show multi-valued attributes, such as group members, in tabular form in the portal."
+keywords:
+  - grid display type
+  - custom display types
+  - Directory Manager Portal
+  - portal design settings
+  - multi-valued attributes
 sidebar_position: 60
 ---
 
-# Grid Display Type
+# Grid Display Type in Directory Manager Portal
 
 Use a grid display type to display data in tabular form in the portal. This is especially helpful
 when you want to group together multiple attributes of an object.
@@ -15,13 +21,13 @@ attribute required, so that portal users can view or enter values in each column
 object.
 
 To create a grid, define its columns. Each column is mapped to a schema attribute, so each
-column represents the value of the attribute it is mapped to.
+column represents the value of the attribute it's mapped to.
 
 After creating the custom grid display type, link it to an appropriate schema attribute to render it
 on a portal page. This attribute must support multi-valued distinguished names. Examples of such
 Active Directory attributes include _member_ and _memberof_.
 
-### Predefined Grid Display Types
+## Predefined Grid Display Types
 
 A few grid display types used in the default portal template are:
 
@@ -53,7 +59,7 @@ A few grid display types used in the default portal template are:
        name in the portal.
     4. Click **Advanced Options** to specify additional details for the column.
     5. In the **Edit Type** dropdown list, select a display type (for example, a text box or a
-       dropdown list). In edit mode, the fields in the column will be displayed in the portal using
+       dropdown list). In edit mode, the fields in the column are displayed in the portal using
        the display type you select here.
        As a prerequisite to making a column editable, ensure that:
 
@@ -63,7 +69,7 @@ A few grid display types used in the default portal template are:
           **Grid Column** pane).
 
     6. In the **Search Type** dropdown list, select a display type (for example, a text box or a
-       dropdown list). The search filter for the column will be displayed in the portal using the
+       dropdown list). The search filter for the column is displayed in the portal using the
        display type you select here.
        As a prerequisite to making a column searchable, ensure that:
 
@@ -73,8 +79,8 @@ A few grid display types used in the default portal template are:
           **Grid Column** pane).
 
     7. Select the **Searchable** checkbox to enable search for the column.
-    8. Select the **Sortable** checkbox to let users sort the data displayed in the grid on
-       the basis of the column attribute (by clicking the column header).
+    8. Select the **Sortable** checkbox to let users sort the data displayed in the grid based on
+       the column attribute (by clicking the column header).
     9. Select the **Editable** checkbox to let users update the column value, in which case
        the fields in the column are editable. Clear this checkbox to make the column read-only.
     10. Click **OK**. The column name is displayed in the **Fields** area on the **New Display
@@ -96,14 +102,14 @@ A few grid display types used in the default portal template are:
       height and width.
     - **px:** to specify the height and width of the grid in pixels.
 
-11. In the **Page Size** box, type, or select a value. This value represents the number of records to
+11. In the **Page Size** box, enter a value or select one. This value represents the number of records to
     show in the grid, with pagination options to navigate to more records.
 12. Select the **Show Search Filters** checkbox to add a row to the grid that serves as a search
     bar. This row appears in the grid, as shown in the following image:
 
-    ![search_row_in_grid](/images/directorymanager/11.1/admincenter/portal/displaytype/search_row_in_grid.webp)
+    ![Members grid with a search row of filter boxes above the data rows](/images/directorymanager/11.1/admincenter/portal/displaytype/search_row_in_grid.webp)
 
-13. Select the **Editable** checkbox to make the rows in the grid available for editing. Else, the
-    grid will be read-only.
+13. Select the **Editable** checkbox to make the rows in the grid available for editing. Otherwise, the
+    grid is read-only.
 14. Click **OK**.
 15. Click **Save** on the **Custom Display Types** page.

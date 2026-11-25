@@ -1,13 +1,20 @@
 ---
-title: "Script"
-description: "Script"
+title: "Write Synchronize Scripts for Directory Manager"
+description: "Learn how Synchronize transform and container scripts work, the DTM keywords, the Context, and the restrictions and options that apply to scripts."
+keywords:
+  - Synchronize script
+  - DTM keywords
+  - Visual Basic .NET
+  - transform script
+  - container script
+  - DTM.Result
 sidebar_position: 70
 ---
 
-# Script
+# Write Synchronize Scripts for Directory Manager
 
-Synchronize scripts are written in Visual Basic .NET. A script is run after having established a
-current source row (”object”). The script determines a single value--the ”result” value--and assigns
+Synchronize scripts are written in Visual Basic .NET. A script runs after Synchronize establishes a
+current source row ("object"). The script determines a single value (the "result" value) and assigns
 that value to the keyword **DTM.Result**.
 
 The type of script determines the nature of the script result:
@@ -17,13 +24,13 @@ The type of script determines the nature of the script result:
 
 ## Examples and Language Overview
 
-- For examples of transform scripts, see the [Sample Transform Scripts](/docs/directorymanager/11.1/portal/synchronize/dtmscript/sampletransformscript.md)
-  topic
-- For examples of container scripts, see the [Sample Container Scripts](/docs/directorymanager/11.1/portal/synchronize/dtmscript/samplecontainerscript.md)
-  topic
+- For examples of transform scripts, see the [Sample Transform Scripts for Directory Manager Synchronize](/docs/directorymanager/11.1/portal/synchronize/dtmscript/sampletransformscript.md)
+  topic.
+- For examples of container scripts, see the [Sample Container Scripts for Synchronize](/docs/directorymanager/11.1/portal/synchronize/dtmscript/samplecontainerscript.md)
+  topic.
 - For general information, see
-  [Visual Basic .NET for Directory Manager (formerly GroupID)](/docs/directorymanager/11.1/portal/synchronize/dtmscript/visualbasicnetbasic.md) topic
-- For general information, see Python for GroupID topic
+  [Visual Basic .NET for Directory Manager](/docs/directorymanager/11.1/portal/synchronize/dtmscript/visualbasicnetbasic.md) topic.
+- For general information, see the Python for Directory Manager topic.
 
 ## DTM keywords
 
@@ -36,20 +43,20 @@ DTM keywords give you access to the data being processed.
 
 - DTM.Result
 
-    This is a write-only property. This script must assign a value to DTM.Result. This type of
+    This is a write-only property. Your script must assign a value to DTM.Result. This type of
     script determines what the value signifies.
 
-    - Transform script – assign to DTM.Result the value you want of the transform’s destination
+    - Transform script: assign to DTM.Result the value you want for the transform’s destination
       field.
-    - Container script – assign to DTM.Result the distinguished name of the new object’s container.
+    - Container script: assign to DTM.Result the distinguished name of the new object’s container.
 
     In any script, each branch of execution must assign a value to DTM.Result. Failure to assign a
     value to DTM.Result causes a runtime error, and the destination row ("object") isn't updated or
-    created . The job still runs to completion.
+    created. The job still runs to completion.
 
 - DTM.ExpandVariables(**`<text>`**)
 
-    This function has a single string argument: text. It returns the valueof the specified text as a
+    This function has a single string argument: text. It returns the value of the specified text as a
     string after replacing each environment variable embedded in the text with its string
     equivalent. Environment variables are surrounded by "%" characters, as in "%now%" and
     "%SystemDrive%".
@@ -97,21 +104,21 @@ running the job. For this reason, you may encounter one of the following situati
 
 Synchronize inserts each script into the body of a subroutine before compiling.
 Therefore, any Visual Basic .NET constructs that are only valid outside of a subroutine/function
-will fail to compile and will be disallowed.
+fail to compile and aren't allowed.
 
-These restrictions apply to creating a Synchronize script:
+These restrictions apply when you create a Synchronize script:
 
 - Subroutines, functions, classes, modules, and namespaces aren't allowed.
 - Module-level statements, such as Import or Option statements, aren't permitted.
-- Shared (that is, static, and global) variables aren't supported.
+- Shared (static and global) variables aren't supported.
 
 ## Visual Basic options set by Synchronize
 
-Synchronize establishes the following Option statements which apply to all scripts and can't be
+Synchronize establishes the following Option statements, which apply to all scripts and can't be
 overridden:
 
-- Option Explicit On – all variables must be declared before use via a Dim statement. With Visual
-  Basic .Net, you can both declare and assign variables at their first use, as follows:
+- Option Explicit On: all variables must be declared before use via a Dim statement. With Visual
+  Basic .NET, you can both declare and assign variables at their first use, as follows:
 
     ```
     Dim MyVariable = "Hello"
@@ -121,11 +128,11 @@ overridden:
     Dim MyObject = New Object()
     ```
 
-- Option Strict Off – data types don't need to be declared for each variable. Conversions between
+- Option Strict Off: data types don't need to be declared for each variable. Conversions between
   types, when possible, are performed implicitly. (By declaring data types, unnecessary conversions
   can be avoided, and performance improved).
 
-## .Net assembly references
+## .NET assembly references
 
 Synchronize establishes certain system assembly references before compiling your scripts. These
 references apply to all scripts and can't be overridden.
@@ -137,12 +144,12 @@ These references are:
 - System.Data.dll
 - System.Xml.dll
 
-System.DirectoryServices, in particular, is ”off-limits” to your scripts so as to prevent direct
+System.DirectoryServices, in particular, is "off-limits" to your scripts so as to prevent direct
 access to Active Directory and other LDAP identity providers. This restriction is desirable, as it
 prevents your script from acting in conflict with Synchronize, which, after all, has ultimate
 responsibility for updating these providers.
 
-## .Net Namespaces
+## .NET namespaces
 
 Synchronize imports certain namespaces when compiling your scripts. These imports apply to all
 scripts and can't be overridden.
@@ -155,7 +162,7 @@ These imports are:
 - Imports System.IO
 - Imports System.Math
 
-.Net namespaces other than those listed here can still be accessed by specifying the fully-qualified
+.NET namespaces other than those listed here can still be accessed by specifying the fully qualified
 namespace. For example, a DataSet (which belongs to the System.Data namespace) can be read from a
 file as follows:
 

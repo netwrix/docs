@@ -1,19 +1,24 @@
 ---
-title: "Manage the Bad Words List"
-description: "Manage the Bad Words List"
+title: "Manage the Bad Words List in a Directory Manager Portal"
+description: "Add, update, and remove words in a portal's bad words list, and turn the bad words check on or off."
+keywords:
+  - bad words list
+  - Filter Bad Words
+  - portal word filter
+  - Admin Center portal design
 sidebar_position: 70
 ---
 
-# Manage the Bad Words List
+# Manage the Bad Words List in a Directory Manager Portal
 
-Use Directory Manager to restrict portal users from saving data containing words that might
+Use Directory Manager to restrict portal users from saving data that contains words that might
 be offensive. You can maintain a list of undesired words for a portal. When a user enters a value
 that contains a word on the list, the portal doesn't save the entry until the word is removed or
 corrected.
 
 The bad words check applies to the following:
 
-- Fields with the ‘Filter Bad Words’ option enabled in field properties
+- Fields with the **Filter Bad Words** option enabled in field properties
 - History notes that a user enters for a logged history action
 
 ## Add a Bad Word to the List
@@ -54,11 +59,11 @@ The bad words check applies to the following:
 3. Select an identity store under **Design Settings** to customize the portal for it.  
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
-4. Click _Bad Words List_ in the left pane.
+4. Click **Bad Words List** in the left pane.
 5. On the **Bad Words List** page, click **Remove** for a bad word to remove it.
 6. Click **Save**.
 
-## Enable/Disable the Bad Words Check
+## Enable or Disable the Bad Words Check
 
 1. In Admin Center, select **Applications** in the left pane.  
    On the **GroupID Portal** tab, a portal's card displays its info.
@@ -69,5 +74,5 @@ The bad words check applies to the following:
 4. Click **Bad Words List** in the left pane.
 5. On the **Bad Words List** page, disable the toggle button at the top of the page to disable the
    bad word check in the portal.  
-   You can apply the check any time by enabling the toggle button.
+   You can apply the check at any time by enabling the toggle button.
 6. Click **Save**.

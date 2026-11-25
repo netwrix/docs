@@ -1,12 +1,17 @@
 ---
-title: "Get-Mailbox"
-description: "Get-Mailbox"
+title: "Get-Mailbox Cmdlet in Directory Manager"
+description: "Retrieve basic information about mailboxes in an identity store that match your criteria with the Get-Mailbox cmdlet."
+keywords:
+  - Get-Mailbox
+  - retrieve mailbox
+  - mailbox information
+  - PowerShell cmdlet
 sidebar_position: 10
 ---
 
-# Get-Mailbox
+# Get-Mailbox Cmdlet in Directory Manager
 
-Use the Get-Mailbox commandlet to retrieve basic information about a mailbox that match your given
+Use the Get-Mailbox cmdlet to retrieve basic information about mailboxes that match your given
 criteria.
 
 ## Syntax
@@ -44,6 +49,6 @@ Get-MailBox -Identity "OsamaMailBox"
 
 **See Also**
 
-- [All Commands](/docs/directorymanager/11.1/managementshell/commands.md)
-- [Mailbox Commands](/docs/directorymanager/11.1/managementshell/mailbox/overview.md)
-- [Parameters](/docs/directorymanager/11.1/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.1/managementshell/commands.md)
+- [Mailbox Cmdlets in Directory Manager](/docs/directorymanager/11.1/managementshell/mailbox/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.1/managementshell/parameters.md)

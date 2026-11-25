@@ -1,13 +1,19 @@
 ---
-title: "ConvertTo-StaticGroup"
-description: "ConvertTo-StaticGroup"
+title: "ConvertTo-StaticGroup Cmdlet"
+description: "Convert a Smart Group or Dynasty to a static group in Directory Manager by removing its Smart Group or Dynasty attributes."
+keywords:
+  - ConvertTo-StaticGroup
+  - convert Smart Group to static group
+  - convert Dynasty
+  - Directory Manager cmdlet
+  - Management Shell
 sidebar_position: 10
 ---
 
-# ConvertTo-StaticGroup
+# ConvertTo-StaticGroup Cmdlet
 
-The ConvertTo-StaticGroup commandlet converts an existing Smart Group or a dynasty to a static group
-by removing the attributes of the Smart Group or the dynasty.
+The ConvertTo-StaticGroup cmdlet converts an existing Smart Group or a Dynasty to a static group
+by removing the attributes of the Smart Group or the Dynasty.
 
 ## Syntax
 
@@ -25,7 +31,7 @@ ConvertTo-StaticGroup
 
 Example 1:
 
-The following commandlets converts a Smart Group in AdStore9 identity store Smart_Training to a
+The following cmdlet converts the Smart Group Smart_Training in the AdStore9 identity store to a
 static group.
 
 ```

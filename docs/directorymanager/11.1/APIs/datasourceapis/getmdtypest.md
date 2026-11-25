@@ -1,14 +1,19 @@
 ---
-title: "Get Metadata of Data Source by Server Enter and ID"
-description: "Get Metadata of Data Source by Server Enter and ID"
+title: "Get Data Source Metadata by Server and Type API"
+description: "Retrieve data source metadata by file server type and data source type, such as Text/CSV on a local server or OneDrive."
+keywords:
+  - data source metadata by type
+  - GetMetaDataByType endpoint
+  - file server type
+  - local server data source metadata
 sidebar_position: 110
 ---
 
-# Get Metadata of Data Source by Server Enter and ID
+# Get Data Source Metadata by Server and Type API
 
-Use this API to retrieve metadata information of all data sources defined so far in Directory
-Manager by File Server type (i.e., local server or a cloud server) and by data source type (i.e., MS
-Excel or Text/CSV or MS Access or SQL server).
+Use this API to retrieve metadata information about all data sources defined so far in Directory
+Manager by file server type (a local server or a cloud server) and by data source type (Microsoft
+Excel, Text/CSV, Microsoft Access, or SQL Server).
 
 ## Endpoint
 
@@ -18,7 +23,7 @@ Excel or Text/CSV or MS Access or SQL server).
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

@@ -1,14 +1,18 @@
 ---
-title: "Customize the Navigation Bar"
-description: "Customize the Navigation Bar"
+title: "Customize the Directory Manager Portal Navigation Bar"
+description: "Add, update, rearrange, and remove nodes, sub-nodes, and tabs on the left navigation bar of a Directory Manager portal."
+keywords:
+  - portal navigation bar
+  - navigation nodes
+  - sub-nodes and tabs
+  - access level
+  - portal design
 sidebar_position: 60
 ---
 
-# Customize the Navigation Bar
+# Customize the Directory Manager Portal Navigation Bar
 
-Use the left navigation bar in a portal to navigate through these nodes:
-
-These nodes are:
+Use the left navigation bar in a portal to navigate through the following nodes:
 
 - Create New
 - Dashboard
@@ -20,10 +24,10 @@ These nodes are:
 - Synchronize
 - Reports
 
-On expanding a node, its sub-nodes are displayed. On clicking a sub-node, users are redirected to a
-page that contains tabs under that sub-node. It is as:
+When a user expands a node, its sub-nodes are displayed. When a user clicks a sub-node, the portal opens a
+page that contains tabs under that sub-node. The following image shows the navigation bar:
 
-![navigation_bar](/images/directorymanager/11.1/admincenter/portal/design/navigation_bar.webp)
+![Portal navigation bar with expanded nodes and sub-nodes](/images/directorymanager/11.1/admincenter/portal/design/navigation_bar.webp)
 
 Use Directory Manager to customize the nodes, sub-nodes, and their respective tabs.
 
@@ -51,15 +55,15 @@ Use Directory Manager to customize the nodes, sub-nodes, and their respective ta
 
 ## Add a Node (Category)
 
-The following nodes have been defined by default on the navigation bar:
+The following nodes are defined by default on the navigation bar:
 
 | Category (Node) | Mapped To                                                                                                                                                                                                                                                              |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Create New      | The Create New button on the portal’s navigation bar. It has four buttons as its sub-nodes: Group, User, Mailbox, and Contact. Sub nodes don't have tabs.                                                                                                             |
+| Create New      | The Create New button on the portal's navigation bar. It has four buttons as its sub-nodes: Group, User, Mailbox, and Contact. Sub-nodes don't have tabs.                                                                                                             |
 | High Priority   | The Dashboard node on the navigation bar. It has one sub-node, Dashboard, with no tab.                                                                                                                                                                                 |
 | Groups          | The Groups node on the navigation bar. It has four sub-nodes: All Groups, My Groups, Transfer Ownership, and Deleted Groups. All except the Transfer Ownership sub-node have tabs.                                                                                     |
 | Users           | The Users node on the navigation bar. It has two sub-nodes: My Direct Reports and Linked Accounts. Only the My Direct Reports sub-node has tabs.                                                                                                                       |
-| Requests        | The Requests node on the navigation bar. It has three sub-nodes: All Requests, My Requests, and Request Inbox. Sub nodes don't have tabs.                                                                                                                             |
+| Requests        | The Requests node on the navigation bar. It has three sub-nodes: All Requests, My Requests, and Request Inbox. Sub-nodes don't have tabs.                                                                                                                             |
 | Others          | The History node on the navigation bar. It has one sub-node, History, that has tabs.                                                                                                                                                                                   |
 | External Links  | The Entitlement, Synchronize, and Reports nodes on the navigation bar. It has three sub-nodes, Entitlement, Synchronize, and Reports, that can be modified to a limited extent. You can't manage the tabs or other options displayed under these nodes in the portal. |
 
@@ -85,11 +89,11 @@ Note the following:
 5. Click **Navigation Bar Categories** to define a new node.
 6. On the **Navigation Bar Categories** tab, click **Add**. The **Add Navigation Category** pane is
    displayed.
-7. Enter a name for the node in the **Title** box. The node will be displayed with this name on the
+7. Enter a name for the node in the **Title** box. The node is displayed with this name on the
    navigation bar.
-8. In the **Access Level** dropdown list, select a security role. The node would be visible to
+8. In the **Access Level** dropdown list, select a security role. The node is visible to
    users of this role and roles with a priority value higher than this role. For all other users,
-   the node would be hidden. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
+   the node is hidden. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
    Select _Never_ to hide the node for all users.
 9. In the **Tooltip Text** box, enter the text to appear when a user hovers the mouse over the node.
 10. Use the **Icon Class** box to upload the image (icon) to be displayed with the node name.
@@ -109,7 +113,7 @@ Note the following:
 
 ## Update the Details of a Node
 
-You can update the following details for the Groups, Users, and Requests nodes on the portal’s
+You can update the following details for the Groups, Users, and Requests nodes on the portal's
 navigation bar:
 
 - Node name
@@ -149,7 +153,7 @@ The _Create New_, _High Priority_, _Others_, and _External Links_ nodes can't be
 
 ## Remove a User-defined Node
 
-You can delete user-defined nodes on the portal’s navigation bar. System-defined nodes can't be
+You can delete user-defined nodes on the portal's navigation bar. System-defined nodes can't be
 deleted.
 
 **To delete a node:**
@@ -166,7 +170,7 @@ deleted.
 
 ## Add a Sub-node to a Node
 
-You can customize the nodes on the portal’s navigation bar by defining sub-nodes for them. Note
+You can customize the nodes on the portal's navigation bar by defining sub-nodes for them. Note
 that:
 
 - You can't add sub-nodes to the _Create New_ node.
@@ -182,9 +186,9 @@ that:
    different portal for each of these.
 4. Click **Navigation Bar** in the left pane. The **Navigation Bar** page is displayed with the
    **Navigation Bars** tab selected by default.
-5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal’s navigation
+5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal's navigation
    bar; its sub-nodes get listed under **Name**.
-6. To add a sub-node to the selected node, click **Add** .The **Add Link** pane is displayed.
+6. To add a sub-node to the selected node, click **Add**. The **Add Link** pane is displayed.
 7. In the **Tab Name** box, enter a name for the sub-node.
 8. In the **Display Text** box, enter the text to display as the sub-node name on the navigation
    bar.
@@ -192,10 +196,10 @@ that:
    sub-node.
 10. Use the **Icon Class** box to upload the image (icon) to be displayed with the sub-node name.
     See step 10 in the Add a Node (Category) topic for details.
-    The facility to upload an image isn't available for sub-nodes under _Groups_. _Users_,
+    The facility to upload an image isn't available for sub-nodes under _Groups_, _Users_,
     _Requests_, and _External Links_.
 11. In the **URL** box, provide the URL of a webpage to link to this sub-node. The respective
-    webpage will be displayed when users click the sub-node in the portal.
+    webpage is displayed when users click the sub-node in the portal.
     Use the following formats to specify the URL:
 
     - To link a page from within the Directory Manager portal template:
@@ -206,11 +210,11 @@ that:
     Click **View in Browser** to preview the webpage.
 
 12. Select the **Open in new tab** checkbox to open the linked page in a new tab in the browser.
-    If you don't select it, users will directly navigate to the linked page. They will have to use
-    the browser’s back button to return to the previous page.
-13. In the **Access Level** dropdown list, select a security role. The sub-node would be visible
+    If you don't select it, users navigate directly to the linked page. They have to use
+    the browser's back button to return to the previous page.
+13. In the **Access Level** dropdown list, select a security role. The sub-node is visible
     for users of this role and roles with a priority value higher than this role. For all other
-    users, the sub-node would be hidden. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
+    users, the sub-node is hidden. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
     Select _Never_ to hide the sub-node for all users.
 14. Click **OK**.
 15. Click **Save** on the **Navigation Bar** page.
@@ -220,7 +224,7 @@ that:
 You can change the following for a sub-node:
 
 - The name of the sub-node
-- The display name of the sub-node (this is the sub-node’s name on the portal’s navigation bar)
+- The display name of the sub-node (this is the sub-node's name on the portal's navigation bar)
 - The tooltip text for the sub-node
 - The URL of the webpage that opens when a user clicks the sub-node
 - Access level
@@ -235,7 +239,7 @@ You can change the following for a sub-node:
    different portal for each of these.
 4. Click **Navigation Bar** in the left pane. The **Navigation Bar** page is displayed with the
    **Navigation Bars** tab selected by default.
-5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal’s navigation
+5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal's navigation
    bar; its sub-nodes get listed under **Name**.
 6. Click **Edit** for a sub-node to update its properties; the **Edit Link** pane is displayed.
 7. Follow steps 7-14 in the Add a Sub-node to a Node topic to update the required information and
@@ -249,11 +253,11 @@ You can change the following for a sub-node:
    On the **GroupID Portal** tab, a portal's card displays its info.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Select an identity store under **Design Settings** to customize the portal for it.
-   All identity stores linked with the portal are listed under Design Settings. You can design a
+   All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Navigation Bar** in the left pane. The **Navigation Bar** page is displayed with the
    **Navigation Bars** tab selected by default.
-5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal’s navigation
+5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal's navigation
    bar; its sub-nodes get listed under **Name**.
 6. To rearrange the sub-nodes under the selected node, click the equal sign for a sub-node and drag
    to change its position.
@@ -269,7 +273,7 @@ You can change the following for a sub-node:
    different portal for each of these.
 4. Click **Navigation Bar** in the left pane. The **Navigation Bar** page is displayed with the
    **Navigation Bars** tab selected by default.
-5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal’s navigation
+5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal's navigation
    bar; its sub-nodes get listed under **Name**.
 6. Click **Remove** for a sub-node to remove it. This also removes all tabs defined for the
    sub-node.
@@ -295,7 +299,7 @@ You can modify the following for a tab:
    different portal for each of these.
 4. Click **Navigation Bar** in the left pane. The **Navigation Bar** page is displayed with the
    **Navigation Bars** tab selected by default.
-5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal’s navigation
+5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal's navigation
    bar; its sub-nodes get listed under **Name**.
 6. Click **Edit** for a system-defined sub-node. On the **Edit Link** pane, the **Links** area lists
    the tabs for the sub-node (in case the sub-node has tabs).
@@ -306,8 +310,8 @@ You can modify the following for a tab:
     2. **Display Text** – The text displayed as the tab name in the portal.
     3. **Tooltip Text** – The text that appears when a user hovers the mouse over the tab.
     4. **URL** – The address of the webpage to display when a user clicks the tab.
-    5. **Access Level** – Select a security role. The tab would be visible to users of this role and
-       roles with a priority value higher than this role. For all other users, the tab would be
+    5. **Access Level** – Select a security role. The tab is visible to users of this role and
+       roles with a priority value higher than this role. For all other users, the tab is
        hidden. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
        Select _Never_ to hide the tab for all users.
 
@@ -320,11 +324,11 @@ You can modify the following for a tab:
    On the **GroupID Portal** tab, a portal's card displays its info.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Select an identity store under **Design Settings** to customize the portal for it.
-   All identity stores linked with the portal are listed under **Design Setting**s. You can design a
+   All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Navigation Bar** in the left pane. The **Navigation Bar** page is displayed with the
    **Navigation Bars** tab selected by default.
-5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal’s navigation
+5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal's navigation
    bar; its sub-nodes get listed under **Name**.
 6. Click **Edit** for a system-defined sub-node. On the **Edit Link** pane, the **Links** area lists
    the tabs for the sub-node (in case the sub-node has tabs).
@@ -343,7 +347,7 @@ You can modify the following for a tab:
    different portal for each of these.
 4. Click **Navigation Bar** in the left pane. The **Navigation Bar** page is displayed with the
    **Navigation Bars** tab selected by default.
-5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal’s navigation
+5. In the **Select Navigation Bar Type** dropdown list, select a node on the portal's navigation
    bar; its sub-nodes get listed under **Name**.
 6. Click **Edit** for a system-defined sub-node. On the **Edit Link** pane, the **Links** area lists
    the tabs for the sub-node (in case the sub-node has tabs).

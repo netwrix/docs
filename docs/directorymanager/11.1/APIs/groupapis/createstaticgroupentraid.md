@@ -1,13 +1,19 @@
 ---
-title: "Create an Entra ID Static Group"
-description: "Create an Entra ID Static Group"
+title: "Create an Entra ID Static Group with the Directory Manager API"
+description: "Use the Static Group API to create a security, distribution, Microsoft 365, or Teams group in a Microsoft Entra ID identity store, with a sample request and response."
+keywords:
+  - Directory Manager API
+  - Entra ID static group
+  - create group API
+  - Microsoft Entra ID
+  - POST StaticGroup
 sidebar_position: 20
 ---
 
-# Create an Entra ID Static Group
+# Create an Entra ID Static Group with the Directory Manager API
 
-Using this API you can create a Static Group in a Microsoft Entra ID identity store. The following
-table lists the types of Static Groups you can create using this API.
+Use this API to create a Static Group in a Microsoft Entra ID identity store. The following
+table lists the types of Static Groups you can create with this API.
 
 | Group Type             | Value |
 | ---------------------- | ----- |
@@ -16,7 +22,7 @@ table lists the types of Static Groups you can create using this API.
 | Microsoft Office Group | 16    |
 | Teams                  | 32    |
 
-Each group type has its associated value. To create a Static Group of a specific type, provide its
+Each group type has an associated value. To create a Static Group of a specific type, provide its
 value in the Value attribute of the GroupType parameter.
 
 ## Endpoint
@@ -227,7 +233,7 @@ value in the Value attribute of the GroupType parameter.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

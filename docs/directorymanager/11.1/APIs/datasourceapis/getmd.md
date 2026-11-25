@@ -1,15 +1,20 @@
 ---
-title: "Get Metadata of Data Sources"
-description: "Get Metadata of Data Sources"
+title: "Get Data Source Metadata API"
+description: "Retrieve metadata, such as name, type, and icon, for the data sources defined in Directory Manager."
+keywords:
+  - data source metadata API
+  - GetMetaData endpoint
+  - data source types
+  - data source icon metadata
 sidebar_position: 120
 ---
 
-# Get Metadata of Data Sources
+# Get Data Source Metadata API
 
-Using this API, you can get metadata information of data sources defined so far in Directory
+Use this API to get metadata information about the data sources defined so far in Directory
 Manager.
 
-See the [Create a Data Source](/docs/directorymanager/11.1/admincenter/datasource/create.md) topic for creating a data
+See the [Create Data Sources in Directory Manager](/docs/directorymanager/11.1/admincenter/datasource/create.md) topic for creating a data
 source using Directory Manager.
 
 ## Endpoint
@@ -20,7 +25,7 @@ source using Directory Manager.
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

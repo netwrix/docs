@@ -1,12 +1,18 @@
 ---
-title: "Get-TargetSchedules"
-description: "Get-TargetSchedules"
+title: "Get-TargetSchedules Cmdlet in Directory Manager"
+description: "Use the Get-TargetSchedules cmdlet to list the scheduled jobs that run on a specific group or organizational unit."
+keywords:
+  - Get-TargetSchedules
+  - target schedules
+  - group schedules
+  - OU schedules
+  - Management Shell cmdlet
 sidebar_position: 20
 ---
 
-# Get-TargetSchedules
+# Get-TargetSchedules Cmdlet in Directory Manager
 
-The commandlet Get-TargetSchedules retrieves the scheduled jobs of the given target (group/OU).
+The commandlet Get-TargetSchedules retrieves the scheduled jobs of the given target (group or OU).
 
 ## Syntax
 

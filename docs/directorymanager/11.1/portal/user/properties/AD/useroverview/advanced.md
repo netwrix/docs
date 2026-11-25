@@ -1,10 +1,15 @@
 ---
-title: "Advanced tab"
-description: "Object properties - Advanced tab"
+title: "Advanced User and Mailbox Settings in Directory Manager"
+description: "Set the home page, employee details, address book visibility, and mail forwarding for a user or mailbox on the Advanced tab."
+keywords:
+  - Advanced tab
+  - hide from address book
+  - mailbox forwarding
+  - employee ID
 sidebar_position: 20
 ---
 
-# Advanced tab
+# Advanced User and Mailbox Settings in Directory Manager
 
 Use this tab to specify advanced settings for a user/mailbox.
 
@@ -12,7 +17,7 @@ Use this tab to specify advanced settings for a user/mailbox.
 
 The URL of the user/mailbox's website.
 
-Use the Add and Remove buttons to add and remove the URL.
+Use the Add and Remove buttons to add or remove the URL.
 
 **Emp Type**
 
@@ -27,7 +32,7 @@ The employee ID of the user/mailbox.
 Indicates whether to hide the user in the messaging provider's address book (such as the Outlook
 address book).
 
-When selected, the user will not be visible in the address book.
+When selected, the user isn't visible in the address book.
 
 This option is available for user objects only.
 
@@ -46,13 +51,13 @@ The server name of the messaging provider where the mailbox resides.
 An email address or mailbox object that should receive the emails sent to the particular mailbox.
 
 Enter a search string to locate the object to add as a recipient, or click the ellipsis button to
-use the [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
+use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
 
 **Deliver messages to both forwarding address and mailbox**
 
 Select the checkbox to ensure that any email sent to the mailbox is also forwarded to the
 object/email specified in the Recipient box.
 
-- When no recipient is set and this checkbox is cleared, emails are only sent to the mailbox.
-- However, when an email/object is specified in the Recipient box and this checkbox is cleared,
-  emails will not be sent to the mailbox but only to the recipient.
+- When no recipient is set and this checkbox is cleared, emails are sent only to the mailbox.
+- When an email/object is specified in the Recipient box and this checkbox is cleared,
+  emails aren't sent to the mailbox, only to the recipient.

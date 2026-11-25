@@ -1,17 +1,23 @@
 ---
-title: "Group Reports"
-description: "Group Reports"
+title: "Group Reports in Directory Manager"
+description: "Browse the group report templates in Directory Manager, from group scope and membership to expiration and Smart Group reports, and generate one."
 sidebar_position: 40
+keywords:
+  - Directory Manager group reports
+  - group report templates
+  - Smart Group report
+  - group membership report
+  - group expiration report
 ---
 
-# Group Reports
+# Group Reports in Directory Manager
 
-Directory Manager Reports contains reports for the Group objects in the directory. Search a specific
-report by typing its name in the **Search Reports** box.
+Directory Manager Reports include reports for the group objects in the directory. To find a specific
+report, type its name in the **Search Reports** box.
 
-Click any of the report template from the list to [Generate Reports](/docs/directorymanager/11.1/portal/reports/generate.md).
+Click any report template in the list to [Generate Reports in Directory Manager](/docs/directorymanager/11.1/portal/reports/generate.md).
 
-Following is the list of reports for this category:
+The following table lists the reports in this category:
 
 | Reports                                                                         | Description                                                                                                                                                                                          |
 | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,8 +29,8 @@ Following is the list of reports for this category:
 | All global groups in domain                                                     | Provides a list of groups with Global scope in the domain.                                                                                                                                           |
 | All global security groups in domain                                            | Provides a list of security groups with Global scope in the domain.                                                                                                                                  |
 | All groups in domain                                                            | Provides a list of groups in the domain.                                                                                                                                                             |
-| All groups with report to originator set to False                               | Provides a list of groups with the ‘Send delivery reports to message originator’ option not selected. The message sender doesn't receive a delivery report on sending a message/email.              |
-| All groups with report to originator set to True                                | Provides a list of groups with the ‘Send delivery reports to message originator’ option selected. The message sender receives a delivery report on sending a message/email.                          |
+| All groups with report to originator set to False                               | Provides a list of groups with the ‘Send delivery reports to message originator’ option not selected. The message sender doesn't receive a delivery report on sending a message or email.              |
+| All groups with report to originator set to True                                | Provides a list of groups with the ‘Send delivery reports to message originator’ option selected. The message sender receives a delivery report on sending a message or email.                          |
 | All groups with report to owner set to False                                    | Provides a list of groups with the ‘Send delivery reports to group manager’ option not selected. The manager doesn't receive delivery reports for the group.                                        |
 | All groups with report to owner set to True                                     | Provides a list of groups with the ‘Send delivery reports to group manager’ option selected. The manager receives delivery reports for the group.                                                    |
 | All security groups in domain                                                   | Provides a list of security groups in the domain.                                                                                                                                                    |
@@ -44,9 +50,9 @@ Following is the list of reports for this category:
 | Groups and number of members with nesting                                       | Provides the grand total number of members of all groups in the selected container of the domain.                                                                                                    |
 | Groups and owners                                                               | Provides a list of owners and the groups they own.                                                                                                                                                   |
 | Groups and their last modified time                                             | Provides the date and time of the last change made to a group, such as change in membership.                                                                                                         |
-| Groups changed in X days                                                        | Provides a list of groups that are changed in one day, seven days or one month.                                                                                                                      |
-| Groups created in X days                                                        | Provides a list of groups created in the last one day, seven days or one month.                                                                                                                      |
-| Groups hidden from address list                                                 | Provides a list of groups that don't appear in global address list (GAL) and other address lists that are defined in the Exchange organization.                                                     |
+| Groups changed in X days                                                        | Provides a list of groups that changed in one day, seven days, or one month.                                                                                                                      |
+| Groups created in X days                                                        | Provides a list of groups created in the last one day, seven days, or one month.                                                                                                                      |
+| Groups hidden from address list                                                 | Provides a list of groups that don't appear in the global address list (GAL) and other address lists that are defined in the Exchange organization.                                                     |
 | Groups that have no members                                                     | Provides a list of groups without members.                                                                                                                                                           |
 | Groups which don't require authentication to send to (Exchange)                | Provides a list of groups that can receive messages from anonymous users. This allows external senders to send messages to distribution groups.                                                      |
 | Groups which require authentication to send to (Exchange)                       | Provides a list of groups that can't receive messages from anonymous users. This prevents external senders from sending messages to distribution groups.                                            |
@@ -57,7 +63,7 @@ Following is the list of reports for this category:
 | Groups with message size restrictions                                           | Provides a list of groups with restriction on the maximum message size.                                                                                                                              |
 | Groups with no owner                                                            | Provides a list of groups that don't have an owner.                                                                                                                                                 |
 | Groups with security types                                                      | Provides a list of the groups with security types. Directory Manager supports three security types: Public, Private, and Semi-Private.                                                               |
-| Groups without additional owners                                                | Provides a list of groups that don't have any Directory Manager or Microsoft Exchange additional owner.                                                                                             |
+| Groups without additional owners                                                | Provides a list of groups that don't have any Directory Manager or Microsoft Exchange additional owners.                                                                                             |
 | Groups without expiration policy defined                                        | Provides a list of groups without an expiration policy defined.                                                                                                                                      |
 | Groups without message delivery restriction                                     | Provides a list of groups with no message delivery restrictions. Members of such groups can send messages to users in your Exchange organization and can accept or reject messages sent by any user. |
 | Groups without message size restrictions                                        | Provides a list of groups that have no message size restriction on an entire message as a whole, or the size of individual parts of a message, or both.                                              |
@@ -70,19 +76,19 @@ Following is the list of reports for this category:
 | Mail-enabled groups with no members (Exchange)                                  | Provides a list of all mail-enabled groups having no members.                                                                                                                                        |
 | Mail-enabled groups with no owner (Exchange)                                    | Provides a list of mail-enabled groups having no owner.                                                                                                                                              |
 | Mail enabled Security Groups (Exchange)                                         | Provides a list of mail-enabled groups in the domain.                                                                                                                                                |
-| Owners and objects they own Listed in [User Reports](/docs/directorymanager/11.1/portal/reports/user.md) category as well. | Provides a list of managers and their direct reports.                                                                                                                                                |
+| Owners and objects they own Listed in [User Reports in Directory Manager](/docs/directorymanager/11.1/portal/reports/user.md) category as well. | Provides a list of managers and their direct reports.                                                                                                                                                |
 | Security Groups managed by GroupID                                              | Provides a list of the security groups that are managed by Directory Manager.                                                                                                                        |
 | Smart Groups/Dynasties with their update status                                 | Provides a list of Smart Groups and Dynasties with their update status information.                                                                                                                  |
 | Smart Groups and Included members                                               | Provides a list of Smart Group members that are mentioned in the Include list on the Include/Exclude tab of the Query Designer window.                                                               |
 | Smart Groups and number of expected members                                     | Provides a count of the expected members for the Smart Groups in the selected container or domain.                                                                                                   |
-| Smart Groups and their expected membership                                      | Provides information of expected members for the Smart Groups in the selected container or domain.                                                                                                   |
+| Smart Groups and their expected membership                                      | Provides information about expected members for the Smart Groups in the selected container or domain.                                                                                                   |
 | Smart Groups in current domain                                                  | Provides a list of Smart Groups in the domain.                                                                                                                                                       |
 | Smart Groups with Exclude members                                               | Provides a list of Smart Group members that are mentioned in the Exclude list on the Include/Exclude tab of the Query Designer window.                                                               |
 
 **See Also:**
 
-- [Generate Reports](/docs/directorymanager/11.1/portal/reports/generate.md)
-- [Manage Reports](/docs/directorymanager/11.1/portal/reports/manage.md)
-- [User Reports](/docs/directorymanager/11.1/portal/reports/user.md)
-- [Computer Reports](/docs/directorymanager/11.1/portal/reports/computer.md)
-- [Contact Reports](/docs/directorymanager/11.1/portal/reports/contact.md)
+- [Generate Reports in Directory Manager](/docs/directorymanager/11.1/portal/reports/generate.md)
+- [Manage Directory Manager Reports](/docs/directorymanager/11.1/portal/reports/manage.md)
+- [User Reports in Directory Manager](/docs/directorymanager/11.1/portal/reports/user.md)
+- [Directory Manager Computer Reports](/docs/directorymanager/11.1/portal/reports/computer.md)
+- [Contact Reports in Directory Manager](/docs/directorymanager/11.1/portal/reports/contact.md)

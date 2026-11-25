@@ -1,12 +1,17 @@
 ---
-title: "Create an Entra ID User"
-description: "Create an Entra ID User"
+title: "Create an Entra ID User with the Directory Manager API"
+description: "Create a user in a Microsoft Entra ID identity store by sending a POST request with the user attributes and directory role."
+keywords:
+  - Microsoft Entra ID
+  - create Entra ID user
+  - Directory Manager API
+  - POST Users endpoint
 sidebar_position: 20
 ---
 
-# Create an Entra ID User
+# Create an Entra ID User with the Directory Manager API
 
-Use this API to create a user in a Microsoft Entra ID based identity store.
+Use this API to create a user in a Microsoft Entra ID-based identity store.
 
 ## Endpoint
 
@@ -16,7 +21,7 @@ Use this API to create a user in a Microsoft Entra ID based identity store.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -231,7 +236,7 @@ Use this API to create a user in a Microsoft Entra ID based identity store.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

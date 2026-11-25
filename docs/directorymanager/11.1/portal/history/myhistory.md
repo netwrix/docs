@@ -1,15 +1,21 @@
 ---
-title: "My History"
-description: "My History"
+title: "View My History in the Directory Manager Portal"
+description: "View, filter, annotate, and export the log of actions you performed in the identity store, plus changes others made to your profile."
+keywords:
+  - My History
+  - my account actions log
+  - My History Grid Filter
+  - profile change history
+  - export my history
 sidebar_position: 10
 ---
 
-# My History
+# View My History in the Directory Manager Portal
 
-To view a log of all actions you have performed in the identity store using the following: , click
-**History** on the left navigation bar.
+To view a log of all actions you have performed in the identity store, click **History** on the left
+navigation bar.
 
-On the History page, click **My History** tab to view your history.
+On the History page, click the **My History** tab to view your history.
 
 The log also tracks any change that another user makes to your profile using the portal.
 
@@ -19,8 +25,8 @@ History data is available in two modes:
 
 ### Detailed view
 
-Displays history data in a descriptive and user-friendly manner. Items are sorted according to the
-date and time of modification, showing the most recent at the top.
+Displays history data in a descriptive and user-friendly manner. Items are sorted by the date and
+time of modification, showing the most recent at the top.
 
 This is the default view of history data.
 
@@ -37,21 +43,21 @@ action along with their old and new values.
 
 ## Filter history data
 
-Step 1 – Click **My History Grid Filter** to specify a criteria for filtering history data.
+Step 1 – Click **My History Grid Filter** to specify criteria for filtering history data.
 
 Step 2 – Click **Add Filter** to add the filter criteria.
 
 Step 3 – From the **Select a filter** list, select attributes to filter history data on the basis of
 the attribute modified.
 
-Step 4 – Two more boxes get displayed next to **Select a filter** box upon selecting a filter.
+Step 4 – Two more boxes are displayed next to the **Select a filter** box after you select a filter.
 
 - **Select an Operator**: Select an operator from the first list.
 - **Select a Value**: Specify a value for the selected operator in the second box.
 
 For example, if you select '_Modified on_' from the first list, _'is exactly_' from the second list,
 and specify a date in the third box, then history items that were modified on the specified date
-will be displayed.
+are displayed.
 
 Step 5 – Click **Apply Filter**.
 
@@ -68,15 +74,16 @@ changed the security type for a group.
 Only the user who added the note can update it. Other users can only view this note; they can't
 edit or add comments.
 
-- The Add Note button is available next to a history item listed.
+- The Add Note button is available next to a listed history item.
 - After you add a note, the Add Note button changes to View Note. All portal users can use this
   button to view the note.
 
 ### Add a note
 
-The option to add a note is available on the My Account History card on Dashboard, and all History
-pages (that is, My History, [My Direct Reports' History](/docs/directorymanager/11.1/portal/history/mydirectreport.md), and
-[My Groups' History](/docs/directorymanager/11.1/portal/history/mydirectorygroup.md) pages.
+The option to add a note is available on the My Account History card on the Dashboard and on all
+History pages: My History,
+[View My Direct Reports' History in Directory Manager](/docs/directorymanager/11.1/portal/history/mydirectreport.md), and
+[View and Filter History of Groups You Own](/docs/directorymanager/11.1/portal/history/mydirectorygroup.md).
 
 Step 7 – Click the **Add Note** button next to a history item to add a note to it.
 
@@ -118,7 +125,7 @@ Step 3 – Click **Update Note**.
 
 ## Export history data
 
-You can export history data displayed to an external file.
+You can export the displayed history data to an external file.
 
 Click the **Export History** button and select the file type to export history data to. Supported
 formats are:

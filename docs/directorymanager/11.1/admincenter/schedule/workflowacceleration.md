@@ -1,14 +1,20 @@
 ---
-title: "Workflow Acceleration Schedule"
-description: "Workflow Acceleration Schedule"
+title: "Update the Directory Manager Workflow Acceleration Schedule"
+description: "Change the scheduler service, triggers, and authentication of the schedule that accelerates pending workflow requests to approvers."
+keywords:
+  - workflow acceleration
+  - approver acceleration
+  - pending workflow requests
+  - scheduler service
+  - Directory Manager schedule
 sidebar_position: 150
 ---
 
-# Workflow Acceleration Schedule
+# Update the Directory Manager Workflow Acceleration Schedule
 
 A Workflow Acceleration schedule facilitates the workflow approver acceleration process for workflow
-requests. This schedule is auto created when approver acceleration is enabled for the identity
-store. See the [Workflow Approver Acceleration](/docs/directorymanager/11.1/admincenter/workflow/approveracceleration.md) topic for
+requests. This schedule is created automatically when approver acceleration is enabled for the identity
+store. See the [Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.1/admincenter/workflow/approveracceleration.md) topic for
 additional information.
 
 By default, the schedule runs daily to accelerate workflow requests to approvers, according to
@@ -19,7 +25,7 @@ You can only update the existing Workflow Acceleration schedule.
 
 ## Update the Workflow Acceleration Schedule
 
-To update the Workflow Acceleration Schedule:
+To update the Workflow Acceleration schedule:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -32,12 +38,12 @@ Step 4 – On the Schedules page, click the plus sign next to Workflow Accelerat
 ellipsis button for the schedule and select **Edit**.
 
 Step 5 – On the Edit Schedule page, the Schedule Name and Name Preview boxes display the name of the
-schedule as read-only. Email notifications show the schedule with the name from _Name Preview_.
+schedule as read-only. Email notifications show the schedule with the name from Name Preview.
 
-Step 6 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
-responsible for triggering this schedule. The list displays a number of services that depends on the
+Step 6 – In the Scheduler Service Name dropdown list, select a Scheduler service to
+trigger this schedule. The list displays a number of services that depends on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
+service. See the [Directory Manager Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
 information.
 
 :::note
@@ -47,13 +53,13 @@ When selecting a Scheduler service, note the following:
 - The Scheduler service for the Directory Manager instance on which you are creating the schedule is
   selected by default. However, you can select the Scheduler service of another instance as well.
 
-- The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  newly-selected Scheduler service will trigger the schedule.
+- The Scheduler service can be changed even after creating the schedule. On the next run, the
+  newly selected Scheduler service triggers the schedule.
 
 - If the selected Scheduler service fails to trigger the schedule, then no other Scheduler service
   can be selected automatically.
 
-- If you run a schedule manually on the Admin Center, the Scheduler service of that instance
+- If you run a schedule manually in Admin Center, the Scheduler service of that instance
   is used.
 
 Step 7 – The Triggers area displays the default triggering frequency for the schedule.

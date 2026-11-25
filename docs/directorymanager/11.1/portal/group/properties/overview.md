@@ -1,28 +1,33 @@
 ---
-title: "Group Properties"
-description: "Group Properties"
+title: "View and Edit Group Properties in Directory Manager"
+description: "Learn what you can do on a group's properties page in the Directory Manager portal and find the page for each properties tab."
+keywords:
+  - group properties
+  - Directory Manager portal
+  - join or leave a group
+  - upgrade to Smart Group
+  - group vCard
 sidebar_position: 90
 ---
 
-# Group Properties
+# View and Edit Group Properties in Directory Manager
 
-You can view and manipulate the properties of groups in the connected identity store, depending on
+You can view and change the properties of groups in the connected identity store, depending on
 the permissions the Directory Manager administrator has granted you.
 
-Select the required object and click **Properties** on the toolbar. The object's properties page is
-displayed.
+Select the required object and click **Properties** on the toolbar. The portal displays the object's properties page.
 
 **On the group's properties page, you can:**
 
 1. Save the changes made in the properties by clicking **Save**.
 2. Click **Delete** to delete the group.
-3. **Join** a group as a
+3. **Join** a group temporarily or permanently. See
    [Join a group temporarily](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupjoinleave.md#join-a-group-temporarily) or
-   [Join a group permanently](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupjoinleave.md#join-a-group-permanently)
+   [Join a group permanently](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupjoinleave.md#join-a-group-permanently).
 
     Select **Other** to add other users to the group.
 
-4. **Leave** a group’s membership
+4. **Leave** a group temporarily or permanently. See
    [Leave a group temporarily](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupjoinleave.md#leave-a-group-temporarily) or
    [Leave a group permanently](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupjoinleave.md#leave-a-group-permanently).
 
@@ -49,7 +54,7 @@ displayed.
 10. For Teams, click **Subscribe Group** to get subscriptions of that Teams channel.
 11. To unsubscribe from the Teams channel, click **Unsubscribe Group** from the toolbar.
 
-## Group Properties
+## Group properties tabs
 
 - [Group properties - General tab](/docs/directorymanager/11.1/portal/group/properties/general.md)
 - [Group properties - Owner tab](/docs/directorymanager/11.1/portal/group/properties/owner.md)

@@ -1,10 +1,16 @@
 ---
-title: "Manage File Servers"
-description: "Manage File Servers"
+title: "Manage File Servers for Directory Manager Entitlement"
+description: "Select file servers in an Active Directory identity store, replicate their permissions to Elasticsearch, and manage the service account and shared folders."
+keywords:
+  - file server entitlement
+  - NTFS permissions replication
+  - Elasticsearch replication
+  - shared folder exclusion
+  - Directory Manager Entitlement
 sidebar_position: 10
 ---
 
-# Manage File Servers
+# Manage File Servers for Directory Manager Entitlement
 
 You can specify file servers in an Active Directory identity store to replicate their entitlement
 data to Elasticsearch for Directory Manager. You can then manage these entitlements using Directory
@@ -47,12 +53,12 @@ servers.
     1. Select the **Group** option button.
     2. Enter a search string in the box to search for your required group in the directory. You can
        also click **Advanced** to search the group by name, display name, and description. On
-       selecting a group, all server objects that are members of this group will be displayed in the
+       selecting a group, all server objects that are members of this group are displayed in the
        **Included File Servers** area.
 
 6. Click **Save** on the **Entitlement** page.
 
-#### File Server Details
+### File Server Details
 
 The following information is displayed for a file server in the **Included File Servers** area:
 
@@ -66,23 +72,23 @@ The following information is displayed for a file server in the **Included File 
       displayed here. See the Connect to a File Server Using a Different Account topic.
 
 - **RC Status**: Displays the replication status for the server with respect to the replication
-  performed by the GroupID Entitlement schedule. Different statuses are:
+  performed by the Directory Manager Entitlement schedule. Different statuses are:
 
     - **Request
-      ![rc_request](/images/directorymanager/11.1/admincenter/entitlement/ad/rc_request.webp):**
+      ![Request status icon](/images/directorymanager/11.1/admincenter/entitlement/ad/rc_request.webp):**
       permission data for the file server has never been replicated to Elasticsearch.
     - **Success
-      ![rc_success](/images/directorymanager/11.1/admincenter/entitlement/ad/rc_success.webp):**
-      permission data for the file server was successfully replicated when the GroupID Entitlement
+      ![Success status icon](/images/directorymanager/11.1/admincenter/entitlement/ad/rc_success.webp):**
+      permission data for the file server was successfully replicated when the Directory Manager Entitlement
       schedule last ran.
     - **Fail
-      ![rc_fail](/images/directorymanager/11.1/admincenter/entitlement/ad/rc_fail.webp):**
+      ![Fail status icon](/images/directorymanager/11.1/admincenter/entitlement/ad/rc_fail.webp):**
       replication failed for the server due to an error.
     - **Running
-      ![rc_running](/images/directorymanager/11.1/admincenter/entitlement/ad/rc_running.webp):**
-      the GroupID Entitlement schedule is running and replication is in progress.
+      ![Running status icon](/images/directorymanager/11.1/admincenter/entitlement/ad/rc_running.webp):**
+      the Directory Manager Entitlement schedule is running and replication is in progress.
 
-- **Last Replicated**: the date and time the GroupID Entitlement schedule last replicated
+- **Last Replicated**: the date and time the Directory Manager Entitlement schedule last replicated
   entitlement data for the file server to Elasticsearch. _N/A_ is displayed when the file server has
   never been replicated.
 - **Status**: Click **Get Status** to check the status of the file server, represented by the
@@ -99,7 +105,7 @@ The following information is displayed for a file server in the **Included File 
     - Click **Add to Exclude Server List** to exclude the file server from entitlement management.
       Directory Manager doesn't read and display entitlement data for an excluded server.
 
-#### Search File Servers
+### Search File Servers
 
 The _Search Filters_ area is available in both the **Included File Servers** and **Excluded File
 Servers** sections. Use it to search for a file server in the respective listing.
@@ -168,7 +174,7 @@ for entitlement management.
    a server and select **Edit**. On the **Edit Server** dialog box:
 
     - The **Server Shares** area displays the shared folders on the server.
-    - The name of the [GroupID Entitlement Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlement.md) that computes
+    - The name of the [Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlement.md) that computes
       the permissions on shared files and folders residing on the server and replicates them to
       Elasticsearch, is displayed next to **Job**.
 
@@ -177,7 +183,7 @@ for entitlement management.
 By default, Directory Manager computes and replicates permissions on all shared files/folders on the
 configured servers. You can exclude a folder on a server from this activity.
 
-When a folder is excluded, its entitlement data replicated to-date is also cleared.
+When a folder is excluded, its entitlement data replicated to date is also cleared.
 
 **To exclude a folder:**
 
@@ -208,9 +214,9 @@ can designate a different account for this activity.
    a server and select **Edit**.
 5. On the **Edit Server** dialog box, you can change the service account used to connect to the
    server for reading and updating permissions. The
-   [GroupID Entitlement Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlement.md),
-   [Entitlement Scope Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlementscope.md), and
-   [Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlementtemporarypermissions.md)
+   [Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlement.md),
+   [Edit the Directory Manager Entitlement Scope Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlementscope.md), and
+   [Edit the Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlementtemporarypermissions.md)
    run in the context of the account specified here.
 
     - The **Use Identity Store Service Account** checkbox is selected by default, indicating that
@@ -230,8 +236,8 @@ can designate a different account for this activity.
 After adding a file server for entitlement management, it is essential to replicate object
 permissions from the file server to Elasticsearch.
 
-The [GroupID Entitlement Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlement.md) runs on a set frequency to
-replicate the effective NTFS permission for the file servers. You can also run this schedule any
+The [Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlement.md) runs on a set frequency to
+replicate the effective NTFS permission for the file servers. You can also run this schedule at any
 time manually for a specific file server or all file servers listed in the **Included File Servers**
 section on the **Entitlement** page.
 
@@ -243,24 +249,24 @@ section on the **Entitlement** page.
 3. Click **Entitlement** under **Settings** in the left pane.
 4. On the **Entitlement** page, you can manually replicate permissions for one or all file servers.
 
-    - **To replicate permissions for a server:**Select a file server in the **Included File
+    - **To replicate permissions for a server:** Select a file server in the **Included File
       Servers** area and click **Replicate**.
-    - **To replicate permissions for multiple servers:**In the **Included File Servers** area,
+    - **To replicate permissions for multiple servers:** In the **Included File Servers** area,
       select the checkboxes for the servers you want to replicate. To replicate all servers, select
       the checkbox in the header row. This displays the following icons:
 
-        **![replicate_permissions](/images/directorymanager/11.1/admincenter/entitlement/ad/replicate_permissions.webp)**
+        **![Toolbar icons shown when servers are selected](/images/directorymanager/11.1/admincenter/entitlement/ad/replicate_permissions.webp)**
 
         Either click the **Replicate** icon or the **Replicate** button.
 
-    This triggers the GroupID Entitlement schedule for the identity store, which computes and
+    This triggers the Directory Manager Entitlement schedule for the identity store, which computes and
     replicates the effective NTFS permissions granted to directory objects on shared resources on
     the servers. This process may take some time.
 
-    The **Last Replicated** column displays the date and time the GroupID Entitlement schedule last
+    The **Last Replicated** column displays the date and time the Directory Manager Entitlement schedule last
     ran.
 
-## Exclude a Server From Entitlement Management
+## Exclude a Server from Entitlement Management
 
 You can exclude a file server in the identity store from replication and entitlement management.
 
@@ -272,7 +278,7 @@ You can exclude a file server in the identity store from replication and entitle
 3. Click **Entitlement** under **Settings** in the left pane.
 4. On the **Entitlement** page, you can exclude one or more servers.
 
-    - **To exclude a server:**In the **Included File Servers** area, click the ellipsis button for a
+    - **To exclude a server:** In the **Included File Servers** area, click the ellipsis button for a
       server and select **Add to Exclude Server List**. The server is moved to the **Excluded File
       Servers** area.
     - **To exclude multiple servers:**
@@ -281,7 +287,7 @@ You can exclude a file server in the identity store from replication and entitle
         want to replicate. To exclude all servers, select the checkbox in the header row. This
         displays the following icons:
 
-        ![replicate_permissions](/images/directorymanager/11.1/admincenter/entitlement/ad/replicate_permissions.webp)
+        ![Toolbar icons shown when servers are selected](/images/directorymanager/11.1/admincenter/entitlement/ad/replicate_permissions.webp)
 
         Click **Remove**. The servers are moved to the **Excluded File Servers** area.
 

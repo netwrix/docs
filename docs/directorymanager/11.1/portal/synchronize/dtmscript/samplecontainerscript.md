@@ -1,12 +1,18 @@
 ---
-title: "Sample Container Scripts"
-description: "Sample Container Scripts"
+title: "Sample Container Scripts for Synchronize"
+description: "Copy sample Visual Basic .NET container scripts that route new objects to containers by department code with a case statement, an XML file, or an Excel file."
+keywords:
+  - container script samples
+  - object routing
+  - DeptCode
+  - DTM.Result
+  - Synchronize scripts
 sidebar_position: 10
 ---
 
-# Sample Container Scripts
+# Sample Container Scripts for Synchronize
 
-## Object Routing Case-By-Case
+## Object Routing Case by Case
 
 **Assumptions**:
 

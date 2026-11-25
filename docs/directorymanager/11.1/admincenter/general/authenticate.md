@@ -1,13 +1,19 @@
 ---
-title: "Authenticate your Identity Store Account"
-description: "Authenticate your Identity Store Account"
+title: "Authenticate Your Account in Directory Manager"
+description: "Pass multifactor or second factor authentication in Directory Manager by using security questions, SMS, email, an authenticator app, YubiKey, or Windows Hello."
+keywords:
+  - authenticate identity store account
+  - verification code
+  - YubiKey authentication
+  - Windows Hello authentication
+  - authenticator app
 sidebar_position: 20
 ---
 
-# Authenticate your Identity Store Account
+# Authenticate Your Account in Directory Manager
 
 To authenticate your identity store account in Directory Manager for multifactor authentication or
-[Second Factor Authentication](/docs/directorymanager/11.1/portal/secondfactorauthentication/secondfactorauthentication.md), you
+[Second Factor Authentication in Directory Manager](/docs/directorymanager/11.1/portal/secondfactorauthentication/secondfactorauthentication.md), you
 must use one or more authentication types that you enrolled your account with.
 
 ## Authenticate your identity store account
@@ -15,7 +21,7 @@ must use one or more authentication types that you enrolled your account with.
 1. When you launch Admin Center or the Directory Manager portal, the **GroupID Authenticate** page
    is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
-   authentication types the user enrolled his or her account with.
+   authentication types the user enrolled their account with.
 
     - **Authenticate using Security Questions**
 
@@ -25,37 +31,37 @@ must use one or more authentication types that you enrolled your account with.
 
     - Authenticate using SMS
 
-        To authenticate using mobile, you have to enter the last 4 digits of the mobile number you
+        To authenticate using mobile, you must enter the last 4 digits of the mobile number you
         provided during enrollment. Directory Manager sends a confirmation code to this number; you
-        have to enter the code in Directory Manager for authentication.
+        must enter the code in Directory Manager for authentication.
 
         1. Select the **Mobile Verification** checkbox and click **Continue**.
         2. Enter the last four digits of your mobile number and click **Send Code**.
         3. When the verification code is successfully sent to the provided mobile number, a box
-           appears on the page. Enter the 5 digit access code you received on your phone by SMS.
+           appears on the page. Enter the 5-digit access code you received on your phone by SMS.
         4. Click **Verify and Continue**.
 
         If you don't receive the code, recheck your mobile number and click **Send Again**.
 
     - Authenticate using Email
 
-        To authenticate using Email, you have to complete the email address you provided during
-        enrollment. Directory Manager then sends a confirmation code to this email address; you have
-        to enter the code in Directory Manager for authentication.
+        To authenticate using Email, you must complete the email address you provided during
+        enrollment. Directory Manager then sends a confirmation code to this email address; you must
+        enter the code in Directory Manager for authentication.
 
         1. Select the **Email Verification** checkbox and click **Continue**.
         2. Complete your email address and click **Send Code**.
         3. When the verification code is successfully sent to the provided email address, a box
-           appears on the page. Enter the 5 digit access code received on your email address.
+           appears on the page. Enter the 5-digit access code received on your email address.
         4. Click **Verify and Continue**.
 
         If you don't receive the code, recheck your email address and click **Send Again**.
 
-    - Authenticator using Authenticator
+    - Authenticate using Authenticator
 
         1. Select the **Authenticator** checkbox and click **Continue**.
         2. Launch the Google Authenticator or Microsoft Authenticator app on your smartphone. The
-           app generates a verification code and displays it on your phone’s screen.
+           app generates a verification code and displays it on your phone's screen.
         3. Enter the code in the **Security code** box.
         4. Click **Verify and Continue**.
 
@@ -68,7 +74,7 @@ must use one or more authentication types that you enrolled your account with.
         2. Select the **YubiKey** checkbox and click **Continue**.
         3. On the next page, click your YubiKey device name.  
            Directory Manager directs you to tap on the physical device.
-        4. On tapping, you are authenticated in Directory Manager.
+        4. When you tap the device, you are authenticated in Directory Manager.
 
     - Authenticate using Windows Hello
 

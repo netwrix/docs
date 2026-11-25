@@ -1,10 +1,16 @@
 ---
-title: "Dictionary Rule"
-description: "Dictionary Rule"
+title: "Configure the Dictionary Rule in Directory Manager"
+description: "Reject guessable passwords by configuring the Password Policy Enforcer Dictionary rule, including dictionary files, substitution, and wildcard analysis."
+keywords:
+  - Dictionary rule
+  - Password Policy Enforcer
+  - wildcard analysis
+  - dictionary file
+  - password tolerance
 sidebar_position: 60
 ---
 
-# Dictionary Rule
+# Configure the Dictionary Rule in Directory Manager
 
 The Dictionary rule rejects passwords that are vulnerable to guessing, hybrid, and precomputed
 attacks. These attacks can crack weak passwords in seconds, and they can be very effective if
@@ -15,12 +21,11 @@ dictionary file, or to enforce a more tolerant policy for passphrases by disabli
 for long passwords.
 
 - Enable the **Dictionary** button to enable the Dictionary rule.
-- The Dictionary file box displays name **Dict.txt** of a sample file, it is installed in the
+- The Dictionary file box displays the name **Dict.txt** of a sample file. It is installed in the
   **\Program Files\Password Policy Enforcer** folder. This file is sorted and ready to use. It
   contains approximately 257,000 words, names, and acronyms.
-- If you want to add a secondary dictionary, **Click** +Add Dictionary to add a secondary
-  dictionary.
-- **Enter** a path of the secondary dictionary file in the Secondary dictionary box.  
+- To add a secondary dictionary, click **+ Add Dictionary**.
+- **Enter** the path of the secondary dictionary file in the Secondary dictionary box.  
   You can specify rules for both the dictionaries as follows:
 
     - Select the **Detect inclusion of non-alpha characters** checkbox if Password Policy Enforcer
@@ -31,7 +36,7 @@ for long passwords.
     - Select the **Bi-directional analysis** checkbox if Password Policy Enforcer should
       additionally test passwords with their characters reversed. Enabling bi-directional analysis
       stops users from circumventing this rule by reversing the order of characters in their
-      password. For example, a user may enter "drowssapym" instead of "mypassword".
+      password. For example, a user might enter "drowssapym" instead of "mypassword".
     - Select the **Wildcard analysis** checkbox if Password Policy Enforcer should search for
       wildcard templates in the dictionary file. Wildcard templates are specially formatted
       dictionary words that Password Policy Enforcer uses to reject a range of passwords. The
@@ -64,10 +69,10 @@ for long passwords.
 				  <table>
 				    <tbody>
 					    <tr>
-					      <td>Rejects passwords that start with BAN. For example:&#160;band, banish, ban, bank, etc.</td>
+					      <td>Rejects passwords that start with BAN. For example:&#160;band, banish, ban, bank, and so on.</td>
 					    </tr>
 					    <tr>
-						    <td>Rejects passwords that start with the numeric character 2. For example: 2ABC, 2123, etc. </td>
+						    <td>Rejects passwords that start with the numeric character 2. For example: 2ABC, 2123, and so on.</td>
 					    </tr>
 					  </tbody>
 				  </table>
@@ -81,7 +86,7 @@ for long passwords.
 				!!*ING!!
 			</td>
 			<td>
-				Rejects passwords that end with ING. For example:&#160;pushing, howling, trying, etc.
+				Rejects passwords that end with ING. For example:&#160;pushing, howling, trying, and so on.
 			</td>
 		</tr>
 	</tbody>
@@ -89,7 +94,7 @@ for long passwords.
 
 
         Partial matching is performed even if Wildcard analysis is disabled. For example, the
-        dictionary word "password" will reject the passwords "My**Password**$", "**Password**100",
+        dictionary word "password" rejects the passwords "My**Password**$", "**Password**100",
         and "12**password**34" even if Wildcard analysis is disabled.
 
         Wildcard analysis should only be used to limit matching to the characters at the start or
@@ -100,8 +105,8 @@ for long passwords.
         Password Policy Enforcer doesn't contain any wildcard templates.
 
     - Choose a value from the Tolerance dropdown list to specify the maximum number of consecutive
-      matching characters that Password Policy Enforcer will tolerate before rejecting a password.
+      matching characters that Password Policy Enforcer tolerates before rejecting a password.
       For example, the dictionary word "**sword**", and the password "4my**sword**%" contain five
-      consecutive matching characters (shown in bold type). Password Policy Enforcer will reject
-      this password if the tolerance is four (or lower), and accept it if the tolerance is five (or
+      consecutive matching characters (shown in bold type). Password Policy Enforcer rejects
+      this password if the tolerance is four (or lower), and accepts it if the tolerance is five (or
       higher).

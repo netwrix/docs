@@ -1,16 +1,22 @@
 ---
-title: "Operations"
-description: "Helpdesk Operations"
+title: "Helpdesk Operations in Directory Manager"
+description: "See the actions helpdesk users can perform in Admin Center, such as resetting passwords, unlocking accounts, and searching users."
+keywords:
+  - helpdesk operations
+  - reset passwords
+  - unlock accounts
+  - unenroll user
+  - Admin Center helpdesk
 sidebar_position: 10
 ---
 
-# Helpdesk Operations
+# Helpdesk Operations in Directory Manager
 
 Helpdesk users can perform the following actions in Admin Center:
 
-- [Reset Passwords](/docs/directorymanager/11.1/admincenter/helpdesk/operation/resetpassword.md)
-- [Unlock Accounts](/docs/directorymanager/11.1/admincenter/helpdesk/operation/unlockaccount.md)
-- [Notify Users to Enroll](/docs/directorymanager/11.1/admincenter/helpdesk/operation/asktoenroll.md)
-- [Unenroll a User](/docs/directorymanager/11.1/admincenter/helpdesk/operation/unenroll.md)
-- [Search Users](/docs/directorymanager/11.1/admincenter/helpdesk/operation/search.md)
-- [Export Users' List to a File](/docs/directorymanager/11.1/admincenter/helpdesk/operation/export.md)
+- [Reset User Passwords as Helpdesk in Directory Manager](/docs/directorymanager/11.1/admincenter/helpdesk/operation/resetpassword.md)
+- [Unlock User Accounts in Directory Manager Helpdesk](/docs/directorymanager/11.1/admincenter/helpdesk/operation/unlockaccount.md)
+- [Notify Users to Enroll in Directory Manager](/docs/directorymanager/11.1/admincenter/helpdesk/operation/asktoenroll.md)
+- [Unenroll a User from an Authentication Type](/docs/directorymanager/11.1/admincenter/helpdesk/operation/unenroll.md)
+- [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.1/admincenter/helpdesk/operation/search.md)
+- [Export the Helpdesk Users List in Directory Manager](/docs/directorymanager/11.1/admincenter/helpdesk/operation/export.md)

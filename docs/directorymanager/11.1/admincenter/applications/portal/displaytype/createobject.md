@@ -1,12 +1,18 @@
 ---
-title: "Customize the Create Object Wizards"
-description: "Customize the Create Object Wizards"
+title: "Customize the Create Object Wizards in a Directory Manager Portal"
+description: "Add, rearrange, and remove wizard pages and fields that portal users see when they create users, groups, contacts, and mailboxes."
+keywords:
+  - Create Object wizard
+  - wizard pages and fields
+  - visibility level
+  - display type
+  - portal design
 sidebar_position: 100
 ---
 
-# Customize the Create Object Wizards
+# Customize the Create Object Wizards in a Directory Manager Portal
 
-Using a portal, users can create different directory objects, namely:
+Using a portal, users can create the following directory objects:
 
 - User
 - Mailbox
@@ -25,7 +31,7 @@ as needed.
 In the portal, the _Create Group_ wizard starts with the _Group Type_ page, where users can
 select the type of group they want to create. Options on this page vary, depending on the
 permissions assigned to the user in the identity store. (See the
-[Security Role – Permissions](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md) topic.)
+[Security Role Permissions in Directory Manager](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md) topic.)
 :::
 
 
@@ -33,7 +39,7 @@ permissions assigned to the user in the identity store. (See the
   permission, only the _Static Group_ option is displayed on the _Group Type_ page.
 - If a user has the _Create Smart Group_ permission and is denied the _Create Static Group_
   permission, all options except _Static Group_ are displayed on the _Group Type_ page.
-  ![group_type](/images/directorymanager/11.1/admincenter/portal/design/group_type.webp)
+  ![Group Type page of the Create Group wizard showing the available group types](/images/directorymanager/11.1/admincenter/portal/design/group_type.webp)
 
 :::note
 You can customize the _Group Type_ page individually for static group, Smart Group, and each
@@ -42,9 +48,9 @@ of the Dynasty types. However:
 
 
 - If a user has permissions to create both static groups and Smart Groups, the _Group Type_ page
-  created for _Static Group_ would be displayed to the user in the portal.
+  created for _Static Group_ is displayed to the user in the portal.
 - If a user doesn't have permission to create static groups, but has permission to create Smart
-  Groups, the _Group Type_ page created for _Smart Group_ would be displayed to the user in the
+  Groups, the _Group Type_ page created for _Smart Group_ is displayed to the user in the
   portal for Smart Groups and Dynasties.
 
 ## Add a Page to a Wizard
@@ -57,11 +63,11 @@ of the Dynasty types. However:
    different portal for each of these.
 4. Click **Create Object** in the left pane. The **Create Object** page is displayed.
 5. In the **Select Directory Object** dropdown list, select a directory object.
-   The **Name** list displays the pages on the object’s creation wizard.
+   The **Name** list displays the pages on the object's creation wizard.
 6. Click **Add**. The **Add Category** pane is displayed.
-7. In the **Name** box, enter a name for the page. The page will be displayed in the wizard with
+7. In the **Name** box, enter a name for the page. The page is displayed in the wizard with
    this name.
-8. In the **Visibility Level** dropdown list, select a security role. The page would be visible to
+8. In the **Visibility Level** dropdown list, select a security role. The page is visible to
    users of this role and roles with a priority value higher than this role. See
    [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
    Select _Never_ to hide the page from all users.
@@ -97,12 +103,12 @@ You can update the following for a page:
    On the **GroupID Portal** tab, a portal's card displays its info.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Select an identity store under **Design Settings** to customize the portal for it.
-   All identity stores linked with the portal are listed under **Design Setting**s. You can design a
+   All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Create Object** in the left pane.
 5. On the **Create Object** page, select a directory object in the **Select Directory Object**
    dropdown list.
-   The **Name** list displays the pages on the object’s creation wizard.
+   The **Name** list displays the pages on the object's creation wizard.
 6. To change the order that pages are displayed on the wizard, click the equal sign for a page and
    drag to change its position.
 7. Click **Save**.
@@ -118,7 +124,7 @@ You can update the following for a page:
 4. Click **Create Object** in the left pane.
 5. On the **Create Object** page, select a directory object in the **Select Directory Object**
    dropdown list.
-   The **Name** list displays the pages on the object’s creation wizard.
+   The **Name** list displays the pages on the object's creation wizard.
 6. Click **Remove** for a page to remove it.
 7. Click **Save**.
 
@@ -133,17 +139,17 @@ You can update the following for a page:
 4. Click **Create Object** in the left pane.
 5. On the **Create Object** page, select a directory object in the **Select Directory Object**
    dropdown list.
-   The **Name** list displays the pages on the object’s creation wizard.
+   The **Name** list displays the pages on the object's creation wizard.
 6. Click **Edit** for the page you want to add a field to.
-7. On the **Edit Category** pane, click **Add Field.**The **Add Field** pane is displayed.
+7. On the **Edit Category** pane, click **Add Field**. The **Add Field** pane is displayed.
 8. In the **Field** dropdown list, select a schema attribute to link to this field.
-9. In the **Display Name** box, enter a display name for the field. This name is the field’s label
+9. In the **Display Name** box, enter a display name for the field. This name is the field's label
    on the wizard.
 10. In the **Display Type** dropdown list, select a display type to use for rendering this field on
     the wizard.
     The list contains basic display types and custom display types defined on the **Custom Display
-    Types** page. See the [Display Type Categories](/docs/directorymanager/11.1/admincenter/applications/portal/categories/categories.md) topic.
-11. In the **Visibility Level** dropdown list, select a security role. The field would be visible
+    Types** page. See the [Directory Manager Display Type Categories](/docs/directorymanager/11.1/admincenter/applications/portal/categories/categories.md) topic.
+11. In the **Visibility Level** dropdown list, select a security role. The field is visible
     to users of the selected role and roles with a priority value higher than the selected role. See
     [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
     Select _Never_ to hide the field from all users.
@@ -156,8 +162,8 @@ You can update the following for a page:
 14. In the **Max Length** box, enter a number that represents the maximum number of characters that
     users can enter as value for this field.
     Entering _0_ indicates that users can enter an unlimited number of characters as value.
-15. Use the **Search Object Types** area to specify the object types (User, Contact, and/or Group)
-    that can be searched on the portal’s _Find_ dialog box, to set as value for the field.
+15. Use the **Search Object Types** area to specify the object types (one or more of User, Contact, and Group)
+    that can be searched on the portal's _Find_ dialog box, to set as value for the field.
     The following display types support the _Find_ dialog box:
 
     - DN
@@ -172,7 +178,7 @@ You can update the following for a page:
     designate as owners, managers, additional owners, members, and more. While specifying the
     searchable object types, you must be aware of the kind of value the field requires.
 
-16. In the **Default Value** box, enter the default value that would be displayed in the field on
+16. In the **Default Value** box, enter the default value that is displayed in the field on
     the portal.
     Users can update this value, provided that the **Is Read Only** checkbox isn't selected.
 17. Select the **Is Required** checkbox to make it mandatory for users to provide a value for the
@@ -181,7 +187,7 @@ You can update the following for a page:
 19. Select the **Filter Bad Words** checkbox to ensure that users don't enter any bad word in this
     field.
     A value entered for the field is checked against the words listed on the **Bad Words List**
-    page. Matched values can't be saved. See the [Manage the Bad Words List](/docs/directorymanager/11.1/admincenter/applications/portal/displaytype/badwords.md) topic.
+    page. Matched values can't be saved. See the [Manage the Bad Words List in a Directory Manager Portal](/docs/directorymanager/11.1/admincenter/applications/portal/displaytype/badwords.md) topic.
 20. Click **OK**. The field is displayed in the **Fields** area on the **Edit Category** pane. You
     can rearrange the fields, update field properties, and even remove a field from the wizard page.
 21. Click **OK**.
@@ -201,7 +207,7 @@ The following field properties vary from field to field. You can:
 
 - Set a default value for the field
 - Specify the maximum characters that a user can enter as value for the field
-- Make the field editable or read–only
+- Make the field editable or read-only
 - Prevent users from using certain words as value for the field
 - Make it optional or mandatory for users to provide a value for the field
 - For search fields, you can specify the object types (groups, users, contacts) that can be searched
@@ -218,7 +224,7 @@ The following field properties vary from field to field. You can:
 4. Click **Create Object** in the left pane.
 5. On the **Create Object** page, select a directory object in the **Select Directory Object**
    dropdown list.
-   The **Name** list displays the pages on the object’s creation wizard.
+   The **Name** list displays the pages on the object's creation wizard.
 6. Click **Edit** for the page you want to edit a field for.
 7. On the **Edit Category** pane, click **Edit** for a field to update its properties.
 8. The **Edit Field** pane is displayed. Follow steps 8-22 in the Add a Field to a Wizard Page topic
@@ -235,7 +241,7 @@ The following field properties vary from field to field. You can:
 4. Click **Create Object** in the left pane.
 5. On the **Create Object** page, select a directory object in the **Select Directory Object**
    dropdown list.
-   The **Name** list displays the pages on the object’s creation wizard.
+   The **Name** list displays the pages on the object's creation wizard.
 6. Click **Edit** for the page you want to rearrange the fields for.
 7. On the **Edit Category** pane, the fields on the wizard page are listed in the **Fields** area.
    To rearrange the fields on the page, click the equal sign for a field and drag to change its
@@ -254,7 +260,7 @@ The following field properties vary from field to field. You can:
 4. Click **Create Object** in the left pane.
 5. On the **Create Object** page, select a directory object in the **Select Directory Object**
    dropdown list.
-   The **Name** list displays the pages on the object’s creation wizard.
+   The **Name** list displays the pages on the object's creation wizard.
 6. Click **Edit** for the page you want to remove a field from.
 7. On the **Edit Category** pane, the fields on the wizard page are listed in the **Fields** area.
    Click **Remove** for a field to remove it.

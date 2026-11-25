@@ -1,10 +1,15 @@
 ---
-title: "Expire Groups"
-description: "Expire Groups"
+title: "Expire Multiple Groups with the Directory Manager API"
+description: "Use the Expire Groups API to expire several groups in one request by passing their identities in the request body."
+keywords:
+  - Directory Manager API
+  - expire groups API
+  - bulk group expiration
+  - identity store groups
 sidebar_position: 80
 ---
 
-# Expire Groups
+# Expire Multiple Groups with the Directory Manager API
 
 This API expires multiple groups whose identities are provided in the request body.
 
@@ -16,7 +21,7 @@ This API expires multiple groups whose identities are provided in the request bo
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -26,7 +31,7 @@ This API expires multiple groups whose identities are provided in the request bo
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

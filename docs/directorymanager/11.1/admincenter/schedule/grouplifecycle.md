@@ -1,24 +1,30 @@
 ---
-title: "Group Life Cycle Schedule"
-description: "Group Life Cycle Schedule"
+title: "Create a Group Life Cycle Schedule in Directory Manager"
+description: "Create a Group Life Cycle schedule that expires and logically deletes groups, sends owner notifications, and extends or reduces group life based on usage."
+keywords:
+  - Group Life Cycle schedule
+  - group expiry
+  - group attestation
+  - logical group deletion
+  - Scheduler service
 sidebar_position: 20
 ---
 
-# Group Life Cycle Schedule
+# Create a Group Life Cycle Schedule in Directory Manager
 
 Use Directory Manager to define group lifecycle settings for an identity store. See the
-[Manage Group Lifecycle Settings](/docs/directorymanager/11.1/admincenter/identitystore/configure/grouplifecycle.md)
+[Manage Group Lifecycle Settings in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/configure/grouplifecycle.md)
 topic for additional information. Based on these settings, the Group Lifecycle schedule expires and
 logically deletes groups in the identity store on a scheduled basis, keeping your directory clean
 and preventing group glut.
 
-While creating a Group Lifecycle schedule, you have to specify a job triggering criterion, the
-containers the job will process, and notification options.
+When you create a Group Lifecycle schedule, specify a job triggering criterion, the
+containers the job processes, and notification options.
 
 The Group Lifecycle schedule performs the following main functions:
 
-- Expires and logically delete groups according to their respective expiry policies. See the
-  [ Group Expiry and Deletion](/docs/directorymanager/11.1/admincenter/identitystore/configure/groupexpirydeletion.md)
+- Expires and logically deletes groups according to their respective expiry policies. See the
+  [Group Expiry and Deletion in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/configure/groupexpirydeletion.md)
   topic for additional information.
 - Sends email notifications to relevant personnel before expiring a group. Also initiates
   notifications for group attestation.
@@ -46,36 +52,36 @@ Step 7 – Select a Directory Manager portal URL in the Portal URL dropdown list
 notifications generated for this schedule. Users are redirected to this portal to perform any
 necessary action.
 
-Step 8 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
-responsible for triggering this schedule. The number of services displayed in the list depend on the
+Step 8 – In the Scheduler Service Name dropdown list, select a Scheduler service that's
+responsible for triggering this schedule. The number of services displayed in the list depends on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
+service. See the [Directory Manager Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
 information.
 
 :::note
 When selecting a Scheduler service, note the following:
 
-- The Scheduler service for the Directory Manager instance on which you are creating the schedule is
+- The Scheduler service for the Directory Manager instance on which you're creating the schedule is
   selected by default. However, you can select the Scheduler service of another instance as well.
 
-- The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  schedule will be triggered by the newly-selected Scheduler service.
+- The Scheduler service can be changed even after creating the schedule. On the next run, the
+  newly selected Scheduler service triggers the schedule.
 
 - If the selected Scheduler service fails to trigger the schedule, then no other Scheduler service
   can be selected automatically.
 
-- If a schedule is run manually on the Admin Center, then the Scheduler service of that instance
-  will be used.
+- If a schedule is run manually in Admin Center, then the Scheduler service of that instance
+  is used.
 :::
 
 Step 9 – You can specify containers as targets for the schedule. To do so, follow step 9 in the
 [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic. The schedule will process all groups in the containers and their sub-containers listed in the
+topic. The schedule processes all groups in the containers and their sub-containers listed in the
 Targets area in keeping with the Group Lifecycle settings for the identity store.
 
 :::note
 In Group Lifecycle settings, the administrator can specify containers for exclusively
-applying or not applying the Group Life cycle policy. See the
+applying or not applying the Group Lifecycle policy. See the
 [Apply Policy on Specific Containers](/docs/directorymanager/11.1/admincenter/identitystore/configure/grouplifecycle.md#apply-policy-on-specific-containers)
 topic. With containers specified in the Targets area, there may be a conflict or overlapping of
 containers, in which case, the Group Lifecycle settings take precedence.
@@ -83,7 +89,7 @@ containers, in which case, the Group Lifecycle settings take precedence.
 
 
 Step 10 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
-schedule, that, when met, starts the execution of the schedule. Follow step 11 in the
+schedule that, when met, starts the execution of the schedule. Follow step 11 in the
 [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
 topic to manage triggers.
 

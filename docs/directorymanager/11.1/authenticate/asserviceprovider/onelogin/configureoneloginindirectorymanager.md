@@ -1,13 +1,18 @@
 ---
-title: "Configure OneLogin in Directory Manager"
-description: "Configure Directory Manager In OneLogin"
+title: "Configure the OneLogin Provider in Directory Manager"
+description: "Create the OneLogin SAML provider in Directory Manager by importing the OneLogin metadata file and entering the issuer and IdP login URLs."
+keywords:
+  - OneLogin SAML provider
+  - import OneLogin metadata
+  - Issuer URL and IDP Login URL
+  - Directory Manager Authenticate provider
 sidebar_position: 30
 ---
 
 # Configure the OneLogin Provider in Directory Manager
 
-While creating the OneLogin provider in Directory Manager, you import the OneLogin
-metadata file to configure all settings for it.
+When you create the OneLogin provider in Directory Manager, you import the OneLogin
+metadata file to configure its settings.
 
 ## Configure the Provider in Directory Manager
 
@@ -15,7 +20,7 @@ metadata file to configure all settings for it.
 2. On the **SAML Providers** page, click **New Provider**.
 3. On the **Create New Provider** page, enter a name for the provider in the **Name** box.
 4. Ensure the **Client** box displays the name of the Directory Manager client for which you
-   generated the consumer URL and audience URL (see the [Generate URLs](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/generateurls.md) topic).  
+   generated the consumer URL and audience URL (see the [Generate Consumer and Audience URLs for OneLogin](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/generateurls.md) topic).  
    To continue with the example, select the Directory Manager portal named _Wizard_.
 
 **Import the OneLogin metadata file:**
@@ -24,9 +29,9 @@ metadata file to configure all settings for it.
    metadata file that you downloaded earlier. See the
    [Download the OneLogin Metadata File](configureinonelogin.md#download-the-onelogin-metadata-file)
    topic.
-6. On the **Import Settings from IDP provided Metadata File** dialog box, click **Browse** to select
-   the PingOne metadata file. Then click **Upload**. With this, several fields on the **Create New
-   Provider** page are automatically filled in. However, you still have to provide the Issuer URL
+6. On the **Import Settings from IDP Provided Metadata file** dialog box, click **Browse** to select
+   the OneLogin metadata file. Then click **Upload**. Several fields on the **Create New
+   Provider** page are filled in automatically. However, you still must provide the Issuer URL
    and IDP Login URL.
 
 **Provide Issuer URL and IDP Login URL:**
@@ -37,13 +42,12 @@ metadata file to configure all settings for it.
    topic.
 8. In the **IDP Login URL** box, enter the endpoint URL for the post method. You copied this URL
    earlier from the **SAML 2.0 Endpoint (HTTP)** box on the **SSO** page in OneLogin. See step 15 in
-   the[Create an App for Directory Manager in OneLogin](configureinonelogin.md#create-an-app-for-directory-manager-in-onelogin)
-   topic.
+   the [Create an App for Directory Manager in OneLogin](configureinonelogin.md#create-an-app-for-directory-manager-in-onelogin) topic.
 
 **Upload an image for the identity provider:**
 
-9. When OneLogin is configured with a Directory Manager client, it will be available on the login
-   page of that client (the Wizard portal in their example) for single sign-on. You can choose to
+9. When OneLogin is configured with a Directory Manager client, it is available on the login
+   page of that client (the _Wizard_ portal in this example) for single sign-on. You can choose to
    display the OneLogin authentication option as an image or a button. See the
    [Upload an Image for the Identity Provider](/docs/directorymanager/11.1/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md#upload-an-image-for-the-identity-provider)
    topic for details, replacing references to AD FS with OneLogin.
@@ -51,17 +55,17 @@ metadata file to configure all settings for it.
 **Specify advanced settings:**
 
 10. Expand the **Advanced** section on the **Create New Provider** page.
-11. For _Disable GroupID Authentication_, see step 2 in the
+11. For _Disable Directory Manager Authentication_, see step 2 in the
     [Specify Advanced Configurations](/docs/directorymanager/11.1/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md#specify-advanced-configurations)
     topic. Replace references to AD FS with the OneLogin provider.
 12. In the **Request Binding** dropdown list, select _POST_ to use the endpoint URL for the
     post method in the **IDP Login URL** box.
-13. Don't use assertion encryption; ensure _Disabled_ is selected in the **Assertion
+13. Don't use assertion encryption. Ensure _Disabled_ is selected in the **Assertion
     Encryption** dropdown list.
-14. In the **Response Signing Method** dropdown list, select _RSA-SHA-256_; this method is configured as the
+14. In the **Response Signing Method** dropdown list, select _RSA-SHA-256_. This method is configured as the
     signing algorithm in the **SAML Signature Algorithm** list on the **SSO** page in
     OneLogin. See step 14 in
-    the[Create an App for Directory Manager in OneLogin](configureinonelogin.md#create-an-app-for-directory-manager-in-onelogin)
+    the [Create an App for Directory Manager in OneLogin](configureinonelogin.md#create-an-app-for-directory-manager-in-onelogin)
     topic.
 15. Click the **Create Provider** button. The identity provider is created and displayed on the
     **SAML Providers** page.

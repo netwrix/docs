@@ -1,17 +1,23 @@
 ---
-title: "Manage Advanced Workflow Settings"
-description: "Manage Advanced Workflow Settings"
+title: "Manage Advanced Workflow Settings in Directory Manager"
+description: "Set a default approver, apply approver acceleration, and delete old workflow requests for an identity store in Directory Manager."
+keywords:
+  - default approver
+  - approver acceleration
+  - workflow requests
+  - Advanced Workflow Settings
+  - Power Automate
 sidebar_position: 20
 ---
 
-# Manage Advanced Workflow Settings
+# Manage Advanced Workflow Settings in Directory Manager
 
-You can specify advanced settings for workflow, such as set a default approver for workflow requests
-and define approver acceleration settings.
+You can specify advanced settings for workflow, such as a default approver for workflow requests
+and approver acceleration settings.
 
 :::note
 Functions discussed in this topic are licensed under different add-ons. See the
-[ Licensing ](/docs/directorymanager/11.1/admincenter/general/licensing.md) topic.
+[Manage Directory Manager Licenses](/docs/directorymanager/11.1/admincenter/general/licensing.md) topic.
 :::
 
 
@@ -25,10 +31,10 @@ requests to this recipient based on the following rules:
 - When approver acceleration is enabled:
 
     - Directory Manager sends a request to the default approver when the last approver in the
-      acceleration chain doesn't approve or deny it within the specific number of days.
+      acceleration chain doesn't approve or deny it within the specified number of days.
     - Directory Manager routes a request to the default approver when the hierarchy breaks at any
-      point in the acceleration chain. For example, if the maximum acceleration level is set to 3 but there is no
-      recipient to accelerate the request after second level acceleration, the request goes to the
+      point in the acceleration chain. For example, if the maximum acceleration level is set to 3 but no
+      recipient exists to accelerate the request after second-level acceleration, the request goes to the
       default approver.
 
 The default approver also receives group expiry and deletion notifications for groups without
@@ -41,8 +47,8 @@ owners.
    **Edit**.
 3. Click **Workflows** under **Settings** in the left pane.
 4. On the **Workflows** page, click the **Advanced Workflow Settings** tab.
-5. On th **Advanced Workflow Settings** tab, use the **Default Approver** box to specify a recipient
-   as the default approver. To search for a recipient:
+5. On the **Advanced Workflow Settings** tab, use the **Default Approver** box to specify a recipient
+   as the default approver. To search for a recipient, do either of the following:
 
     - Enter a search string in the box. Group and user names starting with the string appear
       as you type. Select a user or group to set as the default approver.
@@ -61,13 +67,13 @@ owners.
 ## Apply Approver Acceleration
 
 The workflow approver acceleration feature ensures that no workflow request remains undecided. To
-apply setting related to approver acceleration, see the
-[Workflow Approver Acceleration](/docs/directorymanager/11.1/admincenter/workflow/approveracceleration.md) topic.
+apply settings related to approver acceleration, see the
+[Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.1/admincenter/workflow/approveracceleration.md) topic.
 
 ## Delete Workflow Requests
 
 You can delete the workflow requests generated for an identity store based on certain settings. For
-example, you can delete the ‘denied’ requests that are old by 30 days or more.
+example, you can delete the "denied" requests that are 30 or more days old.
 
 **To delete workflow requests:**
 
@@ -77,8 +83,8 @@ example, you can delete the ‘denied’ requests that are old by 30 days or mor
 3. Click **Workflows** under **Settings** in the left pane.
 4. On the **Workflows** page, click the **Advanced Workflow Settings** tab. Go to the **Workflow
    Requests** section.
-5. In the **Delete requests that are x or more days old** box, specify a number, say 30. Directory Manager
-   auto-deletes workflow requests that are at least 30 days old.
+5. In the **Delete requests that are x or more days old** box, specify a number, such as 30. Directory Manager
+   automatically deletes workflow requests that are at least 30 days old.
 6. Select the type of requests you want to delete.
 
     - **Pending:** to delete pending requests, including your own.
@@ -91,5 +97,5 @@ example, you can delete the ‘denied’ requests that are old by 30 days or mor
 
 ## Integrate with Microsoft Power Automate
 
-You can also link your Power Automate flows to Directory Manager workflows. For details, see the
-[Integrate with Power Automate](/docs/directorymanager/11.1/admincenter/workflow/powerautomate/integrate.md) topic.
+You can link your Power Automate flows to Directory Manager workflows. For details, see the
+[Link Directory Manager Workflows to Power Automate](/docs/directorymanager/11.1/admincenter/workflow/powerautomate/integrate.md) topic.

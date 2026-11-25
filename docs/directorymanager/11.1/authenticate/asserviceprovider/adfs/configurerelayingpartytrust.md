@@ -1,17 +1,23 @@
 ---
-title: "Configure Relaying Party Trust in AD FS"
-description: "Configure Relaying Party Trust in AD FS"
+title: "Configure an AD FS Relying Party Trust for Directory Manager"
+description: "Add a relying party trust and claim rules in AD FS so users can sign in to a Directory Manager client with AD FS single sign-on."
+keywords:
+  - AD FS relying party trust
+  - AD FS claim rules
+  - Directory Manager consumer URL
+  - Issuance Transform Rules
+  - SAML 2.0 Web SSO
 sidebar_position: 20
 ---
 
-# Configure Relaying Party Trust in AD FS
+# Configure an AD FS Relying Party Trust for Directory Manager
 
-In AD FS, you have to configure the Directory Manager client with which you want to set up AD FS.
-You also have to specify the claim rules for authentication.
+In AD FS, configure the Directory Manager client with which you want to set up AD FS.
+You must also specify the claim rules for authentication.
 
-## Configure Relaying Party Trust in AD FS
+## Add the Relying Party Trust and Claim Rules
 
-To configure relaying party trust in AD FS:
+To configure a relying party trust in AD FS:
 
 Step 1 – Launch the AD FS console. In the left pane, select **AD FS > Trust Relationships**.
 Right-click **Relying Party Trusts** and click **Add Relying Party Trust** on the shortcut menu.  
@@ -27,7 +33,7 @@ click **Next**.
 Step 4 – On the Specify Display Name page, specify a friendly display name for this configuration in
 the Display name box. Then enter any additional notes in the Notes box and click **Next**.
 
-Step 5 – To use the SAML 2.0 protocol as profile, select the **AD FS profile** option button on the
+Step 5 – To use the SAML 2.0 protocol as the profile, select the **AD FS profile** option button on the
 Choose Profile page and click **Next**.
 
 Step 6 – On the Configure Certificate page, click **Next**.
@@ -37,7 +43,7 @@ option button. Then in the Relying party SAML 2.0 SSL service URL box, provide t
 generated for the Directory Manager client. See the
 [Generate the Consumer URL for a Directory Manager Client](generateurls.md#generate-the-consumer-url-for-a-directory-manager-client)
 topic.  
-The consumer URL is the relying party trust URL, used by AD FS to authenticate. Click **Next**.
+AD FS uses the consumer URL, which is the relying party trust URL, to authenticate users. Click **Next**.
 
 Step 8 – On the Configure Identifiers page, use the Relying party trust identifier box to provide
 the audience URL you generated for the Directory Manager client. Click **Add** next to this box and
@@ -49,18 +55,18 @@ authentication. For this example, skip this step by selecting the option **Don't
 multi-factor authentications settings for this relying party trust at this time** and
 click **Next**.
 
-Step 10 – Use the Choose Issuance Authorization Rules page to permit all users to get authenticated
-on the relying party trust using AD FS. User credentials will be parsed with Active Directory.  
+Step 10 – Use the Choose Issuance Authorization Rules page to permit all users to authenticate
+on the relying party trust using AD FS. Active Directory validates user credentials.  
 Select the **Permit all users to access this relying party** option button and click **Next**.
 
-Step 11 – Use the tabs on the Ready to Add Trust page to review some preconfigured settings; then
+Step 11 – Use the tabs on the Ready to Add Trust page to review some preconfigured settings. Then
 click **Next**.
 
 Step 12 – Click **Close** on the Finish page to complete the wizard. The wizard closes and the Edit
-Claim Rules dialog box is displayed, where you have to specify claim rules for authentication.
+Claim Rules dialog box appears, where you must specify claim rules for authentication.
 
-Step 13 – On the Edit Claim Rules dialog box, the Issuance Transform Rules option correlates to the
-option of authenticating using an Active Directory attribute. Click **Add Rule**.
+Step 13 – On the Edit Claim Rules dialog box, the Issuance Transform Rules option corresponds to
+authenticating using an Active Directory attribute. Click **Add Rule**.
 
 Step 14 – To add a rule, select **Transform an Incoming Claim** from the Claim rule template
 dropdown list on the Select Rule Template page and click **Next**.
@@ -69,17 +75,17 @@ Step 15 – On the Configure Rule page, specify a rule name in the Claim rule na
 
 Step 16 – In the Incoming claim type and Outgoing claim type boxes, select an Active Directory
 attribute for authentication, such as the UPN attribute. The incoming and outgoing claim types
-should be the same because no different text or different data is specified for the logon process.
-It uses the exact user principal name for authentication.
+should be the same because you specify no different text or data for the sign-in process.
+AD FS uses the exact user principal name for authentication.
 
-Step 17 – Ensure that the **Pass through all claim values** option is selected; then click
-**Finish**. The new rule is configured and displayed on the Issuance Transform Rules tab.
+Step 17 – Ensure that the **Pass through all claim values** option is selected. Then click
+**Finish**. The new rule is configured and appears on the Issuance Transform Rules tab.
 
-Step 18 – Click the **Issuance Authorization Rules** tab and notice that the issuance authorization
-rule is already completed.
+Step 18 – Click the **Issuance Authorization Rules** tab. The issuance authorization
+rule is already complete.
 
 Step 19 – Click the **Delegation Authorization Rules** tab. No delegation is needed, so click
-**Apply** and then **OK**. The AD FS console is displayed with the new relying party trust added.
+**Apply** and then **OK**. The AD FS console appears with the new relying party trust added.
 
 The next step is to configure the AD FS provider in Directory Manager. See the
-[Configure the AD FS Provider In Directory Manager](/docs/directorymanager/11.1/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md) topic.
+[Configure the AD FS Provider in Directory Manager](/docs/directorymanager/11.1/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md) topic.

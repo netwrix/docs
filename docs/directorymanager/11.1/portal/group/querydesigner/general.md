@@ -1,10 +1,15 @@
 ---
-title: "General tab"
-description: "Query Designer - General tab"
+title: "Query Designer General tab"
+description: "Choose which object types and sub-types, such as users, computers, or mail-enabled groups, a Directory Manager query includes."
+keywords:
+  - Query Designer
+  - object type selection
+  - messaging system recipients
+  - Smart Group query
 sidebar_position: 30
 ---
 
-# General tab
+# Query Designer General tab
 
 Use this tab to specify the type of objects to include in your search. Options vary according to the
 object type selected in the **Find** list.
@@ -18,7 +23,7 @@ The following table lists the options available on the **General** tab for each 
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Messaging System Recipients | <ul><li>Users with mailboxes – Includes users with messaging system mailboxes</li><li>Users with External Email Address – Includes users with email addresses that are external to your organization</li><li>Contacts with External Email Address – Includes contacts with email addresses that are external to your organization</li><li>Mail-Enabled Groups – Includes mail-enabled groups</li><li>Mail-Enabled Folders – Includes mail-enabled folders</li></ul> |
 | Computers                   | <ul><li>Workstations and Servers – Includes workstations and servers</li><li>Domain Controllers – Includes domain controllers</li></ul>                                                                                                                                                                                                                                                                                                                             |
-| Custom                      | By default, it includes all object options for Messaging System Recipients, Computers, and Users, Contact, and Groups. For this reason, the General tab doesn't display any option for this object type.                                                                                                                                                                                                                                                           |
+| Custom                      | By default, it includes all object options for Messaging System Recipients, Computers, and Users, Contacts, and Groups. For this reason, the General tab doesn't display any option for this object type.                                                                                                                                                                                                                                                           |
 | Users, Contacts, and Groups  | <ul><li>Users – Includes users</li><li>Contacts – Includes contacts</li><li>Groups – Includes groups</li></ul>                                                                                                                                                                                                                                                                                                                                                      |
 
 :::note
@@ -29,7 +34,7 @@ store.
 
 **Preview**
 
-Use X to preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
+Use the **Preview** button to view the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
 
 **OK**
 

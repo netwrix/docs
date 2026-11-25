@@ -1,10 +1,15 @@
 ---
-title: "Advanced tab"
-description: "Mailbox properties - Advanced tab"
+title: "Mailbox Properties Advanced Tab in Directory Manager"
+description: "Set the home page, alternate recipient, and other advanced settings for a user or mailbox."
+keywords:
+  - mailbox advanced tab
+  - alternate recipient
+  - hide from address book
+  - forwarding address
 sidebar_position: 10
 ---
 
-# Advanced tab
+# Mailbox Properties Advanced Tab in Directory Manager
 
 Use this tab to configure advanced settings for a user.
 
@@ -24,13 +29,13 @@ The employee ID of the user.
 Indicates whether to hide the user in the messaging provider's address book (such as the Outlook
 address book).
 
-If selected, the user will not be visible in the address book.
+If selected, the user isn't visible in the address book.
 
 **Recipient**
 
 Specify an alternate recipient to receive the emails sent to this user.
 
-Click the ellipsis button to launch the [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md), where you can
+Click the ellipsis button to open the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md), where you can
 search and select the required recipient.
 
 To remove the alternate recipient, click the **Remove** button.

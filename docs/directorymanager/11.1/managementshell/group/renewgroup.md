@@ -1,14 +1,19 @@
 ---
 title: "Renew-Group"
-description: "Renew-Group"
+description: "Reactivate an expired group in the connected identity store with the Renew-Group cmdlet."
+keywords:
+  - Renew-Group
+  - reactivate expired group
+  - group expiration
+  - Directory Manager PowerShell
 sidebar_position: 70
 ---
 
 # Renew-Group
 
-The Renew-Group re-activates an expired group.
+The Renew-Group cmdlet reactivates an expired group.
 
-You can view events related to this commandlet in Directory Manager portal, against the History node
+You can view events related to this cmdlet in the Directory Manager portal, under the History node
 in the left panel.
 
 ## Syntax

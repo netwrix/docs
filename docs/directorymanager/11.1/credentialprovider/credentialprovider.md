@@ -1,15 +1,21 @@
 ---
-title: "Credential Provider"
-description: "Credential Provider"
+title: "Directory Manager Credential Provider for Windows"
+description: "Learn what the Directory Manager Credential Provider adds to the Windows sign-in screen, its components, default settings, and requirements."
+keywords:
+  - Credential Provider
+  - Windows sign-in screen
+  - self-service password reset
+  - account unlock
+  - PasswordCenterClientSetup64.msi
 sidebar_position: 70
 ---
 
-# Credential Provider
+# Directory Manager Credential Provider for Windows
 
-Netwrix Directory Manager Credential Provider (version 3.1.0.0) is a Windows Credential Provider that integrates with Windows login screens to provide self-service password reset and account unlock functionality.
+Netwrix Directory Manager Credential Provider (version 3.1.0.0) is a Windows Credential Provider that integrates with the Windows sign-in screen to provide self-service password reset and account unlock functionality.
 
 You must install it on each client workstation to make the password reset and account unlock
-features available to all users. It provides links on the Windows logon screen, which route users to
+features available to all users. It provides links on the Windows logon screen that route users to
 the web pages where they can unlock their accounts and reset their passwords.
 
 ## Product Information
@@ -21,7 +27,7 @@ the web pages where they can unlock their accounts and reset their passwords.
 
 ## Key Components in the Package
 
-The Credential Provider package consists of:
+The Credential Provider package includes the following components:
 
 | Component     | Description   |
 | ------------- | ------------- |
@@ -37,6 +43,7 @@ The Credential Provider package consists of:
 ## Default Configuration
 
 The credential provider includes the following default settings:
+
 - **Window Title**: "Netwrix Directory Manager"
 - **CP Title**: "Netwrix Directory Manager"
 - **Forgot Password Text**: "Forgot my password?"
@@ -61,6 +68,7 @@ The credential provider includes the following default settings:
 ## Configuration Options
 
 The credential provider supports extensive configuration through registry settings and XML configuration:
+
 - Custom password reset URLs
 - Custom unlock account URLs
 - Proxy server configuration

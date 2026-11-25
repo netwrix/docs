@@ -1,10 +1,17 @@
 ---
-title: "Configure Password Options"
-description: "Configure Password Options"
+title: "Configure Password Options in Directory Manager"
+description: "Restrict passwords, define allowed-password regular expressions, and block passwords listed in an imported file for an identity store."
+keywords:
+  - password restrictions
+  - password exceptions
+  - password rules
+  - disallowed passwords file
+  - regular expressions
+  - identity store
 sidebar_position: 160
 ---
 
-# Configure Password Options
+# Configure Password Options in Directory Manager
 
 You can define the following password restrictions and rules for an identity store:
 
@@ -13,19 +20,19 @@ You can define the following password restrictions and rules for an identity sto
 - Specify disallowed passwords using an external file
 
 When identity store users reset or change their passwords using Directory Manager, their new
-passwords must adhere to the defined rules.
+passwords must follow the defined rules.
 
 :::note
 (1) These password configurations don't apply when helpdesk users reset passwords of
-end-users.  
-(2) In case a user has linked his or her accounts in different identity stores, the password
+end users.  
+(2) If a user has linked their accounts in different identity stores, the password
 configurations for the master account apply.
 :::
 
 
 In addition to these password restrictions, you can define a password policy for a security role in
 an identity store. See the
-[Directory Manage Password Policy ](/docs/directorymanager/11.1/admincenter/securityrole/policy/password.md) topic.
+[Directory Manager Password Policy](/docs/directorymanager/11.1/admincenter/securityrole/policy/password.md) topic.
 
 ## Define Restricted Passwords
 
@@ -46,7 +53,7 @@ expression.
 
     - **Equals:** passwords that match the value you specify in the **Exception Value** box aren't
       allowed.
-    - **Starts with:** passwords that start with the value you specify in the **Exception Value**
+    - **Starts With:** passwords that start with the value you specify in the **Exception Value**
       box aren't allowed.
     - **Ends With:** passwords that end with the value you specify in the **Exception Value** box
       aren't allowed.
@@ -85,7 +92,7 @@ users follow certain rules and patterns.
    See the
    [Regular Expressions](/docs/directorymanager/11.1/admincenter/applications/portal/categories/textbox.md#regular-expressions)
    topic to learn about regular expressions and their syntax.
-6. Click **OK**. The regular expression is displayed in the In the **Password Rules** area.
+6. Click **OK**. The regular expression is displayed in the **Password Rules** area.
 7. Follow steps 4 to 6 to define as many regular expressions as required. Passwords that satisfy any
    of the regular expressions are allowed.
 
@@ -99,7 +106,7 @@ users follow certain rules and patterns.
 ## Specify Disallowed Passwords Using an External File
 
 A simple way of preventing users from using certain words or strings as passwords is to add those
-restricted passwords to a .csv or .txt file and upload it to Directory Manager.
+restricted passwords to a CSV or TXT file and upload it to Directory Manager.
 
 **To upload the file:**
 
@@ -114,5 +121,5 @@ restricted passwords to a .csv or .txt file and upload it to Directory Manager.
 
 :::note
 Only a single file containing disallowed passwords can be imported for an identity store;
-importing another file will replace the existing one.
+importing another file replaces the existing one.
 :::
