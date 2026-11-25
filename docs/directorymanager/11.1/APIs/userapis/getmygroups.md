@@ -7,6 +7,7 @@ keywords:
   - Groups endpoint
   - authenticated user
 sidebar_position: 100
+unlisted: true
 ---
 
 # Get My Groups with the Directory Manager API

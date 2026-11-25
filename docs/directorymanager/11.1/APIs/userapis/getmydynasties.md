@@ -7,6 +7,7 @@ keywords:
   - GET Groups Dynasties endpoint
   - dynasty groups
 sidebar_position: 60
+unlisted: true
 ---
 
 # Get My Dynasties with the Directory Manager API

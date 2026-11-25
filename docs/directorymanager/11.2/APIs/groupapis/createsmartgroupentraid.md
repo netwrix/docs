@@ -8,6 +8,7 @@ keywords:
   - Microsoft Entra ID identity store
   - Smart Group types
 sidebar_position: 40
+unlisted: true
 ---
 
 # Create an Entra ID Smart Group with the Directory Manager API

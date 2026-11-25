@@ -7,6 +7,7 @@ keywords:
   - PATCH groups
   - group attributes API
 sidebar_position: 190
+unlisted: true
 ---
 
 # Update Multiple Groups API

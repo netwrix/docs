@@ -8,6 +8,7 @@ keywords:
   - GET request
   - Directory Manager scheduler
 sidebar_position: 60
+unlisted: true
 ---
 
 # Download Scheduler Service Logs with the API

@@ -7,6 +7,7 @@ keywords:
   - JoinOnBehalf API
   - group membership
   - Directory Manager API
+unlisted: true
 ---
 
 # Join a Group on Behalf of Another User API

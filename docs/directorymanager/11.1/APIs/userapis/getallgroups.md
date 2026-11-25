@@ -7,6 +7,7 @@ keywords:
   - GET Groups All endpoint
   - user groups API
 sidebar_position: 50
+unlisted: true
 ---
 
 # Get All Groups of a User with the Directory Manager API

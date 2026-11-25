@@ -7,6 +7,7 @@ keywords:
   - LeaveOnBehalf API
   - group membership
   - Directory Manager API
+unlisted: true
 ---
 
 # Leave a Group on Behalf of Another User API

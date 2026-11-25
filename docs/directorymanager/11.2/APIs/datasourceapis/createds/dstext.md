@@ -8,6 +8,7 @@ keywords:
   - CSV delimiter
   - OneDrive
 sidebar_position: 10
+unlisted: true
 ---
 
 # Create a Text/CSV Data Source with the Directory Manager API

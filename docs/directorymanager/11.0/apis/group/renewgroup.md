@@ -7,6 +7,7 @@ keywords:
   - group lifecycle renewal
   - group expiration renewal
   - Groups Renew endpoint
+unlisted: true
 ---
 
 # Renew a Group API

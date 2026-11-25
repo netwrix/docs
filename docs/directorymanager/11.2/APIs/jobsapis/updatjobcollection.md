@@ -8,6 +8,7 @@ keywords:
   - synchronize job
   - Directory Manager API
 sidebar_position: 110
+unlisted: true
 ---
 
 # Update a Job Collection with the Directory Manager API

@@ -7,6 +7,7 @@ keywords:
   - bulk delete groups
   - identity store groups
 sidebar_position: 60
+unlisted: true
 ---
 
 # Delete Multiple Groups with the Directory Manager API

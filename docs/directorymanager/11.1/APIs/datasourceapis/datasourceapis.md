@@ -7,6 +7,7 @@ keywords:
   - REST API
   - data source metadata
 sidebar_position: 20
+unlisted: true
 ---
 
 # Directory Manager Data Source APIs

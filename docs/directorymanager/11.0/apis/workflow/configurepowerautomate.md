@@ -8,6 +8,7 @@ keywords:
   - workflow integration API
   - Power Automate tenant ID
 sidebar_position: 30
+unlisted: true
 ---
 
 # Connect Directory Manager to Power Automate

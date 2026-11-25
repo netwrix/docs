@@ -8,6 +8,7 @@ keywords:
   - group identities
   - identity store
   - REST API
+unlisted: true
 ---
 
 # Get Multiple Groups API in Directory Manager

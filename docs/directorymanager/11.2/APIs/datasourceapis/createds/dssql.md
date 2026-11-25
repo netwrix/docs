@@ -8,6 +8,7 @@ keywords:
   - Synchronize jobs
   - Windows authentication
 sidebar_position: 60
+unlisted: true
 ---
 
 # Create a SQL Server Data Source with the Directory Manager API

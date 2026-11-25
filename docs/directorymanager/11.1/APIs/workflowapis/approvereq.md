@@ -7,6 +7,7 @@ keywords:
   - workflow approval API
   - POST Approve endpoint
 sidebar_position: 20
+unlisted: true
 ---
 
 # Approve a Directory Manager Workflow Request

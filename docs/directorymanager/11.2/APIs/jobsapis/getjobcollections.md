@@ -6,6 +6,7 @@ keywords:
   - "job collection filter"
   - "DataSyncJobs endpoint"
 sidebar_position: 70
+unlisted: true
 ---
 
 # Get Job Collections API in Directory Manager

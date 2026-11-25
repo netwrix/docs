@@ -7,6 +7,7 @@ keywords:
   - Groups/SmartGroups endpoint
   - authenticated user
 sidebar_position: 130
+unlisted: true
 ---
 
 # Get My Smart Groups with the Directory Manager API

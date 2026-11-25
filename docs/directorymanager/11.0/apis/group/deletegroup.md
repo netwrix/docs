@@ -7,6 +7,7 @@ keywords:
   - DELETE group
   - identity store group
 sidebar_position: 30
+unlisted: true
 ---
 
 # Delete a Group with the Directory Manager API

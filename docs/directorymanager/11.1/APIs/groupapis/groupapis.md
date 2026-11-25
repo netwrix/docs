@@ -7,6 +7,7 @@ keywords:
   - group management API
   - smart group API
   - static group API
+unlisted: true
 ---
 
 # Directory Manager Group APIs

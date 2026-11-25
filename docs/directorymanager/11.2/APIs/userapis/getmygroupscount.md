@@ -6,6 +6,7 @@ keywords:
   - my groups count
   - Groups/count endpoint
 sidebar_position: 110
+unlisted: true
 ---
 
 # Get My Groups Count with the Directory Manager API

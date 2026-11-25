@@ -8,6 +8,7 @@ keywords:
   - Smart Group criteria
   - identity store
 sidebar_position: 30
+unlisted: true
 ---
 
 # Create a Smart Group with the Directory Manager API

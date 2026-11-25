@@ -8,6 +8,7 @@ keywords:
   - Synchronize jobs
   - Oracle client
 sidebar_position: 50
+unlisted: true
 ---
 
 # Create an Oracle Data Source with the Directory Manager API

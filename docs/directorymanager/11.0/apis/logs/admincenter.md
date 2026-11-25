@@ -8,6 +8,7 @@ keywords:
   - Admin Center log download endpoint
   - Directory Manager Admin Center
 sidebar_position: 10
+unlisted: true
 ---
 
 # Download Admin Center Logs with the API

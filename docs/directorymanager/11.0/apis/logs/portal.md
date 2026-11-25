@@ -8,6 +8,7 @@ keywords:
   - portal log download endpoint
   - Directory Manager portal
 sidebar_position: 40
+unlisted: true
 ---
 
 # Download Portal Logs with the API

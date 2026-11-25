@@ -7,6 +7,7 @@ keywords:
   - group expiration renewal
   - Groups Renew endpoint
 sidebar_position: 160
+unlisted: true
 ---
 
 # Renew a Group API

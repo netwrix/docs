@@ -7,6 +7,7 @@ keywords:
   - contact IDs
   - Directory Manager API
 sidebar_position: 30
+unlisted: true
 ---
 
 # Delete Multiple Contacts with the Directory Manager API

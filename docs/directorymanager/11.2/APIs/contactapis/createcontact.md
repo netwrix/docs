@@ -7,6 +7,7 @@ keywords:
   - identity store contact
   - Directory Manager API
 sidebar_position: 10
+unlisted: true
 ---
 
 # Create a Contact with the Directory Manager API

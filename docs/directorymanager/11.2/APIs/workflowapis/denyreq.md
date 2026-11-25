@@ -7,6 +7,7 @@ keywords:
   - workflow approval API
   - Directory Manager REST API
 sidebar_position: 80
+unlisted: true
 ---
 
 # Deny a Workflow Request Using the API

@@ -7,6 +7,7 @@ keywords:
   - Groups/Membership endpoint
   - authenticated user
 sidebar_position: 110
+unlisted: true
 ---
 
 # Get My Membership with the Directory Manager API

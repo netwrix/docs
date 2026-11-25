@@ -8,6 +8,7 @@ keywords:
   - Data Service log download endpoint
   - Directory Manager Data Service
 sidebar_position: 20
+unlisted: true
 ---
 
 # Download Data Service Logs with the API

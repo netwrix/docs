@@ -7,6 +7,7 @@ keywords:
   - delete jobs by ID
   - job cleanup
 sidebar_position: 30
+unlisted: true
 ---
 
 # Delete Synchronize Jobs API

@@ -6,6 +6,7 @@ keywords:
   - membership count
   - Groups/Membership/count endpoint
 sidebar_position: 130
+unlisted: true
 ---
 
 # Get My Membership Count with the Directory Manager API

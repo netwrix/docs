@@ -7,6 +7,7 @@ keywords:
   - data source filter criteria
   - data source search options
 sidebar_position: 50
+unlisted: true
 ---
 
 # Get Filtered Data Sources by Type ID in Directory Manager

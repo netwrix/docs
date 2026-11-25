@@ -7,6 +7,7 @@ keywords:
   - membership query preview
   - IMSGCriteria
 sidebar_position: 150
+unlisted: true
 ---
 
 # Preview Smart Group Membership Changes API

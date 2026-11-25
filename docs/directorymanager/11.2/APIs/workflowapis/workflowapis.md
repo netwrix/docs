@@ -8,6 +8,7 @@ keywords:
   - Power Automate settings
   - workflow requests
 sidebar_position: 80
+unlisted: true
 ---
 
 # Directory Manager Workflow APIs

@@ -7,6 +7,7 @@ keywords:
   - group attribute update
   - PATCH group
   - groupIdentity endpoint
+unlisted: true
 ---
 
 # Update a Group API

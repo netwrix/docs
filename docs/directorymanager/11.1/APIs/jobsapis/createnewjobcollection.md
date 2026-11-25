@@ -7,6 +7,7 @@ keywords:
   - job collection POST request body
   - job run order
 sidebar_position: 20
+unlisted: true
 ---
 
 # Create a Synchronize Job Collection API

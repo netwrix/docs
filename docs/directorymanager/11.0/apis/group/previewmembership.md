@@ -7,6 +7,7 @@ keywords:
   - Smart Group membership preview
   - membership query preview
   - IMSGCriteria
+unlisted: true
 ---
 
 # Preview Smart Group Membership Changes API

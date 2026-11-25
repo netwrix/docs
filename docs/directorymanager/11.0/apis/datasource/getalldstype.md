@@ -7,6 +7,7 @@ keywords:
   - SQL Server data sources
   - list data sources of one type
 sidebar_position: 70
+unlisted: true
 ---
 
 # Get Data Sources by Type API in Directory Manager

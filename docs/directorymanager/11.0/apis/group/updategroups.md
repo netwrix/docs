@@ -7,6 +7,7 @@ keywords:
   - bulk group update
   - PATCH groups
   - group attributes API
+unlisted: true
 ---
 
 # Update Multiple Groups API

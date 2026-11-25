@@ -7,6 +7,7 @@ keywords:
   - Directory Manager API
   - POST Users endpoint
 sidebar_position: 20
+unlisted: true
 ---
 
 # Create an Entra ID User with the Directory Manager API

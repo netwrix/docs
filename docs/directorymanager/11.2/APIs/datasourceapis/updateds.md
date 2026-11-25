@@ -8,6 +8,7 @@ keywords:
   - PUT request
   - data source configuration
 sidebar_position: 160
+unlisted: true
 ---
 
 # Update a Data Source with the Directory Manager API

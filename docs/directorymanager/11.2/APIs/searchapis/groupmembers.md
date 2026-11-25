@@ -7,6 +7,7 @@ keywords:
   - member attribute
   - group membership search
 sidebar_position: 20
+unlisted: true
 ---
 
 # Search Group Members in Directory Manager

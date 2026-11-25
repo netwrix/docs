@@ -7,6 +7,7 @@ keywords:
   - DataSource GetAll endpoint
   - data source configuration values
 sidebar_position: 60
+unlisted: true
 ---
 
 # Get All Data Sources API in Directory Manager

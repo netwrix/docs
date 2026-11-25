@@ -6,6 +6,7 @@ keywords:
   - "Synchronize jobs"
   - "DataSyncJobs endpoint"
 sidebar_position: 100
+unlisted: true
 ---
 
 # Get Job Names API in Directory Manager

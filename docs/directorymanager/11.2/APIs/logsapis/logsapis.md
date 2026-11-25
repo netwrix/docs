@@ -8,6 +8,7 @@ keywords:
   - Directory Manager logs
   - Windows event logs
 sidebar_position: 40
+unlisted: true
 ---
 
 # Directory Manager Logs APIs

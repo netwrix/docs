@@ -7,6 +7,7 @@ keywords:
   - contact attributes
   - Directory Manager API
 sidebar_position: 40
+unlisted: true
 ---
 
 # Get a Contact with the Directory Manager API

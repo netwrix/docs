@@ -7,6 +7,7 @@ keywords:
   - GET group
   - group attributes
 sidebar_position: 90
+unlisted: true
 ---
 
 # Get a Group with the Directory Manager API

@@ -7,6 +7,7 @@ keywords:
   - PATCH Users endpoint
   - AttributesToUpdate
 sidebar_position: 160
+unlisted: true
 ---
 
 # Update a User with the Directory Manager API

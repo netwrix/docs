@@ -7,6 +7,7 @@ keywords:
   - get default routes API
   - Directory Manager REST API
 sidebar_position: 110
+unlisted: true
 ---
 
 # Get Default Workflow Routes Using the API

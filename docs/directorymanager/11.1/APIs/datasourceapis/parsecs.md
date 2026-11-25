@@ -7,6 +7,7 @@ keywords:
   - SQL Server connection string
   - data source connection
 sidebar_position: 150
+unlisted: true
 ---
 
 # Parse a Connection String API

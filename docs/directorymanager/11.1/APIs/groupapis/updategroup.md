@@ -7,6 +7,7 @@ keywords:
   - PATCH group
   - groupIdentity endpoint
 sidebar_position: 180
+unlisted: true
 ---
 
 # Update a Group API

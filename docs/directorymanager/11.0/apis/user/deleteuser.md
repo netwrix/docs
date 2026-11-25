@@ -7,6 +7,7 @@ keywords:
   - DELETE Users endpoint
   - identity store
 sidebar_position: 20
+unlisted: true
 ---
 
 # Delete a User with the Directory Manager API

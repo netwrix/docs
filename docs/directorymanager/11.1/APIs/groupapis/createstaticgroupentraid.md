@@ -8,6 +8,7 @@ keywords:
   - Microsoft Entra ID
   - POST StaticGroup
 sidebar_position: 20
+unlisted: true
 ---
 
 # Create an Entra ID Static Group with the Directory Manager API

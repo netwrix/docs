@@ -7,6 +7,7 @@ keywords:
   - identity store search
   - displayName search
 sidebar_position: 10
+unlisted: true
 ---
 
 # Search for Objects by Attribute in Directory Manager

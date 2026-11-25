@@ -8,6 +8,7 @@ keywords:
   - approval requests
   - GET request
 sidebar_position: 130
+unlisted: true
 ---
 
 # Get Pending Workflow Requests in Directory Manager

@@ -7,6 +7,7 @@ keywords:
   - "DataSyncJobs Collections Details"
   - "paged job list"
 sidebar_position: 50
+unlisted: true
 ---
 
 # Get Synchronize Job Collection Details API

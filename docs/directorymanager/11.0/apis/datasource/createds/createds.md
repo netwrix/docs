@@ -7,6 +7,7 @@ keywords:
   - data source providers
   - Synchronize jobs
 sidebar_position: 10
+unlisted: true
 ---
 
 # Create a Data Source API in Directory Manager

@@ -8,6 +8,7 @@ keywords:
   - connect/token endpoint
   - OAuth password grant
 sidebar_position: 90
+unlisted: true
 ---
 
 # Get an Access Token for the Directory Manager API

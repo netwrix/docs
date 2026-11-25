@@ -7,6 +7,7 @@ keywords:
   - group expiration
   - POST Expire
 sidebar_position: 50
+unlisted: true
 ---
 
 # Expire a Group with the Directory Manager API

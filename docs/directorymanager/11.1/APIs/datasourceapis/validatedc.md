@@ -8,6 +8,7 @@ keywords:
   - data source connectivity
   - Microsoft Excel data source
 sidebar_position: 170
+unlisted: true
 ---
 
 # Validate a Data Source Connection in Directory Manager

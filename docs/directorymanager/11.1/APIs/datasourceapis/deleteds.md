@@ -7,6 +7,7 @@ keywords:
   - dataSourceId
   - Synchronize jobs
 sidebar_position: 20
+unlisted: true
 ---
 
 # Delete a Data Source with the Directory Manager API

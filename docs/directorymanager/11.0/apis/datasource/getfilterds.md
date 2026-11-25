@@ -7,6 +7,7 @@ keywords:
   - role policy data sources
   - GetFilteredDataSources endpoint
 sidebar_position: 90
+unlisted: true
 ---
 
 # Get Filtered Data Sources API

@@ -7,6 +7,7 @@ keywords:
   - "Directory Manager REST API"
   - "data synchronization"
 sidebar_position: 60
+unlisted: true
 ---
 
 # Synchronize Jobs APIs in Directory Manager

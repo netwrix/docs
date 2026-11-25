@@ -7,6 +7,7 @@ keywords:
   - OneDrive Excel data source
   - Excel file names OneDrive
 sidebar_position: 80
+unlisted: true
 ---
 
 # Get File Names by Data Source Type API

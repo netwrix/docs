@@ -8,6 +8,7 @@ keywords:
   - Workflows/Route endpoint
   - PATCH request
 sidebar_position: 160
+unlisted: true
 ---
 
 # Update a Workflow Route in Directory Manager

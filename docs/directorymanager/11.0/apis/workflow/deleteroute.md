@@ -7,6 +7,7 @@ keywords:
   - DELETE request
   - Directory Manager REST API
 sidebar_position: 50
+unlisted: true
 ---
 
 # Delete a Workflow Route Using the API

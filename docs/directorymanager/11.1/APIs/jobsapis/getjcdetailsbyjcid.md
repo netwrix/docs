@@ -6,6 +6,7 @@ keywords:
   - "job collection ID"
   - "DataSyncJobs endpoint"
 sidebar_position: 60
+unlisted: true
 ---
 
 # Get Job Collection Details by ID in Directory Manager

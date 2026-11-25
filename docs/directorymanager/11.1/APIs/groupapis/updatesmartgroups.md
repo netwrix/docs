@@ -7,6 +7,7 @@ keywords:
   - bulk Smart Group update
   - Directory Manager data service
 sidebar_position: 210
+unlisted: true
 ---
 
 # Update Smart Groups API

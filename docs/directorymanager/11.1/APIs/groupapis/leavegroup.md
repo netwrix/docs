@@ -7,6 +7,7 @@ keywords:
   - group membership
   - Directory Manager API
   - membership type
+unlisted: true
 ---
 
 # Leave a Group API in Directory Manager

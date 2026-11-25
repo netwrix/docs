@@ -7,6 +7,7 @@ keywords:
   - bulk group renewal
   - renew groups in bulk API
   - POST Groups/Renew request body
+unlisted: true
 ---
 
 # Renew Multiple Groups API

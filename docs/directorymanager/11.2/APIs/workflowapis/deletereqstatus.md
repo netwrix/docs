@@ -7,6 +7,7 @@ keywords:
   - RequestsOlderThanInDays
   - DELETE Status endpoint
 sidebar_position: 70
+unlisted: true
 ---
 
 # Delete Old Directory Manager Workflow Requests by Status

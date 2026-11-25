@@ -8,6 +8,7 @@ keywords:
   - PATCH request
   - identity store
 sidebar_position: 60
+unlisted: true
 ---
 
 # Update a Contact API in Directory Manager

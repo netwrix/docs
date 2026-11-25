@@ -8,6 +8,7 @@ keywords:
   - identity store
   - REST endpoint
 sidebar_position: 50
+unlisted: true
 ---
 
 # Get Contacts API in Directory Manager

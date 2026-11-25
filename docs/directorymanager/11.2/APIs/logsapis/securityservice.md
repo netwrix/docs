@@ -8,6 +8,7 @@ keywords:
   - GET request
   - Directory Manager security
 sidebar_position: 70
+unlisted: true
 ---
 
 # Download Security Service Logs with the API

@@ -7,6 +7,7 @@ keywords:
   - data source types
   - data source icon metadata
 sidebar_position: 120
+unlisted: true
 ---
 
 # Get Data Source Metadata API

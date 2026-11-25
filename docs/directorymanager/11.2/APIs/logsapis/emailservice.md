@@ -8,6 +8,7 @@ keywords:
   - Email Service log download endpoint
   - Directory Manager Email Service
 sidebar_position: 30
+unlisted: true
 ---
 
 # Download Email Service Logs with the API

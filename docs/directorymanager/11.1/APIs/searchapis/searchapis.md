@@ -7,6 +7,7 @@ keywords:
   - Directory Manager REST API
   - Searches endpoint
 sidebar_position: 50
+unlisted: true
 ---
 
 # Directory Manager Search APIs

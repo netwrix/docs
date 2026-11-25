@@ -7,6 +7,7 @@ keywords:
   - data source name lookup
   - DataSource Get endpoint
 sidebar_position: 40
+unlisted: true
 ---
 
 # Get a Data Source by Type and Name API

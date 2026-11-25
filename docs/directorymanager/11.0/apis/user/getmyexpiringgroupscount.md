@@ -6,6 +6,7 @@ keywords:
   - expiring groups count
   - Groups/Expiring/count endpoint
 sidebar_position: 80
+unlisted: true
 ---
 
 # Get My Expiring Groups Count with the Directory Manager API

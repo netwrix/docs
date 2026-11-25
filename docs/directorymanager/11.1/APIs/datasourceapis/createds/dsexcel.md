@@ -8,6 +8,7 @@ keywords:
   - xls file
   - OneDrive
 sidebar_position: 30
+unlisted: true
 ---
 
 # Create an MS Excel Data Source with the API

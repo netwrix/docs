@@ -7,6 +7,7 @@ keywords:
   - Smart Group refresh
   - SmartGroups Update endpoint
 sidebar_position: 180
+unlisted: true
 ---
 
 # Update a Smart Group API

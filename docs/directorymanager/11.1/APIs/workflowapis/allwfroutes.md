@@ -8,6 +8,7 @@ keywords:
   - user-defined routes
   - identity store ID
 sidebar_position: 10
+unlisted: true
 ---
 
 # Get All Directory Manager Workflow Routes

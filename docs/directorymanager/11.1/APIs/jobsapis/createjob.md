@@ -7,6 +7,7 @@ keywords:
   - Synchronize job request
   - job field mapping
 sidebar_position: 10
+unlisted: true
 ---
 
 # Create a Synchronize Job API

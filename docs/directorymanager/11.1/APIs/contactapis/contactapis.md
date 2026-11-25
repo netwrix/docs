@@ -7,6 +7,7 @@ keywords:
   - identity store contacts
   - contact management
 sidebar_position: 10
+unlisted: true
 ---
 
 # Directory Manager Contact APIs

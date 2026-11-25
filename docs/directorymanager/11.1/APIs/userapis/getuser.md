@@ -7,6 +7,7 @@ keywords:
   - Users/{userIdentity} endpoint
   - identity store
 sidebar_position: 150
+unlisted: true
 ---
 
 # Get a User with the Directory Manager API

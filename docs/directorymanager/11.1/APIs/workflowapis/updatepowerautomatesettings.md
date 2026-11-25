@@ -8,6 +8,7 @@ keywords:
   - PATCH request
   - identity store settings
 sidebar_position: 170
+unlisted: true
 ---
 
 # Update Power Automate Settings in Directory Manager

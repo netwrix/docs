@@ -8,6 +8,7 @@ keywords:
   - JSON response
   - Active Directory identity store
 sidebar_position: 90
+unlisted: true
 ---
 
 # Directory Manager APIs

@@ -7,6 +7,7 @@ keywords:
   - OneDrive data source
   - data source API
 sidebar_position: 100
+unlisted: true
 ---
 
 # Get File Server Metadata by Type with the Directory Manager API

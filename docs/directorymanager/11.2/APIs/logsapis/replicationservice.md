@@ -8,6 +8,7 @@ keywords:
   - GET request
   - Directory Manager replication
 sidebar_position: 50
+unlisted: true
 ---
 
 # Download Replication Service Logs with the API

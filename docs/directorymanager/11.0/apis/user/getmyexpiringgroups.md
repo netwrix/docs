@@ -7,6 +7,7 @@ keywords:
   - Groups/Expiring endpoint
   - GET request
 sidebar_position: 70
+unlisted: true
 ---
 
 # Get My Expiring Groups with the Directory Manager API

@@ -8,6 +8,7 @@ keywords:
   - Workflows/Routes endpoint
   - route configuration
 sidebar_position: 90
+unlisted: true
 ---
 
 # Get a Workflow Route in Directory Manager

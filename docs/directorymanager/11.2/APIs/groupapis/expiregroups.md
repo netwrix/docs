@@ -7,6 +7,7 @@ keywords:
   - bulk group expiration
   - identity store groups
 sidebar_position: 80
+unlisted: true
 ---
 
 # Expire Multiple Groups with the Directory Manager API

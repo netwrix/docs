@@ -7,6 +7,7 @@ keywords:
   - delete job collections by ID
   - remove job collections API
 sidebar_position: 40
+unlisted: true
 ---
 
 # Delete Synchronize Job Collections API

@@ -8,6 +8,7 @@ keywords:
   - StaticGroup endpoint
   - identity store group
 sidebar_position: 10
+unlisted: true
 ---
 
 # Create a Static Group with the Directory Manager API

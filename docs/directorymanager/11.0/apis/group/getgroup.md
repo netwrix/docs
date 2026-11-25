@@ -7,6 +7,7 @@ keywords:
   - get group API
   - GET group
   - group attributes
+unlisted: true
 ---
 
 # Get a Group with the Directory Manager API

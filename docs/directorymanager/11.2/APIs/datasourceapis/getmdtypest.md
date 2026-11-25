@@ -7,6 +7,7 @@ keywords:
   - file server type
   - local server data source metadata
 sidebar_position: 110
+unlisted: true
 ---
 
 # Get Data Source Metadata by Server and Type API

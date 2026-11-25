@@ -7,6 +7,7 @@ keywords:
   - data source provider type
   - capability mappings
 sidebar_position: 140
+unlisted: true
 ---
 
 # Get Data Source Provider Options API in Directory Manager

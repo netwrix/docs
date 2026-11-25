@@ -6,6 +6,7 @@ keywords:
   - user APIs
   - user management
 sidebar_position: 70
+unlisted: true
 ---
 
 # User APIs in Directory Manager

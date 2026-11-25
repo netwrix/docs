@@ -8,6 +8,7 @@ keywords:
   - identity store link
   - GET request
 sidebar_position: 140
+unlisted: true
 ---
 
 # Get Power Automate Settings in Directory Manager

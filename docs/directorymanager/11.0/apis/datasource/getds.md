@@ -7,6 +7,7 @@ keywords:
   - data source details API
   - single data source details
 sidebar_position: 30
+unlisted: true
 ---
 
 # Get a Data Source API in Directory Manager

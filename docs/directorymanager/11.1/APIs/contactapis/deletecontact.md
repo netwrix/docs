@@ -7,6 +7,7 @@ keywords:
   - contact identity
   - Directory Manager API
 sidebar_position: 20
+unlisted: true
 ---
 
 # Delete a Contact with the Directory Manager API

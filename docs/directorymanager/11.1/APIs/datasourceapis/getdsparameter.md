@@ -7,6 +7,7 @@ keywords:
   - data source connection string
   - data source tables and columns
 sidebar_position: 130
+unlisted: true
 ---
 
 # Get Data Source Parameters API in Directory Manager
