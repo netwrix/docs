@@ -13,8 +13,7 @@ sidebar_position: 60
 
 # Set-Schedule Cmdlet for Directory Manager
 
-The Set-Schedule cmdlet modifies the attributes and settings of a schedule in the identity store
-connected to the current instance of the Management Shell.
+The Set-Schedule cmdlet modifies the attributes and settings of a schedule in the identity store connected to the current Management Shell instance.
 
 ## Syntax
 
@@ -55,11 +54,13 @@ Set-Schedule
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - ScheduleName
 
-Example 1:
+## Examples
+
+### Example 1
 
 This example renames a schedule from GUS1 to GUS1-renamed.
 
@@ -67,7 +68,7 @@ This example renames a schedule from GUS1 to GUS1-renamed.
 Set-Schedule -ScheduleName GUS1 -NewName GUS1_renamed
 ```
 
-Example 2:
+### Example 2
 
 This example updates the authentication information of the GUS1 schedule.
 
@@ -75,7 +76,7 @@ This example updates the authentication information of the GUS1 schedule.
 Set-Schedule -SscheduleName GUS1 -Credential $creds
 ```
 
-Example 3:
+### Example 3
 
 This example removes OU targets from the smm4 schedule.
 
@@ -83,7 +84,7 @@ This example removes OU targets from the smm4 schedule.
 Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local', 'OU=CustomRole,OU=WorkingOU,DC=pucit,DC=local', 'OU=CustomRole2,OU=WorkingOU,DC=pucit,DC=local'
 ```
 
-Example 4:
+### Example 4
 
 This example modifies the smm4\_ schedule by removing its targets.
 
@@ -91,7 +92,7 @@ This example modifies the smm4\_ schedule by removing its targets.
 Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'CN=STest1Group,OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local', 'OU=CustomRole2,OU=WorkingOU,DC=pucit,DC=local'
 ```
 
-Example 5:
+### Example 5
 
 This example clears the configured notification settings of the smm4 schedule.
 
@@ -99,28 +100,25 @@ This example clears the configured notification settings of the smm4 schedule.
 Set-Schedule -ScheduleName smm4_ -SetNotifications $false
 ```
 
-Example 6:
+### Example 6
 
-This example changes the notification settings of the smm4 schedule. It sets notifications to be sent to
-recep1@gid.com every time the job runs.
+This example changes the notification settings of the smm4 schedule. It sends notifications to recep1@gid.com every time the job runs.
 
 ```
 Set-Schedule -ScheduleName smm4_ -SetNotifications $true -Recepients 'recep1@gid.com' -NotificationSendingCriteria Always
 ```
 
-Example 7:
+### Example 7
 
-This example adds a monthly trigger for the smm4 schedule. The trigger repeats every 10 minutes for 1 hour on
-the 23rd of March, August, and September at 16:56.
+This example adds a monthly trigger for the smm4 schedule. The trigger repeats every 10 minutes for 1 hour on the 23rd of March, August, and September at 16:56.
 
 ```
 Set-Schedule -ScheduleName smm4_ -TriggerOperation Add -TriggerType Monthly -StartTime '16:56' -MonthDate 23 -YearMonths 'March,August,September' -Repeat -RepeatInterval 10 -RepeatDuration 60
 ```
 
-Example 8:
+### Example 8
 
-This example adds a monthly repeating trigger with an end date for the smm4\_ schedule. The job stops if
-it is still running at the end of the duration.
+This example adds a monthly repeating trigger with an end date for the smm4\_ schedule. The job stops if it is still running at the end of the duration.
 
 ```
 Set-Schedule -ScheduleName smm4_ -TriggerOperation Add -TriggerType Monthly -StartTime '16:56' -MonthDate 23 -YearMonths 'March,August,September' -Repeat -RepeatInterval 10 -RepeatDuration 60 -EndDate '2020/03/29' –KillAtDurationEnd

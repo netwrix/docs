@@ -11,11 +11,11 @@ sidebar_position: 40
 
 # Move-Group
 
-The Move-Group commandlet lets you move a group to a different container in the same domain or
-in a different domain within the same forest. You can't move groups across forests.
+Use the Move-Group cmdlet to move a group to a different container in the same domain or in a
+different domain within the same forest. You can't move groups across forests.
 
-You can view events related to this commandlet in the Directory Manager portal, under the History node
-in the left pane.
+You can view events related to this cmdlet in the Directory Manager portal, under the **History**
+node in the left pane.
 
 ## Syntax
 
@@ -29,26 +29,28 @@ Move-Group
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - Identity
 - DestinationContainer
 
-Example 1:
+## Examples
 
-The following command moves the group _Training_ to the _Local Recruiting_ organizational unit using
+### Example 1
+
+The following command moves the group Training to the Local Recruiting organizational unit. It uses
 the credentials of the user signed in to the identity store.
 
 ```
 Move-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -DestinationContainer "OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US"
 ```
 
-Example 2:
+### Example 2
 
-The following command moves the group _Training_ to the _OffShore Recruiting_ organizational unit.
-The command uses the credentials set in the $Credentials environment variable for moving a group.
-See the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic for
-setting credentials in an environment variable.
+The following command moves the group Training to the OffShore Recruiting organizational unit. It
+uses the credentials set in the $Credentials environment variable. To set credentials in an
+environment variable, see
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md).
 
 ```
 Move-Group -Identity "CN=Training,OU=Local Recruiting,DC=HR,DC=Imanami,DC=US" -DestinationContainer "OU=OffShore Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Credential $Cred

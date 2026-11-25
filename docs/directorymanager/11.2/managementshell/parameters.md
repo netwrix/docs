@@ -12,16 +12,14 @@ sidebar_position: 20
 
 # Directory Manager Management Shell Parameters
 
-This topic discusses the following:
+This page covers:
 
 - [All Parameters](#all-parameters)
 - [Unsupported Parameters](#unsupported-parameters)
 
-## All Parameters
+## All parameters
 
-The following table lists the Directory Manager Management Shell commandlet parameters in
-alphabetical order. Click a letter to locate the parameters that start with that
-letter.
+The following table lists the Directory Manager Management Shell cmdlet parameters in alphabetical order. Click a letter to find the parameters that start with that letter.
 
 | Parameter Name                                                                                                                                                                                                  | Description |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
@@ -566,10 +564,9 @@ letter.
 | -------------- | -------------------------------------------- |
 | Zip            | The zip code for a user, contact, or mailbox. |
 
-## Unsupported Parameters
+## Unsupported parameters
 
-Directory Manager Management Shell doesn't support common parameters of PowerShell in its
-commandlets. The common parameters are:
+Directory Manager Management Shell cmdlets don't support the common PowerShell parameters. The common parameters are:
 
 - Debug
 - ErrorAction
@@ -586,6 +583,6 @@ commandlets. The common parameters are:
 - WhatIf
 - Write-Information
 
-See the
+For details on these parameters, see the
 [about_CommonParameters](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.3&viewFallbackFrom=powershell-6)
-Microsoft article for details on these parameters.
+Microsoft article.

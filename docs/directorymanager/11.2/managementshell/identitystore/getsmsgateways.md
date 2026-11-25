@@ -11,8 +11,7 @@ sidebar_position: 110
 
 # Get-SmsGateways Cmdlet in Directory Manager
 
-The Get-SmsGateways cmdlet provides information about the SMS gateways configured in Directory
-Manager.
+Use the Get-SmsGateways cmdlet to get information about the SMS gateways configured in Directory Manager.
 
 ## Syntax
 
@@ -21,13 +20,15 @@ Get-SmsGateways
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - None
 
-Example:
+## Examples
 
-This example lists all the configured SMS gateways in Directory Manager.
+### Example
+
+This command lists all the configured SMS gateways in Directory Manager.
 
 ```
 Get-SmsGateways

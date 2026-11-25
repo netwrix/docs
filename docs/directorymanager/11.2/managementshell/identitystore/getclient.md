@@ -12,10 +12,7 @@ sidebar_position: 50
 
 # Get-Client Cmdlet in Directory Manager
 
-The Get-Client cmdlet gets information about Directory Manager clients, such as Admin Center,
-Directory Manager portals, and Management Shell. It also covers Directory Manager services such as
-the replication, scheduler, and data services. The information includes the client name and type,
-and whether the client is enabled or disabled.
+Use the Get-Client cmdlet to get information about Directory Manager clients, such as Admin Center, Directory Manager portals, and Management Shell. It also covers Directory Manager services such as the replication, scheduler, and data services. The information includes the client name and type, and whether the client is enabled or disabled.
 
 ## Syntax
 
@@ -37,26 +34,27 @@ Get-Client
 
 - None
 
-Example 1:
+## Examples
 
-This example retrieves information about the Admin Center client.
+### Example 1
+
+This command retrieves information about the Admin Center client.
 
 ```
 Get-Client –ClientName ‘Admin Center’
 ```
 
-Example 2:
+### Example 2
 
-This example retrieves information about two clients (ManagementShell `<_machine name_>` and
-GroupIDPortal1) through the pipeline operator.
+This command retrieves information about two clients (ManagementShell `<_machine name_>` and GroupIDPortal1) through the pipeline operator.
 
 ```
 ‘ManagementShell <machine name>’, ‘GroupIDPortal1’ | Get-Client
 ```
 
-Example 3:
+### Example 3
 
-This example lists all Directory Manager clients available on the Directory Manager machine.
+This command lists all Directory Manager clients available on the Directory Manager machine.
 
 ```
 Get-Client

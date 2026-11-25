@@ -12,7 +12,7 @@ sidebar_position: 120
 
 # Directory Manager Group Membership Cmdlets
 
-This section covers cmdlets for managing the memberships of both managed and unmanaged groups.
+Use these cmdlets to manage the memberships of managed and unmanaged groups.
 
 - [Add-GroupMember Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/membership/addgroupmember.md) – adds objects to the membership of a group.
 - [Get-GroupMember Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/membership/getgroupmember.md) – retrieves members of a group.

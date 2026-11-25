@@ -12,8 +12,7 @@ sidebar_position: 20
 
 # Get-SmartGroup Cmdlet
 
-Use this cmdlet to retrieve Smart Groups and Dynasties that match your given criteria in one or
-more containers in a domain.
+Use this cmdlet to retrieve the Smart Groups and Dynasties that match your criteria in one or more containers of a domain.
 
 ## Syntax
 
@@ -38,26 +37,23 @@ Get-SmartGroup
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
-- None
+None.
 
-Example 1:
+## Examples
 
-The following command retrieves only Smart Groups (not Dynasties) in the base container specified by
-the **SearchContainer** parameter including sub-containers, using the credentials of the current user
-logged on to the identity store.
+### Example 1
+
+This command retrieves only Smart Groups, not Dynasties. It searches the base container in the **SearchContainer** parameter and its sub-containers. It uses the credentials of the current user logged on to the identity store.
 
 ```
 Get-SmartGroup -SmartGroupType "SmartGroup" -SearchContainer "OU=Recuriting,DC=HR,DC=Imanami,DC=US"
 ```
 
-Example 2:
+### Example 2
 
-The following command retrieves both Smart Groups and Dynasties that have display names starting
-with S in the containers specified by the **SearchContainer** parameter including sub-containers of
-the first base container and excluding sub-containers of the second one, using the credentials
-specified in the **$Credentials** environment variable.
+This command retrieves both Smart Groups and Dynasties whose display names start with S. It searches the containers in the **SearchContainer** parameter, including the sub-containers of the first base container and excluding those of the second. It uses the credentials in the **$Credentials** environment variable.
 
 ```
 Get-SmartGroup -SearchContainer "OU=Recuriting,DC=HR,DC=Imanami,DC=US","OU=OutSourcing,DC=HR,DC=Imanami,DC=US" -SearchContainersScopeList "2","1" -LdapFilter "(DisplayName = S*)" -Credential $Cred

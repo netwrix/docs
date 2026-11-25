@@ -12,8 +12,7 @@ sidebar_position: 40
 
 # Get-AvailableMessagingServers Cmdlet
 
-The Get-AvailableMessagingServers cmdlet retrieves the messaging servers available for the
-configured messaging provider.
+Use the Get-AvailableMessagingServers cmdlet to retrieve the messaging servers available for the configured messaging provider.
 
 ## Syntax
 
@@ -37,28 +36,27 @@ Get-AvailableMessagingServers
 - Provider
 - Credential
 
-Example 1:
+## Examples
 
-This example retrieves the available messaging servers configured in the AdStore1 identity store for
-the Exchange 2013 messaging provider.
+### Example 1
+
+This command retrieves the available messaging servers configured in the AdStore1 identity store for the Exchange 2013 messaging provider.
 
 ```
 Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider exchange2013 -UserName administrator -Password password123 -Domain pucit.local
 ```
 
-Example 2:
+### Example 2
 
-This example retrieves the available messaging servers configured in the AdStore1 identity store for
-the Microsoft 365 messaging provider.
+This command retrieves the available messaging servers configured in the AdStore1 identity store for the Microsoft 365 messaging provider.
 
 ```
 Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider o365 -UserName admin@mydomain.onmicrosoft.com -Password password123 -Domain mydomain.onmicrosoft.com -AppId 'eeeeeeee-aaaa-dddd-bbbb-cccccccccccc'
 ```
 
-Example 3:
+### Example 3
 
-This example retrieves the available messaging servers in the AdStore1 identity store for the Google
-Workspace (G Suite) messaging provider.
+This command retrieves the available messaging servers in the AdStore1 identity store for the Google Workspace (G Suite) messaging provider.
 
 ```
 Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider gsuite -UserName svcaccount@myproject-219211.iam.gserviceaccount.com -AdminUsername 'arslan@mydomain.com' -P12CertificatePath 'C:\Keys\gsuite\key.p12'

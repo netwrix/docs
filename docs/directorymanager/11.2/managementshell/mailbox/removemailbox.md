@@ -24,13 +24,13 @@ Remove-MailBox
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - Identity
 
-Example:
+## Example
 
-The following command deletes the specified mailbox from the connected identity store.
+This command deletes the specified mailbox from the connected identity store.
 
 ```
 Remove-MailBox -Identity "OsamaMailBox"

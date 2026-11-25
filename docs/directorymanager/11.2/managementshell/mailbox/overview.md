@@ -11,7 +11,7 @@ sidebar_position: 100
 
 # Mailbox Cmdlets in Directory Manager
 
-This section covers cmdlets for performing mailbox-specific tasks such as:
+Use these cmdlets to perform mailbox tasks:
 
 - [Get-Mailbox Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/mailbox/getmailbox.md) – Retrieves a mailbox.
 - [New-Mailbox Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/mailbox/newmailbox.md) – Creates a new mailbox.

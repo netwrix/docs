@@ -11,18 +11,11 @@ sidebar_position: 10
 
 # New-Dynasty Cmdlet in Directory Manager
 
-The New-Dynasty cmdlet creates a Dynasty in the directory. A Dynasty is a Smart Group that can
-create and maintain the membership of other Smart Groups. A Dynasty retrieves data from the
-directory in the same manner as a Smart Group, but it divides the result set into child groups based on group-by
-field values.
+Use the New-Dynasty cmdlet to create a Dynasty in the directory. A Dynasty is a Smart Group that can create and maintain the membership of other Smart Groups. A Dynasty retrieves data from the directory in the same way as a Smart Group, but it divides the result set into child groups based on group-by field values.
 
-You can specify multiple group-by fields. For instance, with the group-by fields Country, State, and
-City, this cmdlet creates a group for every distinct country value, then for each state within a
-country, and finally for each city in that state. All created child groups inherit the attributes
-of the parent that are set in the InheritedAttrs option.
+You can specify multiple group-by fields. For example, with the group-by fields Country, State, and City, this cmdlet creates a group for every distinct country value. It then creates a group for each state within a country, and finally a group for each city in that state. All created child groups inherit the attributes of the parent that are set in the InheritedAttrs option.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the History node
-in the left pane.
+You can view events related to this cmdlet in the Directory Manager portal, under the **History** node in the left pane.
 
 ## Syntax
 
@@ -87,7 +80,7 @@ New-Dynasty
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - TopManager
 - SamAccountName
@@ -97,34 +90,27 @@ New-Dynasty
 - Type
 - SecurityType
 
-Example 1:
+## Examples
 
-The following command creates a new mail-enabled, universal, distribution Dynasty and constructs its
-child groups for every distinct department value in the container specified by the
-OrganizationalUnit parameter using the credentials of the current user signed in to the identity store.
+### Example 1
+
+This command creates a new mail-enabled, universal, distribution Dynasty. It constructs the child groups for every distinct department value in the container specified by the OrganizationalUnit parameter. It uses the credentials of the current user signed in to the identity store.
 
 ```
 New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Departmental" -SamAccountName  "Departmental" -Type "Distribution" -GroupScope "Universal Group" -MailEnable True -GroupAlias "Departmental" -GroupBy  "Department"
 ```
 
-Example 2:
+### Example 2
 
-The following command creates a new mail-enabled, universal, distribution, multi-level Dynasty with
-the group-by attributes Country, State, and City based on the specified filters and separator, using
-the credentials set in the $Credentials environment variable. See
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) for setting
-credentials in an environment variable.
+This command creates a new mail-enabled, universal, distribution, multi-level Dynasty with the group-by attributes Country, State, and City. It uses the specified filters and separator, and the credentials set in the $Credentials environment variable. To set credentials in an environment variable, see [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md).
 
 ```
 New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Geographical" -GroupAlias "Geographical" -MailEnable True -SamAccountName "Geographical" -GroupScope "Universal Group" -Type "Distribution" -GroupBy "co","st","l" -Filters "Left 3","Left 3","%GROUPBY%\*" -Separator "_","_","_" -Credential $Cred
 ```
 
-Example 3:
+### Example 3
 
-The following command creates a new universal, distribution Managerial Dynasty in the container
-specified by the OrganizationalUnit parameter, searches the direct reports of the top manager in the
-containers specified in the SearchContainers parameter, including subcontainers, and creates them in
-the same container where the Top Manager resides.
+This command creates a new universal, distribution Managerial Dynasty in the container specified by the OrganizationalUnit parameter. It searches the direct reports of the top manager in the containers specified in the SearchContainers parameter, including subcontainers. It creates the child groups in the same container where the Top Manager resides.
 
 ```
 New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Managerial" -SamAccountName "Managerial" -GroupScope "Universal Group" -Type "Distribution" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US" -SearchContainersScopeList "2","2" -TopManager "CN=BrianRegan,CN=Users,DC=HR,DC=Imanami,DC=US" -ExcludeNestedLists False -ChildContainer ""

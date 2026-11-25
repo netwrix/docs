@@ -1,6 +1,6 @@
 ---
 title: "Set-Contact Cmdlet in Directory Manager"
-description: "Modify the properties of an existing contact in the directory by using the Set-Contact cmdlet in the Directory Manager Management Shell."
+description: "Modify the properties of an existing contact in the directory with the Set-Contact cmdlet in the Directory Manager Management Shell."
 keywords:
   - Set-Contact
   - modify contact
@@ -11,8 +11,7 @@ sidebar_position: 40
 
 # Set-Contact Cmdlet in Directory Manager
 
-The Set-Contact cmdlet modifies a contact in the directory. You can modify most contact properties
-directly by using the parameters supported by this cmdlet.
+Use the Set-Contact cmdlet to modify a contact in the directory. You can modify most contact properties directly with the parameters this cmdlet supports.
 
 ## Syntax
 
@@ -68,13 +67,13 @@ Set-Contact
 
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example:
+## Example
 
-The following command modifies the city of the specified contact.
+This command modifies the city of the specified contact.
 
 ```
 Set-Contact -Identity "OsamaContact" -City "Islamabad"

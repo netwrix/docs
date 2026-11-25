@@ -11,10 +11,9 @@ sidebar_position: 40
 
 # Remove-GroupMember Cmdlet for Directory Manager
 
-Use this cmdlet to remove one or more members from the membership of a group.
+Use the Remove-GroupMember cmdlet to remove one or more members from the membership of a group.
 
-Directory Manager maintains a history for this cmdlet, which you can view in the Directory Manager
-portal, under the History node in the left panel.
+Directory Manager keeps a history for this cmdlet. To view it, go to the History node in the left panel of the Directory Manager portal.
 
 ## Syntax
 
@@ -31,17 +30,14 @@ Remove-GroupMember
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - GroupIdentity
 - Identity
 
-Example:
+## Example
 
-The following command removes the user Brian Regan from the membership of the group Event Management
-using the credentials set in the $Credentials environment variable. See the
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic for setting
-credentials in an environment variable.
+This command removes the user Brian Regan from the membership of the group Event Management. It uses the credentials set in the $Credentials environment variable. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic.
 
 ```
 Remove-GroupMember -GroupIdentity "CN=Event Management,OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Identity "Brian Regan" -Credential $Cred

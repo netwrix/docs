@@ -12,12 +12,9 @@ sidebar_position: 60
 
 # Get-IdentityStore Cmdlet in Directory Manager
 
-The Get-IdentityStore cmdlet retrieves information about the specified identity store or
-about identity stores that match the given switches, such as _All_, _Connected_,
-_Enabled_, or _Disabled_.
+Use the Get-IdentityStore cmdlet to retrieve information about the specified identity store or about identity stores that match the given switches, such as _All_, _Connected_, _Enabled_, or _Disabled_.
 
-The information includes the identity store name, description, connection string, notification
-status, roles in the identity store, and so on.
+The information includes the identity store name, description, connection string, notification status, roles in the identity store, and so on.
 
 ## Syntax
 
@@ -95,52 +92,51 @@ Get-IdentityStore
 
 - IdentityStoreName or a switch `{ All | Connected | Enabled | Disabled}`
 
-Example 1:
+## Examples
 
-This example retrieves information about the AdStore1 identity store.
+### Example 1
+
+This command retrieves information about the AdStore1 identity store.
 
 ```
 Get-IdentityStore -IdentityStoreName AdStore1
 ```
 
-Example 2:
+### Example 2
 
-This example retrieves information about two identity stores (AdStore1 and AdStore2) through the
-pipeline operator.
+This command retrieves information about two identity stores (AdStore1 and AdStore2) through the pipeline operator.
 
 ```
 'AdStore1','AdStore2' | Get-IdentityStore
 ```
 
-Example 3:
+### Example 3
 
-This example retrieves information about all identity stores available on the Directory Manager
-machine.
+This command retrieves information about all identity stores available on the Directory Manager machine.
 
 ```
 Get-IdentityStore -All
 ```
 
-Example 4:
+### Example 4
 
-This example retrieves information about the identity store connected to the current instance of the
-Directory Manager Management Shell.
+This command retrieves information about the identity store connected to the current instance of the Directory Manager Management Shell.
 
 ```
 Get-IdentityStore -Connected
 ```
 
-Example 5:
+### Example 5
 
-This example displays information about all enabled identity stores.
+This command displays information about all enabled identity stores.
 
 ```
 Get-IdentityStore -Enabled
 ```
 
-Example 6:
+### Example 6
 
-This example gets information about all disabled identity stores.
+This command gets information about all disabled identity stores.
 
 ```
 Get-IdentityStore -Disabled

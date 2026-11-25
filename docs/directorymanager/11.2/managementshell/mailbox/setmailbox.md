@@ -11,8 +11,7 @@ sidebar_position: 40
 
 # Set-Mailbox Cmdlet in Directory Manager
 
-The Set-Mailbox cmdlet modifies a mailbox in the directory. You can modify most mailbox
-properties directly by using the parameters of this cmdlet.
+The Set-Mailbox cmdlet modifies a mailbox in the directory. Use its parameters to modify most mailbox properties directly.
 
 ## Syntax
 
@@ -68,14 +67,13 @@ Set-MailBox
 
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example:
+## Example
 
-The following command modifies the country value of the specified mailbox in the connected
-identity store.
+This command modifies the country value of the specified mailbox in the connected identity store.
 
 ```
 Set-MailBox -Identity "OsamaMailBox" -Country "Pakistan"

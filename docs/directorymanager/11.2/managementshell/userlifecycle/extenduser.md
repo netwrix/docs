@@ -12,7 +12,7 @@ sidebar_position: 10
 
 # Extend-User Cmdlet for Directory Manager
 
-Use the Extend-User cmdlet to extend the user lifecycle of an expired user for a specified period
+Use the Extend-User cmdlet to extend the user lifecycle of an expired user for a specified number
 of days.
 
 ## Syntax
@@ -27,11 +27,11 @@ Extend-User
 
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example:
+## Example
 
 The following cmdlet extends the profile validation period for the specified user. The period is
 extended by the number of days specified for the identity store.

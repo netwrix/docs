@@ -11,11 +11,11 @@ sidebar_position: 60
 
 # Remove-Group
 
-Use this cmdlet to delete a group (managed or unmanaged) or Dynasty in the directory. Removing a
-parent Dynasty using this cmdlet removes all its children as well.
+Use the Remove-Group cmdlet to delete a group (managed or unmanaged) or Dynasty in the directory.
+Removing a parent Dynasty with this cmdlet also removes all its children.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the History node
-in the left panel.
+You can view events related to this cmdlet in the Directory Manager portal, under the **History** node
+in the left pane.
 
 ## Syntax
 
@@ -28,25 +28,27 @@ Remove-Group
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+## Examples
 
-The following command removes the Event Management group, using the credentials of the current user
-signed in to the identity store.
+### Example 1
+
+The following command removes the Event Management group. It uses the credentials of the current
+user signed in to the identity store.
 
 ```
 Remove-Group -identity "OU=Event Management,OU=Recruiting,DC=HR,DC=Imanami,DC=US"
 ```
 
-Example 2:
+### Example 2
 
-The following command first shows the changes that running the command makes (a
-deletion). The command uses the credentials set in the $Credentials environment variable to perform
-the deletion. See the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md)
-topic for setting credentials in an environment variable.
+The following command first shows the changes that running the command makes (a deletion). It uses
+the credentials set in the $Credentials environment variable to perform the deletion. To set
+credentials in an environment variable, see
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md).
 
 ```
 Remove-Group -identity "OU=Event Management,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Credential $Cred

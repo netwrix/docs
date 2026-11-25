@@ -11,8 +11,7 @@ sidebar_position: 30
 
 # New-User Cmdlet in Directory Manager
 
-Use the New-User commandlet to create a user in the directory. Most user properties can be directly
-added by using the parameters of this commandlet.
+Use the New-User cmdlet to create a user in the directory. You can add most user properties directly with the parameters this cmdlet supports.
 
 ## Syntax
 
@@ -66,11 +65,9 @@ New-User
 - LastName
 - DisplayName
 
-Example:
+## Example
 
-The following command creates a new user in the container specified by the OrganizationalUnit
-parameter. The command also specifies the logon name, password, first name, last name, and display
-name of the new user.
+This command creates a user in the container specified by the _OrganizationalUnit_ parameter. The command also specifies the logon name, password, first name, last name, and display name of the new user.
 
 ```
 New-User -Name "OsamaUser" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -SAMAccountName "OsamaUser11" -Password "password123" -FirstName "Osama" -LastName "Shahbaz" -DisplayName "Osama"

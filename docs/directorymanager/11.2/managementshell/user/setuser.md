@@ -12,8 +12,7 @@ sidebar_position: 50
 
 # Set-User Cmdlet for Directory Manager
 
-The Set-User cmdlet modifies a user in the directory. You can modify most user properties directly
-by using the parameters of this cmdlet.
+Use the Set-User cmdlet to modify a user in the directory. You can modify most user properties directly with the parameters this cmdlet supports.
 
 ## Syntax
 
@@ -72,9 +71,9 @@ Set-User
 
 - Identity
 
-Example:
+## Example
 
-The following command modifies the display name of the specified user.
+This command changes the display name of the specified user.
 
 ```
 Set-User -Identity "Osama" -DisplayName "Osama123"

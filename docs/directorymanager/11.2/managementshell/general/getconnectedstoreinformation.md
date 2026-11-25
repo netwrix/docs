@@ -11,8 +11,7 @@ sidebar_position: 20
 
 # Get-ConnectedStoreInformation Cmdlet
 
-The Get-ConnectedStoreInformation cmdlet retrieves information about the identity store
-connected to the current instance of the Management Shell.
+Use the Get-ConnectedStoreInformation cmdlet to retrieve information about the identity store connected to the current instance of the Management Shell.
 
 ## Syntax
 
@@ -25,10 +24,13 @@ Get-ConnectedStoreInformation
 
 - None
 
-Example 1:
+## Example
 
-This example displays the name of the connected identity store, the last replication time to
-Elasticsearch, and messaging servers configured in the connected identity store.
+This command displays three items:
+
+- The name of the connected identity store
+- The last replication time to Elasticsearch
+- The messaging servers configured in the connected identity store
 
 ```
 Get-ConnectedStoreInformation

@@ -11,9 +11,7 @@ sidebar_position: 90
 
 # Remove-Container Cmdlet
 
-Use the Remove-Container cmdlet to delete organizational units from the directory. The cmdlet
-only supports deletion of leaf-level containers that have no objects. If the container contains
-objects or sub-containers, the cmdlet doesn't process the request and throws an exception.
+Use the `Remove-Container` cmdlet to delete organizational units from the directory. The cmdlet only supports deletion of leaf-level containers that have no objects. If the container contains objects or sub-containers, the cmdlet doesn't process the request and throws an exception.
 
 ## Syntax
 
@@ -26,25 +24,23 @@ Remove-Container
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+## Examples
 
-The following command removes the _Miscellaneous_ container, using the credentials of the current user
-signed in to the identity store.
+### Example 1
+
+The following command removes the _Miscellaneous_ container, using the credentials of the current user signed in to the identity store.
 
 ```
 Remove-Container -identity "OU=Miscellaneous,OU=Recruiting,DC=HR,DC=Imanami,DC=US"
 ```
 
-Example 2:
+### Example 2
 
-The following command first shows the changes that result from executing the command. The command
-uses the credentials set in the $Credentials environment variable to perform the deletion. See the
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic for setting
-credentials in the environment variable.
+The following command first shows the changes that result from executing the command. The command uses the credentials set in the $Credentials environment variable to perform the deletion. To set credentials in the environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic.
 
 ```
 Remove-Container -identity "OU=Miscellaneous,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Credential $Cred

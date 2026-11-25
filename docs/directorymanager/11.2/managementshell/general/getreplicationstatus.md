@@ -1,5 +1,5 @@
 ---
-title: "Get-ReplicationStatus Cmdlet"
+title: "Get-ReplicationStatus cmdlet"
 description: "Use the Get-ReplicationStatus cmdlet to check when each object in an identity store last replicated to Elasticsearch."
 keywords:
   - Get-ReplicationStatus
@@ -10,11 +10,9 @@ keywords:
 sidebar_position: 50
 ---
 
-# Get-ReplicationStatus Cmdlet
+# Get-ReplicationStatus cmdlet
 
-The Get-ReplicationStatus cmdlet retrieves the replication status of the connected identity store.
-The cmdlet provides the replication status of each object (such as users, groups, contacts,
-computers, public folders, and OUs) in the provider.
+The `Get-ReplicationStatus` cmdlet retrieves the replication status of the connected identity store. It provides the replication status of each object in the provider, such as users, groups, contacts, computers, public folders, and OUs.
 
 ## Syntax
 
@@ -24,14 +22,15 @@ Get-ReplicationStatus
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameters
 
 - IdentityStoreName
 
-Example 1:
+## Examples
 
-The following command provides the date and time when the objects of an identity store
-are replicated to Elasticsearch and the time elapsed since the last replication.
+### Example 1
+
+The following command provides the date and time when the objects of an identity store are replicated to Elasticsearch and the time elapsed since the last replication.
 
 ```
 Get-ReplicationStatus -IdentityStoreName AdStore8
