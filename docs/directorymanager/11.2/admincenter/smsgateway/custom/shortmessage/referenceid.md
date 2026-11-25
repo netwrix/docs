@@ -11,7 +11,7 @@ sidebar_position: 50
 
 # ShortMessage.ReferenceId Property (SMS Gateway API)
 
-Gets or sets the reference ID for the text message.
+Gets or sets the reference ID of the text message.
 
 **Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
 

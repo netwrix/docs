@@ -12,8 +12,7 @@ sidebar_position: 50
 
 # Set Up Windows Hello Authentication in Directory Manager
 
-The Windows Hello authentication type works on Windows 10 devices only, and only with specialized
-hardware installed, such as a fingerprint reader or 3D camera.
+The Windows Hello authentication type works on Windows 10 devices only. It also needs specialized hardware, such as a fingerprint reader or 3D camera.
 
 :::note
 Windows Hello supports the Microsoft Edge browser only.
@@ -23,24 +22,17 @@ Windows Hello supports the Microsoft Edge browser only.
 
 1. On the Windows Start menu, select **Settings**.
 2. Go to **Accounts > Sign-in options**.
-3. You're prompted to enter a PIN. Select **Add** under **PIN** to set up a PIN code.  
-   Having set a PIN, you can proceed to add biometric data.
-4. In the **Windows Hello** section, select **Set up** under **Face** or **Fingerprint** to add
-   recognition data.
+3. When prompted to enter a PIN, select **Add** under **PIN** to set up a PIN code. After you set a PIN, you can add biometric data.
+4. In the **Windows Hello** section, select **Set up** under **Face** or **Fingerprint** to add recognition data.
 
-## Enable Windows Hello Authentication for an Identity Store
+## Enable Windows Hello authentication for an identity store
 
-The Windows Hello authentication type must be enabled for an identity store before it can be used
-for second factor authentication and multifactor authentication.
+Enable the Windows Hello authentication type for an identity store before users can use it for second factor authentication and multifactor authentication.
 
 To enable it, see the [Enable Authentication Types for an Identity Store](/docs/directorymanager/11.2/admincenter/identitystore/configure/authtypes.md) topic.
 
-## Enforce Windows Hello Authentication for a Role in an Identity Store
+## Enforce Windows Hello authentication for a role in an identity store
 
-To enforce an authentication type, see the
-[Enforce Authentication Types for Multifactor Authentication](/docs/directorymanager/11.2/admincenter/securityrole/policy/authentication.md#enforce-authentication-types-for-multifactor-authentication)
-topic.
+To enforce an authentication type, see the [Enforce Authentication Types for Multifactor Authentication](/docs/directorymanager/11.2/admincenter/securityrole/policy/authentication.md#enforce-authentication-types-for-multifactor-authentication) topic.
 
-Role members must use an enforced authentication type for multifactor authentication. When an
-authentication type is enabled but not enforced, role members can choose to use it for enrollment
-and authentication.
+Role members must use an enforced authentication type for multifactor authentication. When an authentication type is enabled but not enforced, role members can choose to use it for enrollment and authentication.

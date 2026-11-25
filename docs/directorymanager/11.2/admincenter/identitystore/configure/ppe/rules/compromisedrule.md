@@ -12,14 +12,14 @@ sidebar_position: 50
 
 # Configure the Compromised Rule in Directory Manager
 
-The Compromised rule rejects passwords from prior breaches. These passwords shouldn't be used because they are vulnerable to credential stuffing attacks.
+The Compromised rule rejects passwords from prior breaches. Don't use these passwords because they are vulnerable to credential stuffing attacks.
 
-- Enable the **Compromised** button to enable the Compromised rule.
+To configure the Compromised rule:
 
-- Enter the path to your compromised password base files in the text box. The path can contain
-  environment variables like %SystemRoot%.
+1. Enable the **Compromised** button to turn on the Compromised rule.
 
-    :::warning
-    Using shared hash files degrades performance and could jeopardize security.
-    
-    :::
+2. Enter the path to your compromised password base files in the text box. The path can contain environment variables like %SystemRoot%.
+
+   :::warning
+   Using shared hash files degrades performance and could jeopardize security.
+   :::

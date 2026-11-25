@@ -31,7 +31,4 @@ The maximum length.
 
 **Remarks**
 
-This property stores the maximum length of an SMS message. If you send a message longer than this
-limit, the message is split into two or more pieces and the user is charged for each piece. Most gateways,
-if not all, automatically split the message. You can increase this limit, but the gateway might charge
-more.
+This field stores the maximum length of an SMS message. If you send a message longer than this limit, the message is split into two or more pieces and the user is charged for each piece. Most gateways, if not all, split the message automatically. You can increase this limit, but the gateway might charge more.

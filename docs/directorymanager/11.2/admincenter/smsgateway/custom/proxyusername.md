@@ -31,4 +31,4 @@ The user name of the proxy account.
 
 **Remarks**
 
-Use this property if your proxy server requires a user name and password to connect to it.
+Use this property if your proxy server requires a user name and password for connections.

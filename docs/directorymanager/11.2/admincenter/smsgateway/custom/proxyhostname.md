@@ -31,5 +31,4 @@ The host name of the proxy server.
 
 **Remarks**
 
-If communication with the SMS gateway is through a proxy server, you can use this property to
-provide the host name of the proxy server.
+If communication with the SMS gateway goes through a proxy server, use this property to set the host name of that proxy server.

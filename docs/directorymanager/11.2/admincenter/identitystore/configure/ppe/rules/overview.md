@@ -12,43 +12,45 @@ sidebar_position: 10
 
 # Set Up Password Policy Rules in Directory Manager
 
-Netwrix Password Policy Enforcer uses rules to decide whether to accept or reject a password. Each
-policy has rules that are configured independently of the rules in other policies.
+Netwrix Password Policy Enforcer uses rules to decide whether to accept or reject a password. Each policy has rules that are configured independently of the rules in other policies.
+
+Before you set up the rules for a policy, review the Detecting character substitution and Tolerance sections on this page.
+
+To set up the rules for a policy:
+
+1. Open the Rules tab. It opens by default and lists the following rules in the left pane.
+
+    - [Configure the Age (Max) Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/maximum_age_rule.md)
+    - [Configure the Age (Min) Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/minimum_age_rule.md)
+    - [Configure the Characters (Complexity) Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/complexityrule.md)
+    - [Configure Character (Granular) Rules in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/characterrules.md)
+    - [Configure the Compromised Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/compromisedrule.md)
+    - [Configure the Dictionary Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/dictionaryrule.md)
+    - [Configure the History Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/historyrule.md)
+    - [Configure the Length Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/lengthrule.md)
+    - [Configure the Patterns Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/patternsrule.md)
+    - [Repetition Rule for Password Policy Enforcer](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/repetitionrule.md)
+    - [Similarity Rule for Password Policy Enforcer](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/similarityrule.md)
+    - [Unique Characters Rule for Password Policy Enforcer](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/uniquecharacters.md)
 
 
-1. The Rules tab opens by default and the following rules are listed in the left pane.
+    A button beside a rule indicates whether the rule is enabled (enforced).
 
-- [Configure the Age (Max) Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/maximum_age_rule.md)
-- [Configure the Age (Min) Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/minimum_age_rule.md)
-- [Configure the Characters (Complexity) Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/complexityrule.md)
-- [Configure Character (Granular) Rules in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/characterrules.md)
-- [Configure the Compromised Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/compromisedrule.md)
-- [Configure the Dictionary Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/dictionaryrule.md)
-- [Configure the History Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/historyrule.md)
-- [Configure the Length Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/lengthrule.md)
-- [Configure the Patterns Rule in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/patternsrule.md)
-- [Repetition Rule for Password Policy Enforcer](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/repetitionrule.md)
-- [Similarity Rule for Password Policy Enforcer](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/similarityrule.md)
-- [Unique Characters Rule for Password Policy Enforcer](/docs/directorymanager/11.2/admincenter/identitystore/configure/ppe/rules/uniquecharacters.md)
+2. Click a rule to set its properties, and save it.
 
-A button beside a rule indicates that the rule is enabled (enforced) or not. Click a rule to
-set the rule's properties and save it.
-
-Before setting up the rules for the policy, review the sections on Detecting Character
-Substitution and Tolerance.
-
-## Detecting Character Substitution
+## Detecting character substitution
 
 Character substitution is a technique used by some users to improve password quality. They replace
 some alphabetic characters with non-alphabetic characters that have a similar appearance. For
 example, "sold" becomes "$old". Many of these substitutions are well known and do little to improve
 password strength.
 
-Some Password Policy Enforcer rules have a Detect Character Substitution checkbox. When this check
-box is selected, Password Policy Enforcer tests passwords with and without character substitution.
+Some Password Policy Enforcer rules have a Detect Character Substitution checkbox. When you select this
+checkbox, Password Policy Enforcer tests passwords with and without character substitution.
 This stops users from circumventing the rule by substituting some characters. Password Policy
 Enforcer detects these common character substitutions:
 
+<!-- vale Netwrix.FirstPerson = NO -->
  <table>
             <thead>
                 <tr>
@@ -213,6 +215,7 @@ Enforcer detects these common character substitutions:
                 </tr>
             </tbody>
         </table>
+<!-- vale Netwrix.FirstPerson = YES -->
 
 ## Tolerance
 

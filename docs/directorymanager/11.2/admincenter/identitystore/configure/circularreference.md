@@ -17,29 +17,29 @@ reference occurs, Directory Manager displays an error and prevents the user from
 
 Examples of circular reference are:
 
-- When UserA is a direct report of UserB and UserB is a direct report of UserC, a circular reference
+- UserA is a direct report of UserB, and UserB is a direct report of UserC. A circular reference
   occurs when you try to set UserA as UserC's manager.
-- When you try to add a group as its own member, for example, add GroupA as a member of GroupA, a
-  circular reference occurs.
-- When GroupA is a member of GroupB, GroupB is a member of GroupC, a circular reference occurs
+- You try to add a group as its own member, for example, GroupA as a member of GroupA.
+- GroupA is a member of GroupB, and GroupB is a member of GroupC. A circular reference occurs
   when you try to add GroupC as a member of GroupA.
 
-You can change the default setting to allow Directory Manager to save updates to objects even when a
+You can change the default setting so Directory Manager saves updates to objects even when a
 circular reference occurs.
 
-## Allow Circular Reference
+## Allow circular reference
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Miscellaneous**.
 4. On the **Miscellaneous** page, clear the **Check for Circular Reference** checkbox to allow
-   Directory Manager to save changes to objects that involve a circular reference.  
+   Directory Manager to save changes to objects that involve a circular reference.
+
    The checkbox is selected by default, indicating that Directory Manager prevents circular
    references in objects.
 5. Click **Save**.
 
-## Skip the replication of members of a dynamic group in Entra ID
+## Skip replicating members of a dynamic group in Entra ID
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select

@@ -20,13 +20,12 @@ is logged when a user enables enrollment for the identity store, removes an appr
 workflow, modifies a policy for a security role, and more. History isn't logged when a user
 refreshes a page or previews any information.
 
-If history tracking isn't enabled or was recently disabled, the **Identity Store
-History** page is blank or it displays data that was logged before history tracking was turned off.
+If history tracking isn't enabled or was recently disabled, the **Identity Store History** page is
+blank or shows data that was logged before history tracking was turned off.
 
-## View Identity Store History
+## View identity store history
 
-Changes made to identity store configurations, security roles, and workflows can be tracked and
-viewed in Admin Center.
+Admin Center tracks changes made to identity store configurations, security roles, and workflows.
 
 **To view identity store history:**
 
@@ -35,73 +34,73 @@ viewed in Admin Center.
    **Edit**.
 3. Click **History** under **Settings** in the left pane.
 
-    The **Identity Store History** page displays history data in a descriptive and concise manner.
-    Items are sorted according to the date and time they were last updated, with the most recent at
-    the top.  
-    Click a history item to view its details. See the [View and Annotate History Item Details](/docs/directorymanager/11.2/admincenter/identitystore/view/details.md) topic.
+   The **Identity Store History** page shows history data in a concise form. Items are sorted by the
+   date and time they were last updated, with the most recent at the top.
 
-## Filter History Data
+   Click a history item to view its details. See the
+   [View and Annotate History Item Details](/docs/directorymanager/11.2/admincenter/identitystore/view/details.md)
+   topic.
 
-Directory Manager provides filters to limit the history results displayed on the **Identity Store
-History** page. You can define a criterion to filter history data by action, machine name, new
-value, old value, and more.
+## Filter history data
+
+Use filters to limit the history results on the **Identity Store History** page. You can define a
+criterion to filter history data by action, machine name, new value, old value, and more.
 
 **To define a filter:**
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
-3. Click **History** under **Settings** in the left pane.  
-   On the **Identity Store History** page, use the **History Filters** area to specify a filter.
-4. In the _Select a Filter_ dropdown list, select an attribute to use for filtering history
+3. Click **History** under **Settings** in the left pane.
+4. On the **Identity Store History** page, use the **History Filters** area to specify a filter.
+5. In the _Select a Filter_ dropdown list, select an attribute to use for filtering history
    records. Options are:
 
-    - Action
-    - Machine Name
-    - Modified On
-    - New Value
-    - Old Value
-    - User Name
+   - Action
+   - Machine Name
+   - Modified On
+   - New Value
+   - Old Value
+   - User Name
 
-5. In the _Select an Operator_ dropdown list, select an operator to apply to the selected
-   attribute. This dropdown displays the operators on the basis of the selected attribute.
-   Available operators are:
+6. In the _Select an Operator_ dropdown list, select an operator to apply to the selected
+   attribute. The dropdown shows the operators that fit the selected attribute. Available operators
+   are:
 
-    | Condition           | Description                                                                                                                 |
-    | ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-    | Starts with         | Returns everything that starts with the value.                                                                              |
-    | Doesn't start with | Returns everything that doesn't start with the value.                                                                      |
-    | Ends with           | Returns everything that ends with the value. Searching with this condition is resource-intensive for the directory.         |
-    | Doesn't end with   | Returns everything that doesn't end with the value. Searching with this condition is resource-intensive for the directory. |
-    | Is exactly          | Returns everything that matches the value.                                                                                  |
-    | Isn't              | Returns everything that doesn't match the value.                                                                           |
-    | Contains            | Returns everything that contains the value. Searching with this condition is resource-intensive for the directory.          |
-    | Not contain         | Returns everything that doesn't contain the value. Searching with this condition is resource-intensive for the directory.  |
-    | Present             | Returns everything that has a value.                                                                                        |
-    | Not present         | Returns everything that doesn't have a value.                                                                              |
-    | Greater or equal    | Returns everything with a value greater than or equal to the given value.                                                   |
-    | Less or equal       | Returns everything with a value less than or equal to the given value.                                                    |
+   | Condition           | Description                                                                                                                 |
+   | ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+   | Starts with         | Returns everything that starts with the value.                                                                              |
+   | Doesn't start with | Returns everything that doesn't start with the value.                                                                      |
+   | Ends with           | Returns everything that ends with the value. Searching with this condition is resource-intensive for the directory.         |
+   | Doesn't end with   | Returns everything that doesn't end with the value. Searching with this condition is resource-intensive for the directory. |
+   | Is exactly          | Returns everything that matches the value.                                                                                  |
+   | Isn't              | Returns everything that doesn't match the value.                                                                           |
+   | Contains            | Returns everything that contains the value. Searching with this condition is resource-intensive for the directory.          |
+   | Not contain         | Returns everything that doesn't contain the value. Searching with this condition is resource-intensive for the directory.  |
+   | Present             | Returns everything that has a value.                                                                                        |
+   | Not present         | Returns everything that doesn't have a value.                                                                              |
+   | Greater or equal    | Returns everything with a value greater than or equal to the given value.                                                   |
+   | Less or equal       | Returns everything with a value less than or equal to the given value.                                                    |
 
-6. In the _Select a Value_ box, specify a value for the attribute. The selected attribute and
-   operator determine the kind of value that can be entered in this box.  
-   For some operators, such as _Present_ and _Not Present_, this field isn't available. These
-   operators check if a value for the attribute is present or not.
+7. In the _Select a Value_ box, specify a value for the attribute. The selected attribute and
+   operator determine the kind of value that you can enter in this box. For some operators, such as
+   _Present_ and _Not Present_, this field isn't available. These operators check whether the
+   attribute has a value.
 
-    **Add more filters** - On adding a filter, the next row is displayed, so you can add another
-    filter.  
-     **Remove a filter row** - To remove a filter row, click **Remove** for it.  
-     **Remove the filter** - To remove all the filter rows, click **Clear**.
+   - **Add more filters** - When you add a filter, the next row appears, so you can add another
+     filter.
+   - **Remove a filter row** - To remove a filter row, click **Remove** for it.
+   - **Remove the filter** - To remove all the filter rows, click **Clear**.
 
-7. To apply the filter, click **Apply**. With multiple filters, history items that satisfy all the
-   filters are displayed.
+8. To apply the filter, click **Apply**. With multiple filters, the page shows the history items that
+   satisfy all the filters.
 
-## Navigate Through History Items
+## Navigate through history items
 
-By default, the page size for the **Identity Store History** page is set to 10, indicating that ten
-history items are displayed per page. You can set the page size to a maximum of 100 items.
+By default, the page size for the **Identity Store History** page is 10, so the page shows ten
+history items. You can set the page size to a maximum of 100 items.
 
-To move through pages and navigate the records, use the page numbers and arrows given at the bottom
-of the listing.
+To move through the records, use the page numbers and arrows at the bottom of the listing.
 
 **Set the page size:**
 
@@ -110,22 +109,22 @@ of the listing.
    **Edit**.
 3. Click **History** under **Settings** in the left pane.
 4. On the **Identity Store History** page, use the Items per page dropdown list to specify the
-   number of items to be displayed per page.
+   number of items to show per page.
 
 **Navigate through records:**
 
-Navigation options are displayed at the bottom of the history records. You can view the history
-items count along with the range of items you're viewing.
+Navigation options appear at the bottom of the history records. You can view the history item count
+along with the range of items you're viewing.
 
 - Click **First** to jump to the first page, containing the latest history records.
-- Click **Last** to jump to the last page, containing the oldest history records.
+- Click **Last** to jump to the last page, containing the oldest history records.
 - Use the arrows to move to the previous or next page.
 - Click a page number to jump to that page.
 
-## Annotate History Items
+## Annotate history items
 
-Directory Manager lets users add notes to the history actions they performed. A note
-may explain the reason for an action, such as why they changed the security type for a group.
+Directory Manager lets users add notes to the history actions they performed. A note can explain the
+reason for an action, such as why the user changed the security type for a group.
 Only the user who added a note can update it. Other users can view it, but they can't edit it or
 add comments.
 
@@ -139,7 +138,7 @@ add comments.
 5. On the **History Details** dialog box, manage notes for the history item. See the
    [Annotate History Items](details.md#annotate-history-items) topic.
 
-## Export History Data
+## Export history data
 
 You can export identity store history to Microsoft Excel, CSV, and XML formats.
 
@@ -151,9 +150,9 @@ You can export identity store history to Microsoft Excel, CSV, and XML formats.
 3. Click **History** under **Settings** in the left pane.
 4. On the **Identity Store History** page, click **Export History**.
 5. On the **Export History** dialog box, enter a name for the history file in the **Name** box or
-   leave it to default.
+   leave the default.
 6. Select a format for the history file in the Format dropdown list. Available formats are Excel,
    CSV, and XML.
-7. Click **Export History**. The file is saved at the download location specified in browser
+7. Click **Export History**. The file is saved to the download location specified in your browser
    settings.
-8. A message is displayed that history data is successfully exported. Click **OK**.
+8. A message confirms that the history data is exported. Click **OK**.

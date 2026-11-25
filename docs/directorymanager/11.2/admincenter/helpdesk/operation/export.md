@@ -14,13 +14,14 @@ sidebar_position: 40
 
 You can export users' information to an Excel, XML, or CSV file.
 
-## Export Users
+## Export users
 
 1. In Admin Center, click **Helpdesk** in the left pane.
-2. The **Helpdesk** page opens to the **Helpdesk Operations** tab. You can export all users in all
-   identity stores to a file or filter the listing to export specific users only. To filter the
-   list, see the [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.2/admincenter/helpdesk/operation/search.md) topic.
-3. Select the checkboxes for the users you want to export or click the checkbox in the header row
-   to select all users. Then click **Export**.
-4. Select a file format in the list. The file is saved to the download location specified in your
-   browser settings.
+
+   The **Helpdesk** page opens to the **Helpdesk Operations** tab. You can export all users in all identity stores to a file. You can also filter the list to export specific users only. To filter the list, see the [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.2/admincenter/helpdesk/operation/search.md) topic.
+
+2. Select the checkboxes for the users you want to export, or click the checkbox in the header row to select all users.
+3. Click **Export**.
+4. Select a file format in the list.
+
+   The file is saved to the download location specified in your browser settings.

@@ -12,7 +12,7 @@ sidebar_position: 30
 
 # ISMSGateway Members for Custom SMS Gateways
 
-To define a custom gateway, you must implement the following ISMSGateway members:
+To define a custom gateway, you must implement these ISMSGateway members:
 
 - [ISmsGateway.AccountId Property](/docs/directorymanager/11.2/admincenter/smsgateway/custom/accountid.md)
 - [ISmsGateway.Clone Method](/docs/directorymanager/11.2/admincenter/smsgateway/custom/clone.md)

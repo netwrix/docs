@@ -12,29 +12,23 @@ sidebar_position: 40
 
 # Configure the Characters (Complexity) Rule in Directory Manager
 
-The Complexity rule rejects passwords that don't contain characters from a variety of character
-sets. Using several character types can make passwords more difficult to crack.
+The Complexity rule rejects passwords that don't contain characters from enough character sets. Using several character types makes passwords harder to crack.
 
-- Enable the **Characters (Complexity)** button to enable the Character Complexity rule.
+To configure the Complexity rule:
 
-- Must contain characters from at least `number` of character sets – Select the number of required
-  character sets. Passwords are rejected if they don't contain characters from at least the
-  specified number of character sets.
+1. Enable the **Characters (Complexity)** button to turn on the Complexity rule.
 
-- Select the available character sets. The number of available character sets must be equal to or
-  greater than the number of required character sets.
+2. In the `number` of character sets field, select how many character sets a password must draw from. Passwords are rejected if they don't contain characters from at least that many sets.
 
-- Select the **Passwords must always comply with this rule** checkbox to make the Complexity rule
-  mandatory. Password Policy Enforcer rules are mandatory by default, but can be made optional by
-  changing the Reject passwords that don't comply with value in the Policy Properties page. A
-  mandatory rule can still be disabled when a passphrase is used. See the Passphrases topic for
-  additional information.
+3. Select the available character sets. The number of available character sets must be equal to or greater than the number of required character sets.
+
+4. To make the rule mandatory, select the **Passwords must always comply with this rule** checkbox. Password Policy Enforcer rules are mandatory by default. You can make them optional by changing the Reject passwords that don't comply with value in the Policy Properties page. A mandatory rule can still be disabled when a passphrase is used. See the Passphrases topic for more information.
 
 :::note
-The Complexity rule uses custom character set definitions from the Character rules, even if
-the Character rules are disabled.
+The Complexity rule uses custom character set definitions from the Character rules, even if the Character rules are disabled.
 :::
 
+## Default character sets
 
 The default character sets contain the following:
 
@@ -47,4 +41,3 @@ The default character sets contain the following:
 | Special     | All characters not included in the other rules |
 | High        | All characters above ANSI 126 |
 | Custom      | No default characters |
-

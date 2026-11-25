@@ -14,14 +14,12 @@ sidebar_position: 40
 
 Allow or deny permissions to a security role on different Directory Manager functions.
 
-On the **Create Security Role**/**Copy Security Role**/**Update Security Role** page, click **Select what
-members can do** in the **Permissions** area to grant permissions to role members.
+To grant permissions to role members, go to the **Create Security Role**, **Copy Security Role**, or **Update Security Role** page. Then click **Select what
+members can do** in the **Permissions** area.
 
-By default, all permissions displayed on the **Add Permissions** dialog box are denied to the new role.
-Select the **Allow** option button for a permission to grant it to the role. To deny a permission,
-select the **Deny** option button. After assigning the required permissions, click **OK**.
+By default, all permissions displayed on the **Add Permissions** dialog box are denied to the new role. Select the **Allow** option button for a permission to grant it to the role. To deny a permission, select the **Deny** option button. After you assign the required permissions, click **OK**.
 
-Permissions are grouped under the following categories, with each tab representing a different category:
+Permissions are grouped into the following categories. Each tab represents a category:
 
 - Users
 - Groups
@@ -34,8 +32,7 @@ Permissions are grouped under the following categories, with each tab representi
 
 ## Users
 
-User-related permissions apply to all the Directory Manager clients that facilitate user management,
-such as the Directory Manager portal and Management Shell.
+User-related permissions apply to all the Directory Manager clients that facilitate user management, such as the Directory Manager portal and Management Shell.
 
 Click the **Users** tab on the **Add Permissions** dialog box.
 
@@ -58,11 +55,9 @@ Remember, generalized permissions override limited permissions. If Manage My Pro
 denied and Manage Any Profile allowed, role members can manage their own profiles as well.
 :::
 
-
 ## Groups
 
-Group-related permissions apply to all the Directory Manager clients that facilitate group
-management, such as the Directory Manager portal and Management Shell.
+Group-related permissions apply to all the Directory Manager clients that facilitate group management, such as the Directory Manager portal and Management Shell.
 
 Click the **Groups** tab on the **Add Permissions** dialog box.
 
@@ -80,11 +75,9 @@ Remember, generalized permissions override limited permissions. If Manage My Gro
 and Manage Any Group allowed, role members can manage all groups, including their own groups.
 :::
 
-
 ## Admin Center
 
-To manage permissions for Admin Center, click the **Admin Center** tab on the **Add Permissions** dialog
-box.
+To manage permissions for Admin Center, click the **Admin Center** tab on the **Add Permissions** dialog box.
 
 The following table describes the permissions:
 
@@ -114,8 +107,7 @@ The following table describes the permissions:
 
 ## Synchronize
 
-To manage permissions for Synchronize in the Directory Manager portal, click the **Synchronize** tab
-on the **Add Permissions** dialog box.
+To manage permissions for Synchronize in the Directory Manager portal, click the **Synchronize** tab on the **Add Permissions** dialog box.
 
 The following table describes the permissions:
 
@@ -129,12 +121,9 @@ The following table describes the permissions:
 
 ## Password Management
 
-To manage password reset and account unlock permissions, click the **Password Management** tab on
-the **Add Permissions** dialog box.
+To manage password reset and account unlock permissions, click the **Password Management** tab on the **Add Permissions** dialog box.
 
-End users can manage their identity store account passwords and unlock their accounts using the
-Directory Manager portal while helpdesk users can reset passwords and unlock accounts for other
-users through Admin Center.
+End users can manage their identity store account passwords and unlock their accounts using the Directory Manager portal. Helpdesk users can reset passwords and unlock accounts for other users through Admin Center.
 
 The following table describes the permissions:
 
@@ -153,11 +142,9 @@ Remember, generalized permissions override limited permissions. For example, if 
 denied and Unlock Any Account allowed, role members can unlock all accounts, including their own.
 :::
 
-
 ## Miscellaneous
 
-To grant permissions on miscellaneous functions in Directory Manager, click the **Misc** tab on the
-**Add Permissions** dialog box.
+To grant permissions on miscellaneous functions in Directory Manager, click the **Misc** tab on the **Add Permissions** dialog box.
 
 The following table describes the permissions:
 
@@ -174,8 +161,7 @@ The following table describes the permissions:
 
 ## Container
 
-To manage permissions related to containers in the directory, click the **Container** tab on the **Add
-Permissions** dialog box.
+To manage permissions related to containers in the directory, click the **Container** tab on the **Add Permissions** dialog box.
 
 The following table describes the permissions:
 
@@ -185,11 +171,9 @@ The following table describes the permissions:
 
 ## Entitlement
 
-To grant permissions on entitlements in the Directory Manager portal, click the **Entitlement** tab
-on the **Add Permissions** dialog box.
+To grant permissions on entitlements in the Directory Manager portal, click the **Entitlement** tab on the **Add Permissions** dialog box.
 
-For an Active Directory identity store, this tab lists the file servers that have been selected for
-permissions analysis on the Entitlement page. Click a file server to manage permissions for it.
+For an Active Directory identity store, this tab lists the file servers that you selected for permissions analysis on the Entitlement page. Click a file server to manage permissions for it.
 
 The following table describes the permissions:
 
@@ -202,8 +186,7 @@ The following table describes the permissions:
 | 5.  | Remove user / group                  | Enables role members to remove users and groups from the permission list of shares on the file server. Removed users and groups can't access the respective share on the file server.                                                                                                                                                                                                                                                                             |
 
 
-For a Microsoft Entra ID identity store, this tab lists the SharePoint sites that have been selected
-for permissions analysis on the Entitlement page. Click a site to manage permissions for it.
+For a Microsoft Entra ID identity store, this tab lists the SharePoint sites that you selected for permissions analysis on the Entitlement page. Click a site to manage permissions for it.
 
 The following table describes the permissions:
 
@@ -216,8 +199,5 @@ The following table describes the permissions:
 | 5.  | Remove user / group                  | Enables role members to remove users and groups from the permission list of document libraries in the site. Removed users and groups can't access the respective document library in the site.                                                                                                                                                                                                                                                                          |
 
 :::note
-For more information on role permissions, see the
-[User Roles in Microsoft Entra ID and Directory Manager ](/docs/directorymanager/11.2/admincenter/identitystore/advsentraid.md#user-roles-in-microsoft-entra-id-and-directory-manager)
-topic.
-
+For more information on role permissions, see the [User Roles in Microsoft Entra ID and Directory Manager ](/docs/directorymanager/11.2/admincenter/identitystore/advsentraid.md#user-roles-in-microsoft-entra-id-and-directory-manager) topic.
 :::

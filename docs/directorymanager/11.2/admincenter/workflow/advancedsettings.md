@@ -12,90 +12,66 @@ sidebar_position: 20
 
 # Manage Advanced Workflow Settings in Directory Manager
 
-You can specify advanced settings for workflow, such as a default approver for workflow requests
-and approver acceleration settings.
+You can specify advanced settings for workflow, such as a default approver for workflow requests and approver acceleration settings.
 
 :::note
-Functions discussed in this topic are licensed under different add-ons. See the
-[Manage Directory Manager Licenses](/docs/directorymanager/11.2/admincenter/general/licensing.md) topic.
+Different add-ons license the functions in this topic. See the [Manage Directory Manager Licenses](/docs/directorymanager/11.2/admincenter/general/licensing.md) topic.
 :::
 
+## Specify a default approver
 
-## Specify a Default Approver
+You can designate a recipient as the default approver for workflow requests. Directory Manager routes requests to this recipient based on the following rules:
 
-You can designate a recipient as the default approver for workflow requests. Directory Manager routes
-requests to this recipient based on the following rules:
-
-- When approver acceleration isn't enabled, see the
-  [Workflow Approval Scenarios](overview.md#workflow-approval-scenarios) topic for the applicable rules.
+- When approver acceleration isn't enabled, see the [Workflow Approval Scenarios](overview.md#workflow-approval-scenarios) topic for the applicable rules.
 - When approver acceleration is enabled:
 
-    - Directory Manager sends a request to the default approver when the last approver in the
-      acceleration chain doesn't approve or deny it within the specified number of days.
-    - Directory Manager routes a request to the default approver when the hierarchy breaks at any
-      point in the acceleration chain. For example, if the maximum acceleration level is set to 3 but no
-      recipient exists to accelerate the request after second-level acceleration, the request goes to the
-      default approver.
+  - Directory Manager sends a request to the default approver when the last approver in the acceleration chain doesn't approve or deny it within the specified number of days.
+  - Directory Manager routes a request to the default approver when the hierarchy breaks at any point in the acceleration chain. For example, the maximum acceleration level is 3, but no recipient exists to accelerate the request after second-level acceleration. The request then goes to the default approver.
 
-The default approver also receives group expiry and deletion notifications for groups without
-owners.
+The default approver also receives group expiry and deletion notifications for groups without owners.
 
 **To specify a default approver:**
 
 1. In Admin Center, click **Identity Stores** in the left pane.
-2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
-   **Edit**.
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select **Edit**.
 3. Click **Workflows** under **Settings** in the left pane.
 4. On the **Workflows** page, click the **Advanced Workflow Settings** tab.
-5. On the **Advanced Workflow Settings** tab, use the **Default Approver** box to specify a recipient
-   as the default approver. To search for a recipient, do either of the following:
+5. On the **Advanced Workflow Settings** tab, use the **Default Approver** box to specify a recipient as the default approver. To search for a recipient, do either of the following:
 
-    - Enter a search string in the box. Group and user names starting with the string appear
-      as you type. Select a user or group to set as the default approver.
+   - Enter a search string in the box. Group and user names starting with the string appear as you type. Select a user or group to set as the default approver.
 
-**Or**
+   **Or**
 
-    - Click **Advanced** to search an object by different parameters, such as name, department,
-      company, and email.  
-      In the _advanced search_ box, enter a search string and click **Search**. User and group
-      objects matching the string appear. Select the required object.
+   - Click **Advanced** to search an object by different parameters, such as name, department, company, and email. In the _advanced search_ box, enter a search string and click **Search**. User and group objects matching the string appear. Select the required object.
 
-    To remove the default approver, click **Delete** for it.
+   To remove the default approver, click **Delete** for it.
 
 6. Click **Save**.
 
-## Apply Approver Acceleration
+## Apply approver acceleration
 
-The workflow approver acceleration feature ensures that no workflow request remains undecided. To
-apply settings related to approver acceleration, see the
-[Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.2/admincenter/workflow/approveracceleration.md) topic.
+The workflow approver acceleration feature ensures that no workflow request remains undecided. To apply settings related to approver acceleration, see the [Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.2/admincenter/workflow/approveracceleration.md) topic.
 
-## Delete Workflow Requests
+## Delete workflow requests
 
-You can delete the workflow requests generated for an identity store based on certain settings. For
-example, you can delete the "denied" requests that are 30 or more days old.
+You can delete the workflow requests generated for an identity store based on certain settings. For example, you can delete the "denied" requests that are 30 or more days old.
 
 **To delete workflow requests:**
 
 1. In Admin Center, click **Identity Stores** in the left pane.
-2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
-   **Edit**.
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select **Edit**.
 3. Click **Workflows** under **Settings** in the left pane.
-4. On the **Workflows** page, click the **Advanced Workflow Settings** tab. Go to the **Workflow
-   Requests** section.
-5. In the **Delete requests that are x or more days old** box, specify a number, such as 30. Directory Manager
-   automatically deletes workflow requests that are at least 30 days old.
+4. On the **Workflows** page, click the **Advanced Workflow Settings** tab. Go to the **Workflow Requests** section.
+5. In the **Delete requests that are x or more days old** box, specify a number, such as 30. Directory Manager automatically deletes workflow requests that are at least 30 days old.
 6. Select the type of requests you want to delete.
 
-    - **Pending:** to delete pending requests, including your own.
-    - **Approved:** to delete approved requests.
-    - **Denied:** to delete denied requests.
+   - **Pending:** to delete pending requests, including your own.
+   - **Approved:** to delete approved requests.
+   - **Denied:** to delete denied requests.
 
-7. Click **Delete**. Directory Manager deletes requests of the selected type that are at least the
-   specified number of days old.
+7. Click **Delete**. Directory Manager deletes requests of the selected type that are at least the specified number of days old.
 8. Click **Save**.
 
 ## Integrate with Microsoft Power Automate
 
-You can link your Power Automate flows to Directory Manager workflows. For details, see the
-[Link Directory Manager Workflows to Power Automate](/docs/directorymanager/11.2/admincenter/workflow/powerautomate/integrate.md) topic.
+You can link your Power Automate flows to Directory Manager workflows. For details, see the [Link Directory Manager Workflows to Power Automate](/docs/directorymanager/11.2/admincenter/workflow/powerautomate/integrate.md) topic.

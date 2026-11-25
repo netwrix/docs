@@ -30,10 +30,10 @@ SendSmsMessageResult SendShortMessage(ShortMessage shortMessage);
 
 Type: Imanami.directorymanager.DataTransferObjects.DataContracts.SMS.ShortMessage
 
-The object defining the message elements including the target mobile phone numbers.
+The object that defines the message elements, including the target mobile phone numbers.
 
 **Return Value**
 
 Type: Imanami.directorymanager.DataTransferObjects.DataContracts.SMS.SendSmsMessageResult
 
-The object containing the message delivery status and exception details.
+The object that contains the message delivery status and exception details.

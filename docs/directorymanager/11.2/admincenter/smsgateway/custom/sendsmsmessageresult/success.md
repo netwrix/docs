@@ -11,8 +11,7 @@ sidebar_position: 30
 
 # SendSmsMessageResult.Success property
 
-Returns a Boolean value indicating whether the text message was sent successfully to the target
-mobile phone numbers.
+Returns a Boolean value indicating whether the text message was sent successfully to the target mobile phone numbers.
 
 **Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
 

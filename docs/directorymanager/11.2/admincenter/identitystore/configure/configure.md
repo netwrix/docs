@@ -21,15 +21,15 @@ You can define various configurations for an identity store.
    **Edit**.
 3. Configure any of the following for the identity store:
 
-    - Identity Store-specific Configurations
-    - Security Roles
-    - Replication Settings
-    - Identity Store History
-    - Workflows
-    - Entitlements
-    - Schedules
+   - Identity store-specific configurations
+   - Security roles
+   - Replication settings
+   - Identity store history
+   - Workflows
+   - Entitlements
+   - Schedules
 
-## Identity Store-specific Configurations
+## Identity store-specific configurations
 
 Define the following configurations for an identity store:
 
@@ -57,7 +57,7 @@ Define the following configurations for an identity store:
 - Password restrictions and rules for setting identity store passwords. See the
   [Configure Password Options in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/passwordoptions.md) topic.
 
-## Security Roles
+## Security roles
 
 An identity store has security roles defined for it, and only role members can access Directory
 Manager. See the [Security Roles in Directory Manager](/docs/directorymanager/11.2/admincenter/securityrole/overview.md) topic.
@@ -69,22 +69,23 @@ You can specify the following configurations for a role:
 - Specify policies for roles. See the [Security Role Policies](/docs/directorymanager/11.2/admincenter/securityrole/policy/overview.md)
   topic.
 
-## Replication Settings
+## Replication settings
 
-The Replication service is responsible for replicating objects that are created or modified directly
-on the directory server to the Elasticsearch repository. You can specify the attributes for the
+The Replication service replicates objects that are created or modified directly on the directory
+server to the Elasticsearch repository. You can specify the attributes for the
 Replication Service to replicate from the provider to the Elasticsearch repository.
 
 See the [Manage Identity Store Replication Settings](/docs/directorymanager/11.2/admincenter/identitystore/replication.md) topic for details.
 
-## Identity Store History
+## Identity store history
 
-You can view the changes made to an identity store's configurations, workflows, and security roles. See the [View Identity Store History in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/view/view.md) topic.
+You can view the changes made to an identity store's configurations, workflows, and security roles.
+See the [View Identity Store History in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/view/view.md) topic.
 
 ## Workflows
 
-Workflows are a built-in auditing system to ensure that changes made to directory objects are
-approved by an authorized user before they are committed to the directory.
+Workflows are a built-in auditing system. They ensure that an authorized user approves changes to
+directory objects before the changes are committed to the directory.
 
 You can define different workflows for an identity store. For example, you can define a workflow
 that triggers when a user creates a group in the directory using Directory Manager. See the

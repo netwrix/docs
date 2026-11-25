@@ -11,112 +11,75 @@ sidebar_position: 100
 
 # Create a Reports Schedule in Directory Manager
 
-Directory Manager can generate reports for an identity store on a scheduled basis.
+Directory Manager can generate reports for an identity store on a schedule.
 
-You can create a Reports schedule and add reports to it. When the schedule runs, Directory Manager automatically generates all added reports. The Reports schedule also sends email notifications to the designated
-recipients.
+Create a Reports schedule and add reports to it. When the schedule runs, Directory Manager generates all added reports. The schedule also sends email notifications to the designated recipients.
 
-## Create a Reports Schedule
+## Create a Reports schedule
+
+To create a Reports schedule:
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 
-2. On the Identity Stores page, click the ellipsis button for an identity store and select
-**Edit**.
+2. On the Identity Stores page, click the ellipsis button for an identity store and select **Edit**.
 
 3. Click **Schedules** under Settings in the left pane.
 
-4. On the Schedules page, click **Add Schedule** and select **Reports Job**. The Create
-Schedule page is displayed.
+4. On the Schedules page, click **Add Schedule** and select **Reports Job**. The Create Schedule page appears.
 
 5. In the Schedule Name box, enter a name for the schedule.
 
-6. The Name Preview box displays the schedule name prefixed with \_ReportPortal\_\_; email notifications show the schedule with this name.
+6. Check the Name Preview box. It displays the schedule name prefixed with \_ReportPortal\_\_. Email notifications show the schedule with this name.
 
-7. In the Scheduler Service Name dropdown list, select a Scheduler service to
-trigger this schedule. The number of services in the list depends on the
-number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Directory Manager Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md) topic for additional
-information.
+7. In the Scheduler Service Name dropdown list, select a Scheduler service to trigger this schedule. The number of services in the list depends on the number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler service. See the [Directory Manager Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md) topic for additional information.
 
-:::note
-When selecting a Scheduler service:
+   :::note
+   When you select a Scheduler service:
 
-- The Scheduler service for the Directory Manager instance on which you're creating the schedule is
-  selected by default. However, you can select the Scheduler service of another instance as well.
+   - The Scheduler service for the Directory Manager instance on which you're creating the schedule is selected by default. You can select the Scheduler service of another instance as well.
+   - You can change the Scheduler service after creating the schedule. On the next run, the newly selected Scheduler service triggers the schedule.
+   - If the selected Scheduler service fails to trigger the schedule, no other Scheduler service is selected automatically.
+   - If you run a schedule manually in Admin Center, the Scheduler service of that instance is used.
+   :::
 
-- The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  newly selected Scheduler service triggers the schedule.
+8. To add reports to the schedule, click **Add Reports** in the Reports area. The Add Reports to Schedule dialog box appears.
 
-- If the selected Scheduler service fails to trigger the schedule, no other Scheduler service
-  is selected automatically.
+   :::note
+   You can only add reports that were generated in the Directory Manager portal, because the schedule uses the settings provided there to generate the report. You also can't change the settings here, such as the container and filter settings.
+   :::
 
-- If you run a schedule manually in Admin Center, the Scheduler service of that instance
-  is used.
-:::
+   1. In the Object Category dropdown list, select a report category. Available categories are: _All Categories, Users, Groups, Contacts, and Computers_. In the Directory Manager portal, reports are classified under these categories.
+   2. The Reports dropdown list shows all reports in the selected category. When you select a report, one of the following happens:
 
-8. To add reports to the schedule, click **Add Reports** in the Reports area. The Add
-Reports to Schedule dialog box is displayed.
+      - The report appears in the grid on the dialog box. This means you previously added it, and you don't need to add it again. If the report has been generated multiple times in the Directory Manager portal, all instances appear, since each instance has its own _title_, _container_, and _filter_ settings.
+      - If the report doesn't appear in the grid, add it with the **Add** button. (The **Add** button is enabled if the report was generated in the Directory Manager portal.)
 
-:::note
-You can only add reports that were generated in the Directory Manager portal, because the
-schedule uses the settings provided there to generate the report. You also can't change the
-settings here, such as the container and filter settings.
-:::
+      When you select a category, a report might be listed in the grid. This is because the first report in the category is automatically selected in the **Reports** dropdown list. If that report has previously been added, it appears in the grid.
 
-1. In the Object Category dropdown list, select a report category. Available categories are: _All
-   Categories, Users, Groups, Contacts, and Computers_. In the Directory Manager portal, reports are
-   classified under these categories.
-2. The Reports dropdown list shows all reports in the selected category. When you select a report, one
-   of the following happens:
+   3. The grid on the dialog box lists the report with the following information:
 
-    - The report is displayed in the grid on the dialog box. This means you previously added it, and you don't need to add it again. If the report has been generated multiple times in
-      the Directory Manager portal, all instances are displayed, since each instance has its own
-      _title_, _container_, and _filter_ settings.
-    - If the report isn't displayed in the grid, you must add it using the **Add** button. (The **Add**
-      button is enabled if the report was generated in the Directory Manager portal.)
+      - Report Title – the name given to the report by the user while generating it.
+      - Report Name – the name of the report in Directory Manager.
+      - Container – the container the report fetches results from. The user specified this container while generating the report.
+      - Filter – the criteria applied to get the results.
 
-    When you select a category, a report might be listed in the grid. This is because the
-    first report in the category is automatically selected in the **Reports** dropdown list. If that report
-    has previously been added, it's displayed in the grid.
+      You can add as many reports as required.
 
-3. The report is listed in the grid on the dialog box with the following information:
+   4. Select the checkbox for a report and click **Add**. The selected reports appear in the Reports area on the Create Schedule page. When this Reports schedule runs, it generates all added reports. To remove a report, click **Remove** for it.
 
-    - Report Title – the name given to the report by the user while generating it.
-    - Report Name – the name of the report in Directory Manager.
-    - Container – the container the report fetches results from. This container was specified by
-      the user while generating the report.
-    - Filter – the criteria applied to get the results.
+9. Click **Add Triggers** in the Triggers area to specify a triggering criterion that, when met, starts the schedule. Follow step 11 in the [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule) topic to add triggers.
 
-    You can add as many reports as required.
+10. Click **Add Authentication** in the **Authentication** area to specify an account for running the schedule in the identity store. Follow step 12 in the [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule) topic for additional information.
 
-4. Select the checkbox for a report and click **Add**. The selected reports are displayed in the
-   Reports area on the Create Schedule page. When this Reports schedule runs, it automatically generates all
-   added reports.
-   To remove a report, click **Remove** for it.
+    :::important Password Re-insertion Required
+    Due to security enhancements, when you edit a schedule, you must re-enter the account password in the Authentication section, even if you aren't changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+    :::
 
-9. Click **Add Triggers** in the Triggers area to specify a triggering criterion that, when met, starts the
-schedule. Follow step 11 in the
-[Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic to add triggers.
+11. To set up notifications for the schedule, click **Notifications**.
 
-Step 10 – Click **Add Authentication** in the **Authentication** area to specify an account for
-running the schedule in the identity store. Follow step 12 in the
-[Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic for additional information.
+    1. On the Notifications dialog box, enter the email address of recipients to whom you want to send the reports generated by the schedule. Use a semicolon to separate multiple addresses.
+    2. Click **Save**.
 
-:::important Password Re-insertion Required
-Due to security enhancements, when you edit a schedule, you must re-enter the account password in the Authentication section, even if you aren't changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
-:::
+12. On the Create Schedule page, click **Create Schedule**.
 
-Step 11 – To set up notifications for the schedule, click **Notifications**.
-
-1. On the Notifications dialog box, enter the email address of recipients to whom you want to send
-   the reports generated by the schedule. Use a semicolon to separate multiple addresses.
-2. Click **Save**.
-
-Step 12 – On the Create Schedule page, click **Create Schedule**.
-
-Step 13 – On the Schedules page, click **Save**.
-The schedule is displayed under **Reports**. See the
-[View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store)topic
-for details.
+13. On the Schedules page, click **Save**. The schedule appears under **Reports**. See the [View the Schedules in an Identity Store](manage.md#view-the-schedules-in-an-identity-store) topic for details.

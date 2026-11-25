@@ -11,7 +11,7 @@ sidebar_position: 60
 
 # ShortMessage.Validate Method (SMS Gateway API)
 
-The Validate method checks that:
+The `Validate` method checks that:
 
 - The message length isn't zero.
 - The message length isn't greater than the value of the MaxLength property.
@@ -32,4 +32,4 @@ public bool Validate(IValidationDictionary validationDictionary)
 
 Type: [System.Boolean](http://msdn.microsoft.com/en-us/library/system.boolean.aspx)
 
-True if all validation checks are passed.
+True if all validation checks pass.

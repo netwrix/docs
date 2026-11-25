@@ -12,19 +12,20 @@ sidebar_position: 20
 
 # Implement and Deploy a Custom SMS Gateway in Directory Manager
 
-You can integrate with additional SMS gateways using the Custom Gateway API. After creating a
-gateway, you can add an account for it. See
+Use the Custom Gateway API to integrate with additional SMS gateways. After you create a gateway,
+you can add an account for it. See
 [Create an SMS Gateway Account](manage.md#create-an-sms-gateway-account).
 
-## Implement a Custom SMS Gateway
+## Implement a custom SMS gateway
 
-1. Define a class that implements the **ISMSGateway interface**, which is defined in the
+1. Define a class that implements the **ISMSGateway interface**. The interface is in the
    **Imanami.PublicInterfaces** namespace (_Imanami.PublicInterfaces.dll_). The core method for
-   dispatching text messages makes use of objects that are defined in the
+   dispatching text messages uses objects from the
    **Imanami.directorymanager.DataTransferObjects.DataContracts.SMS** namespace
-   (_Imanami.directorymanager.DataTransferObjects.dll_).  
-   The DLLs for both the namespaces are available at the Directory Manager installation directory. The
-   following table lists the **ISMSGateway members** that you must implement:
+   (_Imanami.directorymanager.DataTransferObjects.dll_).
+
+   The DLLs for both namespaces are in the Directory Manager installation directory. Implement the
+   following **ISMSGateway members**:
 
     | Member                                                            | Description                                                                                                                                                                                                                                                                                                                 |
     | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,22 +44,21 @@ gateway, you can add an account for it. See
     | [ISmsGateway.ProxyPassword](/docs/directorymanager/11.2/admincenter/smsgateway/custom/proxypassword.md) property     | Gets or sets the password of the user account used for connecting to the proxy server.                                                                                                                                                                                                                         |
     | [ISmsGateway.ProxyDomain Property](/docs/directorymanager/11.2/admincenter/smsgateway/custom/proxydomain.md) property         | Gets or sets the domain name or IP address of the proxy server.                                                                                                                                                                                                                                                             |
 
-2. Reference **System.ComponentModel.Composition**  
-   (_System.ComponentModel.Composition.dll_).
+2. Reference **System.ComponentModel.Composition** (_System.ComponentModel.Composition.dll_).
 
-    This namespace is required because **ISMSGateway** is built on top of Microsoft Extensibility
-    Framework (MEF) and at the core uses it for most of its functionality.
+    **ISMSGateway** is built on top of Microsoft Extensibility Framework (MEF) and uses it for most
+    of its functionality, so this namespace is required.
 
-## Deploy a Custom SMS Gateway
+## Deploy a custom SMS gateway
 
-After you have implemented all members of the **ISMSGateway** interface for your custom SMS gateway,
-you must add to it the metadata for the MEF exporting interface. This metadata contains basic
-attributes that define the custom gateway assembly.
+After you implement all members of the **ISMSGateway** interface for your custom SMS gateway, add
+the metadata for the MEF exporting interface. This metadata contains the basic attributes that
+define the custom gateway assembly.
 
-### Adding the MEF Exporting Interface
+### Add the MEF exporting interface
 
-The following example code shows how to set the basic defining attributes of the SMS gateway. You must
-add these attributes before the class definition.
+The following example code sets the basic defining attributes of the SMS gateway. Add these
+attributes before the class definition.
 
 ```
 namespace ClickatellCustomSMSGateway 
@@ -90,17 +90,16 @@ Class ClickatellCustomSMSGatewayBasic : ISMSGateway 
 
 ```
 
-### Register your Custom SMS Gateway with Directory Manager
+### Register your custom SMS gateway with Directory Manager
 
-1. On the Directory Manager server, go to:  
-   X:\Program Files\Imanami\GroupID
-   11.0\GroupIDDataService\Inetpub\GroupIDDataService\Web\SMSGateways\  
-   (X represents the Directory Manager installation drive).
-2. Create a new folder here using the name specified for the **Name** SMS gateway metadata
-   attribute.
+1. On the Directory Manager server, go to the following folder. X represents the Directory Manager
+   installation drive.  
+   X:\Program Files\Imanami\GroupID 11.0\GroupIDDataService\Inetpub\GroupIDDataService\Web\SMSGateways\
+
+2. Create a new folder using the name specified for the **Name** SMS gateway metadata attribute.
 3. Compile and generate the DLL file for your custom SMS gateway.
-4. Restart IIS services by typing the following command in the **Run** dialog box:  
+4. Restart IIS services by entering the following command in the **Run** dialog box:  
    _iisreset_
 
-If the SMS gateway is successfully registered, it is listed in the **Gateway Type** list (on
-the **Create SMS Gateway** page) for selection when you create an SMS gateway account.
+If the SMS gateway is registered, it appears in the **Gateway Type** list on the
+**Create SMS Gateway** page. Select it there when you create an SMS gateway account.
