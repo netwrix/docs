@@ -11,7 +11,7 @@ sidebar_position: 40
 
 # Remove-User Cmdlet in Directory Manager
 
-Use the Remove-User commandlet to delete a user from the directory.
+Use the Remove-User cmdlet to delete a user from the directory.
 
 ## Syntax
 
@@ -28,9 +28,9 @@ Remove-User
 
 - Identity
 
-Example:
+## Example
 
-The following command deletes a user with the specified name.
+This command deletes the user with the specified name.
 
 ```
 Remove-User -Identity "osama"

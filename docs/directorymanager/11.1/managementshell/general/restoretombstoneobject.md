@@ -12,9 +12,7 @@ sidebar_position: 100
 
 # Restore-TombStoneObject
 
-The Restore-TombStoneObject commandlet restores tombstone objects from Directory. The commandlet
-restores a tombstone object as an unmanaged group, with all supported attributes, to its original container. If the
-parent container has been deleted, the commandlet also reinstates the container for the group.
+The `Restore-TombStoneObject` cmdlet restores tombstone objects from Directory. It restores a tombstone object as an unmanaged group, with all supported attributes, to its original container. If the parent container has been deleted, the cmdlet also reinstates the container for the group.
 
 ## Syntax
 
@@ -27,16 +25,13 @@ Restore-TombstoneObject
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - None
 
-Example:
+## Example
 
-The following command restores the tombstone group Event Management, using the credentials set in
-the $Cred environment variable. See the
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials in an environment variable.
+The following command restores the tombstone group Event Management, using the credentials set in the $Cred environment variable. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
 Restore-TombStoneObject -identity "Event Management" -Credential $Cred

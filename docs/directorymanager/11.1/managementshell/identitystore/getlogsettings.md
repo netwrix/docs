@@ -12,8 +12,7 @@ sidebar_position: 80
 
 # Get-LogSettings Cmdlet in Directory Manager
 
-The Get-LogSettings cmdlet provides information about the global log settings of the identity store
-connected with this instance of Directory Manager Management Shell.
+Use the Get-LogSettings cmdlet to view the global log settings of the identity store connected with this instance of Directory Manager Management Shell.
 
 ## Syntax
 
@@ -26,7 +25,7 @@ Get-LogSettings
 
 - None
 
-Example:
+## Example
 
 This example retrieves the log settings of the connected identity store.
 

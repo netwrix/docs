@@ -11,21 +11,14 @@ sidebar_position: 20
 
 # Configure Microsoft Entra ID SAML SSO for Directory Manager
 
-With Microsoft Entra ID SSO, users can conveniently access all their apps from any location, on any
-device, from a centralized and branded portal for a simplified user experience and better
-productivity.
+With Microsoft Entra ID SSO, users can access all their apps from any location, on any device, from a centralized and branded portal. This simplifies the user experience and improves productivity.
 
-The following steps configure single sign-on in Directory Manager using Microsoft Entra ID as a
-provider:
+To configure single sign-on in Directory Manager using Microsoft Entra ID as a provider:
 
-- Generate the consumer URL and audience URL for the Directory Manager client with which you want to
-  configure Microsoft Entra ID SSO. See the
-  [Generate Consumer and Audience URLs for Microsoft Entra ID](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/generateurls.md)
-  topic for additional information.
-- [Configure Directory Manager in Microsoft Entra ID for SSO](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureinentra.md)
-- [Configure the Entra ID Provider in Directory Manager](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md)
+1. Generate the consumer URL and audience URL for the Directory Manager client with which you want to configure Microsoft Entra ID SSO. See the [Generate Consumer and Audience URLs for Microsoft Entra ID](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/generateurls.md) topic for additional information.
 
-After you complete these steps, you can sign in to Directory Manager using Microsoft Entra ID SSO.
-See the
-[Sign In to Directory Manager Using Microsoft Entra ID SSO](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/signin.md)
-topic for additional information.
+2. [Configure Directory Manager in Microsoft Entra ID for SSO](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureinentra.md).
+
+3. [Configure the Entra ID Provider in Directory Manager](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md).
+
+After you complete these steps, you can sign in to Directory Manager using Microsoft Entra ID SSO. See the [Sign In to Directory Manager Using Microsoft Entra ID SSO](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/signin.md) topic for additional information.

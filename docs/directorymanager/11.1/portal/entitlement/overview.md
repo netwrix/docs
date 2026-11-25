@@ -11,8 +11,6 @@ sidebar_position: 80
 
 # Directory Manager Entitlement Management
 
-Directory Manager Entitlement helps you track permissions assigned to objects
-residing on your Active Directory servers and SharePoint sites.
+Directory Manager Entitlement helps you track permissions assigned to objects on your Active Directory servers and SharePoint sites.
 
-See the [Entitlement Management in Directory Manager](/docs/directorymanager/11.1/admincenter/entitlement/overview.md) topic for detailed information on
-Entitlement.
+For detailed information on Entitlement, see the [Entitlement Management in Directory Manager](/docs/directorymanager/11.1/admincenter/entitlement/overview.md) topic.

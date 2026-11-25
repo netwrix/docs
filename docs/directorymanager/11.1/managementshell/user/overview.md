@@ -11,11 +11,10 @@ sidebar_position: 150
 
 # User Cmdlets in Directory Manager
 
-This section covers cmdlets for performing user-related tasks such as the following:
+Directory Manager provides these cmdlets for user-related tasks:
 
 - [Get-User Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/user/getuser.md) – Retrieves a user.
-- [Get-UserEnrollment Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/user/getuserenrollment.md) – Displays information about the status of user
-  enrollment.
+- [Get-UserEnrollment Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/user/getuserenrollment.md) – Displays information about the status of user enrollment.
 - [New-User Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/user/newuser.md) – Creates a new user.
 - [Remove-User Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/user/removeuser.md) – Removes a user from the directory.
-- [Set-User Cmdlet for Directory Manager ](/docs/directorymanager/11.1/managementshell/user/setuser.md) – Modifies a user in the directory.
+- [Set-User Cmdlet for Directory Manager](/docs/directorymanager/11.1/managementshell/user/setuser.md) – Modifies a user in the directory.

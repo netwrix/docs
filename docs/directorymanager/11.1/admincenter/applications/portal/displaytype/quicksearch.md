@@ -12,65 +12,40 @@ sidebar_position: 30
 
 # Customize Quick Search in the Directory Manager Portal
 
-In a Directory Manager portal, the quick search box is available at the top of each page. You can
-specify the schema attributes that quick search runs on, and the objects (group, user, contact) that
-can be searched. When a user enters a search string, Directory Manager matches it against the values
-of all specified attributes to return the results (allowed objects).
+In a Directory Manager portal, the quick search box is available at the top of each page. You can specify the schema attributes that quick search runs on and the objects (group, user, contact) that users can search. When a user enters a search string, Directory Manager matches it against the values of all specified attributes to return the results (the allowed objects).
 
-You can also specify a search operator that determines what part of the attribute value must match
-the search string.
+You can also specify a search operator that determines what part of the attribute value must match the search string.
 
-## Specify Attributes for Quick Search
+## Specify attributes for quick search
 
-1. In Admin Center, select **Applications** in the left pane.  
-   On the **GroupID Portal** tab, a portal's card displays its info.
+1. In Admin Center, select **Applications** in the left pane. On the **GroupID Portal** tab, a portal's card displays its info.
 2. Click the ellipsis button for a portal and select **Settings**.
-3. Select an identity store under **Design Settings** to customize the portal for it.  
-   All identity stores linked with the portal are listed under **Design Settings**. You can design a
-   different portal for each of these.
+3. Select an identity store under **Design Settings** to customize the portal for it. All identity stores linked with the portal are listed under **Design Settings**. You can design a different portal for each of these.
 4. Click **Search Forms** in the left pane. Then click the **Quick Search Attributes** tab.
-5. On the **Quick Search Attributes** tab, the **Name** column lists the schema attributes whose
-   values are matched when portal users search using the quick search box.  
-   Click **Add** to add an attribute to this list.
-6. In the **Add Search Attribute** dialog box, select a schema attribute in the **Attribute**
-   dropdown list and click **OK**.  
-   The attribute is displayed in the **Name** column on the **Quick Search Attributes** tab.  
-   To remove an attribute, click **Remove** for it.
+5. On the **Quick Search Attributes** tab, the **Name** column lists the schema attributes whose values are matched when portal users search with the quick search box. Click **Add** to add an attribute to this list.
+6. In the **Add Search Attribute** dialog box, select a schema attribute in the **Attribute** dropdown list and click **OK**. The attribute appears in the **Name** column on the **Quick Search Attributes** tab. To remove an attribute, click **Remove** for it.
 7. Click **Save**.
 
-## Change the Search Operator
+## Change the search operator
 
-1. In Admin Center, select **Applications** in the left pane.  
-   On the **GroupID Portal** tab, a portal's card displays its info.
+1. In Admin Center, select **Applications** in the left pane. On the **GroupID Portal** tab, a portal's card displays its info.
 2. Click the ellipsis button for a portal and select **Settings**.
-3. Select an identity store under **Design Settings** to customize the portal for it.  
-   All identity stores linked with the portal are listed under **Design Settings**. You can design a
-   different portal for each of these.
+3. Select an identity store under **Design Settings** to customize the portal for it. All identity stores linked with the portal are listed under **Design Settings**. You can design a different portal for each of these.
 4. Click **Search Forms** in the left pane. Then click the **Quick Search Attributes** tab.
-5. In the **Quick Search Operator** dropdown list, select an option.
+5. In the **Quick Search Operator** dropdown list, select an option:
 
-    - **Equal** – looks up the values of the attributes listed in the _Name_ column and returns
-      records with values that exactly match the search string.
-    - **Contains** – looks up the values of all attributes listed in the _Name_ column and returns
-      records that contain the string anywhere in their values.
-    - **Starts with** – looks up the values of the attributes listed in the _Name_ column and
-      returns records with values starting with the search string.
-    - **Ends with** – looks up the values of all attributes listed in the _Name_ column and returns
-      records with values ending with the search string.
+   - **Equal** looks up the values of the attributes listed in the **Name** column and returns records with values that exactly match the search string.
+   - **Contains** looks up the values of all attributes listed in the **Name** column and returns records that contain the string anywhere in their values.
+   - **Starts with** looks up the values of the attributes listed in the **Name** column and returns records with values that start with the search string.
+   - **Ends with** looks up the values of all attributes listed in the **Name** column and returns records with values that end with the search string.
 
 6. Click **Save**.
 
-## Specify Searchable Objects
+## Specify searchable objects
 
-1. In Admin Center, select **Applications** in the left pane.  
-   On the **GroupID Portal** tab, a portal's card displays its info.
+1. In Admin Center, select **Applications** in the left pane. On the **GroupID Portal** tab, a portal's card displays its info.
 2. Click the ellipsis button for a portal and select **Settings**.
-3. Select an identity store under **Design Settings** to customize the portal for it.  
-   All identity stores linked with the portal are listed under **Design Settings**. You can design a
-   different portal for each of these.
+3. Select an identity store under **Design Settings** to customize the portal for it. All identity stores linked with the portal are listed under **Design Settings**. You can design a different portal for each of these.
 4. Click **Search Forms** in the left pane. Then click the **Quick Search Attributes** tab.
-5. You can specify the object types to search when users use the quick
-   search function in the portal.  
-   Select any or all of the **User**, **Group**, and **Contact** checkboxes next to **Quick Search
-   Objects** to make that object type searchable in quick search.
+5. Select any or all of the **User**, **Group**, and **Contact** checkboxes next to **Quick Search Objects** to make that object type searchable in quick search.
 6. Click **Save**.

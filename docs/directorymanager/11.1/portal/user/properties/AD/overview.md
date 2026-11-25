@@ -11,13 +11,11 @@ sidebar_position: 10
 
 # Directory Manager Object Properties in Active Directory
 
-You can view and edit the properties of directory objects (users, mailboxes, and contacts) in
-Active Directory, depending on the permissions the Directory Manager administrator has granted you.
+You can view and edit the properties of directory objects (users, mailboxes, and contacts) in Active Directory. Your access depends on the permissions the Directory Manager administrator has granted you.
 
-## User and Mailbox properties
+## User and mailbox properties
 
-The following list shows all the property tabs that users and mailbox users have in an Active
-Directory-based identity store.
+Users and mailbox users have the following property tabs in an Active Directory-based identity store.
 
 - [Object properties - General tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/general.md)
 - [Object properties - Organization tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/organization.md)
@@ -35,8 +33,7 @@ Directory-based identity store.
 
 ## Contact properties
 
-The following list shows all the property tabs that contacts have in an Active Directory-based
-identity store.
+Contacts have the following property tabs in an Active Directory-based identity store.
 
 - [Object properties - General tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/general.md)
 - [Object properties - Organization tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/organization.md)

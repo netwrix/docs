@@ -12,11 +12,9 @@ sidebar_position: 100
 
 # Get-SchemaAttributes Cmdlet in Directory Manager
 
-Use the Get-SchemaAttributes cmdlet to retrieve a list of the schema attributes available for an
-identity store.
+Use the Get-SchemaAttributes cmdlet to retrieve a list of the schema attributes available for an identity store.
 
-This cmdlet lists the names of schema attributes required for various cmdlets, including cmdlets
-related to identity store roles.
+This cmdlet lists the names of schema attributes required for various cmdlets, including cmdlets related to identity store roles.
 
 ## Syntax
 
@@ -30,10 +28,9 @@ Get-SchemaAttributes
 
 - IdentityStoreName
 
-Example:
+## Example
 
-This example retrieves a list of available schema attributes in alphabetical order for the AdStore9
-identity store.
+This example retrieves a list of available schema attributes in alphabetical order for the AdStore9 identity store.
 
 ```
 Get-SchemaAttributes -IdentityStoreName AdStore9

@@ -11,7 +11,7 @@ sidebar_position: 60
 
 # ISmsGateway.ProxyPassword
 
-Gets or sets the password of the user account that is used to connect to the proxy server.
+Gets or sets the password of the user account that connects to the proxy server.
 
 **Namespace:** Imanami.PublicInterfaces
 
@@ -31,4 +31,4 @@ The password of the proxy account.
 
 **Remarks**
 
-Use this property if your proxy server requires a user name and password to connect to it.
+Use this property if your proxy server requires a user name and password.

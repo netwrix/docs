@@ -11,7 +11,7 @@ sidebar_position: 20
 
 # Get-UserEnrollment Cmdlet in Directory Manager
 
-The commandlet Get-UserEnrollment retrieves enrollment information of a user.
+Use the Get-UserEnrollment cmdlet to retrieve the enrollment information of a user.
 
 ## Syntax
 
@@ -22,11 +22,13 @@ Get-UserEnrollment
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+## Examples
+
+### Example 1
 
 If a user is enrolled, this cmdlet lists the authentication types the user is enrolled with.
 
@@ -34,17 +36,17 @@ If a user is enrolled, this cmdlet lists the authentication types the user is en
 Get-UserEnrollment -Identity euser1
 ```
 
-Example 2:
+### Example 2
 
-Check whether the specified user is enrolled with the specified enrollment types.
+This command checks whether the specified user is enrolled with the specified enrollment types.
 
 ```
 Get-UserEnrollment -Identity euser1 -EnrollmentTypes SecurityQuestions, Email
 ```
 
-Example 3:
+### Example 3
 
-This example gets user enrollment information through the pipeline operator.
+This command gets user enrollment information through the pipeline operator.
 
 ```
 'euser1', 'euser2' | Get-UserEnrollment

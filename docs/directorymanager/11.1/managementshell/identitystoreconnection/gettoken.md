@@ -12,15 +12,11 @@ sidebar_position: 20
 
 # Get-Token Cmdlet in Directory Manager
 
-When Management Shell is connected to an identity store, a token is passed with the cmdlet,
-enabling the user to perform the required functions in the directory.
+When Management Shell is connected to an identity store, it passes a token with each cmdlet. The token lets you perform the required functions in the directory.
 
-To perform a function in an identity store other than the one Management Shell is connected to,
-you must first get a valid token for the required identity store using the Get-Token
-cmdlet. This cmdlet gets a token from the Directory Manager Security Service, which was assigned
-to the user at the time of authentication.
+To perform a function in an identity store other than the one Management Shell is connected to, first get a valid token for that identity store with the Get-Token cmdlet. The cmdlet gets a token from the Directory Manager Security Service, which assigned the token to you when you authenticated.
 
-You can also use the Get-Token cmdlet to get a valid token if the token expires during a session.
+You can also use the Get-Token cmdlet to get a valid token if your token expires during a session.
 
 ## Syntax
 
@@ -33,16 +29,13 @@ Get-Token
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameters
 
 - None
 
-Example:
+## Example
 
-The following command returns a token for the identity store specified by the **IdentityStoreId**
-parameter using the specified authentication mode and credentials that you set in the
-**$Credentials** environment variable. For
-information about setting credentials in an environment variable, see
+This command returns a token for the identity store specified by the **IdentityStoreId** parameter. It uses the specified authentication mode and the credentials you set in the **$Credentials** environment variable. For information about setting credentials in an environment variable, see
 [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
 
 ```

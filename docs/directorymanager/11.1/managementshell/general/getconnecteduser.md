@@ -11,8 +11,7 @@ sidebar_position: 30
 
 # Get-ConnectedUser Cmdlet
 
-The Get-ConnectedUser cmdlet retrieves general information about the user connected to the
-current instance of Management Shell.
+Use the Get-ConnectedUser cmdlet to retrieve general information about the user connected to the current instance of the Management Shell.
 
 ## Syntax
 
@@ -33,10 +32,15 @@ Get-ConnectedUser
 
 - None
 
-Example 1:
+## Example
 
-This example displays the logon name of the connected user, account locked information, identity
-store name, role names, and ObjectGuid.
+This command displays these details about the connected user:
+
+- Logon name
+- Account locked information
+- Identity store name
+- Role names
+- ObjectGuid
 
 ```
 Get-ConnectedUser

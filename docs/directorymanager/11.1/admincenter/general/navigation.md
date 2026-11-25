@@ -13,39 +13,33 @@ sidebar_position: 40
 
 When you sign in to Admin Center, you land on the [Monitor Directory Manager with the Admin Center Dashboard](/docs/directorymanager/11.1/admincenter/general/dashboard.md).
 
-The following options help you to navigate the application:
+Three options help you navigate the application:
 
 - Quick Search
-- Top Right Options
-- Menu Pane
+- Top right options
+- Menu pane
 
 ## Quick Search
 
-The search box is displayed at the top. Use it to perform a quick search and directly navigate to
-different pages of the application. You can search for Directory Manager settings and
-configurations, and directly navigate to your required pages.
+The search box is at the top of the page. Use it to go directly to different pages of the application. You can search for Directory Manager settings and configurations.
 
-When you perform a search, it looks up the following in Admin Center:
+Quick Search looks up the following in Admin Center:
 
-- Identity stores - You can use quick links to navigate to different pages in an identity store,
-  such as workflows, schedules, and security roles.
+- Identity stores. Use quick links to go to pages in an identity store, such as workflows, schedules, and security roles.
 - SMS gateway accounts
-- Directory Manager applications - Directory Manager portals, Data services, and Security services
+- Directory Manager applications: Directory Manager portals, Data services, and Security services
 - Admin Center pages, such as the Replication, Notifications, and Licensing pages
-- Admin Center functions, such as restore replication and unlock account. Clicking an action
-  redirects you to the relevant page.
+- Admin Center functions, such as restore replication and unlock account. Clicking an action opens the relevant page.
 
 **To perform a search:**
 
-1. In Admin Center, enter a search string in the Search box at the top of the page.
-   A list of matched items is displayed as you type. For example, as you type 'ta', it shows:
+1. In Admin Center, enter a search string in the Search box at the top of the page. A list of matched items appears as you type. For example, as you type 'ta', it shows:
 
-    ![Quick Search results list for the search string ta](/images/directorymanager/11.1/admincenter/general/quick_search.webp)
+   ![Quick Search results list for the search string ta](/images/directorymanager/11.1/admincenter/general/quick_search.webp)
 
-2. Click **Quick Actions** for an identity store to display the settings available for it.
-   Click an option to navigate to it.
+2. Click **Quick Actions** for an identity store to display the settings available for it. Click an option to go to it.
 
-## Top Right Options
+## Top right options
 
 The top right corner of the application displays the following:
 
@@ -55,10 +49,9 @@ The top right corner of the application displays the following:
 | Manage SAML icon | Click it to launch the Authenticate panel, where you can: <ul><li>Set up Directory Manager as a service provider. Directory Manager can integrate with several single sign-on (SSO) solutions that support the SAML 2.0 standard.</li><li>Set up Directory Manager as an identity provider. See the [Directory Manager Authenticate and SAML Single Sign-On](/docs/directorymanager/11.1/authenticate/overview.md) topic.</li></ul> |
 | Profile icon     | Displays your profile picture with your name and the identity store that Admin Center is connected to. <br />Click it to launch a menu that displays the Directory Manager version and the security role assigned to you in Directory Manager. The menu also displays options to change your password, access your applications, and sign out of Admin Center.                                  |
 
+## Menu pane
 
-## Menu Pane
-
-Use the menu pane on the left to navigate to different functions in Admin Center.
+Use the menu pane on the left to go to different functions in Admin Center.
 
 | Menu Option         | Description                                                                                                                                                                                                                                                                                           |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -73,7 +66,6 @@ Use the menu pane on the left to navigate to different functions in Admin Center
 | SMS Gateways        | Create SMS gateway accounts that Directory Manager uses to send text messages to the users' mobile numbers                                                                                                                                                                              |
 | Notification Editor | Lists templates for Directory Manager-generated notifications. These templates apply to all identity stores                                                                                                                                                                                           |
 | Settings            | Lets you manage the following: <ul><li>Directory Manager licensing</li><li>Global pool of security questions</li><li>Directory Manager logs</li></ul>                                                                                                                                                 |
-
 
 **See Also**
 

@@ -11,7 +11,7 @@ sidebar_position: 40
 
 # Directory Manager Contact Cmdlets
 
-Directory Manager provides the following cmdlets to perform contact-related tasks:
+Directory Manager provides these cmdlets for contact-related tasks:
 
 - [Get-Contact](/docs/directorymanager/11.1/managementshell/contact/getcontact.md) – Retrieves a contact that matches the given criteria.
 - [New-Contact Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/contact/newcontact.md) – Creates a new contact.

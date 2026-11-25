@@ -13,160 +13,112 @@ sidebar_position: 80
 
 # Manage Group Membership in Directory Manager
 
-Groups let you apply a common set of policies to multiple users. Groups also guarantee consistency
-of permissions and privileges across the membership.
+Groups let you apply a common set of policies to multiple users. Groups also guarantee consistency of permissions and privileges across the membership.
 
-You can add members to groups manually, by using a scheduled job, or by importing them from an
-external data source.
+You can add members to groups manually, by using a scheduled job, or by importing them from an external data source.
 
-## Group Membership Settings
+## Group membership settings
 
-To avoid large, unusual changes to Smart Group and Dynasty memberships, the administrator can
-configure the ‘Out of Bounds’ setting for an identity store.
+To avoid large, unusual changes to Smart Group and Dynasty memberships, the administrator can configure the ‘Out of Bounds’ setting for an identity store.
 
 The administrator can:
 
 - Specify the maximum number of members for a Smart Group and Dynasty.
-- Determine actions to take if the limit is exceeded, such as not updating group membership or
-  breaking the membership into smaller nested groups.
+- Determine actions to take if the limit is exceeded, such as not updating group membership or breaking the membership into smaller nested groups.
 
 **Example:**
 
-Assume the administrator sets the maximum membership limit to 500 and opts for nested groups
-when membership exceeds this limit.
+Assume the administrator sets the maximum membership limit to 500 and opts for nested groups when membership exceeds this limit.
 
-**Scenario 1**: On update, 485 objects are fetched to be added to Group A’s membership. Since the
-count is less than 500, the objects are directly added as group members.
+**Scenario 1**: On update, 485 objects are fetched to be added to Group A’s membership. Because the count is less than 500, the objects are directly added as group members.
 
-**Scenario 2:** On the next update, 620 objects are fetched to be added to Group A’s membership.
-Since the count exceeds 500, Directory Manager breaks the membership into 2 child groups (Group 1
-with 500 members and Group 2 with 120 members) and nests them into Group A. Directory Manager
-checks the member count and takes the necessary action before adding members to the group.
+**Scenario 2:** On the next update, 620 objects are fetched to be added to Group A’s membership. Because the count exceeds 500, Directory Manager breaks the membership into 2 child groups (Group 1 with 500 members and Group 2 with 120 members) and nests them into Group A. Directory Manager checks the member count and takes the necessary action before adding members to the group.
 
 :::note
-An Office 365 group can't have other groups as members. Therefore, the option to break the
-membership into child groups has the following impact:  
-An Office 365 group (Group A) is updated according to the Smart Group update process. When the
-maximum membership limit is hit, the update process creates child groups. These child groups
-exist but have no link to Group A. Hence, Group A’s membership is empty.
-:::
+An Office 365 group can't have other groups as members. Therefore, the option to break the membership into child groups has the following impact:
 
+An Office 365 group (Group A) is updated according to the Smart Group update process. When the maximum membership limit is hit, the update process creates child groups. These child groups exist but have no link to Group A. Hence, Group A’s membership is empty.
+:::
 
 ## Add members to a group
 
-You can add one or more objects to the membership of one or more groups. These objects are
-added as permanent members. They are listed as members on the **Members** tab in
-[View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md).
+You can add one or more objects to the membership of one or more groups. These objects are added as permanent members. They are listed as members on the **Members** tab in [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md).
 
 :::note
-In a Microsoft Entra ID based identity store, only user objects can be added as members of an
-Office 365 group.
+In a Microsoft Entra ID based identity store, only user objects can be added as members of an Office 365 group.
 :::
 
+Use either of the following methods to add members to groups.
 
-Use any of the following methods to add members to groups.
-
-### Method 1:
+### Add members from the search results
 
 1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the required objects.
 2. Select these objects on the **Search Results** page and click **Add to Group** on the toolbar.
-3. The [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md) is displayed, where you can search and select the
-   groups to add the objects to.
+3. In the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md), search for and select the groups to add the objects to.
 
-### Method 2:
+### Add members from the group properties
 
 1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to add members to.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
-    The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed.
+   The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page appears.
 
 3. On the **Members** tab, click **Add**.
-4. Enter a search string to locate the objects to add as members, or click **Advanced** to use the
-   [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
+4. Enter a search string to locate the objects to add as members, or click **Advanced** to use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
 5. Save the changes.
 
 :::note
-These methods for adding members are recommended for static (unmanaged) groups only. For Smart
-Groups, Directory Manager discards any manual membership changes when it updates the group
-through the Smart Group Update job.
+These methods for adding members are recommended for static (unmanaged) groups only. For Smart Groups, Directory Manager discards any manual membership changes when it updates the group through the Smart Group Update job.
 :::
-
 
 To add a member temporarily to a group, see Change the membership type of a group member.
 
 ## Change the membership type of a group member
 
-By default, all new members are added to a group as permanent members. However, you can change the
-membership type of an object from permanent to temporary and vice versa.
+By default, all new members are added to a group as permanent members. You can change the membership type of an object from permanent to temporary and vice versa.
 
 You can also add or remove an object from a group's membership for a temporary period.
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) a group to change the membership type of its
-   members.
+1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) a group to change the membership type of its members.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
-    The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed, where the
-    **Members** tab lists the group members.
+   The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page appears, where the **Members** tab lists the group members.
 
-3. To change the membership type of a member, click anywhere in the respective row to make it
-   editable, and select one of the following options from the **Membership** list:
+3. To change the membership type of a member, click anywhere in the respective row to make it editable, and select one of the following options from the **Membership** list:
 
-    - Perpetual – To make the object a permanent member of the group.
-    - Temporary Member – To make the object a temporary member of the group for the period you
-      specify in the Beginning and Ending boxes. At the end of the period, the object is removed
-      from the group membership.
-    - Addition Pending – Indicates that the object is to be a temporary member of the group for a
-      period in the future. Use the Beginning and Ending boxes to set a period. Before the beginning
-      date, the object’s membership type is displayed as ‘Addition Pending’. On the beginning date,
-      the membership type changes to ‘Temporary Member’.
+   - Perpetual – To make the object a permanent member of the group.
+   - Temporary Member – To make the object a temporary member of the group for the period you specify in the Beginning and Ending boxes. At the end of the period, the object is removed from the group membership.
+   - Addition Pending – Indicates that the object is to be a temporary member of the group for a period in the future. Use the Beginning and Ending boxes to set a period. Before the beginning date, the object’s membership type appears as ‘Addition Pending’. On the beginning date, the membership type changes to ‘Temporary Member’.
 
-        Example.
+     Example.
 
-        You add Smith as a temporary member to Group A on May 15 for future dates, May 20-30.
+     You add Smith as a temporary member to Group A on May 15 for future dates, May 20-30.
 
-        Smith appears in Group A’s membership with ‘Addition Pending’ as its membership
-        type from May 15 to 19. However, Smith isn't added to group membership in the
-        provider.
+     Smith appears in Group A’s membership with ‘Addition Pending’ as its membership type from May 15 to 19. However, Smith isn't added to group membership in the provider.
 
-        On May 20, Smith becomes a temporary member of Group A and its membership type
-        changes to ‘Temporary Member’ from May 20 to 30. Smith is also added to group membership
-        in the provider.
+     On May 20, Smith becomes a temporary member of Group A and its membership type changes to ‘Temporary Member’ from May 20 to 30. Smith is also added to group membership in the provider.
 
-        After May 30, Smith is removed from Group A as a member in Directory Manager and in the
-        provider.
+     After May 30, Smith is removed from Group A as a member in Directory Manager and in the provider.
 
-    - Removal Pending - Indicates that the object is to be temporarily removed from group membership
-      for a period in the future. Use the Beginning and Ending boxes to set a period. Before the
-      beginning date, the object’s membership type is displayed as ‘Removal Pending’. On the
-      beginning date, the membership type changes to ‘Temporary Removed’.
+   - Removal Pending - Indicates that the object is to be temporarily removed from group membership for a period in the future. Use the Beginning and Ending boxes to set a period. Before the beginning date, the object’s membership type appears as ‘Removal Pending’. On the beginning date, the membership type changes to ‘Temporary Removed’.
 
-        Example.
+     Example.
 
-        You remove Smith from Group A on May 15 for future dates, May 20-30.
+     You remove Smith from Group A on May 15 for future dates, May 20-30.
 
-        Smith appears in Group A’s membership with ‘Removal Pending’ as the membership type
-        from May 15 to 19.
+     Smith appears in Group A’s membership with ‘Removal Pending’ as the membership type from May 15 to 19.
 
-        On May 20, Smith’s membership type in Directory Manager changes to ‘Temporary Removed’,
-        lasting until May 30. Smith is also removed from Group A’s membership in the
-        provider.
+     On May 20, Smith’s membership type in Directory Manager changes to ‘Temporary Removed’, lasting until May 30. Smith is also removed from Group A’s membership in the provider.
 
-        After May 30, Smith is added back to Group A as a permanent member in Directory Manager
-        and in the provider.
+     After May 30, Smith is added back to Group A as a permanent member in Directory Manager and in the provider.
 
-    - Temporary Removed – Indicates that the object is temporarily removed from group membership for
-      the period specified in the Beginning and Ending boxes. At the end of the period, the object
-      is added back to the group membership as a permanent member.
+   - Temporary Removed – Indicates that the object is temporarily removed from group membership for the period specified in the Beginning and Ending boxes. At the end of the period, the object is added back to the group membership as a permanent member.
 
 4. Save the changes.
 
-The Membership Life Cycle job updates the temporary membership of groups. It adds and removes
-temporary members from group membership on the specified dates.
+The Membership Life Cycle job updates the temporary membership of groups. It adds and removes temporary members from group membership on the specified dates.
 
-Consider a scenario where the Membership Life Cycle job is scheduled to run once a week, say
-Mondays. If an object is to be added to group membership for three days (Wednesday through Friday),
-it isn't added. This happens because the Membership Life Cycle job didn't run on the particular
-days for temporary membership update.
+Consider a scenario where the Membership Life Cycle job is scheduled to run once a week, say Mondays. If an object is to be added to group membership for three days (Wednesday through Friday), it isn't added. This happens because the Membership Life Cycle job didn't run on the particular days for temporary membership update.
 
 ## Remove members permanently from a group
 
@@ -175,17 +127,14 @@ To remove members permanently from a group:
 1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to remove members from.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
-    The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed.
+   The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page appears.
 
 3. On the **Members** tab, select the group members you want to remove and click **Remove**.
 4. Save the changes.
 
 :::note
-This method of removing members is recommended for static (unmanaged) groups only. For Smart
-Groups, Directory Manager discards any manual membership changes when it updates the group
-through the Smart Group Update job.
+This method of removing members is recommended for static (unmanaged) groups only. For Smart Groups, Directory Manager discards any manual membership changes when it updates the group through the Smart Group Update job.
 :::
-
 
 To remove a member temporarily from a group, see Change the membership type of a group member.
 
@@ -193,35 +142,29 @@ To remove a member temporarily from a group, see Change the membership type of a
 
 To add a group to the membership of another group (nesting):
 
-1. In Directory Manager portal, click **Groups** in the left navigation pane, select **Groups**.
+1. In Directory Manager portal, click **Groups** in the left navigation pane, and select **Groups**.
 2. Select the **My Groups**, **My Memberships**, or **My Expiring Groups** tab.
-3. Select the groups to add to the membership of another group and click **Add to Group** on the
-   toolbar.
-4. On the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md), search for and select the group to add the members to,
-   and click **OK**.
+3. Select the groups to add to the membership of another group and click **Add to Group** on the toolbar.
+4. On the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md), search for and select the group to add the members to, and click **OK**.
 
 ## Import members to a group
 
 You can import members to a group using an external file.
 
 :::note
-In a Microsoft Entra ID based identity store, only user objects can be added as members of an
-Office 365 group.
+In a Microsoft Entra ID based identity store, only user objects can be added as members of an Office 365 group.
 :::
 
+1. In Directory Manager portal, click **Groups** in the left navigation pane, and select **Groups**.
 
-1. In Directory Manager portal, click **Groups** in the left navigation pane, select **Groups**.
-
-    The Groups page is displayed with the **My Groups** tab in view.
+   The Groups page appears with the **My Groups** tab in view.
 
 2. Select the group you want to import members to, and click **Properties** on the toolbar.
 
-    The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed.
+   The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page appears.
 
-3. On the [Group properties - Members tab](/docs/directorymanager/11.1/portal/group/properties/members.md), click **Import** to launch the
-   **Import Members** wizard.
-4. See [Import group members in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/importmembers.md) for further information and
-   instructions.
+3. On the [Group properties - Members tab](/docs/directorymanager/11.1/portal/group/properties/members.md), click **Import** to launch the **Import Members** wizard.
+4. See [Import group members in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/importmembers.md) for further information and instructions.
 5. Save the changes.
 
 ## Export group members
@@ -231,66 +174,57 @@ You can export members of a group to an external file.
 1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) a group to export its members to an external file.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
-    The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed.
+   The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page appears.
 
 3. On the **Members** tab, click **Export** to launch the **Export Members** wizard.
 4. On the **Attributes** page:
 
-    1. In the **Attributes** list, select the required directory attributes and move them to the
-       **Selected Attributes** list.
+   1. In the **Attributes** list, select the required directory attributes and move them to the **Selected Attributes** list.
 
-        Members' data for the selected attributes is exported to the output file.
+      Members' data for the selected attributes is exported to the output file.
 
-    2. Click **Next**.
+   2. Click **Next**.
 
 5. On the **File Type** page, select the file type to export the data to. Supported file types are:
 
-    - Microsoft Excel (.xls and .xlsx)
-    - Comma Separated Value (.csv)
-    - Extensible Markup Language (.xml)
-    - Text (.txt)
+   - Microsoft Excel (.xls and .xlsx)
+   - Comma Separated Value (.csv)
+   - Extensible Markup Language (.xml)
+   - Text (.txt)
 
 6. Click **Finish**.
 7. When the file is successfully generated, you can save it to your machine.
 
 ## Invite a guest user
 
-For a Microsoft Entra ID based identity store, use the portal to invite a user from another
-Microsoft Entra ID tenant to the membership of a group in your domain.
+For a Microsoft Entra ID based identity store, use the portal to invite a user from another Microsoft Entra ID tenant to the membership of a group in your domain.
 
-1. In Directory Manager portal, click **Groups** in the left navigation pane, select **Groups**.
+1. In Directory Manager portal, click **Groups** in the left navigation pane, and select **Groups**.
 
-    The Groups page is displayed with the **My Groups** tab in view.
+   The Groups page appears with the **My Groups** tab in view.
 
-**Or**
+   **Or**
 
-    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to invite a guest user to.
+   [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to invite a guest user to.
 
-2. Select the required group from the list and click **Properties** on the toolbar. The group's
-   [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed.
+2. Select the required group from the list and click **Properties** on the toolbar. The group's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page appears.
 3. On the **Members** tab, click the **Invite User** button.
 4. On the **Invite User** dialog box, provide the following information:
 
-    1. In the **Email** box, enter the email address of the user you want to invite to your domain.
-    2. In the **Redirect URL** box, provide the URL of a portal page, such as the My Profile page.
-       On accepting the invite, the guest user is redirected to this page.
-    3. Add any message for the guest user in the **Personal Message** box.
-    4. Click **Invite User**.
+   1. In the **Email** box, enter the email address of the user you want to invite to your domain.
+   2. In the **Redirect URL** box, provide the URL of a portal page, such as the My Profile page. On accepting the invite, the guest user is redirected to this page.
+   3. Add any message for the guest user in the **Personal Message** box.
+   4. Click **Invite User**.
 
-        :::note
-        If the group you want to invite a guest user to is a distribution group and the
-        invited user isn't in the guest user list of Microsoft 365 Admin portal, the invited
-        user isn't added to the group on the first invite but on the second invite.
-        :::
+      :::note
+      If the group you want to invite a guest user to is a distribution group and the invited user isn't in the guest user list of Microsoft 365 Admin portal, the invited user isn't added to the group on the first invite but on the second invite.
+      :::
 
+5. The guest user is sent an email with the redirect link. On clicking the redirect link, the guest user is successfully invited.
 
-5. The guest user is sent an email with the redirect link. On clicking the redirect link, the guest user is
-   successfully invited.
-
-    The **Invite User** button on the **Invite User** dialog box changes to **Add To Group**.
+   The **Invite User** button on the **Invite User** dialog box changes to **Add To Group**.
 
 6. Click the **Add To Group** button to add the guest user as a group member.
 7. Save the information.
 
-An object for the guest user is created in Microsoft Entra ID, with the type ‘guest user’. This user
-has the same rights and permissions as any other group member.
+An object for the guest user is created in Microsoft Entra ID, with the type ‘guest user’. This user has the same rights and permissions as any other group member.

@@ -12,18 +12,15 @@ sidebar_position: 20
 
 # Microsoft Entra ID Permissions for Directory Manager
 
-When you use a Microsoft Entra ID identity store, the user must have certain
-role assignments and application permissions on the registered app in Microsoft Entra ID.
+When you use a Microsoft Entra ID identity store, the user must have certain role assignments and application permissions on the registered app in Microsoft Entra ID.
 
-This topic lists the roles and permissions Directory Manager needs to perform operations in a
-Microsoft Entra ID provider.
+This topic lists the roles and permissions Directory Manager needs to perform operations in a Microsoft Entra ID provider.
 
-See the [Manage Directory Manager Licenses](/docs/directorymanager/11.1/admincenter/general/licensing.md) topic for additional information on
-Directory Manager licensing.
+For more information on Directory Manager licensing, see the [Manage Directory Manager Licenses](/docs/directorymanager/11.1/admincenter/general/licensing.md) topic.
 
-## Graph API Application Permissions
+## Graph API application permissions
 
-The following application permissions are required.
+Directory Manager requires the following application permissions.
 
 ![Channel application permissions for the registered app in Microsoft Entra ID](/images/directorymanager/11.1/configureentraid/register/channel.webp)
 
@@ -39,10 +36,10 @@ The following application permissions are required.
 
 ![User password and phone application permissions for the registered app in Microsoft Entra ID](/images/directorymanager/11.1/configureentraid/register/user-pw-phone.webp)
 
-## Office 365 Exchange Online Permissions
+## Office 365 Exchange Online permissions
 
 ![Office 365 Exchange Online ExchangeManageAsApp permission for the registered app](/images/directorymanager/11.1/configureentraid/register/exchange.webp)
 
-## SharePoint Delegated Permissions
+## SharePoint delegated permissions
 
 ![SharePoint AllSites delegated permissions for the registered app](/images/directorymanager/11.1/configureentraid/register/allsites.webp)

@@ -12,11 +12,11 @@ sidebar_position: 50
 
 # Query Designer Script tab
 
-This tab is read-only and displays any script that has been added for the group. The scripting
-feature lets administrators manipulate group memberships and the Query Designer dialog
-attributes (except for Include and Exclude attributes).
+This tab is read-only and displays any script added for the group. The scripting feature lets administrators manipulate group memberships and the Query Designer dialog box attributes, except for the Include and Exclude attributes.
 
 If no script has been added for the group, the box on this tab is blank.
+
+## Tab options
 
 **Load Default Script**
 
@@ -24,19 +24,15 @@ Displays the script based on the query set by the user.
 
 **Compile Script**
 
-Compile the script to determine whether any errors would prevent the code from loading or
-executing. Compiling your script verifies that the code is free of syntax errors, but it doesn't
-guarantee that the code is free of logical errors.
+Compiles the script to determine whether any errors would prevent the code from loading or running. Compiling verifies that the code is free of syntax errors. It doesn't guarantee that the code is free of logical errors.
 
 **References**
 
-Displays the script reference. A script references file contains information about the run-time
-requirements of a library or component, such as which files are needed, how they are to be
-registered, and where on the host machine they should be installed.
+Displays the script reference. A script references file contains information about the run-time requirements of a library or component. This information includes which files are needed, how to register them, and where to install them on the host machine.
 
 **Preview**
 
-Preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
+Previews the results returned with the criteria specified on all tabs of the Query Designer dialog box. This check confirms the accuracy of the data before you commit changes to the directory.
 
 **OK**
 

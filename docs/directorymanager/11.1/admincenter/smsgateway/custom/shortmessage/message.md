@@ -11,8 +11,7 @@ sidebar_position: 30
 
 # ShortMessage.Message property
 
-Gets or sets the supporting message text that is sent to registered mobile phone users along
-with the confirmation code.
+Gets or sets the supporting message text that Directory Manager sends to registered mobile phone users with the confirmation code.
 
 **Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
 

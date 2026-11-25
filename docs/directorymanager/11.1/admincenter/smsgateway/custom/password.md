@@ -27,4 +27,4 @@ string Password { get; set; }
 
 Type: [System.String](http://msdn.microsoft.com/en-us/library/system.string.aspx)
 
-The value of the password.
+The password.

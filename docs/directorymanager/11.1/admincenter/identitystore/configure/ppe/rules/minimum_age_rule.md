@@ -11,15 +11,13 @@ sidebar_position: 20
 
 # Configure the Age (Min) Rule in Directory Manager
 
-The Minimum Age rule stops users from quickly cycling through a series of passwords to
-evade the History and Similarity rules. This rule can only be enforced by domain policies.
+The Minimum Age rule stops users from quickly cycling through a series of passwords to evade the History and Similarity rules. Only domain policies can enforce this rule.
 
-- Enable the **Age (Min)** button to enable the Minimum Age rule.
+To configure the Age (Min) rule:
 
-- Select the number of days before a user can change their password.
+1. Enable the **Age (Min)** button.
+2. Select the number of days before a user can change their password.
 
 :::note
-The Minimum Age rule is unique because users can't comply with it by choosing a different
-password; they must wait until the required number of days has elapsed.
-
+The Minimum Age rule is unique because users can't comply with it by choosing a different password. They must wait until the required number of days has elapsed.
 :::

@@ -11,7 +11,7 @@ sidebar_position: 20
 
 # Directory Manager as a Service Provider
 
-You can configure Directory Manager as a service provider with the following identity providers:
+You can configure Directory Manager as a service provider with any of these identity providers:
 
 - AD FS
 - Microsoft Entra ID SSO

@@ -14,10 +14,12 @@ sidebar_position: 50
 # Update-Group Cmdlet
 
 The Update-Group cmdlet modifies the membership of a Smart Group or Dynasty according to the
-results returned by the LDAP query. This query is associated with the group or Dynasty creation and
-can be updated at any time using the **Set-SmartGroup** cmdlet. When the Update-Group cmdlet is
-run, it searches the directory to find recipients matching the criteria defined in the query
-and modifies the group membership list with the returned recipients, if any.
+results of its LDAP query. The query is associated with the group or Dynasty when you create it. You
+can update it at any time with the **Set-SmartGroup** cmdlet.
+
+When you run the Update-Group cmdlet, it searches the directory for recipients that match the
+criteria in the query. It then updates the group membership list with the returned recipients, if
+any.
 
 You can view events related to this cmdlet in the Directory Manager portal, under the History node
 in the left panel.
@@ -34,25 +36,27 @@ Update-Group
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+## Examples
 
-The following command updates all the Directory Manager groups, by using the credentials of a
-locally logged-on user, in a container specified by the "SearchContainer" parameter.
+### Example 1
+
+This command updates all Directory Manager groups in the container that the "SearchContainer"
+parameter specifies. It uses the credentials of the locally logged-on user.
 
 ```
 Update-Group -SearchContainer “OU=Sales,DC=Contoso,DC=com”
 ```
 
-Example 2:
+### Example 2
 
-The following command updates all Smart Groups and Dynasties present in the container Training,
-using the credentials set in the $Credentials environment variable. See the
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials in an environment variable.
+This command updates all Smart Groups and Dynasties in the container Training. It uses the
+credentials set in the $Credentials environment variable. To set credentials in an environment
+variable, see
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
 
 ```
 Update-Group -SearchContainer "OU=Training,DC=HR,DC=Imanami,DC=US" -Credential $Cred

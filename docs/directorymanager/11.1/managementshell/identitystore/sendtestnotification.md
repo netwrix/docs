@@ -11,9 +11,9 @@ sidebar_position: 150
 
 # Send-TestNotification
 
-The Send-TestNotification cmdlet sends a test notification using the specified From and To email
-addresses through the SMTP server of the specified identity store. Use this cmdlet to validate SMTP
-settings before configuring notifications or SMTP settings.
+Use the Send-TestNotification cmdlet to send a test notification through the SMTP server of the
+specified identity store. The notification uses the From and To email addresses you specify. Use
+this cmdlet to validate SMTP settings before you configure notifications or SMTP settings.
 
 ## Syntax
 
@@ -38,9 +38,9 @@ Send-TestNotification
 - Toemail
 - Port
 
-Example 1:
+## Example
 
-This example sends a test notification to euser1@pucit.local using the SMTP server configured on
+This command sends a test notification to euser1@pucit.local using the SMTP server configured on
 port 25 for user arsalanahmadsvm in the AdStore1 identity store.
 
 ```

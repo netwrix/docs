@@ -11,4 +11,4 @@ sidebar_position: 11
 
 # Set a Group Prefixes Policy for a Security Role
 
-You can standardize group names in the directory by defining prefixes for a security role. See the [Configure Group Name Prefixes in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/configure/prefixes.md) policy for additional information.
+Define prefixes for a security role to standardize group names in the directory. For more information, see the [Configure Group Name Prefixes in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/configure/prefixes.md) policy.

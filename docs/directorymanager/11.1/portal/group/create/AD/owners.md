@@ -11,29 +11,14 @@ sidebar_position: 30
 
 # Owners Page in the Create Group Wizard
 
-You can manage the primary and additional owners for the group. Additional owners have the same
-privileges as the primary owner to manage the group.
+On this page, you manage the primary and additional owners for the group. Additional owners have the same privileges as the primary owner to manage the group.
 
-Users, contacts, and security groups can be set as the primary and additional owners. For a
-group, all its members are considered owners.
+You can set users, contacts, and security groups as the primary and additional owners. For a group, all its members are considered owners.
 
-- The **Owner** box displays your name as the primary owner of the group.
-
-    To change the primary owner, click **Browse** next to the **Owner** box to launch the
-    [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md), where you can search and select a primary owner.
-
-- If the administrator hasn't enforced the selection of a primary owner (see Role policies), you
-  can also remove the primary owner. Click the **Remove** button next to the **Owner** box to remove
-  the primary owner.
-- To specify additional owners for the group, click **Add**.
-
-    Enter a search string to locate the object to add as an additional owner, or click **Advance**
-    to use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
-
-- You can also specify additional owners for the group using an external file. Click **Import** to
-  launch the **Import Additional Owners** wizard for importing additional owners. See
-  [Import additional group owners in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/importadditionalowners.md) for further information and
-  instructions.
+- The **Owner** box displays your name as the primary owner of the group. To change the primary owner, click **Browse** next to the **Owner** box. [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md) opens, where you can search for and select a primary owner.
+- If the administrator hasn't enforced the selection of a primary owner (see Role policies), you can remove the primary owner. Click the **Remove** button next to the **Owner** box.
+- To specify additional owners for the group, click **Add**. Enter a search string to locate the object to add as an additional owner, or click **Advance** to search with [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md).
+- To specify additional owners from an external file, click **Import**. The **Import Additional Owners** wizard opens. See [Import additional group owners in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/importadditionalowners.md) for further information and instructions.
 - To remove an object from the additional owners list, select it and click **Remove**.
 
 The **Additional Owners** grid displays the following information:
@@ -47,16 +32,10 @@ The **Additional Owners** grid displays the following information:
 | Ending        | Displays the ending date of the temporary addition or removal. |
 | Don't notify | By default, all group-related notifications (such as expiry, deletion, and renewal notifications) are sent to the primary owner and all additional owners, so they can take the necessary action indicated. <br />To exclude an additional owner from receiving notifications, select the Don't notify checkbox. |
 
-The Managed By Life Cycle job updates the temporary ownership of groups by adding and removing
-temporary owners on the specified dates.
+The Managed By Life Cycle job updates the temporary ownership of groups. It adds and removes temporary owners on the specified dates.
 
-Consider a scenario where the Managed By Life Cycle job is scheduled to run once a week, say
-Mondays. If an object is to be added as a group’s temporary additional owner for three days
-(Wednesday through Friday), it isn't added. This happens because the Managed By Life Cycle job
-didn't run on those days to update temporary ownership.
+For example, the Managed By Life Cycle job is scheduled to run once a week, on Mondays. An object is to be added as a group’s temporary additional owner for three days, Wednesday through Friday. The object isn't added, because the job didn't run on those days to update temporary ownership.
 
 After specifying group owners, click **Next**.
 
-You might see a message asking you to select X number of additional owners. This happens because the
-Group Owners policy defined for your role in the identity store requires that the group have at
-least X additional owners. Add the required owners and click **Next**.
+You might see a message asking you to select X number of additional owners. This happens because the Group Owners policy defined for your role in the identity store requires that the group have at least X additional owners. Add the required owners and click **Next**.

@@ -21,15 +21,12 @@ individually.
 
 **Issue warning (K)**
 
-The mailbox size in kilobytes (KB) for this user, that, when exceeded, triggers an over-limit
-warning. However, the user can still send and receive messages.
+The mailbox size in kilobytes (KB) for this user. When the mailbox exceeds it, Directory Manager triggers an over-limit warning. The user can still send and receive messages.
 
 **Prohibit Send (K)**
 
-The maximum mailbox size in kilobytes (KB) for this user, that, when exceeded, suspends the user's
-ability to send emails.
+The maximum mailbox size in kilobytes (KB) for this user. When the mailbox exceeds it, the user can't send emails.
 
 **Prohibit Send/Receive (K)**
 
-The maximum mailbox size, in kilobytes (KB) for this user, that, when exceeded, suspends the user's
-ability to both send and receive emails.
+The maximum mailbox size in kilobytes (KB) for this user. When the mailbox exceeds it, the user can't send or receive emails.

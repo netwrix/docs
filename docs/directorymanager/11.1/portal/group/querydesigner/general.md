@@ -11,8 +11,7 @@ sidebar_position: 30
 
 # Query Designer General tab
 
-Use this tab to specify the type of objects to include in your search. Options vary according to the
-object type selected in the **Find** list.
+Use this tab to specify the type of objects to include in your search. Options vary according to the object type selected in the **Find** list.
 
 Select the sub-types of the selected object type to include in your search.
 
@@ -27,14 +26,12 @@ The following table lists the options available on the **General** tab for each 
 | Users, Contacts, and Groups  | <ul><li>Users – Includes users</li><li>Contacts – Includes contacts</li><li>Groups – Includes groups</li></ul>                                                                                                                                                                                                                                                                                                                                                      |
 
 :::note
-The Computer and Contact object types aren't supported in a Microsoft Entra ID identity
-store.
+The Computer and Contact object types aren't supported in a Microsoft Entra ID identity store.
 :::
-
 
 **Preview**
 
-Use the **Preview** button to view the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
+Click **Preview** to view the results returned with the criteria specified on all tabs of the Query Designer dialog box. This check confirms the accuracy of the data before you commit changes to the directory.
 
 **OK**
 

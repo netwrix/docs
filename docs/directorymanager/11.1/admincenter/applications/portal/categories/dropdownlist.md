@@ -14,14 +14,11 @@ sidebar_position: 30
 
 Use the dropdown list display type to give portal users a list of options to select from.
 
-To create a custom dropdown list display type, you must specify the values (options) to display
-in the list. This custom display type can then be linked to a schema attribute. Options in the
-dropdown list are the different values that users can select for the schema attribute you link this
-display type with.
+To create a custom dropdown list display type, specify the values (options) to display in the list. You can then link the display type to a schema attribute. The options in the list are the values that users can select for that attribute.
 
-## Predefined Dropdown List Display Types
+## Predefined dropdown list display types
 
-A few dropdown list display types used in the default portal template are:
+The default portal template uses these dropdown list display types, among others:
 
 |     | Display Type Name  | Default Value              | Values                                                                        |
 | --- | ------------------ | -------------------------- | ----------------------------------------------------------------------------- |
@@ -30,45 +27,32 @@ A few dropdown list display types used in the default portal template are:
 | 3.  | lstGroupType       | None                       | Security Distribution                                                         |
 | 4.  | membershipeditlist | None                       | Perpetual Temporary Member Addition Pending Temporary Removed Removal Pending |
 | 5.  | lstCountry         | None                       | A list of all countries                                                       |
-| 6.  | lstState           | None                       | A list of all states in the United States                                      |
+| 6.  | lstState           | None                       | A list of all states in the United States                                   |
 | 7.  | lstStateProvince   | None                       | A list of all states in the United States and provinces in Canada.             |
 | 8.  | lstProvince        | None                       | A list of all provinces in Canada                                             |
 
-## Define a Dropdown List Display Type
+## Define a dropdown list display type
 
-1. In Admin Center, select **Applications** in the left pane.  
-   On the **GroupID Portal** tab, a portal's card displays its info.
+1. In Admin Center, select **Applications** in the left pane. On the **GroupID Portal** tab, each portal's card displays its info.
 2. Click the ellipsis button for a portal and select **Settings**.
-3. Select an identity store under **Design Settings** to define a custom display type for it.  
-   All identity stores associated with the portal are listed under **Design Settings**. You can
-   design a different portal for each of these.
+3. Select an identity store under **Design Settings** to define a custom display type for it. All identity stores associated with the portal are listed under **Design Settings**. You can design a different portal for each of them.
 4. Click **Custom Display Types** in the left pane.
 5. On the **Custom Display Types** page, click **Add** on the **Custom Display Types** tab.
-6. On the **New Display Type** pane, enter a name for the display type and select _Dropdown List_ in
-   the **Type** dropdown list.  
-   You can't change the name of a custom display type after you create it.
-7. Use the **Values** area to specify the values to be displayed in the dropdown list.
+6. On the **New Display Type** pane, enter a name for the display type and select _Dropdown List_ in the **Type** dropdown list. You can't change the name of a custom display type after you create it.
+7. Use the **Values** area to specify the values to display in the dropdown list.
 
-    1. Click **Add Value**.
-    2. Specify a value and a display text for that value in the respective boxes. The display text
-       appears in the dropdown list, while the value is saved in the directory or
-       database when a user selects the display text from the dropdown list.  
-       (The value is saved in the directory when the dropdown list display type is mapped to a
-       directory attribute. It is saved in the database when the display type is mapped to a
-       database attribute.)
-    3. In the **Visibility** dropdown list, select a security role. The value in the dropdown list
-       is visible to users of this role and roles with a priority value higher than this role.
-       See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).  
-       Select _Never_ to hide the value from all users.
-    4. Click **OK**. The value appears in the **Values** area, represented by its display text.
+   1. Click **Add Value**.
+   2. Specify a value and a display text for that value in the respective boxes. The display text appears in the dropdown list. The value is saved when a user selects the display text.
+
+      The value is saved in the directory when you map the display type to a directory attribute. It is saved in the database when you map the display type to a database attribute.
+   3. In the **Visibility** dropdown list, select a security role. The value is visible to users of this role and to roles with a higher priority value. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md). Select _Never_ to hide the value from all users.
+   4. Click **OK**. The value appears in the **Values** area, represented by its display text.
 
 8. Repeat step 7 to define more values in the list.
 
-    - To edit a value, click **Edit** for it.
-    - To remove a value from the list, click **Delete** for it.
+   - To edit a value, click **Edit** for it.
+   - To remove a value from the list, click **Delete** for it.
 
-9. Select a value in the **Default Selection** list to set it as the default value for the dropdown
-   list in the portal.  
-   The **Default Selection** list contains all values defined in the **Values** area.
+9. In the **Default Selection** list, select a value to set it as the default for the dropdown list in the portal. The **Default Selection** list contains all values defined in the **Values** area.
 10. Click **OK**.
 11. Click **Save** on the **Custom Display Types** page.

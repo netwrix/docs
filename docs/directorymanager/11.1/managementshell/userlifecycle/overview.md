@@ -12,7 +12,7 @@ sidebar_position: 160
 
 # User Lifecycle Cmdlets for Directory Manager
 
-This section covers the cmdlets for performing user lifecycle tasks, such as:
+Use these cmdlets to perform user lifecycle tasks:
 
 - [Extend-User Cmdlet for Directory Manager](/docs/directorymanager/11.1/managementshell/userlifecycle/extenduser.md) – Activates a user account for a specific number of days.
 - [Get-Status Cmdlet for Directory Manager](/docs/directorymanager/11.1/managementshell/userlifecycle/getstatus.md) – Provides the status of a user as per the profile validation criteria.

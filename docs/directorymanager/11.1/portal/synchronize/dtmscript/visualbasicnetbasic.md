@@ -12,27 +12,17 @@ sidebar_position: 30
 
 # Visual Basic .NET Scripting for Directory Manager
 
-This topic discusses some points of information relevant to DTM scripting in Directory Manager. See
-the [Visual Basic Language Reference](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/)
-article for additional information.
+This topic covers Visual Basic .NET points that matter for DTM scripting in Directory Manager. For more information, see the [Visual Basic Language Reference](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/) article.
 
 ## Differences between Visual Basic .NET and other Visual Basic versions
 
-Visual Basic .NET is largely a superset of Visual Basic 6. If you are familiar with Visual Basic
-before the advent of .NET technology, you might want to refer to
-[Language Changes in Visual Basic](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/skw8dhdd(v%3dvs.90)),
-and particularly to
-[Programming Element Support Changes Summary](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/kaf4ssya(v%3dvs.90)).
-Most statements and constructs that worked in Visual Basic 6, VBScript, and
-Visual Basic for Applications continue to work in Visual Basic .NET.
+Visual Basic .NET is largely a superset of Visual Basic 6. If you know Visual Basic from before .NET, see [Language Changes in Visual Basic](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/skw8dhdd(v%3dvs.90)) and, in particular, [Programming Element Support Changes Summary](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/kaf4ssya(v%3dvs.90)). Most statements and constructs that worked in Visual Basic 6, VBScript, and Visual Basic for Applications continue to work in Visual Basic .NET.
 
-**Important:** A key difference, however, is that the Set keyword is no longer used to assign a value to
-an object. Omit it.
+**Important:** A key difference is that the Set keyword is no longer used to assign a value to an object. Omit it.
 
 ## Declaring variables
 
-Variables must be declared via the Dim keyword before, or concurrent with, their first use.
-Optionally, you can indicate the data type of the variable in the declaration.
+Declare variables with the Dim keyword before, or at the same time as, their first use. Optionally, you can specify the data type of the variable in the declaration.
 
 The following declarations are valid:
 
@@ -42,17 +32,15 @@ The following declarations are valid:
 - Dim Lastname = DTM.Source("sn")
 - Dim Lastname As String = DTM.Source("sn")
 
-## Manipulating Strings
+## Manipulating strings
 
-The most common use of Synchronize scripting is to dissect and combine strings. String literals are
-always enclosed in quotes, and Visual Basic provides the `&` operator for concatenating strings.
+The most common use of Synchronize scripting is to dissect and combine strings. String literals are always enclosed in quotes, and Visual Basic provides the `&` operator for concatenating strings.
 
 ```
 Dim Fullname = Lastname & ", " & Firstname
 ```
 
-Visual Basic also provides a host of global functions that perform various string manipulations, for
-example:
+Visual Basic also provides many global functions that manipulate strings, for example:
 
 - Len(Str), for example:
 
@@ -78,16 +66,9 @@ example:
     Dim LowerCaseName = LCase(Fullname)
     ```
 
-For a list of such string functions, see the
-[String Manipulation Summary](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/keywords/string-manipulation-summary)
-topic.
+For a list of such string functions, see the [String Manipulation Summary](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/keywords/string-manipulation-summary) topic.
 
-As an alternative to global functions (which are carried over from Visual Basic before the advent of
-.NET technology), you can instead use the .NET string class and related classes. These methods can
-only be applied to a variable if you declare the data type of the variable to be As String (as in
-Dim Lastname As String). Unlike global functions, positions within a string are zero-based (that is,
-the first character occupies position 0) instead of one-based (the first character occupies position
-1).
+Instead of global functions, which carry over from Visual Basic before .NET, you can use the .NET string class and related classes. You can apply these methods to a variable only if you declare its data type as As String (as in Dim Lastname As String). Unlike global functions, positions within a string are zero-based (the first character occupies position 0) instead of one-based (the first character occupies position 1).
 
 - String.Length, for example:
 
@@ -107,19 +88,15 @@ the first character occupies position 0) instead of one-based (the first charact
     Dim LowerCaseName As String = Fullname.ToLower()
     ```
 
-For a list of such string methods, see
-[.NET String Methods](https://msdn.microsoft.com/en-us/library/system.string_methods(v%3dvs.110).aspx).
+For a list of such string methods, see [.NET String Methods](https://msdn.microsoft.com/en-us/library/system.string_methods(v%3dvs.110).aspx).
 
-## Line Continuation
+## Line continuation
 
-With extensive string manipulation, statement lines frequently become quite long. To break
-a statement into two or more lines, insert a space followed by an underscore (“\_”) just before
-each line break.
+Extensive string manipulation often makes statement lines long. To break a statement into two or more lines, insert a space followed by an underscore (“\_”) just before each line break.
 
 :::note
-Be sure to insert the line break characters ("\_") outside of a string literal.
+Insert the line break characters ("\_") outside of a string literal.
 :::
-
 
 Example:
 
@@ -128,10 +105,9 @@ Dim DistinguishedName = "cn=Sales,CN=SF,CN=WestCoast,CN=Users," _
 & "OU=corporation,DC=dc2000,DC=imanami,DC=biz"
 ```
 
-## Decision Structures
+## Decision structures
 
-You can make decisions in your script using the If-Then or If-Then-Else constructs. These require a
-condition clause that evaluates to true or false.
+To make decisions in your script, use the If-Then or If-Then-Else constructs. These require a condition clause that evaluates to true or false.
 
 Example 1:
 
@@ -152,9 +128,7 @@ DTM.Result = "CN=Users,DC=dc2000,DC=imanami,DC=biz"
 End If
 ```
 
-To perform one of a number of alternative actions based on the value of a variable, the Select Case
-construct comes in handy. In this example, note the use of the global LCase function. This example
-illustrates how to make case-insensitive string comparisons.
+To perform one of several alternative actions based on the value of a variable, use the Select Case construct. This example uses the global LCase function to make case-insensitive string comparisons.
 
 ```
 Select Case LCase(DTM.Source("Department"))
@@ -171,15 +145,11 @@ End Select
 
 ## Loops
 
-It is uncommon to use loops within a DTM script, since the script itself is executed in the context of a
-single source row (or object) and a single destination row (or object). However, complex string
-manipulations may require iterating through the characters of a string. Iteration through the
-characters typically uses the For Each construct.
+Loops are uncommon in a DTM script, because the script runs in the context of a single source row (or object) and a single destination row (or object). However, complex string manipulations might require iterating through the characters of a string. Iteration through the characters typically uses the For Each construct.
 
 **Example:**
 
-Count the number of numeric digits in an alphanumeric ID source field using the IsDigit() shared
-function of the .NET Char class.
+Count the number of numeric digits in an alphanumeric ID source field with the IsDigit() shared function of the .NET Char class.
 
 ```
  Dim Count = 0

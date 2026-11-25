@@ -11,7 +11,7 @@ sidebar_position: 150
 
 # ShortMessage class
 
-This DTO (Data Transfer Object) class defines the elements of the text message.
+This Data Transfer Object (DTO) class defines the elements of the text message.
 
 The following list shows its members:
 

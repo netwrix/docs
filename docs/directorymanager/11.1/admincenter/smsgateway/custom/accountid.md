@@ -31,6 +31,4 @@ The value of the account ID.
 
 **Remarks**
 
-The account ID might not be required for every SMS gateway. If required, use this property to get or
-set its value. This property can also contain any other identification number that a
-gateway needs to authenticate a connection.
+Not every SMS gateway requires an account ID. If yours does, use this property to get or set its value. The property can also hold any other identification number that a gateway needs to authenticate a connection.

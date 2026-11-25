@@ -11,8 +11,7 @@ sidebar_position: 160
 
 # SendSmsMessageResult class for custom SMS gateways
 
-Returns the message delivery status (success or failure) and any exceptions that occur while
-sending the text message to the target mobile phone numbers.
+The class returns the message delivery status (success or failure) and any exceptions that occur while Directory Manager sends the text message to the target mobile phone numbers.
 
 The class has the following members:
 

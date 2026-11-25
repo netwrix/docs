@@ -11,9 +11,7 @@ sidebar_position: 10
 
 # Get-Computer Cmdlet in Directory Manager
 
-The Get-Computer cmdlet retrieves information about a computer object from the connected
-identity store. The computer can be a domain controller or an Exchange server, or a simple
-client connected to the domain.
+Use the Get-Computer cmdlet to retrieve information about a computer object from the connected identity store. The computer can be a domain controller, an Exchange server, or a simple client connected to the domain.
 
 ## Syntax
 
@@ -27,9 +25,9 @@ Get-Computer
 
 - None
 
-Example 1:
+## Example
 
-This example retrieves a computer with the name _arslanahmadsvm_.
+This command retrieves the computer named _arslanahmadsvm_.
 
 ```
 Get-computer -Identity arslanahmadsvm

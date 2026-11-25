@@ -12,12 +12,9 @@ sidebar_position: 120
 
 # Get-UserRole Cmdlet in Directory Manager
 
-The Get-UserRole cmdlet displays information about the role of the specified user in an identity
-store.
+Use the Get-UserRole cmdlet to display the role of a user in an identity store.
 
-If a user has different roles in different Directory Manager clients of an identity store and the
-ClientName parameter isn't specified, this cmdlet displays the highest-priority role of the user. If
-the identity store name isn't specified, this cmdlet uses the connected identity store.
+A user can have different roles in different Directory Manager clients of an identity store. If you don't specify the ClientName parameter, this cmdlet displays the highest-priority role of the user. If you don't specify the identity store name, it uses the connected identity store.
 
 ## Syntax
 
@@ -30,59 +27,59 @@ Get-UserRole
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+## Examples
 
-This example provides role information about the _testingaccount_ user in the Admin Center client of
+### Example 1
+
+This command provides role information about the _testingaccount_ user in the Admin Center client of
 the AdStore1 identity store.
 
 ```
 Get-UserRole -Identity testingaccount -IdentityStoreName AdStore1 -ClientName 'Admin Center'
 ```
 
-Example 2:
+### Example 2
 
-This example displays the highest-priority role information about the _testingaccount@pucit.local_ user
+This command displays the highest-priority role information about the _testingaccount@pucit.local_ user
 for all clients of the AdStore1 identity store.
 
 ```
 Get-UserRole -Identity testingaccount@pucit.local -IdentityStoreName AdStore1
 ```
 
-Example 3:
+### Example 3
 
-This example displays role information about the `_testingaccount@pucit.local_` user in the
+This command displays role information about the `_testingaccount@pucit.local_` user in the
 _ManagementShell `<machine name>`_ client of the connected identity store.
 
 ```
 Get-UserRole -Identity testingaccount@pucit.local -ClientName 'ManagementShell <machine name>'
 ```
 
-Example 4:
+### Example 4
 
-This example retrieves the highest-priority role of the _testingaccount_ user in the connected identity
-store. If the user has different roles in different Directory Manager clients, only the role having
-the highest priority is retrieved.
+This command retrieves the highest-priority role of the _testingaccount_ user in the connected identity store. If the user has different roles in different Directory Manager clients, it retrieves only the role with the highest priority.
 
 ```
 Get-UserRole -Identity testingaccount
 ```
 
-Example 5:
+### Example 5
 
-This example retrieves information about all roles of the _testingaccount_ user in all clients of the
+This command retrieves information about all roles of the _testingaccount_ user in all clients of the
 connected identity store.
 
 ```
 Get-UserRole -Identity testingaccount -All
 ```
 
-Example 6:
+### Example 6
 
-This example retrieves all roles of the _euser1_, _euser2_, and _testingaccount_ users in the connected
+This command retrieves all roles of the _euser1_, _euser2_, and _testingaccount_ users in the connected
 identity store through pipelining.
 
 ```

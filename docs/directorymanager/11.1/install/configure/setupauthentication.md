@@ -37,26 +37,19 @@ _db_creator_ and _public_.
 
 To add the Directory Manager SQL account to the _db_creator_ role:
 
-Step 1 – Launch SQL Server Management Console.
+1. Launch SQL Server Management Console.
+2. Create a new account for Directory Manager 11, if needed.
+3. Connect to the server using your new Directory Manager SQL account.
+4. Right-click the database server node and click **Properties**.
+5. On the Properties dialog box, select the **Permissions** page.
+6. On the Explicit tab, scroll down to the Connect SQL permission and select its **Grant** checkbox.
+7. Click the **Effective** tab. The following permissions should be listed:
 
-Step 2 – Create a new account for Directory Manager 11, if needed.
+   - Connect SQL
+   - Create any database
+   - View any database
 
-Step 3 – Connect to the server using your new Directory Manager SQL account.
-
-Step 4 – Right-click the database server node and click **Properties**.
-
-Step 5 – On the Properties dialog box, select the **Permissions** page.
-
-Step 6 – On the Explicit tab, scroll down to the Connect SQL permission and select its **Grant**
-checkbox.
-
-Step 7 – Click the **Effective** tab. The following permissions should be listed:
-
-- Connect SQL
-- Create any database
-- View any database
-
-Step 8 – Click **OK**.
+8. Click **OK**.
 
 ## Windows Authentication
 

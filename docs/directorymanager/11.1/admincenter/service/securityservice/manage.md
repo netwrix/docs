@@ -12,8 +12,7 @@ keywords:
 
 # Manage Directory Manager Security Service Settings
 
-Security services in Directory Manager appear on the **Security Service** tab. A card for a
-service displays information such as its name and status.
+Security services in Directory Manager appear on the **Security Service** tab. A card for a service shows information such as its name and status.
 
 You can manage several settings for a service, such as:
 
@@ -22,86 +21,64 @@ You can manage several settings for a service, such as:
 - Configure file logging for a service
 - Delete a service
 
-## View Service Details
+## View service details
 
 To view the service details:
 
-Step 1 – In Admin Center, click **Applications** in the left pane.
+1. In Admin Center, click **Applications** in the left pane.
+2. On the **Applications** page, click the **Security Service** tab. The tab shows the default Security service created while configuring Directory Manager and any other Security service that you have created.
 
-Step 2 – On the **Applications** page, click the **Security Service** tab.  
-The tab displays the default Security service created while configuring Directory Manager and any
-other Security service that you have created. When multiple Directory Manager instances are
-deployed, this tab shows multiple default Security services, because each instance has
-its own default Security service. See the
-[Elasticsearch Clusters, Nodes, and Directory Manager](/docs/directorymanager/11.1/admincenter/service/overview.md#elasticsearch-clusters-nodes-and-directory-manager)
-topic for additional information.  
-For details displayed on a service card, see the table in the
-[View Data Service Details](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#view-data-service-details) topic.
+   When multiple Directory Manager instances are deployed, this tab shows multiple default Security services, because each instance has its own default Security service. For more information, see the [Elasticsearch Clusters, Nodes, and Directory Manager](/docs/directorymanager/11.1/admincenter/service/overview.md#elasticsearch-clusters-nodes-and-directory-manager) topic.
 
-## Manage Security Service Settings
+   For the details on a service card, see the table in the [View Data Service Details](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#view-data-service-details) topic.
 
-See the [Manage Directory Manager Data Service Settings](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md) topic to manage settings for a
-Security service, such as deployment and log settings.
+## Manage Security service settings
 
-## Manage Advanced Settings
+To manage settings for a Security service, such as deployment and log settings, see the [Manage Directory Manager Data Service Settings](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md) topic.
 
-If you have created multiple Security services for load balancing and high availability, the
-Advanced Settings option lets services share session information.
+## Manage advanced settings
+
+If you have created multiple Security services for load balancing and high availability, the Advanced Settings option lets services share session information.
 
 To enable communication between multiple Security services:
 
-Step 1 – In Admin Center, click **Applications** in the left pane.
+1. In Admin Center, click **Applications** in the left pane.
+2. On the **Applications** page, click the **Security Service** tab. The tab shows the default Security service created while configuring Directory Manager and any other Security service that you have created.
 
-Step 2 – On the **Applications** page, click the **Security Service** tab.  
-The tab displays the default Security service created while configuring Directory Manager and any
-other Security service that you have created. When multiple Directory Manager instances are
-deployed, this tab shows multiple default Security services, because each instance has
-its own default Security service. See the
-[Elasticsearch Clusters, Nodes, and Directory Manager](/docs/directorymanager/11.1/admincenter/service/overview.md#elasticsearch-clusters-nodes-and-directory-manager)
-topic for additional information.  
-For details displayed on a service card, see the table in the
-[View Data Service Details](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#view-data-service-details)
-topic.
+   When multiple Directory Manager instances are deployed, this tab shows multiple default Security services, because each instance has its own default Security service. For more information, see the [Elasticsearch Clusters, Nodes, and Directory Manager](/docs/directorymanager/11.1/admincenter/service/overview.md#elasticsearch-clusters-nodes-and-directory-manager) topic.
 
-Step 3 – Click the **ellipsis button** for a Security service and select **Settings**.
+   For the details on a service card, see the table in the [View Data Service Details](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#view-data-service-details) topic.
 
-Step 4 – Select **Advanced Settings** under **Server Settings**.
-
-Step 5 – Enable the **Distributed Cache** toggle button to enable communication among defined
-Security services.
+3. Click the **ellipsis button** for a Security service and select **Settings**.
+4. Select **Advanced Settings** under **Server Settings**.
+5. Enable the **Distributed Cache** toggle button to enable communication among defined Security services.
 
 Communication between Security services is now enabled.
 
-## Delete a Security Service
+## Delete a Security service
 
 Deleting a Security service removes the following:
 
 - **For a native IIS deployment:**
 
-    - The Security service directory under the following location on the Directory Manager server:  
-      X:\Program Files\Imanami\GroupID 11.0\GroupIDSecurityService\Inetpub\  
-      (X represents the Directory Manager installation drive)
-    - The Security service directory from the website in IIS
+  - The Security service directory under the following location on the Directory Manager server: `X:\Program Files\Imanami\GroupID 11.0\GroupIDSecurityService\Inetpub\`. X represents the Directory Manager installation drive.
+  - The Security service directory from the website in IIS
 
 - **For a remote IIS deployment:**
 
-    - The service's directory in the remote IIS site
-    - The service's physical directory under the folder mapped to the remote IIS site
+  - The service's directory in the remote IIS site
+  - The service's physical directory under the folder mapped to the remote IIS site
 
 - **For a Docker deployment:**
 
-    The container created in Docker Engine for the Security service
+  The container created in Docker Engine for the Security service
 
 To delete a Security service:
 
-Step 1 – In Admin Center, click **Applications** in the left pane.
-
-Step 2 – On the **Applications** page, click the **Security Service** tab.
-
-Step 3 – Click the ellipsis button for a Security service and select **Delete**.
+1. In Admin Center, click **Applications** in the left pane.
+2. On the **Applications** page, click the **Security Service** tab.
+3. Click the ellipsis button for a Security service and select **Delete**.
 
 :::note
-You can't delete the default Security service, and you can't delete a Security service that
-is linked with a Directory Manager client, such as the Directory Manager portal.
-
+You can't delete the default Security service. You also can't delete a Security service that is linked with a Directory Manager client, such as the Directory Manager portal.
 :::

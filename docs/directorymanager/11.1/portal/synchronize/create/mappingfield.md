@@ -12,7 +12,7 @@ sidebar_position: 40
 
 # Mandatory Attributes for Field Mapping
 
-When creating a job, you select any of the following destination providers.
+When you create a job, you select one of these destination providers:
 
 - Microsoft Active Directory
 - Microsoft Entra ID
@@ -25,14 +25,11 @@ When creating a job, you select any of the following destination providers.
 - Microsoft SQL Server
 - Text
 
-After you select a provider, you can see a specific set of objects that you can create in the destination
-providers. After you select the object type, a set of mandatory attributes is
-required for creating the respective objects.
+After you select a provider, you see the set of objects that you can create in that destination provider. After you select the object type, a set of mandatory attributes is required to create the objects.
 
-The following tables show the mandatory attributes for different object types for each provider and
-the transformations to apply to them while mapping.
+These tables show the mandatory attributes for each object type and provider, and the transformations to apply to them while mapping.
 
-Mandatory attributes for User:
+## User attributes
 
 <table>
 	<thead>
@@ -93,7 +90,7 @@ Mandatory attributes for User:
     </tbody>
 </table>
 
-Mandatory attributes for Mail-enabled User:
+## Mail-enabled user attributes
 
 <table>
     <thead>
@@ -140,7 +137,7 @@ Mandatory attributes for Mail-enabled User:
     </tbody>
 </table>
 
-Mandatory attributes for Mailbox-enabled User:
+## Mailbox-enabled user attributes
 
 <table>
     <thead>
@@ -228,7 +225,7 @@ Mandatory attributes for Mailbox-enabled User:
     </tbody>
  </table>
 
-Mandatory attributes for Mailbox-enabled Contact:
+## Mailbox-enabled contact attributes
 
 <table>
     <thead>
@@ -267,7 +264,7 @@ Mandatory attributes for Mailbox-enabled Contact:
     </tbody>
 </table>
 
-Mandatory attributes for Group:
+## Group attributes
 
 <table>
     <thead>

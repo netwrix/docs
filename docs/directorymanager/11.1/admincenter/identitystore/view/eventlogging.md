@@ -13,7 +13,7 @@ sidebar_position: 10
 # Directory Manager Event Logging
 
 Directory Manager uses Windows logging and file logging to maintain event logs for all Directory
-Manager clients and services, namely:
+Manager clients and services:
 
 - Admin Center
 - Directory Manager portals
@@ -28,13 +28,12 @@ If a client or service has multiple deployments, Directory Manager maintains sep
 deployment instance.
 
 Use the **Applications** node in Admin Center to manage Windows logging and file logging for each of
-the preceding components (except for Management Shell).
+these components, except Management Shell.
 
-## File Logging
+## File logging
 
 File logging records events for Directory Manager clients, scheduled jobs, and services in log
-files. Log file location depends on where the respective instance of the client or service is
-deployed.
+files. The log file location depends on where the instance of the client or service is deployed.
 
 **For a native IIS and remote IIS deployment:**
 
@@ -45,12 +44,12 @@ deployed.
 2. Right-click this directory and select **Explore**.
 3. Locate the **Logs** folder to read the logs.
 
-Events are logged in a text file. When the file size reaches 100 MB, Directory Manager archives it
-in the same directory by replacing the file extension with the suffix `.Log.X` and then creating a new
-text file with the original name. X in `.Log.X` is a number from 1 to 10 representing the archiving
-order, where 1 denotes the most recent file.
+Directory Manager logs events in a text file. When the file size reaches 100 MB, Directory Manager
+archives it in the same directory by replacing the file extension with the suffix `.Log.X`. It then
+creates a new text file with the original name. X in `.Log.X` is a number from 1 to 10 that shows the
+archiving order, where 1 is the most recent file.
 
-## Windows Logging
+## Windows logging
 
-Under Windows logging, events for Directory Manager clients and services are logged to the Windows
+Under Windows logging, Directory Manager logs events for its clients and services to the Windows
 application log.

@@ -11,9 +11,7 @@ sidebar_position: 80
 
 # New-Container Cmdlet
 
-The New-Container cmdlet creates a new organizational unit in the directory. You can also use it
-to create nested organizational units by repeatedly running the cmdlet and changing the value of the
-ParentContainer parameter.
+The `New-Container` cmdlet creates a new organizational unit in the directory. You can also use it to create nested organizational units by running the cmdlet repeatedly and changing the value of the ParentContainer parameter.
 
 ## Syntax
 
@@ -28,26 +26,24 @@ New-Container
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - ContainerName
 - OrganizationalUnit
 
-Example 1:
+## Examples
 
-The following command creates the organizational unit _Recruiting_ at the root level in the directory,
-using the credentials of the current user signed in to the identity store.
+### Example 1
+
+The following command creates the organizational unit _Recruiting_ at the root level in the directory, using the credentials of the current user signed in to the identity store.
 
 ```
 New-Container -OrganizationalUnit "DC=HR,DC=Imanami,DC=US" -ContainerName "Recruiting"
 ```
 
-Example 2:
+### Example 2
 
-The following command creates the organizational unit _Local Recruiting_ inside the _Recruiting_
-container in the directory using the credentials set in the $Credentials environment variable. See the
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials.
+The following command creates the organizational unit _Local Recruiting_ inside the _Recruiting_ container in the directory, using the credentials set in the $Credentials environment variable. To set credentials, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
 New-Container - OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ContainerName "Local Recruiting" -Credential $Cred

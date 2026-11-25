@@ -12,16 +12,15 @@ sidebar_position: 10
 
 # Convert-Group
 
-The Convert-Group commandlet converts an unmanaged group to a Smart Group.
+The Convert-Group cmdlet converts an unmanaged group to a Smart Group.
 
-Directory Manager Management Shell prompts for the identity of the unmanaged group you want to
-convert into a Smart Group. After the commandlet runs, it displays a status indicating the update is
-successful, as in the following screenshot:
+Directory Manager Management Shell prompts for the identity of the unmanaged group to convert. After
+the cmdlet runs, it displays a status that shows the update succeeded, as in the following
+screenshot:
 
 ![Management Shell output showing that the group was converted to a Smart Group](/images/directorymanager/11.1/managementshell/group/managementshell.webp)
 
-The converted Smart Group doesn't have an LDAP query attached to it. You must define one
-manually.
+The converted Smart Group has no LDAP query. Define one manually.
 
 ## Syntax
 
@@ -124,13 +123,13 @@ Convert-Group
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example:
+### Example
 
-The following commandlet converts the group _Clay2_ to a Smart Group using the credentials set in the
+The following cmdlet converts the group _Clay2_ to a Smart Group. It uses the credentials set in the
 $Cred environment variable.
 
 ```

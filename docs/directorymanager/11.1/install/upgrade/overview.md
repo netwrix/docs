@@ -22,41 +22,28 @@ Directory Manager 11 supports upgrading from the following versions:
 Complete the following before you run the Upgrade wizard.
 
 :::note
-In the following text, the term ‘source version’ refers to the Directory Manager version you are
-upgrading from.
+In the following text, the term 'source version' refers to the Directory Manager version you are upgrading from.
 :::
 
-Step 1 – To upgrade on a different server, the source version file system must be present on the
-Directory Manager 11 server. To do this:
+1. To upgrade on a different server, make the source version file system present on the Directory Manager 11 server:
 
-1. On the source version server, for example, a Directory Manager 10 server, go
-   to `[installation drive]:\Program Files\Imanami\` and copy the `GroupID 10` folder.
-2. On the Directory Manager 11 server, create the following path and paste the `GroupID 10` folder
-   there:
+   1. On the source version server, for example, a Directory Manager 10 server, go to `[installation drive]:\Program Files\Imanami\` and copy the `GroupID 10` folder.
+   2. On the Directory Manager 11 server, create the following path and paste the `GroupID 10` folder there:
 
-    `C:\Program Files\Imanami\`
+      `C:\Program Files\Imanami\`
 
-    After you paste the `GroupID 10` folder, the path is:  
-     `C:\Program Files\Imanami\GroupID 10\`
+      After you paste the `GroupID 10` folder, the path is:  
+      `C:\Program Files\Imanami\GroupID 10\`
 
-Step 2 – The following applies when you upgrade on a different server.  
-If a gMSA is the service account for an identity store in the source version, you must
-configure that gMSA on the Directory Manager 11 server before you upgrade.  
-To configure a gMSA, see the
-[Configure a gMSA for Directory Manager](/docs/directorymanager/11.1/requirements/permissions/gmsarequirements.md) topic.
+2. If you upgrade on a different server and a gMSA is the service account for an identity store in the source version, configure that gMSA on the Directory Manager 11 server before you upgrade. See the [Configure a gMSA for Directory Manager](/docs/directorymanager/11.1/requirements/permissions/gmsarequirements.md) topic.
 
-Step 3 – A disabled identity store in the source version isn't upgraded to Directory
-Manager 11.  
-To upgrade a disabled identity store, you must enable it in the source version before upgrade. Then
-disable it in Directory Manager 11 immediately after the upgrade.
+3. To upgrade a disabled identity store, enable it in the source version before the upgrade. Then disable it in Directory Manager 11 immediately after the upgrade. Directory Manager 11 doesn't upgrade a disabled identity store from the source version.
 
-Step 4 – To upgrade schedules and Synchronize jobs on a different server, you must run a utility on the
-Directory Manager 11 server before you run the Upgrade wizard. Contact Netwrix Customer Support for
-more information.
+4. To upgrade schedules and Synchronize jobs on a different server, run a utility on the Directory Manager 11 server before you run the Upgrade wizard. Contact Netwrix Customer Support for more information.
 
 If you forget the passphrase you used to encrypt Directory Manager data, upgrade isn't possible.
 
-## Upgrade Logs
+## Upgrade logs
 
 The upgrade creates two log files:
 

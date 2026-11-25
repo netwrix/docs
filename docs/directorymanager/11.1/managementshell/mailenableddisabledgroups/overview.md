@@ -12,7 +12,7 @@ sidebar_position: 110
 
 # Directory Manager Mail-Enable and Mail-Disable Group Cmdlets
 
-This section covers cmdlets for enabling and disabling groups for email.
+These cmdlets enable and disable groups for email.
 
 - [Disable-DistributionGroup Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/mailenableddisabledgroups/disabledistributiongroup.md) – disables a group's email capability.
 - [Enable-DistributionGroup Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/mailenableddisabledgroups/enabledistributiongroup.md) – enables a group's email capability.

@@ -12,8 +12,7 @@ sidebar_position: 30
 
 # Set Up Authentication Types in Directory Manager
 
-The following topics explain how to set up different authentication types for an identity store
-and enforce them for a security role.
+These topics explain how to set up each authentication type for an identity store and enforce it for a security role.
 
 - [Set Up Security Question Authentication in Directory Manager](/docs/directorymanager/11.1/admincenter/authpolicy/setupauth/securityquestions.md)
 - [Configure SMS Authentication for an Identity Store](/docs/directorymanager/11.1/admincenter/identitystore/configure/smsauthentication.md)

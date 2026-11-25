@@ -14,25 +14,17 @@ sidebar_position: 10
 
 The minimum hardware requirements for Directory Manager are:
 
-- 1.4 GHz or faster with four or more cores on a 64-bit processor
-- 8 GB of RAM if Directory Manager manages Elasticsearch
+- A 64-bit processor running at 1.4 GHz or faster, with four or more cores.
+- 8 GB of RAM if Directory Manager manages Elasticsearch, or 6 GB of RAM if you manage Elasticsearch yourself.
+- 6 GB or more of disk space, for installation only. Space requirements depend on how much the provider's Elasticsearch data grows.
 
-    6 GB of RAM if you manage Elasticsearch yourself
+## Sharing the server with other applications
 
-    :::info
-    A dedicated server is recommended for Directory Manager. If you install any other
-    application on the Directory Manager server, adjust RAM requirements accordingly. For
-    example, if you install SQL Server, you may need to add 2-4 GB of RAM, depending on the edition of
-    SQL Server.
-    :::
+:::info
+A dedicated server is recommended for Directory Manager. If you install any other application on the Directory Manager server, adjust RAM requirements accordingly. For example, if you install SQL Server, you may need to add 2-4 GB of RAM, depending on the edition of SQL Server.
+:::
 
+Different editions of SQL Server have varying resource requirements. For example:
 
-    Different editions of SQL Server have varying resource requirements. For example:
-
-    - SQL Server Express – Minimal resource usage; 2 GB of additional RAM may suffice.
-    - SQL Server Standard or Enterprise – These require more resources; allocate 4 GB or more
-      of additional RAM for optimal performance.
-
-- 6 GB or more disk space (for installation only)
-
-    Space requirements depend on how much the provider's Elasticsearch data grows.
+- SQL Server Express uses minimal resources. 2 GB of additional RAM may suffice.
+- SQL Server Standard or Enterprise requires more resources. Allocate 4 GB or more of additional RAM for optimal performance.

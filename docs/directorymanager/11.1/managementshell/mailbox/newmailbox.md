@@ -11,8 +11,7 @@ sidebar_position: 20
 
 # New-Mailbox Cmdlet in Directory Manager
 
-Use the New-Mailbox cmdlet to create a new mailbox in the directory. You can add most mailbox
-properties directly by using the parameters of this cmdlet.
+Use the New-Mailbox cmdlet to create a mailbox in the directory. You can add most mailbox properties directly with the parameters of this cmdlet.
 
 ## Syntax
 
@@ -57,7 +56,7 @@ New-MailBox
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - MailBoxStore
 - Alias
@@ -69,11 +68,9 @@ New-MailBox
 - LastName
 - DisplayName
 
-Example:
+## Example
 
-The following command creates a new mailbox in the container specified by the **OrganizationalUnit**
-parameter of the specified mailbox store. The command also specifies the logon name, password, first
-name, last name, and display name of the new mailbox.
+This command creates a mailbox in the container specified by the **OrganizationalUnit** parameter of the specified mailbox store. The command also specifies the logon name, password, first name, last name, and display name of the new mailbox.
 
 ```
 New-MailBox -MailBoxStore "OsamaMailBoxDb120435" -Name "OsamaMailBox" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -SAMAccountName "OsamaMailBoxUser" -Password "password123" -FirstName "OsamaMailBox" -LastName "MailBoxuser" -DisplayName "OsamaMailBox" -Alias "OsamaMailBox

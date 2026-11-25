@@ -11,7 +11,7 @@ sidebar_position: 100
 
 # ISmsGateway.TestConnection Method (SMS Gateway API)
 
-Tests your connection with the SMS gateway.
+Tests the connection between Directory Manager and the SMS gateway.
 
 **Namespace:** Imanami.PublicInterfaces
 
@@ -27,4 +27,4 @@ bool TestConnection();
 
 Type: [System.Boolean](http://msdn.microsoft.com/en-us/library/system.boolean.aspx)
 
-True if a connection is established with the SMS gateway.
+True if Directory Manager establishes a connection with the SMS gateway.

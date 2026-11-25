@@ -11,8 +11,7 @@ sidebar_position: 20
 
 # New-Contact Cmdlet in Directory Manager
 
-Use the New-Contact cmdlet to create a contact in the directory. You can add most contact properties
-directly by using the parameters supported by this cmdlet.
+Use the New-Contact cmdlet to create a contact in the directory. You can add most contact properties directly with the parameters this cmdlet supports.
 
 ## Syntax
 
@@ -59,11 +58,9 @@ New-Contact
 - LastName
 - DisplayName
 
-Example:
+## Example
 
-The following command creates a contact in the container specified by the _OrganizationalUnit_
-parameter. The command also specifies the logon name, first name, last name, and display name of the
-new contact.
+This command creates a contact in the container specified by the _OrganizationalUnit_ parameter. The command also specifies the logon name, first name, last name, and display name of the new contact.
 
 ```
 New-Contact -Name "OsamaContact" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -FirstName "OsamaContact" -LastName "OsamaContact" -DisplayName "OsamaContact"

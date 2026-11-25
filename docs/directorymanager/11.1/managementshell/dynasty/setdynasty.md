@@ -12,10 +12,9 @@ sidebar_position: 20
 
 # Set-Dynasty Cmdlet in Directory Manager
 
-The Set-Dynasty cmdlet lets you modify a Dynasty or its children in the directory.
+Use the Set-Dynasty cmdlet to modify a Dynasty or its children in the directory.
 
-Directory Manager maintains a history for this cmdlet, which you can view against the History
-node in the left panel.
+Directory Manager maintains a history for this cmdlet. You can view it under the **History** node in the left pane.
 
 ## Syntax
 
@@ -133,61 +132,55 @@ NeverInheritSelectedAttributes}]
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+## Examples
 
-The following command modifies the Departmental Dynasty by changing the Group-by attributes list
-using the credentials of the current user signed in to the identity store.
+### Example 1
+
+This command modifies the Departmental Dynasty by changing the Group-by attributes list. It uses the credentials of the current user signed in to the identity store.
 
 ```
 Set-Dynasty -Identity "CN=DepartmentalOU=Recruiting,DC=HR,DC=Imanami,DC=US" -GroupBy "Department","Company","Title"
 ```
 
-Example 2:
+### Example 2
 
-The command below modifies the Top Manager of a Managerial Dynasty, changes the alias name and
-display name templates for the Dynasty children, sets the scope to search Dynasty children in the
-containers specified in the Add parameter excluding sub-containers using the credentials set in the
-$Credentials environment variable. See the
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials in an environment variable.
+This command modifies the Top Manager of a Managerial Dynasty and changes the alias name and display name templates for the Dynasty children. It also sets the scope to search Dynasty children in the containers specified in the Add parameter, excluding sub-containers. It uses the credentials set in the $Credentials environment variable. To set credentials in an environment variable, see [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
 
 ```
 Set-Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -TopManager "CN=Administrator,CN=Users,DC=HR,DC=Imanami,DC=US" -Add @{ SearchContainers="OU=Recruiting,OU=HR,DC=Imanami,DC=US#1","OU=Outsourcing,OU=HR,DC=Imanami,DC=US#1"}-ExcludeNestedLists False -ChildContainer "" -AliasTemplate "%Manager% -DirectReports" -DisplayNameTemplate "Direct reports of %Manager%" -Credential $Cred
 ```
 
-Example 3:
+### Example 3
 
-The following command modifies the search criteria for the Managerial Dynasty to retrieve all
-mail-enabled objects who are the member of the Training group.
+This command modifies the search criteria for the Managerial Dynasty to retrieve all mail-enabled objects that are members of the Training group.
 
 ```
 Set-Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ObjectTypes "ExchangeUsers","ExternalUsers","ExternalContacts","EmailGroups" -LdapFilter "(MemberOf=Training)"
 ```
 
-Example 4:
+### Example 4
 
-The following command adds three group-by levels to an Organizational Dynasty.
+This command adds three group-by levels to an Organizational Dynasty.
 
 ```
 Set-Dynasty -Identity "CN=Organizational,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Add @{GroupBy="Company#OU=Recruiting,DC=HR,DC=Imanami,DC=US#Left 3#-","Department#OU=Recruiting,DC=HR,DC=Imanami,DC=US#Right 5#-","OU=Recruiting,DC=HR,DC=Imanami,DC=US#With %GROUPBY%\*#^"}
 ```
 
-Example 5:
+### Example 5
 
-The following command modifies additional owners, Includes, and Excludes lists and replaces the Search
-Scope of a Managerial Dynasty.
+This command modifies the additional owners, Includes, and Excludes lists and replaces the Search Scope of a Managerial Dynasty.
 
 ```
 Set- Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Add @{AdditionalOwners="CN=Roger Manson,OU=Recruiting,OU=HR,DC=Imanami,DC=US","Robin Soto"; Includes="USWing","PKWing"; Excludes="UAEWing"} -Replace @{SearchContainers="OU=Recruiting,OU=HR,DC=Imanami,DC=US#1","OU=Outsourcing,OU=HR,DC=Imanami,DC=US#1"}
 ```
 
-Example 6:
+### Example 6
 
-The following command clears the groups specified in the Includes list of a Managerial Dynasty.
+This command clears the groups specified in the Includes list of a Managerial Dynasty.
 
 ```
 Set-Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Clear "Includes"

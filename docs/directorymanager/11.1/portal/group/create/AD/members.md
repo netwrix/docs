@@ -11,21 +11,10 @@ sidebar_position: 20
 
 # Members Page in the Create Group Wizard
 
-You can add and remove members of the group. By default, you are a member of the
-group.
+On this page, you add and remove group members. By default, you are a member of the group.
 
-- To add members, click **Add**. Enter a search string to locate the object to add as a group
-  member, or click **Advance** to use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing
-  a search.
-
-    The selected members are listed in the grid on the **Members** page.
-
-- You can also add members to the group using an external file. You can also choose to import all
-  members of an existing group or groups to the membership of this group.
-
-    Click **Import** to launch the **Import Members** wizard for importing group members. See
-    [Import group members in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/importmembers.md) for information.
-
+- To add members, click **Add**. Enter a search string to locate the object to add as a group member, or click **Advance** to search with [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md). The grid on the **Members** page lists the selected members.
+- To add members from an external file, or to import all members of one or more existing groups, click **Import**. The **Import Members** wizard opens. See [Import group members in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/importmembers.md) for information.
 - To remove an object from the members list, select it and click **Remove**.
 
 The **Members** table displays the following information:
@@ -38,12 +27,8 @@ The **Members** table displays the following information:
 | Beginning | Displays the beginning date of the temporary addition or removal. |
 | Ending | Shows the ending date of the temporary addition or removal. |
 
-The Membership Life Cycle job updates the temporary membership of groups. It adds and removes
-temporary members from group membership on the specified dates.
+The Membership Life Cycle job updates the temporary membership of groups. It adds and removes temporary members on the specified dates.
 
-Consider a scenario where the Membership Life Cycle job is scheduled to run once a week, say
-Mondays. If an object is to be added to group membership for three days (Wednesday through Friday), it
-isn't added. This happens because the Membership Life Cycle job didn't run on those
-days to update temporary membership.
+For example, the Membership Life Cycle job is scheduled to run once a week, on Mondays. An object is to be added to group membership for three days, Wednesday through Friday. The object isn't added, because the job didn't run on those days to update temporary membership.
 
 After adding members, click **Next**.

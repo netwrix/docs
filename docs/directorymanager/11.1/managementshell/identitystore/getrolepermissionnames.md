@@ -12,8 +12,7 @@ sidebar_position: 90
 
 # Get-RolePermissionNames Cmdlet in Directory Manager
 
-The Get-RolePermissionNames cmdlet helps you see the names of the permissions that you can assign to
-or revoke from a security role in an identity store.
+Use the Get-RolePermissionNames cmdlet to see the names of the permissions that you can assign to or revoke from a security role in an identity store.
 
 ## Syntax
 
@@ -27,17 +26,19 @@ Get-RolePermissionNames
 
 - None
 
-Example 1:
+## Examples
 
-This example provides a list of permission names for a security role.
+### Example 1
+
+This example lists of permission names for a security role.
 
 ```
 Get-RolePermissionNames
 ```
 
-Example 2:
+### Example 2
 
-This example provides a list of permission names along with the category of a permission.
+This example lists the permission names along with the category of each permission.
 
 ```
 Get-RolePermissionNames -IncludeEntityTypes

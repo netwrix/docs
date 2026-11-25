@@ -12,39 +12,30 @@ sidebar_position: 20
 
 # Query Designer Include/Exclude tab
 
-Use this tab to include or exclude an object from group membership, regardless of whether the
-query returns it. The Include and Exclude lists affect group membership at two points in the
-update process:
+Use this tab to include or exclude an object from group membership, regardless of whether the query returns it. The Include and Exclude lists affect group membership at two points in the update process.
 
-- Immediately – When you close the Query Designer dialog box, the Directory Manager portal adds the
-  objects in the Include list to the group membership and removes the objects in the Exclude list
-  from the group membership. If you remove objects from the Include list, the group’s
-  membership is updated immediately. However, if you remove objects from the Exclude list, the
-  group’s membership is updated only by a manual update or a scheduled job.
-- At group membership update – When the group membership is updated using a scheduled job or the
-  Update command, Directory Manager obtains the query results, adds the objects to include, and then
-  removes the objects to exclude.
+- **Immediately** – When you close the Query Designer dialog box, the Directory Manager portal adds the objects in the Include list to the group membership. It also removes the objects in the Exclude list from the group membership.
+  - If you remove objects from the Include list, the group's membership is updated immediately.
+  - If you remove objects from the Exclude list, the group's membership is updated only by a manual update or a scheduled job.
+- **At group membership update** – When a scheduled job or the Update command updates the group membership, Directory Manager obtains the query results and adds the objects to include. It then removes the objects to exclude.
 
 :::note
-For best performance, use query criteria to include or exclude objects instead of
-selecting them statically on this tab.
+For best performance, use query criteria to include or exclude objects instead of selecting them statically on this tab.
 :::
 
+## Tab options
 
 **Include**
 
-Displays the list of objects to include in group membership. The list also displays the objects
-imported to the membership of this group using the portal's import feature. Use the **Add** and
-**Remove** buttons to modify this list.
+Displays the list of objects to include in group membership. The list also displays the objects imported to the membership of this group using the portal's import feature. Use the **Add** and **Remove** buttons to modify this list.
 
 **Exclude**
 
-Displays the list of objects to exclude from group membership. Use the **Add** and **Remove**
-buttons to modify this list.
+Displays the list of objects to exclude from group membership. Use the **Add** and **Remove** buttons to modify this list.
 
 **Preview**
 
-You can preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
+Previews the results returned with the criteria specified on all tabs of the Query Designer dialog box. This check confirms the accuracy of the data before you commit changes to the directory.
 
 **OK**
 

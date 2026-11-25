@@ -11,7 +11,7 @@ sidebar_position: 30
 
 # Get Directory Manager Information Cmdlet
 
-The Get-GroupIdInformation cmdlet retrieves general information about Directory Manager.
+Use the Get-GroupIdInformation cmdlet to retrieve general information about Directory Manager.
 
 ## Syntax
 
@@ -24,10 +24,14 @@ Get-GroupIdInformation
 
 - None
 
-Example 1:
+## Example
 
-This example displays the name of the database and the name of the SQL Server that Directory Manager uses, the
-Directory Manager version, and its installation path.
+This command displays four items:
+
+- The name of the database that Directory Manager uses
+- The name of the SQL Server that Directory Manager uses
+- The Directory Manager version
+- The Directory Manager installation path
 
 ```
 Get-GroupIdInformation

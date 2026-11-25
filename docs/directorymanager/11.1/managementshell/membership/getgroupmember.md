@@ -11,8 +11,7 @@ sidebar_position: 20
 
 # Get-GroupMember Cmdlet for Directory Manager
 
-Use this cmdlet to retrieve members of a particular group from the directory. You can apply filters
-to the results the cmdlet returns.
+Use this cmdlet to retrieve the members of a group from the directory. You can filter the results the cmdlet returns.
 
 ## Syntax
 
@@ -27,25 +26,23 @@ Get-GroupMember
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - None
 
-Example 1:
+## Examples
 
-The following command retrieves all members of the Password_Expiry group using the credentials set
-in the $Credentials environment variable. See the
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials in an environment variable.
+### Retrieve all members of a group
+
+This command retrieves all members of the Password_Expiry group. It uses the credentials set in the `$Credentials` environment variable. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
 Get-GroupMember -Identity "CN=Password_Expiry,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Credential $Cred
 ```
 
-Example 2:
+### Filter members with an LDAP filter
 
-The command below retrieves all members from the Enrollment group whose display name starts with
-the character S, using the credentials of the current user signed in to the identity store.
+This command retrieves all members of the Enrollment group whose display name starts with the character S. It uses the credentials of the current user signed in to the identity store.
 
 ```
 Get-GroupMember -Identity "CN=Enrollment,OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -LdapFilter "(displayname=S*)"

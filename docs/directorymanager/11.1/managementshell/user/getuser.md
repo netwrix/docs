@@ -11,8 +11,7 @@ sidebar_position: 10
 
 # Get-User Cmdlet in Directory Manager
 
-Use the Get-User commandlet to retrieve basic information about users that match your
-criteria.
+Use the Get-User cmdlet to retrieve basic information about users that match your criteria.
 
 ## Syntax
 
@@ -34,13 +33,13 @@ Get-User
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - None
 
-Example:
+## Example
 
-The following command retrieves the specified user from the connected identity store.
+This command retrieves the specified user from the connected identity store.
 
 ```
 Get-User -Identity "Osama"

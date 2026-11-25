@@ -1,5 +1,5 @@
 ---
-title: "Directory Manager Group Cmdlets"
+title: "Directory Manager group cmdlets"
 description: "Find the Management Shell cmdlets that create, convert, move, expire, renew, modify, retrieve, and delete managed and unmanaged groups."
 keywords:
   - group cmdlets
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 70
 ---
 
-# Directory Manager Group Cmdlets
+# Directory Manager group cmdlets
 
-This section covers cmdlets for performing tasks related to managed and unmanaged groups.
+Use these cmdlets to perform tasks related to managed and unmanaged groups.
 
 - [Convert-Group](/docs/directorymanager/11.1/managementshell/group/convertgroup.md) – Converts an unmanaged group to a Smart Group.
 - [Expire-Group](/docs/directorymanager/11.1/managementshell/group/expiregroup.md) – Expires a group temporarily.

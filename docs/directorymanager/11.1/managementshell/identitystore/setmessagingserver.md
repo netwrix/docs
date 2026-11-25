@@ -11,13 +11,9 @@ sidebar_position: 180
 
 # Set-MessagingServer
 
-The Set-MessagingServer cmdlet configures a messaging system in an identity store. The SmtpServer
-parameter requires the server name of the messaging system to be specified.
-Use the [Get-AvailableMessagingServers Cmdlet](/docs/directorymanager/11.1/managementshell/identitystore/getavailablemessagingservers.md) cmdlet to retrieve
-the server names of the messaging systems.
+The Set-MessagingServer cmdlet configures a messaging system in an identity store. The SmtpServer parameter requires the server name of the messaging system. To get the server names of the messaging systems, use the [Get-AvailableMessagingServers cmdlet](/docs/directorymanager/11.1/managementshell/identitystore/getavailablemessagingservers.md).
 
-This cmdlet also has some parameters that appear depending on the value of the Provider
-parameter.
+Some parameters of this cmdlet appear depending on the value of the Provider parameter.
 
 ## Syntax
 
@@ -41,24 +37,24 @@ Set-MessagingServer
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - IdentityStoreName
 - Provider
 - Credential
 - SmtpServer
 
-Example 1:
+## Example 1
 
-This example modifies the messaging system of the AdStore9 identity store to Microsoft 365.
+This example changes the messaging system of the AdStore9 identity store to Microsoft 365.
 
 ```
 Set-MessagingServer -IdentityStoreName AdStore9 -Provider o365 -UserName admin@mydomain.onmicrosoft.com -Password password123 -SmtpServer ps.outlook.com -Domain mydomain.onmicrosoft.com -AppId 'a1b2c3d4-e5f6-f6e5-d4c3-b2a1b2c3d4e5'
 ```
 
-Example 2:
+## Example 2
 
-This example modifies the messaging system of the AdStore9 identity store to Exchange 2013.
+This example changes the messaging system of the AdStore9 identity store to Exchange 2013.
 
 ```
 Set-MessagingServer -IdentityStoreName AdStore9 -Provider exchange2013 -UserName administrator -Password password123 - SmtpServer arslanahmadsvm.pucit.local -Domain pucit.local

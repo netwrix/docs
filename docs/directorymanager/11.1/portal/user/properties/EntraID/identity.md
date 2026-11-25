@@ -12,12 +12,11 @@ sidebar_position: 30
 
 # Entra ID User Identity Tab
 
-Use this tab to view or update the general information for a user and mailbox in a Microsoft Entra
-ID-based identity store.
+Use this tab to view or update the general information for a user and mailbox in a Microsoft Entra ID-based identity store.
 
 **Display name**
 
-The name of the user as it is displayed in the Directory Manager portal.
+The name of the user as shown in the Directory Manager portal.
 
 **Username**
 
@@ -33,19 +32,13 @@ The last name of the user.
 
 **User type**
 
-The user type assigned to the user in Microsoft Entra ID, such as _Member_ or _Guest_.
+The user type assigned to the user in Microsoft Entra ID, such as Member or Guest.
 
-- **Member**: This value indicates an employee of the host organization and a user in the
-  organization's payroll. For example, this user expects to have access to internal-only sites. This
-  user isn't considered an external collaborator.
-- **Guest**: This value indicates a user who isn't considered internal to the company, such as an
-  external collaborator, partner, customer, or similar user. Such a user isn't expected to
-  receive a CEO's internal memo, or receive company benefits, for example.
+- **Member**: This value indicates an employee of the host organization and a user in the organization's payroll. For example, this user expects to have access to internal-only sites. This user isn't considered an external collaborator.
+- **Guest**: This value indicates a user who isn't considered internal to the company, such as an external collaborator, partner, customer, or similar user. Such a user isn't expected to receive a CEO's internal memo, or receive company benefits, for example.
 
 :::note
-The User Type has no link to the user sign-in function, the directory role of the user, and so
-on. It indicates only the user's relationship to the host organization and allows the organization
-to enforce policies that depend on this property.
+The User Type has no link to the user sign-in function, the directory role of the user, and so on. It indicates only the user's relationship to the host organization and allows the organization to enforce policies that depend on this property.
 :::
 
 **Object ID**
@@ -62,21 +55,18 @@ The email address of the user.
 
 **Account is enabled**
 
-This checkbox is selected by default, indicating that the user account is enabled.
+This checkbox is selected by default, which means the user account is enabled.
 
-Clear it to disable the user account, so that the user can't sign in with it.
+Clear it to disable the user account. The user can't sign in with a disabled account.
 
 **Usage Location**
 
 The country where the user is located.
 
-The usage location is mandatory for a mailbox and displays the object's geographical location. It
-determines what Office 365 licenses and associated features can be assigned to a mailbox based on
-geographic availability and laws.
+The usage location is mandatory for a mailbox and shows the object's geographical location. It determines which Office 365 licenses and associated features you can assign to a mailbox, based on geographic availability and laws.
 
 **Photo**
 
 The user's photo.
 
-Click the **Edit** icon to launch the Manage Photo dialog box for uploading a photo. The dialog box
-also provides many image editing options, including rotate, crop, flip, and resize.
+Click the **Edit** icon to open the Manage Photo dialog box and upload a photo. The dialog box also provides many image editing options, including rotate, crop, flip, and resize.

@@ -12,8 +12,7 @@ sidebar_position: 10
 
 # ConvertTo-StaticGroup Cmdlet
 
-The ConvertTo-StaticGroup cmdlet converts an existing Smart Group or a Dynasty to a static group
-by removing the attributes of the Smart Group or the Dynasty.
+The ConvertTo-StaticGroup cmdlet converts an existing Smart Group or Dynasty to a static group. It removes the Smart Group or Dynasty attributes.
 
 ## Syntax
 
@@ -25,14 +24,15 @@ ConvertTo-StaticGroup
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - IdentityStoreName
 
-Example 1:
+## Examples
 
-The following cmdlet converts the Smart Group Smart_Training in the AdStore9 identity store to a
-static group.
+### Example 1
+
+This cmdlet converts the Smart Group Smart_Training in the AdStore9 identity store to a static group.
 
 ```
 ConvertTo-StaticGroup -IdentityStoreName AdStore9 -GroupName "Smart_Training" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US"

@@ -11,8 +11,7 @@ sidebar_position: 10
 
 # Get-Mailbox Cmdlet in Directory Manager
 
-Use the Get-Mailbox cmdlet to retrieve basic information about mailboxes that match your given
-criteria.
+Use the Get-Mailbox cmdlet to retrieve basic information about mailboxes that match your criteria.
 
 ## Syntax
 
@@ -35,13 +34,13 @@ Get-MailBox
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameters
 
 - None
 
-Example:
+## Example
 
-The following command retrieves the specified mailbox from the connected identity store.
+This command retrieves the specified mailbox from the connected identity store.
 
 ```
 Get-MailBox -Identity "OsamaMailBox"

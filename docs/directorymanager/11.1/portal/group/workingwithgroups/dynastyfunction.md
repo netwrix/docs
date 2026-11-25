@@ -12,66 +12,53 @@ sidebar_position: 100
 
 # Manage Dynasties in Directory Manager
 
-In the Directory Manager portal, you can manage Dynasty structure and its membership using the following
-functions.
+In the Directory Manager portal, you can manage Dynasty structure and its membership using the following functions.
 
 ## Manage attributes for an Organizational/Geographical/Custom Dynasty
 
-Dynasties are built on attributes. For example, if the Country, State, and City attributes are
-specified for a Geographical Dynasty, Directory Manager creates a Smart Group for every distinct
-country, then for each state within a country, and finally for each city within a state.
+Dynasties are built on attributes. For example, if the Country, State, and City attributes are specified for a Geographical Dynasty, Directory Manager creates a Smart Group for every distinct country, then for each state within a country, and finally for each city within a state.
 
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.
 
-    You can also [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the Organizational, Geographical, or
-    custom Dynasty you want to change the attributes for.
+    To find the Organizational, Geographical, or custom Dynasty you want to change the attributes for, see [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md).
 
 2. Select the required Dynasty and click **Properties** on the toolbar.
 
-    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed with the
-    **General** tab in view.
+    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page opens with the **General** tab in view.
 
 3. On the **Dynasty Options** tab, update the attributes in the **Attributes** area.
 
-    Refer to the [Configure Dynasty attributes in Directory Manager](/docs/directorymanager/11.1/portal/group/dynasty/AD/dynastyoptionsorggeocus.md) for details.
+    For details, see [Configure Dynasty attributes in Directory Manager](/docs/directorymanager/11.1/portal/group/dynasty/AD/dynastyoptionsorggeocus.md).
 
 4. Click **Save**.
 
 ## Manage Managerial Dynasty structure
 
-
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.
 
-    You can also [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the Managerial Dynasty you want to
-    restructure.
+    To find the Managerial Dynasty you want to restructure, see [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md).
 
 2. Select the required Dynasty and click **Properties** on the toolbar.
 
-    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed with the
-    **General** tab in view.
+    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page opens with the **General** tab in view.
 
 3. On the **Dynasty Options** tab, modify the options related to the Dynasty structure.
 
-    Refer to the [Set managerial Dynasty options in Directory Manager](/docs/directorymanager/11.1/portal/group/dynasty/AD/dynastyoptionsmanagerial.md)
-    for details.
+    For details, see [Set managerial Dynasty options in Directory Manager](/docs/directorymanager/11.1/portal/group/dynasty/AD/dynastyoptionsmanagerial.md).
 
 4. Click **Save**.
 
 ## Set attribute inheritance
 
-
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.
 
-    You can also [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the Dynasty you want to change the
-    inheritance option for.
+    To find the Dynasty you want to change the inheritance option for, see [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md).
 
 2. Select the required Dynasty and click **Properties** on the toolbar.
 
-    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed with the
-    **General** tab in view.
+    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page opens with the **General** tab in view.
 
-3. On the **Dynasty Options** tab, select the required option from the **Inheritance** dropdown
-   list.
+3. On the **Dynasty Options** tab, select the required option from the **Inheritance** dropdown list.
 
     See [Inheritance](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md).
 
@@ -79,42 +66,34 @@ country, then for each state within a country, and finally for each city within 
 
 ## Modify alias and display name templates
 
+### Modify the templates for an Organizational, Geographical, or Custom Dynasty
 
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.
 
-    You can also [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the Dynasty you want to change the alias
-    or display name template for.
+    To find the Dynasty you want to change the alias or display name template for, see [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md).
 
-2. Select the required Organizational/Geographical/Custom Dynasty and click **Properties** on the
-   toolbar.
+2. Select the required Organizational/Geographical/Custom Dynasty and click **Properties** on the toolbar.
 
-    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed with the
-    **General** tab in view.
+    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page opens with the **General** tab in view.
 
-3. On the **Dynasty Options** tab, use the **Alias Template** and **Display Name Template** boxes to
-   modify the respective templates.
+3. On the **Dynasty Options** tab, use the **Alias Template** and **Display Name Template** boxes to modify the respective templates.
 
-    For details, see [Alias Template](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md) and
-    [Display Name Template](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md) for an
-    Organizational/Geographical/Custom Dynasty.
+    For details, see [Alias Template](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md) and [Display Name Template](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md) for an Organizational/Geographical/Custom Dynasty.
 
 4. Click **Save**.
 
+### Modify the templates for a Managerial Dynasty
 
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.
 
-    You can also [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the Dynasty you want to change the alias
-    or display name template for.
+    To find the Dynasty you want to change the alias or display name template for, see [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md).
 
 2. Select the required Managerial Dynasty and click **Properties** on the toolbar.
 
-    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed with the
-    **General** tab in view.
+    The Dynasty's [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.1/portal/group/properties/overview.md) page opens with the **General** tab in view.
 
-3. On the **Dynasty Options** tab, use the **Alias Template** and **Display Name Template** boxes to
-   modify the respective templates.
+3. On the **Dynasty Options** tab, use the **Alias Template** and **Display Name Template** boxes to modify the respective templates.
 
-    For details, see [Alias Template](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md) and
-    [Display Name Template](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md) for a Managerial Dynasty.
+    For details, see [Alias Template](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md) and [Display Name Template](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md) for a Managerial Dynasty.
 
 4. Click **Save**.

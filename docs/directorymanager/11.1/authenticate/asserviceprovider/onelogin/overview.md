@@ -15,9 +15,8 @@ OneLogin provides single sign-on and identity management for organizations that 
 
 To configure single sign-on in Directory Manager using OneLogin as a provider, complete these steps:
 
-- Generate the consumer URL and audience URL for the Directory Manager client with which you want to
-  configure OneLogin. See [Generate Consumer and Audience URLs for OneLogin](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/generateurls.md) for details.
-- [Configure Directory Manager in OneLogin](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/configureinonelogin.md)
-- [Configure the OneLogin Provider in Directory Manager](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/configureoneloginindirectorymanager.md)
+1. Generate the consumer URL and audience URL for the Directory Manager client you want to configure OneLogin with. See [Generate Consumer and Audience URLs for OneLogin](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/generateurls.md).
+2. [Configure Directory Manager in OneLogin](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/configureinonelogin.md).
+3. [Configure the OneLogin Provider in Directory Manager](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/configureoneloginindirectorymanager.md).
 
-After you finish, you can sign in to Directory Manager using OneLogin. See [Sign In to Directory Manager Using OneLogin](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/signin.md) for details.
+After you finish, you can sign in to Directory Manager using OneLogin. See [Sign In to Directory Manager Using OneLogin](/docs/directorymanager/11.1/authenticate/asserviceprovider/onelogin/signin.md).

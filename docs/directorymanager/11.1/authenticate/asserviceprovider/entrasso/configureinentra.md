@@ -12,8 +12,7 @@ sidebar_position: 20
 
 # Configure Directory Manager in Microsoft Entra ID for SSO
 
-To create and configure the Directory Manager application in Microsoft Entra
-Admin Center:
+To create and configure the Directory Manager application in Microsoft Entra Admin Center:
 
 - Create an application for Directory Manager in Microsoft Entra Admin Center.
 - Assign owners to the application.
@@ -24,59 +23,48 @@ Admin Center:
 
 To configure Directory Manager in Microsoft Entra ID:
 
-Step 1 – Sign in to Microsoft Entra Admin Center.
+1. Sign in to Microsoft Entra Admin Center.
 
-Step 2 – Go to Microsoft Entra ID > Enterprise applications.
+2. Go to Microsoft Entra ID > Enterprise applications.
 
-Step 3 – On the Enterprise applications page, click **New application** to add a new application.
+3. On the Enterprise applications page, click **New application** to add a new application.
 
-Step 4 – On the Browse Microsoft Entra Gallery page, click **Create your own application**.
+4. On the Browse Microsoft Entra Gallery page, click **Create your own application**.
 
-Step 5 – On the Create your own application pane, do the following:
+5. On the Create your own application pane, do the following:
 
-1. Enter a name for your application in the What's the name of your app? box (for example, Entra
-   SSO).
-2. Select the **Integrate any other application you don't find in the gallery (Non-gallery)** option
-   button.
-3. Click **Create**.  
-   After you create the application, its Overview page appears.
+   1. Enter a name for your application in the What's the name of your app? box (for example, Entra SSO).
+   2. Select the **Integrate any other application you don't find in the gallery (Non-gallery)** option button.
+   3. Click **Create**.
 
-Step 6 – On the Overview page, click **Properties** in the left pane to navigate to the
-application's properties.
+      After you create the application, its Overview page appears.
 
-Step 7 – On the Properties page, ensure the application is enabled so that users can sign in. To do this, set the Enabled for Users to sign in option to _Yes_.
+6. On the Overview page, click **Properties** in the left pane to navigate to the application's properties.
 
-Step 8 – The Name box displays the application name. You can change the application logo. Your
-application appears with the logo in the Access Panel Applications.
+7. On the Properties page, ensure the application is enabled so that users can sign in. To do this, set the Enabled for Users to sign in option to _Yes_.
 
-Step 9 – Ensure Assignment required? is set to _Yes_. You must manually assign the users who
-can sign in to the Directory Manager portal _Wizard_ by using Entra ID SSO.
+8. The Name box displays the application name. You can change the application logo. Your application appears with the logo in the Access Panel Applications.
 
-Step 10 – Next, assign owners to the application. To assign one or more users as owners of the
-application, click **Owners** under Manage in the left pane.
+9. Ensure Assignment required? is set to _Yes_. You must manually assign the users who can sign in to the Directory Manager portal _Wizard_ by using Entra ID SSO.
 
-Step 11 – On the Owners page, click **Add** and search for the users you want to assign as owners. For
-example, you can specify your service account as an owner.
+10. Assign owners to the application. To assign one or more users as owners of the application, click **Owners** under Manage in the left pane.
 
-Step 12 – The next step is to assign users who can sign in to the Directory Manager portal _Wizard_
-by using Entra ID SSO. You can specify users and groups.  
-Click **Users and groups** under Manage in the left pane. On the Users and groups page, click **Add
-user/group**. On the Add Assignment page, search for your required user or group, select it and
-click **Assign**.
+11. On the Owners page, click **Add** and search for the users you want to assign as owners. For example, you can specify your service account as an owner.
 
-Step 13 – Now you must specify SAML SSO configurations for the application. Click **Single
-sign-on** under Manage in the left pane. The Single sign-on page displays different methods that
-Entra ID provides for single sign-on. Select _SAML_.  
-The SAML-based Sign-on page appears, where you must set single sign-on options for Directory
-Manager.
+12. Assign users who can sign in to the Directory Manager portal _Wizard_ by using Entra ID SSO. You can specify users and groups.
 
-Step 14 – On the Basic SAML Configuration card, click **Edit**.
+    Click **Users and groups** under Manage in the left pane. On the Users and groups page, click **Add user/group**. On the Add Assignment page, search for your required user or group, select it, and click **Assign**.
 
-Step 15 – On the Basic SAML Configuration pane, provide the Entity ID and Consumer URL that you
-copied earlier. See the [Generate Consumer and Audience URLs for Microsoft Entra ID](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/generateurls.md) topic.  
-After adding the information, click **Save**.
+13. Specify SAML SSO configurations for the application. Click **Single sign-on** under Manage in the left pane. The Single sign-on page displays different methods that Entra ID provides for single sign-on. Select _SAML_.
 
-Step 16 – Back on the SAML-based Sign-on page, the Attributes & Claims card displays the attributes
-used for signing in. Keep the defaults.
+    The SAML-based Sign-on page appears, where you must set single sign-on options for Directory Manager.
 
-Step 17 – On the SAML Certificates card, download _Certificate (Base64)_.
+14. On the Basic SAML Configuration card, click **Edit**.
+
+15. On the Basic SAML Configuration pane, provide the Entity ID and Consumer URL that you copied earlier. See the [Generate Consumer and Audience URLs for Microsoft Entra ID](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/generateurls.md) topic.
+
+    After adding the information, click **Save**.
+
+16. Back on the SAML-based Sign-on page, the Attributes & Claims card displays the attributes used for signing in. Keep the defaults.
+
+17. On the SAML Certificates card, download _Certificate (Base64)_.

@@ -11,13 +11,11 @@ sidebar_position: 50
 
 # Transfer-DirectReports Cmdlet
 
-Use the Transfer-DirectReports cmdlet to transfer direct reports in the connected identity
-store. Specify the manager who will approve this transfer.
+Use the Transfer-DirectReports cmdlet to transfer direct reports in the connected identity store. Specify the manager who approves the transfer.
 
 :::note
 You can perform this function in the directory according to your role and permissions.
 :::
-
 
 ## Syntax
 
@@ -38,7 +36,7 @@ Transfer-DirectReports
 
 **Example**
 
-The following command transfers two direct reports to manager Robin.
+This command transfers two direct reports to manager Robin.
 
 ```
 Transfer-DirectReports -DirectReports "F Jafar","azram" -Manager "Robin"

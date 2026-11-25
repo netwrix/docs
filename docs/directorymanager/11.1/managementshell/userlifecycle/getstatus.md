@@ -26,15 +26,15 @@ Get-Status
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Manager
 
-Example:
+## Example
 
-The following command provides information about the status of the specified user according to the
-criteria defined for user lifecycle for the connected identity store. It also provides information
-on the number of days left to validate the profile again.
+The following command returns the status of the specified user, according to the criteria defined for
+user lifecycle for the connected identity store. It also returns the number of days left to validate
+the profile again.
 
 ```
 Get-Status –Manager "Richard"

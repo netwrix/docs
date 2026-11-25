@@ -1,5 +1,5 @@
 ---
-title: "Get-ImanamiCommand Cmdlet"
+title: "Get-ImanamiCommand cmdlet"
 description: "List Directory Manager Management Shell cmdlets and command elements, filtered by name, verb, or noun."
 keywords:
   - Get-ImanamiCommand
@@ -9,10 +9,9 @@ keywords:
 sidebar_position: 40
 ---
 
-# Get-ImanamiCommand Cmdlet
+# Get-ImanamiCommand cmdlet
 
-Use the Get-ImanamiCommand cmdlet to retrieve basic information about Directory Manager Management
-Shell cmdlets and command elements.
+The `Get-ImanamiCommand` cmdlet retrieves basic information about Directory Manager Management Shell cmdlets and command elements.
 
 ## Syntax
 
@@ -28,11 +27,13 @@ Get-ImanamiCommand
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameters
 
 - None
 
-Example 1:
+## Examples
+
+### Example 1
 
 The following command shows information about all cmdlets.
 
@@ -40,7 +41,7 @@ The following command shows information about all cmdlets.
 Get-ImanamiCommand
 ```
 
-Example 2:
+### Example 2
 
 The following command gets all cmdlets and command elements with the word Set in their name.
 
@@ -48,10 +49,9 @@ The following command gets all cmdlets and command elements with the word Set in
 Get-ImanamiCommand -Name Set*
 ```
 
-Example 3:
+### Example 3
 
-The following command gets all cmdlets and command elements with the letter Y anywhere in the
-verb of their name.
+The following command gets all cmdlets and command elements with the letter Y anywhere in the verb of their name.
 
 ```
 Get-ImanamiCommand -Verb *Y*

@@ -14,8 +14,8 @@ sidebar_position: 50
 
 Use the New-Group cmdlet to create a new unmanaged group in a particular container in the directory.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the History node
-in the left panel.
+You can view events related to this cmdlet in the Directory Manager portal, under the **History** node
+in the left pane.
 
 ## Syntax
 
@@ -41,7 +41,7 @@ New-Group
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - SamAccountName
 - Name
@@ -50,23 +50,24 @@ New-Group
 - Type
 - SecurityType
 
-Example 1:
+## Examples
+
+### Example 1
 
 The following command creates a new unmanaged, mail-disabled, global, distribution group in the
-container specified by the **OrganizationalUnit** parameter, using the credentials of the current user
-signed in to the identity store.
+container specified by the **OrganizationalUnit** parameter. It uses the credentials of the current
+user signed in to the identity store.
 
 ```
 New-Group -Name "Event Management" -OrganizationalUnit "OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -GroupAlias "EventManagement" -SamAccountName "Event Management" -GroupScope "Global Group" -Type "Distribution"
 ```
 
-Example 2:
+### Example 2
 
 The following command creates a new mail-enabled, domain-local, semi-private, security group in the
-container specified by the **OrganizationalUnit** parameter, using the credentials set in the
-**$Credentials** environment variable. See the
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials in an environment variable.
+container specified by the **OrganizationalUnit** parameter. It uses the credentials set in the
+**$Credentials** environment variable. To set credentials in an environment variable, see
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
 
 ```
 New-Group -Name "Enrollment" -OrganizationalUnit "OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -GroupAlias "Enrollment" -MailEnable True -SamAccountName "Enrollment" -GroupScope "Domain Local" -Type "Security" -SecurityType "Semi_Private"

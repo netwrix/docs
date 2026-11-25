@@ -10,5 +10,4 @@ sidebar_position: 50
 
 # Manage Synchronize Jobs in Directory Manager
 
-Synchronize allows its users to create, manage, and schedule jobs and job collections. Synchronize
-simplifies this process by providing an efficient system to manage jobs and job collections.
+Synchronize lets you create, manage, and schedule jobs and job collections. It provides a single system to manage them.

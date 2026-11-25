@@ -14,43 +14,30 @@ sidebar_position: 10
 
 This topic guides you through upgrading to Directory Manager 11.1 from Directory Manager 10.
 
-Step 1 – To launch the Upgrade wizard, click **Next** on the “Directory Manager is successfully configured” page of
-the Configuration Tool.
-
-**OR**
-
-Click **Start** > **Netwrix** > **Directory Manager 11.0** > **Directory Manager Upgrade Tool 11.0**.
-
-![Upgrade wizard Welcome page](/images/directorymanager/11.1/install/upgrade/1-welcome.webp)
-
-Step 2 – Read the welcome message and click **Next**.
-
-![Upgrade wizard page for selecting the source version](/images/directorymanager/11.1/install/upgrade/2-select_source_version.webp)
-
-Step 2.1 – Verify SSL/TLS Certificates
+## Verify SSL/TLS certificates
 
 **CRITICAL PRE-UPGRADE STEP**
 
-Before you proceed with the upgrade, verify that all SSL/TLS certificates used for LDAP connections and authentication services are configured correctly:
+Before you proceed with the upgrade, verify that all SSL/TLS certificates used for LDAP connections and authentication services are configured correctly.
 
 **Verification Steps:**
 
 1. **Verify certificate installation:**
    - Open Certificate Manager: `certlm.msc`
-   - Navigate to: **Trusted Root Certification Authorities** → **Certificates**
-   - Confirm all required certificates are present in this store
+   - Go to **Trusted Root Certification Authorities** > **Certificates**
+   - Confirm that all required certificates are present in this store
 
 2. **Check certificate validity:**
    - Double-click each certificate
-   - Verify "Valid from" and "Valid to" dates
-   - Ensure certificates aren't expired
+   - Verify the "Valid from" and "Valid to" dates
+   - Confirm that certificates aren't expired
 
    ![Certificate Valid from and Valid to dates in the certificate details](/images/directorymanager/11.1/install/upgrade/2-1-check_certificate_validity.webp)
 
 3. **Verify certificate chain:**
-   - In certificate details, go to **Certification Path** tab
-   - Ensure all certificates in the chain show "This certificate is OK"
-   - Verify no revocation errors
+   - In the certificate details, go to the **Certification Path** tab
+   - Confirm that all certificates in the chain show "This certificate is OK"
+   - Verify that no revocation errors appear
 
    ![Certification Path tab showing the certificate status](/images/directorymanager/11.1/install/upgrade/2-1-verify_certificate_chain.webp)
 
@@ -60,193 +47,149 @@ Before you proceed with the upgrade, verify that all SSL/TLS certificates used f
 :::
 
 **If any certificates are missing or invalid:**
-- STOP the upgrade process.
+
+- Stop the upgrade process.
 - Install or update the certificates.
-- Re-verify all certificates before continuing.
+- Verify all certificates again before you continue.
 
-Step 3 – From the Select the previous version to upgrade list, select the Directory Manager version
-to upgrade from.
+## Run the Upgrade wizard
 
-:::note
-The following steps describe the upgrade process with Directory Manager 10 as the source
-version. The process might vary for other source versions.
-:::
+To upgrade Directory Manager with the Upgrade wizard:
 
+1. To launch the Upgrade wizard, click **Next** on the "Directory Manager is successfully configured" page of the Configuration Tool.
 
-Step 4 – Click **Next**.
+   **OR**
 
-![Upgrade wizard Select Modules to upgrade page](/images/directorymanager/11.1/install/upgrade/3-select_modules.webp)
+   Click **Start** > **Netwrix** > **Directory Manager 11.0** > **Directory Manager Upgrade Tool 11.0**.
 
-On the Select Modules to upgrade page, select the type of Directory Manager data for upgrade. You
-can choose to upgrade all or selected data of the previous version. Options are:
+   ![Upgrade wizard Welcome page](/images/directorymanager/11.1/install/upgrade/1-welcome.webp)
 
-- Everything – upgrades all data, which covers all options discussed under Custom.
-- Custom – choose the data you want to upgrade. When you select it, the wizard lists the following options.
+2. Read the welcome message and click **Next**.
 
-    ![Select Modules page showing the Custom upgrade options](/images/directorymanager/11.1/install/upgrade/3-select_modules-custom.webp)
+   ![Upgrade wizard page for selecting the source version](/images/directorymanager/11.1/install/upgrade/2-select_source_version.webp)
+
+3. From the Select the previous version to upgrade list, select the Directory Manager version to upgrade from.
+
+   :::note
+   The following steps describe the upgrade process with Directory Manager 10 as the source version. The process might vary for other source versions.
+   :::
+
+4. Click **Next**.
+
+   ![Upgrade wizard Select Modules to upgrade page](/images/directorymanager/11.1/install/upgrade/3-select_modules.webp)
+
+   On the Select Modules to upgrade page, select the type of Directory Manager data to upgrade. You can upgrade all or selected data of the previous version. The options are:
+
+   - **Everything** – upgrades all data, which covers all options discussed under Custom.
+   - **Custom** – lets you choose the data you want to upgrade. When you select it, the wizard lists the following options.
+
+     ![Select Modules page showing the Custom upgrade options](/images/directorymanager/11.1/install/upgrade/3-select_modules-custom.webp)
+
+     :::note
+     If you later want to upgrade specific groups and their history using the Upgrade-Group cmdlet, you must upgrade the Configuration and History in the first upgrade run. This upgrades the history in the database to the Directory Manager 11.1 format and replicates it to Elasticsearch. Later, when you upgrade specific groups and their history using the Upgrade-Group cmdlet, the upgrade succeeds. See the [Upgrade-Group Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/smartgroup/upgradegroup.md) cmdlet for additional information.
+     :::
+
+     If you want to upgrade configurations, history, and all groups using the Directory Manager Upgrade wizard, select the Configurations, History, and Groups checkboxes.
+
+5. Click **Next**.
+
+6. If you have a Microsoft Entra ID-based identity store in Directory Manager 10, the following page appears.
+
+   ![Upgrade wizard Microsoft Entra ID store page](/images/directorymanager/11.1/install/upgrade/entraidstore.webp)
+
+   Provide the following information:
+
+   - **Registered Client Secret on EntraID** – Provide the client secret value generated against the certificate uploaded to Microsoft Entra Admin Center while registering the Directory Manager application.
+   - **PFX Certificate** – Click **Browse** to go to the folder where the certificate is saved. This certificate must be the same one uploaded for the registered Directory Manager app in Microsoft Entra ID.
+   - **PFX Certificate Password** – Provide the password of the PFX certificate.
+
+7. Click **Next**.
+
+8. If the Directory Manager source version has an Office 365 messaging provider configured in a Microsoft Entra ID-based identity store or in an AD identity store, the Upgrade wizard displays the following page.
+
+   ![Upgrade wizard Microsoft Entra ID Messaging System page](/images/directorymanager/11.1/install/upgrade/entraidmessagingsystem.webp)
+
+   Provide the following information:
+
+   - **Client Secret** – Provide the client secret value generated against the certificate uploaded to Microsoft Entra Admin Center while registering the Directory Manager application.
+   - **PFX Certificate** – Click **Browse** to go to the folder where the certificate is saved. This certificate must be the same one uploaded for the registered Directory Manager app in Microsoft Entra ID.
+   - **PFX Certificate Password** – Provide the password of the PFX certificate.
+
+9. If any Synchronize jobs exist in Directory Manager 10 or the version you are upgrading from, the wizard checks the destination domain set for them. For example, suppose you have 5 jobs that connect to different child domains in a forest with different service accounts and different messaging providers.
+
+   - If an identity store already exists in Directory Manager 10 for the destination domains that the jobs connect to, the Upgrade wizard moves the jobs to the respective identity stores in Directory Manager 11.1.
+   - When there is no identity store in Directory Manager 10 for the destination domain that the jobs connect to, the Upgrade wizard reads the FQDN of the destination domains used in the jobs and tries to create a forest structure. On identifying one, it creates an identity store for the forest and requires you to provide a service account. The wizard automatically populates the user name and password fields, but you can change them. The wizard moves all jobs with a destination provider for that forest domain or any of its child domains to the new identity store.
+
+     ![Upgrade wizard page for creating an identity store for a forest](/images/directorymanager/11.1/install/upgrade/synchronize_upgrade.webp)
+
+     :::note
+     The service account you provide here should have at least read permission in the entire forest, so that all objects from the forest can be replicated to Elasticsearch.
+     :::
+
+     The wizard doesn't create a separate identity store for each child domain in the same forest. If it can't determine a forest structure, it creates separate identity stores for each domain.
+
+10. For Synchronize jobs that use Office 365 as the messaging provider in Directory Manager 10, the wizard requires you to provide the PFX certificate. The wizard page lists all Synchronize jobs that use Office 365 as the messaging provider. Expand each job and provide the PFX certificate along with its password.
+
+    ![Upgrade wizard Synchronize Messaging System page listing jobs that use Office 365](/images/directorymanager/11.1/install/upgrade/entraidsynmessagingsystem.webp)
+
+    Provide the following information:
+
+    - **Certificate** – Click **Browse** to go to the folder where the certificate is saved. This certificate must be the same one uploaded for the registered Directory Manager app in Microsoft Entra ID.
+    - **Password** – Provide the password of the PFX certificate.
+    - **Client Secret** – Provide the client secret value generated against the certificate uploaded to Microsoft Entra Admin Center while registering the Directory Manager application.
+
+11. Click **Next**.
+
+12. In Directory Manager 10 and earlier versions, Directory Manager generated reports for the domain that the Directory Manager server was joined to. During the upgrade, the wizard checks whether an identity store for that domain exists.
+
+    - If an identity store for that domain exists, or if the upgrade is creating one for a Synchronize job, Directory Manager binds the reports to it.
+    - If an identity store for that domain doesn't exist, create one. It must be an Active Directory identity store. The wizard binds the reports generated in Directory Manager 10 to the identity store, so you can view them in Directory Manager 11.1.
+
+      ![Upgrade wizard page for binding Directory Manager 10 reports to an identity store](/images/directorymanager/11.1/install/upgrade/reports_upgrade.webp)
 
     :::note
-    If you later want to upgrade specific groups and their history using the Upgrade-Group
-    cmdlet, you must upgrade the Configuration and History in the first upgrade run. This
-    upgrades the history in the database to the Directory Manager 11.1 format and replicates it
-    to Elasticsearch. Later, when you upgrade specific groups and their history using the
-    Upgrade-Group cmdlet, the upgrade succeeds. See the
-    [Upgrade-Group Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/smartgroup/upgradegroup.md) cmdlet for additional
-    information.
+    If no report has been generated in Directory Manager 10, the wizard doesn't display the reports page.
     :::
 
+13. During the upgrade, the Upgrade wizard also moves Synchronize schedules to identity stores. The Upgrade wizard checks the jobs added to a schedule. If the destination in a job is a directory provider, it automatically moves the schedule to the respective identity store.
 
-    If you want to upgrade configurations, history, and all groups using the Directory Manager
-    Upgrade wizard, then you must select the Configurations, History, and Groups checkboxes.
+    :::tip
+    During the upgrade, the Upgrade wizard creates identity stores for destination directory providers of Synchronize jobs (that is, for providers that don't have an identity store in the source version).
+    :::
 
-Step 5 – Click **Next**.
+    Consider the following:
 
-Step 6 – If you have a Microsoft Entra ID-based identity store in Directory Manager 10, the
-following page appears.
+    - If a schedule has Synchronize jobs where one job uses an Active Directory domain (DomainA) as destination and another job uses a file-based provider as destination, the schedule automatically moves to the identity store created for DomainA.
+    - For schedules with Synchronize jobs that use file-based providers as destination, the Upgrade wizard displays the following page, which lists all such schedules. Select an identity store for each schedule, so that the schedule moves to that identity store.
 
-![Upgrade wizard Microsoft Entra ID store page](/images/directorymanager/11.1/install/upgrade/entraidstore.webp)
+      ![Upgrade wizard page for selecting an identity store for each schedule](/images/directorymanager/11.1/install/upgrade/store_selection_for_schedules.webp)
 
-Provide the following information:
+      The preceding rules also apply to schedules with job collections added to them.
 
-- Registered Client Secret on EntraID: Provide the client secret value generated against the
-  certificate uploaded to Microsoft Entra Admin Center while registering the Directory
-  Manager application.
-- PFX Certificate: Click **Browse** to navigate to the folder where the certificate is saved. This
-  certificate must be the same one uploaded for the registered Directory Manager app in Microsoft Entra
-  ID.
-- PFX Certificate Password: Provide the password of the PFX certificate.
+14. Click **Next**.
 
-Step 7 – Click **Next**.
+    ![Upgrade wizard Summary page](/images/directorymanager/11.1/install/upgrade/5-summary.webp)
 
-Step 8 – If the Directory Manager source version has an Office 365 messaging provider configured in
-a Microsoft Entra ID-based identity store or in an AD identity store, the Upgrade wizard displays
-the following page.
-
-![Upgrade wizard Microsoft Entra ID Messaging System page](/images/directorymanager/11.1/install/upgrade/entraidmessagingsystem.webp)
-
-Provide the following information:
-
-- Client Secret: Provide the client secret value generated against the certificate uploaded to
-  Microsoft Entra Admin Center while registering the Directory Manager application.
-- PFX Certificate: Click **Browse** to navigate to the folder where the certificate is saved. This
-  certificate must be the same one uploaded for the registered Directory Manager app in Microsoft Entra
-  ID.
-- PFX Certificate Password: Provide the password of the PFX certificate.
-
-Step 9 – If any Synchronize jobs exist in Directory Manager 10 or the version you are upgrading
-from, then the wizard checks the destination domain set for them. Suppose you have 5 jobs that
-connect to different child domains in a forest with different service accounts and different
-messaging providers.
-
-- If an identity store already exists in Directory Manager 10 for the destination domains that the
-  jobs connect to, the Upgrade wizard moves the jobs to the respective identity stores in Directory Manager 11.1.
-- When there is no identity store in Directory Manager 10 for the destination domain that the jobs
-  connect to, the Upgrade wizard reads the FQDN of the destination domains used in the jobs and
-  tries to create a forest structure. On identifying one, it proceeds to create an identity store
-  for the forest, requiring you to provide a service account. (The wizard automatically populates the user name and password fields,
-  but you can change them.) The wizard moves all jobs with a destination provider for that
-  forest domain or any of its child domains to the new identity store.
-
-    ![Upgrade wizard page for creating an identity store for a forest](/images/directorymanager/11.1/install/upgrade/synchronize_upgrade.webp)
+    This page displays a complete summary of the data to be copied or upgraded for your selected options. You selected these options on the Select modules to upgrade page.
 
     :::note
-    The service account you provide here should have at least _read_ permission in the entire
-    forest, so that all objects from the forest can be replicated to Elasticsearch.
+    If there are any disabled identity stores in the source Directory Manager version, Directory Manager doesn't upgrade those identity stores. However, data of those identity stores remains intact in the source Directory Manager version.
     :::
 
+15. Review the summary and click **Next**.
 
-    The wizard doesn't create a separate identity store for each child domain in the same forest.
-    If it can't determine a forest structure, it creates separate identity stores for each
-    domain.
+    ![Upgrade wizard Upgrade Progress page](/images/directorymanager/11.1/install/upgrade/6-upgrade_process_complete.webp)
 
-Step 10 – For Synchronize jobs that use Office 365 as the messaging provider in Directory Manager 10,
-the wizard requires you to provide the PFX certificate. The wizard page lists all Synchronize jobs that use Office
-365 as the messaging provider. Expand each job and provide the PFX
-certificate along with its password.
+    The Upgrade wizard upgrades Directory Manager while displaying the upgrade progress. On successful upgrade, Directory Manager displays the Upgrade Completed message above the progress bar.
 
-![Upgrade wizard Synchronize Messaging System page listing jobs that use Office 365](/images/directorymanager/11.1/install/upgrade/entraidsynmessagingsystem.webp)
+16. Click **Next**.
 
-Provide the following information:
+    ![Upgrade wizard Upgrade Completed page](/images/directorymanager/11.1/install/upgrade/7-upgrade_complete.webp)
 
-- Certificate: Click **Browse** to navigate to the folder where the certificate is saved. This
-  certificate must be the same one uploaded for the registered Directory Manager app in Microsoft Entra
-  ID.
-- Password: Provide the password of the PFX certificate.
-- Client Secret: Provide the client secret value generated against the certificate uploaded to
-  Microsoft Entra Admin Center while registering the Directory Manager application.
+    The Upgrade Completed page displays the status of features selected for upgrade.
 
-Step 11 – Click **Next**.
+17. Click one of the following:
 
-Step 12 – In Directory Manager 10 and earlier versions, Directory Manager generated reports for the domain that
-the Directory Manager server was joined to. During upgrade, the wizard checks whether an identity store
-for that domain exists.
-
-- If an identity store for that domain exists or if the upgrade process is creating one for a Synchronize job in this
-  upgrade, Directory Manager binds the reports to it.
-- If an identity store for that domain doesn't exist, then you have to create an identity store for
-  it. It must essentially be an Active Directory identity store. The wizard binds the reports
-  generated in Directory Manager 10 to the identity store, so you can view them in
-  Directory Manager 11.1.
-
-  ![Upgrade wizard page for binding Directory Manager 10 reports to an identity store](/images/directorymanager/11.1/install/upgrade/reports_upgrade.webp)
-
-:::note
-If no report has been generated in Directory Manager 10, the page related to reports upgrade
-isn't displayed.
-:::
-
-
-Step 13 – During the upgrade, the Upgrade wizard also moves Synchronize schedules to identity stores.
-The Upgrade wizard checks the jobs added to a schedule. If the destination in a job is a
-directory provider, it automatically moves the schedule to the respective identity store.
-
-:::tip
-During the upgrade, the Upgrade wizard creates identity stores for destination directory providers of
-Synchronize jobs (that is, for providers that don't have an identity store in the source version).
-:::
-
-Consider the following:
-
-- If a schedule has Synchronize jobs where one job uses an Active Directory domain (DomainA) as
-  destination and another job uses a file-based provider as destination, then the schedule automatically
-  moves to the identity store created for DomainA.
-- For schedules with Synchronize jobs that use file-based providers as destination, the Upgrade
-  wizard displays the following page, which lists all such schedules. Select an identity store
-  for each schedule, so that the schedule moves to that identity store.
-
-    ![Upgrade wizard page for selecting an identity store for each schedule](/images/directorymanager/11.1/install/upgrade/store_selection_for_schedules.webp)
-
-    The preceding rules also apply to schedules with job collections added to them.
-
-Step 14 – Click **Next**.
-
-![Upgrade wizard Summary page](/images/directorymanager/11.1/install/upgrade/5-summary.webp)
-
-This page displays a complete summary of the data to be copied or upgraded for your selected options.
-You selected these options on the Select modules to upgrade page.
-
-:::note
-If there are any disabled identity stores in the source Directory Manager version, Directory
-Manager doesn't upgrade those identity stores. However, data of those identity stores
-remains intact in the source Directory Manager version.
-:::
-
-
-Step 15 – Review the summary and click **Next**.
-
-![Upgrade wizard Upgrade Progress page](/images/directorymanager/11.1/install/upgrade/6-upgrade_process_complete.webp)
-
-The Upgrade wizard upgrades Directory Manager while displaying the upgrade progress. On successful
-upgrade, Directory Manager displays the Upgrade Completed message above the progress bar.
-
-Step 16 – Click **Next**.
-
-![Upgrade wizard Upgrade Completed page](/images/directorymanager/11.1/install/upgrade/7-upgrade_complete.webp)
-
-The Upgrade Completed page displays the status of features selected for upgrade.
-
-Step 17 – You can click:
-
-- **View Details** to view the log file generated during the upgrade.
-- **Launch Directory Manager** to start using Directory Manager 11.1.
-- **Close** to close the Upgrade wizard.
+    - **View Details** to view the log file generated during the upgrade.
+    - **Launch Directory Manager** to start using Directory Manager 11.1.
+    - **Close** to close the Upgrade wizard.

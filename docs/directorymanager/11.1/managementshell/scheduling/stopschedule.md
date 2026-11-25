@@ -31,11 +31,13 @@ Stop-Schedule
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - ScheduleName
 
-Example 1:
+## Examples
+
+### Example 1
 
 This example stops the smm4 schedule by name.
 
@@ -43,7 +45,7 @@ This example stops the smm4 schedule by name.
 Stop-Schedule -ScheduleName smm4_
 ```
 
-Example 2:
+### Example 2
 
 This example stops a schedule with the job type GUS.
 
@@ -51,7 +53,7 @@ This example stops a schedule with the job type GUS.
 Stop-Schedule -JobType GUS | Select-Object -Property Name | Invoke-Schedule
 ```
 
-Example 3:
+### Example 3
 
 This example stops all daily running GUS jobs.
 

@@ -15,37 +15,32 @@ sidebar_position: 90
 You can expire a group in Directory Manager in two ways:
 
 - Use the **Expire** button on the Group Properties toolbar to expire a group manually.
-- Let the Group Lifecycle job expire groups automatically based on the expiry policy specified for each
-  group.
+- Let the Group Lifecycle job expire groups automatically based on the expiry policy specified for each group.
 
-    The expiry policy for a group specifies the period for which the group remains active. At the
-    end of the period, the group expires.
+The expiry policy for a group specifies the period for which the group remains active. At the end of the period, the group expires.
 
-The following events take place when a group expires:
+## What happens when a group expires
+
+When a group expires, the following events take place:
 
 - The group becomes inactive and is locked for all activities.
 - "EXPIRED\_" is added as a prefix to the group name.
-- A mail-enabled group is mail-disabled, which means that any emails sent to the group are
-  bounced back with an expiration message.
-- For a security group, its member list is cleared and any permissions set for that group no longer
-  apply. However, Directory Manager keeps a backup of its membership in the database.
+- A mail-enabled group is mail-disabled. Any emails sent to the group are bounced back with an expiration message.
+- For a security group, its member list is cleared and any permissions set for that group no longer apply. Directory Manager keeps a backup of its membership in the database.
 
-Directory Manager moves an expired group to the Expired Groups tab; however, all group attributes
-remain intact. You can renew an expired group.
+Directory Manager moves an expired group to the Expired Groups tab. All group attributes remain intact. You can renew an expired group.
 
-When you expire an Office 365 group using Directory Manager, its member list is backed up in the
-database and cleared from Office 365.
+When you expire an Office 365 group using Directory Manager, its member list is backed up in the database and cleared from Office 365.
 
 **Active Directory identity store with Office 365 as the messaging provider:**
 
-In an Active Directory identity store with Office 365 as the messaging provider, the
-following happens when a distribution group is expired manually or by the Group Lifecycle job:
+In an Active Directory identity store with Office 365 as the messaging provider, the following happens when a distribution group is expired manually or by the Group Lifecycle job:
 
 - The group's email address is removed in Active Directory.
 - "EXPIRED\_" is added as a prefix to the group name.
 - The group is removed from Office 365 when the AAD Sync schedule runs.
 
-On renewing an expired distribution group, the following happens:
+When you renew an expired distribution group, the following happens:
 
 - The group's email address is added in Active Directory.
 - The "EXPIRED\_" prefix is removed from the group's name.
@@ -53,56 +48,40 @@ On renewing an expired distribution group, the following happens:
 
 **Microsoft Entra ID identity store with Office 365 as the messaging provider:**
 
-In a Microsoft Entra ID identity store with Office 365 as the messaging provider, the
-following happens when a distribution group is expired manually or by the Group Lifecycle job:
+In a Microsoft Entra ID identity store with Office 365 as the messaging provider, the following happens when a distribution group is expired manually or by the Group Lifecycle job:
 
 - Directory Manager takes a backup of the group's membership.
 - It empties out the group's membership in Office 365.
 
-On renewing an expired distribution group, the following happens:
+When you renew an expired distribution group, the group's membership is repopulated in Microsoft Entra ID and Office 365.
 
-- The group's membership is repopulated in Microsoft Entra ID and Office 365.
+## Group expiry policy
 
-## Group Expiry policy
-
-All settings related to group expiry are specified in the default Group Lifecycle policy. This
-policy is defined for an identity store and applies to all groups.
+The default Group Lifecycle policy holds all settings related to group expiry. This policy is defined for an identity store and applies to all groups.
 
 The Group Life Cycle policy mainly defines:
 
-- When to expire a group. Groups with a 'Never Expire' policy can't be expired manually or by the
-  Group Lifecycle job.
-- Whether to notify the group owner or the default approver (in case the group has no owner) about
-  group expiry a set number of days before the group expires.
-- The number of days after which an expired group is deleted, starting from the expiry date.
-  This also applies to manually expired groups.
+- When to expire a group. Groups with a 'Never Expire' policy can't be expired manually or by the Group Lifecycle job.
+- Whether to notify the group owner, or the default approver if the group has no owner, about group expiry a set number of days before the group expires.
+- The number of days after which an expired group is deleted, starting from the expiry date. This also applies to manually expired groups.
 
-Of these, only the expiry period can be changed for individual groups. The remaining settings apply
-to all groups in the identity store and can't be changed for individual groups.
+Of these, only the expiry period can be changed for individual groups. The remaining settings apply to all groups in the identity store and can't be changed for individual groups.
 
-When the Group Lifecycle job runs the Group Lifecycle policy, it monitors group expiry dates as
-determined by each group's expiration period. See the
+When the Group Lifecycle job runs the Group Lifecycle policy, it monitors group expiry dates as determined by each group's expiration period. See the
 [Set a Default Expiry Policy for Groups](/docs/directorymanager/11.1/admincenter/identitystore/configure/grouplifecycle.md#set-a-default-expiry-policy-for-groups)
 topic.
 
-## Group Expiry Notifications
+## Group expiry notifications
 
-The Group Lifecycle job monitors the expiry policy of all groups. When a group approaches its
-expiry, the job does the following:
+The Group Lifecycle job monitors the expiry policy of all groups. When a group approaches its expiry, the job does the following:
 
-- When notifications aren't enabled in the Group Lifecycle policy, the Group Lifecycle job expires
-  the group without notifying anyone.
-- When notifications are enabled, the job notifies the primary and additional owners or the default
-  approver (in case no owner is set for the group) about the approaching expiry.
+- When notifications aren't enabled in the Group Lifecycle policy, the job expires the group without notifying anyone.
+- When notifications are enabled, the job notifies the primary and additional owners about the approaching expiry. If no owner is set for the group, it notifies the default approver.
 
-    In case the notification can't be sent or no recipient is available, the schedule extends
-    the expiry date of the group by 7 days on the group's expiry day. It continues to do so until
-    the notification is sent.
+  If the notification can't be sent or no recipient is available, the schedule extends the expiry date of the group by 7 days on the group's expiry day. It continues to do so until the notification is sent.
 
-- When the **1 day before group expiration** option is selected for sending notifications and the
-  Group Life Cycle schedule evaluates the group for the first time a day before its expiration date,
-  Directory Manager extends the group's expiration date by 7 days.
+- When the **1 day before group expiration** option is selected for sending notifications and the Group Life Cycle schedule evaluates the group for the first time a day before its expiration date, Directory Manager extends the group's expiration date by 7 days.
 
-Notifications are sent if an SMTP server is configured for the identity store. See the
+Notifications are sent if an SMTP server is configured for the identity store. For more information, see the
 [Set Group Expiry Notifications](/docs/directorymanager/11.1/admincenter/identitystore/configure/grouplifecycle.md#set-group-expiry-notifications)
-topic for additional information.
+topic.

@@ -31,5 +31,5 @@ The port number.
 
 **Remarks**
 
-If communication with the SMS gateway is through a proxy server, you can use this property to set
-the port number that the proxy server uses.
+If the SMS gateway communicates through a proxy server, use this property to set the port number
+that the proxy server uses.

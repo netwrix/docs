@@ -11,8 +11,7 @@ sidebar_position: 20
 
 # Contact Member Of Tab in Directory Manager
 
-Use this tab to view the groups that the contact is a member of. You can also add and remove this
-contact from the membership of groups.
+Use this tab to view the groups that the contact is a member of. You can also add this contact to groups and remove it from them.
 
 **Member Of**
 
@@ -20,12 +19,8 @@ Displays the groups this contact is a member of.
 
 **Add**
 
-Click it to add the contact to the memberships of one or more groups.
-
-Enter a search string to locate the required group, or click **Advance** to use the
-[Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
+Click it to add the contact to the memberships of one or more groups. Enter a search string to locate the group you want, or click **Advance** to search with [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md).
 
 **Remove**
 
-Select a group in the Member Of list and click **Remove** to remove the contact from the membership
-of that group.
+Select a group in the Member Of list and click **Remove** to remove the contact from the membership of that group.

@@ -12,8 +12,7 @@ sidebar_position: 50
 
 # Remove-Schedule Cmdlet for Directory Manager
 
-The Remove-Schedule cmdlet removes a schedule (by its name or ID) from the identity store
-connected to the current instance of the Management Shell.
+The Remove-Schedule cmdlet removes a schedule, by its name or ID, from the identity store connected to the current instance of the Management Shell.
 
 ## Syntax
 
@@ -31,11 +30,13 @@ Remove-Schedule
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameters
 
 - ScheduleName or Scheduled
 
-Example 1:
+## Examples
+
+### Example 1
 
 This example removes a schedule named GUS811_1.
 
@@ -43,7 +44,7 @@ This example removes a schedule named GUS811_1.
 Remove-Schedule -ScheduleName GUS811_1
 ```
 
-Example 2:
+### Example 2
 
 This example uses the pipeline operator to remove the schedules GUS_1 and GUS_2.
 
@@ -51,9 +52,9 @@ This example uses the pipeline operator to remove the schedules GUS_1 and GUS_2.
 'GUS_1', 'GUS_2' | Remove-Schedule
 ```
 
-Example 3:
+### Example 3
 
-This example removes all schedules with job type Glm.
+This example removes all schedules that have the job type Glm.
 
 ```
 Get-Schedule -JobType Glm | Select-Object -Property Name | Remove-Schedule

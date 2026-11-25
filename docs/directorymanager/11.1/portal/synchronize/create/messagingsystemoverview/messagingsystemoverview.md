@@ -11,9 +11,7 @@ sidebar_position: 70
 
 # Sync Messaging System Subscriptions in Synchronize
 
-Use Directory Manager to configure messaging systems and create or edit mail-enabled
-objects through a Synchronize job. You can sync or deprovision subscriptions from the
-following messaging systems:
+Directory Manager can configure messaging systems and create or edit mail-enabled objects through a Synchronize job. You can sync or deprovision subscriptions from these messaging systems:
 
 - [Sync Exchange Subscriptions in a Synchronize Job](/docs/directorymanager/11.1/portal/synchronize/create/messagingsystemoverview/exchange.md)
 - [Sync Google Workspace Subscriptions in a Synchronize Job](/docs/directorymanager/11.1/portal/synchronize/create/messagingsystemoverview/googleapp.md)

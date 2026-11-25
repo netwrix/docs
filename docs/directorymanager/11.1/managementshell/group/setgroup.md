@@ -12,13 +12,11 @@ sidebar_position: 80
 
 # Set-Group
 
-The Set-Group cmdlet modifies an unmanaged group in the directory. You can also use this
-cmdlet to modify the parameters of a Smart Group that are native attributes of an unmanaged
-group in the directory. To modify Smart Group-specific attributes, use the
-[Set-SmartGroup Cmdlet](/docs/directorymanager/11.1/managementshell/smartgroup/setsmartgroup.md) cmdlet.
+The `Set-Group` cmdlet modifies an unmanaged group in the directory. You can also use it to modify the parameters of a Smart Group that are native attributes of an unmanaged group in the directory.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the History node
-in the left panel.
+To modify Smart Group-specific attributes, use the [Set-SmartGroup Cmdlet](/docs/directorymanager/11.1/managementshell/smartgroup/setsmartgroup.md) cmdlet.
+
+You can view events related to this cmdlet in the Directory Manager portal, under the History node in the left pane.
 
 ## Syntax
 
@@ -87,44 +85,39 @@ Set-Group
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameters
 
 - Identity
 
-Example 1:
+## Examples
 
-The following command changes the expiration policy of the Training group to 60 days and assigns a
-manager to the group, using the credentials of the current user signed in to the identity store.
+### Example 1
+
+The following command changes the expiration policy of the Training group to 60 days and assigns a manager to the group, using the credentials of the current user signed in to the identity store.
 
 ```
 Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ExpirationPolicy "60" -ExtendGroupLife -ManagedBy "CN=John Smith,CN=Users,DC=HR,DC=Imanami,DC=US"
 ```
 
-Example 2:
+### Example 2
 
-The following command expires the group Training, using the credentials set in the $Credentials
-environment variable. See the
-[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials in an environment variable.
+The following command expires the group Training, using the credentials set in the $Credentials environment variable. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
 Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IsExpired True -Credential $Cred
 ```
 
-Example 3:
+### Example 3
 
-The following command gets all groups in the container Recruiting, clears their additional owner
-lists and sets their expiration policy to Never Expire. The OUT-NULL cmdlet prevents
-the retrieved group information from appearing on the console.
+The following command gets all groups in the container Recruiting, clears their additional owner lists, and sets their expiration policy to Never Expire. The OUT-NULL cmdlet prevents the retrieved group information from appearing on the console.
 
 ```
 Get-Group -searchcontainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US" | Set-Group -AdditionalOwners "" -ExpirationPolicy "0" -ExtendGroupLife | OUT-NULL
 ```
 
-Example 4:
+### Example 4
 
-The following command removes two additional owners from the Training group, adds three new
-additional owners to the group, and excludes an additional owner from receiving email notifications.
+The following command removes two additional owners from the Training group, adds three new additional owners to the group, and excludes an additional owner from receiving email notifications.
 
 ```
 Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Remove @{AdditionalOwners = "CN=Roger_Manson,OU=ResignedStaff,DC=HR,DC=Imanami,DC=US","KillenEdward"} -Add @{AdditionalOwners = "RobinSoto","MeganFox","DollyChan"} -NotifyOptOutAdditionalOwners "RobinSoto"

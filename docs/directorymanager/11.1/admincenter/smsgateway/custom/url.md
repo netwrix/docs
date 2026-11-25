@@ -32,6 +32,5 @@ The address for sending messages.
 **Remarks**
 
 Some SMS gateways provide URLs to which you send your message parameters. The web component
-(typically a web service) deployed at that URL then transmits the message to the intended
-recipients. If this is the case with your SMS gateway provider, use this property to specify that
-URL.
+(typically a web service) deployed at that URL sends the message to the intended recipients. If your
+SMS gateway provider works this way, use this property to specify that URL.

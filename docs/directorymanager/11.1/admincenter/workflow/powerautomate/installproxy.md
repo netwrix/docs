@@ -15,17 +15,13 @@ sidebar_position: 10
 
 ## Overview
 
-The **Power Automate Reverse Proxy** is a required component for the Directory Manager
-integration with Microsoft Power Automate. When a Power Automate workflow needs to approve or deny a
-directory request, it calls back into the Directory Manager environment to deliver the decision.
-Because Power Automate runs in Microsoft's cloud, Directory Manager must be reachable from the public internet.
+The **Power Automate Reverse Proxy** is a required component for the Directory Manager integration with Microsoft Power Automate. When a Power Automate workflow approves or denies a directory request, it calls back into the Directory Manager environment to deliver the decision. Power Automate runs in Microsoft's cloud, so Directory Manager must be reachable from the public internet.
 
-The reverse proxy is a lightweight service you install on your Directory Manager server.
-It sits in front of the DataService and acts as a hardened entry point.
+The reverse proxy is a lightweight service you install on your Directory Manager server. It sits in front of the DataService and acts as a hardened entry point.
 
 ## Prerequisites
 
-Before running the installer, ensure the following are in place:
+Before you run the installer, ensure the following are in place:
 
 | Requirement | Details |
 |-------------|---------|
@@ -36,14 +32,11 @@ Before running the installer, ensure the following are in place:
 | A publicly trusted TLS certificate | See **TLS Certificate Requirements** |
 | An available public-facing port | A TCP port that is reachable from the internet and not used by another service, including Directory Manager, such as 4443 |
 
-### TLS Certificate Requirements
+### TLS certificate requirements
 
-Power Automate runs in Microsoft's cloud and validates your proxy's TLS certificate against the **Microsoft Trusted Root Program**. 
-It silently rejects certificates issued by internal or private certificate authorities, so you must obtain a certificate from a publicly trusted CA.
+Power Automate runs in Microsoft's cloud and validates your proxy's TLS certificate against the **Microsoft Trusted Root Program**. It silently rejects certificates issued by internal or private certificate authorities, so you must obtain a certificate from a publicly trusted CA.
 
-The certificate must be issued for the **public DNS hostname** at which your proxy is reachable.
-The installer derives this hostname automatically from the certificate's Subject Alternative Name (SAN) 
-and uses it for all bindings and URLs.
+Issue the certificate for the **public DNS hostname** at which your proxy is reachable. The installer derives this hostname automatically from the certificate's Subject Alternative Name (SAN) and uses it for all bindings and URLs.
 
 The installer expects two PEM files:
 
@@ -54,25 +47,22 @@ The installer expects two PEM files:
 
 ## Installation
 
-### 1. Obtain the installer package
+To install the Power Automate Reverse Proxy:
 
-Extract the archive, which contains `PowerAutomateProxy-<version>.exe`.
+1. Extract the installer archive. It contains `PowerAutomateProxy-<version>.exe`.
+2. Open **PowerShell 7 as Administrator** on the target server and run:
 
-### 2. Run the installer
+   ```powershell
+   .\PowerAutomateProxy-<version>.exe `
+       --cert-path  "C:\certs\fullchain.pem" `
+       --key-path   "C:\certs\privkey.pem" `
+       --port       443 `
+       --sql-server localhost
+   ```
 
-Open **PowerShell 7 as Administrator** on the target server and run:
+   If Windows Authentication isn't available for the Directory Manager database, add `--sql-user <login>`. The installer prompts for the password interactively.
 
-```powershell
-.\PowerAutomateProxy-<version>.exe `
-    --cert-path  "C:\certs\fullchain.pem" `
-    --key-path   "C:\certs\privkey.pem" `
-    --port       443 `
-    --sql-server localhost
-```
-
-If Windows Authentication isn't available for the Directory Manager database, add `--sql-user <login>`. The installer prompts for the password interactively.
-
-#### All parameters
+### All parameters
 
 | Parameter | Required | Description |
 |-----------|----------|-------------|
@@ -94,11 +84,11 @@ The installer doesn't roll back on failure. If it stops midway, see [Manual clea
 
 ## Verification
 
-The installer runs tests automatically at the end of installation. If the tests pass, the Power Automate Reverse Proxy is ready for use.
+The installer runs tests automatically at the end of installation. When the tests pass, the Power Automate Reverse Proxy is ready for use.
 
 ## Reinstalling or upgrading
 
-Re-run the installer with the same parameters. It safely handles existing installations:
+Run the installer again with the same parameters. It handles existing installations safely:
 
 - If the proxy is already registered in the Directory Manager database, the installer reuses the existing registration.
 - If the IIS site and app pool already exist, the installer preserves them and only updates the binaries.
@@ -108,15 +98,19 @@ Re-run the installer with the same parameters. It safely handles existing instal
 If the installer stopped partway through, remove the components it created before retrying:
 
 1. **Remove the HTTP.sys certificate binding** (PowerShell):
+
    ```powershell
    netsh http delete sslcert ipport=0.0.0.0:<port>
    ```
+
 2. **Remove the IIS site**: In IIS Manager, go to Sites, right-click **PAProxy**, and select Remove.
 3. **Remove the IIS application pool**: In IIS Manager, go to Application Pools, right-click **DirectoryManager_PowerAutomateReverseProxy**, and select Remove.
 4. **Remove the publish directory**:
+
    ```
    C:\Program Files\Imanami\GroupID 11.0\PowerAutomateProxy\Web\PowerAutomateProxy
    ```
+
 5. **Remove the firewall rule**: In Windows Defender Firewall with Advanced Security, go to Inbound Rules, find `DirectoryManager-PowerAutomateReverseProxy-<port>`, and select Delete.
 
 ## Troubleshooting
@@ -131,7 +125,7 @@ If the installer stopped partway through, remove the components it created befor
 
 - Confirm the certificate was issued by a publicly trusted CA (not an internal CA or self-signed).
 - Confirm the certificate's hostname matches the DNS name Power Automate is calling.
-- If using a CDN or reverse proxy in front (for example, Cloudflare), ensure it's configured in **DNS-only** mode. Proxied (orange-cloud) mode changes the TLS certificate and breaks the trust chain.
+- If you use a CDN or reverse proxy in front (for example, Cloudflare), ensure it's configured in **DNS-only** mode. Proxied (orange-cloud) mode changes the TLS certificate and breaks the trust chain.
 
 ### `Certificate chain validation failed` during installation
 
@@ -147,7 +141,7 @@ The installer validates the certificate chain before proceeding. Common causes:
 
 ### STS or DataService URL auto-discovery failed
 
-The installer looks up the Directory Manager service URLs from the database automatically. If your server hosts multiple Directory Manager deployments or the URLs aren't registered, provide the URLs for the instances on the same machine as the proxy explicitly:
+The installer looks up the Directory Manager service URLs from the database automatically. If your server hosts multiple Directory Manager deployments or the URLs aren't registered, provide explicitly the URLs for the instances on the same machine as the proxy:
 
 ```powershell
 .\PowerAutomateProxy-<version>.exe `

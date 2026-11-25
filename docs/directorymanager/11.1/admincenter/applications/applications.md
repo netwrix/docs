@@ -12,17 +12,17 @@ sidebar_position: 120
 
 # Manage Directory Manager Applications
 
-Using Admin Center, you can create and manage the following Directory Manager applications:
+In Admin Center, you can create and manage the following Directory Manager applications:
 
 - [Directory Manager Portal](/docs/directorymanager/11.1/admincenter/applications/portal/overview.md)
 - [Directory Manager Data Service](/docs/directorymanager/11.1/admincenter/service/dataservice/overview.md)
 - [Security Service in Directory Manager](/docs/directorymanager/11.1/admincenter/service/securityservice/overview.md)
 
-Moreover, you can manage some basic deployment and log settings for the following applications:
+You can also manage some basic deployment and log settings for the following applications:
 
 - [Directory Manager Admin Center Application](/docs/directorymanager/11.1/admincenter/applications/admincenter.md)
 - [Directory Manager Replication Service](/docs/directorymanager/11.1/admincenter/service/replicationservice.md)
 - [Directory Manager Email Service](/docs/directorymanager/11.1/admincenter/service/emailservice.md)
 - [Directory Manager Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md)
 
-See the [Directory Manager Services](/docs/directorymanager/11.1/admincenter/service/overview.md) topic for additional information.
+For more information, see the [Directory Manager Services](/docs/directorymanager/11.1/admincenter/service/overview.md) topic.

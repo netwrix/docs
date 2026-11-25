@@ -12,7 +12,7 @@ sidebar_position: 190
 
 # Set-Notifications Cmdlet in Directory Manager
 
-Use the Set-Notifications cmdlet to modify the notification settings of an identity store.
+Use the Set-Notifications cmdlet to change the notification settings of an identity store.
 
 ## Syntax
 
@@ -36,24 +36,21 @@ Set-Notifications
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - IdentityStoreName
 
-Example 1:
+## Example 1
 
-This example sets the primary and carbon copy (CC) recipients of the notifications for the AdStore9
-identity store. It also sets the group owners or managers and public group owners as
-the notification recipients.
+This example sets the primary and carbon copy (CC) recipients of the notifications for the AdStore9 identity store. It also sets the group owners or managers and the public group owners as notification recipients.
 
 ```
 Set-Notifications -IdentityStoreName AdStore9 -PrimaryRecepients 'euser1@pucit.local', 'euser2@pucit.local' -CarbonCopy 'exmb1@pucit.local' -NotifyOwners $true -NotifyPublicGroupOwner $true
 ```
 
-Example 2:
+## Example 2
 
-This example configures recipients for membership lifecycle notifications: it notifies the user upon
-joining a group, and 7 days before the user is removed from the group.
+This example configures recipients for membership lifecycle notifications. It notifies the user when the user joins a group, and 7 days before the user is removed from the group.
 
 ```
 Set-Notifications -IdentityStoreName AdStore9 -NotifyUserGroupJoinML $true -XDaysBeforeLeaveNotificationML 7

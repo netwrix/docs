@@ -11,17 +11,13 @@ sidebar_position: 40
 
 # Password Page of the Entra ID User and Mailbox Wizards
 
-Provide a password for the user account and set other password-specific options.
+Set a password for the new user account and choose its security options.
 
-Step 1 – Enter a password for the user account in the **Password** and **Confirm password** boxes.
+1. Enter a password for the user account in the **Password** and **Confirm password** boxes.
 
-Step 2 – Select the checkboxes to set the security options for the user account:
+2. Select the checkboxes to set the security options for the user account:
 
-- User must change password at next logon – To force the user to change the password the next time
-  they sign in to their workstations with the account.
-- Account is enabled – This checkbox is selected by default, indicating that the user account is
-  enabled.
+   - **User must change password at next logon**: Forces the user to change the password the next time they sign in to their workstation with the account.
+   - **Account is enabled**: Selected by default, which enables the user account. Clear it to disable the account so the user can't sign in with it.
 
-    Clear it to disable the account, so that the user can't sign in with it.
-
-Step 3 – Click **Next**.
+3. Click **Next**.

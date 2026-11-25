@@ -11,8 +11,7 @@ sidebar_position: 90
 
 # Identity Store Connection Cmdlets in Directory Manager
 
-This section covers cmdlets for establishing a connection with an identity store.
+Directory Manager provides these cmdlets for connecting to an identity store:
 
-- [Connect-IdentityStore Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/identitystoreconnection/connectidentitystore.md) – Connects to an identity store using the
-  authentication mode specified.
+- [Connect-IdentityStore Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/identitystoreconnection/connectidentitystore.md) – Connects to an identity store using the specified authentication mode.
 - [Get-Token Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/identitystoreconnection/gettoken.md) – Gets a token from the Directory Manager Security Service.

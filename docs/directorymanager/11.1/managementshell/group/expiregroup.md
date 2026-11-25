@@ -11,10 +11,11 @@ sidebar_position: 20
 
 # Expire-Group
 
-The Expire-Group commandlet expires a group temporarily. The commandlet stops all notifications to the expired group.
+The Expire-Group cmdlet expires a group temporarily. The cmdlet stops all notifications to the
+expired group.
 
-You can view events related to this commandlet in the Directory Manager portal, under the History node
-in the left pane.
+To view events related to this cmdlet, go to the History node in the left pane of the Directory
+Manager portal.
 
 ## Syntax
 
@@ -27,11 +28,11 @@ Expire-Group
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example:
+### Example
 
 The following command expires the specified group from the connected identity store.
 

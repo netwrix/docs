@@ -12,10 +12,11 @@ keywords:
 
 # User Reports in Directory Manager
 
-User Reports include reports for the user objects in the directory. To find a specific report, type
-its name in the **Search Reports** box.
+User reports cover the user objects in the directory. To find a report, enter its name in the **Search Reports** box.
 
-Click any report template in the list to [Generate Reports in Directory Manager](/docs/directorymanager/11.1/portal/reports/generate.md).
+To generate a report, click its template in the list. For the steps, see [Generate Reports in Directory Manager](/docs/directorymanager/11.1/portal/reports/generate.md).
+
+## User report templates
 
 The following table lists the reports in this category:
 

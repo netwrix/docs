@@ -14,14 +14,12 @@ sidebar_position: 80
 
 Use this page to provide the alias and subscriptions for a mailbox.
 
-Step 1 – In the Alias box, enter an alias for the mailbox.
+1. In the **Alias** box, enter an alias for the mailbox.
 
-Step 2 – In the Mailbox Store list, select a mailbox store to create the user's mailbox in.
+2. In the **Mailbox Store** list, select the mailbox store to create the user's mailbox in.
 
-Step 3 – The Subscription List provides the subscriptions offered by Office 365 to a mailbox user.
-Select the checkboxes for the subscriptions you want to assign to this mailbox.
+3. In the **Subscription List**, select the checkboxes for the subscriptions you want to assign to this mailbox. The list shows the subscriptions that Office 365 offers to a mailbox user.
 
-The subscription list appears when Office 365 is configured as the messaging provider for the
-identity store.
+   The subscription list appears when Office 365 is configured as the messaging provider for the identity store.
 
-Step 4 – Click **Next**.
+4. Click **Next**.

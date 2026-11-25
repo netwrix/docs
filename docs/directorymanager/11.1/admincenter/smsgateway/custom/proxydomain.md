@@ -31,5 +31,4 @@ The domain name or IP address of the proxy server.
 
 **Remarks**
 
-If communication with the SMS gateway is through a proxy server, use this property to set the
-domain name or IP address of that proxy server.
+If communication with the SMS gateway goes through a proxy server, use this property to set the domain name or IP address of that proxy server.

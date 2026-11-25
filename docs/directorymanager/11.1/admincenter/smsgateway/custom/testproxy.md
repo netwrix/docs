@@ -11,7 +11,7 @@ sidebar_position: 120
 
 # ISmsGateway.TestProxy Method (SMS Gateway API)
 
-Tests the proxy settings.
+Tests the proxy settings of the SMS gateway.
 
 **Namespace:** Imanami.PublicInterfaces
 

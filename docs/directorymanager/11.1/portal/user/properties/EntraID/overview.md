@@ -10,13 +10,11 @@ sidebar_position: 20
 
 # Entra ID User and Mailbox Properties
 
-You can view and edit the properties of directory objects (users and mailboxes) in Microsoft
-Entra ID, depending on the permissions the Directory Manager administrator has granted you.
+You can view and edit the properties of directory objects (users and mailboxes) in Microsoft Entra ID, depending on the permissions the Directory Manager administrator has granted you.
 
 ## User and mailbox properties
 
-The following list shows all the properties that users and mailbox users have in a Microsoft Entra
-ID-based identity store.
+The following list shows all the properties that users and mailbox users have in a Microsoft Entra ID-based identity store.
 
 - [User properties - Identity tab](/docs/directorymanager/11.1/portal/user/properties/EntraID/identity.md)
 - [User properties - Directory Role tab](/docs/directorymanager/11.1/portal/user/properties/EntraID/directoryrole.md)

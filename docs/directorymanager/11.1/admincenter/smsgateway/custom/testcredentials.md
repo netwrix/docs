@@ -11,7 +11,7 @@ sidebar_position: 110
 
 # ISmsGateway.TestCredentials Method (SMS Gateway API)
 
-Tests the credentials for communicating with the SMS gateway for validity.
+Tests whether the credentials for communicating with the SMS gateway are valid.
 
 **Namespace:** Imanami.PublicInterfaces
 
