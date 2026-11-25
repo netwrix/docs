@@ -47,7 +47,7 @@ again.
 ## IdP-Initiated Single Sign-On
 
 Step 1 – Launch the Microsoft My Apps portal using the following URL and sign in.  
-<https://myapps.microsoft.com>
+[https://myapps.microsoft.com](https://myapps.microsoft.com)
 
 Step 2 – Click the Directory Manager app configured to work with the _Wizard_ portal for single
 sign-on. It redirects you to your portal.
