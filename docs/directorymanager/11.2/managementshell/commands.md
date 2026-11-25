@@ -11,37 +11,35 @@ sidebar_position: 10
 
 # Directory Manager Management Shell Cmdlets
 
-You can get a list of all Directory Manager Management Shell cmdlets using the _Get-ImanamiCommand_
-cmdlet.
+This page lists the Directory Manager Management Shell cmdlets by category. Each entry links to the cmdlet's syntax, parameters, and examples.
 
-## Contact Cmdlets
+To list all available cmdlets in the shell, run the `Get-ImanamiCommand` cmdlet.
+
+## Contact cmdlets
 
 - [Get-Contact](/docs/directorymanager/11.2/managementshell/contact/getcontact.md)
-- [New-Contact Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/contact/newcontact.md)
-- [Remove-Contact Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/contact/removecontact.md)
-- [Set-Contact Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/contact/setcontact.md)
+- [New-Contact](/docs/directorymanager/11.2/managementshell/contact/newcontact.md)
+- [Remove-Contact](/docs/directorymanager/11.2/managementshell/contact/removecontact.md)
+- [Set-Contact](/docs/directorymanager/11.2/managementshell/contact/setcontact.md)
+## Dynasty cmdlets
 
-## Dynasty Cmdlets
+- [New-Dynasty](/docs/directorymanager/11.2/managementshell/dynasty/newdynasty.md)
+- [Set-Dynasty](/docs/directorymanager/11.2/managementshell/dynasty/setdynasty.md)
+## General cmdlets
 
-- [New-Dynasty Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/dynasty/newdynasty.md)
-- [Set-Dynasty Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/dynasty/setdynasty.md)
-
-## General Cmdlets
-
-- [Get-Computer Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/general/getcomputer.md)
-- [Get-ConnectedStoreInformation Cmdlet](/docs/directorymanager/11.2/managementshell/general/getconnectedstoreinformation.md)
-- [Get-ConnectedUser Cmdlet](/docs/directorymanager/11.2/managementshell/general/getconnecteduser.md)
+- [Get-Computer](/docs/directorymanager/11.2/managementshell/general/getcomputer.md)
+- [Get-ConnectedStoreInformation](/docs/directorymanager/11.2/managementshell/general/getconnectedstoreinformation.md)
+- [Get-ConnectedUser](/docs/directorymanager/11.2/managementshell/general/getconnecteduser.md)
 - [Get-GroupIdInformation](/docs/directorymanager/11.2/managementshell/general/getdirectorymanagerinformation.md)
-- [Get-ImanamiCommand Cmdlet](/docs/directorymanager/11.2/managementshell/general/getimanamicommand.md)
-- [Get-ReplicationStatus Cmdlet](/docs/directorymanager/11.2/managementshell/general/getreplicationstatus.md)
-- [Get-TombStoneObject Cmdlet](/docs/directorymanager/11.2/managementshell/general/gettombstoneobject.md)
-- [Invoke-Replication Cmdlet](/docs/directorymanager/11.2/managementshell/general/invokereplication.md)
-- [New-Container Cmdlet](/docs/directorymanager/11.2/managementshell/general/newcontainer.md)
-- [Remove-Container Cmdlet](/docs/directorymanager/11.2/managementshell/general/removecontainer.md)
+- [Get-ImanamiCommand](/docs/directorymanager/11.2/managementshell/general/getimanamicommand.md)
+- [Get-ReplicationStatus](/docs/directorymanager/11.2/managementshell/general/getreplicationstatus.md)
+- [Get-TombStoneObject](/docs/directorymanager/11.2/managementshell/general/gettombstoneobject.md)
+- [Invoke-Replication](/docs/directorymanager/11.2/managementshell/general/invokereplication.md)
+- [New-Container](/docs/directorymanager/11.2/managementshell/general/newcontainer.md)
+- [Remove-Container](/docs/directorymanager/11.2/managementshell/general/removecontainer.md)
 - [Restore-TombStoneObject](/docs/directorymanager/11.2/managementshell/general/restoretombstoneobject.md)
 - [Send-Notification](/docs/directorymanager/11.2/managementshell/general/sendnotification.md)
-
-## Group Cmdlets
+## Group cmdlets
 
 - [Convert-Group](/docs/directorymanager/11.2/managementshell/group/convertgroup.md)
 - [Expire-Group](/docs/directorymanager/11.2/managementshell/group/expiregroup.md)
@@ -51,86 +49,77 @@ cmdlet.
 - [Remove-Group](/docs/directorymanager/11.2/managementshell/group/remove-group.md)
 - [Renew-Group](/docs/directorymanager/11.2/managementshell/group/renewgroup.md)
 - [Set-Group](/docs/directorymanager/11.2/managementshell/group/setgroup.md)
-
-## Identity Store Cmdlets
+## Identity store cmdlets
 
 - [Clear-MessagingServer](/docs/directorymanager/11.2/managementshell/identitystore/clearmessagingserver.md)
-- [Clear-Notifications Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/clearnotifications.md)
-- [Clear-SmtpServer Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/clearsmtpserver.md)
-- [Get-AvailableMessagingServers Cmdlet](/docs/directorymanager/11.2/managementshell/identitystore/getavailablemessagingservers.md)
-- [Get-Client Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/getclient.md)
-- [Get-IdentityStore Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/getidentitystore.md)
-- [Get-IdentityStoreRoles Cmdlet](/docs/directorymanager/11.2/managementshell/identitystore/getidentitystoreroles.md)
-- [Get-LogSettings Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/getlogsettings.md)
-- [Get-RolePermissionNames Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/getrolepermissionnames.md)
-- [Get-SchemaAttributes Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/getschemaattributes.md)
-- [Get-SmsGateways Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/getsmsgateways.md)
-- [Get-UserRole Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/getuserrole.md)
-- [New-IdentityStore Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/newidentitystore.md)
+- [Clear-Notifications](/docs/directorymanager/11.2/managementshell/identitystore/clearnotifications.md)
+- [Clear-SmtpServer](/docs/directorymanager/11.2/managementshell/identitystore/clearsmtpserver.md)
+- [Get-AvailableMessagingServers](/docs/directorymanager/11.2/managementshell/identitystore/getavailablemessagingservers.md)
+- [Get-Client](/docs/directorymanager/11.2/managementshell/identitystore/getclient.md)
+- [Get-IdentityStore](/docs/directorymanager/11.2/managementshell/identitystore/getidentitystore.md)
+- [Get-IdentityStoreRoles](/docs/directorymanager/11.2/managementshell/identitystore/getidentitystoreroles.md)
+- [Get-LogSettings](/docs/directorymanager/11.2/managementshell/identitystore/getlogsettings.md)
+- [Get-RolePermissionNames](/docs/directorymanager/11.2/managementshell/identitystore/getrolepermissionnames.md)
+- [Get-SchemaAttributes](/docs/directorymanager/11.2/managementshell/identitystore/getschemaattributes.md)
+- [Get-SmsGateways](/docs/directorymanager/11.2/managementshell/identitystore/getsmsgateways.md)
+- [Get-UserRole](/docs/directorymanager/11.2/managementshell/identitystore/getuserrole.md)
+- [New-IdentityStore](/docs/directorymanager/11.2/managementshell/identitystore/newidentitystore.md)
 - [Remove-IdentityStore](/docs/directorymanager/11.2/managementshell/identitystore/removeidentitystore.md)
 - [Send-TestNotification](/docs/directorymanager/11.2/managementshell/identitystore/sendtestnotification.md)
 - [Set-IdentityStore](/docs/directorymanager/11.2/managementshell/identitystore/setidentitystore.md)
 - [Set-IdentityStoreRole](/docs/directorymanager/11.2/managementshell/identitystore/setidentitystorerole.md)
 - [Set-MessagingServer](/docs/directorymanager/11.2/managementshell/identitystore/setmessagingserver.md)
-- [Set-Notifications Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/setnotifications.md)
-- [Set-SmtpServer Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystore/setsmtpserver.md)
+- [Set-Notifications](/docs/directorymanager/11.2/managementshell/identitystore/setnotifications.md)
+- [Set-SmtpServer](/docs/directorymanager/11.2/managementshell/identitystore/setsmtpserver.md)
+## Identity store connection cmdlets
 
-## Identity Store Connection Cmdlets
+- [Connect-IdentityStore](/docs/directorymanager/11.2/managementshell/identitystoreconnection/connectidentitystore.md)
+- [Get-Token](/docs/directorymanager/11.2/managementshell/identitystoreconnection/gettoken.md)
+## Mailbox cmdlets
 
-- [Connect-IdentityStore Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystoreconnection/connectidentitystore.md)
-- [Get-Token Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/identitystoreconnection/gettoken.md)
+- [Get-Mailbox](/docs/directorymanager/11.2/managementshell/mailbox/getmailbox.md)
+- [New-Mailbox](/docs/directorymanager/11.2/managementshell/mailbox/newmailbox.md)
+- [Remove-Mailbox](/docs/directorymanager/11.2/managementshell/mailbox/removemailbox.md)
+- [Set-Mailbox](/docs/directorymanager/11.2/managementshell/mailbox/setmailbox.md)
+## Mail-enable and disable groups cmdlets
 
-## Mailbox Cmdlets
+- [Disable-DistributionGroup](/docs/directorymanager/11.2/managementshell/mailenableddisabledgroups/disabledistributiongroup.md)
+- [Enable-DistributionGroup](/docs/directorymanager/11.2/managementshell/mailenableddisabledgroups/enabledistributiongroup.md)
+## Membership cmdlets
 
-- [Get-Mailbox Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/mailbox/getmailbox.md)
-- [New-Mailbox Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/mailbox/newmailbox.md)
-- [Remove-Mailbox Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/mailbox/removemailbox.md)
-- [Set-Mailbox Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/mailbox/setmailbox.md)
+- [Add-GroupMember](/docs/directorymanager/11.2/managementshell/membership/addgroupmember.md)
+- [Get-GroupMember](/docs/directorymanager/11.2/managementshell/membership/getgroupmember.md)
+- [Get-Object](/docs/directorymanager/11.2/managementshell/membership/getobject.md)
+- [Remove-GroupMember](/docs/directorymanager/11.2/managementshell/membership/removegroupmember.md)
+- [Set-Object](/docs/directorymanager/11.2/managementshell/membership/setobject.md)
+## Scheduling cmdlets
 
-## Mail-Enable/Disable Groups Cmdlets
+- [Get-Schedule](/docs/directorymanager/11.2/managementshell/scheduling/getschedule.md)
+- [Get-TargetSchedules](/docs/directorymanager/11.2/managementshell/scheduling/gettargetschedule.md)
+- [Invoke-Schedule](/docs/directorymanager/11.2/managementshell/scheduling/invokeschedule.md)
+- [New-Schedule](/docs/directorymanager/11.2/managementshell/scheduling/newschedule.md)
+- [Remove-Schedule](/docs/directorymanager/11.2/managementshell/scheduling/removeschedule.md)
+- [Set-Schedule](/docs/directorymanager/11.2/managementshell/scheduling/setschedule.md)
+- [Stop-Schedule](/docs/directorymanager/11.2/managementshell/scheduling/stopschedule.md)
+## Smart group cmdlets
 
-- [Disable-DistributionGroup Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/mailenableddisabledgroups/disabledistributiongroup.md)
-- [Enable-DistributionGroup Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/mailenableddisabledgroups/enabledistributiongroup.md)
+- [ConvertTo-StaticGroup](/docs/directorymanager/11.2/managementshell/smartgroup/converttostaticgroup.md)
+- [Get-SmartGroup](/docs/directorymanager/11.2/managementshell/smartgroup/getsmartgroup.md)
+- [New-SmartGroup](/docs/directorymanager/11.2/managementshell/smartgroup/newsmartgroup.md)
+- [Set-SmartGroup](/docs/directorymanager/11.2/managementshell/smartgroup/setsmartgroup.md)
+- [Update-Group](/docs/directorymanager/11.2/managementshell/smartgroup/updategroup.md)
+- [Upgrade-Group](/docs/directorymanager/11.2/managementshell/smartgroup/upgradegroup.md)
+## User cmdlets
 
-## Membership Cmdlets
+- [Get-User](/docs/directorymanager/11.2/managementshell/user/getuser.md)
+- [Get-UserEnrollment](/docs/directorymanager/11.2/managementshell/user/getuserenrollment.md)
+- [New-User](/docs/directorymanager/11.2/managementshell/user/newuser.md)
+- [Remove-User](/docs/directorymanager/11.2/managementshell/user/removeuser.md)
+- [Set-User](/docs/directorymanager/11.2/managementshell/user/setuser.md)
+## User lifecycle cmdlets
 
-- [Add-GroupMember Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/membership/addgroupmember.md)
-- [Get-GroupMember Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/membership/getgroupmember.md)
-- [Get-Object Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/membership/getobject.md)
-- [Remove-GroupMember Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/membership/removegroupmember.md)
-- [Set-Object Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/membership/setobject.md)
-
-## Scheduling Cmdlets
-
-- [Get-Schedule Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/scheduling/getschedule.md)
-- [Get-TargetSchedules Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/scheduling/gettargetschedule.md)
-- [ Invoke-Schedule Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/scheduling/invokeschedule.md)
-- [New-Schedule Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/scheduling/newschedule.md)
-- [Remove-Schedule Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/scheduling/removeschedule.md)
-- [Set-Schedule Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/scheduling/setschedule.md)
-- [Stop-Schedule Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/scheduling/stopschedule.md)
-
-## Smart Group Cmdlets
-
-- [ConvertTo-StaticGroup Cmdlet](/docs/directorymanager/11.2/managementshell/smartgroup/converttostaticgroup.md)
-- [Get-SmartGroup Cmdlet](/docs/directorymanager/11.2/managementshell/smartgroup/getsmartgroup.md)
-- [New-SmartGroup Cmdlet](/docs/directorymanager/11.2/managementshell/smartgroup/newsmartgroup.md)
-- [Set-SmartGroup Cmdlet](/docs/directorymanager/11.2/managementshell/smartgroup/setsmartgroup.md)
-- [Update-Group Cmdlet](/docs/directorymanager/11.2/managementshell/smartgroup/updategroup.md)
-- [Upgrade-Group Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/smartgroup/upgradegroup.md)
-
-## User Cmdlets
-
-- [Get-User Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/user/getuser.md)
-- [Get-UserEnrollment Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/user/getuserenrollment.md)
-- [New-User Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/user/newuser.md)
-- [Remove-User Cmdlet in Directory Manager](/docs/directorymanager/11.2/managementshell/user/removeuser.md)
-- [Set-User Cmdlet for Directory Manager ](/docs/directorymanager/11.2/managementshell/user/setuser.md)
-
-## User Lifecycle Cmdlets
-
-- [Extend-User Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/extenduser.md)
-- [Get-Status Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/getstatus.md)
-- [Reinstate-User Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/reinstateuser.md)
-- [Terminate-DirectReports Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/terminatedirectreports.md)
-- [Transfer-DirectReports Cmdlet ](/docs/directorymanager/11.2/managementshell/userlifecycle/transferdirectreports.md)
+- [Extend-User](/docs/directorymanager/11.2/managementshell/userlifecycle/extenduser.md)
+- [Get-Status](/docs/directorymanager/11.2/managementshell/userlifecycle/getstatus.md)
+- [Reinstate-User](/docs/directorymanager/11.2/managementshell/userlifecycle/reinstateuser.md)
+- [Terminate-DirectReports](/docs/directorymanager/11.2/managementshell/userlifecycle/terminatedirectreports.md)
+- [Transfer-DirectReports](/docs/directorymanager/11.2/managementshell/userlifecycle/transferdirectreports.md)

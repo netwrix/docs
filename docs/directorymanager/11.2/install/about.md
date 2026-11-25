@@ -1,6 +1,6 @@
 ---
 title: "Directory Manager Installation Overview"
-description: "Learn how the Directory Manager installer detects and installs prerequisites and integrates configuration and upgrade."
+description: "Learn how the Directory Manager installer detects and installs prerequisites automatically and integrates configuration and upgrade."
 keywords:
   - Directory Manager installer
   - automatic prerequisite installation
@@ -12,8 +12,6 @@ sidebar_position: 30
 
 # Directory Manager Installation Overview
 
-The Directory Manager installer automatically detects the prerequisite software and Windows features
-that Directory Manager requires, and installs them without any manual intervention. This simplifies
-Directory Manager installation, reduces workloads, and shortens installation time.
+The Directory Manager installer detects the prerequisite software and Windows features that Directory Manager requires. It installs them automatically, with no manual intervention. This simplifies installation, reduces workloads, and shortens installation time.
 
-Directory Manager configuration and upgrade are also integrated into the installation experience.
+The installation experience also integrates Directory Manager configuration and upgrade.
