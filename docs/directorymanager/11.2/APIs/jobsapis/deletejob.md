@@ -15,7 +15,7 @@ unlisted: true
 After creating a job, you can modify or delete a job if you no longer need it. Use this
 API to delete the jobs specified in the endpoint URL.
 
-See the [Deleting a Job](/docs/directorymanager/11.2/portal/synchronize/manage/job.md#deleting-a-job) section of the
+See the [Delete a job](/docs/directorymanager/11.2/portal/synchronize/manage/job.md#delete-a-job) section of the
 [Manage Synchronize Jobs in Directory Manager](/docs/directorymanager/11.2/portal/synchronize/manage/job.md) topic for additional information.
 
 ## Endpoint

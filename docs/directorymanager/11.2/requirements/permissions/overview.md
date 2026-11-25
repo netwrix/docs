@@ -12,10 +12,9 @@ sidebar_position: 70
 
 # Directory Manager Service Account Permissions
 
-To connect an Active Directory identity store to a domain, you must use a service account with
-elevated privileges. You can also use a Group Managed Service Account (gMSA) for this purpose.
+To connect an Active Directory identity store to a domain, use a service account with elevated privileges. You can also use a Group Managed Service Account (gMSA) for this purpose.
 
-See the following topics for details on these accounts:
+For details on these accounts, see the following topics:
 
 - [Set Up a Directory Manager Service Account for AD and Exchange](/docs/directorymanager/11.2/requirements/permissions/adserviceaccount.md)
 - [Configure a gMSA for Directory Manager](/docs/directorymanager/11.2/requirements/permissions/gmsarequirements.md)

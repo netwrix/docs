@@ -11,7 +11,7 @@ sidebar_position: 30
 
 # Directory Manager Supported Exchange Servers
 
-Directory Manager supports the following Microsoft Exchange Servers:
+Directory Manager supports the following versions of Microsoft Exchange Server:
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2016

@@ -15,13 +15,11 @@ To install Directory Manager, you must run the following tools in the given orde
 
 - **[Run the Directory Manager Preparation Tool](/docs/directorymanager/11.2/install/installer/preparationtool.md)** - Detects and installs the prerequisite software and
   Windows features that Directory Manager requires.
-
 - **[Install Directory Manager](/docs/directorymanager/11.2/install/installer/install.md)** - Installs Directory Manager.
-
 - **[Run the Directory Manager Configuration Tool](/docs/directorymanager/11.2/install/configure/configure.md)** - Configures Directory Manager services,
   database, and other components.
 
-## Installation Package
+## Installation package
 
 The Directory Manager installation package consists of:
 
@@ -30,7 +28,7 @@ The Directory Manager installation package consists of:
 
 ## Who can install
 
-Before installing Directory Manager, ensure that the logged-in user is a member of the local
+Before you install Directory Manager, ensure that the signed-in user is a member of the local
 Administrators group on that machine.
 
 :::note
@@ -39,31 +37,28 @@ Administrators group on that machine.
 (3) Don't install Directory Manager and Microsoft Exchange Server on the same machine.
 :::
 
-
-## Installation Cases
+## Installation cases
 
 Choose one of the following four installation cases for Directory Manager 11:
 
 - **Case # 1**: Directory Manager 11 to coexist with Directory Manager 10 on the same machine
-
 - **Case # 2**: Directory Manager 11 to coexist with Directory Manager 10.0 or 9.0 in the same
   environment
 - **Case # 3**: In-place installation of Directory Manager 11 on the same machine
 - **Case # 4**: In-place installation of Directory Manager 11 in the environment
 
-The Directory Manager 11 installation and configuration process is the same for all four cases. You
-must create a copy of the database being used with the previous Directory Manager version and bind
-the copy with Directory Manager 11.
+The Directory Manager 11 installation and configuration process is the same for all four cases.
+Create a copy of the database that the previous Directory Manager version uses, and bind the copy
+with Directory Manager 11.
 
 Next, run the Upgrade wizard to make the copied database compatible with Directory Manager 11. After
-the upgrade, the database schema changes, making it incompatible with the previous Directory Manager
-version.
+the upgrade, the database schema changes. The previous Directory Manager version can no longer use
+the database.
 
 :::note
 When Directory Manager 11 coexists with a previous Directory Manager version (Cases # 1 and
 2), the two must have separate databases. Data isn't replicated between these databases.
 :::
-
 
 :::note
 This section doesn't apply to a fresh Directory Manager installation.

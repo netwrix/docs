@@ -11,7 +11,7 @@ sidebar_position: 20
 
 # Windows Server Requirements for Directory Manager
 
-Directory Manager supports the following Microsoft Windows Server versions:
+Directory Manager supports the following Microsoft Windows Server versions.
 
 **Microsoft Windows Server 2019 Family**
 

@@ -11,37 +11,30 @@ sidebar_position: 40
 
 # Sign In to Directory Manager Using PingOne
 
-PingOne is configured with a Directory Manager client, such as the Directory Manager portal _Wizard_.
-Users are created in PingOne to sign in to the _Wizard_
-portal using the PingOne single sign-on option.
+PingOne is configured with a Directory Manager client, such as the Directory Manager portal Wizard. Users are created in PingOne to sign in to the Wizard portal using the PingOne single sign-on option.
 
-For single sign-on using PingOne, you can choose either of the following ways:
+You can sign in with single sign-on using PingOne in either of these ways:
 
-- SP-initiated single sign-on - the SSO operation is initiated from the service provider (SP) end,
-  that is, from the Directory Manager portal, Wizard.
-- IdP-initiated single sign-on - the SSO operation is initiated from the identity provider (IdP)
-  end, that is, from PingOne.
+- **SP-initiated single sign-on**: The service provider (SP) starts the single sign-on operation. Here, the SP is the Directory Manager portal, Wizard.
+- **IdP-initiated single sign-on**: The identity provider (IdP) starts the single sign-on operation. Here, the IdP is PingOne.
 
-## SP-Initiated Single Sign-On
+## SP-initiated single sign-on
 
-1. Launch the Directory Manager portal _Wizard_.  
-   The availability of the user name and password fields depends on whether you disabled Directory
-   Manager Authentication (see step 10 in the
-   [Configure the Provider in Directory Manager](configurepingoneindirectorymanager.md#configure-the-provider-in-directory-manager)
-   topic).
+1. Launch the Directory Manager portal Wizard.
+
+   The availability of the user name and password fields depends on whether you disabled Directory Manager Authentication. See step 10 in the [Configure the Provider in Directory Manager](configurepingoneindirectorymanager.md#configure-the-provider-in-directory-manager) topic.
+
 2. Click the button for PingOne. The PingOne Sign In page appears.
-3. Enter your credentials and sign in. The system routes you to the main page of the Directory Manager
-   portal _Wizard_.  
-   Only users defined for the Directory Manager app in PingOne can sign in using PingOne single
-   sign-on. See the
-   [Configure Users in PingOne](configureinpingone.md#configure-users-in-pingone) topic.
+3. Enter your credentials and sign in. The system routes you to the main page of the Directory Manager portal Wizard.
 
-With single sign-on, you can now launch any Directory Manager client without having to sign in
-again.
+   Only users defined for the Directory Manager app in PingOne can sign in using PingOne single sign-on. See the [Configure Users in PingOne](configureinpingone.md#configure-users-in-pingone) topic.
 
-## IdP-Initiated Single Sign-On
+With single sign-on, you can now launch any Directory Manager client without signing in again.
 
-1. Launch the PingOne portal using the URL provided by your organization and sign in.  
-   The PingOne dashboard appears, listing the apps configured with PingOne for single
-   sign-on.
+## IdP-initiated single sign-on
+
+1. Launch the PingOne portal using the URL your organization provides, and sign in.
+
+   The PingOne dashboard appears and lists the apps configured with PingOne for single sign-on.
+
 2. Click an app to access it. Authentication isn't required.

@@ -11,5 +11,4 @@ sidebar_position: 10
 
 # Generate Consumer and Audience URLs for OneLogin
 
-To generate the consumer URL and audience URL, see the [Generate Consumer and Audience URLs for AD FS](/docs/directorymanager/11.2/authenticate/asserviceprovider/adfs/generateurls.md)
-topic. Replace references to AD FS with OneLogin.
+To generate the consumer URL and audience URL, see the [Generate Consumer and Audience URLs for AD FS](/docs/directorymanager/11.2/authenticate/asserviceprovider/adfs/generateurls.md) topic. Replace references to AD FS with OneLogin.

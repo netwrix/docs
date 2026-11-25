@@ -12,8 +12,8 @@ sidebar_position: 40
 
 # Update the Directory Manager Signing Key
 
-While configuring the Directory Manager machine, the Configuration Tool checks the status of the application's
-Signing Key. The following scenarios are possible for the Signing Key:
+While configuring the Directory Manager machine, the Configuration Tool checks the status of the
+application's Signing Key. The following scenarios are possible:
 
 - Single Directory Manager instance
 - Multiple Directory Manager instances with a single cluster
@@ -22,8 +22,8 @@ Signing Key. The following scenarios are possible for the Signing Key:
 ## Single Directory Manager instance
 
 If you run the Configuration Tool on a machine that had a prior Directory Manager version and the
-Signing Key utility wasn't applied to it, the Configuration Tool changes the Signing Key and
-displays a disclaimer message on the Directory Manager is successfully configured page, as follows:
+Signing Key utility wasn't applied to it, the Configuration Tool changes the Signing Key. It also
+displays a disclaimer message on the Directory Manager is successfully configured page:
 
 ![Directory Manager is successfully configured page showing the Signing Key disclaimer](/images/directorymanager/11.2/install/configure/signkeydisclaimer.webp)
 
@@ -41,36 +41,32 @@ for schedules using one of the following methods:
 ## Multiple Directory Manager instances with a single cluster
 
 In an environment with multiple Directory Manager instances in a single cluster (with a primary
-node and a secondary node), where the instances had a prior Directory Manager version and the
-Signing Key utility wasn't applied to them, complete the following steps to change the Signing Key on all the
-instances:
+node and a secondary node), the instances might have had a prior Directory Manager version without
+the Signing Key utility applied. To change the Signing Key on all the instances:
 
-Step 1 – Run the Configuration Tool on the primary node of the cluster. It changes the Signing
-Key on the primary node and displays a disclaimer message on the Directory Manager is successfully
-configured page as shown in the Single Directory Manager instance section.
+1. Run the Configuration Tool on the primary node of the cluster. It changes the Signing Key on the
+   primary node and displays a disclaimer message on the Directory Manager is successfully
+   configured page, as shown in the Single Directory Manager instance section.
+2. Export the Signing Key so that the secondary node has the same Signing Key as the primary node.
+   See the
+   [Export a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#export-a-signing-key) section
+   of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic for
+   information on how to export the Signing Key.
+3. On the secondary node, copy the exported Signing Key file into a folder.
+4. Run the Configuration Tool on the secondary node until you reach the Import Signing Key page of
+   the wizard.
 
-Step 2 – Export the Signing Key so that the secondary node has the same Signing Key as the
-primary node. See the
-[Export a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#export-a-signing-key) section
-of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic for
-information on how to export the Signing Key.
+   ![Import Signing Key page](/images/directorymanager/11.2/install/configure/importkey.webp)
 
-Step 3 – On the secondary node, copy the exported Signing Key file into a folder.
+   1. Click **Browse** next to the Select file box to browse to the folder where you copied the
+      Signing Key file.
+   2. Enter the password of the Signing Key file in the **Password** box.
+   3. Click **Next**.
 
-Step 4 – Run the Configuration Tool on the secondary node until you reach the Import Signing Key page of
-the wizard:
+   The Configuration Tool displays the Directory Manager is successfully configured page without
+   the disclaimer.
 
-![Import Signing Key page](/images/directorymanager/11.2/install/configure/importkey.webp)
-
-1. Click **Browse** next to the Select file box to browse to the folder where you copied the
-   Signing Key file.
-2. Enter the password of the Signing Key file in the **Password** box.
-3. Click **Next**.
-
-Step 5 – The Configuration Tool displays the Directory Manager is successfully configured page
-without the disclaimer.
-
-![Directory Manager is successfully configured page without the disclaimer](/images/directorymanager/11.2/install/configure/success.webp)
+   ![Directory Manager is successfully configured page without the disclaimer](/images/directorymanager/11.2/install/configure/success.webp)
 
 :::tip
 After the Signing Key update, your existing schedules won't work because their
@@ -93,41 +89,37 @@ primary node and a secondary node in each cluster), for example:
 
 To change the Signing Key on all four Directory Manager instances:
 
-Step 1 – Run the Configuration Tool on the primary node of Cluster A (instance 1). It
-changes the Signing Key on the primary node and displays a disclaimer message on the Directory Manager
-is successfully configured page as shown in the Single Directory Manager instance section.
+1. Run the Configuration Tool on the primary node of Cluster A (instance 1). It changes the Signing
+   Key on the primary node and displays a disclaimer message on the Directory Manager is
+   successfully configured page, as shown in the Single Directory Manager instance section.
+2. Export the Signing Key so that the secondary nodes of both clusters have the same Signing Key as
+   the primary node of Cluster A. See the
+   [Export a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#export-a-signing-key) section
+   of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic for
+   information on how to export the Signing Key file.
+3. On the secondary nodes of Cluster A and Cluster B (instances 2 and 4), copy the exported Signing
+   Key file into a folder.
+4. Run the Configuration Tool on instances 2 and 4 until you reach the Import Signing Key page of
+   the wizard.
 
-Step 2 – Export the Signing Key so that the secondary nodes of both the clusters also have the same
-Signing Key as the primary node of Cluster A. See the
-[Export a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#export-a-signing-key) section
-of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic for
-information on how to export the Signing Key file.
+   ![Import Signing Key page](/images/directorymanager/11.2/install/configure/importkey.webp)
 
-Step 3 – On the secondary nodes of Cluster A and Cluster B (instances 2 and 4), copy the exported
-Signing Key file into a folder.
+   1. Click **Browse** next to the Select file box to browse to the folder where you copied the
+      Signing Key file.
+   2. Enter the password of the Signing Key file in the **Password** box.
+   3. Click **Next**.
 
-Step 4 – Run the Configuration Tool on instances 2 and 4 until you reach the Import Signing Key page
-of the wizard:
+   The Configuration Tool displays the Directory Manager is successfully configured page without
+   the disclaimer.
 
-![Import Signing Key page](/images/directorymanager/11.2/install/configure/importkey.webp)
-
-1. Click **Browse** next to the Select file box to browse to the folder where you copied the
-   Signing Key file.
-2. Enter the password of the Signing Key file in the **Password** box.
-3. Click **Next**.
-
-Step 5 – The Configuration Tool displays the Directory Manager is successfully configured page
-without the disclaimer.
-
-Step 6 – Run the Configuration Tool on the primary node of Cluster B (instance 3). The
-Configuration Tool displays the Directory Manager is successfully configured page with the
-disclaimer as shown in the Single Directory Manager instance section.
-
-Step 7 – On the primary node of Cluster B (instance 3), run the
-[Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) and import the
-copied Signing Key file using the cmdlet given in the
-[Import a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#import-a-signing-key) section
-of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic.
+5. Run the Configuration Tool on the primary node of Cluster B (instance 3). The Configuration Tool
+   displays the Directory Manager is successfully configured page with the disclaimer, as shown in
+   the Single Directory Manager instance section.
+6. On the primary node of Cluster B (instance 3), run the
+   [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) and import the
+   copied Signing Key file using the cmdlet in the
+   [Import a Signing Key](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md#import-a-signing-key) section
+   of the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) topic.
 
 :::tip
 After the Signing Key update, your existing schedules won't work because their

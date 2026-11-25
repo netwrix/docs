@@ -14,18 +14,17 @@ sidebar_position: 40
 Before you uninstall Directory Manager, ensure that the signed-in user is a member of the local
 Administrators group on that machine.
 
-To uninstall the current Directory Manager version to upgrade to a newer version, follow these
-steps:
+To uninstall the current Directory Manager version to upgrade to a newer version:
 
 1. Click **Start**.
-2. Type **Control Panel** and select it.
+2. Enter **Control Panel** and select it.
 3. Select **Uninstall a program**.
-4. From the **Name** column, right-click **Imanami GroupID `version`** and select **Uninstall**.
-5. On the **User Account Control** window, click **Yes**.
+4. In the **Name** column, right-click **Imanami GroupID `version`** and select **Uninstall**.
+5. In the **User Account Control** window, click **Yes**.
 
 This uninstalls Directory Manager from your machine.
 
-## Complete Uninstall
+## Complete uninstall
 
 To uninstall Directory Manager completely, remove the Directory Manager folders and registry keys
 from your machine. After you do this, you can no longer upgrade to a newer version of Directory
@@ -33,7 +32,7 @@ Manager.
 
 First, uninstall Directory Manager using the preceding steps.
 
-Next, to completely uninstall Directory Manager from your machine, remove:
+Next, remove the following from your machine:
 
 - The Directory Manager installation directory
 - Other relevant directories
@@ -61,7 +60,7 @@ Next, to completely uninstall Directory Manager from your machine, remove:
 
 **Remove registry keys**
 
-1. Open the **Registry Editor** by typing **regedit** in the Windows **Run** dialog box.
+1. Open the **Registry Editor** by entering **regedit** in the Windows **Run** dialog box.
 2. Delete the following registry key:
 
     ```
@@ -72,7 +71,7 @@ Next, to completely uninstall Directory Manager from your machine, remove:
 
 To remove the Directory Manager site from IIS:
 
-1. Open the Internet Information Services (IIS) console by typing _inetmgr_ in the Windows **Run** dialog
+1. Open the Internet Information Services (IIS) console by entering _inetmgr_ in the Windows **Run** dialog
    box.
 2. Expand the `<machine name>` node in the console tree and click **Sites**.
 3. On the **Sites** page, delete _GroupIDSite11_.
@@ -82,7 +81,7 @@ To remove the Directory Manager site from IIS:
 To remove the Directory Manager Admin Center, application pools, services, and portals from
 IIS:
 
-1. Open the Internet Information Services (IIS) console by typing _inetmgr_ in the Windows **Run** dialog
+1. Open the Internet Information Services (IIS) console by entering _inetmgr_ in the Windows **Run** dialog
    box.
 2. Expand the `<machine name>` node in the console tree and click **Application Pools**.
 3. On the **Application Pools** page, delete all application pools for Directory Manager Admin Center,
@@ -92,7 +91,7 @@ IIS:
 
 To remove Directory Manager certificates from IIS:
 
-1. Open the Internet Information Services (IIS) console by typing _inetmgr_ in the Windows **Run** dialog
+1. Open the Internet Information Services (IIS) console by entering _inetmgr_ in the Windows **Run** dialog
    box.
 2. Click the `<machine name>` node in the console tree. On the **Features View** tab, select
    **Server Certificates** in the IIS section.

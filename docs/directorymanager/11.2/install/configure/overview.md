@@ -11,7 +11,7 @@ sidebar_position: 20
 
 # Directory Manager Configuration Tool Overview
 
-Use the Configuration Tool to configure a new Directory Manager server. The tool configures the following:
+Use the Configuration Tool to configure a new Directory Manager server. The tool configures the following items:
 
 - A valid Directory Manager license
 - Scheduling, Email, and Replication services

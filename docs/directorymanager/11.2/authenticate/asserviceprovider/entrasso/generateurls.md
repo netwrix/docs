@@ -11,6 +11,4 @@ sidebar_position: 10
 
 # Generate Consumer and Audience URLs for Microsoft Entra ID
 
-To generate the consumer URL and audience URL, see the
-[Generate Consumer and Audience URLs for AD FS](/docs/directorymanager/11.2/authenticate/asserviceprovider/adfs/generateurls.md)
-topic. Replace references to AD FS with Microsoft Entra ID SSO.
+To generate the consumer URL and audience URL, see the [Generate Consumer and Audience URLs for AD FS](/docs/directorymanager/11.2/authenticate/asserviceprovider/adfs/generateurls.md) topic. Replace references to AD FS with Microsoft Entra ID SSO.

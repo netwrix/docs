@@ -12,27 +12,23 @@ sidebar_position: 1
 
 # Netwrix Directory Manager v11.2 Documentation
 
-Managing directory objects, such as Active Directory users and groups, is a continuous task.
-Employees move locations and change departments frequently, so IT professionals must constantly
-update security and distribution groups, often by hand.
+Managing directory objects, such as Active Directory users and groups, is a continuous task. Employees move locations and change departments frequently. IT professionals must constantly update security and distribution groups, often by hand.
 
-Directory Manager is an identity and access management (IAM) solution that automates these changes
-and handles the requests and requirements that IT teams see every day.
+Directory Manager is an identity and access management (IAM) solution. It automates these changes and handles the requests and requirements that IT teams see every day.
 
 ## Functions
 
-Directory Manager works with a directory service, such as Active Directory and Microsoft Entra ID,
-to provide the following:
+Directory Manager works with a directory service, such as Active Directory or Microsoft Entra ID. It provides these functions:
 
 - Group management
 - User management
 - Password management
 
-### Group Management
+### Group management
 
 Directory Manager offers administration and automation features for directory groups. You can:
 
-- Define rules to manage group memberships dynamically as changes occur within your organization.
+- Define rules that manage group memberships dynamically as changes occur in your organization.
 - Automate the group lifecycle with membership attestation and automatic expiry or deletion.
 - Link identical groups in different directory services, such as Active Directory and Microsoft
   Entra ID.
@@ -44,9 +40,9 @@ Directory Manager offers administration and automation features for directory gr
     - Create teams and channels in Microsoft Teams.
     - Join and leave groups.
 
-### User Management
+### User management
 
-With Directory Manager, you can:
+In Directory Manager, you can:
 
 - Automate user provisioning and deprovisioning in bulk.
 - Establish ownership by defining a clear managerial hierarchy with dotted-line management.
@@ -59,14 +55,11 @@ With Directory Manager, you can:
 - Link identical users in different directory services, such as Active Directory and Microsoft Entra
   ID.
 
-### Password Management
+### Password management
 
-Directory Manager provides password management functions for administrators, help desk staff, and
-end users.
+Directory Manager provides password management functions for administrators, help desk staff, and end users:
 
-- Administrators can define password checks, such as disallowing passwords that contain certain words
-  or phrases. They can also define regular expressions for allowed
-  passwords and load a list of disallowed passwords from an external file.
+- Administrators can define password checks, such as disallowing passwords that contain certain words or phrases. They can also define regular expressions for allowed passwords and load a list of disallowed passwords from an external file.
 - Users can reset their own passwords and unlock their own accounts after passing multifactor
   authentication.
 - Help desk staff can reset passwords and unlock accounts for users after authentication.
