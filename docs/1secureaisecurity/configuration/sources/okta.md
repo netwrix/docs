@@ -55,7 +55,7 @@ Every Okta scan shows a warning. It isn't a failure, and nothing needs fixing. T
 
 ## What this connector reads
 
-- Every app integration, and for OAuth service apps, their scope grants and admin roles.
+- Every app integration, and for OAuth service apps, their scope grants and admin roles. A scan checks a set number of apps, the same ones each scan. Past that, the scan lists how many it didn't check as skipped, and keeps the apps an earlier scan read.
 - The people and groups assigned to each app, including assignments to everyone. The scan records an app assigned to Okta's built-in Everyone group as assigned to everyone, and doesn't list its people one by one.
 - The org's active API tokens, who created each, and that admin's roles.
 - How many people hold Super Administrator. An issue about that count appears on **Okta workspace settings**, the org itself, rather than on one of its apps or tokens. It has no owner. See [Issues](/docs/1secureaisecurity/admin/pages/issues.md).

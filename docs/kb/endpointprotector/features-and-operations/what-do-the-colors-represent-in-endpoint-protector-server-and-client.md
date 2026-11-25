@@ -15,7 +15,7 @@ keywords:
 products:
   - endpointprotector
 visibility: public
-sidebar_label: What Do the Colors Represent in Endpoint Protector
+sidebar_label: What Do the Colors Represent in Endpoint Protector Server and Client?
 tags:
   - features-and-operations
   - kb
@@ -35,12 +35,13 @@ Endpoint Protector uses color indicators to represent device rights and statuses
 - **Red**: The device is blocked in the system.
 - **Green**: The device is allowed on computers or users.
 - **Yellow**: The device is allowed on some users or computers with restrictions.
+- **Blue**: Encrypted (Allow Access if Trusted Device).
 
 ### Client Side
 - **Red**: The device is blocked.
 - **Green**: The device is allowed.
-- **Yellow**: The device is set to Trusted Device Level 1; otherwise, it is read-only.
-- **Orange**: The device is set to Read-Only.
+- **Yellow**: The device is set to Trusted Device Level 1; otherwise, it is Read Only.
+- **Orange**: The device is set to Read Only.
 - **Blue**: The device is set to TD 1, TD 2, TD 3, or TD 1+ (all Trusted Device levels).
 - **Turquoise**: The iPhone is set to Allow Charging.
 - **Grey**: The device was disconnected on macOS and Linux.

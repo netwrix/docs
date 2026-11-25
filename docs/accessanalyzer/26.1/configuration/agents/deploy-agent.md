@@ -36,14 +36,33 @@ The agent host needs a Linux server of its own. You can't run `install-agent` on
 | Operating system | A RHEL-family or Debian-family Linux distribution. Preflight warns on a distribution it doesn't recognize. |
 | Access | Root, either directly or through `sudo`. `install-agent` stops with `install-agent must run as root: re-run it with sudo` otherwise. |
 | Architecture | The same CPU architecture as the server when the server runs from offline media. The in-cluster registry holds connector images only for the server's architecture, so `install-agent` refuses a host with another one. |
-| CPU | 2 cores. |
-| Memory | 4 GB. |
-| Disk | 5 GB free. A server that runs from offline media also needs room for the media and its unpacked copy, about 7 GB. The panel says about 8 GB of free disk, and preflight warns below 8 GB. |
+| CPU | 4 cores at minimum. See [Agent sizing](#agent-sizing). |
+| Memory | 4 GB at minimum. |
+| Disk | 5 GB free at minimum. A server that runs from offline media also needs room for the media and its unpacked copy, about 7 GB. The panel says about 8 GB of free disk, and preflight warns below 8 GB. |
 | Installer | The `dspm-installer` binary for the host's architecture. See [Download the installer](../../install/run-the-installer.md#download-the-installer). |
 | Not the server | The host can't be the Access Analyzer server. `install-agent` refuses to run where `/etc/rancher/k3s/k3s.yaml` exists. |
 | Antivirus | The same real-time scanning exclusions as the server. See [Antivirus Exclusions](../../requirements/index.md#antivirus-exclusions). |
 
 For example, an arm64 host can't join a server that runs from offline media on an x86 machine. Use an x86 host, or build the server on matching hardware.
+
+### Agent Sizing
+
+Preflight fails on a host with less than 4 CPU cores, 4 GB of memory, or 5 GB of free disk. An Access scan of a File Server source reserves 2 cores on its own, and the operating system and k3s need the rest. The more CPU and memory you give an agent, the more scans it runs at once.
+
+A scan creates one execution for each source, and each execution reserves CPU and memory on the agent that runs it. The agent starts an execution only when it has that much unreserved. An execution that doesn't fit waits until a running one finishes. The reservations don't change with the size of the agent or the size of the server.
+
+| Scan execution | Reserves | Runs at once on a 4-core, 4 GB agent |
+|---|---|---|
+| Access scan of a File Server source | 2 cores and 1 GB | 2 |
+| Access scan of a SharePoint Online source | 1 core and 768 MB | 4 |
+| Identity sync of an Active Directory or Entra ID source | 0.5 cores and 512 MB | 7 |
+| Sensitive data scan of a File Server or SharePoint Online source | About 0.5 cores and 250 MB | 8 |
+
+Scans need more CPU than memory. Every execution in the table reserves 1 GB of memory or less for each core it reserves. To run more, add cores, and give the agent about 1 GB of memory for each core, never less than the 4 GB minimum. More memory than that doesn't let the agent run more scans.
+
+The agent's disk holds the scan components and the logs of the executions it runs. Scan results don't stay on the agent, because every execution sends them to the server.
+
+More agents or larger agents don't raise the server's capacity. The server still receives and stores the results of every scan, so the server's [size](../../requirements/index.md#size) still decides how much data the installation supports.
 
 ### Network Paths
 
@@ -144,7 +163,7 @@ On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`,
 
 2. Paste the command from the panel and press Enter.
 
-   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes after an interruption, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command right away.
+   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes after an interruption, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command immediately.
 
    To use media that's already on the host, add `--bundle-dir=<path>` to the command. The path is the archive, such as `/etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz`, or the extracted directory.
 
