@@ -65,11 +65,11 @@ A product or product version that is **discontinued** isn't maintained by Netwri
 
 ## Endpoint Protector Specific Definitions
 
-The table below defines the key lifecycle stages for each Endpoint Protector Server version and what level of support each stage offers. These milestones reflect how versions are managed over time, how updates are delivered, and what patching behavior is expected.
+The following table defines the key lifecycle stages for each Endpoint Protector Server version and what level of support each stage offers. These milestones reflect how versions are managed over time, how updates are delivered, and what patching behavior is expected.
 
 To remain fully supported, customers must stay within the actively supported “N” or “N-1” version tracks and have the latest Fixes & Features (F&F) and Critical Security Patch (CSP) updates applied.
 
-The table below defines how long different versions remain eligible for support based on their patch state.
+The following table defines how long different versions remain eligible for support based on their patch state.
 
 | **Definition** | **Description** | **Support Details** |
 | --- | --- | --- |
@@ -102,7 +102,7 @@ There are exactly two patch types:
 - Fixes & Features
 - Critical Security Patches
 
-The two patch types are described below.
+The following sections describe the two patch types.
 
 ### Fixes & Features (F&F) Patches
 
@@ -307,5 +307,5 @@ When a new major N release ships in the future, the following occurs:
 
 # Final Thoughts
 
-Staying current with both server and agent versions ensures optimal performance, full feature compatibility, and robust security. Netwrix is committed to supporting your transition to newer versions and helping you ensure your Endpoint Protector environment stays secure, up-to-date, and fully supported.
+Keep both the server and agent on current versions to stay fully supported and receive the latest security fixes.
 <br/>If you have questions about updates or need assistance with your upgrade process, contact the Netwrix support team.

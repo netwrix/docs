@@ -11,8 +11,7 @@ data across Windows, macOS, and Linux. With features like Device Control, Conten
 eDiscovery, and Enforced Encryption, Endpoint Protector safeguards against data breaches
 originating from a wide range of endpoints, including portable storage devices such as USB flash
 drives, external HDDs, digital cameras, MP3 players, and iPods. These devices connect to
-Windows, Mac, or Linux computers, increasing the risk of data theft or accidental loss. Ensure
-compliance and protect sensitive information with Netwrix Endpoint Protector.
+Windows, Mac, or Linux computers, increasing the risk of data theft or accidental loss.
 
 ## Key concepts
 

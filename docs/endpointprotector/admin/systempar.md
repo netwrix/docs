@@ -183,12 +183,11 @@ Actions column.
 
 ### Events Types and Descriptions
 
-This subsection displays a comprehensive list of events that administrators use to
+This subsection lists the events that administrators use to
 manage and monitor their data protection policies. Events include EasyLock deployment, printer activity, user information updates,
 transfer limits, external repository uploads, content remediation, forced uninstall attempts, device
 remediation sessions, certificate management, unplanned client terminations, artifact receipts, and
-deep packet inspection (DPI) bypassed traffic. These events provide granular insight into system activities, helping
-organizations maintain robust security and compliance measures.
+deep packet inspection (DPI) bypassed traffic. These events record system activity for security and compliance monitoring.
 
 For a detailed view of all events and their descriptions, see the following table.
 

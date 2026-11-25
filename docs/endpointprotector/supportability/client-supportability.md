@@ -181,5 +181,5 @@ For Ubuntu-based distributions outside the officially tested and certified list,
 
 ## Final Thoughts
 
-Using a supported operating system and staying up to date with the latest version of the Netwrix Endpoint Protector agent ensures optimal performance, access to the latest features, and a smoother support experience. By leveraging a phased rollout strategy and maintaining a proactive update schedule, your organization can confidently manage EPP updates and maintain robust data protection.
+Use a supported operating system and the latest version of the Netwrix Endpoint Protector agent to get the latest features and fixes. Roll out EPP updates in phases and on a regular schedule.
 <br/>For assistance with your rollout strategy, contact the Netwrix support team.

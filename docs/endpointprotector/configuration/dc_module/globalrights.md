@@ -174,7 +174,7 @@ a noticeable pattern, this isn't recommended. In this type of situation, Endpoin
 
 
 - Bulk List of Devices – will allow at Step 2 to add up to 1000 devices at the same time. There are
-  two methods to choose from, either importing a list or simply pasting the information.
+  two methods to choose from, either importing a list or pasting the information.
 
 ![Add up to 1000 devices at the same time](bulkdevices.webp)
 

@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # Custom Classes
 
-This section provides you with the option to create new classes of devices for easier management. It
-is a powerful feature, especially for devices belonging to the same vendor and/or being the same
+This section provides you with the option to create new classes of devices for easier management.
+Custom classes are especially useful for devices belonging to the same vendor and/or being the same
 product (same VID and/or PID).
 
 A new Custom Class can be created by clicking on the Create. An existing policy can be edited by
@@ -42,7 +42,7 @@ Although this feature can work in situations where the Serial Number range doesn
 :::
 
 - Bulk List of Devices – will allow at Step 2 to add up to 1000 devices at the same time. There are
-  two methods to choose from, either importing a list or simply pasting the information.
+  two methods to choose from, either importing a list or pasting the information.
 
 ![Allow at Step 2 to add up to 1000 devices at the same time](bulkdevices.webp)
 

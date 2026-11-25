@@ -202,7 +202,7 @@ unique code it uses as the second authentication factor.
 Use this section to create and manage System Departments.
 
 Using System Departments is optional. Endpoint Protector works well with only the Default
-Department (defdep). Moreover, using Devices, Computers, Users, and Groups (the entities also available in AD) covers
+Department (defdep). Using Devices, Computers, Users, and Groups (the entities also available in AD) covers
 most scenarios.
 
 The functionality becomes useful mainly in large installations, with a high number of Administrators

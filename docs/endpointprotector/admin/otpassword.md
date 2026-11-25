@@ -92,7 +92,7 @@ entered (one of them will automatically fill in the other field).
 
 You don't need to fill both Computer Name and Username—the OTP Code works with just one. To restrict the code to a specific device, computer, and user, fill all relevant fields.
 
-After the OTP Code has been generated, it will be displayed on the right side of the image above.
+After Endpoint Protector generates the OTP Code, it appears on the right side of the dialog.
 
 As it needs to be provided to the person that made the request, Endpoint Protector offers two quick
 ways of doing this, either by sending a direct e-mail or by printing it out.

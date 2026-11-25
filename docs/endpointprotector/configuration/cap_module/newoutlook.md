@@ -78,7 +78,7 @@ On macOS, an EPP certificate ensures secure communication between the add-in and
 
 ## Pre-configuring add-in (manifest.xml)
 
-At the core of any Office Add-in is the manifest file (.xml). This file acts as the blueprint for the add-in, containing:
+At the core of any Office Add-in is the manifest file (.xml). This file is the blueprint for the add-in and contains:
 
 - **Basic Information:** Includes the name, version, and description of the add-in.
 - **Entry Points:** Specifies the URLs that direct Outlook to the hosted HTML and JavaScript files.

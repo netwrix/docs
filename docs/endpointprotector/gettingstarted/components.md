@@ -45,8 +45,7 @@ The client side of Endpoint Protector has two components:
 ## Architecture overview
 
 The following diagram illustrates the network architecture for the Endpoint Protector system. This setup
-enables comprehensive Data Loss Prevention (DLP) across both local and remote users, securing
-sensitive information and ensuring compliance with security policies.
+enables Data Loss Prevention (DLP) for both local and remote users.
 
 ![Architecture Overview](../requirements/networkarchitecture.webp)
 

@@ -746,14 +746,14 @@ When printing from Excel Online, Endpoint Protector may not immediately inspect 
 ![blockprinttwo](blockprinttwo.webp)
 
 Users printing from Google Chrome and Microsoft Edge can use content-aware detection by
-enforcing a Content Aware Policy that includes Printers from the Policy Exit Points section. For
-seamless protection, the Endpoint Protector Browser Connection extension installs automatically the
+enforcing a Content Aware Policy that includes Printers from the Policy Exit Points section. The
+Endpoint Protector Browser Connection extension installs automatically the
 first time upon enabling the Block Print from Browsers setting. This extension enhances content
 scanning during web document printing on both server and client sides.
 
 :::note
 The extension doesn't function in 'in Private/Incognito' mode. If it fails to load, it
-reverts to full Block-mode with Printing, providing comprehensive protection.
+reverts to full Block-mode with Printing.
 :::
 
 
