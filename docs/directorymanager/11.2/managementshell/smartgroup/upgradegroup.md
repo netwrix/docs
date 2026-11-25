@@ -1,16 +1,22 @@
 ---
-title: "Upgrade-Group"
-description: "Upgrade-Group"
+title: "Upgrade-Group Cmdlet in Directory Manager"
+description: "Upgrade managed and non-managed groups and their history from Directory Manager 10 to version 11.2 with the Upgrade-Group cmdlet."
+keywords:
+  - Upgrade-Group
+  - Directory Manager Management Shell
+  - upgrade Smart Groups
+  - upgrade Dynasties
+  - group history upgrade
 sidebar_position: 60
 ---
 
-# Upgrade-Group
+# Upgrade-Group Cmdlet in Directory Manager
 
-The Upgrade-Group commandlet upgrades managed (Smart Groups and Dynasties) and non-managed Groups of
-GroupID 10 to Directory Manager 11.2 version. Before running this commandlet, ensure the
-configurations and history have been upgraded through the Directory Manager Upgrade wizard, only
-then this commandlet will upgrade the specified groups and their history successfully. See the
-[Upgrade to Directory Manager 11 with the Wizard](/docs/directorymanager/11.2/install/upgrade/upgrade.md) topic for additional information
+The Upgrade-Group commandlet upgrades managed (Smart Groups and Dynasties) and non-managed groups of
+Directory Manager 10 to Directory Manager 11.2. Before running this commandlet, ensure the
+configurations and history have been upgraded through the Directory Manager Upgrade wizard. Only
+then does this commandlet upgrade the specified groups and their history successfully. See the
+[Upgrade to Directory Manager 11 with the Wizard](/docs/directorymanager/11.2/install/upgrade/upgrade.md) topic for additional information
 on upgrade.
 
 ## Syntax
@@ -34,11 +40,11 @@ Upgrade-Group  
 
 Example 1:
 
-By default, this commandlet upgrades group from the connected identity store, in case , you want to
-upgrade groups from an OU of another identity store, specify the id of that identity store in the
-_IdentityStoreId_ parameter and OU in the _SearchContainer_ parameter.
+By default, this commandlet upgrades groups from the connected identity store. To upgrade groups
+from an OU of another identity store, specify the ID of that identity store in the
+_IdentityStoreId_ parameter and the OU in the _SearchContainer_ parameter.
 
-The following commandlet upgrades groups of an identity store having id 2 and from the _Jobs_
+The following commandlet upgrades groups of an identity store with ID 2 and from the _Jobs_
 container in that identity store.
 
 ```
@@ -47,12 +53,12 @@ Upgrade-Group -IdentityStoreId "2" SearchContainer "OU=Jobs,DC=Demo1,DC=com" 
 
 Example 2:
 
-If you want to upgrade groups from a parent OU only, use the _SearchContainerScopeList_ and
-_SearchContainern_ parameters. The _SearchContainerScopeList_ parameter with value 1 indicates that
-the commandlet will not look into the nested OUs but the parent OU only.
+To upgrade groups from a parent OU only, use the _SearchContainerScopeList_ and
+_SearchContainer_ parameters. The _SearchContainerScopeList_ parameter with value 1 indicates that
+the commandlet doesn't look into the nested OUs but the parent OU only.
 
 The following commandlet upgrades dynasties residing in the _Jobs_ OU from their parent OU only. If
-_SearchContainerScopeList_ parameter isn't specified then this commandlet upgrades dynasties from
+you don't specify the _SearchContainerScopeList_ parameter, this commandlet upgrades dynasties from
 the parent OU and its child OUs.
 
 ```
@@ -60,9 +66,9 @@ Upgrade-Group -SearchContainerScopeList "1" -SearchContainer "GIDsmart1""OU=Jobs
 ```
 
 :::note
-The group types 4 and 5 which are for middle and leaf dynasties aren't supported in this
-commandlet. See the [Parameters](/docs/directorymanager/11.2/managementshell/parameters.md) topic for additional information on
-the supported parameters. See the [Parameters](/docs/directorymanager/11.2/managementshell/parameters.md) topic to get information
-about the parameters which you can use in the Directory Manager Management Shell commandlets.
+This commandlet doesn't support group types 4 and 5, which are for middle and leaf dynasties. See the
+[Directory Manager Management Shell Parameters](/docs/directorymanager/11.2/managementshell/parameters.md) topic for additional information on
+the supported parameters and the parameters you can use in the Directory Manager Management Shell
+commandlets.
 
 :::

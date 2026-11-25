@@ -1,6 +1,11 @@
 ---
 title: "Get-Contact"
-description: "Get-Contact"
+description: "Retrieves basic information about a contact from an identity store, filtered by identity, container, or LDAP filter."
+keywords:
+  - Get-Contact
+  - Management Shell
+  - retrieve contact
+  - contact cmdlet
 sidebar_position: 10
 ---
 

@@ -1,12 +1,17 @@
 ---
-title: "Get-SmsGateways"
-description: "Get-SmsGateways"
+title: "Get-SmsGateways Cmdlet in Directory Manager"
+description: "List the SMS gateways configured in Directory Manager with the Get-SmsGateways cmdlet."
+keywords:
+  - Get-SmsGateways
+  - SMS gateways
+  - Management Shell
+  - PowerShell cmdlet
 sidebar_position: 110
 ---
 
-# Get-SmsGateways
+# Get-SmsGateways Cmdlet in Directory Manager
 
-The commandlet Get-SmsGateways provides information of the SMS gateways configured in Directory
+The Get-SmsGateways cmdlet provides information about the SMS gateways configured in Directory
 Manager.
 
 ## Syntax

@@ -1,16 +1,21 @@
 ---
 title: "Move-Group"
-description: "Move-Group"
+description: "Move a group to another container in the same domain or in a different domain in the same forest with the Move-Group cmdlet."
+keywords:
+  - Move-Group
+  - move group
+  - destination container
+  - Directory Manager PowerShell
 sidebar_position: 40
 ---
 
 # Move-Group
 
 The Move-Group commandlet lets you move a group to a different container in the same domain or
-in a different domain within the same forest. Movement of groups across forests isn't allowed.
+in a different domain within the same forest. You can't move groups across forests.
 
-You can view events related to this commandlet in Directory Manager portal, against the History node
-in the left panel.
+You can view events related to this commandlet in the Directory Manager portal, under the History node
+in the left pane.
 
 ## Syntax
 
@@ -32,7 +37,7 @@ Move-Group
 Example 1:
 
 The following command moves the group _Training_ to the _Local Recruiting_ organizational unit using
-the credentials of current user logged-on to the identity store.
+the credentials of the user signed in to the identity store.
 
 ```
 Move-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -DestinationContainer "OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US"
@@ -42,7 +47,7 @@ Example 2:
 
 The following command moves the group _Training_ to the _OffShore Recruiting_ organizational unit.
 The command uses the credentials set in the $Credentials environment variable for moving a group.
-See the [Set the $Credentials Environment Variable](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic for
+See the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic for
 setting credentials in an environment variable.
 
 ```

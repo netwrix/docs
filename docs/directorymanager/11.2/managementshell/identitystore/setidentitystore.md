@@ -1,16 +1,23 @@
 ---
 title: "Set-IdentityStore"
-description: "Set-IdentityStore"
+description: "Use the Set-IdentityStore cmdlet to change an identity store's settings, roles, group lifecycle, history, logging, password rules and authentication."
+keywords:
+  - Set-IdentityStore
+  - modify identity store
+  - group lifecycle policy
+  - security roles
+  - password policy
+  - Management Shell cmdlet
 sidebar_position: 160
 ---
 
 # Set-IdentityStore
 
-The commandlet Set-IdentityStore modifies the identity store settings and configurations.
+The Set-IdentityStore cmdlet modifies the identity store settings and configurations.
 
 :::note
-Many parameters of this cmdlet require the user to specify schema attribute names. You can use
-Get-SchemaAttributes commandlet to retrieve a list of attributes available for an identity store.
+Many parameters of this cmdlet require you to specify schema attribute names. You can use
+the Get-SchemaAttributes cmdlet to retrieve a list of attributes available for an identity store.
 :::
 
 
@@ -114,9 +121,9 @@ Set-IdentityStore
 ```
 
 :::note
-You can use the **Set-IdentityStore** commandlet in a secure way by using the _Credential_
-parameter or by specifying the credentials through _Username_ and _Password_ parameters in plain
-text format which isn't a secure way.
+You can use the **Set-IdentityStore** cmdlet in a secure way by using the _Credential_
+parameter. Specifying the credentials through the _Username_ and _Password_ parameters in plain
+text isn't secure.
 :::
 
 
@@ -127,7 +134,7 @@ text format which isn't a secure way.
 
 Example 1:
 
-This example changes name of AdStore9 identity store to AdStore9_renamed.
+This example changes the name of the AdStore9 identity store to AdStore9_renamed.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -NewName 'AdStore9_renamed' -Credential $creds -Domain pucit.local
@@ -135,7 +142,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -NewName 'AdStore9_renamed' -Crede
 
 Example 2:
 
-This example enables the email verification authentication type for the AdStore9 identity store.
+This example enables the Email Verification authentication type for the AdStore9 identity store.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -AuthenticationTypeOperation enable -AuthenticationType 'Email Verification'
@@ -143,7 +150,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 3:
 
-This example disables enrollment for the AdSore9 identity store.
+This example disables enrollment for the AdStore9 identity store.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -EnrollmentEnabled $false
@@ -159,7 +166,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 5:
 
-This example modifies the group lifecycle expiration policy of AdStore9 identity store to 10 months.
+This example modifies the group lifecycle expiration policy of the AdStore9 identity store to 10 months.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -GroupExpiryQuantity 10 -GroupExpiryUnit Months
@@ -168,8 +175,8 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 Example 6:
 
 This example sets the group lifecycle expiration policy of the AdStore9 identity store to ‘never’ by
-setting value of the GroupExpiryUnit parameter to Indefinite. Even though the GroupExpiryQuantity
-parameter is set to any value.
+setting the value of the GroupExpiryUnit parameter to Indefinite, regardless of the value of the
+GroupExpiryQuantity parameter.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -GroupExpiryQuantity 10 -GroupExpiryUnit Indefinite
@@ -177,7 +184,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 7:
 
-This example Configures containers policy and add containers.
+This example configures the containers policy and adds containers.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -GlmContainersPolicy Include -GlmContainersOperation add -GlmContainers 'OU=WorkingOU,DC=pucit,DC=local','OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local'
@@ -185,8 +192,8 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 8:
 
-This example enables expiry of security groups, deletion of expired groups and sets interval of
-group deletion to 45 days.
+This example enables expiry of security groups and deletion of expired groups, and sets the
+interval of group deletion to 45 days.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -EnableSecurityGroupsExpiry -EnableExpiredGroupDeletion -ExpiredGroupsDeletionInterval 45
@@ -194,7 +201,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 9:
 
-This example enables GUS lifecycle and reduces group’s life if not used within 25 days.
+This example enables the GUS lifecycle and reduces a group’s life if it isn’t used within 25 days.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -EnableGUSLifecycle -GroupExtensionPolicy Reduce -GroupLifeDays 25
@@ -202,7 +209,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 10:
 
-This example enables group attestation feature and sets the TestingAccoun@pucit.local user as the
+This example enables the group attestation feature and sets the TestingAccoun@pucit.local user as the
 default approver for the AdStore9 identity store.
 
 ```
@@ -212,7 +219,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 Example 11:
 
 This example sets the notifications (in number of days) before group expiry. It also enables today’s
-expiry reports as well as it enables the group attestation.
+expiry reports and group attestation.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -EnableGroupAttestation -GlmNotifyOwnersXDaysBeforeOperation add -GlmNotifyOwnersXDaysBefore 1,3,10 -GlmEnableNotificationOfTodaysExpiry
@@ -220,12 +227,12 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 12:
 
-This example creates a new role – DemoRole1 – for the AdStore9 identity store by specifying the
+This example creates a new role, DemoRole1, for the AdStore9 identity store by specifying the
 minimum possible parameters.
 
 :::note
-By default, all permissions are declined to the role created through this commandlet.
-Moreover, no criteria filters or scope (group / container) are added to the role.
+By default, this cmdlet denies all permissions to the role it creates.
+Moreover, it adds no criteria filters or scope (group / container) to the role.
 :::
 
 
@@ -235,11 +242,11 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 13:
 
-This example creates a new security role – DemoRole1 – in AdStore9 identity store and a container is
-set as its role criteria.
+This example creates a new security role, DemoRole1, in the AdStore9 identity store and sets a container
+as its role criteria.
 
 :::note
-By default, all permissions are declined to the role created through this commandlet.
+By default, this cmdlet denies all permissions to the role it creates.
 :::
 
 
@@ -251,10 +258,10 @@ Example 14:
 
 This example creates a new security role by specifying the container and criteria filters.
 
-The value for RoleCriteriaFilters parameter is specified as 3-length arrays. At first index, specify
-the filter name which can be either ‘name’ or ‘type’. Second index holds the operator which is one
-of the ‘is exactly’ and ‘isn’t’ operator. The third index of the array holds the client name or
-client type depending upon whether ‘name’ or ‘type’ is specified at the first index.
+The value for the RoleCriteriaFilters parameter is specified as arrays of three items. At the first
+index, specify the filter name, which can be either ‘name’ or ‘type’. The second index holds the
+operator, which is either `is exactly` or `is not`. The third index holds the client name or client
+type, depending on whether ‘name’ or ‘type’ is specified at the first index.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -RoleOperation add -RoleName DemoRole4 -RolePriority 53 -RoleCriteriaScope Container -RoleCriteriaDN 'ou=workingou,dc=pucit,dc=local' -RoleCriteriaOperator Or -RoleCriteriaFilters @('name', 'is exactly', 'automate arslanahmadvm'), @('type', 'is not', 'managementshell')
@@ -267,9 +274,9 @@ permissions. In this example, only Manage My Groups and Create User permissions 
 created role.
 
 :::note
-By default, all the permissions except those specified in RolePermissions parameter are denied
-to the role created through this commandlet.  
-The role permission names can be retrieved from **Get-RolePermissionNames** commandlet.
+By default, this cmdlet denies all permissions to the role it creates, except those specified in the
+RolePermissions parameter.  
+You can retrieve the role permission names with the **Get-RolePermissionNames** cmdlet.
 :::
 
 
@@ -283,8 +290,8 @@ Example 16:
 This example creates a new security role by specifying a role criterion as container, criteria
 filters and permissions.
 
-By default, all the permissions except those specified in RolePermissions parameter are granted.
-This is due to the presence of DefaultAllowPermissions. In this example, only Manage groups and
+By default, all the permissions except those specified in the RolePermissions parameter are granted.
+This is due to the presence of DefaultAllowPermissions. In this example, only the Manage groups and
 Create user permissions are denied (and the remaining ones are granted) to the created role.
 
 ```
@@ -294,7 +301,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 17:
 
-This example creates two group prefixes – dev and ment –at identity store level.
+This example creates two group prefixes (dev and ment) at the identity store level.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -PrefixOperation add -Prefixes 'dev', 'ment'
@@ -302,9 +309,9 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 18:
 
-This example tracks history of the selected actions for the AdStore9 identity store. The selected
-actions are additional owner change, expiration policy change and renewal of group. History
-retention period is also specified as last 120 days.
+This example tracks the history of the selected actions for the AdStore9 identity store. The selected
+actions are additional owner change, expiration policy change and group renewal. The history
+retention period is also set to the last 120 days.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -HistoryTrackingOption Selected_Actions -HistoryActionsOperation add -HistorySelectedActions AdditionalOwnerChange, ExpirationPolicyChange, GroupExpireRenew -HistoryRetention Last_120_Days
@@ -312,8 +319,8 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 19:
 
-This example configures file and windows logging settings for the AdStore9 identity store. File
-logging is set to Debug level and windows logging to FailureAudit.
+This example configures file and Windows logging settings for the AdStore9 identity store. File
+logging is set to Debug level and Windows logging to FailureAudit.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -FileLoggingEvent Debug -WindowsLoggingEvent FailureAudit
@@ -321,11 +328,11 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 20:
 
-This example configures out of bounds settings for the AdStore9 identity store.
+This example configures out-of-bounds settings for the AdStore9 identity store.
 
-Maximum 500 members are allowed in each group and when the threshold reaches, the members will be
-nested into child groups. The orphan groups will be deleted. Don't update the membership and alert
-if the percentage in membership exceeds by more than 65% and either the current or new membership
+Each group allows a maximum of 500 members, and when the threshold is reached, the members are
+nested into child groups. The orphan groups are deleted. Don't update the membership, and send an
+alert, if the change in membership exceeds 65% and either the current or new membership
 exceeds 200 members.
 
 ```
@@ -334,11 +341,11 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 21:
 
-This example configures profile validation settings. This example specifies that profile validation
-policies should be applied on group specified by distinguished name
-‘CN=ProfileValidation1,OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local’. Regular profiles should be
-validated within 60 days. New profiles should also be validated within 15 days. Validation extension
-period should be 7 days.
+This example configures profile validation settings. It applies profile validation policies to the
+group specified by the distinguished name
+‘CN=ProfileValidation1,OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local’. Regular profiles must be
+validated within 60 days. New profiles must be validated within 15 days. The validation extension
+period is 7 days.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -ProfileValidationGroupDN 'CN=ProfileValidation1,OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -RegularProfileValidationLifecycle 60 -EnableNewProfileValidationLifecycle -NewProfileValidationLifecycle 15 -ProfileValidationExtensionPeriod 7
@@ -346,10 +353,10 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 22:
 
-This example configures profile validation settings. This example cmdlet adds two profile validation
-reminders. It also causes an attribute named ‘info’ to be updated with value ‘Validation expired’
-when the profile validation is expired. It also causes the validation date to be removed after 5
-days (after which the policies for new users are applied to the users).
+This example configures profile validation settings. It adds two profile validation reminders. It
+also updates an attribute named ‘info’ with the value ‘Validation expired’ when the profile
+validation expires. It also removes the validation date after 5 days (after which the policies for
+new users apply to the users).
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -ProfileValidationReminderOperation add -ProfileValidationReminders @('fourth', 45), @('fifth', 60) -EnableAttributeUpdation -ProfileValidationAttributeName info -ProfileValidationAttributeValue 'Validation expired' -EnableValidationDateRemoval -ValidationDateRemovalInterval 5
@@ -367,13 +374,13 @@ Example 24:
 
 This example configures password options.
 
-This example enforces the following password policy: Don't allow passwords starting with either
-‘password123R’ or containing ‘123R’ and allow only those passwords matching
+This example enforces the following password policy: Don't allow passwords starting with
+‘password123R’ or containing ‘123R’, and allow only passwords matching
 '^(?=.\*[a-z])(?=.\*[A-Z])(?=.\*\d)(?=.\*[^\da-zA-Z]).{8,15}$' regular expression pattern.
 
-‘PPasswordExceptions’ parameter accepts 2-Length arrays having at first index the operator and at
-second index the string. Allowed operators contain: ‘equals’; ‘startswith’; ‘endswith’; ‘contains’;
-and ‘regexp’.
+The ‘PasswordExceptions’ parameter accepts arrays of two items: the operator at the first index and
+the string at the second index. Allowed operators are ‘equals’, ‘startswith’, ‘endswith’,
+‘contains’ and ‘regexp’.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -PasswordExceptionOperation add -PasswordExceptions @('startswith', 'password123R'), @('contains', '123R') -PasswordRuleOperation add -PasswordRules '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$'
@@ -381,7 +388,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 Example 25:
 
-This example configures the second way authentication via security questions.
+This example configures second-way authentication via security questions.
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -EnableSWAuthenticationViaSecurityQuestions -SWAQuestionsOperation add -SWAQuestions @('when was the first time you felt that it is raining even though it was not raining?', 'info')

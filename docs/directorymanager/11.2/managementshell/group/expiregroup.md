@@ -1,16 +1,20 @@
 ---
 title: "Expire-Group"
-description: "Expire-Group"
+description: "Temporarily expire a group in the identity store with the Expire-Group cmdlet, which stops all notifications to the expired group."
+keywords:
+  - Expire-Group
+  - expire group
+  - group expiry
+  - Directory Manager PowerShell
 sidebar_position: 20
 ---
 
 # Expire-Group
 
-The Expire-Group commandlet expires a group temporarily. All notifications to the expired group will
-be stopped.
+The Expire-Group commandlet expires a group temporarily. The commandlet stops all notifications to the expired group.
 
-You can view events related to this commandlet in Directory Manager portal, against the History node
-in the left panel.
+You can view events related to this commandlet in the Directory Manager portal, under the History node
+in the left pane.
 
 ## Syntax
 

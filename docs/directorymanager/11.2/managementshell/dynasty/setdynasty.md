@@ -1,14 +1,20 @@
 ---
-title: "Set-Dynasty"
-description: "Set-Dynasty"
+title: "Set-Dynasty Cmdlet in Directory Manager"
+description: "Modify a Dynasty or its child groups with the Set-Dynasty cmdlet, including syntax, required parameters, and examples."
+keywords:
+  - Set-Dynasty
+  - Dynasty
+  - Management Shell
+  - PowerShell cmdlet
+  - group-by attributes
 sidebar_position: 20
 ---
 
-# Set-Dynasty
+# Set-Dynasty Cmdlet in Directory Manager
 
-The Set-Dynasty commandlet lets you to modify a Dynasty or its children in Directory.
+The Set-Dynasty cmdlet lets you modify a Dynasty or its children in the directory.
 
-Directory Manager maintains a history for this commandlet, which you can view against the History
+Directory Manager maintains a history for this cmdlet, which you can view against the History
 node in the left panel.
 
 ## Syntax
@@ -134,7 +140,7 @@ NeverInheritSelectedAttributes}]
 Example 1:
 
 The following command modifies the Departmental Dynasty by changing the Group-by attributes list
-using the credentials of current user logged-on to the identity store.
+using the credentials of the current user signed in to the identity store.
 
 ```
 Set-Dynasty -Identity "CN=DepartmentalOU=Recruiting,DC=HR,DC=Imanami,DC=US" -GroupBy "Department","Company","Title"
@@ -146,7 +152,7 @@ The command below modifies the Top Manager of a Managerial Dynasty, changes the 
 display name templates for the Dynasty children, sets the scope to search Dynasty children in the
 containers specified in the Add parameter excluding sub-containers using the credentials set in the
 $Credentials environment variable. See the
-[Set the $Credentials Environment Variable](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic for setting
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic for setting
 credentials in an environment variable.
 
 ```
@@ -172,7 +178,7 @@ Set-Dynasty -Identity "CN=Organizational,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -
 
 Example 5:
 
-The following command modifies additional owners, Includes, and Excludes lists and replaces Search
+The following command modifies additional owners, Includes, and Excludes lists and replaces the Search
 Scope of a Managerial Dynasty.
 
 ```

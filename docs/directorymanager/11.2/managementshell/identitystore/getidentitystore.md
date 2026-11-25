@@ -1,17 +1,23 @@
 ---
-title: "Get-IdentityStore"
-description: "Get-IdentityStore"
+title: "Get-IdentityStore Cmdlet in Directory Manager"
+description: "Get details about one or more Directory Manager identity stores, filtered by name, connection, or enabled state, with the Get-IdentityStore cmdlet."
+keywords:
+  - Get-IdentityStore
+  - identity store information
+  - connected identity store
+  - Management Shell
+  - PowerShell cmdlet
 sidebar_position: 60
 ---
 
-# Get-IdentityStore
+# Get-IdentityStore Cmdlet in Directory Manager
 
-The commandlet Get-IdentityStore retrieves information about the specified identity store or
-retrieves information of identity stores as per the given switches such as _All_, _Connected_,
+The Get-IdentityStore cmdlet retrieves information about the specified identity store or
+about identity stores that match the given switches, such as _All_, _Connected_,
 _Enabled_, or _Disabled_.
 
-The information includes identity store name, description, connection string, notification status,
-roles in identity store, and so on.
+The information includes the identity store name, description, connection string, notification
+status, roles in the identity store, and so on.
 
 ## Syntax
 
@@ -91,7 +97,7 @@ Get-IdentityStore
 
 Example 1:
 
-This example retrieves information of AdStore1 identity store.
+This example retrieves information about the AdStore1 identity store.
 
 ```
 Get-IdentityStore -IdentityStoreName AdStore1
@@ -99,7 +105,7 @@ Get-IdentityStore -IdentityStoreName AdStore1
 
 Example 2:
 
-This example retrieves information of two identity stores – AdStore1 and AdStore2 – through the
+This example retrieves information about two identity stores (AdStore1 and AdStore2) through the
 pipeline operator.
 
 ```
@@ -108,7 +114,7 @@ pipeline operator.
 
 Example 3:
 
-This example retrieves information of all identity stores available on the Directory Manager
+This example retrieves information about all identity stores available on the Directory Manager
 machine.
 
 ```
@@ -117,7 +123,7 @@ Get-IdentityStore -All
 
 Example 4:
 
-This example retrieves information of identity store connected to the current instance of the
+This example retrieves information about the identity store connected to the current instance of the
 Directory Manager Management Shell.
 
 ```
@@ -126,7 +132,7 @@ Get-IdentityStore -Connected
 
 Example 5:
 
-This example displays information of all enabled identity stores.
+This example displays information about all enabled identity stores.
 
 ```
 Get-IdentityStore -Enabled
@@ -134,7 +140,7 @@ Get-IdentityStore -Enabled
 
 Example 6:
 
-This example is for getting information of all disabled identity stores.
+This example gets information about all disabled identity stores.
 
 ```
 Get-IdentityStore -Disabled
