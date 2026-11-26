@@ -26,6 +26,14 @@ Enable-DistributionGroup
 [<CommonParameters>]
 ```
 
+**Identity** accepts the distinguished name, GUID, SID, name, or sAMAccountName of the group. You can also pipe the value to the cmdlet.
+
+The cmdlet returns one of the following messages:
+
+- `<name> Enabled Successfully`
+- `<name> Group Cannot Be Enabled`, followed by a line that gives the reason
+- `Not a Valid Group`, if the cmdlet can't find the group
+
 ## Required parameter
 
 - Identity

@@ -23,14 +23,15 @@ Get-SmartGroup
 [-TopLevelOnly <bool>]
 [-GroupIDVersion <string>]
 [-SearchContainer <string[]>]
-[-SearchContainersScopeList <string>]
+[-SearchContainersScopeList <string[]>]
 [-ShouldReturnCollection]
 [-MaxItemsToDisplay <int>]
-[-ObjectType <string[]>]
 [-LdapFilter <string>]
 [-SmartFilter <string>]
-[-ServerFilter <string>]
 [-AttributesToLoad <string[]>]
+[-ExportMultiValued]
+[-ExportSeperator <string>]
+[-Resolved]
 [-IdentityStoreId <int>]
 [-SecurityToken <CustomClaimsPrincipal>]
 [-Credential <pscredential>]
@@ -41,6 +42,11 @@ Get-SmartGroup
 
 None.
 
+## Parameter notes
+
+- `-SmartGroupType` accepts `SmartGroup`, `SmartDynasty`, or `PasswordExpirySmartGroup`. If you omit `-SmartGroupType`, the cmdlet retrieves Smart Groups, Dynasties, and Password Expiry groups.
+- `-TopLevelOnly` takes `$true` or `$false`. Use it with `-SmartGroupType SmartDynasty`. Specify `$true` to retrieve only top-level Dynasties.
+
 ## Examples
 
 ### Example 1
@@ -48,14 +54,14 @@ None.
 This command retrieves only Smart Groups, not Dynasties. It searches the base container in the **SearchContainer** parameter and its sub-containers. It uses the credentials of the current user logged on to the identity store.
 
 ```
-Get-SmartGroup -SmartGroupType "SmartGroup" -SearchContainer "OU=Recuriting,DC=HR,DC=Imanami,DC=US"
+Get-SmartGroup -SmartGroupType "SmartGroup" -SearchContainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US"
 ```
 
 ### Example 2
 
-This command retrieves both Smart Groups and Dynasties whose display names start with S. It searches the containers in the **SearchContainer** parameter, including the sub-containers of the first base container and excluding those of the second. It uses the credentials in the **$Credentials** environment variable.
+This command retrieves both Smart Groups and Dynasties whose display names start with S. It searches the containers in the **SearchContainer** parameter, including the sub-containers of the first base container and excluding those of the second. It uses the credentials in the **$Credentials** environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter.
 
 ```
-Get-SmartGroup -SearchContainer "OU=Recuriting,DC=HR,DC=Imanami,DC=US","OU=OutSourcing,DC=HR,DC=Imanami,DC=US" -SearchContainersScopeList "2","1" -LdapFilter "(DisplayName = S*)" -Credential $Cred
+Get-SmartGroup -SearchContainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US","OU=OutSourcing,DC=HR,DC=Imanami,DC=US" -SearchContainersScopeList "2","1" -LdapFilter "(DisplayName=S*)" -IdentityStoreId 2 -Credential $Credentials
 
 ```

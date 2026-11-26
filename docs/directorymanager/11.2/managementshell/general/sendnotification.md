@@ -15,17 +15,12 @@ sidebar_position: 110
 Use the Send-Notification cmdlet to send notifications to a group or a user. Directory Manager
 modules automatically generate email notifications when events occur, such as group expiry, job
 execution, and workflow request generation. The modules use template files to generate the contents
-of the notification emails. The template files are in this location:
+of the notification emails.
 
-```
-X:\Program Files\Imanami\GroupID 8.0\Automate\Templates\Notifications
-```
-
-X is the drive that holds the Directory Manager installation directory.
-
-The **Send-Notification** cmdlet requires a template file to generate an email notification. Use
-one of the available templates or create your own. The cmdlet also requires an **SMTP server** and a
-**From** email address. Configure both with the **Set-Options** cmdlet.
+The **Send-Notification** cmdlet requires a template file to generate an email notification. Specify
+the path of the file in the TemplateFile parameter. The identity store also needs an **SMTP server**,
+an SMTP port, and a **From** email address. Configure these settings with the **Set-Options**
+cmdlet.
 
 ## Syntax
 
@@ -56,9 +51,8 @@ expiry notification to UserA. They use the credentials of the user signed in to 
 
 ```
 Set-Options -SmtpServer "HR.Imanami.US"
-Set-Options -FromAddress "Administrator@HR.Imanami.US"
-Send-Notification -Identity "CN=UserA,CN=Users,DC=HR,DC=Imanami,DC=US" -Subject "Expiry Notification" -TemplateFile "C:\Program Files\Imanami\GroupID 
-8.0\Automate\Templates\Notifications\ExpiringTemplate.html" -QueueEmail
+Set-Options -FromEmailAddress "Administrator@HR.Imanami.US"
+Send-Notification -Identity "CN=UserA,CN=Users,DC=HR,DC=Imanami,DC=US" -Subject "Expiry Notification" -TemplateFile "C:\Templates\ExpiringTemplate.html" -QueueEmail
 
 ```
 
@@ -66,8 +60,11 @@ Send-Notification -Identity "CN=UserA,CN=Users,DC=HR,DC=Imanami,DC=US" -Subject 
 
 The following command sends a notification to the New Arrivals group. It uses a custom template with
 an inline image and the credentials of the user set in the $Credentials environment variable. For
-how to set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic.
+how to set credentials in an environment variable, see the
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md)
+topic. To run the command as another user, use the Credential parameter together with the
+IdentityStoreId parameter.
 
 ```
-Send-Notification -Identity "CN=New Arrivals,CN=Users,DC=HR,DC=Imanami,DC=US" -Subject "Welcome to Imanami" -TemplateFile "C:\Welcome.html" -InlineImageFile "C:\WelcomeNote.jpg" -QueueEmail
+Send-Notification -Identity "CN=New Arrivals,CN=Users,DC=HR,DC=Imanami,DC=US" -Subject "Welcome to Imanami" -TemplateFile "C:\Welcome.html" -InlineImageFile "C:\WelcomeNote.jpg" -QueueEmail -IdentityStoreId 2 -Credential $Credentials
 ```

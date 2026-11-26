@@ -18,7 +18,7 @@ Use this cmdlet to retrieve the members of a group from the directory. You can f
 ```
 Get-GroupMember
 [-Identity] <string>
-[[-LdapFilter] <string>]
+[-LdapFilter <string>]
 [-AttributesToLoad <string[]>]
 [-IdentityStoreId <int>]
 [-SecurityToken <CustomClaimsPrincipal>]
@@ -28,16 +28,16 @@ Get-GroupMember
 
 ## Required parameter
 
-- None
+- Identity
 
 ## Examples
 
 ### Retrieve all members of a group
 
-This command retrieves all members of the Password_Expiry group. It uses the credentials set in the `$Credentials` environment variable. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic.
+This command retrieves all members of the Password_Expiry group. It runs against the identity store with ID 2 and uses the credentials set in the `$Credentials` environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md) topic.
 
 ```
-Get-GroupMember -Identity "CN=Password_Expiry,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Credential $Cred
+Get-GroupMember -Identity "CN=Password_Expiry,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IdentityStoreId 2 -Credential $Credentials
 ```
 
 ### Filter members with an LDAP filter

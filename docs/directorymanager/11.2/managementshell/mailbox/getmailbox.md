@@ -19,13 +19,12 @@ Use the Get-Mailbox cmdlet to retrieve basic information about mailboxes that ma
 Get-MailBox
 [[-Identity] <string[]>]
 [-SearchContainer <string[]>]
-[-SearchContainersScopeList <string>]
+[-SearchContainersScopeList <string[]>]
 [-MailBoxStore <string>]
 [-ShouldReturnCollection]
+[-Resolved]
 [-MaxItemsToDisplay <int>]
-[-ObjectType <string[]>]
 [-LdapFilter <string>]
-[-SmartFilter <string>]
 [-ServerFilter <string>]
 [-AttributesToLoad <string[]>]
 [-IdentityStoreId <int>]
@@ -33,6 +32,12 @@ Get-MailBox
 [-Credential <pscredential>]
 [<CommonParameters>]
 ```
+
+**Identity** accepts the name, logon name (sAMAccountName), domain and logon name (`DOMAIN\name`), distinguished name, GUID, or SID of the mailbox user.
+
+For **SearchContainersScopeList**, enter one value to apply to all **SearchContainer** values, or one value for each container in the same order. Enter `1` to search only that container, or `2` to also search its sub-containers. The default is `2`.
+
+For **MailBoxStore**, enter the distinguished name of the mailbox database, which is the user's `homeMDB` value.
 
 ## Required parameters
 

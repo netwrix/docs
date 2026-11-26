@@ -12,7 +12,7 @@ sidebar_position: 30
 
 # Reinstate-User Cmdlet for Directory Manager
 
-Use the Reinstate-User cmdlet to activate or disable a user. Users can be disabled for these reasons:
+Use the Reinstate-User cmdlet to reinstate (re-enable) a disabled user. Users can be disabled for these reasons:
 
 - They were disabled for not validating their profiles within the required period.
 - Their managers terminated or disabled them.

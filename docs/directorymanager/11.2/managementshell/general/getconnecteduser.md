@@ -1,6 +1,6 @@
 ---
 title: "Get-ConnectedUser Cmdlet"
-description: "Display the logon name, lock status, identity store, roles, and ObjectGuid of the user connected to Management Shell."
+description: "Show the display name, lock status, identity store, roles, and ObjectGuid of the user connected to Management Shell."
 keywords:
   - Get-ConnectedUser
   - connected user
@@ -17,14 +17,6 @@ Use the Get-ConnectedUser cmdlet to retrieve general information about the user 
 
 ```
 Get-ConnectedUser
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
-[-Credential <PSCredential>]
-[-WarningAction <ActionPreference>]
-[-InformationAction <ActionPreference>]
-[-WarningVariable <String>]
-[-InformationVariable <String>]
-[-PipelineVariable <String>]
 [<CommonParameters>]
 ```
 
@@ -36,7 +28,7 @@ Get-ConnectedUser
 
 This command displays these details about the connected user:
 
-- Logon name
+- Display name
 - Account locked information
 - Identity store name
 - Role names

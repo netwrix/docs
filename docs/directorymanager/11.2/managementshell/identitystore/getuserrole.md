@@ -14,7 +14,7 @@ sidebar_position: 120
 
 Use the Get-UserRole cmdlet to display the role of a user in an identity store.
 
-A user can have different roles in different Directory Manager clients of an identity store. If you don't specify the ClientName parameter, this cmdlet displays the highest-priority role of the user. If you don't specify the identity store name, it uses the connected identity store.
+A user can have different roles in different Directory Manager clients of an identity store. Unless you specify the All parameter, this cmdlet displays only the user's highest-priority role. The ClientName parameter limits the roles to those for that client. If you don't specify the identity store name, it uses the connected identity store.
 
 ## Syntax
 

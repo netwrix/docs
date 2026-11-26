@@ -1,6 +1,6 @@
 ---
 title: "Invoke-Schedule Cmdlet in Directory Manager"
-description: "Use the Invoke-Schedule cmdlet to run a scheduled job immediately, by schedule name or job ID, without waiting for its trigger."
+description: "Use the Invoke-Schedule cmdlet to run a scheduled job immediately, by schedule name, without waiting for its trigger."
 keywords:
   - Invoke-Schedule
   - run scheduled job
@@ -17,11 +17,8 @@ The Invoke-Schedule cmdlet runs the specified scheduled job.
 
 ```
 Invoke-Schedule
-[-ScheduleName <String>]
-[-JobId <Int32>]
-[-PassThru]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
+-ScheduleName <String>
+[-Credentials <PSCredential>]
 [-WarningAction <ActionPreference>]
 [-InformationAction <ActionPreference>]
 [-WarningVariable <String>]
@@ -32,13 +29,13 @@ Invoke-Schedule
 
 ## Required parameters
 
-None.
+- ScheduleName
 
 ## Examples
 
 ### Example 1
 
-This example runs a schedule with a name that starts with smm4\_.
+This example runs the schedule named smm4\_.
 
 ```
 Invoke-Schedule -ScheduleName smm4_

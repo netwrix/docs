@@ -19,6 +19,69 @@ You can view events related to this cmdlet in the Directory Manager portal, unde
 
 ## Syntax
 
+Use this syntax to create a Dynasty based on group-by attributes:
+
+```
+New-Dynasty
+-GroupBy <string[]>
+-SamAccountName <string>
+-Name <string>
+-OrganizationalUnit <string>
+-GroupScope <string>
+-Type <string>
+-SecurityType <string>
+[-ChildContainer <string[]>]
+[-Filters <string[]>]
+[-Separator <string[]>]
+[-ManagerialAttributes <string[]>]
+[-DynastyInheritance <bool>]
+[-SearchContainers <string[]>]
+[-SearchContainersScopeList <string[]>]
+[-ObjectTypes <string[]>]
+[-LdapFilter <string>]
+[-IncludeRecipients <string[]>]
+[-ExcludeRecipients <string[]>]
+[-Storage <string>]
+[-DataSourceId <string>]
+[-SystemDSN <string>]
+[-TableorView <string>]
+[-DataSourceUserName <string>]
+[-DataSourcePassword <string>]
+[-Server <string>]
+[-Port <int>]
+[-LDAPSearchContainer <string>]
+[-DataSourceName <string>]
+[-DataSourceConnection <string>]
+[-DataSourceQuery <string>]
+[-KeyMapDB <string>]
+[-KeyMapAD <string>]
+[-WindowsAthentication]
+[-WindowsAuthentication]
+[-IsPasswordExpiryGroup]
+[-DomainExpiration <int>]
+[-ExpirationRange <int>]
+[-IncludeDisabledUsers <string>]
+[-IncludePasswordNeverExpireUsers <string>]
+[-SendPasswordExpiryEmail <string>]
+[-Script <string>]
+[-ScriptFilePath <string>]
+[-Sun_Container <string>]
+[-GroupAlias <string>]
+[-ManagedBy <string[]>]
+[-DisplayName <string>]
+[-MailEnabled <string>]
+[-Description <string>]
+[-AdditionalOwners <string[]>]
+[-NotifyOptOutAdditionalOwners <string[]>]
+[-Members <string[]>]
+[-IdentityStoreId <int>]
+[-SecurityToken <CustomClaimsPrincipal>]
+[-Credential <pscredential>]
+[<CommonParameters>]
+```
+
+Use this syntax to create a Managerial Dynasty:
+
 ```
 New-Dynasty
 -TopManager <string>
@@ -34,7 +97,7 @@ New-Dynasty
 [-ExcludeNestedLists <string>]
 [-CreateFlatManagerialList <string>]
 [-IncludeManagerAsMember <string>]
-[-ChildPath <string>]
+[-SetManagerAsOwner <string>]
 [-DynastyInheritance <bool>]
 [-SearchContainers <string[]>]
 [-SearchContainersScopeList <string[]>]
@@ -43,12 +106,11 @@ New-Dynasty
 [-IncludeRecipients <string[]>]
 [-ExcludeRecipients <string[]>]
 [-Storage <string>]
-[-DataSourceType <string>]
+[-DataSourceId <string>]
 [-SystemDSN <string>]
 [-TableorView <string>]
 [-DataSourceUserName <string>]
 [-DataSourcePassword <string>]
-[-FilePath <string>]
 [-Server <string>]
 [-Port <int>]
 [-LDAPSearchContainer <string>]
@@ -58,11 +120,13 @@ New-Dynasty
 [-KeyMapDB <string>]
 [-KeyMapAD <string>]
 [-WindowsAthentication]
+[-WindowsAuthentication]
 [-IsPasswordExpiryGroup]
 [-DomainExpiration <int>]
 [-ExpirationRange <int>]
 [-IncludeDisabledUsers <string>]
 [-IncludePasswordNeverExpireUsers <string>]
+[-SendPasswordExpiryEmail <string>]
 [-Script <string>]
 [-ScriptFilePath <string>]
 [-Sun_Container <string>]
@@ -82,13 +146,13 @@ New-Dynasty
 
 ## Required parameters
 
-- TopManager
+- GroupBy (for a Dynasty based on group-by attributes) or TopManager (for a Managerial Dynasty)
 - SamAccountName
 - Name
 - OrganizationalUnit
 - GroupScope
 - Type
-- SecurityType
+- SecurityType (accepted values: `Private`, `Semi_Private`, and `Public`)
 
 ## Examples
 
@@ -97,15 +161,15 @@ New-Dynasty
 This command creates a new mail-enabled, universal, distribution Dynasty. It constructs the child groups for every distinct department value in the container specified by the OrganizationalUnit parameter. It uses the credentials of the current user signed in to the identity store.
 
 ```
-New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Departmental" -SamAccountName  "Departmental" -Type "Distribution" -GroupScope "Universal Group" -MailEnable True -GroupAlias "Departmental" -GroupBy  "Department"
+New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Departmental" -SamAccountName  "Departmental" -Type "Distribution" -GroupScope "Universal Group" -SecurityType "Public" -MailEnabled True -GroupAlias "Departmental" -GroupBy  "Department"
 ```
 
 ### Example 2
 
-This command creates a new mail-enabled, universal, distribution, multi-level Dynasty with the group-by attributes Country, State, and City. It uses the specified filters and separator, and the credentials set in the $Credentials environment variable. To set credentials in an environment variable, see [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md).
+This command creates a new mail-enabled, universal, distribution, multi-level Dynasty with the group-by attributes Country, State, and City. It uses the specified filters and separator, and the credentials set in the $Credentials environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials in an environment variable, see [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md).
 
 ```
-New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Geographical" -GroupAlias "Geographical" -MailEnable True -SamAccountName "Geographical" -GroupScope "Universal Group" -Type "Distribution" -GroupBy "co","st","l" -Filters "Left 3","Left 3","%GROUPBY%\*" -Separator "_","_","_" -Credential $Cred
+New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Geographical" -GroupAlias "Geographical" -MailEnabled True -SamAccountName "Geographical" -GroupScope "Universal Group" -SecurityType "Public" -Type "Distribution" -GroupBy "co","st","l" -Filters "Left 3","Left 3","%GROUPBY%\*" -Separator "_","_","_" -IdentityStoreId 2 -Credential $Credentials
 ```
 
 ### Example 3
@@ -113,5 +177,5 @@ New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Ge
 This command creates a new universal, distribution Managerial Dynasty in the container specified by the OrganizationalUnit parameter. It searches the direct reports of the top manager in the containers specified in the SearchContainers parameter, including subcontainers. It creates the child groups in the same container where the Top Manager resides.
 
 ```
-New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Managerial" -SamAccountName "Managerial" -GroupScope "Universal Group" -Type "Distribution" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US" -SearchContainersScopeList "2","2" -TopManager "CN=BrianRegan,CN=Users,DC=HR,DC=Imanami,DC=US" -ExcludeNestedLists False -ChildContainer ""
+New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Managerial" -SamAccountName "Managerial" -GroupScope "Universal Group" -SecurityType "Public" -Type "Distribution" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US" -SearchContainersScopeList "2","2" -TopManager "CN=BrianRegan,CN=Users,DC=HR,DC=Imanami,DC=US" -ExcludeNestedLists False -ChildContainer ""
 ```

@@ -19,9 +19,7 @@ Use the Get-Client cmdlet to get information about Directory Manager clients, su
 ```
 Get-Client
 [[-ClientName] <String>]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
-[-Credential <PSCredential>]
+[-LoadDeployments]
 [-WarningAction <ActionPreference>]
 [-InformationAction <ActionPreference>]
 [-WarningVariable <String>]
@@ -34,6 +32,10 @@ Get-Client
 
 - None
 
+## Parameters
+
+- **LoadDeployments**: Includes each client's deployments in the output, in the Deployments property.
+
 ## Examples
 
 ### Example 1
@@ -41,7 +43,7 @@ Get-Client
 This command retrieves information about the Admin Center client.
 
 ```
-Get-Client –ClientName ‘Admin Center’
+Get-Client -ClientName 'Admin Center'
 ```
 
 ### Example 2

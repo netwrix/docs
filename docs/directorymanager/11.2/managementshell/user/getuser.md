@@ -19,14 +19,13 @@ Use the Get-User cmdlet to retrieve basic information about users that match you
 Get-User
 [[-Identity] <string[]>]
 [-SearchContainer <string[]>]
-[-SearchContainersScopeList <string>]
+[-SearchContainersScopeList <string[]>]
 [-ShouldReturnCollection]
 [-MaxItemsToDisplay <int>]
-[-ObjectType <string[]>]
 [-LdapFilter <string>]
-[-SmartFilter <string>]
 [-ServerFilter <string>]
 [-AttributesToLoad <string[]>]
+[-Resolved]
 [-IdentityStoreId <int>]
 [-SecurityToken <CustomClaimsPrincipal>]
 [-Credential <pscredential>]
@@ -36,6 +35,12 @@ Get-User
 ## Required parameter
 
 - None
+
+## Parameter notes
+
+- `-Identity` accepts a distinguished name, GUID, SID, `sAMAccountName`, `DOMAIN\name`, or name. It doesn't support wildcards.
+- `-SearchContainersScopeList` accepts `1` to search only the container, or `2` to also search its subcontainers. The default is `2`. Specify one value to apply to all containers, or one value for each container in `-SearchContainer`.
+- The cmdlet returns up to 1,000 results by default. Use `-MaxItemsToDisplay` to change the limit.
 
 ## Example
 

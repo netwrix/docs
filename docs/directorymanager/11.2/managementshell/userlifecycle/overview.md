@@ -16,6 +16,6 @@ Use these cmdlets to perform user lifecycle tasks:
 
 - [Extend-User Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/extenduser.md) – Activates a user account for a specific number of days.
 - [Get-Status Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/getstatus.md) – Provides the status of a user as per the profile validation criteria.
-- [Reinstate-User Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/reinstateuser.md) – Activates or disables a user.
+- [Reinstate-User Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/reinstateuser.md) – Reinstates a disabled user.
 - [Terminate-DirectReports Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/terminatedirectreports.md) – Terminates direct reports of a user.
 - [Transfer-DirectReports Cmdlet](/docs/directorymanager/11.2/managementshell/userlifecycle/transferdirectreports.md) – Transfers direct reports of a user.

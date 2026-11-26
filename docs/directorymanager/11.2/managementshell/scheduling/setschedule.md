@@ -22,7 +22,7 @@ Set-Schedule
 -ScheduleName <string>
 [-NewName <string>]
 [-TargetOperation {Add | Remove}] [-Targets <string[]>]
-[-Credential <pscredential>]
+[-Credentials <pscredential>]
 [-UserName <string>]
 [-Password <string>]
 [-SetNotifications <bool>]
@@ -58,11 +58,15 @@ Set-Schedule
 
 - ScheduleName
 
+:::note
+The notification parameters (SetNotifications, Recepients, SendToOwners, and NotificationSendingCriteria) apply only to Smart Group schedules.
+:::
+
 ## Examples
 
 ### Example 1
 
-This example renames a schedule from GUS1 to GUS1-renamed.
+This example renames a schedule from GUS1 to GUS1\_renamed.
 
 ```
 Set-Schedule -ScheduleName GUS1 -NewName GUS1_renamed
@@ -73,12 +77,12 @@ Set-Schedule -ScheduleName GUS1 -NewName GUS1_renamed
 This example updates the authentication information of the GUS1 schedule.
 
 ```
-Set-Schedule -SscheduleName GUS1 -Credential $creds
+Set-Schedule -ScheduleName GUS1 -Credentials $creds
 ```
 
 ### Example 3
 
-This example removes OU targets from the smm4 schedule.
+This example removes OU targets from the smm4\_ schedule.
 
 ```
 Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local', 'OU=CustomRole,OU=WorkingOU,DC=pucit,DC=local', 'OU=CustomRole2,OU=WorkingOU,DC=pucit,DC=local'
@@ -86,7 +90,7 @@ Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'OU=ArslanAhma
 
 ### Example 4
 
-This example modifies the smm4\_ schedule by removing its targets.
+This example removes a group target and an OU target from the smm4\_ schedule.
 
 ```
 Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'CN=STest1Group,OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local', 'OU=CustomRole2,OU=WorkingOU,DC=pucit,DC=local'
@@ -94,7 +98,7 @@ Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'CN=STest1Grou
 
 ### Example 5
 
-This example clears the configured notification settings of the smm4 schedule.
+This example clears the configured notification settings of the smm4\_ schedule.
 
 ```
 Set-Schedule -ScheduleName smm4_ -SetNotifications $false
@@ -102,7 +106,7 @@ Set-Schedule -ScheduleName smm4_ -SetNotifications $false
 
 ### Example 6
 
-This example changes the notification settings of the smm4 schedule. It sends notifications to recep1@gid.com every time the job runs.
+This example changes the notification settings of the smm4\_ schedule. It sends notifications to recep1@gid.com every time the job runs.
 
 ```
 Set-Schedule -ScheduleName smm4_ -SetNotifications $true -Recepients 'recep1@gid.com' -NotificationSendingCriteria Always
@@ -110,7 +114,7 @@ Set-Schedule -ScheduleName smm4_ -SetNotifications $true -Recepients 'recep1@gid
 
 ### Example 7
 
-This example adds a monthly trigger for the smm4 schedule. The trigger repeats every 10 minutes for 1 hour on the 23rd of March, August, and September at 16:56.
+This example adds a monthly trigger for the smm4\_ schedule. The trigger repeats every 10 minutes for 1 hour on the 23rd of March, August, and September at 16:56.
 
 ```
 Set-Schedule -ScheduleName smm4_ -TriggerOperation Add -TriggerType Monthly -StartTime '16:56' -MonthDate 23 -YearMonths 'March,August,September' -Repeat -RepeatInterval 10 -RepeatDuration 60
@@ -121,5 +125,5 @@ Set-Schedule -ScheduleName smm4_ -TriggerOperation Add -TriggerType Monthly -Sta
 This example adds a monthly repeating trigger with an end date for the smm4\_ schedule. The job stops if it is still running at the end of the duration.
 
 ```
-Set-Schedule -ScheduleName smm4_ -TriggerOperation Add -TriggerType Monthly -StartTime '16:56' -MonthDate 23 -YearMonths 'March,August,September' -Repeat -RepeatInterval 10 -RepeatDuration 60 -EndDate '2020/03/29' –KillAtDurationEnd
+Set-Schedule -ScheduleName smm4_ -TriggerOperation Add -TriggerType Monthly -StartTime '16:56' -MonthDate 23 -YearMonths 'March,August,September' -Repeat -RepeatInterval 10 -RepeatDuration 60 -EndDate '2020/03/29' -KillAtDurationEnd
 ```

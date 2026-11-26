@@ -13,7 +13,7 @@ sidebar_position: 10
 
 Use this cmdlet to disable the mailing capabilities of a distribution group in the directory.
 
-Directory Manager maintains a history for this cmdlet. To view it, open the **History** tab of the object's properties dialog box in the Directory Manager Management Console.
+Directory Manager keeps a history for this cmdlet. To view it, go to the History node in the left panel of the Directory Manager portal.
 
 ## Syntax
 

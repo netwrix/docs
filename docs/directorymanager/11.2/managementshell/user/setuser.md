@@ -71,6 +71,14 @@ Set-User
 
 - Identity
 
+## Parameter notes
+
+- `-Address` sets the home postal address.
+- `-Assistant` takes the assistant's distinguished name.
+- `-Zip` and `-Business` accept digits only.
+- `-Clear` takes the names of the attributes to clear.
+- `-Replace` replaces a value of a multivalued attribute. In the list of values, specify the value to remove first, followed by the values to add. For example, `-Replace @{otherTelephone=@("555-0100","555-0199")}` removes `555-0100` and adds `555-0199`.
+
 ## Example
 
 This command changes the display name of the specified user.

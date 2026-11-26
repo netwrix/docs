@@ -40,24 +40,33 @@ Update-Group
 
 - Identity
 
+The `-SearchContainer` parameter limits where the cmdlet looks for the group that you specify in
+`-Identity`. It doesn't update other groups in the container.
+
+The cmdlet starts the update and returns without waiting for it to finish. Membership changes appear
+shortly afterward. If updates are disabled for the group, the cmdlet reports that the update isn't
+enabled. If it doesn't find a matching Smart Group or Dynasty, it reports that it found no objects
+to update.
+
 ## Examples
 
 ### Example 1
 
-This command updates all Directory Manager groups in the container that the "SearchContainer"
-parameter specifies. It uses the credentials of the locally logged-on user.
+This command updates the Smart Group Smart_Training. It uses the credentials of the locally
+logged-on user.
 
 ```
-Update-Group -SearchContainer “OU=Sales,DC=Contoso,DC=com”
+Update-Group -Identity "CN=Smart_Training,OU=Sales,DC=Contoso,DC=com"
 ```
 
 ### Example 2
 
-This command updates all Smart Groups and Dynasties in the container Training. It uses the
-credentials set in the $Credentials environment variable. To set credentials in an environment
-variable, see
+This command looks for the Smart Group Smart_Training in the Training container and updates it. It
+uses the credentials set in the $Credentials environment variable. To run the command as another
+user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials
+in an environment variable, see
 [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.2/managementshell/setthecredential.md).
 
 ```
-Update-Group -SearchContainer "OU=Training,DC=HR,DC=Imanami,DC=US" -Credential $Cred
+Update-Group -Identity "CN=Smart_Training,OU=Training,DC=HR,DC=Imanami,DC=US" -SearchContainer "OU=Training,DC=HR,DC=Imanami,DC=US" -IdentityStoreId 2 -Credential $Credentials
 ```

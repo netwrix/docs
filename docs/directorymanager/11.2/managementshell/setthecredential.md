@@ -42,8 +42,8 @@ $Credentials = new-object System.Management.Automation.PsCredential "Sales.Imana
 
 ### Example 3
 
-This command shows how to use the **$Credentials** environment variable with cmdlets.
+This command shows how to use the **$Credentials** environment variable with cmdlets. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter.
 
 ```
-New-Container -ParentContainer "DC=HR,DC=Imanami,DC=US" -Name "Recruiting" -Credential $Cred
+New-Container -OrganizationalUnit "DC=HR,DC=Imanami,DC=US" -ContainerName "Recruiting" -IdentityStoreId 2 -Credential $Credentials
 ```

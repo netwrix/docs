@@ -50,7 +50,7 @@ parameter and the OU in the _SearchContainer_ parameter.
 This command upgrades groups from the _Jobs_ container of the identity store with ID 2.
 
 ```
-Upgrade-Group -IdentityStoreId "2" SearchContainer "OU=Jobs,DC=Demo1,DC=com" 
+Upgrade-Group -IdentityStoreId "2" -SearchContainer "OU=Jobs,DC=Demo1,DC=com" 
 ```
 
 ### Example 2
@@ -64,7 +64,7 @@ _SearchContainerScopeList_ parameter, this cmdlet upgrades Dynasties from the pa
 OUs.
 
 ```
-Upgrade-Group -SearchContainerScopeList "1" -SearchContainer "GIDsmart1""OU=Jobs,DC=Demo1,DC=com" GroupType "3"
+Upgrade-Group -SearchContainerScopeList "1" -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -GroupType "3"
 ```
 
 :::note

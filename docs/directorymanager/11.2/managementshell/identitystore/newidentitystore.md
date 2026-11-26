@@ -14,14 +14,14 @@ sidebar_position: 130
 
 Use the New-IdentityStore cmdlet to create a new identity store. The cmdlet requires valid credentials and connectivity before it creates the store. To override this behavior, specify the IgnoreConnectionFail parameter.
 
-This cmdlet uses dynamic parameters based on the value of the _IdentityStoreType_ parameter. The following parameters become available for each value of _IdentityStoreType_.
+The value of the _IdentityStoreType_ parameter determines which of the following parameters are required.
 
 - IdentityStoreType: ActiveDirectory
   - Domain: The connection string or domain of the Active Directory.
-- IdentityStoreType: MicrosoftAzure
+- IdentityStoreType: WindowsAzure (Microsoft Entra ID)
   - Domain: The domain of the Microsoft Entra ID or Office 365 store.
-  - AppId: The name of the Directory Manager application registered in the Microsoft Entra ID admin panel.
-- IdentityStoreType: GoogleWorkspace
+  - AppId: The application ID of the Directory Manager application registered in the Microsoft Entra ID admin panel.
+- IdentityStoreType: GSuite (Google Workspace)
   - AdminUsername: The username of the administrator of the Google Workspace account.
   - P12CertificatePath: The path where the certificate file (.p12 extension) downloaded from Google Admin Console is placed (including the filename).
 
@@ -32,13 +32,31 @@ New-IdentityStore
 -IdentityStoreType <IdentityStoreType>
 -IdentityStoreName <String>
 -Credential <PSCredential>
+[-Domain <String>]
+[-AppId <String>]
+[-AdminUsername <String>]
+[-P12CertificatePath <String>]
 [-Description <String>]
-[-PassThru]
 [-IgnoreConnectionFail]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
 [-WarningAction <ActionPreference>]
-[-InformationAction ActionPreference>]
+[-InformationAction <ActionPreference>]
+[-WarningVariable <String>]
+[-InformationVariable <String>]
+[-PipelineVariable <String>]
+[<CommonParameters>]
+New-IdentityStore
+-IdentityStoreType <IdentityStoreType>
+-IdentityStoreName <String>
+-UserName <String>
+[-Password <String>]
+[-Domain <String>]
+[-AppId <String>]
+[-AdminUsername <String>]
+[-P12CertificatePath <String>]
+[-Description <String>]
+[-IgnoreConnectionFail]
+[-WarningAction <ActionPreference>]
+[-InformationAction <ActionPreference>]
 [-WarningVariable <String>]
 [-InformationVariable <String>]
 [-PipelineVariable <String>]
@@ -49,7 +67,7 @@ New-IdentityStore
 
 - IdentityStoreType
 - IdentityStoreName
-- Credential
+- Credential or UserName
 
 ## Examples
 
@@ -58,11 +76,11 @@ New-IdentityStore
 This command creates a new Active Directory-based identity store by explicitly specifying the credentials for the new identity store.
 
 ```
-New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore2 -Credential $cred -Domain pucit.local
+New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore1 -UserName administrator -Password password123 -Domain pucit.local
 ```
 
 :::note
-For an Active Directory-based identity store, the Domain parameter is mandatory.
+For an Active Directory-based identity store, the Domain parameter is mandatory. If the user name includes a domain (`DOMAIN\user` or `user@domain`), the cmdlet uses that domain as the connection string.
 :::
 
 ### Example 2
@@ -78,7 +96,7 @@ New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdSt
 This command creates a Microsoft Entra ID-based identity store.
 
 ```
-New-IdentityStore -IdentityStoreType MicrosoftAzure -IdentityStoreName DemoAzStore1 -UserName admin@mydomain.onmicrosoft.com -Password password123 -Domain mydomain.onmicrosoft.com -AppId 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'
+New-IdentityStore -IdentityStoreType WindowsAzure -IdentityStoreName DemoAzStore1 -UserName admin@mydomain.onmicrosoft.com -Password password123 -Domain mydomain.onmicrosoft.com -AppId 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'
 ```
 
 :::note
@@ -90,7 +108,7 @@ For a Microsoft Entra ID-based identity store, the Domain and AppId parameters a
 This command creates an identity store based on Google Apps (Google Workspace).
 
 ```
-New-IdentityStore -IdentityStoreType GoogleWorkspace -IdentityStoreName DemoGStore1 -UserName svcacc@myproject-111222.iam.gserviceaccount.com -AdminUsername admin@mydomain.com -P12CertificatePath 'C:\Keys\gsuite\key.p12'
+New-IdentityStore -IdentityStoreType GSuite -IdentityStoreName DemoGStore1 -UserName svcacc@myproject-111222.iam.gserviceaccount.com -AdminUsername admin@mydomain.com -P12CertificatePath 'C:\Keys\gsuite\key.p12'
 ```
 
 :::note
@@ -104,7 +122,7 @@ This command creates an identity store based on Google Apps (G-Suite) using secu
 The $creds object (of type PSCredential) must contain the service account as the username. The 'Password' property of this object can be anything except empty.
 
 ```
-New-IdentityStore -IdentityStoreType GoogleWorkspace -IdentityStoreName DemoGStore2 -Credential $creds -AdminUsername arslan@bibelotz.com -P12CertificatePath 'C:\Keys\gsuite\key.p12'
+New-IdentityStore -IdentityStoreType GSuite -IdentityStoreName DemoGStore2 -Credential $creds -AdminUsername arslan@bibelotz.com -P12CertificatePath 'C:\Keys\gsuite\key.p12'
 ```
 
 ### Example 6

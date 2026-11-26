@@ -98,7 +98,7 @@ Run this command only once on each computer that receives commands. You don't ha
 To verify that remoting is configured correctly, run a test command:
 
 ```
-new-PSSession –ComputerName <computer name>
+new-PSSession -ComputerName <computer name>
 ```
 
 This command creates a remote session on the local computer and returns an object that represents the session. The output looks like the following image.

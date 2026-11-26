@@ -19,7 +19,7 @@ Use the Set-IdentityStoreRole cmdlet to modify the properties of a security role
 ```
 Set-IdentityStoreRole
 -RoleName <string>
--IdentityStoreName <string>
+[-IdentityStoreName <string>]
 [-NewName <string>]
 [-Description <string>]
 [-Priority <int>]
@@ -37,7 +37,8 @@ Set-IdentityStoreRole
 ## Required Parameters
 
 - RoleName
-- IdentityStoreName
+
+If you omit IdentityStoreName, the cmdlet uses the connected identity store. The Priority parameter accepts values from 1 to 99.
 
 ## Examples
 

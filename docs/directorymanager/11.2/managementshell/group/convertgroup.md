@@ -34,7 +34,7 @@ Convert-Group
 [-IncludeRecipients <string[]>]
 [-ExcludeRecipients <string[]>]
 [-Storage <string>]
-[-DataSourceType <string>]
+[-DataSourceId <string>]
 [-SystemDSN <string>]
 [-TableOrView <string>]
 [-DataSourceUserName <string>]
@@ -57,7 +57,6 @@ Convert-Group
 [-SendEmail <string>]
 [-EmailTemplatePath <string>] [-Script <string>]
 [-ScriptFilePath <string>]
-[-Provider_Container <string>]
 [-PowerTools <ArrayList>]
 [-KeyMapAD <string>]
 [-KeyMapDB <string>]
@@ -86,6 +85,7 @@ Convert-Group
 [-ReportToManagerEnabled <string>]
 [-ReportToOriginatorEnabled <string>]
 [-UpdateMembershipByManagerEnabled <string>]
+[-ResetQuickFilter]
 [-Add <hashtable[]>]
 [-Remove <hashtable[]>]
 [-Replace <hashtable[]>]
@@ -130,8 +130,9 @@ Convert-Group
 ### Example
 
 The following cmdlet converts the group _Clay2_ to a Smart Group. It uses the credentials set in the
-$Cred environment variable.
+$Credentials environment variable. To run the command as another user, use the Credential parameter
+together with the IdentityStoreId parameter.
 
 ```
-Convert-Group -Identity "Clay2" -Credential $Cred
+Convert-Group -Identity "Clay2" -IdentityStoreId 2 -Credential $Credentials
 ```

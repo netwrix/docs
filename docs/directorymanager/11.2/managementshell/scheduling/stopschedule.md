@@ -1,12 +1,12 @@
 ---
 title: "Stop-Schedule Cmdlet for Directory Manager"
-description: "Stop a running schedule by name or job ID with the Stop-Schedule cmdlet."
+description: "Stop a running schedule by name with the Stop-Schedule cmdlet."
 keywords:
   - Stop-Schedule
   - Management Shell
   - stop running schedule
   - GUS jobs
-  - job ID
+  - schedule name
 sidebar_position: 70
 ---
 
@@ -18,11 +18,8 @@ The Stop-Schedule cmdlet stops a specified schedule if it is already running.
 
 ```
 Stop-Schedule
-[-ScheduleName <String>]
-[-JobId <Int32>]
-[-PassThru]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
+-ScheduleName <String>
+[-Credentials <PSCredential>]
 [-WarningAction <ActionPreference>]
 [-InformationAction <ActionPreference>]
 [-WarningVariable <String>]
@@ -47,10 +44,10 @@ Stop-Schedule -ScheduleName smm4_
 
 ### Example 2
 
-This example stops a schedule with the job type GUS.
+This example stops the schedules that have the Group Usage Service (GUS) job type.
 
 ```
-Stop-Schedule -JobType GUS | Select-Object -Property Name | Invoke-Schedule
+Get-Schedule -JobType GUS | Select-Object -Property Name | Stop-Schedule
 ```
 
 ### Example 3

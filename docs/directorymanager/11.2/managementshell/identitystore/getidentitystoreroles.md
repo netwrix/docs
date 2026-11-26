@@ -18,11 +18,7 @@ Use the Get-IdentityStoreRoles cmdlet to retrieve information about the security
 
 ```
 Get-IdentityStoreRoles
-[-IdentityStoreName] <String> [[-RoleName] <String>]
-[[-Subset] <String>]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
-[-Credential <PSCredential>]
+[[-IdentityStoreName] <String>] [[-RoleName] <String>]
 [-WarningAction <ActionPreference>]
 [-InformationAction <ActionPreference>]
 [-WarningVariable <String>]
@@ -33,7 +29,9 @@ Get-IdentityStoreRoles
 
 ## Required Parameter
 
-- IdentityStoreName
+- None
+
+If you omit IdentityStoreName, the cmdlet uses the connected identity store.
 
 ## Examples
 

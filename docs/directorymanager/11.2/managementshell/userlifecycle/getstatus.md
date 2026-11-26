@@ -19,7 +19,7 @@ validation criteria defined for the identity store.
 
 ```
 Get-Status
--Manager <string>
+-Identity <string>
 [-IdentityStoreId <int>]
 [-SecurityToken <CustomClaimsPrincipal>]
 [-Credential <pscredential>]
@@ -28,7 +28,7 @@ Get-Status
 
 ## Required parameter
 
-- Manager
+- Identity
 
 ## Example
 
@@ -37,5 +37,5 @@ user lifecycle for the connected identity store. It also returns the number of d
 the profile again.
 
 ```
-Get-Status –Manager "Richard"
+Get-Status -Identity "Richard"
 ```

@@ -38,12 +38,11 @@ New-SmartGroup
 [-IncludeRecipients <string[]>]
 [-ExcludeRecipients <string[]>]
 [-Storage <string>]
-[-DataSourceType <string>]
+[-DataSourceId <string>]
 [-SystemDSN <string>]
 [-TableorView <string>]
 [-DataSourceUserName <string>]
 [-DataSourcePassword <string>]
-[-FilePath <string>]
 [-Server <string>]
 [-Port <int>]
 [-LDAPSearchContainer <string>]
@@ -53,11 +52,13 @@ New-SmartGroup
 [-KeyMapDB <string>]
 [-KeyMapAD <string>]
 [-WindowsAthentication]
+[-WindowsAuthentication]
 [-IsPasswordExpiryGroup]
 [-DomainExpiration <int>]
 [-ExpirationRange <int>]
 [-IncludeDisabledUsers <string>]
 [-IncludePasswordNeverExpireUsers <string>]
+[-SendPasswordExpiryEmail <string>]
 [-Script <string>]
 [-ScriptFilePath <string>]
 [-Sun_Container <string>]
@@ -68,7 +69,6 @@ New-SmartGroup
 [-Description <string>]
 [-AdditionalOwners <string[]>]
 [-NotifyOptOutAdditionalOwners <string[]>]
-[-Members <string[]>]
 [-IdentityStoreId <int>]
 [-SecurityToken <CustomClaimsPrincipal>]
 [-Credential <pscredential>]
@@ -91,7 +91,7 @@ New-SmartGroup
 This command creates a mail-enabled, universal, distribution Smart Group in the container in the **OrganizationalUnit** parameter. It uses the credentials of the current user logged on to the identity store.
 
 ```
-New-SmartGroup  -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Smart_Training" -GroupAlias "Smart_Training" -MailEnable True -SamAccountName "Smart_Training" -GroupScope "Universal Group" -Type "Distribution"
+New-SmartGroup  -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Smart_Training" -GroupAlias "Smart_Training" -MailEnabled True -SamAccountName "Smart_Training" -GroupScope "Universal Group" -Type "Distribution" -SecurityType "Public"
 ```
 
 :::note
@@ -100,16 +100,16 @@ In Microsoft Exchange 2007 and later, mail-enabled groups are created with _Univ
 
 ### Example 2
 
-This command creates a universal, distribution Smart Group in the container in the **OrganizationalUnit** parameter. It builds the membership from objects in the containers in the **SearchContainers** parameter. It excludes sub-containers whose **Display Names** match the names in a text file.
+This command creates a universal, distribution Smart Group in the container in the **OrganizationalUnit** parameter. It builds the membership from users in the containers in the **SearchContainers** parameter whose department is Training. The value 1 in the **SearchContainersScopeList** parameter excludes the sub-containers of each container.
 
 ```
-New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name "Smart_Enrollment" -SamAccountName "Smart_Enrollment" -GroupScope "Universal Group" -Type "Distribution" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US" -SearchContainersScopeList "1","1" -LdapFilter "(displayName=Database.[Name])" -DataSourceType "Microsoft Text Driver (*.txt,*.csv)" -FilePath "D:\Inputs\Names.txt" -DataSourceQuery "SELECT [Name] FROM [Names.txt]"
+New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name "Smart_Enrollment" -SamAccountName "Smart_Enrollment" -GroupScope "Universal Group" -Type "Distribution" -SecurityType "Public" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US" -SearchContainersScopeList "1","1" -ObjectTypes "Users" -LdapFilter "(department=Training)"
 ```
 
 ### Example 3
 
-This command creates a local, distribution, Password Expiry group. It uses the credentials in the **$Credentials** environment variable. Users whose passwords are 20 days old or older become members of the group. Disabled users are also included in the membership.
+This command creates a local, distribution, Password Expiry group. It uses the credentials in the **$Credentials** environment variable. Users whose passwords are 20 days old or older become members of the group. Disabled users are also included in the membership. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter.
 
 ```
-New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name "Password_Expiry" -GroupAlias "Password_Expiry" -SamAccountName "Password_Expiry" -GroupScope "Domain Local" -Type "Distribution" -IsPasswordExpiryGroup -DomainExpiration 30 -ExpirationRange 10 -IncludeDisabledUsers True -Credential $Cred
+New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name "Password_Expiry" -GroupAlias "Password_Expiry" -SamAccountName "Password_Expiry" -GroupScope "Domain Local" -Type "Distribution" -SecurityType "Public" -IsPasswordExpiryGroup -DomainExpiration 30 -ExpirationRange 10 -IncludeDisabledUsers True -IdentityStoreId 2 -Credential $Credentials
 ```

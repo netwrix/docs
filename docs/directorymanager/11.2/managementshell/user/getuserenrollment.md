@@ -18,7 +18,7 @@ Use the Get-UserEnrollment cmdlet to retrieve the enrollment information of a us
 ```
 Get-UserEnrollment
 -Identity <string>
-[-EnrollmentTypes {None | Mobile | SecurityQuestions | Email | Authenticator | LinkAccount | Yubikey | WindowsHello | All | Any}]
+[-EnrollmentTypes {Nothing | None | Mobile | SecurityQuestions | Email | Authenticator | LinkAccount | PhoneID | Yubikey | WindowsHello | RSASecureID | All | Any}[]]
 [<CommonParameters>]
 ```
 
