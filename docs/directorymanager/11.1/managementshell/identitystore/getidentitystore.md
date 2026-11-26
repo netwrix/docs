@@ -21,9 +21,6 @@ The information includes the identity store name, description, connection string
 ```
 Get-IdentityStore
   -IdentityStoreName <String>
-  [-IdentityStoreId <Int32>]
-  [-SecurityToken <CustomClaimsPrincipal>]
-  [-Credential <PSCredential>]
   [-WarningAction <ActionPreference>]
   [-InformationAction <ActionPreference>]
   [-WarningVariable <String>]
@@ -35,9 +32,6 @@ Get-IdentityStore
 ```
 Get-IdentityStore
   -All
-  [-IdentityStoreId <Int32>]
-  [-SecurityToken <CustomClaimsPrincipal>]
-  [-Credential <PSCredential>]
   [-WarningAction <ActionPreference>]
   [-InformationAction <ActionPreference>]
   [-WarningVariable <String>]
@@ -49,9 +43,6 @@ Get-IdentityStore
 ```
 Get-IdentityStore
   -Connected
-  [-IdentityStoreId <Int32>]
-  [-SecurityToken <CustomClaimsPrincipal>]
-  [-Credential <PSCredential>]
   [-WarningAction <ActionPreference>]
   [-InformationAction <ActionPreference>]
   [-WarningVariable <String>]
@@ -63,9 +54,6 @@ Get-IdentityStore
 ```
 Get-IdentityStore
   -Enabled
-  [-IdentityStoreId <Int32>]
-  [-SecurityToken <CustomClaimsPrincipal>]
-  [-Credential <PSCredential>]
   [-WarningAction <ActionPreference>]
   [-InformationAction <ActionPreference>]
   [-WarningVariable <String>]
@@ -77,9 +65,6 @@ Get-IdentityStore
 ```
 Get-IdentityStore
   -Disabled
-  [-IdentityStoreId <Int32>]
-  [-SecurityToken <CustomClaimsPrincipal>]
-  [-Credential <PSCredential>]
   [-WarningAction <ActionPreference>]
   [-InformationAction <ActionPreference>]
   [-WarningVariable <String>]

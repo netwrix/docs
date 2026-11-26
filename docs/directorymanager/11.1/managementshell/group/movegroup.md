@@ -48,10 +48,11 @@ Move-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Destina
 ### Example 2
 
 The following command moves the group Training to the OffShore Recruiting organizational unit. It
-uses the credentials set in the $Credentials environment variable. To set credentials in an
-environment variable, see
+uses the credentials set in the $Credentials environment variable. To run the command as another
+user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials
+in an environment variable, see
 [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
 
 ```
-Move-Group -Identity "CN=Training,OU=Local Recruiting,DC=HR,DC=Imanami,DC=US" -DestinationContainer "OU=OffShore Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Credential $Cred
+Move-Group -Identity "CN=Training,OU=Local Recruiting,DC=HR,DC=Imanami,DC=US" -DestinationContainer "OU=OffShore Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IdentityStoreId 2 -Credential $Credentials
 ```

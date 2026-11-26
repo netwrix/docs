@@ -27,12 +27,12 @@ Restore-TombstoneObject
 
 ## Required parameter
 
-- None
+- Identity
 
 ## Example
 
-The following command restores the tombstone group Event Management, using the credentials set in the $Cred environment variable. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
+The following command restores the tombstone group Event Management, using the credentials set in the $Credentials environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
-Restore-TombStoneObject -identity "Event Management" -Credential $Cred
+Restore-TombStoneObject -identity "Event Management" -IdentityStoreId 2 -Credential $Credentials
 ```

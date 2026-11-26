@@ -12,7 +12,8 @@ sidebar_position: 60
 # Remove-Group
 
 Use the Remove-Group cmdlet to delete a group (managed or unmanaged) or Dynasty in the directory.
-Removing a parent Dynasty with this cmdlet also removes all its children.
+Removing a parent Dynasty with this cmdlet also removes all its children. The cmdlet deletes without
+asking for confirmation.
 
 You can view events related to this cmdlet in the Directory Manager portal, under the **History** node
 in the left pane.
@@ -40,16 +41,16 @@ The following command removes the Event Management group. It uses the credential
 user signed in to the identity store.
 
 ```
-Remove-Group -identity "OU=Event Management,OU=Recruiting,DC=HR,DC=Imanami,DC=US"
+Remove-Group -Identity "CN=Event Management,OU=Recruiting,DC=HR,DC=Imanami,DC=US"
 ```
 
 ### Example 2
 
-The following command first shows the changes that running the command makes (a deletion). It uses
-the credentials set in the $Credentials environment variable to perform the deletion. To set
-credentials in an environment variable, see
+The following command removes the Event Management group. It uses the credentials stored in the
+$Credentials variable. To run the command as another user, use the Credential parameter together
+with the IdentityStoreId parameter. For how to store credentials in a variable, see
 [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
 
 ```
-Remove-Group -identity "OU=Event Management,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Credential $Cred
+Remove-Group -Identity "CN=Event Management,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IdentityStoreId 2 -Credential $Credentials
 ```

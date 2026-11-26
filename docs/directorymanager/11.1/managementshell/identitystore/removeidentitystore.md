@@ -19,9 +19,6 @@ Use the Remove-IdentityStore cmdlet to remove an identity store from Directory M
 Remove-IdentityStore
 [-IdentityStoreName] <String>
 [-PassThru]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
-[-Credential <PSCredential>]
 [-WarningAction <ActionPreference>]
 [-InformationAction <ActionPreference>]
 [-WarningVariable <String>]
@@ -33,6 +30,15 @@ Remove-IdentityStore
 ## Required Parameter
 
 - IdentityStoreName
+
+## Parameters
+
+- **IdentityStoreName**: The name of the identity store to remove. The alias is StoreName.
+- **PassThru**: Returns the removed identity store.
+
+:::warning
+The cmdlet doesn't prompt for confirmation. It removes the identity store as soon as you run it.
+:::
 
 ## Examples
 

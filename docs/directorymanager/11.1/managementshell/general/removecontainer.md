@@ -11,7 +11,7 @@ sidebar_position: 90
 
 # Remove-Container Cmdlet
 
-Use the `Remove-Container` cmdlet to delete organizational units from the directory. The cmdlet only supports deletion of leaf-level containers that have no objects. If the container contains objects or sub-containers, the cmdlet doesn't process the request and throws an exception.
+Use the `Remove-Container` cmdlet to delete organizational units from the directory. The cmdlet only supports deletion of leaf-level containers that have no objects. If the container contains objects or sub-containers, the cmdlet doesn't delete it and returns a failed status with the reason.
 
 ## Syntax
 
@@ -40,8 +40,8 @@ Remove-Container -identity "OU=Miscellaneous,OU=Recruiting,DC=HR,DC=Imanami,DC=U
 
 ### Example 2
 
-The following command first shows the changes that result from executing the command. The command uses the credentials set in the $Credentials environment variable to perform the deletion. To set credentials in the environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
+The following command removes the _Miscellaneous_ container, using the credentials set in the $Credentials environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials in the environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
-Remove-Container -identity "OU=Miscellaneous,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Credential $Cred
+Remove-Container -identity "OU=Miscellaneous,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IdentityStoreId 2 -Credential $Credentials
 ```

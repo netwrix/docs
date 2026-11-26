@@ -22,15 +22,12 @@ You can filter the job list with the JobType, TriggerType, or HavingNotification
 ## Syntax
 
 ```
-Get-Schedule [-ScheduleNames <String[]>]
-[-IdentityStoreNames <String[]>]
-[-JobTypes <JobType[]>]
-[-TriggerTypes <TriggerType[]>]
+Get-Schedule [-ScheduleName <String>]
+[-JobType <JobType>]
+[-TriggerType <TriggerType>]
 [-HavingNotifications <Boolean>]
-[-MatchingCriteria <JoiningOperator>]
-[-PreventEnumeration]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
+[-MatchingCriteria {Or | And}]
+[-Credentials <PSCredential>]
 [-WarningAction <ActionPreference>]
 [-InformationAction <ActionPreference>]
 [-WarningVariable <String>]

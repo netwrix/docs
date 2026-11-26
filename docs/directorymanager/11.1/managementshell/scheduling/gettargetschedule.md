@@ -18,10 +18,8 @@ Use the Get-TargetSchedules cmdlet to retrieve the scheduled jobs of the given t
 
 ```
 Get-TargetSchedules
-[-DistinguishedName] <String>
-[-Enumerate]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
+[-Identity] <String>
+[-Credentials <PSCredential>]
 [-WarningAction <ActionPreference>]
 [-InformationAction <ActionPreference>]
 [-WarningVariable <String>]
@@ -32,7 +30,11 @@ Get-TargetSchedules
 
 ## Required Parameter
 
-- DistinguishedName
+- Identity
+
+:::note
+The results also contain the jobs that are set to include all containers.
+:::
 
 ## Examples
 
@@ -42,7 +44,7 @@ This example retrieves the schedules operating on an OU with the distinguished n
 OU=WorkingOU,DC=pucit,DC=local.
 
 ```
-Get-TargetSchedules -DistinguishedName ‘OU=WorkingOU,DC=pucit,DC=local’
+Get-TargetSchedules -Identity 'OU=WorkingOU,DC=pucit,DC=local'
 ```
 
 ### Example 2: Get the schedules on a group and an OU

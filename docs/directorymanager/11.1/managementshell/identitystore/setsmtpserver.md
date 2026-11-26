@@ -12,7 +12,7 @@ sidebar_position: 200
 
 # Set-SmtpServer Cmdlet in Directory Manager
 
-The Set-SmtpServer cmdlet configures an SMTP server for an identity store.
+The Set-SmtpServer cmdlet configures an SMTP server for an identity store. The cmdlet first sends a test email from the FromEmail address to the ToEmail address, and saves the settings only if the email is sent successfully.
 
 ## Syntax
 
@@ -26,7 +26,7 @@ Set-SmtpServer
 [-Credential <pscredential>]
 [-UseSmptUserAuthentication]
 [-SslEnabled]
-<CommonParameters>]
+[<CommonParameters>]
 ```
 
 ## Required parameters
@@ -36,6 +36,8 @@ Set-SmtpServer
 - FromEmail
 - ToEmail
 - Port
+
+If you specify the UseSmptUserAuthentication parameter, you must also specify the Credential parameter.
 
 ## Example 1
 

@@ -21,13 +21,14 @@ The `Get-TombStoneObject` cmdlet lets you view the information of these tombston
 Get-TombstoneObject
 [[-Identity] <string[]>]
 [-SearchContainer <string[]>]
-[-SearchContainersScopeList <string>]
+[-SearchContainersScopeList <string[]>]
 [-ShouldReturnCollection]
 [-MaxItemsToDisplay <int>]
-[-ObjectType <string[]>]
 [-LdapFilter <string>]
-[-SmartFilter <string>]
 [-ServerFilter <string>]
+[-ExportMultiValued]
+[-ExportSeperator <string>]
+[-Resolved]
 [-AttributesToLoad <string[]>]
 [-IdentityStoreId <int>]
 [-SecurityToken <CustomClaimsPrincipal>]
@@ -51,16 +52,16 @@ Get-TombStoneObject
 
 ### Example 2
 
-The following command retrieves the tombstone group _Event Management_, using the credentials set in the $Credentials environment variable. For information about setting credentials, see Appendix A.
+The following command retrieves the tombstone group _Event Management_, using the credentials set in the $Credentials environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
-Get-TombStoneObject -identity "Event Management" -Credential $Cred
+Get-TombStoneObject -identity "Event Management" -IdentityStoreId 2 -Credential $Credentials
 ```
 
 ### Example 3
 
-The following command retrieves all tombstone objects with display names starting with the letter S.
+The following command retrieves all tombstone objects whose common names start with the letter S.
 
 ```
-Get-TombStoneObject -LdapFilter "(CN = S*)"
+Get-TombStoneObject -LdapFilter "(cn=S*)"
 ```

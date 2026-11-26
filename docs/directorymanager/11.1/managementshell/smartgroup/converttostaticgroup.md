@@ -18,7 +18,6 @@ The ConvertTo-StaticGroup cmdlet converts an existing Smart Group or Dynasty to 
 
 ```
 ConvertTo-StaticGroup
--IdentityStoreName <string>
 [-GroupName <string[]>]
 [-SearchContainers <string[]>]
 [<CommonParameters>]
@@ -26,14 +25,20 @@ ConvertTo-StaticGroup
 
 ## Required parameter
 
-- IdentityStoreName
+None. However, you must specify `-GroupName`, `-SearchContainers`, or both. The cmdlet acts on the connected identity store.
+
+:::warning
+If you specify only `-SearchContainers`, the cmdlet converts every Smart Group, Dynasty, and Password Expiry group in those containers without asking for confirmation.
+:::
+
+The cmdlet reports each group it converts and the total number of converted groups.
 
 ## Examples
 
 ### Example 1
 
-This cmdlet converts the Smart Group Smart_Training in the AdStore9 identity store to a static group.
+This cmdlet converts the Smart Group Smart_Training in the connected identity store to a static group.
 
 ```
-ConvertTo-StaticGroup -IdentityStoreName AdStore9 -GroupName "Smart_Training" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US"
+ConvertTo-StaticGroup -GroupName "Smart_Training" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US"
 ```

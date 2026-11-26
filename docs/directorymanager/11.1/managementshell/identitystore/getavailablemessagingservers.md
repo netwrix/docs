@@ -18,23 +18,38 @@ Use the Get-AvailableMessagingServers cmdlet to retrieve the messaging servers a
 
 ```
 Get-AvailableMessagingServers
--IdentityStoreName <string>
--Provider {o365 | gsuite | exchange2013 | exchange2016 | exchange2019}
+[-IdentityStoreName <string>]
+-Provider {o365 | gsuite | exchange2010 | exchange2013 | exchange2016 | exchange2019 | builtin}
 -UserName <string>
 [-Password <string>]
-<CommonParameters>]
+[<CommonParameters>]
 Get-AvailableMessagingServers
--IdentityStoreName <string>
--Provider {o365 | gsuite | exchange2013 | exchange2016 | exchange2019}
+[-IdentityStoreName <string>]
+-Provider {o365 | gsuite | exchange2010 | exchange2013 | exchange2016 | exchange2019 | builtin}
 -Credential <pscredential>
 [<CommonParameters>]
 ```
 
 ## Required Parameters
 
-- IdentityStoreName
 - Provider
-- Credential
+- UserName or Credential
+- The provider-specific parameters for the selected provider
+
+If you omit IdentityStoreName, the cmdlet uses the connected identity store.
+
+## Provider-specific parameters
+
+The following parameters become available, and are mandatory, based on the value of the Provider parameter. The `builtin` provider has no provider-specific parameters.
+
+- Provider: o365
+  - Domain
+  - AppId
+- Provider: exchange2010, exchange2013, exchange2016, or exchange2019
+  - Domain
+- Provider: gsuite
+  - AdminUsername
+  - P12CertificatePath
 
 ## Examples
 

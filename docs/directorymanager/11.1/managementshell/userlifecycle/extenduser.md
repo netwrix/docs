@@ -19,7 +19,7 @@ of days.
 
 ```
 Extend-User
--Identity <string[]>
+-Identity <string>
 [-IdentityStoreId <Int32>]
 [-SecurityToken <CustomClaimsPrincipal>]
 [-Credential <PSCredential>]

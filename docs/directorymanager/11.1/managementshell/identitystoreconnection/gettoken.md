@@ -33,11 +33,22 @@ Get-Token
 
 - None
 
+## Parameters
+
+- **AuthenticationMode**: How the cmdlet authenticates you. If you omit it, the cmdlet uses `Web`.
+  - `Integrated` or `1`: Returns the token of the current session.
+  - `Credential` or `2`: Authenticates with the IdentityStoreId and Credential parameters, which are both required in this mode.
+  - `Web` or `3`: Uses interactive web sign-in.
+
+## Output
+
+The cmdlet returns the bearer token as a string.
+
 ## Example
 
-This command returns a token for the identity store specified by the **IdentityStoreId** parameter. It uses the specified authentication mode and the credentials you set in the **$Credentials** environment variable. For information about setting credentials in an environment variable, see
+This command returns a token for the identity store specified by the **IdentityStoreId** parameter. It uses the specified authentication mode and the credentials you set in the **$Credentials** variable. For information about setting this variable, see
 [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
 
 ```
-Get-Token -AuthenticationMode 2 -IdentityStoreId 2 -Credential $Cred
+Get-Token -AuthenticationMode 2 -IdentityStoreId 2 -Credential $Credentials
 ```

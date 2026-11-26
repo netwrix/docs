@@ -25,7 +25,11 @@ the Get-SchemaAttributes cmdlet to retrieve a list of attributes available for a
 ```
 Set-IdentityStore
 -IdentityStoreName <string>
--Credential <pscredential>
+{-Credential <pscredential> | -UserName <string> [-Password <string>]}
+[-Domain <string>]
+[-AppId <string>]
+[-AdminUsername <string>]
+[-P12CertificatePath <string>]
 [-NewName <string>]
 [-StoreDescription <string>]
 [-StoreEnabled <bool>]
@@ -112,7 +116,7 @@ Set-IdentityStore
 [-EnableSWAuthenticationViaMobile]
 [-DisableSWAuthenticationViaMobile]
 [-SWAMobileAttribute <string>]
-[- EnableSWAuthetnicationViaEmail]
+[-EnableSWAuthetnicationViaEmail]
 [-DisableSWAuthenticationViaEmail]
 [-SWEmailAttribute <string>]
 [-SWAuthenticationFactor <string>]
@@ -128,7 +132,15 @@ text isn't secure.
 ## Required Parameters
 
 - IdentityStoreName
-- Credential / Username
+- Credential, or UserName and Password
+- The parameters for the type of the identity store:
+  - Active Directory: Domain
+  - Microsoft Entra ID: Domain and AppId
+  - Google Workspace: AdminUsername and P12CertificatePath
+
+The cmdlet validates the credentials on each run and saves them as the identity store's service account, replacing the existing one.
+
+The values of the RoleOperation parameter (`add`, `remove`, and `remove all`) are case-sensitive. Enter them in lowercase.
 
 ## Examples
 
@@ -143,6 +155,10 @@ Set-IdentityStore -IdentityStoreName AdStore9 -NewName 'AdStore9_renamed' -Crede
 ### Example 2
 
 This command enables the Email Verification authentication type for the AdStore9 identity store.
+
+:::note
+Before you enable Email Verification, configure an SMTP server for the identity store with the [Set-SmtpServer](/docs/directorymanager/11.1/managementshell/identitystore/setsmtpserver.md) cmdlet. Otherwise, the cmdlet displays a warning and skips the operation.
+:::
 
 ```
 Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -AuthenticationTypeOperation enable -AuthenticationType 'Email Verification'
@@ -209,7 +225,7 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 
 ### Example 10
 
-This command enables the group attestation feature and sets the TestingAccoun@pucit.local user as the
+This command enables the group attestation feature and sets the Testing Account user as the
 default approver for the AdStore9 identity store.
 
 ```
@@ -219,10 +235,11 @@ Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.l
 ### Example 11
 
 This command sets the notifications (in number of days) before group expiry. It also enables today’s
-expiry reports and group attestation.
+expiry reports and group attestation. Valid values for the GlmNotifyOwnersXDaysBefore parameter are 1,
+7, and 30.
 
 ```
-Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -EnableGroupAttestation -GlmNotifyOwnersXDaysBeforeOperation add -GlmNotifyOwnersXDaysBefore 1,3,10 -GlmEnableNotificationOfTodaysExpiry
+Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -EnableGroupAttestation -GlmNotifyOwnersXDaysBeforeOperation add -GlmNotifyOwnersXDaysBefore 1,7,30 -GlmEnableNotificationOfTodaysExpiry
 ```
 
 ### Example 12
@@ -232,7 +249,7 @@ minimum possible parameters.
 
 :::note
 By default, this cmdlet denies all permissions to the role it creates.
-Moreover, it adds no criteria filters or scope (group / container) to the role.
+Moreover, it adds no criteria filters to the role, and no group or container as the role criteria.
 :::
 
 ```
@@ -288,11 +305,11 @@ This command creates a new security role by specifying a role criterion as conta
 filters and permissions.
 
 By default, all the permissions except those specified in the RolePermissions parameter are granted.
-This is due to the presence of DefaultAllowPermissions. In this example, only the Manage groups and
-Create user permissions are denied (and the remaining ones are granted) to the created role.
+This is due to the presence of DefaultAllowRolePermissions. In this example, only the Manage My Groups and
+Create User permissions are denied (and the remaining ones are granted) to the created role.
 
 ```
-Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -RoleOperation add -RoleName DemoRole5 -RolePriority 54 -RoleCriteriaScope Container -RoleCriteriaDN 'ou=workingou,dc=pucit,dc=local' -RoleCriteriaOperator Or -RoleCriteriaFilters @('name', 'is exactly', 'automate arslanahmadvm'), @('type', 'is not', 'managementshell') -RolePermissions 'manage my groups', 'create user' –DefaultAllowRolePermissions
+Set-IdentityStore -IdentityStoreName AdStore9 -Credential $creds -Domain pucit.local -RoleOperation add -RoleName DemoRole5 -RolePriority 54 -RoleCriteriaScope Container -RoleCriteriaDN 'ou=workingou,dc=pucit,dc=local' -RoleCriteriaOperator Or -RoleCriteriaFilters @('name', 'is exactly', 'automate arslanahmadvm'), @('type', 'is not', 'managementshell') -RolePermissions 'manage my groups', 'create user' -DefaultAllowRolePermissions
 
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: "Remove-Schedule Cmdlet for Directory Manager"
-description: "Delete a schedule by name or ID from the connected identity store with the Remove-Schedule cmdlet."
+description: "Delete a schedule by name from the connected identity store with the Remove-Schedule cmdlet."
 keywords:
   - Remove-Schedule
   - Management Shell
@@ -12,16 +12,14 @@ sidebar_position: 50
 
 # Remove-Schedule Cmdlet for Directory Manager
 
-The Remove-Schedule cmdlet removes a schedule, by its name or ID, from the identity store connected to the current instance of the Management Shell.
+The Remove-Schedule cmdlet removes a schedule, by its name, from the identity store connected to the current instance of the Management Shell.
 
 ## Syntax
 
 ```
 Remove-Schedule
 -ScheduleName <String>
-[-PassThru]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
+[-Credentials <PSCredential>]
 [-WarningAction <ActionPreference>]
 [-InformationAction <ActionPreference>]
 [-WarningVariable <String>]
@@ -32,7 +30,7 @@ Remove-Schedule
 
 ## Required parameters
 
-- ScheduleName or Scheduled
+- ScheduleName
 
 ## Examples
 

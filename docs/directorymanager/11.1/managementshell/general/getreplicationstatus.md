@@ -12,19 +12,21 @@ sidebar_position: 50
 
 # Get-ReplicationStatus cmdlet
 
-The `Get-ReplicationStatus` cmdlet retrieves the replication status of the connected identity store. It provides the replication status of each object in the provider, such as users, groups, contacts, computers, public folders, and OUs.
+The `Get-ReplicationStatus` cmdlet retrieves the replication status of identity stores. It provides the replication status of each object in the provider, such as users, groups, contacts, computers, public folders, and OUs.
 
 ## Syntax
 
 ```
 Get-ReplicationStatus
-[-IdentityStoreName] <string>
+[[-IdentityStoreName] <string>]
 [<CommonParameters>]
 ```
 
 ## Required parameters
 
-- IdentityStoreName
+- None
+
+If you omit IdentityStoreName, the cmdlet returns the replication status of all identity stores.
 
 ## Examples
 

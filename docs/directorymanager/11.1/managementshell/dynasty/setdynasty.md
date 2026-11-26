@@ -22,6 +22,7 @@ Directory Manager maintains a history for this cmdlet. You can view it under the
 Set-Dynasty
 -Identity <string>
 [-GroupBy <string[]>]
+[-ManagerialAttributes <string[]>]
 [-AliasTemplate <string>]
 [-DisplayNameTemplate <string>]
 [-InheritanceBehaviour
@@ -33,6 +34,7 @@ NeverInheritSelectedAttributes}]
 [-ExcludeNestedLists <string>]
 [-CreateFlatManagerialList <string>]
 [-IncludeManagerAsMember <string>]
+[-SetManagerAsOwner <string>]
 [-Filters <string[]>]
 [-Separator <string[]>]
 [-SearchContainers <string[]>]
@@ -42,7 +44,7 @@ NeverInheritSelectedAttributes}]
 [-IncludeRecipients <string[]>]
 [-ExcludeRecipients <string[]>]
 [-Storage <string>]
-[-DataSourceType <string>]
+[-DataSourceId <string>]
 [-SystemDSN <string>]
 [-TableOrView <string>]
 [-DataSourceUserName <string>]
@@ -66,7 +68,6 @@ NeverInheritSelectedAttributes}]
 [-EmailTemplatePath <string>]
 [-Script <string>]
 [-ScriptFilePath <string>]
-[-Provider_Container <string>]
 [-PowerTools <ArrayList>]
 [-KeyMapAD <string>]
 [-KeyMapDB <string>]
@@ -95,6 +96,7 @@ NeverInheritSelectedAttributes}]
 [-ReportToManagerEnabled <string>]
 [-ReportToOriginatorEnabled <string>]
 [-UpdateMembershipByManagerEnabled <string>]
+[-ResetQuickFilter]
 [-Add <hashtable[]>]
 [-Remove <hashtable[]>]
 [-Replace <hashtable[]>]
@@ -143,15 +145,15 @@ NeverInheritSelectedAttributes}]
 This command modifies the Departmental Dynasty by changing the Group-by attributes list. It uses the credentials of the current user signed in to the identity store.
 
 ```
-Set-Dynasty -Identity "CN=DepartmentalOU=Recruiting,DC=HR,DC=Imanami,DC=US" -GroupBy "Department","Company","Title"
+Set-Dynasty -Identity "CN=Departmental,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -GroupBy "Department","Company","Title"
 ```
 
 ### Example 2
 
-This command modifies the Top Manager of a Managerial Dynasty and changes the alias name and display name templates for the Dynasty children. It also sets the scope to search Dynasty children in the containers specified in the Add parameter, excluding sub-containers. It uses the credentials set in the $Credentials environment variable. To set credentials in an environment variable, see [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
+This command modifies the Top Manager of a Managerial Dynasty and changes the alias name and display name templates for the Dynasty children. It also sets the scope to search Dynasty children in the containers specified in the Add parameter, excluding sub-containers. It uses the credentials set in the $Credentials environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials in an environment variable, see [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
 
 ```
-Set-Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -TopManager "CN=Administrator,CN=Users,DC=HR,DC=Imanami,DC=US" -Add @{ SearchContainers="OU=Recruiting,OU=HR,DC=Imanami,DC=US#1","OU=Outsourcing,OU=HR,DC=Imanami,DC=US#1"}-ExcludeNestedLists False -ChildContainer "" -AliasTemplate "%Manager% -DirectReports" -DisplayNameTemplate "Direct reports of %Manager%" -Credential $Cred
+Set-Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -TopManager "CN=Administrator,CN=Users,DC=HR,DC=Imanami,DC=US" -Add @{ SearchContainers="OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US"} -SearchContainersScopeList "1","1" -ExcludeNestedLists False -ChildContainer "" -AliasTemplate "%Manager% -DirectReports" -DisplayNameTemplate "Direct reports of %Manager%" -IdentityStoreId 2 -Credential $Credentials
 ```
 
 ### Example 3
@@ -166,16 +168,18 @@ Set-Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Obje
 
 This command adds three group-by levels to an Organizational Dynasty.
 
+Specify each level in the format `<attribute>#<container>#<filter>#<separator>`. The first part is the group-by attribute, and the second is the distinguished name of the container for the child groups. You can add an optional fifth part, `True` or `False`, to include or exclude the filter's separator in child group names.
+
 ```
-Set-Dynasty -Identity "CN=Organizational,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Add @{GroupBy="Company#OU=Recruiting,DC=HR,DC=Imanami,DC=US#Left 3#-","Department#OU=Recruiting,DC=HR,DC=Imanami,DC=US#Right 5#-","OU=Recruiting,DC=HR,DC=Imanami,DC=US#With %GROUPBY%\*#^"}
+Set-Dynasty -Identity "CN=Organizational,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Add @{GroupBy="Company#OU=Recruiting,DC=HR,DC=Imanami,DC=US#Left 3#-","Department#OU=Recruiting,DC=HR,DC=Imanami,DC=US#Right 5#-","Title#OU=Recruiting,DC=HR,DC=Imanami,DC=US#With %GROUPBY%\*#^"}
 ```
 
 ### Example 5
 
-This command modifies the additional owners, Includes, and Excludes lists and replaces the Search Scope of a Managerial Dynasty.
+This command modifies the additional owners, Includes, and Excludes lists of a Managerial Dynasty. It also replaces a search container: the Replace parameter removes the first value, the Recruiting container, and adds the second, the Outsourcing container.
 
 ```
-Set- Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Add @{AdditionalOwners="CN=Roger Manson,OU=Recruiting,OU=HR,DC=Imanami,DC=US","Robin Soto"; Includes="USWing","PKWing"; Excludes="UAEWing"} -Replace @{SearchContainers="OU=Recruiting,OU=HR,DC=Imanami,DC=US#1","OU=Outsourcing,OU=HR,DC=Imanami,DC=US#1"}
+Set-Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Add @{AdditionalOwners="CN=Roger Manson,OU=Recruiting,OU=HR,DC=Imanami,DC=US","Robin Soto"; Includes="USWing","PKWing"; Excludes="UAEWing"} -Replace @{SearchContainers="OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US"}
 ```
 
 ### Example 6

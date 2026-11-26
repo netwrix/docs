@@ -14,6 +14,8 @@ sidebar_position: 190
 
 Use the Set-Notifications cmdlet to change the notification settings of an identity store.
 
+Before you run this cmdlet, configure a messaging server with the [Set-MessagingServer](/docs/directorymanager/11.1/managementshell/identitystore/setmessagingserver.md) cmdlet and an SMTP server with the [Set-SmtpServer](/docs/directorymanager/11.1/managementshell/identitystore/setsmtpserver.md) cmdlet for the identity store.
+
 ## Syntax
 
 ```

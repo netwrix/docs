@@ -1,6 +1,6 @@
 ---
 title: "Remove-Mailbox Cmdlet in Directory Manager"
-description: "Delete a mailbox from the connected identity store with the Remove-Mailbox cmdlet."
+description: "Delete a mailbox-enabled user account from the connected identity store with the Remove-Mailbox cmdlet."
 keywords:
   - Remove-Mailbox
   - delete mailbox
@@ -11,7 +11,7 @@ sidebar_position: 30
 
 # Remove-Mailbox Cmdlet in Directory Manager
 
-Use the Remove-Mailbox cmdlet to delete a mailbox from the connected identity store.
+Use the Remove-Mailbox cmdlet to delete a mailbox-enabled user account from the connected identity store. The cmdlet deletes the whole user account, not only the mailbox. It doesn't delete users who don't have a mailbox.
 
 ## Syntax
 
@@ -30,7 +30,7 @@ Remove-MailBox
 
 ## Example
 
-This command deletes the specified mailbox from the connected identity store.
+This command deletes the specified mailbox-enabled user account from the connected identity store.
 
 ```
 Remove-MailBox -Identity "OsamaMailBox"

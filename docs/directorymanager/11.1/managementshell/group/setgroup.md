@@ -48,6 +48,7 @@ Set-Group
 [-ReportToManagerEnabled <string>]
 [-ReportToOriginatorEnabled <string>]
 [-UpdateMembershipByManagerEnabled <string>]
+[-ResetQuickFilter]
 [-Add <hashtable[]>]
 [-Remove <hashtable[]>]
 [-Replace <hashtable[]>]
@@ -85,6 +86,8 @@ Set-Group
 [<CommonParameters>]
 ```
 
+Use the ResetQuickFilter switch to set the group's quick filter value (`imsgquickfilter`) to 2. This fixes groups upgraded from versions earlier than 10.
+
 ## Required parameters
 
 - Identity
@@ -101,10 +104,10 @@ Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Expirati
 
 ### Example 2
 
-The following command expires the group Training, using the credentials set in the $Credentials environment variable. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
+The following command expires the group Training, using the credentials set in the $Credentials environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
-Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IsExpired True -Credential $Cred
+Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IsExpired True -IdentityStoreId 2 -Credential $Credentials
 ```
 
 ### Example 3
@@ -112,7 +115,7 @@ Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IsExpire
 The following command gets all groups in the container Recruiting, clears their additional owner lists, and sets their expiration policy to Never Expire. The OUT-NULL cmdlet prevents the retrieved group information from appearing on the console.
 
 ```
-Get-Group -searchcontainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US" | Set-Group -AdditionalOwners "" -ExpirationPolicy "0" -ExtendGroupLife | OUT-NULL
+Get-Group -SearchContainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US" | ForEach-Object { Set-Group -Identity $_.DistinguishedName -Clear AdditionalOwners -ExpirationPolicy "0" -ExtendGroupLife } | OUT-NULL
 ```
 
 ### Example 4

@@ -11,7 +11,7 @@ sidebar_position: 80
 
 # New-Container Cmdlet
 
-The `New-Container` cmdlet creates a new organizational unit in the directory. You can also use it to create nested organizational units by running the cmdlet repeatedly and changing the value of the ParentContainer parameter.
+The `New-Container` cmdlet creates a new organizational unit in the directory. You can also use it to create nested organizational units by running the cmdlet repeatedly and changing the value of the OrganizationalUnit parameter.
 
 ## Syntax
 
@@ -43,8 +43,8 @@ New-Container -OrganizationalUnit "DC=HR,DC=Imanami,DC=US" -ContainerName "Recru
 
 ### Example 2
 
-The following command creates the organizational unit _Local Recruiting_ inside the _Recruiting_ container in the directory, using the credentials set in the $Credentials environment variable. To set credentials, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
+The following command creates the organizational unit _Local Recruiting_ inside the _Recruiting_ container in the directory, using the credentials set in the $Credentials environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
-New-Container - OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ContainerName "Local Recruiting" -Credential $Cred
+New-Container -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ContainerName "Local Recruiting" -IdentityStoreId 2 -Credential $Credentials
 ```

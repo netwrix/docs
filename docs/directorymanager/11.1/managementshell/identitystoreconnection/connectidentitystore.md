@@ -31,10 +31,29 @@ Connect-IdentityStore
 
 - None
 
-## Example
+## Parameters
 
-This command connects you to the identity store specified by the IdentityStoreId parameter. It uses the specified authentication mode and the credentials that you set in the $Credentials environment variable. To set credentials in an environment variable, see [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
+- **AuthenticationMode**: How the cmdlet authenticates you. If you omit it, the cmdlet uses `Web`.
+  - `Integrated` or `1`: Uses the current session.
+  - `Credential` or `2`: Authenticates with the IdentityStoreId and Credential parameters, which are both required in this mode.
+  - `Web` or `3`: Uses interactive web sign-in.
+
+## Output
+
+After it connects, the cmdlet displays five lines of text with the identity store's ID, name, connection, and type, and the user's display name. For example:
 
 ```
-Connect-IdentityStore -AuthenticationMode 2 -IdentityStoreId 2 -Credential $Cred
+ID                ::  2
+Name              ::  AdStore1
+Connection        ::  pucit.local
+Type              ::  Active Directory
+User              ::  John Smith
+```
+
+## Example
+
+This command connects you to the identity store specified by the IdentityStoreId parameter. It uses the specified authentication mode and the credentials that you set in the $Credentials variable. To set this variable, see [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
+
+```
+Connect-IdentityStore -AuthenticationMode 2 -IdentityStoreId 2 -Credential $Credentials
 ```

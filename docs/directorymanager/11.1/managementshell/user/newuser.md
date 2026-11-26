@@ -65,6 +65,12 @@ New-User
 - LastName
 - DisplayName
 
+## Parameter notes
+
+- `-Zip` and `-Business` accept digits only.
+- `-AccountDisabled`, `-PasswordNeverExpires`, and `-PasswordForceChange` take `"true"` or `"false"`.
+- The cmdlet returns a status message, not a user object.
+
 ## Example
 
 This command creates a user in the container specified by the _OrganizationalUnit_ parameter. The command also specifies the logon name, password, first name, last name, and display name of the new user.

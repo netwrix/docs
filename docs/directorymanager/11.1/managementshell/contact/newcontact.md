@@ -58,9 +58,15 @@ New-Contact
 - LastName
 - DisplayName
 
+:::note
+- _Zip_ and _Business_ accept digits only.
+- _Assistant_ takes the distinguished name (DN) of the assistant.
+- To create a mail-enabled contact, set _MailEnabled_ to `"true"` and also specify _Alias_ and _EmailAddress_.
+:::
+
 ## Example
 
-This command creates a contact in the container specified by the _OrganizationalUnit_ parameter. The command also specifies the logon name, first name, last name, and display name of the new contact.
+This command creates a contact in the container specified by the _OrganizationalUnit_ parameter. The command also specifies the name (common name), first name, last name, and display name of the new contact.
 
 ```
 New-Contact -Name "OsamaContact" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -FirstName "OsamaContact" -LastName "OsamaContact" -DisplayName "OsamaContact"

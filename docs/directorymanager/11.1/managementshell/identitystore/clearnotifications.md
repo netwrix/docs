@@ -14,6 +14,8 @@ sidebar_position: 20
 
 The `Clear-Notifications` cmdlet removes notification settings from an identity store. You can remove the notification settings individually or in sets.
 
+Before you run this cmdlet, configure a messaging server with the [Set-MessagingServer](/docs/directorymanager/11.1/managementshell/identitystore/setmessagingserver.md) cmdlet and an SMTP server with the [Set-SmtpServer](/docs/directorymanager/11.1/managementshell/identitystore/setsmtpserver.md) cmdlet for the identity store.
+
 ## Syntax
 
 ```
@@ -36,7 +38,7 @@ Clear-Notifications
 [<CommonParameters>]
 Clear-Notifications
 -IdentityStoreName <string>
-[-ClearSet {All | Recipients | PasswordExpiry | ML | MB}]
+[-ClearSet {All | Recepients | PasswordExpiry | ML | MB}]
 [<CommonParameters>]
 ```
 
@@ -48,10 +50,10 @@ Clear-Notifications
 
 ### Example 1
 
-This example individually removes the Membership Lifecycle notification option "X days before user is going to leave the group" for the AdStore9 identity store.
+This example individually removes the option that notifies logged-in users and the Membership Lifecycle notification option "X days before user is going to leave the group" for the AdStore9 identity store. It also resets the number of days to 0.
 
 ```
-Clear-Notifications -IdentityStoreName AdStore9 -NotifyLoggedInUsers –XdaysBeforeLeaveNotificationML 10
+Clear-Notifications -IdentityStoreName AdStore9 -NotifyLoggedInUsers -XDaysBeforeLeaveNotificationML
 ```
 
 ### Example 2
@@ -59,5 +61,9 @@ Clear-Notifications -IdentityStoreName AdStore9 -NotifyLoggedInUsers –XdaysBef
 This example removes the recipients in the sets listed under the Recipients section on the Notification page of the AdStore9 identity store properties.
 
 ```
-Clear-Notifications -IdentityStoreName AdStore9 -ClearSet Recipients
+Clear-Notifications -IdentityStoreName AdStore9 -ClearSet Recepients
 ```
+
+:::note
+Enter the ClearSet value for recipients as `Recepients`, spelled as shown.
+:::

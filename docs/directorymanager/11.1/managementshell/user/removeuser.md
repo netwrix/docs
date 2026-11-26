@@ -28,6 +28,11 @@ Remove-User
 
 - Identity
 
+## Parameter notes
+
+- `-Identity` accepts a distinguished name, GUID, SID, `sAMAccountName`, or name.
+- The cmdlet doesn't prompt you to confirm the deletion, and it doesn't support `-WhatIf` or `-Confirm`.
+
 ## Example
 
 This command deletes the user with the specified name.

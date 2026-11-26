@@ -67,6 +67,8 @@ Set-MailBox
 
 ```
 
+**Zip** and **Business** accept digits only. **DisplayName** can't begin or end with a space.
+
 ## Required parameter
 
 - Identity

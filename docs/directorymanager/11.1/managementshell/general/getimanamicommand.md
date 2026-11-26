@@ -43,7 +43,7 @@ Get-ImanamiCommand
 
 ### Example 2
 
-The following command gets all cmdlets and command elements with the word Set in their name.
+The following command gets all cmdlets and command elements whose names start with Set.
 
 ```
 Get-ImanamiCommand -Name Set*
