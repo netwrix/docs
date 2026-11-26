@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Create a Portal
 
-Admin Center lets you quickly build and deploy a web-based portal named Directory Manager portal,
+Admin Center lets you build and deploy a web-based portal named Directory Manager portal,
 for end-users to carry out user, group, and entitlement management tasks. Users can also view
 detailed reports on the current state and health of the directory.
 
@@ -146,29 +146,32 @@ located on disk.
 13. Each identity store associated with a portal has its own set of design settings, as listed in
     the [Design a Portal with Display Types](/docs/directorymanager/11.1/admincenter/applications/portal/displaytype/overview.md) topic.
 
-    If you are upgrading to Directory Manager 11 from GroupID 9 or GroupID 10, you can import the
-    design settings for an identity store from a Self-Service portal in a previous version - as an
+    If you are upgrading to Directory Manager 11 from GroupID 10 SR2, you can import the
+    design settings for an identity store from a Self-Service portal in that version - as an
     alternate to manually defining these settings. Following are the details of the file
-    containing identity store design settings for a Self-Service portal in GroupID 9 and 10:
+    containing identity store design settings for a Self-Service portal in GroupID 10 SR2:
 
-    **Design file name:** `<Identity store name>`..xml.
+    **Design file name:** `<Identity store name>.xml`
 
     For example: ADStore.xml
      A separate design file exists for each identity store linked with a Self-Service portal.
 
-    **File location in GroupID 9/10:** [GroupID installation drive]:\Program Files\Imanami\GroupID
-    `version`\SelfService\Inetpub\&lt;portal name&gt;\Design\
-     For example: C:\Program Files\Imanami\GroupID 10.0\SelfService\Inetpub\TestPortal\Design\
+    **File location in GroupID 10 SR2:** 
+    ```
+    [GroupID installation drive]:\Program Files\Imanami\GroupID <version>\SelfService\Inetpub\<portal name>\Design\
+    ```  
+    For example: `C:\Program Files\Imanami\GroupID 10.0\SelfService\Inetpub\TestPortal\Design\`
 
-    Similarly, a separate file exists for each linked combo created in the Self-Service portal.
-    **Linked combo file name:** The file has the same name as that of the linked combo in the
-    portal.for example, Country-State.xml
-    **File location in GroupID 9/10:** All linked combo files, regardless of the identity store they
+    Similarly, a separate file exists for each linked combo created in the Self-Service portal.  
+    **Linked combo file name:** The file has the same name as that of the linked combo in the portal.  
+    For example: `Country-State.xml`  
+    **File location in GroupID 10 SR2:** All linked combo files, regardless of the identity store they
     are used for, are available at the following path:
-    [GroupID installation drive]:\Program Files\Imanami\GroupID
-    `version`\SelfService\Inetpub\&lt;portal name&gt;\Web\LinkedCombo\
-    For example: C:\Program Files\Imanami\GroupID
-    10.0\SelfService\Inetpub\TestPortal\Web\LinkedCombo\
+    ```
+    [GroupID installation drive]:\Program Files\Imanami\GroupID <version>\SelfService\Inetpub\<portal name>\Web\LinkedCombo\
+    ```
+    For example:  
+    `C:\Program Files\Imanami\GroupID 10.0\SelfService\Inetpub\TestPortal\Web\LinkedCombo\`
 
     **To import the design file and linked combo files, do the following:**
 
@@ -192,15 +195,17 @@ located on disk.
 
 14. A portal has certain advanced settings defined for it, as discussed in the
     [Manage Advanced Settings](/docs/directorymanager/11.1/admincenter/applications/portal/server/advanced.md) topic.
-    If you are upgrading to Directory Manager 11 from GroupID 9 or GroupID 10, you can import the
-    advanced settings of a Self-Service portal from a previous version as an alternate to defining
+    If you are upgrading to Directory Manager 11 from GroupID 10 SR2, you can import the
+    advanced settings of a Self-Service portal from that version as an alternate to defining
     settings manually. Following are the details of the file containing advanced settings for a
-    Self-Service portal in GroupID 9 and 10:
+    Self-Service portal in GroupID 10 SR2:
 
-    **File name:** server.xml. A separate file exists for each Self-Service portal.
-    **File location in GroupID 9/10:** [GroupID installation drive]:\Program Files\Imanami\GroupID
-    `version`\SelfService\Inetpub\&lt;portal name&gt;\
-    For example: C:\Program Files\Imanami\GroupID 10.0\SelfService\Inetpub\TestPortal\
+    **File name:** `server.xml`. A separate file exists for each Self-Service portal.  
+    **File location in GroupID 10 SR2:** 
+    ```
+    [GroupID installation drive]:\Program Files\Imanami\GroupID <version>\SelfService\Inetpub\<portal name>\
+    ```
+    For example: `C:\Program Files\Imanami\GroupID 10.0\SelfService\Inetpub\TestPortal\`
 
     **To import the file, do the following:**
 

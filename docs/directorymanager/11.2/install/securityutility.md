@@ -106,7 +106,7 @@ systems. When done, you must restart IIS on those systems.
 :::note
 You also use the GroupIDPasswordTransfer utility to copy the GroupID password to a new server when
 you set up a multi-instance deployment. In that case, you don't generate a new password. Skip the
-Generate a Secure Password steps, which apply only to upgrades from GroupID 10 or earlier Directory
+Generate a Secure Password steps, which apply only to upgrades from GroupID 10 SR2 or earlier Directory
 Manager 11 versions, and start with the following steps on the primary server.
 :::
 
@@ -127,7 +127,7 @@ another instance of Directory Manager.
 Step 5 – Run the following cmdlet on the instance where you placed the file to import the encrypted
 password.
 
-GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "password copied from above"
+GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "encrypted password copied in step 3"
 
 Step 6 – Restart IIS on this server.
 

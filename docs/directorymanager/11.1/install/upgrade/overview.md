@@ -6,17 +6,24 @@ sidebar_position: 30
 
 # Upgrade
 
-Directory Manager 11 supports upgrade from the following:
+:::note
+This page is kept for archive purposes. When you plan an upgrade, use the
+[Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
+:::
 
-- GroupID 10.0
-- GroupID 9.0
+Directory Manager 11 supports upgrade only from GroupID 10 SR2.
+
+:::note
+If you use GroupID 9 or a GroupID 10 release earlier than SR2, first upgrade to GroupID 10 SR2.
+Then upgrade from GroupID 10 SR2 to Directory Manager 11.
+:::
 
 ## Prerequisites for Upgrade
 
 The following must be in place before you run the Upgrade wizard.
 
 :::note
-In the following text, the term ‘source version’ refers to the GroupID version you are
+In the following text, the term ‘source version’ refers to GroupID 10 SR2, the version you are
 upgrading from.
 :::
 
@@ -24,8 +31,8 @@ upgrading from.
 Step 1 – For upgrade on a different box, the source version file system must be present on the
 Directory Manager 11 server. For that, do the following:
 
-1. On the source version server, for example, GroupID 10 server, go
-   to` [GroupID Installation Drive]:\Program Files\Imanami\` and copy the GroupID 10 folder.
+1. On the source version server, go
+   to `[GroupID Installation Drive]:\Program Files\Imanami\` and copy the GroupID 10 folder.
 2. Go to the Directory Manager 11 server, create a path as follows, and paste the GroupID 10 folder
    there:
 
@@ -56,7 +63,7 @@ If you forget the passphrase you used to encrypt GroupID data, upgrade isn't pos
 Two log files are created on upgrade:
 
 - File name: UpgradeLog  
-  Path:` X:\Imanami\GroupID 11.0\GroupIDUpgradeTool\`  
+  Path: `X:\Imanami\GroupID 11.0\GroupIDUpgradeTool\`  
   (X represents the Directory Manager installation drive)
 - File name: directorymanager11_Upgrade.log  
   Path: `C:\ProgramData\Imanami\GroupID 11.0\Upgrade Tool\`  

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Installer
 
-To install Directory Manager, you have to run the following tools in the given order:
+To install Directory Manager, run the following tools in this order:
 
 - **[Preparation Tool](/docs/directorymanager/11.1/install/installer/preparationtool.md)** - Detects and instals the prerequisite software and
   Windows features that Directory Manager requires.
@@ -39,10 +39,9 @@ Administrators group on that machine.
 
 Choose one of the four installation cases for Directory Manager 11:
 
-- **Case # 1**: Directory ManagerID 11 to co-exist with Directory Manager 10 on the same machine
+- **Case # 1**: Directory Manager 11 to co-exist with GroupID 10 SR2 on the same machine
 
-- **Case # 2**: Directory Manager 11 to co-exist with Directory Manager 10.0 / 9.0 in the same
-  environment
+- **Case # 2**: Directory Manager 11 to co-exist with GroupID 10 SR2 in the same environment
 - **Case # 3**: In-place installation of Directory Manager 11 on the same machine
 - **Case # 4**: In-place installation of Directory Manager 11 in the environment
 

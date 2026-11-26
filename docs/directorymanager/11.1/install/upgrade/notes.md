@@ -6,10 +6,20 @@ sidebar_position: 20
 
 # Notes on Upgrade
 
-Consider the following when upgrading to Directory Manager 11 from GroupID 9 and 10.
+:::note
+This page is kept for archive purposes. When you plan an upgrade, use the
+[Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
+:::
+
+Consider the following when upgrading to Directory Manager 11 from GroupID 10 SR2.
 
 :::note
-In the following text, the term ‘source version’ refers to the GroupID version you are
+You can upgrade to Directory Manager 11 only from GroupID 10 SR2. If you use GroupID 9 or a
+GroupID 10 release earlier than SR2, first upgrade to GroupID 10 SR2.
+:::
+
+:::note
+In the following text, the term ‘source version’ refers to GroupID 10 SR2, the version you are
 upgrading from.
 :::
 
@@ -79,7 +89,7 @@ upgraded.
 Step 6 – An identity store created for G Suite will not be upgraded.
 
 Step 7 – In case of upgrade on a different box, the DC Priority settings for an Active Directory
-domain aren't upgraded to Directory Manager version 11.0.23315.04.
+domain aren't upgraded to Directory Manager version 11.
 
 Step 8 – In the source version, the debug logs for upgrade were created in a temporary folder for
 the logged-on user, that could be accessed using the %TEMP% environment variable.  
@@ -96,14 +106,14 @@ Windows logging mode is set to default, i.e., ‘Error’. After upgrade, change
 [Specify Log Settings for a Service](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#specify-log-settings-for-a-service)
 topic.
 
-Step 10 – In the source version, log settings for an identity store inherently applied to Date
+Step 10 – In the source version, log settings for an identity store inherently applied to Data
 service logs. On upgrade to Directory Manager 11, these log settings are moved to the Data service,
 with the file logging mode set to default, i.e., ‘Error’. To change the mode in Directory Manager
 11, go to Data service settings and change it as required. See the
 [Specify Log Settings for a Service](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#specify-log-settings-for-a-service)
 topic.
 
-Step 11 – The following applies in case of upgrade from GroupID 10 SR1.  
+Step 11 – The following applies in case of upgrade from GroupID 10 SR2.  
 When the approver in pending workflow requests is a variable, such as managedBy, additionalOwner,
 etc., then during upgrade, the variable will be resolved to the GUID of the object that it
 represents at that point in time. Hence, the variable is replaced with a static value.
@@ -140,8 +150,8 @@ lost. As a result:
 - Synchronize jobs with the source or destination provider configured using system DSN will not
   work.
 
-Step 18 – Insights in GroupID 10 has been renamed to Entitlement in Directory Manager 11.  
-In GroupID 10, one schedule named ‘Insights’ existed for Insights, which will be upgraded and
+Step 18 – Insights in GroupID 10 SR2 has been renamed to Entitlement in Directory Manager 11.  
+In GroupID 10 SR2, one schedule named ‘Insights’ existed for Insights, which will be upgraded and
 renamed to ‘GroupID Entitlement’. Directory Manager 11 will also have two new schedules for
 Entitlement; ‘Entitlement Scope’ and ‘Entitlement Temporary Permissions’. These new schedules will
 be auto created for identity stores that have Entitlement settings defined.
