@@ -6,9 +6,16 @@ sidebar_position: 10
 
 # Upgrade to GroupID 11
 
-The topic guides you to upgrade to GroupID 11 from GroupID 9 and 10.
+:::note
+Directory Manager 11.0 supported upgrade from GroupID 9 and GroupID 10. As of Directory Manager
+11.2, you can upgrade only from GroupID 10 SR2. This page is kept for archive purposes. When you plan
+an upgrade, use the
+[Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
+:::
 
-Follow the steps to upgrade.
+This topic describes how to upgrade to GroupID 11 from GroupID 9 and 10.
+
+To upgrade:
 
 1. To launch the Upgrade wizard, click **Next** on the **GroupID Successfully Configured** page of
    the Configuration Tool.
@@ -26,8 +33,10 @@ Follow the steps to upgrade.
 3. From the **Select the previous version to upgrade** list, select the GroupID version to upgrade
    from.
 
-    NOTE: The following steps discuss the upgrade process with GroupID 10 as the source version. The
+    :::note
+    The following steps discuss the upgrade process with GroupID 10 as the source version. The
     process may vary for different source versions.
+    :::
 
 4. Click **Next**.
 
@@ -89,11 +98,13 @@ Follow the steps to upgrade.
 
         ![synchronize_upgrade](/images/directorymanager/11.0/install/upgrade/synchronize_upgrade.webp)
 
-        NOTE: The service account you provide here should have at least _read_ permission in the
+        :::note
+        The service account you provide here should have at least _read_ permission in the
         entire forest, so that all objects from the forest can be replicated to Elasticsearch.
+        :::
 
-        The wizard does not create a separate identity store for each child domain in the same
-        forest. In case it cannot determine a forest structure, it creates separate identity stores
+        The wizard doesn't create a separate identity store for each child domain in the same
+        forest. In case it can't determine a forest structure, it creates separate identity stores
         for each domain.
 
 10. For Synchronize jobs that use Office 365 as messaging provider in GroupID 10, the wizard would
@@ -118,21 +129,23 @@ Follow the steps to upgrade.
 
     - If an identity store for that domain exists or if it being created for a Synchronize job in
       this upgrade process, GroupID will bind the reports to it.
-    - If an identity store for that domain does not exist, then you have to create an identity store
+    - If an identity store for that domain doesn't exist, then you have to create an identity store
       for it. It must essentially be an Active Directory identity store. The wizard will bind the
       reports generated in GroupID 10 to the identity store, so you will be able to view them in
       GroupID 11.
       ![reports_upgrade](/images/directorymanager/11.0/install/upgrade/reports_upgrade.webp)
 
-    NOTE: If no report has been generated in GroupID 10, the page related to reports upgrade will
+    :::note
+    If no report has been generated in GroupID 10, the page related to reports upgrade will
     not be displayed.
+    :::
 
 13. During upgrade, Synchronize schedules are also moved to identity stores.
     The Upgrade wizard will check the jobs added to a schedule. If the destination in a job is a
     directory provider, it will automatically move the schedule to the respective identity store.
 
     Remember, during upgrade, identity stores are created for destination directory providers of
-    Synchronize jobs (i.e., for providers that do not have an identity store in the source version).
+    Synchronize jobs (i.e., for providers that don't have an identity store in the source version).
 
     Consider the following:
 
@@ -145,18 +158,20 @@ Follow the steps to upgrade.
 
         ![store_selection_for_schedules](/images/directorymanager/11.0/install/upgrade/store_selection_for_schedules.webp)
 
-    - The rules stated above also apply to schedules with job collections added to them.
+    - The preceding rules also apply to schedules with job collections added to them.
 
 14. Click **Next**.
 
     ![Summary page](/images/directorymanager/11.0/install/upgrade/5-summary.webp)
 
     This page displays a complete summary of the data to be copied/upgraded for your selected
-    options. These options were selected on the **Select modules to upgrade** page..
+    options. You selected these options on the **Select modules to upgrade** page.
 
-    NOTE: If there are any disabled identity store(s) in the source GroupID version, GroupID will
-    not upgrade those identity store(s). However, data of those identity store(s) will remain intact
+    :::note
+    If there are any disabled identity stores in the source GroupID version, GroupID will
+    not upgrade those identity stores. However, data of those identity stores will remain intact
     in the source GroupID version.
+    :::
 
 15. Review the summary and click **Next**.
 

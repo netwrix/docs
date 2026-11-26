@@ -17,4 +17,4 @@ This section covers cmdlets for managing Smart Groups.
 - [Update-Group](/docs/directorymanager/11.2/managementshell/smartgroup/updategroup.md) – Modifies the membership of a Smart Group or Dynasty according to
   the results returned by the LDAP query.
 - [Upgrade-Group](/docs/directorymanager/11.2/managementshell/smartgroup/upgradegroup.md) – Upgrades managed (Smart Groups and Dynasties) and non-managed
-  groups from GroupID 9 and 10 to GroupID 11.
+  groups from GroupID 10 SR2 to Directory Manager 11.

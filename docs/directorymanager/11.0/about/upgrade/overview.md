@@ -6,6 +6,13 @@ sidebar_position: 30
 
 # Upgrade
 
+:::note
+Directory Manager 11.0 supported upgrade from GroupID 9 and GroupID 10. As of Directory Manager
+11.2, you can upgrade only from GroupID 10 SR2. This page is kept for archive purposes. When you plan
+an upgrade, use the
+[Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
+:::
+
 GroupID 11 supports upgrade from the following:
 
 - GroupID 10.0
@@ -15,8 +22,10 @@ GroupID 11 supports upgrade from the following:
 
 The following must be in place before you run the Upgrade wizard.
 
-NOTE: In the following text, the term ‘source version’ refers to the GroupID version you are
+:::note
+In the following text, the term ‘source version’ refers to the GroupID version you are
 upgrading from.
+:::
 
 1. For upgrade on a different box, the GroupID source version file system must be present on the
    GroupID 11 server. For that, do the following:
@@ -41,7 +50,7 @@ upgrading from.
 4. To upgrade schedules and Synchronize jobs on a different box, you must run a utility on the
    GroupID 11 server before running the Upgrade wizard. Contact Netwrix Customer Support for more
    info.
-5. If you forget the passphrase you used to encrypt GroupID data, upgrade is not possible.
+5. If you forget the passphrase you used to encrypt GroupID data, upgrade isn't possible.
 
 ## Upgrade Logs
 
