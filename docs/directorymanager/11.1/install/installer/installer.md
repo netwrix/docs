@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Installer
 
-To install Directory Manager, you have to run the following tools in the given order:
+To install Directory Manager, run the following tools in this order:
 
 - **[Preparation Tool](/docs/directorymanager/11.1/install/installer/preparationtool.md)** - Detects and instals the prerequisite software and
   Windows features that Directory Manager requires.

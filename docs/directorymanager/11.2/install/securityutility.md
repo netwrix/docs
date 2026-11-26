@@ -127,7 +127,7 @@ another instance of Directory Manager.
 Step 5 – Run the following cmdlet on the instance where you placed the file to import the encrypted
 password.
 
-GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "password copied from above"
+GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "encrypted password copied in step 3"
 
 Step 6 – Restart IIS on this server.
 

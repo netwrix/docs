@@ -15,8 +15,10 @@ an upgrade, use the
 
 Consider the following when upgrading to GroupID 11 from GroupID 9 and 10.
 
-NOTE: In the following text, the term ‘source version’ refers to the GroupID version you are
+:::note
+In the following text, the term ‘source version’ refers to the GroupID version you are
 upgrading from.
+:::
 
 **Notes**
 
@@ -91,8 +93,7 @@ upgrading from.
 
 9. In the GroupID source version, Replication service logs were captured under the _debug_ mode,
    with no user interface to change this setting. On upgrade to GroupID 11, the file logging and
-   Windows logging mode is set to default, i.e., ‘Error’. After upgrade, it is recommended that you
-   go to Replication service settings and change file logging to the ‘Debug’ mode (if required). See
+   Windows logging mode is set to default, i.e., ‘Error’. After upgrade, go to Replication service settings and change file logging to the ‘Debug’ mode (if required). See
    the
    [Specify Log Settings for a Service](/docs/directorymanager/11.0/signin/service/dataservice/manage.md#specify-log-settings-for-a-service)
    topic.

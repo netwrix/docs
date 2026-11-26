@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Upgrade to Directory Manager 11
 
-The topic guides you to upgrade to Directory Manager 11.2 from GroupID 10 SR2.
+This topic describes how to upgrade to Directory Manager 11.2 from GroupID 10 SR2.
 
 :::note
 You can upgrade to Directory Manager 11.2 only from GroupID 10 SR2. If you use GroupID 9 or a
@@ -198,12 +198,12 @@ Consider the following:
 
     ![store_selection_for_schedules](/images/directorymanager/11.2/install/upgrade/store_selection_for_schedules.webp)
 
-    The rules stated above also apply to schedules with job collections added to them.
+    The preceding rules also apply to schedules with job collections added to them.
 
 Step 14 – Click **Next**.
 
 This page displays a complete summary of the data to be copied/upgraded for your selected options.
-These options were selected on the Select modules to upgrade page..
+You selected these options on the Select modules to upgrade page.
 
 
 :::note

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Create a Portal
 
-Admin Center lets you quickly build and deploy a web-based portal named Directory Manager portal,
+Admin Center lets you build and deploy a web-based portal named Directory Manager portal,
 for end-users to carry out user, group, and entitlement management tasks. Users can also view
 detailed reports on the current state and health of the directory.
 

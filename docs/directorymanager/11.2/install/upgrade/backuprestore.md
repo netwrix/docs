@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Back Up and Restore Directory Manager Data
 
-This topic provides instructions for backing up and restoring the data from GroupID 10 SR2 when
-upgrading to Directory Manager 11.2.
+This topic describes how to back up and restore GroupID 10 SR2 data when you upgrade to Directory
+Manager 11.2.
 
 - Database on SQL Server
 - Elasticsearch Data
@@ -22,7 +22,7 @@ Take a backup of the GroupID database that you will use to upgrade to Directory 
 
 Follow Microsoft standards to back up this SQL Server database.
 
-Whenever this database is restored, any changes you made using Directory Manager 11.2 would be lost.
+If you restore this database, you lose any changes you made using Directory Manager 11.2.
 
 ## Elasticsearch Data
 

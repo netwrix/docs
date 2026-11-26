@@ -13,9 +13,9 @@ an upgrade, use the
 [Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
 :::
 
-The topic guides you to upgrade to GroupID 11 from GroupID 9 and 10.
+This topic describes how to upgrade to GroupID 11 from GroupID 9 and 10.
 
-Follow the steps to upgrade.
+To upgrade:
 
 1. To launch the Upgrade wizard, click **Next** on the **GroupID Successfully Configured** page of
    the Configuration Tool.
@@ -33,8 +33,10 @@ Follow the steps to upgrade.
 3. From the **Select the previous version to upgrade** list, select the GroupID version to upgrade
    from.
 
-    NOTE: The following steps discuss the upgrade process with GroupID 10 as the source version. The
+    :::note
+    The following steps discuss the upgrade process with GroupID 10 as the source version. The
     process may vary for different source versions.
+    :::
 
 4. Click **Next**.
 
@@ -96,8 +98,10 @@ Follow the steps to upgrade.
 
         ![synchronize_upgrade](/images/directorymanager/11.0/install/upgrade/synchronize_upgrade.webp)
 
-        NOTE: The service account you provide here should have at least _read_ permission in the
+        :::note
+        The service account you provide here should have at least _read_ permission in the
         entire forest, so that all objects from the forest can be replicated to Elasticsearch.
+        :::
 
         The wizard doesn't create a separate identity store for each child domain in the same
         forest. In case it can't determine a forest structure, it creates separate identity stores
@@ -131,8 +135,10 @@ Follow the steps to upgrade.
       GroupID 11.
       ![reports_upgrade](/images/directorymanager/11.0/install/upgrade/reports_upgrade.webp)
 
-    NOTE: If no report has been generated in GroupID 10, the page related to reports upgrade will
+    :::note
+    If no report has been generated in GroupID 10, the page related to reports upgrade will
     not be displayed.
+    :::
 
 13. During upgrade, Synchronize schedules are also moved to identity stores.
     The Upgrade wizard will check the jobs added to a schedule. If the destination in a job is a
@@ -152,14 +158,14 @@ Follow the steps to upgrade.
 
         ![store_selection_for_schedules](/images/directorymanager/11.0/install/upgrade/store_selection_for_schedules.webp)
 
-    - The rules stated above also apply to schedules with job collections added to them.
+    - The preceding rules also apply to schedules with job collections added to them.
 
 14. Click **Next**.
 
     ![Summary page](/images/directorymanager/11.0/install/upgrade/5-summary.webp)
 
     This page displays a complete summary of the data to be copied/upgraded for your selected
-    options. These options were selected on the **Select modules to upgrade** page..
+    options. You selected these options on the **Select modules to upgrade** page.
 
     :::note
     If there are any disabled identity stores in the source GroupID version, GroupID will
