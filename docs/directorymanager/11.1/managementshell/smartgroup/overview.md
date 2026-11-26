@@ -18,4 +18,4 @@ These cmdlets manage Smart Groups.
 - [New-SmartGroup Cmdlet](/docs/directorymanager/11.1/managementshell/smartgroup/newsmartgroup.md) – Creates a new Smart Group (managed group) in the directory.
 - [Set-SmartGroup Cmdlet](/docs/directorymanager/11.1/managementshell/smartgroup/setsmartgroup.md) – Modifies a Smart Group in the directory.
 - [Update-Group Cmdlet](/docs/directorymanager/11.1/managementshell/smartgroup/updategroup.md) – Updates the membership of a Smart Group or Dynasty according to the results of the LDAP query.
-- [Upgrade-Group Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/smartgroup/upgradegroup.md) – Upgrades managed groups (Smart Groups and Dynasties) and non-managed groups from Directory Manager 9 and 10 to Directory Manager 11.
+- [Upgrade-Group Cmdlet in Directory Manager](/docs/directorymanager/11.1/managementshell/smartgroup/upgradegroup.md) – Upgrades managed groups (Smart Groups and Dynasties) and non-managed groups from GroupID 10 SR2 to Directory Manager 11.

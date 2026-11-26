@@ -11,7 +11,7 @@ sidebar_position: 10
 
 # Directory Manager Installation Tools and Upgrade Cases
 
-To install Directory Manager, you must run the following tools in the given order:
+To install Directory Manager, run the following tools in this order:
 
 - **[Run the Directory Manager Preparation Tool](/docs/directorymanager/11.2/install/installer/preparationtool.md)** - Detects and installs the prerequisite software and
   Windows features that Directory Manager requires.
@@ -41,22 +41,21 @@ Administrators group on that machine.
 
 Choose one of the following four installation cases for Directory Manager 11:
 
-- **Case # 1**: Directory Manager 11 to coexist with Directory Manager 10 on the same machine
-- **Case # 2**: Directory Manager 11 to coexist with Directory Manager 10.0 or 9.0 in the same
-  environment
+- **Case # 1**: Directory Manager 11 to coexist with GroupID 10 SR2 on the same machine
+- **Case # 2**: Directory Manager 11 to coexist with GroupID 10 SR2 in the same environment
 - **Case # 3**: In-place installation of Directory Manager 11 on the same machine
 - **Case # 4**: In-place installation of Directory Manager 11 in the environment
 
 The Directory Manager 11 installation and configuration process is the same for all four cases.
-Create a copy of the database that the previous Directory Manager version uses, and bind the copy
+Create a copy of the database that the previous GroupID version uses, and bind the copy
 with Directory Manager 11.
 
 Next, run the Upgrade wizard to make the copied database compatible with Directory Manager 11. After
-the upgrade, the database schema changes. The previous Directory Manager version can no longer use
+the upgrade, the database schema changes. The previous GroupID version can no longer use
 the database.
 
 :::note
-When Directory Manager 11 coexists with a previous Directory Manager version (Cases # 1 and
+When Directory Manager 11 coexists with a previous GroupID version (Cases # 1 and
 2), the two must have separate databases. Data isn't replicated between these databases.
 :::
 

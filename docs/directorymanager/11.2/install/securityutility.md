@@ -87,7 +87,7 @@ To generate and encrypt the password for the `GROUPID` user account:
 If you have multiple Directory Manager servers or distributed portals, you must also run the `GroupIDPasswordTransferUtility.exe` utility to securely transfer the password to the distributed Directory Manager systems. When done, restart IIS on those systems.
 
 :::note
-You also use the `GroupIDPasswordTransferUtility.exe` utility to copy the `GROUPID` account password to a new server when you set up a multi-instance deployment. In that case, you don't generate a new password. Skip the Generate a secure password steps, which apply only to upgrades from Directory Manager 10 or earlier Directory Manager 11 versions, and start with the following steps on the primary server.
+You also use the `GroupIDPasswordTransferUtility.exe` utility to copy the `GROUPID` account password to a new server when you set up a multi-instance deployment. In that case, you don't generate a new password. Skip the Generate a secure password steps, which apply only to upgrades from GroupID 10 SR2 or earlier Directory Manager 11 versions, and start with the following steps on the primary server.
 :::
 
 To export the generated password from the primary Directory Manager server to a secondary server or instance:
@@ -102,7 +102,7 @@ To export the generated password from the primary Directory Manager server to a 
 
 5. To import the encrypted password, run the following cmdlet on the instance where you placed the file.
 
-   `GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "password copied from above"`
+   `GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "encrypted password copied in step 3"`
 
 6. Restart IIS on this server.
 

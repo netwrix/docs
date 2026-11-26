@@ -1,6 +1,6 @@
 ---
 title: "Upgrade Notes and Limitations for Directory Manager 11"
-description: "Review what the Upgrade wizard does not carry over and which settings change when you upgrade from Directory Manager 9 or 10 to version 11."
+description: "Review what the Upgrade wizard does not carry over and which settings change when you upgrade from GroupID 10 SR2 to Directory Manager 11."
 keywords:
   - directory manager upgrade limitations
   - upgrade wizard behavior changes
@@ -12,10 +12,14 @@ sidebar_position: 20
 
 # Upgrade Notes and Limitations for Directory Manager 11
 
-Consider the following when you upgrade to Directory Manager 11 from Directory Manager 9 and 10.
+Consider the following when you upgrade to Directory Manager 11 from GroupID 10 SR2.
 
 :::note
-In the following text, the term 'source version' refers to the Directory Manager version you are upgrading from.
+You can upgrade to Directory Manager 11 only from GroupID 10 SR2. If you use GroupID 9 or a GroupID 10 release earlier than SR2, first upgrade to GroupID 10 SR2.
+:::
+
+:::note
+In the following text, the term 'source version' refers to GroupID 10 SR2, the version you are upgrading from.
 :::
 
 **Notes**
@@ -60,7 +64,7 @@ In the following text, the term 'source version' refers to the Directory Manager
 
 6. Identity stores created for G Suite aren't upgraded.
 
-7. When you upgrade on a different server, the DC Priority settings for an Active Directory domain aren't upgraded to Directory Manager version 11.0.23315.04.
+7. When you upgrade on a different server, the DC Priority settings for an Active Directory domain aren't upgraded to Directory Manager version 11.
 
 8. In the source version, the upgrade debug logs were created in a temporary folder for the logged-on user, which you could access using the `%TEMP%` environment variable.  
    File name: `~GroupID10_Upgrade`
@@ -73,10 +77,10 @@ In the following text, the term 'source version' refers to the Directory Manager
 
 10. In the source version, log settings for an identity store inherently applied to Data service logs. When you upgrade to Directory Manager 11, these log settings move to the Data service, with the file logging mode set to the default, 'Error'. To change the mode in Directory Manager 11, go to Data service settings and change it as required. See the [Specify Log Settings for a Service](/docs/directorymanager/11.2/admincenter/service/dataservice/manage.md#specify-log-settings-for-a-service) topic.
 
-11. The following applies when you upgrade from Directory Manager 10 SR1.  
+11. The following applies when you upgrade from GroupID 10 SR2.  
     When the approver in pending workflow requests is a variable, such as `managedBy` or `additionalOwner`, the upgrade resolves the variable to the GUID of the object that it represents at that point in time. Therefore, the variable is replaced with a static value.
 
-12. SAML configurations with the Self-Service portals, Password Center portals, Automate, or any other Directory Manager client are lost during upgrade and aren't available in Directory Manager 11.
+12. SAML configurations with the Self-Service portals, Password Center portals, Automate, or any other GroupID client are lost during upgrade and aren't available in Directory Manager 11.
 
 13. Reports are no longer available on a shared location, as they were in the source version. In Directory Manager 11, users can download reports in different formats, including PDF, from the Directory Manager portal.
 
@@ -92,16 +96,16 @@ In the following text, the term 'source version' refers to the Directory Manager
     - Smart Groups whose memberships are determined using a system DSN (external data source) are affected.
     - Synchronize jobs with the source or destination provider configured using a system DSN don't work.
 
-18. Insights in Directory Manager 10 is renamed to Entitlement in Directory Manager 11.  
-    In Directory Manager 10, one schedule named 'Insights' existed for Insights. The upgrade renames it to 'Directory Manager Entitlement'. Directory Manager 11 also has two new schedules for Entitlement: 'Entitlement Scope' and 'Entitlement Temporary Permissions'. The upgrade automatically creates these new schedules for identity stores that have Entitlement settings defined.
+18. Insights in GroupID 10 SR2 is renamed to Entitlement in Directory Manager 11.  
+    In GroupID 10 SR2, one schedule named 'Insights' existed for Insights. The upgrade renames it to 'Directory Manager Entitlement'. Directory Manager 11 also has two new schedules for Entitlement: 'Entitlement Scope' and 'Entitlement Temporary Permissions'. The upgrade automatically creates these new schedules for identity stores that have Entitlement settings defined.
 
 19. You can't run the Configuration Tool and the Upgrade wizard more than once using the same database (for upgrade to Directory Manager version 11.0.23315.04).
 
-20. In an upgrade from Directory Manager 10, Smart Groups that use a plain Oracle data source must not use a Transparent Network Substrate (TNS) alias. Do one of the following:
+20. In an upgrade from GroupID 10 SR2, Smart Groups that use a plain Oracle data source must not use a Transparent Network Substrate (TNS) alias. Do one of the following:
 
-    - Before the upgrade, reconfigure these Smart Groups in Directory Manager 10 so that they don't use a TNS alias.
+    - Before the upgrade, reconfigure these Smart Groups in GroupID 10 SR2 so that they don't use a TNS alias.
     - After the upgrade, reconfigure the Oracle data sources that the Upgrade wizard created in Directory Manager 11.2.
 
-21. Schedules that you upgrade from Directory Manager 10 to Directory Manager 11.2 require you to reconfigure their authentication. See the [Schedules in Directory Manager](/docs/directorymanager/11.2/admincenter/schedule/overview.md) topic.
+21. Schedules that you upgrade from GroupID 10 SR2 to Directory Manager 11.2 require you to reconfigure their authentication. See the [Schedules in Directory Manager](/docs/directorymanager/11.2/admincenter/schedule/overview.md) topic.
 
-22. The upgrade doesn't upgrade reports from Directory Manager 10 to Directory Manager 11.2, and it doesn't attach them to an identity store. After the upgrade, reconfigure the reports manually in Directory Manager 11.2.
+22. The upgrade doesn't upgrade reports from GroupID 10 SR2 to Directory Manager 11.2, and it doesn't attach them to an identity store. After the upgrade, reconfigure the reports manually in Directory Manager 11.2.

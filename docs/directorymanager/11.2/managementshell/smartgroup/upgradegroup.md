@@ -1,6 +1,6 @@
 ---
 title: "Upgrade-Group Cmdlet in Directory Manager"
-description: "Upgrade managed and non-managed groups and their history from Directory Manager 10 to version 11.2 with the Upgrade-Group cmdlet."
+description: "Upgrade managed and non-managed groups and their history from GroupID 10 SR2 to Directory Manager 11.2 with the Upgrade-Group cmdlet."
 keywords:
   - Upgrade-Group
   - Directory Manager Management Shell
@@ -13,7 +13,7 @@ sidebar_position: 60
 # Upgrade-Group Cmdlet in Directory Manager
 
 The Upgrade-Group cmdlet upgrades managed groups (Smart Groups and Dynasties) and non-managed groups
-from Directory Manager 10 to Directory Manager 11.2.
+from GroupID 10 SR2 to Directory Manager 11.2.
 
 Before you run this cmdlet, ensure the Directory Manager Upgrade wizard has upgraded the
 configurations and history. Only then does this cmdlet upgrade the specified groups and their history

@@ -1,6 +1,6 @@
 ---
 title: "Upgrade Notes and Limitations for Directory Manager 11"
-description: "Review what the Upgrade wizard does not carry over and which settings change when you upgrade from Directory Manager 9 or 10 to version 11."
+description: "Review what the Upgrade wizard does not carry over and which settings change when you upgrade from GroupID 9 or 10 to Directory Manager 11."
 keywords:
   - directory manager upgrade limitations
   - upgrade wizard behavior changes
@@ -12,10 +12,17 @@ sidebar_position: 20
 
 # Upgrade Notes and Limitations for Directory Manager 11
 
-Consider the following when you upgrade to Directory Manager 11 from Directory Manager 9 and 10.
+:::note
+Directory Manager 11.0 supported upgrade from GroupID 9 and GroupID 10. As of Directory Manager
+11.2, you can upgrade only from GroupID 10 SR2. This page is kept for archive purposes. When you plan
+an upgrade, use the
+[Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
+:::
+
+Consider the following when you upgrade to Directory Manager 11 from GroupID 9 and 10.
 
 :::note
-In the following text, the term ‘source version’ refers to the Directory Manager version you are
+In the following text, the term ‘source version’ refers to the GroupID version you are
 upgrading from.
 :::
 
@@ -34,7 +41,7 @@ upgrading from.
       [Create a Portal in Native IIS](/docs/directorymanager/11.0/signin/applications/portal/create.md#create-a-portal-in-native-iis)
       topic.
     - In the source version, you specified a list of attributes to replicate for an identity store.
-      These attributes are saved to a file on the Directory Manager file system.  
+      These attributes are saved to a file on the GroupID file system.  
       To upgrade on a different server, the file that contains the selected attributes for each
       identity store must be present on the Directory Manager 11 server. If the wizard doesn't find
       it, Directory Manager 11 displays the default attributes for identity store replication
@@ -101,12 +108,12 @@ upgrading from.
     Manager 11, go to the Data service settings and change it as required. See the
     [Specify Log Settings for a Service](/docs/directorymanager/11.0/signin/service/dataservice/manage.md#specify-log-settings-for-a-service)
     topic.
-11. The following applies when you upgrade from Directory Manager 10 SR1.  
+11. The following applies when you upgrade from GroupID 10 SR1.  
     When the approver in pending workflow requests is a variable, such as `managedBy` or
     `additionalOwner`, then during upgrade, the variable is resolved to the GUID of the object that
     it represents at that point in time. Therefore, the variable is replaced with a static value.
 12. SAML configurations with the Self-Service portals, Password Center portals, Automate, or any
-    other Directory Manager client are lost during upgrade and aren't available in Directory
+    other GroupID client are lost during upgrade and aren't available in Directory
     Manager 11.
 13. Reports are no longer available on a shared location, as they were in the source version. In
     Directory Manager 11, users can download reports in different formats, including PDF, from the
@@ -132,8 +139,8 @@ upgrading from.
     - Synchronize jobs with the source or destination provider configured using a system DSN don't
       work.
 
-18. Insights in Directory Manager 10 is renamed to Entitlement in Directory Manager 11.  
-    In Directory Manager 10, one schedule named ‘Insights’ existed for Insights, which is upgraded
+18. Insights in GroupID 10 is renamed to Entitlement in Directory Manager 11.  
+    In GroupID 10, one schedule named ‘Insights’ existed for Insights, which is upgraded
     and renamed to ‘GroupID Entitlement’. Directory Manager 11 also has two new schedules for
     Entitlement: ‘Entitlement Scope’ and ‘Entitlement Temporary Permissions’. The upgrade
     automatically creates these new schedules for identity stores that have Entitlement settings

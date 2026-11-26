@@ -1,9 +1,9 @@
 ---
 title: "Prerequisites for Upgrading to Directory Manager 11"
-description: "Confirm which Directory Manager versions you can upgrade from, complete the prerequisites, and find the upgrade log files."
+description: "Confirm that you can upgrade from GroupID 10 SR2, complete the prerequisites, and find the upgrade log files."
 keywords:
   - directory manager upgrade prerequisites
-  - supported upgrade source versions
+  - GroupID 10 SR2 upgrade
   - upgrade on a different server
   - upgrade log files
   - gMSA service account upgrade
@@ -12,22 +12,29 @@ sidebar_position: 30
 
 # Prerequisites for Upgrading to Directory Manager 11
 
-Directory Manager 11 supports upgrading from the following versions:
+:::note
+This page is kept for archive purposes. When you plan an upgrade, use the
+[Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
+:::
 
-- Directory Manager 10.0
-- Directory Manager 9.0
+Directory Manager 11 supports upgrade only from GroupID 10 SR2.
+
+:::note
+If you use GroupID 9 or a GroupID 10 release earlier than SR2, first upgrade to GroupID 10 SR2.
+Then upgrade from GroupID 10 SR2 to Directory Manager 11.
+:::
 
 ## Prerequisites for Upgrade
 
 Complete the following before you run the Upgrade wizard.
 
 :::note
-In the following text, the term 'source version' refers to the Directory Manager version you are upgrading from.
+In the following text, the term 'source version' refers to GroupID 10 SR2, the version you are upgrading from.
 :::
 
 1. To upgrade on a different server, make the source version file system present on the Directory Manager 11 server:
 
-   1. On the source version server, for example, a Directory Manager 10 server, go to `[installation drive]:\Program Files\Imanami\` and copy the `GroupID 10` folder.
+   1. On the source version server, go to `[installation drive]:\Program Files\Imanami\` and copy the `GroupID 10` folder.
    2. On the Directory Manager 11 server, create the following path and paste the `GroupID 10` folder there:
 
       `C:\Program Files\Imanami\`
@@ -41,7 +48,7 @@ In the following text, the term 'source version' refers to the Directory Manager
 
 4. To upgrade schedules and Synchronize jobs on a different server, run a utility on the Directory Manager 11 server before you run the Upgrade wizard. Contact Netwrix Customer Support for more information.
 
-If you forget the passphrase you used to encrypt Directory Manager data, upgrade isn't possible.
+If you forget the passphrase you used to encrypt GroupID data, upgrade isn't possible.
 
 ## Upgrade logs
 
