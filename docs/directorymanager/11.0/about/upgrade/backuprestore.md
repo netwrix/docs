@@ -6,6 +6,13 @@ sidebar_position: 30
 
 # Back Up and Restore GroupID Data
 
+:::note
+Directory Manager 11.0 supported upgrade from GroupID 9 and GroupID 10. As of Directory Manager
+11.2, you can upgrade only from GroupID 10 SR2. This page is kept for archive purposes. When you plan
+an upgrade, use the
+[Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
+:::
+
 This topic provides instructions for backing up and restoring the data from previous versions of
 GroupID. While upgrading to GroupID 11.0.
 
@@ -115,8 +122,10 @@ Follow these steps to create a backup of jobs created with GroupID 9.0 and 10.0 
 2. Copy the **Jobs** folder.
 3. Create a new folder (ideally on a different drive) and paste the **Jobs** folder into it.
 
-NOTE: If some scheduled tasks are defined for Synchronize jobs, you do not need to create their
+:::note
+If some scheduled tasks are defined for Synchronize jobs, you don't need to create their
 backup. On restoring, the scheduled tasks remain functional for Synchronize jobs.
+:::
 
 ### Restore
 
@@ -145,8 +154,10 @@ Follow these steps to create a backup of GroupID 9.0 and 10.0 Reports:
 2. Copy all data at the location.
 3. Create a new folder (ideally on a different drive) and paste the copied data into that folder.
 
-NOTE: Note: You do not need to create a backup of scheduled tasks that include report criteria. On
+:::note
+You don't need to create a backup of scheduled tasks that include report criteria. On
 restoring, the scheduled tasks remain functional for these reports.
+:::
 
 ### Restore
 

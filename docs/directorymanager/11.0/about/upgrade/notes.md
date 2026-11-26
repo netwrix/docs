@@ -6,6 +6,13 @@ sidebar_position: 20
 
 # Notes on Upgrade
 
+:::note
+Directory Manager 11.0 supported upgrade from GroupID 9 and GroupID 10. As of Directory Manager
+11.2, you can upgrade only from GroupID 10 SR2. This page is kept for archive purposes. When you plan
+an upgrade, use the
+[Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
+:::
+
 Consider the following when upgrading to GroupID 11 from GroupID 9 and 10.
 
 NOTE: In the following text, the term ‘source version’ refers to the GroupID version you are
@@ -28,7 +35,7 @@ upgrading from.
     - In the source version, you specified a list of attributes to replicate for an identity store.
       These attributes are saved to a file on the GroupID file system.  
       To upgrade on a different box, the file containing the selected attributes for each identity
-      store must be present on the GroupID 11 server. If the wizard does not find it, GroupID 11
+      store must be present on the GroupID 11 server. If the wizard doesn't find it, GroupID 11
       will display the default attributes for identity store replication (rather than your selected
       attributes).
 
@@ -59,7 +66,7 @@ upgrading from.
 
     - Design settings for the toolbars and navigation bars will not be imported due to architectural
       changes in GroupID 11.
-    - The Group Search and User Search forms will not be upgraded as they are not available in
+    - The Group Search and User Search forms will not be upgraded as they aren't available in
       GroupiD 11.
     - Portal branding, logo, and any customizations to a Self-Service portal will be lost.
 
@@ -68,11 +75,11 @@ upgrading from.
    If, in the source version, you have set the value of the Self-Service portal’s advanced setting
    _Default Startup Page_ to ‘Group Search’ or ‘Organizational Hierarchy’, then it will not be
    upgraded. The ‘Group Search’ page has been removed from GroupID 11 while the ‘Organizational
-   Hierarchy’ page is not supported as a startup page.
+   Hierarchy’ page isn't supported as a startup page.
 5. Any notifications pending in the notification queue in the source version will not be upgraded.
 6. An identity store created for G Suite will not be upgraded.
 7. In case of upgrade on a different box, the DC Priority settings for an Active Directory domain
-   are not upgraded to GroupID version 11.0.23315.04.
+   aren't upgraded to GroupID version 11.0.23315.04.
 8. In the source version, the debug logs for upgrade were created in a temporary folder for the
    logged-on user, that could be accessed using the %TEMP% environment variable.  
    File name: ~GroupID10_Upgrade
@@ -109,7 +116,7 @@ upgrading from.
     move to the data sources created for them on the GroupID 11 file system.
 15. During upgrade, scripts for Smart Groups and Synchronize jobs are upgraded to GroupID 11 without
     any change. If a script contains a location in a variable (for example, for exporting files),
-    that setting will not work in case of upgrade on a different box. Make sure you change the
+    that setting will not work in case of upgrade on a different box. ensure you change the
     location after upgrade.
 16. In the GroupID source version, source and destination providers in Synchronize jobs were saved
     as connection strings in a file. Similarly, when using an external data source for Smart Groups,
@@ -131,7 +138,7 @@ upgrading from.
     renamed to ‘GroupID Entitlement’. GroupID 11 will also have two new schedules for Entitlement;
     ‘Entitlement Scope’ and ‘Entitlement Temporary Permissions’. These new schedules will be auto
     created for identity stores that have Entitlement settings defined.
-19. You cannot run the Configuration Tool and the Upgrade wizard more than once using the same
+19. You can't run the Configuration Tool and the Upgrade wizard more than once using the same
     database (for upgrade to GroupID version 11.0.23315.04).
 
 See Also
