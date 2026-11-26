@@ -27,8 +27,8 @@ Get-Computer
 
 ## Example
 
-This command retrieves the computer named _arslanahmadsvm_.
+This command retrieves the computer named _computer01_.
 
 ```
-Get-computer -Identity arslanahmadsvm
+Get-computer -Identity computer01
 ```

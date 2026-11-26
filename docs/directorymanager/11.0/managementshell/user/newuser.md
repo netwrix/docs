@@ -73,7 +73,7 @@ parameter. The command also specifies the logon name, password, first name, last
 name of the new user.
 
 ```
-New-User -Name "OsamaUser" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -SAMAccountName "OsamaUser11" -Password "webdir123R" -FirstName "Osama" -LastName "Shahbaz" -DisplayName "Osama"
+New-User -Name "SampleUser" -OrganizationalUnit "OU=SalesOU,DC=example,DC=com" -SAMAccountName "SampleUser11" -Password "webdir123R" -FirstName "Sample" -LastName "User" -DisplayName "Sample"
 ```
 
 See Also

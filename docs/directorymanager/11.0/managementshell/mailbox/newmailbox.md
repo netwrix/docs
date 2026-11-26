@@ -76,7 +76,7 @@ parameter of the specified mailbox store. The command also specifies the logon n
 name, last name, and display name of the new mailbox.
 
 ```
-New-MailBox -MailBoxStore "OsamaMailBoxDb120435" -Name "OsamaMailBox" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -SAMAccountName "OsamaMailBoxUser" -Password "webdir123R" -FirstName "OsamaMailBox" -LastName "MailBoxuser" -DisplayName "OsamaMailBox" -Alias "OsamaMailBox
+New-MailBox -MailBoxStore "SampleMailBoxDb120435" -Name "SampleMailBox" -OrganizationalUnit "OU=SalesOU,DC=example,DC=com" -SAMAccountName "SampleMailBoxUser" -Password "webdir123R" -FirstName "SampleMailBox" -LastName "MailBoxuser" -DisplayName "SampleMailBox" -Alias "SampleMailBox
 ```
 
 **See Also**

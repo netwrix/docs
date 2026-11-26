@@ -41,9 +41,9 @@ Send-TestNotification
 
 ## Example
 
-This command sends a test notification to euser1@pucit.local through the
-arslanahmadsvm.pucit.local SMTP server on port 25 for the AdStore9 identity store.
+This command sends a test notification to euser1@example.com through the
+mail01.example.com SMTP server on port 25 for the AdStore9 identity store.
 
 ```
-Send-TestNotification -IdentityStorename AdStore9 -SmtpServer arslanahmadsvm.pucit.local -Port 25 -FromEmail noreply@pucit.local -ToEmail euser1@pucit.local
+Send-TestNotification -IdentityStorename AdStore9 -SmtpServer mail01.example.com -Port 25 -FromEmail noreply@example.com -ToEmail euser1@example.com
 ```

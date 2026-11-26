@@ -45,7 +45,7 @@ After it connects, the cmdlet displays five lines of text with the identity stor
 ```
 ID                ::  2
 Name              ::  AdStore1
-Connection        ::  pucit.local
+Connection        ::  example.com
 Type              ::  Active Directory
 User              ::  John Smith
 ```

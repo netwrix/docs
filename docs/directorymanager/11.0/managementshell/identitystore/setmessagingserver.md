@@ -61,7 +61,7 @@ Example 2:
 This example modifies the messaging system of the AdStore9 identity store to Exchange 2013.
 
 ```
-Set-MessagingServer -IdentityStoreName AdStore9 -Provider exchange2013 -UserName administrator -Password webdir123R - SmtpServer arslanahmadsvm.pucit.local -Domain pucit.local
+Set-MessagingServer -IdentityStoreName AdStore9 -Provider exchange2013 -UserName administrator -Password webdir123R - SmtpServer mail01.example.com -Domain example.com
 ```
 
 ## See Also

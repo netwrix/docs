@@ -33,7 +33,7 @@ Example:
 The following command deletes the specified mailbox from the connected identity store.
 
 ```
-Remove-MailBox -Identity "OsamaMailBox"
+Remove-MailBox -Identity "SampleMailBox"
 ```
 
 **See Also**

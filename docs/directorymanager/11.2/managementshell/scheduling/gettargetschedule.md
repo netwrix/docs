@@ -41,10 +41,10 @@ The results also contain the jobs that are set to include all containers.
 ### Example 1: Get the schedules on an OU
 
 This example retrieves the schedules operating on an OU with the distinguished name
-OU=WorkingOU,DC=pucit,DC=local.
+OU=WorkingOU,DC=example,DC=com.
 
 ```
-Get-TargetSchedules -Identity 'OU=WorkingOU,DC=pucit,DC=local'
+Get-TargetSchedules -Identity 'OU=WorkingOU,DC=example,DC=com'
 ```
 
 ### Example 2: Get the schedules on a group and an OU
@@ -52,7 +52,7 @@ Get-TargetSchedules -Identity 'OU=WorkingOU,DC=pucit,DC=local'
 This example retrieves the schedules operating on a group and an OU through the pipeline operator.
 
 ```
-'OU=WorkingOU,DC=pucit,DC=local', 'CN=SGroup1,OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' | Get-TargetSchedules
+'OU=WorkingOU,DC=example,DC=com', 'CN=SGroup1,OU=SampleOU,OU=WorkingOU,DC=example,DC=com' | Get-TargetSchedules
 ```
 
 ### Example 3: Select only the names and job types
@@ -61,5 +61,5 @@ This example selects only the names and job types of the schedules operating on 
 targets through the pipeline operator.
 
 ```
-'OU=WorkingOU,DC=pucit,DC=local', 'CN=SGroup1,OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' | Get-TargetSchedules | Select-Object -Property Name,JobType
+'OU=WorkingOU,DC=example,DC=com', 'CN=SGroup1,OU=SampleOU,OU=WorkingOU,DC=example,DC=com' | Get-TargetSchedules | Select-Object -Property Name,JobType
 ```

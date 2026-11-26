@@ -67,5 +67,5 @@ Set-MessagingServer -IdentityStoreName AdStore9 -Provider o365 -UserName admin@m
 This example changes the messaging system of the AdStore9 identity store to Exchange 2013.
 
 ```
-Set-MessagingServer -IdentityStoreName AdStore9 -Provider exchange2013 -UserName administrator -Password password123 -SmtpServer arslanahmadsvm.pucit.local -Domain pucit.local
+Set-MessagingServer -IdentityStoreName AdStore9 -Provider exchange2013 -UserName administrator -Password password123 -SmtpServer mail01.example.com -Domain example.com
 ```

@@ -84,5 +84,5 @@ Set-User
 This command changes the display name of the specified user.
 
 ```
-Set-User -Identity "Osama" -DisplayName "Osama123"
+Set-User -Identity "Sample" -DisplayName "Sample123"
 ```

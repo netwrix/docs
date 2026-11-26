@@ -66,7 +66,7 @@ parameter. The command also specifies the logon name, first name, last name, and
 new contact.
 
 ```
-New-Contact -Name "OsamaContact" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -FirstName "OsamaContact" -LastName "OsamaContact" -DisplayName "OsamaContact"
+New-Contact -Name "SampleContact" -OrganizationalUnit "OU=SalesOU,DC=example,DC=com" -FirstName "SampleContact" -LastName "SampleContact" -DisplayName "SampleContact"
 ```
 
 See Also

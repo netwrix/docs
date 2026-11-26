@@ -33,5 +33,5 @@ Remove-MailBox
 This command deletes the specified mailbox-enabled user account from the connected identity store.
 
 ```
-Remove-MailBox -Identity "OsamaMailBox"
+Remove-MailBox -Identity "SampleMailBox"
 ```

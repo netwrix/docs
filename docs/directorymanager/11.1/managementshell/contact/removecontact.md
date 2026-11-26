@@ -33,5 +33,5 @@ Remove-Contact
 This command deletes the specified contact from the identity store.
 
 ```
-Remove-Contact -Identity "OsamaContact"
+Remove-Contact -Identity "SampleContact"
 ```

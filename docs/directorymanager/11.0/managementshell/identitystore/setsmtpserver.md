@@ -39,12 +39,12 @@ Set-SmtpServer
 
 Example 1:
 
-This example configures the arslanahmadsvm.pucit.local SMTP server for the AdStore9 identity store
-on port 25. The sender email address for notifications is noreply@pucit.local, and the recipient
-email address is euser1@pucit.local.
+This example configures the mail01.example.com SMTP server for the AdStore9 identity store
+on port 25. The sender email address for notifications is noreply@example.com, and the recipient
+email address is euser1@example.com.
 
 ```
-Set-SmtpServer -IdentityStorename AdStore9 -SmtpServer arslanahmadsvm.pucit.local -FromEmail noreply@pucit.local -ToEmail euser1@pucit.local -Port 25
+Set-SmtpServer -IdentityStorename AdStore9 -SmtpServer mail01.example.com -FromEmail noreply@example.com -ToEmail euser1@example.com -Port 25
 ```
 
 Example 2:

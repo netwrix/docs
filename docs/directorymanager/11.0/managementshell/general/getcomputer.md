@@ -29,10 +29,10 @@ Get-Computer
 
 Example 1:
 
-This example retrieves a computer with the name _arslanahmadsvm_.
+This example retrieves a computer with the name _computer01_.
 
 ```
-Get-computer -Identity arslanahmadsvm
+Get-computer -Identity computer01
 ```
 
 See Also

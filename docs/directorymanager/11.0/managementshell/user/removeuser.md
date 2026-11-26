@@ -33,7 +33,7 @@ Example:
 The following command deletes a user with the specified name.
 
 ```
-Remove-User -Identity "osama"
+Remove-User -Identity "sample"
 ```
 
 See Also

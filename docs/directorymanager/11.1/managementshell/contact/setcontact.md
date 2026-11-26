@@ -76,5 +76,5 @@ Set-Contact
 This command modifies the city of the specified contact.
 
 ```
-Set-Contact -Identity "OsamaContact" -City "Islamabad"
+Set-Contact -Identity "SampleContact" -City "Islamabad"
 ```

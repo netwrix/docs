@@ -55,7 +55,7 @@ This example modifies the DemoRole2 role in the AdStore9 identity store. The sco
 set to a container, and the cmdlet removes the filters specified in the CriteriaFilters parameter.
 
 ```
-Set-IdentityStoreRole -RoleName DemoRole2 -IdentityStoreName AdStore9 -CriteriaScope Container -DistinguishedName 'ou=workingou,dc=pucit,dc=local' -FilterOperation Remove -CriteriaFilters @('type', 'is not', 'managementshell')
+Set-IdentityStoreRole -RoleName DemoRole2 -IdentityStoreName AdStore9 -CriteriaScope Container -DistinguishedName 'ou=workingou,dc=example,dc=com' -FilterOperation Remove -CriteriaFilters @('type', 'is not', 'managementshell')
 ```
 
 Example 3:

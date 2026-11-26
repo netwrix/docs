@@ -69,7 +69,7 @@ This example creates a new Active Directory-based identity store by explicitly s
 credentials for the new identity store.
 
 ```
-New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore2 -Credential $cred -Domain pucit.local
+New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore2 -Credential $cred -Domain example.com
 ```
 
 :::note
@@ -82,7 +82,7 @@ This example creates a new Active Directory-based identity store by providing th
 credentials. Here $cred is an object of type PSCredential that the Get-Credential cmdlet created.
 
 ```
-New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore2 -Credential $cred -Domain pucit.local
+New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore2 -Credential $cred -Domain example.com
 ```
 
 Example 3:
@@ -118,7 +118,7 @@ The $creds object (of type PSCredential) must contain the service account as the
 ‘Password’ property of this object can be anything except empty.
 
 ```
-New-IdentityStore -IdentityStoreType GoogleWorkspace -IdentityStoreName DemoGStore2 -Credential $creds -AdminUsername arslan@bibelotz.com -P12CertificatePath 'C:\Keys\gsuite\key.p12'
+New-IdentityStore -IdentityStoreType GoogleWorkspace -IdentityStoreName DemoGStore2 -Credential $creds -AdminUsername admin@example.com -P12CertificatePath 'C:\Keys\gsuite\key.p12'
 ```
 
 Example 6:

@@ -43,7 +43,7 @@ Example:
 The following command retrieves the specified user from the connected identity store.
 
 ```
-Get-User -Identity "Osama"
+Get-User -Identity "Sample"
 ```
 
 See Also

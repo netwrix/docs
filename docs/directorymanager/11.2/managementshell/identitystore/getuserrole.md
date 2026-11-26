@@ -44,20 +44,20 @@ Get-UserRole -Identity testingaccount -IdentityStoreName AdStore1 -ClientName 'A
 
 ### Example 2
 
-This command displays the highest-priority role information about the _testingaccount@pucit.local_ user
+This command displays the highest-priority role information about the _testingaccount@example.com_ user
 for all clients of the AdStore1 identity store.
 
 ```
-Get-UserRole -Identity testingaccount@pucit.local -IdentityStoreName AdStore1
+Get-UserRole -Identity testingaccount@example.com -IdentityStoreName AdStore1
 ```
 
 ### Example 3
 
-This command displays role information about the `_testingaccount@pucit.local_` user in the
+This command displays role information about the `_testingaccount@example.com_` user in the
 _ManagementShell `<machine name>`_ client of the connected identity store.
 
 ```
-Get-UserRole -Identity testingaccount@pucit.local -ClientName 'ManagementShell <machine name>'
+Get-UserRole -Identity testingaccount@example.com -ClientName 'ManagementShell <machine name>'
 ```
 
 ### Example 4

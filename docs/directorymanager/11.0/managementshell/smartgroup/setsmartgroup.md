@@ -172,7 +172,7 @@ The following command overwrites the **Includes** and **Excludes** lists of a Sm
 two groups in the Includes list and one group in the Excludes list.
 
 ```
-Set-SmartGroup -Identity "CN=imrantest, OU=Testit, DC=minion,DC=local" –Replace @{Includes = "CN=Shizasss,CN=Users,DC=minion,DC=Local","CN=ShezaOfc,CN=Users,DC=minion,DC=Local" ; Excludes="CN=Administrator,CN=Users,DC=minion,DC=local" , "CN=TestMailbox,CN=Users,DC=minion,DC=local"]
+Set-SmartGroup -Identity "CN=SampleSmartGroup, OU=Testit, DC=example,DC=com" –Replace @{Includes = "CN=JaneDoe,CN=Users,DC=example,DC=com","CN=JohnDoe,CN=Users,DC=example,DC=com" ; Excludes="CN=Administrator,CN=Users,DC=example,DC=com" , "CN=TestMailbox,CN=Users,DC=example,DC=com"]
 
 ```
 

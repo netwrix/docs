@@ -77,7 +77,7 @@ Example:
 The following command modifies the display name of the specified user.
 
 ```
-Set-User -Identity "Osama" -DisplayName "Osama123"
+Set-User -Identity "Sample" -DisplayName "Sample123"
 ```
 
 See Also

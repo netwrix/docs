@@ -78,7 +78,7 @@ The following command modifies the country value of the specified mailbox in the
 identity store.
 
 ```
-Set-MailBox -Identity "OsamaMailBox" -Country "Pakistan"
+Set-MailBox -Identity "SampleMailBox" -Country "Pakistan"
 ```
 
 **See Also**

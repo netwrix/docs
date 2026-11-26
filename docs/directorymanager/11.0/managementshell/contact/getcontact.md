@@ -42,7 +42,7 @@ Example:
 The following command retrieves a contact from the specified container of the identity store.
 
 ```
-Get-Contact -SearchContainer "OU=osamamu,DC=naveed,DC=local"
+Get-Contact -SearchContainer "OU=SalesOU,DC=example,DC=com"
 ```
 
 See Also

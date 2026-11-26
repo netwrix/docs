@@ -48,7 +48,7 @@ For **MailBoxStore**, enter the distinguished name of the mailbox database, whic
 This command retrieves the specified mailbox from the connected identity store.
 
 ```
-Get-MailBox -Identity "OsamaMailBox"
+Get-MailBox -Identity "SampleMailBox"
 ```
 
 **See Also**

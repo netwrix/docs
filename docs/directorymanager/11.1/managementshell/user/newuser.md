@@ -76,5 +76,5 @@ New-User
 This command creates a user in the container specified by the _OrganizationalUnit_ parameter. The command also specifies the logon name, password, first name, last name, and display name of the new user.
 
 ```
-New-User -Name "OsamaUser" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -SAMAccountName "OsamaUser11" -Password "password123" -FirstName "Osama" -LastName "Shahbaz" -DisplayName "Osama"
+New-User -Name "SampleUser" -OrganizationalUnit "OU=SalesOU,DC=example,DC=com" -SAMAccountName "SampleUser11" -Password "password123" -FirstName "Sample" -LastName "User" -DisplayName "Sample"
 ```

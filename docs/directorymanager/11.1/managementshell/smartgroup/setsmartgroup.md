@@ -159,10 +159,10 @@ Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US
 
 ### Example 5
 
-This command replaces members in the **Includes** and **Excludes** lists of a Smart Group. For each list, the **Replace** parameter removes the first value and adds the remaining values. It doesn't overwrite the whole list. The command replaces Shizasss with ShezaOfc in the Includes list, and Administrator with TestMailbox in the Excludes list.
+This command replaces members in the **Includes** and **Excludes** lists of a Smart Group. For each list, the **Replace** parameter removes the first value and adds the remaining values. It doesn't overwrite the whole list. The command replaces JaneDoe with JohnDoe in the Includes list, and Administrator with TestMailbox in the Excludes list.
 
 ```
-Set-SmartGroup -Identity "CN=imrantest, OU=Testit, DC=minion,DC=local" -Replace @{Includes = "CN=Shizasss,CN=Users,DC=minion,DC=Local","CN=ShezaOfc,CN=Users,DC=minion,DC=Local" ; Excludes="CN=Administrator,CN=Users,DC=minion,DC=local" , "CN=TestMailbox,CN=Users,DC=minion,DC=local"}
+Set-SmartGroup -Identity "CN=SampleSmartGroup, OU=Testit, DC=example,DC=com" -Replace @{Includes = "CN=JaneDoe,CN=Users,DC=example,DC=com","CN=JohnDoe,CN=Users,DC=example,DC=com" ; Excludes="CN=Administrator,CN=Users,DC=example,DC=com" , "CN=TestMailbox,CN=Users,DC=example,DC=com"}
 
 ```
 

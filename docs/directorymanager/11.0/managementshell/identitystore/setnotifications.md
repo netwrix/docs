@@ -47,7 +47,7 @@ identity store. It also sets the group owners or managers and public group owner
 notification recipients.
 
 ```
-Set-Notifications -IdentityStoreName AdStore9 -PrimaryRecepients 'euser1@pucit.local', 'euser2@pucit.local' -CarbonCopy 'exmb1@pucit.local' -NotifyOwners $true -NotifyPublicGroupOwner $true
+Set-Notifications -IdentityStoreName AdStore9 -PrimaryRecepients 'euser1@example.com', 'euser2@example.com' -CarbonCopy 'exmb1@example.com' -NotifyOwners $true -NotifyPublicGroupOwner $true
 ```
 
 Example 2:

@@ -76,7 +76,7 @@ New-IdentityStore
 This command creates a new Active Directory-based identity store by explicitly specifying the credentials for the new identity store.
 
 ```
-New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore1 -UserName administrator -Password password123 -Domain pucit.local
+New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore1 -UserName administrator -Password password123 -Domain example.com
 ```
 
 :::note
@@ -88,7 +88,7 @@ For an Active Directory-based identity store, the Domain parameter is mandatory.
 This command creates a new Active Directory-based identity store by providing the secure credentials. Here $cred is an object of type PSCredential that the Get-Credential cmdlet created.
 
 ```
-New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore2 -Credential $cred -Domain pucit.local
+New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdStore2 -Credential $cred -Domain example.com
 ```
 
 ### Example 3
@@ -122,7 +122,7 @@ This command creates an identity store based on Google Apps (G-Suite) using secu
 The $creds object (of type PSCredential) must contain the service account as the username. The 'Password' property of this object can be anything except empty.
 
 ```
-New-IdentityStore -IdentityStoreType GSuite -IdentityStoreName DemoGStore2 -Credential $creds -AdminUsername arslan@bibelotz.com -P12CertificatePath 'C:\Keys\gsuite\key.p12'
+New-IdentityStore -IdentityStoreType GSuite -IdentityStoreName DemoGStore2 -Credential $creds -AdminUsername admin@example.com -P12CertificatePath 'C:\Keys\gsuite\key.p12'
 ```
 
 ### Example 6

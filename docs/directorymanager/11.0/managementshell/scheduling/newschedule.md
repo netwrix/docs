@@ -62,7 +62,7 @@ This example creates a new schedule using the minimum possible parameters. This 
 an insecure password.
 
 ```
-New-Schedule -ScheduleName SmuTest1 -IdentityStoreName AdStore8 -UserName user -Password password1 -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local', 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType SmartGroup -TriggerType Daily -StartTime '16:56'
+New-Schedule -ScheduleName SmuTest1 -IdentityStoreName AdStore8 -UserName user -Password password1 -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com', 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType SmartGroup -TriggerType Daily -StartTime '16:56'
 ```
 
 :::note
@@ -75,7 +75,7 @@ This example creates a smart group schedule that triggers on the 7th of every Ma
 September.
 
 ```
-New-Schedule -ScheduleName SmuTest2 -IdentityStoreName AdStore8 -Credentials $creds -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType SmartGroup -TriggerType Monthly -StartTime '16:56' -YearMonths 'March','August','September' -MonthDate 7
+New-Schedule -ScheduleName SmuTest2 -IdentityStoreName AdStore8 -Credentials $creds -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType SmartGroup -TriggerType Monthly -StartTime '16:56' -YearMonths 'March','August','September' -MonthDate 7
 ```
 
 To use secure credentials, first create them and save them to a variable named `creds`.
@@ -89,7 +89,7 @@ Example 3:
 This example creates a GUS job by providing a messaging system.
 
 ```
-New-Schedule -ScheduleName GusTest1 -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -MessagingSystems 'ARSLANAHMADSVM.PUCIT.LOCAL'
+New-Schedule -ScheduleName GusTest1 -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -MessagingSystems 'MAIL01.EXAMPLE.COM'
 ```
 
 Example 4:
@@ -109,7 +109,7 @@ the owners of the schedule targets. The notifications are sent only when the sch
 job successfully.
 
 ```
-New-Schedule -ScheduleName GusTest3 -IncludeAllContainers -IncludeAllMessagingSystems -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -EnableNotifications -Recepients 'recep1@gid.com','recep2@gid.com' -SendToOwners -NotificationSendingCriteria OnSuccess
+New-Schedule -ScheduleName GusTest3 -IncludeAllContainers -IncludeAllMessagingSystems -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -EnableNotifications -Recepients 'recipient1@example.com','recipient2@example.com' -SendToOwners -NotificationSendingCriteria OnSuccess
 ```
 
 See Also

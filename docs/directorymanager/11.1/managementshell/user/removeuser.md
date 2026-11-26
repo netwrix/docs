@@ -38,5 +38,5 @@ Remove-User
 This command deletes the user with the specified name.
 
 ```
-Remove-User -Identity "osama"
+Remove-User -Identity "sample"
 ```

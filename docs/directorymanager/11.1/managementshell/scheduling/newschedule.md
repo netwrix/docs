@@ -66,7 +66,7 @@ The notification parameters (EnableNotifications, Recepients, SendToOwners, and 
 This example creates a schedule with the minimum possible parameters. It uses an insecure password.
 
 ```
-New-Schedule -ScheduleName SmuTest1 -UserName user -Password password1 -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType SmartGroup -TriggerType Daily -StartTime '16:56'
+New-Schedule -ScheduleName SmuTest1 -UserName user -Password password1 -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType SmartGroup -TriggerType Daily -StartTime '16:56'
 ```
 
 :::note
@@ -78,7 +78,7 @@ This example uses insecure credentials.
 This example creates a smart group schedule that triggers on the 7th of every March, August, and September.
 
 ```
-New-Schedule -ScheduleName SmuTest2 -Credentials $creds -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType SmartGroup -TriggerType Monthly -StartTime '16:56' -YearMonths 'March','August','September' -MonthDate 7
+New-Schedule -ScheduleName SmuTest2 -Credentials $creds -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType SmartGroup -TriggerType Monthly -StartTime '16:56' -YearMonths 'March','August','September' -MonthDate 7
 ```
 
 To use secure credentials, first create them and save them to a variable named `creds`.
@@ -92,7 +92,7 @@ $creds = Get-Credential
 This example creates a GUS job and specifies a messaging system.
 
 ```
-New-Schedule -ScheduleName GusTest1 -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -MessagingSystems 'ARSLANAHMADSVM.PUCIT.LOCAL'
+New-Schedule -ScheduleName GusTest1 -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -MessagingSystems 'MAIL01.EXAMPLE.COM'
 ```
 
 ### Example 4
@@ -108,5 +108,5 @@ New-Schedule -ScheduleName GusTest2 -IncludeAllContainers true -IncludeAllMessag
 This example creates a smart group job and configures its notification settings. Notifications are enabled and go to the specified recipients and to the owners of the schedule targets. The schedule sends notifications only when it completes its job successfully.
 
 ```
-New-Schedule -ScheduleName SmuTest3 -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType SmartGroup -Credentials $creds -TriggerType Daily -StartTime '16:56' -EnableNotifications $true -Recepients 'recep1@gid.com','recep2@gid.com' -SendToOwners $true -NotificationSendingCriteria OnSuccess
+New-Schedule -ScheduleName SmuTest3 -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType SmartGroup -Credentials $creds -TriggerType Daily -StartTime '16:56' -EnableNotifications $true -Recepients 'recipient1@example.com','recipient2@example.com' -SendToOwners $true -NotificationSendingCriteria OnSuccess
 ```

@@ -80,7 +80,7 @@ Example 3:
 This example removes OU targets from the smm4 schedule.
 
 ```
-Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local', 'OU=CustomRole,OU=WorkingOU,DC=pucit,DC=local', 'OU=CustomRole2,OU=WorkingOU,DC=pucit,DC=local'
+Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com', 'OU=CustomRole,OU=WorkingOU,DC=example,DC=com', 'OU=CustomRole2,OU=WorkingOU,DC=example,DC=com'
 ```
 
 Example 4:
@@ -88,7 +88,7 @@ Example 4:
 This example modifies the smm4\_ schedule by removing its targets.
 
 ```
-Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'CN=STest1Group,OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local', 'OU=CustomRole2,OU=WorkingOU,DC=pucit,DC=local'
+Set-Schedule -ScheduleName smm4_ -TargetOperation Remove -Targets 'CN=STest1Group,OU=SampleOU,OU=WorkingOU,DC=example,DC=com', 'OU=CustomRole2,OU=WorkingOU,DC=example,DC=com'
 ```
 
 Example 5:
@@ -102,10 +102,10 @@ Set-Schedule -ScheduleName smm4_ -SetNotifications $false
 Example 6:
 
 This example changes the notification settings of the smm4 schedule. It sets notifications to be sent to
-recep1@gid.com every time the job runs.
+recipient1@example.com every time the job runs.
 
 ```
-Set-Schedule -ScheduleName smm4_ -SetNotifications $true -Recepients 'recep1@gid.com' -NotificationSendingCriteria Always
+Set-Schedule -ScheduleName smm4_ -SetNotifications $true -Recepients 'recipient1@example.com' -NotificationSendingCriteria Always
 ```
 
 Example 7:

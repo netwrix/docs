@@ -56,7 +56,7 @@ New-MailBox
 [<CommonParameters>]
 ```
 
-For **MailBoxStore**, enter the name of the mailbox database (its common name), such as `OsamaMailBoxDb120435`, not its distinguished name.
+For **MailBoxStore**, enter the name of the mailbox database (its common name), such as `SampleMailBoxDb120435`, not its distinguished name.
 
 **Zip** and **Business** accept digits only.
 
@@ -77,5 +77,5 @@ For **MailBoxStore**, enter the name of the mailbox database (its common name), 
 This command creates a mailbox in the container specified by the **OrganizationalUnit** parameter of the specified mailbox store. The command also specifies the logon name, password, first name, last name, and display name of the new mailbox.
 
 ```
-New-MailBox -MailBoxStore "OsamaMailBoxDb120435" -Name "OsamaMailBox" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -SAMAccountName "OsamaMailBoxUser" -Password "password123" -FirstName "OsamaMailBox" -LastName "MailBoxuser" -DisplayName "OsamaMailBox" -Alias "OsamaMailBox"
+New-MailBox -MailBoxStore "SampleMailBoxDb120435" -Name "SampleMailBox" -OrganizationalUnit "OU=SalesOU,DC=example,DC=com" -SAMAccountName "SampleMailBoxUser" -Password "password123" -FirstName "SampleMailBox" -LastName "MailBoxuser" -DisplayName "SampleMailBox" -Alias "SampleMailBox"
 ```

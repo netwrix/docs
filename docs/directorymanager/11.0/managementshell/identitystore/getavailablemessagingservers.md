@@ -43,7 +43,7 @@ This example retrieves the available messaging servers configured in the AdStore
 the Exchange 2013 messaging provider.
 
 ```
-Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider exchange2013 -UserName administrator -Password webdir123R -Domain pucit.local
+Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider exchange2013 -UserName administrator -Password webdir123R -Domain example.com
 ```
 
 Example 2:
@@ -61,7 +61,7 @@ This example retrieves the available messaging servers in the AdStore1 identity 
 Workspace (G Suite) messaging provider.
 
 ```
-Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider gsuite -UserName svcaccount@myproject-219211.iam.gserviceaccount.com -AdminUsername 'arslan@mydomain.com' -P12CertificatePath 'C:\Keys\gsuite\key.p12'
+Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider gsuite -UserName svcaccount@myproject-111222.iam.gserviceaccount.com -AdminUsername 'admin@example.com' -P12CertificatePath 'C:\Keys\gsuite\key.p12'
 ```
 
 See Also

@@ -78,5 +78,5 @@ Set-MailBox
 This command modifies the country value of the specified mailbox in the connected identity store.
 
 ```
-Set-MailBox -Identity "OsamaMailBox" -Country "Pakistan"
+Set-MailBox -Identity "SampleMailBox" -Country "Pakistan"
 ```
