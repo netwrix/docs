@@ -88,6 +88,36 @@ Set-Group
 
 Use the ResetQuickFilter switch to set the group's quick filter value (`imsgquickfilter`) to 2. This fixes groups upgraded from versions earlier than 10.
 
+## Clear parameter
+
+Use the `Clear` parameter to remove all current values of one or more group attributes. Enter the attribute names without quotes, separated by commas:
+
+```
+-Clear ManagedBy,AdditionalOwners
+```
+
+Attribute names aren't case-sensitive.
+
+:::warning
+Don't enclose the list of attribute names in quotes. `Set-Group` reads `"ManagedBy,AdditionalOwners"` as one attribute name and doesn't split it, so it clears nothing and doesn't show an error.
+:::
+
+The `Clear` parameter supports the following attributes:
+
+- `ManagedBy` – the primary owner (manager) of the group in an Active Directory identity store
+- `Owners` – the primary owner (manager) of the group in a Microsoft Entra ID identity store
+- `AdditionalOwners`
+- `AcceptMessagesOnlyFrom` (alias: `authorig`)
+- `AcceptMessagesOnlyFromGroups` (alias: `dlmemsubmitprems`)
+- `RejectMessagesFrom` (alias: `unauthorig`)
+- `RejectMessagesFromGroups` (alias: `dlmemrejectprems`)
+
+In a Microsoft Entra ID identity store, use `-Clear Owners` to clear the manager. `-Clear ManagedBy` has no effect there. `Set-Group` ignores any attribute name that isn't in this list and doesn't show an error or warning.
+
+If a command uses the `ManagedBy` or `AdditionalOwners` parameter to set a new value for an attribute that it also clears, `Set-Group` discards the new value. To replace the values, run a command with the `Clear` parameter first, and then run a second command that sets the new values.
+
+To clear the manager, use `-Clear ManagedBy` rather than `-ManagedBy ""` or `-ManagedBy $null`. These values return an error or leave the manager unchanged. To clear additional owners, use `-Clear AdditionalOwners`. `-AdditionalOwners ""` doesn't clear them. You can also use `-Replace @{AdditionalOwners="*"}` to remove all existing additional owners. `Set-Group` shows a warning that it removes all existing additional owners.
+
 ## Required parameters
 
 - Identity
@@ -124,4 +154,12 @@ The following command removes two additional owners from the Training group, add
 
 ```
 Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Remove @{AdditionalOwners = "CN=Roger_Manson,OU=ResignedStaff,DC=HR,DC=Imanami,DC=US","KillenEdward"} -Add @{AdditionalOwners = "RobinSoto","MeganFox","DollyChan"} -NotifyOptOutAdditionalOwners "RobinSoto"
+```
+
+### Example 5
+
+The following command clears the manager and the additional owners of the Training group.
+
+```
+Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Clear ManagedBy,AdditionalOwners
 ```
