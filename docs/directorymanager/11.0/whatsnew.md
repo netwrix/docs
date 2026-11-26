@@ -85,7 +85,7 @@ way, you can link and auto-sync identical user and group objects that exist in t
 
 Deployment of services and Directory Manager portals in native IIS, remote IIS, and Docker
 
-Earlier versions of Directory Manager supported deployments in native IIS only. Now, you can create
+Earlier versions of GroupID supported deployments in native IIS only. Now, you can create
 as many portals, Data services, Security services, and Mobile services as needed, and deploy them on
 any of the supported web servers.
 
@@ -109,7 +109,7 @@ workflow starts, Directory Manager automatically triggers the linked flow.
 
 Admin Center history tracking
 
-In earlier Directory Manager versions, Directory Manager partially tracked history for actions
+In earlier GroupID versions, GroupID partially tracked history for actions
 performed in the Management Console. In Directory Manager 11, history tracking also covers Admin
 Center. Directory Manager automatically tracks actions such as the creation and deletion of identity
 stores, the creation and deletion of SMS gateway accounts, changes to replication settings,
@@ -261,7 +261,7 @@ job.
 
 ### Entitlement
 
-In earlier Directory Manager versions, you could only view the effective NTFS permissions that a
+In earlier GroupID versions, you could only view the effective NTFS permissions that a
 user or group had on file server shares in your environment. With Directory Manager 11, you can now view and update permissions
 for file server shares and SharePoint sites.
 

@@ -89,7 +89,7 @@ role members can have any number of additional owners and even no additional own
 10. On the **Security Roles** page, click **Save**.
 
 :::note
-When additional owners were added using an earlier version of Directory Manager, and their number
+When additional owners were added using an earlier version of GroupID, and their number
 exceeds the value of this setting, Directory Manager retains them. However, you can't add more
 additional owners.
 :::

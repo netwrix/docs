@@ -44,21 +44,21 @@ group on that machine.
 
 Choose one of the following four installation cases for Directory Manager 11:
 
-- **Case # 1**: Directory Manager 11 to coexist with Directory Manager 10 on the same machine
+- **Case # 1**: Directory Manager 11 to coexist with GroupID 10 on the same machine
 
-- **Case # 2**: Directory Manager 11 to coexist with Directory Manager 10.0 or 9.0 in the same environment
+- **Case # 2**: Directory Manager 11 to coexist with GroupID 10.0 or 9.0 in the same environment
 - **Case # 3**: In-place installation of Directory Manager 11 on the same machine
 - **Case # 4**: In-place installation of Directory Manager 11 in the environment
 
 The Directory Manager 11 installation and configuration process is the same for all four cases. You must
-create a copy of the database being used with the previous Directory Manager version and bind the copy with
+create a copy of the database being used with the previous GroupID version and bind the copy with
 Directory Manager 11.
 
 Next, run the Upgrade wizard to make the copied database compatible with Directory Manager 11. After the upgrade,
-the database schema changes, making it incompatible with the previous Directory Manager version.
+the database schema changes, making it incompatible with the previous GroupID version.
 
 :::note
-When Directory Manager 11 coexists with a previous Directory Manager version (Cases # 1 and 2), the two must have
+When Directory Manager 11 coexists with a previous GroupID version (Cases # 1 and 2), the two must have
 separate databases. Data isn't replicated between these databases.
 :::
 

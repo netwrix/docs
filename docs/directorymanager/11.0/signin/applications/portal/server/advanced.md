@@ -18,7 +18,7 @@ you can set the default landing page, change the portal logo, turn the help link
 enrollment reminders, and more.
 
 Each portal has default values for all advanced settings. You can update any setting as
-needed. You can also import these advanced settings for a portal from a previous Directory Manager version.
+needed. You can also import these advanced settings for a portal from a previous GroupID version.
 See step 13 in the
 [Create a Portal in Native IIS](/docs/directorymanager/11.0/signin/applications/portal/create.md#create-a-portal-in-native-iis)
 topic.

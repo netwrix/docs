@@ -91,8 +91,8 @@ replicate its value in the Elasticsearch repository:
    Directory Manager database.
 
 :::note
-When a Smart Group, created with a custom attribute in a previous Directory Manager version, is upgraded
-using the Upgrade wizard, you must replicate all objects of the respective type again.
+When you use the Upgrade wizard to upgrade a Smart Group that someone created with a custom attribute
+in a previous GroupID version, you must replicate all objects of the respective type again.
 :::
 
 ## Force Run the Replication Service (for Object Replication)
