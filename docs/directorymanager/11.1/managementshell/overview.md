@@ -83,7 +83,7 @@ Also ensure the following is available at the remote machine:
 
 To enable remoting on a Directory Manager machine:
 
-1. Click **Start > Windows PowerShell**. Right-click Windows PowerShell and select **Run as administrator**.
+1. Click **Start**, right-click **PowerShell 7**, and select **Run as administrator**.
 
 2. At the command prompt, enter:
 
@@ -122,7 +122,7 @@ Sign in to the machine through which you want to remotely access the Directory M
    $pass = ConvertTo-SecureString "user password" -AsPlainText -Force
    $Cred = New-Object System.Management.Automation.PSCredential ($username, $pass)
    $s = New-PSSession -ComputerName "machine name" -Credential $Cred -ConfigurationName PowerShell.7
-   Invoke-Command -Session $s -ScriptBlock {$srcu = [reflection.assembly]::LoadFrom('C:\Program Files\PowerShell\7\System.Windows.Forms.dll'); $OnAssemblyResolve = [System.ResolveEventHandler] { param($sender, $e) if ($e.Name -like "System.Windows.Forms, Version=*") { return $srcu }return $null;};[System.AppDomain]::CurrentDomain.add_AssemblyResolve($OnAssemblyResolve);$reg=Get-ItemProperty -Path HKLM:SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\Imanami.Groups.Management.PowerShell.Admin11; $appbase=$reg.ApplicationBase;Import-Module -Name $appbase\directorymanagerManagementShell\bin\Imanami.directorymanager.Management.dll;Set-ModulePath -ModulePath $appbase\GroupIDManagementShell\bin}
+   Invoke-Command -Session $s -ScriptBlock {$srcu = [reflection.assembly]::LoadFrom('C:\Program Files\PowerShell\7\System.Windows.Forms.dll'); $OnAssemblyResolve = [System.ResolveEventHandler] { param($sender, $e) if ($e.Name -like "System.Windows.Forms, Version=*") { return $srcu }return $null;};[System.AppDomain]::CurrentDomain.add_AssemblyResolve($OnAssemblyResolve);$reg=Get-ItemProperty -Path HKLM:SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\Imanami.Groups.Management.PowerShell.Admin11; $appbase=$reg.ApplicationBase;Import-Module -Name $appbase\GroupIDManagementShell\bin\Imanami.GroupID.Management.dll;Set-ModulePath -ModulePath $appbase\GroupIDManagementShell\bin}
    Import-PSSession -Session $s -Type cmdlet -AllowClobber
    Connect-IdentityStore -mode "2" -IdentityStoreID "identity store id" -Credential $Cred
    ```

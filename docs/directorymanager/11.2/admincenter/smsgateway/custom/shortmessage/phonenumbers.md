@@ -13,9 +13,9 @@ sidebar_position: 40
 
 Gets or sets the list of mobile phone numbers to send the message to.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

@@ -13,9 +13,9 @@ sidebar_position: 30
 
 Returns a Boolean value indicating whether the text message was sent successfully to the target mobile phone numbers.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

@@ -21,8 +21,8 @@ you can add an account for it. See
 1. Define a class that implements the **ISMSGateway interface**. The interface is in the
    **Imanami.PublicInterfaces** namespace (_Imanami.PublicInterfaces.dll_). The core method for
    dispatching text messages uses objects from the
-   **Imanami.directorymanager.DataTransferObjects.DataContracts.SMS** namespace
-   (_Imanami.directorymanager.DataTransferObjects.dll_).
+   **Imanami.GroupID.DataTransferObjects.DataContracts.SMS** namespace
+   (_Imanami.GroupID.DataTransferObjects.dll_).
 
    The DLLs for both namespaces are in the Directory Manager installation directory. Implement the
    following **ISMSGateway members**:

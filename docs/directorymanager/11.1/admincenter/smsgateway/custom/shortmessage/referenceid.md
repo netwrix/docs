@@ -13,9 +13,9 @@ sidebar_position: 50
 
 Gets or sets the reference ID of the text message.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

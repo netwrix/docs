@@ -70,7 +70,7 @@ To sync subscriptions, on the **Objects, Fields and Mappings** page:
          Modify it with the attributes you want for the user logon part and add the domain name. For example:
 
          ```
-          DTM.Result = DTM.Source("First")&DTM.Source("Last")&"@directorymanager.onmicrosoft.com"
+          DTM.Result = DTM.Source("First")&DTM.Source("Last")&"@example.onmicrosoft.com"
          ```
 
       3. To test the script, click **Test Script** from the **Field Options** dropdown.

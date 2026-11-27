@@ -18,9 +18,9 @@ The `Validate` method checks that:
 - Phone numbers are provided in the PhoneNumbers property.
 - Each phone number is valid.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

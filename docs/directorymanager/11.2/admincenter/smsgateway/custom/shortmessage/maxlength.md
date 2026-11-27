@@ -13,9 +13,9 @@ sidebar_position: 20
 
 Defines the maximum length of an SMS message.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

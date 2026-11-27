@@ -19,7 +19,7 @@ C:\Program Files\Imanami\GroupID 11.0\
 
 To install Directory Manager:
 
-1. Run `directorymanagerInstallTool.exe` from the Directory Manager `<_version #_>` folder in the Directory Manager installation package. The Installation Tool opens.
+1. Run `DirectoryManagerInstallTool.exe` from the Directory Manager `<_version #_>` folder in the Directory Manager installation package. The Installation Tool opens.
 
    ![Installation Tool welcome page](/images/directorymanager/11.1/install/installer/introduction.webp)
 

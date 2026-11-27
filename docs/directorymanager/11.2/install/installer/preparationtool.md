@@ -20,7 +20,7 @@ To run the Directory Manager Preparation Tool:
 
 1. Open the Directory Manager 11.2 Prerequisites Tool folder in the Directory Manager installation
    package.
-2. Run the directorymanagerPrereqTool.exe file. It launches the Preparation Tool.
+2. Run the DirectoryManagerPrereqTool.exe file. It launches the Preparation Tool.
 
    ![Preparation Tool Welcome page with the Next button](/images/directorymanager/11.2/install/installer/welcome.webp)
 
