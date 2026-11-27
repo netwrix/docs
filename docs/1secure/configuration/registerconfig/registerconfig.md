@@ -30,7 +30,7 @@ registered application.
 
 
 :::note
-Unified audit log must be enabled for a tenant. See the Microsoft
+Enable the unified audit log for the tenant. See the Microsoft
 [Turn auditing on or off](https://learn.microsoft.com/en-us/purview/audit-log-enable-disable?view=o365-worldwide&tabs=microsoft-purview-portal)
 article for additional information.
 :::
@@ -76,8 +76,8 @@ additional information on adding a data source. Copy these settings and store th
 
 ## Grant Permissions to the App
 
-You must grant the necessary permissions to the registered application in Microsoft Entra ID, based
-on the data sources you plan to audit in.
+Grant the registered application in Microsoft Entra ID the permissions required for the data sources
+you plan to audit.
 
 **To grant permissions to the application:**
 
@@ -112,17 +112,20 @@ source.
 - [Permissions to Audit Exchange Online](permissions.md#permissions-to-audit-exchange-online)
 
 **Step 9 –** After selecting the required permissions, click **Add Permissions** at the bottom.
-You are navigated to the API Permissions page.
+The API Permissions page opens.
 
 **Step 10 –** Click **Grant admin consent for `<tenant>`** to grant the selected permissions to the
 applcation.
 
 The API permissions are granted to the application.
 
-## Assign Roles to the App
+## Assign Roles to the App (Optional)
 
-The registered application must be assigned to the Global Administrator or Exchange Administrator
-role for Microsoft Entra ID state collection.
+Assigning the registered application to the **Security Reader** or **Global Reader** role is
+optional. 1Secure reports the
+"[Unified Audit Log Search is Not Enabled](../../admin/riskprofiles/metrics_list.md)" risk only if
+the application has one of these roles and the `Exchange.ManageAsApp` permission. See the
+[Microsoft 365 Permissions](permissions.md) topic for additional information.
 
 **To assign roles to an application:**
 
@@ -140,11 +143,12 @@ is displayed.
 **Step 5 –** Click **Roles and administrators** under the Manage section. The Roles and
 administrators page is displayed. From here, go to the All roles page.
 
-**Step 6 –** On the All roles page, search for one of the following roles as required.
+**Step 6 –** On the All roles page, search for one of the following roles:
 
-- Global Administrator – Can manage all aspects of Microsoft Entra ID and Microsoft services that
-  use Microsoft Entra identities
-- Exchange Administrator – Can manage all aspects of the Exchange product
+- **Security Reader** – Can read security information and reports in Microsoft Entra ID and
+  Microsoft 365
+- **Global Reader** – Can read everything that a Global Administrator can, but can't update
+  anything
 
 **Step 7 –** Click the role you want. The Assignments page is displayed for it.
 
@@ -194,7 +198,7 @@ If you leave this page before copying the key, it isn't retrievable, and you nee
 
 ## Upload a Certificate
 
-Certain connectors require a certificate rather than a client secret for authentication. 1Secure downloads this certificate while you configure a data source. Once downloaded, upload the certificate to the registered application in Microsoft Entra ID. See the
+Certain connectors require a certificate rather than a client secret for authentication. 1Secure downloads this certificate while you configure a data source. After the download completes, upload the certificate to the registered application in Microsoft Entra ID. See the
 [Add a Source and Connectors for SharePoint Online](/docs/1secure/admin/organizations/sourcesandconnectors/sharepointonline.md)topic
 for additional information on downloading a certificate.
 
@@ -235,8 +239,7 @@ See the
 [Microsoft Entra app manifest (Azure AD Graph format)](https://learn.microsoft.com/en-us/entra/identity-platform/reference-app-manifest#microsoft-entra-app-manifest-azure-ad-graph-format) article
 for additional information on Manifest.
 
-This is an alternate way for assigning permissions to the registered application that differs from
-the normal method discussed in the [Grant Permissions to the App](#grant-permissions-to-the-app)
+This method is an alternative to the one in the [Grant Permissions to the App](#grant-permissions-to-the-app)
 topic.
 
 **Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
