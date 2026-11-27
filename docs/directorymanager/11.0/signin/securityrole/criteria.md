@@ -74,7 +74,7 @@ case, you might want role members to access Portal A only.
 
     - _is exactly:_ indicates that role members can only access the client/client type you select in
       the third dropdown list.
-    - _is not:_ indicates that role members can access all Directory Manager clients/client types except the
+    - **is not:** indicates that role members can access all Directory Manager clients/client types except the
       one you select in the third dropdown list.
 
 5. Values displayed in the third dropdown list depend on your selection in the first dropdown

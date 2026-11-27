@@ -31,7 +31,7 @@ Use Quick Search to quickly locate objects in the identity store. You can search
    Matches appear on the **Search Results** page.
 
 :::note
-The display name, first name, and email address are the default schema attributes for Quick Search. If the Directory Manager administrator specifies different attributes, you won't get the desired results when you search with the display name, first name, or email address.
+The display name, first name, and email address are the default schema attributes for Quick Search. If the Directory Manager administrator specifies different attributes, you won't get the results you expect when you search with the display name, first name, or email address.
 :::
 
 ## Search directory objects (Advanced Search)

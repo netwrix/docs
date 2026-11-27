@@ -46,8 +46,8 @@ specify the claim rules for authentication.
    topic.
    <!-- vale off -->
 9. Use the **Configure Multi-factor Authentication Now?** page to configure multi-factor
-   authentication. For this example, skip this step by selecting the **I do not want to configure
-   multi-factor authentications settings for this relying party trust at this time** option button
+   authentication. For this example, skip this step by selecting the 
+   **I do not want to configure multi-factor authentications settings for this relying party trust at this time** option button
    and click **Next**.
    <!-- vale on -->
 10. Use the **Choose Issuance Authorization Rules** page to permit all users to authenticate on

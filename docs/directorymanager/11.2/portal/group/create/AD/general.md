@@ -13,7 +13,7 @@ sidebar_position: 10
 
 Use this page to specify basic information about the group.
 
-1. Click **Browse** next to the **Container** box, select or create the container or organizational unit to create the group in, and click **OK**.
+1. Next to the **Container** box, click **Browse**. Select or create the container or organizational unit for the group. Then click **OK**.
 
    To create a container, click **Create** and add the container to create the group in. Click **Refresh** to remove the changes.
 

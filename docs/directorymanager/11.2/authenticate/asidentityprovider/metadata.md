@@ -25,7 +25,7 @@ The Base URL box on the **Settings** page holds the default issuer URL. You migh
 To specify the default issuer URL:
 
 1. In Directory Manager Authenticate, go to the **Settings** tab.
-2. In the Base URL box, replace or update the URL, and click **Save**.
+2. In the Base URL box, edit the URL. Then click **Save**.
 
    The Base URL box displays the default issuer URL. The Provider Issuer box on the Create Application page also displays it. See the [Directory Manager Metadata for Service Provider Configurations](register.md#directory-manager-metadata-for-service-provider-configurations) topic.
 

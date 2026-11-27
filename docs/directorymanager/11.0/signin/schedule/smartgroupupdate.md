@@ -106,8 +106,8 @@ What do you want to do?
        owners.
 
         :::note
-        An additional owner of a target group doesn't receive notifications when the **Do not
-        Notify** checkbox is selected for it in the respective group's properties, even with the
+        An additional owner of a target group doesn't receive notifications when the 
+        **Do not Notify** checkbox is selected for it in the respective group's properties, even with the
         **Send Report to group owner(s)** checkbox selected.
         :::
 

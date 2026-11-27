@@ -17,7 +17,7 @@ This topic describes the differences between an Active Directory and a Microsoft
 
 ## Group expiration policy
 
-Microsoft Entra ID offers limited options to define a default expiry policy for groups. Directory Manager provides a comprehensive Group Life Cycle policy. See the [Manage Group Lifecycle Settings in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/configure/grouplifecycle.md) topic.
+Microsoft Entra ID offers limited options to define a default expiry policy for groups. Directory Manager provides a Group Life Cycle policy with more options. See the [Manage Group Lifecycle Settings in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/configure/grouplifecycle.md) topic.
 
 Because these policies aren't integrated, use either the Microsoft Entra ID or the Directory Manager expiration policy settings for groups in a Microsoft Entra ID identity store.
 
