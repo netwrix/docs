@@ -1,0 +1,9 @@
+{
+  "label": "API Reference",
+  "position": 60,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "isGeneratedApiSidebar": true
+  }
+}

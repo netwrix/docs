@@ -33,6 +33,8 @@ docs/privilegesecure/26.07/api/reference/*
 docs/privilegesecurediscovery/integrations/api/reference/*
 !docs/privilegesecurediscovery/integrations/api/reference/_category_.json
 !docs/privilegesecurediscovery/integrations/api/reference/index.md
+docs/accessanalyzer/12.0/admin/settings/access/restapi/reference/*
+!docs/accessanalyzer/12.0/admin/settings/access/restapi/reference/_category_.json
 
 # KB copy script lockfile
 .kb-copy.lock

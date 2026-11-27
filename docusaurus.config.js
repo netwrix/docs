@@ -348,6 +348,28 @@ const config = {
         },
       },
     ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi-accessanalyzer',
+        docsPluginId: 'accessanalyzer12_0',
+        config: {
+          'accessanalyzer-web-service': {
+            specPath: 'static/openapi/accessanalyzer-12.0.yaml',
+            outputDir: 'docs/accessanalyzer/12.0/admin/settings/access/restapi/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/accessanalyzer-12.0.yaml',
+            version: '12.0',
+            label: 'Access Analyzer Web Service API',
+            baseUrl: '/docs/accessanalyzer/12_0/admin/settings/access/restapi/reference/',
+          },
+        },
+      },
+    ],
   ],
 
   themeConfig:

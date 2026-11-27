@@ -100,6 +100,7 @@ const ALL_PRODUCTS = [
         label: '12.0',
         isLatest: false,
         sidebarFile: './sidebars/accessanalyzer/12.0.js',
+        apiSidebarPath: './docs/accessanalyzer/12.0/admin/settings/access/restapi/reference/sidebar.ts',
       },
       {
         version: '11.6',
