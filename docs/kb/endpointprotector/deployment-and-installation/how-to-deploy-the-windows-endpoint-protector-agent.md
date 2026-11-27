@@ -28,7 +28,7 @@ knowledge_article_id: kA0Qk0000001FTFKA2
 
 This article describes how to deploy the Netwrix Endpoint Protector Windows agent manually, silently with `msiexec`, or through Group Policy.
 
-For the full reference, see [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation) and [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters) in the Agent documentation. For deploying via Active Directory Group Policy without an MSI transform, see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#upload-procedure) and [Active Directory](/docs/endpointprotector/install/activedirectory/overview).
+For the full reference, see [Install the EPP Client](/docs/endpointprotector/install/eppclient/installeppclient) and [Agent Install Parameters](/docs/endpointprotector/install/eppclient/installeppclient#agent-install-parameters) in the Agent documentation. For deploying via Active Directory Group Policy without an MSI transform, see [Client Upgrade Management](/docs/endpointprotector/migrationprocedure/clientupgrade#upload-procedure) and [Active Directory](/docs/endpointprotector/install/activedirectory/overview).
 
 > **IMPORTANT:** Netwrix recommends setting `WSIP` to the server's fully qualified domain name (FQDN) instead of an IP address. Clients configured with an FQDN keep working when the server moves to a new IP address, for example after a migration.
 
@@ -114,11 +114,11 @@ To deploy the agent through Group Policy, edit the MSI directly, or create an MS
 
     > **NOTE:** Orca can be installed from the Windows SDK and selecting the MSI options.
 
-   ![File Explorer context menu with Edit with Orca highlighted for the EPPClientSetup MSI file](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lsoU.png)
+   ![File Explorer context menu with Edit with Orca highlighted for the EPPClientSetup MSI file](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lsoU.png)
 
 2. Right-click on the `EPPClientSetup` MSI and select **Edit with Orca**.
 
-   ![Orca Transform menu with New Transform highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lrve.png)
+   ![Orca Transform menu with New Transform highlighted](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lrve.png)
 
 3. Click on **Transform** > **New Transform**.
 4. Find and open the Property table.
@@ -127,16 +127,16 @@ To deploy the agent through Group Policy, edit the MSI directly, or create an MS
 7. Click **Ok**.
 8. Optional: If there are more properties that need changing or adding, such as not using the default department code, refer to the [Appendix](#appendix) for the list of properties and change them all in the Properties table.
 
-   ![Orca Property table with the Add Row option highlighted in the right-click menu](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005ls6y.png)
+   ![Orca Property table with the Add Row option highlighted in the right-click menu](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005ls6y.png)
 
-   ![Orca Add Row dialog with the WSIP property and the server address value highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lxoA.png)
+   ![Orca Add Row dialog with the WSIP property and the server address value highlighted](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lxoA.png)
 
 9. Click on **Transform**.
 10. Click on **Generate Transform**.
 11. In the open box, save your transform.
 12. Ensure the packages are placed on a network share that is accessible to all clients that need to install it.
 
-    ![Orca Transform menu with Generate Transform highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3Ov.png)
+    ![Orca Transform menu with Generate Transform highlighted](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3Ov.png)
 
 #### Deploy the MSI with the Transform
 
@@ -153,11 +153,11 @@ To deploy the agent through Group Policy, edit the MSI directly, or create an MS
 11. Select the transform file and click **Ok**.
 12. Click **Ok**.
 
-    ![Group Policy Management Software installation node with New and Package highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3VN.png)
-    ![Open dialog with the EPPClientSetup MSI file and the Open button highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lwId.png)
-    ![Deploy Software dialog with the Advanced option and the OK button highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3gf.png)
-    ![Package properties Modifications tab with Add highlighted next to an Open dialog selecting the transform file](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m13n.png)
-    ![Package properties Modifications tab listing the transform file with OK highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lzGU.png)
+    ![Group Policy Management Software installation node with New and Package highlighted](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3VN.png)
+    ![Open dialog with the EPPClientSetup MSI file and the Open button highlighted](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lwId.png)
+    ![Deploy Software dialog with the Advanced option and the OK button highlighted](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3gf.png)
+    ![Package properties Modifications tab with Add highlighted next to an Open dialog selecting the transform file](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m13n.png)
+    ![Package properties Modifications tab listing the transform file with OK highlighted](../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lzGU.png)
 
 ## Appendix
 
@@ -184,8 +184,8 @@ A full list of properties that can be specified in the installer can be found in
 
 ## Related Links
 
-- [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation)
-- [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters)
-- [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#upload-procedure)
+- [Install the EPP Client](/docs/endpointprotector/install/eppclient/installeppclient)
+- [Agent Install Parameters](/docs/endpointprotector/install/eppclient/installeppclient#agent-install-parameters)
+- [Client Upgrade Management](/docs/endpointprotector/migrationprocedure/clientupgrade#upload-procedure)
 - [Active Directory](/docs/endpointprotector/install/activedirectory/overview)
 - [How to Deploy the Client Using SCCM or msiexec](/docs/kb/endpointprotector/deployment-and-installation/how_to_deploy_the_client_using_sccm_or_msiexec)

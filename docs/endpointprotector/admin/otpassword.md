@@ -92,7 +92,7 @@ entered (one of them will automatically fill in the other field).
 
 You don't need to fill both Computer Name and Username—the OTP Code works with just one. To restrict the code to a specific device, computer, and user, fill all relevant fields.
 
-After the OTP Code has been generated, it will be displayed on the right side of the image above.
+After Endpoint Protector generates the OTP Code, it appears on the right side of the dialog.
 
 As it needs to be provided to the person that made the request, Endpoint Protector offers two quick
 ways of doing this, either by sending a direct e-mail or by printing it out.
@@ -220,7 +220,7 @@ The Offline Temporary Password Administrator role controls the **OTP Requests** 
 
 Create, accept, adjust, refuse, and delete actions appear in the **Admin Actions** report. There is no separate OTP requests report. You can export each panel to Excel, PDF, or CSV.
 
-You can also manage automatic requests with the EPP REST API. See [EPP REST API](/docs/endpointprotector/admin/epp_rest_api/eppapi.md).
+You can also manage automatic requests with the EPP REST API. See [EPP REST API](/docs/endpointprotector/integrations/epp_rest_api/eppapi.md).
 
 ## Validity status of predefined passwords
 

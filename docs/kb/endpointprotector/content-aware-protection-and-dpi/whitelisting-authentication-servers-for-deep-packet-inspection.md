@@ -30,17 +30,17 @@ When Deep Packet Inspection (DPI) is enabled in environments using an authentica
 
 This article describes how to whitelist authentication servers in Netwrix Endpoint Protector to ensure successful authentication when DPI is enabled.
 
-For the full reference, see [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket) and [Deep Packet Inspection Allowlists](/docs/endpointprotector/admin/denylistsallowlists/allowlists#deep-packet-inspection).
+For the full reference, see [Deep Packet Inspection](/docs/endpointprotector/configuration/cap_module/deeppacket) and [Deep Packet Inspection Allowlists](/docs/endpointprotector/configuration/denylistsallowlists/allowlists#deep-packet-inspection).
 
 ## Instructions
 
 1. Log in to the Netwrix Endpoint Protector Console.
 2. Go to **Denylists and Allowlists** and select **Allowlists**.  
-   ![Allowlists section in Netwrix Endpoint Protector](./../0-images/ka0Qk000000Eb4X_0EMQk00000CAOF3.png)
+   ![Allowlists section in Netwrix Endpoint Protector](../0-images/ka0Qk000000Eb4X_0EMQk00000CAOF3.png)
 3. Select the **Deep Packet Inspection** tab and click **Add**.  
-   ![Deep Packet Inspection tab in Allowlists](./../0-images/ka0Qk000000Eb4X_0EMQk00000CAOGf.png)
+   ![Deep Packet Inspection tab in Allowlists](../0-images/ka0Qk000000Eb4X_0EMQk00000CAOGf.png)
 4. Fill in all required fields to define your authentication resource(s) (e.g., ADFS), then click **Save**.  
-   ![Defining authentication resource in DPI allowlist](./../0-images/ka0Qk000000Eb4X_0EMQk00000CAOIH.png)
+   ![Defining authentication resource in DPI allowlist](../0-images/ka0Qk000000Eb4X_0EMQk00000CAOIH.png)
 
    :::note
    Use `*` as a wildcard to match subdomains or partial matches — for example, `*.yourcompany.com` to cover an ADFS federation subdomain. The `?` character can't be used as a wildcard. You can create or import up to 100 allowlists, each with up to 50,000 web domains.
@@ -48,9 +48,9 @@ For the full reference, see [Deep Packet Inspection](/docs/endpointprotector/adm
 5. Go to **Content Aware Protection** > **Content Aware Policies** and select your policy then click **Edit**.
 6. Navigate to the **Policy Allowlists** section and click the **Deep Packet Inspection** tab.
 7. Select the entry defined in step 4 and verify the accuracy of your selected policy entities.  
-   ![Selecting DPI allowlist entry in policy](./../0-images/ka0Qk000000Eb4X_0EMQk00000CAOJt.png)
+   ![Selecting DPI allowlist entry in policy](../0-images/ka0Qk000000Eb4X_0EMQk00000CAOJt.png)
 8. Click **Save**.
 9. On the managed endpoint, right-click the System Tray or Menu Bar item for Netwrix Endpoint Protector and select **Update policies now**.  
-   ![Update policies now in Netwrix Endpoint Protector client](./../0-images/ka0Qk000000Eb4X_0EMQk00000CAON7.png)
+   ![Update policies now in Netwrix Endpoint Protector client](../0-images/ka0Qk000000Eb4X_0EMQk00000CAON7.png)
 10. Verify that authentication succeeds when DPI is enabled.
 

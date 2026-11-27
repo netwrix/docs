@@ -25,7 +25,7 @@ products:
 ## Overview
 
 This article explains how to manually activate debugging logs on Windows for the **Endpoint
-Protector (EPP) Client**, for cases when you cannot use the [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging)
+Protector (EPP) Client**, for cases when you cannot use the [Debug Logging](/docs/endpointprotector/configuration/dc_module/globalsettings#debug-logging)
 UI option or the SupportTool.
 
 > **NOTE:**

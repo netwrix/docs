@@ -38,9 +38,9 @@ For the full list of administrator account settings, roles, and password securit
 4. Check **Require password change at next login** to allow the administrator to set a password of their choice upon their next login.  
 5. Save the modifications.  
 
-![Edit administrator password fields in Endpoint Protector](./../0-images/ka0Qk000000EbSj_0EMQk00000CAmm2.png)
+![Edit administrator password fields in Endpoint Protector](../0-images/ka0Qk000000EbSj_0EMQk00000CAmm2.png)
 
-![Require password change at next login option in Endpoint Protector](./../0-images/ka0Qk000000EbSj_0EMQk00000CAaeP.png)
+![Require password change at next login option in Endpoint Protector](../0-images/ka0Qk000000EbSj_0EMQk00000CAaeP.png)
 
 :::warning
 The **Require password change at next login** setting is ignored for Active Directory imported administrators and for SSO users (Azure and OKTA). It's also overridden if **Enforce All Administrator Password Security at Next Login** is enabled under **System Configuration** > **System Security** — that setting takes priority and forces a password change for all users, not only administrators.

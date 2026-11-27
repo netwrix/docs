@@ -27,7 +27,7 @@ OCR may not be working in Endpoint Protector due to the setting not being enable
 
 To resolve OCR issues, follow the steps below:
 
-1. Confirm **Optical Character Recognition** is enabled for the affected computer, group, or globally. See [Client Settings](/docs/endpointprotector/admin/dc_module/globalsettings#client-settings) for this and related OCR settings, including **Disable OCR notifications**.
+1. Confirm **Optical Character Recognition** is enabled for the affected computer, group, or globally. See [Client Settings](/docs/endpointprotector/configuration/dc_module/globalsettings#client-settings) for this and related OCR settings, including **Disable OCR notifications**.
 2. Ensure the image quality is high, with a recommended minimum of **150 dpi** (dots/pixels per inch). Good contrast in the image also improves OCR accuracy.
 3. To check the dpi of an image on Windows, open the image in **Paint**, go to **File** > **Properties**, and review the **Resolution** field (in dpi).
 4. Make sure you are using the latest version of the Endpoint Protector client.

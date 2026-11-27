@@ -21,7 +21,7 @@ products:
 
 This article explains how to enable EasyLock application updates and file shadowing for removable drives using the Endpoint Protector web console.
 
-For the full reference, see [Enforced Encryption Settings](/docs/endpointprotector/admin/ee_module/eemodule#enforced-encryption-settings).
+For the full reference, see [Enforced Encryption Settings](/docs/endpointprotector/configuration/ee_module/eemodule#enforced-encryption-settings).
 
 ## Instructions
 

@@ -30,9 +30,9 @@ Can you enable Optical Character Recognition (OCR) for file content inspection?
 ## Answer
 Yes, OCR is the process that converts an image of text into a machine-readable text format. This feature is available for **Windows**, **macOS**, and **Linux** machines.
 
-You can enable OCR at the global, computer, user, or group level from the following location in the Endpoint Protector console. See [Client Settings](/docs/endpointprotector/admin/dc_module/globalsettings#client-settings) for the full list of related options, including **Disable OCR notifications**.
+You can enable OCR at the global, computer, user, or group level from the following location in the Endpoint Protector console. See [Client Settings](/docs/endpointprotector/configuration/dc_module/globalsettings#client-settings) for the full list of related options, including **Disable OCR notifications**.
 
-![OCR enablement settings page in the EPP console](./../0-images/ka0Qk000000DzFN_0EMQk00000C8zgv.png)
+![OCR enablement settings page in the EPP console](../0-images/ka0Qk000000DzFN_0EMQk00000C8zgv.png)
 
 Once enabled, the Endpoint Protector client can inspect the content of **JPEG**, **PNG**, **GIF**, **BMP**, and **TIFF** file types. Enabling this option will also update the global MIME Type Allowlists.
 

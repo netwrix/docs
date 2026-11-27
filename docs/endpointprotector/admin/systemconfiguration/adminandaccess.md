@@ -25,7 +25,7 @@ provide the following information:
 **Administrator Details**
 
 - Add the username, password, email, first name, last name, and phone number, and then select the
-  UI language. The EPP Server console, the Client Notifier, and Enforced Encryption support the same languages. See [Supported languages](/docs/endpointprotector/admin/dc_module/globalsettings.md#supported-languages).
+  UI language. The EPP Server console, the Client Notifier, and Enforced Encryption support the same languages. See [Supported languages](/docs/endpointprotector/configuration/dc_module/globalsettings.md#supported-languages).
 
 **Account Settings**
 
@@ -202,7 +202,7 @@ unique code it uses as the second authentication factor.
 Use this section to create and manage System Departments.
 
 Using System Departments is optional. Endpoint Protector works well with only the Default
-Department (defdep). Moreover, using Devices, Computers, Users, and Groups (the entities also available in AD) covers
+Department (defdep). Using Devices, Computers, Users, and Groups (the entities also available in AD) covers
 most scenarios.
 
 The functionality becomes useful mainly in large installations, with a high number of Administrators

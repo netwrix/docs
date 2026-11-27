@@ -28,7 +28,7 @@ knowledge_article_id: kA0Qk0000000000AAD
 
 ## Symptom
 
-A configured SIEM integration on the Netwrix Endpoint Protector (EPP) Server stops receiving events. In rare cases, this happens after a [server migration](/docs/endpointprotector/install/migrationprocedure/migrationguide). It can also occur independently of any migration.
+A configured SIEM integration on the Netwrix Endpoint Protector Server stops receiving events. In rare cases, this can happen after a [server migration](/docs/endpointprotector/migrationprocedure/migrationguide), since the SIEM integration may require reconfiguration after restore. It can also occur independently of any migration.
 
 ## Cause
 
@@ -61,5 +61,4 @@ To restore SIEM event delivery, check the SIEM settings and the `syslog-ng` serv
 ## Related Links
 
 - [SIEM Integration](/docs/endpointprotector/admin/appliance#siem-integration)
-- [Configuring a SIEM Integration](/docs/kb/endpointprotector/administration-security-and-monitoring/set_up_a_siem_integration)
-- [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide)
+- [EPP Appliance migration guide](/docs/endpointprotector/migrationprocedure/migrationguide)

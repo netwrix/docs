@@ -55,5 +55,5 @@ For more information, see [Contextual Detection](/docs/endpointprotector/admin/s
 ## Related Links
 
 - [System Parameters](/docs/endpointprotector/admin/systempar) — System Parameters documentation, including Contextual Detection
-- [Content Detection Summary](/docs/endpointprotector/admin/cap_module/contentdetection#content-detection-summary) — Content Detection Summary documentation
-- [Client Settings](/docs/endpointprotector/admin/dc_module/globalsettings#client-settings) — Global Settings documentation, including Extend Source Code Detection and other client-side settings that affect false positive rates
+- [Content Detection Summary](/docs/endpointprotector/configuration/cap_module/contentdetection#content-detection-summary) — Content Detection Summary documentation
+- [Client Settings](/docs/endpointprotector/configuration/dc_module/globalsettings#client-settings) — Global Settings documentation, including Extend Source Code Detection and other client-side settings that affect false positive rates

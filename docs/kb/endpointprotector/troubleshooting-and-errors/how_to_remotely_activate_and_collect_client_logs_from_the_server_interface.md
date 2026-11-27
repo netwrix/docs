@@ -26,40 +26,40 @@ products:
 
 This article explains how to remotely enable debug logging on an endpoint machine and collect client logs from the server interface, without requiring input or knowledge from the endpoint user.
 
-This procedure uses the **Automatic Logging** method (the Collect diagnostics action), which is the optimal way to gather logs since it requires no action from the end user. For the full Debug Logging reference, see [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) in the Global Settings documentation.
+This procedure uses the **Automatic Logging** method (the Collect diagnostics action), which is the optimal way to gather logs since it requires no action from the end user. For the full Debug Logging reference, see [Debug Logging](/docs/endpointprotector/configuration/dc_module/globalsettings#debug-logging) in the Global Settings documentation.
 
 If the EPP Client cannot communicate with the EPP Server at all, this remote method is not available. Use the [diagnostic collection script](/docs/kb/endpointprotector/troubleshooting-and-errors/how-to-collect-debug-logs-locally-on-an-endpoint-using-the-diagnostic-script) instead, or the manual terminal-based alternative as a last resort: [Manually Activating Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows) or [Manually Generating Logs for Mac Endpoint Protector Agents via Terminal](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal).
 
 ## Instructions
 
 1. In the **Endpoint Protector Console**, navigate to **Device Control > Computers**, then select the target computer and click **Manage Settings**.  
-   ![Manage Settings in Device Control > Computers](./../0-images/servlet_image_8cfbf5692849.png)
+   ![Manage Settings in Device Control > Computers](../0-images/servlet_image_8cfbf5692849.png)
 
 2. Scroll down to **Debug Logging**, then click the **Set Log Level** drop-down menu and select **Debug**.  
-   ![Set Log Level to Debug](./../0-images/servlet_image_5840481544b9.png)
+   ![Set Log Level to Debug](../0-images/servlet_image_5840481544b9.png)
 
 3. After selecting **Debug**, click **Save** and wait for the green notification confirming that the changes have been saved.  
-   ![Changes have been saved notification](./../0-images/servlet_image_baa2795f8fd3.png)
+   ![Changes have been saved notification](../0-images/servlet_image_baa2795f8fd3.png)
 
 4. On the computer, refresh the policies and reproduce the issue.
 
 5. Return to the computer listed under **Device Control > Computers** and click **Collect diagnostics**.  
-   ![Collect diagnostics option](./../0-images/servlet_image_60b30f91932d.png)  
-   ![Diagnostics collection in progress](./../0-images/servlet_image_96e38073d295.png)
+   ![Collect diagnostics option](../0-images/servlet_image_60b30f91932d.png)  
+   ![Diagnostics collection in progress](../0-images/servlet_image_96e38073d295.png)
 
    The server sends the logs to **Reports and Analysis > Logs Report**.  
-   ![Logs Report section](./../0-images/servlet_image_9aa4123f77f5.png)
+   ![Logs Report section](../0-images/servlet_image_9aa4123f77f5.png)
 
 6. Navigate to **Reports and Analysis > Logs Report**.
 
 7. Expand the filters. Click the **Event** drop-down menu, then select **Artifact Received** and click **Apply**.  
-   ![Filter for Artifact Received event](./../0-images/servlet_image_3f1c3b331cfe.png)
+   ![Filter for Artifact Received event](../0-images/servlet_image_3f1c3b331cfe.png)
 
 8. Under the events, locate the uploaded artifact or client logs and click **Download**.
 
    > **NOTE:**
    > The artifact may not be available for immediate download and may display a "File not found" error. It can take 20–30 minutes before the file is ready to download.
 
-   ![Artifact or client logs available for download](./../0-images/servlet_image_823648e31f8f.png)
+   ![Artifact or client logs available for download](../0-images/servlet_image_823648e31f8f.png)
 
 9. Once the client logs are downloaded, submit them to [Netwrix Technical Support](https://netwrix.com/en/support/) as needed.

@@ -24,7 +24,7 @@ This article explains the purpose and handling of the **111.33.33.111** IP addre
 :::important
 This internal IP address only affects EPP Server version 5.9.4.2 and older. These versions are no longer supported — support for all 5.x versions ended February 2026. Starting with EPP Server version 2509, this interface and IP address are no longer present, and this article doesn't apply to 2509 or later deployments.
 
-Netwrix recommends migrating to the latest supported version as soon as possible. See the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide) for the full migration procedure.
+Netwrix recommends migrating to the latest supported version as soon as possible. See the [EPP Appliance migration guide](/docs/endpointprotector/migrationprocedure/migrationguide) for the full migration procedure.
 :::
 
 ## Instructions

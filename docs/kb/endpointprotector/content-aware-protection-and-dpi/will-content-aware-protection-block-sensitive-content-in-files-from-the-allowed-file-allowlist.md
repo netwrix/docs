@@ -34,16 +34,16 @@ No, Content Aware Protection will not block sensitive content in files that are 
 
 You can find the Allowed Files allowlist under **Denylists and Allowlists** > **Allowlists** > **Allowed File.**
 
-![Allowed File allowlist in Netwrix Endpoint Protector](./../0-images/ka0Qk000000ETJt_0EMQk00000C8uNt.png)
+![Allowed File allowlist in Netwrix Endpoint Protector](../0-images/ka0Qk000000ETJt_0EMQk00000C8uNt.png)
 
 After creating the allowlist, add it to the Content Aware Protection (CAP) policy under **Policy Allowlists.**
 
-![Assigning Allowed File allowlist to a CAP policy](./../0-images/ka0Qk000000ETJt_0EMQk00000C8uB1.png)
+![Assigning Allowed File allowlist to a CAP policy](../0-images/ka0Qk000000ETJt_0EMQk00000C8uB1.png)
 
 Once the allowlist is assigned to the policy, the Content Aware Protection policy will inspect but ignore sensitive content in files included in the Allowed File list. Files on the allowlist are not blocked, even if they contain sensitive content.
 
-For the full reference, see [Denylists and Allowlists](/docs/endpointprotector/admin/denylistsallowlists/overview) and [Allowed Files](/docs/endpointprotector/admin/denylistsallowlists/allowlists#allowed-files).
+For the full reference, see [Denylists and Allowlists](/docs/endpointprotector/configuration/denylistsallowlists/overview) and [Allowed Files](/docs/endpointprotector/configuration/denylistsallowlists/allowlists#allowed-files).
 
 :::note
-Allowed Files allowlists exclude specific files by file identity, not by file type or location. If you instead want to exclude entire categories of low-risk file types (such as media or archive files) from inspection, use a [MIME Type](/docs/endpointprotector/admin/denylistsallowlists/allowlists#mime-type) allowlist instead — several are defined by default.
+Allowed Files allowlists exclude specific files by file identity, not by file type or location. If you instead want to exclude entire categories of low-risk file types (such as media or archive files) from inspection, use a [MIME Type](/docs/endpointprotector/configuration/denylistsallowlists/allowlists#mime-type) allowlist instead — several are defined by default.
 :::

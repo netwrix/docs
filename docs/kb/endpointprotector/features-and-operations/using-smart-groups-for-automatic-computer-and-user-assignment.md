@@ -32,7 +32,7 @@ knowledge_article_id: kA0Qk0000002B6MKAU
 
 Smart Groups are a dynamic category of computer and user groups whose membership is defined by rules based on entity properties, rather than assigned manually. Endpoint Protector synchronizes entities into Smart Groups periodically, so membership stays current without manual intervention.
 
-For the full reference, see [Groups](/docs/endpointprotector/admin/dc_module/usersandgroups#groups).
+For the full reference, see [Groups](/docs/endpointprotector/configuration/dc_module/usersandgroups#groups).
 
 ## Instructions
 

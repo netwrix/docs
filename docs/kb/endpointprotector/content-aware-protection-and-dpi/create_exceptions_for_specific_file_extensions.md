@@ -22,7 +22,7 @@ products:
 This article explains how to exclude specific file extensions from being traced, scanned, or shadowed in Endpoint Protector. Creating exceptions for certain file types can help you manage which files are monitored by **Device Control** policies.
 
 :::note
-This article covers file extension exceptions for Device Control tracing, scanning, and shadowing. Content Aware Policies have a separate, policy-level mechanism for excluding file types from content scanning — the **Allowed Files** and **MIME Type** allowlists. See [Policy Configuration and Application](/docs/endpointprotector/admin/cap_module/cappolicies) for general Content Aware Policy configuration, and [Policy Allowlists](/docs/endpointprotector/admin/cap_module/contentdetection#policy-allowlists) for the file type exclusion options available within a policy.
+This article covers file extension exceptions for Device Control tracing, scanning, and shadowing. Content Aware Policies have a separate, policy-level mechanism for excluding file types from content scanning — the **Allowed Files** and **MIME Type** allowlists. See [Policy Configuration and Application](/docs/endpointprotector/configuration/cap_module/cappolicies) for general Content Aware Policy configuration, and [Policy Allowlists](/docs/endpointprotector/configuration/cap_module/contentdetection#policy-allowlists) for the file type exclusion options available within a policy.
 :::
 
 ## Instructions

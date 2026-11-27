@@ -41,10 +41,10 @@ msiexec /i "C:\Users\eppuser1\Desktop\EPP Client\EPPClientSetup.6.2.4.2000_x86_6
 
 > **NOTE:** To customize the installation (server address, department code, proxy settings, and more), add the relevant MSI properties to the command. Use the server's fully qualified domain name (FQDN) as the server address instead of an IP address. See the Appendix in [Deploying the Windows Agent](/docs/kb/endpointprotector/deployment-and-installation/how-to-deploy-the-windows-endpoint-protector-agent) for the full property list.
 
-For the full reference, see [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation) and [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters) in the Agent documentation. For the full list of MSI properties (server address, department code, proxy settings, and more) and GPO deployment steps, see [Deploying the Windows Agent](/docs/kb/endpointprotector/deployment-and-installation/how-to-deploy-the-windows-endpoint-protector-agent).
+For the full reference, see [Install the EPP Client](/docs/endpointprotector/install/eppclient/installeppclient) and [Agent Install Parameters](/docs/endpointprotector/install/eppclient/installeppclient#agent-install-parameters) in the Agent documentation. For the full list of MSI properties (server address, department code, proxy settings, and more) and GPO deployment steps, see [Deploying the Windows Agent](/docs/kb/endpointprotector/deployment-and-installation/how-to-deploy-the-windows-endpoint-protector-agent).
 
 ## Related Links
 
-- [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation)
-- [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters)
+- [Install the EPP Client](/docs/endpointprotector/install/eppclient/installeppclient)
+- [Agent Install Parameters](/docs/endpointprotector/install/eppclient/installeppclient#agent-install-parameters)
 - [Deploying the Windows Agent](/docs/kb/endpointprotector/deployment-and-installation/how-to-deploy-the-windows-endpoint-protector-agent)

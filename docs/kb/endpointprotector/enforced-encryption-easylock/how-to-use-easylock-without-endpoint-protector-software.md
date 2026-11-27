@@ -40,10 +40,10 @@ This behavior depends on the **Endpoint Protector Client presence required** set
 
 After you open EasyLock, the application will prompt you for a password. Only users with the correct password can access the encrypted data.
 
-![Enforced Encryption interface](../../../endpointprotector/admin/ee_module/eeinterface.webp)
+![Enforced Encryption interface](../../../endpointprotector/configuration/ee_module/eeinterface.webp)
 
-For the full reference, see [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule).
+For the full reference, see [Enforced Encryption](/docs/endpointprotector/configuration/ee_module/eemodule).
 
 :::note
-Starting with Enforced Encryption version 3.0.0.2 (5.9.4.2 release), new data is encrypted using a **FIPS 140-3 validated** engine, which replaced the previous 256-bit AES CBC-mode encryption. The FIPS 140-3 engine is backward compatible — drives encrypted with the older 256-bit AES engine remain readable — but drives encrypted with the FIPS 140-3 engine aren't compatible with older Enforced Encryption Clients. To avoid compatibility issues, keep your EE Clients up to date. You can verify the encryption engine version in use from the **About** section of the EasyLock/Enforced Encryption application. See [Enforced Encryption 140-3 FIPS Validated Engine](/docs/endpointprotector/admin/ee_module/eemodule#enforced-encryption-140-3-fips-validated-engine) for details.
+Starting with Enforced Encryption version 3.0.0.2 (5.9.4.2 release), new data is encrypted using a **FIPS 140-3 validated** engine, which replaced the previous 256-bit AES CBC-mode encryption. The FIPS 140-3 engine is backward compatible — drives encrypted with the older 256-bit AES engine remain readable — but drives encrypted with the FIPS 140-3 engine aren't compatible with older Enforced Encryption Clients. To avoid compatibility issues, keep your EE Clients up to date. You can verify the encryption engine version in use from the **About** section of the EasyLock/Enforced Encryption application. See [Enforced Encryption 140-3 FIPS Validated Engine](/docs/endpointprotector/configuration/ee_module/eemodule#enforced-encryption-140-3-fips-validated-engine) for details.
 :::

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Netwrix Endpoint Protector Agent Support Policy
 
-Netwrix is committed to providing high-performing solutions. To achieve this and to ensure the best customer experience, Netwrix supports and enhances only the current shipping version of the Netwrix Endpoint Protector (EPP) agent.
+Netwrix is committed to providing high-performing solutions. To achieve this and to ensure the best customer experience, Netwrix supports and enhances only the current shipping version of the Netwrix Endpoint Protector (EPP) Client, also called the EPP agent.
 
 You can download the latest EPP agent for each OS (and the latest EasyLock client) **only** from the Netwrix portal. Note, some previous versions of EPP Server allowed you to acquire the agent directly from within the server. Netwrix has phased out that option in favor of this modern approach.
 
@@ -17,7 +17,7 @@ This supportability document covers only the EPP agent and client components, no
 :::
 
 :::note
-EPP agents consist of two parts: the EPP agent itself and the EasyLock client. This support guide applies equally to both.
+In this document, “EPP Agent” refers collectively to the EPP Client and the EE Client (Enforced Encryption, EasyLock), which Netwrix installs as agent applications on the endpoint operating system. EPP agents consist of two parts: the EPP Client itself and the EasyLock client. This support guide applies equally to both.
 :::
 
 ## Support Policy Overview
@@ -62,30 +62,7 @@ When you replicate an issue in this “latest environment” — whether in prod
 
 ## Testing and Rolling Out EPP Agent Updates
 
-When you are ready to deploy the EPP Agent updates to your estate, Netwrix recommends a specific method to minimize disruption and maximize confidence in your deployment.
-
-Netwrix strongly recommends using a phased rollout strategy—commonly known as the “ring deployment model”—for agent updates. With this approach, you can identify potential issues early and isolate them before full-scale deployment.
-
-**Recommended Phased Rollout Model (Ring-Based):**
-
-This staged process helps reduce risk, allows validation across diverse environments, and limits the scope of impact if unexpected behavior occurs.
-
-1. **Initial Test Group (2–5%)**
-    Begin by deploying the new agent version to a small, controlled group of endpoints (e.g., IT staff or low-risk devices). Use this group to evaluate basic functionality, check for regressions, and validate compatibility in your environment.
-2. **Wider Deployment (10–50%)**
-    If you find no significant issues in the test group, expand the rollout to a larger segment of your organization. This middle ring can include a broader cross-section of users and departments to ensure confidence across varied use cases and endpoint types.
-3. **Full Deployment (51–100%)**
-    After you verify the agent in real-world conditions and it meets your internal validation criteria, proceed with full deployment to the remaining environment.
-
-The following diagram shows the ring model for agent deployment.
-
-![EPP Ring Deployment Model](EPP_Ring_Deployment_Model.png)
-
-You may define your own rings using **EPP Smartgroups**, **MDM**, **SCCM**, or any other deployment method that supports targeted rollouts. The exact percentages and ring boundaries are flexible—adapt them based on your organization's risk tolerance, endpoint diversity, and operational goals.
-
-For more detail on the “ring” model and how to adapt it to Endpoint Protector rollouts, refer to this Netwrix resource: [Using Rings to Test and Update the Endpoint Policy Manager Client-Side Extension and/or Cloud Client (And How to Stay Supported)](https://helpcenter.netwrix.com/bundle/PolicyPak/page/Content/PolicyPak/Install/Rings.htm)
-
-**Note**: While this guide references Netwrix Endpoint Policy Manager, the same ring-based principles apply to Netwrix Endpoint Protector agent deployments.
+Netwrix recommends a phased, ring-based rollout for EPP Agent updates. For the recommended rings, percentages, and how to define them, see [Test and Roll Out EPP Client Updates](/docs/endpointprotector/install/eppclient/eppclientrollout.md).
 
 ## How to Stay Supported
 
@@ -175,7 +152,7 @@ More information:
 
 ### Linux Clients
 
-Netwrix delivers DLP coverage across a wide set of Linux distributions, spanning officially certified, on-request, and community-compatible builds. The EPP Client for Linux is kernel neutral: it doesn't rely on kernel-level modules, which keeps it broadly compatible across Linux distributions and kernel versions without a rebuild for each one. See [Kernel Independence](/docs/endpointprotector/admin/agent.md#kernel-independence) in the Agent documentation for details.
+Netwrix delivers DLP coverage across a wide set of Linux distributions, spanning officially certified, on-request, and community-compatible builds. The EPP Client for Linux is kernel neutral: it doesn't rely on kernel-level modules, which keeps it broadly compatible across Linux distributions and kernel versions without a rebuild for each one. See [Kernel Independence](/docs/endpointprotector/configuration/eppclients/agent.md#kernel-independence) in the EPP Client documentation for details.
 
 Netwrix tests and certifies the EPP Client for Linux against:
 - Ubuntu LTS versions that are still within their official support lifecycle
@@ -199,10 +176,10 @@ Netwrix builds a Client for the latest version of any of these, or for a custom 
 Netwrix Product Management reviews and prioritizes these requests, which may involve a billable service. After approval, Netwrix builds the client using a **Quick Test** process in QA, and you're responsible for verifying that all functionality works as expected.
 
 :::note
-For Ubuntu-based distributions outside the officially tested and certified list, such as Mint Linux, and RHEL-based distributions such as Rocky Linux, Oracle Linux, or CentOS, the EPP Client installer built for the corresponding base version generally works without additional configuration. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution. For installation steps, see [Linux](/docs/endpointprotector/admin/agent.md#linux) install guide under Agent Install Parameters in the Agent documentation.
+For Ubuntu-based distributions outside the officially tested and certified list, such as Mint Linux, and RHEL-based distributions such as Rocky Linux, Oracle Linux, or CentOS, the EPP Client installer built for the corresponding base version generally works without additional configuration. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution. For installation steps, see [Linux](/docs/endpointprotector/install/eppclient/installeppclient.md#linux) install guide under Agent install parameters in the Install the EPP Client documentation.
 :::
 
 ## Final Thoughts
 
-Using a supported operating system and staying up to date with the latest version of the Netwrix Endpoint Protector agent ensures optimal performance, access to the latest features, and a smoother support experience. By leveraging a phased rollout strategy and maintaining a proactive update schedule, your organization can confidently manage EPP updates and maintain robust data protection.
+Use a supported operating system and the latest version of the Netwrix Endpoint Protector agent to get the latest features and fixes. Roll out EPP updates in phases and on a regular schedule.
 <br/>For assistance with your rollout strategy, contact the Netwrix support team.

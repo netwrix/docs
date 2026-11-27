@@ -28,7 +28,7 @@ knowledge_article_id: REPLACE_WITH_SALESFORCE_KA_ID
 
 ## Symptom
 
-Testing or saving a Microsoft Entra ID API Consumer under [Directory Services](/docs/endpointprotector/admin/directoryservices#microsoft-entra-id) fails, or a synchronization job completes without errors but imports no users or groups, or imports users with duplicate or mismatched usernames. This can occur when configuring a new API Consumer or after a previously working synchronization job stops functioning.
+Testing or saving a Microsoft Entra ID API Consumer under [Directory Services](/docs/endpointprotector/integrations/directoryservices#microsoft-entra-id) fails, or a synchronization job completes without errors but imports no users or groups, or imports users with duplicate or mismatched usernames. This can occur when configuring a new API Consumer or after a previously working synchronization job stops functioning.
 
 ## Cause
 

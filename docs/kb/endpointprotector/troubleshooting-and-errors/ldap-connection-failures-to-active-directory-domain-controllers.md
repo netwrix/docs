@@ -30,7 +30,7 @@ knowledge_article_id: REPLACE_WITH_SALESFORCE_KA_ID
 
 ## Symptom
 
-Creating or testing an Active Directory connection under [Directory Services](/docs/endpointprotector/admin/directoryservices) fails, returns an authentication or connection error, or times out. Synchronization jobs may also complete without errors but import no users, computers, or groups. This can occur when configuring a new connection or after a previously working connection stops functioning.
+Creating or testing an Active Directory connection under [Directory Services](/docs/endpointprotector/integrations/directoryservices) fails, returns an authentication or connection error, or times out. Synchronization jobs may also complete without errors but import no users, computers, or groups. This can occur when configuring a new connection or after a previously working connection stops functioning.
 
 ## Cause
 

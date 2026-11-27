@@ -41,15 +41,15 @@ These instructions apply only to **on-premises** EPP appliances.
    - Reboot the EPP appliance.  
    - While it reboots, press the `Esc` key to open the **GRUB** boot menu, and select **Advanced options for Ubuntu**.
 
-   ![GRUB boot menu screenshot](./../0-images/43258ddd17f53d209349a9757595552d.png)
+   ![GRUB boot menu screenshot](../0-images/43258ddd17f53d209349a9757595552d.png)
 
 2. Choose the first entry labeled **(recovery mode)**.
 
-   ![Recovery mode selection screenshot](./../0-images/cb6a560ea7bc3e35cd3c0a30978e4dc7.png)
+   ![Recovery mode selection screenshot](../0-images/cb6a560ea7bc3e35cd3c0a30978e4dc7.png)
 
 3. Press **Enter** when prompted.
 
-   ![Boot confirmation screenshot](./../0-images/221e2f00e49f44fffcf64957a74adf46.png)
+   ![Boot confirmation screenshot](../0-images/221e2f00e49f44fffcf64957a74adf46.png)
 
 4. **Identify the last partition**.
 
@@ -61,7 +61,7 @@ These instructions apply only to **on-premises** EPP appliances.
 
    Review the output and identify the **last partition** (typically `/dev/sda3` or `/dev/sda5`, depending on the server version).
 
-   ![Partition listing screenshot](./../0-images/a05c59666d4d5d06b571009b1e7309e5.png)
+   ![Partition listing screenshot](../0-images/a05c59666d4d5d06b571009b1e7309e5.png)
 
    > **NOTE:** The last partition may vary depending on your environment.
 
@@ -101,10 +101,10 @@ These instructions apply only to **on-premises** EPP appliances.
    parted /dev/sda
    ```
 
-   ![Parted utility screenshot](./../0-images/25e977352dd52f7cc1a0a099749039d7.png)
+   ![Parted utility screenshot](../0-images/25e977352dd52f7cc1a0a099749039d7.png)
 
    - Type `p` to display the current partition table and sizes.  
-     ![Partition table output](./../0-images/b811ee14df77d6d8e87b48fcd284db80.png)
+     ![Partition table output](../0-images/b811ee14df77d6d8e87b48fcd284db80.png)
    - Resize the **last partition** to the maximum available space:
      ```bash
      resizepart 3 100%
@@ -114,7 +114,7 @@ These instructions apply only to **on-premises** EPP appliances.
      ```bash
      p
      ```
-     ![New partition size screenshot](./../0-images/e82dd4c71e1388608816abea6c906ae2.png)
+     ![New partition size screenshot](../0-images/e82dd4c71e1388608816abea6c906ae2.png)
    - Exit the partition manager:
      ```bash
      quit
@@ -132,7 +132,7 @@ These instructions apply only to **on-premises** EPP appliances.
    e2fsck -f /dev/sda3
    ```
 
-   ![Filesystem check screenshot](./../0-images/91cd45f8016ad9a0a33eed482d054fbf.png)
+   ![Filesystem check screenshot](../0-images/91cd45f8016ad9a0a33eed482d054fbf.png)
 
 9. **Resize the file system**.
 
@@ -140,7 +140,7 @@ These instructions apply only to **on-premises** EPP appliances.
    resize2fs /dev/sda3
    ```
 
-   ![Filesystem resize screenshot](./../0-images/7aabf76b61247cd7022988b79a06e3e8.png)
+   ![Filesystem resize screenshot](../0-images/7aabf76b61247cd7022988b79a06e3e8.png)
 
 10. **Remount and verify disk size**.
 
@@ -149,7 +149,7 @@ These instructions apply only to **on-premises** EPP appliances.
     df -h
     ```
 
-    ![Disk usage check screenshot](./../0-images/866c775d49c0cbef0864bd4cf7b06015.png)
+    ![Disk usage check screenshot](../0-images/866c775d49c0cbef0864bd4cf7b06015.png)
 
 11. **Restart the appliance**.
 

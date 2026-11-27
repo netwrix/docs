@@ -30,7 +30,7 @@ How can you collect extended Deep Packet Inspection (DPI) logs for Windows?
 ## Answer
 
 :::tip
-Starting with EPP Server and Client version 2608, DPI debug logs are included automatically in Agent Debugging. Netwrix recommends upgrading to the latest EPP version so you can collect DPI logs directly from the Admin console instead of running a script on each endpoint. See [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) for the console-driven Manual and Automatic Logging procedures.
+Starting with EPP Server and Client version 2608, DPI debug logs are included automatically in Agent Debugging. Netwrix recommends upgrading to the latest EPP version so you can collect DPI logs directly from the Admin console instead of running a script on each endpoint. See [Debug Logging](/docs/endpointprotector/configuration/dc_module/globalsettings#debug-logging) for the console-driven Manual and Automatic Logging procedures.
 :::
 
 While the automated method is available starting with version 2608, you can still use the manual procedure below to gather DPI logs if you prefer.

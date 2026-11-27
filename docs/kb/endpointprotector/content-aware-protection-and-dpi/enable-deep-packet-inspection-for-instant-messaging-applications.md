@@ -27,7 +27,7 @@ knowledge_article_id: kA0Qk0000002B2uKAE
 
 The Netwrix Endpoint Protector (EPP) Client can inspect text written in instant messaging applications by using Deep Packet Inspection (DPI). This article explains how to enable DPI and configure text inspection for supported instant messaging applications.
 
-For the full Deep Packet Inspection reference, including Text Inspection, DPI Applications, and Google/webmail-specific settings, see [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket).
+For the full Deep Packet Inspection reference, including Text Inspection, DPI Applications, and Google/webmail-specific settings, see [Deep Packet Inspection](/docs/endpointprotector/configuration/cap_module/deeppacket).
 
 ## Instructions
 
@@ -37,7 +37,7 @@ For the full Deep Packet Inspection reference, including Text Inspection, DPI Ap
 2. Enable **Deep Packet Inspection**.
 3. Save the setting.
 
-![Global Settings page with Deep Packet Inspection option highlighted](./../0-images/ka0Qk000000DzDl_0EMQk00000BuWJp.png)
+![Global Settings page with Deep Packet Inspection option highlighted](../0-images/ka0Qk000000DzDl_0EMQk00000BuWJp.png)
 
 ### Enable Text Inspection
 
@@ -45,7 +45,7 @@ For the full Deep Packet Inspection reference, including Text Inspection, DPI Ap
 2. Enable **Text inspection**.
 3. Save the setting.
 
-![Deep Packet Inspection settings with Text inspection enabled](./../0-images/ka0Qk000000DzDl_0EMQk00000BuWDN.png)
+![Deep Packet Inspection settings with Text inspection enabled](../0-images/ka0Qk000000DzDl_0EMQk00000BuWDN.png)
 
 ### Enable DPI for Instant Messaging Applications
 
@@ -54,7 +54,7 @@ For the full Deep Packet Inspection reference, including Text Inspection, DPI Ap
 3. Filter for the instant messaging applications you want to use with text inspection. Supported apps include Teams, Skype, Slack, Mattermost, and Google Chat.
 4. Click the **Actions** button and select **Enable DPI** for each application.
 
-![Deep Packet Inspection Applications list with Enable DPI action](./../0-images/ka0Qk000000DzDl_0EMQk00000BuWGb.png)
+![Deep Packet Inspection Applications list with Enable DPI action](../0-images/ka0Qk000000DzDl_0EMQk00000BuWGb.png)
 
 :::note
 You must enable DPI for each application on every operating system where the EPP Client is installed (Windows, macOS, Linux).
@@ -71,7 +71,7 @@ In blocking mode, platforms such as **Slack** and **Google Chat** might generate
 3. Select the instant messaging applications you want to monitor.
 4. Save the policy.
 
-![Content Aware Policies configuration with instant messaging apps selected](./../0-images/ka0Qk000000DzDl_0EMQk00000BuWID.png)
+![Content Aware Policies configuration with instant messaging apps selected](../0-images/ka0Qk000000DzDl_0EMQk00000BuWID.png)
 
 :::tip
 For comprehensive visibility into **Teams over web** in Microsoft Edge, also enable **Edge** under **Policy Exit Points** > **Applications** > **Web Browser** in the Content Aware Policy.

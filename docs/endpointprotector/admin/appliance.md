@@ -184,7 +184,7 @@ Before you enable it, verify that:
 
 **Client-Side Configuration**
 The server-side configuration alone isn't sufficient — you must also prepare the EPP Client to participate in certificate-based registration. You do this at installation time.
-When you install the Endpoint Protector Client on Windows or macOS, the installer wizard includes an **Increased Communication Security** checkbox. Enabling this option instructs the EPP Client to use the certificate-based authentication flow during registration and all subsequent communication with the EPP Server. For detailed installation steps and a walkthrough of the installer wizard, refer to the [Agent Installation](/docs/endpointprotector/admin/agent.md#increased-communication-security) section.
+When you install the Endpoint Protector Client on Windows or macOS, the installer wizard includes an **Increased Communication Security** checkbox. Enabling this option instructs the EPP Client to use the certificate-based authentication flow during registration and all subsequent communication with the EPP Server. For detailed installation steps and a walkthrough of the installer wizard, refer to the [Install the EPP Client](/docs/endpointprotector/install/eppclient/installeppclient.md#increased-communication-security) section.
 
 :::warning
 use this feature responsibly. Improper certificate configuration combined with enabled certificate validation may disrupt Endpoint Protector Client to Endpoint Protector Server communication.

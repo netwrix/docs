@@ -30,7 +30,7 @@ knowledge_article_id: kA0Qk0000002BCYKA2
 
 Content Aware Policies are rules for sensitive content detection that manage file transfers for users, computers, groups, or departments. You can create, edit, or delete policies, or apply predefined policies to address your organization’s data protection needs. You can prioritize policies, and you can enforce multiple policies on the same entity.
 
-Content Aware Protection is a separate module from Device Control and eDiscovery, and it requires separate licensing and activation before you can create policies. For a full overview of the Content Aware Protection module, including activation and licensing requirements, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule).
+For a full overview of the Content Aware Protection module, including activation and licensing requirements, see [Content Aware Protection](/docs/endpointprotector/configuration/cap_module/capmodule).
 
 > **NOTE:**
 > Content Aware Policies also apply to the File Allowlist. Endpoint Protector now inspects all previously allowed files for sensitive content and, depending on the policy configuration, reports, blocks, or allows them.
@@ -66,7 +66,7 @@ Content Aware Policies support the following threshold types and best practices:
 - **Regular Threshold:** This threshold applies to individual content types (e.g., it blocks four or more SSNs).
 - **Global Threshold:** This threshold applies to combined threats (e.g., it blocks four or more threats of different types).
 - **Best Practice:** Place **Block & Report** policies with thresholds at higher priority than **Report only** policies.
-- **Range and severity:** The range and severity apply only when both the Server and the Client are version 2611 or later. Existing policies keep their threshold as the minimum, with no maximum. See [Threshold ranges and severity](/docs/endpointprotector/admin/cap_module/cappolicies#threshold-ranges-and-severity).
+- **Range and severity:** The range and severity apply only when both the Server and the Client are version 2611 or later. Existing policies keep their threshold as the minimum, with no maximum. See [Threshold ranges and severity](/docs/endpointprotector/configuration/cap_module/cappolicies#threshold-ranges-and-severity).
 
 ## Policy Exit Points
 

@@ -137,12 +137,12 @@ such as browsers.
 You can export Content Aware logs as Excel, PDF, or CSV, or create an export containing the entire log
 report as a CSV file. The Logs Export page generates log exports only in CSV format.
 
-Excel/PDF/CSV—located above the Content Aware Reports list, this exports only the default
+Excel/PDF/CSV—located at the top of the Content Aware Reports list, this exports only the default
 columns. The **Date/Time(Client UTC)** column is included in exports when selected through Show/Hide Columns.
 
 ![Export Content Aware Reports](exportreports.webp)
 
-Create Export—located below the Content Aware Reports list, this creates an export containing
+Create Export—located at the bottom of the Content Aware Reports list, this creates an export containing
 all data, including the expanded Logs Details section with columns for Policy Type, Policy Name, Item
 type, Matched type, Matched items, and Count.
 
@@ -161,7 +161,7 @@ eDiscovery scan results are accessible from the Reports and Analysis section. Th
 
 Endpoint Protector stores eDiscovery logs in CrateDB, and they support the same filtering, sorting, and export capabilities as Device Control and Content Aware logs.
 
-For detailed information on viewing and managing eDiscovery scan results, see [Scan results and actions](/docs/endpointprotector/admin/ed_module/edscanresults.md).
+For detailed information on viewing and managing eDiscovery scan results, see [Scan results and actions](/docs/endpointprotector/configuration/ed_module/edscanresults.md).
 
 ## Export list
 

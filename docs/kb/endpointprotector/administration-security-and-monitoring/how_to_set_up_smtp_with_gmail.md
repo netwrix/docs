@@ -43,7 +43,7 @@ Before you configure the e-mail server, set an e-mail address for your administr
    - **Send test email to my account:** Enabled
    - **No-reply email address:** Default
 
-   ![SMTP configuration for Gmail in Endpoint Protector](./../0-images/servlet_image_e9d389c827d7.png)
+   ![SMTP configuration for Gmail in Endpoint Protector](../0-images/servlet_image_e9d389c827d7.png)
 
 6. To use a custom no-reply e-mail address, select **Custom** and enter your preferred e-mail address, or leave the default.
 

@@ -21,7 +21,7 @@ products:
 
 This article explains how to ensure that printing jobs are properly blocked or reported by the Endpoint Protector (EPP) agent. The **Advanced Printer and MTP Scanning** option must be enabled in Device Control settings, and a Content Aware Policy must include **Printers** as a Policy Exit Point, for this functionality to work.
 
-For the full reference, see [Client Settings](/docs/endpointprotector/admin/dc_module/globalsettings#client-settings).
+For the full reference, see [Client Settings](/docs/endpointprotector/configuration/dc_module/globalsettings#client-settings).
 
 ## Instructions
 
