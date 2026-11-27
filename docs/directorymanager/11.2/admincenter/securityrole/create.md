@@ -1,6 +1,6 @@
 ---
 title: "Create a Security Role in Directory Manager"
-description: "Create a security role for an identity store, either from scratch or by copying an existing role, and set its criteria, priority, and permissions."
+description: "Create a security role for an identity store, either as a new role or by copying an existing role, and set its criteria, priority, and permissions."
 keywords:
   - create security role
   - copy security role

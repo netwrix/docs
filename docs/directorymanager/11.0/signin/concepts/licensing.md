@@ -62,7 +62,7 @@ You can license Directory Manager under one or more of these license types:
 A license is valid for a period of 12 months.
 
 :::note
-All the above licenses are also available for a trial period.
+All these licenses are also available for a trial period.
 :::
 
 :::note

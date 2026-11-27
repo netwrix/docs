@@ -55,7 +55,7 @@ serve both these functions. Using it:
 
         The distributed client enables the **Forgot Password?** and **Unlock Account** links on the
         Windows logon screen of users' workstations. Users who forget their passwords or are locked
-        out can easily access these functions from their machine. There is also an option for web
+        out can access these functions from their machine. There is also an option for web
         access for users if they are on a remote computer.
 
     - **Passwordless Authentication with QR Code**

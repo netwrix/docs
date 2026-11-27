@@ -266,7 +266,7 @@ topic.
       `https://<web-server-name>:<port>/<IIS-application-name>`
       A different URL is constructed for each deployment of a portal in remote IIS.
 
-11. After you provide the above information, the **Website** dropdown list displays the sites defined on
+11. After you provide this information, the **Website** dropdown list displays the sites defined on
     the remote IIS server. Select the site that you configured with the appropriate permissions
     for Directory Manager.
 12. For entering information in the **Service Endpoints**, **Support Information**, **Select

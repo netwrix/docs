@@ -48,7 +48,7 @@ located on disk.
 6. In the **Deployment Name** box, enter a deployment name for the service. This name is used to
    indicate the deployment instance of the service in Directory Manager. A service can have multiple
    deployments, for example, one in native IIS and another in remote IIS. The application name and
-   deployment name are displayed on the service card, as shown below:
+   deployment name are displayed on the service card:
 
     ![Service card showing the application name and deployment name](/images/directorymanager/11.0/admincenter/mobileservice/ms_card.webp)
 

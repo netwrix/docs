@@ -79,9 +79,9 @@ The message displays the number of days left to validate your profile.
 4. Your direct reports, if any, are listed in the **My Direct Reports** area. Select one of these
    options for each direct report:
 
-    - Works for me
-    - Transfer
-    - Terminate
+    - **Works for me**
+    - **Transfer**
+    - **Terminate**
 
 5. After verifying and updating the information, click the **Validate Now** button. Your profile is
    validated and a message is displayed that your changes have been saved.
