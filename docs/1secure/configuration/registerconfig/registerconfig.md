@@ -119,10 +119,13 @@ applcation.
 
 The API permissions are granted to the application.
 
-## Assign Roles to the App
+## Assign Roles to the App (Optional)
 
-The registered application must be assigned to the Global Administrator or Exchange Administrator
-role for Microsoft Entra ID state collection.
+Assigning the registered application to the **Security Reader** or **Global Reader** role is
+optional. 1Secure reports the
+"[Unified Audit Log Search is Not Enabled](../../admin/riskprofiles/metrics_list.md)" risk only if
+the application has one of these roles and the `Exchange.ManageAsApp` permission. See the
+[Microsoft 365 Permissions](permissions.md) topic for additional information.
 
 **To assign roles to an application:**
 
@@ -140,11 +143,12 @@ is displayed.
 **Step 5 –** Click **Roles and administrators** under the Manage section. The Roles and
 administrators page is displayed. From here, go to the All roles page.
 
-**Step 6 –** On the All roles page, search for one of the following roles as required.
+**Step 6 –** On the All roles page, search for one of the following roles:
 
-- Global Administrator – Can manage all aspects of Microsoft Entra ID and Microsoft services that
-  use Microsoft Entra identities
-- Exchange Administrator – Can manage all aspects of the Exchange product
+- **Security Reader** – Can read security information and reports in Microsoft Entra ID and
+  Microsoft 365
+- **Global Reader** – Can read everything that a Global Administrator can, but can't update
+  anything
 
 **Step 7 –** Click the role you want. The Assignments page is displayed for it.
 
