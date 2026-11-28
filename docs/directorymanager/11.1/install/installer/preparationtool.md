@@ -38,7 +38,7 @@ To run the Directory Manager Preparation Tool:
 
    ![Ready to Install page showing Passed or Failed status for each prerequisite](/images/directorymanager/11.1/install/installer/readytoinstall.webp)
 
-   The You are ready to install Directory Manager! page displays the status of each prerequisite
+   The **You are ready to install Directory Manager!** page displays the status of each prerequisite
    software and Windows feature as Passed or Failed.
 
    Expand the node for a prerequisite to view its details.

@@ -97,7 +97,7 @@ To export the generated password from the primary Directory Manager server to a 
 
 5. To import the encrypted password, run the following cmdlet on the instance where you placed the file.
 
-   `GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "password copied from above"`
+   `GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "encrypted password copied in step 3"`
 
 6. Restart IIS on this server.
 
