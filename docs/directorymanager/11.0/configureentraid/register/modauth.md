@@ -64,7 +64,7 @@ Exchange Online module is installed on your GroupID server using the following c
 Get-InstallModule -name exchangeonlinemanagement
 ```
 
-Connect to Exchange Online using the cmdlet shown below and fetch some data:
+Connect to Exchange Online using the following cmdlet and fetch some data:
 
 :::note
 For that you need the certificate thumbprint and Application ID of the registered app.

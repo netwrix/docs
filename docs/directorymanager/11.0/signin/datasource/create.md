@@ -317,7 +317,7 @@ want to use in queries or as source/destination in Synchronize jobs.
 5. Enter the DSN name in the **DSN** box. GroupID uses this name to request a connection to the ODBC
    data source. Note the following:
 
-    - For a system DSN, simply provide the name of the DSN.
+    - For a system DSN, provide the name of the DSN.
     - For a file DSN, provide the file path with file name and extension.
 
 6. Select the **System DSN** or **File DSN** option button to specify the DSN type to use for

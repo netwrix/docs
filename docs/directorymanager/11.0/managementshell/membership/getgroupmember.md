@@ -44,7 +44,7 @@ Get-GroupMember -Identity "CN=Password_Expiry,OU=Recruiting,DC=HR,DC=Imanami,DC=
 
 Example 2:
 
-The command below retrieves all members from the **Enrollment** group whose display name starts
+The following command retrieves all members from the **Enrollment** group whose display name starts
 with the character S, using the credentials of the current user signed in to the identity store.
 
 ```

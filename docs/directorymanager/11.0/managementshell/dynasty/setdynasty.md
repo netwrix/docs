@@ -148,7 +148,7 @@ Set-Dynasty -Identity "CN=DepartmentalOU=Recruiting,DC=HR,DC=Imanami,DC=US" -Gro
 
 Example 2:
 
-The command below modifies the **Top Manager** of a Managerial Dynasty, changes the alias name and
+The following command modifies the **Top Manager** of a Managerial Dynasty, changes the alias name and
 display name templates for the Dynasty children, sets the scope to search Dynasty children in the
 containers specified in the **Add** parameter excluding sub-containers using the credentials set in
 the **$Credentials** environment variable. See the
