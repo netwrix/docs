@@ -1,12 +1,19 @@
 ---
-title: "General tab"
-description: "Object properties - General tab"
+title: "View and Update General User Information in Directory Manager"
+description: "View or update a user, mailbox, or contact's name, address, job, and photo details on the General tab."
+keywords:
+  - General tab
+  - user general properties
+  - contact properties
+  - Manage Photo
 sidebar_position: 50
 ---
 
-# General tab
+# View and Update General User Information in Directory Manager
 
-Use this tab to view or update the general information for a user, mailbox, or contact.
+Use the **General** tab to view or update the general information for a user, mailbox, or contact.
+
+## Name and identity
 
 **First name**
 
@@ -26,11 +33,9 @@ The email alias of the user or contact.
 
 **Display name**
 
-The name of the contact or user as it is displayed in the portal.
+The name of the contact or user as the portal displays it.
 
-**Address**
-
-The office address of the user or contact.
+## Job and organization
 
 **Title**
 
@@ -40,23 +45,33 @@ The job title of the contact or user.
 
 The name of the organization where the user or contact works.
 
+**Department**
+
+The department in the organization where the user or contact works.
+
+**Office**
+
+The office number of the user or contact.
+
+**Business**
+
+The type of business that the contact or user's organization conducts.
+
+## Location
+
+**Address**
+
+The office address of the user or contact.
+
 **City**
 
 The city, state, zip code, and country where the organization of this user or contact is located.
 
 The **State** list is populated based on the selection made in the **Country** list.
 
-**Department**
-
-The department in the organization that the user or contact works in.
-
 **State**
 
 The State list is populated based on the selection made in the Country list.
-
-**Office**
-
-The office number of the user or contact.
 
 **Zip**
 
@@ -66,21 +81,17 @@ The zip code of the location where the organization of this user or contact resi
 
 The country where the organization of this user or contact is located.
 
-**Business**
-
-The type of business the contact or user's organization conducts.
+## Contact details
 
 **Home page**
 
-The URL of the web page of the user. This field isn't available for a contact.
+The URL of the user's web page. This field isn't available for a contact.
 
 **Exchange Assistant**
 
-The name of the Exchange assistant for the mailbox/contact. Any email sent to the mailbox/contact is
-also forwarded to this assistant.
+The name of the Exchange assistant for the mailbox or contact. Any email sent to the mailbox or contact is also forwarded to this assistant.
 
-Enter a search string to locate the object to add as an Exchange assistant, or click **Browse** to
-use the [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
+Enter a search string to locate the object to add as an Exchange assistant. Alternatively, click **Browse** to search with the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.1/portal/generalfeatures/find.md) topic.
 
 This field isn't available for a user.
 
@@ -88,9 +99,10 @@ This field isn't available for a user.
 
 The email address of the user or contact.
 
+## Photo
+
 **Photo**
 
 The photo of the user or contact.
 
-Click the **Edit** icon to launch the Manage Photo dialog box for uploading a photo. The dialog box
-also provides many image editing options, including rotate, crop, flip, and re-size.
+Click the **Edit** icon to open the Manage Photo dialog box and upload a photo. The dialog box also provides image editing options, including rotate, crop, flip, and resize.

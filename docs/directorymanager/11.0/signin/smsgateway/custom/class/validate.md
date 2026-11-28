@@ -1,21 +1,26 @@
 ---
-title: "ShortMessage.Validate"
-description: "ShortMessage.Validate"
+title: "ShortMessage.Validate Method (SMS Gateway API)"
+description: "Check that a GroupID text message has a valid length and valid recipient phone numbers before a custom SMS gateway sends it."
+keywords:
+  - ShortMessage.Validate
+  - SMS message validation
+  - custom SMS gateway
+  - GroupID SMS API
 sidebar_position: 60
 ---
 
-# ShortMessage.Validate
+# ShortMessage.Validate Method (SMS Gateway API)
 
-The Validate method validates the following:
+The Validate method checks that:
 
-- Message length should not be zero.
-- Message length should not be greater than what is specified in the MacLength property.
-- PhoneNumbers must be provided.
-- PhoneNumber should be valid.
+- The message length isn't zero.
+- The message length isn't greater than the value of the MaxLength property.
+- Phone numbers are provided in the PhoneNumbers property.
+- Each phone number is valid.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

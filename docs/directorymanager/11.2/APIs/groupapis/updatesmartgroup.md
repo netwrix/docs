@@ -1,12 +1,18 @@
 ---
-title: "Update a Smart Group"
-description: "Update a Smart Group"
+title: "Update a Smart Group API"
+description: "Update a Smart Group by identity with a POST request, so Directory Manager refreshes its membership."
+keywords:
+  - update Smart Group API
+  - Smart Group update
+  - Smart Group refresh
+  - SmartGroups Update endpoint
 sidebar_position: 200
+unlisted: true
 ---
 
-# Update a Smart Group
+# Update a Smart Group API
 
-This API updates a Smart Group, identity of which is provided in the endpoint URL.
+This API updates the Smart Group whose identity is in the endpoint URL.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ This API updates a Smart Group, identity of which is provided in the endpoint U
 
 **POST**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

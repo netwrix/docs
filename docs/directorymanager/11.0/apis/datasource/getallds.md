@@ -1,12 +1,18 @@
 ---
-title: "Get All Data Sources"
-description: "Get All Data Sources"
+title: "Get All Data Sources API in GroupID"
+description: "Retrieve every data source defined in GroupID, including its type, creation date, and configuration values."
+keywords:
+  - GroupID data source API
+  - list all data sources
+  - DataSource GetAll endpoint
+  - data source configuration values
 sidebar_position: 60
+unlisted: true
 ---
 
-# Get All Data Sources
+# Get All Data Sources API in GroupID
 
-Using this API you can get information of all data source defined so far in GroupID.
+Use this API to get information about all data sources defined so far in GroupID.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/GetAll
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -85,7 +91,7 @@ GET
 ]
 ```
 
-See Also
+## See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

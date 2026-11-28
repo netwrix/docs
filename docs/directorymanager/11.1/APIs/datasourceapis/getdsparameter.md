@@ -1,12 +1,18 @@
 ---
-title: "Get Parameters of a Data Source"
-description: "Get Parameters of a Data Source"
+title: "Get Data Source Parameters API in Directory Manager"
+description: "Retrieve the connection string, command string, tables, and columns of a data source specified by its ID."
+keywords:
+  - data source parameters API
+  - GetDataSourceParameter endpoint
+  - data source connection string
+  - data source tables and columns
 sidebar_position: 130
+unlisted: true
 ---
 
-# Get Parameters of a Data Source
+# Get Data Source Parameters API in Directory Manager
 
-Using this API, you can retrieve parameters information of a data source specified in end point URL.
+Use this API to retrieve parameter information about the data source specified in the endpoint URL.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ Using this API, you can retrieve parameters information of a data source specifi
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [

@@ -1,24 +1,28 @@
 ---
-title: "Deleted Groups"
-description: "Deleted Groups"
+title: "Restore or Delete Groups in the Directory Manager Recycle Bin"
+description: "Learn how Directory Manager handles physically and logically deleted groups, and how to filter, restore, or permanently delete them."
+keywords:
+  - Recycle Bin
+  - deleted groups
+  - tombstone groups
+  - restore group
+  - Group Lifecycle job
 sidebar_position: 60
 ---
 
-# Deleted Groups
+# Restore or Delete Groups in the Directory Manager Recycle Bin
 
-Directory Manager portal handles group deletion as either physical or logical.
+The Directory Manager portal handles group deletion as either physical or logical. You can filter deleted groups in the Recycle Bin, restore them, or delete them permanently.
 
-## Tombstone Groups
+## Deletion types
 
-Physically deleted groups have Tombstone as type. Physical group deletion refers to manually
-deleting groups using the **Delete** option on the **Actions** menu or shortcut menu. Directory
-Manager moves a physically deleted it to the Recycle Bin while stripping it of most of its
-properties. You can delete or restore a group from the Recycle Bin. The restoration process not only
-restores the group to its original container, but it also reinstates the home container for the
-group, if deleted.
+### Tombstone groups
 
-When restored, a physically deleted group is restored with limited attributes; its membership isn't
-restored.
+Physically deleted groups have Tombstone as their type. Physical group deletion refers to manually deleting groups with the **Delete** option on the **Actions** menu or shortcut menu.
+
+Directory Manager moves a physically deleted group to the Recycle Bin and strips it of most of its properties. You can delete or restore a group from the Recycle Bin. Restoring a group returns it to its original container. It also reinstates the home container for the group, if deleted.
+
+When restored, a physically deleted group has limited attributes. Its membership isn't restored.
 
 A Smart Group and Dynasty is restored as a static group with no members and no query.
 
@@ -26,83 +30,69 @@ A Smart Group and Dynasty is restored as a static group with no members and no q
 Tombstone groups aren't available in Microsoft Entra ID.
 :::
 
+### Logically deleted groups
 
-## Logical Deletion
+Groups that the Group Lifecycle job deletes are considered logically deleted. The job deletes expired groups X number of days after group expiry, as specified in Group Lifecycle policy settings.
 
-Groups that are deleted by the Group Lifecycle job are considered to be logically deleted. The job
-deletes expired groups X number of days after group expiry, as specified in Group Lifecycle policy
-settings.
+Upon deletion, Directory Manager moves logically deleted groups to the Recycle Bin with all their attributes intact. A logically deleted group, when restored, returns to the state it had at the time of deletion. Restoring a group returns it to the container it was deleted from. It also reinstates the home container for the group, if deleted.
 
-Upon deletion, logically deleted groups are moved to the Recycle Bin, with all their attributes
-intact. As a result, a logically deleted group, when restored, returns to its state it had at the
-time of deletion. The restoration process not only restores the group to the container from where it
-was deleted but it also reinstates the home container for the group, if deleted.
+You can also manually delete a logically deleted group in the Recycle Bin, which makes it physically deleted. Select the required group and select **Delete** on the shortcut menu.
 
-You can also manually delete a logically deleted group in the Recycle Bin, making it physically
-deleted. Select the required group and select Delete on the shortcut menu.
+### Deletion notifications
 
-## Deletion notifications
+When the Group Lifecycle job deletes a group, it notifies the group owners. If there is no owner, it notifies the default approver specified in the Group Lifecycle policy.
 
-When the Group Lifecycle job deletes a group, it notifies the group owners or, if there is no owner,
-the default approver specified in the Group Lifecycle policy.
+## Modify the search directory
 
-## Modify Search Directory
+You can modify the search results in **Modify Search Directory**. Select the entire directory or a domain to search for deleted groups.
 
-You can modify the search results in **Modify Search Directory**. You can select entire directory or
-a domain to search deleted groups from.
+## Filter deleted groups
 
-## Filter Deleted Groups
-
-You can add filters while searching for specific deleted groups from Tombstone or Logically Deleted
-Groups.
+You can add filters while searching for specific deleted groups among **Tombstone** or **Logically Deleted Groups**.
 
 1. Click **Add Filter** to specify a criterion for filtering deleted groups.
 2. From the **Select a Filter** list, select the attribute to filter deleted groups.
-3. Two more boxes get displayed next to **Select a Filter** box upon selecting a filter.
 
-    - **Select an Operator** from the first list.
-    - Specify a value for the selected operator in the second box.
+   Two more boxes appear next to the **Select a Filter** box.
 
-4. Click **Apply Filter**.
+   - **Select an Operator** from the first list.
+   - Specify a value for the selected operator in the second box.
 
-    Deleted Groups that match the specified criterion are displayed.
+3. Click **Apply Filter**.
 
-5. You can add additional filters by clicking **Add Filter**.
-6. To undo the filters, click **Reset Filter.** It will remove all the criteria set before.
+   Deleted groups that match the specified criterion appear.
 
-## Delete a group from Recycle Bin
+4. To add more filters, click **Add Filter**.
+5. To undo the filters, click **Reset Filter**. This removes all the criteria set before.
 
-To delete a group from Recycle Bin.
+## Delete a group from the Recycle Bin
 
-1. In Directory Manager portal, select **Groups > Deleted Groups** from the left pane.
+To delete a group from the Recycle Bin:
+
+1. In the Directory Manager portal, select **Groups > Deleted Groups** from the left pane.
 2. From the groups list, select one or more groups.
 3. Click **Delete** on the shortcut menu.
 
-The group / groups will be permanently deleted from the recycle bin.
+The selected groups are permanently deleted from the Recycle Bin.
 
 ## Restore a deleted group
 
-To restore a deleted group.
+To restore a deleted group:
 
-1. In Directory Manager portal, select **Groups > Deleted Groups** from the left pane.
+1. In the Directory Manager portal, select **Groups > Deleted Groups** from the left pane.
 2. From the groups list, select one or more groups.
 3. Click **Restore** on the shortcut menu.
 
-The group / groups will be restored in the directory.
+The selected groups are restored in the directory.
 
 :::note
-You can only restore a physically deleted group from the Recycle Bin if the service account
-for the connected identity store has the ‘Reanimate Tombstone’ permissions.
+You can only restore a physically deleted group from the Recycle Bin if the service account for the connected identity store has the 'Reanimate Tombstone' permissions.
 :::
-
 
 :::note
-While all searches in Directory Manager are catered through Elasticsearch, the Recycle Bin is
-an exception, as it fetches data from the directory.
+While Elasticsearch handles all searches in Directory Manager, the Recycle Bin is an exception, as it fetches data from the directory.
 :::
-
 
 :::note
 The Recycle Bin doesn't display data for a Microsoft Entra ID based identity store.
-
 :::

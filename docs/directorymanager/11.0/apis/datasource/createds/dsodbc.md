@@ -1,30 +1,36 @@
 ---
-title: "Create a Data Source for ODBC"
-description: "Create a Data Source for ODBC"
+title: "Create an ODBC Data Source with the API"
+description: "Create a GroupID data source that connects through an ODBC system DSN to an ODBC-compatible provider such as Excel."
+keywords:
+  - GroupID API
+  - ODBC data source
+  - system DSN
+  - data source
 sidebar_position: 40
+unlisted: true
 ---
 
-# Create a Data Source for ODBC
+# Create an ODBC Data Source with the API
 
-Use this APi to create a new data source.
+Use this API to create a new data source for an ODBC provider.
 
 See the
 [Create a Data Source for ODBC](/docs/directorymanager/11.0/signin/datasource/create.md#create-a-data-source-for-odbc)
 section of the
-[Create a Data Source](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-to create an ODBC data source using the GroupID interface.
+[Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+to create an ODBC data source using GroupID.
 
 ## Endpoint
 
-https://demomachine:4443/GroupIDDataService/api/DataSource/Create
+**https://demomachine:4443/GroupIDDataService/api/DataSource/Create**
 
 ## HTTP Method
 
-POST
+**POST**
 
-#### Sample Response Syntax
+### Sample Request Syntax
 
-The following syntax is for creating an ODBC data source which you can use to connect to MS Excel,
+The following syntax is for creating an ODBC data source that you can use to connect to MS Excel,
 an ODBC-compatible provider.
 
 ```
@@ -49,7 +55,7 @@ an ODBC-compatible provider.
 }
 ```
 
-#### Sample Request Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -69,5 +75,5 @@ an ODBC-compatible provider.
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

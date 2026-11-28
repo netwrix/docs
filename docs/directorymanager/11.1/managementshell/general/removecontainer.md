@@ -1,14 +1,17 @@
 ---
-title: "Remove-Container"
-description: "Remove-Container"
+title: "Remove-Container Cmdlet"
+description: "Use the Remove-Container cmdlet to delete an empty, leaf-level organizational unit from the directory."
+keywords:
+  - Remove-Container
+  - delete organizational unit
+  - leaf container
+  - Management Shell
 sidebar_position: 90
 ---
 
-# Remove-Container
+# Remove-Container Cmdlet
 
-Use the Remove-Container commandlet to delete organizational units from Directory. The commandlet
-only supports deletion of containers at leaf level, having no objects. If the container contains
-objects or sub-containers, the commandlet doesn't process the request and throws an exception.
+Use the `Remove-Container` cmdlet to delete organizational units from the directory. The cmdlet only supports deletion of leaf-level containers that have no objects. If the container contains objects or sub-containers, the cmdlet doesn't delete it and returns a failed status with the reason.
 
 ## Syntax
 
@@ -21,26 +24,24 @@ Remove-Container
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+## Examples
 
-The following command removes the _Miscellaneous_ container, using the credentials of current user
-logged-on to the identity store.
+### Example 1
+
+The following command removes the _Miscellaneous_ container, using the credentials of the current user signed in to the identity store.
 
 ```
 Remove-Container -identity "OU=Miscellaneous,OU=Recruiting,DC=HR,DC=Imanami,DC=US"
 ```
 
-Example 2:
+### Example 2
 
-The following command first shows the changes that result from executing the command. The command
-uses the credentials set in the $Credentials environment variable to perform the deletion. See the
-[Set the $Credentials Environment Variable](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials in the environment variable.
+The following command removes the _Miscellaneous_ container, using the credentials set in the $Credentials environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials in the environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
-Remove-Container -identity "OU=Miscellaneous,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Credential $Cred
+Remove-Container -identity "OU=Miscellaneous,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IdentityStoreId 2 -Credential $Credentials
 ```

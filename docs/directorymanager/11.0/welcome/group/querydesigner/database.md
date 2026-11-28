@@ -1,10 +1,16 @@
 ---
-title: "Query Designer - Database tab"
-description: "Query Designer - Database tab"
+title: "Use an External Data Source in Query Designer"
+description: "Combine an external data provider such as SQL Server, Oracle, or SCIM with the directory to determine a group's membership in Query Designer."
+keywords:
+  - Query Designer
+  - external data source
+  - Database tab
+  - command string
+  - group membership query
 sidebar_position: 70
 ---
 
-# Query Designer - Database tab
+# Use an External Data Source in Query Designer
 
 You can combine an external data provider with the directory to determine a group's membership.
 
@@ -18,30 +24,30 @@ The supported external data providers are:
 - Text/CSV
 - SCIM
 
-Before using any of the above external data providers, a data source for the provider must be
-defined in Admin Center. See the
-[Create a Data Source](/docs/directorymanager/11.0/signin/datasource/create.md) topic.
+Before using any of these external data providers, you must define a data source for the provider in
+Admin Center. See the
+[Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md) topic.
 
-A connection is configured in a data source, GroupID portal connects to the external database,
-retrieves the results, and then queries the directory for matching records.
+You configure a connection in a data source. The GroupID portal then connects to the
+external database, retrieves the results, and queries the directory for matching records.
 
 You must map one column returned by the command on the Database tab with a directory attribute to
 join the external data source to the identity store. The query compares the values of the mapped
-attributes and extracts objects with matching values to add to the group’s membership.
+attributes and extracts objects with matching values to add to the group's membership.
 
 For example, if you want to add to group membership all employees whose employee IDs are present in
 an external data source, you can select that data source and map a key attribute with a directory
-attribute. Use attributes that store the employee ID. When group membership is updated, GroupID will
-fetch only those users from the directory whose employee IDs also exist in the data source.
+attribute. Use attributes that store the employee ID. When you update group membership, GroupID fetches
+only those users from the directory whose employee IDs also exist in the data source.
 
 **External Data Provider**
 
-Select the data source from the drop-down list that you want to use to determine the group's
+Select the data source from the dropdown list that you want to use to determine the group's
 membership.
 
 **External Provider Table**
 
-Once the data source is selected, select the provider's table that contains the data.
+After you select the data source, select the provider's table that contains the data.
 
 **Identity Store Attribute**
 
@@ -55,12 +61,12 @@ Select a data provider attribute to map it to the selected identity store attrib
 
 This field displays the command that the **Query Designer** executes to retrieve the query results
 from the data source. The value can be a query statement and can include multiple columns separated
-by commas. Field names are enclosed in brackets ([ ]) to prevent any ambiguity that the query engine
-might encounter due to spaces between column names.
+by commas. Field names are enclosed in brackets ([ ]) to prevent ambiguity that the query engine
+might encounter due to spaces in column names.
 
 You can modify the command and even write your own command.
 
-For better performance, it is recommended to select only the columns required to create your group.
+For better performance, select only the columns required to create your group.
 
 For example:
 
@@ -68,9 +74,9 @@ For example:
 SELECT [Column1],[Column2] FROM [Filename.csv]
 ```
 
-Execute
+**Execute**
 
-Click this button to execute the command and preview the results. This process may take several
+Click this button to execute the command and preview the results. This process can take several
 minutes depending on the size of your data source.
 
 **Clear**
@@ -79,9 +85,7 @@ Click this button to clear the query.
 
 **Preview**
 
-Enables you to preview the results returned with the criteria specified on all tabs of the Query
-Designer dialog box. This is a check to ensure the accuracy of data before changes are committed to
-the directory.
+Preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This checks the accuracy of data before you commit changes to the directory.
 
 **OK**
 
@@ -97,4 +101,4 @@ View the provider query in the LDAP Query box.
 
 **See Also**
 
-- [Query Designer](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+- [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)

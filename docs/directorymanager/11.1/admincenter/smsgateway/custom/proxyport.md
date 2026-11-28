@@ -1,6 +1,11 @@
 ---
 title: "ISmsGateway.ProxyPort"
-description: "ISmsGateway.ProxyPort"
+description: "Get or set the port number that the proxy server uses for communication with a custom SMS gateway."
+keywords:
+  - ISmsGateway.ProxyPort
+  - SMS gateway proxy port
+  - custom SMS gateway
+  - Imanami.PublicInterfaces
 sidebar_position: 70
 ---
 
@@ -26,5 +31,5 @@ The port number.
 
 **Remarks**
 
-If communication with the SMS gateway is through a proxy server, you can use this property to set
-the port number the proxy server uses.
+If the SMS gateway communicates through a proxy server, use this property to set the port number
+that the proxy server uses.

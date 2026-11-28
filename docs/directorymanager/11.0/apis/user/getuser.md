@@ -1,12 +1,18 @@
 ---
-title: "Get a User"
-description: "Get a User"
+title: "Get a User with the GroupID API"
+description: "Retrieve the attributes and details of a single user from an identity store."
+keywords:
+  - GroupID API
+  - get user
+  - Users/{userIdentity} endpoint
+  - identity store
 sidebar_position: 140
+unlisted: true
 ---
 
-# Get a User
+# Get a User with the GroupID API
 
-Use this API to get information of a single user.
+Use this API to get information about a single user.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -165,5 +171,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

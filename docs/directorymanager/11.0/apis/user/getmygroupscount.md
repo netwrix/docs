@@ -1,10 +1,15 @@
 ---
-title: "Get My Groups Count"
-description: "Get My Groups Count"
+title: "Get My Groups Count with the GroupID API"
+description: "Get the number of groups that belong to the authenticated user."
+keywords:
+  - GroupID API
+  - my groups count
+  - Groups/count endpoint
 sidebar_position: 100
+unlisted: true
 ---
 
-# Get My Groups Count
+# Get My Groups Count with the GroupID API
 
 This API retrieves the number of groups of the authenticated user.
 
@@ -16,7 +21,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -25,7 +30,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -36,5 +41,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

@@ -1,14 +1,23 @@
 ---
-title: "Get Contacts"
-description: "Get Contacts"
+title: "Get Contacts API in GroupID"
+description: "Retrieve attributes for multiple contacts from an identity store with a GET request to the GroupID Contacts endpoint."
+keywords:
+  - GroupID API
+  - get contacts
+  - contact objects
+  - identity store
+  - REST endpoint
 sidebar_position: 50
+unlisted: true
 ---
 
-# Get Contacts
+# Get Contacts API in GroupID
 
-Use this API to retrieve information of multiple contacts from a specified identity store.
+Use this API to retrieve information about multiple contacts from a specified identity store.
 
-NOTE: The contact object type is not supported in a Microsoft Entra ID based identity store.
+:::note
+The contact object type isn't supported in a Microsoft Entra ID-based identity store.
+:::
 
 ## Endpoint
 
@@ -18,7 +27,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -32,7 +41,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -253,5 +262,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

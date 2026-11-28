@@ -1,12 +1,18 @@
 ---
-title: "Get-AvailableMessagingServers"
-description: "Get-AvailableMessagingServers"
+title: "Get-AvailableMessagingServers Cmdlet"
+description: "List the messaging servers available for an identity store's messaging provider, such as Exchange, Microsoft 365, or Google Workspace."
+keywords:
+  - Get-AvailableMessagingServers
+  - messaging servers
+  - messaging provider
+  - Exchange
+  - PowerShell cmdlet
 sidebar_position: 40
 ---
 
-# Get-AvailableMessagingServers
+# Get-AvailableMessagingServers Cmdlet
 
-The commandlet **Get-AvailableMessagingServers** retrieves the messaging server(s) available for the
+The Get-AvailableMessagingServers cmdlet retrieves the messaging servers available for the
 configured messaging provider.
 
 ## Syntax
@@ -33,17 +39,17 @@ Get-AvailableMessagingServers
 
 Example 1:
 
-This example retrieves the available messaging server(s) configured in AdStore1 identity store for
-Exchange 2013 messaging provider.
+This example retrieves the available messaging servers configured in the AdStore1 identity store for
+the Exchange 2013 messaging provider.
 
 ```
-Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider exchange2013 -UserName administrator -Password webdir123R -Domain pucit.local
+Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider exchange2013 -UserName administrator -Password webdir123R -Domain example.com
 ```
 
 Example 2:
 
-This example retrieves the available messaging server(s) configured in Adstore1 identity store for
-Office365 messaging provider.
+This example retrieves the available messaging servers configured in the AdStore1 identity store for
+the Microsoft 365 messaging provider.
 
 ```
 Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider o365 -UserName admin@mydomain.onmicrosoft.com -Password webdir123R -Domain mydomain.onmicrosoft.com -AppId 'eeeeeeee-aaaa-dddd-bbbb-cccccccccccc'
@@ -51,15 +57,15 @@ Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider o365 -UserNa
 
 Example 3:
 
-This example retrieves the available messaging server(s) in AdStore1 identity store for GSuite
-(Google Apps) messaging provider.
+This example retrieves the available messaging servers in the AdStore1 identity store for the Google
+Workspace (G Suite) messaging provider.
 
 ```
-Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider gsuite -UserName svcaccount@myproject-219211.iam.gserviceaccount.com -AdminUsername 'arslan@mydomain.com' -P12CertificatePath 'C:\Keys\gsuite\key.p12'
+Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider gsuite -UserName svcaccount@myproject-111222.iam.gserviceaccount.com -AdminUsername 'admin@example.com' -P12CertificatePath 'C:\Keys\gsuite\key.p12'
 ```
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Identity Store Commands](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

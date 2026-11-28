@@ -1,134 +1,110 @@
 ---
-title: "Security Utility"
-description: "Security Utility"
+title: "Directory Manager Security Utility"
+description: "Restrict IP access to Directory Manager services, generate a secure service password, and transfer the password between servers."
+keywords:
+  - directory manager security utility
+  - restrict ip addresses
+  - iis ip security rule
+  - secure password generation
+  - password transfer utility
 sidebar_position: 40
 ---
 
-# Security Utility
+# Directory Manager Security Utility
 
-Use the NDM11-ADV-2025-014 utility to:
+Use the NDM11-ADV-2025-014 utility to do the following:
 
 - Restrict the IP addresses that can access Directory Manager services.
-- Generate and encrypt the password for the GroupID user account, which is a hard-coded account
-  hidden from end-users. Security Service uses this account to authenticate for the
-  Replication service, Email service, and Scheduler service.
+- Generate and encrypt the password for the `GROUPID` user account, which is a hard-coded account hidden from end users. The Security service uses this account to authenticate with the Replication service, Email service, and Scheduler service.
 
 **Downloads**
 
 - [Download NDM11-ADV-2025-014-Utility](https://releases.netwrix.com/products/groupid/11.1/NDM11-ADV-2025-014-Utility.zip)
 - [Download GroupIDPasswordTransferUtility](https://releases.netwrix.com/products/groupid/11.1/GroupIDPasswordTransferUtility.zip)
 
-## Restrict IP Addresses
+## Restrict IP addresses
 
-The NDM11-ADV-2025-014 utility adds an IIS IP security rule to prevent remote access to internal
-Directory Manager services. To achieve this, the utility:
+The NDM11-ADV-2025-014 utility adds an IIS IP security rule to prevent remote access to internal Directory Manager services. The utility does the following:
 
-1. Defines 127.0.0.1,::1, and the host's primary public address as an IIS IP security rule.
-2. Detects whether DHCP provides the primary public address and alerts that dynamically
-   assigned addresses may present operational challenges. Use a DHCP Reservation or statically
-   configured IP for the Directory Manager server.
-3. Supports adding addresses for remote Directory Manager servers.
-4. The IP rule applies to the following services/virtual directories:
+- Defines 127.0.0.1, ::1, and the host's primary public address as an IIS IP security rule.
+- Detects whether DHCP provides the primary public address and warns that dynamically assigned addresses may cause operational problems. Use a DHCP reservation or a statically configured IP address for the Directory Manager server.
+- Supports adding addresses for remote Directory Manager servers.
+- Applies the IP rule to the following services and virtual directories:
 
-    - GroupIDDataService
-    - GroupIDEmailService
-    - GroupIDReplicationService
-    - GroupIDSchedulerService
+  - `GroupIDDataService`
+  - `GroupIDEmailService`
+  - `GroupIDReplicationService`
+  - `GroupIDSchedulerService`
 
-To restrict Directory Manager service access to specific IP addresses, complete these steps:
+To restrict Directory Manager service access to specific IP addresses:
 
-Step 1 – On the Directory Manager server, run the “NDM11-ADV-2025-014-Utility.exe” utility from the
-command line as an administrator. The utility presents the following options:
+1. On the Directory Manager server, run the `NDM11-ADV-2025-014-Utility.exe` utility from the command line as an administrator. The utility provides the following options:
 
-- AddIpSecurity — Enables the IIS IP Security feature on the Directory Manager server
-- GenerateSecurePassword — Generates a secure password for the GroupID user account
-- --help — Displays details about a specific command
-- version — Displays the NDM11-ADV-2025-014-Utility version
+   - `AddIpSecurity` — Enables the IIS IP Security feature on the Directory Manager server
+   - `GenerateSecurePassword` — Generates a secure password for the `GROUPID` user account
+   - `--help` — Displays details about a specific command
+   - `version` — Displays the NDM11-ADV-2025-014-Utility version
 
-Step 2 – Run the `NDM11-ADV-2025-014-Utility.exe AddIpSecurity` cmdlet. The cmdlet enables the IIS IP
-Security feature in Directory Manager and asks whether any machine other than the local one
-accesses GroupIDDataService. If yes, provide the IP of that machine. Press Enter.
+2. Run the `NDM11-ADV-2025-014-Utility.exe AddIpSecurity` cmdlet. The cmdlet enables the IIS IP Security feature in Directory Manager and asks whether any machine other than the local one accesses `GroupIDDataService`. If one does, enter the IP address of that machine and press Enter.
 
-For multiple machines, use a comma to separate the IP addresses with no space after the
-comma.
+   For multiple machines, separate the IP addresses with commas and no spaces.
 
-![Restrict IP Addresses](/images/directorymanager/11.1/install/iprestrict.webp)
+   ![Command prompt showing the AddIpSecurity prompt for additional IP addresses](/images/directorymanager/11.1/install/iprestrict.webp)
 
-:::info
-Use a static IP address for the Directory Manager server and the additional IP
-addresses you specify here to include in the IP security rules.
-:::
+   :::info
+   Use a static IP address for the Directory Manager server and for the additional IP addresses that you specify here for the IP security rules.
+   :::
 
+3. After successful configuration, the utility displays the following message.
 
-Step 3 – After successful configuration, the utility displays the following message.
+   ![Command prompt showing the IP security configuration success message](/images/directorymanager/11.1/install/success.webp)
 
-![Success message](/images/directorymanager/11.1/install/success.webp)
-
-If you have a Directory Manager multi-instance deployment, execute the previous steps on each
-Directory Manager server in your environment.
+If you have a Directory Manager multi-instance deployment, run the previous steps on each Directory Manager server in your environment.
 
 :::note
-If you deploy a new Directory Manager server/instance, add the IP address of the new
-server to the primary server's IP security rule allowed list. Run the NDM11-ADV-2025-014 utility on
-the primary server to add the additional IP. Do this before the new server connects to
-the Data service on the primary server (the new server needs this connection during
-configuration). After you configure the new server, you can remove the IP from the allowed list of the
-primary server.
+If you deploy a new Directory Manager server or instance, add the IP address of the new server to the allowed list of the primary server's IP security rule. Run the NDM11-ADV-2025-014 utility on the primary server to add the additional IP. Do this before the new server connects to the Data service on the primary server (the new server needs this connection during configuration). After you configure the new server, you can remove its IP address from the primary server's allowed list.
 :::
 
+## Generate a secure password
 
-## Generate a Secure Password
+To generate and encrypt the password for the `GROUPID` user account:
 
-To generate and encrypt the password for the GroupID user account, complete these steps:
+1. On the Directory Manager server, run the `NDM11-ADV-2025-014-Utility.exe` utility from the command line as an administrator.
 
-Step 1 – On the Directory Manager server, run the “NDM11-ADV-2025-014-Utility.exe” utility from the
-command line as an administrator.
+2. Run the `NDM11-ADV-2025-014-Utility.exe GenerateSecurePassword` cmdlet.
 
-Step 2 – Run the `NDM11-ADV-2025-014-Utility.exe GenerateSecurePassword` cmdlet.
+3. Provide the database configurations in the following cmdlet according to your environment:
 
-Step 3 – Provide the database configurations in the following cmdlet according to your
-environment:
+   `NDM11-ADV-2025-014-Utility.exe GenerateSecurePassword -s "SQLSERVER" -i -u "sa" -d "NetwrixGroupIDDatabase"`
 
-`NDM11-ADV-2025-014-Utility.exe GenerateSecurePassword -s "SQLSERVER" -i -u "sa" -d "NetwrixGroupIDDatabase"`
+4. Enter the database connection password when the utility prompts for it. The utility then updates the password for the `GROUPID` user account with the generated password.
 
-Step 4 – The utility prompts you to provide the database connection password. After you provide it, the utility
-updates the password for the GroupID user account with the generated password.
+   ![Command prompt showing the password generation and update message](/images/directorymanager/11.1/install/passwordgeneration.webp)
 
-![Password generation and update message](/images/directorymanager/11.1/install/passwordgeneration.webp)
+## Export/Import the new password
 
-## Export/Import the New Password
+If you have multiple Directory Manager servers or distributed portals, you must also run the `GroupIDPasswordTransferUtility.exe` utility to securely transfer the password to the distributed Directory Manager systems. When done, restart IIS on those systems.
 
-If you have multiple Directory Manager servers or distributed portals, you must also run the
-GroupIDPasswordTransfer utility to securely transport the password to distributed Directory Manager
-systems. When done, you must restart IIS on those systems.
+To export the generated password from the primary Directory Manager server to a secondary server or instance:
 
-To export the generated password from the primary Directory Manager server to a
-secondary server/instance, complete these steps:
+1. On the Directory Manager server, run the `GroupIDPasswordTransferUtility.exe` utility from the command line as an administrator.
 
-Step 1 – On the Directory Manager server, run the “directorymanagerPasswordTransferUtility.exe” utility from
-the command line as an administrator.
+2. Run the `GroupIDPasswordTransferUtility.exe export -o "directory\filename"` cmdlet to export the encrypted password from the primary server.
 
-Step 2 – Run the `directorymanagerPasswordTransferUtility.exe export -o "directory\filename"` cmdlet to
-export the encrypted password from the primary server.
+3. Copy the encrypted password that the command displays in the command prompt.
 
-Step 3 – Copy the encrypted password displayed on cmd in response to this command.
+4. Copy the file created at the directory path that you specified in the cmdlet and place it on another instance of Directory Manager.
 
-Step 4 – Copy the file created at the directory path provided in the cmdlet and place it on
-another instance of Directory Manager.
+5. To import the encrypted password, run the following cmdlet on the instance where you placed the file.
 
-Step 5 – Run the following cmdlet on the instance where you placed the file to import the encrypted
-password.
+   `GroupIDPasswordTransferUtility.exe import -i "path to the file" -p "encrypted password copied in step 3"`
 
-directorymanagerPasswordTransferUtility.exe import -i "path to the file" -p "password copied from above"
+6. Restart IIS on this server.
 
-Step 6 – Restart IIS on this server.
+Repeat steps 3-6 on all Directory Manager servers to eliminate the hard-coded password for the `GROUPID` user account on all servers.
 
-Repeat Steps 3-6 on all Directory Manager servers to eliminate the hard-coded password for the
-GroupID user account on all servers.
+## Delete the GroupIDSSUser account
 
-## Delete the GroupIDSSUser Account
+You must delete the `GroupIDSSUser` account from each Directory Manager server. Delete the account in the Computer Management console.
 
-You must delete the GroupIDSSUser account from each Directory Manager server. Go to the Computer
-Management console to delete the account.
-
-![Computer Management console](/images/directorymanager/11.1/install/computermanagement.webp)
+![Computer Management console showing the GroupIDSSUser account to delete](/images/directorymanager/11.1/install/computermanagement.webp)

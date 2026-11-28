@@ -1,20 +1,26 @@
 ---
-title: "Display Type Categories"
-description: "Display Type Categories"
+title: "Directory Manager Display Type Categories"
+description: "Learn how basic and custom display types map to schema attributes so portal users can enter valid data in Directory Manager portal fields."
+keywords:
+  - display types
+  - basic display types
+  - display type categories
+  - schema attributes
+  - portal fields
 sidebar_position: 40
 ---
 
-# Display Type Categories
+# Directory Manager Display Type Categories
 
-Using display types, you can publish fields in a Directory Manager portal to capture and view data.
+Display types publish fields in a Directory Manager portal to capture and view data.
 
-A field can be anything from a text box to a dropdown list to a checkbox, depending on the display
-type linked to it. You must also link each field to a schema attribute in the directory. Users can
-use the fields in a portal to add and update values for the respective attributes.
+A field can be a text box, a dropdown list, a checkbox, or another element, depending on the
+display type linked to it. You must also link each field to a schema attribute in the directory.
+Users can use the fields in a portal to add and update values for the respective attributes.
 
-See the [Design a Portal with Display Types](/docs/directorymanager/11.2/admincenter/applications/portal/displaytype/overview.md) topic fr additional information.
+For more information, see the [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.2/admincenter/applications/portal/displaytype/overview.md) topic.
 
-## Schema Attributes and Display Types
+## Schema attributes and display types
 
 Each schema attribute requires a value of a certain type.
 
@@ -27,44 +33,43 @@ Each schema attribute requires a value of a certain type.
 - Some attributes allow only Boolean values (true or false).
   Example: Active Directory attributes _hideDLMembership_ and _isDeleted_
 
-To ensure that portal users update these attributes as supported by the directory, display types
-play an important role. Use a display type to define the user interface element to use for
-an attribute in the portal (for example, text box, dropdown list, checkbox, etc.). This user
-interface element must support the type of data that can be entered as the attribute value, so that
-users enter valid data through the portal.
+Display types help ensure that portal users update these attributes as the directory supports.
+Use a display type to define the user interface element for an attribute in the portal, for example
+a text box, dropdown list, or checkbox. This element must support the type of data that can be
+entered as the attribute value, so that users enter valid data through the portal.
 
-## Display Type Categories
+## Display type categories
 
 Display types support almost all types of schema attributes, such as single-valued, multi-valued,
 Boolean, and distinguished name. Based on their characteristics and customization options, display
-types are divided into two categories:
+types fall into two categories:
 
 - Basic display types
 - Custom display types
 
-### Basic Display Types
+### Basic display types
 
-You can link a basic display type to a schema attribute straight away. Basic display types are:
+You can link a basic display type to a schema attribute straight away. The basic display types are:
 
 - **Text box**
 
     Use it to collect and display a single value for an attribute. You can link it directly to a
-    schema attribute. However, to apply additional rules to it, such as assigning a default value or
+    schema attribute. To apply additional rules to it, such as assigning a default value or
     implementing a regular expression to validate the data entered, you must create a custom display
-    type from this basic type. See the [Text Box Display Type](/docs/directorymanager/11.2/admincenter/applications/portal/categories/textbox.md) topic.
+    type from this basic type. See the [Directory Manager Text Box Display Type](/docs/directorymanager/11.2/admincenter/applications/portal/categories/textbox.md) topic.
 
 - **Password**
 
     Use this display type with schema attributes that store confidential information. The user
-    interface element is displayed as a text box in the portal with bullets or asterisks in place of
+    interface element appears as a text box in the portal with bullets or asterisks in place of
     text.
 
 - **Multi-value**
 
-    Use it for schema attributes that can accept multiple string values.
-     A multi-value display type is displayed in the portal as:
+    Use it for schema attributes that can accept multiple string values. A multi-value display type
+    appears in the portal as:
 
-    ![multi-value_display_type](/images/directorymanager/11.2/admincenter/portal/displaytype/multi-value_display_type.webp)
+    ![Multi-value display type in the portal with an Add button](/images/directorymanager/11.2/admincenter/portal/displaytype/multi-value_display_type.webp)
 
     Clicking **Add** launches a dialog box where users can add new values.
 
@@ -78,9 +83,9 @@ You can link a basic display type to a schema attribute straight away. Basic dis
     Use it for schema attributes that accept a single distinguished name for their value, such as
     the Active Directory attributes _Assistant_ and _altRecipient_. The user interface element for
     this display type appears as a button that launches the **Find** dialog box, where users can
-    search and select objects. It is as:
+    search and select objects. It looks like this:
 
-    ![dn](/images/directorymanager/11.2/admincenter/portal/displaytype/dn.webp)
+    ![DN display type button that opens the Find dialog box](/images/directorymanager/11.2/admincenter/portal/displaytype/dn.webp)
 
 - **DNs**
 
@@ -88,17 +93,17 @@ You can link a basic display type to a schema attribute straight away. Basic dis
     Directory attributes _member_ and _memberOf_. The user interface element for this display type
     is as follows:
 
-    ![multi-value_display_type](/images/directorymanager/11.2/admincenter/portal/displaytype/multi-value_display_type.webp)
+    ![DNs display type in the portal with an Add button](/images/directorymanager/11.2/admincenter/portal/displaytype/multi-value_display_type.webp)
 
     Clicking **Add** displays a quick search field along with an option to launch the **Find**
     dialog box where users can search and select the objects they need.
 
-### Custom Display Types
+### Custom display types
 
-Some display types can't be linked to schema attributes straight away; they must be customized
+Some display types can't be linked to schema attributes straight away. You must customize them
 first.
 
-Display types that require customization are:
+The display types that require customization are:
 
 - Text box - you can use it directly with an attribute, but if you want to apply data validation
   checks to it, you must convert it to a custom display type.
@@ -111,16 +116,18 @@ Display types that require customization are:
 - Multi-Valued Control
 - Linked combo
 
-Some applications of display type are:
+Some applications of custom display types are:
 
 - Define a simple text box type for a telephone number field and apply a validation rule so that it
   accepts phone numbers in United States format only.
 - Define a dropdown list display type containing a list of the departments in your organization.
-- Create a linked field dropdown list type where selecting the office address auto populates the
+- Create a linked field dropdown list type where selecting the office address autopopulates the
   phone number and fax number.
 
-The default portal template uses several predefined custom display types. See the
-[Define Custom Display Types](/docs/directorymanager/11.2/admincenter/applications/portal/categories/custom.md) topic to add more display types as needed.
+The default portal template uses several predefined custom display types. To add more display
+types, see the
+[Define Custom Display Types in Directory Manager](/docs/directorymanager/11.2/admincenter/applications/portal/categories/custom.md)
+topic.
 
 The **Custom Display Types** page in a portal’s design settings lists all the predefined custom
-display types and any custom display types you may have added.
+display types and any custom display types you added.

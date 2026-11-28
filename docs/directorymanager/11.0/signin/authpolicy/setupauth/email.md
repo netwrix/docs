@@ -1,29 +1,37 @@
 ---
-title: "Set up Authentication via Email"
-description: "Set up Authentication via Email"
+title: "Set Up Email Authentication in GroupID"
+description: "Enable email authentication for an identity store, customize the confirmation code email, and enforce it for a security role."
+keywords:
+  - email authentication
+  - AccessCodeEmail template
+  - Notification Editor
+  - confirmation code
+  - email authentication type
 sidebar_position: 20
 ---
 
-# Set up Authentication via Email
+# Set Up Email Authentication in GroupID
 
 Users can enroll and authenticate their identity store accounts using Email. An email sent to a
-user’s email address contains a confirmation code that the user must enter in GroupID to enroll and
+user's email address contains a confirmation code that the user must enter in GroupID to enroll in and
 authenticate their accounts.
 
-GroupID provides a default notification template for enrollment/authentication via email in various
+GroupID provides a default notification template for enrollment and authentication via email in various
 languages. You can change the subject line and the body text in the template for any of these
 languages.
 
-NOTE: Before configuring Email authentication, make sure that an SMTP server is configured for the
-identity store. See the
-[Configure an SMTP Server](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
+:::note
+Before configuring Email authentication, ensure that an SMTP server is configured for the identity
+store. See the
+[Configure an SMTP Server in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
 topic.
+:::
 
 What do you want to do?
 
 - [Enable Email Authentication for an Identity Store](#enable-email-authentication-for-an-identity-store)
 - [Modify the Email Template](#modify-the-email-template)
-- [Enforce Email Authentication for a Role in an Identity Store ](#enforce-email-authentication-for-a-role-in-an-identity-store)
+- [Enforce Email Authentication for a Role in an Identity Store](#enforce-email-authentication-for-a-role-in-an-identity-store)
 
 ## Enable Email Authentication for an Identity Store
 
@@ -31,40 +39,40 @@ The email authentication type must be enabled for an identity store before users
 second factor authentication and multifactor authentication.
 
 To enable it, see the
-[Enable Authentication Types](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
+[Enable Authentication Types for an Identity Store](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
 topic.
 
 ## Modify the Email Template
 
 You can modify the subject line and body text of the email sent to users. The email contains a
-confirmation code that users have to enter in GroupID to enroll/authenticate their accounts.
+confirmation code that users must enter in GroupID to enroll in and authenticate their accounts.
 
 **To modify the subject line and body of the email:**
 
 1. In Admin Center, click **Notification Editor** at the bottom of the left navigation pane.
    The **Notification Editor** is displayed.
-2. By default, notifications templates are displayed in US English. You can select a different
+2. By default, notification templates are displayed in American English. You can select a different
    language to customize notification templates for that language.
 
     1. To select a language, click **Filter**.
-    2. On the **Filter(s)** dialog box, use the **Locality** drop-down list to select the ISO code
+    2. On the **Filter(s)** dialog box, use the **Locality** dropdown list to select the ISO code
        for your required language.
     3. Click **Apply**.
 
 3. Search for _AccessCodeEmail_ and click **Edit** in the **Actions** column to open it.
 
-    ![access_code](/images/directorymanager/11.0/admincenter/setupauth/access_code.webp)
+    ![AccessCodeEmail notification template open in the Notification Editor in Source Code (HTML) mode](/images/directorymanager/11.0/admincenter/setupauth/access_code.webp)
 
 4. You can view the notification content in two distinct modes:
 
-    - _Source Code (HTML)_ - This is the default mode, as shown in the figure above. You can make
+    - _Source Code (HTML)_ - This is the default mode, as shown in the preceding figure. You can make
       changes to the notification template in this mode.
     - _Interactive_ - This is the user-friendly, front-end view. Use it to view the email
-      notification, as it will be sent to users.
+      notification, as it is sent to users.
 
 5. Modify and format the text of the email, except the [USER] and [CODE] placeholders.
    GroupID replaces [USER] with the name of the user and inserts a randomly generated verification
-   code into the [Code] placeholder. The user must enter this code in GroupID to enroll and
+   code into the [CODE] placeholder. The user must enter this code in GroupID to enroll and
    authenticate.
 6. Click the **Title** tile to change the subject line of the email notification.
 7. After making the required changes, click **Save**.
@@ -82,5 +90,5 @@ and authentication.
 
 **See Also**
 
-- [Authentication Policy](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
-- [Customize Notifications](/docs/directorymanager/11.0/signin/notification/customize.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Customize GroupID Notification Templates](/docs/directorymanager/11.0/signin/notification/customize.md)

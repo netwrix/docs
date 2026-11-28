@@ -1,30 +1,37 @@
 ---
-title: "Create a Route"
-description: "Create a Route"
+title: "Create a GroupID Workflow Route"
+description: "Use this POST endpoint to create a workflow route that sends approval requests when chosen objects, events, and fields match."
+keywords:
+  - create workflow route
+  - workflow route API
+  - workflow approver
+  - route filter
+  - POST Routes endpoint
 sidebar_position: 40
+unlisted: true
 ---
 
-# Create a Route
+# Create a GroupID Workflow Route
 
-Use this API to create a new workflow route. To create a workflow, you have to specify the
+Use this API to create a new workflow route. To create a workflow, you must specify the
 following:
 
-- name - name of the workflow.
-- Description - description of the workflow.
-- Object - the object(s) - user, contact, group - to apply the workflow to.
-- Event - a create, edit, or delete event that, when performed for the object(s), would trigger the
+- Name – The name of the workflow.
+- Description – The description of the workflow.
+- Objects – The objects (user, contact, group) to apply the workflow to.
+- Event – A create, edit, or delete event that, when performed for the objects, triggers the
   workflow.
-- Field - one or more fields (attributes) that the workflow would apply to. When the values of these
+- Field – One or more fields (attributes) that the workflow applies to. When the values of these
   attributes change for the object, an approval request is triggered.
-- Filter - a condition that prevents the workflow from triggering, even when the object, event, and
-  field criterion is met.
-- Approver - the object to send the workflow request for approval.
+- Filter – A condition that prevents the workflow from triggering, even when the object, event, and
+  field criteria are met.
+- Approver – The object to send the workflow request to for approval.
 
 See the
 [Create a New Workflow](/docs/directorymanager/11.0/signin/workflow/implement.md#create-a-new-workflow)
 section of the
-[Implement Workflows](/docs/directorymanager/11.0/signin/workflow/implement.md) topic
-for additional information.
+[Create and Manage Workflows in GroupID](/docs/directorymanager/11.0/signin/workflow/implement.md)
+topic for more information.
 
 ## Endpoint
 
@@ -34,7 +41,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 POST
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -98,7 +105,7 @@ POST
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -146,5 +153,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

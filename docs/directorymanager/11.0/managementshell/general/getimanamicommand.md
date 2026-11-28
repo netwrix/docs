@@ -1,13 +1,18 @@
 ---
-title: "Get-ImanamiCommand"
-description: "Get-ImanamiCommand"
+title: "Get-ImanamiCommand Cmdlet"
+description: "List GroupID Management Shell cmdlets and command elements, filtered by name, verb, or noun."
+keywords:
+  - Get-ImanamiCommand
+  - Management Shell commands
+  - cmdlet discovery
+  - PowerShell cmdlet
 sidebar_position: 40
 ---
 
-# Get-ImanamiCommand
+# Get-ImanamiCommand Cmdlet
 
-Use the **Get-ImanamiCommand** cmdlet to retrieve basic information about GroupID Management Shell
-commandlets and command elements.
+Use the Get-ImanamiCommand cmdlet to retrieve basic information about GroupID Management
+Shell cmdlets and command elements.
 
 ## Syntax
 
@@ -29,7 +34,7 @@ Get-ImanamiCommand
 
 Example 1:
 
-The following command shows information about all commandlets.
+The following command shows information about all cmdlets.
 
 ```
 Get-ImanamiCommand
@@ -37,7 +42,7 @@ Get-ImanamiCommand
 
 Example 2:
 
-The following command gets all commandlets and command elements with the word Set in their name.
+The following command gets all cmdlets and command elements with the word Set in their name.
 
 ```
 Get-ImanamiCommand -Name Set*
@@ -45,7 +50,7 @@ Get-ImanamiCommand -Name Set*
 
 Example 3:
 
-The following command gets all commandlets and command elements with the letter Y anywhere in the
+The following command gets all cmdlets and command elements with the letter Y anywhere in the
 verb of their name.
 
 ```
@@ -54,6 +59,6 @@ Get-ImanamiCommand -Verb *Y*
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [General Commands](/docs/directorymanager/11.0/managementshell/general/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID General Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/general/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

@@ -1,14 +1,20 @@
 ---
-title: "Leave a Group on behalf of another user"
-description: "Leave a Group on behalf of another user"
+title: "Leave a Group on Behalf of Another User API"
+description: "Leave a group for another user by specifying the identity store, the user's identity, and the membership type details."
 sidebar_position: 140
+keywords:
+  - leave group on behalf
+  - LeaveOnBehalf API
+  - group membership
+  - Directory Manager API
+unlisted: true
 ---
 
-# Leave a Group on behalf of another user
+# Leave a Group on Behalf of Another User API
 
-Using this API, you can leave a group on behalf of another user. You have to specify the identity
-store where the group exists, the identity of the other user on behalf of whom you are leaving the
-group, and membership type details.
+Use this API to leave a group on behalf of another user. You must specify the identity store where
+the group exists, the identity of the user you are leaving the group for, and membership type
+details.
 
 ## Endpoint
 
@@ -18,7 +24,7 @@ group, and membership type details.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -34,7 +40,7 @@ group, and membership type details.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

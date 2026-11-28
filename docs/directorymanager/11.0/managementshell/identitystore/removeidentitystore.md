@@ -1,12 +1,17 @@
 ---
 title: "Remove-IdentityStore"
-description: "Remove-IdentityStore"
+description: "Use the Remove-IdentityStore cmdlet to remove one or more identity stores from GroupID, including through the pipeline."
+keywords:
+  - Remove-IdentityStore
+  - remove identity store
+  - delete identity store
+  - Management Shell cmdlet
 sidebar_position: 140
 ---
 
 # Remove-IdentityStore
 
-The commandlet **Remove-IdentityStore** removes an identity store from GroupID.
+The **Remove-IdentityStore** cmdlet removes an identity store from GroupID.
 
 ## Syntax
 
@@ -39,14 +44,14 @@ Remove-IdentityStore -IdentityStoreName DemoAzStore1
 
 Example 2:
 
-This example removes DemoGStore1 and DemoGStore2 identity stores through the pipeline operator.
+This example removes the DemoGStore1 and DemoGStore2 identity stores through the pipeline operator.
 
 ```
 'DemoGStore1', 'DemoGStore2' | Remove-IdentityStore
 ```
 
-See Also
+**See Also**
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Identity Store Commands](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

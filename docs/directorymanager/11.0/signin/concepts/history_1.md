@@ -1,14 +1,19 @@
 ---
-title: "Admin Center History"
-description: "Admin Center History"
+title: "View and Export Admin Center History in GroupID"
+description: "View, annotate, filter, and export the history of actions performed in Admin Center, such as creating identity stores and changing notification templates."
+keywords:
+  - Admin Center history
+  - history export
+  - annotate history
+  - GroupID auditing
 sidebar_position: 40
 ---
 
-# Admin Center History
+# View and Export Admin Center History in GroupID
 
-GroupID auto tracks the following actions performed in Admin Center:
+GroupID automatically tracks the following actions performed in Admin Center:
 
-- Creation and deletion of identity store
+- Creation and deletion of identity stores
 - Creation and deletion of SMS gateway accounts
 - Creation and deletion of applications, namely GroupID portal, Mobile service, Data service, and
   Security service
@@ -32,7 +37,7 @@ What do you want to do?
 
 ## View Admin Center History
 
-You can view the history data that GroupID auto tracks for high level actions performed in Admin
+You can view the history data that GroupID automatically tracks for high-level actions performed in Admin
 Center.
 
 To view history:
@@ -86,8 +91,8 @@ You can export Admin Center history to Microsoft Excel, CSV, and XML formats.
 2. On the **Admin Center History** page, click **Export History**.
 3. On the **Export History** dialog box, enter a name for the history file in the **Name** box or
    leave it to default.
-4. Select a format for the history file in the **Format** drop-down list. Available formats are
-   Excel, CSV, and XML
+4. Select a format for the history file in the **Format** dropdown list. Available formats are
+   Excel, CSV, and XML.
 5. Click **Export History**. The file is saved at the download location specified in browser
    settings.
 6. A message is displayed that history data is successfully exported. Click **OK**.
@@ -95,4 +100,4 @@ You can export Admin Center history to Microsoft Excel, CSV, and XML formats.
 **See Also**
 
 - [History in GroupID](/docs/directorymanager/11.0/signin/concepts/history.md)
-- [Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)
+- [GroupID Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)

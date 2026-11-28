@@ -1,15 +1,21 @@
 ---
-title: "User Lifecycle Commands"
-description: "User Lifecycle Commands"
+title: "User Lifecycle Cmdlets for Directory Manager"
+description: "Find the Management Shell cmdlets that extend, check, reinstate, terminate, and transfer users and direct reports in Directory Manager."
+keywords:
+  - user lifecycle cmdlets
+  - Management Shell
+  - reinstate user
+  - terminate direct reports
+  - transfer direct reports
 sidebar_position: 160
 ---
 
-# User Lifecycle Commands
+# User Lifecycle Cmdlets for Directory Manager
 
-This section covers the cmdlets for performing user lifecycle tasks such as:
+Use these cmdlets to perform user lifecycle tasks:
 
-- [Extend-User](/docs/directorymanager/11.2/managementshell/userlifecycle/extenduser.md) – Activates a user account for a specific number of days
-- [Get-Status](/docs/directorymanager/11.2/managementshell/userlifecycle/getstatus.md) – Provides the status of a user as per the profile validation criteria.
-- [Reinstate-User](/docs/directorymanager/11.2/managementshell/userlifecycle/reinstateuser.md) – Activates or disables a user.
-- [Terminate-DirectReports](/docs/directorymanager/11.2/managementshell/userlifecycle/terminatedirectreports.md) – Terminates direct reports of a user.
-- [Transfer-DirectReports ](/docs/directorymanager/11.2/managementshell/userlifecycle/transferdirectreports.md) – Transfers direct reports of a user.
+- [Extend-User Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/extenduser.md) – Activates a user account for a specific number of days.
+- [Get-Status Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/getstatus.md) – Provides the status of a user as per the profile validation criteria.
+- [Reinstate-User Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/reinstateuser.md) – Reinstates a disabled user.
+- [Terminate-DirectReports Cmdlet for Directory Manager](/docs/directorymanager/11.2/managementshell/userlifecycle/terminatedirectreports.md) – Terminates direct reports of a user.
+- [Transfer-DirectReports Cmdlet](/docs/directorymanager/11.2/managementshell/userlifecycle/transferdirectreports.md) – Transfers direct reports of a user.

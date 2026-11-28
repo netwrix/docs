@@ -1,10 +1,16 @@
 ---
-title: "Delete Groups"
-description: "Delete Groups"
+title: "Delete Multiple Groups with the GroupID API"
+description: "Use the Delete Groups API to remove several groups from an identity store in one request by passing their identities in the request body."
+keywords:
+  - GroupID API
+  - delete groups API
+  - bulk delete groups
+  - identity store groups
 sidebar_position: 40
+unlisted: true
 ---
 
-# Delete Groups
+# Delete Multiple Groups with the GroupID API
 
 The Delete Groups API deletes multiple groups from an identity store.
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 DELETE
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -25,7 +31,7 @@ DELETE
 ]
 ```
 
-#### sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -71,5 +77,5 @@ DELETE
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

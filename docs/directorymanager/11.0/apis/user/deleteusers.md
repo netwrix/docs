@@ -1,10 +1,16 @@
 ---
-title: "Delete Users"
-description: "Delete Users"
+title: "Delete Multiple Users with the GroupID API"
+description: "Delete several users from an identity store in one DELETE request by passing a list of user identities."
+keywords:
+  - GroupID API
+  - delete multiple users
+  - bulk delete users
+  - identity store
 sidebar_position: 30
+unlisted: true
 ---
 
-# Delete Users
+# Delete Multiple Users with the GroupID API
 
 This API deletes multiple users from the identity store given in the endpoint URL.
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 DELETE
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -25,7 +31,7 @@ DELETE
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -72,5 +78,5 @@ DELETE
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

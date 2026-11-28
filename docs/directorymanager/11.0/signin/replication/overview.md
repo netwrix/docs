@@ -1,32 +1,38 @@
 ---
-title: "Elasticsearch and Replication"
-description: "Elasticsearch and Replication"
+title: "Elasticsearch and Replication Service in GroupID"
+description: "Learn how the Elasticsearch and Replication services power searches in GroupID, how objects are replicated, and where to find the service logs."
+keywords:
+  - Elasticsearch
+  - Replication service
+  - replication settings
+  - Replication service logs
+  - Synchronize history
 sidebar_position: 130
 ---
 
-# Elasticsearch and Replication
+# Elasticsearch and Replication Service in GroupID
 
-Searches performed in GroupID are catered through Elasticsearch.
+Searches performed in GroupID are handled by Elasticsearch.
 
 Elasticsearch relies on two services:
 
 - **Elasticsearch Service** is responsible for searching the Elasticsearch repository and displaying
-  search results when a search is performed through GroupID. If this service stops, Elasticsearch
-  will not work.
+  search results when a search is performed through GroupID. If this service stops,
+  Elasticsearch won't work.
 - **Replication Service** is responsible for replicating attributes of the following objects from
   the provider (such as Active Directory) to Elasticsearch.
 
     - Group
     - User
     - Contact
-    - Computers
+    - Computer
     - Organizational Unit
 
 The Replication service only replicates changes that are made to these objects on the directory
-server. Changes made to these objects using Admin Center, GroupID portal, Management Shell, or the
-GroupID mobile app, are directly saved in the Elasticsearch repository and replicated to the GroupID
-database by the Data service. See the
-[Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)
+server. Changes made to these objects using Admin Center, the GroupID portal, Management
+Shell, or the GroupID mobile app are directly saved in the Elasticsearch repository and
+replicated to the GroupID database by the Data service. See the
+[GroupID Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)
 topic.
 
 Synchronize directly updates objects in the directory. As soon as objects are provisioned,
@@ -35,29 +41,33 @@ them to Elasticsearch.
 
 Synchronize history is saved to Elasticsearch when Active Directory, Microsoft Entra ID, Generic
 LDAP, or Google Workspace is the destination provider in the respective Synchronize job. This
-history is replicated to the GroupID database by the Data s ervice.
+history is replicated to the GroupID database by the Data service.
 
-NOTE: The **Recycle Bin** in the GroupID portal fetches data from the directory server and not from
-Elasticsearch.
+:::note
+The **Recycle Bin** in the GroupID portal fetches data from the directory server and
+not from Elasticsearch.
+:::
 
 ## Replication Settings
 
 In Admin Center, you can specify settings for the Replication service at the global and local
-levels. Global settings apply to all identity stores in GroupID while local settings are specific to
-an identity store.
+levels. Global settings apply to all identity stores in GroupID while local settings are
+specific to an identity store.
 
 - At the global level, you can schedule the service to run every x minutes to replicate object
   attributes to Elasticsearch. You can also manually restore object data to Elasticsearch. See the
-  [Manage Global Replication Settings](/docs/directorymanager/11.0/signin/replication/settings.md)
+  [Manage Global Replication Settings in GroupID](/docs/directorymanager/11.0/signin/replication/settings.md)
   topic.
 - For an identity store, you can specify the object attributes the service should replicate to
   Elasticsearch. See the
-  [Manage Local Replication Settings](/docs/directorymanager/11.0/signin/identitystore/replication.md)
+  [Manage Identity Store Replication Settings](/docs/directorymanager/11.0/signin/identitystore/replication.md)
   topic.
 
-NOTE: The Replication service does not replicate excluded domains for an identity store. See the
+:::note
+The Replication service doesn't replicate excluded domains for an identity store. See the
 [Exclude an Active Directory Domain from Replication](/docs/directorymanager/11.0/signin/identitystore/manage.md#exclude-an-active-directory-domain-from-replication)
 topic.
+:::
 
 ## Replication Service Logs
 
@@ -77,6 +87,6 @@ with the original name. X in .Log.X is a number from 1 to 10 representing the ar
 
 **See Also**
 
-- [Manage Global Replication Settings](/docs/directorymanager/11.0/signin/replication/settings.md)
-- [Manage Local Replication Settings](/docs/directorymanager/11.0/signin/identitystore/replication.md)
-- [Replication Service](/docs/directorymanager/11.0/signin/service/replicationservice.md)
+- [Manage Global Replication Settings in GroupID](/docs/directorymanager/11.0/signin/replication/settings.md)
+- [Manage Identity Store Replication Settings](/docs/directorymanager/11.0/signin/identitystore/replication.md)
+- [GroupID Replication Service](/docs/directorymanager/11.0/signin/service/replicationservice.md)

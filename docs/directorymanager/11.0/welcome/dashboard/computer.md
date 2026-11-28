@@ -1,18 +1,23 @@
 ---
-title: "Computer Reports"
-description: "Computer Reports"
+title: "GroupID Computer Reports"
+description: "Browse the report templates for computer objects, such as operating system, inactivity, and delegation reports, and generate them from the portal."
+keywords:
+  - computer reports
+  - computer report templates
+  - inactive computers
+  - domain controllers
 sidebar_position: 50
 ---
 
-# Computer Reports
+# GroupID Computer Reports
 
 Computer Reports contains reports for the Computer objects in the directory. Search a specific
 report by typing its name in the **Search Reports** box.
 
-Click any of the report template from the list to
-[Generate Reports](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
+Click any report template in the list to
+[Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
 
-Following is the list of reports for this category:
+The following reports are in this category:
 
 | Reports                                              | Description                                                               |
 | ---------------------------------------------------- | ------------------------------------------------------------------------- |
@@ -41,8 +46,8 @@ Following is the list of reports for this category:
 
 **See Also:**
 
-- [Generate Reports](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
-- [Manage Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
-- [Group Reports](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [User Reports](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Contact Reports](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
+- [Manage GroupID Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
+- [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)

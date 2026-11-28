@@ -1,13 +1,17 @@
 ---
-title: "Set-Mailbox"
-description: "Set-Mailbox"
+title: "Set-Mailbox Cmdlet in Directory Manager"
+description: "Modify mailbox properties, such as name, address, and custom attributes, with the Set-Mailbox cmdlet."
+keywords:
+  - Set-Mailbox
+  - modify mailbox
+  - mailbox properties
+  - PowerShell cmdlet
 sidebar_position: 40
 ---
 
-# Set-Mailbox
+# Set-Mailbox Cmdlet in Directory Manager
 
-The Set-Mailbox commandlet modifies a mailbox in Directory. Most mailbox properties can be directly
-modified by using the parameters of this commandlet.
+The Set-Mailbox cmdlet modifies a mailbox in the directory. Use its parameters to modify most mailbox properties directly.
 
 ## Syntax
 
@@ -63,15 +67,16 @@ Set-MailBox
 
 ```
 
-## Required Parameter
+**Zip** and **Business** accept digits only. **DisplayName** can't begin or end with a space.
+
+## Required parameter
 
 - Identity
 
-Example:
+## Example
 
-The following commandlet modifies the country value of the specified mailbox in the connected
-identity store.
+This command modifies the country value of the specified mailbox in the connected identity store.
 
 ```
-Set-MailBox -Identity "OsamaMailBox" -Country "Pakistan"
+Set-MailBox -Identity "SampleMailBox" -Country "Pakistan"
 ```

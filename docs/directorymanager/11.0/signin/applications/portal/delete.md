@@ -1,18 +1,19 @@
 ---
-title: "Delete a Portal"
-description: "Delete a Portal"
+title: "Delete a GroupID Portal"
+description: "Delete a portal or one of its deployment instances in Admin Center, and see what GroupID removes from IIS or Docker."
+keywords:
+  - delete portal
+  - portal deployment instance
+  - native IIS
+  - remote IIS
+  - Docker container
 sidebar_position: 20
 ---
 
-# Delete a Portal
+# Delete a GroupID Portal
 
-You can delete a portal or a deployment instance of a portal. On deleting a portal, all its
+You can delete a portal or a deployment instance of a portal. When you delete a portal, all its
 instances are deleted with it.
-
-What do you want to do?
-
-- Delete a Deployment Instance for a Portal
-- Delete a Portal
 
 ## Delete a Deployment Instance for a Portal
 
@@ -50,7 +51,7 @@ removed:
 
     Select a tab to delete a portal instance deployed in the respective web server.
 
-4. The **Select Application Deployment** drop-down list displays the portal instances deployed on
+4. The **Select Application Deployment** dropdown list displays the portal instances deployed on
    the selected web server. Select an instance and click **Delete**.
 
 ## Delete a Portal
@@ -64,6 +65,6 @@ Deleting a portal removes all its deployments and configurations from GroupID.
 
 **See Also**
 
-- [GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/overview.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Portal Overview](/docs/directorymanager/11.0/signin/applications/portal/overview.md)
 - [Create a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md)

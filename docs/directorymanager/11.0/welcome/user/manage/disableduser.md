@@ -1,15 +1,21 @@
 ---
-title: "Disabled Users"
-description: "Disabled Users"
+title: "View and Manage Disabled Users in GroupID"
+description: "View disabled and expired users in the GroupID portal, then reinstate them, grant extensions, or export the list to Excel."
+keywords:
+  - disabled users
+  - expired users
+  - reinstate user
+  - user extension
+  - User Life Cycle job
 sidebar_position: 70
 ---
 
-# Disabled Users
+# View and Manage Disabled Users in GroupID
 
 To view a list of disabled users in the identity store, click **Users** on the left navigation bar
 and select **My Direct Reports**. On the displayed page, select the **Disabled Users** tab.
 
-**The list consists of:**
+The list consists of:
 
 - Users that have been expired by the User Life Cycle job for not validating their profiles within
   the required period.
@@ -45,10 +51,10 @@ To reinstate a disabled user, select it and click **Reinstate** on the toolbar.
 
 To grant an extension period to an expired user, select it and click **Extend** on the toolbar.
 
-The extension period applies to users who did not validate their profiles within the required
+The extension period applies to users who didn't validate their profiles within the required
 period, and were consequently expired.
 
-On extension, the user's account is temporarily unlocked. If they do not validate their profile
+On extension, the user's account is temporarily unlocked. If they don't validate their profile
 information within that extension period either, GroupID expires them again. Only the administrator
 or Helpdesk users can reactivate these accounts.
 
@@ -56,18 +62,18 @@ The duration of the extension period is set by the administrator in identity sto
 
 ## Send Disabled Users list to an Excel file
 
-To export list of disabled users to an Excel file, click **Export Results** on the toolbar.
+To export the list of disabled users to an Excel file, click **Export Results** on the toolbar.
 
 ### Navigate the Disabled Users listing
 
 Use the page numbers under the disabled users listing to page through the records.
 
-You can control the number of records to be displayed per page by modifying the **Search results per
+You can control the number of records displayed per page by modifying the **Search results per
 page** setting on the User Settings panel. You can modify the search results in **Modify Search
-Directory.** You can select entire directory or a domain to search active groups from.
+Directory**. You can select the entire directory or a domain to search active groups from.
 
 **See Also**
 
-- [Validate your profile](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)
-- [User Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
-- [Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [Validate your profile in GroupID](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

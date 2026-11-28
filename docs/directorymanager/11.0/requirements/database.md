@@ -1,15 +1,20 @@
 ---
-title: "Database Requirements"
-description: "Database Requirements"
+title: "GroupID Database Requirements"
+description: "Check the supported SQL Server versions and editions for the GroupID database, and learn about the SQL Server Browser service requirement."
+keywords:
+  - SQL Server requirements
+  - supported SQL Server versions
+  - SQL Server Browser service
+  - GroupID database
 sidebar_position: 40
 ---
 
-# Database Requirements
+# GroupID Database Requirements
 
-GroupID requires an SQL Server database to store and retrieve data. The SQL database may reside on
+GroupID requires a SQL Server database to store and retrieve data. The SQL database may reside on
 any SQL Server in your environment.
 
-GroupID supports the following versions of SQL Servers:
+GroupID supports the following versions of SQL Server:
 
 | Database Servers          | Editions                                                                                                                                                       |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -18,10 +23,10 @@ GroupID supports the following versions of SQL Servers:
 | Microsoft SQL Server 2019 | Express, Standard, Enterprise Express edition available at: [SQL Server 2019 Express edition](https://www.microsoft.com/en-us/download/details.aspx?id=101064) |
 | Microsoft SQL Server 2022 | Express, Standard, Enterprise Express edition available at: [SQL Server 2022 Express edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) |
 
-The SQL Server Browser service is required and during the installation of SQL Server, you can set
-its start mode either as Automatic, Disabled or Manual. If it is disabled, SQL Servers are not
+The SQL Server Browser service is required. During the installation of SQL Server, you can set
+its start mode to Automatic, Disabled, or Manual. If it is disabled, SQL Servers aren't
 listed in the **SQL Server** box on the **Database settings** page of the Configuration Tool. In
-that case, you have to type the server name in the **SQL Server** box to select the required server
+that case, you must enter the server name in the **SQL Server** box to select the required server
 manually.
 
 To enable the SQL Server Browser service, see
@@ -29,4 +34,4 @@ To enable the SQL Server Browser service, see
 
 See Also
 
-- [Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
+- [GroupID 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)

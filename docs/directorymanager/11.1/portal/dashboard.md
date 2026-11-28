@@ -1,18 +1,22 @@
 ---
-title: "Dashboard"
-description: "Dashboard"
+title: "Directory Manager Portal Dashboard"
+description: "Navigate the Directory Manager portal with Quick Search, the top right options, the menu pane, and the dashboard cards."
+keywords:
+  - Directory Manager portal
+  - portal dashboard
+  - Quick Search
+  - dashboard cards
+  - portal navigation
 sidebar_position: 20
 ---
 
-# Dashboard
+# Directory Manager Portal Dashboard
 
-The portal interface lets you quickly access the main functions of the portal. These functions are available as links on the top and left navigation bars.
+The dashboard is the page you land on when you sign in to the Directory Manager portal. From it, and from the top and left navigation bars, you can quickly access the main functions of the portal.
 
-On logging into Directory Manager portal, you land on the dashboard.
+![Directory Manager portal dashboard showing the top bar, menu pane, and dashboard cards](/images/directorymanager/11.1/portal/dashboard.webp)
 
-![dashboard](/images/directorymanager/11.1/portal/dashboard.webp)
-
-Use the following to navigate within the application:
+Use the following areas to navigate within the application:
 
 - Quick Search
 - Top right options
@@ -21,27 +25,25 @@ Use the following to navigate within the application:
 
 ## Quick Search
 
-Look on the top of the page for **Search**. This element appears on every page. Use it to locate and
-display information for objects. See the [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search.md) topic.
+**Search** appears at the top of every page. Use it to locate and display information for objects. See the [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.1/portal/generalfeatures/search.md) topic.
 
 - Use Quick Search to locate an object by its name.
-- Use Advanced Search to search an object using a range of attributes.
+- Use Advanced Search to search for an object using a range of attributes.
 
 ## Top right options
 
-The top right corner of the application displays:
+The top right corner of the application displays the following:
 
-| Icon                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Background tasks icon | View the status of Smart Group update jobs. <br />A Smart Group Update job updates the membership of a Smart Group based on a query.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Portal Settings       | Personalize the portal                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Help icon             | Launch the portal help                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| User profile icon     | Displays your profile picture with your name and the identity store that Directory Manager portal is connected to. <br />Click it to launch the menu that displays the following: <ul><li>Directory Manager version you’re using</li><li>The security role assigned to you in Directory Manager.</li></ul>The menu also displays the following options: <ul><li>See full profile. See the [Object properties - General tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/general.md) topic.</li><li>My Applications. See the [Access your Applications](/docs/directorymanager/11.1/admincenter/general/accessapplications.md) topic.</li><li>Enroll your identity store account. See the [Enroll your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/enroll.md) topic.</li><li>Change Password. See the [Change your Password](/docs/directorymanager/11.1/admincenter/general/changepassword.md) topic.</li><li>Switch account. See the [Switch Accounts](/docs/directorymanager/11.1/admincenter/general/switchaccount.md) topic.</li><li>Sign Out</li></ul> |
-
+| Icon | Description |
+| --- | --- |
+| Background tasks icon | View the status of Smart Group update jobs. <br />A Smart Group Update job updates the membership of a Smart Group based on a query. |
+| Portal Settings | Personalize the portal. |
+| Help icon | Launch the portal help. |
+| User profile icon | Displays your profile picture with your name and the identity store that the Directory Manager portal is connected to. <br />Click it to open a menu that displays the following: <ul><li>Directory Manager version you’re using</li><li>The security role assigned to you in Directory Manager.</li></ul>The menu also displays the following options: <ul><li>See full profile. See the [Object properties - General tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/general.md) topic.</li><li>My Applications. See the [Access Your Applications in Directory Manager](/docs/directorymanager/11.1/admincenter/general/accessapplications.md) topic.</li><li>Enroll your identity store account. See the [Enroll Your Account in Directory Manager](/docs/directorymanager/11.1/admincenter/general/enroll.md) topic.</li><li>Change Password. See the [Change Your Password in Directory Manager](/docs/directorymanager/11.1/admincenter/general/changepassword.md) topic.</li><li>Switch account. See the [Switch Accounts in Directory Manager](/docs/directorymanager/11.1/admincenter/general/switchaccount.md) topic.</li><li>Sign Out</li></ul> |
 
 ## Menu pane
 
-Look on the left side of the page for the navigation pane, which lists links to:
+The navigation pane on the left side of the page lists links to:
 
 - Create New (Group, User, Contact)
 - The Dashboard
@@ -55,15 +57,15 @@ Look on the left side of the page for the navigation pane, which lists links to:
 
 ## The Dashboard
 
-The dashboard comprises of a few cards.
+The dashboard has the following cards:
 
-| Cards              | Description                                                                                                                                                    |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| My Profile         | View and update your profile in the directory.                                                                                                                 |
-| All Users          | Displays number of active users. Clicking it takes you to the **Users** page.                                                                                  |
-| My Expiring Groups | Directs your attention to your expiring groups and any workflow requests that you may have to approve.                                                         |
-| My Groups          | Takes you to a listing of groups that you own.                                                                                                                 |
-| Available Servers  | Displays number of available servers for computing effective NTFS permissions on shared resources.                    |
-| Pending Requests   | Displays logged-in user's requests that have not been approved yet.                                                                                            |
-| Account Protection | Displays logged-in user's requests that have not been approved yet.                                                                                            |
+| Card | Description |
+| --- | --- |
+| My Profile | View and update your profile in the directory. |
+| All Users | Displays the number of active users. Click it to open the **Users** page. |
+| My Expiring Groups | Directs your attention to your expiring groups and any workflow requests that you might have to approve. |
+| My Groups | Takes you to a listing of groups that you own. |
+| Available Servers | Displays the number of available servers for computing effective NTFS permissions on shared resources. |
+| Pending Requests | Displays the signed-in user's requests that haven't been approved yet. |
+| Account Protection | Displays the signed-in user's requests that haven't been approved yet. |
 | My Account History | Keeps track of the actions you performed using the portal. Use the **Add Note** button next to a history item to explain the reason for performing the action. |

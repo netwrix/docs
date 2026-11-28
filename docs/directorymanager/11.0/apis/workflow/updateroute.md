@@ -1,12 +1,19 @@
 ---
-title: "Update a Route"
-description: "Update a Route"
+title: "Update a Workflow Route in GroupID"
+description: "Update an existing workflow route in an identity store by sending a PATCH request to the Workflows Route endpoint."
+keywords:
+  - update workflow route
+  - workflow route approvers
+  - GroupID API
+  - Workflows/Route endpoint
+  - PATCH request
 sidebar_position: 160
+unlisted: true
 ---
 
-# Update a Route
+# Update a Workflow Route in GroupID
 
-You can use this API to update a workflow route in a specified identity store.
+Use this API to update a workflow route in a specified identity store.
 
 ## Endpoint
 
@@ -16,7 +23,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 PATCH
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -77,7 +84,7 @@ PATCH
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -111,5 +118,5 @@ PATCH
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

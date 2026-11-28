@@ -1,17 +1,25 @@
 ---
-title: "Sample Transform Scripts"
-description: "Sample Transform Scripts"
+title: "Sample Transform Scripts for Directory Manager Synchronize"
+description: "Copy sample Visual Basic .NET transform scripts that build full names and user names and translate department codes during Synchronize jobs."
+keywords:
+  - DTM transform script
+  - Synchronize sample scripts
+  - Visual Basic .NET script
+  - full name script
+  - user name script
 sidebar_position: 20
 ---
 
-# Sample Transform Scripts
+# Sample Transform Scripts for Directory Manager Synchronize
 
-## Assembling a Full Name: `<last name>`, `<first name>`
+These transform scripts set **DTM.Result** to the value of a destination field, such as a full name, a user name, or a department name.
+
+## Assembling a full name: `<last name>`, `<first name>`
 
 **Assumptions:**
 
-- Last name is present in a source field named "sn" (for surname)
-- First name may or may not be present in a source field named "givenName"
+- Last name is present in a source field named "sn" (for surname).
+- First name may or may not be present in a source field named "givenName".
 
 ```
 If Len(DTM.Source("givenName")) > 0 Then
@@ -21,13 +29,13 @@ DTM.Result = DTM.Source("sn")
 End If
 ```
 
-## Assembling a Full Name: `<last name>`, `<middle initial>`. `<first name>`
+## Assembling a full name: `<last name>`, `<middle initial>`. `<first name>`
 
 **Assumptions:**
 
-- Last name is present in a source field named "sn" (for surname)
-- First name may or may not be present in a source field named "givenName"
-- Middle name may or may not be present in a source field named "middleName"
+- Last name is present in a source field named "sn" (for surname).
+- First name may or may not be present in a source field named "givenName".
+- Middle name may or may not be present in a source field named "middleName".
 
 ```
 Dim LastName = DTM.Source("sn")
@@ -47,27 +55,25 @@ End If
 DTM.Result = FullName
 ```
 
-## Formulating a UserName: 6 chars of last name & first initial, all lower case
+## Formulating a user name: six characters of last name and first initial, all lowercase
 
 **Assumptions:**
 
-- Last name is present in a source field named "sn" (for surname)
-- First name is present in a source field named "givenName"
+- Last name is present in a source field named "sn" (for surname).
+- First name is present in a source field named "givenName".
 
 ```
 DTM.Result = LCase(Left(DTM.Source("sn"), 6) & Left(DTM.Source("givenName"), 1))
 ```
 
-## Formulating a UserName: Combine first letter of each part of name, all lower case
+## Formulating a user name: combine the first letter of each part of the name, all lowercase
 
 **Assumptions:**
 
-- Last name is present in a source field named "sn" (for surname)
-- First name may or may not be present in a source field named "givenName"
-- Middle name may or may not be present in a source field named "middleName"
-- Each part of name may be composed of multiple words separated by hyphens, spaces, or commas, and
-  script must pick out the first character of each word – for example,. "Reginald Howard-Hughes
-  Thompson, Jr." converts to "rhhtj".
+- Last name is present in a source field named "sn" (for surname).
+- First name may or may not be present in a source field named "givenName".
+- Middle name may or may not be present in a source field named "middleName".
+- Each part of the name can have multiple words separated by hyphens, spaces, or commas. The script must pick out the first character of each word. For example, "Reginald Howard-Hughes Thompson, Jr." converts to "rhhtj".
 
 ```
 Dim Fullname As String = DTM.Source("givenName") & " " _
@@ -81,12 +87,12 @@ Next 
  DTM.Result = LCase(Initials)
 ```
 
-## Code Translation: Translating Case-By-Case
+## Code translation: translating case by case
 
 **Assumptions:**
 
 - Source data contains a "DeptCode" field with 2-character codes.
-- Corres. destination field data needs full spelling of department name.
+- The corresponding destination field data needs the full department name.
 
 ```
 Select Case DTM.Source("DeptCode")

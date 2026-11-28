@@ -1,27 +1,26 @@
 ---
 title: "Send-Notification"
-description: "Send-Notification"
+description: "Send an email notification to a group or user from a template file with the Send-Notification cmdlet, including SMTP and From address setup."
+keywords:
+  - Send-Notification
+  - email notification
+  - notification templates
+  - SMTP server
+  - Directory Manager PowerShell
 sidebar_position: 110
 ---
 
 # Send-Notification
 
-Use the Send-Notification commandlet to send notifications to a group or a user. Directory Manager
-modules automatically generate e-mail notifications upon the occurrence of certain events; for
-example, expiry of groups, execution of a job, and generation of workflow requests. The modules use
-template files for generating the contents of the notification e-mails. These template files are
-located at:
+Use the Send-Notification cmdlet to send notifications to a group or a user. Directory Manager
+modules automatically generate email notifications when events occur, such as group expiry, job
+execution, and workflow request generation. The modules use template files to generate the contents
+of the notification emails.
 
-```
-X:\Program Files\Imanami\GroupID 8.0\Automate\Templates\Notifications
-```
-
-Where X is the drive where the Directory Manager installation directory resides.
-
-The **Send-Notification** commandlet also requires a template file for generating an e-mail
-notification. You can use one from the available templates or create your own. The commandlet
-also requires an **SMTP server** and a **From** e-mail address that you can configure using the
-**Set-Options** commandlet.
+The **Send-Notification** cmdlet requires a template file to generate an email notification. Specify
+the path of the file in the TemplateFile parameter. The identity store also needs an **SMTP server**,
+an SMTP port, and a **From** email address. Configure these settings with the **Set-Options**
+cmdlet.
 
 ## Syntax
 
@@ -39,33 +38,33 @@ Send-Notification
 
 ```
 
-## Required Parameters
+## Required parameters
 
 - Identity
 - Subject
 - TemplateFile
 
-Example 1:
+### Example 1
 
-The following commands first configure the SMTP Server, then set a From e-mail address, and finally
-send a group expiry notification to UserA using the credentials of current user logged-on to the
-identity store.
+The following commands configure the SMTP server, set a From email address, and then send a group
+expiry notification to UserA. They use the credentials of the user signed in to the identity store.
 
 ```
 Set-Options -SmtpServer "HR.Imanami.US"
-Set-Options -FromAddress "Administrator@HR.Imanami.US"
-Send-Notification -Identity "CN=UserA,CN=Users,DC=HR,DC=Imanami,DC=US" -Subject "Expiry Notification" -TemplateFile "C:\Program Files\Imanami\GroupID 
-8.0\Automate\Templates\Notifications\ExpiringTemplate.html" -QueueEmail
+Set-Options -FromEmailAddress "Administrator@HR.Imanami.US"
+Send-Notification -Identity "CN=UserA,CN=Users,DC=HR,DC=Imanami,DC=US" -Subject "Expiry Notification" -TemplateFile "C:\Templates\ExpiringTemplate.html" -QueueEmail
 
 ```
 
-Example 2:
+### Example 2
 
 The following command sends a notification to the New Arrivals group. It uses a custom template with
-an in-line image and uses the credentials of the user set in the $Credentials environment variable.
-See the [Set the $Credentials Environment Variable](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for
-setting credentials in an environment variable.
+an inline image and the credentials of the user set in the $Credentials environment variable. For
+how to set credentials in an environment variable, see the
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md)
+topic. To run the command as another user, use the Credential parameter together with the
+IdentityStoreId parameter.
 
 ```
-Send-Notification -Identity "CN=New Arrivals,CN=Users,DC=HR,DC=Imanami,DC=US" -Subject "Welcome to Imanami" -TemplateFile "C:\Welcome.html" -InlineImageFile "C:\WelcomeNote.jpg" -QueueEmail
+Send-Notification -Identity "CN=New Arrivals,CN=Users,DC=HR,DC=Imanami,DC=US" -Subject "Welcome to Imanami" -TemplateFile "C:\Welcome.html" -InlineImageFile "C:\WelcomeNote.jpg" -QueueEmail -IdentityStoreId 2 -Credential $Credentials
 ```

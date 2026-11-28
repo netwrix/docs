@@ -1,12 +1,19 @@
 ---
-title: "Update a Job Collection"
-description: "Update a Job Collection"
+title: "Update a Job Collection with the Directory Manager API"
+description: "Update the details of an existing job collection, including its jobs, field mappings, and schedule, by sending a PATCH request to the Data Service API."
+keywords:
+  - job collection API
+  - Data Service API
+  - PATCH job collection
+  - synchronize job
+  - Directory Manager API
 sidebar_position: 110
+unlisted: true
 ---
 
-# Update a Job Collection
+# Update a Job Collection with the Directory Manager API
 
-Use this API to update information of a job collection.
+Use this API to update information about a job collection.
 
 ## Endpoint
 
@@ -16,7 +23,7 @@ Use this API to update information of a job collection.
 
 **PATCH**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -432,7 +439,7 @@ Use this API to update information of a job collection.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

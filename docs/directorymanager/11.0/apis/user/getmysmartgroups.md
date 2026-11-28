@@ -1,12 +1,18 @@
 ---
-title: "Get My Smart Groups"
-description: "Get My Smart Groups"
+title: "Get My Smart Groups with the GroupID API"
+description: "Retrieve the Smart Groups of the authenticated user, with paging, sorting, and nested ownership options."
+keywords:
+  - GroupID API
+  - Smart Groups
+  - Groups/SmartGroups endpoint
+  - authenticated user
 sidebar_position: 130
+unlisted: true
 ---
 
-# Get My Smart Groups
+# Get My Smart Groups with the GroupID API
 
-Using this API, information about the authentiacated user's Smart Groups can be retrieved.
+Use this API to retrieve information about the authenticated user's Smart Groups.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -26,7 +32,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -177,5 +183,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

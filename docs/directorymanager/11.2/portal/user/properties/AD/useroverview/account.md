@@ -1,26 +1,29 @@
 ---
-title: "Account tab"
-description: "User properties - Account tab"
+title: "Set User Account Expiry and Lockout in Directory Manager"
+description: "Set when a user account expires, disable the account, or unlock it from the Account tab of the user properties."
+keywords:
+  - user account expiry
+  - disable user account
+  - unlock user account
+  - Account tab
 sidebar_position: 10
 ---
 
-# Account tab
+# Set User Account Expiry and Lockout in Directory Manager
 
-This tab enables administrators to manage the account status and expiry policy of a user.
+Use this tab to manage the account status and expiry policy of a user.
 
 **Account Expires**
 
 Set the account expiry policy for the user.
 
-- Never – To set this user account to never expire. This is the default option for new users.
-- End Of – To set this user account to expire on a specified date. Use the calendar selector to
-  enter the expiry date for the user account.
+- Never – The user account never expires. This is the default option for new users.
+- End Of – The user account expires on a date you specify. Use the calendar selector to enter the expiry date.
 
 **Account is disabled**
 
-Select this checkbox to disable the user account, so that the user can't log-on with it.
+Select this checkbox to disable the user account, so that the user can't sign in with it.
 
 **Account is locked out**
 
-This checkbox will be selected when this user account is locked, for example, due to failed logon
-attempts. Clear this checkbox to unlock the account.
+This checkbox is selected when the user account is locked, for example, because of failed sign-in attempts. Clear the checkbox to unlock the account.

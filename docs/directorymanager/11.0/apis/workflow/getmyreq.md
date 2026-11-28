@@ -1,12 +1,18 @@
 ---
-title: "Get My Requests"
-description: "Get My Requests"
+title: "Get My Workflow Requests Using the API"
+description: "Retrieve the workflow requests that the signed-in user submitted by sending a GET request to the GroupID API."
+keywords:
+  - my workflow requests
+  - get my requests API
+  - requester workflow status
+  - GroupID REST API
 sidebar_position: 120
+unlisted: true
 ---
 
-# Get My Requests
+# Get My Workflow Requests Using the API
 
-Using this API the logged in user can get information about his/her workflow request(s).
+Use this API to get information about the workflow requests that the signed-in user submitted.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -141,5 +147,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

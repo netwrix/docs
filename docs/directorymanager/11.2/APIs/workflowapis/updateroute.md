@@ -1,12 +1,19 @@
 ---
-title: "Update a Route"
-description: "Update a Route"
+title: "Update a Workflow Route in Directory Manager"
+description: "Update an existing workflow route in an identity store by sending a PATCH request to the Workflows Route endpoint."
+keywords:
+  - update workflow route
+  - workflow route approvers
+  - Directory Manager API
+  - Workflows/Route endpoint
+  - PATCH request
 sidebar_position: 160
+unlisted: true
 ---
 
-# Update a Route
+# Update a Workflow Route in Directory Manager
 
-You can use this API to update a workflow route in a specified identity store.
+Use this API to update a workflow route in a specified identity store.
 
 ## Endpoint
 
@@ -16,7 +23,7 @@ You can use this API to update a workflow route in a specified identity store.
 
 **PATCH**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -77,7 +84,7 @@ You can use this API to update a workflow route in a specified identity store.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

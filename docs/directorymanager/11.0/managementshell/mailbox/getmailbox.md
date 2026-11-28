@@ -1,13 +1,18 @@
 ---
-title: "Get-Mailbox"
-description: "Get-Mailbox"
+title: "Get-Mailbox Cmdlet in GroupID"
+description: "Retrieve basic information about mailboxes in an identity store that match your criteria with the Get-Mailbox cmdlet."
+keywords:
+  - Get-Mailbox
+  - retrieve mailbox
+  - mailbox information
+  - PowerShell cmdlet
 sidebar_position: 10
 ---
 
-# Get-Mailbox
+# Get-Mailbox Cmdlet in GroupID
 
-Use the **Get-Mailbox** commandlet to retrieve basic information about a mailbox that match your
-given criteria.
+Use the **Get-Mailbox** cmdlet to retrieve basic information about mailboxes that match your given
+criteria.
 
 ## Syntax
 
@@ -39,11 +44,11 @@ Example:
 The following command retrieves the specified mailbox from the connected identity store.
 
 ```
-Get-MailBox -Identity "OsamaMailBox"
+Get-MailBox -Identity "SampleMailBox"
 ```
 
-See Also
+**See Also**
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Mailbox Commands](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Mailbox Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

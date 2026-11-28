@@ -1,14 +1,21 @@
 ---
 title: "Restore-TombStoneObject"
-description: "Restore-TombStoneObject"
+description: "Restore a deleted group from its tombstone to its original container as an unmanaged group, using the Restore-TombStoneObject cmdlet in GroupID."
+keywords:
+  - Restore-TombStoneObject
+  - tombstone object
+  - restore deleted group
+  - unmanaged group
+  - GroupID PowerShell
 sidebar_position: 100
 ---
 
 # Restore-TombStoneObject
 
-The **Restore-TombStoneObject** commandlet restores tombstone objects from Directory. A tombstone
-object is restored as an unmanaged group with all supported attributes to its original container. If
-the parent container has been deleted, the commandlet also reinstates the container for the group.
+The **Restore-TombStoneObject** commandlet restores tombstone objects from Directory. The commandlet
+restores a tombstone object as an unmanaged group, with all supported attributes, to its original
+container. If the parent container has been deleted, the commandlet also reinstates the container
+for the group.
 
 ## Syntax
 
@@ -28,8 +35,8 @@ Restore-TombstoneObject
 Example:
 
 The following command restores the tombstone group Event Management, using the credentials set in
-the $Creds environment variable. See the
-[Set the $Credentials Environment Variable](/docs/directorymanager/11.0/managementshell/setthecredential.md)
+the $Cred environment variable. See the
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.0/managementshell/setthecredential.md)
 topic for setting credentials in an environment variable.
 
 ```
@@ -38,6 +45,6 @@ Restore-TombStoneObject -identity "Event Management" -Credential $Cred
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [General Commands](/docs/directorymanager/11.0/managementshell/general/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID General Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/general/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

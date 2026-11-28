@@ -1,12 +1,18 @@
 ---
-title: "Parse a Connection String"
-description: "Parse a Connection String"
+title: "Parse a Connection String API"
+description: "Parse a one-line data source connection string, such as a SQL Server string, into its parts like database, user name, and password."
+keywords:
+  - parse connection string API
+  - ParseConnectionString endpoint
+  - SQL Server connection string
+  - data source connection
 sidebar_position: 150
+unlisted: true
 ---
 
-# Parse a Connection String
+# Parse a Connection String API
 
-This API parses the connection string given in one line format.
+This API parses a connection string given in one-line format.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ This API parses the connection string given in one line format.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -25,7 +31,7 @@ This API parses the connection string given in one line format.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

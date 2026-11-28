@@ -1,163 +1,132 @@
 ---
-title: "Service Account for Active Directory and Exchange"
-description: "Service Account for Active Directory and Exchange"
+title: "Set Up a Directory Manager Service Account for AD and Exchange"
+description: "Create or reuse a service account with the Active Directory and Exchange permissions Directory Manager needs to manage identity store objects."
+keywords:
+  - Directory Manager service account
+  - delegate Active Directory permissions
+  - Exchange Recipient Management
+  - Active Directory Users and Computers
+  - local Administrators group
 sidebar_position: 10
 ---
 
-# Service Account for Active Directory and Exchange
+# Set Up a Directory Manager Service Account for AD and Exchange
 
-You must have a service account to connect an identity store to an Active Directory domain.
-Directory Manager uses the account to access objects in Active Directory. If Microsoft Exchange is
-configured as the messaging provider for the identity store, you can also delegate permissions to
-this account to access Exchange objects.
+You must have a service account to connect an identity store to an Active Directory domain. Directory Manager uses the account to access objects in Active Directory. If Microsoft Exchange is the messaging provider for the identity store, you can also delegate permissions to this account to access Exchange objects.
 
-You can use an existing account, provided it has the required permissions, or you can create a new
-one. Instructions for both options are discussed in the following sections, although it is
-recommended that you create a new service account rather than using an existing account.
+You can use an existing account that has the required permissions, or you can create a new one. Create a new service account instead of using an existing one.
 
 :::note
-You must add the service account to the membership of the Local Administrator group of the
-member server on which Directory Manager is installed.
+You must add the service account to the Local Administrator group of the member server on which you installed Directory Manager.
 :::
 
+## Use an existing account as a service account
 
-## Use an Existing Account as a Service Account
-
-Verify that the account that you want to use as a service account has the following Active Directory
-and Exchange permissions:
-
-Exchange permissions are required if Microsoft Exchange is configured as the messaging provider for
-the identity store.
+Verify that the account has the following Active Directory and Exchange permissions. Exchange permissions are required if Microsoft Exchange is the messaging provider for the identity store.
 
 |                         |                                                                                                                                                                                                                                                                                                                                            |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Active Directory        | Recommended: **Domain Admins** Minimum permissions: <ul><li>Grant permissions to create and delete users, contacts, and groups.</li><li>Grant permissions to modify users, contacts, and groups.</li></ul> See the Create a New Service Account topic for instructions on modifying the service account to grant the required permissions. |
 | Exchange 2013/2016/2019 | Recipient Management                                                                                                                                                                                                                                                                                                                       |
 
+## Create a new service account
 
-## Create a New Service Account
+If you don't have a service account, create one. This section covers three tasks:
 
-If you don't have a service account, you need to create one. Follow the three sets of instructions
-in this section to:
+1. Create a service account.
+2. Delegate Active Directory permissions to the new account.
+3. Delegate Exchange permissions to the new account. Do this only if Exchange is the messaging provider for the identity store.
 
-1. Create a Service Account:
-2. Delegate Active Directory Permissions to the New Account:
-3. Delegate Exchange Permissions to the New Account:
+### Create a service account
 
-    f Exchange is configured as the messaging provider for the identity store)
+1. Open **Active Directory Users and Computers** in one of these ways:
 
-### Create a Service Account:
+    - Select **Server Manager** from the Windows Start screen. Then select **Tools > Active Directory Users and Computers**.
 
-1. Select either:
+    **Or**
 
-    - **Server Manager** from the Windows Start screen.
+    - Select **Server Manager** from the Quick Launch toolbar on the Windows taskbar. Then select **Tools > Active Directory Users and Computers**.
 
-**Or**
+    **Or**
 
-    - **Server Manager** from the Quick Launch toolbar available by default on the Windows taskbar.
+    - Select **Administrative Tools** from the Windows Start screen. Then select **Active Directory Users and Computers** in the **Name** column.
 
-**Or**
+2. In the directory tree, select the required container, point to **New**, and then click **User**. The **New User** dialog box appears.
+3. Enter the required information for the user.
 
-    - **Administrative Tools** from the Windows Start screen.
+After you create the user, click the container to view the new user.
 
-2. In case of Server Manager selection, select **Tools > Active Directory Users and Computers**.
-   In case of Administrative Tools selection, select the **Active Directory Users and Computers**
-   option in the **Name** column.
-3. In the directory tree, select the required container, point to **New**, and then click **User**.
-   The **New User** dialog box is displayed.
-4. Enter the required information for the user.
-
-After creating the user, you can click the container to view the newly created user.
-
-### Delegate Active Directory Permissions to the New Account:
+### Delegate Active Directory permissions to the new account
 
 In the **Active Directory Users and Computers** console:
 
 1. Select **Advanced Features** from the **View** menu.
-2. In the left pane, right-click the domain name or organizational unit and select the
-   **Properties** option. On the Properties window, select the **Security** tab.
+2. In the left pane, right-click the domain name or organizational unit and select **Properties**. In the Properties window, select the **Security** tab.
 
-    ![security_tab](/images/directorymanager/11.2/requirements/permissions/security_tab.webp)
+    ![Security tab of the domain Properties window](/images/directorymanager/11.2/requirements/permissions/security_tab.webp)
 
-3. Click the **Advanced** button; the **Advanced Security Settings** window is displayed.
+3. Click **Advanced**. The **Advanced Security Settings** window appears.
 
-    ![advsecsettings](/images/directorymanager/11.2/requirements/permissions/advsecsettings.webp)
+    ![Advanced Security Settings window](/images/directorymanager/11.2/requirements/permissions/advsecsettings.webp)
 
-4. Click the **Add** button. The **Permission Entry** window is displayed.
+4. Click **Add**. The **Permission Entry** window appears.
 
-    ![permissionentry](/images/directorymanager/11.2/requirements/permissions/permissionentry.webp)
+    ![Permission Entry window](/images/directorymanager/11.2/requirements/permissions/permissionentry.webp)
 
-5. Click the **Select a principal** link next to **Principal**. The Select User, Computer, Service
-   Account, or Group dialog box is displayed.
+5. Click the **Select a principal** link next to **Principal**. The Select User, Computer, Service Account, or Group dialog box appears.
 
-    ![select_user](/images/directorymanager/11.2/requirements/permissions/select_user.webp)
+    ![Select User, Computer, Service Account, or Group dialog box](/images/directorymanager/11.2/requirements/permissions/select_user.webp)
 
-    Enter the name of the service account in the **Enter the object name to select** box. Click
-    **OK**. The **Permissions Entry** window is displayed with all fields enabled (see step 4).
+    Enter the name of the service account in the **Enter the object name to select** box. Click **OK**. The **Permission Entry** window appears with all fields enabled (see step 4).
 
 6. In the **Applies to** box, select **This object and all descendant objects**.
 7. Grant permissions to create and delete users, contacts, and groups.
 
-    1. Scroll down the list of permissions in the **Permissions** box and select the checkboxes for
-       the following options:
+    1. Scroll down the list of permissions in the **Permissions** box and select the checkboxes for the following options:
 
-        ![permissions_list](/images/directorymanager/11.2/requirements/permissions/permissions_list.webp)
+        ![Permissions list with the checkboxes to select for creating and deleting objects](/images/directorymanager/11.2/requirements/permissions/permissions_list.webp)
 
-    2. Click **OK**. The granted permissions appear in the **Advanced Security Settings** window as
-       shown in the following:
+    2. Click **OK**. The granted permissions appear in the **Advanced Security Settings** window as follows:
 
-        ![advsecsettingsgrantedpermissions](/images/directorymanager/11.2/requirements/permissions/advsecsettingsgrantedpermissions.webp)
+        ![Advanced Security Settings window showing the granted create and delete permissions](/images/directorymanager/11.2/requirements/permissions/advsecsettingsgrantedpermissions.webp)
 
 8. Grant permissions to modify users, contacts, and groups.
 
-    1. Click the **Add** button on the **Advanced Security Settings** window. The **Permission
-       Entry** window is displayed (see step 4).
-    2. Click the **Select a principal** link next to Principal. The Select User, Computer, Service
-       Account, or Group dialog box is displayed. Enter the name of the service account in the
-       **Enter the object name to select** box and click **OK**. The **Permissions Entry** window is
-       displayed.
-    3. In the **Applies to** box, select the **Descendant Contact objects** option and select the
-       **Full control** checkbox in the _Permissions_ area. It is as follows:
+    1. Click **Add** in the **Advanced Security Settings** window. The **Permission Entry** window appears (see step 4).
+    2. Click the **Select a principal** link next to **Principal**. The Select User, Computer, Service Account, or Group dialog box appears. Enter the name of the service account in the **Enter the object name to select** box and click **OK**. The **Permission Entry** window appears.
+    3. In the **Applies to** box, select **Descendant Contact objects**. In the _Permissions_ area, select the **Full control** checkbox. The following image shows the settings:
 
-        ![fullcontrolcontact](/images/directorymanager/11.2/requirements/permissions/fullcontrolcontact.webp)
+        ![Permission Entry window with Full control selected for Descendant Contact objects](/images/directorymanager/11.2/requirements/permissions/fullcontrolcontact.webp)
 
-    4. Click **OK**. The granted permissions appear in the **Advanced Security Settings** window as
-       shown in the following:
+    4. Click **OK**. The granted permissions appear in the **Advanced Security Settings** window as follows:
 
-        ![advsecsettingsfullcontrolcontact](/images/directorymanager/11.2/requirements/permissions/advsecsettingsfullcontrolcontact.webp)
+        ![Advanced Security Settings window showing Full control on Descendant Contact objects](/images/directorymanager/11.2/requirements/permissions/advsecsettingsfullcontrolcontact.webp)
 
-    5. Repeat steps a – d for **Descendant Group objects** and **Descendant User objects** on the
-       Permission Entry window.
-       The service account now has permissions to modify users, contacts, and groups. These
-       permissions appear in the **Advanced Security Settings** window as shown in the following:
+    5. Repeat steps a – d for **Descendant Group objects** and **Descendant User objects** in the Permission Entry window.
 
-        ![advsecsettingsreqpermissions](/images/directorymanager/11.2/requirements/permissions/advsecsettingsreqpermissions.webp)
+       The service account now has permissions to modify users, contacts, and groups. These permissions appear in the **Advanced Security Settings** window as follows:
+
+        ![Advanced Security Settings window showing all required permissions](/images/directorymanager/11.2/requirements/permissions/advsecsettingsreqpermissions.webp)
 
 9. Click **OK**.
 
-### Delegate Exchange Permissions to the New Account:
+### Delegate Exchange permissions to the new account
 
-In addition to Active Directory permissions, the service account also needs access permissions for
-Exchange, when Exchange is configured as the messaging provider for the identity store.
-
-Instructions for delegating permissions for each supported Exchange Server version are as follows.
+In addition to Active Directory permissions, the service account needs access permissions for Exchange when Exchange is the messaging provider for the identity store.
 
 **For Exchange Server 2013/2016/2019:**
 
-Launch Exchange Management Shell and enter the following command:
+Open Exchange Management Shell and enter the following command:
 
 ```
 Add-RoleGroupMember "Recipient Management" -Member domain name\user
 ```
 
-## SQL Server Account and Database Permissions
+## SQL Server account and database permissions
 
-See the [Authentication Modes](/docs/directorymanager/11.2/install/configure/setupauthentication.md) topic for information about the roles and
-permissions the SQL server and database accounts must have for
-[SQL Server Authentication](/docs/directorymanager/11.2/install/configure/setupauthentication.md#sql-server-authentication) mode and for
-[Windows Authentication](/docs/directorymanager/11.2/install/configure/setupauthentication.md#windows-authentication) mode.
+For the roles and permissions the SQL server and database accounts need, see [SQL Server Authentication Modes for Directory Manager](/docs/directorymanager/11.2/install/configure/setupauthentication.md). It covers [SQL Server Authentication](/docs/directorymanager/11.2/install/configure/setupauthentication.md#sql-server-authentication) mode and [Windows Authentication](/docs/directorymanager/11.2/install/configure/setupauthentication.md#windows-authentication) mode.
 
 **See Also**
 
-- [Create an Identity Store](/docs/directorymanager/11.2/admincenter/identitystore/create.md)
-- [Manage an Identity Store](/docs/directorymanager/11.2/admincenter/identitystore/manage.md)
+- [Create an Identity Store in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/create.md)
+- [Manage an Identity Store in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/manage.md)

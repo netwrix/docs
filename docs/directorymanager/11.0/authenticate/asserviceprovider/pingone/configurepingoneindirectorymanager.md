@@ -1,6 +1,17 @@
-# Configure the PingOne Provider In GroupID
+---
+title: "Configure the PingOne Provider in GroupID"
+description: "Create a PingOne SAML provider in GroupID by importing the PingOne metadata file and setting the signing and binding options."
+keywords:
+  - GroupID PingOne provider
+  - import PingOne metadata
+  - create PingOne SAML provider
+  - PingOne request binding
+  - PingOne response signing method
+---
 
-While creating the PingOne provider in GroupID, you simply have to import the PingOne metadata file
+# Configure the PingOne Provider in GroupID
+
+When you create the PingOne provider in GroupID, you import the PingOne metadata file
 to configure all settings for this identity provider.
 
 ## Configure the Provider in GroupID
@@ -8,28 +19,28 @@ to configure all settings for this identity provider.
 1. In GroupID Authenticate, click the **SAML Providers** tab.
 2. On the **SAML Providers** page, click **New Provider**.
 3. On the **Create New Provider** page, enter a name for the provider in the **Name** box.
-4. Make sure the **Client** box displays the name of the GroupID client for which you generated the
-   consumer URL and the GroupID metadata file (see the
-   [Generate the Consumer URL and Metadata File](/docs/directorymanager/11.0/authenticate/asserviceprovider/pingone/generatemetadata.md)
+4. Ensure the **Client** box displays the name of the GroupID client for which you
+   generated the consumer URL and the GroupID metadata file (see the
+   [Generate the Consumer URL and Metadata File for PingOne](/docs/directorymanager/11.0/authenticate/asserviceprovider/pingone/generatemetadata.md)
    topic).  
    To continue with the example, select the GroupID portal named _Wizard_.
 5. Click the **Import from Metadata** button under the **Advanced** section to import the PingOne
    metadata file.
 6. On the **Import Settings from IDP provided Metadata File** dialog box, click **Browse** to select
-   the PingOne metadata file downloaded earlier. Then click **Upload**. With this, several fields on
-   the **Create New Provider** page are automatically filled in.
-7. When PingOne is configured with a GroupID client, it will be available on the login page of that
-   client (the Wizard portal in our example) for single sign-on. You can choose to display the
-   PingOne authentication option as an image or a button. See the
+   the PingOne metadata file you downloaded earlier. Then click **Upload**. Several fields on
+   the **Create New Provider** page are then filled in automatically.
+7. After you configure PingOne with a GroupID client, PingOne appears on the sign-in page
+   of that client (such as the Wizard portal) for single sign-on. You can choose to display
+   the PingOne authentication option as an image or a button. See the
    [Upload an Image for the Identity Provider](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md#upload-an-image-for-the-identity-provider)
    topic for details, replacing references to AD FS with PingOne.
 8. Expand the **Advanced** section on the **Create New Provider** page.
-9. The **Response Signing Method** box displays _RSA-SHA-256_ as the signing method type. We
-   configured this method as the signing algorithm in PingOne.
-10. For _Disable GroupID Authentication_, see step 2 in the
+9. The **Response Signing Method** box displays _RSA-SHA-256_ as the signing method type. This
+   method is configured as the signing algorithm in PingOne.
+10. For **Disable GroupID Authentication**, see step 2 in the
     [Specify Advanced Configurations](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md#specify-advanced-configurations)
     topic. Replace references to AD FS with the PingOne provider.
-11. In the **Request Binding** list, select _POST_, since the **Single Logout Binding Type** is set
+11. In the **Request Binding** list, select _POST_, because the **Single Logout Binding Type** is set
     to _Post_ in PingOne.
 12. Click the **Create Provider** button. The identity provider is created and displayed on the
     **SAML Providers** page.

@@ -1,24 +1,25 @@
 ---
-title: "Create a Data Service"
-description: "Create a Data Service"
+title: "Create a GroupID Data Service in IIS"
+description: "Deploy a GroupID Data service in native or remote IIS and bind it to Elasticsearch, Replication, and Scheduler services."
+keywords:
+  - GroupID
+  - Data service
+  - IIS
+  - Elasticsearch service
+  - Scheduler service
 sidebar_position: 10
 ---
 
-# Create a Data Service
+# Create a GroupID Data Service in IIS
 
 You can create a Data service in native IIS and remote IIS.
-
-What do you want to do?
-
-- [Create a Data Service in Native IIS](#create-a-data-service-in-native-iis)
-- [Create a Data Service in Remote IIS](#create-a-data-service-in-remote-iis)
 
 ## Create a Data Service in Native IIS
 
 When you deploy a Data service in native IIS, GroupID does the following:
 
-- It creates a directory with the Data service’s name at the following physical path on the GroupID
-  server, and copies the service files from its template directory to the new service directory:
+- It creates a directory with the Data service's name at the following physical path on the GroupID
+  server and copies the service files from its template directory to the new service directory:
   X:\Program Files\Imanami\GroupID 11.0\GroupIDDataService\Inetpub\
   (X represents the GroupID installation drive)
 - It also creates a virtual directory for the service in your desired IIS site.
@@ -31,41 +32,41 @@ located on disk.
 1. In Admin Center, click **Applications** in the left pane.
 2. Click **Add Application**.
 3. On the next page, select **Data Service** and click **Next step**.
-4. On the **Create GroupID Application** page, make sure the **IIS** tile is selected.
+4. On the **Create GroupID Application** page, ensure the **IIS** tile is selected.
 5. In the **Application Name** box, enter a unique name for the service or use the default name. The
    service is displayed with this name in GroupID.
 6. In the **Deployment Name** box, enter a deployment name for the service.
-   The application name and deployment name are displayed on the service card. It is as:
+   The application name and deployment name are displayed on the service card. It looks like this:
 
-    ![ds_card](/images/directorymanager/11.0/admincenter/service/dataservice/ds_card.webp)
+    ![Data service card showing the application name and deployment name](/images/directorymanager/11.0/admincenter/service/dataservice/ds_card.webp)
 
 7. In the **IIS Application Name** box, enter an IIS deployment name for the service. The name
    should be unique for each Data service deployed in IIS.
-   The IIS application name is used to name the service’s directory in IIS and its physical
+   The IIS application name is used to name the service's directory in IIS and its physical
    directory under X:\Program Files\Imanami\GroupID 11.0\GroupIDDataService\Inetpub\ on the GroupID
    server.
    (X represents the GroupID installation drive)
-8. In the **IIS Site** drop-down list, select a website to host the service files.
-   The list displays the websites defined on the local IIS server. GroupIDSite11 is the default
+8. In the **IIS Site** dropdown list, select a website to host the service files.
+   The list displays the websites defined on the local IIS server. `GroupIDSite11` is the default
    selection.
 9. In the Service Endpoints area, bind an Elasticsearch service, Replication service, and Scheduler
    service with the Data service.
 
-    1. In the **Elasticsearch Service** drop-down list, select an Elasticsearch service to bind to
+    1. In the **Elasticsearch Service** dropdown list, select an Elasticsearch service to bind to
        this Data service.
        The list displays the Elasticsearch services running in the environment. Requests sent to the
-       Data service for performing a search in the Elasticsearch repository will be carried out
+       Data service for performing a search in the Elasticsearch repository are processed
        through the Elasticsearch service you select here.
-    2. On selecting an Elasticsearch service, the **Replication Service** drop-down list displays
+    2. On selecting an Elasticsearch service, the **Replication Service** dropdown list displays
        the Replication services running on the same machine as the Elasticsearch service. Select a
        Replication service to bind to this Data service.
-       When a user force runs the replication service (whether globally or for a specific identity
-       store), a request is sent to the Data service, that is then passed on to the Replication
+       When a user force-runs the replication service (whether globally or for a specific identity
+       store), a request is sent to the Data service, which is then passed on to the Replication
        service bound to that Data service.
-    3. In the **Scheduler Service** drop-down list, select a scheduler service to bind to this Data
-       service. The number of services displayed in the list depend on the number of GroupID
+    3. In the **Scheduler Service** dropdown list, select a scheduler service to bind to this Data
+       service. The number of services displayed in the list depends on the number of GroupID
        clusters, as each cluster has its own Scheduler service.
-       This Data service will send requests to the selected Schedular service to trigger schedule
+       This Data service sends requests to the selected Scheduler service to trigger schedule
        runs.
 
 10. Click **Create Application**.
@@ -86,7 +87,7 @@ The Data service runs within a virtual directory in remote IIS while the service
 physically located on disk.
 
 To learn about the remote IIS settings and configurations before deploying a service there, see the
-[Prerequisites for Deployments in Remote IIS](/docs/directorymanager/11.0/signin/applications/remoteiisprerequisites.md)
+[Prerequisites for Deploying GroupID in Remote IIS](/docs/directorymanager/11.0/signin/applications/remoteiisprerequisites.md)
 topic.
 
 **To create a Data service:**
@@ -103,13 +104,13 @@ topic.
    Application Name**, and **Website**, refer to steps 7-11 in the
    [Create a Portal in Remote IIS](/docs/directorymanager/11.0/signin/applications/portal/create.md#create-a-portal-in-remote-iis)
    topic. Replace any reference to the portal with the Data service.
-8. For entering information in the **Service Endpoints** area, follow steps 9 in the
+8. For entering information in the **Service Endpoints** area, follow step 9 in the
    [Create a Data Service in Native IIS](#create-a-data-service-in-native-iis) topic.
 9. Click **Create Application**.
    The new Data service is displayed on the **Data Service** tab.
 
 **See Also**
 
-- [GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)
-- [Manage Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)
+- [Manage GroupID Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)

@@ -1,17 +1,21 @@
 ---
-title: "Overview"
-description: "Overview"
+title: "Directory Manager Mailbox Properties in Active Directory"
+description: "Find the property tabs available for users and mailbox users in an Active Directory-based identity store."
+keywords:
+  - mailbox properties
+  - mailbox users
+  - Active Directory mailboxes
+  - Exchange mailbox properties
 sidebar_position: 20
 ---
 
-# Overview
+# Directory Manager Mailbox Properties in Active Directory
 
-You can view and manipulate the properties of mailboxes in Active Directory.
+You can view and edit the properties of mailboxes in Active Directory.
 
 ## Mailbox properties
 
-Following is the list of all the properties that Users and Mailbox Users have in Active Directory
-based identity store.
+Users and mailbox users have the following property tabs in an Active Directory-based identity store.
 
 - [Object properties - General tab](/docs/directorymanager/11.2/portal/user/properties/AD/useroverview/general.md)
 - [Object properties - Organization tab](/docs/directorymanager/11.2/portal/user/properties/AD/useroverview/organization.md)

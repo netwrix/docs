@@ -1,13 +1,18 @@
 ---
-title: "Replication Service"
-description: "Replication Service"
+title: "Directory Manager Replication Service"
+description: "View the Replication service, learn what it replicates to Elasticsearch, and enable or tune syncing between Elasticsearch clusters."
+keywords:
+  - Directory Manager Replication service
+  - Elastic Cluster Syncing
+  - Elasticsearch replication
+  - cluster syncing interval
 sidebar_position: 40
 ---
 
-# Replication Service
+# Directory Manager Replication Service
 
 The Replication service replicates the attributes of the following objects from the provider (such
-as Active Directory) to the Elasticsearch repository.
+as Active Directory) to the Elasticsearch repository:
 
 - Group
 - User
@@ -15,31 +20,33 @@ as Active Directory) to the Elasticsearch repository.
 - Computers
 - Organizational Unit
 
-For more on the Replication service, see the
-[Elasticsearch and Replication ](/docs/directorymanager/11.1/admincenter/replication/overview.md)topic for additional information.
+The service also syncs data between the Elasticsearch clusters in your environment.
 
-The service is also responsible for syncing data between the Elasticsearch clusters in your
-environment.
+For more on the Replication service, see the
+[Elasticsearch and Replication Service in Directory Manager](/docs/directorymanager/11.1/admincenter/replication/overview.md)
+topic for additional information.
 
-## View Replication Service Details
+## View Replication service details
 
+To view the details of the Replication service:
 
 1. In Admin Center, click **Applications** in the left pane.
 
-2. On the **Applications** page, click the **Service** tab.  
-The tab displays the default Replication service hosted in native IIS. When multiple Directory
-Manager instances have been deployed, you will find multiple default Replication services on this
-tab page, as each instance has its own default Replication service. See the
-[Elasticsearch Clusters, Nodes, and Directory Manager](overview.md#elasticsearch-clusters-nodes-and-directory-manager)
-topic for additional information.  
-For details displayed on a service card, see the table in the
-[View Data Service Details](dataservice/manage.md#view-data-service-details) topic.
+2. On the **Applications** page, click the **Service** tab. The tab displays the default Replication
+   service hosted in native IIS. When you have deployed multiple Directory Manager instances, the tab
+   displays multiple default Replication services, because each instance has its own default
+   Replication service. See the
+   [Elasticsearch Clusters, Nodes, and Directory Manager](overview.md#elasticsearch-clusters-nodes-and-directory-manager)
+   topic for additional information.
 
-You can't create a Replication Service or delete an existing one from Admin Center.
+   For details on a service card, see the table in the
+   [View Data Service Details](dataservice/manage.md#view-data-service-details) topic.
 
-## Manage Replication Service Settings
+You can't create a Replication service or delete an existing one from Admin Center.
 
-You can manage the following settings for a Replication service.
+## Manage Replication service settings
+
+You can manage the following settings for a Replication service:
 
 - [Change a Service’s Display Name](dataservice/manage.md#change-a-services-display-name)
 - [Start or Stop a Service](dataservice/manage.md#start-or-stop-a-service)
@@ -53,11 +60,11 @@ clusters. You can also specify an interval for syncing.
 
 :::note
 In Directory Manager, a separate Replication service is created for each node in a cluster. To
-enable data syncing between clusters, enable the sync option for one Replications service
+enable data syncing between clusters, enable the sync option for one Replication service
 within each cluster.
 :::
 
-
+To enable Elastic Cluster Syncing:
 
 1. In Admin Center, select **Applications** in the left pane.
 
@@ -67,16 +74,19 @@ within each cluster.
 
 4. Click **Configurations** under Server Settings.
 
-5. On the Configurations page, enable the **Elastic Cluster Syncing** toggle button to sync
-data from all other clusters to the cluster that uses this Replication service.  
-If this toggle button is disabled for a cluster (say, ClusterA), data from other clusters will not
-be synced to ClusterA.  
-Suppose syncing is disabled for ClusterA but enabled for ClusterB and ClusterC. This means that (a)
-data from ClusterB and ClusterC will not be synced to ClusterA (b) data from ClusterA will be synced
-to ClusterB and ClusterC.
+5. On the Configurations page, enable the **Elastic Cluster Syncing** toggle button to sync data
+   from all other clusters to the cluster that uses this Replication service.
 
-6. You can specify an interval for syncing data. Click **Edit** under Elastic Cluster Syncing
-Interval, specify an interval (in seconds) and click the check mark.  
-By default, the interval is set to 5 seconds. You can specify a maximum interval of 900 seconds.
+   If this toggle button is disabled for a cluster (say, ClusterA), data from other clusters isn't
+   synced to ClusterA.
+
+   Suppose syncing is disabled for ClusterA but enabled for ClusterB and ClusterC. This means that
+   (a) data from ClusterB and ClusterC isn't synced to ClusterA and (b) data from ClusterA is synced
+   to ClusterB and ClusterC.
+
+6. To specify an interval for syncing data, click **Edit** under Elastic Cluster Syncing Interval,
+   enter an interval (in seconds), and click the check mark.
+
+   By default, the interval is set to 5 seconds. The maximum interval is 900 seconds.
 
 7. Click **Save**.

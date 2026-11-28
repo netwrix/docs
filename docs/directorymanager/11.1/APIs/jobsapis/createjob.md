@@ -1,15 +1,21 @@
 ---
-title: "Create a New Job"
-description: "Create a New Job"
+title: "Create a Synchronize Job API"
+description: "Create a Synchronize job that moves data from one data source to another with a POST request to the Directory Manager data service."
+keywords:
+  - create Synchronize job API
+  - DataSyncJobs POST endpoint
+  - Synchronize job request
+  - job field mapping
 sidebar_position: 10
+unlisted: true
 ---
 
-# Create a New Job
+# Create a Synchronize Job API
 
-Use this API to create a new Synchronize job which is a set of sequential commands that run in the
-background to move data from one data source to another data source.
+Use this API to create a new Synchronize job, which is a set of sequential commands that run in the
+background to move data from one data source to another.
 
-See the [Create a Job](/docs/directorymanager/11.1/portal/synchronize/create/create.md) topic for more information about
+See the [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.1/portal/synchronize/create/create.md) topic for more information about
 creating a job.
 
 ## Endpoint
@@ -20,7 +26,7 @@ creating a job.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -379,7 +385,7 @@ creating a job.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

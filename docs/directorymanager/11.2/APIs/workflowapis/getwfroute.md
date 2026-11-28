@@ -1,12 +1,19 @@
 ---
-title: "Get a Workflow Route"
-description: "Get a Workflow Route"
+title: "Get a Workflow Route in Directory Manager"
+description: "Retrieve the configuration of a workflow route by passing its route ID in the endpoint URL."
+keywords:
+  - workflow route
+  - workflow route ID
+  - Directory Manager API
+  - Workflows/Routes endpoint
+  - route configuration
 sidebar_position: 90
+unlisted: true
 ---
 
-# Get a Workflow Route
+# Get a Workflow Route in Directory Manager
 
-Use this API to get the workflow route ID specified in the endpoint URL.
+Use this API to get the workflow route that has the ID specified in the endpoint URL.
 
 ## Endpoint
 
@@ -16,7 +23,7 @@ Use this API to get the workflow route ID specified in the endpoint URL.
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

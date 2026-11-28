@@ -1,10 +1,17 @@
 ---
-title: "Configure Password Options"
-description: "Configure Password Options"
+title: "Configure Password Options in GroupID"
+description: "Restrict passwords, define allowed-password regular expressions, and block passwords listed in an imported file for an identity store."
+keywords:
+  - password restrictions
+  - password exceptions
+  - password rules
+  - disallowed passwords file
+  - regular expressions
+  - identity store
 sidebar_position: 160
 ---
 
-# Configure Password Options
+# Configure Password Options in GroupID
 
 You can define the following password restrictions and rules for an identity store:
 
@@ -12,17 +19,19 @@ You can define the following password restrictions and rules for an identity sto
 - Define regular expressions for allowed passwords
 - Specify disallowed passwords using an external file
 
-When identity store users reset or change their passwords using GroupID, their new passwords must
-adhere to the defined rules.
+When identity store users reset or change their passwords using GroupID, their new
+passwords must follow the defined rules.
 
-NOTE: (1) These password configurations do not apply when helpdesk users reset passwords of
-end-users.  
- (2) In case a user has linked his or her accounts in different identity stores, the password
+:::note
+(1) These password configurations don't apply when helpdesk users reset passwords of
+end users.  
+(2) If a user has linked their accounts in different identity stores, the password
 configurations for the master account apply.
+:::
 
 In addition to these password restrictions, you can define a password policy for a security role in
 an identity store. See the
-[Set a Password Policy ](/docs/directorymanager/11.0/signin/securityrole/policy/password.md)
+[Configure a Password Policy for a Security Role ](/docs/directorymanager/11.0/signin/securityrole/policy/password.md)
 topic.
 
 What do you want to do?
@@ -33,7 +42,7 @@ What do you want to do?
 
 ## Define Restricted Passwords
 
-You can specify certain strings of text that users cannot use as passwords or part of passwords. You
+You can specify certain strings of text that users can't use as passwords or part of passwords. You
 can also specify regular expressions to prevent users from creating passwords that match the
 expression.
 
@@ -45,23 +54,23 @@ expression.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Password Options**.
 4. In the **Password Exception** area on the **Password Options** page, click **Add Password
    Exception**.
-5. On the **Add New Password Exception** dialog box, select an operator in the **Type** drop down
+5. On the **Add New Password Exception** dialog box, select an operator in the **Type** dropdown
    list.
 
-    - **Equals:** passwords that match the value you specify in the **Exception Value** box are not
+    - **Equals:** passwords that match the value you specify in the **Exception Value** box aren't
       allowed.
     - **Starts with:** passwords that start with the value you specify in the **Exception Value**
-      box are not allowed.
+      box aren't allowed.
     - **Ends With:** passwords that end with the value you specify in the **Exception Value** box
-      are not allowed.
-    - **Contains:** passwords that contain the value you specify in the **Exception Value** box are
-      not allowed.
+      aren't allowed.
+    - **Contains:** passwords that contain the value you specify in the **Exception Value** box
+      aren't allowed.
     - **Regular Expression:** passwords that satisfy the regular expression you specify in the
-      **Exception Value** box are not allowed. See the
-      [What are Regular Expressions?](/docs/directorymanager/11.0/signin/applications/portal/categories/textbox.md#what-are-regular-expressions)
+      **Exception Value** box aren't allowed. See the
+      [What are Regular Expressions?](/docs/directorymanager/11.0/signin/applications/portal/categories/textbox.md#regular-expressions)
       topic to learn about regular expressions and their syntax.
 
-6. Type a value for the selected operator in the **Exception Value** box.
+6. Enter a value for the selected operator in the **Exception Value** box.
 7. Click **OK**.
 8. Follow steps 4 to 7 to define as many exceptions as required. All exceptions are treated as
    password restrictions.
@@ -75,7 +84,7 @@ expression.
 
 ## Specify Regular Expressions for Allowed Passwords
 
-By specifying regular expression(s) for allowed passwords, you ensure that passwords created by
+By specifying regular expressions for allowed passwords, you ensure that passwords created by
 users follow certain rules and patterns.
 
 **To specify a regular expression:**
@@ -85,11 +94,11 @@ users follow certain rules and patterns.
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Password Options**.
 4. In the **Password Rules** area on the **Password Options** page, click **Add Password Rule**.
-5. On the **Add Rules** dialog box, type a regular expression in the **Regular Expression** box.  
+5. On the **Add Rules** dialog box, enter a regular expression in the **Regular Expression** box.  
    See the
-   [What are Regular Expressions?](/docs/directorymanager/11.0/signin/applications/portal/categories/textbox.md#what-are-regular-expressions)
+   [What are Regular Expressions?](/docs/directorymanager/11.0/signin/applications/portal/categories/textbox.md#regular-expressions)
    topic to learn about regular expressions and their syntax.
-6. Click **OK**. The regular expression is displayed in the In the **Password Rules** area.
+6. Click **OK**. The regular expression is displayed in the **Password Rules** area.
 7. Follow steps 4 to 6 to define as many regular expressions as required. Passwords that satisfy any
    of the regular expressions are allowed.
 
@@ -103,7 +112,7 @@ users follow certain rules and patterns.
 ## Specify Disallowed Passwords Using an External File
 
 A simple way of preventing users from using certain words or strings as passwords is to add those
-restricted passwords to a .csv or .txt file and upload it to GroupID.
+restricted passwords to a CSV or TXT file and upload it to GroupID.
 
 **To upload the file:**
 
@@ -112,13 +121,15 @@ restricted passwords to a .csv or .txt file and upload it to GroupID.
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Password Options**.
 4. On the **Password Options** page, select the **Check for disallowed passwords from imported
-   file** check box in the **Import Disallowed Password** List area to enable file upload.
+   file** checkbox in the **Import Disallowed Password** List area to enable file upload.
 5. Click **Import** to browse and select the file (.csv, .txt) containing the disallowed passwords.
 6. Click **Save** on the **Password Options** page.
 
-NOTE: Only a single file containing disallowed passwords can be imported for an identity store;
-importing another file will replace the existing one.
+:::note
+Only a single file containing disallowed passwords can be imported for an identity store;
+importing another file replaces the existing one.
+:::
 
 **See Also**
 
-- [Set a Password Policy ](/docs/directorymanager/11.0/signin/securityrole/policy/password.md)
+- [Configure a Password Policy for a Security Role ](/docs/directorymanager/11.0/signin/securityrole/policy/password.md)

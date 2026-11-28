@@ -1,22 +1,29 @@
 ---
-title: "Grant Permissions to Security Roles"
-description: "Grant Permissions to Security Roles"
+title: "Grant Security Role Permissions in the Mobile App"
+description: "Grant security roles permission to use the Directory Search and Workflow features of the GroupID mobile app in an identity store."
+keywords:
+  - mobile app security role permissions
+  - mobile app directory search permission
+  - mobile app workflow permission
+  - mobile app role permission settings
 sidebar_position: 40
 ---
 
-# Grant Permissions to Security Roles
+# Grant Security Role Permissions in the Mobile App
 
-In GroupID, three security roles are defined by default in an identity store: Administrator,
-Helpdesk, and User. More security roles can be added as required.
+In GroupID, three security roles are defined by default in an identity store:
+Administrator, Helpdesk, and User. You can add more security roles as required.
 
-NOTE: In a Microsoft Entra ID identity store, the Helpdesk role is not available by default.
+:::note
+In a Microsoft Entra ID identity store, the Helpdesk role isn't available by default.
+:::
 
-You can grant permissions on the GroupID app to security roles that exist in an identity store
-associated with a Mobile service, so that role members can access the allowed features only.
+You can grant permissions on the GroupID app to security roles that exist in an identity
+store associated with a Mobile service, so that role members can access only the allowed features.
 
 What do you want to do?
 
-- Grant Permissions to Security Roles
+- [Grant Permissions to Security Roles](#grant-permissions-to-security-roles)
 
 ## Grant Permissions to Security Roles
 
@@ -30,13 +37,13 @@ What do you want to do?
    permissions to a role on the following app features:
 
     - **Directory Search**: Enables role members to search the directory.
-    - **Workflow**: Enables role members to view the workflow requests.
+    - **Workflow**: Enables role members to view workflow requests.
 
-5. To grant permission to a role on a function, select the check box for it.  
-   To deny permission, clear the respective check box.
+5. To grant permission to a role on a function, select the checkbox for it.  
+   To deny permission, clear the respective checkbox.
 6. Click **Save**.
 
 **See Also**
 
-- [Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
-- [Design Settings](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [Design Settings for the Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md)

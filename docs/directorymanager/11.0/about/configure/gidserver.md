@@ -1,107 +1,118 @@
 ---
-title: "Configure a new GroupID server with a new or an existing database"
-description: "Configure a new GroupID server with a new or an existing database"
+title: "Configure a GroupID Server and Database"
+description: "Configure a new GroupID server, its Data Service, and an Elasticsearch primary node with a new SQL database."
+keywords:
+  - GroupID server configuration
+  - SQL Server database settings
+  - Elasticsearch primary node
+  - GroupID Data Service
+  - GroupID Security Service
 sidebar_position: 20
 ---
 
-# Configure a new GroupID server with a new or an existing database
+# Configure a GroupID Server and Database
 
-This option configures the GroupID server and the GroupID Data Service on the machine where GroupID
-is being installed. It also configures the GroupID Elasticsearch Service as a master node for the
-Elasticsearch service cluster to support load balancing.
+This option configures the GroupID server and the GroupID Data Service on the
+machine where you install GroupID. It also configures the GroupID Elasticsearch
+Service as a primary node for the Elasticsearch service cluster to support load balancing.
 
-To configure GroupID server on the machine where the Configuration Tool is being run:
+To configure a GroupID server on the machine where you run the Configuration Tool:
 
 1. Select the **Configure a new GroupID server with new or existing database** option on the
    **Select to create new server or use existing server** page of the Configuration Tool and select
    **Next**.
 
-    ![Database Settings page](/images/directorymanager/11.0/install/configure/databasesettings.webp)
+    ![Database Settings page with SQL Server, authentication, and database fields](/images/directorymanager/11.0/install/configure/databasesettings.webp)
 
 2. In the **SQL Server** list, select the SQL Server to use with GroupID.
 
-    If the required server does not appear in the list, make sure that **the SQL Server Browser**
-    service is running on the SQL Server machine and then click the **Refresh** button.
+    If the required server doesn't appear in the list, ensure that the **SQL Server Browser**
+    service is running on the SQL Server machine and then click **Refresh**.
 
-3. In the **Authentication** list, select an authentication mode to be used when connecting to the
-   SQL Server database. Modes are:
+3. In the **Authentication** list, select an authentication mode to use when connecting to the SQL
+   Server database. The modes are:
 
-    - **SQL Server Authentication** - To set SQL Server to work with GroupID using an SQL Server
-      account. See SQL Authentication in
-      [Authentication Modes](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
+    - **SQL Server Authentication** - Sets SQL Server to work with GroupID using a SQL
+      Server account. See SQL Server Authentication in the
+      [SQL Server Authentication Modes for GroupID](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
       topic.
-    - **Windows Authentication** - To set SQL Server to work with GroupID using a Windows user
-      account. See Windows Authentication in in
-      [Authentication Modes](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
+    - **Windows Authentication** - Sets SQL Server to work with GroupID using a Windows
+      user account. See Windows Authentication in the
+      [SQL Server Authentication Modes for GroupID](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
       topic.
 
-4. Depending on the authentication mode selected, do the following:
+4. Depending on the authentication mode you selected, do the following:
 
     - For SQL Server Authentication: enter the user name and password of the selected SQL Server in
       the **SQL Username** and **SQL Password** boxes.
     - For Windows Authentication: provide the credentials of a domain account or a Windows local
-      account that GroupID will use to connect with SQL Server. On clicking **OK**, the system
-      authenticates with that account on SQL Server via Windows authentication.
+      account that GroupID uses to connect with SQL Server. When you click **OK**, the
+      system authenticates with that account on SQL Server through Windows Authentication.
 
-5. In the **SQL Database** box, specify name of a new SQL database to use for GroupID.
+5. In the **SQL Database** box, specify the name of a new SQL database to use for GroupID.
 
-    NOTE: For GroupID 11.0 Beta, you have to create a new database. You cannot use an existing
-    database or a copy of an existing database.
+    :::note
+    For GroupID 11.0 Beta, you have to create a new database. You can't use an existing database or
+    a copy of an existing database.
+    :::
 
-    A message is displayed to inform that the database does not exist. Click Yes to create it.
+    A message informs you that the database doesn't exist. Click **Yes** to create it.
 
 6. Click **Next**.
 
-    ![Security Settings page](/images/directorymanager/11.0/install/configure/securitysettings.webp)
+    ![Security Settings page with passphrase fields](/images/directorymanager/11.0/install/configure/securitysettings.webp)
 
 7. On the **Security Settings** page, enter an encryption key in the **Passphrase** and **Confirm
    Passphrase** boxes to secure GroupID data.
 
-    GroupID Data Service uses this key to encrypt and decrypt the data that it stores in, and
-    retrieves from, the SQL Server database.
+    The GroupID Data Service uses this key to encrypt and decrypt the data that it stores
+    in, and retrieves from, the SQL Server database.
 
     - The passphrase must have at least eight characters.
-    - Be sure to save this passphrase with you. Providing an incorrect passphrase at any later point
-      will result in the loss of GroupID data.
+    - Save this passphrase. Providing an incorrect passphrase at any later point results in the loss
+      of GroupID data.
 
 8. Click **Next**.
 
-    ![License page](/images/directorymanager/11.0/install/configure/license.webp)
+    ![License page with license number and key fields](/images/directorymanager/11.0/install/configure/license.webp)
 
 9. On the **License** page, enter a valid license number and key in the respective boxes. A valid
    license and key enable the **Next** button. If the **Next** button remains disabled, check your
    entries for errors.
 10. Click **Next**.
 
-    ![Elasticsearch setting page](/images/directorymanager/11.0/install/configure/elasticsearchsettings.webp)
+    ![Elasticsearch Settings page](/images/directorymanager/11.0/install/configure/elasticsearchsettings.webp)
 
-11. GroupID provides the following two options for Elasticsearch configuration. Select the relevant
-    option:
+11. GroupID provides the following two options for Elasticsearch configuration. Select
+    the relevant option:
 
-    - **Let GroupID install and manage Elasticsearch**: If you select this option, GroupID
-      Configuration Tool will install Elasticsearch. It presents you default configuration of
-      Elasticsearch cluster it will create:
+    - **Let GroupID install and manage Elasticsearch**: If you select this option, the GroupID
+      Configuration Tool installs Elasticsearch. It presents the default configuration of
+      the Elasticsearch cluster it creates:
 
         ![Select Elastic Cluster page](/images/directorymanager/11.0/install/configure/selectelasticcluster.webp)
 
-        1. Cluster Name: for Elasticsearch node(s) within the cluster. You can modify the name.
-        2. Port: the default port for Elasticsearch API communication. Modify the port number if the
-           mentioned default port is not available.
-        3. TCP Port: the default port for communication between nodes within the cluster. Modify the
-           port number if the mentioned default port is not available.
+        1. Cluster Name: The name for Elasticsearch nodes within the cluster. You can change the
+           name.
+        2. Port: The default port for Elasticsearch API communication. Change the port number if the
+           default port isn't available.
+        3. TCP Port: The default port for communication between nodes within the cluster. Change the
+           port number if the default port isn't available.
 
-            NOTE: Make sure that the specified ports are available and unblocked.
+            :::note
+            Ensure that the specified ports are available and unblocked.
+            :::
 
     - **I will install and manage Elasticsearch myself**: If you select this option, the following
       page is displayed:
 
-        ![Elasticsearch settings page](/images/directorymanager/11.0/install/configure/elasticsearchsettings-2.webp)
+        ![Elasticsearch settings page for an existing Elasticsearch installation](/images/directorymanager/11.0/install/configure/elasticsearchsettings-2.webp)
 
-        Provide configurations of Elasticsearch you want to use with GroupID:
+        Provide the configuration of the Elasticsearch instance you want to use with GroupID:
 
-        - **Elasticsearch URL**: URL for accessing the Elasticsearch.
-        - **Elasticsearch Username**: service account for Elasticsearch.
-        - **Elasticsearch Password**: password of the Elasticsearch service account.
+        - **Elasticsearch URL**: The URL for accessing Elasticsearch.
+        - **Elasticsearch Username**: The service account for Elasticsearch.
+        - **Elasticsearch Password**: The password of the Elasticsearch service account.
 
 12. Click **Next**.
 
@@ -109,92 +120,103 @@ To configure GroupID server on the machine where the Configuration Tool is bein
 
 13. At this point, GroupID configures the following:
 
-    - **GroupID Data Service**: This is a web-based service that GroupID uses to communicate with
+    - **GroupID Data Service**: A web-based service that GroupID uses to communicate with
       Microsoft SQL Server for storing and fetching data in the database.
-    - **GroupID Security Service**: This is also a web-based service that GroupID uses to:
+    - **GroupID Security Service**: A web-based service that GroupID uses to:
 
-        - Authenticate and authorize users on different GroupID functionalities in accordance with
-          their roles.
-        - Encrypt and decrypt data that GroupID Data Service stores and fetches from the SQL
+        - Authenticate and authorize users on different GroupID functionalities according
+          to their roles.
+        - Encrypt and decrypt data that the Data Service stores in and fetches from the SQL
           database.
 
         To deploy these services, the Configuration Tool creates and configures a new website in IIS
-        with the name GroupIDSite11. By default, it binds this site to any of the available ports.
-        However, if you have a different preference, you can change the port.
+        named `GroupIDSite11`. By default, it binds this site to any of the available ports. If you
+        prefer a different port, click **Advanced Options** and enter the port in the **Port
+        Number** box.
 
-        Click **Advanced Options** and enter the port in **the Port Number** box.
-
-    - **Replication service**: This service replicates object attributes from the provider (such as
-      Active Directory) to Elasticsearch.
-    - **Admin Center**: Admin Center is a web-based application that can be accessed over the
-      Internet and Intranet.
-    - **Email service**: It maintains a queue of all notification requests generated by identity
-      stores, and sends them one by one. This service is deployed for each cluster.
-    - **Scheduler service**: This service initiates schedule runs for scheduled jobs defined in
-      GroupID. GroupID configures this service for each cluster.
+    - **Replication service**: Replicates object attributes from the provider (such as Active
+      Directory) to Elasticsearch.
+    - **Admin Center**: A web-based application that you can access over the Internet and Intranet.
+    - **Email service**: Maintains a queue of all notification requests generated by identity
+      stores, and sends them one by one. GroupID deploys this service for each cluster.
+    - **Scheduler service**: Initiates schedule runs for scheduled jobs defined in GroupID.
+      GroupID configures this service for each cluster.
 
 14. Click **Next**.
 
-    ![Service Account Setting page](/images/directorymanager/11.0/install/configure/serviceaccount.webp)
+    ![Service Account Settings page](/images/directorymanager/11.0/install/configure/serviceaccount.webp)
 
-    NOTE: If you configure a Group Managed Service Account (gMSA) as an App Pool service account
-    then the GroupID Configuration tool will add this account in the local administrators and
-    IIS_IUSRS groups.
+    :::note
+    If you configure a Group Managed Service Account (gMSA) as an App Pool service account, the
+    GroupID Configuration Tool adds this account to the local Administrators and IIS_IUSRS
+    groups.
+    :::
 
-    NOTE: If you configure a normal user account as an App Pool service account and an AD identity
-    store is created with a gMSA service account, then the App Pool service account must have the
-    _PrincipalsAllowedToRetrieveManagedPassword_ property. The App Pool service account also must be
-    a member of Backup Operators and IIS_IUSRS groups.
+    :::note
+    If you configure a normal user account as an App Pool service account and an AD identity store
+    is created with a gMSA service account, the App Pool service account must have the
+    _PrincipalsAllowedToRetrieveManagedPassword_ property. The App Pool service account must also
+    be a member of the Backup Operators and IIS_IUSRS groups.
+    :::
 
-15. GroupID enables you to specify the service accounts to use for the GroupID App Pool and a
-    default Administrative account for GroupID Admin Center.
+15. Specify the service accounts to use for the GroupID App Pool and a default administrative
+    account for GroupID Admin Center.
 
-    | Service               | Service Account Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-    | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | GroupID App Pool      | Use a domain account or a Group Managed Service Account (gMSA). The account must be a member of the Administrators group or both the Backup Operators and IIS_IUSRS groups. The account you specify will be used to manage the GroupID app pool in IIS. GroupID Data Service, Mobile Service, Security Service, and the portals run under the app pool. By default, a local account, GroupIDSSuser, is set for the GroupID app pool, but you cannot proceed unless you change it to a domain account or gMSA. NOTE: You can specify a local account (with local administrator rights) in app pool for a machine that is not joined to any domain (this applies to an Microsoft Entra ID identity store only). |
-    | GroupID Administrator | Use this account as default Administrative account for first time login to GroupID Admin Center. This account is not associated with any identity store, but one that is specific to GroupID. This account works as an Admin of all Admin accounts of defined identity stores in Admin Center.                                                                                                                                                                                                                                                                                                                                                                                                                |
+    | Service | Service Account Description |
+    | --- | --- |
+    | GroupID App Pool | Use a domain account or a Group Managed Service Account (gMSA). The account must be a member of the Administrators group or both the Backup Operators and IIS_IUSRS groups. The account you specify manages the GroupID app pool in IIS. The Data Service, Mobile Service, Security Service, and the portals run under the app pool. By default, a local account, `GroupIDSSuser`, is set for the GroupID app pool, but you can't proceed unless you change it to a domain account or gMSA. You can specify a local account (with local administrator rights) in the app pool for a machine that isn't joined to any domain (this applies to a Microsoft Entra ID identity store only). |
+    | GroupID Administrator | Use this account as the default administrative account for the first sign-in to GroupID Admin Center. This account isn't associated with any identity store. It is specific to GroupID and works as an Admin of all Admin accounts of the identity stores defined in Admin Center. |
 
-    NOTE: For GroupID App Pool, a domain account can be used for a machine joined to a domain.
+    :::note
+    For the GroupID app pool, you can use a domain account for a machine joined to a
+    domain.
+    :::
 
-    NOTE: Before you use a Group Managed Service Account, make sure that:
+    :::note
+    Before you use a Group Managed Service Account, ensure that:
 
     - Key Distribution Service (KDS) is enabled on the GroupID machine.
-    - Microsoft AD module for PowerShell is installed on the machine.
+    - The Microsoft AD module for PowerShell is installed on the machine.
+    :::
 
-16. You can specify a service accounts for the app pool in any of the following ways:
+16. Specify a service account for the app pool in either of the following ways:
 
     - **Use an existing account**: Click **Browse**.
 
-        ![Find Service Account page](/images/directorymanager/11.0/install/configure/findserviceaccount.webp)
+        ![Find Service Account dialog box](/images/directorymanager/11.0/install/configure/findserviceaccount.webp)
 
-        On the **Find Service Account** dialog box, search and select the required account and click
-        **OK**.
+        On the **Find Service Account** dialog box, search for and select the required account and
+        click **OK**.
 
-    - **Create a new service account**: Click the **Create New** button on the Service Account
-      Setting page.
+    - **Create a new service account**: Click **Create New** on the **Service Account Settings**
+      page.
 
-        ![Create a new service account page](/images/directorymanager/11.0/install/configure/createserviceaccount.webp)
+        ![Create Service Account dialog box](/images/directorymanager/11.0/install/configure/createserviceaccount.webp)
 
         On the **Create Service Account** dialog box, select the kind of account you want to create.
-        Enter a name, container and password for the account. Click **Create**.
+        Enter a name, container, and password for the account. Click **Create**.
 
-        NOTE: The logged-in user must have appropriate rights to create a new account.
+        :::note
+        The signed-in user must have the appropriate rights to create a new account.
+        :::
 
-        NOTE: If Key Distribution Service (KDS) is not configured in the environment, a warning will
-        be displayed that you cannot use a Group Managed Service Account.
+        :::note
+        If Key Distribution Service (KDS) isn't configured in the environment, a warning is
+        displayed that you can't use a Group Managed Service Account.
+        :::
 
-17. Provide password for the App Pool service account (except for a Group Managed Service Account)
-    in the Password box.
-18. Provide password for the GroupID Administrator account in the **Password** box.
+17. In the **Password** box, provide the password for the App Pool service account (except for a
+    Group Managed Service Account).
+18. In the **Password** box, provide the password for the GroupID Administrator account.
 19. Click **Configure**.
 
-    ![Configuring GroupID page](/images/directorymanager/11.0/install/configure/configuring.webp)
+    ![Configuring GroupID progress page](/images/directorymanager/11.0/install/configure/configuring.webp)
 
-    **We are configuring GroupID** page displays the progress while a GroupID server is configured
-    on the machine. On successful configuration, the **GroupID is successfully configured** page
-    opens.
+    The **We are configuring GroupID** page displays the progress while GroupID configures
+    the server on the machine. On successful configuration, the **GroupID is successfully
+    configured** page opens.
 
-    ![GroupID successfully configured page](/images/directorymanager/11.0/install/configure/configuresuccess.webp)
+    ![GroupID configured successfully page](/images/directorymanager/11.0/install/configure/configuresuccess.webp)
 
 20. GroupID is configured on your machine.
 
@@ -202,14 +224,12 @@ To configure GroupID server on the machine where the Configuration Tool is bein
 
     ![GroupID Sign In page](/images/directorymanager/11.0/install/configure/launchgid.webp)
 
-    To login in to GroupID Admin Center for the first time, provide GroupID Administrator user name
-    and password.
+    To sign in to GroupID Admin Center for the first time, provide the GroupID
+    Administrator user name and password.
 
-    or
-
-    click **Next** to launch the Upgrade wizard for upgrading GroupID
+    Alternatively, click **Next** to launch the Upgrade wizard for upgrading GroupID.
 
 See Also
 
-- [Installation Tool](/docs/directorymanager/11.0/about/installer/install.md)
-- [Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)
+- [Install GroupID](/docs/directorymanager/11.0/about/installer/install.md)
+- [Run the GroupID Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)

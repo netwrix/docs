@@ -1,13 +1,19 @@
 ---
-title: "Create an Entra ID Smart Group"
-description: "Create an Entra ID Smart Group"
+title: "Create an Entra ID Smart Group with the Directory Manager API"
+description: "Create a security, distribution, Microsoft Office, or Teams Smart Group in a Microsoft Entra ID identity store by sending a POST request."
+keywords:
+  - Directory Manager API
+  - Entra ID Smart Group
+  - DynamicGroup endpoint
+  - Microsoft Entra ID identity store
+  - Smart Group types
 sidebar_position: 40
+unlisted: true
 ---
 
-# Create an Entra ID Smart Group
+# Create an Entra ID Smart Group with the Directory Manager API
 
-Using this API you can create a Smart Group or a dynamic group in a Microsoft Entra ID identity
-store. The following table lists the types of Smart Groups you can create using this API.
+Use this API to create a Smart Group or a dynamic group in a Microsoft Entra ID identity store. The following table lists the types of Smart Groups you can create using this API.
 
 | Group Type             | Value |
 | ---------------------- | ----- |
@@ -27,7 +33,7 @@ value in the Value attribute of the GroupType parameter.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -266,7 +272,7 @@ value in the Value attribute of the GroupType parameter.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

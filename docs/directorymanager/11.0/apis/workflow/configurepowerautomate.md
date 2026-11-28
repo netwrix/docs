@@ -1,13 +1,20 @@
 ---
-title: "Configure Power Automate"
-description: "Configure Power Automate"
+title: "Connect GroupID to Power Automate"
+description: "Use this POST endpoint to link a GroupID identity store to Microsoft Power Automate so workflows can trigger flows."
+keywords:
+  - Power Automate
+  - Microsoft Flow settings
+  - msFlowID
+  - workflow integration API
+  - Power Automate tenant ID
 sidebar_position: 30
+unlisted: true
 ---
 
-# Configure Power Automate
+# Connect GroupID to Power Automate
 
-You can link an identity store in GroupID to Power Automate to trigger a flow from GroupID. Use this
-API to connect an identity tore to Power Automate.
+You can link an identity store in GroupID to Power Automate to trigger a flow from
+GroupID. Use this API to connect an identity store to Power Automate.
 
 ## Endpoint
 
@@ -17,7 +24,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 POST
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -32,7 +39,7 @@ POST
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -49,5 +56,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

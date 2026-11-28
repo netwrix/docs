@@ -1,6 +1,11 @@
 ---
 title: "Get-Contact"
-description: "Get-Contact"
+description: "Retrieves basic information about a contact from an identity store, filtered by identity, container, or LDAP filter."
+keywords:
+  - Get-Contact
+  - Management Shell
+  - retrieve contact
+  - contact cmdlet
 sidebar_position: 10
 ---
 
@@ -14,13 +19,12 @@ Use the Get-Contact cmdlet to retrieve basic information about a contact.
 Get-Contact
 [[-Identity] <string[]>]
 [-SearchContainer <string[]>]
-[-SearchContainersScopeList <string>]
+[-SearchContainersScopeList <string[]>]
 [-ShouldReturnCollection]
 [-MaxItemsToDisplay <int>]
-[-ObjectType <string[]>]
 [-LdapFilter <string>]
-[-SmartFilter <string>]
 [-ServerFilter <string>]
+[-Resolved]
 [-AttributesToLoad <string[]>]
 [-IdentityStoreId <int>]
 [-SecurityToken <CustomClaimsPrincipal>]
@@ -32,10 +36,10 @@ Get-Contact
 
 - None
 
-Example:
+## Example
 
-The following command retrieves a contact from the specified container of the identity store.
+This command retrieves a contact from the specified container of the identity store.
 
 ```
-Get-Contact -SearchContainer "OU=osamamu,DC=naveed,DC=local"
+Get-Contact -SearchContainer "OU=SalesOU,DC=example,DC=com"
 ```

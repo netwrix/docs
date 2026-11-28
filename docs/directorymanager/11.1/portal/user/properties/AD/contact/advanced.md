@@ -1,18 +1,22 @@
 ---
-title: "Advanced tab"
-description: "Contact properties - Advanced tab"
+title: "Contact Properties Advanced Tab in Directory Manager"
+description: "Set a contact's home page URL, employee type, employee ID, and administrator notes on the Advanced tab."
+keywords:
+  - contact properties
+  - Advanced tab
+  - home page URL
+  - employee ID
+  - admin notes
 sidebar_position: 10
 ---
 
-# Advanced tab
+# Contact Properties Advanced Tab in Directory Manager
 
 Use this tab to specify advanced settings for a contact.
 
 **Home Page**
 
-The URL of the contact's website.
-
-Use the **Add** and **Remove** buttons to add and remove the URL.
+The URL of the contact's website. Use the **Add** and **Remove** buttons to add and remove the URL.
 
 **Emp Type**
 

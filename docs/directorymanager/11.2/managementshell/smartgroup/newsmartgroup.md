@@ -1,24 +1,25 @@
 ---
-title: "New-SmartGroup"
-description: "New-SmartGroup"
+title: "New-SmartGroup Cmdlet"
+description: "Create a Smart Group or Password Expiry group in Directory Manager whose membership is maintained dynamically by an LDAP query."
+keywords:
+  - New-SmartGroup
+  - create Smart Group
+  - Password Expiry group
+  - LDAP query membership
+  - Directory Manager cmdlet
+  - Management Shell
 sidebar_position: 30
 ---
 
-# New-SmartGroup
+# New-SmartGroup Cmdlet
 
-This commandlet helps you to create a new Smart Group (managed group) in Directory. A Smart Group is
-a conventional distribution or security group that dynamically maintains its membership based on the
-rules applied by a user-defined LDAP query.
+Use this cmdlet to create a Smart Group (managed group) in the directory. A Smart Group is a conventional distribution or security group. Its membership is maintained dynamically by the rules of a user-defined LDAP query.
 
-A Smart Group can also be defined as a Password Expiry group. A Password Expiry group is a dynamic
-group whose membership is based on password policy conditions defined by the administrator. The LDAP
-query defined for a Smart Group can be updated any time using the [Set-SmartGroup](/docs/directorymanager/11.2/managementshell/smartgroup/setsmartgroup.md)
-commandlet. When the LDAP query is changed, you must update the group once to modify its membership
-according to the changes made to the query. For information about updating a group, see
-[Update-Group](/docs/directorymanager/11.2/managementshell/smartgroup/updategroup.md).
+A Smart Group can also be a Password Expiry group. A Password Expiry group is a dynamic group whose membership is based on password policy conditions that the administrator defines.
 
-You can view events related to this commandlet in Directory Manager portal, against the History node
-in the left panel.
+You can update the LDAP query of a Smart Group at any time with the [Set-SmartGroup Cmdlet](/docs/directorymanager/11.2/managementshell/smartgroup/setsmartgroup.md) cmdlet. After you change the LDAP query, update the group once to modify its membership according to the changes. For information about updating a group, see [Update-Group Cmdlet](/docs/directorymanager/11.2/managementshell/smartgroup/updategroup.md).
+
+You can view events related to this cmdlet in the Directory Manager portal, under the History node in the left panel.
 
 ## Syntax
 
@@ -37,12 +38,11 @@ New-SmartGroup
 [-IncludeRecipients <string[]>]
 [-ExcludeRecipients <string[]>]
 [-Storage <string>]
-[-DataSourceType <string>]
+[-DataSourceId <string>]
 [-SystemDSN <string>]
 [-TableorView <string>]
 [-DataSourceUserName <string>]
 [-DataSourcePassword <string>]
-[-FilePath <string>]
 [-Server <string>]
 [-Port <int>]
 [-LDAPSearchContainer <string>]
@@ -52,11 +52,13 @@ New-SmartGroup
 [-KeyMapDB <string>]
 [-KeyMapAD <string>]
 [-WindowsAthentication]
+[-WindowsAuthentication]
 [-IsPasswordExpiryGroup]
 [-DomainExpiration <int>]
 [-ExpirationRange <int>]
 [-IncludeDisabledUsers <string>]
 [-IncludePasswordNeverExpireUsers <string>]
+[-SendPasswordExpiryEmail <string>]
 [-Script <string>]
 [-ScriptFilePath <string>]
 [-Sun_Container <string>]
@@ -67,14 +69,13 @@ New-SmartGroup
 [-Description <string>]
 [-AdditionalOwners <string[]>]
 [-NotifyOptOutAdditionalOwners <string[]>]
-[-Members <string[]>]
 [-IdentityStoreId <int>]
 [-SecurityToken <CustomClaimsPrincipal>]
 [-Credential <pscredential>]
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - SamAccountName
 - Name
@@ -83,40 +84,32 @@ New-SmartGroup
 - Type
 - SecurityType
 
-Example 1:
+## Examples
 
-The following command creates a new mail-enabled, universal, distribution Smart Group in the
-container specified by the **OrganizationalUnit** parameter, using the credentials of current user
-logged-on to the identity store.
+### Example 1
+
+This command creates a mail-enabled, universal, distribution Smart Group in the container in the **OrganizationalUnit** parameter. It uses the credentials of the current user logged on to the identity store.
 
 ```
-New-SmartGroup  -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Smart_Training" -GroupAlias "Smart_Training" -MailEnable True -SamAccountName "Smart_Training" -GroupScope "Universal Group" -Type "Distribution"
+New-SmartGroup  -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Smart_Training" -GroupAlias "Smart_Training" -MailEnabled True -SamAccountName "Smart_Training" -GroupScope "Universal Group" -Type "Distribution" -SecurityType "Public"
 ```
 
 :::note
-In Microsoft Exchange 2007 and later, mail-enabled groups are created with _Universal Group
-Scope_.
+In Microsoft Exchange 2007 and later, mail-enabled groups are created with _Universal Group Scope_.
 :::
 
+### Example 2
 
-Example 2:
-
-The following command creates a new universal, distribution Smart Group in the container specified
-by the **OrganizationalUnit** parameter and builds its membership by retrieving those objects from
-the containers specified in the **SearchContainers** parameter excluding sub-containers that have
-**Display Names** matching the Names in a text file.
+This command creates a universal, distribution Smart Group in the container in the **OrganizationalUnit** parameter. It builds the membership from users in the containers in the **SearchContainers** parameter whose department is Training. The value 1 in the **SearchContainersScopeList** parameter excludes the sub-containers of each container.
 
 ```
-New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name "Smart_Enrollment" -SamAccountName "Smart_Enrollment" -GroupScope "Universal Group" -Type "Distribution" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US" -SearchContainersScopeList "1","1" -LdapFilter "(displayName=Database.[Name])" -DataSourceType "Microsoft Text Driver (*.txt,*.csv)" -FilePath "D:\Inputs\Names.txt" -DataSourceQuery "SELECT [Name] FROM [Names.txt]"
+New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name "Smart_Enrollment" -SamAccountName "Smart_Enrollment" -GroupScope "Universal Group" -Type "Distribution" -SecurityType "Public" -SearchContainers "OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US" -SearchContainersScopeList "1","1" -ObjectTypes "Users" -LdapFilter "(department=Training)"
 ```
 
-Example 3:
+### Example 3
 
-The following command creates a new local, distribution, Password Expiry group, using the
-credentials set in the **$Credential**s environment variable. Those users will be members of the
-group who have passwords aged 20 days or older. Disabled users will also be included in the
-membership.
+This command creates a local, distribution, Password Expiry group. It uses the credentials in the **$Credentials** environment variable. Users whose passwords are 20 days old or older become members of the group. Disabled users are also included in the membership. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter.
 
 ```
-New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name "Password_Expiry" -GroupAlias "Password_Expiry" -SamAccountName "Password_Expiry" -GroupScope "Domain Local" -Type "Distribution" -IsPasswordExpiryGroup -DomainExpiration 30 -ExpirationRange 10 -IncludeDisabledUsers True -Credential $Cred
+New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name "Password_Expiry" -GroupAlias "Password_Expiry" -SamAccountName "Password_Expiry" -GroupScope "Domain Local" -Type "Distribution" -SecurityType "Public" -IsPasswordExpiryGroup -DomainExpiration 30 -ExpirationRange 10 -IncludeDisabledUsers True -IdentityStoreId 2 -Credential $Credentials
 ```

@@ -1,13 +1,19 @@
 ---
-title: "Get Filenames by Type"
-description: "Get Filenames by Type"
+title: "Get File Names by Data Source Type API"
+description: "List source file names on local servers or in the cloud for a data source type, such as Excel files stored in OneDrive."
+keywords:
+  - data source file names API
+  - GetFilesNameByType endpoint
+  - OneDrive Excel data source
+  - Excel file names OneDrive
 sidebar_position: 80
+unlisted: true
 ---
 
-# Get Filenames by Type
+# Get File Names by Data Source Type API
 
-Use this API to get source file names residing on local servers or in cloud for a specific type
-of data sources. For example, retrieve file names for Excel data sources stored in OneDrive.
+Use this API to get source file names residing on local servers or in the cloud for a specific type
+of data source. For example, retrieve file names for Excel data sources stored in OneDrive.
 
 ## Endpoint
 
@@ -17,7 +23,7 @@ of data sources. For example, retrieve file names for Excel data sources stored 
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -32,7 +38,7 @@ of data sources. For example, retrieve file names for Excel data sources stored 
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [

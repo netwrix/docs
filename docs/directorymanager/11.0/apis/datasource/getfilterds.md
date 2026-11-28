@@ -1,15 +1,18 @@
 ---
-title: "Get Filtered Data Sources by isSource"
-description: "Get Filtered Data Sources by isSource"
+title: "Get Filtered Data Sources API"
+description: "List the data sources your role policy allows, or all data sources, by setting the isSource parameter on the GroupID data service."
+keywords:
+  - filtered data sources API
+  - isSource parameter
+  - role policy data sources
+  - GetFilteredDataSources endpoint
 sidebar_position: 90
+unlisted: true
 ---
 
-# Get Filtered Data Sources by isSource
+# Get Filtered Data Sources API
 
-This API is for getting information of data sources filtered on the basis of your role policy if
-value of isSource is true in the end point URL.
-
-Filtered based on role policy, if isSource true then it ll filter otherwise it ll not
+Use this API to get information about data sources filtered by your role policy. If the isSource parameter in the URL is true, the API filters the results; otherwise, it returns all data sources.
 
 ## Endpoint
 
@@ -19,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/GetFilteredDataSource
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -90,5 +93,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)

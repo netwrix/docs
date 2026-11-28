@@ -1,10 +1,16 @@
 ---
-title: "Update a User"
-description: "Update a User"
+title: "Update a User with the GroupID API"
+description: "Update the attributes of a user in an identity store with a PATCH request."
+keywords:
+  - GroupID API
+  - update user
+  - PATCH Users endpoint
+  - AttributesToUpdate
 sidebar_position: 160
+unlisted: true
 ---
 
-# Update a User
+# Update a User with the GroupID API
 
 This API updates a user's information in the specified identity store.
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 PATCH
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -35,7 +41,7 @@ PATCH
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -69,5 +75,5 @@ PATCH
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

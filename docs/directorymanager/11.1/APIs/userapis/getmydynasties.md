@@ -1,10 +1,16 @@
 ---
-title: "Get My Dynasties"
-description: "Get My Dynasties"
+title: "Get My Dynasties with the Directory Manager API"
+description: "Retrieve the dynasties of the authenticated user from an identity store, with paging and sorting options."
+keywords:
+  - Directory Manager API
+  - get dynasties
+  - GET Groups Dynasties endpoint
+  - dynasty groups
 sidebar_position: 60
+unlisted: true
 ---
 
-# Get My Dynasties
+# Get My Dynasties with the Directory Manager API
 
 Use this API to retrieve the dynasties of the authenticated user.
 
@@ -16,7 +22,7 @@ Use this API to retrieve the dynasties of the authenticated user.
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -26,7 +32,7 @@ Use this API to retrieve the dynasties of the authenticated user.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

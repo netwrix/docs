@@ -1,20 +1,22 @@
 ---
 title: "Clear-MessagingServer"
-description: "Clear-MessagingServer"
+description: "Remove the configured messaging server, and related notification and SMTP settings, from an identity store with the Clear-MessagingServer cmdlet."
+keywords:
+  - Clear-MessagingServer
+  - messaging server
+  - SMTP settings
+  - identity store
+  - Directory Manager PowerShell
 sidebar_position: 10
 ---
 
 # Clear-MessagingServer
 
-The commandlet Clear-MessagingServer removes the configured messaging server from the specified
-identity store.
+The `Clear-MessagingServer` cmdlet removes the configured messaging server from the specified identity store.
 
 :::note
-This cmdlet will also clear the SMTP settings, notification settings, password expiry
-settings, membership lifecycle notification settings, and managed by notification settings for the
-identity store.
+This cmdlet also clears the SMTP settings, notification settings, password expiry settings, membership lifecycle notification settings, and managed by notification settings for the identity store.
 :::
-
 
 ## Syntax
 
@@ -24,13 +26,15 @@ Clear-MessagingServer
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameters
 
 - IdentityStoreName
 
-Example 1:
+## Examples
 
-This example clears configured messaging server for AdStore8 identity store.
+### Example 1
+
+This example clears the configured messaging server for the AdStore8 identity store.
 
 ```
 Clear-MessagingServer -IdentityStoreName AdStore8

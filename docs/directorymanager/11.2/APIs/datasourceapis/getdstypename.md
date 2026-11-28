@@ -1,12 +1,18 @@
 ---
-title: "Get a Data Source by Enter and Name"
-description: "Get a Data Source by Enter and Name"
+title: "Get a Data Source by Type and Name API"
+description: "Retrieve a data source of a specific type, such as Text/CSV, by its name through the Directory Manager data service."
+keywords:
+  - get data source by type and name
+  - data source type filter
+  - data source name lookup
+  - DataSource Get endpoint
 sidebar_position: 40
+unlisted: true
 ---
 
-# Get a Data Source by Enter and Name
+# Get a Data Source by Type and Name API
 
-Using this API you can retrieve information of specific type data source, let's say a Text/CSV based
+Use this API to retrieve information about a data source of a specific type, for example a Text/CSV
 data source, with a specific name.
 
 ## Endpoint
@@ -17,7 +23,7 @@ data source, with a specific name.
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

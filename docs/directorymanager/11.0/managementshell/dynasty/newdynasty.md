@@ -1,23 +1,28 @@
 ---
-title: "New-Dynasty"
-description: "New-Dynasty"
+title: "New-Dynasty Cmdlet in GroupID"
+description: "Create a Dynasty that builds and maintains child Smart Groups from group-by field values by using the New-Dynasty cmdlet."
+keywords:
+  - New-Dynasty
+  - create Dynasty
+  - Smart Group
+  - GroupID Management Shell
 sidebar_position: 10
 ---
 
-# New-Dynasty
+# New-Dynasty Cmdlet in GroupID
 
-The **New-Dynasty** cmdlet creates a new Dynasty in Directory. A Dynasty is a Smart Group that can
-create and maintain the membership of other Smart Groups. A Dynasty retrieves data from Directory in
+The **New-Dynasty** cmdlet creates a Dynasty in the directory. A Dynasty is a Smart Group that can
+create and maintain the membership of other Smart Groups. A Dynasty retrieves data from the directory in
 the same manner as a Smart Group, but it divides the result set into child groups based on group-by
 field values.
 
 You can specify multiple group-by fields. For instance, with the group-by fields Country, State, and
-City, this commandlet creates a group for every distinct country value, then for each state within a
-country, and finally for each city in that state. All created child groups inherit those attributes
+City, this cmdlet creates a group for every distinct country value, then for each state within a
+country, and finally for each city in that state. All created child groups inherit the attributes
 of the parent that are set in the **InheritedAttrs** option.
 
-You can view events related to this commandlet in GroupID portal, against the **History** node in
-the left panel.
+You can view events related to this cmdlet in the GroupID portal, under the **History** node in
+the left pane.
 
 ## Syntax
 
@@ -96,7 +101,7 @@ Example 1:
 
 The following command creates a new mail-enabled, universal, distribution Dynasty and constructs its
 child groups for every distinct department value in the container specified by the
-**OrganizationalUnit** parameter using the credentials of current user logged-on to the identity
+**OrganizationalUnit** parameter using the credentials of the current user signed in to the identity
 store.
 
 ```
@@ -106,10 +111,10 @@ New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "De
 Example 2:
 
 The following command creates a new mail-enabled, universal, distribution, multi-level Dynasty with
-the group-by attributes **Country, State** and **City** based on the specified filters and
-separator, using the credentials set in the **$Credentials** environment variable. See the
-[Set the $Credentials Environment Variable](/docs/directorymanager/11.0/managementshell/setthecredential.md)
-topic for setting credentials in an environment variable.
+the group-by attributes **Country**, **State**, and **City** based on the specified filters and
+separator, using the credentials set in the **$Credentials** environment variable. See
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.0/managementshell/setthecredential.md)
+for setting credentials in an environment variable.
 
 ```
 New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Geographical" -GroupAlias "Geographical" -MailEnable True -SamAccountName "Geographical" -GroupScope "Universal Group" -Type "Distribution" -GroupBy "co","st","l" -Filters "Left 3","Left 3","%GROUPBY%\*" -Separator "_","_","_" -Credential $Cred
@@ -119,7 +124,7 @@ Example 3:
 
 The following command creates a new universal, distribution Managerial Dynasty in the container
 specified by the **OrganizationalUnit** parameter, searches the direct reports of the top manager in
-the containers specified in the **SearchContainers** parameter including sub containers and creates
+the containers specified in the **SearchContainers** parameter, including subcontainers, and creates
 them in the same container where the Top Manager resides.
 
 ```
@@ -128,6 +133,6 @@ New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Ma
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Dynasty Commands](/docs/directorymanager/11.0/managementshell/dynasty/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Dynasty Cmdlets](/docs/directorymanager/11.0/managementshell/dynasty/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

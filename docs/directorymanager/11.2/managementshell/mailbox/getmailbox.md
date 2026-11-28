@@ -1,13 +1,17 @@
 ---
-title: "Get-Mailbox"
-description: "Get-Mailbox"
+title: "Get-Mailbox Cmdlet in Directory Manager"
+description: "Retrieve basic information about mailboxes in an identity store that match your criteria with the Get-Mailbox cmdlet."
+keywords:
+  - Get-Mailbox
+  - retrieve mailbox
+  - mailbox information
+  - PowerShell cmdlet
 sidebar_position: 10
 ---
 
-# Get-Mailbox
+# Get-Mailbox Cmdlet in Directory Manager
 
-Use the Get-Mailbox commandlet to retrieve basic information about a mailbox that match your given
-criteria.
+Use the Get-Mailbox cmdlet to retrieve basic information about mailboxes that match your criteria.
 
 ## Syntax
 
@@ -15,13 +19,12 @@ criteria.
 Get-MailBox
 [[-Identity] <string[]>]
 [-SearchContainer <string[]>]
-[-SearchContainersScopeList <string>]
+[-SearchContainersScopeList <string[]>]
 [-MailBoxStore <string>]
 [-ShouldReturnCollection]
+[-Resolved]
 [-MaxItemsToDisplay <int>]
-[-ObjectType <string[]>]
 [-LdapFilter <string>]
-[-SmartFilter <string>]
 [-ServerFilter <string>]
 [-AttributesToLoad <string[]>]
 [-IdentityStoreId <int>]
@@ -30,20 +33,26 @@ Get-MailBox
 [<CommonParameters>]
 ```
 
-## Required Parameter
+**Identity** accepts the name, logon name (sAMAccountName), domain and logon name (`DOMAIN\name`), distinguished name, GUID, or SID of the mailbox user.
+
+For **SearchContainersScopeList**, enter one value to apply to all **SearchContainer** values, or one value for each container in the same order. Enter `1` to search only that container, or `2` to also search its sub-containers. The default is `2`.
+
+For **MailBoxStore**, enter the distinguished name of the mailbox database, which is the user's `homeMDB` value.
+
+## Required parameters
 
 - None
 
-Example:
+## Example
 
-The following command retrieves the specified mailbox from the connected identity store.
+This command retrieves the specified mailbox from the connected identity store.
 
 ```
-Get-MailBox -Identity "OsamaMailBox"
+Get-MailBox -Identity "SampleMailBox"
 ```
 
 **See Also**
 
-- [All Commands](/docs/directorymanager/11.2/managementshell/commands.md)
-- [Mailbox Commands](/docs/directorymanager/11.2/managementshell/mailbox/overview.md)
-- [Parameters](/docs/directorymanager/11.2/managementshell/parameters.md)
+- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.2/managementshell/commands.md)
+- [Mailbox Cmdlets in Directory Manager](/docs/directorymanager/11.2/managementshell/mailbox/overview.md)
+- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.2/managementshell/parameters.md)

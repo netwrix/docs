@@ -1,22 +1,24 @@
 ---
-title: "Invoke-Schedule"
-description: "Invoke-Schedule"
+title: "Invoke-Schedule Cmdlet in Directory Manager"
+description: "Use the Invoke-Schedule cmdlet to run a scheduled job immediately, by schedule name, without waiting for its trigger."
+keywords:
+  - Invoke-Schedule
+  - run scheduled job
+  - GUS job
+  - Management Shell cmdlet
 sidebar_position: 30
 ---
 
-# Invoke-Schedule
+# Invoke-Schedule Cmdlet in Directory Manager
 
-The commandlet Invoke-Schedule executes the specified schedule job.
+The Invoke-Schedule cmdlet runs the specified scheduled job.
 
 ## Syntax
 
 ```
 Invoke-Schedule
-[-ScheduleName <String>]
-[-JobId <Int32>]
-[-PassThru]
-[-IdentityStoreId <Int32>]
-[-SecurityToken <CustomClaimsPrincipal>]
+-ScheduleName <String>
+[-Credentials <PSCredential>]
 [-WarningAction <ActionPreference>]
 [-InformationAction <ActionPreference>]
 [-WarningVariable <String>]
@@ -25,29 +27,31 @@ Invoke-Schedule
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameters
 
-- None
+- ScheduleName
 
-Example 1:
+## Examples
 
-This example executes a schedule with name starting smm4\_.
+### Example 1
+
+This example runs the schedule named smm4\_.
 
 ```
 Invoke-Schedule -ScheduleName smm4_
 ```
 
-Example 2:
+### Example 2
 
-This example executes a schedule with GUS as Job Type.
+This example runs the schedules that have GUS as the job type.
 
 ```
 Get-Schedule -JobType GUS | Select-Object -Property Name | Invoke-Schedule
 ```
 
-Example 3:
+### Example 3
 
-This example executes all the GUS scheduled jobs with daily running trigger.
+This example runs all the GUS scheduled jobs that have a daily trigger.
 
 ```
 Get-Schedule -JobType GUS -TriggerType RunDaily -MatchingCriteria And | Select-Object -Property Name | Invoke-Schedule

@@ -1,12 +1,18 @@
 ---
-title: "Get-SmartGroup"
-description: "Get-SmartGroup"
+title: "Get-SmartGroup Cmdlet"
+description: "Retrieve the Smart Groups and Dynasties that match your criteria in one or more containers of a domain in GroupID."
+keywords:
+  - Get-SmartGroup
+  - retrieve Smart Groups
+  - list Dynasties
+  - GroupID cmdlet
+  - Management Shell
 sidebar_position: 20
 ---
 
-# Get-SmartGroup
+# Get-SmartGroup Cmdlet
 
-Use this commandlet to retrieve Smart Groups and Dynasties that match your given criteria in one or
+Use this cmdlet to retrieve Smart Groups and Dynasties that match your given criteria in one or
 more containers in a domain.
 
 ## Syntax
@@ -39,8 +45,8 @@ Get-SmartGroup
 Example 1:
 
 The following command retrieves only Smart Groups (not Dynasties) in the base container specified by
-the **SearchContainer** parameter including sub-containers, using the credentials of current user
-logged-on to the identity store.
+the **SearchContainer** parameter including sub-containers, using the credentials of the current user
+logged on to the identity store.
 
 ```
 Get-SmartGroup -SmartGroupType "SmartGroup" -SearchContainer "OU=Recuriting,DC=HR,DC=Imanami,DC=US"
@@ -60,6 +66,6 @@ Get-SmartGroup -SearchContainer "OU=Recuriting,DC=HR,DC=Imanami,DC=US","OU=OutSo
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Smart Group Commands](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Smart Group Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

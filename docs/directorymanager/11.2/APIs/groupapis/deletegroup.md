@@ -1,10 +1,16 @@
 ---
-title: "Delete a Group"
-description: "Delete a Group"
+title: "Delete a Group with the Directory Manager API"
+description: "Use the Delete Group API to remove a single group from an identity store by its identity, with the endpoint, HTTP method, and sample response."
+keywords:
+  - Directory Manager API
+  - delete group API
+  - DELETE group
+  - identity store group
 sidebar_position: 50
+unlisted: true
 ---
 
-# Delete a Group
+# Delete a Group with the Directory Manager API
 
 Use this API to delete a group from an identity store.
 
@@ -16,7 +22,7 @@ Use this API to delete a group from an identity store.
 
 **DELETE**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

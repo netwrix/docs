@@ -1,24 +1,34 @@
 ---
-title: "Request Inbox"
-description: "Request Inbox"
+title: "Manage Your Request Inbox in Directory Manager"
+description: "Use the Request Inbox in the Directory Manager portal to view the workflow requests waiting for your approval and approve or deny them."
+keywords:
+  - Request Inbox
+  - workflow approver
+  - pending approval
+  - approve or deny requests
 sidebar_position: 30
 ---
 
-# Request Inbox
+# Manage Your Request Inbox in Directory Manager
 
-Using the Directory Managerportal, designated approvers can view the workflow requests and approve
-or deny them accordingly. On the left navigation bar, click **Requests**. Then click the **Request
-Inbox** to view the workflow requests that are waiting for approval. You can also view the request
-count next to the **Request Inbox** label.
+Designated approvers use the Directory Manager portal to view workflow requests and approve or deny them.
 
-By default, the page displays pending requests that were initiated today. You can also view
-processed (approved or denied) requests. Use add filters to filter the requests list as required.
+## View requests
 
-For each request, you can view the description, approvers, requester name, the target to change,
-status of the request, creation date, and the reason why that request was denied. Expand a request
-to view more details, such as the field changed along with its old and new value.
+To view the requests that are waiting for approval:
 
-You can perform the following functions on **Requests Inbox** page:
+1. On the left navigation bar, click **Requests**.
+2. Click **Request Inbox**.
+
+The request count appears next to the **Request Inbox** label.
+
+By default, the page displays pending requests that were initiated today. You can also view processed (approved or denied) requests. Use filters to narrow the list of requests as needed.
+
+For each request, you can view the description, approvers, requester name, the target to change, status of the request, creation date, and the reason the request was denied. Expand a request to view more details, such as the field changed along with its old and new values.
+
+## Manage requests
+
+You can perform the following functions on the **Request Inbox** page:
 
 - [Approve a request](allrequest.md#approve-a-request).
 - [Deny a request](allrequest.md#deny-a-request).

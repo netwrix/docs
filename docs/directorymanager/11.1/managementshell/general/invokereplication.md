@@ -1,13 +1,18 @@
 ---
-title: "Invoke-Replication"
-description: "Invoke-Replication"
+title: "Invoke-Replication cmdlet"
+description: "Use the Invoke-Replication cmdlet to start replication for all identity stores or one identity store, including deleted objects or a restore."
+keywords:
+  - Invoke-Replication
+  - start replication
+  - restore replication
+  - Management Shell
+  - identity store
 sidebar_position: 70
 ---
 
-# Invoke-Replication
+# Invoke-Replication cmdlet
 
-The Invoke-Replication commandlet starts replication process for all the identity stores or a
-specific identity store.
+The `Invoke-Replication` cmdlet starts the replication process for all the identity stores or a specific identity store.
 
 ## Syntax
 
@@ -21,29 +26,31 @@ Invoke-Replication
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameters
 
 - None
 
-Example 1:
+## Examples
 
-The following command replicate identity store with ID 1.
+### Example 1
+
+The following command replicates the identity store with ID 1.
 
 ```
 Invoke-Replication -IdentitystoreId 1
 ```
 
-Example 2:
+### Example 2
 
-The following command replicate deleted objects for identity store with ID 1.
+The following command replicates deleted objects for the identity store with ID 1.
 
 ```
 Invoke-Replication -IdentitystoreId 1 -DeletedObjects
 ```
 
-Example 3:
+### Example 3
 
-The following command will start restoration of replication for identity store with ID 1.
+The following command starts restoration of replication for the identity store with ID 1.
 
 ```
 Invoke-Replication -IdentitystoreId 1 -RestoreReplication

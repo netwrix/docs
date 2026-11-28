@@ -1,12 +1,19 @@
 ---
-title: "New-Schedule"
-description: "New-Schedule"
+title: "New-Schedule Cmdlet for GroupID"
+description: "Create a schedule in the connected identity store with the New-Schedule cmdlet, including its targets, job type, trigger, and notification settings."
+keywords:
+  - New-Schedule
+  - Management Shell
+  - schedule creation
+  - smart group job
+  - GUS job
+  - schedule notifications
 sidebar_position: 40
 ---
 
-# New-Schedule
+# New-Schedule Cmdlet for GroupID
 
-The commandlet **New-Schedule** creates a new schedule in the identity store connected to the
+The **New-Schedule** cmdlet creates a new schedule in the identity store connected to the
 current instance of Management Shell.
 
 ## Syntax
@@ -51,25 +58,27 @@ New-Schedule
 
 Example 1:
 
-This example creates a new schedule using minimum possible parameters. This example contains
-insecure password.
+This example creates a new schedule using the minimum possible parameters. This example contains
+an insecure password.
 
 ```
-New-Schedule -ScheduleName SmuTest1 -IdentityStoreName AdStore8 -UserName user -Password password1 -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local', 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType SmartGroup -TriggerType Daily -StartTime '16:56'
+New-Schedule -ScheduleName SmuTest1 -IdentityStoreName AdStore8 -UserName user -Password password1 -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com', 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType SmartGroup -TriggerType Daily -StartTime '16:56'
 ```
 
-NOTE: This example uses insecure credentials.
+:::note
+This example uses insecure credentials.
+:::
 
 Example 2:
 
-This example creates a smart-group schedule triggering every 7th of every March, August and
+This example creates a smart group schedule that triggers on the 7th of every March, August, and
 September.
 
 ```
-New-Schedule -ScheduleName SmuTest2 -IdentityStoreName AdStore8 -Credentials $creds -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType SmartGroup -TriggerType Monthly -StartTime '16:56' -YearMonths 'March','August','September' -MonthDate 7
+New-Schedule -ScheduleName SmuTest2 -IdentityStoreName AdStore8 -Credentials $creds -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType SmartGroup -TriggerType Monthly -StartTime '16:56' -YearMonths 'March','August','September' -MonthDate 7
 ```
 
-To use secure credentials, first create them and save them to a variable named ‘creds’.
+To use secure credentials, first create them and save them to a variable named `creds`.
 
 ```
 $creds = Get-Credential
@@ -80,7 +89,7 @@ Example 3:
 This example creates a GUS job by providing a messaging system.
 
 ```
-New-Schedule -ScheduleName GusTest1 -Targets 'OU=ArslanAhmadOU,OU=WorkingOU,DC=pucit,DC=local' -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -MessagingSystems 'ARSLANAHMADSVM.PUCIT.LOCAL'
+New-Schedule -ScheduleName GusTest1 -Targets 'OU=SampleOU,OU=WorkingOU,DC=example,DC=com' -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -MessagingSystems 'MAIL01.EXAMPLE.COM'
 ```
 
 Example 4:
@@ -94,17 +103,17 @@ New-Schedule -ScheduleName GusTest2 -IncludeAllContainers -IncludeAllMessagingSy
 
 Example 5:
 
-This example creates a job by configuring the notification settings. This commandlet specifies that
+This example creates a job by configuring the notification settings. This cmdlet specifies that
 the notifications for this schedule are enabled and sent to the specified recipients as well as to
-the owners of the schedule targets. The notifications are only sent when the schedule completes its
+the owners of the schedule targets. The notifications are sent only when the schedule completes its
 job successfully.
 
 ```
-New-Schedule -ScheduleName GusTest3 -IncludeAllContainers -IncludeAllMessagingSystems -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -EnableNotifications -Recepients 'recep1@gid.com','recep2@gid.com' -SendToOwners -NotificationSendingCriteria OnSuccess
+New-Schedule -ScheduleName GusTest3 -IncludeAllContainers -IncludeAllMessagingSystems -JobType GUS -Credentials $creds -TriggerType Daily -StartTime '16:56' -EnableNotifications -Recepients 'recipient1@example.com','recipient2@example.com' -SendToOwners -NotificationSendingCriteria OnSuccess
 ```
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Scheduling Commands](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

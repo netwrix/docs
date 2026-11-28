@@ -1,35 +1,41 @@
 ---
-title: "Get-Status"
-description: "Get-Status"
+title: "Get-Status Cmdlet for Directory Manager"
+description: "Check a user's status against the identity store's profile validation criteria and see the days left to validate with the Get-Status cmdlet."
+keywords:
+  - Get-Status
+  - user status
+  - profile validation
+  - user lifecycle
+  - Management Shell
 sidebar_position: 20
 ---
 
-# Get-Status
+# Get-Status Cmdlet for Directory Manager
 
-Use the Get-Status command to know the status of a specified user as per the profile validation
-criteria defined for the identity store.
+Use the Get-Status cmdlet to check the status of a specified user according to the profile
+validation criteria defined for the identity store.
 
 ## Syntax
 
 ```
 Get-Status
--Manager <string>
+-Identity <string>
 [-IdentityStoreId <int>]
 [-SecurityToken <CustomClaimsPrincipal>]
 [-Credential <pscredential>]
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
-- Manager
+- Identity
 
-Example:
+## Example
 
-The following command provides information about the status of the specified user as per the
-criteria defined for user lifecycle for the connected identity store. It also provides information
-on the number of days left to validate the profile again.
+The following command returns the status of the specified user, according to the criteria defined for
+user lifecycle for the connected identity store. It also returns the number of days left to validate
+the profile again.
 
 ```
-Get-Status –Manager "Richard"
+Get-Status -Identity "Richard"
 ```

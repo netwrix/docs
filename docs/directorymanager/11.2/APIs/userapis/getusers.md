@@ -1,10 +1,16 @@
 ---
-title: "Get Users"
-description: "Get Users"
+title: "Get Users with the Directory Manager API"
+description: "Retrieve information about multiple users from an identity store, with the attributes you choose to load."
+keywords:
+  - Directory Manager API
+  - get users
+  - Users endpoint
+  - attributesToLoad
 sidebar_position: 160
+unlisted: true
 ---
 
-# Get Users
+# Get Users with the Directory Manager API
 
 Use this API to retrieve information about multiple users from the specified identity store.
 
@@ -16,7 +22,7 @@ Use this API to retrieve information about multiple users from the specified id
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -33,7 +39,7 @@ Use this API to retrieve information about multiple users from the specified id
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [

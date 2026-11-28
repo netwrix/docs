@@ -1,19 +1,25 @@
 ---
-title: "Reinstate-User"
-description: "Reinstate-User"
+title: "Reinstate-User Cmdlet for GroupID"
+description: "Reinstate a disabled user, whether disabled for not validating their profile, terminated by a manager, or disabled in the directory."
+keywords:
+  - Reinstate-User
+  - reinstate disabled user
+  - user lifecycle
+  - Helpdesk role
+  - Management Shell
 sidebar_position: 30
 ---
 
-# Reinstate-User
+# Reinstate-User Cmdlet for GroupID
 
-Use the **Reinstate-User** command to activate or disable a user. Users can be disabled for any of
+Use the **Reinstate-User** cmdlet to activate or disable a user. Users can be disabled for any of
 the following reasons:
 
-- Users that have been disabled for not validating their profiles within the required period.
-- Users that have been terminated or disabled by their respective managers.
-- Users that are disabled in the directory.
+- They were disabled for not validating their profiles within the required period.
+- Their managers terminated or disabled them.
+- They are disabled in the directory.
 
-An administrator or member of Helpdesk role can reinstate a disabled user.
+An administrator or a member of the Helpdesk role can reinstate a disabled user.
 
 ## Syntax
 
@@ -40,6 +46,6 @@ Reinstate-User -Identity "Farzana Jafar"
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Lifecycle Commands ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Lifecycle Cmdlets for GroupID ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

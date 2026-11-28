@@ -1,23 +1,30 @@
 ---
-title: "Group properties - Dynasty Options tab"
-description: "Group properties - Dynasty Options tab"
+title: "Edit Dynasty options on a group"
+description: "Change a Dynasty's attributes, structure, alias and display name templates, and attribute inheritance from the Dynasty Options tab of group properties."
+keywords:
+  - Dynasty options
+  - alias template
+  - managerial Dynasty
+  - attribute inheritance
 sidebar_position: 100
 ---
 
-# Group properties - Dynasty Options tab
+# Edit Dynasty options on a group
 
 GroupID provides advanced options that you can use to enhance the Dynasty structure and its
 membership. You can:
 
-- Modify the attributes an Organizational/Geographical/Custom Dynasty is build on
+- Modify the attributes an Organizational/Geographical/Custom Dynasty is built on
 - Modify the structure of a managerial Dynasty
 - Edit the template used to generate the alias and display names of child groups
 - Control the attribute inheritance behavior
 
-Your changes will be reflected on the next update of the Dynasty.
+Your changes are reflected on the next update of the Dynasty.
 
-NOTE: Advanced Dynasty options are available for Dynasties of the parent and middle level, but not
+:::note
+Advanced Dynasty options are available for Dynasties of the parent and middle level, but not
 for the leaf level.
+:::
 
 ## For an Organizational/Geographical/Custom Dynasty
 
@@ -28,10 +35,10 @@ value of the Attributes.
 
 If Exchange Server is the designated messaging system for the identity store, the alias length is
 limited to 64 characters and must be unique to the forest. For other messaging systems, the alias
-length must not exceed the number of characters supported by the respective messaging system.
+length can't exceed the number of characters supported by the respective messaging system.
 
-Also, the alias must not contain characters that are invalid for the configured messaging system.
-The following table lists the valid characters the supported messaging systems.
+Also, the alias can't contain characters that are invalid for the configured messaging system.
+The following table lists the valid characters supported by the messaging systems.
 
 | Messaging System                                               | Valid Characters                                                                                                                                                                                                                                                                                   |
 | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,19 +62,19 @@ You can view and change the attributes for parent and middle Dynasties.
 - Click **Remove** to remove the selected attribute.
 
 See the
-[Dynasty Options page](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsorggeocus.md)
+[Configure Dynasty attributes in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsorggeocus.md)
 for details.
 
 **Inheritance**
 
 Use this setting to specify when Dynasty children inherit attributes. Options are:
 
-- **Inherit on creation**: Dynasty children will inherit the attributes' values only when the
-  Dynasty is created. Moreover, whenever a new child group is created, it will inherit the
+- **Inherit on creation**: Dynasty children inherit the attributes' values only when the
+  Dynasty is created. Moreover, whenever a new child group is created, it inherits the
   attributes' values.
-- **Always inherit**: Dynasty children will inherit the attributes' values every time the parent
+- **Always inherit**: Dynasty children inherit the attributes' values every time the parent
   Dynasty is updated.
-- **Never inherit**: Dynasty children will never inherit attribute values from the parent.
+- **Never inherit**: Dynasty children never inherit attribute values from the parent.
 
 The attributes to be inherited are specified at the identity store level. See Dynasty Settings.
 
@@ -78,10 +85,10 @@ example:
 Suppose the administrator has set the managedBy attribute for inheritance.
 
 - With the **Always inherit** option selected for the parent Dynasty, any modifications made to the
-  value of the managedBy attribute for a child Dynasty will be replaced with the value of the
+  value of the managedBy attribute for a child Dynasty are replaced with the value of the
   managedBy attribute set for the parent Dynasty, whenever the Dynasty is updated.
 - With the **Never inherit** option selected, any modifications made to the value of the managedBy
-  attribute for a child Dynasty will persist after update
+  attribute for a child Dynasty persist after update.
 
 ## For a Managerial Dynasty
 
@@ -98,25 +105,27 @@ managers as members of a single group.
 
 You can view and change these structure options for parent and middle Dynasties. For details, see
 the
-[Dynasty Options page (Managerial Dynasty)](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md).
+[Set managerial Dynasty options in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md).
 
-NOTE: (1) If the **Set manager as owner** check box is selected, the **Always inherit** option is
+:::note
+(1) If the **Set manager as owner** checkbox is selected, the **Always inherit** option is
 set for Inheritance, and the managedBy attribute is specified for inheritance, the **Set manager as
 owner** option takes priority over the managedBy attribute inheritance. Hence, the manager of a
-child Dynasty would be set as its respective primary owner.  
-(2) When you clear the **Set manager as owner** check box, the manager set as the primary owner of a
-parent Dynasty will not be removed. However, when the Dynasty is updated, the primary owner of a
+child Dynasty is set as its respective primary owner.  
+(2) When you clear the **Set manager as owner** checkbox, the manager set as the primary owner of a
+parent Dynasty isn't removed. However, when the Dynasty is updated, the primary owner of a
 child Dynasty may be updated, depending on the Dynasty inheritance options. For example, if the
 **Always inherit** option is set for Inheritance and the managedBy attribute is specified for
-inheritance, the primary owner of the parent Dynasty would be set as the primary owner for all child
+inheritance, the primary owner of the parent Dynasty is set as the primary owner for all child
 Dynasties, replacing their respective primary owners.
+:::
 
 **Attributes**
 
 Set a custom attribute to create a managerial lineage in the context of this attribute.
 
 See the
-[Dynasty Options page (Managerial Dynasty)](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md)for
+[Set managerial Dynasty options in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md)for
 a discussion on attributes.
 
 In addition to the scenarios discussed, the following also apply on Dynasty update:
@@ -133,19 +142,19 @@ In addition to the scenarios discussed, the following also apply on Dynasty upda
     data are removed from their respective managers' and additional managers' direct reports.
 
     If the Delete Empty and Orphan Dynasty children setting is applied, direct reports of users
-    created due to the additional manager attribute data are not only removed from their respective
+    created due to the additional manager attribute data aren't only removed from their respective
     managers' and additional managers' direct reports; they also get deleted.
 
 **Alias Template**
 
-This setting is used to generate the alias names of the Dynasty's child groups. **%MANAGER%** is
+This setting generates the alias names of the Dynasty's child groups. **%MANAGER%** is
 replaced with the alias of the manager being processed. Normally, the mailnickname attribute is used
-to store the alias. However, if this attribute is not set, then **%MANAGER%** is replaced with the
+to store the alias. However, if this attribute isn't set, **%MANAGER%** is replaced with the
 display name of the manager.
 
 To use an attribute other than mailNickname for generating the alias for child groups, update the
-**%MANAGER%** statement with the desired attribute name. Note that the value of the attribute must
-be unique.
+**%MANAGER%** statement with the name of the attribute you want. The attribute's value
+must be unique.
 
 Example using the cn attribute:
 
@@ -157,10 +166,10 @@ Example using the name attribute:
 
 If Exchange Server is the designated messaging system for the identity store, the alias length is
 limited to 64 characters and must be unique to the forest. For other messaging systems, the alias
-length must not exceed the number of characters supported by the respective messaging system.
+length can't exceed the number of characters supported by the respective messaging system.
 
-Also, the alias must not contain characters that are invalid for the configured messaging system.
-The following table lists the valid characters the supported messaging systems.
+Also, the alias can't contain characters that are invalid for the configured messaging system.
+The following table lists the valid characters supported by the messaging systems.
 
 | Messaging System                                               | Valid Characters                                                                                                                                                                                                                                                                                   |
 | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -169,10 +178,10 @@ The following table lists the valid characters the supported messaging systems.
 
 **Display Name Template**
 
-The template is used to generate the display names of the Dynasty's child groups. **%MANAGER%** is
+The template generates the display names of the Dynasty's child groups. **%MANAGER%** is
 replaced with the display name of the manager being processed. To use an attribute other than
-displayName to name the child groups, update the **%MANAGER%** statement with the desired attribute
-name. Note that the value of the attribute must be unique.
+displayName to name the child groups, update the **%MANAGER%** statement with the name of the attribute you want.
+The attribute's value must be unique.
 
 Example using the cn attribute:
 
@@ -182,9 +191,11 @@ Example using the name attribute:
 
 %MANAGER.name%
 
-NOTE: For a managerial Dynasty, the **%MANAGER%** variable for the alias and display name templates
-must be the same. The selected attribute must be a string and cannot include characters that are not
+:::note
+For a managerial Dynasty, the **%MANAGER%** variable for the alias and display name templates
+must be the same. The selected attribute must be a string and can't include characters that aren't
 supported in pre-Windows 2000 group names.
+:::
 
 **Inheritance**
 
@@ -192,5 +203,5 @@ See Inheritance.
 
 **See Also**
 
-- [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [Dynasty](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)

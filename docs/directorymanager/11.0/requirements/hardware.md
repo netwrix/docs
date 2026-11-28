@@ -1,32 +1,41 @@
 ---
-title: "Hardware Requirements"
-description: "Hardware Requirements"
+title: "GroupID Hardware Requirements"
+description: "Check the minimum processor, memory, and disk space a server needs to run GroupID, including extra RAM when you host SQL Server on it."
+keywords:
+  - GroupID hardware requirements
+  - minimum RAM
+  - Elasticsearch memory
+  - disk space
+  - server sizing
 sidebar_position: 10
 ---
 
-# Hardware Requirements
+# GroupID Hardware Requirements
 
-Minimum hardware requirements for GroupID are:
+The minimum hardware requirements for GroupID are:
 
 - 1.4 GHz or faster with four or more cores on a 64-bit processor
-- 8 GB of RAM in case of GroupID-managed Elasticsearch
+- 8 GB of RAM if GroupID manages Elasticsearch
 
-    6 GB of RAM in case of self-managed Elasticsearch
+    6 GB of RAM if you manage Elasticsearch yourself
 
-    RECOMMENDED: We recommend a dedicated server for GroupID. If you install any other application
-    on the GroupID server, adjust RAM requirements accordingly. For example, if you install SQL
-    Server, you may need to add 2-4 GB RAM depending on the edition of the SQL Server.
+    :::info
+    A dedicated server is recommended for GroupID. If you install any other
+    application on the GroupID server, adjust RAM requirements accordingly. For
+    example, if you install SQL Server, you may need to add 2-4 GB of RAM, depending on the edition of
+    SQL Server.
+    :::
 
     Different editions of SQL Server have varying resource requirements. For example:
 
-    - SQL Server Express – Minimal resource usage; 2 GB additional RAM may suffice.
+    - SQL Server Express – Minimal resource usage; 2 GB of additional RAM may suffice.
     - SQL Server Standard or Enterprise – These require more resources; allocate 4 GB or more
-      additional RAM for optimal performance.
+      of additional RAM for optimal performance.
 
 - 6 GB or more disk space (for installation only)
 
-    Space requirements are relative to the provider's data size growth for Elasticsearch data.
+    Space requirements depend on how much the provider's Elasticsearch data grows.
 
 See Also
 
-- [Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
+- [GroupID 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)

@@ -1,19 +1,24 @@
 ---
-title: "Groups"
-description: "Groups"
+title: "Create groups in GroupID"
+description: "Learn about the static groups, Smart Groups, and Dynasties you can create in the GroupID portal."
+keywords:
+  - create groups
+  - managed vs unmanaged groups
+  - static group vs Smart Group
+  - Smart Group Update job
 sidebar_position: 10
 ---
 
-# Groups
+# Create groups in GroupID
 
-Using GroupID portal, you can create:
+Using the GroupID portal, you can create:
 
 - An unmanaged group or a static group.
 
-    - A static group is a group you would normally create in a directory (for example, by using the
-      Active Directory Users and Computers snap-in). Though such groups can be created using GroupID
-      portal, GroupID does not support dynamic updates to them. Any changes to the membership have
-      to be updated manually.
+    - A static group is a group you normally create in a directory (for example, by using the
+      Active Directory Users and Computers snap-in). Though you can create such groups using the
+      GroupID portal, GroupID doesn't support dynamic updates to them. Any
+      changes to the membership must be updated manually.
 
 - A managed group or a Smart Group or a Dynasty.
 
@@ -22,10 +27,10 @@ Using GroupID portal, you can create:
         A Smart Group is one that dynamically maintains its membership based on rules. These rules
         are applied in the form of a user-defined query, such as an LDAP query. This query is
         defined once and scheduled for membership update using a Smart Group Update job. When the
-        Smart Group update job runs, it applies the defined rules to update the group's memberships.
+        Smart Group update job runs, it applies the defined rules to update the group's membership.
 
         In this way, Smart Groups are automatically updated whenever the directory information
-        changes. This automated group management allows administrators to easily maintain large
+        changes. This automated group management allows administrators to maintain large
         distribution lists and security groups without having to manually add or remove members.
 
     - A Dynasty is a Smart Group that creates and manages other Smart Groups using information in
@@ -34,7 +39,7 @@ Using GroupID portal, you can create:
 
 **See Also**
 
-- [Group Management](/docs/directorymanager/11.0/welcome/group/overview.md)
-- [Create Active Directory Groups](/docs/directorymanager/11.0/welcome/group/create/group/group.md)
-- [Create Microsoft Entra ID Groups](/docs/directorymanager/11.0/welcome/group/create/group/group_1.md)
-- [Dynasty](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [Manage Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/overview.md)
+- [Create Active Directory Groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/group/group.md)
+- [Create Microsoft Entra ID Groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/group/group_1.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)

@@ -1,16 +1,22 @@
 ---
-title: "Get Metadata of Data Sources"
-description: "Get Metadata of Data Sources"
+title: "Get Data Source Metadata API"
+description: "Retrieve metadata, such as name, type, and icon, for the data sources defined in GroupID."
+keywords:
+  - data source metadata API
+  - GetMetaData endpoint
+  - data source types
+  - data source icon metadata
 sidebar_position: 120
+unlisted: true
 ---
 
-# Get Metadata of Data Sources
+# Get Data Source Metadata API
 
-Using this API, you can get metadata information of data sources defined so far in GroupID.
+Use this API to get metadata information about the data sources defined so far in GroupID.
 
 See the
-[Create a Data Source](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-for creating a data source using the GroupID interface.
+[Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+for creating a data source using GroupID.
 
 ## Endpoint
 
@@ -20,7 +26,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/GetMetaData
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -37,5 +43,5 @@ GET
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

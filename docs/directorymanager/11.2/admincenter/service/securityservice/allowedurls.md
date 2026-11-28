@@ -1,7 +1,13 @@
 ---
 title: "Allow Return URLs for Load Balancers and Reverse Proxies"
-description: "Add the URLs clients use to reach Directory Manager to the Security service's list of allowed base URLs, so that load balancer, reverse proxy, and IdP-initiated sign-ins work."
+description: "Add client URLs to the Security service's allowed base URLs so sign-ins through a load balancer, reverse proxy, or identity provider work."
 sidebar_position: 40
+keywords:
+  - AllowedBaseUrls
+  - return URL validation
+  - load balancer
+  - reverse proxy
+  - IdP-initiated sign-in
 ---
 
 # Allow Return URLs for Load Balancers and Reverse Proxies
@@ -18,38 +24,38 @@ The list is the `AllowedBaseUrls` setting in the `appsettings.json` file of each
 Perform these steps on every Directory Manager server that hosts a Security service. If you run
 multiple Security services behind a load balancer, each one needs the same list.
 
-Step 1 – Open the `appsettings.json` file of the Security service in a text editor:
+1. Open the `appsettings.json` file of the Security service in a text editor:
 
-`X:\Program Files\Imanami\GroupID 11.0\GroupIDSecurityService\Inetpub\GroupIDSecurityService\Web\appsettings.json`
+   `X:\Program Files\Imanami\GroupID 11.0\GroupIDSecurityService\Inetpub\GroupIDSecurityService\Web\appsettings.json`
 
-(X represents the Directory Manager installation drive)
+   (X represents the Directory Manager installation drive)
 
-Step 2 – In the `ReturnUrlValidation` section, add the allowed URLs to the `AllowedBaseUrls` array.
-Use the format `https://<hostname-or-ip>:<port>`, and include:
+2. In the `ReturnUrlValidation` section, add the allowed URLs to the `AllowedBaseUrls` array. Use
+   the format `https://<hostname-or-ip>:<port>`, and include:
 
-- Every load balancer host name, and any virtual IP address (VIP), that clients use to access
-  Directory Manager
-- The host name of every individual node
-- The IP address of every individual node
+   - Every load balancer host name, and any virtual IP address (VIP), that clients use to access
+     Directory Manager
+   - The host name of every individual node
+   - The IP address of every individual node
 
-For example:
+   For example:
 
-```json
-"ReturnUrlValidation": {
-  "AllowedBaseUrls": [
-    "https://directorymanager.example.com:443",
-    "https://node1.example.com:443",
-    "https://10.1.2.11:443",
-    "https://node2.example.com:443",
-    "https://10.1.2.12:443"
-  ]
-}
-```
+   ```json
+   "ReturnUrlValidation": {
+     "AllowedBaseUrls": [
+       "https://directorymanager.example.com:443",
+       "https://node1.example.com:443",
+       "https://10.1.2.11:443",
+       "https://node2.example.com:443",
+       "https://10.1.2.12:443"
+     ]
+   }
+   ```
 
-Step 3 – Save the file.
+3. Save the file.
 
-Step 4 – Restart the Security service's site, or recycle its application pool in IIS. Do this on
-every server where you edited the file.
+4. Restart the Security service's site, or recycle its application pool in IIS. Do this on every
+   server where you edited the file.
 
 :::warning
 Re-running the Configuration Tool or upgrading Directory Manager overwrites `appsettings.json`.

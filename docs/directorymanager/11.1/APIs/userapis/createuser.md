@@ -1,14 +1,20 @@
 ---
-title: "Create a User"
-description: "Create a User"
+title: "Create a User with the Directory Manager API"
+description: "Create a user in an identity store by sending a POST request with the container, name, and other required attributes."
+keywords:
+  - Directory Manager API
+  - create user
+  - POST Users endpoint
+  - identity store
 sidebar_position: 10
+unlisted: true
 ---
 
-# Create a User
+# Create a User with the Directory Manager API
 
 This API creates a user in the identity store specified in the endpoint URL. Provide mandatory
-information for the user being created in the request syntax such as container in which user will be
-created, given name, display name and so on.
+information for the user being created in the request syntax such as the container in which the user is
+created, given name, and display name.
 
 ## Endpoint
 
@@ -18,7 +24,7 @@ created, given name, display name and so on.
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -85,7 +91,7 @@ created, given name, display name and so on.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

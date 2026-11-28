@@ -1,12 +1,18 @@
 ---
-title: "Customize the Search Results Pages"
-description: "Customize the Search Results Pages"
+title: "Customize Search Results Pages in the GroupID Mobile App"
+description: "Add, edit, or remove the fields on the Groups and Default search results pages in the GroupID mobile app."
+keywords:
+  - mobile app search results
+  - mobile app search results fields
+  - groups search results page
+  - default search results page
+  - edit search results pane
 sidebar_position: 20
 ---
 
-# Customize the Search Results Pages
+# Customize Search Results Pages in the GroupID Mobile App
 
-When a user searches for objects in the GroupID app, matched items are displayed on the following
+When a user searches for objects in the GroupID app, matched items appear on the following
 search results pages:
 
 - Groups: displays search results for group objects.
@@ -35,9 +41,9 @@ What do you want to do?
    results page. Click **Add Field** to add a new field.
 7. On the **Add Field** pane, provide the following information and click **OK**:
 
-    - **Field** – Select a schema attribute to link to this field. The field will display the value
+    - **Field** – Select a schema attribute to link to this field. The field displays the value
       of this attribute on the search results page.
-    - **Display Name** – Enter a display name for the field. This name is the field’s label on the
+    - **Display Name** – Enter a display name for the field. This name is the field's label on the
       search results page.
     - **ToolTip** – Enter the text to appear when a user hovers the mouse over the field.
     - **Display Type** – Select a display type to render this field in the app.
@@ -66,7 +72,7 @@ To update a field:
    GroupID mobile app.
 5. Click **Edit** for a form to modify it.
 6. On the **Edit Search Results** pane, click **Edit** for a field to update it.  
-   The **Edit Field** pane is displayed. Follow step 7 and onwards in the
+   The **Edit Field** pane opens. Follow step 7 onward in the
    [Add a Field to a Search Results Page](#add-a-field-to-a-search-results-page) topic to update the
    field.
 
@@ -88,5 +94,5 @@ To update a field:
 
 **See Also**
 
-- [Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
-- [Design Settings](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [Design Settings for the Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md)

@@ -1,12 +1,17 @@
 ---
-title: "Remove-User"
-description: "Remove-User"
+title: "Remove-User Cmdlet in GroupID"
+description: "Delete a user from the directory by identity with the Remove-User cmdlet."
+keywords:
+  - Remove-User
+  - GroupID Management Shell
+  - delete user
+  - remove directory user
 sidebar_position: 40
 ---
 
-# Remove-User
+# Remove-User Cmdlet in GroupID
 
-Use the **Remove-User** commandlet to delete a user from directory.
+Use the **Remove-User** cmdlet to delete a user from the directory.
 
 ## Syntax
 
@@ -28,11 +33,11 @@ Example:
 The following command deletes a user with the specified name.
 
 ```
-Remove-User -Identity "osama"
+Remove-User -Identity "sample"
 ```
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Commands](/docs/directorymanager/11.0/managementshell/user/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/user/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

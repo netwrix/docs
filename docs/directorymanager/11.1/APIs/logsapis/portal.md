@@ -1,13 +1,20 @@
 ---
-title: "Portal Logs"
-description: "Portal Logs"
+title: "Download Portal Logs with the API"
+description: "Download the Directory Manager portal logs as an encrypted zip file by sending a GET request to the Logs API."
+keywords:
+  - portal logs
+  - Logs API
+  - download portal logs
+  - portal log download endpoint
+  - Directory Manager portal
 sidebar_position: 40
+unlisted: true
 ---
 
-# Portal Logs
+# Download Portal Logs with the API
 
 Use this API to get Directory Manager portal logs. See the
-[History](/docs/directorymanager/11.1/portal/history/overview.md) topic for additional information on Portal history.
+[Directory Manager Portal History Tracking](/docs/directorymanager/11.1/portal/history/overview.md) topic for additional information on portal history.
 
 ## Endpoint
 
@@ -17,7 +24,7 @@ Use this API to get Directory Manager portal logs. See the
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 <Encrypted response>

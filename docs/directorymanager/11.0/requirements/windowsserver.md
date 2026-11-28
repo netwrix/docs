@@ -1,28 +1,33 @@
 ---
-title: "Microsoft Windows Servers Requirements"
-description: "Microsoft Windows Servers Requirements"
+title: "Windows Server Requirements for GroupID"
+description: "See which Microsoft Windows Server 2016, 2019, and 2022 editions GroupID 11.0 supports."
+keywords:
+  - Windows Server 2016
+  - Windows Server 2019
+  - Windows Server 2022
+  - supported operating systems
 sidebar_position: 20
 ---
 
-# Microsoft Windows Servers Requirements
+# Windows Server Requirements for GroupID
 
-GroupID supports the following Microsoft Windows Servers:
+GroupID supports the following Microsoft Windows Server versions:
 
-Microsoft Windows Server 2016 Family
+**Microsoft Windows Server 2016 Family**
 
 - Windows Server 2016 Standard
 - Windows Server 2016 Datacenter
 
-Microsoft Windows Server 2019 Family
+**Microsoft Windows Server 2019 Family**
 
 - Windows Server 2019 Standard
 - Windows Server 2019 Datacenter
 
-Microsoft Windows Server 2022 Family
+**Microsoft Windows Server 2022 Family**
 
 - Windows Server 2022 Standard
 - Windows Server 2022 Datacenter
 
-See Also
+**See Also**
 
-- [Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
+- [GroupID 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)

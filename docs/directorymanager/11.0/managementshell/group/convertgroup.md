@@ -1,6 +1,12 @@
 ---
 title: "Convert-Group"
-description: "Convert-Group"
+description: "Convert an unmanaged group to a Smart Group with the Convert-Group cmdlet; the converted group has no LDAP query until you define one."
+keywords:
+  - Convert-Group
+  - convert unmanaged group
+  - Smart Group
+  - GroupID Management Shell
+  - GroupID PowerShell
 sidebar_position: 10
 ---
 
@@ -8,14 +14,13 @@ sidebar_position: 10
 
 The **Convert-Group** commandlet converts an unmanaged group to a Smart Group.
 
-GroupID Management Shell prompts for the identity of the unmanaged group you want to convert into a
-Smart Group. After executing, the commandlet displays the status that update is successful as shown
-in the following snapshot:
+GroupID Management Shell prompts for the identity of the unmanaged group you want to
+convert into a Smart Group. After the commandlet runs, it displays a status indicating the update is
+successful, as in the following screenshot:
 
-![managementshell](/images/directorymanager/11.0/managementshell/group/managementshell.webp)
+![Management Shell output showing that the group was converted to a Smart Group](/images/directorymanager/11.0/managementshell/group/managementshell.webp)
 
-The converted Smart Group will not have an LDAP query attached to it. You have to define it
-manually.
+The converted Smart Group doesn't have an LDAP query attached to it. You must define one manually.
 
 ## Syntax
 
@@ -124,8 +129,8 @@ Convert-Group
 
 Example:
 
-The following commandlet converts a group _Clay2_ group to a Smart Group using the credentials of
-current logged-on user.
+The following commandlet converts the group _Clay2_ to a Smart Group using the credentials set in the
+$Cred environment variable.
 
 ```
 Convert-Group -Identity "Clay2" -Credential $Cred
@@ -133,6 +138,6 @@ Convert-Group -Identity "Clay2" -Credential $Cred
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Group Commands](/docs/directorymanager/11.0/managementshell/group/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

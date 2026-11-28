@@ -1,13 +1,20 @@
 ---
-title: "Create a Static Group"
-description: "Create a Static Group"
+title: "Create a Static Group with the Directory Manager API"
+description: "Create a normal directory group, also called an unmanaged or static group, in an identity store by sending a POST request to the Directory Manager API."
+keywords:
+  - Directory Manager API
+  - create static group
+  - unmanaged group
+  - StaticGroup endpoint
+  - identity store group
 sidebar_position: 10
+unlisted: true
 ---
 
-# Create a Static Group
+# Create a Static Group with the Directory Manager API
 
-Using this API, you can create a normal directory group, also called an unmanaged or static group,
-in the given identity store.
+Use this API to create a normal directory group, also called an unmanaged or static group, in the
+given identity store.
 
 ## Endpoint
 
@@ -17,7 +24,7 @@ in the given identity store.
 
 **POST**
 
-## Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -62,7 +69,7 @@ in the given identity store.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

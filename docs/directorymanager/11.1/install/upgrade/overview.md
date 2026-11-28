@@ -1,10 +1,16 @@
 ---
-title: "Upgrade"
-description: "Upgrade"
+title: "Prerequisites for Upgrading to Directory Manager 11"
+description: "Confirm that you can upgrade from GroupID 10 SR2, complete the prerequisites, and find the upgrade log files."
+keywords:
+  - directory manager upgrade prerequisites
+  - GroupID 10 SR2 upgrade
+  - upgrade on a different server
+  - upgrade log files
+  - gMSA service account upgrade
 sidebar_position: 30
 ---
 
-# Upgrade
+# Prerequisites for Upgrading to Directory Manager 11
 
 :::note
 This page is kept for archive purposes. When you plan an upgrade, use the
@@ -20,51 +26,37 @@ Then upgrade from GroupID 10 SR2 to Directory Manager 11.
 
 ## Prerequisites for Upgrade
 
-The following must be in place before you run the Upgrade wizard.
+Complete the following before you run the Upgrade wizard.
 
 :::note
-In the following text, the term ‘source version’ refers to GroupID 10 SR2, the version you are
-upgrading from.
+In the following text, the term 'source version' refers to GroupID 10 SR2, the version you are upgrading from.
 :::
 
+1. To upgrade on a different server, make the source version file system present on the Directory Manager 11 server:
 
-Step 1 – For upgrade on a different box, the source version file system must be present on the
-Directory Manager 11 server. For that, do the following:
+   1. On the source version server, go to `[installation drive]:\Program Files\Imanami\` and copy the `GroupID 10` folder.
+   2. On the Directory Manager 11 server, create the following path and paste the `GroupID 10` folder there:
 
-1. On the source version server, go
-   to `[GroupID Installation Drive]:\Program Files\Imanami\` and copy the GroupID 10 folder.
-2. Go to the Directory Manager 11 server, create a path as follows, and paste the GroupID 10 folder
-   there:
+      `C:\Program Files\Imanami\`
 
-    `C:\Program Files\Imanami\`
+      After you paste the `GroupID 10` folder, the path is:  
+      `C:\Program Files\Imanami\GroupID 10\`
 
-    On pasting the GroupID 10 folder, it will be as:  
-     `C:\Program Files\Imanami\GroupID 10\`
+2. If you upgrade on a different server and a gMSA is the service account for an identity store in the source version, configure that gMSA on the Directory Manager 11 server before you upgrade. See the [Configure a gMSA for Directory Manager](/docs/directorymanager/11.1/requirements/permissions/gmsarequirements.md) topic.
 
-Step 2 – The following applies to upgrade on a different box.  
-If a gMSA is used as the service account for an identity store in the source version, you must
-configure that gMSA on the Directory Manager 11 server before you upgrade.  
-To configure a gMSA, see the
-[gMSA for Active Directory](/docs/directorymanager/11.1/requirements/permissions/gmsarequirements.md) topic.
+3. To upgrade a disabled identity store, enable it in the source version before the upgrade. Then disable it in Directory Manager 11 immediately after the upgrade. Directory Manager 11 doesn't upgrade a disabled identity store from the source version.
 
-Step 3 – A disabled identity store in the source version will not be upgraded to Directory
-Manager 11.  
-To upgrade a disabled identity store, you must enable it in the source version before upgrade. Then
-disable it in Directory Manager 11 immediately after upgrade.
-
-Step 4 – To upgrade schedules and Synchronize jobs on a different box, you must run a utility on the
-Directory Manager 11 server before running the Upgrade wizard. Contact Netwrix Customer Support for
-more info.
+4. To upgrade schedules and Synchronize jobs on a different server, run a utility on the Directory Manager 11 server before you run the Upgrade wizard. Contact Netwrix Customer Support for more information.
 
 If you forget the passphrase you used to encrypt GroupID data, upgrade isn't possible.
 
-## Upgrade Logs
+## Upgrade logs
 
-Two log files are created on upgrade:
+The upgrade creates two log files:
 
-- File name: UpgradeLog  
+- File name: `UpgradeLog`  
   Path: `X:\Imanami\GroupID 11.0\GroupIDUpgradeTool\`  
   (X represents the Directory Manager installation drive)
-- File name: directorymanager11_Upgrade.log  
+- File name: `directorymanager11_Upgrade.log`  
   Path: `C:\ProgramData\Imanami\GroupID 11.0\Upgrade Tool\`  
   (This file contains debug logs.)

@@ -1,16 +1,23 @@
 ---
-title: "Group Membership functions"
-description: "Group Membership functions"
+title: "Manage Group Membership in GroupID"
+description: "Add, remove, import, and export group members, set temporary membership, nest groups, and invite guest users in the GroupID portal."
+keywords:
+  - group membership
+  - temporary membership
+  - Out of Bounds
+  - nested groups
+  - guest user invitation
+  - Microsoft Entra ID
 sidebar_position: 80
 ---
 
-# Group Membership functions
+# Manage Group Membership in GroupID
 
 Groups let you apply a common set of policies to multiple users. Groups also guarantee consistency
 of permissions and privileges across the membership.
 
-You can add members to groups manually, using a scheduled job, or import them from an external data
-source.
+You can add members to groups manually, by using a scheduled job, or by importing them from an
+external data source.
 
 ## Group Membership Settings
 
@@ -25,27 +32,30 @@ The administrator can:
 
 **Example:**
 
-Let’s assume the administrator sets the maximum membership limit to 500 and opts for nested groups
+Assume the administrator sets the maximum membership limit to 500 and opts for nested groups
 when membership exceeds this limit.
 
 **Scenario 1**: On update, 485 objects are fetched to be added to Group A’s membership. Since the
 count is less than 500, the objects are directly added as group members.
 
 **Scenario 2:** On the next update, 620 objects are fetched to be added to Group A’s membership.
-Since the count exceeds 500, it breaks the membership into 2 child groups (Group 1 with 500 members
-and Group 2 with 120 members) and nests them into Group A. Hence, GroupID checks the member count
-and takes necessary action before adding members to the group.
+Since the count exceeds 500, GroupID breaks the membership into 2 child groups (Group 1
+with 500 members and Group 2 with 120 members) and nests them into Group A. GroupID
+checks the member count and takes the necessary action before adding members to the group.
 
-NOTE: An Office 365 group cannot have other groups as members. Therefore, the option to break the
-membership into child groups would have the following impact:  
- An Office 365 group (Group A) will be updated according to the Smart Group update process. When the
-maximum membership limit is hit, the update process will create child group(s). These child groups
-will exist but without any link to Group A. Hence, Group A’s membership will be empty.
+:::note
+An Office 365 group can't have other groups as members. Therefore, the option to break the
+membership into child groups has the following impact:  
+ An Office 365 group (Group A) is updated according to the Smart Group update process. When the
+maximum membership limit is hit, the update process creates child groups. These child groups
+exist but have no link to Group A. Hence, Group A’s membership is empty.
+
+:::
 
 What do you want to do?
 
 - [Add members to a group](#add-members-to-a-group)
-- [Change the membership type of a group member ](#change-the-membership-type-of-a-group-member)
+- [Change the membership type of a group member](#change-the-membership-type-of-a-group-member)
 - [Remove members permanently from a group](#remove-members-permanently-from-a-group)
 - [Add a group to the membership of another group (nesting)](#add-a-group-to-the-membership-of-another-group-nesting)
 - [Import members to a group](#import-members-to-a-group)
@@ -54,59 +64,65 @@ What do you want to do?
 
 ## Add members to a group
 
-You can add one or more objects to the membership of one or more groups. These objects would be
-added as permanent members. You will find them listed as members on the Members tab in
-[Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md).
+You can add one or more objects to the membership of one or more groups. These objects are
+added as permanent members. They are listed as members on the **Members** tab in
+[View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md).
 
-NOTE: In a Microsoft Entra ID based identity store, only user objects can be added as members of an
+:::note
+In a Microsoft Entra ID based identity store, only user objects can be added as members of an
 Office 365 group.
+
+:::
 
 Use any of the following methods to add members to groups.
 
 ### Method 1:
 
-1. [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the required
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the required
    objects.
 2. Select these objects on the **Search Results** page and click **Add to Group** on the toolbar.
-3. The [Find Dialog Box](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) is displayed,
-   where you can search and select the group(s) to add the objects to.
+3. The [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) is displayed,
+   where you can search for and select the groups to add the objects to.
 
 ### Method 2:
 
-1. [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
    want to add members to.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's
-    [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the **Members** tab, click **Add**.
 4. Enter a search string to locate the objects to add as members, or click **Advanced** to use the
-   [Find Dialog Box](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
+   [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
    search.
 5. Save the changes.
 
-NOTE: These methods for adding members are recommended for static (unmanaged) groups only. For Smart
-Groups, GroupID will discard any manual membership changes when it updates the group through the
+:::note
+These methods for adding members are recommended for static (unmanaged) groups only. For Smart
+Groups, GroupID discards any manual membership changes when it updates the group through the
 Smart Group Update job.
 
+:::
+
 To add a member temporarily to a group, see
-[Change the membership type of a group member ](#change-the-membership-type-of-a-group-member).
+[Change the membership type of a group member](#change-the-membership-type-of-a-group-member).
 
 ## Change the membership type of a group member
 
-By default, all new members are added as permanent member to a group. However, you can change the
+By default, all new members are added to a group as permanent members. However, you can change the
 membership type of an object from permanent to temporary and vice versa.
 
 You can also add or remove an object from a group's membership for a temporary period.
 
-1. [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
-   change the membership type of its member(s).
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
+   change the membership type of its members.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's
-    [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed, where the **Members** tab lists the group members.
 
 3. To change the membership type of a member, click anywhere in the respective row to make it
@@ -116,7 +132,7 @@ You can also add or remove an object from a group's membership for a temporary p
     - **Temporary Member** - To make the object a temporary member of the group for the period you
       specify in the **Beginning** and **Ending** boxes. At the end of the period, the object is
       removed from the group membership.
-    - **Addition Pending** - Indicates that the object will be a temporary member of the group for a
+    - **Addition Pending** - Indicates that the object is to be a temporary member of the group for a
       period in the future. Use the **Beginning** and **Ending** boxes to set a period. Before the
       beginning date, the object’s membership type is displayed as ‘Addition Pending’. On the
       beginning date, the membership type changes to ‘Temporary Member’.
@@ -126,32 +142,32 @@ You can also add or remove an object from a group's membership for a temporary p
         You add Smith as a temporary member to Group A on May 15, 2019 for future dates, May
         20-30, 2019.
 
-        Smith will be displayed in Group A’s membership with ‘Addition Pending’ as its membership
-        type from May 15 to 19, 2019. However, Smith would not be added to group membership in the
+        Smith is displayed in Group A’s membership with ‘Addition Pending’ as its membership
+        type from May 15 to 19, 2019. However, Smith isn't added to group membership in the
         provider.
 
-        On May 20, Smith will become a temporary member of Group A and its membership type will
-        change to ‘Temporary Member’ from May 20 to 30, 2019. Smith will also be added to group
+        On May 20, Smith becomes a temporary member of Group A and its membership type
+        changes to ‘Temporary Member’ from May 20 to 30, 2019. Smith is also added to group
         membership in the provider.
 
-        After May 30, Smith will be removed from Group A as a member in GroupID and in the provider.
+        After May 30, Smith is removed from Group A as a member in GroupID and in the provider.
 
-    - **Removal Pending** - Indicates that the object will be temporarily removed from group
+    - **Removal Pending** - Indicates that the object is to be temporarily removed from group
       membership for a period in the future. Use the **Beginning** and **Ending** boxes to set a
       period. Before the beginning date, the object’s membership type is displayed as ‘Removal
-      Pending’. On the beginning date, the membership type will change to ‘Temporary Removed’.
+      Pending’. On the beginning date, the membership type changes to ‘Temporary Removed’.
 
         _Here is an example:_
 
         You remove Smith from Group A on May 15, 2019 for future dates, May 20-30, 2019.
 
-        Smith will be displayed in Group A’s membership with ‘Removal Pending’ as membership type
+        Smith is displayed in Group A’s membership with ‘Removal Pending’ as the membership type
         from May 15 to 19, 2019.
 
-        On May 20, Smith’s membership type in GroupID will change to ‘Temporary Removed’; lasting
-        till May 30, 2019. However, Smith will be removed from Group A’s membership in the provider.
+        On May 20, Smith’s membership type in GroupID changes to ‘Temporary Removed’,
+        lasting until May 30, 2019. Smith is also removed from Group A’s membership in the provider.
 
-        After May 30, Smith will be added back to Group A as a permanent member in GroupID and in
+        After May 30, Smith is added back to Group A as a permanent member in GroupID and in
         the provider.
 
     - **Temporary Removed** - Indicates that the object is temporarily removed from group membership
@@ -164,61 +180,71 @@ The Membership Life Cycle job updates the temporary membership of groups. It add
 temporary members from group membership on the specified dates.
 
 Consider a scenario where the Membership Life Cycle job is scheduled to run once a week, say
-Mondays. If an object is to be added to group membership for three days - Wednesday till Friday, it
-will not be added. This happens because the Membership Life Cycle job did not run on the particular
+Mondays. If an object is to be added to group membership for three days (Wednesday through Friday),
+it isn't added. This happens because the Membership Life Cycle job didn't run on the particular
 days for temporary membership update.
 
 ## Remove members permanently from a group
 
-1. [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
-   want to remove member(s) from.
+To remove members permanently from a group:
+
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
+   want to remove members from.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's
-    [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the **Members** tab, select the group members you want to remove and click **Remove**.
 4. Save the changes.
 
-NOTE: This method of removing members is recommended for static (unmanaged) groups only. For Smart
-Groups, GroupID will discard any manual membership changes when it updates the group through the
+:::note
+This method of removing members is recommended for static (unmanaged) groups only. For Smart
+Groups, GroupID discards any manual membership changes when it updates the group through the
 Smart Group Update job.
 
+:::
+
 To remove a member temporarily from a group, see
-[Change the membership type of a group member ](#change-the-membership-type-of-a-group-member).
+[Change the membership type of a group member](#change-the-membership-type-of-a-group-member).
 
 ## Add a group to the membership of another group (nesting)
 
-1. In GroupID portal, click **Groups** in the left navigation pane, select Groups.
-2. Select the My Groups, **My Memberships**, or **My Expiring Groups** tab.
-3. Select the group(s) to add to the membership of another group and click **Add to Group** on the
+To add a group to the membership of another group (nesting):
+
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **Groups**.
+2. Select the **My Groups**, **My Memberships**, or **My Expiring Groups** tab.
+3. Select the groups to add to the membership of another group and click **Add to Group** on the
    toolbar.
-4. On the [Find Dialog Box](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), search and
-   select the group to add members to it, and click **OK**.
+4. On the [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), search for
+   and select the group to add the members to, and click **OK**.
 
 ## Import members to a group
 
 You can import members to a group using an external file.
 
-NOTE: In a Microsoft Entra ID based identity store, only user objects can be added as members of an
+:::note
+In a Microsoft Entra ID based identity store, only user objects can be added as members of an
 Office 365 group.
 
-1. In GroupID portal, click **Groups** in the left navigation pane, select Groups.
+:::
+
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
 2. Select the group you want to import members to, and click **Properties** on the toolbar.
 
     The group's
-    [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the
-   [Group properties - Members tab](/docs/directorymanager/11.0/welcome/group/properties/members.md),
+   [GroupID group properties: Members tab](/docs/directorymanager/11.0/welcome/group/properties/members.md),
    click **Import** to launch the **Import Members** wizard.
 4. See
-   [Import Group Members](/docs/directorymanager/11.0/welcome/group/properties/importmembers.md)
+   [Import group members in GroupID](/docs/directorymanager/11.0/welcome/group/properties/importmembers.md)
    for further information and instructions.
 5. Save the changes.
 
@@ -226,12 +252,12 @@ Office 365 group.
 
 You can export members of a group to an external file.
 
-1. [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
    export its members to an external file.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's
-    [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the **Members** tab, click **Export** to launch the **Export Members** wizard.
@@ -256,45 +282,48 @@ You can export members of a group to an external file.
 
 ## Invite a guest user
 
-For a Microsoft Entra ID based identity store, the portal enables you to invite a user from another
+For a Microsoft Entra ID based identity store, you can use the portal to invite a user from another
 Microsoft Entra ID tenant to the membership of a group in your domain.
 
-1. In GroupID portal, click **Groups** in the left navigation pane, select Groups.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
     Or
 
-    [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
+    [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
     want to invite a guest user to.
 
 2. Select the required group from the list and click **Properties** on the toolbar. The group's
-   [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md) page
+   [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md) page
    is displayed.
 3. On the **Members** tab, click the **Invite User** button.
 4. On the **Invite User** dialog box, provide the following information:
 
     1. In the **Email** box, enter the email address of the user you want to invite to your domain.
     2. In the **Redirect URL** box, provide the URL of a portal page, such as the My Profile page.
-       On accepting the invite, the guest user will be redirected to this page.
+       On accepting the invite, the guest user is redirected to this page.
     3. Add any message for the guest user in the **Personal Message** box.
     4. Click **Invite User**.
 
-        NOTE: If the group you want to invite a guest user to is a distribution group and the
-        invited user is not in the guest user list of Microsoft 365 Admin portal than the invited
-        user is not added into the group on the first invite but on the second invite.
+        :::note
+        If the group you want to invite a guest user to is a distribution group and the
+        invited user isn't in the guest user list of the Microsoft 365 admin portal, the invited
+        user isn't added to the group on the first invite but on the second invite.
 
-5. The guest user is sent an email with the redirect link. On clicking this link, the guest user is
-   successfully invited.
+        :::
+
+5. The guest user is sent an email with the redirect link. When the guest user clicks the redirect link, the
+   invitation is accepted.
 
     The **Invite User** button on the **Invite User** dialog box changes to **Add To Group**.
 
 6. Click the **Add To Group** button to add the guest user as a group member.
 7. Save the information.
 
-An object for the guest user is created in Microsoft Entra ID, with type as ‘guest user’. This user
+An object for the guest user is created in Microsoft Entra ID, with the type ‘guest user’. This user
 has the same rights and permissions as any other group member.
 
 **See Also**
 
-- [Working with Groups](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

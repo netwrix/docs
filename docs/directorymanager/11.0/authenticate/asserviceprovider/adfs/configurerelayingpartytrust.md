@@ -1,15 +1,21 @@
 ---
-title: "Configure Relaying Party Trust in AD FS"
-description: "Configure Relaying Party Trust in AD FS"
+title: "Configure an AD FS Relying Party Trust for GroupID"
+description: "Add a relying party trust and claim rules in AD FS so users can sign in to a GroupID client with AD FS single sign-on."
+keywords:
+  - AD FS relying party trust
+  - AD FS claim rules
+  - GroupID consumer URL
+  - Issuance Transform Rules
+  - SAML 2.0 Web SSO
 sidebar_position: 20
 ---
 
-# Configure Relaying Party Trust in AD FS
+# Configure an AD FS Relying Party Trust for GroupID
 
-In AD FS, you have to configure the GroupID client with which you want to set up AD FS. You also
-have to specify the claim rules for authentication.
+In AD FS, configure the GroupID client with which you want to set up AD FS. You must also
+specify the claim rules for authentication.
 
-## Configure Relaying Party Trust in AD FS
+## Add the Relying Party Trust and Claim Rules
 
 1. Launch the AD FS console. In the left pane, select **AD FS > Trust Relationships**. Right-click
    **Relying Party Trusts** and click **Add Relying Party Trust** on the shortcut menu.  
@@ -22,7 +28,7 @@ have to specify the claim rules for authentication.
 4. On the **Specify Display Name** page, specify a friendly display name for this configuration in
    the **Display name** box. Then enter any additional notes in the **Notes** box and click
    **Next**.
-5. To use the SAML 2.0 protocol as profile, select the **AD FS profile** option button on the
+5. To use the SAML 2.0 protocol as the profile, select the **AD FS profile** option button on the
    **Choose Profile** page and click **Next**.
 6. On the **Configure Certificate** page, click **Next**.
 7. On the **Configure URL** page, select the **Enable support for the SAML 2.0 Web SSO protocol**
@@ -30,42 +36,44 @@ have to specify the claim rules for authentication.
    URL you generated for the GroupID client. See the
    [Generate the Consumer URL for a GroupID Client](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/generateurls.md#generate-the-consumer-url-for-a-groupid-client)
    topic.  
-   The consumer URL is the relying party trust URL, used by AD FS to authenticate.  
-   Click **Next**.
+   AD FS uses the consumer URL, which is the relying party trust URL, to authenticate users. Click
+   **Next**.
 8. On the **Configure Identifiers** page, use the **Relying party trust identifier** box to provide
    the audience URL you generated for the GroupID client. Click **Add** next to this box and then
    click **Next**.  
    See the
    [Generate Entity ID/Audience URL](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/generateurls.md#generate-entity-idaudience-url)
    topic.
+   <!-- vale off -->
 9. Use the **Configure Multi-factor Authentication Now?** page to configure multi-factor
-   authentication. At present, we will not configure it, so select the **I do not want to configure
-   multi-factor authentications settings for this relying party trust at this time** option button
+   authentication. For this example, skip this step by selecting the 
+   **I do not want to configure multi-factor authentications settings for this relying party trust at this time** option button
    and click **Next**.
-10. Use the **Choose Issuance Authorization Rules** page to permit all users to get authenticated on
-    the relying party trust using AD FS. User credentials will be parsed with Active Directory.  
+   <!-- vale on -->
+10. Use the **Choose Issuance Authorization Rules** page to permit all users to authenticate on
+    the relying party trust using AD FS. Active Directory validates user credentials.  
     Select the **Permit all users to access this relying party** option button and click **Next**.
-11. Use the tabs on the **Ready to Add Trust** page to review some preconfigured settings; then
+11. Use the tabs on the **Ready to Add Trust** page to review some preconfigured settings. Then
     click **Next**.
 12. Click **Close** on the **Finish** page to complete the wizard. The wizard closes and the **Edit
-    Claim Rules** dialog box is displayed, where you have to specify claim rules for authentication.
+    Claim Rules** dialog box is displayed, where you must specify claim rules for authentication.
 
-**Specify claim rules for authentication:**
+To specify claim rules for authentication:
 
-13. On the **Edit Claim Rules** dialog box, the **Issuance Transform Rules** option correlates to
-    the option of authenticating using an Active Directory attribute. Click **Add Rule**.
-14. To add a rule, select _Transform an Incoming Claim_ from the **Claim rule template** drop-down
+13. On the **Edit Claim Rules** dialog box, the **Issuance Transform Rules** option corresponds to
+    authenticating using an Active Directory attribute. Click **Add Rule**.
+14. To add a rule, select _Transform an Incoming Claim_ from the **Claim rule template** dropdown
     list on the **Select Rule Template** page and click **Next**.
 15. On the **Configure Rule** page, specify a rule name in the **Claim rule name** box.
 16. In the **Incoming claim type** and **Outgoing claim type** boxes, select an Active Directory
     attribute for authentication, such as the UPN attribute. The incoming and outgoing claim types
-    should be the same as we will not specify a different text or different data for the logon
-    process. It will be the exact user principal name for authentication.
-17. Make sure that the **Pass through all claim values** option is selected; then click **Finish**.
+    should be the same because you specify no different text or data for the sign-in
+    process. AD FS uses the exact user principal name for authentication.
+17. Ensure that the **Pass through all claim values** option is selected; then click **Finish**.
     The new rule is configured and displayed on the **Issuance Transform Rules** tab.
-18. Click the **Issuance Authorization Rules** tab and notice that the issuance authorization rule
-    is already completed.
-19. Click the **Delegation Authorization Rules** tab. We do not need to delegate, so click **Apply**
+18. Click the **Issuance Authorization Rules** tab. The issuance authorization rule is already
+    complete.
+19. Click the **Delegation Authorization Rules** tab. No delegation is needed, so click **Apply**
     and then **OK**. The AD FS console is displayed with the new relying party trust added.  
     The next step is to configure the AD FS provider in GroupID. See the
     [Configure the AD FS Provider In GroupID](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md)

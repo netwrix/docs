@@ -1,6 +1,16 @@
-# Get-GroupIdInformation
+---
+title: "Get GroupID Information Cmdlet"
+description: "Display the database name, SQL Server name, version, and installation path of GroupID with the Get-GroupIdInformation cmdlet."
+keywords:
+  - Get-GroupIdInformation
+  - GroupID version
+  - installation path
+  - PowerShell cmdlet
+---
 
-The **Get-GroupIdInformation** commandlet retrieves general information about GroupID.
+# Get GroupID Information Cmdlet
+
+The **Get-GroupIdInformation** cmdlet retrieves general information about GroupID.
 
 ## Syntax
 
@@ -15,8 +25,8 @@ Get-GroupIdInformation
 
 Example 1:
 
-This example displays the name of the database and name of the SQL server being used by GroupID,
-GroupID version and the installation path of GroupID.
+This example displays the name of the database and the name of the SQL Server that GroupID uses, the
+GroupID version, and its installation path.
 
 ```
 Get-GroupIdInformation
@@ -24,6 +34,6 @@ Get-GroupIdInformation
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [General Commands](/docs/directorymanager/11.0/managementshell/general/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID General Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/general/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

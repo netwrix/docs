@@ -1,15 +1,23 @@
 ---
-title: "Delete a Data Source"
-description: "Delete a Data Source"
+title: "Delete a Data Source with the GroupID API"
+description: "Send a DELETE request to the GroupID API to remove a data source by its ID."
+keywords:
+  - delete data source API
+  - DataSource DELETE
+  - dataSourceId
+  - Synchronize jobs
 sidebar_position: 20
+unlisted: true
 ---
 
-# Delete a Data Source
+# Delete a Data Source with the GroupID API
 
-This API can be used for deleting a specified data source.
+Use this API to delete a specified data source.
 
-NOTE: Deleting a data source corrupts all Synchronize jobs, membership queries, and search queries
+:::note
+Deleting a data source corrupts all Synchronize jobs, membership queries, and search queries
 using that data source.
+:::
 
 ## Endpoint
 
@@ -19,7 +27,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/{dataSourceId}
 
 DELETE
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -37,7 +45,7 @@ DELETE
 }
 ```
 
-See Also
+## See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

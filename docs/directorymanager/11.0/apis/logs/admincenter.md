@@ -1,13 +1,20 @@
 ---
-title: "Admin Center Logs"
-description: "Admin Center Logs"
+title: "Download Admin Center Logs with the API"
+description: "Download the Admin Center logs as an encrypted zip file by sending a GET request to the Logs API."
+keywords:
+  - Admin Center logs
+  - Logs API
+  - download Admin Center logs
+  - Admin Center log download endpoint
+  - GroupID Admin Center
 sidebar_position: 10
+unlisted: true
 ---
 
-# Admin Center Logs
+# Download Admin Center Logs with the API
 
-Use this API to get Admin Center logs. See the
-[Admin Center History](/docs/directorymanager/11.0/signin/concepts/history_1.md) topic
+Use this API to get Admin Center logs. See the
+[View and Export Admin Center History in GroupID](/docs/directorymanager/11.0/signin/concepts/history_1.md) topic
 for additional information.
 
 ## Endpoint
@@ -18,7 +25,7 @@ https://demomachine:4443/AdminCenter/api/Logs/Download
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 <Encrypted response>
@@ -28,5 +35,5 @@ Save the encrypted response as a zip file to a desired location.
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Logs APIs](/docs/directorymanager/11.0/apis/logs/logsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Logs APIs](/docs/directorymanager/11.0/apis/logs/logsapis.md)

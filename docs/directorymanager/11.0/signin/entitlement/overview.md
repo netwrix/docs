@@ -1,18 +1,24 @@
 ---
-title: "Entitlement"
-description: "Entitlement"
+title: "Entitlement Management in GroupID"
+description: "Learn how GroupID Entitlement replicates and manages permissions on Active Directory file servers and SharePoint sites, and how its schedules work."
+keywords:
+  - GroupID Entitlement
+  - NTFS permissions
+  - SharePoint document library permissions
+  - temporary permissions
+  - entitlement schedules
 sidebar_position: 70
 ---
 
-# Entitlement
+# Entitlement Management in GroupID
 
-GroupID Entitlement enables you to stay informed on the permissions assigned to objects residing on
+With GroupID Entitlement, you can stay informed on the permissions assigned to objects residing on
 your Active Directory servers and SharePoint sites.
 
 ## Entitlement for Active Directory
 
 With Entitlement, you can view and update the effective NTFS permissions assigned to a user or group
-on shared files and folders, that reside on a file server in your environment. You can:
+on shared files and folders that reside on a file server in your environment. You can:
 
 - Select an object, such as a user or group, to view and update the permissions assigned to it on
   shared files and folders residing on a server.
@@ -30,7 +36,7 @@ following:
 
 - Specify one or more file servers in identity store configurations.
 - Compute the permissions assigned to directory objects on the shared files and folders on those
-  file server(s), and replicate those permissions to Elasticsearch.
+  one or more file servers, and replicate those permissions to Elasticsearch.
 - View and manage entitlements in the Entitlement section of the GroupID portal.
 
 ## Entitlement for SharePoint
@@ -59,13 +65,13 @@ following:
 
 ## Perpetual Entitlements vs Temporary Entitlements
 
-Using GroupID, you can manage entitlements in the following ways:
+With GroupID, you can manage entitlements in the following ways:
 
 - **Assign and revoke permissions on a perpetual basis** - When a permission is assigned
   perpetually, it continues to apply until you choose to revoke it. Similarly, when a permission is
   revoked perpetually, it stays so until you choose to reapply it.
 - **Assign and revoke permissions on a temporary basis** - A temporary permission is one with a
-  start and end date specified. In case of temporary assignment, GroupID auto assigns the permission
+  start and end date specified. For temporary assignment, GroupID automatically assigns the permission
   on the start date and revokes it on the end date. Similarly, for temporary removal, GroupID
   revokes the permission on the start date and reassigns it on the end date.
 
@@ -74,15 +80,15 @@ Using GroupID, you can manage entitlements in the following ways:
 When you add the first server or site for entitlement management, the following three schedules are
 automatically created in the identity store:
 
-- [GroupID Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md) -
+- [Edit the GroupID Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md) -
   replicates object permissions on file servers and SharePoint sites for an Active Directory and
   Microsoft Entra ID identity store respectively. It performs a complete replication.
-- [Entitlement Scope Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementscope.md) -
+- [Edit the GroupID Entitlement Scope Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementscope.md) -
   replicates changes made to object permissions on file servers and SharePoint sites using GroupID.
-- [Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementtemporarypermissions.md) -
+- [Edit the Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementtemporarypermissions.md) -
   updates the temporary permissions for objects on file servers and SharePoint sites.
 
-## What is Replication?
+## About Replication
 
 When a file server/SharePoint site is added for entitlement management, an essential task is to
 replicate object permissions from the file server or SharePoint site to the Elasticsearch
@@ -94,21 +100,21 @@ involves the following:
   objects on document libraries.
 - The Data service then replicates this data to Elasticsearch.
 
-The GroupID Entitlement schedule auto runs at a set frequency, but you can also run it manually for
-a file server or SharePoint site. GroupID time stamps the last time permissions were replicated.
+The GroupID Entitlement schedule runs automatically at a set frequency, but you can also run it manually for
+a file server or SharePoint site. GroupID records a timestamp each time permissions are replicated.
 
 ## Entitlement-related Permissions for Security Roles
 
 You can grant permissions to security roles in an identity store on the Entitlement section in the
-GroupID portal. Based on these permissions, role members can performs different actions, such as
+GroupID portal. Based on these permissions, role members can perform different actions, such as
 navigate file servers and SharePoint sites, grant permissions to objects on shared resources, revoke
 permissions, and more.
 
-Entitlement-related permissions for a security role are discussed in the
+Entitlement-related permissions for a security role are described in the
 [Entitlement](/docs/directorymanager/11.0/signin/securityrole/permissions.md#entitlement)
 topic.
 
 See Also
 
-- [Manage File Servers](/docs/directorymanager/11.0/signin/entitlement/manage.md)
-- [Manage SharePoint Sites](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)
+- [Manage File Servers for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
+- [Manage SharePoint Sites for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)

@@ -1,12 +1,18 @@
 ---
-title: "Get All Groups"
-description: "Get All Groups"
+title: "Get All Groups of a User with the Directory Manager API"
+description: "Retrieve all groups for a specified user in an identity store, with paging and sorting options."
+keywords:
+  - Directory Manager API
+  - get user groups
+  - GET Groups All endpoint
+  - user groups API
 sidebar_position: 50
+unlisted: true
 ---
 
-# Get All Groups
+# Get All Groups of a User with the Directory Manager API
 
-Use this API to retrieve all groups in the directory for the specified user in the endpoint.
+Use this API to retrieve all groups in the directory for the user specified in the endpoint.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ Use this API to retrieve all groups in the directory for the specified user in 
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -26,7 +32,7 @@ Use this API to retrieve all groups in the directory for the specified user in 
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

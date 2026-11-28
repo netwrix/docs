@@ -1,14 +1,22 @@
 ---
-title: "Delete a Route"
-description: "Delete a Route"
+title: "Delete a Workflow Route Using the API"
+description: "Delete a user-defined workflow route from an identity store by sending a DELETE request to the GroupID API."
+keywords:
+  - delete workflow route
+  - workflow route API
+  - DELETE request
+  - GroupID REST API
 sidebar_position: 50
+unlisted: true
 ---
 
-# Delete a Route
+# Delete a Workflow Route Using the API
 
-You can use this API to delete a user-defined workflow route.
+Use this API to delete a user-defined workflow route.
 
-NOTE: You cannot delete a system workflow.
+:::note
+You can't delete a system workflow.
+:::
 
 ## Endpoint
 
@@ -18,7 +26,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 DELETE
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -52,5 +60,5 @@ DELETE
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

@@ -1,25 +1,31 @@
 ---
-title: "Microsoft Entra ID User"
-description: "Microsoft Entra ID User"
+title: "Create a Microsoft Entra ID Service Account User"
+description: "Create the Microsoft Entra ID user that GroupID uses as the service account for a Microsoft Entra ID identity store."
+keywords:
+  - Microsoft Entra ID user
+  - service account
+  - Entra admin center
+  - Global Administrator
+  - User Account Administrators
 sidebar_position: 30
 ---
 
-# Microsoft Entra ID User
+# Create a Microsoft Entra ID Service Account User
 
-Once your application has been registered with Microsoft Entra ID, formerly Azure Active Directory,
-create a user that will be set as a service account while creating an identity store for in
-Microsoft Entra ID GroupID.
+After you register your application with Microsoft Entra ID, formerly Azure Active Directory, create
+a user to set as the service account when you create an identity store for Microsoft Entra ID in
+GroupID.
 
 To create a user in Microsoft Entra ID:
 
-1. In the Microsoft Entra Admin Center, go to Microsoft Entra ID> Users and click **New User** >
+1. In the Microsoft Entra Admin Center, go to Microsoft Entra ID > Users and click **New User** >
    **Create new user**.
 
-    ![create_user](/images/directorymanager/11.0/configureentraid/register/create_user.webp)
+    ![Microsoft Entra ID Users page with New user and Create new user selected](/images/directorymanager/11.0/configureentraid/register/create_user.webp)
 
 2. On the **User** page:
 
-    ![create_new_user_page](/images/directorymanager/11.0/configureentraid/register/create_new_user_page.webp)
+    ![Create new user page showing the Basics tab](/images/directorymanager/11.0/configureentraid/register/create_new_user_page.webp)
 
     - The **Basics** tab contains the core fields required to create a new user.
 
@@ -34,15 +40,15 @@ To create a user in Microsoft Entra ID:
         - **Password**: Provide a password for the user to use during their initial sign-in. Uncheck
           the **Auto-generate password** option to enter a different password.
         - **Account enabled**: This option is checked by default. Uncheck to prevent the new user
-          from being able to sign-in. You can change this setting after the user is created.
+          from signing in. You can change this setting after the user is created.
 
         Either select the **Review + create** button to create the new user or **Next: Properties**
         to complete the next section.
 
-    - The **Properties** tab has some categories of user properties you can provide. These
-      properties can be added or updated after the user is created. The properties are:
+    - The **Properties** tab has categories of user properties you can provide. You can add or
+      update these properties after you create the user. The properties are:
 
-        - **Identity**: Enter the user's first and last name. Set the User type as either Member or
+        - **Identity**: Enter the user's first and last name. Set the user type to Member or
           Guest.
         - **Job information**: Add any job-related information, such as the user's job title,
           department, or manager.
@@ -52,28 +58,27 @@ To create a user in Microsoft Entra ID:
         Either select the **Review + create** button to create the new user or **Next: Assignments**
         to complete the next section.
 
-    - The **Assignments** tab. You can assign the user:
+    - On the **Assignments** tab, you can assign the user:
 
         - an administrative unit
-        - group(s), select a group if you want to add the user to one or more existing groups
-        - role(s), assign the user a Global administrator role
-          Members of this role can create/manage groups, create/manage groups settings like naming
-          and expiration policies, and view groups activity and audit reports.
+        - groups: select a group if you want to add the user to one or more existing groups
+        - roles: assign the user the Global administrator role. Members of this role can create groups,
+          manage groups, manage group settings such as naming and expiration policies, and view
+          group activity and audit reports.
 
         Select the **Review + create** button.
 
-    By default, the GroupID Administrator security role in a Microsoft Entra ID identity store binds
-    to Global Administrator. If minimum role assignment for the service account is used, the default
-    Admin Security role criteria should also be changed to the User Account Administrators group.
+By default, the GroupID Administrator security role in a Microsoft Entra ID identity
+store binds to Global Administrator. If you use minimum role assignment for the service account,
+also change the default Admin Security role criteria to the User Account Administrators group.
 
 The user is created and added to your Microsoft Entra ID tenant.
 
-You can now create an identity store for Microsoft Entra ID GroupID.
+You can now create an identity store for Microsoft Entra ID in GroupID.
 
-Make sure you copy the application ID which is generated by Microsoft Entra ID when the application
-is registered. This application ID will be required while creating an identity store for Microsoft
-Entra ID.
+Ensure that you copy the application ID that Microsoft Entra ID generates when you register the
+application. You need this application ID when you create an identity store for Microsoft Entra ID.
 
 See Also
 
-- [Registration and Permissions Assignment](/docs/directorymanager/11.0/configureentraid/register/appregister.md)
+- [Register GroupID in Microsoft Entra ID](/docs/directorymanager/11.0/configureentraid/register/appregister.md)

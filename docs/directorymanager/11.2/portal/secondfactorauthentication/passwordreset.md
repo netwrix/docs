@@ -1,184 +1,146 @@
 ---
-title: "Reset Passwords"
-description: "Reset Passwords"
+title: "Reset Your Account Password in Directory Manager"
+description: "Reset your identity store account password in the Directory Manager portal as an enrolled or unenrolled user, using multifactor authentication."
+keywords:
+  - reset password
+  - Forgot Password
+  - multifactor authentication
+  - enrolled users
+  - unenrolled users
+  - second way authentication
 sidebar_position: 30
 ---
 
-# Reset Passwords
+# Reset Your Account Password in Directory Manager
 
-The Directory Manager portal enables enrolled users in an identity store reset their account
-passwords securely. They can reset their passwords if they have forgotten or lost their existing
-passwords. Unenrolled users can reset their passwords if the administrator has enabled the Second
-Way Authentication option for their role.
+The Directory Manager portal lets enrolled users in an identity store reset their account passwords securely. They can reset a password if they have forgotten or lost it. Unenrolled users can reset their passwords if the administrator has enabled the Second Way Authentication option for their role.
 
-The Directory Manager portal provides an authentication mechanism, whereby users must authenticate
-themselves with Multifactor Authentication types they enrolled their accounts with.
+The portal requires users to authenticate with the multifactor authentication types they enrolled their accounts with. If the administrator has enabled multifactor authentication for the identity store, users must authenticate with those types. After successful authentication, users can reset the account password in accordance with the password policies the Directory Manager administrator defined for their role in the identity store.
 
-If the administrator has enabled multifactor authentication for the identity store, users must
-authenticate their accounts using the authentication types they enrolled their account with. After
-successful authentication, users can reset account password in accordance with the password policies
-the Directory Manager administrator has defined for your role in the identity store.
+## Reset the identity store account password (enrolled users)
 
-## Reset identity store account password (enrolled users)
+To reset the identity store account password for enrolled users:
 
-To reset identity store account password for enrolled users.
+1. On the Welcome to Directory Manager page of the portal, click the **Forgot Password** card.
+2. Select the identity store where your account exists from the identity store dropdown list.
+3. Enter your identity store account name in the user name box.
+4. Provide the displayed captcha code in the **Captcha** box.
+5. Click **Reset Password**. The portal directs you to a page that shows the authentication types you enrolled this account with.
+6. Authenticate your account using the required types.
 
-Step 1 – On the Welcome to Directory Manager page of the portal, click the **Forgot Password** card.
+    - Security Questions
 
-Step 2 – Select the identity store where your account exists from the identity store dropdown list.
+        1. On the Multifactor Authentication window, select the **Security Questions** checkbox and click **Continue**.
+        2. The page lists the security questions you enrolled your account with. Provide answers to these questions.
+        3. Click **Verify and Continue**.
 
-Step 3 – Enter your identity store account name in the user name box.
+    - Mobile Verification
 
-Step 4 – Provide the displayed captcha code in the **Captcha** box.
+        1. On the Multifactor Authentication window, select the **Mobile Verification** checkbox and click **Continue**.
+        2. Enter the last four digits of your mobile number and click **Send Code**.
+        3. In the displayed box, enter the 5-digit access code sent to your mobile phone.
+        4. Click **Verify and Continue**.
 
-Step 5 – Click **Reset Password**. You will be directed to a page that shows the authentication
-types you enrolled this account with.
+        If you haven't received a code, click **Send Again** and then enter the received code in the given box.
 
-Step 6 – Authenticate your account using the required types.
+    - Email Verification
 
-- Security Questions
+        1. On the Multifactor Authentication window, select the **Email** checkbox and click **Continue**.
+        2. Complete your email address and click **Send Code**.
+        3. In the displayed box, enter the 5-digit access code sent to the provided email address.
+        4. Click **Verify and Continue**.
 
-    1. On the Multifactor Authentication window, select the **Security Questions** checkbox and
-       click **Continue**.
-    2. The page lists the security questions you enrolled your account with. Provide answers to
-       these questions.
-    3. Click **Verify and Continue**.
+        If you haven't received a code, click **Send Again** and then enter the received code in the given box.
 
-- Mobile Verification
+    - Authenticator
 
-    1. On the Multifactor Authentication window, select the **Mobile Verification** checkbox and
-       click **Continue**.
-    2. Enter the last four digits of your mobile number and click **Send Code**.
-    3. In the displayed box, enter the 5 digit access code sent on your mobile phone.
-    4. Click **Verify and Continue**.
+        1. On the **Multifactor Authentication** window, select the **Authenticator** checkbox and click **Continue**.
+        2. Launch the authenticator app on your smartphone.
+        3. The app displays a 6-digit code. Enter that code in the **Security Code** box on the Authenticator page.
 
-    If you have not received a code, click **Send Again** and then enter the received code in the
-    given box.
+            The app generates a new code every 30 seconds.
 
-- Email Verification
+        4. Click **Verify and Continue**.
 
-    1. On the Multifactor Authentication window, select the **Email**checkbox and click
-       **Continue**.
-    2. Complete your email address and click **Send Code**.
-    3. In the displayed box, enter the 5 digits access code sent to the provided email address.
-    4. Click **Verify and Continue**.
+    - Link Account
 
-    If you have not received a code, click **Send Again** and then enter the received code in the
-    given box.
+        1. On the Multifactor Authentication window, select the **Link Account** checkbox and click **Continue**.
+        2. On the **Link Account** tab, select a link account you want to use for resetting the password of your account.
 
-- Authenticator
+            This tab lists the linked accounts that have the **Allow Authentication** option enabled.
 
-    1. On the **Multifactor Authentication** window, select the **Authenticator**checkbox and click
-       **Continue**.
-    2. Launch the authenticator app on your smartphone.
-    3. The app displays a 6-digit code. Enter that code in the **Security Code** box on the
-       Authenticator page.
+        3. Enter the username and password of the selected linked account in the respective boxes.
+        4. Click **Next**.
 
-        The app generates a new code every 30 seconds.
+    - YubiKey
 
-    4. Click **Verify and Continue**.
+        Insert the YubiKey device in the USB slot of your computer.
 
-- Link Account
+        1. On the Multifactor Authentication window, select the **YubiKey** checkbox and click **Continue**.
+        2. Click your YubiKey device name. The portal directs you to tap the device. After you tap it, you are authenticated.
 
-    1. On the Multifactor Authentication window, select the **Link Account** checkbox and click
-       **Continue**.
-    2. On the **Link Account** tab, select a link account you want to use for resetting the password
-       of your account.
+    - Windows Hello
 
-        This tab lists the linked accounts that have the **Allow Authentication** option enabled.
+        1. On the Multifactor Authentication window, select the **Windows Hello** checkbox and click **Continue**.
+        2. Click **Authenticate and Continue**.
 
-    3. Enter the username and password of the selected linked account in the respective boxes.
-    4. Click **Next**.
+            Authenticate with the provided biometric information or with the PIN given in Windows Hello sign-in options.
 
-- YubiKey
+7. After you authenticate, the Reset My Password page appears.
+8. All your linked accounts, if any, are listed in the Select the account to reset their passwords section. Select the checkboxes for the accounts to reset their passwords.
 
-    Insert the YubiKey device in the USB slot of your computer.
+    Enter your new password in the **New password** box. When you enter the new password, the **Password Acceptance** box appears. The new password must conform to the rules of the applied password policy for the identity store.
 
-    1. On the Multifactor Authentication window, select the **YubiKey**checkbox and click
-       **Continue**.
-    2. Click your YubiKey device name. The portal directs you to tap on the device.  
-       On tapping, you are authenticated.
+    To meet the password complexity requirements, the password must:
 
-- Windows Hello
+    1. Be at least as long as the length defined in the password policy of the provider.
+    2. Contain characters from the following categories:
 
-    1. On the Multifactor Authentication window, click the **Windows Hello** checkbox and click
-       **Continue**.
-    2. Click **Authenticate and Continue**.
+        - English uppercase characters (A through Z)
+        - English lowercase characters (a through z)
+        - Base 10 digits (0 through 9)
+        - Special characters (for example, !, $, #, %)
 
-        Authenticate with the provided biometric information or with the PIN given in Windows Hello
-        sign-in options.
+9. Enter the new password for the selected accounts in the Confirm new password box.
+10. Click **Reset Password**.
 
-Step 7 – On getting authenticated, the Reset My Password page is displayed.
+    If you have reused an old password and it doesn't meet the **Enforce password history** policy of the provider, a message informs you that the password must be different from the old one.
 
-Step 8 – All your linked accounts, if any, are listed in the Select the account to reset their
-passwords section. Select the checkboxes for the accounts to reset their passwords.
+11. On reset, the Reset Password Results page displays the message "Password has been reset successfully." Click **OK**.
 
-Enter your new password in the **New password** box. On typing the new password, the **Password
-Acceptance** box appears. The new password must conform to the rules of the applied password policy
-for the identity store.
+## Reset the identity store account password (unenrolled users)
 
-To meet the password complexity requirements, the password must:
+To reset the identity store account password for unenrolled users:
 
-1. be at least as per the characters length defined in the password policy of the provider.
-2. contain uppercase lowercase characters, digit, or special character:
+1. On the Welcome to Directory Manager page, click the **Forgot Password** card.
+2. Select the identity store your account resides in from the Identity Store list.
+3. Enter your user name in the Username box.
+4. Provide the displayed captcha code in the **Captcha** box.
+5. Click **Reset Password**. The portal directs you to a page that shows the second way authentication types the Directory Manager administrator has enabled for your role.
+6. Authenticate your account using any of the following second way authentication options.
 
-    - English uppercase characters (A through Z)
-    - English lowercase characters (a through z)
-    - Base 10 digits (0 through 9)
-    - Special characters (for example, !, $, #, %)
+    - Security Question
 
-Step 9 – Enter the new password for the selected accounts in the Confirm new password box.
+        1. Select the **Security Questions** checkbox and click **Continue**.
+        2. Provide an answer to the question the administrator has set for you.
+        3. Click **Verify and Continue**.
 
-Step 10 – Click **Reset Password**.
+    - Mobile Verification
 
-If you have reused an old password and it doesn't meet the **Enforce password history** policy of
-the provider, a message inform you that the password must be different from the old one.
+        1. Select the **Mobile Verification** checkbox and click **Continue**.
+        2. Enter the last four digits of your mobile number in the box and click **Send Code**.
+        3. In the displayed box, enter the 5-digit access code sent to your mobile phone.
+        4. Click **Verify and Continue**.
 
-Step 11 – On reset, the Reset Password Results page displays the message ,"Password has been reset
-successfully.". Click **OK**.
+        If you haven't received a code, click **Send Again** and then enter the received code in the given box.
 
-## Reset identity store account password (unenrolled users)
+    - Email Verification
 
-To reset identity store account password for unenrolled users.
+        1. Select the **Email Verification** checkbox and click **Continue**.
+        2. Complete your email address and click **Send Code**.
+        3. Enter the 5-digit access code sent to the provided email address in the displayed box.
+        4. Click **Verify and Continue**.
 
-Step 1 – On the Welcome to Directory Manager page, click the **Forgot Password** card.
+        If you haven't received a code, click **Send Again** and then enter the received code in the given box.
 
-Step 2 – Select the identity store from the Identity Store list your account resides in.
-
-Step 3 – Enter your user name in the Username box.
-
-Step 4 – Provide the displayed captcha code in the **Captcha** box.
-
-Step 5 – Click **Reset Password**. You will be directed to a page that shows the second way
-authentication types the Directory Manageradministrator has enabled for your role.
-
-Step 6 – Authenticate your account using any of the following second way authentication options.
-
-- Security Question
-
-    1. Select the **Security Questions** checkbox and click **Continue**.
-    2. Provide answer to the question the administrator has set for you.
-    3. Click **Verify and Continue**.
-
-- Mobile Verification
-
-    1. Select **Mobile Verification** checkbox and click **Continue**.
-    2. Enter the last four digits of your mobile number in the box and click **Send Code**.
-    3. In the displayed box, enter the 5 digit access code sent on your mobile phone.
-    4. Click **Verify and Continue**.
-
-    If you have not received a code, click **Send Again** and then enter the received code in the
-    given box.
-
-- Email Verification
-
-    1. Select **Email Verification** checkbox and click **Continue**.
-    2. Complete your email address and click **Send Code**.
-    3. Enter the 5 digit access code sent to the provided email address in the displayed box.
-    4. Click **Verify and Continue**.
-
-    If you have not received a code, click **Send Again** and then enter the received code in the
-    given box.
-
-Step 7 – Follow the steps 6 - 11 in the Reset identity store account password (enrolled users)
-section to reset your password.
+7. Follow steps 6 through 11 in the Reset the identity store account password (enrolled users) section to reset your password.

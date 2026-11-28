@@ -1,50 +1,39 @@
 ---
-title: "Smart Group page"
-description: "Smart Group page"
+title: "Smart Group Page in the Create Group Wizard"
+description: "Review and change the query that builds Smart Group membership, and associate a Smart Group Update job, on the Smart Group page of the Create Group wizard."
+keywords:
+  - Smart Group query
+  - Query Designer
+  - Smart Group Update job
+  - Create Group wizard
 sidebar_position: 40
 ---
 
-# Smart Group page
+# Smart Group Page in the Create Group Wizard
 
-This page displays the default query for the Smart Group; however, you can modify it. The group’s
-membership is updated with the records fetched by the query.
+This page displays the default query for the Smart Group. You can modify it. The query fetches the records that update the group’s membership.
 
-- The **Containers** area displays the domain or containers the query will run on.
-- **Object Types**: Lists the object types the query will fetch.
-- The **Server** and **Storage** areas are displayed if the query only fetches messaging system
-  recipients. These areas display the server and storage for the query to fetch the records from.
+- The **Containers** area displays the domain or containers the query runs on.
+- **Object Types** lists the object types the query fetches.
+- The **Server** and **Storage** areas appear if the query fetches only messaging system recipients. They display the server and storage the query fetches the records from.
 
 In an Active Directory identity store, the default query returns the following:
 
-- If a messaging provider is configured for the identity store, the default query returns messaging
-  system recipients (users with mailboxes, users with external email addresses, and contacts with
-  external email addresses).
-- Without a messaging provider, the default query returns all users, contacts, and groups in the
-  identity store.
+- If a messaging provider is configured for the identity store, the default query returns messaging system recipients (users with mailboxes, users with external email addresses, and contacts with external email addresses).
+- Without a messaging provider, the default query returns all users, contacts, and groups in the identity store.
 
 In a Microsoft Entra ID identity store, the default query returns the following:
 
-- If a messaging provider is configured for the identity store, the default query returns messaging
-  system recipients (users with mailboxes and users with external email addresses).
-- Without a messaging provider, the default query returns all users and groups. For an Office 365
-  group, however, only user objects are added to group membership.
+- If a messaging provider is configured for the identity store, the default query returns messaging system recipients (users with mailboxes and users with external email addresses).
+- Without a messaging provider, the default query returns all users and groups. For an Office 365 group, however, only user objects are added to group membership.
 
-You can do the following:
+On this page, you can do the following:
 
-Step 1 – To modify the query, click the **Query Designer** button. This launches the
-[Query Designer](/docs/directorymanager/11.2/portal/group/querydesigner/overview.md) dialog box, where you can modify the query.
+1. To modify the query, click the **Query Designer** button. The [Query Designer in the Directory Manager portal](/docs/directorymanager/11.2/portal/group/querydesigner/overview.md) dialog box opens, where you can modify the query.
+2. Optionally, associate a Smart Group Update job with the group. This scheduled job updates the group’s membership when it runs. From the **Scheduled Job** list, select a Smart Group Update job to associate with the group. The list contains Smart Group Update jobs defined in the identity store.
 
-Step 2 – You can also associate a Smart Group Update job with the group; this is a scheduled job
-that updates the group’s membership when it runs.
+   :::note
+   If the administrator has enforced the job selection option, you can't proceed unless you select a scheduled job for this group.
+   :::
 
-From the **Scheduled Job** list, select a Smart Group Update job to associate with the group.
-
-This list contains Smart Group Update jobs defined in the identity store.
-
-:::note
-If the administrator has enforced the job selection option, you can't proceed unless you
-select a scheduled job for this group.
-:::
-
-
-Step 3 – Click **Next**.
+3. Click **Next**.

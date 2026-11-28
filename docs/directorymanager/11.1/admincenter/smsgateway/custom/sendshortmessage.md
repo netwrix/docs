@@ -1,6 +1,12 @@
 ---
 title: "ISmsGateway.SendShortMessage"
-description: "ISmsGateway.SendShortMessage"
+description: "Send a text message to target mobile phone numbers through a custom SMS gateway and get back the delivery status."
+keywords:
+  - ISmsGateway.SendShortMessage
+  - send SMS message
+  - custom SMS gateway
+  - SendSmsMessageResult
+  - ShortMessage
 sidebar_position: 90
 ---
 
@@ -22,12 +28,12 @@ SendSmsMessageResult SendShortMessage(ShortMessage shortMessage);
 
 **ShortMessage**
 
-Type: Imanami.directorymanager.DataTransferObjects.DataContracts.SMS.ShortMessage
+Type: Imanami.GroupID.DataTransferObjects.DataContracts.SMS.ShortMessage
 
-The object defining the message elements including the target mobile phone numbers.
+The object that defines the message elements, including the target mobile phone numbers.
 
 **Return Value**
 
-Type: Imanami.directorymanager.DataTransferObjects.DataContracts.SMS.SendSmsMessageResult
+Type: Imanami.GroupID.DataTransferObjects.DataContracts.SMS.SendSmsMessageResult
 
-The object containing the message delivery status and exception details.
+The object that contains the message delivery status and exception details.

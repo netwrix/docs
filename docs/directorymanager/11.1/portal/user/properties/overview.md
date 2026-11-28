@@ -1,33 +1,32 @@
 ---
-title: "User Properties"
-description: "User Properties"
+title: "Directory Manager User, Mailbox, and Contact Properties"
+description: "Find the property tabs for users, mailboxes, and contacts in Active Directory and Microsoft Entra ID, and the toolbar actions you can take on them."
+keywords:
+  - user properties
+  - mailbox properties
+  - contact properties
+  - Active Directory identity store
+  - Microsoft Entra ID identity store
 sidebar_position: 30
 ---
 
-# User Properties
+# Directory Manager User, Mailbox, and Contact Properties
 
-You can view and manipulate the properties of directory objects (users, mailboxes, and contacts) in
-the connected identity store, depending on the permissions the GroupID administrator has granted
-you.
+You can view and edit the properties of directory objects (users, mailboxes, and contacts) in the connected identity store. The permissions the Directory Manager administrator has granted you determine what you can do.
 
 **You can:**
 
-- Select the required object and click **Properties** on the toolbar. The object's properties page
-  is displayed.
-- Click **Save** after making any changes in any properties' tab
-- Click **Delete** to delete that user, contact, or mailbox.
-- Click **Add to Contacts** on the toolbar. The portal creates the direct report's vCard and prompts
-  you to save it on your machine. You can then use it to add the direct report's email address to
-  your email contact list.
-- Click **Send email** on the toolbar. This launches the default Windows email application for
-  sending an email to the direct report.
-- Click Reset Password to reset the password for the object.
+- Select the object and click **Properties** on the toolbar. The object's properties page opens.
+- Click **Save** after you make changes in any properties tab.
+- Click **Delete** to delete the user, contact, or mailbox.
+- Click **Add to Contacts** on the toolbar. The portal creates the direct report's vCard and prompts you to save it on your machine. You can then use it to add the direct report's email address to your email contact list.
+- Click **Send email** on the toolbar. This opens the default Windows email application so you can send an email to the direct report.
+- Click **Reset Password** to reset the password for the object.
 - Click **Organizational Hierarchy** to view the hierarchy of the object.
 
-## User and Mailbox properties in Active Directory
+## User and mailbox properties in Active Directory
 
-Following is the list of all the properties that Users and Mailbox Users have in Active Directory
-based identity store.
+The following list shows all the properties that users and mailbox users have in an Active Directory-based identity store.
 
 - [Object properties - General tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/general.md)
 - [Object properties - Organization tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/organization.md)
@@ -43,10 +42,9 @@ based identity store.
 - [Object Properties - Entitlements tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/entitlement.md)
 - [Object properties - History tab](/docs/directorymanager/11.1/portal/group/properties/history.md)
 
-## User and Mailbox properties in Microsoft Entra ID
+## User and mailbox properties in Microsoft Entra ID
 
-Following is the list of all the properties that Users and Mailbox Users have in an Microsoft Entra
-ID based identity store.
+The following list shows all the properties that users and mailbox users have in a Microsoft Entra ID-based identity store.
 
 - [User properties - Identity tab](/docs/directorymanager/11.1/portal/user/properties/EntraID/identity.md)
 - [User properties - Directory Role tab](/docs/directorymanager/11.1/portal/user/properties/EntraID/directoryrole.md)
@@ -59,13 +57,11 @@ ID based identity store.
 
 ## Contact properties
 
-Following is the list of all the properties that Contacts have in Active Directory based identity
-store.
+The following list shows all the properties that contacts have in an Active Directory-based identity store.
 
 :::note
-Contact object isn't supported in Microsoft Entra ID.
+The contact object isn't supported in Microsoft Entra ID.
 :::
-
 
 - [Object properties - General tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/general.md)
 - [Object properties - Organization tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/organization.md)

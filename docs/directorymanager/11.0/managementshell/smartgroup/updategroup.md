@@ -1,18 +1,25 @@
 ---
-title: "Update-Group"
-description: "Update-Group"
+title: "Update-Group Cmdlet"
+description: "Refresh the membership of a Smart Group or Dynasty in GroupID by re-running the LDAP query associated with it."
+keywords:
+  - Update-Group
+  - update Smart Group membership
+  - refresh Dynasty
+  - LDAP query
+  - GroupID cmdlet
+  - Management Shell
 sidebar_position: 50
 ---
 
-# Update-Group
+# Update-Group Cmdlet
 
-The **Update-Group** commandlet modifies the membership of a Smart Group or Dynasty according to the
+The **Update-Group** cmdlet modifies the membership of a Smart Group or Dynasty according to the
 results returned by the LDAP query. This query is associated with the group or Dynasty creation and
-can be updated anytime using the **Set-SmartGroup** commandlet. When the **Update-Group** commandlet
-is executed, it searches the directory to find recipients matching the criteria defined in the query
+can be updated at any time using the **Set-SmartGroup** cmdlet. When the **Update-Group** cmdlet
+is run, it searches the directory to find recipients matching the criteria defined in the query
 and modifies the group membership list with the returned recipients, if any.
 
-You can view events related to this commandlet in GroupID portal, against the **History** node in
+You can view events related to this cmdlet in the GroupID portal, under the **History** node in
 the left panel.
 
 ## Syntax
@@ -33,8 +40,8 @@ Update-Group
 
 Example 1:
 
-The following command updates all the GroupID group(s), by using the credentials of a locally logged
-on user, in a container specified by the "SearchContainer" parameter.
+The following command updates all the GroupID groups, by using the credentials of a locally logged-on
+user, in a container specified by the "SearchContainer" parameter.
 
 ```
 Update-Group -SearchContainer “OU=Sales,DC=Contoso,DC=com”
@@ -44,7 +51,7 @@ Example 2:
 
 The following command updates all Smart Groups and Dynasties present in the container Training,
 using the credentials set in the $Credentials environment variable. See the
-[Set the $Credentials Environment Variable](/docs/directorymanager/11.0/managementshell/setthecredential.md)
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.0/managementshell/setthecredential.md)
 topic for setting credentials in an environment variable.
 
 ```
@@ -53,6 +60,6 @@ Update-Group -SearchContainer "OU=Training,DC=HR,DC=Imanami,DC=US" -Credential $
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Smart Group Commands](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Smart Group Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

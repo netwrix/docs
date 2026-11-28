@@ -1,13 +1,19 @@
 ---
-title: "Get Preview of a Smart Group Membership"
-description: "Get Preview of a Smart Group Membership"
+title: "Preview Smart Group Membership Changes API"
+description: "Preview the membership changes a Smart Group query would make, using a GET request to the GroupID data service."
 sidebar_position: 130
+keywords:
+  - Smart Group preview API
+  - Smart Group membership preview
+  - membership query preview
+  - IMSGCriteria
+unlisted: true
 ---
 
-# Get Preview of a Smart Group Membership
+# Preview Smart Group Membership Changes API
 
-Using this API, you can preview membership changes that will occur in a Smart Group membership as
-per the query given in the body.
+Use this API to preview the membership changes that would occur in a Smart Group according to the
+query in the request body.
 
 ## Endpoint
 
@@ -17,7 +23,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -66,7 +72,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -256,5 +262,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

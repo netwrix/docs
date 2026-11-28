@@ -1,12 +1,18 @@
 ---
-title: "Remove-Schedule"
-description: "Remove-Schedule"
+title: "Remove-Schedule Cmdlet for GroupID"
+description: "Delete a schedule by name or ID from the connected identity store with the Remove-Schedule cmdlet."
+keywords:
+  - Remove-Schedule
+  - Management Shell
+  - delete schedule
+  - pipeline removal
+  - Glm schedules
 sidebar_position: 50
 ---
 
-# Remove-Schedule
+# Remove-Schedule Cmdlet for GroupID
 
-The commandlet **Remove-Schedule** removes a schedule (by its name or ID) from the identity store
+The **Remove-Schedule** cmdlet removes a schedule (by its name or ID) from the identity store
 connected to the current instance of the Management Shell.
 
 ## Syntax
@@ -39,7 +45,7 @@ Remove-Schedule -ScheduleName GUS811_1
 
 Example 2:
 
-This example removes two schedules – GUS1 and GUS2 using the pipeline operator.
+This example uses the pipeline operator to remove the schedules GUS_1 and GUS_2.
 
 ```
 'GUS_1', 'GUS_2' | Remove-Schedule
@@ -55,6 +61,6 @@ Get-Schedule -JobType Glm | Select-Object -Property Name | Remove-Schedule
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Scheduling Commands](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

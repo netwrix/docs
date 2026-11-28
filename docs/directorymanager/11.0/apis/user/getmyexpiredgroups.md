@@ -1,10 +1,16 @@
 ---
-title: "Get My Expired Groups"
-description: "Get My Expired Groups"
+title: "Get My Expired Groups with the GroupID API"
+description: "Retrieve the groups of the authenticated user that have expired, with paging and sorting options."
+keywords:
+  - GroupID API
+  - expired groups
+  - Groups/Expired endpoint
+  - GET request
 sidebar_position: 60
+unlisted: true
 ---
 
-# Get My Expired Groups
+# Get My Expired Groups with the GroupID API
 
 This API retrieves the expired groups of the authenticated user.
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -26,7 +32,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -108,5 +114,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

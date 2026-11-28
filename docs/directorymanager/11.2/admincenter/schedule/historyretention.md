@@ -1,30 +1,39 @@
 ---
-title: "History Retention Schedule"
-description: "History Retention Schedule"
+title: "Directory Manager History Retention Schedule"
+description: "Learn how the History Retention schedule moves expired history records to .csv files and how to update its Scheduler service and triggers."
+keywords:
+  - History Retention schedule
+  - history records
+  - history retention period
+  - history .csv files
+  - Scheduler service
 sidebar_position: 30
 ---
 
-# History Retention Schedule
+# Directory Manager History Retention Schedule
 
-While configuring history tracking for an identity store, you can choose to keep history records
-forever in the Directory Manager database or retain history for a specific period. See the
-[Configure History Tracking](/docs/directorymanager/11.2/admincenter/identitystore/configure/historytracking.md) topic
-for additional information. In case you select the latter option, the History Retention schedule is
-auto created for the identity store. This schedule runs on a specified frequency to check if the
-retention period is over for any history records, and if so, move them from the Directory Manager
-database to the following .csv files:
+When you configure history tracking for an identity store, you can keep history records forever in
+the Directory Manager database or retain history for a specific period. For more information, see the
+[Configure History Tracking in Directory Manager](/docs/directorymanager/11.2/admincenter/identitystore/configure/historytracking.md)
+topic. If you select the latter option, Directory Manager creates the History Retention schedule
+automatically for the identity store. This schedule runs at a specified frequency to check whether
+the retention period is over for any history records. If it is, the schedule moves them from the
+Directory Manager database to the following .csv files:
 
 - History – Contains history data of the Directory Manager portal (including Synchronize),
   Management Shell, and scheduled jobs. It also contains history data for the identity store,
   security roles, and workflow configurations.
 - AuditingHistory – Contains history data of all authentication actions performed in Directory
-  Manager, as logged in Helpdek history. See the [History in Helpdesk](/docs/directorymanager/11.2/admincenter/helpdesk/history.md) topic
-  for additional information.
+  Manager, as logged in Helpdesk history. For more information, see the
+  [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.2/admincenter/helpdesk/history.md)
+  topic.
 - PasswordCenterHistory – Contains history data of all actions tracked in Helpdesk, except the
-  authentication action. See the [History in Helpdesk](/docs/directorymanager/11.2/admincenter/helpdesk/history.md) topic for additional
-  information.
-- AdminCenterHistory – Contains Admin Center history data. See the
-  [Admin Center History](/docs/directorymanager/11.2/admincenter/general/historyadmincenter.md) topic for additional information.
+  authentication action. For more information, see the
+  [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.2/admincenter/helpdesk/history.md)
+  topic.
+- AdminCenterHistory – Contains Admin Center history data. For more information, see the
+  [View and Export Admin Center History in Directory Manager](/docs/directorymanager/11.2/admincenter/general/historyadmincenter.md)
+  topic.
 
 These files are available at the following location on the Directory Manager server:
 
@@ -37,69 +46,68 @@ History data moved to these files no longer appears in Directory Manager.
 :::note
 Admin Center history doesn't fall in a specific identity store, so its retention mechanism is
 different. Directory Manager checks the identity store of the user who performed an action logged in
-Admin Center history, and archives that record according to the history retention setting of the
-identity store that user belongs to.
+Admin Center history. It then archives that record according to the history retention setting of the
+identity store that the user belongs to.
 :::
 
+After the History Retention schedule runs, the **History** page in identity store configurations
+shows the following information:
 
-After the History Retention schedule runs, the **History** page in identity store configurations shows the following information:
-
-![History Retension Information ](/images/directorymanager/11.2/admincenter/schedule/historyretention.webp)
+![History page in identity store configuration showing history retention information after the schedule runs](/images/directorymanager/11.2/admincenter/schedule/historyretention.webp)
 
 You can only update the existing History Retention schedule.
 
-## Update the History Retention Schedule
+## Update the History Retention schedule
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
-**Edit**.
+2. On the Identity Stores page, click the ellipsis button for an identity store and select
+   **Edit**.
 
-Step 3 – Click **Schedules** under Settings in the left pane.
+3. Click **Schedules** under Settings in the left pane.
 
-Step 4 – On the Schedules page, click the plus sign next to **History Retention**. Then click the
-ellipsis button for the schedule and select **Edit**.
+4. On the Schedules page, click the plus sign next to **History Retention**. Then click the
+   ellipsis button for the schedule and select **Edit**.
 
-Step 5 – On the Edit Schedule page, the Schedule Name box displays the schedule name as
-read-only.
-The default name format is: _HistoryRetention_`<identity store ID>`_`<identity store name>`_.
+5. On the Edit Schedule page, find the Schedule Name box. It shows the schedule name as read-only.
+   The default name format is: _HistoryRetention_`<identity store ID>`_`<identity store name>`_.
 
-Step 6 – The Name Preview box displays the schedule name as HistoryRetention; email notifications show the schedule with this name.
+6. Review the Name Preview box. It shows the schedule name as HistoryRetention. Email
+   notifications show the schedule with this name.
 
-Step 7 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
-responsible for triggering this schedule. The list displays a number of services that depends on the
-number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md) topic for additional
-information.
+7. In the Scheduler Service Name dropdown list, select a Scheduler service that's responsible for
+   triggering this schedule. The number of services in the list depends on the number of nodes in
+   all Elasticsearch clusters in the environment, because each node has its own Scheduler service.
+   For more information, see the
+   [Directory Manager Scheduler Service](/docs/directorymanager/11.2/admincenter/service/schedulerservice.md)
+   topic.
 
-:::note
-While selecting a Scheduler service, note the following:
+   :::note
+   When you select a Scheduler service, keep the following in mind:
 
-- The Scheduler service for the Directory Manager instance on which you are creating the schedule is
-  selected by default. However, you can select the Scheduler service of another instance as well.
+   - The Scheduler service for the Directory Manager instance on which you're creating the schedule
+     is selected by default. However, you can select the Scheduler service of another instance as
+     well.
+   - You can change the Scheduler service even after you create the schedule. On the next run, the
+     newly selected Scheduler service triggers the schedule.
+   - If the selected Scheduler service fails to trigger the schedule, no other Scheduler service is
+     selected automatically.
+   - If you run a schedule manually in Admin Center, Directory Manager uses the Scheduler service of
+     that instance.
+   :::
 
-- The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  newly-selected Scheduler service will trigger the schedule.
+8. In the **Triggers** area, review the default triggering frequency for the schedule.
 
-- If the selected Scheduler service fails to trigger the schedule, then no other Scheduler service
-  can be selected automatically.
+   - To change a trigger, click **Edit** for it.
+   - To add a new trigger, click **Add Trigger**.
 
-- If you run a schedule manually on the Admin Center, the Scheduler service of that instance
-  is used.
-:::
+   Follow step 11 in the
+   [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
+   topic to manage triggers.
 
-Step 8 – The Triggers area displays the default triggering frequency for the schedule.
+9. Click **Update Schedule**.
 
-- To change a trigger, click **Edit** for it.
-- To add a new trigger, click **Add Trigger**.
-
-Follow step 11 in the
-[Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic to manage triggers.
-
-Step 9 – Click **Update Schedule**.
-
-Step 10 – On the Schedules page, click **Save**.
-For general schedule info, see the
-[View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store) topic
-for additional information.
+10. On the Schedules page, click **Save**.
+    For general schedule information, see the
+    [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store)
+    topic.

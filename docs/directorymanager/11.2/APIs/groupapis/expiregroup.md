@@ -1,10 +1,16 @@
 ---
-title: "Expire a Group"
-description: "Expire a Group"
+title: "Expire a Group with the Directory Manager API"
+description: "Use the Expire Group API to expire a single group, identified in the endpoint URL, with the endpoint, HTTP method, and sample response."
+keywords:
+  - Directory Manager API
+  - expire group API
+  - group expiration
+  - POST Expire
 sidebar_position: 70
+unlisted: true
 ---
 
-# Expire a Group
+# Expire a Group with the Directory Manager API
 
 This API expires the group whose identity is provided in the endpoint URL.
 
@@ -16,7 +22,7 @@ This API expires the group whose identity is provided in the endpoint URL.
 
 **POST**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

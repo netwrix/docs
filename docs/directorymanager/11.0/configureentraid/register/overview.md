@@ -1,14 +1,21 @@
 ---
-title: "Register in Microsoft Entra ID"
-description: "Register in Microsoft Entra ID"
+title: "GroupID Registration Requirements in Entra ID"
+description: "Understand why GroupID must be registered in the Microsoft Entra Admin Center and what the registration requires."
+keywords:
+  - GroupID registration requirements
+  - registered application
+  - Microsoft Graph API
+  - Exchange API
+  - directory role
 sidebar_position: 10
 ---
 
-# Register in Microsoft Entra ID
+# GroupID Registration Requirements in Entra ID
 
-To use Microsoft Entra ID, formerly Azure Active Directory, identity provider, GroupID must first be
-registered in Microsoft Entra Admin Center portal. The registration grants GroupID access to a
-particular Microsoft Entra ID Directory and its data, such as Microsoft Entra ID groups and users.
+To use Microsoft Entra ID, formerly Azure Active Directory, as an identity provider, you must first
+register GroupID in the Microsoft Entra Admin Center. The registration grants GroupID
+access to a particular Microsoft Entra ID Directory and its data, such as Microsoft Entra ID
+groups and users.
 
 GroupID requires:
 
@@ -17,7 +24,8 @@ GroupID requires:
 - A Microsoft Entra ID Directory Role for the service account for the Microsoft Entra ID identity
   store.
 
-    NOTE: See the
+    :::note
+    See the
     [All Role](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#all-role)
     section for
     [User Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#user-administrator)
@@ -25,7 +33,8 @@ GroupID requires:
     [Exchange Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#exchange-administrator)
     role permissions in
     [Microsoft Entra built-in roles](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#microsoft-entra-built-in-roles).
+    :::
 
 See Also
 
-- [Registration and Permissions Assignment](/docs/directorymanager/11.0/configureentraid/register/appregister.md)
+- [Register GroupID in Microsoft Entra ID](/docs/directorymanager/11.0/configureentraid/register/appregister.md)

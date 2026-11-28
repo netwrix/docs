@@ -1,15 +1,21 @@
 ---
-title: "Import Group Members"
-description: "Import Group Members"
+title: "Import group members in GroupID"
+description: "Add members to a group from a file, an external data source, or another group, permanently or for a set period."
+keywords:
+  - "import group members"
+  - "Import Members wizard"
+  - "temporary group membership"
+  - "Query Designer import"
+  - "import members from groups"
 sidebar_position: 150
 ---
 
-# Import Group Members
+# Import group members in GroupID
 
-The **Import Members** wizard enables you to add members to the group using an external file.
+The **Import Members** wizard lets you add members to the group using an external file.
 
-The wizards search the directory for objects listed in the external file, and if found, adds them as
-members to the group.
+The wizard searches the directory for objects listed in the external file and, if found, adds them
+as members to the group.
 
 Supported file formats are:
 
@@ -33,12 +39,12 @@ launch the **Import Members** wizard.
 
     - **Import Members Perpetually**: to add imported members permanently to the group membership.
     - **Import Members Temporarily**: to add imported members to the group membership for a specific
-      period. At end of the period, the imported members are automatically removed from membership.
+      period. At the end of the period, the imported members are automatically removed from membership.
     - **Import Members From Group(s)**: to add all members of another group or groups to the
       membership of this group. See
       [Import members of an existing group to this group](#import-members-of-an-existing-group-to-this-group).
 
-2. In case of temporary membership, use the **Duration** list to specify the membership duration of
+2. For temporary membership, use the **Duration** list to specify the membership duration of
    the imported members. Options are:
 
     - **7 Days**, to add members to the group for 7 days starting today.
@@ -58,17 +64,17 @@ launch the **Import Members** wizard.
            to upload.
         2. Click the **Up** arrow to upload the file to the GroupID server for processing.
         3. The **File Options** section appears after uploading the file. Select the sheet from the
-           drop-down list.
+           dropdown list.
         4. Click **Read Data** to complete the selection process.
         5. Click **Next**.
 
     - **External Data Source**
 
         1. On the **Providers** page, select
-           [Query Designer](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
-           to create a query. The query will fetch all those members that match the set criteria.
+           [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+           to create a query. The query fetches all members that match the set criteria.
 
-            The Query Designer is not working. After adding provider in the data source, it is
+            The Query Designer isn't working. After adding provider in the data source, it is
             unable to read the table.
 
         2. Click **Next**.
@@ -76,7 +82,7 @@ launch the **Import Members** wizard.
 5. On the **Import** page, follow these steps:
 
     1. In the **Import Options** section, select this site/domain or the entire directory from the
-       **Search** drop-down list.
+       **Search** dropdown list.
 
         The wizard compares records in the import file with records in the selected domain or
         directory to update the group's membership.
@@ -95,19 +101,19 @@ launch the **Import Members** wizard.
 
     - **Resolved Items:**
 
-        Shows all objects that will be successfully processed.
+        Shows all objects that are successfully processed.
 
     - **Unresolved Items:**
 
-        Shows objects that will not be processed because a matching object could not be found in the
+        Shows objects that aren't processed because a matching object couldn't be found in the
         destination directory.
 
     - **Ambiguous Items:**
 
         Shows objects for which duplicate entries were found in the destination directory.
 
-8. If you do not want existing group members to be deleted during import, make sure that the
-   **Append existing items (uncheck to replace)** check box is selected.
+8. If you don't want existing group members to be deleted during import, ensure that the
+   **Append existing items (uncheck to replace)** checkbox is selected.
 9. Click **Finish** to import members from the specified file or provider.
 
 ## Import members of an existing group to this group
@@ -120,18 +126,18 @@ launch the **Import Members** wizard.
 1. On the **Lifecycle** page, select the **Import Members From Group(s)** option to add all members
    of another group or groups to the membership of this group.
 2. Click the **Search Groups** button; the
-   [Find Dialog Box](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) is displayed, where
-   you can search and select the group(s) whose members you want to import into the membership of
+   [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) is displayed, where
+   you can search and select the groups whose members you want to import into the membership of
    this group.
 3. Click **Next**.
 4. The **Preview** page lists the groups whose members are to be imported. Click the name of a group
    to view a list of its members.
-5. If you do not want existing group members to be deleted during import, make sure that the
-   **Append existing items (uncheck to replace)** check box is selected.
-6. Click **Finish** to import members from the selected group(s).
+5. If you don't want existing group members to be deleted during import, ensure that the
+   **Append existing items (uncheck to replace)** checkbox is selected.
+6. Click **Finish** to import members from the selected groups.
 
 **See Also**
 
-- [Groups](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasty](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
-- [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

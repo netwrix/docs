@@ -1,12 +1,17 @@
 ---
-title: "Object properties - Phone / Notes tab"
-description: "Object properties - Phone / Notes tab"
+title: "Phone / Notes Tab for Users and Contacts"
+description: "View or update the phone numbers, pager, and notes for a user or contact in GroupID."
+keywords:
+  - user phone numbers
+  - contact phone properties
+  - user notes
+  - Telephone Assistant
 sidebar_position: 80
 ---
 
-# Object properties - Phone / Notes tab
+# Phone / Notes Tab for Users and Contacts
 
-Use this tab to view or update the contact information of the user or contact.
+Use this tab to view or update the phone numbers and notes of the user or contact.
 
 **Business**
 
@@ -44,6 +49,6 @@ Any additional information about the user or contact.
 
 The pager number of the user or contact.
 
-See Also
+**See Also**
 
-- [User Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

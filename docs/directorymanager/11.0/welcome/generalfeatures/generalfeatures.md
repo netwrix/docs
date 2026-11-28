@@ -1,62 +1,68 @@
 ---
-title: "General Portal Features"
-description: "General Portal Features"
+title: "GroupID Portal General Features"
+description: "Learn about the general GroupID portal features: directory search, the Find dialog box, portal and account settings, and toolbars."
+keywords:
+  - GroupID portal
+  - portal features
+  - directory search
+  - portal toolbars
+  - user settings
 sidebar_position: 30
 ---
 
-# General Portal Features
+# GroupID Portal General Features
 
-GroupID Portal encompasses various functionalities available for the users that are:
+The GroupID portal provides the following functionalities for users:
 
 - [Directory Search](#directory-search)
 - [Find Dialog Box](#find-dialog-box)
-- [ Portal Settings ](#portal-settings)
-- [ User Account Settings ](#user-account-settings)
-- [Toolbars ](#toolbars)
+- [Portal Settings](#portal-settings)
+- [User Account Settings](#user-account-settings)
+- [Toolbars](#toolbars)
 
 ## Directory Search
 
-The GroupID portal provides a robust search feature that empowers users to efficiently manage
+The GroupID portal provides a search feature that lets users manage
 various directory objects within their identity store. These objects include mailboxes, users,
-groups, and contacts. Once a search is performed, the results are displayed on the **Search
+groups, and contacts. After a search, the results are displayed on the **Search
 Results** page.
 
-See the [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) topic.
+See the [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) topic for more information.
 
 ## Find Dialog Box
 
-The Find dialog box enables you to search **User**, **Group**, and **Contact** objects in the
-connected identity store. The object types available for search may vary, depending on the page you
+With the **Find** dialog box, you can search **User**, **Group**, and **Contact** objects in the
+connected identity store. The object types available for search can vary, depending on the page you
 launch the **Find** dialog box from.
 
-See the [Find Dialog Box](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) topic.
+See the [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) topic for more information.
 
 ## Portal Settings
 
-GroupID Portal offers flexible portal settings to customize the user experience and personalize the
+The GroupID portal offers flexible portal settings to customize the user experience and personalize the
 portal for each user.
 
-See the [Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) topic.
+See the [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) topic for more information.
 
 ## User Account Settings
 
 Users can manage their own profile information and perform various account-related actions through
 the User Settings.
 
-See the [User Account Settings](/docs/directorymanager/11.0/welcome/generalfeatures/user.md) topic.
+See the [Manage Your GroupID User Account](/docs/directorymanager/11.0/welcome/generalfeatures/user.md) topic for more information.
 
 ## Toolbars
 
 The portal provides toolbars with diverse options that users can use on the objects. These actions
 include editing properties, managing membership, viewing history, and more.
 
-See the [Toolbar](/docs/directorymanager/11.0/welcome/generalfeatures/toolbar.md) topic.
+See the [GroupID Portal Toolbar Buttons](/docs/directorymanager/11.0/welcome/generalfeatures/toolbar.md) topic for more information.
 
 **See Also**
 
-- [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [Find Dialog Box](/docs/directorymanager/11.0/welcome/generalfeatures/find.md)
-- [Query Based Advanced Search](/docs/directorymanager/11.0/welcome/generalfeatures/querysearch.md)
-- [Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
-- [User Account Settings](/docs/directorymanager/11.0/welcome/generalfeatures/user.md)
-- [Toolbar](/docs/directorymanager/11.0/welcome/generalfeatures/toolbar.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md)
+- [Search Directory Objects With a Saved Query](/docs/directorymanager/11.0/welcome/generalfeatures/querysearch.md)
+- [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [Manage Your GroupID User Account](/docs/directorymanager/11.0/welcome/generalfeatures/user.md)
+- [GroupID Portal Toolbar Buttons](/docs/directorymanager/11.0/welcome/generalfeatures/toolbar.md)

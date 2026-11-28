@@ -1,17 +1,20 @@
 ---
-title: "Set the $Credentials Environment Variable"
-description: "Set the $Credentials Environment Variable"
+title: "Set the $Credentials Variable in Management Shell"
+description: "Run Directory Manager Management Shell cmdlets under a different user account by setting the $Credentials environment variable."
+keywords:
+  - $Credentials variable
+  - Management Shell
+  - PSCredential
+  - alternate credentials
+  - cmdlet authentication
 sidebar_position: 30
 ---
 
-# Set the $Credentials Environment Variable
+# Set the $Credentials Variable in Management Shell
 
-By default, the Directory Manager Management Shell uses the credentials of the logged-in user for
-executing commandlets. If you need to use a different user account for some commandlets, you must
-set the $Credentials environment variable to the credentials of that user. This user account must
-also be part of the same forest. Once set, the variable can be used as a value for the Credential
-parameter with those commandlets that you want to execute using this account. The rest of the
-commandlets are executed under the credentials of the local user.
+By default, the Directory Manager Management Shell runs cmdlets with the credentials of the signed-in user. To run some cmdlets under a different user account, set the $Credentials environment variable to the credentials of that user. This user account must also be part of the same forest.
+
+After you set the variable, use it as the value of the Credential parameter with the cmdlets you want to run under this account. The rest of the cmdlets run under the credentials of the local user.
 
 ## Syntax
 
@@ -19,28 +22,28 @@ commandlets are executed under the credentials of the local user.
 $Credentials = new-object System.Management.Automation.PsCredential "DomainName\User Name",$(convertto-securestring "Password" -asplaintext -force)
 ```
 
-Example 1:
+## Examples
 
-The following command sets the $Credentials environment variable to the credentials of the user,
-John Smith, which exists on the same domain you are logged-on to.
+### Example 1
+
+This command sets the $Credentials environment variable to the credentials of the user John Smith, who exists on the domain you are signed in to.
 
 ```
 $Credentials = new-object System.Management.Automation.PsCredential "JohnSmith",$(convertto-securestring "MyP@ssw0rd" -asplaintext -force)
 ```
 
-Example 2:
+### Example 2
 
-The command below sets the credentials of the user, Brian Regan, which exists on a different domain
-in the same forest.
+This command sets the credentials of the user Brian Regan, who exists on a different domain in the same forest.
 
 ```
 $Credentials = new-object System.Management.Automation.PsCredential "Sales.Imanami.US\BrianRegan",$(convertto-securestring "MyP@ssw0rd" -asplaintext -force)
 ```
 
-Example 3:
+### Example 3
 
-The following command shows how to use the **$Credentials** environment variable with commandlets.
+This command shows how to use the **$Credentials** environment variable with cmdlets. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter.
 
 ```
-New-Container -ParentContainer "DC=HR,DC=Imanami,DC=US" -Name "Recruiting" -Credential $Cred
+New-Container -OrganizationalUnit "DC=HR,DC=Imanami,DC=US" -ContainerName "Recruiting" -IdentityStoreId 2 -Credential $Credentials
 ```

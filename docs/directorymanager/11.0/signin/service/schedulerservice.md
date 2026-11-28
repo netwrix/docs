@@ -1,13 +1,18 @@
 ---
-title: "Scheduler Service"
-description: "Scheduler Service"
+title: "GroupID Scheduler Service"
+description: "View the Scheduler service, which triggers identity store schedules at their set frequency, and find the settings you can manage."
+keywords:
+  - GroupID Scheduler service
+  - scheduled jobs
+  - identity store schedules
+  - service settings
 sidebar_position: 60
 ---
 
-# Scheduler Service
+# GroupID Scheduler Service
 
-In GroupID, schedules perform different tasks in an identity store. They run at a specified
-frequency to auto execute their respective functions. The Scheduler service is responsible for
+In GroupID, schedules perform different tasks in an identity store. They run at a
+specified frequency to automatically run their respective functions. The Scheduler service is responsible for
 triggering these schedules at their respective frequency.
 
 What do you want to do?
@@ -20,8 +25,8 @@ What do you want to do?
 1. In Admin Center, click **Applications** in the left pane.
 2. On the **Applications** page, click the **Scheduler Service** tab.
 
-    The tab displays the default Scheduler service(s) hosted in native IIS. The number of services
-    displayed on the tab depend on the number of Elasticsearch clusters in your environment, as each
+    The tab displays the default Scheduler services hosted in native IIS. The number of services
+    displayed on the tab depends on the number of Elasticsearch clusters in your environment, as each
     cluster has its own Scheduler service. See the
     [Elasticsearch Clusters, Nodes, and GroupID](/docs/directorymanager/11.0/signin/service/overview.md#elasticsearch-clusters-nodes-and-groupid)
     topic.  
@@ -29,7 +34,7 @@ What do you want to do?
     [View Data Service Details](/docs/directorymanager/11.0/signin/service/dataservice/manage.md#view-data-service-details)
     topic.
 
-    You cannot create a new Scheduler service or delete the existing one
+    You can't create a new Scheduler service or delete the existing one.
 
 ## Manage Scheduler Service Settings
 
@@ -42,5 +47,5 @@ You can manage the following settings for the Scheduler service:
 
 **See Also**
 
-- [GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Services](/docs/directorymanager/11.0/signin/service/overview.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Services](/docs/directorymanager/11.0/signin/service/overview.md)

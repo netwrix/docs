@@ -1,10 +1,15 @@
 ---
-title: "Get My Groups Count"
-description: "Get My Groups Count"
+title: "Get My Groups Count with the Directory Manager API"
+description: "Get the number of groups that belong to the authenticated user."
+keywords:
+  - Directory Manager API
+  - my groups count
+  - Groups/count endpoint
 sidebar_position: 110
+unlisted: true
 ---
 
-# Get My Groups Count
+# Get My Groups Count with the Directory Manager API
 
 This API retrieves the number of groups of the authenticated user.
 
@@ -16,7 +21,7 @@ This API retrieves the number of groups of the authenticated user.
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -25,7 +30,7 @@ This API retrieves the number of groups of the authenticated user.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

@@ -1,12 +1,17 @@
 ---
 title: "ISmsGateway.ProxyPassword"
-description: "ISmsGateway.ProxyPassword"
+description: "Get or set the password of the account that connects a custom SMS gateway to its proxy server."
+keywords:
+  - ISmsGateway.ProxyPassword
+  - SMS gateway proxy password
+  - custom SMS gateway
+  - Imanami.PublicInterfaces
 sidebar_position: 60
 ---
 
 # ISmsGateway.ProxyPassword
 
-Gets or sets the password of the user account that will be used for connecting to the proxy server.
+Gets or sets the password of the user account that is used to connect to the proxy server.
 
 **Namespace:** Imanami.PublicInterfaces
 
@@ -26,8 +31,8 @@ The password of the proxy account.
 
 **Remarks**
 
-Use this property if your proxy server requires a user name and password for connecting to it.
+Use this property if your proxy server requires a user name and password to connect to it.
 
 **See Also**
 
-- [Implement and Deploy a Custom SMS Gateway](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in GroupID](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

@@ -1,10 +1,16 @@
 ---
-title: "Delete a Group"
-description: "Delete a Group"
+title: "Delete a Group with the GroupID API"
+description: "Use the Delete Group API to remove a single group from an identity store by its identity, with the endpoint, HTTP method, and sample response."
+keywords:
+  - GroupID API
+  - delete group API
+  - DELETE group
+  - identity store group
 sidebar_position: 30
+unlisted: true
 ---
 
-# Delete a Group
+# Delete a Group with the GroupID API
 
 Use this API to delete a group from an identity store.
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 DELETE
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -36,5 +42,5 @@ DELETE
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

@@ -1,12 +1,18 @@
 ---
-title: "Update Groups"
-description: "Update Groups"
+title: "Update Multiple Groups API"
+description: "Update attributes on several groups in one PATCH request to the GroupID data service."
 sidebar_position: 170
+keywords:
+  - update multiple groups
+  - bulk group update
+  - PATCH groups
+  - group attributes API
+unlisted: true
 ---
 
-# Update Groups
+# Update Multiple Groups API
 
-Using this API, you can update multiple groups.
+Use this API to update multiple groups.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 PATCH
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -51,7 +57,7 @@ PATCH
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -149,5 +155,5 @@ PATCH
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

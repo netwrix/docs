@@ -1,10 +1,17 @@
 ---
-title: "Manage Global Replication Settings"
-description: "Manage Global Replication Settings"
+title: "Manage Global Replication Settings in GroupID"
+description: "Schedule and force-run the Replication service, monitor Elasticsearch health, restore object data, clear unused indices, and set error alerts."
+keywords:
+  - global replication settings
+  - Elasticsearch Health Monitor
+  - replication interval
+  - restore object data
+  - Search Guard password
+  - replication error notifications
 sidebar_position: 10
 ---
 
-# Manage Global Replication Settings
+# Manage Global Replication Settings in GroupID
 
 The Replication service is responsible for replicating attributes of the group, user, contact,
 computer, and organizational unit objects from a provider (such as Active Directory) to
@@ -15,20 +22,22 @@ to run every x minutes, force run it at any time, set a threshold for triggering
 notifications, and view the Elasticsearch health status.
 
 On every successful run of the Replication service, GroupID generates the replication status of
-object types for each domain in an identity store and alerts you to any errors that may have
-occurred during the replication process.
+object types for each domain in an identity store and alerts you to any errors that occurred during
+the replication process.
 
-NOTE: The Replication service does not replicate excluded domains for an identity store. See the
+:::note
+The Replication service doesn't replicate excluded domains for an identity store. See the
 [Exclude an Active Directory Domain from Replication](/docs/directorymanager/11.0/signin/identitystore/manage.md#exclude-an-active-directory-domain-from-replication)
 topic.
+:::
 
-### How to Resolve Replication Errors
+## How to Resolve Replication Errors
 
 Possible actions to eliminate replication errors are:
 
-- Make sure the Replication service and Elasticsearch service are running.
-- Make sure Search Guard or any other security plugin you use for Elasticsearch is operational.
-- Consult the Replication service logs. They provide elaborate information about the object type in
+- Ensure the Replication service and Elasticsearch service are running.
+- Ensure Search Guard or any other security plugin you use for Elasticsearch is operational.
+- Consult the Replication service logs. They provide detailed information about the object type in
   the specific domain of the identity store the error occurred for, and whether that error comes
   from the identity provider or Elasticsearch. See the
   [Replication Service Logs](/docs/directorymanager/11.0/signin/replication/overview.md#replication-service-logs)
@@ -49,7 +58,7 @@ What do you want to do?
 
 ## Monitor Elasticsearch Health Status
 
-GroupID enables you to monitor the Elasticsearch service for the following:
+Use GroupID to monitor the Elasticsearch service for the following:
 
 - The status of the Elasticsearch service. See the
   [Elasticsearch Service](/docs/directorymanager/11.0/signin/concepts/dashboard.md#elasticsearch-service)
@@ -67,20 +76,20 @@ is intact. It also checks the health of each index.
 1. In Admin Center, click **Replication** in the left pane.
 2. On the **Replication** page, click **Elasticsearch Health Monitor**.
 
-    ![es_health_monitor](/images/directorymanager/11.0/admincenter/replication/es_health_monitor.webp)
+    ![Elasticsearch Health Monitor dialog box listing clusters with health, node count, and master node](/images/directorymanager/11.0/admincenter/replication/es_health_monitor.webp)
 
     This dialog box lists the Elasticsearch clusters in your environment, with the following
     information for each cluster:
 
     - **Health:** the cluster health status denoted by the following colors:
 
-        - Green – the service is running and the cluster is intact. Moreover, two or more nodes
+        - Green – the service is running and the cluster is intact. Two or more nodes
           exist within the cluster.
         - Yellow – the cluster is running but with warnings. It also indicates that a single node
           exists within the cluster. Elasticsearch recommends a three-node topology for improved
           performance and high availability.
         - Red – the service has stopped or the cluster is broken (for reasons such as network
-          connectivity.
+          connectivity).
 
     - **Nodes:** the number of nodes in the cluster.
     - **Master:** the name of the master node in the cluster.
@@ -88,7 +97,7 @@ is intact. It also checks the health of each index.
 3. To refresh the information displayed, click the **Refresh** icon.
 4. Click a cluster name to view it in detail.
 
-    ![cluster_info](/images/directorymanager/11.0/admincenter/replication/cluster_info.webp)
+    ![Cluster details dialog box showing node cards and the list of indices](/images/directorymanager/11.0/admincenter/replication/cluster_info.webp)
 
     This dialog box displays the total number of nodes in the cluster. Each node is represented by a
     card, that displays the following for the node:
@@ -101,7 +110,7 @@ is intact. It also checks the health of each index.
         - Yellow – when hard disk space usage is 80-89.99%
         - Red – when hard disk space usage is 90% or more
 
-5. The indices in the cluster are listed in the gird.
+5. The indices in the cluster are listed in the grid.
 
     - The **Name** column displays the names of the indices.
     - The **Health** column displays the health of the index, which is denoted by the following
@@ -109,7 +118,7 @@ is intact. It also checks the health of each index.
 
         - Green – the index is replicated to all nodes within the cluster.
         - Yellow – the index is replicated to some but not all nodes within the cluster.
-        - Red – the index is not replicated to any node within the cluster.
+        - Red – the index isn't replicated to any node within the cluster.
 
     - The **Document** column shows the number of documents in the index.
 
@@ -119,7 +128,7 @@ is intact. It also checks the health of each index.
 
 The Replication service interval applies to all identity stores defined in Admin Center. Object
 attributes to be replicated are specified in the respective identity store settings. See the
-[Manage Local Replication Settings](/docs/directorymanager/11.0/signin/identitystore/replication.md)
+[Manage Identity Store Replication Settings](/docs/directorymanager/11.0/signin/identitystore/replication.md)
 topic.
 
 **To set global replication interval:**
@@ -128,7 +137,7 @@ topic.
 2. On the **Replication** page, the **Replication Service Interval** card displays:
 
     - the date and time the Replication service last ran
-    - the date and time the service will run next
+    - the date and time the service runs next
     - the interval (in minutes) between each run of the service
 
 3. By default, the interval is set to 10 minutes, which indicates that the service is triggered
@@ -136,7 +145,7 @@ topic.
    minutes are replicated to Elasticsearch. In Active Directory, the _whenChanged_ attribute stores
    the time and date the object was last changed. This service checks the value of this attribute
    and replicates any changes to Elasticsearch.
-   To change the interval, click **Edit** next to **Service Interval** on the on the **Replication
+   To change the interval, click **Edit** next to **Service Interval** on the **Replication
    Service Interval** card. Specify the interval (in minutes) between each run of the service and
    click the check mark.
 
@@ -144,7 +153,7 @@ topic.
 
 1. In Admin Center, click **Replication** in the left pane.
 2. On the **Replication** page, click **Force Replication Now** on the **Replication Service
-   Interval** card to run the Replications service instantly.
+   Interval** card to run the Replication service instantly.
    Changes made to objects in the directory between the last and current run are replicated to
    Elasticsearch. Force-starting the service has no impact on the interval set in the **Service
    Interval** box for triggering the service.
@@ -163,7 +172,7 @@ and which ones failed to replicate.
 
     1. The domains or object types that failed to replicate in the last run of the Replication
        service are displayed in red. Reasons could be inaccessibility or partial failure.
-       Replication errors are brought to the administrator’s notice in the following ways:
+       Replication errors are reported to administrators in the following ways:
 
         - On the **Identity Stores** page, the card for the identity store turns red and _Errors_ is
           displayed as the identity store status.
@@ -172,14 +181,14 @@ and which ones failed to replicate.
           topic.
 
         These alerts are triggered when replication fails in the last run of the Replication
-        service, or if the service does not run at the required triggering interval. To resolve
+        service, or if the service doesn't run at the required triggering interval. To resolve
         replication errors, see the
         [How to Resolve Replication Errors](#how-to-resolve-replication-errors) topic.
 
-    2. The ‘Never replicated’ status indicates that the particular object type is not replicated
-       yet. Similarly, a child domain that is not being used will have its status marked in red. To
+    2. The ‘Never replicated’ status indicates that the particular object type isn't replicated
+       yet. Similarly, a child domain that isn't being used has its status marked in red. To
        avoid these recurring errors, set the dates for these objects to a distant future date in the
-       GroupID database. Or you can exclude a domain from replication. See the
+       GroupID database. You can also exclude a domain from replication. See the
        [Exclude an Active Directory Domain from Replication](/docs/directorymanager/11.0/signin/identitystore/manage.md#exclude-an-active-directory-domain-from-replication)
        topic.
 
@@ -192,7 +201,7 @@ that the service is triggered every 60 minutes. As a result, objects deleted in 
 the last 60 minutes are removed from Elasticsearch.
 
 To identify objects that have been deleted in the directory but exist in Elasticsearch, the
-Replication service compares the objects in both, and deletes objects that do not exist in the
+Replication service compares the objects in both, and deletes objects that don't exist in the
 directory anymore.
 
 **To specify an interval:**
@@ -202,7 +211,7 @@ directory anymore.
 
     - the date and time the Replication service last ran to remove tombstone objects from
       Elasticsearch
-    - the date and time the service will run again
+    - the date and time the service runs again
     - the interval (in minutes) between each run of the service
 
 3. By default, the interval is set to 60 minutes, which indicates that the service is triggered
@@ -218,7 +227,7 @@ directory anymore.
 1. In Admin Center, click **Replication** in the left pane.
 2. On the **Replication** page, click **Force Replication Now** on the **Deleted Objects Replication
    Interval** card to run the Replication service instantly.
-   Objects deleted in the directory between the last and current run of the service, will be removed
+   Objects deleted in the directory between the last and current run of the service are removed
    from Elasticsearch. Force-starting the service has no impact on the interval set in the **Service
    Interval** box for triggering the service.
 
@@ -241,8 +250,8 @@ following for all identity stores in GroupID:
 
 GroupID stores object attributes and their values in Elasticsearch, where each object type in an
 identity store is distinctly indexed. In a situation where an identity store is deleted from
-GroupID, its indices are not required anymore. So, you can clear them from Elasticsearch to avoid
-glut.
+GroupID, its indices aren't required anymore. So, you can clear them from Elasticsearch to avoid
+clutter.
 
 **To clear unused indices:**
 
@@ -250,17 +259,17 @@ glut.
 2. On the **Replication** page, click **Clear Now** in the **Clear Unused Indices** area. The system
    checks if there exist any indices in Elasticsearch for an identity store that no longer exists in
    GroupID.
-3. The **Delete Unused Indices** dialog box displays the indices that will be deleted from
+3. The **Delete Unused Indices** dialog box displays the indices to be deleted from
    Elasticsearch. Click **Delete** to proceed or click **Don't Delete** to close the dialog box
    without clearing the indices.
-    In case no unused indices are found, a notification pops up in the bottom right corner to inform
+    If no unused indices are found, a notification pops up in the bottom-right corner to inform
    that no unused indices were found.
 
 ## Change the Search Guard Password
 
-Search Guard is a security plugin used to induce an authentication mechanism in Elasticsearch. The
+Search Guard is a security plugin used to add an authentication mechanism to Elasticsearch. The
 option to change the Search Guard password is available when you install and manage Elasticsearch
-with GroupID. Users who use their own instance of Elasticsearch cannot change the Search Guard
+with GroupID. Users who use their own instance of Elasticsearch can't change the Search Guard
 password using GroupID.
 
 You can change the password of the admin account that GroupID uses to access Elasticsearch.
@@ -276,12 +285,12 @@ You can change the password of the admin account that GroupID uses to access Ela
 
 ## Set a Threshold to Trigger Replication Error Notifications
 
-The Replication service runs every x minutes to replicate objects in an identity store. In case it
+The Replication service runs every x minutes to replicate objects in an identity store. If it
 fails to replicate during a run, a replication error is displayed, as discussed in the
 [View the Replication Status for Objects](#view-the-replication-status-for-objects) topic.
 
 GroupID generates notifications to alert administrators to replication errors. By default, the
-triggering threshold is set to ‘3 attempts’, which means that notifications will be sent when errors
+triggering threshold is set to ‘3 attempts’, which means that notifications are sent when errors
 occur in three consecutive runs of the Replication service. You can change the threshold value as
 required.
 
@@ -294,15 +303,15 @@ topic.
 
 1. In Admin Center, click **Replication** in the left pane.
 2. On the **Replication** page, the **Replication Error Notification** area displays ‘3 Attempts’ as
-   the default threshold for initiating notifications. This means that notifications will be sent
-   when three consecutive runs of the replication service result in error. Notifications will not be
-   sent when errors occur say, in two consecutive runs but no error shows in the third consecutive
-   run.
+   the default threshold for initiating notifications. This means that notifications are sent
+   when three consecutive runs of the replication service result in error. Notifications aren't
+   sent if, for example, errors occur in two consecutive runs but no error shows in the third
+   consecutive run.
    To change the threshold value, click **Edit**. Specify a threshold value to trigger replication
    error notifications and click the check mark.
 
 **See Also**
 
-- [Elasticsearch and Replication ](/docs/directorymanager/11.0/signin/replication/overview.md)
-- [Manage Local Replication Settings](/docs/directorymanager/11.0/signin/identitystore/replication.md)
-- [Replication Service](/docs/directorymanager/11.0/signin/service/replicationservice.md)
+- [Elasticsearch and Replication Service in GroupID ](/docs/directorymanager/11.0/signin/replication/overview.md)
+- [Manage Identity Store Replication Settings](/docs/directorymanager/11.0/signin/identitystore/replication.md)
+- [GroupID Replication Service](/docs/directorymanager/11.0/signin/service/replicationservice.md)

@@ -1,13 +1,20 @@
 ---
-title: "Get Workflow Requests"
-description: "Get Workflow Requests"
+title: "Get Workflow Requests by ID in GroupID"
+description: "Retrieve the details of one or more workflow requests by passing their request IDs in the endpoint URL."
+keywords:
+  - workflow request details
+  - GroupID API
+  - workflow request ID
+  - Workflows endpoint
+  - GET request
 sidebar_position: 150
+unlisted: true
 ---
 
-# Get Workflow Requests
+# Get Workflow Requests by ID in GroupID
 
-Using this API you can retrieve information about a workflow request ID(s) of which are specified in
-the end point URL.
+Use this API to retrieve information about the workflow requests whose IDs are specified in the
+endpoint URL.
 
 ## Endpoint
 
@@ -17,7 +24,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -112,5 +119,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

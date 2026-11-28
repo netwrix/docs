@@ -1,44 +1,43 @@
 ---
-title: "SQL Certificate for Windows Authentication"
-description: "SQL Certificate for Windows Authentication"
+title: "Configure a SQL Certificate for Directory Manager"
+description: "Generate a SQL Server certificate and install it on Directory Manager servers so they can connect to the database using Windows Authentication."
+keywords:
+  - SQL certificate
+  - Windows Authentication
+  - SQL Server Force Encryption
+  - Trusted Root Certification Authorities
+  - .NET 8
 sidebar_position: 50
 ---
 
-# SQL Certificate for Windows Authentication
+# Configure a SQL Certificate for Directory Manager
 
-Directory Manager now uses .NetCore 8 and it requires a SQL certificate to access SQL database using
-Windows Authentication. Therefore, if you want to access the Directory Manager database using
-Windows Authentication, then a SQL certificate must be added to the Trusted Root Certification
-Authorities certificate store on connecting clients or servers such as Directory Manager.
+Directory Manager uses .NET 8, which requires a SQL certificate to access a SQL database with Windows Authentication. To use Windows Authentication for the Directory Manager database, add a SQL certificate to the Trusted Root Certification Authorities certificate store on each connecting client or server, such as Directory Manager.
 
-## Generate a certificate for SQL server
+## Generate a certificate for SQL Server
 
-Create the certificate on the SQL Server using the following command.
+Create the certificate on SQL Server with the following command.
 
 ```
 New-SelfSignedCertificate-DnsName “SQL Server name” -CertStoreLocation “Cert:LocalMachine\My” -KeySpec KeyExchange
 ```
 
-The certificate is saved at the specified location.
+The command saves the certificate at the specified location. Then bind it to SQL Server:
 
-
-1. In SQL Server Configuration Manager, expand **SQL Server Network Configuration** in the
-left pane.
+1. In SQL Server Configuration Manager, expand **SQL Server Network Configuration** in the left pane.
 
 2. Right-click **Protocols for `<instance Name>`**, and then select **Properties**.
 
-![SQL Configuration Manager Properties dialog box](/images/directorymanager/11.1/requirements/sqlconfigmgr.webp)
+   ![SQL Server Configuration Manager Protocols Properties dialog box](/images/directorymanager/11.1/requirements/sqlconfigmgr.webp)
 
-3. On the Certificate tab, select the **certificate** you created from theCertificate
-dropdown.
+3. On the Certificate tab, select the **certificate** you created from the Certificate dropdown.
 
-![SQL Configuration Manager Properties Flag tab](/images/directorymanager/11.1/requirements/flagstab.webp)
+   ![Flags tab of the Protocols Properties dialog box with Force Encryption option](/images/directorymanager/11.1/requirements/flagstab.webp)
 
-4. On the Flags tab, check the **Force Encryption** option to **Yes**.
+4. On the Flags tab, set the **Force Encryption** option to **Yes**.
 
 5. Click **OK**.
 
-## Install the Certificate on a Directory Manager Client or Server
+## Install the certificate on a Directory Manager client or server
 
-Copy the certificate on Directory Manager server and install it by adding it to the Trusted Root
-Certification Authorities and Local machine and current user certificate stores.
+Copy the certificate to the Directory Manager server. Install it by adding it to the Trusted Root Certification Authorities certificate store for both the local machine and the current user.

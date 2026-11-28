@@ -1,95 +1,51 @@
 ---
-title: "Managed By Life Cycle Schedule"
-description: "Managed By Life Cycle Schedule"
+title: "Managed By Life Cycle Schedule in Directory Manager"
+description: "Create a schedule that adds and removes temporary additional owners for groups and temporary additional managers for users on set dates."
+keywords:
+  - Managed By Life Cycle schedule
+  - temporary additional owner
+  - temporary additional manager
+  - schedule triggers
 sidebar_position: 70
 ---
 
-# Managed By Life Cycle Schedule
+# Managed By Life Cycle Schedule in Directory Manager
 
-The Managed By Life Cycle schedule updates the temporary additional owners for groups and temporary
-additional managers for users in an identity store. It performs the following functions:
+The Managed By Life Cycle schedule updates the temporary additional owners of groups and the temporary additional managers of users in an identity store. It supports these functions:
 
-- Group owners and users with the ‘Manage any Group’ permission in the identity store can set a
-  start and end date to:
+- Group owners and users with the 'Manage any Group' permission in the identity store can set a start and end date to add an object as a temporary additional owner of a group, or to remove an additional owner for a temporary period. The schedule adds and removes the object as the group's temporary additional owner on the specified dates.
+- User managers and users with the 'Manage any Profile' permission in the identity store can set a start and end date to add an object (user or contact) as a temporary additional manager of a user, or to remove an additional manager for a temporary period. The schedule adds and removes the object as the user's temporary additional manager on the specified dates.
 
-    - Add an object as a temporary additional owner of a group
-    - Remove an additional owner for a temporary period
+Assume that the Managed By Life Cycle schedule runs once a week, for example on Mondays. If an object is to be added as a group's temporary additional owner from Wednesday through Friday, Directory Manager doesn't add it. This happens because the schedule didn't run on the specific days for the temporary ownership update. Ensure the schedule runs at a frequency that meets your temporary ownership requirements.
 
-    The Managed By Life Cycle schedule adds and removes an object as a group’s temporary additional
-    owner on the specified dates.
-
-- User managers and users with the ‘Manage any Profile’ permission in the identity store can set a
-  start and end date to:
-
-    - Add an object (user or contact) as a temporary additional manager of a user
-    - Remove an additional manager for a temporary period
-
-    The Managed By Life Cycle schedule adds and removes an object as the user’s temporary additional
-    manager on the specified dates.
-
-Let’s assume that the Managed By Life Cycle schedule is scheduled to run once a week, say Mondays.
-If an object is to be added as a group’s temporary additional owner for three days - Wednesday till
-Friday, it won’t be added. This happens because the Managed By Life Cycle schedule didn’t run on
-the specific days for temporary ownership update. Ensure the schedule is set to run at a
-frequency that meets your temporary ownership requirements.
-
-Directory Manager generates notifications when the Managed By Life Cycle schedule adds or removes
-temporary additional owners/managers. See the
-[Manage Managed by Life Cycle Notifications](/docs/directorymanager/11.1/admincenter/identitystore/configure/smtpserver.md#manage-managed-by-life-cycle-notifications)
-topic for additional information.
+Directory Manager generates notifications when the schedule adds or removes temporary additional owners or managers. For details, see [Manage Managed by Life Cycle Notifications](/docs/directorymanager/11.1/admincenter/identitystore/configure/smtpserver.md#manage-managed-by-life-cycle-notifications).
 
 ## Create a Managed By Life Cycle Schedule
 
-To create a Managed by Life Cycle Schedule:
+To create a Managed By Life Cycle schedule:
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select **Edit**.
+3. Click **Schedules** under Settings in the left pane.
+4. On the Schedules page, click **Add Schedule** and select **Managed By Life Cycle Job**. The Create Schedule page opens.
+5. In the Schedule Name box, enter a name for the schedule.
 
-Step 2 – On the **Identity Stores** page, click the ellipsis button for an identity store and select
-**Edit**.
+   The Name Preview box displays the schedule name prefixed with \_ManagedByLifeCycle\_\_\_. Email notifications show the schedule with this name.
 
-Step 3 – Click **Schedules** under Settings in the left pane.
+6. In the Portal URL dropdown list, select a Directory Manager portal URL to include in notifications generated by the schedule. Users are redirected to this portal to perform any necessary action.
+7. In the Scheduler Service Name dropdown list, select a Scheduler service to trigger this schedule.
 
-Step 4 – On the Schedules page, click **Add Schedule** and select **Managed By Life Cycle Job**. The
-Create  Schedule page is displayed.
+   The number of services in the list depends on the number of nodes in all Elasticsearch clusters in the environment, because each node has its own Scheduler service. For details, see [Directory Manager Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md).
 
-Step 5 – In the Schedule Name box, enter a name for the schedule.
+8. Optional. Specify containers as targets for the schedule. The schedule processes all groups in the selected containers and their sub-containers. To specify containers as targets, see step 9 in [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule).
+9. Click **Add Triggers** in the Triggers area to specify a triggering criterion that, when met, starts the schedule. To manage triggers, follow step 11 in [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule).
+10. Click **Add Authentication** in the Authentication area to specify an account for running the schedule in the identity store. For details, follow step 12 in [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule).
 
-Step 6 – The Name Preview box displays the schedule name prefixed with \_ManagedByLifeCycle\_\_\_;
-email notifications show the schedule with this name.
+    :::important Password Re-insertion Required
+    Due to security enhancements, when you edit a schedule, you must re-enter the account password in the Authentication section, even if you aren't changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+    :::
 
-Step 7 – Select a Directory Manager portal URL in the Portal URL dropdown list to include it in
-notifications generated by the schedule. Users are redirected to this portal to perform any
-necessary action.
+11. On the Create Schedule page, click **Create Schedule**.
+12. On the Schedules page, click **Save**.
 
-Step 8 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
-responsible for triggering this schedule. The list displays a number of services that depends on the
-number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
-information.
-
-Step 9 – You can specify containers as targets for the schedule. The schedule will process all
-groups in the selected containers and sub-containers. To specific containers as target, see step 9
-in the
-[Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic.
-
-Step 10 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
-schedule, that, when met, starts the execution of the schedule. Follow step 11 in the
-[Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic to manage triggers.
-
-Step 11 – Click **Add Authentication** in the Authentication area to specify an account for running
-the schedule in the identity store. Follow step 12 in the
-[Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic for additional information.
-
-:::important Password Re-insertion Required
-Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you aren't changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
-:::
-
-Step 12 – On the Create Schedule page, click **Create Schedule**.
-
-Step 13 – On the Schedules page, click **Save**.
- You can now view the schedule under Managed By Life Cycle. See the
-[View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store) topic
-for additional information.
+You can now view the schedule under **Managed By Life Cycle**. For details, see [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store).

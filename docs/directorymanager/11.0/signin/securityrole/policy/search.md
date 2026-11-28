@@ -1,12 +1,18 @@
 ---
-title: "Search Policy"
-description: "Search Policy"
+title: "Configure a Search Policy for a Security Role"
+description: "Limit the containers and objects that security role members can search in the GroupID portal and Management Shell."
+keywords:
+  - GroupID
+  - search policy
+  - search scope
+  - LDAP filter
+  - security role
 sidebar_position: 40
 ---
 
-# Search Policy
+# Configure a Search Policy for a Security Role
 
-The Search policy sets the search scope for the GroupID portal, GroupID Management Shell, and the
+The Search policy sets the search scope for the GroupID portal, Management Shell, and the
 GroupID mobile app.
 
 By default, any search performed by role members returns objects from all containers in the identity
@@ -15,13 +21,15 @@ store. Use the Search policy to:
 - Limit the search scope to one container for role members.
 - Designate a criterion to limit the objects that role members can search.
 
-NOTE: Microsoft Entra ID supports a single container only, so the search scope cannot be restricted
+:::note
+Microsoft Entra ID supports a single container only, so the search scope can't be restricted
 container-wise in a Microsoft Entra ID identity store.
+:::
 
-## How does the Search Policy Work?
+## Search Policy Behavior
 
-Let’s assume you specify a container, localOU, and set the LDAP filter to (Country=United States\*)
-for an Active Directory identity store. Now consider these scenarios:
+Assume you specify a container, localOU, and set the LDAP filter to (Country=United States\*)
+for an Active Directory identity store. Consider these scenarios:
 
 - When a role member performs a search, GroupID looks up the localOU container and displays objects
   with the _Country_ attribute set to _United States_.
@@ -30,7 +38,7 @@ for an Active Directory identity store. Now consider these scenarios:
 - If you specify an LDAP filter only, a search performed by role members displays objects with the
   _Country_ attribute set to _United States_ from all containers in the identity store.
 
-## Impact of the Search Policy on GroupID Portal
+## Impact of the Search Policy on the GroupID Portal
 
 The Search policy has the following impact on the GroupID portal:
 
@@ -40,12 +48,6 @@ The Search policy has the following impact on the GroupID portal:
   Users**.
 - It sets the search scope for the Find dialog box.
 - It sets the scope for quick search and advanced search.
-
-What do you want to do?
-
-- [Set the Search Scope to a Specific Container](#set-the-search-scope-to-a-specific-container)
-- [Set the Search Scope to all Containers in the Identity Store](#set-the-search-scope-to-all-containers-in-the-identity-store)
-- [Designate a Criterion for the Search Scope](#designate-a-criterion-for-the-search-scope)
 
 ## Set the Search Scope to a Specific Container
 
@@ -59,27 +61,29 @@ What do you want to do?
 6. On the **Add Policies** pane, click the **Search** tab.
 7. Click **Add** next to **Add Container**.
 8. On the **Add Container** dialog box, select a container and click **Add**.
-   Search performed by role members will display objects from this container and its sub-containers.
+   Searches performed by role members display objects from this container and its sub-containers.
 9. Click **OK**.
 10. On the **Edit Security Role** page, click **Update Security Role**.
 11. On the **Security Roles** page, click **Save**.
 
-NOTE: An advanced setting for the GroupID portal, _Search Default_, controls the search scope of the
+:::note
+An advanced setting for the GroupID portal, _Search Default_, controls the search scope of the
 portal. If its value is "Global Catalog", the container specified here is ignored and the portal
 shows objects from the entire directory. See the
-[Manage Advanced Settings](/docs/directorymanager/11.0/signin/applications/portal/server/advanced.md)
+[Manage Advanced Portal Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/advanced.md)
 topic.
+:::
 
-## Set the Search Scope to all Containers in the Identity Store
+## Set the Search Scope to All Containers in the Identity Store
 
-When no container is specified as the search scope for an identity store, search performed by role
-members fetches objects from all OUs in the identity store.
+When no container is specified as the search scope for an identity store, searches performed by role
+members fetch objects from all OUs in the identity store.
 
 **To set the search scope to all containers:**
 
 1. In Admin Center, click **Identity Stores** in the left pane.
-2. On the **Identity Stores** page, click the ellipsis button or an identity store and select
-   **Edit.**
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
+   **Edit**.
 3. Click **Security Roles** under **Settings** in the left pane.
 4. On the **Security Roles** page, click **Edit** for a security role.
 5. On the **Edit Security Role** page, click **Specify policies for the members** in the
@@ -92,7 +96,7 @@ members fetches objects from all OUs in the identity store.
 
 ## Designate a Criterion for the Search Scope
 
-When you apply a filter criterion, search performed by role members shows objects that match the
+When you apply a filter criterion, searches performed by role members show objects that match the
 criteria.
 
 **To designate a criterion:**
@@ -106,13 +110,13 @@ criteria.
    **Policies** area.
 6. On the **Add Policies** pane, click the **Search** tab.
 7. In the **Filters** area, click **Add Filter**.
-8. A row is displayed for adding a criterion.
+8. A row is displayed for adding a criterion:
 
-    1. Select a schema attribute in the first drop-down list (for example, _mail_).
-    2. Select an operator in the second drop-down list (for example, _Ends with_).
+    1. Select a schema attribute in the first dropdown list (for example, _mail_).
+    2. Select an operator in the second dropdown list (for example, _Ends with_).
     3. Enter a value for the schema attribute in the third box (for example, _@Netwrix.com_).
 
-    With this filter, search performed by role members will display objects with email addresses
+    With this filter, searches performed by role members display objects with email addresses
     created on the netwrix.com domain.
 
 Advanced Filter
@@ -127,7 +131,7 @@ them.
     - **AND:** to display the objects having the specified values for all attributes.
     - **OR:** to display objects having the specified value for any one of the attributes.
 
-    ![search_query](/images/directorymanager/11.0/admincenter/securityrole/policy/search_query.webp)
+    ![Filter area showing two rows joined by an AND operator](/images/directorymanager/11.0/admincenter/securityrole/policy/search_query.webp)
 
 2. Click the ellipsis button for an applied operator to display the context menu, which has the
    following options:
@@ -141,8 +145,8 @@ them.
     You can also:
 
     - Click **Tree View** to view a list of all queries defined.
-    - Click **Preview** to preview the search results that will be displayed with this Search
-      policy, i.e., with the container and filter settings on the **Search** tab.
+    - Click **Preview** to preview the search results that this Search policy displays, based on
+      the container and filter settings on the **Search** tab.
     - Click **Clear** to clear the **Filter** area.
 
 3. After defining a filter, click **OK**.
@@ -151,5 +155,5 @@ them.
 
 **See Also**
 
-- [Security Roles](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

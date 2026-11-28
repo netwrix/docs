@@ -1,21 +1,29 @@
 ---
-title: "Set up Authentication via Linked Account"
-description: "Set up Authentication via Linked Account"
+title: "Set Up Linked Account Authentication in GroupID"
+description: "Let users enroll and authenticate across linked identity store accounts, and enable and enforce Linked Account authentication for multifactor use."
+keywords:
+  - Linked Account authentication
+  - multifactor authentication
+  - identity store
+  - account unlock
+  - password reset
 sidebar_position: 40
 ---
 
-# Set up Authentication via Linked Account
+# Set Up Linked Account Authentication in GroupID
 
-The GroupID portal enables a user to link accounts that he or she may have in different identity
-stores. When the user enrolls any one of those linked accounts in GroupID, it suffices for the
+In the GroupID portal, users can link accounts that they might have in different identity
+stores. When a user enrolls any one of those linked accounts in GroupID, it counts for the
 enrollment of all linked accounts.
 
-Users can then reset their account passwords and unlock accounts through a linked account. Let’s
-assume a user links his or her accounts in Identity Store A and Identity Store B. Using the Linked
+Users can then reset their account passwords and unlock accounts through a linked account. Suppose
+a user links their accounts in Identity Store A and Identity Store B. Using the Linked
 Account authentication type, the user can unlock the Identity Store A account by providing the
 credentials of the Identity Store B account and vice versa.
 
-NOTE: The Linked Account authentication type is available for multifactor authentication only.
+:::note
+The Linked Account authentication type is available for multifactor authentication only.
+:::
 
 What do you want to do?
 
@@ -28,7 +36,7 @@ The Linked Account authentication type must be enabled for an identity store bef
 for multifactor authentication.
 
 To enable it, see the
-[Enable Authentication Types](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
+[Enable Authentication Types for an Identity Store](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
 topic.
 
 ## Enforce Linked Account Authentication for a Security Role
@@ -43,4 +51,4 @@ and authentication.
 
 See Also
 
-- [Authentication Policy](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)

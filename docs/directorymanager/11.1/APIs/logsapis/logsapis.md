@@ -1,20 +1,27 @@
 ---
-title: "Logs APIs"
-description: "Logs APIs"
+title: "Directory Manager Logs APIs"
+description: "Find the APIs that download Directory Manager service logs, such as Admin Center, Data Service, Email, Portal, Replication, Scheduler, and Security logs."
+keywords:
+  - Logs APIs
+  - service logs
+  - download logs
+  - Directory Manager logs
+  - Windows event logs
 sidebar_position: 40
+unlisted: true
 ---
 
-# Logs APIs
+# Directory Manager Logs APIs
 
 Directory Manager generates logs for its services, clients, and Windows events. Using the following
 APIs, you can collect and dump your required logs to a desired location.
 
-See the [Get Logs](/docs/directorymanager/11.1/admincenter/general/logs.md) topic for additional information on logs.
+For additional information on logs, see the [Download Directory Manager Logs from Admin Center](/docs/directorymanager/11.1/admincenter/general/logs.md) topic.
 
-- [Admin Center Logs](/docs/directorymanager/11.1/APIs/logsapis/admincenter.md)
-- [Data Service Logs](/docs/directorymanager/11.1/APIs/logsapis/dataservice.md)
-- [Email Service Logs](/docs/directorymanager/11.1/APIs/logsapis/emailservice.md)
-- [Portal Logs](/docs/directorymanager/11.1/APIs/logsapis/portal.md)
-- [Replication Service Logs](/docs/directorymanager/11.1/APIs/logsapis/replicationservice.md)
-- [Scheduler Service Logs](/docs/directorymanager/11.1/APIs/logsapis/schedulerservice.md)
-- [Security Service Logs](/docs/directorymanager/11.1/APIs/logsapis/securityservice.md)
+- [Download Admin Center Logs with the API](/docs/directorymanager/11.1/APIs/logsapis/admincenter.md)
+- [Download Data Service Logs with the API](/docs/directorymanager/11.1/APIs/logsapis/dataservice.md)
+- [Download Email Service Logs with the API](/docs/directorymanager/11.1/APIs/logsapis/emailservice.md)
+- [Download Portal Logs with the API](/docs/directorymanager/11.1/APIs/logsapis/portal.md)
+- [Download Replication Service Logs with the API](/docs/directorymanager/11.1/APIs/logsapis/replicationservice.md)
+- [Download Scheduler Service Logs with the API](/docs/directorymanager/11.1/APIs/logsapis/schedulerservice.md)
+- [Download Security Service Logs with the API](/docs/directorymanager/11.1/APIs/logsapis/securityservice.md)

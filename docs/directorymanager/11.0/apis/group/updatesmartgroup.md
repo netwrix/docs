@@ -1,12 +1,18 @@
 ---
-title: "Update a Smart Group"
-description: "Update a Smart Group"
+title: "Update a Smart Group API"
+description: "Update a Smart Group by identity with a POST request, so GroupID refreshes its membership."
+keywords:
+  - update Smart Group API
+  - Smart Group update
+  - Smart Group refresh
+  - SmartGroups Update endpoint
 sidebar_position: 180
+unlisted: true
 ---
 
-# Update a Smart Group
+# Update a Smart Group API
 
-This API updates a Smart Group, identity of which is provided in the endpoint URL.
+This API updates the Smart Group whose identity is in the endpoint URL.
 
 ## Endpoint
 
@@ -14,9 +20,9 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 ## HTTP Method
 
-POST
+**POST**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -36,5 +42,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

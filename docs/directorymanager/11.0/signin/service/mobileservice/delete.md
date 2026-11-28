@@ -1,18 +1,24 @@
 ---
-title: "Delete a Service"
-description: "Delete a Service"
+title: "Delete a GroupID Mobile Service"
+description: "Delete a Mobile service or one of its deployment instances in Admin Center, and see what GroupID removes from IIS or Docker."
+keywords:
+  - delete Mobile service
+  - Mobile service deployment instance
+  - native IIS
+  - remote IIS
+  - Docker container
 sidebar_position: 20
 ---
 
-# Delete a Service
+# Delete a GroupID Mobile Service
 
-You can delete a Mobile service or an instance of a service. On deleting a service, all its
-instances are deleted with it.
+You can delete a Mobile service or an instance of a service. When you delete a service, GroupID also deletes all its
+instances.
 
 What do you want to do?
 
-- Delete a Deployment Instance for a Service
-- Delete a Service
+- [Delete a Deployment Instance for a Service](#delete-a-deployment-instance-for-a-service)
+- [Delete a Service](#delete-a-service)
 
 ## Delete a Deployment Instance for a Service
 
@@ -50,7 +56,7 @@ removed:
 
     Select a tab to delete a service instance deployed in the respective web server.
 
-4. The **Select Application Deployment** drop-down list displays the service instances deployed on
+4. The **Select Application Deployment** dropdown list displays the service instances deployed on
    the selected web server. Select an instance and click **Delete**.
 
 ## Delete a Service

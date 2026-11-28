@@ -1,17 +1,25 @@
 ---
-title: "Sample Container Scripts"
-description: "Sample Container Scripts"
+title: "Sample Container Scripts for Synchronize"
+description: "Copy sample Visual Basic .NET container scripts that route new objects to containers by department code with a case statement, an XML file, or an Excel file."
+keywords:
+  - container script samples
+  - object routing
+  - DeptCode
+  - DTM.Result
+  - Synchronize scripts
 sidebar_position: 10
 ---
 
-# Sample Container Scripts
+# Sample Container Scripts for Synchronize
 
-## Object Routing Case-By-Case
+These container scripts set **DTM.Result** to the distinguished name of the container for each new object, based on a department code in the source data.
+
+## Object routing case by case
 
 **Assumptions**:
 
 - Source data contains a **DeptCode** field with 2-character codes.
-- Each department has a container to which new user objects should be directed.
+- Each department has a container to which Synchronize directs new user objects.
 
     ```
     Select Case DTM.Source("DeptCode")
@@ -26,15 +34,13 @@ sidebar_position: 10
     End Select
     ```
 
-## Object Routing Via an XML File
+## Object routing via an XML file
 
 **Assumptions:**
 
 - Source data contains a **DeptCode** field.
-- Each department has a container to which new user objects should be directed.
-- XML file **DeptCodes.xml** contains root element with **`Department`** child elements, each of
-  which contains **`<DeptCode>`** and **`<Container>`** attributes specifying desired location for
-  user objects belonging to each department.
+- Each department has a container to which Synchronize directs new user objects.
+- XML file **DeptCodes.xml** contains a root element with **`Department`** child elements. Each child element contains **`<DeptCode>`** and **`<Container>`** attributes that specify the location for the user objects of each department.
 
     ```
     Dim dsDeptCodes As System.Data.DataSet = New System.Data.DataSet
@@ -53,9 +59,8 @@ sidebar_position: 10
 **Assumptions:**
 
 - Source data contains a **DeptCode** field.
-- Each department has a container to which new user objects should be directed.
-- Excel file **DeptCodes.xls** contains columns: **DeptCode** and **Container** specifying desired
-  location for user objects belonging to each department.
+- Each department has a container to which Synchronize directs new user objects.
+- Excel file **DeptCodes.xls** contains the columns **DeptCode** and **Container**. They specify the location for the user objects of each department.
 
     ```
     Dim dtDeptCodes As System.Data.DataTable = New System.Data.DataTable

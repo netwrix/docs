@@ -1,12 +1,18 @@
 ---
-title: "Update Groups"
-description: "Update Groups"
+title: "Update Multiple Groups API"
+description: "Update attributes on several groups in one PATCH request to the Directory Manager data service."
+keywords:
+  - update multiple groups
+  - bulk group update
+  - PATCH groups
+  - group attributes API
 sidebar_position: 190
+unlisted: true
 ---
 
-# Update Groups
+# Update Multiple Groups API
 
-Using this API, you can update multiple groups.
+Use this API to update multiple groups.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ Using this API, you can update multiple groups.
 
 **PATCH**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -51,7 +57,7 @@ Using this API, you can update multiple groups.
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

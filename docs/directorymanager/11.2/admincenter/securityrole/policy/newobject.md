@@ -1,110 +1,86 @@
 ---
-title: "New Object Policy"
-description: "New Object Policy"
+title: "New Object Policy for Security Roles in Directory Manager"
+description: "Limit where role members can create directory objects by restricting creation to their own OU or to specific OUs for each object type."
+keywords:
+  - New Object policy
+  - object creation
+  - organizational unit
+  - container restriction
+  - security role policy
 sidebar_position: 30
 ---
 
-# New Object Policy
+# New Object Policy for Security Roles in Directory Manager
 
-The New Object policy applies when role members create directory objects using the Directory Manager
-portal or Management Shell. Use this policy to:
+The New Object policy applies when role members create directory objects using the Directory Manager portal or Management Shell. Use this policy to do one of the following:
 
-- Limit role members to create new directory objects in the OUs they reside in respectively.
+- Limit role members to creating new directory objects in the OUs they reside in.
 
 **OR**
 
-- Specify one or more OUs to limit object creation to those. Separate OUs can be specified for
-  different object types.
+- Specify one or more OUs to limit object creation to those. You can specify separate OUs for different object types.
 
-You can specify one or more OUs for an object type. For example, you can specify OUA and OUB for
-Group objects and OUC for Mailbox objects, so that role members can create groups in OUA and OUB,
-and mailboxes in OUC.
+You can specify one or more OUs for an object type. For example, you can specify OUA and OUB for Group objects and OUC for Mailbox objects, so that role members can create groups in OUA and OUB, and mailboxes in OUC.
 
-By default, or when no OU is set for an object type, role members can select any OU in the identity
-store to create objects of that type. For example, when no OU is specified for the User object, role
-members can create user objects in any OU in the identity store.
+By default, or when no OU is set for an object type, role members can select any OU in the identity store to create objects of that type. For example, when no OU is specified for the User object, role members can create user objects in any OU in the identity store.
 
 :::note
-(1) When a user has multiple roles in an identity store with a different New Object policy for
-each role, then the policies configured for all roles apply to the user. Hence, a user with three
-roles - where a different OU for the Group object is specified for each role - can create groups in
-any of the three OUs.  
-(2( The New Object policy doesn't apply to a Microsoft Entra ID identity store.
+(1) When a user has multiple roles in an identity store with a different New Object policy for each role, the policies configured for all roles apply to the user. A user with three roles, where you specify a different OU for the Group object for each role, can create groups in any of the three OUs.
+
+(2) The New Object policy doesn't apply to a Microsoft Entra ID identity store.
 :::
 
-
-## Limit Object Creation to the OU the User Resides in
+## Limit object creation to the OU the user resides in
 
 1. In Admin Center, click **Identity Stores** in the left pane.
-2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
-   **Edit**.
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select **Edit**.
 3. Click **Security Roles** under **Settings** in the left pane.
 4. On the **Security Roles** page, click **Edit** for a security role.
-5. On the **Edit Security Role** page, click **Specify policies for the members** in the
-   **Policies** area.
+5. On the **Edit Security Role** page, click **Specify policies for the members** in the **Policies** area.
 6. On the **Add Policies** pane, click the **New Object** tab.
-7. Select the **Users can create objects only in their own container** checkbox to limit role
-   members to create directory objects in the organizational unit they reside in respectively.  
-   Selecting this option disables the remaining options on the tab.
+7. Select the **User can create objects only in their own container** checkbox to limit role members to creating directory objects in the organizational unit they reside in. This option disables the remaining options on the tab.
 8. Click **OK**.
 9. On the **Edit Security Role** page, click **Update Security Role**.
 10. On the **Security Roles** page, click **Save**.
 
 :::note
-When role members create a new object, the _Container_ option shows the distinguished name of
-the OU the logged-in user resides in as read-only.
+When role members create a new object, the _Container_ option shows the distinguished name of the OU the signed-in user resides in as read-only.
 :::
 
+## Restrict role members to create objects in specific OUs
 
-## Restrict Role Members to Create Objects in Specific OUs
-
-You can specify one or more containers for an object type (say Group) to restrict role members to
-create group objects in those containers only.
+You can specify one or more containers for an object type (for example, Group) to restrict role members to creating group objects in those containers only.
 
 **To specify OUs for object creation:**
 
 1. In Admin Center, click **Identity Stores** in the left pane.
-2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
-   **Edit**.
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select **Edit**.
 3. Click **Security Roles** under **Settings** in the left pane.
 4. On the **Security Roles** page, click **Edit** for a security role.
-5. On the **Edit Security Role** page, click **Specify policies for the members** in the
-   **Policies** area.
+5. On the **Edit Security Role** page, click **Specify policies for the members** in the **Policies** area.
 6. On the **Add Policies** pane, click the **New Object** tab.
 7. Click **Add** and select an object type to specify the containers for.
-8. On the **Add Container** dialog box, select one or more containers where role members can create
-   the particular objects. Then click **Add**. The containers are displayed with the name of the
-   respective object type.
-9. You can choose to set a container for all object types. Click the **Copy** button for a container
-   and then click **Yes** on the **Copy Container** message box. The container is displayed with all
-   object types.
+8. On the **Add Container** dialog box, select one or more containers where role members can create the particular objects. Then click **Add**. The containers appear with the name of the respective object type.
+9. To set a container for all object types, click the **Copy** button for a container and then click **Yes** on the **Copy Container** message box. The container appears with all object types.
 10. Click **OK**.
 11. On the **Edit Security Role** page, click **Update Security Role**.
 12. On the **Security Roles** page, click **Save**.
 
 :::note
-When role members create a new object, the _Container_ option shows the containers specified
-for the respective object type. The user can select the container you want to create the object
-there. When one container is specified, the _Container_ option displays its distinguished name as
-read-only.
+When role members create a new object, the _Container_ option shows the containers specified for the respective object type. The user can select the container in which to create the object. When one container is specified, the _Container_ option displays its distinguished name as read-only.
 :::
-
 
 ## Remove an OU
 
-You can remove a container to prevent role members from creating objects in it. When you remove all
-containers for an object type, role members can create the particular objects in any container in
-the directory.
+You can remove a container to prevent role members from creating objects in it. When you remove all containers for an object type, role members can create the particular objects in any container in the directory.
 
 **To remove a container:**
 
 1. In Admin Center, click **Identity Stores** in the left pane.
-2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
-   **Edit**.
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select **Edit**.
 3. Click **Security Roles** under **Settings** in the left pane.
 4. On the **Security Roles** page, click **Edit** for a security role.
-5. On the **Edit Security Role** page, click **Specify policies for the members** in the
-   **Policies** area.
+5. On the **Edit Security Role** page, click **Specify policies for the members** in the **Policies** area.
 6. On the **Add Policies** pane, click the **New Object** tab.
 7. For each object type, the allowed containers are listed with it.
 

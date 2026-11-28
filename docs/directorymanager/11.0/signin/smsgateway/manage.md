@@ -1,26 +1,23 @@
 ---
-title: "Manage SMS Gateway Accounts"
-description: "Manage SMS Gateway Accounts"
+title: "Manage SMS Gateway Accounts in GroupID"
+description: "Create, edit, test, set as default, link, and delete SMS gateway accounts in Admin Center so GroupID can send text messages."
+keywords:
+  - SMS gateway account
+  - Admin Center
+  - default SMS gateway
+  - test SMS gateway connection
+  - identity store
 sidebar_position: 10
 ---
 
-# Manage SMS Gateway Accounts
+# Manage SMS Gateway Accounts in GroupID
 
 You can create one or more SMS gateway accounts in GroupID and link an account with an identity
 store. You can also set an account as the default account, so that it is automatically linked to an
-identity store created thereafter.
+identity store created afterward.
 
 GroupID supports several SMS gateway providers. You can also use the Custom Gateway API to integrate
 with an unsupported provider.
-
-What do you want to do?
-
-- [Create an SMS Gateway Account](#create-an-sms-gateway-account)
-- [Modify an SMS Gateway Account](#modify-an-sms-gateway-account)
-- [Set an SMS Gateway Account as Default](#set-an-sms-gateway-account-as-default)
-- [Test SMS Gateway Account Connection](#test-sms-gateway-account-connection)
-- [Link an SMS Gateway Account to an Identity Store](#link-an-sms-gateway-account-to-an-identity-store)
-- [Delete an SMS Gateway Account](#delete-an-sms-gateway-account)
 
 ## Create an SMS Gateway Account
 
@@ -35,7 +32,7 @@ What do you want to do?
     The **Create SMS Gateway** page is displayed.
 
 3. Enter a name for the gateway account in the **Name** box.
-4. In the **Gateway Type** drop-down list, select an SMS gateway provider.  
+4. In the **Gateway Type** dropdown list, select an SMS gateway provider.  
    The list includes the gateways that GroupID supports and any custom SMS gateways that you have
    written. Selecting a gateway type displays the gateway URL, which is the web service address the
    SMS gateway uses for sending text messages.
@@ -56,11 +53,11 @@ What do you want to do?
 
     1. Click **Test Connection**.
     2. In the **Test SMS Gateway Connection** dialog box, enter a mobile phone number for receiving
-       a test message. Use International format, with no spaces or special characters. For example:
+       a test message. Use international format, with no spaces or special characters. For example:
        18588123169, 447079692712, 923225867987.
     3. Click **OK** to send the message to the mobile number.
 
-9. Select the **Set as default account** check box to link this gateway account with the identity
+9. Select the **Set as default account** checkbox to link this gateway account with the identity
    stores created from this point forward.
 10. Click **Create SMS Gateway** to create the gateway account.
 
@@ -75,8 +72,8 @@ connect to the gateway.
    The **SMS Gateways** page is displayed with a list of the SMS gateway accounts that you have
    created.
 2. To update a gateway account, click **Edit** for it in the **Actions** column.
-3. On the **Edit SMS Gateway** page, update the required details. Refer to step 3 and onwards in the
-   [Create an SMS Gateway Account](#create-an-sms-gateway-account) topic for details.
+3. On the **Edit SMS Gateway** page, update the required details. Refer to step 3 and onward in
+   [Create an SMS Gateway Account](#create-an-sms-gateway-account) for details.
 
 ## Set an SMS Gateway Account as Default
 
@@ -84,9 +81,8 @@ connect to the gateway.
    The **SMS Gateways** page is displayed with a list of the SMS gateway accounts that you have
    created.
 2. Click **Edit** for a gateway account in the **Actions** column.
-3. On the **Edit SMS Gateway** page, select the **Set as default account** check box to set this
-   gateway account as default, which means that it will be linked with the identity stores created
-   hereafter.
+3. On the **Edit SMS Gateway** page, select the **Set as default account** checkbox to set this
+   gateway account as default, so that it is linked with identity stores created afterward.
 4. Click **Save SMS Gateway**.
 
 ## Test SMS Gateway Account Connection
@@ -97,7 +93,7 @@ connect to the gateway.
 2. Click **Test Connection** for a gateway to test whether GroupID can successfully send text
    messages through it.
 3. In the **Test SMS Gateway Connection** dialog box, enter a mobile phone number for receiving a
-   test message. Use International format, with no spaces or special characters. For example:
+   test message. Use international format, with no spaces or special characters. For example:
    18588123169, 447079692712, 923225867987.
 4. Click **OK** to send the message to the mobile number.
 
@@ -109,7 +105,7 @@ topic.
 
 ## Delete an SMS Gateway Account
 
-You can delete an SMS gateway account that is not linked with any identity store.
+You can delete an SMS gateway account that isn't linked with any identity store.
 
 **To delete an account:**
 
@@ -117,12 +113,12 @@ You can delete an SMS gateway account that is not linked with any identity store
 2. On the **SMS Gateways** page, click **Delete** for a gateway account to delete it.
 3. One of the following happens:
 
-    - If the gateway account is not linked with an identity store, a message is displayed, asking
-      you to confirm its deletion. Clicking **Delete** will delete the account.
-    - If the gateway account is linked with an identity store, GroupID will not allow you to delete
+    - If the gateway account isn't linked with an identity store, a message is displayed, asking
+      you to confirm its deletion. Click **Delete** to delete the account.
+    - If the gateway account is linked with an identity store, GroupID doesn't let you delete
       it.
 
-See Also
+**See Also**
 
-- [SMS Gateway](/docs/directorymanager/11.0/signin/smsgateway/overview.md)
-- [Implement and Deploy a Custom SMS Gateway](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [SMS Gateway Support in GroupID](/docs/directorymanager/11.0/signin/smsgateway/overview.md)
+- [Implement and Deploy a Custom SMS Gateway in GroupID](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

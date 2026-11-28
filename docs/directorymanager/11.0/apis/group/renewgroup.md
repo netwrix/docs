@@ -1,12 +1,18 @@
 ---
-title: "Renew a Group"
-description: "Renew a Group"
+title: "Renew a Group API"
+description: "Renew a single group by identity with a POST request to the GroupID data service."
 sidebar_position: 140
+keywords:
+  - renew group API
+  - group lifecycle renewal
+  - group expiration renewal
+  - Groups Renew endpoint
+unlisted: true
 ---
 
-# Renew a Group
+# Renew a Group API
 
-It renews a group, identity of which is provided in the endpoint URL.
+Use this API to renew the group specified in the endpoint URL.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 POST
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -36,5 +42,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

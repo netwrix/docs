@@ -1,25 +1,21 @@
 ---
-title: "Contact Info tab"
-description: "User properties - Contact Info tab"
+title: "Entra ID User Contact Info Tab"
+description: "View or update the address, office, and mobile phone details of a Microsoft Entra ID user or mailbox in Directory Manager."
+keywords:
+  - Entra ID user contact info
+  - user street address
+  - user office number
+  - user mobile number
 sidebar_position: 10
 ---
 
-# User properties - Contact Info tab
+# Entra ID User Contact Info Tab
 
-Use this tab to view or update the contact information of the user/mailbox.
+Use this tab to view or update the contact information of the user or mailbox.
 
-**Street address**
-
-The street address of the user's office.
-
-City, State, or province, ZIP, or postal code, Country, or region
-
-The city, state, zip code, and country where the office of this user is located.
-
-**Office**
-
-The office number of the user.
-
-**Mobile**
-
-The cell phone number of the user.
+| Field | Description |
+| --- | --- |
+| **Street address** | The street address of the user's office. |
+| **City, State or province, ZIP or postal code, Country or region** | The city, state, ZIP code, and country where the office of this user is located. |
+| **Office** | The office number of the user. |
+| **Mobile** | The cell phone number of the user. |

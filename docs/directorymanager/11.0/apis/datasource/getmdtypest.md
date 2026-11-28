@@ -1,14 +1,20 @@
 ---
-title: "Get Metadata of Data Source by Server Type and ID"
-description: "Get Metadata of Data Source by Server Type and ID"
+title: "Get Data Source Metadata by Server and Type API"
+description: "Retrieve data source metadata by file server type and data source type, such as Text/CSV on a local server or OneDrive."
+keywords:
+  - data source metadata by type
+  - GetMetaDataByType endpoint
+  - file server type
+  - local server data source metadata
 sidebar_position: 110
+unlisted: true
 ---
 
-# Get Metadata of Data Source by Server Type and ID
+# Get Data Source Metadata by Server and Type API
 
-Use this API to retrieve metadata information of all data sources defined so far in GroupID by File
-Server type (i.e., local server or a cloud server) and by data source type (i.e., MS Excel or
-Text/CSV or MS Access or SQL server).
+Use this API to retrieve metadata information about all data sources defined so far in GroupID
+by file server type (a local server or a cloud server) and by data source type (Microsoft
+Excel, Text/CSV, Microsoft Access, or SQL Server).
 
 ## Endpoint
 
@@ -18,7 +24,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/GetMetaDataByType/{se
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -138,5 +144,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)

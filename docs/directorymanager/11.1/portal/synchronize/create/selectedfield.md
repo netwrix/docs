@@ -1,105 +1,69 @@
 ---
-title: "Selected Fields for object types"
-description: "Selected Fields for object types"
+title: "Configure Selected Fields in a Synchronize Job"
+description: "Choose the create, update, delete, or skip action for each object type and select the fields a Synchronize job syncs to the destination."
+keywords:
+  - Synchronize selected fields
+  - object types
+  - Member Key
+  - two-way synchronization
+  - destination container
+  - Directory Manager
 sidebar_position: 50
 ---
 
-# Selected Fields for object types
+# Configure Selected Fields in a Synchronize Job
 
-On the Selected Fields for Object type section, click Add/Edit Fields. You can specify the action to
-take if the data or object being exported from the source doesn't exist at the destination.
+In the **Selected Fields for Object type** section, click **Add/Edit Fields**. You can specify the action to take if the data or object exported from the source doesn't exist at the destination.
 
-1. Select the operation that you want to perform. Click **Create** to create new objects and
-   **Update** if you want to update the existing objects.
+To configure the selected fields:
 
-    - If table provider is the destination, you can enable two-way synchronization.
+1. Select the operation that you want to perform. Click **Create** to create new objects and **Update** to update existing objects.
 
-        - If an object exists in the source but doesn't exist in the destination, you can select
-          one of the following options:
+    - If a table provider is the destination, you can enable two-way synchronization.
 
-            - **Create**
+        - If an object exists in the source but doesn't exist in the destination, select one of the following options:
 
-                Select this option to create objects at the destination for source objects that have
-                no counterparts in the destination during synchronization.
+            - **Create**: Create objects at the destination for source objects that have no counterparts in the destination during synchronization.
+            - **Skip**: Ignore items that don't exist on the destination and update only those that do.
 
-            - **Skip**
+        - If an object doesn't exist in the source but exists in the destination, select one of the following options:
 
-                Ignore items that don't exist on the destination and update only those that do.
+            - **Delete**: Delete such objects from the destination.
+            - **Skip**: Ignore objects at the destination that don't exist at the source.
 
-        - If an object doesn't exist in the source but exists in the destination, you can select
-          one of the following options:
+    - If an LDAP-compliant directory server or a phone system is the destination, you can do the following:
 
-            - **Delete**
+        - For LDAP providers such as Active Directory, you can select one or more object types that are synced between the source and destination directories. For other LDAP providers, you can create or update objects of a specific type.
 
-                Delete such objects from the destination.
+            For each object type, specify the action to take.
 
-            - **Skip**
+            - **Create**: Create objects at the destination for source objects that have no counterparts in the destination during synchronization. You must specify a target container for each object type.
 
-                Ignore objects at the destination that don't exist at the source.
+                Click the **Container** button to view each **Create** action that you selected in the preceding step, and select one of the following:
 
-    - If LDAP-compliant directory server or a phone system is the destination, you can do the
-      following:
+                - **Create objects in this container**: Click **Browse** to change the displayed destination container (specified on the Destination Provider page) or select a new container.
+                - **Create objects in the container specified in this source field**: Enter the distinguished name of the container.
+                - **Create objects in a container specified in script**: Click the **Edit Script** button and write a script that identifies the target container.
 
-        - For LDAP providers such as Active Directory, you can select one or more object types that
-          are synced between the source and destination directories. For other LDAP providers you
-          can create or update objects of a specific type.
+            - **Skip**: Skip items that don't exist on the destination and only update those that do. This is the default selection.
 
-            For each object type, you must specify the action to take.
+        - For phone systems such as a third-party Switchvox provider, you can select only one object type to sync between the source and destination directories.
 
-            - **Create**
+            For the selected object type, specify the action to take.
 
-                Select this option to create objects at the destination for source objects that have
-                no counterparts in the destination during synchronization. You must specify a target
-                container for each object type.
+            - **Create**: Create an object at the destination for a source object that has no counterparts in the destination during synchronization. You must specify a target container for the selected object type.
+            - **Skip**: Ignore any source objects that don't exist at the destination during synchronization.
 
-                Click the **Container** button to view of each **Create** action that you selected
-                in the preceding step, and select one of the following:
+2. Select the fields to sync. Repeat for each object type you want. The object types listed are based on the source directory that you selected on the previous page.
+3. If the destination isn't an Active Directory domain, select the names of the fields to sync from the list.
 
-                - **Create objects in this container** - Click **Browse** to change the displayed
-                  destination container (specified on the Destination Provider page) or select a new
-                  container.
-                - **Create objects in the container specified in this source field**- Enter the
-                  distinguished name of the container.
-                - **Create objects in a container specified in script** - Click the Edit Script
-                  button and write a script that identifies the target container.
+    By default, Synchronize selects some fields from the list by analyzing the fields from the source.
 
-            - **Skip**
-
-                The default selection is to skip items that don't exist on the destination and only
-                update those that do.
-
-        - For phone systems such as a third-party Switchvox provider, you can only select one object
-          type to be synced between the source and destination directories.
-
-            For the selected object type, you must specify the action to take.
-
-            - **Create**
-
-                Select this option to create object at the destination for source object that has no
-                counterparts in the destination during synchronization. You must specify a target
-                container for the selected object type.
-
-            - **Skip**
-
-                Select this option to ignore any source objects that doesn't exist at the
-                destination during synchronization.
-
-2. Select the fields to be synced. Repeat for each object type desired. Object types listed are
-   based on the source directory that you selected on the previous page.
-3. If the destination isn't an Active Directory domain, select the names of fields to sync from the
-   list.
-4. By default, Synchronize moves selects some fields from the list by analyzing the fields from the
-   source.
-5. For the Group object type, clicking _member (sAMAccountName_) displays **Member Key** list.
-   Select the required Active Directory attribute from it to search matching group members in the
-   destination.
+4. For the Group object type, click _member (sAMAccountName)_ to display the **Member Key** list. Select the required Active Directory attribute from it to search for matching group members in the destination.
 
     :::note
-    A Synchronize job can only create groups at the destination. To sync group
-    members, it searches Active Directory for the matching objects based on the Member Key field and
-    adds them to the group membership.
+    A Synchronize job can only create groups at the destination. To sync group members, it searches Active Directory for the matching objects based on the Member Key field and adds them to the group membership.
     :::
 
-
-6. To select all the fields, check the **All Fields** checkbox below.
-7. Click **Save**.
+5. To select all the fields, select the **All Fields** checkbox.
+6. Click **Save**.

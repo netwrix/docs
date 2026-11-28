@@ -1,10 +1,15 @@
 ---
-title: "Get-Contact"
-description: "Get-Contact"
+title: "Get-Contact Cmdlet in GroupID"
+description: "Retrieves basic information about a contact from an identity store, filtered by identity, container, or LDAP filter."
+keywords:
+  - Get-Contact
+  - Management Shell
+  - retrieve contact
+  - contact cmdlet
 sidebar_position: 10
 ---
 
-# Get-Contact
+# Get-Contact Cmdlet in GroupID
 
 Use the **Get-Contact** cmdlet to retrieve basic information about a contact.
 
@@ -37,11 +42,11 @@ Example:
 The following command retrieves a contact from the specified container of the identity store.
 
 ```
-Get-Contact -SearchContainer "OU=osamamu,DC=naveed,DC=local"
+Get-Contact -SearchContainer "OU=SalesOU,DC=example,DC=com"
 ```
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Contact Commands](/docs/directorymanager/11.0/managementshell/contact/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Contact Cmdlets](/docs/directorymanager/11.0/managementshell/contact/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

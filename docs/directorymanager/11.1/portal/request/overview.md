@@ -1,109 +1,85 @@
 ---
-title: "Requests"
-description: "Requests"
+title: "Workflow Requests in the Directory Manager Portal"
+description: "Learn how workflow requests, system workflows, approvers, and approver acceleration work, and where to manage requests in the portal."
+keywords:
+  - workflow requests
+  - system workflows
+  - workflow approver
+  - workflow acceleration
+  - approval routing
 sidebar_position: 120
 ---
 
-# Requests
+# Workflow Requests in the Directory Manager Portal
 
-A workflow request is a set of rules that Directory Manager uses as a built-in auditing system to
-ensure that users enter correct data before committing changes to a directory. A workflow triggers
-when some Directory Manager operation, performed by a user, meets the criteria defined in the
-workflow route.
+A workflow request is a set of rules that Directory Manager uses as a built-in auditing system. It ensures that users enter correct data before they commit changes to a directory. A workflow triggers when a user's Directory Manager operation meets the criteria defined in the workflow route.
 
-Workflow requests are defined for an identity store and applied to the different operations
-performed using Directory Manager.
+Workflow requests are defined for an identity store and applied to the different operations performed using Directory Manager.
 
-Directory Manager provides the following predefined workflows (also called system workflows) that
-trigger when their associated events occur:
+## System workflows
+
+Directory Manager provides the following predefined workflows, also called system workflows. They trigger when their associated events occur.
 
 |     | Workflow Name                              | Description                                                                                                                                                              | Default Approver                                     |
 | --- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
-| 1.  | Workflow to Reset Password                 | When a user resets his or her password. It doesn't apply when helpdesk users reset the passwords of other users.                                                        | Primary and additional managers of the user          |
+| 1.  | Workflow to Reset Password                 | When a user resets their password. It doesn't apply when helpdesk users reset the passwords of other users.                                                           | Primary and additional managers of the user          |
 | 2.  | Workflow to Change Group Expiration Policy | When a user changes the expiry policy of a group. By default, this workflow is disabled and no approver is specified. You can edit the workflow to add an approver.      | None                                                 |
 | 3.  | Workflow to Nest a Group                   | When a user adds a group (Group A) to the membership of another group (Group B).                                                                                         | Primary and additional owners of Group A             |
 | 4.  | Workflow to Join a Group                   | When a user joins a semi-private group.                                                                                                                                  | Primary and additional owners of the group           |
 | 5.  | Workflow to Leave a Group                  | When a user leaves a semi-private group.                                                                                                                                 | Primary and additional owners of the group           |
-| 6.  | Workflow to Transfer a User                | When a user transfers his or her direct report.                                                                                                                          | The new manager                                      |
+| 6.  | Workflow to Transfer a User                | When a user transfers their direct report.                                                                                                                              | The new manager                                      |
 | 7.  | Workflow to Terminate a User               | When a manager terminates a direct report. By default, this workflow is disabled and no approver is specified. You can edit the workflow to add an approver.             | None                                                 |
-| 8.  | Workflow to Change Manager                 | When a user changes his or her primary or additional manager. If the user doesn't have a primary manager, and no default approver is set, the request is auto approved. | Existing primary and additional managers of the user |
+| 8.  | Workflow to Change Manager                 | When a user changes their primary or additional manager. If the user doesn't have a primary manager, and no default approver is set, the request is auto-approved. | Existing primary and additional managers of the user |
 
-The administrator can also define more workflows for the identity store.
+Administrators can also define more workflows for the identity store.
 
-In case of a Synchronize job, Directory Manager evaluates whether the task it will perform falls
-under the scope of a workflow. If yes, then a workflow request is triggered the first time the job
-is executed. The job will run when the request is approved.
+For a Synchronize job, Directory Manager evaluates whether the task it performs falls under the scope of a workflow. If it does, the first run of the job triggers a workflow request. The job runs when the request is approved.
 
-On Directory Manager portal, use the **Requests** node to view and manage workflow requests for the
-connected identity store. Expanding this node displays the following tabs:
+## Requests node
 
-- [My Requests](/docs/directorymanager/11.1/portal/request/myrequest.md) lists workflow requests that you have generated. It displays both
-  pending and processed requests.
-- [Request Inbox](/docs/directorymanager/11.1/portal/request/pending.md) lists the workflow requests for which you are the approver. You can
-  view, approve, deny, or reroute these requests.
-- [All Requests](/docs/directorymanager/11.1/portal/request/allrequest.md) lists all pending workflow requests generated by enterprise users.
+In the Directory Manager portal, use the **Requests** node to view and manage workflow requests for the connected identity store. Expanding this node displays the following tabs:
+
+- [View Your Workflow Requests in Directory Manager](/docs/directorymanager/11.1/portal/request/myrequest.md) lists workflow requests that you generated. It displays both pending and processed requests.
+- [Manage Your Request Inbox in Directory Manager](/docs/directorymanager/11.1/portal/request/pending.md) lists the workflow requests for which you are the approver. You can view, approve, deny, or reroute these requests.
+- [Approve, Deny, and Filter Requests in Directory Manager](/docs/directorymanager/11.1/portal/request/allrequest.md) lists all pending workflow requests generated by enterprise users.
 
 :::note
-If the user is high priority such as _Administrator_, only then they will see the _All
-Requests_ tab.
+Only high-priority users, such as _Administrator_, see the _All Requests_ tab.
 :::
 
+## How workflows run
 
-## Workflow Implementation
+Directory Manager workflows run in a standard action sequence:
 
-Directory Manager workflows are performed in a standard action sequence:
+- When a user performs an action in Directory Manager, Directory Manager evaluates it according to the workflow settings.
+- If no approval is required, the change takes place in the directory and Directory Manager sends change notifications.
+- If a workflow applies, Directory Manager routes an approval request to the approving authorities and sends a 'request sent' notification to the requester. When the request is approved, the requested changes are made in the directory. Change notifications go by email to the requester and approvers, except the one who approved the request.
+- If the request is denied, information isn't updated in the directory. Directory Manager sends an email notification to the requester and the approvers, except the one who approved the request. The notification explains why the request was denied.
 
-- When a user performs an action in Directory Manager, it is evaluated according to the workflow
-  settings.
-- If no approval is required, the change takes place in the directory and change notifications are
-  sent.
-- If a workflow applies, Directory Manager routes an approval request to the approving authorities
-  and a 'request sent' notification is send to the requester. When the request is approved, the
-  requested changes are made in the directory and change notifications go to the requester and
-  approvers (except the one who has approved the request) by email.
-- If the request is denied, information isn't updated in the directory and an email notification is
-  sent to the requester and th pe approvers (except the one who has approved the request) with an
-  explanation of why it was denied.
-
-The administrator may enable the email approval option for a workflow route. Email notifications
-generated for such workflow requests contain the **Accept** and **Deny** buttons. On clicking any of
-these, the approver is redirected to the Directory Manager portal, where he or she can approve or
-deny the request. Navigation within the portal will require authentication.
+The administrator can enable the email approval option for a workflow route. Email notifications generated for such workflow requests contain the **Accept** and **Deny** buttons. When the approver clicks either button, the portal opens, where the approver can approve or deny the request. Navigation within the portal requires authentication.
 
 :::note
-Email notifications are sent when an SMTP server has been configured for the identity store.
+Directory Manager sends email notifications when an SMTP server is configured for the identity store.
 :::
 
+## Approving authority without workflow acceleration
 
-## Approving authority for a Workflow Request (without Workflow Acceleration)
+For each workflow, an approving authority is also specified. The following scenarios apply when workflow approver acceleration settings aren't applied:
 
-For each workflow, an approving authority is also specified. The following scenarios are valid when
-workflow approver acceleration settings aren't applied:
+- If the object specified as an approver in a workflow route isn't available, such as when it is disabled or not specified, Directory Manager routes the workflow request to the default approver. If the default approver isn't specified or is disabled, the request is auto-approved.
 
-- If the object specified as an approver in a workflow route isn't available (such as if it is
-  disabled or not specified), the workflow request would be routed to the default approver. If the
-  default approver isn't specified or disabled, the request is auto approved.
-
-    See the
-    [Specify a Default Approver](/docs/directorymanager/11.1/admincenter/workflow/advancedsettings.md#specify-a-default-approver)
-    topic.
+    See the [Specify a Default Approver](/docs/directorymanager/11.1/admincenter/workflow/advancedsettings.md#specify-a-default-approver) topic.
 
 - If the requester is also the approver for that workflow, the request is auto-approved.
-- When a Synchronize job runs to set the manager for a user who doesn't already have a manager, the
-  following happens:
+- When a Synchronize job runs to set the manager for a user who doesn't already have a manager, the following applies:
 
-    - The _Workflow to Change Manager_ will trigger if a default approver is set in advanced
-      workflow settings.
-    - If the default approver isn't set, the workflow will not trigger and the user's manager will
-      be set without requiring any approval.
+    - The _Workflow to Change Manager_ triggers if a default approver is set in advanced workflow settings.
+    - If the default approver isn't set, the workflow doesn't trigger. Directory Manager sets the user's manager without requiring any approval.
 
-## Workflow Acceleration
+## Workflow acceleration
 
-The workflow approver acceleration feature in Directory Manager ensures that no workflow request
-remains unnoticed and undecided. Based on certain rules, it automatically accelerates a request to
-another approver if the current approver doesn't act on it for a certain number of days.
+The workflow approver acceleration feature in Directory Manager ensures that no workflow request remains unnoticed and undecided. Based on certain rules, it automatically accelerates a request to another approver if the current approver doesn't act on it for a certain number of days.
 
-The administrator can enable and configure workflow approver acceleration for an identity store in
-Directory Manager Admin Center.
+The administrator can enable and configure workflow approver acceleration for an identity store in Directory Manager Admin Center.
 
-**See [Workflow Approver Acceleration](/docs/directorymanager/11.1/admincenter/workflow/approveracceleration.md)**
+**See [Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.1/admincenter/workflow/approveracceleration.md)**

@@ -1,13 +1,18 @@
 ---
-title: "New-User"
-description: "New-User"
+title: "New-User Cmdlet in GroupID"
+description: "Create a user in the directory and set properties such as name, password, and contact details with the New-User cmdlet."
+keywords:
+  - New-User
+  - GroupID Management Shell
+  - create user
+  - user properties
 sidebar_position: 30
 ---
 
-# New-User
+# New-User Cmdlet in GroupID
 
-Use the **New-User** commandlet to create a new user in Directory. Most user properties can be
-directly added by using the parameters of this commandlet.
+Use the **New-User** cmdlet to create a user in the directory. Most user properties can be
+directly added by using the parameters of this cmdlet.
 
 ## Syntax
 
@@ -64,15 +69,15 @@ New-User
 Example:
 
 The following command creates a new user in the container specified by the OrganizationalUnit
-parameter. The command also specifies the logon name, password, first name, last name and display
+parameter. The command also specifies the logon name, password, first name, last name, and display
 name of the new user.
 
 ```
-New-User -Name "OsamaUser" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -SAMAccountName "OsamaUser11" -Password "webdir123R" -FirstName "Osama" -LastName "Shahbaz" -DisplayName "Osama"
+New-User -Name "SampleUser" -OrganizationalUnit "OU=SalesOU,DC=example,DC=com" -SAMAccountName "SampleUser11" -Password "webdir123R" -FirstName "Sample" -LastName "User" -DisplayName "Sample"
 ```
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Commands](/docs/directorymanager/11.0/managementshell/user/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/user/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

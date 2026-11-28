@@ -1,12 +1,18 @@
 ---
-title: "Get All Data Sources"
-description: "Get All Data Sources"
+title: "Get All Data Sources API in Directory Manager"
+description: "Retrieve every data source defined in Directory Manager, including its type, creation date, and configuration values."
+keywords:
+  - Directory Manager data source API
+  - list all data sources
+  - DataSource GetAll endpoint
+  - data source configuration values
 sidebar_position: 60
+unlisted: true
 ---
 
-# Get All Data Sources
+# Get All Data Sources API in Directory Manager
 
-Using this API you can get information of all data source defined so far in Directory Manager.
+Use this API to get information about all data sources defined so far in Directory Manager.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ Using this API you can get information of all data source defined so far in Dire
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [

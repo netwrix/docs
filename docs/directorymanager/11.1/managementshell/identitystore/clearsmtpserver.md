@@ -1,19 +1,27 @@
 ---
-title: "Clear-SmtpServer"
-description: "Clear-SmtpServer"
+title: "Clear-SmtpServer Cmdlet in Directory Manager"
+description: "Remove the SMTP server configuration from a Directory Manager identity store with the Clear-SmtpServer cmdlet."
+keywords:
+  - Clear-SmtpServer
+  - SMTP server
+  - identity store
+  - Management Shell
+  - PowerShell cmdlet
 sidebar_position: 30
 ---
 
-# Clear-SmtpServer
+# Clear-SmtpServer Cmdlet in Directory Manager
 
-The commandlet Clear-SmtpServer removes the SMTP server configurations from an identity store.
+Use the Clear-SmtpServer cmdlet to remove the SMTP server configuration from an identity store.
 
 :::note
-This cmdlet will also clear the notification settings for the identity store recipients,
-password expiry group notifications, membership lifecycle notifications, and managed by notification
-options for the specified identity store.
-:::
+This cmdlet also clears these notification settings for the specified identity store:
 
+- Identity store recipients
+- Password expiry group notifications
+- Membership lifecycle notifications
+- Managed by notifications
+:::
 
 ## Syntax
 
@@ -27,9 +35,9 @@ Clear-SmtpServer
 
 - IdentityStoreName
 
-Example 1:
+## Example
 
-This example clears the configured SMTP server in AdStore9 identity store.
+This command clears the configured SMTP server in the AdStore9 identity store.
 
 ```
 Clear-SmtpServer -IdentityStoreName AdStore9

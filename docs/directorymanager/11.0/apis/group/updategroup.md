@@ -1,12 +1,18 @@
 ---
-title: "Update a Group"
-description: "Update a Group"
+title: "Update a Group API"
+description: "Update the attributes of a single group, such as its description or company, with a PATCH request to the GroupID data service."
 sidebar_position: 160
+keywords:
+  - update group API
+  - group attribute update
+  - PATCH group
+  - groupIdentity endpoint
+unlisted: true
 ---
 
-# Update a Group
+# Update a Group API
 
-Using this API, you can update a group's details.
+Use this API to update a group's details.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 PATCH
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -39,7 +45,7 @@ PATCH
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -98,5 +104,5 @@ PATCH
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

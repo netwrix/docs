@@ -1,12 +1,19 @@
 ---
-title: "Update Power Automate Settings"
-description: "Update Power Automate Settings"
+title: "Update Power Automate Settings in GroupID"
+description: "Change the Power Automate settings of an identity store by sending a PATCH request to the MsFlow Settings endpoint."
+keywords:
+  - update Power Automate settings
+  - MsFlow Settings endpoint
+  - GroupID API
+  - PATCH request
+  - identity store settings
 sidebar_position: 170
+unlisted: true
 ---
 
-# Update Power Automate Settings
+# Update Power Automate Settings in GroupID
 
-If you have defined Power-Automate settings for an identity store, you can use this API to update
+If you have defined Power Automate settings for an identity store, you can use this API to update
 those settings.
 
 ## Endpoint
@@ -17,7 +24,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 PATCH
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -32,7 +39,7 @@ PATCH
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 true
@@ -40,5 +47,5 @@ true
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

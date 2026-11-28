@@ -1,10 +1,15 @@
 ---
-title: "ISmsGateway.TestCredentials"
-description: "ISmsGateway.TestCredentials"
+title: "ISmsGateway.TestCredentials Method (SMS Gateway API)"
+description: "Validate the credentials GroupID uses to communicate with a custom SMS gateway by implementing ISmsGateway.TestCredentials."
+keywords:
+  - ISmsGateway.TestCredentials
+  - SMS gateway credentials
+  - custom SMS gateway
+  - Imanami.PublicInterfaces
 sidebar_position: 110
 ---
 
-# ISmsGateway.TestCredentials
+# ISmsGateway.TestCredentials Method (SMS Gateway API)
 
 Tests the credentials for communicating with the SMS gateway for validity.
 
@@ -26,4 +31,4 @@ True if the credentials are valid.
 
 **See Also**
 
-- [Implement and Deploy a Custom SMS Gateway](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in GroupID](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

@@ -1,14 +1,19 @@
 ---
-title: "Configure a Messaging Provider"
-description: "Configure a Messaging Provider"
+title: "Configure a Messaging Provider in Directory Manager"
+description: "Set Microsoft Exchange, Office 365, Google Workspace, or another provider to create email addresses for mail-enabled objects, or skip messaging."
+keywords:
+  - messaging provider
+  - Microsoft Exchange
+  - Office 365
+  - Google Workspace
+  - Exchange Server priority
+  - mail-enabled objects
 sidebar_position: 100
 ---
 
-# Configure a Messaging Provider
+# Configure a Messaging Provider in Directory Manager
 
-Directory Manager can create email addresses for mail-enabled objects (groups, users, and contacts)
-with any mailing system. It can be an Exchange Server (2013/2016/2019) deployed in your environment
-or an external email provider such as Exchange Online and Office 365.
+Directory Manager can create email addresses for mail-enabled objects (groups, users, and contacts) with any mailing system. This can be an Exchange Server (2013/2016/2019) deployed in your environment or an external email provider, such as Exchange Online and Office 365.
 
 Directory Manager supports the following messaging providers:
 
@@ -17,183 +22,108 @@ Directory Manager supports the following messaging providers:
 - Google Workspace
 - Other external providers, such as Exchange Online, Office 365, Yahoo, Gmail, and Google Groups
 
-When a messaging provider isn't available in your environment or you want to restrict the creation
-of mail-enabled objects in the identity store, select the _None_ option.
+When a messaging provider isn't available in your environment, or you want to restrict the creation of mail-enabled objects in the identity store, select the **None** option.
 
-## Exchange Server Priority
+## Exchange Server priority
 
-In environments that run multiple versions of Microsoft Exchange, you can use Directory Manager to
-set Exchange Server priority. All messaging provider-related actions will reiterate on Exchange
-servers according to priority.
+In environments that run multiple versions of Microsoft Exchange, you can use Directory Manager to set Exchange Server priority. Directory Manager repeats all messaging provider-related actions on Exchange servers according to priority.
 
-Let’s assume you have an environment with:
+For example, assume you have an environment with:
 
 - Active Directory 2012
-- Exchange 2013 with two servers: ExchA and ExchB, where you set Exchange server priority as ExchB
-  and ExchA
+- Exchange 2013 with two servers (ExchA and ExchB), where you set the Exchange server priority as ExchB first and ExchA second
 
-When you create a mail-enabled group using Directory Manager, it will be created in Active Directory
-first. Messaging provider-related configurations will go to ExchB. In case of failure, the system
-will reiterate the same action on ExchA.
+When you create a mail-enabled group using Directory Manager, it is created in Active Directory first. Messaging provider-related configurations go to ExchB. If that fails, Directory Manager repeats the same action on ExchA.
 
-## Set Microsoft Exchange as Messaging Provider
+## Set Microsoft Exchange as messaging provider
 
 To set Microsoft Exchange as a messaging provider:
 
-Step 1 – In the Admin Center, click **Identity Stores** in the left pane.
+1. In the Admin Center, click **Identity Stores** in the left pane.
+2. On the Identity Stores page, click the ellipsis button for an identity store and select **Edit**.
+3. Under Settings in the left pane, click **Configurations**. Then click **Messaging System**. The Messaging System page appears.
+4. In the Messaging Provider dropdown list, select the **Exchange version** that you want to use.
+5. In the Domain name box, enter the domain name where the mail server resides.
+6. In the Username and Password boxes, enter the username and password of an authorized user account on the mail server.
+7. Review the Server Name column in the Server Status & Priority area. It lists the mail servers in the environment. Directory Manager randomly assigns the highest priority to a server. You can change its priority level and set the priority for other servers.
+8. If your required server isn't listed, click **Sync Again**.
+9. In the Server Status & Priority section, select the checkbox for the server you want to specify or change the priority for. Directory Manager checks the availability of the server and displays its status in the **Status** column as **Online** (available) or **Offline** (unavailable).
+10. In the Priority box, select a priority level for the server, with '1' representing the highest priority.
+11. Click **Save**.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
-**Edit**.
-
-Step 3 – Click **Configurations** under Settingsin the left pane. Then click **Messaging System**.
-The Messaging System page is displayed.
-
-Step 4 – In the Messaging Provider dropdown list, select the **Exchange version** that you want to
-use.
-
-Step 5 – Enter the domain name where the mail server resides in the Domain name box.
-
-Step 6 – Enter the username and password of an authorized user account on the mail server in the
-Username and Password boxes.
-
-Step 7 – The Server Name column in the Server Status & Priority area lists the mail servers in the
-environment. Directory Manager randomly assigns the highest priority to a server. You can change its
-priority level and set the priority for other servers..
-
-Step 8 – If your required server isn't listed, click **Sync Again**.
-
-- In the Server Status & Priority section, select the checkbox for the server you want to specify
-  or change the priority for. Directory Manager checks the availability of the server and displays
-  its status as _Online_ (available) or _Offline_ (unavailable) in the **Status** column.
-- In the Priority box, select a priority level for the server, with ‘1’ representing the highest
-  priority.
-
-Step 9 – Click **Save**.
-
-## Set Office 365 as Messaging Provider
+## Set Office 365 as messaging provider
 
 To set Office 365 as a messaging provider:
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
+2. On the Identity Stores page, click the ellipsis button for an identity store and select **Edit**.
+3. Under Settings in the left pane, click **Configurations**. Then click **Messaging System**.
+4. On the Messaging System page, select **Office 365** in the Messaging Provider dropdown list.
+5. From the Cloud dropdown list, select the cloud where your Microsoft Entra ID tenant exists.
+6. In the **Domain name** box, enter the domain name configured for Office 365.
+7. In the ApplicationID box, enter the application ID assigned to the Directory Manager application when you registered it in Microsoft Entra admin center.
+8. In the Client box, enter the client secret value generated against the certificate uploaded to Microsoft Entra admin center while registering the Directory Manager application.
+9. In the PFX Certificate box, specify the path to the PFX certificate. To do this, click **Choose File** and browse for the file. Select it and click **Open**.
 
-Step 2 – On theIdentity page, click the ellipsis button for an identity store and select **Edit**.
+   As a prerequisite, the PFX certificate must be generated on the Directory Manager server and exported to this machine for upload.
 
-Step 3 – Click **Configurations** under Settings in the left pane. Then click **Messaging System**.
+10. In the PFX Certificate Password box, enter the password that was created while exporting the PFX certificate.
+11. In the Server Status & Priority area, the **Server Name** box displays the name of the mail server. The priority option doesn't apply to it. Directory Manager checks the availability of the server and displays its status in the Status column as **Online** (available) or **Offline** (unavailable).
 
-Step 4 – On theMessaging System page, select _Office 365_ in the Messaging Provider dropdown list.
+    If the server isn't listed, click **Sync Again**.
 
-Step 5 – From the Cloud dropdown list, select the cloud where your Microsoft Entra ID tenant
-exists.
-
-Step 6 – Enter the domain name configured for Office 365 in the **Domain name** box.
-
-Step 7 – In the ApplicationID box, enter the application ID assigned to the Directory Manager
-application when you registered it in Microsoft Entra Admin Center.
-
-Step 8 – In the Client box, provide the client secret value generated against the certificate
-uploaded to Microsoft Entra Admin Center while registering the Directory Manager application.
-
-Step 9 – Specify the path to the PFX certificate in the PFX Certificate box. For that, click
-**Choose File** and browse for the file. Select it and click **Open**.  
-As a prerequisite, the PFX certificate must be generated on the Directory Manager server and
-exported to this machine for upload.
-
-Step 10 – In the PFX Certificate Password box, enter the password that was created while exporting
-the PFX certificate.
-
-Step 11 – In the Server Status & Priority area, the **Server Name** box displays the name of the
-mail server; the priority option doesn't apply to it. Directory Manager checks the availability of
-the server and displays its status as _Online_ (available) or _Offline_ (unavailable) in theStatus
-column.  
-If the server isn't listed, click **Sync Again**.
-
-Step 12 – Click **Save**.
+12. Click **Save**.
 
 :::note
-When Office 365 is configured as the messaging provider for an Active Directory identity
-store, Directory Manager creates distribution groups but doesn't populate their membership in
-Office 365. Use AD Connect or any directory synchronize tool to replicate information (such as
-membership info) between on-premises AD and Office 365.
+When Office 365 is configured as the messaging provider for an Active Directory identity store, Directory Manager creates distribution groups but doesn't populate their membership in Office 365. Use AD Connect or any directory synchronization tool to replicate information (such as membership information) between on-premises AD and Office 365.
 :::
 
+## Set Google Workspace as messaging provider
 
-## Set Google Workspace as Messaging Provider
+To set Google Workspace as a messaging provider:
 
-To set a Google Workspace as a messaging provider:
+1. In Admin Center, click **Identity Stores** in the left pane.
+2. On the Identity Stores page, click the ellipsis button for an identity store and select **Edit**.
+3. Under Settings in the left pane, click **Configurations**. Then click **Messaging System**.
+4. On the Messaging System page, select **Google Workspace** in the **Messaging Provider** dropdown list.
+5. In the Service Account box, enter the service account name assigned to you when you created your Google Workspace account.
+6. In the Admin Username box, enter the username of an authorized user on the messaging provider.
+7. In the P12 Certificate box, specify the path to the p12 key file. Click **Choose File** and browse for the file. Select the file and click **Open**.
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+   As a prerequisite, you must generate the p12 key file for your account in Google Cloud Console and download it.
 
-Step 2 – On the Identify Storespage, click the ellipsis button for an identity store and select
-**Edit**.
+8. In the Server Status & Priority area, the Server Name box displays the name of the mail server. The priority option doesn't apply to it. Directory Manager checks the availability of the server and displays its status in the Status column as **Online** (available) or **Offline** (unavailable).
 
-Step 3 – Click **Configurations** under Settings in the left pane. Then click **Messaging System**.
+   If the server isn't listed, click **Sync Again**.
 
-Step 4 – On the Messaging System page, select _Google Workspace_ in the **Messaging Provider**
-dropdown list.
+9. Click **Save**.
 
-Step 5 – In theService Account box, enter the service account name assigned to you when you created
-your Google Workspace account.
-
-Step 6 – Enter the username of an authorized user on the messaging provider in the Admin Username
-box.
-
-Step 7 – Specify the path to the p12 key file in the P12 Certificate box.  
- Click **Choose File** and browse for the file. Select the file and click **Open**.  
-As a prerequisite, you must generate the p12 key file for your account in Google Cloud Console and
-download it.
-
-Step 8 – In the Server Status & Priority area, the Server Name box displays the name of the mail
-server; the priority option doesn't apply to it. Directory Manager checks the availability of the
-server and displays its status as _Online_ (available) or _Offline_ (unavailable) in the Status
-column.  
-If the server isn't listed, click **Sync Again**.
-
-Step 9 – Click **Save**.
-
-## Set an External Provider to Create Email Addresses
+## Set an external provider to create email addresses
 
 To set an external provider to create email addresses:
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
+2. On the Identity Stores page, click the ellipsis button for an identity store and select **Edit**.
+3. Under Settings in the left pane, click **Configurations**. Then click **Messaging System**.
+4. On the Messaging System page, select **Other** in the **Messaging Provider** dropdown list.
+5. In the Domain Name box, enter the domain name of the external email provider, for example, googlegroups.com.
+6. In the Maximum Length Allowed for Email Alias box, specify the maximum number of characters that an email alias can contain.
+7. In the Email Alias Regular Expression box, enter a regular expression. The email alias created in the external provider must satisfy this regular expression.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
-**Edit**.
+   For information about regular expressions and their syntax, see these topics:
 
-Step 3 – Click **Configurations** under Settings in the left pane. Then click **Messaging System**.
+   - [Introduction to Regular Expressions](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/28hw3sce(v%3dvs.100))
+   - [Regular Expression Syntax Reference](https://msdn.microsoft.com/en-us/library/ms840427.aspx)
 
-Step 4 – On the Messaging System page, select _Other_ in the **Messaging Provider** dropdown list.
+8. In the Enter Example to Validate Regular Expression box, enter an email alias as an example, and then click **Validate** to verify that the example satisfies the regular expression.
+9. Click **Save**.
 
-Step 5 – In the Domain Name box, enter the domain name of the external email provider, for example,
-googlegroups.com.
+## Skip messaging provider configuration
 
-Step 6 – In the Maximum Length Allowed for Email Alias box, specify the maximum number of characters
-that an email alias can contain.
+To skip setting a messaging provider:
 
-Step 7 – Enter a regular expression in the Email Alias Regular Expression box; the email alias
-created in the external provider must satisfy this regular expression.  
-Follow these links for information about regular expressions and their syntax:
-
-- [Introduction to Regular Expressions](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/28hw3sce(v%3dvs.100))
-- [Regular Expression Syntax Reference](https://msdn.microsoft.com/en-us/library/ms840427.aspx)
-
-Step 8 – In the Enter Example to Validate Regular Expression box, enter an email alias as an
-example, and then click **Validate** to verify that the example satisfies the regular expression.
-
-Step 9 – Click **Save**.
-
-## Skip Messaging Provider Configuration
-
-To not set a messaging provider:
-
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
-
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
-**Edit**.
-
-Step 3 – Click **Configurations** underSettings in the left pane. Then click **Messaging System**.
-
-Step 4 – When no messaging provider is available in your environment or you want to prevent users
-from creating mail-enabled objects in the identity store, select _None_ in the Messaging Provider
-dropdown list.
-
-Step 5 – Click **Save**.
+1. In Admin Center, click **Identity Stores** in the left pane.
+2. On the Identity Stores page, click the ellipsis button for an identity store and select **Edit**.
+3. Under Settings in the left pane, click **Configurations**. Then click **Messaging System**.
+4. In the Messaging Provider dropdown list, select **None** if no messaging provider is available in your environment or you want to prevent users from creating mail-enabled objects in the identity store.
+5. Click **Save**.

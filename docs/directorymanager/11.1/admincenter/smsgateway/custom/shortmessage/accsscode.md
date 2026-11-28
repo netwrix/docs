@@ -1,16 +1,21 @@
 ---
-title: "ShortMessage.AccessCode"
-description: "ShortMessage.AccessCode"
+title: "ShortMessage.AccessCode property"
+description: "Get or set the confirmation code that Directory Manager sends to registered mobile phone users through a custom SMS gateway."
+keywords:
+  - ShortMessage.AccessCode
+  - SMS confirmation code
+  - custom SMS gateway
+  - Directory Manager SMS API
 sidebar_position: 10
 ---
 
-# ShortMessage.AccessCode
+# ShortMessage.AccessCode property
 
-Gets or sets the confirmation code that will be sent to registered mobile phone users.
+Gets or sets the confirmation code that is sent to registered mobile phone users.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

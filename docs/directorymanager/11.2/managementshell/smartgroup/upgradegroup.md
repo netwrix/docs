@@ -1,17 +1,24 @@
 ---
-title: "Upgrade-Group"
-description: "Upgrade-Group"
+title: "Upgrade-Group Cmdlet in Directory Manager"
+description: "Upgrade managed and non-managed groups and their history from GroupID 10 SR2 to Directory Manager 11.2 with the Upgrade-Group cmdlet."
+keywords:
+  - Upgrade-Group
+  - Directory Manager Management Shell
+  - upgrade Smart Groups
+  - upgrade Dynasties
+  - group history upgrade
 sidebar_position: 60
 ---
 
-# Upgrade-Group
+# Upgrade-Group Cmdlet in Directory Manager
 
-The Upgrade-Group commandlet upgrades managed (Smart Groups and Dynasties) and non-managed Groups of
-GroupID 10 SR2 to Directory Manager 11.2 version. Before you run this commandlet, upgrade the
-configurations and history with the Directory Manager Upgrade wizard. Only then does this
-commandlet upgrade the specified groups and their history successfully. See the
-[Upgrade to Directory Manager 11](/docs/directorymanager/11.2/install/upgrade/upgrade.md) topic for additional information
-on upgrade.
+The Upgrade-Group cmdlet upgrades managed groups (Smart Groups and Dynasties) and non-managed groups
+from GroupID 10 SR2 to Directory Manager 11.2.
+
+Before you run this cmdlet, ensure the Directory Manager Upgrade wizard has upgraded the
+configurations and history. Only then does this cmdlet upgrade the specified groups and their history
+successfully. For more information on upgrading, see
+[Upgrade to Directory Manager 11 with the Wizard](/docs/directorymanager/11.2/install/upgrade/upgrade.md).
 
 ## Syntax
 
@@ -28,41 +35,41 @@ Upgrade-Group  
 [<CommonParameters>]
 ```
 
-## Required Parameters
+## Required parameters
 
 - None
 
-Example 1:
+## Examples
 
-By default, this commandlet upgrades group from the connected identity store, in case , you want to
-upgrade groups from an OU of another identity store, specify the id of that identity store in the
-_IdentityStoreId_ parameter and OU in the _SearchContainer_ parameter.
+### Example 1
 
-The following commandlet upgrades groups of an identity store having id 2 and from the _Jobs_
-container in that identity store.
+By default, this cmdlet upgrades groups from the connected identity store. To upgrade groups from an
+OU of another identity store, specify the ID of that identity store in the _IdentityStoreId_
+parameter and the OU in the _SearchContainer_ parameter.
 
-```
-Upgrade-Group -IdentityStoreId "2" SearchContainer "OU=Jobs,DC=Demo1,DC=com" 
-```
-
-Example 2:
-
-If you want to upgrade groups from a parent OU only, use the _SearchContainerScopeList_ and
-_SearchContainern_ parameters. The _SearchContainerScopeList_ parameter with value 1 indicates that
-the commandlet will not look into the nested OUs but the parent OU only.
-
-The following commandlet upgrades dynasties residing in the _Jobs_ OU from their parent OU only. If
-_SearchContainerScopeList_ parameter isn't specified then this commandlet upgrades dynasties from
-the parent OU and its child OUs.
+This command upgrades groups from the _Jobs_ container of the identity store with ID 2.
 
 ```
-Upgrade-Group -SearchContainerScopeList "1" -SearchContainer "GIDsmart1""OU=Jobs,DC=Demo1,DC=com" GroupType "3"
+Upgrade-Group -IdentityStoreId "2" -SearchContainer "OU=Jobs,DC=Demo1,DC=com" 
+```
+
+### Example 2
+
+To upgrade groups from a parent OU only, use the _SearchContainerScopeList_ and _SearchContainer_
+parameters. The value 1 in _SearchContainerScopeList_ tells the cmdlet to look in the parent OU only,
+not in nested OUs.
+
+This command upgrades Dynasties in the _Jobs_ OU from their parent OU only. If you don't specify the
+_SearchContainerScopeList_ parameter, this cmdlet upgrades Dynasties from the parent OU and its child
+OUs.
+
+```
+Upgrade-Group -SearchContainerScopeList "1" -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -GroupType "3"
 ```
 
 :::note
-The group types 4 and 5 which are for middle and leaf dynasties aren't supported in this
-commandlet. See the [Parameters](/docs/directorymanager/11.2/managementshell/parameters.md) topic for additional information on
-the supported parameters. See the [Parameters](/docs/directorymanager/11.2/managementshell/parameters.md) topic to get information
-about the parameters which you can use in the Directory Manager Management Shell commandlets.
-
+This cmdlet doesn't support group types 4 and 5, which are for middle and leaf Dynasties. For the
+supported parameters and the parameters you can use in Directory Manager Management Shell cmdlets,
+see
+[Directory Manager Management Shell Parameters](/docs/directorymanager/11.2/managementshell/parameters.md).
 :::

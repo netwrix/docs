@@ -1,15 +1,19 @@
 ---
-title: "Disable-DistributionGroup"
-description: "Disable-DistributionGroup"
+title: "Disable-DistributionGroup Cmdlet in Directory Manager"
+description: "Disable the mailing capabilities of a distribution group with the Disable-DistributionGroup cmdlet."
+keywords:
+  - Disable-DistributionGroup
+  - mail-disable group
+  - distribution group
+  - PowerShell cmdlet
 sidebar_position: 10
 ---
 
-# Disable-DistributionGroup
+# Disable-DistributionGroup Cmdlet in Directory Manager
 
-Use this commandlet to disable the mailing capabilities for a distribution group in Directory.
+Use this cmdlet to disable the mailing capabilities of a distribution group in the directory.
 
-Directory Manager maintains a history for this commandlet, which you can view in Directory Manager
-Management Console using the History tab of the object's properties dialog box.
+Directory Manager keeps a history for this cmdlet. To view it, go to the History node in the left panel of the Directory Manager portal.
 
 ## Syntax
 
@@ -22,14 +26,13 @@ Disable-DistributionGroup
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example:
+## Example
 
-The following command mail-disables a distribution group specified by the Identity parameter, using
-the credentials of current user logged-on to the identity store.
+This command mail-disables the distribution group specified by the Identity parameter. It uses the credentials of the current user signed in to the identity store.
 
 ```
 Disable-DistributionGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US"

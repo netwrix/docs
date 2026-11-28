@@ -1,10 +1,16 @@
 ---
-title: "Delete a User"
-description: "Delete a User"
+title: "Delete a User with the GroupID API"
+description: "Delete a single user from an identity store by sending a DELETE request with the user identity."
+keywords:
+  - GroupID API
+  - delete user
+  - DELETE Users endpoint
+  - identity store
 sidebar_position: 20
+unlisted: true
 ---
 
-# Delete a User
+# Delete a User with the GroupID API
 
 Using this API, you can delete a single user.
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 DELETE
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -34,8 +40,8 @@ DELETE
 }
 ```
 
-See Also
+## See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

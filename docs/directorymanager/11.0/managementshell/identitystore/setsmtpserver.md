@@ -1,12 +1,18 @@
 ---
-title: "Set-SmtpServer"
-description: "Set-SmtpServer"
+title: "Set-SmtpServer Cmdlet in GroupID"
+description: "Configure the SMTP server, sender and recipient addresses, port, and authentication for an identity store with the Set-SmtpServer cmdlet."
+keywords:
+  - Set-SmtpServer
+  - SMTP server
+  - email notifications
+  - identity store
+  - PowerShell cmdlet
 sidebar_position: 200
 ---
 
-# Set-SmtpServer
+# Set-SmtpServer Cmdlet in GroupID
 
-The **Set-SmtpServer** commandlet configures an SMTP server for an identity store.
+The **Set-SmtpServer** cmdlet configures an SMTP server for an identity store.
 
 ## Syntax
 
@@ -33,26 +39,26 @@ Set-SmtpServer
 
 Example 1:
 
-This example configures arsalanahmadsvm.pucit.local SMTP server for AdStore9 identity store on
-port 25. Email address for sending notification is specified as noreply@pucit.local and
-euser1@pucit.local as recipient email address.
+This example configures the mail01.example.com SMTP server for the AdStore9 identity store
+on port 25. The sender email address for notifications is noreply@example.com, and the recipient
+email address is euser1@example.com.
 
 ```
-Set-SmtpServer -IdentityStorename AdStore9 -SmtpServer arslanahmadsvm.pucit.local -FromEmail noreply@pucit.local -ToEmail euser1@pucit.local -Port 25
+Set-SmtpServer -IdentityStorename AdStore9 -SmtpServer mail01.example.com -FromEmail noreply@example.com -ToEmail euser1@example.com -Port 25
 ```
 
 Example 2:
 
-This example configures smtp.office365.com SMTP server that is SSL (Secured Socket Layer) enabled
-for AdStore9 identity store. The SMTP server is configured on port 587 and it uses credentials
+This example configures the smtp.office365.com SMTP server, which is SSL (Secure Sockets Layer) enabled,
+for the AdStore9 identity store. The SMTP server is configured on port 587 and uses credentials
 stored in the $creds variable.
 
 ```
 Set-SmtpServer -IdentityStorename AdStore9 -SmtpServer smtp.office365.com -FromEmail admin@mydomain.onmicrosoft.com -ToEmail admin@mydomain.onmicrosoft.com -Port 587 -UseSmptUserAuthentication -SslEnabled -Credential $creds
 ```
 
-See Also
+## See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Identity Store Commands](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

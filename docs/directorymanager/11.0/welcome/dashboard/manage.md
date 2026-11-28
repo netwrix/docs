@@ -1,13 +1,19 @@
 ---
-title: "Manage Reports"
-description: "Manage Reports"
+title: "Manage GroupID Reports"
+description: "Run, edit, download, or delete a previously generated report from the Reports list in the GroupID portal."
 sidebar_position: 20
+keywords:
+  - run a report in GroupID portal
+  - edit a generated report
+  - delete a generated report
+  - download report Excel PDF HTML
+  - portal Reports list
 ---
 
-# Manage Reports
+# Manage GroupID Reports
 
-Once you generate a report, the report is listed under the template you used to create it. The
-Reports listings displays the following for each report:
+After you generate a report, the report is listed under the template you used to create it. The
+Reports list displays the following for each report:
 
 - Report name
 - Category
@@ -15,54 +21,47 @@ Reports listings displays the following for each report:
 - Modified On
 - Actions
 
-You can run, edit, download, and delete the job from the Reports listing.
-
-What do you want to do?
-
-- [Run a Report](#run-a-report)
-- [Edit a Report](#edit-a-report)
-- [Download a Report](#download-a-report)
-- [Delete a Report](#delete-a-report)
+You can run, edit, download, and delete reports from the Reports list.
 
 ## Run a Report
 
 You can run a previously generated report to view the latest data for it.
 
-1. In GroupID Portal, select Reports from the left pane.
+1. In the GroupID portal, select **Reports** from the left pane.
 2. On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose report you
-   generated and click on the template that you used.
+   generated and click the template that you used.
 
-    The template page will list the generated report.
+    The template page lists the generated report.
 
-3. Click the **Run arrow** icon next to the report. It will run the report and display it on the
+3. Click the **Run arrow** icon next to the report. The report runs and appears on the
    page.
 
 ## Edit a Report
 
-When you generate a report, GroupID Portal saves the settings provided in the respective report. You
+When you generate a report, the GroupID portal saves the settings provided in the respective report. You
 can launch this wizard again for a report and edit the settings.
 
-1. In GroupID Portal, select **Reports** from the left pane.
+1. In the GroupID portal, select **Reports** from the left pane.
 2. On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose report you
-   generated and click on the template that you used.
+   generated and click the template that you used.
 
-    The template page will list the generated report.
+    The template page lists the generated report.
 
 3. Click the **Edit** icon next to the report and follow the steps in
-   [Generate Reports](/docs/directorymanager/11.0/welcome/dashboard/generate.md). Make the
-   relevant changes and click Finish to generate the report.
+   [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md). Make the
+   relevant changes and click **Finish** to generate the report.
 
 ## Download a Report
 
-You can also download a report directly from the Report listing page.
+You can also download a report directly from the Reports list.
 
-1. In GroupID Portal, select **Reports** from the left pane.
+1. In the GroupID portal, select **Reports** from the left pane.
 2. On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose report you
-   generated and click on the template that you used.
+   generated and click the template that you used.
 
-    The template page will list generated report.
+    The template page lists the generated report.
 
-3. Click the **Download** icon next to the report and select one of the following format to download
+3. Click the **Download** icon next to the report and select one of the following formats to download
    the report:
 
     1. Excel
@@ -73,18 +72,18 @@ You can also download a report directly from the Report listing page.
 
 When you delete a report, all its settings are removed.
 
-1. In GroupID Portal, select **Reports** from the left pane.
+1. In the GroupID portal, select **Reports** from the left pane.
 2. On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose report you
-   generated and click on the template that you used.
+   generated and click the template that you used.
 
-    The template page will list the generated report.
+    The template page lists the generated report.
 
-3. Click the **Delete** button next to the report. It will permanently delete the report.
+3. Click the **Delete** button next to the report. The report is permanently deleted.
 
-**See Also**
+**See Also:**
 
-- [Generate Reports](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
-- [Group Reports](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [User Reports](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-- [Contact Reports](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
+- [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [GroupID Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)

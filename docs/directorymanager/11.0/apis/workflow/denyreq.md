@@ -1,12 +1,18 @@
 ---
-title: "Deny a Request"
-description: "Deny a Request"
+title: "Deny a Workflow Request Using the API"
+description: "Deny a pending workflow request and record a reason by sending a POST request to the GroupID API."
+keywords:
+  - deny workflow request
+  - workflow denial reason
+  - workflow approval API
+  - GroupID REST API
 sidebar_position: 80
+unlisted: true
 ---
 
-# Deny a Request
+# Deny a Workflow Request Using the API
 
-If you want to deny a workflow request in a specified identity store, you can use this API.
+Use this API to deny a workflow request in a specified identity store.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 POST
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -25,7 +31,7 @@ POST
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -45,5 +51,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

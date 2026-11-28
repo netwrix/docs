@@ -1,104 +1,64 @@
 ---
-title: "Orphan Group Update Schedule"
-description: "Orphan Group Update Schedule"
+title: "Orphan Group Update Schedule in Directory Manager"
+description: "Create a schedule that promotes an additional owner to primary owner for groups that have no primary owner."
+keywords:
+  - Orphan Group Update schedule
+  - orphan group
+  - primary owner promotion
+  - additional owner
 sidebar_position: 90
 ---
 
-# Orphan Group Update Schedule
+# Orphan Group Update Schedule in Directory Manager
 
 An orphan group is one without a primary owner.
 
-An Orphan Group Update schedule is responsible for assigning a primary owner to orphan groups. For
-this, the orphan group must have at least one additional owner, since the schedule promotes a
-group’s additional owner as its primary owner.
+The Orphan Group Update schedule assigns a primary owner to orphan groups. The schedule promotes a group's additional owner to primary owner, so the orphan group must have at least one additional owner.
 
-When an Orphan Group Update schedule runs, it promotes the first additional owner in the additional
-owners’ list (be it a user, contact, or security group) as the primary owner and a notification is
-sent to the promoted owner. Note the following:
+When the schedule runs, it promotes the first additional owner in the additional owners' list (a user, contact, or security group) to primary owner and sends a notification to the promoted owner. The following rules apply:
 
-- A temporary additional owner isn't promoted as the primary owner. When such an owner is the first
-  in the list, the schedule skips it and moves to the next additional owner in the list.
-- When a security group is promoted as the primary owner, a notification is sent to all group
-  members.
-- When a mail-enabled user is promoted as the primary owner, the schedule also adds him or her as
-  the group’s Exchange additional owner.
-- When a user is promoted as the primary owner of more than one group, a single notification is sent
-  to him or her, containing details of the groups added to his or her ownership.
+- A temporary additional owner isn't promoted as the primary owner. When such an owner is first in the list, the schedule skips it and moves to the next additional owner in the list.
+- When a security group is promoted as the primary owner, the schedule sends a notification to all group members.
+- When a mail-enabled user is promoted as the primary owner, the schedule also adds that user as the group's Exchange additional owner.
+- When a user is promoted as the primary owner of more than one group, the schedule sends that user a single notification with details of the groups added to the user's ownership.
 
-The promotion of an additional owner to primary owner may violate the Group Owners policy for the
-minimum number of additional owners required. A notification is sent to the promoted owner to add an
-additional owner to comply with the policy. See the
-[Group Owners Policy](/docs/directorymanager/11.1/admincenter/securityrole/policy/groupowners.md) topic.
+The promotion of an additional owner to primary owner might violate the Group Owners policy for the minimum number of additional owners required. The schedule sends a notification to the promoted owner to add an additional owner to comply with the policy. See [Group Owners Policy for Security Roles in Directory Manager](/docs/directorymanager/11.1/admincenter/securityrole/policy/groupowners.md).
 
-With history tracking enabled, history is logged at the group level and at the promoted owner’s
-level. See the
-[Configure History Tracking](/docs/directorymanager/11.1/admincenter/identitystore/configure/historytracking.md) topic.
+With history tracking enabled, history is logged at the group level and at the promoted owner's level. See [Configure History Tracking in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/configure/historytracking.md).
 
 ## Create an Orphan Group Update Schedule
 
-To create an Orphan Group Update Schedule.
+To create an Orphan Group Update schedule:
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
+2. On the Identity Stores page, click the ellipsis button for an identity store and select **Edit**.
+3. Click **Schedules** under Settings in the left pane.
+4. On the Schedules page, click **Add Schedule** and select **Orphan Group Update Job**. The Create Schedule page opens.
+5. In the Schedule Name box, enter a name for the schedule.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
-**Edit**.
+   The Name Preview box displays the schedule name prefixed with \_OrphanGroupUpdater\_\_. Email notifications show the schedule with this name.
 
-Step 3 – Click **Schedules** under Settings in the left pane.
+6. In the Portal URL dropdown list, select a Directory Manager portal URL to include in notifications generated by the schedule. Users are redirected to this portal to perform any necessary action.
+7. In the Scheduler Service Name dropdown list, select a Scheduler service to trigger this schedule.
 
-Step 4 – On the Schedules page, click **Add Schedule** and select **Orphan Group Update Job**. The
-Create Schedule page is displayed.
+   The number of services in the list depends on the number of nodes in all Elasticsearch clusters in the environment, because each node has its own Scheduler service. For details, see [Directory Manager Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md).
 
-Step 5 – In the Schedule Name box, enter a name for the schedule.
+   Consider the following when selecting a Scheduler service:
 
-Step 6 – The Name Preview box displays the schedule name prefixed with \_OrphanGroupUpdater\_\_; email notifications show the schedule with this name.
+   - The Scheduler service for the Directory Manager instance on which you're creating the schedule is selected by default. However, you can select the Scheduler service of another instance as well.
+   - You can change the Scheduler service even after creating the schedule. On the next run, the newly selected Scheduler service triggers the schedule.
+   - If the selected Scheduler service fails to trigger the schedule, no other Scheduler service is selected automatically.
+   - If you run a schedule manually in Admin Center, the Scheduler service of that instance is used.
 
-Step 7 – Select a Directory Manager portal URL in the Portal URL dropdown list to include it in
-notifications generated by the schedule. Users are redirected to this portal to perform any
-necessary action.
+8. Optional. Specify containers as targets for the schedule. The schedule processes all groups in these containers and their sub-containers. To specify containers as targets, follow step 9 in [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule).
+9. Click **Add Triggers** in the Triggers area to specify a triggering criterion that, when met, starts the schedule. To add triggers, follow step 11 in [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule).
+10. Click **Add Authentication** in the Authentication area to specify an account for running the schedule in the identity store. For details, see step 12 in [Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule).
 
-Step 8 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
-responsible for triggering this schedule. The list displays a number of services that depends on the
-number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
-service. See the [Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
-information.
+    :::important Password Re-insertion Required
+    Due to security enhancements, when you edit a schedule, you must re-enter the account password in the Authentication section, even if you aren't changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+    :::
 
-Consider the following when selecting a Scheduler service:
+11. On the Create Schedule page, click **Create Schedule**.
+12. On the Schedules page, click **Save**.
 
-- The Scheduler service for the Directory Manager instance on which you are creating the schedule is
-  selected by default. However, you can select the Scheduler service of another instance as well.
-
-- The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  newly-selected Scheduler service will trigger the schedule.
-
-- If the selected Scheduler service fails to trigger the schedule, then no other Scheduler service
-  can be selected automatically.
-
-- If you run a schedule manually on the Admin Center, the Scheduler service of that instance
-  is used.
-
-Step 9 – You can specify containers as targets for the schedule. The schedule will process all
-groups in these containers and their sub-containers. To specific containers as target, follow step 9
-in the
-[Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic.
-
-Step 10 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
-schedule, that, when met, starts the execution of the schedule. Follow step 11 in the
-[Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic to add triggers.
-
-Step 11 – Click **Add Authentication** in the Authentication area to specify an account for running
-the schedule in the identity store. See step 12 in the
-[Create a Group Usage Service Schedule](groupusageservice.md#create-a-group-usage-service-schedule)
-topic for additional information.
-
-:::important Password Re-insertion Required
-Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you aren't changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
-:::
-
-Step 12 – On the Create Schedule page, click **Create Schedule**.
-
-Step 13 – On the Schedules page, click **Save**.
-You can now view the schedule under Orphan Group Update. See the
-[View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store) topic
-for additional information.
+You can now view the schedule under **Orphan Group Update**. For details, see [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store).

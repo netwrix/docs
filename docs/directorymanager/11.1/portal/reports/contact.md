@@ -1,17 +1,21 @@
 ---
-title: "Contact Reports"
-description: "Contact Reports"
+title: "Contact Reports in Directory Manager"
+description: "Browse the contact report templates in Directory Manager, such as phone lists of users and contacts, and pick one to generate."
 sidebar_position: 60
+keywords:
+  - Directory Manager contact reports
+  - contact report templates
+  - phone number report
+  - Exchange mail-enabled contacts
 ---
 
-# Contact Reports
+# Contact Reports in Directory Manager
 
-Contact Reports contains reports for the Contact objects in the directory. Search a specific report
-by typing its name in the **Search Reports** box.
+Contact reports cover the contact objects in the directory. To find a report, type its name in the **Search Reports** box.
 
-Click any of the report template from the list to [Generate Reports](/docs/directorymanager/11.1/portal/reports/generate.md).
+To generate a report, click its template in the list. See [Generate Reports in Directory Manager](/docs/directorymanager/11.1/portal/reports/generate.md).
 
-Following is the list of reports for this category:
+The following table lists the reports in this category:
 
 | Report                                                          | Description                                     |
 | --------------------------------------------------------------- | ----------------------------------------------- |

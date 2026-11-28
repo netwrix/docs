@@ -1,12 +1,18 @@
 ---
-title: "Get a Group"
-description: "Get a Group"
+title: "Get a Group with the Directory Manager API"
+description: "Use the Get Group API to retrieve the details and requested attributes of a single group in an identity store."
+keywords:
+  - Directory Manager API
+  - get group API
+  - GET group
+  - group attributes
 sidebar_position: 90
+unlisted: true
 ---
 
-# Get a Group
+# Get a Group with the Directory Manager API
 
-This Get Group API retrieves details of a specified group.
+This API retrieves details of a specified group.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ This Get Group API retrieves details of a specified group.
 
 **GET**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -25,7 +31,7 @@ This Get Group API retrieves details of a specified group.
   ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

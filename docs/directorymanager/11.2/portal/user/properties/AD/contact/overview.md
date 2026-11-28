@@ -1,17 +1,21 @@
 ---
-title: "Overview"
-description: "Overview"
+title: "Directory Manager Contact Properties in Active Directory"
+description: "Find the property tabs available for contacts in an Active Directory-based identity store."
+keywords:
+  - contact properties
+  - Active Directory contacts
+  - mail-enabled contacts
+  - contact property tabs
 sidebar_position: 10
 ---
 
-# Overview
+# Directory Manager Contact Properties in Active Directory
 
-You can view and manipulate the properties of contacts in Active Directory.
+You can view and edit the properties of contacts in Active Directory.
 
 ## Contact properties
 
-Following is the list of all the properties that Contacts have in Active Directory based identity
-store.
+Contacts have the following property tabs in an Active Directory-based identity store.
 
 - [Object properties - General tab](/docs/directorymanager/11.2/portal/user/properties/AD/useroverview/general.md)
 - [Object properties - Organization tab](/docs/directorymanager/11.2/portal/user/properties/AD/useroverview/organization.md)

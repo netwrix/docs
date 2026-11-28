@@ -1,10 +1,16 @@
 ---
-title: "Delete Groups"
-description: "Delete Groups"
+title: "Delete Multiple Groups with the Directory Manager API"
+description: "Use the Delete Groups API to remove several groups from an identity store in one request by passing their identities in the request body."
+keywords:
+  - Directory Manager API
+  - delete groups API
+  - bulk delete groups
+  - identity store groups
 sidebar_position: 60
+unlisted: true
 ---
 
-# Delete Groups
+# Delete Multiple Groups with the Directory Manager API
 
 The Delete Groups API deletes multiple groups from an identity store.
 
@@ -16,7 +22,7 @@ The Delete Groups API deletes multiple groups from an identity store.
 
 **DELETE**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -25,7 +31,7 @@ The Delete Groups API deletes multiple groups from an identity store.
 ]
 ```
 
-#### sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

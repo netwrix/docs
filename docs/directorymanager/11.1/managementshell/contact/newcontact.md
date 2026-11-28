@@ -1,13 +1,17 @@
 ---
-title: "New-Contact"
-description: "New-Contact"
+title: "New-Contact Cmdlet in Directory Manager"
+description: "Create a contact in the directory from the Directory Manager Management Shell and set its properties with cmdlet parameters."
+keywords:
+  - New-Contact
+  - create contact
+  - Directory Manager Management Shell
+  - contact cmdlet
 sidebar_position: 20
 ---
 
-# New-Contact
+# New-Contact Cmdlet in Directory Manager
 
-Use the New-Contact cmdlet to create a new contact in the directory. Most contact properties can be
-directly added by using the parameters supported by this cmdlet.
+Use the New-Contact cmdlet to create a contact in the directory. You can add most contact properties directly with the parameters this cmdlet supports.
 
 ## Syntax
 
@@ -54,12 +58,16 @@ New-Contact
 - LastName
 - DisplayName
 
-Example:
+:::note
+- _Zip_ and _Business_ accept digits only.
+- _Assistant_ takes the distinguished name (DN) of the assistant.
+- To create a mail-enabled contact, set _MailEnabled_ to `"true"` and also specify _Alias_ and _EmailAddress_.
+:::
 
-The following command creates a new contact in the container specified by the _OrganizationalUnit_
-parameter. The command also specifies the logon name, first name, last name and display name of the
-new contact.
+## Example
+
+This command creates a contact in the container specified by the _OrganizationalUnit_ parameter. The command also specifies the name (common name), first name, last name, and display name of the new contact.
 
 ```
-New-Contact -Name "OsamaContact" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -FirstName "OsamaContact" -LastName "OsamaContact" -DisplayName "OsamaContact"
+New-Contact -Name "SampleContact" -OrganizationalUnit "OU=SalesOU,DC=example,DC=com" -FirstName "SampleContact" -LastName "SampleContact" -DisplayName "SampleContact"
 ```

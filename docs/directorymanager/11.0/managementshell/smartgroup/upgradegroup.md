@@ -1,17 +1,25 @@
 ---
-title: "Upgrade-Group"
-description: "Upgrade-Group"
+title: "Upgrade-Group Cmdlet in GroupID"
+description: "Upgrade managed and non-managed groups from GroupID 9 and 10 to GroupID 11.0 with the Upgrade-Group cmdlet."
+keywords:
+  - Upgrade-Group
+  - GroupID Management Shell
+  - upgrade Smart Groups
+  - upgrade Dynasties
+  - upgrade non-managed groups
 sidebar_position: 60
 ---
 
-# Upgrade-Group
+# Upgrade-Group Cmdlet in GroupID
 
-The **Upgrade-Group** commandlet upgrades managed (Smart Groups and Dynasties) and non-managed
-Groups of GroupID 9 and 10 to GroupID 11.0 version.
+The **Upgrade-Group** cmdlet upgrades managed (Smart Groups and Dynasties) and non-managed
+groups of GroupID 9 and 10 to GroupID 11.0.
 
-NOTE: GroupID upgrades groups from the connected database to the current instance of GroupID. This
-database can be an upgraded version or copied database from the previous GroupID versions i.e.
-GroupID 9 and 10.
+:::note
+GroupID upgrades groups from the connected database to the current instance of GroupID.
+This database can be an upgraded database or a copy of the database from a previous
+version, such as GroupID 9 or 10.
+:::
 
 ## Syntax
 
@@ -45,8 +53,8 @@ Upgrade-Group
 Example 1:
 
 The following command upgrades a GroupID 10.0 Smart Group _GIDSmart1_ using the database _GroupID10_
-which resides on SQL server _sqlexpress_. To upgrade the Smart Group to GroupID 11.0 version, the
-command uses _sa_ user account of the specified SQL server.
+that resides on SQL Server _sqlexpress_. To upgrade the Smart Group to GroupID 11.0, the
+command uses the _sa_ user account of the specified SQL Server.
 
 ```
 Upgrade-Group -Identity "GIDsmart1" -SQLServer "msvr02\sqlexpress" -SQLUserName "sa" -Database "GroupID10" -Password "support123R" -GroupIDVersion "10.0" -GroupType "2"
@@ -55,8 +63,8 @@ Upgrade-Group -Identity "GIDsmart1" -SQLServer "msvr02\sqlexpress" -SQLUserName 
 Example 2:
 
 The following command upgrades all GroupID 10.0 Smart Groups in the _Jobs_ container using the
-_GroupID10_ database which resides on SQL server _sqlexpress_. To upgrade the Smart Groups to
-GroupID 11.0 version, the command use the _sa_ user account of the specified SQL server.
+_GroupID10_ database that resides on SQL Server _sqlexpress_. To upgrade the Smart Groups to
+GroupID 11.0, the command uses the _sa_ user account of the specified SQL Server.
 
 ```
 Upgrade-Group -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -SQLServer "msvr02\sqlexpress" -SQLUserName "sa" -Database "GroupID10" -Password "support123R" -GroupIDVersion "10.0" -GroupType "2"
@@ -65,9 +73,9 @@ Upgrade-Group -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -SQLServer "msvr02\sqle
 
 Example 3:
 
-The following command upgrades all GroupID 10.0 dynasties in _Jobs_ container using the _GroupID10_
-database which resides on SQL server sqlexpress. To upgrade the dynasties to GroupID 11.0 version,
-the command uses the _sa_ user account of the specified SQL server.
+The following command upgrades all GroupID 10.0 Dynasties in the _Jobs_ container using the
+_GroupID10_ database that resides on SQL Server _sqlexpress_. To upgrade the Dynasties to GroupID
+11.0, the command uses the _sa_ user account of the specified SQL Server.
 
 ```
 Upgrade-Group -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -SQLServer "msvr02\sqlexpress" -SQLUserName "sa" -Database "GroupID10" -Password "support123R" -GroupIDVersion "10.0" -GroupType "3"
@@ -76,9 +84,9 @@ Upgrade-Group -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -SQLServer "msvr02\sqle
 
 Example 4:
 
-The following command upgrades non managed groups in _GID10_ container using the _GroupID10_
-database which resides on SQL server sqlexpress. To upgrade the non-managed groups to GroupID 11.0
-version, the command uses the _sa_ user account of the specified SQL server.
+The following command upgrades non-managed groups in the _GID10_ container using the _GroupID10_
+database that resides on SQL Server _sqlexpress_. To upgrade the non-managed groups to GroupID
+11.0, the command uses the _sa_ user account of the specified SQL Server.
 
 ```
 Upgrade-Group -Identity "departsales" -SearchContainer "OU=GID10,DC=Demo1,DC=com" -SQLServer "msvr02\sqlexpress" -SQLUserName "sa" -Database "GroupID10" -Password "support123R" -GroupIDVersion "10.0" -GroupType "1"
@@ -86,6 +94,6 @@ Upgrade-Group -Identity "departsales" -SearchContainer "OU=GID10,DC=Demo1,DC=com
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Smart Group Commands](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Smart Group Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

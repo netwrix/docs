@@ -1,22 +1,26 @@
 ---
-title: "SendSmsMessageResult class"
-description: "SendSmsMessageResult class"
+title: "SendSmsMessageResult class for custom SMS gateways"
+description: "Review the members of the SendSmsMessageResult class, which returns message delivery status and exceptions for a custom SMS gateway in Directory Manager."
+keywords:
+  - SendSmsMessageResult class
+  - custom SMS gateway
+  - SMS delivery status
+  - Directory Manager SMS API
 sidebar_position: 160
 ---
 
-# SendSmsMessageResult class
+# SendSmsMessageResult class for custom SMS gateways
 
-Returns the message delivery status (success or failure) and exceptions (if any) that occur while
-sending the text message to the target mobile phone numbers.
+The class returns the message delivery status (success or failure) and any exceptions that occur while Directory Manager sends the text message to the target mobile phone numbers.
 
-Following is a list of its members with description:
+The class has the following members:
 
 - [SendSmsMessageResult.ExceptionMessage](/docs/directorymanager/11.2/admincenter/smsgateway/custom/sendsmsmessageresult/exceptionmessage.md)
-- [SendSmsMessageResult.Message](/docs/directorymanager/11.2/admincenter/smsgateway/custom/sendsmsmessageresult/message.md)
-- [SendSmsMessageResult.Success](/docs/directorymanager/11.2/admincenter/smsgateway/custom/sendsmsmessageresult/success.md)
+- [SendSmsMessageResult.Message property](/docs/directorymanager/11.2/admincenter/smsgateway/custom/sendsmsmessageresult/message.md)
+- [SendSmsMessageResult.Success property](/docs/directorymanager/11.2/admincenter/smsgateway/custom/sendsmsmessageresult/success.md)
 
 | Member                    | Description                                                                                                                                       |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ExceptionMessage property | Gets the exception message if one occurs while sending the text message.                                                                          |
 | Message property          | Returns the [ShortMessage class](/docs/directorymanager/11.2/admincenter/smsgateway/custom/sendsmsmessageresult/class.md) object processed by the [ISmsGateway.SendShortMessage](/docs/directorymanager/11.2/admincenter/smsgateway/custom/sendshortmessage.md) method. |
-| Success property          | Returns a boolean value indicating whether the text message is successfully sent to the target mobile phone numbers.                              |
+| Success property          | Returns a Boolean value indicating whether the text message was sent successfully to the target mobile phone numbers.                              |

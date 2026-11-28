@@ -1,12 +1,18 @@
 ---
-title: "Get a Group"
-description: "Get a Group"
+title: "Get a Group with the GroupID API"
+description: "Use the Get Group API to retrieve the details and requested attributes of a single group in an identity store."
 sidebar_position: 70
+keywords:
+  - GroupID API
+  - get group API
+  - GET group
+  - group attributes
+unlisted: true
 ---
 
-# Get a Group
+# Get a Group with the GroupID API
 
-This Get Group API retrieves details of a specified group.
+This API retrieves details of a specified group.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -25,7 +31,7 @@ GET
   ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -123,5 +129,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

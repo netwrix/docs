@@ -1,17 +1,21 @@
 ---
-title: "Overview"
-description: "Overview"
+title: "Active Directory User Properties"
+description: "Find the property tabs available for users and mailbox users in an Active Directory-based identity store in Directory Manager."
+keywords:
+  - Active Directory user properties
+  - mailbox user properties
+  - user property tabs
+  - identity store
 sidebar_position: 30
 ---
 
-# Overview
+# Active Directory User Properties
 
-You can view and manipulate the properties of users in Active Directory.
+You can view and edit the properties of users in Active Directory.
 
 ## User properties
 
-Following is the list of all the properties that Users and Mailbox Users have in Active Directory
-based identity store.
+The following tabs show the properties of users and mailbox users in an Active Directory-based identity store.
 
 - [Object properties - General tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/general.md)
 - [Object properties - Organization tab](/docs/directorymanager/11.1/portal/user/properties/AD/useroverview/organization.md)

@@ -1,22 +1,28 @@
 ---
-title: "Add-GroupMember"
-description: "Add-GroupMember"
+title: "Add-GroupMember Cmdlet for GroupID"
+description: "Add one or more users, contacts or groups to the perpetual or temporary membership of a group with the Add-GroupMember cmdlet."
+keywords:
+  - Add-GroupMember
+  - add group members
+  - perpetual membership
+  - temporary membership
+  - GroupID cmdlets
 sidebar_position: 10
 ---
 
-# Add-GroupMember
+# Add-GroupMember Cmdlet for GroupID
 
-The **Add-GroupMember** commandlet helps you to add one or more objects to the membership of a group
-in Directory. Two types of membership can exist in GroupID.
+The **Add-GroupMember** cmdlet adds one or more objects to the membership of a group in the
+directory. GroupID supports two types of membership:
 
 - Perpetual membership
 - Temporary membership
 
-Modifying the membership of a Smart Group or Dynasty using this commandlet is not recommended, since
-your changes will be discarded the next time the group is updated.
+Modifying the membership of a Smart Group or Dynasty using this cmdlet isn't recommended, because
+GroupID discards your changes the next time it updates the group.
 
-GroupID maintains a history for this commandlet, which you can view in GroupID portal, against the
-**History** node in the left panel.
+GroupID maintains a history for this cmdlet, which you can view in the GroupID
+portal, under the **History** node in the left panel.
 
 ## Syntax
 
@@ -42,7 +48,7 @@ Example 1:
 
 The following command adds the user **Brian Regan** to the membership of the **Event Management**
 group using the credentials set in the **$Credentials** environment variable. See the
-[Set the $Credentials Environment Variable](/docs/directorymanager/11.0/managementshell/setthecredential.md)
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.0/managementshell/setthecredential.md)
 topic for setting credentials in an environment variable.
 
 ```
@@ -53,10 +59,9 @@ Example 2:
 
 The following command gets all users from the **Local Recruiting** container and adds them to the
 membership of the **Event Management** group. For detailed information about the Get-Object
-commandlet, see
-[Get-Object](/docs/directorymanager/11.0/managementshell/membership/getobject.md). The
-**OUT-NULL** commandlet is used here to restrict the retrieved users information from appearing on
-the console.
+cmdlet, see
+[Get-Object Cmdlet for GroupID](/docs/directorymanager/11.0/managementshell/membership/getobject.md). The
+**OUT-NULL** cmdlet prevents the retrieved user information from appearing on the console.
 
 ```
 Get-Object -SearchContainer "OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ObjectType "User" | Add-GroupMember -GroupIdentity "CN=Event Management,OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,DC=US"
@@ -64,6 +69,6 @@ Get-Object -SearchContainer "OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,
 
 See Also
 
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Membership Commands](/docs/directorymanager/11.0/managementshell/membership/overview.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

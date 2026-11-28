@@ -1,16 +1,23 @@
 ---
-title: "Get Pending Requests"
-description: "Get Pending Requests"
+title: "Get Pending Workflow Requests in GroupID"
+description: "Retrieve all workflow requests that have a pending status in an identity store by calling the Pending endpoint with a GET request."
+keywords:
+  - GroupID API
+  - pending workflow requests
+  - Workflows/Pending endpoint
+  - approval requests
+  - GET request
 sidebar_position: 130
+unlisted: true
 ---
 
-# Get Pending Requests
+# Get Pending Workflow Requests in GroupID
 
-Use this API to retrieve information about all those requests with pending status provided you have
-the required permissions to manage all requests. See the
+Use this API to retrieve information about all requests with a pending status, provided you have the
+required permissions to manage all requests. See the
 [Miscellaneous](/docs/directorymanager/11.0/signin/securityrole/permissions.md#miscellaneous)
 section of the
-[Security Role – Permissions](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
+[Security Role Permissions in GroupID](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
 topic.
 
 ## Endpoint
@@ -19,9 +26,9 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 ## HTTP Methods
 
-GET.
+GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -46,7 +53,7 @@ GET.
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -290,5 +297,5 @@ GET.
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

@@ -1,12 +1,17 @@
 ---
-title: "Navigation"
-description: "Navigation"
+title: "Navigate Admin Center in GroupID"
+description: "Use Quick Search, the top right options, and the menu pane to move around Admin Center and reach GroupID settings."
+keywords:
+  - Admin Center navigation
+  - Quick Search
+  - Admin Center menu pane
+  - GroupID Admin Center
 sidebar_position: 20
 ---
 
-# Navigation
+# Navigate Admin Center in GroupID
 
-On signing into Admin Center, you land on the dashboard.
+When you sign in to Admin Center, you land on the [Monitor GroupID with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md).
 
 Use the following to navigate the application:
 
@@ -26,19 +31,19 @@ When you perform a search, it looks up the following in Admin Center:
   such as workflows, schedules, and security roles.
 - SMS gateway accounts
 - GroupID applications - GroupID portals, Data services, Security services, and Mobile services
-- Admin Center pages, such as the Replication, Notifications and Licensing pages
-- Admin Center functions, such as restore replication, unlock account, etc. Clicking an action
+- Admin Center pages, such as the Replication, Notifications, and Licensing pages
+- Admin Center functions, such as restore replication and unlock account. Clicking an action
   redirects you to the relevant page.
 
 **To perform a search:**
 
 1. In Admin Center, enter a search string in the Search box at the top of the page.
-   A list of matched items is displayed as you type. For example, as you type ‘ta’, it shows:
+   A list of matched items is displayed as you type. For example, as you type 'ta', it shows:
 
-    ![quick_search](/images/directorymanager/11.0/admincenter/general/quick_search.webp)
+    ![Quick Search results list for the search string ta](/images/directorymanager/11.0/admincenter/general/quick_search.webp)
 
-2. On clicking **Quick Actions** for an identity store, it displays the settings available for the
-   identity store. Click an option to navigate to it.
+2. Click **Quick Actions** for an identity store to display the settings available for it.
+   Click an option to navigate to it.
 
 ## Top Right Options
 
@@ -47,30 +52,30 @@ The top right corner of the application displays the following:
 | Icon             | Description                                                                                                                                                                                                                                                                                                                                    |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Help icon        | Click it to launch Admin Center help.                                                                                                                                                                                                                                                                                                          |
-| Manage SAML icon | Click it to launch the Authenticate panel, where you can: - Set up GroupID as a service provider. GroupID can integrate with several single sign-on (SSO) solutions that support the SAML 2.0 standard. - Set up GroupID as an identity provider. See the [Authenticate](/docs/directorymanager/11.0/authenticate/overview.md) topic. |
-| Profile icon     | Displays your profile picture with your name and the identity store that Admin Center is connected to. Click it to launch a menu that displays the GroupID version and the security role assigned to you in GroupID. The menu also displays options to change your password, access your applications, and sign out of Admin Center.           |
+| Manage SAML icon | Click it to launch the Authenticate panel, where you can: <ul><li>Set up GroupID as a service provider. GroupID can integrate with several single sign-on (SSO) solutions that support the SAML 2.0 standard.</li><li>Set up GroupID as an identity provider. See the [GroupID Authenticate and SAML Single Sign-On](/docs/directorymanager/11.0/authenticate/overview.md) topic.</li></ul> |
+| Profile icon     | Displays your profile picture with your name and the identity store that Admin Center is connected to. <br />Click it to launch a menu that displays the GroupID version and the security role assigned to you in GroupID. The menu also displays options to change your password, access your applications, and sign out of Admin Center.           |
 
 ## Menu Pane
 
-The menu pane in the left enables you to navigate to different functions in Admin Center.
+Use the menu pane on the left to navigate to different functions in Admin Center.
 
 | Menu Option         | Description                                                                                                                                                                                                                                                                 |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Dashboard           | Displays the latest values for GroupID KPIs.                                                                                                                                                                                                                                |
-| Identity Stores     | Displays the identity stores defined in GroupID. You can: - Create identity stores - Manage the security roles and settings for an identity store - Link identity stores                                                                                                    |
-| Data Sources        | Enables you to create and manage data sources to be used as source and destination in Synchronize jobs, in query-based searches, and in group membership queries.                                                                                                           |
+| Identity Stores     | Displays the identity stores defined in GroupID. You can: <ul><li>Create identity stores</li><li>Manage the security roles and settings for an identity store</li><li>Link identity stores</li></ul>                                                                                                    |
+| Data Sources        | Create and manage data sources to be used as source and destination in Synchronize jobs, in query-based searches, and in group membership queries.                                                                                                           |
 | Replication         | Controls global replication settings that apply to all identity stores.                                                                                                                                                                                                     |
 | Notifications       | Displays the queued notifications for all identity stores. It also provides access to the Notification Editor.                                                                                                                                                              |
 | Helpdesk            | Enables helpdesk users to perform password reset, account unlock, and account unenroll operations for identity store users.                                                                                                                                                 |
-| Applications        | Enables you to create GroupID applications, namely: - GroupID portal - Data service - Security service - Mobile service (for the GroupID mobile app) You can also manage the following: - Admin Center deployment - Replication service - Email service - Scheduler service |
+| Applications        | Create GroupID applications, namely: <ul><li>GroupID portal</li><li>Data service</li><li>Security service</li><li>Mobile service (for the GroupID mobile app)</li></ul> You can also manage the following: <ul><li>Admin Center deployment</li><li>Replication service</li><li>Email service</li><li>Scheduler service</li></ul> |
 | History             | Displays history for major actions performed in Admin Center, such as identity store creation, changes to notification templates, and more.                                                                                                                                 |
-| SMS Gateways        | Allows you to create SMS gateway accounts that GroupID uses to send text messages to the users’ mobile numbers.                                                                                                                                                             |
+| SMS Gateways        | Create SMS gateway accounts that GroupID uses to send text messages to the users' mobile numbers.                                                                                                                                                             |
 | Notification Editor | Lists templates for GroupID-generated notifications. These templates apply to all identity stores.                                                                                                                                                                          |
-| Settings            | Lets you manage the following: - GroupID licensing - Global pool of security questions - GroupID logs                                                                                                                                                                       |
+| Settings            | Lets you manage the following: <ul><li>GroupID licensing</li><li>Global pool of security questions</li><li>GroupID logs</li></ul>                                                                                                                                                                       |
 
 **See Also**
 
-- [Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
-- [Change your Password](/docs/directorymanager/11.0/signin/concepts/changepassword.md)
-- [Switch Accounts](/docs/directorymanager/11.0/signin/concepts/switchaccount.md)
-- [Access your Applications](/docs/directorymanager/11.0/signin/concepts/accessapplications.md)
+- [Monitor GroupID with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
+- [Change Your Password in GroupID](/docs/directorymanager/11.0/signin/concepts/changepassword.md)
+- [Switch Accounts in GroupID](/docs/directorymanager/11.0/signin/concepts/switchaccount.md)
+- [Access Your Applications in GroupID](/docs/directorymanager/11.0/signin/concepts/accessapplications.md)

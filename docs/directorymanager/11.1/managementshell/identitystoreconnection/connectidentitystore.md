@@ -1,17 +1,20 @@
 ---
-title: "Connect-IdentityStore"
-description: "Connect-IdentityStore"
+title: "Connect-IdentityStore Cmdlet in Directory Manager"
+description: "Connect Directory Manager Management Shell to an identity store with a chosen authentication mode and credentials using Connect-IdentityStore."
+keywords:
+  - Connect-IdentityStore
+  - connect to identity store
+  - authentication mode
+  - Management Shell
+  - PowerShell cmdlet
 sidebar_position: 10
 ---
 
-# Connect-IdentityStore
+# Connect-IdentityStore Cmdlet in Directory Manager
 
-If an identity store of the connected domain is available, then Directory Manager Management Shell
-gets connected to that identity store upon its launch. In case it doesn't exist the
-Connect-IdentityStore commandlet establishes a connection with the required identity store.
+When you launch Directory Manager Management Shell, it connects to an identity store of the connected domain if one is available. If none exists, use the Connect-IdentityStore cmdlet to connect to the identity store you need.
 
-After a connection is established with the identity store you can then perform functions in
-directory as per your role and permissions.
+After you connect to the identity store, you can perform functions in the directory according to your role and permissions.
 
 ## Syntax
 
@@ -24,17 +27,33 @@ Connect-IdentityStore
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - None
 
-Example:
+## Parameters
 
-The following command connects you to the identity store specified by the IdentityStoreId parameter
-using the specified authentication mode and credentials that you set in the $Credentials environment
-variable. See the [Set the $Credentials Environment Variable](/docs/directorymanager/11.1/managementshell/setthecredential.md)
-topic for setting credentials in an environment variable.
+- **AuthenticationMode**: How the cmdlet authenticates you. If you omit it, the cmdlet uses `Web`.
+  - `Integrated` or `1`: Uses the current session.
+  - `Credential` or `2`: Authenticates with the IdentityStoreId and Credential parameters, which are both required in this mode.
+  - `Web` or `3`: Uses interactive web sign-in.
+
+## Output
+
+After it connects, the cmdlet displays five lines of text with the identity store's ID, name, connection, and type, and the user's display name. For example:
 
 ```
-Connect-IdentityStore -AuthenticationMode 2 -IdentityStoreId 2 -Credential $Cred
+ID                ::  2
+Name              ::  AdStore1
+Connection        ::  example.com
+Type              ::  Active Directory
+User              ::  John Smith
+```
+
+## Example
+
+This command connects you to the identity store specified by the IdentityStoreId parameter. It uses the specified authentication mode and the credentials that you set in the $Credentials variable. To set this variable, see [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
+
+```
+Connect-IdentityStore -AuthenticationMode 2 -IdentityStoreId 2 -Credential $Credentials
 ```

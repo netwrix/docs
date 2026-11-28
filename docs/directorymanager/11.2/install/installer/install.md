@@ -1,13 +1,17 @@
 ---
-title: "Installation Tool"
-description: "Installation Tool"
+title: "Install Directory Manager"
+description: "Run the Directory Manager Installation Tool to accept the license agreement, choose an install folder, and install the product files."
+keywords:
+  - install directory manager
+  - directory manager installation tool
+  - directory manager installer
+  - directory manager setup wizard
 sidebar_position: 30
 ---
 
-# Installation Tool
+# Install Directory Manager
 
-Installing Directory Manager is a simple process; it asks you to agree to the license agreement then
-installs Directory Manager to the default location:
+The Installation Tool installs Directory Manager after you accept the license agreement. By default, it installs to this location:
 
 ```
 C:\Program Files\Imanami\GroupID 11.0\
@@ -15,36 +19,30 @@ C:\Program Files\Imanami\GroupID 11.0\
 
 To install Directory Manager:
 
-Step 1 – Run `_directorymanagerInstallTool.exe_` from the Directory Manager`<_version #_>` folder in the
-Directory ManagerInstallation package. It launches the Installation Tool.
+1. Run `DirectoryManagerInstallTool.exe` from the Directory Manager `<_version #_>` folder in the Directory Manager installation package. The Installation Tool opens.
 
-![Welcome page](/images/directorymanager/11.2/install/installer/introduction.webp)
+   ![Installation Tool welcome page](/images/directorymanager/11.2/install/installer/introduction.webp)
 
-Step 2 – Read the welcome message and click **Next**.
+2. Read the welcome message and click **Next**.
 
-![End User License Agreement](/images/directorymanager/11.2/install/installer/eula.webp)
+   ![End User License Agreement page of the Installation Tool](/images/directorymanager/11.2/install/installer/eula.webp)
 
-Step 3 – On the End User License Agreement page, review, accept the licensing agreement, and click
-**Next**.
+3. On the End User License Agreement page, review the license agreement, accept it, and click **Next**.
 
-![installpath](/images/directorymanager/11.2/install/installer/installpath.webp)
+   ![Installation Folder page with the install location box](/images/directorymanager/11.2/install/installer/installpath.webp)
 
-Step 4 – In the Installation Folder box, specify the location where you want to install Directory
-Manageror accept the one suggested by the Installer. Click **Install**.
+4. In the Installation Folder box, specify where to install Directory Manager, or accept the location the Installation Tool suggests. Click **Install**.
 
-![installationprogress](/images/directorymanager/11.2/install/installer/installationprogress.webp)
+   ![Installation progress bar](/images/directorymanager/11.2/install/installer/installationprogress.webp)
 
-Step 5 – The progress bar shows the installation progress while all files are copied and Directory
-Manageris installed. On successful installation, the Run Configuration Tool page is displayed.
+   The progress bar shows the installation progress while the Installation Tool copies all files and installs Directory Manager. When the installation succeeds, the Run Configuration Tool page appears.
 
-![Run Configuration Tool](/images/directorymanager/11.2/install/installer/runconfigurationtool.webp)
+   ![Run Configuration Tool page after a successful installation](/images/directorymanager/11.2/install/installer/runconfigurationtool.webp)
 
-Step 6 – Click **Next** to proceed with configuring Directory Manager.
+5. Click **Next** to continue with configuring Directory Manager.
 
-**or**
+   **or**
 
-Click **Close** on the title bar to close the Directory ManagerInstaller and configure Directory
-Managerlater.
+   Click **Close** on the title bar to close the Directory Manager Installer and configure Directory Manager later.
 
-See the [Configuration Tool](/docs/directorymanager/11.2/install/configure/configure.md) topic for additional information on
-configuring Directory Manager.
+For more information, see the [Run the Directory Manager Configuration Tool](/docs/directorymanager/11.2/install/configure/configure.md) topic.

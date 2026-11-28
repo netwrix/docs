@@ -1,18 +1,28 @@
 ---
-title: "My Direct Reports' History"
-description: "My Direct Reports' History"
+title: "View My Direct Reports' History in Directory Manager"
+description: "View, filter, annotate, and export the history of changes made to your direct reports in the Directory Manager portal."
+keywords:
+  - direct reports history
+  - direct report changes
+  - My Direct Reports History Grid Filter
+  - direct reports history notes
+  - export direct reports history
 sidebar_position: 20
 ---
 
-# My Direct Reports' History
+# View My Direct Reports' History in Directory Manager
 
-To view the history of updates and changes made to your direct reports, click **History** on the
-left navigation bar. History page opens with the **My History** tab in view. On the displayed page,
-click the **My Direct Reports' History** tab.
+The My Direct Reports' History tab lists the updates and changes made to your direct reports.
+
+To view the history of your direct reports:
+
+1. Click **History** on the left navigation bar. The History page opens with the **My History** tab
+   in view.
+2. Click the **My Direct Reports' History** tab.
 
 The following events are logged on this page:
 
-- When an object is added as your direct reports.
+- When an object is added as your direct report.
 - When a direct report is removed from your direct reports.
 - When you or any other user makes certain changes to the properties of a direct report.
 
@@ -20,15 +30,14 @@ The following events are logged on this page:
 When any of your direct reports is deleted, its history is also deleted.
 :::
 
-
 ## History view modes
 
-History data can be viewed in two modes:
+You can view history data in two modes.
 
 ### Detailed view
 
-Displays history data in a descriptive and user-friendly manner. Items are sorted according to the
-date and time of modification, showing the most recent at the top.
+This view displays history data in a descriptive and user-friendly manner. Items are sorted by the
+date and time of modification, with the most recent at the top.
 
 This is the default view of history data.
 
@@ -45,34 +54,26 @@ action along with their old and new values.
 
 ## Filter history data
 
-Step 1 – Click **My Direct Reports History Grid Filter** to specify a criteria for filtering history
-data.
+To filter history data:
 
-Step 2 – Click **Add Filter** to add the filter criteria.
+1. Click **My Direct Reports History Grid Filter** to specify criteria for filtering history data.
+2. Click **Add Filter** to add the filter criteria.
+3. From the **Select a filter** list, select attributes to filter history data on the basis of the
+   attribute modified. Two more boxes are displayed next to the **Select a filter** box after you
+   select a filter.
 
-Step 3 – From the **Select a filter** list, select attributes to filter history data on the basis of
-the attribute modified.
+   - **Select an Operator**: Select an operator from the first list.
+   - **Select a Value**: Specify a value for the selected operator in the second box.
 
-Step 4 – Two more boxes get displayed next to **Select a filter** box upon selecting a filter.
+   For example, if you select '_Modified on_' from the first list, '_is exactly_' from the second
+   list, and specify a date in the third box, then history items that were modified on the specified
+   date are displayed.
 
-- **Select an Operator**: Select an operator from the first list.
-- **Select a Value**: Specify a value for the selected operator in the second box.
-
-For example, if you select '_Modified on_' from the first list, _'is exactly_' from the second list,
-and specify a date in the third box, then history items that were modified on the specified date
-will be displayed.
-
-Step 5 – Click **Apply Filter**.
-
-History items that match the specified criteria are displayed.
-
-Step 6 – Use the **Search In** list to load history data from the entire directory or a domain.
-
-This list shows a tree view of all the domains in the identity store. Select the required domains or
-select **Entire Directory** to view objects' history from all domains.
-
-Step 7 – Click **Refresh** to reload history data for the domains selected in the **Search In**
-list.
+4. Click **Apply Filter**. History items that match the specified criteria are displayed.
+5. Use the **Search In** list to load history data from the entire directory or a domain. This list
+   shows a tree view of all the domains in the identity store. Select the required domains or select
+   **Entire Directory** to view objects' history from all domains.
+6. Click **Refresh** to reload history data for the domains selected in the **Search In** list.
 
 ## Add notes to history items
 
@@ -80,60 +81,57 @@ Directory Manager enables a user to add notes to history items that were logged 
 change they made. A note may explain the reason for making a certain change, such as why they
 changed the security type for a group.
 
-Only the user who added the note can update it. Other users can only view this note; they can't
-edit or add comments.
+Only the user who added the note can update it. Other users can only view this note. They can't
+edit it or add comments.
 
-- The Add Note button is available next to a history item listed.
+- The Add Note button is available next to a listed history item.
 - When you add a note, the Add Note button changes to View Note. All portal users can use this
   button to view the note.
 
 ### Add a note
 
-The option to add a note is available on the My Account History card on Dashboard, and all History
-pages i.e.[My History](/docs/directorymanager/11.1/portal/history/myhistory.md), My Direct Reports' History and
-[My Groups' History](/docs/directorymanager/11.1/portal/history/mydirectorygroup.md) pages.
+The option to add a note is available on the My Account History card on the Dashboard and on all
+History pages: [View My History in the Directory Manager Portal](/docs/directorymanager/11.1/portal/history/myhistory.md), My Direct
+Reports' History, and
+[View and Filter History of Groups You Own](/docs/directorymanager/11.1/portal/history/mydirectorygroup.md).
 
-Step 8 – Click the **Add Note** button next to a history item to add a note to it.
+To add a note:
 
-Step 9 – On the Add Note dialog box, write a note and click **Add Note** to save it.
-
-Your note can have a maximum of 500 characters.
+1. Click the **Add Note** button next to a history item to add a note to it.
+2. On the Add Note dialog box, write a note and click **Add Note** to save it. Your note can have a
+   maximum of 500 characters.
 
 ### Edit a note
 
-You can only edit the note that you have added.
+You can only edit the note you have added.
 
-Step 1 – Click the **View Note** button next to a history item to view or edit the note for it.
+To edit a note:
 
-Step 2 – On the Note dialog box, click the **Edit Note** button and update the note.
-
-Step 3 – Click **Update Note** to save the changes.
+1. Click the **View Note** button next to a history item to view or edit the note for it.
+2. On the Note dialog box, click the **Edit Note** button and update the note.
+3. Click **Update Note** to save the changes.
 
 ### View a note
 
 Once a note is added, other users can view it, but they can't edit it or add comments to it.
 
-- In the Detailed view:
-
-    Click the **View Note** button next to a history item to view the note for it.
-
-- In the Administrative view:
-
-    The Note column displays the note.
+- In the Detailed view, click the **View Note** button next to a history item to view the note for
+  it.
+- In the Administrative view, the Note column displays the note.
 
 ### Remove a note
 
-You can only remove the note that you have added.
+You can only remove the note you have added.
 
-Step 1 – Click the **View Note** button next to a history item to view or remove the note for it.
+To remove a note:
 
-Step 2 – Click the **Edit Note** button and remove the note.
-
-Step 3 – Click **Update Note**.
+1. Click the **View Note** button next to a history item to view or remove the note for it.
+2. Click the **Edit Note** button and remove the note.
+3. Click **Update Note**.
 
 ## Export history data
 
-You can export history data displayed to an external file.
+You can export the displayed history data to an external file.
 
 Click the **Export History** button and select the file type to export history data to. Supported
 formats are:

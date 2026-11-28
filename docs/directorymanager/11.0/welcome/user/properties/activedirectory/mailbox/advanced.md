@@ -1,10 +1,15 @@
 ---
-title: "Mailbox properties - Advanced tab"
-description: "Mailbox properties - Advanced tab"
+title: "Mailbox Properties Advanced Tab in GroupID"
+description: "Set the home page, alternate recipient, and other advanced settings for a user or mailbox."
+keywords:
+  - mailbox advanced tab
+  - alternate recipient
+  - hide from address book
+  - forwarding address
 sidebar_position: 10
 ---
 
-# Mailbox properties - Advanced tab
+# Mailbox Properties Advanced Tab in GroupID
 
 Use this tab to configure advanced settings for a user.
 
@@ -24,14 +29,14 @@ The employee ID of the user.
 Indicates whether to hide the user in the messaging provider's address book (such as the Outlook
 address book).
 
-If selected, the user will not be visible in the address book.
+If selected, the user isn't visible in the address book.
 
 **Recipient**
 
 Specify an alternate recipient to receive the emails sent to this user.
 
-Click the ellipsis button to launch the
-[Find Dialog Box](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), where you can search
+Click the ellipsis button to open the
+[Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), where you can search
 and select the required recipient.
 
 To remove the alternate recipient, click the **Remove** button.
@@ -40,7 +45,7 @@ To remove the alternate recipient, click the **Remove** button.
 
 The distinguished name (DN) of the messaging server, such as the Exchange server.
 
-This field is populated for a 'mailbox' object only.
+This field is populated for a mailbox object only.
 
 **Emp Type**
 
@@ -56,4 +61,4 @@ Indicates whether to send every email for this user to the alternate recipient a
 
 **See Also**
 
-- [User Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

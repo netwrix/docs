@@ -1,10 +1,16 @@
 ---
-title: "Database tab"
-description: "Query Designer - Database tab"
+title: "Use an External Data Source in Query Designer"
+description: "Combine an external data provider such as SQL Server, Oracle, or SCIM with the directory to determine a group's membership in Query Designer."
+keywords:
+  - Query Designer
+  - external data source
+  - Database tab
+  - command string
+  - group membership query
 sidebar_position: 70
 ---
 
-# Database tab
+# Use an External Data Source in Query Designer
 
 You can combine an external data provider with the directory to determine a group's membership.
 
@@ -18,47 +24,37 @@ The supported external data providers are:
 - Text/CSV
 - SCIM
 
-Before using any of these external data providers, you must define a data source for the provider in Admin Center. See the [Create a Data Source](/docs/directorymanager/11.1/admincenter/datasource/create.md)
-topic.
+Before you use any of these external data providers, define a data source for the provider in Admin Center. See the [Create Data Sources in Directory Manager](/docs/directorymanager/11.1/admincenter/datasource/create.md) topic.
 
-Directory Manager portal configures a connection in the data source, connects to the external database, retrieves the results, and then queries the directory for matching records.
+The Directory Manager portal configures a connection in the data source, connects to the external database, retrieves the results, and then queries the directory for matching records.
 
-You must map one column returned by the command on the Database tab with a directory attribute to
-join the external data source to the identity store. The query compares the values of the mapped
-attributes and extracts objects with matching values to add to the group’s membership.
+To join the external data source to the identity store, map one column that the command returns on the Database tab to a directory attribute. The query compares the values of the mapped attributes. It then extracts the objects with matching values and adds them to the group's membership.
 
-For example, if you want to add to group membership all employees whose employee IDs are present in
-an external data source, you can select that data source and map a key attribute with a directory
-attribute. Use attributes that store the employee ID. When you update group membership, Directory Manager will fetch only those users from the directory whose employee IDs also exist in the data source.
+For example, to add all employees whose employee IDs are in an external data source to a group, select that data source. Then map a key attribute to a directory attribute that stores the employee ID. When you update group membership, Directory Manager fetches only the users from the directory whose employee IDs also exist in the data source.
 
 **External Data Provider**
 
-Select the data source from the dropdown list that you want to use to determine the group's
-membership.
+Select the data source to use to determine the group's membership from the dropdown list.
 
 **External Provider Table**
 
-After you select the data source, select the provider's table that contains the data. If the table
-you need isn't listed, type its name in the External Provider Table box to select the table.
+After you select the data source, select the provider's table that contains the data. If the table you need isn't listed, type its name in the External Provider Table box.
 
 **Identity Store Attribute**
 
-Select an identity store attribute to map a database attribute to it.
+Select the identity store attribute to map a database attribute to.
 
 **External Provider Attribute**
 
-Select a data provider attribute to map it to the selected identity store attribute.
+Select the data provider attribute to map to the selected identity store attribute.
 
 **Command String**
 
-This field displays the command that the **Query Designer** executes to retrieve the query results
-from the data source. The value can be a query statement and can include multiple columns separated
-by commas. Field names are enclosed in brackets ([ ]) to prevent any ambiguity that the query engine
-might encounter due to spaces between column names.
+This field displays the command that **Query Designer** runs to retrieve the query results from the data source. The value can be a query statement and can include multiple columns separated by commas. Field names are enclosed in brackets ([ ]) to prevent ambiguity that the query engine might encounter because of spaces in column names.
 
-You can modify the command and even write your own command.
+You can modify the command or write your own command.
 
-For better performance, it is recommended to select only the columns required to create your group.
+For better performance, select only the columns required to create your group.
 
 For example:
 
@@ -68,8 +64,7 @@ SELECT [Column1],[Column2] FROM [Filename.csv]
 
 **Execute**
 
-Click this button to execute the command and preview the results. This process may take several
-minutes depending on the size of your data source.
+Click this button to run the command and preview the results. This process can take several minutes, depending on the size of your data source.
 
 **Clear**
 
@@ -77,7 +72,7 @@ Click this button to clear the query.
 
 **Preview**
 
-Preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This checks the accuracy of data before you commit changes to the directory.
+Preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This check confirms the accuracy of the data before you commit changes to the directory.
 
 **OK**
 

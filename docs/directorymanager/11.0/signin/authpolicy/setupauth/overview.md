@@ -1,22 +1,27 @@
 ---
-title: "Set Up Authentication Types"
-description: "Set Up Authentication Types"
+title: "Set Up Authentication Types in GroupID"
+description: "Find the topics for setting up each authentication type for an identity store and enforcing it for a security role."
+keywords:
+  - set up authentication types
+  - identity store authentication setup
+  - enforce authentication type for security role
+  - authentication type setup topics
 sidebar_position: 50
 ---
 
-# Set Up Authentication Types
+# Set Up Authentication Types in GroupID
 
-The following topics guide you on how to set up different authentication types for an identity store
+The following topics explain how to set up different authentication types for an identity store
 and enforce them for a security role.
 
-- [Set up Authentication via Security Questions](/docs/directorymanager/11.0/signin/authpolicy/setupauth/securityquestions.md)
-- [SMS Authentication](/docs/directorymanager/11.0/signin/identitystore/configure/smsauthentication.md)
-- [Set up Authentication via Email](/docs/directorymanager/11.0/signin/authpolicy/setupauth/email.md)
-- [Set up Authentication via Authenticator](/docs/directorymanager/11.0/signin/authpolicy/setupauth/authenticator.md)
-- [Set up Authentication via Linked Account](/docs/directorymanager/11.0/signin/authpolicy/setupauth/linkedaccount.md)
-- [Set up Authentication via YubiKey](/docs/directorymanager/11.0/signin/authpolicy/setupauth/yubikey.md)
-- [Set up Authentication via Windows Hello](/docs/directorymanager/11.0/signin/authpolicy/setupauth/windowshello.md)
+- [Set Up Security Question Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/securityquestions.md)
+- [Configure SMS Authentication for an Identity Store](/docs/directorymanager/11.0/signin/identitystore/configure/smsauthentication.md)
+- [Set Up Email Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/email.md)
+- [Set Up Authenticator Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/authenticator.md)
+- [Set Up Linked Account Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/linkedaccount.md)
+- [Set Up YubiKey Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/yubikey.md)
+- [Set Up Windows Hello Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/windowshello.md)
 
 **See Also**
 
-- [Authentication Policy](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)

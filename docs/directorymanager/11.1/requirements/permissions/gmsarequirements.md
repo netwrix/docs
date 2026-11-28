@@ -1,65 +1,55 @@
 ---
-title: "gMSA for Active Directory"
-description: "gMSA for Active Directory"
+title: "Configure a gMSA for Directory Manager"
+description: "Verify the status, permissions, and allowed principals a Group Managed Service Account needs to connect an Active Directory identity store."
+keywords:
+  - gMSA
+  - Group Managed Service Account
+  - PrincipalsAllowedToRetrieveManagedPassword
+  - Test-ADServiceAccount
+  - IIS_IUSRS
 sidebar_position: 20
 ---
 
-# gMSA for Active Directory
+# Configure a gMSA for Directory Manager
 
-Use a Group Managed Service Account (gMSA) with Directory Manager to connect an Active
-Directory identity store to the identity provider. To ensure that the gMSA can be configured and
-used effectively, verify the following:
+Use a Group Managed Service Account (gMSA) with Directory Manager to connect an Active Directory identity store to the identity provider. Before you configure the gMSA, verify the general checks, the required permissions, and the allowed principals described in this topic.
 
-- General Checks
-- Required Permissions
-- Allowed Principals
+## General checks
 
-## General Checks
+Verify the following:
 
-- Run the following cmdlet in Windows PowerShell on the Directory Manager server to verify the gMSA
-  status as either _true_ or _false_.
+- The gMSA status is _true_. Run this cmdlet in Windows PowerShell on the Directory Manager server to see the status as _true_ or _false_.
 
     ```
     Test-ADServiceAccount -Identity <gMSA>
     ```
 
-- In case a gMSA is configured for GroupIDAppPool11 or as a service account for identity store make
-  sure the account name follows the format:  
-  FQDN\<gMSA>$)
+- The account name follows the format `FQDN\<gMSA>$`. This applies when you configure a gMSA for GroupIDAppPool11 or as a service account for an identity store.
 
-## Required Permissions
+## Required permissions
 
-- The gMSA must have full permissions on the Directory Manager installation folder.
-- It must be a member of the local administrator group (Administrators) on the Directory Manager
-  server.
-- It must be a member of the local IIS group (IIS_IUSRS) on the Directory Manager server.
+The gMSA needs the following permissions:
 
-## Allowed Principals
+- Full permissions on the Directory Manager installation folder.
+- Membership in the local administrator group (Administrators) on the Directory Manager server.
+- Membership in the local IIS group (IIS_IUSRS) on the Directory Manager server.
 
-- The following principals must be allowed to retrieve the managed password for the gMSA that you
-  use to connect an identity store to an identity provider:
+## Allowed principals
 
-    - Directory Manager server (type: Computer)
-    - The account configured for the Directory Manager app pool (type: Service Account)
+The following principals must be allowed to retrieve the managed password for the gMSA that you use to connect an identity store to an identity provider:
 
-- If any of these principals aren't allowed to retrieve the managed password for the gMSA, do the
-  following depending on the scenario:
+- Directory Manager server (type: Computer)
+- The account configured for the Directory Manager app pool (type: Service Account)
 
-    - If a group is mentioned in the 'PrincipalsAllowedToRetrieveManagedPassword' parameter of
-      the New-ADServiceAccount cmdlet, add the missing principal (Directory Manager server and/or
-      app pool account) to the group.  
-      Both these principals must be enlisted directly or indirectly in the
-      'PrincipalsAllowedToRetrieveManagedPassword' parameter.
-    - If an individual principals are mentioned in the 'PrincipalsAllowedToRetrieveManagedPassword'
-      parameter of the New-ADServiceAccount cmdlet, use the
-      'PrincipalsAllowedToRetrieveManagedPassword' parameter of the Set-ADServiceAccount cmdlet to
-      add the missing principals (Directory Manager server and/or app pool account).
+If any of these principals can't retrieve the managed password for the gMSA, take the action that matches your scenario:
+
+- If a group is in the 'PrincipalsAllowedToRetrieveManagedPassword' parameter of the New-ADServiceAccount cmdlet, add the missing principal (Directory Manager server or app pool account) to the group. Both principals must be listed directly or indirectly in the 'PrincipalsAllowedToRetrieveManagedPassword' parameter.
+- If individual principals are in the 'PrincipalsAllowedToRetrieveManagedPassword' parameter of the New-ADServiceAccount cmdlet, use the 'PrincipalsAllowedToRetrieveManagedPassword' parameter of the Set-ADServiceAccount cmdlet to add the missing principals (Directory Manager server or app pool account).
 
 :::note
 Restart the Directory Manager server if you apply any of these changes.
 :::
 
-
 **See Also**
 
-- [Manage an Identity Store](/docs/directorymanager/11.1/admincenter/identitystore/manage.md)
+- [Manage an Identity Store in Directory Manager](/docs/directorymanager/11.1/admincenter/identitystore/manage.md)

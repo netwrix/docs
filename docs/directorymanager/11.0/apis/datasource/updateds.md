@@ -1,12 +1,19 @@
 ---
-title: "Update a Data Source"
-description: "Update a Data Source"
+title: "Update a Data Source with the GroupID API"
+description: "Send a PUT request to the GroupID API to change the name, provider settings, or connection details of an existing data source."
+keywords:
+  - GroupID API
+  - update data source
+  - DataSource Update endpoint
+  - PUT request
+  - data source configuration
 sidebar_position: 160
+unlisted: true
 ---
 
-# Update a Data Source
+# Update a Data Source with the GroupID API
 
-Using this API you can update information of an already created data source.
+Use this API to update the information of an existing data source.
 
 ## Endpoint
 
@@ -16,7 +23,7 @@ https://demomachine:4443/GroupIDDataService/api/DataSource/Update
 
 PUT
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -36,7 +43,7 @@ PUT
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -56,5 +63,5 @@ PUT
 
 See Also
 
-- [Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

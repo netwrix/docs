@@ -1,38 +1,44 @@
 ---
-title: "Identity Store Commands"
-description: "Identity Store Commands"
+title: "GroupID Identity Store Cmdlets"
+description: "Find the Management Shell cmdlets that create, modify, remove and configure identity stores, roles, messaging servers, SMTP and notifications."
+keywords:
+  - identity store cmdlets
+  - GroupID Management Shell
+  - messaging server cmdlets
+  - SMTP server cmdlets
+  - identity store roles
 sidebar_position: 80
 ---
 
-# Identity Store Commands
+# GroupID Identity Store Cmdlets
 
 This section covers cmdlets for performing identity store-related tasks such as:
 
 - [Clear-MessagingServer](/docs/directorymanager/11.0/managementshell/identitystore/clearmessagingserver.md):
   removes a configured messaging server.
-- [Clear-Notifications](/docs/directorymanager/11.0/managementshell/identitystore/clearnotifications.md):
+- [Clear-Notifications Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/clearnotifications.md):
   removes notification settings of an identity store.
-- [Clear-SmtpServer](/docs/directorymanager/11.0/managementshell/identitystore/clearsmtpserver.md):
+- [Clear-SmtpServer Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/clearsmtpserver.md):
   removes a configured SMTP server of an identity store.
-- [Get-AvailableMessagingServers](/docs/directorymanager/11.0/managementshell/identitystore/getavailablemessagingservers.md):
+- [Get-AvailableMessagingServers Cmdlet](/docs/directorymanager/11.0/managementshell/identitystore/getavailablemessagingservers.md):
   retrieves messaging servers for the configured messaging provider.
-- [Get-Client](/docs/directorymanager/11.0/managementshell/identitystore/getclient.md):
+- [Get-Client Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/getclient.md):
   lists information about the GroupID clients.
-- [Get-IdentityStore](/docs/directorymanager/11.0/managementshell/identitystore/getidentitystore.md):
+- [Get-IdentityStore Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/getidentitystore.md):
   retrieves information about an identity store.
-- [Get-IdentityStoreRoles](/docs/directorymanager/11.0/managementshell/identitystore/getidentitystoreroles.md):
-  retrieves information about the security roles in an identity store
-- [Get-LogSettings](/docs/directorymanager/11.0/managementshell/identitystore/getlogsettings.md):
+- [Get-IdentityStoreRoles Cmdlet](/docs/directorymanager/11.0/managementshell/identitystore/getidentitystoreroles.md):
+  retrieves information about the security roles in an identity store.
+- [Get-LogSettings Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/getlogsettings.md):
   provides information about the global log settings of an identity store.
-- [Get-RolePermissionNames](/docs/directorymanager/11.0/managementshell/identitystore/getrolepermissionnames.md):
-  lists the permissions assigned to the logged-in user.
-- [Get-SchemaAttributes](/docs/directorymanager/11.0/managementshell/identitystore/getschemaattributes.md):
+- [Get-RolePermissionNames Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/getrolepermissionnames.md):
+  lists the permissions assigned to the signed-in user.
+- [Get-SchemaAttributes Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/getschemaattributes.md):
   lists schema attributes available for an identity store.
-- [Get-SmsGateways](/docs/directorymanager/11.0/managementshell/identitystore/getsmsgateways.md):
+- [Get-SmsGateways Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/getsmsgateways.md):
   provides information of the configured SMS gateways.
-- [Get-UserRole](/docs/directorymanager/11.0/managementshell/identitystore/getuserrole.md):
+- [Get-UserRole Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/getuserrole.md):
   displays role information of a user in an identity store.
-- [New-IdentityStore](/docs/directorymanager/11.0/managementshell/identitystore/newidentitystore.md):
+- [New-IdentityStore Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/newidentitystore.md):
   creates a new identity store.
 - [Remove-IdentityStore](/docs/directorymanager/11.0/managementshell/identitystore/removeidentitystore.md):
   removes an identity store from GroupID.
@@ -44,13 +50,13 @@ This section covers cmdlets for performing identity store-related tasks such as:
   modifies properties of a security role in an identity store.
 - [Set-MessagingServer](/docs/directorymanager/11.0/managementshell/identitystore/setmessagingserver.md):
   configures a messaging server in an identity store.
-- [Set-Notifications](/docs/directorymanager/11.0/managementshell/identitystore/setnotifications.md):
+- [Set-Notifications Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/setnotifications.md):
   modifies notification settings of an identity store.
-- [Set-SmtpServer](/docs/directorymanager/11.0/managementshell/identitystore/setsmtpserver.md):
+- [Set-SmtpServer Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/identitystore/setsmtpserver.md):
   configures an SMTP server of an identity store.
 
-See Also
+**See Also**
 
-- [GroupID Management Shell](/docs/directorymanager/11.0/managementshell/overview.md)
-- [All Commands](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Overview and Access](/docs/directorymanager/11.0/managementshell/overview.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

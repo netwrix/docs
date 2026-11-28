@@ -1,12 +1,19 @@
 ---
-title: "All Workflow Routes"
-description: "All Workflow Routes"
+title: "Get All GroupID Workflow Routes"
+description: "Use this GET endpoint to list every system-defined and user-defined workflow route in a GroupID identity store."
+keywords:
+  - workflow routes API
+  - get workflow routes
+  - system-defined routes
+  - user-defined routes
+  - identity store ID
 sidebar_position: 10
+unlisted: true
 ---
 
-# All Workflow Routes
+# Get All GroupID Workflow Routes
 
-Use this API to get information about all workflow routes, system defined and user defined, in a
+Use this API to get information about all workflow routes, system-defined and user-defined, in a
 specified identity store.
 
 ## Endpoint
@@ -17,7 +24,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 [
@@ -405,5 +412,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

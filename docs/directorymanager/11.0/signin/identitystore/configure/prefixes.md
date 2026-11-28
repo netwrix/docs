@@ -1,48 +1,58 @@
 ---
-title: "Set Group Name Prefixes"
-description: "Set Group Name Prefixes"
+title: "Configure Group Name Prefixes in GroupID"
+description: "Standardize group names by defining prefixes for an identity store or its security roles that users select when they create groups."
+keywords:
+  - group name prefixes
+  - GroupID
+  - identity store prefix
+  - security role prefix
+  - enforce prefix
 sidebar_position: 80
 ---
 
-# Set Group Name Prefixes
+# Configure Group Name Prefixes in GroupID
 
 You can standardize group names in the directory by defining prefixes. When users create groups
-using the GroupID portal, they must select a prefix, which is added to the group’s name and display
-name.
+using the GroupID portal, they must select a prefix, which is added to the group's name
+and display name.
 
-NOTE: The Group Name Prefixes policy does not apply when a user creates a group using GroupID
+:::note
+The Group Name Prefixes policy doesn't apply when a user creates a group using GroupID
 Management Shell.
+:::
 
 You can define group name prefixes (a) for an identity store, (b) for security roles in an identity
 store, or (c) both at the identity store and role levels.
 
 - Prefixes defined for an identity store are available to all security roles in an identity store.
-  When creating a group, users must select a prefix to append the group’s name.
+  When creating a group, users must select a prefix to append to the group's name.
 - Prefixes defined for a security role are available to role members only. You can enforce members
-  to select a role-specific prefix to append a group’s name while creating a group. Role-specific
+  to select a role-specific prefix to append to a group's name while creating a group. Role-specific
   prefixes help distinguish between groups created by different roles.
 - When prefixes are defined at both the identity store and role levels, both sets of prefixes are
-  available to role members in a single drop-down list. Role members can select any prefix to append
-  a group’s name. However, when prefixes are enforced at the role level, role members can only
-  select a role-specific prefix to append a group’s name.
+  available to role members in a single dropdown list. Role members can select any prefix to append to
+  a group's name. However, when prefixes are enforced at the role level, role members can only
+  select a role-specific prefix to append to a group's name.
 
-NOTE: (1) For a user with multiple roles, prefixes for all roles are displayed when creating or
+:::note
+(1) For a user with multiple roles, prefixes for all roles are displayed when creating or
 updating groups.  
-(2) If prefixes are enforced for the highest priority role of a user, he or she must select a prefix
-from the list of prefixes defined for this highest priority role.  
-(3) If prefixes are enforced for a role other than the highest priority role of a user, enforcement
-does not apply to him or her.
+(2) If prefixes are enforced for the highest-priority role of a user, they must select a prefix
+from the list of prefixes defined for this highest-priority role.  
+(3) If prefixes are enforced for a role other than the highest-priority role of a user, enforcement
+doesn't apply to them.
+:::
 
 Consider the following:
 
 - For existing groups, the prefix option is available for unmanaged groups (and not for Smart Groups
-  and Dynasties). A user can choose to add a prefix to the group name in group properties. Once
-  added, it cannot be removed.
+  and Dynasties). A user can choose to add a prefix to the group name in group properties. After
+  it's added, it can't be removed.
 - For managed groups (Smart Groups and Dynasties), prefixes can only be added while creating a group
-  and cannot be changed or removed later.
+  and can't be changed or removed later.
 
-A group naming policy defined in Microsoft Entra Admin Center has no impact in GroupID. For details,
-see the
+A group naming policy defined in Microsoft Entra Admin Center has no impact in GroupID.
+For details, see the
 [Group Naming Policy](/docs/directorymanager/11.0/signin/identitystore/advsentraid.md#group-naming-policy)
 topic.
 
@@ -57,18 +67,18 @@ What do you want to do?
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Group Name Prefixes**.
-4. On the **Group Name Prefixes** page, type a prefix in the box displayed at the top and click
+4. On the **Group Name Prefixes** page, enter a prefix in the box displayed at the top and click
    **Add**. The prefix is displayed in the **Group Name Prefix** area.
 5. Click **Save**.
 
-Edit a Prefix
+**Edit a Prefix**
 
 1. On the **Group Name Prefixes** page, click **Edit** for a prefix and update it. Then click the
    check mark icon to save or the cross icon to discard your changes.
 2. Click **Save**.  
-   The change does not propagate to group names that have already been created with the prefix.
+   The change doesn't propagate to group names that have already been created with the prefix.
 
-Delete a Prefix
+**Delete a Prefix**
 
 1. On the **Group Name Prefixes** page, click **Remove** for a prefix to delete it.
 2. Click **Save**.  
@@ -87,13 +97,13 @@ Delete a Prefix
 7. Refer to step 4 and onwards in the
    [Add a Prefix for an Identity Store](#add-a-prefix-for-an-identity-store) topic to add, edit, or
    delete a group name prefix for a security role.
-8. Select the **Enforce Prefix** check box to make it mandatory for role members to select a
-   role-specific prefix to append group names while creating groups.
+8. Select the **Enforce Prefix** checkbox to make it mandatory for role members to select a
+   role-specific prefix to append to group names while creating groups.
 9. Click **OK**.
 10. On the **Edit Security Role** page, click **Update Security Role**.
 11. On the **Security Roles** page, click **Save**.
 
 **See Also**
 
-- [Security Roles](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

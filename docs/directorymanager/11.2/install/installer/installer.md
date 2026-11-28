@@ -1,22 +1,25 @@
 ---
-title: "Installer"
-description: "Installer"
+title: "Directory Manager Installation Tools and Upgrade Cases"
+description: "Learn the order of the Directory Manager installation tools, who can install them, and the four installation cases for coexistence or in-place upgrade."
+keywords:
+  - directory manager installation
+  - directory manager installation package
+  - directory manager prerequisites
+  - directory manager upgrade cases
 sidebar_position: 10
 ---
 
-# Installer
+# Directory Manager Installation Tools and Upgrade Cases
 
 To install Directory Manager, run the following tools in this order:
 
-- **[Preparation Tool](/docs/directorymanager/11.2/install/installer/preparationtool.md)** - Detects and instals the prerequisite software and
+- **[Run the Directory Manager Preparation Tool](/docs/directorymanager/11.2/install/installer/preparationtool.md)** - Detects and installs the prerequisite software and
   Windows features that Directory Manager requires.
-
-- **[Installation Tool](/docs/directorymanager/11.2/install/installer/install.md)** - Installs Directory Manager.
-
-- **[Configuration Tool](/docs/directorymanager/11.2/install/configure/configure.md)** - Configures Directory Manager services,
+- **[Install Directory Manager](/docs/directorymanager/11.2/install/installer/install.md)** - Installs Directory Manager.
+- **[Run the Directory Manager Configuration Tool](/docs/directorymanager/11.2/install/configure/configure.md)** - Configures Directory Manager services,
   database, and other components.
 
-## Installation Package
+## Installation package
 
 The Directory Manager installation package consists of:
 
@@ -25,7 +28,7 @@ The Directory Manager installation package consists of:
 
 ## Who can install
 
-Before installing Directory Manager, ensure that the logged-in user is a member of the local
+Before you install Directory Manager, ensure that the signed-in user is a member of the local
 Administrators group on that machine.
 
 :::note
@@ -34,32 +37,28 @@ Administrators group on that machine.
 (3) Don't install Directory Manager and Microsoft Exchange Server on the same machine.
 :::
 
+## Installation cases
 
-## Installation Cases
+Choose one of the following four installation cases for Directory Manager 11:
 
-Choose one of the four installation cases for Directory Manager 11:
-
-- **Case # 1**: Directory Manager 11 to co-exist with GroupID 10 SR2 on the same machine
-
-- **Case # 2**: Directory Manager 11 to co-exist with GroupID 10 SR2 in the same environment
+- **Case # 1**: Directory Manager 11 to coexist with GroupID 10 SR2 on the same machine
+- **Case # 2**: Directory Manager 11 to coexist with GroupID 10 SR2 in the same environment
 - **Case # 3**: In-place installation of Directory Manager 11 on the same machine
 - **Case # 4**: In-place installation of Directory Manager 11 in the environment
 
-The Directory Manager 11 installation and configuration process is the same for all four cases. You
-must create a copy of the database being used with the previous Directory Manager version and bind
-the copy with Directory Manager 11.
+The Directory Manager 11 installation and configuration process is the same for all four cases.
+Create a copy of the database that the previous GroupID version uses, and bind the copy
+with Directory Manager 11.
 
-Next, run the Upgrade wizard to make the copied database compatible with Directory Manager 11. Once
-upgraded, the database schema changes, making it incompatible with the previous Directory Manager
-version.
+Next, run the Upgrade wizard to make the copied database compatible with Directory Manager 11. After
+the upgrade, the database schema changes. The previous GroupID version can no longer use
+the database.
 
 :::note
-When Directory Manager 11 co-exists with a previous Directory Manager version (case # 1 and
+When Directory Manager 11 coexists with a previous GroupID version (Cases # 1 and
 2), the two must have separate databases. Data isn't replicated between these databases.
 :::
 
-
 :::note
 This section doesn't apply to a fresh Directory Manager installation.
-
 :::

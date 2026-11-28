@@ -1,13 +1,17 @@
 ---
-title: "Set-Object"
-description: "Set-Object"
+title: "Set-Object Cmdlet in Directory Manager"
+description: "Use the Set-Object cmdlet to change attributes of a user, contact, group, or mailbox, such as department, description, or custom attributes."
+keywords:
+  - Set-Object
+  - modify directory object
+  - Management Shell cmdlet
+  - custom attributes
 sidebar_position: 50
 ---
 
-# Set-Object
+# Set-Object Cmdlet in Directory Manager
 
-The Set-Object commandlet modifies any object such as a user, contact, group (managed or unmanaged),
-or mailbox in Directory.
+Use the Set-Object cmdlet to modify any object in the directory, such as a user, contact, group (managed or unmanaged), or mailbox.
 
 ## Syntax
 
@@ -47,13 +51,13 @@ Set-Object
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+## Example
 
-The following example modifies the description of the specified user against the Identity parameter.
+This command modifies the description of the user that the Identity parameter specifies.
 
 ```
 Set-object -identity "Sonia Iqbal" -Description TestUser

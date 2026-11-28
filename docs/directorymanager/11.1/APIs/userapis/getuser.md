@@ -1,10 +1,16 @@
 ---
-title: "Get a User"
-description: "Get a User"
+title: "Get a User with the Directory Manager API"
+description: "Retrieve the attributes and details of a single user from an identity store."
+keywords:
+  - Directory Manager API
+  - get user
+  - Users/{userIdentity} endpoint
+  - identity store
 sidebar_position: 150
+unlisted: true
 ---
 
-# Get a User
+# Get a User with the Directory Manager API
 
 Use this API to get information about a single user.
 
@@ -16,7 +22,7 @@ Use this API to get information about a single user.
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

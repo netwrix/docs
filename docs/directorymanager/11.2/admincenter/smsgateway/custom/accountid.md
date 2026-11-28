@@ -1,10 +1,15 @@
 ---
-title: "ISmsGateway.AccountId"
-description: "ISmsGateway.AccountId"
+title: "ISmsGateway.AccountId Property"
+description: "Get or set the account ID that a custom SMS gateway uses to connect to the gateway provider."
+keywords:
+  - ISmsGateway.AccountId
+  - custom SMS gateway
+  - Imanami.PublicInterfaces
+  - SMS gateway account ID
 sidebar_position: 10
 ---
 
-# ISmsGateway.AccountId
+# ISmsGateway.AccountId Property
 
 Gets or sets the account ID for connecting with the SMS gateway.
 
@@ -26,6 +31,4 @@ The value of the account ID.
 
 **Remarks**
 
-The account ID may not be required for every SMS gateway. If required, use this property to get or
-set its respective value. This property can also contain any other identification number that a
-gateway needs for authenticating a connection.
+Not every SMS gateway requires an account ID. If yours does, use this property to get or set its value. The property can also hold any other identification number that a gateway needs to authenticate a connection.

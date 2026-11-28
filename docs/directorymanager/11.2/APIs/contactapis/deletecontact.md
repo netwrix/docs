@@ -1,17 +1,22 @@
 ---
-title: "Delete a Contact"
-description: "Delete a Contact"
+title: "Delete a Contact with the Directory Manager API"
+description: "Delete a single contact from an identity store by sending a DELETE request with the contact identity."
+keywords:
+  - delete contact API
+  - DELETE Contacts
+  - contact identity
+  - Directory Manager API
 sidebar_position: 20
+unlisted: true
 ---
 
-# Delete a Contact
+# Delete a Contact with the Directory Manager API
 
-Using this API you can delete a specified contact from the specified identity store.
+Use this API to delete a specified contact from the specified identity store.
 
 :::note
-The contact object type isn't supported in a Microsoft Entra ID based identity store.
+The contact object type isn't supported in a Microsoft Entra ID-based identity store.
 :::
-
 
 ## Endpoint
 
@@ -21,7 +26,7 @@ The contact object type isn't supported in a Microsoft Entra ID based identity s
 
 **DELETE**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

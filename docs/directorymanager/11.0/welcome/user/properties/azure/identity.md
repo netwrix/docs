@@ -1,13 +1,19 @@
 ---
-title: "User properties - Identity tab"
-description: "User properties - Identity tab"
+title: "Entra ID User Identity Tab"
+description: "View or update the name, user type, email, usage location, and photo of a Microsoft Entra ID user or mailbox in GroupID."
+keywords:
+  - Entra ID user identity
+  - member and guest user types
+  - usage location
+  - user photo
+  - account is enabled
 sidebar_position: 30
 ---
 
-# User properties - Identity tab
+# Entra ID User Identity Tab
 
 Use this tab to view or update the general information for a user and mailbox in a Microsoft Entra
-ID based identity store.
+ID-based identity store.
 
 **Display name**
 
@@ -15,7 +21,7 @@ The name of the user as it is displayed in the GroupID portal.
 
 **Username**
 
-The login ID of the user.
+The sign-in ID of the user.
 
 **First name**
 
@@ -31,14 +37,16 @@ The user type assigned to the user in Microsoft Entra ID, such as _Member_ or _G
 
 - **Member**: This value indicates an employee of the host organization and a user in the
   organization's payroll. For example, this user expects to have access to internal-only sites. This
-  user would not be considered an external collaborator.
+  user isn't considered an external collaborator.
 - **Guest**: This value indicates a user who isn't considered internal to the company, such as an
-  external collaborator, partner, customer, or similar user. Such a user wouldn't be expected to
+  external collaborator, partner, customer, or similar user. Such a user isn't expected to
   receive a CEO's internal memo, or receive company benefits, for example.
 
-NOTE: The User Type has no link to the user login function, the directory role of the user, and so
-on. It simply indicates the user's relationship to the host organization and allows the organization
+:::note
+The User Type has no link to the user sign-in function, the directory role of the user, and so
+on. It indicates only the user's relationship to the host organization and allows the organization
 to enforce policies that depend on this property.
+:::
 
 **Object ID**
 
@@ -54,9 +62,9 @@ The email address of the user.
 
 **Account is enabled**
 
-This check box is selected by default, indicating that the user account is enabled.
+This checkbox is selected by default, indicating that the user account is enabled.
 
-Clear it to disable the user account, so that the user cannot log-on with it.
+Clear it to disable the user account, so that the user can't sign in with it.
 
 **Usage Location**
 
@@ -71,8 +79,8 @@ geographic availability and laws.
 The user's photo.
 
 Click the **Edit** icon to launch the Manage Photo dialog box for uploading a photo. The dialog box
-also provides many image editing options, including rotate, crop, flip, and re-size.
+also provides many image editing options, including rotate, crop, flip, and resize.
 
 **See Also**
 
-- [User Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

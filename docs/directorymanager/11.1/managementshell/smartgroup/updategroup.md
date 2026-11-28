@@ -1,18 +1,27 @@
 ---
-title: "Update-Group"
-description: "Update-Group"
+title: "Update-Group Cmdlet"
+description: "Refresh the membership of a Smart Group or Dynasty in Directory Manager by re-running the LDAP query associated with it."
+keywords:
+  - Update-Group
+  - update Smart Group membership
+  - refresh Dynasty
+  - LDAP query
+  - Directory Manager cmdlet
+  - Management Shell
 sidebar_position: 50
 ---
 
-# Update-Group
+# Update-Group Cmdlet
 
-The Update-Group commandlet modifies the membership of a Smart Group or Dynasty according to the
-results returned by the LDAP query. This query is associated with the group or Dynasty creation and
-can be updated anytime using the **Set-SmartGroup** commandlet. When the Update-Group commandlet is
-executed, it searches the directory to find recipients matching the criteria defined in the query
-and modifies the group membership list with the returned recipients, if any.
+The Update-Group cmdlet modifies the membership of a Smart Group or Dynasty according to the
+results of its LDAP query. The query is associated with the group or Dynasty when you create it. You
+can update it at any time with the **Set-SmartGroup** cmdlet.
 
-You can view events related to this commandlet in Directory Manager portal, against the History node
+When you run the Update-Group cmdlet, it searches the directory for recipients that match the
+criteria in the query. It then updates the group membership list with the returned recipients, if
+any.
+
+You can view events related to this cmdlet in the Directory Manager portal, under the History node
 in the left panel.
 
 ## Syntax
@@ -27,26 +36,37 @@ Update-Group
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+The `-SearchContainer` parameter limits where the cmdlet looks for the group that you specify in
+`-Identity`. It doesn't update other groups in the container.
 
-The following command updates all the Directory Manager groups, by using the credentials of a
-locally logged on user, in a container specified by the "SearchContainer" parameter.
+The cmdlet starts the update and returns without waiting for it to finish. Membership changes appear
+shortly afterward. If updates are disabled for the group, the cmdlet reports that the update isn't
+enabled. If it doesn't find a matching Smart Group or Dynasty, it reports that it found no objects
+to update.
+
+## Examples
+
+### Example 1
+
+This command updates the Smart Group Smart_Training. It uses the credentials of the locally
+logged-on user.
 
 ```
-Update-Group -SearchContainer “OU=Sales,DC=Contoso,DC=com”
+Update-Group -Identity "CN=Smart_Training,OU=Sales,DC=Contoso,DC=com"
 ```
 
-Example 2:
+### Example 2
 
-The following command updates all Smart Groups and Dynasties present in the container Training,
-using the credentials set in the $Credentials environment variable. See the
-[Set the $Credentials Environment Variable](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials in an environment variable.
+This command looks for the Smart Group Smart_Training in the Training container and updates it. It
+uses the credentials set in the $Credentials environment variable. To run the command as another
+user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials
+in an environment variable, see
+[Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md).
 
 ```
-Update-Group -SearchContainer "OU=Training,DC=HR,DC=Imanami,DC=US" -Credential $Cred
+Update-Group -Identity "CN=Smart_Training,OU=Training,DC=HR,DC=Imanami,DC=US" -SearchContainer "OU=Training,DC=HR,DC=Imanami,DC=US" -IdentityStoreId 2 -Credential $Credentials
 ```

@@ -1,12 +1,17 @@
 ---
-title: "Manage Security Service Settings"
-description: "Manage Security Service Settings"
+title: "Manage GroupID Security Service Settings"
+description: "View, rename, start, stop, and delete a Security service from the Security Service tab in Admin Center."
 sidebar_position: 20
+keywords:
+  - Security service settings
+  - delete Security service
+  - Security Service tab
+  - Admin Center applications
 ---
 
-# Manage Security Service Settings
+# Manage GroupID Security Service Settings
 
-Security services in GroupID are displayed on the **Security Service** tab. A card for a service
+Security services in GroupID appear on the **Security Service** tab. A card for a service
 displays information such as its name and status.
 
 You can manage several settings for a service, such as:
@@ -27,8 +32,8 @@ What do you want to do?
 1. In Admin Center, click **Applications** in the left pane.
 2. On the **Applications** page, click the **Security Service** tab.  
    The tab displays the default Security service created while configuring GroupID and any other
-   Security service that you have created. When multiple GroupID instances have been deployed, you
-   will find multiple default Security services on this tab page, as each instance has its own
+   Security service that you have created. When multiple GroupID instances are deployed,
+   this tab shows multiple default Security services, because each instance has its own
    default Security service. See the
    [Elasticsearch Clusters, Nodes, and GroupID](/docs/directorymanager/11.0/signin/service/overview.md#elasticsearch-clusters-nodes-and-groupid)
    topic.  
@@ -39,7 +44,7 @@ What do you want to do?
 ## Manage Security Service Settings
 
 See the
-[Manage Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)
+[Manage GroupID Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)
 topic to manage settings for a Security service, such as deployment and log settings.
 
 ## Delete a Security Service
@@ -68,11 +73,13 @@ Deleting a Security service removes the following:
 2. On the **Applications** page, click the **Security Service** tab.
 3. Click the ellipsis button for a Security service and select **Delete**.
 
-NOTE: You cannot delete the default Security service. You cannot also delete a Security service that
-has been linked with a GroupID client, such as the GroupID portal or a Mobile service.
+:::note
+You can't delete the default Security service, and you can't delete a Security service that
+is linked with a GroupID client, such as the GroupID portal or a Mobile service.
+:::
 
 See Also
 
-- [GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Services](/docs/directorymanager/11.0/signin/service/overview.md)
-- [Create a Security Service](/docs/directorymanager/11.0/signin/service/securityservice/create.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Services](/docs/directorymanager/11.0/signin/service/overview.md)
+- [Create a GroupID Security Service](/docs/directorymanager/11.0/signin/service/securityservice/create.md)

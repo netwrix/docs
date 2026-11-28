@@ -1,10 +1,16 @@
 ---
-title: "Update Smart Groups"
-description: "Update Smart Groups"
+title: "Update Smart Groups API"
+description: "Update multiple Smart Groups in one POST request by passing their group IDs in the request body."
+keywords:
+  - update Smart Groups API
+  - Smart Groups Update endpoint
+  - bulk Smart Group update
+  - Directory Manager data service
 sidebar_position: 210
+unlisted: true
 ---
 
-# Update Smart Groups
+# Update Smart Groups API
 
 This API updates multiple Smart Groups whose identities are provided in the request body.
 
@@ -16,7 +22,7 @@ This API updates multiple Smart Groups whose identities are provided in the requ
 
 **POST**
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -25,7 +31,7 @@ This API updates multiple Smart Groups whose identities are provided in the requ
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

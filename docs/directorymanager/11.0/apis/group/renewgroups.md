@@ -1,12 +1,18 @@
 ---
-title: "Renew Groups"
-description: "Renew Groups"
+title: "Renew Multiple Groups API"
+description: "Renew several groups at once by sending their identities in a POST request body to the GroupID data service."
 sidebar_position: 150
+keywords:
+  - renew multiple groups
+  - bulk group renewal
+  - renew groups in bulk API
+  - POST Groups/Renew request body
+unlisted: true
 ---
 
-# Renew Groups
+# Renew Multiple Groups API
 
-This API renews multiple groups, identities of which are provided in the request body.
+This API renews multiple groups. Provide the group identities in the request body.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 POST
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -26,7 +32,7 @@ POST
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -88,5 +94,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

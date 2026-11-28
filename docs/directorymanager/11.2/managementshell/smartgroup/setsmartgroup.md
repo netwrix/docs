@@ -1,16 +1,21 @@
 ---
-title: "Set-SmartGroup"
-description: "Set-SmartGroup"
+title: "Set-SmartGroup Cmdlet"
+description: "Modify a Smart Group in Directory Manager, including its LDAP query, includes and excludes, Password Expiry settings and mail attributes."
+keywords:
+  - Set-SmartGroup
+  - modify Smart Group
+  - Smart Group LDAP query
+  - Password Expiry group
+  - Directory Manager cmdlet
+  - Management Shell
 sidebar_position: 40
 ---
 
-# Set-SmartGroup
+# Set-SmartGroup Cmdlet
 
-The Set-SmartGroup commandlet modifies a Smart Group in Directory. Attributes that are common to
-both Smart Groups and unmanaged groups can also be modified using the
-[Set-Group](/docs/directorymanager/11.2/managementshell/group/setgroup.md) commandlet.
+The Set-SmartGroup cmdlet modifies a Smart Group in the directory. You can also modify attributes that Smart Groups and unmanaged groups share with the [Set-Group](/docs/directorymanager/11.2/managementshell/group/setgroup.md) cmdlet.
 
-You can view events related to this commandlet in Directory Manager portal, against the History node
+You can view events related to this cmdlet in the Directory Manager portal, under the History node
 in the left panel.
 
 ## Syntax
@@ -25,7 +30,7 @@ Set-SmartGroup
 [-IncludeRecipients <string[]>]
 [-ExcludeRecipients <string[]>]
 [-Storage <string>]
-[-DataSourceType <string>]
+[-DataSourceId <string>]
 [-SystemDSN <string>]
 [-TableOrView <string>]
 [-DataSourceUserName <string>]
@@ -49,11 +54,9 @@ Set-SmartGroup
 [-EmailTemplatePath <string>]
 [-Script <string>]
 [-ScriptFilePath <string>]
-[-Provider_Container <string>]
 [-PowerTools <ArrayList>]
 [-KeyMapAD <string>]
 [-KeyMapDB <string>]
-[-ExtendGroupLife]
 [-ExpirationPolicy <int>]
 [-MsExchCoManagedByLink <string[]>]
 [-IsExpired <string>]
@@ -78,6 +81,7 @@ Set-SmartGroup
 [-ReportToManagerEnabled <string>]
 [-ReportToOriginatorEnabled <string>]
 [-UpdateMembershipByManagerEnabled <string>]
+[-ResetQuickFilter]
 [-Add <hashtable[]>]
 [-Remove <hashtable[]>]
 [-Replace <hashtable[]>]
@@ -115,64 +119,57 @@ Set-SmartGroup
 [<CommonParameters>]
 ```
 
-## Required Parameter
+## Required parameter
 
 - Identity
 
-Example 1:
+## Examples
 
-The following command modifies a Smart Group by adding **Administrator** statically in the group
-membership, regardless of whether it is returned by the query, using the credentials of current user
-logged-on to the identity store.
+### Example 1
+
+This command modifies a Smart Group by adding **Administrator** statically to the group membership, even when the query doesn't return it. It uses the credentials of the current user logged on to the identity store.
 
 ```
 Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IncludeRecipients "CN=Administrator,CN=Users,DC=HR,DC=Imanami,DC=US"
 ```
 
-Example 2:
+### Example 2
 
-The following command modifies the LDAP query of a Smart Group to retrieve all mail-enabled objects
-that are members of the group **Training**, using the credentials set in the **$Credentials**
-environment variable.
+This command modifies the LDAP query of a Smart Group to retrieve all mail-enabled objects that are members of the group **Training**. It uses the credentials in the **$Credentials** environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter.
 
 ```
-Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ObjectTypes "ExchangeUsers","ExternalUsers","ExternalContacts","EmailGroups" -LdapFilter "(MemberOf=Training)" -Credential $Cred
+Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ObjectTypes "ExchangeUsers","ExternalUsers","ExternalContacts","EmailGroups" -LdapFilter "(MemberOf=Training)" -IdentityStoreId 2 -Credential $Credentials
 ```
 
-Example 3:
+### Example 3
 
-The following command modifies the Password Expiry group using the credentials of current user
-logged-on to the identity store. To be added are those users who reside in the containers specified
-in the **Add** parameter (including sub-containers) and whose password is 20 days or more older and
-set to never expire.
+This command modifies a Password Expiry group. It uses the credentials of the current user logged on to the identity store. It adds users who reside in the containers in the **Add** parameter, including sub-containers, and whose password is 20 days old or older and set to never expire. The value 2 in the **SearchContainersScopeList** parameter includes the sub-containers of each container, in the same order as the containers.
 
 ```
-Set-SmartGroup -Identity "CN=Password_Expiry,OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Add @{SearchContainers="OU=Recruiting,OU=HR,DC=Imanami,DC=US#2","OU=Outsourcing,OU=HR,DC=Imanami,DC=US#2" -IsPasswordExpirySmartDL -DomainExpiration 30 -ExpirationRange 10 -IncludePasswordNeverExpireUsers True]
+Set-SmartGroup -Identity "CN=Password_Expiry,OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Add @{SearchContainers="OU=Recruiting,OU=HR,DC=Imanami,DC=US","OU=Outsourcing,OU=HR,DC=Imanami,DC=US"} -SearchContainersScopeList "2","2" -IsPasswordExpirySmartDL -DomainExpiration 30 -ExpirationRange 10 -IncludePasswordNeverExpireUsers True
 ```
 
-Example 4:
+### Example 4
 
-The following command modifies the membership of a Smart Group based on the script given in the
-script file.
-
-```
-Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" –ScriptFilePath "c:\MembershipUpdateScript.vb"
-```
-
-Example 5:
-
-The following command overwrites the **Includes** and **Excludes** lists of a Smart Group by adding
-two groups in the Includes list and one group in the Excludes list.
+This command modifies the membership of a Smart Group based on the script in the script file.
 
 ```
-Set-SmartGroup -Identity "CN=imrantest, OU=Testit, DC=minion,DC=local" –Replace @{Includes = "CN=Shizasss,CN=Users,DC=minion,DC=Local","CN=ShezaOfc,CN=Users,DC=minion,DC=Local" ; Excludes="CN=Administrator,CN=Users,DC=minion,DC=local" , "CN=TestMailbox,CN=Users,DC=minion,DC=local"]
+Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ScriptFilePath "c:\MembershipUpdateScript.vb"
+```
+
+### Example 5
+
+This command replaces members in the **Includes** and **Excludes** lists of a Smart Group. For each list, the **Replace** parameter removes the first value and adds the remaining values. It doesn't overwrite the whole list. The command replaces JaneDoe with JohnDoe in the Includes list, and Administrator with TestMailbox in the Excludes list.
+
+```
+Set-SmartGroup -Identity "CN=SampleSmartGroup, OU=Testit, DC=example,DC=com" -Replace @{Includes = "CN=JaneDoe,CN=Users,DC=example,DC=com","CN=JohnDoe,CN=Users,DC=example,DC=com" ; Excludes="CN=Administrator,CN=Users,DC=example,DC=com" , "CN=TestMailbox,CN=Users,DC=example,DC=com"}
 
 ```
 
-Exampe 6:
+### Example 6
 
-The following command modifies lists of members a Smart Group can accept and reject messages from.
+This command modifies the lists of members that a Smart Group accepts messages from and rejects messages from.
 
 ```
-Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" –Add @{ RejectMessagesFrom = "CN=Roger_Manson,OU=ResignedStaff,DC=HR,DC=Imanami,DC=US"} -Add @(AcceptMessageOnlyFrom = "CN=PKWing,OU=Recruiting,DC=HR,DC=Imanami,DC=US","CN=USWing,OU=Recruiting,DC=HR,DC=Imanami,DC=US")
+Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Add @{RejectMessagesFrom="CN=Roger_Manson,OU=ResignedStaff,DC=HR,DC=Imanami,DC=US"; AcceptMessagesOnlyFrom="CN=PKWing,OU=Recruiting,DC=HR,DC=Imanami,DC=US","CN=USWing,OU=Recruiting,DC=HR,DC=Imanami,DC=US"}
 ```

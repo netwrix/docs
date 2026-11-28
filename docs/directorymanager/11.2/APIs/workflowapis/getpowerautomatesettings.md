@@ -1,13 +1,20 @@
 ---
-title: "Get Power Automate Settings"
-description: "Get Power Automate Settings"
+title: "Get Power Automate Settings in Directory Manager"
+description: "Retrieve the Power Automate settings of an identity store that is linked to Power Automate by calling the MsFlow Settings endpoint."
+keywords:
+  - Power Automate settings
+  - MsFlow Settings endpoint
+  - Directory Manager API
+  - identity store link
+  - GET request
 sidebar_position: 140
+unlisted: true
 ---
 
-# Get Power Automate Settings
+# Get Power Automate Settings in Directory Manager
 
 If you have linked an identity store to Power Automate in Directory Manager, you can retrieve the
-Power Automate setting using this API.
+Power Automate settings using this API.
 
 ## Endpoint
 
@@ -17,7 +24,7 @@ Power Automate setting using this API.
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

@@ -1,51 +1,55 @@
 ---
-title: "Passphrase Utility"
+title: "Directory Manager Passphrase Utility"
 description: "Export the passphrase from the primary Directory Manager server and import it on secondary servers in a multi-instance deployment."
+keywords:
+  - Directory Manager passphrase utility
+  - export passphrase
+  - import passphrase
+  - Directory Manager multi-instance deployment
 sidebar_position: 45
 ---
 
-# Passphrase Utility
+# Directory Manager Passphrase Utility
 
-In a multi-instance deployment, all Directory Manager servers must use the same passphrase. Use the
-passphrase utility, `directory-manager-passphrase-utility.exe`, to export the passphrase from the
-primary server and import it on each secondary server.
+In a multi-instance deployment, all Directory Manager servers must use the same passphrase. Use the passphrase utility, `directory-manager-passphrase-utility.exe`, to export the passphrase from the primary server and import it on each secondary server.
 
 **Download**
 
 - [Download the Passphrase Utility](https://releases.netwrix.com/resources/directory-manager/directory-manager-passphrase-utility-1.0.zip)
 
-## Export the Passphrase
+## Export the passphrase
 
-Step 1 – On the primary Directory Manager server, open a command prompt as an administrator.
+To export the passphrase:
 
-Step 2 – Run the following command:
+1. On the primary Directory Manager server, open a command prompt as an administrator.
 
-```powershell
-.\directory-manager-passphrase-utility.exe export -o "<path_to_file>"
-```
+2. Run the following command:
 
-- `-o` – The path of the file to create.
+   ```powershell
+   .\directory-manager-passphrase-utility.exe export -o "<path_to_file>"
+   ```
 
-The utility creates the file and displays a password. Save this password, because you need it to
-import the file.
+   - `-o` – The path of the file to create.
 
-Step 3 – Copy the file to each secondary server.
+   The utility creates the file and displays a password. Save this password, because you need it to import the file.
 
-## Import the Passphrase
+3. Copy the file to each secondary server.
 
-Step 1 – On the secondary Directory Manager server, open a command prompt as an administrator.
+## Import the passphrase
 
-Step 2 – Run the following command:
+To import the passphrase:
 
-```powershell
-.\directory-manager-passphrase-utility.exe import -i "<path_to_file>" -p "<password>"
-```
+1. On the secondary Directory Manager server, open a command prompt as an administrator.
 
-- `-i` – The path of the exported file.
-- `-p` – The password that the export displayed.
+2. Run the following command:
+
+   ```powershell
+   .\directory-manager-passphrase-utility.exe import -i "<path_to_file>" -p "<password>"
+   ```
+
+   - `-i` – The path of the exported file.
+   - `-p` – The password that the export displayed.
 
 Repeat these steps on every secondary server.
 
-For the other secrets that all servers in a multi-instance deployment share, see the
-[Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md)
-and [Security Utility](/docs/directorymanager/11.2/install/securityutility.md) topics.
+For the other secrets that all servers in a multi-instance deployment share, see the [Directory Manager Signing Key Utility](/docs/directorymanager/11.2/admincenter/service/securityservice/signkeyutility.md) and [Directory Manager Security Utility](/docs/directorymanager/11.2/install/securityutility.md) topics.

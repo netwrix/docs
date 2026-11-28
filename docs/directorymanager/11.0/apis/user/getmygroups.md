@@ -1,12 +1,18 @@
 ---
-title: "Get My Groups"
-description: "Get My Groups"
+title: "Get My Groups with the GroupID API"
+description: "Retrieve the groups of the authenticated user, with options for nested ownership, additional groups, paging and sorting."
+keywords:
+  - GroupID API
+  - my groups
+  - Groups endpoint
+  - authenticated user
 sidebar_position: 90
+unlisted: true
 ---
 
-# Get My Groups
+# Get My Groups with the GroupID API
 
-The Get My Groups API retrieves groups of the authenticated user.
+The Get My Groups API retrieves the groups of the authenticated user.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -26,7 +32,7 @@ GET
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -177,5 +183,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

@@ -1,12 +1,18 @@
 ---
-title: "Approve a Request"
-description: "Approve a Request"
+title: "Approve a GroupID Workflow Request"
+description: "Use this POST endpoint to approve a pending workflow request by its request ID."
+keywords:
+  - approve workflow request
+  - workflowRequestID
+  - workflow approval API
+  - POST Approve endpoint
 sidebar_position: 20
+unlisted: true
 ---
 
-# Approve a Request
+# Approve a GroupID Workflow Request
 
-Using this API you can approve a specified workflow request.
+Use this API to approve a specified workflow request.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 POST
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -24,7 +30,7 @@ POST
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -58,5 +64,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

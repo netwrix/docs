@@ -1,15 +1,23 @@
 ---
-title: "Update a Contact"
-description: "Update a Contact"
+title: "Update a Contact API in GroupID"
+description: "Change a contact's attributes and values in an identity store with a PATCH request to the GroupID Contacts endpoint."
+keywords:
+  - GroupID API
+  - update contact
+  - contact attributes
+  - PATCH request
+  - identity store
 sidebar_position: 60
+unlisted: true
 ---
 
-# Update a Contact
+# Update a Contact API in GroupID
 
-Use this API if you want to update a contact's attribute(s) and their value(s) in a specified
-identity store.
+Use this API to update a contact's attributes and their values in a specified identity store.
 
-NOTE: The contact object type is not supported in a Microsoft Entra ID based identity store.
+:::note
+The contact object type isn't supported in a Microsoft Entra ID-based identity store.
+:::
 
 ## Endpoint
 
@@ -19,7 +27,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 PATCH
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -43,7 +51,7 @@ PATCH
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -90,5 +98,5 @@ PATCH
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

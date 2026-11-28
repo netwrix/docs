@@ -1,10 +1,16 @@
 ---
-title: "Renew a Group"
-description: "Renew a Group"
+title: "Renew a Group API"
+description: "Renew a single group by identity with a POST request to the Directory Manager data service."
+keywords:
+  - renew group API
+  - group lifecycle renewal
+  - group expiration renewal
+  - Groups Renew endpoint
 sidebar_position: 160
+unlisted: true
 ---
 
-# Renew a Group
+# Renew a Group API
 
 Use this API to renew the group specified in the endpoint URL.
 
@@ -16,7 +22,7 @@ Use this API to renew the group specified in the endpoint URL.
 
 **POST**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {

@@ -1,14 +1,19 @@
 ---
-title: "Get a Workflow Route"
-description: "Get a Workflow Route"
+title: "Get a Workflow Route in GroupID"
+description: "Retrieve the configuration of a workflow route by passing its route ID in the endpoint URL."
+keywords:
+  - workflow route
+  - workflow route ID
+  - GroupID API
+  - Workflows/Routes endpoint
+  - route configuration
 sidebar_position: 90
+unlisted: true
 ---
 
-# Get a Workflow Route
+# Get a Workflow Route in GroupID
 
-Use this API to get workflow route id of which is specidied in the end point URL.
-
-Change filename . add Get
+Use this API to get the workflow route that has the ID specified in the endpoint URL.
 
 ## Endpoint
 
@@ -18,7 +23,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 GET
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -77,5 +82,5 @@ GET
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

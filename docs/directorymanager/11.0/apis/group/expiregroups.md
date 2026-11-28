@@ -1,10 +1,16 @@
 ---
-title: "Expire Groups"
-description: "Expire Groups"
+title: "Expire Multiple Groups with the GroupID API"
+description: "Use the Expire Groups API to expire several groups in one request by passing their identities in the request body."
+keywords:
+  - GroupID API
+  - expire groups API
+  - bulk group expiration
+  - identity store groups
 sidebar_position: 60
+unlisted: true
 ---
 
-# Expire Groups
+# Expire Multiple Groups with the GroupID API
 
 This API expires multiple groups whose identities are provided in the request body.
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 POST
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 [
@@ -26,7 +32,7 @@ POST
 ]
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -85,5 +91,5 @@ POST
 
 See Also
 
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

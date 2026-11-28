@@ -1,13 +1,20 @@
 ---
-title: "Security Service Logs"
-description: "Security Service Logs"
+title: "Download Security Service Logs with the API"
+description: "Download the Directory Manager Security Service logs as an encrypted zip file by sending a GET request to the Logs API."
+keywords:
+  - Security Service logs
+  - Logs API
+  - download logs
+  - GET request
+  - Directory Manager security
 sidebar_position: 70
+unlisted: true
 ---
 
-# Security Service Logs
+# Download Security Service Logs with the API
 
 This API fetches Directory Manager Security service logs. See the
-[Security Service](/docs/directorymanager/11.1/admincenter/service/securityservice/overview.md) topic for additional
+[Security Service in Directory Manager](/docs/directorymanager/11.1/admincenter/service/securityservice/overview.md) topic for additional
 information on the Security Service.
 
 ## Endpoint
@@ -18,7 +25,7 @@ information on the Security Service.
 
 **GET**
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 <Encrypted response>

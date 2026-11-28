@@ -1,12 +1,17 @@
 ---
-title: "Manage a Data Source"
-description: "Manage a Data Source"
+title: "Manage Data Sources in GroupID"
+description: "Search, update, and delete data sources in Admin Center, and learn what happens to Synchronize jobs and queries when you delete one."
+keywords:
+  - search data source
+  - update data source
+  - delete data source
+  - Admin Center data sources
 sidebar_position: 20
 ---
 
-# Manage a Data Source
+# Manage Data Sources in GroupID
 
-GroupID enables you to create data sources for various data providers. You can also update and
+GroupID supports data sources for various data providers. You can create, update, and
 delete these data sources.
 
 What do you want to do?
@@ -30,15 +35,15 @@ You can search for a data source built on a particular provider by its name.
 ## Update a Data Source
 
 You can update the details provided for a data source, such as its display name, the service account
-credentials to connect to it, and any other info you provided while creating it.
+credentials to connect to it, and any other information you provided while creating it.
 
-**To update the info:**
+**To update the information:**
 
 1. In Admin Center, click **Data Sources** in the left pane.
 2. On the **Data Sources** page, click the tab for the provider the data source is built on.
-3. Click **Edit** for a data source. The **Update Data Source** page is displayed, that differs by
-   provider. Refer to the steps for creating the respective data source to modify the info. See the
-   [Create a Data Source](/docs/directorymanager/11.0/signin/datasource/create.md)
+3. Click **Edit** for a data source. The **Update Data Source** page is displayed, which differs by
+   provider. Refer to the steps for creating the respective data source to modify the information. See the
+   [Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md)
    topic for additional information.
 4. Click **Update Data Source**.
 
@@ -47,8 +52,10 @@ credentials to connect to it, and any other info you provided while creating it.
 You can delete a data source to prevent users from using it as source and destination in Synchronize
 jobs.
 
-NOTE: Deleting a data source corrupts all Synchronize jobs, membership queries, and search queries
-using that data source.
+:::note
+Deleting a data source corrupts all Synchronize jobs, membership queries, and search queries
+that use that data source.
+:::
 
 **To delete a data source:**
 

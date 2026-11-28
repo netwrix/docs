@@ -1,12 +1,18 @@
 ---
-title: "Join a Group"
-description: "Join a Group"
+title: "Join a Group API in GroupID"
+description: "Join a group with a specified membership type, start date, end date, and reason."
 sidebar_position: 90
+keywords:
+  - join group API
+  - group membership type
+  - GroupID API
+  - membership request
+unlisted: true
 ---
 
-# Join a Group
+# Join a Group API in GroupID
 
-Using this API, you can join a group as per the specified membership type.
+Use this API to join a group with the membership type you specify.
 
 ## Endpoint
 
@@ -16,7 +22,7 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identitystoreId}
 
 POST
 
-#### Sample Request Syntax
+### Sample Request Syntax
 
 ```
 {
@@ -31,7 +37,7 @@ POST
 }
 ```
 
-#### Sample Response Syntax
+### Sample Response Syntax
 
 ```
 {
@@ -64,5 +70,5 @@ POST
 
 See Also
 
-- [Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
-- [Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

@@ -1,44 +1,50 @@
 ---
-title: "My Groups"
-description: "My Groups"
+title: "View and Manage My Groups in GroupID"
+description: "View the groups you own in the GroupID portal and update, expire, move, or delete them, and filter the list."
+keywords:
+  - My Groups
+  - group ownership
+  - Smart Group update
+  - group filters
+  - GroupID portal
 sidebar_position: 50
 ---
 
-# My Groups
+# View and Manage My Groups in GroupID
 
 To view and manage the groups that you own in the identity store, click **Groups** on the left
 navigation pane and select **My Groups**. This page lists all your active groups:
 
-- [My Memberships](/docs/directorymanager/11.0/welcome/group/mygroups/mymemberships.md)
-- [My Expired Groups](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md)
-- [My Expiring Groups](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiringgroups.md)
-- [My Deleted Groups](/docs/directorymanager/11.0/welcome/group/mygroups/mydeletedgroups.md)
-- [My Smart Groups](/docs/directorymanager/11.0/welcome/group/mygroups/mysmartgroups.md)
-- [My Dynasties](/docs/directorymanager/11.0/welcome/group/mygroups/mydynasties.md)
-- [My Teams](/docs/directorymanager/11.0/welcome/group/mygroups/myteams.md) (for Microsoft Entra ID
+- [View Your Group Memberships in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mymemberships.md)
+- [View My Expired Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md)
+- [View My Expiring Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiringgroups.md)
+- [View My Deleted Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mydeletedgroups.md)
+- [View Your Smart Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mysmartgroups.md)
+- [View My Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mydynasties.md)
+- [View Your Microsoft Teams in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myteams.md) (for Microsoft Entra ID
   based identity store)
 
-By default, the **My Groups** tab displays the groups that you are the primary owner for. To include
+By default, the **My Groups** tab displays the groups that you are the primary owner of. To include
 the groups for which you are an additional owner, select the **Display additional group ownership in
-My Groups** check box on the
-[Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel. This tab
-lists active groups only; expired and deleted groups are not displayed.
+My Groups** checkbox on the
+[Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel. This tab
+lists active groups only; expired and deleted groups aren't displayed.
 
 You can
 [Modify Search Directory](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md#modify-search-directory)
 to search your groups and add
-[Filter All Groups](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md#filter-all-groups)by
-clicking **My Groups Grid Filters**. All your groups matching the filters will be displayed.
+[Filter All Groups](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md#filter-all-groups) by
+clicking **My Groups Grid Filters**. All your groups matching the filters appear.
 
 **You can:**
 
 - Manually update the membership of a Smart Group using the **Update** command. You can also view
   update details on **Processing Object (s)** wizard. Click **OK** once done. If you click
-  **Background**, the update runs in the background and will show in the **Background Tasks** tab.
+  **Background**, the update runs in the background and appears in the **Background Tasks** tab.
 - View and modify the
-  [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md) of a
+  [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md) of a
   group.
-- Manually expire your groups. After expiring the group, it will be listed in **My Expired Groups**
+- Manually expire your groups. After you expire a group, it appears in the **My Expired Groups**
   list.
 - Select a smart group and click **Renew** on the toolbar; this re-applies the expiry policy of the
   group starting from today, thus renewing the group.
@@ -46,15 +52,14 @@ clicking **My Groups Grid Filters**. All your groups matching the filters will b
   [Join a group temporarily](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md#join-a-group-temporarily)
   or
   [Join a group permanently](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md#join-a-group-permanently)
-- Leave a group’s membership
+- Leave a group’s membership:
   [Leave a group temporarily](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md#leave-a-group-temporarily)
   or
   [Leave a group permanently](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md#leave-a-group-permanently).
-- Join / leave a group
-  [Join or leave a group on behalf of a direct report or peer](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md#join-or-leave-a-group-on-behalf-of-a-direct-report-or-peer)a
-  direct report or peer.
-- To Join/Leave the group, you can also click on **Want to write reason to group owner?** and state
-  the the reason for joining or leaving the group for the group owner.
+- Join or leave a group
+  [Join or leave a group on behalf of a direct report or peer](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md#join-or-leave-a-group-on-behalf-of-a-direct-report-or-peer).
+- To Join/Leave the group, you can also click **Want to write reason to group owner?** and state
+  the reason for joining or leaving the group for the group owner.
 - Update the security type of your group using **Set Security Type** option. You can select one of
   the following security types:
 
@@ -73,15 +78,13 @@ clicking **My Groups Grid Filters**. All your groups matching the filters will b
   launches the default Windows email application for sending an email to group members.
 - Click **Export Results** on the toolbar to export the group list to a Microsoft Excel file.
 - Update the expiration policy of your group using **Set Expiration Policy** option.
-- Update owner for your group using **Set Owner** option. The drop down list displays two options:
+- Update owner for your group using **Set Owner** option. The dropdown list displays two options:
 
     - **Me:** You can set yourself as the Owner
     - **Other:** You can select some other user as the owner.
 
-- Manually
-  [ Group Deletion](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md) any
-  of your group.
-- Get a list of all groups managed by s particular group (i.e., all groups for which the selected
+- Manually [delete a group](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md).
+- Get a list of all groups managed by a particular group (all groups for which the selected
   group is a primary or additional owner)
 
     Select a group and click **Managed By** on the toolbar to get a list of groups managed by the
@@ -93,9 +96,9 @@ clicking **My Groups Grid Filters**. All your groups matching the filters will b
 
 Use the page numbers under the group listing to page through all groups.
 
-You can control the number of records to be displayed per page by modifying the **Search results per
+You can control the number of records displayed per page by modifying the **Search results per
 page** setting on the
-[Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
+[Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
 
 ## Modify Search Directory
 
@@ -105,8 +108,8 @@ a domain to search active groups from.
 ## Transfer Ownership
 
 You can find
-[Transfer Ownership](/docs/directorymanager/11.0/welcome/group/transferownership.md) option
-on the top right corner. Transfer Ownership enables you to:
+[Transfer Group Ownership in GroupID](/docs/directorymanager/11.0/welcome/group/transferownership.md) option
+on the top right corner. Use Transfer Ownership to:
 
 - Assign owners to orphan groups.
 - Transfer group ownership (including Exchange 2013/2016/2019 additional ownership) from one
@@ -118,7 +121,7 @@ You can add filters in **My Group Grid Filters** while searching for specific gr
 
 1. Click **Add Filter** to specify a criterion for filtering groups.
 2. From the **Select a Filter** list, select the attribute to filter groups.
-3. Two more boxes get displayed next to **Select a Filter** box upon selecting a filter.
+3. Two more boxes appear next to **Select a Filter** box upon selecting a filter.
 
     - **Select an Operator** from the first list.
     - Specify a value for the selected operator in the second box.
@@ -130,12 +133,12 @@ You can add filters in **My Group Grid Filters** while searching for specific gr
 5. You can add additional filters by clicking **Add Filter.**
 6. To undo the filters, click **Reset Filter.**
 
-    It will remove all the criteria set before.
+    This removes all previously set criteria.
 
 **See Also**
 
-- [Groups](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasty](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
-- [Group Properties](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [Directory Search](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [Working with Groups](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

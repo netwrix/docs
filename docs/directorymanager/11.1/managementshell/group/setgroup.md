@@ -1,18 +1,22 @@
 ---
 title: "Set-Group"
-description: "Set-Group"
+description: "Modify an unmanaged group, or the native group attributes of a Smart Group, in the directory with the Set-Group cmdlet."
+keywords:
+  - Set-Group
+  - modify unmanaged group
+  - group expiration policy
+  - additional owners
+  - Directory Manager PowerShell
 sidebar_position: 80
 ---
 
 # Set-Group
 
-The Set-Group commandlet modifies an unmanaged group in directory. However, you can use this
-commandlet to modify those parameters of a Smart Group that are native attributes of an unmanaged
-group in Directory. For modifying Smart Group-specific attributes, you can use the
-[Set-SmartGroup](/docs/directorymanager/11.1/managementshell/smartgroup/setsmartgroup.md) commandlet.
+The `Set-Group` cmdlet modifies an unmanaged group in the directory. You can also use it to modify the parameters of a Smart Group that are native attributes of an unmanaged group in the directory.
 
-You can view events related to this commandlet in Directory Manager portal, against the History node
-in the left panel.
+To modify Smart Group-specific attributes, use the [Set-SmartGroup Cmdlet](/docs/directorymanager/11.1/managementshell/smartgroup/setsmartgroup.md) cmdlet.
+
+You can view events related to this cmdlet in the Directory Manager portal, under the History node in the left pane.
 
 ## Syntax
 
@@ -44,6 +48,7 @@ Set-Group
 [-ReportToManagerEnabled <string>]
 [-ReportToOriginatorEnabled <string>]
 [-UpdateMembershipByManagerEnabled <string>]
+[-ResetQuickFilter]
 [-Add <hashtable[]>]
 [-Remove <hashtable[]>]
 [-Replace <hashtable[]>]
@@ -81,45 +86,80 @@ Set-Group
 [<CommonParameters>]
 ```
 
-## Required Parameter
+Use the ResetQuickFilter switch to set the group's quick filter value (`imsgquickfilter`) to 2. This fixes groups upgraded from versions earlier than 10.
+
+## Clear parameter
+
+Use the `Clear` parameter to remove all current values of one or more group attributes. Enter the attribute names without quotes, separated by commas:
+
+```
+-Clear ManagedBy,AdditionalOwners
+```
+
+Attribute names aren't case-sensitive.
+
+:::warning
+Don't enclose the list of attribute names in quotes. `Set-Group` reads `"ManagedBy,AdditionalOwners"` as one attribute name and doesn't split it, so it clears nothing and doesn't show an error.
+:::
+
+The `Clear` parameter supports the following attributes:
+
+- `ManagedBy` – the primary owner (manager) of the group in an Active Directory identity store
+- `Owners` – the primary owner (manager) of the group in a Microsoft Entra ID identity store
+- `AdditionalOwners`
+- `AcceptMessagesOnlyFrom` (alias: `authorig`)
+- `AcceptMessagesOnlyFromGroups` (alias: `dlmemsubmitprems`)
+- `RejectMessagesFrom` (alias: `unauthorig`)
+- `RejectMessagesFromGroups` (alias: `dlmemrejectprems`)
+
+In a Microsoft Entra ID identity store, use `-Clear Owners` to clear the manager. `-Clear ManagedBy` has no effect there. `Set-Group` ignores any attribute name that isn't in this list and doesn't show an error or warning.
+
+If a command uses the `ManagedBy` or `AdditionalOwners` parameter to set a new value for an attribute that it also clears, `Set-Group` discards the new value. To replace the values, run a command with the `Clear` parameter first, and then run a second command that sets the new values.
+
+To clear the manager, use `-Clear ManagedBy` rather than `-ManagedBy ""` or `-ManagedBy $null`. These values return an error or leave the manager unchanged. To clear additional owners, use `-Clear AdditionalOwners`. `-AdditionalOwners ""` doesn't clear them. You can also use `-Replace @{AdditionalOwners="*"}` to remove all existing additional owners. `Set-Group` shows a warning that it removes all existing additional owners.
+
+## Required parameters
 
 - Identity
 
-Example 1:
+## Examples
 
-The following command changes the expiration policy of the Training group to 60 days and assigns a
-manager to the group, using the credentials of current user logged-on to the identity store.
+### Example 1
+
+The following command changes the expiration policy of the Training group to 60 days and assigns a manager to the group, using the credentials of the current user signed in to the identity store.
 
 ```
 Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -ExpirationPolicy "60" -ExtendGroupLife -ManagedBy "CN=John Smith,CN=Users,DC=HR,DC=Imanami,DC=US"
 ```
 
-Example 2:
+### Example 2
 
-The following command expires the group Training, using the credentials set in the $Credentials
-environment variable. See the
-[Set the $Credentials Environment Variable](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic for setting
-credentials in an environment variable.
+The following command expires the group Training, using the credentials set in the $Credentials environment variable. To run the command as another user, use the Credential parameter together with the IdentityStoreId parameter. To set credentials in an environment variable, see the [Set the $Credentials Variable in Management Shell](/docs/directorymanager/11.1/managementshell/setthecredential.md) topic.
 
 ```
-Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IsExpired True -Credential $Cred
+Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -IsExpired True -IdentityStoreId 2 -Credential $Credentials
 ```
 
-Example 3:
+### Example 3
 
-The following command gets all groups in the container Recruiting, clears their additional owner
-lists and sets their expiration policy to Never Expire. The OUT-NULL commandlet has been used to
-prevent the retrieved groups information from appearing on the console.
+The following command gets all groups in the container Recruiting, clears their additional owner lists, and sets their expiration policy to Never Expire. The OUT-NULL cmdlet prevents the retrieved group information from appearing on the console.
 
 ```
-Get-Group -searchcontainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US" | Set-Group -AdditionalOwners "" -ExpirationPolicy "0" -ExtendGroupLife | OUT-NULL
+Get-Group -SearchContainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US" | ForEach-Object { Set-Group -Identity $_.DistinguishedName -Clear AdditionalOwners -ExpirationPolicy "0" -ExtendGroupLife } | OUT-NULL
 ```
 
-Example 4:
+### Example 4
 
-The following command removes two additional owners from the Training group and adds three new
-additional owners to the group and excludes an additional owner from receiving e-mail notifications.
+The following command removes two additional owners from the Training group, adds three new additional owners to the group, and excludes an additional owner from receiving email notifications.
 
 ```
 Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Remove @{AdditionalOwners = "CN=Roger_Manson,OU=ResignedStaff,DC=HR,DC=Imanami,DC=US","KillenEdward"} -Add @{AdditionalOwners = "RobinSoto","MeganFox","DollyChan"} -NotifyOptOutAdditionalOwners "RobinSoto"
+```
+
+### Example 5
+
+The following command clears the manager and the additional owners of the Training group.
+
+```
+Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Clear ManagedBy,AdditionalOwners
 ```

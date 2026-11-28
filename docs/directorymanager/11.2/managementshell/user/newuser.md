@@ -1,13 +1,17 @@
 ---
-title: "New-User"
-description: "New-User"
+title: "New-User Cmdlet in Directory Manager"
+description: "Create a user in the directory and set properties such as name, password, and contact details with the New-User cmdlet."
+keywords:
+  - New-User
+  - Directory Manager Management Shell
+  - create user
+  - user properties
 sidebar_position: 30
 ---
 
-# New-User
+# New-User Cmdlet in Directory Manager
 
-Use the New-User commandlet to create a new user in Directory. Most user properties can be directly
-added by using the parameters of this commandlet.
+Use the New-User cmdlet to create a user in the directory. You can add most user properties directly with the parameters this cmdlet supports.
 
 ## Syntax
 
@@ -61,12 +65,16 @@ New-User
 - LastName
 - DisplayName
 
-Example:
+## Parameter notes
 
-The following command creates a new user in the container specified by the OrganizationalUnit
-parameter. The command also specifies the logon name, password, first name, last name and display
-name of the new user.
+- `-Zip` and `-Business` accept digits only.
+- `-AccountDisabled`, `-PasswordNeverExpires`, and `-PasswordForceChange` take `"true"` or `"false"`.
+- The cmdlet returns a status message, not a user object.
+
+## Example
+
+This command creates a user in the container specified by the _OrganizationalUnit_ parameter. The command also specifies the logon name, password, first name, last name, and display name of the new user.
 
 ```
-New-User -Name "OsamaUser" -OrganizationalUnit "OU=osamamu,DC=naveed,DC=local" -SAMAccountName "OsamaUser11" -Password "password123" -FirstName "Osama" -LastName "Shahbaz" -DisplayName "Osama"
+New-User -Name "SampleUser" -OrganizationalUnit "OU=SalesOU,DC=example,DC=com" -SAMAccountName "SampleUser11" -Password "password123" -FirstName "Sample" -LastName "User" -DisplayName "Sample"
 ```
