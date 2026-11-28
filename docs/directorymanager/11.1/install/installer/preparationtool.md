@@ -56,7 +56,7 @@ To run the Directory Manager Preparation Tool:
 
 ## Run the Preparation Tool on an existing Directory Manager server
 
-If an earlier version of Directory Manager 11.0 is installed on a machine, check the installed
+If an earlier version of GroupID 11.0 is installed on a machine, check the installed
 prerequisites before you run the Preparation Tool. Ensure that no version other than the following
 prerequisite versions is installed. Otherwise, uninstall the other versions manually:
 

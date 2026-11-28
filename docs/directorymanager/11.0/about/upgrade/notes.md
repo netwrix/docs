@@ -2,7 +2,7 @@
 title: "Upgrade Notes and Limitations for GroupID 11"
 description: "Review what the Upgrade wizard does not carry over and which settings change when you upgrade from GroupID 9 or 10 to GroupID 11."
 keywords:
-  - directory manager upgrade limitations
+  - GroupID upgrade limitations
   - upgrade wizard behavior changes
   - source version file system
   - upgrade debug logs

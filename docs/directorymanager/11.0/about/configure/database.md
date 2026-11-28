@@ -2,12 +2,12 @@
 title: "Add a GroupID Server to an Existing Cluster"
 description: "Configure a new GroupID server to join an existing cluster and share its database, Elasticsearch cluster, and service settings."
 keywords:
-  - add directory manager server to cluster
-  - directory manager load balancing
-  - directory manager existing database
+  - add GroupID server to cluster
+  - GroupID load balancing
+  - GroupID existing database
   - elasticsearch secondary node
-  - directory manager app pool service account
-  - directory manager shared sql database
+  - GroupID app pool service account
+  - GroupID shared sql database
 sidebar_position: 30
 ---
 

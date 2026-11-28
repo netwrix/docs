@@ -2,10 +2,10 @@
 title: "GroupID Configuration Tool Overview"
 description: "Learn what the GroupID Configuration Tool sets up on a new server, including the license, services, database, and Admin Center."
 keywords:
-  - directory manager configuration tool
-  - configure directory manager server
-  - directory manager sql server setup
-  - directory manager admin center setup
+  - GroupID configuration tool
+  - configure GroupID server
+  - GroupID sql server setup
+  - GroupID admin center setup
 sidebar_position: 20
 ---
 

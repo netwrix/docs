@@ -3,6 +3,7 @@ title: "Netwrix GroupID v11.0 Documentation"
 description: "Overview of Netwrix GroupID v11.0, an identity and access management (IAM) solution for managing groups, users, and passwords."
 keywords:
   - GroupID
+  - directory manager
   - identity and access management
   - group management
   - user management

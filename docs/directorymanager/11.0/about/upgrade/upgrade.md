@@ -2,7 +2,7 @@
 title: "Upgrade to GroupID 11 with the Wizard"
 description: "Move identity stores, Synchronize jobs, schedules, and reports from GroupID 9 or 10 to GroupID 11 by following the Upgrade wizard pages."
 keywords:
-  - directory manager upgrade wizard
+  - GroupID upgrade wizard
   - upgrade to GroupID 11
   - upgrade identity stores
   - upgrade Synchronize jobs

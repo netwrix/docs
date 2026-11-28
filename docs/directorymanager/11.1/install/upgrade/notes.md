@@ -104,4 +104,4 @@ In the following text, the term 'source version' refers to GroupID 10 SR2, the v
 18. Insights in GroupID 10 SR2 is renamed to Entitlement in Directory Manager 11.  
     In GroupID 10 SR2, one schedule named 'Insights' existed for Insights. The upgrade renames it to 'Directory Manager Entitlement'. Directory Manager 11 also has two new schedules for Entitlement: 'Entitlement Scope' and 'Entitlement Temporary Permissions'. The upgrade automatically creates these new schedules for identity stores that have Entitlement settings defined.
 
-19. You can't run the Configuration Tool and the Upgrade wizard more than once using the same database (for upgrade to Directory Manager version 11.0.23315.04).
+19. You can't run the Configuration Tool and the Upgrade wizard more than once using the same database (for upgrade to GroupID version 11.0.23315.04).

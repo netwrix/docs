@@ -2,7 +2,7 @@
 title: "Prerequisites for Upgrading to GroupID 11"
 description: "Confirm which GroupID versions you can upgrade from, complete the prerequisites, and find the upgrade log files."
 keywords:
-  - directory manager upgrade prerequisites
+  - GroupID upgrade prerequisites
   - supported upgrade source versions
   - upgrade on a different server
   - upgrade log files

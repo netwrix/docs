@@ -2,7 +2,7 @@
 title: "Install and Configure the GroupID Mobile App"
 description: "Install the GroupID mobile app on a smartphone and connect it to the server by entering the Mobile service URL or scanning a QR code."
 keywords:
-  - install directory manager mobile app
+  - install GroupID mobile app
   - configure mobile app
   - mobile service url
   - mobile app qr code configuration

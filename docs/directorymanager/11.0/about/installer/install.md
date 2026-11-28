@@ -2,10 +2,10 @@
 title: "Install GroupID"
 description: "Run the GroupID Installation Tool to accept the license agreement and install the product files."
 keywords:
-  - install directory manager
-  - directory manager installation tool
-  - directory manager installer
-  - directory manager setup wizard
+  - install GroupID
+  - GroupID installation tool
+  - GroupID installer
+  - GroupID setup wizard
 sidebar_position: 30
 ---
 

@@ -2,9 +2,9 @@
 title: "GroupID Mobile Service Overview"
 description: "Learn how the Mobile service connects the GroupID mobile app to the server and what users can do in the app from a smartphone."
 keywords:
-  - directory manager mobile service
+  - GroupID mobile service
   - mobile service iis docker deployment
-  - directory manager mobile app
+  - GroupID mobile app
   - mobile service settings
   - mobile app multifactor authentication
 sidebar_position: 10

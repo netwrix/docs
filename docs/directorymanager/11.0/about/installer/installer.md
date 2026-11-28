@@ -2,10 +2,10 @@
 title: "GroupID Installation Tools and Upgrade Cases"
 description: "Learn the order of the GroupID installation tools, who can install them, and the four installation cases for coexistence or in-place upgrade."
 keywords:
-  - directory manager installation
-  - directory manager installation package
-  - directory manager prerequisites
-  - directory manager upgrade cases
+  - GroupID installation
+  - GroupID installation package
+  - GroupID prerequisites
+  - GroupID upgrade cases
 sidebar_position: 10
 ---
 

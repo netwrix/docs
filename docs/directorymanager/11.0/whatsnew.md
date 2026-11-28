@@ -2,7 +2,7 @@
 title: "What's New in GroupID 11.0"
 description: "Review the new and enhanced features in GroupID 11.0, including the web-based portal, Admin Center, Synchronize, and Entitlement."
 keywords:
-  - directory manager 11.0 new features
+  - GroupID 11.0 new features
   - admin center
   - synchronize policy
   - entitlement for sharepoint

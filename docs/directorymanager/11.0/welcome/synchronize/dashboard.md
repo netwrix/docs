@@ -6,7 +6,7 @@ keywords:
   - background jobs
   - pinned jobs
   - job collections
-  - directory manager portal
+  - GroupID portal
 sidebar_position: 10
 ---
 

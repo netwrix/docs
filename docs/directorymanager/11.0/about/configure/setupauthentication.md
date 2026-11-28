@@ -2,9 +2,9 @@
 title: "SQL Server Authentication Modes for GroupID"
 description: "Choose between SQL Server Authentication and Windows Authentication for the GroupID database, and learn the permissions each mode requires."
 keywords:
-  - directory manager sql server authentication
-  - directory manager windows authentication
-  - directory manager database permissions
+  - GroupID sql server authentication
+  - GroupID windows authentication
+  - GroupID database permissions
   - db_creator role
   - sql server account
 sidebar_position: 40

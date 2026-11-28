@@ -2,7 +2,7 @@
 title: "Back Up and Restore Data for a GroupID Upgrade"
 description: "Back up and restore the database, Elasticsearch data, portals, Synchronize jobs, and reports from GroupID 9 and 10 before you upgrade to 11.0."
 keywords:
-  - directory manager upgrade backup
+  - GroupID upgrade backup
   - back up Elasticsearch data
   - restore Self-Service portals
   - restore Password Center portals
